@@ -143,13 +143,18 @@ def test_consume_ranged_ammo_for_miss_exists():
 
 def test_per_scales_ranged_damage():
     """combat.player_attack must add a small PER-based bonus to base damage
-    when ammo is present (= ranged shot). Per user 2026-05-30, PER had
-    ZERO damage hook before; now +1 per 3 PER points above 10."""
+    when ammo is present (= ranged shot). Chain combat v2 (2026-09-07)
+    retuned the divisor from /3 to /4 to make room for an added STR bonus
+    on bow/sling/thrown weapons; crossbow still gets PER only."""
     import combat
     src = inspect.getsource(combat.player_attack)
     # The signature line should mention PER somewhere in the ammo branch.
     # Look for `player.PER` and `ammo` co-located within the function.
     assert 'player.PER' in src, "player.PER must be referenced for the scaling"
-    assert '(player.PER - 10) // 3' in src or '(player.PER-10) // 3' in src \
-        or '(player.PER - 10)//3' in src, \
-        "expected the +max(0, (PER-10)//3) formula"
+    assert '(player.PER - 10) // 4' in src or '(player.PER-10) // 4' in src \
+        or '(player.PER - 10)//4' in src, \
+        "expected the +max(0, (PER-10)//4) formula (chain combat v2)"
+    # Chain combat v2 also adds STR bonus for bow/sling/thrown; verify it lands
+    # on the ammo branch with a class-conditional check.
+    assert '(player.STR - 10) // 4' in src, \
+        "expected STR bonus for bow/sling/thrown weapons in the ammo branch"

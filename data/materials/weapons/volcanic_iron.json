@@ -1,0 +1,52 @@
+{
+  "id": "volcanic_iron",
+  "name": "volcanic iron",
+  "material_class": "metal",
+  "applies_to": [
+    "weapon"
+  ],
+  "peak_floor": 15,
+  "spread": 12,
+  "peak_weight": 2.0,
+  "min_level": 5,
+  "damage_mult": 0.95,
+  "weight_mult": 1.00,
+  "max_enchant": 2,
+  "color": [
+    120,
+    60,
+    40
+  ],
+  "armor_ac_bonus": 0,
+  "resistances": [
+    "fire"
+  ],
+  "weaknesses": [],
+  "vulnerabilities": [],
+  "effective_against": [
+    "ice_creature",
+    "frost_creature"
+  ],
+  "compatible_weapon_classes": [
+    "dagger",
+    "rapier",
+    "1h_sword",
+    "1h_axe",
+    "mace",
+    "spear",
+    "2h_sword",
+    "2h_axe",
+    "2h_warhammer",
+    "glaive",
+    "halberd"
+  ],
+  "special_properties": [
+    "elemental",
+    "fire_forged",
+    "rare_drop"
+  ],
+  "lore_descriptor": "dark iron shot through with veins of cooled magma, warm to the touch",
+  "unidentified_descriptor": "scorched glassy blade",
+  "first_pickup_chronicle": "Volcanic iron. Smelted from ore that fell from a volcano's throat. It never quite goes cold. The frost-things will hate this.",
+  "design_notes": "Chain combat v2 tuning: damage_mult 0.95, weight_mult 1.00, effective_against ice/frost creatures (T2 elemental, rare drop). Themed rare-of-the-tier — visual/generation cue only; no flat elemental damage per doc §Elemental effect."
+}

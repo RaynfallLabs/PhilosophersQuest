@@ -309,6 +309,11 @@ class Weapon(Item):
         self.chain_multipliers: list[float] = defn.get(
             'chainMultipliers', defn.get('chain_multipliers', [0.5, 1.0, 1.5, 2.0, 2.5])
         )
+        # Chain combat v2: polynomial per-hit multiplier `mult = chain ** exponent`.
+        # When set (>0), takes precedence over `chain_multipliers`. Uniques leave this
+        # None and keep their handcrafted arrays; new common templates set 1.15.
+        _ce = defn.get('chainExponent', defn.get('chain_exponent'))
+        self.chain_exponent: float | None = float(_ce) if _ce else None
         self.quiz_tier: int             = int(defn.get('mathTier', defn.get('quiz_tier', 1)))
         self.damage_types: list[str]    = defn.get('damageTypes', defn.get('damage_types', ['slash']))
         self.two_handed: bool           = bool(defn.get('twoHanded', defn.get('two_handed', False)))

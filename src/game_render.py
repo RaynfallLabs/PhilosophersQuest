@@ -2043,6 +2043,26 @@ class RenderMixin:
 
     _wrap_text = staticmethod(_gh_wrap_text)
 
+    # Chain combat v2: universal chain-milestone ranks. Kept next to the quiz
+    # drawer so any other UI (log messages, sidebar) can share the mapping.
+    _CHAIN_RANKS = (
+        (20, 'Mythic',    (240, 200, 255)),   # rare/legendary; kept white-pink
+        (15, 'Prodigy',   (255, 210,  60)),   # gold
+        (10, 'Genius',    (240,  80,  60)),   # red
+        ( 8, 'Brilliant', (255, 150,  40)),   # orange
+        ( 5, 'Sharp',     (240, 220,  80)),   # yellow
+        ( 3, 'Solid',     (110, 220, 110)),   # green
+    )
+
+    @classmethod
+    def _chain_rank(cls, chain: int):
+        """Return (rank_name, color) for a chain count. Below 3, returns
+        ('', white). Higher milestones win when several apply."""
+        for threshold, name, color in cls._CHAIN_RANKS:
+            if chain >= threshold:
+                return name, color
+        return '', (230, 230, 230)
+
     def _draw_quiz(self):
         qe = self.quiz_engine
         if not qe.current_question:
@@ -2124,11 +2144,20 @@ class RenderMixin:
         # title can reserve room for it and never overrun it (e.g. a long
         # lockpick/cook title sliding under "Chain xN").
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
-            c_text, c_color = f"Chain x{qe.chain}", FP.SUCCESS_TEXT
+            # Chain combat v2: show rank label + color-code the counter at
+            # each milestone. Font scales up one tier for the top ranks so the
+            # counter physically grows as the chain climbs.
+            rank_name, rank_color = self._chain_rank(qe.chain)
+            _c_font = self.font_lg if qe.chain >= 10 else self.font_md
+            c_text = f"Chain x{qe.chain}"
+            if rank_name:
+                c_text = f"{c_text} — {rank_name}"
+            c_color = rank_color if qe.chain >= 3 else FP.SUCCESS_TEXT
+            c_surf = _c_font.render(c_text, True, c_color)
         else:
             c_text  = f"{qe.correct_count} / {qe.required}"
             c_color = FP.CYAN_ACCENT
-        c_surf = self.font_md.render(c_text, True, c_color)
+            c_surf = self.font_md.render(c_text, True, c_color)
 
         draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
                         text=self.quiz_title, font=self.font_md,
@@ -2382,13 +2411,13 @@ class RenderMixin:
             eff = self.font_sm.render(eff_text_fit, True, FP.WARNING_TEXT)
             self.screen.blit(eff, (lx, hb_y + 16))
 
-        # -- Right: damage preview + weapon ---------------------------
-        base    = weapon.base_damage  if weapon else 4
+        # -- Right: LIVE combo state (chain combat v2) ----------------
+        base    = weapon.base_damage  if weapon else 2
         enchant = weapon.enchant_bonus if weapon else 0
-        mults   = weapon.chain_multipliers if weapon else [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
         dtypes  = weapon.damage_types if weapon else ['physical']
         dm      = _damage_multiplier(dtypes, monster)
 
+        # Damage-type banner (WEAKNESS! / RESISTED / neutral)
         if dm >= 1.5:
             dm_text, dm_col = "WEAKNESS!", FP.SUCCESS_TEXT
         elif dm <= 0.5:
@@ -2397,32 +2426,52 @@ class RenderMixin:
             dm_text, dm_col = "/".join(dtypes).upper(), FP.FADED_TEXT
         self.screen.blit(self.font_sm.render(dm_text, True, dm_col), (rx, sy))
 
-        # Chain table: colour each step by heat (low->high damage)
-        parts = []
-        for i, mult in enumerate(mults[:6]):
-            dmg = max(1, int((base + enchant) * mult * dm))
-            parts.append((f"x{i+1}:{dmg}", dmg))
-        max_dmg = max(d for _, d in parts) or 1
-        row1_x  = rx
-        for label, dmg in parts[:3]:
-            heat  = dmg / max_dmg
-            # Heat gradient lifted so all values stay > 4.5:1 contrast on midnight.
-            col   = (int(80 + 175 * heat), int(220 - 130 * heat), int(120 - 80 * heat))
-            surf  = self.font_sm.render(label, True, col)
-            self.screen.blit(surf, (row1_x, sy + 18))
-            row1_x += surf.get_width() + 14
-        row2_x = rx
-        for label, dmg in parts[3:]:
-            heat  = dmg / max_dmg
-            # Heat gradient lifted so all values stay > 4.5:1 contrast on midnight.
-            col   = (int(80 + 175 * heat), int(220 - 130 * heat), int(120 - 80 * heat))
-            surf  = self.font_sm.render(label, True, col)
-            self.screen.blit(surf, (row2_x, sy + 34))
-            row2_x += surf.get_width() + 14
+        # Compute current-chain mult using the same rule combat.py uses:
+        # polynomial when `chain_exponent` set (or unarmed defaults to 1.15),
+        # otherwise the legacy per-rung array.
+        cur_chain = self.quiz_engine.chain
+        _chain_exp = getattr(weapon, 'chain_exponent', None) if weapon else 1.15
+        if _chain_exp and _chain_exp > 0:
+            def _mult(n: int) -> float:
+                return (float(n) ** float(_chain_exp)) if n >= 1 else 0.0
+        else:
+            _mults_arr = weapon.chain_multipliers if weapon else [0.5, 1.0, 1.5, 2.0, 2.5]
+            def _mult(n: int) -> float:
+                if n < 1:
+                    return 0.0
+                return _mults_arr[min(n - 1, len(_mults_arr) - 1)]
+
+        cur_mult = _mult(cur_chain)
+        cur_dmg  = max(0, int((base + enchant) * cur_mult * dm)) if cur_chain >= 1 else 0
+
+        # Big live readout — chain N -> "M.MMx = DDD dmg"
+        rank_name, rank_color = self._chain_rank(cur_chain)
+        if cur_chain >= 1:
+            live_text = f"x{cur_mult:.1f}   {cur_dmg} dmg"
+        else:
+            live_text = "(answer to start chain)"
+        live_col = rank_color if cur_chain >= 3 else FP.WHITE
+        self.screen.blit(self.font_md.render(live_text, True, live_col), (rx, sy + 18))
+
+        # Milestone projection: what you'd hit at the next major rank
+        _milestones = [3, 5, 8, 10, 15, 20]
+        _next = next((m for m in _milestones if m > cur_chain), None)
+        if _next is not None:
+            proj_dmg = max(1, int((base + enchant) * _mult(_next) * dm))
+            _rank_at = self._chain_rank(_next)[0] or f"x{_next}"
+            proj_text = f"at chain {_next} ({_rank_at}): {proj_dmg}"
+            self.screen.blit(
+                self.font_sm.render(proj_text, True, FP.FADED_TEXT), (rx, sy + 46)
+            )
+
+        # SPACE hint + weapon name
+        hint_col = FP.HINT_TEXT if cur_chain >= 1 else FP.FADED_TEXT
+        space_txt = "SPACE = strike now" if cur_chain >= 1 else "SPACE cancels (chain 0)"
+        self.screen.blit(self.font_sm.render(space_txt, True, hint_col), (rx, sy + 64))
 
         w_name = weapon.name if weapon else "bare hands"
         self.screen.blit(
-            self.font_sm.render(f"{w_name}", True, FP.FADED_TEXT), (rx, sy + 52)
+            self.font_sm.render(f"{w_name}", True, FP.FADED_TEXT), (rx, sy + 82)
         )
 
     # ------------------------------------------------------------------
@@ -8346,6 +8395,7 @@ class RenderMixin:
             ]),
             ("System", [
                 ("1-4", "Answer quiz", FP.GOLD_BRIGHT),
+                ("SPACE", "Strike now (mid-chain)", FP.GOLD_BRIGHT),
                 ("?", "Command help", FP.BODY_TEXT),
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
             ]),

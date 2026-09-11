@@ -15,7 +15,7 @@ class Player:
         # out under time pressure when foundational concepts are missing,
         # so wonder subjects get scaffolded prompts that need room to read.
         # Math stays snappy because combat is the pressure point by design.
-        'math':       ( 8, 0.8),   # combat — supposed to feel snappy
+        'math':       ( 0, 1.0),   # combat — flat WIS seconds (chain combat v2)
         'science':    (24, 1.2),   # concept questions with scaffolded setup
         'grammar':    (20, 1.0),   # sentence-level analysis
         'trivia':     (26, 1.2),   # general knowledge, varied lengths
@@ -269,6 +269,14 @@ class Player:
         # Round UP so a 1-damage hit still does 1.
         if damage_type == 'physical' and self.has_effect('shielded'):
             amount = (amount + 1) // 2
+
+        # Chain combat v2 (v2.14.0): melee_dmg_reduction — a defensive stance
+        # buff from rapier / 1h sword / staff chain specials. -30% incoming
+        # physical damage while active. Rapier C20 keeps the same status but
+        # for longer (4t) — the 30% figure is intentionally modest so a run of
+        # chain-15 sword hits does not stack with shielded into invulnerability.
+        if damage_type == 'physical' and self.has_effect('melee_dmg_reduction'):
+            amount = max(1, int(amount * 0.70))
 
         # Fractional resistance: status/accessory effects x armor resistances
         resistance = self.resistances.get(damage_type, 1.0)

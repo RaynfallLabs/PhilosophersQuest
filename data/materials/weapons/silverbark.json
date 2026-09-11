@@ -9,8 +9,8 @@
   "spread": 12,
   "peak_weight": 4.0,
   "min_level": 55,
-  "damage_mult": 1.2,
-  "weight_mult": 0.8,
+  "damage_mult": 1.35,
+  "weight_mult": 0.80,
   "max_enchant": 6,
   "color": [
     220,
@@ -23,8 +23,7 @@
   "vulnerabilities": [],
   "effective_against": [
     "undead",
-    "fey",
-    "demon_minor"
+    "fey"
   ],
   "special_properties": [
     "bow_capable",
@@ -34,5 +33,5 @@
   "lore_descriptor": "pale silver bark, almost luminous; smelling of starlight",
   "unidentified_descriptor": "pale silvery",
   "first_pickup_chronicle": "Silverbark. Galadhrim wood. Bows cut from these trees do not miss in the dark, and the dead recoil from them.",
-  "design_notes": "F75 peak — wood equivalent of silver+mithril hybrid. Triple-effective (undead/fey/demon_minor) but damage_mult 1.20 (not stacked with the bonuses). Light (weight_mult 0.8) — ideal bow material. Mythologically Lothlórien."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.35, weight_mult 0.80, effective_against undead+fey (T4 core wood). Light — ideal bow material. Mythologically Lothlórien."
 }

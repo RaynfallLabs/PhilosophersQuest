@@ -35,5 +35,5 @@
   "lore_descriptor": "tight-grained, red-hearted; smells faintly of churchyards",
   "unidentified_descriptor": "a dark reddish wood",
   "first_pickup_chronicle": "Yew. The English longbow wood. Planted in graveyards because the wood took longer to grow than the people buried under it. Fey hate it.",
-  "design_notes": "F10 peak — wood equivalent of iron. effective_against fey (yew was planted as a fairy-ward in old churchyards). bow_capable: ideal for shortbow/longbow. damage_mult 0.95 — wood gives slightly under metal but the fey-bonus carries it."
+  "design_notes": "Chain combat v2 tuning: damage_mult 0.95, weight_mult 0.85, effective_against fey (T2 specialty wood). Yew was planted as a fairy-ward in old churchyards. bow_capable: ideal for shortbow/longbow. Wood gives slightly under metal but the fey-bonus carries it."
 }

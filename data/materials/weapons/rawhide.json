@@ -10,8 +10,8 @@
   "spread": 10,
   "peak_weight": 8.0,
   "min_level": 1,
-  "damage_mult": 0.8,
-  "weight_mult": 0.6,
+  "damage_mult": 0.75,
+  "weight_mult": 0.60,
   "max_enchant": 1,
   "color": [
     150,
@@ -34,5 +34,5 @@
   "lore_descriptor": "rough untanned hide, smells of animal",
   "unidentified_descriptor": "a strip of rough hide",
   "first_pickup_chronicle": "Rawhide. Untanned. Smells. Works. Shepherds have killed kings with less.",
-  "design_notes": "F5 peak — leather equivalent of oak. Primary sling material. damage_mult 0.8 (slings are weak — payoff is finesse-class chain). Light (0.6×)."
+  "design_notes": "Chain combat v2 tuning: damage_mult 0.75, weight_mult 0.60, no effective_against (T1 leather). Primary sling material. Slings are weak — payoff is chain scaling. Light."
 }

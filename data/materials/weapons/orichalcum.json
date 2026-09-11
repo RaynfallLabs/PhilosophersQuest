@@ -11,7 +11,7 @@
   "spread": 6,
   "peak_weight": 2.0,
   "min_level": 78,
-  "damage_mult": 1.55,
+  "damage_mult": 1.60,
   "weight_mult": 0.95,
   "max_enchant": 7,
   "color": [
@@ -28,10 +28,7 @@
   "weaknesses": [],
   "vulnerabilities": [],
   "effective_against": [
-    "aberration",
     "outsider",
-    "fiend",
-    "demon_minor",
     "demon_major"
   ],
   "special_properties": [
@@ -44,5 +41,5 @@
   "lore_descriptor": "copper-rose flickering to bronze when shadowed",
   "unidentified_descriptor": "lustrous golden",
   "first_pickup_chronicle": "Orichalcum. Atlantis was real, then. Or my memory of it just became real. The metal is warm to the touch and hums when held near a spell. Plato saw one of these once. He didn't believe it either.",
-  "design_notes": "Peak F90 spread 6 — DELIBERATELY NARROW. orichalcum is rare-of-rares. Spread 6 means peak weight 2 at F90 falls to ~0.05 by F75 or F100. damage_mult 1.55 ties shadowiron at the top, but armor_ac_bonus 2 and max_enchant 6 (highest of any material) put it above shadowiron for magical builds. spell_damage_bonus_15pct stacks with the player's wand/spell damage. Open question: should this require a discovery (Atlantis hidden room) rather than be loot-pool? Currently treated as soft-curve loot."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.60, weight_mult 0.95, effective_against outsider+demon_major (T5 specialty). Deliberately narrow spawn spread (6) — orichalcum is rare-of-rares. armor_ac_bonus 2 and max_enchant 7 (highest of any material) put it above shadowiron for magical builds. spell_damage_bonus_15pct stacks with the player's wand/spell damage."
 }

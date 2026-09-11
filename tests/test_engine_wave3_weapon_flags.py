@@ -161,10 +161,15 @@ def test_combat_wires_stealth_damage_bonus():
 
 
 def test_combat_wires_surrounded_proc_bonus():
+    """Chain combat v2 (v2.14.0) — Kusanagi rewire.
+    The surrounded_proc_bonus mechanic used to force a crit; crit is retired,
+    so the mechanic now applies a flat +25% damage multiplier when 3+ enemies
+    are adjacent. Same feel, no crit path required."""
     import combat
     src = inspect.getsource(combat.player_attack)
     assert 'surrounded_proc_bonus' in src
-    assert '_kusanagi_force_crit' in src
+    # Rewired to a flat mult instead of a crit trigger.
+    assert 'mult *= 1.25' in src
 
 
 def test_combat_wires_adjacent_pet_damage_bonus():

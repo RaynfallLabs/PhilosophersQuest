@@ -566,14 +566,17 @@ def test_cave_troll_regenerates():
 
 def test_abaddon_beatable_without_sword_of_michael():
     """User direction: Abaddon must still be beatable without Sword of Michael.
-    HP 2200 (was 2800), regen 15, multi_attack 2 baseline -> 5 enraged."""
+    Chain combat v2 rebase (2026-09-07) doubled Abaddon HP to keep the fight
+    meaningful against the new polynomial chain damage curve. CURVE.md targets
+    6000; we cap boss rescales at 2x, landing around 4280.
+    Regen 15, multi_attack 2 baseline -> 5 enraged."""
     a = _monster('abaddon_destroyer')
     import re
     m = re.match(r'(\d+)d(\d+)\+?(\d+)?', a.get('hp', ''))
     n, sides, plus = int(m.group(1)), int(m.group(2)), int(m.group(3) or 0)
     avg = n * (sides + 1) / 2 + plus
-    assert 2000 <= avg <= 2400, \
-        f"Abaddon HP avg {avg:.0f} out of range — must be 2000-2400 for non-Sword beatable"
+    assert 4000 <= avg <= 6500, \
+        f"Abaddon HP avg {avg:.0f} out of range — must be 4000-6500 post chain combat v2"
     assert int(a.get('regeneration', 0)) == 15
     assert int(a.get('multi_attack_count', 0)) == 2
 

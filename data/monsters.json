@@ -374,7 +374,7 @@
       160,
       210
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -487,7 +487,7 @@
       80,
       40
     ],
-    "hp": "11d8+6",
+    "hp": "19d8+10",
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 5,
@@ -545,7 +545,7 @@
       40,
       60
     ],
-    "hp": "19d10+48",
+    "hp": "90d10+227",
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": -7,
@@ -1118,7 +1118,7 @@
       160,
       100
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -1169,7 +1169,7 @@
       120,
       50
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -1211,7 +1211,7 @@
       60,
       180
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -1256,7 +1256,7 @@
       200,
       220
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -1309,7 +1309,7 @@
       100,
       40
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -1354,7 +1354,7 @@
       100,
       60
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -1401,7 +1401,7 @@
       120,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -1445,7 +1445,7 @@
       80,
       120
     ],
-    "hp": "7d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -1499,7 +1499,7 @@
       160,
       100
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -1559,7 +1559,7 @@
       60,
       80
     ],
-    "hp": "4d8",
+    "hp": "3d8",
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 14,
@@ -1614,7 +1614,7 @@
       130,
       120
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -1664,7 +1664,7 @@
       100,
       60
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -1719,7 +1719,7 @@
       200,
       255
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -1782,7 +1782,7 @@
       160,
       80
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -1834,7 +1834,7 @@
       80,
       160
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -1897,7 +1897,7 @@
       120,
       100
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -1949,7 +1949,7 @@
       230,
       255
     ],
-    "hp": "8d8+8",
+    "hp": "14d8+14",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 6,
@@ -2003,7 +2003,7 @@
       200,
       60
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2059,7 +2059,7 @@
       60,
       100
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2125,7 +2125,7 @@
       100,
       20
     ],
-    "hp": "10d10+30",
+    "hp": "17d10+52",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2176,7 +2176,7 @@
       110,
       80
     ],
-    "hp": "11d10+30",
+    "hp": "19d10+52",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2228,7 +2228,7 @@
       220,
       255
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -2278,7 +2278,7 @@
       200,
       255
     ],
-    "hp": "6d10+20",
+    "hp": "10d10+35",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -2337,7 +2337,7 @@
       100,
       200
     ],
-    "hp": "8d10+22",
+    "hp": "14d10+38",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -2391,7 +2391,7 @@
       30,
       80
     ],
-    "hp": "7d10+24",
+    "hp": "12d10+42",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2454,7 +2454,7 @@
       80,
       160
     ],
-    "hp": "12d10+30",
+    "hp": "21d10+52",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2514,7 +2514,7 @@
       200,
       190
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2564,7 +2564,7 @@
       40,
       40
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -2617,7 +2617,7 @@
       120,
       40
     ],
-    "hp": "11d10+32",
+    "hp": "29d10+83",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -2685,7 +2685,7 @@
       200,
       100
     ],
-    "hp": "11d10+32",
+    "hp": "29d10+83",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -2767,7 +2767,7 @@
       20,
       80
     ],
-    "hp": "11d10+32",
+    "hp": "29d10+83",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -2827,7 +2827,7 @@
       180,
       255
     ],
-    "hp": "11d10+32",
+    "hp": "29d10+83",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -2893,7 +2893,7 @@
       80,
       20
     ],
-    "hp": "17d10+46",
+    "hp": "61d10+165",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -6,
@@ -2953,7 +2953,7 @@
       140,
       140
     ],
-    "hp": "17d10+46",
+    "hp": "61d10+165",
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": -6,
@@ -3013,7 +3013,7 @@
       140,
       255
     ],
-    "hp": "17d10+46",
+    "hp": "61d10+165",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -6,
@@ -3075,7 +3075,7 @@
       20,
       20
     ],
-    "hp": "17d10+46",
+    "hp": "61d10+165",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -6,
@@ -3131,7 +3131,7 @@
       80,
       255
     ],
-    "hp": "18d12+102",
+    "hp": "90d12+512",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -11,
@@ -3209,7 +3209,7 @@
       100,
       255
     ],
-    "hp": "18d12+102",
+    "hp": "111d12+628",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -11,
@@ -3287,7 +3287,7 @@
       0,
       80
     ],
-    "hp": "18d12+102",
+    "hp": "90d12+512",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -3358,7 +3358,7 @@
       100,
       200
     ],
-    "hp": "18d12+102",
+    "hp": "90d12+512",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -3412,7 +3412,7 @@
       40,
       100
     ],
-    "hp": "18d12+102",
+    "hp": "90d12+512",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -3571,7 +3571,7 @@
       200,
       175
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -3777,7 +3777,7 @@
       120,
       100
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -3831,7 +3831,7 @@
       150,
       80
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -3889,7 +3889,7 @@
       80,
       180
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -4157,7 +4157,7 @@
       120,
       180
     ],
-    "hp": "4d8+6",
+    "hp": "3d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -4218,7 +4218,7 @@
       180,
       120
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 11,
@@ -4273,7 +4273,7 @@
       130,
       80
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 10,
@@ -4327,7 +4327,7 @@
       190,
       90
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 9,
@@ -4380,7 +4380,7 @@
       170,
       50
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -4431,7 +4431,7 @@
       230,
       255
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 9,
@@ -4483,7 +4483,7 @@
       160,
       80
     ],
-    "hp": "10d8+6",
+    "hp": "13d8+8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 6,
@@ -4539,7 +4539,7 @@
       20,
       60
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -4605,7 +4605,7 @@
       100,
       200
     ],
-    "hp": "10d8+6",
+    "hp": "13d8+8",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 6,
@@ -4660,7 +4660,7 @@
       60,
       180
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 13,
@@ -4709,7 +4709,7 @@
       100,
       200
     ],
-    "hp": "10d8+6",
+    "hp": "13d8+8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 6,
@@ -4765,7 +4765,7 @@
       200,
       240
     ],
-    "hp": "8d8+10",
+    "hp": "6d8+8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 8,
@@ -4823,7 +4823,7 @@
       100,
       20
     ],
-    "hp": "9d10+30",
+    "hp": "7d10+24",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 8,
@@ -4881,7 +4881,7 @@
       160,
       220
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -4938,7 +4938,7 @@
       60,
       100
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -4985,7 +4985,7 @@
       180,
       100
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -5100,7 +5100,7 @@
       200,
       160
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -5155,7 +5155,7 @@
       20,
       80
     ],
-    "hp": "11d8+7",
+    "hp": "9d8+6",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 9,
@@ -5259,7 +5259,7 @@
       140,
       60
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -5317,7 +5317,7 @@
       80,
       40
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -5371,7 +5371,7 @@
       240,
       160
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -5426,7 +5426,7 @@
       120,
       160
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -5484,7 +5484,7 @@
       30,
       80
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -5538,7 +5538,7 @@
       200,
       30
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -5643,7 +5643,7 @@
       200,
       80
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 9,
@@ -5699,7 +5699,7 @@
       80,
       40
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -5755,7 +5755,7 @@
       180,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -5920,7 +5920,7 @@
       160,
       220
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -5975,7 +5975,7 @@
       60,
       100
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -6026,7 +6026,7 @@
       200,
       140
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -6083,7 +6083,7 @@
       220,
       255
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -6141,7 +6141,7 @@
       100,
       60
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -6252,7 +6252,7 @@
       120,
       160
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -6307,7 +6307,7 @@
       80,
       160
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -6362,7 +6362,7 @@
       220,
       180
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -6463,7 +6463,7 @@
       40,
       40
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -6523,7 +6523,7 @@
       50,
       80
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -6580,7 +6580,7 @@
       60,
       20
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -6636,7 +6636,7 @@
       100,
       160
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -6692,7 +6692,7 @@
       160,
       40
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 9,
@@ -6750,7 +6750,7 @@
       80,
       60
     ],
-    "hp": "4d8",
+    "hp": "3d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 14,
@@ -6806,7 +6806,7 @@
       100,
       60
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -6859,7 +6859,7 @@
       120,
       60
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 10,
@@ -6919,7 +6919,7 @@
       60,
       160
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -6979,7 +6979,7 @@
       140,
       100
     ],
-    "hp": "11d8+7",
+    "hp": "9d8+6",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -7037,7 +7037,7 @@
       160,
       100
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -7093,7 +7093,7 @@
       80,
       200
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -7146,7 +7146,7 @@
       180,
       60
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -7198,7 +7198,7 @@
       160,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -7250,7 +7250,7 @@
       30,
       60
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 11,
@@ -7302,7 +7302,7 @@
       60,
       180
     ],
-    "hp": "10d8+6",
+    "hp": "13d8+8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 6,
@@ -7359,7 +7359,7 @@
       50,
       20
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -7421,7 +7421,7 @@
       80,
       80
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -7482,7 +7482,7 @@
       80,
       60
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -7545,7 +7545,7 @@
       120,
       60
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -7600,7 +7600,7 @@
       60,
       160
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -7662,7 +7662,7 @@
       140,
       60
     ],
-    "hp": "11d8+10",
+    "hp": "19d8+17",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
@@ -7841,7 +7841,7 @@
       10,
       60
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 15,
@@ -7893,7 +7893,7 @@
       100,
       180
     ],
-    "hp": "4d8",
+    "hp": "3d8",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 14,
@@ -7955,7 +7955,7 @@
       60,
       140
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -8018,7 +8018,7 @@
       100,
       80
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -8127,7 +8127,7 @@
       160,
       160
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -8186,7 +8186,7 @@
       80,
       60
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -8245,7 +8245,7 @@
       60,
       40
     ],
-    "hp": "7d8+6",
+    "hp": "6d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -8306,7 +8306,7 @@
       230,
       180
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -8368,7 +8368,7 @@
       160,
       60
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -8527,7 +8527,7 @@
       40,
       0
     ],
-    "hp": "15d10+38",
+    "hp": "47d10+119",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -4,
@@ -8602,7 +8602,7 @@
       130,
       120
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -8658,7 +8658,7 @@
       140,
       100
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -8710,7 +8710,7 @@
       100,
       60
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 12,
@@ -8757,7 +8757,7 @@
       180,
       200
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -8813,7 +8813,7 @@
       120,
       180
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 9,
@@ -8908,7 +8908,7 @@
       180,
       60
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 11,
@@ -8961,7 +8961,7 @@
       40,
       120
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -9015,7 +9015,7 @@
       120,
       80
     ],
-    "hp": "8d8+7",
+    "hp": "6d8+6",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
@@ -9067,7 +9067,7 @@
       10,
       20
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -9114,7 +9114,7 @@
       150,
       150
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 13,
@@ -9162,7 +9162,7 @@
       160,
       60
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -9254,7 +9254,7 @@
       60,
       40
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 6,
     "ai_pattern": "ambush",
     "thac0": 13,
@@ -9301,7 +9301,7 @@
       80,
       60
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 6,
     "ai_pattern": "ambush",
     "thac0": 11,
@@ -9349,7 +9349,7 @@
       110,
       100
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 9,
@@ -9404,7 +9404,7 @@
       180,
       80
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -9504,7 +9504,7 @@
       120,
       60
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 11,
@@ -9556,7 +9556,7 @@
       130,
       100
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -9609,7 +9609,7 @@
       120,
       40
     ],
-    "hp": "4d8+6",
+    "hp": "3d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -9656,7 +9656,7 @@
       160,
       80
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -9705,7 +9705,7 @@
       200,
       100
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -9973,7 +9973,7 @@
       80,
       180
     ],
-    "hp": "10d8+9",
+    "hp": "13d8+12",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 5,
@@ -10033,7 +10033,7 @@
       100,
       60
     ],
-    "hp": "8d8+7",
+    "hp": "6d8+6",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
@@ -10192,7 +10192,7 @@
       80,
       140
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 11,
@@ -10303,7 +10303,7 @@
       140,
       120
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -10352,7 +10352,7 @@
       60,
       180
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 11,
@@ -10400,7 +10400,7 @@
       140,
       60
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -10750,7 +10750,7 @@
       150,
       80
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 4,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -10913,7 +10913,7 @@
       180,
       120
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -11082,7 +11082,7 @@
       170,
       200
     ],
-    "hp": "4d8",
+    "hp": "3d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 14,
@@ -11141,7 +11141,7 @@
       140,
       200
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -11415,7 +11415,7 @@
       40,
       70
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -11585,7 +11585,7 @@
       10,
       10
     ],
-    "hp": "4d8",
+    "hp": "3d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 14,
@@ -11646,7 +11646,7 @@
       50,
       50
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -11706,7 +11706,7 @@
       180,
       160
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -11767,7 +11767,7 @@
       40,
       40
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -11827,7 +11827,7 @@
       200,
       80
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 2,
@@ -11890,7 +11890,7 @@
       180,
       120
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -11950,7 +11950,7 @@
       80,
       140
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -12013,7 +12013,7 @@
       140,
       180
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -12074,7 +12074,7 @@
       60,
       120
     ],
-    "hp": "8d8+7",
+    "hp": "6d8+6",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 8,
@@ -12145,7 +12145,7 @@
       210,
       230
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 10,
@@ -12208,7 +12208,7 @@
       120,
       100
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -12268,7 +12268,7 @@
       110,
       90
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 15,
@@ -12380,7 +12380,7 @@
       150,
       130
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 15,
@@ -12439,7 +12439,7 @@
       130,
       120
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 15,
@@ -12499,7 +12499,7 @@
       120,
       110
     ],
-    "hp": "4d8",
+    "hp": "3d8",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 14,
@@ -12558,7 +12558,7 @@
       175,
       160
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -12619,7 +12619,7 @@
       150,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -12729,7 +12729,7 @@
       20,
       40
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -12791,7 +12791,7 @@
       20,
       50
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -12852,7 +12852,7 @@
       10,
       60
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -12972,7 +12972,7 @@
       120,
       120
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -13031,7 +13031,7 @@
       100,
       60
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -13090,7 +13090,7 @@
       60,
       80
     ],
-    "hp": "8d8+4",
+    "hp": "6d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -13150,7 +13150,7 @@
       195,
       175
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -13217,7 +13217,7 @@
       220,
       200
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -13277,7 +13277,7 @@
       100,
       80
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -13348,7 +13348,7 @@
       80,
       100
     ],
-    "hp": "11d10+32",
+    "hp": "29d10+83",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -13422,7 +13422,7 @@
       200,
       220
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 14,
     "ai_pattern": "cowardly",
     "thac0": 12,
@@ -13473,7 +13473,7 @@
       20,
       60
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -13533,7 +13533,7 @@
       0,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -13594,7 +13594,7 @@
       50,
       100
     ],
-    "hp": "10d8+6",
+    "hp": "13d8+8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 6,
@@ -13655,7 +13655,7 @@
       10,
       40
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -13922,7 +13922,7 @@
       100,
       200
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -14173,7 +14173,7 @@
       180,
       80
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -14223,7 +14223,7 @@
       30,
       160
     ],
-    "hp": "7d8+6",
+    "hp": "6d8+5",
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 9,
@@ -14384,7 +14384,7 @@
       20,
       20
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -14488,7 +14488,7 @@
       160,
       80
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -14540,7 +14540,7 @@
       120,
       80
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -14592,7 +14592,7 @@
       130,
       60
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -14838,7 +14838,7 @@
       180,
       60
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -14888,7 +14888,7 @@
       100,
       60
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -14938,7 +14938,7 @@
       160,
       160
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -14988,7 +14988,7 @@
       150,
       100
     ],
-    "hp": "7d8+5",
+    "hp": "6d8+4",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -15042,7 +15042,7 @@
       160,
       80
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -15106,7 +15106,7 @@
       110,
       70
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -15212,7 +15212,7 @@
       140,
       40
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -15274,7 +15274,7 @@
       220,
       255
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 11,
@@ -15373,7 +15373,7 @@
       30,
       60
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -15480,7 +15480,7 @@
       160,
       80
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -15530,7 +15530,7 @@
       200,
       100
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -15641,7 +15641,7 @@
       40,
       60
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -15693,7 +15693,7 @@
       160,
       255
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -15794,7 +15794,7 @@
       30,
       30
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -15893,7 +15893,7 @@
       160,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -15948,7 +15948,7 @@
       100,
       160
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -16003,7 +16003,7 @@
       60,
       100
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -16066,7 +16066,7 @@
       20,
       80
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -16177,7 +16177,7 @@
       180,
       60
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
@@ -16394,7 +16394,7 @@
       120,
       220
     ],
-    "hp": "8d10+22",
+    "hp": "6d10+17",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 14,
@@ -16453,7 +16453,7 @@
       220,
       255
     ],
-    "hp": "7d10+18",
+    "hp": "6d10+14",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -16511,7 +16511,7 @@
       220,
       255
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -16568,7 +16568,7 @@
       60,
       0
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 6,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -16627,7 +16627,7 @@
       0,
       40
     ],
-    "hp": "11d8+10",
+    "hp": "19d8+17",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 4,
@@ -16687,7 +16687,7 @@
       80,
       30
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -16745,7 +16745,7 @@
       120,
       20
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 12,
@@ -16897,7 +16897,7 @@
       60,
       200
     ],
-    "hp": "5d8+4",
+    "hp": "4d8+3",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -16961,7 +16961,7 @@
       200,
       60
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 15,
@@ -17124,7 +17124,7 @@
       60,
       120
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -17181,7 +17181,7 @@
       20,
       60
     ],
-    "hp": "7d8+6",
+    "hp": "6d8+5",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -17240,7 +17240,7 @@
       180,
       80
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -17292,7 +17292,7 @@
       40,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -17350,7 +17350,7 @@
       120,
       80
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -17456,7 +17456,7 @@
       100,
       180
     ],
-    "hp": "10d8+9",
+    "hp": "13d8+12",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -17576,7 +17576,7 @@
       160,
       60
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -17626,7 +17626,7 @@
       130,
       50
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -17676,7 +17676,7 @@
       80,
       20
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -17726,7 +17726,7 @@
       110,
       60
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -17771,7 +17771,7 @@
       80,
       30
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -17821,7 +17821,7 @@
       80,
       30
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -17863,7 +17863,7 @@
       60,
       20
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -17913,7 +17913,7 @@
       120,
       60
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
@@ -18014,7 +18014,7 @@
       160,
       100
     ],
-    "hp": "4d8+1",
+    "hp": "3d8+1",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -18064,7 +18064,7 @@
       160,
       220
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
@@ -18122,7 +18122,7 @@
       130,
       80
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -18169,7 +18169,7 @@
       130,
       130
     ],
-    "hp": "11d10+30",
+    "hp": "9d10+24",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -18225,7 +18225,7 @@
       200,
       255
     ],
-    "hp": "8d8+7",
+    "hp": "6d8+6",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
@@ -18277,7 +18277,7 @@
       80,
       200
     ],
-    "hp": "6d10+30",
+    "hp": "10d10+52",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -18333,7 +18333,7 @@
       130,
       90
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -18380,7 +18380,7 @@
       100,
       60
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
@@ -18427,7 +18427,7 @@
       210,
       240
     ],
-    "hp": "7d8+5",
+    "hp": "6d8+4",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -18482,7 +18482,7 @@
       40,
       100
     ],
-    "hp": "4d8-2",
+    "hp": "3d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -18542,7 +18542,7 @@
       80,
       180
     ],
-    "hp": "4d8+6",
+    "hp": "3d8+5",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -18603,7 +18603,7 @@
       60,
       120
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -18662,7 +18662,7 @@
       80,
       50
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -18712,7 +18712,7 @@
       40,
       40
     ],
-    "hp": "5d8+6",
+    "hp": "4d8+5",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 10,
@@ -18779,7 +18779,7 @@
       50,
       20
     ],
-    "hp": "12d10+30",
+    "hp": "10d10+24",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 8,
@@ -18851,7 +18851,7 @@
       80,
       220
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -18926,7 +18926,7 @@
       30,
       10
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 1,
@@ -19003,7 +19003,7 @@
       100,
       40
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 11,
@@ -19057,7 +19057,7 @@
       180,
       240
     ],
-    "hp": "5d8-2",
+    "hp": "4d8-2",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 11,
@@ -19112,7 +19112,7 @@
       160,
       60
     ],
-    "hp": "3d8",
+    "hp": "2d8",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
@@ -19165,7 +19165,7 @@
       140,
       50
     ],
-    "hp": "8d8+5",
+    "hp": "6d8+4",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -19217,7 +19217,7 @@
       200,
       120
     ],
-    "hp": "5d8+2",
+    "hp": "4d8+2",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
@@ -19281,7 +19281,7 @@
       30,
       70
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -19339,7 +19339,7 @@
       0,
       80
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -19395,7 +19395,7 @@
       150,
       40
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
@@ -19454,7 +19454,7 @@
       140,
       120
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -19512,7 +19512,7 @@
       100,
       60
     ],
-    "hp": "8d10+26",
+    "hp": "14d10+45",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -19568,7 +19568,7 @@
       60,
       30
     ],
-    "hp": "9d10+24",
+    "hp": "16d10+42",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -19624,7 +19624,7 @@
       205,
       190
     ],
-    "hp": "9d10+26",
+    "hp": "23d10+67",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -19679,7 +19679,7 @@
       130,
       210
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -19738,7 +19738,7 @@
       180,
       80
     ],
-    "hp": "10d10+29",
+    "hp": "26d10+75",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 0,
@@ -19791,7 +19791,7 @@
       160,
       50
     ],
-    "hp": "11d10+28",
+    "hp": "29d10+73",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -19847,7 +19847,7 @@
       70,
       180
     ],
-    "hp": "12d10+30",
+    "hp": "31d10+78",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -1,
@@ -19909,7 +19909,7 @@
       0,
       60
     ],
-    "hp": "13d10+32",
+    "hp": "41d10+100",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
@@ -19965,7 +19965,7 @@
       180,
       80
     ],
-    "hp": "14d10+38",
+    "hp": "44d10+119",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -3,
@@ -20049,7 +20049,7 @@
       80,
       30
     ],
-    "hp": "15d10+42",
+    "hp": "47d10+132",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -4,
@@ -20113,7 +20113,7 @@
       20,
       20
     ],
-    "hp": "16d10+46",
+    "hp": "57d10+165",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -5,
@@ -20178,7 +20178,7 @@
       90,
       20
     ],
-    "hp": "18d10+48",
+    "hp": "65d10+172",
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -6,
@@ -20255,7 +20255,7 @@
       180,
       240
     ],
-    "hp": "19d10+50",
+    "hp": "68d10+179",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -20324,7 +20324,7 @@
       0,
       40
     ],
-    "hp": "22d10+55",
+    "hp": "104d10+260",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -20387,7 +20387,7 @@
       180,
       100
     ],
-    "hp": "24d10+61",
+    "hp": "114d10+289",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -20452,7 +20452,7 @@
       60,
       120
     ],
-    "hp": "17d12+98",
+    "hp": "85d12+492",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -20516,7 +20516,7 @@
       80,
       50
     ],
-    "hp": "18d10+45",
+    "hp": "23d10+58",
     "speed": 8,
     "ai_pattern": "hit_and_run",
     "thac0": 7,
@@ -20570,7 +20570,7 @@
       180,
       80
     ],
-    "hp": "20d12+119",
+    "hp": "52d12+309",
     "speed": 10,
     "ai_pattern": "dancer",
     "thac0": 2,
@@ -20634,7 +20634,7 @@
       100,
       20
     ],
-    "hp": "35d12+194",
+    "hp": "125d12+695",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -4,
@@ -20701,7 +20701,7 @@
       200,
       240
     ],
-    "hp": "60d12+332",
+    "hp": "120d12+664",
     "speed": 12,
     "ai_pattern": "fenrir_rage",
     "thac0": -10,
@@ -20762,7 +20762,7 @@
       60,
       220
     ],
-    "hp": "160d12+1100",
+    "hp": "320d12+2200",
     "regeneration": 15,
     "chain_break_on_hit": 0.35,
     "is_boss": true,
@@ -20856,7 +20856,7 @@
       140,
       80
     ],
-    "hp": "3d8-2",
+    "hp": "2d8-2",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -20914,7 +20914,7 @@
       160,
       100
     ],
-    "hp": "8d8+4",
+    "hp": "10d8+5",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -20966,7 +20966,7 @@
       100,
       160
     ],
-    "hp": "8d8+7",
+    "hp": "10d8+9",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
@@ -21026,7 +21026,7 @@
       140,
       80
     ],
-    "hp": "9d8+8",
+    "hp": "16d8+14",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 7,
@@ -21085,7 +21085,7 @@
       60,
       120
     ],
-    "hp": "10d8+9",
+    "hp": "17d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -21146,7 +21146,7 @@
       100,
       40
     ],
-    "hp": "15d10+30",
+    "hp": "39d10+78",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 4,
@@ -21204,7 +21204,7 @@
       180,
       100
     ],
-    "hp": "18d10+40",
+    "hp": "47d10+104",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -21260,7 +21260,7 @@
       60,
       180
     ],
-    "hp": "15d10+30",
+    "hp": "47d10+94",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -21321,7 +21321,7 @@
       180,
       80
     ],
-    "hp": "11d10+32",
+    "hp": "35d10+100",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -1,
@@ -21377,7 +21377,7 @@
       120,
       80
     ],
-    "hp": "13d10+32",
+    "hp": "47d10+115",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
@@ -21447,7 +21447,7 @@
       160,
       100
     ],
-    "hp": "15d10+38",
+    "hp": "54d10+136",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -4,
@@ -21513,7 +21513,7 @@
       100,
       40
     ],
-    "hp": "16d10+43",
+    "hp": "76d10+203",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -5,
@@ -21573,7 +21573,7 @@
       180,
       80
     ],
-    "hp": "18d10+48",
+    "hp": "85d10+227",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -6,
@@ -21636,7 +21636,7 @@
       100,
       200
     ],
-    "hp": "20d10+53",
+    "hp": "100d10+266",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -21694,7 +21694,7 @@
       60,
       60
     ],
-    "hp": "21d10+56",
+    "hp": "105d10+281",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -21765,7 +21765,7 @@
       220,
       255
     ],
-    "hp": "24d10+61",
+    "hp": "121d10+306",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -21829,7 +21829,7 @@
       180,
       220
     ],
-    "hp": "18d12+102",
+    "hp": "111d12+628",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -11,
@@ -21893,7 +21893,7 @@
       180,
       40
     ],
-    "hp": "19d12+106",
+    "hp": "38d12+212",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -21969,7 +21969,7 @@
       200,
       80
     ],
-    "hp": "20d12+118",
+    "hp": "40d12+236",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -13,
@@ -22035,7 +22035,7 @@
       80,
       40
     ],
-    "hp": "23d10+58",
+    "hp": "46d10+116",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -9,
@@ -22096,7 +22096,7 @@
       160,
       50
     ],
-    "hp": "24d10+61",
+    "hp": "48d10+122",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -10,
@@ -22159,7 +22159,7 @@
       160,
       80
     ],
-    "hp": "16d12+99",
+    "hp": "32d12+198",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -22222,7 +22222,7 @@
       40,
       40
     ],
-    "hp": "17d12+104",
+    "hp": "34d12+208",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -22290,7 +22290,7 @@
       60,
       90
     ],
-    "hp": "18d12+108",
+    "hp": "36d12+216",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -22353,7 +22353,7 @@
       110,
       50
     ],
-    "hp": "19d12+112",
+    "hp": "38d12+224",
     "speed": 8,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -22415,7 +22415,7 @@
       180,
       210
     ],
-    "hp": "21d12+124",
+    "hp": "42d12+248",
     "speed": 12,
     "ai_pattern": "dancer",
     "thac0": -13,
@@ -22481,7 +22481,7 @@
       80,
       40
     ],
-    "hp": "3d8",
+    "hp": "6d8",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -22534,7 +22534,7 @@
       255,
       200
     ],
-    "hp": "1d8",
+    "hp": "2d8",
     "speed": 14,
     "ai_pattern": "seek_locust",
     "thac0": -10,
@@ -22577,7 +22577,7 @@
       140,
       80
     ],
-    "hp": "10d8+9",
+    "hp": "17d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -22629,7 +22629,7 @@
       215,
       0
     ],
-    "hp": "17d12+100",
+    "hp": "30d12+175",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -22688,7 +22688,7 @@
       220,
       200
     ],
-    "hp": "11d8+8",
+    "hp": "19d8+14",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -22736,7 +22736,7 @@
       110,
       100
     ],
-    "hp": "11d8+6",
+    "hp": "19d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -22783,7 +22783,7 @@
       140,
       60
     ],
-    "hp": "12d8+6",
+    "hp": "21d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
@@ -22834,7 +22834,7 @@
       160,
       40
     ],
-    "hp": "12d8+6",
+    "hp": "21d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
@@ -22881,7 +22881,7 @@
       100,
       60
     ],
-    "hp": "8d10+20",
+    "hp": "14d10+35",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
@@ -22929,7 +22929,7 @@
       160,
       80
     ],
-    "hp": "11d8+10",
+    "hp": "19d8+17",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 4,
@@ -22978,7 +22978,7 @@
       200,
       40
     ],
-    "hp": "11d8+6",
+    "hp": "19d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -23029,7 +23029,7 @@
       50,
       20
     ],
-    "hp": "10d10+25",
+    "hp": "26d10+65",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -23081,7 +23081,7 @@
       180,
       200
     ],
-    "hp": "10d10+25",
+    "hp": "26d10+65",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -23130,7 +23130,7 @@
       120,
       20
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -23181,7 +23181,7 @@
       160,
       40
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -23240,7 +23240,7 @@
       240,
       220
     ],
-    "hp": "10d10+26",
+    "hp": "26d10+67",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -23295,7 +23295,7 @@
       40,
       60
     ],
-    "hp": "10d10+29",
+    "hp": "26d10+75",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 0,
@@ -23347,7 +23347,7 @@
       255,
       80
     ],
-    "hp": "9d10+26",
+    "hp": "23d10+67",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -23397,7 +23397,7 @@
       60,
       180
     ],
-    "hp": "10d10+25",
+    "hp": "26d10+65",
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 1,
@@ -23454,7 +23454,7 @@
       140,
       60
     ],
-    "hp": "10d10+25",
+    "hp": "26d10+65",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 1,
@@ -23503,7 +23503,7 @@
       180,
       60
     ],
-    "hp": "13d10+32",
+    "hp": "41d10+100",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
@@ -23557,7 +23557,7 @@
       160,
       220
     ],
-    "hp": "13d10+38",
+    "hp": "41d10+119",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -23608,7 +23608,7 @@
       120,
       40
     ],
-    "hp": "13d10+38",
+    "hp": "41d10+119",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -23659,7 +23659,7 @@
       20,
       40
     ],
-    "hp": "13d10+32",
+    "hp": "41d10+100",
     "speed": 10,
     "ai_pattern": "hit_and_run",
     "thac0": -2,
@@ -23714,7 +23714,7 @@
       40,
       120
     ],
-    "hp": "13d10+38",
+    "hp": "41d10+119",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -23772,7 +23772,7 @@
       120,
       220
     ],
-    "hp": "14d10+35",
+    "hp": "44d10+110",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -23824,7 +23824,7 @@
       60,
       60
     ],
-    "hp": "13d10+32",
+    "hp": "41d10+100",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
@@ -23878,7 +23878,7 @@
       180,
       100
     ],
-    "hp": "13d10+36",
+    "hp": "41d10+113",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -23930,7 +23930,7 @@
       80,
       200
     ],
-    "hp": "14d10+38",
+    "hp": "44d10+119",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -3,
@@ -23989,7 +23989,7 @@
       100,
       40
     ],
-    "hp": "12d10+36",
+    "hp": "38d10+113",
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": -2,
@@ -24044,7 +24044,7 @@
       200,
       180
     ],
-    "hp": "12d10+36",
+    "hp": "38d10+113",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
@@ -24099,7 +24099,7 @@
       140,
       200
     ],
-    "hp": "14d10+38",
+    "hp": "44d10+119",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -3,
@@ -24152,7 +24152,7 @@
       60,
       40
     ],
-    "hp": "13d10+38",
+    "hp": "41d10+119",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -24205,7 +24205,7 @@
       180,
       180
     ],
-    "hp": "13d10+38",
+    "hp": "41d10+119",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
@@ -24260,7 +24260,7 @@
       10,
       30
     ],
-    "hp": "19d10+48",
+    "hp": "68d10+172",
     "speed": 10,
     "ai_pattern": "hit_and_run",
     "thac0": -7,
@@ -24317,7 +24317,7 @@
       120,
       220
     ],
-    "hp": "19d10+48",
+    "hp": "68d10+172",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -24371,7 +24371,7 @@
       200,
       60
     ],
-    "hp": "19d10+48",
+    "hp": "68d10+172",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -24421,7 +24421,7 @@
       200,
       255
     ],
-    "hp": "19d10+54",
+    "hp": "90d10+256",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -24471,7 +24471,7 @@
       40,
       20
     ],
-    "hp": "19d10+54",
+    "hp": "90d10+256",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -24530,7 +24530,7 @@
       120,
       80
     ],
-    "hp": "18d10+48",
+    "hp": "65d10+172",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -6,
@@ -24585,7 +24585,7 @@
       160,
       220
     ],
-    "hp": "19d10+54",
+    "hp": "90d10+256",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -7,
@@ -24641,7 +24641,7 @@
       180,
       80
     ],
-    "hp": "19d10+48",
+    "hp": "68d10+172",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -24704,7 +24704,7 @@
       180,
       220
     ],
-    "hp": "19d10+54",
+    "hp": "90d10+256",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
@@ -24759,7 +24759,7 @@
       200,
       160
     ],
-    "hp": "21d10+52",
+    "hp": "99d10+246",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -24812,7 +24812,7 @@
       20,
       80
     ],
-    "hp": "16d10+50",
+    "hp": "57d10+179",
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": -6,
@@ -24868,7 +24868,7 @@
       180,
       60
     ],
-    "hp": "18d10+48",
+    "hp": "65d10+172",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -6,
@@ -24919,7 +24919,7 @@
       40,
       80
     ],
-    "hp": "21d10+52",
+    "hp": "99d10+246",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -24975,7 +24975,7 @@
       60,
       220
     ],
-    "hp": "19d12+106",
+    "hp": "95d12+532",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
@@ -25040,7 +25040,7 @@
       180,
       255
     ],
-    "hp": "19d12+112",
+    "hp": "95d12+563",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
@@ -25105,7 +25105,7 @@
       220,
       180
     ],
-    "hp": "19d12+106",
+    "hp": "95d12+532",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25162,7 +25162,7 @@
       20,
       120
     ],
-    "hp": "19d12+112",
+    "hp": "95d12+563",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
@@ -25219,7 +25219,7 @@
       60,
       20
     ],
-    "hp": "19d12+106",
+    "hp": "95d12+532",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25280,7 +25280,7 @@
       255,
       200
     ],
-    "hp": "20d12+113",
+    "hp": "123d12+696",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25334,7 +25334,7 @@
       60,
       100
     ],
-    "hp": "19d12+112",
+    "hp": "95d12+563",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25392,7 +25392,7 @@
       140,
       180
     ],
-    "hp": "19d12+106",
+    "hp": "95d12+532",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25448,7 +25448,7 @@
       40,
       60
     ],
-    "hp": "20d12+113",
+    "hp": "123d12+696",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
@@ -25508,7 +25508,7 @@
       140,
       140
     ],
-    "hp": "19d12+106",
+    "hp": "95d12+532",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25564,7 +25564,7 @@
       80,
       40
     ],
-    "hp": "18d10+45",
+    "hp": "111d10+277",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -25619,7 +25619,7 @@
       30,
       30
     ],
-    "hp": "19d12+112",
+    "hp": "117d12+690",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -25678,7 +25678,7 @@
       30,
       90
     ],
-    "hp": "20d12+113",
+    "hp": "40d12+226",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
@@ -25735,7 +25735,7 @@
       80,
       60
     ],
-    "hp": "19d10+50",
+    "hp": "38d10+100",
     "speed": 11,
     "ai_pattern": "aggressive",
     "thac0": -9,
@@ -25792,7 +25792,7 @@
       140,
       80
     ],
-    "hp": "19d10+54",
+    "hp": "38d10+108",
     "speed": 9,
     "ai_pattern": "aggressive",
     "thac0": -9,
@@ -25850,7 +25850,7 @@
       100,
       130
     ],
-    "hp": "22d12+124",
+    "hp": "44d12+248",
     "speed": 13,
     "ai_pattern": "aggressive",
     "thac0": -13,
@@ -25907,7 +25907,7 @@
       70
     ],
     "ai_pattern": "ranged",
-    "hp": "4d6+3",
+    "hp": "3d6+2",
     "speed": 10,
     "thac0": 13,
     "attacks": [
@@ -25963,7 +25963,7 @@
       60
     ],
     "ai_pattern": "healer",
-    "hp": "4d8+3",
+    "hp": "5d8+4",
     "speed": 10,
     "thac0": 12,
     "attacks": [
@@ -26018,7 +26018,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "6d8+4",
+    "hp": "10d8+7",
     "speed": 12,
     "thac0": 10,
     "attacks": [
@@ -26068,7 +26068,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "8d8+8",
+    "hp": "21d8+21",
     "speed": 10,
     "thac0": 8,
     "attacks": [
@@ -26121,7 +26121,7 @@
       20
     ],
     "ai_pattern": "aggressive",
-    "hp": "13d10+22",
+    "hp": "41d10+69",
     "speed": 10,
     "thac0": 4,
     "attacks": [
@@ -26178,7 +26178,7 @@
       70
     ],
     "ai_pattern": "ranged",
-    "hp": "4d6+3",
+    "hp": "3d6+2",
     "speed": 11,
     "thac0": 13,
     "attacks": [
@@ -26234,7 +26234,7 @@
       50
     ],
     "ai_pattern": "healer",
-    "hp": "6d8+4",
+    "hp": "10d8+7",
     "speed": 10,
     "thac0": 10,
     "attacks": [
@@ -26289,7 +26289,7 @@
       60
     ],
     "ai_pattern": "aggressive",
-    "hp": "9d8+10",
+    "hp": "23d8+26",
     "speed": 10,
     "thac0": 6,
     "attacks": [
@@ -26342,7 +26342,7 @@
       200
     ],
     "ai_pattern": "aggressive",
-    "hp": "14d10+23",
+    "hp": "50d10+82",
     "speed": 13,
     "thac0": 3,
     "attacks": [
@@ -26401,7 +26401,7 @@
       200
     ],
     "ai_pattern": "summoner",
-    "hp": "5d8+4",
+    "hp": "6d8+5",
     "speed": 10,
     "thac0": 11,
     "attacks": [
@@ -26465,7 +26465,7 @@
       160
     ],
     "ai_pattern": "aggressive",
-    "hp": "8d8+6",
+    "hp": "21d8+16",
     "speed": 10,
     "thac0": 7,
     "attacks": [
@@ -26521,7 +26521,7 @@
       200
     ],
     "ai_pattern": "summoner",
-    "hp": "13d10+22",
+    "hp": "41d10+69",
     "speed": 10,
     "thac0": 4,
     "attacks": [
@@ -26589,7 +26589,7 @@
       240
     ],
     "ai_pattern": "summoner",
-    "hp": "16d10+29",
+    "hp": "76d10+137",
     "speed": 11,
     "thac0": 1,
     "attacks": [
@@ -26654,7 +26654,7 @@
       80
     ],
     "ai_pattern": "ambush",
-    "hp": "3d6+2",
+    "hp": "2d6+2",
     "speed": 12,
     "thac0": 14,
     "attacks": [
@@ -26705,7 +26705,7 @@
       40
     ],
     "ai_pattern": "aggressive",
-    "hp": "5d8+4",
+    "hp": "6d8+5",
     "speed": 10,
     "thac0": 11,
     "attacks": [
@@ -26760,7 +26760,7 @@
       60
     ],
     "ai_pattern": "aggressive",
-    "hp": "7d8+5",
+    "hp": "12d8+9",
     "speed": 12,
     "thac0": 9,
     "attacks": [
@@ -26814,7 +26814,7 @@
       100
     ],
     "ai_pattern": "ranged",
-    "hp": "3d8+2",
+    "hp": "2d8+2",
     "speed": 11,
     "thac0": 14,
     "attacks": [
@@ -26870,7 +26870,7 @@
       40
     ],
     "ai_pattern": "aggressive",
-    "hp": "6d8+6",
+    "hp": "8d8+8",
     "speed": 12,
     "thac0": 10,
     "attacks": [
@@ -26928,7 +26928,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "10d8+10",
+    "hp": "26d8+26",
     "speed": 11,
     "thac0": 6,
     "attacks": [
@@ -26987,7 +26987,7 @@
       80
     ],
     "ai_pattern": "aggressive",
-    "hp": "2d8+3",
+    "hp": "2d8+2",
     "speed": 10,
     "thac0": 16,
     "attacks": [
@@ -27037,7 +27037,7 @@
       90
     ],
     "ai_pattern": "ranged",
-    "hp": "3d6+3",
+    "hp": "2d6+2",
     "speed": 10,
     "thac0": 14,
     "attacks": [
@@ -27095,7 +27095,7 @@
       120
     ],
     "ai_pattern": "ambush",
-    "hp": "4d6+3",
+    "hp": "3d6+2",
     "speed": 13,
     "thac0": 12,
     "attacks": [
@@ -27146,7 +27146,7 @@
       50
     ],
     "ai_pattern": "aggressive",
-    "hp": "8d10+12",
+    "hp": "21d10+31",
     "speed": 10,
     "thac0": 6,
     "attacks": [
@@ -27199,7 +27199,7 @@
       160
     ],
     "ai_pattern": "aggressive",
-    "hp": "3d6+2",
+    "hp": "2d6+2",
     "speed": 10,
     "thac0": 14,
     "attacks": [
@@ -27254,7 +27254,7 @@
       180
     ],
     "ai_pattern": "healer",
-    "hp": "4d8+3",
+    "hp": "5d8+4",
     "speed": 10,
     "thac0": 12,
     "attacks": [
@@ -27311,7 +27311,7 @@
       60
     ],
     "ai_pattern": "aggressive",
-    "hp": "7d8+8",
+    "hp": "12d8+14",
     "speed": 11,
     "thac0": 8,
     "attacks": [
@@ -27370,7 +27370,7 @@
       100
     ],
     "ai_pattern": "summoner",
-    "hp": "12d10+18",
+    "hp": "38d10+57",
     "speed": 10,
     "thac0": 5,
     "attacks": [
@@ -27435,7 +27435,7 @@
       60
     ],
     "ai_pattern": "aggressive",
-    "hp": "4d8+3",
+    "hp": "5d8+4",
     "speed": 11,
     "thac0": 13,
     "attacks": [
@@ -27496,7 +27496,7 @@
       200
     ],
     "ai_pattern": "aggressive",
-    "hp": "7d8+8",
+    "hp": "12d8+14",
     "speed": 10,
     "thac0": 8,
     "attacks": [
@@ -27551,7 +27551,7 @@
       150
     ],
     "ai_pattern": "aggressive",
-    "hp": "13d10+22",
+    "hp": "41d10+69",
     "speed": 10,
     "thac0": 4,
     "attacks": [
@@ -27614,7 +27614,7 @@
       70
     ],
     "ai_pattern": "aggressive",
-    "hp": "4d6+3",
+    "hp": "3d6+2",
     "speed": 13,
     "thac0": 13,
     "attacks": [
@@ -27672,7 +27672,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "6d8+4",
+    "hp": "10d8+7",
     "speed": 14,
     "thac0": 10,
     "attacks": [
@@ -27734,7 +27734,7 @@
       180
     ],
     "ai_pattern": "summoner",
-    "hp": "9d8+10",
+    "hp": "23d8+26",
     "speed": 13,
     "thac0": 6,
     "attacks": [
@@ -27796,7 +27796,7 @@
       60
     ],
     "ai_pattern": "summoner",
-    "hp": "5d8+4",
+    "hp": "6d8+5",
     "speed": 10,
     "thac0": 11,
     "attacks": [
@@ -27854,7 +27854,7 @@
       100
     ],
     "ai_pattern": "healer",
-    "hp": "8d8+8",
+    "hp": "21d8+21",
     "speed": 10,
     "thac0": 7,
     "attacks": [
@@ -27914,7 +27914,7 @@
       90
     ],
     "ai_pattern": "aggressive",
-    "hp": "7d8+8",
+    "hp": "12d8+14",
     "speed": 9,
     "thac0": 9,
     "attacks": [
@@ -27970,7 +27970,7 @@
       110
     ],
     "ai_pattern": "ranged",
-    "hp": "6d8+4",
+    "hp": "10d8+7",
     "speed": 10,
     "thac0": 10,
     "attacks": [
@@ -28030,7 +28030,7 @@
       60
     ],
     "ai_pattern": "sessile",
-    "hp": "8d8+10",
+    "hp": "14d8+17",
     "speed": 8,
     "thac0": 9,
     "attacks": [
@@ -28089,7 +28089,7 @@
       40
     ],
     "ai_pattern": "ambush",
-    "hp": "5d8+6",
+    "hp": "9d8+10",
     "speed": 12,
     "thac0": 9,
     "attacks": [
@@ -28145,7 +28145,7 @@
       70
     ],
     "ai_pattern": "aggressive",
-    "hp": "18d10+30",
+    "hp": "36d10+60",
     "speed": 10,
     "thac0": 5,
     "attacks": [
@@ -28213,7 +28213,7 @@
       90
     ],
     "ai_pattern": "ambush",
-    "hp": "7d10+22",
+    "hp": "18d10+57",
     "speed": 12,
     "thac0": 7,
     "attacks": [
@@ -28273,7 +28273,7 @@
       130
     ],
     "ai_pattern": "sessile",
-    "hp": "10d10+20",
+    "hp": "26d10+52",
     "speed": 8,
     "thac0": 7,
     "attacks": [
@@ -28333,7 +28333,7 @@
       60
     ],
     "ai_pattern": "healer",
-    "hp": "11d8+8",
+    "hp": "29d8+21",
     "speed": 10,
     "thac0": 7,
     "heal_amount_pct": 0.25,
@@ -28395,7 +28395,7 @@
       50
     ],
     "ai_pattern": "ambush",
-    "hp": "12d8+11",
+    "hp": "31d8+29",
     "speed": 9,
     "thac0": 7,
     "attacks": [
@@ -28455,7 +28455,7 @@
       30
     ],
     "ai_pattern": "mimic",
-    "hp": "10d8+10",
+    "hp": "31d8+31",
     "speed": 10,
     "thac0": 6,
     "attacks": [
@@ -28512,7 +28512,7 @@
       80
     ],
     "ai_pattern": "aggressive",
-    "hp": "11d8+12",
+    "hp": "35d8+38",
     "speed": 10,
     "thac0": 6,
     "attacks": [
@@ -28570,7 +28570,7 @@
       80
     ],
     "ai_pattern": "aggressive",
-    "hp": "11d8+10",
+    "hp": "35d8+31",
     "speed": 10,
     "thac0": 5,
     "attacks": [
@@ -28632,7 +28632,7 @@
       100
     ],
     "ai_pattern": "summoner",
-    "hp": "30d10+40",
+    "hp": "60d10+80",
     "speed": 9,
     "thac0": -3,
     "summon_kind": [
@@ -28711,7 +28711,7 @@
       140
     ],
     "ai_pattern": "aggressive",
-    "hp": "15d8+11",
+    "hp": "54d8+39",
     "speed": 12,
     "thac0": 3,
     "attacks": [
@@ -28773,7 +28773,7 @@
       110
     ],
     "ai_pattern": "healer",
-    "hp": "16d8+14",
+    "hp": "57d8+50",
     "speed": 9,
     "thac0": 3,
     "heal_amount_pct": 0.3,
@@ -28835,7 +28835,7 @@
       60
     ],
     "ai_pattern": "mimic",
-    "hp": "18d8+16",
+    "hp": "65d8+57",
     "speed": 10,
     "thac0": 2,
     "attacks": [
@@ -28895,7 +28895,7 @@
       230
     ],
     "ai_pattern": "aggressive",
-    "hp": "14d10+12",
+    "hp": "50d10+43",
     "speed": 10,
     "thac0": 1,
     "attacks": [
@@ -28956,7 +28956,7 @@
       130
     ],
     "ai_pattern": "summoner",
-    "hp": "12d8+10",
+    "hp": "43d8+36",
     "speed": 9,
     "thac0": 1,
     "summon_kind": [
@@ -29023,7 +29023,7 @@
       70
     ],
     "ai_pattern": "ranged",
-    "hp": "14d8+11",
+    "hp": "50d8+39",
     "speed": 12,
     "thac0": 1,
     "attacks": [
@@ -29090,7 +29090,7 @@
       50
     ],
     "ai_pattern": "aggressive",
-    "hp": "11d8+10",
+    "hp": "39d8+36",
     "speed": 10,
     "thac0": 1,
     "attacks": [
@@ -29151,7 +29151,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "16d10+16",
+    "hp": "76d10+76",
     "speed": 10,
     "thac0": 0,
     "attacks": [
@@ -29211,7 +29211,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "35d10+50",
+    "hp": "70d10+100",
     "speed": 11,
     "thac0": -10,
     "attacks": [
@@ -29286,7 +29286,7 @@
       200
     ],
     "ai_pattern": "aggressive",
-    "hp": "13d10+10",
+    "hp": "65d10+50",
     "speed": 11,
     "thac0": -2,
     "attacks": [
@@ -29349,7 +29349,7 @@
       40,
       80
     ],
-    "hp": "140d12+990",
+    "hp": "280d12+1980",
     "regeneration": 15,
     "speed": 10,
     "ai_pattern": "aggressive",
@@ -29449,7 +29449,7 @@
       30,
       50
     ],
-    "hp": "150d12+800",
+    "hp": "300d12+1600",
     "regeneration": 18,
     "speed": 10,
     "ai_pattern": "aggressive",
@@ -29546,7 +29546,7 @@
       80,
       20
     ],
-    "hp": "160d12+900",
+    "hp": "320d12+1800",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -29629,7 +29629,7 @@
       220,
       255
     ],
-    "hp": "140d12+700",
+    "hp": "280d12+1400",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -9,
@@ -29717,7 +29717,7 @@
       130,
       120
     ],
-    "hp": "130d12+600",
+    "hp": "260d12+1200",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,

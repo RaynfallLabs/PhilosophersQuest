@@ -11,8 +11,8 @@
   "spread": 14,
   "peak_weight": 6.0,
   "min_level": 30,
-  "damage_mult": 1.25,
-  "weight_mult": 0.5,
+  "damage_mult": 1.40,
+  "weight_mult": 0.55,
   "max_enchant": 6,
   "color": [
     180,
@@ -33,5 +33,5 @@
   "lore_descriptor": "moonlight-pale, weighs almost nothing",
   "unidentified_descriptor": "pale, almost weightless blade",
   "first_pickup_chronicle": "Mithril. Elven-make. It hums against my palm — and weighs less than a memory. The low-STR character's salvation: full armor for the weight of a tunic.",
-  "design_notes": "Peak F45 spread 14. The DEFINING property is weight_mult 0.50 — half-weight gear. A mithril full plate (65 lb base × 0.5) = 32.5 lb instead of 65 lb. damage_mult 1.25 — competitive but not best. max_enchant 3. No 'effective_against' — pure utility through weight. The low-STR character's late-game upgrade path. cite: per CURVE.md F50 anchor, prepared player carries ~50 lb of gear; mithril halves it to ~25 — opens room for quest items."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.40, weight_mult 0.55, no effective_against (T4 core). The DEFINING property is weight_mult 0.55 — near-half-weight gear. Pure utility through weight; the low-STR character's late-game upgrade path."
 }

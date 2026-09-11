@@ -78,18 +78,14 @@ class CombatMixin:
 
     _throw_crosses_tile = staticmethod(throw_crosses_tile)
 
-    # Weapon classes that can be thrown, with throw damage multiplier
+    # Weapon classes that can be thrown, with throw damage multiplier.
+    # Chain combat v2: trimmed to dagger + spear only, both at 1.0x. Other
+    # classes were not designed for throwing and the mechanic was more novelty
+    # than tactical option. The full former table lived here previously —
+    # see git history if resurrecting an old class as throwable.
     _THROWABLE_CLASSES = {
-        'dagger':      1.0,    # designed for throwing
-        'axe':         0.75,   # franciscas, hand axes
-        'spear':       0.9,    # javelin-like
-        'mace':        0.6,    # heavy but compact
-        'flail':       0.5,    # awkward spin
-        'net':         0.3,    # entangle, not damage
-        'morningstar': 0.5,    # awkward but heavy impact
-        'rapier':      0.4,    # fragile, not designed for it
-        'scimitar':    0.5,    # curved blade, poor aerodynamics
-        'sword':       0.4,    # not designed for throwing
+        'dagger': 1.0,   # designed for throwing
+        'spear':  1.0,   # javelin
     }
 
     # Break chance by material (higher = more fragile when thrown)
@@ -205,16 +201,30 @@ class CombatMixin:
         base = self._THROW_BREAK_CHANCE.get(material, self._THROW_BREAK_LEGENDARY)
         return base
 
-    def _get_throw_range(self) -> int:
-        """Throw range: 3 + (STR - 10) // 2, clamped to [3, 8]."""
-        return max(3, min(8, 3 + (self.player.STR - 10) // 2))
+    def _get_throw_range(self, weapon=None) -> int:
+        """Chain combat v2: throw range = base + (STR - 10) // 2, per weapon.
+        Dagger base 3 (cap 7). Spear base 4 (cap 8). Falls back to dagger
+        curve for any other throwable (in case a unique flags itself
+        throwable outside the standard classes)."""
+        if weapon is None:
+            weapon = self.player.weapon
+        wc = getattr(weapon, 'weapon_class', '') if weapon else ''
+        str_bonus = max(0, (self.player.STR - 10) // 2)
+        if wc == 'spear':
+            return max(4, min(8, 4 + str_bonus))
+        # dagger + any legacy throwable
+        return max(3, min(7, 3 + str_bonus))
 
     def _open_throw_targeting(self, potion):
-        """Enter targeting mode for throwing a potion."""
+        """Enter targeting mode for throwing an item (potion, weapon, artifact).
+        The arg name is legacy — the item is generic. Weapon items get their
+        class-specific throw range; potions/artifacts use the dagger-tier
+        fallback via `_get_throw_range(None)`."""
         self._throw_targeting = True
         self._melee_targeting = False
         self._throw_potion = potion
-        self._throw_reach = self._get_throw_range()
+        _thrower = potion if hasattr(potion, 'weapon_class') else None
+        self._throw_reach = self._get_throw_range(_thrower)
 
         px, py = self.player.x, self.player.y
         reach = self._throw_reach
@@ -1468,6 +1478,17 @@ class CombatMixin:
         ammo_type = weapon.requires_ammo
         ammo_item = None
 
+        # Chain combat v2: crossbow reload turn. After firing, the player is
+        # locked out for one turn while cranking the string back. Bow / sling
+        # have no reload cost.
+        if getattr(weapon, 'weapon_class', '') == 'crossbow':
+            if self.player.status_effects.get('reloading', 0) > 0:
+                self.add_message(
+                    "Still cranking the crossbow string -- one more turn to reload.",
+                    'warning'
+                )
+                return
+
         # Consume one ammo item (skip for infinite ammo weapons)
         if not getattr(weapon, 'infinite_ammo', False):
             ammo_item = next(
@@ -1511,6 +1532,17 @@ class CombatMixin:
                         ranged=True,
                         hp_pct_before=getattr(self, '_combat_hp_pct_before', 1.0),
                     )
+            # Chain combat v2: after firing the crossbow, spin up the reload
+            # cooldown. Value 2 → ticks to 1 at end-of-turn (blocks next fire),
+            # then to 0 the turn after (fire again). Chain-15 crossbow special
+            # sets `_crossbow_skip_reloads` to 3, letting the next 3 shots
+            # skip the reload lockout ("Skip next 3 reloads" per the design).
+            if getattr(weapon, 'weapon_class', '') == 'crossbow':
+                skip = int(getattr(self.player, '_crossbow_skip_reloads', 0) or 0)
+                if skip > 0:
+                    self.player._crossbow_skip_reloads = skip - 1
+                else:
+                    self.player.status_effects['reloading'] = 2
             self._advance_turn()
 
         # Tablet of Destinies: allow quiz reroll if not used this floor.
@@ -1653,10 +1685,9 @@ class CombatMixin:
                                 self.add_message(
                                     f"{_vic.name} crumples — the runesword has fed.",
                                     'danger')
-                if crit:
-                    msg = f"CRITICAL! Chain x{chain}! You strike the {monster.name} for {damage} damage!"
-                else:
-                    msg = f"Chain x{chain}! You strike the {monster.name} for {damage} damage!"
+                # Chain combat v2 (v2.14.0): crit retired. Chain IS the crit —
+                # the message just calls out the chain rung and the damage.
+                msg = f"Chain x{chain}! You strike the {monster.name} for {damage} damage!"
                 if stunned:
                     msg += f" The {monster.name} is stunned!"
                 if monster.status_effects.get('bleeding', 0) > 0:

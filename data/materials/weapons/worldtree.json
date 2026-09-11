@@ -9,8 +9,8 @@
   "spread": 8,
   "peak_weight": 2.0,
   "min_level": 80,
-  "damage_mult": 1.45,
-  "weight_mult": 0.9,
+  "damage_mult": 1.55,
+  "weight_mult": 0.90,
   "max_enchant": 7,
   "color": [
     240,
@@ -26,10 +26,7 @@
   "weaknesses": [],
   "vulnerabilities": [],
   "effective_against": [
-    "undead",
-    "demon",
-    "demon_minor",
-    "demon_major"
+    "demon"
   ],
   "special_properties": [
     "divine",
@@ -39,5 +36,5 @@
   "lore_descriptor": "wood from the axis of the world; grain that runs through it like rivers",
   "unidentified_descriptor": "blurred pale",
   "first_pickup_chronicle": "Worldtree wood. Yggdrasil. Ashvattha. The Tree of Knowledge. Pick the myth you like — the wood is the same. So is the price of cutting it.",
-  "design_notes": "F92 peak — wood equivalent of orichalcum/sunsteel. damage_mult 1.45, divine-tier. Triple-elemental resist, anti-undead/demon. Spreads narrow (8) — this is endgame material."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.55, weight_mult 0.90, effective_against demon (T5 core wood). Divine-tier. Triple-elemental resist. Endgame material."
 }

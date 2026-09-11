@@ -235,6 +235,7 @@ class Monster:
         poison_dmg   = 0
         burning_dmg  = 0
         doom_dmg     = 0
+        rupture_dmg  = 0
         disease_tick = False
         for name in list(self.status_effects):
             val = self.status_effects[name]
@@ -253,6 +254,11 @@ class Monster:
                     # by the application code in combat.py.
                     _pct = float(getattr(self, '_doom_dot_pct', 0.05) or 0.05)
                     doom_dmg = max(1, int(self.max_hp * _pct))
+                elif name == 'ruptured':
+                    # Chain combat v2 (v2.14.0): dagger chain-20 signature.
+                    # 10% max HP per turn AND cannot be healed (heal-block
+                    # handled by the healing paths that check has_effect).
+                    rupture_dmg = max(1, int(self.max_hp * 0.10))
             # Permanent effects (duration == -1) do NOT tick down or expire.
             if self.status_effects[name] < 0:
                 continue
@@ -270,14 +276,20 @@ class Monster:
             self.take_damage(burning_dmg)
         if doom_dmg > 0:
             self.take_damage(doom_dmg, 'fire')
+        if rupture_dmg > 0:
+            self.take_damage(rupture_dmg)
         if disease_tick and random.random() < 0.08:
             self.take_damage(max(1, self.max_hp // 20))
 
-        # Regeneration: heal HP each turn (trolls, hydras)
+        # Regeneration: heal HP each turn (trolls, hydras).
+        # Chain combat v2: `deep_wound` and `ruptured` block regen (heal-lock).
         regen = getattr(self, 'regeneration', 0)
         if regen and self.alive and self.hp < self.max_hp:
-            # Don't regenerate while burning (fire stops troll regen)
-            if not self.has_effect('burning'):
+            # Don't regenerate while burning (fire stops troll regen), or
+            # while a heal-blocking wound (deep_wound / ruptured) is active.
+            if (not self.has_effect('burning')
+                    and not self.has_effect('deep_wound')
+                    and not self.has_effect('ruptured')):
                 self.hp = min(self.max_hp, self.hp + regen)
 
     # --- Combat ---
@@ -384,6 +396,9 @@ class Monster:
             atk_type = atk.get('type', 'physical')
             if self.has_effect('weakened'):
                 dmg = max(1, dmg // 2)
+            if self.has_effect('sundered'):
+                # Chain combat v2: sundered halves outgoing monster damage.
+                dmg = max(1, int(dmg * 0.70))
             # Hide of the Nemean Lion (unskinnable): physical/slash/pierce/blunt
             # attackers floor at 1 damage. Same condition as the main path.
             try:
@@ -540,6 +555,10 @@ class Monster:
         # Weakened: this monster's attack deals half damage
         if self.has_effect('weakened'):
             dmg = max(1, dmg // 2)
+
+        # Chain combat v2 (v2.14.0): sundered = broken limb, -30% outgoing.
+        if self.has_effect('sundered'):
+            dmg = max(1, int(dmg * 0.70))
 
         # Chain-equip passive: weaken_summoned (Ring of Solomon).
         # Summoned monsters (marked _is_summoned=True at spawn) deal half damage.
@@ -737,6 +756,14 @@ class Monster:
             if self._adjacent_to(player):
                 return True  # attack from the pit
             return False  # can't move, can't reach
+
+        # Chain combat v2 (v2.14.0): impaled by a spear. Same shape as
+        # stuck_in_pit — can still attack the adjacent player, but the pinning
+        # weapon holds the monster in place for the duration.
+        if self.has_effect('impaled'):
+            if self._adjacent_to(player):
+                return True
+            return False
 
         # --- Variable speed: slow monsters skip turns ---
         if self.speed < 8 and self.speed > 0:
@@ -1486,6 +1513,9 @@ class Monster:
                     dmg += roll(self.rage_damage_bonus)
             if self.has_effect('weakened'):
                 dmg = max(1, dmg // 2)
+            if self.has_effect('sundered'):
+                # Chain combat v2: sundered halves outgoing monster damage.
+                dmg = max(1, int(dmg * 0.70))
             actual = player.take_damage(dmg, atk.get('type', 'physical'))
             total += actual
             parts.append(f"{atk['name'].replace('_', ' ')} {actual}")

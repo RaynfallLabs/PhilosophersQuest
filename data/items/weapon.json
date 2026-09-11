@@ -6,7 +6,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 67,
+    "baseDamage": 14,
     "chainMultipliers": [
       0.2,
       0.55,
@@ -32,14 +32,13 @@
     "bleedChance": 0.3,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
       "41-60": 0,
       "61-80": 0,
-      "81-100": 8
+      "81-100": 2
     },
     "containerLootTier": "rare",
     "value": 5000,
@@ -64,13 +63,14 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 37,
+    "base_damage": 14,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "finesse",
     "design_notes": "Signature chain: finesse opener; the blade hesitates on the first cut (0.2x) and only commits once it tastes blood. Lifesteal makes the long ramp viable.",
-    "growth_on_innocent_kill": true
+    "growth_on_innocent_kill": true,
+    "chain_exponent": 1.15
   },
   "dawnbreaker": {
     "name": "Dawnbreaker",
@@ -79,7 +79,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 141,
+    "baseDamage": 30,
     "chainMultipliers": [
       0.6,
       0.9,
@@ -106,14 +106,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
       "41-60": 0,
       "61-80": 0,
-      "81-100": 6
+      "81-100": 2
     },
     "containerLootTier": "rare",
     "value": 5000,
@@ -139,7 +138,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 37,
+    "base_damage": 30,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -148,7 +147,8 @@
       "undead"
     ],
     "ignore_resistances": true,
-    "design_notes": "Holy/radiant archetype: a building dawn, each strike a fuller rising sun against the undead."
+    "design_notes": "Holy/radiant archetype: a building dawn, each strike a fuller rising sun against the undead.",
+    "chain_exponent": 1.15
   },
   "venomfang": {
     "name": "Venomfang",
@@ -157,7 +157,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 111,
+    "baseDamage": 26,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -183,14 +183,13 @@
     "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
       "41-60": 0,
       "61-80": 0,
-      "81-100": 7
+      "81-100": 2
     },
     "containerLootTier": "rare",
     "value": 4800,
@@ -215,12 +214,13 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 37,
+    "base_damage": 26,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "design_notes": "Cursed-blade archetype: the venom needs time to find the wound, slow first taste then devastating last."
+    "design_notes": "Cursed-blade archetype: the venom needs time to find the wound, slow first taste then devastating last.",
+    "chain_exponent": 1.15
   },
   "excalibur": {
     "name": "Excalibur",
@@ -229,7 +229,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 31,
+    "baseDamage": 16,
     "chainMultipliers": [
       1.0,
       1.5,
@@ -255,10 +255,12 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.25,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "containerLootTier": "legendary",
@@ -285,13 +287,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 26,
+    "base_damage": 16,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "design_notes": "Signature chain: the king's killing blow -- chain-1 already a meaningful cut (1.0x), then a steep climb to a legendary peak of 5.0x at chain-5.",
-    "cast_me_away": true
+    "cast_me_away": true,
+    "chain_exponent": 1.15
   },
   "durendal": {
     "name": "Durendal",
@@ -300,7 +303,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 97,
+    "baseDamage": 17,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -326,11 +329,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.25,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 9000,
@@ -354,13 +359,14 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 20,
+    "base_damage": 17,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
     "onEquipStatus": "blessed",
-    "design_notes": "Ancient/stately archetype: measured Carolingian steel, each blow as deliberate as the saints sealed in its hilt."
+    "design_notes": "Ancient/stately archetype: measured Carolingian steel, each blow as deliberate as the saints sealed in its hilt.",
+    "chain_exponent": 1.15
   },
   "gram": {
     "name": "Gram",
@@ -369,7 +375,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 24,
+    "baseDamage": 18,
     "chainMultipliers": [
       0.5,
       1.0,
@@ -399,7 +405,6 @@
     "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {},
     "containerLootTier": "legendary",
@@ -425,12 +430,13 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 16,
+    "base_damage": 18,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "broken_gram": {
     "name": "Broken Blade of Gram",
@@ -462,7 +468,6 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {},
     "containerLootTier": "legendary",
@@ -486,12 +491,13 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 11,
+    "base_damage": 4,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 0,
     "weapon_class_chain": "normal",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "sigurds_shovel": {
     "name": "Sigurd's Shovel",
@@ -499,12 +505,13 @@
     "variant": "1h",
     "tier": 2,
     "material": "iron",
-    "mathTier": 1,
-    "baseDamage": 7,
+    "mathTier": 2,
+    "baseDamage": 10,
     "chainMultipliers": [
-      0.5,
+      0.6,
       1.0,
-      1.5,
+      1.3,
+      1.7,
       2.0
     ],
     "maxChainLength": 4,
@@ -524,13 +531,18 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 200,
-    "min_level": 9999,
-    "quiz_tier": 1,
+    "min_level": 12,
+    "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a sturdy iron shovel",
     "can_dig": true,
@@ -540,21 +552,22 @@
     ],
     "template_basis": "club",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 25,
     "chain_multipliers": [
-      0.5,
-      0.85,
+      0.6,
       1.0,
-      1.45,
+      1.3,
+      1.7,
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 13,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 1,
     "weapon_class_chain": "normal",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "tyrfing": {
     "name": "Tyrfing",
@@ -563,7 +576,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 110,
+    "baseDamage": 26,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -589,9 +602,12 @@
     "bleedChance": 0.3,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "containerLootTier": "legendary",
@@ -617,13 +633,14 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 34,
+    "base_damage": 26,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
     "lifestealPercent": 0.1,
-    "design_notes": "Cursed-blade archetype: the dwarven curse waits patient; the blade hungers and pays out in full."
+    "design_notes": "Cursed-blade archetype: the dwarven curse waits patient; the blade hungers and pays out in full.",
+    "chain_exponent": 1.15
   },
   "fragarach": {
     "name": "Fragarach",
@@ -632,7 +649,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 42,
+    "baseDamage": 10,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -659,11 +676,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -688,7 +707,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 15,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -696,7 +715,8 @@
     "effective_against": [
       "humanoid"
     ],
-    "design_notes": "King's blow archetype: The Answerer needs no warm-up, every stroke is the Wind from the East."
+    "design_notes": "King's blow archetype: The Answerer needs no warm-up, every stroke is the Wind from the East.",
+    "chain_exponent": 1.15
   },
   "caladbolg": {
     "name": "Caladbolg",
@@ -705,7 +725,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 97,
+    "baseDamage": 17,
     "chainMultipliers": [
       0.9,
       1.1,
@@ -730,11 +750,13 @@
     "bleedChance": 0.3,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 9000,
@@ -757,13 +779,14 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 30,
+    "base_damage": 17,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
     "design_notes": "Brute/crushing archetype: a sweep that takes the tops off hills carries weight from the first arc.",
-    "class_mechanic": "cleave_at_max"
+    "class_mechanic": "cleave_at_max",
+    "chain_exponent": 1.15
   },
   "joyeuse": {
     "name": "Joyeuse",
@@ -772,7 +795,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 43,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -798,11 +821,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.75,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8000,
@@ -826,14 +851,15 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 15,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "onEquipStatus": "blessed",
     "design_notes": "Trickster/nimble archetype: thirty shifting colours dazzle the eye, quick to find the gap and sharp to exploit it.",
-    "combat_start_aoe_confuse_chance": 0.5
+    "combat_start_aoe_confuse_chance": 0.5,
+    "chain_exponent": 1.15
   },
   "hrunting": {
     "name": "Hrunting",
@@ -842,7 +868,7 @@
     "tier": 3,
     "material": "legendary",
     "mathTier": 3,
-    "baseDamage": 25,
+    "baseDamage": 15,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -868,9 +894,14 @@
     "bleedChance": 0.4,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.85,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 8000,
     "min_level": 40,
@@ -893,7 +924,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 13,
+    "base_damage": 15,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -901,7 +932,8 @@
     "_curve_note": "Redistributed: peak=52, base=13 (= curve.weapon_base_damage(52) x 1.65), min_level=40, quiz_tier=3.",
     "cursedMissBacklash": 1,
     "design_notes": "Ancient/stately archetype: the patient old blade keeps its measured tempo, until the one strike where it does not.",
-    "one_shot_chain_save_per_floor": true
+    "one_shot_chain_save_per_floor": true,
+    "chain_exponent": 1.15
   },
   "skofnung": {
     "name": "Skofnung",
@@ -910,7 +942,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 45,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.8,
       1.2,
@@ -935,11 +967,13 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -962,7 +996,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 15,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -971,7 +1005,8 @@
       "humanoid"
     ],
     "design_notes": "Bestial/feral archetype: twelve berserkers in the steel, each strike a different one finding its rhythm.",
-    "chain_bonus_on_low_hp_window": 1
+    "chain_bonus_on_low_hp_window": 1,
+    "chain_exponent": 1.15
   },
   "gungnir": {
     "name": "Gungnir",
@@ -980,7 +1015,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 90,
+    "baseDamage": 15,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -1006,9 +1041,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 9000,
     "min_level": 85,
@@ -1031,7 +1071,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 37,
+    "base_damage": 15,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1043,7 +1083,8 @@
       "fey"
     ],
     "design_notes": "King's blow archetype: Odin's throw never wavers, the unbreakable oath strikes with sovereign certainty.",
-    "cannot_miss": true
+    "cannot_miss": true,
+    "chain_exponent": 1.15
   },
   "gae_bulg": {
     "name": "G\u00e1e Bulg",
@@ -1052,7 +1093,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 55,
+    "baseDamage": 10,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -1077,11 +1118,13 @@
     "bleedChance": 0.4,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -1104,12 +1147,13 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 18,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
-    "design_notes": "Signature chain: the never-miss spear of Cu Chulainn -- chain-1 is already a confirmed kill (1.0x), and every rung climbs cleanly. No weak openers, no dramatic peak; the spear simply lands."
+    "design_notes": "Signature chain: the never-miss spear of Cu Chulainn -- chain-1 is already a confirmed kill (1.0x), and every rung climbs cleanly. No weak openers, no dramatic peak; the spear simply lands.",
+    "chain_exponent": 1.15
   },
   "spear_of_longinus": {
     "name": "Spear of Longinus",
@@ -1118,7 +1162,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 72,
+    "baseDamage": 12,
     "chainMultipliers": [
       0.6,
       0.9,
@@ -1144,9 +1188,12 @@
     "bleedChance": 0.35,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "containerLootTier": "legendary",
@@ -1171,7 +1218,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 26,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1182,7 +1229,8 @@
     ],
     "ignore_resistances": true,
     "design_notes": "Holy/radiant archetype: the relic warms as it works, radiance gathered with each righteous thrust.",
-    "weep_heal_on_kill_scaled": 0.1
+    "weep_heal_on_kill_scaled": 0.1,
+    "chain_exponent": 1.15
   },
   "mjolnir": {
     "name": "Mjolnir",
@@ -1191,7 +1239,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 141,
+    "baseDamage": 32,
     "chainMultipliers": [
       1.0,
       1.2,
@@ -1218,9 +1266,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.25,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 9500,
     "min_level": 86,
@@ -1244,7 +1297,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 42,
+    "base_damage": 32,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1259,7 +1312,8 @@
       "from_chain": 6,
       "splash_pct": 0.5,
       "max_targets": 1
-    }
+    },
+    "chain_exponent": 1.15
   },
   "sharur": {
     "name": "Sharur",
@@ -1268,7 +1322,7 @@
     "tier": 3,
     "material": "bronze",
     "mathTier": 3,
-    "baseDamage": 18,
+    "baseDamage": 11,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -1294,9 +1348,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.6,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "very_rare",
     "value": 5000,
     "min_level": 37,
@@ -1320,14 +1379,15 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 11,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=45, base=10 (= curve.weapon_base_damage(45) x 1.55), min_level=37, quiz_tier=3.",
     "design_notes": "Trickster/nimble archetype: the talking mace reads the field, quick adapt to where the enemy is not looking.",
-    "floor_start_reveal_chance": 1.0
+    "floor_start_reveal_chance": 1.0,
+    "chain_exponent": 1.15
   },
   "ruyi_jingu_bang": {
     "name": "Ruyi Jingu Bang",
@@ -1362,9 +1422,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 9000,
     "min_level": 70,
@@ -1387,7 +1452,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 30,
+    "base_damage": 24,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1397,7 +1462,8 @@
     "chain_modulated_reach": {
       "4": 4,
       "7": 5
-    }
+    },
+    "chain_exponent": 1.15
   },
   "gandiva": {
     "name": "Gandiva",
@@ -1406,7 +1472,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 56,
+    "baseDamage": 12,
     "chainMultipliers": [
       0.9,
       1.1,
@@ -1432,11 +1498,13 @@
     "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.25,
     "requiresAmmo": "arrow",
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 9000,
@@ -1460,7 +1528,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 19,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1469,7 +1537,8 @@
     "multi_arrow_at_chain_5": {
       "targets": 3,
       "damage_per": 0.5
-    }
+    },
+    "chain_exponent": 1.15
   },
   "fail_not": {
     "name": "Fail-not",
@@ -1478,7 +1547,7 @@
     "tier": 3,
     "material": "legendary",
     "mathTier": 3,
-    "baseDamage": 28,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.5,
       0.7,
@@ -1503,9 +1572,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.85,
     "requiresAmmo": "arrow",
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 8000,
     "min_level": 45,
@@ -1527,7 +1601,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 16,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -1535,7 +1609,8 @@
     "_curve_note": "Redistributed: peak=57, base=16 (= curve.weapon_base_damage(57) x 1.65), min_level=45, quiz_tier=3.",
     "class_mechanic": "guaranteed_hit",
     "design_notes": "Sniper/precise archetype: the bow waits for the dutiful arrow, patience then a single inevitable strike.",
-    "cannot_miss_before_player_takes_damage": true
+    "cannot_miss_before_player_takes_damage": true,
+    "chain_exponent": 1.15
   },
   "kusanagi": {
     "name": "Kusanagi-no-Tsurugi",
@@ -1544,7 +1619,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 67,
+    "baseDamage": 16,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -1571,9 +1646,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.2,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 71,
@@ -1597,14 +1677,15 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 32,
+    "base_damage": 16,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=83, base=32 (= curve.weapon_base_damage(83) x 1.7), min_level=71, quiz_tier=5.",
     "design_notes": "Trickster/nimble archetype: cuts the grass to turn the wind, quick reads then a sharp redirected peak.",
-    "surrounded_proc_bonus": true
+    "surrounded_proc_bonus": true,
+    "chain_exponent": 1.15
   },
   "zulfiqar": {
     "name": "Zulfiqar",
@@ -1613,7 +1694,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 48,
+    "baseDamage": 10,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -1639,11 +1720,13 @@
     "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -1667,7 +1750,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 18,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1680,7 +1763,8 @@
     "every_hit_secondary_target": {
       "splash_pct": 0.5,
       "range_tiles": 1
-    }
+    },
+    "chain_exponent": 1.15
   },
   "harpe": {
     "name": "Harpe",
@@ -1689,7 +1773,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 32,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -1715,11 +1799,13 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8000,
@@ -1728,7 +1814,6 @@
     "identified": false,
     "unidentified_name": "a curved blade with a small hooked back-edge",
     "lore": "Given to Perseus by Hermes to slay Medusa. Forged with an adamantine edge. Perseus used it while looking at Medusa's reflection in his shield. Some myths say Cronus used its predecessor to castrate Uranus. The weapon has a history of separating very important things.",
-    "petrifyOnCrit": true,
     "damage_types": [
       "slash",
       "pierce"
@@ -1744,7 +1829,7 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 15,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -1754,7 +1839,9 @@
       "gaze",
       "aberration",
       "petrification"
-    ]
+    ],
+    "petrify_on_crit": true,
+    "chain_exponent": 1.15
   },
   "trident_of_poseidon": {
     "name": "Trident of Poseidon",
@@ -1763,7 +1850,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 82,
+    "baseDamage": 18,
     "chainMultipliers": [
       0.9,
       1.1,
@@ -1790,9 +1877,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 9000,
     "min_level": 73,
@@ -1816,13 +1908,14 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 34,
+    "base_damage": 18,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
     "_curve_note": "Redistributed: peak=85, base=34 (= curve.weapon_base_damage(85) x 1.7), min_level=73, quiz_tier=5.",
-    "design_notes": "Brute/crushing archetype: a sea-god's tide, heavy from the first blow and building to drowning weight."
+    "design_notes": "Brute/crushing archetype: a sea-god's tide, heavy from the first blow and building to drowning weight.",
+    "chain_exponent": 1.15
   },
   "carnwennan": {
     "name": "Carnwennan",
@@ -1831,7 +1924,7 @@
     "tier": 2,
     "material": "enchanted iron",
     "mathTier": 2,
-    "baseDamage": 8,
+    "baseDamage": 5,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -1857,9 +1950,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 3.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 7500,
     "min_level": 26,
@@ -1883,14 +1981,15 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 8,
+    "base_damage": 5,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=34, base=8 (= curve.weapon_base_damage(34) x 1.7), min_level=26, quiz_tier=2.",
     "class_mechanic": "backstab",
-    "design_notes": "Trickster/nimble archetype: shadows part for the killing stroke, the rogue's blade builds then erupts."
+    "design_notes": "Trickster/nimble archetype: shadows part for the killing stroke, the rogue's blade builds then erupts.",
+    "chain_exponent": 1.15
   },
   "mistilteinn": {
     "name": "Mistilteinn",
@@ -1899,7 +1998,7 @@
     "tier": 5,
     "material": "legendary",
     "mathTier": 5,
-    "baseDamage": 59,
+    "baseDamage": 18,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -1925,9 +2024,14 @@
     "bleedChance": 0.35,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 85,
@@ -1950,7 +2054,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 39,
+    "base_damage": 18,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1958,7 +2062,8 @@
     "_curve_note": "Redistributed: peak=91, base=39 (= curve.weapon_base_damage(91) x 1.7), min_level=85, quiz_tier=5.",
     "ignore_resistances": true,
     "design_notes": "Cursed-blade archetype: the one thing nobody guarded against, patient until it finds the gap and then ruin.",
-    "damage_double_vs_resistant_at_max": true
+    "damage_double_vs_resistant_at_max": true,
+    "chain_exponent": 1.15
   },
   "curtana": {
     "name": "Curtana",
@@ -1967,7 +2072,7 @@
     "tier": 3,
     "material": "adamantine",
     "mathTier": 3,
-    "baseDamage": 65,
+    "baseDamage": 15,
     "chainMultipliers": [
       1.0,
       1.2,
@@ -1993,11 +2098,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.4,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 7500,
@@ -2021,7 +2128,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 18,
+    "base_damage": 15,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -2029,7 +2136,8 @@
     "onEquipStatus": "blessed",
     "design_notes": "King's blow archetype: mercy is the lesser blade, royal weight in every stroke but the peak stays its hand.",
     "spare_kill_chance": 0.25,
-    "spare_kill_max_hp_per_floor": 5
+    "spare_kill_max_hp_per_floor": 5,
+    "chain_exponent": 1.15
   },
   "parashu": {
     "name": "Parashu",
@@ -2038,7 +2146,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 65,
+    "baseDamage": 13,
     "chainMultipliers": [
       0.9,
       1.1,
@@ -2064,11 +2172,13 @@
     "bleedChance": 0.1,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8000,
@@ -2092,7 +2202,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 18,
+    "base_damage": 13,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -2101,7 +2211,8 @@
     "design_notes": "Brute/crushing archetype: ten thousand years of penance forged into one axe, heavy from the first arc.",
     "chain_no_reset_on_tag": [
       "humanoid"
-    ]
+    ],
+    "chain_exponent": 1.15
   },
   "labrys": {
     "name": "Labrys",
@@ -2110,7 +2221,7 @@
     "tier": 2,
     "material": "bronze",
     "mathTier": 2,
-    "baseDamage": 14,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -2135,9 +2246,14 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 7500,
     "min_level": 16,
@@ -2159,14 +2275,16 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 6,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=24, base=6 (= curve.weapon_base_damage(24) x 1.65), min_level=16, quiz_tier=2.",
+    "design_notes": "Ancient/stately archetype: the priestess's bronze, ritual rhythm building toward the killing blow.",
+    "chain_exponent": 1.15,
     "class_mechanic": "cleave_at_max",
-    "design_notes": "Ancient/stately archetype: the priestess's bronze, ritual rhythm building toward the killing blow."
+    "class_mechanic_desc": "Double-headed axe cleaves an adjacent foe at max chain."
   },
   "chandrahas": {
     "name": "Chandrahas",
@@ -2202,11 +2320,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8000,
@@ -2238,7 +2358,8 @@
     "weapon_class_chain": "finesse",
     "confuseChance": 0.2,
     "design_notes": "Cursed-blade archetype: Shiva's gift bides its time, the laughing peak comes only when the price is paid.",
-    "karma_disappear_proc": 0.05
+    "karma_disappear_proc": 0.05,
+    "chain_exponent": 1.15
   },
   "laevateinn": {
     "name": "Laevateinn",
@@ -2247,7 +2368,7 @@
     "tier": 5,
     "material": "legendary",
     "mathTier": 5,
-    "baseDamage": 53,
+    "baseDamage": 26,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -2274,9 +2395,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 87,
@@ -2300,7 +2426,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 40,
+    "base_damage": 26,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -2312,7 +2438,8 @@
     "boss_doom_dot_at_chain_5": {
       "pct_max_hp_per_turn": 0.05,
       "duration": 30
-    }
+    },
+    "chain_exponent": 1.15
   },
   "thyrsus": {
     "name": "Thyrsus of Dionysus",
@@ -2321,7 +2448,7 @@
     "tier": 2,
     "material": "hardwood",
     "mathTier": 2,
-    "baseDamage": 12,
+    "baseDamage": 13,
     "chainMultipliers": [
       0.3,
       0.9,
@@ -2347,9 +2474,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 7500,
     "min_level": 24,
@@ -2373,13 +2505,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 7,
+    "base_damage": 13,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=32, base=7 (= curve.weapon_base_damage(32) x 1.5), min_level=24, quiz_tier=2.",
-    "design_notes": "Wild/chaotic archetype: Maenad rhythm, the staff lurches in bacchic madness then crowns its frenzy."
+    "design_notes": "Wild/chaotic archetype: Maenad rhythm, the staff lurches in bacchic madness then crowns its frenzy.",
+    "chain_exponent": 1.15
   },
   "rod_of_moses": {
     "name": "Rod of Moses",
@@ -2388,7 +2521,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 60,
+    "baseDamage": 19,
     "chainMultipliers": [
       0.6,
       0.9,
@@ -2415,9 +2548,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 9500,
     "min_level": 72,
@@ -2442,13 +2580,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 31,
+    "base_damage": 19,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=84, base=31 (= curve.weapon_base_damage(84) x 1.65), min_level=72, quiz_tier=5.",
-    "design_notes": "Holy/radiant archetype: shepherd's rod made instrument of God, the radiance builds with each pronouncement."
+    "design_notes": "Holy/radiant archetype: shepherd's rod made instrument of God, the radiance builds with each pronouncement.",
+    "chain_exponent": 1.15
   },
   "amenonuhoko": {
     "name": "Amenonuhoko",
@@ -2457,7 +2596,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 72,
+    "baseDamage": 12,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -2483,10 +2622,12 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
       "81-100": 2
     },
     "containerLootTier": "legendary",
@@ -2512,12 +2653,13 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 26,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "heavy",
-    "design_notes": "Ancient/stately archetype: the spear that stirred the ocean, every thrust a measured drop of the primordial."
+    "design_notes": "Ancient/stately archetype: the spear that stirred the ocean, every thrust a measured drop of the primordial.",
+    "chain_exponent": 1.15
   },
   "sudarshana": {
     "name": "Sudarshana Chakra",
@@ -2526,7 +2668,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 62,
+    "baseDamage": 14,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -2553,9 +2695,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 87,
@@ -2580,14 +2727,15 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 39,
+    "base_damage": 14,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "finesse",
     "_curve_note": "Promoted to F90s: peak=93, base=39 (= curve.weapon_base_damage(93) x 1.65).",
     "design_notes": "King's blow archetype: Vishnu's discus spins from the start, every revolution is a god's strike.",
-    "return_to_hand_ward": true
+    "return_to_hand_ward": true,
+    "chain_exponent": 1.15
   },
   "ridill": {
     "name": "Ridill",
@@ -2596,7 +2744,7 @@
     "tier": 3,
     "material": "legendary",
     "mathTier": 3,
-    "baseDamage": 15,
+    "baseDamage": 6,
     "chainMultipliers": [
       0.5,
       0.7,
@@ -2622,9 +2770,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 7500,
     "min_level": 43,
@@ -2647,13 +2800,15 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 13,
+    "base_damage": 6,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=55, base=13 (= curve.weapon_base_damage(55) x 1.5), min_level=43, quiz_tier=3.",
-    "design_notes": "Sniper/precise archetype: the theoretical blade, patient and undemonstrated until at last it is."
+    "design_notes": "Sniper/precise archetype: the theoretical blade, patient and undemonstrated until at last it is.",
+    "chain_exponent": 1.15,
+    "dragon_bonus_damage": "1d8"
   },
   "kladenets": {
     "name": "Samosek",
@@ -2662,7 +2817,7 @@
     "tier": 3,
     "material": "legendary",
     "mathTier": 3,
-    "baseDamage": 27,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.3,
       0.9,
@@ -2688,9 +2843,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 8000,
     "min_level": 46,
@@ -2714,13 +2874,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 17,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=58, base=17 (= curve.weapon_base_damage(58) x 1.7), min_level=46, quiz_tier=3.",
-    "design_notes": "Wild/chaotic archetype: the self-swinger has its own ideas, erratic until it finds the killing stroke."
+    "design_notes": "Wild/chaotic archetype: the self-swinger has its own ideas, erratic until it finds the killing stroke.",
+    "chain_exponent": 1.15
   },
   "shamshir_e_zomorrodnegar": {
     "name": "Shamshir-e Zomorrodnegar",
@@ -2729,7 +2890,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 42,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -2756,10 +2917,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 9000,
@@ -2784,7 +2948,7 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 20,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -2798,7 +2962,8 @@
       "duration_turns": 5,
       "max_hp_pct": 0.4,
       "chance": 0.5
-    }
+    },
+    "chain_exponent": 1.15
   },
   "chrysaor": {
     "name": "Chrysaor",
@@ -2807,7 +2972,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 49,
+    "baseDamage": 10,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -2833,11 +2998,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.25,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -2861,13 +3028,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 16,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "design_notes": "King's blow archetype: the Golden Sword founded a western kingdom, every stroke carries Pegasus-born light.",
-    "weapon_immune_to_enchant_loss": true
+    "weapon_immune_to_enchant_loss": true,
+    "chain_exponent": 1.15
   },
   "caliburn": {
     "name": "Caliburn",
@@ -2876,7 +3044,7 @@
     "tier": 2,
     "material": "enchanted iron",
     "mathTier": 2,
-    "baseDamage": 16,
+    "baseDamage": 8,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -2901,9 +3069,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.9,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 8000,
     "min_level": 29,
@@ -2927,13 +3100,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 8,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=37, base=10 (= curve.weapon_base_damage(37) x 1.7), min_level=29, quiz_tier=2.",
-    "design_notes": "King's blow archetype: the stone-drawn blade carries every blow as proof of the king's right."
+    "design_notes": "King's blow archetype: the stone-drawn blade carries every blow as proof of the king's right.",
+    "chain_exponent": 1.15
   },
   "brisingr": {
     "name": "Brisingr",
@@ -2942,7 +3116,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 43,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.6,
       0.9,
@@ -2968,11 +3142,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.85,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -2997,12 +3173,13 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 15,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
-    "design_notes": "Holy/radiant archetype: the warm blade kindles as it works, a slow fire reaching its proper heat."
+    "design_notes": "Holy/radiant archetype: the warm blade kindles as it works, a slow fire reaching its proper heat.",
+    "chain_exponent": 1.15
   },
   "fragarach_the_whisperer": {
     "name": "Whisperer",
@@ -3011,7 +3188,7 @@
     "tier": 2,
     "material": "legendary",
     "mathTier": 2,
-    "baseDamage": 8,
+    "baseDamage": 5,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -3037,9 +3214,14 @@
     "bleedChance": 0.1,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 1.85,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 8000,
     "min_level": 30,
@@ -3062,14 +3244,15 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 9,
+    "base_damage": 5,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=38, base=9 (= curve.weapon_base_damage(38) x 1.55), min_level=30, quiz_tier=2.",
     "design_notes": "Cursed-blade archetype: the silent companion bides its time, patient until the moment of betrayal.",
-    "equipped_sound_radius_modifier": -0.5
+    "equipped_sound_radius_modifier": -0.5,
+    "chain_exponent": 1.15
   },
   "naegling": {
     "name": "Naegling",
@@ -3078,7 +3261,7 @@
     "tier": 3,
     "material": "legendary",
     "mathTier": 3,
-    "baseDamage": 33,
+    "baseDamage": 11,
     "chainMultipliers": [
       0.9,
       1.1,
@@ -3104,9 +3287,14 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 7500,
     "min_level": 42,
@@ -3129,13 +3317,15 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 13,
+    "base_damage": 11,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=54, base=13 (= curve.weapon_base_damage(54) x 1.55), min_level=42, quiz_tier=3.",
-    "design_notes": "Brute/crushing archetype: Beowulf's grip was always too strong, heavy from the first cut as the steel braces for the end."
+    "design_notes": "Brute/crushing archetype: Beowulf's grip was always too strong, heavy from the first cut as the steel braces for the end.",
+    "chain_exponent": 1.15,
+    "dragon_bonus_damage": "1d8"
   },
   "punch_in_the_face": {
     "name": "Punch in the Face",
@@ -3194,7 +3384,8 @@
     "is_unique": true,
     "max_enchant": 0,
     "weapon_class_chain": "finesse",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "hunt_captains_sword": {
     "name": "Hunt Captain's Sword",
@@ -3203,7 +3394,7 @@
     "tier": 5,
     "material": "spectral iron",
     "mathTier": 5,
-    "baseDamage": 18,
+    "baseDamage": 12,
     "chainMultipliers": [
       0.5,
       1.0,
@@ -3255,13 +3446,14 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 20,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "wendigo_fang": {
     "name": "Wendigo's Fang",
@@ -3321,13 +3513,14 @@
       3.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 17,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "echidna_fang": {
     "name": "Echidna's Fang",
@@ -3336,7 +3529,7 @@
     "tier": 3,
     "material": "fang",
     "mathTier": 3,
-    "baseDamage": 8,
+    "baseDamage": 6,
     "chainMultipliers": [
       0.3,
       0.5,
@@ -3388,7 +3581,7 @@
       3.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 8,
+    "base_damage": 6,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -3404,7 +3597,8 @@
       ],
       "chance": 0.4,
       "duration": 5
-    }
+    },
+    "chain_exponent": 1.15
   },
   "vulcans_brand": {
     "name": "Vulcan's Brand",
@@ -3413,7 +3607,7 @@
     "tier": 3,
     "material": "volcanic iron",
     "mathTier": 3,
-    "baseDamage": 11,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.6,
       1.1,
@@ -3464,13 +3658,14 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 8,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "sling_of_david": {
     "name": "Sling of David",
@@ -3479,7 +3674,7 @@
     "tier": 1,
     "material": "leather",
     "mathTier": 1,
-    "baseDamage": 2,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.5,
       1.2,
@@ -3504,12 +3699,12 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 3.0,
     "floorSpawnWeight": {
-      "1-5": 8,
-      "6-15": 15,
-      "16-30": 5,
-      "31-100": 0
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "uncommon",
     "value": 300,
@@ -3533,13 +3728,14 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 4,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "finesse",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "prometheus_torch": {
     "name": "Narthex of Prometheus",
@@ -3548,7 +3744,7 @@
     "tier": 1,
     "material": "wood",
     "mathTier": 1,
-    "baseDamage": 5,
+    "baseDamage": 12,
     "chainMultipliers": [
       0.5,
       1.0,
@@ -3574,14 +3770,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "burnChance": 0.4,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-8": 5,
-      "9-20": 12,
-      "21-40": 5,
-      "41-100": 0
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "uncommon",
     "value": 500,
@@ -3604,7 +3800,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 6,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -3614,7 +3810,8 @@
     ],
     "identified": false,
     "id_level": 0,
-    "equipped_light_aura": 3
+    "equipped_light_aura": 3,
+    "chain_exponent": 1.15
   },
   "sword_of_damocles": {
     "name": "Sword of Damocles",
@@ -3649,13 +3846,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.75,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-11": 0,
-      "12-30": 8,
-      "31-50": 3,
-      "51-100": 0
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 2000,
@@ -3688,7 +3885,8 @@
     "identified": false,
     "id_level": 0,
     "damoclean_counter_auto_kill": true,
-    "damoclean_counter_threshold": 10
+    "damoclean_counter_threshold": 10,
+    "chain_exponent": 1.15
   },
   "robin_hoods_longbow": {
     "name": "Robin Hood's Longbow",
@@ -3697,7 +3895,7 @@
     "tier": 2,
     "material": "yew",
     "mathTier": 2,
-    "baseDamage": 11,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.5,
       0.7,
@@ -3722,13 +3920,13 @@
     "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.75,
     "requiresAmmo": "arrow",
     "floorSpawnWeight": {
-      "1-13": 0,
-      "14-35": 10,
-      "36-60": 5,
-      "61-100": 0
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 1800,
@@ -3750,7 +3948,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 8,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -3758,7 +3956,8 @@
     "design_notes": "Sniper/precise archetype: the outlaw's patient breath, the last shot from cover splits the arrow before it.",
     "identified": false,
     "id_level": 0,
-    "stealth_damage_bonus": 1.0
+    "stealth_damage_bonus": 1.0,
+    "chain_exponent": 1.15
   },
   "achilles_spear": {
     "name": "Achilles's Spear",
@@ -3767,7 +3966,7 @@
     "tier": 1,
     "material": "bronze",
     "mathTier": 2,
-    "baseDamage": 3,
+    "baseDamage": 8,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -3792,14 +3991,14 @@
     "bleedChance": 0.25,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "killHealAmount": 15,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-19": 0,
-      "20-45": 10,
-      "46-70": 5,
-      "71-100": 0
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 3500,
@@ -3821,14 +4020,15 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 6,
+    "base_damage": 8,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "heavy",
     "design_notes": "Ancient/stately archetype: Hephaestus' shaft, measured and deliberate; the rust on its tip already knowing the cure.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "gilgamesh_axe": {
     "name": "Gilgamesh's Axe",
@@ -3837,7 +4037,7 @@
     "tier": 3,
     "material": "bronze",
     "mathTier": 3,
-    "baseDamage": 22,
+    "baseDamage": 19,
     "chainMultipliers": [
       0.8,
       1.2,
@@ -3862,13 +4062,13 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-34": 0,
-      "35-60": 8,
-      "61-80": 5,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 4500,
@@ -3890,7 +4090,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 14,
+    "base_damage": 19,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -3900,7 +4100,8 @@
     ],
     "design_notes": "Bestial/feral archetype: the axe Enkidu dreamed, primal rhythm; the bond hardens it after the first wound.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "cronus_scythe": {
     "name": "Cronus's Scythe",
@@ -3909,7 +4110,7 @@
     "tier": 3,
     "material": "adamantine",
     "mathTier": 3,
-    "baseDamage": 49,
+    "baseDamage": 15,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -3935,12 +4136,13 @@
     "bleedChance": 0.25,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-37": 0,
-      "38-65": 6,
-      "66-100": 3
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 5500,
@@ -3963,7 +4165,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 16,
+    "base_damage": 15,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -3971,7 +4173,8 @@
     "lifestealPercent": 0.08,
     "design_notes": "Cursed-blade archetype: time itself sheds from its edge, slow as it drinks vitality then ruinous at the harvest.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "spear_of_lugh": {
     "name": "Spear of Lugh",
@@ -3980,7 +4183,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 43,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.9,
       1.1,
@@ -4007,13 +4210,14 @@
     "bleedChance": 0.4,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "burnChance": 0.3,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-49": 0,
-      "50-80": 5,
-      "81-100": 8
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 9000,
@@ -4037,7 +4241,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 20,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -4045,7 +4249,8 @@
     "design_notes": "Brute/crushing archetype: a spear quenched in poison strikes hot from the cauldron, heavy from the first lunge.",
     "identified": false,
     "id_level": 0,
-    "damage_bonus_vs_gaze": 2.0
+    "damage_bonus_vs_gaze": 2.0,
+    "chain_exponent": 1.15
   },
   "gae_dearg": {
     "name": "Gae Dearg",
@@ -4054,7 +4259,7 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 47,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -4079,12 +4284,13 @@
     "bleedChance": 0.4,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-51": 0,
-      "52-80": 4,
-      "81-100": 6
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
     },
     "containerLootTier": "legendary",
     "value": 8500,
@@ -4106,7 +4312,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 22,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -4114,7 +4320,8 @@
     "design_notes": "Cursed-blade archetype: the Red Spear offers no mercy, patient wound-finding then unhealing ruin.",
     "identified": false,
     "id_level": 0,
-    "apply_heal_block_chance": 0.4
+    "apply_heal_block_chance": 0.4,
+    "chain_exponent": 1.15
   },
   "net_of_hephaestus": {
     "name": "Net of Hephaestus",
@@ -4123,7 +4330,7 @@
     "tier": 3,
     "material": "mithril",
     "mathTier": 3,
-    "baseDamage": 12,
+    "baseDamage": 6,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -4148,12 +4355,12 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 1.0,
     "floorSpawnWeight": {
-      "1-29": 0,
-      "30-55": 6,
-      "56-80": 4,
-      "81-100": 2
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 4000,
@@ -4175,14 +4382,15 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 6,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "heavy",
     "design_notes": "Trickster/nimble archetype: the smith-god's ensnaring weave, light strokes that find the gaps then the closing fold.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "sword_of_michael": {
     "name": "Sword of Michael",
@@ -4191,7 +4399,7 @@
     "tier": 5,
     "material": "divine",
     "mathTier": 5,
-    "baseDamage": 52,
+    "baseDamage": 18,
     "chainMultipliers": [
       0.6,
       1.2,
@@ -4218,7 +4426,6 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 3.0,
     "requiresAmmo": null,
     "floorSpawnWeight": {},
     "containerLootTier": "legendary",
@@ -4239,7 +4446,7 @@
     "spread": 0,
     "peak_floor": 0,
     "peak_weight": 0.0,
-    "base_damage": 52,
+    "base_damage": 18,
     "max_chain_length": 6,
     "chain_multipliers": [
       0.6,
@@ -4257,7 +4464,8 @@
       "undead": "1d8",
       "evil": "1d8"
     },
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "oathkeeper_sword": {
     "name": "Oathkeeper",
@@ -4265,15 +4473,14 @@
     "variant": "1h",
     "tier": 3,
     "material": "steel",
-    "mathTier": 2,
-    "baseDamage": 14,
+    "mathTier": 3,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.5,
+      0.85,
       1.0,
-      1.8,
-      2.8,
-      4.0,
-      5.5
+      1.45,
+      2.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4292,12 +4499,17 @@
     "bleedChance": 0.1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    },
     "value": 3000,
-    "min_level": 9999,
-    "quiz_tier": 2,
+    "min_level": 30,
+    "quiz_tier": 3,
     "unidentified_name": "well-kept longsword",
     "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp \u2014 someone maintained it with love.",
     "damage_types": [
@@ -4305,7 +4517,7 @@
     ],
     "template_basis": "longsword",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 45,
     "chain_multipliers": [
       0.5,
       0.85,
@@ -4314,14 +4526,15 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 6,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "identified": false,
     "id_level": 0,
-    "adjacent_pet_damage_bonus": 0.25
+    "adjacent_pet_damage_bonus": 0.25,
+    "chain_exponent": 1.15
   },
   "penitents_blade": {
     "name": "Penitent's Blade",
@@ -4329,15 +4542,14 @@
     "variant": "1h",
     "tier": 4,
     "material": "dark iron",
-    "mathTier": 3,
-    "baseDamage": 18,
+    "mathTier": 4,
+    "baseDamage": 6,
     "chainMultipliers": [
       0.5,
-      1.2,
-      2.0,
-      3.5,
-      5.0,
-      7.0
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
     "maxChainLength": 6,
     "damageTypes": [
@@ -4356,13 +4568,18 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "lifesteal_percent": 0.15,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 2,
+      "81-100": 0
+    },
     "value": 5000,
-    "min_level": 9999,
-    "quiz_tier": 3,
+    "min_level": 55,
+    "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a dark iron dagger stained with old blood",
     "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood \u2014 wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
@@ -4371,22 +4588,23 @@
     ],
     "template_basis": "dagger",
     "spread": 0,
-    "peak_floor": 0,
+    "peak_floor": 68,
     "chain_multipliers": [
-      0.2,
-      0.55,
+      0.5,
+      0.85,
       1.0,
-      1.8,
-      3.0
+      1.45,
+      2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 10,
+    "base_damage": 6,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
     "id_level": 0,
-    "kill_count_karma_adjust": 100
+    "kill_count_karma_adjust": 100,
+    "chain_exponent": 1.15
   },
   "boomstick": {
     "name": "Boomstick",
@@ -4395,7 +4613,7 @@
     "tier": 3,
     "material": "iron",
     "mathTier": 3,
-    "baseDamage": 18,
+    "baseDamage": 11,
     "chainMultipliers": [
       0.5,
       0.9,
@@ -4440,13 +4658,14 @@
       1.75
     ],
     "peak_weight": 0.0,
-    "base_damage": 6,
+    "base_damage": 11,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
     "weapon_class_chain": "heavy",
     "design_notes": "Signature chain: explosive peak -- chain-5 triggers an AOE/shotgun spread. Requires combat.py wiring for the AOE. peak_floor=0 so baseDamage is special-cased (not formula-derived).",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "chainsaw_prosthetic": {
     "name": "Chainsaw Prosthetic",
@@ -4455,7 +4674,7 @@
     "tier": 3,
     "material": "iron",
     "mathTier": 3,
-    "baseDamage": 14,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.7,
       1.2,
@@ -4497,12 +4716,13 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 6,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
     "weapon_class_chain": "normal",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "romulus_spear": {
     "name": "Spear of Romulus",
@@ -4511,7 +4731,7 @@
     "tier": 1,
     "material": "bronze",
     "mathTier": 1,
-    "baseDamage": 3,
+    "baseDamage": 8,
     "chainMultipliers": [
       0.5,
       1.0,
@@ -4536,9 +4756,11 @@
     "bleedChance": 0.1,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-8": 8,
-      "9-20": 4,
-      "21-100": 0
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 250,
@@ -4560,7 +4782,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 4,
+    "base_damage": 8,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
@@ -4569,7 +4791,8 @@
       "beast"
     ],
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "pharaohs_crook": {
     "name": "Pharaoh's Crook",
@@ -4578,7 +4801,7 @@
     "tier": 1,
     "material": "hardwood",
     "mathTier": 1,
-    "baseDamage": 4,
+    "baseDamage": 12,
     "chainMultipliers": [
       1.0,
       1.3,
@@ -4601,9 +4824,11 @@
     "stunChance": 0.25,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-10": 6,
-      "11-20": 3,
-      "21-100": 0
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 200,
@@ -4625,7 +4850,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 4,
+    "base_damage": 12,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
@@ -4634,7 +4859,8 @@
     "design_notes": "King's blow archetype: every stroke carries pharaoh's authority, even the first touch is rebuke.",
     "identified": false,
     "id_level": 0,
-    "equipped_ally_aura_buff_str": 1
+    "equipped_ally_aura_buff_str": 1,
+    "chain_exponent": 1.15
   },
   "mjolnir_shard": {
     "name": "Mjolnir Shard",
@@ -4667,10 +4893,11 @@
     "stunChance": 0.2,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-9": 0,
-      "10-25": 8,
-      "26-40": 3,
-      "41-100": 0
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 500,
@@ -4693,7 +4920,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 8,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -4701,7 +4928,8 @@
     "burnChance": 0.15,
     "design_notes": "Signature chain: heavy with thunder peak -- a chip of the hammer keeps the weight even when broken. NOTE: chain-5 should trigger a lightning status proc; requires combat.py wiring.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "bow_of_rama": {
     "name": "Bow of Rama",
@@ -4710,7 +4938,7 @@
     "tier": 2,
     "material": "hardwood",
     "mathTier": 2,
-    "baseDamage": 6,
+    "baseDamage": 10,
     "chainMultipliers": [
       0.5,
       1.0,
@@ -4734,10 +4962,11 @@
     "reach": 12,
     "requiresAmmo": "arrow",
     "floorSpawnWeight": {
-      "1-11": 0,
-      "12-30": 8,
-      "31-45": 3,
-      "46-100": 0
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 600,
@@ -4760,7 +4989,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 8,
+    "base_damage": 10,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -4768,9 +4997,9 @@
     "effective_against": [
       "demon"
     ],
-    "critMultiplier": 1.5,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "gae_bolg_fragment": {
     "name": "Gae Bolg Fragment",
@@ -4779,7 +5008,7 @@
     "tier": 2,
     "material": "bone",
     "mathTier": 2,
-    "baseDamage": 16,
+    "baseDamage": 8,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -4800,14 +5029,14 @@
     "weight": 3.0,
     "twoHanded": false,
     "reach": 2,
-    "critMultiplier": 2.5,
     "bleedChance": 0.3,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-19": 0,
-      "20-35": 8,
-      "36-50": 3,
-      "51-100": 0
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 800,
@@ -4829,14 +5058,15 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 8,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "heavy",
     "design_notes": "Cursed-blade archetype: even the splinter remembers, the bone barbs find the wound and then they spread.",
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "staff_of_moses": {
     "name": "Staff of Moses",
@@ -4869,10 +5099,11 @@
     "stunChance": 0.25,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "1-24": 0,
-      "25-40": 6,
-      "41-55": 2,
-      "56-100": 0
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 900,
@@ -4895,7 +5126,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 13,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -4913,7 +5144,8 @@
         "status": "blinded",
         "duration": 2
       }
-    }
+    },
+    "chain_exponent": 1.15
   },
   "witcher_silver_blade": {
     "name": "Witcher's Silver Blade",
@@ -4922,7 +5154,7 @@
     "tier": 2,
     "material": "silver",
     "mathTier": 2,
-    "baseDamage": 12,
+    "baseDamage": 8,
     "chainMultipliers": [
       0.6,
       1.0,
@@ -4947,7 +5179,13 @@
     "stunChance": 0.0,
     "bleedChance": 0.1,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 800,
     "min_level": 9999,
@@ -4970,12 +5208,13 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 6,
+    "base_damage": 8,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
-    "id_level": 0
+    "id_level": 0,
+    "chain_exponent": 1.15
   },
   "zireael": {
     "name": "Zireael",
@@ -4983,8 +5222,8 @@
     "variant": "1h",
     "tier": 3,
     "material": "steel",
-    "mathTier": 2,
-    "baseDamage": 14,
+    "mathTier": 3,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.4,
       0.7,
@@ -5006,16 +5245,21 @@
     "twoHanded": false,
     "stunChance": 0.0,
     "bleedChance": 0.15,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "legendary",
     "value": 1200,
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
     "lore": "Zireael \u2014 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative \u2014 it is a promise. She will return. She always returns.",
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_types": [
       "slash"
     ],
@@ -5030,14 +5274,15 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 7,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "normal",
     "design_notes": "Signature chain: Swallow, the witcher's blade -- fast finesse opener (0.4x) with a sharp closing peak. Rewards the chain.",
     "id_level": 0,
-    "extra_action_after_kill": true
+    "extra_action_after_kill": true,
+    "chain_exponent": 1.15
   },
   "vel_of_murugan": {
     "name": "Vel of Murugan",
@@ -5046,7 +5291,7 @@
     "tier": 3,
     "material": "divine bronze",
     "mathTier": 3,
-    "baseDamage": 28,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.6,
       0.9,
@@ -5073,12 +5318,13 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": true,
-    "critMultiplier": 1.85,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "41-60": 1,
-      "61-80": 2,
-      "81-100": 1
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "very_rare",
     "value": 5500,
@@ -5108,7 +5354,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 11,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -5122,7 +5368,8 @@
       "duration_turns": 5,
       "max_hp_pct": 0.4,
       "chance": 0.5
-    }
+    },
+    "chain_exponent": 1.15
   },
   "khopesh_of_anubis": {
     "name": "Khopesh of Anubis",
@@ -5131,7 +5378,7 @@
     "tier": 3,
     "material": "dark iron",
     "mathTier": 3,
-    "baseDamage": 13,
+    "baseDamage": 9,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -5156,12 +5403,13 @@
     "bleedChance": 0.15,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "21-40": 1,
+      "1-20": 0,
+      "21-40": 0,
       "41-60": 2,
-      "61-80": 1
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 2500,
@@ -5187,12 +5435,13 @@
       3.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 8,
+    "base_damage": 9,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
     "weapon_class_chain": "finesse",
-    "design_notes": "Cursed-blade archetype: the embalmer's reckoning, quiet at first then the heart is found too heavy."
+    "design_notes": "Cursed-blade archetype: the embalmer's reckoning, quiet at first then the heart is found too heavy.",
+    "chain_exponent": 1.15
   },
   "chandrahasa": {
     "name": "Chandrahasa",
@@ -5201,7 +5450,7 @@
     "tier": 5,
     "material": "legendary",
     "mathTier": 5,
-    "baseDamage": 53,
+    "baseDamage": 18,
     "chainMultipliers": [
       0.2,
       0.4,
@@ -5227,9 +5476,14 @@
     "bleedChance": 0.1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    },
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 75,
@@ -5253,13 +5507,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 34,
+    "base_damage": 18,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "_curve_note": "Pass 3 trim: peak=87, base=34 (= curve.weapon_base_damage(87) x 1.65).",
-    "design_notes": "Cursed-blade archetype: the Laughing Moon ripens on desperation, patient until the wielder's strength fades."
+    "design_notes": "Cursed-blade archetype: the Laughing Moon ripens on desperation, patient until the wielder's strength fades.",
+    "chain_exponent": 1.15
   },
   "green_chapel_axe": {
     "name": "Green Chapel Axe",
@@ -5268,7 +5523,7 @@
     "tier": 3,
     "material": "enchanted iron",
     "mathTier": 3,
-    "baseDamage": 26,
+    "baseDamage": 11,
     "chainMultipliers": [
       0.8,
       1.2,
@@ -5293,12 +5548,13 @@
     "bleedChance": 0.2,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.75,
     "requiresAmmo": null,
     "floorSpawnWeight": {
-      "21-40": 1,
+      "1-20": 0,
+      "21-40": 0,
       "41-60": 2,
-      "61-80": 1
+      "61-80": 0,
+      "81-100": 0
     },
     "containerLootTier": "rare",
     "value": 2800,
@@ -5322,13 +5578,14 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 10,
+    "base_damage": 11,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
     "weapon_class_chain": "normal",
     "class_mechanic": "returning_blow",
-    "design_notes": "Bestial/feral archetype: the Green Knight's pact, strike then take then strike again: primal exchange-rhythm."
+    "design_notes": "Bestial/feral archetype: the Green Knight's pact, strike then take then strike again: primal exchange-rhythm.",
+    "chain_exponent": 1.15
   },
   "aiglos": {
     "name": "Aiglos",
@@ -5339,8 +5596,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "glaive",
-    "baseDamage": 76,
-    "base_damage": 34,
+    "baseDamage": 16,
+    "base_damage": 16,
     "chainMultipliers": [
       0.8,
       1.1,
@@ -5387,7 +5644,6 @@
     "value": 2040,
     "unidentified_name": "a spear",
     "identified": false,
-    "crit_multiplier": 2.0,
     "freeze_chance": 0.25,
     "ignore_resistances": true,
     "reach": 2,
@@ -5397,13 +5653,20 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
     "design_notes": "Signature chain: Elendil's spear -- steady, reliable, no surprises. Every rung climbs by ~0.3x; the spear keeps its word.",
     "wielder_fire_immunity": true,
     "wielder_status_immunity": [
       "fire"
-    ]
+    ],
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    }
   },
   "akinakes_acrisius": {
     "name": "Akinakes of Acrisius",
@@ -5414,8 +5677,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "shortsword",
-    "baseDamage": 15,
-    "base_damage": 11,
+    "baseDamage": 6,
+    "base_damage": 6,
     "chainMultipliers": [
       0.2,
       0.55,
@@ -5462,7 +5725,6 @@
     "value": 660,
     "unidentified_name": "a dagger",
     "identified": false,
-    "crit_multiplier": 2.2,
     "prophecy_blade": true,
     "bleed_chance": 0.25,
     "lore": "The short, leaf-shaped blade of Acrisius, king of Argos, who locked his daughter Danae in a bronze tower because an oracle said her son would kill him. Perseus killed him anyway, by accident, with a discus throw at funeral games. The blade survived the prophecy. The blades always do.",
@@ -5472,8 +5734,15 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.2,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    }
   },
   "anduril": {
     "name": "Anduril",
@@ -5484,8 +5753,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "longsword",
-    "baseDamage": 51,
-    "base_damage": 30,
+    "baseDamage": 16,
+    "base_damage": 16,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -5534,7 +5803,6 @@
     "identified": false,
     "undead_bonus": 2.5,
     "on_equip_status": "fear_aura",
-    "crit_multiplier": 1.8,
     "ignore_resistances": true,
     "lore": "Flame of the West, reforged from the shards of Narsil by the smiths of Imladris. The blade that cut the Ring from Sauron's hand, broken when Isildur fell, sleeping for an Age in Rivendell until the Heir of Elendil came to claim it. The Dead of Dunharrow followed it down the Paths and a city held the line.",
     "_curve_note": "base_damage = curve.weapon_base_damage(84) x 1.6 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F80-89 Fenrir-era band fill; signature LOTR Northern-fantasy entry.",
@@ -5543,12 +5811,19 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
     "requiresAmmo": null,
     "design_notes": "Signature chain: the Flame of the West -- a bright, steady ramp. Each rung is meaningful; no dead opener.",
     "effective_against": [
       "undead"
-    ]
+    ],
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    }
   },
   "atalanta_bow": {
     "name": "Atalanta's Bow",
@@ -5605,7 +5880,6 @@
     "value": 420,
     "unidentified_name": "a bow",
     "identified": false,
-    "crit_multiplier": 2.0,
     "first_blood_bonus": true,
     "lore": "The huntress raised by bears, fastest of mortals, who drew first blood on the Calydonian Boar before any of the heroes could land a spear. Meleager awarded her the hide, and his uncles died for the slight. Her arrow flies straight to the first thing that draws breath in her sights.",
     "_curve_note": "base_damage = curve.weapon_base_damage(27) x 1.5 unique-mult, rounded. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
@@ -5614,8 +5888,15 @@
     "reach": 10,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
-    "requiresAmmo": "arrow"
+    "requiresAmmo": "arrow",
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    }
   },
   "bellerophon_lance": {
     "name": "Bellerophon's Lance",
@@ -5626,8 +5907,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "glaive",
-    "baseDamage": 35,
-    "base_damage": 11,
+    "baseDamage": 9,
+    "base_damage": 9,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -5676,7 +5957,6 @@
     "identified": false,
     "burn_chance": 0.2,
     "beast_bonus_damage": "2d6",
-    "crit_multiplier": 1.8,
     "lore": "Tipped with a lump of lead, this is the lance Bellerophon couched from the back of Pegasus when he charged the Chimera. The monster's own fire melted the lead in its throat, and the molten metal did the killing the spearhead alone could not. Pride later threw Bellerophon off the winged horse; the lance survived him.",
     "_curve_note": "base_damage = curve.weapon_base_damage(42) x 1.6 unique-mult. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F40-49 Medusa-era band fill.",
     "stunChance": 0.0,
@@ -5684,8 +5964,15 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    }
   },
   "cadmus_sword": {
     "name": "Sword of Cadmus",
@@ -5696,8 +5983,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "longsword",
-    "baseDamage": 24,
-    "base_damage": 10,
+    "baseDamage": 9,
+    "base_damage": 9,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -5746,7 +6033,6 @@
     "identified": false,
     "dragon_bonus_damage": "1d8",
     "bleed_chance": 0.2,
-    "crit_multiplier": 1.6,
     "lore": "Cadmus of Tyre slew the great water-dragon of Ares at the spring that would water Thebes. Athena told him to sow the teeth in the furrow; the Sown Men sprang up armed and killed each other until five remained to found the city. The sword that opened the dragon is the same sword that opened the founding line.",
     "_curve_note": "base_damage = curve.weapon_base_damage(44) x 1.5 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F40-49 Medusa-era band fill.",
     "stunChance": 0.0,
@@ -5754,13 +6040,20 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.6,
     "requiresAmmo": null,
     "summon_after_kill_with_tag": {
       "tag": "dragon",
       "duration_turns": 5,
       "max_hp_pct": 0.4,
       "chance": 1.0
+    },
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
     }
   },
   "glamdring": {
@@ -5772,8 +6065,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "greatsword",
-    "baseDamage": 71,
-    "base_damage": 32,
+    "baseDamage": 19,
+    "base_damage": 19,
     "chainMultipliers": [
       0.7,
       1.0,
@@ -5822,7 +6115,6 @@
     "identified": false,
     "goblin_bonus_damage": "2d8",
     "glows_near_orcs": true,
-    "crit_multiplier": 2.0,
     "burn_chance": 0.2,
     "lore": "Foe-Hammer, the orc-cleaver. Forged in Gondolin during the First Age, lost when the hidden city burned, recovered from a stone-troll's hoard in the wilderlands. Gandalf carried it through Moria and into the deep where the Balrog waited. The blade glows blue when goblins are near, which is most of the time, this far down.",
     "_curve_note": "base_damage = curve.weapon_base_damage(82) x 1.8 unique-mult. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F80-89 Fenrir-era band fill.",
@@ -5831,9 +6123,16 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "design_notes": "Signature chain: the Foe-hammer -- a bright, steady ramp like Anduril. Goblin-bane reliability over flashy peaks."
+    "design_notes": "Signature chain: the Foe-hammer -- a bright, steady ramp like Anduril. Goblin-bane reliability over flashy peaks.",
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    }
   },
   "hector_javelin": {
     "name": "Hector's Javelin",
@@ -5844,8 +6143,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "glaive",
-    "baseDamage": 22,
-    "base_damage": 6,
+    "baseDamage": 8,
+    "base_damage": 8,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -5891,7 +6190,6 @@
     "unidentified_name": "a spear",
     "identified": false,
     "bleed_chance": 0.25,
-    "crit_multiplier": 1.6,
     "lore": "The bronze-headed javelin of Hector, breaker of horses, last shield of Troy. He threw one like it at Ajax in the duel before the ships; it struck the boss of the shield and bent. Patroclus wore Achilles's armor when he fell to the next throw of its kind.",
     "_curve_note": "base_damage = curve.weapon_base_damage(22) x 1.4 unique-mult, rounded for heavy spear feel. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F20-29 Asterion-era band fill.",
     "stunChance": 0.0,
@@ -5899,8 +6197,16 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.6,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "beast_bonus_damage": "1d6"
   },
   "heracles_club": {
     "name": "Heracles's Olive-Club",
@@ -5911,8 +6217,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "maul",
-    "baseDamage": 20,
-    "base_damage": 14,
+    "baseDamage": 11,
+    "base_damage": 11,
     "chainMultipliers": [
       1.0,
       1.0,
@@ -5959,7 +6265,6 @@
     "identified": false,
     "stun_chance": 0.35,
     "knockback": true,
-    "crit_multiplier": 2.0,
     "beast_bonus_damage": "1d10",
     "lore": "Uprooted from the wild olives of Nemea by the hero's own hands, hardened in the fire of his second labor. The Nemean Lion's hide had turned every blade he tried; the club did not need to cut. The wood is dark with old work and smells of resin even now.",
     "_curve_note": "base_damage = curve.weapon_base_damage(46) x 2.0 unique-mult, signature boss-tier hero weapon. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F40-49 Medusa-era band fill.",
@@ -5967,9 +6272,16 @@
     "bleedChance": 0.0,
     "reach": 1,
     "ignoreShield": false,
-    "critMultiplier": 2.0,
     "requiresAmmo": null,
-    "design_notes": "Signature chain: the Olive-Club -- first hits crush evenly (1.0x, 1.0x), then break into a huge peak. Heracles never warms up; he finishes."
+    "design_notes": "Signature chain: the Olive-Club -- first hits crush evenly (1.0x, 1.0x), then break into a huge peak. Heracles never warms up; he finishes.",
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 2,
+      "61-80": 0,
+      "81-100": 0
+    }
   },
   "hofud": {
     "name": "Hofud",
@@ -5980,8 +6292,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "longsword",
-    "baseDamage": 58,
-    "base_damage": 28,
+    "baseDamage": 12,
+    "base_damage": 12,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6028,7 +6340,6 @@
     "value": 1680,
     "unidentified_name": "a sword",
     "identified": false,
-    "crit_multiplier": 1.8,
     "vigilance_aware": true,
     "stun_chance": 0.15,
     "lore": "Hofud, called Man-Head, the sword of Heimdall the watcher at Bifrost. He hears wool growing on the backs of sheep and grass climbing out of the ground. At Ragnarok he and Loki will meet on the field and finish each other; the sword will not survive that day either, but until then nothing slips past it.",
@@ -6038,8 +6349,15 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    }
   },
   "meleager_spear": {
     "name": "Meleager's Boar-Spear",
@@ -6098,7 +6416,6 @@
     "identified": false,
     "beast_bonus_damage": "1d6",
     "bleed_chance": 0.3,
-    "crit_multiplier": 1.7,
     "lore": "The ash-shafted spear with which Meleager pinned the Calydonian Boar that Artemis sent in vengeance for a forgotten sacrifice. His mother carried a brand from his birth-fire; when he killed her brothers over Atalanta's prize, she threw it on the hearth, and the hero burned with it. The spear was a king's weapon either way.",
     "_curve_note": "base_damage = curve.weapon_base_damage(26) x 1.8 unique-mult, rounded. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F20-29 Asterion-era band fill.",
     "stunChance": 0.0,
@@ -6106,11 +6423,18 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.7,
     "requiresAmmo": null,
     "reveal_tag_on_chain_5_kill": [
       "beast"
-    ]
+    ],
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    }
   },
   "pelops_sword": {
     "name": "Sword of Pelops",
@@ -6121,8 +6445,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "bastard_sword",
-    "baseDamage": 21,
-    "base_damage": 9,
+    "baseDamage": 8,
+    "base_damage": 8,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6167,7 +6491,6 @@
     "value": 660,
     "unidentified_name": "a sword",
     "identified": false,
-    "crit_multiplier": 1.4,
     "cursed_lineage": true,
     "lore": "Pelops took the kingdom of Pisa by winning the chariot race against Oenomaus, after bribing the charioteer to remove a linchpin. The king died. The charioteer was thrown into the sea cursing the house. The sword passed down to Atreus, then to Agamemnon, and Mycenae did not stop bleeding for three generations.",
     "_curve_note": "Redistributed: peak=36, base=9 (= curve.weapon_base_damage(36) x 1.55), min_level=29, quiz_tier=2.",
@@ -6176,9 +6499,15 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.7,
     "requiresAmmo": null,
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "chain_exponent": 1.15
   },
   "stormbringer": {
     "name": "Stormbringer",
@@ -6189,8 +6518,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "greatsword",
-    "baseDamage": 86,
-    "base_damage": 38,
+    "baseDamage": 24,
+    "base_damage": 24,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6239,7 +6568,6 @@
     "identified": false,
     "lifesteal_percent": 0.25,
     "selects_wielder": true,
-    "crit_multiplier": 2.2,
     "on_equip_status": "berserk",
     "ignore_resistances": true,
     "betrays_at_low_hp": true,
@@ -6250,9 +6578,16 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 2.5,
     "requiresAmmo": null,
-    "design_notes": "Signature: chain-5 drains the victim's soul (lifesteal-style heal). Requires combat.py wiring for the soul-steal proc; chain curve here is the runesword's tempered finesse profile."
+    "design_notes": "Signature: chain-5 drains the victim's soul (lifesteal-style heal). Requires combat.py wiring for the soul-steal proc; chain curve here is the runesword's tempered finesse profile.",
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 2
+    }
   },
   "talos_sickle": {
     "name": "Sickle of Talos",
@@ -6263,8 +6598,8 @@
     "twoHanded": false,
     "two_handed": false,
     "template_basis": "scimitar",
-    "baseDamage": 10,
-    "base_damage": 6,
+    "baseDamage": 8,
+    "base_damage": 8,
     "chainMultipliers": [
       0.2,
       0.55,
@@ -6310,7 +6645,6 @@
     "unidentified_name": "a scimitar",
     "identified": false,
     "bleed_chance": 0.3,
-    "crit_multiplier": 1.8,
     "ignore_armor": 1,
     "lore": "A curved bronze blade said to be ground from one of the molten drops shed when Medea pulled the brass pin from Talos's ankle. The Cretan giant bled his ichor into the sea before he fell. Whatever cooled there still cuts.",
     "_curve_note": "base_damage = curve.weapon_base_damage(25) x 1.5 unique-mult. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
@@ -6319,8 +6653,15 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.8,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    }
   },
   "theseus_club": {
     "name": "Theseus's Club",
@@ -6332,7 +6673,7 @@
     "two_handed": false,
     "template_basis": "club",
     "baseDamage": 10,
-    "base_damage": 6,
+    "base_damage": 10,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6378,7 +6719,6 @@
     "unidentified_name": "a club",
     "identified": false,
     "stun_chance": 0.3,
-    "crit_multiplier": 1.5,
     "lore": "The bronze club Theseus took from the corpse of Periphetes, the lame brigand of Epidaurus who beat travellers to death with it. Theseus kept the weapon for the rest of the road to Athens and carried it down into the labyrinth. The hero who walked the maze did not walk it empty-handed.",
     "_curve_note": "base_damage = curve.weapon_base_damage(23) x 1.5 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F20-29 Asterion-era band fill.",
     "stunChance": 0.3,
@@ -6386,8 +6726,16 @@
     "reach": 1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
-    "requiresAmmo": null
+    "requiresAmmo": null,
+    "chain_exponent": 1.15,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 2,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "humanoid_bonus_damage": "1d6"
   },
   "cain_club": {
     "name": "Cain's Club",
@@ -6399,8 +6747,8 @@
     "is_unique": true,
     "mathTier": 1,
     "quiz_tier": 1,
-    "baseDamage": 4,
-    "base_damage": 4,
+    "baseDamage": 9,
+    "base_damage": 9,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6438,9 +6786,14 @@
     "bleedChance": 0.1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 240,
@@ -6455,7 +6808,8 @@
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "cursedMissBacklash": 1,
-    "equipped_monster_aggro_radius": 2
+    "equipped_monster_aggro_radius": 2,
+    "chain_exponent": 1.15
   },
   "wepwawet_mace": {
     "name": "Mace of Wepwawet",
@@ -6467,8 +6821,8 @@
     "is_unique": true,
     "mathTier": 1,
     "quiz_tier": 1,
-    "baseDamage": 6,
-    "base_damage": 4,
+    "baseDamage": 9,
+    "base_damage": 9,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6506,9 +6860,14 @@
     "bleedChance": 0.0,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 240,
@@ -6522,7 +6881,8 @@
     "lore": "Wepwawet \u2014 'Opener of the Ways' \u2014 was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "can_dig": true
+    "can_dig": true,
+    "chain_exponent": 1.15
   },
   "cuchulainn_hurley": {
     "name": "Setanta's Hurley",
@@ -6534,8 +6894,8 @@
     "is_unique": true,
     "mathTier": 1,
     "quiz_tier": 1,
-    "baseDamage": 6,
-    "base_damage": 4,
+    "baseDamage": 9,
+    "base_damage": 9,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6573,9 +6933,14 @@
     "bleedChance": 0.0,
     "knockback": true,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 240,
@@ -6591,7 +6956,8 @@
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "effective_against": [
       "beast"
-    ]
+    ],
+    "chain_exponent": 1.15
   },
   "mwindo_axe": {
     "name": "Mwindo's Conga-Scepter",
@@ -6603,8 +6969,8 @@
     "is_unique": true,
     "mathTier": 1,
     "quiz_tier": 1,
-    "baseDamage": 10,
-    "base_damage": 5,
+    "baseDamage": 9,
+    "base_damage": 9,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -6642,9 +7008,14 @@
     "bleedChance": 0.1,
     "knockback": false,
     "ignoreShield": false,
-    "critMultiplier": 1.5,
     "requiresAmmo": null,
-    "floorSpawnWeight": {},
+    "floorSpawnWeight": {
+      "1-20": 4,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 300,
@@ -6658,6 +7029,7 @@
     "lore": "The Mwindo Epic \u2014 collected from the Banyanga of the eastern Congo in the 1950s \u2014 gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
     "template_basis": "handaxe",
     "_curve_note": "Pass 4: bumped base damage to 5 to match band effective ratio (~2.0x of curve at low floor scales).",
-    "kill_heal_amount": 2
+    "kill_heal_amount": 2,
+    "chain_exponent": 1.15
   }
 }

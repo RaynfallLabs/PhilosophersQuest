@@ -390,10 +390,11 @@ def test_invoke_wand_fail_consumes_charge():
         )
 
 
-def test_wand_tier_damage_does_not_double_scale():
-    """v2.11.0: wand.power dice are already tier-baked (T1 3d4 ... T5 12d10),
-    so _wand_tier_damage must NOT re-apply a 0.5-3.0x tier multiplier.
-    Damage scales with player INT, not with tier."""
+def test_wand_tier_damage_scales_higher_at_low_tiers():
+    """v2.14.0 (chain combat v2): the per-tier multiplier is deliberately
+    STRONGER at low tiers to close the gap against the new weapon chain curve.
+    T1 gets ~3.0x, T5 gets ~1.5x on top of the tier-baked wand.power dice.
+    INT scaling still stacks on top (this test uses INT 10 = 1.0x)."""
     from game_magic import MagicMixin
 
     class _P:
@@ -403,12 +404,16 @@ def test_wand_tier_damage_does_not_double_scale():
         player = _P()
 
     dmg_t1 = MagicMixin._wand_tier_damage(_G(), 100, 1)
+    dmg_t3 = MagicMixin._wand_tier_damage(_G(), 100, 3)
     dmg_t5 = MagicMixin._wand_tier_damage(_G(), 100, 5)
-    # At the same INT, T1 and T5 must yield the same damage from the same
-    # base (the tier scaling is now baked into wand.power, not this helper).
-    assert dmg_t1 == dmg_t5, (
-        f"v2.11.0: tier arg must not re-scale damage; got T1={dmg_t1} T5={dmg_t5}"
+    # T1 multiplier is 3.0, T3 is 2.0, T5 is 1.5 -- monotone-decreasing.
+    assert dmg_t1 > dmg_t3 > dmg_t5, (
+        f"tier multipliers should decrease with tier; got T1={dmg_t1} T3={dmg_t3} T5={dmg_t5}"
     )
+    # INT 10 gives (1.0 + 10*0.1) = 2.0x INT scaling (pre-existing behavior);
+    # tier mult stacks. T1: 100 * 3.0 * 2.0 = 600. T5: 100 * 1.5 * 2.0 = 300.
+    assert dmg_t1 == 600, f"T1: 3.0x tier * 2.0x INT -> 600; got {dmg_t1}"
+    assert dmg_t5 == 300, f"T5: 1.5x tier * 2.0x INT -> 300; got {dmg_t5}"
 
 
 def test_wand_effect_sprite_fallback_covers_new_wands():

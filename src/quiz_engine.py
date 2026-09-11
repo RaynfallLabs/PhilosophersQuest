@@ -256,11 +256,15 @@ class QuizEngine:
         if is_correct:
             self.correct_count += 1
             self.chain += 1
-            self.score = self.chain if self.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN) \
-                else self.correct_count
             self._record_correct_for_mastery()   # retire this question; master the tier if cleared
-        else:
-            self.chain = 0
+        # Chain combat v2: a wrong answer NO LONGER zeros the chain. The strike
+        # lands at whatever chain was achieved before the miss. Chain 0 (miss on
+        # the FIRST question) still means "weapon missed" downstream; chain >= 1
+        # means the strike lands at that chain.
+        if self.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+            self.score = self.chain
+        elif is_correct:
+            self.score = self.correct_count
 
         self.state = QuizState.RESULT
         self.result_timer = self.RESULT_DISPLAY_TIME if is_correct else self.WRONG_DISPLAY_TIME
@@ -282,13 +286,17 @@ class QuizEngine:
             if self.timed and self.time_remaining > 0:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
                 if self.time_remaining <= 0.0:
-                    # Time's up -- count as a wrong answer and advance
+                    # Time's up. Chain combat v2: DOES NOT zero the chain. The
+                    # strike lands at whatever chain was achieved during the
+                    # window; only a wrong answer on the very first question
+                    # (chain 0) counts as a miss.
                     self.last_answer = ''
                     self.asked_count += 1
                     self.last_correct = False
-                    self.chain = 0
                     self.state = QuizState.RESULT
                     self.result_timer = self.WRONG_DISPLAY_TIME
+                    if self.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+                        self.score = self.chain
                     if self.on_answer:
                         self.on_answer(False)
 
@@ -639,6 +647,21 @@ class QuizEngine:
             os.replace(tmp, path)
         except OSError:
             return
+
+    def cancel_and_strike(self) -> bool:
+        """Chain combat v2: SPACE key handler. Locks in current chain and lands
+        the strike immediately. Only valid in chain modes and only while a
+        question is being asked (not during the result flash). Returns True if
+        the cancel took effect."""
+        if self.mode not in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+            return False
+        if self.state != QuizState.ASKING:
+            return False
+        # Freeze the achieved chain into score and end the quiz. Downstream
+        # combat callback treats score >= 1 as a landed strike at that chain.
+        self.score = self.chain
+        self._end(success=True)
+        return True
 
     def _end(self, success: bool):
         self.state = QuizState.COMPLETE

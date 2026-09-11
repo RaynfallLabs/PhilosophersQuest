@@ -11,7 +11,7 @@
   "spread": 7,
   "peak_weight": 6.0,
   "min_level": 1,
-  "damage_mult": 0.85,
+  "damage_mult": 0.80,
   "weight_mult": 1.05,
   "max_enchant": 2,
   "color": [
@@ -32,5 +32,5 @@
   "lore_descriptor": "warm-toned, smelling faintly of tin",
   "unidentified_descriptor": "tarnished blade",
   "first_pickup_chronicle": "Bronze. Older than iron. The Iliad was written for soldiers who carried this. It is not the strongest metal — it is the FIRST metal. That matters somehow.",
-  "design_notes": "Peak F5 spread 7 — common early. damage_mult 0.85 (between copper 0.7 and iron 1.0). Slight weight penalty (1.05×). effective_against fey is a soft-mythological tie (bronze age vs the Tuatha). cite: curve.weapon_base_damage(5) ≈ 1-2, bronze longsword = ~1-2."
+  "design_notes": "Chain combat v2 tuning: damage_mult 0.80, weight_mult 1.05, effective_against fey (T1 specialty). Peak F5 spread 7 — common early. Slight weight penalty (1.05×). effective_against fey is a soft-mythological tie (bronze age vs the Tuatha)."
 }

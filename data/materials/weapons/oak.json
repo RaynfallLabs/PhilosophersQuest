@@ -10,8 +10,8 @@
   "spread": 8,
   "peak_weight": 10.0,
   "min_level": 1,
-  "damage_mult": 0.85,
-  "weight_mult": 0.9,
+  "damage_mult": 0.75,
+  "weight_mult": 0.90,
   "max_enchant": 2,
   "color": [
     140,
@@ -34,5 +34,5 @@
   "lore_descriptor": "honest grain, smelling of forest air",
   "unidentified_descriptor": "a wooden haft",
   "first_pickup_chronicle": "Oak. The first tool any tribe makes. A club, a staff, a bow — oak does all three.",
-  "design_notes": "F2 peak — the wooden equivalent of copper. damage_mult 0.85 because wood doesn't keep an edge. Vulnerable to fire (rangers learn this fast)."
+  "design_notes": "Chain combat v2 tuning: damage_mult 0.75, weight_mult 0.90, no effective_against (T1 core wood). Wood doesn't keep an edge. Vulnerable to fire (rangers learn this fast)."
 }

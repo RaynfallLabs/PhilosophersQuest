@@ -103,6 +103,576 @@ def _tag_match(monster, tag: str) -> bool:
     return getattr(monster, 'kind', '') == tag
 
 
+# ---------------------------------------------------------------------------
+# Chain combat v2 (v2.14.0): per-class chain-special dispatch
+# ---------------------------------------------------------------------------
+# Universal 5/10/15/20 chain thresholds fire class-specific effects.
+# See docs/design/weapon_specials_v2_14.md for the full table + design intent.
+# Highest-threshold wins — chain 20 does NOT stack with chain 15 effects.
+# ---------------------------------------------------------------------------
+
+def _chain_special_tier(chain: int) -> int:
+    """Return the highest chain-special threshold this chain qualifies for.
+    0 if below 5 (no special)."""
+    if chain >= 20:
+        return 20
+    if chain >= 15:
+        return 15
+    if chain >= 10:
+        return 10
+    if chain >= 5:
+        return 5
+    return 0
+
+
+def _weapon_key(weapon) -> str:
+    """Return the class key used for chain-special dispatch. Distinguishes
+    2H from 1H variants of the same base class (sword/axe). Falls back to
+    'fist' for unarmed."""
+    if weapon is None:
+        return 'fist'
+    wc = getattr(weapon, 'weapon_class', 'fist') or 'fist'
+    two_handed = bool(getattr(weapon, 'two_handed', False))
+    # 2H swords / axes / warhammers get their own row in the specials table.
+    if wc == 'sword' and two_handed:
+        return '2h_sword'
+    if wc == 'axe' and two_handed:
+        return '2h_axe'
+    if wc == 'zweihander':
+        return '2h_sword'
+    if wc == 'warhammer':
+        return '2h_warhammer'
+    # Scimitar & morningstar fold under 1h_sword / mace for specials by design.
+    if wc == 'scimitar':
+        return 'sword'
+    if wc == 'morningstar':
+        return 'mace'
+    # ranged catch-all: split by weapon.reach/requires_ammo. Bows have reach 6+
+    # and 'arrow' ammo; crossbows have 'bolt' ammo; slings use stones/infinite.
+    if wc == 'ranged':
+        ammo_type = getattr(weapon, 'requires_ammo', '') or ''
+        if 'bolt' in ammo_type.lower():
+            return 'crossbow'
+        if getattr(weapon, 'infinite_ammo', False):
+            return 'sling'
+        return 'bow'
+    return wc
+
+
+# Which class + chain-tier combos should bypass damage reduction on this hit
+# (before dragon_scales, before shielded's 0.5x, resistance clamped to >= 1.0).
+_BYPASS_DR_TIERS = {
+    'sword':     {10, 15, 20},     # 1h sword: master strike (C10), blade_flow-driven at 15/20
+    '1h_sword':  {10, 15, 20},     # alias if the key generator ever produces it
+    'spear':     {10, 15, 20},     # pierce through armor
+    'bow':       {15, 20},         # piercing shot
+    'crossbow':  {5, 10, 15, 20},  # bolts always punch through
+    'mace':      {20},             # shattering blow
+    'halberd':   set(),            # halberd C20 keeps sunder, does NOT bypass DR (design pass)
+}
+
+
+def _apply_chain_class_pre_damage(player, weapon, chain: int) -> float:
+    """Pre-damage hook. Runs after the chain multiplier is computed but before
+    dtype_mult finalizes. Sets `player._chain_bypass_dr` when the class + tier
+    calls for it, and returns any per-hit damage multiplier to layer on top
+    of `mult` (currently only Bow C20's vitals-shot ×2).
+
+    Kept small and stateless so it can be called on every hit without
+    touching the surrounding damage pipeline.
+    """
+    tier = _chain_special_tier(chain)
+    if tier == 0:
+        return 1.0
+    key = _weapon_key(weapon)
+
+    # Bypass-DR one-shot flag consumed later in the damage block.
+    if tier in _BYPASS_DR_TIERS.get(key, ()):
+        player._chain_bypass_dr = True
+
+    # Bow C20 "hits vitals" -> ×2 damage on top of the polynomial mult.
+    if key == 'bow' and tier == 20:
+        return 2.0
+
+    return 1.0
+
+
+# --- Post-damage class-chain-special applications ---------------------------
+# Each entry is a callable (player, monster, weapon, chain, monsters, dungeon)
+# invoked AFTER the hit's damage lands on the primary target. It applies
+# statuses to the target, AoE damage to nearby monsters, and player buffs
+# per the design doc's class ladder.
+# ---------------------------------------------------------------------------
+
+def _max_status(monster, effect: str, duration: int):
+    """Apply a status, taking the max of any existing duration."""
+    if monster is None or not monster.alive:
+        return
+    cur = int(monster.status_effects.get(effect, 0) or 0)
+    monster.status_effects[effect] = max(cur, int(duration))
+
+
+def _adjacent_monsters(player, monsters, radius: int = 1, exclude=None):
+    """Return alive monsters within Chebyshev `radius` of the player,
+    excluding the given monster and non-alive."""
+    px, py = player.x, player.y
+    out = []
+    for m in monsters or []:
+        if not getattr(m, 'alive', False):
+            continue
+        if exclude is not None and m is exclude:
+            continue
+        if abs(m.x - px) <= radius and abs(m.y - py) <= radius \
+                and not (m.x == px and m.y == py):
+            out.append(m)
+    return out
+
+
+def _player_max_status(player, effect: str, duration: int):
+    """Apply a player-side status, keeping the max duration."""
+    cur = int(player.status_effects.get(effect, 0) or 0)
+    player.status_effects[effect] = max(cur, int(duration))
+
+
+def _player_stack(player, effect: str, add_stacks: int):
+    """Add stacks to a stack-consumed player buff (blade_flow). Ceiling at 10
+    stacks to prevent runaway."""
+    cur = int(player.status_effects.get(effect, 0) or 0)
+    player.status_effects[effect] = min(10, cur + int(add_stacks))
+
+
+def _apply_chain_class_post_damage(player, monster, weapon, chain: int,
+                                    monsters, dungeon, actual: int) -> dict:
+    """Post-damage hook. Applies primary-target statuses, AoE damage/statuses,
+    and player buffs per the class chain-special ladder. Returns a dict of
+    side-effects the on_complete callback can surface:
+      {'aoe_hits': [(monster, dmg), ...], 'aoe_status': [effect_name],
+       'special_msg': str or None}
+    Called only when the strike actually connected (chain >= 1); safe to
+    call with chain < 5 (no-ops).
+    """
+    result = {'aoe_hits': [], 'aoe_status': [], 'special_msg': None}
+    tier = _chain_special_tier(chain)
+    if tier == 0:
+        return result
+    key = _weapon_key(weapon)
+
+    # Cached primary damage for AoE falloff (0.4x-0.7x of primary is common).
+    def _aoe_dmg(mult: float) -> int:
+        return max(1, int(actual * mult))
+
+    # -----------------------------------------------------------------
+    # FIST — pressure points, chi
+    # -----------------------------------------------------------------
+    if key == 'fist':
+        if tier == 5:
+            _max_status(monster, 'slowed', 2)
+        elif tier == 10:
+            _max_status(monster, 'sundered', 3)
+        elif tier == 15:
+            _max_status(monster, 'deep_wound', 3)
+            _max_status(monster, 'bleeding', 5)
+        elif tier == 20:
+            _max_status(monster, 'stunned', 3)
+            _max_status(monster, 'deep_wound', 5)
+            _max_status(monster, 'bleeding', 8)
+        return result
+
+    # -----------------------------------------------------------------
+    # RAPIER — setup + counterstrike
+    # -----------------------------------------------------------------
+    if key == 'rapier':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 3)
+        elif tier == 10:
+            _max_status(monster, 'sundered', 3)
+            _max_status(monster, 'bleeding', 5)
+        elif tier == 15:
+            _max_status(monster, 'sundered', 5)
+            _max_status(monster, 'bleeding', 8)
+            _player_max_status(player, 'melee_dmg_reduction', 2)
+        elif tier == 20:
+            _max_status(monster, 'sundered', 8)
+            _max_status(monster, 'bleeding', 10)
+            _player_max_status(player, 'melee_dmg_reduction', 4)
+        return result
+
+    # -----------------------------------------------------------------
+    # STAFF — trip + self-sustain
+    # -----------------------------------------------------------------
+    if key == 'staff':
+        if tier == 5:
+            _max_status(monster, 'slowed', 2)
+        elif tier == 10:
+            for m in _adjacent_monsters(player, monsters):
+                _max_status(m, 'slowed', 2)
+        elif tier == 15:
+            _player_max_status(player, 'melee_dmg_reduction', 3)
+            player.hp = min(player.max_hp, player.hp + max(1, player.max_hp // 7))  # ~15%
+        elif tier == 20:
+            for m in _adjacent_monsters(player, monsters):
+                _max_status(m, 'slowed', 3)
+            _player_max_status(player, 'melee_dmg_reduction', 3)
+            player.hp = min(player.max_hp, player.hp + max(1, player.max_hp // 7))
+            player.mp = min(player.max_mp, player.mp + max(1, player.max_mp // 10))
+        return result
+
+    # -----------------------------------------------------------------
+    # DAGGER — DoT stacker
+    # -----------------------------------------------------------------
+    if key == 'dagger':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 4)
+        elif tier == 10:
+            _max_status(monster, 'deep_wound', 3)
+        elif tier == 15:
+            _max_status(monster, 'poisoned', 6)
+            _max_status(monster, 'bleeding', 6)
+        elif tier == 20:
+            _max_status(monster, 'ruptured', 5)
+            _max_status(monster, 'poisoned', 8)
+            _max_status(monster, 'bleeding', 10)
+        return result
+
+    # -----------------------------------------------------------------
+    # 1H SWORD — reliability, blade_flow
+    # -----------------------------------------------------------------
+    if key == 'sword':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 3)
+        # tier 10: bypass DR handled pre-damage — nothing to add here.
+        elif tier == 15:
+            _player_stack(player, 'blade_flow', 3)
+            _player_max_status(player, 'melee_dmg_reduction', 3)
+        elif tier == 20:
+            _player_stack(player, 'blade_flow', 4)
+            _player_max_status(player, 'melee_dmg_reduction', 3)
+        return result
+
+    # -----------------------------------------------------------------
+    # BOW — precision, eye-shot, vitals
+    # -----------------------------------------------------------------
+    if key == 'bow':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 3)
+        elif tier == 10:
+            _max_status(monster, 'blinded', 4)
+        elif tier == 20:
+            _max_status(monster, 'blinded', 6)
+            _max_status(monster, 'bleeding', 8)
+        # tier 15 and 20 also bypass DR (handled pre-damage). tier 20 hits
+        # vitals for x2 damage (also handled pre-damage).
+        return result
+
+    # -----------------------------------------------------------------
+    # 1H AXE — bleed + broken limb + cleave
+    # -----------------------------------------------------------------
+    if key == 'axe':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 4)
+        elif tier == 10:
+            _max_status(monster, 'sundered', 3)
+        elif tier == 15:
+            adj = _adjacent_monsters(player, monsters, exclude=monster)
+            if adj:
+                target = adj[0]
+                d = _aoe_dmg(0.5)
+                target.take_damage(d)
+                result['aoe_hits'].append((target, d))
+                _max_status(target, 'bleeding', 4)
+            _max_status(monster, 'bleeding', 4)
+        elif tier == 20:
+            adj = _adjacent_monsters(player, monsters, exclude=monster)
+            hits = 0
+            for m in adj:
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 8)
+                _max_status(m, 'sundered', 5)
+                hits += 1
+            _max_status(monster, 'bleeding', 8)
+            _max_status(monster, 'sundered', 5)
+            regen_pct = min(15, hits * 5)
+            if regen_pct > 0:
+                player.hp = min(player.max_hp,
+                                player.hp + max(1, player.max_hp * regen_pct // 100))
+        return result
+
+    # -----------------------------------------------------------------
+    # MACE — armor_crack, stun
+    # -----------------------------------------------------------------
+    if key == 'mace':
+        import random as _rng
+        if tier == 5:
+            if _rng.random() < 0.40:
+                _max_status(monster, 'stunned', 1)
+        elif tier == 10:
+            _max_status(monster, 'armor_crack', 5)
+        elif tier == 15:
+            _max_status(monster, 'stunned', 2)
+            _max_status(monster, 'armor_crack', 8)
+        elif tier == 20:
+            _max_status(monster, 'stunned', 3)
+            _max_status(monster, 'armor_crack', 10)
+            # bypass_dr handled pre-damage for tier 20
+        return result
+
+    # -----------------------------------------------------------------
+    # 2H WARHAMMER — area stun
+    # -----------------------------------------------------------------
+    if key == '2h_warhammer':
+        if tier == 5:
+            _max_status(monster, 'stunned', 2)
+        elif tier == 10:
+            _max_status(monster, 'stunned', 3)
+            for m in _adjacent_monsters(player, monsters, exclude=monster):
+                _max_status(m, 'stunned', 1)
+        elif tier == 15:
+            for m in _adjacent_monsters(player, monsters, radius=2):
+                _max_status(m, 'stunned', 1)
+                _max_status(m, 'armor_crack', 5)
+        elif tier == 20:
+            for m in _adjacent_monsters(player, monsters, radius=2):
+                _max_status(m, 'stunned', 1)
+                _max_status(m, 'armor_crack', 5)
+                d = _aoe_dmg(0.4)
+                if m is not monster:
+                    m.take_damage(d)
+                    result['aoe_hits'].append((m, d))
+        return result
+
+    # -----------------------------------------------------------------
+    # SPEAR — pierce, impale
+    # -----------------------------------------------------------------
+    if key == 'spear':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 3)
+        elif tier == 15 or tier == 20:
+            # Pierce logic: hit tile behind target (in line from player -> target)
+            dx = 0 if monster.x == player.x else (1 if monster.x > player.x else -1)
+            dy = 0 if monster.y == player.y else (1 if monster.y > player.y else -1)
+            reach = 1 if tier == 15 else 2
+            for step in range(1, reach + 1):
+                bx, by = monster.x + dx * step, monster.y + dy * step
+                for m in monsters or []:
+                    if (getattr(m, 'alive', False) and m.x == bx and m.y == by
+                            and m is not monster):
+                        falloff = 0.6 if tier == 15 else 0.5
+                        d = _aoe_dmg(falloff)
+                        m.take_damage(d)
+                        result['aoe_hits'].append((m, d))
+                        _max_status(m, 'bleeding', 8 if tier == 20 else 5)
+                        break
+            _max_status(monster, 'bleeding', 8 if tier == 20 else 5)
+            if tier == 20:
+                _max_status(monster, 'impaled', 3)
+        return result
+
+    # -----------------------------------------------------------------
+    # HALBERD — line pierce + sunder
+    # -----------------------------------------------------------------
+    if key == 'halberd':
+        if tier == 5:
+            _max_status(monster, 'bleeding', 3)
+        elif tier == 10:
+            _max_status(monster, 'sundered', 2)
+            _max_status(monster, 'bleeding', 5)
+        elif tier == 15 or tier == 20:
+            dx = 0 if monster.x == player.x else (1 if monster.x > player.x else -1)
+            dy = 0 if monster.y == player.y else (1 if monster.y > player.y else -1)
+            reach = 1 if tier == 15 else 2
+            for step in range(1, reach + 1):
+                bx, by = monster.x + dx * step, monster.y + dy * step
+                for m in monsters or []:
+                    if getattr(m, 'alive', False) and m.x == bx and m.y == by \
+                            and m is not monster:
+                        d = _aoe_dmg(0.6)
+                        m.take_damage(d)
+                        result['aoe_hits'].append((m, d))
+                        _max_status(m, 'bleeding', 5 if tier == 15 else 8)
+                        _max_status(m, 'sundered', 3 if tier == 15 else 5)
+                        break
+            _max_status(monster, 'bleeding', 5 if tier == 15 else 8)
+            _max_status(monster, 'sundered', 3 if tier == 15 else 5)
+        return result
+
+    # -----------------------------------------------------------------
+    # GLAIVE — sweeping arc + bleed field
+    # -----------------------------------------------------------------
+    if key == 'glaive':
+        if tier == 5:
+            adj = _adjacent_monsters(player, monsters, exclude=monster)
+            if adj:
+                d = _aoe_dmg(0.7)
+                adj[0].take_damage(d)
+                result['aoe_hits'].append((adj[0], d))
+        elif tier == 10:
+            for m in _adjacent_monsters(player, monsters, exclude=monster)[:2]:
+                d = _aoe_dmg(0.6)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 3)
+            _max_status(monster, 'bleeding', 3)
+        elif tier == 15:
+            for m in _adjacent_monsters(player, monsters, radius=2, exclude=monster):
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 5)
+            _max_status(monster, 'bleeding', 5)
+        elif tier == 20:
+            for m in _adjacent_monsters(player, monsters, radius=2, exclude=monster):
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 8)
+                _max_status(m, 'slowed', 3)
+            _max_status(monster, 'bleeding', 8)
+            _max_status(monster, 'slowed', 3)
+        return result
+
+    # -----------------------------------------------------------------
+    # 2H SWORD — cinematic sweep
+    # -----------------------------------------------------------------
+    if key == '2h_sword':
+        if tier == 5:
+            adj = _adjacent_monsters(player, monsters, exclude=monster)
+            if adj:
+                d = _aoe_dmg(0.7)
+                adj[0].take_damage(d)
+                result['aoe_hits'].append((adj[0], d))
+        elif tier == 10:
+            for m in _adjacent_monsters(player, monsters, exclude=monster)[:2]:
+                d = _aoe_dmg(0.6)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+        elif tier == 15:
+            for m in _adjacent_monsters(player, monsters, exclude=monster):
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 4)
+            _max_status(monster, 'bleeding', 4)
+        elif tier == 20:
+            for m in _adjacent_monsters(player, monsters, radius=2, exclude=monster):
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 8)
+            _max_status(monster, 'bleeding', 8)
+            _player_stack(player, 'blade_flow', 3)
+        return result
+
+    # -----------------------------------------------------------------
+    # 2H AXE — brutal cleave + kill-chain
+    # -----------------------------------------------------------------
+    if key == '2h_axe':
+        if tier == 5:
+            adj = _adjacent_monsters(player, monsters, exclude=monster)
+            if adj:
+                d = _aoe_dmg(0.7)
+                adj[0].take_damage(d)
+                result['aoe_hits'].append((adj[0], d))
+            _max_status(monster, 'bleeding', 4)
+        elif tier == 10:
+            for m in _adjacent_monsters(player, monsters, exclude=monster)[:2]:
+                d = _aoe_dmg(0.6)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 4)
+            _max_status(monster, 'bleeding', 4)
+            _max_status(monster, 'sundered', 3)
+        elif tier == 15:
+            for m in _adjacent_monsters(player, monsters, exclude=monster):
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 6)
+                _max_status(m, 'sundered', 5)
+            _max_status(monster, 'bleeding', 6)
+            _max_status(monster, 'sundered', 5)
+        elif tier == 20:
+            hits = 0
+            for m in _adjacent_monsters(player, monsters, exclude=monster):
+                d = _aoe_dmg(0.6)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'bleeding', 10)
+                _max_status(m, 'sundered', 8)
+                hits += 1
+            _max_status(monster, 'bleeding', 10)
+            _max_status(monster, 'sundered', 8)
+            regen_pct = min(15, (hits + 1) * 5)  # primary + adj hits
+            player.hp = min(player.max_hp,
+                            player.hp + max(1, player.max_hp * regen_pct // 100))
+        return result
+
+    # -----------------------------------------------------------------
+    # CROSSBOW — armor-punching bolt
+    # -----------------------------------------------------------------
+    if key == 'crossbow':
+        if tier == 10:
+            _max_status(monster, 'slowed', 3)
+        elif tier == 15:
+            # Skip next 3 reloads by setting a counter the reload check reads.
+            player._crossbow_skip_reloads = int(getattr(player, '_crossbow_skip_reloads', 0) or 0) + 3
+        elif tier == 20:
+            _max_status(monster, 'slowed', 3)
+            # Ballista: bolt continues through target in the same line up to 5 tiles.
+            dx = 0 if monster.x == player.x else (1 if monster.x > player.x else -1)
+            dy = 0 if monster.y == player.y else (1 if monster.y > player.y else -1)
+            for step in range(1, 6):
+                bx, by = monster.x + dx * step, monster.y + dy * step
+                for m in monsters or []:
+                    if getattr(m, 'alive', False) and m.x == bx and m.y == by \
+                            and m is not monster:
+                        d = _aoe_dmg(0.7)
+                        m.take_damage(d)
+                        result['aoe_hits'].append((m, d))
+                        _max_status(m, 'slowed', 3)
+                        break
+        # tier 5, 10 also bypass DR via _BYPASS_DR_TIERS.
+        return result
+
+    # -----------------------------------------------------------------
+    # SLING — ricochet + shatter
+    # -----------------------------------------------------------------
+    if key == 'sling':
+        import random as _rng
+        if tier == 5:
+            adj = _adjacent_monsters(monster, monsters, exclude=monster)
+            if adj and _rng.random() < 0.25:
+                d = _aoe_dmg(0.5)
+                adj[0].take_damage(d)
+                result['aoe_hits'].append((adj[0], d))
+        elif tier == 10:
+            adj = _adjacent_monsters(monster, monsters, exclude=monster)
+            if adj:
+                d = _aoe_dmg(0.5)
+                adj[0].take_damage(d)
+                result['aoe_hits'].append((adj[0], d))
+            _max_status(monster, 'stunned', 1)
+        elif tier == 15:
+            _max_status(monster, 'stunned', 2)
+            _max_status(monster, 'slowed', 2)
+        elif tier == 20:
+            for m in _adjacent_monsters(player, monsters, radius=3, exclude=monster):
+                d = _aoe_dmg(0.5)
+                m.take_damage(d)
+                result['aoe_hits'].append((m, d))
+                _max_status(m, 'stunned', 1)
+            _max_status(monster, 'stunned', 1)
+        return result
+
+    return result
+
+
+# Harpe (scimitar): petrify_on_crit was moved to chain-15 petrify.
+# Handled inline in the sword-key block above via a per-weapon flag check.
+
+
+
 # --- Material effective_against / vulnerabilities lookup ---------------------
 # Cached once. Populated lazily on first call. Generalizes the old hardcoded
 # "silver vs undead, iron vs fey" rules into a data-driven system: every
@@ -331,21 +901,27 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             on_complete(0, True, chain)
             return
 
-        # Base damage: new integer field preferred over legacy dice string
+        # Base damage: new integer field preferred over legacy dice string.
+        # Unarmed (fist) uses the chain combat v2 STR-scaled base: 2 × (1 + STR/10)
+        # above 10 STR. STR 10 = 2, STR 15 = 3, STR 20 = 4. Intentionally weak —
+        # this is the "you dropped your weapon" fallback, not an alternative build.
         if weapon and weapon.base_damage:
             base = weapon.base_damage
         elif weapon and weapon.damage:
             base = roll(weapon.damage)
         else:
-            base = roll('1d4')
+            base = max(1, round(2 * (1 + max(0, player.STR - 10) / 10.0)))
 
-        # PER -> ranged damage scaling. Modest +1 per 3 PER points above 10,
-        # so a high-PER ranger gets a real reward for the build. Sight + passive
-        # perception are PER's other roles; this completes its combat identity
-        # without making it a "must-pick" stat for all builds.
-        # Per user 2026-05-30: previously PER had ZERO damage hook.
+        # Ranged stat bonuses (chain combat v2). Per-hit additive on the base
+        # BEFORE material/chain scaling. Bow/sling get STR + PER at /4;
+        # crossbow gets PER only (it fires like a machine, arm strength doesn't
+        # help). Applies only to actual ranged shots (ammo present) so melee
+        # attacks are unaffected.
         if ammo:
-            base += max(0, (player.PER - 10) // 3)
+            _wc = getattr(weapon, 'weapon_class', '') if weapon else ''
+            base += max(0, (player.PER - 10) // 4)
+            if _wc != 'crossbow':
+                base += max(0, (player.STR - 10) // 4)
 
         # Weakened / frozen: halve player attack damage. Both effects
         # describe "attack damage halved" / "encased in ice." Previously
@@ -357,12 +933,31 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Ammo damage bonus (ranged shots only)
         ammo_bonus  = ammo.damage_bonus if ammo else 0
         enchant     = weapon.enchant_bonus if weapon else 0
-        multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
-        mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
+        # Chain combat v2: polynomial `mult = chain ** chain_exponent` when the
+        # weapon opts in; otherwise fall back to the legacy per-rung array.
+        # Uniques keep their handcrafted `chain_multipliers`; new common templates
+        # ship `chain_exponent` (default 1.15). Unarmed (fist) also uses the
+        # polynomial at 1.15 — the base damage is already floored low.
+        _chain_exp = getattr(weapon, 'chain_exponent', None) if weapon else 1.15
+        if _chain_exp and _chain_exp > 0:
+            mult = float(chain) ** float(_chain_exp)
+            multipliers = None  # signals "polynomial path" to blocks below
+        else:
+            multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
+            mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
 
-        # Musashi quirk: chain-1 uses 2nd multiplier instead of weakest
-        if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
+        # Musashi quirk: chain-1 uses 2nd multiplier instead of weakest.
+        # Only meaningful on array-path weapons; polynomial-path chain-1 is
+        # already the sensible minimum (1.0), so the quirk skips gracefully.
+        if (chain == 1 and multipliers is not None
+                and getattr(player, 'quirk_progress', {}).get('musashi_active')):
             mult = multipliers[min(1, len(multipliers) - 1)]
+
+        # Chain combat v2 (v2.14.0): pre-damage per-class chain-special hooks.
+        # Sets `player._chain_bypass_dr` when the special calls for it, and
+        # returns any per-hit damage multiplier (Bow C20 vitals x2). Runs
+        # before shielded / dragon_scales checks so the bypass takes effect.
+        mult *= _apply_chain_class_pre_damage(player, weapon, chain)
 
         # Atalanta's Bow: first_blood_bonus — at chain 1 against a target
         # that has not yet taken damage this combat (HP at max), +50%
@@ -439,17 +1034,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             dtype_mult *= 1.0 + _sb
 
         # Kusanagi (engine wave 3): surrounded_proc_bonus. When 3+ enemies
-        # are adjacent to the player, the attack auto-crits.
+        # are adjacent to the player, +25% damage. Chain combat v2 (v2.14.0):
+        # rewired from "force crit" to flat multiplier since crit was retired
+        # (chain IS the crit). Feel is the same — surround-the-warrior payoff.
         if weapon and getattr(weapon, 'surrounded_proc_bonus', False):
-            # Imported indirectly to avoid circular import — combat.py is
-            # leaf-ish and doesn't typically import game state.
             _adj = 0
             try:
-                # The monsters list lives on the parent game — we can read
-                # via the player's _last_known_monsters_ref hook if set,
-                # OR fall back to a no-op. Most engines should pass game
-                # to player_attack, but this codebase doesn't. Skip if
-                # we can't see neighbors.
                 _mons = getattr(player, '_combat_monsters_ref', None) or []
                 for _m in _mons:
                     if _m.alive and abs(_m.x - player.x) <= 1 and abs(_m.y - player.y) <= 1 \
@@ -458,10 +1048,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             except Exception:
                 _adj = 0
             if _adj >= 3:
-                # Force a crit by bumping mult — applied later via crit
-                # path is cleaner, but since crit is computed below, just
-                # set a side-channel flag the crit block checks.
-                player._kusanagi_force_crit = True
+                mult *= 1.25
 
         # Oathkeeper (engine wave 3): adjacent_pet_damage_bonus.
         # When ANY pet is within 1 tile of the player, multiply damage.
@@ -476,35 +1063,26 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                     dtype_mult *= 1.0 + _ap_bonus
                     break
 
-        # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect
-        if not (weapon and weapon.ignore_shield):
+        # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect.
+        # Chain combat v2 (v2.14.0): also bypassed when the player has a `blade_flow`
+        # stack or a `_chain_bypass_dr` flag set by the class-chain-special pre-damage
+        # dispatch (spear/1h_sword/bow/crossbow/mace at threshold). Those consumers are
+        # decremented below; the "already going to bypass" check just probes here.
+        _bf_probe = int(player.status_effects.get('blade_flow', 0) or 0) > 0
+        _cb_probe = bool(getattr(player, '_chain_bypass_dr', False))
+        _shield_bypass = (weapon and weapon.ignore_shield) or _bf_probe or _cb_probe
+        if not _shield_bypass:
             if monster.has_effect('shielded'):
                 dtype_mult *= 0.5
 
-        # Critical hit: if weapon has crit_multiplier and chain hits max, apply bonus
+        # Chain combat v2 (v2.14.0): crit is retired. Chain IS the crit —
+        # the polynomial ladder handles the "big number" reward directly.
+        # The `crit` boolean is kept for on_complete kwargs so callers that
+        # branch on it still compile; it now stays False everywhere. Harpe's
+        # petrify moved to the class-chain-special dispatch below (petrifies
+        # at chain 15 via a per-weapon flag). Soul Reaver's next-hit-auto-crit
+        # rewired to a `blade_flow` player stack down at growth_on_innocent_kill.
         crit = False
-        if weapon and weapon.crit_multiplier > 1.0:
-            max_c = weapon.max_chain_length or len(weapon.chain_multipliers)
-            if chain >= max_c:
-                mult *= weapon.crit_multiplier
-                crit = True
-                # Petrify on crit (Harpe)
-                if weapon.petrify_on_crit:
-                    current_pet = monster.status_effects.get('petrifying', 0)
-                    monster.status_effects['petrifying'] = max(current_pet, 3)
-        # Kusanagi (engine wave 3): surrounded_proc_bonus forces a crit. Flag
-        # set in the dtype-mult block above when 3+ adjacent enemies.
-        if weapon and getattr(player, '_kusanagi_force_crit', False):
-            mult *= max(1.5, weapon.crit_multiplier)
-            crit = True
-            player._kusanagi_force_crit = False  # consume per-attack
-
-        # Soul Reaver (engine wave 4): growth_on_innocent_kill auto-crit
-        # on the NEXT hit after innocent blood was spilled.
-        if weapon and getattr(player, '_next_hit_auto_crit', False):
-            mult *= max(1.5, weapon.crit_multiplier)
-            crit = True
-            player._next_hit_auto_crit = False
 
         # Pre-damage class-mechanic multipliers. Apply to mult before damage
         # is rolled. Several mechanics fire ONLY at max chain (the chain-5
@@ -605,6 +1183,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # STR mechanic, str_bonus_range_7, applied separately to `mult`.)
         str_factor = 1.0 if ammo else 1.0 + max(0, player.STR - 10) * 0.03
 
+        # Chain combat v2 (v2.14.0): when the player is in "bypass DR" mode
+        # (blade_flow buff or chain-special one-shot flag), clamp dtype_mult
+        # up to at least 1.0 so resistances stop cutting damage. Weaknesses
+        # (dtype_mult > 1.0) survive untouched — you still hit fire-vulnerable
+        # things extra hard with a fire-tagged weapon.
+        if (_bf_probe or _cb_probe) and dtype_mult < 1.0:
+            dtype_mult = 1.0
+
         # round (not int-truncate): chain damage gradient must survive at
         # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
         # across chain levels — invisible progression. round() preserves
@@ -626,9 +1212,46 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             damage *= 3
             player.status_effects.pop('empowered', None)
 
-        # Dragon scales: massive damage reduction (bypassed by ignore_resistances or player in pit)
+        # Chain combat v2 (v2.14.0): mace / warhammer `armor_crack` and the
+        # dagger-hemorrhage `deep_wound` both amp incoming damage by +25%.
+        # They can stack additively (a mace strike into an axe target etc.);
+        # cap the combined boost at +50% so a lucky stack isn't runaway.
+        _amp = 0.0
+        if monster.has_effect('armor_crack'):
+            _amp += 0.25
+        if monster.has_effect('deep_wound'):
+            _amp += 0.25
+        if _amp > 0:
+            damage = int(damage * (1.0 + min(0.50, _amp)))
+
+        # Chain combat v2: `blade_flow` player buff — the next N attacks bypass
+        # damage reduction (dragon_scales, shielded, resistances). Consumes one
+        # stack per attack. Set by 1h Sword C15/C20, 2h Sword C20, and Soul
+        # Reaver's growth_on_innocent_kill.
+        _bf_stacks = int(player.status_effects.get('blade_flow', 0) or 0)
+        _blade_flow_bypass = _bf_stacks > 0
+        if _blade_flow_bypass:
+            player.status_effects['blade_flow'] = _bf_stacks - 1
+            if player.status_effects['blade_flow'] <= 0:
+                player.status_effects.pop('blade_flow', None)
+
+        # Chain combat v2: per-hit chain-special "bypass DR" flag set by
+        # pre-damage class specials (e.g. crossbow chain 5, 1h sword chain 10,
+        # spear chain 10+, mace chain 20, bow chain 15+). One-shot side channel.
+        _chain_bypass = bool(getattr(player, '_chain_bypass_dr', False))
+        if _chain_bypass:
+            player._chain_bypass_dr = False  # consume immediately
+
+        _skip_dr = (
+            getattr(weapon, 'ignore_resistances', False)
+            or _blade_flow_bypass
+            or _chain_bypass
+        )
+
+        # Dragon scales: massive damage reduction (bypassed by ignore_resistances,
+        # blade_flow, chain-special bypass flag, or player in pit)
         dragon_scales = getattr(monster, 'dragon_scales', 0)
-        if dragon_scales > 0 and not getattr(weapon, 'ignore_resistances', False):
+        if dragon_scales > 0 and not _skip_dr:
             if player.has_effect('in_pit'):
                 damage = damage * 4  # devastating underbelly strike from below!
             else:
@@ -737,18 +1360,38 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         except AttributeError:
             pass
 
-        # Bracers of Arjuna (gita_focus): first ranged attack per floor crits.
+        # Bracers of Arjuna (gita_focus): first ranged attack per floor gets a
+        # flat +50% damage. Chain combat v2 (v2.14.0): was "crits" via
+        # crit_multiplier; retired to a straight 1.5x since crit is gone.
         if ammo:
             try:
                 from armor_procs import consume_floor_charge
                 if consume_floor_charge(player, 'gita_focus'):
-                    _cm = float(getattr(weapon, 'crit_multiplier', 1.5) or 1.5) if weapon else 1.5
-                    damage = int(damage * max(1.5, _cm))
-                    crit = True
+                    damage = int(damage * 1.5)
             except ImportError:
                 pass
 
         actual = monster.take_damage(damage)
+
+        # Chain combat v2 (v2.14.0): dispatch per-class chain specials at
+        # rung thresholds 5 / 10 / 15 / 20. Applies target statuses, AoE damage,
+        # and player buffs per the design doc. AoE hits accumulate into
+        # `_chain_aoe_hits` and are exposed via on_complete kwargs so the
+        # ranged/melee callers can surface a message.
+        _chain_special_result = _apply_chain_class_post_damage(
+            player, monster, weapon, chain,
+            monsters=getattr(player, '_combat_monsters_ref', None),
+            dungeon=None,
+            actual=actual,
+        )
+        _chain_aoe_hits = _chain_special_result.get('aoe_hits', [])
+
+        # Harpe (formerly petrify_on_crit): now fires at chain 15+, applies
+        # petrifying 3t. The crit path is gone but the "sickle of the gorgon"
+        # identity holds — snake-cutter freezes flesh once the chain matures.
+        if weapon and getattr(weapon, 'petrify_on_crit', False) and chain >= 15:
+            _cur_pet = int(monster.status_effects.get('petrifying', 0) or 0)
+            monster.status_effects['petrifying'] = max(_cur_pet, 3)
 
         # Sword of Michael (holy_smite_message): when a holy weapon hits a
         # demon/undead/evil-tagged target, surface a dramatic line. This is
@@ -1058,8 +1701,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
                 player._return_to_hand_active = True
 
         # Soul Reaver (engine wave 4): growth_on_innocent_kill. Killing a
-        # non-hostile NPC (hostile=False / friendly tag / npc tag) marks
-        # the next hit for auto-crit. The blade is fed by innocence.
+        # non-hostile NPC (hostile=False / friendly tag / npc tag) grants the
+        # player a `blade_flow` stack — the next attack bypasses damage
+        # reduction. Chain combat v2 (v2.14.0): rewired from "next hit
+        # auto-crit" since crit is retired.
         _mon_tags_inn = set(getattr(monster, 'tags', []))
         _is_innocent = (
             not getattr(monster, 'hostile', True)
@@ -1069,7 +1714,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         )
         if (weapon and getattr(weapon, 'growth_on_innocent_kill', False)
                 and monster.is_dead() and _is_innocent):
-            player._next_hit_auto_crit = True
+            _cur_bf = int(player.status_effects.get('blade_flow', 0) or 0)
+            player.status_effects['blade_flow'] = _cur_bf + 1
 
         # Ring of Gyges (gyges_invisible_attack_karma): attacking an NPC
         # while invisible costs -2 karma. The just-man-when-unseen test.

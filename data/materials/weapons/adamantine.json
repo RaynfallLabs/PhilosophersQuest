@@ -11,8 +11,8 @@
   "spread": 14,
   "peak_weight": 5.0,
   "min_level": 40,
-  "damage_mult": 1.4,
-  "weight_mult": 1.4,
+  "damage_mult": 1.70,
+  "weight_mult": 1.30,
   "max_enchant": 3,
   "color": [
     80,
@@ -37,5 +37,5 @@
   "lore_descriptor": "blue-black, unnaturally cold, mirror-smooth",
   "unidentified_descriptor": "a midnight-dark blade that shows no edge wear",
   "first_pickup_chronicle": "Adamantine. The metal does not bend, does not chip, does not forgive. Every legendary smith dreams about this metal and dies without ever working a forge hot enough.",
-  "design_notes": "Peak F65 spread 14. damage_mult 1.40 — top-tier raw damage. weight_mult 1.40 — HEAVY. max_enchant 5. The 'tank' material — unbreakable, immune to rust monsters / acid attacks (HUGE — rust monsters are a roguelike classic terror). Adamantine plate at 65 × 1.4 = 91 lb is brutal for low-STR; this is fighter-class gear. armor_ac_bonus 2 — best in class. cite: curve F60 weapon_base_damage=8; adamantine longsword = 8 × 1.40 = ~11 base × 6× chain = 66 damage vs Fafnir HP 421 = ~6 hit kill at chain 5 — viable Fafnir clear with quest layer."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.70, weight_mult 1.30, no effective_against (T5 core, top raw damage). weight_mult 1.30 — HEAVY. The 'tank' material — unbreakable, immune to rust monsters / acid attacks (HUGE — rust monsters are a roguelike classic terror). armor_ac_bonus 2 — best in class. Fighter-class gear."
 }

@@ -1076,6 +1076,15 @@ class InputMixin:
         q = self.quiz_engine.current_question
         if not q:
             return
+
+        # Chain combat v2: SPACE locks in the current chain and lands the strike
+        # immediately. Only meaningful in chain modes (combat math attack); the
+        # method self-guards so it's a no-op elsewhere. ESC still fires the
+        # full-abort path handled at the top of game_input.
+        if key == pygame.K_SPACE:
+            if self.quiz_engine.cancel_and_strike():
+                return
+
         choices = q.get('choices', [])
         key_map = {
             pygame.K_1: 0, pygame.K_KP1: 0,

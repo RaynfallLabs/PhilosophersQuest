@@ -11,7 +11,7 @@
   "spread": 12,
   "peak_weight": 10.0,
   "min_level": 8,
-  "damage_mult": 1.15,
+  "damage_mult": 1.20,
   "weight_mult": 0.95,
   "max_enchant": 3,
   "color": [
@@ -23,15 +23,12 @@
   "resistances": [],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": [
-    "fey",
-    "demon_minor"
-  ],
+  "effective_against": [],
   "special_properties": [
     "edge_holds"
   ],
   "lore_descriptor": "blued and well-tempered",
   "unidentified_descriptor": "a well-balanced blade",
   "first_pickup_chronicle": "Steel. Iron grew up. Properly tempered, it holds an edge longer than I'll need it to — assuming I survive long enough to dull it.",
-  "design_notes": "Peak F18 spread 12 — bell-curve straddles Asterion gate (L20). damage_mult 1.15 (15% better than iron), slightly LIGHTER (0.95×) — refining process. max_enchant 2. The upgrade from iron, on schedule with the L18-22 first 'real' loot wave."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.20, weight_mult 0.95, no effective_against (T3 core). 20% better than iron, slightly LIGHTER — refining process. The upgrade from iron, on schedule with the L18-22 first 'real' loot wave."
 }

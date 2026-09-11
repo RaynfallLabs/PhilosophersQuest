@@ -53,6 +53,14 @@ EFFECT_INFO: dict[str, tuple] = {
     'berserk':            ('Berserk',            (220,  60,  40), 'Ríastrad — bonus STR, HP cost per turn'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
     'parry_armed':        ('Parry Armed',        (200, 210, 180), 'Quarterstaff defensive stance: +2 AC for 2 turns'),
+    # ---- Chain combat v2 (v2.14.0): weapon chain-special statuses ----
+    'armor_crack':        ('Armor Cracked',      (220, 180,  60), 'Target takes +25% damage from all sources'),
+    'sundered':           ('Sundered',           (200, 120,  80), 'Broken limb: outgoing damage halved'),
+    'deep_wound':         ('Deep Wound',         (180,  60,  80), '+25% damage taken AND cannot regenerate'),
+    'ruptured':           ('Ruptured',           (140,  30,  60), 'Losing 10% max HP per turn; cannot be healed'),
+    'impaled':            ('Impaled',            (150, 100,  60), 'Pinned in place; cannot move (can still attack)'),
+    'blade_flow':         ('Blade Flow',         (255, 240, 150), 'Next N attacks bypass damage reduction'),
+    'melee_dmg_reduction':('Guarded Stance',     (180, 200, 220), 'Incoming melee damage reduced'),
     'see_invisible':      ('See Invisible',      (200, 200, 255), 'You can perceive invisible creatures'),
     # ---- Hero special buffs (Phase 3B) ----
     'stand_ac':           ('Spartan Stand',      (255, 215, 80),  '+AC and counter-strike chance'),
@@ -115,6 +123,8 @@ DEBUFFS: frozenset = frozenset({
     # Engine wave 3 (2026-05-30): heal_blocked debuff (Gae Dearg's wound).
     # Blocks restore_hp from working on target while active.
     'heal_blocked',
+    # Chain combat v2 (v2.14.0): weapon chain-special monster debuffs
+    'armor_crack', 'sundered', 'deep_wound', 'ruptured', 'impaled',
 })
 
 BUFFS: frozenset = frozenset({
@@ -128,6 +138,8 @@ BUFFS: frozenset = frozenset({
     'riposte_armed', 'parry_armed', 'see_invisible',
     # Hero special buffs (Phase 3B) — these are beneficial timed effects.
     'stand_ac', 'crit_buff', 'fear_immune', 'boomstick_aoe_next', 'berserk',
+    # Chain combat v2 (v2.14.0): player-side chain buffs.
+    'blade_flow', 'melee_dmg_reduction',
     # Post-lock grace buff (set when a hard-control effect expires).
     'control_immune',
     # Cooked / power "ward" buffs that grant a timed saving-throw bonus.

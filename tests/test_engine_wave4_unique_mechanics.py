@@ -153,10 +153,14 @@ def test_combat_wires_return_to_hand_ward():
 
 
 def test_combat_wires_growth_on_innocent_kill():
+    """Chain combat v2 (v2.14.0) — Soul Reaver rewire.
+    Killing an innocent used to grant next-hit auto-crit; crit is retired,
+    so it now grants a `blade_flow` stack (next hit bypasses damage reduction).
+    Same 'blade grows on innocent blood' feel via a chain-combat-v2 mechanic."""
     import combat
     src = inspect.getsource(combat.player_attack)
     assert 'growth_on_innocent_kill' in src
-    assert '_next_hit_auto_crit' in src
+    assert "'blade_flow'" in src
 
 
 def test_combat_wires_damage_bonus_vs_gaze():

@@ -9,8 +9,8 @@
   "spread": 14,
   "peak_weight": 4.0,
   "min_level": 15,
-  "damage_mult": 1.1,
-  "weight_mult": 1.05,
+  "damage_mult": 1.10,
+  "weight_mult": 1.00,
   "max_enchant": 2,
   "color": [
     110,
@@ -27,9 +27,7 @@
   ],
   "effective_against": [
     "fey",
-    "demon_minor",
-    "demon_major",
-    "shapeshifter"
+    "demon"
   ],
   "special_properties": [
     "cannot_be_blessed",
@@ -38,5 +36,5 @@
   "lore_descriptor": "dark, cold to the touch even after long carry",
   "unidentified_descriptor": "dull, dark blade that feels too cold",
   "first_pickup_chronicle": "Cold iron. The fey will not love this. I am told the trick is in the hammering — cold, never hot. The dwarves who made this never blinked at a fire because they never lit one.",
-  "design_notes": "Peak F30 spread 14 — mid-game specialist. Weapons-only (cannot be wrought into armor — mythological constraint: cold iron is forged without heat, plate would crack). damage_mult 1.10. The vulnerabilities list (demon) is INVERTED — the user takes EXTRA damage from demons when wielding cold iron, as the metal antagonizes them. Bold design: cold iron is a STRONG anti-fey/demon weapon but draws their fury. cannot_be_blessed flag — religious aversion in mythology."
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.10, weight_mult 1.00, effective_against fey+demon (T3 specialty). Weapons-only (cannot be wrought into armor — mythological constraint: cold iron is forged without heat, plate would crack). The vulnerabilities list (demon) is INVERTED — the user takes EXTRA damage from demons when wielding cold iron, as the metal antagonizes them. Bold design: cold iron is a STRONG anti-fey/demon weapon but draws their fury."
 }

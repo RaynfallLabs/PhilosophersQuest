@@ -61,6 +61,15 @@ if TYPE_CHECKING:
     from items import Scroll, Spellbook, Wand
 
 
+# Chain combat v2 (2026-09-07): after monster HP was rebased upward and weapon
+# chain damage went polynomial, the old flat spell/wand output felt like an
+# afterthought. Per-tier multipliers here bring magic back into line with a
+# chain-5-ish weapon hit at the same tier. Bigger boost on low tiers (where the
+# gap was worst); modest boost on T5 (where 10d10 was already respectable).
+# Applied by _spell_damage and _wand_tier_damage. INT stacks on top.
+MAGIC_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
+
+
 class MagicMixin:
     """Spell, scroll, spellbook, wand, identification, and recall-lore actions.
 
@@ -304,16 +313,11 @@ class MagicMixin:
         return self._wand_tier_duration(default_base, getattr(wand, 'quiz_tier', 1))
 
     def _wand_tier_damage(self, base_dmg: int, tier: int) -> int:
-        """Scale wand damage by player INT.
-
-        v2.11.0: wand power dice are now tier-baked in wand.power (T1 ~3d4,
-        T5 ~12d10), so the old 0.5-3.0x tier multiplier would double-scale
-        the ladder into absurdity (12d10 * 3.0 * INT-bonus ~= instant-kill).
-        Kept the signature (tier arg unused) so every existing call site
-        stays compatible without a sweep. INT scaling stays -- knowing the
-        science still matters for magnitude.
-        """
-        return max(1, int(base_dmg * (1.0 + self.player.INT * 0.1)))
+        """Scale wand damage by player INT and the chain combat v2 per-tier
+        boost. INT scaling: +10% per point of INT (INT 10 = 1.0x, 15 = 1.5x,
+        20 = 2.0x). Tier scaling: see MAGIC_TIER_MULT."""
+        tier_mult = MAGIC_TIER_MULT.get(int(tier), 1.5)
+        return max(1, int(base_dmg * tier_mult * (1.0 + self.player.INT * 0.1)))
 
     def _apply_wand_effect(self, wand: 'Wand'):
         import random as _rng
@@ -1282,15 +1286,17 @@ class MagicMixin:
         )
 
     def _spell_damage(self, base_dmg: int, chain: int = 5) -> int:
-        """v2.12.0: no chain multiplier. Scale by INT + chain-equip passives
-        only. Signature retains the `chain` arg for back-compat with any
-        legacy caller inside the handler (all uses inside _apply_spell_effect
-        pass chain=5, which is a no-op now). The tier scaling is baked into
-        the spell.power dice, not layered on here.
+        """Chain combat v2 (2026-09-07): scale by INT + chain-equip passives +
+        per-tier multiplier (see _MAGIC_TIER_MULT). The `chain` arg is retained
+        for back-compat but is a no-op (spells retired chain scaling in
+        v2.12.0). The active spell's tier is read from `self._active_spell_tier`
+        which `_apply_spell_effect` sets at the top of every cast.
         """
         from chain_passives import apply_spell_damage_passives
+        tier = int(getattr(self, '_active_spell_tier', 5) or 5)
+        tier_mult = MAGIC_TIER_MULT.get(tier, 1.5)
         dmg, c, a = apply_spell_damage_passives(
-            self.player, base_dmg * (1.0 + self.player.INT * 0.1))
+            self.player, base_dmg * tier_mult * (1.0 + self.player.INT * 0.1))
         self._last_spell_crit, self._last_spell_anti_being = c, a
         return max(1, int(dmg))
 
@@ -1310,6 +1316,11 @@ class MagicMixin:
         # since MP was already deducted before this call.
         chain = 5
         chain_scale = 1.0
+
+        # Chain combat v2: publish the active spell's tier so _spell_damage can
+        # read the per-tier multiplier. Default 5 keeps callers that go through
+        # this handler safe if a legacy spell ever ships without `tier`.
+        self._active_spell_tier = int(spell.get('tier', 5) or 5)
 
         # Handle the two spell-specific effects not in wand system
         if effect == 'displacement_self':

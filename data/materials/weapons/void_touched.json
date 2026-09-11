@@ -9,8 +9,8 @@
   "spread": 8,
   "peak_weight": 1.5,
   "min_level": 85,
-  "damage_mult": 1.7,
-  "weight_mult": 0.7,
+  "damage_mult": 1.55,
+  "weight_mult": 0.80,
   "max_enchant": 6,
   "color": [
     60,
@@ -31,10 +31,8 @@
     "holy"
   ],
   "effective_against": [
-    "celestial",
-    "angel",
-    "outsider",
-    "aberration"
+    "aberration",
+    "void_spawn"
   ],
   "special_properties": [
     "void_aligned",
@@ -47,5 +45,5 @@
   "lore_descriptor": "absent — the eye refuses to focus on it",
   "unidentified_descriptor": "void-dark",
   "first_pickup_chronicle": "Void-touched. I don't want to write this down. It bypasses Abaddon's resistances. It cuts angels. It cuts the Host. I know what I am holding. I know what side this puts me on. Whether I have a choice anymore — that I do not know.",
-  "design_notes": "Peak F95 spread 8 — Abaddon-adjacent ONLY. Cannot spawn outside the deepest band. damage_mult 1.70 — IS the highest in the bank. weight_mult 0.70 (light — material defies physics). max_enchant 7. The abaddon_resistance_bypass is HUGE — bypasses Abaddon's 5-of-6 resistances. anti_heaven means it damages celestials too (the player's angel allies). drain_sanity_per_turn — currently a flagged design hook for a sanity system not yet implemented; if absent, treat as cosmetic chronicle entry per turn. The 'dark ending' material: void_touched wielders cannot complete the Sword-of-Michael path but may have an alternate Abaddon kill. Open question: should this gate behind a moral choice (e.g., must have already used a cursed altar)?"
+  "design_notes": "Chain combat v2 tuning: damage_mult 1.55, weight_mult 0.80, effective_against aberration+void_spawn (T5 elemental). Abaddon-adjacent ONLY. weight defies physics. The abaddon_resistance_bypass is HUGE — bypasses Abaddon's 5-of-6 resistances. anti_heaven means it damages celestials too. The 'dark ending' material."
 }
