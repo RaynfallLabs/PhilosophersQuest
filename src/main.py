@@ -1249,6 +1249,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Engine wave 3 per-floor resets:
         # Hrunting save: "never failed any man" — one save per floor.
         self.player._hrunting_save_used = False
+        # v2.15.1: passive_death_save_bonus per-floor charge reset.
+        # A d20+bonus save on death, one per floor while an accessory
+        # granting the passive is equipped (Tyet of Isis, etc.).
+        self.player._death_save_used_this_floor = False
         # Sharur (engine wave 3): floor_start_reveal_chance — if equipped,
         # roll to reveal a random tile near a stair-down.
         import random as _ew3_rng
@@ -3070,6 +3074,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             f"The {_p.name} fades away — its time is spent.",
                             'info')
 
+        # v2.15.1: passive_death_save_bonus roll succeeded on death.
+        if getattr(self.player, '_death_save_triggered', False):
+            self.player._death_save_triggered = False
+            self.add_message(
+                "You should have died -- but a distant power pulls you back. "
+                "You stagger to your feet, barely alive.", 'success')
+            self._log_chronicle("Death took me. Then it let me go. Something out there watches, and today it chose to spend a favor.")
+
         # Rand's Heart: show dramatic message if death was just prevented
         if getattr(self.player, '_rands_heart_triggered', False):
             self.player._rands_heart_triggered = False
@@ -4197,6 +4209,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player_gold += 5
             self.ground_items.remove(item)
             self.add_message("You don't need this — your master kit is sufficient. (+5 gold scrap value)", 'info')
+            self._advance_turn()
+            return
+        # v2.15.1: seal-of-* artifacts (shatter_on_pickup_with_chronicle).
+        # The seals_broken counter is already incremented when the demon dies
+        # (game_combat.py:728); this handler just makes the PICKUP moment
+        # dramatic. The seal shatters in your hand — no inventory add.
+        if getattr(item, 'id', '').startswith('seal_of_'):
+            self.ground_items.remove(item)
+            _seal_display = getattr(item, 'name', item.id.replace('_', ' ').title())
+            self.add_message(
+                f"The {_seal_display} shatters in your hand! "
+                f"A crack in the world's floor widens.", 'danger')
+            self._log_chronicle(
+                f"Picked up the {_seal_display}. It shattered before I could close my fist. "
+                f"Whatever those seven seals were holding shut is now one crack closer to open."
+            )
+            _snd.play('gold')
             self._advance_turn()
             return
         # ── Duck of Doom intercept: cursed headgear that auto-equips ──

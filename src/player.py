@@ -372,6 +372,28 @@ class Player:
             self.hp = max(1, self.max_hp // 2)
             self._green_knight_triggered = True
             return False
+        # v2.15.1: passive_death_save_bonus. On death, roll d20 + accessory
+        # death-save bonus vs DC 20. Pass = restore to 1 HP; consumes a
+        # per-floor charge (one save per floor per equipped source, and only
+        # after every other death-prevention mechanism above has failed).
+        # Small effect for T3-T5 accessories (Tyet of Isis bonus 1-2) — reads
+        # as "the gods watch over you sometimes" not a get-out-of-jail-free.
+        if self.hp <= 0 and not self.immortal \
+                and not getattr(self, '_death_save_used_this_floor', False):
+            try:
+                from chain_passives import get_death_save_bonus
+                bonus = get_death_save_bonus(self)
+            except ImportError:
+                bonus = 0
+            if bonus > 0:
+                import random as _rng
+                roll = _rng.randint(1, 20) + int(bonus)
+                if roll >= 20:
+                    self._death_save_used_this_floor = True
+                    self._death_save_triggered = True  # main.py surfaces the message
+                    self.hp = 1
+                    return False
+
         # Rand's Heart: prevent death if equipped as amulet
         if self.hp <= 0 and not self.immortal:
             amulet = self.amulet_slot
