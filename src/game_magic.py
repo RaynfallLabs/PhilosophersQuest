@@ -646,13 +646,13 @@ class MagicMixin:
                     self._on_monster_killed(target)
 
             elif effect == 'magic_missile':
-                # v2.11.0: single irresistible force-bolt per zap. Damage is
-                # baked into wand.power per tier (T1 2d4 -> T5 12d8) and gets
-                # a flat INT bonus. Chain-mode magic missile retired -- the
-                # spell of the same name is threshold=1 in v2.12.0; wands and spells
-                # follow the unified threshold=1 contract now.
+                # v2.15.0 audit fix: previously bypassed MAGIC_TIER_MULT via a
+                # bespoke INT+base compute, leaving T5 wand_of_force_cataclysm
+                # ~56 dmg vs ~198 for other T5 wands. Now runs the same
+                # `_wand_tier_damage` path all other wand effects use so the
+                # per-tier scaling actually lands.
                 base = roll(wand.power) if wand.power else 4
-                dmg = max(1, base + self.player.INT // 5)
+                dmg = self._wand_tier_damage(base, wand.quiz_tier)
                 target.hp = max(0, target.hp - dmg)
                 if target.hp == 0:
                     target.alive = False
@@ -1168,16 +1168,6 @@ class MagicMixin:
         if not spell:
             return
         mp_cost = spell['mp_cost']
-        # Mage class perk: mp_cost_reduction (Boss Class Ascension) shaves a flat
-        # amount off every spell's MP cost (min 1, so spells never become free
-        # this way). Applied before the free-cast passive.
-        try:
-            from class_system import proficiency as _cls_prof
-            _mp_red = int(_cls_prof(self.player, 'mp_cost_reduction'))
-            if _mp_red > 0:
-                mp_cost = max(1, mp_cost - _mp_red)
-        except Exception:
-            pass
         from chain_passives import consume_passive_charge
         if consume_passive_charge(self.player, 'free_cast_once_per_floor'):
             mp_cost = 0
@@ -1868,6 +1858,16 @@ class MagicMixin:
             self.player.add_effect(eff_name, dur)
             self.add_message(
                 f"{spell['name']} -- {eff_name} for {dur} turns!", 'success')
+            return
+
+        # v2.15.0 fix: teleport_self (blink_spell, elder_blink) had its handler
+        # nested inside the `if target is not None:` block, but both spells set
+        # `needs_target=False` — MP deducted, quiz ran, nothing happened.
+        # Handle here at the top level so both variants fire.
+        if effect == 'teleport_self':
+            self._teleport_player()
+            self.add_message(
+                f"{spell['name']} -- space bends around you!", 'success')
             return
 
         # Targeted spells -- handle directly so we use the pre-found target

@@ -120,9 +120,14 @@ def test_arjuna_has_gita_focus():
 
 
 def test_hermes_greaves_hasted_and_descent():
+    """v2.15.0 audit fix: `descend_stairs_no_turn` was a declared-but-never-
+    consumed flag on Greaves of Hermes. Audit A-P1 flagged it as dead; the
+    field was stripped from the JSON. The core `hasted` on-equip identity
+    (which IS wired) survives — Hermes-fast movement carries the item."""
     g = ARMOR['greaves_of_hermes']
     assert g['onEquipStatus'] == 'hasted'
-    assert g['descend_stairs_no_turn'] is True
+    # descend_stairs_no_turn intentionally absent post-v2.15.0.
+    assert 'descend_stairs_no_turn' not in g
 
 
 def test_blindfold_has_tremor_sense():

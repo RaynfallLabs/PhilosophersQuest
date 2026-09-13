@@ -493,11 +493,19 @@ class QuirkSystem:
                             lambda pl: pl.apply_stat_bonus('CON', 1))
 
         # Cu Chulainn (#43): 5 combat wins while feared
+        # v2.15.0 audit fix: previously granted only STR+1 despite promising
+        # the legendary Irish warp-spasm. Now grants STR+2 AND fear immunity
+        # (grants the `fear_immune` status permanently). The full warp-spasm
+        # "become the enemy" transformation isn't feasible without a big system,
+        # but STR+2 + fear-immune reads as a real battle-frenzy reward, not
+        # dead flavor.
         if is_feared:
             self._inc('cuchulainn_wins')
             if self._p('cuchulainn_wins') >= 5 and not self.is_unlocked('cuchulainn'):
-                self._award('cuchulainn', "Cu Chulainn's Riastrad",
-                            lambda pl: pl.apply_stat_bonus('STR', 1))
+                def _riastrad(pl):
+                    pl.apply_stat_bonus('STR', 2)
+                    pl.status_effects['fear_immune'] = -1  # -1 = permanent
+                self._award('cuchulainn', "Cu Chulainn's Riastrad", _riastrad)
 
         # Kali (#45): 100 kills of same monster type
         self._dict_inc('kali_kills', monster_kind)

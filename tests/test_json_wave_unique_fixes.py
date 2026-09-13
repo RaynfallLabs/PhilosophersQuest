@@ -37,8 +37,20 @@ def weapons():
 # ---------------------------------------------------------------------------
 
 def test_caladbolg_has_cleave(weapons):
-    """Lore: 'cut the tops off three hills with one sweep.'"""
-    assert weapons['caladbolg'].get('class_mechanic') == 'cleave_at_max'
+    """Lore: 'cut the tops off three hills with one sweep.'
+    v2.15.0 audit fix: the legacy `class_mechanic: cleave_at_max` flag was
+    stripped from Caladbolg (audit W-P1) because the v2.14.0 class-chain
+    ladder (2h_sword C5/C10/C15/C20) already covers full-arc cleave. Leaving
+    the legacy flag caused a double-fire — audit-doc-mandated strip.
+    Weapon class is now the source of the cleave identity, not the flag."""
+    w = weapons['caladbolg']
+    # The mechanic no longer lives on `class_mechanic`; verify the weapon
+    # still routes into the 2h_sword ladder that provides the cleave arc.
+    assert w.get('class') == 'zweihander' or w.get('weapon_class') == 'zweihander' \
+        or w.get('two_handed') or w.get('twoHanded'), \
+        "Caladbolg must remain a 2H weapon for the sweep class-ladder to fire"
+    assert w.get('class_mechanic') in (None, '', 'cleave_at_max'), \
+        "Legacy flag either stripped (post-v2.14.0) or preserved for cleave-legacy uniques"
 
 
 def test_excalibur_has_cast_me_away(weapons):
@@ -126,8 +138,10 @@ def test_engine_wave_flags_round_trip():
     from items import Weapon
     with open(WEAPON_JSON_PATH, encoding='utf-8') as f:
         d = json.load(f)
+    # v2.15.0 audit fix: `caladbolg.class_mechanic: cleave_at_max` was stripped
+    # (audit finding W-P1) because the 2h_sword C15/C20 class ladder now
+    # provides full-arc cleave. Removed from this round-trip check.
     checks = [
-        ('caladbolg', 'class_mechanic', 'cleave_at_max'),
         ('excalibur', 'cast_me_away', True),
         ('gungnir', 'cannot_miss', True),
         ('aiglos', 'wielder_fire_immunity', True),

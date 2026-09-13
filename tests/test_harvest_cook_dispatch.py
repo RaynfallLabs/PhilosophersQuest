@@ -189,8 +189,6 @@ def test_trophy_bypass_at_t5():
     _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
     str_after_first = p.STR
     # Trophy has permanent_power -> stat_grant bypasses the per-floor cap.
-    # Fenrir also has class_ascension=true so the +3 perm_power fires from
-    # the class node, not the cook; here we only assert the stat_grant landed.
     _apply_recipe_outcome(p, _recipe_with_outcome('trophy_fenrir'))
     assert p.STR >= str_after_first + 1
 

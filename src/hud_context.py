@@ -238,19 +238,4 @@ def active_power_rows(player, *, secret_build: dict | None = None,
                 label = hud_item_name(player, acc)
             rows.append(PowerRow(label, f"{charges} charge" + ("" if charges == 1 else "s"), "uses"))
 
-    try:
-        import class_system as _cs
-    except Exception:
-        _cs = None
-    class_defs = {
-        "second_wind": "Second Wind",
-        "arcane_recovery": "Arcane Recovery",
-        "evasion": "Evasion",
-        "turn_undead": "Turn Undead",
-    }
-    if _cs is not None:
-        for ability_id in getattr(player, "class_abilities", []) or []:
-            label = class_defs.get(ability_id)
-            if label and _cs.ability_charge_available(player, ability_id):
-                rows.append(PowerRow(label, "1 use", "uses"))
     return rows

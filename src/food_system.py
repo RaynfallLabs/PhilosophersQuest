@@ -338,15 +338,7 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
             pass
         messages.append(f"A short {canonical.replace('_', ' ')} lingers.")
 
-    # Class-ascension outcomes (four boss trophies at floors 20/40/60/80):
-    # emit the signal INSTEAD of firing the permanent_power directly; the
-    # cook caller opens the Ascension picker and the class node applies
-    # the power. See test_class_ascension.
-    if outcome.get('class_ascension'):
-        messages.append('_class_ascension')
-        return messages
-
-    # Permanent power (non-ascension trophy)
+    # Permanent power (trophy)
     perm = outcome.get('permanent_power')
     if perm:
         # Fake a "recipe with permanent_power" shape so _apply_permanent_power

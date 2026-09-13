@@ -2,7 +2,11 @@
   "scroll_of_cure_wounds": {
     "name": "scroll of cure wounds",
     "symbol": "?",
-    "color": [180, 255, 180],
+    "color": [
+      180,
+      255,
+      180
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -20,7 +24,11 @@
   "scroll_of_healing": {
     "name": "scroll of healing",
     "symbol": "?",
-    "color": [140, 240, 140],
+    "color": [
+      140,
+      240,
+      140
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -38,7 +46,11 @@
   "scroll_of_vigor": {
     "name": "scroll of vigor",
     "symbol": "?",
-    "color": [80, 220, 100],
+    "color": [
+      80,
+      220,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -56,7 +68,11 @@
   "scroll_of_rejuvenation": {
     "name": "scroll of rejuvenation",
     "symbol": "?",
-    "color": [60, 200, 220],
+    "color": [
+      60,
+      200,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -74,7 +90,11 @@
   "scroll_of_full_restoration": {
     "name": "scroll of full restoration",
     "symbol": "?",
-    "color": [255, 220, 220],
+    "color": [
+      255,
+      220,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -89,11 +109,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_local_mapping": {
     "name": "scroll of local mapping",
     "symbol": "?",
-    "color": [180, 220, 255],
+    "color": [
+      180,
+      220,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -111,7 +134,11 @@
   "scroll_of_area_mapping": {
     "name": "scroll of area mapping",
     "symbol": "?",
-    "color": [140, 200, 240],
+    "color": [
+      140,
+      200,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -129,7 +156,11 @@
   "scroll_of_cartography": {
     "name": "scroll of cartography",
     "symbol": "?",
-    "color": [80, 180, 240],
+    "color": [
+      80,
+      180,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -147,7 +178,11 @@
   "scroll_of_deep_mapping": {
     "name": "scroll of deep mapping",
     "symbol": "?",
-    "color": [60, 140, 220],
+    "color": [
+      60,
+      140,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -165,7 +200,11 @@
   "scroll_of_dungeon_mapping": {
     "name": "scroll of dungeon mapping",
     "symbol": "?",
-    "color": [40, 100, 200],
+    "color": [
+      40,
+      100,
+      200
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -180,11 +219,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_identify": {
     "name": "scroll of identify",
     "symbol": "?",
-    "color": [220, 220, 180],
+    "color": [
+      220,
+      220,
+      180
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -202,7 +244,11 @@
   "scroll_of_identify_two": {
     "name": "scroll of identify two",
     "symbol": "?",
-    "color": [230, 220, 160],
+    "color": [
+      230,
+      220,
+      160
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -220,7 +266,11 @@
   "scroll_of_identify_three": {
     "name": "scroll of identify three",
     "symbol": "?",
-    "color": [240, 220, 140],
+    "color": [
+      240,
+      220,
+      140
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -238,7 +288,11 @@
   "scroll_of_mass_identify": {
     "name": "scroll of mass identify",
     "symbol": "?",
-    "color": [255, 230, 130],
+    "color": [
+      255,
+      230,
+      130
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -256,7 +310,11 @@
   "scroll_of_omnisight": {
     "name": "scroll of omnisight",
     "symbol": "?",
-    "color": [255, 240, 100],
+    "color": [
+      255,
+      240,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -271,11 +329,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_sharpen": {
     "name": "scroll of sharpen",
     "symbol": "?",
-    "color": [220, 200, 120],
+    "color": [
+      220,
+      200,
+      120
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -293,7 +354,11 @@
   "scroll_of_weapon_blessing": {
     "name": "scroll of weapon blessing",
     "symbol": "?",
-    "color": [230, 210, 100],
+    "color": [
+      230,
+      210,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -311,7 +376,11 @@
   "scroll_of_enchant_weapon": {
     "name": "scroll of enchant weapon",
     "symbol": "?",
-    "color": [255, 200, 100],
+    "color": [
+      255,
+      200,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -329,7 +398,11 @@
   "scroll_of_weaponsmith": {
     "name": "scroll of the weaponsmith",
     "symbol": "?",
-    "color": [255, 180, 60],
+    "color": [
+      255,
+      180,
+      60
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -347,7 +420,11 @@
   "scroll_of_legendary_edge": {
     "name": "scroll of the legendary edge",
     "symbol": "?",
-    "color": [255, 140, 40],
+    "color": [
+      255,
+      140,
+      40
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -362,11 +439,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_bracing": {
     "name": "scroll of bracing",
     "symbol": "?",
-    "color": [200, 200, 220],
+    "color": [
+      200,
+      200,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -384,7 +464,11 @@
   "scroll_of_armor_blessing": {
     "name": "scroll of armor blessing",
     "symbol": "?",
-    "color": [180, 190, 230],
+    "color": [
+      180,
+      190,
+      230
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -402,7 +486,11 @@
   "scroll_of_enchant_armor": {
     "name": "scroll of enchant armor",
     "symbol": "?",
-    "color": [200, 160, 255],
+    "color": [
+      200,
+      160,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -420,7 +508,11 @@
   "scroll_of_armorer": {
     "name": "scroll of the armorer",
     "symbol": "?",
-    "color": [160, 140, 240],
+    "color": [
+      160,
+      140,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -438,7 +530,11 @@
   "scroll_of_legendary_ward": {
     "name": "scroll of the legendary ward",
     "symbol": "?",
-    "color": [140, 100, 220],
+    "color": [
+      140,
+      100,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -453,11 +549,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_uncurse": {
     "name": "scroll of uncurse",
     "symbol": "?",
-    "color": [220, 200, 240],
+    "color": [
+      220,
+      200,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -475,7 +574,11 @@
   "scroll_of_purity": {
     "name": "scroll of purity",
     "symbol": "?",
-    "color": [230, 220, 250],
+    "color": [
+      230,
+      220,
+      250
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -493,7 +596,11 @@
   "scroll_of_cleansing": {
     "name": "scroll of cleansing",
     "symbol": "?",
-    "color": [200, 180, 255],
+    "color": [
+      200,
+      180,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -511,7 +618,11 @@
   "scroll_of_purification": {
     "name": "scroll of purification",
     "symbol": "?",
-    "color": [180, 160, 240],
+    "color": [
+      180,
+      160,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -529,7 +640,11 @@
   "scroll_of_sanctification": {
     "name": "scroll of sanctification",
     "symbol": "?",
-    "color": [160, 120, 220],
+    "color": [
+      160,
+      120,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -544,11 +659,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_ward": {
     "name": "scroll of ward",
     "symbol": "?",
-    "color": [160, 200, 255],
+    "color": [
+      160,
+      200,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -566,7 +684,11 @@
   "scroll_of_protection": {
     "name": "scroll of protection",
     "symbol": "?",
-    "color": [140, 190, 245],
+    "color": [
+      140,
+      190,
+      245
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -584,7 +706,11 @@
   "scroll_of_greater_protection": {
     "name": "scroll of greater protection",
     "symbol": "?",
-    "color": [100, 170, 240],
+    "color": [
+      100,
+      170,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -602,7 +728,11 @@
   "scroll_of_aegis": {
     "name": "scroll of aegis",
     "symbol": "?",
-    "color": [80, 140, 230],
+    "color": [
+      80,
+      140,
+      230
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -620,7 +750,11 @@
   "scroll_of_absolute_ward": {
     "name": "scroll of absolute ward",
     "symbol": "?",
-    "color": [60, 100, 220],
+    "color": [
+      60,
+      100,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -635,11 +769,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_bewilderment": {
     "name": "scroll of bewilderment",
     "symbol": "?",
-    "color": [255, 200, 255],
+    "color": [
+      255,
+      200,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -657,7 +794,11 @@
   "scroll_of_confusion": {
     "name": "scroll of confusion",
     "symbol": "?",
-    "color": [230, 160, 240],
+    "color": [
+      230,
+      160,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -675,7 +816,11 @@
   "scroll_of_madness": {
     "name": "scroll of madness",
     "symbol": "?",
-    "color": [200, 100, 220],
+    "color": [
+      200,
+      100,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -690,11 +835,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_drowsing": {
     "name": "scroll of drowsing",
     "symbol": "?",
-    "color": [200, 200, 255],
+    "color": [
+      200,
+      200,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -712,7 +860,11 @@
   "scroll_of_sleep": {
     "name": "scroll of sleep",
     "symbol": "?",
-    "color": [160, 160, 240],
+    "color": [
+      160,
+      160,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -730,7 +882,11 @@
   "scroll_of_deep_slumber": {
     "name": "scroll of deep slumber",
     "symbol": "?",
-    "color": [100, 100, 220],
+    "color": [
+      100,
+      100,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -745,11 +901,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_quickness": {
     "name": "scroll of quickness",
     "symbol": "?",
-    "color": [240, 240, 140],
+    "color": [
+      240,
+      240,
+      140
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -767,7 +926,11 @@
   "scroll_of_haste": {
     "name": "scroll of haste",
     "symbol": "?",
-    "color": [240, 240, 80],
+    "color": [
+      240,
+      240,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -785,7 +948,11 @@
   "scroll_of_alacrity": {
     "name": "scroll of alacrity",
     "symbol": "?",
-    "color": [220, 200, 40],
+    "color": [
+      220,
+      200,
+      40
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -800,11 +967,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_blink": {
     "name": "scroll of blink",
     "symbol": "?",
-    "color": [180, 240, 255],
+    "color": [
+      180,
+      240,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -822,7 +992,11 @@
   "scroll_of_teleportation": {
     "name": "scroll of teleportation",
     "symbol": "?",
-    "color": [100, 220, 255],
+    "color": [
+      100,
+      220,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -840,7 +1014,11 @@
   "scroll_of_recall": {
     "name": "scroll of recall",
     "symbol": "?",
-    "color": [40, 200, 255],
+    "color": [
+      40,
+      200,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -855,11 +1033,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_spark": {
     "name": "scroll of spark",
     "symbol": "?",
-    "color": [180, 220, 160],
+    "color": [
+      180,
+      220,
+      160
+    ],
     "weight_lb": 0.1,
     "min_level": 8,
     "peak_floor": 26,
@@ -877,7 +1058,11 @@
   "scroll_of_charging": {
     "name": "scroll of charging",
     "symbol": "?",
-    "color": [120, 200, 140],
+    "color": [
+      120,
+      200,
+      140
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -895,7 +1080,11 @@
   "scroll_of_recharge": {
     "name": "scroll of recharge",
     "symbol": "?",
-    "color": [60, 180, 120],
+    "color": [
+      60,
+      180,
+      120
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -910,11 +1099,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_light": {
     "name": "scroll of light",
     "symbol": "?",
-    "color": [255, 255, 200],
+    "color": [
+      255,
+      255,
+      200
+    ],
     "weight_lb": 0.1,
     "min_level": 1,
     "peak_floor": 10,
@@ -932,7 +1124,11 @@
   "scroll_of_illumination": {
     "name": "scroll of illumination",
     "symbol": "?",
-    "color": [255, 245, 160],
+    "color": [
+      255,
+      245,
+      160
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -950,7 +1146,11 @@
   "scroll_of_revelation": {
     "name": "scroll of revelation",
     "symbol": "?",
-    "color": [255, 240, 100],
+    "color": [
+      255,
+      240,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -965,11 +1165,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_enchant_ring": {
     "name": "scroll of enchant ring",
     "symbol": "?",
-    "color": [220, 180, 240],
+    "color": [
+      220,
+      180,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -987,7 +1190,11 @@
   "scroll_of_trinketry": {
     "name": "scroll of trinketry",
     "symbol": "?",
-    "color": [200, 140, 240],
+    "color": [
+      200,
+      140,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1005,7 +1212,11 @@
   "scroll_of_master_trinketry": {
     "name": "scroll of master trinketry",
     "symbol": "?",
-    "color": [180, 100, 240],
+    "color": [
+      180,
+      100,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1020,11 +1231,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_enchantment": {
     "name": "scroll of enchantment",
     "symbol": "?",
-    "color": [255, 220, 100],
+    "color": [
+      255,
+      220,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -1042,7 +1256,11 @@
   "scroll_of_greater_enchantment": {
     "name": "scroll of greater enchantment",
     "symbol": "?",
-    "color": [255, 200, 60],
+    "color": [
+      255,
+      200,
+      60
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1060,7 +1278,11 @@
   "scroll_of_grand_enchantment": {
     "name": "scroll of grand enchantment",
     "symbol": "?",
-    "color": [255, 170, 20],
+    "color": [
+      255,
+      170,
+      20
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1075,11 +1297,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_stone": {
     "name": "scroll of stone",
     "symbol": "?",
-    "color": [180, 160, 120],
+    "color": [
+      180,
+      160,
+      120
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -1097,7 +1322,11 @@
   "scroll_of_earth": {
     "name": "scroll of earth",
     "symbol": "?",
-    "color": [180, 140, 80],
+    "color": [
+      180,
+      140,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1115,7 +1344,11 @@
   "scroll_of_cataclysm": {
     "name": "scroll of cataclysm",
     "symbol": "?",
-    "color": [140, 80, 40],
+    "color": [
+      140,
+      80,
+      40
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1130,11 +1363,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_smiting": {
     "name": "scroll of smiting",
     "symbol": "?",
-    "color": [255, 160, 160],
+    "color": [
+      255,
+      160,
+      160
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -1152,7 +1388,11 @@
   "scroll_of_annihilation": {
     "name": "scroll of annihilation",
     "symbol": "?",
-    "color": [255, 80, 80],
+    "color": [
+      255,
+      80,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1170,7 +1410,11 @@
   "scroll_of_extinction": {
     "name": "scroll of extinction",
     "symbol": "?",
-    "color": [220, 30, 30],
+    "color": [
+      220,
+      30,
+      30
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1185,11 +1429,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_purge": {
     "name": "scroll of purge",
     "symbol": "?",
-    "color": [200, 60, 60],
+    "color": [
+      200,
+      60,
+      60
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -1207,7 +1454,11 @@
   "scroll_of_genocide": {
     "name": "scroll of genocide",
     "symbol": "?",
-    "color": [255, 40, 40],
+    "color": [
+      255,
+      40,
+      40
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1225,7 +1476,11 @@
   "scroll_of_exile": {
     "name": "scroll of exile",
     "symbol": "?",
-    "color": [180, 20, 40],
+    "color": [
+      180,
+      20,
+      40
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1240,11 +1495,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_slow_time": {
     "name": "scroll of slow time",
     "symbol": "?",
-    "color": [200, 220, 240],
+    "color": [
+      200,
+      220,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -1262,7 +1520,11 @@
   "scroll_of_time_stop": {
     "name": "scroll of time stop",
     "symbol": "?",
-    "color": [200, 220, 255],
+    "color": [
+      200,
+      220,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1280,7 +1542,11 @@
   "scroll_of_timeless": {
     "name": "scroll of timeless",
     "symbol": "?",
-    "color": [180, 220, 255],
+    "color": [
+      180,
+      220,
+      255
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1295,11 +1561,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "scroll_of_power": {
     "name": "scroll of power",
     "symbol": "?",
-    "color": [255, 220, 100],
+    "color": [
+      255,
+      220,
+      100
+    ],
     "weight_lb": 0.1,
     "min_level": 20,
     "peak_floor": 50,
@@ -1317,7 +1586,11 @@
   "scroll_of_greater_power": {
     "name": "scroll of greater power",
     "symbol": "?",
-    "color": [255, 220, 60],
+    "color": [
+      255,
+      220,
+      60
+    ],
     "weight_lb": 0.1,
     "min_level": 40,
     "peak_floor": 70,
@@ -1335,7 +1608,11 @@
   "scroll_of_great_power": {
     "name": "scroll of great power",
     "symbol": "?",
-    "color": [255, 215, 0],
+    "color": [
+      255,
+      215,
+      0
+    ],
     "weight_lb": 0.1,
     "min_level": 60,
     "peak_floor": 88,
@@ -1350,11 +1627,14 @@
     "weight": 0.1,
     "peak_weight": 0.25
   },
-
   "dead_sea_scroll": {
     "name": "Dead Sea Scroll",
     "symbol": "?",
-    "color": [200, 180, 140],
+    "color": [
+      200,
+      180,
+      140
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1372,11 +1652,14 @@
     "weight": 0.1,
     "peak_weight": 0
   },
-
   "scroll_of_the_labyrinth": {
     "name": "Scroll of the Labyrinth",
     "symbol": "?",
-    "color": [180, 80, 50],
+    "color": [
+      180,
+      80,
+      50
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1396,7 +1679,11 @@
   "scroll_of_the_gorgon": {
     "name": "Scroll of the Gorgon",
     "symbol": "?",
-    "color": [80, 180, 80],
+    "color": [
+      80,
+      180,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1416,7 +1703,11 @@
   "scroll_of_the_hoard": {
     "name": "Scroll of the Dragon Hoard",
     "symbol": "?",
-    "color": [200, 100, 20],
+    "color": [
+      200,
+      100,
+      20
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1436,7 +1727,11 @@
   "scroll_of_ragnarok": {
     "name": "Scroll of Ragnarok",
     "symbol": "?",
-    "color": [180, 200, 240],
+    "color": [
+      180,
+      200,
+      240
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1456,7 +1751,11 @@
   "scroll_of_the_abyss": {
     "name": "Scroll of the Abyss",
     "symbol": "?",
-    "color": [160, 60, 220],
+    "color": [
+      160,
+      60,
+      220
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1476,7 +1775,11 @@
   "scroll_of_arachne": {
     "name": "Scroll of Arachne",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1496,7 +1799,11 @@
   "scroll_of_lamia": {
     "name": "Scroll of Lamia",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1516,7 +1823,11 @@
   "scroll_of_talos": {
     "name": "Scroll of Talos",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1536,7 +1847,11 @@
   "scroll_of_echidna": {
     "name": "Scroll of Echidna",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1556,7 +1871,11 @@
   "scroll_of_the_erlking": {
     "name": "Scroll of the Erlking",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1576,7 +1895,11 @@
   "scroll_of_camazotz": {
     "name": "Scroll of Camazotz",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1596,7 +1919,11 @@
   "scroll_of_cacus": {
     "name": "Scroll of Cacus",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1616,7 +1943,11 @@
   "scroll_of_the_sphinx": {
     "name": "Scroll of the Sphinx",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1636,7 +1967,11 @@
   "scroll_of_rangda": {
     "name": "Scroll of Rangda",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1656,7 +1991,11 @@
   "scroll_of_the_lion": {
     "name": "Scroll of the Nemean Lion",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1676,7 +2015,11 @@
   "scroll_of_baba_yaga": {
     "name": "Scroll of Baba Yaga",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1696,7 +2039,11 @@
   "scroll_of_jormungandr": {
     "name": "Scroll of Jormungandr",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1716,7 +2063,11 @@
   "scroll_of_set": {
     "name": "Scroll of Set",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1736,7 +2087,11 @@
   "scroll_of_the_green": {
     "name": "Scroll of the Green Knight",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1756,7 +2111,11 @@
   "scroll_of_charybdis": {
     "name": "Scroll of Charybdis",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1776,7 +2135,11 @@
   "scroll_of_ravana": {
     "name": "Scroll of Ravana",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1796,7 +2159,11 @@
   "scroll_of_the_wendigo": {
     "name": "Scroll of the Wendigo",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1816,7 +2183,11 @@
   "scroll_of_the_hunt": {
     "name": "Scroll of the Wild Hunt",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1836,7 +2207,11 @@
   "scroll_of_anansi": {
     "name": "Scroll of Anansi",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1856,7 +2231,11 @@
   "scroll_of_nidhoggr": {
     "name": "Scroll of Nidhoggr",
     "symbol": "?",
-    "color": [255, 200, 80],
+    "color": [
+      255,
+      200,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1876,7 +2255,11 @@
   "scroll_of_the_pasture": {
     "name": "Scroll of the Pasture",
     "symbol": "?",
-    "color": [180, 140, 80],
+    "color": [
+      180,
+      140,
+      80
+    ],
     "weight_lb": 0.1,
     "min_level": 9999,
     "peak_floor": 9999,
@@ -1892,5 +2275,73 @@
     "identified": true,
     "weight": 0.3,
     "peak_weight": 0
+  },
+  "scroll_of_nine_hells": {
+    "id": "scroll_of_nine_hells",
+    "name": "Scroll of the Nine Hells",
+    "symbol": "?",
+    "color": [
+      200,
+      40,
+      60
+    ],
+    "material": "vellum",
+    "tier": 5,
+    "mathTier": 5,
+    "quiz_tier": 5,
+    "min_level": 88,
+    "peak_floor": 92,
+    "weight": 0.3,
+    "value": 5000,
+    "identified": false,
+    "unidentified_name": "a scroll bound with blood-red wax",
+    "effect": "annihilate",
+    "threshold": 1,
+    "container_loot_tier": "legendary",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "is_unique": true,
+    "lore": "Nine seals, nine names, nine gates of the Pit. Asmodeus wrote this scroll on the vellum of a fallen archon. Reading it unleashes the fire of every layer at once.",
+    "design_notes": "Asmodeus L92 boss reward. Wired via monster.treasure.boss_scroll_id.",
+    "quiz_threshold": 1
+  },
+  "scroll_of_chromatic_doom": {
+    "id": "scroll_of_chromatic_doom",
+    "name": "Scroll of Chromatic Doom",
+    "symbol": "?",
+    "color": [
+      200,
+      60,
+      200
+    ],
+    "material": "vellum",
+    "tier": 5,
+    "mathTier": 5,
+    "quiz_tier": 5,
+    "min_level": 85,
+    "peak_floor": 89,
+    "weight": 0.3,
+    "value": 4500,
+    "identified": false,
+    "unidentified_name": "a scroll shifting through five colors",
+    "effect": "annihilate",
+    "threshold": 1,
+    "container_loot_tier": "legendary",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "is_unique": true,
+    "lore": "Tiamat's five heads spoke five breaths — fire, cold, lightning, acid, poison — into this scroll before she fell. Reading it calls all five at once upon whoever stands nearest to you.",
+    "design_notes": "Tiamat L85 boss reward. Wired via monster.treasure.boss_scroll_id.",
+    "quiz_threshold": 1
   }
 }

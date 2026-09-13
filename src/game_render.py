@@ -46,7 +46,7 @@ from game_states import (
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT, STATE_ASCENSION,
+    STATE_QA_WARP_INPUT,
 )
 
 
@@ -1751,8 +1751,6 @@ class RenderMixin:
             self._draw_qa_warp_popup()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
-        elif self.state == STATE_ASCENSION:
-            self._draw_ascension_menu()
         elif self.state == STATE_EAT_MENU:
             self._draw_eat_menu()
         elif self.state == STATE_QUAFF_MENU:
@@ -2822,7 +2820,9 @@ class RenderMixin:
                       (desc, FP.BODY_TEXT, self.font_sm)]
         preview = self._menu_recipe_preview(recipe)
         if preview:
-            lines += [("Chain outcomes", FP.GOLD_BRIGHT, self.font_sm),
+            # v2.15.0 UI-rot fix: cooking is one-question binary (v2.6.4),
+            # no escalator chain. Label the section as the outcome, not "chain".
+            lines += [("Outcome", FP.GOLD_BRIGHT, self.font_sm),
                       (preview, FP.SUCCESS_TEXT, self.font_sm)]
         lines += [("Next action", FP.GOLD_BRIGHT, self.font_sm),
                   ("Answer one cooking question. Right = full recipe; wrong = ruined dish.", FP.BODY_TEXT, self.font_sm)]
@@ -4476,7 +4476,8 @@ class RenderMixin:
             ("COOKING", FP.GOLD_BRIGHT, self.font_sm),
             (f"SP {sp}/{self.player.max_sp}", sp_color, self.font_sm),
             (f"Recipes available: {len(entries)}", FP.BODY_TEXT, self.font_sm),
-            ("Cooking uses an escalator-chain quiz. Higher chains improve the meal.",
+            # v2.15.0 UI-rot fix: cook is one-question binary (v2.6.4), not escalator.
+            ("Cooking uses one cooking question. Right = full meal; wrong = ruined.",
              FP.FADED_TEXT, self.font_sm),
         ])
         self._draw_decision_menu_variant_a(
@@ -4655,127 +4656,6 @@ class RenderMixin:
             font_md=self.font_md,
             font_sm=self.font_sm,
             draw_icon_fn=_cook_icon,
-        )
-
-    def _draw_ascension_menu(self):
-        """Boss Class Ascension picker (opened by cooking a boss trophy).
-
-        Lists the offered class nodes for the player's current tier. Each row
-        shows the node name + a stat/perk/ability summary + flavor, wrapped to
-        the panel width. Text rows (no icons), modelled on the drop menu."""
-        import class_system as cs
-        choices = getattr(self, '_ascension_choices', []) or []
-        classes = cs.load_classes()
-        draw_overlay(self.screen, 195)
-        bw = min(1240, layout.GAME_W - 32)
-        bh = min(680, layout.WINDOW_H - 32)
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD_BRIGHT)
-        draw_header_bar(self.screen, (bx, by, bw, 44), text="ASCENSION",
-                        font=self.font_lg, text_color=FP.GOLD_BRIGHT,
-                        accent=FP.GOLD_BRIGHT)
-
-        path_len = len(cs.class_path(self.player))
-        _tier_names = {0: 'Calling', 1: 'Specialization', 2: 'Mastery', 3: 'Capstone'}
-        subtitle = f"Permanent {_tier_names.get(path_len, 'path')} choice. ESC defers."
-        self._menu_draw_line(subtitle, self.font_sm, FP.WARNING_TEXT,
-                             pygame.Rect(bx + 24, by + 58, bw - 48, 24))
-
-        selected = self._menu_clamp_selection('_ascension_sel', len(choices))
-        card_count = max(1, len(choices))
-        gap = 16
-        usable_w = bw - 80
-        cols = min(4, card_count)
-        card_w = (usable_w - gap * (cols - 1)) // cols
-        card_h = bh - 190
-        card_y = by + 104
-        start_x = bx + (bw - (card_w * cols + gap * (cols - 1))) // 2
-        for i, nid in enumerate(choices[:cols]):
-            node = classes.get(nid, {})
-            rect = pygame.Rect(start_x + i * (card_w + gap), card_y, card_w, card_h)
-            is_sel = i == selected
-            pygame.draw.rect(self.screen, (30, 38, 74) if is_sel else FP.MIDNIGHT,
-                             rect, border_radius=7)
-            pygame.draw.rect(self.screen, FP.GOLD_BRIGHT if is_sel else FP.GOLD_DARK,
-                             rect, 2 if is_sel else 1, border_radius=7)
-            key_rect = pygame.Rect(rect.x + 12, rect.y + 12, 32, 28)
-            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, key_rect, border_radius=4)
-            pygame.draw.rect(self.screen, FP.GOLD, key_rect, 1, border_radius=4)
-            key = self._menu_letter(i)
-            if key:
-                ks = self.font_sm.render(key, True, FP.GOLD_BRIGHT)
-                self.screen.blit(ks, (key_rect.centerx - ks.get_width() // 2,
-                                      key_rect.centery - ks.get_height() // 2))
-            name = node.get('name', nid)
-            self._menu_draw_wrapped(name, self.font_md, FP.GOLD_BRIGHT,
-                                    pygame.Rect(rect.x + 52, rect.y + 11,
-                                                rect.w - 64, 58), max_lines=2)
-            y = rect.y + 76
-            summary = self._ascension_node_summary(node)
-            if summary:
-                y += self._menu_draw_wrapped(summary, self.font_sm, FP.CYAN_ACCENT,
-                                             pygame.Rect(rect.x + 16, y, rect.w - 32,
-                                                         rect.bottom - y - 20),
-                                             max_lines=3) + 10
-            ability = node.get('ability') or {}
-            if ability.get('name'):
-                y += self._menu_draw_wrapped(
-                    f"Ability: {ability.get('name')} - {ability.get('desc', '')}",
-                    self.font_sm, FP.SUCCESS_TEXT,
-                    pygame.Rect(rect.x + 16, y, rect.w - 32, rect.bottom - y - 20),
-                    max_lines=4) + 10
-            flavor = node.get('flavor', '')
-            if flavor:
-                self._menu_draw_wrapped(flavor, self.font_sm, FP.BODY_TEXT,
-                                        pygame.Rect(rect.x + 16, y, rect.w - 32,
-                                                    rect.bottom - y - 20),
-                                        max_lines=8)
-
-        draw_divider(self.screen, bx + 20, by + bh - 40, bw - 40)
-        hint = "Left/Right or Up/Down: choose   Enter or a-z: accept   ESC: defer"
-        hs = self.font_sm.render(hint, True, FP.HINT_TEXT)
-        self.screen.blit(hs, (bx + (bw - hs.get_width()) // 2, by + bh - 30))
-        return
-        bw = min(760, layout.GAME_W - 40)
-        max_detail_w = bw - 90
-        entries = []
-        for i, nid in enumerate(choices[:26]):
-            node = classes.get(nid, {})
-            summary = self._ascension_node_summary(node)
-            flavor = node.get('flavor', '')
-            detail = summary
-            if flavor:
-                detail = f"{summary}\n{flavor}" if summary else flavor
-            # Pre-wrap each logical line so flavor sits under the stat summary.
-            detail_lines = []
-            for chunk in detail.split('\n'):
-                detail_lines.extend(self._wrap_text(chunk, self.font_sm, max_detail_w))
-            entries.append({
-                'name': node.get('name', nid),
-                'detail_lines': detail_lines,
-                'key': self._LETTERS[i],
-                'name_color': FP.GOLD_BRIGHT,
-                'detail_color': FP.BODY_TEXT,
-                'row_style': 'text',
-            })
-        path_len = len(cs.class_path(self.player))
-        _tier_names = {0: 'Calling', 1: 'Specialization', 2: 'Mastery', 3: 'Capstone'}
-        subtitle = f"Choose your {_tier_names.get(path_len, 'path')} — the boss meal IS the choice."
-        draw_menu(
-            self.screen,
-            title="ASCENSION",
-            entries=entries,
-            scroll=getattr(self, '_ascension_scroll', 0),
-            subtitle=subtitle,
-            subtitle_color=FP.GOLD_PALE,
-            hint="a-z: answer the calling  |  ESC: defer",
-            border_color=FP.GOLD_BRIGHT,
-            max_width=760,
-            center_in=(layout.GAME_W, layout.WINDOW_H),
-            font_md=self.font_md,
-            font_sm=self.font_sm,
-            row_style='text',
         )
 
     def _draw_drop_menu(self):
@@ -6756,22 +6636,31 @@ class RenderMixin:
                 mechanics.append((f"Weak to: {', '.join(wks)}", FP.WARNING_TEXT, self.font_sm))
 
         if id_level >= 2:
-            ingredient_id = getattr(corpse, 'ingredient_id', '')
-            if ingredient_id:
-                try:
-                    from food_system import load_ingredient_for, get_recipes_for_ingredient
-                    ing = load_ingredient_for(ingredient_id)
-                    if ing:
-                        mechanics.append((f"Ingredient: {ing.name}", FP.GOLD_PALE, self.font_sm))
+            # v2.15.0 fix: post-2026-05-31 harvest redesign re-keyed ingredients
+            # to `<monster_id>_prime`, but monsters.json still carries the old
+            # `ingredient_id` value (e.g. "rat_meat"). Prefer the current-format
+            # `<kind>_prime` key so the lookup actually finds the ingredient.
+            ingredient_id = f"{getattr(corpse, 'kind', '')}_prime"
+            legacy_id = getattr(corpse, 'ingredient_id', '')
+            try:
+                from food_system import load_ingredient_for, get_recipes_for_ingredient
+                ing = load_ingredient_for(ingredient_id)
+                # Fall back to the legacy field if the prime-keyed lookup misses
+                # (edge case: bosses/uniques that don't follow the naming pattern).
+                if not ing and legacy_id:
+                    ing = load_ingredient_for(legacy_id)
+                    ingredient_id = legacy_id
+                if ing:
+                    mechanics.append((f"Ingredient: {ing.name}", FP.GOLD_PALE, self.font_sm))
                     recipes = get_recipes_for_ingredient(ingredient_id)
                     if recipes:
                         mechanics.append(("Known recipe uses", FP.GOLD_BRIGHT, self.font_sm))
                         for recipe in recipes[:5]:
                             mechanics.append((recipe.get('name', '?'), FP.BODY_TEXT, self.font_sm))
-                except Exception:
-                    pass
-            else:
-                mechanics.append(("Ingredient: none", FP.FADED_TEXT, self.font_sm))
+                else:
+                    mechanics.append(("Ingredient: none", FP.FADED_TEXT, self.font_sm))
+            except Exception:
+                pass
 
         lore = getattr(corpse, 'lore', '') if id_level >= 4 else (
             "The creature's deeper history is still hidden. Study further to uncover it."
@@ -7303,16 +7192,29 @@ class RenderMixin:
                     specials.append("Knockback")
                 if subject.ignore_shield:
                     specials.append("Ignores Shield")
-                if subject.crit_multiplier > 1.0:
-                    specials.append(f"Perfect Chain Crit x{subject.crit_multiplier:.1f}")
+                # v2.15.0 UI-rot fix: crit was retired in v2.14.0 ("chain IS
+                # the crit"); the Perfect Chain Crit line is a stale label.
+                # crit_multiplier still exists as a field but is inert in
+                # combat.py and stripped from all 99 uniques (v2.14.0 rebase).
                 if specials:
                     stat_lines.append(f"Special: {',  '.join(specials)}")
                 if subject.requires_ammo:
                     stat_lines.append(f"Requires Ammo: {subject.requires_ammo}")
-                mults = subject.chain_multipliers
-                if mults:
-                    mult_str = '  '.join(f"x{m:.1f}" for m in mults[:6])
-                    stat_lines.append(f"Chain Multipliers: {mult_str}")
+                # v2.15.0 UI-rot fix: show the current chain identity honestly.
+                # Polynomial-path weapons (chain_exponent set) don't have a
+                # fixed-length ladder — surface the exponent + a couple of
+                # example rungs instead of the old array table.
+                _ce = getattr(subject, 'chain_exponent', None)
+                if _ce:
+                    ex_rungs = [1, 5, 10, 15]
+                    ex_str = ',  '.join(f"C{n}: x{float(n) ** float(_ce):.1f}"
+                                        for n in ex_rungs)
+                    stat_lines.append(f"Chain: n^{_ce:.2f}  ({ex_str})")
+                else:
+                    mults = subject.chain_multipliers
+                    if mults:
+                        mult_str = '  '.join(f"x{m:.1f}" for m in mults[:6])
+                        stat_lines.append(f"Chain Multipliers: {mult_str}")
                 stat_lines.append(f"Value: {subject.value} gold")
 
             elif id_level >= 3 and isinstance(subject, Armor):

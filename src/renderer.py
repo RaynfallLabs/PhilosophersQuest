@@ -31,6 +31,10 @@ _INGREDIENT_IDS = None                                # set of ingredient ids (c
 _UNIQUE_SPRITE_FALLBACK = {
     'hand_of_glory': 'hamsa_hand',
     'duck_of_doom':  'adamantine_great_helm',
+    # v2.15.0: boss-drop unique wand that doesn't start with wand_of_, so the
+    # /^wand_of_/ effect-fallback pathway doesn't catch it. Points at the
+    # canonical fire-wand sprite.
+    'ruby_rod':      'wand_of_fire',
 }
 # Generic icon for cooking ingredients (prime cuts, parts, trophies, foraged) --
 # 550+ of them ship no per-id art and rendered as the '~'/'*' glyph. A meat-cut

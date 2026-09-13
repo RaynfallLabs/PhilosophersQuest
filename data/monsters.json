@@ -124,7 +124,7 @@
       "item_chance": 0.0,
       "item_tier": 1
     },
-    "lore": "Grid bugs are bizarre insectoid creatures that can only move in straight lines along invisible magical lattices. Their origin is unknown \u2014 some sages believe they are fragments of a broken spell matrix given physical form. They carry nothing of value.",
+    "lore": "Grid bugs are bizarre insectoid creatures that can only move in straight lines along invisible magical lattices. Their origin is unknown — some sages believe they are fragments of a broken spell matrix given physical form. They carry nothing of value.",
     "frequency": 12
   },
   "floating_eye": {
@@ -310,7 +310,7 @@
       "item_chance": 0.05,
       "item_tier": 1
     },
-    "lore": "Zombies are the crudest form of undead \u2014 corpses reanimated by ambient necromantic energy or a careless spell. They shuffle toward the living with single-minded hunger, spreading disease through festering wounds. The disease they carry is believed to originate from the Plane of Rot.",
+    "lore": "Zombies are the crudest form of undead — corpses reanimated by ambient necromantic energy or a careless spell. They shuffle toward the living with single-minded hunger, spreading disease through festering wounds. The disease they carry is believed to originate from the Plane of Rot.",
     "frequency": 5
   },
   "gelatinous_cube": {
@@ -363,7 +363,7 @@
       "item_chance": 0.3,
       "item_tier": 2
     },
-    "lore": "Gelatinous cubes are semi-transparent oozes perfectly sized to fill dungeon corridors, acting as natural cleaning agents. They engulf and dissolve all organic matter, while indigestible items \u2014 coins, gems, weapons \u2014 remain suspended within their bodies. They are nearly invisible until they have already engulfed you.",
+    "lore": "Gelatinous cubes are semi-transparent oozes perfectly sized to fill dungeon corridors, acting as natural cleaning agents. They engulf and dissolve all organic matter, while indigestible items — coins, gems, weapons — remain suspended within their bodies. They are nearly invisible until they have already engulfed you.",
     "frequency": 4
   },
   "wraith": {
@@ -423,7 +423,7 @@
       "item_chance": 0.1,
       "item_tier": 2
     },
-    "lore": "Wraiths are the spirits of the deeply corrupt, those whose evil was so profound that death could not contain them. They drain life force with a touch, leaving victims pale and weakened. Unlike ghosts, wraiths have no memory of their former lives \u2014 only an insatiable hunger for vitality.",
+    "lore": "Wraiths are the spirits of the deeply corrupt, those whose evil was so profound that death could not contain them. They drain life force with a touch, leaving victims pale and weakened. Unlike ghosts, wraiths have no memory of their former lives — only an insatiable hunger for vitality.",
     "frequency": 4
   },
   "mimic": {
@@ -597,7 +597,7 @@
       "item_chance": 0.8,
       "item_tier": 4
     },
-    "lore": "An ancient mimic that has absorbed so many souls it has developed a malevolent intelligence. It no longer merely imitates objects \u2014 it reads minds to become whatever its victim most desires. Its embrace drains not just life, but the will to resist.",
+    "lore": "An ancient mimic that has absorbed so many souls it has developed a malevolent intelligence. It no longer merely imitates objects — it reads minds to become whatever its victim most desires. Its embrace drains not just life, but the will to resist.",
     "frequency": 0
   },
   "leprechaun": {
@@ -732,7 +732,7 @@
       "item_chance": 0.05,
       "item_tier": 1
     },
-    "lore": "Cave spiders spin invisible webs across dungeon passages, waiting motionless for days until prey stumbles through. Their venom causes progressive paralysis rather than immediate death \u2014 they prefer to consume prey alive. The silk they produce is of remarkable tensile strength.",
+    "lore": "Cave spiders spin invisible webs across dungeon passages, waiting motionless for days until prey stumbles through. Their venom causes progressive paralysis rather than immediate death — they prefer to consume prey alive. The silk they produce is of remarkable tensile strength.",
     "frequency": 7,
     "pack": true
   },
@@ -871,7 +871,7 @@
       "item_chance": 0.12,
       "item_tier": 1
     },
-    "lore": "Orc scouts are the vanguard of larger warbands, sent ahead to map territory and eliminate weak prey. They travel light, relying on speed and surprise rather than heavy armor. Their tribal tattoos record their kills \u2014 a scout with many markings is especially dangerous.",
+    "lore": "Orc scouts are the vanguard of larger warbands, sent ahead to map territory and eliminate weak prey. They travel light, relying on speed and surprise rather than heavy armor. Their tribal tattoos record their kills — a scout with many markings is especially dangerous.",
     "frequency": 6
   },
   "gnoll": {
@@ -913,7 +913,7 @@
       "item_chance": 0.15,
       "item_tier": 1
     },
-    "lore": "Gnolls are hyena-headed humanoids who live to hunt and kill. Unlike orcs, they do not build settlements \u2014 they follow prey until it collapses, consuming everything including bone. Their laughter-like vocalizations signal a pack closing in for the kill.",
+    "lore": "Gnolls are hyena-headed humanoids who live to hunt and kill. Unlike orcs, they do not build settlements — they follow prey until it collapses, consuming everything including bone. Their laughter-like vocalizations signal a pack closing in for the kill.",
     "frequency": 5
   },
   "hobgoblin": {
@@ -1011,7 +1011,7 @@
       "item_chance": 0.1,
       "item_tier": 2
     },
-    "lore": "Ghouls were once people \u2014 usually those who resorted to cannibalism in extremity. The curse of the ghoul transforms them fully, leaving them with an insatiable appetite for humanoid flesh. Their claws secrete a paralytic enzyme, allowing them to feed at leisure. They hoard the jewelry of victims in their lairs.",
+    "lore": "Ghouls were once people — usually those who resorted to cannibalism in extremity. The curse of the ghoul transforms them fully, leaving them with an insatiable appetite for humanoid flesh. Their claws secrete a paralytic enzyme, allowing them to feed at leisure. They hoard the jewelry of victims in their lairs.",
     "frequency": 4
   },
   "dire_rat": {
@@ -1245,7 +1245,7 @@
       "item_chance": 0.35,
       "item_tier": 3
     },
-    "lore": "Dark elves \u2014 drow \u2014 are exiles from the surface world who have built a civilization in the deepest tunnels. Their magic is potent but their iron corrodes rapidly in surface air. Drow who venture into the upper dungeon are typically scouts, assassins, or outcasts from even their own cruel society.",
+    "lore": "Dark elves — drow — are exiles from the surface world who have built a civilization in the deepest tunnels. Their magic is potent but their iron corrodes rapidly in surface air. Drow who venture into the upper dungeon are typically scouts, assassins, or outcasts from even their own cruel society.",
     "frequency": 4
   },
   "wight": {
@@ -1343,7 +1343,7 @@
       "item_chance": 0.05,
       "item_tier": 1
     },
-    "lore": "Rust monsters are the terror of armored adventurers \u2014 their antenna touch causes ferrous metal to instantly corrode into worthless flakes. They are not aggressive by nature, seeking metal to consume rather than flesh. A dungeon where rust monsters dwell is stripped of iron fixtures.",
+    "lore": "Rust monsters are the terror of armored adventurers — their antenna touch causes ferrous metal to instantly corrode into worthless flakes. They are not aggressive by nature, seeking metal to consume rather than flesh. A dungeon where rust monsters dwell is stripped of iron fixtures.",
     "frequency": 3
   },
   "cave_bear": {
@@ -1434,7 +1434,7 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "Ogres are brutish giants standing eight feet tall, motivated primarily by hunger and the desire to smash things. Despite their dim intellect, they are cunning enough to set ambushes and use improvised weapons effectively. Ogre warrens are identified by the smell \u2014 they hoard food alongside stolen goods.",
+    "lore": "Ogres are brutish giants standing eight feet tall, motivated primarily by hunger and the desire to smash things. Despite their dim intellect, they are cunning enough to set ambushes and use improvised weapons effectively. Ogre warrens are identified by the smell — they hoard food alongside stolen goods.",
     "frequency": 3
   },
   "shadow": {
@@ -1548,7 +1548,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "Mummies are the preserved dead of ancient kings and priests, animated to guard tomb treasures for eternity. Their rotted bandages carry a supernatural disease \u2014 mummy rot \u2014 that resists natural healing. The curse they carry is linked to the original embalming rites; defeating the mummy that placed it can lift the curse.",
+    "lore": "Mummies are the preserved dead of ancient kings and priests, animated to guard tomb treasures for eternity. Their rotted bandages carry a supernatural disease — mummy rot — that resists natural healing. The curse they carry is linked to the original embalming rites; defeating the mummy that placed it can lift the curse.",
     "frequency": 3
   },
   "giant_spider": {
@@ -1603,7 +1603,7 @@
       "item_chance": 0.12,
       "item_tier": 2
     },
-    "lore": "Giant spiders of the deep dungeon grow to the size of horses, spinning massive orb webs that span entire corridors. Their venom is fast-acting and powerful. Victims they do not immediately consume are wrapped in silk and stored for later \u2014 the cocoons often contain items from previous adventurers.",
+    "lore": "Giant spiders of the deep dungeon grow to the size of horses, spinning massive orb webs that span entire corridors. Their venom is fast-acting and powerful. Victims they do not immediately consume are wrapped in silk and stored for later — the cocoons often contain items from previous adventurers.",
     "frequency": 4
   },
   "ettin": {
@@ -1653,7 +1653,7 @@
       "item_chance": 0.25,
       "item_tier": 3
     },
-    "lore": "Ettins are two-headed giants whose dual consciousnesses argue constantly about everything \u2014 including combat tactics. This gives them the ability to attack and defend simultaneously, never truly caught off-guard. Their lairs are littered with the remains of meals and the occasional intact trophy from a memorable fight.",
+    "lore": "Ettins are two-headed giants whose dual consciousnesses argue constantly about everything — including combat tactics. This gives them the ability to attack and defend simultaneously, never truly caught off-guard. Their lairs are littered with the remains of meals and the occasional intact trophy from a memorable fight.",
     "frequency": 2
   },
   "manticore": {
@@ -1771,7 +1771,7 @@
       "item_chance": 0.08,
       "item_tier": 3
     },
-    "lore": "Specters are more powerful than wraiths, incorporeal undead who have burned away all remnants of their former personality in their hunger for life force. They can pass through solid stone. The dread cold that precedes a specter's arrival lowers ambient temperature by several degrees \u2014 a useful warning sign.",
+    "lore": "Specters are more powerful than wraiths, incorporeal undead who have burned away all remnants of their former personality in their hunger for life force. They can pass through solid stone. The dread cold that precedes a specter's arrival lowers ambient temperature by several degrees — a useful warning sign.",
     "frequency": 2
   },
   "basilisk": {
@@ -1823,7 +1823,7 @@
       "item_chance": 0.2,
       "item_tier": 3
     },
-    "lore": "The basilisk's eight-eyed gaze carries petrification magic \u2014 sustained eye contact will turn flesh to stone within seconds. The dungeon basilisk is smaller than the legendary surface variety but equally deadly. Their stone-form victims litter their lairs, sometimes still in postures of final surprise.",
+    "lore": "The basilisk's eight-eyed gaze carries petrification magic — sustained eye contact will turn flesh to stone within seconds. The dungeon basilisk is smaller than the legendary surface variety but equally deadly. Their stone-form victims litter their lairs, sometimes still in postures of final surprise.",
     "frequency": 2
   },
   "chimera": {
@@ -1886,7 +1886,7 @@
       "item_chance": 0.4,
       "item_tier": 4
     },
-    "lore": "The chimera is a magical aberration with the body of a lion, the head of a goat, and a serpentine tail. Its goat head breathes fire, its lion head bites, and its tail delivers venomous strikes. Ancient texts describe chimeras as failed divine experiments \u2014 amalgams of multiple beasts fused by careless magic.",
+    "lore": "The chimera is a magical aberration with the body of a lion, the head of a goat, and a serpentine tail. Its goat head breathes fire, its lion head bites, and its tail delivers venomous strikes. Ancient texts describe chimeras as failed divine experiments — amalgams of multiple beasts fused by careless magic.",
     "frequency": 2
   },
   "minotaur": {
@@ -1992,7 +1992,7 @@
       "item_chance": 0.12,
       "item_tier": 2
     },
-    "lore": "Frost crawlers are centipede-like creatures from the frozen sub-levels, their exoskeleton covered in natural ice crystals. They secrete a supercooled slime that flash-freezes flesh on contact. Their lair temperatures drop noticeably below ambient \u2014 dungeon explorers use this cold draft as a warning.",
+    "lore": "Frost crawlers are centipede-like creatures from the frozen sub-levels, their exoskeleton covered in natural ice crystals. They secrete a supercooled slime that flash-freezes flesh on contact. Their lair temperatures drop noticeably below ambient — dungeon explorers use this cold draft as a warning.",
     "frequency": 3
   },
   "medusa": {
@@ -2267,7 +2267,7 @@
       "item_chance": 0.2,
       "item_tier": 3
     },
-    "lore": "Storm elementals crackle with contained lightning and howling winds, drawn to the deep dungeon by resonant geomantic currents. Their strikes discharge static electricity that chains between metal objects. Metal armor actually increases one's vulnerability to their attacks \u2014 a fact armored adventurers learn painfully.",
+    "lore": "Storm elementals crackle with contained lightning and howling winds, drawn to the deep dungeon by resonant geomantic currents. Their strikes discharge static electricity that chains between metal objects. Metal armor actually increases one's vulnerability to their attacks — a fact armored adventurers learn painfully.",
     "frequency": 2
   },
   "lich_apprentice": {
@@ -2442,7 +2442,7 @@
       "item_chance": 0.6,
       "item_tier": 4
     },
-    "lore": "True vampires are among the most dangerous undead \u2014 immortal predators who have refined their hunting over centuries. They can transform into mist, command wolves and bats, and regenerate damage rapidly outside of sunlight. Each vampire has a personality and agenda; most are collecting power as obsessively as they once collected gold.",
+    "lore": "True vampires are among the most dangerous undead — immortal predators who have refined their hunting over centuries. They can transform into mist, command wolves and bats, and regenerate damage rapidly outside of sunlight. Each vampire has a personality and agenda; most are collecting power as obsessively as they once collected gold.",
     "frequency": 2,
     "drain_heals_self": 1.0
   },
@@ -2503,7 +2503,7 @@
       "item_chance": 0.65,
       "item_tier": 4
     },
-    "lore": "Death knights are the accursed remains of paladins who fell from grace so completely that even death rejected them. They retain their martial skill and gain dark magic, forced to serve whatever dark power claimed their soul. Their hellfire swords are a mark of their eternal damnation \u2014 they cannot remove them.",
+    "lore": "Death knights are the accursed remains of paladins who fell from grace so completely that even death rejected them. They retain their martial skill and gain dark magic, forced to serve whatever dark power claimed their soul. Their hellfire swords are a mark of their eternal damnation — they cannot remove them.",
     "frequency": 1
   },
   "bone_golem": {
@@ -2553,7 +2553,7 @@
       "item_chance": 0.2,
       "item_tier": 3
     },
-    "lore": "Bone golems are constructs assembled from the skeletons of multiple creatures, held together by necromantic binding. Unlike undead, they have no animus of their own \u2014 they execute commands mechanically. Their disjointed anatomy makes them eerily resistant to cutting weapons; the bones simply separate and reconnect.",
+    "lore": "Bone golems are constructs assembled from the skeletons of multiple creatures, held together by necromantic binding. Unlike undead, they have no animus of their own — they execute commands mechanically. Their disjointed anatomy makes them eerily resistant to cutting weapons; the bones simply separate and reconnect.",
     "frequency": 1
   },
   "greater_demon": {
@@ -2606,7 +2606,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "Greater demons are powerful entities of the Abyss, drawn to the material plane by large-scale evil or summoning rituals. They are not merely powerful \u2014 they are willfully cruel, seeking to corrupt and destroy with equal enthusiasm. Their very presence twists reality; flowers wilt and children cry at their passing.",
+    "lore": "Greater demons are powerful entities of the Abyss, drawn to the material plane by large-scale evil or summoning rituals. They are not merely powerful — they are willfully cruel, seeking to corrupt and destroy with equal enthusiasm. Their very presence twists reality; flowers wilt and children cry at their passing.",
     "frequency": 1
   },
   "young_dragon": {
@@ -2756,7 +2756,7 @@
       "item_chance": 0.65,
       "item_tier": 4
     },
-    "lore": "Beholders are aberrations of alien intelligence, their spherical bodies covered in eyestalks each projecting a different magical ray. They are deeply paranoid, trusting no one \u2014 not even others of their own kind. Beholder lairs contain the petrified, charmed, or disintegrated remains of everyone they have ever met.",
+    "lore": "Beholders are aberrations of alien intelligence, their spherical bodies covered in eyestalks each projecting a different magical ray. They are deeply paranoid, trusting no one — not even others of their own kind. Beholder lairs contain the petrified, charmed, or disintegrated remains of everyone they have ever met.",
     "frequency": 1
   },
   "vampire_lord": {
@@ -3002,7 +3002,7 @@
       "item_chance": 0.25,
       "item_tier": 4
     },
-    "lore": "Iron golems are the masterwork of the golem-maker's art \u2014 eight feet of animated metal, immune to fire, magic, and most physical harm. They breathe toxic gas from their forge-heated interiors. Built to guard powerful mages' vaults, they continue their work long after their creators have died of old age.",
+    "lore": "Iron golems are the masterwork of the golem-maker's art — eight feet of animated metal, immune to fire, magic, and most physical harm. They breathe toxic gas from their forge-heated interiors. Built to guard powerful mages' vaults, they continue their work long after their creators have died of old age.",
     "frequency": 1
   },
   "greater_lich": {
@@ -3347,7 +3347,7 @@
       "item_chance": 0.9,
       "item_tier": 5
     },
-    "lore": "Death lords are the apex of the undead hierarchy \u2014 beings who have transcended individual undeath to embody the concept of death itself. They command the obedience of all lesser undead within miles of their presence. Ancient texts describe them as heralds of an End that has not yet come.",
+    "lore": "Death lords are the apex of the undead hierarchy — beings who have transcended individual undeath to embody the concept of death itself. They command the obedience of all lesser undead within miles of their presence. Ancient texts describe them as heralds of an End that has not yet come.",
     "frequency": 1
   },
   "chaos_spawn": {
@@ -3466,7 +3466,7 @@
       "item_chance": 0.35,
       "item_tier": 4
     },
-    "lore": "Soul eaters are entities from a plane adjacent to death, sustained by consuming the animating essence of living beings. A creature whose soul is devoured cannot be resurrected by ordinary means. They are drawn to high concentrations of life force \u2014 adventurers deep in dungeons represent exceptionally attractive prey.",
+    "lore": "Soul eaters are entities from a plane adjacent to death, sustained by consuming the animating essence of living beings. A creature whose soul is devoured cannot be resurrected by ordinary means. They are drawn to high concentrations of life force — adventurers deep in dungeons represent exceptionally attractive prey.",
     "frequency": 1
   },
   "orc_shaman": {
@@ -3511,7 +3511,7 @@
       "item_chance": 0.35,
       "item_tier": 2
     },
-    "lore": "Orc shamans channel the dark blessings of their tribal deity, bolstering warband members and hurling curses at enemies. They are respected and feared within orcish society \u2014 only the warchief has more authority. Their ritual tattoos glow with eldritch energy during combat.",
+    "lore": "Orc shamans channel the dark blessings of their tribal deity, bolstering warband members and hurling curses at enemies. They are respected and feared within orcish society — only the warchief has more authority. Their ritual tattoos glow with eldritch energy during combat.",
     "frequency": 5
   },
   "giant_centipede": {
@@ -3766,7 +3766,7 @@
       "item_chance": 0.05,
       "item_tier": 2
     },
-    "lore": "Shadow hounds are canine predators partially displaced into the Shadow Plane, their bodies semi-transparent and cold to the touch. They can step through solid objects briefly to bypass obstacles or flank prey. Their howl causes existential dread \u2014 adventurers who hear it often report feeling suddenly alone in all the universe.",
+    "lore": "Shadow hounds are canine predators partially displaced into the Shadow Plane, their bodies semi-transparent and cold to the touch. They can step through solid objects briefly to bypass obstacles or flank prey. Their howl causes existential dread — adventurers who hear it often report feeling suddenly alone in all the universe.",
     "frequency": 4
   },
   "flesh_golem": {
@@ -3878,7 +3878,7 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "Harpies are winged women-creatures from Greek myth, their lower bodies those of great birds of prey. Their enchanting song lures victims to walk heedlessly toward danger. Despite their magical ability, they are filthy and cruel by nature \u2014 their nesting sites are identifiable by smell alone.",
+    "lore": "Harpies are winged women-creatures from Greek myth, their lower bodies those of great birds of prey. Their enchanting song lures victims to walk heedlessly toward danger. Despite their magical ability, they are filthy and cruel by nature — their nesting sites are identifiable by smell alone.",
     "frequency": 4
   },
   "necromancer_apprentice": {
@@ -4527,7 +4527,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "The Hydra of Lerna, a water serpent with nine heads, was one of Heracles' twelve labors. Whenever a head was severed, two more grew in its place \u2014 until Iolaus cauterized each stump with fire. The dungeon variant still regenerates if not dealt with carefully, and its blood is so toxic that Heracles used it to poison his arrows.",
+    "lore": "The Hydra of Lerna, a water serpent with nine heads, was one of Heracles' twelve labors. Whenever a head was severed, two more grew in its place — until Iolaus cauterized each stump with fire. The dungeon variant still regenerates if not dealt with carefully, and its blood is so toxic that Heracles used it to poison his arrows.",
     "frequency": 1,
     "regeneration": 4
   },
@@ -4649,7 +4649,7 @@
       "item_chance": 0.85,
       "item_tier": 5
     },
-    "lore": "Once a beautiful sea nymph, Scylla was transformed by Circe's jealousy into a twelve-legged monster with six heads, each bearing three rows of teeth. She occupies a narrow sea-cave and snatches sailors from passing ships \u2014 even from Odysseus's crew. In the dungeon she anchors herself in a narrow passage and attacks all who try to pass.",
+    "lore": "Once a beautiful sea nymph, Scylla was transformed by Circe's jealousy into a twelve-legged monster with six heads, each bearing three rows of teeth. She occupies a narrow sea-cave and snatches sailors from passing ships — even from Odysseus's crew. In the dungeon she anchors herself in a narrow passage and attacks all who try to pass.",
     "frequency": 1
   },
   "charybdis_spawn": {
@@ -4754,7 +4754,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "The Titans, elder gods overthrown by Zeus, were imprisoned in Tartarus beneath the deepest earth. Titanspawn are fragments of their primordial essence that have seeped upward through the dungeon rock \u2014 barely conscious but seething with ancient rage. They take vaguely humanoid form from the stone around them and attack everything that is not Titan-born.",
+    "lore": "The Titans, elder gods overthrown by Zeus, were imprisoned in Tartarus beneath the deepest earth. Titanspawn are fragments of their primordial essence that have seeped upward through the dungeon rock — barely conscious but seething with ancient rage. They take vaguely humanoid form from the stone around them and attack everything that is not Titan-born.",
     "frequency": 1
   },
   "frost_giant": {
@@ -4812,7 +4812,7 @@
       "item_chance": 0.4,
       "item_tier": 4
     },
-    "lore": "Frost Giants, or Hr\u00edm\u00feursar, dwell in Niflheim and J\u00f6tunheimr, ancient enemies of the Aesir gods. They are descendants of Ymir, the primordial being whose body Odin used to create the world. In Ragnar\u00f6k they will march against Asgard \u2014 until then, they lurk in deep cold places, nursing ancient grievances.",
+    "lore": "Frost Giants, or Hrímþursar, dwell in Niflheim and Jötunheimr, ancient enemies of the Aesir gods. They are descendants of Ymir, the primordial being whose body Odin used to create the world. In Ragnarök they will march against Asgard — until then, they lurk in deep cold places, nursing ancient grievances.",
     "frequency": 3
   },
   "fire_giant": {
@@ -4870,7 +4870,7 @@
       "item_chance": 0.5,
       "item_tier": 4
     },
-    "lore": "Surtr, the lord of M\u00faspellsheim, leads the Fire Giants \u2014 ancient beings of primordial flame who will burn the world at Ragnar\u00f6k. They forge weapons in the heat of creation itself and are immune to all fire. Their kingdom lies south of the primordial void, and it is said Surtr's sword burns brighter than the sun.",
+    "lore": "Surtr, the lord of Múspellsheim, leads the Fire Giants — ancient beings of primordial flame who will burn the world at Ragnarök. They forge weapons in the heat of creation itself and are immune to all fire. Their kingdom lies south of the primordial void, and it is said Surtr's sword burns brighter than the sun.",
     "frequency": 2
   },
   "valkyrie_shade": {
@@ -4927,7 +4927,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "Valkyries are Odin's battle-maidens who choose the slain and carry the worthy to Valhalla. A Valkyrie Shade is the echo of one who failed in her divine duty \u2014 perhaps allowing an unworthy soul to enter Valhalla, or falling in battle herself. Stripped of Odin's blessing, they haunt the battlefield-like dungeon corridors, dragging living souls downward.",
+    "lore": "Valkyries are Odin's battle-maidens who choose the slain and carry the worthy to Valhalla. A Valkyrie Shade is the echo of one who failed in her divine duty — perhaps allowing an unworthy soul to enter Valhalla, or falling in battle herself. Stripped of Odin's blessing, they haunt the battlefield-like dungeon corridors, dragging living souls downward.",
     "frequency": 2
   },
   "fenrir_pup": {
@@ -4974,11 +4974,11 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "Fenrir is the monstrous wolf son of Loki, bound by the dwarven ribbon Gleipnir until Ragnar\u00f6k. His offspring, Fenrir's Pups, are already of unnatural size and ferocity. They have inherited some of their father's essence \u2014 even Tyr, who fed Fenrir by hand, lost his right arm to the great wolf's jaws.",
+    "lore": "Fenrir is the monstrous wolf son of Loki, bound by the dwarven ribbon Gleipnir until Ragnarök. His offspring, Fenrir's Pups, are already of unnatural size and ferocity. They have inherited some of their father's essence — even Tyr, who fed Fenrir by hand, lost his right arm to the great wolf's jaws.",
     "frequency": 5
   },
   "jormungandr_spawn": {
-    "name": "J\u00f6rmungandr Spawn",
+    "name": "Jörmungandr Spawn",
     "symbol": "S",
     "color": [
       40,
@@ -5032,7 +5032,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "J\u00f6rmungandr, the Midgard Serpent, encircles the entire world biting its own tail. It is Thor's destined nemesis \u2014 at Ragnar\u00f6k they will slay each other. Its spawn are fragments of its vast coiled body, imbued with the world-poison that will kill even the god of thunder. They are encountered near underground rivers.",
+    "lore": "Jörmungandr, the Midgard Serpent, encircles the entire world biting its own tail. It is Thor's destined nemesis — at Ragnarök they will slay each other. Its spawn are fragments of its vast coiled body, imbued with the world-poison that will kill even the god of thunder. They are encountered near underground rivers.",
     "frequency": 4
   },
   "draugr": {
@@ -5089,7 +5089,7 @@
       "item_chance": 0.2,
       "item_tier": 2
     },
-    "lore": "Draugr are the restless Norse undead who rise from burial mounds to protect their grave-goods. They can increase in size, pass through walls, and smell blood from great distances. Unlike simple zombies, draugr retain intelligence and malice, sometimes even the memories of their living selves \u2014 making them cunning opponents.",
+    "lore": "Draugr are the restless Norse undead who rise from burial mounds to protect their grave-goods. They can increase in size, pass through walls, and smell blood from great distances. Unlike simple zombies, draugr retain intelligence and malice, sometimes even the memories of their living selves — making them cunning opponents.",
     "frequency": 7
   },
   "einherjar_ghost": {
@@ -5144,11 +5144,11 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "The Einherjar are Odin's honored dead, warriors chosen from the battlefield to feast and train in Valhalla until Ragnar\u00f6k. When an Einherjar ghost appears in the dungeon, it is one whose Valhalla was somehow denied \u2014 a warrior who died without witnesses, or whose funeral rites were incomplete. They fight with the skill of lifetimes but the despair of the twice-lost.",
+    "lore": "The Einherjar are Odin's honored dead, warriors chosen from the battlefield to feast and train in Valhalla until Ragnarök. When an Einherjar ghost appears in the dungeon, it is one whose Valhalla was somehow denied — a warrior who died without witnesses, or whose funeral rites were incomplete. They fight with the skill of lifetimes but the despair of the twice-lost.",
     "frequency": 3
   },
   "nidhogg_brood": {
-    "name": "N\u00ed\u00f0h\u00f6ggr Brood",
+    "name": "Níðhöggr Brood",
     "symbol": "D",
     "color": [
       80,
@@ -5201,7 +5201,7 @@
       "item_chance": 0.4,
       "item_tier": 4
     },
-    "lore": "N\u00ed\u00f0h\u00f6ggr is the great corpse-gnawing dragon who dwells at the root of Yggdrasil, gnawing the World Tree from below. Its brood are smaller wyrms that carry their parent's essence, infected with the same cosmic rot. They are found in the deepest passages, continuing their parent's slow work of destroying the foundations of the world.",
+    "lore": "Níðhöggr is the great corpse-gnawing dragon who dwells at the root of Yggdrasil, gnawing the World Tree from below. Its brood are smaller wyrms that carry their parent's essence, infected with the same cosmic rot. They are found in the deepest passages, continuing their parent's slow work of destroying the foundations of the world.",
     "frequency": 2
   },
   "hugin_raven": {
@@ -5248,7 +5248,7 @@
       "item_chance": 0.15,
       "item_tier": 1
     },
-    "lore": "Huginn (Thought) and Muninn (Memory) are Odin's two ravens who fly across the world each day and report what they have seen. Dungeon ravens descended from this line carry a fragment of divine observation \u2014 they will flee rather than fight directly, but their pecking attacks aim unerringly for the eyes.",
+    "lore": "Huginn (Thought) and Muninn (Memory) are Odin's two ravens who fly across the world each day and report what they have seen. Dungeon ravens descended from this line carry a fragment of divine observation — they will flee rather than fight directly, but their pecking attacks aim unerringly for the eyes.",
     "frequency": 6
   },
   "lindworm": {
@@ -5306,7 +5306,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "The Lindworm is a wingless Norse dragon-serpent, vast and venomous. In legend, a prince was cursed to lindworm form and only freed when a bride willingly shed seven skins to match his own. Dungeon lindworms have no such curse to break \u2014 they lurk in flooded tunnels and strike with terrifying speed for their size.",
+    "lore": "The Lindworm is a wingless Norse dragon-serpent, vast and venomous. In legend, a prince was cursed to lindworm form and only freed when a bride willingly shed seven skins to match his own. Dungeon lindworms have no such curse to break — they lurk in flooded tunnels and strike with terrifying speed for their size.",
     "frequency": 3
   },
   "berserker_spirit": {
@@ -5360,7 +5360,7 @@
       "item_chance": 0.35,
       "item_tier": 3
     },
-    "lore": "Norse berserkers were warriors who entered a battle trance, fighting with the ferocity of wolves or bears, immune to pain and fear. The berserker spirit is the rage itself \u2014 a spectral warrior who never stopped fighting, long after the body died. They attack in a perpetual frenzy and their raw violence can unsettle even seasoned fighters.",
+    "lore": "Norse berserkers were warriors who entered a battle trance, fighting with the ferocity of wolves or bears, immune to pain and fear. The berserker spirit is the rage itself — a spectral warrior who never stopped fighting, long after the body died. They attack in a perpetual frenzy and their raw violence can unsettle even seasoned fighters.",
     "frequency": 3
   },
   "light_elf_hostile": {
@@ -5415,7 +5415,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "Light Elves normally dwell in the radiant realm of \u00c1lfheimr, fairer than the sun. These have been corrupted \u2014 perhaps by Loki's influence or by contact with the dungeon's dark energies \u2014 and their once-benevolent light has curdled into a burning, indiscriminate radiance that sears all it touches.",
+    "lore": "Light Elves normally dwell in the radiant realm of Álfheimr, fairer than the sun. These have been corrupted — perhaps by Loki's influence or by contact with the dungeon's dark energies — and their once-benevolent light has curdled into a burning, indiscriminate radiance that sears all it touches.",
     "frequency": 3
   },
   "sea_serpent_norse": {
@@ -5473,7 +5473,7 @@
       "item_chance": 0.65,
       "item_tier": 4
     },
-    "lore": "Norse seas are home to immense serpentine creatures second only to J\u00f6rmungandr itself. Viking mariners recorded encounters with creatures long enough to encircle entire longships. These dungeon variants have followed underground rivers to their sources, coiling in flooded chambers, their scales bright with cold saltwater light.",
+    "lore": "Norse seas are home to immense serpentine creatures second only to Jörmungandr itself. Viking mariners recorded encounters with creatures long enough to encircle entire longships. These dungeon variants have followed underground rivers to their sources, coiling in flooded chambers, their scales bright with cold saltwater light.",
     "frequency": 1
   },
   "anubis_guardian": {
@@ -5527,7 +5527,7 @@
       "item_chance": 0.5,
       "item_tier": 4
     },
-    "lore": "Anubis is the jackal-headed god of embalming and guardian of the dead who weighs the heart against the feather of Ma'at. His guardians are divine soldiers who protect sacred burial sites from desecration. They carry crooks and flails \u2014 the symbols of judgment \u2014 and can pass judgment on a living soul, temporarily stopping the heart.",
+    "lore": "Anubis is the jackal-headed god of embalming and guardian of the dead who weighs the heart against the feather of Ma'at. His guardians are divine soldiers who protect sacred burial sites from desecration. They carry crooks and flails — the symbols of judgment — and can pass judgment on a living soul, temporarily stopping the heart.",
     "frequency": 2
   },
   "ra_serpent": {
@@ -5583,7 +5583,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "During the nightly solar barque journey, Ra faces Apep \u2014 the chaos serpent \u2014 in the underworld. Ra's own sacred serpents serve as guardians and weapons against Apep's minions. These golden serpents carry a fragment of solar fire in their venom and are blinding to behold when they strike.",
+    "lore": "During the nightly solar barque journey, Ra faces Apep — the chaos serpent — in the underworld. Ra's own sacred serpents serve as guardians and weapons against Apep's minions. These golden serpents carry a fragment of solar fire in their venom and are blinding to behold when they strike.",
     "frequency": 4
   },
   "scarab_swarm": {
@@ -5688,7 +5688,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "The Great Sphinx of Giza guards the plateau of Giza and, by extension, the Pharaoh's eternal rest. Egyptian sphinxes differ from their Greek cousins \u2014 they are pure guardians, manifestations of royal power and divine protection, without the Greek variant's penchant for fatal riddles. They will not parley. They destroy all who approach unbidden.",
+    "lore": "The Great Sphinx of Giza guards the plateau of Giza and, by extension, the Pharaoh's eternal rest. Egyptian sphinxes differ from their Greek cousins — they are pure guardians, manifestations of royal power and divine protection, without the Greek variant's penchant for fatal riddles. They will not parley. They destroy all who approach unbidden.",
     "frequency": 1
   },
   "ammit_spawn": {
@@ -5744,7 +5744,7 @@
       "item_chance": 0.6,
       "item_tier": 4
     },
-    "lore": "Ammit is the 'Devourer of the Dead,' a composite beast with the head of a crocodile, the forequarters of a lion, and the hindquarters of a hippopotamus. She waits beside the scales of Ma'at to consume hearts found unworthy \u2014 those she devours face the second death, true annihilation. Her spawn hunger for the living soul specifically.",
+    "lore": "Ammit is the 'Devourer of the Dead,' a composite beast with the head of a crocodile, the forequarters of a lion, and the hindquarters of a hippopotamus. She waits beside the scales of Ma'at to consume hearts found unworthy — those she devours face the second death, true annihilation. Her spawn hunger for the living soul specifically.",
     "frequency": 2
   },
   "sobek_warrior": {
@@ -5799,7 +5799,7 @@
       "item_chance": 0.35,
       "item_tier": 3
     },
-    "lore": "Sobek, the crocodile god of the Nile, represents military prowess, fertility, and pharaonic power. His warriors are crocodile-headed humanoids armed with the curved khopesh sword, elite soldiers of his divine temple guard. They are notorious for the 'death roll' \u2014 dragging enemies to the ground and spinning until they stop resisting.",
+    "lore": "Sobek, the crocodile god of the Nile, represents military prowess, fertility, and pharaonic power. His warriors are crocodile-headed humanoids armed with the curved khopesh sword, elite soldiers of his divine temple guard. They are notorious for the 'death roll' — dragging enemies to the ground and spinning until they stop resisting.",
     "frequency": 3
   },
   "ba_spirit": {
@@ -5854,7 +5854,7 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "The Ba is one of the Egyptian soul's components \u2014 the personality aspect, often depicted as a human-headed bird. When a burial is improper or the deceased's name is erased, the Ba cannot complete its journey and wanders, confused and hungry. In the dungeon, lost Ba spirits feed on the life force of the living.",
+    "lore": "The Ba is one of the Egyptian soul's components — the personality aspect, often depicted as a human-headed bird. When a burial is improper or the deceased's name is erased, the Ba cannot complete its journey and wanders, confused and hungry. In the dungeon, lost Ba spirits feed on the life force of the living.",
     "frequency": 4
   },
   "khepri_beetle": {
@@ -5964,7 +5964,7 @@
       "item_chance": 0.5,
       "item_tier": 4
     },
-    "lore": "Thoth, the ibis-headed god of knowledge, writing, and magic, created the divine scripts that govern reality. His constructs are animated guardians built of living hieroglyphics \u2014 each symbol on their body an active spell. They enforce the laws of Ma'at and attack those who carry forbidden knowledge or stolen divine artifacts.",
+    "lore": "Thoth, the ibis-headed god of knowledge, writing, and magic, created the divine scripts that govern reality. His constructs are animated guardians built of living hieroglyphics — each symbol on their body an active spell. They enforce the laws of Ma'at and attack those who carry forbidden knowledge or stolen divine artifacts.",
     "frequency": 2
   },
   "duat_shade": {
@@ -6015,7 +6015,7 @@
       "item_chance": 0.25,
       "item_tier": 3
     },
-    "lore": "The Duat is the Egyptian underworld through which the solar barque of Ra passes each night. Its shades are the fragments of souls that did not survive the weighing of the heart \u2014 not devoured by Ammit, but simply dissolved in the dark waters, too thin to be collected. They drift through the dungeon like smoke, hungry for the substance of the living.",
+    "lore": "The Duat is the Egyptian underworld through which the solar barque of Ra passes each night. Its shades are the fragments of souls that did not survive the weighing of the heart — not devoured by Ammit, but simply dissolved in the dark waters, too thin to be collected. They drift through the dungeon like smoke, hungry for the substance of the living.",
     "frequency": 4
   },
   "desert_wraith": {
@@ -6072,7 +6072,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "The Egyptian desert, the Red Land, was the domain of Set \u2014 a place of chaos, death, and transformation. Desert wraiths are the spirits of those who died lost in the wastes without burial: their bodies mummified by heat and wind, their souls unable to reach the Duat. They hunger to draw water from the living, desiccating their victims.",
+    "lore": "The Egyptian desert, the Red Land, was the domain of Set — a place of chaos, death, and transformation. Desert wraiths are the spirits of those who died lost in the wastes without burial: their bodies mummified by heat and wind, their souls unable to reach the Duat. They hunger to draw water from the living, desiccating their victims.",
     "frequency": 3
   },
   "banshee": {
@@ -6130,7 +6130,7 @@
       "item_chance": 0.45,
       "item_tier": 4
     },
-    "lore": "The Banshee (Bean S\u00eddhe) is a fairy woman from Irish mythology whose wail presages the death of a family member. She appears as an old woman or a beautiful young woman with long pale hair, weeping and keening. In the dungeon, her wail is not a prophecy but a weapon \u2014 the sound alone can stop a mortal heart.",
+    "lore": "The Banshee (Bean Sídhe) is a fairy woman from Irish mythology whose wail presages the death of a family member. She appears as an old woman or a beautiful young woman with long pale hair, weeping and keening. In the dungeon, her wail is not a prophecy but a weapon — the sound alone can stop a mortal heart.",
     "frequency": 2
   },
   "fomorian": {
@@ -6185,7 +6185,7 @@
       "item_chance": 0.45,
       "item_tier": 4
     },
-    "lore": "The Fomorians are primordial beings from Irish mythology, representing the forces of chaos, darkness, and winter. They warred against the Tuatha D\u00e9 Danann in a series of cosmic battles. Fomorians often have single limbs or eyes placed centrally on the forehead \u2014 the evil eye of Balor could kill an army with a glance.",
+    "lore": "The Fomorians are primordial beings from Irish mythology, representing the forces of chaos, darkness, and winter. They warred against the Tuatha Dé Danann in a series of cosmic battles. Fomorians often have single limbs or eyes placed centrally on the forehead — the evil eye of Balor could kill an army with a glance.",
     "frequency": 2
   },
   "changeling": {
@@ -6241,7 +6241,7 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "Changelings are fairy children left in place of stolen human infants, or fairy glamours shaped to mimic humans. They are always slightly wrong \u2014 too cold, too light, with eyes that reflect what should not be there. In the dungeon they appear as other monsters or adventurers until attacked, then reveal their true shifting, half-formed nature.",
+    "lore": "Changelings are fairy children left in place of stolen human infants, or fairy glamours shaped to mimic humans. They are always slightly wrong — too cold, too light, with eyes that reflect what should not be there. In the dungeon they appear as other monsters or adventurers until attacked, then reveal their true shifting, half-formed nature.",
     "frequency": 5
   },
   "each_uisce": {
@@ -6403,11 +6403,11 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "Finn mac Cumhaill kept the two greatest hounds in Ireland \u2014 Bran and Sceol\u00e1n, who were actually his nephews transformed by magic. Fionn's hounds are supernatural hunting dogs bred from this same divine lineage. Loyal to their master to the death, they have been turned against intruders in the dungeon and pursue relentlessly once they have a scent.",
+    "lore": "Finn mac Cumhaill kept the two greatest hounds in Ireland — Bran and Sceolán, who were actually his nephews transformed by magic. Fionn's hounds are supernatural hunting dogs bred from this same divine lineage. Loyal to their master to the death, they have been turned against intruders in the dungeon and pursue relentlessly once they have a scent.",
     "frequency": 4
   },
   "puca": {
-    "name": "P\u00faca",
+    "name": "Púca",
     "symbol": "K",
     "color": [
       60,
@@ -6452,7 +6452,7 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "The P\u00faca is a shape-shifting Irish fairy that most often takes the form of a dark horse with glowing eyes, a goat, a rabbit, or a goblin. It leads travelers astray, sometimes offering rides that end dangerously. In the dungeon, a P\u00faca serves as both obstacle and trickster \u2014 it may flee only to lead pursuers into worse danger.",
+    "lore": "The Púca is a shape-shifting Irish fairy that most often takes the form of a dark horse with glowing eyes, a goat, a rabbit, or a goblin. It leads travelers astray, sometimes offering rides that end dangerously. In the dungeon, a Púca serves as both obstacle and trickster — it may flee only to lead pursuers into worse danger.",
     "frequency": 5
   },
   "dullahan_spawn": {
@@ -6512,7 +6512,7 @@
       "item_chance": 0.6,
       "item_tier": 4
     },
-    "lore": "The Dullahan is the Irish headless horseman who rides a black horse and carries his head under his arm, using a spine as a whip. When he calls your name, you die. A Dullahan Spawn is one who has not yet found the name they seek \u2014 they wander dungeons looking for the soul that matches the name already on their lips.",
+    "lore": "The Dullahan is the Irish headless horseman who rides a black horse and carries his head under his arm, using a spine as a whip. When he calls your name, you die. A Dullahan Spawn is one who has not yet found the name they seek — they wander dungeons looking for the soul that matches the name already on their lips.",
     "frequency": 2
   },
   "sluagh": {
@@ -6569,7 +6569,7 @@
       "item_chance": 0.35,
       "item_tier": 3
     },
-    "lore": "The Sluagh are the unforgiven dead in Irish mythology \u2014 souls so wicked that neither heaven nor earth would accept them, condemned to fly in dark swarms from the west. They are the most dangerous of the fairy hosts, seeking to carry off the souls of the dying from western windows. In the dungeon they descend in a cloud, tearing at any life they can reach.",
+    "lore": "The Sluagh are the unforgiven dead in Irish mythology — souls so wicked that neither heaven nor earth would accept them, condemned to fly in dark swarms from the west. They are the most dangerous of the fairy hosts, seeking to carry off the souls of the dying from western windows. In the dungeon they descend in a cloud, tearing at any life they can reach.",
     "frequency": 3
   },
   "pazuzu_spawn": {
@@ -6739,7 +6739,7 @@
       "item_chance": 0.7,
       "item_tier": 5
     },
-    "lore": "Anzu (also called Zu) is the great Sumerian lion-headed eagle who stole the Tablet of Destinies from the god Enlil, gaining control over fate itself. He was slain by Ninurta in a thunderstorm battle. The Anzu Bird in the dungeon breathes lightning as Ninurta threw thunderbolts \u2014 and carries the residual power of the stolen Tablet.",
+    "lore": "Anzu (also called Zu) is the great Sumerian lion-headed eagle who stole the Tablet of Destinies from the god Enlil, gaining control over fate itself. He was slain by Ninurta in a thunderstorm battle. The Anzu Bird in the dungeon breathes lightning as Ninurta threw thunderbolts — and carries the residual power of the stolen Tablet.",
     "frequency": 2
   },
   "ugallu_demon": {
@@ -7768,7 +7768,7 @@
       "item_chance": 0.1,
       "item_tier": 1
     },
-    "lore": "A tiny winged demon that serves as a familiar for warlocks and chaotic spellcasters. The quasit is spiteful and cunning far beyond its size, delighting in petty cruelties. When threatened it shapeshifts into a bat or centipede to flee \u2014 cowardice is its foremost virtue.",
+    "lore": "A tiny winged demon that serves as a familiar for warlocks and chaotic spellcasters. The quasit is spiteful and cunning far beyond its size, delighting in petty cruelties. When threatened it shapeshifts into a bat or centipede to flee — cowardice is its foremost virtue.",
     "frequency": 8
   },
   "dretch": {
@@ -7944,7 +7944,7 @@
       "item_chance": 0.5,
       "item_tier": 3
     },
-    "lore": "A demon of lust and corruption that assumes an unnervingly beautiful form to beguile victims. Its charm is not merely physical but psychically enforced \u2014 victims feel compelled to serve and protect it even as it drains the life from them. It collects trophies from those it has destroyed.",
+    "lore": "A demon of lust and corruption that assumes an unnervingly beautiful form to beguile victims. Its charm is not merely physical but psychically enforced — victims feel compelled to serve and protect it even as it drains the life from them. It collects trophies from those it has destroyed.",
     "frequency": 4
   },
   "succubus_shade": {
@@ -8115,7 +8115,7 @@
       "item_chance": 0.05,
       "item_tier": 1
     },
-    "lore": "The most basic demonic form \u2014 a soul so wicked it condenses into a mindless, clawing thing upon damnation. Manes exist only to serve and be destroyed. They attack in overwhelming numbers, their sheer volume compensating for individual feebleness.",
+    "lore": "The most basic demonic form — a soul so wicked it condenses into a mindless, clawing thing upon damnation. Manes exist only to serve and be destroyed. They attack in overwhelming numbers, their sheer volume compensating for individual feebleness.",
     "frequency": 12,
     "pack": true
   },
@@ -8357,7 +8357,7 @@
       "item_chance": 0.6,
       "item_tier": 5
     },
-    "lore": "An osyluth \u2014 a gaunt, scorpion-tailed devil of exceptional cunning. It serves as an overseer and enforcer in the hellish hierarchy, ferreting out weakness and disloyalty. The bone devil delights in long drawn-out torment, reserving its potent sting for those who have outlived their usefulness.",
+    "lore": "An osyluth — a gaunt, scorpion-tailed devil of exceptional cunning. It serves as an overseer and enforcer in the hellish hierarchy, ferreting out weakness and disloyalty. The bone devil delights in long drawn-out torment, reserving its potent sting for those who have outlived their usefulness.",
     "frequency": 3
   },
   "erinyes_lesser": {
@@ -8467,7 +8467,7 @@
       "item_chance": 0.15,
       "item_tier": 1
     },
-    "lore": "A tiny red devil that serves as a warlock's familiar or a noble's secret advisor. The imp is clever, malicious, and utterly selfish \u2014 it serves only until a better opportunity presents itself. Its sting carries a potent diabolic venom.",
+    "lore": "A tiny red devil that serves as a warlock's familiar or a noble's secret advisor. The imp is clever, malicious, and utterly selfish — it serves only until a better opportunity presents itself. Its sting carries a potent diabolic venom.",
     "frequency": 9
   },
   "lemure": {
@@ -8515,7 +8515,7 @@
       "item_chance": 0.05,
       "item_tier": 1
     },
-    "lore": "The lowest form of devil \u2014 a damned soul reshaped into a blob of writhing infernal flesh. Lemures are mindless and nearly indestructible by mundane means; they regenerate rapidly and feel no pain. Only holy magic or fire can permanently destroy them.",
+    "lore": "The lowest form of devil — a damned soul reshaped into a blob of writhing infernal flesh. Lemures are mindless and nearly indestructible by mundane means; they regenerate rapidly and feel no pain. Only holy magic or fire can permanently destroy them.",
     "frequency": 12,
     "pack": true
   },
@@ -8591,7 +8591,7 @@
       "item_chance": 0.95,
       "item_tier": 5
     },
-    "lore": "The generals of the Nine Hells, pit fiends are among the most powerful creatures that can be encountered in a dungeon \u2014 and even a spawn is only slightly less terrifying than the real thing. It commands legions, plots across centuries, and murders with the efficiency of a machine.",
+    "lore": "The generals of the Nine Hells, pit fiends are among the most powerful creatures that can be encountered in a dungeon — and even a spawn is only slightly less terrifying than the real thing. It commands legions, plots across centuries, and murders with the efficiency of a machine.",
     "frequency": 1
   },
   "stone_golem_lesser": {
@@ -9151,7 +9151,7 @@
       "item_chance": 0.0,
       "item_tier": 1
     },
-    "lore": "A grey slick of animate protoplasm indistinguishable from wet stone in poor lighting. The gray ooze lurks motionless until prey blunders into it, then exudes a corrosive slime that degrades armor and metal equipment. It is immune to both fire and cold \u2014 the typical adventurer's solution to ooze problems.",
+    "lore": "A grey slick of animate protoplasm indistinguishable from wet stone in poor lighting. The gray ooze lurks motionless until prey blunders into it, then exudes a corrosive slime that degrades armor and metal equipment. It is immune to both fire and cold — the typical adventurer's solution to ooze problems.",
     "frequency": 7
   },
   "ochre_jelly": {
@@ -9243,7 +9243,7 @@
       "item_chance": 0.05,
       "item_tier": 1
     },
-    "lore": "A mollusk-like creature that clings to cave ceilings disguised as a stalactite. When prey passes beneath it, the piercer drops with lethal accuracy, impaling the target on its pointed shell. After a miss it slowly crawls back up the wall to wait again \u2014 they are patient hunters.",
+    "lore": "A mollusk-like creature that clings to cave ceilings disguised as a stalactite. When prey passes beneath it, the piercer drops with lethal accuracy, impaling the target on its pointed shell. After a miss it slowly crawls back up the wall to wait again — they are patient hunters.",
     "frequency": 6
   },
   "lurker_above": {
@@ -9338,7 +9338,7 @@
       "item_chance": 0.45,
       "item_tier": 3
     },
-    "lore": "A flat creature that mimics dungeon flooring with terrifying perfection. When a creature walks across it the trapper folds up around the victim and begins squeezing and digesting. Veteran delvers tap the floor ahead of them with a pole \u2014 those who don't learn the habit often don't get the chance to.",
+    "lore": "A flat creature that mimics dungeon flooring with terrifying perfection. When a creature walks across it the trapper folds up around the victim and begins squeezing and digesting. Veteran delvers tap the floor ahead of them with a pole — those who don't learn the habit often don't get the chance to.",
     "frequency": 4
   },
   "roper": {
@@ -9492,7 +9492,7 @@
       "item_chance": 0.0,
       "item_tier": 1
     },
-    "lore": "A writhing mass of pale finger-length worms found in refuse heaps and rotting carcasses. They burrow into flesh on contact and eat their way toward vital organs. Fire applied immediately to an entry wound is the standard \u2014 if brutal \u2014 treatment.",
+    "lore": "A writhing mass of pale finger-length worms found in refuse heaps and rotting carcasses. They burrow into flesh on contact and eat their way toward vital organs. Fire applied immediately to an entry wound is the standard — if brutal — treatment.",
     "frequency": 7,
     "pack": true
   },
@@ -9645,7 +9645,7 @@
       "item_chance": 0.5,
       "item_tier": 2
     },
-    "lore": "The alpha of a gnoll warband, scarred and massive from countless battles. A pack lord inspires the gnolls around it to greater ferocity \u2014 its death often breaks a warband's cohesion entirely. They collect the skulls of worthy enemies as trophies.",
+    "lore": "The alpha of a gnoll warband, scarred and massive from countless battles. A pack lord inspires the gnolls around it to greater ferocity — its death often breaks a warband's cohesion entirely. They collect the skulls of worthy enemies as trophies.",
     "frequency": 5
   },
   "lizardfolk": {
@@ -10076,7 +10076,7 @@
       "item_chance": 0.4,
       "item_tier": 4
     },
-    "lore": "A bloated buffalo-like creature whose neck is too weak to hold its enormous head upright \u2014 which is a mercy, since its gaze kills. When it manages to raise its head, anything caught in its eyes has a brief moment to regret their life choices. Its tail meanwhile delivers crushing blows.",
+    "lore": "A bloated buffalo-like creature whose neck is too weak to hold its enormous head upright — which is a mercy, since its gaze kills. When it manages to raise its head, anything caught in its eyes has a brief moment to regret their life choices. Its tail meanwhile delivers crushing blows.",
     "frequency": 3
   },
   "cockatrice": {
@@ -10129,7 +10129,7 @@
       "item_chance": 0.2,
       "item_tier": 2
     },
-    "lore": "A rooster-headed draconic creature whose beak petrifies on contact. The cockatrice is relatively fragile but its touch effect makes it extraordinarily dangerous \u2014 a single hit can immobilize a warrior in seconds. They are territorial and aggressive far beyond their actual threat level.",
+    "lore": "A rooster-headed draconic creature whose beak petrifies on contact. The cockatrice is relatively fragile but its touch effect makes it extraordinarily dangerous — a single hit can immobilize a warrior in seconds. They are territorial and aggressive far beyond their actual threat level.",
     "frequency": 6
   },
   "darkmantle": {
@@ -10444,7 +10444,7 @@
       "item_chance": 0.5,
       "item_tier": 4
     },
-    "lore": "A dragon's lesser cousin \u2014 only two legs, no breath weapon, but a barbed tail with a stinger carrying lethal poison. The wyvern is less intelligent than a true dragon but compensates with raw aggression and physical power. Their stingers are prized components in antivenom and poison research.",
+    "lore": "A dragon's lesser cousin — only two legs, no breath weapon, but a barbed tail with a stinger carrying lethal poison. The wyvern is less intelligent than a true dragon but compensates with raw aggression and physical power. Their stingers are prized components in antivenom and poison research.",
     "frequency": 3
   },
   "skeleton_archer": {
@@ -12488,7 +12488,7 @@
       "item_chance": 0.2,
       "item_tier": 3
     },
-    "lore": "Powerful undead warriors voluntarily entombed as eternal guardians of sacred burial sites. They were once legendary champions who swore oaths to protect the honored dead. Curiously, they wield holy power that is effective against other undead, though they themselves are undead \u2014 a testament to the complexity of their sacred duty.",
+    "lore": "Powerful undead warriors voluntarily entombed as eternal guardians of sacred burial sites. They were once legendary champions who swore oaths to protect the honored dead. Curiously, they wield holy power that is effective against other undead, though they themselves are undead — a testament to the complexity of their sacred duty.",
     "frequency": 4
   },
   "tomb_guardian": {
@@ -16277,7 +16277,7 @@
       "item_chance": 0.5,
       "item_tier": 2
     },
-    "lore": "Not all leprechauns are willing to grant wishes \u2014 some who have been robbed too many times have become openly hostile to adventurers. They use powerful illusions and misdirection before lashing out with surprising ferocity. Despite their size their pots of gold are very real.",
+    "lore": "Not all leprechauns are willing to grant wishes — some who have been robbed too many times have become openly hostile to adventurers. They use powerful illusions and misdirection before lashing out with surprising ferocity. Despite their size their pots of gold are very real.",
     "frequency": 6
   },
   "spriggan": {
@@ -17170,7 +17170,7 @@
       "item_chance": 0.35,
       "item_tier": 4
     },
-    "lore": "Once a noble steed of the gods, this pegasus was twisted by shadow magic into a creature of darkness. Its formerly white flanks are now mottled black and its eyes glow a sickly purple. A courageous wizard who breaks the curse might restore it \u2014 but few survive the attempt.",
+    "lore": "Once a noble steed of the gods, this pegasus was twisted by shadow magic into a creature of darkness. Its formerly white flanks are now mottled black and its eyes glow a sickly purple. A courageous wizard who breaks the curse might restore it — but few survive the attempt.",
     "frequency": 3
   },
   "unicorn_corrupted": {
@@ -17615,7 +17615,7 @@
       "item_chance": 0.4,
       "item_tier": 2
     },
-    "lore": "A goblin king rules through a combination of violence, cunning, and sheer volume. They are always larger than their subjects \u2014 sometimes naturally, sometimes through magical augmentation from their shaman advisors. Goblin kings wear crowns assembled from bent copper coins and teeth taken from rivals.",
+    "lore": "A goblin king rules through a combination of violence, cunning, and sheer volume. They are always larger than their subjects — sometimes naturally, sometimes through magical augmentation from their shaman advisors. Goblin kings wear crowns assembled from bent copper coins and teeth taken from rivals.",
     "frequency": 2
   },
   "hobgoblin_captain": {
@@ -17665,7 +17665,7 @@
       "item_chance": 0.35,
       "item_tier": 2
     },
-    "lore": "Hobgoblin captains have earned their rank through battlefield promotions in brutal campaigns. They carry unit banners that inspire nearby hobgoblins to fight with greater discipline. Their tactical acumen is impressive \u2014 they will always attempt to flank and cut off retreat before engaging.",
+    "lore": "Hobgoblin captains have earned their rank through battlefield promotions in brutal campaigns. They carry unit banners that inspire nearby hobgoblins to fight with greater discipline. Their tactical acumen is impressive — they will always attempt to flank and cut off retreat before engaging.",
     "frequency": 3
   },
   "hobgoblin_warlord": {
@@ -17760,7 +17760,7 @@
       "item_chance": 0.25,
       "item_tier": 2
     },
-    "lore": "Bugbears are the largest of the common goblinoids, standing seven feet of muscle and fur. They are ambush predators who delight in causing fear before striking. Their natural stealth is uncanny for creatures their size \u2014 the silence before a bugbear attack is its only warning.",
+    "lore": "Bugbears are the largest of the common goblinoids, standing seven feet of muscle and fur. They are ambush predators who delight in causing fear before striking. Their natural stealth is uncanny for creatures their size — the silence before a bugbear attack is its only warning.",
     "frequency": 4
   },
   "bugbear_chieftain": {
@@ -17810,7 +17810,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "A bugbear chieftain has defeated every other bugbear in its territory. They rule with casual brutality, expecting tribute from lesser monsters in their vicinity. Their war trophies include the skulls of previous chieftains \u2014 a grim decoration that communicates their dominance without words.",
+    "lore": "A bugbear chieftain has defeated every other bugbear in its territory. They rule with casual brutality, expecting tribute from lesser monsters in their vicinity. Their war trophies include the skulls of previous chieftains — a grim decoration that communicates their dominance without words.",
     "frequency": 2
   },
   "orc_berserker": {
@@ -17852,7 +17852,7 @@
       "item_chance": 0.15,
       "item_tier": 2
     },
-    "lore": "Orc berserkers enter a blood rage in combat, attacking with total disregard for their own safety. They feel no pain while berserking \u2014 wounds that would drop a normal warrior only fuel their fury. Their warband sends them in first as a shock unit, then follows up while the enemy is disrupted.",
+    "lore": "Orc berserkers enter a blood rage in combat, attacking with total disregard for their own safety. They feel no pain while berserking — wounds that would drop a normal warrior only fuel their fury. Their warband sends them in first as a shock unit, then follows up while the enemy is disrupted.",
     "frequency": 4
   },
   "orc_warchief": {
@@ -17902,7 +17902,7 @@
       "item_chance": 0.55,
       "item_tier": 3
     },
-    "lore": "An orc warchief commands multiple warbands and holds territory through sheer personal power. They are chosen not by birth but by combat \u2014 any orc can challenge a warchief, though few survive the attempt. Their strategems are surprisingly sophisticated for creatures who view battlefield elegance as weakness.",
+    "lore": "An orc warchief commands multiple warbands and holds territory through sheer personal power. They are chosen not by birth but by combat — any orc can challenge a warchief, though few survive the attempt. Their strategems are surprisingly sophisticated for creatures who view battlefield elegance as weakness.",
     "frequency": 2
   },
   "bandit_captain": {
@@ -17949,7 +17949,7 @@
       "item_chance": 0.45,
       "item_tier": 2
     },
-    "lore": "Bandit captains are experienced fighters who have chosen outlawry over legitimate service. They lead small bands of armed robbers and claim dungeon sections as toll roads. Their combat style is practical and ruthless \u2014 they target the most dangerous enemy first and show no mercy.",
+    "lore": "Bandit captains are experienced fighters who have chosen outlawry over legitimate service. They lead small bands of armed robbers and claim dungeon sections as toll roads. Their combat style is practical and ruthless — they target the most dangerous enemy first and show no mercy.",
     "frequency": 3
   },
   "dark_cultist": {
@@ -18003,7 +18003,7 @@
       "item_chance": 0.3,
       "item_tier": 2
     },
-    "lore": "Dark cultists have abandoned civilized life to serve entities of shadow and corruption. They know enough ritual magic to be dangerous \u2014 their prayers can manifest as shadowy attacks. They seek artifacts of power for their patron and will sacrifice anything, including themselves, for their cause.",
+    "lore": "Dark cultists have abandoned civilized life to serve entities of shadow and corruption. They know enough ritual magic to be dangerous — their prayers can manifest as shadowy attacks. They seek artifacts of power for their patron and will sacrifice anything, including themselves, for their cause.",
     "frequency": 4
   },
   "mercenary_veteran": {
@@ -18053,7 +18053,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "Mercenary veterans are former soldiers who have survived too many campaigns. They have no political allegiance \u2014 they serve whoever pays, currently some dungeon power. Their combat technique is honed by decades of professional violence, making them far more dangerous than their simple equipment suggests.",
+    "lore": "Mercenary veterans are former soldiers who have survived too many campaigns. They have no political allegiance — they serve whoever pays, currently some dungeon power. Their combat technique is honed by decades of professional violence, making them far more dangerous than their simple equipment suggests.",
     "frequency": 3
   },
   "battle_mage": {
@@ -18158,7 +18158,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "Hill giants are the most common giant variety, dull-witted but immensely strong. They build crude dens in cavern systems and eat anything they can catch, including other giants if sufficiently hungry. Their hoards are eclectic collections of things they found interesting \u2014 shiny, large, or edible.",
+    "lore": "Hill giants are the most common giant variety, dull-witted but immensely strong. They build crude dens in cavern systems and eat anything they can catch, including other giants if sufficiently hungry. Their hoards are eclectic collections of things they found interesting — shiny, large, or edible.",
     "frequency": 3
   },
   "stone_giant": {
@@ -18322,7 +18322,7 @@
       "item_chance": 0.75,
       "item_tier": 5
     },
-    "lore": "Storm giants are among the most powerful mortal beings in existence, their power rivaling minor deities. They perceive the world on a geological timescale \u2014 they remember when the dungeon was first built. Their purposes are inscrutable to shorter-lived beings, but when they act, the consequences are felt for generations.",
+    "lore": "Storm giants are among the most powerful mortal beings in existence, their power rivaling minor deities. They perceive the world on a geological timescale — they remember when the dungeon was first built. Their purposes are inscrutable to shorter-lived beings, but when they act, the consequences are felt for generations.",
     "frequency": 1
   },
   "cyclops_brute": {
@@ -18416,7 +18416,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "Two-headed ogres are the result of a rare magical mutation \u2014 or perhaps a divine punishment. Their two heads argue constantly about tactics, food, and everything else, but in combat their four-armed style of attack is brutally effective. They can attack two targets simultaneously, which makes fighting them with a partner especially hazardous.",
+    "lore": "Two-headed ogres are the result of a rare magical mutation — or perhaps a divine punishment. Their two heads argue constantly about tactics, food, and everything else, but in combat their four-armed style of attack is brutally effective. They can attack two targets simultaneously, which makes fighting them with a partner especially hazardous.",
     "frequency": 2
   },
   "ice_troll": {
@@ -18531,7 +18531,7 @@
         "chance": 0.65
       }
     },
-    "lore": "Drow warriors are trained from birth in the fighting arts of the Underdark. Their equipment is of exquisite quality, though much of it crumbles in surface air. They favor poison-laced crossbow bolts to disable opponents for capture \u2014 drow prefer prisoners over corpses when possible.",
+    "lore": "Drow warriors are trained from birth in the fighting arts of the Underdark. Their equipment is of exquisite quality, though much of it crumbles in surface air. They favor poison-laced crossbow bolts to disable opponents for capture — drow prefer prisoners over corpses when possible.",
     "frequency": 4
   },
   "drow_mage": {
@@ -18768,7 +18768,7 @@
       "item_chance": 0.65,
       "item_tier": 4
     },
-    "lore": "Black dragons are among the most vile of dragonkind \u2014 cruel, sadistic, and petty. They lair in swamps and flooded dungeon sections, where their acid breath is most effective. Even young, they are extraordinarily dangerous and already beginning to plot the accumulation of a hoard worthy of their ego.",
+    "lore": "Black dragons are among the most vile of dragonkind — cruel, sadistic, and petty. They lair in swamps and flooded dungeon sections, where their acid breath is most effective. Even young, they are extraordinarily dangerous and already beginning to plot the accumulation of a hoard worthy of their ego.",
     "frequency": 2
   },
   "young_red_dragon": {
@@ -18840,7 +18840,7 @@
       "item_chance": 0.7,
       "item_tier": 4
     },
-    "lore": "Red dragons are the most arrogant of dragonkind, believing themselves superior to all other beings. Even a young red dragon has a fully developed ego and expects tribute. Their fire breath is the hottest of all dragon breath weapons \u2014 it can melt stone if sustained. Red dragon lairs are always notably warmer than surrounding areas.",
+    "lore": "Red dragons are the most arrogant of dragonkind, believing themselves superior to all other beings. Even a young red dragon has a fully developed ego and expects tribute. Their fire breath is the hottest of all dragon breath weapons — it can melt stone if sustained. Red dragon lairs are always notably warmer than surrounding areas.",
     "frequency": 2
   },
   "adult_blue_dragon": {
@@ -18915,7 +18915,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "Adult blue dragons are fascinated by organization and order \u2014 not law in a moral sense, but perfect systemic arrangement. They maintain extensive networks of humanoid servants and are excellent strategists. Their lightning breath can chain between multiple targets, making them especially deadly against groups.",
+    "lore": "Adult blue dragons are fascinated by organization and order — not law in a moral sense, but perfect systemic arrangement. They maintain extensive networks of humanoid servants and are excellent strategists. Their lightning breath can chain between multiple targets, making them especially deadly against groups.",
     "frequency": 1
   },
   "adult_red_dragon": {
@@ -18992,7 +18992,7 @@
       "item_chance": 0.9,
       "item_tier": 5
     },
-    "lore": "Adult red dragons are among the most feared creatures in existence. Their personality is a perfect storm of greed, pride, and cruelty. An adult red dragon's hoard is legendary \u2014 accumulated over centuries of systematic raiding and tribute-taking. They consider themselves the rightful rulers of whatever territory they claim.",
+    "lore": "Adult red dragons are among the most feared creatures in existence. Their personality is a perfect storm of greed, pride, and cruelty. An adult red dragon's hoard is legendary — accumulated over centuries of systematic raiding and tribute-taking. They consider themselves the rightful rulers of whatever territory they claim.",
     "frequency": 1
   },
   "drake_fire": {
@@ -19046,7 +19046,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "Fire drakes are lesser kin to true dragons, possessing a fraction of their cousin's power and none of their intelligence. They operate on instinct \u2014 hunt, eat, hoard. Their fire spit is considerably less devastating than a dragon's breath but sufficient to ignite most dungeon materials. They are sometimes found as guards in more powerful monsters' lairs.",
+    "lore": "Fire drakes are lesser kin to true dragons, possessing a fraction of their cousin's power and none of their intelligence. They operate on instinct — hunt, eat, hoard. Their fire spit is considerably less devastating than a dragon's breath but sufficient to ignite most dungeon materials. They are sometimes found as guards in more powerful monsters' lairs.",
     "frequency": 3
   },
   "drake_cold": {
@@ -19206,7 +19206,7 @@
       "item_chance": 0.45,
       "item_tier": 4
     },
-    "lore": "Greater wyverns are among the largest flying predators in the dungeon, their wingspan capable of blocking corridor exits. Unlike true dragons, they have no fire breath \u2014 they rely on their savage claws and an enormously powerful stinger at the tail's tip. Their venom is among the most potent naturally occurring toxins.",
+    "lore": "Greater wyverns are among the largest flying predators in the dungeon, their wingspan capable of blocking corridor exits. Unlike true dragons, they have no fire breath — they rely on their savage claws and an enormously powerful stinger at the tail's tip. Their venom is among the most potent naturally occurring toxins.",
     "frequency": 2
   },
   "naga_guardian": {
@@ -19270,7 +19270,7 @@
       "item_chance": 0.5,
       "item_tier": 4
     },
-    "lore": "Nagas are powerful serpentine beings of vast intelligence and magical ability. Guardian nagas in particular have been assigned permanent watch over specific locations \u2014 tombs, vaults, shrines \u2014 and have carried out this duty for centuries. They know everything about their assigned territory and find intruders personally offensive.",
+    "lore": "Nagas are powerful serpentine beings of vast intelligence and magical ability. Guardian nagas in particular have been assigned permanent watch over specific locations — tombs, vaults, shrines — and have carried out this duty for centuries. They know everything about their assigned territory and find intruders personally offensive.",
     "frequency": 2
   },
   "shadow_master": {
@@ -19443,7 +19443,7 @@
       "item_chance": 0.5,
       "item_tier": 4
     },
-    "lore": "Ruinous djinn are genies whose imprisonment drove them to madness. Freed at last but unable to return home, they destroy as a reflex \u2014 every wall they could not pass, every chain they could not break, they now break in others. Their power is undiminished; their purpose is simply wrath.",
+    "lore": "Ruinous djinn are genies whose imprisonment drove them to madness. Freed at last but unable to return home, they destroy as a reflex — every wall they could not pass, every chain they could not break, they now break in others. Their power is undiminished; their purpose is simply wrath.",
     "frequency": 1
   },
   "undead_colossus": {
@@ -19501,7 +19501,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "Undead colossi are constructed from the remains of giants, assembled by necromancers who required a servant capable of bashing through stone walls. The stitching and binding runes are crudely visible \u2014 these were meant to be disposable weapons, not prestige projects. They do not think; they only obey the last command given.",
+    "lore": "Undead colossi are constructed from the remains of giants, assembled by necromancers who required a servant capable of bashing through stone walls. The stitching and binding runes are crudely visible — these were meant to be disposable weapons, not prestige projects. They do not think; they only obey the last command given.",
     "frequency": 1
   },
   "elder_werewolf": {
@@ -19613,7 +19613,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "Abyssal champions are demons who have earned rank through conquest \u2014 each one has slain a thousand mortal warriors and has the trophies to prove it. They seek out skilled fighters specifically, needing worthy opponents to justify their title. Defeating an abyssal champion is considered a mark of extraordinary martial achievement.",
+    "lore": "Abyssal champions are demons who have earned rank through conquest — each one has slain a thousand mortal warriors and has the trophies to prove it. They seek out skilled fighters specifically, needing worthy opponents to justify their title. Defeating an abyssal champion is considered a mark of extraordinary martial achievement.",
     "frequency": 1
   },
   "bone_titan": {
@@ -19779,7 +19779,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "Chaos trolls have been mutated by proximity to void energy, their regenerative capacity accelerated to grotesque extremes. They regrow severed limbs mid-battle, sometimes growing back wrong \u2014 extra arms, heads facing the wrong direction. Fire is the only reliable way to stop their regeneration. Anything else just makes them angrier.",
+    "lore": "Chaos trolls have been mutated by proximity to void energy, their regenerative capacity accelerated to grotesque extremes. They regrow severed limbs mid-battle, sometimes growing back wrong — extra arms, heads facing the wrong direction. Fire is the only reliable way to stop their regeneration. Anything else just makes them angrier.",
     "frequency": 1,
     "regeneration": 3
   },
@@ -19836,7 +19836,7 @@
       "item_chance": 0.6,
       "item_tier": 4
     },
-    "lore": "Wyrms are dragons that have not yet achieved true flight \u2014 their wings too underdeveloped to lift their growing bulk. They compensate with ground speed and breath weapon intensity. Many young dragons pass through a wyrm phase between juvenile and adult, and these creatures are especially dangerous, caught between caution and arrogance.",
+    "lore": "Wyrms are dragons that have not yet achieved true flight — their wings too underdeveloped to lift their growing bulk. They compensate with ground speed and breath weapon intensity. Many young dragons pass through a wyrm phase between juvenile and adult, and these creatures are especially dangerous, caught between caution and arrogance.",
     "frequency": 1
   },
   "elder_mind_flayer": {
@@ -19898,7 +19898,7 @@
       "item_chance": 0.65,
       "item_tier": 4
     },
-    "lore": "Elder mind flayers have fed on exceptional intellects for centuries, absorbing knowledge with each brain consumed. They are vastly more powerful than common illithids, their psionic blasts capable of erasing short-term memory entirely. They view combat as an indignity \u2014 by the time they are forced to fight, they are already furious.",
+    "lore": "Elder mind flayers have fed on exceptional intellects for centuries, absorbing knowledge with each brain consumed. They are vastly more powerful than common illithids, their psionic blasts capable of erasing short-term memory entirely. They view combat as an indignity — by the time they are forced to fight, they are already furious.",
     "frequency": 1
   },
   "void_leviathan": {
@@ -19954,7 +19954,7 @@
       "item_chance": 0.7,
       "item_tier": 5
     },
-    "lore": "Void leviathans are titanic serpentine creatures from the space between dimensions, drawn through by rifts created by powerful magic. Their bodies partially phase in and out of reality as they move, which makes them nearly impossible to bind or contain. They consume anything that generates heat \u2014 including living creatures.",
+    "lore": "Void leviathans are titanic serpentine creatures from the space between dimensions, drawn through by rifts created by powerful magic. Their bodies partially phase in and out of reality as they move, which makes them nearly impossible to bind or contain. They consume anything that generates heat — including living creatures.",
     "frequency": 1
   },
   "elder_beholder": {
@@ -20102,7 +20102,7 @@
       "item_chance": 0.7,
       "item_tier": 5
     },
-    "lore": "Dread wyrms are elder wyrms whose growth has been stunted by magical corruption, preventing them from becoming true adult dragons. Trapped between forms, they fester with resentment, their fire hotter and their temperament worse than any proper dragon. They are easy to provoke and impossible to negotiate with \u2014 a bad combination at any dungeon depth.",
+    "lore": "Dread wyrms are elder wyrms whose growth has been stunted by magical corruption, preventing them from becoming true adult dragons. Trapped between forms, they fester with resentment, their fire hotter and their temperament worse than any proper dragon. They are easy to provoke and impossible to negotiate with — a bad combination at any dungeon depth.",
     "frequency": 1
   },
   "abyssal_overlord": {
@@ -20167,7 +20167,7 @@
       "item_chance": 0.75,
       "item_tier": 5
     },
-    "lore": "Abyssal overlords command entire layers of the Abyss \u2014 vast planes of pure chaos where millions of lesser demons fight and die without purpose. When an overlord descends to the material plane, it brings a fragment of that chaos with it. Reality itself becomes unstable within a hundred yards of their presence.",
+    "lore": "Abyssal overlords command entire layers of the Abyss — vast planes of pure chaos where millions of lesser demons fight and die without purpose. When an overlord descends to the material plane, it brings a fragment of that chaos with it. Reality itself becomes unstable within a hundred yards of their presence.",
     "frequency": 1
   },
   "elder_dragon": {
@@ -20244,7 +20244,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "Elder dragons occupy the threshold between adult and ancient \u2014 creatures who have lived for five centuries and accumulated enough power to reshape landscapes, but who have not yet developed the full magical mastery of their elders. They are at their most dangerous here, aggressive enough to destroy anything that threatens their hoard but wise enough to choose their battles.",
+    "lore": "Elder dragons occupy the threshold between adult and ancient — creatures who have lived for five centuries and accumulated enough power to reshape landscapes, but who have not yet developed the full magical mastery of their elders. They are at their most dangerous here, aggressive enough to destroy anything that threatens their hoard but wise enough to choose their battles.",
     "frequency": 1
   },
   "lich_sovereign": {
@@ -20441,7 +20441,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "World serpents are fragments of the mythic cosmic serpent said to encircle the plane itself. How they came to be confined in dungeons is unknown \u2014 perhaps they were summoned centuries ago and simply stayed when the summoner died, or perhaps they are drawn to the deep places where the world's foundations are exposed. They are older than most civilizations.",
+    "lore": "World serpents are fragments of the mythic cosmic serpent said to encircle the plane itself. How they came to be confined in dungeons is unknown — perhaps they were summoned centuries ago and simply stayed when the summoner died, or perhaps they are drawn to the deep places where the world's foundations are exposed. They are older than most civilizations.",
     "frequency": 1
   },
   "entropy_wraith": {
@@ -20505,7 +20505,7 @@
       "item_chance": 0.8,
       "item_tier": 5
     },
-    "lore": "Entropy wraiths are the inevitable end of sufficiently old undead spirits \u2014 wraiths that have existed so long they have begun dissolving the boundary between themselves and nothingness. They are not malicious; they simply are, and their presence unmakes. The void that follows them is not death but something older: the absence that preceded existence.",
+    "lore": "Entropy wraiths are the inevitable end of sufficiently old undead spirits — wraiths that have existed so long they have begun dissolving the boundary between themselves and nothingness. They are not malicious; they simply are, and their presence unmakes. The void that follows them is not death but something older: the absence that preceded existence.",
     "frequency": 1
   },
   "asterion_minotaur": {
@@ -20685,7 +20685,7 @@
       "item_tier": 6,
       "boss_scroll_id": "scroll_of_the_hoard"
     },
-    "lore": "The dwarf Fafnir, transformed by greed into a serpentine dragon, guards the cursed treasure of Andvari. His scales are near-impenetrable \u2014 no blade, spell, or holy rite can pierce them. His breath weapon is devastating. Only the hero Sigurd, who struck from below through the dragon's soft belly, could slay him.",
+    "lore": "The dwarf Fafnir, transformed by greed into a serpentine dragon, guards the cursed treasure of Andvari. His scales are near-impenetrable — no blade, spell, or holy rite can pierce them. His breath weapon is devastating. Only the hero Sigurd, who struck from below through the dragon's soft belly, could slay him.",
     "frequency": 0,
     "dragon_scales": 0.8,
     "footprint": [
@@ -20953,7 +20953,7 @@
       "unique_drop_id": "bronze_aegis",
       "boss_scroll_id": "scroll_of_talos"
     },
-    "lore": "Talos was a bronze automaton forged by Hephaestus to guard the island of Crete, circling its shores three times daily. His single vein of ichor runs from neck to ankle \u2014 drain that life-fluid and he falls.",
+    "lore": "Talos was a bronze automaton forged by Hephaestus to guard the island of Crete, circling its shores three times daily. His single vein of ichor runs from neck to ankle — drain that life-fluid and he falls.",
     "frequency": 0,
     "spawn_chance": 0.35,
     "is_mini_boss": true
@@ -21072,7 +21072,7 @@
       "unique_drop_id": "erlking_mantle",
       "boss_scroll_id": "scroll_of_the_erlking"
     },
-    "lore": "The Erlking rides the wind through dark forests, luring travelers \u2014 especially children \u2014 to their doom with beautiful music and false promises. Iron and flame alone disturb his reverie.",
+    "lore": "The Erlking rides the wind through dark forests, luring travelers — especially children — to their doom with beautiful music and false promises. Iron and flame alone disturb his reverie.",
     "frequency": 0,
     "spawn_chance": 0.4,
     "is_mini_boss": true
@@ -21308,7 +21308,7 @@
       "unique_drop_id": null,
       "boss_scroll_id": "scroll_of_rangda"
     },
-    "lore": "Rangda is the demon queen of Bali, mistress of witches and widow of chaos. She leads Leyaks \u2014 black magic users \u2014 in battle against the divine Barong. Her howl can shatter a warrior\u2019s will.",
+    "lore": "Rangda is the demon queen of Bali, mistress of witches and widow of chaos. She leads Leyaks — black magic users — in battle against the divine Barong. Her howl can shatter a warrior’s will.",
     "frequency": 0,
     "spawn_chance": 0.4,
     "is_mini_boss": true
@@ -21364,7 +21364,7 @@
       "unique_drop_id": "nemean_pelt",
       "boss_scroll_id": "scroll_of_the_lion"
     },
-    "lore": "The Nemean Lion's hide was impervious to all weapons \u2014 no blade or arrow could pierce it. Hercules strangled the beast with his bare hands and used its own claws to skin it. Only blunt force can harm it.",
+    "lore": "The Nemean Lion's hide was impervious to all weapons — no blade or arrow could pierce it. Hercules strangled the beast with his bare hands and used its own claws to skin it. Only blunt force can harm it.",
     "frequency": 0,
     "spawn_chance": 0.4,
     "is_mini_boss": true
@@ -21427,20 +21427,20 @@
       "unique_drop_id": "iron_mortar_wand",
       "boss_scroll_id": "scroll_of_baba_yaga"
     },
-    "lore": "Baba Yaga lives in a hut on chicken legs deep in an enchanted forest. Her iron teeth can chew through armor as through bread. She tests heroes who find her \u2014 those who fail her trials are eaten.",
+    "lore": "Baba Yaga lives in a hut on chicken legs deep in an enchanted forest. Her iron teeth can chew through armor as through bread. She tests heroes who find her — those who fail her trials are eaten.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "regen": 3,
     "is_mini_boss": true,
     "attack_effects": [
       {
         "effect": "bleeding",
         "chance": 0.3
       }
-    ]
+    ],
+    "regeneration": 3
   },
   "jormungandr_juvenile": {
-    "name": "J\u00f6rmungandr (Juvenile)",
+    "name": "Jörmungandr (Juvenile)",
     "symbol": "S",
     "color": [
       60,
@@ -21500,7 +21500,7 @@
       "unique_drop_id": "serpent_scale_mail",
       "boss_scroll_id": "scroll_of_jormungandr"
     },
-    "lore": "The World Serpent J\u00f6rmungandr encircles all of Midgard, and even in its juvenile form it carries the venom that will one day slay Thor at Ragnar\u00f6k. Its poison is said to be unkillable by any remedy.",
+    "lore": "The World Serpent Jörmungandr encircles all of Midgard, and even in its juvenile form it carries the venom that will one day slay Thor at Ragnarök. Its poison is said to be unkillable by any remedy.",
     "frequency": 0,
     "spawn_chance": 0.35,
     "is_mini_boss": true
@@ -21620,13 +21620,13 @@
       "unique_drop_id": "green_knights_plate",
       "boss_scroll_id": "scroll_of_the_green"
     },
-    "lore": "The Green Knight cannot be permanently killed \u2014 his head rolls and he picks it up again. He offered his axe to Gawain for one blow, knowing he would return the favor a year hence. His endurance is legendary.",
+    "lore": "The Green Knight cannot be permanently killed — his head rolls and he picks it up again. He offered his axe to Gawain for one blow, knowing he would return the favor a year hence. His endurance is legendary.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "regen": 5,
     "is_mini_boss": true,
     "revive_once_on_death": true,
-    "revive_hp_pct": 0.5
+    "revive_hp_pct": 0.5,
+    "regeneration": 5
   },
   "charybdis": {
     "name": "Charybdis",
@@ -21816,7 +21816,7 @@
       "unique_drop_id": "wendigo_fang",
       "boss_scroll_id": "scroll_of_the_wendigo"
     },
-    "lore": "The Wendigo is born when a human resorts to cannibalism in the frozen north \u2014 the ice spirit possesses them and drives them to hunger without end. It drains warmth and satiety, leaving only frozen despair.",
+    "lore": "The Wendigo is born when a human resorts to cannibalism in the frozen north — the ice spirit possesses them and drives them to hunger without end. It drains warmth and satiety, leaving only frozen despair.",
     "frequency": 0,
     "spawn_chance": 0.35,
     "is_mini_boss": true
@@ -21944,7 +21944,7 @@
       "unique_drop_id": "anansi_web_cloak",
       "boss_scroll_id": "scroll_of_anansi"
     },
-    "lore": "Anansi is the spider god who owns all stories. He won tales from the Sky God Nyame by trapping Onini the python and Osebo the leopard with his cleverness alone. He never fights directly \u2014 he tricks.",
+    "lore": "Anansi is the spider god who owns all stories. He won tales from the Sky God Nyame by trapping Onini the python and Osebo the leopard with his cleverness alone. He never fights directly — he tricks.",
     "frequency": 0,
     "spawn_chance": 0.4,
     "is_mini_boss": true,
@@ -21962,7 +21962,7 @@
     ]
   },
   "nidhoggr_fragment": {
-    "name": "N\u00ed\u00f0h\u00f6ggr Fragment",
+    "name": "Níðhöggr Fragment",
     "symbol": "D",
     "color": [
       80,
@@ -22022,7 +22022,7 @@
       "unique_drop_id": "nidhoggr_scale",
       "boss_scroll_id": "scroll_of_nidhoggr"
     },
-    "lore": "N\u00ed\u00f0h\u00f6ggr gnaws at the roots of Yggdrasil, the World Tree, working to unravel all of creation. Even a fragment of his body carries his relentless hunger and his acid venom. He will outlast everything.",
+    "lore": "Níðhöggr gnaws at the roots of Yggdrasil, the World Tree, working to unravel all of creation. Even a fragment of his body carries his relentless hunger and his acid venom. He will outlast everything.",
     "frequency": 0,
     "spawn_chance": 0.35,
     "is_mini_boss": true
@@ -22338,7 +22338,7 @@
       "unique_drop_id": "seal_of_death",
       "boss_scroll_id": null
     },
-    "lore": "Samael, the Poison of God, guardian of the Fifth Seal. He is the angel of death in the oldest traditions \u2014 neither wholly fallen nor wholly forgiven, bound to Abaddon's service at the pit. His touch brings the chill of the grave.",
+    "lore": "Samael, the Poison of God, guardian of the Fifth Seal. He is the angel of death in the oldest traditions — neither wholly fallen nor wholly forgiven, bound to Abaddon's service at the pit. His touch brings the chill of the grave.",
     "frequency": 0,
     "spawn_chance": 1.0,
     "is_boss": true,
@@ -22466,7 +22466,7 @@
       "unique_drop_id": "seal_of_silence",
       "boss_scroll_id": null
     },
-    "lore": "Abyzou, guardian of the Seventh and Final Seal. She is the demon of silence and stillness \u2014 the quiet before the end of the world. When the Seventh Seal breaks, there is silence in heaven for half an hour. That silence is her domain.",
+    "lore": "Abyzou, guardian of the Seventh and Final Seal. She is the demon of silence and stillness — the quiet before the end of the world. When the Seventh Seal breaks, there is silence in heaven for half an hour. That silence is her domain.",
     "frequency": 0,
     "spawn_chance": 1.0,
     "is_boss": true,
@@ -22522,7 +22522,7 @@
       "item_chance": 0.0,
       "item_tier": 1
     },
-    "lore": "The locusts of the Abyss, summoned by Abaddon's dark will. They swarm like a plague of impossible numbers, draining life and spirit from all they touch. Individually nothing \u2014 collectively, a tide of ruin.",
+    "lore": "The locusts of the Abyss, summoned by Abaddon's dark will. They swarm like a plague of impossible numbers, draining life and spirit from all they touch. Individually nothing — collectively, a tide of ruin.",
     "frequency": 0,
     "sp_drain": 5
   },
@@ -22565,7 +22565,7 @@
       "item_chance": 0.0,
       "item_tier": 1
     },
-    "lore": "An angel of the Heavenly Host, summoned by the Scales of Michael. It descends in a pillar of light with single-minded purpose \u2014 to meet the locusts of the Abyss in mutual annihilation. Where angel meets locust, both are consumed in holy fire.",
+    "lore": "An angel of the Heavenly Host, summoned by the Scales of Michael. It descends in a pillar of light with single-minded purpose — to meet the locusts of the Abyss in mutual annihilation. Where angel meets locust, both are consumed in holy fire.",
     "frequency": 0,
     "is_allied": true
   },
@@ -23229,7 +23229,7 @@
       "item_chance": 0.31,
       "item_tier": 3
     },
-    "lore": "A chimera that's survived to adulthood \u2014 a rare and terrible thing. Its three heads coordinate attacks with predatory intelligence.",
+    "lore": "A chimera that's survived to adulthood — a rare and terrible thing. Its three heads coordinate attacks with predatory intelligence.",
     "frequency": 3
   },
   "bone_colossus": {
@@ -23919,7 +23919,7 @@
       "item_chance": 0.37,
       "item_tier": 3
     },
-    "lore": "Ancient sphinxes whose riddles have become weapons \u2014 the confusion they inflict is not metaphorical but literal madness. Wrong answers are punished with claws.",
+    "lore": "Ancient sphinxes whose riddles have become weapons — the confusion they inflict is not metaphorical but literal madness. Wrong answers are punished with claws.",
     "frequency": 2
   },
   "lich_lord": {
@@ -25322,7 +25322,7 @@
       "item_chance": 0.54,
       "item_tier": 5
     },
-    "lore": "The guardians of the deepest vaults, placed by divine decree to ensure only the truly worthy pass. They are not evil \u2014 merely implacable.",
+    "lore": "The guardians of the deepest vaults, placed by divine decree to ensure only the truly worthy pass. They are not evil — merely implacable.",
     "frequency": 2,
     "mortal_weapon_floor": true
   },
@@ -25381,7 +25381,7 @@
       "item_chance": 0.53,
       "item_tier": 5
     },
-    "lore": "Manifestations of pure entropy \u2014 the inevitable heat-death of all things given form. Their touch accelerates the aging of everything it contacts.",
+    "lore": "Manifestations of pure entropy — the inevitable heat-death of all things given form. Their touch accelerates the aging of everything it contacts.",
     "frequency": 2
   },
   "dread_knight_legion": {
@@ -25668,7 +25668,7 @@
       "item_chance": 0.55,
       "item_tier": 5
     },
-    "lore": "Abaddon's headsmen. Their hoods are mortared into the skull, the cleaver never set down. They were once judges of mortal kings \u2014 now they swing for the pit alone."
+    "lore": "Abaddon's headsmen. Their hoods are mortared into the skull, the cleaver never set down. They were once judges of mortal kings — now they swing for the pit alone."
   },
   "void_seraph": {
     "name": "void seraph",
@@ -25896,7 +25896,7 @@
       "item_chance": 0.55,
       "item_tier": 5
     },
-    "lore": "One of the lesser riders \u2014 not Famine, not Pestilence, not War, not Death, but the kind that comes with them. Armor welded shut. The horse is part of the man now."
+    "lore": "One of the lesser riders — not Famine, not Pestilence, not War, not Death, but the kind that comes with them. Armor welded shut. The horse is part of the man now."
   },
   "orc_archer": {
     "name": "orc archer",
@@ -25952,7 +25952,7 @@
         "chance": 0.65
       }
     },
-    "lore": "Orc archers carry shortbows of yew and gut, fletched with crow feathers stained black by the smoke of their kennels. They are picked from the runts \u2014 too weak for the front line, but with the patience to hold a draw. Hitting a clergyman at sixty paces earns an extra hide for the winter."
+    "lore": "Orc archers carry shortbows of yew and gut, fletched with crow feathers stained black by the smoke of their kennels. They are picked from the runts — too weak for the front line, but with the patience to hold a draw. Hitting a clergyman at sixty paces earns an extra hide for the winter."
   },
   "orc_priest": {
     "name": "orc priest",
@@ -26006,7 +26006,7 @@
       "item_chance": 0.22,
       "item_tier": 2
     },
-    "lore": "Orc clergy serve no single god \u2014 they invoke whichever spirit answers loudest. This one bound a battlefield ghost into the haft of his club; the ghost screams whenever blood is spilled. Other orcs find this comforting.",
+    "lore": "Orc clergy serve no single god — they invoke whichever spirit answers loudest. This one bound a battlefield ghost into the haft of his club; the ghost screams whenever blood is spilled. Other orcs find this comforting.",
     "heal_amount_pct": 0.3
   },
   "orc_marauder": {
@@ -26055,7 +26055,7 @@
       "item_chance": 0.28,
       "item_tier": 3
     },
-    "lore": "Marauders are the orcs the chieftains lend out for raiding caravans and outlying farms. They train by sprinting in armor down hillsides \u2014 once committed to the charge, stopping is a worse death than the one waiting for them at the bottom.",
+    "lore": "Marauders are the orcs the chieftains lend out for raiding caravans and outlying farms. They train by sprinting in armor down hillsides — once committed to the charge, stopping is a worse death than the one waiting for them at the bottom.",
     "can_charge": true,
     "charge_bonus_mult": 1.6
   },
@@ -26108,7 +26108,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "Warbringers carry the warband's banner \u2014 a long pole hung with the bones of insufficient cousins \u2014 and a great curling horn taken from a southern aurochs. The horn carries through stone; an unlucky party may hear it before seeing the warbringer at all.",
+    "lore": "Warbringers carry the warband's banner — a long pole hung with the bones of insufficient cousins — and a great curling horn taken from a southern aurochs. The horn carries through stone; an unlucky party may hear it before seeing the warbringer at all.",
     "alert_all_tag": true,
     "alert_radius": 12
   },
@@ -26163,7 +26163,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "A champion of the dread tribes that hold the deep tunnels \u2014 chosen by single combat and then chained to the standard until killed by a successor. By the time his armor is patched with stolen breastplates, he no longer remembers the name his mother gave him.",
+    "lore": "A champion of the dread tribes that hold the deep tunnels — chosen by single combat and then chained to the standard until killed by a successor. By the time his armor is patched with stolen breastplates, he no longer remembers the name his mother gave him.",
     "enrage_at_hp_pct": 0.3,
     "enraged_pattern": "fenrir_rage",
     "rage_interval": 4,
@@ -26223,7 +26223,7 @@
         "chance": 0.65
       }
     },
-    "lore": "Goblin snipers nest in chimneys and ceiling cracks, balancing crossbows on their knees. They will refuse to fire if their target is too close to a kinsman \u2014 not from caution but from a tradition that says a friendly-fire kill makes their bolt-mother weep for a season."
+    "lore": "Goblin snipers nest in chimneys and ceiling cracks, balancing crossbows on their knees. They will refuse to fire if their target is too close to a kinsman — not from caution but from a tradition that says a friendly-fire kill makes their bolt-mother weep for a season."
   },
   "goblin_warpriest": {
     "name": "goblin warpriest",
@@ -26329,7 +26329,7 @@
       "item_chance": 0.45,
       "item_tier": 4
     },
-    "lore": "Hobgoblin marshals run their cohorts on a strict drill \u2014 the only goblinoids who keep ranks, dress their lines, and refuse to break under pressure. Roman discipline through a cracked iron mirror. A marshal's death undoes years of careful training in a single howling minute.",
+    "lore": "Hobgoblin marshals run their cohorts on a strict drill — the only goblinoids who keep ranks, dress their lines, and refuse to break under pressure. Roman discipline through a cracked iron mirror. A marshal's death undoes years of careful training in a single howling minute.",
     "alert_all_tag": true,
     "alert_radius": 15
   },
@@ -26387,7 +26387,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "Once every long generation, a goblin clutch produces one runt that survives by being smarter and more patient than the rest. The kingslayer is a regicide-by-trade \u2014 kobold pretenders pay him in slaves, hobgoblin generals in steel. He works only with two cousins present, and never alone.",
+    "lore": "Once every long generation, a goblin clutch produces one runt that survives by being smarter and more patient than the rest. The kingslayer is a regicide-by-trade — kobold pretenders pay him in slaves, hobgoblin generals in steel. He works only with two cousins present, and never alone.",
     "prefers_flank": true,
     "pack_dependent": true,
     "pack_min_allies": 2
@@ -26448,7 +26448,7 @@
       "item_chance": 0.35,
       "item_tier": 3
     },
-    "lore": "A necromancer who outlived his apprentices and then his own body. He retained the trick of binding spirits to bone, but lost the trick of speech \u2014 the calls he makes to his servants now come out as a clattering of teeth in the wrong order.",
+    "lore": "A necromancer who outlived his apprentices and then his own body. He retained the trick of binding spirits to bone, but lost the trick of speech — the calls he makes to his servants now come out as a clattering of teeth in the wrong order.",
     "summon_kind": [
       "skeleton",
       "skeleton_archer"
@@ -26510,7 +26510,7 @@
       "item_chance": 0.35,
       "item_tier": 3
     },
-    "lore": "A patchwork undead built from the bones of every adventurer who has failed in this section of dungeon \u2014 a few centuries' worth, stitched together with rawhide and dried tendon. Each rib remembers being part of a different chest; the resulting creature breathes with seventeen contradictory rhythms."
+    "lore": "A patchwork undead built from the bones of every adventurer who has failed in this section of dungeon — a few centuries' worth, stitched together with rawhide and dried tendon. Each rib remembers being part of a different chest; the resulting creature breathes with seventeen contradictory rhythms."
   },
   "skeleton_lich": {
     "name": "skeleton lich",
@@ -26572,7 +26572,7 @@
       "item_chance": 0.6,
       "item_tier": 4
     },
-    "lore": "Not a true lich \u2014 a true lich's soul is bound to a phylactery, and this one's phylactery cracked centuries ago. What remains is muscle memory of necromancy, performed by a skeleton who can no longer remember why. The summoning still works. The cold still bites.",
+    "lore": "Not a true lich — a true lich's soul is bound to a phylactery, and this one's phylactery cracked centuries ago. What remains is muscle memory of necromancy, performed by a skeleton who can no longer remember why. The summoning still works. The cold still bites.",
     "summon_kind": [
       "skeleton_warrior",
       "skeleton_archer"
@@ -26640,7 +26640,7 @@
       "item_chance": 0.65,
       "item_tier": 5
     },
-    "lore": "A Gaelic banshee bound by accident into the bones of the dark wizard she came to mourn. The two are now one \u2014 a lich's craft running on a banshee's grief, calling forth the unburied keening of every soul she failed to warn. Adventurers who hear her wail twice rarely hear a third sound.",
+    "lore": "A Gaelic banshee bound by accident into the bones of the dark wizard she came to mourn. The two are now one — a lich's craft running on a banshee's grief, calling forth the unburied keening of every soul she failed to warn. Adventurers who hear her wail twice rarely hear a third sound.",
     "summon_kind": "specter",
     "summon_cooldown": 4,
     "summon_max": 4
@@ -26694,7 +26694,7 @@
       "item_chance": 0.15,
       "item_tier": 2
     },
-    "lore": "Kobold trapsetters are the engineers of the warren. They specialize in the kinds of injuries that bleed slowly \u2014 a hamstring nick, a forearm dart \u2014 so that a fleeing adventurer collapses far from his fellows. The rest of the warren does the cleanup."
+    "lore": "Kobold trapsetters are the engineers of the warren. They specialize in the kinds of injuries that bleed slowly — a hamstring nick, a forearm dart — so that a fleeing adventurer collapses far from his fellows. The rest of the warren does the cleanup."
   },
   "kobold_dragonshield": {
     "name": "kobold dragonshield",
@@ -26749,7 +26749,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "A kobold dragonshield wears overlapping plates scavenged from a dead red dragon's belly \u2014 heavy enough that he can barely run, but armored enough that he doesn't need to. He stands in front while the warren's archers shoot past his ears."
+    "lore": "A kobold dragonshield wears overlapping plates scavenged from a dead red dragon's belly — heavy enough that he can barely run, but armored enough that he doesn't need to. He stands in front while the warren's archers shoot past his ears."
   },
   "kobold_pack_leader": {
     "name": "kobold pack leader",
@@ -26801,7 +26801,7 @@
       "item_chance": 0.4,
       "item_tier": 3
     },
-    "lore": "A kobold pack leader is the warren's oldest survivor \u2014 too clever to die early, too small to be challenged for the role. He carries a brass whistle on a thong; one short blast means hide, two means rush, three means abandon the warren and start again somewhere downhill.",
+    "lore": "A kobold pack leader is the warren's oldest survivor — too clever to die early, too small to be challenged for the role. He carries a brass whistle on a thong; one short blast means hide, two means rush, three means abandon the warren and start again somewhere downhill.",
     "alert_all_tag": true,
     "alert_radius": 10
   },
@@ -26859,7 +26859,7 @@
         "chance": 0.65
       }
     },
-    "lore": "Gnoll archers tip their arrows with the rendered fat of last week's kill \u2014 a slow, foul poison rather than a fast one, because Yeenoghu prefers his offerings to suffer the full mile home. The bows are stolen from elves; the fletchings are hyena down."
+    "lore": "Gnoll archers tip their arrows with the rendered fat of last week's kill — a slow, foul poison rather than a fast one, because Yeenoghu prefers his offerings to suffer the full mile home. The bows are stolen from elves; the fletchings are hyena down."
   },
   "gnoll_fang_of_yeenoghu": {
     "name": "gnoll fang of Yeenoghu",
@@ -26915,7 +26915,7 @@
       "item_chance": 0.32,
       "item_tier": 3
     },
-    "lore": "Yeenoghu, the Beast of Butchery, grants his most savage worshippers a hairline of red across the brow \u2014 the mark of a fang. A fang of Yeenoghu does not retreat from a fight, ever, on pain of having his teeth fall out one by one over the following months.",
+    "lore": "Yeenoghu, the Beast of Butchery, grants his most savage worshippers a hairline of red across the brow — the mark of a fang. A fang of Yeenoghu does not retreat from a fight, ever, on pain of having his teeth fall out one by one over the following months.",
     "can_charge": true,
     "charge_bonus_mult": 1.7
   },
@@ -27024,7 +27024,7 @@
       "item_chance": 0.14,
       "item_tier": 1
     },
-    "lore": "A bandit thug is the muscle of the gang \u2014 usually a farmhand whose lord went to war and never came back, or a town drunk who found that travelers cannot ask the watch for help. Alone he is a coward; with a kinsman at his shoulder he will fight to the last shilling.",
+    "lore": "A bandit thug is the muscle of the gang — usually a farmhand whose lord went to war and never came back, or a town drunk who found that travelers cannot ask the watch for help. Alone he is a coward; with a kinsman at his shoulder he will fight to the last shilling.",
     "pack_dependent": true,
     "pack_min_allies": 1
   },
@@ -27082,7 +27082,7 @@
         "chance": 0.65
       }
     },
-    "lore": "Bandit archers are former poachers, often the most useful members of any roadside gang \u2014 quiet, patient, and willing to spend a whole afternoon up a tree. They will not shoot a child or a priest, not out of conscience but because their grandmothers warned them how those debts get collected.",
+    "lore": "Bandit archers are former poachers, often the most useful members of any roadside gang — quiet, patient, and willing to spend a whole afternoon up a tree. They will not shoot a child or a priest, not out of conscience but because their grandmothers warned them how those debts get collected.",
     "pack_dependent": true,
     "pack_min_allies": 1
   },
@@ -27135,7 +27135,7 @@
       "item_chance": 0.3,
       "item_tier": 2
     },
-    "lore": "Thieves drift in and out of bandit work as the seasons demand \u2014 winter in a warm gang, spring picking pockets in a market town. They prize a quiet boot and a turned-back rather than a duel, and have a saying: the man who shows you his sword has decided he does not want to use it."
+    "lore": "Thieves drift in and out of bandit work as the seasons demand — winter in a warm gang, spring picking pockets in a market town. They prize a quiet boot and a turned-back rather than a duel, and have a saying: the man who shows you his sword has decided he does not want to use it."
   },
   "bandit_kingpin": {
     "name": "bandit kingpin",
@@ -27186,7 +27186,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "A bandit kingpin holds his territory by the same logic as a Roman frumentarius \u2014 protection paid, debts collected, rivals removed quietly. Some are former officers cashiered for treason; some are highway preachers whose sermons soured. All can read, write, and count, and that alone is why they lead.",
+    "lore": "A bandit kingpin holds his territory by the same logic as a Roman frumentarius — protection paid, debts collected, rivals removed quietly. Some are former officers cashiered for treason; some are highway preachers whose sermons soured. All can read, write, and count, and that alone is why they lead.",
     "alert_all_tag": true,
     "alert_radius": 10
   },
@@ -27241,7 +27241,7 @@
       "item_chance": 0.18,
       "item_tier": 2
     },
-    "lore": "Cult initiates are usually townspeople who took the wrong cup at the wrong vigil \u2014 a year's catechism and they cannot remember the names of their own children. The robe is hempen, the dagger is brass; the conviction is borrowed but it cuts the same.",
+    "lore": "Cult initiates are usually townspeople who took the wrong cup at the wrong vigil — a year's catechism and they cannot remember the names of their own children. The robe is hempen, the dagger is brass; the conviction is borrowed but it cuts the same.",
     "pack_dependent": true,
     "pack_min_allies": 1
   },
@@ -27299,7 +27299,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "Cult priests are the second tier \u2014 initiates who have presided over enough sacrifices to no longer dream about them. They keep the cult's true name a secret even from their kinsmen; if asked, they will quote scripture they themselves do not believe and watch your face for the answer.",
+    "lore": "Cult priests are the second tier — initiates who have presided over enough sacrifices to no longer dream about them. They keep the cult's true name a secret even from their kinsmen; if asked, they will quote scripture they themselves do not believe and watch your face for the answer.",
     "heal_amount_pct": 0.3
   },
   "cult_zealot": {
@@ -27356,7 +27356,7 @@
       "item_chance": 0.36,
       "item_tier": 3
     },
-    "lore": "A zealot is an initiate who has crossed the third veil \u2014 the one where pain stops registering and conviction starts. He carries his cleaver in a permanent two-handed grip, even at table, and walks with the rolling gait of a man whose ribs have been broken and re-knit too many times.",
+    "lore": "A zealot is an initiate who has crossed the third veil — the one where pain stops registering and conviction starts. He carries his cleaver in a permanent two-handed grip, even at table, and walks with the rolling gait of a man whose ribs have been broken and re-knit too many times.",
     "can_charge": true,
     "charge_bonus_mult": 1.5,
     "min_hit_chance": 0.2
@@ -27418,7 +27418,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "A hierophant is the cult's living memory \u2014 the only one who knows where the founder is buried and what was buried with her. He no longer eats in the company of his initiates and conducts the major sacrifices alone. When he summons his lessers to die for him, he calls them by their childhood names.",
+    "lore": "A hierophant is the cult's living memory — the only one who knows where the founder is buried and what was buried with her. He no longer eats in the company of his initiates and conducts the major sacrifices alone. When he summons his lessers to die for him, he calls them by their childhood names.",
     "summon_kind": [
       "cult_initiate",
       "cult_zealot"
@@ -27485,7 +27485,7 @@
       "item_chance": 0.2,
       "item_tier": 2
     },
-    "lore": "A ghast is what a ghoul becomes when it has eaten enough of its own kind. The paralytic of its claws is stronger and the stench around it is so foul that even other undead give it a corridor. Tradition says a ghast remembers, faintly, the first person it killed \u2014 and avoids that one corpse forever."
+    "lore": "A ghast is what a ghoul becomes when it has eaten enough of its own kind. The paralytic of its claws is stronger and the stench around it is so foul that even other undead give it a corridor. Tradition says a ghast remembers, faintly, the first person it killed — and avoids that one corpse forever."
   },
   "draugr_wight": {
     "name": "draugr wight",
@@ -27540,7 +27540,7 @@
       "item_chance": 0.36,
       "item_tier": 3
     },
-    "lore": "A wight is the haunting of a barrow-king who refused his rest \u2014 a Norse draugr by another name. The sword he carries was buried with him and its edge is now part of him; severing his arm severs the blade also. His touch takes warmth from a body and gives it back to the barrow."
+    "lore": "A wight is the haunting of a barrow-king who refused his rest — a Norse draugr by another name. The sword he carries was buried with him and its edge is now part of him; severing his arm severs the blade also. His touch takes warmth from a body and gives it back to the barrow."
   },
   "grave_knight": {
     "name": "grave knight",
@@ -27599,7 +27599,7 @@
       "item_chance": 0.55,
       "item_tier": 4
     },
-    "lore": "A grave knight is a knight who died with an oath unfulfilled and could not, would not, let the matter rest. He wakes when his cause is mentioned aloud within a mile of his cairn. The oath itself is sometimes petty \u2014 a stolen horse, an unpaid wager \u2014 but the obligation does not care.",
+    "lore": "A grave knight is a knight who died with an oath unfulfilled and could not, would not, let the matter rest. He wakes when his cause is mentioned aloud within a mile of his cairn. The oath itself is sometimes petty — a stolen horse, an unpaid wager — but the obligation does not care.",
     "alert_all_tag": true,
     "alert_radius": 8,
     "enrage_at_hp_pct": 0.25,
@@ -27721,7 +27721,7 @@
       "item_chance": 0.32,
       "item_tier": 3
     },
-    "lore": "Demonic imps no longer pretend to be familiars. They are the courier-class of a small abyssal house \u2014 sent up to settle scores their betters cannot be bothered with. The sting now carries true hellfire, and the talons can sign a contract on parchment that was minutes ago a man's chest.",
+    "lore": "Demonic imps no longer pretend to be familiars. They are the courier-class of a small abyssal house — sent up to settle scores their betters cannot be bothered with. The sting now carries true hellfire, and the talons can sign a contract on parchment that was minutes ago a man's chest.",
     "can_phase_blink": true,
     "phase_blink_chance": 0.35
   },
@@ -27780,7 +27780,7 @@
       "item_chance": 0.48,
       "item_tier": 4
     },
-    "lore": "An imp lord is a minor noble of a minor abyssal court \u2014 somewhere between a baronet and a bookkeeper. He has earned the right to call up other imps to do the unpleasant parts of his work, and the right to refuse a duel by claiming higher business elsewhere. He uses both rights liberally.",
+    "lore": "An imp lord is a minor noble of a minor abyssal court — somewhere between a baronet and a bookkeeper. He has earned the right to call up other imps to do the unpleasant parts of his work, and the right to refuse a duel by claiming higher business elsewhere. He uses both rights liberally.",
     "summon_kind": "imp",
     "summon_cooldown": 5,
     "summon_max": 4,
@@ -27840,7 +27840,7 @@
       "item_chance": 0.3,
       "item_tier": 3
     },
-    "lore": "A snake charmer's pipe is not a pipe \u2014 it is a hollowed cobra-rib, and the music it makes is heard mostly by the snakes themselves. The charmer learned the trade in the bazaars of Samarkand and went underground when the bazaars dried up. His basket goes everywhere with him; it is never empty.",
+    "lore": "A snake charmer's pipe is not a pipe — it is a hollowed cobra-rib, and the music it makes is heard mostly by the snakes themselves. The charmer learned the trade in the bazaars of Samarkand and went underground when the bazaars dried up. His basket goes everywhere with him; it is never empty.",
     "summon_kind": "cobra",
     "summon_cooldown": 5,
     "summon_max": 3
@@ -27902,7 +27902,7 @@
       "item_chance": 0.45,
       "item_tier": 4
     },
-    "lore": "Viper priestesses serve a snake-goddess older than any of the gods the upper world still names \u2014 older even than the cities she once protected. Their tongues are split in childhood as the first sacrament; their eyes never blink. They heal kin with a kiss whose venom has been bred for centuries to nourish rather than kill.",
+    "lore": "Viper priestesses serve a snake-goddess older than any of the gods the upper world still names — older even than the cities she once protected. Their tongues are split in childhood as the first sacrament; their eyes never blink. They heal kin with a kiss whose venom has been bred for centuries to nourish rather than kill.",
     "heal_amount_pct": 0.3
   },
   "cave_troll": {
@@ -29437,7 +29437,7 @@
       "item_tier": 8,
       "boss_scroll_id": "scroll_of_chromatic_doom"
     },
-    "lore": "Before the gods named the world, Tiamat coiled in the salt-deep, her five heads tasting the chaos that birthed her. The young god Marduk loosed the four winds into her open jaws and split her body to form the heavens and the earth \u2014 yet a shard of her hatred slipped the wound and slept beneath the dungeon floors. She wakes now as the Chromatic Queen, mother of evil dragonkind, each crowned head exhaling a different ruin: white frost, red flame, blue thunder, black acid, green plague. To stand before her is to stand before the first wrath that the cosmos ever knew.",
+    "lore": "Before the gods named the world, Tiamat coiled in the salt-deep, her five heads tasting the chaos that birthed her. The young god Marduk loosed the four winds into her open jaws and split her body to form the heavens and the earth — yet a shard of her hatred slipped the wound and slept beneath the dungeon floors. She wakes now as the Chromatic Queen, mother of evil dragonkind, each crowned head exhaling a different ruin: white frost, red flame, blue thunder, black acid, green plague. To stand before her is to stand before the first wrath that the cosmos ever knew.",
     "frequency": 1,
     "spawn_chance": 1.0
   },
@@ -29618,8 +29618,9 @@
       "item_chance": 1.0,
       "item_tier": 6
     },
-    "lore": "Surtur, the fire-giant lord of Muspelheim, waits at the southern edge of the world with the flaming sword L\u00e6vateinn \u2014 brighter than the sun. The V\u00f6lusp\u00e1 foretells the day he rides forth to set the Nine Worlds ablaze, scorching even Asgard until only ash remains.",
-    "frequency": 1
+    "lore": "Surtur, the fire-giant lord of Muspelheim, waits at the southern edge of the world with the flaming sword Lævateinn — brighter than the sun. The Völuspá foretells the day he rides forth to set the Nine Worlds ablaze, scorching even Asgard until only ash remains.",
+    "frequency": 1,
+    "enraged_pattern": "aggressive"
   },
   "ymir_last_spawn": {
     "name": "Ymir's Last Spawn",
@@ -29706,8 +29707,9 @@
       "item_chance": 1.0,
       "item_tier": 6
     },
-    "lore": "The last surviving child of Ymir, the primordial frost-giant whose slain body became the world \u2014 his bones the mountains, his blood the sea, his skull the dome of the sky. This spawn carries the cold of the first dawn, before Odin and his brothers ever lifted a blade.",
-    "frequency": 1
+    "lore": "The last surviving child of Ymir, the primordial frost-giant whose slain body became the world — his bones the mountains, his blood the sea, his skull the dome of the sky. This spawn carries the cold of the first dawn, before Odin and his brothers ever lifted a blade.",
+    "frequency": 1,
+    "enraged_pattern": "aggressive"
   },
   "hrungnirs_ghost": {
     "name": "Hrungnir's Ghost",
@@ -29783,7 +29785,8 @@
       "item_chance": 1.0,
       "item_tier": 5
     },
-    "lore": "Hrungnir was the mightiest of stone-giants \u2014 heart of triangular stone, head of stone, hurler of whetstones at Thor on the field at Gri\u00f0r. Mj\u00f6lnir shattered his skull, but the ghost still walks, still flings stinging shards from a grey horizon, still pleads for one more contest.",
-    "frequency": 1
+    "lore": "Hrungnir was the mightiest of stone-giants — heart of triangular stone, head of stone, hurler of whetstones at Thor on the field at Griðr. Mjölnir shattered his skull, but the ghost still walks, still flings stinging shards from a grey horizon, still pleads for one more contest.",
+    "frequency": 1,
+    "enraged_pattern": "aggressive"
   }
 }

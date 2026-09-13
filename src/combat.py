@@ -127,35 +127,102 @@ def _chain_special_tier(chain: int) -> int:
 
 def _weapon_key(weapon) -> str:
     """Return the class key used for chain-special dispatch. Distinguishes
-    2H from 1H variants of the same base class (sword/axe). Falls back to
-    'fist' for unarmed."""
+    2H from 1H variants of the same base class (sword/axe/blunt). Falls back
+    to 'fist' for unarmed.
+
+    Common material x template weapons carry `weapon_class` values that don't
+    match the specials-table keys 1:1: mace / warhammer / flail / club / maul /
+    quarterstaff all use `weapon_class='blunt'`, and glaive uses
+    `weapon_class='polearm'`. Without the aliases below every common
+    hafted-blunt weapon (mace, warhammer, maul, ...) got ZERO chain specials
+    because it fell through to a `blunt` key with no entry in
+    _apply_chain_class_post_damage. Fixed 2026-09-13 (v2.15.0).
+    """
     if weapon is None:
         return 'fist'
-    wc = getattr(weapon, 'weapon_class', 'fist') or 'fist'
+    wc = (getattr(weapon, 'weapon_class', 'fist') or 'fist').lower()
     two_handed = bool(getattr(weapon, 'two_handed', False))
-    # 2H swords / axes / warhammers get their own row in the specials table.
-    if wc == 'sword' and two_handed:
-        return '2h_sword'
-    if wc == 'axe' and two_handed:
-        return '2h_axe'
+    # Weapon id is `<material>_<template_id>` for common weapons; uniques set
+    # their own id. Used to distinguish blunt subtypes (quarterstaff -> staff).
+    wid = (getattr(weapon, 'id', '') or '').lower()
+    name = (getattr(weapon, 'name', '') or '').lower()
+
+    # ---- SWORDS ------------------------------------------------------------
+    if wc == 'sword':
+        return '2h_sword' if two_handed else 'sword'
     if wc == 'zweihander':
         return '2h_sword'
-    if wc == 'warhammer':
-        return '2h_warhammer'
     # Scimitar & morningstar fold under 1h_sword / mace for specials by design.
     if wc == 'scimitar':
         return 'sword'
     if wc == 'morningstar':
         return 'mace'
-    # ranged catch-all: split by weapon.reach/requires_ammo. Bows have reach 6+
-    # and 'arrow' ammo; crossbows have 'bolt' ammo; slings use stones/infinite.
+
+    # ---- AXES --------------------------------------------------------------
+    if wc == 'axe':
+        return '2h_axe' if two_handed else 'axe'
+
+    # ---- BLUNT (mace / warhammer / flail / club / maul / quarterstaff) -----
+    # All the common hafted-blunt templates share `weapon_class='blunt'`.
+    # Disambiguate by hands + template identity so each routes to the right
+    # entry in the specials ladder.
+    if wc == 'blunt':
+        # Quarterstaff -> staff (the wandering monk's reach-2 haft). Detect
+        # by id/name so it also catches uniques that borrow the shape.
+        if 'quarterstaff' in wid or wid.endswith('staff') or 'staff' in name:
+            return 'staff'
+        if two_handed:
+            # 2H blunt hafted weapon (maul, great-hammer): area-stun ladder.
+            return '2h_warhammer'
+        # 1H blunt (mace, warhammer, flail, club) -> mace ladder.
+        return 'mace'
+    # Explicit weapon_class aliases (uniques and hand-authored data may set
+    # these directly rather than the collapsed 'blunt' class).
+    if wc == 'warhammer':
+        return '2h_warhammer' if two_handed else 'mace'
+    if wc == 'club':
+        return 'mace'
+    if wc == 'flail':
+        return 'mace'
+    if wc == 'hammer':
+        return '2h_warhammer' if two_handed else 'mace'
+    if wc == 'maul':
+        return '2h_warhammer'
+    if wc == 'staff':
+        return 'staff'
+
+    # ---- POLEARMS (glaive / halberd / spear) -------------------------------
+    if wc == 'polearm':
+        # Only glaive currently uses `weapon_class='polearm'` as a template;
+        # uniques set `class='halberd'` / `class='spear'` directly. Route by
+        # id/name so a future halberd template also lands correctly.
+        if 'halberd' in wid or 'halberd' in name:
+            return 'halberd'
+        if 'spear' in wid or 'spear' in name:
+            return 'spear'
+        # Default polearm -> glaive (sweeping arc ladder).
+        return 'glaive'
+    if wc == 'halberd':
+        return 'halberd'
+    if wc == 'spear':
+        return 'spear'
+    if wc == 'glaive':
+        return 'glaive'
+
+    # ---- RANGED ------------------------------------------------------------
+    # Templates use explicit weapon_class 'bow' / 'crossbow' / 'sling', so
+    # those fall through to `return wc` below. 'ranged' is a legacy catch-all
+    # that some old uniques used; split it by ammo type.
     if wc == 'ranged':
-        ammo_type = getattr(weapon, 'requires_ammo', '') or ''
-        if 'bolt' in ammo_type.lower():
+        ammo_type = (getattr(weapon, 'requires_ammo', '') or '').lower()
+        if 'bolt' in ammo_type:
             return 'crossbow'
         if getattr(weapon, 'infinite_ammo', False):
             return 'sling'
         return 'bow'
+
+    # ---- DAGGER / BOW / CROSSBOW / SLING / FIST / etc. --------------------
+    # These map 1:1 already.
     return wc
 
 
@@ -1198,15 +1265,6 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # to deliver.
         damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
 
-        # Class perk: a small FLAT bonus with the class's SIGNATURE weapons
-        # (Fighter swords/axes, Rogue ranged). Flat -> self-diminishing as weapon
-        # damage grows; a perk, not a blanket all-weapon multiplier.
-        try:
-            from class_system import weapon_flat_bonus as _wfb
-            damage += _wfb(player, weapon)
-        except Exception:
-            pass
-
         # Empower spell: 3x damage on next hit, then clears
         if player.has_effect('empowered'):
             damage *= 3
@@ -1902,15 +1960,28 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         on_complete(actual, monster.is_dead(), chain, stunned=stunned, knocked=knocked, crit=crit,
                     poisoned=poisoned, burned=burned, confused=confused, petrified=petrified, healed=healed)
 
+    # Chain combat v2 (v2.15.0): weapons that opt into the polynomial path
+    # (`chain_exponent` set) run the chain UNCAPPED here -- it ends on a wrong
+    # answer, the timer, or the player pressing SPACE. This unlocks the
+    # C10/C15/C20 class-ladder specials in `_apply_chain_class_post_damage`
+    # (they used to be dead code because every common template's
+    # `chain_multipliers` array capped max_chain at 3-6). Uniques that keep
+    # the legacy per-rung array still cap at the array length as before.
+    if weapon and getattr(weapon, 'chain_exponent', None):
+        _max_chain = None  # polynomial path: uncapped, ends on wrong / timer / SPACE
+    else:
+        _max_chain = weapon.max_chain_length if weapon else len(_DEFAULT_MULTIPLIERS)
     # Jormungandr quirk: +1 max chain for repeatedly-equipped weapon
-    _max_chain = weapon.max_chain_length if weapon else len(_DEFAULT_MULTIPLIERS)
     if _max_chain and weapon:
         if getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id') == weapon.id:
             _max_chain += 1
-    # Chain-equip passive: attack_chain_cap_bonus (Ring of Gawain etc.)
+    # Chain-equip passive: attack_chain_cap_bonus (Ring of Gawain etc.).
+    # Skipped on the polynomial path -- the bonus would only raise a cap that
+    # isn't there.
     try:
         from chain_passives import get_attack_chain_cap_bonus
-        _max_chain += get_attack_chain_cap_bonus(player)
+        if _max_chain is not None:
+            _max_chain += get_attack_chain_cap_bonus(player)
     except ImportError:
         pass
 

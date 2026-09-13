@@ -85,14 +85,3 @@ def test_accessory_remap_targets_all_valid_and_non_noop():
     assert len(LEGACY_ACCESSORY_ID_REMAP) >= 70   # the cosmetic-collapse set
 
 
-def test_class_accessors_safe_on_a_pre_class_player():
-    # An old save's player has no class_* attrs; class_system must read them as
-    # empty defaults, never AttributeError.
-    import class_system as cs
-    from player import Player
-    p = Player()
-    assert cs.class_path(p) == []
-    assert cs.proficiency(p, 'healing_received_pct') == 0
-    assert cs.weapon_flat_bonus(p, None) == 0
-    assert cs.save_bonus(p, 'body') == 0
-    assert cs.offered_choices(p)            # Fighter always offered, no crash

@@ -1034,7 +1034,6 @@
    "temp_amount": 3,
    "temp_duration": 200,
    "permanent_power": "plus_2_str_confuse_immune",
-   "class_ascension": true,
    "permanent_desc": "The Minotaur's cunning is yours; you find the way and shake off confusion.",
    "desc": "Crown of the Labyrinth \u2014 the maze itself hums under your skin."
   },
@@ -1049,7 +1048,6 @@
    "temp_amount": 3,
    "temp_duration": 200,
    "permanent_power": "petrify_immunity",
-   "class_ascension": true,
    "permanent_desc": "Never again will stone claim you.",
    "desc": "Gorgon's Antitoxin \u2014 the mirror-drink; the gaze is now yours to answer, not to fear."
   },
@@ -1064,7 +1062,6 @@
    "temp_amount": 5,
    "temp_duration": 200,
    "permanent_power": "max_hp_per_floor_descent",
-   "class_ascension": true,
    "permanent_desc": "Each new floor you descend adds to your dragon-blooded frame.",
    "desc": "Heart of the Dragon \u2014 a slow, terrible warmth spreads out from the middle."
   },
@@ -1079,7 +1076,6 @@
    "temp_amount": 4,
    "temp_duration": 200,
    "permanent_power": "plus_3_str",
-   "class_ascension": true,
    "permanent_desc": "The wolf's strength is now your strength.",
    "desc": "Wolf-Bite Tonic \u2014 the ragged howl is answered in the marrow."
   },

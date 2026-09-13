@@ -14,7 +14,7 @@
       1.8,
       3.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -81,13 +81,13 @@
     "mathTier": 5,
     "baseDamage": 30,
     "chainMultipliers": [
-      0.6,
-      0.9,
-      1.2,
-      1.7,
+      0.5,
+      0.85,
+      1.0,
+      1.45,
       2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "fire",
@@ -159,13 +159,13 @@
     "mathTier": 5,
     "baseDamage": 26,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
+      0.5,
+      0.85,
+      1.0,
+      1.45,
       2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "pierce"
@@ -195,7 +195,7 @@
     "value": 4800,
     "min_level": 82,
     "unidentified_name": "a darkly gleaming spiked weapon",
-    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut \u2014 it corrupts.",
+    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut — it corrupts.",
     "quiz_tier": 5,
     "identified": false,
     "poisonChance": 0.6,
@@ -231,13 +231,13 @@
     "mathTier": 5,
     "baseDamage": 16,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.5,
-      2.0,
-      3.0,
-      5.0
+      1.45,
+      2.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -269,7 +269,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an ornate golden-hilted blade",
-    "lore": "The sword in the stone was not merely a test of strength but of worthiness \u2014 a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
+    "lore": "The sword in the stone was not merely a test of strength but of worthiness — a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
     "onEquipStatus": "life_save",
     "killHealAmount": 5,
     "damage_types": [
@@ -305,13 +305,13 @@
     "mathTier": 4,
     "baseDamage": 17,
     "chainMultipliers": [
-      0.7,
+      0.75,
+      0.9,
       1.0,
       1.3,
-      1.6,
-      2.0
+      1.75
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -378,16 +378,12 @@
     "baseDamage": 18,
     "chainMultipliers": [
       0.5,
+      0.85,
       1.0,
-      1.5,
-      2.2,
-      3.0,
-      4.0,
-      5.5,
-      7.0,
-      9.0
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -414,7 +410,7 @@
     "identified": false,
     "unidentified_name": "a shining foreign blade of pale steel",
     "ignore_resistances": true,
-    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment \u2014 nothing can resist it.",
+    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment — nothing can resist it.",
     "damage_types": [
       "slash",
       "pierce"
@@ -448,10 +444,12 @@
     "baseDamage": 4,
     "chainMultipliers": [
       0.5,
+      0.85,
       1.0,
-      1.5
+      1.45,
+      2.0
     ],
-    "maxChainLength": 3,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -476,7 +474,7 @@
     "quiz_tier": 1,
     "identified": false,
     "unidentified_name": "a broken sword hilt with a jagged blade",
-    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon \u2014 but something about it still hums with dormant power.",
+    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon — but something about it still hums with dormant power.",
     "damage_types": [
       "slash"
     ],
@@ -514,7 +512,7 @@
       1.7,
       2.0
     ],
-    "maxChainLength": 4,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt"
     ],
@@ -546,7 +544,7 @@
     "identified": false,
     "unidentified_name": "a sturdy iron shovel",
     "can_dig": true,
-    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below \u2014 sometimes the right tool is the humble one.",
+    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below — sometimes the right tool is the humble one.",
     "damage_types": [
       "blunt"
     ],
@@ -578,13 +576,13 @@
     "mathTier": 5,
     "baseDamage": 26,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      2.0
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic"
@@ -651,13 +649,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.7,
-      2.1,
-      2.5
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "magic",
@@ -727,13 +725,13 @@
     "mathTier": 4,
     "baseDamage": 17,
     "chainMultipliers": [
+      0.75,
       0.9,
-      1.1,
+      1.0,
       1.3,
-      1.6,
-      2.0
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -764,7 +762,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a massive greatsword of unearthly make",
-    "lore": "Fergus mac R\u00f3ich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken.",
+    "lore": "Fergus mac Róich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken.",
     "damage_types": [
       "slash"
     ],
@@ -785,7 +783,6 @@
     "max_enchant": 4,
     "weapon_class_chain": "heavy",
     "design_notes": "Brute/crushing archetype: a sweep that takes the tops off hills carries weight from the first arc.",
-    "class_mechanic": "cleave_at_max",
     "chain_exponent": 1.15
   },
   "joyeuse": {
@@ -797,13 +794,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.6,
-      2.4
+      1.45,
+      2.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -870,13 +867,13 @@
     "mathTier": 3,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.6,
-      2.2
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -944,13 +941,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.8,
-      1.2,
-      0.9,
-      1.4,
-      2.3
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -981,7 +978,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a cold grey blade with a dim inner glow",
-    "lore": "Taken from King Hr\u00f3lf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone.",
+    "lore": "Taken from King Hrólf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone.",
     "damage_types": [
       "slash"
     ],
@@ -1017,13 +1014,13 @@
     "mathTier": 5,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.75,
+      0.9,
       1.0,
       1.3,
-      1.7,
-      2.1,
-      2.5
+      1.75
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "holy"
@@ -1087,7 +1084,7 @@
     "chain_exponent": 1.15
   },
   "gae_bulg": {
-    "name": "G\u00e1e Bulg",
+    "name": "Gáe Bulg",
     "class": "spear",
     "variant": "1h",
     "tier": 4,
@@ -1095,13 +1092,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.75,
+      0.9,
       1.0,
       1.3,
-      1.6,
-      2.0,
-      2.5
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -1132,7 +1129,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a barbed spear of sea-monster bone",
-    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs \u2014 it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after.",
+    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs — it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after.",
     "damage_types": [
       "pierce"
     ],
@@ -1164,13 +1161,13 @@
     "mathTier": 5,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.6,
+      0.75,
       0.9,
-      1.2,
-      1.7,
-      2.4
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "holy"
@@ -1241,13 +1238,13 @@
     "mathTier": 5,
     "baseDamage": 32,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.2,
-      1.5,
-      1.8,
+      1.45,
       2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "lightning",
@@ -1324,13 +1321,13 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.6,
-      2.3
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "magic"
@@ -1363,7 +1360,7 @@
     "identified": false,
     "unidentified_name": "a golden mace that hums faintly",
     "confuseChance": 0.25,
-    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak \u2014 it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless.",
+    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak — it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless.",
     "damage_types": [
       "blunt",
       "magic"
@@ -1398,13 +1395,13 @@
     "mathTier": 5,
     "baseDamage": 24,
     "chainMultipliers": [
-      0.6,
+      0.5,
+      0.85,
       1.0,
-      1.5,
-      2.5,
-      4.0
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "magic"
@@ -1436,7 +1433,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a massive iron pillar banded with gold",
-    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched \u2014 enemies three paces away are within striking distance.",
+    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched — enemies three paces away are within striking distance.",
     "damage_types": [
       "blunt",
       "magic"
@@ -1474,13 +1471,13 @@
     "mathTier": 4,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.9,
-      1.1,
-      1.4,
-      1.8,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "holy"
@@ -1550,12 +1547,12 @@
     "baseDamage": 10,
     "chainMultipliers": [
       0.5,
-      0.7,
-      0.9,
-      1.1,
-      2.2
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -1621,13 +1618,13 @@
     "mathTier": 5,
     "baseDamage": 16,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.6,
-      2.4
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic",
@@ -1696,13 +1693,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.7,
-      2.1,
-      2.5
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -1775,13 +1772,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.2,
+      0.55,
       1.0,
-      1.6,
-      3.2
+      1.8,
+      3.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -1852,13 +1849,13 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
+      0.75,
       0.9,
-      1.1,
-      1.4,
-      1.8,
-      2.4
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "cold",
@@ -1926,13 +1923,13 @@
     "mathTier": 2,
     "baseDamage": 5,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.2,
+      0.55,
       1.0,
-      1.6,
-      3.2
+      1.8,
+      3.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "magic"
@@ -2000,13 +1997,13 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic"
@@ -2038,7 +2035,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade that seems to cut shadows as well as flesh",
-    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against \u2014 his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow.",
+    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against — his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow.",
     "damage_types": [
       "slash",
       "magic"
@@ -2074,13 +2071,13 @@
     "mathTier": 3,
     "baseDamage": 15,
     "chainMultipliers": [
+      0.75,
+      0.9,
       1.0,
-      1.2,
-      1.4,
-      1.6,
-      1.8
+      1.3,
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -2112,7 +2109,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a broad two-handed blade with a blunt squared tip",
-    "lore": "The Sword of Mercy \u2014 its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade.",
+    "lore": "The Sword of Mercy — its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade.",
     "damage_types": [
       "slash",
       "holy"
@@ -2148,13 +2145,13 @@
     "mathTier": 4,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.9,
-      1.1,
-      1.3,
-      1.6,
+      0.5,
+      0.85,
+      1.0,
+      1.45,
       2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -2207,7 +2204,6 @@
     "is_unique": true,
     "max_enchant": 5,
     "weapon_class_chain": "normal",
-    "class_mechanic": "cleave_at_max",
     "design_notes": "Brute/crushing archetype: ten thousand years of penance forged into one axe, heavy from the first arc.",
     "chain_no_reset_on_tag": [
       "humanoid"
@@ -2223,13 +2219,13 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.6,
-      1.8
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -2260,7 +2256,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a symmetrical double-bladed ceremonial axe",
-    "lore": "The double-headed axe of Minoan Crete \u2014 labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there.",
+    "lore": "The double-headed axe of Minoan Crete — labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there.",
     "damage_types": [
       "slash"
     ],
@@ -2282,9 +2278,7 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=24, base=6 (= curve.weapon_base_damage(24) x 1.65), min_level=16, quiz_tier=2.",
     "design_notes": "Ancient/stately archetype: the priestess's bronze, ritual rhythm building toward the killing blow.",
-    "chain_exponent": 1.15,
-    "class_mechanic": "cleave_at_max",
-    "class_mechanic_desc": "Double-headed axe cleaves an adjacent foe at max chain."
+    "chain_exponent": 1.15
   },
   "chandrahas": {
     "name": "Chandrahas",
@@ -2293,15 +2287,15 @@
     "tier": 4,
     "material": "adamantine",
     "mathTier": 4,
-    "baseDamage": 32,
+    "baseDamage": 14,
     "chainMultipliers": [
       0.2,
-      0.4,
-      0.8,
-      1.4,
-      3.2
+      0.55,
+      1.0,
+      1.8,
+      3.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "cold",
@@ -2370,13 +2364,13 @@
     "mathTier": 5,
     "baseDamage": 26,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "magic",
       "fire",
@@ -2450,13 +2444,13 @@
     "mathTier": 2,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.3,
-      0.9,
-      1.4,
-      0.6,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "magic"
@@ -2523,13 +2517,13 @@
     "mathTier": 5,
     "baseDamage": 19,
     "chainMultipliers": [
-      0.6,
-      0.9,
-      1.2,
-      1.7,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "holy",
@@ -2598,13 +2592,13 @@
     "mathTier": 5,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.7,
+      0.75,
+      0.9,
       1.0,
       1.3,
-      1.6,
-      2.4
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "magic"
@@ -2670,13 +2664,13 @@
     "mathTier": 5,
     "baseDamage": 14,
     "chainMultipliers": [
+      0.2,
+      0.55,
       1.0,
-      1.3,
-      1.7,
-      2.2,
-      3.4
+      1.8,
+      3.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "fire",
@@ -2746,13 +2740,13 @@
     "mathTier": 3,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.5,
-      0.7,
-      0.9,
-      1.1,
-      2.8
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "magic"
@@ -2784,7 +2778,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a short blade from the dwarf-hoard",
-    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade \u2014 a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical.",
+    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade — a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical.",
     "damage_types": [
       "pierce",
       "magic"
@@ -2819,13 +2813,13 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.3,
-      0.9,
-      1.4,
-      0.6,
-      2.3
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic"
@@ -2892,13 +2886,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.7,
+      0.2,
+      0.55,
       1.0,
-      1.4,
-      2.0,
-      3.2
+      1.8,
+      3.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic",
@@ -2974,13 +2968,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.7,
-      2.1,
-      2.4
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -3012,7 +3006,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a golden-bladed sword of divine origin",
-    "lore": "Chrysaor \u2014 the Golden Sword \u2014 sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out.",
+    "lore": "Chrysaor — the Golden Sword — sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out.",
     "damage_types": [
       "slash",
       "holy"
@@ -3046,13 +3040,13 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.7,
-      2.1,
-      2.4
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -3083,7 +3077,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a plain but perfectly balanced blade",
-    "lore": "Some scholars distinguish Caliburn \u2014 the sword in the stone \u2014 from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
+    "lore": "Some scholars distinguish Caliburn — the sword in the stone — from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
     "growingPower": true,
     "killsToGrow": 10,
     "damage_types": [
@@ -3118,13 +3112,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.6,
-      0.9,
-      1.2,
-      1.7,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "fire"
@@ -3191,12 +3185,12 @@
     "baseDamage": 5,
     "chainMultipliers": [
       0.2,
-      0.4,
-      0.8,
-      1.4,
-      3.2
+      0.55,
+      1.0,
+      1.8,
+      3.0
     ],
-    "maxChainLength": 10,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "magic"
@@ -3251,7 +3245,6 @@
     "weapon_class_chain": "finesse",
     "_curve_note": "Redistributed: peak=38, base=9 (= curve.weapon_base_damage(38) x 1.55), min_level=30, quiz_tier=2.",
     "design_notes": "Cursed-blade archetype: the silent companion bides its time, patient until the moment of betrayal.",
-    "equipped_sound_radius_modifier": -0.5,
     "chain_exponent": 1.15
   },
   "naegling": {
@@ -3263,13 +3256,13 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.9,
-      1.1,
-      1.3,
-      1.6,
-      1.9
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "blunt"
@@ -3301,7 +3294,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a heavy single-bladed axe with an age-worn grip",
-    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him \u2014 his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men.",
+    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him — his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men.",
     "damage_types": [
       "slash",
       "blunt"
@@ -3334,11 +3327,15 @@
     "tier": 5,
     "material": "dad",
     "mathTier": 1,
-    "baseDamage": 9999,
+    "baseDamage": 35,
     "chainMultipliers": [
-      1.0
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
     ],
-    "maxChainLength": 1,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "physical"
@@ -3362,7 +3359,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "Punch in the Face",
-    "lore": "This is Dad\u2019s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
+    "lore": "This is Dad’s fist. It is legendary. It has never missed. It has never needed to miss twice. Scientists have attempted to measure the force behind it and their instruments simply stopped working out of respect.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt",
@@ -3397,15 +3394,12 @@
     "baseDamage": 12,
     "chainMultipliers": [
       0.5,
+      0.85,
       1.0,
-      1.8,
-      2.8,
-      4.0,
-      5.5,
-      7.5,
-      10.0
+      1.45,
+      2.0
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "cold"
@@ -3464,15 +3458,13 @@
     "mathTier": 5,
     "baseDamage": 12,
     "chainMultipliers": [
-      0.5,
+      0.2,
+      0.55,
       1.0,
-      2.0,
-      3.0,
-      4.5,
-      6.5,
-      9.0
+      1.8,
+      3.0
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 5,
     "damageTypes": [
       "cold",
       "pierce"
@@ -3531,16 +3523,13 @@
     "mathTier": 3,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.3,
-      0.5,
-      0.8,
-      1.3,
-      2.2,
-      3.5,
-      5.0,
-      6.5
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "poison"
@@ -3609,15 +3598,13 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.6,
-      1.1,
-      1.6,
-      2.2,
-      2.9,
-      3.7,
-      4.5
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "fire"
@@ -3676,11 +3663,11 @@
     "mathTier": 1,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.5,
-      1.2,
-      2.0,
-      3.0,
-      4.5
+      0.2,
+      0.55,
+      1.0,
+      1.8,
+      3.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -3710,7 +3697,7 @@
     "value": 300,
     "min_level": 5,
     "unidentified_name": "a worn leather strap with a pouch",
-    "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated \u2014 it asks only for courage and accuracy. Against the mighty, it is devastating.",
+    "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated — it asks only for courage and accuracy. Against the mighty, it is devastating.",
     "quiz_tier": 1,
     "requiresAmmo": "stone",
     "infiniteAmmo": true,
@@ -3747,10 +3734,10 @@
     "baseDamage": 12,
     "chainMultipliers": [
       0.5,
+      0.85,
       1.0,
-      1.7,
-      2.5,
-      3.5
+      1.45,
+      2.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -3783,7 +3770,7 @@
     "value": 500,
     "min_level": 8,
     "unidentified_name": "a smoldering hollow fennel stalk",
-    "lore": "Hesiod's Theogony says Prometheus stole fire in a hollow fennel stalk \u2014 a narthex, the dry pithy stem that smolders slowly inside without burning through. He carried Zeus's ember down to mortals that way. Zeus chained him to the Caucasus and sent an eagle for his liver every day. The stalk in your hand still smokes at the core. It has not gone out for three thousand years.",
+    "lore": "Hesiod's Theogony says Prometheus stole fire in a hollow fennel stalk — a narthex, the dry pithy stem that smolders slowly inside without burning through. He carried Zeus's ember down to mortals that way. Zeus chained him to the Caucasus and sent an eagle for his liver every day. The stalk in your hand still smokes at the core. It has not gone out for three thousand years.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt",
@@ -3820,15 +3807,15 @@
     "tier": 2,
     "material": "gold",
     "mathTier": 2,
-    "baseDamage": 11,
+    "baseDamage": 8,
     "chainMultipliers": [
-      0.3,
-      0.9,
-      1.4,
-      0.6,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "pierce"
@@ -3898,12 +3885,12 @@
     "baseDamage": 10,
     "chainMultipliers": [
       0.5,
-      0.7,
-      0.9,
-      1.1,
-      2.3
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -3932,7 +3919,7 @@
     "value": 1800,
     "min_level": 14,
     "unidentified_name": "a weathered yew longbow wrapped in green cloth",
-    "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows \u2014 enemies that cannot see you cannot hear its string.",
+    "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows — enemies that cannot see you cannot hear its string.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"
@@ -3965,16 +3952,16 @@
     "variant": "2h",
     "tier": 1,
     "material": "bronze",
-    "mathTier": 2,
+    "mathTier": 1,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.7,
+      0.75,
+      0.9,
       1.0,
       1.3,
-      1.6,
-      2.3
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -4004,7 +3991,7 @@
     "value": 3500,
     "min_level": 1,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
-    "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed \u2014 rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
+    "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed — rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
     "quiz_tier": 1,
     "damage_types": [
       "pierce"
@@ -4039,13 +4026,13 @@
     "mathTier": 3,
     "baseDamage": 19,
     "chainMultipliers": [
-      0.8,
-      1.2,
-      0.9,
-      1.4,
-      1.9
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -4074,7 +4061,7 @@
     "value": 4500,
     "min_level": 35,
     "unidentified_name": "a heavy bronze axe with cuneiform inscriptions",
-    "lore": "Enkidu dreamed of an axe that fell from the sky \u2014 Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond \u2014 it strikes harder after its wielder has been wounded.",
+    "lore": "Enkidu dreamed of an axe that fell from the sky — Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond — it strikes harder after its wielder has been wounded.",
     "quiz_tier": 3,
     "damage_types": [
       "slash"
@@ -4112,13 +4099,13 @@
     "mathTier": 3,
     "baseDamage": 15,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      1.9
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic"
@@ -4148,7 +4135,7 @@
     "value": 5500,
     "min_level": 38,
     "unidentified_name": "a curved blade that distorts the air around it",
-    "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself \u2014 from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
+    "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself — from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
     "quiz_tier": 3,
     "damage_types": [
       "slash",
@@ -4185,13 +4172,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
+      0.75,
       0.9,
-      1.1,
-      1.4,
-      1.8,
-      2.4
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "fire",
@@ -4261,13 +4248,13 @@
     "mathTier": 4,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      2.4
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 8,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -4296,7 +4283,7 @@
     "value": 8500,
     "min_level": 52,
     "unidentified_name": "a crimson-stained spear that weeps red",
-    "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered \u2014 Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
+    "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered — Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
     "quiz_tier": 4,
     "damage_types": [
       "pierce"
@@ -4332,13 +4319,13 @@
     "mathTier": 3,
     "baseDamage": 6,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.75,
+      0.9,
       1.0,
-      1.6,
-      2.0
+      1.3,
+      1.75
     ],
-    "maxChainLength": 4,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt"
     ],
@@ -4366,7 +4353,7 @@
     "value": 4000,
     "min_level": 30,
     "unidentified_name": "a tightly woven metallic mesh",
-    "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage \u2014 but nothing escapes it.",
+    "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage — but nothing escapes it.",
     "quiz_tier": 3,
     "damage_types": [
       "blunt"
@@ -4437,7 +4424,7 @@
     "ignore_resistances": true,
     "abaddon_bonus_damage": "5d10",
     "holy_smite_message": true,
-    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous \u2014 earned not by strength but by the quality of one's soul.",
+    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous — earned not by strength but by the quality of one's soul.",
     "damage_types": [
       "holy",
       "slash"
@@ -4482,7 +4469,7 @@
       1.45,
       2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -4511,7 +4498,7 @@
     "min_level": 30,
     "quiz_tier": 3,
     "unidentified_name": "well-kept longsword",
-    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp \u2014 someone maintained it with love.",
+    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp — someone maintained it with love.",
     "damage_types": [
       "slash"
     ],
@@ -4551,7 +4538,7 @@
       1.45,
       2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -4582,7 +4569,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a dark iron dagger stained with old blood",
-    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood \u2014 wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
+    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
     "damage_types": [
       "pierce"
     ],
@@ -4615,13 +4602,13 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.5,
+      0.75,
       0.9,
-      1.2,
-      1.8,
-      3.5
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 4,
+    "maxChainLength": 5,
     "damageTypes": [
       "physical",
       "pierce"
@@ -4676,11 +4663,11 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.7,
-      1.2,
-      2.0,
-      3.0,
-      4.0
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -4733,11 +4720,11 @@
     "mathTier": 1,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.5,
+      0.75,
+      0.9,
       1.0,
-      1.8,
-      2.8,
-      4.0
+      1.3,
+      1.75
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -4766,7 +4753,7 @@
     "value": 250,
     "min_level": 4,
     "unidentified_name": "a bronze-tipped spear with wolf-hide grip",
-    "lore": "When Romulus hurled his spear from the Aventine Hill into the Palatine, it struck the earth and took root, growing into a great tree. The spear that founded Rome carries the will of a man who built a civilization from nothing \u2014 from fratricide to empire. It strikes from further than any common weapon.",
+    "lore": "When Romulus hurled his spear from the Aventine Hill into the Palatine, it struck the earth and took root, growing into a great tree. The spear that founded Rome carries the will of a man who built a civilization from nothing — from fratricide to empire. It strikes from further than any common weapon.",
     "quiz_tier": 1,
     "damage_types": [
       "pierce"
@@ -4803,13 +4790,13 @@
     "mathTier": 1,
     "baseDamage": 12,
     "chainMultipliers": [
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.6,
-      1.9,
-      2.3
+      1.45,
+      2.0
     ],
-    "maxChainLength": 4,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt"
     ],
@@ -4834,7 +4821,7 @@
     "value": 200,
     "min_level": 3,
     "unidentified_name": "a gold-leafed shepherd's crook",
-    "lore": "The crook and flail were the symbols of pharaonic authority in ancient Egypt \u2014 the crook representing the shepherd's duty to guide and protect, the flail representing the power to punish. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
+    "lore": "The crook and flail were the symbols of pharaonic authority in ancient Egypt — the crook representing the shepherd's duty to guide and protect, the flail representing the power to punish. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt"
@@ -4871,16 +4858,16 @@
     "mathTier": 2,
     "baseDamage": 10,
     "chainMultipliers": [
-      0.8,
+      0.5,
+      0.85,
       1.0,
-      1.2,
-      1.6,
-      2.5
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
-      "shock"
+      "lightning"
     ],
     "symbol": ")",
     "color": [
@@ -4903,7 +4890,7 @@
     "value": 500,
     "min_level": 10,
     "unidentified_name": "a heavy iron fragment crackling with static",
-    "lore": "A jagged fragment of Thor's legendary hammer, Mjolnir \u2014 the weapon forged by the dwarves Sindri and Brokkr in Asgard. Though only a shard, it still carries the storm. Lightning arcs between its fractures, and each blow echoes with distant thunder. To wield even a piece of Mjolnir is to hold a fraction of the storm god's wrath.",
+    "lore": "A jagged fragment of Thor's legendary hammer, Mjolnir — the weapon forged by the dwarves Sindri and Brokkr in Asgard. Though only a shard, it still carries the storm. Lightning arcs between its fractures, and each blow echoes with distant thunder. To wield even a piece of Mjolnir is to hold a fraction of the storm god's wrath.",
     "quiz_tier": 2,
     "damage_types": [
       "blunt",
@@ -4941,10 +4928,10 @@
     "baseDamage": 10,
     "chainMultipliers": [
       0.5,
+      0.85,
       1.0,
-      1.8,
-      2.8,
-      4.0
+      1.45,
+      2.0
     ],
     "maxChainLength": 5,
     "damageTypes": [
@@ -4972,7 +4959,7 @@
     "value": 600,
     "min_level": 12,
     "unidentified_name": "a recurved bow radiating faint heat",
-    "lore": "The great bow of Lord Rama, hero of the Ramayana \u2014 the divine prince who bent the bow of Shiva to win Sita's hand. His arrows, guided by dharma, struck down the demon king Ravana and his armies. This bow carries that sacred fire. Arrows loosed from it burn with righteous flame, and no act of evil can stand before it.",
+    "lore": "The great bow of Lord Rama, hero of the Ramayana — the divine prince who bent the bow of Shiva to win Sita's hand. His arrows, guided by dharma, struck down the demon king Ravana and his armies. This bow carries that sacred fire. Arrows loosed from it burn with righteous flame, and no act of evil can stand before it.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce",
@@ -5010,13 +4997,13 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      2.3
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce"
     ],
@@ -5042,7 +5029,7 @@
     "value": 800,
     "min_level": 20,
     "unidentified_name": "a barbed bone spearhead bound to a shaft",
-    "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn, greatest hero of Irish mythology. The original weapon was made from the bone of a sea monster and, once it pierced flesh, its barbs opened inside the wound, making it impossible to remove without killing the victim. Even this fragment carries that terrible legacy \u2014 its strikes rend deep, and its critical blows are devastating.",
+    "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn, greatest hero of Irish mythology. The original weapon was made from the bone of a sea monster and, once it pierced flesh, its barbs opened inside the wound, making it impossible to remove without killing the victim. Even this fragment carries that terrible legacy — its strikes rend deep, and its critical blows are devastating.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"
@@ -5077,13 +5064,13 @@
     "mathTier": 2,
     "baseDamage": 13,
     "chainMultipliers": [
-      0.6,
-      0.9,
-      1.2,
-      1.7,
-      2.3
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "blunt",
       "holy"
@@ -5109,7 +5096,7 @@
     "value": 900,
     "min_level": 25,
     "unidentified_name": "a weathered staff of ancient wood",
-    "lore": "The staff that Moses raised to part the Red Sea, that struck the rock at Horeb to bring forth water, that became a serpent before Pharaoh. It was a simple shepherd's staff before God chose it \u2014 and that is the lesson. It is not the weapon that matters, but the hand that wields it and the faith behind it. Against the unholy, it strikes with divine authority.",
+    "lore": "The staff that Moses raised to part the Red Sea, that struck the rock at Horeb to bring forth water, that became a serpent before Pharaoh. It was a simple shepherd's staff before God chose it — and that is the lesson. It is not the weapon that matters, but the hand that wields it and the faith behind it. Against the unholy, it strikes with divine authority.",
     "quiz_tier": 2,
     "damage_types": [
       "blunt",
@@ -5156,14 +5143,13 @@
     "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
-      0.6,
+      0.5,
+      0.85,
       1.0,
-      1.6,
-      2.4,
-      3.2,
-      4.2
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "holy"
@@ -5191,7 +5177,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "a blade of polished silver etched with runes",
-    "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night \u2014 wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
+    "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night — wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
     "quiz_tier": 2,
     "damage_types": [
       "slash",
@@ -5225,13 +5211,13 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.4,
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.6,
-      2.8
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -5258,7 +5244,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
-    "lore": "Zireael \u2014 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative \u2014 it is a promise. She will return. She always returns.",
+    "lore": "Zireael — 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative — it is a promise. She will return. She always returns.",
     "quiz_tier": 3,
     "damage_types": [
       "slash"
@@ -5293,13 +5279,13 @@
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [
-      0.6,
+      0.75,
       0.9,
-      1.2,
-      1.7,
-      2.4
+      1.0,
+      1.3,
+      1.75
     ],
-    "maxChainLength": 7,
+    "maxChainLength": 5,
     "damageTypes": [
       "pierce",
       "fire",
@@ -5337,7 +5323,7 @@
       "effect_chance": 0.3,
       "effect_duration": 5
     },
-    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two \u2014 one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields.",
+    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two — one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields.",
     "damage_types": [
       "pierce",
       "fire",
@@ -5381,12 +5367,12 @@
     "baseDamage": 9,
     "chainMultipliers": [
       0.2,
-      0.4,
-      0.8,
-      1.4,
+      0.55,
+      1.0,
+      1.8,
       3.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -5420,7 +5406,7 @@
     "kill_heal_amount": 3,
     "kill_max_hp_bonus": 1,
     "kill_max_hp_cap": 10,
-    "lore": "Anubis weighed the heart of every Egyptian dead against the feather of Ma'at, truth itself. If the heart was heavier, the demon Ammit ate it on the spot. The priests of Anubis carried khopeshes of black iron during the embalming rites \u2014 not for use on the living, but for the symbolic severing of what could not be allowed into the next world. This is one of them. The blade still measures, and what it judges, it keeps.",
+    "lore": "Anubis weighed the heart of every Egyptian dead against the feather of Ma'at, truth itself. If the heart was heavier, the demon Ammit ate it on the spot. The priests of Anubis carried khopeshes of black iron during the embalming rites — not for use on the living, but for the symbolic severing of what could not be allowed into the next world. This is one of them. The blade still measures, and what it judges, it keeps.",
     "damage_types": [
       "slash"
     ],
@@ -5452,13 +5438,13 @@
     "mathTier": 5,
     "baseDamage": 18,
     "chainMultipliers": [
-      0.2,
-      0.4,
-      0.8,
-      1.4,
-      2.4
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 9,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash",
       "magic"
@@ -5491,7 +5477,7 @@
     "identified": false,
     "unidentified_name": "a crescent-shaped blade that glows faintly",
     "low_hp_damage_bonus": true,
-    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut \u2014 a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen.",
+    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut — a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen.",
     "damage_types": [
       "slash",
       "magic"
@@ -5525,13 +5511,13 @@
     "mathTier": 3,
     "baseDamage": 11,
     "chainMultipliers": [
-      0.8,
-      1.2,
-      0.9,
-      1.4,
-      1.9
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
     ],
-    "maxChainLength": 6,
+    "maxChainLength": 5,
     "damageTypes": [
       "slash"
     ],
@@ -5563,7 +5549,7 @@
     "identified": false,
     "unidentified_name": "a green-hafted axe with living vines",
     "on_hit_regen": 3,
-    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close \u2014 slowly, but surely.",
+    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close — slowly, but surely.",
     "damage_types": [
       "slash"
     ],
@@ -5599,11 +5585,11 @@
     "baseDamage": 16,
     "base_damage": 16,
     "chainMultipliers": [
-      0.8,
-      1.1,
-      1.4,
-      1.8,
-      2.4
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
     ],
     "chain_multipliers": [
       0.75,
@@ -5756,11 +5742,11 @@
     "baseDamage": 16,
     "base_damage": 16,
     "chainMultipliers": [
-      0.7,
+      0.5,
+      0.85,
       1.0,
-      1.3,
-      1.8,
-      2.5
+      1.45,
+      2.0
     ],
     "chain_multipliers": [
       0.5,
@@ -5834,7 +5820,7 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "longbow",
-    "baseDamage": 10,
+    "baseDamage": 7,
     "base_damage": 7,
     "chainMultipliers": [
       0.2,
@@ -6068,11 +6054,11 @@
     "baseDamage": 19,
     "base_damage": 19,
     "chainMultipliers": [
-      0.7,
+      0.75,
+      0.9,
       1.0,
       1.3,
-      1.8,
-      2.5
+      1.75
     ],
     "chain_multipliers": [
       0.75,
@@ -6220,11 +6206,11 @@
     "baseDamage": 11,
     "base_damage": 11,
     "chainMultipliers": [
+      0.75,
+      0.9,
       1.0,
-      1.0,
-      1.5,
-      2.5,
-      4.0
+      1.3,
+      1.75
     ],
     "chain_multipliers": [
       0.75,
@@ -6368,7 +6354,7 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "glaive",
-    "baseDamage": 23,
+    "baseDamage": 8,
     "base_damage": 8,
     "chainMultipliers": [
       0.75,
@@ -6521,11 +6507,11 @@
     "baseDamage": 24,
     "base_damage": 24,
     "chainMultipliers": [
-      0.5,
-      0.85,
-      1.2,
-      1.7,
-      2.4
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
     ],
     "chain_multipliers": [
       0.75,
@@ -6645,7 +6631,6 @@
     "unidentified_name": "a scimitar",
     "identified": false,
     "bleed_chance": 0.3,
-    "ignore_armor": 1,
     "lore": "A curved bronze blade said to be ground from one of the molten drops shed when Medea pulled the brass pin from Talos's ankle. The Cretan giant bled his ichor into the sea before he fell. Whatever cooled there still cuts.",
     "_curve_note": "base_damage = curve.weapon_base_damage(25) x 1.5 unique-mult. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
     "stunChance": 0.0,
@@ -6804,11 +6789,10 @@
     "max_enchant": 3,
     "unidentified_name": "a crude root-end cudgel stained at the head",
     "identified": false,
-    "lore": "The Bible does not say what Cain used. Talmudic and Quranic commentary settles on a rough club \u2014 the first murder weapon, made of nothing in particular. The mark on Cain protected him from retaliation but not from memory. The wood is the wrong colour at one end and no one has been able to wash it clean.",
+    "lore": "The Bible does not say what Cain used. Talmudic and Quranic commentary settles on a rough club — the first murder weapon, made of nothing in particular. The mark on Cain protected him from retaliation but not from memory. The wood is the wrong colour at one end and no one has been able to wash it clean.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "cursedMissBacklash": 1,
-    "equipped_monster_aggro_radius": 2,
     "chain_exponent": 1.15
   },
   "wepwawet_mace": {
@@ -6878,7 +6862,7 @@
     "max_enchant": 3,
     "unidentified_name": "a slender ceremonial mace topped with a jackal",
     "identified": false,
-    "lore": "Wepwawet \u2014 'Opener of the Ways' \u2014 was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
+    "lore": "Wepwawet — 'Opener of the Ways' — was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "can_dig": true,
@@ -6951,7 +6935,7 @@
     "max_enchant": 3,
     "unidentified_name": "a worn ash hurling stick with a stone-hard heel",
     "identified": false,
-    "lore": "Before he was Cu Chulainn \u2014 Culann's Hound \u2014 he was Setanta, the boy who killed Culann's guard dog by driving a hurling ball down its throat with this stick. He volunteered to replace the dog. The name stuck. The hurley is ash and the heel is dense as river stone.",
+    "lore": "Before he was Cu Chulainn — Culann's Hound — he was Setanta, the boy who killed Culann's guard dog by driving a hurling ball down its throat with this stick. He volunteered to replace the dog. The name stuck. The hurley is ash and the heel is dense as river stone.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "effective_against": [
@@ -7026,7 +7010,7 @@
     "max_enchant": 3,
     "unidentified_name": "a small carved axe-scepter inlaid with cowrie shells",
     "identified": false,
-    "lore": "The Mwindo Epic \u2014 collected from the Banyanga of the eastern Congo in the 1950s \u2014 gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
+    "lore": "The Mwindo Epic — collected from the Banyanga of the eastern Congo in the 1950s — gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
     "template_basis": "handaxe",
     "_curve_note": "Pass 4: bumped base damage to 5 to match band effective ratio (~2.0x of curve at low floor scales).",
     "kill_heal_amount": 2,

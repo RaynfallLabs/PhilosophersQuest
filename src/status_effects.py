@@ -55,12 +55,16 @@ EFFECT_INFO: dict[str, tuple] = {
     'parry_armed':        ('Parry Armed',        (200, 210, 180), 'Quarterstaff defensive stance: +2 AC for 2 turns'),
     # ---- Chain combat v2 (v2.14.0): weapon chain-special statuses ----
     'armor_crack':        ('Armor Cracked',      (220, 180,  60), 'Target takes +25% damage from all sources'),
-    'sundered':           ('Sundered',           (200, 120,  80), 'Broken limb: outgoing damage halved'),
+    # v2.15.0 doc fix: sundered code path is × 0.70 (-30%), not "halved".
+    'sundered':           ('Sundered',           (200, 120,  80), 'Broken limb: outgoing damage reduced 30%'),
     'deep_wound':         ('Deep Wound',         (180,  60,  80), '+25% damage taken AND cannot regenerate'),
     'ruptured':           ('Ruptured',           (140,  30,  60), 'Losing 10% max HP per turn; cannot be healed'),
     'impaled':            ('Impaled',            (150, 100,  60), 'Pinned in place; cannot move (can still attack)'),
     'blade_flow':         ('Blade Flow',         (255, 240, 150), 'Next N attacks bypass damage reduction'),
-    'melee_dmg_reduction':('Guarded Stance',     (180, 200, 220), 'Incoming melee damage reduced'),
+    'melee_dmg_reduction':('Guarded Stance',     (180, 200, 220), 'Incoming melee damage reduced 30%'),
+    # v2.15.0: register `reloading` so the status HUD stops rendering
+    # "Reloading: N turns" via the raw fallback path. Crossbow-only.
+    'reloading':          ('Reloading',          (200, 180, 130), 'Cranking the crossbow — cannot fire this turn'),
     'see_invisible':      ('See Invisible',      (200, 200, 255), 'You can perceive invisible creatures'),
     # ---- Hero special buffs (Phase 3B) ----
     'stand_ac':           ('Spartan Stand',      (255, 215, 80),  '+AC and counter-strike chance'),
@@ -125,6 +129,9 @@ DEBUFFS: frozenset = frozenset({
     'heal_blocked',
     # Chain combat v2 (v2.14.0): weapon chain-special monster debuffs
     'armor_crack', 'sundered', 'deep_wound', 'ruptured', 'impaled',
+    # v2.15.0: crossbow reload cooldown — player-side, not a debuff-buff really
+    # but sits in the status_effects dict so tick_all decrements it.
+    'reloading',
 })
 
 BUFFS: frozenset = frozenset({

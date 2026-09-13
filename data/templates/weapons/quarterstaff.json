@@ -15,6 +15,7 @@
     2.0
   ],
   "max_chain_length": 5,
+  "chain_exponent": 1.15,
   "damage_modifier": 0.85,
   "base_weight_lb": 4.0,
   "speed": 10,
