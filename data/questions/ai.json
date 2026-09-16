@@ -625,13 +625,13 @@
   },
   {
     "tier": 1,
-    "question": "AI as a research field got its name at a summer workshop at which college?",
-    "answer": "Dartmouth",
+    "question": "A small 1956 summer workshop of researchers at Dartmouth College brought a brand-new field of research into being. What did they choose to call it?",
+    "answer": "Artificial intelligence",
     "choices": [
-      "Dartmouth",
-      "Harvard",
-      "Yale",
-      "Stanford"
+      "Artificial intelligence",
+      "Machine thinking",
+      "Cybernetics",
+      "Computer science"
     ],
     "context": "The 1956 Dartmouth Summer Research Project on Artificial Intelligence was held at Dartmouth College in Hanover, New Hampshire. John McCarthy organized it. Marvin Minsky, Claude Shannon, and Nathaniel Rochester were among the attendees. They thought one summer would make significant progress on machine intelligence; it took decades."
   },
@@ -649,25 +649,25 @@
   },
   {
     "tier": 1,
-    "question": "DeepMind's AlphaFold predicted the 3D structure of huge numbers of which biological molecules?",
+    "question": "DeepMind's AlphaFold cracked a 50-year biology puzzle: predicting how long chains of amino acids fold into their 3D shape. What are those amino-acid chains called?",
     "answer": "Proteins",
     "choices": [
       "Proteins",
-      "Lipids",
-      "Carbohydrates",
-      "Nucleic acids"
+      "Fats",
+      "Sugars",
+      "Vitamins"
     ],
     "context": "AlphaFold, built by DeepMind, predicts the 3D structure of proteins from their amino-acid sequences. It mapped roughly 200 million proteins — essentially every known protein in nature. Knowing a protein's shape is critical for drug design. The 2024 Nobel Prize in Chemistry honored this work."
   },
   {
     "tier": 1,
-    "question": "Demis Hassabis is the co-founder of DeepMind, the AI lab behind AlphaGo and AlphaFold. He shared the 2024 Nobel Prize in which subject?",
+    "question": "Demis Hassabis co-founded DeepMind, the AI lab whose AlphaFold system predicted the 3D shape of proteins — a chemistry problem. For that work he shared a 2024 Nobel Prize in which field?",
     "answer": "Chemistry",
     "choices": [
       "Chemistry",
-      "Literature",
-      "Peace",
-      "Economics"
+      "Physics",
+      "Medicine",
+      "Peace"
     ],
     "context": "Demis Hassabis shared the 2024 Nobel Prize in Chemistry with John Jumper (also DeepMind) and David Baker (University of Washington) for AlphaFold's protein-structure prediction work. Hassabis is a former chess prodigy who founded DeepMind in London in 2010; Google bought it in 2014."
   },
@@ -769,13 +769,13 @@
   },
   {
     "tier": 1,
-    "question": "Anthropic, the company behind the Claude chatbot, is led by which co-founder?",
-    "answer": "Dario Amodei",
+    "question": "Anthropic makes the Claude chatbot. Its founders were researchers who used to work at another well-known AI lab before leaving to start Anthropic in 2021. Which lab did they leave?",
+    "answer": "OpenAI",
     "choices": [
-      "Dario Amodei",
-      "Sam Altman",
-      "Demis Hassabis",
-      "Mustafa Suleyman"
+      "OpenAI",
+      "Google DeepMind",
+      "Meta AI",
+      "IBM Research"
     ],
     "context": "Dario Amodei is CEO of Anthropic. His sister Daniela Amodei is President. Many Anthropic founders previously worked at OpenAI; they left in 2021 to start Anthropic with a focus on AI safety research. Claude is their main chatbot, competing with ChatGPT, Gemini, and Grok."
   },
@@ -793,13 +793,13 @@
   },
   {
     "tier": 1,
-    "question": "The 2012 ImageNet-winning network from Hinton's team is sometimes named after a grad student on the team. What's the network called?",
-    "answer": "AlexNet",
+    "question": "In 2012, a neural network suddenly won the ImageNet image-recognition contest by a huge margin, kicking off the modern deep-learning boom. What made that win such a shock to researchers?",
+    "answer": "Neural networks beat older methods by a huge margin once they had enough data and computing power",
     "choices": [
-      "AlexNet",
-      "MaxNet",
-      "ZackNet",
-      "PamNet"
+      "Neural networks beat older methods by a huge margin once they had enough data and computing power",
+      "The winning system was built by a single high school student on a home computer",
+      "The winning network could name every human being in a photo without any training",
+      "The winning team refused to share their code, and it took years to figure out how they did it"
     ],
     "context": "AlexNet, named for Alex Krizhevsky (a grad student in Hinton's lab, along with Ilya Sutskever), won the 2012 ImageNet Large Scale Visual Recognition Challenge by a huge margin using a deep neural network trained on GPUs. The result convinced the field that deep learning worked at scale. It's often called the start of the modern deep-learning era."
   },
@@ -6145,13 +6145,13 @@
   },
   {
     "tier": 3,
-    "question": "In 1989, a researcher named Yann LeCun, then at Bell Labs, built a convolutional neural network called LeNet. It had a specific real-world job. What did LeNet do?",
-    "answer": "It read handwritten ZIP codes on mail for the US Postal Service.",
+    "question": "In 1989, a researcher at Bell Labs built one of the first neural networks that did a useful real-world job — reading messy handwritten digits. What did the US Postal Service put this system to work on?",
+    "answer": "Reading handwritten ZIP codes on envelopes",
     "choices": [
-      "It read handwritten ZIP codes on mail for the US Postal Service.",
-      "It played checkers at the world-champion level for AT&T's research demonstrations.",
-      "It detected spam in early electronic mail before commercial email was widespread.",
-      "It transcribed phone-call audio into text for AT&T's customer-service department."
+      "Reading handwritten ZIP codes on envelopes",
+      "Sorting packages by weight for shipping",
+      "Tracking mail-truck routes across cities",
+      "Filtering junk-mail advertisements from the mail"
     ],
     "context": "LeNet (the early versions in 1989, then LeNet-5 in 1998) was a convolutional neural network — a CNN — trained to recognize digits. Bell Labs deployed it to read handwritten ZIP codes on mail. By the late 1990s, CNN-based systems were reading a meaningful share of US mail. LeCun's work was a proof-of-concept for deep learning on images that predated the modern boom by 20 years. Recognition skill: the deep-learning revolution wasn't an overnight breakthrough — it was a slow gathering of techniques that finally clicked at scale in 2012."
   },

@@ -1753,13 +1753,13 @@
   },
   {
     "tier": 2,
-    "question": "Otto Frank asked one of his office helpers to bring food and supplies to the eight people in hiding, and she agreed 'without hesitation.' Almost every day she biked over with meat, vegetables, and library books. Anne Frank wrote that she was 'like a pack mule, she fetches and carries so much.' Who was this helper?",
-    "answer": "Miep Gies",
+    "question": "For two years Anne Frank's family hid in a secret annex above her father's Amsterdam office. One of the office helpers took charge of feeding them, biking over nearly every day with meat, vegetables, and library books. If the Nazis had caught her helping Jews in hiding, what would the penalty have been?",
+    "answer": "Death or being sent to a concentration camp",
     "choices": [
-      "Miep Gies",
-      "Bep Voskuijl",
-      "Auguste van Pels",
-      "Margot Frank"
+      "Death or being sent to a concentration camp",
+      "A large fine and loss of ration books",
+      "House arrest for the rest of the war",
+      "Forced labor in a German factory"
     ],
     "context": "Miep Gies risked her life carrying supplies to the annex nearly every day for over two years. Anne's 'pack mule' line captures how much the hiders depended on her. Source: Anne Frank House, 'Miep Gies.'"
   },
@@ -2761,13 +2761,13 @@
   },
   {
     "tier": 4,
-    "question": "Emperor Nerva put a retired general in charge of Rome's water supply in 97 AD, giving him the title curator aquarum, 'water superintendent.' He then wrote De aquaeductu, a detailed first-hand report on the city's aqueducts that engineers still study today. Who was this general-turned-water-boss?",
-    "answer": "Sextus Julius Frontinus",
+    "question": "Emperor Nerva put a retired general in charge of Rome's water supply in 97 AD. As the new 'water superintendent,' he wrote a detailed first-hand report on the city's aqueducts. Investigating his new job, he uncovered a huge scandal about Rome's water. What was going on?",
+    "answer": "Wealthy Romans were secretly siphoning public water into their homes",
     "choices": [
-      "Sextus Julius Frontinus",
-      "Appius Claudius Caecus",
-      "Marcus Agrippa",
-      "Gaius Plinius"
+      "Wealthy Romans were secretly siphoning public water into their homes",
+      "The aqueducts were about to collapse from earthquake damage",
+      "Slaves who maintained the pipes had all fled the city",
+      "The Tiber River had been poisoned by nearby mines"
     ],
     "context": "Frontinus's De aquaeductu is a rare insider account of how Rome managed its water. He recorded the channels, their sources, and even the fraud of people tapping the lines illegally. Source: https://en.wikipedia.org/wiki/De_aquaeductu"
   },
@@ -3517,13 +3517,13 @@
   },
   {
     "tier": 5,
-    "question": "Aristotle invented formal logic — he was the first to show that some conclusions are forced purely by the shape of an argument, no facts about the world needed. He even gave each valid pattern a name still taught today. The most famous one runs: 'All A are B; all B are C; so all A are C.' What is this classic pattern called?",
-    "answer": "Barbara",
+    "question": "Aristotle invented formal logic. He was the first to show that some conclusions are forced purely by the shape of an argument, no facts about the world needed. Here is one of his patterns: 'All Athenians are Greek; all Greeks are human; so all Athenians are human.' Why does this argument work even if you know nothing about Athens or Greeks?",
+    "answer": "Because the shape of the argument alone forces the conclusion",
     "choices": [
-      "Barbara",
-      "Celarent",
-      "Darii",
-      "Ferio"
+      "Because the shape of the argument alone forces the conclusion",
+      "Because Athens was the most famous city in the ancient world",
+      "Because Aristotle himself was Greek and knew the facts",
+      "Because most people already agree that Athenians are human"
     ],
     "context": "In his Prior Analytics, Aristotle defined the syllogism as 'a discourse in which, certain things being stated, something other than what is stated follows of necessity from them.' The first-figure pattern 'All A are B; all B are C; so all A are C' is traditionally nicknamed Barbara. Source: Aristotle, Prior Analytics; en.wikipedia.org/wiki/Prior_Analytics; plato.stanford.edu, 'Aristotle's Logic.'"
   },
@@ -3625,13 +3625,13 @@
   },
   {
     "tier": 3,
-    "question": "On a Berlin street in 1921, Soghomon Tehlirian, a young Armenian who had lost dozens of relatives in the genocide, shot the exiled Talaat Pasha dead. It was no lone act of rage: it was one killing in a secret Armenian campaign that had drawn up a hit-list of about 100 genocide organizers, with Talaat at the top. What was that campaign called?",
-    "answer": "Operation Nemesis",
+    "question": "On a Berlin street in 1921, a young Armenian who had lost dozens of relatives in the genocide shot the exiled organizer Talaat Pasha dead. It was one killing in a secret Armenian campaign with a hit-list of about 100 genocide organizers. At the shooter's trial in Germany, what did the jury decide?",
+    "answer": "The German jury heard the genocide evidence and acquitted him",
     "choices": [
-      "Operation Nemesis",
-      "The Dashnak Pact",
-      "Operation Ararat",
-      "The Zoryan Plan"
+      "The German jury heard the genocide evidence and acquitted him",
+      "He was hanged within a week of the shooting",
+      "He was sentenced to life in a Prussian prison",
+      "He escaped Berlin before the trial could begin"
     ],
     "context": "Nemesis was the Greek goddess of retribution. Because the men who ordered the killings were never tried, survivors set out to deliver justice themselves; Tehlirian used a Luger pistol and shot Talaat once in the back of the neck. Source: https://en.wikipedia.org/wiki/Soghomon_Tehlirian"
   },
@@ -3817,13 +3817,13 @@
   },
   {
     "tier": 2,
-    "question": "The single most famous verse of the Rigveda is a prayer to the sun-god Savitr that Hindus still chant every day, more than three thousand years after it was composed. By what name is this still-living daily prayer known?",
-    "answer": "The Gayatri Mantra",
+    "question": "One prayer to the sun-god Savitr from the Rigveda is still chanted daily by Hindus, more than three thousand years after it was first composed. For most of those thousands of years, how was this prayer passed from one generation to the next?",
+    "answer": "Memorized and chanted aloud, never written down",
     "choices": [
-      "The Gayatri Mantra",
-      "The Soma Mandala",
-      "The Nasadiya Sukta",
-      "The jata-patha"
+      "Memorized and chanted aloud, never written down",
+      "Carved onto stone temple walls across India",
+      "Copied by scribes onto palm-leaf manuscripts",
+      "Printed in the world's first religious book"
     ],
     "context": "The Gayatri Mantra (Rigveda 3.62.10), a prayer to the sun-god Savitr, is traditionally credited to the sage Vishvamitra and is preceded by the 'great utterance' om bhur bhuvah svah. It is still chanted daily by Hindus today. Source: en.wikipedia.org/wiki/Gayatri_Mantra."
   },
@@ -3913,13 +3913,13 @@
   },
   {
     "tier": 1,
-    "question": "Gavrilo Princip killed Archduke Franz Ferdinand with a small semi-automatic handgun that history would remember as the gun that effectively started the First World War. What pistol was it?",
-    "answer": "A Belgian-made FN Model 1910",
+    "question": "Gavrilo Princip killed Archduke Franz Ferdinand in Sarajevo on June 28, 1914. Earlier that day, one of Princip's fellow assassins had thrown a bomb at the motorcade and the royal couple had escaped. What put the Archduke back on Princip's street that afternoon?",
+    "answer": "The driver took a wrong turn and stopped right in front of Princip",
     "choices": [
-      "A Belgian-made FN Model 1910",
-      "A British Webley service revolver",
-      "A German Luger P08",
-      "A Russian Nagant revolver"
+      "The driver took a wrong turn and stopped right in front of Princip",
+      "Princip chased the motorcade for miles on foot",
+      "The Archduke insisted on giving a speech in the main square",
+      "Austrian police mistakenly guided the car past the assassins"
     ],
     "context": "Princip fired an FN Model 1910 in .380 caliber from about 1.5 metres away. The car itself was a 1911 Graf & Stift open-top Double Phaeton. Source: https://en.wikipedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand"
   },
@@ -4309,13 +4309,13 @@
   },
   {
     "tier": 4,
-    "question": "In his old age Augustus wrote his own resume in stone, a first-person list of everything he had done, titled 'The Deeds of the Divine Augustus.' The bronze originals stood at his tomb and are lost, but a near-complete copy survives carved on a temple wall in Ankara. By what Latin name is this stone autobiography known?",
-    "answer": "Res Gestae",
+    "question": "In his old age Augustus wrote his own resume in stone, a first-person list of everything he had done. The bronze originals stood at his tomb and are lost, but a near-complete copy survives carved on a temple wall in Ankara. What is striking about how Augustus described himself in this stone autobiography?",
+    "answer": "He always calls himself first citizen, never king or emperor",
     "choices": [
-      "Res Gestae",
-      "Pax Romana",
-      "Aeneid",
-      "Twelve Tables"
+      "He always calls himself first citizen, never king or emperor",
+      "He credits every victory to the gods, never to himself",
+      "He apologizes for the civil wars that brought him to power",
+      "He predicts the exact date Rome will fall"
     ],
     "context": "The 'Res Gestae Divi Augusti' was engraved on two bronze pillars at his tomb; the surviving copy is the Monumentum Ancyranum in Ankara, Turkey. Source: https://en.wikipedia.org/wiki/Res_Gestae_Divi_Augusti"
   },
@@ -4417,13 +4417,13 @@
   },
   {
     "tier": 3,
-    "question": "The Auschwitz complex had three main parts: the original main camp; a huge slave-labor camp built to feed a synthetic-rubber factory; and the killing center, where the gas chambers and crematoria stood. Which of the three was the killing center?",
-    "answer": "Auschwitz II-Birkenau",
+    "question": "The Auschwitz complex had three main parts: the original main camp; a huge slave-labor camp built to feed a synthetic-rubber factory; and a killing center where the gas chambers and crematoria stood. About how many people did the Nazis murder inside that killing center in less than five years?",
+    "answer": "Over 1 million people, most of them Jews",
     "choices": [
-      "Auschwitz II-Birkenau",
-      "Auschwitz I",
-      "Auschwitz III-Monowitz",
-      "Auschwitz-Oswiecim"
+      "Over 1 million people, most of them Jews",
+      "About 50,000, mostly Soviet prisoners of war",
+      "About 200,000, mostly Polish political prisoners",
+      "About 500,000, mostly disabled Germans"
     ],
     "context": "Birkenau, begun in October 1941, was the killing center. Auschwitz III-Monowitz served the I.G. Farben synthetic-rubber factory from October 1942. By spring 1943 four large gas-chamber-and-crematorium complexes were running at Birkenau. Source: USHMM Holocaust Encyclopedia, 'Auschwitz'."
   },
@@ -5317,25 +5317,25 @@
   },
   {
     "tier": 3,
-    "question": "Nearly one in five of the RAF pilots who fought the Battle of Britain were not British at all; Poles, Czechs, New Zealanders, Canadians and others flew with them. The single highest-scoring ace of the entire battle, with seventeen kills, was a Czech sergeant flying inside the famous Polish No. 303 Squadron. Who was this top-scoring pilot?",
-    "answer": "Josef Frantisek",
+    "question": "Nearly one in five RAF pilots who fought the Battle of Britain were not British at all — Poles, Czechs, New Zealanders, Canadians and others flew with them. One squadron of foreign pilots who had fled the German invasion of their homeland ended the battle with the highest kill count of any squadron in RAF Fighter Command. Which country's pilots led that record-setting squadron?",
+    "answer": "Poland",
     "choices": [
-      "Josef Frantisek",
-      "Douglas Bader",
-      "Keith Park",
-      "Trafford Leigh-Mallory"
+      "Poland",
+      "New Zealand",
+      "Canada",
+      "France"
     ],
     "context": "About 595 of roughly 3,000 aircrew came from abroad, including 145 Poles and 88 Czechoslovaks. No. 303 Squadron joined two months late yet became the top-scoring RAF fighter unit, claiming 126 German aircraft in 42 days. Source: https://en.wikipedia.org/wiki/No._303_Squadron_RAF"
   },
   {
     "tier": 4,
-    "question": "The RAF won the Battle of Britain not only through the courage of its pilots but through a war-winning machine: the world's first integrated air-defence network. It wove together radar stations, the human spotters of the Observer Corps, telephone lines, plotting rooms and radio control, so that precious fighters were scrambled only when a real raid had been detected. Named after the Air Chief Marshal who built it, what was this network called?",
-    "answer": "The Dowding System",
+    "question": "The RAF won the Battle of Britain not only through pilot courage but through the world's first integrated air-defence network. Radar stations, human spotters, telephone lines, plotting rooms and radio control were woven together so precious fighters were scrambled only when a real raid had been detected. Why did this system let a smaller RAF beat a larger German air force?",
+    "answer": "British planes didn't waste fuel patrolling empty sky",
     "choices": [
-      "The Dowding System",
-      "The Chain Home System",
-      "The Fighter Command System",
-      "The Bentley Priory System"
+      "British planes didn't waste fuel patrolling empty sky",
+      "British planes were much faster than any German fighter",
+      "British pilots were the only ones with radar in their cockpits",
+      "German bombers had to fly at night to hit their targets"
     ],
     "context": "It was named after Air Chief Marshal Sir Hugh Dowding. By scrambling fighters only against confirmed raids, it spared fuel, pilots and planes, the heart of how an outnumbered force kept winning. Source: https://www.iwm.org.uk/history/what-was-the-dowding-system"
   },
@@ -9361,13 +9361,13 @@
   },
   {
     "tier": 1,
-    "question": "The Frankish king Charlemagne received an astonishing gift from the far-off Abbasid caliph Harun al-Rashid: a living Asian elephant, fetched all the way from Baghdad and walked over the Alps to his court at Aachen. What was the elephant's name?",
-    "answer": "Abul-Abbas",
+    "question": "The Frankish king Charlemagne received an astonishing gift from the far-off Abbasid caliph Harun al-Rashid: a living Asian elephant, fetched all the way from Baghdad. How did the elephant complete the last leg of its journey to Charlemagne's court at Aachen?",
+    "answer": "Walked over the Alps",
     "choices": [
-      "Abul-Abbas",
-      "Olifant",
-      "Childeric",
-      "Durendal"
+      "Walked over the Alps",
+      "Sailed up the Rhine River",
+      "Rode in a wooden cart pulled by oxen",
+      "Was carried on a barge across the Mediterranean"
     ],
     "context": "The elephant Abul-Abbas was fetched by a Jewish envoy named Isaac, landed in Italy in October 801, wintered at Vercelli, and reached Aachen on 20 July 802. (Royal Frankish Annals 801-802; en.wikipedia.org/wiki/Abul-Abbas)"
   },
@@ -11773,13 +11773,13 @@
   },
   {
     "tier": 2,
-    "question": "As a young student in Bologna in 1497, Copernicus made one of his first recorded sky observations: he watched the Moon slide in front of a bright reddish star, the eye of the bull in the constellation Taurus. Which star did the Moon cover?",
-    "answer": "Aldebaran",
+    "question": "As a young student in Bologna in 1497, Nicolaus Copernicus made one of his first recorded sky observations. He carefully timed the moment when the Moon slid in front of a bright reddish star in the constellation Taurus and blotted it out. Since telescopes would not be invented for another hundred years, what did Copernicus use to observe this?",
+    "answer": "His naked eyes",
     "choices": [
-      "Aldebaran",
-      "Polaris",
-      "Sirius",
-      "Vega"
+      "His naked eyes",
+      "A large glass telescope",
+      "A pair of binoculars",
+      "A camera pointed at the sky"
     ],
     "context": "Aldebaran is the red eye of the bull in Taurus. Copernicus, born 19 February 1473 in Torun, Poland, recorded watching the Moon slide in front of it in 1497. Source: History.com 'February 19, 1473 Copernicus born'; Visitup Bologna, Nicolaus Copernicus."
   },
@@ -11797,13 +11797,13 @@
   },
   {
     "tier": 3,
-    "question": "For years the cautious canon Copernicus held his great book back. The man who finally pushed him to publish was an unlikely visitor: a young Lutheran mathematician from Wittenberg who traveled to the Catholic canon, became his only student, and lived with him about two years. Who was this student?",
-    "answer": "Georg Joachim Rheticus",
+    "question": "For years the cautious canon Copernicus held his great book back. The man who finally pushed him to publish was an unlikely visitor: a young Lutheran mathematician from Wittenberg who traveled to the Catholic canon, became his only student, and lived with him about two years. What did this student manage to convince Copernicus to do?",
+    "answer": "Publish his sun-centered theory of the heavens",
     "choices": [
-      "Georg Joachim Rheticus",
-      "Andreas Osiander",
-      "Tycho Brahe",
-      "Johannes Kepler"
+      "Publish his sun-centered theory of the heavens",
+      "Move away from Poland to a Protestant city",
+      "Convert from Catholicism to Lutheranism",
+      "Give up astronomy for good"
     ],
     "context": "Rheticus, a young Lutheran from Wittenberg, became Copernicus's only student and in 1540 wrote the first published account of the theory, the 'Narratio Prima.' Source: Britannica, Narratio prima; en.wikipedia.org/wiki/Narratio_Prima; Oregon State, Lutherans' Reading of Copernicus."
   },
@@ -11941,25 +11941,25 @@
   },
   {
     "tier": 3,
-    "question": "Around 1514, decades before he printed anything, Nicolaus Copernicus quietly passed a short handwritten essay to only his closest friends, laying out his sun-centered idea in seven bold axioms. By what name is this secret manuscript known?",
-    "answer": "The Commentariolus",
+    "question": "Around 1514, decades before he printed anything, Nicolaus Copernicus quietly passed a short handwritten essay to only his closest friends. Laid out in seven bold statements, it argued for one revolutionary idea about the heavens. What did the little essay say sits at the center of the universe?",
+    "answer": "The Sun",
     "choices": [
-      "The Commentariolus",
-      "The Almagest",
-      "The Sidereus",
-      "The Epitome"
+      "The Sun",
+      "The Earth",
+      "The planet Jupiter",
+      "A great sphere of fixed stars"
     ],
     "context": "The 'Commentariolus' (Little Commentary) was hand-circulated to a trusted few and not printed until the 1800s. Its seven axioms included #2 'The Earth is not the center of the universe' and #3 'The Sun is at the center.' Source: en.wikipedia.org/wiki/Commentariolus"
   },
   {
     "tier": 3,
-    "question": "In 1539, drawn by rumors of a sun-centered astronomy, a young mathematician journeyed to Frombork and became the aging Copernicus's only pupil — staying two years and in 1540 publishing the very first printed announcement of the theory. Who was this single student?",
-    "answer": "Georg Joachim Rheticus",
+    "question": "In 1539, drawn by rumors of a sun-centered astronomy, a young mathematician journeyed to Frombork and became the aging Copernicus's only pupil — staying two years and, in 1540, publishing the very first printed announcement of the theory. What did this pupil's 1540 book announce to the world?",
+    "answer": "Copernicus's sun-centered theory of the heavens",
     "choices": [
-      "Georg Joachim Rheticus",
-      "Erasmus Reinhold",
-      "Tycho Brahe",
-      "Johannes Kepler"
+      "Copernicus's sun-centered theory of the heavens",
+      "The three laws of planetary motion",
+      "The discovery of Jupiter's four moons",
+      "The invention of the reflecting telescope"
     ],
     "context": "Georg Joachim Rheticus, a Lutheran, sought Copernicus out, stayed two years, and in 1540 published 'Narratio Prima' (First Account) — the first printed word of the new astronomy. Across the religious divide of the day, a young Protestant talked the elderly Catholic canon into going public. Source: en.wikipedia.org/wiki/Georg_Joachim_Rheticus; britannica.com"
   },
@@ -19525,13 +19525,13 @@
   },
   {
     "tier": 5,
-    "question": "Historians can point to roughly one building as the birthplace of the entire Gothic style: the rebuilt choir of a great church near Paris, pushed through by Abbot Suger and dedicated on 11 June 1144. It was the first to fuse the pointed arch, the ribbed vault, and walls of stained glass. Which church was this?",
-    "answer": "Saint-Denis",
+    "question": "Historians point to one church near Paris, rebuilt by Abbot Suger and dedicated in 1144, as the birthplace of the Gothic style. Its signature move -- pointed arches instead of round Roman ones -- let builders put in huge walls of colored windows above the worshippers. What are those famous colored church windows called?",
+    "answer": "Stained glass",
     "choices": [
-      "Saint-Denis",
-      "Notre-Dame",
-      "Chartres",
-      "Sainte-Chapelle"
+      "Stained glass",
+      "Mosaic tiles",
+      "Painted plaster",
+      "Frescoes"
     ],
     "context": "Abbot Suger called the glowing result 'lux nova' - new light. By combining the pointed arch, ribbed vault, and radiating chapels lit by large stained-glass windows, Saint-Denis set the template every later Gothic cathedral would follow. Source: https://en.wikipedia.org/wiki/Basilica_of_Saint-Denis"
   },
@@ -21625,13 +21625,13 @@
   },
   {
     "tier": 3,
-    "question": "Around 1158 BC an Elamite king sacked Babylon and hauled Hammurabi's seven-foot law-stele home to his own capital as a war trophy, where it lay buried for roughly 3,000 years until a French team dug it up in 1901. Which conqueror looted it?",
-    "answer": "Shutruk-Nahhunte",
+    "question": "Around 1158 BC an Elamite king sacked Babylon and carried off a seven-foot black stone as a war trophy. Carved on it were 282 laws laid down centuries earlier by a famous Babylonian king, best known for the rule 'an eye for an eye.' What was that Babylonian king's name?",
+    "answer": "Hammurabi",
     "choices": [
-      "Shutruk-Nahhunte",
-      "Tiglath-Pileser",
-      "Ashurbanipal",
-      "Nebuchadnezzar"
+      "Hammurabi",
+      "Nebuchadnezzar",
+      "Sargon the Great",
+      "Gilgamesh"
     ],
     "context": "The Elamite king Shutruk-Nahhunte (reigned c. 1185-1160 BC) carried the stele off as plunder to his capital, Susa, in modern Iran. A French archaeological team under Jacques de Morgan rediscovered it there in 1901; the Louvre has displayed it since 1904. Source: https://en.wikipedia.org/wiki/Code_of_Hammurabi ; https://www.louvre.fr/en/the-code-of-hammurabi"
   },
@@ -22993,13 +22993,13 @@
   },
   {
     "tier": 5,
-    "question": "The Enabling Act of 23 March 1933 needed a two-thirds majority to hand Adolf Hitler dictatorial powers, and the Nazis did not have the votes alone. The act only passed because one other party swung behind it, fooled by Hitler's spoken promises to its leaders, promises he broke. Which party's swing votes handed Hitler his dictatorship?",
-    "answer": "The Catholic Centre Party",
+    "question": "The Enabling Act of 23 March 1933 handed Adolf Hitler dictatorial powers. Communist deputies had already been jailed or banned after the Reichstag fire, so the Nazis still needed extra votes. They got them by promising the Catholic Centre Party to protect Germany's Catholic Church -- a promise Hitler quickly broke. What did the Enabling Act let Hitler do without needing the Reichstag's approval?",
+    "answer": "Make his own laws",
     "choices": [
-      "The Catholic Centre Party",
-      "The Communist Party",
-      "The German National People's Party",
-      "The German Democratic Party"
+      "Make his own laws",
+      "Command the army only in wartime",
+      "Appoint mayors of cities",
+      "Set tax rates"
     ],
     "context": "The Centre (Catholic) Party voted 72 to 0 in favor after Hitler verbally promised to protect Catholic schools and civil liberties. Without their cooperation the two-thirds majority would have failed and the legal road to dictatorship would have closed. Source: en.wikipedia.org/wiki/Enabling_Act_of_1933."
   },
@@ -23149,13 +23149,13 @@
   },
   {
     "tier": 5,
-    "question": "Achilles' fury in the Iliad grows so monstrous that he kills until he clogs an entire river with the bodies of the Trojans he has slain. The river itself fights back -- its god rises up, first as a man and then as a towering flood, and chases Achilles, who runs uphill for his life. Which river god rose against Achilles?",
-    "answer": "Scamander",
+    "question": "Achilles' fury in Homer's Iliad grows so monstrous he kills until he clogs an entire river with Trojan dead. But Achilles too will die at Troy, killed by an arrow shot by the Trojan prince Paris. The arrow strikes the one part of Achilles' body his mother did not dip in the magical river when he was a baby. Which body part is Achilles' famous weakness?",
+    "answer": "His heel",
     "choices": [
-      "Scamander",
-      "Styx",
-      "Oceanus",
-      "Acheron"
+      "His heel",
+      "His eye",
+      "His hand",
+      "His heart"
     ],
     "context": "The river Scamander's channels choked with corpses until the river-god flooded to drown Achilles; the goddess Hera saved him by sending Hephaistos, god of fire, whose flames boiled the river until it surrendered. Homer, Iliad Book 21; sparknotes.com The Iliad Books 21-22; etc.usf.edu Lit2Go Iliad Book 21"
   },
@@ -23401,13 +23401,13 @@
   },
   {
     "tier": 2,
-    "question": "In 1325 a 21-year-old named Ibn Battuta left his home city of Tangier completely alone, meaning to make the hajj to Mecca and come straight back. Instead he kept going for nearly 30 years and about 75,000 miles. When he finally returned, he dictated the whole journey from memory to a scribe, and the book got a name that simply means 'The Journey.' What is that famous book called?",
-    "answer": "The Rihla",
+    "question": "In 1325 a 21-year-old named Ibn Battuta left his home in Tangier in North Africa completely alone, meaning to make the hajj to Mecca and come straight back. Instead he kept going for nearly 30 years and about 75,000 miles. How does that distance compare to going all the way around the Earth at the equator, which is about 25,000 miles?",
+    "answer": "About three trips around the world",
     "choices": [
-      "The Rihla",
-      "The Muqaddimah",
-      "The Almagest",
-      "The Periplus"
+      "About three trips around the world",
+      "About one trip around the world",
+      "About half a trip around the world",
+      "About ten trips around the world"
     ],
     "context": "Ibn Battuta kept no diary on the road; around 1352-1355 he dictated the entire 30-year account from memory to a scribe named Ibn Juzayy. 'Rihla' means 'The Journey' or 'The Travels' and became the title. Sources: worldhistory.org/Ibn_Battuta/ ; britannica.com/biography/Ibn-Battuta"
   },
@@ -26461,13 +26461,13 @@
   },
   {
     "tier": 3,
-    "question": "In September 1683, John Locke suddenly fled England for Holland, claiming he was leaving 'for his health.' The real reason: a conspiracy to assassinate King Charles II had just been uncovered, and Locke's close ties to the radical Earl of Shaftesbury made him a marked man. What was this assassination plot called?",
-    "answer": "The Rye House Plot",
+    "question": "Around 1683, the philosopher John Locke suddenly fled England, claiming he was leaving 'for his health.' The real reason: a conspiracy to kill King Charles II had just been uncovered, and Locke's ties to radical opponents of the crown made him a suspect. Where did Locke flee to?",
+    "answer": "Holland",
     "choices": [
-      "The Rye House Plot",
-      "The Gunpowder Treason",
-      "The Babington Plot",
-      "The Throckmorton Plot"
+      "Holland",
+      "France",
+      "Ireland",
+      "Scotland"
     ],
     "context": "The Rye House Plot (1683) was an alleged scheme to ambush and kill Charles II. Locke had no proven part in it, but his Shaftesbury connection made staying in England too dangerous, so he fled into exile in the Netherlands. Source: plato.stanford.edu/entries/locke/; en.wikipedia.org/wiki/Two_Treatises_of_Government."
   },
@@ -26797,13 +26797,13 @@
   },
   {
     "tier": 4,
-    "question": "When Hagia Sophia was finished in 537, no bigger cathedral existed anywhere on earth — and none would be built for almost a thousand years afterward. The record finally fell in 1520, when a single rival cathedral was completed at last. Which cathedral at last grew larger than Hagia Sophia?",
-    "answer": "Seville Cathedral",
+    "question": "When Hagia Sophia was finished in Constantinople in 537, no bigger cathedral existed anywhere on earth. Amazingly, no rival cathedral would surpass its size for how long?",
+    "answer": "Almost 1000 years",
     "choices": [
-      "Seville Cathedral",
-      "Cologne Cathedral",
-      "Milan Cathedral",
-      "Florence Cathedral"
+      "Almost 1000 years",
+      "About 100 years",
+      "About 300 years",
+      "Almost 2000 years"
     ],
     "context": "Hagia Sophia stayed the largest cathedral in the world for nearly a thousand years — not surpassed until Seville Cathedral was completed in 1520. Source: Wikipedia, 'Hagia Sophia' (en.wikipedia.org/wiki/Hagia_Sophia); Wikipedia, 'Seville Cathedral'."
   },
@@ -27109,13 +27109,13 @@
   },
   {
     "tier": 4,
-    "question": "In Harmonices Mundi ('The Harmony of the World,' 1619), Johannes Kepler argued the planets literally make music as they speed up and slow down, each a voice in a cosmic choir. He said the Earth's whole song is just three plodding, mournful notes. Which three notes did he give our planet?",
-    "answer": "Mi, Fa, Mi",
+    "question": "In Harmonices Mundi ('The Harmony of the World,' 1619), Johannes Kepler argued that as planets speed up and slow down in their orbits, each one is like a voice in a cosmic choir. What did he say the planets were literally doing?",
+    "answer": "Making music",
     "choices": [
-      "Mi, Fa, Mi",
-      "Do, Re, Mi",
-      "La, Ti, La",
-      "Sol, Fa, Sol"
+      "Making music",
+      "Casting spells",
+      "Painting pictures",
+      "Ringing bells"
     ],
     "context": "Kepler made a grim pun on it: 'The Earth sings Mi, Fa, Mi: you may infer even from the syllables that in this our home MIsery and FAmine hold sway.' In his cosmic choir Mercury was the soprano and Mars the tenor. Source: https://en.wikipedia.org/wiki/Harmonice_Mundi"
   },
@@ -27901,13 +27901,13 @@
   },
   {
     "tier": 2,
-    "question": "The North Korean invasion of 1950 moved so fast that within weeks the surviving United Nations and South Korean troops had been pushed back into the far southeast corner of the country, fighting with their backs to the sea and almost nowhere left to retreat. What was this last-ditch pocket called?",
-    "answer": "The Pusan Perimeter",
+    "question": "When North Korea invaded South Korea in June 1950, they pushed south so fast that within weeks the defenders were trapped in a tiny corner in the far southeast with the sea at their backs. Which international body had voted to send troops to help defend South Korea?",
+    "answer": "The United Nations",
     "choices": [
-      "The Pusan Perimeter",
-      "The Yalu Salient",
-      "The Hungnam Line",
-      "The Osan Pocket"
+      "The United Nations",
+      "The Warsaw Pact",
+      "The League of Nations",
+      "NATO"
     ],
     "context": "Holding the Pusan Perimeter kept the war alive until MacArthur's Inchon landing in September 1950 broke the siege from behind. (Military.com, 'Task Force Smith...Pusan Perimeter'; TheCollector, 'The American Defeat at Taejon That Saved South Korea')"
   },
@@ -28177,13 +28177,13 @@
   },
   {
     "tier": 1,
-    "question": "On the green of Tolpuddle village in Dorset stands an ancient sycamore, alive since the 1680s, where in the autumn of 1833 six poor farm laborers gathered to hear union organizers. What is that sycamore called today?",
-    "answer": "The Martyrs' Tree",
+    "question": "In autumn 1833, six poor farm laborers gathered under a sycamore in the tiny village of Tolpuddle in Dorset, England, to secretly organize a farm workers' union so they could ask for better wages. What did the British government do to punish them?",
+    "answer": "Shipped them to Australia",
     "choices": [
-      "The Martyrs' Tree",
-      "The Hanging Oak",
-      "The Charter Elm",
-      "The Gallows Ash"
+      "Shipped them to Australia",
+      "Hanged them all",
+      "Burned their village",
+      "Fined them a pound each"
     ],
     "context": "The Tolpuddle Martyrs' Tree still lives on the village green, now pollarded and cared for by the National Trust. Court testimony shows the men's secret oath was actually sworn inside Thomas Standfield's cottage, not under the tree, but the sycamore became the movement's emblem. (en.wikipedia.org/wiki/Tolpuddle_Martyrs_Tree)  (Legend.)"
   },
@@ -28645,13 +28645,13 @@
   },
   {
     "tier": 2,
-    "question": "Lenin's new secret police, the Cheka, was created in December 1917 to hunt down enemies of the revolution, and its first chief Felix Dzerzhinsky ran it from the Lubyanka building in Moscow. His feared reputation earned him a one-word nickname that stuck for the rest of Soviet history. What was it?",
-    "answer": "Iron Felix",
+    "question": "In December 1917, Lenin set up a new secret police to crush enemies of the revolution. Run by Felix Dzerzhinsky, it jailed and executed people the Communist Party mistrusted. Later Soviet secret police like the KGB descended from this first one. What was Lenin's original secret police called?",
+    "answer": "The Cheka",
     "choices": [
-      "Iron Felix",
-      "Red Felix",
-      "Black Felix",
-      "Steel Felix"
+      "The Cheka",
+      "The Gestapo",
+      "The Praetorian Guard",
+      "The Inquisition"
     ],
     "context": "The Cheka's full name was the All-Russian Extraordinary Commission for Combating Counter-Revolution and Sabotage; 'Iron Felix' Dzerzhinsky headed it from the Lubyanka. Source: en.wikipedia.org/wiki/Cheka."
   },
@@ -29269,13 +29269,13 @@
   },
   {
     "tier": 2,
-    "question": "William Clark adored Sacagawea's infant son, who was born at Fort Mandan in 1805. On the way home Clark climbed a 200-foot sandstone pillar above the Yellowstone River, carved his name and the date into the rock, and named the whole landmark after the little boy. The carving is still there today. What did Clark call it?",
-    "answer": "Pompy's Tower",
+    "question": "William Clark, of Lewis and Clark, adored Sacagawea's infant son, born at Fort Mandan in 1805. On the way home Clark climbed a 200-foot sandstone pillar above the Yellowstone River and did something to make sure everyone would remember he had been there. What did Clark do to the pillar?",
+    "answer": "Carved his name and the date into it",
     "choices": [
-      "Pompy's Tower",
-      "Sacagawea's Tower",
-      "York's Bluff",
-      "Clark's Pillar"
+      "Carved his name and the date into it",
+      "Painted a giant American flag on it",
+      "Buried a time capsule at the top",
+      "Planted a tree at the summit"
     ],
     "context": "Clark nicknamed the baby, Jean-Baptiste Charbonneau, 'Pomp' (or 'Pompy'), and named the pillar Pompy's Tower (July 25, 1806) in his honor. His carved signature survives on the rock to this day. Source: lewis-clark.org/people/sacagawea/sacagaweas-story/ ; history.com/this-day-in-history/february-11/sacagawea-gives-birth-to-pompey"
   },
@@ -29557,13 +29557,13 @@
   },
   {
     "tier": 3,
-    "question": "When Carl Linnaeus sorted flowers by counting their stamens and pistils as 'husbands' and 'wives,' his loudest St. Petersburg critic publicly damned the whole system as 'loathsome harlotry.' Linnaeus, who taught that a plant should resemble the person it honours, took his revenge by pinning that critic's own name onto a new genus forever. Which genus still carries the critic's name?",
-    "answer": "Siegesbeckia",
+    "question": "Carl Linnaeus, the great naming-of-species scientist, sorted flowers by counting their stamens and pistils like 'husbands' and 'wives.' A St. Petersburg critic publicly damned the whole system as 'loathsome harlotry.' Linnaeus took revenge using his own power as a namer of plants. What did Linnaeus do to strike back at his critic?",
+    "answer": "Named an ugly weed after him forever",
     "choices": [
-      "Siegesbeckia",
-      "Buffonia",
-      "Dillenia",
-      "Gardenia"
+      "Named an ugly weed after him forever",
+      "Refused to speak with him ever again",
+      "Wrote a book calling him a fool",
+      "Sent a fake plant specimen to trick him"
     ],
     "context": "Per BBC Science Focus and Wikipedia (Sigesbeckia), Linnaeus named Siegesbeckia -- a small, sticky, unattractive weed -- for his critic Johann Siegesbeck; the distractors are also real eponymous genera of his era (Buffonia/Buffon, Dillenia/Dillenius, Gardenia/Garden)."
   },
@@ -29917,13 +29917,13 @@
   },
   {
     "tier": 3,
-    "question": "Martin Luther vanished into hiding at Wartburg Castle after the Diet of Worms outlawed him in 1521, and there he translated the entire New Testament into German. To stay hidden, he grew out his hair and beard, swapped his monk's robe for a knight's clothes, and lived under a false name. What knightly alias did the hidden Luther go by?",
-    "answer": "Junker Jorg, \"Knight George\"",
+    "question": "Martin Luther vanished into hiding at Wartburg Castle after the Diet of Worms outlawed him in 1521. In secret, he translated the New Testament into German. To stay safe he grew out his hair and beard and lived under a false name, dressed not as the monk he really was, but as a member of the fighting nobility. As what kind of person did the hidden Luther disguise himself?",
+    "answer": "A knight",
     "choices": [
-      "Junker Jorg, \"Knight George\"",
-      "Junker Hans, \"Knight John\"",
-      "Ritter Kurt, \"Knight Conrad\"",
-      "Junker Friedrich, \"Knight Frederick\""
+      "A knight",
+      "A peasant farmer",
+      "A wandering monk",
+      "A wealthy merchant"
     ],
     "context": "Disguised as the bearded knight 'Junker Jorg' (Knight George), Luther translated the whole New Testament from Greek into German in roughly eleven weeks (Dec 1521-Feb/Mar 1522). Source: learn.ligonier.org/podcasts/5-minutes-in-church-history (Junker Jorg); luther.de/en/wartburg.html."
   },
@@ -30109,13 +30109,13 @@
   },
   {
     "tier": 3,
-    "question": "On 21 October 1520 the fleet finally found the 350-mile passage at the tip of South America that linked the Atlantic to the Pacific — the route now called the Strait of Magellan. While they were still struggling through it, the crew of one ship mutinied, turned around, and secretly sailed back to Spain, abandoning the whole expedition. Which ship deserted?",
-    "answer": "The San Antonio",
+    "question": "On 21 October 1520 the fleet finally found the 350-mile passage at the tip of South America that linked the Atlantic to the Pacific — the route now called the Strait of Magellan. While they were still struggling through it, the crew of one ship mutinied. What did the mutineers then do with their ship?",
+    "answer": "Secretly sailed back to Spain, abandoning the expedition",
     "choices": [
-      "The San Antonio",
-      "The Victoria",
-      "The Trinidad",
-      "The Santiago"
+      "Secretly sailed back to Spain, abandoning the expedition",
+      "Turned north and searched for the Northwest Passage",
+      "Founded a small colony on the Chilean coast",
+      "Attacked the other ships and burned them"
     ],
     "context": "The San Antonio's crew mutinied inside the strait and slipped away home, abandoning Magellan and taking a large share of the fleet's food stores with them. Source: https://en.wikipedia.org/wiki/Magellan_expedition"
   },
@@ -30229,13 +30229,13 @@
   },
   {
     "tier": 3,
-    "question": "The man who brokered peace between King John and the barons had handed the rebels their blueprint two years earlier. At a council in 1213, the Archbishop of Canterbury read out the old coronation charter of Henry I and urged the barons to demand its renewal, giving them the written precedent that became Magna Carta. Who was this archbishop?",
-    "answer": "Stephen Langton",
+    "question": "In 1213 the Archbishop of Canterbury read the barons an old English coronation charter of Henry I and urged them to demand its renewal. Why did this quiet act at a church council matter so much for Magna Carta two years later?",
+    "answer": "It gave the barons a written precedent to base their demands on",
     "choices": [
-      "Stephen Langton",
-      "Thomas Becket",
-      "Hubert Walter",
-      "Anselm of Bec"
+      "It gave the barons a written precedent to base their demands on",
+      "It made the pope declare the barons a holy army",
+      "It gave King John a legal way to escape signing anything",
+      "It turned the barons against their own knights and tenants"
     ],
     "context": "Archbishop Stephen Langton read out Henry I's century-old coronation charter to the barons in 1213, handing them a model for written limits on the king. He then helped broker the Runnymede settlement. Source: Wikipedia, Stephen Langton; Britannica."
   },
@@ -30793,13 +30793,13 @@
   },
   {
     "tier": 3,
-    "question": "Back home after his pilgrimage, Mansa Musa ordered a great mosque raised at the desert trading city of Timbuktu, around 1325. Built from mud brick, what is that famous mosque called?",
-    "answer": "The Djinguereber Mosque",
+    "question": "Back home after his pilgrimage, around 1325, Mansa Musa ordered a great mosque raised at the desert trading city of Timbuktu. What ordinary desert building material did his craftsmen use to raise it?",
+    "answer": "Mud brick",
     "choices": [
-      "The Djinguereber Mosque",
-      "The Tower of the Caravans",
-      "The Hall of a Thousand Lamps",
-      "The Shrine of the Salt Road"
+      "Mud brick",
+      "White marble",
+      "Cedar timber shipped from Lebanon",
+      "Cut sandstone blocks"
     ],
     "context": "Musa is credited with commissioning the Djinguereber Mosque at Timbuktu around 1325-1327, built in mud brick. His mosque at Gao was said to use burnt bricks -- a building material not used in West Africa before. Source: en.wikipedia.org/wiki/Djinguereber_Mosque."
   },
@@ -31525,13 +31525,13 @@
   },
   {
     "tier": 3,
-    "question": "As a young woman in Russian-occupied Warsaw, Marie was forbidden to attend university simply because she was female. So she joined secret night classes that kept moving from house to house to dodge the Russian authorities. What was this illegal underground school called?",
-    "answer": "The Flying University",
+    "question": "As a young woman in Russian-occupied Warsaw, Marie was forbidden to attend university simply because she was female. What did she and other Polish women do to get an education anyway?",
+    "answer": "Joined secret night classes that kept moving from house to house",
     "choices": [
-      "The Flying University",
-      "The Midnight Academy",
-      "The Hidden Sorbonne",
-      "The Warsaw Free School"
+      "Joined secret night classes that kept moving from house to house",
+      "Disguised themselves as boys at the official university",
+      "Learned only from tutors sent by the Russian government",
+      "Traveled together to Paris as young teenagers"
     ],
     "context": "The 'Flying University' constantly changed locations to evade the police. Later, Marie and her sister Bronya made a pact: Marie worked as a governess to fund Bronya's Paris medical studies, then Bronya funded Marie's turn at the Sorbonne — where Marie graduated first in her physics class. Source: https://www.openculture.com/2016/07/marie-curie-attended-a-secret-underground-flying-university-when-poland-blocked-her-other-women-from-advancing-their-education.html"
   },
@@ -31729,13 +31729,13 @@
   },
   {
     "tier": 4,
-    "question": "Shut out of the Marshall Plan, Stalin built a rival economic bloc for Eastern Europe -- first the 'Molotov Plan,' then in 1949 a permanent organization that locked the satellite states into Soviet-controlled trade and cut them off from Western technology. What was that organization called?",
-    "answer": "Comecon",
+    "question": "Shut out of the Marshall Plan, Stalin built a rival economic bloc for Eastern Europe. What did his 1949 organization do to the satellite states caught inside it?",
+    "answer": "Locked them into Soviet-controlled trade, cut off from Western technology",
     "choices": [
-      "Comecon",
-      "Warsaw Pact",
-      "Cominform",
-      "Comintern"
+      "Locked them into Soviet-controlled trade, cut off from Western technology",
+      "Gave them full freedom to trade with America and Britain",
+      "Sent them huge yearly cash gifts to rebuild their cities",
+      "Forced them to trade only with communist China"
     ],
     "context": "Comecon (the Council for Mutual Economic Assistance), founded in January 1949, was Stalin's mirror-image answer to the Marshall Plan -- binding the East to Moscow instead of opening it to the West. Source: https://en.wikipedia.org/wiki/Molotov_Plan"
   },
@@ -31969,13 +31969,13 @@
   },
   {
     "tier": 3,
-    "question": "After the emperor declared Luther an outlaw whom anyone could kill, his protector Frederick the Wise of Saxony staged a fake ambush and hid him inside Wartburg Castle. Luther grew out a beard and disguised himself as a minor nobleman. What knightly alias did he take?",
-    "answer": "Junker Jörg",
+    "question": "After the emperor declared Luther an outlaw whom anyone could kill, his protector Frederick the Wise of Saxony staged a fake ambush and hid him inside Wartburg Castle. How did Luther disguise himself while in hiding there?",
+    "answer": "He grew out a beard and dressed as a minor nobleman",
     "choices": [
-      "Junker Jörg",
-      "Ritter Konrad",
-      "Junker Friedrich",
-      "Herr Wolfgang"
+      "He grew out a beard and dressed as a minor nobleman",
+      "He shaved his head and posed as a peasant farmer",
+      "He wore a nun's habit to hide his face in the halls",
+      "He lived as a wandering hermit in the surrounding woods"
     ],
     "context": "'Junker Jörg' means roughly 'Knight George.' Disguised as a bearded knight, the most wanted heretic in Europe lived hidden in plain sight at the Wartburg for almost a year. Source: Lutheran Witness, 'Junker Jörg Translates the Bible'."
   },
@@ -32125,13 +32125,13 @@
   },
   {
     "tier": 4,
-    "question": "Friedrich Engels needed firsthand sight of Manchester's worst slums for his 1845 book on the working class, but the 'Little Ireland' district was too dangerous for a well-dressed German to enter alone. A spirited Irish factory worker walked him through it. Who was his guide?",
-    "answer": "Mary Burns",
+    "question": "Friedrich Engels needed firsthand sight of Manchester's worst slums for his 1845 book on the working class, but the 'Little Ireland' district was too dangerous for a well-dressed German to enter alone. What kind of guide walked him through it?",
+    "answer": "A spirited Irish factory worker who knew the slum",
     "choices": [
-      "Mary Burns",
-      "Jenny von Westphalen",
-      "Helen Macfarlane",
-      "Eleanor Marx"
+      "A spirited Irish factory worker who knew the slum",
+      "A retired constable from the Manchester police",
+      "A Catholic parish priest from the local church",
+      "A wealthy mill owner's grown son"
     ],
     "context": "Mary Burns, an Irish factory worker, led Engels through Manchester's 'Little Ireland,' giving him the material for 'The Condition of the Working Class in England' (1845). He called his own years as a cotton merchant 'purgatory' and wrote, 'Huckstering is too beastly.' Source: https://en.wikipedia.org/wiki/Friedrich_Engels"
   },
@@ -32269,13 +32269,13 @@
   },
   {
     "tier": 3,
-    "question": "Mary Anning's family dug out the first complete ichthyosaur skeleton ever recognised, a 17-foot sea-monster that scholars across England would soon fight to study. With her father dead and the family near starving, they sold this world-first find for about 23 pounds to the gentleman who held the manor near Lyme Regis. Which gentleman walked off with the sea-monster?",
-    "answer": "Henry Hoste Henley",
+    "question": "Mary Anning's family dug out the first complete ichthyosaur skeleton ever recognised, a 17-foot sea-monster that scholars across England would soon fight to study. With her father dead and the family near starving, what did they do with their world-first find?",
+    "answer": "Sold it for about 23 pounds to a local gentleman",
     "choices": [
-      "Henry Hoste Henley",
-      "William Bullock",
-      "Thomas Birch",
-      "William Buckland"
+      "Sold it for about 23 pounds to a local gentleman",
+      "Donated it free to the British Museum in London",
+      "Kept it on display in their tiny seaside shop",
+      "Reburied it in the cliffs to protect it from thieves"
     ],
     "context": "They sold it to Henry Hoste Henley, lord of the manor of Colway near Lyme Regis, for roughly 23 pounds; he then resold it to the collector William Bullock, who displayed it in London. The Annings hunted fossils not for science but to keep from starving. Source: https://en.wikipedia.org/wiki/Mary_Anning"
   },
@@ -32581,13 +32581,13 @@
   },
   {
     "tier": 3,
-    "question": "In 1562 the Spanish bishop Diego de Landa gathered up thousands of Maya bark-paper books and burned them in a single bonfire at Mani. Only four Maya books survived the conquest at all. Which one is the finest that escaped the flames?",
-    "answer": "The Dresden Codex",
+    "question": "In 1562 the Spanish bishop Diego de Landa gathered up thousands of Maya bark-paper books and burned them in a single bonfire at Mani. After the whole Spanish conquest, how many Maya books were left in the world?",
+    "answer": "Only four",
     "choices": [
-      "The Dresden Codex",
-      "The Mani Bonfire Scroll",
-      "The Landa Codex",
-      "The Yucatan Folio"
+      "Only four",
+      "Roughly one hundred",
+      "Around three thousand",
+      "None at all"
     ],
     "context": "Bishop Diego de Landa burned thousands of codices at Mani in 1562. Just four Maya bark-paper books survived, and the Dresden Codex is the finest of them. It later turned up in a library in Dresden, Germany, which gave it its name. Source: https://mayan.org/civilization/dresden-codex/"
   },
@@ -37453,13 +37453,13 @@
   },
   {
     "tier": 3,
-    "question": "To pay Atahualpa's ransom, Inca llama caravans hauled gold to Cajamarca for months. Much of it was peeled off one sacred building in Cusco that had literally been sheathed in plates of solid gold. Which building did they strip bare?",
-    "answer": "Coricancha",
+    "question": "To pay Atahualpa's ransom, Inca llama caravans hauled gold to Cajamarca for months. Much of it was peeled off one sacred building in the Inca capital of Cusco that had literally been sheathed in plates of solid gold. What kind of building had been covered in gold?",
+    "answer": "A temple to the Sun",
     "choices": [
-      "Coricancha",
-      "Sacsayhuaman",
-      "Ollantaytambo",
-      "Machu Picchu"
+      "A temple to the Sun",
+      "A royal tomb",
+      "The emperor's palace",
+      "A military fortress"
     ],
     "context": "The Coricancha (Qorikancha) was the Temple of the Sun in Cusco, sheathed in gold. The Inca stripped its gold plating, and caravans carried golden statues and life-sized model llamas across the empire to Cajamarca over about four months. Source: https://www.cuscoperu.com/en/travel/cusco/archaeological-centers/qoricancha/"
   },
@@ -38377,13 +38377,13 @@
   },
   {
     "tier": 2,
-    "question": "On the West African coast there was a low headland that fourteen Portuguese expeditions reached and then turned back from in terror, without ever rounding it. Sailors called the water just beyond it the \"Sea of Darkness\" and swore it boiled and hid monsters at the edge of the world. Which dreaded cape was the wall of fear they would not pass?",
-    "answer": "Cape Bojador",
+    "question": "For most of the 1400s Portuguese ships turned back from one low headland on the West African coast, certain the waters beyond it boiled and hid monsters at the edge of the world. Fourteen expeditions reached this dread cape and fled home without rounding it. What finally happened in 1434?",
+    "answer": "A Portuguese captain sailed past it and returned alive",
     "choices": [
-      "Cape Bojador",
-      "Cape Verde",
-      "Cape of Good Hope",
-      "Cape Finisterre"
+      "A Portuguese captain sailed past it and returned alive",
+      "The Pope forbade any further attempts",
+      "An earthquake destroyed the cape",
+      "Arab traders drew a map of what lay beyond"
     ],
     "context": "Cape Bojador was a low, unremarkable headland, but the legend of boiling seas and monsters beyond it stopped fourteen expeditions cold. The 'edge of the world' turned out to be just more coastline. (legend — the boiling seas and monsters were sailors' belief, not fact) Source: https://fathomsdeepbeyond.substack.com/p/beyond-the-cape-of-fear"
   },
@@ -38497,13 +38497,13 @@
   },
   {
     "tier": 4,
-    "question": "Prince Shotoku of Japan (574-622 CE) ran the government and reformed its laws for nearly thirty years — yet he was never the ruler himself. In whose name did he govern as regent from 594 to 622 CE?",
-    "answer": "His aunt, Empress Suiko",
+    "question": "Prince Shotoku of Japan (574-622 CE) ran the government and reformed its laws for nearly thirty years -- yet he was never the ruler himself. He acted as regent, meaning he governed in someone else's name. From 594 to 622 CE, who was the actual ruler that Shotoku served?",
+    "answer": "His aunt, an empress",
     "choices": [
-      "His aunt, Empress Suiko",
-      "His brother, a Soga lord",
-      "His father, the old emperor",
-      "His cousin, a Baekje prince"
+      "His aunt, an empress",
+      "His younger brother",
+      "His elderly father",
+      "A visiting Korean prince"
     ],
     "context": "Shotoku served as regent for his aunt, Empress Suiko, governing in her name from 594 to 622 CE. He never sat on the throne, but the cap-rank system, the Seventeen Articles, and the great temples all came from his regency. Source: worldhistory.org/Prince_Shotoku/"
   },
@@ -40069,13 +40069,13 @@
   },
   {
     "tier": 3,
-    "question": "German teenage merchant trainees sent to the Hanseatic wharf at Bryggen, Norway, faced three brutal initiation ordeals. In one of them, a boy was stripped, had a rope tied round his waist, and was thrown three times into the harbour while older merchants in a rowing boat clubbed him with sticks every time his head broke the surface. What were these three ordeals collectively known as?",
-    "answer": "The Bergen Games",
+    "question": "German teenage merchant trainees at the Hanseatic wharf at Bryggen, Norway, faced brutal initiation ordeals. In one, older merchants tied a rope around a boy, threw him three times into the harbour, and clubbed him with sticks whenever his head broke the surface. What was the point of ordeals this violent?",
+    "answer": "To toughen the boys for the hard life of merchant trade",
     "choices": [
-      "The Bergen Games",
-      "The Bergen Reckoning",
-      "The Bryggen Rites",
-      "The Bryggen Trials"
+      "To toughen the boys for the hard life of merchant trade",
+      "To choose the guild's next leader",
+      "To punish debts owed to older traders",
+      "To ask blessings from the sea gods"
     ],
     "context": "The Bergen Games were the Water Games (the harbour beating described here), the Smoke Games (boys hung over a smoky fire to choke while being quizzed), and the Flogging Games (keel-hauling - dragging a boy by rope under a ship's hull). Source: https://thehiddennorth.com/the-most-haunted-places-in-bergen/"
   },
@@ -40441,13 +40441,13 @@
   },
   {
     "tier": 3,
-    "question": "To prove the Five-Year Plan could conjure modern industry from nothing, Stalin ordered an entire steel city raised from bare ground in the Ural Mountains — a showpiece meant to out-produce anything in the West. What was this brand-new steel city called?",
-    "answer": "Magnitogorsk",
+    "question": "To prove the Five-Year Plan could conjure modern industry from nothing, Stalin ordered an entire steel city built from bare ground in the Ural Mountains. Workers and prisoners laboured in freezing conditions to raise it. What natural resource in the mountain made that exact spot the right place to build a giant steelworks?",
+    "answer": "A nearby mountain rich in iron ore",
     "choices": [
-      "Magnitogorsk",
-      "Stalingrad",
-      "Vladivostok",
-      "Sevastopol"
+      "A nearby mountain rich in iron ore",
+      "A river of clean-burning coal",
+      "A vast salt plain",
+      "Ancient copper mines"
     ],
     "context": "Magnitogorsk — built from scratch as a whole steel complex in the Urals. Its twin showpiece was the Dnieper Hydroelectric Dam; together they were meant to prove a backward peasant country could out-build the capitalist West in a single decade. Sources: en.wikipedia.org/wiki/First_five-year_plan_(Soviet_Union) ; britannica.com/money/Five-Year-Plans"
   },
@@ -41581,13 +41581,13 @@
   },
   {
     "tier": 2,
-    "question": "Before he was a dissident, Vaclav Havel was an absurdist playwright. In his 1965 play The Memorandum he mocked communist officialdom by inventing a ridiculous fake bureaucratic language that no one could actually speak. What did he name this invented office gibberish?",
-    "answer": "Ptydepe",
+    "question": "Before he was a dissident and later Czech president, Vaclav Havel was an absurdist playwright. In his 1965 play The Memorandum he mocked communist officialdom by inventing something ridiculous that all the office workers were forced to learn. What was this ridiculous invention?",
+    "answer": "A fake bureaucratic language no one could actually speak",
     "choices": [
-      "Ptydepe",
-      "Newspeak",
-      "Volapuk",
-      "Esperanto"
+      "A fake bureaucratic language no one could actually speak",
+      "A dance every worker had to perform daily",
+      "A math test required to enter any office",
+      "A list of songs everyone sang before work"
     ],
     "context": "Havel started as a stagehand at Prague's Theatre on the Balustrade before writing The Garden Party (1963) and The Memorandum (1965). Source: https://english.radio.cz/czech-books-you-must-read-8506310/13"
   },
@@ -42733,13 +42733,13 @@
   },
   {
     "tier": 3,
-    "question": "Two of the most quoted lines in English are 'To be, or not to be' and 'All the world's a stage.' Many people assume both come from Hamlet. In fact only the first does — Prince Hamlet speaks it. Which play does 'All the world's a stage' actually open a speech in?",
-    "answer": "As You Like It",
+    "question": "Two of the most quoted lines in English are 'To be, or not to be' and 'All the world's a stage.' Only the first is from Hamlet. The 'All the world's a stage' speech is one of Shakespeare's most famous meditations, spoken by a melancholy character named Jaques. What is the speech about?",
+    "answer": "How a human life passes through seven stages",
     "choices": [
-      "As You Like It",
-      "Romeo and Juliet",
-      "A Midsummer Night's Dream",
-      "Twelfth Night"
+      "How a human life passes through seven stages",
+      "How love conquers all obstacles",
+      "How power corrupts every king",
+      "How dreams predict the future"
     ],
     "context": "In As You Like It the gloomy lord Jaques begins his speech 'All the world's a stage,' so the two most famous lines come from two different plays. Source: en.wikipedia.org/wiki/All_the_world's_a_stage ; en.wikipedia.org/wiki/To_be,_or_not_to_be"
   },
@@ -43153,13 +43153,13 @@
   },
   {
     "tier": 2,
-    "question": "The slogan 'survival of the fittest' is almost always credited to the naturalist Charles Darwin. But Darwin never wrote those words first. A British philosopher coined the phrase in his 1864 book 'Principles of Biology' after reading Darwin's 'On the Origin of Species,' and only later did Darwin himself borrow it. Who actually invented the phrase 'survival of the fittest'?",
-    "answer": "Herbert Spencer",
+    "question": "The slogan 'survival of the fittest' is almost always credited to Charles Darwin. But the first edition of Darwin's 'On the Origin of Species' does not contain those words. A British philosopher coined the phrase in his 1864 book 'Principles of Biology,' and only later did Darwin himself borrow it into new editions. What phrase did Darwin actually use in his own book to describe the same idea?",
+    "answer": "Natural selection",
     "choices": [
-      "Herbert Spencer",
-      "Thomas Huxley",
-      "Alfred Russel Wallace",
-      "Thomas Malthus"
+      "Natural selection",
+      "Ancestral inheritance",
+      "Random variation",
+      "Species drift"
     ],
     "context": "Herbert Spencer wrote that his 'survival of the fittest' was 'that which Mr. Darwin has called natural selection.' The famous catchphrase was a philosopher's gloss bolted onto biology and then stretched onto human society — Darwin only adopted it later, and as a metaphor. Source: en.wikipedia.org/wiki/Survival_of_the_fittest ; smithsonianmag.com/science-nature/herbert-spencer-survival-of-the-fittest-180974756"
   },
@@ -44845,13 +44845,13 @@
   },
   {
     "tier": 3,
-    "question": "The first sugar mill in the New World was built on the island of Hispaniola in 1516, and it made sugar the crop that would drive the whole brutal plantation system. The sugar cane itself was not native to the Americas at all; the colonists shipped it across the Atlantic from islands they already farmed. Which islands did that first cane come from?",
-    "answer": "The Canary Islands",
+    "question": "The first sugar mill in the New World was built on the island of Hispaniola in 1516, and sugar became the crop that drove the whole brutal plantation system across the Caribbean. Sugar cane was not native to the Americas — European colonists carried it across the Atlantic to their new colonies. The plantation-labor system that grew up around sugar soon became notorious for one specific horror. What was it?",
+    "answer": "The Atlantic slave trade",
     "choices": [
-      "The Canary Islands",
-      "The Cape Verde islands",
-      "The islands of the Azores",
-      "The island of Madeira"
+      "The Atlantic slave trade",
+      "Feudal serfdom",
+      "Debt peonage",
+      "Child factory labor"
     ],
     "context": "The cane for that first 1516 mill was carried over from the Canary Islands, off the coast of Africa. Sugar was the most labor-hungry crop in the colonies, and its demand for workers is what drove the whole forced-labor machine. Source: HistoryAtlas, 'The Indigenous Taino Have Nearly Disappeared' (historyatlas.com)."
   },
@@ -45373,13 +45373,13 @@
   },
   {
     "tier": 4,
-    "question": "For years the British governors of India left the Hindu custom of suttee untouched. A widow would be burned alive on her dead husband's funeral pyre, and the governors feared that banning it would set off a religious revolt. In 1829 a new Governor-General signed a regulation declaring widow-burning illegal and punishable by the courts. Who finally outlawed it?",
-    "answer": "Lord William Bentinck",
+    "question": "For years the British governors of India left the Hindu custom of suttee — burning a widow alive on her dead husband's funeral pyre — untouched, fearing that a ban would spark a religious revolt. In 1829 the Governor-General finally signed a regulation making it illegal. Under the new law, anyone who helped burn a widow could now be tried for what crime?",
+    "answer": "Murder",
     "choices": [
-      "Lord William Bentinck",
-      "Lord Charles Cornwallis",
-      "Lord Richard Wellesley",
-      "Lord Warren Hastings"
+      "Murder",
+      "Sedition",
+      "Blasphemy",
+      "Treason"
     ],
     "context": "Bentinck's regulation of 4 December 1829 declared that 'the practice of suttee, or of burning or burying alive the widows of Hindus, is hereby declared illegal.' The campaign behind it joined two unlikely allies: the Baptist missionary William Carey and the Hindu reformer Raja Ram Mohan Roy, who argued that suttee was not actually required by Hindu scripture. (Source: en.wikipedia.org/wiki/Bengal_Sati_Regulation,_1829)"
   },
@@ -45853,13 +45853,13 @@
   },
   {
     "tier": 3,
-    "question": "Teotihuacan's signature buildings stack the same two parts again and again: a sloping ramp-like wall topped by a flat rectangular panel framed like a picture, jutting out above it. This slope-and-panel look became such a recognizable fingerprint that spotting it lets archaeologists trace the city's influence in faraway places. What is this building style called?",
-    "answer": "Talud-tablero",
+    "question": "Teotihuacan's signature buildings stack the same two parts again and again: a sloping ramp-like wall topped by a flat rectangular panel framed like a picture, jutting out above it. This slope-and-panel look is such a recognizable fingerprint that spotting it in ruins far from Teotihuacan tells archaeologists something specific about those distant sites. What does it tell them?",
+    "answer": "Teotihuacan's influence reached those places",
     "choices": [
-      "Talud-tablero",
-      "Flying buttress",
-      "Corbel arch",
-      "Post-and-lintel"
+      "Teotihuacan's influence reached those places",
+      "Those sites were built long before Teotihuacan",
+      "Those sites were built by enemies of Teotihuacan",
+      "Those sites were rebuilt after being destroyed"
     ],
     "context": "Talud (the sloping wall) plus tablero (the framed panel). The stacked style spread across Mesoamerica and marks where Teotihuacan's reach extended. Source: en.wikipedia.org/wiki/Talud-tablero."
   },
@@ -45901,13 +45901,13 @@
   },
   {
     "tier": 4,
-    "question": "On January 16, 378 CE, a warlord marched into the distant Maya city of Tikal — and that very same day Tikal's king, Chak Tok Ich'aak ('Jaguar Paw'), died. Within a year a boy was crowned Tikal's new king, said to be the son of a Teotihuacan lord. Maya carvings give this warlord a fearsome name. What did his name, Siyaj K'ak', mean?",
-    "answer": "Fire Is Born",
+    "question": "On January 16, 378 CE, a warlord named Siyaj K'ak' arrived at the distant Maya city of Tikal — and that very same day Tikal's king Chak Tok Ich'aak ('Jaguar Paw') died. Within a year Tikal had a new boy-king, said in Maya carvings to be the son of a lord from far-off Teotihuacan. What does the perfect matching of these two dates tell archaeologists happened?",
+    "answer": "A foreign power staged a takeover of Tikal",
     "choices": [
-      "Fire Is Born",
-      "Smoking Frog",
-      "Stone Jaguar",
-      "Lightning Sky"
+      "A foreign power staged a takeover of Tikal",
+      "The old king died of natural causes",
+      "Maya calendars are unreliable",
+      "Two unrelated events lined up by chance"
     ],
     "context": "Siyaj K'ak' — 'Fire Is Born' — arrived under the authority of a Teotihuacan lord called Spearthrower Owl; within a year a boy claimed as Spearthrower Owl's son took Tikal's throne. Many scholars call this the 'entrada,' Teotihuacan's reach into the Maya world. Source: en.wikipedia.org/wiki/Siyaj_K%CA%BCak%CA%BC; en.wikipedia.org/wiki/Spearthrower_Owl."
   },
@@ -46225,13 +46225,13 @@
   },
   {
     "tier": 4,
-    "question": "The 'We Can Do It!' poster, with its bandana-wearing woman flexing her arm, was painted by J. Howard Miller in 1942 as a brief factory morale poster for Westinghouse -- shown to workers for only about two weeks before it vanished for decades. For years people thought a Michigan worker was the woman behind it, until Seton Hall professor James Kimble proved in 2016 it was really a California shipyard worker photographed in 1942. Who was she?",
-    "answer": "Naomi Parker Fraley",
+    "question": "The 'We Can Do It!' poster with its bandana-wearing woman flexing her arm was painted by J. Howard Miller in 1942 as a brief morale poster for Westinghouse — shown to factory workers for only about two weeks before it vanished for decades. Given that history, what is surprising about its status today as a symbol of American women in World War II?",
+    "answer": "It wasn't actually famous during the war itself",
     "choices": [
-      "Naomi Parker Fraley",
-      "Geraldine Hoff Doyle",
-      "Mary Doyle Keefe",
-      "Rose Will Monroe"
+      "It wasn't actually famous during the war itself",
+      "The model was paid nothing for posing",
+      "It was banned outside Westinghouse factories",
+      "Miller painted it under a fake name"
     ],
     "context": "The 1942 photo of Naomi Parker Fraley at a lathe in Alameda, California carried a caption warning she 'might catch her nose in the turret lathe she is operating.' Fraley lived to 96 before Kimble set the record straight in 2016. Source: https://www.smithsonianmag.com/smart-news/naomi-parker-fraley-real-rosie-riveter-has-died-96-180967935/"
   },
@@ -46561,13 +46561,13 @@
   },
   {
     "tier": 5,
-    "question": "Among the carvings from King Ashurbanipal's palace at Nineveh — praised as the supreme masterpieces of Assyrian art — one panel from about 645 BCE is singled out as one of the greatest artworks of the entire ancient world, prized for the raw realism of a single wounded creature pierced with arrows. What is this famous carving called?",
-    "answer": "The Dying Lioness",
+    "question": "Among the carvings from King Ashurbanipal's palace at Nineveh, one panel from about 645 BCE is singled out as one of the greatest artworks of the entire ancient world, prized for the raw realism of the wounded animal it shows collapsing with arrows in her back. What kind of animal does this famous carving show?",
+    "answer": "A lioness",
     "choices": [
-      "The Dying Lioness",
-      "The Dying Lion",
-      "The Wounded Lion",
-      "The Roaring Lion"
+      "A lioness",
+      "A stag",
+      "A wild bull",
+      "A war elephant"
     ],
     "context": "The 'Dying Lioness' shows a wounded lioness roaring as she drags her paralyzed hind legs, pierced by arrows. Part of Ashurbanipal's Royal Lion Hunt reliefs (British Museum), it is praised as one of the greatest works of art from the entire ancient world. Source: https://en.wikipedia.org/wiki/Lion_Hunt_of_Ashurbanipal"
   },
@@ -46921,13 +46921,13 @@
   },
   {
     "tier": 3,
-    "question": "Tenochtitlan sat on an island, so to grow food the Aztecs built long narrow garden plots out of mud dredged from the lake bottom, heaped onto staked reed frames and anchored by planting willow trees along the edges. These man-made beds were so fertile they fed well over 100,000 people. What were these farm plots called?",
-    "answer": "Chinampas",
+    "question": "The Aztec capital Tenochtitlan sat on an island in the middle of a lake, so growing enough food was hard. The Aztecs solved it with a clever trick: they built long narrow farm plots out of lake-bottom mud heaped onto staked reed frames, anchored by planting willow trees along the edges. Where were these hyper-fertile fields actually built?",
+    "answer": "On the shallow water of the lake",
     "choices": [
-      "Chinampas",
-      "Calpixque",
-      "Quachtli",
-      "Coatepantli"
+      "On the shallow water of the lake",
+      "On terraces cut into steep hillsides",
+      "Inside deep man-made caves",
+      "On rafts anchored out at sea"
     ],
     "context": "Each chinampa was only about 2.5 meters wide but 30 meters long; some 12,000 hectares of them ringed the city. They are often called 'floating gardens,' though they were really anchored to the lakebed. (https://www.ancient-origins.net/ancient-places-americas/chinampas-001537 ; https://en.wikipedia.org/wiki/Tenochtitlan)"
   },
@@ -47473,7 +47473,7 @@
   },
   {
     "tier": 2,
-    "question": "On Sunday, August 13, 1961, Berliners woke up to find their city split in two overnight. While everyone slept, East German soldiers had ripped up the streets and rolled a barrier straight across the middle of the city. Germans still have a grim nickname for that Sunday. What is it?",
+    "question": "On Sunday, August 13, 1961, Berliners woke up to find their city split in two overnight. While everyone slept, East German soldiers had ripped up the streets and rolled miles of barbed wire straight across the middle of the city. Germans still have a grim nickname for that Sunday. What is it?",
     "answer": "Barbed Wire Sunday",
     "choices": [
       "Barbed Wire Sunday",
@@ -48025,13 +48025,13 @@
   },
   {
     "tier": 4,
-    "question": "The 14 November 1940 raid on Coventry gutted St Michael's Cathedral, the only English cathedral lost in the war. Standing in the smoking ruins, Provost Richard Howard had two words carved into the sandstone wall behind the wrecked altar - pointedly NOT 'forgive them.' What two words did he choose?",
-    "answer": "FATHER FORGIVE",
+    "question": "The 14 November 1940 raid on Coventry gutted St Michael's Cathedral, the only English cathedral lost in the war. Standing in the smoking ruins, Provost Richard Howard had two words carved into the sandstone wall behind the wrecked altar — pointedly not the words 'forgive them.' What two words did he choose instead?",
+    "answer": "Father Forgive",
     "choices": [
-      "FATHER FORGIVE",
-      "NEVER AGAIN",
-      "WE SHALL REBUILD",
-      "LEST WE FORGET"
+      "Father Forgive",
+      "Never Again",
+      "We Shall Rebuild",
+      "Lest We Forget"
     ],
     "context": "He left it simply 'FATHER FORGIVE' - including his own nation, not just the enemy. A stonemason bound two charred roof beams into a cross, and three medieval roof nails were wired into the first 'Cross of Nails,' now a worldwide symbol of reconciliation. The Coventry raid was so total the Germans coined a verb, 'Koventrieren,' to raze a city to the ground. Source: https://www.coventry.anglican.org/the-story-of-the-cross-of-nails.php"
   },
@@ -50281,13 +50281,13 @@
   },
   {
     "tier": 3,
-    "question": "At Crécy in 1346 the French front line was about 6,000 hired Genoese crossbowmen. They were quickly outshot and broke — partly because the big shoulder-high shields they sheltered behind had been left in the baggage train. What were those shields called?",
-    "answer": "Pavises",
+    "question": "At Crecy in 1346 France hired about 6,000 Genoese crossbowmen. Against English longbows they were badly outshot: a trained English longbowman could shoot arrows far faster than a crossbowman could reload. Roughly how many arrows per minute could a trained English longbowman send?",
+    "answer": "10 to 12",
     "choices": [
-      "Pavises",
-      "Bucklers",
-      "Targes",
-      "Mantlets"
+      "10 to 12",
+      "2 to 3",
+      "25 to 30",
+      "About 60"
     ],
     "context": "Without their pavise shields and spare bolts, the Genoese shot exposed and outranged, then fled — and French knights rode down their own retreating crossbowmen. Source: https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
   },
@@ -50893,13 +50893,13 @@
   },
   {
     "tier": 3,
-    "question": "Long before the final collapse, the Roman Empire had already been cut in two: an eastern half that grew rich and, ruled from its new capital Constantinople, would survive another thousand years, and a western half that fell apart in 476. Around 285-293 AD it was a single ambitious emperor who first carved the empire into these two pieces to make it easier to govern. Which emperor first split Rome in two?",
-    "answer": "Diocletian",
+    "question": "Around 285-293 AD one ambitious emperor split the Roman Empire in two — an eastern half and a western half — so it would be easier to govern. Later, one of those two halves would collapse in 476, while the other would survive for nearly a thousand more years, ruled from Constantinople. Which half survived?",
+    "answer": "The eastern half",
     "choices": [
-      "Diocletian",
-      "Constantine the Great",
-      "Caesar Augustus",
-      "Theodosius the Great"
+      "The eastern half",
+      "The western half",
+      "Both fell in 476",
+      "Both survived to 1500"
     ],
     "context": "Diocletian's division is why we speak of a Western Roman Empire that 'fell' while the Eastern (later Byzantine) Empire lived on until 1453. The two halves drifted apart in wealth, language, and fortune. Source: https://www.history.com/articles/8-reasons-why-rome-fell"
   },
@@ -50965,13 +50965,13 @@
   },
   {
     "tier": 5,
-    "question": "Most people learn that Romulus Augustulus was the last Western Roman emperor. Yet many historians argue he doesn't really count — that the true last emperor was a rival whom Orestes had earlier overthrown, a man who kept the imperial title in exile in Dalmatia and was still recognized as the rightful emperor by the eastern court until his own guards murdered him in 480. Whom do these historians name as the real last Western emperor?",
-    "answer": "Julius Nepos",
+    "question": "Most people learn that Romulus Augustulus was the last Western Roman emperor in 476. Yet many historians argue he doesn't really count — a rival emperor kept the title in exile in Dalmatia and was still recognized as the rightful emperor by the eastern court, until his own guards murdered him four years later. In what year, then, did the real last Western emperor die?",
+    "answer": "480",
     "choices": [
-      "Julius Nepos",
-      "Flavius Glycerius",
-      "Flavius Majorian",
-      "Flavius Avitus"
+      "480",
+      "476",
+      "500",
+      "410"
     ],
     "context": "Julius Nepos was still treated as the legitimate Western emperor in Constantinople after 476; the counts Ovida and Viator killed him at his villa near Salona on 9 May 480. By this reckoning the empire 'ended' in 480, not 476 — proof that even Rome's final date is debated. Source: https://en.wikipedia.org/wiki/Julius_Nepos"
   },
@@ -51133,25 +51133,25 @@
   },
   {
     "tier": 4,
-    "question": "After the Wannsee chairman Heydrich was assassinated in 1942, the SS honored their fallen golden boy by naming, in his memory, the secret operation that murdered roughly 1.7 million Jews at the Belzec, Sobibor, and Treblinka death camps. What was that killing operation called?",
-    "answer": "Operation Reinhard",
+    "question": "After the Wannsee Conference chairman Reinhard Heydrich was assassinated in 1942, the SS launched a secret killing operation named in his memory. Over the next two years it murdered Jews at the Belzec, Sobibor, and Treblinka death camps. Roughly how many people did that operation kill?",
+    "answer": "About 1.7 million",
     "choices": [
-      "Operation Reinhard",
-      "Operation Barbarossa",
-      "Operation Valkyrie",
-      "Operation Sea Lion"
+      "About 1.7 million",
+      "About 17,000",
+      "About 170,000",
+      "About 17 million"
     ],
     "context": "The murder operation at Belzec, Sobibor, and Treblinka was code-named Operation Reinhard (Aktion Reinhard), named in memory of the slain Wannsee chairman. Source: encyclopedia.ushmm.org/content/en/article/operation-reinhard-einsatz-reinhard"
   },
   {
     "tier": 5,
-    "question": "Adolf Eichmann sat at Wannsee with a statistical table listing Europe's Jews country by country, like stock counted in a warehouse. Each line was a whole nation's Jewish population, marked for the Final Solution. The single largest entry was nearly three million people. Which country headed the list?",
-    "answer": "Ukraine",
+    "question": "Adolf Eichmann came to the Wannsee Conference with a table listing Europe's Jews country by country, like stock counted in a warehouse. Each line was a whole nation's Jewish population marked for the 'Final Solution.' About how many Jews did the whole list total across the continent?",
+    "answer": "About 11 million",
     "choices": [
-      "Ukraine",
-      "Poland",
-      "Hungary",
-      "France"
+      "About 11 million",
+      "About 1 million",
+      "About 30 million",
+      "About 100 million"
     ],
     "context": "Eichmann's table listed Ukraine's Jews at 2,994,684 -- almost three million human beings entered as a single bureaucratic figure in a spreadsheet of intended victims. Source: en.wikipedia.org/wiki/Wannsee_Conference"
   },
@@ -52873,13 +52873,13 @@
   },
   {
     "tier": 3,
-    "question": "After his armies defeated the Byzantines, Caliph al-Ma'mun is said to have made a strange demand of the emperor as the price of peace -- not gold or land, but one prized ancient Greek book. Which work did he want handed over?",
-    "answer": "Ptolemy's Almagest",
+    "question": "After his armies defeated the Byzantines, Caliph al-Ma'mun is said to have made a strange demand of the emperor as the price of peace — not gold or land, but Greek books. He then had Baghdad's House of Wisdom translate them into Arabic. Which subject did the books al-Ma'mun most prized cover?",
+    "answer": "Astronomy and mathematics",
     "choices": [
-      "Ptolemy's Almagest",
-      "Homer's Iliad",
-      "Euclid's Elements",
-      "Aristotle's Politics"
+      "Astronomy and mathematics",
+      "Poetry and drama",
+      "Farming and cooking",
+      "War and politics"
     ],
     "context": "The Almagest (about AD 150) was Ptolemy's great astronomy book; al-Ma'mun is said to have demanded Greek manuscripts, including it, from Emperor Theophilus. Source: https://www.middleeasteye.net/discover/iraq-baghdad-house-wisdom-uniting-east-west"
   },
@@ -54757,13 +54757,13 @@
   },
   {
     "tier": 4,
-    "question": "In 1562 in the town of Maní, the Spanish friar Diego de Landa decided the Maya's painted books were 'superstition and lies of the devil' and threw them onto a single bonfire. The loss was so total that only three pre-Columbian Maya books survive in the whole world today. How many did de Landa burn that day?",
-    "answer": "Twenty-seven",
+    "question": "In 1562 in the town of Mani, the Spanish friar Diego de Landa decided the Maya's painted books were 'superstition and lies of the devil' and burned dozens of them on a single bonfire. The loss was so total that only a tiny number of pre-Columbian Maya books survive anywhere in the world today. How many still exist?",
+    "answer": "Three",
     "choices": [
+      "Three",
       "Twenty-seven",
-      "Forty",
-      "Sixty",
-      "Ninety"
+      "One hundred",
+      "Over a thousand"
     ],
     "context": "De Landa wrote that the Maya 'regretted to an amazing degree' the loss. The three survivors plus a fragment of a fourth are nearly all the Maya literature left. Source: https://en.wikipedia.org/wiki/Diego_de_Landa"
   },
@@ -55429,13 +55429,13 @@
   },
   {
     "tier": 3,
-    "question": "Shah Jahan's grandfather, the emperor Akbar, ran his empire by a famous policy of religious tolerance — welcoming Hindus, Jains, and Christians instead of forcing one faith on everyone. What was Akbar's policy of tolerance called?",
-    "answer": "Sulh-i-kul",
+    "question": "Shah Jahan's grandfather, the emperor Akbar, was famous for how he handled religion in his empire. Instead of forcing one faith on everyone, he invited Hindus, Jains, Christians, and Zoroastrians to debate freely at his court alongside Muslims. What kind of religious policy is this called?",
+    "answer": "Tolerance",
     "choices": [
-      "Sulh-i-kul",
-      "Din-i-Ilahi",
-      "Mansabdari",
-      "Zat-wa-sawar"
+      "Tolerance",
+      "Persecution",
+      "Forced conversion",
+      "Excommunication"
     ],
     "context": "Sulh-i-kul means 'peace with all' or 'universal peace.' Akbar appointed Hindus to the highest posts in his government — a remarkable stance for a 16th-century ruler. (en.wikipedia.org/wiki/Akbar)"
   },
@@ -57361,13 +57361,13 @@
   },
   {
     "tier": 5,
-    "question": "Cosimo de' Medici set the young scholar Marsilio Ficino up in a villa with Greek manuscripts and a grand task: to translate ALL of Plato into Latin for the first time in history. But as Cosimo lay dying in 1464, he ordered Ficino to halt Plato and rush to translate one other ancient text first, because he longed to read it before the end. Which text did the dying Cosimo demand first?",
-    "answer": "The 'Corpus Hermeticum'",
+    "question": "Cosimo de' Medici set the scholar Marsilio Ficino up in a villa to translate ALL of Plato into Latin for the first time in history. But as Cosimo lay dying in 1464, he ordered Ficino to halt Plato and rush to translate one other bundle first. Cosimo believed these writings held magical wisdom from an Egyptian priest older than Plato. What kind of writings did the dying Cosimo demand first?",
+    "answer": "A collection of ancient Egyptian magical texts",
     "choices": [
-      "The 'Corpus Hermeticum'",
-      "The 'Chaldean Oracles'",
-      "The 'Orphic Hymns'",
-      "The writings of Zoroaster"
+      "A collection of ancient Egyptian magical texts",
+      "The battle diaries of Alexander the Great",
+      "The sayings of the Buddha",
+      "The love poems of Sappho"
     ],
     "context": "Ficino set Plato aside and translated the Hermetic writings so Cosimo could read them before he died. Ficino went on to give the world its first complete Latin Plato and to coin the phrase 'Platonic love.' Source: Wikipedia 'Marsilio Ficino'."
   },
@@ -57745,13 +57745,13 @@
   },
   {
     "tier": 4,
-    "question": "When Alexander Hamilton, James Madison, and John Jay wrote the 85 Federalist essays urging Americans to ratify the Constitution, all three hid behind a single pen name borrowed from a founder of the Roman Republic famous for repeatedly saving early Rome from tyranny. Their opponents fired back under Roman names too, like 'Brutus' and 'Cato' -- the whole ratification fight argued in Roman disguise. What single pen name did the Federalists write under?",
-    "answer": "Publius",
+    "question": "When Alexander Hamilton, James Madison, and John Jay wrote 85 essays urging Americans to ratify the Constitution, all three hid behind a single shared pen name. Their opponents fired back with pen names like 'Brutus' and 'Cato' -- the whole ratification fight was argued in disguise. What did all of these pen names have in common?",
+    "answer": "They were all names from ancient Rome's republic",
     "choices": [
-      "Publius",
-      "Cincinnatus",
-      "Cicero",
-      "Scipio"
+      "They were all names from ancient Rome's republic",
+      "They were all names of English kings",
+      "They were all names from the Bible",
+      "They were all names of Greek philosophers"
     ],
     "context": "The name honored Publius Valerius Publicola, who in Plutarch's 'Lives' repeatedly rescued the young Republic from would-be tyrants; with both sides using Roman pseudonyms, the entire debate over the Constitution was conducted in Roman costume. Source: federalism.org/library/american-federalism/who-was-publius/ ; csac.history.wisc.edu/2022/07/22/pseudonyms-and-the-debate-over-the-constitution/"
   },
@@ -58417,13 +58417,13 @@
   },
   {
     "tier": 2,
-    "question": "Before facing the Taklamakan Desert, every caravan funneled through one oasis town where the road forked north and south. It was the last place to load up on water and food before the crossing, and the first safe haven coming home. What was the name of this gateway town?",
-    "answer": "Dunhuang",
+    "question": "Silk Road caravans traveling west from China had to skirt a huge, waterless sand sea that no one dared cross straight through. At its eastern edge stood a gateway oasis town where the road split into a northern and southern path that curled around the sand. What was the name of this brutal desert?",
+    "answer": "The Taklamakan Desert",
     "choices": [
-      "Dunhuang",
-      "Carthage",
-      "Trebizond",
-      "Ctesiphon"
+      "The Taklamakan Desert",
+      "The Sahara Desert",
+      "The Kalahari Desert",
+      "The Atacama Desert"
     ],
     "context": "All Silk Road traffic between China and the West funneled through the oasis town of Dunhuang, where the road forked into a northern and a southern branch to skirt the Taklamakan. It was the last stock-up before crossing and the first safe haven on the way home. Source: https://thechinaproject.com/2016/12/23/dunhuang-history-travel-guide/ ; https://factsanddetails.com/china/cat15/sub103/entry-6520.html"
   },
@@ -58945,13 +58945,13 @@
   },
   {
     "tier": 3,
-    "question": "At the grand opening of the Suez Canal in November 1869, a glittering procession of 77 ships was meant to enter the new waterway in order, led by the French imperial yacht L'Aigle carrying Empress Eugenie. But the night before, one British warship quietly crept to the very front under cover of darkness so it would actually be first into the canal. Which ship pulled off that stunt?",
-    "answer": "HMS Newport",
+    "question": "At the grand opening of the Suez Canal in November 1869, a glittering procession of 77 ships was meant to enter the new waterway in order, led by the French imperial yacht L'Aigle carrying Empress Eugenie. But the night before, one rival power's warship quietly crept to the front under cover of darkness so it would actually be first into the canal. Which country pulled off the stunt?",
+    "answer": "Britain",
     "choices": [
-      "HMS Newport",
-      "L'Aigle",
-      "The Khedive's barge",
-      "The Bombay packet"
+      "Britain",
+      "Russia",
+      "The Ottoman Empire",
+      "The United States"
     ],
     "context": "By slipping ahead in the dark, the British warship HMS Newport became the first ship ever to enter the Suez Canal, beating the official lead ship L'Aigle that carried Empress Eugenie, wife of Napoleon III, at the head of the 77-ship procession. Source: https://maritimecyprus.com/2025/11/16/flashback-in-maritime-history-suez-canal-opens-to-the-world-17-november-1869/"
   },
@@ -59017,13 +59017,13 @@
   },
   {
     "tier": 3,
-    "question": "At Kilwa, the richest of the Swahili city-states, the Sultan al-Hasan ibn Sulaiman raised a coral-stone palace with over a hundred rooms, an eight-sided swimming pool, and indoor plumbing, reached by a stair carved up the sea cliff. The grand name he gave it means 'the Big Fort.' What was that palace called?",
-    "answer": "Husuni Kubwa",
+    "question": "Kilwa was the richest of the medieval Swahili city-states on the coast of East Africa, its sultan ruling from a coral-stone palace of over a hundred rooms with an eight-sided swimming pool and indoor plumbing. Kilwa grew fabulously wealthy by trading across which vast body of water, riding the seasonal monsoon winds to reach India and Arabia?",
+    "answer": "The Indian Ocean",
     "choices": [
-      "Husuni Kubwa",
-      "Gereza Sofala",
-      "Mtepe Sawahil",
-      "Qasr al-Bahr"
+      "The Indian Ocean",
+      "The Atlantic Ocean",
+      "The Mediterranean Sea",
+      "The Red Sea"
     ],
     "context": "Husuni Kubwa also had a stepped courtyard that doubled as a warehouse-and-rest-stop where merchants stored goods and reloaded them onto ships. Source: panafrocore.com/2024/03/13/husuni-kubwa-palace-a-brief-history ; nationalgeographic.com/history/history-magazine/article/abandoned-east-african-city-kilwa"
   },
@@ -62929,13 +62929,13 @@
   },
   {
     "tier": 5,
-    "question": "By November 1923 the printed mark was hopeless, so Germany introduced a brand-new currency to stop the spiral. Its supply was strictly capped, and the new Reichsbank president Hjalmar Schacht refused every demand to print more. Within days prices stabilized. What was this rescue currency called?",
-    "answer": "The Rentenmark",
+    "question": "By November 1923 the printed mark was hopeless, so Germany rolled out a brand-new rescue currency to stop the spiral. Its new Reichsbank president Hjalmar Schacht did one strict thing that made people trust it almost overnight. What did he do?",
+    "answer": "Refused every demand to print more",
     "choices": [
-      "The Rentenmark",
-      "The Goldmark",
-      "The Reichsthaler",
-      "The Federal mark"
+      "Refused every demand to print more",
+      "Banned all foreign currencies",
+      "Doubled the interest rate every week",
+      "Ordered the army to seize gold"
     ],
     "context": "The Rentenmark, capped at 3.2 billion units and exchanged at 1 to 1 trillion old marks, ended the crisis; Schacht (Reichsbank president from Dec 22, 1923) refused to print more and prices stabilized within days. Source: https://www.britannica.com/place/Weimar-Republic/Toward-stabilization"
   },
@@ -63277,13 +63277,13 @@
   },
   {
     "tier": 4,
-    "question": "President Woodrow Wilson did not write the Fourteen Points alone. His friend Colonel Edward M. House had secretly assembled a team of about 150 geographers, historians, and political scientists to guide the peace. What was this brain-trust called?",
-    "answer": "The Inquiry",
+    "question": "President Woodrow Wilson did not write the Fourteen Points alone. His friend Colonel Edward M. House had secretly assembled a team of about 150 experts to draw up plans for the peace. What kinds of experts were they mostly?",
+    "answer": "Geographers, historians, and political scientists",
     "choices": [
-      "The Inquiry",
-      "The Brain Trust",
-      "The Black Chamber",
-      "The House Committee"
+      "Geographers, historians, and political scientists",
+      "Generals and admirals",
+      "Bankers and industrialists",
+      "Priests and missionaries"
     ],
     "context": "Colonel House's secret team of ~150 scholars, called 'The Inquiry,' produced roughly 2,000 reports and over 1,200 maps. Source: US State Dept Office of the Historian, https://history.state.gov/milestones/1914-1920/fourteen-points"
   },
