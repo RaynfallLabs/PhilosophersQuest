@@ -13,13 +13,13 @@
   },
   {
     "tier": 2,
-    "question": "A young cicada hides deep in dark soil, sucking sap from a tree root. For a 17-year cicada, about how much of its life is spent underground before it ever sees daylight?",
-    "answer": "About 99.5 percent of it",
+    "question": "A 17-year cicada spends its whole youth deep underground, sipping sap from tree roots. Then, in one summer, millions surface at once — far too many for any bird or fox to eat them all. What is this survival trick called?",
+    "answer": "Predator satiation",
     "choices": [
-      "About 99.5 percent of it",
-      "About half of it",
-      "About a tenth of it",
-      "About a quarter of it"
+      "Predator satiation",
+      "Camouflage",
+      "Warning coloration",
+      "Mimicry"
     ],
     "context": "Periodical cicadas spend about 99.5% of their entire lives underground as nymphs, sucking sap from tree roots in the dark for 13 or 17 years before ever seeing daylight. Source: https://en.wikipedia.org/wiki/Periodical_cicadas"
   },
@@ -7921,13 +7921,13 @@
   },
   {
     "tier": 4,
-    "question": "The elephantnose fish has one of the biggest brains for its body of any fish. That brain is astonishingly power-hungry. It burns a bigger share of the animal's oxygen than any other backboned animal ever measured, even people. About what share of its oxygen does the brain use?",
-    "answer": "Around 60 percent",
+    "question": "The elephantnose fish grows one of the largest brains for its body of any fish — burning oxygen at a rate that beats even the human brain. Almost all of that brain is wired to process signals from an organ in its chin that reads the faint electric field of nearby prey. What is this sensing ability called?",
+    "answer": "Electroreception",
     "choices": [
-      "Around 60 percent",
-      "Around 5 percent",
-      "Around 20 percent",
-      "Around 95 percent"
+      "Electroreception",
+      "Echolocation",
+      "Bioluminescence",
+      "Magnetoreception"
     ],
     "context": "Its brain burns roughly 60% of the fish's oxygen — about three times the share of any other vertebrate measured, needed to process the flood of electrical information from its whole-body electric sense. Source: Nilsson, 'Brain and body oxygen requirements of Gnathonemus petersii,' J. Experimental Biology 199:603 (1996), https://pubmed.ncbi.nlm.nih.gov/9318319/  (Legend.)"
   },
@@ -8365,13 +8365,13 @@
   },
   {
     "tier": 4,
-    "question": "The Antarctic icefish carries no oxygen pigment, so it must pump a huge volume of thin, watery blood to stay alive. Its oversized heart drains a big share of the fish's total energy budget. Roughly what fraction does that pumping cost the icefish?",
-    "answer": "About 22%",
+    "question": "The Antarctic icefish is the only backboned animal on Earth with no red blood cells and no oxygen-carrying pigment. Its blood runs clear as water, so it must pump huge volumes with an oversized heart just to stay alive. What is the pigment that its blood is missing?",
+    "answer": "Hemoglobin",
     "choices": [
-      "About 22%",
-      "About 5%",
-      "About 8%",
-      "About 50%"
+      "Hemoglobin",
+      "Melanin",
+      "Chlorophyll",
+      "Keratin"
     ],
     "context": "The icefish's enormous heart pumps about five times more blood than a normal fish and burns roughly 22% of the fish's energy budget (versus about 5% in ordinary fish) just to move that thin, pigment-free blood, helped by cold, oxygen-rich Antarctic water. Source: Wikipedia, 'Channichthyidae'; Scientific American icefish article."
   },
@@ -27577,13 +27577,13 @@
   },
   {
     "tier": 4,
-    "question": "A New Caledonian crow treats a well-made hooked tool as something worth guarding. Between uses, roughly how often does it stow the tool underfoot or tuck it into a hole for safekeeping?",
-    "answer": "About 95% of the time",
+    "question": "A New Caledonian crow snips a twig, strips the bark, and bends one end into a barb to fish grubs from a rotting log. It then guards that favorite tool between uses. Besides humans and great apes, this crow is the only known animal to do what in the wild?",
+    "answer": "Craft hooked tools",
     "choices": [
-      "About 95% of the time",
-      "About 5% of the time",
-      "Almost never — it drops each one",
-      "Exactly half the time"
+      "Craft hooked tools",
+      "Farm insects",
+      "Weave hanging nests",
+      "Use fire"
     ],
     "context": "New Caledonian crows safekeep their hand-made hooked tools about 95% of the time, trapping them underfoot or tucking them behind bark — behavior that suggests they value a good tool. Source: Klump et al. 2021, eLife."
   },
@@ -30301,13 +30301,13 @@
   },
   {
     "tier": 4,
-    "question": "Scientists X-rayed the biggest beetles and traced a scaling trap: to supply a larger body, the air tubes must swell and take up ever more internal room. In the largest living beetle, how much of the leg is already given over to air tube?",
-    "answer": "About 90 percent",
+    "question": "Scientists X-rayed the world's largest beetles and found the same trap in every one — the tubes that pipe air straight to each muscle cell must swell so wide they crowd out the muscle itself. This limit on insect size is set by their unique breathing network. What is that body-wide network of air tubes called?",
+    "answer": "The tracheal system",
     "choices": [
-      "About 90 percent",
-      "About 10 percent",
-      "About 40 percent",
-      "About 5 percent"
+      "The tracheal system",
+      "The circulatory system",
+      "The lymphatic system",
+      "The nervous system"
     ],
     "context": "Extrapolate the trend and the leg fills with trachea, so there's physically no space left to build a larger beetle. Source: PNAS 2007, Kaiser et al."
   },

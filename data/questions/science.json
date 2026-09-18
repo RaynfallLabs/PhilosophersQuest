@@ -241,13 +241,13 @@
   },
   {
     "tier": 4,
-    "question": "Two very different unseen things get mixed up. One pulls galaxies together and shows up in how they spin and in gravitational lensing. The other pushes space itself apart and was found by the 1998 supernova search. Roughly what share of the universe's total energy is the pushing one?",
-    "answer": "About 68 percent",
+    "question": "In 1998, teams led by Saul Perlmutter and Brian Schmidt watched distant supernovae to measure how the universe's expansion was slowing. What did they find instead that revealed a pushing 'dark energy'?",
+    "answer": "Expansion is speeding up",
     "choices": [
-      "About 68 percent",
-      "About 27 percent",
-      "About 5 percent",
-      "About 95 percent"
+      "Expansion is speeding up",
+      "Expansion has stopped",
+      "Expansion is steady",
+      "Expansion has reversed"
     ],
     "context": "Best-fit Planck-mission numbers: dark energy ~68 percent, dark matter ~27 percent, ordinary matter (stars, gas, dust, us) ~5 percent. Two utterly different unknowns dominate the cosmic budget: dark matter holds structures together, dark energy pushes space apart. Getting them mixed up is one of the classic freshman-astronomy errors -- the 95 percent trap counts BOTH dark components together. Sources: science.nasa.gov building-blocks; en.wikipedia.org Dark_matter."
   },
@@ -2077,13 +2077,13 @@
   },
   {
     "tier": 3,
-    "question": "In the 1721 Boston smallpox outbreak, most doctors would not try engrafting. One doctor, Zabdiel Boylston, tried it and kept a careful tally of every patient and every death. Of his 282 inoculated patients, about 2 percent died. Of the 5,759 who caught the disease the natural way, roughly what share died?",
-    "answer": "about 14 percent",
+    "question": "In the 1721 Boston smallpox outbreak, Zabdiel Boylston kept a careful tally of every one of his 282 inoculated patients and every death among the 5,759 who caught it naturally. What did that first-of-its-kind tally make his report?",
+    "answer": "The first statistical clinical trial",
     "choices": [
-      "about 14 percent",
-      "about 3 percent",
-      "about 40 percent",
-      "about 60 percent"
+      "The first statistical clinical trial",
+      "The first double-blind study",
+      "The first placebo-controlled trial",
+      "The first randomized trial"
     ],
     "context": "Boylston counted 6 deaths among 282 inoculated versus 844 deaths among 5,759 who caught natural smallpox. It is one of the earliest quantitative comparisons in medicine -- numbers, not authority, decided the argument. He presented the volume to the Royal Society in London in 1726. Source: James Lind Library."
   },
@@ -15361,13 +15361,13 @@
   },
   {
     "tier": 5,
-    "question": "David Chavalarias and John Ioannidis did a big survey of medical papers from 1990 to 2015. They counted the p-values reported in each one. Of the papers that reported any p-value, what share reported at least one under 0.05 -- a share Ioannidis said was impossible if the tests were honest?",
-    "answer": "96%",
+    "question": "David Chavalarias and John Ioannidis surveyed medical papers from 1990 to 2015 and found nearly every one reporting a p-value came in under 0.05 — a rate impossible if the tests were honest. What was the title of Ioannidis's famous 2005 paper naming this problem?",
+    "answer": "Why Most Published Research Findings Are False",
     "choices": [
-      "96%",
-      "43%",
-      "68%",
-      "12%"
+      "Why Most Published Research Findings Are False",
+      "The Replication Crisis Solved",
+      "A Manifesto for Reproducible Science",
+      "The End of Peer Review"
     ],
     "context": "Chavalarias, Wallach, Salem, Ioannidis, JAMA 2016. Ioannidis: 'It's impossible that 96 percent of all the hypotheses being tested would be significant.' What you are seeing is a shelf, filtered -- the null results were strained out before print. The publication-bias mechanism has a name: the file-drawer problem."
   },
@@ -17773,13 +17773,13 @@
   },
   {
     "tier": 3,
-    "question": "Deep in The Limits to Growth is a table of nineteen non-renewable resources with a column showing years to exhaustion at then-current growth rates. What year did the petroleum row point to?",
-    "answer": "1992",
+    "question": "The Limits to Growth used a computer simulation to predict when nineteen non-renewable resources would run out. The petroleum row famously came and went with no shortage. What was that simulation called?",
+    "answer": "World3",
     "choices": [
-      "1992",
-      "1982",
-      "2002",
-      "2012"
+      "World3",
+      "LINK",
+      "MERGE",
+      "PRIMES"
     ],
     "context": "Twenty years from 1972. Lead's row pointed to 1993, twenty-one years out. The column was arithmetic on exponential growth applied to the then-known reserve; it was not a model output. Source: en.wikipedia.org/wiki/The_Limits_to_Growth."
   },
@@ -23041,13 +23041,13 @@
   },
   {
     "tier": 5,
-    "question": "In 2012 Leslie John, George Loewenstein and Drazen Prelec surveyed more than 2,000 psychologists in a way that made honest answers safe. They asked about the mildest bad practice: not reporting every measure a study had. What share admitted to it?",
-    "answer": "63%",
+    "question": "In 2012 Leslie John, George Loewenstein and Drazen Prelec surveyed more than 2,000 psychologists using a truth-eliciting method. Over half admitted to not reporting every measure their study collected. What are these small dishonest habits collectively called?",
+    "answer": "Questionable research practices",
     "choices": [
-      "63%",
-      "12%",
-      "38%",
-      "91%"
+      "Questionable research practices",
+      "Cognitive dissonance",
+      "Selection bias",
+      "Regression to the mean"
     ],
     "context": "John, Loewenstein and Prelec, Psychological Science, 2012. About half also admitted reporting only the analyses that 'worked' and about 70% admitted deciding on data-collection stopping in response to interim results. These were not rare crimes; they were normal practice."
   },
@@ -28201,13 +28201,13 @@
   },
   {
     "tier": 2,
-    "question": "The two forms of smallpox in the wild looked alike but killed at very different rates. Variola minor killed only about 1 in 100 people who had never had a shot. What share of victims did the deadly form, variola major, kill?",
-    "answer": "about 30 percent",
+    "question": "The two forms of smallpox looked alike but killed very differently — variola minor killed about 1 in 100 while variola major killed roughly 1 in 3. Which organization certified smallpox eradicated worldwide in 1980?",
+    "answer": "The World Health Organization",
     "choices": [
-      "about 30 percent",
-      "about 5 percent",
-      "about 60 percent",
-      "about 90 percent"
+      "The World Health Organization",
+      "The Red Cross",
+      "The League of Nations",
+      "The Rockefeller Foundation"
     ],
     "context": "Variola major and variola minor share about 98 percent of their DNA yet had case fatality rates of 30 percent and 1 percent respectively. The hemorrhagic and flat presentations of major were nearly always fatal. Source: programs.fas.org/bio/factsheets/smallpoxfs.html"
   },
@@ -32713,13 +32713,13 @@
   },
   {
     "tier": 4,
-    "question": "Doctors writing prescriptions read the printed journals, not the Food and Drug Administration (FDA) files. Turner checked what those journals had left out. By how much did leaving out the failed trials puff up the apparent effect of the antidepressants overall?",
-    "answer": "About 32%",
+    "question": "Doctors writing prescriptions read the printed journals, not the FDA files. Erick Turner's 2008 NEJM study compared the two and found the journals had quietly dropped most of the trials where the antidepressants had failed. What is this phenomenon called?",
+    "answer": "Selective publication bias",
     "choices": [
-      "About 32%",
-      "About 3%",
-      "About 300%",
-      "Not at all"
+      "Selective publication bias",
+      "Regression to the mean",
+      "Placebo response drift",
+      "The Hawthorne effect"
     ],
     "context": "And by as much as 69% for individual drugs. This is how an entire profession can be sincerely misled by a filtered shelf without one fabricated number. Source: Turner et al., NEJM 2008."
   },
@@ -33265,13 +33265,13 @@
   },
   {
     "tier": 2,
-    "question": "In 1920 Francis Aston used his new mass spectrograph to weigh atoms one kind at a time. He got a strange result: four hydrogen nuclei weigh a tiny bit more than the single helium nucleus they can combine to make. About how much heavier are the four hydrogens?",
-    "answer": "about 0.7 percent heavier",
+    "question": "In 1920 Francis Aston used his mass spectrograph to weigh atoms one kind at a time. He found four hydrogen nuclei weighed a tiny bit more than the single helium nucleus they can fuse into. What does that vanished mass become inside the Sun?",
+    "answer": "Energy that powers the Sun",
     "choices": [
-      "about 0.7 percent heavier",
-      "about 7 percent heavier",
-      "about 25 percent heavier",
-      "about 70 percent heavier"
+      "Energy that powers the Sun",
+      "Extra neutrinos",
+      "Dark matter particles",
+      "Cosmic ray showers"
     ],
     "context": "A tiny sliver, but Aston saw its meaning at once. He wrote that 'if hydrogen is transformed into helium a certain quantity of mass must be annihilated in the process' and called out its 'cosmical importance.' That missing 0.7 percent, multiplied by c^2, is the fuel of every star. Source: https://en.wikipedia.org/wiki/History_of_nuclear_fusion"
   },
@@ -34477,13 +34477,13 @@
   },
   {
     "tier": 3,
-    "question": "The same Lancet meta-analysis asked a very different question: at 40 weeks out, how much did a past infection still protect against simply CATCHING Omicron BA.1 again? Their pooled figure was:",
-    "answer": "About 29%",
+    "question": "A 2023 Lancet meta-analysis asked how well past infection still protected against simply catching Omicron BA.1 again forty weeks later — and found the protection had collapsed. What is Omicron's ability to slip past prior immunity called?",
+    "answer": "Immune escape",
     "choices": [
-      "About 29%",
-      "About 55%",
-      "About 78%",
-      "About 99%"
+      "Immune escape",
+      "Cytokine storm",
+      "Antibody-dependent enhancement",
+      "Original antigenic sin"
     ],
     "context": "Protection against reinfection at 40 weeks fell to about 29.0% for Omicron BA.1, though about 78.2% for ancestral, Alpha and Delta variants. Both results -- strong protection against severe disease AND weak protection against reinfection -- were true at the same time; headlines in both directions reported only one. Source: The Lancet, IHME COVID-19 Forecasting Team, 16 Feb 2023."
   },
@@ -34777,7 +34777,7 @@
   },
   {
     "tier": 4,
-    "question": "The Herby-Jonung-Hanke study came out in the journal Public Choice in November 2024. Using papers based on the Oxford stringency index, they found the typical spring 2020 lockdown cut COVID deaths by about how much?",
+    "question": "Public health officials had promised spring 2020 lockdowns would slash COVID deaths. A November 2024 Public Choice meta-analysis by Herby, Jonung and Hanke tallied every study using the Oxford stringency index. Their finding for how much lockdowns actually cut deaths was:",
     "answer": "3.2%",
     "choices": [
       "3.2%",
@@ -36469,13 +36469,13 @@
   },
   {
     "tier": 4,
-    "question": "In 2021, the psychotherapist Caroline Hickman and her team surveyed 10,000 people aged 16 to 25 across ten countries. Their work ran in The Lancet Planetary Health. What share said they were 'very or extremely worried' about climate change?",
-    "answer": "About 59%",
+    "question": "In 2021 the Hickman team surveyed 10,000 people aged 16 to 25 across ten countries for The Lancet Planetary Health. So many said the future was 'frightening' that the paper popularized a name for this generational feeling. What is it?",
+    "answer": "Eco-anxiety",
     "choices": [
-      "About 59%",
-      "About 8%",
-      "About 22%",
-      "About 91%"
+      "Eco-anxiety",
+      "Solastalgia",
+      "Climate grief",
+      "Environmental despair"
     ],
     "context": "1,000 respondents per country in Australia, Brazil, Finland, France, India, Nigeria, Philippines, Portugal, the UK and USA. 75% agreed the future is frightening. The bank treats this neither as proof the danger is fake nor as proof it is real - it is a measured effect of HOW the danger is communicated to children. Source: The Lancet Planetary Health, December 2021."
   },
@@ -37069,13 +37069,13 @@
   },
   {
     "tier": 3,
-    "question": "In 2021 three scientists compared two kinds of psychology papers. They looked at 152 normal papers, and 71 studies the journal had said yes to before results were known. About 96% of the normal papers said their guess was right. About what share of the second group did?",
-    "answer": "About 44%",
+    "question": "In 2021 three scientists compared 152 normal psychology papers, of which about 96 percent said their guess was right, against 71 studies of a newer format the journal had said yes to before results were known — where confirmations dropped by more than half. What is that newer format called?",
+    "answer": "Registered reports",
     "choices": [
-      "About 12%",
-      "About 44%",
-      "About 76%",
-      "About 92%"
+      "Registered reports",
+      "Peer review",
+      "Meta-analyses",
+      "Systematic reviews"
     ],
     "context": "Scheel, Schijen and Lakens (2021), 'An Excess of Positive Results,' Advances in Methods and Practices in Psychological Science 4(2). 146 of 152 standard papers (~96%) reported a confirming result; 31 of 71 Registered Reports (~44%) did. IMPORTANT: this is a correlation between two different literatures, not a controlled experiment -- the authors themselves caution against a simple causal reading. The 52-point gap is still large enough to make you look twice at anything that comes back positive in the ordinary literature. Source: https://journals.sagepub.com/doi/10.1177/25152459211007467"
   },
@@ -39169,13 +39169,13 @@
   },
   {
     "tier": 3,
-    "question": "In February 2015, federal inspectors would later find something. An Edison test for a hormone that controls testosterone had been checked each day. It was checked against Theranos's own accuracy standard. How often did that test fail the standard?",
-    "answer": "about 87% of the time",
+    "question": "In February 2015 federal inspectors would later find that an Edison hormone test at Theranos was failing its own accuracy standard on most days. Who was the Theranos CEO ultimately convicted of fraud?",
+    "answer": "Elizabeth Holmes",
     "choices": [
-      "about 87% of the time",
-      "about 12% of the time",
-      "about 3% of the time",
-      "about 1% of the time"
+      "Elizabeth Holmes",
+      "Sunny Balwani",
+      "Tyler Shultz",
+      "Ian Gibbons"
     ],
     "context": "Inspectors also documented that 29% of Edison quality-control checks in October 2014 already fell outside Theranos's own acceptable range. The internal numbers were catastrophic long before the public exposure. Source: MedCityNews, March 2016; CMS inspection report."
   },
@@ -41905,13 +41905,13 @@
   },
   {
     "tier": 5,
-    "question": "From about 1645 to 1715, astronomers had the telescope and watched the Sun closely. Almost no sunspots were seen. Fewer than fifty were logged in the 28 years to 1699. A modern span that long would show forty or fifty thousand. The coldest winters of the Little Ice Age fall inside that gap, so the Sun has long been the main suspect. How much did the Sun's total output drop over that stretch?",
-    "answer": "About 0.24 percent",
+    "question": "From about 1645 to 1715 astronomers with telescopes watched the Sun and saw almost no sunspots — fewer than fifty in the 28 years to 1699, when a modern span that long would show forty or fifty thousand. The Little Ice Age's coldest winters fall inside this gap. What is this quiet stretch called?",
+    "answer": "The Maunder Minimum",
     "choices": [
-      "About 0.24 percent",
-      "About 0.75 percent",
-      "About 1.2 percent",
-      "About 2.4 percent"
+      "The Maunder Minimum",
+      "The Dalton Minimum",
+      "The Sporer Minimum",
+      "The Grand Solar Minimum"
     ],
     "context": "About 0.24% - roughly 0.82 watts per square metre averaged over Earth's surface, enough for perhaps 0.1 to 0.3 degrees C of global cooling, against a Little Ice Age cooling of about 0.5 to 1 degree C. So the tidy solar story does not hold: the cooling began BEFORE the solar minimum, and the primary cause is believed to be volcanic activity. The Sun is part of this story, not the story - and one neat explanation should not be swapped for another. The gap itself was dug out of the old logbooks by Gustav Sporer, who published in 1887 and 1889; Edward Walter Maunder wrote it up in 1890 and 1894; it then lay forgotten for most of a century until John A. Eddy revived it in a 1976 Science paper and gave it the name we use. Annie Russell Maunder did the sunspot-latitude research and received no public credit, women being barred from that recognition at the time. Sources: en.wikipedia.org/wiki/Maunder_Minimum; swsc-journal.org, Space Weather and Space Climate 2017"
   },
@@ -42337,13 +42337,13 @@
   },
   {
     "tier": 5,
-    "question": "The biggest single trial the 2023 Cochrane review could draw on was the Bangladesh mask trial (Abaluck et al., Science 2022) - a cluster-randomised study in 600 villages and 342,183 adults. Free masks and promotion tripled how many people masked up. Compared with the control villages, by how much did symptomatic COVID seroprevalence fall in the intervention villages?",
-    "answer": "About 9.5 percent",
+    "question": "The Bangladesh cluster-randomised mask trial (Abaluck et al., Science 2022) ran across 600 villages and 342,183 adults and reported only a modest fall in symptomatic COVID. Subgroup analysis found one type of mask showed no significant effect at all. Which type?",
+    "answer": "Cloth masks",
     "choices": [
-      "About 9.5 percent",
-      "About 50 percent",
-      "About 75 percent",
-      "It did not fall at all"
+      "Cloth masks",
+      "Surgical masks",
+      "N95 respirators",
+      "KN95 masks"
     ],
     "context": "A real, modest, honestly reported effect - tripling mask usage across 600 villages moved symptomatic seroprevalence by roughly 9.5%. For contrast, the Danish DANMASK-19 trial (Bundgaard et al., Annals of Internal Medicine 2020) recruited 6,024 adults and found 1.8% of the mask arm vs 2.1% of the control arm tested positive after a month - a difference too small to call. Two honest trials, two different scales; a careful scientist reports both. Source: science.org, acpjournals.org."
   },

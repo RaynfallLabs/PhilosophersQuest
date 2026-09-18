@@ -1129,13 +1129,13 @@
   },
   {
     "tier": 2,
-    "question": "In 1964, Anne Krueger studied India. She asked how much of the country's income was eaten up by people chasing government favors -- import permits and other special deals. About how much did she find?",
-    "answer": "About 7 percent",
+    "question": "Anne Krueger's 1964 India study measured a new kind of waste -- the resources people spent chasing government import permits instead of making goods. What term did she later coin, in a famous 1974 paper, for this waste?",
+    "answer": "Rent-seeking",
     "choices": [
-      "About 7 percent",
-      "About 0.7 percent",
-      "About 70 percent",
-      "About 27 percent"
+      "Rent-seeking",
+      "Producer surplus",
+      "Deadweight tax",
+      "Opportunity cost"
     ],
     "context": "Krueger estimated Indian rent-seeking dissipation at ~7% of national income in 1964. Her Turkey 1968 estimate for rent-seeking around import licenses reached 15% of GNP. These are staggering deadweight-loss figures. Source: aeaweb.org."
   },
@@ -1153,13 +1153,13 @@
   },
   {
     "tier": 3,
-    "question": "Krueger's 1974 paper also looked at Turkey's use of import licenses in 1968. Her Turkey number was even bigger than her India number. How large was her estimate for Turkey?",
-    "answer": "About 15 percent of GNP",
+    "question": "Krueger's 1974 paper on Turkey's import licenses gave a lasting name to the waste of effort spent chasing government-created privileges instead of producing. What did the paper call this society?",
+    "answer": "A rent-seeking society",
     "choices": [
-      "About 15 percent of GNP",
-      "About 1.5 percent of GNP",
-      "About 5 percent of GNP",
-      "About 50 percent of GNP"
+      "A rent-seeking society",
+      "A cronyist society",
+      "A closed society",
+      "A regulated society"
     ],
     "context": "Krueger estimated Turkish rent-seeking around import licenses at ~15% of GNP in 1968 -- an enormous share of the economy burned chasing government privileges. The figure shocked development economists. Source: aeaweb.org (Krueger 1974)."
   },
@@ -1561,13 +1561,13 @@
   },
   {
     "tier": 3,
-    "question": "In 1950, only about 5 percent of US workers needed a state license to do their job. That share has grown a lot over 70 years, driven by the same Olson pattern. About what share needed a license by 2020?",
-    "answer": "About 25 percent",
+    "question": "The share of US workers needing a state license jumped from 5 percent in 1950 to about a quarter today. Mancur Olson explained why: small groups (barbers, florists) win big from licensing while millions of consumers pay a tiny hidden cost each. What did Olson call this asymmetry?",
+    "answer": "Concentrated benefits, diffuse costs",
     "choices": [
-      "About 25 percent",
-      "About 5 percent still",
-      "About 50 percent",
-      "About 75 percent"
+      "Concentrated benefits, diffuse costs",
+      "Median voter theorem",
+      "Rational ignorance",
+      "Free-rider problem"
     ],
     "context": "Roughly 25% of US workers needed a state license by 2020, up from 5% in 1950. Barbers, hair braiders, morticians, interior designers, tour guides, florists (in some states). Source: Kleiner + Krueger 2013."
   },
@@ -2005,13 +2005,13 @@
   },
   {
     "tier": 2,
-    "question": "In 1929, Ludwig von Mises was offered a top job at Austria's biggest bank, the Kreditanstalt. He turned it down. He told his fiancee, 'A great crash is coming, and I don't want my name in any way connected with it.' In which year did the bank actually collapse and set off a wave of European bank failures?",
-    "answer": "1931",
+    "question": "In 1929 Ludwig von Mises refused a top job at Austria's Kreditanstalt, telling his fiancee 'a great crash is coming.' Two years later the bank collapsed, triggering Europe's banking crisis. On which of his own theories did Mises base that prediction?",
+    "answer": "Austrian business cycle theory",
     "choices": [
-      "1931",
-      "1929",
-      "1933",
-      "1937"
+      "Austrian business cycle theory",
+      "Rational expectations",
+      "Efficient markets",
+      "The Keynesian multiplier"
     ],
     "context": "Kreditanstalt collapsed in May 1931, its failure rippling through central European banking and deepening the Great Depression across the continent. Mises had read the ABCT tea leaves correctly. The Wall Street crash was October 1929; the US bank-holiday crisis was 1933; the second-dip Roosevelt Recession was 1937. Source: mises.org/online-book/skyscraper-curse-and-how-austrian-economists-predicted-every-major-economic-crisis-last-century/chapter-13-who-predicted-great-depression."
   },
@@ -2809,13 +2809,13 @@
   },
   {
     "tier": 4,
-    "question": "From an Austrian perspective, Strong's death in October 1928 removed the one Fed official who might have known when to stop the credit expansion. Roughly how much did the M2 money supply grow between 1921 and 1929?",
-    "answer": "About 60 percent",
+    "question": "Rothbard's book America's Great Depression blamed the crash on the Fed's 1921-1929 credit expansion. After governor Benjamin Strong died in October 1928, no one was left to slow it. What did Austrians call the wasteful projects funded by that cheap credit -- projects doomed to fail once the boom ended?",
+    "answer": "Malinvestment",
     "choices": [
-      "About 60 percent",
-      "About 15 percent",
-      "About 200 percent",
-      "About 10 percent"
+      "Malinvestment",
+      "Overproduction",
+      "Excess capacity",
+      "Speculation"
     ],
     "context": "M2 grew roughly 60% from 1921 to 1929, with much of the expansion coming during and after the 1927 easing. Source: Rothbard, America's Great Depression (1963)."
   },
@@ -3409,13 +3409,13 @@
   },
   {
     "tier": 2,
-    "question": "In August 2022, California's air board set a rule. All new cars sold in the state must be zero-emission by a target year. Which year is the deadline?",
-    "answer": "2035",
+    "question": "In August 2022, California's air board banned the sale of new gasoline cars starting in 2035. Bastiat would have asked about the unseen: the strain on the grid, the mining supply chain, the low-income drivers priced out. What did Bastiat call these hidden effects that policymakers ignore?",
+    "answer": "The Unseen",
     "choices": [
-      "2035",
-      "2030",
-      "2040",
-      "2050"
+      "The Unseen",
+      "The Seen",
+      "External benefits",
+      "Consumer surplus"
     ],
     "context": "California ACC II mandates that all new passenger vehicles sold in the state be zero-emission by 2035. About a dozen other states adopted the same target. Source: ww2.arb.ca.gov (Advanced Clean Cars II rulemaking)."
   },
@@ -3685,25 +3685,25 @@
   },
   {
     "tier": 3,
-    "question": "Even so, the US dollar still leads the world by a wide margin. Back in 2000, central banks held 71 percent of their reserves in dollars. Roughly what share do they still hold in dollars today?",
-    "answer": "About 58 percent",
+    "question": "Since 2000 the dollar's share of world central-bank reserves has slipped from 71 percent to under 60, yet no rival currency has caught up. In the 1960s French finance minister Valery Giscard d'Estaing gave the dollar's status a famous name. What was it?",
+    "answer": "Exorbitant privilege",
     "choices": [
-      "About 58 percent",
-      "About 35 percent",
-      "About 80 percent",
-      "About 20 percent"
+      "Exorbitant privilege",
+      "Special drawing right",
+      "Reserve arbitrage",
+      "Petrodollar recycling"
     ],
     "context": "IMF COFER data show dollar share of allocated reserves at roughly 58% in 2024, down from 71% in 2000. The trend is directional but slow; 88% of foreign-exchange transactions still have a dollar leg. Source: IMF Currency Composition of Official Foreign Exchange Reserves."
   },
   {
     "tier": 4,
-    "question": "The US federal government has borrowed so much that its total debt is now about the size of everything the country makes in a year. About what share of yearly GDP does US debt equal in 2025?",
-    "answer": "About 120 percent",
+    "question": "US federal debt now equals roughly a full year of everything the country makes. Ludwig von Mises warned that when governments can no longer tax enough to service their debt, they inflate their way out until the currency collapses. What did he call this final stage?",
+    "answer": "The crack-up boom",
     "choices": [
-      "About 120 percent",
-      "About 40 percent",
-      "About 75 percent",
-      "About 200 percent"
+      "The crack-up boom",
+      "The liquidity trap",
+      "The Great Moderation",
+      "The deflationary spiral"
     ],
     "context": "US federal debt held by the public is roughly 120% of GDP in 2025, up from about 79% in 2019. The combination of high debt and demonstrated willingness to weaponize the dollar drives reserve diversification. Source: Congressional Budget Office 2025 Long-Term Budget Outlook."
   },
@@ -3901,13 +3901,13 @@
   },
   {
     "tier": 2,
-    "question": "Caplan looked at the sheepskin effect, job-major mismatch, and how little adults remember from class. He gave a rough figure. About what share of the money return to college is signaling, not real skills?",
-    "answer": "About 80 percent",
+    "question": "Bryan Caplan's book The Case Against Education argues most of college's payoff is signaling, not real learning -- proven by the sheepskin effect and how little adults remember from class. What is his policy recommendation?",
+    "answer": "Cut education subsidies",
     "choices": [
-      "About 80 percent",
-      "About 20 percent",
-      "About 50 percent",
-      "Essentially none"
+      "Cut education subsidies",
+      "Free college for all",
+      "More STEM funding",
+      "Extend the school year"
     ],
     "context": "Caplan's book-length estimate is that ~80% of the college wage premium is signaling. It is heterodox even among economists sympathetic to public choice; treat as Caplan's specific claim, not a settled number. Source: Caplan (2018), Chapter 6."
   },
@@ -4489,13 +4489,13 @@
   },
   {
     "tier": 2,
-    "question": "The US ended the peacetime draft and switched to an all-volunteer army, just what Friedman had recommended ten years earlier. In what year was the last man drafted?",
-    "answer": "1973",
+    "question": "Milton Friedman won the argument to end the US draft. When General Westmoreland complained he didn't want to command an army of mercenaries, what did Friedman shoot back?",
+    "answer": "'Would you rather have an army of slaves?'",
     "choices": [
-      "1973",
-      "1968",
-      "1975",
-      "1980"
+      "'Would you rather have an army of slaves?'",
+      "'Would you draft your own children?'",
+      "'Is your own salary not a wage?'",
+      "'Who defends the mercenary's family?'"
     ],
     "context": "Congress let the induction authority expire in 1973, ending the American peacetime draft. Friedman had proposed abolishing the draft in Capitalism and Freedom (1962). Source: history.army.mil (draft history)."
   },
@@ -6793,13 +6793,13 @@
   },
   {
     "tier": 5,
-    "question": "Bastiat lived exactly 49 years, born in Bayonne on June 30 of a specific year and dying in Rome on December 24, 1850. In what year was he born?",
-    "answer": "1801",
+    "question": "Frederic Bastiat lived exactly 49 years, dying in Rome on Christmas Eve 1850. In his final months he raced to finish an essay warning readers to look beyond the visible effects of any policy to the hidden ones. What is that essay's title?",
+    "answer": "That Which Is Seen, and That Which Is Not Seen",
     "choices": [
-      "1801",
-      "1791",
-      "1811",
-      "1785"
+      "That Which Is Seen, and That Which Is Not Seen",
+      "The Law",
+      "Economic Sophisms",
+      "Economic Harmonies"
     ],
     "context": "Bastiat was born June 30, 1801 in Bayonne, France, and died December 24, 1850 in Rome. His enormous public output was compressed into the last five years of his life. Source: grokipedia.com/page/Frederic_Bastiat."
   },
@@ -6925,13 +6925,13 @@
   },
   {
     "tier": 5,
-    "question": "A high-school student asks how big the Great Enrichment actually was -- how much real income growth are we talking about, per person, across the roughly two centuries since 1800 in the countries that industrialized first? Which figure does McCloskey use as her headline number?",
-    "answer": "About 3,000 percent",
+    "question": "Deirdre McCloskey calls it the Great Enrichment. Before 1800, most Europeans lived on about 3 dollars a day in modern terms -- the same as their great-grandparents, and their great-grandparents before them. In the two centuries since, real income per person in the countries that industrialized first has grown by roughly what factor?",
+    "answer": "About 30-fold (3,000 percent)",
     "choices": [
-      "About 3,000 percent",
-      "About 300 percent",
-      "About 30 percent",
-      "About 30,000 percent"
+      "About 30-fold (3,000 percent)",
+      "About 3-fold (300 percent)",
+      "About 100-fold (10,000 percent)",
+      "About 3-fold, only in the richest cities"
     ],
     "context": "The 3,000-percent figure (roughly 30x) is the standard estimate from Angus Maddison and OECD historical statistics for real per-capita income growth in Western countries since 1800. McCloskey uses it as the puzzle to explain. Source: Maddison Project Database (2020 update); McCloskey, Bourgeois Dignity (Chicago 2010)."
   },
@@ -8893,13 +8893,13 @@
   },
   {
     "tier": 4,
-    "question": "Volume 3 of Boehm-Bawerk's Capital and Interest was a set of long excursions and replies to critics that had piled up in the decades since Volume 2. The third volume appeared only after Boehm-Bawerk's death. In what year did that volume finally reach print?",
-    "answer": "1921",
+    "question": "Eugen von Boehm-Bawerk's three-volume Capital and Interest built the Austrian theory of interest around one core human trait -- that people prefer goods sooner rather than later, and must be paid to wait. What did he name this preference?",
+    "answer": "Time preference",
     "choices": [
-      "1921",
-      "1889",
-      "1896",
-      "1914"
+      "Time preference",
+      "Marginal utility",
+      "Roundabout production",
+      "Opportunity cost"
     ],
     "context": "Volume 3 of Kapital und Kapitalzins, titled 'Exkurse' (Further Essays on Capital and Interest), was published in 1921, seven years after Boehm-Bawerk's death; the material had accumulated as appendices to Volume 2 (1889) and grew large enough to require a separate volume. 1896 was his Marx essay; 1914 the year of his death and of the First World War's outbreak. Source: Wikipedia, 'Capital and Interest' (https://en.wikipedia.org/wiki/Capital_and_Interest)."
   },
@@ -8989,13 +8989,13 @@
   },
   {
     "tier": 3,
-    "question": "Since the Federal Reserve started in 1913, the US dollar has lost about what share of its buying power in gold?",
-    "answer": "about 98%",
+    "question": "Since the Federal Reserve opened in 1913, the US dollar has lost about 98 percent of its buying power measured in gold. What kind of money system, in which the government simply declares paper legal tender with no metal backing, makes this steady erosion possible?",
+    "answer": "Fiat money",
     "choices": [
-      "about 98%",
-      "about 15%",
-      "about 50%",
-      "about 200%"
+      "Fiat money",
+      "Commodity money",
+      "Representative money",
+      "Barter"
     ],
     "context": "In gold terms the US dollar has lost about 98-99% of its purchasing power since the Fed's 1913 founding (from ~$20.67/oz to $2,400+/oz); about 86% just since the Nixon shock 1971 (from $35/oz). 15% and 50% understate; 200% is not a purchasing-power figure. Source: https://en.wikipedia.org/wiki/Federal_Reserve."
   },
@@ -9049,13 +9049,13 @@
   },
   {
     "tier": 5,
-    "question": "Since the 1971 Nixon shock, the US dollar has lost roughly what fraction of its purchasing power measured in gold?",
-    "answer": "about 86%",
+    "question": "In August 1971 Richard Nixon cut the last link between the US dollar and gold, ending the Bretton Woods system. Nixon told Americans the change would be 'temporary.' Decades later, the world's currencies still use the money system his shock introduced. What is that system called?",
+    "answer": "Fiat standard",
     "choices": [
-      "about 86%",
-      "about 25%",
-      "about 40%",
-      "about 5%"
+      "Fiat standard",
+      "Gold standard",
+      "Silver standard",
+      "Bimetallic standard"
     ],
     "context": "From $35/oz in 1971 to $2,400+/oz by the mid-2020s is roughly an 86%+ loss in the dollar's purchasing power measured in gold. 25%, 40%, and 5% are all significant understatements. Source: London Bullion Market Association historical gold prices."
   },
@@ -9781,13 +9781,13 @@
   },
   {
     "tier": 5,
-    "question": "Fidel Castro handed provisional power to his brother Raul during a 2006 illness and then formally in 2008. In what year did Fidel die?",
-    "answer": "2016",
+    "question": "When the Soviet Union collapsed in 1991, Cuba lost the subsidies that kept its planned economy running. Blackouts became routine and Cubans lost weight from food shortages. What did Fidel Castro name this decade of hunger?",
+    "answer": "The Special Period",
     "choices": [
-      "2016",
-      "2008",
-      "2020",
-      "2012"
+      "The Special Period",
+      "The Great Leap",
+      "The Rectification",
+      "The Struggle"
     ],
     "context": "Fidel Castro died November 25, 2016 at age 90. Raul Castro remained head of state until 2018 and party first secretary until 2021. Source: en.wikipedia.org/wiki/Fidel_Castro."
   },
@@ -9973,13 +9973,13 @@
   },
   {
     "tier": 3,
-    "question": "Nine years after his 1973 book, Murray Rothbard wrote a longer work backing the same view. It rested on natural-rights ideas from John Locke. What year did that book appear?",
-    "answer": "1982",
+    "question": "Nine years after For a New Liberty (1973), Murray Rothbard published a longer work grounding libertarianism in John Locke's natural-rights philosophy. What is that 1982 book titled?",
+    "answer": "The Ethics of Liberty",
     "choices": [
-      "1982",
-      "1976",
-      "1979",
-      "1985"
+      "The Ethics of Liberty",
+      "Man, Economy, and State",
+      "America's Great Depression",
+      "What Has Government Done to Our Money?"
     ],
     "context": "The Ethics of Liberty was published in 1982 by Humanities Press of Atlantic Highlands, New Jersey. If For a New Liberty was the popular manifesto, The Ethics of Liberty was the systematic treatise. A later edition (1998, NYU Press) carried an introduction by Hans-Hermann Hoppe. Source: en.wikipedia.org/wiki/The_Ethics_of_Liberty."
   },
@@ -10357,13 +10357,13 @@
   },
   {
     "tier": 4,
-    "question": "Milton Friedman won the Nobel Prize in Economics. His coauthor Anna Schwartz never won one, though the pair wrote the definitive American monetary history. In which year did Friedman get his Nobel?",
-    "answer": "1976",
+    "question": "Milton Friedman won the Nobel; his coauthor Anna Schwartz never did -- even though their Monetary History of the United States remains the definitive American monetary history. Their book argued the Great Depression became a decade-long catastrophe because of one institution's mistake. Which one?",
+    "answer": "The Federal Reserve",
     "choices": [
-      "1976",
-      "1958",
-      "1988",
-      "2001"
+      "The Federal Reserve",
+      "The US Treasury",
+      "The New York Stock Exchange",
+      "The Bank of England"
     ],
     "context": "Friedman won the 1976 Nobel Prize in Economics for his work on monetary theory and consumption analysis. Schwartz's absence from the prize list is often cited as an example of the discipline's gender-biased recognition practices. Source: Grokipedia 'Anna Schwartz' (2026-09-05)."
   },
@@ -10933,13 +10933,13 @@
   },
   {
     "tier": 2,
-    "question": "In 1962 an economist shared a shocking number. He added up parts of the economy that made or sold information: schools, books, research, and media. In 1958, what share of the whole economy was that?",
-    "answer": "29%",
+    "question": "In 1962 the economist Fritz Machlup published a book that added up schools, publishing, research, and media -- and showed a startling share of the US economy was already about producing and moving ideas. His figure launched a new field. What did he name this sector?",
+    "answer": "The knowledge economy",
     "choices": [
-      "29%",
-      "9%",
-      "50%",
-      "3%"
+      "The knowledge economy",
+      "The service sector",
+      "The tertiary economy",
+      "The information age"
     ],
     "context": "Machlup's 29% estimate for 1958 was published fifteen years before 'the information economy' became a business-magazine cliche. Source: grokipedia.com/page/The_Production_and_Distribution_of_Knowledge_in_the_United_States."
   },
@@ -11749,13 +11749,13 @@
   },
   {
     "tier": 2,
-    "question": "Nicholas Copernicus is famous as an astronomer. He also advised Prussia on money. His short work Monetae cudendae ratio spelled out 'bad money drives out good' long before Gresham. What year did he write it?",
-    "answer": "1526",
+    "question": "Long before Sir Thomas Gresham, the astronomer Nicolaus Copernicus advised Prussia's rulers on coinage. His 1526 treatise Monetae cudendae ratio described how debased coins drive better coins out of circulation. By what name is this monetary law taught today?",
+    "answer": "Gresham's Law",
     "choices": [
-      "1526",
-      "1626",
-      "1426",
-      "1726"
+      "Gresham's Law",
+      "Say's Law",
+      "Copernicus's Law",
+      "Menger's Law"
     ],
     "context": "Copernicus's Monetae cudendae ratio (1526) noted that when better coin is introduced, the old is not withdrawn but hoarded. He beat Gresham by 34 years. Source: grokipedia.com/page/Monetae_cudendae_ratio."
   },
@@ -16405,13 +16405,13 @@
   },
   {
     "tier": 3,
-    "question": "Kleiner's studies tracked how much of the US workforce needs a state license to work. In 1950 the share was about 5 percent. What share does it cover today?",
-    "answer": "About 25 percent",
+    "question": "Morris Kleiner has spent his career measuring US occupational licensing -- 5 percent of workers in 1950, about a quarter today. His work on hair-braider laws and interior-designer rules shows that licensing mostly serves which group's interests?",
+    "answer": "Existing practitioners",
     "choices": [
-      "About 25 percent",
-      "About 10 percent",
-      "About 50 percent",
-      "Essentially all of it"
+      "Existing practitioners",
+      "New entrants",
+      "Low-income consumers",
+      "The uninsured"
     ],
     "context": "Kleiner estimates about a quarter of the US workforce now needs a state license to work legally. Licensed-worker wages are approximately 15% higher on average, with little measurable improvement in service quality. Source: Kleiner + Krueger, Journal of Labor Economics (2013)."
   },
@@ -18193,13 +18193,13 @@
   },
   {
     "tier": 2,
-    "question": "In Palo Alto, most land is zoned only for single-family homes. That makes new apartments almost illegal across the whole city. About what share of the land is zoned this way?",
-    "answer": "About 94 percent",
+    "question": "In Palo Alto, roughly 94 percent of residential land is zoned only for single-family homes -- effectively banning new apartments citywide. What term do housing economists use for zoning rules that block denser, cheaper housing?",
+    "answer": "Exclusionary zoning",
     "choices": [
-      "About 94 percent",
-      "About 25 percent",
-      "About 50 percent",
-      "Essentially none"
+      "Exclusionary zoning",
+      "Inclusionary zoning",
+      "Mixed-use zoning",
+      "Transit-oriented zoning"
     ],
     "context": "About 94% of Palo Alto's residential land is single-family only. This is the structural feature that makes multi-family projects require special approvals and lengthy hearings each time. Source: Palo Alto General Plan; ABAG regional data."
   },
@@ -18973,13 +18973,13 @@
   },
   {
     "tier": 4,
-    "question": "For years most economists thought Lange won the paper debate. But a real-world event later proved Mises and Hayek right instead. What year is usually named as that event?",
-    "answer": "1989",
+    "question": "For decades many economists thought Oskar Lange had answered Ludwig von Mises on paper in the socialist calculation debate. Then Friedrich Hayek's 1945 essay 'The Use of Knowledge in Society' pinpointed what central planners could not do that market prices did automatically. What did Hayek call this obstacle?",
+    "answer": "The knowledge problem",
     "choices": [
-      "1989",
-      "1917",
-      "1971",
-      "2008"
+      "The knowledge problem",
+      "The incentive problem",
+      "The transaction-cost problem",
+      "The externalities problem"
     ],
     "context": "The 1989 collapse of the Warsaw Pact planned economies (Berlin Wall Nov 9, Ceausescu Dec 25, Velvet Revolution Dec 29) and the USSR's dissolution on December 25, 1991 shifted the calculation debate from theory to historical settlement. Lange had died in 1965. Source: mises.org/library/socialism-economic-and-sociological-analysis."
   },
@@ -19165,13 +19165,13 @@
   },
   {
     "tier": 3,
-    "question": "In 1980 the yearly Consumer Price Index (CPI) inflation rate in the United States was 13.5 percent. The head of the Federal Reserve raised interest rates very high on purpose to break inflation. By 1983 the yearly inflation rate had fallen to roughly what number?",
-    "answer": "About 3 percent",
+    "question": "In 1980 US inflation hit 13.5 percent. The new Fed chair raised interest rates so high that the prime rate briefly touched 21.5 percent, triggering a sharp recession -- but inflation crashed to about 3 percent by 1983. Who was that Fed chair?",
+    "answer": "Paul Volcker",
     "choices": [
-      "About 3 percent",
-      "About 8 percent",
-      "About 6 percent",
-      "About 1 percent"
+      "Paul Volcker",
+      "Alan Greenspan",
+      "Ben Bernanke",
+      "Arthur Burns"
     ],
     "context": "US CPI inflation fell from 13.5% in 1980 to 3.2% by 1983 -- a stunning victory. Volcker had destroyed the inflation expectations that had built up over 15 years and restored the Fed's credibility. Source: Grokipedia 'Great Inflation' (2026-09-05)."
   },
@@ -19249,13 +19249,13 @@
   },
   {
     "tier": 2,
-    "question": "Boettke edits the Review of Austrian Economics. Springer puts it out. In what year did he start as editor?",
-    "answer": "1998",
+    "question": "Peter Boettke edits the Review of Austrian Economics at George Mason University, continuing the Mises-Hayek tradition against central planning. What does the Austrian school call human action guided by chosen ends and means -- the starting point of all economic reasoning?",
+    "answer": "Praxeology",
     "choices": [
-      "1998",
-      "1988",
-      "2008",
-      "1978"
+      "Praxeology",
+      "Behaviorism",
+      "Utilitarianism",
+      "Positivism"
     ],
     "context": "Boettke has been editor of the Review of Austrian Economics since 1998, a position from which he has shaped a generation of academic Austrian scholarship. Source: grokipedia.com/page/Peter_Boettke."
   },
@@ -21097,13 +21097,13 @@
   },
   {
     "tier": 2,
-    "question": "On September 15, 2022 the Ethereum Merge happened. The Ethereum Foundation gave a clear number for the power savings. By about how much did power use drop that day?",
-    "answer": "About 99.95 percent",
+    "question": "On September 15, 2022 the Ethereum Merge switched the network from Bitcoin-style energy-hungry mining to a very different consensus method. Overnight, the network's power use dropped by more than 99 percent. What is Ethereum's new consensus method called?",
+    "answer": "Proof of stake",
     "choices": [
-      "About 99.95 percent",
-      "About 50 percent",
-      "About 25 percent",
-      "About 10 percent"
+      "Proof of stake",
+      "Proof of work",
+      "Proof of authority",
+      "Proof of burn"
     ],
     "context": "The Ethereum Foundation's post-Merge figure is a roughly 99.95% cut in network electricity use. That is the strongest engineering argument PoS supporters make for the switch. Source: ethereum.org/en/energy-consumption."
   },
@@ -21289,13 +21289,13 @@
   },
   {
     "tier": 2,
-    "question": "By 2010, unions in US government jobs were over four times as common as in private jobs. About what share of workers in government jobs were in a union?",
-    "answer": "About 36 percent",
+    "question": "By 2010, unions were more than four times as common in US government jobs as in private ones -- because government workers form a tight interest group bargaining against diffuse taxpayers. What did President Franklin Roosevelt himself say about public-sector collective bargaining?",
+    "answer": "He opposed it",
     "choices": [
-      "About 36 percent",
-      "About 7 percent",
-      "About 15 percent",
-      "About 80 percent"
+      "He opposed it",
+      "He championed it",
+      "He was neutral",
+      "He never addressed it"
     ],
     "context": "In 2010, public-sector union density was ~36% while private-sector density had fallen to ~7%. The gap reflects both public-sector expansion after Kennedy's Executive Order 10988 (1962) and long-running private-sector decline. Source: bls.gov (union-membership historical series)."
   },
@@ -22057,13 +22057,13 @@
   },
   {
     "tier": 3,
-    "question": "A 2019 paper by Diamond, McQuade, and Qian studied San Francisco's 1994 rent-control expansion. It found that landlords hit by the rules cut their rental housing supply. By how much?",
-    "answer": "About 15 percent",
+    "question": "A 2019 paper by Diamond, McQuade, and Qian on San Francisco's 1994 rent-control expansion found landlords cut rental supply by about 15 percent -- some converted units to condos, some tore them down. What did Swedish economist Assar Lindbeck famously say rent control is the most efficient known way to do to a city, apart from bombing?",
+    "answer": "Destroy it",
     "choices": [
-      "About 15 percent",
-      "About 40 percent",
-      "About 60 percent",
-      "About 80 percent"
+      "Destroy it",
+      "Redistribute wealth in it",
+      "Raise its tax revenue",
+      "Attract new residents to it"
     ],
     "context": "Diamond-McQuade-Qian, 'The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality,' AER 2019: San Francisco's 1994 expansion caused a 15% cut in rental supply from affected landlords, deepening the shortage the policy meant to fix. Source: American Economic Review 109(9)."
   },
@@ -26425,13 +26425,13 @@
   },
   {
     "tier": 5,
-    "question": "The Nobel Prize in Economics is not one of the original Nobel prizes. Sweden's central bank added it later, in honor of Alfred Nobel. In which year was it first awarded?",
-    "answer": "1969",
+    "question": "The Nobel Prize in Economics is not one of Alfred Nobel's original prizes; Sweden's central bank added it later in his honor, first awarded in 1969. Who were the two economists that shared that first prize?",
+    "answer": "Ragnar Frisch and Jan Tinbergen",
     "choices": [
-      "1969",
-      "1901",
-      "1945",
-      "1958"
+      "Ragnar Frisch and Jan Tinbergen",
+      "Paul Samuelson and Simon Kuznets",
+      "F.A. Hayek and Gunnar Myrdal",
+      "Milton Friedman and George Stigler"
     ],
     "context": "The first economics prize (1969) went jointly to Ragnar Frisch and Jan Tinbergen for econometrics. 1901 was the first year of the ORIGINAL Nobel prizes -- physics, chemistry, medicine, literature, peace. 1945 and 1958 are distractor dates from unrelated Swedish-institutional history. The 1974 Hayek award was thus the sixth economics prize ever given. Source: NobelPrize.org, Nobel Memorial Prize in Economic Sciences."
   },
@@ -26905,13 +26905,13 @@
   },
   {
     "tier": 3,
-    "question": "After the US government printed and spent trillions of new dollars from 2020 through 2021, prices kept climbing. By June 2022 the yearly rise in everyday prices was the highest since 1981. About how high did that peak yearly inflation rate get?",
-    "answer": "About 9 percent",
+    "question": "By June 2022 US yearly consumer inflation hit its highest since 1981, following trillions in pandemic-era money creation. For months the Federal Reserve and Treasury had insisted the price rise would be short-lived. What single word did they use to describe the inflation that kept climbing anyway?",
+    "answer": "Transitory",
     "choices": [
-      "About 9 percent",
-      "About 3 percent",
-      "About 15 percent",
-      "About 25 percent"
+      "Transitory",
+      "Structural",
+      "Cyclical",
+      "Imported"
     ],
     "context": "US CPI peaked at 9.1% year over year in June 2022, per the Bureau of Labor Statistics -- the largest 12-month increase since November 1981. Source: BLS, 'Consumer prices up 9.1 percent over the year ended June 2022' (https://www.bls.gov/opub/ted/2022/consumer-prices-up-9-1-percent-over-the-year-ended-june-2022-largest-increase-in-40-years.htm)."
   },
@@ -27529,13 +27529,13 @@
   },
   {
     "tier": 3,
-    "question": "Colleges spent a lot of the new loan money on more staff, not more teachers. From 1987 to 2011 the number of US college students grew by 50%. Administrative staff grew by about what share?",
-    "answer": "About 87 percent",
+    "question": "In 1987 US Education Secretary William Bennett argued that federal student loans let colleges hike tuition without losing students — the more Washington lends, the more schools charge. What is this idea called?",
+    "answer": "Bennett Hypothesis",
     "choices": [
-      "About 87 percent",
-      "About 15 percent",
-      "About 200 percent",
-      "About 5 percent"
+      "Bennett Hypothesis",
+      "Baumol effect",
+      "Cantillon effect",
+      "Rent-seeking loss"
     ],
     "context": "The Delta Cost Project and GAO documented administrative-staff growth of ~87% from 1987 to 2011, well ahead of the ~50% student-enrollment rise. The aid revenue built bureaucracy rather than classrooms. Source: deltacostproject.org (Trends in College Spending reports)."
   },
@@ -29485,13 +29485,13 @@
   },
   {
     "tier": 2,
-    "question": "The Renewable Fuel Standard passed in 2005. It made growers turn a lot of corn into ethanol for fuel. By 2011, about how much of the US corn crop was going into fuel instead of food or feed?",
-    "answer": "About 40 percent",
+    "question": "The 2005 US Renewable Fuel Standard made refiners blend corn ethanol into gasoline. Farmers shifted huge fields from food to fuel. Bastiat would call the lost food what?",
+    "answer": "The unseen",
     "choices": [
-      "About 40 percent",
-      "About 5 percent",
-      "About 10 percent",
-      "About 80 percent"
+      "The unseen",
+      "Comparative advantage",
+      "Public good",
+      "Producer surplus"
     ],
     "context": "The diversion converted roughly two-fifths of the country's largest single field crop into motor-fuel input. World corn prices roughly doubled between 2006 and 2013 as a direct consequence. Source: grokipedia.com/page/Ethanol_fuel_in_the_United_States."
   },
@@ -29905,13 +29905,13 @@
   },
   {
     "tier": 1,
-    "question": "President Woodrow Wilson signed the law that created the modern US central bank. He signed it two days before Christmas. In what year?",
-    "answer": "1913",
+    "question": "In December 1913 President Wilson signed the law creating a new US central bank two days before Christmas. What is that central bank called?",
+    "answer": "The Federal Reserve",
     "choices": [
-      "1913",
-      "1907",
-      "1929",
-      "1933"
+      "The Federal Reserve",
+      "The Treasury",
+      "The World Bank",
+      "The Mint"
     ],
     "context": "The Federal Reserve Act was signed on December 23, 1913, after most members of Congress had already left Washington for the holidays. Source: federalreservehistory.org/essays/federal_reserve_act_signed."
   },
@@ -31357,13 +31357,13 @@
   },
   {
     "tier": 4,
-    "question": "Soviet Kazakhstan had its own famine in 1932-33, called Asharshylyk. It came from forcing nomads to give up their herds to the state. About what share of the ethnic Kazakh people died?",
+    "question": "Soviet Kazakhstan's 1932-33 famine, the Asharshylyk, came from forced collectivization — the state seized the nomads' herds and banned private slaughter. Historians count roughly 1.5 million dead. That toll erased about what share of the entire ethnic Kazakh people?",
     "answer": "About 40 percent",
     "choices": [
       "About 40 percent",
       "About 4 percent",
-      "About 80 percent",
-      "About 15 percent"
+      "About 15 percent",
+      "About 80 percent"
     ],
     "context": "About 1.5 million Kazakhs died (roughly 40% of the ethnic Kazakh population). The famine transformed Kazakhstan's demographic balance for decades. Source: en.wikipedia.org/wiki/Kazakh_famine_of_1930%E2%80%931933."
   },
@@ -31549,13 +31549,13 @@
   },
   {
     "tier": 2,
-    "question": "By 1982 the nine biggest US banks had lent so much money to Latin American countries that they could lose more than they owned. How big were the loans compared to what the banks had?",
-    "answer": "About 176 percent, more than they had",
+    "question": "In 1982 Mexico told its lenders it could not pay. US banks had loaned so much to Latin America that the debts topped their own capital. The near-collapse launched what regional slump of the 1980s?",
+    "answer": "The Lost Decade",
     "choices": [
-      "About 176 percent, more than they had",
-      "About 15 percent, just a small share",
-      "About 35 percent, a big but safe share",
-      "About 5 percent, barely a footnote"
+      "The Lost Decade",
+      "The Long Depression",
+      "The Marshall Plan",
+      "The Great Society"
     ],
     "context": "The FDIC's 'History of the Eighties' documents the exposure. Marked to market, several of the largest US banks would have been technically insolvent had the Latin American loans been written down at the time. Source: fdic.gov/bank/historical/history."
   },
@@ -32641,13 +32641,13 @@
   },
   {
     "tier": 4,
-    "question": "The timing of the Nixon shock was simple politics. Nixon was up for re-election the next year. He wanted the pain of the dollar fix to fall on foreigners, not on voters. What year was that election?",
-    "answer": "1972",
+    "question": "Nixon's August 1971 order stopped the US Treasury from trading dollars for gold — breaking the last link between the dollar and the metal. What 1944 world monetary system did this move destroy?",
+    "answer": "Bretton Woods",
     "choices": [
-      "1972",
-      "1968",
-      "1976",
-      "1980"
+      "Bretton Woods",
+      "The Gold Standard",
+      "The Marshall Plan",
+      "The Basel Accords"
     ],
     "context": "Nixon won re-election in November 1972 carrying 49 states. Wage-price controls kept CPI appearances calm through the campaign; inflation exploded in 1973-74 after the controls unravelled. Source: en.wikipedia.org/wiki/1972_United_States_presidential_election."
   },
@@ -34297,13 +34297,13 @@
   },
   {
     "tier": 2,
-    "question": "In 1990 the US government set up a market where power plants could buy and sell permits for sulfur dioxide, the gas that causes acid rain. Plants that cut pollution cheaply sold spare permits to plants that could not. By 2005, roughly how much had those emissions fallen?",
-    "answer": "About 40 percent",
+    "question": "The 1990 US Clean Air Act made a market for power plants to buy and sell rights to release sulfur. Plants that cut cheaply sold spare permits to plants that could not. What is this approach called?",
+    "answer": "Cap-and-trade",
     "choices": [
-      "About 40 percent",
-      "About 4 percent",
-      "About 5 percent",
-      "They rose by 40 percent"
+      "Cap-and-trade",
+      "Command-and-control",
+      "Pigouvian tax",
+      "Nationalization"
     ],
     "context": "US power-plant SO2 emissions fell approximately 40% below 1990 levels by 2005 -- meeting the statutory targets. Ellerman, Joskow et al., Markets for Clean Air (Cambridge UP 2000), gave the standard economic evaluation. Source: epa.gov (Acid Rain Program compliance reports)."
   },
@@ -34621,13 +34621,13 @@
   },
   {
     "tier": 4,
-    "question": "Solzhenitsyn was awarded the Nobel Prize in Literature in a specific year but could not travel to accept it because he feared being denied re-entry to the USSR. In what year did he win?",
-    "answer": "1970",
+    "question": "Solzhenitsyn's 1970 Nobel Prize in Literature honored his testimony against Soviet tyranny. Which three-volume work of his mapped the entire Soviet slave-labor camp system, camp by camp?",
+    "answer": "The Gulag Archipelago",
     "choices": [
-      "1970",
-      "1958",
-      "1974",
-      "1990"
+      "The Gulag Archipelago",
+      "One Day in the Life of Ivan Denisovich",
+      "Cancer Ward",
+      "The First Circle"
     ],
     "context": "The Nobel Prize in Literature 1970 cited 'the ethical force with which he has pursued the indispensable traditions of Russian literature'. Solzhenitsyn could not travel to accept in Stockholm and finally received the medal at the 1974 Nobel ceremony after his expulsion. Source: nobelprize.org (Solzhenitsyn 1970)."
   },
@@ -35029,13 +35029,13 @@
   },
   {
     "tier": 5,
-    "question": "Menger's 1871 Principles started the German-speaking Marginal Revolution. But no one put it into English for 79 years. The ideas reached America through Mises's students, not through the book itself. In what year did the English edition finally come out?",
-    "answer": "1950",
+    "question": "Carl Menger's 1871 Principles launched the Marginal Revolution — but no English edition appeared for 79 years, so the ideas reached America through Mises's students, not the book. What core Menger insight explains why the fourth glass of water is worth less to you than the first?",
+    "answer": "Diminishing marginal utility",
     "choices": [
-      "1950",
-      "1899",
-      "1921",
-      "1976"
+      "Diminishing marginal utility",
+      "Comparative advantage",
+      "Labor theory of value",
+      "Rent-seeking loss"
     ],
     "context": "The 1950 Free Press edition appeared 29 years after Menger's death (1921), 79 years after the German original (1871), and only after Menger's pupil Hayek had already moved from Vienna to LSE (1931) and then Chicago (1950). Frank Knight -- Milton Friedman's teacher at Chicago -- wrote the introduction. The gap is a measure of how far the Austrian tradition had traveled inside German-speaking economics before English-speaking economics noticed the founding text. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book)."
   },
@@ -37333,13 +37333,13 @@
   },
   {
     "tier": 4,
-    "question": "In 1985 Vietnam's prices shot up so fast it forced the 1986 reforms. About how much did they rise that year?",
-    "answer": "About 500 percent",
+    "question": "Vietnam's 1985 hyperinflation — prices climbed about five-fold in one year — forced Communist leaders to admit the socialist plan had failed. What did they name the market reforms they launched in 1986?",
+    "answer": "Doi Moi",
     "choices": [
-      "About 500 percent",
-      "About 50 percent",
-      "About 5 percent",
-      "About 5,000 percent"
+      "Doi Moi",
+      "Perestroika",
+      "The Great Leap",
+      "Shock Therapy"
     ],
     "context": "Vietnam's inflation rate reached roughly 500% per year in 1985, driven by monetary emissions to finance state-owned enterprises. The 1986 reforms brought inflation under 40% within three years. Source: World Bank Vietnam data."
   },

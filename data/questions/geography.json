@@ -1225,13 +1225,13 @@
   },
   {
     "tier": 4,
-    "question": "Antarctica's ice sheet buries the whole continent under an average of nearly two kilometres of ice. People picture the oceans as holding the world's water, but ocean water is salt. Frozen into this one continent sits close to what share of ALL the fresh water on the planet?",
-    "answer": "about 70%",
+    "question": "Antarctica has two great ice sheets divided by the Transantarctic Mountains — the East and the West. The larger of the two is so vast that if it alone melted, sea levels around the world would rise by about 60 meters. What is this larger ice sheet called?",
+    "answer": "East Antarctic Ice Sheet",
     "choices": [
-      "about 85%",
-      "about 70%",
-      "about 55%",
-      "about 25%"
+      "East Antarctic Ice Sheet",
+      "West Antarctic Ice Sheet",
+      "Ross Ice Shelf",
+      "Ronne Ice Shelf"
     ],
     "context": "About 70%. Antarctica's ice sheet -- averaging nearly 1.9 km thick -- holds roughly 90% of all the ice on Earth and close to 70% of the planet's fresh water, all locked frozen on a single continent. Because the vast oceans are salt water, most of the world's drinkable water isn't in lakes and rivers at all; it's stacked as ice at the bottom of the world. Source: en.wikipedia.org/wiki/Antarctica"
   },
@@ -11173,13 +11173,13 @@
   },
   {
     "tier": 1,
-    "question": "In the North Atlantic, an iceberg looks small from a ship's deck. That is what makes it deadly. Freshwater ice barely floats in heavier seawater. So a berg rides very low, and most of it hides under the surface. This is where the phrase 'the tip of the iceberg' comes from. About how much of an iceberg lies hidden below the water?",
-    "answer": "About 90%",
+    "question": "In the North Atlantic, an iceberg looks small from a ship's deck. That is what makes it deadly — most of the ice hides below the water. English speakers turned this into a common phrase for a small visible clue to a much bigger hidden problem. What is the phrase?",
+    "answer": "The tip of the iceberg",
     "choices": [
-      "About 90%",
-      "About 80%",
-      "About 75%",
-      "About 60%"
+      "The tip of the iceberg",
+      "The eye of the storm",
+      "The bottom of the barrel",
+      "The eleventh hour"
     ],
     "context": "Freshwater ice weighs about 920 kg per cubic meter and seawater about 1,025, so a berg must sink roughly nine-tenths of its bulk just to float — only about a tenth shows above the surface. That hidden mass is why 'the tip of the iceberg' came to mean the small visible piece of a much bigger problem. Source: NOAA / US Coast Guard Navigation Center (navcen.uscg.gov); Wikipedia, 'Iceberg.'"
   },
@@ -12817,13 +12817,13 @@
   },
   {
     "tier": 4,
-    "question": "Ice cores show Kilimanjaro's summit glaciers are ancient -- they even survived a brutal 300-year drought about 4,200 years ago without melting away. Yet scientists comparing photographs since 1912 have measured a steady retreat of that ice. Roughly how much of the 1912 ice cap is now gone?",
-    "answer": "about 85%",
+    "question": "Kilimanjaro's summit ice cores show the mountain survived a brutal global drought about 4,200 years ago — the same dry catastrophe that helped topple the Akkadian Empire in Mesopotamia. Climatologists have a formal name for this event. What is it called?",
+    "answer": "The 4.2-kiloyear event",
     "choices": [
-      "about 20%",
-      "about 45%",
-      "about 85%",
-      "about 65%"
+      "The 4.2-kiloyear event",
+      "The Younger Dryas",
+      "The Little Ice Age",
+      "The Medieval Warm Period"
     ],
     "context": "About 85% of the ice present in 1912 is gone. An ice core shows melting on this scale hasn't happened in roughly 11,700 years -- even that 300-year drought left the ice intact. Scientists project the cap could vanish around 2050, though the exact timing is debated. Source: pnas.org/doi/10.1073/pnas.0906029106 (Thompson et al.); ultimatekilimanjaro.com/mount-kilimanjaros-glaciers-estimated-to-be-gone-by-2050."
   },
@@ -23761,7 +23761,7 @@
   },
   {
     "tier": 4,
-    "question": "For 333 years the sunken Vasa lay on the floor of Stockholm's harbor. In most oceans, wood-boring shipworms would have completely devoured her oak hull, but the Baltic is too cold and too fresh for shipworms to survive there, so those destroyers never touched her. When she was finally raised from the seabed in 1961, how much of the original 17th-century oak was still there?",
+    "question": "A wooden warship left on the seabed for 333 years should be a shapeless smear of debris. Wood-boring shipworms devour oak hulls in most oceans within decades. But the Baltic is too cold and too fresh for them, so they never touched the sunken Vasa. When she was raised in Stockholm in 1961, how much of her original 17th-century oak was still intact?",
     "answer": "About 98 percent",
     "choices": [
       "About 10 percent",
@@ -28513,13 +28513,13 @@
   },
   {
     "tier": 3,
-    "question": "At the South Pole, the ice age never ended. Antarctica lies buried under an ice sheet so colossal that this one continent alone keeps an astonishing share of the planet's fresh water frozen solid on its back. Roughly what share of ALL Earth's fresh water is locked up in Antarctic ice?",
-    "answer": "about 60%",
+    "question": "Antarctica's ice sheet is so heavy that it has pressed the bedrock of the entire continent hundreds of meters downward. Geologists say that if the ice ever melted, the land underneath would slowly spring back up. What do they call this rebound?",
+    "answer": "Isostatic rebound",
     "choices": [
-      "about 6%",
-      "about 20%",
-      "about 60%",
-      "about 90%"
+      "Isostatic rebound",
+      "Continental drift",
+      "Glacial plucking",
+      "Plate subduction"
     ],
     "context": "The Antarctic Ice Sheet holds about 61% of all the fresh water on Earth (and roughly 90% of the world's total ice — a separate figure). At the pole, the ice age simply never left. Source: https://en.wikipedia.org/wiki/Antarctic_ice_sheet"
   },
@@ -36109,13 +36109,13 @@
   },
   {
     "tier": 3,
-    "question": "Troy is one of the most dug-over archaeological sites on Earth -- Schliemann, Blegen, and Korfmann all spent years tearing into the Hisarlik mound across 150 years of work. You might assume the whole place has been uncovered by now. In fact, as of 2013, how much of Troy's sprawling lower city had actually been excavated?",
-    "answer": "About 3%",
+    "question": "The mound at Hisarlik in Turkey holds not one Troy but a stack of ruined cities built on top of each other across thousands of years. Archaeologists number the layers Troy I through Troy IX. Homer's Trojan War is most often matched to which layer?",
+    "answer": "Troy VII",
     "choices": [
-      "About 3%",
-      "About 40%",
-      "About 70%",
-      "About 95%"
+      "Troy II",
+      "Troy IV",
+      "Troy VII",
+      "Troy IX"
     ],
     "context": "As of 2013 only about 2-3% of Troy's lower city had been excavated, and roughly 2 m of the mound's surface has eroded away over the centuries, carrying buried evidence with it. Most of Troy still lies underground, waiting. (Wikipedia: Troy)"
   },
@@ -37105,13 +37105,13 @@
   },
   {
     "tier": 3,
-    "question": "Venice's lowest ground, St Mark's Square, floods so often that a little water underfoot is treated as an ordinary nuisance. But on 4 November 1966 the lagoon rose to 194 cm, a level never matched before or since. The water climbed far past the usual low corners. How much of the historic city did that record flood leave under water?",
-    "answer": "About 90% of the city",
+    "question": "Venice's catastrophic 1966 acqua granda flood pushed the lagoon 194 cm above normal — a record that still stands. In response, Italy eventually built a system of mobile flood barriers at the three lagoon inlets to hold back extreme tides. What is this barrier system called?",
+    "answer": "MOSE",
     "choices": [
-      "About a third of the city",
-      "About half of the city",
-      "About 90% of the city",
-      "The entire city"
+      "MOSE",
+      "Delta Works",
+      "Thames Barrier",
+      "Zuiderzee Works"
     ],
     "context": "The flood of 4 November 1966 drove the water to 194 cm — still the highest level ever recorded in Venice — and left about 90% of the historic city under water. It remains the city's worst flood on record; the next-worst, in November 2019, reached 187 cm and put 87% of the old town under water. That 1966 disaster is what finally pushed Italy to plan a barrier for the lagoon. Source: https://en.wikipedia.org/wiki/1966_Venice_flood"
   },

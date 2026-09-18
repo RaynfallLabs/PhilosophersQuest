@@ -553,13 +553,13 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT was released to the public in late November of which year?",
-    "answer": "2022",
+    "question": "ChatGPT launched in late November 2022 and reached 100 million users in two months — the fastest consumer app ever. Which lab released it?",
+    "answer": "OpenAI",
     "choices": [
-      "2022",
-      "2012",
-      "2018",
-      "2024"
+      "OpenAI",
+      "Google DeepMind",
+      "Meta AI",
+      "Anthropic"
     ],
     "context": "OpenAI released ChatGPT on November 30, 2022. It reached 100 million users in two months — the fastest any consumer product had ever grown. The launch is widely treated as the moment when the modern AI era went mainstream and showed up in every classroom and newsroom."
   },
@@ -817,25 +817,25 @@
   },
   {
     "tier": 1,
-    "question": "GPT-3 first showed the world how good AI text could get. What year did it come out?",
-    "answer": "2020",
+    "question": "GPT-3 stunned researchers in 2020 because it could do tasks it had never been trained on — just from a few examples in the prompt. What is this ability called?",
+    "answer": "Few-shot learning",
     "choices": [
-      "2020",
-      "2002",
-      "1995",
-      "2014"
+      "Few-shot learning",
+      "Fine-tuning",
+      "Backpropagation",
+      "Overfitting"
     ],
     "context": "OpenAI released GPT-3 in 2020. With 175 billion parameters it was much larger than its predecessors. It could write fluent essays, code, and creative fiction from short prompts. The original GPT-3 wasn't a polished chatbot — ChatGPT (built on a tuned version of GPT-3.5) is what made the technology accessible to non-experts in 2022."
   },
   {
     "tier": 1,
-    "question": "OpenAI's GPT-4 model was released in which year?",
-    "answer": "2023",
+    "question": "GPT-4 arrived in 2023 with a new power that GPT-3 lacked: it could accept pictures as input, not just text. What is this ability called?",
+    "answer": "Multimodal input",
     "choices": [
-      "2023",
-      "2003",
-      "1993",
-      "2033"
+      "Multimodal input",
+      "Chain-of-thought",
+      "Fine-tuning",
+      "Tokenization"
     ],
     "context": "OpenAI released GPT-4 in March 2023, a few months after ChatGPT made the GPT-3.5 model famous. GPT-4 was a major upgrade — better reasoning, longer context, ability to handle images as well as text. The transition from GPT-3.5 to GPT-4 was the largest single capability jump of the recent chatbot era."
   },
@@ -877,13 +877,13 @@
   },
   {
     "tier": 1,
-    "question": "OpenAI started as a non-profit lab. What year did it begin?",
-    "answer": "2015",
+    "question": "OpenAI began in 2015 as a nonprofit AI lab. One co-founder later became its CEO and released ChatGPT to the world. Who is he?",
+    "answer": "Sam Altman",
     "choices": [
-      "2015",
-      "1955",
-      "1985",
-      "2005"
+      "Sam Altman",
+      "Demis Hassabis",
+      "Dario Amodei",
+      "Mark Zuckerberg"
     ],
     "context": "OpenAI was founded in December 2015 as a non-profit research lab. Co-founders included Sam Altman, Elon Musk, Ilya Sutskever, and others. It later restructured as a 'capped-profit' company. The mission as originally stated was to ensure that AGI benefits all of humanity; whether the structure now matches that mission is a matter of ongoing debate."
   },

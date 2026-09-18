@@ -6397,25 +6397,25 @@
   },
   {
     "tier": 1,
-    "question": "Gym folklore says a raw egg is the purest protein there is — nothing cooked out of it. Researchers tested that, feeding volunteers 25 g of egg protein tagged with tracer atoms so they could measure exactly how much crossed the gut wall. Cooked egg came in at 90.9% digestible. What did raw egg come in at?",
-    "answer": "About 51% — barely half of it",
+    "question": "Gym folklore says raw egg is the purest protein there is — nothing cooked out of it. Researchers fed volunteers 25 g of egg protein tagged with tracer atoms and measured how much crossed the gut wall. Cooked egg scored 91% digestible; raw egg only about half. What single change during cooking unlocks the protein?",
+    "answer": "Denaturation — heat unfolds the tight protein coils",
     "choices": [
-      "About 51% — barely half of it",
-      "About 72% — most of it",
-      "About 88% — near the cooked score",
-      "About 97% — better than cooked"
+      "Denaturation — heat unfolds the tight protein coils",
+      "Emulsification — fat droplets scatter into water",
+      "Fermentation — microbes chew through the sugars",
+      "Caramelization — sugars brown and turn sweet"
     ],
     "context": "51.3% (± 9.8), against 90.9% (± 0.8) for cooked. The raw egg is not purer — half of it walks straight through you. Evenepoel et al., 'Digestibility of Cooked and Raw Egg Protein in Humans as Assessed by Stable Isotope Techniques', Journal of Nutrition 128(10):1716-1722 (1998) — https://pubmed.ncbi.nlm.nih.gov/9772141/"
   },
   {
     "tier": 1,
-    "question": "A wild chimp spends about half its day chewing. That is six hours of raw fruit, tough leaves and raw meat. None of it is soft. Scientists timed the other primates too. How much of the day does a human spend chewing?",
-    "answer": "About 5% — well under an hour",
+    "question": "A wild chimp spends about half its day chewing — six hours of raw fruit, tough leaves and raw meat. A human spends under an hour. Harvard's Richard Wrangham argues that cooking, by shrinking chewing and digestion time so dramatically, paid for one huge evolutionary upgrade in our ancestors. Which?",
+    "answer": "Bigger brains — the extra calories fed them",
     "choices": [
-      "About 5% — well under an hour",
-      "About 15% — close to two hours",
-      "About 25% — around three hours",
-      "About 40% — around five hours"
+      "Bigger brains — the extra calories fed them",
+      "Stronger jaws — grinding hard food needs muscle",
+      "Longer guts — fermenting raw fiber needs room",
+      "Sharper teeth — slicing raw meat needs blades"
     ],
     "context": "4.7%, against the chimpanzee's 48% — an order of magnitude. Humans are the outlier of the whole primate order, because our food arrives pre-broken-down. Richard Wrangham's version of the same gap: wild chimps burn 5-7 hours a day feeding, and cooking hands those hours back for something other than chewing. Harvard Gazette, 'Big gains in better chewing' (March 2016), reporting Zink & Lieberman — https://news.harvard.edu/gazette/story/2016/03/big-gains-in-better-chewing/"
   },
@@ -13477,13 +13477,13 @@
   },
   {
     "tier": 5,
-    "question": "Now the honest arithmetic behind 'why a growing kid needs some red meat.' In a typical Western diet, the easily-absorbed heme iron from meat is only about 10–15% of all the iron a person eats — just a small slice of the total. But of the iron the body actually ABSORBS and keeps, how big a share comes from that little slice of meat?",
-    "answer": "About 40%",
+    "question": "In a typical Western diet, the easily-absorbed heme iron from meat is only 10–15% of all the iron a person eats — just a small slice. Yet it delivers a hugely outsized share of what the body actually absorbs, because plant iron floats free in the gut where other compounds bind it up. Meat iron is protected — what molecule is it already packaged inside?",
+    "answer": "A porphyrin ring — inside hemoglobin and myoglobin",
     "choices": [
-      "About 40%",
-      "About 20%",
-      "About 10%",
-      "About 2%"
+      "A porphyrin ring — inside hemoglobin and myoglobin",
+      "A phytate cage — inside whole-grain husks",
+      "A polyphenol shell — inside strong-tea leaves",
+      "A cellulose fiber — inside tough plant walls"
     ],
     "context": "That's the honest core of the two-iron story: heme iron is only about 10–15% of the iron a Western diet EATS, yet it delivers roughly 40% of the iron actually ABSORBED — meat's iron punches far above its weight. Plant-only iron can still work, but you have to work the system: vegetarians are advised to aim for about 1.8x the iron intake, lean hard on the vitamin-C pairing, and keep tea away from meals — which is exactly why iron deficiency is more common among people who eat no meat. Source: NCBI StatPearls, Dietary Iron; NIH ODS Iron Fact Sheet."
   },

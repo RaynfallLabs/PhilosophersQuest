@@ -685,13 +685,13 @@
   },
   {
     "tier": 2,
-    "question": "Which year did the Seattle Mariners end their long playoff drought, returning to the postseason for the first time since 2001?",
-    "answer": "2022",
+    "question": "The Seattle Mariners ended the longest active playoff drought in North American major pro sports in 2022, going back to the postseason for the first time since 2001. Who hit the walk-off home run against Oakland that clinched the wild card?",
+    "answer": "Cal Raleigh",
     "choices": [
-      "2022",
-      "2018",
-      "2015",
-      "2010"
+      "Cal Raleigh",
+      "Julio Rodriguez",
+      "Mitch Haniger",
+      "Eugenio Suarez"
     ],
     "context": "The 2022 Mariners snapped a 21-year postseason drought — the longest active drought in the four major North American sports. They beat the Blue Jays in the AL Wild Card series."
   },
@@ -3505,13 +3505,13 @@
   },
   {
     "tier": 2,
-    "question": "Kohei Horikoshi began publishing My Hero Academia in Weekly Shonen Jump in July 2014. The series is set at U.A. High School, a hero-training academy in a Tokyo-like city. In the anime adaptation by Studio Bones, what year did the first season air?",
-    "answer": "2016",
+    "question": "Kohei Horikoshi began publishing My Hero Academia in 2014. All Might chooses shy Izuku Midoriya as his successor and passes down a power that grows stronger each generation. What is this inherited quirk called?",
+    "answer": "One For All",
     "choices": [
-      "2016",
-      "2014",
-      "2017",
-      "2019"
+      "One For All",
+      "Explosion",
+      "Half-Cold Half-Hot",
+      "Erasure"
     ],
     "context": "Horikoshi's earlier short story 'My Hero' from 2008 contained an early version of Deku-as-quirkless protagonist. Studio Bones (Fullmetal Alchemist Brotherhood, Mob Psycho 100) handled all seasons. The manga concluded in 2024."
   },
@@ -11845,13 +11845,13 @@
   },
   {
     "tier": 5,
-    "question": "Steve Ditko drew Spider-Man with Stan Lee. He walked away from the book in 1966 and never spoke about Spider-Man again. He died alone in his New York apartment. In what year?",
-    "answer": "2018",
+    "question": "Steve Ditko drew Spider-Man with Stan Lee before walking away from the book in 1966. Beyond Spider-Man, what other iconic Marvel hero — a sorcerer with a Cloak of Levitation — did Ditko co-create with Lee?",
+    "answer": "Doctor Strange",
     "choices": [
-      "2018",
-      "2009",
-      "1999",
-      "2014"
+      "Doctor Strange",
+      "Iron Man",
+      "Daredevil",
+      "Black Panther"
     ],
     "context": "Ditko was 90 years old when he died on June 29, 2018. He was found two days later. He had lived a famously private life — refusing interviews, publishing essays only through small press. His objectivism led him to create Mr. A (1967), a black-and-white-morality character published outside Marvel. John Romita Sr. took over Spider-Man and softened the visual style. Ditko also co-created Doctor Strange (Strange Tales #110, 1963)."
   },
@@ -13933,13 +13933,13 @@
   },
   {
     "tier": 2,
-    "question": "Roger Patterson and Bob Gimlin shot the most famous piece of Bigfoot footage ever. It shows a big dark figure walking across a sandbar at Bluff Creek in northern California. In what year did they film it?",
-    "answer": "1967",
+    "question": "Roger Patterson and Bob Gimlin shot the most famous piece of Bigfoot footage ever at Bluff Creek in northern California in 1967 — a big dark figure walking across a sandbar. What nickname did Patterson give the female creature in the film?",
+    "answer": "Patty",
     "choices": [
-      "1967",
-      "1958",
-      "1972",
-      "1985"
+      "Patty",
+      "Nessie",
+      "Yowie",
+      "Momo"
     ],
     "context": "The film was shot on October 20, 1967. Patterson named the subject 'Patty.' Hollywood costume designers and biomechanics researchers have studied the gait, the muscle movement, and the unusual proportions of the figure for decades without consensus."
   },
@@ -14113,13 +14113,13 @@
   },
   {
     "tier": 2,
-    "question": "The Tunguska Event was a huge blast in Siberia. It flattened about 80 million trees. In which year did it happen?",
-    "answer": "1908",
+    "question": "The 1908 Tunguska Event flattened about 80 million trees in Siberia in a butterfly-shaped pattern, yet searchers found no impact crater. What does the missing crater tell us about how the object detonated?",
+    "answer": "It exploded in mid-air",
     "choices": [
-      "1908",
-      "1888",
-      "1923",
-      "1936"
+      "It exploded in mid-air",
+      "It burrowed underground",
+      "It skipped off the atmosphere",
+      "It vaporized in a lake"
     ],
     "context": "The airburst occurred above the Stony Tunguska River on June 30, 1908. Eyewitnesses 300 miles away saw a fireball brighter than the sun. No crater was ever found. Most scientists attribute it to a 50-meter stony asteroid airburst at about 8 kilometers altitude."
   },
@@ -14197,13 +14197,13 @@
   },
   {
     "tier": 2,
-    "question": "The SCP (Secure, Contain, Protect) Foundation is a shared wiki of made-up 'strange objects.' The entries are written like dry science reports. It started as a 4chan post about a statue that only moves when no one looks at it. In which year did it start?",
-    "answer": "2007",
+    "question": "The SCP Foundation is a shared wiki of made-up 'strange objects' written like dry science reports. It began with a 2007 4chan post about a statue that only moves when no one is looking at it. What is that first statue's SCP number?",
+    "answer": "SCP-173",
     "choices": [
-      "2007",
-      "2002",
-      "2012",
-      "2017"
+      "SCP-173",
+      "SCP-001",
+      "SCP-682",
+      "SCP-096"
     ],
     "context": "The original post was about SCP-173, a roughly humanoid concrete sculpture by Japanese artist Izumi Kato. The Foundation lore now spans over 8,000 'SCP files' written by thousands of contributors under a Creative Commons license. It is one of the largest fiction projects in internet history."
   },
@@ -14245,13 +14245,13 @@
   },
   {
     "tier": 3,
-    "question": "Journalist John A. Keel investigated the Point Pleasant, West Virginia winged-creature sightings of 1966-67 and the December 15, 1967 Silver Bridge collapse. He published a book tying them together that became a small classic of high-strangeness literature. What year was the book published?",
-    "answer": "1975",
+    "question": "Journalist John A. Keel investigated the Point Pleasant winged-creature sightings of 1966-67 and the December 15, 1967 Silver Bridge collapse, tying them together in a 1975 book that became a classic of high-strangeness literature. What is its title?",
+    "answer": "The Mothman Prophecies",
     "choices": [
-      "1975",
-      "1968",
-      "1983",
-      "1991"
+      "The Mothman Prophecies",
+      "Operation Trojan Horse",
+      "Our Haunted Planet",
+      "Strange Creatures From Time and Space"
     ],
     "context": "The book is titled The Mothman Prophecies. Keel had spent most of 1967 in Point Pleasant interviewing witnesses. He also documented Men in Black encounters and prophetic dreams reported by townspeople. Mark Pellington adapted the book into a 2002 film starring Richard Gere."
   },
@@ -14449,13 +14449,13 @@
   },
   {
     "tier": 3,
-    "question": "In 1674, workmen tearing down a staircase at the Tower of London found a wooden chest. Inside were the bones of two children. King Charles II had them buried at Westminster Abbey as the missing 'Princes in the Tower.' In what year did Richard III die at Bosworth Field?",
-    "answer": "1485",
+    "question": "In 1674, workmen tearing down a staircase at the Tower of London found a wooden chest holding the bones of two children — long assumed to be the missing 'Princes in the Tower.' Their uncle Richard III died at Bosworth Field in 1485. Who defeated him and took the crown as Henry VII?",
+    "answer": "Henry Tudor",
     "choices": [
-      "1485",
-      "1471",
-      "1499",
-      "1509"
+      "Henry Tudor",
+      "Edward IV",
+      "Thomas Stanley",
+      "Henry Percy"
     ],
     "context": "Richard III lost his crown and his life to Henry Tudor at Bosworth Field on August 22, 1485, ending the Plantagenet dynasty and beginning the Tudor. The Princes were never publicly seen alive after the summer of 1483. The Westminster Abbey bones were briefly examined in 1933; the Abbey has refused subsequent DNA testing."
   },
@@ -14557,13 +14557,13 @@
   },
   {
     "tier": 4,
-    "question": "Sculptor Bob Roach unveiled a 12-foot polished stainless-steel statue of Mothman in downtown Point Pleasant, West Virginia, complete with red reflective eyes and outstretched wings. The town also hosts an annual September festival named for the creature with tens of thousands of attendees. In what year was the statue unveiled?",
-    "answer": "2003",
+    "question": "In 2003, sculptor Bob Roach unveiled a 12-foot polished stainless-steel Mothman statue in downtown Point Pleasant, West Virginia — red reflective eyes, outstretched wings. What abandoned WWII munitions site outside town was ground zero for the original 1966-67 sightings?",
+    "answer": "The TNT Area",
     "choices": [
-      "2003",
-      "1977",
-      "1991",
-      "2012"
+      "The TNT Area",
+      "Silver Bridge",
+      "Camp Conley",
+      "Fort Randolph"
     ],
     "context": "Roach's statue stands in front of the Mothman Museum, run by Jeff Wamsley. The annual Mothman Festival started in 2002 — partly to capitalize on the Richard Gere film. The Silver Bridge collapse memorial sits a few blocks away, with the names of all 46 dead engraved on a granite slab."
   },
@@ -15157,13 +15157,13 @@
   },
   {
     "tier": 1,
-    "question": "Gary Gygax and Dave Arneson put out the first Dungeons and Dragons game in what year? It came in a small white box with three little books.",
-    "answer": "1974",
+    "question": "Gary Gygax and Dave Arneson put out the first Dungeons and Dragons game in 1974 — a small white box with three little books. What tiny company, founded by Gygax in Lake Geneva, published it?",
+    "answer": "TSR",
     "choices": [
-      "1974",
-      "1971",
-      "1977",
-      "1980"
+      "TSR",
+      "Wizards of the Coast",
+      "Avalon Hill",
+      "Milton Bradley"
     ],
     "context": "The 1974 White Box was published by TSR in Lake Geneva, Wisconsin. Chainmail (1971) was the medieval-wargame seed. The Monster Manual (1977) was the first AD&D hardcover."
   },
@@ -15313,13 +15313,13 @@
   },
   {
     "tier": 1,
-    "question": "In what year did Gary Gygax die at his home in Lake Geneva, Wisconsin?",
-    "answer": "2008",
+    "question": "Gary Gygax co-created Dungeons and Dragons from his home in Lake Geneva, Wisconsin. His signature wizard character, whose name still lives on in classic D&D spells and adventures, is called what?",
+    "answer": "Mordenkainen",
     "choices": [
-      "2008",
-      "2003",
-      "2012",
-      "1998"
+      "Mordenkainen",
+      "Elminster",
+      "Raistlin",
+      "Gandalf"
     ],
     "context": "Gygax died March 4, 2008, age 69. He had ongoing health issues from a stroke years earlier. Tributes flooded in from across the gaming industry. Dave Arneson would die a year later, in April 2009."
   },
@@ -15457,13 +15457,13 @@
   },
   {
     "tier": 2,
-    "question": "The 500-page AD&D Dungeon Master's Guide was Gary Gygax's biggest work. It finished the core three books, joining the Monster Manual (1977) and Player's Handbook (1978). What year did it come out?",
-    "answer": "1979",
+    "question": "The 500-page AD&D Dungeon Master's Guide finished the original core trilogy in 1979, joining the Monster Manual (1977) and Player's Handbook (1978). What famous appendix in the DMG lists Gygax's own fantasy-fiction inspirations for the game?",
+    "answer": "Appendix N",
     "choices": [
-      "1979",
-      "1977",
-      "1981",
-      "1983"
+      "Appendix N",
+      "Appendix M",
+      "The Foreword",
+      "The Bestiary"
     ],
     "context": "The 1979 DMG features the famous Gygaxian prose style — dense, idiosyncratic, encyclopedic. It includes the random-harlot table, the random-fortress-encounter table, and the legendary Appendix N reading list (Howard, Lovecraft, Vance, Leiber, Moorcock, Tolkien)."
   },
@@ -16789,13 +16789,13 @@
   },
   {
     "tier": 2,
-    "question": "Pokemon Red and Blue released in Japan as Red and Green on February 27, 1996. The English-language Red and Blue followed about two and a half years later in North America. What year did US Red and Blue arrive?",
-    "answer": "1998",
+    "question": "Pokemon Red and Blue launched in Japan as Red and Green on February 27, 1996, then hit North America about two and a half years later. What fully-evolved Water starter appears on the cover of the North American Blue version?",
+    "answer": "Blastoise",
     "choices": [
-      "1998",
-      "1997",
-      "1999",
-      "2000"
+      "Blastoise",
+      "Charizard",
+      "Venusaur",
+      "Mewtwo"
     ],
     "context": "Pokemon Red and Blue launched in the US on September 28, 1998 for the Game Boy. The English version was based on the Japanese Pokemon Blue revision, with the original Japanese Red and Green's color pair swapped to Red and Blue for the Western market."
   },

@@ -9457,13 +9457,13 @@
   },
   {
     "tier": 3,
-    "question": "Around 793, Charlemagne fixed money across his empire on one silver penny: 12 pennies to a shilling, 240 to a pound. This pound-shilling-penny system, written L, s, d, lasted a very long time in Britain before decimal money took over. In what year did Britain drop it?",
-    "answer": "1971",
+    "question": "Around 793, Charlemagne fixed money across his empire on one silver penny: 12 pennies to a shilling, 240 to a pound. Britain kept this pound-shilling-penny system, written L, s, d, for nearly twelve centuries. On February 15, 1971, Britain finally switched to a decimal pound worth 100 new pence. What did Britons call that switchover day?",
+    "answer": "Decimal Day",
     "choices": [
-      "1971",
-      "1815",
-      "1605",
-      "1492"
+      "Decimal Day",
+      "Sterling Day",
+      "Coronation Day",
+      "Empire Day"
     ],
     "context": "The L/s/d system (the d standing for the Roman denarius) survived in Britain until decimalisation in 1971 -- almost 1,200 years after Charlemagne set it. (en.wikipedia.org/wiki/Carolingian_monetary_system)"
   },
@@ -30313,13 +30313,13 @@
   },
   {
     "tier": 5,
-    "question": "Magna Carta's clause 39 shields 'no free man,' in the Latin 'nullus liber homo,' from being seized or imprisoned except by lawful judgment. It sounds sweeping, as if it guarded everyone in England. In fact 'liber homo,' free men, was a far narrower group than the words suggest, mostly nobles and landholders. Roughly what share of England's people counted as free men covered by clause 39?",
-    "answer": "About 3%",
+    "question": "Magna Carta's clause 39 shields 'no free man,' in the Latin 'nullus liber homo,' from being seized or imprisoned except by lawful judgment. It sounds sweeping, as if it guarded everyone in England. In fact only a thin top slice, mostly nobles and small landholders, counted as free men. The great majority of English peasants were bound to their lord's land, could not leave without permission, and were left outside clause 39's protection. What was this unfree majority called?",
+    "answer": "Villeins",
     "choices": [
-      "About 3%",
-      "About 25%",
-      "About 50%",
-      "About 80%"
+      "Villeins",
+      "Yeomen",
+      "Burgesses",
+      "Freeholders"
     ],
     "context": "'Liber homo' meant the free, mainly nobles and landholders, perhaps only 2-3% of England's people. The unfree peasants and serfs who made up most of the population fell outside it. The promise was real but narrow at the start. Source: Magna Carta Project, Clause 39."
   },
