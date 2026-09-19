@@ -13,7 +13,7 @@
   },
   {
     "tier": 1,
-    "question": "GPT in 'ChatGPT' is an acronym for three words. What are they?",
+    "question": "ChatGPT is one of the most famous AI chatbots in the world. The name ends in three capital letters — GPT — and those letters are an acronym for three words that describe what the model actually is. What are those three words?",
     "answer": "Generative Pre-trained Transformer",
     "choices": [
       "Generative Pre-trained Transformer",
@@ -25,7 +25,7 @@
   },
   {
     "tier": 1,
-    "question": "The 'T' in GPT stands for Transformer. Transformers are a kind of:",
+    "question": "In the name ChatGPT, the letter T stands for Transformer. But this isn't the toy robot from the movies. It's the name of an idea invented by Google researchers in 2017 that made modern AI chatbots possible. Transformers are a kind of:",
     "answer": "Neural network architecture",
     "choices": [
       "Neural network architecture",
@@ -37,7 +37,7 @@
   },
   {
     "tier": 1,
-    "question": "Why is 'Pre-trained' in GPT's name important?",
+    "question": "The P in GPT stands for Pre-trained. It means the AI already did its learning in advance — before you ever start talking to it. Companies spent months and millions of dollars feeding it books, websites, and articles. By the time you open the chatbot, it isn't studying anymore. Why is 'Pre-trained' important?",
     "answer": "It learns once, then just responds",
     "choices": [
       "It learns once, then just responds",
@@ -49,7 +49,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot writes 'I'm sorry to hear that' when you tell it sad news. Is it actually feeling sorry?",
+    "question": "You tell a chatbot like ChatGPT that your pet died. The chatbot writes back, 'I'm so sorry to hear that.' The words sound caring, just like a friend would say. But underneath, the chatbot is a computer program predicting one word after another based on patterns in text it read during training. Is it actually feeling sorry?",
     "answer": "No, those are just words it learned to produce",
     "choices": [
       "No, those are just words it learned to produce",
@@ -61,7 +61,7 @@
   },
   {
     "tier": 1,
-    "question": "Which of these is the BEST tool to use when you want to look up the latest news from today?",
+    "question": "You want to know what happened in the news this morning — a game score, a breaking story, an announcement from earlier today. Chatbots were often trained months ago and don't know today's events. Which of these is the best tool to use when you want to look up the latest news from today?",
     "answer": "A search engine like Google",
     "choices": [
       "A search engine like Google",
@@ -73,7 +73,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot is not a calculator. For careful math work, which everyday tool is safer to use?",
+    "question": "Chatbots like ChatGPT are very good at writing sentences, but they were not built to do arithmetic. They predict likely-looking answers, and for math that means they sometimes confidently give the wrong number. For careful math work, which everyday tool is safer to use than a chatbot?",
     "answer": "A calculator app",
     "choices": [
       "A calculator app",
@@ -85,7 +85,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot writes about a famous book but invents a chapter that doesn't really exist. What is this made-up fact usually called?",
+    "question": "You ask a chatbot to summarize a famous novel. It confidently describes a whole chapter — a scene, a character's speech, a plot twist — that isn't in the book at all. The chatbot made it up. It didn't lie on purpose; the model just filled in words that sounded plausible. What is a made-up fact from a chatbot usually called?",
     "answer": "Hallucination",
     "choices": [
       "Hallucination",
@@ -97,7 +97,7 @@
   },
   {
     "tier": 1,
-    "question": "A basic chatbot has no live internet. So if you ask 'what's the weather tomorrow,' it usually:",
+    "question": "Some AI chatbots can search the internet in real time, but a basic chatbot cannot. It only knows what it read during its training — no live news, no live weather, no live scores. So if you open a basic chatbot and ask, 'What's the weather tomorrow in my town?' — it usually:",
     "answer": "Cannot really answer with live data",
     "choices": [
       "Cannot really answer with live data",
@@ -109,7 +109,7 @@
   },
   {
     "tier": 1,
-    "question": "You chat with ChatGPT today and tell it your favorite color. Tomorrow you open a new chat. By default, will it remember?",
+    "question": "Today you open ChatGPT and mention that your favorite color is green. Tomorrow you close that chat and start a fresh new conversation with the same chatbot. By default — unless you've turned on a special memory feature — will ChatGPT remember what you told it yesterday?",
     "answer": "No, each new chat starts fresh from blank",
     "choices": [
       "No, each new chat starts fresh from blank",
@@ -121,7 +121,7 @@
   },
   {
     "tier": 1,
-    "question": "Every chatbot was trained on text up to a certain date and has no information from later. What's this date called?",
+    "question": "Every AI chatbot was trained on a huge pile of text — books, articles, and websites — collected up to a specific date. After that date, whatever happens in the world, the chatbot won't know unless it's connected to live search. That special date has a name in the AI world. What is it called?",
     "answer": "The training cutoff",
     "choices": [
       "The training cutoff",
@@ -133,7 +133,7 @@
   },
   {
     "tier": 1,
-    "question": "AI chatbots run on something called a 'neural network.' The name comes from a loose comparison to:",
+    "question": "Chatbots like ChatGPT and Claude run on a system programmers call a 'neural network.' The word 'neural' is a hint about what the network was designed to imitate. It comes from a loose comparison to living cells in nature. Which of these is a neural network compared to?",
     "answer": "Cells in animal brains",
     "choices": [
       "Cells in animal brains",
@@ -145,7 +145,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot has billions of tiny numbers inside. They adjust during training. What are these numbers usually called?",
+    "question": "Inside every big chatbot like ChatGPT, there are billions of tiny numbers that decide how it answers. While the chatbot learns from books and websites, those numbers slowly change so it gets better at predicting words. Programmers have a name for these tiny numbers. What are they usually called?",
     "answer": "Parameters",
     "choices": [
       "Parameters",
@@ -157,7 +157,7 @@
   },
   {
     "tier": 1,
-    "question": "There are two big stages for an AI model: first it learns from data, then it answers your questions. What's the first stage called?",
+    "question": "Before a chatbot like ChatGPT can talk to anyone, a team of programmers has to feed it huge piles of books, websites, and articles so it can learn how words fit together. Only after that first big stage is done does the chatbot start answering people's questions. What is that first learning stage called?",
     "answer": "Training",
     "choices": [
       "Training",
@@ -169,7 +169,7 @@
   },
   {
     "tier": 1,
-    "question": "Some AI makes new things — text, images, music. Other AI just sorts existing things into categories. What's the made-new-things kind called?",
+    "question": "Some AI programs, like ChatGPT and DALL-E, actually create brand new stuff — a poem, a picture of a dragon, a fresh bit of music. Other AI programs just sort things into groups, like marking emails as spam or not spam. There is a special name for the kind that makes new things. What is it called?",
     "answer": "Generative AI",
     "choices": [
       "Generative AI",
@@ -181,7 +181,7 @@
   },
   {
     "tier": 1,
-    "question": "When a chatbot reads or writes any text, it splits everything into small pieces. Those small pieces are called:",
+    "question": "When you type a sentence into a chatbot like ChatGPT, the program does not read whole words the way you do. It chops your text into little pieces — sometimes a short word, sometimes just part of a word. It also writes its reply the same way, one small piece at a time. What are these small text pieces called?",
     "answer": "Tokens",
     "choices": [
       "Tokens",
@@ -193,7 +193,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot can only 'see' so much of your conversation at once before older parts get forgotten. The limit on how much it can see is called the:",
+    "question": "When you chat with ChatGPT or Claude, it can only remember so much of the conversation at once. If you keep talking long enough, the very oldest messages start to slip out of its memory. Programmers have a name for this limit on how much the chatbot can 'see' at one time. What is it called?",
     "answer": "Context window",
     "choices": [
       "Context window",
@@ -205,7 +205,7 @@
   },
   {
     "tier": 1,
-    "question": "ChatGPT, Claude, Gemini, and Grok are all examples of which general kind of AI?",
+    "question": "ChatGPT was made by a company called OpenAI. Claude was made by Anthropic. Gemini was made by Google. Grok was made by xAI. All four are AI programs you can chat with in plain words, ask questions, and get written answers from. What is the general name for this kind of AI?",
     "answer": "Chatbot assistants",
     "choices": [
       "Chatbot assistants",
@@ -217,7 +217,7 @@
   },
   {
     "tier": 1,
-    "question": "DALL-E, Stable Diffusion, and Midjourney all do the same general thing. What is it?",
+    "question": "DALL-E, Stable Diffusion, and Midjourney are three famous AI programs. If you type 'a dragon reading a book in a library,' any one of them will draw a fresh picture of exactly that. You give words, you get a new picture back. What is the main job all three of these AI programs do?",
     "answer": "Generate images from text descriptions",
     "choices": [
       "Generate images from text descriptions",
@@ -229,7 +229,7 @@
   },
   {
     "tier": 1,
-    "question": "When you talk to Siri or Alexa, the AI first has to do one big job before anything else. What is it?",
+    "question": "When you say 'Hey Siri, what is the weather today?' to your phone, or 'Alexa, play some music' to a smart speaker, the AI hears your voice as sound waves, not as words. Before it can figure out what you want or reply back, it has to do one big first job with your voice. What is that first job?",
     "answer": "Turn your speech into text",
     "choices": [
       "Turn your speech into text",
@@ -241,7 +241,7 @@
   },
   {
     "tier": 1,
-    "question": "Programmers can use AI tools that help write computer code. GitHub Copilot is a famous one. What does it mainly do?",
+    "question": "GitHub Copilot is an AI tool built for programmers who spend all day typing computer code. As a programmer types inside their editor, Copilot watches along and tries to guess what code line they are about to type next. Then it pops up a suggestion the programmer can accept with one key. What is Copilot's main job?",
     "answer": "Suggest code as you type",
     "choices": [
       "Suggest code as you type",
@@ -253,7 +253,7 @@
   },
   {
     "tier": 1,
-    "question": "YouTube's 'Up Next' video, TikTok's For You feed, and Netflix's home page all use AI to pick what to show you. Together these are called:",
+    "question": "When you finish a YouTube video, 'Up Next' picks another one it thinks you will love. TikTok chooses the videos in your For You feed. Netflix rearranges its home page around what you have watched before. All three use AI to decide what you personally see next. What is the general name for this kind of AI?",
     "answer": "Recommendation systems",
     "choices": [
       "Recommendation systems",
@@ -277,7 +277,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot writes you an essay draft. Whose job is it to fact-check the claims before turning it in?",
+    "question": "You ask a chatbot to write a short essay for a school project. It writes a full draft in a few seconds and everything sounds convincing. But chatbots can make up facts that are not true — even historical dates or people. Before you turn the essay in, whose job is it to actually check whether the claims are true?",
     "answer": "Yours — the chatbot can't tell what's true",
     "choices": [
       "Yours — the chatbot can't tell what's true",
@@ -289,7 +289,7 @@
   },
   {
     "tier": 1,
-    "question": "An AI tells you a fact that sounds important. What's the safe habit to build BEFORE you share it with others?",
+    "question": "A chatbot tells you a surprising fact — say, that a famous person once did something amazing. It sounds important, and you feel tempted to text it to your friends right away. But chatbots sometimes state made-up facts with total confidence. What is the safe habit to build before you share that fact with anyone else?",
     "answer": "Verify it against a trusted source first",
     "choices": [
       "Verify it against a trusted source first",
@@ -301,7 +301,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot tells you a wrong fact but sounds absolutely certain. What key thing should you remember about how these systems really work?",
+    "question": "You ask a chatbot a question. It gives you an answer in a smooth, confident voice — no hesitation, no 'I'm not sure.' But when you check a trusted book or website, the answer turns out to be flat wrong. This surprises people a lot. What key thing should you remember about how chatbots really work?",
     "answer": "They can be confidently wrong",
     "choices": [
       "They can be confidently wrong",
@@ -313,7 +313,7 @@
   },
   {
     "tier": 1,
-    "question": "Some chatbot writing has clues, like extra dashes and phrases like 'delve into' or 'tapestry.' What skill does noticing them build?",
+    "question": "AI chatbots have giveaway habits when they write. They often stuff in long dashes, or use fancy phrases like 'delve into' and 'rich tapestry' way more than a normal kid ever would. Some sentences also feel weirdly balanced. When you learn to notice these clues, what real-life skill are you building?",
     "answer": "Spotting AI-written text",
     "choices": [
       "Spotting AI-written text",
@@ -325,7 +325,7 @@
   },
   {
     "tier": 1,
-    "question": "Lots of AI pictures have a tell. Look at the hands. Sometimes they have too many fingers. What does this show us?",
+    "question": "AI programs like Midjourney and DALL-E can make gorgeous pictures — dragons, castles, portraits. But if you look closely at a person's hands in an AI-generated image, sometimes there are six fingers, or two thumbs, or a hand that melts into another. What does this common mistake tell us about modern AI images?",
     "answer": "Even modern AI images often have flaws",
     "choices": [
       "Even modern AI images often have flaws",
@@ -337,7 +337,7 @@
   },
   {
     "tier": 1,
-    "question": "A 'deepfake' is a video AI-altered to make someone appear to speak. What's the right first move when you see a shocking clip?",
+    "question": "A 'deepfake' is a video where AI has been used to swap someone's face or voice, making them look and sound like they are saying words they never really said. You scroll online and see a shocking clip of a famous person saying something outrageous. What is the smart first move before you believe it or share it?",
     "answer": "Pause and check before believing it",
     "choices": [
       "Pause and check before believing it",
@@ -349,7 +349,7 @@
   },
   {
     "tier": 1,
-    "question": "You're shown text and asked: human-written or chatbot-written? What's the single most useful thing to know about how to tell?",
+    "question": "Someone hands you two paragraphs and asks: was this written by a person or by a chatbot? You cannot ask how long it took, and you cannot sniff the paper. You only have the text itself to work with. What is the single most useful thing to know when you try to tell which is which?",
     "answer": "Look for AI's typical phrases and structure",
     "choices": [
       "Look for AI's typical phrases and structure",
@@ -361,7 +361,7 @@
   },
   {
     "tier": 1,
-    "question": "You can teach a chatbot to be extra good at one job, like helping with cooking. What is that extra training called?",
+    "question": "Imagine a chatbot has already been trained on billions of pages of general text. Now a cookbook company wants to make it extra good at answering cooking questions, so they train it a second time using only recipes and food articles. This narrow, extra round of training has a special name. What is it called?",
     "answer": "Fine-tuning",
     "choices": [
       "Fine-tuning",
@@ -373,7 +373,7 @@
   },
   {
     "tier": 1,
-    "question": "The way you word a chatbot question changes the answer you get. Wording your question carefully is often called:",
+    "question": "If you ask a chatbot 'tell me about dogs,' you get a plain answer. But if you ask 'write a fun poem about a dog named Rex who loves cheese,' you get something totally different. The exact words you type — called your prompt — really change the reply. What is the name for the skill of wording prompts carefully?",
     "answer": "Prompt engineering",
     "choices": [
       "Prompt engineering",
@@ -385,7 +385,7 @@
   },
   {
     "tier": 1,
-    "question": "You need to draft a short story. You also need to look up today's weather. Which tool fits which job?",
+    "question": "You have two jobs to do this afternoon. First, you need a short story draft about a kid who finds a talking cat. Second, you need to know if it will rain in your town today. A chatbot can write creatively but does not know today's real weather. A search engine can look up live info. Which tool fits which job?",
     "answer": "Chatbot for drafting; search for weather",
     "choices": [
       "Chatbot for drafting; search for weather",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 1,
-    "question": "Some AI can listen to a few seconds of a real person speaking and then say new sentences in that exact voice. This is called:",
+    "question": "Certain AI programs only need to hear about ten seconds of a real person talking. After that, the AI can say brand new sentences that were never actually spoken — in that same person's exact voice, tone, and accent. This trick has a specific name. What is it called?",
     "answer": "Voice cloning",
     "choices": [
       "Voice cloning",
@@ -409,7 +409,7 @@
   },
   {
     "tier": 1,
-    "question": "You hear someone mention 'a large language model' that powers a chatbot. In plain words, what is that model trained to do?",
+    "question": "The kind of AI inside ChatGPT and Claude is called a large language model, or LLM for short. Underneath all the impressive answers, an LLM is trained on one basic task, done over and over with billions of examples. In plain words, what is a large language model actually trained to do?",
     "answer": "Predict the next word in a text",
     "choices": [
       "Predict the next word in a text",
@@ -421,7 +421,7 @@
   },
   {
     "tier": 1,
-    "question": "A voice clone can sound just like a real person after only seconds of their recorded voice. What family habit protects against phone scams?",
+    "question": "New AI tools can copy someone's voice after hearing only a few seconds of it. Scammers use these voice clones to call families pretending to be a relative in trouble, begging for money. The voice sounds exactly right — but it's a fake. What simple family habit can protect against this kind of phone scam?",
     "answer": "Set a family safe word in advance",
     "choices": [
       "Set a family safe word in advance",
@@ -433,7 +433,7 @@
   },
   {
     "tier": 1,
-    "question": "A chess program 'beats' a grandmaster. Does it actually want to win?",
+    "question": "A computer chess program plays against a grandmaster and wins the game. To someone watching, it might look like the machine 'wanted' the victory. But a chess program has no feelings — it does not celebrate, get nervous, or care what happens. Deep down, does the program actually want to win?",
     "answer": "No, it just plays high-scoring moves on the board",
     "choices": [
       "No, it just plays high-scoring moves on the board",
@@ -469,7 +469,7 @@
   },
   {
     "tier": 1,
-    "question": "Out of these four chatbot names, which one is NOT actually real?",
+    "question": "Some chatbots you see mentioned online are real programs made by real companies you can look up. Others are just made-up names that sound plausible. Look at the four chatbot names in the choices below. Three are actual chatbots people really use. One of them was invented for this question. Which one is not real?",
     "answer": "ChatBuddy-X9 from a friendly lab",
     "choices": [
       "ChatBuddy-X9 from a friendly lab",
@@ -1393,7 +1393,7 @@
   },
   {
     "tier": 1,
-    "question": "A star wants AI to read a book in her voice. What must she do first?",
+    "question": "A famous actress wants an audiobook company to use an AI version of her own voice to read a new novel out loud. That way she doesn't have to sit in a recording studio for weeks reading every chapter herself. Before the AI can talk in her voice, though, the company needs one thing from her first. What must she do?",
     "answer": "Give recorded samples for training",
     "choices": [
       "Give recorded samples for training",
@@ -1573,7 +1573,7 @@
   },
   {
     "tier": 1,
-    "question": "A chatbot says a famous scientist was born in 1872. The date sounds off. What should you do FIRST?",
+    "question": "You ask a chatbot for help on a history report. The chatbot tells you a famous scientist was born in 1872. Something feels wrong — chatbots sometimes just make things up. This is called a hallucination. Before you write that date into your report, what should you do FIRST?",
     "answer": "Check the date in an encyclopedia",
     "choices": [
       "Check the date in an encyclopedia",
@@ -1777,7 +1777,7 @@
   },
   {
     "tier": 1,
-    "question": "An image online shows someone wearing glasses, but the frames seem to melt into the side of their face. This is most likely:",
+    "question": "AI image generators sometimes goof on the fine details of a human face. You are scrolling through photos online and see a picture of a person wearing glasses. Something looks off — the frames seem to melt into the skin on the side of their face, with no clean edge. That kind of detail is a giveaway. This image is most likely:",
     "answer": "Glasses-into-skin AI blending",
     "choices": [
       "Glasses-into-skin AI blending",
@@ -3649,7 +3649,7 @@
   },
   {
     "tier": 2,
-    "question": "A doctor reads a mammogram while an AI flags spots that look suspicious. How is the AI usually being used in hospitals today?",
+    "question": "A mammogram is a special X-ray of the breast used to look for tiny signs of cancer. A radiologist is the doctor trained to read these images. In many modern hospitals, an AI program looks at the same scan the doctor is reading and highlights spots that seem suspicious. The doctor still makes the call, but the AI helps them not miss anything. How is the AI usually being used in hospitals today?",
     "answer": "As a second reader that catches things the radiologist might miss",
     "choices": [
       "As a second reader that catches things the radiologist might miss",
@@ -4177,7 +4177,7 @@
   },
   {
     "tier": 2,
-    "question": "A friend pastes their full bank login into a chatbot to ask about a transaction. Why is this risky?",
+    "question": "A friend is confused about a charge on her bank account, so she opens a chatbot like ChatGPT and pastes in her full bank username and password, then asks the chatbot to explain the recent transactions. Chatbots run on servers owned by big companies, not privately inside her computer. That single decision put her login somewhere it should never have been. Why is this risky?",
     "answer": "Their conversation may be logged, used for training, or readable in a breach",
     "choices": [
       "Their conversation may be logged, used for training, or readable in a breach",
@@ -4501,7 +4501,7 @@
   },
   {
     "tier": 2,
-    "question": "A grandparent receives a tearful voicemail in their grandchild's exact voice, begging for bail money. When should the family have set up a defense against this kind of scam?",
+    "question": "A grandmother's phone rings. She hears her grandson's exact voice, crying, saying he has been arrested and needs bail money right now. Except it isn't him — scammers used an AI voice clone made from a few seconds of his social-media videos. The best defense against this scam is picking a family safe word — a secret word only the real family knows. When should the family have picked that word?",
     "answer": "Earlier, calmly, before any crisis call, when the family picks a safe word together",
     "choices": [
       "Earlier, calmly, before any crisis call, when the family picks a safe word together",
@@ -5065,7 +5065,7 @@
   },
   {
     "tier": 2,
-    "question": "A user wants to use AI without any conversation leaving their computer. What setup helps?",
+    "question": "Most popular chatbots — ChatGPT, Claude, Gemini — run on faraway company servers. Every message you type gets sent over the internet to those servers. Some users want the opposite: an AI where every question and answer stays on their own laptop and never leaves. Nobody logs it, nobody trains on it, nobody could read it in a data breach. What setup makes this possible?",
     "answer": "An open-weight model running locally through software like Ollama",
     "choices": [
       "An open-weight model running locally through software like Ollama",
@@ -5221,7 +5221,7 @@
   },
   {
     "tier": 2,
-    "question": "A school's monitoring tool flags a student's essay for a self-harm-related word. What's the school's claim about why the tool exists?",
+    "question": "Many schools now run every essay a student writes through monitoring software that scans for concerning words. If a student writes a phrase that mentions self-harm, the software immediately alerts a counselor or school administrator. The school says the tool isn't there to punish or embarrass — it has one specific stated purpose. What's the school's claim about why the tool exists?",
     "answer": "To intervene early when a student may be in danger",
     "choices": [
       "To intervene early when a student may be in danger",
@@ -8533,7 +8533,7 @@
   },
   {
     "tier": 3,
-    "question": "Some AI companies keep their models secret. You can only use them on their site. But Meta, Mistral, and DeepSeek let you download the model files. What can you do with an 'open-weights' model that you can't do with a closed one?",
+    "question": "OpenAI keeps its top model locked on company servers. You can only use it by visiting their site. But other AI labs — Meta with its Llama model, the French startup Mistral, and China's DeepSeek — release the actual model files as free downloads. Anyone can grab a copy. This kind of AI is called 'open-weights' because the model's internal numbers, its 'weights,' are public. What can you do with an open-weights model that you can't do with a closed one?",
     "answer": "Anyone can run the model on their own hardware — so the company offering it can't be the only gatekeeper of who uses it.",
     "choices": [
       "Anyone can run the model on their own hardware — so the company offering it can't be the only gatekeeper of who uses it.",
@@ -8677,7 +8677,7 @@
   },
   {
     "tier": 3,
-    "question": "Many free services — search, email, social media, video, maps — make their money by collecting data about you and selling targeted ads. The Harvard scholar Shoshana Zuboff named this business model. What did she call it?",
+    "question": "Google Search, Gmail, Facebook, YouTube, Google Maps — all free to use, no bill in the mail. So how do the companies running them make money? They quietly record everything you do: what you search, click, watch, and where you go. That data is used to serve you targeted ads. In 2019 the Harvard scholar Shoshana Zuboff wrote a book giving this whole business model a name. What did she call it?",
     "answer": "Surveillance capitalism — the systematic harvesting of personal data to predict and shape behavior at scale.",
     "choices": [
       "Surveillance capitalism — the systematic harvesting of personal data to predict and shape behavior at scale.",
@@ -9013,7 +9013,7 @@
   },
   {
     "tier": 3,
-    "question": "Some students use AI to do their homework for them — entering the prompt and submitting the output. What's the long-term concern beyond getting caught?",
+    "question": "A student opens ChatGPT, pastes in the homework prompt, copies the AI's answer, and turns it in as their own. Some students do this every night. Setting aside cheating rules and the risk of getting caught, teachers and parents worry about something deeper. Learning math or writing or history is like building muscle — the hard part, the struggle, is where the growth happens. If AI does the struggle for you, what is the long-term concern?",
     "answer": "Skipping the struggle is skipping the learning — the muscles that develop from working through problems atrophy.",
     "choices": [
       "Skipping the struggle is skipping the learning — the muscles that develop from working through problems atrophy.",
@@ -10789,7 +10789,7 @@
   },
   {
     "tier": 4,
-    "question": "An older relative asks an AI chatbot about whether two of their medications can be taken together. The chatbot gives a confident reassuring answer. What's the cleanest defensive response from a family member who finds out?",
+    "question": "Your grandfather has been taking a blood-thinner for years. His doctor just added a new heart medication. Instead of calling the pharmacy, he opens a chatbot, types both pill names in, and asks whether it's safe to take them together. The chatbot answers confidently: 'Yes, no known interactions.' But chatbots invent facts, they don't know his medical history, and drug interactions can be dangerous. What's the cleanest defensive response from a family member who finds out?",
     "answer": "Help them call the pharmacist or doctor with the same question — pharmacists know their actual medical record",
     "choices": [
       "Help them call the pharmacist or doctor with the same question — pharmacists know their actual medical record",
@@ -11029,7 +11029,7 @@
   },
   {
     "tier": 4,
-    "question": "Some AI labs say they watermark their output. They hide a signal in the text or image so it can be spotted later as AI-made. Why have these watermark plans been hard to make work as a real defense?",
+    "question": "Some AI labs like OpenAI and Google DeepMind have proposed watermarking AI output — quietly embedding a hidden signal in the words or pixels their models produce, so anyone with the right tool can later confirm 'this was made by AI.' On paper it sounds like a clean defense against deepfakes and cheating. In practice, watermarks have not become the reliable safeguard people hoped for. Why have watermark plans been hard to make work as a real defense?",
     "answer": "Watermarks can be removed or evaded — open-weight models without watermarks exist, and adoption is uneven across vendors",
     "choices": [
       "Watermarks can be removed or evaded — open-weight models without watermarks exist, and adoption is uneven across vendors",
@@ -11053,7 +11053,7 @@
   },
   {
     "tier": 4,
-    "question": "The most reliable way for a school to confirm a student actually wrote their essay is NOT an AI-detector tool. What works better?",
+    "question": "Schools worry that students are pasting essay prompts into chatbots like ChatGPT and turning in the output as their own work. So teachers reach for AI-detector tools, hoping software can spot AI writing. But these detectors are unreliable — they mislabel human writing as AI, and they miss real AI writing. So the most trustworthy way for a school to confirm a student actually wrote their essay is not a detector tool at all. What works better?",
     "answer": "Documenting the writing process — drafts, outlines, revision history, and brief in-class follow-up about the topic",
     "choices": [
       "Documenting the writing process — drafts, outlines, revision history, and brief in-class follow-up about the topic",
