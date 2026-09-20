@@ -5473,7 +5473,7 @@
   },
   {
     "tier": 3,
-    "question": "A word embedding turns each word into a vector — a long list of numbers — so a computer can do arithmetic with meaning itself. In 2013, Google researchers behind a model called word2vec found a striking result: take the embedding for 'king,' subtract the embedding for 'man,' add the embedding for 'woman,' and the answer lands right next to the embedding for 'queen.' What does this tell us about how such a model represents meaning?",
+    "question": "A word embedding turns each word into a vector — a long list of numbers — so a computer can do arithmetic with meaning itself. In 2013, Google researchers behind a model called word2vec found a striking result: take the embedding for 'king,' subtract the embedding for 'man,' add the embedding for 'woman,' and the answer lands right next to the embedding for 'queen.' What structure inside the model's number-space does the king − man + woman = queen result reveal about how concepts like gender and royalty are stored?",
     "answer": "Concepts like gender and royalty live as directions in the number-space, so adding and subtracting them shifts meaning predictably.",
     "choices": [
       "Concepts like gender and royalty live as directions in the number-space, so adding and subtracting them shifts meaning predictably.",
@@ -7021,7 +7021,7 @@
   },
   {
     "tier": 3,
-    "question": "Insilico Medicine, a Hong Kong biotech founded in 2014, used AI to hunt for a new drug against idiopathic pulmonary fibrosis — a rare, deadly lung-scarring disease with almost no good treatments. Their AI-designed candidate reached its first human clinical trials in about 30 months from project start. The industry average from idea to first human trial is over 5 years. The trials themselves still took normal human time. What does this suggest about where AI helps most in modern drug development?",
+    "question": "Insilico Medicine, a Hong Kong biotech founded in 2014, used AI to hunt for a new drug against idiopathic pulmonary fibrosis — a rare, deadly lung-scarring disease with almost no good treatments. Their AI-designed candidate reached its first human clinical trials in about 30 months from project start. The industry average from idea to first human trial is over 5 years. The trials themselves still took normal human time. Which specific phase of drug development does Insilico's 30-month sprint show AI actually compresses — and which phase still takes human time?",
     "answer": "Compressing the early molecule-search phase, clinical trials still take human time",
     "choices": [
       "Compressing the early molecule-search phase, clinical trials still take human time",
@@ -9397,7 +9397,7 @@
   },
   {
     "tier": 4,
-    "question": "The 'scaling hypothesis' argued that AI capability grows predictably as model size, training data, and compute all increase together. Through 2023, this seemed to be working. Through 2024-2025, multiple frontier labs have publicly noted that returns from pure scaling have begun to taper. What does this suggest about the path to more capable AI?",
+    "question": "The 'scaling hypothesis' argued that AI capability grows predictably as model size, training data, and compute all increase together. Through 2023, this seemed to be working. Through 2024-2025, multiple frontier labs have publicly noted that returns from pure scaling have begun to taper. What limit of the pure-scaling path to artificial general intelligence (AGI) does the 2024-2025 tapering suggest, even after its impressive earlier run?",
     "answer": "Pure scaling alone may not get the field all the way to AGI, even if it has worked impressively so far.",
     "choices": [
       "Pure scaling alone may not get the field all the way to AGI, even if it has worked impressively so far.",
@@ -9697,7 +9697,7 @@
   },
   {
     "tier": 4,
-    "question": "DeepSeek's late-2024 and early-2025 releases were notable not just for their competitive performance. The reported training cost, DeepSeek claimed, was only about five to ten percent of what US labs typically spend on frontier models. If accurate, what does this suggest about the AI cost structure?",
+    "question": "DeepSeek's late-2024 and early-2025 releases were notable not just for their competitive performance. The reported training cost, DeepSeek claimed, was only about five to ten percent of what US labs typically spend on frontier models. If accurate, what assumption about the compute budget required to reach frontier-tier capability does DeepSeek's reported cost suggest is wrong?",
     "answer": "Frontier-tier capability can be reached without the massive compute budgets US labs have been assumed to require.",
     "choices": [
       "Frontier-tier capability can be reached without the massive compute budgets US labs have been assumed to require.",
@@ -9733,7 +9733,7 @@
   },
   {
     "tier": 4,
-    "question": "Eliezer Yudkowsky, the American writer who has warned about AI risk since 2000, has quietly shaped the field in a way that goes beyond his loud public writing. Many researchers now working at OpenAI and Anthropic read his posts as teenagers on LessWrong, a small rationalist forum he co-founded, and studied his book-length essays called the Sequences. What does this suggest about how AI policy ideas actually spread?",
+    "question": "Eliezer Yudkowsky, the American writer who has warned about AI risk since 2000, has quietly shaped the field in a way that goes beyond his loud public writing. Many researchers now working at OpenAI and Anthropic read his posts as teenagers on LessWrong, a small rationalist forum he co-founded, and studied his book-length essays called the Sequences. What kind of small, quiet channel does Yudkowsky's LessWrong influence reveal actually shapes a field's intellectual culture for decades — even on speculative claims?",
     "answer": "A small forum and a single writer can shape a field's intellectual culture for two decades, even on speculative claims.",
     "choices": [
       "A small forum and a single writer can shape a field's intellectual culture for two decades, even on speculative claims.",
