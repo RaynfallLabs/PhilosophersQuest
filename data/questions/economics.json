@@ -1117,18 +1117,6 @@
   },
   {
     "tier": 2,
-    "question": "In 1974 the American economist Anne Krueger published a famous paper that gave the world the phrase 'rent-seeking' -- when people spend real effort chasing government-granted privileges (like a license or a monopoly) instead of producing goods. She used one country as her main example. Its heavy use of import licenses in the 1960s and 1970s meant businesses spent enormous time hiring lobbyists and cultivating officials just to get a permit. Which country did Krueger study?",
-    "answer": "India",
-    "choices": [
-      "India",
-      "Turkey",
-      "Brazil",
-      "Egypt"
-    ],
-    "context": "India in the 1960s-70s used import licenses to allocate scarce foreign exchange. Firms lobbied intensively for licenses (which conveyed enormous scarcity rent). Krueger's paper also included Turkish data. Source: aeaweb.org (Krueger 1974)."
-  },
-  {
-    "tier": 2,
     "question": "In 1964, the American economist Anne Krueger studied India's system of government import licenses. She saw people spending huge effort chasing these permits -- hiring lobbyists, cultivating officials, waiting in long queues -- instead of making goods. Ten years later, in a famous 1974 paper on Turkey, she gave that wasted effort a name that stuck in economics. What did she call it?",
     "answer": "Rent-seeking",
     "choices": [
@@ -2424,18 +2412,6 @@
     "context": "Murray Rothbard (1926-1995) published Man, Economy, and State in 1962 at age 36. The three distractors are all real Mises students from the New York seminar of the 1950s. Rothbard's book was commissioned by the Volker Fund as an accessible companion to Human Action; it grew into a full-scale rival treatise. Source: https://en.wikipedia.org/wiki/Man,_Economy,_and_State."
   },
   {
-    "tier": 3,
-    "question": "In 1980 Basic Books published a book by Thomas Sowell. It took the central argument from Hayek's 1945 essay -- that useful knowledge is spread across many heads and cannot be centralized -- and expanded it with real-world examples for regular readers. Hayek himself endorsed the book. What was Sowell's title?",
-    "answer": "Knowledge and Decisions",
-    "choices": [
-      "Knowledge and Decisions",
-      "Basic Economics",
-      "A Conflict of Visions",
-      "The Vision of the Anointed"
-    ],
-    "context": "Sowell's Knowledge and Decisions (Basic Books, 1980) is explicitly built on Hayek's 'The Use of Knowledge in Society.' Hayek endorsed it as expanding admirably on his original concepts. The book won the 1980 Law and Economics Center Prize. The three distractors are all real later Sowell books. Source: https://en.wikipedia.org/wiki/Knowledge_and_Decisions."
-  },
-  {
     "tier": 4,
     "question": "In 1946 the American journalist Henry Hazlitt — an editorial writer at the New York Times — published a short book called Economics in One Lesson. Hazlitt had read Frederic Bastiat's seen-and-unseen essays closely. He wanted to boil that whole method into a single rule any ordinary reader could apply to any policy debate. What is that one lesson?",
     "answer": "Look at the effect of a policy on every group, not just the group it is meant to help",
@@ -3058,18 +3034,6 @@
       "12 words"
     ],
     "context": "The BIP-39 wordlist is exactly 2,048 English words (11 bits per word). 12 is the number of words in a short seed phrase, not the wordlist size. Source: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt."
-  },
-  {
-    "tier": 2,
-    "question": "Back in 2013, a small group of Bitcoin developers wrote down the standard rulebook for turning a wallet's secret number into a friendly list of English words. Anyone who follows the rule can read anyone else's backup -- that is why it works across every brand. The rule became one of the numbered Bitcoin Improvement Proposals (BIPs), the technical documents that shape the network. Which numbered proposal is the seed-phrase rule?",
-    "answer": "BIP-39",
-    "choices": [
-      "BIP-39",
-      "BIP-32",
-      "BIP-141",
-      "BIP-9"
-    ],
-    "context": "BIP-39 (Marek Palatinus, Pavol Rusnak, Aaron Voisine, Sean Bowe; 2013) defines the mnemonic backup. BIP-32 defines hierarchical deterministic key trees; BIP-141 added SegWit in 2015; BIP-9 concerned soft-fork version signalling. Source: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki."
   },
   {
     "tier": 2,
@@ -9588,18 +9552,6 @@
     "context": "Leonard E. Read (1898-1983) founded the Foundation for Economic Education in March 1946 as the first American institutional home of the classical-liberal reading tradition. Source: grokipedia.com/page/Foundation_for_Economic_Education."
   },
   {
-    "tier": 1,
-    "question": "In 1946 an American businessman named Leonard Read grew worried that most Americans no longer understood how free markets create wealth. He started the first big American organization set up to teach free-market economics to teachers, students, and businessmen. What was the group called?",
-    "answer": "The Foundation for Economic Education",
-    "choices": [
-      "The Foundation for Economic Education",
-      "The Mises Institute",
-      "The Cato Institute",
-      "The Reason Foundation"
-    ],
-    "context": "FEE, founded 1946, preceded the Reason Foundation (1968), the Cato Institute (1977), and the Mises Institute (1982). Source: grokipedia.com/page/Foundation_for_Economic_Education."
-  },
-  {
     "tier": 2,
     "question": "In 1850 the French economist Frederic Bastiat wrote a short book called The Law, published only months before his death. Bastiat argued that when governments take property from one group of citizens and hand it to another group, they betray their proper role and become an instrument of legal plunder dressed up in official paper. What did Bastiat say the law should do instead?",
     "answer": "Protect every person's life, freedom, and honestly-earned property",
@@ -15828,18 +15780,6 @@
     "context": "Hayek (1899-1992) attended the Vienna seminar throughout the 1920s and shared the 1974 Nobel with Gunnar Myrdal. Schumpeter (1883-1950) belonged to an older Vienna cohort and never received a Nobel (he died 19 years before the prize was created). Machlup and Morgenstern also attended the seminar but neither won a Nobel; Morgenstern is better remembered for co-authoring the 1944 Theory of Games and Economic Behavior with von Neumann. Source: mises.at/en/denker/ludwig-von-mises."
   },
   {
-    "tier": 3,
-    "question": "By 1934 Vienna was no longer safe for the Jewish Austrian-school economist Ludwig von Mises -- the Nazi movement was rising next door in Germany, and Austria itself would be annexed four years later. Mises accepted a teaching post at a graduate institute in a French-speaking Swiss city, where he would spend the rest of the decade before fleeing again to America. In which Swiss city did Mises land?",
-    "answer": "Geneva",
-    "choices": [
-      "Geneva",
-      "Zurich",
-      "Bern",
-      "Basel"
-    ],
-    "context": "The Institut universitaire de hautes etudes internationales (IUHEI) in Geneva was one of the few European institutions still hiring Vienna-Jewish scholars in the mid-1930s. Zurich, Bern, and Basel all had universities but not the IUHEI. Mises left Geneva in 1940 when the fall of France made continental Europe untenable. Source: en.wikipedia.org/wiki/Ludwig_von_Mises."
-  },
-  {
     "tier": 4,
     "question": "In 1920, the Austrian economist Ludwig von Mises published a paper attacking the whole idea of full socialism. His argument was economic, not moral. In a fully socialist system, the state owns every factory, farm, and tool. Since these things are never bought and sold on a real market, they have no real prices. Mises said that without those prices, central planners face an impossible problem when they try to decide what to produce and how. What was his key reason?",
     "answer": "Without real prices, planners cannot tell which uses of resources create the most value",
@@ -18060,18 +18000,6 @@
     "context": "Nick Szabo coined 'smart contracts' in a 1996 essay. Vitalik Buterin later built Ethereum around a smart-contract virtual machine (2015); Hal Finney built RPOW; Adam Back built Hashcash. Source: https://en.wikipedia.org/wiki/Nick_Szabo."
   },
   {
-    "tier": 1,
-    "question": "In 1998 the American computer scientist Nick Szabo shared an essay on a cypherpunk mailing list. He described a way to make rare digital tokens by solving hard math puzzles. The tokens would be scarce like real gold pulled from the earth, but they would live only in software. What did Szabo call his invention?",
-    "answer": "bit gold",
-    "choices": [
-      "bit gold",
-      "b-money",
-      "Hashcash",
-      "DigiCash"
-    ],
-    "context": "Szabo drafted bit gold in 1998; a blog post appeared in 2005. b-money is Wei Dai's separate 1998 proposal; Hashcash is Adam Back's 1997 anti-spam PoW; DigiCash is David Chaum's 1989 company. Source: https://unenumerated.blogspot.com/2005/12/bit-gold.html."
-  },
-  {
     "tier": 2,
     "question": "In his 1998 essay, the American computer scientist Nick Szabo laid out how bit gold — his invention of software-scarce digital tokens — would be minted. A computer would solve a hard math puzzle. The answer would become a new token, and that token would then feed the next puzzle. Which cryptographic tool did Szabo chain together to mint fresh bit-gold tokens?",
     "answer": "proof-of-work",
@@ -19140,18 +19068,6 @@
     "context": "Volcker's view: inflation could not be broken without accepting recession. Half-measures would simply prolong the pain. This was the opposite of Arthur Burns's political accommodation and the essential ingredient of the eventual victory. Source: Grokipedia 'Paul Volcker' (2026-09-05)."
   },
   {
-    "tier": 2,
-    "question": "In 1979 President Jimmy Carter appointed Paul Volcker to chair the Federal Reserve with orders to break the double-digit inflation choking the US economy. Volcker's plan was harsh: choke off money growth by driving interest rates as high as it took. The federal funds rate — the Fed's key overnight lending rate — spiked sharply, peaking in June and July of 1981. What was the peak rate?",
-    "answer": "About 20 percent",
-    "choices": [
-      "About 20 percent",
-      "About 12 percent",
-      "About 8 percent",
-      "About 25 percent"
-    ],
-    "context": "The federal funds rate peaked at about 20.06% in July 1981, per FRED data. It was the highest US policy rate of the postwar era. Source: Grokipedia 'Federal funds rate' (2026-09-05)."
-  },
-  {
     "tier": 3,
     "question": "Paul Volcker's Federal Reserve pushed interest rates near twenty percent in 1981 to break American inflation. The medicine worked but was brutal — factories shut, farms failed, and unemployment climbed steadily through 1982. In November 1982 the US jobless rate hit its peak. What was that peak unemployment rate?",
     "answer": "10.8 percent",
@@ -19942,18 +19858,6 @@
       "The worst market case against the best government case"
     ],
     "context": "Buchanan's move: welfare economics had compared apples to angels -- imperfect markets to perfect government. Compare like to like, and the case for intervention becomes far less obvious. Source: Buchanan, 'Politics Without Romance' (1979)."
-  },
-  {
-    "tier": 2,
-    "question": "The American economist Thomas Sowell boiled James Buchanan's whole public-choice point down to a two-word question a critic should always ask. Whenever someone says 'the market has failed here, so government must step in,' Sowell says the honest listener should always ask this. What are Sowell's two words?",
-    "answer": "Compared to what?",
-    "choices": [
-      "Compared to what?",
-      "At what cost?",
-      "Who decides?",
-      "Which market?"
-    ],
-    "context": "Sowell's 'compared to what?' recurs across Knowledge and Decisions (1980), The Vision of the Anointed (1995), and other books. It is his shorthand for the Buchanan comparative move. Source: Sowell, Knowledge and Decisions (Basic Books 1980)."
   },
   {
     "tier": 3,
@@ -20854,18 +20758,6 @@
       "The price the seller decides to charge for it"
     ],
     "context": "Braumueller was a mid-sized Vienna academic publisher; Menger paid for the printing himself in the hope the book would open the university door -- which it did, two years later. Duncker und Humblot was the Berlin house of Schmoller and the German Historical School; Gustav Fischer of Jena published much of the later German-language economics literature. Source: en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book)."
-  },
-  {
-    "tier": 2,
-    "question": "In the early 1870s three economists working in three different countries — Carl Menger in Austria, William Stanley Jevons in England, and Leon Walras in France — each stumbled onto the same big idea on their own, without knowing about each other. Value, they said, comes not from the total stock of a thing but from the extra use of just the very next unit. Historians of economics now give this joint discovery one name. What is this cluster of near-simultaneous breakthroughs called?",
-    "answer": "The Marginal Revolution",
-    "choices": [
-      "The Marginal Revolution",
-      "The Methodenstreit",
-      "The Keynesian Revolution",
-      "The Neoclassical Synthesis"
-    ],
-    "context": "William Stanley Jevons in England and Leon Walras in Switzerland reached the marginal-utility insight independently of Menger and of each other; none of the three knew the others were working on it. It stands with Darwin-Wallace natural selection (1858) and Leibniz-Newton calculus as one of history's clearest cases of parallel scientific invention. The Methodenstreit was Menger's LATER 1883 methodological quarrel with Schmoller; the Keynesian Revolution was 1936; the Neoclassical Synthesis was Samuelson's 1940s-50s fusion. Sources: en.wikipedia.org/wiki/Marginalism; en.wikipedia.org/wiki/Principles_of_Economics_(Menger_book)."
   },
   {
     "tier": 3,
@@ -33253,18 +33145,6 @@
   },
   {
     "tier": 1,
-    "question": "In 1845 the French economist Frederic Bastiat wrote a fake petition addressed to the French Chamber of Deputies, mocking protectionist industries that begged the government to block foreign competition. In his satirical petition, the fake petitioners begged the government to shut out one utterly 'unfair rival' -- the Sun itself, whose free light was ruining their sales. Which trade did the pretend petitioners claim to be from?",
-    "answer": "The candlemakers",
-    "choices": [
-      "The candlemakers",
-      "The vintners",
-      "The blacksmiths",
-      "The weavers"
-    ],
-    "context": "Full title: 'Petition of the Manufacturers of Candles, Waxlights, Lamps, Candlesticks, Street Lamps, Snuffers, Extinguishers, and the Producers of Oil, Tallow, Rosin, Alcohol, and, generally, of Everything Connected with Lighting.' Bastiat published it under his own name, not anonymously. Source: mises.org/library/candlemakers-petition."
-  },
-  {
-    "tier": 1,
     "question": "In 1845 the French economist Frederic Bastiat wrote a joke essay. He pretended to be a group of French candle makers writing a serious letter to the government. They begged lawmakers to pass a law forcing every home and shop in France to close all its windows during the day. Then people would have to burn candles even in bright sunshine. What is the joke poking fun at?",
     "answer": "Businesses that beg the government to hurt competitors so they can charge more",
     "choices": [
@@ -34981,18 +34861,6 @@
   },
   {
     "tier": 4,
-    "question": "The Austrian School's most famous German term -- Grenznutzen, 'edge-usefulness' -- appears nowhere in Menger's 1871 Principles. It was coined thirteen years later, in an 1884 book by one of Menger's two great pupils. When the term was translated back into English, it became the phrase every economics textbook now teaches. Who coined Grenznutzen?",
-    "answer": "Friedrich von Wieser",
-    "choices": [
-      "Friedrich von Wieser",
-      "Eugen von Boehm-Bawerk",
-      "Carl Menger himself",
-      "Leon Walras"
-    ],
-    "context": "Wieser (1851-1926) coined Grenznutzen in his 1884 Uber den Ursprung und die Hauptgesetze des wirtschaftlichen Werthes to name a concept his teacher had already articulated in prose. English 'marginal utility' is a direct back-translation of Wieser's coinage. Boehm-Bawerk, Menger's other great pupil, developed capital and interest theory; Menger wrote before the term existed; Walras wrote in French. Source: newworldencyclopedia.org/entry/Friedrich_von_Wieser."
-  },
-  {
-    "tier": 4,
     "question": "A tailor spends 10 hours making a badly-cut, badly-sewn suit that hangs poorly. A second tailor spends 5 hours making a well-cut, well-sewn suit that fits beautifully. On the labor theory of value the first suit should be worth about twice the second. On the subjective theory that Menger pressed against the classical tradition, which comparison actually holds?",
     "answer": "The well-made 5-hour suit is worth MORE, because no chooser ranks the badly-made one higher",
     "choices": [
@@ -35854,18 +35722,6 @@
       "Trading always makes one person lose"
     ],
     "context": "Menger took the chair in 1873 in the Faculty of Law and Political Economy (economics was then taught inside the law faculty) and held it for thirty years, until 1903. Source: grokipedia.com/page/Carl_Menger."
-  },
-  {
-    "tier": 1,
-    "question": "Imagine you have five dollars in your pocket and you walk up to a snack shop. You can spend it on a comic book OR on an ice cream cone -- the shop will not sell you both for that price. If you buy the comic, the ice cream you gave up is called the ___ of your choice. Economists have a special name for what you sacrificed.",
-    "answer": "Opportunity cost",
-    "choices": [
-      "Opportunity cost",
-      "Sunk cost",
-      "Marginal cost",
-      "Fixed cost"
-    ],
-    "context": "Wieser held the Vienna chair from 1903 to 1922. He also served as Austro-Hungarian Minister of Commerce in 1917-1918. Source: grokipedia.com/page/Friedrich_von_Wieser."
   },
   {
     "tier": 2,

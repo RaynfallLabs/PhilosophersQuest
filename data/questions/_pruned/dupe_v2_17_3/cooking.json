@@ -1,0 +1,98 @@
+[
+  {
+    "tier": 4,
+    "question": "The ancient Romans splashed one favorite sauce on nearly every dish, the way we reach for salt or ketchup. To make it, cooks packed small whole fish and fish guts in salt, layered them in stone vats, and left them under the hot sun for weeks until the fish liquefied into a clear amber liquid. What did the Romans call this fermented-fish sauce?",
+    "answer": "Garum",
+    "choices": [
+      "Garum",
+      "Posca",
+      "Defrutum",
+      "Mulsum"
+    ],
+    "context": "They called it garum. Rome's 'ketchup' was, literally, rotted fish — and they loved it, shipping it in clay jars more than 2,000 km across the empire, from Spain all the way to Rome, and splashing it even on sweet dishes like honey custard. Source: Wikipedia, 'Garum'; The Conversation, 'Why ancient Romans loved fermented fish sauces like garum.'"
+  },
+  {
+    "tier": 2,
+    "question": "A homemade oil-and-vinegar dressing splits into layers within minutes, but a restaurant vinaigrette stays creamy and blended for hours. The classic trick is whisking in a small spoonful of one common condiment before you add the oil. Which one?",
+    "answer": "Mustard",
+    "choices": [
+      "Mustard",
+      "Honey",
+      "Ketchup",
+      "Relish"
+    ],
+    "context": "A dab of Dijon mustard rescues a vinaigrette - it carries lecithin plus mucilage (a carbohydrate mix) that coats the oil droplets and keeps them from splitting away from the vinegar. A little more mustard makes a dressing that holds together longer. Source: chefjanetk.com; platingtechnologies.co.uk."
+  },
+  {
+    "tier": 1,
+    "question": "You are whipping a bowl of heavy cream for dessert, and it thickens to soft mounds and then stiff peaks. You get distracted and the mixer keeps running, and the fluffy foam falls into yellow grains floating in a thin, watery liquid. What have those grains become?",
+    "answer": "butter",
+    "choices": [
+      "butter",
+      "cheese",
+      "custard",
+      "yogurt"
+    ],
+    "context": "Whipped past stiff peaks, cream 'breaks': the water it was holding suddenly and dramatically separates from the butterfat, and the freed fat clumps into grains of real butter swimming in liquid. Source: faurit.com / custommapposter.com, 'Cream Science: On Whipping, Butter, and Beyond.'"
+  },
+  {
+    "tier": 1,
+    "question": "Almost every crop has a wild cousin still growing on its own somewhere. But search the whole planet and you will never find a wild corn plant. Corn was built over thousands of years by ancient farmers in Mexico. They reshaped a scruffy wild grass called ___.",
+    "answer": "teosinte",
+    "choices": [
+      "sorghum",
+      "teosinte",
+      "ryegrass",
+      "millet"
+    ],
+    "context": "Teosinte still grows wild in the hills of Mexico, and it looks so little like corn that botanists once refused to believe it could be the ancestor. Turning it into corn is considered the most dramatic makeover humans have ever worked on any plant. Source: evolution.earthathome.org — Maize Domestication."
+  },
+  {
+    "tier": 5,
+    "question": "For thousands of years, Native cooks in the Americas soaked their corn in mineral lime or wood-ash water before grinding it, a step that quietly unlocked a vitamin the body cannot otherwise use from corn. Europeans skipped the soak when they adopted corn, and whole regions living on plain cornmeal came down with a horrifying deficiency disease. What was that disease?",
+    "answer": "Pellagra",
+    "choices": [
+      "Pellagra",
+      "Scurvy",
+      "Rickets",
+      "Beriberi"
+    ],
+    "context": "The disease is pellagra - a deficiency of niacin (vitamin B3), marked by the grim 'four Ds': dermatitis, diarrhea, dementia, and death. Native Americans avoided it by nixtamalization (soaking corn in alkaline lime or ash water), which frees the niacin the body needs. Europeans took the crop but left that know-how behind. Sources: en.wikipedia.org/wiki/Pellagra; en.wikipedia.org/wiki/Nixtamalization"
+  },
+  {
+    "tier": 1,
+    "question": "Inside the fruit of the nutmeg tree sits a single shiny brown seed, and that seed is wrapped in a lacy scarlet net. Growers peel off that red net, dry it separately, and sell it as a whole SECOND spice in its own right. What is the red-net spice called?",
+    "answer": "Mace",
+    "choices": [
+      "Mace",
+      "Paprika",
+      "Saffron",
+      "Allspice"
+    ],
+    "context": "One fruit of the tree Myristica fragrans yields two spices: the hard brown seed is nutmeg, and the lacy red covering (the aril) wrapped around it is mace. The net is bright scarlet when fresh and dries to a burnished orange, which is why the two spices from the same fruit end up looking and tasting different. Source: https://en.wikipedia.org/wiki/Nutmeg"
+  },
+  {
+    "tier": 1,
+    "question": "People often call the potato an Irish food, but it isn't Irish at all. It was first farmed thousands of years ago by people living high in one great mountain range, far across the world. Which range was the potato's true home?",
+    "answer": "The Andes",
+    "choices": [
+      "The Andes",
+      "The Alps",
+      "The Rockies",
+      "The Himalayas"
+    ],
+    "context": "The potato was first domesticated high in the Andes, around Lake Titicaca on the border of today's Peru and Bolivia, roughly 7,000-10,000 years ago, from wild tubers of the Solanum brevicaule complex. The oldest hard evidence of potato-eating comes from Jiskairumoko in Peru's Titicaca basin, about 12,000 feet up, dated to roughly 3,400-2,200 BC. Source: en.wikipedia.org/wiki/Potato."
+  },
+  {
+    "tier": 3,
+    "question": "In the 1880s, decades before anyone knew what a vitamin was, Japanese Navy surgeon Kanehiro Takaki thought the sailors' all-white-rice diet was causing beriberi. He sent one training ship on a long voyage with its rice ration cut with a cheap second grain, and almost no one fell ill. Which grain did he mix in?",
+    "answer": "barley",
+    "choices": [
+      "barley",
+      "oats",
+      "rye",
+      "millet"
+    ],
+    "context": "Takaki also added meat, fish, and vegetables to the menu. On his test a white-rice ship saw scores of sailors struck down, while the barley-and-protein ship stayed almost untouched — a real controlled experiment run before vitamins were understood. A grateful nation nicknamed him the 'Barley Baron.' Source: en.wikipedia.org/wiki/Takaki_Kanehiro and pmc.ncbi.nlm.nih.gov/articles/PMC3725862/"
+  }
+]

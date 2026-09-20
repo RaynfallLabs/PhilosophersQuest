@@ -1021,18 +1021,6 @@
   },
   {
     "tier": 1,
-    "question": "Angkor Wat is the largest religious monument on Earth. Five stone towers rise above the Cambodian jungle. The Khmer arranged them to model one sacred mountain. Hindu myth calls that peak the home of the gods and the center of the universe. Which sacred mountain do the towers picture?",
-    "answer": "Mount Meru",
-    "choices": [
-      "Mount Meru",
-      "Mount Kailash",
-      "Mount Fuji",
-      "Mount Olympus"
-    ],
-    "context": "Mount Meru is the golden world-mountain at the heart of Hindu and Buddhist cosmology, imagined as the axis of the universe ringed by seas and continents. Angkor Wat's five towers rise in a quincunx -- four around one taller central peak -- turning the whole temple into a stone model of the cosmos with Meru at its center. Source: en.wikipedia.org/wiki/Angkor_Wat (five towers in quincunx modelling Mount Meru); worldhistory.org/Angkor_Wat.  (Legend.)"
-  },
-  {
-    "tier": 1,
     "question": "Cambodia's national flag has a bright red stripe across the middle with blue bands above and below, and one white silhouette painted right on the red. That silhouette is Angkor Wat, the giant Khmer temple built about 900 years ago. It has ridden on the flag since 1863, staying there through kingdom, republic, and revolution alike -- an unbroken symbol of Cambodian pride. On the flag itself, where exactly does the temple sit?",
     "answer": "at the very center",
     "choices": [
@@ -1162,18 +1150,6 @@
       "Vostok Station"
     ],
     "context": "Commonwealth Bay, on the coast of East Antarctica -- and Cape Denison on its shore, where Douglas Mawson built his hut -- is listed by Guinness World Records and the National Geographic Atlas as the windiest place at sea level on Earth. The cause isn't a passing storm: freezing air pours off the high inland ice sheet and funnels down to this exact stretch of coast almost without pause, so the yearly AVERAGE wind speed is already a gale. Death Valley is the hottest place, the Atacama the driest non-polar desert, and Vostok the coldest -- each holds a different record. Source: en.wikipedia.org/wiki/Commonwealth_Bay"
-  },
-  {
-    "tier": 2,
-    "question": "At Cape Denison the wind almost never rests. Freezing, dense air pools on the high inland ice sheet, then slides seaward under its own weight, funnelling and accelerating as it drops toward the coast. Meteorologists have a special name for this kind of cold wind pouring off the ice. What is it called?",
-    "answer": "katabatic winds",
-    "choices": [
-      "katabatic winds",
-      "chinook winds",
-      "trade winds",
-      "monsoon winds"
-    ],
-    "context": "The word comes from the Greek katabatikos, 'going down.' Cold air is heavy, so where it collects on a high ice plateau it acts like an invisible flood -- spilling downhill under gravity and gathering speed, funnelled faster as the land narrows toward the coast. Chinook winds also blow downslope but WARM as they fall; trade winds and monsoons are driven by heat and the planet's rotation, not by cold air draining off ice. Antarctica's katabatic winds are the fiercest on Earth. Source: en.wikipedia.org/wiki/Commonwealth_Bay"
   },
   {
     "tier": 2,
@@ -15000,18 +14976,6 @@
     "context": "The builders stood the adobe bricks on end and spaced them apart -- the 'librero' or bookshelf method. The air-gaps let the whole pyramid flex and settle rather than crack, which is how a mud-brick structure has ridden out about 1,500 years of earthquakes on one of the world's most seismic coasts. Source: en.wikipedia.org/wiki/Huaca_Pucllana (construction)."
   },
   {
-    "tier": 3,
-    "question": "Lima sits right on the Pacific yet almost never sees rain. The reason runs in the water: a cold current sweeps north up the Peruvian coast, dragging deep water up so chilled that the sea here drops to about 16 C -- freezing for the tropics. That cold air can't rise to form rain clouds, so the coast stays a desert. What is this cold current called?",
-    "answer": "the Humboldt Current",
-    "choices": [
-      "the Humboldt Current",
-      "the Benguela Current",
-      "the California Current",
-      "the Canary Current"
-    ],
-    "context": "The cold Humboldt (Peru) Current, named for the German naturalist Alexander von Humboldt, drags deep water north up the coast, chilling the sea to about 16 C. Cold air can't rise to form rain clouds, which is the very reason the Peruvian coast is a desert despite fronting the ocean. Source: en.wikipedia.org/wiki/Humboldt_Current."
-  },
-  {
     "tier": 4,
     "question": "Under the Basilica of San Francisco in old Lima runs a maze of catacombs. They served as the city's graveyard until 1810. As many as 70,000 of the colonial dead were buried down there, then forgotten. Workers reopened the tunnels in 1951. How did they find the bones laid out?",
     "answer": "sorted by type into neat geometric wells ringed with skulls",
@@ -19741,18 +19705,6 @@
   },
   {
     "tier": 2,
-    "question": "Down the middle of the Atlantic runs the Mid-Atlantic Ridge, a seam where fresh seafloor wells up and shoves Europe and North America apart by about 2.5 centimeters every year. That yearly creep almost exactly matches the growth rate of one part of your own body. Which?",
-    "answer": "your fingernails",
-    "choices": [
-      "your fingernails",
-      "your hair",
-      "your eyelashes",
-      "your toenails"
-    ],
-    "context": "Two and a half centimeters a year sounds like nothing, but over millions of years it pried open an entire ocean -- and it is still going, so the Atlantic is a little wider today than when you were born. Source: https://en.wikipedia.org/wiki/Mid-Atlantic_Ridge (corroborated by Woods Hole Oceanographic Institution, https://www.whoi.edu/oceanus/feature/mid-atlantic-ridge-volcanic-processes/)."
-  },
-  {
-    "tier": 2,
     "question": "The continents ride on huge slabs of rock called tectonic plates, and those plates slowly drift. North America and Europe sit on plates that are pulling apart, widening the Atlantic Ocean between them. We do not have to work out this drift only from old rocks. Since the space age, one modern tool has clocked the split in real time — down to the millimeter, year after year. Which tool?",
     "answer": "GPS",
     "choices": [
@@ -22198,18 +22150,6 @@
       "slabs of volcanic tuff"
     ],
     "context": "With no rock or timber for hundreds of kilometres, hotels here -- the Palacio de Sal, Luna Salada, and Playa Blanca -- are built almost entirely of cut salt blocks: walls, beds, tables, and floors. Source: https://www.forbes.com/sites/jimdobson/2018/01/05/escape-to-the-last-jedi-battleground-in-bolivia-and-stay-in-a-hotel-made-entirely-out-of-salt/"
-  },
-  {
-    "tier": 2,
-    "question": "When the Salar de Uyuni dries out, its hard salt crust splits into a huge tiled floor of thousands of repeating shapes. Each shape is a meter or two across, and they fit edge to edge all the way to the horizon. What shape are these repeating salt tiles?",
-    "answer": "hexagons",
-    "choices": [
-      "hexagons",
-      "squares",
-      "triangles",
-      "diamonds"
-    ],
-    "context": "As the crust dries it cracks into a honeycomb of polygons a metre or two wide, tiling to the horizon. A 2023 study by Lasser and Goehring showed the hexagons form as salty water sinks and fresher water rises in convection 'rolls' below the crust, piling salt into ridges where neighbouring rolls meet. Source: https://www.sciencedaily.com/releases/2023/03/230301101524.htm"
   },
   {
     "tier": 2,
@@ -27168,18 +27108,6 @@
     "context": "The rift runs some 6,000 km from the Afar Triangle down to Mozambique -- a divergent plate boundary caught in the act on dry land, prising the African plate into the Nubian plate (west) and the Somali plate (east). https://en.wikipedia.org/wiki/East_African_Rift"
   },
   {
-    "tier": 1,
-    "question": "In eastern Africa, a giant crack in the Earth's crust runs from the Red Sea down through Ethiopia, Kenya, and Tanzania. It is called the East African Rift, and it is a place where the continent is slowly tearing itself in two. Its two halves creep apart at only 8 to 9 millimetres a year. To picture that slow crawl, geologists like to compare it to the growth rate of one everyday thing on your own body. Which?",
-    "answer": "your fingernails",
-    "choices": [
-      "your fingernails",
-      "your hair",
-      "your eyelashes",
-      "your toenails"
-    ],
-    "context": "At roughly fingernail speed, the plates drift apart so gradually that the rift has taken over 20 million years to open this far. https://en.wikipedia.org/wiki/East_African_Rift"
-  },
-  {
     "tier": 2,
     "question": "In the Democratic Republic of Congo, 12 km north of Goma, the volcano Nyiragongo towers over the Western Rift. It is famous for one thing in its top crater — one of the biggest of its kind on Earth. What does Nyiragongo hold in its crater?",
     "answer": "a lava lake",
@@ -27658,18 +27586,6 @@
       "the Brahmaputra"
     ],
     "context": "The Ganges joins the Brahmaputra (and then the Meghna) to build the Ganges-Brahmaputra Delta, the largest river delta on Earth — roughly 105,000 sq km spread across Bangladesh and eastern India. Sources: Wikipedia 'Ganges Delta'; testbook.com 'Largest Delta in the World'."
-  },
-  {
-    "tier": 4,
-    "question": "In the maze of tidal channels where the Ganges delta meets the sea, one vast forest of salt-tolerant trees stands rooted in the brackish mud on tangled stilt-like roots, flooding and draining with every tide. It is the largest forest of its kind on the planet, shared between Bangladesh and India. What is this great tidal forest called?",
-    "answer": "the Sundarbans",
-    "choices": [
-      "the Everglades",
-      "the Pantanal",
-      "the Sundarbans",
-      "the Okavango"
-    ],
-    "context": "The Sundarbans is the largest mangrove forest on Earth — about 10,277 sq km of tidal waterways, roughly 60% in Bangladesh and 40% in India (West Bengal), and a UNESCO World Heritage Site. Its name comes from the sundari mangrove tree. Source: Wikipedia 'Sundarbans'."
   },
   {
     "tier": 5,
@@ -35950,18 +35866,6 @@
       "the Denali Fault"
     ],
     "context": "The San Andreas Fault is the flagship transform boundary, running roughly 1,200 km (750 miles) up California. Unlike a subduction zone, where one plate dives beneath another, or a spreading ridge, where plates pull apart and new crust wells up, a transform boundary makes no new crust and destroys none — the two plates simply grind sideways past each other. The Alpine (New Zealand), Denali (Alaska), and North Anatolian (Turkey) faults are other real transform faults. Source: https://en.wikipedia.org/wiki/San_Andreas_Fault; USGS."
-  },
-  {
-    "tier": 1,
-    "question": "Stand on the San Andreas Fault and you feel nothing, yet two huge plates slide past each other all the time. They creep only about 20 to 35 mm a year. Geologists like to compare that slow speed to one thing on your body that grows just as slowly. What is it?",
-    "answer": "your fingernails",
-    "choices": [
-      "your fingernails",
-      "your hair",
-      "your toenails",
-      "your eyelashes"
-    ],
-    "context": "About 20-35 mm a year — a couple of centimetres, the pace a fingernail grows — is how fast California's greatest fault moves. It feels like nothing, yet kept up over millions of years it carries whole regions of the state northwest. Source: https://en.wikipedia.org/wiki/San_Andreas_Fault."
   },
   {
     "tier": 2,
