@@ -325,7 +325,7 @@
   },
   {
     "tier": 5,
-    "question": "Yoda in 'The Phantom Menace' (1999) warns: 'Fear leads to anger. Anger leads to hate. Hate leads to suffering.' Notice how each sentence STARTS with the last word of the previous sentence. That is not anaphora. What is it?",
+    "question": "Yoda in 'The Phantom Menace' (1999) warns: 'Fear leads to anger. Anger leads to hate. Hate leads to suffering.' Notice how each sentence STARTS with the closing word of the previous one. That is not anaphora. What is it?",
     "answer": "Anadiplosis -- last word of one clause becomes first word of the next",
     "choices": [
       "Anadiplosis -- last word of one clause becomes first word of the next",
@@ -397,7 +397,7 @@
   },
   {
     "tier": 5,
-    "question": "Most plurals do not take an apostrophe, but a small group of plurals traditionally uses one for clarity. Which example below uses an apostrophe for clarity, not for possession or contraction?",
+    "question": "Most plurals never use an apostrophe, but a small group of plurals traditionally uses one for clarity. Which example below uses an apostrophe for clarity, not for possession or contraction?",
     "answer": "'Mind your p's and q's' -- single-letter plurals take an apostrophe to avoid looking like a word",
     "choices": [
       "'Mind your p's and q's' -- single-letter plurals take an apostrophe to avoid looking like a word",
@@ -865,7 +865,7 @@
   },
   {
     "tier": 5,
-    "question": "In a prose novel, how does the reader know a NEW SPEAKER is talking?",
+    "question": "In a prose novel, how does the reader know that dialogue has switched from one character to another?",
     "answer": "a new paragraph indicates a new speaker; no \"he said\" needed if context is clear",
     "choices": [
       "a new paragraph indicates a new speaker; no \"he said\" needed if context is clear",
@@ -1669,7 +1669,7 @@
   },
   {
     "tier": 2,
-    "question": "'She wanted to go, however she stayed home.' Comma splice or not?",
+    "question": "'She wanted to go, however she stayed home.' Punctuation problem, or correctly written?",
     "answer": "comma splice -- 'however' is a conjunctive adverb, not a conjunction; needs a semicolon before it",
     "choices": [
       "comma splice -- 'however' is a conjunctive adverb, not a conjunction; needs a semicolon before it",
@@ -1873,7 +1873,7 @@
   },
   {
     "tier": 1,
-    "question": "The word 'definately' is a common misspelling. What is the correct spelling, and which small word hides inside it?",
+    "question": "The word 'definately' is a common misspelling. What is the correct spelling, and which small word is buried within it?",
     "answer": "DEFINITELY -- the word FINITE hides inside (deFINITEly)",
     "choices": [
       "DEFINITELY -- the word FINITE hides inside (deFINITEly)",
@@ -2545,7 +2545,7 @@
   },
   {
     "tier": 5,
-    "question": "In casual writing, is \"It's clear that further research is needed\" acceptable?",
+    "question": "In informal writing, is \"It's clear that further research is needed\" acceptable?",
     "answer": "yes in casual writing; in formal academic writing, expand to \"It is clear\"",
     "choices": [
       "yes in casual writing; in formal academic writing, expand to \"It is clear\"",
@@ -3121,7 +3121,7 @@
   },
   {
     "tier": 4,
-    "question": "A formal American essay writes 'different to what I expected.' Which register issue does that create?",
+    "question": "In a school essay, an American student writes 'different to what I expected.' Which register issue does that create?",
     "answer": "it marks the writer as British; formal American writing prefers \"from\" or \"than\"",
     "choices": [
       "it marks the writer as British; formal American writing prefers \"from\" or \"than\"",
@@ -3205,7 +3205,7 @@
   },
   {
     "tier": 4,
-    "question": "In math class, \"DISCRETE variables\" (like number of students) contrast with what other kind of variable?",
+    "question": "In math class, 'DISCRETE variables' — such as the number of students in a room — contrast with what other kind of variable?",
     "answer": "continuous variables (like height, which flows without gaps)",
     "choices": [
       "continuous variables (like height, which flows without gaps)",
@@ -3577,7 +3577,7 @@
   },
   {
     "tier": 1,
-    "question": "Under MLA style, this citation appears: 'The comma changes everything (Truss 12).' Now where does the period go?",
+    "question": "Under Modern Language Association (MLA) style, this citation appears: 'The comma changes everything (Truss 12).' Now where does the period go?",
     "answer": "AFTER the closing parenthesis",
     "choices": [
       "AFTER the closing parenthesis",
@@ -3589,7 +3589,7 @@
   },
   {
     "tier": 2,
-    "question": "MLA and APA are two citation styles used in academic writing. How does each style cite a source inside parentheses?",
+    "question": "Modern Language Association (MLA) and American Psychological Association (APA) are two citation styles used in academic writing. How does each style cite a source inside parentheses?",
     "answer": "MLA uses author + page (\"Truss 12\"); APA uses author + year with a comma (\"Truss, 2003\")",
     "choices": [
       "MLA uses author + page (\"Truss 12\"); APA uses author + year with a comma (\"Truss, 2003\")",
@@ -3745,7 +3745,7 @@
   },
   {
     "tier": 3,
-    "question": "Etienne de Silhouette (1709-1767) was a French finance minister famous for cheapness during the Seven Years' War. Cut-paper profile portraits were the cheapest way to get someone's likeness, so they were nicknamed 'a la silhouette.' What did his name become?",
+    "question": "Etienne de Silhouette (1709-1767) was a French finance minister famous for cheapness during the Seven Years' War. Black-paper cutout portraits were the cheapest way to get someone's likeness, so they were nicknamed 'a la silhouette.' What did his name become?",
     "answer": "The word for a cut-paper profile portrait or a dark outline shape",
     "choices": [
       "The word for a cut-paper profile portrait or a dark outline shape",
@@ -6397,7 +6397,7 @@
   },
   {
     "tier": 3,
-    "question": "What is the difference between a misplaced modifier and a dangling one?",
+    "question": "What is the difference between a misplaced and a dangling modifier?",
     "answer": "MISPLACED = modifier is in the wrong SLOT; DANGLING = the noun it should modify is MISSING",
     "choices": [
       "MISPLACED = modifier is in the wrong SLOT; DANGLING = the noun it should modify is MISSING",
@@ -6769,7 +6769,7 @@
   },
   {
     "tier": 1,
-    "question": "Under the Chicago rule, when do you spell out numbers vs use digits?",
+    "question": "Under the Chicago rule, when should a number be written as a word instead of as digits?",
     "answer": "spell out zero through one hundred (and round numbers); use digits for everything else",
     "choices": [
       "spell out zero through one hundred (and round numbers); use digits for everything else",
@@ -6889,7 +6889,7 @@
   },
   {
     "tier": 5,
-    "question": "Alliteration is repeating the starting sound of nearby words. Which choice is alliteration?",
+    "question": "Alliteration means repeating the opening consonant of neighbouring words. Which choice is alliteration?",
     "answer": "She sells seashells by the seashore (repeated starting S sound)",
     "choices": [
       "She sells seashells by the seashore (repeated starting S sound)",
@@ -7441,7 +7441,7 @@
   },
   {
     "tier": 3,
-    "question": "'Errors were discovered in the report.' If the auditor found them, active would be ___.",
+    "question": "'Errors were discovered in the report.' If the auditor did the discovering, the active version would be ___.",
     "answer": "'The auditor found errors in the report.'",
     "choices": [
       "'The auditor found errors in the report.'",
@@ -8809,7 +8809,7 @@
   },
   {
     "tier": 4,
-    "question": "Imperatives are direct commands like 'do this' or 'complete section 3.' In which kind of writing are imperatives often replaced with softer wording like 'should complete'?",
+    "question": "Imperatives are direct commands like 'do this' or 'submit the form.' In which kind of writing are imperatives often replaced with softer wording like 'should + verb'?",
     "answer": "formal academic and legal writing (\"the applicant should complete section 3\")",
     "choices": [
       "formal academic and legal writing (\"the applicant should complete section 3\")",
@@ -9901,7 +9901,7 @@
   },
   {
     "tier": 3,
-    "question": "In the international ISO 8601 standard, what order does the worldwide date format use for year, month, and day?",
+    "question": "In the International Organization for Standardization (ISO) 8601 standard, what order does the worldwide date format use for year, month, and day?",
     "answer": "YYYY-MM-DD (year-month-day with hyphens, no slashes) -- \"1776-07-04\"",
     "choices": [
       "YYYY-MM-DD (year-month-day with hyphens, no slashes) -- \"1776-07-04\"",
@@ -10309,7 +10309,7 @@
   },
   {
     "tier": 3,
-    "question": "'I insist that she ___ present.' Which verb form? (Mandative subjunctive)",
+    "question": "'I insist that she ___ present.' Which verb form belongs here in formal English after a verb of demand?",
     "answer": "be (bare infinitive; mandative subjunctive after 'insist')",
     "choices": [
       "be (bare infinitive; mandative subjunctive after 'insist')",
@@ -10441,7 +10441,7 @@
   },
   {
     "tier": 1,
-    "question": "A student's history essay opens with 'LOL' and other text abbreviations. What kind of mistake is that?",
+    "question": "A student's history essay opens with 'LOL' (laughing out loud) and other text abbreviations. What kind of mistake is that?",
     "answer": "text-speak abbreviations and slang belong in text messages, not academic essays",
     "choices": [
       "text-speak abbreviations and slang belong in text messages, not academic essays",
@@ -11137,7 +11137,7 @@
   },
   {
     "tier": 4,
-    "question": "'There ___ a cookie and a glass of milk on the tray.' Which verb is technically correct in formal writing, and why is the sentence often rewritten?",
+    "question": "'There ___ a cookie and a glass of milk on the tray.' Which verb is technically correct in formal writing, and why do editors usually recast the sentence?",
     "answer": "ARE -- the compound subject (cookie AND glass) is plural, so ARE; often rewritten as 'A cookie and a glass of milk are on the tray'",
     "choices": [
       "ARE -- the compound subject (cookie AND glass) is plural, so ARE; often rewritten as 'A cookie and a glass of milk are on the tray'",
@@ -11293,7 +11293,7 @@
   },
   {
     "tier": 4,
-    "question": "Another classic parsing-ambiguity sentence: 'They are cooking apples.' What are the TWO readings, and does punctuation fix it?",
+    "question": "Another classic parsing-ambiguity sentence: 'They are cooking apples.' What are the TWO readings, and can punctuation resolve it?",
     "answer": "COOKING as verb: they are cooking some apples now. COOKING as adjective: they are the type of apples used for cooking. No punctuation fix; context alone tells you which",
     "choices": [
       "COOKING as verb: they are cooking some apples now. COOKING as adjective: they are the type of apples used for cooking. No punctuation fix; context alone tells you which",
@@ -11317,7 +11317,7 @@
   },
   {
     "tier": 3,
-    "question": "\"Time flies like an arrow; fruit flies like a banana.\" What does the joke turn on?",
+    "question": "The classic parsing joke pairs 'Time flies like an arrow' with a second line where 'flies' suddenly means small insects hovering near a banana. What does the joke turn on?",
     "answer": "a PARSING-AMBIGUITY: the second half re-parses every word (fruit flies = insects, like = verb)",
     "choices": [
       "a PARSING-AMBIGUITY: the second half re-parses every word (fruit flies = insects, like = verb)",
@@ -11581,7 +11581,7 @@
   },
   {
     "tier": 5,
-    "question": "What happens to multiple spaces in HTML (HyperText Markup Language) and web browsers?",
+    "question": "What happens when you type several spaces in a row inside HTML (HyperText Markup Language) and view the page in a web browser?",
     "answer": "browsers COLLAPSE multiple spaces into ONE unless \"&nbsp;\" or CSS is used",
     "choices": [
       "browsers COLLAPSE multiple spaces into ONE unless \"&nbsp;\" or CSS is used",
@@ -12145,7 +12145,7 @@
   },
   {
     "tier": 5,
-    "question": "A student writes in a formal essay: 'Ur going to enjoy this book.' What is wrong here, and what is the correct fix?",
+    "question": "A student writes in a serious academic paper: 'Ur going to enjoy this book.' What is wrong here, and what is the correct fix?",
     "answer": "UR is a texting register that does not belong in a formal essay -- write YOU'RE",
     "choices": [
       "UR is a texting register that does not belong in a formal essay -- write YOU'RE",
@@ -12325,7 +12325,7 @@
   },
   {
     "tier": 1,
-    "question": "'What are you looking at?' Grammatically wrong (per zombie rule)?",
+    "question": "'What are you looking at?' Grammatically wrong (per the old superstition about prepositions)?",
     "answer": "no -- ending with a preposition is fine; the zombie rule has no grammatical basis",
     "choices": [
       "no -- ending with a preposition is fine; the zombie rule has no grammatical basis",
