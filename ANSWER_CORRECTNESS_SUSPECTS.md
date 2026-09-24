@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 18703 · **Suspect:** 72 · **Unique suspects:** 72
-**Total audited:** 18775
+**Sound so far:** 19202 · **Suspect:** 73 · **Unique suspects:** 73
+**Total audited:** 19275
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -69,7 +69,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## animal (7 suspects)
+## animal (8 suspects)
 
 ### animal #126 (T3) — dual_correct · medium
 
@@ -168,6 +168,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Exactly 200 years
 - Over 400 years
 - Just 12 years
+
+### animal #2437 (T2) — dual_correct · medium
+
+**Auditor:** All four choices (honeybee, paper wasp, bumblebee, carpenter ant) are haplodiploid Hymenoptera whose males develop from unfertilized eggs; 'hive' points to honeybee but the biological fact is not honeybee-exclusive.
+
+**Stem:** In an ordinary healthy hive, the egg-laying mother produces one whole class of offspring with no father at all — she lays some eggs that she never lets a father touch, and those still hatch. It is an everyday virgin birth hidden inside a familiar backyard insect's nest. Which insect is this?
+
+**Labeled answer:** 'The honeybee'
+
+**Choices:**
+- The honeybee ← labeled
+- The paper wasp
+- The bumblebee
+- The carpenter ant
 
 ---
 
