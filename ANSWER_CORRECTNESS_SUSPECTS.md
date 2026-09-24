@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 21375 · **Suspect:** 75 · **Unique suspects:** 75
-**Total audited:** 21450
+**Sound so far:** 22372 · **Suspect:** 78 · **Unique suspects:** 78
+**Total audited:** 22450
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -185,7 +185,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## cooking (2 suspects)
+## cooking (4 suspects)
 
 ### cooking #683 (T3) — dual_correct · medium
 
@@ -214,6 +214,34 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - The bitter molecules cling too tightly to the eggplant's flesh
 - The bitter molecules will not dissolve in the salty water
 - The bitter molecules sit too deep to reach the cut surface
+
+### cooking #2164 (T4) — wrong_answer · low
+
+**Auditor:** Answer says melted butter 'releases the trapped air for good' — but the stem specifies the butter melted BEFORE beating, so no air was ever trapped. The real permanent damage is that melting destroys the fine fat-crystal network; re-solidified butter forms coarser crystals that cannot hold air when creamed.
+
+**Stem:** This is why every cake recipe nags you to use 'softened, not melted' butter for the creaming step — the step where softened butter and sugar get beaten together for minutes to whip in air and make the cake rise. If the butter gets too warm and slumps into liquid oil before you beat it, the damage cannot be undone. Chilling it back to solid and beating again does not work. What has melting done to the butter that is permanent?
+
+**Labeled answer:** 'The fat breaks down and releases the trapped air for good'
+
+**Choices:**
+- The fat breaks down and releases the trapped air for good ← labeled
+- The sugar dissolves so it can no longer cut air in
+- The butter separates into oil and a watery liquid
+- The fat sets into hard grains that won't smooth out
+
+### cooking #2887 (T5) — dual_correct · low
+
+**Auditor:** Stem emphasizes the razor's edge between smoky-seared and bitter/burnt; distractor 'The deepest char the food will take before it turns bitter' matches that framing at least as well as the labeled 'hard char outside / tender inside' answer.
+
+**Stem:** Wok hei rides a razor's edge that separates a master cook from a disaster. The prized smoky-seared flavor and actually ruined, bitter, burnt food are only a second or two apart over the flame. What exactly is the target a great wok cook is chasing in that sliver of time?
+
+**Labeled answer:** 'A hard char on the outside while the inside stays tender'
+
+**Choices:**
+- A hard char on the outside while the inside stays tender ← labeled
+- An even, all-over brown with every piece colored the same
+- The deepest char the food will take before it turns bitter
+- A dry, crisp crust all around that seals the juices inside
 
 ---
 
@@ -711,7 +739,21 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## geography (1 suspects)
+## geography (2 suspects)
+
+### geography #529 (T2) — wrong_answer · low
+
+**Auditor:** Arabic 'damas' does not mean 'watered'; the 'watered-steel' association is with the English/European term 'damask' descriptively, not an everyday Arabic meaning of the root.
+
+**Stem:** The famous curved blades known as Damascus steel carry the name of Damascus, the great Syrian city where medieval traders bought and sold them across the Arab world. But the Arabic word 'damas' behind that city name had a second, everyday meaning that fit the rippling look of the blades perfectly. What else did 'damas' mean in Arabic?
+
+**Labeled answer:** 'watered'
+
+**Choices:**
+- watered ← labeled
+- flaming
+- folded
+- singing
 
 ### geography #2732 (T4) — wrong_answer · medium
 
