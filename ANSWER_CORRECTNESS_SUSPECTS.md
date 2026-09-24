@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 20425 · **Suspect:** 75 · **Unique suspects:** 75
-**Total audited:** 20500
+**Sound so far:** 20800 · **Suspect:** 75 · **Unique suspects:** 75
+**Total audited:** 20875
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -201,19 +201,19 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Cream
 - Yogurt
 
-### cooking #1523 (T3) — wrong_answer · low
+### cooking #1747 (T4) — wrong_answer · low
 
-**Auditor:** Pellagra's documented Italian folk names are 'mal della rosa' (rose disease) and 'mal della miseria' (misery disease); 'the landlord's disease' isn't a standard historical name for pellagra
+**Auditor:** The 'bitter molecules too big to leave with water' claim isn't a real food-science explanation — bitter compounds in eggplant (chlorogenic acid, glycoalkaloids) are small and water-soluble; McGee/Kenji attribute salt's anti-bitter effect to receptor masking, not molecular size
 
-**Stem:** By the 1800s corn was so cheap that Northern Italy's poorest peasants ate almost nothing but polenta, meal after meal — because that was all their bosses would pay them. Then a cruel disease crept through those villages: crusted skin sores, endless diarrhea, and creeping madness, striking only the hungry poor. Furious, the peasants named the sickness after the very men they blamed for their corn-only diet. What did they call it?
+**Stem:** Salting eggplant is supposed to draw the bitterness out with the water. Food scientists say the bitterness never leaves at all — the salt is only masking it on your tongue. What keeps the bitterness from washing out?
 
-**Labeled answer:** "The landlord's disease"
+**Labeled answer:** 'The bitter molecules are simply too big to slip out with the water'
 
 **Choices:**
-- The landlord's disease ← labeled
-- The overseer's curse
-- The baron's blight
-- The squire's plague
+- The bitter molecules are simply too big to slip out with the water ← labeled
+- The bitter molecules cling too tightly to the eggplant's flesh
+- The bitter molecules will not dissolve in the salty water
+- The bitter molecules sit too deep to reach the cut surface
 
 ---
 
