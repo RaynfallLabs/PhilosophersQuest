@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 17257 · **Suspect:** 68 · **Unique suspects:** 68
-**Total audited:** 17325
+**Sound so far:** 17830 · **Suspect:** 70 · **Unique suspects:** 70
+**Total audited:** 17900
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -69,7 +69,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## animal (3 suspects)
+## animal (5 suspects)
 
 ### animal #126 (T3) — dual_correct · medium
 
@@ -99,6 +99,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Drift into a shaft of brighter light
 - Press its snout against the prey
 
+### animal #568 (T4) — off_by_number · medium
+
+**Auditor:** Stem asks bite force 'at the very tip' per Anderson & Westneat 2007; the paper reports ~4,414 N at the fang tip and ~5,363 N at the blade edge (posterior). The labeled 5,300 N corresponds to the blade edge, not the tip; the distractor '~4,400 N' matches the tip figure.
+
+**Stem:** A great white shark bites at roughly 4,000 newtons — bone-cracking force. When researchers Anderson and Westneat modelled Dunkleosteus in 2007, they found it concentrated an even fiercer force at the very tip of its bony blade. How hard did that blade tip bite?
+
+**Labeled answer:** 'About 5,300 newtons'
+
+**Choices:**
+- About 5,300 newtons ← labeled
+- About 4,400 newtons
+- About 2,500 newtons
+- About 8,000 newtons
+
 ### animal #847 (T5) — wrong_answer · low
 
 **Auditor:** Riftia hemoglobin's sulfide-binding site is now attributed to free cysteine residues (Zal 1998, Bailly 2003), not zinc; zinc is present but its sulfide-binding role has been superseded.
@@ -112,6 +126,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Copper
 - Silver
 - Calcium
+
+### animal #1234 (T4) — off_by_number · medium
+
+**Auditor:** The ~5% figure is the survival-to-adulthood rate for leafy sea dragons, not the egg-to-hatching rate; brooded eggs on the male's tail typically hatch at much higher rates (roughly 60-95%).
+
+**Stem:** Off the shores of southern Australia drifts the leafy sea dragon, a slow-moving cousin of the seahorse whose body sprouts leaf-shaped flaps for camouflage. As with seahorses, it is the father who carries the eggs. A male can carry roughly 250 developing eggs on his tail, each one turning bright pink and pulling oxygen straight from his brood patch. Yet the open ocean is brutal on the tiny young. About how many of those eggs actually survive all the way to hatching?
+
+**Labeled answer:** 'Around 5 in every 100'
+
+**Choices:**
+- Around 5 in every 100 ← labeled
+- Around half
+- Around 9 in every 10
+- Nearly all of them
 
 ---
 
