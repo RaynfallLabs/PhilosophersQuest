@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 16609 · **Suspect:** 66 · **Unique suspects:** 66
-**Total audited:** 16675
+**Sound so far:** 17257 · **Suspect:** 68 · **Unique suspects:** 68
+**Total audited:** 17325
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -69,7 +69,21 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## animal (1 suspects)
+## animal (3 suspects)
+
+### animal #126 (T3) — dual_correct · medium
+
+**Auditor:** For Argentinosaurus, size estimates typically DO rely on scaling from a more complete close relative (e.g., Saltasaurus, Rapetosaurus) for body proportions, since only a few bones exist — so choice B (relative's complete skeleton) is arguably as correct as the labeled A.
+
+**Stem:** Argentinosaurus was a colossal long-necked plant-eating dinosaur that lumbered across South America about 95 million years ago. It stretched roughly 30 to 35 meters from snout to tail-tip — one of the largest animals that ever walked on land. But paleontologists have never dug up a whole skeleton. All they have are a few pieces: some huge vertebrae, a shin bone, a rib. How did they figure out its total length from so little?
+
+**Labeled answer:** 'They scaled up its whole body from a handful of its own bones'
+
+**Choices:**
+- They scaled up its whole body from a handful of its own bones ← labeled
+- They scaled it up from a close relative's complete skeleton
+- They measured the stride length in a fossil trackway
+- They compared it to the largest living whale
 
 ### animal #191 (T3) — wrong_answer · low
 
@@ -84,6 +98,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Beat its tail hard three times
 - Drift into a shaft of brighter light
 - Press its snout against the prey
+
+### animal #847 (T5) — wrong_answer · low
+
+**Auditor:** Riftia hemoglobin's sulfide-binding site is now attributed to free cysteine residues (Zal 1998, Bailly 2003), not zinc; zinc is present but its sulfide-binding role has been superseded.
+
+**Stem:** The giant tube worm's blood must hold deadly vent sulfide without being poisoned. The trick: built into its hemoglobin are atoms of a plain metal most of us know only as a mineral in our diet, and the sulfide clips harmlessly onto those atoms. Which everyday metal does this life-saving job?
+
+**Labeled answer:** 'Zinc'
+
+**Choices:**
+- Zinc ← labeled
+- Copper
+- Silver
+- Calcium
 
 ---
 
