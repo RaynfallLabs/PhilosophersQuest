@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 1855 · **Suspect:** 20 · **Unique suspects:** 20
-**Total audited:** 1875
+**Sound so far:** 3490 · **Suspect:** 35 · **Unique suspects:** 35
+**Total audited:** 3525
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -27,7 +27,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## economics (16 suspects)
+## economics (31 suspects)
 
 ### economics #35 (T3) — wrong_attribution · high
 
@@ -211,6 +211,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - About 100,000 livres per share
 - About 3,000 livres per share
 
+### economics #1326 (T5) — wrong_attribution · low
+
+**Auditor:** The 2004 Scholar's Edition of Man, Economy, and State (with Power and Market) is commonly credited as edited/introduced by Joseph Stromberg, not Joseph Salerno; Salerno contributed but is not the usually-cited editor. Human should verify against the actual title page.
+
+**Stem:** Murray Rothbard was an American Austrian-school economist. His 1962 treatise Man, Economy, and State was cut before publication, and the removed section came out as a separate book, Power and Market, in 1970. In 2004 the Ludwig von Mises Institute finally reunited both parts into one 1,500-page Scholar's Edition — the volume Rothbard had wanted in the first place. Which longtime Rothbard student edited it?
+
+**Labeled answer:** 'Joseph Salerno'
+
+**Choices:**
+- Joseph Salerno ← labeled
+- Milton Friedman
+- Israel Kirzner
+- James Buchanan
+
 ### economics #1391 (T4) — off_by_number · low
 
 **Auditor:** Friedman & Schwartz's Monetary History Aug-1929-to-Mar-1933 M1 figures are approximately $26.4B to $19.4B (about -27%); M2 approx $46.4B to $30.4B (about -35%). The stated $26.6B to $17.3B end-value does not match either standard series.
@@ -239,6 +253,146 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Managed capitalism
 - The mixed economy
 
+### economics #1567 (T1) — wrong_attribution · medium
+
+**Auditor:** Mises's 1920 argument is canonically 'the economic calculation problem'; 'the knowledge problem' is Hayek's later (1945) reformulation — the same bank credits Hayek for that shift in index 1571.
+
+**Stem:** In 1920 the Austrian economist Ludwig von Mises published a big claim. A country where the government owns every factory and farm cannot know how much of each thing to make. Without free market prices to reveal what buyers actually want, the planners are guessing in the dark. What is this idea called?
+
+**Labeled answer:** 'The knowledge problem'
+
+**Choices:**
+- The knowledge problem ← labeled
+- The paperwork problem
+- The weather problem
+- The population problem
+
+### economics #1659 (T5) — dual_correct · high
+
+**Auditor:** Stem asks 'which is not Buchanan's, but belongs to a different figure'; both 'There are no solutions, only trade-offs (Sowell)' and 'The logic of collective action (Olson)' are labeled as belonging to non-Buchanan figures, so both choices satisfy the criterion.
+
+**Stem:** 'Politics without romance' is the American economist James Buchanan's own three-word slogan for the whole discipline of public-choice economics, which studies how politicians and government officials respond to incentives. Below are four short slogans linked to public-choice or Chicago-school thinkers. Which one is not Buchanan's, but belongs to a different figure?
+
+**Labeled answer:** 'There are no solutions, only trade-offs (Sowell)'
+
+**Choices:**
+- There are no solutions, only trade-offs (Sowell) ← labeled
+- Politics without romance (Buchanan)
+- The logic of collective action (Olson)
+- Government-failure symmetry (Buchanan)
+
+### economics #1788 (T4) — off_by_number · medium
+
+**Auditor:** S&P 500 from QE2 announcement close Nov 3 2010 (~1198) to June 30 2011 (~1320) rose about 10%, not 24%; the 24% figure comes from measuring from the August 2010 Jackson Hole preview, not the announcement window the stem specifies.
+
+**Stem:** The Fed's QE2 program -- creating new dollars to buy US government bonds -- ran from its November 2010 announcement to its June 2011 conclusion. The Irish-French economist Richard Cantillon warned in the 1700s that new money helps whoever gets it first before prices rise. That 'Cantillon-effect' payoff of QE2 was visible on stock-market tapes during those seven months. What did the S&P 500 index of big US companies do over that window?
+
+**Labeled answer:** 'Rose approximately 24 percent'
+
+**Choices:**
+- Rose approximately 24 percent ← labeled
+- Fell approximately 5 percent
+- Rose approximately 5 percent
+- Stayed roughly flat
+
+### economics #1819 (T3) — wrong_attribution · medium
+
+**Auditor:** Standard consensus for pre-2008 mortgage-supervision blame centers on the Fed (Greenspan), OCC, and OTS (WaMu/IndyMac/Countrywide/AIG); the FDIC under Sheila Bair actually raised early warnings and is not typically lumped in as the captured pair. 'OCC + FDIC' is not the most-blamed pair.
+
+**Stem:** In the years before the 2008 financial crash, two US federal bank agencies were supposed to watch how safely American banks were making home loans. Both missed the enormous risks piling up in mortgage-backed securities. Later Congressional investigations found their staff regularly rotated between the agencies and the banks they were supposed to police — the so-called 'revolving door.' Which pair of agencies gets the most blame?
+
+**Labeled answer:** 'The Office of the Comptroller of the Currency and the FDIC'
+
+**Choices:**
+- The Office of the Comptroller of the Currency and the FDIC ← labeled
+- The Federal Reserve and the Treasury Department
+- The Securities and Exchange Commission and the CFTC
+- The Consumer Financial Protection Bureau and HUD
+
+### economics #1869 (T4) — wrong_answer · low
+
+**Auditor:** The Mises Institute's lifetime-achievement award Ron Paul received (2004) was the Gary G. Schlarbaum Prize, not a 'Rothbard Medal of Freedom' — that award name does not appear to correspond to a real Mises Institute honor.
+
+**Stem:** The Mises Institute in Auburn, Alabama, is the leading center of Austrian-school economics in the United States. Its highest honor is named for Murray Rothbard, the Austrian economist who was a close personal friend of the Texas congressman Ron Paul. In 2011 the institute gave Ron Paul this top award for his lifelong defense of sound money and free markets. Which award did he receive?
+
+**Labeled answer:** 'The Rothbard Medal of Freedom'
+
+**Choices:**
+- The Rothbard Medal of Freedom ← labeled
+- The Hayek Prize
+- The Menger Medal
+- The Mises Freedom Award
+
+### economics #1912 (T3) — off_by_number · low
+
+**Auditor:** Grullon, Larkin & Michaely (RFS 2019) report the U.S. listed-firm count fell from ~7,322 (1996) to ~3,671 (2016); 'About 4,300' overshoots Grullon's own figure — the distractor 'About 3,100' is actually closer to the paper's 3,671.
+
+**Stem:** About 7,300 US companies were listed on public stock markets in 1996. Twenty years later many were gone — bought up in mergers, taken private by buyout firms, or simply delisted. The economist Gustavo Grullon and his co-authors published a widely cited study measuring the drop and warning that American industries were becoming much more concentrated. About how many US-listed companies were left by 2016, per the Grullon study?
+
+**Labeled answer:** 'About 4,300'
+
+**Choices:**
+- About 4,300 ← labeled
+- About 6,800
+- About 3,100
+- About 5,700
+
+### economics #2001 (T4) — wrong_answer · medium
+
+**Auditor:** Chile's 1981 AFP reform (DL 3500) required all new entrants to use the private system and let existing active workers choose; the standard exclusions were the armed forces and those already receiving pensions, not 'those within five years of retirement'. Piñera has repeatedly stressed that all existing workers were given the choice.
+
+**Stem:** In May 1981 Chile became the first country to let workers leave the state pension. They could send ten percent of their wages into a private retirement account instead. Jose Pinera, the labor minister, made the switch optional for those in the old plan. But one group was barred from switching. Which workers could not switch?
+
+**Labeled answer:** 'Those within five years of retirement'
+
+**Choices:**
+- Those within five years of retirement ← labeled
+- Those earning below the national minimum wage
+- Those who had contributed for fewer than ten years
+- Those working for more than one employer at a time
+
+### economics #2052 (T2) — wrong_attribution · low
+
+**Auditor:** I cannot verify Sowell uses an 'Easter egg hunt' image in Vision of the Anointed for the 'solutions sit waiting to be picked up' picture; the well-known metaphor for that mindset is the streetlamp/drunkard search, which is also a listed distractor. Possibly misattributed.
+
+**Stem:** In The Vision of the Anointed (1995), Thomas Sowell mocks the picture that smart planners carry around. On their view, every hard problem has an answer sitting somewhere, and policy just has to go get it. Sowell drew that picture with one homely image. Which image?
+
+**Labeled answer:** 'Eggs laid out for children at an Easter hunt'
+
+**Choices:**
+- Eggs laid out for children at an Easter hunt ← labeled
+- Keys lost somewhere under a lit street lamp
+- Weeds pulled one by one from a long border
+- Coins shaken loose from a locked money box
+
+### economics #2083 (T3) — wrong_answer · medium
+
+**Auditor:** Answer claims USSR 'killed the most people of any communist state', but the Black Book's own figures put China at ~65M vs USSR ~20M; USSR chapter is longest because the USSR was the founding/longest-lasting regime with the most extensive archives, not because it had the highest death toll.
+
+**Stem:** When French historian Stephane Courtois edited The Black Book of Communism in 1997, he pulled together chapters by many European scholars. Each chapter tallied the deaths under one communist government -- the USSR, China, Cambodia, North Korea, Ethiopia, Vietnam, and others. Of every chapter in the book, the one on the Soviet Union was by far the longest. Why was the Soviet chapter the longest?
+
+**Labeled answer:** 'The Soviet system lasted the longest and killed the most people of any communist state'
+
+**Choices:**
+- The Soviet system lasted the longest and killed the most people of any communist state ← labeled
+- The Soviet Union was the only communist country in the book
+- The chapter was longest because Russian is harder to translate
+- The other communist countries had lost most of their records
+
+### economics #2240 (T2) — off_by_number · low
+
+**Auditor:** S&P 500 rose from 2237 (Mar 23, 2020 low) to ~4793 (Dec 27, 2021 peak) — that is ~114%, not 'about 90 percent'; 90% would be ~4250. Closest among the four choices but the labeled figure is materially off.
+
+**Stem:** When the COVID-19 pandemic hit in March 2020, US stocks crashed as businesses shut down. The S&P 500 index, which tracks America's 500 largest companies, hit a low on March 23, 2020. Then the Federal Reserve pumped trillions of new dollars into the economy through emergency programs, and stock prices rocketed upward. The S&P 500 peaked in December 2021. About what percent did it rise from that pandemic low to that peak?
+
+**Labeled answer:** 'About 90 percent'
+
+**Choices:**
+- About 90 percent ← labeled
+- About 30 percent
+- About 200 percent
+- About 15 percent
+
 ### economics #2333 (T4) — off_by_number · medium
 
 **Auditor:** US federal outlays fell from ~$92.7B (FY1945) to ~$55.2B (FY1946), about a 40% drop — 'slightly less than half' (a distractor) is right; the two-thirds figure only holds by FY1948.
@@ -252,6 +406,62 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - By about one quarter
 - By about one tenth
 - By slightly less than half
+
+### economics #2499 (T4) — wrong_answer · medium
+
+**Auditor:** The Fed's official 2% inflation target since 2012 is measured by headline PCE, not core PCE; core PCE is a supplementary near-term indicator but not the target index in the FOMC's Statement on Longer-Run Goals.
+
+**Stem:** The Federal Reserve — America's central bank — publicly aims for 2 percent yearly inflation. But 'inflation' can mean many things: housing prices, stock prices, the M2 money supply, or the price of the groceries a family actually buys. The Fed chose one specific consumer index and has steered policy by it since 2012. It excludes wild food and energy swings and reflects what US households really spend. Which measure does the Fed track for its 2 percent target?
+
+**Labeled answer:** 'The core PCE price index'
+
+**Choices:**
+- The core PCE price index ← labeled
+- The Case-Shiller housing price index
+- The S&P 500 total return
+- The M2 money supply
+
+### economics #2764 (T3) — wrong_attribution · low
+
+**Auditor:** The candlemakers' petition's chain-of-jobs joke (tallow, whaling, forests, shipping) is standardly labeled the 'employment' or 'job-creation' argument for tariffs, not the 'multiplier' argument (which in economics specifically denotes Keynesian fiscal spillovers). None of the other listed choices is a better fit, but the labeled answer's term is nonstandard.
+
+**Stem:** In 1845 the French economist Frederic Bastiat wrote a joke petition, supposedly from the candlemakers of France, begging the government to block out the sun so people would have to burn candles all day. The petition then lists every job that would supposedly grow: more tallow farms, more whaling fleets, more forests, more shipping. This chain-of-benefits joke mocks which real argument for tariffs?
+
+**Labeled answer:** 'The multiplier argument for tariffs'
+
+**Choices:**
+- The multiplier argument for tariffs ← labeled
+- The infant-industry argument for tariffs
+- The national-defense argument for tariffs
+- The reciprocity argument for tariffs
+
+### economics #2766 (T4) — dual_correct · medium
+
+**Auditor:** In Free to Choose (Ch. 2), Friedman explicitly frames trade as 'imports are the benefit, exports are the cost' — so choice C (imports treated as threat, exports as benefit) is also a defensible reading of what pair Friedman contrasted using the candlemakers. The labeled A (abundance/scarcity) is fine, but C is arguably also correct.
+
+**Stem:** In his 1980 book Free to Choose, Milton Friedman used Bastiat's candlemakers' petition to attack a common trade argument. Friedman said any claim that treats one thing as a threat and its opposite as a benefit deserves the candlemakers' test. Which pair did his argument contrast?
+
+**Labeled answer:** 'Abundance treated as a threat, scarcity treated as a benefit'
+
+**Choices:**
+- Abundance treated as a threat, scarcity treated as a benefit ← labeled
+- Consumption treated as a threat, saving treated as a benefit
+- Imports treated as a threat, exports treated as a benefit
+- Immigration treated as a threat, emigration treated as a benefit
+
+### economics #2963 (T4) — off_by_number · low
+
+**Auditor:** Mises was born Sept 29, 1881; arrived NJ Aug 2, 1940. He was 58 (turned 59 that Sept), not 'fifty-nine'. The 'no US chair' part is correct.
+
+**Stem:** When Ludwig von Mises, the leader of the Austrian School of economics, stepped off the ship in New Jersey on August 2, 1940, he had already fled Vienna and then Geneva ahead of the Nazi advance. Many economists ranked him among the greatest minds of his time. American universities knew his name. How old was he then, and what US university chair awaited him?
+
+**Labeled answer:** 'Fifty-nine, and no American university offered him a paid chair for the rest of his life'
+
+**Choices:**
+- Fifty-nine, and no American university offered him a paid chair for the rest of his life ← labeled
+- Forty-four, and a full Harvard professorship awaited him
+- Sixty-seven, and a Yale endowed chair had been arranged in advance
+- Fifty-two, and a Chicago professorship followed within the year
 
 ---
 
