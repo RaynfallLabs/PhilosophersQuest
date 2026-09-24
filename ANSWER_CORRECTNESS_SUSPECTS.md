@@ -2,14 +2,28 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 15389 · **Suspect:** 61 · **Unique suspects:** 61
-**Total audited:** 15450
+**Sound so far:** 15937 · **Suspect:** 63 · **Unique suspects:** 63
+**Total audited:** 16000
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
 ---
 
-## ai (1 suspects)
+## ai (2 suspects)
+
+### ai #542 (T3) — wrong_answer · medium
+
+**Auditor:** Answer says Hinton's concerns are near-term ONLY, 'not' Yudkowsky's 'AI wipes out humanity' framing — but Hinton explicitly voiced existential-risk concerns in 2023 (NYT/Guardian: humans becoming the 'second most intelligent species,' 'it's not inconceivable' AI wipes us out). The real Hinton/Yudkowsky difference is prescription (Hinton doesn't advocate a shutdown), not that Hinton lacks existential worry.
+
+**Stem:** In May 2023, Geoffrey Hinton left Google over worries about AI safety. He is sometimes called the 'godfather of deep learning.' How are his stated concerns different from Eliezer Yudkowsky's 'shut it all down' view?
+
+**Labeled answer:** "Hinton's concerns are near-term harms like disinformation, autonomous weapons, and job displacement, not Yudkowsky's 'AI wipes out humanity' framing."
+
+**Choices:**
+- Hinton's concerns are near-term harms like disinformation, autonomous weapons, and job displacement, not Yudkowsky's 'AI wipes out humanity' framing. ← labeled
+- Hinton thinks AI poses no real risk and critics are exaggerating; he resigned for unrelated personal reasons.
+- Hinton wants to ban all neural networks globally and rewrite AI using only formal symbolic logic systems.
+- Hinton and Yudkowsky hold identical views; the 'difference' is a media invention with no real substance.
 
 ### ai #820 (T4) — wrong_attribution · medium
 
@@ -771,7 +785,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## science (7 suspects)
+## science (8 suspects)
 
 ### science #1428 (T4) — wrong_attribution · low
 
@@ -870,6 +884,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - To predict the weather two years ahead
 - To find gold and silver deposits underground
 - To keep track of daylight saving time
+
+### science #3496 (T2) — dual_correct · medium
+
+**Auditor:** '6,4,2' is a valid falsifying test of the '+2' candidate, but '50,60,70' also violates the '+2' candidate while staying increasing; a 'yes' on 50,60,70 would immediately refute '+2', making it arguably a stronger test of that specific candidate rule.
+
+**Stem:** The 2-4-6 game was invented by the British psychologist Peter Wason. In it, he gives you a starting triple like 2, 4, 6 that fits his secret rule, and lets you propose new triples of three numbers. He tells you yes or no each time, and your job is to guess the rule. Suppose you have decided your candidate rule is 'add two each time.' All four triples below are legal to try. Which is the strongest next test of that candidate rule?
+
+**Labeled answer:** '6, 4, 2'
+
+**Choices:**
+- 6, 4, 2 ← labeled
+- 12, 14, 16
+- 1, 3, 5
+- 50, 60, 70
 
 ---
 
