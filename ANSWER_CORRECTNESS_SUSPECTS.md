@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 12496 · **Suspect:** 54 · **Unique suspects:** 54
-**Total audited:** 12550
+**Sound so far:** 13270 · **Suspect:** 55 · **Unique suspects:** 55
+**Total audited:** 13325
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -768,6 +768,24 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Because Heaven heard the prayer and rewarded the faithful, which proves the cosmos cares for the good
 - Because the rain was always coming, and the prayer merely lets people feel they had caused it
 - Because the ritual of prayer itself stirs the clouds, which is exactly why ritual must never be skipped
+
+---
+
+## science (1 suspects)
+
+### science #1428 (T4) — wrong_attribution · low
+
+**Auditor:** Denys transfused the 15-year-old boy with lamb/sheep blood, but Antoine Mauroy received calf's blood in the fatal case; the stem's 'same trick' framing plus 'a lamb's' answer conflates the two - calf blood is the historically accurate blood for the Mauroy death.
+
+**Stem:** The very first attempt to put one creature's blood into another began in Paris on 15 June 1667. A young physician named Jean-Baptiste Denys transfused a 15-year-old boy with the blood of another creature, and the boy survived. Later Denys tried the same trick on a man named Antoine Mauroy; Mauroy died. Whose blood had Denys been using?
+
+**Labeled answer:** "a lamb's"
+
+**Choices:**
+- a lamb's ← labeled
+- a horse's
+- a dog's
+- another man's
 
 ---
 
