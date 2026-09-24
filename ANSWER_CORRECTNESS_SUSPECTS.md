@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 8426 · **Suspect:** 49 · **Unique suspects:** 49
-**Total audited:** 8475
+**Sound so far:** 10274 · **Suspect:** 51 · **Unique suspects:** 51
+**Total audited:** 10325
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -539,7 +539,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## history (11 suspects)
+## history (12 suspects)
 
 ### history #753 (T5) — wrong_attribution · medium
 
@@ -681,6 +681,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - A messenger lost the only signed copy on the road to Congress
 - Southern delegates walked out before the count could be taken
 
+### history #4972 (T5) — off_by_number · low
+
+**Auditor:** Wrights found Smeaton coefficient should be ~0.0033 vs the accepted 0.005 — that's a factor of ~1.5, i.e. 'off by about half,' not 'nearly a factor of two'.
+
+**Stem:** While building the airplane, the Wright brothers checked a number called the Smeaton coefficient, a constant that everyone calculating lift and air pressure had trusted for more than a century. When they measured it themselves in their wind tunnel, they found the long-accepted value was badly off. By how much was this century-old constant wrong?
+
+**Labeled answer:** 'Off by nearly a factor of two'
+
+**Choices:**
+- Off by nearly a factor of two ← labeled
+- Off by less than one percent
+- Off by exactly ten times
+- Off by a factor of a thousand
+
 ### history #5042 (T2) — wrong_attribution · medium
 
 **Auditor:** The famous annual 'whole town gathers to replaster' festival (Crepissage) is at the Great Mosque of Djenne, not Timbuktu's Djinguereber Mosque; Djinguereber is also mud-built and periodically maintained but lacks the iconic single-day town-wide festival described.
@@ -694,6 +708,24 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - raise wooden roofs over its open courts
 - dig new channels to carry the rain off
 - hang woven mats along its outer walls
+
+---
+
+## philosophy (1 suspects)
+
+### philosophy #1271 (T4) — dual_correct · medium
+
+**Auditor:** Labeled answer (sampling frame: car/phone owners) is a real cause of Literary Digest failure, but distractor 2 (non-response bias — only the eager few mailed ballots back) is also a well-documented cause; Squire (1988) argues non-response was the larger factor.
+
+**Stem:** In 1936 a big magazine mailed ten million ballots and got over two million back. It said Alf Landon would beat Franklin Roosevelt. Roosevelt then won every state but two. A young pollster named George Gallup asked only fifty thousand people, and he called it right. Why did the huge sample fail so badly?
+
+**Labeled answer:** 'Its ballots went only to car and telephone owners, the well-off who leaned against Roosevelt'
+
+**Choices:**
+- Its ballots went only to car and telephone owners, the well-off who leaned against Roosevelt ← labeled
+- Its tally counted only the eager few who bothered to mail a ballot back, a self-picked slice of the nation
+- Its readers deliberately lied on the ballots they returned in order to embarrass the magazine they disliked
+- Its young rival George Gallup had merely guessed luckily, as any small poll sometimes happens to do
 
 ---
 
