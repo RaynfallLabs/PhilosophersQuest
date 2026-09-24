@@ -2,14 +2,14 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 15937 · **Suspect:** 63 · **Unique suspects:** 63
-**Total audited:** 16000
+**Sound so far:** 16609 · **Suspect:** 66 · **Unique suspects:** 66
+**Total audited:** 16675
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
 ---
 
-## ai (2 suspects)
+## ai (4 suspects)
 
 ### ai #542 (T3) — wrong_answer · medium
 
@@ -38,6 +38,52 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Hinton thinks AI poses no risk and only resigned due to a personal dispute with the search team at Google.
 - Hinton wants to ban every neural network globally and replace AI with rule-based symbolic systems alone.
 - Hinton and Yudkowsky hold identical views, and any reported difference is a media fabrication only.
+
+### ai #823 (T4) — wrong_attribution · high
+
+**Auditor:** Eliezer Yudkowsky did NOT sign the FLI 'Pause Giant AI Experiments' letter; he published a Time op-ed on 2023-03-29 explaining he refused to sign because a six-month pause was insufficient (he wanted a full shutdown). Musk, Wozniak, and Bengio did sign.
+
+**Stem:** In March 2023, weeks after ChatGPT-4 stunned the world, the Future of Life Institute (a nonprofit focused on existential risk, co-founded by MIT physicist Max Tegmark) published an open letter titled 'Pause Giant AI Experiments.' It called for a six-month moratorium on training any AI system more powerful than GPT-4. Thousands signed it. Which of the well-known signers do people still remember most?
+
+**Labeled answer:** 'Elon Musk, Steve Wozniak, Yoshua Bengio, and Eliezer Yudkowsky among many others.'
+
+**Choices:**
+- Elon Musk, Steve Wozniak, Yoshua Bengio, and Eliezer Yudkowsky among many others. ← labeled
+- Sam Altman, Dario Amodei, Demis Hassabis, and Sundar Pichai signing together as a CEO group.
+- Mark Zuckerberg, Tim Cook, Satya Nadella, and Jensen Huang signed it as Big Tech CEOs.
+- Joe Biden, Xi Jinping, Emmanuel Macron, and Volodymyr Zelensky signing as world leaders.
+
+### ai #973 (T4) — wrong_attribution · high
+
+**Auditor:** Hinton left Google in 2023 explicitly to warn about extinction/existential risk and signed the May 2023 CAIS statement listing AI extinction alongside pandemics and nuclear war; describing his concerns as 'near-term harms, not extinction' misrepresents him. He's closer to Yudkowsky's camp on x-risk than to Gebru's near-term-harms camp.
+
+**Stem:** People lump Yann LeCun (Meta's chief AI scientist), Eliezer Yudkowsky (Machine Intelligence Research Institute), and Geoffrey Hinton (once at Google) together as 'AI researchers' talking about risk. But their views are quite different. Which summary is the most accurate?
+
+**Labeled answer:** "LeCun rejects existential-risk framings as overblown; Yudkowsky thinks frontier AI should be shut down; Hinton's concerns are near-term harms, not extinction"
+
+**Choices:**
+- LeCun rejects existential-risk framings as overblown; Yudkowsky thinks frontier AI should be shut down; Hinton's concerns are near-term harms, not extinction ← labeled
+- All three hold identical views and have signed every public AI-risk statement together since 2019
+- All three deny any AI risk exists and have publicly stated AI is harmless in every recent interview
+- All three founded Anthropic together in 2021 and share the same official corporate safety position
+
+---
+
+## animal (1 suspects)
+
+### animal #191 (T3) — wrong_answer · low
+
+**Auditor:** MBARI's 2008 finding (Robison & Reisenbichler) is that the barreleye's eyes rotate independently within the fluid-filled dome to look forward; the fish does not need to roll its body from horizontal to vertical to swing the eyes forward.
+
+**Stem:** Scientists at MBARI (the Monterey Bay Aquarium Research Institute) found that a barreleye cannot just swivel its eyes forward on their own. Its eyes reach the forward-pointing position only when the fish itself makes one specific move. What must the barreleye do to swing them forward?
+
+**Labeled answer:** 'Roll its whole body from horizontal to vertical'
+
+**Choices:**
+- Roll its whole body from horizontal to vertical ← labeled
+- Beat its tail hard three times
+- Drift into a shaft of brighter light
+- Press its snout against the prey
 
 ---
 
