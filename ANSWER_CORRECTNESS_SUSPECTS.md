@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 27885 · **Suspect:** 90 · **Unique suspects:** 90
-**Total audited:** 27975
+**Sound so far:** 28341 · **Suspect:** 109 · **Unique suspects:** 109
+**Total audited:** 28450
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -1217,7 +1217,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## theology (3 suspects)
+## theology (4 suspects)
 
 ### theology #1544 (T5) — wrong_answer · medium
 
@@ -1261,9 +1261,23 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - the calves of his legs
 - the palms of his hands
 
+### theology #2673 (T3) — wrong_attribution · high
+
+**Auditor:** In Malory Book I Ch. 2, Ulfius is disguised as Sir Brastias and Merlin is disguised as Sir Jordanus, not Sir Brastias; Jordanus is also missing from the choice set.
+
+**Stem:** Merlin does not stop at disguising the king. He also disguises the two knights who ride at Uther's side that night, changing them into the likenesses of Duke Gorlois's own two chief companions so the guards will not question them either. In Malory, one of these two changed knights is Sir Ulfius. Merlin himself takes the shape of the OTHER knight. Whose likeness does Merlin wear?
+
+**Labeled answer:** 'Sir Brastias'
+
+**Choices:**
+- Sir Brastias ← labeled
+- Sir Bedivere
+- Sir Kay
+- Sir Lucan
+
 ---
 
-## trivia (3 suspects)
+## trivia (21 suspects)
 
 ### trivia #41 (T2) — wrong_answer · high
 
@@ -1279,6 +1293,48 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Hulk Hogan, Macho Man, Ultimate Warrior, Roddy Piper, and Mr. T
 - Stone Cold, The Rock, Mankind, Big Show, and Undertaker
 
+### trivia #88 (T4) — wrong_answer · high
+
+**Auditor:** Time Vault is not part of the Power Nine. The Power Nine is Black Lotus, Ancestral Recall, Time Walk, Timetwister, and the five Moxes (Pearl/Sapphire/Jet/Ruby/Emerald) — all Alpha/Beta/Unlimited only, none reprinted through 1995. The stem's premise (a Power Nine card reprinted through 1995) has no valid answer.
+
+**Stem:** Magic: the Gathering's Power Nine is the most coveted set of cards in the game's history. Eight of the nine were printed only in Alpha, Beta, and Unlimited (1993). The ninth was reprinted in subsequent base sets through 1995 before joining the Reserved List. Which card had that broader print history?
+
+**Labeled answer:** 'Time Vault, which appeared in Beta, Unlimited, Revised, and Fourth Edition'
+
+**Choices:**
+- Time Vault, which appeared in Beta, Unlimited, Revised, and Fourth Edition ← labeled
+- Mox Pearl, the one mox printed in all white-border base sets
+- Black Lotus, reprinted in International Edition only
+- Ancestral Recall, reprinted in Chronicles 1995 by accident
+
+### trivia #104 (T4) — wrong_answer · medium
+
+**Auditor:** On the Sept 4, 1995 debut Nitro, the shocking moment was Lex Luger's surprise appearance (jumping from WWF), not Sting turning on Hogan. Hogan beat Big Bubba Rogers cleanly; Sting did not attack Hogan that night. Sting's face-to-Crow heel arc came later in 1996.
+
+**Stem:** On September 4, 1995, World Championship Wrestling (WCW) launched Monday Nitro on Turner Network Television, kicking off a head-to-head Monday-night broadcast war against WWF Raw. Lex Luger's surprise appearance drew the opening cheers, but the biggest shock arrived at the end of the show. What happened in Hulk Hogan's main-event match?
+
+**Labeled answer:** 'Sting, his ally, attacked him after his match with Big Bubba Rogers'
+
+**Choices:**
+- Sting, his ally, attacked him after his match with Big Bubba Rogers ← labeled
+- He lost the WCW Championship to Vader in a clean pin
+- He was attacked by Ric Flair and the Four Horsemen on his way out
+- He was injured by a chair shot from a returning Randy Savage
+
+### trivia #126 (T5) — wrong_answer · medium
+
+**Auditor:** Alpha rares were all printed on the same rare sheet in similar quantities (~1,100 each); no single Alpha rare is 'statistically rarer' due to print-sheet quirk. Volcanic Island's famous rarity is a Beta phenomenon (omitted from Beta) — this appears to conflate the Beta omission with an Alpha print-run claim.
+
+**Stem:** MtG's 1993 Alpha set was printed on three large uncut press sheets, each containing 121 cards in an 11-by-11 grid. The print sheet positioning created a peculiar effect: certain rares appear at slightly different rates than others, because the three sheets were not printed in identical quantities. Among Alpha's rares, Black Lotus and the five Moxes are the most legendary -- but a single Alpha rare is statistically rarer than the others because of a specific print-sheet quirk. What land card was this single rarest Alpha rare?
+
+**Labeled answer:** 'Volcanic Island, which appeared only on certain print runs'
+
+**Choices:**
+- Volcanic Island, which appeared only on certain print runs ← labeled
+- Underground Sea, which was misprinted on the rare sheet
+- Tropical Island, which was misnamed on its initial run
+- Bayou, which was double-printed on the uncommon sheet
+
 ### trivia #211 (T3) — wrong_answer · medium
 
 **Auditor:** The Slayers nickname that makes Lina Inverse lose her cool is 'Dragon Spooker' (also present as 'Dragon Spook' in the choices) — 'Bandit Killer' is a title she wears without embarrassment.
@@ -1293,6 +1349,202 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Witch of the Wastes
 - Dragon Spook
 
+### trivia #223 (T4) — wrong_attribution · medium
+
+**Auditor:** The very first English Goku in the 1996 Ocean/Saban dub was Ian Corlett (voiced Goku for roughly the first 37 episodes); Peter Kelamis replaced him afterward and voiced Goku for the rest of the Ocean run. Ian Corlett is a listed distractor and is arguably the correct 'very first' answer.
+
+**Stem:** The Japanese anime Dragon Ball Z — Akira Toriyama's cosmic martial-arts saga about Son Goku and the fighters of Earth — reached American kids in August 1998, when the Funimation English dub joined Cartoon Network's afternoon Toonami block. Over the years, three different English actors voiced Goku. Sean Schemmel voiced him the longest — but the very first English dub, a 1996 Canadian production by the Ocean animation studio, used a different actor with a deeper voice much closer to Goku's original Japanese tone. Who was that first English Goku?
+
+**Labeled answer:** 'Peter Kelamis'
+
+**Choices:**
+- Peter Kelamis ← labeled
+- Saffron Henderson
+- Brian Drummond
+- Ian Corlett
+
+### trivia #225 (T4) — dual_correct · medium
+
+**Auditor:** There were two 2014 Kenshin sequels — Kyoto Inferno (Aug 2014) and The Legend Ends (Sep 2014) — and both cover the Kyoto arc (the manga's most-beloved arc). The distractor 'The Legend Ends' also satisfies the stem.
+
+**Stem:** Rurouni Kenshin's 2012 live-action film was directed by Keishi Otomo and starred Takeru Satoh as Kenshin Himura. The film and its 2014 sequels became some of the highest-grossing live-action manga adaptations in Japanese cinema. Satoh trained for over a year in real iaijutsu sword techniques to perform the role's swordplay. The 2014 sequel covered the manga's most-beloved arc. What was the sequel called?
+
+**Labeled answer:** 'Rurouni Kenshin: Kyoto Inferno'
+
+**Choices:**
+- Rurouni Kenshin: Kyoto Inferno ← labeled
+- Rurouni Kenshin: The Final
+- Rurouni Kenshin: The Beginning
+- Rurouni Kenshin: The Legend Ends
+
+### trivia #230 (T4) — off_by_number · medium
+
+**Auditor:** Sadamoto's Eva manga ran from December 1994 to June 2013 — about 18.5 years, not 'roughly fourteen'. The June 2013 end date is right but the duration is off by roughly 4-5 years.
+
+**Stem:** Yoshiyuki Sadamoto is the Japanese artist who designed the characters for Neon Genesis Evangelion — the famous giant-robot anime series directed by Hideaki Anno at Studio Gainax, which first aired on Japanese television in 1995. Sadamoto had helped found Gainax back in 1981. When the anime series ended in 1996, he began drawing his own manga version of the same story. He worked on the manga slowly, in between other projects, over many years. How long did the manga take him to finish?
+
+**Labeled answer:** 'Roughly fourteen years, finishing in June 2013'
+
+**Choices:**
+- Roughly fourteen years, finishing in June 2013 ← labeled
+- Roughly seven years, finishing in late 2003
+- Roughly twenty-one years, finishing in 2017
+- Roughly three years, finishing in 1999
+
+### trivia #247 (T5) — wrong_answer · medium
+
+**Auditor:** Mushroom Samba is a comedic hallucination episode with Ed hunting mushrooms; it does not contain Spike's eye backstory. Spike's cybernetic eye and Julia/Vicious flashback are revealed in Ballad of Fallen Angels (ep 5). The show never actually depicts him losing the eye.
+
+**Stem:** In the 1998 Japanese anime Cowboy Bebop, the wandering bounty hunter Spike Spiegel has one real eye and one cybernetic implant left over from his old life inside a crime gang called the Red Dragon Syndicate. Spike jokes that his right eye sees the present and his left eye sees the past. One episode's dreamy flashback finally shows the audience where and how he lost the real eye. Which Cowboy Bebop episode carries that reveal?
+
+**Labeled answer:** 'Episode 17, Mushroom Samba — though the eye is briefly referenced in the Ballad of Fallen Angels flashback'
+
+**Choices:**
+- Episode 17, Mushroom Samba — though the eye is briefly referenced in the Ballad of Fallen Angels flashback ← labeled
+- Episode 5, Ballad of Fallen Angels — Spike's first flashback to Julia and Vicious
+- Episode 12, Jupiter Jazz Part 1 — Vicious's flashback to the Red Dragon training facility
+- Episode 26, The Real Folk Blues Part 2 — Spike's final return to the syndicate
+
+### trivia #260 (T5) — wrong_answer · high
+
+**Auditor:** DIC never dubbed the Sailor Stars season where the Starlights appear (DIC only dubbed seasons 1-2). The famous DIC-era queer-erasure change was Zoisite rewritten male-to-female (choice C); the Uranus/Neptune-as-cousins change (choice B) came later from Cloverway. The Starlights answer is factually impossible.
+
+**Stem:** Naoko Takeuchi's 1990s manga and anime Sailor Moon follows Tokyo teen girls who transform into planet-named magical warriors. When the American company DIC Entertainment dubbed the show for English TV starting in 1995, it cut about six episodes and renamed most of the cast. It also rewrote one of the Japanese show's queer storylines to hide the romance from young viewers. Which change did DIC make?
+
+**Labeled answer:** 'Two of the Sailor Starlights were rewritten as cisgender female cousins'
+
+**Choices:**
+- Two of the Sailor Starlights were rewritten as cisgender female cousins ← labeled
+- Sailor Uranus and Sailor Neptune were rewritten as platonic cousins
+- Zoisite was rewritten from a male villain into a female villain
+- Sailor Saturn was rewritten as an unrelated cosmic entity rather than reborn Setsuna
+
+### trivia #326 (T3) — dual_correct · medium
+
+**Auditor:** In AoT canon, the wall-people are called both 'Eldians' (national/ethnic name) and 'Subjects of Ymir' (biological term for all Ymir-descended Titan-capable people); the two terms refer to the same population, so the distractor 'Subjects of Ymir' is also correct.
+
+**Stem:** Hajime Isayama's manga Attack on Titan begins with humans huddled inside three enormous stone walls to hide from towering man-eating giants called Titans. In season four, the story leaps across the sea to a suspected enemy nation on the mainland. Then the hero Eren Yeager reveals a shocking truth: the people inside the walls are actually a hated minority whose ancestors long ago created every Titan, and the mainland fears and hates them for it. What are the wall-people called?
+
+**Labeled answer:** "Eldians, descendants of the Founding Titan's bloodline"
+
+**Choices:**
+- Eldians, descendants of the Founding Titan's bloodline ← labeled
+- Marleyans, the militaristic mainland race
+- Subjects of Ymir, the original titan-shifter population
+- Hizurians, the eastern-isle samurai-coded clan
+
+### trivia #350 (T4) — wrong_answer · medium
+
+**Auditor:** The explanation 'aizawa is a play on eraser (keshigomu)' is not a real Japanese pun; Aizawa (相沢) does not phonetically or semantically map to keshigomu. Horikoshi's confirmed pun on the name is his hero-name 'Eraserhead' + the quirk 'Erasure', not a hidden pun inside 'Aizawa'.
+
+**Stem:** In Kohei Horikoshi's manga My Hero Academia, the underground hero Eraserhead can cancel other people's Quirks — the superpowers people are born with — just by staring at them. He is the strict homeroom teacher of Class 1-A, where the hero Izuku Midoriya trains. Eraserhead's civilian name is a hidden Japanese-word pun that points directly to what he does in a fight. What everyday object does the pun in his name point to?
+
+**Labeled answer:** "His name Shota Aizawa contains 'aizawa' (a play on 'eraser' (keshigomu) and his quirk's nature)"
+
+**Choices:**
+- His name Shota Aizawa contains 'aizawa' (a play on 'eraser' (keshigomu) and his quirk's nature) ← labeled
+- His name Shoto Aizawa intentionally rhymes with his Boku no Hero predecessor
+- His name Shota Aizawa was a pre-existing villain from My Hero Academia: Vigilantes
+- His name Shota Aizawa shares kanji with 'eraser-headed Buddhist saint'
+
+### trivia #360 (T4) — wrong_answer · low
+
+**Auditor:** In the Yu Yu Hakusho manga epilogue, Yusuke himself runs the ramen stall/noodle shop three years later (with Keiko sometimes helping), not his mother Atsuko. The correct distractor here is 'Yusuke himself'.
+
+**Stem:** Yoshihiro Togashi's Yu Yu Hakusho concluded its run in 1994 after Togashi developed back problems that forced an abrupt ending. The final arc — Three Kings — was severely truncated compared to the original plan. The story's epilogue jumps three years and shows the cast working at a humble noodle shop. Who runs this shop?
+
+**Labeled answer:** "Yusuke's mother Atsuko, alongside his now-adult girlfriend Keiko"
+
+**Choices:**
+- Yusuke's mother Atsuko, alongside his now-adult girlfriend Keiko ← labeled
+- Genkai, the master who trained Yusuke before her death and revival
+- Kuwabara's older sister Shizuru, who ran a hostess club through the series
+- Yusuke himself, with Botan and Hiei occasionally visiting
+
+### trivia #362 (T4) — wrong_attribution · medium
+
+**Auditor:** Keith David voiced Okkoto (the elderly boar-clan leader who appears late in the film), not the demon/cursed boar god Nago in the opening. Nago's English voice was John DiMaggio.
+
+**Stem:** Studio Ghibli's Princess Mononoke (1997) had a famously huge production, with over 144,000 hand-drawn frames. Miyazaki himself retouched about 80,000 of them. The English dub cast Claire Danes as San, Billy Crudup as Ashitaka, and a famous American actor as the cursed boar god in the opening. Who voices that boar god?
+
+**Labeled answer:** 'Keith David, the actor known for his deep growling voice work'
+
+**Choices:**
+- Keith David, the actor known for his deep growling voice work ← labeled
+- Liam Neeson, fresh off his Schindler's List performance
+- Patrick Stewart, in a brief opening-narration cameo
+- Gillian Anderson, also voicing Moro the wolf goddess
+
+### trivia #370 (T4) — wrong_answer · high
+
+**Auditor:** The Stand 'The World' in JoJo Part 3 is named after the Tarot Major Arcana 'The World' — all Part 3 Stands are Tarot-named, not music-named. Tygers of Pan Tang has no 1987 album titled 'The World' (their 1987 record was 'Burning in the Shade'). The attribution is fabricated.
+
+**Stem:** In Hirohiko Araki's manga JoJo's Bizarre Adventure, characters fight with 'Stands' — invisible spirit fighters that only other Stand users can see. Araki, a lifelong rock fan, named nearly every Stand after a song, band, or album. That's a nightmare for the anime studio David Production, which has to rename or blur them for streaming rights. In Part 3, the vampire villain Dio Brando wields a Stand called 'The World' that can stop time itself. What kind of musical thing is 'The World' named after?
+
+**Labeled answer:** "The 1987 album 'The World' by The Tygers of Pan Tang (later changed to 'Za Warudo' in some translations)"
+
+**Choices:**
+- The 1987 album 'The World' by The Tygers of Pan Tang (later changed to 'Za Warudo' in some translations) ← labeled
+- The 1976 Frankie Valli single 'My Eyes Adored You' (renamed for licensing)
+- The 1981 song 'In the Air Tonight' by Phil Collins (similar musical motif)
+- The 1969 Beatles album cut 'Across the Universe' (extended track name)
+
+### trivia #404 (T5) — wrong_answer · medium
+
+**Auditor:** The widely-cited Toriyama/Torishima anecdote about Super Saiyan is the opposite: Torishima pushed for design changes (blonde/spiky hair, reportedly to reduce inking workload for weekly deadlines). The distractor 'Torishima requested major design changes including different hair color' matches the real interview record more closely than the labeled 'loved it, breakthrough' answer.
+
+**Stem:** Akira Toriyama's Dragon Ball first showed the Super Saiyan form during the Frieza fight. The form requires a Saiyan hitting a breaking point of rage. Toriyama's editor at the time was Kazuhiko Torishima. How did Torishima react when Toriyama pitched the transformation?
+
+**Labeled answer:** "Torishima loved it and reportedly told Toriyama 'this is the breakthrough'"
+
+**Choices:**
+- Torishima loved it and reportedly told Toriyama 'this is the breakthrough' ← labeled
+- Torishima resisted, calling the idea derivative of Berserk's behavior shift
+- Torishima requested major design changes including different hair color
+- Torishima initially rejected the idea, suggesting a power-up sword instead
+
+### trivia #477 (T3) — wrong_answer · medium
+
+**Auditor:** The well-documented Navy-mandated script change was making Charlie (Kelly McGillis) a civilian contractor instead of a Naval officer to avoid fraternization issues — that's option 3, not Maverick's death.
+
+**Stem:** Tony Scott's 1986 blockbuster Top Gun stars Tom Cruise as the hotshot Navy pilot Maverick at the elite Miramar fighter-weapons school in California. Because the film needed real F-14 Tomcat jets for its dogfight scenes, the US Navy loaned the aircraft — but only on the condition it could approve the script. Scott agreed, and the Navy signed off on almost every scene. It vetoed exactly one major story change. What did the Navy prohibit?
+
+**Labeled answer:** 'Maverick was originally supposed to die at the end (instead of just losing Goose)'
+
+**Choices:**
+- Maverick was originally supposed to die at the end (instead of just losing Goose) ← labeled
+- The Russian MiGs were originally identified as specifically being Soviet aircraft
+- Maverick's romantic interest was originally a Naval officer instead of a contractor
+- The Top Gun school was originally based at Miramar but moved to fictional Coronado
+
+### trivia #527 (T4) — wrong_attribution · high
+
+**Auditor:** Tab is a Coca-Cola brand product, not a Pepsi-brand variant; the answer text is factually wrong when it describes both Tab and Pepsi Free as 'Pepsi-brand variants'.
+
+**Stem:** Released in 1985, Robert Zemeckis's Back to the Future earned $381M worldwide on a $19M budget. The film famously features a Pepsi product placement in 1985 and 1955. What other beverage did Marty try to order in 1955 that wasn't yet available, becoming a famous gag?
+
+**Labeled answer:** "Tab and Pepsi Free, both Pepsi-brand variants that didn't exist in 1955"
+
+**Choices:**
+- Tab and Pepsi Free, both Pepsi-brand variants that didn't exist in 1955 ← labeled
+- Diet Coke and Sprite Zero, Coca-Cola products from later decades
+- Mountain Dew and Sunkist, brands that hadn't yet been launched
+- Coca-Cola Classic and New Coke, distinguishing the 1985 confusion
+
+### trivia #637 (T4) — wrong_attribution · medium
+
+**Auditor:** Hamill has cited the Wicked Witch's cackle and Claude Rains as influences, but Claude Rains never played a character named 'Mr. Norton' in any known role; the specific attribution 'Mr. Norton' appears fabricated (the Rains reference is usually to The Invisible Man or Mr. Skeffington).
+
+**Stem:** In 1992, Batman: The Animated Series was casting the Joker. Mark Hamill (Luke Skywalker) tried out almost as a joke. He was tired of only being seen as Luke. His Joker became the classic animated one. What did Hamill say his Joker laugh was based on?
+
+**Labeled answer:** "A combination of the Wicked Witch's cackle and Claude Rains as Mr. Norton"
+
+**Choices:**
+- A combination of the Wicked Witch's cackle and Claude Rains as Mr. Norton ← labeled
+- His own laughter recorded at exaggerated speeds and reverbed up
+- Cesar Romero's 1966 Joker pitched up an octave with breath at the end
+- Heath Ledger's planned Dark Knight Joker voice given thirteen years later
+
 ### trivia #668 (T5) — wrong_answer · medium
 
 **Auditor:** The spooky storyteller (old sailor/ghost pirate) in Garfield's Halloween Adventure (1985) is voiced by C. Lindsay Workman, not Pat Carroll. C. Lindsay Workman is the distractor and is the actual correct answer; Pat Carroll (Ursula in The Little Mermaid) was not in this special.
@@ -1306,5 +1558,19 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - C. Lindsay Workman
 - John Carradine
 - John Houseman
+
+### trivia #705 (T1) — dual_correct · medium
+
+**Auditor:** Master Chief IS Spartan-117 (his UNSC designation) — the distractor names the same character, so both are literally correct answers to 'what is the soldier called'.
+
+**Stem:** The 2001 launch game for Microsoft's brand-new Xbox console was Halo: Combat Evolved, a first-person shooter made by the Seattle studio Bungie. It stars a hulking human super-soldier in polished green metal armor, fighting alien invaders called the Covenant on a giant ring-shaped world. A blue holographic AI named Cortana lives inside his helmet and guides him. What is the soldier called?
+
+**Labeled answer:** 'Master Chief'
+
+**Choices:**
+- Master Chief ← labeled
+- Sergeant Johnson
+- Captain Keyes
+- Spartan-117
 
 ---
