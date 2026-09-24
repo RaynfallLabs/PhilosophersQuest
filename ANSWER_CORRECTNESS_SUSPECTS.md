@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 19202 · **Suspect:** 73 · **Unique suspects:** 73
-**Total audited:** 19275
+**Sound so far:** 19676 · **Suspect:** 74 · **Unique suspects:** 74
+**Total audited:** 19750
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -182,6 +182,24 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - The paper wasp
 - The bumblebee
 - The carpenter ant
+
+---
+
+## cooking (1 suspects)
+
+### cooking #683 (T3) — dual_correct · medium
+
+**Auditor:** Isigny-sur-Mer holds AOC status for both Beurre d'Isigny (butter) and Creme d'Isigny (cream); cream is also a legitimately correct answer to 'famous for one dairy product'.
+
+**Stem:** Hollandaise means 'Dutch sauce,' yet it is thoroughly French. An older name for it, 'sauce Isigny,' honors a small town in Normandy that is famous all across France for making the finest of one dairy product. What is Isigny famous for?
+
+**Labeled answer:** 'Butter'
+
+**Choices:**
+- Butter ← labeled
+- Cheese
+- Cream
+- Yogurt
 
 ---
 
