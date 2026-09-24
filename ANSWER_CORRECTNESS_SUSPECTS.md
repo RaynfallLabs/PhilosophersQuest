@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 3490 · **Suspect:** 35 · **Unique suspects:** 35
-**Total audited:** 3525
+**Sound so far:** 4536 · **Suspect:** 39 · **Unique suspects:** 39
+**Total audited:** 4575
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -27,7 +27,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## economics (31 suspects)
+## economics (35 suspects)
 
 ### economics #35 (T3) — wrong_attribution · high
 
@@ -462,6 +462,62 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Forty-four, and a full Harvard professorship awaited him
 - Sixty-seven, and a Yale endowed chair had been arranged in advance
 - Fifty-two, and a Chicago professorship followed within the year
+
+### economics #3043 (T3) — dual_correct · medium
+
+**Auditor:** Krueger's 1974 paper 'The Political Economy of the Rent-Seeking Society' quantified rent-seeking in both India AND Turkey; Turkey as distractor is also a valid answer.
+
+**Stem:** In 1974 the American economist Anne Krueger took Gordon Tullock's 1967 idea about wasted lobbying effort and tested it on one big developing country. She showed how the country's government import licenses were worth huge sums, and how firms spent nearly as much money on lobbying, gifts, and paperwork to win the licenses as the licenses were themselves worth. Which country did Krueger study?
+
+**Labeled answer:** 'India'
+
+**Choices:**
+- India ← labeled
+- Brazil
+- Turkey
+- Egypt
+
+### economics #3062 (T5) — wrong_answer · medium
+
+**Auditor:** The 2014 Farm Bill created the 'Margin Protection Program for Dairy' (MPP-Dairy); it was the 2018 Farm Bill that renamed/reformed it into the Dairy Margin Coverage (DMC). Strictly, DMC is a 2018 label.
+
+**Stem:** By 2014, the US government had been buying up surplus milk under the 1949 Agricultural Act for 65 years. The 2014 Farm Bill kept dairy farmers protected above market prices, but replaced the old direct-purchase machinery with a new insurance-style mechanism that paid farmers whenever their profit margin -- milk price minus feed cost -- dropped below a chosen level. What did the 2014 Farm Bill replace the older program with?
+
+**Labeled answer:** 'The Dairy Margin Coverage (DMC) system'
+
+**Choices:**
+- The Dairy Margin Coverage (DMC) system ← labeled
+- A federal ban on all dairy subsidies
+- A privatized dairy futures exchange
+- A European-Union-style quota auction
+
+### economics #3066 (T2) — off_by_number · medium
+
+**Auditor:** 130,000% is the Venezuelan Central Bank's (BCV) retroactive figure for 2018; the IMF's widely cited 2018 projection was ~1,000,000% (October 2018 WEO put it at ~1,370,000%). Closest listed option would be ~3,000,000%/yr.
+
+**Stem:** By 2018 Venezuela's economy was in freefall. Years of Chavez and Maduro's price controls, oil-industry seizures, and money-printing had unleashed hyperinflation on the same scale as Weimar Germany in 1923, when Germans burned marks in their stoves for heat. That year the International Monetary Fund (IMF) released its official estimate of Venezuela's yearly inflation rate. About how high did the IMF say prices were rising?
+
+**Labeled answer:** 'About 130,000% per year'
+
+**Choices:**
+- About 130,000% per year ← labeled
+- About 500% per year
+- About 25% per year
+- About 3,000,000% per year
+
+### economics #3218 (T3) — off_by_number · medium
+
+**Auditor:** The widely reported June 2015 RBZ demonetisation rate was Z$35 quadrillion = US$1 (with balances up to Z$175 quadrillion receiving a flat US$5). '175 quadrillion for one US dollar' conflates the balance threshold with the per-dollar rate.
+
+**Stem:** By 2009 Zimbabwe's own currency, the Zimbabwe dollar, had been destroyed by years of runaway money-printing under President Robert Mugabe. People had already stopped using it for daily shopping, but old leftover balances still sat frozen in bank accounts. In June 2015 the Reserve Bank of Zimbabwe formally killed the Zimbabwe dollar. It offered to swap those remaining bank balances for US dollars at a single blunt exchange rate. What was that rate?
+
+**Labeled answer:** '175 quadrillion Zimbabwe dollars for one US dollar'
+
+**Choices:**
+- 175 quadrillion Zimbabwe dollars for one US dollar ← labeled
+- 1 billion Zimbabwe dollars for one US dollar
+- 10 trillion Zimbabwe dollars for one US dollar
+- 1 million Zimbabwe dollars for one US dollar
 
 ---
 
