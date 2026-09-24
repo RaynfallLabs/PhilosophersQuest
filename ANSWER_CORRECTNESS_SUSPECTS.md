@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 4536 · **Suspect:** 39 · **Unique suspects:** 39
-**Total audited:** 4575
+**Sound so far:** 5460 · **Suspect:** 40 · **Unique suspects:** 40
+**Total audited:** 5500
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -539,7 +539,21 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## history (1 suspects)
+## history (2 suspects)
+
+### history #753 (T5) — wrong_attribution · medium
+
+**Auditor:** The 'condemned man calmly shouted his own firing-squad commands' story is traditionally attributed to Cornelio Rojas (Batista's national police chief, executed Jan 1959 at Santa Clara — 'Muchachos, fuego!'), not to Jesús Sosa Blanco, whose fame rests on the Havana Sports Palace show trial before his La Cabaña execution.
+
+**Stem:** Jesús Sosa Blanco, a major under the ousted dictator Batista, was condemned to die before a firing squad at the La Cabaña fortress in Havana for scores of killings. As the squad took aim, Sosa Blanco did something that stunned the men sent to shoot him. What did he do?
+
+**Labeled answer:** 'He shouted the squad\'s own commands at them — "Atención! Apunte! Fuego!" — ordering his own death'
+
+**Choices:**
+- He shouted the squad's own commands at them — "Atención! Apunte! Fuego!" — ordering his own death ← labeled
+- He fell to his knees and begged the young soldiers to spare his life
+- He read aloud a list of judges he swore would die after him
+- He stayed silent and refused the blindfold the guards offered him
 
 ### history #5042 (T2) — wrong_attribution · medium
 
