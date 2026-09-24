@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 20800 · **Suspect:** 75 · **Unique suspects:** 75
-**Total audited:** 20875
+**Sound so far:** 20975 · **Suspect:** 75 · **Unique suspects:** 75
+**Total audited:** 21050
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
