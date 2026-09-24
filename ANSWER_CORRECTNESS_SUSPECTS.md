@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 13270 · **Suspect:** 55 · **Unique suspects:** 55
-**Total audited:** 13325
+**Sound so far:** 13969 · **Suspect:** 56 · **Unique suspects:** 56
+**Total audited:** 14025
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -771,7 +771,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## science (1 suspects)
+## science (2 suspects)
 
 ### science #1428 (T4) — wrong_attribution · low
 
@@ -786,6 +786,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - a horse's
 - a dog's
 - another man's
+
+### science #1731 (T3) — off_by_number · medium
+
+**Auditor:** Farman/Gardiner/Shanklin 1985 Nature paper reported October ozone at Halley Bay falling from ~320 DU baseline to ~200 DU by 1984 -- roughly a 40 percent drop (paper's own phrasing: 'almost halved'). The 'up to 70 percent' figure came from later years, not this paper.
+
+**Stem:** A station on the Antarctic coast had been tracking ozone since the 1950s, and October levels kept falling. In 1985 three British scientists published the numbers in the journal Nature. How big a drop did their paper report over Antarctica each southern spring?
+
+**Labeled answer:** 'up to 70 percent of the ozone column'
+
+**Choices:**
+- up to 30 percent of the ozone column
+- up to 50 percent of the ozone column
+- up to 70 percent of the ozone column ← labeled
+- up to 95 percent of the ozone column
 
 ---
 
