@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 11548 · **Suspect:** 52 · **Unique suspects:** 52
-**Total audited:** 11600
+**Sound so far:** 12496 · **Suspect:** 54 · **Unique suspects:** 54
+**Total audited:** 12550
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -711,7 +711,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## philosophy (2 suspects)
+## philosophy (4 suspects)
 
 ### philosophy #1271 (T4) — dual_correct · medium
 
@@ -740,6 +740,34 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Whether he keeps his calm and contentment -- that peace is his to hold, not the tyrant's
 - Whether his body lives to see another dawn -- that breath is his to keep, not the tyrant's
 - Whether he holds his rank and good name -- that standing is his to keep, not the tyrant's
+
+### philosophy #2682 (T2) — wrong_answer · medium
+
+**Auditor:** The answer 'calm, mild people content with an ordinary life' matches Nietzsche's despised Last Man archetype (Zarathustra's prologue), not his ideal of secretly-strong. Nietzsche's sublimated noble type is self-mastered but never 'content with an ordinary life'.
+
+**Stem:** The 19th-century German philosopher Friedrich Nietzsche surprised his readers by claiming that real strength could live in a kind of person almost nobody would call powerful. Which sort of person did Nietzsche single out as secretly strong?
+
+**Labeled answer:** 'Calm, mild people content with an ordinary life'
+
+**Choices:**
+- Calm, mild people content with an ordinary life ← labeled
+- Bold rebels who openly defy the crowd
+- Restless strivers who can never sit still
+- Hardened people who have suffered terribly
+
+### philosophy #2828 (T3) — dual_correct · low
+
+**Auditor:** Xunzi's actual textual answer in Tianlun is 'it would have rained anyway' (matches choice C: 'The rain was always coming, and the prayer merely lets people feel they had caused it'); labeled A ('no care for us, so the rain falls for no reason at all') captures the metaphysical framework but C more directly answers the stem's 'why did it rain?'
+
+**Stem:** In ancient China, the Confucian philosopher Xunzi thought Heaven was not a personal god watching over people but simply the plain workings of Nature — the sky, the seasons, the weather, uncaring. To shake his students, he asked a blunt question about prayer: you pray for rain, and it rains, so why did it rain? His startling answer explained why he thought fixing human nature was entirely up to people.
+
+**Labeled answer:** 'Because the sky is just plain Nature with no care for us, so the rain falls for no reason at all'
+
+**Choices:**
+- Because the sky is just plain Nature with no care for us, so the rain falls for no reason at all ← labeled
+- Because Heaven heard the prayer and rewarded the faithful, which proves the cosmos cares for the good
+- Because the rain was always coming, and the prayer merely lets people feel they had caused it
+- Because the ritual of prayer itself stirs the clouds, which is exactly why ritual must never be skipped
 
 ---
 
