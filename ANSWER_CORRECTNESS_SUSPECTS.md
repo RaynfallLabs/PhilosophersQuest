@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 28903 · **Suspect:** 122 · **Unique suspects:** 122
-**Total audited:** 29025
+**Sound so far:** 30092 · **Suspect:** 135 · **Unique suspects:** 135
+**Total audited:** 30227
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -869,6 +869,94 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
+## grammar (6 suspects)
+
+### grammar #70 (T3) — dual_correct · medium
+
+**Auditor:** The pronoun 'I' is ALWAYS capitalized in English regardless of position, so the distractor 'I is always capitalized regardless of position' is also a true explanation of why 'I' is capitalized here; the sentence-start reason applies but is not the only valid answer.
+
+**Stem:** A dialogue: "‘Come here,’ she said. ‘I have news.’" Why is I capitalized?
+
+**Labeled answer:** 'it opens a NEW SENTENCE inside the quote; the period ends the first sentence'
+
+**Choices:**
+- it opens a NEW SENTENCE inside the quote; the period ends the first sentence ← labeled
+- I is always capitalized regardless of position
+- because SHE SAID is a subordinate clause
+- because HAVE NEWS is a subjunctive verb
+
+### grammar #269 (T2) — dual_correct · medium
+
+**Auditor:** Both 'was' (choice A) and 'is' (choice D) are singular verbs that satisfy the 'EVERY makes the compound subject singular' rule; the stem provides no tense anchor, so both are grammatically defensible.
+
+**Stem:** 'EVERY boy and girl ___ at the party by seven.' Which verb fits?
+
+**Labeled answer:** 'was -- EVERY makes even a compound subject singular'
+
+**Choices:**
+- was -- EVERY makes even a compound subject singular ← labeled
+- were -- boy AND girl is plural
+- are -- present tense required
+- is -- present tense singular
+
+### grammar #495 (T3) — off_by_number · medium
+
+**Auditor:** Answer says 'early 1800s -- Bronte, Dickens, and Fitzgerald all used it', but Fitzgerald wrote in the 1920s-30s and Bronte/Dickens in the mid-1800s; earliest documented intensifier use is 18th c. (Frances Brooke, 1769). Distractors are all worse, but the dating in the labeled answer is factually off.
+
+**Stem:** People often say that using 'literally' loosely is a modern mistake. When did writers first use it that way?
+
+**Labeled answer:** 'The early 1800s -- Charlotte Bronte, Dickens, and Fitzgerald all used it.'
+
+**Choices:**
+- The early 1800s -- Charlotte Bronte, Dickens, and Fitzgerald all used it. ← labeled
+- The 1990s, when texting popularized the misuse.
+- The 1970s, in American sitcom scripts.
+- The 1950s, in advertising copy.
+
+### grammar #909 (T5) — wrong_answer · medium
+
+**Auditor:** Traditional Chicago footnote sequence is * dagger double-dagger section parallels(||) pilcrow -- the answer omits parallels (||) and adds hash (#) which is not in the classical Chicago order.
+
+**Stem:** In the old Chicago footnote sequence, what mark comes after the asterisk?
+
+**Labeled answer:** 'dagger, then double dagger, then section symbol, then pilcrow, then hash'
+
+**Choices:**
+- dagger, then double dagger, then section symbol, then pilcrow, then hash ← labeled
+- the sequence stops with the asterisk
+- a numbered footnote replaces every mark after asterisk
+- the sequence is asterisk, hash, ampersand
+
+### grammar #953 (T3) — wrong_answer · medium
+
+**Auditor:** Standard American English treats plural-named bands as plural: 'The Beatles ARE/WERE a band from Liverpool' (cf. Wikipedia, AP style, most US publications). The 'band as singular unit' convention applies to singular-named acts (U2 IS, Metallica IS), not plural ones. The distractor 'are (a band is a group of individuals)' is arguably more correct here.
+
+**Stem:** "The Beatles ___ a band from Liverpool." What is the American English convention?
+
+**Labeled answer:** 'is (band is singular as a unit)'
+
+**Choices:**
+- is (band is singular as a unit) ← labeled
+- are (a band is a group of individuals)
+- have been (perfect required)
+- was (past required)
+
+### grammar #1037 (T3) — wrong_attribution · medium
+
+**Auditor:** The exact wording 'to boldly go where no one has gone before' is from Star Trek: The Next Generation (1987); the original series (1966) opening said 'no man has gone before'. Answer conflates the two.
+
+**Stem:** 'To boldly go where no one has gone before.' From which show is this line?
+
+**Labeled answer:** 'Star Trek (original series opening, 1966)'
+
+**Choices:**
+- Star Trek (original series opening, 1966) ← labeled
+- Star Wars
+- Doctor Who
+- Buck Rogers
+
+---
+
 ## history (12 suspects)
 
 ### history #753 (T5) — wrong_attribution · medium
@@ -1277,7 +1365,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## trivia (34 suspects)
+## trivia (41 suspects)
 
 ### trivia #41 (T2) — wrong_answer · high
 
@@ -1727,6 +1815,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - The Manhattan Project
 - Lockheed Skunk Works
 
+### trivia #1111 (T5) — wrong_answer · medium
+
+**Auditor:** LOTR has six internal Books, not three; 'The Ring Sets Out' and 'The Ring Goes South' are both in Vol 1 (Books I and II), and 'The Ring Goes East' is Book IV — this triplet does not map to a documented Tolkien proposal for three volume titles.
+
+**Stem:** Tolkien's Lord of the Rings came out in three volumes from the London publisher George Allen & Unwin between July 1954 and October 1955. Tolkien wanted one book, but the publisher split it up to save on paper (still rationed after the war) and to spread out the risk. Tolkien did not like the names his publisher chose for the three parts and only accepted them under protest. What did Tolkien himself want to call the three volumes, based on the book's own inner divisions?
+
+**Labeled answer:** 'The Ring Sets Out, The Ring Goes South, and The Ring Goes East — his proposed volume titles matching the three internal Book divisions'
+
+**Choices:**
+- The Ring Sets Out, The Ring Goes South, and The Ring Goes East — his proposed volume titles matching the three internal Book divisions ← labeled
+- The Shadow Grows, The Eye of the Enemy, and The Return of the King — names that match the three Sauron-encounter phases
+- Mordor in Sight, Mordor Approached, and Mordor Entered — names that emphasize the Frodo plot specifically
+- Hobbiton, Lothlórien, and Gondor — names that emphasize the principal setting of each volume's first chapter
+
 ### trivia #1132 (T5) — wrong_answer · medium
 
 **Auditor:** The described series — exiled Earthman becomes a barbarian warlord on a primitive planet, 17 novels 1971-1991 — is the John Norman Gor formula (single author, not a duo). No known 17-novel Offutt/Wagner barbarian-planet cycle exists; they collaborated on some Conan/Cormac mac Art pastiches but nothing matching this description. None of the listed duo choices fit the described series either, so the question appears malformed.
@@ -1741,6 +1843,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - L. Sprague de Camp with Lin Carter
 - Lin Carter with Roger Zelazny
 
+### trivia #1214 (T4) — wrong_answer · medium
+
+**Auditor:** Chronology reversed: AAWSAP (2008-2010, DIA-funded, $22M) came FIRST; AATIP is the later program (Elizondo, ~2010-2017). AAWSAP did not grow out of AATIP.
+
+**Stem:** The Pentagon ran a UFO (unidentified flying object) study called the Advanced Aerospace Weapon System Applications Program (AAWSAP) from 2008 to 2010. It cost $22 million and looked into Skinwalker Ranch. The New York Times broke the story in December 2017. AAWSAP grew out of an older program that people often mix it up with. What is that older program?
+
+**Labeled answer:** 'AATIP, the Advanced Aerospace Threat Identification Program'
+
+**Choices:**
+- AATIP, the Advanced Aerospace Threat Identification Program ← labeled
+- MJ-12, the alleged 'Majestic-12' Eisenhower-era panel
+- Project Aquarius, an alleged 1980s NSA UFO unit
+- Operation Highjump, the 1946 Antarctic naval expedition
+
 ### trivia #1228 (T4) — dual_correct · medium
 
 **Auditor:** Option B ('shot from behind in the head on a Friday by a man with three names') is also factually true as commonly told: Lincoln (Fri Apr 14 1865) and Kennedy (Fri Nov 22 1963) were both shot in the head from behind, and both assassins have three-part names (John Wilkes Booth, Lee Harvey Oswald).
@@ -1754,5 +1870,75 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Both were shot from behind in the head on a Friday by a man with three names
 - Both assassins were themselves killed in a brick warehouse before trial
 - Both presidents had secretaries who warned them not to go to the theater
+
+### trivia #1322 (T3) — wrong_answer · medium
+
+**Auditor:** Egbert died August 16, 1980, but in Dayton, Ohio (his hometown) — not Morganton, North Carolina. He had briefly worked oil rigs in Morgan City, LOUISIANA, which appears to be the source of the mix-up.
+
+**Stem:** The 1979 Michigan State disappearance of sixteen-year-old James Dallas Egbert III set off the modern D&D Satanic Panic. Private detective William Dear was hired by his parents, and he blamed D&D. The truth was sadder and more personal. Egbert did emerge from the tunnels — but killed himself a year later. When did Egbert die?
+
+**Labeled answer:** 'August 16, 1980, in Morganton North Carolina'
+
+**Choices:**
+- August 16, 1980, in Morganton North Carolina ← labeled
+- December 12, 1979, in East Lansing Michigan
+- March 4, 1981, in Dallas Texas
+- June 17, 1980, in Aurora Colorado
+
+### trivia #1348 (T4) — wrong_answer · high
+
+**Auditor:** Green and red are ALLIES on the MtG color pie, not enemies; enemy pairs are W-B, W-R, U-R, U-G, B-G, so the listed 'green and red' pair is incorrect
+
+**Stem:** Richard Garfield designed Magic the Gathering's five-color system as a deliberately rock-paper-scissors structure with five mana types. Each color has distinct commitments: white for order, blue for knowledge, black for ambition, red for emotion, and green for nature. This system is called the "color pie." Which two colors sit diametrically opposed on the wheel?
+
+**Labeled answer:** 'White and black; blue and red; green and red (each color has two enemies)'
+
+**Choices:**
+- White and black; blue and red; green and red (each color has two enemies) ← labeled
+- Red and blue only; white and green only; black is allied with all four
+- Each color is enemy of the two next to it on the wheel; allies with the two opposite
+- All colors are equally allied with the others except colorless (gray)
+
+### trivia #1365 (T5) — wrong_answer · high
+
+**Auditor:** T1 Village of Hommlet's hidden cult serves the Temple of Elemental Evil, whose patron is Zuggtmoy (Demon Queen of Fungi), not Lolth; Zuggtmoy is one of the distractors and is the correct answer.
+
+**Stem:** T1 The Village of Hommlet (1979) shows a deceptively simple frontier town hiding an evil cult. The local cleric of Saint Cuthbert, the smiling Brother Calmert, and one other Hommlet authority figure are secretly cultists. Careless players often befriend them as allies. The most famous hidden traitor, shown as a young friendly priest, secretly serves which demonic patron?
+
+**Labeled answer:** 'Lolth — the Demon Queen of Spiders, through her terrestrial mortal cult'
+
+**Choices:**
+- Lolth — the Demon Queen of Spiders, through her terrestrial mortal cult ← labeled
+- Iuz — the cambion demigod of the northern Flanaess
+- Zuggtmoy — the demon queen of fungi, beneath the Temple
+- Asmodeus — the lord of the Nine Hells of Baator
+
+### trivia #1381 (T5) — wrong_attribution · medium
+
+**Auditor:** The core title 'Two Sought Adventure' is correct as the first-published Fafhrd/Mouser story (Aug 1939), but the answer text attributes it to Weird Tales; it was actually published in Unknown magazine.
+
+**Stem:** American writer Fritz Leiber and his college friend Harry Otto Fischer invented two sword-and-sorcery heroes back in 1934: Fafhrd, a giant northern barbarian with red hair, and the Gray Mouser, a small thief-magician of the city. The two friends kicked the characters around in letters for five years. Then in August 1939 the very first published Fafhrd-and-Mouser story finally appeared in the era's leading fantasy-and-horror pulp magazine, launching one of fantasy's foundational series. What was the title of that first-published 1939 story?
+
+**Labeled answer:** "'Two Sought Adventure' — the original 1939 Weird Tales publication title"
+
+**Choices:**
+- 'Two Sought Adventure' — the original 1939 Weird Tales publication title ← labeled
+- 'The Jewels in the Forest' — the second-published Fafhrd-Mouser story
+- 'The Bleak Shore' — Leiber's most-anthologized title
+- 'Ill Met in Lankhmar' — the Hugo-winning 1970 novella
+
+### trivia #1424 (T4) — wrong_attribution · high
+
+**Auditor:** Noland is the Battle Factory Head in the anime, not the Pyramid King; Brandon is the Pyramid King (who uses the Regi trio, not Articuno). Noland is the correct Frontier Brain who lost to Charizard's Seismic Toss, but his title in the answer is wrong.
+
+**Stem:** In the 2006 Pokemon: Battle Frontier season, Ash's Charizard returns from training at Charicific Valley to challenge a Frontier Brain in a legendary 1-vs-3 match. The Frontier Brain is a former military pilot who runs the Battle Pyramid and uses a single Articuno as his ace. Charizard's Seismic Toss takes Articuno down. Name the Frontier Brain.
+
+**Labeled answer:** 'Noland (Pyramid King)'
+
+**Choices:**
+- Noland (Pyramid King) ← labeled
+- Brandon (Pyramid King of Snowpoint, alternate continuity)
+- Greta (Battle Arena's Brain)
+- Tucker (Battle Dome's Brain)
 
 ---
