@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 14717 · **Suspect:** 58 · **Unique suspects:** 58
-**Total audited:** 14775
+**Sound so far:** 15389 · **Suspect:** 61 · **Unique suspects:** 61
+**Total audited:** 15450
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -771,7 +771,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## science (4 suspects)
+## science (7 suspects)
 
 ### science #1428 (T4) — wrong_attribution · low
 
@@ -828,6 +828,48 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Desert dust settling on the slopes and feeding the soil
 - Deeper winter snowpack lasting later into the spring
 - Less competition as neighbouring old trees died back
+
+### science #3093 (T3) — off_by_number · medium
+
+**Auditor:** LeMay's canonical response to the jet-stream problem was switching to LOW-altitude (about 5,000-9,000 ft) night incendiary raids starting March 9-10, 1945; '25,000 ft' is not the standard historical figure and would still put B-29s inside the jet stream.
+
+**Stem:** In late 1944 American B-29 crews arrived over Japan planning to bomb from 30,000 ft. At that altitude they suddenly found themselves flying inside winds of 200-300 mph -- Oishi's river, unknown to them. Under full throttle some aircraft made almost no ground speed at all and bombs missed by miles. General Curtis LeMay's response was to change ONE thing about how the B-29s flew. What did he change?
+
+**Labeled answer:** 'he lowered their bombing altitude to about 25,000 ft'
+
+**Choices:**
+- he lowered their bombing altitude to about 25,000 ft ← labeled
+- he grounded the daylight raids in favour of night bombing
+- he ordered new heavier propellers fitted to every airframe
+- he pulled the fleet back to India and cancelled the campaign
+
+### science #3283 (T1) — off_by_number · medium
+
+**Auditor:** Paleogeographic reconstructions place Ellesmere Island at approximately 10-15 degrees SOUTH of the paleoequator during the Late Devonian (~375 Ma); Shubin himself describes the Tiktaalik site as being near the equator, not at 30 degrees north.
+
+**Stem:** Neil Shubin's team dug Tiktaalik out of bare tundra on southern Ellesmere Island, more than 700 miles north of the Arctic Circle, with firearms kept close for polar bears. But continents move. Where on the globe did that ground sit when Tiktaalik was alive?
+
+**Labeled answer:** 'about 30 degrees north, the subtropical belt'
+
+**Choices:**
+- about 30 degrees north, the subtropical belt ← labeled
+- about 10 degrees north, deep in the tropics
+- about 60 degrees north, the cool northern belt
+- about 30 degrees south, the southern subtropics
+
+### science #3391 (T2) — wrong_answer · medium
+
+**Auditor:** Frederick II's main practical reason for backing Tycho was astrology/horoscopes for the royal family (Tycho cast them for the king's sons), not star charts for ship navigation; celestial-navigation-driven royal observatories (Greenwich, Paris) came a century later.
+
+**Stem:** Before big grants and government science, astronomers had to lean on rich patrons. In 1576, King Frederick II of Denmark gave the astronomer Tycho Brahe a whole island in the Oresund. He paid to build a fortress-observatory on it. What was the king's main practical reason for spending a fortune on stargazing?
+
+**Labeled answer:** 'Accurate star charts for ship navigation'
+
+**Choices:**
+- Accurate star charts for ship navigation ← labeled
+- To predict the weather two years ahead
+- To find gold and silver deposits underground
+- To keep track of daylight saving time
 
 ---
 
