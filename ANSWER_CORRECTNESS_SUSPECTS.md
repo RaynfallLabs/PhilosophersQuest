@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 18155 · **Suspect:** 70 · **Unique suspects:** 70
-**Total audited:** 18225
+**Sound so far:** 18703 · **Suspect:** 72 · **Unique suspects:** 72
+**Total audited:** 18775
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -69,7 +69,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## animal (5 suspects)
+## animal (7 suspects)
 
 ### animal #126 (T3) — dual_correct · medium
 
@@ -140,6 +140,34 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Around half
 - Around 9 in every 10
 - Nearly all of them
+
+### animal #1915 (T2) — dual_correct · medium
+
+**Auditor:** A sloth on land moves ~1.8-2.4 m/min; belly-wriggling (army crawl) at even a very leisurely pace outpaces that too, so 'Wriggling forward on the belly' is also true.
+
+**Stem:** Guinness World Records has crowned the three-toed sloth of Central and South America as the slowest mammal on Earth. On the ground, this shaggy, tree-loving animal creeps along at just 1.8 to 2.4 meters a minute — barely faster than a slow drift. Sloths are so slow they climb down from their rainforest tree only about once a week, just to poop. Which of these ways of moving across the floor would let a person out-crawl a three-toed sloth?
+
+**Labeled answer:** 'Crawling on hands and knees'
+
+**Choices:**
+- Crawling on hands and knees ← labeled
+- Wriggling forward on the belly
+- Scooting along seated on the hips
+- Rolling sideways over and over
+
+### animal #2197 (T4) — wrong_answer · medium
+
+**Auditor:** The well-known 2013 Alaska rockfish (Henry Liebman's Sitka catch) was aged at ~200 years via otoliths, matching the size-based estimate — not revealed to be 'only 64 years'. No prominent 2013 Alaskan rockfish case matches the 64-year narrative.
+
+**Stem:** In 2013, an enormous rockfish was pulled from deep Alaskan water, and, judging just by its huge size, biologists at first guessed it might be around 200 years old — nearly a record for its kind. Then they carefully removed its otoliths — the tiny growth-ringed ear stones inside its skull — split them open, and counted the rings under a microscope. The rings told a very different story. How old was the fish really?
+
+**Labeled answer:** 'Only 64 years'
+
+**Choices:**
+- Only 64 years ← labeled
+- Exactly 200 years
+- Over 400 years
+- Just 12 years
 
 ---
 
