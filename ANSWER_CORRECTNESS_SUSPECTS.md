@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 22372 · **Suspect:** 78 · **Unique suspects:** 78
-**Total audited:** 22450
+**Sound so far:** 24366 · **Suspect:** 84 · **Unique suspects:** 84
+**Total audited:** 24450
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -739,7 +739,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## geography (2 suspects)
+## geography (8 suspects)
 
 ### geography #529 (T2) — wrong_answer · low
 
@@ -754,6 +754,90 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - flaming
 - folded
 - singing
+
+### geography #697 (T2) — dual_correct · high
+
+**Auditor:** Both 'ferry' and the distractor 'ford' derive from PIE *per- 'to cross'; 'ford' (OE ford ~ ON fjǫrðr, both from PGmc *ferþuz/*furduz < PIE *pértus 'crossing') is arguably the more direct cognate of 'fjord' and matches the stem's 'waterway you cross over' gloss better than 'ferry' (from PGmc *farjaną 'to carry').
+
+**Stem:** A fjord is a long, narrow arm of the sea that reaches deep between steep mountain cliffs — Norway's coast is full of them, carved by ancient glaciers. The word 'fjord' sailed into English straight from Old Norse 'fjoerdr,' the tongue of Norway's Viking seafarers. The root meant a waterway you cross over. From that very same ancient root, English gets one of these everyday travel words. Which one?
+
+**Labeled answer:** 'ferry'
+
+**Choices:**
+- ferry ← labeled
+- ford
+- wharf
+- barge
+
+### geography #733 (T5) — dual_correct · medium
+
+**Auditor:** Dallol's palette is famously produced by both iron oxides (red/orange, and iron(II) greens) AND sulfur (bright yellow/gold and green sulfur allotropes); the stem's 'gold' band in particular is sulfur, so sulfur is also a legitimate answer.
+
+**Stem:** Around the hot springs of Dallol, in Ethiopia's Danakil, the salt flats erupt into terraces of white, lime-green, gold, orange, and blood-red. The palette is so alien that scientists use the site to rehearse for other planets. In most rainbow-coloured hot springs, thriving microbes paint the bright bands. But Dallol's brines are far too acidic and scalding for life. Raw mineral chemistry does the painting instead. Which element's compounds splash these otherworldly colours across Dallol?
+
+**Labeled answer:** 'iron'
+
+**Choices:**
+- iron ← labeled
+- copper
+- sulfur
+- manganese
+
+### geography #1166 (T3) — wrong_answer · medium
+
+**Auditor:** Lake Natron's water is a sodium carbonate/bicarbonate solution (natron); lye is sodium hydroxide (NaOH) — different chemistry. Natron's pH ~10.5 is well below lye's 13-14. Chemically it is closest to washing soda, not lye; the caustic feel is real but the labeled chemical identification is inaccurate.
+
+**Stem:** Wade into most lakes and nothing happens. Wade into Lake Natron and the scalding water can burn your skin and eyes -- it is packed with dissolved soda and heats to around 60 C. Chemically, Natron's water is a natural version of which harsh household substance?
+
+**Labeled answer:** 'Lye, the caustic cleaner that unclogs drains'
+
+**Choices:**
+- Lye, the caustic cleaner that unclogs drains ← labeled
+- Bleach, the cleaner that whitens laundry
+- Ammonia, the cleaner that washes windows
+- Baking soda, the powder that raises cakes
+
+### geography #1703 (T5) — wrong_answer · low
+
+**Auditor:** Nabataean pipe innovation famously cited by Ortloff was precise inner-diameter sizing to keep flow partial (~1/3 full) and sub-critical, avoiding hydraulic jumps -- not 'tapered ends that slotted together' (socket-and-spigot joints were standard Roman/Hellenistic practice, never lost, never 'rediscovered').
+
+**Stem:** The Nabataeans piped spring water for miles into Petra through clay pipelines. They shaped each pipe section with one clever detail that controlled the water's speed and cut down turbulence -- a refinement modern engineers only rediscovered in the last couple of centuries. What was it?
+
+**Labeled answer:** 'Tapered ends that slotted together.'
+
+**Choices:**
+- A lead lining sealing every joint.
+- Tapered ends that slotted together. ← labeled
+- A spiral groove cut inside each pipe.
+- Small valves that opened on their own.
+
+### geography #2087 (T3) — wrong_answer · medium
+
+**Auditor:** The 2008 re-erection of the Aksum obelisk used titanium/stainless-steel dowels plus carbon-fibre reinforcement; Kevlar-fibre bars are not what published restoration reports cite. Distractor 'rods of carbon fibre' is closer to the record.
+
+**Stem:** In 2002, while the looted obelisk still stood abroad, lightning struck its top and cracked the old stone. Builders blamed three steel bars driven through it in 1937. Those bars had turned the pillar into a huge lightning rod. When Ethiopia later rebuilt the obelisk, what strong modern material did they use to bind its pieces?
+
+**Labeled answer:** 'bars of Kevlar fibre'
+
+**Choices:**
+- bars of Kevlar fibre ← labeled
+- rods of carbon fibre
+- cores of poured concrete
+- ropes of woven fibreglass
+
+### geography #2537 (T5) — wrong_attribution · low
+
+**Auditor:** Araniko built the White Stupa/Dagoba at Miaoying Temple in Beijing (a chorten form); Chinese pagodas long predate him (Han dynasty) and evolved from earlier Indian stupas via Central Asia — attributing 'the pagoda' as an East Asian symbol to his Newar tradition is a popular Nepali claim, not the mainstream historical view.
+
+**Stem:** In the 1270s, a young architect from the Kathmandu Valley named Araniko led eighty Nepali craftsmen over the Himalayas to serve Kublai Khan. In the Mongol emperor's Chinese capital, they raised a great white temple-tower. Historians say Araniko's Newar tradition helped shape the temple form now seen as the very symbol of East Asia. Which building form is that?
+
+**Labeled answer:** 'the pagoda'
+
+**Choices:**
+- the pagoda ← labeled
+- the ziggurat
+- the minaret
+- the obelisk
 
 ### geography #2732 (T4) — wrong_answer · medium
 
