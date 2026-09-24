@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 24366 · **Suspect:** 84 · **Unique suspects:** 84
-**Total audited:** 24450
+**Sound so far:** 25290 · **Suspect:** 85 · **Unique suspects:** 85
+**Total audited:** 25375
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -739,7 +739,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## geography (8 suspects)
+## geography (9 suspects)
 
 ### geography #529 (T2) — wrong_answer · low
 
@@ -852,6 +852,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - gold, silver, and platinum
 - iron, nickel, and lead
 - tin, mercury, and manganese
+
+### geography #3126 (T4) — wrong_answer · medium
+
+**Auditor:** The famous Carlos Gutierrez photos of the 2008 Chaiten eruption show vivid purple/violet lightning, not green -- purple is the well-known color of that iconic image.
+
+**Stem:** In 2008, Chile's Chaiten volcano erupted. Photographer Carlos Gutierrez caught an amazing sight. The lightning inside its ash cloud did not flash the usual white or blue-white. Instead, it glowed a strange, vivid color that made his photo famous around the world. What color was Chaiten's eerie lightning?
+
+**Labeled answer:** 'green'
+
+**Choices:**
+- green ← labeled
+- red
+- purple
+- gold
 
 ---
 
