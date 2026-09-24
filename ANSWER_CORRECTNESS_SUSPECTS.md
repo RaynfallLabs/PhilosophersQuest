@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 27339 · **Suspect:** 86 · **Unique suspects:** 86
-**Total audited:** 27425
+**Sound so far:** 27885 · **Suspect:** 90 · **Unique suspects:** 90
+**Total audited:** 27975
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -1217,7 +1217,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## theology (1 suspects)
+## theology (3 suspects)
 
 ### theology #1544 (T5) — wrong_answer · medium
 
@@ -1233,9 +1233,65 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - the einherjar, the Valkyries, the Norns, and the trolls
 - the light-elves, the dark-elves, the frost-giants, and the fire-giants
 
+### theology #2531 (T1) — wrong_answer · low
+
+**Auditor:** Vafthrudnismal/Snorri do not specify gender of Lif and Lifthrasir; the common English convention treats Lif ('life') as female and Lifthrasir ('life-yearner') as male, so labeling Lif as the man is at best contested.
+
+**Stem:** In Norse myth, Ragnarok is the end of the world, when the fire-giant Surt sets the sky ablaze and burns the earth. Two humans, a man and a woman, hide inside a safe grove called Hoddmimir's Wood and live on the morning dew. When the world is green again, all new humans will come from the two of them. What is the man's name?
+
+**Labeled answer:** 'Lif'
+
+**Choices:**
+- Lif ← labeled
+- Ask
+- Bor
+- Bergelmir
+
+### theology #2555 (T4) — wrong_answer · low
+
+**Auditor:** Classical tradition of the 'peculiar Athenian body-feature' is flat buttocks (lispopygoi), tied to Theseus losing his rear/buttocks on the chair, not his thighs; some late retellings say thighs but the body-feature joke is buttock-specific
+
+**Stem:** Heracles gripped Theseus by the arm and tore him bodily off the Chair of Forgetfulness. So violent was the pull that some pieces of Theseus stayed behind on the stone. Athenians afterwards joked that this was why the men of Athens had a peculiar body-feature. Which part of Theseus did Heracles leave stuck to the chair?
+
+**Labeled answer:** 'strips of his thighs'
+
+**Choices:**
+- strips of his thighs ← labeled
+- chunks of his shoulders
+- the calves of his legs
+- the palms of his hands
+
 ---
 
-## trivia (1 suspects)
+## trivia (3 suspects)
+
+### trivia #41 (T2) — wrong_answer · high
+
+**Auditor:** The Kliq roster is wrong: 'Triple H' and 'Hunter Hearst Helmsley' are the same person listed twice; the fifth member of The Kliq at the 1996 MSG Curtain Call was Sean Waltman (1-2-3 Kid / X-Pac), not a duplicate of Triple H.
+
+**Stem:** On May 19, 1996, at Madison Square Garden in New York City, the WWF (World Wrestling Federation) hosted a live event called In Your House: Beware of Dog. At the end of the night, five real-life best friends who worked for the company broke wrestling's oldest rule — never let fans see the good guys and bad guys hanging out — and hugged each other on stage in front of the whole arena. The moment became known as the Curtain Call, and the group of friends was called The Kliq. Who were the five men?
+
+**Labeled answer:** 'Shawn Michaels, Triple H, Razor Ramon, Diesel, and Hunter Hearst Helmsley'
+
+**Choices:**
+- Shawn Michaels, Triple H, Razor Ramon, Diesel, and Hunter Hearst Helmsley ← labeled
+- Bret Hart, Owen Hart, British Bulldog, Jim Neidhart, and Pillman
+- Hulk Hogan, Macho Man, Ultimate Warrior, Roddy Piper, and Mr. T
+- Stone Cold, The Rock, Mankind, Big Show, and Undertaker
+
+### trivia #211 (T3) — wrong_answer · medium
+
+**Auditor:** The Slayers nickname that makes Lina Inverse lose her cool is 'Dragon Spooker' (also present as 'Dragon Spook' in the choices) — 'Bandit Killer' is a title she wears without embarrassment.
+
+**Stem:** Hajime Kanzaka's 1990s comedy-fantasy series Slayers stars Lina Inverse, a red-haired teen sorceress with a legendary temper who wanders the countryside robbing bandits. Her signature spell, the Dragon Slave, can flatten a whole city. Bandits and rival mages have given her one particular nickname that always makes her lose her cool. What is it?
+
+**Labeled answer:** 'Bandit Killer'
+
+**Choices:**
+- Bandit Killer ← labeled
+- Sandstorm Sorceress
+- Witch of the Wastes
+- Dragon Spook
 
 ### trivia #668 (T5) — wrong_answer · medium
 
