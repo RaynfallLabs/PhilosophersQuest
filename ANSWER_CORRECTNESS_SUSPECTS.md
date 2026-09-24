@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 5460 · **Suspect:** 40 · **Unique suspects:** 40
-**Total audited:** 5500
+**Sound so far:** 8426 · **Suspect:** 49 · **Unique suspects:** 49
+**Total audited:** 8475
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -539,7 +539,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## history (2 suspects)
+## history (11 suspects)
 
 ### history #753 (T5) — wrong_attribution · medium
 
@@ -554,6 +554,132 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - He fell to his knees and begged the young soldiers to spare his life
 - He read aloud a list of judges he swore would die after him
 - He stayed silent and refused the blindfold the guards offered him
+
+### history #2511 (T5) — wrong_answer · medium
+
+**Auditor:** Sailing west means you experience one FEWER day than the stationary world — the crew's log was BEHIND local (Wed vs. Thu), which is standardly described as 'lost a day,' not 'gained a day.' Pigafetta and Wikipedia both phrase this as the crew having lost a day.
+
+**Stem:** When the Victoria reached the Cape Verde islands in July 1522, the crew got a shock. Their ship's logbook, kept faithfully every single day for three years, said it was Wednesday — but every local insisted it was Thursday. The sailors had stumbled onto the first real-world proof of an idea we still use today. What had happened?
+
+**Labeled answer:** 'By always sailing west they had gained a whole day'
+
+**Choices:**
+- By always sailing west they had gained a whole day ← labeled
+- Their calendar had skipped a leap year at sea
+- A storm had knocked out two days of records
+- They had crossed the equator one time too many
+
+### history #2729 (T5) — dual_correct · medium
+
+**Auditor:** Both 'still classified secrets' and 'revealing them would expose the broken codes' are correct; the second is arguably the more specific/informative reason for classification.
+
+**Stem:** The top-secret Venona project decoded intercepted Soviet cables. It named Julius Rosenberg in 21 messages under the codenames ANTENNA and LIBERAL, and it showed that he really did run a spy ring. Yet prosecutors never used a single one of these cables against him in court. Why were the decoded cables kept out of Rosenberg's trial?
+
+**Labeled answer:** 'The cables were still classified secrets'
+
+**Choices:**
+- The cables were still classified secrets ← labeled
+- Revealing them would expose the broken codes
+- The cables named only his codename
+- The code-breakers refused to testify
+
+### history #3083 (T4) — wrong_answer · medium
+
+**Auditor:** Pausanias (5.11.10) records that OIL was used in front of Zeus at Olympia (damp climate), while WATER was used in front of Athena Parthenos on the Athenian Acropolis (dry climate) — the answer appears to swap the two.
+
+**Stem:** Inside Athens' great temple of Athena towered Phidias' statue of the goddess: about forty feet tall, sheathed in ivory and over a ton of gold. On the floor right in front of her, Phidias kept a shallow pool of one liquid, both to protect the ivory and to mirror her image. What filled the pool?
+
+**Labeled answer:** 'olive oil'
+
+**Choices:**
+- olive oil ← labeled
+- fresh spring water
+- sweet wine
+- scented perfume
+
+### history #3893 (T5) — off_by_number · medium
+
+**Auditor:** Stem's own numbers (1,500+ sailors dead vs ~150,000 freed) give a ratio of ~1:100, matching distractor 'one sailor dead for every hundred slaves freed', not the labeled 1:9. Standard historical citation (~1,587 sailors / 150,000 freed) is also ~1:95, not 1:9.
+
+**Stem:** Hunting slave ships was deadly work, and not only for the captives. Across half a century chasing slavers off the African coast, the Royal Navy's West Africa Squadron lost more than 1,500 of its own sailors, most of them to tropical disease rather than enemy fire. Contemporaries summed up the human cost of the campaign with a single grim ratio, comparing sailors lost to Africans freed. What was that ratio?
+
+**Labeled answer:** 'One sailor dead for every nine slaves freed'
+
+**Choices:**
+- One sailor dead for every nine slaves freed ← labeled
+- One sailor dead for every slave freed
+- One sailor dead for every hundred slaves freed
+- One sailor dead for every thousand slaves freed
+
+### history #4145 (T3) — off_by_number · medium
+
+**Auditor:** Traditional hadith (Sahih al-Bukhari 4265) has Khalid ibn al-Walid saying NINE swords broke in his hand at Mu'tah, not eight.
+
+**Stem:** The Arab general Khalid ibn al-Walid was remembered as never losing a battle in his whole life, and he earned the title 'Sayf Allah' — the Sword of Allah. Legend says the name came from a furious fight at Mu'tah where he held the line so hard that something happened to his weapons. What did he do?
+
+**Labeled answer:** 'He broke eight swords in his hands'
+
+**Choices:**
+- He broke eight swords in his hands ← labeled
+- He fought on after losing both eyes
+- He held the bridge entirely alone
+- He slew the enemy king in single combat
+
+### history #4348 (T3) — off_by_number · medium
+
+**Auditor:** Solzhenitsyn was released from Ekibastuz camp in February 1953 (approx Feb 9-13); Stalin died March 5, 1953. The two dates are close but not the 'exact same day' — this is a widely repeated but likely inaccurate coincidence claim.
+
+**Stem:** The Russian writer Aleksandr Solzhenitsyn spent eight years in Joseph Stalin's Soviet labor camps for writing private letters that mocked Stalin. In 1953, he was finally released and walked out of the camps a free man. By a strange stroke of luck, his very first day of freedom fell on the exact same day as one enormous event. What event was it?
+
+**Labeled answer:** 'The day Stalin died'
+
+**Choices:**
+- The day Stalin died ← labeled
+- The end of the Second World War
+- The launch of the first Sputnik
+- The outbreak of the Korean War
+
+### history #4405 (T3) — dual_correct · low
+
+**Auditor:** Hunayn ibn Ishaq's famous refusal cited both his religion AND his profession; the labeled 'oath as physician' is right, but distractor 4 'poisoning dishonored the calling of a healer' captures essentially the same professional-ethics reason and could also be scored correct.
+
+**Stem:** In 9th-century Baghdad, Caliph al-Mutawakkil summoned the great Christian scholar-physician Hunayn ibn Ishaq, translator of the Greek doctor Galen, and offered him lavish rewards to brew a poison for an enemy of the court. Hunayn flatly refused -- and was thrown into prison for a whole year to change his mind. What reason did Hunayn give for saying no?
+
+**Labeled answer:** 'His oath as a physician bound him to heal, never to harm'
+
+**Choices:**
+- His oath as a physician bound him to heal, never to harm ← labeled
+- His faith forbade him to take any human life
+- He had sworn that same healer's oath to the enemy too
+- He held that poisoning dishonored the calling of a healer
+
+### history #4590 (T3) — off_by_number · low
+
+**Auditor:** El Manati rubber balls dated ~1700 BC vs first Olympics 776 BC = ~924 years, which is NOT 'over a thousand years'; it's under. Answer is directionally right but numerically off.
+
+**Stem:** The Mesoamerican ball game was played with a solid rubber ball roughly a foot across, weighing up to nine pounds. The oldest such rubber balls ever recovered were pulled from a sacrificial bog at El Manati in Mexico. They date to about 1700 BC. Compared to the first Greek Olympic Games, how old does that make this contest?
+
+**Labeled answer:** 'Older than the first Olympics by over a thousand years'
+
+**Choices:**
+- Older than the first Olympics by over a thousand years ← labeled
+- Older than the first Olympics by about fifty years
+- Younger than the first Olympics by a few centuries
+- Played at the very same time as the first Olympics
+
+### history #4642 (T4) — wrong_attribution · medium
+
+**Auditor:** Mainstream account identifies the ill delegate whose absence killed Jefferson's 1784 anti-slavery clause as John Beatty of New Jersey (leaving NJ unable to cast a state vote), not James Monroe of Virginia; Jefferson later wrote 'the voice of a single individual...' referring to the NJ delegate.
+
+**Stem:** In 1784 — three years before the famous Northwest Ordinance ever passed — the Virginian statesman Thomas Jefferson wrote a bold plan to ban slavery from every western United States territory after the year 1800. His plan lost by a single vote in Congress. Why was that one deciding vote never cast?
+
+**Labeled answer:** 'A Virginia delegate, James Monroe, lay sick in bed and missed the vote'
+
+**Choices:**
+- A Virginia delegate, James Monroe, lay sick in bed and missed the vote ← labeled
+- Jefferson withdrew his own plan at the last moment to save it for later
+- A messenger lost the only signed copy on the road to Congress
+- Southern delegates walked out before the count could be taken
 
 ### history #5042 (T2) — wrong_attribution · medium
 
