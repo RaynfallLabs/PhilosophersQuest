@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 28341 · **Suspect:** 109 · **Unique suspects:** 109
-**Total audited:** 28450
+**Sound so far:** 28903 · **Suspect:** 122 · **Unique suspects:** 122
+**Total audited:** 29025
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -1277,7 +1277,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## trivia (21 suspects)
+## trivia (34 suspects)
 
 ### trivia #41 (T2) — wrong_answer · high
 
@@ -1517,6 +1517,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Maverick's romantic interest was originally a Naval officer instead of a contractor
 - The Top Gun school was originally based at Miramar but moved to fictional Coronado
 
+### trivia #508 (T4) — dual_correct · high
+
+**Auditor:** Stem asks who 'went on to' play comic-book heroes 'in the following decade' (post-2010), but labeled answer parenthetically admits Routh's Superman Returns (2006) is 'pre-Scott Pilgrim'; distractor 2 (Larson-Captain Marvel 2019 + Routh-Atom on Legends of Tomorrow 2016) is fully true AND actually fits the stem's timing better.
+
+**Stem:** Edgar Wright's 2010 Scott Pilgrim vs. the World was a financial disappointment on release ($47M on a $90M production+marketing budget) but became a cult favorite on home video. The film features Brandon Routh as Todd Ingram, Chris Evans as Lucas Lee, and Brie Larson as Envy Adams. Two of those cast members went on to play other comic-book heroes in the following decade. Which roles?
+
+**Labeled answer:** 'Routh played Superman (Returns, 2006, pre-Scott Pilgrim) and Evans played Captain America (First Avenger, 2011)'
+
+**Choices:**
+- Routh played Superman (Returns, 2006, pre-Scott Pilgrim) and Evans played Captain America (First Avenger, 2011) ← labeled
+- Larson played Captain Marvel (2019) and Routh played Atom on CW's Legends of Tomorrow
+- Evans played the Human Torch (Fantastic Four, 2005) and Routh played the Atom on CW
+- Larson played Squirrel Girl on a Marvel pilot and Evans played Captain America
+
 ### trivia #527 (T4) — wrong_attribution · high
 
 **Auditor:** Tab is a Coca-Cola brand product, not a Pepsi-brand variant; the answer text is factually wrong when it describes both Tab and Pepsi Free as 'Pepsi-brand variants'.
@@ -1531,6 +1545,62 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Mountain Dew and Sunkist, brands that hadn't yet been launched
 - Coca-Cola Classic and New Coke, distinguishing the 1985 confusion
 
+### trivia #548 (T5) — wrong_answer · high
+
+**Auditor:** No documented Yoda Easter-egg exists in Indiana Jones and the Last Crusade's Berlin book-burning scene; Frank Oz did voice Yoda in ESB, but the 'Last Crusade scene used the same Oz vocal style' claim appears fabricated.
+
+**Stem:** Released in 1989, Jim Henson's character Yoda from Star Wars (1980) gets a brief 'Empire Strikes Back' Easter-egg appearance in Indiana Jones and the Last Crusade (1989) during the Berlin book-burning scene. The two characters share a creator connection. Which puppeteer's voice performance links Yoda to the Last Crusade gag?
+
+**Labeled answer:** "Frank Oz performed Yoda's voice and puppetry for ESB and the Last Crusade scene used the same Oz vocal style for a brief gag"
+
+**Choices:**
+- Frank Oz performed Yoda's voice and puppetry for ESB and the Last Crusade scene used the same Oz vocal style for a brief gag ← labeled
+- Stuart Freeborn designed both Yoda's makeup and a Nazi officer's prosthetic for Last Crusade
+- Industrial Light & Magic built both Yoda's puppetry rig and Last Crusade's Holy Grail effect
+- The hidden Yoda appears as a ghost on a flag in the Berlin book-burning crowd scene
+
+### trivia #550 (T5) — wrong_attribution · high
+
+**Auditor:** Dire Straits' Brothers in Arms (1985) was recorded at AIR Studios Montserrat and Power Station in New York, not at A&M Records Studios in Hollywood.
+
+**Stem:** In 1986, Tony Scott's Top Gun was a financial massive ($357M worldwide on $15M budget). The film's iconic 'Danger Zone' theme by Kenny Loggins became one of the decade's most-licensed songs. Loggins recorded the song at a specific California studio that had previously produced what other major 1985 hit album?
+
+**Labeled answer:** "The 'Brothers in Arms' Dire Straits album, at A&M Records Studios in Hollywood"
+
+**Choices:**
+- The 'Brothers in Arms' Dire Straits album, at A&M Records Studios in Hollywood ← labeled
+- Bruce Springsteen's 'Born in the U.S.A.' at the Power Station in New York
+- Madonna's 'Like a Virgin' album at Sigma Sound in Philadelphia
+- Michael Jackson's 'Thriller' tracks recorded at the same time as Loggins
+
+### trivia #554 (T5) — wrong_answer · medium
+
+**Auditor:** Chief Chilly was added in Super Mario 64 DS (2004), not the original 1996 N64 game the stem specifies; his fight also involves ground-pounding him off a platform, not rolling snowballs at Mario. Cool Cool Mountain's rolling snowball is the classic SM64 snowball reference.
+
+**Stem:** In The Super Mario Bros. Movie from 2023, the villain King Bowser attacks the peaceful Snow Kingdom by rolling giant snowballs across the ice at its penguin defenders. Nintendo fans instantly noticed the move is a callback to a boss fight in Super Mario 64, the 1996 Nintendo 64 game where the plumber Mario first ran around in a full three-dimensional world. Which Super Mario 64 boss and stage is the 2023 movie's snowball scene copying?
+
+**Labeled answer:** "Chief Chilly's snowball attack in Snowman's Land, where the boss rolls snowballs at Mario"
+
+**Choices:**
+- Chief Chilly's snowball attack in Snowman's Land, where the boss rolls snowballs at Mario ← labeled
+- Mr. Blizzard's whirling-snowball spawn in Cool Cool Mountain
+- Big Boo's Haunt ice-room reflection puzzle from the third star
+- The Bob-omb Battlefield's giant cannonball physics test from the first stage
+
+### trivia #555 (T5) — wrong_answer · high
+
+**Auditor:** The T2 thumbs-up final scene was filmed at the steel mill (Kaiser Steel, Fontana, CA), not at the Cyberdyne Systems set in El Segundo. The answer text is internally contradictory ('at Cyberdyne set... after the steel-mill battle').
+
+**Stem:** Released in 1991, T2 (Terminator sequel) shot the 'I'll be back' moment as a callback to the original 1984 film. James Cameron also wrote the screenplay with William Wisher Jr. The film's $94M budget was the largest in film history at the time, surpassing Total Recall (1990) which had held the record briefly. T2 grossed $520M worldwide — a remarkable success. Where was the iconic 'thumbs-up' final scene filmed?
+
+**Labeled answer:** 'At the Cyberdyne Systems set in El Segundo, California, after the climactic steel-mill battle'
+
+**Choices:**
+- At the Cyberdyne Systems set in El Segundo, California, after the climactic steel-mill battle ← labeled
+- On the Gainax soundstage in Tokyo as a homage to the Eva production's collapse
+- At a Pinewood Studios soundstage in England near Cameron's residence
+- At the Skywalker Ranch sound stage in Marin County, California
+
 ### trivia #637 (T4) — wrong_attribution · medium
 
 **Auditor:** Hamill has cited the Wicked Witch's cackle and Claude Rains as influences, but Claude Rains never played a character named 'Mr. Norton' in any known role; the specific attribution 'Mr. Norton' appears fabricated (the Rains reference is usually to The Invisible Man or Mr. Skeffington).
@@ -1544,6 +1614,34 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - His own laughter recorded at exaggerated speeds and reverbed up
 - Cesar Romero's 1966 Joker pitched up an octave with breath at the end
 - Heath Ledger's planned Dark Knight Joker voice given thirteen years later
+
+### trivia #658 (T5) — wrong_attribution · medium
+
+**Auditor:** ThunderCats character designs are credited to Yoshitaka Amano; Sadamoto was a Gainax founding member (1984+) working on Wings of Honneamise/Nadia, not at Pacific Animation Corporation on ThunderCats.
+
+**Stem:** Thundercats (1985-1989) was made in Tokyo by Pacific Animation Corporation. Its opening scenes — Lion-O drawing the Sword of Omens, the cats flying through space — were storyboarded by an animator who later became famous for a very different anime. Who was he, the artist who became a giant-robot anime legend in the 90s?
+
+**Labeled answer:** 'Yoshiyuki Sadamoto, future character designer of Neon Genesis Evangelion (1995)'
+
+**Choices:**
+- Yoshiyuki Sadamoto, future character designer of Neon Genesis Evangelion (1995) ← labeled
+- Yoshikazu Yasuhiko, character designer of Mobile Suit Gundam (1979)
+- Akira Toriyama, creator and lead designer of Dragon Ball (1984)
+- Hayao Miyazaki, before he founded Studio Ghibli in 1985 with Takahata
+
+### trivia #663 (T5) — wrong_answer · medium
+
+**Auditor:** Stem specifies the response involves a fictional fast-food franchise; labeled answer is the dental-floss quote which has no fast-food reference, so it does not match the stem's own criterion.
+
+**Stem:** The 1995 Pinky and the Brain show's catchphrase 'Are you pondering what I'm pondering?' is delivered by Brain to Pinky 87 times across the show's 65 episodes. Pinky's response is always a non-sequitur joke. Out of those 87 deliveries, fan researchers have catalogued one specific Pinky response as the most quoted of all — a response involving a fictional fast-food franchise. What did Pinky reply?
+
+**Labeled answer:** "I think so, Brain, but we'll never get a monkey to use dental floss"
+
+**Choices:**
+- I think so, Brain, but we'll never get a monkey to use dental floss ← labeled
+- I think so, Brain, but where will we get a duck and a hose at this hour?
+- I think so, Brain, but if Jimmy cracks corn and no one cares, why is there a song?
+- I think so, Brain, but Pete Rose can't read
 
 ### trivia #668 (T5) — wrong_answer · medium
 
@@ -1572,5 +1670,89 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Sergeant Johnson
 - Captain Keyes
 - Spartan-117
+
+### trivia #829 (T5) — wrong_answer · high
+
+**Auditor:** Hardball II was released in 1989, but The Princess Bride premiered September 1987 — the game shown in the opening is Accolade's original Hardball! (1985), not Hardball II.
+
+**Stem:** The opening scene of Rob Reiner's 1987 The Princess Bride shows a young Fred Savage in bed playing a baseball video game on a Commodore Amiga personal computer while his grandfather (Peter Falk) arrives to read him a story. Production designer Norman Reynolds picked a baseball release from Accolade software. Name the game shown.
+
+**Labeled answer:** 'Hardball II by Accolade'
+
+**Choices:**
+- Hardball II by Accolade ← labeled
+- Baseball Stars by SNK
+- RBI Baseball by Tengen
+- World Series Baseball by Sega
+
+### trivia #929 (T3) — wrong_answer · medium
+
+**Auditor:** In Infinity Gauntlet (1991) Thanos's fatal blunder is abandoning his physical body to become one with the universe/Eternity — which lets Nebula grab the unattended gauntlet. He does not accidentally erase Death; Death simply refuses to speak to him after he becomes her equal.
+
+**Stem:** In the 1991 Marvel crossover comic The Infinity Gauntlet, written by Jim Starlin, the purple titan Thanos gathers all six cosmic Infinity Gems onto a golden gauntlet, giving him near-godlike powers over the universe. He snaps his fingers and half of all life vanishes as a courtship gift for his beloved, the personification of Death. But then Thanos makes one foolish mistake with the gauntlet — a self-inflicted blunder born of vanity — that gives the surviving heroes an opening to fight back. What does he do?
+
+**Labeled answer:** 'He erases his beloved Death by accident while showing off, then must restore her'
+
+**Choices:**
+- He erases his beloved Death by accident while showing off, then must restore her ← labeled
+- He challenges Galactus to a duel and consumes a small planet inhabited by orks
+- He releases Adam Warlock from the Soul Gem prematurely, who turns on him
+- He calls down Mephisto to bring Earth's remaining heroes into the underworld
+
+### trivia #971 (T4) — wrong_attribution · medium
+
+**Auditor:** Rowling has publicly said Umbridge was based on ONE specific real person she disliked on sight (a teacher), not a 'composite' of many. The stem also asks about a '1996 author and political position' which no choice provides — but the labeled answer's attribution to Rowling is a paraphrase, not what she said.
+
+**Stem:** In Order of the Phoenix (book 5), Dolores Umbridge takes over Hogwarts as 'High Inquisitor' on Cornelius Fudge's orders. Her cruel disciplinary methods include a magical detention quill that uses the writer's blood as ink, carving the words 'I must not tell lies' into the back of Harry's hand. The scar remains permanent on Harry's hand for the rest of the series. What 1996 author and political position is Umbridge consciously modeled on, per J.K. Rowling?
+
+**Labeled answer:** 'A composite of authoritarian schoolteachers and middle-management bureaucrats Rowling had encountered'
+
+**Choices:**
+- A composite of authoritarian schoolteachers and middle-management bureaucrats Rowling had encountered ← labeled
+- Margaret Thatcher's later-cabinet posture in the 1980s Education Ministry
+- Mary Whitehouse, the British media-decency campaigner of the 1970s and 80s
+- Enid Blyton's headmistress Miss Grayling from the Malory Towers series
+
+### trivia #1071 (T3) — wrong_answer · medium
+
+**Auditor:** Asimov/Heinlein/de Camp worked at the Naval Air Experimental Station (NAES) at the Philadelphia Navy Yard, not the 'Naval Aircraft Materials Laboratory' — no facility by that exact name existed.
+
+**Stem:** Robert Heinlein, Isaac Asimov, and L. Sprague de Camp all spent World War II working in the same building — the Philadelphia Naval Yard — on materials-science problems related to high-altitude aircraft. The trio became lifelong friends and wrote stories about their wartime work. What was the name of the navy facility?
+
+**Labeled answer:** 'The Naval Aircraft Materials Laboratory'
+
+**Choices:**
+- The Naval Aircraft Materials Laboratory ← labeled
+- The Office of Strategic Services
+- The Manhattan Project
+- Lockheed Skunk Works
+
+### trivia #1132 (T5) — wrong_answer · medium
+
+**Auditor:** The described series — exiled Earthman becomes a barbarian warlord on a primitive planet, 17 novels 1971-1991 — is the John Norman Gor formula (single author, not a duo). No known 17-novel Offutt/Wagner barbarian-planet cycle exists; they collaborated on some Conan/Cormac mac Art pastiches but nothing matching this description. None of the listed duo choices fit the described series either, so the question appears malformed.
+
+**Stem:** Robert E. Howard's complete Conan canon — 21 stories Howard wrote before his June 1936 suicide — was a foundational influence on dozens of later writers. The single most influential post-Howard fantasy-writing duo took Conan as their model when launching their own bestselling series in the 1970s — a series of novels about an exiled Earthman who becomes a barbarian warlord on a primitive planet, all written in deliberate imitation of Howard's prose rhythms. The duo wrote 17 collaborative novels in the cycle from 1971 to 1991. Who were they?
+
+**Labeled answer:** 'Andrew J. Offutt with Karl Edward Wagner'
+
+**Choices:**
+- Andrew J. Offutt with Karl Edward Wagner ← labeled
+- John Norman with Donald Kingsbury
+- L. Sprague de Camp with Lin Carter
+- Lin Carter with Roger Zelazny
+
+### trivia #1228 (T4) — dual_correct · medium
+
+**Auditor:** Option B ('shot from behind in the head on a Friday by a man with three names') is also factually true as commonly told: Lincoln (Fri Apr 14 1865) and Kennedy (Fri Nov 22 1963) were both shot in the head from behind, and both assassins have three-part names (John Wilkes Booth, Lee Harvey Oswald).
+
+**Stem:** The 'Lincoln-Kennedy coincidences' list came out in the late 1960s. It claims the two shot presidents had many things in common. Today it is used as a classic example of seeing patterns that are not really there. Which one from the list is actually true as people usually tell it?
+
+**Labeled answer:** 'Both were succeeded by vice presidents named Johnson'
+
+**Choices:**
+- Both were succeeded by vice presidents named Johnson ← labeled
+- Both were shot from behind in the head on a Friday by a man with three names
+- Both assassins were themselves killed in a brick warehouse before trial
+- Both presidents had secretaries who warned them not to go to the theater
 
 ---
