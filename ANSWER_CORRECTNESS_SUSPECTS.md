@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 26290 · **Suspect:** 85 · **Unique suspects:** 85
-**Total audited:** 26375
+**Sound so far:** 26889 · **Suspect:** 86 · **Unique suspects:** 86
+**Total audited:** 26975
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -1214,6 +1214,24 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - 12, 14, 16
 - 1, 3, 5
 - 50, 60, 70
+
+---
+
+## theology (1 suspects)
+
+### theology #1544 (T5) — wrong_answer · medium
+
+**Auditor:** Havamal Runatal stanza 143 names four groups as rune-recipients: Aesir (via Odin), elves (Dain), dwarves (Dvalin), and GIANTS (Asvidr) - not mortal men. Odin then adds 'some I carved myself.'
+
+**Stem:** In the Norse poem Havamal there is a section called the Runatal, in which the All-Father Odin tells how he won the secret runes by hanging himself on the world-tree Yggdrasil for nine long nights. Once he has the runes he does not keep them to himself. The Runatal names four different kinds of being who each receive the runes from him and use them ever after. Which four groups get the runes?
+
+**Labeled answer:** 'the Aesir, the elves, the dwarves, and mortal men'
+
+**Choices:**
+- the Aesir, the elves, the dwarves, and mortal men ← labeled
+- the Aesir, the Vanir, the giants, and mortal men
+- the einherjar, the Valkyries, the Norns, and the trolls
+- the light-elves, the dark-elves, the frost-giants, and the fire-giants
 
 ---
 
