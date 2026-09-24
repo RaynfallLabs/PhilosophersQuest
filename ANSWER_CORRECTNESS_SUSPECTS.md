@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 13969 · **Suspect:** 56 · **Unique suspects:** 56
-**Total audited:** 14025
+**Sound so far:** 14717 · **Suspect:** 58 · **Unique suspects:** 58
+**Total audited:** 14775
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -771,7 +771,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## science (2 suspects)
+## science (4 suspects)
 
 ### science #1428 (T4) — wrong_attribution · low
 
@@ -800,6 +800,34 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - up to 50 percent of the ozone column
 - up to 70 percent of the ozone column ← labeled
 - up to 95 percent of the ozone column
+
+### science #2815 (T4) — wrong_answer · low
+
+**Auditor:** Richard Herrick died in 1963; the cause most consistently reported is a recurrence of his original kidney disease (glomerulonephritis) in the transplanted kidney, not simple heart failure. 'Rejection of the transplanted kidney' distractor is also arguably closer than the labeled answer.
+
+**Stem:** In 1954, in Boston, the American surgeon Joseph Murray took a healthy kidney from Ronald Herrick and stitched it into his identical twin brother Richard, whose own kidneys had failed. Because the brothers shared every gene, Richard's body did not attack the graft — the world's first lasting organ transplant. Richard lived about eight more years, married one of his hospital nurses, and fathered two children. When he died in March 1963, what killed him?
+
+**Labeled answer:** 'Heart failure'
+
+**Choices:**
+- Heart failure ← labeled
+- Rejection of the transplanted kidney
+- Pneumonia caught from his brother
+- A stroke during a second operation
+
+### science #2844 (T4) — wrong_answer · medium
+
+**Auditor:** NRC 2006 report on strip-bark bristlecones named CO2 fertilization (per Graybill and Idso 1993) as the non-climatic factor potentially fattening recent rings, not nitrogen deposition; nitrogen is not the standard bristlecone-strip-bark alternative.
+
+**Stem:** The US National Research Council panel that reported in June 2006 handed the critics a second point, about one kind of tree in the network. A strip-bark bristlecone pine is an ancient tree whose trunk is mostly dead, with a single surviving ribbon of living bark still laying down a ring each year; such samples 'should be avoided' for temperature reconstructions, the panel wrote. It then named something besides warmth that may be fattening their recent rings. What was it?
+
+**Labeled answer:** 'Nitrogen from human sources settling out of the air'
+
+**Choices:**
+- Nitrogen from human sources settling out of the air ← labeled
+- Desert dust settling on the slopes and feeding the soil
+- Deeper winter snowpack lasting later into the spring
+- Less competition as neighbouring old trees died back
 
 ---
 
