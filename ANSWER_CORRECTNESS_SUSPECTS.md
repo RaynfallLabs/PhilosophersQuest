@@ -2,8 +2,8 @@
 
 Adversarial audit of every question in the 10 non-grammar banks (plus the initial 500-sample).
 
-**Sound so far:** 10274 · **Suspect:** 51 · **Unique suspects:** 51
-**Total audited:** 10325
+**Sound so far:** 11548 · **Suspect:** 52 · **Unique suspects:** 52
+**Total audited:** 11600
 
 Each suspect requires manual verification: fix the answer text (touches choices), swap answer↔distractor, or reject the flag.
 
@@ -711,7 +711,7 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 
 ---
 
-## philosophy (1 suspects)
+## philosophy (2 suspects)
 
 ### philosophy #1271 (T4) — dual_correct · medium
 
@@ -726,6 +726,20 @@ Each suspect requires manual verification: fix the answer text (touches choices)
 - Its tally counted only the eager few who bothered to mail a ballot back, a self-picked slice of the nation
 - Its readers deliberately lied on the ballots they returned in order to embarrass the magazine they disliked
 - Its young rival George Gallup had merely guessed luckily, as any small poll sometimes happens to do
+
+### philosophy #2032 (T5) — dual_correct · medium
+
+**Auditor:** Choice B (calm/contentment untouchable by tyrant) is also a canonical Epictetus teaching alongside the labeled answer (moral character untouchable); both are things the tyrant cannot reach on Epictetus's view.
+
+**Stem:** A cruel tyrant drags a man before him in chains and gloats that he now holds the man's fate entirely in his hands, free to ruin the prisoner however he pleases. The ancient Roman Stoic teacher Epictetus, once a slave himself, would answer that the tyrant, for all his power, has overreached. There is one thing about this chained man that no chain and no executioner can ever reach. What is it?
+
+**Labeled answer:** "Whether he turns into a worse man -- that descent is his alone to make, not the tyrant's"
+
+**Choices:**
+- Whether he turns into a worse man -- that descent is his alone to make, not the tyrant's ← labeled
+- Whether he keeps his calm and contentment -- that peace is his to hold, not the tyrant's
+- Whether his body lives to see another dawn -- that breath is his to keep, not the tyrant's
+- Whether he holds his rank and good name -- that standing is his to keep, not the tyrant's
 
 ---
 
