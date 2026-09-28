@@ -464,6 +464,16 @@ class WelcomeScreen:
                             self._god_prompt = True
                             continue
                         build = SECRET_BUILDS.get(name.lower())
+                        # QA-tool builds (Shift+I immortal, Shift+W floor warp)
+                        # only unlock when PQ_QA_MODE=1 or --qa was passed on
+                        # the CLI. Otherwise the name is treated as a plain
+                        # (non-secret) run so casual players can't stumble
+                        # into dev cheats.
+                        import os
+                        qa_env = os.environ.get('PQ_QA_MODE') == '1'
+                        qa_cli = '--qa' in sys.argv
+                        if build and build.get('_qa_tools') and not (qa_env or qa_cli):
+                            build = None
                         return name, build
                     elif event.key == pygame.K_DELETE and self._has_save:
                         from save_system import delete_save
@@ -806,7 +816,7 @@ class WelcomeScreen:
         if notice:
             note = self.font_sm.render(notice, True, FP.GOLD_BRIGHT)
             self.screen.blit(note, (cx - note.get_width() // 2, self.H - 78))
-        text = "[ ENTER ] begin your quest     [ F3 ] study mode     [ ESC ] quit"
+        text = "[ ENTER ] begin your quest     [ F2 ] leaderboard     [ F3 ] study mode     [ ESC ] quit"
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
         self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
         # Version number — bottom-right corner (FP.FADED_TEXT keeps it

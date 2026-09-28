@@ -49,8 +49,10 @@ def test_loads_use_charged():
     assert a.max_charges == 3
 
 
-def test_loads_identify_timer_bonus():
-    assert _acc(identify_timer_bonus=2).identify_timer_bonus == 2
+def test_loads_identify_tier_reduction():
+    # identify_timer_bonus was retargeted to identify_tier_reduction on
+    # 2026-09-24: identify v3 is untimed, so a timer bonus was dead code.
+    assert _acc(identify_tier_reduction=1).identify_tier_reduction == 1
 
 
 def test_loads_auto_invisible_at_low_hp():
@@ -70,10 +72,11 @@ def test_loads_monster_tag_chain_bonus():
     assert a.monster_tag_chain_bonus == {"dragon": 1}
 
 
-def test_loads_rotating_subject_chain_cap():
-    pool = ["math", "geography"]
-    a = _acc(rotating_subject_chain_cap=pool)
-    assert a.rotating_subject_chain_cap == pool
+def test_loads_attack_chain_cap_bonus():
+    # rotating_subject_chain_cap was retired on 2026-09-24 (only +3s to math
+    # ever landed; 5/6 floors were dead). Torque of Lugh now uses a flat
+    # attack_chain_cap_bonus that always applies.
+    assert _acc(attack_chain_cap_bonus=1).attack_chain_cap_bonus == 1
 
 
 # ---------------------------------------------------------------------------
@@ -94,9 +97,11 @@ def test_main_wires_rest_site_mechanics():
     assert 'disguise_at_camp' in s
 
 
-def test_main_wires_rotating_subject():
+def test_main_stubs_rotating_subject_for_save_compat():
+    # rotating_subject_chain_cap retired 2026-09-24; the +3s only ever fired
+    # for math and 5/6 floors had no effect. main.py still stubs
+    # `_rotating_chain_subject = None` for save-compat.
     s = _src('main')
-    assert 'rotating_subject_chain_cap' in s
     assert '_rotating_chain_subject' in s
 
 
@@ -151,17 +156,13 @@ def test_game_menus_wires_accessory_charges():
     assert hasattr(game_menus.MenuMixin, '_activate_accessory_charge')
 
 
-def test_player_get_quiz_extra_seconds_wires_pythia():
+def test_player_wires_identify_tier_reduction():
+    # Ring of Pythia's `identify_timer_bonus: +2s` was dead code (philosophy
+    # is untimed). Replaced 2026-09-24 with `identify_tier_reduction`, read
+    # via Player.get_identify_tier_reduction and consumed in _identify_item.
     from player import Player
-    src = inspect.getsource(Player.get_quiz_extra_seconds)
-    assert 'identify_timer_bonus' in src
-    assert 'philosophy' in src
-
-
-def test_player_get_quiz_extra_seconds_wires_rotating():
-    from player import Player
-    src = inspect.getsource(Player.get_quiz_extra_seconds)
-    assert '_rotating_chain_subject' in src
+    src = inspect.getsource(Player.get_identify_tier_reduction)
+    assert 'identify_tier_reduction' in src
 
 
 def test_bones_wires_royal_burial():
@@ -198,24 +199,34 @@ def test_hand_of_glory_has_charges():
     assert h['max_charges'] == 3
 
 
-def test_torque_of_lugh_has_rotating_pool():
-    """Per the bug-bash balance audit (agent a4dd), the original 10-subject
-    rotation was too broad — the subject filter never bit. Trimmed to 6."""
+def test_torque_of_lugh_has_flat_perks():
+    """rotating_subject_chain_cap was retired 2026-09-24 (only +3s to math
+    ever landed under the timed-math-only policy). Torque of Lugh now grants
+    a flat save_bonus:all and a flat attack_chain_cap_bonus."""
     t = ACCESSORY['torque_of_lugh']
-    assert len(t['rotating_subject_chain_cap']) == 6
+    assert t['save_bonus']['cat'] == 'all'
+    assert t['save_bonus']['amount'] >= 2
+    assert t.get('attack_chain_cap_bonus', 0) >= 1
 
 
-def test_hamsa_hand_has_three_faiths():
+def test_hamsa_hand_has_save_bonus():
+    """rotating_subject_chain_cap retired 2026-09-24. Hamsa Hand (Hand of
+    Fatima) now grants a flat save_bonus:all reflecting the evil-eye
+    protection its lore describes."""
     h = ACCESSORY['hamsa_hand']
-    assert set(h['rotating_subject_chain_cap']) == {'theology', 'history', 'grammar'}
+    assert h['save_bonus']['cat'] == 'all'
+    assert h['save_bonus']['amount'] >= 1
 
 
 def test_orichalcum_has_atlantean_resonance():
     assert ARMOR['orichalcum_breastplate']['atlantean_resonance'] == 30
 
 
-def test_ring_of_pythia_has_identify_timer():
-    assert ACCESSORY['ring_of_pythia']['identify_timer_bonus'] == 2
+def test_ring_of_pythia_has_identify_tier_reduction():
+    # identify_timer_bonus was retargeted 2026-09-24 (philosophy is untimed
+    # under identify v3, so the timer bonus was dead). Ring of Pythia now
+    # lowers the identify id_tier by 1, wired through _identify_item.
+    assert ACCESSORY['ring_of_pythia']['identify_tier_reduction'] == 1
 
 
 def test_ring_of_eluned_has_auto_invis():

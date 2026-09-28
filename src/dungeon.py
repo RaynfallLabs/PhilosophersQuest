@@ -446,6 +446,11 @@ def _generate_maze(tiles: List[List[int]], width: int, height: int,
     start_cy = rng.randint(0, mh - 1)
 
     import sys
+    # NOTE: `sys.setrecursionlimit` is a PROCESS-GLOBAL setting. Bumping it
+    # here is safe because dungeon generation runs single-threaded on the
+    # game's main thread (no worker threads mutate the interpreter limit
+    # concurrently) and the try/finally restores it before returning. Do not
+    # move dungeon generation off the main thread without adding a lock.
     old_limit = sys.getrecursionlimit()
     sys.setrecursionlimit(max(old_limit, mw * mh * 2 + 500))
     try:
@@ -535,8 +540,67 @@ def _place_maze_doors(tiles: List[List[int]], width: int, height: int,
 # Terrain passes
 # ---------------------------------------------------------------------------
 
+def _find_stair_tiles(tiles, width, height):
+    """Locate the STAIRS_UP and STAIRS_DOWN positions on the map, or (None, None)
+    if a level has fewer than two stair tiles (rare fallback maps)."""
+    up = down = None
+    for y in range(height):
+        row = tiles[y]
+        for x in range(width):
+            t = row[x]
+            if t == STAIRS_UP:
+                up = (x, y)
+            elif t == STAIRS_DOWN:
+                down = (x, y)
+    return up, down
+
+
+def _bfs_reaches(tiles, width, height, start, goal) -> bool:
+    """4-neighbour BFS. Passes through any tile the player can traverse — floor,
+    open stairs, and doors (DOOR/SECRET_DOOR are technically opened by bumping,
+    so they count as reachable). WATER/LAVA/WALL block."""
+    if start is None or goal is None or start == goal:
+        return start is not None and goal is not None
+    from collections import deque
+    passable = (FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
+                ALTAR, FOUNTAIN, GRAVE, THRONE, ICE)
+    seen = {start}
+    q = deque([start])
+    while q:
+        x, y = q.popleft()
+        if (x, y) == goal:
+            return True
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if not (0 <= nx < width and 0 <= ny < height):
+                continue
+            if (nx, ny) in seen:
+                continue
+            if tiles[ny][nx] not in passable:
+                continue
+            seen.add((nx, ny))
+            q.append((nx, ny))
+    return False
+
+
+def _snapshot_tiles(tiles):
+    return [row[:] for row in tiles]
+
+
+def _restore_tiles(tiles, snapshot):
+    """Restore `tiles` in-place from a snapshot taken by `_snapshot_tiles`."""
+    for y in range(len(tiles)):
+        tiles[y][:] = snapshot[y]
+
+
 def _apply_terrain(dungeon: 'Dungeon', level: int, rng: random.Random):
-    """Apply terrain features: fountains, water pools, lava rivers, ice rooms."""
+    """Apply terrain features: fountains, water pools, lava rivers, ice rooms.
+
+    After each connectivity-risky pass (water pools, lava rivers, ice rooms),
+    verify a walkable path still exists from STAIRS_UP to STAIRS_DOWN. If a
+    pass severed the map, roll back that pass in-place so the floor stays
+    completable.
+    """
     tiles = dungeon.tiles
     rooms = dungeon.rooms
     width = dungeon.width
@@ -544,7 +608,17 @@ def _apply_terrain(dungeon: 'Dungeon', level: int, rng: random.Random):
     has_water = False
     has_lava  = False
 
+    stair_up, stair_down = _find_stair_tiles(tiles, width, height)
+
+    def _reverts_kill_reachability() -> bool:
+        """True if the current tile grid no longer connects STAIRS_UP → STAIRS_DOWN.
+        Returns False when we can't find both stairs — nothing to protect."""
+        if stair_up is None or stair_down is None:
+            return False
+        return not _bfs_reaches(tiles, width, height, stair_up, stair_down)
+
     # -- Fountains: 1 per ~5 levels (20% chance per level) --------------------
+    # Fountains are walkable → cannot sever reachability.
     if rng.random() < 0.20 and len(rooms) >= 2:
         # Pick a random non-start room
         fountain_room = rng.choice(rooms[1:])
@@ -555,7 +629,11 @@ def _apply_terrain(dungeon: 'Dungeon', level: int, rng: random.Random):
             tiles[fy][fx] = FOUNTAIN
 
     # -- Water pools: L10+, 15% chance ----------------------------------------
-    if level >= 10 and rng.random() < 0.15 and len(rooms) >= 2:
+    # Water is a movement blocker without water-walking; treat as connectivity-
+    # risky, and gate on `not is_maze` to match the lava rule below — mazes are
+    # too fragile to flood.
+    if level >= 10 and not dungeon.is_maze and rng.random() < 0.15 and len(rooms) >= 2:
+        snapshot = _snapshot_tiles(tiles)
         water_room = rng.choice(rooms[1:])
         inner = list(water_room.inner_tiles())
         # Flood edges first, then ~30% of remaining tiles
@@ -563,17 +641,23 @@ def _apply_terrain(dungeon: 'Dungeon', level: int, rng: random.Random):
                       if (x == water_room.x + 1 or x == water_room.x + water_room.width - 2
                           or y == water_room.y + 1 or y == water_room.y + water_room.height - 2)]
         center_tiles = [t for t in inner if t not in edge_tiles]
+        pass_placed_water = False
         for x, y in edge_tiles:
             if tiles[y][x] == FLOOR:
                 tiles[y][x] = WATER
-                has_water = True
+                pass_placed_water = True
         for x, y in center_tiles:
             if tiles[y][x] == FLOOR and rng.random() < 0.30:
                 tiles[y][x] = WATER
-                has_water = True
+                pass_placed_water = True
+        if pass_placed_water and _reverts_kill_reachability():
+            _restore_tiles(tiles, snapshot)
+        elif pass_placed_water:
+            has_water = True
 
     # -- Lava rivers: L30+, 20% chance ----------------------------------------
     if level >= 30 and not dungeon.is_maze and rng.random() < 0.20:
+        snapshot = _snapshot_tiles(tiles)
         # Find a corridor-ish region by picking a floor tile not in any room
         room_tiles: Set[Tuple[int, int]] = set()
         for room in rooms:
@@ -603,15 +687,38 @@ def _apply_terrain(dungeon: 'Dungeon', level: int, rng: random.Random):
                         if 0 < rx < width - 1 and tiles[y][rx] == FLOOR:
                             tiles[y][rx] = LAVA
                             placed_lava = True
-            if placed_lava:
+            if placed_lava and _reverts_kill_reachability():
+                _restore_tiles(tiles, snapshot)
+            elif placed_lava:
                 has_lava = True
 
     # -- Ice rooms: L40+, 10% chance ------------------------------------------
+    # Ice is walkable (transparent) but random slides can knock the player onto
+    # traps or off stairs. Exclude the stairs-down room so the exit doesn't
+    # slide out from under the player, and BFS-verify after in case a slide
+    # somehow interacts with a future check (defence in depth — pure ICE
+    # currently stays reachable via `passable` above).
     if level >= 40 and rng.random() < 0.10 and len(rooms) >= 2:
-        ice_room = rng.choice(rooms[1:])
-        for ix, iy in ice_room.inner_tiles():
-            if tiles[iy][ix] == FLOOR:
-                tiles[iy][ix] = ICE
+        # Identify the room containing STAIRS_DOWN so the ice can't cover the
+        # exit tile and force a slippery landing on the stairs.
+        stairs_down_room = None
+        if stair_down is not None:
+            sdx, sdy = stair_down
+            for r in rooms:
+                if r.x <= sdx < r.x + r.width and r.y <= sdy < r.y + r.height:
+                    stairs_down_room = r
+                    break
+        ice_candidates = [r for r in rooms[1:] if r is not stairs_down_room]
+        if ice_candidates:
+            snapshot = _snapshot_tiles(tiles)
+            ice_room = rng.choice(ice_candidates)
+            placed_ice = False
+            for ix, iy in ice_room.inner_tiles():
+                if tiles[iy][ix] == FLOOR:
+                    tiles[iy][ix] = ICE
+                    placed_ice = True
+            if placed_ice and _reverts_kill_reachability():
+                _restore_tiles(tiles, snapshot)
 
     # Store flags for atmosphere building
     dungeon._has_water = has_water
@@ -893,7 +1000,10 @@ def _add_extra_connections(tiles, rooms: List[Room], rng: random.Random,
             break
         if dist < 5:
             continue
-        if dist > 30:
+        # Upper bound bumped 30 → 50 so long-diagonal room pairs on larger
+        # maps still get a loop-back corridor instead of being unreachable
+        # via the tree alone.
+        if dist > 50:
             break
         x1, y1 = _nearest_edge_point(rooms[i], rooms[j], rng)
         x2, y2 = _nearest_edge_point(rooms[j], rooms[i], rng)
@@ -1725,13 +1835,24 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
                 _place_one([c], special_room, dungeon, ground_items, rng)
 
     # -- Vault items (gold piles) -----------------------------------------------
+    # Total vault gold is capped at 2000 — the raw rng.randint(level*5, level*15)
+    # per inner tile could hit ~6000 at F100 across a 2x2 interior, which turns
+    # the vault from "nice find" into "run-defining windfall". If the roll
+    # would overshoot the cap, distribute proportionally across the tiles.
     if dungeon.vault is not None:
         from items import add_gold_to_tile
+        _VAULT_GOLD_CAP = 2000
         vault_room = dungeon.vault['room']
-        for tx, ty in vault_room.inner_tiles():
-            if dungeon.tiles[ty][tx] == FLOOR:
-                amount = rng.randint(level * 5, level * 15)
-                add_gold_to_tile(ground_items, amount, tx, ty)
+        candidate_tiles = [(tx, ty) for tx, ty in vault_room.inner_tiles()
+                           if dungeon.tiles[ty][tx] == FLOOR]
+        raw_amounts = [rng.randint(level * 5, level * 15)
+                       for _ in candidate_tiles]
+        total = sum(raw_amounts)
+        if total > _VAULT_GOLD_CAP and total > 0:
+            scale = _VAULT_GOLD_CAP / total
+            raw_amounts = [max(1, int(a * scale)) for a in raw_amounts]
+        for (tx, ty), amount in zip(candidate_tiles, raw_amounts):
+            add_gold_to_tile(ground_items, amount, tx, ty)
 
     # -- Floor traps -----------------------------------------------------------
     start_center = rooms[0].center if rooms else (0, 0)

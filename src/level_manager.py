@@ -1,6 +1,11 @@
 import copy
 import random
 
+# Single source of truth for boss floors — imported from dungeon.py so
+# `_roll_planned_mini_bosses` and `generate_boss_level` agree on which
+# floors reject mini-boss placement.
+from dungeon import _BOSS_LEVELS
+
 # Philosopher's Stone spawns on this level
 STONE_LEVEL = 100
 
@@ -89,11 +94,6 @@ class LevelManager:
         if bones:
             spawn_ghost(bones, dungeon, monsters, items)
 
-        if level_num == STONE_LEVEL:
-            stone = _place_stone(dungeon, items)
-            if stone:
-                items.append(stone)
-
         self.max_level_reached = max(self.max_level_reached, level_num)
         return dungeon, monsters, items
 
@@ -156,8 +156,9 @@ class LevelManager:
                 if pick is not None:
                     mid, _, pf = pick
                     # Avoid landing on a boss floor — if peak_floor collides,
-                    # shift +/- 1.
-                    target = pf if pf not in (20, 40, 60, 80, 100) else pf - 1
+                    # shift -1. `generate_boss_level` ignores the mini-boss
+                    # plan, so a boss-floor target would silently vanish.
+                    target = pf if pf not in _BOSS_LEVELS else pf - 1
                     planned[target] = mid
                     placed_ids.add(mid)
 
@@ -166,14 +167,16 @@ class LevelManager:
                 pick = _pick()
                 if pick is not None:
                     mid, _, pf = pick
-                    target = pf if pf not in (20, 40, 60, 80, 100) else pf - 1
-                    # If two mini-bosses share peak_floor, offset the second
-                    while target in planned:
+                    target = pf if pf not in _BOSS_LEVELS else pf - 1
+                    # If two mini-bosses share peak_floor OR the shifted
+                    # target collides, walk forward — but SKIP boss floors
+                    # so the mini-boss actually appears.
+                    while target in planned or target in _BOSS_LEVELS:
                         target += 1
                         if target > band_hi:
                             target = pf
                             break
-                    if target not in planned:
+                    if target not in planned and target not in _BOSS_LEVELS:
                         planned[target] = mid
                         placed_ids.add(mid)
 
@@ -285,7 +288,14 @@ class LevelManager:
 
 
 def _spawn_monster_den_extras(dungeon, monsters: list, level_num: int):
-    """Spawn 3-5 extra monsters in each monster_den special room."""
+    """Spawn 3-5 extra monsters in each monster_den special room.
+
+    NOTE: `spawn_monsters` skips its first room (the start room convention).
+    Both this helper and `_populate_hidden_chambers` exploit that by passing
+    the same room twice so the target room is the "second" one and gets
+    populated. If `spawn_monsters` ever loses that convention, BOTH call
+    sites here and in `_populate_hidden_chambers` must be updated together.
+    """
     from dungeon import spawn_monsters
 
     den_centers = [

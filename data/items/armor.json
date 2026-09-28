@@ -919,296 +919,6 @@
     "is_unique": true,
     "cannae_encirclement": true
   },
-  "nemean_pelt": {
-    "name": "Nemean Lion Pelt",
-    "symbol": "[",
-    "color": [
-      220,
-      180,
-      80
-    ],
-    "weight": 15.0,
-    "min_level": 9999,
-    "slot": "body",
-    "tier": 4,
-    "material": "hide",
-    "ac_bonus": 6,
-    "equip_threshold": 2,
-    "quiz_tier": 4,
-    "damage_resistances": {
-      "slash": 0.0,
-      "pierce": 0.0
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "thick golden hide",
-    "lore": "The hide of the Nemean Lion, impossible to cut or pierce. Hercules used its own claws to skin it. Wearing it is like wearing the beast itself.",
-    "floorSpawnWeight": {},
-    "max_enchant": 3,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "hide",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_nemean",
-    "identified": false,
-    "id_level": 0,
-    "unskinnable": true
-  },
-  "green_knights_plate": {
-    "name": "Green Knight's Plate",
-    "symbol": "[",
-    "color": [
-      80,
-      180,
-      80
-    ],
-    "weight": 65.0,
-    "min_level": 9999,
-    "slot": "body",
-    "tier": 5,
-    "material": "enchanted plate",
-    "ac_bonus": 8,
-    "equip_threshold": 2,
-    "quiz_tier": 5,
-    "damage_resistances": {
-      "slash": 0.75,
-      "physical": 0.85
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "eerily green plate armor",
-    "lore": "Forged from enchanted iron that grows with the wearer, the Green Knight's Plate absorbs blows that would kill a lesser man. The wearer heals slowly but continuously.",
-    "floorSpawnWeight": {},
-    "max_enchant": 3,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "full_plate",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_green_knight",
-    "equip_chain_mode": "escalator_chain",
-    "tier_bonuses": {
-      "1": {
-        "ac_bonus": 5,
-        "regen_bonus": 2
-      },
-      "2": {
-        "ac_bonus": 6,
-        "regen_bonus": 2,
-        "resistance_slash": 2
-      },
-      "3": {
-        "ac_bonus": 7,
-        "regen_bonus": 2,
-        "resistance_slash": 2,
-        "resistance_physical": 2
-      },
-      "4": {
-        "ac_bonus": 7,
-        "regen_bonus": 2,
-        "resistance_slash": 2,
-        "resistance_physical": 2,
-        "status_life_save": 999
-      },
-      "5": {
-        "ac_bonus": 8,
-        "regen_bonus": 2,
-        "resistance_slash": 2,
-        "resistance_physical": 2,
-        "status_life_save": 999,
-        "passive_second_beheading_returns": true
-      }
-    },
-    "identified": false,
-    "id_level": 0
-  },
-  "serpent_scale_mail": {
-    "name": "Serpent Scale Mail",
-    "symbol": "[",
-    "color": [
-      60,
-      160,
-      100
-    ],
-    "weight": 30.0,
-    "min_level": 9999,
-    "slot": "body",
-    "tier": 4,
-    "material": "scale",
-    "ac_bonus": 6,
-    "equip_threshold": 2,
-    "quiz_tier": 4,
-    "damage_resistances": {
-      "poison": 0.0,
-      "cold": 0.7
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "iridescent scale hauberk",
-    "lore": "Scales from Jörmungandr's juvenile form, each harder than iron. The poison that suffuses them has been neutralized — but it still repels toxins entirely.",
-    "floorSpawnWeight": {},
-    "max_enchant": 3,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "scale",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_serpent",
-    "identified": false,
-    "id_level": 0
-  },
-  "arachne_silk_cloak": {
-    "name": "Arachne's Silk Cloak",
-    "symbol": "[",
-    "color": [
-      180,
-      140,
-      80
-    ],
-    "weight": 1.5,
-    "min_level": 9999,
-    "slot": "cloak",
-    "tier": 3,
-    "material": "silk",
-    "ac_bonus": 2,
-    "equip_threshold": 1,
-    "quiz_tier": 3,
-    "damage_resistances": {
-      "pierce": 0.7
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "shimmering silk cloak",
-    "lore": "Woven by Arachne before her transformation, this cloak is lighter than air and tougher than leather against piercing weapons. It catches arrows and slows blades.",
-    "floorSpawnWeight": {},
-    "max_enchant": 2,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "cloak",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_arachne",
-    "identified": false,
-    "id_level": 0,
-    "webbed_strike": true
-  },
-  "erlking_mantle": {
-    "name": "Erlking's Mantle",
-    "symbol": "[",
-    "color": [
-      80,
-      140,
-      80
-    ],
-    "weight": 2.0,
-    "min_level": 9999,
-    "slot": "cloak",
-    "tier": 3,
-    "material": "enchanted cloth",
-    "ac_bonus": 2,
-    "equip_threshold": 1,
-    "quiz_tier": 3,
-    "damage_resistances": {},
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "a green forest cloak",
-    "lore": "Woven from the living branches of the Erlking's forest, this cloak sharpens the senses of the wearer. Sound and sight carry further, and hidden things become easier to discern.",
-    "floorSpawnWeight": {},
-    "max_enchant": 2,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "cloak",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_erlking",
-    "identified": false,
-    "id_level": 0,
-    "effects": {
-      "stat": "PER",
-      "amount": 2
-    },
-    "forest_hearing": 6
-  },
-  "anansi_web_cloak": {
-    "name": "Anansi's Web Cloak",
-    "symbol": "[",
-    "color": [
-      220,
-      180,
-      40
-    ],
-    "weight": 1.0,
-    "min_level": 9999,
-    "slot": "cloak",
-    "tier": 5,
-    "material": "divine silk",
-    "ac_bonus": 3,
-    "equip_threshold": 1,
-    "quiz_tier": 5,
-    "damage_resistances": {
-      "poison": 0.5,
-      "physical": 0.9
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "a glittering golden web",
-    "lore": "Spun by Anansi himself from the thread of a thousand stories, this cloak shifts and deceives. Attacks that should land somehow miss. Traps somehow fail to trigger.",
-    "floorSpawnWeight": {},
-    "max_enchant": 2,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "cloak",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_anansi",
-    "identified": false,
-    "id_level": 0,
-    "story_thread": true
-  },
-  "nidhoggr_scale": {
-    "name": "Níðhöggr's Scale",
-    "symbol": "[",
-    "color": [
-      80,
-      200,
-      80
-    ],
-    "weight": 3.0,
-    "min_level": 9999,
-    "slot": "cloak",
-    "tier": 5,
-    "material": "dragon scale",
-    "ac_bonus": 3,
-    "equip_threshold": 1,
-    "quiz_tier": 5,
-    "damage_resistances": {
-      "acid": 0.0,
-      "poison": 0.3,
-      "cold": 0.5
-    },
-    "can_be_cursed": false,
-    "enchant_bonus": 0,
-    "unidentified_name": "a vast dark-green scale",
-    "lore": "A single scale from Níðhöggr's body, imbued with the rot of ages. Nothing corrodes it. Wearing it grants the wearer immunity to acid and strong resistance to all decay-based attacks.",
-    "floorSpawnWeight": {},
-    "max_enchant": 2,
-    "peak_floor": 0,
-    "spread": 0,
-    "peak_weight": 0,
-    "template_basis": "cloak",
-    "is_unique": true,
-    "plot_locked": true,
-    "spawn_method": "quest_spawn_nidhoggr",
-    "identified": false,
-    "id_level": 0
-  },
   "aegishjalmr": {
     "name": "Aegishjalmr",
     "slot": "head",
@@ -1459,9 +1169,11 @@
     "template_basis": "leather_cap",
     "is_unique": true,
     "plot_locked": true,
-    "spawn_method": "easter_egg",
     "id_level": 0,
-    "bond_check": true
+    "bond_check": true,
+    "_meta": {
+      "spawn_method": "easter_egg"
+    }
   },
   "cow_kings_horns": {
     "name": "Cow King's Horns",
@@ -1496,9 +1208,11 @@
     "template_basis": "leather_cap",
     "is_unique": true,
     "plot_locked": true,
-    "spawn_method": "boss_drop_cow_king",
     "id_level": 0,
-    "bovine_fury": true
+    "bovine_fury": true,
+    "_meta": {
+      "spawn_method": "boss_drop_cow_king"
+    }
   },
   "cloth_of_penelope": {
     "name": "Cloth of Penelope",
@@ -2626,6 +2340,17 @@
         "resistance_fire": 1,
         "resistance_lightning": 1,
         "passive_four_faces_360_fov": true
+      },
+      "5": {
+        "ac_bonus": 7,
+        "stat_bonus_INT": 4,
+        "passive_mp_bonus": 35,
+        "status_regenerating": 999,
+        "resistance_magic": 3,
+        "resistance_fire": 2,
+        "resistance_lightning": 2,
+        "passive_four_faces_360_fov": true,
+        "passive_free_cast_once_per_floor": true
       }
     }
   },

@@ -82,8 +82,46 @@ def item_known_to_player(player, item) -> bool:
 
 
 def hud_item_name(player, item, *, include_count: bool = False) -> str:
-    known = item_known_to_player(player, item)
-    raw = getattr(item, "name", "item") if known else getattr(item, "unidentified_name", getattr(item, "name", "item"))
+    # Identify v3 True-Name model:
+    #   INSTANCE identified                  -> full name ("Rapier +2")
+    #   TYPE known + BUC known               -> full name (BUC in braces
+    #                                           carries the instance info)
+    #   TYPE known + BUC unknown             -> "unidentified <true name>"
+    #                                           (player knows what this is,
+    #                                           but this copy's BUC is a
+    #                                           mystery still)
+    #   TYPE unknown                         -> unidentified appearance
+    if hasattr(item, "identified"):
+        try:
+            instance_identified = bool(getattr(item, "identified", False))
+        except Exception:
+            instance_identified = False
+    else:
+        instance_identified = True
+
+    if instance_identified:
+        raw = getattr(item, "name", "item")
+    else:
+        knows_fn = getattr(player, "knows_item_type", None)
+        knows_type = False
+        if callable(knows_fn):
+            try:
+                knows_type = bool(knows_fn(item))
+            except Exception:
+                knows_type = False
+        else:
+            knows_type = getattr(item, "id", None) in getattr(player, "known_item_ids", set())
+        if knows_type:
+            true_name = getattr(item, "name", "item")
+            if bool(getattr(item, "buc_known", False)):
+                # BUC is known — the instance is "identified enough" for
+                # HUD purposes; the {buc} tag below carries the delta.
+                raw = true_name
+            else:
+                raw = f"unidentified {true_name}"
+        else:
+            raw = getattr(item, "unidentified_name", getattr(item, "name", "item"))
+
     base = fix_name_case(str(raw))
     buc = getattr(item, "buc", "uncursed")
     if getattr(item, "buc_known", False) and buc != "uncursed":
@@ -200,6 +238,10 @@ def active_power_rows(player, *, secret_build: dict | None = None,
     if any(getattr(item, "id", "") == "dreamspun_sketchbook" for item in inventory):
         rows.append(_cooldown_row("Manifest", int(cooldowns.get("sketch_manifest", 0) or 0)))
     if any(getattr(item, "id", "") == "gleipnir" for item in inventory):
+        # Gleipnir Bind Odinkiller currently has no cooldown -- the row is
+        # always "ready". TODO: if a cooldown is ever added, thread the value
+        # through here (e.g. cooldowns.get("bind_odinkiller", 0)) and switch
+        # to _cooldown_row("Bind Odinkiller", cd).
         rows.append(PowerRow("Bind Odinkiller", "ready", "ready"))
     if (any(getattr(item, "id", "") == "scales_of_michael" for item in inventory)
             and not heavenly_host_active):

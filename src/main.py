@@ -95,6 +95,27 @@ _BUILD_SAVE_AFFINITY: dict[str, dict] = {
 }
 
 
+def _outcome_bonus_category(outcome: dict) -> str:
+    """Cook v2.6.4 successful-outcome -> broad reward category. Used by the
+    quirk system's Circe unlock ("5 distinct bonus-type categories"). The
+    v2.6.4 outcome archetype only carries mechanical fields (sp/hp/max_hp/
+    stat_grant/temp_power/permanent_power); the legacy per-recipe 'bonus_type'
+    string is gone. This maps the outcome shape to a stable coarse label so
+    Circe stays unlockable.
+    """
+    if not outcome:
+        return 'none'
+    if outcome.get('permanent_power'):
+        return 'permanent'
+    if int(outcome.get('stat_grant', 0) or 0) > 0:
+        return 'stat'
+    if outcome.get('temp_power'):
+        return 'temp_power'
+    if int(outcome.get('max_hp_bonus', 0) or 0) > 0:
+        return 'max_hp'
+    return 'recovery'
+
+
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -1304,36 +1325,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # player doesn't carry a free +50% melee from one floor to the next.
         self.player._amazon_charge_armed = False
         self.player._straight_line_steps = 0
-        # Torque of Lugh / Hamsa Hand: rotating-subject pick for this floor.
-        # Pool is the union of `rotating_subject_chain_cap` lists across
-        # equipped accessories. One subject is picked at random; it gets a
-        # +3s timer bonus on all its quizzes this floor.
-        _rotating_pool: set = set()
-        for _acc in self.player.equipped_accessories:
-            for _s in getattr(_acc, 'rotating_subject_chain_cap', []) or []:
-                _rotating_pool.add(_s)
-        # Bug-bash fix ab5c: only message when the subject actually changes,
-        # not on every floor entry — the original code spammed even when no
-        # accessory was equipped (pool empty -> no message; pool non-empty
-        # -> always message).
-        # Follow-up gate (2026-05-31): even when the subject DOES change,
-        # only surface the message on entries that "feel like a new floor"
-        # — first-generated floors (not saved) OR descents (enter_from_top).
-        # Ascending stairs back up, returning from the cow level, and
-        # Hermes' psychopomp pull-back all suppress the message.
-        # The mechanic itself still re-rolls every entry — it's the chat
-        # spam we're suppressing, not the rotation.
-        _prev_rot = getattr(self.player, '_rotating_chain_subject', None)
-        if _rotating_pool:
-            _new_rot = random.choice(sorted(_rotating_pool))
-            self.player._rotating_chain_subject = _new_rot
-            _feels_like_new_floor = (not saved) or enter_from_top
-            if _new_rot != _prev_rot and _feels_like_new_floor:
-                self.add_message(
-                    f"The rotating gift settles on {_new_rot} this floor.",
-                    'info')
-        else:
-            self.player._rotating_chain_subject = None
+        # Torque of Lugh / Hamsa Hand rotating-subject mechanic was retired
+        # 2026-09-24 — the "+3s per floor on the rotating subject" only fired
+        # for math (the sole timed subject), so 5/6 floors did nothing.
+        # Those two accessories now grant flat save_bonus + attack_chain_cap_bonus.
+        # `_rotating_chain_subject` remains None for save-compat.
+        self.player._rotating_chain_subject = None
         # Achilles' helm (ringing_intimidation): on floor entry, monsters in
         # the player's FOV save vs fear. Pure cosmetic-shaped fear pulse.
         try:
@@ -1978,7 +1975,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         try:
             picks = load_items('lockpick')
             if picks:
-                master = copy.copy(picks[0])  # canonical lockpick
+                # Explicitly pick the master_lockpick entry (comment above says
+                # "Master Lockpick"). Fall back to picks[0] only if the id
+                # is missing from data.
+                master_src = next(
+                    (p for p in picks if getattr(p, 'id', '') == 'master_lockpick'),
+                    picks[0])
+                master = copy.copy(master_src)
                 _mark_starting_item_known(master)
                 self.player.add_to_inventory(master)
         except Exception:
@@ -4464,6 +4467,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player.quirk_progress.pop('duck_of_doom_turns', None)
         # Pet spawns on player's tile (player can step away next turn).
         pet = Pet('duck_of_doom', self.player.x, self.player.y)
+        # Late-pickup XP grant so a duck hatched on deep floors (typical:
+        # F20+, given the 2026-turn incubation) isn't combat-useless at L1.
+        # Mirrors normal-pet late-pickup scaling in pet_system.
+        try:
+            pet.apply_late_pickup_bonus(int(self.dungeon_level) or 1)
+        except Exception:
+            pass
         self.pets.append(pet)
         self.add_message(
             "The duckie's eyes glow. It hops off your head, suddenly weightless.",
@@ -4495,6 +4505,45 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if abs(item.x - px) <= 1 and abs(item.y - py) <= 1:
                 return item
         return None
+
+    # Cache of chest-trap flavor-message -> trap 'type', built once from
+    # data/chest_traps.json. Each trap has a unique 'message', so this is a
+    # deterministic reverse lookup.
+    _trap_msg_to_type_cache: dict | None = None
+
+    @classmethod
+    def _load_trap_msg_index(cls) -> dict:
+        if cls._trap_msg_to_type_cache is None:
+            try:
+                from container_system import _load_trap_pool
+                pool = _load_trap_pool()
+                idx: dict = {}
+                for _tier, traps in pool.items():
+                    for t in traps:
+                        msg = t.get('message')
+                        ttype = t.get('type')
+                        if msg and ttype:
+                            idx[msg] = ttype
+                cls._trap_msg_to_type_cache = idx
+            except Exception:
+                cls._trap_msg_to_type_cache = {}
+        return cls._trap_msg_to_type_cache
+
+    def _lookup_trap_type(self, messages) -> str:
+        """Reverse-lookup the fired chest trap's 'type' from the flavor
+        message the container system emitted on failure. Returns the trap
+        type id (e.g. 'needle', 'blade', 'shock') or 'chest_trap' if the
+        message isn't recognized (defensive fallback -- Job's Endurance
+        still counts a generic entry, keeping the quirk unlockable even
+        if a trap without a matching message ever appears)."""
+        idx = self._load_trap_msg_index()
+        for text, mtype in messages:
+            if mtype != 'danger':
+                continue
+            hit = idx.get(text)
+            if hit:
+                return hit
+        return 'chest_trap'
 
     def _lockpick(self):
         container = self._find_adjacent_container()
@@ -4565,7 +4614,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # v2.6.6: result carries loot on success (non-empty), or [] on
             # failure. Failure ALSO fires a trap keyed to chest tier -- the
             # trap dict + damage messages are already in result['messages'].
-            success = bool(result.get('loot')) or int(result.get('gold', 0)) > 0
+            # container_system tags the success case with a 'success' message
+            # ("The lock yields!") and the failure case with a 'warning'
+            # ("You fumble the lock..."). That message-type flag is the
+            # canonical signal -- loot/gold rolls can legitimately be empty
+            # on a success (unlucky loot roll) or non-empty on failure never.
+            msgs = result.get('messages', [])
+            success = any(mtype == 'success' for _, mtype in msgs)
             if result['status'] == 'opened':
                 cx, cy = container.x, container.y
                 self.ground_items.remove(container)
@@ -4589,17 +4644,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         _qs_lk.on_lockpick_success()
                     else:
                         _qs_lk.on_lockpick_fail(container.id, self.dungeon_level)
-                        # v2.6.6 trap-fires-on-fail: extract trap type from
-                        # the messages result carried back (no per-container
-                        # trap field any more).
-                        for text, mtype in result['messages']:
-                            if mtype == 'danger' and 'trap triggers' not in text.lower():
-                                # Best effort: any danger-tagged non-generic
-                                # message likely came from the fired trap.
-                                pass
-                        # Signal to quirk system that a trap fired.
+                        # Signal to quirk system that a trap fired. Job's
+                        # Endurance wants distinct trap TYPES -- a static
+                        # 'chest_fail' would collapse them all into one.
+                        # Reverse-lookup the trap from chest_traps.json via
+                        # the danger-tagged flavor message the container
+                        # system emitted (each trap has a unique message).
                         if hasattr(_qs_lk, 'on_trap_triggered'):
-                            _qs_lk.on_trap_triggered('chest_fail')
+                            trap_type = self._lookup_trap_type(msgs)
+                            if trap_type:
+                                _qs_lk.on_trap_triggered(trap_type)
 
             self._advance_turn()
 
@@ -4683,8 +4737,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Cooking-overhaul 2026-06-07: Assorted Monster Jerky (and any other part
         # with no solo recipe) must NOT be silently destroyed by a single cook.
         # The cook menu already filters these out; this is the safety net.
-        from food_system import _find_recipe_for_ingredient
-        if _find_recipe_for_ingredient(ingredient) is None:
+        from food_system import _find_recipe_for_ingredient, _load_outcomes
+        _recipe_for_quirk = _find_recipe_for_ingredient(ingredient)
+        if _recipe_for_quirk is None:
             self.state = STATE_PLAYER
             self.add_message(
                 f"The {ingredient.name} can't be cooked alone -- eat it raw, "
@@ -4694,25 +4749,31 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"COOKING {ingredient.name.upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
+        # v2.6.4: the recipe references an `outcome_id` in cook_outcomes.json,
+        # and the outcome carries the authoritative tier (1-5). Look it up
+        # ONCE here so the quirk callback below reads outcome.get('tier', 0)
+        # directly instead of regex-scraping legacy 'quality N' text that
+        # v2.6.4 outcomes no longer emit.
+        _outcome_id = _recipe_for_quirk.get('outcome_id')
+        _outcome = _load_outcomes().get(_outcome_id, {}) if _outcome_id else {}
+        _outcome_tier = int(_outcome.get('tier', 0) or 0)
+
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
+            _ruined = any(isinstance(m, str) and 'ruin' in m.lower() for m in messages)
             for i, msg in enumerate(messages):
                 self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
-            # Determine quality from messages to notify quirk system
+            # Notify quirk system. v2.6.4: quality = outcome tier on success,
+            # 0 when ruined. Derive bonus_type from the outcome fields so
+            # Circe (5 distinct bonus categories) can actually unlock.
             _qs_cook = getattr(self, 'quirk_system', None)
             if _qs_cook:
-                _quality = 0
-                for _m in messages:
-                    import re as _re
-                    _match = _re.search(r'quality\s+(\d)', _m)
-                    if _match:
-                        _quality = int(_match.group(1))
-                        break
-                _recipe_data = ingredient.recipes.get(str(_quality), ingredient.recipes.get('0', {}))
+                _quality = 0 if _ruined else _outcome_tier
+                _bonus_type = _outcome_bonus_category(_outcome) if not _ruined else 'ruined'
                 _qs_cook.on_food_eaten(
                     quality=_quality,
                     source_monster=getattr(ingredient, 'source_monster', ''),
-                    bonus_type=_recipe_data.get('bonus_type', 'none'),
+                    bonus_type=_bonus_type,
                     ingredient_id=ingredient.id,
                 )
             self._advance_turn()
@@ -4728,10 +4789,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.quiz_title = f"PREPARING {recipe['name'].upper()}  --  COOKING"
         self.state = STATE_QUIZ
 
+        # Look up the outcome archetype ONCE, before the ingredients are
+        # consumed by cook_compound_recipe, so the callback below can read
+        # outcome.get('tier', 0) directly (v2.6.4) instead of scraping
+        # legacy 'quality N' strings. Also snapshot the primary ingredient
+        # + source_monster for the quirk callback -- cook_compound_recipe
+        # pops ingredients from the inventory, so we can't inspect them
+        # after the fact.
+        from food_system import _load_outcomes
+        from items import Ingredient
+        _outcome_id = recipe.get('outcome_id')
+        _outcome = _load_outcomes().get(_outcome_id, {}) if _outcome_id else {}
+        _outcome_tier = int(_outcome.get('tier', 0) or 0)
+        _ing_ids = list(recipe.get('ingredients', []))
+        # Anchor ingredient = first listed (matches _find_recipe_for_ingredient
+        # anchoring). source_monster comes from the actual Ingredient in the
+        # inventory (raw recipe data doesn't carry it).
+        _anchor_id = _ing_ids[0] if _ing_ids else ''
+        _source_monster = ''
+        for _it in self.player.inventory:
+            if isinstance(_it, Ingredient) and _it.id == _anchor_id:
+                _source_monster = getattr(_it, 'source_monster', '') or ''
+                break
+
         def on_complete(messages: list[str]):
             self.state = STATE_PLAYER
+            _ruined = any(isinstance(m, str) and 'ruin' in m.lower() for m in messages)
             for i, msg in enumerate(messages):
-                self.add_message(msg, 'warning' if (i == 0 and ('ruin' in msg.lower() or 'mediocre' in msg.lower())) else 'success')
+                self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
                 self._log_chronicle(f"Cooked my first compound recipe: {recipe['name']}. The dungeon smells like a kitchen for once.")
@@ -4739,6 +4824,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             rname = recipe.get('name', '')
             if rname and rname not in self._cooked_recipes:
                 self._cooked_recipes.append(rname)
+            # Notify quirk system (previously unreachable path: Tantalus,
+            # Persephone, Circe all hang off on_food_eaten). Quality = outcome
+            # tier on success, 0 when ruined. bonus_type derived from the
+            # v2.6.4 outcome shape (Circe wants 5 distinct categories).
+            _qs_cook = getattr(self, 'quirk_system', None)
+            if _qs_cook:
+                _quality = 0 if _ruined else _outcome_tier
+                _bonus_type = _outcome_bonus_category(_outcome) if not _ruined else 'ruined'
+                _qs_cook.on_food_eaten(
+                    quality=_quality,
+                    source_monster=_source_monster,
+                    bonus_type=_bonus_type,
+                    ingredient_id=_anchor_id,
+                )
             self._advance_turn()
 
         cook_compound_recipe(self.player, recipe, self.player.inventory, self.quiz_engine, on_complete)
@@ -4828,11 +4927,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 msubj, mtier = jm
                 name = str(msubj).title()
                 self.add_message(
-                    f"MASTERY! You've answered every Tier {mtier} {name} question "
-                    f"correctly this run -- Tier {mtier} {name} now succeeds "
-                    f"automatically.", 'success')
+                    f"TIER {mtier} {name.upper()} CLEARED -- auto-passes for the "
+                    f"rest of this run.", 'success')
                 self._log_chronicle(
-                    f"Achieved Tier {mtier} {name} mastery -- cleared the entire tier.")
+                    f"Cleared Tier {mtier} {name} -- auto-passes this run.")
                 qe.just_mastered = None
         else:
             self.wrong_answers += 1

@@ -19,10 +19,13 @@
       ],
       "spawn_method": "boss_drop_abaddon"
     },
-    "plot_locked": true,
     "is_unique": true,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "smooth red stone",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "bronze_bull": {
     "name": "Bronze Bull Idol",
@@ -42,10 +45,13 @@
       ],
       "spawn_method": "quest_spawn_pre_asterion"
     },
-    "plot_locked": true,
     "is_unique": true,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "bronze figurine",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "eye_of_graeae": {
     "name": "Eye of the Graeae",
@@ -70,7 +76,8 @@
     "peak_floor": 30,
     "is_unique": true,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "cloudy glass eye"
   },
   "cats_footstep": {
     "name": "Sound of a Cat's Footstep",
@@ -96,7 +103,8 @@
     },
     "peak_floor": 65,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "silvery whisper in a bottle"
   },
   "womans_beard": {
     "name": "Roots of a Woman's Beard",
@@ -122,7 +130,8 @@
     },
     "peak_floor": 65,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "wisps of fine hair"
   },
   "mountain_root": {
     "name": "Root of a Mountain",
@@ -148,7 +157,8 @@
     },
     "peak_floor": 65,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "chunk of dark stone"
   },
   "fish_breath": {
     "name": "Breath of a Fish",
@@ -174,7 +184,8 @@
     },
     "peak_floor": 65,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed vial of mist"
   },
   "bird_spittle": {
     "name": "Spittle of a Bird",
@@ -200,7 +211,8 @@
     },
     "peak_floor": 65,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "tiny sealed vial"
   },
   "bear_sinew": {
     "name": "Sinew of a Bear's Sensitivity",
@@ -226,7 +238,8 @@
     },
     "peak_floor": 65,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "coiled thread"
   },
   "gleipnir": {
     "name": "Gleipnir",
@@ -248,9 +261,12 @@
       ],
       "spawn_method": "forge_assembled"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "impossibly thin ribbon",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "leather_scrap": {
     "name": "leather scrap",
@@ -277,7 +293,8 @@
     },
     "peak_floor": 6,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "leather scrap"
   },
   "seal_of_wrath": {
     "name": "Seal of Wrath",
@@ -299,9 +316,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (red)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "seal_of_pestilence": {
     "name": "Seal of Pestilence",
@@ -323,9 +343,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (green)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "seal_of_famine": {
     "name": "Seal of Famine",
@@ -347,9 +370,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (black)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "seal_of_war": {
     "name": "Seal of War",
@@ -371,9 +397,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (rust)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "seal_of_death": {
     "name": "Seal of Death",
@@ -395,9 +424,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (pale)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "seal_of_earthquake": {
     "name": "Seal of the Earthquake",
@@ -419,9 +451,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (grey)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "seal_of_silence": {
     "name": "Seal of Silence",
@@ -443,9 +478,12 @@
       ],
       "spawn_method": "seal_demon_drop"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "sealed metal disc (silver)",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "scales_of_michael": {
     "name": "Scales of Michael",
@@ -467,9 +505,12 @@
       ],
       "spawn_method": "michael_gift_karma_1_to_9"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "ornate golden scales",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "cursed_lodestone": {
     "name": "Cursed Lodestone",
@@ -493,9 +534,12 @@
       ],
       "spawn_method": "npc_encounter_dying_knight"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "dark magnetic stone",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "sealed_dispatch": {
     "name": "Sealed Dispatch",
@@ -517,9 +561,12 @@
       ],
       "spawn_method": "npc_encounter_dying_courier"
     },
-    "plot_locked": true,
     "is_unique": true,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "wax-sealed letter",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "palladium": {
     "name": "Palladium",
@@ -546,7 +593,9 @@
       "spawn_method": "random_lore_quest_mid_dungeon"
     },
     "peak_floor": 50,
-    "is_unique": true
+    "is_unique": true,
+    "unidentified_name": "ancient wooden idol",
+    "id_level": 0
   },
   "tablet_of_destinies": {
     "name": "Tablet of Destinies",
@@ -573,7 +622,9 @@
       "spawn_method": "random_lore_quest_deep_dungeon"
     },
     "peak_floor": 75,
-    "is_unique": true
+    "is_unique": true,
+    "unidentified_name": "obsidian tablet",
+    "id_level": 0
   },
   "vidars_sandal": {
     "name": "Vidar's Sandal",
@@ -592,7 +643,6 @@
     "peak_floor": 79,
     "spread": 1,
     "peak_weight": 0.0,
-    "plot_locked": true,
     "can_be_cursed": false,
     "max_enchant": 0,
     "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
@@ -612,7 +662,11 @@
     "_design_note": "MEGA-SECRET quest reward. AC is modest (1 + leather material bonus) — the value is the instant-kill on Fenrir, not the defensive line. peak_weight 0.0 ensures it never natural-spawns; the altar assembly path is the only way in. Code references: src/game_combat.py:1292-1311 (instant-kill trigger), src/game_divine.py:499-521 (altar assembly), src/dungeon.py:2145-2154 (altar carve). See tools/balance/systems/bosses_and_quests.md §Fenrir Quest Layer 2.",
     "weight": 2.0,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "unidentified_name": "old leather sandal",
+    "_meta": {
+      "plot_locked": true
+    }
   },
   "pandoras_box": {
     "name": "Pandora's Box",

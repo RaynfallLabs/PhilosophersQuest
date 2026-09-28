@@ -245,7 +245,6 @@ class Sidebar:
             (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
             (f"Timer {player.get_quiz_timer('math')}s", FP.WARNING_TEXT),
             (f"Wt {wt:.0f}/{lim}", wt_color),
-            (f"Picks {getattr(player, 'lockpick_charges', 0)}", FP.AMBER_ACCENT),
             (f"Spells {spell_count}", FP.MP_BLUE_TEXT),
             (f"Depth {dungeon_level}", FP.BODY_TEXT),
         ]
@@ -306,15 +305,25 @@ class Sidebar:
                              (self.x + self.PAD, y))
             return y + 22 + self.SECTION_GAP
 
+        # Cap the chip grid so a big stack of buffs/debuffs never runs off
+        # the pane; overflow gets a POWERS-style "+N more" hint underneath.
+        max_chips = 8
+        visible = rows[:max_chips]
         col_w = (self.w - self.PAD * 2 - 6) // 2
         bottom = self.screen.get_height() - self.PAD
-        for i, (label, color) in enumerate(rows):
+        for i, (label, color) in enumerate(visible):
             ay = y + (i // 2) * 24
             if ay + 21 > bottom:
                 break
             ax = self.x + self.PAD + (i % 2) * (col_w + 6)
             self._effect_chip(ax, ay, col_w, label, color)
-        return y + ((len(rows) + 1) // 2) * 24 + self.SECTION_GAP
+        y_end = y + ((len(visible) + 1) // 2) * 24
+        if len(rows) > max_chips:
+            more = f"+{len(rows) - max_chips} more"
+            self.screen.blit(self._fsm.render(more, True, FP.FADED_TEXT),
+                             (self.x + self.PAD, y_end))
+            y_end += 22
+        return y_end + self.SECTION_GAP
 
     def _power_color(self, state: str) -> tuple:
         if state == "ready":

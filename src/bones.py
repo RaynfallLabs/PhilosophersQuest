@@ -94,10 +94,13 @@ def _evict_oldest(bd: str):
 def load_bones(dungeon_level: int):
     """Check for bones on this level.  50% chance to even look.
     Returns the bones dict if found, else None."""
-    if random.random() > 0.50:
-        return None
+    # Check file existence FIRST — no point burning a 50% roll on a level
+    # that has no bones file at all. Only levels with real bones need the
+    # rarity gate to prevent the ghost from feeling routine.
     path = os.path.join(_bones_dir(), f'bones_L{dungeon_level}.json')
     if not os.path.exists(path):
+        return None
+    if random.random() > 0.50:
         return None
     try:
         with open(path, 'r', encoding='utf-8') as f:
@@ -150,18 +153,30 @@ def spawn_ghost(bones: dict, dungeon, monsters: list, ground_items: list):
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
     }
 
-    # Place ghost in a non-start room
+    # Place ghost in a non-start room. Must not co-locate with a monster
+    # already placed this turn (mini-boss, seal demon, den extras, etc.);
+    # ghost is spawned AFTER those paths from level_manager.generate.
     rooms = dungeon.rooms
     if len(rooms) < 2:
         return
-    room = random.choice(rooms[1:])
-    cx, cy = room.center
-    # Find a walkable tile near room center
-    gx, gy = cx, cy
-    for tx, ty in room.inner_tiles():
-        if dungeon.is_walkable(tx, ty):
-            gx, gy = tx, ty
+    occupied = {(m.x, m.y) for m in monsters if m.alive}
+    ghost_pos = None
+    # Try up to a few random non-start rooms before giving up.
+    room = None
+    for _ in range(min(5, len(rooms) - 1)):
+        candidate_room = random.choice(rooms[1:])
+        for tx, ty in candidate_room.inner_tiles():
+            if dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+                ghost_pos = (tx, ty)
+                room = candidate_room
+                break
+        if ghost_pos is not None:
             break
+    if ghost_pos is None:
+        # Every candidate tile was occupied — silently skip this ghost
+        # rather than overwrite another monster on the same tile.
+        return
+    gx, gy = ghost_pos
 
     ghost = Monster(ghost_defn, gx, gy)
     monsters.append(ghost)
@@ -189,6 +204,9 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
     tiles = list(room.inner_tiles())
     random.shuffle(tiles)
     tile_idx = 0
+    # Track tiles that already carry a ground item so cursed gear doesn't
+    # spawn on top of existing loot from `spawn_items` (or a prior bones drop).
+    used_tiles = {(gi.x, gi.y) for gi in ground_items}
 
     for gear_entry in gear_list:
         item_id = gear_entry.get('id', '')
@@ -213,13 +231,19 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
         while tile_idx < len(tiles):
             tx, ty = tiles[tile_idx]
             tile_idx += 1
-            if dungeon.is_walkable(tx, ty):
+            if dungeon.is_walkable(tx, ty) and (tx, ty) not in used_tiles:
                 item.x, item.y = tx, ty
                 ground_items.append(item)
+                used_tiles.add((tx, ty))
                 break
 
-    # Drop gold pile if any
-    if gold > 0 and tile_idx < len(tiles):
-        from items import GoldPile
-        tx, ty = tiles[tile_idx]
-        ground_items.append(GoldPile(gold, tx, ty))
+    # Drop gold pile if any — advance past any already-used tiles so the pile
+    # doesn't land on the last-placed cursed item.
+    if gold > 0:
+        while tile_idx < len(tiles):
+            tx, ty = tiles[tile_idx]
+            tile_idx += 1
+            if dungeon.is_walkable(tx, ty) and (tx, ty) not in used_tiles:
+                from items import GoldPile
+                ground_items.append(GoldPile(gold, tx, ty))
+                break

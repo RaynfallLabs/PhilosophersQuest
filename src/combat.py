@@ -1211,10 +1211,16 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Hero passive: Witcher Mutations — +20% damage vs monsters (all).
         if 'witcher_mutations' in hero_passives:
             mult *= 1.2
-        # Hero passive: Niten Ichi-Ryū (Musashi) — +15% damage when dual-wielding.
-        if 'niten_ichi_ryu' in hero_passives and \
-                getattr(player, 'ranged_weapon', None) is not None and \
-                getattr(player, 'weapon', None) is not None:
+        # Hero passive: Niten Ichi-Ryū (Musashi) — +15% damage when a melee
+        # weapon is equipped. Musashi ships longsword + shortsword (both melee);
+        # Player has no distinct `melee_weapon` slot, and the `ranged_weapon`
+        # slot only accepts ammo-requiring weapons, so the old
+        # weapon+ranged_weapon gate never fired for his kit. Gate now on
+        # "a non-ammo weapon in the primary slot" — preserves the two-swords
+        # fantasy for any melee loadout.
+        _mw = getattr(player, 'weapon', None)
+        if 'niten_ichi_ryu' in hero_passives and _mw is not None and \
+                not getattr(_mw, 'requires_ammo', False):
             mult *= 1.15
         # Hero buff: crit_buff (Joan of Arc's Standard / Ash's She-Bitch) — next attack crits
         if getattr(player, 'status_effects', {}).get('crit_buff', 0) > 0:

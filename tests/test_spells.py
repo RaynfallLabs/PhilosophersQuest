@@ -155,14 +155,20 @@ def test_spellbook_regular_uses_threshold_one():
             f"{bid} must use quiz_threshold=1 (v2.12.0 unified contract)")
 
 
-def test_spellbook_unique_uses_threshold_three():
-    """v2.12.0: unique artifact spellbooks keep quiz_threshold=3."""
+def test_spellbook_unique_uses_threshold_one():
+    """2026-09-24: unique artifact spellbooks were authored with
+    quiz_threshold=3 pre-zero-tolerance. Under the current engine, one wrong
+    grammar Q ends the quiz — a T4/T5 unique book with threshold=3 was a
+    savage difficulty spike and (for consumable_artifacts like Book of Thoth)
+    couldn't be Scheherazade-saved. Uniques now use threshold=1 like the rest;
+    difficulty comes from the grammar TIER, not the streak length.
+    """
     books = _load_spellbook()
     for bid, bdef in books.items():
         if not bdef.get('is_unique'):
             continue
-        assert int(bdef.get('quiz_threshold', 0)) == 3, (
-            f"unique book {bid} must use quiz_threshold=3")
+        assert int(bdef.get('quiz_threshold', 0)) == 1, (
+            f"unique book {bid} must use quiz_threshold=1")
 
 
 def test_spellbook_has_tier_field():

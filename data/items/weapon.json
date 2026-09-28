@@ -2852,7 +2852,6 @@
     "identified": false,
     "unidentified_name": "a blade that seems to move before you do",
     "lore": "The Self-Swinger of Slavic fairy tales fights on its own. It is found in underground kingdoms guarded by Koschei or a serpent. Heroes who find it never quite understand it. The sword fights; they survive. The sword's autonomy is treated not as alarming but as practical.",
-    "counterAttackChance": 0.25,
     "damage_types": [
       "slash",
       "magic"
@@ -2875,7 +2874,8 @@
     "weapon_class_chain": "normal",
     "_curve_note": "Redistributed: peak=58, base=17 (= curve.weapon_base_damage(58) x 1.7), min_level=46, quiz_tier=3.",
     "design_notes": "Wild/chaotic archetype: the self-swinger has its own ideas, erratic until it finds the killing stroke.",
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "_note": "design_intent: counterAttackChance=0.25 — Slavic legend \"the Sword That Fights Itself\" should retaliate on incoming melee. No engine consumer as of 2026-09-27; wire it up when the passive-defense hook lands."
   },
   "shamshir_e_zomorrodnegar": {
     "name": "Shamshir-e Zomorrodnegar",
@@ -3594,7 +3594,7 @@
     "class": "sword",
     "variant": "1h",
     "tier": 3,
-    "material": "volcanic iron",
+    "material": "volcanic_iron",
     "mathTier": 3,
     "baseDamage": 9,
     "chainMultipliers": [

@@ -531,6 +531,7 @@ def _level_100_abyss():
 # ---------------------------------------------------------------------------
 
 def _make(tiles, rooms, level):
+    """Create a Dungeon object from tiles and rooms."""
     return Dungeon(tiles, rooms, _W, _H, level)
 
 
@@ -641,8 +642,3 @@ def _level_999_moo_moo_farm():
     ]
 
     return dungeon, monsters, []
-
-
-def _make(tiles, rooms, level):
-    """Create a Dungeon object from tiles and rooms."""
-    return Dungeon(tiles, rooms, _W, _H, level)

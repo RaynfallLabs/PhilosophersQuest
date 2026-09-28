@@ -156,15 +156,45 @@ class QuirkSystem:
             self.game._show_quirk_unlock_popup(name, effect, trigger, flavor)
 
     def _timer_bonus(self, subject: str, amount: int):
+        """Original design (pre-2026-05-29): +N seconds on the given subject's
+        quiz timer. Under the current engine, only `math` is timed, so a
+        non-math timer bonus is silently discarded. Rather than delete each
+        such quirk, this helper still stores the bonus (in case a future
+        subject becomes timed) AND grants a small subject-appropriate stat
+        bump so the reward has a real effect right now.
+        """
+        # Map each subject to the stat that best fits the flavor.
+        _STAT_FOR_SUBJECT = {
+            'math':       'INT',
+            'science':    'INT',
+            'grammar':    'INT',
+            'philosophy': 'WIS',
+            'history':    'WIS',
+            'theology':   'WIS',
+            'economics':  'WIS',
+            'animal':     'WIS',
+            'geography':  'PER',
+            'cooking':    'CON',
+        }
+        stat = _STAT_FOR_SUBJECT.get(subject, 'WIS')
+
         def _apply(pl):
             b = getattr(pl, 'quiz_timer_bonuses', None)
             if b is None:
                 pl.quiz_timer_bonuses = {}
                 b = pl.quiz_timer_bonuses
             b[subject] = b.get(subject, 0) + amount
+            # Give the reward teeth even when the subject is untimed: convert
+            # every 3 seconds of promised timer into +1 to the subject's stat.
+            pl.apply_stat_bonus(stat, max(1, amount // 3))
         return _apply
 
     def _all_timer_bonus(self, amount: int):
+        """All-subjects timer bonus (Machiavelli / Zoroaster / Sibyl). Same
+        retarget story as `_timer_bonus`: only math benefits from the seconds,
+        so this now also grants +1 WIS (Zoroaster/Sibyl "all-subjects wisdom")
+        for the currently-dead five-subject bonus.
+        """
         def _apply(pl):
             b = getattr(pl, 'quiz_timer_bonuses', None)
             if b is None:
@@ -172,6 +202,7 @@ class QuirkSystem:
                 b = pl.quiz_timer_bonuses
             for subj in _ALL_SUBJECTS:
                 b[subj] = b.get(subj, 0) + amount
+            pl.apply_stat_bonus('WIS', max(1, amount))
         return _apply
 
     def _award_power(self, qid: str, name: str, apply_fn):
@@ -347,6 +378,16 @@ class QuirkSystem:
                 self._award_power('time_dilation', "Time Dilation", lambda pl: None)
         else:
             self._sp('consecutive_correct', 0)
+            # Cassandra (#12) — RETARGETED 2026-09-24: original trigger
+            # ("pass a threshold quiz with 2+ wrong answers") was unreachable
+            # under the zero-tolerance rule that ends a threshold quiz on the
+            # first wrong. The new trigger honors the same spirit -- Cassandra
+            # was doomed to be right and disbelieved, so "persistent through
+            # wrong answers" fits: accumulate 50 wrong answers across the run.
+            self._inc('cassandra_wrong_total')
+            if self._p('cassandra_wrong_total') >= 50 and not self.is_unlocked('cassandra'):
+                self._award('cassandra', "Cassandra's Persistence",
+                            lambda pl: pl.apply_stat_bonus('WIS', 1))
 
         if correct:
             # Tiresias (#2): 25 correct while blinded
@@ -454,12 +495,8 @@ class QuirkSystem:
                     self._award('apollo', "Apollo's Perfection",
                                 self._timer_bonus('math', 3))
 
-        # Cassandra (#12): pass threshold quiz with >=2 wrong answers
-        if mode == 'threshold' and success and wrong_count >= 2:
-            self._inc('cassandra_scrapes')
-            if self._p('cassandra_scrapes') >= 10 and not self.is_unlocked('cassandra'):
-                self._award('cassandra', "Cassandra's Persistence",
-                            lambda pl: pl.apply_stat_bonus('WIS', 1))
+        # Cassandra: unlock trigger moved to on_quiz_answer (accumulates wrong
+        # answers across the whole run). See 2026-09-24 retarget comment there.
 
     def on_kill(self, monster_kind: str, chain_score: int, ranged: bool,
                 unarmed: bool, hp_pct_before: float, is_feared: bool):
@@ -1070,7 +1107,7 @@ _ACTIVE_POWER_DEFS: dict[str, dict] = {
     'ouroboros':          {'uses': 1,  'cooldown': 0,  'label': "The Infinite Circle",     'desc': 'Haste + Shield + Regen for 20 turns.'},
     'eye_storm':          {'uses': 3,  'cooldown': 0,  'label': 'Eye of the Storm',       'desc': 'Invisible + Blessed for 10 turns.'},
     'ancestral_q':        {'uses': 2,  'cooldown': 0,  'label': 'Ancestral Memory',       'desc': 'Clairvoyance for 20 turns.'},
-    'sage_counsel':       {'uses': 3,  'cooldown': 0,  'label': "Sage's Counsel",         'desc': 'Blessed for 15 turns (+25% quiz timer).'},
+    'sage_counsel':       {'uses': 3,  'cooldown': 0,  'label': "Sage's Counsel",         'desc': 'Blessed for 15 turns (+25% math combat quiz timer).'},
     'focused_scholar':    {'uses': 2,  'cooldown': 0,  'label': "Scholar's Focus",        'desc': 'Brilliance for 10 turns (INT+1, WIS+1).'},
     'mind_fortress':      {'uses': 3,  'cooldown': 0,  'label': 'Mind Fortress',          'desc': 'Clears all mental debuffs instantly.'},
     'philosophers_stone': {'uses': 1,  'cooldown': 0,  'label': "Philosopher's Stone",    'desc': 'Blessed + Brilliance for 10 turns.'},
@@ -1114,7 +1151,7 @@ _QUIRK_PROGRESS = {
     'merlin':        ('merlin_wands', 10, True),
     'buddha':        ('wait_near_monsters', 500, False),
     'hephaestus':    ('hephaestus_counts', 15, False),   # dict-based, uses max value
-    'cassandra':     ('cassandra_scrapes', 10, False),
+    'cassandra':     ('cassandra_wrong_total', 50, False),
     'sisyphus':      ('sisyphus_chests', 10, True),
     'job':           ('job_trap_types', 5, True),
     'orpheus':       ('orpheus_sessions', 5, False),
@@ -1283,7 +1320,7 @@ _QUIRK_TRIGGER = {
     'merlin':        "You zapped 10 distinct unidentified wands.",
     'buddha':        "You waited 500 times while hostile monsters were nearby.",
     'hephaestus':    "You equipped the same armor piece 15 times.",
-    'cassandra':     "You passed 10 threshold quizzes despite getting 2+ wrong.",
+    'cassandra':     "You answered 50 questions wrong in one run and kept going anyway.",
     'sisyphus':      "You failed the lockpick quiz on 10 distinct trapped chests.",
     'job':           "You triggered 5 distinct trap types.",
     'orpheus':       "You stood beside monsters for 10 turns without fighting, 5 times.",
@@ -1491,48 +1528,48 @@ _QUIRK_EFFECTS = {
     'mithridates':   "Permanent poison & disease immunity.",
     'tiresias':      "PER +2",
     'odin':          "Permanent telepathy -- all monsters visible.",
-    'scheherazade':  "Grammar quiz timer +5 seconds.",
+    'scheherazade':  "INT +1.",
     'paracelsus':    "Permanent drain & disease resistance.",
     'siegfried':     "Permanent magic resistance.",
     'musashi':       "Chain-1 damage uses 2nd multiplier instead of weakest.",
     'rasputin':      "CON +2",
-    'merlin':        "Science quiz timer +4 seconds.",
+    'merlin':        "INT +1.",
     'buddha':        "Permanent displacement -- monsters may miss.",
     'hephaestus':    "Equip threshold -1 for that armor slot.",
     'cassandra':     "WIS +1",
-    'sisyphus':      "Economics quiz timer +5 seconds.",
+    'sisyphus':      "WIS +1.",
     'job':           "Permanent levitation -- immune to floor traps.",
     'orpheus':       "Monsters start slowed 5 turns on every floor you enter.",
     'tantalus':      "STR +1",
-    'asclepius':     "Animal quiz timer +4 seconds.",
+    'asclepius':     "WIS +1.",
     'fisher_king':   "Prayer cooldown permanently halved.",
     'anansi':        "INT +1",
     'prometheus':    "Permanent regeneration (1 HP/turn).",
-    'penelope':      "Geography quiz timer +3 seconds.",
-    'dionysus':      "Philosophy quiz timer +3 seconds.",
-    'apollo':        "Math quiz timer +3 seconds.",
-    'athena':        "History quiz timer +4 seconds.",
+    'penelope':      "PER +1.",
+    'dionysus':      "WIS +1.",
+    'apollo':        "INT +1 and math quiz timer +3 seconds.",
+    'athena':        "WIS +1.",
     'loki':          "WIS +2",
     'thor':          "That weapon gains +2 enchant bonus permanently.",
     'beowulf':       "Unarmed attacks deal +5 base damage.",
     'norns':         "Recall lore cooldown reduced by 50%.",
     'jormungandr':   "That weapon's max chain length +1.",
-    'shiva':         "Philosophy quiz timer +5 seconds.",
+    'shiva':         "WIS +1.",
     'enkidu':        "STR +1",
     'perseus':       "+2 to all saving throws -- you turn the blow aside.",
     'theseus':       "PER +1",
     'persephone':    "Ruined preparations still yield half the SP + HP recovery -- the seed keeps returning.",
     'hermes':        "Hasted duration permanently doubled.",
-    'sibyl':         "All quiz timers +2 seconds.",
+    'sibyl':         "Math combat quiz timer +2s.",
     'valkyrie':      "DEX +1",
     'ahasverus':     "Permanent searching -- auto-reveal adjacent tiles.",
-    'circe':         "Cooking quiz timer +4 seconds.",
+    'circe':         "CON +1.",
     'gawain':        "CON +1",
     'ariadne':       "INT +1",
     'morgan':        "INT +2",
     'cuchulainn':    "STR +1",
     'fenrir':        "CON +1",
-    'kali':          "Theology quiz timer +3 seconds.",
+    'kali':          "WIS +1.",
     'medusa':        "DEX +2",
     'green_knight':  "CON +1",
     'narcissus':     "PER +1",
@@ -1540,23 +1577,23 @@ _QUIRK_EFFECTS = {
     'ragnarok':      "CON +5",
     # --- New passive quirks ---
     'spartacus':     "STR +1, CON +1",
-    'ramanujan':     "Math quiz timer +5 seconds.",
-    'ibn_battuta':   "Geography quiz timer +4 seconds.",
-    'tesla':         "Science quiz timer +5 seconds.",
-    'de_medici':     "Economics quiz timer +4 seconds.",
+    'ramanujan':     "INT +1 and math quiz timer +5 seconds.",
+    'ibn_battuta':   "PER +1.",
+    'tesla':         "INT +1.",
+    'de_medici':     "WIS +1.",
     'leonidas':      "CON +2",
-    'confucius':     "Philosophy quiz timer +4 seconds.",
-    'zoroaster':     "All quiz timers +1 second.",
+    'confucius':     "WIS +1.",
+    'zoroaster':     "WIS +1, math combat quiz timer +1s.",
     'boudicca':      "STR +2",
     'solomon_q':     "WIS +2",
     'atalanta':      "DEX +2",
-    'galileo':       "Science quiz timer +3 seconds.",
+    'galileo':       "INT +1.",
     'caesar':        "All stats +1",
-    'shakespeare':   "Grammar quiz timer +5 seconds.",
+    'shakespeare':   "INT +1.",
     'wanderlust_q':  "SP drain from movement is halved.",
     'nostradamus':   "WIS +3",
     'archimedes':    "INT +1",
-    'machiavelli':   "All quiz timers +1 second.",
+    'machiavelli':   "WIS +1, math combat quiz timer +1s.",
     'darwin':        "CON +3",
     'hypatia':       "INT +2",
     # --- New power quirks ---
@@ -1588,7 +1625,7 @@ _QUIRK_EFFECTS = {
     'reality_anchor': "[POWER x2] Clear all debuffs instantly.",
     'runic_armor':   "[POWER x2] Fire Shield + Cold Shield + Shock Resist for 10 turns.",
     'astral_form':   "[POWER x2] Levitate + Invisible + Phase for 8 turns.",
-    'sage_counsel':  "[POWER x3] Blessed for 15 turns (+25% quiz timer).",
+    'sage_counsel':  "[POWER x3] Blessed for 15 turns (+25% math combat quiz timer).",
     'ouroboros':     "[POWER x1] Hasted + Shielded + Regenerating for 20 turns.",
     'diogenes':     "WIS +2",
     'duck_of_doom': "A celestial duckling hatched off your head as a pet.",

@@ -811,12 +811,19 @@ class Accessory(Item):
         self.tears_of_freya_gold: int  = int(defn.get('tears_of_freya_gold', 1) or 1)
         self.tears_of_freya_interval: int = int(defn.get('tears_of_freya_interval', 1) or 1)
         # ----- Engine wave 6: small per-item procs (audit follow-up) -----
-        self.identify_timer_bonus: int = int(defn.get('identify_timer_bonus', 0) or 0)  # ring_of_pythia
+        # identify_timer_bonus was the pre-2026-09 name; identify v3 is untimed
+        # so the field was dead. Repurposed on 2026-09-24 to identify_tier_reduction:
+        # subtract N tiers from the derived id_tier (min tier 1) when this
+        # accessory is equipped. Ring of Pythia and Torque of Lugh use it.
+        self.identify_tier_reduction: int = int(defn.get('identify_tier_reduction', 0) or 0)
         self.auto_invisible_at_low_hp: bool = bool(defn.get('auto_invisible_at_low_hp', False))  # ring_of_eluned
         self.protected_when_surrounded: bool = bool(defn.get('protected_when_surrounded', False))  # ring_of_hypatia
         self.gyges_invisible_attack_karma: bool = bool(defn.get('gyges_invisible_attack_karma', False))  # ring_of_gyges
         self.monster_tag_chain_bonus: dict = defn.get('monster_tag_chain_bonus', {})  # dragonslayer_ring
-        self.rotating_subject_chain_cap: list = defn.get('rotating_subject_chain_cap', [])  # Lugh, Hamsa
+        # Flat attack-chain cap bonus from a plain accessory field (Torque of
+        # Lugh). Distinct from `passive_attack_chain_cap_bonus` on chain-equip
+        # items (Ring of Gawain); both flow through `chain_passives.get_attack_chain_cap_bonus`.
+        self.attack_chain_cap_bonus: int = int(defn.get('attack_chain_cap_bonus', 0) or 0)
         # Chain-equip fields (legendary uniques only). When equip_chain_mode is set
         # to 'escalator' or 'chain', equipping triggers that quiz mode. Default
         # subject for accessories is 'history' if equip_chain_subject is empty.

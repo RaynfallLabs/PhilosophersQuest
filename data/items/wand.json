@@ -2373,13 +2373,6 @@
     "charges": 7,
     "effect": "fire_bolt",
     "container_loot_tier": "legendary",
-    "floorSpawnWeight": {
-      "1-20": 0,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 0,
-      "81-100": 0
-    },
     "is_unique": true,
     "lore": "The scepter of the King of Hell. Its ruby was cut from the fires of Pandemonium's court. Asmodeus carried it into every deal he wrote, and every deal burned in his favor. Now it burns for you.",
     "design_notes": "Asmodeus L92 boss drop. Wired via monster.treasure.unique_drop_id.",

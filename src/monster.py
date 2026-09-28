@@ -28,7 +28,13 @@ class Monster:
         self._slow_skip: bool = False   # used by variable-speed skip logic
 
         self.harvest_tier      = defn.get('harvest_tier', 1)
+        # harvest_threshold: dead JSON field as of harvest v4 (2026-08-06);
+        # harvest is a single-question flow now — read kept for old-pickle
+        # compat but defaults gracefully.
         self.harvest_threshold = defn.get('harvest_threshold', 2)
+        # ingredient_id: dead JSON field — harvest v4 resolves the drop via
+        # prime_cuts.json (looked up by monster.kind / tags), not this field.
+        # Read kept for old-pickle compat.
         self.ingredient_id     = defn.get('ingredient_id', None)
         self.min_level: int    = int(defn.get('min_level', 1))
         self.max_level         = defn.get('max_level', None)  # soft cap; None = no cap
@@ -89,6 +95,13 @@ class Monster:
         self.sp_drain: int = int(defn.get('sp_drain', 0))
         self.is_seal_demon: bool = defn.get('is_seal_demon', False)
         self._annihilate_target = None  # set by seek_locust AI
+
+        # --- Boss flag (mini-bosses, seal demons, etc.) ---
+        # Read from JSON so boss-immunity in hero_specials/game_magic actually
+        # applies to blood_archon, iron_patriarch, whispering_crone, and the
+        # 7 seal_demon_* monsters. Falls back to False if the JSON omits it;
+        # _DEFAULTS also carries is_boss=False for old pickles.
+        self.is_boss: bool = bool(defn.get('is_boss', False))
 
         # --- Footprint (multi-tile monsters) ---
         # NW-anchored rectangle. (1, 1) = single-tile (the default for
@@ -1686,8 +1699,12 @@ class DeathMonster(Monster):
         self._speed_pct = 50           # % chance to act each turn (50=half, 75, 100, 125)
         self._frozen_turns = 0         # prayer freeze countdown
 
-    # Death cannot be harmed
-    def take_damage(self, amount: int) -> int:
+    # Death cannot be harmed. Accept and discard the same kwargs as
+    # Monster.take_damage (damage_type, ignore_resistance) so callers that
+    # pass them through — spell/wand paths, chain-passive procs — don't
+    # raise TypeError on Death.
+    def take_damage(self, amount: int, damage_type: str = 'physical',
+                    ignore_resistance: bool = False) -> int:
         return 0
 
     def is_dead(self) -> bool:

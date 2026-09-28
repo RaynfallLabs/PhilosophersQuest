@@ -1,5 +1,4 @@
 import json
-import math
 import random
 from paths import data_path
 
@@ -77,53 +76,14 @@ def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
     return [ing_id]
 
 # ------------------------------------------------------------------
-# Potency-based cooking formulas (replaces tier lookup tables)
-# Ingredient power comes from the source monster's min_level.
-# Potency = sqrt(min_level) gives a ~10:1 range (L100 vs L1).
-# Quiz ALWAYS starts at T1 regardless of ingredient.
+# NOTE: v2.6.3 potency-based cooking formulas (SINGLE_MULT/COMPOUND_MULT,
+# _potency, _single_max_hp, _compound_max_hp, _cooking_sp, _cooking_heal)
+# were retired in v2.6.4 when the cook engine switched to the outcome-
+# archetype table in data/items/cook_outcomes.json. Removed 2026-09-27
+# after audit-verified zero call sites in src/ or tests/. The offline
+# ingredient generator in tools/balance keeps its own local copies of
+# SINGLE_MULT/COMPOUND_MULT for regeneration purposes.
 # ------------------------------------------------------------------
-
-SINGLE_MULT   = {1: 0.3, 2: 0.6, 3: 0.9, 4: 1.5, 5: 2.2}
-COMPOUND_MULT = {1: 0.6, 2: 1.1, 3: 1.8, 4: 3.0, 5: 4.5}
-
-
-def _potency(min_level: int) -> float:
-    """Ingredient potency derived from source monster's min_level."""
-    return math.sqrt(max(1, min_level))
-
-
-def _single_max_hp(min_level: int, quality: int) -> int:
-    """Permanent max HP from a single-ingredient cook."""
-    if quality < 1:
-        return 0
-    return max(1, int(_potency(min_level) * SINGLE_MULT[quality]))
-
-
-def _compound_max_hp(max_min_level: int, quality: int, n_ingredients: int = 2) -> int:
-    """Permanent max HP from a compound recipe. Potency = highest ingredient level."""
-    if quality < 1:
-        return 0
-    ing_bonus = 1.0 + 0.15 * (n_ingredients - 2)
-    return max(1, int(_potency(max_min_level) * COMPOUND_MULT[quality] * ing_bonus))
-
-
-def _cooking_heal(min_level: int, quality: int) -> int:
-    """Immediate HP restored from eating the cooked meal."""
-    if quality < 1:
-        return 0
-    return max(1, int(_potency(min_level) * quality * 1.5))
-
-
-def _cooking_sp(min_level: int, quality: int, raw_sp: int = 10) -> int:
-    """SP restored from eating the cooked meal.
-    Q1 = raw SP (same as eating raw, but no poisoning risk).
-    Q2-Q5 scale upward so cooking skill is always rewarded."""
-    if quality < 1:
-        return 0
-    formula = int(5 * _potency(min_level) * quality)
-    # Ensure Q1 >= raw, then each quality step adds at least 15% over raw
-    scaled = int(raw_sp * (1.0 + 0.15 * (quality - 1)))
-    return max(formula, scaled)
 
 
 # ------------------------------------------------------------------
@@ -353,12 +313,7 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
     return messages
 
 
-# Legacy shim: some code paths still reference _apply_tier_outcome
-def _apply_tier_outcome(player, recipe: dict, tier: int) -> list[str]:
-    """LEGACY (pre-v2.6.4). Routes to _apply_recipe_outcome.
-    tier=0 -> ruined, anything else -> normal outcome (v2.6.4 doesn't do
-    partial tiers)."""
-    return _apply_recipe_outcome(player, recipe, ruined=(tier == 0))
+# (v2.6.4: legacy _apply_tier_outcome shim removed 2026-09-27 -- no callers.)
 
 
 # Permanent-power dispatcher for trophy recipes

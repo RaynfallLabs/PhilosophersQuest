@@ -193,6 +193,12 @@ _EVOLVE_2 = 55
 # pet's life, stage 2 only with deep play.
 _XP_PER_LEVEL = 20
 
+# Duck of Doom quirk: turns of wearing the cursed headgear before the
+# Waddlekind pet hatches. Single source of truth for both the quirk
+# gate in main.py and any hero-special / summon path that needs to
+# reference the threshold.
+DUCK_OF_DOOM_TURNS_REQUIRED = 2026
+
 
 class Pet:
     """A companion creature that follows the player and fights enemies."""
@@ -279,7 +285,12 @@ class Pet:
     # --- Leveling ------------------------------------------------------------
 
     def gain_xp(self, amount: int = 1) -> list[str]:
-        """Add XP, check for level ups. Returns list of messages."""
+        """Add XP, check for level ups. Returns list of messages.
+
+        NOTE: at level 100 (design cap) further XP is intentionally dropped —
+        the L100 cap is the pet's terminal level and awarding residual XP
+        would be wasted state.
+        """
         if not self.alive or self.level >= 100:
             return []
         self.xp += amount
@@ -485,7 +496,11 @@ class Pet:
         return None
 
     def _move_toward(self, tx, ty, dungeon, monsters, pets, player, ground_items=None):
-        """Move one step toward (tx, ty) if possible. Avoids cursed ground items."""
+        """Move one step toward (tx, ty) if possible. Avoids cursed ground items,
+        player-dug pits (hard block), and known floor traps (soft avoid — pets
+        route around them if another step works, but WILL step onto one rather
+        than stall if it's the only option, since forgetting the goal defeats
+        the whole point of AI movement)."""
         dx = 0 if tx == self.x else (1 if tx > self.x else -1)
         dy = 0 if ty == self.y else (1 if ty > self.y else -1)
         # Build set of cursed-item tiles to avoid
@@ -494,7 +509,11 @@ class Pet:
             for gi in ground_items:
                 if getattr(gi, 'buc', 'uncursed') == 'cursed':
                     _cursed_tiles.add((gi.x, gi.y))
-        # Try preferred direction, then each axis
+        # Pits are a hard refuse; floor traps are a soft avoid (fall through
+        # to a second pass that ignores them if all preferred steps are trapped).
+        _pits = getattr(dungeon, 'pits', None) or set()
+        _traps = getattr(dungeon, 'traps', None) or {}
+        # First pass: preferred routes that also skip trapped tiles.
         for mx, my in [(dx, dy), (dx, 0), (0, dy)]:
             if mx == 0 and my == 0:
                 continue
@@ -509,6 +528,30 @@ class Pet:
                 continue
             if (nx, ny) in _cursed_tiles:
                 continue  # pets instinctively avoid cursed items
+            if (nx, ny) in _pits:
+                continue  # pits are a one-way trip; never voluntarily walk in
+            if (nx, ny) in _traps:
+                continue  # walk around known floor traps if possible
+            self.x, self.y = nx, ny
+            return
+        # Second pass: same as first but accept known floor traps (pit still
+        # blocks). Only reached when every preferred direction was trapped.
+        for mx, my in [(dx, dy), (dx, 0), (0, dy)]:
+            if mx == 0 and my == 0:
+                continue
+            nx, ny = self.x + mx, self.y + my
+            if not dungeon.is_walkable(nx, ny):
+                continue
+            if nx == player.x and ny == player.y:
+                continue
+            if monster_at_tile(monsters, nx, ny) is not None:
+                continue
+            if any(p.alive and p is not self and p.x == nx and p.y == ny for p in pets):
+                continue
+            if (nx, ny) in _cursed_tiles:
+                continue
+            if (nx, ny) in _pits:
+                continue
             self.x, self.y = nx, ny
             return
 
@@ -522,9 +565,27 @@ _FENRIR_SPECIES = {
         {'name': 'Fenrir',   'symbol': 'F', 'msg': 'Fenrir grows stronger!'},
         {'name': 'Fenrir',   'symbol': 'F', 'msg': 'Fenrir howls with world-shaking power!'},
     ],
-    'special_name': 'Ragnarok Bite',
-    'special_status': 'bleeding',
-    'special_status_chance': 0.50,
+    # Fenrir enters at max level (stage 2), so every listed special is
+    # immediately available. Kit mirrors the shape used by the four elemental
+    # species: one signature single-target rip and one AoE howl.
+    'specials': [
+        {
+            'id': 'ragnarok_bite', 'name': 'Ragnarok Bite', 'unlock_stage': 0,
+            'damage_mult': 2.2, 'damage_type': 'holy',
+            'targeting': 'single', 'range': 1,
+            'status': 'bleeding', 'status_chance': 0.50, 'status_duration': 5,
+            'cooldown': 200,
+            'desc': "Adjacent single target; 2.2x holy damage; 50% bleed (5 turns).",
+        },
+        {
+            'id': 'world_shaking_howl', 'name': 'World-Shaking Howl', 'unlock_stage': 0,
+            'damage_mult': 1.4, 'damage_type': 'holy',
+            'targeting': 'aoe', 'range': 0, 'aoe_radius': 3,
+            'status': 'feared', 'status_chance': 0.60, 'status_duration': 4,
+            'cooldown': 500,
+            'desc': "Pet-centered AoE radius 3; 1.4x holy damage; 60% fear (4 turns).",
+        },
+    ],
 }
 
 
@@ -541,7 +602,6 @@ class FenrirPet(Pet):
         self.x = x
         self.y = y
         self.alive = True
-        self._special_cooldown = 0
         self._regen_timer = 0
         # Required by base Pet methods called every turn from game_combat
         # (gain_xp_passive, tick_cooldown, name property, command-aware AI).
@@ -615,7 +675,6 @@ class SketchedPet(Pet):
         self.x = px
         self.y = py
         self.alive = True
-        self._special_cooldown = 999  # no special attack
         self._regen_timer = 0
         # Required by base Pet methods called every turn from game_combat.
         self._passive_xp_timer = 0
@@ -705,7 +764,6 @@ class DadPet(Pet):
         self.x = x
         self.y = y
         self.alive = True
-        self._special_cooldown = 999
         self._regen_timer = 0
         # Required by base Pet methods called every turn from game_combat.
         self._passive_xp_timer = 0
@@ -782,7 +840,6 @@ class UnicornPet(Pet):
         self.x = x
         self.y = y
         self.alive = True
-        self._special_cooldown = 0
         self._regen_timer = 0
         self._heal_timer = 0
         self._cleanse_timer = 0
@@ -881,5 +938,11 @@ class UnicornPet(Pet):
 
 
 def random_species() -> str:
-    """Pick a random species key with equal probability."""
-    return random.choice(list(_SPECIES.keys()))
+    """Pick a random species key with equal probability.
+
+    `duck_of_doom` is EXCLUDED from the random pool — Waddlekind is the
+    endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere /
+    Summon Guardian / Gate outcome. It only spawns via `_duck_of_doom_transform`.
+    """
+    pool = [k for k in _SPECIES.keys() if k != 'duck_of_doom']
+    return random.choice(pool)

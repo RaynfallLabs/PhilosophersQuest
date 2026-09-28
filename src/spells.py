@@ -235,10 +235,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # SLOW FAMILY -- 3 tiers
     # ==================================================================
     'slow_spell': {
+        # v2.15+ audit sync: desc "6 turns" -> matches applied 10 turns.
         'name': 'Slow', 'effect': 'slow_monster_spell', 'power': '',
         'mp_cost': 3, 'tier': 1, 'quiz_tier': 1, 'needs_target': True,
         'spell_family': 'slow',
-        'desc': 'One target skips every other turn for 6 turns.',
+        'desc': 'One target skips every other turn for 10 turns.',
     },
     'mass_slow_spell': {
         'name': 'Mass Slow', 'effect': 'mass_slow', 'power': '',
@@ -257,16 +258,18 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # PARALYZE FAMILY -- 3 tiers
     # ==================================================================
     'hold_monster_spell': {
+        # v2.15+ audit sync: desc "5 turns" -> matches applied 8 turns.
         'name': 'Hold Monster', 'effect': 'paralyze_monster', 'power': '',
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'paralyze',
-        'desc': 'One target is paralyzed for 5 turns.',
+        'desc': 'One target is paralyzed for 8 turns.',
     },
     'paralyze_spell': {
+        # v2.15+ audit sync: desc "10 turns" -> matches applied 8 turns.
         'name': 'Paralyze', 'effect': 'paralyze_monster', 'power': '',
         'mp_cost': 15, 'tier': 4, 'quiz_tier': 4, 'needs_target': True,
         'spell_family': 'paralyze',
-        'desc': 'One target is paralyzed for 10 turns.',
+        'desc': 'One target is paralyzed for 8 turns.',
     },
     'mass_paralyze_spell': {
         'name': 'Mass Paralyze', 'effect': 'mass_sleep', 'power': '',
@@ -279,10 +282,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # FEAR FAMILY -- 2 tiers
     # ==================================================================
     'fear_spell': {
+        # v2.15+ audit sync: desc "8 turns" -> matches applied 10 turns.
         'name': 'Fear', 'effect': 'fear_monster_spell', 'power': '',
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': True,
         'spell_family': 'fear',
-        'desc': 'One target flees in terror for 8 turns.',
+        'desc': 'One target flees in terror for 10 turns.',
     },
     'terror_spell': {
         'name': 'Terror', 'effect': 'mass_fear', 'power': '',
@@ -317,16 +321,20 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Shimmering force -- +2 AC and physical damage halved for 12 turns.',
     },
     'magic_shield_spell': {
-        'name': 'Magic Shield', 'effect': 'shield_self', 'power': '',
+        # v2.15+ audit sync: given a distinct effect id so its 20-turn duration
+        # is not aliased to mage_armor_spell's 12 turns. Tier progression fix.
+        'name': 'Magic Shield', 'effect': 'magic_shield_self', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
         'spell_family': 'buff_shield',
         'desc': 'A stronger shield -- +2 AC, physical halved for 20 turns.',
     },
     'stoneskin_spell': {
+        # v2.15+ audit sync: desc was "30 turns" but code applies 25.
+        # Kept the balanced 25-turn code; updated desc to match.
         'name': 'Stoneskin', 'effect': 'stoneskin_self', 'power': '',
         'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'buff_shield',
-        'desc': 'Skin hardens to stone -- +2 AC, physical halved for 30 turns.',
+        'desc': 'Skin hardens to stone -- +2 AC, physical halved for 25 turns.',
     },
 
     # ==================================================================
@@ -339,10 +347,13 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Move twice per turn for 10 turns.',
     },
     'greater_haste_spell': {
-        'name': 'Greater Haste', 'effect': 'haste_self', 'power': '',
+        # v2.15+ audit sync: distinct effect id + 20-turn duration so T5 haste
+        # is meaningfully better than the T2 haste_self (10 turns). Desc updated
+        # from "25 turns" to the actual 20 turns applied by the code.
+        'name': 'Greater Haste', 'effect': 'greater_haste_self', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'haste',
-        'desc': 'Move twice per turn for 25 turns.',
+        'desc': 'Move twice per turn for 20 turns.',
     },
 
     # ==================================================================
@@ -371,10 +382,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Attackers miss you 30% of the time for 20 turns.',
     },
     'reflect_spell': {
+        # v2.15+ audit sync: desc "20 turns" -> matches applied 15 turns.
         'name': 'Spell Reflect', 'effect': 'reflect_self', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'displacement',
-        'desc': '50% chance to reflect status attacks back to source for 20 turns.',
+        'desc': '50% chance to reflect status attacks back to source for 15 turns.',
     },
 
     # ==================================================================
@@ -403,10 +415,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
     # DETECT MONSTERS FAMILY -- 2 tiers
     # ==================================================================
     'detect_monsters_spell': {
+        # v2.15+ audit sync: desc "15 turns" -> matches applied 20 turns.
         'name': 'Detect Monsters', 'effect': 'detect_monsters_spell', 'power': '',
         'mp_cost': 6, 'tier': 2, 'quiz_tier': 2, 'needs_target': False,
         'spell_family': 'detect_monsters',
-        'desc': 'Reveal every living creature on the floor for 15 turns.',
+        'desc': 'Reveal every living creature on the floor for 20 turns.',
     },
     'foresight_spell': {
         'name': 'Foresight', 'effect': 'foresight_self', 'power': '',
@@ -441,10 +454,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Teleport to a random safe location on the floor.',
     },
     'phase_door_spell': {
+        # v2.15+ audit sync: desc "12 turns" -> matches applied 15 turns.
         'name': 'Phase Door', 'effect': 'phase_self', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
         'spell_family': 'teleport',
-        'desc': 'Walk through walls for 12 turns.',
+        'desc': 'Walk through walls for 15 turns.',
     },
     'gate_spell': {
         'name': 'Gate', 'effect': 'gate', 'power': '',
@@ -553,10 +567,11 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Remove every magical buff from a target -- their protections fall.',
     },
     'counterspell_spell': {
+        # v2.15+ audit sync: desc "15 turns" -> matches applied 12 turns.
         'name': 'Counterspell', 'effect': 'counterspell_self', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': False,
         'spell_family': 'counterspell',
-        'desc': 'Magic resist for 15 turns -- blocks confused/charmed/feared/silenced/hallucinating.',
+        'desc': 'Magic resist for 12 turns -- blocks confused/charmed/feared/silenced/hallucinating.',
     },
     'summon_guardian_spell': {
         'name': 'Summon Guardian', 'effect': 'summon_guardian', 'power': '',
@@ -583,10 +598,12 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Speak a desire -- reality answers with a random powerful boon.',
     },
     'imprisonment_spell': {
+        # v2.15+ audit sync: desc "40 turns" -> matches applied 60 turns
+        # (capped by MAX_EFFECT_DURATION in status_effects.py).
         'name': 'Imprisonment', 'effect': 'imprisonment', 'power': '',
         'mp_cost': 22, 'tier': 5, 'quiz_tier': 5, 'needs_target': True,
         'spell_family': 'imprisonment',
-        'desc': 'Seal one target in arcane stone -- paralyzed for 40 turns.',
+        'desc': 'Seal one target in arcane stone -- paralyzed up to 60 turns (capped).',
     },
     'banishment_spell': {
         'name': 'Banishment', 'effect': 'banishment', 'power': '',
@@ -651,8 +668,9 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'desc': 'Channel Elder Blood -- next melee attack deals 3x damage.',
     },
     'elder_scream': {
+        # v2.15+ audit sync: mp_cost 10 -> 8 to fit the T2 band (5..8).
         'name': 'Scream', 'effect': 'mass_ice', 'power': '2d4',
-        'mp_cost': 10, 'tier': 2, 'quiz_tier': 2, 'needs_target': False,
+        'mp_cost': 8, 'tier': 2, 'quiz_tier': 2, 'needs_target': False,
         'spell_family': 'signature_elder',
         'desc': 'Unleash the Elder Blood -- cold damage to all visible enemies.',
     },

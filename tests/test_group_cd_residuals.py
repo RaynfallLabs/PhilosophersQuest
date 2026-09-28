@@ -259,7 +259,11 @@ def test_dead_sea_scroll_is_unique_artifact():
     assert dss.get('is_unique') is True
     assert int(dss.get('min_level', 0)) == 9999
     assert int(dss.get('tier', 0)) == 5
-    assert int(dss.get('quiz_threshold', 0)) == 3
+    # quiz_threshold was 3 pre-2026-05-29. Under zero-tolerance one wrong
+    # grammar Q ended the whole quiz, so a T5 artifact scroll with threshold=3
+    # was a savage difficulty spike. Lowered to 1 on 2026-09-24.
+    assert int(dss.get('quiz_threshold', 0)) == 1
+    assert dss.get('single_copy') is True
     assert dss.get('effect') == 'dead_sea_map'
 
 
@@ -276,7 +280,10 @@ def test_book_of_thoth_is_consumable_artifact():
     assert bot.get('is_consumable_artifact') is True
     assert int(bot.get('min_level', 0)) == 9999
     assert int(bot.get('quiz_tier', 0)) == 5
-    assert int(bot.get('quiz_threshold', 0)) == 3
+    # quiz_threshold was 3 pre-2026-05-29. Under zero-tolerance, one wrong T5
+    # grammar Q consumed the artifact AND fired the curse (3d6 psychic +
+    # de-ID 3 items + 20-turn Stunned). Lowered to 1 on 2026-09-24.
+    assert int(bot.get('quiz_threshold', 0)) == 1
     # Consumable artifact -- fires effect on read, doesn't teach a spell.
     assert not bot.get('spell_id'), (
         "Book of Thoth must not have a spell_id (it fires an effect on read)"

@@ -1641,7 +1641,7 @@
     "spread": 0,
     "tier": 5,
     "quiz_tier": 5,
-    "quiz_threshold": 3,
+    "quiz_threshold": 1,
     "effect": "dead_sea_map",
     "power": "",
     "unidentified_name": "a brittle parchment sealed in a clay jar",
@@ -1650,7 +1650,8 @@
     "identified": false,
     "item_class": "scroll",
     "weight": 0.1,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_labyrinth": {
     "name": "Scroll of the Labyrinth",
@@ -1665,16 +1666,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "LABYRINTH-MMXXV-I",
     "unidentified_name": "Scroll of the Labyrinth",
     "lore": "Sealed with the mark of the Cretan Labyrinth. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_gorgon": {
     "name": "Scroll of the Gorgon",
@@ -1689,16 +1691,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "GORGON-MMXXV-II",
     "unidentified_name": "Scroll of the Gorgon",
     "lore": "Sealed with a serpent's eye. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_hoard": {
     "name": "Scroll of the Dragon Hoard",
@@ -1713,16 +1716,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "DRAGONHOARD-MMXXV-III",
     "unidentified_name": "Scroll of the Dragon Hoard",
     "lore": "Sealed with a golden dragon scale. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_ragnarok": {
     "name": "Scroll of Ragnarok",
@@ -1737,16 +1741,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "RAGNAROK-MMXXV-IV",
     "unidentified_name": "Scroll of Ragnarok",
     "lore": "Sealed with the howl of the World-Wolf. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_abyss": {
     "name": "Scroll of the Abyss",
@@ -1761,16 +1766,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "ABYSS-MMXXV-V",
     "unidentified_name": "Scroll of the Abyss",
     "lore": "Sealed with the mark of the Bottomless Pit. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_arachne": {
     "name": "Scroll of Arachne",
@@ -1785,16 +1791,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-WEAVER-I",
     "unidentified_name": "Scroll of Arachne",
     "lore": "Sealed with a strand of unbreakable silk. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_lamia": {
     "name": "Scroll of Lamia",
@@ -1809,16 +1816,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-SERPENT-II",
     "unidentified_name": "Scroll of Lamia",
     "lore": "Sealed with a serpent's tear. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_talos": {
     "name": "Scroll of Talos",
@@ -1833,16 +1841,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-BRONZE-III",
     "unidentified_name": "Scroll of Talos",
     "lore": "Sealed with molten bronze. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_echidna": {
     "name": "Scroll of Echidna",
@@ -1857,16 +1866,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-MOTHER-IV",
     "unidentified_name": "Scroll of Echidna",
     "lore": "Sealed with the mark of the Mother of Monsters. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_erlking": {
     "name": "Scroll of the Erlking",
@@ -1881,16 +1891,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-FOREST-V",
     "unidentified_name": "Scroll of the Erlking",
     "lore": "Sealed with a frozen leaf that never wilts. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_camazotz": {
     "name": "Scroll of Camazotz",
@@ -1905,16 +1916,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-NIGHT-VI",
     "unidentified_name": "Scroll of Camazotz",
     "lore": "Sealed with a bat's wing pressed in wax. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_cacus": {
     "name": "Scroll of Cacus",
@@ -1929,16 +1941,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-FLAME-VII",
     "unidentified_name": "Scroll of Cacus",
     "lore": "Sealed with a scorch mark that still smolders. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_sphinx": {
     "name": "Scroll of the Sphinx",
@@ -1953,16 +1966,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-RIDDLE-VIII",
     "unidentified_name": "Scroll of the Sphinx",
     "lore": "Sealed with a riddle that answers itself. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_rangda": {
     "name": "Scroll of Rangda",
@@ -1977,16 +1991,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-WITCH-IX",
     "unidentified_name": "Scroll of Rangda",
     "lore": "Sealed with a lock of white hair. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_lion": {
     "name": "Scroll of the Nemean Lion",
@@ -2001,16 +2016,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-LION-X",
     "unidentified_name": "Scroll of the Nemean Lion",
     "lore": "Sealed with an impenetrable golden hair. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_baba_yaga": {
     "name": "Scroll of Baba Yaga",
@@ -2025,16 +2041,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-CRONE-XI",
     "unidentified_name": "Scroll of Baba Yaga",
     "lore": "Sealed with iron teeth marks. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_jormungandr": {
     "name": "Scroll of Jormungandr",
@@ -2049,16 +2066,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-WYRM-XII",
     "unidentified_name": "Scroll of Jormungandr",
     "lore": "Sealed with a scale from the World Serpent. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_set": {
     "name": "Scroll of Set",
@@ -2073,16 +2091,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-CHAOS-XIII",
     "unidentified_name": "Scroll of Set",
     "lore": "Sealed with red sand from the desert of storms. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_green": {
     "name": "Scroll of the Green Knight",
@@ -2097,16 +2116,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-GREEN-XIV",
     "unidentified_name": "Scroll of the Green Knight",
     "lore": "Sealed with a holly branch that bleeds sap. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_charybdis": {
     "name": "Scroll of Charybdis",
@@ -2121,16 +2141,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-MAELSTROM-XV",
     "unidentified_name": "Scroll of Charybdis",
     "lore": "Sealed with salt water that never dries. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_ravana": {
     "name": "Scroll of Ravana",
@@ -2145,16 +2166,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-DEMON-XVI",
     "unidentified_name": "Scroll of Ravana",
     "lore": "Sealed with the sigil of Lanka. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_wendigo": {
     "name": "Scroll of the Wendigo",
@@ -2169,16 +2191,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-HUNGER-XVII",
     "unidentified_name": "Scroll of the Wendigo",
     "lore": "Sealed with frost that bites the fingers. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_hunt": {
     "name": "Scroll of the Wild Hunt",
@@ -2193,16 +2216,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-HUNT-XVIII",
     "unidentified_name": "Scroll of the Wild Hunt",
     "lore": "Sealed with a horn blast frozen in wax. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_anansi": {
     "name": "Scroll of Anansi",
@@ -2217,16 +2241,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-SPIDER-XIX",
     "unidentified_name": "Scroll of Anansi",
     "lore": "Sealed with a web that glints like gold. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_nidhoggr": {
     "name": "Scroll of Nidhoggr",
@@ -2241,16 +2266,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "QUEST-ROOT-XX",
     "unidentified_name": "Scroll of Nidhoggr",
     "lore": "Sealed with bark from the World Tree. A reward scroll from Dad -- show him this code!",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_the_pasture": {
     "name": "Scroll of the Pasture",
@@ -2265,16 +2291,17 @@
     "peak_floor": 9999,
     "spread": 0,
     "quiz_tier": 1,
-    "quiz_threshold": 2,
+    "quiz_threshold": 1,
     "effect": "boss_reward",
     "power": "MOO-MOO-FARM-I",
     "unidentified_name": "Scroll of the Pasture",
     "lore": "Sealed with a brand shaped like a cow bell. A reward scroll from Dad -- show him this code! Moo.",
-    "read_threshold": 2,
+    "read_threshold": 1,
     "item_class": "scroll",
     "identified": true,
     "weight": 0.3,
-    "peak_weight": 0
+    "peak_weight": 0,
+    "single_copy": true
   },
   "scroll_of_nine_hells": {
     "id": "scroll_of_nine_hells",
@@ -2290,7 +2317,7 @@
     "mathTier": 5,
     "quiz_tier": 5,
     "min_level": 88,
-    "peak_floor": 92,
+    "peak_floor": 85,
     "weight": 0.3,
     "value": 5000,
     "identified": false,
@@ -2308,7 +2335,9 @@
     "is_unique": true,
     "lore": "Nine seals, nine names, nine gates of the Pit. Asmodeus wrote this scroll on the vellum of a fallen archon. Reading it unleashes the fire of every layer at once.",
     "design_notes": "Asmodeus L92 boss reward. Wired via monster.treasure.boss_scroll_id.",
-    "quiz_threshold": 1
+    "quiz_threshold": 1,
+    "peak_weight": 2.5,
+    "spread": 8
   },
   "scroll_of_chromatic_doom": {
     "id": "scroll_of_chromatic_doom",
@@ -2324,7 +2353,7 @@
     "mathTier": 5,
     "quiz_tier": 5,
     "min_level": 85,
-    "peak_floor": 89,
+    "peak_floor": 80,
     "weight": 0.3,
     "value": 4500,
     "identified": false,
@@ -2342,6 +2371,8 @@
     "is_unique": true,
     "lore": "Tiamat's five heads spoke five breaths — fire, cold, lightning, acid, poison — into this scroll before she fell. Reading it calls all five at once upon whoever stands nearest to you.",
     "design_notes": "Tiamat L85 boss reward. Wired via monster.treasure.boss_scroll_id.",
-    "quiz_threshold": 1
+    "quiz_threshold": 1,
+    "peak_weight": 2.5,
+    "spread": 8
   }
 }

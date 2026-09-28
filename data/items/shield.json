@@ -191,7 +191,7 @@
       100
     ],
     "weight": 15.0,
-    "min_level": 1,
+    "min_level": 9999,
     "tier": 1,
     "material": "bronze",
     "ac_bonus": 3,
@@ -209,13 +209,15 @@
     "is_unique": true,
     "template_basis": "tower_shield",
     "plot_locked": true,
-    "spawn_method": "quest_spawn_aegis_pre",
     "peak_floor": 1,
     "spread": 1,
     "peak_weight": 0.0,
     "max_enchant": 2,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "_meta": {
+      "spawn_method": "quest_spawn_aegis_pre"
+    }
   },
   "aegis_of_athena": {
     "name": "Aegis of Athena",
@@ -243,7 +245,6 @@
     "is_unique": true,
     "template_basis": "kite_shield",
     "plot_locked": true,
-    "spawn_method": "medusa_quest_athena_altar",
     "peak_floor": 1,
     "spread": 1,
     "peak_weight": 0.0,
@@ -277,7 +278,10 @@
       }
     },
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "_meta": {
+      "spawn_method": "medusa_quest_athena_altar"
+    }
   },
   "lionheart_shield": {
     "name": "Lionheart Shield",
@@ -303,13 +307,15 @@
     "is_unique": true,
     "template_basis": "kite_shield",
     "plot_locked": true,
-    "spawn_method": "rare_drop",
     "peak_floor": 1,
     "spread": 1,
     "peak_weight": 0.0,
     "max_enchant": 2,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "_meta": {
+      "spawn_method": "rare_drop"
+    }
   },
   "shield_of_the_spartans": {
     "name": "Shield of the Spartans",
@@ -408,7 +414,7 @@
     "enchant_bonus": 0,
     "quiz_timer_bonus": 2,
     "unidentified_name": "an oval bronze shield with an angular notch",
-    "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve — or perhaps the original. Its divine origin sharpens the mind, granting extra time on all mental challenges.",
+    "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve — or perhaps the original. Its divine origin steadies the arm in combat, granting extra time under the pressure of a duel.",
     "floorSpawnWeight": {
       "21-40": 1,
       "41-60": 2,

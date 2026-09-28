@@ -28,8 +28,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "rat_meat",
     "treasure": {
       "gold": [
         0,
@@ -71,8 +69,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 3,
-    "ingredient_id": "goblin_flesh",
     "treasure": {
       "gold": [
         1,
@@ -114,8 +110,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "insect_carapace",
     "treasure": {
       "gold": [
         0,
@@ -159,8 +153,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 4,
-    "ingredient_id": "eye_jelly",
     "treasure": {
       "gold": [
         0,
@@ -205,8 +197,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bat_wing",
     "treasure": {
       "gold": [
         0,
@@ -253,8 +243,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "snake_meat",
     "treasure": {
       "gold": [
         0,
@@ -300,8 +288,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 4,
-    "ingredient_id": "zombie_flesh",
     "treasure": {
       "gold": [
         0,
@@ -353,8 +339,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 4,
-    "ingredient_id": "toxic_jelly_sac",
     "treasure": {
       "gold": [
         5,
@@ -413,8 +397,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         5,
@@ -466,8 +448,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "changeling_glamour",
     "treasure": {
       "gold": [
         10,
@@ -524,8 +504,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "changeling_glamour",
     "treasure": {
       "gold": [
         50,
@@ -587,8 +565,6 @@
       "shapeshifter"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "changeling_glamour",
     "treasure": {
       "gold": [
         100,
@@ -632,8 +608,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "lucky_clover",
     "treasure": {
       "gold": [
         20,
@@ -674,8 +648,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "kobold_scale",
     "treasure": {
       "gold": [
         1,
@@ -722,8 +694,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spider_silk",
     "treasure": {
       "gold": [
         0,
@@ -771,8 +741,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bone_shard",
     "treasure": {
       "gold": [
         1,
@@ -819,8 +787,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "fire_gland",
     "treasure": {
       "gold": [
         0,
@@ -861,8 +827,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         2,
@@ -903,8 +867,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "gnoll_hide",
     "treasure": {
       "gold": [
         3,
@@ -945,8 +907,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "hobgoblin_blood",
     "treasure": {
       "gold": [
         5,
@@ -1001,8 +961,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "ghast_ichor",
     "treasure": {
       "gold": [
         2,
@@ -1046,8 +1004,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "rat_meat",
     "treasure": {
       "gold": [
         0,
@@ -1097,8 +1053,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "black_ooze",
     "treasure": {
       "gold": [
         3,
@@ -1147,8 +1101,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "troll_hide",
     "treasure": {
       "gold": [
         10,
@@ -1190,8 +1142,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         5,
@@ -1235,8 +1185,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "drow_poison_extract",
     "treasure": {
       "gold": [
         15,
@@ -1288,8 +1236,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "wight_essence",
     "treasure": {
       "gold": [
         8,
@@ -1333,8 +1279,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "mineral_shard",
     "treasure": {
       "gold": [
         0,
@@ -1380,8 +1324,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "bear_meat",
     "treasure": {
       "gold": [
         0,
@@ -1424,8 +1366,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "ogre_hide",
     "treasure": {
       "gold": [
         10,
@@ -1478,8 +1418,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "shadow_essence",
     "treasure": {
       "gold": [
         3,
@@ -1538,8 +1476,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "embalming_resin",
     "treasure": {
       "gold": [
         15,
@@ -1593,8 +1529,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spider_silk",
     "treasure": {
       "gold": [
         0,
@@ -1643,8 +1577,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "giant_bone",
     "treasure": {
       "gold": [
         15,
@@ -1698,8 +1630,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "manticore_spine",
     "treasure": {
       "gold": [
         20,
@@ -1761,8 +1691,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         5,
@@ -1813,8 +1741,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "basilisk_stone",
     "treasure": {
       "gold": [
         10,
@@ -1876,8 +1802,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 2,
-    "ingredient_id": "chimera_heart",
     "treasure": {
       "gold": [
         30,
@@ -1928,8 +1852,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "minotaur_horn",
     "treasure": {
       "gold": [
         20,
@@ -1982,8 +1904,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "frost_gland",
     "treasure": {
       "gold": [
         5,
@@ -2038,8 +1958,6 @@
       "female_attractive"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 5,
-    "ingredient_id": "medusa_blood",
     "treasure": {
       "gold": [
         40,
@@ -2104,8 +2022,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "thrall_blood",
     "treasure": {
       "gold": [
         15,
@@ -2155,8 +2071,6 @@
       "elemental"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "ember_ash",
     "treasure": {
       "gold": [
         10,
@@ -2207,8 +2121,6 @@
       "elemental"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "mineral_shard",
     "treasure": {
       "gold": [
         10,
@@ -2257,8 +2169,6 @@
       "elemental"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "storm_essence",
     "treasure": {
       "gold": [
         15,
@@ -2316,8 +2226,6 @@
       "caster"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "arcane_bone_dust",
     "treasure": {
       "gold": [
         25,
@@ -2370,8 +2278,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "cerebral_fluid",
     "treasure": {
       "gold": [
         40,
@@ -2432,8 +2338,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "elder_vampire_blood",
     "treasure": {
       "gold": [
         50,
@@ -2493,8 +2397,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "charred_bone",
     "treasure": {
       "gold": [
         60,
@@ -2543,8 +2445,6 @@
       "construct"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "guardian_bone",
     "treasure": {
       "gold": [
         10,
@@ -2596,8 +2496,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "demon_heart",
     "treasure": {
       "gold": [
         50,
@@ -2664,8 +2562,6 @@
       "dragon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         40,
@@ -2746,8 +2642,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "eyestalk",
     "treasure": {
       "gold": [
         60,
@@ -2806,8 +2700,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "elder_vampire_blood",
     "treasure": {
       "gold": [
         100,
@@ -2872,8 +2764,6 @@
       "caster"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "lord_phylactery",
     "treasure": {
       "gold": [
         80,
@@ -2932,8 +2822,6 @@
       "dragon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         150,
@@ -2992,8 +2880,6 @@
       "construct"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "enchanted_plate",
     "treasure": {
       "gold": [
         20,
@@ -3054,8 +2940,6 @@
       "caster"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "lord_phylactery",
     "treasure": {
       "gold": [
         150,
@@ -3110,8 +2994,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "demon_heart",
     "treasure": {
       "gold": [
         100,
@@ -3188,8 +3070,6 @@
       "reptile"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         300,
@@ -3260,8 +3140,6 @@
       "caster"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         200,
@@ -3337,8 +3215,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         200,
@@ -3391,8 +3267,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "chaos_essence",
     "treasure": {
       "gold": [
         50,
@@ -3456,8 +3330,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "soul_fragment",
     "treasure": {
       "gold": [
         40,
@@ -3501,8 +3373,6 @@
       "caster"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "shaman_totem",
     "treasure": {
       "gold": [
         15,
@@ -3550,8 +3420,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "insect_carapace",
     "treasure": {
       "gold": [
         0,
@@ -3597,8 +3465,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 3,
-    "ingredient_id": "bone_arrow",
     "treasure": {
       "gold": [
         2,
@@ -3656,8 +3522,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "frog_legs",
     "treasure": {
       "gold": [
         0,
@@ -3703,8 +3567,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         8,
@@ -3756,8 +3618,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "shadow_fur",
     "treasure": {
       "gold": [
         0,
@@ -3810,8 +3670,6 @@
       "construct"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "enchanted_clay",
     "treasure": {
       "gold": [
         10,
@@ -3868,8 +3726,6 @@
       "female_attractive"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "hollow_bone",
     "treasure": {
       "gold": [
         10,
@@ -3921,8 +3777,6 @@
       "caster"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "witch_bone",
     "treasure": {
       "gold": [
         20,
@@ -3973,8 +3827,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bronze_feather",
     "treasure": {
       "gold": [
         2,
@@ -4023,8 +3875,6 @@
       "fey"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "satyr_horn",
     "treasure": {
       "gold": [
         5,
@@ -4079,8 +3929,6 @@
       "demon"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "empusa_ichor",
     "treasure": {
       "gold": [
         8,
@@ -4136,8 +3984,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "shadow_fur",
     "treasure": {
       "gold": [
         15,
@@ -4193,8 +4039,6 @@
       "female_attractive"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "lamia_scales",
     "treasure": {
       "gold": [
         40,
@@ -4252,8 +4096,6 @@
       "construct"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "bronze_hide_strip",
     "treasure": {
       "gold": [
         25,
@@ -4306,8 +4148,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "cyclops_eye",
     "treasure": {
       "gold": [
         40,
@@ -4359,8 +4199,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "sphinx_mane",
     "treasure": {
       "gold": [
         70,
@@ -4410,8 +4248,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "griffin_feather",
     "treasure": {
       "gold": [
         35,
@@ -4462,8 +4298,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "winged_mane",
     "treasure": {
       "gold": [
         40,
@@ -4517,8 +4351,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "hydra_bile",
     "treasure": {
       "gold": [
         80,
@@ -4584,8 +4416,6 @@
       "evil"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "cerberus_saliva",
     "treasure": {
       "gold": [
         150,
@@ -4639,8 +4469,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "scylla_fang",
     "treasure": {
       "gold": [
         100,
@@ -4688,8 +4516,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "scylla_fang",
     "treasure": {
       "gold": [
         30,
@@ -4744,8 +4570,6 @@
       "humanoid"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "titan_essence",
     "treasure": {
       "gold": [
         90,
@@ -4802,8 +4626,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "frost_giant_bone",
     "treasure": {
       "gold": [
         55,
@@ -4860,8 +4682,6 @@
       "humanoid"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "ember_ash",
     "treasure": {
       "gold": [
         65,
@@ -4917,8 +4737,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         60,
@@ -4964,8 +4782,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "wolf_pelt",
     "treasure": {
       "gold": [
         20,
@@ -5022,8 +4838,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "world_serpent_scale",
     "treasure": {
       "gold": [
         25,
@@ -5079,8 +4893,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "grave_dust",
     "treasure": {
       "gold": [
         8,
@@ -5134,8 +4946,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "hollow_essence",
     "treasure": {
       "gold": [
         35,
@@ -5191,8 +5001,6 @@
       "dragon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "corruption_scale",
     "treasure": {
       "gold": [
         45,
@@ -5238,8 +5046,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "raven_feather",
     "treasure": {
       "gold": [
         3,
@@ -5296,8 +5102,6 @@
       "dragon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "lindworm_skin",
     "treasure": {
       "gold": [
         40,
@@ -5350,8 +5154,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "warrior_bone",
     "treasure": {
       "gold": [
         30,
@@ -5405,8 +5207,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "corrupted_elf_dust",
     "treasure": {
       "gold": [
         30,
@@ -5463,8 +5263,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "sea_serpent_oil",
     "treasure": {
       "gold": [
         70,
@@ -5517,8 +5315,6 @@
       "construct"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "embalming_resin",
     "treasure": {
       "gold": [
         45,
@@ -5573,8 +5369,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "solar_venom",
     "treasure": {
       "gold": [
         25,
@@ -5621,8 +5415,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "scarab_shell",
     "treasure": {
       "gold": [
         5,
@@ -5678,8 +5470,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "sphinx_dust_gold",
     "treasure": {
       "gold": [
         75,
@@ -5734,8 +5524,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "devourer_tooth",
     "treasure": {
       "gold": [
         60,
@@ -5789,8 +5577,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "crocodile_hide",
     "treasure": {
       "gold": [
         30,
@@ -5844,8 +5630,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         20,
@@ -5899,8 +5683,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "khepri_carapace",
     "treasure": {
       "gold": [
         15,
@@ -5954,8 +5736,6 @@
       "construct"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "thoth_ink",
     "treasure": {
       "gold": [
         50,
@@ -6005,8 +5785,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "barrow_dust",
     "treasure": {
       "gold": [
         22,
@@ -6062,8 +5840,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "desert_sand_essence",
     "treasure": {
       "gold": [
         28,
@@ -6120,8 +5896,6 @@
       "female_attractive"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "soul_fragment",
     "treasure": {
       "gold": [
         40,
@@ -6175,8 +5949,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "fomorian_bone",
     "treasure": {
       "gold": [
         50,
@@ -6231,8 +6003,6 @@
       "fey"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "changeling_glamour",
     "treasure": {
       "gold": [
         10,
@@ -6286,8 +6056,6 @@
       "fey"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "each_uisce_mane",
     "treasure": {
       "gold": [
         40,
@@ -6341,8 +6109,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "cath_palug_claw",
     "treasure": {
       "gold": [
         50,
@@ -6393,8 +6159,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "hero_hound_pelt",
     "treasure": {
       "gold": [
         25,
@@ -6442,8 +6206,6 @@
       "fey"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "puca_hair",
     "treasure": {
       "gold": [
         12,
@@ -6502,8 +6264,6 @@
       "fey"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "hollow_bone",
     "treasure": {
       "gold": [
         60,
@@ -6559,8 +6319,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         30,
@@ -6615,8 +6373,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "demon_ichor",
     "treasure": {
       "gold": [
         30,
@@ -6671,8 +6427,6 @@
       "aberration"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "primordial_clay",
     "treasure": {
       "gold": [
         50,
@@ -6729,8 +6483,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "anzu_feather",
     "treasure": {
       "gold": [
         70,
@@ -6785,8 +6537,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "ugallu_claw",
     "treasure": {
       "gold": [
         35,
@@ -6838,8 +6588,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "kusarikku_horn",
     "treasure": {
       "gold": [
         40,
@@ -6898,8 +6646,6 @@
       "aberration"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "eyestalk",
     "treasure": {
       "gold": [
         50,
@@ -6958,8 +6704,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "cerebral_fluid",
     "treasure": {
       "gold": [
         60,
@@ -7016,8 +6760,6 @@
       "aberration"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "aboleth_mucus",
     "treasure": {
       "gold": [
         80,
@@ -7072,8 +6814,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "mouther_ichor",
     "treasure": {
       "gold": [
         25,
@@ -7125,8 +6865,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "brain_lobe",
     "treasure": {
       "gold": [
         30,
@@ -7177,8 +6915,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "nothic_eye",
     "treasure": {
       "gold": [
         15,
@@ -7229,8 +6965,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "grell_tentacle",
     "treasure": {
       "gold": [
         20,
@@ -7281,8 +7015,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "cloaker_hide",
     "treasure": {
       "gold": [
         30,
@@ -7338,8 +7070,6 @@
       "aberration"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "void_ichor",
     "treasure": {
       "gold": [
         100,
@@ -7400,8 +7130,6 @@
       "demon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "demon_ichor",
     "treasure": {
       "gold": [
         150,
@@ -7461,8 +7189,6 @@
       "demon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "demon_scales",
     "treasure": {
       "gold": [
         100,
@@ -7524,8 +7250,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "vrock_feather",
     "treasure": {
       "gold": [
         50,
@@ -7579,8 +7303,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "demon_bile",
     "treasure": {
       "gold": [
         60,
@@ -7641,8 +7363,6 @@
       "demon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "chaos_essence",
     "treasure": {
       "gold": [
         120,
@@ -7702,8 +7422,6 @@
       "demon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "demon_heart",
     "treasure": {
       "gold": [
         100,
@@ -7758,8 +7476,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "quasit_claw",
     "treasure": {
       "gold": [
         2,
@@ -7819,8 +7535,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "dretch_gland",
     "treasure": {
       "gold": [
         2,
@@ -7872,8 +7586,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "shadow_essence",
     "treasure": {
       "gold": [
         15,
@@ -7934,8 +7646,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "infernal_perfume",
     "treasure": {
       "gold": [
         30,
@@ -7997,8 +7707,6 @@
       "female_attractive"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "infernal_perfume",
     "treasure": {
       "gold": [
         40,
@@ -8052,8 +7760,6 @@
       "demon"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "demon_claw",
     "treasure": {
       "gold": [
         5,
@@ -8105,8 +7811,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "dretch_gland",
     "treasure": {
       "gold": [
         2,
@@ -8165,8 +7869,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "devil_chain_link",
     "treasure": {
       "gold": [
         50,
@@ -8224,8 +7926,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "devil_glaive_shard",
     "treasure": {
       "gold": [
         25,
@@ -8285,8 +7985,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "devil_barb",
     "treasure": {
       "gold": [
         60,
@@ -8347,8 +8045,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "devil_venom",
     "treasure": {
       "gold": [
         80,
@@ -8406,8 +8102,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "erinyes_feather",
     "treasure": {
       "gold": [
         70,
@@ -8457,8 +8151,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "imp_stinger",
     "treasure": {
       "gold": [
         3,
@@ -8505,8 +8197,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "dretch_gland",
     "treasure": {
       "gold": [
         2,
@@ -8581,8 +8271,6 @@
       "evil"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "pit_fiend_scale",
     "treasure": {
       "gold": [
         200,
@@ -8637,8 +8325,6 @@
       "construct"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "golem_stone",
     "treasure": {
       "gold": [
         60,
@@ -8689,8 +8375,6 @@
       "construct"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "enchanted_clay",
     "treasure": {
       "gold": [
         35,
@@ -8736,8 +8420,6 @@
       "construct"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "enchanted_wood",
     "treasure": {
       "gold": [
         10,
@@ -8792,8 +8474,6 @@
       "construct"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "enchanted_plate",
     "treasure": {
       "gold": [
         15,
@@ -8840,8 +8520,6 @@
       "construct"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "shield_core",
     "treasure": {
       "gold": [
         50,
@@ -8887,8 +8565,6 @@
       "construct"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "homunculus_blood",
     "treasure": {
       "gold": [
         5,
@@ -8940,8 +8616,6 @@
       "construct"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "clockwork_gear",
     "treasure": {
       "gold": [
         20,
@@ -8994,8 +8668,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "displacer_hide",
     "treasure": {
       "gold": [
         35,
@@ -9046,8 +8718,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "owlbear_feather",
     "treasure": {
       "gold": [
         20,
@@ -9093,8 +8763,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "black_ooze",
     "treasure": {
       "gold": [
         0,
@@ -9141,8 +8809,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "gray_slime",
     "treasure": {
       "gold": [
         0,
@@ -9191,8 +8857,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "ochre_extract",
     "treasure": {
       "gold": [
         0,
@@ -9233,8 +8897,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "piercer_shell",
     "treasure": {
       "gold": [
         2,
@@ -9280,8 +8942,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "lurker_skin",
     "treasure": {
       "gold": [
         25,
@@ -9328,8 +8988,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "trapper_membrane",
     "treasure": {
       "gold": [
         30,
@@ -9383,8 +9041,6 @@
       "aberration"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "roper_strand",
     "treasure": {
       "gold": [
         50,
@@ -9435,8 +9091,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "paralytic_venom",
     "treasure": {
       "gold": [
         5,
@@ -9482,8 +9136,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "insect_carapace",
     "treasure": {
       "gold": [
         0,
@@ -9535,8 +9187,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "otyugh_organ",
     "treasure": {
       "gold": [
         15,
@@ -9588,8 +9238,6 @@
       "elemental"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "mineral_shard",
     "treasure": {
       "gold": [
         20,
@@ -9635,8 +9283,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "pack_lord_skull",
     "treasure": {
       "gold": [
         15,
@@ -9684,8 +9330,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "lizardfolk_scale",
     "treasure": {
       "gold": [
         5,
@@ -9743,8 +9387,6 @@
       "caster"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "shaman_totem",
     "treasure": {
       "gold": [
         15,
@@ -9792,8 +9434,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "troglodyte_musk",
     "treasure": {
       "gold": [
         3,
@@ -9846,8 +9486,6 @@
       "caster"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "kobold_scale",
     "treasure": {
       "gold": [
         10,
@@ -9897,8 +9535,6 @@
       "humanoid"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bullywug_leg",
     "treasure": {
       "gold": [
         3,
@@ -9952,8 +9588,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "kuo_toa_slime",
     "treasure": {
       "gold": [
         12,
@@ -10012,8 +9646,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "behir_scale",
     "treasure": {
       "gold": [
         60,
@@ -10066,8 +9698,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "catoblepas_horn",
     "treasure": {
       "gold": [
         60,
@@ -10119,8 +9749,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "cockatrice_beak",
     "treasure": {
       "gold": [
         12,
@@ -10171,8 +9799,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "darkmantle_membrane",
     "treasure": {
       "gold": [
         8,
@@ -10233,8 +9859,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "ettercap_silk",
     "treasure": {
       "gold": [
         15,
@@ -10282,8 +9906,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "grick_hide",
     "treasure": {
       "gold": [
         10,
@@ -10331,8 +9953,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "hook_horror_hook",
     "treasure": {
       "gold": [
         20,
@@ -10379,8 +9999,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "phase_spider_venom",
     "treasure": {
       "gold": [
         20,
@@ -10434,8 +10052,6 @@
       "reptile"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "wyvern_stinger",
     "treasure": {
       "gold": [
         70,
@@ -10485,8 +10101,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bone_shard",
     "treasure": {
       "gold": [
         1,
@@ -10545,8 +10159,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "warrior_bone",
     "treasure": {
       "gold": [
         1,
@@ -10608,8 +10220,6 @@
       "caster"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "arcane_bone_dust",
     "treasure": {
       "gold": [
         2,
@@ -10670,8 +10280,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "charred_bone",
     "treasure": {
       "gold": [
         2,
@@ -10729,8 +10337,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "frost_bone",
     "treasure": {
       "gold": [
         2,
@@ -10782,8 +10388,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "zombie_flesh",
     "treasure": {
       "gold": [
         3,
@@ -10841,8 +10445,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "plague_flesh",
     "treasure": {
       "gold": [
         1,
@@ -10892,8 +10494,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "rotted_flesh",
     "treasure": {
       "gold": [
         0,
@@ -10951,8 +10551,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "ghast_ichor",
     "treasure": {
       "gold": [
         5,
@@ -11002,8 +10600,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bone_marrow",
     "treasure": {
       "gold": [
         0,
@@ -11061,8 +10657,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "wisp_essence",
     "treasure": {
       "gold": [
         2,
@@ -11120,8 +10714,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "revenant_heart",
     "treasure": {
       "gold": [
         30,
@@ -11180,8 +10772,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "soul_fragment",
     "treasure": {
       "gold": [
         10,
@@ -11230,8 +10820,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         0,
@@ -11290,8 +10878,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "changeling_glamour",
     "treasure": {
       "gold": [
         8,
@@ -11342,8 +10928,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "shadow_essence",
     "treasure": {
       "gold": [
         3,
@@ -11394,8 +10978,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "wisp_essence",
     "treasure": {
       "gold": [
         10,
@@ -11455,8 +11037,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "shadow_crystal",
     "treasure": {
       "gold": [
         15,
@@ -11505,8 +11085,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         2,
@@ -11564,8 +11142,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "thrall_blood",
     "treasure": {
       "gold": [
         5,
@@ -11625,8 +11201,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "elder_vampire_blood",
     "treasure": {
       "gold": [
         35,
@@ -11685,8 +11259,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "strigoi_fang",
     "treasure": {
       "gold": [
         25,
@@ -11746,8 +11318,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "jiangshi_essence",
     "treasure": {
       "gold": [
         20,
@@ -11806,8 +11376,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "vrykolakas_heart",
     "treasure": {
       "gold": [
         20,
@@ -11869,8 +11437,6 @@
       "caster"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "demi_lich_skull",
     "treasure": {
       "gold": [
         100,
@@ -11929,8 +11495,6 @@
       "caster"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "thrall_bone",
     "treasure": {
       "gold": [
         15,
@@ -11992,8 +11556,6 @@
       "caster"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "death_mage_phylactery",
     "treasure": {
       "gold": [
         25,
@@ -12053,8 +11615,6 @@
       "caster"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "witch_bone",
     "treasure": {
       "gold": [
         20,
@@ -12124,8 +11684,6 @@
       "caster"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "lord_phylactery",
     "treasure": {
       "gold": [
         60,
@@ -12187,8 +11745,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "pale_master_essence",
     "treasure": {
       "gold": [
         45,
@@ -12247,8 +11803,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "wight_essence",
     "treasure": {
       "gold": [
         40,
@@ -12307,8 +11861,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "barrow_dust",
     "treasure": {
       "gold": [
         15,
@@ -12359,8 +11911,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "cairn_stone",
     "treasure": {
       "gold": [
         8,
@@ -12418,8 +11968,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "crypt_dust",
     "treasure": {
       "gold": [
         15,
@@ -12478,8 +12026,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "guardian_bone",
     "treasure": {
       "gold": [
         20,
@@ -12537,8 +12083,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "tomb_stone_fragment",
     "treasure": {
       "gold": [
         30,
@@ -12598,8 +12142,6 @@
       "undead"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "ossuary_shard",
     "treasure": {
       "gold": [
         50,
@@ -12657,8 +12199,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "mohrg_organ",
     "treasure": {
       "gold": [
         20,
@@ -12708,8 +12248,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "false_holy_relic",
     "treasure": {
       "gold": [
         8,
@@ -12770,8 +12308,6 @@
       "undead"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         60,
@@ -12831,8 +12367,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "shadow_crystal",
     "treasure": {
       "gold": [
         30,
@@ -12892,8 +12426,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "nightshade_essence",
     "treasure": {
       "gold": [
         40,
@@ -12951,8 +12483,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "hollow_bone",
     "treasure": {
       "gold": [
         3,
@@ -13010,8 +12540,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "hollow_essence",
     "treasure": {
       "gold": [
         10,
@@ -13069,8 +12597,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "charnel_fang",
     "treasure": {
       "gold": [
         8,
@@ -13129,8 +12655,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "dread_plate",
     "treasure": {
       "gold": [
         35,
@@ -13188,8 +12712,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "bone_arrow",
     "treasure": {
       "gold": [
         5,
@@ -13256,8 +12778,6 @@
       "undead"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "giant_bone",
     "treasure": {
       "gold": [
         50,
@@ -13327,8 +12847,6 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "lesser_draco_bone",
     "treasure": {
       "gold": [
         120,
@@ -13401,8 +12919,6 @@
       "caster"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "lich_dragon_scale",
     "treasure": {
       "gold": [
         200,
@@ -13452,8 +12968,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "phase_silk",
     "treasure": {
       "gold": [
         15,
@@ -13512,8 +13026,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "shadow_crystal",
     "treasure": {
       "gold": [
         25,
@@ -13573,8 +13085,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "soul_fragment",
     "treasure": {
       "gold": [
         35,
@@ -13634,8 +13144,6 @@
       "undead"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         55,
@@ -13703,8 +13211,6 @@
       "undead"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "nightwing_membrane",
     "treasure": {
       "gold": [
         150,
@@ -13753,8 +13259,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "crystal_residue",
     "treasure": {
       "gold": [
         5,
@@ -13803,8 +13307,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "slime_core",
     "treasure": {
       "gold": [
         0,
@@ -13852,8 +13354,6 @@
       "plant"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "yellow_spores",
     "treasure": {
       "gold": [
         0,
@@ -13901,8 +13401,6 @@
       "plant"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "brown_mold_patch",
     "treasure": {
       "gold": [
         0,
@@ -13959,8 +13457,6 @@
       "aberration"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "gibbering_essence",
     "treasure": {
       "gold": [
         15,
@@ -14009,8 +13505,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "toxic_jelly_sac",
     "treasure": {
       "gold": [
         5,
@@ -14061,8 +13555,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "scorpion_venom_sac",
     "treasure": {
       "gold": [
         5,
@@ -14108,8 +13600,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "wasp_venom",
     "treasure": {
       "gold": [
         0,
@@ -14152,8 +13642,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 3,
-    "ingredient_id": "beetle_shell",
     "treasure": {
       "gold": [
         0,
@@ -14202,8 +13690,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "mantis_foreleg",
     "treasure": {
       "gold": [
         15,
@@ -14259,8 +13745,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "queen_venom_gland",
     "treasure": {
       "gold": [
         40,
@@ -14306,8 +13790,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 4,
-    "ingredient_id": "phase_silk",
     "treasure": {
       "gold": [
         5,
@@ -14363,8 +13845,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spider_silk",
     "treasure": {
       "gold": [
         0,
@@ -14418,8 +13898,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "death_beetle_ichor",
     "treasure": {
       "gold": [
         20,
@@ -14467,8 +13945,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "lizard_meat",
     "treasure": {
       "gold": [
         0,
@@ -14519,8 +13995,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "basilisk_eye",
     "treasure": {
       "gold": [
         15,
@@ -14571,8 +14045,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "python_scales",
     "treasure": {
       "gold": [
         5,
@@ -14625,8 +14097,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "komodo_venom_gland",
     "treasure": {
       "gold": [
         15,
@@ -14675,8 +14145,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "frog_legs",
     "treasure": {
       "gold": [
         0,
@@ -14723,8 +14191,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "mud_crawler_hide",
     "treasure": {
       "gold": [
         0,
@@ -14770,8 +14236,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "swamp_serpent_fang",
     "treasure": {
       "gold": [
         0,
@@ -14817,8 +14281,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 3,
-    "ingredient_id": "sea_snake_venom",
     "treasure": {
       "gold": [
         0,
@@ -14867,8 +14329,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "lion_meat",
     "treasure": {
       "gold": [
         0,
@@ -14917,8 +14377,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "bear_meat",
     "treasure": {
       "gold": [
         0,
@@ -14967,8 +14425,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "wolf_meat",
     "treasure": {
       "gold": [
         0,
@@ -15021,8 +14477,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "lycanthrope_blood",
     "treasure": {
       "gold": [
         15,
@@ -15085,8 +14539,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "alpha_lycanthrope_blood",
     "treasure": {
       "gold": [
         40,
@@ -15138,8 +14590,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "lycanthrope_blood",
     "treasure": {
       "gold": [
         30,
@@ -15191,8 +14641,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "lycanthrope_blood",
     "treasure": {
       "gold": [
         10,
@@ -15253,8 +14701,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "alpha_lycanthrope_blood",
     "treasure": {
       "gold": [
         40,
@@ -15308,8 +14754,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "winter_wolf_pelt",
     "treasure": {
       "gold": [
         15,
@@ -15352,8 +14796,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 4,
-    "ingredient_id": "blink_gland",
     "treasure": {
       "gold": [
         5,
@@ -15410,8 +14852,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "death_dog_fang",
     "treasure": {
       "gold": [
         15,
@@ -15459,8 +14899,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "eagle_feather",
     "treasure": {
       "gold": [
         5,
@@ -15509,8 +14947,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "roc_egg_fragment",
     "treasure": {
       "gold": [
         15,
@@ -15569,8 +15005,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "roc_talon",
     "treasure": {
       "gold": [
         100,
@@ -15619,8 +15053,6 @@
       "beast"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "bat_wing",
     "treasure": {
       "gold": [
         0,
@@ -15672,8 +15104,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "tengu_feather",
     "treasure": {
       "gold": [
         20,
@@ -15726,8 +15156,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "storm_feather",
     "treasure": {
       "gold": [
         30,
@@ -15773,8 +15201,6 @@
       "fey"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "pixie_dust",
     "treasure": {
       "gold": [
         0,
@@ -15822,8 +15248,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "redcap_blood",
     "treasure": {
       "gold": [
         20,
@@ -15872,8 +15296,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 4,
-    "ingredient_id": "wisp_essence",
     "treasure": {
       "gold": [
         0,
@@ -15927,8 +15349,6 @@
       "fey"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "hag_eye",
     "treasure": {
       "gold": [
         20,
@@ -15982,8 +15402,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "hag_eye",
     "treasure": {
       "gold": [
         15,
@@ -16045,8 +15463,6 @@
       "fey"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "hag_eye",
     "treasure": {
       "gold": [
         30,
@@ -16104,8 +15520,6 @@
       "fey"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "night_hag_heartstone",
     "treasure": {
       "gold": [
         60,
@@ -16156,8 +15570,6 @@
       "fey"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "satyr_horn",
     "treasure": {
       "gold": [
         10,
@@ -16215,8 +15627,6 @@
       "female_attractive"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "heartwood_sap",
     "treasure": {
       "gold": [
         10,
@@ -16267,8 +15677,6 @@
       "fey"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 3,
-    "ingredient_id": "lucky_clover",
     "treasure": {
       "gold": [
         20,
@@ -16319,8 +15727,6 @@
       "fey"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "spriggan_thorn",
     "treasure": {
       "gold": [
         10,
@@ -16373,8 +15779,6 @@
       "fey"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "puca_hair",
     "treasure": {
       "gold": [
         5,
@@ -16432,8 +15836,6 @@
       "elemental"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "elemental_water_core",
     "treasure": {
       "gold": [
         20,
@@ -16490,8 +15892,6 @@
       "elemental"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "elemental_air_core",
     "treasure": {
       "gold": [
         15,
@@ -16547,8 +15947,6 @@
       "elemental"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "elemental_ice_core",
     "treasure": {
       "gold": [
         20,
@@ -16606,8 +16004,6 @@
       "elemental"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "elemental_magma_core",
     "treasure": {
       "gold": [
         30,
@@ -16666,8 +16062,6 @@
       "elemental"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "void_shard",
     "treasure": {
       "gold": [
         80,
@@ -16724,8 +16118,6 @@
       "elemental"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "mound_mulch",
     "treasure": {
       "gold": [
         15,
@@ -16778,8 +16170,6 @@
       "plant"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "assassin_vine_sap",
     "treasure": {
       "gold": [
         5,
@@ -16827,8 +16217,6 @@
       "plant"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "toxic_thorn",
     "treasure": {
       "gold": [
         0,
@@ -16876,8 +16264,6 @@
       "plant"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "myconid_spore",
     "treasure": {
       "gold": [
         0,
@@ -16940,8 +16326,6 @@
       "plant"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "sovereign_spore_cap",
     "treasure": {
       "gold": [
         30,
@@ -16999,8 +16383,6 @@
       "plant"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "musk_pollen",
     "treasure": {
       "gold": [
         5,
@@ -17048,8 +16430,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spore_cloud_vial",
     "treasure": {
       "gold": [
         0,
@@ -17103,8 +16483,6 @@
       "plant"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "violet_fungus_cap",
     "treasure": {
       "gold": [
         0,
@@ -17160,8 +16538,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "corrupted_wing_feather",
     "treasure": {
       "gold": [
         30,
@@ -17219,8 +16595,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "corrupted_horn_fragment",
     "treasure": {
       "gold": [
         50,
@@ -17271,8 +16645,6 @@
       "beast"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "sphinx_claw",
     "treasure": {
       "gold": [
         50,
@@ -17329,8 +16701,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "nue_tail_quill",
     "treasure": {
       "gold": [
         30,
@@ -17383,8 +16753,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "peryton_antler",
     "treasure": {
       "gold": [
         15,
@@ -17435,8 +16803,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 5,
-    "ingredient_id": "carbuncle_gem",
     "treasure": {
       "gold": [
         30,
@@ -17498,8 +16864,6 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "sea_dragon_scale",
     "treasure": {
       "gold": [
         60,
@@ -17555,8 +16919,6 @@
       "caster"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "goblin_flesh",
     "treasure": {
       "gold": [
         3,
@@ -17605,8 +16967,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "goblin_crown_dust",
     "treasure": {
       "gold": [
         15,
@@ -17655,8 +17015,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "hobgoblin_blood",
     "treasure": {
       "gold": [
         20,
@@ -17705,8 +17063,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "hobgoblin_blood",
     "treasure": {
       "gold": [
         40,
@@ -17750,8 +17106,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "bugbear_pelt",
     "treasure": {
       "gold": [
         10,
@@ -17800,8 +17154,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "bugbear_pelt",
     "treasure": {
       "gold": [
         25,
@@ -17842,8 +17194,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         8,
@@ -17892,8 +17242,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         40,
@@ -17939,8 +17287,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         20,
@@ -17993,8 +17339,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "cultist_reagent",
     "treasure": {
       "gold": [
         10,
@@ -18043,8 +17387,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         25,
@@ -18101,8 +17443,6 @@
       "caster"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "cultist_reagent",
     "treasure": {
       "gold": [
         30,
@@ -18148,8 +17488,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "giant_marrow",
     "treasure": {
       "gold": [
         25,
@@ -18204,8 +17542,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "stone_giant_core",
     "treasure": {
       "gold": [
         50,
@@ -18256,8 +17592,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "cloudstuff",
     "treasure": {
       "gold": [
         100,
@@ -18312,8 +17646,6 @@
       "humanoid"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "storm_essence",
     "treasure": {
       "gold": [
         200,
@@ -18359,8 +17691,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "cyclops_eye",
     "treasure": {
       "gold": [
         30,
@@ -18406,8 +17736,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "ogre_hide",
     "treasure": {
       "gold": [
         20,
@@ -18460,8 +17788,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "troll_regeneration_gland",
     "treasure": {
       "gold": [
         15,
@@ -18513,8 +17839,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "drow_poison_extract",
     "treasure": {
       "gold": [
         20,
@@ -18582,8 +17906,6 @@
       "caster"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "shadow_crystal",
     "treasure": {
       "gold": [
         40,
@@ -18641,8 +17963,6 @@
       "caster"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "drow_poison_extract",
     "treasure": {
       "gold": [
         60,
@@ -18691,8 +18011,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "minotaur_horn",
     "treasure": {
       "gold": [
         30,
@@ -18758,8 +18076,6 @@
       "reptile"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "black_dragon_scale",
     "treasure": {
       "gold": [
         80,
@@ -18830,8 +18146,6 @@
       "reptile"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "red_dragon_scale",
     "treasure": {
       "gold": [
         100,
@@ -18905,8 +18219,6 @@
       "reptile"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "blue_dragon_scale",
     "treasure": {
       "gold": [
         200,
@@ -18982,8 +18294,6 @@
       "reptile"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "adult_dragon_heart",
     "treasure": {
       "gold": [
         400,
@@ -19036,8 +18346,6 @@
       "dragon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "fire_gland",
     "treasure": {
       "gold": [
         20,
@@ -19091,8 +18399,6 @@
       "dragon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "frost_sac",
     "treasure": {
       "gold": [
         20,
@@ -19144,8 +18450,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "yuan_ti_venom_sac",
     "treasure": {
       "gold": [
         25,
@@ -19196,8 +18500,6 @@
       "dragon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "wyvern_venom_gland",
     "treasure": {
       "gold": [
         60,
@@ -19260,8 +18562,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "naga_scale",
     "treasure": {
       "gold": [
         50,
@@ -19318,8 +18618,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "shadow_crystal",
     "treasure": {
       "gold": [
         30,
@@ -19374,8 +18672,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "void_shard",
     "treasure": {
       "gold": [
         30,
@@ -19433,8 +18729,6 @@
       "elemental"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "chaos_essence",
     "treasure": {
       "gold": [
         50,
@@ -19491,8 +18785,6 @@
       "construct"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "guardian_bone",
     "treasure": {
       "gold": [
         20,
@@ -19547,8 +18839,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "lycanthrope_blood",
     "treasure": {
       "gold": [
         40,
@@ -19603,8 +18893,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "demon_scales",
     "treasure": {
       "gold": [
         60,
@@ -19658,8 +18946,6 @@
       "construct"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "giant_marrow",
     "treasure": {
       "gold": [
         20,
@@ -19717,8 +19003,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         50,
@@ -19769,8 +19053,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "troll_hide",
     "treasure": {
       "gold": [
         30,
@@ -19826,8 +19108,6 @@
       "reptile"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         50,
@@ -19888,8 +19168,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "cerebral_fluid",
     "treasure": {
       "gold": [
         80,
@@ -19944,8 +19222,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "void_ichor",
     "treasure": {
       "gold": [
         100,
@@ -20028,8 +19304,6 @@
       "aberration"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "eyestalk",
     "treasure": {
       "gold": [
         100,
@@ -20092,8 +19366,6 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         100,
@@ -20157,8 +19429,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "void_ichor",
     "treasure": {
       "gold": [
         120,
@@ -20234,8 +19504,6 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         200,
@@ -20303,8 +19571,6 @@
       "caster"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "lord_phylactery",
     "treasure": {
       "gold": [
         200,
@@ -20366,8 +19632,6 @@
       "demon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "pit_fiend_scale",
     "treasure": {
       "gold": [
         250,
@@ -20431,8 +19695,6 @@
       "dragon"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "world_serpent_scale",
     "treasure": {
       "gold": [
         200,
@@ -20495,8 +19757,6 @@
       "undead"
     ],
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "void_ichor",
     "treasure": {
       "gold": [
         200,
@@ -20546,8 +19806,6 @@
       "humanoid"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 3,
-    "ingredient_id": "minotaur_horn",
     "treasure": {
       "gold": [
         150,
@@ -20609,8 +19867,6 @@
       "female_attractive"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 3,
-    "ingredient_id": "medusa_blood",
     "treasure": {
       "gold": [
         200,
@@ -20674,15 +19930,13 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 4,
-    "ingredient_id": "dragon_scale",
     "treasure": {
       "gold": [
         500,
         1000
       ],
       "item_chance": 1.0,
-      "item_tier": 6,
+      "item_tier": 5,
       "boss_scroll_id": "scroll_of_the_hoard"
     },
     "lore": "The dwarf Fafnir, transformed by greed into a serpentine dragon, guards the cursed treasure of Andvari. His scales are near-impenetrable — no blade, spell, or holy rite can pierce them. His breath weapon is devastating. Only the hero Sigurd, who struck from below through the dragon's soft belly, could slay him.",
@@ -20738,15 +19992,13 @@
       "outsider"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 4,
-    "ingredient_id": "fenrir_fang",
     "treasure": {
       "gold": [
         800,
         1500
       ],
       "item_chance": 1.0,
-      "item_tier": 7,
+      "item_tier": 5,
       "boss_scroll_id": "scroll_of_ragnarok"
     },
     "lore": "Son of Loki, the great wolf was prophesied to devour Odin at Ragnarok. Bound by Gleipnir, he tore off the hand of Tyr. Now freed as the age of gods ends, he is the most terrible beast in all the Nine Realms.",
@@ -20764,7 +20016,6 @@
     ],
     "hp": "320d12+2200",
     "regeneration": 15,
-    "chain_break_on_hit": 0.35,
     "is_boss": true,
     "speed": 10,
     "ai_pattern": "abaddon",
@@ -20818,15 +20069,13 @@
       "evil"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "void_essence",
     "treasure": {
       "gold": [
         2000,
         5000
       ],
       "item_chance": 1.0,
-      "item_tier": 10,
+      "item_tier": 5,
       "boss_scroll_id": "scroll_of_the_abyss"
     },
     "lore": "The Angel of the Bottomless Pit, called Destruction. He who has dominion over the locusts of the Abyss. King of the fallen host, bearer of the key to the pit. His arrival signals the end and his defeat, the dawn of wisdom's triumph.",
@@ -20889,8 +20138,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "arachne_silk_gland",
     "treasure": {
       "gold": [
         30,
@@ -20898,7 +20145,6 @@
       ],
       "item_chance": 1.0,
       "item_tier": 2,
-      "unique_drop_id": "arachne_silk_cloak",
       "boss_scroll_id": "scroll_of_arachne"
     },
     "lore": "Once a mortal weaver of unmatched skill, Arachne challenged Athena herself to a contest and was transformed into a spider as punishment. Her web can hold a man fast, and her bite carries venom.",
@@ -20941,8 +20187,6 @@
       "construct"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "talos_bronze_shard",
     "treasure": {
       "gold": [
         80,
@@ -21001,8 +20245,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "echidna_venom_sac",
     "treasure": {
       "gold": [
         60,
@@ -21060,8 +20302,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "erlking_crown_twig",
     "treasure": {
       "gold": [
         50,
@@ -21069,7 +20309,6 @@
       ],
       "item_chance": 1.0,
       "item_tier": 3,
-      "unique_drop_id": "erlking_mantle",
       "boss_scroll_id": "scroll_of_the_erlking"
     },
     "lore": "The Erlking rides the wind through dark forests, luring travelers — especially children — to their doom with beautiful music and false promises. Iron and flame alone disturb his reverie.",
@@ -21121,8 +20360,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "camazotz_wing_membrane",
     "treasure": {
       "gold": [
         70,
@@ -21179,8 +20416,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "cacus_ember_gut",
     "treasure": {
       "gold": [
         90,
@@ -21235,8 +20470,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "sphinx_riddle_stone",
     "treasure": {
       "gold": [
         100,
@@ -21296,8 +20529,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "rangda_mask_splinter",
     "treasure": {
       "gold": [
         100,
@@ -21352,8 +20583,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "nemean_pelt_scrap",
     "treasure": {
       "gold": [
         120,
@@ -21361,7 +20590,6 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "nemean_pelt",
       "boss_scroll_id": "scroll_of_the_lion"
     },
     "lore": "The Nemean Lion's hide was impervious to all weapons — no blade or arrow could pierce it. Hercules strangled the beast with his bare hands and used its own claws to skin it. Only blunt force can harm it.",
@@ -21415,8 +20643,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "baba_yaga_mortar_dust",
     "treasure": {
       "gold": [
         130,
@@ -21431,12 +20657,6 @@
     "frequency": 0,
     "spawn_chance": 0.4,
     "is_mini_boss": true,
-    "attack_effects": [
-      {
-        "effect": "bleeding",
-        "chance": 0.3
-      }
-    ],
     "regeneration": 3
   },
   "jormungandr_juvenile": {
@@ -21488,8 +20708,6 @@
       "reptile"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "jormungandr_scale",
     "treasure": {
       "gold": [
         150,
@@ -21497,7 +20715,6 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "unique_drop_id": "serpent_scale_mail",
       "boss_scroll_id": "scroll_of_jormungandr"
     },
     "lore": "The World Serpent Jörmungandr encircles all of Midgard, and even in its juvenile form it carries the venom that will one day slay Thor at Ragnarök. Its poison is said to be unkillable by any remedy.",
@@ -21548,8 +20765,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "sets_jackal_fang",
     "treasure": {
       "gold": [
         140,
@@ -21608,8 +20823,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "green_knight_sap",
     "treasure": {
       "gold": [
         160,
@@ -21617,7 +20830,6 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "green_knights_plate",
       "boss_scroll_id": "scroll_of_the_green"
     },
     "lore": "The Green Knight cannot be permanently killed — his head rolls and he picks it up again. He offered his axe to Gawain for one blow, knowing he would return the favor a year hence. His endurance is legendary.",
@@ -21668,8 +20880,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "charybdis_brine",
     "treasure": {
       "gold": [
         170,
@@ -21733,8 +20943,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "ravanas_knuckle",
     "treasure": {
       "gold": [
         180,
@@ -21748,14 +20956,7 @@
     "lore": "Ravana, the ten-headed demon king of Lanka, lost an arm to Rama's divine bow. The arm crawls on its own, animated by Ravana's immense life-force, striking with all the fury of its master's wrath.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true,
-    "attack_effects": [
-      {
-        "effect": "paralyzed",
-        "chance": 0.2,
-        "duration": 3
-      }
-    ]
+    "is_mini_boss": true
   },
   "wendigo": {
     "name": "Wendigo",
@@ -21804,8 +21005,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "wendigo_heart",
     "treasure": {
       "gold": [
         190,
@@ -21868,8 +21067,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "wild_hunt_horn",
     "treasure": {
       "gold": [
         200,
@@ -21932,8 +21129,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "anansi_story_thread",
     "treasure": {
       "gold": [
         200,
@@ -21941,25 +21136,12 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "anansi_web_cloak",
       "boss_scroll_id": "scroll_of_anansi"
     },
     "lore": "Anansi is the spider god who owns all stories. He won tales from the Sky God Nyame by trapping Onini the python and Osebo the leopard with his cleverness alone. He never fights directly — he tricks.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true,
-    "attack_effects": [
-      {
-        "effect": "confused",
-        "chance": 0.25,
-        "duration": 5
-      },
-      {
-        "effect": "poisoned",
-        "chance": 0.2,
-        "duration": 8
-      }
-    ]
+    "is_mini_boss": true
   },
   "nidhoggr_fragment": {
     "name": "Níðhöggr Fragment",
@@ -22010,8 +21192,6 @@
       "dragon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "nidhoggr_root_shard",
     "treasure": {
       "gold": [
         250,
@@ -22019,7 +21199,6 @@
       ],
       "item_chance": 1.0,
       "item_tier": 5,
-      "unique_drop_id": "nidhoggr_scale",
       "boss_scroll_id": "scroll_of_nidhoggr"
     },
     "lore": "Níðhöggr gnaws at the roots of Yggdrasil, the World Tree, working to unravel all of creation. Even a fragment of his body carries his relentless hunger and his acid venom. He will outlast everything.",
@@ -22069,8 +21248,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "amon_wrath_ember",
     "treasure": {
       "gold": [
         200,
@@ -22132,8 +21309,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "buer_plague_gland",
     "treasure": {
       "gold": [
         200,
@@ -22194,8 +21369,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "mammon_hunger_crystal",
     "treasure": {
       "gold": [
         200,
@@ -22263,8 +21436,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "bael_war_shard",
     "treasure": {
       "gold": [
         200,
@@ -22326,8 +21497,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "samael_death_vial",
     "treasure": {
       "gold": [
         200,
@@ -22388,8 +21557,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "beleth_quake_stone",
     "treasure": {
       "gold": [
         200,
@@ -22454,8 +21621,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "abyzou_silence_dust",
     "treasure": {
       "gold": [
         200,
@@ -22512,8 +21677,6 @@
       "demon"
     ],
     "harvest_tier": 0,
-    "harvest_threshold": 99,
-    "ingredient_id": null,
     "treasure": {
       "gold": [
         0,
@@ -22524,7 +21687,8 @@
     },
     "lore": "The locusts of the Abyss, summoned by Abaddon's dark will. They swarm like a plague of impossible numbers, draining life and spirit from all they touch. Individually nothing — collectively, a tide of ruin.",
     "frequency": 0,
-    "sp_drain": 5
+    "sp_drain": 5,
+    "quest_only": true
   },
   "heavenly_angel": {
     "name": "heavenly angel",
@@ -22555,8 +21719,6 @@
       "celestial"
     ],
     "harvest_tier": 0,
-    "harvest_threshold": 99,
-    "ingredient_id": null,
     "treasure": {
       "gold": [
         0,
@@ -22607,8 +21769,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "prime_beef",
     "treasure": {
       "gold": [
         15,
@@ -22663,8 +21823,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "royal_beef",
     "treasure": {
       "gold": [
         200,
@@ -22715,8 +21873,6 @@
       "undead"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "warrior_bone",
     "treasure": {
       "gold": [
         47,
@@ -22761,8 +21917,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "wolf_pelt",
     "treasure": {
       "gold": [
         47,
@@ -22812,8 +21966,6 @@
       "humanoid"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "troll_regeneration_gland",
     "treasure": {
       "gold": [
         50,
@@ -22860,8 +22012,6 @@
       "beast"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "basilisk_stone",
     "treasure": {
       "gold": [
         50,
@@ -22908,8 +22058,6 @@
       "elemental"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "golem_stone",
     "treasure": {
       "gold": [
         53,
@@ -22957,8 +22105,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "sovereign_spore_cap",
     "treasure": {
       "gold": [
         50,
@@ -23008,8 +22154,6 @@
       "aberration"
     ],
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "toxic_jelly_sac",
     "treasure": {
       "gold": [
         47,
@@ -23059,8 +22203,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         65,
@@ -23109,8 +22251,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "enchanted_plate",
     "treasure": {
       "gold": [
         65,
@@ -23160,8 +22300,6 @@
       "elemental"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "ember_ash",
     "treasure": {
       "gold": [
         68,
@@ -23219,8 +22357,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "chimera_heart",
     "treasure": {
       "gold": [
         68,
@@ -23274,8 +22410,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "giant_bone",
     "treasure": {
       "gold": [
         68,
@@ -23326,8 +22460,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "demon_claw",
     "treasure": {
       "gold": [
         71,
@@ -23376,8 +22508,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "slime_core",
     "treasure": {
       "gold": [
         65,
@@ -23433,8 +22563,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "phase_spider_venom",
     "treasure": {
       "gold": [
         68,
@@ -23482,8 +22610,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "manticore_spine",
     "treasure": {
       "gold": [
         68,
@@ -23535,8 +22661,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "troll_regeneration_gland",
     "treasure": {
       "gold": [
         83,
@@ -23587,8 +22711,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "frost_giant_bone",
     "treasure": {
       "gold": [
         86,
@@ -23638,8 +22760,6 @@
       "humanoid"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "fire_gland",
     "treasure": {
       "gold": [
         86,
@@ -23692,8 +22812,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "elder_vampire_blood",
     "treasure": {
       "gold": [
         83,
@@ -23751,8 +22869,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         86,
@@ -23803,8 +22919,6 @@
       "construct"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "enchanted_clay",
     "treasure": {
       "gold": [
         86,
@@ -23856,8 +22970,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "demon_claw",
     "treasure": {
       "gold": [
         83,
@@ -23909,8 +23021,6 @@
       "beast"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "sphinx_riddle_stone",
     "treasure": {
       "gold": [
         86,
@@ -23968,8 +23078,6 @@
       "caster"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "lord_phylactery",
     "treasure": {
       "gold": [
         89,
@@ -24023,8 +23131,6 @@
       "fey"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "heartwood_sap",
     "treasure": {
       "gold": [
         83,
@@ -24077,8 +23183,6 @@
       "undead"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "bone_shard",
     "treasure": {
       "gold": [
         83,
@@ -24131,8 +23235,6 @@
       "dragon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "spectral_essence",
     "treasure": {
       "gold": [
         89,
@@ -24184,8 +23286,6 @@
       "demon"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "demon_heart",
     "treasure": {
       "gold": [
         86,
@@ -24239,8 +23339,6 @@
       "construct"
     ],
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "clockwork_gear",
     "treasure": {
       "gold": [
         86,
@@ -24294,8 +23392,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "elder_vampire_blood",
     "treasure": {
       "gold": [
         104,
@@ -24350,8 +23446,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "storm_essence",
     "treasure": {
       "gold": [
         104,
@@ -24400,8 +23494,6 @@
       "elemental"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "elemental_magma_core",
     "treasure": {
       "gold": [
         104,
@@ -24450,8 +23542,6 @@
       "elemental"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "elemental_ice_core",
     "treasure": {
       "gold": [
         107,
@@ -24509,8 +23599,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "demon_heart",
     "treasure": {
       "gold": [
         107,
@@ -24563,8 +23651,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "zombie_flesh",
     "treasure": {
       "gold": [
         104,
@@ -24620,8 +23706,6 @@
       "caster"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "lich_dragon_scale",
     "treasure": {
       "gold": [
         107,
@@ -24678,8 +23762,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "hydra_bile",
     "treasure": {
       "gold": [
         104,
@@ -24738,8 +23820,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "corrupted_wing_feather",
     "treasure": {
       "gold": [
         107,
@@ -24791,8 +23871,6 @@
       "giant"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "titan_essence",
     "treasure": {
       "gold": [
         110,
@@ -24846,8 +23924,6 @@
       "humanoid"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "shadow_essence",
     "treasure": {
       "gold": [
         104,
@@ -24898,8 +23974,6 @@
       "aberration"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "toxic_jelly_sac",
     "treasure": {
       "gold": [
         104,
@@ -24954,8 +24028,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "demon_scales",
     "treasure": {
       "gold": [
         110,
@@ -25019,8 +24091,6 @@
       "caster"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "lord_phylactery",
     "treasure": {
       "gold": [
         131,
@@ -25084,8 +24154,6 @@
       "caster"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "lich_dragon_scale",
     "treasure": {
       "gold": [
         134,
@@ -25141,8 +24209,6 @@
       "giant"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "titan_essence",
     "treasure": {
       "gold": [
         131,
@@ -25198,8 +24264,6 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "void_shard",
     "treasure": {
       "gold": [
         134,
@@ -25259,8 +24323,6 @@
       "evil"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "demon_heart",
     "treasure": {
       "gold": [
         131,
@@ -25312,8 +24374,6 @@
       "celestial"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "solar_venom",
     "treasure": {
       "gold": [
         137,
@@ -25323,8 +24383,7 @@
       "item_tier": 5
     },
     "lore": "The guardians of the deepest vaults, placed by divine decree to ensure only the truly worthy pass. They are not evil — merely implacable.",
-    "frequency": 2,
-    "mortal_weapon_floor": true
+    "frequency": 2
   },
   "entropy_elemental": {
     "name": "entropy elemental",
@@ -25371,8 +24430,6 @@
       "outsider"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "chaos_essence",
     "treasure": {
       "gold": [
         134,
@@ -25426,8 +24483,6 @@
       "undead"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "death_essence",
     "treasure": {
       "gold": [
         131,
@@ -25487,8 +24542,6 @@
       "dragon"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "corruption_scale",
     "treasure": {
       "gold": [
         137,
@@ -25542,8 +24595,6 @@
       "construct"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "plague_flesh",
     "treasure": {
       "gold": [
         131,
@@ -25599,8 +24650,6 @@
       "beast"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "swarmlord_chitin",
     "treasure": {
       "gold": [
         138,
@@ -25658,8 +24707,6 @@
       "evil"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "executioners_iron",
     "treasure": {
       "gold": [
         139,
@@ -25715,8 +24762,6 @@
       "outsider"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "void_feather",
     "treasure": {
       "gold": [
         141,
@@ -25772,8 +24817,6 @@
       "demon"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "herald_trumpet_brass",
     "treasure": {
       "gold": [
         142,
@@ -25829,8 +24872,6 @@
       "outsider"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "wormwood_ash",
     "treasure": {
       "gold": [
         144,
@@ -25886,8 +24927,6 @@
       "undead"
     ],
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "horseman_lance_shard",
     "treasure": {
       "gold": [
         147,
@@ -25934,8 +24973,6 @@
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         4,
@@ -25996,8 +25033,6 @@
     "peak_weight": 5.0,
     "frequency": 5,
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         6,
@@ -26045,8 +25080,6 @@
     "peak_weight": 5.0,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         12,
@@ -26098,8 +25131,6 @@
     "peak_weight": 2.5,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         35,
@@ -26153,8 +25184,6 @@
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "orc_blood",
     "treasure": {
       "gold": [
         80,
@@ -26205,8 +25234,6 @@
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "goblin_ear",
     "treasure": {
       "gold": [
         3,
@@ -26267,8 +25294,6 @@
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "goblin_ear",
     "treasure": {
       "gold": [
         12,
@@ -26319,8 +25344,6 @@
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "goblin_ear",
     "treasure": {
       "gold": [
         45,
@@ -26377,8 +25400,6 @@
     "peak_weight": 1.8,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "goblin_ear",
     "treasure": {
       "gold": [
         95,
@@ -26438,8 +25459,6 @@
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "bone_shard",
     "treasure": {
       "gold": [
         15,
@@ -26500,8 +25519,6 @@
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "bone_shard",
     "treasure": {
       "gold": [
         30,
@@ -26562,8 +25579,6 @@
     "peak_weight": 1.8,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "lich_dust",
     "treasure": {
       "gold": [
         120,
@@ -26630,8 +25645,6 @@
     "peak_weight": 1.5,
     "frequency": 1,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "lich_dust",
     "treasure": {
       "gold": [
         180,
@@ -26684,8 +25697,6 @@
     "peak_weight": 6.0,
     "frequency": 6,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "kobold_scale",
     "treasure": {
       "gold": [
         2,
@@ -26739,8 +25750,6 @@
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "kobold_scale",
     "treasure": {
       "gold": [
         10,
@@ -26791,8 +25800,6 @@
     "peak_weight": 2.8,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "kobold_scale",
     "treasure": {
       "gold": [
         25,
@@ -26841,8 +25848,6 @@
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "gnoll_hide",
     "treasure": {
       "gold": [
         3,
@@ -26905,8 +25910,6 @@
     "peak_weight": 4.0,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "gnoll_hide",
     "treasure": {
       "gold": [
         16,
@@ -26963,8 +25966,6 @@
     "peak_weight": 2.2,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "gnoll_hide",
     "treasure": {
       "gold": [
         55,
@@ -27014,8 +26015,6 @@
     "peak_weight": 6.5,
     "frequency": 6,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         3,
@@ -27064,8 +26063,6 @@
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         5,
@@ -27125,8 +26122,6 @@
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         8,
@@ -27176,8 +26171,6 @@
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         60,
@@ -27231,8 +26224,6 @@
     "peak_weight": 6.0,
     "frequency": 5,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         4,
@@ -27289,8 +26280,6 @@
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         10,
@@ -27346,8 +26335,6 @@
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         22,
@@ -27408,8 +26395,6 @@
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         85,
@@ -27475,8 +26460,6 @@
     "peak_weight": 5.0,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "ghast_ichor",
     "treasure": {
       "gold": [
         6,
@@ -27530,8 +26513,6 @@
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "ghast_ichor",
     "treasure": {
       "gold": [
         25,
@@ -27589,8 +26570,6 @@
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "ghast_ichor",
     "treasure": {
       "gold": [
         100,
@@ -27603,7 +26582,9 @@
     "alert_all_tag": true,
     "alert_radius": 8,
     "enrage_at_hp_pct": 0.25,
-    "enraged_pattern": "fenrir_rage"
+    "enraged_pattern": "fenrir_rage",
+    "rage_interval": 3,
+    "rage_damage_bonus": 4
   },
   "greater_imp": {
     "name": "greater imp",
@@ -27649,8 +26630,6 @@
     "peak_weight": 5.0,
     "frequency": 5,
     "harvest_tier": 1,
-    "harvest_threshold": 2,
-    "ingredient_id": "imp_stinger",
     "treasure": {
       "gold": [
         6,
@@ -27711,8 +26690,6 @@
     "peak_weight": 4.0,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "imp_stinger",
     "treasure": {
       "gold": [
         18,
@@ -27770,8 +26747,6 @@
     "peak_weight": 2.2,
     "frequency": 2,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "imp_stinger",
     "treasure": {
       "gold": [
         60,
@@ -27830,8 +26805,6 @@
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
-    "harvest_threshold": 2,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         14,
@@ -27892,8 +26865,6 @@
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 3,
-    "ingredient_id": "battle_ration",
     "treasure": {
       "gold": [
         40,
@@ -27946,8 +26917,6 @@
     "peak_weight": 4.0,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "troll_hide",
     "treasure": {
       "gold": [
         10,
@@ -28008,8 +26977,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 2,
-    "harvest_threshold": 4,
-    "ingredient_id": "witch_finger",
     "treasure": {
       "gold": [
         12,
@@ -28066,8 +27033,6 @@
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "stone_moss",
     "treasure": {
       "gold": [
         5,
@@ -28124,8 +27089,6 @@
     "peak_weight": 3.0,
     "frequency": 4,
     "harvest_tier": 2,
-    "harvest_threshold": 3,
-    "ingredient_id": "serpent_venom",
     "treasure": {
       "gold": [
         8,
@@ -28183,8 +27146,6 @@
     "frequency": 1,
     "spawn_chance": 0.3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "patriarch_signet",
     "treasure": {
       "gold": [
         120,
@@ -28251,8 +27212,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "assassin_cowl",
     "treasure": {
       "gold": [
         25,
@@ -28310,8 +27269,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 5,
-    "ingredient_id": "golem_core",
     "treasure": {
       "gold": [
         15,
@@ -28373,8 +27330,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "plague_phylactery",
     "treasure": {
       "gold": [
         25,
@@ -28434,8 +27389,6 @@
     "peak_weight": 3.5,
     "frequency": 4,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "vine_essence",
     "treasure": {
       "gold": [
         10,
@@ -28491,8 +27444,6 @@
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 5,
-    "ingredient_id": "horror_ichor",
     "treasure": {
       "gold": [
         60,
@@ -28547,8 +27498,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 4,
-    "ingredient_id": "giant_bone",
     "treasure": {
       "gold": [
         40,
@@ -28608,8 +27557,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
-    "harvest_threshold": 5,
-    "ingredient_id": "sentinel_plate",
     "treasure": {
       "gold": [
         50,
@@ -28680,8 +27627,6 @@
     "frequency": 1,
     "spawn_chance": 0.3,
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "crone_voice",
     "treasure": {
       "gold": [
         240,
@@ -28750,8 +27695,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "demon_horn",
     "treasure": {
       "gold": [
         70,
@@ -28814,8 +27757,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "deep_pearl",
     "treasure": {
       "gold": [
         60,
@@ -28874,8 +27815,6 @@
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "mimic_gold",
     "treasure": {
       "gold": [
         200,
@@ -28933,8 +27872,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "rime_tusk",
     "treasure": {
       "gold": [
         80,
@@ -29001,8 +27938,6 @@
     "peak_weight": 2.5,
     "frequency": 2,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "necromantic_focus",
     "treasure": {
       "gold": [
         70,
@@ -29058,8 +27993,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "shadow_quiver",
     "treasure": {
       "gold": [
         55,
@@ -29128,8 +28061,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "inquisitor_seal",
     "treasure": {
       "gold": [
         60,
@@ -29190,8 +28121,6 @@
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
-    "harvest_threshold": 5,
-    "ingredient_id": "elemental_core",
     "treasure": {
       "gold": [
         70,
@@ -29253,8 +28182,6 @@
     "frequency": 1,
     "spawn_chance": 0.25,
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "archon_heart",
     "treasure": {
       "gold": [
         400,
@@ -29326,8 +28253,6 @@
     "peak_weight": 2.5,
     "frequency": 2,
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "astral_filament",
     "treasure": {
       "gold": [
         120,
@@ -29426,15 +28351,13 @@
     "summon_cooldown": 8,
     "summon_max": 2,
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "dragon_essence_chromatic",
     "treasure": {
       "gold": [
         1500,
         3500
       ],
       "item_chance": 1.0,
-      "item_tier": 8,
+      "item_tier": 5,
       "boss_scroll_id": "scroll_of_chromatic_doom"
     },
     "lore": "Before the gods named the world, Tiamat coiled in the salt-deep, her five heads tasting the chaos that birthed her. The young god Marduk loosed the four winds into her open jaws and split her body to form the heavens and the earth — yet a shard of her hatred slipped the wound and slept beneath the dungeon floors. She wakes now as the Chromatic Queen, mother of evil dragonkind, each crowned head exhaling a different ruin: white frost, red flame, blue thunder, black acid, green plague. To stand before her is to stand before the first wrath that the cosmos ever knew.",
@@ -29523,20 +28446,19 @@
       "legendary"
     ],
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "infernal_blood",
     "treasure": {
       "gold": [
         1500,
         3000
       ],
       "item_chance": 1.0,
-      "item_tier": 7,
+      "item_tier": 5,
       "unique_drop_id": "ruby_rod",
       "boss_scroll_id": "scroll_of_nine_hells"
     },
     "lore": "Asmodeus, Prince of the Nine Hells and lord of Avernus, the first layer of the infernal realm. In the Book of Tobit he is the demon king who slays seven husbands of Sarah on their wedding nights until Tobias drives him to the deserts of Egypt with the smoke of burning fish heart and liver. He rules by contract rather than fury: every soul he claims signs its own surrender, and he carries the ruby rod that seals the bargain.",
-    "frequency": 1
+    "frequency": 1,
+    "spawn_chance": 1.0
   },
   "surtur": {
     "name": "Surtur the Fire Giant Lord",
@@ -29608,19 +28530,18 @@
     "is_boss": false,
     "is_mini_boss": true,
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "fire_giant_heart",
     "treasure": {
       "gold": [
         800,
         1800
       ],
       "item_chance": 1.0,
-      "item_tier": 6
+      "item_tier": 5
     },
     "lore": "Surtur, the fire-giant lord of Muspelheim, waits at the southern edge of the world with the flaming sword Lævateinn — brighter than the sun. The Völuspá foretells the day he rides forth to set the Nine Worlds ablaze, scorching even Asgard until only ash remains.",
     "frequency": 1,
-    "enraged_pattern": "aggressive"
+    "enraged_pattern": "aggressive",
+    "spawn_chance": 1.0
   },
   "ymir_last_spawn": {
     "name": "Ymir's Last Spawn",
@@ -29697,19 +28618,18 @@
     "is_boss": false,
     "is_mini_boss": true,
     "harvest_tier": 5,
-    "harvest_threshold": 5,
-    "ingredient_id": "primordial_frost",
     "treasure": {
       "gold": [
         700,
         1500
       ],
       "item_chance": 1.0,
-      "item_tier": 6
+      "item_tier": 5
     },
     "lore": "The last surviving child of Ymir, the primordial frost-giant whose slain body became the world — his bones the mountains, his blood the sea, his skull the dome of the sky. This spawn carries the cold of the first dawn, before Odin and his brothers ever lifted a blade.",
     "frequency": 1,
-    "enraged_pattern": "aggressive"
+    "enraged_pattern": "aggressive",
+    "spawn_chance": 1.0
   },
   "hrungnirs_ghost": {
     "name": "Hrungnir's Ghost",
@@ -29775,8 +28695,6 @@
     "is_boss": false,
     "is_mini_boss": true,
     "harvest_tier": 4,
-    "harvest_threshold": 4,
-    "ingredient_id": "petrified_giant_heart",
     "treasure": {
       "gold": [
         600,
@@ -29787,6 +28705,8 @@
     },
     "lore": "Hrungnir was the mightiest of stone-giants — heart of triangular stone, head of stone, hurler of whetstones at Thor on the field at Griðr. Mjölnir shattered his skull, but the ghost still walks, still flings stinging shards from a grey horizon, still pleads for one more contest.",
     "frequency": 1,
-    "enraged_pattern": "aggressive"
+    "enraged_pattern": "aggressive",
+    "spawn_chance": 1.0,
+    "enraged_multi_attack_count": 3
   }
 }

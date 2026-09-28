@@ -1771,11 +1771,10 @@
     "is_unique": true,
     "spread": 18,
     "peak_floor": 45,
-    "rotating_subject_chain_cap": [
-      "theology",
-      "history",
-      "grammar"
-    ]
+    "save_bonus": {
+      "cat": "all",
+      "amount": 2
+    }
   },
   "ouroboros_pendant": {
     "name": "Ouroboros",
@@ -2063,7 +2062,7 @@
     "peak_floor": 75
   },
   "caduceus_charm": {
-    "name": "Caduceus of Hermes",
+    "name": "Caduceus Amulet",
     "symbol": "\"",
     "color": [
       160,
@@ -2087,7 +2086,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care.",
+    "lore": "A small amulet cast in the likeness of Hermes's Caduceus — two serpents coiled around a winged rod. The staff itself is a different relic; this charm carries only a fragment of its virtue, but is enough to keep the wearer's wits sharp. Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 21,
@@ -2121,14 +2120,11 @@
     "is_unique": true,
     "spread": 25,
     "peak_floor": 70,
-    "rotating_subject_chain_cap": [
-      "math",
-      "history",
-      "science",
-      "grammar",
-      "economics",
-      "theology"
-    ]
+    "save_bonus": {
+      "cat": "all",
+      "amount": 3
+    },
+    "attack_chain_cap_bonus": 1
   },
   "pectoral_of_amun": {
     "name": "Pectoral of Amun",
@@ -2395,7 +2391,7 @@
     "is_unique": true,
     "spread": 22,
     "peak_floor": 60,
-    "identify_timer_bonus": 2
+    "identify_tier_reduction": 1
   },
   "anklet_of_atalanta": {
     "name": "Anklet of Atalanta",
@@ -3043,7 +3039,7 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a golden riddle-crown",
-    "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and extends the time available for all mental challenges.",
+    "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and steadies the answerer against pressure.",
     "floorSpawnWeight": {},
     "peak_floor": 0,
     "spread": 10,
@@ -4840,7 +4836,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom, improving quiz timing and heightening awareness of hidden truths.",
+    "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom and heightens awareness of hidden truths.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4871,7 +4867,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, significantly improving the wearer's judgment and quiz performance.",
+    "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, sharpening judgment under pressure.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -5305,7 +5301,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment, quiz timing, and intuitive threat assessment.",
+    "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment and intuitive threat assessment.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,

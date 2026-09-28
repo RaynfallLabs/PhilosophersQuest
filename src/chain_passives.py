@@ -186,7 +186,15 @@ def get_mp_bonus(player) -> int:
 
 
 def get_attack_chain_cap_bonus(player) -> int:
-    return int(sum_passive_values(player, 'attack_chain_cap_bonus'))
+    """Sum of chain-cap bonuses from any source: chain-equip passives
+    (Ring of Gawain's `passive_attack_chain_cap_bonus`) + flat accessory
+    fields (Torque of Lugh's top-level `attack_chain_cap_bonus`).
+    """
+    total = int(sum_passive_values(player, 'attack_chain_cap_bonus'))
+    if player is not None:
+        for it in equipped_chain_items(player):
+            total += int(getattr(it, 'attack_chain_cap_bonus', 0) or 0)
+    return total
 
 
 def get_grammar_chain_cap_bonus(player) -> int:

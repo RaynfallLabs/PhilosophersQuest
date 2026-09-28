@@ -57,13 +57,12 @@ class MenuMixin:
 
     def _get_cook_tab_items(self):
         """Return list for current cook tab."""
-        if self._COOK_TABS[self._cook_tab][1] == 'single':
-            return self.cook_menu_items
+        # _COOK_TABS has only the 'compound' tab now (2026-06-07 single-cook
+        # removal); the branch is compound-only.
         return self.cook_compound_recipes
 
     def _cook_tab_has_items(self, idx):
-        return (self.cook_menu_items if self._COOK_TABS[idx][1] == 'single'
-                else self.cook_compound_recipes)
+        return self.cook_compound_recipes
 
     # Up/Down/PageUp/PageDown/Home/End cursor keys, shared by the letter+cursor
     # overflow menus. Letter shortcuts still cover a-z; arrows/Enter can reach
@@ -109,10 +108,7 @@ class MenuMixin:
         if idx is None or idx >= len(tab_items):
             return
         self.state = STATE_PLAYER
-        if self._COOK_TABS[self._cook_tab][1] == 'single':
-            self._cook_item(tab_items[idx])
-        else:
-            self._cook_compound(tab_items[idx])
+        self._cook_compound(tab_items[idx])
 
     # ------------------------------------------------------------------
     # Eat menu  (z key)
@@ -1120,7 +1116,7 @@ class MenuMixin:
                 }, int(_acc.charges), 0))
 
         if not powers:
-            self.add_message("You have no active powers. Earn quirks to unlock them!", 'info')
+            self.add_message("No powers unlocked yet. Earn them through play.", 'info')
             return
         self._power_menu_list = powers
         self._power_sel = 0
@@ -1203,7 +1199,7 @@ class MenuMixin:
 
         elif pid == 'sage_counsel':
             pl.add_effect('blessed', 15)
-            self.add_message(f"{label}: A sage's wisdom descends -- all quiz timers extended.", 'success')
+            self.add_message(f"{label}: A sage's wisdom descends -- math combat quiz timer extended.", 'success')
 
         elif pid == 'focused_scholar' or pid == 'arcane_surge':
             if not pl.has_effect('brilliance'):
@@ -1604,7 +1600,7 @@ class MenuMixin:
         pl._gold_offering_used_this_floor = True
         self.add_message(
             f"You toss {cost} gold at the {target.name}'s feet. "
-            "The {tname} bows and steps aside.".format(tname=target.name),
+            f"The {target.name} bows and steps aside.",
             'success')
         return False
 

@@ -123,10 +123,17 @@ DEBUFFS: frozenset = frozenset({
     'slowed', 'aggravated', 'teleportitis',
     'feared', 'charmed', 'cursed', 'weakened', 'bleeding', 'doomed', 'draining',
     'burning', 'frozen', 'corroding', 'immobilized', 'in_pit', 'silenced',
-    'hallucinating_pot', 'berserk',
+    'hallucinating_pot',
+    # v2.15+ audit sync: berserk was double-classified (BUFFS + DEBUFFS).
+    # It grants +STR damage but costs HP/turn — treated as a BUFF (below);
+    # removed from DEBUFFS so `abjuration`/`cancellation`/`dispel_magic`
+    # correctly strip it as an enchantment on the target.
     # Engine wave 3 (2026-05-30): heal_blocked debuff (Gae Dearg's wound).
     # Blocks restore_hp from working on target while active.
     'heal_blocked',
+    # v2.15+ audit sync: Laevateinn's doom_dot was in EFFECT_INFO but missing
+    # from DEBUFFS. Add so status HUD + strip-debuffs paths see it.
+    'doom_dot',
     # Chain combat v2 (v2.14.0): weapon chain-special monster debuffs
     'armor_crack', 'sundered', 'deep_wound', 'ruptured', 'impaled',
     # v2.15.0: crossbow reload cooldown — player-side, not a debuff-buff really
@@ -158,8 +165,18 @@ BUFFS: frozenset = frozenset({
 # successful save and followed by a grace window. SOFT control = degraded
 # actions: HALVED on a save. Both REFRESH (max) instead of stacking, and are
 # capped per single application so one failed save is never a death sentence.
+#
+# NOTE (v2.15+): `stunned` is a SOFT effect in semantics (player still acts,
+# with a -25% quiz timer + stumble) but is deliberately kept in HARD_CONTROL
+# so that a successful save fully negates it and cannot be re-applied within
+# the post-lock grace window. This is an anti-stunlock guarantee — removing
+# it would allow fast monsters to stunlock the player to death.
+# NOTE (v2.15+): `petrifying` moved into HARD_CONTROL. Its val==1 tick sends
+# the '_petrify_death' signal, and half-duration on a save could still kill;
+# HARD_CONTROL means a successful CON save NEGATES it outright.
 HARD_CONTROL: frozenset = frozenset({
     'paralyzed', 'sleeping', 'immobilized', 'stunned', 'frozen',
+    'petrifying',
 })
 SOFT_CONTROL: frozenset = frozenset({'confused', 'feared', 'charmed', 'slowed'})
 CONTROL: frozenset = HARD_CONTROL | SOFT_CONTROL
@@ -185,7 +202,10 @@ GRACE_TURNS = 3  # turns of immunity to re-disable after a hard-control effect e
 _RESIST_BLOCKS: dict[str, set] = {
     'poison_resist': {'poisoned', 'diseased'},
     'sleep_resist':  {'sleeping', 'paralyzed'},
-    'drain_resist':  {'diseased'},
+    # v2.15+ audit sync: 'drain_resist' now also blocks the `draining` HP tick
+    # so the display name (Drain Resist) matches behavior. The `diseased`
+    # entry is retained for symmetry with poison_resist's coverage.
+    'drain_resist':  {'diseased', 'draining'},
     'fire_resist':   {'burning'},
     'cold_resist':   {'frozen'},
     # 2026: magic_resist now actively blocks mind-affecting / magical debuffs
@@ -351,6 +371,36 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'silenced':       ('You find your voice again.',            'success'),
     'hallucinating_pot': ('Reality snaps back into focus.',     'info'),
     'berserk':        ('The fury fades. You feel drained.',     'warning'),
+    # v2.15+ audit sync: fill in expire messages that had been missing.
+    'doom_dot':          ('The doom-tick releases you.',              'success'),
+    'petrifying':        ('You feel your flesh soften back to life.', 'success'),
+    'armor_crack':       ('The armor cracks reseal.',                 'info'),
+    'sundered':          ('The sundered limb steadies.',              'info'),
+    'deep_wound':        ('The deep wound finally closes.',           'success'),
+    'ruptured':          ('The rupture stems -- you can be healed again.', 'success'),
+    'impaled':           ('You wrench free of the impalement!',       'success'),
+    'heal_blocked':      ('Your wounds are willing to close once more.', 'success'),
+    'blade_flow':        ('The blade-flow subsides.',                 'info'),
+    'save_guard_CON':    ('Your Body Ward fades.',                    'info'),
+    'save_guard_WIS':    ('Your Mind Ward fades.',                    'info'),
+    'save_guard_DEX':    ('Your Reflex Ward fades.',                  'info'),
+    'save_guard_all':    ('Your Warded aura fades.',                  'info'),
+    'fear_immune':       ('The battle-rage cools.',                   'info'),
+    'control_immune':    ('Your footing steadies -- you are fully back in the fight.', 'info'),
+    'parry_armed':       ('Your parry stance lowers.',                'info'),
+    'riposte_armed':     ('Your riposte instinct settles.',           'info'),
+    'see_invisible':     ('Invisible creatures fade from your sight.', 'info'),
+    'warning':           ('Your danger sense quiets.',                'info'),
+    'searching':         ('You stop searching automatically.',        'info'),
+    'truesight':         ('Your true sight fades.',                   'info'),
+    'dark_vision':       ('Your dark vision dims.',                   'info'),
+    'identify_sight':    ('Your identify-sight fades.',               'info'),
+    'life_save':         ('The life-save ward is spent.',             'warning'),
+    'reloading':         ('The crossbow is cocked and ready.',        'info'),
+    'boomstick_aoe_next':('The scatter charge dissipates.',           'info'),
+    'crit_buff':         ('Your critical resolve fades.',             'info'),
+    'stand_ac':          ('You break your Spartan Stand.',            'info'),
+    'melee_dmg_reduction':('Your guarded stance drops.',              'info'),
 }
 
 
@@ -401,8 +451,10 @@ _SAVE_FLAVOR: dict = {
     'DEX': 'Your quick footwork',
 }
 # Natural-language noun per effect so messages read as flavor, not effect ids.
+# v2.15+ audit sync: 'stunned' noun changed from 'daze' to 'stun' so apply/expire
+# messages match the effect id (expire says "no longer stunned").
 _EFFECT_NOUN: dict = {
-    'paralyzed': 'paralysis', 'sleeping': 'drowsiness', 'stunned': 'daze',
+    'paralyzed': 'paralysis', 'sleeping': 'drowsiness', 'stunned': 'stun',
     'frozen': 'creeping frost', 'immobilized': 'grip', 'petrifying': 'petrification',
     'confused': 'confusion', 'feared': 'dread', 'charmed': 'charm',
     'slowed': 'sluggishness',
@@ -428,7 +480,15 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int) -> tuple
     stat = SAVE_STAT.get(effect)
     noun = _EFFECT_NOUN.get(effect, effect.replace('_', ' '))
     if stat is None:
-        applied = player.add_effect(effect, duration)
+        # v2.15+ audit sync: effects without a SAVE_STAT entry (poison, bleed,
+        # burn, disease, etc.) previously bypassed save_bonus entirely. Now the
+        # CON save_bonus reduces the applied duration by a flat amount (min 1),
+        # so gear/quirks/ward gradients still soften body afflictions. This
+        # preserves the "resource loss IS the penalty" rule (DoTs still land)
+        # but rewards a built-out CON save profile with shorter-lived DoTs.
+        _sb = int(player.save_bonus_for('CON')) if hasattr(player, 'save_bonus_for') else 0
+        _dur = max(1, int(duration) - _sb)
+        applied = player.add_effect(effect, _dur)
         return applied, (f"You are {effect.replace('_', ' ')}!" if applied else "")
     mod = (int(getattr(player, stat, 10)) - 10) // 2
     bonus = player.save_bonus_for(stat) if hasattr(player, 'save_bonus_for') else 0

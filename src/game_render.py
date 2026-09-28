@@ -50,13 +50,24 @@ from game_states import (
 )
 
 
+def _threshold_line(label: str, n) -> str:
+    """Zero-tolerance threshold copy shared by kit + lore + bestiary panels.
+
+    Every threshold-mode action fails on the first wrong answer, so the copy
+    MUST tell the player that up front — an "Equip threshold: 3 correct"
+    line lies by omission. Callers pass their own label ("Equip", "Quiz",
+    "Grammar", …); the shape is uniform.
+    """
+    return f"{label}: {n} correct (any wrong = fail)"
+
+
 def _identify_status_label(id_level: int) -> str:
     """Map an item's id_level to a human status string.
 
     Post-2026-08-06 identify-v3 model: only 0 and 5 are actually written for
-    new saves (mastery-progression 1-4 was deleted; True Name view uses the
-    kit_visible_level helper to render a "type known" view at 4). Old saves
-    that predate the redesign may carry legacy intermediate values.
+    new saves (the old id_level 1-4 progression was deleted; True Name view
+    uses the kit_visible_level helper to render a "type known" view at 4).
+    Old saves that predate the redesign may carry legacy intermediate values.
     """
     idl = int(id_level or 0)
     if idl >= 5:
@@ -1031,11 +1042,7 @@ class RenderMixin:
         lines.append((f"  Sight radius:  {p.get_sight_radius()} tiles", WHITE, font_body, False))
         timer_mod = p.get_quiz_timer_modifier()
         math_t = round(p.get_quiz_timer('math') * timer_mod, 1)
-        econ_t = round(p.get_quiz_timer('economics') * timer_mod, 1)
-        lines.append((f"  Quiz timer:    {math_t}s (combat) to {econ_t}s (text-heavy)  x{timer_mod}", WHITE, font_body, False))
-        int_bonus = p.get_int_quiz_bonus()
-        if int_bonus > 0:
-            lines.append((f"    +{int_bonus}s on magic subjects (INT bonus)", DIM, font_small, False))
+        lines.append((f"  Quiz timer:    {math_t}s (math combat only). Other subjects untimed. x{timer_mod}", WHITE, font_body, False))
 
         # --- Equipment ---
         lines.append(("", DIM, font_small, False))
@@ -2157,12 +2164,32 @@ class RenderMixin:
             c_color = FP.CYAN_ACCENT
             c_surf = self.font_md.render(c_text, True, c_color)
 
+        # Threshold-mode subtitle: make the zero-tolerance rule visible on
+        # the quiz screen itself so the player knows the first wrong answer
+        # ends the run. Chain mode has its own peak-chain UI and skips this.
+        is_threshold = qe.mode in (QuizMode.THRESHOLD, QuizMode.ESCALATOR_THRESHOLD)
+        sub_surf = None
+        if is_threshold:
+            sub_surf = self.font_sm.render("(any wrong = fail)", True, FP.DANGER_TEXT)
+
+        reserve_w = c_surf.get_width()
+        if sub_surf is not None:
+            reserve_w = max(reserve_w, sub_surf.get_width())
         draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
                         text=self.quiz_title, font=self.font_md,
                         text_color=FP.GOLD_BRIGHT, accent=accent,
-                        right_reserve=c_surf.get_width() + PAD + 16)
-        self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
-                                   by + (HEADER_H - c_surf.get_height()) // 2))
+                        right_reserve=reserve_w + PAD + 16)
+        if sub_surf is not None:
+            # Stack the counter above the subtitle within the header slot.
+            stack_h = c_surf.get_height() + sub_surf.get_height() + 2
+            stack_top = by + (HEADER_H - stack_h) // 2
+            self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
+                                       stack_top))
+            self.screen.blit(sub_surf, (bx + bw - sub_surf.get_width() - PAD,
+                                         stack_top + c_surf.get_height() + 2))
+        else:
+            self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
+                                       by + (HEADER_H - c_surf.get_height()) // 2))
 
         # -- Timer bar -------------------------------------------------
         ty        = by + HEADER_H + 6
@@ -4041,8 +4068,8 @@ class RenderMixin:
         ]
         # Per-subject + per-tier breakdown if tracking is active
         qstats = getattr(self, 'quiz_stats', {}) or {}
-        # Per-run SUBJECT MASTERY: a cleared (subject, tier) auto-succeeds, so
-        # mark it MASTERED here instead of a hit ratio -- the badge the player
+        # Per-run tier-clear: a cleared (subject, tier) auto-succeeds, so mark
+        # it CLEARED here instead of a hit ratio -- the badge the player
         # earns for clearing a whole tier.
         mastered = (self.quiz_engine.mastered_tiers()
                     if getattr(self, 'quiz_engine', None) else set())
@@ -4057,7 +4084,7 @@ class RenderMixin:
                 tier_bits = []
                 for ti in range(1, 6):
                     if (subj, ti) in mastered:
-                        tier_bits.append(f"T{ti} MASTERED")
+                        tier_bits.append(f"T{ti} CLEARED")
                         continue
                     tr = int(d.get(f't{ti}c', 0))
                     tw = int(d.get(f't{ti}w', 0))
@@ -4398,9 +4425,18 @@ class RenderMixin:
         selected = self._menu_clamp_selection('_identify_sel', len(entries))
         has_shard = any(getattr(i, 'id', '') == 'philosophers_shard'
                         for i in self.player.inventory)
+        # Plato's Form-of-Ideas passive bypasses the shard requirement; a
+        # blessed Scroll of Identify overrides the whole quiz.
+        has_plato = 'plato_no_shard' in getattr(self.player, 'hero_passives', set())
+        if has_shard:
+            shard_line = "Shard: carried"
+        elif has_plato:
+            shard_line = "Shard: not needed (Plato's Form of Ideas active)"
+        else:
+            shard_line = "Shard: needed (or use a Scroll of Identify to bypass)"
         context = self._menu_base_context([
             ("IDENTIFICATION", FP.GOLD_BRIGHT, self.font_sm),
-            (f"Shard: {'carried' if has_shard else 'passive or override'}", FP.BODY_TEXT, self.font_sm),
+            (shard_line, FP.BODY_TEXT, self.font_sm),
             (f"Targets: {len(entries)}", FP.BODY_TEXT, self.font_sm),
             ("One question. Right: fully identified. Wrong: the Shard stuns you.",
              FP.FADED_TEXT, self.font_sm),
@@ -5048,7 +5084,7 @@ class RenderMixin:
             title="ACTIVE POWERS  [V]",
             entries=entries,
             scroll=getattr(self, '_power_scroll', 0),
-            subtitle="Earned through quirk mastery -- each power has limited uses.",
+            subtitle="Unlocked by playing well. Each power has limited uses.",
             subtitle_color=FP.FADED_TEXT,
             hint="a-z: use power  |  ESC: close",
             border_color=FP.ARCANE_BRIGHT,
@@ -6461,7 +6497,7 @@ class RenderMixin:
                  FP.BODY_TEXT, self.font_sm),
                 (f"AC bonus: +{item.ac_bonus}   Enchant: +{getattr(item, 'enchant_bonus', 0)}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"Equip threshold: {getattr(item, 'equip_threshold', '?')} correct",
+                (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
             if getattr(item, 'damage_resistances', None):
@@ -6475,7 +6511,7 @@ class RenderMixin:
                  FP.BODY_TEXT, self.font_sm),
                 (f"AC bonus: +{item.ac_bonus}   Enchant: +{getattr(item, 'enchant_bonus', 0)}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"Equip threshold: {getattr(item, 'equip_threshold', '?')} correct",
+                (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
             if getattr(item, 'damage_resistances', None):
@@ -6498,7 +6534,7 @@ class RenderMixin:
                 if 'status' in fx:
                     parts.append(f"grants {str(fx['status']).replace('_', ' ').title()}")
                 lines.append(("Effect: " + ', '.join(parts), FP.CYAN_ACCENT, self.font_sm))
-            lines.append((f"Equip threshold: {getattr(item, 'equip_threshold', '?')} correct",
+            lines.append((_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                           FP.BODY_TEXT, self.font_sm))
 
         elif isinstance(item, Wand):
@@ -6508,7 +6544,7 @@ class RenderMixin:
                  FP.BODY_TEXT, self.font_sm),
                 (f"Charges: {item.charges}/{item.max_charges}",
                  FP.CYAN_ACCENT, self.font_sm),
-                (f"Science threshold: {getattr(item, 'quiz_threshold', '?')} correct",
+                (_threshold_line("Science", getattr(item, 'quiz_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
 
@@ -6517,7 +6553,7 @@ class RenderMixin:
                 ("Scroll", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ')}   Power: {getattr(item, 'power', '?')}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"Grammar threshold: {getattr(item, 'quiz_threshold', '?')} correct",
+                (_threshold_line("Grammar", getattr(item, 'quiz_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
 
@@ -6527,7 +6563,7 @@ class RenderMixin:
                 ("Spellbook", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Teaches: {spell_name}   MP cost: {getattr(item, 'mp_cost', '?')}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"Grammar threshold: {getattr(item, 'quiz_threshold', '?')} correct",
+                (_threshold_line("Grammar", getattr(item, 'quiz_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
             ]
 
@@ -7098,33 +7134,47 @@ class RenderMixin:
 
             # Ingredient & recipe hints (utility info; gated at id_level >= 2
             # so the player knows whether a corpse is harvestable basically).
+            #
+            # Harvest v4 (2026-08-06): the JSON field `subject.ingredient_id`
+            # is dead \u2014 actual drops resolve via prime_cuts.json keyed by the
+            # monster's id (kind). Route the lookup the same way harvest
+            # itself does (see food_system._harvest_outcome_for_tier): read
+            # the prime_cuts entry, then build `<monster>_trophy` or
+            # `<monster>_prime` based on the is_trophy flag.
             if id_level >= 2:
                 from food_system import (load_ingredient_for,
-                                          get_recipes_for_ingredient)
-                ing_id = subject.ingredient_id
-                if ing_id:
-                    ing = load_ingredient_for(ing_id)
-                    if ing:
-                        stat_lines.append(f"Ingredient: {ing.name}  (harvest with H)")
-                        best_solo = ing.recipes.get('5', ing.recipes.get('3', {}))
-                        if best_solo.get('name'):
-                            stat_lines.append(
-                                f"Solo cook: {best_solo['name']}  "
-                                f"({best_solo.get('sp',0)} SP)"
+                                          get_recipes_for_ingredient,
+                                          _load_prime_cuts)
+                monster_id = getattr(subject, 'kind', '') or getattr(subject, 'id', '')
+                prime_info = _load_prime_cuts().get(monster_id) if monster_id else None
+                if prime_info:
+                    ing_id = (f"{monster_id}_trophy"
+                              if prime_info.get('is_trophy')
+                              else f"{monster_id}_prime")
+                else:
+                    ing_id = None
+                ing = load_ingredient_for(ing_id) if ing_id else None
+                if ing:
+                    stat_lines.append(f"Ingredient: {ing.name}  (harvest with H)")
+                    best_solo = ing.recipes.get('5', ing.recipes.get('3', {}))
+                    if best_solo.get('name'):
+                        stat_lines.append(
+                            f"Solo cook: {best_solo['name']}  "
+                            f"({best_solo.get('sp',0)} SP)"
+                        )
+                    compound = get_recipes_for_ingredient(ing_id)
+                    if compound:
+                        from food_system import _raw_ingredients as _ri2
+                        _ings2 = _ri2()
+                        def _iname(iid): return _ings2.get(iid, {}).get('name', iid)
+                        stat_lines.append("Used in recipes:")
+                        for r in compound[:4]:
+                            ing_str = ', '.join(
+                                _iname(iid) for iid in r.get('ingredients', [])
                             )
-                        compound = get_recipes_for_ingredient(ing_id)
-                        if compound:
-                            from food_system import _raw_ingredients as _ri2
-                            _ings2 = _ri2()
-                            def _iname(iid): return _ings2.get(iid, {}).get('name', iid)
-                            stat_lines.append("Used in recipes:")
-                            for r in compound[:4]:
-                                ing_str = ', '.join(
-                                    _iname(iid) for iid in r.get('ingredients', [])
-                                )
-                                stat_lines.append(f"  \u2022 {r['name']}  ({ing_str})")
-                            if len(compound) > 4:
-                                stat_lines.append(f"  ... and {len(compound)-4} more")
+                            stat_lines.append(f"  \u2022 {r['name']}  ({ing_str})")
+                        if len(compound) > 4:
+                            stat_lines.append(f"  ... and {len(compound)-4} more")
                 else:
                     stat_lines.append("Ingredient: none (not harvestable)")
 
@@ -7221,7 +7271,7 @@ class RenderMixin:
                 stat_lines.append(f"Slot: {subject.slot}  |  Material: {subject.material}  |  Tier: {subject.tier}")
                 _ench = f"+{subject.enchant_bonus}" if _instance_known else "unrevealed"
                 stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: {_ench}")
-                stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
+                stat_lines.append(_threshold_line("Equip", subject.equip_threshold))
                 if subject.damage_resistances:
                     res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())
                     stat_lines.append(f"Resistances: {res_str}")
@@ -7232,7 +7282,7 @@ class RenderMixin:
                 stat_lines.append(f"Material: {subject.material}  |  Tier: {subject.tier}")
                 _ench = f"+{subject.enchant_bonus}" if _instance_known else "unrevealed"
                 stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: {_ench}")
-                stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
+                stat_lines.append(_threshold_line("Equip", subject.equip_threshold))
                 if subject.damage_resistances:
                     res_str = '  '.join(f"{k}: {int(v*100)}%" for k, v in subject.damage_resistances.items())
                     stat_lines.append(f"Resistances: {res_str}")
@@ -7243,16 +7293,16 @@ class RenderMixin:
                 if efx:
                     eff_str = ', '.join(f"{k}={v}" for k, v in efx.items())
                     stat_lines.append(f"Effects: {eff_str}")
-                stat_lines.append(f"Equip Threshold: {subject.equip_threshold} correct answers")
+                stat_lines.append(_threshold_line("Equip", subject.equip_threshold))
 
             elif id_level >= 3 and isinstance(subject, Wand):
                 stat_lines.append(f"Effect: {subject.effect.replace('_', ' ')}  |  Power: {subject.power}")
                 stat_lines.append(f"Charges: {subject.charges}/{subject.max_charges}")
-                stat_lines.append(f"Quiz Threshold: {subject.quiz_threshold} correct answers")
+                stat_lines.append(_threshold_line("Quiz", subject.quiz_threshold))
 
             elif id_level >= 3 and isinstance(subject, Scroll):
                 stat_lines.append(f"Effect: {subject.effect.replace('_', ' ')}  |  Power: {subject.power}")
-                stat_lines.append(f"Quiz Threshold: {subject.quiz_threshold} correct answers")
+                stat_lines.append(_threshold_line("Quiz", subject.quiz_threshold))
 
             elif id_level >= 3 and isinstance(subject, Food):
                 stat_lines.append(f"SP Restored: {subject.sp_restore}  |  HP Restored: {subject.hp_restore}")
@@ -7291,7 +7341,7 @@ class RenderMixin:
                 stat_lines.append(f"Spell: {spell_name}  |  MP Cost: {mp_cost}")
                 quiz_thr = getattr(subject, 'quiz_threshold', None)
                 if quiz_thr is not None:
-                    stat_lines.append(f"Quiz Threshold: {quiz_thr} correct answers to learn")
+                    stat_lines.append(_threshold_line("Quiz", quiz_thr))
 
             # Lore only at id_level >= 4. Below that, show a teaser line.
             if id_level >= 4:
@@ -8273,7 +8323,9 @@ class RenderMixin:
             ("Items", [
                 ("E", "Equip / unequip", FP.BODY_TEXT),
                 ("X", "Examine known items", FP.BODY_TEXT),
-                ("I", "Identify item or study corpse", FP.CYAN_ACCENT),
+                ("I", "Identify item / corpse (1 philosophy Q)", FP.CYAN_ACCENT),
+                ("H", "Harvest corpse (1 animal Q)", FP.BODY_TEXT),
+                ("C", "Cook menu (compound recipes)", FP.BODY_TEXT),
                 ("D", "Drop item / use tile", FP.BODY_TEXT),
                 ("U / Q", "Eat food or quaff potion", FP.BODY_TEXT),
                 ("R", "Read scroll or spellbook", FP.BODY_TEXT),
@@ -8302,26 +8354,46 @@ class RenderMixin:
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
             ]),
         ]
+        # System rules block: prose reminders that keybinds can't carry —
+        # zero-tolerance, chain v2, timing model, and the subject->action map.
+        rules = [
+            "Zero-tolerance: any wrong answer ends a threshold quiz.",
+            "Chain v2: peak-chain damage. Right -> chain grows; wrong -> strike now at achieved chain.",
+            "Math is the only timed subject. Others are untimed.",
+            "Subject -> action: math combat, geography armor, history accessory, "
+            "animal harvest, cooking food, science magic, philosophy identify, "
+            "grammar scrolls, economics lockpick, theology prayer.",
+        ]
+
         panel = self._ui_modal_panel("COMMAND REFERENCE",
                                      border_color=FP.GOLD,
                                      max_w=1380,
-                                     max_h=724)
+                                     max_h=760)
         body = pygame.Rect(panel.x + 24, panel.y + 72, panel.w - 48,
                            panel.h - 124)
-        cols = 3 if body.w >= 780 else 2
+        # Reserve the bottom slice of the body for the System Rules card.
+        font_rules = get_font('small', 14)
+        rules_line_h = font_rules.get_height() + 3
+        rules_h = 40 + rules_line_h * 2 * len(rules)  # ~2 wrapped lines per bullet
+        rules_rect = pygame.Rect(body.x, body.bottom - rules_h,
+                                 body.w, rules_h)
+        grid_rect = pygame.Rect(body.x, body.y,
+                                body.w, body.h - rules_h - 12)
+
+        cols = 3 if grid_rect.w >= 780 else 2
         gutter = 18
-        col_w = (body.w - gutter * (cols - 1)) // cols
+        col_w = (grid_rect.w - gutter * (cols - 1)) // cols
         row_gap = 18
         rows = (len(groups) + cols - 1) // cols
-        group_h = (body.h - row_gap * (rows - 1)) // rows
+        group_h = (grid_rect.h - row_gap * (rows - 1)) // rows
         font_key = get_font('small', 14, bold=True)
         font_cmd = get_font('small', 15)
 
         for idx, (title, commands) in enumerate(groups):
             col = idx % cols
             row = idx // cols
-            rect = pygame.Rect(body.x + col * (col_w + gutter),
-                               body.y + row * (group_h + row_gap),
+            rect = pygame.Rect(grid_rect.x + col * (col_w + gutter),
+                               grid_rect.y + row * (group_h + row_gap),
                                col_w, group_h)
             self._ui_blit_text(title.upper(), get_font('small', 15, bold=True),
                                FP.GOLD_PALE, rect.x, rect.y)
@@ -8347,6 +8419,21 @@ class RenderMixin:
                 self._ui_wrap_text(desc, font_cmd, color, desc_rect,
                                    line_gap=0, max_lines=2)
                 y += row_h
+
+        # -- System rules card --
+        inner = self._ui_subpanel(rules_rect, "System Rules",
+                                  border_color=FP.GOLD_DARK)
+        ry = inner.y
+        for bullet in rules:
+            b_rect = pygame.Rect(inner.x, ry,
+                                 inner.w, rules_line_h * 2 + 2)
+            self._ui_blit_text("*", font_rules, FP.GOLD_BRIGHT,
+                               b_rect.x, b_rect.y)
+            text_rect = pygame.Rect(b_rect.x + 16, b_rect.y,
+                                    b_rect.w - 16, b_rect.h)
+            self._ui_wrap_text(bullet, font_rules, FP.BODY_TEXT, text_rect,
+                               line_gap=1, max_lines=2)
+            ry += rules_line_h * 2
 
         self._ui_footer(panel, "? / ESC: close")
 

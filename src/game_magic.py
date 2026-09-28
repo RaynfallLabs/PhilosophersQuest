@@ -1064,11 +1064,17 @@ class MagicMixin:
 
         elif effect == 'abjuration':
             target = self._nearest_visible_monster()
-            # Strip all effects from target
+            # v2.15+ audit sync: strip BUFFS only from the target — mirrors
+            # `cancellation` / `dispel_magic` / `drain_magic`. The previous
+            # `clear()` also wiped player-applied DoTs (poison, bleed, burn,
+            # petrify), which are the player's investment.
             cleared_monster = 0
             if target:
-                cleared_monster = len(target.status_effects)
-                target.status_effects.clear()
+                from status_effects import BUFFS as _BUFFS
+                _monster_buffs = [e for e in list(target.status_effects) if e in _BUFFS]
+                for _e in _monster_buffs:
+                    target.status_effects.pop(_e, None)
+                cleared_monster = len(_monster_buffs)
             # Purge player debuffs
             from status_effects import DEBUFFS
             cleared_player = [e for e in list(self.player.status_effects) if e in DEBUFFS]
@@ -1654,9 +1660,11 @@ class MagicMixin:
             return
 
         # --- Annihilation: kill all non-boss monsters in sight below HP threshold ---
-        # Threshold scales with chain: 15% @ chain 1, 35% @ chain 5.
+        # v2.15+ audit sync: chain scaling retired. Fossil expression
+        # `0.10 + chain * 0.05` pinned at chain=5 (0.35) since that's what has
+        # been shipping. Hardcode the intended 35% HP threshold.
         if effect == 'annihilate':
-            threshold_pct = 0.10 + chain * 0.05   # 0.15 .. 0.35
+            threshold_pct = 0.35
             visible_monsters = [
                 m for m in self.monsters
                 if m.alive and (m.x, m.y) in self.visible
@@ -1851,6 +1859,12 @@ class MagicMixin:
             # Missing-handler audit: phase_door + levitate were falling through.
             'phase_self':        ('phasing',     15),    # walk through walls
             'levitation_self':   ('levitating',  12),    # float over floor traps
+            # v2.15+ audit sync: T3 Magic Shield needs its own duration
+            # (T1 mage_armor_spell = 12; T3 magic_shield_spell = 20). And
+            # T5 Greater Haste needs to be meaningfully longer than T2 Haste
+            # (10) — T5 = 20 turns.
+            'magic_shield_self': ('shielded',    20),
+            'greater_haste_self': ('hasted',     20),
         }
         if effect in _SELF_BUFF_DURATIONS:
             eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
@@ -1878,6 +1892,9 @@ class MagicMixin:
                 # T4 7 / T5 not used -- annihilation replaces it). Each
                 # missile rolls spell.power (1d4/2d4/3d4/4d6 per tier). INT
                 # adds a gentle flat per-missile bonus.
+                # v2.15+ audit sync: route per-missile damage through
+                # _spell_damage so MAGIC_TIER_MULT applies (previously the
+                # missile handler bypassed tier scaling entirely).
                 _tier = int(spell.get('tier', spell.get('quiz_tier', 1)))
                 _MISSILE_COUNT = {1: 1, 2: 3, 3: 5, 4: 7, 5: 9}
                 missiles = _MISSILE_COUNT.get(_tier, 1)
@@ -1886,7 +1903,7 @@ class MagicMixin:
                     if not target.alive:
                         break
                     base_dmg = _roll(power) if power else 4
-                    per_missile = max(1, base_dmg + self.player.INT // 5)
+                    per_missile = self._spell_damage(base_dmg, chain)
                     target.hp = max(0, target.hp - per_missile)
                     if target.hp == 0:
                         target.alive = False
@@ -2145,9 +2162,11 @@ class MagicMixin:
                         f"The {target.name} is a creature of this world — frozen in dread for {dur} turns instead.", 'warning')
             elif effect == 'power_word_kill':
                 # Instakill if target HP at or below threshold; threshold scales
-                # with player INT and chain. Bosses immune.
+                # with player INT. Bosses immune.
+                # v2.15+ audit sync: chain retired. Fossil expression
+                # `INT * chain * 4` pinned at chain=5 (INT * 20).
                 is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
-                threshold = self.player.INT * chain * 4
+                threshold = self.player.INT * 20
                 if not is_boss and target.hp <= threshold:
                     target.alive = False
                     target.hp = 0
@@ -2157,7 +2176,8 @@ class MagicMixin:
                 elif is_boss:
                     self.add_message(
                         f"The {target.name} resists the death-word but staggers!", 'warning')
-                    target.take_damage(self.player.INT * chain)
+                    # v2.15+ audit sync: chain retired -> `INT * chain` pinned at INT * 5.
+                    target.take_damage(self.player.INT * 5)
                 else:
                     self.add_message(
                         f"The {target.name} ({target.hp} HP) is too strong for the death-word "
@@ -3060,6 +3080,11 @@ class MagicMixin:
 
         from items import item_id_tier
         tier = item_id_tier(item)
+        # Ring of Pythia / Torque of Lugh: identify_tier_reduction lowers the
+        # philosophy id_tier by N (min tier 1). See Player.get_identify_tier_reduction.
+        _reduce = getattr(self.player, 'get_identify_tier_reduction', lambda: 0)()
+        if _reduce > 0:
+            tier = max(1, tier - int(_reduce))
         self.quiz_title = f"IDENTIFYING {display.upper()}  --  PHILOSOPHY"
         self.state = STATE_QUIZ
 
@@ -3282,48 +3307,12 @@ class MagicMixin:
             f"The scroll's words burn cold. The {old_name} — you no longer recognize it.",
             'danger')
 
-    def _quick_buc_check(self, item):
-        """Tier-1 philosophy threshold quiz that reveals only buc_known.
-
-        Doesn't change id_level, identified, or known_item_ids. Does NOT count
-        toward the philosopher career arc (per design — it's the cheap door).
-        """
-        display = self._display_name(item)
-        self.quiz_title = f"INSPECTING THE AURA OF {display.upper()}  --  PHILOSOPHY"
-        self.state = STATE_QUIZ
-
-        def on_complete(result):
-            self.state = STATE_PLAYER
-            if result.success:
-                item.buc_known = True
-                _buc = getattr(item, 'buc', 'uncursed')
-                aura = {
-                    'blessed': "holy radiance.",
-                    'cursed': "a dark aura clings to it.",
-                    'uncursed': "no clinging aura.",
-                }.get(_buc, "an unclear aura.")
-                self.add_message(
-                    f"You read the aura of the {display}: {aura}",
-                    'success' if _buc != 'cursed' else 'warning',
-                )
-            else:
-                self.add_message(
-                    f"You squint at the {display} but its aura eludes you.", 'warning'
-                )
-            self._advance_turn()
-
-        self.quiz_engine.start_quiz(
-            mode='threshold',
-            subject='philosophy',
-            tier=1,
-            callback=on_complete,
-            threshold=3,
-            total_qs=5,
-            wisdom=self.player.WIS,
-            timer_modifier=self.player.get_quiz_timer_modifier(),
-            extra_seconds=self.player.get_int_quiz_bonus(),
-            base_seconds=self.player.get_quiz_timer('philosophy'),
-        )
+    # `_quick_buc_check` was removed 2026-09-24: dead code (never called
+    # anywhere in src/) and its threshold=3/total_qs=5 shape assumed the
+    # pre-zero-tolerance threshold rule where you could get 2 wrong. Under
+    # the current engine the first wrong ends the quiz, so total_qs=5 was
+    # unreachable anyway. If a cheap-door BUC-reveal is ever needed, use
+    # the same threshold=1 pattern as `_identify_item`.
 
     # -- Necronomicon custom quiz data -----------------------------------------
     _NECRONOMICON_QUESTIONS = [
@@ -3653,11 +3642,12 @@ class MagicMixin:
         qe.state = QuizState.ASKING
         qe.mode = QuizMode.THRESHOLD
         qe.subject = 'grammar'
-        # Timer set once on first question, runs continuously (like all quizzes)
-        if self._necro_idx == 0:
-            _necro_timer = 10 + self.player.WIS
-            qe.time_remaining = float(_necro_timer)
-            qe.timer_seconds = _necro_timer
+        # Grammar is untimed under the current engine contract (2026-05-29+).
+        # The Necronomicon flow's pressure comes from the three-in-a-row
+        # requirement + the hidden fourth option, not from a clock.
+        qe.timed = False
+        qe.timer_seconds = 0
+        qe.time_remaining = 0.0
         qe.last_answer = ''
         qe.last_correct = False
         qe.correct_count = self._necro_correct

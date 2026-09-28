@@ -442,10 +442,15 @@ class Player:
     def on_level_change(self, ascending: bool = False, first_visit: bool = True):
         """Called when player uses a staircase. Stair-rest healing only.
 
-        No automatic max HP growth -- that comes from cooking compound recipes
-        and high-tier single ingredient cooks (Q3+).
-        Stair-rest heal scales with max HP; reduced on ascent (Death pursuit).
-        Capped to prevent trivialising damage at very high max HP.
+        No automatic max HP growth on level change -- max HP grows through
+        cooking (see :meth:`try_apply_cook_hp_gain` +
+        :meth:`increase_max_hp`), gated by the per-floor cook cap and the
+        floor-derived softcap in :attr:`_COOKING_SOFTCAP_BY_FLOOR`. There is
+        no longer any quality-tier gate (the retired Q3+ gradient is gone);
+        every successful cook can contribute HP until the softcap is hit.
+
+        Stair-rest heal scales with max HP; reduced on ascent (Death
+        pursuit). Capped to prevent trivialising damage at very high max HP.
 
         first_visit: True only on the FIRST entry to this floor in the
         run. Revisits (going back and forth between floors via stairs)
@@ -645,11 +650,26 @@ class Player:
     def __setstate__(self, state):
         """Migrate saves across schema bumps.
 
-        Currently just fills in identify v3.1 (2026-09-01) split-knowledge
-        sets on loads from pre-2.6.3 saves — old saves have no known_forms
-        or known_materials; missing = empty, and each new identify from
-        here on will populate them.
+        Fills in identify v3.1 (2026-09-01) split-knowledge sets on loads
+        from pre-2.6.3 saves — old saves have no known_forms or
+        known_materials; missing = empty, and each new identify from here
+        on will populate them.
+
+        v2.15+ audit sync: also drops attributes belonging to the retired
+        mastery systems (identify v3 removed all 3 mastery stores;
+        class_masteries.py and family_mastery blessings were removed;
+        stuffies became a plain carry_bonus field). Old saves may still
+        carry these — pop them so nothing downstream reads them.
         """
+        # v2.15+ audit sync: strip retired mastery attrs BEFORE __dict__.update
+        # so a stale attr can't reappear.
+        for _dead in (
+            'class_masteries', 'subject_mastery_xp',
+            'stuffies_active', '_active_stuffies',
+            'identify_masteries', 'family_mastery_blessings',
+            'family_masteries', 'weapon_masteries', 'shield_masteries',
+        ):
+            state.pop(_dead, None)
         self.__dict__.update(state)
         if not hasattr(self, 'known_forms'):
             self.known_forms = set()
@@ -876,25 +896,34 @@ class Player:
         return max(0, self.INT - 10) // 2
 
     def get_quiz_extra_seconds(self, subject: str) -> int:
-        """Extra quiz seconds from earned quirks and equipment."""
+        """Extra quiz seconds from earned quirks and equipment.
+
+        NOTE: only the `math` subject is actually timed under the current quiz
+        engine (see quiz_engine.start_quiz timer policy). Callers still request
+        `get_quiz_extra_seconds(non_math_subject)` and pass the value through
+        `start_quiz(extra_seconds=...)`, but the engine discards it. Returning
+        the accumulated total anyway keeps math seconds correct without needing
+        every caller to know the timing rule.
+        """
         base = getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
-        # Ancile shield: bonus seconds on all quizzes
+        # Ancile shield: bonus seconds on quiz timers.
         shld = getattr(self, 'shield', None)
         if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
             base += shld.quiz_timer_bonus
-        # Ring of Pythia (identify_timer_bonus): +N seconds on philosophy quizzes.
-        # Guard for partially-constructed Player instances used in unit tests.
-        if hasattr(self, 'amulet_slot') and hasattr(self, 'accessory_slots'):
-            for acc in self.equipped_accessories:
-                _ib = int(getattr(acc, 'identify_timer_bonus', 0) or 0)
-                if _ib > 0 and subject == 'philosophy':
-                    base += _ib
-        # Torque of Lugh / Hamsa Hand (rotating_subject_chain_cap): if the
-        # rotating-blessed subject this floor matches, +3 seconds. Set on
-        # floor entry in main._change_level.
-        if getattr(self, '_rotating_chain_subject', None) == subject:
-            base += 3
         return base
+
+    def get_identify_tier_reduction(self) -> int:
+        """Sum of `identify_tier_reduction` across equipped accessories/amulet.
+
+        Consumed by `_identify_item` to lower the philosophy id_tier by N
+        (with a floor of tier 1). Ring of Pythia and Torque of Lugh grant this.
+        """
+        if not hasattr(self, 'amulet_slot') or not hasattr(self, 'accessory_slots'):
+            return 0
+        total = 0
+        for acc in self.equipped_accessories:
+            total += int(getattr(acc, 'identify_tier_reduction', 0) or 0)
+        return total
 
     def get_carry_limit(self) -> int:
         # DESIGN (confirmed 2026-06-07): encumbrance is an INTENTIONAL mechanic.

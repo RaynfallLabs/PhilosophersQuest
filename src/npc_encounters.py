@@ -590,7 +590,7 @@ ENCOUNTERS = [
         'options': [
             {
                 'label': "Kneel down and try to help her",
-                'karma': +1,
+                'karma': 0,
                 'outcome': (
                     "You reach out to move her hair aside — and her head "
                     "snaps up. The face underneath is grey and rotting, the "
@@ -626,7 +626,7 @@ ENCOUNTERS = [
                     "blade clean. Sometimes paranoia pays off."
                 ),
                 'cost': None,
-                'reward': {'type': 'gold', 'min': 30, 'max': 60},
+                'reward': None,
             },
         ],
     },
@@ -1577,7 +1577,7 @@ ENCOUNTERS = [
             },
             {
                 'label': "Shatter the chains — you need that strength",
-                'karma': -1,
+                'karma': -2,
                 'outcome': (
                     "The demon rises to its full height and smiles with "
                     "far too many teeth. Something cold and vast settles "

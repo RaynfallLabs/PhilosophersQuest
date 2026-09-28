@@ -10,15 +10,11 @@
     "weight": 20.0,
     "min_level": 1,
     "tier": 1,
-    "quiz_threshold": 2,
     "frequency": 10,
-    "trapped": false,
-    "trap": null,
     "gold": [
       5,
       25
-    ],
-    "extra_item_chance": 0.4
+    ]
   },
   "trapped_chest": {
     "name": "trapped chest",
@@ -31,22 +27,11 @@
     "weight": 20.0,
     "min_level": 1,
     "tier": 1,
-    "quiz_threshold": 2,
     "frequency": 5,
-    "trapped": true,
-    "trap": {
-      "type": "needle",
-      "damage": "1d4",
-      "effect": "poisoned",
-      "effect_duration": 6,
-      "effect_chance": 0.6,
-      "message": "A poisoned needle springs from the lock!"
-    },
     "gold": [
       10,
       35
-    ],
-    "extra_item_chance": 0.5
+    ]
   },
   "iron_chest": {
     "name": "iron chest",
@@ -59,15 +44,11 @@
     "weight": 30.0,
     "min_level": 20,
     "tier": 2,
-    "quiz_threshold": 3,
     "frequency": 8,
-    "trapped": false,
-    "trap": null,
     "gold": [
       20,
       60
-    ],
-    "extra_item_chance": 0.5
+    ]
   },
   "spiked_chest": {
     "name": "spiked chest",
@@ -80,22 +61,11 @@
     "weight": 30.0,
     "min_level": 20,
     "tier": 2,
-    "quiz_threshold": 3,
     "frequency": 4,
-    "trapped": true,
-    "trap": {
-      "type": "blade",
-      "damage": "2d4",
-      "effect": "stunned",
-      "effect_duration": 4,
-      "effect_chance": 0.5,
-      "message": "Hidden blades slash your hand!"
-    },
     "gold": [
       30,
       80
-    ],
-    "extra_item_chance": 0.6
+    ]
   },
   "steel_vault": {
     "name": "steel vault",
@@ -108,15 +78,11 @@
     "weight": 50.0,
     "min_level": 40,
     "tier": 3,
-    "quiz_threshold": 4,
     "frequency": 6,
-    "trapped": false,
-    "trap": null,
     "gold": [
       50,
       120
-    ],
-    "extra_item_chance": 0.6
+    ]
   },
   "shock_trap_vault": {
     "name": "electrified vault",
@@ -129,22 +95,11 @@
     "weight": 50.0,
     "min_level": 40,
     "tier": 3,
-    "quiz_threshold": 4,
     "frequency": 3,
-    "trapped": true,
-    "trap": {
-      "type": "lightning",
-      "damage": "2d6",
-      "effect": "stunned",
-      "effect_duration": 5,
-      "effect_chance": 0.7,
-      "message": "A bolt of electricity surges through you!"
-    },
     "gold": [
       80,
       160
-    ],
-    "extra_item_chance": 0.65
+    ]
   },
   "enchanted_coffer": {
     "name": "enchanted coffer",
@@ -157,15 +112,11 @@
     "weight": 15.0,
     "min_level": 60,
     "tier": 4,
-    "quiz_threshold": 5,
     "frequency": 4,
-    "trapped": false,
-    "trap": null,
     "gold": [
       120,
       250
-    ],
-    "extra_item_chance": 0.7
+    ]
   },
   "cursed_coffer": {
     "name": "cursed coffer",
@@ -178,22 +129,11 @@
     "weight": 15.0,
     "min_level": 60,
     "tier": 4,
-    "quiz_threshold": 5,
     "frequency": 2,
-    "trapped": true,
-    "trap": {
-      "type": "curse",
-      "damage": "1d6",
-      "effect": "confused",
-      "effect_duration": 8,
-      "effect_chance": 0.8,
-      "message": "Dark energy erupts from the lock!"
-    },
     "gold": [
       150,
       300
-    ],
-    "extra_item_chance": 0.75
+    ]
   },
   "dragon_hoard": {
     "name": "dragon hoard",
@@ -206,15 +146,11 @@
     "weight": 80.0,
     "min_level": 80,
     "tier": 5,
-    "quiz_threshold": 6,
     "frequency": 3,
-    "trapped": false,
-    "trap": null,
     "gold": [
       300,
       800
-    ],
-    "extra_item_chance": 0.8
+    ]
   },
   "inferno_chest": {
     "name": "inferno chest",
@@ -227,21 +163,10 @@
     "weight": 60.0,
     "min_level": 80,
     "tier": 5,
-    "quiz_threshold": 6,
     "frequency": 2,
-    "trapped": true,
-    "trap": {
-      "type": "fire",
-      "damage": "3d6",
-      "effect": "blinded",
-      "effect_duration": 6,
-      "effect_chance": 0.6,
-      "message": "Flames erupt from the chest, searing you!"
-    },
     "gold": [
       400,
       1000
-    ],
-    "extra_item_chance": 0.85
+    ]
   }
 }

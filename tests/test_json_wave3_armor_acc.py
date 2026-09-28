@@ -38,28 +38,8 @@ def test_dilmun_has_water_bonuses():
     assert a['water_tile_regen_bonus'] == 1
 
 
-def test_nemean_pelt_is_unskinnable():
-    assert ARMOR['nemean_pelt']['unskinnable'] is True
-
-
 def test_mantle_of_elijah_has_prophets_passing():
     assert ARMOR['mantle_of_elijah']['prophets_passing'] is True
-
-
-def test_arachne_has_webbed_strike():
-    assert ARMOR['arachne_silk_cloak']['webbed_strike'] is True
-
-
-def test_arachne_tier_raised_to_3():
-    assert ARMOR['arachne_silk_cloak']['tier'] == 3
-
-
-def test_erlking_has_forest_hearing():
-    assert ARMOR['erlking_mantle']['forest_hearing'] == 6
-
-
-def test_anansi_has_story_thread():
-    assert ARMOR['anansi_web_cloak']['story_thread'] is True
 
 
 def test_wukong_has_monkey_king_dodge():

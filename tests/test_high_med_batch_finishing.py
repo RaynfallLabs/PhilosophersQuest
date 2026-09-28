@@ -372,12 +372,6 @@ def test_abaddon_has_evil_tag():
     assert 'demon' in tags
 
 
-def test_abaddon_chain_break_field_present():
-    """Wired in monster.py __init__ even if not fully consumed yet."""
-    a = _monster('abaddon_destroyer')
-    assert float(a.get('chain_break_on_hit', 0)) > 0
-
-
 def test_multi_attack_always_field_loaded_on_monster():
     """Monster class must load the field from JSON."""
     from monster import Monster

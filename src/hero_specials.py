@@ -293,12 +293,12 @@ HERO_SPECIALS: dict[str, dict] = {
         'cooldown': 400,
         'effect': 'summon_sketch_helper',
         'tier_effects': {
-            0: {'duration': 0, 'level': 0},
-            1: {'duration': 15, 'level': 5},
-            2: {'duration': 20, 'level': 10},
-            3: {'duration': 25, 'level': 15},
-            4: {'duration': 30, 'level': 25},
-            5: {'duration': 40, 'level': 40},
+            0: {'duration': 0,  'level': 0,  'damage': '0d0'},
+            1: {'duration': 15, 'level': 5,  'damage': '1d8+2'},
+            2: {'duration': 20, 'level': 10, 'damage': '1d10+3'},
+            3: {'duration': 25, 'level': 15, 'damage': '2d8+4'},
+            4: {'duration': 30, 'level': 25, 'damage': '2d10+5'},
+            5: {'duration': 40, 'level': 40, 'damage': '3d8+6'},
         },
     },
     "boudicca queen of the iceni": None,   # passive
@@ -867,6 +867,8 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
     """Leonardo's Codex Sketch: summon a sketched-pet helper (uses pet_system)."""
     dur = int(tier['duration'])
     lvl = int(tier['level'])
+    # Chain-scaled damage — T1 1d8+2 → T5 3d8+6 (aligned with pet/spell curves).
+    dmg = tier.get('damage', '1d8+2')
     if dur == 0:
         game.add_message("Your sketch is just lines.", 'warning')
         return
@@ -877,7 +879,7 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
         symbol = 'h'
         min_level = lvl
         max_hp = 30 + lvl * 4
-        attacks = [{'damage': '1d8+2'}]
+        attacks = [{'damage': dmg}]
     from pet_system import SketchedPet
     px, py = game.player.x, game.player.y
     pet = SketchedPet(_Helper(), px, py, dur)
