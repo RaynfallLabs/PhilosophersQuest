@@ -33,7 +33,7 @@ from game_helpers import (
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
+    STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_CONFIRM_EXIT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
@@ -1725,6 +1725,9 @@ class RenderMixin:
             self._draw_targeting(cam_x, cam_y)
         elif self.state == STATE_QUIZ:
             self._draw_quiz()
+        elif self.state == STATE_QUIZ_CONTEXT:
+            self._draw_quiz()
+            self._draw_quiz_context_modal()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
         elif self.state == STATE_KIT:
@@ -2300,9 +2303,57 @@ class RenderMixin:
             hint = self.font_sm.render("Press  1  2  3  4  to answer", True, FP.HINT_TEXT)
             self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + 10))
 
+        # Context-blurb discoverability hint: only shown when the current
+        # (subject, topic) HAS a blurb — hidden otherwise so a bank without
+        # authored blurbs doesn't tease the key for nothing.
+        if qe.current_context_blurb():
+            c_hint = self.font_sm.render("[C] context", True, FP.FADED_TEXT)
+            self.screen.blit(c_hint, (bx + bw - c_hint.get_width() - PAD,
+                                       status_y + STATUS_H - c_hint.get_height() - 2))
+
         # -- Combat HUD ------------------------------------------------
         if is_combat:
             self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
+
+    def _draw_quiz_context_modal(self):
+        """Opt-in orientation modal shown over the active quiz.
+
+        Mirrors the chrome of the item/bestiary dossier (``_ui_modal_panel``
+        + ``_ui_footer``) so the kid parses it as "another dossier screen",
+        not a new widget. The underlying quiz panel is already drawn by the
+        state dispatcher before this is called, so the modal reads as a true
+        overlay.
+        """
+        qe = self.quiz_engine
+        blurb = qe.current_context_blurb()
+        if not blurb:
+            # Defensive: should be unreachable because entry into
+            # STATE_QUIZ_CONTEXT is gated on a blurb existing. Fall back to
+            # a neutral message rather than drawing an empty panel.
+            blurb = "No context available for this question."
+
+        panel = self._ui_modal_panel(
+            "CONTEXT",
+            border_color=FP.LORE_BLUE_BORDER,
+            max_w=1200,
+            max_h=600,
+        )
+        body = pygame.Rect(panel.x + 24, panel.y + 72, panel.w - 48,
+                           panel.h - 128)
+
+        # Single-pane body — grimoire reading surface for the blurb.
+        reader = self._ui_subpanel(body, "Orientation",
+                                   border_color=FP.LORE_BLUE_BORDER)
+
+        body_font = get_font('body', 20)
+        lines = [(line, FP.LORE_BLUE_BODY, body_font)
+                 for line in self._ui_text_lines(blurb, body_font, reader.w - 12)]
+        scroll = self._ui_draw_scroll_lines(
+            lines, body_font, FP.LORE_BLUE_BODY, reader,
+            getattr(self, '_quiz_context_scroll', 0), line_gap=5)
+        self._quiz_context_scroll = scroll
+
+        self._ui_footer(panel, "[C] / [ESC] close")
 
     def _draw_death_chase_atmosphere(self):
         """Faint red vignette + edge glow when Death is in pursuit.
@@ -8306,31 +8357,34 @@ class RenderMixin:
             self.screen.blit(surf, (x0 + pad, y0 + pad + i * lh))
 
     def _draw_help_screen(self):
+        # Pure keybind reference. Every listing maps to a real action in
+        # game_input.py — do not add prose cards or parenthetical commentary.
         groups = [
             ("Movement", [
                 ("Arrows", "Move / attack", FP.BODY_TEXT),
                 (".", "Wait / meditate", FP.BODY_TEXT),
-                ("< >", "Use stairs", FP.BODY_TEXT),
+                ("< >", "Ascend / descend stairs", FP.BODY_TEXT),
                 ("Tab", "Cycle zoom", FP.BODY_TEXT),
             ]),
             ("Combat", [
-                ("A", "Melee target", FP.BODY_TEXT),
+                ("A", "Melee attack", FP.BODY_TEXT),
                 ("F", "Fire ranged weapon", FP.BODY_TEXT),
                 ("T", "Throw item", FP.BODY_TEXT),
-                ("V", "Quirk powers", FP.BODY_TEXT),
-                ("M / Z", "Cast spell or zap wand", FP.ARCANE_ACCENT),
+                ("M / Z", "Cast spell / zap wand", FP.ARCANE_ACCENT),
+                ("V", "Powers menu", FP.BODY_TEXT),
             ]),
             ("Items", [
-                ("E", "Equip / unequip", FP.BODY_TEXT),
-                ("X", "Examine known items", FP.BODY_TEXT),
-                ("I", "Identify item / corpse (1 philosophy Q)", FP.CYAN_ACCENT),
-                ("H", "Harvest corpse (1 animal Q)", FP.BODY_TEXT),
-                ("C", "Cook menu (compound recipes)", FP.BODY_TEXT),
-                ("D", "Drop item / use tile", FP.BODY_TEXT),
-                ("U / Q", "Eat food or quaff potion", FP.BODY_TEXT),
+                ("E", "Equip menu", FP.BODY_TEXT),
+                ("X", "Examine item", FP.BODY_TEXT),
+                ("I", "Identify item", FP.CYAN_ACCENT),
+                ("H", "Harvest corpse", FP.BODY_TEXT),
+                ("C", "Cook menu", FP.BODY_TEXT),
+                ("D", "Drop / use tile", FP.BODY_TEXT),
+                ("U / Q", "Eat food / quaff potion", FP.BODY_TEXT),
                 ("R", "Read scroll or spellbook", FP.BODY_TEXT),
             ]),
             ("Knowledge", [
+                ("@", "Character sheet", FP.BODY_TEXT),
                 ("B", "Encyclopedia", FP.BODY_TEXT),
                 ("J", "Discoveries", FP.BODY_TEXT),
                 ("K", "Kit comparison", FP.BODY_TEXT),
@@ -8342,65 +8396,47 @@ class RenderMixin:
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
                 ("P", "Pick lock / disarm trap", FP.BODY_TEXT),
                 ("Y", "Merchant shop", FP.BODY_TEXT),
-                ("\\", "Pray (theology chain)", FP.ARCANE_ACCENT),
-                ("Shift+\\", "Divine Intercession (1/run)", FP.ARCANE_ACCENT),
+                ("\\", "Pray", FP.ARCANE_ACCENT),
+                ("Shift+\\", "Divine Intercession", FP.ARCANE_ACCENT),
                 ("O", "Observe cursor", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [
                 ("1-4", "Answer quiz", FP.GOLD_BRIGHT),
-                ("SPACE", "Strike now (mid-chain)", FP.GOLD_BRIGHT),
+                ("SPACE", "Strike now", FP.GOLD_BRIGHT),
                 ("?", "Command help", FP.BODY_TEXT),
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
             ]),
-        ]
-        # System rules block: prose reminders that keybinds can't carry —
-        # zero-tolerance, chain v2, timing model, and the subject->action map.
-        rules = [
-            "Zero-tolerance: any wrong answer ends a threshold quiz.",
-            "Chain v2: peak-chain damage. Right -> chain grows; wrong -> strike now at achieved chain.",
-            "Math is the only timed subject. Others are untimed.",
-            "Subject -> action: math combat, geography armor, history accessory, "
-            "animal harvest, cooking food, science magic, philosophy identify, "
-            "grammar scrolls, economics lockpick, theology prayer.",
         ]
 
         panel = self._ui_modal_panel("COMMAND REFERENCE",
                                      border_color=FP.GOLD,
                                      max_w=1380,
-                                     max_h=760)
+                                     max_h=620)
         body = pygame.Rect(panel.x + 24, panel.y + 72, panel.w - 48,
                            panel.h - 124)
-        # Reserve the bottom slice of the body for the System Rules card.
-        font_rules = get_font('small', 14)
-        rules_line_h = font_rules.get_height() + 3
-        rules_h = 40 + rules_line_h * 2 * len(rules)  # ~2 wrapped lines per bullet
-        rules_rect = pygame.Rect(body.x, body.bottom - rules_h,
-                                 body.w, rules_h)
-        grid_rect = pygame.Rect(body.x, body.y,
-                                body.w, body.h - rules_h - 12)
 
-        cols = 3 if grid_rect.w >= 780 else 2
+        cols = 3 if body.w >= 780 else 2
         gutter = 18
-        col_w = (grid_rect.w - gutter * (cols - 1)) // cols
+        col_w = (body.w - gutter * (cols - 1)) // cols
         row_gap = 18
         rows = (len(groups) + cols - 1) // cols
-        group_h = (grid_rect.h - row_gap * (rows - 1)) // rows
+        group_h = (body.h - row_gap * (rows - 1)) // rows
         font_key = get_font('small', 14, bold=True)
         font_cmd = get_font('small', 15)
 
         for idx, (title, commands) in enumerate(groups):
             col = idx % cols
             row = idx // cols
-            rect = pygame.Rect(grid_rect.x + col * (col_w + gutter),
-                               grid_rect.y + row * (group_h + row_gap),
+            rect = pygame.Rect(body.x + col * (col_w + gutter),
+                               body.y + row * (group_h + row_gap),
                                col_w, group_h)
             self._ui_blit_text(title.upper(), get_font('small', 15, bold=True),
                                FP.GOLD_PALE, rect.x, rect.y)
             pygame.draw.line(self.screen, FP.GOLD_DARK,
                              (rect.x, rect.y + 24), (rect.right, rect.y + 24), 1)
             y = rect.y + 34
-            row_h = max(31, (rect.bottom - y) // max(1, len(commands)))
+            row_h = max(28, (rect.bottom - y) // max(1, len(commands)))
             key_w = 74 if col_w < 360 else 88
             for key_label, desc, color in commands:
                 if y + row_h > rect.bottom + 2:
@@ -8417,23 +8453,8 @@ class RenderMixin:
                                         rect.right - key_rect.right - 10,
                                         row_h)
                 self._ui_wrap_text(desc, font_cmd, color, desc_rect,
-                                   line_gap=0, max_lines=2)
+                                   line_gap=0, max_lines=1)
                 y += row_h
-
-        # -- System rules card --
-        inner = self._ui_subpanel(rules_rect, "System Rules",
-                                  border_color=FP.GOLD_DARK)
-        ry = inner.y
-        for bullet in rules:
-            b_rect = pygame.Rect(inner.x, ry,
-                                 inner.w, rules_line_h * 2 + 2)
-            self._ui_blit_text("*", font_rules, FP.GOLD_BRIGHT,
-                               b_rect.x, b_rect.y)
-            text_rect = pygame.Rect(b_rect.x + 16, b_rect.y,
-                                    b_rect.w - 16, b_rect.h)
-            self._ui_wrap_text(bullet, font_rules, FP.BODY_TEXT, text_rect,
-                               line_gap=1, max_lines=2)
-            ry += rules_line_h * 2
 
         self._ui_footer(panel, "? / ESC: close")
 

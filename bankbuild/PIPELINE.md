@@ -256,3 +256,23 @@ Ten subjects (each mapped to an in-game action → quiz mode; see CLAUDE.md's ta
 **Which next — the recommendation logic:** favor **biggest flagship × closest-template-reuse while the machinery is fresh**. That points to **science** — it mirrors geography almost exactly (knowledge+wonder, two ladder shapes, Grokipedia-first, knowledge-kind de-tell, deepen-conditional), and its real stance content makes it the clean next test of "bake the stance into config, not only the audit" (§12.4). Then **theology** (do it while geography's symmetric sacred-site handling is warm) or **economics** (pairs with philosophy; reasoning-kind de-tell). **Save math + grammar for LAST** — they are the snappy-rote exceptions the topic-ladder pipeline fits WORST; don't force the wonder/ladder machinery on them, adapt to short punchy items instead.
 
 **Load-bearing per-subject forks (do NOT reuse blindly):** the DE-TELL rubric must match the subject KIND — KNOWLEDGE (`science`/animal/cooking/geography) keys "deduce-from-stem = tell"; REASONING (`economics`/philosophy) keys "reasoning-to-the-answer = the skill." Fork `_detell.wf.js` + the audits per subject, and calibrate the total-record char caps in the config `tier_note` to the subject's `SUBJECT_TIMER` + mode (math 16 s ↔ theology 46 s @ WIS 10 — content must fit the chain/threshold budget).
+
+## §16 Ladder context blurb (hard gate)
+
+Added 2026-10-03 after a playtest hit philosophy T1 "Anselm wax tablets" with zero orientation — the kid had no idea who Anselm was. Root cause: ladders are authored ladder-coherently, but `quiz_engine` SHUFFLES rungs at serve time, so the author's scaffold never reaches the player. The §16 teach-before-test rule used to live as advisory text inside craft rule #14; it is now a HARD pipeline gate at ladder scope. See `ORIENTATION_AUDIT_PLAN.md` at project root for the full design history and `feedback_ladder_context_blurb.md` for the memory bullet.
+
+**The rule:** every topic ladder MUST ship with a `context_blurb` in `data/question_contexts/<subject>.json`, keyed by the ladder's `topic`. **No blurb → no ship.**
+
+**Blurb spec:**
+- 3-5 sentences, 200-400 words.
+- Carries **WHO** (name/era tag) + **WHAT** (known-for / the ladder's subject) + **WHY** (hook / stakes). Optional **SETTING** sentence for the scene the ladder's rungs draw on.
+- MUST NOT state, paraphrase, or trivially imply the keyed answer of any rung in the ladder — not T1's, not T5's. The blurb's job is orientation, not pre-answering.
+- Grade-10 ceiling; neutral/subject voice; no spoilers for the ladder's wonders.
+
+**Leak check (cold-reader, mandatory):** for every rung in the ladder, feed the blurb + the four choices (stem HIDDEN) to an independent judge. If the keyed answer is pickable above chance (>25% for 4 choices) averaged across the ladder's rungs, the blurb leaked and must be rewritten with the per-rung leak diagnosis attached.
+
+**Pre-ship gate (hard):** `bank.py gate --subject=X` loads `data/question_contexts/<subject>.json`, verifies every unique `topic` in the question file has a blurb that meets the spec, and runs the cold-reader leak check. The gate FAILS the build on any gap — missing blurb, under-length blurb, or any rung where the blurb leaks its keyed answer. `bank.py promote` runs the same gate as a pre-promote check and refuses to swap in a bank that fails.
+
+**In-build enforcement:** the author stage emits the `context_blurb` alongside the ladder; the adversarial judge in `bank_pipeline.wf.js` (`advBlurbLeakJudge`) runs the cold-reader check in-build and sends leaked blurbs back to the author with the per-rung leak diagnosis. A ladder with an unleaked blurb passes; a ladder with an un-fixable leak lands in `needs_review/` where the de-tell sweep can take another pass.
+
+**Subject exemptions:** math + grammar are the snappy-rote exceptions and do not require blurbs (they ship empty-blurb records with `exempt:true` or omit the entry entirely — the gate skips them per the subject config). All other subjects (history, philosophy, animal, cooking, geography, science, theology, economics, trivia, ai) are IN scope.

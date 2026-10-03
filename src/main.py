@@ -51,7 +51,7 @@ from game_helpers import (
     fix_name_case, a_or_an,
 )
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ,
+    STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT,
     STATE_EXIT_QUEST, STATE_ABANDON_QUEST,
     STATE_VICTORY, STATE_DEAD,
     STATE_LORE,
@@ -6175,6 +6175,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._necro_update(dt)
             else:
                 self.quiz_engine.update(dt)
+            # Opt-in orientation: when _next_question flags a brand-new
+            # (subject, topic) that has an authored blurb and hasn't been
+            # seen this session, auto-open the modal ONCE. The player can
+            # also press C manually; both paths route through this flag.
+            pending = self.quiz_engine.pending_context_auto_open
+            if pending is not None:
+                subject, topic = pending
+                self.quiz_engine.pending_context_auto_open = None
+                self.quiz_engine.mark_context_seen(subject, topic)
+                self.quiz_engine.pause_timer()
+                self.state = STATE_QUIZ_CONTEXT
 
         if self.state == STATE_PLAYER:
             pressed = pygame.key.get_pressed()

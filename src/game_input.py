@@ -25,7 +25,7 @@ import sound_system as _snd
 from dungeon import ALTAR, FOUNTAIN, GRAVE, THRONE
 from quiz_engine import QuizState
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
+    STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
     STATE_WAND_MENU, STATE_SCROLL_MENU, STATE_IDENTIFY_MENU, STATE_COOK_MENU,
     STATE_CONFIRM_EXIT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST, STATE_CHICKEN,
     STATE_VICTORY, STATE_DEAD, STATE_REVIEW_MISSED,
@@ -89,6 +89,12 @@ class InputMixin:
             if self.state == STATE_QUIZ:
                 # Cancel the active quiz — treat as chain-0 failure
                 self.quiz_engine._end(success=False)
+                return True
+            if self.state == STATE_QUIZ_CONTEXT:
+                # Close the context modal (back to the quiz); the dedicated
+                # handler below also serves C/RET/SPACE for the same transition.
+                self.quiz_engine.resume_timer()
+                self.state = STATE_QUIZ
                 return True
             if self.state in (STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
@@ -207,6 +213,8 @@ class InputMixin:
             self._target_input(key)
         elif self.state == STATE_QUIZ:
             self._quiz_input(key)
+        elif self.state == STATE_QUIZ_CONTEXT:
+            self._quiz_context_input(key)
         elif self.state == STATE_EQUIP_MENU:
             self._equip_menu_input(key)
         elif self.state == STATE_KIT:
@@ -1083,6 +1091,24 @@ class InputMixin:
             if self.quiz_engine.cancel_and_strike():
                 return
 
+        # [C] opens the per-topic Context modal (opt-in orientation). Only
+        # fires when a blurb exists for this question's (subject, topic);
+        # otherwise shows a brief log-message so the key feels responsive.
+        if key == pygame.K_c:
+            blurb = self.quiz_engine.current_context_blurb()
+            if blurb:
+                topic = q.get('topic')
+                self.quiz_engine.pause_timer()
+                self.quiz_engine.mark_context_seen(self.quiz_engine.subject, topic)
+                # If an auto-open was pending for this same (subject, topic)
+                # the manual press pre-empts it; clear the flag so main.py's
+                # update loop doesn't fire a second transition.
+                self.quiz_engine.pending_context_auto_open = None
+                self.state = STATE_QUIZ_CONTEXT
+            else:
+                self.add_message("No context available for this question.", 'info')
+            return
+
         choices = q.get('choices', [])
         key_map = {
             pygame.K_1: 0, pygame.K_KP1: 0,
@@ -1099,6 +1125,19 @@ class InputMixin:
             else:
                 actual_idx = idx
             self.quiz_engine.answer(choices[actual_idx])
+
+    def _quiz_context_input(self, key: int):
+        """Input handler for the opt-in context modal.
+
+        No answer keys accepted here — the timer is paused and the quiz is
+        frozen behind the modal. C or ESC closes the modal and returns to
+        STATE_QUIZ; the main.py update loop auto-resumes the timer there via
+        quiz_engine.resume_timer() being called below.
+        """
+        if key in (pygame.K_c, pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
+            self.quiz_engine.resume_timer()
+            self.state = STATE_QUIZ
+            return
 
     # ------------------------------------------------------------------
     # Study journal

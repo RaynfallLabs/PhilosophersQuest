@@ -61,7 +61,23 @@ const RUNG = { type:'object', additionalProperties:false, properties:{
   tier:{type:'number'}, stem:{type:'string'}, choices:{type:'array', items:{type:'string'}, minItems:4, maxItems:4},
   answer:{type:'string'}, context:{type:'string'}, legend:{type:'boolean'}
 }, required:['tier','stem','choices','answer','context','legend'] };
-const LADDER = { type:'object', additionalProperties:false, properties:{ rungs:{type:'array', items:RUNG} }, required:['rungs'] };
+const LADDER = { type:'object', additionalProperties:false, properties:{
+  rungs:{type:'array', items:RUNG},
+  context_blurb:{type:'string'}
+}, required:['rungs','context_blurb'] };
+
+// Cold-reader verdict: per rung, which choice would a reader pick given ONLY the blurb + the 4 choices (stem hidden)?
+const BLURB_LEAK = { type:'object', additionalProperties:false, properties:{
+  blurb_ok:{type:'boolean'},
+  pick_rate:{type:'number'},                  // keyed-answer pick rate across the ladder's rungs (0..1)
+  per_rung:{type:'array', items:{type:'object', additionalProperties:false, properties:{
+    tier:{type:'number'}, idx:{type:'number'},
+    picked:{type:'string'},                   // which choice the cold reader picks from blurb+choices alone
+    keyed_is_pickable:{type:'boolean'},       // is the keyed answer disproportionately pickable?
+    leak_diagnosis:{type:'string'}            // what in the blurb hands over the keyed answer (empty if none)
+  }, required:['tier','idx','picked','keyed_is_pickable','leak_diagnosis']}},
+  fix:{type:'string'}                         // one-line rewrite guidance when blurb_ok is false
+}, required:['blurb_ok','pick_rate','per_rung','fix'] };
 
 const VERDICTS = { type:'object', additionalProperties:false, properties:{
   ladder_ok:{type:'boolean'},
@@ -145,6 +161,12 @@ ${JSON.stringify(research.facts)}
 
 Author the ladder: pick the BEST gems, ONE fact per rung, slot by conceptual difficulty across the tier_span with a REAL T1-T2 base (~30%+). Each rung: tier, EXACTLY 4 choices, answer (== one choice verbatim), context (post-answer enrichment + the source), legend bool. If a fact can't make a clean rung, drop it.
 
+LADDER-LEVEL CONTEXT BLURB (REQUIRED, PIPELINE.md §16): also author ONE context_blurb for the whole ladder. The deck is shuffled at serve time; the player can press C during the quiz to read this blurb. Spec:
+- 3-5 sentences, 200-400 words.
+- Carries WHO (name/era tag), WHAT (known-for / the ladder's subject), WHY (hook / stakes). Optional SETTING scaffolding the ladder's rungs draw on.
+- MUST NOT state, paraphrase, or trivially imply the keyed answer of any rung -- not T1's, not T5's. Orientation only; no spoilers.
+- Self-check BEFORE returning: for EVERY rung, read ONLY the blurb + its 4 choices (stem hidden). If the keyed answer is distinguishable from the distractors above 1-in-4 chance, the blurb leaked -- rewrite until all four choices stay live from the blurb alone.
+
 FINAL SELF-AUDIT -- run on EVERY rung BEFORE returning; fix or drop any failure. Be ruthless:
 1. PARITY: all 4 choices alike in length, name-count, grammar? Answer not the only long/dual-named/full-sentence/oddly-precise-number one?
 2. STEM LEAK: any stem word hand over the answer (key noun; a category only it fits; a closing verb that pre-announces the answer type)? ALSO: does the answer RESTATE a clause already in the stem, or is it the TOPIC'S OWN NAME / a word just taught (name-matching)? Both are leaks -- re-key or reword.
@@ -180,10 +202,40 @@ function revisePrompt(name, research, ladder, flags){ return `${RULES}
 Revise this ${SUBJECT} ladder for "${name}", applying the rules above + the given fixes, using ONLY the sourced facts. Fix ONLY the flagged rungs; leave the others byte-identical.
 SOURCED FACTS: ${JSON.stringify(research.facts)}
 CURRENT LADDER: ${JSON.stringify(ladder.rungs)}
+BLURB: ${JSON.stringify(ladder.context_blurb || '')}
 FLAGS TO FIX: ${JSON.stringify(flags)}
-Return the FULL ladder (the flagged rungs fixed, answer still == one of its 4 choices), leaving unflagged rungs byte-identical.
+Return the FULL ladder (the flagged rungs fixed, answer still == one of its 4 choices), leaving unflagged rungs byte-identical. ALSO return context_blurb -- unchanged if its flag set is empty; rewritten if the flags include a blurb_leak.
 If a flagged rung CANNOT be cleanly fixed from the sourced facts -- a fabricated/unsupported claim with no good alternative, or a telegraph that only disappears by gutting the rung -- DROP that rung entirely rather than ship it flawed; returning FEWER rungs is correct. NEVER keep a rung with a known fabricated fact.
 IMPORTANT: re-audit the WHOLE ladder against the rules + five-point self-audit, not only the listed flags -- a fix must not leave a sibling telegraph or introduce a new one (don't make the new answer the only long choice; don't seed the answer word in the stem).`; }
+
+// PIPELINE.md §16 -- cold-reader leak check on the ladder's context_blurb.
+// Hostile reader sees ONLY (blurb + the 4 choices per rung, stem HIDDEN) and tries to pick each keyed
+// answer. Blurb passes only if the keyed answer is NOT disproportionately pickable (chance = 25% for 4
+// choices; we fail at avg pick_rate > 25% across the ladder OR any single rung clearly leaked).
+function blurbLeakJudgePrompt(name, ladder){
+  const cold = (ladder.rungs||[]).map((r,i)=>({tier:r.tier, idx:i, choices:r.choices, _keyed:r.answer}));
+  return `${RULES}
+
+=== LADDER CONTEXT BLURB -- COLD-READER LEAK CHECK (PIPELINE.md §16) ===
+You are a HOSTILE cold reader. The player will read this blurb (opt-in, via a C-key quiz modal) BEFORE being served any rung of this ${SUBJECT} ladder for "${name}". Your job: given the blurb and the 4 choices for each rung (STEM HIDDEN), decide which choice you would pick -- WITHOUT any outside knowledge of the topic, using ONLY what the blurb lets you infer.
+
+The blurb's job is orientation (WHO/WHAT/WHY), NOT pre-answering. It must leave all four choices on every rung live.
+
+BLURB: ${JSON.stringify(ladder.context_blurb || '')}
+RUNGS (choices + the keyed answer, for your grading only -- NOT visible to the cold reader):
+${JSON.stringify(cold)}
+
+For EACH rung, pretend you are a motivated kid who has read ONLY the blurb and the 4 choices:
+- Report which choice you would pick (picked).
+- keyed_is_pickable = true if the blurb hands over the keyed answer -- i.e. the keyed choice is distinguishable from the distractors above 1-in-4 chance.
+- leak_diagnosis: if keyed_is_pickable is true, point to the clause/phrase in the blurb that leaked it. Empty string otherwise.
+
+Then score the ladder as a whole:
+- pick_rate = (count of rungs where keyed_is_pickable is true) / (count of rungs)
+- blurb_ok = true ONLY if pick_rate <= 0.25 AND no single rung has an unambiguous blurb-sourced tell (a direct name/date/mechanism reveal).
+- fix = one-line rewrite guidance when blurb_ok is false; empty otherwise.
+
+Be hostile: a blurb that mentions "the Proslogion" when a rung keys "the Proslogion" HAS LEAKED; a blurb that mentions "wax tablets" when a rung keys "wax tablets" HAS LEAKED. But a blurb that merely tells the reader WHO the figure is + the ladder's general subject does NOT leak -- the whole point is that the player should be oriented, not pre-answered.`; }
 
 // ---- build one ladder: judge+revise, then adversarial judge + gate, then de-tell ----
 async function buildLadder(idx, research, ladder){
@@ -206,6 +258,8 @@ async function buildLadder(idx, research, ladder){
 
   // PASS B -- mechanical gate + fresh adversarial judge, then de-tell (cap 2)
   let advNotes = [];
+  let passedB = false;
+  let lowNotes = [];
   for (let r=0; r<2; r++){
     const gate = mechGate(cur.rungs);
     const v = await tryAgent(advJudgePrompt(name, research, cur, gate), {schema:VERDICTS, phase:'Verify', label:`adv:${name.slice(0,20)}`, model:'opus'}, x=>x&&Array.isArray(x.verdicts));
@@ -214,14 +268,43 @@ async function buildLadder(idx, research, ladder){
     const high = flags.filter(x=>x.severity==='high'), med = flags.filter(x=>x.severity==='medium'), low=flags.filter(x=>x.severity==='low');
     rounds += 1;
     if (high.length===0 && med.length===0){
-      return {status:'passed', ladder:cur, rounds, unresolved:[], notes: low.map(f=>`T${f.tier}(low):${f.primary_flaw}`)};
+      passedB = true;
+      lowNotes = low.map(f=>`T${f.tier}(low):${f.primary_flaw}`);
+      break;
     }
     if (r===1){ advNotes = [...high,...med].map(f=>`T${f.tier}(${f.severity}):${f.primary_flaw}`); break; }
     const rev = await tryAgent(revisePrompt(name, research, cur, [...high,...med]), {schema:LADDER, phase:'Verify', label:`detell:${name.slice(0,20)}`, model:'opus'}, x=>x&&x.rungs&&x.rungs.length>0);
     if (!rev || !rev.rungs || !rev.rungs.length){ advNotes = [...high,...med].map(f=>`T${f.tier}(${f.severity}):${f.primary_flaw}`); break; }
     cur = rev;
   }
-  return {status:'needs_review', ladder:cur, rounds, unresolved:advNotes, notes:[]};
+  if (!passedB) return {status:'needs_review', ladder:cur, rounds, unresolved:advNotes, notes:[]};
+
+  // PASS C -- PIPELINE.md §16 ladder-context-blurb cold-reader leak check (cap 2 revise rounds).
+  // The ladder is already clean; the only thing left to gate is whether the blurb leaks any rung's keyed
+  // answer when the stem is hidden. A leaked blurb goes back to the author with the per-rung diagnosis.
+  let blurbNotes = [];
+  if (!cur.context_blurb){
+    return {status:'needs_review', ladder:cur, rounds, unresolved:['blurb_missing'], notes:lowNotes};
+  }
+  for (let r=0; r<2; r++){
+    const b = await tryAgent(blurbLeakJudgePrompt(name, cur), {schema:BLURB_LEAK, phase:'Verify', label:`blurb:${name.slice(0,20)}`, model:'opus'}, x=>x&&Array.isArray(x.per_rung));
+    rounds += 1;
+    if (!b){ blurbNotes = ['blurb_leak_judge_failed']; break; }
+    if (b.blurb_ok){
+      return {status:'passed', ladder:cur, rounds, unresolved:[], notes:[...lowNotes, `blurb_pick_rate:${(b.pick_rate||0).toFixed(2)}`]};
+    }
+    if (r===1){
+      blurbNotes = (b.per_rung||[]).filter(p=>p.keyed_is_pickable).map(p=>`blurb_leak@T${p.tier}:${p.leak_diagnosis}`);
+      if (!blurbNotes.length) blurbNotes = [`blurb_leak:pick_rate=${(b.pick_rate||0).toFixed(2)}`];
+      break;
+    }
+    // Pack blurb-leak diagnoses as flags for the surgical reviser (same shape the normal flags carry).
+    const leakFlags = (b.per_rung||[]).filter(p=>p.keyed_is_pickable).map(p=>({tier:p.tier, idx:p.idx, severity:'high', rules_flagged:['blurb_leak'], primary_flaw:`blurb leaks T${p.tier} keyed answer: ${p.leak_diagnosis}`, fix:(b.fix||'rewrite the blurb to drop the leaking clause; keep WHO/WHAT/WHY orientation only')}));
+    const rev = await tryAgent(revisePrompt(name, research, cur, leakFlags), {schema:LADDER, phase:'Verify', label:`blurbfix:${name.slice(0,20)}`, model:'opus'}, x=>x&&x.rungs&&x.rungs.length>0&&typeof x.context_blurb==='string'&&x.context_blurb.length>0);
+    if (!rev){ blurbNotes = [`blurb_leak:pick_rate=${(b.pick_rate||0).toFixed(2)}`]; break; }
+    cur = rev;
+  }
+  return {status:'needs_review', ladder:cur, rounds, unresolved:blurbNotes, notes:lowNotes};
 }
 
 if (!QUEUE){ log('ERROR: no config.queue passed. Launch with args.config = the subject config JSON.'); return {error:'no-config'}; }

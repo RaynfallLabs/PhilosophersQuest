@@ -188,12 +188,13 @@ def test_every_data_path_call_is_bundled():
 # ---------------------------------------------------------------------------
 
 _BUNDLED_DIR_ALLOWED = {
-    "data/items":     {".json"},
-    "data/materials": {".json"},
-    "data/questions": {".json"},
-    "data/templates": {".json"},
-    "assets/fonts":   {".ttf", ".otf"},
-    "assets/tiles":   {".png"},
+    "data/items":              {".json"},
+    "data/materials":          {".json"},
+    "data/questions":          {".json"},
+    "data/question_contexts":  {".json"},
+    "data/templates":          {".json"},
+    "assets/fonts":            {".ttf", ".otf"},
+    "assets/tiles":            {".png"},
 }
 _ARTIFACT_MARKERS = ("_v2", "_pre_v2", "_tellgate", "_backup", "_staging")
 

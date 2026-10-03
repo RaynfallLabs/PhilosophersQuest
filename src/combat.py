@@ -1973,10 +1973,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     # (they used to be dead code because every common template's
     # `chain_multipliers` array capped max_chain at 3-6). Uniques that keep
     # the legacy per-rung array still cap at the array length as before.
-    if weapon and getattr(weapon, 'chain_exponent', None):
+    # Unarmed also runs the polynomial at exponent 1.15 (see line 1008), so
+    # it belongs on the uncapped path too. Was mistakenly on the array path
+    # and capping at 5 — fixed 2026-10-03 after playtest.
+    if weapon is None or getattr(weapon, 'chain_exponent', None):
         _max_chain = None  # polynomial path: uncapped, ends on wrong / timer / SPACE
     else:
-        _max_chain = weapon.max_chain_length if weapon else len(_DEFAULT_MULTIPLIERS)
+        _max_chain = weapon.max_chain_length
     # Jormungandr quirk: +1 max chain for repeatedly-equipped weapon
     if _max_chain and weapon:
         if getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id') == weapon.id:

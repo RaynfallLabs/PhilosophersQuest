@@ -31,9 +31,19 @@ class QuizResult:
 
 
 _QUESTIONS_DIR = data_path('data', 'questions')
+_CONTEXTS_DIR  = data_path('data', 'question_contexts')
+
+# Subjects that have (or will have) a per-topic context-blurb file. Loader
+# walks this list and silently skips any subject whose file is missing or
+# malformed — the modal just stays hidden for those questions.
+_CONTEXT_SUBJECTS = (
+    'philosophy', 'history', 'economics', 'ai', 'theology',
+    'geography', 'science', 'trivia', 'animal', 'cooking',
+)
 
 _CROSS_GAME_RECENT_CAP = 30          # questions remembered per (subject, tier)
 _HISTORY_DIR_OVERRIDE = None         # tests point this at a temp dir
+_CONTEXTS_DIR_OVERRIDE = None        # tests point this at a temp dir to override _CONTEXTS_DIR
 
 
 def _quiz_history_path() -> str:
@@ -119,6 +129,27 @@ class QuizEngine:
         # built for each (subject, tier) pushes recently-shown questions to the
         # back. Fully guarded — a missing/corrupt file is non-fatal.
         self._load_cross_game_history()
+
+        # Per-topic context blurbs (opt-in orientation shown via a C-key modal
+        # during a quiz; math timer pauses while the modal is open). Keyed by
+        # (subject, topic). Missing bank file -> that subject contributes no
+        # entries; a question without a `topic` field never has a blurb.
+        self._contexts: dict[tuple[str, str], str] = {}
+        # Topics the player has already encountered during THIS process. Used
+        # to auto-open the modal exactly once per topic per session; reset by
+        # construction of a fresh QuizEngine (new game) and NOT persisted.
+        self._quiz_context_seen: set[tuple[str, str]] = set()
+        # Set by _next_question when a brand-new (subject, topic) is drawn AND
+        # a blurb exists for it. main.py's update loop reads this and flips to
+        # STATE_QUIZ_CONTEXT, then clears the flag. None means "nothing to do".
+        self.pending_context_auto_open: tuple[str, str] | None = None
+        # Timer pause state for the context modal. _timer_paused freezes the
+        # countdown in `update()`; the saved value is informational only (the
+        # countdown resumes from whatever `time_remaining` already holds).
+        self._timer_paused: bool = False
+        self._timer_paused_at: float = 0.0
+
+        self._load_context_blurbs()
 
     # --- Public API ---
 
@@ -216,6 +247,12 @@ class QuizEngine:
         self.celebrating = False
         self.celebration_text = ''
         self.celebration_timer = 0.0
+        # Clear any stale pause state from a prior quiz. A new quiz always
+        # starts un-paused; the context modal pauses on open and un-pauses
+        # on close within one quiz lifetime.
+        self._timer_paused = False
+        self._timer_paused_at = 0.0
+        self.pending_context_auto_open = None
         # Tablet of Destinies: allow one reroll of a wrong answer
         # Set externally by main.py before starting quiz
         self.reroll_available = getattr(self, '_reroll_flag', False)
@@ -283,7 +320,7 @@ class QuizEngine:
             return
 
         if self.state == QuizState.ASKING:
-            if self.timed and self.time_remaining > 0:
+            if self.timed and self.time_remaining > 0 and not self._timer_paused:
                 self.time_remaining = max(0.0, self.time_remaining - dt)
                 if self.time_remaining <= 0.0:
                     # Time's up. Chain combat v2: DOES NOT zero the chain. The
@@ -381,6 +418,11 @@ class QuizEngine:
             self.confused_order = order
         else:
             self.confused_order = None
+
+        # Opt-in orientation: if this ladder has a blurb AND the player hasn't
+        # seen it this session, flag an auto-open. main.py's update loop
+        # transitions STATE_QUIZ -> STATE_QUIZ_CONTEXT when it sees the flag.
+        self._check_context_auto_open()
 
     def _advance(self):
         mode = self.mode
@@ -619,6 +661,122 @@ class QuizEngine:
             key = (subject, int(tier_s))
             self._recent[key] = recent
             self._seen.setdefault(key, set()).update(recent)
+
+    # --- Context blurbs (opt-in orientation modal) ---
+
+    def _contexts_dir(self) -> str:
+        """Return the directory to read context-blurb JSON files from.
+
+        Tests redirect this to a temp dir via ``_CONTEXTS_DIR_OVERRIDE``;
+        otherwise it is the shipped ``data/question_contexts`` folder.
+        """
+        return _CONTEXTS_DIR_OVERRIDE if _CONTEXTS_DIR_OVERRIDE is not None else _CONTEXTS_DIR
+
+    def _load_context_blurbs(self):
+        """Read every subject's context-blurb file into ``self._contexts``.
+
+        Non-fatal on any error — a missing file, bad JSON, or an unexpected
+        shape leaves that subject's slice empty. The modal + the "[C] context"
+        hint are therefore absent for any question whose (subject, topic)
+        pair has no blurb.
+        """
+        self._contexts.clear()
+        base = self._contexts_dir()
+        if not os.path.isdir(base):
+            return
+        for subject in _CONTEXT_SUBJECTS:
+            path = os.path.join(base, f'{subject}.json')
+            if not os.path.isfile(path):
+                continue
+            try:
+                with open(path, encoding='utf-8') as f:
+                    data = json.load(f)
+            except (OSError, ValueError):
+                continue
+            if not isinstance(data, dict):
+                continue
+            for topic, entry in data.items():
+                if not isinstance(topic, str) or not topic:
+                    continue
+                if isinstance(entry, dict):
+                    blurb = entry.get('context_blurb')
+                elif isinstance(entry, str):
+                    blurb = entry
+                else:
+                    blurb = None
+                if isinstance(blurb, str) and blurb.strip():
+                    self._contexts[(subject, topic)] = blurb.strip()
+
+    def reload_context_blurbs(self):
+        """Force a re-read of all context-blurb files (used by tests)."""
+        self._load_context_blurbs()
+
+    def get_context_blurb(self, subject: str, topic: str | None) -> str | None:
+        """Return the blurb for a (subject, topic), or None if unknown.
+
+        A None/empty topic always returns None — see the note in
+        ``_check_context_auto_open`` about questions that lack the field.
+        """
+        if not subject or not topic:
+            return None
+        return self._contexts.get((subject, topic))
+
+    def current_context_blurb(self) -> str | None:
+        """Convenience: blurb for the currently-displayed question."""
+        q = self.current_question
+        if not q:
+            return None
+        return self.get_context_blurb(self.subject, q.get('topic'))
+
+    def mark_context_seen(self, subject: str, topic: str | None):
+        """Record that the player has seen the context for this (subject, topic).
+
+        Called when the modal is opened — manually or auto. Guards against
+        re-firing the one-shot auto-open on the same ladder for the rest of
+        the session.
+        """
+        if not subject or not topic:
+            return
+        self._quiz_context_seen.add((subject, topic))
+
+    def _check_context_auto_open(self):
+        """Set ``pending_context_auto_open`` if the current (subject, topic) has
+        a blurb and hasn't been seen this session. Called from _next_question
+        and _auto_pass_mastered_round so escalator climbs also trigger.
+        """
+        q = self.current_question
+        if not q:
+            return
+        topic = q.get('topic')
+        if not topic:
+            return  # topic field is required to pin a blurb; silently skip
+        key = (self.subject, topic)
+        if key in self._quiz_context_seen:
+            return
+        if key not in self._contexts:
+            return
+        self.pending_context_auto_open = key
+
+    # --- Timer pause / resume (context modal) ---
+
+    def pause_timer(self):
+        """Freeze the quiz countdown. Idempotent; safe for untimed quizzes.
+
+        The implementation simply flips a flag; ``update()`` reads the flag
+        and skips the ``time_remaining`` decrement. We also snapshot the
+        current value for diagnostics / tests, but the countdown resumes
+        from whatever ``time_remaining`` already holds.
+        """
+        if self._timer_paused:
+            return
+        self._timer_paused = True
+        self._timer_paused_at = float(self.time_remaining)
+
+    def resume_timer(self):
+        """Unfreeze the quiz countdown. Idempotent."""
+        if not self._timer_paused:
+            return
+        self._timer_paused = False
 
     def _persist_cross_game_history(self):
         """Atomically write the last N shown questions per (subject, tier) so a

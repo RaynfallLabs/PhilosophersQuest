@@ -187,8 +187,10 @@ Chain is **UNCAPPED on the polynomial path.** The chain ends when the player ans
 if weapon and getattr(weapon, 'chain_exponent', None):
     _max_chain = None  # polynomial path: uncapped
 else:
-    _max_chain = weapon.max_chain_length if weapon else len(_DEFAULT_MULTIPLIERS)
+    _max_chain = weapon.max_chain_length
 ```
+
+**Unarmed is also uncapped** (fixed 2026-10-03). The damage formula at line 1008 already runs the polynomial at exponent 1.15 for `weapon is None`, but the max-chain gate used to fall into the `else` branch and cap unarmed at `len(_DEFAULT_MULTIPLIERS) = 5`. That mismatch was a half-finished v2.14.0 migration — now `weapon is None` goes to the uncapped path. `_DEFAULT_MULTIPLIERS` is kept only as a safety fallback for any caller that reaches for `chain_multipliers` on an unarmed path (it has no live reader after this fix).
 
 **Audit note (SYSTEMS_AUDIT.md P2):** `attack_chain_cap_bonus` (Ring of Gawain, Torque of Lugh) is dead on the polynomial path — the +N applies only when `_max_chain is not None`, but every weapon with `chain_exponent` sets `_max_chain = None`. Known bug, not fixed in v2.18.0.
 

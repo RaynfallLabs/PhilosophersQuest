@@ -7,6 +7,7 @@ creating a circular dependency with main.
 """
 STATE_PLAYER         = 'player'
 STATE_QUIZ           = 'quiz'
+STATE_QUIZ_CONTEXT   = 'quiz_context'   # Opt-in orientation modal reached from STATE_QUIZ via the C key
 STATE_EQUIP_MENU     = 'equip_menu'
 STATE_KIT            = 'kit'
 STATE_DISCOVERIES    = 'discoveries'

@@ -754,47 +754,41 @@ item vs biology lore distinct visual families.
 
 ---
 
-## 17. Help screen (`_draw_help_screen` L8308-8438)
+## 17. Help screen (`_draw_help_screen`)
 
-Panel: `COMMAND REFERENCE`, max 1380×760, GOLD border.
+Panel: `COMMAND REFERENCE`, max 1380×620, GOLD border. **Pure
+keybind reference** — every row is a key → action pair, no prose, no
+parentheticals. Every listing must map to a real dispatch in
+`game_input.py`; test by pressing the key.
 
 **Six key-group columns:**
 
 1. **Movement** — Arrows, `.`, `< >`, `Tab`
-2. **Combat** — `A`, `F`, `T`, `V`, `M / Z`
+2. **Combat** — `A`, `F`, `T`, `M / Z`, `V`
 3. **Items** — `E`, `X`, `I`, `H`, `C`, `D`, `U / Q`, `R`
-4. **Knowledge** — `B`, `J`, `K`, `W`, `;`, `N`
+4. **Knowledge** — `@`, `B`, `J`, `K`, `W`, `;`, `N`
 5. **World** — `G / ,`, `P`, `Y`, `\`, `Shift+\`, `O`, `Shift+P`
 6. **System** — `1-4`, `SPACE`, `?`, `ESC`
 
 Rendered in a 3-column (if wide ≥ 780) or 2-column grid. Each key
-tile is a midnight-mid pill with gold border; the description wraps
-to 2 lines.
-
-**System Rules card (v2.18 addition, L8359-8366 + L8423-8436):**
-
-Dedicated bottom-slice subpanel titled "System Rules", GOLD_DARK
-border, four bullets:
-
-1. **"Zero-tolerance: any wrong answer ends a threshold quiz."**
-2. **"Chain v2: peak-chain damage. Right -> chain grows; wrong ->
-   strike now at achieved chain."**
-3. **"Math is the only timed subject. Others are untimed."**
-4. **"Subject -> action: math combat, geography armor, history
-   accessory, animal harvest, cooking food, science magic, philosophy
-   identify, grammar scrolls, economics lockpick, theology prayer."**
-
-Rendered with `_ui_subpanel` + `_ui_wrap_text` so each bullet word-wraps
-to 2 lines. This is where the hard-won learnings from
-SYSTEMS_AUDIT §8 P3 land — the player can now learn the
-zero-tolerance / chain-v2 / math-only / subject-action rules from
-`?` without digging through CLAUDE.md.
+tile is a midnight-mid pill with gold border; the description is a
+single line.
 
 **Footer hint:** `"? / ESC: close"`.
 
-If you add a new keybind, add it to the group that fits (ITEMS /
-KNOWLEDGE / WORLD / SYSTEM) AND update CLAUDE.md's subject→action map
-if the key opens a new subject-gated action.
+Earlier (v2.18) revisions carried a "System Rules" prose subpanel at
+the bottom covering zero-tolerance / chain-v2 / math-only / subject-
+action-map. That card was removed on 2026-10-03 — it was unrequested
+clutter and the extra height squeezed the grid rows enough to
+truncate the last entry of the Knowledge column (Recall Lore).
+The zero-tolerance/chain-v2 rules live in the quiz modal subtitle
+and in `conventions.md` instead.
+
+If you add a new keybind, add it to the group that fits AND verify
+the dispatch exists in `game_input.py`. Do **not** attach
+parentheticals ("1 philosophy Q", "mid-chain", "theology chain",
+"compound recipes" etc.) — the help screen is a key map, not a
+tutorial.
 
 ---
 
@@ -1013,7 +1007,7 @@ Documented for traceability. Fixes land in follow-up commits.
   incremented.
 - **Character sheet timer line** — fixed in this version.
 - **11 threshold-copy strings** — unified under `_threshold_line`.
-- **Help screen System Rules card** — added in this version.
+- **Help screen System Rules card** — added in v2.18, removed 2026-10-03 (unrequested clutter, truncated Knowledge group).
 - **Discoveries `MASTERED` → `CLEARED`** — renamed.
 - **`MASTERY!` toast → `TIER N CLEARED`** — renamed.
 - **Mimir's Well reward text** — still promises timers; replace with
