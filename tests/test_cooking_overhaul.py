@@ -250,20 +250,29 @@ def _monsters_in(rid: str) -> list[str]:
 
 
 def test_every_recipe_monster_parts_share_a_floor_band():
-    """No recipe may require primes/trophies from monsters that never co-spawn
-    (would force cross-dungeon backtracking). Family/assorted/special are
-    floor-agnostic and excluded from the check."""
+    """No 2-ingredient recipe may require primes/trophies from monsters that
+    never co-spawn (would force cross-dungeon backtracking at the easy tier).
+
+    3+ ingredient recipes are the Multi-Ingredient Cooking Expansion's
+    aspirational layer (2026-10-03) — collecting them ACROSS a run is the
+    design, not a bug. 5-ingredient legendaries especially are meant to
+    span the whole 100-floor arc.
+
+    Family/assorted/special are floor-agnostic and excluded from the check."""
     fails = []
     for rid in RECIPES:
         mons = _monsters_in(rid)
         if len(mons) < 2:
+            continue
+        # Multi-ingredient recipes (3+) deliberately span bands — exempt.
+        if len(RECIPES[rid].get("ingredients", [])) >= 3:
             continue
         bands = [_present_floors(m) for m in mons]
         if not set.intersection(*bands):
             ranges = {m: (min(b) if b else None, max(b) if b else None)
                       for m, b in zip(mons, bands)}
             fails.append((rid, ranges))
-    assert not fails, f"recipes whose monster parts never co-spawn: {fails[:10]}"
+    assert not fails, f"2-ing recipes whose monster parts never co-spawn: {fails[:10]}"
 
 
 # ---------------------------------------------------------------------------

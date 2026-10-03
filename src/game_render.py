@@ -1652,7 +1652,8 @@ class RenderMixin:
                     continue
                 self.renderer.draw_entity(
                     m.x, m.y, m.color, cam_x, cam_y, self.visible,
-                    mid=m.kind, footprint=getattr(m, 'footprint', (1, 1)))
+                    mid=m.kind, footprint=getattr(m, 'footprint', (1, 1)),
+                    symbol=getattr(m, 'symbol', ''))
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
             if pet.alive and (pet.x, pet.y) in self.visible:
@@ -1662,7 +1663,15 @@ class RenderMixin:
                         pet.x, pet.y, pet.color, cam_x, cam_y, self.visible,
                         mid=pet.monster_kind, tint=(160, 140, 230, 160))
                 else:
-                    self.renderer.draw_entity(pet.x, pet.y, pet.color, cam_x, cam_y, self.visible, mid=pet.name.lower())
+                    # Sprite lookup must use the species-stage name alone
+                    # ("Seedling", "Voltpaw"), not pet.name (which prepends
+                    # the nickname — "Fluffy the Seedling" → fails lookup
+                    # and used to render as a green square). Fixed 2026-10-03.
+                    stage_name = getattr(pet, 'species_name', None) or pet.name
+                    mid = stage_name.lower().replace(' ', '_')
+                    self.renderer.draw_entity(
+                        pet.x, pet.y, pet.color, cam_x, cam_y, self.visible,
+                        mid=mid, symbol=getattr(pet, 'symbol', ''))
         # Telepathy: render unseen monsters as dim dots
         if self.player.has_effect('telepathy'):
             for m in self.monsters:
@@ -6723,29 +6732,44 @@ class RenderMixin:
                 mechanics.append((f"Weak to: {', '.join(wks)}", FP.WARNING_TEXT, self.font_sm))
 
         if id_level >= 2:
-            # v2.15.0 fix: post-2026-05-31 harvest redesign re-keyed ingredients
-            # to `<monster_id>_prime`, but monsters.json still carries the old
-            # `ingredient_id` value (e.g. "rat_meat"). Prefer the current-format
-            # `<kind>_prime` key so the lookup actually finds the ingredient.
-            ingredient_id = f"{getattr(corpse, 'kind', '')}_prime"
+            # Harvest yields exactly ONE ingredient per corpse — either a prime
+            # cut or a trophy, chosen by the monster's `is_trophy` flag in
+            # prime_cuts.json. The 11 trophy-only monsters (medusa, fafnir,
+            # fenrir, abaddon, etc.) have no `_prime` ingredient entry; naive
+            # `<kind>_prime` lookup used to miss them and render "Ingredient:
+            # none" even though the trophy is real. Fixed 2026-10-03 by
+            # mirroring the bestiary trophy-aware logic.
+            monster_id = getattr(corpse, 'kind', '') or ''
             legacy_id = getattr(corpse, 'ingredient_id', '')
             try:
-                from food_system import load_ingredient_for, get_recipes_for_ingredient
+                from food_system import (load_ingredient_for,
+                                          get_recipes_for_ingredient,
+                                          _load_prime_cuts)
+                prime_info = _load_prime_cuts().get(monster_id) if monster_id else None
+                if prime_info:
+                    is_trophy = bool(prime_info.get('is_trophy'))
+                    ingredient_id = (f"{monster_id}_trophy" if is_trophy
+                                     else f"{monster_id}_prime")
+                else:
+                    ingredient_id = f"{monster_id}_prime"
                 ing = load_ingredient_for(ingredient_id)
-                # Fall back to the legacy field if the prime-keyed lookup misses
-                # (edge case: bosses/uniques that don't follow the naming pattern).
+                # Legacy fallback for pre-v2.6.5 corpses in old saves.
                 if not ing and legacy_id:
                     ing = load_ingredient_for(legacy_id)
                     ingredient_id = legacy_id
                 if ing:
-                    mechanics.append((f"Ingredient: {ing.name}", FP.GOLD_PALE, self.font_sm))
+                    label = "Trophy" if prime_info and prime_info.get('is_trophy') else "Prime cut"
+                    mechanics.append((f"{label}: {ing.name}", FP.GOLD_PALE, self.font_sm))
+                    mechanics.append(("Harvest with H -- right animal answer yields the cut; "
+                                      "wrong ruins the corpse.", FP.FADED_TEXT, self.font_sm))
                     recipes = get_recipes_for_ingredient(ingredient_id)
                     if recipes:
                         mechanics.append(("Known recipe uses", FP.GOLD_BRIGHT, self.font_sm))
                         for recipe in recipes[:5]:
                             mechanics.append((recipe.get('name', '?'), FP.BODY_TEXT, self.font_sm))
                 else:
-                    mechanics.append(("Ingredient: none", FP.FADED_TEXT, self.font_sm))
+                    mechanics.append(("Ingredient: none (not harvestable)",
+                                      FP.FADED_TEXT, self.font_sm))
             except Exception:
                 pass
 

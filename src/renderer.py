@@ -362,6 +362,120 @@ def _spellbook_family_sprite(item_id: str) -> 'str | None':
     return resolved
 
 
+# Hardcoded monster-sprite fallbacks for ids whose symbol-based lookup fails
+# because no OTHER monster in the bank shares the symbol with an existing
+# sprite. Added 2026-10-03 after audit flagged 69 missing monster sprites;
+# all but these 2 resolve via same-symbol fallback.
+_MONSTER_SPRITE_FALLBACK_OVERRIDE = {
+    # Symbol-only picks (no same-symbol peer with a sprite).
+    'lurking_horror': 'hook_horror',
+    'gilded_mimic':   'mimic',
+    # Semantic picks (same-symbol picks exist but alphabetical first is a bad
+    # match — e.g. "Vine Horror" picked up jiangshi). These are hand-tuned so
+    # bosses + visible mid-tier threats read right until proper art lands.
+    'vine_horror':      'assassin_vine',
+    'tiamat':           'ancient_dragon',
+    'surtur':           'fire_giant_king',
+    'ymir_last_spawn':  'frost_giant_jarl',
+    'asmodeus':         'arch_demon',
+    'blood_archon':     'arch_demon',
+    'stone_golem':      'clay_golem',
+    'hrungnirs_ghost':  'frost_giant',
+    'ettin_warchief':   'cloud_giant',
+    'cave_troll':       'chaos_troll',
+    'frostfang_giant':  'frost_giant',
+    'moss_sentinel':    'corrupted_treant',
+    'whispering_crone': 'annis_hag',
+    'harrow_witch':     'bone_witch',
+    'plague_witch':     'bone_witch',
+    'iron_patriarch':   'arcane_golem',
+    'throne_sentinel':  'arcane_golem',
+    'astral_horror':    'clockwork_horror',
+    'apocalypse_herald':'demon_general',
+    'void_seraph':      'arch_demon',
+    'veiled_inquisitor':'demon_captain',
+    'pit_executioner':  'demon_knight',
+    'imp_lord':         'demon_captain',
+    'greater_imp':      'demon_knight',
+    'demonic_imp':      'demon_knight',
+    'demonic_trickster':'demon_captain',
+    'crypt_summoner':   'bone_witch',
+    'banshee_lich':     'draugr',
+    'bone_collector':   'draugr',
+    'ghast_eater':      'draugr',
+    'grave_knight':     'draugr',
+    'draugr_wight':     'draugr',
+    'skeleton_lich':    'draugr',
+    'skeleton_necromancer': 'draugr',
+    'deep_one_priest':  'bone_witch',
+    'sable_serpent':    'adult_dragon',
+    'shadow_archer':    'desert_wraith',
+    'mage_slayer_assassin': 'desert_wraith',
+    'wormwood_blight':  'bone_witch',
+    'viper_priestess':  'bone_witch',
+    'snake_charmer':    'bone_witch',
+    'iron_horseman':    'demon_knight',
+    'locust_swarmlord': 'giant_wasp',
+    'lava_elemental':   'fire_giant',
+}
+
+# Lazy-built: {missing_mid: existing_mid_with_sprite} keyed by shared symbol.
+# Populated on first access from monsters.json + a scan of _SPRITE_DIR. Rebuilt
+# only if the cache is cleared; sprite set is immutable at runtime.
+_MONSTER_SPRITE_FALLBACK_CACHE: 'dict[str, str] | None' = None
+
+
+def _resolve_monster_sprite_fallback(mid: str) -> 'str | None':
+    """Pick a representative existing-sprite monster id for ``mid`` when its own
+    sprite file is missing. Preference order:
+      1. Hardcoded `_MONSTER_SPRITE_FALLBACK_OVERRIDE` (manual picks).
+      2. First alphabetically-sorted monster that shares ``mid``'s symbol AND
+         has a sprite on disk.
+      3. None (caller falls through to the glyph+colored-rect render in
+         `draw_entity`).
+    Returns a monster id (string), not a full path.
+    """
+    if not mid:
+        return None
+    if mid in _MONSTER_SPRITE_FALLBACK_OVERRIDE:
+        return _MONSTER_SPRITE_FALLBACK_OVERRIDE[mid]
+    global _MONSTER_SPRITE_FALLBACK_CACHE
+    if _MONSTER_SPRITE_FALLBACK_CACHE is None:
+        cache: dict[str, str] = {}
+        try:
+            import json
+            monsters_path = data_path('data', 'monsters.json')
+            with open(monsters_path, encoding='utf-8') as f:
+                monsters = json.load(f)
+            if not os.path.isdir(_SPRITE_DIR):
+                _MONSTER_SPRITE_FALLBACK_CACHE = cache
+                return None
+            sprite_set = {f[:-4] for f in os.listdir(_SPRITE_DIR)
+                          if f.endswith('.png')}
+            # Index: symbol -> sorted list of sprited monster ids.
+            sym_to_sprited: dict[str, list[str]] = {}
+            for m_id, m in monsters.items():
+                if not isinstance(m, dict):
+                    continue
+                if m_id in sprite_set:
+                    sym = m.get('symbol', '')
+                    sym_to_sprited.setdefault(sym, []).append(m_id)
+            for lst in sym_to_sprited.values():
+                lst.sort()
+            # Resolve each missing monster to the first same-symbol sprited peer.
+            for m_id, m in monsters.items():
+                if not isinstance(m, dict) or m_id in sprite_set:
+                    continue
+                sym = m.get('symbol', '')
+                peers = sym_to_sprited.get(sym, [])
+                if peers:
+                    cache[m_id] = peers[0]
+        except Exception:
+            pass
+        _MONSTER_SPRITE_FALLBACK_CACHE = cache
+    return _MONSTER_SPRITE_FALLBACK_CACHE.get(mid)
+
+
 def _resolve_item_sprite_path(item_id: str) -> 'str | None':
     """Filesystem path of the sprite to draw for `item_id`, or None.
 
@@ -578,6 +692,16 @@ class Renderer:
         if mid in self._sprite_cache:
             return self._sprite_cache[mid]
         path = os.path.join(_SPRITE_DIR, f"{mid}.png")
+        if not os.path.exists(path):
+            # Representative-sprite fallback: 69 of 527 monsters ship without
+            # art and used to render as pure colored rects on the map (the
+            # "seedling" bug — Vine Horror had no sprite). Fall back to a
+            # same-symbol monster that DOES have art, so a Vine Horror
+            # borrows the Vine Horror family's silhouette rather than
+            # showing as a shapeless green box. Fixed 2026-10-03.
+            fallback_mid = _resolve_monster_sprite_fallback(mid)
+            if fallback_mid:
+                path = os.path.join(_SPRITE_DIR, f"{fallback_mid}.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
             # smoothscale (bilinear) instead of scale (nearest-neighbour)
@@ -693,7 +817,8 @@ class Renderer:
     def draw_entity(self, x: int, y: int, color: tuple,
                     cam_x: int = 0, cam_y: int = 0, visible=None, mid: str = '',
                     tint: tuple = None,
-                    footprint: tuple = (1, 1)):
+                    footprint: tuple = (1, 1),
+                    symbol: str = ''):
         """Draw a monster or dim dot. Pass visible=None to always draw.
 
         For multi-tile monsters (`footprint != (1, 1)`), the sprite is
@@ -737,13 +862,35 @@ class Renderer:
                     sprite.blit(overlay, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
                 self.screen.blit(sprite, (sx, sy))
                 return
-        # Fallback: filled rect covering the footprint
+        # Fallback: filled rect covering the footprint. Overlay the monster's
+        # glyph (symbol) on top so the player can tell what the colored box
+        # is — otherwise a sprite-less Vine Horror is indistinguishable from
+        # a dark-green blob. Mirrors the item-fallback behavior at draw_item.
+        # Added 2026-10-03 after the "seedling" (= sprite-less Vine Horror)
+        # playtest hit.
         full_w = fw * T
         full_h = fh * T
         pad = max(1, T // 7)
         pygame.draw.rect(self.screen, color,
                          (sx + pad, sy + pad,
                           full_w - pad * 2, full_h - pad * 2))
+        if symbol:
+            # Pick a contrasting glyph color: dark glyph on light rects, light
+            # glyph on dark rects. Luminance approximation (BT.601 weights).
+            r, g, b = color[0], color[1], color[2]
+            lum = (r * 0.299 + g * 0.587 + b * 0.114)
+            glyph_color = (0, 0, 0) if lum > 140 else (240, 240, 240)
+            surf = self._sym_font.render(symbol, True, glyph_color)
+            # Scale glyph to roughly 70% of the footprint height.
+            sw, sh = surf.get_size()
+            target_h = max(8, int(min(full_w, full_h) * 0.7))
+            if sh != target_h and sh > 0:
+                scale = target_h / sh
+                target_w = max(1, int(sw * scale))
+                surf = pygame.transform.smoothscale(surf, (target_w, target_h))
+            gx = sx + (full_w - surf.get_width()) // 2
+            gy = sy + (full_h - surf.get_height()) // 2
+            self.screen.blit(surf, (gx, gy))
 
     def draw_item(self, item, cam_x: int = 0, cam_y: int = 0, visible: set = None):
         """Draw an item sprite (or glyph fallback) only when visible."""

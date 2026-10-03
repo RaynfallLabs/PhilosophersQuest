@@ -111,24 +111,40 @@ def _raw_recipes() -> dict:
 # ------------------------------------------------------------------
 
 def get_available_compound_recipes(inventory: list) -> list[dict]:
-    """Return compound recipe dicts where the player has ALL required
-    ingredients AND the recipe combines >=2 distinct ingredient TYPES.
+    """Return every recipe the player can make from their current
+    inventory, single-ingredient and multi-ingredient alike.
 
-    Solo cooks (recipes whose ingredients list is one type repeated, e.g.
-    basic_monster_stew = 5x assorted_monster_parts) are excluded — they
-    are reachable from the Single tab via _find_recipe_for_ingredient
-    on the canonical anchor ingredient. The Recipes tab is reserved for
-    multi-type combinations per the 2026-06-01 cooking-menu UX contract.
+    Previously (2026-06-01 UX contract) this filter dropped recipes with
+    fewer than 2 distinct ingredient types, routing them to a Single tab
+    reachable via `_find_recipe_for_ingredient`. The Single tab was
+    removed on 2026-06-07, orphaning all 537 single-ingredient recipes
+    — including every "cook this one prime cut" recipe a new player
+    would reach for first. Filter dropped 2026-10-03 so those recipes
+    surface again. Sort order: single-ingredient first (least friction),
+    then multi-ingredient; secondary sort by outcome SP where derivable.
+    The name is kept for call-site compat but the function is now
+    simply "all available recipes."
     """
     from items import Ingredient
-    held_ids = {item.id for item in inventory if isinstance(item, Ingredient)}
+    held_counts = {}
+    for item in inventory:
+        if isinstance(item, Ingredient):
+            held_counts[item.id] = held_counts.get(item.id, 0) + 1
     out = []
     for rid, rdef in _raw_recipes().items():
         ings = rdef.get('ingredients', [])
-        if not ings or len(set(ings)) < 2:
+        if not ings:
             continue
-        if all(ing in held_ids for ing in ings):
+        # Count ingredient demand (list can repeat an id for stacked recipes
+        # like 5x assorted_monster_parts).
+        need = {}
+        for i in ings:
+            need[i] = need.get(i, 0) + 1
+        if all(held_counts.get(i, 0) >= n for i, n in need.items()):
             out.append({'id': rid, **rdef})
+    # Sort: single-ingredient first (friendliest for new players), then
+    # by distinct-ingredient-count ascending.
+    out.sort(key=lambda r: (len(set(r.get('ingredients', []))), r.get('name', '')))
     return out
 
 

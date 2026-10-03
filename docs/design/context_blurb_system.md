@@ -18,9 +18,11 @@ of every rung in the ladder.
 
 - Blurb is **strictly answer-free**: it must not state, paraphrase, or trivially
   imply any T1-T5 keyed fact in its own ladder.
-- Blurb is **opt-in**: the player presses **C** during a quiz to open the modal,
-  or receives a one-shot auto-open the first time they encounter a new topic in
-  a session.
+- Blurb is **opt-in and manual**: the player presses **C** during a quiz to
+  open the modal. The modal never auto-opens (user preference locked
+  2026-10-03). The quiz_engine still sets `pending_context_auto_open` on a
+  fresh (subject, topic), but `Game.update()` reads the flag only to clear
+  it — the auto-open transition has been removed.
 - Blurb is **math-safe**: the math quiz timer pauses while the modal is open;
   all other subjects are already untimed.
 - Blurb is **discoverable but not loud**: a small `[C] context` hint appears on
@@ -87,10 +89,9 @@ other field — only `(subject, topic)`.
 
 ```
 STATE_QUIZ --[C]-------> STATE_QUIZ_CONTEXT --[C | ESC | SPACE | RET]-> STATE_QUIZ
-            auto-open:
-            new (subject, topic)
-            with a blurb,
-            once per session
+            (manual only;
+             auto-open removed
+             2026-10-03)
 ```
 
 1. **Entry (manual).** In STATE_QUIZ, `K_c` is intercepted by
@@ -104,14 +105,15 @@ STATE_QUIZ --[C]-------> STATE_QUIZ_CONTEXT --[C | ESC | SPACE | RET]-> STATE_QU
    If no blurb exists, a message-log entry says
    `"No context available for this question."` and the state does not change.
 
-2. **Entry (auto, once per topic per session).** `_next_question` calls
-   `_check_context_auto_open`; when the drawn question's `(subject, topic)`
-   has a blurb AND is not in `_quiz_context_seen`, it stashes the pair into
-   `pending_context_auto_open`. The next tick of `Game.update()` reads the
-   flag, calls `mark_context_seen` + `pause_timer`, and flips the state to
-   `STATE_QUIZ_CONTEXT`. Running it from `update()` rather than at
-   `start_quiz` call-sites means every escalator rung + every mastered-tier
-   auto-pass picks it up for free.
+2. **Entry (auto) — REMOVED 2026-10-03.** The quiz_engine still computes a
+   `pending_context_auto_open` flag when `_next_question` sees a fresh
+   `(subject, topic)` with a blurb (the engine-side logic remains intact
+   and tested — see `test_context_blurbs.py`). But `Game.update()` no
+   longer transitions to `STATE_QUIZ_CONTEXT` on that flag; it just
+   clears it. Player preference: context must be a deliberate action, not
+   an interruption. If you want to restore auto-open, re-enable the four
+   lines in `Game.update()` that call `mark_context_seen` + `pause_timer`
+   + state-flip.
 
 3. **Draw.** The state dispatcher in `game_render.py` first calls
    `_draw_quiz()` (so the quiz panel sits beneath the modal), then

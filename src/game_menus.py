@@ -40,11 +40,13 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_cook_menu(self):
-        # Cooking is ONE list of multi-ingredient recipes (2026-06-07). The old
-        # "Single" solo-cook tab is gone: with basic_monster_stew deleted every
-        # recipe needs >=2 ingredient types, so it only duplicated this list and
-        # let you cook a dish from one anchor ingredient (bypassing its cost).
-        # Assorted Monster Jerky is EATEN (z), not cooked.
+        # Cooking is ONE flat list of every recipe the player can make
+        # right now, single-ingredient first (2026-10-03 restore). Prior
+        # state had a `len(set(ings)) < 2` filter that hid all 537
+        # single-ingredient recipes after the Single tab was removed in
+        # 2026-06-07 — a kid who harvested one prime cut had nothing to
+        # cook until they built up multiple ingredient types.
+        # Assorted Monster Jerky is still EATEN (z), not cooked.
         self.cook_menu_items = []
         self.cook_compound_recipes = get_available_compound_recipes(self.player.inventory)
         if not self.cook_compound_recipes:
