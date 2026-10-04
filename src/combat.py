@@ -864,7 +864,8 @@ def _damage_multiplier(damage_types: list[str], monster) -> float:
     return max(mults) if mults else 1.0
 
 
-def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
+def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
+                  ranged=None):
     """
     Start a math chain quiz for the player attacking a monster.
 
@@ -874,7 +875,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     Applies enchant_bonus, ammo damage_bonus, damage type multipliers, and stun chance on hit.
     ammo: optional Ammo item whose damage_bonus is added to base damage.
     """
-    weapon = player.ranged_weapon if ammo else player.weapon
+    # ``ranged`` says which weapon slot is attacking. It defaults to "is
+    # there ammo?" for old callers, but infinite-ammo weapons (slings) fire
+    # with ammo=None and must still be resolved as ranged.
+    is_ranged = bool(ammo) if ranged is None else bool(ranged)
+    weapon = player.ranged_weapon if is_ranged else player.weapon
 
     def _callback(result):
         chain = result.score
@@ -982,9 +987,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Ranged stat bonuses (chain combat v2). Per-hit additive on the base
         # BEFORE material/chain scaling. Bow/sling get STR + PER at /4;
         # crossbow gets PER only (it fires like a machine, arm strength doesn't
-        # help). Applies only to actual ranged shots (ammo present) so melee
+        # help). Applies only to actual ranged shots so melee
         # attacks are unaffected.
-        if ammo:
+        if is_ranged:
             _wc = getattr(weapon, 'weapon_class', '') if weapon else ''
             base += max(0, (player.PER - 10) // 4)
             if _wc != 'crossbow':
@@ -1174,7 +1179,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             # point above 10 adds 5% to damage. Ranged shots only (ammo present).
             # Per user 2026-05-30: this mechanic was declared in the template
             # but never wired — composite bows behaved identically to longbows.
-            if _pre_mech == 'str_bonus_range_7' and ammo:
+            if _pre_mech == 'str_bonus_range_7' and is_ranged:
                 mult *= 1.0 + max(0, (player.STR - 10) * 0.05)
 
             # AT-MAX-CHAIN damage multipliers
@@ -1253,7 +1258,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # crossbows double-dip on STR *and* PER, the persistent "ranged hits way
         # too hard" bug. (The composite_bow keeps its own intentional draw-weight
         # STR mechanic, str_bonus_range_7, applied separately to `mult`.)
-        str_factor = 1.0 if ammo else 1.0 + max(0, player.STR - 10) * 0.03
+        str_factor = 1.0 if is_ranged else 1.0 + max(0, player.STR - 10) * 0.03
 
         # Chain combat v2 (v2.14.0): when the player is in "bypass DR" mode
         # (blade_flow buff or chain-special one-shot flag), clamp dtype_mult
@@ -1380,7 +1385,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # *other* enemy when surrounded by 3 or more. Bug-bash fix aac:
         # gate to melee only (no `ammo`) and exclude the target monster
         # itself from the adjacency count.
-        if not ammo:
+        if not is_ranged:
             try:
                 from armor_procs import player_has_armor_proc as _pap
                 if _pap(player, 'cannae_encirclement'):
@@ -1406,7 +1411,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
 
         # Hippolyta girdle (amazon_charge): if armed (3+ straight-line moves),
         # next melee +50%. Consumed on hit.
-        if getattr(player, '_amazon_charge_armed', False) and not ammo:
+        if getattr(player, '_amazon_charge_armed', False) and not is_ranged:
             damage = int(damage * 1.50)
             player._amazon_charge_armed = False
             player._straight_line_steps = 0
@@ -1426,7 +1431,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # Bracers of Arjuna (gita_focus): first ranged attack per floor gets a
         # flat +50% damage. Chain combat v2 (v2.14.0): was "crits" via
         # crit_multiplier; retired to a straight 1.5x since crit is gone.
-        if ammo:
+        if is_ranged:
             try:
                 from armor_procs import consume_floor_charge
                 if consume_floor_charge(player, 'gita_focus'):
@@ -1691,7 +1696,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
         # visible monsters for fractional damage. The hundred-string
         # volley.
         _ma = getattr(weapon, 'multi_arrow_at_chain_5', None) if weapon else None
-        if _ma and ammo and actual > 0:
+        if _ma and is_ranged and actual > 0:
             _maxc_ma = weapon.max_chain_length or len(weapon.chain_multipliers)
             if chain >= _maxc_ma:
                 _ma_targets = int(_ma.get('targets', 3) or 3)

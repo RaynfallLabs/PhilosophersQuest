@@ -617,17 +617,14 @@ class CombatMixin:
         for kill-count quirks like Caesar, Kali, Boudicca, Leonidas, Battle Trance, etc.
         """
         self.level_mgr.monsters_killed += 1
-        # Curtana (engine wave 4): spare_kill_chance — the monster did NOT
-        # actually die. The combat-side flag _spared_this_attack tells us
-        # to swallow the kill notification, decrement the killed counter,
-        # and print the mercy line instead.
-        if getattr(self.player, '_spared_this_attack', False):
-            self.player._spared_this_attack = False
-            self.level_mgr.monsters_killed -= 1
-            self.add_message(
-                f"You spare the {monster.name} — Curtana's mercy. (+1 max HP)",
-                'success')
-            return
+        # Marker read by _process_collateral_kills so a monster handled here
+        # is not processed a second time by the post-attack sweep.
+        monster._kill_handled = True
+        # Curtana's spare is announced by the melee on_complete (the spared
+        # monster is alive, so this handler is never reached for it). The
+        # flag used to be consumed HERE, which meant it sat armed until the
+        # next real kill and swallowed that kill's loot and corpse instead.
+        self.player._spared_this_attack = False
         self.add_message(f"The {monster.name} is slain!", 'success')
         self._drop_treasure(monster)
 
@@ -1545,6 +1542,7 @@ class CombatMixin:
                     self.player._crossbow_skip_reloads = skip - 1
                 else:
                     self.player.status_effects['reloading'] = 2
+            self._process_collateral_kills(monster, _alive_before, chain)
             self._advance_turn()
 
         # Tablet of Destinies: allow quiz reroll if not used this floor.
@@ -1564,7 +1562,29 @@ class CombatMixin:
         self.player._combat_monsters_ref = self.monsters
         self.player._combat_pets_ref = self.pets
         self.player._combat_player_taken_damage = False
-        player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
+        _alive_before = {id(m) for m in self.monsters if m.alive}
+        # ranged=True explicitly: slings pass ammo=None (infinite ammo), and
+        # player_attack used to infer "ranged" from ammo alone, so a sling
+        # shot was resolved with the MELEE weapon's stats.
+        player_attack(self.player, monster, self.quiz_engine, on_complete,
+                      ammo=ammo_item, ranged=True)
+
+    def _process_collateral_kills(self, primary, alive_before: set,
+                                  chain: int = 0) -> None:
+        """Run kill handling for monsters OTHER than the target that died
+        during a player attack: chain-special AoE (glaive, axes, spear,
+        halberd, ...) and unique splashes (Mjolnir, Zulfiqar, Gandiva).
+
+        Those call take_damage() on bystanders deep inside combat.py and
+        nothing reported the deaths, so they gave no message, loot, corpse,
+        kill count, seal or boss story. ``alive_before`` is the set of
+        id()s alive when the quiz started, which keeps long-dead monsters
+        (they are never removed from self.monsters) out of the sweep.
+        """
+        for m in list(self.monsters):
+            if (m is not primary and not m.alive and id(m) in alive_before
+                    and not getattr(m, '_kill_handled', False)):
+                self._on_monster_killed(m, chain_score=chain)
 
     def _fire_strike_finisher(self, monster, chain: int, damage: int,
                               killed: bool) -> None:
@@ -1643,6 +1663,13 @@ class CombatMixin:
             self.state = STATE_PLAYER
             self.combat_target = None
             self._fire_strike_finisher(monster, chain, damage, killed)
+            # Curtana: the blow would have killed, but the Sword of Mercy
+            # left the foe alive at 1 HP.
+            if getattr(self.player, '_spared_this_attack', False):
+                self.player._spared_this_attack = False
+                self.add_message(
+                    f"You spare the {monster.name} — Curtana's mercy. (+1 max HP)",
+                    'success')
             # Tablet of Destinies: mark reroll as used this floor.
             # Chain-equip passive one_thousand_and_one consumes its per-floor charge when reroll fires.
             if getattr(self.quiz_engine, 'reroll_was_used', False):
@@ -1780,6 +1807,7 @@ class CombatMixin:
                             if m.alive and abs(m.x - monster.x) <= 1 and abs(m.y - monster.y) <= 1:
                                 m.add_effect('slowed', 3)
                         self.add_message("A wave of primordial stillness ripples outward.", 'info')
+            self._process_collateral_kills(monster, _alive_before, chain)
             self._advance_turn()
 
         # Tablet of Destinies: allow quiz reroll if not used this floor.
@@ -1804,6 +1832,7 @@ class CombatMixin:
         # (Fail-not) which needs to know if the player has been hurt yet.
         # Reset to False at the START of every melee combat.
         self.player._combat_player_taken_damage = False
+        _alive_before = {id(m) for m in self.monsters if m.alive}
         player_attack(self.player, monster, self.quiz_engine, on_complete)
 
     # ------------------------------------------------------------------
@@ -1937,6 +1966,10 @@ class CombatMixin:
                 _effects_before = set(self.player.status_effects.keys())
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
+                # Reflect / thorns damage can kill the attacker inside
+                # attack(); that death used to go unprocessed.
+                if not m.alive and not getattr(m, '_kill_handled', False):
+                    self._on_monster_killed(m)
 
                 # Anansi web cloak (story_thread): the first crit per floor that
                 # would deal >25% of max-HP is reduced to 1 damage. Threshold is

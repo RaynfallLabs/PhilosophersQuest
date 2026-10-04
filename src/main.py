@@ -1192,6 +1192,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
         )
 
+        # Curtana's mercy grants up to N max HP "per floor": the counter
+        # lives on the weapon and was never reset, making it a lifetime cap.
+        for _w in (self.player.weapon, self.player.ranged_weapon,
+                   *self.player.inventory):
+            if _w is not None and getattr(_w, '_spare_kill_floor_hp', 0):
+                _w._spare_kill_floor_hp = 0
+
         # Load saved or generate fresh
         saved = self.level_mgr.load(new_level)
         if saved:
@@ -2771,9 +2778,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if dungeon.is_walkable(nx, ny) and (nx, ny) != (self.player.x, self.player.y):
                     d.x, d.y = nx, ny
                     d.alive   = True
+                    d._kill_handled = False
                     return
         d.x, d.y = cx, cy
         d.alive   = True
+        d._kill_handled = False
 
     def _maybe_escalate_death(self):
         """Accelerate Death as player ascends: 50% -> 75% -> 100% -> 125% speed."""
@@ -5539,10 +5548,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if is_chain_equip(item) and getattr(item, 'achieved_tier', 0) > 0:
             revert_tier_bonuses(self.player, item)
         # Remove from the appropriate slot
-        if slot_name == 'weapon':
-            self.player.weapon = None
-        elif slot_name == 'ranged_weapon':
-            self.player.ranged_weapon = None
+        if slot_name in ('weapon', 'ranged_weapon'):
+            if slot_name == 'weapon':
+                self.player.weapon = None
+            else:
+                self.player.ranged_weapon = None
+            # Take the weapon's while-equipped effects off with it. Only the
+            # swap path inside _apply_equip did this, so a plain unequip left
+            # them behind and equip/unequip cycles stacked them (Hofud +2
+            # PER per cycle; Curtana's blessing surviving removal).
+            self.player._remove_weapon_passives(item)
+            _w_status = getattr(item, 'on_equip_status', '')
+            if _w_status:
+                self._remove_status_if_no_other_grants(_w_status)
         elif slot_name == 'shield':
             self.player.shield = None
         elif slot_name in ARMOR_SLOTS:

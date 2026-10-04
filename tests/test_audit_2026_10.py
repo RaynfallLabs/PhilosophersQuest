@@ -147,6 +147,74 @@ def test_w5_vidars_sandal_is_an_artifact():
     assert block.index('sandal_t =') < block.index('self.ground_items.remove(scrap)')
 
 
+# ---- B6: slings resolve as ranged even with ammo=None ---------------------
+
+def test_b6_ranged_flag_selects_the_ranged_weapon():
+    """Structure-level guard: player_attack picks the weapon from an
+    explicit ranged flag, and the ranged caller passes it."""
+    src = (_ROOT / 'src' / 'combat.py').read_text(encoding='utf-8')
+    head = src[src.index('def player_attack('):src.index('def _callback(result)')]
+    assert 'is_ranged = bool(ammo) if ranged is None else bool(ranged)' in head
+    assert 'weapon = player.ranged_weapon if is_ranged else player.weapon' in head
+    # The caller for ranged fire passes the flag explicitly.
+    gc = (_ROOT / 'src' / 'game_combat.py').read_text(encoding='utf-8')
+    assert 'ammo=ammo_item, ranged=True' in gc
+
+
+# ---- B4 / W10: collateral and reflect kills are processed ------------------
+
+def test_b4_collateral_kills_are_swept_after_an_attack():
+    from types import SimpleNamespace
+    from game_combat import CombatMixin
+
+    handled = []
+
+    class _G(CombatMixin):
+        def _on_monster_killed(self, monster, **kw):
+            monster._kill_handled = True
+            handled.append(monster.name)
+
+    g = _G()
+    primary = SimpleNamespace(name='primary', alive=False)
+    bystander = SimpleNamespace(name='bystander', alive=False)
+    long_dead = SimpleNamespace(name='long dead', alive=False)
+    survivor = SimpleNamespace(name='survivor', alive=True)
+    already = SimpleNamespace(name='already handled', alive=False,
+                              _kill_handled=True)
+    g.monsters = [primary, bystander, long_dead, survivor, already]
+    alive_before = {id(primary), id(bystander), id(survivor), id(already)}
+    g._process_collateral_kills(primary, alive_before, chain=5)
+    assert handled == ['bystander']
+
+
+def test_b5_curtana_flag_is_not_consumed_by_the_kill_handler():
+    src = (_ROOT / 'src' / 'game_combat.py').read_text(encoding='utf-8')
+    block = src[src.index('    def _on_monster_killed('):]
+    block = block[:block.index('self._drop_treasure(monster)')]
+    assert "Curtana's mercy" not in block, \
+        "the mercy line belongs to the melee on_complete, not the kill handler"
+    assert 'monster._kill_handled = True' in block
+
+
+# ---- B8: unequipping a weapon removes its while-equipped effects -----------
+
+def test_b8_unequip_reverses_weapon_passives():
+    from player import Player
+    from types import SimpleNamespace
+    p = Player()
+    base_per = p.PER
+    hofud = SimpleNamespace(vigilance_aware=True, cursed_lineage=False,
+                            prophecy_blade=False)
+    for _ in range(3):
+        p._apply_weapon_passives(hofud)
+        p._remove_weapon_passives(hofud)
+    assert p.PER == base_per
+    src = (_ROOT / 'src' / 'main.py').read_text(encoding='utf-8')
+    block = src[src.index('    def _unequip_slot('):]
+    block = block[:block.index("elif slot_name == 'shield':")]
+    assert 'self.player._remove_weapon_passives(item)' in block
+
+
 # ---- B3: a cursed wielded weapon must not eat the new weapon ---------------
 
 def test_b3_equip_checks_current_weapon_before_removing_new_one():
