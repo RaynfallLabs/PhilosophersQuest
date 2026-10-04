@@ -39,6 +39,9 @@ _CONTEXTS_DIR  = data_path('data', 'question_contexts')
 _CONTEXT_SUBJECTS = (
     'philosophy', 'history', 'economics', 'ai', 'theology',
     'geography', 'science', 'trivia', 'animal', 'cooking',
+    # math: class-level method cards keyed by skill class, not ladder
+    # blurbs (see tools/balance/math_topics.py).
+    'math',
 )
 
 _CROSS_GAME_RECENT_CAP = 30          # questions remembered per (subject, tier)

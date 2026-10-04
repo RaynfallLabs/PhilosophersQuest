@@ -85,6 +85,14 @@ def _build_q(tier: int, stem: str, answer: str, wrongs: list[str], context: str 
     }
     if context:
         q['context'] = context
+        # Skill class for the in-quiz context card (2026-10-04). Derived
+        # from the tip so a rebuild keeps every question's topic; raises
+        # if a new tip has no rule in math_topics.TOPIC_RULES.
+        try:
+            from tools.balance.math_topics import topic_for_context
+        except ImportError:
+            from math_topics import topic_for_context
+        q['topic'] = topic_for_context(context)
     return q
 
 

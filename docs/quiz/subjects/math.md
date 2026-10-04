@@ -222,6 +222,15 @@ Every math question carries `_meta.strategy` naming the named pedagogical move i
 
 See `docs/quiz/math_strategies.md` for the full taxonomy and the distractor-design rule (distractors = answers from skipping the strategy / adjacent-but-wrong concepts).
 
+### Skill-class `topic` + in-quiz method cards (added 2026-10-04)
+
+The shipped bank (`data/questions/math.json`) carries a `topic` on every question: one of 27 skill classes (Addition Facts, Times Tables, Order of Operations, Percent of a Number, Two-Step Equations, ...). The class is derived from the question's one-line `context` tip by the ordered rules in `tools/balance/math_topics.py`; an unmatched tip is a hard error.
+
+Each class has one short method card in `data/question_contexts/math.json`, opened in a fight with **C** (the timer pauses, as in every other subject). A card states the skill, the mental trick, and one worked example whose numbers sit outside the bank's range, so it never spells out a question from its own class. `tests/test_math_contexts.py` enforces coverage, length and that leak rule.
+
+- Rebuild: `build_math_bank_v3.py` stamps `topic` automatically via `_build_q`.
+- Re-stamp an existing bank in place: `python -m tools.balance.math_topics` (`--dry-run --samples` to preview).
+
 ## 10. Length-parity exemption
 
 Math is exempted from the strict 1.30 length-parity ratio (the philosophy gate). For math, parallel **form** matters (all numeric or all verbal), not parallel **length** — the wrong-operation distractor `68` for the answer `8` is pedagogically valuable even at ratio 8.5.
