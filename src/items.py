@@ -1224,6 +1224,72 @@ def load_items(item_class: str) -> list:
 
 
 # ------------------------------------------------------------------
+# Scripted-only items (quest / story rewards)
+# ------------------------------------------------------------------
+# Some items must only ever come from their scripted source: quest pieces
+# (Philosopher's Stone, Gleipnir, the demon seals), shrine rewards (Aegis
+# of Athena, Sigurd's Shovel) and NPC / boss gifts. Random pools used to
+# filter on min_level alone, and many of these have min_level 0 or 1, so
+# they leaked into chests, merchant stock, Divine Intercession and floor
+# drops. Every random pool now asks is_random_loot().
+
+_SCRIPTED_ONLY_CLASSES = ('weapon', 'armor', 'shield', 'accessory',
+                          'artifact', 'wand', 'scroll', 'spellbook')
+_scripted_only_cache: frozenset | None = None
+
+
+def _has_spawn_weight(defn: dict) -> bool:
+    if float(defn.get('peak_weight') or 0.0) > 0:
+        return True
+    fw = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight')) or {}
+    try:
+        return any(float(w) > 0 for w in fw.values())
+    except (AttributeError, TypeError, ValueError):
+        return False
+
+
+def scripted_only_ids() -> frozenset:
+    """Ids of items that must never appear in a random loot pool.
+
+    An item is scripted-only when ANY of these hold:
+      * it carries a ``special_properties.plot_role`` other than
+        ``wonder_relic`` (quest components, seals, promise items);
+      * its ``min_level`` is 9999 or more (explicitly locked);
+      * it has no positive spawn weight of either kind (``peak_weight`` /
+        ``floor_spawn_weight``) -- the data's way of saying "placed by
+        script, never rolled".
+    """
+    global _scripted_only_cache
+    if _scripted_only_cache is None:
+        locked = set()
+        for cls_name in _SCRIPTED_ONLY_CLASSES:
+            path = os.path.join(_DATA_DIR, f"{cls_name}.json")
+            try:
+                with open(path, encoding='utf-8') as f:
+                    raw = json.load(f)
+            except (OSError, ValueError):
+                continue
+            for item_id, defn in raw.items():
+                if not isinstance(defn, dict):
+                    continue
+                role = (defn.get('special_properties') or {}).get('plot_role')
+                if role and role != 'wonder_relic':
+                    locked.add(item_id)
+                elif int(defn.get('min_level') or 0) >= 9999:
+                    locked.add(item_id)
+                elif not _has_spawn_weight(defn):
+                    locked.add(item_id)
+        _scripted_only_cache = frozenset(locked)
+    return _scripted_only_cache
+
+
+def is_random_loot(item) -> bool:
+    """True if ``item`` may be handed out by a random pool (floor drops,
+    chests, merchant stock, random rewards)."""
+    return getattr(item, 'id', None) not in scripted_only_ids()
+
+
+# ------------------------------------------------------------------
 # Accessory appearance pool (one-cosmetic-per-item, 2026-06-07)
 # ------------------------------------------------------------------
 # Cosmetic ring/amulet groups were collapsed to ONE functional definition each

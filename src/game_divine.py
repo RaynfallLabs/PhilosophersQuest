@@ -1195,7 +1195,12 @@ class DivineMixin:
             templates = load_items('artifact')
         except (FileNotFoundError, Exception):
             templates = []
-        pool = [t for t in templates if not _in_play(getattr(t, 'id', ''))]
+        # Only freely-obtainable relics: this used to pick uniformly from
+        # ALL of artifact.json, so about 1 prayer in 28 handed over the
+        # Philosopher's Stone, Gleipnir or a demon seal.
+        from items import is_random_loot
+        pool = [t for t in templates
+                if is_random_loot(t) and not _in_play(getattr(t, 'id', ''))]
         if pool:
             tpl = random.choice(pool)
             inst = copy_at(tpl, px, py)

@@ -1425,8 +1425,14 @@ def _floor_band(level: int) -> str:
 # floor 50 fired a T3 shock trap -- wrong).
 
 
-def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
-    """Spawn items, containers, and lockpicks in dungeon rooms."""
+def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
+                structures: bool = True) -> list:
+    """Spawn items, containers, and lockpicks in dungeon rooms.
+
+    ``structures=False`` spawns loot only and skips every floor-level
+    structure (mystery altars, merchant, special rooms, traps, quest
+    shrines / altars) -- used by the hidden-chamber loot pass.
+    """
     from items import (load_items, Container, pick_random_weapon_for_floor, pick_random_armor_for_floor,
                        pick_random_shield_for_floor)
 
@@ -1647,6 +1653,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
             sphere_room = rng.choice(rooms[1:])
             _place_one([sphere], sphere_room, dungeon, ground_items, rng)
 
+    # Everything below builds floor-level STRUCTURES (mystery altars, the
+    # merchant, special rooms, vault gold, traps, quest shrines and altars).
+    # They must be built exactly once per floor. The hidden-chamber loot
+    # pass calls spawn_items a second time for one room and passes
+    # structures=False to stop here.
+    if not structures:
+        return ground_items
+
     # -- Mystery altars --------------------------------------------------------
     try:
         from mystery_system import spawn_mystery_for_level
@@ -1788,23 +1802,32 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
                             ground_items.append(inst)
 
         elif room_type == 'barracks':
-            # 2-3 weapon/armor items
-            barracks_items: list = []
-            for cls_name in ('weapon', 'armor'):
-                try:
-                    barracks_items += [i for i in load_items(cls_name) if i.min_level <= level]
-                except Exception:
-                    pass
-            count = rng.randint(2, 3)
-            for _ in range(count):
-                if barracks_items:
-                    _place_one(barracks_items, special_room, dungeon, ground_items, rng)
+            # 2-3 ordinary weapon/armor pieces, composed for this floor.
+            # (weapon.json / armor.json now hold only named uniques, so
+            # drawing from them here handed out Excalibur-class items and
+            # quest rewards at many times the intended unique drop rate.)
+            for _ in range(rng.randint(2, 3)):
+                if rng.random() < 0.5:
+                    gear = pick_random_weapon_for_floor(level, rng)
+                else:
+                    gear = pick_random_armor_for_floor(
+                        level, rng, slot=rng.choice(_ARMOR_SLOTS_FOR_DROP))
+                if gear is not None:
+                    _place_one([gear], special_room, dungeon, ground_items, rng)
 
         elif room_type == 'swamp':
-            # Replace ~40% of inner tiles with WATER; spawn food on remaining floor
+            # Replace ~40% of inner tiles with WATER; spawn food on remaining
+            # floor. Water blocks movement, so undo the flood if it severs
+            # the route from the up stairs to the down stairs.
+            _swamp_snapshot = _snapshot_tiles(dungeon.tiles)
             for tx, ty in special_room.inner_tiles():
                 if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.40:
                     dungeon.tiles[ty][tx] = WATER
+            _sh, _sw = len(dungeon.tiles), len(dungeon.tiles[0])
+            _s_up, _s_down = _find_stair_tiles(dungeon.tiles, _sw, _sh)
+            if _s_up and _s_down and not _bfs_reaches(
+                    dungeon.tiles, _sw, _sh, _s_up, _s_down):
+                _restore_tiles(dungeon.tiles, _swamp_snapshot)
             # Food on remaining floor tiles
             if eligible_food:
                 for tx, ty in special_room.inner_tiles():
@@ -2274,6 +2297,9 @@ def _item_eligible_weighted(templates: list, level: int,
             return 0.0
         return pw * bell
 
+    from items import is_random_loot
+    templates = [t for t in templates if is_random_loot(t)]
+
     by_type: dict[str, list] = defaultdict(list)
     for item in templates:
         if item.min_level > level:
@@ -2447,6 +2473,29 @@ def _weighted_choice(pool: dict, rng: random.Random) -> str:
 # Fenrir quest room generators
 # ---------------------------------------------------------------------------
 
+def _structure_rooms(rooms):
+    """Rooms a quest structure may go in: not the start room and not the
+    stairs-down room (rooms[-1]), falling back gracefully on tiny maps."""
+    pool = [r for r in rooms[1:] if r is not rooms[-1]]
+    return pool or rooms[1:] or list(rooms)
+
+
+def _structure_anchor(dungeon, room):
+    """The tile a quest structure is built on: the room centre if it is
+    plain FLOOR, else the nearest FLOOR tile inside the room. Structures
+    used to stamp the centre blindly and could overwrite the down stairs."""
+    cx, cy = room.center
+    if dungeon.in_bounds(cx, cy) and dungeon.tiles[cy][cx] == FLOOR:
+        return cx, cy
+    best = None
+    for x, y in room.inner_tiles():
+        if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR:
+            d = abs(x - cx) + abs(y - cy)
+            if best is None or d < best[0]:
+                best = (d, x, y)
+    return (best[1], best[2]) if best else (cx, cy)
+
+
 def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
                           comp_id, comp_name, comp_color):
     """Create a themed room containing one Gleipnir component with a light challenge."""
@@ -2459,10 +2508,12 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
     })
     component.identified = True
 
-    # Pick a non-start room
-    candidates = rooms[1:] if len(rooms) > 1 else rooms
-    room = rng.choice(candidates)
-    cx, cy = room.center
+    # Pick a non-start, non-stairs room and anchor on a plain FLOOR tile.
+    room = rng.choice(_structure_rooms(rooms))
+    cx, cy = _structure_anchor(dungeon, room)
+    # Lava / water rings can wall off the stairs; snapshot so a ring that
+    # breaks the route down can be undone (the component still spawns).
+    _ring_snapshot = _snapshot_tiles(dungeon.tiles)
 
     # Each component has a themed challenge
     if comp_id == 'cats_footstep':
@@ -2529,6 +2580,12 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
                     'color': (160, 160, 160), 'revealed': False
                 }
 
+    if comp_id in ('mountain_root', 'fish_breath'):
+        _h, _w = len(dungeon.tiles), len(dungeon.tiles[0])
+        _up, _down = _find_stair_tiles(dungeon.tiles, _w, _h)
+        if _up and _down and not _bfs_reaches(dungeon.tiles, _w, _h, _up, _down):
+            _restore_tiles(dungeon.tiles, _ring_snapshot)
+
     # Default placement at room center (used for all except womans_beard secret door)
     if comp_id != 'womans_beard':
         component.x, component.y = cx, cy
@@ -2542,10 +2599,10 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
 
 def _create_dwarven_forge(dungeon, rooms, ground_items, rng):
     """Create a Dwarven Forge room on L76 where Gleipnir can be assembled."""
-    # Pick a room away from start
-    candidates = rooms[2:] if len(rooms) > 2 else rooms
+    # Pick a room away from start (and never the stairs-down room)
+    candidates = _structure_rooms(rooms[1:] if len(rooms) > 2 else rooms)
     room = rng.choice(candidates)
-    cx, cy = room.center
+    cx, cy = _structure_anchor(dungeon, room)
 
     # Place the forge tile (reuse ALTAR visually, store position for detection)
     dungeon.tiles[cy][cx] = ALTAR
@@ -2554,10 +2611,8 @@ def _create_dwarven_forge(dungeon, rooms, ground_items, rng):
 
 def _create_vidar_altar(dungeon, rooms, rng):
     """Create Vidar's Altar on L79 where leather scraps can be assembled."""
-    # Pick a non-start room
-    candidates = rooms[1:] if len(rooms) > 1 else rooms
-    room = rng.choice(candidates)
-    cx, cy = room.center
+    room = rng.choice(_structure_rooms(rooms))
+    cx, cy = _structure_anchor(dungeon, room)
 
     # Place altar tile and store position
     dungeon.tiles[cy][cx] = ALTAR
@@ -2568,9 +2623,10 @@ def _create_judgment_altar(dungeon, rooms, rng):
     """Create the Altar of the Last Judgment on L99 — a massive set of scales.
     Mechanic implementation comes later; for now, just place the tile and store metadata."""
     # Pick a large room (prefer largest non-start room)
-    candidates = sorted(rooms[1:], key=lambda r: r.width * r.height, reverse=True)
+    candidates = sorted(_structure_rooms(rooms),
+                        key=lambda r: r.width * r.height, reverse=True)
     room = candidates[0] if candidates else rooms[0]
-    cx, cy = room.center
+    cx, cy = _structure_anchor(dungeon, room)
 
     # Place altar tile and store position
     dungeon.tiles[cy][cx] = ALTAR

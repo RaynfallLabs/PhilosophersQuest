@@ -493,18 +493,6 @@ def _level_100_abyss():
         _hline(tiles, rcx, center_x, rcy)
         _vline(tiles, rcy, center_y, center_x)
 
-    # Altar ring around the boss chamber (6 altars for holy fire prayers)
-    for ax, ay in [
-        (center_x - 8, center_y),
-        (center_x + 8, center_y),
-        (center_x, center_y - 8),
-        (center_x, center_y + 8),
-        (center_x - 6, center_y - 6),
-        (center_x + 6, center_y - 6),
-    ]:
-        if 0 <= ay < _H and 0 <= ax < _W:
-            tiles[ay][ax] = ALTAR
-
     # Boss arena -- the Void Throne
     boss_room = _carve_room(tiles, center_x, center_y, 10, 7)
     rooms.append(boss_room)
@@ -518,6 +506,28 @@ def _level_100_abyss():
     tiles[boss_room.y + boss_room.height][boss_room.center[0]] = DOOR
     tiles[boss_room.center[1]][boss_room.x - 1] = DOOR
     tiles[boss_room.center[1]][boss_room.x + boss_room.width] = DOOR
+
+    # Altar ring around the boss chamber (6 altars for holy fire prayers).
+    # Placed AFTER the arena and its doors are carved: placed before, the
+    # room carve and the doors overwrote all six and level 100 shipped with
+    # no altar at all, so the Abaddon holy-fire prayer could not be used.
+    # Each altar goes on the nearest plain FLOOR tile to its intended spot.
+    for ax, ay in [
+        (center_x - 8, center_y),
+        (center_x + 8, center_y),
+        (center_x, center_y - 8),
+        (center_x, center_y + 8),
+        (center_x - 6, center_y - 6),
+        (center_x + 6, center_y - 6),
+    ]:
+        spots = sorted(
+            ((abs(dx) + abs(dy), ax + dx, ay + dy)
+             for dx in range(-3, 4) for dy in range(-3, 4)),
+        )
+        for _dist, sx, sy in spots:
+            if 0 <= sy < _H and 0 <= sx < _W and tiles[sy][sx] == FLOOR:
+                tiles[sy][sx] = ALTAR
+                break
 
     # No STAIRS_DOWN -- this is the final level; Philosopher's Stone is spawned here
     # by LevelManager._place_stone(). We add an exit to the entry for tactical retreat.

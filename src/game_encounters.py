@@ -872,10 +872,11 @@ class EncountersMixin:
         if not cls_name:
             return None
         try:
+            from items import is_random_loot
             candidates = []
             for item in load_items(cls_name):
                 ml = getattr(item, 'min_level', 1)
-                if ml <= self.dungeon_level and ml < 9999:
+                if ml <= self.dungeon_level and ml < 9999 and is_random_loot(item):
                     candidates.append(item)
             if candidates:
                 template = random.choice(candidates)

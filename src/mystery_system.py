@@ -611,14 +611,15 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
     if len(rooms) < 3:
         return None
 
-    from items import load_items
+    from items import load_items, is_random_loot
     import copy as _copy
 
-    # Build item pool from multiple categories
+    # Build item pool from multiple categories (never quest / scripted items)
     stock_items = []
     for cat in ('potion', 'scroll', 'weapon', 'armor', 'shield', 'accessory', 'wand', 'food', 'ammo'):
         try:
-            pool = [i for i in load_items(cat) if getattr(i, 'min_level', 1) <= level]
+            pool = [i for i in load_items(cat)
+                    if getattr(i, 'min_level', 1) <= level and is_random_loot(i)]
             if pool:
                 stock_items.extend(rng.choices(pool, k=min(2, len(pool))))
         except Exception:

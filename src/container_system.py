@@ -284,7 +284,7 @@ def _build_common_pool(template: dict, level_cap: int) -> list:
 
 def _build_unique_pool(template: dict, level_cap: int) -> list:
     """Build a pool of UNIQUE items appropriate to this template's category mix."""
-    from items import load_items
+    from items import load_items, is_random_loot
     # Map loot-table categories to the unique item classes that could fit.
     # Gear categories => weapon/armor/shield uniques. Magic => wand/scroll/spellbook.
     cat_classes: dict[str, list[str]] = {
@@ -315,6 +315,9 @@ def _build_unique_pool(template: dict, level_cap: int) -> list:
                 if not getattr(it, 'is_unique', False):
                     continue
                 if it.min_level > level_cap:
+                    continue
+                # Quest pieces and scripted rewards never come from chests.
+                if not is_random_loot(it):
                     continue
                 # Defensive: never let a monster-derived ingredient (prime/
                 # trophy) reach chest loot via the unique path either.
