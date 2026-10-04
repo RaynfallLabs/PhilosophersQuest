@@ -1,6 +1,6 @@
 # Conventions — Cross-Cutting Rules
 
-**v2.18.0** (shipped 2026-10-02)
+**v2.22.0** (shipped 2026-10-03)
 
 Short, dense, actionable. If you only read one doc, read this one.
 Everything here is enforced by code, by player experience, or by the
@@ -24,15 +24,25 @@ failure.
 
 **Player-facing surface:**
 - Threshold quizzes render the subtitle `(any wrong = fail)` in red
-  under the chain counter — `game_render._draw_quiz` L2170-2189.
+  **under the counter in the quiz-modal header** — one place only,
+  painted at `game_render._draw_quiz` L2354-2376 (the subtitle string
+  itself is at L2360). This is the single source of truth for the
+  warning.
 - Every item card / lore dossier / bestiary string that prints a
   threshold value uses `_threshold_line(label, n)` from
-  `game_render.py:53` → **"Equip: 3 correct (any wrong = fail)"**. Do
-  not hand-roll a threshold line.
+  `game_render.py:53` → **"Equip: 3 correct"**. The parenthetical
+  `(any wrong = fail)` is NOT part of this helper (v2.22.0 Phase 1 pulled
+  it out — see §12 of [ui.md](ui.md)). Do not hand-roll a threshold
+  line, and do not re-add the parenthetical here — the quiz subtitle
+  already carries it where the player is actively taking the quiz.
 
-**If you forget this rule:** players read "3 correct" and lose
-expensive items to a quiz they thought allowed misses. See
-SYSTEMS_AUDIT §8 P2 for the 11 call sites that already migrated.
+**If you forget this rule:** players still see "any wrong = fail"
+on-screen because the quiz subtitle paints every time a threshold
+quiz is active. The *inspector* lies-by-omission that pre-v2.22
+item cards carried was fixed by moving the warning to the point of
+use rather than duplicating it per card. See SYSTEMS_AUDIT §8 P2 for
+the original 11 call sites (migrated 2026-10-02, de-duplicated
+2026-10-03).
 
 ---
 

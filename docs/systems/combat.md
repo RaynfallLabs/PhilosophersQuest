@@ -1,5 +1,5 @@
 # Combat (Chain v2)
-**Status:** v2.18.0 (shipped 2026-10-02)
+**Status:** v2.22.0 (shipped 2026-10-03)
 **Code:** `src/combat.py` (2186 lines), `src/game_combat.py` (CombatMixin, 2567 lines), `src/chain_passives.py`, `src/hero_specials.py`, `src/monster.py::take_damage`
 **Data:** `data/items/weapon.json` (96 uniques), `data/materials/weapons/*.json` (54 materials), `data/monsters.json` (resistances / weaknesses / tags / is_boss / dragon_scales)
 **Related docs:** [weapons_and_materials](weapons_and_materials.md) · [monsters](monsters.md) · [items](items.md) · [status_effects](status_effects.md) · [magic](magic.md) · [progression](progression.md) · design history: [`docs/design/chain_combat_v2.md`](../design/chain_combat_v2.md), [`docs/design/weapon_specials_v2_14.md`](../design/weapon_specials_v2_14.md), [`docs/design/uniques_v2_14.md`](../design/uniques_v2_14.md)

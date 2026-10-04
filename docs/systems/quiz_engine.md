@@ -1,6 +1,6 @@
 # Quiz Engine
 
-**Status:** v2.18.0 (shipped 2026-10-02)
+**Status:** v2.22.0 (shipped 2026-10-03)
 **Code:** `src/quiz_engine.py` (680 lines)
 **Data:** `data/questions/<subject>.json` (12 subjects); `<save_dir>/quiz_history.json` (cross-game recency)
 **Related docs:** [status_effects](status_effects.md), [combat](combat.md), [save_bonus](save_bonus.md), [identify_v3](identify_v3.md), [food_system](food_system.md), [magic](magic.md), [karma_prayer](karma_prayer.md), [containers_lockpick](containers_lockpick.md)
@@ -84,6 +84,7 @@ Each file in `data/questions/<subject>.json` is a flat list of:
 | `auto_passed`             | int               | Rounds auto-passed via mastery                    |
 | `just_mastered`           | tuple \| None     | One-shot UI flag — (subject, tier) just mastered  |
 | `celebrating`             | bool              | Showing MAX CHAIN banner before `_end`            |
+| `_quiz_scroll_offset`     | int               | Pixel offset for the shrink-then-scroll quiz layout (reset in `start_quiz` next to `session_id`; mutated by `game_input._quiz_input` PgUp/PgDn + `[`/`]`); clamped by `_quiz_layout` in `game_render` |
 
 ### Persistent deck state
 - `_decks: dict[(subject, tier) -> list[question]]` — shuffled pool for each key.
@@ -305,6 +306,7 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - **2026-08-06** — Identify v3: one philosophy question at `id_tier`, no masteries, binary outcome, Stunned 10t on fail. Harvest v4 and Lockpick v3 shipped alongside — all three "resource-consumed-on-attempt" systems use threshold-1.
 - **2026-08-11** — Science-bank "test-it-yourself" voice baked into the T1-T3 scaffolding — further argument for keeping science untimed.
 - **2026-10-02 (v2.18.0)** — Audit sync wave: 11 threshold-copy strings (item cards + lore dossiers) flagged for "any wrong = fail" clarification (SYSTEMS_AUDIT.md §8 P2); character-sheet timer line flagged as lie (§8 P1); `_draw_help_screen` flagged for missing zero-tolerance / chain-v2 / math-only timing explanations (§8 P3).
+- **2026-10-03 (v2.22.0)** — UI beautification Phase 1 pulled the `(any wrong = fail)` tail OUT of `_threshold_line` so the warning now paints only in the quiz-modal subtitle (`_draw_quiz` L2360). The 12 inspector / lore sites still call `_threshold_line` but render short-form `"Equip: 3 correct"`; the warning stays visible to the player at the point of use. Phase 2 added `_quiz_scroll_offset` (reset in `start_quiz`, mutated by PgUp/PgDn and `[`/`]` in `game_input._quiz_input`) driving the shrink-then-scroll quiz layout via `game_render._quiz_layout`.
 
 ## Testing
 - `tests/test_quiz_engine.py` (570 lines, ~30 tests) — covers QuizResult shape, threshold success/zero-tolerance, chain scoring, max_chain celebration + end, escalator tier climb + T5 cap, escalator chain tier climb, timer base_seconds + extras + legacy fallback + modifier, timer expiry failure flow, empty bank graceful fail, malformed JSON handling, deck tier isolation + persistence across sessions, answer no-op outside ASKING, case-exact whitespace-insensitive compare, `start_quiz` accepting QuizMode or str, invalid-mode raise, active-property lifecycle, `timed` default true/false for math/non-math + explicit overrides, untimed-quiz tick-no-op, untimed-chain ends via wrong-answer not timer.
@@ -314,7 +316,11 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 
 ## Known rough edges
 From SYSTEMS_AUDIT.md:
-- **§8 P2 (11 strings)** — item cards / lore dossiers say "Equip threshold: N correct" / "Quiz Threshold: N correct answers" without the "any wrong = fail" cue. Player reads "3 correct" and reasonably expects wrongs to be permitted. Needs copy sweep.
+- **§8 P2 (11 strings)** — ADDRESSED in v2.18 (helper sweep) and
+  further unified in v2.22.0 Phase 1 (the warning now paints only in
+  the quiz-modal subtitle at `_draw_quiz` L2360, not duplicated on
+  every item card). Call sites still use `_threshold_line` but render
+  the short form `"Equip: 3 correct"`.
 - **§8 P1** — `ui.py::Sidebar._derived` shows "Picks 0" every frame (dead row — `lockpick_charges` is never incremented post-v3). Delete or wire.
 - **§8 P1** — `_draw_character_sheet L1032-1038` asserts a per-subject timer gradient ("Math 16s → Economics 46s") and an INT-magic timer bonus; both are fiction under math-only timing.
 - **§8 P3** — `_draw_help_screen` has zero mention of zero-tolerance, chain v2 milestone ranks, math-only timing, identify v3 / cook v2 / lockpick v3 / harvest v4. New players can't learn these from `?`.

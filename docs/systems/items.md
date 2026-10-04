@@ -271,9 +271,12 @@ lives entirely in the JSON `slot` field.
 All equip quizzes run in **threshold mode** with `threshold =
 item.equip_threshold`. Zero-tolerance applies: **any wrong answer =
 fail**. The `_threshold_line` helper (`src/game_render.py:53`) prints
-every threshold line in the format `"<Label>: N correct (any wrong =
-fail)"` so item cards, lore screens, and bestiary panels all state the
-rule explicitly.
+every threshold line in the format `"<Label>: N correct"`. The
+`(any wrong = fail)` warning is NOT carried by this helper after
+v2.22.0 Phase 1 — it lives in a single place, the quiz-modal subtitle
+(`game_render._draw_quiz` L2360), so the player sees it where they
+actually need it (while taking the quiz) rather than repeated on
+every item card.
 
 | Item class | Subject | Entry point | Code |
 |------------|---------|-------------|------|
@@ -300,10 +303,15 @@ self.quiz_engine.start_quiz(
 )
 ```
 
-Threshold copy sweep (post-v2.18.0): the 12 threshold strings on item
-cards, lore screens, and bestiary panels all now flow through
-`_threshold_line`, so every one of them ends in `(any wrong = fail)`.
-Previously the kit panel said "Equip: 3 correct" and lied by omission.
+Threshold copy sweep (post-v2.22.0): the 12 threshold strings on item
+cards, lore screens, and bestiary panels all flow through
+`_threshold_line`, which emits the short form `"Equip: 3 correct"`.
+The `(any wrong = fail)` warning is painted ONCE under the quiz-modal
+counter (`_draw_quiz` L2360) rather than duplicated on every item
+card. The pre-v2.22 state — where every inspector carried the
+parenthetical — was removed in Phase 1 of the UI beautification pass
+(2026-10-03). The 2026-10-02 v2.18 sweep that first unified the
+helper is what made this one-line delete possible.
 
 ### Chain-equip (legendary uniques)
 

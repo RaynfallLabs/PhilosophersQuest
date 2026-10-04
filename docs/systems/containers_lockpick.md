@@ -441,4 +441,6 @@ scroll).
 - [progression](progression.md) — Job's Endurance (distinct trap
   types), Jack-of-All-Picks and the lockpick quirks.
 - [ui](ui.md) — chest card threshold-copy; `_threshold_line` prints
-  "Pick: 1 correct (any wrong = fail)" on the lore panel.
+  "Pick: 1 correct" on the lore panel. The `(any wrong = fail)`
+  warning is painted ONCE under the quiz-modal counter
+  (`_draw_quiz` L2360), not duplicated per card (v2.22.0 Phase 1).

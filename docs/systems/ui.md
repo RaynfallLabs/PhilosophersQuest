@@ -1,6 +1,6 @@
 # UI — Rendering, Menus, HUD, Help, Welcome
 
-**v2.18.0** (shipped 2026-10-02)
+**v2.22.0** (shipped 2026-10-03)
 
 Covers everything the player sees after the dungeon tiles are blitted:
 sidebar HUD, modal menus, quiz panel, combat HUD, help screen, kit /
@@ -9,8 +9,10 @@ and the welcome / name-entry flow.
 
 **Sources:**
 - `src/game_render.py` — `RenderMixin`, 8,444 LOC; every `_draw_*`
-  method, the `_threshold_line` helper, the two `_identify_status_label`
-  gates, and the full help-screen System-Rules card
+  method, the `_threshold_line` helper (short-form, parenthetical-free
+  after v2.22.0), the two `_identify_status_label` gates, the
+  `_quiz_layout` and `_combat_hud_row_rects` helpers, and the full
+  help-screen System-Rules card
 - `src/ui.py` — `Sidebar`, `MessageLog`, left-rail / right-rail
   composition, effect chips, powers rows, in-sight rows
 - `src/hud_context.py` — pure data helpers (`active_power_rows`,
@@ -22,8 +24,10 @@ and the welcome / name-entry flow.
 - `src/fantasy_ui.py` — `FP` palette, font loader, chrome primitives
   (`draw_panel`, `draw_header_bar`, `draw_choice_button`,
   `draw_filigree_bar`, `draw_menu`)
-- `src/panel.py` — `PanelBuilder`, the modal frame contract
-- `src/text_layout.py` — `wrap_lines`, `truncate_label`, `fit_columns`
+- `src/panel.py` — `PanelBuilder`, the modal frame contract, incl.
+  `footer_regions` (Phase 2) for LEFT/CENTER/RIGHT split
+- `src/text_layout.py` — `wrap_lines`, `truncate_label`, `fit_columns`,
+  plus `tab_strip_window` (Phase 2) for tab-strip overflow
 - `src/welcome_screen.py` — title vortex, name entry, leaderboard,
   `SECRET_BUILDS` dict
 
@@ -68,7 +72,7 @@ Rendering is a projection of state; input and action are the setters.
 - `SIDEBAR_W = 330` (right rail), `LEFT_SIDEBAR_W = 248` (left rail).
 - `GAME_W = WINDOW_W - SIDEBAR_W` — the main play area width (left
   rail does NOT reduce `GAME_W`; it overlays the far-left slice).
-- `VERSION = "2.18.0"` — read by welcome screen, debug overlay, and
+- `VERSION = "2.22.0"` — read by welcome screen, debug overlay, and
   the save-meta files.
 
 The composite screen has three regions:
@@ -524,13 +528,29 @@ not here.)
 
 ---
 
-## 11. Quiz panel (`_draw_quiz` L2071-2306)
+## 11. Quiz panel (`_draw_quiz` L2277+)
 
 **Modal geometry:** 1060px wide max, centered. Chrome: header
-(42px) → tier pips + timer bar (28px) → question (variable, capped
-to half-viewport minus `_reserved = 240 + (110 if combat)`) → 2×2
+(42px) → tier pips + timer bar (28px) → question (variable) → 2×2
 choice-card grid → status feedback (36px) → combat HUD (110px, if
 chain-mode combat).
+
+**Layout driver (v2.22.0 Phase 2):** all geometry comes from
+`_quiz_layout(qe, viewport_w, viewport_h)` — see §12b.1. It picks a
+font tier (base 26/20 → shrunk 22/17 → smallest 18/14), falls back to
+scrolling the question + choices block when even the smallest tier
+still overflows the viewport, and returns pre-sized rects so
+`_draw_quiz` is a straight blit pass. PgUp/PgDn and `[`/`]` scroll
+the content via `game_input._quiz_input` writing to
+`qe._quiz_scroll_offset`.
+
+**Combat HUD font hierarchy (v2.22.0 Phase 1):** the HUD inside the
+quiz panel now paints target HP + damage preview at `font_lg` with
+HP-colored numbers (green > 50%, warning yellow 25–50%, danger red
+< 25%), while the damage-type label, future-chain projection,
+weapon name, and SPACE hint drop to `font_sm` + `FP.FADED_TEXT`.
+This is a font-size + color pass only — no mechanics changed. See
+[combat.md §UI — combat HUD](combat.md#ui--combat-hud-inside-the-quiz-modal).
 
 **Header right-side:**
 - CHAIN modes render `Chain x{N} — {rank_name}` with font upgraded to
@@ -538,8 +558,10 @@ chain-mode combat).
   via `_chain_rank`.
 - THRESHOLD / ESCALATOR_THRESHOLD modes render `{correct_count} /
   {required}` **AND the "any wrong = fail" subtitle** below it
-  (DANGER_TEXT, L2170-2189). This is the player-facing zero-tolerance
-  cue.
+  (DANGER_TEXT, `_draw_quiz` L2354-2376; the subtitle string itself
+  is at L2360). This is the player-facing zero-tolerance cue and, as
+  of v2.22.0 Phase 1, the sole on-screen location of that warning —
+  item cards and lore dossiers no longer carry it.
 - Header `right_reserve` sized to the wider of counter / subtitle so
   the quiz title never overlaps.
 
@@ -575,10 +597,27 @@ target):
 ## 12. Threshold copy — the 12 sites that use `_threshold_line`
 
 `game_render._threshold_line(label, n)` at line 53 is the single
-source of truth for threshold-line copy. Format:
-`"{label}: {n} correct (any wrong = fail)"`.
+source of truth for threshold-line copy. Format (v2.22.0):
+`"{label}: {n} correct"`.
 
-**Call sites (post-v2.18 unification):**
+**Why just the short form?** v2.18 unified 12 hand-rolled threshold
+strings behind this helper and added `(any wrong = fail)` to every
+one. Phase 1 of v2.22.0 (2026-10-03) then pulled the parenthetical
+back out of the helper itself: it was duplicated across 12+ inspector
+/ kit / lore / dossier sites, and the player already sees it when
+they take the quiz. The quiz modal subtitle (`_draw_quiz` L2360)
+paints `"(any wrong = fail)"` in `DANGER_TEXT` directly under the
+`{correct_count} / {required}` counter, so the zero-tolerance rule
+is still visible — just at the point of use, not stamped on every
+card.
+
+This is not a lie-by-omission regression. The warning IS visible —
+it moved from the inspector (where the player is reading, not yet
+quizzing) to the modal subtitle (where the player is actively being
+tested). The inspector regains ~1 line per threshold item and the
+duplicated red-text noise is gone from a dozen non-quiz surfaces.
+
+**Call sites (v2.22.0, all short form):**
 
 | Line | Context | Call |
 |---|---|---|
@@ -595,13 +634,97 @@ source of truth for threshold-line copy. Format:
 | 7305 | `_draw_lore_dossier_screen` Scroll | `Quiz` label |
 | 7344 | `_draw_lore_dossier_screen` Spellbook | `Quiz` label |
 
-**Rule:** if you add a new threshold-displaying item class or a new
-item card, call `_threshold_line` — never `f"Equip: {n} correct"`
-hand-rolled. The lie-by-omission regression is a sticky one.
+**Rules (post-v2.22.0):**
 
-Subject labels: use the subject the quiz actually uses — `Science`
-for wands, `Grammar` for scrolls / spellbooks, `Equip` for armor /
-shield / accessory (which doesn't fire a subject-specific quiz).
+1. If you add a new threshold-displaying item class or a new item
+   card, call `_threshold_line` — never `f"Equip: {n} correct"`
+   hand-rolled.
+2. Do **not** re-add `(any wrong = fail)` to the helper or to any
+   caller. The quiz subtitle (`_draw_quiz` L2360) is the sole
+   paint-site; a second copy means duplicated red text.
+3. Subject labels: use the subject the quiz actually uses —
+   `Science` for wands, `Grammar` for scrolls / spellbooks, `Equip`
+   for armor / shield / accessory (which doesn't fire a
+   subject-specific quiz).
+
+---
+
+## 12b. Phase 2 layout helpers (v2.22.0)
+
+Four pure(-ish) helpers landed with Phase 2 to pre-compute geometry
+so draw code stops hard-coding rects and tests can assert overlap /
+truncation without rendering.
+
+### 12b.1 `game_render._quiz_layout(qe, viewport_w, viewport_h)`
+
+Pre-computes the quiz modal layout and returns a dict carrying every
+rect / font / scroll flag `_draw_quiz` needs. The strategy is
+**shrink-then-scroll**:
+
+| Tier | Question font | Choice font | When used |
+|---|---|---|---|
+| 0 | `body` 26 (`font_md`) | `body` 20 (`font_sm`) | Content fits viewport at base size |
+| 1 | `body` 22 | `body` 17 | Base overflows; one step down fits |
+| 2 | `body` 18 | `body` 14 | Still over; smallest sizes + scrolling kicks in |
+
+If tier 2 is still over-tall, the panel height is clamped to the
+viewport (minus 20 px margins), the header / timer / status / combat
+HUD stay pinned, and ONLY the question + 2×2 choice-card block
+scrolls. The function stores `qe._quiz_scroll_offset` (clamped) on
+the engine; input handlers mutate the same attribute.
+
+**Return keys:** `panel_rect`, `header_rect`, `timer_rect`,
+`question_rect`, `choice_rects` (list[Rect] of 4), `status_rect`,
+`scroll_rect`, `q_lines`, `q_line_h`, `c_wrapped`, `c_line_h`,
+`ch_height`, `question_font`, `choice_font`, `scrollable` (bool),
+`scroll_offset`, `scroll_max`, `content_h`, `visible_scroll_h`,
+`display_choices`, plus geometry fields `bw/bx/by/bh/cw/PAD/GAP`,
+`header_h/timer_h/status_h/combat_h/section_gap`, `is_combat`,
+`font_tier`.
+
+### 12b.2 `game_render._combat_hud_row_rects(bx, strip_y, bw, …)`
+
+Extracted so tests can assert each of the four combat-HUD rows is
+disjoint from the others. Rows: target name + HP bar (primary),
+damage preview (primary), damage-type / projection row (secondary),
+weapon-name + SPACE hint row (secondary). Separation is per the
+Phase 1 font-hierarchy pass — see §Quiz panel below and the UI note
+in [combat.md](combat.md).
+
+### 12b.3 `text_layout.tab_strip_window(widths, active, available_width, gap=6, arrow_w=18)`
+
+Pure math — no pygame. Picks the scroll window for a tab strip whose
+cumulative width overflows its container. Guarantees the active tab
+is in the visible slice; prefers centring when both arrows will show.
+
+Returns `{overflow, start, end, show_left_arrow, show_right_arrow}`.
+When `overflow` is False, `start=0` / `end=len(widths)` and both
+arrows are hidden. Used by `game_render._draw_action_tabs` (L3212)
+and the two decision/picker menu variants.
+
+### 12b.4 `PanelBuilder.footer_regions(right_status_w=0)`
+
+Splits the modal footer into **LEFT** (scroll indicator count, sized
+to the current `_scroll_pos` label), **CENTER** (hint, truncated with
+an ellipsis via `truncate_label` so it never collides with LEFT or
+RIGHT), and **RIGHT** (reserved per the caller's requested width).
+12 px gutter between regions. Returns `{left: Rect, center: Rect,
+right: Rect}`.
+
+Before this helper, hints centred across the full footer could
+overlap the scroll count on narrow panels.
+
+### 12b.5 `ui.MessageLog.line_height()` + zero-row guard
+
+`MessageLog._font.get_height() + MessageLog.LEADING` (LEADING = 6
+px). Public so tests can assert the stride responds to font changes.
+The draw path now bails out BEFORE slicing `all_lines[-max_lines:]`
+when `available_h < line_h` — previously a pane shorter than one
+text line computed `max_lines = 0` and `all_lines[-0:]` silently
+selected the entire log instead of nothing. Wrapping also delegates
+to the shared `text_layout.wrap_lines`, so oversized tokens (long
+magic-item names, URLs) break by character rather than overflowing
+the right edge.
 
 ---
 
@@ -745,6 +868,14 @@ the paired "lore + mechanics" presentation.
 - Wand: effect, power, charges, `_threshold_line("Science", n)`
 - Scroll: effect, power, `_threshold_line("Grammar", n)`
 - Spellbook: teaches, mp_cost, `_threshold_line("Grammar", n)`
+
+**v2.22.0 Phase 1 trim:** the inspector / lore mechanic blocks also
+dropped five rows that duplicated info already visible elsewhere —
+`Appearance`, `Status`, `Type`, `Hidden`, and `Next action` — plus
+added a `* Equipped` indicator so the equipped-vs-pack distinction
+pops without a secondary row. Threshold-line copy lost its
+`(any wrong = fail)` tail at the same time; the warning now paints
+only in the quiz modal subtitle.
 
 **v2.15.0 UI-rot fix** (preserved here): the Weapon branch dropped
 the stale "Perfect Chain Crit" label — crit was retired in v2.14.0
@@ -1010,7 +1141,10 @@ Documented for traceability. Fixes land in follow-up commits.
   this version — `player.lockpick_charges` was always 0 and never
   incremented.
 - **Character sheet timer line** — fixed in this version.
-- **11 threshold-copy strings** — unified under `_threshold_line`.
+- **11 threshold-copy strings** — unified under `_threshold_line` in
+  v2.18; the parenthetical `(any wrong = fail)` tail was pulled out
+  of the helper in v2.22.0 Phase 1 and now paints only in the quiz
+  modal subtitle (`_draw_quiz` L2360).
 - **Help screen System Rules card** — added in v2.18, removed 2026-10-03 (unrequested clutter, truncated Knowledge group).
 - **Discoveries `MASTERED` → `CLEARED`** — renamed.
 - **`MASTERY!` toast → `TIER N CLEARED`** — renamed.
@@ -1022,7 +1156,19 @@ Documented for traceability. Fixes land in follow-up commits.
 - **Effect chip overflow** — added `+N more` hint; IN SIGHT panel
   still clips silently.
 - **Quiz "1 wrong = fail" cue** — added as subtitle in the header
-  right slot (L2170-2189) for threshold modes.
+  right slot (`_draw_quiz` L2360) for threshold modes. v2.22.0 Phase 1
+  made this the SOLE on-screen location of the warning (the 12
+  inspector / lore duplicates were dropped).
+- **Sidebar layout (v2.22.0 Phase 3)** — `ATTRIBUTES` was reshaped
+  from 3-col × 2-row into 2-col × 3-row with values right-aligned per
+  cell and a 2 px safety gap, so 3-digit stats stop crashing into the
+  column divider. `DERIVED` lost its duplicate `Depth` metric; the
+  CHARACTER identity row's `Floor N` is the sole dungeon-level
+  readout. `MessageLog` switched to font-metric-driven stride
+  (`get_height() + LEADING`, LEADING = 6), gained a zero-row guard
+  that prevents `all_lines[-0:]` from selecting the entire log on a
+  one-pixel-tall pane, and routes wrapping through
+  `text_layout.wrap_lines` so oversized tokens break by character.
 
 ---
 
