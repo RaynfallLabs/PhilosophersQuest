@@ -473,7 +473,7 @@ class Monster:
             except ImportError:
                 pass
             actual = player.take_damage(dmg, atk_type)
-            return actual, gaze_msg + f" The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"
+            return actual, gaze_msg + f" The {self.name} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
 
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
         if self.rage_stacks >= 3 and len(self.attacks) > 1:
@@ -524,7 +524,7 @@ class Monster:
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
         if is_breath and player.has_effect('in_pit'):
-            return 0, f"The {self.name}'s {atk['name'].replace('_', ' ')} passes harmlessly over your pit!"
+            return 0, f"The {self.name}'s {atk['name'].replace('_', ' ').lower()} passes harmlessly over your pit!"
 
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
@@ -668,7 +668,7 @@ class Monster:
 
         actual = player.take_damage(dmg, atk_type)
 
-        msg = f"The {self.name} hits you with {atk['name'].replace('_', ' ')} for {actual} damage!"
+        msg = f"The {self.name} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
         if charged:
             msg = f"The {self.name} CHARGES! " + msg
         if mimic_strike:
@@ -1599,7 +1599,7 @@ class Monster:
                 dmg = max(1, int(dmg * 0.70))
             actual = player.take_damage(dmg, atk.get('type', 'physical'))
             total += actual
-            parts.append(f"{atk['name'].replace('_', ' ')} {actual}")
+            parts.append(f"{atk['name'].replace('_', ' ').lower()} {actual}")
             # On-hit effect of this blow (save-gated). At most one effect
             # lands per flurry so a five-attack boss cannot stack a stun,
             # a freeze and a slow in a single turn.

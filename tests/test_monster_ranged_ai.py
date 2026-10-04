@@ -70,6 +70,6 @@ def test_archers_fire_their_bows():
 def test_explicit_ranged_flag_is_honored():
     """A flag-only ranged attack (no keyword in its name) still counts -- Pale
     Master's 'death_wave'."""
-    pm = next(m for m in _MON.values() if m['name'] == 'Pale Master')
-    dw = next(a for a in pm['attacks'] if a['name'] == 'death_wave')
+    pm = next(m for m in _MON.values() if m['name'].lower() == 'pale master')
+    dw = next(a for a in pm['attacks'] if a['name'].lower().replace('_', ' ') == 'death wave')
     assert dw.get('ranged') is True and _is_ranged_attack(dw)

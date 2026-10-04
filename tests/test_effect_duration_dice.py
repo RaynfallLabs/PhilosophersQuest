@@ -54,7 +54,7 @@ def test_bat_uses_dice_duration():
               encoding='utf-8') as f:
         m = json.load(f)
     bat = m['bat']
-    bite = next(a for a in bat['attacks'] if a['name'] == 'bite')
+    bite = next(a for a in bat['attacks'] if a['name'].lower() == 'bite')
     assert bite['effect'] == 'confused'
     assert bite['effect_chance'] == 0.10, \
         'bat confuse chance must be 0.10 (was 0.25 — too brutal at pf 1)'

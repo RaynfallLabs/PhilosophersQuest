@@ -44,7 +44,7 @@ def test_sling_chain5_is_max_chain_payoff():
 def test_ancient_dragon_frost_breath_nerf():
     monsters = _load('data/monsters.json')
     ad = monsters['ancient_dragon']
-    fb = next(a for a in ad['attacks'] if a.get('name') == 'frost_breath')
+    fb = next(a for a in ad['attacks'] if (a.get('name') or '').lower().replace('_', ' ') == 'frost breath')
     assert fb['effect_chance'] == 0.5
     assert fb['effect_duration'] == '1d6'
 

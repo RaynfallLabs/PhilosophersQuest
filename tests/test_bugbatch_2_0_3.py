@@ -225,7 +225,7 @@ def test_apply_wand_effect_magic_missile_is_single_bolt_v2_11_0():
 # blocked by an intervening monster (same as the player's ranged attacks).
 _SINGLE_TARGET_PROJECTILES = {
     'cyclops': 'boulder hurl',
-    'hydra': 'acid spit',
+    'hydra': 'venom spit',
     'fire_giant': 'magma hurl',
     'nidhogg_brood': 'shadow spit',
     'skeletal_giant': 'bone_hurl',
@@ -255,7 +255,7 @@ def test_single_target_projectiles_are_not_piercing():
     for mid, atk_name in _SINGLE_TARGET_PROJECTILES.items():
         m = d.get(mid)
         assert m, f"monster {mid} missing from monsters.json"
-        atk = next((a for a in m.get('attacks', []) if a.get('name') == atk_name), None)
+        atk = next((a for a in m.get('attacks', []) if (a.get('name') or '').lower().replace('_', ' ') == atk_name.lower().replace('_', ' ')), None)
         assert atk, f"{mid} has no attack named {atk_name!r}"
         if atk.get('piercing') is True:
             bad.append(f"{mid}:{atk_name}")
@@ -270,7 +270,7 @@ def test_aoe_beams_still_pierce():
         m = d.get(mid)
         if not m:
             continue
-        atk = next((a for a in m.get('attacks', []) if a.get('name') == atk_name), None)
+        atk = next((a for a in m.get('attacks', []) if (a.get('name') or '').lower().replace('_', ' ') == atk_name.lower().replace('_', ' ')), None)
         if atk and atk.get('piercing') is not True:
             bad.append(f"{mid}:{atk_name}")
     assert not bad, f"AoE beams that lost their piercing flag: {bad}"
@@ -281,7 +281,7 @@ def test_skeletal_archer_arrow_not_piercing():
     sa = d.get('skeletal_archer')
     assert sa, "skeletal_archer missing"
     assert sa.get('ai_pattern') == 'ranged'
-    arrow = next((a for a in sa.get('attacks', []) if 'arrow' in a.get('name', '')), None)
+    arrow = next((a for a in sa.get('attacks', []) if 'arrow' in a.get('name', '').lower()), None)
     assert arrow, "skeletal_archer has no arrow attack"
     assert arrow.get('piercing') is not True
 
