@@ -3097,23 +3097,13 @@ class MagicMixin:
                         'uncursed': "no clinging aura"}.get(_buc, "an unclear aura")
                 self.add_message(
                     f"It is the {item.name}. You sense {aura}.", 'success')
-                # Phase 3 of CHAIN_EFFECTS_PLAN (2026-10-03): fire the
-                # identify-success orb as a celebratory flourish. The
-                # orb animates in the top-overlay phase so it paints
-                # after the quiz modal has closed. Anchor at screen
-                # centre -- the item's inventory slot isn't rendered on
-                # the map, and the centre keeps the "aha" moment
-                # visible wherever the player is looking.
-                rt = getattr(self, 'effects_runtime', None)
-                if rt is not None:
-                    try:
-                        cx = self.screen.get_width() // 2
-                        cy = self.screen.get_height() // 2
-                    except Exception:
-                        cx, cy = None, None
-                    rt.fire('identify_success_orb',
-                            {'anchor_x': cx, 'anchor_y': cy})
                 # The whole story arrives at once — push the lore screen.
+                # Lore IS the celebration here (full-panel reveal of
+                # the identified item). The orb flourish from Phase 3
+                # was firing simultaneously, which just competed with
+                # the lore popup; removed 2026-10-04 after playtest.
+                # The identify_orb handler stays registered for future
+                # non-lore effects; just not wired to identify success.
                 if item.lore:
                     self._lore_subject = item
                     self.state = STATE_LORE

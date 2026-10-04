@@ -6579,21 +6579,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"You understand the {corpse.monster_name} now.",
                     'success'
                 )
-                # Phase 3 of CHAIN_EFFECTS_PLAN (2026-10-03): fire the
-                # identify-success orb as a celebratory flourish. The
-                # orb is the first non-chain effect on the pluggable
-                # EffectsRuntime -- validates the general pattern.
-                # Anchor at screen centre; the corpse's map coords
-                # would be covered by the lore screen anyway.
-                rt = getattr(self, 'effects_runtime', None)
-                if rt is not None:
-                    try:
-                        cx = self.screen.get_width() // 2
-                        cy = self.screen.get_height() // 2
-                    except Exception:
-                        cx, cy = None, None
-                    rt.fire('identify_success_orb',
-                            {'anchor_x': cx, 'anchor_y': cy})
+                # Orb fire from Phase 3 of CHAIN_EFFECTS_PLAN was removed
+                # 2026-10-04 after playtest: it animated on top of the
+                # lore screen, which is itself the "aha" celebration.
+                # The identify_orb handler stays registered for future
+                # non-lore effects.
             else:
                 self.add_message(
                     f"You study the {corpse.monster_name} but its nature eludes you.",

@@ -71,6 +71,11 @@ class QuizEngine:
         # still get distinct ids. Public, read-only; see CHAIN_EFFECTS_PLAN
         # Phase 0 (2026-10-03).
         self.session_id: int = 0
+        # Per-quiz scroll offset for the pre-computed quiz layout
+        # (`_quiz_layout` in game_render.py). Reset at `start_quiz` so each
+        # new quiz starts at the top; bumped by `_quiz_input` on PgUp/PgDn.
+        # Phase 2 beautification (2026-10-04).
+        self._quiz_scroll_offset: int = 0
 
         # Persistent shuffle-decks: keyed by (subject, tier).
         # Each deck is walked in order across *all* quiz sessions for that subject/tier.
@@ -212,6 +217,11 @@ class QuizEngine:
         # aborted quiz (empty bank) still advances the counter and the next
         # quiz is distinguishable from this one for downstream effect/UI code.
         self.session_id += 1
+        # Phase 2 beautification (2026-10-04): per-quiz scroll offset for the
+        # pre-computed quiz layout (`_quiz_layout` in game_render.py). Reset
+        # here so each new quiz always starts at the top; PgUp/PgDn + `[`/`]`
+        # bump it in `_quiz_input` when the layout flags `scrollable=True`.
+        self._quiz_scroll_offset = 0
         self._celebrate_on_max = celebrate_on_max
 
         if isinstance(mode, str):

@@ -51,14 +51,16 @@ from game_states import (
 
 
 def _threshold_line(label: str, n) -> str:
-    """Zero-tolerance threshold copy shared by kit + lore + bestiary panels.
+    """Threshold copy shared by kit + lore + bestiary panels.
 
-    Every threshold-mode action fails on the first wrong answer, so the copy
-    MUST tell the player that up front — an "Equip threshold: 3 correct"
-    line lies by omission. Callers pass their own label ("Equip", "Quiz",
-    "Grammar", …); the shape is uniform.
+    Phase 1 beautification (2026-10-03): the "(any wrong = fail)" tail used
+    to live here, but it was duplicated across 12+ inspector / card / lore
+    sites. The quiz-modal subtitle (``src/game_render.py:2205``) is now the
+    SOLE place the warning is drawn, where the player is actively taking the
+    quiz. Callers pass their own label ("Equip", "Quiz", "Grammar", ...);
+    the shape is uniform.
     """
-    return f"{label}: {n} correct (any wrong = fail)"
+    return f"{label}: {n} correct"
 
 
 def _identify_status_label(id_level: int) -> str:
@@ -2088,6 +2090,190 @@ class RenderMixin:
                 return name, color
         return '', (230, 230, 230)
 
+    # ------------------------------------------------------------------
+    # Quiz modal layout (Phase 2 beautification, 2026-10-04)
+    # ------------------------------------------------------------------
+
+    def _quiz_layout(self, qe, viewport_w: int | None = None,
+                     viewport_h: int | None = None) -> dict:
+        """Pre-compute the quiz modal layout — shrink-then-scroll.
+
+        Measures the full content block (header + timer + question + four
+        choice cards + status + optional combat HUD) and picks the first
+        strategy that fits:
+          (1) **base fonts** (``self.font_md`` / ``self.font_sm``) if the
+              content already fits inside the viewport,
+          (2) **shrunk fonts** (one step down for question + choices)
+              if slightly over-tall,
+          (3) **smallest fonts + scrolling** if the content is still too
+              tall. Only the question + choices block scrolls; header,
+              counter, timer, status and combat HUD stay pinned.
+
+        Returns a dict carrying the pre-measured rects, chosen fonts, wrapped
+        text, and scroll flags. ``_draw_quiz`` is the sole caller; the shape
+        of this dict is a private contract between the two.
+        """
+        is_combat = (self.combat_target is not None and qe.mode == QuizMode.CHAIN)
+        vw = viewport_w if viewport_w is not None else layout.GAME_W
+        vh = viewport_h if viewport_h is not None else layout.WINDOW_H
+
+        # -- Horizontal geometry (font-independent) --------------------
+        bw = min(1060, vw - 40)
+        PAD = 24
+        GAP = 14
+        KEY_W = 68
+        cw = (bw - PAD * 2 - GAP) // 2
+        c_text_w = cw - KEY_W - 8
+
+        # Fixed chrome heights (header + timer + status + combat HUD are
+        # measured off ``get_height`` of the fonts they actually use, so
+        # font-size changes elsewhere don't push them out of their rows).
+        header_h = max(42, self.font_md.get_height() + 14)
+        timer_h  = max(28, self.font_sm.get_height() + 8)
+        status_h = max(36, self.font_sm.get_height() + 14)
+        combat_h = max(110, 4 * self.font_sm.get_height() + 32) if is_combat else 0
+        section_gap = 10
+
+        q_text = qe.current_question.get('question', '')
+        choices = qe.current_question.get('choices', [])
+        if qe.confused_order and len(qe.confused_order) == len(choices):
+            display_choices = [choices[i] for i in qe.confused_order]
+        else:
+            display_choices = choices
+
+        # -- Candidate font tiers (base, mid, small) -------------------
+        # ``self.font_md`` is get_font('body', 26); ``self.font_sm`` is
+        # get_font('body', 20). The shrink tiers step down by ~4 px each.
+        from fantasy_ui import get_font as _gf
+        base_q = self.font_md
+        base_c = self.font_sm
+        tiers = [
+            (base_q,            base_c),
+            (_gf('body', 22),   _gf('body', 17)),
+            (_gf('body', 18),   _gf('body', 14)),
+        ]
+
+        # -- Measure a candidate tier ----------------------------------
+        def _measure(q_font, c_font):
+            q_lines = self._wrap_text(q_text, q_font, bw - PAD * 2)
+            q_line_h = q_font.get_height() + 4
+            q_height = len(q_lines) * q_line_h
+            c_line_h = c_font.get_height() + 3
+            c_wrapped = [self._wrap_text(str(ch), c_font, c_text_w)
+                         for ch in display_choices]
+            max_c_lines = max((len(w) for w in c_wrapped), default=1)
+            ch_height = max(52, max_c_lines * c_line_h + 20)
+            scrollable_h = q_height + section_gap * 2 + ch_height * 2 + GAP
+            total_h = (header_h + timer_h + section_gap + scrollable_h
+                       + status_h + section_gap + combat_h + PAD)
+            return {
+                'q_lines': q_lines, 'q_line_h': q_line_h, 'q_height': q_height,
+                'c_wrapped': c_wrapped, 'c_line_h': c_line_h,
+                'ch_height': ch_height, 'scrollable_h': scrollable_h,
+                'total_h': total_h,
+                'q_font': q_font, 'c_font': c_font,
+            }
+
+        # Viewport cap. Panel is centered with a 20 px margin top/bottom.
+        max_panel_h = vh - 40
+
+        measurement = None
+        used_tier = 0
+        for i, (qf, cf) in enumerate(tiers):
+            measurement = _measure(qf, cf)
+            used_tier = i
+            if measurement['total_h'] <= max_panel_h:
+                break
+
+        scrollable = measurement['total_h'] > max_panel_h
+        # When scrolling, cap the scrollable_h so the panel exactly fills
+        # the viewport minus margins; everything else is pinned.
+        if scrollable:
+            # Panel height becomes viewport cap; derive the visible slice
+            # the scrollable region gets.
+            bh = max_panel_h
+            fixed_h = (header_h + timer_h + section_gap + status_h
+                       + section_gap + combat_h + PAD)
+            visible_scroll_h = max(60, bh - fixed_h)
+        else:
+            bh = measurement['total_h']
+            visible_scroll_h = measurement['scrollable_h']
+
+        bx = (vw - bw) // 2
+        by = max(20, (vh - bh) // 2)
+        panel_rect = pygame.Rect(bx, by, bw, bh)
+
+        header_rect = pygame.Rect(bx, by, bw, header_h)
+        timer_rect  = pygame.Rect(bx + PAD, by + header_h + 6,
+                                  bw - PAD * 2, 14)
+
+        q_y = by + header_h + timer_h + section_gap
+        question_rect = pygame.Rect(bx + PAD, q_y, bw - PAD * 2,
+                                    measurement['q_height'])
+        choices_top = q_y + measurement['q_height'] + section_gap * 2
+        choice_rects = []
+        for i in range(4):
+            col = i % 2
+            row = i // 2
+            cx_ = bx + PAD + col * (cw + GAP)
+            cy_ = choices_top + row * (measurement['ch_height'] + GAP)
+            choice_rects.append(pygame.Rect(cx_, cy_, cw, measurement['ch_height']))
+
+        # The scroll region bounds the question + 2 rows of choices.
+        scroll_rect = pygame.Rect(bx + PAD,
+                                  by + header_h + timer_h + section_gap,
+                                  bw - PAD * 2,
+                                  visible_scroll_h)
+
+        status_rect = pygame.Rect(bx + PAD,
+                                  by + bh - PAD - combat_h - status_h,
+                                  bw - PAD * 2, status_h)
+        if scrollable:
+            # Re-anchor the status rect right below the scroll area so the
+            # non-scrolling tail stays glued to the panel bottom.
+            status_rect = pygame.Rect(
+                bx + PAD,
+                scroll_rect.bottom + section_gap,
+                bw - PAD * 2, status_h,
+            )
+
+        # Clamp scroll offset to what the content actually allows.
+        content_h = measurement['scrollable_h']
+        scroll_max = max(0, content_h - visible_scroll_h)
+        scroll_offset = max(0, min(getattr(qe, '_quiz_scroll_offset', 0),
+                                   scroll_max))
+        qe._quiz_scroll_offset = scroll_offset
+
+        return {
+            'panel_rect': panel_rect,
+            'header_rect': header_rect,
+            'timer_rect': timer_rect,
+            'question_rect': question_rect,
+            'choice_rects': choice_rects,
+            'status_rect': status_rect,
+            'scroll_rect': scroll_rect,
+            'q_lines': measurement['q_lines'],
+            'q_line_h': measurement['q_line_h'],
+            'c_wrapped': measurement['c_wrapped'],
+            'c_line_h': measurement['c_line_h'],
+            'ch_height': measurement['ch_height'],
+            'question_font': measurement['q_font'],
+            'choice_font': measurement['c_font'],
+            'scrollable': scrollable,
+            'scroll_offset': scroll_offset,
+            'scroll_max': scroll_max,
+            'content_h': content_h,
+            'visible_scroll_h': visible_scroll_h,
+            'display_choices': display_choices,
+            'bw': bw, 'bx': bx, 'by': by, 'bh': bh,
+            'cw': cw, 'PAD': PAD, 'GAP': GAP,
+            'header_h': header_h, 'timer_h': timer_h,
+            'status_h': status_h, 'combat_h': combat_h,
+            'section_gap': section_gap,
+            'is_combat': is_combat,
+            'font_tier': used_tier,
+        }
+
     def _draw_quiz(self):
         qe = self.quiz_engine
         if not qe.current_question:
@@ -2101,8 +2287,7 @@ class RenderMixin:
         # ``effects_runtime.draw_top_overlay`` at the end of render().
         # ``_celebrate_on_max`` stays wired in QuizEngine as an escape
         # hatch; no current caller opts in.
-        is_combat = (self.combat_target is not None and qe.mode == QuizMode.CHAIN)
-        accent    = self._SUBJECT_COLOR.get(qe.subject, (160, 130, 255))
+        accent     = self._SUBJECT_COLOR.get(qe.subject, (160, 130, 255))
         accent_dim = tuple(max(0, v - 90) for v in accent)
 
         # -- Overlay ----------------------------------------------------
@@ -2110,61 +2295,31 @@ class RenderMixin:
         overlay.fill((0, 0, 0, 190))
         self.screen.blit(overlay, (0, 0))
 
-        # -- Modal geometry ---------------------------------------------
-        bw = min(1060, layout.GAME_W - 40)
-        PAD = 24
-
-        # Question text (wrapped) -- calculate height first. Cap line count
-        # so a pathologically long question can't push the panel past the
-        # viewport. The cap leaves room for header + timer + 4 choice cards
-        # + status + (combat HUD if active) and clamps to roughly half the
-        # viewport height.
-        q_font    = self.font_md
-        q_text    = qe.current_question.get('question', '')
-        q_lines   = self._wrap_text(q_text, q_font, bw - PAD * 2)
-        q_line_h  = q_font.get_height() + 4
-        # Available vertical room for the question block alone
-        _reserved = 240 + (110 if is_combat else 0)  # chrome + cards + status
-        _q_cap = max(2, (layout.WINDOW_H - _reserved) // q_line_h)
-        if len(q_lines) > _q_cap:
-            # Truncate with an ellipsis marker on the last visible line
-            q_lines = q_lines[:_q_cap - 1] + [q_lines[_q_cap - 1] + ' …']
-        q_height  = len(q_lines) * q_line_h
-
-        # Choice button layout
-        choices = qe.current_question.get('choices', [])
-        if qe.confused_order and len(qe.confused_order) == len(choices):
-            display_choices = [choices[i] for i in qe.confused_order]
-        else:
-            display_choices = choices
-
-        c_font   = self.font_sm
-        c_line_h = c_font.get_height() + 3
-        KEY_W    = 68         # width of [1] key hint area -- must be wider than the rendered badge
-        GAP      = 14         # gap between the two choice columns
-        cw       = (bw - PAD * 2 - GAP) // 2   # each choice card width
-        c_text_w = cw - KEY_W - 8               # wrappable text area per card
-        # pre-wrap all choice texts
-        c_wrapped = [self._wrap_text(str(ch), c_font, c_text_w) for ch in display_choices]
-        max_c_lines = max((len(w) for w in c_wrapped), default=1)
-        ch_height = max(52, max_c_lines * c_line_h + 20)  # card height
-
-        # Fixed section heights
-        HEADER_H = 42
-        TIMER_H  = 28
-        STATUS_H = 36
-        COMBAT_H = 110 if is_combat else 0
-        SECTION_GAP = 10
-
-        bh = (HEADER_H + TIMER_H + SECTION_GAP
-              + q_height + SECTION_GAP * 2
-              + ch_height * 2 + GAP          # two rows of choices
-              + STATUS_H + SECTION_GAP
-              + COMBAT_H + PAD)
-
-        bx = (layout.GAME_W - bw) // 2
-        by = max(20, (layout.WINDOW_H - bh) // 2)
-        panel_rect = pygame.Rect(bx, by, bw, bh)
+        # -- Pre-computed layout (Phase 2 beautification, 2026-10-04) --
+        # ``_quiz_layout`` measures the full content block and either keeps
+        # the base font sizes, shrinks the question + choice fonts by one
+        # step, or enables scrolling on the question/choices region as a
+        # last resort. All rects + fonts come back pre-measured.
+        L = self._quiz_layout(qe)
+        is_combat   = L['is_combat']
+        panel_rect  = L['panel_rect']
+        bx, by, bw, bh = L['bx'], L['by'], L['bw'], L['bh']
+        PAD = L['PAD']
+        GAP = L['GAP']
+        HEADER_H    = L['header_h']
+        TIMER_H     = L['timer_h']
+        STATUS_H    = L['status_h']
+        COMBAT_H    = L['combat_h']
+        SECTION_GAP = L['section_gap']
+        q_font      = L['question_font']
+        c_font      = L['choice_font']
+        q_lines     = L['q_lines']
+        q_line_h    = L['q_line_h']
+        q_height    = L['question_rect'].height
+        c_wrapped   = L['c_wrapped']
+        display_choices = L['display_choices']
+        cw          = L['cw']
+        ch_height   = L['ch_height']
 
         # Effects background pass -- the chain aura paints a soft border
         # glow around the panel here. Runs BEFORE the opaque panel so
@@ -2272,16 +2427,36 @@ class RenderMixin:
             ly = ty + (bar_h - t_label.get_height()) // 2
             self.screen.blit(t_label, (lx, ly))
 
-        # -- Question text ---------------------------------------------
-        qy = ty + TIMER_H
+        # -- Scrollable region (question + choices) --------------------
+        # When ``L['scrollable']`` is True, the question/choices block has
+        # been clipped to ``scroll_rect``; everything else (header, timer,
+        # status, combat HUD) stays pinned. See ``_quiz_layout`` for the
+        # shrink-then-scroll ladder.
+        scroll_rect = L['scroll_rect']
+        scroll_off  = L['scroll_offset']
+        scrollable  = L['scrollable']
+
+        old_clip = self.screen.get_clip()
+        if scrollable:
+            self.screen.set_clip(scroll_rect)
+
+        # -- Question text (shifted up by scroll_off) ------------------
+        qy = scroll_rect.y - (scroll_off if scrollable else 0)
         for line in q_lines:
+            # Skip lines entirely above the visible slice.
+            if scrollable and qy + q_line_h < scroll_rect.y:
+                qy += q_line_h
+                continue
+            if scrollable and qy > scroll_rect.bottom:
+                break
             surf = q_font.render(line, True, FP.VELLUM)
             self.screen.blit(surf, (bx + PAD, qy))
             qy += q_line_h
         qy += SECTION_GAP
 
-        # Thin separator
-        pygame.draw.line(self.screen, accent_dim, (bx + PAD, qy - 4), (bx + bw - PAD, qy - 4))
+        # Thin separator just above the choice cards.
+        pygame.draw.line(self.screen, accent_dim,
+                         (bx + PAD, qy - 4), (bx + bw - PAD, qy - 4))
 
         # -- Choice cards (2 x 2 grid) — grimoire chrome via draw_choice_button --
         from fantasy_ui import draw_choice_button
@@ -2298,6 +2473,11 @@ class RenderMixin:
             row = i // 2
             cx_ = bx + PAD + col * (cw + GAP)
             cy_ = qy + row * (ch_height + GAP)
+
+            # Skip entirely-offscreen cards when scrolling (cheap cull).
+            if scrollable and (cy_ + ch_height < scroll_rect.y
+                               or cy_ > scroll_rect.bottom):
+                continue
 
             c_str       = str(choice).strip()
             is_correct  = c_str == correct_str
@@ -2320,8 +2500,29 @@ class RenderMixin:
                 incorrect=mark_incorrect or None,
             )
 
+        if scrollable:
+            self.screen.set_clip(old_clip)
+            # Scroll affordances: tiny arrow + "more" marker when there is
+            # content hidden above or below the visible slice.
+            scroll_max = L['scroll_max']
+            arrow_font = self.font_sm
+            if scroll_off > 0:
+                a = arrow_font.render("▲ more above", True, FP.FADED_TEXT)
+                self.screen.blit(
+                    a,
+                    (scroll_rect.right - a.get_width() - 2, scroll_rect.y - 2),
+                )
+            if scroll_off < scroll_max:
+                a = arrow_font.render("▼ more below", True, FP.FADED_TEXT)
+                self.screen.blit(
+                    a,
+                    (scroll_rect.right - a.get_width() - 2,
+                     scroll_rect.bottom - a.get_height() + 2),
+                )
+
         # -- Status / feedback bar -------------------------------------
-        status_y = qy + 2 * (ch_height + GAP) + SECTION_GAP
+        status_rect = L['status_rect']
+        status_y = status_rect.y
 
         if in_result:
             fb_text  = "*  CORRECT!" if qe.last_correct else "*  WRONG!"
@@ -2354,14 +2555,12 @@ class RenderMixin:
                 panel_rect=panel_rect,
                 header_h=HEADER_H,
                 timer_rect=pygame.Rect(bar_x, ty, bar_w, bar_h) if getattr(qe, 'timed', True) else None,
-                question_rect=pygame.Rect(bx + PAD, ty + TIMER_H,
-                                          bw - PAD * 2, q_height),
+                question_rect=L['question_rect'],
                 choices_rect=pygame.Rect(bx + PAD,
-                                         ty + TIMER_H + q_height + SECTION_GAP,
+                                         scroll_rect.y + q_height + SECTION_GAP,
                                          bw - PAD * 2,
                                          ch_height * 2 + GAP),
-                status_rect=pygame.Rect(bx + PAD, status_y,
-                                        bw - PAD * 2, STATUS_H),
+                status_rect=status_rect,
                 pad=PAD,
             )
             rt.draw_foreground(self.screen, protected)
@@ -2474,8 +2673,52 @@ class RenderMixin:
     # ``src/effects/fullscreen_takeover.py`` and painted via the
     # EffectsRuntime's ``draw_top_overlay`` phase.
 
+    def _combat_hud_row_rects(self, bx: int, strip_y: int, bw: int,
+                              hb_h: int = 16) -> list:
+        """Return the four measured row rects for the combat HUD.
+
+        Phase 2 beautification (2026-10-04): extracted from
+        ``_draw_combat_hud`` so tests can assert the rows don't overlap
+        without a surface roundtrip. Row heights come from the live
+        ``self.font_md`` / ``self.font_sm`` metrics — same formulas the
+        drawer uses — so a font size change here keeps them aligned.
+
+        Row 0: monster name (primary)
+        Row 1: HP bar + big HP numbers (primary)
+        Row 2: effects + damage-type + chain projection (secondary)
+        Row 3: SPACE hint + weapon name (secondary footer)
+        """
+        f_name = self.font_md
+        f_hp   = self.font_md
+        f_sm   = self.font_sm
+        sy = strip_y + 8
+        lx = bx + 22
+        row0_h = f_name.get_height()
+        row0 = pygame.Rect(lx, sy, bw - 40, row0_h)
+        row1_y = sy + row0_h + 2
+        row1_h = max(hb_h, f_hp.get_height())
+        row1 = pygame.Rect(lx, row1_y, bw - 40, row1_h)
+        row2_y = row1_y + row1_h + 4
+        row2_h = f_sm.get_height()
+        row2 = pygame.Rect(lx, row2_y, bw - 40, row2_h)
+        row3_y = row2_y + row2_h + 2
+        row3_h = f_sm.get_height()
+        row3 = pygame.Rect(lx, row3_y, bw - 40, row3_h)
+        return [row0, row1, row2, row3]
+
     def _draw_combat_hud(self, bx: int, strip_y: int, bw: int, accent=(80, 80, 180)):
-        """Draw monster HP bar + chain damage preview inside the quiz modal."""
+        """Draw monster HP bar + chain damage preview inside the quiz modal.
+
+        Phase 1 beautification (2026-10-03): the HUD's two primary call-outs
+        are now **target HP** (monster name in body-md, HP numbers rendered
+        in the hp_color at body-md, a taller color-coded bar) and the
+        **current damage preview** (chain multiplier + damage in heading-lg
+        beside the bar, high-contrast). Weapon name, damage-type label,
+        future-chain projection, and the SPACE hint are muted secondary
+        rows (body-sm + FADED_TEXT) stacked below. No mechanic change —
+        every number, status, and proc still renders; only the visual
+        hierarchy was reordered.
+        """
         from combat import _damage_multiplier
         monster = self.combat_target
         # Use ranged weapon for damage preview if this is a ranged attack
@@ -2486,60 +2729,52 @@ class RenderMixin:
         pygame.draw.line(self.screen, accent,
                          (bx + 18, strip_y), (bx + bw - 18, strip_y))
 
-        sy = strip_y + 10
-
-        # -- Left: monster name + HP bar -------------------------------
         from text_layout import truncate_label
-        lx       = bx + 22
-        rx       = bx + 320  # right-column anchor (must match below)
+        sy = strip_y + 8
+        lx = bx + 22
+        rx = bx + 320  # right-column anchor (must match below)
+
+        f_name   = self.font_md   # primary: monster name
+        f_hp     = self.font_md   # primary: HP numbers (color-coded)
+        f_dmg    = self.font_lg   # primary: current damage preview
+        f_small  = self.font_sm   # secondary: everything else, FADED
+
+        # -------- Row 1: Monster name (primary call-out, left) --------
+        max_name_w = max(40, rx - lx - 16)
+        name_text = truncate_label(monster.name.upper(), max_name_w, f_name)
+        name_surf = f_name.render(name_text, True, FP.GOLD_PALE)
+        self.screen.blit(name_surf, (lx, sy))
+
+        # -------- Row 2: HP bar + big HP numbers (primary) ------------
         hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
         hp_color = (
             FP.SUCCESS_TEXT if hp_ratio > 0.50 else
             FP.WARNING_TEXT if hp_ratio > 0.25 else
             FP.DANGER_TEXT
         )
-        # Truncate the monster name so it can't bleed into the right column
-        # (long uniques like "the Greater Spectral Knight of Caer Llion"
-        # previously clobbered the WEAKNESS!/RESISTED label). See A1-2.
-        max_name_w = max(40, rx - lx - 16)
-        full_name_text = f"{monster.name.upper()}   {monster.hp}/{monster.max_hp} HP"
-        name_text_fit = truncate_label(full_name_text, max_name_w, self.font_sm)
-        name_surf = self.font_sm.render(name_text_fit, True, FP.GOLD_PALE)
-        self.screen.blit(name_surf, (lx, sy))
-
-        hb_y, hb_w = sy + 18, 260
-        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (lx, hb_y, hb_w, 12), border_radius=4)
+        row2_y = sy + name_surf.get_height() + 2
+        hb_h, hb_w = 16, 220
+        bar_y = row2_y + max(0, (f_hp.get_height() - hb_h) // 2)
+        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK,
+                         (lx, bar_y, hb_w, hb_h), border_radius=4)
         if hp_ratio > 0:
             pygame.draw.rect(self.screen, hp_color,
-                             (lx, hb_y, max(3, int(hb_w * hp_ratio)), 12), border_radius=4)
-        pygame.draw.rect(self.screen, FP.BURGUNDY, (lx, hb_y, hb_w, 12), 1, border_radius=4)
+                             (lx, bar_y, max(3, int(hb_w * hp_ratio)), hb_h),
+                             border_radius=4)
+        pygame.draw.rect(self.screen, FP.BURGUNDY,
+                         (lx, bar_y, hb_w, hb_h), 1, border_radius=4)
+        hp_text = f"{monster.hp}/{monster.max_hp} HP"
+        hp_surf = f_hp.render(hp_text, True, hp_color)
+        self.screen.blit(hp_surf, (lx + hb_w + 10, row2_y))
 
-        effects = [e for e, v in monster.status_effects.items() if v > 0]
-        if effects:
-            # Also clip the effects row so long status names can't bleed.
-            eff_text = "  ".join(f"[{e}]" for e in effects[:5])
-            eff_text_fit = truncate_label(eff_text, max_name_w, self.font_sm)
-            eff = self.font_sm.render(eff_text_fit, True, FP.WARNING_TEXT)
-            self.screen.blit(eff, (lx, hb_y + 16))
-
-        # -- Right: LIVE combo state (chain combat v2) ----------------
+        # -------- Right column, row 1-2: damage preview (primary) -----
         base    = weapon.base_damage  if weapon else 2
         enchant = weapon.enchant_bonus if weapon else 0
         dtypes  = weapon.damage_types if weapon else ['physical']
         dm      = _damage_multiplier(dtypes, monster)
 
-        # Damage-type banner (WEAKNESS! / RESISTED / neutral)
-        if dm >= 1.5:
-            dm_text, dm_col = "WEAKNESS!", FP.SUCCESS_TEXT
-        elif dm <= 0.5:
-            dm_text, dm_col = "RESISTED",  FP.DANGER_TEXT
-        else:
-            dm_text, dm_col = "/".join(dtypes).upper(), FP.FADED_TEXT
-        self.screen.blit(self.font_sm.render(dm_text, True, dm_col), (rx, sy))
-
-        # Compute current-chain mult using the same rule combat.py uses:
-        # polynomial when `chain_exponent` set (or unarmed defaults to 1.15),
-        # otherwise the legacy per-rung array.
+        # Current chain multiplier — polynomial for `chain_exponent`-set
+        # weapons (and unarmed @ 1.15), otherwise the legacy array.
         cur_chain = self.quiz_engine.chain
         _chain_exp = getattr(weapon, 'chain_exponent', None) if weapon else 1.15
         if _chain_exp and _chain_exp > 0:
@@ -2555,34 +2790,60 @@ class RenderMixin:
         cur_mult = _mult(cur_chain)
         cur_dmg  = max(0, int((base + enchant) * cur_mult * dm)) if cur_chain >= 1 else 0
 
-        # Big live readout — chain N -> "M.MMx = DDD dmg"
         rank_name, rank_color = self._chain_rank(cur_chain)
         if cur_chain >= 1:
             live_text = f"x{cur_mult:.1f}   {cur_dmg} dmg"
+            live_col  = rank_color if cur_chain >= 3 else FP.WHITE
+            live_font = f_dmg
         else:
             live_text = "(answer to start chain)"
-        live_col = rank_color if cur_chain >= 3 else FP.WHITE
-        self.screen.blit(self.font_md.render(live_text, True, live_col), (rx, sy + 18))
+            live_col  = FP.FADED_TEXT
+            live_font = f_small
+        self.screen.blit(live_font.render(live_text, True, live_col), (rx, sy))
 
-        # Milestone projection: what you'd hit at the next major rank
+        # -------- Row 3: muted secondary — effects + dmg-type label ---
+        row3_y = row2_y + max(hb_h, f_hp.get_height()) + 4
+
+        effects = [e for e, v in monster.status_effects.items() if v > 0]
+        if effects:
+            eff_text = "  ".join(f"[{e}]" for e in effects[:5])
+            eff_text_fit = truncate_label(eff_text, max_name_w, f_small)
+            self.screen.blit(f_small.render(eff_text_fit, True, FP.WARNING_TEXT),
+                             (lx, row3_y))
+
+        # Damage-type / weakness label (secondary — keep its signal
+        # colour but shrink and park on the right column).
+        if dm >= 1.5:
+            dm_text, dm_col = "WEAKNESS!", FP.SUCCESS_TEXT
+        elif dm <= 0.5:
+            dm_text, dm_col = "RESISTED", FP.DANGER_TEXT
+        else:
+            dm_text, dm_col = "/".join(dtypes), FP.FADED_TEXT
+        self.screen.blit(f_small.render(dm_text, True, dm_col), (rx, row3_y))
+
+        # Milestone projection — small, muted, same row as dmg type
         _milestones = [3, 5, 8, 10, 15, 20]
         _next = next((m for m in _milestones if m > cur_chain), None)
         if _next is not None:
             proj_dmg = max(1, int((base + enchant) * _mult(_next) * dm))
             _rank_at = self._chain_rank(_next)[0] or f"x{_next}"
-            proj_text = f"at chain {_next} ({_rank_at}): {proj_dmg}"
+            proj_text = f"at {_next} ({_rank_at}): {proj_dmg}"
+            dm_w = f_small.size(dm_text)[0]
             self.screen.blit(
-                self.font_sm.render(proj_text, True, FP.FADED_TEXT), (rx, sy + 46)
+                f_small.render(proj_text, True, FP.FADED_TEXT),
+                (rx + dm_w + 16, row3_y)
             )
 
-        # SPACE hint + weapon name
-        hint_col = FP.HINT_TEXT if cur_chain >= 1 else FP.FADED_TEXT
-        space_txt = "SPACE = strike now" if cur_chain >= 1 else "SPACE cancels (chain 0)"
-        self.screen.blit(self.font_sm.render(space_txt, True, hint_col), (rx, sy + 64))
-
+        # -------- Row 4: muted footer — SPACE hint + weapon name ------
+        row4_y = row3_y + f_small.get_height() + 2
+        space_txt = "SPACE strikes" if cur_chain >= 1 else "SPACE cancels"
+        self.screen.blit(f_small.render(space_txt, True, FP.FADED_TEXT),
+                         (rx, row4_y))
         w_name = weapon.name if weapon else "bare hands"
+        space_w = f_small.size(space_txt)[0]
         self.screen.blit(
-            self.font_sm.render(f"{w_name}", True, FP.FADED_TEXT), (rx, sy + 82)
+            f_small.render(f"({w_name})", True, FP.FADED_TEXT),
+            (rx + space_w + 12, row4_y)
         )
 
     # ------------------------------------------------------------------
@@ -2776,31 +3037,37 @@ class RenderMixin:
             return getattr(item, 'item_class', 'item').replace('_', ' ')
 
     def _menu_item_detail_lines(self, item, action: str = 'Select') -> list:
+        # Phase 1 beautification (2026-10-03): the kit inspector was dropping
+        # five cosmetic rows per item that duplicated the name / section
+        # header / footer hint. We now trim to: name -> key stats / effects
+        # -> one meaningful cue (equipped star, hidden-until-ID note, lore).
+        # The Dossier Lore screen (``_lore_item_mechanic_lines`` and the
+        # lore_item_card renderer) keeps its expanded view.
         if isinstance(item, self._GoldDropEntry):
             return [
                 ("Gold", FP.GOLD_BRIGHT, self.font_md),
                 (f"You have {getattr(self, 'player_gold', 0)} coins.", FP.BODY_TEXT, self.font_sm),
-                ("Next action", FP.GOLD_BRIGHT, self.font_sm),
-                ("Choose this row to type how much gold to drop.", FP.BODY_TEXT, self.font_sm),
             ]
 
         idl = self._menu_item_level(item)
         display = self._display_name(item)
-        cls = getattr(item, 'item_class', type(item).__name__).replace('_', ' ')
         lines = [(display, FP.GOLD_BRIGHT, self.font_md)]
 
+        # One-line equipped marker is useful at a glance (per Phase 1 brief).
+        if self._menu_item_is_equipped(item):
+            lines.append(("* Equipped", FP.SUCCESS_TEXT, self.font_sm))
+
         if hasattr(item, 'identified') and idl < 3:
-            un = getattr(item, 'unidentified_name', display)
+            # ``_display_name`` already shows either "unidentified <name>" or
+            # the pure appearance string, so a dedicated Appearance row is
+            # redundant. Likewise ``Type: {cls}`` repeats the section header
+            # icon, and ``Next action`` repeats the footer hint. We keep the
+            # Weight line (real mechanical info) and ONE "hidden until ID"
+            # cue so the player knows mechanics aren't missing — just gated.
             lines += [
-                ("Unidentified appearance", FP.GOLD_BRIGHT, self.font_sm),
-                (un, FP.BODY_TEXT, self.font_sm),
-                (f"Status: {_identify_status_label(idl)}", FP.FADED_TEXT, self.font_sm),
-                (f"Type: {cls}", FP.FADED_TEXT, self.font_sm),
                 (f"Weight: {getattr(item, 'weight', 0):.1f}", FP.FADED_TEXT, self.font_sm),
-                ("Hidden", FP.WARNING_TEXT, self.font_sm),
-                ("Stats, BUC, lore, and special mechanics stay hidden until identified.", FP.BODY_TEXT, self.font_sm),
-                ("Next action", FP.GOLD_BRIGHT, self.font_sm),
-                (action, FP.BODY_TEXT, self.font_sm),
+                ("Stats, BUC, and lore stay hidden until identified.",
+                 FP.WARNING_TEXT, self.font_sm),
             ]
             return lines
 
@@ -2855,8 +3122,9 @@ class RenderMixin:
             lines += [("Lore", FP.GOLD_BRIGHT, self.font_sm),
                       ("Reach full identification to read the lore.", FP.FADED_TEXT, self.font_sm)]
 
-        lines += [("Next action", FP.GOLD_BRIGHT, self.font_sm),
-                  (action, FP.BODY_TEXT, self.font_sm)]
+        # ``Next action`` row removed — the panel footer hint ("Enter: Select"
+        # etc.) covers controls, so a duplicate row inside the detail pane
+        # was pure chrome.
         return lines
 
     def _menu_recipe_preview(self, recipe) -> str:
@@ -2942,17 +3210,50 @@ class RenderMixin:
         return lines
 
     def _draw_action_tabs(self, tabs, active_tab: int, counts, x: int, y: int, w: int) -> int:
+        """Draw an action-menu tab strip. Phase 2 beautification (2026-10-04):
+        when the full strip is wider than the container, scroll the visible
+        window so the active tab is kept inside it. Arrow glyphs
+        (``◀`` / ``▶``) at the edges flag hidden tabs. Keeps the tab-strip
+        legible on narrow panels (cook / eat / equip menus) and in menus
+        with many tabs."""
         if not tabs:
             return y
+        from text_layout import tab_strip_window
         tab_font = get_font('small', 14)
-        tx = x
-        max_x = x + w
+        gap = 6
+        ARROW_W = 18
+
+        # Pre-measure every tab's full width so the window helper can pick
+        # a stable visible slice.
+        widths = []
+        labels = []
         for i, tab in enumerate(tabs):
             count = counts[i] if counts and i < len(counts) else None
             label = tab[0]
             text = f"{label} ({count})" if count is not None else label
-            tw = min(max_x - tx, tab_font.size(text)[0] + 22)
-            if tw < 42:
+            labels.append(text)
+            widths.append(tab_font.size(text)[0] + 22)
+
+        win = tab_strip_window(widths, active_tab, w, gap=gap, arrow_w=ARROW_W)
+        overflow = win['overflow']
+        start = win['start']
+        end = win['end']
+
+        tx = x
+        max_x = x + w
+        if win['show_left_arrow']:
+            arrow_rect = pygame.Rect(tx, y, ARROW_W, 25)
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, arrow_rect, border_radius=4)
+            pygame.draw.rect(self.screen, FP.GOLD_DARK, arrow_rect, 1, border_radius=4)
+            a_surf = tab_font.render('◀', True, FP.GOLD_BRIGHT)
+            self.screen.blit(a_surf, (arrow_rect.centerx - a_surf.get_width() // 2,
+                                      arrow_rect.centery - a_surf.get_height() // 2))
+            tx += ARROW_W + gap
+
+        reserved_right = ARROW_W + gap if win['show_right_arrow'] else 0
+        for i in range(start, end):
+            tw = widths[i]
+            if tx + tw > max_x - reserved_right:
                 break
             rect = pygame.Rect(tx, y, tw, 25)
             active = i == active_tab
@@ -2961,9 +3262,19 @@ class RenderMixin:
             pygame.draw.rect(self.screen, FP.GOLD if active else FP.GOLD_DARK,
                              rect, 1, border_radius=4)
             col = FP.GOLD_BRIGHT if active else FP.FADED_TEXT
-            self._menu_draw_line(text, tab_font, col,
+            self._menu_draw_line(labels[i], tab_font, col,
                                  pygame.Rect(rect.x + 8, rect.y + 4, rect.w - 16, rect.h))
-            tx += tw + 6
+            tx += tw + gap
+
+        if win['show_right_arrow']:
+            arrow_rect = pygame.Rect(max_x - ARROW_W, y, ARROW_W, 25)
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, arrow_rect, border_radius=4)
+            pygame.draw.rect(self.screen, FP.GOLD_DARK, arrow_rect, 1, border_radius=4)
+            a_surf = tab_font.render('▶', True, FP.GOLD_BRIGHT)
+            self.screen.blit(a_surf, (arrow_rect.centerx - a_surf.get_width() // 2,
+                                      arrow_rect.centery - a_surf.get_height() // 2))
+
+        _ = overflow  # unused but documented via win['overflow']
         return y + 32
 
     def _draw_decision_menu_variant_a(self, *, title: str, entries: list,
@@ -6765,7 +7076,13 @@ class RenderMixin:
             # `<kind>_prime` lookup used to miss them and render "Ingredient:
             # none" even though the trophy is real. Fixed 2026-10-03 by
             # mirroring the bestiary trophy-aware logic.
-            monster_id = getattr(corpse, 'kind', '') or ''
+            # Corpses carry `monster_id`, not `kind`. Try both (plus `.id`
+            # as a last resort) so Monster-shaped and Corpse-shaped
+            # subjects both resolve. 2026-10-03 playtest found the first
+            # version only checked `.kind`, which Corpse doesn't have.
+            monster_id = (getattr(corpse, 'monster_id', '')
+                          or getattr(corpse, 'kind', '')
+                          or '')
             legacy_id = getattr(corpse, 'ingredient_id', '')
             try:
                 from food_system import (load_ingredient_for,
@@ -7246,7 +7563,14 @@ class RenderMixin:
                 from food_system import (load_ingredient_for,
                                           get_recipes_for_ingredient,
                                           _load_prime_cuts)
-                monster_id = getattr(subject, 'kind', '') or getattr(subject, 'id', '')
+                # Corpses carry `monster_id` (e.g. 'giant_rat'); older
+                # callers used `.kind` or `.id`. Try all three — Corpse
+                # has monster_id, Monster has kind, and `.id` is a
+                # last-ditch fallback (though for corpses that's
+                # 'corpse_<id>' which would miss the prime-cuts lookup).
+                monster_id = (getattr(subject, 'monster_id', '')
+                              or getattr(subject, 'kind', '')
+                              or getattr(subject, 'id', ''))
                 prime_info = _load_prime_cuts().get(monster_id) if monster_id else None
                 if prime_info:
                     ing_id = (f"{monster_id}_trophy"

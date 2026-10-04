@@ -208,6 +208,24 @@ Chain-mode math quiz accepts answers continuously. The strike LANDS when:
 
 Chain **resets to 0 at every new attack** — no stockpiling between attacks. Parashu's `chain_no_reset_on_tag` is the one carry-forward exception, and it only carries ONE attack and only when the previous kill matched a tag.
 
+## UI — combat HUD inside the quiz modal
+
+`RenderMixin._draw_combat_hud` (`src/game_render.py:2477`) paints the combat strip at the bottom of the chain-mode quiz panel. Its visual hierarchy is intentional — not every row carries the same weight.
+
+**Primary call-outs** (bigger font, high contrast):
+
+- **Target HP** — monster name in body-md, bar color-coded by percentage (green > 50%, warning yellow 25–50%, danger red < 25%), HP numbers printed next to the bar in the same hp color at body-md.
+- **Current damage preview** — the live chain readout (`x{mult:.1f}   {dmg} dmg`) renders in heading-lg beside the HP bar, coloured by chain-rank once the player clears chain 3.
+
+**Secondary rows** (body-sm, muted / `FP.FADED_TEXT`):
+
+- Weapon name (parenthetical, bottom-right corner).
+- Damage-type label — keeps its signal colour (`WEAKNESS!` success-green, `RESISTED` danger-red, neutral in faded) but shrinks to body-sm; sits on the same row as the projection.
+- Future-chain projection (`at {milestone} ({rank}): {dmg}`).
+- `SPACE strikes` / `SPACE cancels` hint — bottom-right footer, muted.
+
+**History:** the Phase 1 UI beautification pass (v2.22.0, 2026-10-03) reordered the hierarchy. Before, every row rendered at body-sm except the chain readout at body-md — the weapon name, damage-type banner, and SPACE hint competed with the HP bar for attention. The reorder is **font-size and color only**: no mechanics, numbers, procs, or ranged-weapon branching changed.
+
 ## Hit resolution — order of operations
 
 Melee swings resolve entirely inside `player_attack._callback`. Monster-to-player hits resolve inside `monster.attack(player)`. Both paths funnel per-hit damage through:

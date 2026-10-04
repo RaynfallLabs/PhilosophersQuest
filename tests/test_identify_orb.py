@@ -164,47 +164,39 @@ def test_identify_orb_full_motion_default():
 # test_celebrate_on_max_gate.py).
 # ---------------------------------------------------------------------------
 
-def test_identify_orb_fires_on_item_identify_success():
-    """``game_magic.py::_identify_item`` must fire the orb in the
-    success branch of its on_complete callback."""
+def test_identify_orb_not_wired_to_identify_item():
+    """``game_magic.py::_identify_item`` must NOT fire the orb --
+    the lore screen IS the celebration (full-panel reveal of the
+    identified item). The orb was competing visually with lore when
+    both fired at the same moment. Removed 2026-10-04 after playtest.
+    The identify_orb handler stays registered for future non-lore
+    effects (e.g. an orb when a non-lore item is identified)."""
     text = _read(_SRC / 'game_magic.py')
     marker = 'def _identify_item'
     assert marker in text
     body = text[text.index(marker):]
     next_def = body.index('\n    def ', 10)
     body = body[:next_def]
-    assert ("'identify_success_orb'" in body
-            or '"identify_success_orb"' in body), (
-        "_identify_item must fire the identify_success_orb effect on "
-        "the success branch of on_complete.")
-    # Success branch must come BEFORE the else branch (stun path).
-    fire_idx = body.find('identify_success_orb')
-    else_idx = body.find('\n            else:')
-    assert fire_idx != -1 and else_idx != -1
-    assert fire_idx < else_idx, (
-        "identify_success_orb must fire in the success branch, not in "
-        "the stun/failure branch.")
+    assert "'identify_success_orb'" not in body, (
+        "_identify_item must NOT fire identify_success_orb. The lore "
+        "screen is the celebration; the orb competes with it.")
+    assert '"identify_success_orb"' not in body
 
 
-def test_identify_orb_fires_on_corpse_identify_success():
-    """``main.py::_start_corpse_identify`` must also fire the orb --
-    the two identify paths share the celebration."""
+def test_identify_orb_not_wired_to_corpse_identify():
+    """``main.py::_start_corpse_identify`` must NOT fire the orb --
+    the lore screen is the celebration. Mirrors the item-identify
+    decoupling (see test_identify_orb_not_wired_to_identify_item)."""
     text = _read(_SRC / 'main.py')
     marker = 'def _start_corpse_identify'
     assert marker in text
     body = text[text.index(marker):]
     next_def = body.index('\n    def ', 10)
     body = body[:next_def]
-    assert ("'identify_success_orb'" in body
-            or '"identify_success_orb"' in body), (
-        "_start_corpse_identify must fire identify_success_orb on "
-        "success.")
-    fire_idx = body.find('identify_success_orb')
-    else_idx = body.find('\n            else:')
-    assert fire_idx != -1 and else_idx != -1
-    assert fire_idx < else_idx, (
-        "identify_success_orb must fire in the success branch, not "
-        "in the stun/failure branch.")
+    assert "'identify_success_orb'" not in body, (
+        "_start_corpse_identify must NOT fire identify_success_orb. "
+        "Lore screen is the celebration.")
+    assert '"identify_success_orb"' not in body
 
 
 def test_identify_orb_not_fired_on_item_failure():

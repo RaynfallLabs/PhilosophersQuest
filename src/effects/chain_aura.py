@@ -254,18 +254,20 @@ class ChainAuraPulse:
             return
 
         opacity = max(0.0, min(1.0, self._current_aura_opacity))
-        # Pulse boost -- the brief 220ms highlight on each correct
-        # answer rides on top of the persistent aura.
+        # Pulse boost -- a brief highlight on each correct answer rides
+        # on top of the persistent aura. Boosted 2026-10-04 after
+        # playtest called the effects "lame and understated".
         if self._pulse_timer_ms > 0.0:
             opacity = min(1.0, opacity +
-                          0.25 * (self._pulse_timer_ms / self.pulse_duration_ms))
+                          0.55 * (self._pulse_timer_ms / self.pulse_duration_ms))
         if opacity <= 0.01:
             return
 
         color = self._current_aura_color
         # Build an aura surface sized to the expanded panel. Reuse the
-        # cached one when dimensions match.
-        pad = 36
+        # cached one when dimensions match. Wider pad = more visible
+        # glow bleed around the panel.
+        pad = 72
         size = (rect.w + pad * 2, rect.h + pad * 2)
         if self._pulse_surf is None or self._pulse_surf_size != size:
             self._pulse_surf = pygame.Surface(size, pygame.SRCALPHA)
@@ -273,31 +275,47 @@ class ChainAuraPulse:
         aura = self._pulse_surf
         aura.fill((0, 0, 0, 0))
 
-        # Soft outer rings -- 6 steps from the expanded rect inward
-        # toward the panel edge, each slightly brighter.
-        steps = 6
+        # Soft outer rings -- 10 steps from the expanded rect inward
+        # toward the panel edge, each brighter. More steps + wider pad +
+        # higher alpha coefficient = chunky visible glow.
+        steps = 10
         for i in range(steps):
             # i=0: outermost + faintest. i=steps-1: innermost + brightest.
             inset = int(pad * (1.0 - i / steps))
-            alpha = int(255 * opacity * 0.14 * (i + 1) / steps)
+            alpha = int(255 * opacity * 0.28 * (i + 1) / steps)
             if alpha <= 0:
                 continue
             r = pygame.Rect(inset, inset,
                             size[0] - 2 * inset,
                             size[1] - 2 * inset)
             pygame.draw.rect(aura, (color[0], color[1], color[2], alpha),
-                             r, border_radius=14, width=3)
+                             r, border_radius=18, width=5)
 
-        # Milestone bloom -- adds a brighter outline for the first
-        # ~650ms after a milestone crossing.
+        # Thick solid inner-edge glow riding at the panel perimeter --
+        # makes the border read as "lit from behind" at every rank, not
+        # just milestones.
+        inner_alpha = int(255 * opacity * 0.75)
+        if inner_alpha > 0:
+            pygame.draw.rect(
+                aura, (color[0], color[1], color[2], inner_alpha),
+                pygame.Rect(pad - 3, pad - 3, rect.w + 6, rect.h + 6),
+                border_radius=12, width=4)
+
+        # Milestone bloom -- adds a BIG bright outline for the first
+        # ~1100ms after a milestone crossing. Two concentric rings for
+        # weight; outer one slightly dimmer.
         if self._burst_timer_ms > 0.0:
             bloom = self._burst_timer_ms / self.burst_duration_ms
-            bloom_alpha = int(255 * opacity * 0.5 * bloom)
+            bloom_alpha = int(255 * opacity * 0.95 * bloom)
             if bloom_alpha > 0:
                 pygame.draw.rect(
                     aura, (color[0], color[1], color[2], bloom_alpha),
-                    pygame.Rect(pad - 4, pad - 4, rect.w + 8, rect.h + 8),
-                    border_radius=12, width=4)
+                    pygame.Rect(pad - 8, pad - 8, rect.w + 16, rect.h + 16),
+                    border_radius=14, width=8)
+                pygame.draw.rect(
+                    aura, (color[0], color[1], color[2], bloom_alpha // 2),
+                    pygame.Rect(pad - 22, pad - 22, rect.w + 44, rect.h + 44),
+                    border_radius=18, width=6)
 
         # Static-highlight replacement for milestones when
         # reduced_motion is on. 300ms steady border highlight -- see
@@ -372,37 +390,41 @@ class ChainAuraPulse:
         return not (reduced and 'particles' in self.rm_disable)
 
     def _on_correct_answer(self, chain: int, reduced: bool = False) -> None:
-        """Fire the per-answer pulse + a small spark burst.
+        """Fire the per-answer pulse + a visible spark burst.
 
-        ``reduced`` suppresses particle spawning (per the config's
-        reduced_motion.disable list); the border pulse timer still runs
-        so the kid gets some feedback via the aura.
+        Boosted 2026-10-04 after playtest: particle counts, intensity,
+        and chain-scaling all up. Reduced-motion still suppresses
+        particles entirely; the border pulse timer runs regardless.
         """
         self._pulse_timer_ms = float(self.pulse_duration_ms)
         if not self._particles_allowed(reduced):
             return
         rank = self._rank_for(chain)
         color = tuple(int(c) for c in rank['color'])
-        self._spawn_particles(count=min(8, max(2, chain // 2 + 2)),
-                              color=color, intensity=0.6)
+        # count scales with chain more aggressively (was min(8, chain//2+2))
+        self._spawn_particles(count=min(24, 6 + chain),
+                              color=color, intensity=1.1)
 
     def _on_milestone(self, milestone: int, rank: dict,
                       reduced: bool = False) -> None:
-        """Fire the longer bloom + a larger burst for a crossed milestone.
+        """Fire the longer bloom + a BIG burst for a crossed milestone.
 
         Reduced-motion mode skips the particle burst and relies on the
         static-highlight replacement (300 ms steady border highlight)
         painted by draw_bg instead -- see the ``replace_milestone``
         key in effects_config.json.
+
+        Boosted 2026-10-04: burst count scales linearly with milestone
+        (chain 20 = ~68 particles) rather than clipping at 32.
         """
         self._burst_timer_ms = float(self.burst_duration_ms)
         color = tuple(int(c) for c in rank['color'])
-        self._static_highlight_ms = 300.0
+        self._static_highlight_ms = 500.0
         self._static_highlight_color = color
         if not self._particles_allowed(reduced):
             return
-        self._spawn_particles(count=min(32, 8 + milestone),
-                              color=color, intensity=1.0)
+        self._spawn_particles(count=min(80, 24 + milestone * 2),
+                              color=color, intensity=1.8)
 
     def _spawn_particles(self, count: int, color: tuple, intensity: float) -> None:
         """Add ``count`` sparks, clipped by the global budget.
@@ -429,10 +451,10 @@ class ChainAuraPulse:
             # Random direction + modest speed; the particles live for
             # 400-900 ms and fade out via alpha.
             ang = self.rng.uniform(0, 2 * math.pi)
-            speed = self.rng.uniform(60, 180) * intensity
+            speed = self.rng.uniform(140, 320) * intensity
             vx = math.cos(ang) * speed
             vy = math.sin(ang) * speed - 40.0   # slight upward bias
-            life = self.rng.uniform(0.4, 0.9)
+            life = self.rng.uniform(0.7, 1.4)
             # Small jitter around the counter anchor so the burst feels
             # organic rather than radial-from-a-point.
             px = self.rng.uniform(-20, 20)
@@ -472,7 +494,9 @@ class _Particle:
         self.life = life
         self.age = 0.0
         self.color = color
-        self.size = 3
+        # Bigger sparks after the 2026-10-04 playtest "lame and
+        # understated" feedback. 7px core + glow halo.
+        self.size = 6
 
     def alive(self) -> bool:
         return self.age < self.life
@@ -485,7 +509,7 @@ class _Particle:
         self.vy += 220.0 * dt
 
     def bbox(self) -> pygame.Rect:
-        s = self.size + 1
+        s = self.size + 3   # halo radius
         return pygame.Rect(int(self.x - s), int(self.y - s), s * 2, s * 2)
 
     def draw(self, surface: pygame.Surface) -> None:
@@ -493,13 +517,29 @@ class _Particle:
         alpha = int(255 * frac)
         if alpha <= 0:
             return
-        # Composite with a tiny per-particle SRCALPHA surface so blit
-        # mixes correctly over any background.
-        s = self.size + 1
-        surf = pygame.Surface((s * 2, s * 2), pygame.SRCALPHA)
-        pygame.draw.circle(surf, (self.color[0], self.color[1],
-                                   self.color[2], alpha), (s, s), s)
-        surface.blit(surf, (int(self.x - s), int(self.y - s)))
+        # Two-layer composite: outer dim halo + bright core. Both ride
+        # a tiny per-particle SRCALPHA surface so blit mixes correctly.
+        halo_r = self.size + 3
+        surf = pygame.Surface((halo_r * 2, halo_r * 2), pygame.SRCALPHA)
+        # Outer halo: dim, large
+        pygame.draw.circle(
+            surf, (self.color[0], self.color[1], self.color[2], alpha // 3),
+            (halo_r, halo_r), halo_r)
+        # Mid ring
+        pygame.draw.circle(
+            surf,
+            (self.color[0], self.color[1], self.color[2], alpha * 2 // 3),
+            (halo_r, halo_r), self.size)
+        # Bright core (white-ish inner)
+        core_r = max(1, self.size // 2)
+        core_col = (
+            min(255, self.color[0] + 60),
+            min(255, self.color[1] + 60),
+            min(255, self.color[2] + 60),
+            alpha,
+        )
+        pygame.draw.circle(surf, core_col, (halo_r, halo_r), core_r)
+        surface.blit(surf, (int(self.x - halo_r), int(self.y - halo_r)))
 
 
 # ----------------------------------------------------------------------

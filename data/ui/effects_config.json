@@ -13,19 +13,19 @@
         "has_combat_target": true
       },
       "ranks": [
-        {"threshold": 0,  "name": "",          "color": [230, 230, 230], "aura_opacity": 0.0},
-        {"threshold": 1,  "name": "",          "color": [200, 220, 200], "aura_opacity": 0.15},
-        {"threshold": 3,  "name": "Solid",     "color": [110, 220, 110], "aura_opacity": 0.25},
-        {"threshold": 5,  "name": "Sharp",     "color": [240, 220,  80], "aura_opacity": 0.35},
-        {"threshold": 8,  "name": "Brilliant", "color": [255, 150,  40], "aura_opacity": 0.45},
-        {"threshold": 10, "name": "Genius",    "color": [240,  80,  60], "aura_opacity": 0.55},
-        {"threshold": 15, "name": "Prodigy",   "color": [255, 210,  60], "aura_opacity": 0.60},
-        {"threshold": 20, "name": "Mythic",    "color": [240, 200, 255], "aura_opacity": 0.65}
+        {"threshold": 0,  "name": "",          "color": [230, 230, 230], "aura_opacity": 0.00},
+        {"threshold": 1,  "name": "",          "color": [200, 220, 200], "aura_opacity": 0.35},
+        {"threshold": 3,  "name": "Solid",     "color": [110, 220, 110], "aura_opacity": 0.55},
+        {"threshold": 5,  "name": "Sharp",     "color": [240, 220,  80], "aura_opacity": 0.70},
+        {"threshold": 8,  "name": "Brilliant", "color": [255, 150,  40], "aura_opacity": 0.80},
+        {"threshold": 10, "name": "Genius",    "color": [240,  80,  60], "aura_opacity": 0.90},
+        {"threshold": 15, "name": "Prodigy",   "color": [255, 210,  60], "aura_opacity": 0.95},
+        {"threshold": 20, "name": "Mythic",    "color": [240, 200, 255], "aura_opacity": 1.00}
       ],
       "milestones": [3, 5, 8, 10, 15, 20, 25, 30, 35],
-      "particle_budget": 64,
-      "pulse_duration_ms": 220,
-      "burst_duration_ms": 650,
+      "particle_budget": 160,
+      "pulse_duration_ms": 380,
+      "burst_duration_ms": 1100,
       "reduced_motion": {
         "disable": ["particles", "rotating_runes"],
         "replace_milestone": "static_highlight_300ms"

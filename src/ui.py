@@ -22,6 +22,12 @@ _IC_COLOR = ITEM_COLOR
 
 class MessageLog:
     MAX = 60
+    # Phase 3 (UI beautification 2026-10-04): line stride is derived from
+    # font metrics so the log keeps up with font-size changes instead of
+    # being pinned to a magic 26 px row.
+    LEADING = 6     # px of visual breathing room between lines
+    PAD_X = 8       # px padding each side (inner text column)
+    PAD_Y = 4       # px padding top (and symmetrically at the bottom)
 
     def __init__(self):
         self.entries: list[tuple[str, str]] = []
@@ -34,32 +40,45 @@ class MessageLog:
 
     @staticmethod
     def _wrap(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
-        """Word-wrap text to fit within max_w pixels."""
-        words = text.split()
-        lines = []
-        cur = ''
-        for word in words:
-            test = (cur + ' ' + word).strip()
-            if font.size(test)[0] <= max_w:
-                cur = test
-            else:
-                if cur:
-                    lines.append(cur)
-                cur = word
-        if cur:
-            lines.append(cur)
-        return lines or ['']
+        """Word-wrap text to fit within max_w pixels.
+
+        Phase 3 UI beautification: delegates to the shared
+        ``text_layout.wrap_lines`` helper, which also breaks oversized
+        tokens by character — so a 60-char no-space magic-item name in a
+        narrow log pane no longer overflows the right edge.
+        """
+        from text_layout import wrap_lines
+        return wrap_lines(text, max_w, font)
+
+    def line_height(self) -> int:
+        """Vertical stride between successive log rows.
+
+        Derived from ``font.get_height()`` plus a fixed leading so the
+        log tracks the current font metrics instead of a hardcoded 26 px
+        value. Public (no leading underscore) so tests can assert that
+        the stride responds to font changes without having to intercept
+        the draw path.
+        """
+        return self._font.get_height() + self.LEADING
 
     def draw(self, screen: pygame.Surface, x: int, y: int, w: int, h: int):
         # FANTASY: Midnight background + gold-dark top border
         pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
         pygame.draw.line(screen, FP.GOLD_DARK, (x, y), (x + w, y), 1)
 
-        line_h = 26
-        max_lines = (h - 8) // line_h
-        text_w = w - 16  # 8px padding each side
+        line_h = self.line_height()
+        available_h = h - self.PAD_Y * 2
+        # Phase 3 zero-row guard: on a pane shorter than one text line
+        # bail out BEFORE slicing ``messages[-0:]`` (which would select
+        # the entire log instead of nothing).
+        if line_h <= 0 or available_h < line_h:
+            return
+        max_lines = available_h // line_h
+        if max_lines <= 0:
+            return
+        text_w = w - self.PAD_X * 2
 
-        # Pre-wrap all entries into display lines (text, msg_type)
+        # Pre-wrap all entries into display lines (text, msg_type).
         all_lines: list[tuple[str, str]] = []
         for text, msg_type in self.entries:
             wrapped = self._wrap(text, self._font, text_w)
@@ -74,7 +93,7 @@ class MessageLog:
             fade = max(0.35, 1.0 - age * 0.09)
             color = tuple(int(c * fade) for c in base)
             surf = self._font.render(text, True, color)
-            screen.blit(surf, (x + 8, y + 4 + i * line_h))
+            screen.blit(surf, (x + self.PAD_X, y + self.PAD_Y + i * line_h))
 
 
 class Sidebar:
@@ -213,23 +232,43 @@ class Sidebar:
 
     def _attributes(self, player, y: int) -> int:
         y = self._header("ATTRIBUTES", y)
+        # Phase 3 (UI beautification 2026-10-04): 2-col × 3-row.
+        # Column 1 = STR / CON / DEX, Column 2 = INT / WIS / PER.
+        # The attribute list is interleaved (col1_row0, col2_row0,
+        # col1_row1, ...) so `i % 2` picks the column and `i // 2`
+        # picks the row for the layout math below.
         attrs = [
-            ('STR', player.STR), ('CON', player.CON),
-            ('DEX', player.DEX), ('INT', player.INT),
-            ('WIS', player.WIS), ('PER', player.PER),
+            ('STR', player.STR), ('INT', player.INT),  # row 0
+            ('CON', player.CON), ('WIS', player.WIS),  # row 1
+            ('DEX', player.DEX), ('PER', player.PER),  # row 2
         ]
-        col_w = (self.w - self.PAD * 2) // 3
+        inner_w = self.w - self.PAD * 2
+        gutter = 8  # keep columns visually separated
+        col_w = (inner_w - gutter) // 2
+        row_h = 24
         for i, (name, val) in enumerate(attrs):
-            ax = self.x + self.PAD + (i % 3) * col_w
-            ay = y + (i // 3) * 24
-            # FANTASY: FADED_TEXT label color
-            self.screen.blit(
-                self._fsm.render(f"{name}:", True, FP.FADED_TEXT), (ax, ay)
-            )
-            # FANTASY: Gold for high, body text for mid, danger for low
+            col = i % 2
+            row = i // 2
+            ax = self.x + self.PAD + col * (col_w + gutter)
+            ay = y + row * row_h
+            # FANTASY: FADED_TEXT label color on the left of the cell.
+            label_surf = self._fsm.render(f"{name}:", True, FP.FADED_TEXT)
+            self.screen.blit(label_surf, (ax, ay))
+            # FANTASY: Gold for high, body text for mid, danger for low.
             vc = FP.GOLD_BRIGHT if val > 12 else FP.BODY_TEXT if val >= 10 else FP.DANGER_TEXT
-            self.screen.blit(self._fbold.render(str(val), True, vc), (ax + 46, ay))
-        return y + 2 * 24 + self.SECTION_GAP
+            val_surf = self._fbold.render(str(val), True, vc)
+            # Right-align value inside the cell with a 2 px safety gap, so
+            # 3-digit stats never crash into the next column (or the pane
+            # midpoint divider between the two columns).
+            vx = ax + col_w - val_surf.get_width() - 2
+            # Guard against negative offsets if a cell ever shrinks below
+            # the label width — in that case fall back to a nudge past the
+            # label rather than overlapping it.
+            min_vx = ax + label_surf.get_width() + 4
+            if vx < min_vx:
+                vx = min_vx
+            self.screen.blit(val_surf, (vx, ay))
+        return y + 3 * row_h + self.SECTION_GAP
 
     def _derived(self, player, dungeon_level: int, gold: int, y: int) -> int:
         y = self._header("DERIVED", y)
@@ -239,6 +278,11 @@ class Sidebar:
         lim = player.get_carry_limit()
         wt_color = FP.WARNING_TEXT if wt > lim * 0.75 else FP.SUCCESS_TEXT
         spell_count = len(getattr(player, 'known_spells', {}))
+        # Phase 3 (UI beautification 2026-10-04): "Depth" removed — the
+        # CHARACTER identity section already prints "Floor {dungeon_level}"
+        # as the sole dungeon-level readout; a second "Depth" line here
+        # was a dupe. `dungeon_level` is kept in the signature in case a
+        # future metric wants it.
         metrics = [
             (f"AC {ac}", ac_color),
             (f"Gold {gold:,}", FP.GOLD_PALE),
@@ -246,7 +290,6 @@ class Sidebar:
             (f"Timer {player.get_quiz_timer('math')}s", FP.WARNING_TEXT),
             (f"Wt {wt:.0f}/{lim}", wt_color),
             (f"Spells {spell_count}", FP.MP_BLUE_TEXT),
-            (f"Depth {dungeon_level}", FP.BODY_TEXT),
         ]
         metric_w = (self.w - self.PAD * 2) // 2
         for i, (label, color) in enumerate(metrics):

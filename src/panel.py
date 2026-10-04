@@ -234,22 +234,66 @@ class PanelBuilder:
             self.surf.blit(ts, (tx, tyc))
             x += tw + PAD_NORMAL
 
-    def _draw_footer(self) -> None:
+    def footer_regions(self, right_status_w: int = 0) -> dict:
+        """Return (left, center, right) footer rects.
+
+        Phase 2 beautification (2026-10-04): expose the split-footer
+        geometry so tests + callers can reason about overlap without
+        rendering. ``left`` is sized to the current scroll indicator
+        label (if any), ``right`` is reserved per the caller's requested
+        width, and ``center`` is everything between the two with a 12 px
+        gutter on each side.
+        """
         font = get_font('small', 14)
         fy = self.by + self.bh - FOOTER_HINT_H + 4
+        inner_x = self.bx + PAD_LOOSE
+        inner_right = self.bx + self.bw - PAD_LOOSE
 
-        # Scroll indicator (left side)
+        if self._scroll_pos:
+            cur, total = self._scroll_pos
+            left_w = font.size(f"{cur}/{total}")[0]
+        else:
+            left_w = 0
+
+        left_rect = pygame.Rect(inner_x, fy + 4, left_w, FOOTER_HINT_H - 8)
+        right_rect = pygame.Rect(inner_right - right_status_w, fy + 4,
+                                 right_status_w, FOOTER_HINT_H - 8)
+        MARGIN = 12
+        center_left = inner_x + left_w + MARGIN
+        center_right = inner_right - right_status_w - MARGIN
+        center_rect = pygame.Rect(center_left, fy + 4,
+                                  max(1, center_right - center_left),
+                                  FOOTER_HINT_H - 8)
+        return {'left': left_rect, 'center': center_rect, 'right': right_rect}
+
+    def _draw_footer(self) -> None:
+        """Draw the footer region. Phase 2 beautification (2026-10-04):
+        split the footer into three columns -- LEFT (scroll count),
+        CENTER (hint, fitted into the leftover width + truncated with an
+        ellipsis if still too long), and RIGHT (reserved for secondary
+        status). Previously the hint was centred across the full footer
+        width, which overlapped the scroll count on narrow panels."""
+        font = get_font('small', 14)
+        from text_layout import truncate_label
+
+        regions = self.footer_regions(right_status_w=0)
+        left = regions['left']
+        center = regions['center']
+
+        # LEFT: scroll indicator.
         if self._scroll_pos:
             cur, total = self._scroll_pos
             tag = f"{cur}/{total}"
             ts = font.render(tag, True, FP.FADED_TEXT)
-            self.surf.blit(ts, (self.bx + PAD_LOOSE, fy + 4))
+            self.surf.blit(ts, (left.x, left.y))
 
-        # Hint text (centered)
+        # CENTER: hint fitted into the gutter. Truncate with an ellipsis
+        # if still too long so it never collides with the scroll count.
         if self._footer_hint:
-            ts = font.render(self._footer_hint, True, self._footer_color)
-            tx = self.bx + (self.bw - ts.get_width()) // 2
-            self.surf.blit(ts, (tx, fy + 4))
+            fitted = truncate_label(self._footer_hint, max(40, center.w), font)
+            ts = font.render(fitted, True, self._footer_color)
+            tx = center.x + max(0, (center.w - ts.get_width()) // 2)
+            self.surf.blit(ts, (tx, center.y))
 
     # ----- convenience: vertical-scroll content body -----
 

@@ -1091,6 +1091,21 @@ class InputMixin:
             if self.quiz_engine.cancel_and_strike():
                 return
 
+        # Phase 2 beautification (2026-10-04): scroll keys for the quiz
+        # modal's pre-computed layout. When the content shrinks to the
+        # smallest font tier and still exceeds the viewport, the question
+        # + choice block is rendered scrollable; PgUp/PgDn and [/] bump
+        # the offset. Non-scrollable quizzes ignore these (the clamp in
+        # `_quiz_layout` keeps the offset at 0).
+        if key in (pygame.K_PAGEUP, pygame.K_LEFTBRACKET):
+            self.quiz_engine._quiz_scroll_offset = max(
+                0, int(getattr(self.quiz_engine, '_quiz_scroll_offset', 0)) - 48)
+            return
+        if key in (pygame.K_PAGEDOWN, pygame.K_RIGHTBRACKET):
+            self.quiz_engine._quiz_scroll_offset = (
+                int(getattr(self.quiz_engine, '_quiz_scroll_offset', 0)) + 48)
+            return
+
         # [C] opens the per-topic Context modal (opt-in orientation). Only
         # fires when a blurb exists for this question's (subject, topic);
         # otherwise shows a brief log-message so the key feels responsive.

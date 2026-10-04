@@ -167,3 +167,85 @@ def text_block_height(lines: int, line_h: int, line_gap: int = 0) -> int:
     if lines <= 0:
         return 0
     return lines * line_h + max(0, lines - 1) * line_gap
+
+
+# ----------------------------------------------------------------------
+# Tab strip overflow (Phase 2 beautification, 2026-10-04)
+# ----------------------------------------------------------------------
+
+
+def tab_strip_window(widths: list[int], active: int, available_width: int,
+                     gap: int = 6, arrow_w: int = 18) -> dict:
+    """Pick the scroll window for a tab strip whose cumulative width may
+    exceed its container.
+
+    Pure math — no pygame — so the renderer and tests can share it.
+
+    Args:
+        widths: pre-measured width (px) of each tab's rendered box.
+        active: index of the active tab; the window must contain it.
+        available_width: total pixels the strip may consume.
+        gap: px gap between adjacent tabs.
+        arrow_w: px reserved for a ``◀`` or ``▶`` affordance when the
+                 window scrolls past either edge.
+
+    Returns a dict with:
+        overflow (bool): True when the full strip is wider than available.
+        start (int):   first visible tab index.
+        end (int):     one past the last visible index (slice bound).
+        show_left_arrow (bool): a ``◀`` arrow should be drawn.
+        show_right_arrow (bool): a ``▶`` arrow should be drawn.
+
+    When ``overflow`` is False, ``start=0`` and ``end=len(widths)`` and
+    both arrows are hidden. When overflow is True, the window is chosen so
+    the active tab is included and (when it fits) roughly centred.
+    """
+    n = len(widths)
+    if n == 0:
+        return {'overflow': False, 'start': 0, 'end': 0,
+                'show_left_arrow': False, 'show_right_arrow': False}
+
+    total_w = sum(widths) + gap * max(0, n - 1)
+    if total_w <= available_width:
+        return {'overflow': False, 'start': 0, 'end': n,
+                'show_left_arrow': False, 'show_right_arrow': False}
+
+    at = max(0, min(active, n - 1))
+    inner_w = max(1, available_width - 2 * arrow_w - gap * 2)
+
+    def _end_from(s: int) -> int:
+        """Return one-past-last index that still fits starting at s."""
+        used = 0
+        for i in range(s, n):
+            used += widths[i]
+            if i > s:
+                used += gap
+            if used > inner_w:
+                return i
+        return n
+
+    # Smallest valid start = walk backward from `at` while the window
+    # that begins one tab earlier still contains the active tab.
+    start = at
+    while start > 0 and _end_from(start - 1) > at:
+        start -= 1
+
+    # Prefer centring: nudge start forward while the active tab stays
+    # visible and we have more tabs before it than after.
+    while start < at and _end_from(start + 1) > at:
+        shown_before = at - start
+        shown_after = _end_from(start) - at - 1
+        if shown_before <= shown_after:
+            break
+        start += 1
+
+    end = _end_from(start)
+    show_left = start > 0
+    show_right = end < n
+    return {
+        'overflow': True,
+        'start': start,
+        'end': end,
+        'show_left_arrow': show_left,
+        'show_right_arrow': show_right,
+    }

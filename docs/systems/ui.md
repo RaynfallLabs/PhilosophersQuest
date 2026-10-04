@@ -263,12 +263,16 @@ width), then `Floor N   Turn N` in faded text.
 transitions `SP_GREEN > SP_AMBER > SP_RED` at 50% / 25% ratios.
 
 **ATTRIBUTES** (`_attributes`): STR / CON / DEX / INT / WIS / PER in a
-3-column grid. Value color: `GOLD_BRIGHT` > 12, `BODY_TEXT` 10-12,
-`DANGER_TEXT` below 10.
+2-column × 3-row grid (col 1 = STR / CON / DEX, col 2 = INT / WIS /
+PER). Values are right-aligned inside each cell so 3-digit stats stay
+on their own side of the midpoint. Value color: `GOLD_BRIGHT` > 12,
+`BODY_TEXT` 10-12, `DANGER_TEXT` below 10.
 
-**DERIVED** (`_derived`): 2-column grid of 7 metrics —
-`AC`, `Gold`, `Sight`, `Timer`, `Wt`, `Spells`, `Depth`. Weight color
-turns `WARNING_TEXT` above 75% of carry limit.
+**DERIVED** (`_derived`): 2-column grid of 6 metrics —
+`AC`, `Gold`, `Sight`, `Timer`, `Wt`, `Spells`. Weight color
+turns `WARNING_TEXT` above 75% of carry limit. The old `Depth` row
+was removed in v2.22.0 — the CHARACTER identity section's `Floor N`
+is the sole dungeon-level readout.
 
 > **Audit finding (SYSTEMS_AUDIT §8 P1):** the Timer line reads
 > `player.get_quiz_timer('math')`, which is correct. But the earlier
