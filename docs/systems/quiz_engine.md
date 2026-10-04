@@ -214,24 +214,27 @@ Transitions to `COMPLETE`, calls `_persist_cross_game_history()` (atomic write o
 
 ## Timer wiring
 
-### `Player.SUBJECT_TIMER` (recalibrated 2026-05-11)
-Keyed `(base_seconds, wis_scale)`; `timer = base + WIS * scale`:
+### `Player.SUBJECT_TIMER`
+Keyed `(base_seconds, wis_scale)`; `timer = base + WIS * scale`.
+**Collapsed to math-only 2026-10-03** — the engine forces
+`timed=False` for every non-math subject at `quiz_engine.py:191-193`,
+so the per-subject rows served no gameplay purpose and routinely
+confused analysis sessions. The 11 non-math rows (science, grammar,
+trivia, geography, history, animal, ai, philosophy, cooking,
+theology, economics) were purged.
+
 ```python
-'math':       ( 0, 1.0)   # combat — flat WIS seconds (chain v2)
-'science':    (24, 1.2)   # concept questions
-'grammar':    (20, 1.0)   # sentence-level analysis
-'trivia':     (26, 1.2)
-'geography':  (28, 1.2)
-'history':    (34, 1.6)
-'animal':     (34, 1.6)
-'ai':         (45, 1.5)
-'philosophy': (50, 1.5)
-'cooking':    (44, 1.6)
-'theology':   (50, 1.7)
-'economics':  (50, 1.7)
+SUBJECT_TIMER = {
+    'math': (0, 1.0),  # combat — flat WIS seconds (chain v2)
+}
 ```
 
-Only `math` is actually timed in-game — the non-math values are kept because callers still pass `base_seconds` for symmetry and the character sheet references them (though the "+Ns on text-heavy subjects" line is UI-rot flagged in SYSTEMS_AUDIT.md §8 P1).
+If timing is ever restored for another subject, re-add its row as
+`(base_seconds, wis_scale)` and remove it from the forcing branch
+at `quiz_engine.py:193`. Non-math subjects whose callers still ask
+`get_quiz_timer(subject)` get a sensible math-shaped default
+`(0, 1.0)`, but the engine discards whatever `base_seconds` they
+pass.
 
 ### Status-effect timer modifiers (via `Player.get_quiz_timer_modifier()`)
 - `blinded`: ×0.70
@@ -241,8 +244,16 @@ Only `math` is actually timed in-game — the non-math values are kept because c
 - `blessed`: ×1.25
 
 ### `extra_seconds` adds
-- `get_int_quiz_bonus()` — magical subjects (science) get +(INT-10)/2 seconds. Dead on everything but math today because science is untimed. Flagged in SYSTEMS_AUDIT.md §8 P1.
-- `get_quiz_extra_seconds(subject)` — per-subject bonuses from quirks (Scheherazade, Merlin, Sisyphus, etc.) and Mimir's Well. Also dead on untimed subjects — flagged as the "if X ever becomes timed" quirk-text rot in SYSTEMS_AUDIT.md §7 P3.
+- `get_int_quiz_bonus()` — would grant +(INT-10)/2 seconds for magic
+  subjects, but all magic subjects (science/grammar/philosophy) are
+  untimed. Dead under the current engine; preserved as a no-op in
+  case magic-subject timing is restored. Call sites still invoke it
+  for symmetry; the engine discards the value.
+- `get_quiz_extra_seconds(subject)` — per-subject bonuses from
+  quirks and Mimir's Well. Only the `math` key actually matters
+  (that's the only subject whose `base_seconds` the engine respects).
+  Non-math requests return the accumulated total but it is discarded
+  by the engine.
 
 ## Tablet of Destinies reroll (one-time per floor)
 

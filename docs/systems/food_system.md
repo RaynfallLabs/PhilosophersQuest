@@ -120,7 +120,7 @@ quiz_engine.start_quiz(
 )
 ```
 
-`SUBJECT_TIMER['animal'] = (34, 1.6)` — flat 34s base at WIS 10, with the WIS modifier applied by the engine.
+**Untimed** — harvest quizzes use `subject='animal'`, which `quiz_engine.py:193` forces `timed=False`. The `SUBJECT_TIMER` table no longer carries an `'animal'` row (collapsed to math-only 2026-10-03). If animal timing is ever restored, see [quiz_engine.md](quiz_engine.md) §Timer wiring.
 
 ### 3.3 Outcome resolution
 
@@ -199,7 +199,7 @@ quiz_engine.start_quiz(
 )
 ```
 
-`SUBJECT_TIMER['cooking'] = (44, 1.6)` — flat 44s base at WIS 10, because cooking stems carry full-sentence choices and recipe context.
+**Untimed** — cooking quizzes use `subject='cooking'`, which `quiz_engine.py:193` forces `timed=False`. The `SUBJECT_TIMER` table no longer carries a `'cooking'` row (collapsed to math-only 2026-10-03). See [quiz_engine.md](quiz_engine.md) §Timer wiring.
 
 ### 4.4 Right vs wrong
 

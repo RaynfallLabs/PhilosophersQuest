@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "version": 1,
+    "notes": "Phase 1 (CHAIN_EFFECTS_PLAN.md, 2026-10-03). Three handlers: in-quiz math-combat chain feedback plus the two full-screen takeovers (Divine Intercession, Unicorn bond) migrated out of QuizEngine.celebrating. Add new effects by appending a block here and registering a handler class in src/effects/."
+  },
+  "effects": {
+    "chain_math_combat": {
+      "handler": "chain_aura_pulse",
+      "scope": "quiz_session",
+      "activates_when": {
+        "subject": "math",
+        "mode": "chain",
+        "has_combat_target": true
+      },
+      "ranks": [
+        {"threshold": 0,  "name": "",          "color": [230, 230, 230], "aura_opacity": 0.0},
+        {"threshold": 1,  "name": "",          "color": [200, 220, 200], "aura_opacity": 0.15},
+        {"threshold": 3,  "name": "Solid",     "color": [110, 220, 110], "aura_opacity": 0.25},
+        {"threshold": 5,  "name": "Sharp",     "color": [240, 220,  80], "aura_opacity": 0.35},
+        {"threshold": 8,  "name": "Brilliant", "color": [255, 150,  40], "aura_opacity": 0.45},
+        {"threshold": 10, "name": "Genius",    "color": [240,  80,  60], "aura_opacity": 0.55},
+        {"threshold": 15, "name": "Prodigy",   "color": [255, 210,  60], "aura_opacity": 0.60},
+        {"threshold": 20, "name": "Mythic",    "color": [240, 200, 255], "aura_opacity": 0.65}
+      ],
+      "milestones": [3, 5, 8, 10, 15, 20, 25, 30, 35],
+      "particle_budget": 64,
+      "pulse_duration_ms": 220,
+      "burst_duration_ms": 650,
+      "reduced_motion": {
+        "disable": ["particles", "rotating_runes"],
+        "replace_milestone": "static_highlight_300ms"
+      }
+    },
+    "divine_intercession_takeover": {
+      "handler": "fullscreen_takeover",
+      "scope": "one_shot",
+      "duration_ms": 1800,
+      "art": "divine_intercession",
+      "palette": "gold_white",
+      "reduced_motion": {
+        "disable": ["rotating_runes"],
+        "shorten_to_ms": 900
+      }
+    },
+    "unicorn_bond_takeover": {
+      "handler": "fullscreen_takeover",
+      "scope": "one_shot",
+      "duration_ms": 1800,
+      "art": "unicorn_bond",
+      "palette": "lavender_white",
+      "reduced_motion": {
+        "disable": ["rotating_runes"],
+        "shorten_to_ms": 900
+      }
+    },
+    "identify_success_orb": {
+      "handler": "identify_orb",
+      "scope": "one_shot",
+      "duration_ms": 1200,
+      "palette": "lavender_white",
+      "particle_budget": 12,
+      "reduced_motion": {
+        "disable": ["orbit_sparks", "expansion_phase"],
+        "replace_with": "static_pulse_300ms"
+      }
+    }
+  }
+}

@@ -20,8 +20,8 @@ The AI bank teaches kids three things in priority:
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('ai', (26, 1.2))` in src/player.py |
-| Total timer at WIS 10 | **38s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 
 ## 2. Per-tier char budgets
 

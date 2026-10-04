@@ -7,26 +7,13 @@ class Player:
     CARRY_PER_STR = 5
 
     # Per-subject quiz timer tuning: (base_seconds, wis_scale_per_point)
-    # base_seconds: fixed reading time floor for the category
-    # wis_scale: seconds gained per point of WIS (e.g. 0.8 means WIS 15 adds 12s)
+    # Math is the ONLY timed subject (quiz_engine.py:191-193 forces
+    # timed=False for every other subject). All other entries used to live
+    # here when the pre-v2.11 engine timed every subject; removed 2026-10-03.
+    # If timing is ever restored for any subject, re-add its row here as
+    # `(base_seconds, wis_scale)` so `get_quiz_timer(subject)` has data.
     SUBJECT_TIMER = {
-        # (base_seconds, wis_scale) — timer = base + WIS * scale
-        # Recalibrated 2026-05-11 for learning-focused gameplay: kids tune
-        # out under time pressure when foundational concepts are missing,
-        # so wonder subjects get scaffolded prompts that need room to read.
-        # Math stays snappy because combat is the pressure point by design.
-        'math':       ( 0, 1.0),   # combat — flat WIS seconds (chain combat v2)
-        'science':    (24, 1.2),   # concept questions with scaffolded setup
-        'grammar':    (20, 1.0),   # sentence-level analysis
-        'trivia':     (26, 1.2),   # general knowledge, varied lengths
-        'geography':  (28, 1.2),   # moderate reading, detailed choices
-        'history':    (34, 1.6),   # paragraph-length choices with scene-setting (+2 from playtest)
-        'animal':     (34, 1.6),   # descriptive species questions (+2 from playtest)
-        'ai':         (45, 1.5),   # technical concepts need room to teach (+5 from playtest)
-        'philosophy': (50, 1.5),   # abstract reasoning + scaffolded definitions (+10 from playtest)
-        'cooking':    (44, 1.6),   # full-sentence choices, recipe context
-        'theology':   (50, 1.7),   # dense doctrinal text, scaffolded (+2)
-        'economics':  (50, 1.7),   # detailed economic concepts with definitions (+2)
+        'math': (0, 1.0),   # combat — flat WIS seconds (chain combat v2)
     }
 
     def __init__(self):
@@ -863,14 +850,19 @@ class Player:
 
     def get_quiz_timer(self, subject: str = 'math') -> int:
         """Base quiz timer in seconds (before status modifiers).
-        Uses per-subject base + WIS scaling so text-heavy categories
-        give enough reading time without making flashcard math trivial.
 
-        Floor of 5 seconds: at very low WIS (e.g. after cursed-drain-wis
-        potions or stacked disease ticks), the unfloored formula can
-        return 0 or negative, making combat unwinnable. See bug-bash A7-1.
+        Only ``'math'`` is timed in the current engine
+        (``quiz_engine.py:191-193`` forces ``timed=False`` for every other
+        subject). For ``'math'`` the formula is a flat WIS seconds:
+        WIS 10 -> 10s, WIS 20 -> 20s. Floor of 5s prevents an
+        unwinnable combat under drain-WIS curses.
+
+        Callers for non-math subjects still request this and pass the
+        value to ``start_quiz(base_seconds=...)``; the engine discards
+        it. Returning a sensible math-shaped value for unknown subjects
+        keeps those call sites safe.
         """
-        base, wis_scale = self.SUBJECT_TIMER.get(subject, (10, 1.0))
+        base, wis_scale = self.SUBJECT_TIMER.get(subject, (0, 1.0))
         return max(5, round(base + self.WIS * wis_scale))
 
     def get_quiz_timer_modifier(self) -> float:
@@ -892,18 +884,24 @@ class Player:
         return round(max(0.40, mod), 2)
 
     def get_int_quiz_bonus(self) -> int:
-        """Extra quiz seconds for magic subjects (science/grammar/philosophy). +0.5s per INT above 10."""
+        """Extra quiz seconds for magic subjects (science/grammar/philosophy).
+
+        DEAD under the current engine — magic subjects are all untimed
+        (quiz_engine.py:191-193). The method is kept because callers in
+        game_combat/game_magic still pass its return value to
+        ``start_quiz(extra_seconds=...)``, where the engine discards it.
+        Formula preserved for the eventual restoration of per-magic-subject
+        timing: +0.5s per INT above 10.
+        """
         return max(0, self.INT - 10) // 2
 
     def get_quiz_extra_seconds(self, subject: str) -> int:
         """Extra quiz seconds from earned quirks and equipment.
 
-        NOTE: only the `math` subject is actually timed under the current quiz
-        engine (see quiz_engine.start_quiz timer policy). Callers still request
-        `get_quiz_extra_seconds(non_math_subject)` and pass the value through
-        `start_quiz(extra_seconds=...)`, but the engine discards it. Returning
-        the accumulated total anyway keeps math seconds correct without needing
-        every caller to know the timing rule.
+        Only ``'math'`` is actually timed in the current engine
+        (quiz_engine.py:191-193). For any other subject the engine
+        receives this value but discards it. Callers can still request
+        it generically; the math path uses it, the rest ignore it.
         """
         base = getattr(self, 'quiz_timer_bonuses', {}).get(subject, 0)
         # Ancile shield: bonus seconds on quiz timers.

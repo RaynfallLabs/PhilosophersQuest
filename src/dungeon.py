@@ -1639,23 +1639,13 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon) -> list:
     for room in potion_rooms:
         _place_one(eligible_potions, room, dungeon, ground_items, rng)
 
-    # -- Soul Spheres -- ~5% per floor ------------------------------------------
+    # -- Soul Spheres -- ~5% per floor (loaded from artifact.json) --------------
     if rng.random() < 0.05:
-        from items import Artifact
-        sphere = Artifact({
-            'id': 'soul_sphere',
-            'name': 'Soul Sphere',
-            'symbol': 'O',
-            'color': [255, 80, 80],
-            'item_class': 'artifact',
-            'weight': 0.5,
-            'min_level': 1,
-            'lore': 'A sphere of crimson and ivory that hums with trapped souls. '
-                    'Ancient texts say these vessels were used to bind creature spirits. '
-                    'One wonders what might happen if it were hurled with force...',
-        })
-        sphere_room = rng.choice(rooms[1:])
-        _place_one([sphere], sphere_room, dungeon, ground_items, rng)
+        from items import make_item_by_id
+        sphere = make_item_by_id('artifact', 'soul_sphere')
+        if sphere is not None:
+            sphere_room = rng.choice(rooms[1:])
+            _place_one([sphere], sphere_room, dungeon, ground_items, rng)
 
     # -- Mystery altars --------------------------------------------------------
     try:

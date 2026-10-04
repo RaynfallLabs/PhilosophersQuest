@@ -16,8 +16,8 @@ In-game, the player answers history questions when equipping accessories (thresh
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('history', (32, 1.6))` in src/player.py |
-| Total timer at WIS 10 | **48s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 | **72s** |
 
 Generous — scaffolded story content needs room to read. Many T4/T5 questions are paragraph-length scene-setting before the question lands.

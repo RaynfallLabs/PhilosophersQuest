@@ -1055,12 +1055,24 @@ class DivineMixin:
             else:
                 success = bool(getattr(result, 'success', False))
             if success:
+                # Phase 1 of CHAIN_EFFECTS_PLAN (2026-10-03):
+                # the Divine Intercession celebration is now a named
+                # effect on the EffectsRuntime, not a QuizEngine state.
+                # Fire it on success so the top-overlay pass paints
+                # the rune-circle takeover over STATE_PLAYER.
+                rt = getattr(self, 'effects_runtime', None)
+                if rt is not None:
+                    rt.fire('divine_intercession_takeover', {})
                 self._resolve_intercession_success()
             else:
                 self._resolve_intercession_failure()
             self._advance_turn()
 
         if at_altar:
+            # Divine Intercession's full-screen "HEAVEN HEARS YOU"
+            # takeover is driven by effects_runtime.fire() in
+            # on_complete above (Phase 1, CHAIN_EFFECTS_PLAN.md,
+            # 2026-10-03) -- no more QuizEngine.celebrating hold.
             self.quiz_engine.start_quiz(
                 mode='escalator_chain',
                 subject='theology',

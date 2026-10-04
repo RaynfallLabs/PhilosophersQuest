@@ -22,8 +22,8 @@ Cooking pulls weight on FIVE pillars (per `docs/quiz/cooking_strategies.md`):
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('cooking', (28, 1.4))` in `src/player.py` |
-| Total timer at WIS 10 | **42s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 (late-game) | **63s** |
 | Default-weapon chain cap | n/a (cooking uses different action) |
 | Typical chain target | **10-15** |

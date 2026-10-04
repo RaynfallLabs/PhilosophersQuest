@@ -1836,6 +1836,14 @@ class RenderMixin:
         if self._debug_overlay:
             self._draw_debug_overlay()
 
+        # Effects top-overlay pass: full-screen takeovers (Divine
+        # Intercession, Unicorn bond) paint OVER everything else so
+        # they can keep running after the quiz state has already
+        # transitioned back to STATE_PLAYER. Phase 1 of CHAIN_EFFECTS.
+        rt = getattr(self, 'effects_runtime', None)
+        if rt is not None:
+            rt.draw_top_overlay(self.screen)
+
         pygame.display.flip()
 
     def _camera(self) -> tuple[int, int]:
@@ -2085,11 +2093,14 @@ class RenderMixin:
         if not qe.current_question:
             return
 
-        # Celebration takes over the full screen -- draw nothing else
-        if qe.celebrating:
-            self._draw_celebration()
-            return
-
+        # Legacy ``qe.celebrating`` short-circuit is retired (Phase 1,
+        # CHAIN_EFFECTS_PLAN.md, 2026-10-03). The two celebration call
+        # sites (Divine Intercession, Unicorn boon) are now driven by
+        # ``effects_runtime.fire('..._takeover', {})`` from their
+        # on_complete callbacks and painted via
+        # ``effects_runtime.draw_top_overlay`` at the end of render().
+        # ``_celebrate_on_max`` stays wired in QuizEngine as an escape
+        # hatch; no current caller opts in.
         is_combat = (self.combat_target is not None and qe.mode == QuizMode.CHAIN)
         accent    = self._SUBJECT_COLOR.get(qe.subject, (160, 130, 255))
         accent_dim = tuple(max(0, v - 90) for v in accent)
@@ -2153,6 +2164,15 @@ class RenderMixin:
 
         bx = (layout.GAME_W - bw) // 2
         by = max(20, (layout.WINDOW_H - bh) // 2)
+        panel_rect = pygame.Rect(bx, by, bw, bh)
+
+        # Effects background pass -- the chain aura paints a soft border
+        # glow around the panel here. Runs BEFORE the opaque panel so
+        # anything the handler paints inside the panel's footprint is
+        # cleanly covered. See src/effects_runtime.py + src/effects/.
+        rt = getattr(self, 'effects_runtime', None)
+        if rt is not None:
+            rt.draw_background(self.screen, panel_rect)
 
         # FANTASY: Arcane grimoire quiz panel
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent)
@@ -2324,6 +2344,53 @@ class RenderMixin:
         if is_combat:
             self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
 
+        # Effects foreground pass -- the chain aura paints particles /
+        # the per-answer pulse ON TOP of the panel, but respects the
+        # protected rects below so none of the substantive text or
+        # cards is ever occluded. Last step in _draw_quiz by design.
+        if rt is not None:
+            protected = self._quiz_protected_rects(
+                qe=qe,
+                panel_rect=panel_rect,
+                header_h=HEADER_H,
+                timer_rect=pygame.Rect(bar_x, ty, bar_w, bar_h) if getattr(qe, 'timed', True) else None,
+                question_rect=pygame.Rect(bx + PAD, ty + TIMER_H,
+                                          bw - PAD * 2, q_height),
+                choices_rect=pygame.Rect(bx + PAD,
+                                         ty + TIMER_H + q_height + SECTION_GAP,
+                                         bw - PAD * 2,
+                                         ch_height * 2 + GAP),
+                status_rect=pygame.Rect(bx + PAD, status_y,
+                                        bw - PAD * 2, STATUS_H),
+                pad=PAD,
+            )
+            rt.draw_foreground(self.screen, protected)
+
+    def _quiz_protected_rects(self, qe, panel_rect, header_h: int,
+                              timer_rect, question_rect, choices_rect,
+                              status_rect, pad: int) -> list:
+        """Build the list of rects the effects runtime must not paint
+        into for an active quiz. Centralised so handlers (and tests)
+        can get the same shape -- an effect spilling onto question
+        text, choice cards, timer or counter would corrupt readability.
+        """
+        rects = []
+        # Chain / threshold counter rect in the header's right stack.
+        counter_rect = pygame.Rect(
+            panel_rect.x + panel_rect.w - pad - 220, panel_rect.y,
+            220, header_h,
+        )
+        rects.append(counter_rect)
+        if question_rect is not None:
+            rects.append(question_rect)
+        if choices_rect is not None:
+            rects.append(choices_rect)
+        if status_rect is not None:
+            rects.append(status_rect)
+        if timer_rect is not None:
+            rects.append(timer_rect)
+        return rects
+
     def _draw_quiz_context_modal(self):
         """Opt-in orientation modal shown over the active quiz.
 
@@ -2401,52 +2468,11 @@ class RenderMixin:
                              (inset, inset, gw - 2 * inset, gh - 2 * inset), 2)
         self.screen.blit(vig, (layout.MAP_X, 0))
 
-    def _draw_celebration(self):
-        """MAX CHAIN celebration — full-screen grimoire moment.
-
-        Joins the rune-circle + candle-glow family used by victory/death so
-        win moments share visual DNA. Pulsing intensity drives the rune
-        rotation speed and candle brightness.
-        """
-        from fantasy_ui import draw_rune_circle, draw_candle_glow, draw_glow_text, draw_filigree_bar
-        qe    = self.quiz_engine
-        t     = qe.celebration_timer
-        pulse = abs(math.sin(t * 6))
-
-        # Warm overlay wash
-        draw_overlay(self.screen, alpha=int(180 + 30 * pulse), color=(40, 24, 0))
-
-        cx = layout.WINDOW_W // 2
-        cy = layout.WINDOW_H // 2
-
-        # Counter-rotating gold rune circles + candle glow at center
-        draw_rune_circle(self.screen, cx, cy, 280,
-                         (*FP.GOLD, int(100 + 60 * pulse)),
-                         t * 1.5, 16)
-        draw_rune_circle(self.screen, cx, cy, 190,
-                         (*FP.GOLD_BRIGHT, int(80 + 60 * pulse)),
-                         -t * 2.0, 10)
-        draw_candle_glow(self.screen, cx, cy, intensity=0.8 + 0.4 * pulse)
-
-        # Filigree bars frame the headline
-        draw_filigree_bar(self.screen, cx - 320, cy - 88, 640, FP.GOLD)
-
-        # Headline
-        cel_font = self.font_xl
-        cel_text = qe.celebration_text
-        size = cel_font.size(cel_text)
-        hx = cx - size[0] // 2
-        hy = cy - size[1] // 2
-        draw_glow_text(self.screen, cel_font, cel_text,
-                       FP.GOLD_BRIGHT, (hx, hy),
-                       glow_color=(255, 230, 140), glow_r=4)
-
-        draw_filigree_bar(self.screen, cx - 320, cy + size[1] + 12, 640, FP.GOLD_DARK)
-
-        # Sub-line
-        sub = self.font_lg.render("Perfect Combo!", True, FP.GOLD_PALE)
-        self.screen.blit(sub, (cx - sub.get_width() // 2,
-                               cy + size[1] + 24))
+    # NOTE: ``_draw_celebration`` was removed in Phase 1
+    # (CHAIN_EFFECTS_PLAN.md, 2026-10-03). The full-screen takeover is
+    # now owned by the FullscreenTakeover handler in
+    # ``src/effects/fullscreen_takeover.py`` and painted via the
+    # EffectsRuntime's ``draw_top_overlay`` phase.
 
     def _draw_combat_hud(self, bx: int, strip_y: int, bw: int, accent=(80, 80, 180)):
         """Draw monster HP bar + chain damage preview inside the quiz modal."""

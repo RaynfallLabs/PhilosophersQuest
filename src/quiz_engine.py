@@ -65,6 +65,13 @@ class QuizEngine:
     def __init__(self):
         self._cache: dict[str, list] = {}
 
+        # Monotonically increasing session id. Incremented at the top of
+        # `start_quiz`; downstream effect/UI code reads it as a reliable
+        # "this is a new quiz" signal — two consecutive zero-chain quizzes
+        # still get distinct ids. Public, read-only; see CHAIN_EFFECTS_PLAN
+        # Phase 0 (2026-10-03).
+        self.session_id: int = 0
+
         # Persistent shuffle-decks: keyed by (subject, tier).
         # Each deck is walked in order across *all* quiz sessions for that subject/tier.
         # A question only repeats after every question in the pool has been shown at least once.
@@ -124,6 +131,12 @@ class QuizEngine:
         self.celebrating: bool = False
         self.celebration_text: str = ''
         self.celebration_timer: float = 0.0
+        # When False (default), hitting max_chain ends the quiz silently
+        # — no full-screen "MAX CHAIN!" takeover. Only the two sites that
+        # explicitly opt in via `start_quiz(celebrate_on_max=True)`
+        # (Divine Intercession, Unicorn boon) keep the celebration.
+        # See CHAIN_EFFECTS_PLAN Phase 0 (2026-10-03).
+        self._celebrate_on_max: bool = False
 
         # Seed `_seen` from the persisted cross-game history so the first deck
         # built for each (subject, tier) pushes recently-shown questions to the
@@ -169,7 +182,8 @@ class QuizEngine:
                    callback, threshold: int = 3, max_chain: int | None = None,
                    wisdom: int = 10, timer_modifier: float = 1.0,
                    extra_seconds: int = 0, base_seconds: int | None = None,
-                   total_qs: int | None = None, timed: bool | None = None):
+                   total_qs: int | None = None, timed: bool | None = None,
+                   celebrate_on_max: bool = False):
         """
         Start a quiz session.
           threshold     -- for threshold modes: number of correct answers needed.
@@ -184,8 +198,22 @@ class QuizEngine:
                           equip, prayer, cooking, magic, etc.) is untimed so the kid
                           can actually READ the substantive content the banks teach.
                           See `proposals/v2_audit/10_quiz_engine.md` §timer policy.
+          celebrate_on_max -- opt-in to the full-screen "MAX CHAIN!" takeover
+                          when `max_chain` is reached. Default False — the ~12
+                          routine chain-mode call sites (combat, prayer, equip,
+                          hero specials, mystery, …) no longer flash the
+                          celebration. The only two sites that pass True are
+                          Divine Intercession (`game_divine.py::_confirm_divine_intercession`)
+                          and the Unicorn boon (`game_encounters.py::_start_unicorn_quiz`).
+                          See CHAIN_EFFECTS_PLAN Phase 0 (2026-10-03).
           callback(QuizResult) is called when the quiz ends.
         """
+        # Monotonic session id — bumped BEFORE any early return so even an
+        # aborted quiz (empty bank) still advances the counter and the next
+        # quiz is distinguishable from this one for downstream effect/UI code.
+        self.session_id += 1
+        self._celebrate_on_max = celebrate_on_max
+
         if isinstance(mode, str):
             mode = QuizMode(mode)
         if timed is None:
@@ -448,11 +476,22 @@ class QuizEngine:
                     return
                 self._end(success=True)   # chain mode: always "succeeds"; score = chain length
             elif self.max_chain and self.chain >= self.max_chain:
-                # Celebrate before ending
-                self.celebrating = True
-                self.celebration_text = 'MAX CHAIN!'
-                self.celebration_timer = 1.5
-                # _end() called from update() after timer expires
+                # Max chain reached. Two paths (CHAIN_EFFECTS_PLAN Phase 0,
+                # 2026-10-03):
+                #   celebrate_on_max=True  -> full-screen "MAX CHAIN!" hold,
+                #       then _end() fires from update() when the timer runs out.
+                #       Only Divine Intercession + Unicorn opt in.
+                #   celebrate_on_max=False (default) -> end the quiz
+                #       immediately; `celebrating` stays False, no full-screen
+                #       takeover, no 1.5s hold. Phase 1's new per-answer
+                #       effects handle in-combat feedback instead.
+                if self._celebrate_on_max:
+                    self.celebrating = True
+                    self.celebration_text = 'MAX CHAIN!'
+                    self.celebration_timer = 1.5
+                    # _end() called from update() after timer expires
+                else:
+                    self._end(success=True)
             else:
                 if mode == QuizMode.ESCALATOR_CHAIN:
                     self._escalate()

@@ -16,8 +16,8 @@ In-game, the player answers geography questions when equipping armor or shields 
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('geography', (28, 1.2))` in src/player.py |
-| Total timer at WIS 10 | **40s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 | **58s** |
 
 Generous — by design. Wonder content needs room for scene-setting; the player should read with curiosity, not panic.

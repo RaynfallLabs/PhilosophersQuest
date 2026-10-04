@@ -1994,6 +1994,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
     except ImportError:
         pass
 
+    # Legacy array-chain uniques can have a finite _max_chain here. Per
+    # CHAIN_EFFECTS_PLAN Phase 0 (2026-10-03) they inherit the default
+    # `celebrate_on_max=False`, so hitting the array's chain-5 ceiling no
+    # longer fires the full-screen MAX CHAIN takeover — Phase 1's per-
+    # answer effects provide in-combat feedback instead.
     quiz_engine.start_quiz(
         mode='chain',
         subject='math',

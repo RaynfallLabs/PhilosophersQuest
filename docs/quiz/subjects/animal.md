@@ -23,8 +23,8 @@ Five pillars from `docs/quiz/animal_strategies.md`:
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('animal', (22, 1.2))` in src/player.py |
-| Total timer at WIS 10 | **34s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 (late-game) | **52s** |
 | Per-Q budget at WIS 10 chain-10 | **3.4s** |
 

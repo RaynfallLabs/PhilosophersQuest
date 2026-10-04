@@ -2082,6 +2082,24 @@ def copy_at(item: Item, x: int, y: int) -> Item:
     return inst
 
 
+def make_item_by_id(item_class: str, item_id: str) -> Item | None:
+    """Return a fresh shallow-copy instance of a data-driven item by id.
+
+    Load `data/items/{item_class}.json`, find the entry with matching id,
+    and return a shallow copy ready to drop into inventory or ground_items.
+    Returns None if no entry with that id exists. Used by paths that
+    previously constructed inline dicts (mystery_system, dungeon loot
+    pass, main start-inventory, pet recall) — the data file is now the
+    single source of truth and callers may still override `name`,
+    `color`, or `lore` on the returned instance for dynamic cases
+    (e.g. Bound Soul Sphere carries a pet name in its display name).
+    """
+    for base in load_items(item_class):
+        if getattr(base, 'id', None) == item_id:
+            return copy.copy(base)
+    return None
+
+
 # ------------------------------------------------------------------
 # Deep-lore item factories  (not loaded from JSON)
 # ------------------------------------------------------------------

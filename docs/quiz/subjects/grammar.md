@@ -16,8 +16,8 @@ In-game, the player answers grammar questions when reading scrolls + spellbooks 
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('grammar', (16, 1.0))` in src/player.py |
-| Total timer at WIS 10 | **26s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 | **41s** |
 | Per-Q budget at WIS 10 chain-10 | **2.6s** |
 

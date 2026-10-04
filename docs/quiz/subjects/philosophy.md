@@ -27,8 +27,8 @@ The philosophy bank was **rebuilt from scratch** via the ladder pipeline (`bankb
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('philosophy', (26, 1.2))` in `src/player.py` |
-| Total timer at WIS 10 | **38s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 (late-game) | **56s** |
 | Typical chain cap | **5** (escalator_chain mode for identification) |
 | Per-question budget at WIS 10, chain-5 | **7.6s** |

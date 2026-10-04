@@ -448,8 +448,19 @@ class EncountersMixin:
         def on_complete(result):
             self.state = STATE_PLAYER
             chain = result.score  # 0-5
+            # Phase 1 of CHAIN_EFFECTS_PLAN (2026-10-03): the Unicorn
+            # full-screen "THE UNICORN KNEELS" takeover is a named
+            # effect on the EffectsRuntime now. Fire it on any boon-
+            # earning score (chain >= 1 is the first boon rung).
+            if chain >= 1:
+                rt = getattr(self, 'effects_runtime', None)
+                if rt is not None:
+                    rt.fire('unicorn_bond_takeover', {})
             self._apply_unicorn_boons(chain, unicorn)
 
+        # Unicorn-bond takeover is driven by effects_runtime.fire()
+        # in on_complete above -- no more QuizEngine.celebrating hold
+        # (Phase 1, CHAIN_EFFECTS_PLAN.md, 2026-10-03).
         self.quiz_engine.start_quiz(
             mode='escalator_chain',
             subject='ai',

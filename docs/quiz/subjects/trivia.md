@@ -14,8 +14,8 @@ The trivia bank is **personal**. It's the user's way of sharing the deep-cut can
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('trivia', (26, 1.2))` in src/player.py |
-| Total timer at WIS 10 | **38s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 | **56s** |
 
 Generous mid-range timer — these questions read fast.

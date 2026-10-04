@@ -171,10 +171,17 @@ def test_chain_first_question_wrong_score_zero():
 
 
 def test_chain_max_chain_celebration_and_end():
-    """Chain mode with max_chain: hitting max_chain triggers celebration → end."""
+    """Chain mode with max_chain + celebrate_on_max=True: hitting max_chain triggers celebration → end.
+
+    Note: `celebrate_on_max` defaults to False after CHAIN_EFFECTS_PLAN Phase 0
+    (2026-10-03). This test now explicitly opts in to exercise the celebration
+    path — the two live opt-in call sites (Divine Intercession, Unicorn boon)
+    behave this way.
+    """
     eng = _make_engine()
     results, cb = _captured_result()
-    eng.start_quiz('chain', 'math', tier=1, callback=cb, max_chain=3)
+    eng.start_quiz('chain', 'math', tier=1, callback=cb, max_chain=3,
+                   celebrate_on_max=True)
     for _ in range(3):
         eng.answer('right')
         eng.update(eng.RESULT_DISPLAY_TIME + 0.01)
@@ -262,10 +269,15 @@ def test_escalator_chain_score_is_chain_length():
 
 
 def test_escalator_chain_max_chain_celebrates_and_ends():
-    """Escalator chain hitting max_chain triggers celebration then ends."""
+    """Escalator chain with celebrate_on_max=True: hitting max_chain triggers celebration then ends.
+
+    Note: `celebrate_on_max` defaults to False after CHAIN_EFFECTS_PLAN Phase 0
+    (2026-10-03). This test opts in to exercise the celebration path.
+    """
     eng = _make_engine()
     results, cb = _captured_result()
-    eng.start_quiz('escalator_chain', 'math', tier=1, callback=cb, max_chain=5)
+    eng.start_quiz('escalator_chain', 'math', tier=1, callback=cb, max_chain=5,
+                   celebrate_on_max=True)
     for _ in range(5):
         eng.answer('right')
         eng.update(eng.RESULT_DISPLAY_TIME + 0.01)

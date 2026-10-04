@@ -970,5 +970,36 @@
     },
     "lore": "A brass oil-lamp, dented and tarnished, worth nothing at market. Aladdin found one like it in a cave under the earth, sent there by a sorcerer who promised it was 'just a lamp.' The djinn bound inside grants ONE wish to whoever rubs the lamp and proves themselves worthy. Not three -- one. The other tales got it wrong. The djinn keeps count and is patient and exact, and an unworthy rub earns a half-answered prayer rather than a full one. Make the wish count.",
     "_disabled_reason": "wish_categories dispatcher pending — vision audit 2026-05-30"
+  },
+  "soul_sphere": {
+    "name": "Soul Sphere",
+    "symbol": "O",
+    "color": [
+      255,
+      80,
+      80
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "identified": false,
+    "id_level": 0,
+    "unidentified_name": "crimson sphere",
+    "lore": "A sphere of crimson and ivory that hums with trapped souls. Ancient texts say these vessels were used to bind creature spirits. One wonders what might happen if it were hurled with force..."
+  },
+  "unusual_soul_sphere": {
+    "name": "Unusual Soul Sphere",
+    "symbol": "O",
+    "color": [
+      180,
+      180,
+      200
+    ],
+    "weight": 0.5,
+    "min_level": 999,
+    "identified": false,
+    "id_level": 0,
+    "unidentified_name": "black-and-silver sphere",
+    "lore": "An unusual soul sphere. Its colors are black and silver. It pulses with a powerful energy...",
+    "is_unique": true
   }
 }

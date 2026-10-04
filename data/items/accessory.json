@@ -5375,5 +5375,25 @@
     "is_unique": false,
     "spread": 13,
     "peak_floor": 30
+  },
+  "ring_of_command": {
+    "name": "Ring of Command",
+    "symbol": "=",
+    "color": [
+      255,
+      220,
+      50
+    ],
+    "weight": 0.1,
+    "min_level": 1,
+    "slot": "ring",
+    "equip_threshold": 2,
+    "quiz_tier": 5,
+    "effects": {},
+    "identified": true,
+    "unidentified_name": "Ring of Command",
+    "lore": "A heavy gold band that answers only to a wearer whose judgment has been weighed and found sufficient. The seal of Solomon's throne room is pressed into its surface.",
+    "floorSpawnWeight": {},
+    "is_unique": false
   }
 }

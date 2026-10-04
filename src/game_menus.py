@@ -1880,19 +1880,20 @@ class MenuMixin:
             self.add_message(
                 f"You must be adjacent to {pet.name} to recall it.", 'warning')
             return
-        from items import Artifact
-        sphere = Artifact({
-            'id': 'soul_sphere',
-            'name': f"Bound Soul Sphere ({pet.name})",
-            'symbol': 'O',
-            'color': [80, 200, 255],   # cyan tint distinguishes bound spheres
-            'item_class': 'artifact',
-            'weight': 0.5,
-            'min_level': 1,
-            'identified': True,
-            'lore': (f"A Soul Sphere humming with the bound spirit of "
-                     f"{pet.name}. Hurl it to summon them back to your side."),
-        })
+        # Load the Soul Sphere base from artifact.json, then override the
+        # dynamic fields (name reflects the bound pet, cyan tint distinguishes
+        # bound spheres, lore mentions the pet by name, already identified).
+        from items import make_item_by_id
+        sphere = make_item_by_id('artifact', 'soul_sphere')
+        if sphere is None:
+            self.add_message(
+                "The sphere refuses to form around the bond.", 'warning')
+            return
+        sphere.name = f"Bound Soul Sphere ({pet.name})"
+        sphere.color = (80, 200, 255)
+        sphere.identified = True
+        sphere.lore = (f"A Soul Sphere humming with the bound spirit of "
+                       f"{pet.name}. Hurl it to summon them back to your side.")
         sphere.bound_pet = pet
         self.player.add_to_inventory(sphere)
         # Remove the pet from the active list

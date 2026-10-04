@@ -16,8 +16,8 @@ That said: math is not *only* arithmetic drills. Higher tiers carry brief wonder
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('math', (8, 0.8))` in `src/player.py` |
-| Total timer at WIS 10 | **16s** |
+| `SUBJECT_TIMER` | `('math', (0, 1.0))` in `src/player.py` |
+| Total timer at WIS 10 | **10s** (flat WIS seconds, chain-v2) |
 | Total timer at WIS 25 (late-game) | **28s** |
 | Default-weapon chain cap | **7** |
 | Legendary-weapon chain cap | **10** |

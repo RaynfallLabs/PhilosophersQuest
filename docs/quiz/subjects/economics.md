@@ -16,8 +16,8 @@ In-game, the player answers economics questions when lockpicking (threshold mode
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('economics', (48, 1.7))` in src/player.py |
-| Total timer at WIS 10 | **65s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 | **91s** |
 
 Most generous timer in the game (tied with theology). Economics questions carry dense conceptual content + Austrian-school technical vocabulary that needs room to read.

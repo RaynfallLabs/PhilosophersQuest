@@ -79,7 +79,11 @@ MYSTERIES = {
         'description': "A dark well with runes carved around its rim. The water below holds all wisdom. A price is implied.",
         'key_item': None,
         'gold_cost': 0,
-        'stat_cost': {'PER': -1},  # applied before quiz starts
+        # PER-1 is applied before the quiz starts; it is deliberately KEPT on
+        # failure per feedback_resource_loss_is_the_penalty.md — the price
+        # of insight is paid up front and does not refund if the player
+        # cannot hold the well's knowledge.
+        'stat_cost': {'PER': -1},  # applied before quiz starts; not refunded on fail
         'challenge': {'mode': 'chain', 'subject': 'philosophy', 'tier': 4, 'threshold': 3, 'max_chain': None},
         'reward': {'WIS': 1, 'INT': 1},
         'reward_text': "Mimir's Wisdom: +1 WIS, +1 INT (permanent).",
@@ -165,8 +169,8 @@ MYSTERIES = {
         'key_item': {'name': "The Boulder", 'symbol': '*', 'color': (140, 140, 140), 'weight': 20.0},
         'gold_cost': 0,
         'challenge': {'mode': 'physical', 'tiles': 15},  # walk 15 tiles over carry limit while holding boulder
-        'reward': {'STR': 3, 'INT': 1},
-        'reward_text': "The boulder vanishes. Your body is transformed by the effort. STR+3, INT+1.",
+        'reward': {'STR': 2, 'INT': 1},
+        'reward_text': "The boulder vanishes. Your body is transformed by the effort. STR+2, INT+1.",
         'fail_text': "",
         'invert_result': False,
     },
@@ -181,7 +185,7 @@ MYSTERIES = {
         'challenge': {'mode': 'threshold', 'subject': 'cooking', 'tier': 2, 'threshold': 1, 'total': 1},
         'reward': {'effects': ['searching', 'warning']},
         'reward_text': "The cauldron's magic fills you. Permanent searching and danger-warning.",
-        'fail_text': "The cauldron rejects your cooking skill.",
+        'fail_text': "The cauldron rejects your offering. The flames gutter and die.",
         'invert_result': False,
     },
 }
@@ -512,24 +516,14 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         game.add_message("Mjolnir, fully forged, appears in your pack!", 'loot')
 
     elif special == 'ring_of_command':
-        from items import Accessory
-        ring_def = {
-            'id': 'ring_of_command',
-            'name': 'Ring of Command',
-            'symbol': '=',
-            'color': [255, 220, 50],
-            'weight': 0.1,
-            'min_level': 1,
-            'item_class': 'accessory',
-            'effects': {'stat': 'WIS', 'amount': 1},
-            'slot': 'ring',
-            'identified': True,
-            'unidentified_name': 'Ring of Command',
-            'quiz_tier': 5,
-        }
-        ring = Accessory(ring_def)
-        player.add_to_inventory(ring)
-        game.add_message("A Ring of Command appears in your pack.", 'loot')
+        # Ring of Command is defined in data/items/accessory.json (no +1 WIS
+        # effect — Solomon's reward dict already grants WIS+2 and the audit
+        # 2026-10-03 flagged the stacked +WIS as a double-dip).
+        from items import make_item_by_id
+        ring = make_item_by_id('accessory', 'ring_of_command')
+        if ring is not None:
+            player.add_to_inventory(ring)
+            game.add_message("A Ring of Command appears in your pack.", 'loot')
 
     elif special == 'oracle_reveal':
         _oracle_reveal_quirks(player, game)
@@ -630,22 +624,12 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
         except Exception:
             pass
 
-    # 15% chance merchant has a Soul Sphere
+    # 15% chance merchant has a Soul Sphere (loaded from artifact.json).
     if rng.random() < 0.15:
-        from items import Artifact
-        sphere = Artifact({
-            'id': 'soul_sphere',
-            'name': 'Soul Sphere',
-            'symbol': 'O',
-            'color': [255, 80, 80],
-            'item_class': 'artifact',
-            'weight': 0.5,
-            'min_level': 1,
-            'lore': 'A sphere of crimson and ivory that hums with trapped souls. '
-                    'Ancient texts say these vessels were used to bind creature spirits. '
-                    'One wonders what might happen if it were hurled with force...',
-        })
-        stock_items.append(sphere)
+        from items import make_item_by_id
+        sphere = make_item_by_id('artifact', 'soul_sphere')
+        if sphere is not None:
+            stock_items.append(sphere)
 
     if not stock_items:
         return None

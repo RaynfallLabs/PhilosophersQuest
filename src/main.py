@@ -43,6 +43,7 @@ from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
 from quiz_engine import QuizEngine
+from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile, is_at_tile
 from ui import Sidebar, MessageLog
@@ -131,6 +132,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         _snd.init()   # initialise procedural sound synthesis (best-effort)
         self.quiz_engine        = QuizEngine()
+        # Pluggable visual-effects runtime. Chain math-combat aura +
+        # the two fullscreen takeovers (Divine Intercession, Unicorn)
+        # ride on this. See CHAIN_EFFECTS_PLAN.md Phase 1 and
+        # docs/design/effects_runtime.md.
+        self.effects_runtime    = build_default_runtime()
         self.msg_log            = MessageLog()
         self.sidebar            = Sidebar(screen, layout.RIGHT_X)
         self.level_mgr          = LevelManager()
@@ -1907,44 +1913,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        # -- Soul Spheres ---------------------------------------------------
+        # -- Soul Spheres (loaded from artifact.json) -----------------------
         soul_sphere_count = b.get('_start_soul_spheres', 0)
         if soul_sphere_count > 0:
-            from items import Artifact
+            from items import make_item_by_id
             for _ in range(soul_sphere_count):
-                sphere = Artifact({
-                    'id': 'soul_sphere',
-                    'name': 'Soul Sphere',
-                    'symbol': 'O',
-                    'color': [255, 80, 80],
-                    'item_class': 'artifact',
-                    'weight': 0.5,
-                    'min_level': 1,
-                    'lore': 'A sphere of crimson and ivory that hums with trapped souls. '
-                            'Ancient texts say these vessels were used to bind creature spirits. '
-                            'One wonders what might happen if it were hurled with force...',
-                })
+                sphere = make_item_by_id('artifact', 'soul_sphere')
+                if sphere is None:
+                    continue
                 _mark_starting_item_known(sphere)
                 self.player.known_item_ids.add('soul_sphere')
                 self.player.inventory.append(sphere)
 
-        # -- Unusual Soul Sphere (family builds only) -------------------------
+        # -- Unusual Soul Sphere (family builds only, loaded from JSON) -----
         if b.get('_start_unusual_sphere'):
-            from items import Artifact
-            usphere = Artifact({
-                'id': 'unusual_soul_sphere',
-                'name': 'Unusual Soul Sphere',
-                'symbol': 'O',
-                'color': [180, 180, 200],
-                'item_class': 'artifact',
-                'weight': 0.5,
-                'min_level': 999,
-                'lore': "An unusual soul sphere. Its colors are black and silver. "
-                        "It pulses with a powerful energy...",
-            })
-            _mark_starting_item_known(usphere)
-            self.player.known_item_ids.add('unusual_soul_sphere')
-            self.player.inventory.append(usphere)
+            from items import make_item_by_id
+            usphere = make_item_by_id('artifact', 'unusual_soul_sphere')
+            if usphere is not None:
+                _mark_starting_item_known(usphere)
+                self.player.known_item_ids.add('unusual_soul_sphere')
+                self.player.inventory.append(usphere)
 
         # -- Pre-learned spells (Witcher Signs, Elder Blood) ----------------
         start_spells = b.get('_start_spells', [])
@@ -6182,6 +6170,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.quiz_engine.pending_context_auto_open is not None:
                 self.quiz_engine.pending_context_auto_open = None
 
+        # Effects runtime: feed a per-frame snapshot (chain aura reads this
+        # to decide pulses + milestone bursts), then advance timers. The
+        # runtime runs every frame regardless of state so fullscreen
+        # takeovers (fired during on_complete callbacks after the quiz
+        # ends) can still animate while the player is back in STATE_PLAYER.
+        qe = self.quiz_engine
+        snapshot = {
+            'subject':          qe.subject,
+            'mode':             qe.mode,
+            'chain':            qe.chain,
+            'asked_count':      qe.asked_count,
+            'correct_count':    qe.correct_count,
+            'last_correct':     qe.last_correct,
+            'quiz_state':       qe.state,
+            'has_combat_target': self.combat_target is not None,
+            'state':            self.state,
+        }
+        self.effects_runtime.observe(scope_id=qe.session_id, snapshot=snapshot)
+        self.effects_runtime.update(
+            dt, paused=getattr(qe, '_timer_paused', False))
+
         if self.state == STATE_PLAYER:
             pressed = pygame.key.get_pressed()
             held_dir = None
@@ -6570,6 +6579,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"You understand the {corpse.monster_name} now.",
                     'success'
                 )
+                # Phase 3 of CHAIN_EFFECTS_PLAN (2026-10-03): fire the
+                # identify-success orb as a celebratory flourish. The
+                # orb is the first non-chain effect on the pluggable
+                # EffectsRuntime -- validates the general pattern.
+                # Anchor at screen centre; the corpse's map coords
+                # would be covered by the lore screen anyway.
+                rt = getattr(self, 'effects_runtime', None)
+                if rt is not None:
+                    try:
+                        cx = self.screen.get_width() // 2
+                        cy = self.screen.get_height() // 2
+                    except Exception:
+                        cx, cy = None, None
+                    rt.fire('identify_success_orb',
+                            {'anchor_x': cx, 'anchor_y': cy})
             else:
                 self.add_message(
                     f"You study the {corpse.monster_name} but its nature eludes you.",

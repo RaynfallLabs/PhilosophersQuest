@@ -65,9 +65,11 @@ milestone. This is the one place "chain" is a visible scoring unit.
 **Rule:** the chain-math quiz in combat has a per-WIS timer. Everything
 else is **untimed**.
 
-- Table: `src/player.py::SUBJECT_TIMER`. Math ~16s at WIS 10;
-  theology ~46s at WIS 10 (text-heavy subjects had longer budgets
-  pre-2026-05 but are untimed now).
+- Table: `src/player.py::SUBJECT_TIMER` — currently holds only
+  the `'math'` row `(0, 1.0)` (flat WIS seconds). All other subjects
+  are untimed; the engine forces `timed=False` for them at
+  `quiz_engine.py:191-193`. Non-math rows were purged 2026-10-03
+  to make the "only math is timed" rule obvious from the data.
 - `QuizEngine` sets `qe.timed = False` for non-math quizzes.
   `_draw_quiz` suppresses the timer bar entirely (L2220 branch).
 - **Dead copy to delete on sight:** any help text that says "quiz
@@ -348,6 +350,32 @@ phases autonomously, validate via pytest, and surface ONE consolidated
 play-test request at the end. Never checkpoint-and-ask mid-task.
 
 Project memory: "Execute fully, then ONE play-test."
+
+---
+
+## 18. Visual effects runtime + reduced motion
+
+**Rule:** visual effects (per-answer chain feedback, fullscreen
+takeovers, future orb pops / level-up bursts) live in the
+`EffectsRuntime` (`src/effects_runtime.py`) with per-effect handlers
+under `src/effects/`. Config is `data/ui/effects_config.json`.
+Adding a new effect = append a config block + a handler class +
+register it in `build_default_runtime`. See
+`docs/design/effects_runtime.md` for the authoring guide and
+the handler protocol.
+
+Reduced-motion mode is Phase 1 opt-in via the env var
+`PQ_REDUCED_MOTION=1`:
+
+```powershell
+$env:PQ_REDUCED_MOTION='1'; python src/main.py
+```
+
+Each handler reads the per-effect `reduced_motion.disable` list from
+its config (`"particles"`, `"rotating_runes"`) + optional
+`shorten_to_ms` (one-shot) or `replace_milestone` (chain). A proper
+in-game settings UI for this toggle is future work -- Phase 1 ships
+the env var only.
 
 ---
 

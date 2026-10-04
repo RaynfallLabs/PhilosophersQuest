@@ -16,8 +16,8 @@ In-game, the player answers science questions when casting magic / using wands (
 
 | Stat | Value |
 |---|---|
-| `SUBJECT_TIMER` | `('science', (16, 1.0))` in src/player.py |
-| Total timer at WIS 10 | **26s** |
+| `SUBJECT_TIMER` | **Untimed** (purged 2026-10-03; only `math` is timed in the current engine) |
+| Total timer at WIS 10 | N/A |
 | Total timer at WIS 25 | **41s** |
 
 ## 2. Per-tier char budgets (cooking-style)
