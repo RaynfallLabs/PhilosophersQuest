@@ -1429,7 +1429,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.player.hp = min(self.player.hp, self.player.max_hp)
                 self.player.WIS += 1
                 self.add_message(
-                    "Odin's sacrifice: 1 HP for 1 WIS. Knowledge is bought.",
+                    "Odin's price: 1 max HP for 1 WIS. Knowledge is bought.",
                     'success')
         except ImportError:
             pass

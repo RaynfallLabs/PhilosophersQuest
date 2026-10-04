@@ -1859,7 +1859,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         if weapon and weapon.knockback and actual > 0:
             knocked = True
 
-        petrified = crit and weapon and getattr(weapon, 'petrify_on_crit', False)
+        # Harpe petrifies at chain 15+ (see above). This flag drives the
+        # "is turning to stone!" log line; it used to test the retired
+        # `crit`, which is always False, so the line never appeared.
+        petrified = bool(weapon and getattr(weapon, 'petrify_on_crit', False)
+                         and chain >= 15 and actual > 0)
 
         # ---------------------------------------------------------------
         # Class mechanics — fire from template-driven class_mechanic tags

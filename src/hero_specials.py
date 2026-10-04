@@ -305,7 +305,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "saint joan of arc maid of orleans": {
         'id': 'hero_standard_of_the_maid',
         'name': 'Standard of the Maid',
-        'desc': "Rally: self-heal and crit-buff your next strike.",
+        'desc': "Rally: self-heal and empower your next strike (+50% damage).",
         'cooldown': 350,
         'effect': 'heal_and_crit_buff',
         'tier_effects': {
@@ -899,7 +899,7 @@ def _eff_heal_and_crit_buff(game, special, tier, chain):
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, crit_turns)
     game.add_message(
-        f"The Maid's Standard! +{heal} HP; next {crit_turns} hits will crit.",
+        f"The Maid's Standard! +{heal} HP; your next strike deals +50% damage (within {crit_turns} turns).",
         'success')
 
 

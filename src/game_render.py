@@ -2794,7 +2794,7 @@ class RenderMixin:
             lines += [("Lore", FP.GOLD_BRIGHT, self.font_sm), (lore, FP.BODY_TEXT, self.font_sm)]
         elif lore:
             lines += [("Lore", FP.GOLD_BRIGHT, self.font_sm),
-                      ("Reach full identification to read the lore.", FP.FADED_TEXT, self.font_sm)]
+                      ("Identify this item to read its lore.", FP.FADED_TEXT, self.font_sm)]
 
         # ``Next action`` row removed — the panel footer hint ("Enter: Select"
         # etc.) covers controls, so a duplicate row inside the detail pane
@@ -3224,7 +3224,7 @@ class RenderMixin:
         else:
             for i, item in enumerate(display_items):
                 if isinstance(item, Weapon):
-                    detail = f"{getattr(item, 'weapon_class', 'weapon')}  {item.base_damage}dmg  chain x{item.max_chain_length or '?'}"
+                    detail = f"{_cap(getattr(item, 'weapon_class', 'weapon'))}  {item.base_damage} dmg"
                 elif isinstance(item, Shield):
                     detail = f"+{item.ac_bonus} AC  {_cap(item.material)}"
                 elif isinstance(item, Armor):
@@ -5482,7 +5482,7 @@ class RenderMixin:
         lines = []
         if id_level < 3 and hasattr(item, 'id_level'):
             lines.append(("Mechanics unrevealed", FP.GOLD_BRIGHT, self.font_sm))
-            lines.append(("Identify this item further to reveal stats, effects, and chain abilities.",
+            lines.append(("Identify this item to reveal its stats, effects and chain abilities.",
                           FP.FADED_TEXT, self.font_sm))
             return lines
 
@@ -5673,7 +5673,7 @@ class RenderMixin:
                     line += f" -> {effect.replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
                 mechanics.append((line, FP.BODY_TEXT, self.font_sm))
         else:
-            mechanics.append(("Stats unrevealed. Study this corpse to learn more.",
+            mechanics.append(("Unstudied. Identify this corpse to reveal its stats, weaknesses and history.",
                               FP.FADED_TEXT, self.font_sm))
 
         if id_level >= 3:
@@ -5731,7 +5731,7 @@ class RenderMixin:
                 pass
 
         lore = getattr(corpse, 'lore', '') if id_level >= 4 else (
-            "The creature's deeper history is still hidden. Study further to uncover it."
+            "Its history is hidden until you identify the corpse."
         )
         return identity, mechanics, lore or "No lore recorded."
 
@@ -5774,7 +5774,7 @@ class RenderMixin:
             identity_lines = self._lore_item_identity_lines(subject, id_level)
             mech_lines = self._lore_item_mechanic_lines(subject, id_level)
             lore_text = (getattr(subject, 'lore', '') if id_level >= 4 else
-                         "The history of this item remains hidden. Identify it to lore tier to read the full record.")
+                         "The history of this item remains hidden. Identify it to read the full record.")
             lore_color = FP.LORE_BLUE_BODY
 
         focus = getattr(self, '_lore_focus', 'mechanics')
@@ -6529,6 +6529,8 @@ class RenderMixin:
             ("System", [
                 ("1-4", "Answer quiz", FP.GOLD_BRIGHT),
                 ("SPACE", "Strike now", FP.GOLD_BRIGHT),
+                ("C", "Quiz context", FP.GOLD_BRIGHT),
+                ("PgUp/PgDn", "Scroll long quiz", FP.BODY_TEXT),
                 ("?", "Command help", FP.BODY_TEXT),
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
             ]),

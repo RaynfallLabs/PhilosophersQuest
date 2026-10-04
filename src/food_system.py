@@ -494,7 +494,7 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
             for ing in ingredients:
                 counts[ing.name] = counts.get(ing.name, 0) + 1
             parts = [f"{c}x {n}" if c > 1 else n for n, c in counts.items()]
-            msg = (f"You harvest the {corpse.name} (T{tier}/5): "
+            msg = (f"You harvest the {corpse.name}: "
                    f"{', '.join(parts)}." if parts
                    else f"You harvest the {corpse.name}, but it yields nothing usable.")
             on_complete(ingredients, msg)

@@ -68,7 +68,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'see_invisible':      ('See Invisible',      (200, 200, 255), 'You can perceive invisible creatures'),
     # ---- Hero special buffs (Phase 3B) ----
     'stand_ac':           ('Spartan Stand',      (255, 215, 80),  '+AC and counter-strike chance'),
-    'crit_buff':          ('Critical Resolve',   (255, 100, 100), 'Next attack deals +50% damage'),
+    'crit_buff':          ('Rallied Strike',     (255, 100, 100), 'Next attack deals +50% damage'),
     'fear_immune':        ('Battle Rage',        (220, 60, 40),   'Immune to fear effects'),
     'boomstick_aoe_next': ('Boomstick Loaded',   (200, 90, 30),   'Next shot scatters'),
     'control_immune':     ('Recovering',         (200, 230, 255), 'Shaking it off -- briefly immune to being disabled'),
@@ -394,7 +394,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'life_save':         ('The life-save ward is spent.',             'warning'),
     'reloading':         ('The crossbow is cocked and ready.',        'info'),
     'boomstick_aoe_next':('The scatter charge dissipates.',           'info'),
-    'crit_buff':         ('Your critical resolve fades.',             'info'),
+    'crit_buff':         ('Your rallied strength fades.',             'info'),
     'stand_ac':          ('You break your Spartan Stand.',            'info'),
     'melee_dmg_reduction':('Your guarded stance drops.',              'info'),
 }
