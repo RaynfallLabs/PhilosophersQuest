@@ -68,6 +68,29 @@ def _cap(raw) -> str:
     return proper_name(str(raw).replace('_', ' '))
 
 
+def _temp_power_label(name) -> str:
+    """Display name of a recipe's temporary power (same text the cook log
+    uses), or '' when there is none."""
+    if not name:
+        return ''
+    from food_system import temp_power_label
+    return temp_power_label(str(name))
+
+
+def _quiz_mode_phrase(mode, threshold=None) -> str:
+    """Plain-language description of a quiz mode for the player.
+
+    Engine mode names ("escalator_threshold", "escalator_chain") used to
+    be title-cased straight onto cards and panels.
+    """
+    mode = str(mode or '')
+    if 'threshold' in mode:
+        return f"answer {threshold} in a row" if threshold else "answer in a row"
+    if 'chain' in mode:
+        return f"chain of {threshold} or more" if threshold else "chain"
+    return mode.replace('_', ' ')
+
+
 def _identify_status_label(id_level: int) -> str:
     """Map an item's id_level to a human status string.
 
@@ -105,7 +128,8 @@ class RenderMixin:
         else:
             body.append(
                 (f"Challenge: {ch['subject'].capitalize()} - "
-                 f"{ch['mode'].replace('_', ' ').title()}", FP.GOLD_PALE)
+                 f"{_quiz_mode_phrase(ch['mode'], ch.get('threshold'))}",
+                 FP.GOLD_PALE)
             )
         if m['key_item']:
             body.append((f"Requires: {m['key_item']['name']}", FP.FADED_TEXT))
@@ -591,7 +615,7 @@ class RenderMixin:
                     active = ', '.join(tier_lines(item, achieved, 3))
                     if active:
                         lines.append(f"T{achieved} active: {active}")
-                lines.append(f"Attunes by {get_chain_subject(item)} {mode.replace('_', ' ').title()}")
+                lines.append(f"Attunes by {str(get_chain_subject(item)).title()} {_quiz_mode_phrase(mode)}")
             if isinstance(item, Weapon):
                 spec = self._kit_weapon_special(item, visible)
                 if spec and spec != '-':
@@ -839,14 +863,14 @@ class RenderMixin:
                 ("ID", _identify_status_label(visible) if hasattr(detail_item, 'id_level') else "-"),
             ]
             if hasattr(detail_item, 'buc'):
-                meta_rows.append(("BUC", getattr(detail_item, 'buc', 'uncursed') if getattr(detail_item, 'buc_known', False) else "?"))
+                meta_rows.append(("BUC", _cap(getattr(detail_item, 'buc', 'uncursed')) if getattr(detail_item, 'buc_known', False) else "?"))
             if visible >= 3:
                 if hasattr(detail_item, 'ac_bonus'):
                     meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
                 if isinstance(detail_item, Weapon):
                     meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
                 if getattr(detail_item, 'equip_chain_mode', ''):
-                    meta_rows.append(("Attune", getattr(detail_item, 'equip_chain_mode', '').replace('_', ' ').title()))
+                    meta_rows.append(("Attune", _quiz_mode_phrase(getattr(detail_item, 'equip_chain_mode', '')).capitalize()))
             col_w = (body.w - 10) // 2
             for idx, (label, value) in enumerate(meta_rows[:6]):
                 r = pygame.Rect(body.x + (idx % 2) * (col_w + 10),
@@ -2676,7 +2700,7 @@ class RenderMixin:
         if not hasattr(item, 'buc'):
             return '-'
         if id_level >= 2 or getattr(item, 'buc_known', False) or self._menu_item_is_equipped(item):
-            return getattr(item, 'buc', 'uncursed')
+            return _cap(getattr(item, 'buc', 'uncursed'))
         return '?'
 
     def _menu_bonus_label(self, key, value) -> str:
@@ -2704,7 +2728,7 @@ class RenderMixin:
         idl = self._menu_item_level(item)
         if hasattr(item, 'identified') and idl < 3:
             cls = getattr(item, 'item_class', 'item').replace('_', ' ').title()
-            return f"{cls} | unidentified"
+            return f"{cls} | Unidentified"
         try:
             return self._get_item_stats_brief(item)
         except Exception:
@@ -2761,7 +2785,7 @@ class RenderMixin:
             from chain_equip import get_chain_mode, get_chain_subject
             lines += [
                 ("Attunement chain", FP.GOLD_BRIGHT, self.font_sm),
-                (f"{get_chain_subject(item).title()} | {get_chain_mode(item).replace('_', ' ').title()} | fresh quiz on equip",
+                (f"{get_chain_subject(item).title()} {_quiz_mode_phrase(get_chain_mode(item))}, fresh quiz on each equip",
                  FP.BODY_TEXT, self.font_sm),
             ]
             bonuses = getattr(item, 'tier_bonuses', {}) or {}
@@ -2781,7 +2805,7 @@ class RenderMixin:
                 if 'stat2' in fx:
                     effect_bits.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
                 if 'status' in fx:
-                    effect_bits.append(f"grants {fx['status']}")
+                    effect_bits.append(f"Grants {_cap(fx['status'])}")
                 if effect_bits:
                     lines += [("Accessory effect", FP.GOLD_BRIGHT, self.font_sm),
                               (", ".join(effect_bits), FP.BODY_TEXT, self.font_sm)]
@@ -2825,7 +2849,7 @@ class RenderMixin:
                     stat = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
                     bits.append(f"+{o['stat_grant']}{stat}")
                 if o.get('temp_power'):
-                    tp = str(o.get('temp_power') or '').replace('_', ' ').title().strip()
+                    tp = _temp_power_label(o.get('temp_power'))
                     dur = o.get('temp_duration')
                     bits.append(f"{tp} {dur}t" if tp and dur else tp or 'temp buff')
                 if o.get('permanent_power'):
@@ -2845,7 +2869,7 @@ class RenderMixin:
                 stat = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
                 bits.append(f"+{o['stat_grant']}{stat}")
             if o.get('temp_power'):
-                label = str(recipe.get('temp_power') or '').replace('_', ' ').title().strip()
+                label = _temp_power_label(recipe.get('temp_power'))
                 dur = recipe.get('temp_duration')
                 bits.append(f"{label} {dur}t" if label and dur else label or 'temp power')
             if o.get('permanent_power'):
@@ -3233,15 +3257,15 @@ class RenderMixin:
                     if item.identified or self.player.knows_item_type(item):
                         fx = item.effects
                         if 'status' in fx:
-                            detail = f"grants {fx['status']}"
+                            detail = f"Grants {_cap(fx['status'])}"
                         elif 'stat' in fx:
                             detail = f"{fx['stat']} +{fx.get('amount', 0)}"
                         elif getattr(item, 'slot', '') == 'none':
-                            detail = "passive (carry-only)"
+                            detail = "Passive (carry-only)"
                         else:
                             detail = "accessory"
                     else:
-                        detail = "unidentified"
+                        detail = "Unidentified"
                 else:
                     detail = item.item_class
                 delta = self._equip_delta_str(item)
@@ -3726,7 +3750,7 @@ class RenderMixin:
         if 'stat2' in fx:
             parts.append(f"{fx['stat2']} +{fx.get('amount2', 0)}")
         if 'status' in fx:
-            parts.append(f"grants {fx['status']}")
+            parts.append(f"Grants {_cap(fx['status'])}")
         return ', '.join(parts) if parts else '-'
 
     def _equip_delta_str(self, candidate) -> str:
@@ -4065,7 +4089,7 @@ class RenderMixin:
             spellbook_id = f"spellbook_{spell_id.replace('_spell', '')}"
             entries.append({
                 'name': spell.get('name', '?'),
-                'detail': f"tier {tier} | {mp_cost} MP | {spell.get('desc', '')}",
+                'detail': f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}",
                 'key': self._menu_letter(i),
                 'icon': _SpellIcon(spellbook_id, tier_color),
                 'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
@@ -5508,7 +5532,7 @@ class RenderMixin:
             if special and special != '-':
                 lines.append((f"Special: {special}", FP.CYAN_ACCENT, self.font_sm))
             if getattr(item, 'requires_ammo', ''):
-                lines.append((f"Requires ammo: {item.requires_ammo}", FP.WARNING_TEXT, self.font_sm))
+                lines.append((f"Requires ammo: {_cap(item.requires_ammo)}", FP.WARNING_TEXT, self.font_sm))
 
         elif isinstance(item, Armor):
             lines += [
@@ -5552,7 +5576,7 @@ class RenderMixin:
                 if 'stat2' in fx:
                     parts.append(f"{fx['stat2']} {int(fx.get('amount2', 0)):+d}")
                 if 'status' in fx:
-                    parts.append(f"grants {str(fx['status']).replace('_', ' ').title()}")
+                    parts.append(f"Grants {_cap(fx['status'])}")
                 lines.append(("Effect: " + ', '.join(parts), FP.CYAN_ACCENT, self.font_sm))
             lines.append((_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                           FP.BODY_TEXT, self.font_sm))
@@ -5608,7 +5632,7 @@ class RenderMixin:
             bonus_type = getattr(item, 'bonus_type', 'none')
             if bonus_type and bonus_type != 'none':
                 target = getattr(item, 'bonus_stat', '') or getattr(item, 'bonus_effect', '')
-                lines.append((f"Bonus: {bonus_type} {target} +{getattr(item, 'bonus_amount', 0)}",
+                lines.append((f"Bonus: {_cap(bonus_type)} {_cap(target)} +{getattr(item, 'bonus_amount', 0)}",
                               FP.CYAN_ACCENT, self.font_sm))
 
         elif isinstance(item, Ammo):
@@ -5636,7 +5660,7 @@ class RenderMixin:
             achieved = int(getattr(item, 'achieved_tier', 0) or 0)
             lines += [
                 ("Chain abilities", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Quiz: {subject} / {str(mode).replace('_', ' ').title()}   Active tier: {achieved}",
+                (f"Quiz: {str(subject).title()} {_quiz_mode_phrase(mode)}   Active tier: {achieved}",
                  FP.CYAN_ACCENT, self.font_sm),
             ]
             for tier in range(1, 6):
@@ -5666,7 +5690,7 @@ class RenderMixin:
         if id_level >= 3:
             tags = mdef.get('tags', []) or []
             if tags:
-                identity.append((f"Tags: {', '.join(tags)}", FP.BODY_TEXT, self.font_sm))
+                identity.append((f"Tags: {', '.join(_cap(x) for x in tags)}", FP.BODY_TEXT, self.font_sm))
 
         mechanics = []
         if id_level >= 2:
@@ -5687,9 +5711,9 @@ class RenderMixin:
             res = mdef.get('resistances', []) or []
             wks = mdef.get('weaknesses', []) or []
             if res:
-                mechanics.append((f"Resists: {', '.join(res)}", FP.CYAN_ACCENT, self.font_sm))
+                mechanics.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
             if wks:
-                mechanics.append((f"Weak to: {', '.join(wks)}", FP.WARNING_TEXT, self.font_sm))
+                mechanics.append((f"Weak to: {', '.join(_cap(x) for x in wks)}", FP.WARNING_TEXT, self.font_sm))
 
         if id_level >= 2:
             # Harvest yields exactly ONE ingredient per corpse — either a prime
@@ -6138,7 +6162,7 @@ class RenderMixin:
             if 'stat' in effects:
                 return f"{effects.get('stat')} {int(effects.get('amount', 0)):+d}"
             if 'status' in effects:
-                return f"grants {effects.get('status')}"
+                return f"Grants {_cap(effects.get('status'))}"
             return 'accessory'
         if category in ('wand', 'scroll'):
             return f"Effect: {entry.get('effect', '?')}"
@@ -6161,9 +6185,9 @@ class RenderMixin:
             res = entry.get('resistances', []) or []
             wks = entry.get('weaknesses', []) or []
             if res:
-                lines.append((f"Resists: {', '.join(res)}", FP.CYAN_ACCENT, self.font_sm))
+                lines.append((f"Resists: {', '.join(_cap(x) for x in res)}", FP.CYAN_ACCENT, self.font_sm))
             if wks:
-                lines.append((f"Weak to: {', '.join(wks)}", FP.WARNING_TEXT, self.font_sm))
+                lines.append((f"Weak to: {', '.join(_cap(x) for x in wks)}", FP.WARNING_TEXT, self.font_sm))
             for atk in entry.get('attacks', []) or []:
                 line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 if atk.get('effect'):
@@ -6193,7 +6217,7 @@ class RenderMixin:
                 if 'stat2' in effects:
                     bits.append(f"{effects.get('stat2')} {int(effects.get('amount2', 0)):+d}")
                 if 'status' in effects:
-                    bits.append(f"grants {effects.get('status')}")
+                    bits.append(f"Grants {_cap(effects.get('status'))}")
                 lines.append(("Effect: " + ', '.join(bits), FP.BODY_TEXT, self.font_sm))
         elif category == 'wand':
             lines += [

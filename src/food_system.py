@@ -191,6 +191,23 @@ _TEMP_POWER_REMAP = {
 }
 
 
+def temp_power_label(name: str) -> str:
+    """Player-facing name of a recipe's temporary power.
+
+    Recipes name powers by data id ("tactics_buff"); the engine remaps
+    them to a status ("crit_buff") whose display name lives in
+    EFFECT_INFO ("Rallied Strike"). The cook log used to print the raw
+    status id and the cook menu printed the raw data id, so the same buff
+    had two different, equally unreadable names.
+    """
+    from status_effects import EFFECT_INFO
+    canonical = _resolve_temp_power(name)
+    info = EFFECT_INFO.get(canonical)
+    if info:
+        return info[0]
+    return str(canonical).replace('_', ' ').title()
+
+
 def _resolve_temp_power(name: str) -> str:
     """Resolve a redesign-friendly temp_power name to the canonical status
     effect. Returns the input unchanged if already canonical."""
@@ -312,7 +329,9 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
                 player._save_guard[cat] = amount
         except Exception:
             pass
-        messages.append(f"A short {canonical.replace('_', ' ')} lingers.")
+        messages.append(
+            f"{temp_power_label(tp)} lingers for "
+            f"{int(outcome.get('temp_duration', 60))} turns.")
 
     # Permanent power (trophy)
     perm = outcome.get('permanent_power')

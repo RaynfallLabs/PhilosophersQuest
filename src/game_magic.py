@@ -91,7 +91,7 @@ class MagicMixin:
             )
             return
         self.add_message("You close your eyes and search your memory...", 'info')
-        self.quiz_title = "RECALL LORE -- TRIVIA"
+        self.quiz_title = "RECALL LORE  --  TRIVIA"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -1226,7 +1226,7 @@ class MagicMixin:
         author-time). Parallels the v2.10.0 scroll + v2.11.0 wand contracts.
         """
         self.state = STATE_QUIZ
-        self.quiz_title = f"CAST {spell['name'].upper()} -- SCIENCE"
+        self.quiz_title = f"CAST {spell['name'].upper()}  --  SCIENCE"
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -3368,7 +3368,7 @@ class MagicMixin:
             return
 
         self.state = STATE_QUIZ
-        self.quiz_title = "DECIPHER SPELLBOOK -- GRAMMAR"
+        self.quiz_title = "DECIPHER SPELLBOOK  --  GRAMMAR"
 
         def on_complete(result):
             self.state = STATE_PLAYER
@@ -3628,7 +3628,7 @@ class MagicMixin:
         qe = self.quiz_engine
         qe.state = QuizState.IDLE
         self.state = STATE_QUIZ
-        self.quiz_title = "RECITE THE WORDS -- NECRONOMICON"
+        self.quiz_title = "RECITE THE WORDS  --  NECRONOMICON"
         self._necro_book = book
         self._necro_qs = qs
         self._necro_idx = 0

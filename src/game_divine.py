@@ -374,7 +374,7 @@ class DivineMixin:
     def _drink_fountain(self):
         """Drink from a fountain -- AI quiz determines outcome."""
         self.add_message("You cup your hands and drink from the fountain...", 'info')
-        self.quiz_title = "FOUNTAIN -- AI"
+        self.quiz_title = "FOUNTAIN  --  AI"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -616,7 +616,7 @@ class DivineMixin:
     def _dig_grave(self):
         """Dig up a grave -- geography quiz determines outcome."""
         self.add_message("You begin disturbing the grave...", 'info')
-        self.quiz_title = "GRAVE -- GEOGRAPHY"
+        self.quiz_title = "GRAVE  --  GEOGRAPHY"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -687,7 +687,7 @@ class DivineMixin:
     def _sit_throne(self):
         """Sit upon the throne -- history quiz determines outcome."""
         self.add_message("You settle onto the ancient throne...", 'info')
-        self.quiz_title = "THRONE -- HISTORY"
+        self.quiz_title = "THRONE  --  HISTORY"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -808,7 +808,7 @@ class DivineMixin:
         at_altar = _on_altar(self)
         bonus_desc = " The altar amplifies your prayer." if at_altar else ""
         self.add_message(f"You kneel and pray.{bonus_desc}", 'info')
-        self.quiz_title = "PRAYER -- THEOLOGY"
+        self.quiz_title = "PRAYER  --  THEOLOGY"
         self.state = STATE_QUIZ
 
         # HP as the player knelt: the Fisher King quirk asks for prayer at
@@ -1066,7 +1066,7 @@ class DivineMixin:
         self.add_message(
             "You raise your voice to Heaven and beg for intercession...",
             'info')
-        self.quiz_title = "DIVINE INTERCESSION -- THEOLOGY"
+        self.quiz_title = "DIVINE INTERCESSION  --  THEOLOGY"
         self.state = STATE_QUIZ
 
         def on_complete(result):

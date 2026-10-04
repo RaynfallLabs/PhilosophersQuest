@@ -1485,7 +1485,7 @@ class MenuMixin:
             return False
         # Set cooldown immediately; the quiz outcome is not relevant to gating reuse.
         pl.hero_special_cooldowns[pid] = int(special.get('cooldown', 250))
-        self.quiz_title = f"{special['name'].upper()} — AI"
+        self.quiz_title = f"{special['name'].upper()}  --  AI"
         from game_states import STATE_QUIZ, STATE_PLAYER
         self.state = STATE_QUIZ
 

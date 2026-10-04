@@ -1038,7 +1038,7 @@ class CombatMixin:
             self._sketch_target_monster = target
             self.add_message(
                 f"You begin sketching the {target.name} with furious concentration...", 'info')
-            self.quiz_title = "MANIFESTING -- AI"
+            self.quiz_title = "MANIFESTING  --  AI"
             self.state = STATE_QUIZ
             pl = self.player
 
@@ -1096,7 +1096,7 @@ class CombatMixin:
             self._stuffie_cone_target = (cx, cy)
             self.add_message(
                 "The Charmander Stuffie glows warm... focus your fire!", 'info')
-            self.quiz_title = "FIRE BREATH -- AI"
+            self.quiz_title = "FIRE BREATH  --  AI"
             self.state = STATE_QUIZ
             pl = self.player
 

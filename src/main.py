@@ -3884,7 +3884,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if not trap or not trap.get('revealed'):
                     continue
                 trap_name = trap['type'].replace('_', ' ')
-                self.quiz_title = f"DISARMING {trap_name.upper()} -- AI"
+                self.quiz_title = f"DISARMING {trap_name.upper()}  --  AI"
                 self.state = STATE_QUIZ
                 _trap_pos = (nx, ny)
 
@@ -4685,7 +4685,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # +5s harvest timer bonus if monster has been lore-identified
         _lore_known = getattr(self.player, 'lore_known_monster_ids', set())
         _lore_bonus = 5 if getattr(corpse, 'monster_id', '') in _lore_known else 0
-        self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL LORE"
+        self.quiz_title = f"HARVESTING {corpse.name.upper()}  --  ANIMAL"
         self.state = STATE_QUIZ
 
         def on_complete(ingredients_list, message: str):
@@ -5014,7 +5014,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.state = STATE_PLAYER
             return
         self.add_message("You speak the First Word. Reality shudders...", 'info')
-        self.quiz_title = "HACK REALITY -- AI"
+        self.quiz_title = "HACK REALITY  --  AI"
         self.state = STATE_QUIZ
 
         def on_complete(result):
@@ -6912,7 +6912,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         iname = getattr(item, 'name', 'item')
         original_price = m.prices[sel]
         self.add_message(f"You try to haggle over the {iname}...", 'info')
-        self.quiz_title = "HAGGLE -- ECONOMICS"
+        self.quiz_title = "HAGGLE  --  ECONOMICS"
         self.state = STATE_QUIZ
 
         def on_complete(result):
