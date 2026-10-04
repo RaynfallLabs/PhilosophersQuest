@@ -127,13 +127,15 @@ def test_old_save_without_belt_slot_does_not_crash():
 # ---------------------------------------------------------------------------
 
 def test_character_sheet_lists_belt_slot():
-    """game_render.py:_draw_character_sheet_screen iterates a list
-    `slot_items` that must include ('Belt', p.belt_slot)."""
+    """The character sheet's loadout rows come from
+    `Game._charsheet_loadout_entries` (main.py); it must include a Belt
+    row alongside the Amulet/Ring rows. (This used to source-inspect a
+    legacy render body that was unreachable dead code.)"""
     import inspect
-    import game_render
-    src = inspect.getsource(game_render.RenderMixin)
-    assert "('Belt'," in src, (
-        "Character sheet must include a ('Belt', ...) row alongside "
+    import main
+    src = inspect.getsource(main.Game._charsheet_loadout_entries)
+    assert "'label': 'Belt'" in src and "belt_slot" in src, (
+        "Character sheet must include a Belt row alongside "
         "the Amulet/Ring rows"
     )
 
