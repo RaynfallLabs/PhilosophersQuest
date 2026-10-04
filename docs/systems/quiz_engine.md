@@ -1,7 +1,7 @@
 # Quiz Engine
 
-**Status:** v2.22.0 (shipped 2026-10-03)
-**Code:** `src/quiz_engine.py` (680 lines)
+**Status:** v2.23.0 (shipped 2026-10-04)
+**Code:** `src/quiz_engine.py` (890 lines)
 **Data:** `data/questions/<subject>.json` (12 subjects); `<save_dir>/quiz_history.json` (cross-game recency)
 **Related docs:** [status_effects](status_effects.md), [combat](combat.md), [save_bonus](save_bonus.md), [identify_v3](identify_v3.md), [food_system](food_system.md), [magic](magic.md), [karma_prayer](karma_prayer.md), [containers_lockpick](containers_lockpick.md)
 
@@ -307,24 +307,26 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - **2026-08-11** — Science-bank "test-it-yourself" voice baked into the T1-T3 scaffolding — further argument for keeping science untimed.
 - **2026-10-02 (v2.18.0)** — Audit sync wave: 11 threshold-copy strings (item cards + lore dossiers) flagged for "any wrong = fail" clarification (SYSTEMS_AUDIT.md §8 P2); character-sheet timer line flagged as lie (§8 P1); `_draw_help_screen` flagged for missing zero-tolerance / chain-v2 / math-only timing explanations (§8 P3).
 - **2026-10-03 (v2.22.0)** — UI beautification Phase 1 pulled the `(any wrong = fail)` tail OUT of `_threshold_line` so the warning now paints only in the quiz-modal subtitle (`_draw_quiz` L2360). The 12 inspector / lore sites still call `_threshold_line` but render short-form `"Equip: 3 correct"`; the warning stays visible to the player at the point of use. Phase 2 added `_quiz_scroll_offset` (reset in `start_quiz`, mutated by PgUp/PgDn and `[`/`]` in `game_input._quiz_input`) driving the shrink-then-scroll quiz layout via `game_render._quiz_layout`.
+- **2026-10-04 (v2.23.0)** — Playtest pass on the quiz modal. The `(any wrong = fail)` subtitle is gone (the warning is now printed nowhere; the rule is unchanged). The `CORRECT!` / `WRONG!` banner is gone — the green / red choice cards carry the result. One-question quizzes hide the `0 / 1` counter. The chain header shows `x{N}` in a fixed slot plus a rank badge, and the timer seconds sit in their own slot beside the bar. The context modal scrolls (Up/Down, PgUp/PgDn, Home/End). `'math'` joined `_CONTEXT_SUBJECTS`: every math question now carries a skill-class `topic` (27 classes, stamped by `tools/balance/math_topics.py`) keyed to a method card in `data/question_contexts/math.json`. See [ui §11](ui.md) and [`docs/design/context_blurb_system.md`](../design/context_blurb_system.md).
 
 ## Testing
 - `tests/test_quiz_engine.py` (570 lines, ~30 tests) — covers QuizResult shape, threshold success/zero-tolerance, chain scoring, max_chain celebration + end, escalator tier climb + T5 cap, escalator chain tier climb, timer base_seconds + extras + legacy fallback + modifier, timer expiry failure flow, empty bank graceful fail, malformed JSON handling, deck tier isolation + persistence across sessions, answer no-op outside ASKING, case-exact whitespace-insensitive compare, `start_quiz` accepting QuizMode or str, invalid-mode raise, active-property lifecycle, `timed` default true/false for math/non-math + explicit overrides, untimed-quiz tick-no-op, untimed-chain ends via wrong-answer not timer.
 - `tests/test_quiz_cross_game_memory.py` (77 lines) — pins `quiz_history.json` seed into `_seen` and the bounded recency cap.
 - `tests/test_quiz_deck_no_stale.py` (49 lines) — pins the "decks rebuild from current JSON on load" invariant.
+- `tests/test_math_contexts.py` — every math question has a `topic`, every topic has a card, and no card contains a sum from its own class.
 - `tests/test_death_from_status_tick.py` — pins Stunned-10t-on-identify-fail still ticks + expires cleanly (quiz engine fires `add_effect` through main.py).
 
 ## Known rough edges
 From SYSTEMS_AUDIT.md:
 - **§8 P2 (11 strings)** — ADDRESSED in v2.18 (helper sweep) and
-  further unified in v2.22.0 Phase 1 (the warning now paints only in
-  the quiz-modal subtitle at `_draw_quiz` L2360, not duplicated on
-  every item card). Call sites still use `_threshold_line` but render
-  the short form `"Equip: 3 correct"`.
+  further unified in v2.22.0 Phase 1 (the warning came off every
+  item card). v2.23.0 then removed the quiz-modal subtitle too, so
+  the warning is no longer printed anywhere. Call sites still use
+  `_threshold_line` and render the short form `"Equip: 3 correct"`.
 - **§8 P1** — `ui.py::Sidebar._derived` shows "Picks 0" every frame (dead row — `lockpick_charges` is never incremented post-v3). Delete or wire.
 - **§8 P1** — `_draw_character_sheet L1032-1038` asserts a per-subject timer gradient ("Math 16s → Economics 46s") and an INT-magic timer bonus; both are fiction under math-only timing.
 - **§8 P3** — `_draw_help_screen` has zero mention of zero-tolerance, chain v2 milestone ranks, math-only timing, identify v3 / cook v2 / lockpick v3 / harvest v4. New players can't learn these from `?`.
-- **§8 P5** — `start_quiz` still computes `total_qs = ceil(threshold * 1.5)`; UI reads it and shows ratios like "0/5" that mean nothing under zero-tolerance.
+- **§8 P5** — `start_quiz` still computes `total_qs = ceil(threshold * 1.5)`; UI reads it and shows ratios like "0/5" that mean nothing under zero-tolerance. (The quiz-modal header is not affected: it shows `correct_count / required`, and hides the counter when `required` is 1.)
 - **§3 P2** — 5 mystery thresholds (solomon 6/8, grail 4/6, oracle 4/6, mjolnir, sphinx) were tuned pre-zero-tolerance; now harder than designed. Retune pending.
 - **§5 P2** — `mystery_system.py:181` cooking challenge uses `escalator_chain` threshold=5, which violates the v3 one-Q cook rule. Any cook-quiz in a mystery bypasses the current model.
 - **§3 P1** — `mystery_system.py::mimir_reward` populates `player.quiz_timer_bonuses[<subject>]` for all 10 subjects, but only math is timed → 9/10 reward branches dead.

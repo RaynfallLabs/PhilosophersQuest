@@ -48,6 +48,7 @@ data/question_contexts/
   trivia.json
   animal.json
   cooking.json
+  math.json        (v2.23.0 -- method cards, keyed by skill class)
 ```
 
 Each per-subject file is a JSON object:
@@ -67,18 +68,29 @@ Each per-subject file is a JSON object:
   the blurb). Any entry missing a non-empty string blurb is skipped.
 - A missing per-subject file is non-fatal — that subject simply has no blurbs.
 
-The ten listed subjects are the P0 banks. `math` and `grammar` deliberately
-skip the system (snappy-rote; nothing to orient on).
+The first ten subjects are the P0 banks, with one WHO / WHAT / WHY blurb
+per topic ladder. `grammar` deliberately skips the system (snappy-rote;
+nothing to orient on).
 
-### Join-key caveat (2026-10-03)
+### Math method cards (v2.23.0)
 
-Current `data/questions/<subject>.json` entries do **not** carry a `topic`
-field — `bankbuild/bank.py::cmd_merge` drops the topic when flattening ladders
-to the live bank. Until the pipeline is updated to include the topic in the
-flattened shape, the modal is a no-op for every shipped question (the loader
-and modal are harmless; they just never fire). Phase 3 of the orientation
-plan surfaces this as the first merge-step change the bank-authoring agents
-need to make. See `bankbuild/PIPELINE.md §16`.
+`math` was originally exempt for the same reason as grammar. It joined
+`_CONTEXT_SUBJECTS` in v2.23.0 with a different kind of card: every math
+question carries a skill-class `topic` (27 classes, e.g. `Addition Facts`,
+derived from the question's context tip by `tools/balance/math_topics.py`
+and stamped on rebuild by `build_math_bank_v3.py`), and each class has a
+short **method card** in `data/question_contexts/math.json` -- how to do
+that kind of sum, with a worked example. The cards use worked examples
+outside the bank's own number range; `tests/test_math_contexts.py` asserts
+no card contains a sum from its own class. See `bankbuild/PIPELINE.md §16`
+and `docs/quiz/subjects/math.md`.
+
+### Join key
+
+The modal joins on the `topic` field of each question in
+`data/questions/<subject>.json`. Every shipped bank except grammar now
+carries it (the 2026-10-03 caveat that `bankbuild/bank.py::cmd_merge`
+dropped the topic no longer applies to the live banks).
 
 The context modal design does NOT depend on the question's `tier` or any
 other field — only `(subject, topic)`.
@@ -122,6 +134,11 @@ STATE_QUIZ --[C]-------> STATE_QUIZ_CONTEXT --[C | ESC | SPACE | RET]-> STATE_QU
    as "another dossier screen" rather than a brand-new widget. Dimensions:
    `max_w=1200`, `max_h=600`, border `FP.LORE_BLUE_BORDER`; body font
    `get_font('body', 20)` with a scrollable interior for very long blurbs.
+   Scroll keys (v2.23.0), handled in `_quiz_context_input`: Up / Down one
+   step, PgUp / PgDn eight, Home / End to either end. The offset lives in
+   `self._quiz_context_scroll`, resets to 0 each time the modal opens, and
+   is clamped to the real maximum in the draw pass. Footer text:
+   `Up/Down: scroll   PgUp/PgDn: jump   C / ESC: close`.
 
 4. **Exit.** `_quiz_context_input` accepts `C`, `ESC`, `SPACE`, or `RET`;
    the top-level `K_ESCAPE` handler also catches STATE_QUIZ_CONTEXT. All
@@ -137,6 +154,10 @@ panel in muted text (`FP.FADED_TEXT`), gated on
 exists for a question, the hint is omitted — the key is a no-op and we
 don't advertise it. This is the discoverability layer per Rule 4 in
 `ORIENTATION_AUDIT_PLAN.md`.
+
+In a combat (math) quiz the hint is `C  Context`, one of the four fixed
+slots in the key-hint row under the combat strip, shown under the same
+gate (v2.23.0).
 
 ---
 

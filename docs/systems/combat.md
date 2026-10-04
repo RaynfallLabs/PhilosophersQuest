@@ -1,5 +1,5 @@
 # Combat (Chain v2)
-**Status:** v2.22.0 (shipped 2026-10-03)
+**Status:** v2.23.0 (shipped 2026-10-04)
 **Code:** `src/combat.py` (2186 lines), `src/game_combat.py` (CombatMixin, 2567 lines), `src/chain_passives.py`, `src/hero_specials.py`, `src/monster.py::take_damage`
 **Data:** `data/items/weapon.json` (96 uniques), `data/materials/weapons/*.json` (54 materials), `data/monsters.json` (resistances / weaknesses / tags / is_boss / dragon_scales)
 **Related docs:** [weapons_and_materials](weapons_and_materials.md) · [monsters](monsters.md) · [items](items.md) · [status_effects](status_effects.md) · [magic](magic.md) · [progression](progression.md) · design history: [`docs/design/chain_combat_v2.md`](../design/chain_combat_v2.md), [`docs/design/weapon_specials_v2_14.md`](../design/weapon_specials_v2_14.md), [`docs/design/uniques_v2_14.md`](../design/uniques_v2_14.md)
@@ -210,21 +210,46 @@ Chain **resets to 0 at every new attack** — no stockpiling between attacks. Pa
 
 ## UI — combat HUD inside the quiz modal
 
-`RenderMixin._draw_combat_hud` (`src/game_render.py:2477`) paints the combat strip at the bottom of the chain-mode quiz panel. Its visual hierarchy is intentional — not every row carries the same weight.
+A combat quiz is titled `MELEE ATTACK  --  MATH` or `RANGED ATTACK  --  MATH` (`game_combat.py:1604` / `:1513`). The title is short and fixed on purpose: the strip below already names the target and the weapon, and the old `COMBAT vs <MONSTER>` / `FIRE <WEAPON> at <MONSTER>` titles overflowed the header. `_start_combat` / `_fire_ranged` also set `self._combat_is_ranged`, which is what `_draw_combat_hud` reads to pick `player.ranged_weapon` over `player.weapon` — nothing sniffs the title string any more.
 
-**Primary call-outs** (bigger font, high contrast):
+`RenderMixin._draw_combat_hud(rect, accent)` (`src/game_render.py:2451`) paints the combat strip under the answer cards of the chain-mode quiz panel. `_quiz_layout` reserves the strip (`combat_rect`, height from `_combat_hud_height()`) and pins it, with the key-hint row, to the bottom of the panel.
 
-- **Target HP** — monster name in body-md, bar color-coded by percentage (green > 50%, warning yellow 25–50%, danger red < 25%), HP numbers printed next to the bar in the same hp color at body-md.
-- **Current damage preview** — the live chain readout (`x{mult:.1f}   {dmg} dmg`) renders in heading-lg beside the HP bar, coloured by chain-rank once the player clears chain 3.
+**Two fixed cells**, side by side (5 : 4 width split), from `_combat_hud_slots(bx, strip_y, bw)` (`game_render.py:2394`). Each cell has the same four stacked rows — `cap`, `main`, `sub1`, `sub2`:
 
-**Secondary rows** (body-sm, muted / `FP.FADED_TEXT`):
+| Row | **Target** cell | **Strike Now** cell |
+|---|---|---|
+| `cap` | `TARGET` caption (body 15, faded) | `STRIKE NOW` caption, plus the weapon name right-aligned in the `weapon` slot (`Bare Hands` when unarmed) |
+| `main` | Monster name, `FP.GOLD_PALE` | Live damage, `"{dmg} Damage"` in the heading face (32 → 26 → 22), rank-coloured from chain 3; `0 Damage` faded at chain 0 |
+| `sub1` | `hp_bar` + `hp_text` (`"{hp}/{max} HP"`, right-aligned); bar and numbers colour-coded green > 50%, warning yellow 25–50%, danger red < 25% | `"x{mult:.1f} Multiplier"`, or `Answer to start a chain` at chain 0 |
+| `sub2` | Status effects, `[Title Case]` tags in warning colour | Damage-type tag: `Weakness: <types>` (success green, dm ≥ 1.5), `Resisted: <types>` (danger red, dm ≤ 0.5), else the plain type list in faded text |
 
-- Weapon name (parenthetical, bottom-right corner).
-- Damage-type label — keeps its signal colour (`WEAKNESS!` success-green, `RESISTED` danger-red, neutral in faded) but shrinks to body-sm; sits on the same row as the projection.
-- Future-chain projection (`at {milestone} ({rank}): {dmg}`).
-- `SPACE strikes` / `SPACE cancels` hint — bottom-right footer, muted.
+From chain 3 the Strike Now cell also gets a 2 px box frame in the rank colour.
 
-**History:** the Phase 1 UI beautification pass (v2.22.0, 2026-10-03) reordered the hierarchy. Before, every row rendered at body-sm except the chain readout at body-md — the weapon name, damage-type banner, and SPACE hint competed with the HP bar for attention. The reorder is **font-size and color only**: no mechanics, numbers, procs, or ranged-weapon branching changed.
+**Every string is fitted into exactly one slot.** `_fit_line(text, max_w, sizes, family='body')` (`game_render.py:2369`) walks the size list largest-first and returns the first font the whole string fits in; it truncates with an ellipsis only when the text overflows at the smallest size. Two slots go further:
+
+- **Monster name** — tries 26 / 22 / 18 / 15; if it still doesn't fit on one line it wraps to two lines in the `main` row instead of being cut off.
+- **Status effects** — shows all of them when they fit at the smallest size; otherwise as many as fit plus a `+N` count, never a clipped half-word.
+
+**The sum.** In combat `_quiz_layout` leads the font ladder with an extra tier: `get_font('body', 34, bold=True)` for the question and `font_md` for the answers. It is the plain body face — its lining numerals read faster as arithmetic than the Cinzel heading face. The question band has a fixed height of two lines and the sum is centred in it, so the answer cards sit at the same y for one-line and two-line sums.
+
+**Key-hint row.** Under the strip, four fixed slots across the row: `1-4  Answer`, `SPACE  Strike Now` (`SPACE  Cancel` at chain 0), `C  Context` (only when the question has a context card), `ESC  Abort`. The hints never move and each is fitted to its slot.
+
+**Gone in v2.23.0:** the future-chain projection (`at {milestone} ({rank}): {dmg}`), the in-strip `SPACE strikes` / `SPACE cancels` text (now in the key-hint row), and the `_combat_hud_row_rects` helper (replaced by `_combat_hud_slots`).
+
+**History:** the v2.22.0 Phase 1 pass (2026-10-03) reordered the old four-row HUD by font size and colour only. The v2.23.0 redesign (2026-10-04 playtest) replaced that layout outright: the old rows positioned each string off the measured width of its neighbour, so long monster or weapon names pushed text into the next column. No mechanics, numbers, procs, or ranged-weapon branching changed in either pass.
+
+## Strike finisher (v2.23.0)
+
+When a combat quiz ends, a short banner plays over the map so a chain has a visible payoff instead of just stopping. `CombatMixin._fire_strike_finisher(monster, chain, damage, killed)` (`game_combat.py:1569`) is called from the melee and ranged `on_complete` callbacks (and from the Vidar's Sandal instant-kill branch) and fires the `strike_finisher` effect on the `EffectsRuntime`. Handler: `src/effects/strike_finisher.py`; config block `strike_finisher` in `data/ui/effects_config.json`.
+
+| Tier | When | What plays | Duration |
+|---|---|---|---|
+| `miss` | chain 0 | small faded `Miss` | 350 ms |
+| `light` | chain 1–2 | `"{damage} Damage"` pops and fades | 500 ms |
+| `ranked` | chain has a named rank (3+) | `"{rank}  x{chain}"` over the damage line, slash streak, one ring, in the rank colour | 750 ms |
+| `big` | chain ≥ `big_chain` (10) | as `ranked`, plus a second ring and a map-edge glow | 900 ms |
+
+A kill swaps the damage line for `"<Target> Slain"`; it does not add time. The effect is purely visual and non-blocking (play continues underneath), is centred on the map view, and paints onto a map-sized layer so it can never spill onto the sidebar or the message log. Re-firing restarts it, so two quick attacks never stack banners. Reduced motion (`PQ_REDUCED_MOTION=1`) shows static text for 300 ms with no rings, streak, or drift. See [`docs/design/effects_runtime.md`](../design/effects_runtime.md) §12.
 
 ## Hit resolution — order of operations
 
@@ -367,7 +392,7 @@ The pre-damage hook (`combat._apply_chain_class_pre_damage`) sets `player._chain
 - **[items](items.md)** — Weapon class, Ammo class, Panoply of Hephaestus `divine_smithing` cap bump, chain-equip armor `chain_bonus` adding a free chain head-start.
 - **[progression](progression.md)** — WIS seconds per math question is THE combat-skill lever. Enchant caps per slot are enforced in `effective_enchant_cap`.
 - **[monsters](monsters.md)** — resistances / weaknesses lists, tags for material.effective_against, `is_boss` for immunities, `dragon_scales` for the DR layer, `drain_heals_self` for vampire family. Multi-tile boss footprint uses `geom.monster_at_tile` so AoE radius checks remain correct against Fafnir's (2,2).
-- **[identify_v3](identify_v3.md)** — identification does NOT gate combat. Unidentified weapons work; the player just sees "unidentified <true name>" and doesn't know the BUC/enchant. Blessed weapons gain the `holy` damage type at use-site (`combat.py:1050`).
+- **[identify_v3](identify_v3.md)** — identification does NOT gate combat. Unidentified weapons work; the player just sees "Unidentified <true name>" and doesn't know the BUC/enchant. Blessed weapons gain the `holy` damage type at use-site (`combat.py:1050`).
 
 ## History of major decisions
 
@@ -385,10 +410,13 @@ The pre-damage hook (`combat._apply_chain_class_pre_damage`) sets `player._chain
   - `kladenets` (Samosek) — removed inert `counterAttackChance: 0.25` field; added a `_note` recording the design intent so a future passive-defense hook can wire it in.
   - Niten Ichi-Ryū (Musashi) gate rewired at `combat.py:1214-1224`. Previously the +15% required `player.weapon AND player.ranged_weapon`, but Musashi ships two melee swords (`longsword` + `shortsword`), and `ranged_weapon` only accepts ammo-requiring weapons — so the signature never fired. New gate: "a non-ammo weapon in the primary slot," which preserves the two-swords fantasy for any melee loadout.
   - 7 unreachable quest armors deleted from `data/items/armor.json` (`quest_spawn_nemean`, `quest_spawn_green_knight`, `quest_spawn_serpent`, `quest_spawn_arachne`, `quest_spawn_erlking`, `quest_spawn_anansi`, `quest_spawn_nidhoggr`). All had `min_level: 9999` and no code implementing their `quest_spawn_*` methods. ~15KB of dead stat blocks removed.
+- **2026-10-04 (v2.23.0) — Combat quiz redesign + strike finisher.** UI only, no mechanic change. The combat strip became two fixed cells (Target, Strike Now) via `_combat_hud_slots` / `_combat_hud_height` / `_fit_line`, replacing the offset-chained four-row HUD and `_combat_hud_row_rects`. Titles shortened to `MELEE ATTACK  --  MATH` / `RANGED ATTACK  --  MATH` with an explicit `_combat_is_ranged` flag. The sum renders in `get_font('body', 34, bold=True)`, centred in a fixed-height band. New one-shot `strike_finisher` effect closes every attack. Monster and weapon names are title case everywhere via `src/naming.py`.
 
 ## Testing
 
 - **`tests/test_combat_invariants.py`** — the 8 invariants from the 2026-05-18 rebuild. Peak-chain shape, class-tag presence, no-crit, dragon-scales + blade_flow bypass, etc.
+- **`tests/test_ui_measured_rows.py`** — combat-strip slots never overlap at 1280×720 or 1920×1080, `_combat_hud_height` covers the last slot row, `_fit_line` shrinks before it truncates.
+- **`tests/test_strike_finisher.py`** — registration + config, tier selection, hit / miss / kill lines, lifetime + restart, reduced motion, draws only inside the map area.
 - **`tests/test_engine_wave*_unique_mechanics.py`** — field-load + consumer-code presence per inert-wire-up wave.
 - **Full suite** — `pytest tests/ -v`. 1570+ tests pass as of v2.18.0.
 - **No play-test coverage** for randomized chain-20 outcomes, deep-floor Dragon-vs-blade_flow DR interactions, or multi-weapon unique proc combos — those are flagged "logic test only" in `feedback_play_test_limits.md`.

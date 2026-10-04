@@ -1,6 +1,6 @@
 # UI — Rendering, Menus, HUD, Help, Welcome
 
-**v2.22.0** (shipped 2026-10-03)
+**v2.23.0** (shipped 2026-10-04)
 
 Covers everything the player sees after the dungeon tiles are blitted:
 sidebar HUD, modal menus, quiz panel, combat HUD, help screen, kit /
@@ -8,11 +8,14 @@ discoveries / bestiary / lore dossier, cook / identify / drop menus,
 and the welcome / name-entry flow.
 
 **Sources:**
-- `src/game_render.py` — `RenderMixin`, 8,444 LOC; every `_draw_*`
+- `src/game_render.py` — `RenderMixin`, 6,890 LOC; every `_draw_*`
   method, the `_threshold_line` helper (short-form, parenthetical-free
-  after v2.22.0), the two `_identify_status_label` gates, the
-  `_quiz_layout` and `_combat_hud_row_rects` helpers, and the full
-  help-screen System-Rules card
+  after v2.22.0), the `_cap` display helper, the
+  `_identify_status_label` gates, the `_quiz_layout` /
+  `_combat_hud_slots` / `_combat_hud_height` / `_fit_line` layout
+  helpers, and the full help-screen System-Rules card
+- `src/naming.py` — `proper_name` + `ProperNameAttr`; title-cases item
+  and monster names at the source (v2.23.0, see §7.1)
 - `src/ui.py` — `Sidebar`, `MessageLog`, left-rail / right-rail
   composition, effect chips, powers rows, in-sight rows
 - `src/hud_context.py` — pure data helpers (`active_power_rows`,
@@ -331,9 +334,15 @@ rows all go through this helper.
 ```
 INSTANCE identified       → full name ("Rapier +2")
 TYPE known + BUC known    → full name (BUC {blessed}/{cursed} prefix)
-TYPE known + BUC unknown  → "unidentified <true name>"
+TYPE known + BUC unknown  → "Unidentified <true name>"
 TYPE unknown              → item.unidentified_name (appearance)
 ```
+
+Names are always title case (v2.23.0): `item.name` and
+`item.unidentified_name` are `naming.ProperNameAttr` descriptors, so
+`"ring of magic resist"` reads back as `"Ring of Magic Resist"` on
+every screen and log line, including items loaded from older saves.
+The `Unidentified` prefix is capitalised to match.
 
 The `TYPE known + BUC unknown` branch is the key one — the player
 knows what the item CLASS is, but THIS copy's BUC is still a mystery.
@@ -412,6 +421,7 @@ state; column 4 is the `_draw_<state>` method.
 |---|---|---|---|
 | `STATE_PLAYER` | default | `game_input._player_input` | main render |
 | `STATE_QUIZ` | quiz starts | `_quiz_input` | `game_render._draw_quiz` |
+| `STATE_QUIZ_CONTEXT` | `C` during a quiz whose question has a context card | `_quiz_context_input` | `_draw_quiz` then `_draw_quiz_context_modal` |
 | `STATE_EQUIP_MENU` | `E` | `_equip_menu_input` | `_draw_equip_menu` |
 | `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser` |
 | `STATE_DISCOVERIES` | `J` | `_discoveries_input` | `_draw_discoveries_panel` |
@@ -528,120 +538,143 @@ not here.)
 
 ---
 
-## 11. Quiz panel (`_draw_quiz` L2277+)
+## 11. Quiz panel (`_draw_quiz` L1937+)
 
 **Modal geometry:** 1060px wide max, centered. Chrome: header
-(42px) → tier pips + timer bar (28px) → question (variable) → 2×2
-choice-card grid → status feedback (36px) → combat HUD (110px, if
-chain-mode combat).
+(42px; taller in chain modes so the `font_lg` counter always fits) →
+tier pips + timer bar (28px) → question (variable) → 2×2 choice-card
+grid → combat strip (chain-mode combat only; height from
+`_combat_hud_height()`) → key-hint row (36px) at the very bottom.
 
 **Layout driver (v2.22.0 Phase 2):** all geometry comes from
 `_quiz_layout(qe, viewport_w, viewport_h)` — see §12b.1. It picks a
-font tier (base 26/20 → shrunk 22/17 → smallest 18/14), falls back to
-scrolling the question + choices block when even the smallest tier
-still overflows the viewport, and returns pre-sized rects so
-`_draw_quiz` is a straight blit pass. PgUp/PgDn and `[`/`]` scroll
-the content via `game_input._quiz_input` writing to
-`qe._quiz_scroll_offset`.
+font tier (base 26/20 → shrunk 22/17 → smallest 18/14; combat leads
+with an extra, larger tier), falls back to scrolling the question +
+choices block when even the smallest tier still overflows the
+viewport, and returns pre-sized rects so `_draw_quiz` is a straight
+blit pass. PgUp/PgDn and `[`/`]` scroll the content via
+`game_input._quiz_input` writing to `qe._quiz_scroll_offset`.
 
-**Combat HUD font hierarchy (v2.22.0 Phase 1):** the HUD inside the
-quiz panel now paints target HP + damage preview at `font_lg` with
-HP-colored numbers (green > 50%, warning yellow 25–50%, danger red
-< 25%), while the damage-type label, future-chain projection,
-weapon name, and SPACE hint drop to `font_sm` + `FP.FADED_TEXT`.
-This is a font-size + color pass only — no mechanics changed. See
-[combat.md §UI — combat HUD](combat.md#ui--combat-hud-inside-the-quiz-modal).
+**Title.** Combat quizzes use the short fixed titles
+`MELEE ATTACK  --  MATH` and `RANGED ATTACK  --  MATH` (v2.23.0); the
+target and weapon are named in the combat strip, not the header.
 
 **Header right-side:**
-- CHAIN modes render `Chain x{N} — {rank_name}` with font upgraded to
-  `font_lg` at chain ≥ 10 and color recolored at each rank milestone
-  via `_chain_rank`.
-- THRESHOLD / ESCALATOR_THRESHOLD modes render `{correct_count} /
-  {required}` **AND the "any wrong = fail" subtitle** below it
-  (DANGER_TEXT, `_draw_quiz` L2354-2376; the subtitle string itself
-  is at L2360). This is the player-facing zero-tolerance cue and, as
-  of v2.22.0 Phase 1, the sole on-screen location of that warning —
-  item cards and lore dossiers no longer carry it.
-- Header `right_reserve` sized to the wider of counter / subtitle so
-  the quiz title never overlaps.
+- CHAIN modes render the counter as `x{N}` in `font_lg`, in a
+  fixed-width slot at the right edge (sized for `x999`). The rank name
+  from `_chain_rank` (`Solid` … `Mythic`) is a bordered badge in its
+  own fixed slot just left of the counter (sized for the widest rank
+  name); below chain 3 there is no badge. Neither slot reflows as the
+  chain climbs — only the digits and the colour change (success green
+  below chain 3, rank colour from 3).
+- THRESHOLD / ESCALATOR_THRESHOLD modes that need more than one
+  correct answer render `{correct_count} / {required}` in `font_md`.
+- One-question quizzes (identify, harvest, cook, lockpick, …) render
+  **no counter** — "0 / 1" tells the player nothing.
+- There is no `(any wrong = fail)` subtitle. v2.22.0 made the header
+  the sole location of that warning; the 2026-10-04 playtest
+  (v2.23.0) removed it there too. Zero-tolerance is unchanged.
+- Header `right_reserve` is sized to whatever is drawn on the right
+  (0 when nothing is) so the quiz title never overlaps.
 
 **Tier pips:** 5 small circles left of the timer bar — filled at
 `i < qe.tier`, hollow otherwise. Shows escalator-mode progression.
 
 **Timer bar:** rendered only when `qe.timed = True`. Non-math quizzes
-drop the bar entirely (L2220 branch). Color gates: green > 55%,
-amber > 28%, red below. Tick marks every 20%. Seconds label on the
-right end.
+drop the bar entirely. Color gates: green > 55%, amber > 28%, red
+below. Tick marks every 20%. The seconds label has its own slot to
+the right of the bar (sized for `000s`) and takes the bar's colour; it
+is no longer painted over the bar's fill.
+
+**Question text:** left-aligned and flush to the top of its block,
+except in combat, where the sum is centred in a fixed two-line band
+and leads with `get_font('body', 34, bold=True)`.
 
 **Choice cards:** 2×2 grid via `draw_choice_button`. Each card has a
 `[N]` key badge and wrapped text. Case-EXACT comparison for correct
 match (not `.lower()`) — pre-2026-06-01 the lowered comparison would
 mark all four grammar-capitalization choices green. In the RESULT
 phase: correct = green border, player's wrong pick = red border.
+These cards are the only result feedback — the `CORRECT!` / `WRONG!`
+banner that used to fill the status row was removed in v2.23.0.
 
-**Status bar:**
-- RESULT phase: `*  CORRECT!` or `*  WRONG!` centered in `font_lg`.
-- ASKING phase: `Press  1  2  3  4  to answer` in HINT_TEXT.
+**Key-hint row** (`status_rect`):
+- Non-combat, ASKING phase: `Press  1  2  3  4  to answer` in
+  HINT_TEXT, centred; `[C] context` bottom-right when the current
+  question has a context card.
+- Combat: four fixed slots across the row — `1-4  Answer`,
+  `SPACE  Strike Now` (`SPACE  Cancel` at chain 0), `C  Context`
+  (only when a card exists), `ESC  Abort`. Each hint is fitted to its
+  slot with `_fit_line`, so the hints never move or collide.
 
-**Combat HUD** (`_draw_combat_hud` L2391-2470, when chain + combat
-target):
-- LEFT: monster name + HP bar + status effects row. Name truncated
-  via `truncate_label` to not bleed into the right column.
-- RIGHT: damage-type banner (`WEAKNESS!` dm ≥ 1.5, `RESISTED` dm ≤
-  0.5, else damage-type names). Chain-rung preview table showing
-  current / next / peak damage; the ranged variant uses
-  `player.ranged_weapon` for its base.
+**Combat strip** (`_draw_combat_hud(rect, accent)` L2451, when chain +
+combat target): two fixed cells from `_combat_hud_slots` — see §12b.2
+and [combat.md §UI — combat HUD](combat.md#ui--combat-hud-inside-the-quiz-modal).
+- **Target:** `TARGET` caption, monster name (shrinks, then wraps to
+  two lines), HP bar + `{hp}/{max} HP`, status-effect tags (shrink,
+  then `+N`).
+- **Strike Now:** `STRIKE NOW` caption with the weapon name
+  right-aligned, the big live `{dmg} Damage`, `x{mult} Multiplier`,
+  and the damage-type tag (`Weakness: <types>` dm ≥ 1.5,
+  `Resisted: <types>` dm ≤ 0.5, else the type names). The ranged
+  variant uses `player.ranged_weapon`, chosen by the
+  `_combat_is_ranged` flag.
+
+**Context modal** (`_draw_quiz_context_modal` L2286,
+`STATE_QUIZ_CONTEXT`): opened with `C`; the math timer pauses while it
+is open. Long cards scroll — Up/Down one step, PgUp/PgDn eight,
+Home/End to either end — through `self._quiz_context_scroll`, which
+resets to 0 on open and is clamped in the draw pass. Footer:
+`Up/Down: scroll   PgUp/PgDn: jump   C / ESC: close`. Math has cards
+as of v2.23.0 (one method card per skill class). Design:
+[`docs/design/context_blurb_system.md`](../design/context_blurb_system.md).
+
+After a combat quiz closes, the `strike_finisher` effect plays over
+the map — see [combat.md §Strike finisher](combat.md#strike-finisher-v2230).
 
 ---
 
-## 12. Threshold copy — the 12 sites that use `_threshold_line`
+## 12. Threshold copy — the sites that use `_threshold_line`
 
-`game_render._threshold_line(label, n)` at line 53 is the single
-source of truth for threshold-line copy. Format (v2.22.0):
+`game_render._threshold_line(label, n)` at line 54 is the single
+source of truth for threshold-line copy. Format (since v2.22.0):
 `"{label}: {n} correct"`.
 
 **Why just the short form?** v2.18 unified 12 hand-rolled threshold
 strings behind this helper and added `(any wrong = fail)` to every
-one. Phase 1 of v2.22.0 (2026-10-03) then pulled the parenthetical
-back out of the helper itself: it was duplicated across 12+ inspector
-/ kit / lore / dossier sites, and the player already sees it when
-they take the quiz. The quiz modal subtitle (`_draw_quiz` L2360)
-paints `"(any wrong = fail)"` in `DANGER_TEXT` directly under the
-`{correct_count} / {required}` counter, so the zero-tolerance rule
-is still visible — just at the point of use, not stamped on every
-card.
+one. Phase 1 of v2.22.0 (2026-10-03) pulled the parenthetical back
+out of the helper: it was duplicated across 12+ inspector / kit /
+lore / dossier sites. For one version the quiz-modal header kept the
+warning as a red subtitle under the counter; the 2026-10-04 playtest
+(v2.23.0) removed that as well.
 
-This is not a lie-by-omission regression. The warning IS visible —
-it moved from the inspector (where the player is reading, not yet
-quizzing) to the modal subtitle (where the player is actively being
-tested). The inspector regains ~1 line per threshold item and the
-duplicated red-text noise is gone from a dozen non-quiz surfaces.
+So the warning is now printed **nowhere**. The zero-tolerance rule is
+unchanged (see [conventions §1](conventions.md)) — it is learned by
+play rather than restated on every card and every quiz.
 
-**Call sites (v2.22.0, all short form):**
+**Call sites (all short form):**
 
 | Line | Context | Call |
 |---|---|---|
-| 6500 | `_lore_item_mechanic_lines` Armor | `_threshold_line("Equip", item.equip_threshold)` |
-| 6514 | `_lore_item_mechanic_lines` Shield | `_threshold_line("Equip", item.equip_threshold)` |
-| 6537 | `_lore_item_mechanic_lines` Accessory | `_threshold_line("Equip", item.equip_threshold)` |
-| 6547 | `_lore_item_mechanic_lines` Wand | `_threshold_line("Science", item.quiz_threshold)` |
-| 6556 | `_lore_item_mechanic_lines` Scroll | `_threshold_line("Grammar", item.quiz_threshold)` |
-| 6566 | `_lore_item_mechanic_lines` Spellbook | `_threshold_line("Grammar", item.quiz_threshold)` |
-| 7274 | `_draw_lore_dossier_screen` Armor | same |
-| 7285 | `_draw_lore_dossier_screen` Shield | same |
-| 7296 | `_draw_lore_dossier_screen` Accessory | same |
-| 7301 | `_draw_lore_dossier_screen` Wand | `Quiz` label |
-| 7305 | `_draw_lore_dossier_screen` Scroll | `Quiz` label |
-| 7344 | `_draw_lore_dossier_screen` Spellbook | `Quiz` label |
+| 5813 | `_lore_item_mechanic_lines` Armor | `_threshold_line("Equip", item.equip_threshold)` |
+| 5827 | `_lore_item_mechanic_lines` Shield | `_threshold_line("Equip", item.equip_threshold)` |
+| 5850 | `_lore_item_mechanic_lines` Accessory | `_threshold_line("Equip", item.equip_threshold)` |
+| 5860 | `_lore_item_mechanic_lines` Wand | `_threshold_line("Science", item.quiz_threshold)` |
+| 5869 | `_lore_item_mechanic_lines` Scroll | `_threshold_line("Grammar", item.quiz_threshold)` |
+| 5879 | `_lore_item_mechanic_lines` Spellbook | `_threshold_line("Grammar", item.quiz_threshold)` |
 
-**Rules (post-v2.22.0):**
+The other six sites this table used to list sat in the legacy body of
+`_draw_lore_dossier_screen`, below an early return. That dead code was
+deleted after v2.23.0 (`43f9aee`), leaving these six live callers.
+
+**Rules (post-v2.23.0):**
 
 1. If you add a new threshold-displaying item class or a new item
    card, call `_threshold_line` — never `f"Equip: {n} correct"`
    hand-rolled.
-2. Do **not** re-add `(any wrong = fail)` to the helper or to any
-   caller. The quiz subtitle (`_draw_quiz` L2360) is the sole
-   paint-site; a second copy means duplicated red text.
+2. Do **not** re-add `(any wrong = fail)` to the helper, to any
+   caller, or to the quiz modal. It was removed from all three on
+   purpose.
 3. Subject labels: use the subject the quiz actually uses —
    `Science` for wands, `Grammar` for scrolls / spellbooks, `Equip`
    for armor / shield / accessory (which doesn't fire a
@@ -667,29 +700,58 @@ rect / font / scroll flag `_draw_quiz` needs. The strategy is
 | 1 | `body` 22 | `body` 17 | Base overflows; one step down fits |
 | 2 | `body` 18 | `body` 14 | Still over; smallest sizes + scrolling kicks in |
 
+**Combat lead tier (v2.23.0).** When `is_combat`, one more tier is
+inserted ahead of tier 0: `get_font('body', 34, bold=True)` for the
+sum and `font_md` for the answers. A sum and its answers are a handful
+of characters, so they get the big size; the normal ladder still
+follows if a long word problem needs it. Combat also reserves a
+fixed-height question band (two lines) so the answer cards sit at the
+same y for one-line and two-line sums.
+
 If tier 2 is still over-tall, the panel height is clamped to the
-viewport (minus 20 px margins), the header / timer / status / combat
-HUD stay pinned, and ONLY the question + 2×2 choice-card block
-scrolls. The function stores `qe._quiz_scroll_offset` (clamped) on
+viewport (minus 20 px margins), the header / timer / combat strip /
+key-hint row stay pinned, and ONLY the question + 2×2 choice-card
+block scrolls. The pinned tail is stacked under the scroll area:
+combat strip (combat only), then the key-hint row. The function stores `qe._quiz_scroll_offset` (clamped) on
 the engine; input handlers mutate the same attribute.
 
 **Return keys:** `panel_rect`, `header_rect`, `timer_rect`,
 `question_rect`, `choice_rects` (list[Rect] of 4), `status_rect`,
-`scroll_rect`, `q_lines`, `q_line_h`, `c_wrapped`, `c_line_h`,
+`combat_rect` (`None` outside combat), `scroll_rect`, `q_lines`, `q_line_h`, `c_wrapped`, `c_line_h`,
 `ch_height`, `question_font`, `choice_font`, `scrollable` (bool),
 `scroll_offset`, `scroll_max`, `content_h`, `visible_scroll_h`,
 `display_choices`, plus geometry fields `bw/bx/by/bh/cw/PAD/GAP`,
 `header_h/timer_h/status_h/combat_h/section_gap`, `is_combat`,
 `font_tier`.
 
-### 12b.2 `game_render._combat_hud_row_rects(bx, strip_y, bw, …)`
+### 12b.2 Combat-strip helpers (v2.23.0)
 
-Extracted so tests can assert each of the four combat-HUD rows is
-disjoint from the others. Rows: target name + HP bar (primary),
-damage preview (primary), damage-type / projection row (secondary),
-weapon-name + SPACE hint row (secondary). Separation is per the
-Phase 1 font-hierarchy pass — see §Quiz panel below and the UI note
-in [combat.md](combat.md).
+These replace the v2.22.0 `_combat_hud_row_rects` helper, which
+returned four full-width rows; the drawer then positioned each string
+off the measured width of its neighbour, and long names ran into the
+next column.
+
+**`game_render._combat_hud_slots(bx, strip_y, bw)`** (L2394) returns
+the fixed text slots of the strip as a dict of two cells, `target` and
+`strike` (5 : 4 width split). Each cell carries `cell`, `cap`, `main`,
+`sub1`, `sub2` rects. The target cell also splits `sub1` into `hp_bar`
++ `hp_text` (the numbers get a slot wide enough for 4-digit HP), and
+the strike cell's caption row carries a right-hand `weapon` slot.
+Every string the HUD draws is fitted into exactly one of these rects.
+Extracted so tests can assert the slots never overlap.
+
+**`game_render._combat_hud_height()`** (L2387) is the strip's pixel
+height — caption row, one main row sized for the big damage number,
+two detail rows. `_quiz_layout` reserves exactly this.
+
+**`game_render._fit_line(text, max_w, sizes, family='body')`** (L2369)
+returns `(font, text)` for a one-line slot: it walks `sizes`
+largest-first and returns the first font the whole string fits in,
+and truncates with an ellipsis only when the text overflows at the
+smallest size. Used by every combat-strip string and by the combat
+key-hint row.
+
+Covered by `tests/test_ui_measured_rows.py`.
 
 ### 12b.3 `text_layout.tab_strip_window(widths, active, available_width, gap=6, arrow_w=18)`
 
@@ -842,22 +904,33 @@ so the bestiary preview matches what harvest actually drops.
 The dossier is the "detail view" for a selected item or corpse. Owns
 the paired "lore + mechanics" presentation.
 
-**Identity lines** (`_lore_item_identity_lines`):
-- Display name (GOLD_BRIGHT, heading)
-- `Identification: {_identify_status_label(id_level)}` where the
-  label maps:
-  - `>= 5` → `"Identified"`
-  - `>= 4` → `"Type known (BUC / enchant hidden)"`
-  - `>= 1` → `"Partial (legacy save)"`
-  - else → `"Unknown"`
-- If `id_level < 1` and `unidentified_name` present: show the
-  appearance.
-- `True name` (if `id_level >= 1` else `"Unknown"`)
+**Identity lines** (`_lore_item_identity_lines`, L5741):
+- Display name (GOLD_BRIGHT, heading) — the same string
+  `_display_name` gives everywhere else.
+- A plain `Identified` (`id_level >= 5`) or `Unidentified` line. The
+  v2.22.0 `Identification: {_identify_status_label(id_level)}` line is
+  gone from the dossier (v2.23.0); `_identify_status_label` is still
+  used by the kit browser.
+- `Appearance` + the item's `unidentified_name` — what the item looks
+  like unidentified, so the player can recognise it on a later run.
+  Skipped when the heading already is the appearance (type still
+  unknown). This replaces the `True name` field, which only repeated
+  the heading.
 - `Class: {item_class}`, `Slot: {slot}`, `Weight: {w}`
-- `Aura: {buc}` (when `id_level >= 2` or `buc_known` else "unknown")
+- `Aura: {buc}` (when `id_level >= 2` or `buc_known` else "Unknown"),
+  title-cased via `_cap`
 - `Source: Equipped | Pack | Record`
 
-**Mechanic lines** (`_lore_item_mechanic_lines`, L6468-6568):
+Raw data values in the dossier and the encyclopedia — material, slot,
+weapon class, damage types, effect names, attack names — are
+title-cased through `_cap()` / `.title()` (v2.23.0).
+
+**Corpse dossier:** the `Harvest with H -- right animal answer yields
+the cut; wrong ruins the corpse.` instruction line under the
+`Prime cut` / `Trophy` row was dropped in v2.23.0. The cut and the
+known recipe uses still render.
+
+**Mechanic lines** (`_lore_item_mechanic_lines`, L5781):
 - Hidden entirely at `id_level < 3`: `"Mechanics unrevealed"`
 - Weapon: type, material, tier, damage dice + average + types,
   reach, 1h/2h, special (stun / bleed / knockback / ignore_shield),
@@ -874,8 +947,8 @@ dropped five rows that duplicated info already visible elsewhere —
 `Appearance`, `Status`, `Type`, `Hidden`, and `Next action` — plus
 added a `* Equipped` indicator so the equipped-vs-pack distinction
 pops without a secondary row. Threshold-line copy lost its
-`(any wrong = fail)` tail at the same time; the warning now paints
-only in the quiz modal subtitle.
+`(any wrong = fail)` tail at the same time. (The quiz modal subtitle
+that carried the warning afterwards was itself removed in v2.23.0.)
 
 **v2.15.0 UI-rot fix** (preserved here): the Weapon branch dropped
 the stale "Perfect Chain Crit" label — crit was retired in v2.14.0
@@ -1143,8 +1216,8 @@ Documented for traceability. Fixes land in follow-up commits.
 - **Character sheet timer line** — fixed in this version.
 - **11 threshold-copy strings** — unified under `_threshold_line` in
   v2.18; the parenthetical `(any wrong = fail)` tail was pulled out
-  of the helper in v2.22.0 Phase 1 and now paints only in the quiz
-  modal subtitle (`_draw_quiz` L2360).
+  of the helper in v2.22.0 Phase 1, and the quiz modal subtitle that
+  still painted it was removed in v2.23.0.
 - **Help screen System Rules card** — added in v2.18, removed 2026-10-03 (unrequested clutter, truncated Knowledge group).
 - **Discoveries `MASTERED` → `CLEARED`** — renamed.
 - **`MASTERY!` toast → `TIER N CLEARED`** — renamed.
@@ -1156,9 +1229,15 @@ Documented for traceability. Fixes land in follow-up commits.
 - **Effect chip overflow** — added `+N more` hint; IN SIGHT panel
   still clips silently.
 - **Quiz "1 wrong = fail" cue** — added as subtitle in the header
-  right slot (`_draw_quiz` L2360) for threshold modes. v2.22.0 Phase 1
-  made this the SOLE on-screen location of the warning (the 12
-  inspector / lore duplicates were dropped).
+  right slot for threshold modes; v2.22.0 Phase 1 made it the SOLE
+  on-screen location of the warning; **removed in v2.23.0**
+  (2026-10-04 playtest). The cue is no longer shown anywhere.
+- **Quiz / combat playtest pass (v2.23.0)** — `CORRECT!` / `WRONG!`
+  banner removed; `0 / 1` counter hidden on one-question quizzes;
+  chain header `x{N}` + rank badge in fixed slots; timer seconds in
+  their own slot; combat strip rebuilt as two fixed cells (§12b.2);
+  context modal scrolls; names title-cased via `src/naming.py`; item
+  dossier shows `Identified` / `Unidentified` + `Appearance`.
 - **Sidebar layout (v2.22.0 Phase 3)** — `ATTRIBUTES` was reshaped
   from 3-col × 2-row into 2-col × 3-row with values right-aligned per
   cell and a 2 px safety gap, so 3-digit stats stop crashing into the

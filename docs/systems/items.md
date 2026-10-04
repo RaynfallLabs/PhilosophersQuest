@@ -270,13 +270,12 @@ lives entirely in the JSON `slot` field.
 
 All equip quizzes run in **threshold mode** with `threshold =
 item.equip_threshold`. Zero-tolerance applies: **any wrong answer =
-fail**. The `_threshold_line` helper (`src/game_render.py:53`) prints
+fail**. The `_threshold_line` helper (`src/game_render.py:54`) prints
 every threshold line in the format `"<Label>: N correct"`. The
-`(any wrong = fail)` warning is NOT carried by this helper after
-v2.22.0 Phase 1 — it lives in a single place, the quiz-modal subtitle
-(`game_render._draw_quiz` L2360), so the player sees it where they
-actually need it (while taking the quiz) rather than repeated on
-every item card.
+`(any wrong = fail)` warning is not printed anywhere: v2.22.0 Phase 1
+took it out of this helper, and v2.23.0 removed the quiz-modal
+subtitle that briefly carried it. The rule still holds; it is simply
+no longer spelled out on screen.
 
 | Item class | Subject | Entry point | Code |
 |------------|---------|-------------|------|
@@ -306,12 +305,12 @@ self.quiz_engine.start_quiz(
 Threshold copy sweep (post-v2.22.0): the 12 threshold strings on item
 cards, lore screens, and bestiary panels all flow through
 `_threshold_line`, which emits the short form `"Equip: 3 correct"`.
-The `(any wrong = fail)` warning is painted ONCE under the quiz-modal
-counter (`_draw_quiz` L2360) rather than duplicated on every item
-card. The pre-v2.22 state — where every inspector carried the
-parenthetical — was removed in Phase 1 of the UI beautification pass
-(2026-10-03). The 2026-10-02 v2.18 sweep that first unified the
-helper is what made this one-line delete possible.
+The pre-v2.22 state — where every inspector carried the
+`(any wrong = fail)` parenthetical — was removed in Phase 1 of the UI
+beautification pass (2026-10-03); the quiz-modal subtitle that kept
+the warning for one more version was removed in v2.23.0 (2026-10-04
+playtest). The 2026-10-02 v2.18 sweep that first unified the helper
+is what made the one-line delete possible.
 
 ### Chain-equip (legendary uniques)
 
@@ -727,9 +726,19 @@ include_count=False)` (`src/hud_context.py:84`). Three-state tree
 (True Name model from identify v3):
 1. **Instance identified** (`id_level >= 4`) → full name + enchant +
    BUC tag.
-2. **Type known, BUC unknown** → `"unidentified <true name>"` — player
+2. **Type known, BUC unknown** → `"Unidentified <true name>"` — player
    knows what it is but doesn't know *this* copy's BUC/enchant.
 3. **Type unknown** → `unidentified_name` (the fallback appearance).
+
+**Capitalisation (v2.23.0).** `Item.name` and `Item.unidentified_name`
+(and `Corpse.monster_name`) are `naming.ProperNameAttr` descriptors, so
+every name reads back in title case however the JSON or an old save
+spelled it: `"ring of magic resist"` → `"Ring of Magic Resist"`,
+`"birch wand"` → `"Birch Wand"`. The JSON examples in this doc show
+the authored (often lowercase) form; what the player sees is the
+normalised form. Panel values that come from raw data ids — material,
+slot, damage type, effect, aura — are title-cased at draw time by
+`game_render._cap`. See [conventions §19](conventions.md).
 
 Covered in detail in [identify_v3 §6](identify_v3.md) and [ui](ui.md).
 

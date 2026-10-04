@@ -111,7 +111,7 @@ the doc wins (and the row is a bug — please update it).
 | "What is the system-change-sweep rule?" | [conventions.md](conventions.md); grep OLD terms across all `src/` in same commit as mechanical change |
 | "Where does help text live?" | [ui.md](ui.md); `game_render._draw_help_screen`, including the new System Rules card |
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |
-| "Why does the HUD say 'unidentified longsword'?" | [ui.md](ui.md); `hud_context.hud_item_name` True-Name rule (v2.18 identify-v3 fix) |
+| "Why does the HUD say 'Unidentified Longsword'?" | [ui.md](ui.md); `hud_context.hud_item_name` True-Name rule (v2.18 identify-v3 fix) |
 | "How do mystery altars gate challenges?" | [quests_mysteries.md](quests_mysteries.md); `MYSTERIES` dict in `mystery_system.py` |
 | "Where is karma clamped?" | [karma_prayer.md](karma_prayer.md); `_award_encounter_outcome`, −10..+10 |
 | "What does `plot_locked` do in item JSON?" | [data_schemas.md](data_schemas.md); documentary only — real gate is `min_level: 9999` + custom spawn code |

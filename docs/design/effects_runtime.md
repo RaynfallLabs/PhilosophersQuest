@@ -1,6 +1,6 @@
 # EffectsRuntime -- Design
 
-**Date:** 2026-10-03 (Phase 1 landing); Phase 3 section appended same day
+**Date:** 2026-10-03 (Phase 1 landing); Phase 3 section appended same day; §12 (`strike_finisher`) appended 2026-10-04 for v2.23.0
 **Supersedes:** parts of the legacy `QuizEngine.celebrating` + `_draw_celebration` pair; the previous `effects_runtime_phase_1.md` filename (shed now that the runtime has grown past Phase 1).
 **Context:** Phase 1 of CHAIN_EFFECTS_PLAN.md built the general-purpose visual-effects runtime; Phase 0 landed the `session_id` + `celebrate_on_max` gate on the engine. Phase 1 migrated math-combat chain feedback onto the runtime and moved the two legitimate full-screen takeovers (Divine Intercession, Unicorn boon) onto the same system so there is one place that owns visual effects. Phase 3 (this doc, §11) adds the first non-chain effect -- the identify-success orb -- which validates that the runtime generalises.
 
@@ -103,10 +103,10 @@ The config is a JSON dict with a `_meta` block and an `effects` object. Keys are
 
 | Key                 | Meaning                                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------------------|
-| `handler`           | The class that implements this effect. Phase 1 shipping: `chain_aura_pulse`, `fullscreen_takeover`.   |
+| `handler`           | The class that implements this effect. Phase 1 shipping: `chain_aura_pulse`, `fullscreen_takeover`. Added since: `identify_orb` (§11), `strike_finisher` (§12). |
 | `scope`             | Documentation; the runtime does not read it in Phase 1. `quiz_session` means per-quiz; `one_shot` means stand-alone trigger. |
 | `activates_when`    | A dict of fields the snapshot must match before the handler engages. Any key missing from the snapshot or non-equal fails the gate. |
-| `reduced_motion`    | Per-effect `disable` list + optional `shorten_to_ms` (for one-shot) and `replace_milestone` (for chain). |
+| `reduced_motion`    | Per-effect `disable` list + optional `shorten_to_ms` (for one-shot), `replace_milestone` (for chain), `replace_with` (identify orb) and `static_ms` (strike finisher). |
 | Any other key       | Passed as-is to the handler's `__init__` via `runtime.effect_config(id)`.                             |
 
 **Validation:** `_load_config` tolerates a missing file, bad JSON, or a missing `effects` object -- in all those cases the runtime registers no effects and all draw calls are no-ops. The game stays playable. Per-effect validation lives in each handler's constructor and also degrades gracefully (bad `ranks` fall back to a hardcoded default, etc.).
@@ -296,6 +296,73 @@ The handler stores a `_reduced_mode` flag at trigger time (not just at update ti
 - Reduced-motion mode skips the orbit-spark spawn and expires at 300 ms.
 - Static grep check: both call sites fire the orb in their success branch.
 - Static grep check: neither call site's failure (stun) branch fires the orb.
+
+## 12. `strike_finisher` (v2.23.0)
+
+A math-combat chain used to just stop: the quiz panel vanished and the only closure was a log line. `strike_finisher` is a one-shot banner over the map, scaled by how the attack went, so a big chain gets a visible payoff. It brings the registered handlers to five effect ids on four handler classes (`ChainAuraPulse`, `FullscreenTakeover` ×2, `IdentifyOrb`, `StrikeFinisher`).
+
+### 12.1 Handler
+
+`src/effects/strike_finisher.py` implements `StrikeFinisher`. One registered instance; re-triggering restarts it, so two attacks in quick succession never stack banners.
+
+The tier is picked in `trigger()` by `tier_for(chain, rank_name)`:
+
+| Tier     | When                          | Visual                                                          | `durations_ms` |
+|----------|-------------------------------|-----------------------------------------------------------------|----------------|
+| `miss`   | chain 0                       | small faded `Miss`                                              | 350            |
+| `light`  | chain 1-2 (no named rank)     | `"{damage} Damage"` pops and fades                              | 500            |
+| `ranked` | named rank (chain 3+)         | `"{rank}  x{chain}"` over the damage line, slash streak, one ring | 750          |
+| `big`    | chain >= `big_chain` (10)     | as `ranked`, plus a second ring and a map-edge glow              | 900            |
+
+A kill swaps the damage line for `"<Target> Slain"`; it does not add time. Ranked and big tiers paint in the rank colour passed by the caller.
+
+Deliberately small:
+
+- **Never blocks input.** Play continues underneath.
+- **Capped at 900 ms.** Fade in over the first 12%, hold, fade out over the last third.
+- **Confined to the map.** `map_rect()` is `(layout.MAP_X, 0, layout.MAP_W, layout.GAME_H)`; everything is drawn on a map-sized scratch layer and blitted once, so nothing can spill onto the sidebar or the message log. The banner is centred on the map view, horizontally and vertically.
+- **Not session-scoped.** `reset_scope()` is a deliberate no-op: the flourish plays AFTER the quiz session ends, so a new session starting must not cut it.
+
+Draw phase: `draw_overlay`, same as the takeovers and the identify orb -- by the time it fires the quiz modal has closed and the game is back in STATE_PLAYER.
+
+### 12.2 Config
+
+```json
+"strike_finisher": {
+  "handler": "strike_finisher",
+  "scope": "one_shot",
+  "durations_ms": {"miss": 350, "light": 500, "ranked": 750, "big": 900},
+  "big_chain": 10,
+  "reduced_motion": {
+    "disable": ["rings", "streak", "drift"],
+    "static_ms": 300
+  }
+}
+```
+
+Missing or malformed `durations_ms` entries fall back to the defaults above.
+
+### 12.3 Call sites and fire context
+
+`CombatMixin._fire_strike_finisher(monster, chain, damage, killed)` in `src/game_combat.py` is the single entry point. It looks up the chain rank via `_chain_rank(chain)` and fires:
+
+```python
+rt.fire('strike_finisher', {
+    'chain': chain, 'damage': damage, 'killed': killed,
+    'rank_name': rank_name, 'rank_color': rank_color,
+    'target_name': monster.name,
+})
+```
+
+It is called from the melee `on_complete` callback (`_start_combat`), the ranged `on_complete` callback (`_fire_ranged`), and the Vidar's Sandal instant-kill branch (with `killed=True`). It returns silently when there is no runtime -- the effect is purely visual and is never allowed to break combat.
+
+### 12.4 Reduced-motion fallback
+
+With `PQ_REDUCED_MOTION=1`: static text for `static_ms` (300 ms), no rings, no slash streak, no upward drift, no fade.
+
+### 12.5 Tests
+
+`tests/test_strike_finisher.py` covers registration + config parse, tier selection, the hit / miss / kill lines, lifetime and restart-on-retrigger, the reduced-motion path, and that the effect draws only inside the map area.
 
 ## 10. Open questions queued for Phase 2+
 

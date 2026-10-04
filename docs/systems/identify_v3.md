@@ -279,7 +279,7 @@ three-state tree:
 |-------|-----------|---------|
 | Instance identified | `item.id_level >= 4` | full name (`"Rapier +2"`) |
 | Type known + BUC known | type ∈ player known-set AND `buc_known` | full name — `{buc}` tag below carries the per-instance info |
-| Type known + BUC unknown | type ∈ player known-set | **`"unidentified <true name>"`** — player knows what this is, but this copy's BUC/enchant is still a mystery |
+| Type known + BUC unknown | type ∈ player known-set | **`"Unidentified <true name>"`** — player knows what this is, but this copy's BUC/enchant is still a mystery |
 | Type unknown | nothing known | `unidentified_name` fallback appearance |
 
 ```python
@@ -289,7 +289,7 @@ elif knows_type:
     if item.buc_known:
         raw = item.name          # the {buc} tag below carries the delta
     else:
-        raw = f"unidentified {item.name}"
+        raw = f"Unidentified {item.name}"
 else:
     raw = item.unidentified_name
 ```
@@ -299,14 +299,22 @@ Then the final string prepends a BUC tag when both `buc_known` *and*
 
 ```
 "{blessed} Rapier +2"
-"{cursed} unidentified Long Sword"
+"{cursed} Unidentified Long Sword"
 ```
 
-**Why "unidentified <true name>" matters.** With identify v3, learning
+**Why "Unidentified <true name>" matters.** With identify v3, learning
 a type is global (`known_item_ids` / `known_class_ids` /
 `known_forms`+`known_materials`) but each copy's BUC/enchant stays
 secret until that *instance* is identified. The display reflects both
 pieces of knowledge at once.
+
+**Capitalisation (v2.23.0).** The prefix is a capital-U
+`Unidentified`, and `item.name` / `item.unidentified_name` always read
+back in title case through `naming.ProperNameAttr`. The item dossier's
+identity panel shows a plain `Identified` / `Unidentified` line and an
+`Appearance` field (the unidentified look, for recognising the item on
+a later run) in place of the old `True name` row — see
+[ui §16](ui.md).
 
 ### Type-knowledge keys
 

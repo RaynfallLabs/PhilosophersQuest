@@ -1,6 +1,6 @@
 # Conventions — Cross-Cutting Rules
 
-**v2.22.0** (shipped 2026-10-03)
+**v2.23.0** (shipped 2026-10-04)
 
 Short, dense, actionable. If you only read one doc, read this one.
 Everything here is enforced by code, by player experience, or by the
@@ -23,26 +23,28 @@ failure.
   notes `solomon`, `grail`, `oracle`, `mjolnir`, `sphinx`.
 
 **Player-facing surface:**
-- Threshold quizzes render the subtitle `(any wrong = fail)` in red
-  **under the counter in the quiz-modal header** — one place only,
-  painted at `game_render._draw_quiz` L2354-2376 (the subtitle string
-  itself is at L2360). This is the single source of truth for the
-  warning.
+- The quiz modal does **not** print the rule. v2.22.0 moved the
+  `(any wrong = fail)` warning off the item cards and into a red
+  subtitle under the quiz-header counter; the 2026-10-04 playtest
+  (v2.23.0) removed that subtitle as well. The rule itself is
+  unchanged — only the on-screen reminder is gone.
+- A threshold quiz that needs more than one correct answer shows
+  `{correct_count} / {required}` in the header. One-question quizzes
+  (identify, harvest, cook, lockpick) show no counter at all — "0 / 1"
+  tells the player nothing.
 - Every item card / lore dossier / bestiary string that prints a
   threshold value uses `_threshold_line(label, n)` from
-  `game_render.py:53` → **"Equip: 3 correct"**. The parenthetical
-  `(any wrong = fail)` is NOT part of this helper (v2.22.0 Phase 1 pulled
-  it out — see §12 of [ui.md](ui.md)). Do not hand-roll a threshold
-  line, and do not re-add the parenthetical here — the quiz subtitle
-  already carries it where the player is actively taking the quiz.
+  `game_render.py:54` → **"Equip: 3 correct"**. Do not hand-roll a
+  threshold line, and do not re-add the parenthetical — not to the
+  helper, not to a caller, and not to the quiz modal (see §12 of
+  [ui.md](ui.md)).
 
-**If you forget this rule:** players still see "any wrong = fail"
-on-screen because the quiz subtitle paints every time a threshold
-quiz is active. The *inspector* lies-by-omission that pre-v2.22
-item cards carried was fixed by moving the warning to the point of
-use rather than duplicating it per card. See SYSTEMS_AUDIT §8 P2 for
-the original 11 call sites (migrated 2026-10-02, de-duplicated
-2026-10-03).
+**If you forget this rule:** nothing on screen will correct you. New
+copy that implies partial credit ("3 of 5", "best of") reads as true
+to the player, because the quiz modal no longer states the
+zero-tolerance rule. See SYSTEMS_AUDIT §8 P2 for the original 11 call
+sites (migrated 2026-10-02, de-duplicated 2026-10-03, subtitle removed
+2026-10-04).
 
 ---
 
@@ -366,7 +368,8 @@ Project memory: "Execute fully, then ONE play-test."
 ## 18. Visual effects runtime + reduced motion
 
 **Rule:** visual effects (per-answer chain feedback, fullscreen
-takeovers, future orb pops / level-up bursts) live in the
+takeovers, the identify orb, the end-of-attack strike finisher) live
+in the
 `EffectsRuntime` (`src/effects_runtime.py`) with per-effect handlers
 under `src/effects/`. Config is `data/ui/effects_config.json`.
 Adding a new effect = append a config block + a handler class +
@@ -383,9 +386,41 @@ $env:PQ_REDUCED_MOTION='1'; python src/main.py
 
 Each handler reads the per-effect `reduced_motion.disable` list from
 its config (`"particles"`, `"rotating_runes"`) + optional
-`shorten_to_ms` (one-shot) or `replace_milestone` (chain). A proper
+`shorten_to_ms` (one-shot), `static_ms` (strike finisher) or
+`replace_milestone` (chain). A proper
 in-game settings UI for this toggle is future work -- Phase 1 ships
 the env var only.
+
+---
+
+## 19. Display names are title case (v2.23.0)
+
+**Rule:** the player never sees an all-lowercase name. Data files
+author most item and monster names in lowercase (`"giant rat"`,
+`"ring of magic resist"`); `src/naming.py` normalises them at the
+source so no call site has to remember.
+
+- `naming.proper_name(name)` → `"Ring of Magic Resist"`,
+  `"Ox-Hide Shield"`. Joining words (`of`, `the`, `and`, …) stay
+  lowercase except at the start. Words that already carry capitals
+  (`"STR+1"`, `"McCoy"`) pass through untouched, so it is safe to
+  apply twice.
+- `naming.ProperNameAttr` is a descriptor on `Item.name`,
+  `Item.unidentified_name`, `Monster.name` and `Corpse.monster_name`.
+  It normalises on write **and** on read, so objects unpickled from an
+  older save display correctly with no save migration.
+- `game_helpers.fix_name_case` now delegates to `proper_name`.
+- `game_render._cap(raw)` (L66) title-cases a raw data value for a
+  panel — material, slot, damage type, aura, weapon class
+  (`'two_handed sword'` → `'Two Handed Sword'`).
+- The type-known prefix is `"Unidentified <true name>"`, capital U
+  (`hud_context.hud_item_name`, `main._display_name`).
+
+**If you forget this rule:** a new panel that prints `item.material`
+or `atk['type']` raw shows `iron` / `fire_resist` next to title-cased
+neighbours. Wrap raw data ids in `_cap()`; never print them bare.
+`tests/test_naming.py` asserts every item and monster name in the
+data files comes out capitalised.
 
 ---
 
@@ -394,7 +429,8 @@ the env var only.
 | Rule | File | Function / constant |
 |---|---|---|
 | Zero-tolerance | `src/quiz_engine.py` | `QuizState`, threshold branch |
-| Threshold copy | `src/game_render.py` | `_threshold_line(label, n)` L53 |
+| Threshold copy | `src/game_render.py` | `_threshold_line(label, n)` L54 |
+| Title-case names | `src/naming.py` | `proper_name`, `ProperNameAttr`; `game_render._cap` |
 | Chain v2 | `src/combat.py` | `player_attack`; `chain_exponent` |
 | Math-only timing | `src/player.py` | `SUBJECT_TIMER`, `get_quiz_timer` |
 | Resource loss | `src/food_system.py`, `src/main.py` | `_cook_compound`, `_harvest`, `_lockpick` |
