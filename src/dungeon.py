@@ -2195,11 +2195,15 @@ def _create_odin_shrine(dungeon: Dungeon, rooms, ground_items, rng):
     Secret: throwing Gram over the altar from one side reforges it.
     """
     # Place Odin's Altar in a room (prefer a non-start room)
-    altar_room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
-    cx, cy = altar_room.center
+    # Try the chosen room first, then every other candidate: the old code
+    # looked only at the centre tile and its four neighbours of ONE room and
+    # silently gave up (no altar, quest unfinishable) if those were water,
+    # a fountain or stairs.
+    candidates = list(_structure_rooms(rooms))
+    rng.shuffle(candidates)
     placed = False
-    for dx, dy in [(0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)]:
-        ax, ay = cx + dx, cy + dy
+    for altar_room in candidates:
+        ax, ay = _structure_anchor(dungeon, altar_room)
         if dungeon.in_bounds(ax, ay) and dungeon.tiles[ay][ax] == FLOOR:
             dungeon.tiles[ay][ax] = ALTAR
             dungeon.odin_altar_pos = (ax, ay)

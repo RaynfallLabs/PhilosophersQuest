@@ -658,10 +658,15 @@ def _eff_fear_visible(game, special, tier, chain):
 def _eff_reveal_floor(game, special, tier, chain):
     revealed = 0
     if tier.get('full_map'):
-        for y in range(game.dungeon.height):
-            for x in range(game.dungeon.width):
-                if game.dungeon.is_walkable(x, y) or game.dungeon.is_door(x, y):
-                    game.explored.add((x, y))
+        # (This called dungeon.is_door and game.explored, neither of which
+        # exists, so chains 2-5 raised, were swallowed, and burned the
+        # cooldown for nothing.)
+        from dungeon import DOOR
+        tiles = game.dungeon.tiles
+        for y in range(len(tiles)):
+            for x in range(len(tiles[y])):
+                if game.dungeon.is_walkable(x, y) or tiles[y][x] == DOOR:
+                    game.dungeon.explored.add((x, y))
                     revealed += 1
     elif tier.get('traps_near'):
         for (tx, ty) in list(game.dungeon.traps):
@@ -787,10 +792,12 @@ def _eff_self_buff_berserk(game, special, tier, chain):
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, dur)
     str_bonus = int(tier.get('str', 0))
-    if str_bonus > 0:
+    if str_bonus > 0 and not getattr(game.player, '_ash_berserk_str_granted', False):
+        # A permanent +STR reward for a chain-5 berserk, granted ONCE per
+        # run. It used to be re-granted on every cast, so STR grew without
+        # limit.
         game.player.apply_stat_bonus('STR', str_bonus)
-        # Auto-revert when buff expires would need an event hook; for now,
-        # permanent +STR as the chain-5 reward (matches buff scaling).
+        game.player._ash_berserk_str_granted = True
     game.add_message(f"Ash roars: \"Le's GO!\" Berserk for {dur} turns.", 'success')
 
 
@@ -833,9 +840,11 @@ def _eff_heal_pet(game, special, tier, chain):
     game.add_message(f"{pet.name} is healed! (+{gained} HP)", 'success')
     if tier.get('cleanse'):
         from status_effects import DEBUFFS
-        debs = [e for e in list(pet.status_effects) if e in DEBUFFS]
+        # Pets do not all carry a status_effects dict.
+        pet_fx = getattr(pet, 'status_effects', None) or {}
+        debs = [e for e in list(pet_fx) if e in DEBUFFS]
         for d in debs:
-            pet.status_effects.pop(d, None)
+            pet_fx.pop(d, None)
         if debs:
             game.add_message(f"  ...all debuffs cleared from {pet.name}.", 'success')
 

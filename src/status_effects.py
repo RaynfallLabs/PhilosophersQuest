@@ -115,6 +115,10 @@ EFFECT_INFO: dict[str, tuple] = {
     'magic_resist':       ('Magic Resist',       (200, 150, 245), 'Reduces magical effects'),
     'drain_resist':       ('Drain Resist',       (185,  80, 245), 'Immune to stat drain'),
     'disint_resist':      ('Disint. Resist',     (245, 185, 100), 'Immune to disintegration'),
+    # ---- Trophy immunities (permanent; granted by boss-trophy recipes) ----
+    'petrify_immune':     ('Stoneproof',         (205, 205, 130), 'Cannot be turned to stone'),
+    'confuse_immune':     ('Clear-Headed',       (160, 220, 240), 'Cannot be confused'),
+    'acid_resist':        ('Acid Resist',        (170, 220,  90), 'Gear and flesh shrug off corrosion'),
 }
 
 DEBUFFS: frozenset = frozenset({
@@ -212,6 +216,11 @@ _RESIST_BLOCKS: dict[str, set] = {
     # so counterspell + Magic Resist amulets become meaningful.
     'magic_resist':  {'confused', 'charmed', 'silenced', 'feared',
                       'hallucinating', 'hallucinating_pot'},
+    # Boss-trophy immunities. These statuses were granted by trophy recipes
+    # but nothing read them, so "permanent immunity" did nothing.
+    'petrify_immune': {'petrifying'},
+    'confuse_immune': {'confused'},
+    'acid_resist':    {'corroding'},
 }
 
 # Material immunity to acid/rust — materials that cannot corrode or rust

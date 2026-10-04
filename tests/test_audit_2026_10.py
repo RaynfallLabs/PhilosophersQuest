@@ -302,3 +302,133 @@ def test_b3_equip_checks_current_weapon_before_removing_new_one():
     block = block[:block.index('elif isinstance(item, Shield)')]
     assert block.index('try_unequip_slot(_current)') < \
         block.index('self.player.remove_from_inventory(item)')
+
+
+# ===========================================================================
+# Round 2 (2026-10-04): trophy powers, monster control, open findings
+# ===========================================================================
+
+def _all_permanent_powers():
+    import glob
+    import re
+    powers = set()
+    for f in glob.glob(str(_ROOT / 'data' / 'items' / '*.json')):
+        text = Path(f).read_text(encoding='utf-8')
+        powers |= set(re.findall(r'"permanent_power": "([a-z0-9_]+)"', text))
+    return sorted(powers)
+
+
+def test_w8_every_trophy_power_changes_the_player():
+    """Each permanent power in the data must leave a real, READ effect:
+    a stat, a status the engine honours, a resistance, or a known flag."""
+    from player import Player
+    from food_system import _apply_permanent_power
+    from status_effects import EFFECT_INFO
+    powers = _all_permanent_powers()
+    assert len(powers) >= 10
+    flags = ('_asmodeus_pact', '_green_knight_revive', '_fafnir_per_descent_hp',
+             '_nidhogg_per_descent_mp', '_blood_archon_lifesteal')
+    stats = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
+    for power in powers:
+        p = Player()
+        before_fx = dict(p.status_effects)
+        before_stats = {s: getattr(p, s) for s in stats}
+        _apply_permanent_power(p, power, {})
+        new_fx = [k for k, v in p.status_effects.items() if before_fx.get(k) != v]
+        changed = (new_fx
+                   or any(getattr(p, s) != before_stats[s] for s in stats)
+                   or p.damage_resistances
+                   or any(getattr(p, f, None) for f in flags))
+        assert changed, f"trophy power {power!r} does nothing"
+        for fx in new_fx:
+            assert fx in EFFECT_INFO, f"{power}: status {fx!r} is unknown to the engine"
+
+
+def test_w8_trophy_immunities_block_their_effect():
+    from player import Player
+    for immunity, effect in (('petrify_immune', 'petrifying'),
+                             ('confuse_immune', 'confused'),
+                             ('acid_resist', 'corroding')):
+        p = Player()
+        p.status_effects.clear()
+        p.add_effect(immunity, -1)
+        assert p.add_effect(effect, 5) is False, immunity
+
+
+def _monster(tags=(), **flags):
+    from monster import Monster
+    defn = {'id': 'test_mon', 'name': 'test monster', 'symbol': 'm',
+            'color': [200, 200, 200], 'hp': '10', 'thac0': 20,
+            'attacks': [{'name': 'bite', 'damage': '1d4'}],
+            'tags': list(tags)}
+    defn.update(flags)
+    return Monster(defn, 5, 5)
+
+
+def test_w11_control_immunities_follow_creature_nature():
+    golem = _monster(tags=['construct'])
+    zombie = _monster(tags=['undead'])
+    wolf = _monster(tags=['beast'])
+    boss = _monster(tags=['demon'], is_boss=True)
+    mini = _monster(tags=['beast'], is_mini_boss=True)
+    assert golem.resists_control('feared') and golem.resists_control('charmed')
+    assert golem.resists_control('confused')
+    assert zombie.resists_control('charmed') and not zombie.resists_control('feared')
+    for effect in ('feared', 'charmed', 'confused', 'blinded', 'immobilized'):
+        assert not wolf.resists_control(effect), effect
+    assert boss.resists_control('feared') and boss.resists_control('immobilized')
+    assert mini.resists_control('charmed') and not mini.resists_control('immobilized')
+
+
+def test_w11_feared_ranged_monster_flees_instead_of_shooting():
+    """Special AI patterns used to return before the fear check."""
+    from types import SimpleNamespace
+    m = _monster(tags=['humanoid'], ai_pattern='ranged')
+    m.status_effects['feared'] = 5
+    called = []
+    m._flee_from = lambda *a, **k: called.append('flee')
+    m._ranged_turn = lambda *a, **k: called.append('shoot') or True
+    player = SimpleNamespace(x=7, y=5, has_effect=lambda n: False,
+                             equipped_accessories=[])
+    dungeon = SimpleNamespace()
+    assert m.take_turn(player, dungeon, [m]) is False
+    assert called == ['flee']
+
+
+def test_w16_multi_attack_applies_on_hit_effect_once():
+    m = _monster(tags=['giant'])
+    seen = []
+    m._apply_attack_effect = lambda atk, player: (seen.append(atk['name']) or ' You are stunned!')
+    m.attacks = [{'name': 'a', 'damage': '2d4', 'effect': 'stunned'},
+                 {'name': 'b', 'damage': '2d4', 'effect': 'frozen'}]
+    m.thac0 = -50          # always hits
+
+    class _P:
+        def get_ac(self):
+            return 10
+
+        def take_damage(self, dmg, dtype='physical'):
+            return dmg
+
+    total, msg = m._fenrir_multi_attack(_P())
+    assert total > 0
+    assert seen == ['a'], "one effect per flurry"
+    assert msg.endswith('You are stunned!')
+
+
+def test_w15_bones_rebuild_composed_gear():
+    from bones import _recompose_gear
+    sword = _recompose_gear('iron_longsword', 'weapon')
+    assert sword is not None and sword.id == 'iron_longsword'
+    two_word = _recompose_gear('cold_iron_bastard_sword', 'weapon')
+    assert two_word is not None and two_word.id == 'cold_iron_bastard_sword'
+    assert _recompose_gear('not_a_real_thing', 'weapon') is None
+
+
+def test_w19_reveal_floor_uses_real_dungeon_api():
+    src = (_ROOT / 'src' / 'hero_specials.py').read_text(encoding='utf-8')
+    block = src[src.index('def _eff_reveal_floor'):]
+    block = block[:block.index('\ndef ', 10)]
+    assert 'game.dungeon.is_door(' not in block
+    assert 'game.explored.add' not in block
+    assert 'game.dungeon.explored.add' in block

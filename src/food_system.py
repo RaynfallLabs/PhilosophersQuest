@@ -354,15 +354,18 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
         return "Permanent +2 CON, immunity to petrification. " + (desc or "")
     elif power_id == 'plus_2_wis_auto_reveal_secret_doors':
         player.apply_stat_bonus('WIS', 2)
-        try: player.add_effect('auto_reveal_secret_3', -1)
+        # 'searching' is the live effect that reveals hidden things nearby.
+        try: player.add_effect('searching', -1)
         except Exception: pass
-        return "Permanent +2 WIS, secret doors revealed nearby. " + (desc or "")
+        return "Permanent +2 WIS, and hidden doors near you reveal themselves. " + (desc or "")
     elif power_id == 'fire_immunity':
-        try: player.add_effect('fire_immune', -1)
+        # fire_resist is the engine's fire immunity (DAMAGE_IMMUNITY and
+        # the block on 'burning'); 'fire_immune' was read by nothing.
+        try: player.add_effect('fire_resist', -1)
         except Exception: pass
         return "Permanent fire immunity. " + (desc or "")
     elif power_id == 'cold_immunity':
-        try: player.add_effect('cold_immune', -1)
+        try: player.add_effect('cold_resist', -1)
         except Exception: pass
         return "Permanent cold immunity. " + (desc or "")
     elif power_id == 'petrify_immunity':
@@ -370,11 +373,15 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
         except Exception: pass
         return "Permanent petrification immunity. " + (desc or "")
     elif power_id == 'chromatic_resist_all':
-        for elt in ('fire_resist', 'cold_resist', 'shock_resist',
-                    'poison_resist', 'acid_resist'):
-            try: player.add_effect(elt, -1)
-            except Exception: pass
-        return "Permanent 25% resist to all chromatic elements. " + (desc or "")
+        # A dragon's hide, not five full immunities: each chromatic
+        # element hurts 3 less per hit (flat reduction, the same
+        # mechanism chain-equip resistances use).
+        res = getattr(player, 'damage_resistances', None)
+        if res is not None:
+            for elt in ('fire', 'cold', 'lightning', 'poison', 'acid'):
+                res[elt] = int(res.get(elt, 0)) + 3
+        return ("Dragon-scale hardiness: fire, cold, lightning, poison and "
+                "acid each hurt 3 less. " + (desc or ""))
     elif power_id == 'one_time_death_save':
         player._asmodeus_pact = True  # consumed by player.is_dead() check
         return "The Pact is signed. The next death will not claim you. " + (desc or "")
@@ -386,7 +393,7 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
         return "+2 max HP each new floor you descend. " + (desc or "")
     elif power_id == 'max_mp_per_floor_descent_and_poison_immunity':
         player._nidhogg_per_descent_mp = 2
-        try: player.add_effect('poison_immune', -1)
+        try: player.add_effect('poison_resist', -1)
         except Exception: pass
         return "+2 max MP per descent + permanent poison immunity. " + (desc or "")
     elif power_id == 'lifesteal_5pct_on_melee':

@@ -200,6 +200,16 @@ class DivineMixin:
         m = MYSTERIES[altar.mystery_id]
         # Show description always
         self.add_message(m['description'], 'info')
+        # Each mystery can be attempted once per run. The same mystery can
+        # still be generated on several floors (the docstring promised
+        # once-per-run tracking that never existed), which let rewards like
+        # the Sphinx's WIS +2 / INT +1 be farmed.
+        _done = self.player.quirk_progress.setdefault('mysteries_attempted', [])
+        if altar.mystery_id in _done:
+            self.add_message(
+                f"{m['name']}: you have already faced this mystery. "
+                "The altar is silent.", 'info')
+            return
         can, reason = can_activate(altar.mystery_id, self.player,
                                    getattr(self, 'player_gold', 0))
         if not can:
@@ -257,6 +267,9 @@ class DivineMixin:
             # Without this the game stayed in STATE_QUIZ with a finished
             # quiz: a softlock until ESC, which then re-ran this callback.
             self.state = STATE_PLAYER
+            _done = self.player.quirk_progress.setdefault('mysteries_attempted', [])
+            if altar.mystery_id not in _done:
+                _done.append(altar.mystery_id)
             success = result.success
             # For chain mode, check threshold manually
             if ch['mode'] in ('chain', 'escalator_chain') and 'threshold' in ch:

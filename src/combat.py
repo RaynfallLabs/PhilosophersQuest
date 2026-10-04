@@ -1828,7 +1828,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Lifesteal mechanic (Soul Reaver)
         healed = False
         lifesteal_pct = float(getattr(weapon, 'lifesteal_percent', 0) or 0)
-        if weapon and lifesteal_pct > 0 and actual > 0:
+        # Blood Archon trophy: +5% lifesteal on melee, with or without a
+        # weapon. The trophy set this attribute but nothing read it.
+        if not is_ranged:
+            lifesteal_pct += float(
+                getattr(player, '_blood_archon_lifesteal', 0) or 0)
+        if lifesteal_pct > 0 and actual > 0:
             heal = max(1, int(actual * lifesteal_pct))
             player.hp = min(player.max_hp, player.hp + heal)
             healed = True

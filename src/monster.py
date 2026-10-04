@@ -115,6 +115,7 @@ class Monster:
         # 7 seal_demon_* monsters. Falls back to False if the JSON omits it;
         # _DEFAULTS also carries is_boss=False for old pickles.
         self.is_boss: bool = bool(defn.get('is_boss', False))
+        self.is_mini_boss: bool = bool(defn.get('is_mini_boss', False))
 
         # --- Footprint (multi-tile monsters) ---
         # NW-anchored rectangle. (1, 1) = single-tile (the default for
@@ -219,7 +220,7 @@ class Monster:
         'locust_interval': 0, 'locust_count': [0, 0],
         '_locust_turn_counter': 0, '_wants_locust_spawn': False,
         'base_resistances': [],
-        'is_allied': False, 'sp_drain': 0, 'is_seal_demon': False,
+        'is_allied': False, 'sp_drain': 0, 'is_seal_demon': False, 'is_mini_boss': False,
         '_annihilate_target': None,
         # New AI fields (2026 dungeon-depth pass)
         'perception_range': 8, 'alert_radius': 5, 'alert_all_tag': False,
@@ -251,6 +252,39 @@ class Monster:
     def add_effect(self, name: str, duration: int):
         current = self.status_effects.get(name, 0)
         self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
+
+    # Which creatures shrug off which control effects. Lore, not balance:
+    #   constructs and plants have no mind to frighten, charm or confuse;
+    #   the undead feel no affection (charm) but CAN be turned (feared);
+    #   plants have no eyes to blind;
+    #   named foes (bosses, mini-bosses, seal demons) are too wilful to be
+    #   charmed or routed, and true bosses cannot be pinned in place.
+    _MINDLESS_TAGS = frozenset({'construct', 'plant'})
+
+    def _is_named_foe(self) -> bool:
+        return bool(getattr(self, 'is_boss', False)
+                    or getattr(self, 'is_mini_boss', False)
+                    or getattr(self, 'is_seal_demon', False))
+
+    def resists_control(self, effect: str) -> bool:
+        """True if this creature is immune to a control effect by nature."""
+        tags = set(self.tags or ())
+        mindless = bool(tags & self._MINDLESS_TAGS)
+        if effect == 'feared':
+            return mindless or self._is_named_foe()
+        if effect == 'charmed':
+            return mindless or 'undead' in tags or self._is_named_foe()
+        if effect == 'confused':
+            return mindless
+        if effect == 'blinded':
+            return 'plant' in tags
+        if effect == 'immobilized':
+            return bool(getattr(self, 'is_boss', False))
+        return False
+
+    def _under(self, effect: str) -> bool:
+        """Has the effect AND is not immune to it by nature."""
+        return self.has_effect(effect) and not self.resists_control(effect)
 
     def has_effect(self, name: str) -> bool:
         return self.status_effects.get(name, 0) > 0
@@ -737,24 +771,34 @@ class Monster:
             msg += f" The {self.name} drags you closer!"
 
         # Apply status effect from attack (gated by a D&D-style saving throw).
-        effect_id = atk.get('effect')
-        if effect_id:
-            chance   = atk.get('effect_chance', 0.30)
-            duration = roll_duration(atk.get('effect_duration', 5))
-            if random.random() < chance:
-                # Reflecting: 50% chance to bounce effect back at attacker
-                if player.has_effect('reflecting') and random.random() < 0.50:
-                    self.add_effect(effect_id, duration)
-                    msg += f" The effect reflects back -- the {self.name} is {effect_id.replace('_', ' ')}!"
-                else:
-                    from status_effects import apply_debuff_with_save
-                    # DC scales gently with monster depth; data may override.
-                    dc = min(18, int(atk.get('effect_save_dc', 12 + self.min_level // 7)))
-                    _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc)
-                    if _emsg:
-                        msg += " " + _emsg
+        msg += self._apply_attack_effect(atk, player)
 
         return actual, msg
+
+    def _apply_attack_effect(self, atk: dict, player) -> str:
+        """Roll an attack's on-hit status effect against the player.
+
+        Returns the text to append to the attack message ('' if nothing
+        happened). Shared by the single-attack path and the multi-attack
+        path; the latter used to skip effects entirely, so Asmodeus,
+        Surtur, Ymir and Hrungnir never applied theirs.
+        """
+        effect_id = atk.get('effect')
+        if not effect_id:
+            return ''
+        chance   = atk.get('effect_chance', 0.30)
+        duration = roll_duration(atk.get('effect_duration', 5))
+        if random.random() >= chance:
+            return ''
+        # Reflecting: 50% chance to bounce effect back at attacker
+        if player.has_effect('reflecting') and random.random() < 0.50:
+            self.add_effect(effect_id, duration)
+            return f" The effect reflects back -- the {self.name} is {effect_id.replace('_', ' ')}!"
+        from status_effects import apply_debuff_with_save
+        # DC scales gently with monster depth; data may override.
+        dc = min(18, int(atk.get('effect_save_dc', 12 + self.min_level // 7)))
+        _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc)
+        return (" " + _emsg) if _emsg else ''
 
     # --- AI ---
 
@@ -785,7 +829,7 @@ class Monster:
         # Chain combat v2 (v2.14.0): impaled by a spear. Same shape as
         # stuck_in_pit — can still attack the adjacent player, but the pinning
         # weapon holds the monster in place for the duration.
-        if self.has_effect('impaled'):
+        if self.has_effect('impaled') or self._under('immobilized'):
             if self._adjacent_to(player):
                 return True
             return False
@@ -826,7 +870,9 @@ class Monster:
             self.ai_pattern = 'aggressive' if allies_near >= self.pack_min_allies else 'cowardly'
 
         # --- Flee when hurt (non-boss aggressive monsters) ---
-        is_boss = self.max_hp > 500
+        # Named bosses, mini-bosses and seal demons stand their ground. This
+        # used to be `max_hp > 500`, which let five seal demons turn tail.
+        is_boss = self._is_named_foe() or self.max_hp > 500
         if not is_boss and self.ai_pattern == 'aggressive':
             if self._flee_timer > 0:
                 self._flee_timer -= 1
@@ -835,6 +881,27 @@ class Monster:
                     self._flee_timer = 0
             elif self.hp < self.max_hp * 0.25 and self.hp > 0:
                 self._flee_timer = 8
+
+        # --- Mind-affecting statuses: apply to EVERY AI pattern ---
+        # These used to sit below the pattern dispatch, so ranged, healer,
+        # summoner, hit-and-run, dancer and boss patterns (about 136
+        # monsters) ignored fear / confusion / blindness entirely, and
+        # charm had no monster-side effect at all. Rooted monsters
+        # (sessile, a mimic still in disguise) cannot flee or stumble.
+        if self.ai_pattern not in ('sessile', 'mimic'):
+            if self._under('feared'):
+                self._flee_from(player, dungeon, all_monsters, extra_occupied)
+                return False
+            if self._under('charmed'):
+                # A charmed creature will not raise a hand against the player.
+                self._wander(dungeon, all_monsters, extra_occupied, player)
+                return False
+            if self._under('confused') and random.random() < 0.40:
+                self._stumble_random(dungeon, all_monsters, extra_occupied, player)
+                return False
+            if self._under('blinded') and random.random() < 0.30:
+                self._stumble_random(dungeon, all_monsters, extra_occupied, player)
+                return False
 
         # --- Healer AI: heal a damaged adjacent ally; fall back to ranged/aggressive ---
         if self.ai_pattern == 'healer':
@@ -957,20 +1024,8 @@ class Monster:
         if effective_pattern == 'sessile':
             return False
 
-        # Confused monsters: 40% chance to stumble randomly instead of acting
-        if self.has_effect('confused') and random.random() < 0.40:
-            self._stumble_random(dungeon, all_monsters, extra_occupied, player)
-            return False
-
-        # Blinded monsters: 30% chance to stumble, and miss more in combat
-        if self.has_effect('blinded') and random.random() < 0.30:
-            self._stumble_random(dungeon, all_monsters, extra_occupied, player)
-            return False
-
-        # Feared monsters: flee from player instead of attacking
-        if self.has_effect('feared'):
-            self._flee_from(player, dungeon, all_monsters, extra_occupied)
-            return False
+        # (Fear / charm / confusion / blindness are handled near the top of
+        # take_turn so every AI pattern honours them.)
 
         # --- Charge: arm a damage bonus if approaching player on a clean straight ---
         # Conditions: can_charge flag, distance 2-5, AND player is on a cardinal or
@@ -1518,6 +1573,7 @@ class Monster:
         """
         total = 0
         parts = []
+        effect_msg = ''
         is_boss = getattr(self, 'is_boss', False)
         min_hit = getattr(self, 'min_hit_chance', 0.25 if is_boss else 0.05)
         atks_to_fire = self.attacks[:attack_limit] if attack_limit > 0 else self.attacks
@@ -1544,9 +1600,14 @@ class Monster:
             actual = player.take_damage(dmg, atk.get('type', 'physical'))
             total += actual
             parts.append(f"{atk['name'].replace('_', ' ')} {actual}")
+            # On-hit effect of this blow (save-gated). At most one effect
+            # lands per flurry so a five-attack boss cannot stack a stun,
+            # a freeze and a slow in a single turn.
+            if actual > 0 and not effect_msg:
+                effect_msg = self._apply_attack_effect(atk, player)
         hit_str = ", ".join(parts)
         msg = f"The {self.name} attacks in a frenzy! [{hit_str}] ({total} total)"
-        return total, msg
+        return total, msg + effect_msg
 
     # ------------------------------------------------------------------
     # New 2026 AI patterns: healer, summoner, mimic, phase_blink, charge

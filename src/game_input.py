@@ -936,6 +936,17 @@ class InputMixin:
             # Check if player can pay the cost
             from npc_encounters import can_pay_cost, get_inventory_filter
             can_pay, fail_msg = can_pay_cost(self.player, cost, self.player_gold)
+            # "Return the item" options: can_pay_cost defers this check to the
+            # caller, and nobody made it, so the reward was paid even if the
+            # item had been dropped or sold. Require it in the pack or worn.
+            if can_pay and cost and cost.get('type') == 'triggered_item':
+                from game_divine import _iter_equipped
+                _want = enc.get('trigger_item', '')
+                _held = any(getattr(it, 'id', '') == _want
+                            for it in list(self.player.inventory)
+                            + list(_iter_equipped(self.player)))
+                if not _held:
+                    can_pay, fail_msg = False, "You no longer have it to give."
             if not can_pay:
                 self.add_message(fail_msg, 'warning')
                 return

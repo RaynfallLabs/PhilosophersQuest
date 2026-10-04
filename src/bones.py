@@ -216,6 +216,12 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
         pool = item_pools.get(item_class, {})
         template = pool.get(item_id)
         if template is None:
+            # Ordinary gear is composed ("iron_longsword" = material +
+            # template) and is not in the item files, which now hold only
+            # named uniques. Without this the ghost's ordinary weapon,
+            # armor and shield all vanished from the bones pile.
+            template = _recompose_gear(item_id, item_class)
+        if template is None:
             continue
 
         item = copy.copy(template)
@@ -247,3 +253,28 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
                 from items import GoldPile
                 ground_items.append(GoldPile(gold, tx, ty))
                 break
+
+
+def _recompose_gear(item_id: str, item_class: str):
+    """Rebuild a composed weapon / armor / shield from its id
+    ("<material>_<template>"), or return None if it does not parse."""
+    try:
+        from items import (load_materials, load_templates, instantiate_weapon,
+                           instantiate_armor, instantiate_shield)
+        spec = {
+            'weapon': ('weapons', 'weapons', instantiate_weapon),
+            'armor':  ('armor', 'armor', instantiate_armor),
+            'shield': ('armor', 'shields', instantiate_shield),
+        }.get(item_class)
+        if spec is None:
+            return None
+        mat_cat, tpl_cat, build = spec
+        templates = load_templates(tpl_cat)
+        # Longest material id first: "cold_iron" must win over "cold".
+        for mat_id in sorted(load_materials(mat_cat), key=len, reverse=True):
+            prefix = mat_id + '_'
+            if item_id.startswith(prefix) and item_id[len(prefix):] in templates:
+                return build(item_id[len(prefix):], mat_id)
+    except Exception:
+        return None
+    return None
