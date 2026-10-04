@@ -28,14 +28,14 @@ LADDER_SUBJECTS = ('history', 'philosophy', 'economics', 'ai', 'theology',
                    'geography', 'science', 'trivia', 'animal', 'cooking')
 
 # Questions with no `topic` (C can show no blurb for them). Audit state.
-UNTOPICED_BASELINE = {'history': 35, 'trivia': 3}
+UNTOPICED_BASELINE = {}
 
 # Rungs whose keyed answer appears verbatim in their own blurb. Audit state,
 # rounded up slightly so harmless reformatting does not trip the test.
 LEAK_BASELINE = {
-    'history': 95, 'philosophy': 8, 'economics': 700, 'ai': 10,
-    'theology': 270, 'geography': 180, 'science': 62, 'trivia': 96,
-    'animal': 110, 'cooking': 56,
+    'history': 95, 'philosophy': 8, 'economics': 674, 'ai': 10,
+    'theology': 263, 'geography': 174, 'science': 52, 'trivia': 91,
+    'animal': 110, 'cooking': 52,
 }
 
 
