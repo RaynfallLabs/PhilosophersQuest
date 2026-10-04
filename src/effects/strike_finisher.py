@@ -171,7 +171,7 @@ class StrikeFinisher:
         # spill onto the sidebar or the message log.
         layer = pygame.Surface(area.size, pygame.SRCALPHA)
         cx = area.w // 2
-        cy = int(area.h * 0.24)
+        cy = area.h // 2
         color = self._color
         ease = 1.0 - (1.0 - p) ** 3          # fast out, slow settle
 
