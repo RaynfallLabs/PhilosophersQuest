@@ -8,8 +8,8 @@ Line numbers are as of `1809db7` unless a fix moved them.
 
 ## Summary of what was done (2026-10-04)
 
-- **Fixed and committed:** 42 findings across seven commits, each with regression tests where the behaviour can be tested without the game window. The full suite went from 1,738 to 1,792 passing.
-- **Dead code removed:** about 2,800 lines, most of it from `game_render.py` (8,224 lines at v2.23.0, 6,044 now).
+- **Fixed and committed:** 51 findings fully and 4 partly, across eight commits, with regression tests where the behaviour can be tested without the game window. The full suite went from 1,738 to 1,792 passing (three test files that only exercised deleted code were removed).
+- **Dead code removed:** about 3,100 lines of `src/`, most of it from `game_render.py` (8,224 lines at v2.23.0, 6,044 now).
 - **Not play-tested.** Everything here was verified by tests and code reading only. The menus whose legacy bodies were deleted need one pass in play.
 - **Still open:** the rows marked OPEN are confirmed but not yet fixed; DECIDE rows need a call from Brandon before anything is changed.
 
