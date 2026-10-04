@@ -92,3 +92,25 @@ def test_verbatim_answer_leaks_do_not_grow(subject):
     assert leaks <= allowed, (
         f"{subject}: {leaks} rungs have their keyed answer verbatim in the "
         f"blurb (baseline {allowed}). A blurb must not reveal a rung's answer.")
+
+
+# Notes written for the question author must never reach the player. The
+# blurb is shown verbatim, so it may not talk about the ladder, the bank,
+# the topic as a unit, or what "the kid" should learn. (About 900 blurbs
+# carried such notes before the pre-v3.0 audit stripped them.)
+AUTHOR_VOICE = (
+    'this ladder', 'ladder passes', 'the ladder you', 'sub-strand',
+    'geek-dad', 'spoiler-ok', 'stance doc', 'no verdict crowned',
+    'the kid should', 'this topic', 'the topic walks', 'the questions below',
+    'the project treats', "the bank's rule", 'this entry',
+)
+
+
+@pytest.mark.parametrize('subject', LADDER_SUBJECTS + ('math',))
+def test_blurbs_carry_no_author_notes(subject):
+    blurbs = json.loads((_C / f'{subject}.json').read_text(encoding='utf-8'))
+    hits = []
+    for topic, entry in blurbs.items():
+        text = _blurb_text(entry).lower()
+        hits += [(topic, phrase) for phrase in AUTHOR_VOICE if phrase in text]
+    assert not hits, f"{subject}: author-facing text in player blurbs: {hits[:8]}"

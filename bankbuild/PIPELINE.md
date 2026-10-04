@@ -264,7 +264,8 @@ Added 2026-10-03 after a playtest hit philosophy T1 "Anselm wax tablets" with ze
 **The rule:** every topic ladder MUST ship with a `context_blurb` in `data/question_contexts/<subject>.json`, keyed by the ladder's `topic`. **No blurb → no ship.**
 
 **Blurb spec:**
-- 3-5 sentences, 200-400 words.
+- Length is NOT a rule (changed 2026-10-04). The old "3-5 sentences, 200-400 words" line dated from when quizzes were timed and contradicted itself; blurbs are read with the timer paused, so write what orients the player and stop.
+- Player-facing voice ONLY. Never mention the ladder, rungs, tiers, the bank, the topic-as-a-unit, the project, a stance rule, or what "the kid" / "the student" should learn. The blurb is shown to the player verbatim; author notes belong in the queue or the config, not here. (A pre-v3.0 audit found ~900 blurbs carrying such notes; they were stripped.)
 - Carries **WHO** (name/era tag) + **WHAT** (known-for / the ladder's subject) + **WHY** (hook / stakes). Optional **SETTING** sentence for the scene the ladder's rungs draw on.
 - MUST NOT state, paraphrase, or trivially imply the keyed answer of any rung in the ladder — not T1's, not T5's. The blurb's job is orientation, not pre-answering.
 - Grade-10 ceiling; neutral/subject voice; no spoilers for the ladder's wonders.
