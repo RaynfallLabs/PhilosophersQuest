@@ -2192,13 +2192,13 @@ class RenderMixin:
                     h_surf, (hx, status_y + (STATUS_H - h_surf.get_height()) // 2))
         else:
             if qe.state == QuizState.ASKING:
-                hint = self.font_sm.render("Press  1  2  3  4  to answer", True, FP.HINT_TEXT)
+                hint = self.font_sm.render("1-4  Answer", True, FP.HINT_TEXT)
                 self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + 10))
             # Context-blurb discoverability hint: only shown when the current
             # (subject, topic) HAS a blurb — hidden otherwise so a bank
             # without authored blurbs doesn't tease the key for nothing.
             if has_blurb:
-                c_hint = self.font_sm.render("[C] context", True, FP.FADED_TEXT)
+                c_hint = self.font_sm.render("C  Context", True, FP.FADED_TEXT)
                 self.screen.blit(c_hint, (bx + bw - c_hint.get_width() - PAD,
                                            status_y + STATUS_H - c_hint.get_height() - 2))
 
