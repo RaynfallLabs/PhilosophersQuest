@@ -488,8 +488,11 @@ class QuirkSystem:
         """Called when a full quiz session ends."""
         # Apollo (#23): 10 max-chain hits
         if subject == 'math' and mode == 'chain':
-            weapon = self._pl.weapon
-            if weapon and score >= weapon.max_chain_length:
+            # A chain of 10 or more. This used to compare against the
+            # weapon's legacy multiplier-array length (3-6 on common
+            # weapons, which no longer cap the chain), so it unlocked on
+            # almost any decent attack.
+            if score >= 10:
                 self._inc('max_chain_hits')
                 if self._p('max_chain_hits') >= 10 and not self.is_unlocked('apollo'):
                     self._award('apollo', "Apollo's Perfection",
@@ -624,6 +627,11 @@ class QuirkSystem:
 
     def on_take_damage(self, amount: int, pct_of_max: float):
         """Called whenever player takes any damage."""
+        # Eye of the Storm counts floors cleared WITHOUT taking damage.
+        # Nothing ever cleared this flag, so every floor counted as clean
+        # and the power unlocked for everyone on the sixth staircase.
+        if amount > 0:
+            self._sp('eye_storm_no_damage_prev', False)
         # Rasputin (#8): survive at <=5% HP 5 times
         if self._pl.hp > 0 and (self._pl.hp / max(1, self._pl.max_hp)) <= 0.05:
             if not self._p('rasputin_was_low', False):
@@ -1331,7 +1339,7 @@ _QUIRK_TRIGGER = {
     'prometheus':    "You bled for 5+ turns across 10 separate episodes.",
     'penelope':      "You equipped or unequipped armor 100 times.",
     'dionysus':      "You drank 10 potions while hallucinating.",
-    'apollo':        "You achieved a perfect max chain 10 times.",
+    'apollo':        "You reached a chain of 10 or more, 10 times.",
     'athena':        "You encountered 50 distinct monster species.",
     'loki':          "You wore 5 cursed items for 10+ turns each.",
     'thor':          "You fought 30 combats with the same weapon.",

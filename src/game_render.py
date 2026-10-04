@@ -5478,6 +5478,13 @@ class RenderMixin:
         lines.append((f"Source: {source}", FP.FADED_TEXT, self.font_sm))
         return lines
 
+    def _lore_enchant_text(self, item) -> str:
+        """Enchantment is per-copy knowledge: shown only once THIS copy is
+        identified, even when the type is known."""
+        if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 0) or 0) < 5:
+            return '?'
+        return f"+{getattr(item, 'enchant_bonus', 0)}"
+
     def _lore_item_mechanic_lines(self, item, id_level):
         lines = []
         if id_level < 3 and hasattr(item, 'id_level'):
@@ -5508,7 +5515,7 @@ class RenderMixin:
                 ("Armor", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Slot: {_cap(item.slot)}   Material: {_cap(item.material)}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"AC bonus: +{item.ac_bonus}   Enchant: +{getattr(item, 'enchant_bonus', 0)}",
+                (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
                  FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
@@ -5522,7 +5529,7 @@ class RenderMixin:
                 ("Shield", FP.GOLD_BRIGHT, self.font_sm),
                 (f"Material: {_cap(item.material)}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
-                (f"AC bonus: +{item.ac_bonus}   Enchant: +{getattr(item, 'enchant_bonus', 0)}",
+                (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
                  FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Equip", getattr(item, 'equip_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
@@ -5771,9 +5778,17 @@ class RenderMixin:
             identity_lines, mech_lines, lore_text = self._lore_corpse_lines(subject, id_level)
             lore_color = FP.LORE_GOLD_BODY
         else:
+            # True Name model: knowing the TYPE reveals stats and lore for
+            # every copy (the Kit panel already did this; the dossier read
+            # the raw per-copy level and showed "Mechanics unrevealed").
+            # The identity pane keeps the raw level: its Identified badge
+            # and aura are about THIS copy.
+            visible = id_level
+            if hasattr(subject, 'id_level'):
+                visible = max(id_level, self._kit_visible_level(subject))
             identity_lines = self._lore_item_identity_lines(subject, id_level)
-            mech_lines = self._lore_item_mechanic_lines(subject, id_level)
-            lore_text = (getattr(subject, 'lore', '') if id_level >= 4 else
+            mech_lines = self._lore_item_mechanic_lines(subject, visible)
+            lore_text = (getattr(subject, 'lore', '') if visible >= 4 else
                          "The history of this item remains hidden. Identify it to read the full record.")
             lore_color = FP.LORE_BLUE_BODY
 

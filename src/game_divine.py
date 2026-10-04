@@ -811,14 +811,18 @@ class DivineMixin:
         self.quiz_title = "PRAYER -- THEOLOGY"
         self.state = STATE_QUIZ
 
+        # HP as the player knelt: the Fisher King quirk asks for prayer at
+        # 15% HP or below, and measuring after the prayer has healed made
+        # it nearly impossible to earn.
+        _hp_pct_at_prayer = self.player.hp / max(1, self.player.max_hp)
+
         def on_complete(result):
             chain = result.score
             self._resolve_simple_prayer(chain, at_altar)
             self.state = STATE_PLAYER
             _qs_pray = getattr(self, 'quirk_system', None)
             if _qs_pray and chain > 0:
-                hp_pct = self.player.hp / max(1, self.player.max_hp)
-                _qs_pray.on_prayer(hp_pct)
+                _qs_pray.on_prayer(_hp_pct_at_prayer)
             self._advance_turn()
 
         self.quiz_engine.start_quiz(
