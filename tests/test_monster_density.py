@@ -190,12 +190,61 @@ def test_mini_boss_count_per_run_is_5_to_7_target():
     many LevelManagers and count the planned set."""
     import statistics
     from level_manager import LevelManager
+    legends = _legendary_ids()
     counts = []
     for _ in range(50):
         lm = LevelManager()
-        counts.append(len(lm._planned_mini_bosses))
+        # Legendary wanderers roll separately (see the test below).
+        counts.append(sum(1 for mid in lm._planned_mini_bosses.values()
+                          if mid not in legends))
     avg = statistics.mean(counts)
     assert 4.5 <= avg <= 7.0, f'avg mini-bosses per run {avg} outside 4.5-7.0'
+
+
+def _legendary_ids() -> set:
+    import json
+    path = os.path.join(os.path.dirname(__file__), '..', 'data', 'monsters.json')
+    with open(path, encoding='utf-8') as f:
+        data = json.load(f)
+    return {mid for mid, m in data.items()
+            if m.get('is_mini_boss') and 'legendary' in (m.get('tags') or [])}
+
+
+def test_legendary_wanderers_are_once_per_run_and_never_random():
+    """Tiamat, Surtur, Asmodeus, Ymir's Last Spawn and Hrungnir's Ghost are
+    one-of-a-kind. They must not sit in the random spawn pool (a deep floor
+    used to be able to roll several Tiamats) and the pre-rolled plan may hold
+    each at most once, never on a gate-boss or seal-demon floor."""
+    import statistics
+    from dungeon import _build_spawn_pool, _BOSS_LEVELS
+    from level_manager import LevelManager
+    legends = _legendary_ids()
+    assert len(legends) == 5, legends
+    for lvl in range(1, 101):
+        leaked = legends & set(_build_spawn_pool(lvl))
+        assert not leaked, f'L{lvl}: {leaked} in the random pool'
+    per_run = []
+    for _ in range(200):
+        lm = LevelManager()
+        placed = [(lvl, mid) for lvl, mid in lm._planned_mini_bosses.items()
+                  if mid in legends]
+        assert len({mid for _, mid in placed}) == len(placed)
+        for lvl, _mid in placed:
+            assert lvl not in _BOSS_LEVELS
+            assert lvl not in LevelManager._SEAL_DEMON_LEVELS
+        per_run.append(len(placed))
+    # 5 legends at 50% each: about 2.5 a run, and a run can have none.
+    assert 1.8 <= statistics.mean(per_run) <= 3.2, statistics.mean(per_run)
+
+
+def test_no_named_unique_in_the_random_pool():
+    """Bosses and mini-bosses are placed by level_manager / boss_levels,
+    never drawn from the bell-curve pool (where they could spawn twice)."""
+    from dungeon import _build_spawn_pool
+    for lvl in range(1, 101):
+        named = [mid for mid, m in _build_spawn_pool(lvl).items()
+                 if m.get('is_boss') or m.get('is_mini_boss') or m.get('is_seal_demon')]
+        assert not named, f'L{lvl}: {named}'
 
 
 def test_mini_boss_seal_demons_excluded_from_random_pool():

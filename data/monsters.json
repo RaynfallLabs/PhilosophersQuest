@@ -11,8 +11,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 10.0,
     "min_level": 1,
     "attacks": [
@@ -52,8 +52,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -93,8 +93,8 @@
     "speed": 10,
     "ai_pattern": "grid_bug",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 12.0,
     "min_level": 1,
     "attacks": [
@@ -133,10 +133,10 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 13,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "paralyzing_gaze",
@@ -177,8 +177,8 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -221,8 +221,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -266,8 +266,8 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -311,8 +311,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -362,8 +362,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -588,8 +588,8 @@
     "speed": 12,
     "ai_pattern": "cowardly",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
     "min_level": 1,
     "attacks": [
@@ -631,8 +631,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 10.0,
     "min_level": 1,
     "attacks": [
@@ -672,8 +672,8 @@
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -718,8 +718,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -765,8 +765,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -810,8 +810,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -850,8 +850,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -890,8 +890,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -930,8 +930,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -984,8 +984,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -1028,8 +1028,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -1076,10 +1076,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "claw",
@@ -1125,10 +1125,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "axe",
@@ -1165,10 +1165,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "dart",
@@ -1208,10 +1208,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "drain",
@@ -1259,10 +1259,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "antenna",
@@ -1302,10 +1302,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "claw",
@@ -1347,10 +1347,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "club",
@@ -1389,8 +1389,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -1441,10 +1441,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "slam",
@@ -1499,10 +1499,10 @@
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 6,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 7,
+    "min_level": 4,
     "attacks": [
       {
         "name": "bite",
@@ -1552,10 +1552,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 25,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 13,
+    "min_level": 8,
     "attacks": [
       {
         "name": "club_left",
@@ -1600,10 +1600,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 25,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 13,
+    "min_level": 8,
     "attacks": [
       {
         "name": "claw",
@@ -1653,10 +1653,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 25,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 13,
+    "min_level": 8,
     "attacks": [
       {
         "name": "touch",
@@ -1714,10 +1714,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 25,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 13,
+    "min_level": 8,
     "attacks": [
       {
         "name": "bite",
@@ -1764,10 +1764,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 25,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 13,
+    "min_level": 8,
     "attacks": [
       {
         "name": "claw",
@@ -1825,10 +1825,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "gore",
@@ -1875,10 +1875,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 6,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 25,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 32,
+    "min_level": 22,
     "attacks": [
       {
         "name": "bite",
@@ -1927,10 +1927,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "snake_bite",
@@ -1981,10 +1981,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "bite",
@@ -2045,10 +2045,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 34,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 32,
+    "min_level": 30,
     "attacks": [
       {
         "name": "fire_slam",
@@ -2094,10 +2094,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 35,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 31,
     "attacks": [
       {
         "name": "stone_fist",
@@ -2144,10 +2144,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "lightning_bolt",
@@ -2192,10 +2192,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 30,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 27,
     "attacks": [
       {
         "name": "cold_bolt",
@@ -2249,10 +2249,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 31,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 27,
     "attacks": [
       {
         "name": "mind_blast",
@@ -2301,10 +2301,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 30,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 27,
     "attacks": [
       {
         "name": "bite",
@@ -2362,10 +2362,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 37,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 33,
     "attacks": [
       {
         "name": "sword",
@@ -2420,10 +2420,10 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "slam",
@@ -2468,10 +2468,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "claw",
@@ -2519,10 +2519,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 55,
-    "spread": 13,
+    "peak_floor": 43,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 42,
+    "min_level": 39,
     "attacks": [
       {
         "name": "claw",
@@ -2585,10 +2585,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 55,
-    "spread": 13,
+    "peak_floor": 43,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 42,
+    "min_level": 39,
     "attacks": [
       {
         "name": "paralyzing_ray",
@@ -2665,10 +2665,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 55,
-    "spread": 13,
+    "peak_floor": 43,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 42,
+    "min_level": 39,
     "attacks": [
       {
         "name": "bite",
@@ -2723,10 +2723,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 55,
-    "spread": 13,
+    "peak_floor": 43,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 42,
+    "min_level": 39,
     "attacks": [
       {
         "name": "death_touch",
@@ -2787,10 +2787,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -6,
-    "peak_floor": 72,
-    "spread": 14,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 58,
+    "min_level": 55,
     "attacks": [
       {
         "name": "claw",
@@ -2845,10 +2845,10 @@
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": -6,
-    "peak_floor": 72,
-    "spread": 14,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 58,
+    "min_level": 55,
     "attacks": [
       {
         "name": "slam",
@@ -2903,10 +2903,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -6,
-    "peak_floor": 72,
-    "spread": 14,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 58,
+    "min_level": 55,
     "attacks": [
       {
         "name": "death_bolt",
@@ -2963,10 +2963,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -6,
-    "peak_floor": 72,
-    "spread": 14,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 58,
+    "min_level": 55,
     "attacks": [
       {
         "name": "hellfire",
@@ -3017,10 +3017,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -11,
-    "peak_floor": 90,
-    "spread": 12,
+    "peak_floor": 80,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 78,
+    "min_level": 75,
     "attacks": [
       {
         "name": "claw",
@@ -3169,10 +3169,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -11,
-    "peak_floor": 90,
-    "spread": 12,
+    "peak_floor": 80,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 78,
+    "min_level": 75,
     "attacks": [
       {
         "name": "soul_rend",
@@ -3238,10 +3238,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -11,
-    "peak_floor": 90,
-    "spread": 12,
+    "peak_floor": 80,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 78,
+    "min_level": 75,
     "attacks": [
       {
         "name": "chaos_touch",
@@ -3290,10 +3290,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -11,
-    "peak_floor": 90,
-    "spread": 12,
+    "peak_floor": 80,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 78,
+    "min_level": 75,
     "attacks": [
       {
         "name": "soul_drain",
@@ -3353,8 +3353,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -3396,8 +3396,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -3443,8 +3443,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -3496,10 +3496,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "tongue lash",
@@ -3545,10 +3545,10 @@
     "speed": 10,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "dagger",
@@ -3590,10 +3590,10 @@
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "bite",
@@ -3641,10 +3641,10 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "slam",
@@ -3693,10 +3693,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "talon rake",
@@ -3749,10 +3749,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "death bolt",
@@ -3800,8 +3800,8 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -3850,8 +3850,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -3898,10 +3898,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "claw",
@@ -3952,8 +3952,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -4003,7 +4003,7 @@
       120,
       180
     ],
-    "hp": "3d8+5",
+    "hp": "11d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -4066,10 +4066,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "spear thrust",
@@ -4119,10 +4119,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "boulder hurl",
@@ -4171,10 +4171,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 9,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 1.0,
-    "min_level": 10,
+    "min_level": 11,
     "attacks": [
       {
         "name": "claw",
@@ -4222,10 +4222,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "talon strike",
@@ -4271,10 +4271,10 @@
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 9,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 11,
     "attacks": [
       {
         "name": "hoof strike",
@@ -4321,10 +4321,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 6,
-    "peak_floor": 31,
-    "spread": 12,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 1.0,
-    "min_level": 19,
+    "min_level": 20,
     "attacks": [
       {
         "name": "multi-bite",
@@ -4375,10 +4375,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "triple bite",
@@ -4439,10 +4439,10 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 6,
-    "peak_floor": 31,
-    "spread": 12,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 1.0,
-    "min_level": 19,
+    "min_level": 20,
     "attacks": [
       {
         "name": "six-headed strike",
@@ -4492,10 +4492,10 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "whirlpool drag",
@@ -4539,10 +4539,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 6,
-    "peak_floor": 31,
-    "spread": 12,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 1.0,
-    "min_level": 19,
+    "min_level": 20,
     "attacks": [
       {
         "name": "stone fist",
@@ -4589,14 +4589,14 @@
       200,
       240
     ],
-    "hp": "6d8+8",
+    "hp": "32d8+42",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 38,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 12,
+    "min_level": 34,
     "attacks": [
       {
         "name": "ice club",
@@ -4645,14 +4645,14 @@
       100,
       20
     ],
-    "hp": "7d10+24",
+    "hp": "24d10+81",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 36,
     "attacks": [
       {
         "name": "flaming sword",
@@ -4705,10 +4705,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "spectral spear",
@@ -4760,8 +4760,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 2,
     "attacks": [
@@ -4805,10 +4805,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "constrict",
@@ -4861,8 +4861,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -4916,10 +4916,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "phantom blade",
@@ -4969,10 +4969,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 18,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 15,
     "attacks": [
       {
         "name": "corpse gnaw",
@@ -5024,8 +5024,8 @@
     "speed": 14,
     "ai_pattern": "hit_and_run",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -5069,10 +5069,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "serpent bite",
@@ -5125,10 +5125,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "frenzy blow",
@@ -5177,10 +5177,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "light lance",
@@ -5230,10 +5230,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 1.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "coil crush",
@@ -5286,10 +5286,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "jackal bite",
@@ -5338,10 +5338,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "solar bite",
@@ -5392,8 +5392,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -5439,8 +5439,8 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 1.0,
     "min_level": 11,
     "attacks": [
@@ -5493,10 +5493,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "devour soul",
@@ -5547,10 +5547,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "khopesh slash",
@@ -5600,10 +5600,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "life leech",
@@ -5653,8 +5653,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -5706,10 +5706,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "scribal blade",
@@ -5759,10 +5759,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "shadow touch",
@@ -5808,10 +5808,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "desert wind",
@@ -5863,10 +5863,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "death wail",
@@ -5919,10 +5919,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 8,
     "attacks": [
       {
         "name": "chaos smash",
@@ -5972,8 +5972,8 @@
     "speed": 10,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -6026,10 +6026,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "trample",
@@ -6075,12 +6075,12 @@
       80,
       160
     ],
-    "hp": "4d8+3",
+    "hp": "6d8+5",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 11,
     "attacks": [
@@ -6132,10 +6132,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "hero's bite",
@@ -6182,8 +6182,8 @@
     "speed": 14,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -6229,10 +6229,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "death name call",
@@ -6287,10 +6287,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "soul rend",
@@ -6342,10 +6342,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "wind slash",
@@ -6396,10 +6396,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "primordial crush",
@@ -6450,8 +6450,8 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 11,
     "attacks": [
@@ -6506,10 +6506,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 6,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 4,
     "attacks": [
       {
         "name": "demon strike",
@@ -6560,10 +6560,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "bull gore",
@@ -6611,10 +6611,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "bite",
@@ -6669,10 +6669,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "slam",
@@ -6727,10 +6727,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 18,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 15,
     "attacks": [
       {
         "name": "tentacles",
@@ -6783,10 +6783,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "bites",
@@ -6837,10 +6837,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claws",
@@ -6888,8 +6888,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 2,
     "attacks": [
@@ -6938,10 +6938,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "tentacles",
@@ -6988,10 +6988,10 @@
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "envelops",
@@ -7038,10 +7038,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 6,
-    "peak_floor": 31,
-    "spread": 12,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 19,
+    "min_level": 20,
     "attacks": [
       {
         "name": "slams",
@@ -7093,10 +7093,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 13,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 37,
+    "min_level": 36,
     "attacks": [
       {
         "name": "vorpal sword",
@@ -7153,10 +7153,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "slashes",
@@ -7212,8 +7212,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -7273,8 +7273,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -7326,10 +7326,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "pincers",
@@ -7386,10 +7386,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
-    "peak_floor": 37,
-    "spread": 12,
+    "peak_floor": 29,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 25,
+    "min_level": 26,
     "attacks": [
       {
         "name": "tusks",
@@ -7445,8 +7445,8 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -7499,8 +7499,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 10.0,
     "min_level": 1,
     "attacks": [
@@ -7559,10 +7559,10 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "shadow claws",
@@ -7609,10 +7609,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 6,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 7,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claws",
@@ -7669,10 +7669,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claws",
@@ -7730,8 +7730,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -7783,8 +7783,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 12.0,
     "min_level": 1,
     "attacks": [
@@ -7835,10 +7835,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 4.0,
-    "min_level": 9,
+    "min_level": 11,
     "attacks": [
       {
         "name": "chain lash",
@@ -7892,10 +7892,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "glaive",
@@ -7949,10 +7949,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 20,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 4.0,
-    "min_level": 8,
+    "min_level": 11,
     "attacks": [
       {
         "name": "claws",
@@ -8008,8 +8008,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -8068,10 +8068,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 25,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 13,
+    "min_level": 8,
     "attacks": [
       {
         "name": "longsword",
@@ -8125,8 +8125,8 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 9.0,
     "min_level": 1,
     "attacks": [
@@ -8174,8 +8174,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 12.0,
     "min_level": 1,
     "attacks": [
@@ -8221,10 +8221,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -4,
-    "peak_floor": 66,
-    "spread": 14,
+    "peak_floor": 53,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 52,
+    "min_level": 48,
     "attacks": [
       {
         "name": "bites",
@@ -8294,8 +8294,8 @@
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -8348,10 +8348,10 @@
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "slams",
@@ -8398,8 +8398,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -8443,8 +8443,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 2,
     "attacks": [
@@ -8497,10 +8497,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 9,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 11,
     "attacks": [
       {
         "name": "slams",
@@ -8543,8 +8543,8 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -8588,10 +8588,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "saw limbs",
@@ -8639,10 +8639,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "tentacle lash",
@@ -8691,8 +8691,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 15,
+    "spread": 5,
     "peak_weight": 5.0,
     "min_level": 12,
     "attacks": [
@@ -8741,10 +8741,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "pseudopod",
@@ -8786,8 +8786,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 13,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -8832,10 +8832,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "pseudopod",
@@ -8880,10 +8880,10 @@
     "speed": 6,
     "ai_pattern": "ambush",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "drops",
@@ -8920,10 +8920,10 @@
     "speed": 6,
     "ai_pattern": "ambush",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "smothers",
@@ -8965,10 +8965,10 @@
     "speed": 6,
     "ai_pattern": "ambush",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "envelops",
@@ -9011,10 +9011,10 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 9,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 11,
     "attacks": [
       {
         "name": "strands",
@@ -9064,8 +9064,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -9114,8 +9114,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -9160,10 +9160,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "tentacles",
@@ -9210,10 +9210,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "claws",
@@ -9261,10 +9261,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 15,
-    "spread": 10,
+    "peak_floor": 9,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 5,
+    "min_level": 7,
     "attacks": [
       {
         "name": "glaive",
@@ -9306,8 +9306,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -9353,8 +9353,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 2,
     "attacks": [
@@ -9410,10 +9410,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 10.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "claw",
@@ -9458,8 +9458,8 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -9509,8 +9509,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 9.0,
     "min_level": 1,
     "attacks": [
@@ -9559,10 +9559,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 7.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "spear",
@@ -9611,10 +9611,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 5,
-    "peak_floor": 34,
-    "spread": 12,
+    "peak_floor": 24,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 22,
+    "min_level": 21,
     "attacks": [
       {
         "name": "bite",
@@ -9669,8 +9669,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 15,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 12,
     "attacks": [
@@ -9721,10 +9721,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "beak",
@@ -9772,8 +9772,8 @@
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -9822,10 +9822,10 @@
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "bite",
@@ -9882,10 +9882,10 @@
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "tentacles",
@@ -9929,10 +9929,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "hook",
@@ -9976,10 +9976,10 @@
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "bite",
@@ -10022,8 +10022,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -10075,10 +10075,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 9.0,
-    "min_level": 1,
+    "min_level": 2,
     "attacks": [
       {
         "name": "shoot",
@@ -10125,8 +10125,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -10183,8 +10183,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -10246,8 +10246,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -10303,8 +10303,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -10360,8 +10360,8 @@
     "speed": 4,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -10411,8 +10411,8 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -10468,8 +10468,8 @@
     "speed": 5,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 10.0,
     "min_level": 1,
     "attacks": [
@@ -10517,8 +10517,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 2,
     "attacks": [
@@ -10574,8 +10574,8 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -10623,8 +10623,8 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -10680,10 +10680,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 6,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 4,
     "attacks": [
       {
         "name": "throttle",
@@ -10737,10 +10737,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "babble",
@@ -10795,8 +10795,8 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -10843,10 +10843,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "mimic",
@@ -10901,8 +10901,8 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -10951,10 +10951,10 @@
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "shock",
@@ -11001,10 +11001,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "siphon",
@@ -11060,8 +11060,8 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -11108,8 +11108,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -11165,10 +11165,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 6,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 4,
     "attacks": [
       {
         "name": "claw",
@@ -11224,10 +11224,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "bite",
@@ -11282,10 +11282,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "absorb",
@@ -11341,10 +11341,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "crush",
@@ -11399,10 +11399,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "wail",
@@ -11460,10 +11460,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "cast",
@@ -11518,10 +11518,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "necrotic bolt",
@@ -11579,10 +11579,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "curse bolt",
@@ -11638,8 +11638,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 15,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 12,
     "attacks": [
@@ -11707,10 +11707,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "necrotic_touch",
@@ -11768,10 +11768,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 11,
     "attacks": [
       {
         "name": "drain",
@@ -11826,10 +11826,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "drain",
@@ -11884,8 +11884,8 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -11934,10 +11934,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "teleport",
@@ -11991,10 +11991,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "smash",
@@ -12049,10 +12049,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 6,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 4,
     "attacks": [
       {
         "name": "cleave",
@@ -12106,10 +12106,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "bone_lash",
@@ -12165,10 +12165,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "slam",
@@ -12222,10 +12222,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "claw",
@@ -12271,10 +12271,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 8,
     "attacks": [
       {
         "name": "reap",
@@ -12331,10 +12331,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "strength_drain",
@@ -12390,10 +12390,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "desecrate",
@@ -12449,8 +12449,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -12506,10 +12506,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "grasp",
@@ -12563,10 +12563,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "bite",
@@ -12620,10 +12620,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 11,
     "attacks": [
       {
         "name": "dread_strike",
@@ -12678,8 +12678,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -12743,10 +12743,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 8,
     "attacks": [
       {
         "name": "stomp",
@@ -12801,10 +12801,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "bite",
@@ -12870,10 +12870,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 55,
-    "spread": 13,
+    "peak_floor": 43,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 42,
+    "min_level": 39,
     "attacks": [
       {
         "name": "death_bite",
@@ -12942,8 +12942,8 @@
     "speed": 14,
     "ai_pattern": "cowardly",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 2,
     "attacks": [
@@ -12991,10 +12991,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 2,
     "attacks": [
       {
         "name": "terror",
@@ -13049,10 +13049,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "consume",
@@ -13108,10 +13108,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 6,
-    "peak_floor": 31,
-    "spread": 12,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 19,
+    "min_level": 20,
     "attacks": [
       {
         "name": "life_drain",
@@ -13167,10 +13167,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 13,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 37,
+    "min_level": 36,
     "attacks": [
       {
         "name": "wing_buffet",
@@ -13234,8 +13234,8 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -13282,10 +13282,10 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 10.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "drip",
@@ -13330,8 +13330,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -13377,8 +13377,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -13424,10 +13424,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "pseudopod",
@@ -13480,10 +13480,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "engulf",
@@ -13528,8 +13528,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -13578,10 +13578,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 7.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "sting",
@@ -13623,8 +13623,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -13665,10 +13665,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "raptorial strike",
@@ -13713,10 +13713,10 @@
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 9,
-    "peak_floor": 20,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 8,
+    "min_level": 11,
     "attacks": [
       {
         "name": "venomous bite",
@@ -13768,10 +13768,10 @@
     "speed": 12,
     "ai_pattern": "ambush",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "phase bite",
@@ -13813,8 +13813,8 @@
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 9.0,
     "min_level": 1,
     "attacks": [
@@ -13868,10 +13868,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "crushing bite",
@@ -13921,8 +13921,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -13968,10 +13968,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "bite",
@@ -14018,8 +14018,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 2,
     "attacks": [
@@ -14068,10 +14068,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "rend",
@@ -14120,8 +14120,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 7,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 9.0,
     "min_level": 1,
     "attacks": [
@@ -14168,10 +14168,10 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 7.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "claw",
@@ -14214,8 +14214,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -14259,8 +14259,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 8.0,
     "min_level": 1,
     "attacks": [
@@ -14304,10 +14304,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "pounce",
@@ -14352,10 +14352,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "claw",
@@ -14400,8 +14400,8 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 2,
     "attacks": [
@@ -14448,8 +14448,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 4.0,
     "min_level": 11,
     "attacks": [
@@ -14500,10 +14500,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 8,
     "attacks": [
       {
         "name": "savage claw",
@@ -14562,10 +14562,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "bear hug",
@@ -14613,10 +14613,10 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "bite",
@@ -14664,10 +14664,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 8,
     "attacks": [
       {
         "name": "pounce",
@@ -14724,10 +14724,10 @@
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "bite",
@@ -14777,8 +14777,8 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -14819,10 +14819,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "bite",
@@ -14875,8 +14875,8 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -14922,10 +14922,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "beak peck",
@@ -14970,10 +14970,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "talon crush",
@@ -15028,8 +15028,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 9.0,
     "min_level": 1,
     "attacks": [
@@ -15077,10 +15077,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "katana strike",
@@ -15127,10 +15127,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "talon shock",
@@ -15179,8 +15179,8 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -15224,10 +15224,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "iron boot kick",
@@ -15271,8 +15271,8 @@
     "speed": 14,
     "ai_pattern": "ranged",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -15319,10 +15319,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "claw",
@@ -15372,10 +15372,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "claw",
@@ -15425,10 +15425,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "crushing claw",
@@ -15486,8 +15486,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 11,
     "attacks": [
@@ -15543,10 +15543,10 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "ram",
@@ -15593,8 +15593,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 2,
     "attacks": [
@@ -15650,10 +15650,10 @@
     "speed": 14,
     "ai_pattern": "cowardly",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "shillelagh",
@@ -15700,8 +15700,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 1,
     "attacks": [
@@ -15750,8 +15750,8 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -15798,14 +15798,14 @@
       120,
       220
     ],
-    "hp": "6d10+17",
+    "hp": "18d10+51",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 14,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 35,
+    "spread": 7,
     "peak_weight": 4.0,
-    "min_level": 7,
+    "min_level": 31,
     "attacks": [
       {
         "name": "wave crash",
@@ -15855,14 +15855,14 @@
       220,
       255
     ],
-    "hp": "6d10+14",
+    "hp": "19d10+45",
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 35,
+    "spread": 7,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 31,
     "attacks": [
       {
         "name": "wind slash",
@@ -15915,10 +15915,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "ice shard",
@@ -15970,10 +15970,10 @@
     "speed": 6,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "lava spit",
@@ -16027,10 +16027,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 4,
-    "peak_floor": 37,
-    "spread": 12,
+    "peak_floor": 29,
+    "spread": 5,
     "peak_weight": 1.0,
-    "min_level": 25,
+    "min_level": 26,
     "attacks": [
       {
         "name": "void touch",
@@ -16085,10 +16085,10 @@
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "slam",
@@ -16141,8 +16141,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 6.0,
     "min_level": 2,
     "attacks": [
@@ -16193,8 +16193,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -16240,8 +16240,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 9.0,
     "min_level": 1,
     "attacks": [
@@ -16287,10 +16287,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 11,
+    "min_level": 8,
     "attacks": [
       {
         "name": "mind spore",
@@ -16349,10 +16349,10 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 15,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 3,
+    "min_level": 1,
     "attacks": [
       {
         "name": "musk cloud",
@@ -16406,8 +16406,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -16453,8 +16453,8 @@
     "speed": 6,
     "ai_pattern": "sessile",
     "thac0": 16,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 7.0,
     "min_level": 1,
     "attacks": [
@@ -16506,10 +16506,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "shadow hoof",
@@ -16561,10 +16561,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 20,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 8,
+    "min_level": 11,
     "attacks": [
       {
         "name": "dark horn gore",
@@ -16618,10 +16618,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "claw",
@@ -16668,10 +16668,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 6,
+    "min_level": 8,
     "attacks": [
       {
         "name": "chimeric bite",
@@ -16724,10 +16724,10 @@
     "speed": 14,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "antler gore",
@@ -16776,10 +16776,10 @@
     "speed": 12,
     "ai_pattern": "hit_and_run",
     "thac0": 16,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 3,
+    "spread": 4,
     "peak_weight": 5.0,
-    "min_level": 2,
+    "min_level": 1,
     "attacks": [
       {
         "name": "gem flash",
@@ -16826,10 +16826,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 5,
-    "peak_floor": 34,
-    "spread": 12,
+    "peak_floor": 24,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 22,
+    "min_level": 21,
     "attacks": [
       {
         "name": "bite",
@@ -16887,8 +16887,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 17,
-    "peak_floor": 8,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 5.0,
     "min_level": 1,
     "attacks": [
@@ -16942,8 +16942,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 2.0,
     "min_level": 1,
     "attacks": [
@@ -16990,8 +16990,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 11,
-    "spread": 9,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 3.0,
     "min_level": 2,
     "attacks": [
@@ -17038,8 +17038,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 11,
     "attacks": [
@@ -17086,8 +17086,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -17129,10 +17129,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "morningstar",
@@ -17177,8 +17177,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -17217,8 +17217,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 11,
     "attacks": [
@@ -17265,8 +17265,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 9,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
     "min_level": 1,
     "attacks": [
@@ -17310,8 +17310,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 17,
-    "peak_floor": 9,
-    "spread": 9,
+    "peak_floor": 1,
+    "spread": 4,
     "peak_weight": 4.0,
     "min_level": 1,
     "attacks": [
@@ -17362,10 +17362,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
-    "peak_floor": 13,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 3,
+    "min_level": 5,
     "attacks": [
       {
         "name": "longsword",
@@ -17410,10 +17410,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "fire bolt",
@@ -17466,10 +17466,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 21,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 9,
+    "min_level": 8,
     "attacks": [
       {
         "name": "greatclub",
@@ -17507,14 +17507,14 @@
       130,
       130
     ],
-    "hp": "9d10+24",
+    "hp": "20d10+52",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 36,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 32,
     "attacks": [
       {
         "name": "stone fist",
@@ -17561,18 +17561,18 @@
       200,
       255
     ],
-    "hp": "6d8+6",
+    "hp": "45d8+45",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 44,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 40,
     "attacks": [
       {
         "name": "morningstar",
-        "damage": "2d4+1",
+        "damage": "3d8+8",
         "type": "physical"
       },
       {
@@ -17611,14 +17611,14 @@
       80,
       200
     ],
-    "hp": "10d10+52",
+    "hp": "28d10+146",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 48,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 43,
     "attacks": [
       {
         "name": "greatsword",
@@ -17669,10 +17669,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "fist smash",
@@ -17714,10 +17714,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "left club",
@@ -17759,8 +17759,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
     "min_level": 11,
     "attacks": [
@@ -17812,10 +17812,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 16,
-    "spread": 10,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 4.0,
-    "min_level": 6,
+    "min_level": 2,
     "attacks": [
       {
         "name": "shortsword",
@@ -17870,10 +17870,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 20,
-    "spread": 12,
+    "peak_floor": 9,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 8,
+    "min_level": 7,
     "attacks": [
       {
         "name": "shadow bolt",
@@ -17929,10 +17929,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "whip strike",
@@ -17986,10 +17986,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "battleaxe",
@@ -18034,10 +18034,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 10,
-    "peak_floor": 17,
-    "spread": 10,
+    "peak_floor": 11,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 7,
+    "min_level": 9,
     "attacks": [
       {
         "name": "claw",
@@ -18099,14 +18099,14 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 8,
-    "peak_floor": 24,
-    "spread": 12,
+    "peak_floor": 25,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 12,
+    "min_level": 22,
     "attacks": [
       {
         "name": "claw",
-        "damage": "3d10+8",
+        "damage": "1d8+2",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -18114,7 +18114,7 @@
       },
       {
         "name": "fire breath",
-        "damage": "1d4+1",
+        "damage": "2d6+3",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -18169,10 +18169,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "claw",
@@ -18242,10 +18242,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 13,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 37,
+    "min_level": 36,
     "attacks": [
       {
         "name": "claw",
@@ -18317,10 +18317,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "claw",
@@ -18369,10 +18369,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 11,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 7,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 5,
     "attacks": [
       {
         "name": "claw",
@@ -18422,10 +18422,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 14,
-    "spread": 10,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 3.0,
-    "min_level": 4,
+    "min_level": 1,
     "attacks": [
       {
         "name": "scimitar",
@@ -18473,8 +18473,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 9,
-    "peak_floor": 23,
-    "spread": 12,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 2.0,
     "min_level": 11,
     "attacks": [
@@ -18523,10 +18523,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 13,
-    "peak_floor": 22,
-    "spread": 12,
+    "peak_floor": 10,
+    "spread": 4,
     "peak_weight": 2.0,
-    "min_level": 10,
+    "min_level": 8,
     "attacks": [
       {
         "name": "bite",
@@ -18585,10 +18585,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "shadow_claw",
@@ -18641,10 +18641,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "tentacle",
@@ -18695,10 +18695,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "flame_slash",
@@ -18752,10 +18752,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "slam",
@@ -18808,10 +18808,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 44,
-    "spread": 12,
+    "peak_floor": 32,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 32,
+    "min_level": 28,
     "attacks": [
       {
         "name": "bite",
@@ -18862,10 +18862,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 46,
-    "spread": 13,
+    "peak_floor": 33,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 33,
+    "min_level": 29,
     "attacks": [
       {
         "name": "hellfire_blade",
@@ -18916,8 +18916,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 48,
-    "spread": 13,
+    "peak_floor": 39,
+    "spread": 7,
     "peak_weight": 1.0,
     "min_level": 35,
     "attacks": [
@@ -18969,10 +18969,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 13,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 37,
+    "min_level": 36,
     "attacks": [
       {
         "name": "soul_siphon",
@@ -19026,10 +19026,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 0,
-    "peak_floor": 52,
-    "spread": 13,
+    "peak_floor": 41,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 39,
+    "min_level": 37,
     "attacks": [
       {
         "name": "rend",
@@ -19077,10 +19077,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 54,
-    "spread": 13,
+    "peak_floor": 42,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 41,
+    "min_level": 38,
     "attacks": [
       {
         "name": "claw",
@@ -19131,10 +19131,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -1,
-    "peak_floor": 57,
-    "spread": 13,
+    "peak_floor": 44,
+    "spread": 7,
     "peak_weight": 1.0,
-    "min_level": 44,
+    "min_level": 40,
     "attacks": [
       {
         "name": "psionic_blast",
@@ -19191,10 +19191,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
-    "peak_floor": 60,
-    "spread": 13,
+    "peak_floor": 50,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 47,
+    "min_level": 45,
     "attacks": [
       {
         "name": "void_bite",
@@ -19245,10 +19245,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -3,
-    "peak_floor": 64,
-    "spread": 14,
+    "peak_floor": 52,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 50,
+    "min_level": 47,
     "attacks": [
       {
         "name": "death_ray",
@@ -19327,10 +19327,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -4,
-    "peak_floor": 67,
-    "spread": 14,
+    "peak_floor": 54,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 53,
+    "min_level": 49,
     "attacks": [
       {
         "name": "crushing_bite",
@@ -19389,10 +19389,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -5,
-    "peak_floor": 70,
-    "spread": 14,
+    "peak_floor": 59,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 56,
+    "min_level": 54,
     "attacks": [
       {
         "name": "hellfire_slam",
@@ -19452,10 +19452,10 @@
     "speed": 12,
     "ai_pattern": "ranged",
     "thac0": -6,
-    "peak_floor": 74,
-    "spread": 14,
+    "peak_floor": 61,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 60,
+    "min_level": 56,
     "attacks": [
       {
         "name": "crushing_claw",
@@ -19527,10 +19527,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 76,
-    "spread": 13,
+    "peak_floor": 62,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 63,
+    "min_level": 57,
     "attacks": [
       {
         "name": "death_lance",
@@ -19594,8 +19594,8 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -8,
-    "peak_floor": 81,
-    "spread": 13,
+    "peak_floor": 73,
+    "spread": 9,
     "peak_weight": 1.0,
     "min_level": 68,
     "attacks": [
@@ -19655,10 +19655,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -10,
-    "peak_floor": 85,
-    "spread": 13,
+    "peak_floor": 75,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 72,
+    "min_level": 70,
     "attacks": [
       {
         "name": "venomous_bite",
@@ -19718,10 +19718,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -10,
-    "peak_floor": 88,
-    "spread": 13,
+    "peak_floor": 79,
+    "spread": 9,
     "peak_weight": 1.0,
-    "min_level": 75,
+    "min_level": 74,
     "attacks": [
       {
         "name": "entropy_touch",
@@ -19955,7 +19955,7 @@
       200,
       240
     ],
-    "hp": "120d12+664",
+    "hp": "201d12+1113",
     "speed": 12,
     "ai_pattern": "fenrir_rage",
     "thac0": -10,
@@ -20105,7 +20105,7 @@
       140,
       80
     ],
-    "hp": "2d8-2",
+    "hp": "11d8-11",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -20160,7 +20160,7 @@
       160,
       100
     ],
-    "hp": "10d8+5",
+    "hp": "24d8+12",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -20210,7 +20210,7 @@
       100,
       160
     ],
-    "hp": "10d8+9",
+    "hp": "27d8+24",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
@@ -20268,7 +20268,7 @@
       140,
       80
     ],
-    "hp": "16d8+14",
+    "hp": "38d8+33",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 7,
@@ -20324,7 +20324,7 @@
       60,
       120
     ],
-    "hp": "17d8+16",
+    "hp": "52d8+49",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -20383,7 +20383,7 @@
       100,
       40
     ],
-    "hp": "39d10+78",
+    "hp": "52d10+105",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 4,
@@ -20439,7 +20439,7 @@
       180,
       100
     ],
-    "hp": "47d10+104",
+    "hp": "65d10+143",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 2,
@@ -20493,7 +20493,7 @@
       60,
       180
     ],
-    "hp": "47d10+94",
+    "hp": "87d10+173",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
@@ -20552,7 +20552,7 @@
       180,
       80
     ],
-    "hp": "35d10+100",
+    "hp": "96d10+276",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -1,
@@ -20605,7 +20605,7 @@
       120,
       80
     ],
-    "hp": "47d10+115",
+    "hp": "126d10+308",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
@@ -20667,7 +20667,7 @@
       160,
       100
     ],
-    "hp": "54d10+136",
+    "hp": "159d10+401",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -4,
@@ -20730,7 +20730,7 @@
       100,
       40
     ],
-    "hp": "76d10+203",
+    "hp": "176d10+471",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -5,
@@ -20788,7 +20788,7 @@
       180,
       80
     ],
-    "hp": "85d10+227",
+    "hp": "214d10+571",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -6,
@@ -20848,7 +20848,7 @@
       100,
       200
     ],
-    "hp": "100d10+266",
+    "hp": "250d10+664",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -20904,7 +20904,7 @@
       60,
       60
     ],
-    "hp": "105d10+281",
+    "hp": "269d10+720",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
@@ -20966,7 +20966,7 @@
       220,
       255
     ],
-    "hp": "121d10+306",
+    "hp": "309d10+782",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -21028,7 +21028,7 @@
       180,
       220
     ],
-    "hp": "111d12+628",
+    "hp": "230d12+1303",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -11,
@@ -21090,7 +21090,7 @@
       180,
       40
     ],
-    "hp": "38d12+212",
+    "hp": "238d12+1328",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -21151,7 +21151,7 @@
       200,
       80
     ],
-    "hp": "40d12+236",
+    "hp": "241d12+1424",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -13,
@@ -21214,7 +21214,7 @@
       80,
       40
     ],
-    "hp": "46d10+116",
+    "hp": "295d10+743",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -9,
@@ -21273,7 +21273,7 @@
       160,
       50
     ],
-    "hp": "48d10+122",
+    "hp": "309d10+784",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -10,
@@ -21334,7 +21334,7 @@
       160,
       80
     ],
-    "hp": "32d12+198",
+    "hp": "205d12+1270",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -10,
@@ -21395,7 +21395,7 @@
       40,
       40
     ],
-    "hp": "34d12+208",
+    "hp": "217d12+1325",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -21461,7 +21461,7 @@
       60,
       90
     ],
-    "hp": "36d12+216",
+    "hp": "227d12+1362",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -11,
@@ -21522,7 +21522,7 @@
       110,
       50
     ],
-    "hp": "38d12+224",
+    "hp": "235d12+1386",
     "speed": 8,
     "ai_pattern": "aggressive",
     "thac0": -12,
@@ -21582,7 +21582,7 @@
       180,
       210
     ],
-    "hp": "42d12+248",
+    "hp": "248d12+1463",
     "speed": 12,
     "ai_pattern": "dancer",
     "thac0": -13,
@@ -21850,10 +21850,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
-    "peak_floor": 36,
-    "spread": 11,
+    "peak_floor": 29,
+    "spread": 5,
     "peak_weight": 5.0,
-    "min_level": 25,
+    "min_level": 26,
     "attacks": [
       {
         "name": "ancient_blade",
@@ -21896,8 +21896,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
-    "peak_floor": 35,
-    "spread": 10,
+    "peak_floor": 28,
+    "spread": 5,
     "peak_weight": 6.0,
     "min_level": 25,
     "attacks": [
@@ -21941,10 +21941,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
-    "peak_floor": 38,
-    "spread": 11,
+    "peak_floor": 29,
+    "spread": 5,
     "peak_weight": 4.0,
-    "min_level": 27,
+    "min_level": 26,
     "attacks": [
       {
         "name": "smash",
@@ -21990,10 +21990,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
-    "peak_floor": 38,
-    "spread": 11,
+    "peak_floor": 29,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 27,
+    "min_level": 26,
     "attacks": [
       {
         "name": "petrifying_bite",
@@ -22035,10 +22035,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 4,
-    "peak_floor": 40,
-    "spread": 11,
+    "peak_floor": 30,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 29,
+    "min_level": 27,
     "attacks": [
       {
         "name": "boulder_slam",
@@ -22081,10 +22081,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": 4,
-    "peak_floor": 37,
-    "spread": 10,
+    "peak_floor": 29,
+    "spread": 5,
     "peak_weight": 4.0,
-    "min_level": 27,
+    "min_level": 26,
     "attacks": [
       {
         "name": "spore_burst",
@@ -22128,8 +22128,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
-    "peak_floor": 35,
-    "spread": 10,
+    "peak_floor": 28,
+    "spread": 5,
     "peak_weight": 4.0,
     "min_level": 25,
     "attacks": [
@@ -22177,10 +22177,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 49,
-    "spread": 12,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 4.0,
-    "min_level": 37,
+    "min_level": 36,
     "attacks": [
       {
         "name": "warlord_axe",
@@ -22227,10 +22227,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 49,
-    "spread": 12,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 4.0,
-    "min_level": 37,
+    "min_level": 36,
     "attacks": [
       {
         "name": "longsword_combo",
@@ -22274,10 +22274,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 11,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 36,
     "attacks": [
       {
         "name": "inferno_touch",
@@ -22323,10 +22323,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 11,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 36,
     "attacks": [
       {
         "name": "lion_bite",
@@ -22380,10 +22380,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 50,
-    "spread": 11,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 36,
     "attacks": [
       {
         "name": "bone_crush",
@@ -22433,10 +22433,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 0,
-    "peak_floor": 52,
-    "spread": 11,
+    "peak_floor": 41,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 41,
+    "min_level": 37,
     "attacks": [
       {
         "name": "hellfire_sword",
@@ -22483,10 +22483,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 1,
-    "peak_floor": 48,
-    "spread": 11,
+    "peak_floor": 39,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 37,
+    "min_level": 35,
     "attacks": [
       {
         "name": "engulf",
@@ -22531,10 +22531,10 @@
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": 1,
-    "peak_floor": 49,
-    "spread": 10,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 36,
     "attacks": [
       {
         "name": "phase_bite",
@@ -22586,10 +22586,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 1,
-    "peak_floor": 49,
-    "spread": 10,
+    "peak_floor": 40,
+    "spread": 7,
     "peak_weight": 3.0,
-    "min_level": 39,
+    "min_level": 36,
     "attacks": [
       {
         "name": "tail_spike_volley",
@@ -22633,10 +22633,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
-    "peak_floor": 60,
-    "spread": 11,
+    "peak_floor": 50,
+    "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 49,
+    "min_level": 45,
     "attacks": [
       {
         "name": "warclub",
@@ -22685,10 +22685,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 62,
-    "spread": 11,
+    "peak_floor": 51,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 46,
     "attacks": [
       {
         "name": "ice_greataxe",
@@ -22734,10 +22734,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 62,
-    "spread": 11,
+    "peak_floor": 51,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 46,
     "attacks": [
       {
         "name": "molten_hammer",
@@ -22783,10 +22783,10 @@
     "speed": 10,
     "ai_pattern": "hit_and_run",
     "thac0": -2,
-    "peak_floor": 60,
-    "spread": 11,
+    "peak_floor": 50,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 49,
+    "min_level": 45,
     "attacks": [
       {
         "name": "drain_bite",
@@ -22836,10 +22836,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 62,
-    "spread": 11,
+    "peak_floor": 51,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 46,
     "attacks": [
       {
         "name": "soul_blade",
@@ -22892,10 +22892,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 63,
-    "spread": 12,
+    "peak_floor": 52,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 47,
     "attacks": [
       {
         "name": "force_fist",
@@ -22942,10 +22942,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
-    "peak_floor": 60,
-    "spread": 11,
+    "peak_floor": 50,
+    "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 49,
+    "min_level": 45,
     "attacks": [
       {
         "name": "hellfire_bite",
@@ -22994,10 +22994,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 61,
-    "spread": 10,
+    "peak_floor": 51,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 51,
+    "min_level": 46,
     "attacks": [
       {
         "name": "riddle_curse",
@@ -23044,10 +23044,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -3,
-    "peak_floor": 64,
-    "spread": 11,
+    "peak_floor": 52,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 53,
+    "min_level": 47,
     "attacks": [
       {
         "name": "death_bolt",
@@ -23101,10 +23101,10 @@
     "speed": 10,
     "ai_pattern": "sessile",
     "thac0": -2,
-    "peak_floor": 59,
-    "spread": 10,
+    "peak_floor": 50,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 49,
+    "min_level": 45,
     "attacks": [
       {
         "name": "slam",
@@ -23154,10 +23154,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -2,
-    "peak_floor": 59,
-    "spread": 10,
+    "peak_floor": 50,
+    "spread": 9,
     "peak_weight": 5.0,
-    "min_level": 49,
+    "min_level": 45,
     "attacks": [
       {
         "name": "mass_strike",
@@ -23207,10 +23207,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -3,
-    "peak_floor": 64,
-    "spread": 11,
+    "peak_floor": 52,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 53,
+    "min_level": 47,
     "attacks": [
       {
         "name": "ghostfire_breath",
@@ -23258,10 +23258,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 62,
-    "spread": 11,
+    "peak_floor": 51,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 46,
     "attacks": [
       {
         "name": "hellforged_blade",
@@ -23309,10 +23309,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -3,
-    "peak_floor": 62,
-    "spread": 11,
+    "peak_floor": 51,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 51,
+    "min_level": 46,
     "attacks": [
       {
         "name": "iron_fist",
@@ -23362,10 +23362,10 @@
     "speed": 10,
     "ai_pattern": "hit_and_run",
     "thac0": -7,
-    "peak_floor": 75,
-    "spread": 12,
+    "peak_floor": 62,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 63,
+    "min_level": 57,
     "attacks": [
       {
         "name": "sovereign_drain",
@@ -23417,10 +23417,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 75,
-    "spread": 12,
+    "peak_floor": 62,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 63,
+    "min_level": 57,
     "attacks": [
       {
         "name": "storm_hammer",
@@ -23469,10 +23469,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 75,
-    "spread": 12,
+    "peak_floor": 62,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 63,
+    "min_level": 57,
     "attacks": [
       {
         "name": "solar_flare",
@@ -23517,8 +23517,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 77,
-    "spread": 12,
+    "peak_floor": 70,
+    "spread": 9,
     "peak_weight": 2.0,
     "min_level": 65,
     "attacks": [
@@ -23565,8 +23565,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 77,
-    "spread": 12,
+    "peak_floor": 70,
+    "spread": 9,
     "peak_weight": 2.0,
     "min_level": 65,
     "attacks": [
@@ -23622,10 +23622,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -6,
-    "peak_floor": 74,
-    "spread": 11,
+    "peak_floor": 61,
+    "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 63,
+    "min_level": 56,
     "attacks": [
       {
         "name": "mass_claw",
@@ -23675,8 +23675,8 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -7,
-    "peak_floor": 77,
-    "spread": 12,
+    "peak_floor": 70,
+    "spread": 9,
     "peak_weight": 2.0,
     "min_level": 65,
     "attacks": [
@@ -23729,10 +23729,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 75,
-    "spread": 12,
+    "peak_floor": 62,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 63,
+    "min_level": 57,
     "attacks": [
       {
         "name": "multi_bite",
@@ -23790,8 +23790,8 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -7,
-    "peak_floor": 77,
-    "spread": 12,
+    "peak_floor": 70,
+    "spread": 9,
     "peak_weight": 2.0,
     "min_level": 65,
     "attacks": [
@@ -23843,10 +23843,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
-    "peak_floor": 79,
-    "spread": 12,
+    "peak_floor": 71,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 67,
+    "min_level": 66,
     "attacks": [
       {
         "name": "titan_fist",
@@ -23894,10 +23894,10 @@
     "speed": 10,
     "ai_pattern": "ambush",
     "thac0": -6,
-    "peak_floor": 74,
-    "spread": 11,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 63,
+    "min_level": 55,
     "attacks": [
       {
         "name": "shadow_blade",
@@ -23948,10 +23948,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -6,
-    "peak_floor": 74,
-    "spread": 11,
+    "peak_floor": 61,
+    "spread": 9,
     "peak_weight": 3.0,
-    "min_level": 63,
+    "min_level": 56,
     "attacks": [
       {
         "name": "plague_touch",
@@ -23997,10 +23997,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -8,
-    "peak_floor": 79,
-    "spread": 12,
+    "peak_floor": 71,
+    "spread": 9,
     "peak_weight": 2.0,
-    "min_level": 67,
+    "min_level": 66,
     "attacks": [
       {
         "name": "ruin_slam",
@@ -24051,10 +24051,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
-    "peak_floor": 92,
-    "spread": 11,
+    "peak_floor": 82,
+    "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 81,
+    "min_level": 76,
     "attacks": [
       {
         "name": "annihilation_ray",
@@ -24114,10 +24114,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
-    "peak_floor": 93,
-    "spread": 10,
+    "peak_floor": 83,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 83,
+    "min_level": 77,
     "attacks": [
       {
         "name": "void_breath",
@@ -24177,10 +24177,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
-    "peak_floor": 92,
-    "spread": 11,
+    "peak_floor": 82,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 81,
+    "min_level": 76,
     "attacks": [
       {
         "name": "world_breaker",
@@ -24232,10 +24232,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
-    "peak_floor": 93,
-    "spread": 10,
+    "peak_floor": 83,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 83,
+    "min_level": 77,
     "attacks": [
       {
         "name": "reality_bolt",
@@ -24287,10 +24287,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
-    "peak_floor": 92,
-    "spread": 11,
+    "peak_floor": 82,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 81,
+    "min_level": 76,
     "attacks": [
       {
         "name": "hellfire_greatsword",
@@ -24346,10 +24346,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
-    "peak_floor": 94,
-    "spread": 9,
+    "peak_floor": 95,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 85,
+    "min_level": 89,
     "attacks": [
       {
         "name": "holy_smite",
@@ -24397,10 +24397,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
-    "peak_floor": 93,
-    "spread": 10,
+    "peak_floor": 83,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 83,
+    "min_level": 77,
     "attacks": [
       {
         "name": "entropy_touch",
@@ -24453,10 +24453,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
-    "peak_floor": 92,
-    "spread": 11,
+    "peak_floor": 82,
+    "spread": 12,
     "peak_weight": 3.0,
-    "min_level": 81,
+    "min_level": 76,
     "attacks": [
       {
         "name": "legion_charge",
@@ -24507,10 +24507,10 @@
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
-    "peak_floor": 94,
-    "spread": 9,
+    "peak_floor": 95,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 85,
+    "min_level": 89,
     "attacks": [
       {
         "name": "chaos_breath",
@@ -24565,10 +24565,10 @@
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": -12,
-    "peak_floor": 92,
-    "spread": 11,
+    "peak_floor": 82,
+    "spread": 12,
     "peak_weight": 2.0,
-    "min_level": 81,
+    "min_level": 76,
     "attacks": [
       {
         "name": "slam",
@@ -24619,10 +24619,10 @@
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": -8,
-    "peak_floor": 92,
-    "spread": 4,
+    "peak_floor": 74,
+    "spread": 9,
     "peak_weight": 4.0,
-    "min_level": 88,
+    "min_level": 69,
     "attacks": [
       {
         "name": "chitin scythe",
@@ -24673,9 +24673,9 @@
     "ai_pattern": "aggressive",
     "thac0": -12,
     "peak_floor": 93,
-    "spread": 4,
+    "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 89,
+    "min_level": 87,
     "attacks": [
       {
         "name": "great cleaver",
@@ -24725,14 +24725,14 @@
       30,
       90
     ],
-    "hp": "40d12+226",
+    "hp": "104d12+586",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": -12,
-    "peak_floor": 94,
-    "spread": 4,
+    "peak_floor": 86,
+    "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 90,
+    "min_level": 80,
     "attacks": [
       {
         "name": "void lance",
@@ -24780,14 +24780,14 @@
       80,
       60
     ],
-    "hp": "38d10+100",
+    "hp": "157d10+413",
     "speed": 11,
     "ai_pattern": "aggressive",
     "thac0": -9,
-    "peak_floor": 95,
-    "spread": 4,
+    "peak_floor": 86,
+    "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 91,
+    "min_level": 80,
     "attacks": [
       {
         "name": "trumpet blast",
@@ -24835,14 +24835,14 @@
       140,
       80
     ],
-    "hp": "38d10+108",
+    "hp": "155d10+441",
     "speed": 9,
     "ai_pattern": "aggressive",
     "thac0": -9,
-    "peak_floor": 96,
-    "spread": 4,
+    "peak_floor": 87,
+    "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 92,
+    "min_level": 81,
     "attacks": [
       {
         "name": "bitter spore",
@@ -24891,14 +24891,14 @@
       100,
       130
     ],
-    "hp": "44d12+248",
+    "hp": "110d12+617",
     "speed": 13,
     "ai_pattern": "aggressive",
     "thac0": -13,
-    "peak_floor": 98,
-    "spread": 4,
+    "peak_floor": 88,
+    "spread": 12,
     "peak_weight": 4.0,
-    "min_level": 94,
+    "min_level": 82,
     "attacks": [
       {
         "name": "lance charge",
@@ -24967,9 +24967,9 @@
       "humanoid",
       "orc"
     ],
-    "min_level": 14,
-    "peak_floor": 18,
-    "spread": 10,
+    "min_level": 3,
+    "peak_floor": 5,
+    "spread": 4,
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
@@ -25027,9 +25027,9 @@
       "orc",
       "caster"
     ],
-    "min_level": 18,
-    "peak_floor": 22,
-    "spread": 10,
+    "min_level": 10,
+    "peak_floor": 12,
+    "spread": 4,
     "peak_weight": 5.0,
     "frequency": 5,
     "harvest_tier": 2,
@@ -25074,9 +25074,9 @@
       "humanoid",
       "orc"
     ],
-    "min_level": 26,
-    "peak_floor": 30,
-    "spread": 10,
+    "min_level": 16,
+    "peak_floor": 19,
+    "spread": 5,
     "peak_weight": 5.0,
     "frequency": 4,
     "harvest_tier": 2,
@@ -25125,9 +25125,9 @@
       "humanoid",
       "orc"
     ],
-    "min_level": 38,
-    "peak_floor": 42,
-    "spread": 10,
+    "min_level": 27,
+    "peak_floor": 31,
+    "spread": 7,
     "peak_weight": 2.5,
     "frequency": 2,
     "harvest_tier": 3,
@@ -25178,9 +25178,9 @@
       "humanoid",
       "orc"
     ],
-    "min_level": 51,
-    "peak_floor": 55,
-    "spread": 8,
+    "min_level": 43,
+    "peak_floor": 48,
+    "spread": 9,
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 3,
@@ -25228,9 +25228,9 @@
       "humanoid",
       "goblinoid"
     ],
-    "min_level": 14,
-    "peak_floor": 18,
-    "spread": 10,
+    "min_level": 3,
+    "peak_floor": 5,
+    "spread": 4,
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
@@ -25288,9 +25288,9 @@
       "goblinoid",
       "caster"
     ],
-    "min_level": 26,
-    "peak_floor": 30,
-    "spread": 10,
+    "min_level": 16,
+    "peak_floor": 19,
+    "spread": 5,
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
@@ -25338,9 +25338,9 @@
       "humanoid",
       "goblinoid"
     ],
-    "min_level": 41,
-    "peak_floor": 45,
-    "spread": 10,
+    "min_level": 29,
+    "peak_floor": 33,
+    "spread": 7,
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
@@ -25394,9 +25394,9 @@
       "humanoid",
       "goblinoid"
     ],
-    "min_level": 56,
-    "peak_floor": 60,
-    "spread": 8,
+    "min_level": 47,
+    "peak_floor": 52,
+    "spread": 9,
     "peak_weight": 1.8,
     "frequency": 2,
     "harvest_tier": 3,
@@ -25453,9 +25453,9 @@
       "undead",
       "caster"
     ],
-    "min_level": 21,
-    "peak_floor": 25,
-    "spread": 10,
+    "min_level": 11,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
@@ -25513,9 +25513,9 @@
       "undead",
       "construct"
     ],
-    "min_level": 36,
-    "peak_floor": 40,
-    "spread": 10,
+    "min_level": 27,
+    "peak_floor": 30,
+    "spread": 5,
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
@@ -25573,9 +25573,9 @@
       "undead",
       "caster"
     ],
-    "min_level": 51,
-    "peak_floor": 55,
-    "spread": 8,
+    "min_level": 43,
+    "peak_floor": 48,
+    "spread": 9,
     "peak_weight": 1.8,
     "frequency": 2,
     "harvest_tier": 3,
@@ -25639,9 +25639,9 @@
       "undead",
       "caster"
     ],
-    "min_level": 66,
-    "peak_floor": 70,
-    "spread": 8,
+    "min_level": 58,
+    "peak_floor": 63,
+    "spread": 9,
     "peak_weight": 1.5,
     "frequency": 1,
     "harvest_tier": 3,
@@ -25691,9 +25691,9 @@
       "humanoid",
       "kobold"
     ],
-    "min_level": 9,
-    "peak_floor": 12,
-    "spread": 9,
+    "min_level": 1,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "frequency": 6,
     "harvest_tier": 1,
@@ -25744,9 +25744,9 @@
       "humanoid",
       "kobold"
     ],
-    "min_level": 22,
-    "peak_floor": 25,
-    "spread": 10,
+    "min_level": 11,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
@@ -25794,9 +25794,9 @@
       "humanoid",
       "kobold"
     ],
-    "min_level": 31,
-    "peak_floor": 35,
-    "spread": 10,
+    "min_level": 19,
+    "peak_floor": 22,
+    "spread": 5,
     "peak_weight": 2.8,
     "frequency": 3,
     "harvest_tier": 3,
@@ -25842,9 +25842,9 @@
       "humanoid",
       "gnoll"
     ],
-    "min_level": 11,
-    "peak_floor": 14,
-    "spread": 9,
+    "min_level": 2,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
@@ -25904,9 +25904,9 @@
       "gnoll",
       "demon-touched"
     ],
-    "min_level": 24,
-    "peak_floor": 28,
-    "spread": 10,
+    "min_level": 15,
+    "peak_floor": 18,
+    "spread": 5,
     "peak_weight": 4.0,
     "frequency": 4,
     "harvest_tier": 2,
@@ -25960,9 +25960,9 @@
       "gnoll",
       "demon-touched"
     ],
-    "min_level": 44,
-    "peak_floor": 48,
-    "spread": 10,
+    "min_level": 30,
+    "peak_floor": 34,
+    "spread": 7,
     "peak_weight": 2.2,
     "frequency": 2,
     "harvest_tier": 3,
@@ -26009,9 +26009,9 @@
       "humanoid",
       "bandit"
     ],
-    "min_level": 5,
-    "peak_floor": 8,
-    "spread": 9,
+    "min_level": 2,
+    "peak_floor": 4,
+    "spread": 4,
     "peak_weight": 6.5,
     "frequency": 6,
     "harvest_tier": 1,
@@ -26057,9 +26057,9 @@
       "humanoid",
       "bandit"
     ],
-    "min_level": 9,
-    "peak_floor": 12,
-    "spread": 9,
+    "min_level": 1,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 5.5,
     "frequency": 5,
     "harvest_tier": 1,
@@ -26116,9 +26116,9 @@
       "humanoid",
       "bandit"
     ],
-    "min_level": 14,
-    "peak_floor": 18,
-    "spread": 10,
+    "min_level": 3,
+    "peak_floor": 5,
+    "spread": 4,
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
@@ -26165,9 +26165,9 @@
       "humanoid",
       "bandit"
     ],
-    "min_level": 36,
-    "peak_floor": 40,
-    "spread": 10,
+    "min_level": 30,
+    "peak_floor": 34,
+    "spread": 7,
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
@@ -26218,9 +26218,9 @@
       "humanoid",
       "cultist"
     ],
-    "min_level": 9,
-    "peak_floor": 12,
-    "spread": 9,
+    "min_level": 1,
+    "peak_floor": 2,
+    "spread": 4,
     "peak_weight": 6.0,
     "frequency": 5,
     "harvest_tier": 1,
@@ -26274,9 +26274,9 @@
       "cultist",
       "caster"
     ],
-    "min_level": 18,
-    "peak_floor": 22,
-    "spread": 10,
+    "min_level": 10,
+    "peak_floor": 12,
+    "spread": 4,
     "peak_weight": 4.5,
     "frequency": 4,
     "harvest_tier": 2,
@@ -26329,9 +26329,9 @@
       "humanoid",
       "cultist"
     ],
-    "min_level": 31,
-    "peak_floor": 35,
-    "spread": 10,
+    "min_level": 20,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 3,
@@ -26389,9 +26389,9 @@
       "humanoid",
       "cultist"
     ],
-    "min_level": 46,
-    "peak_floor": 50,
-    "spread": 8,
+    "min_level": 41,
+    "peak_floor": 45,
+    "spread": 7,
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 3,
@@ -26454,9 +26454,9 @@
     "tags": [
       "undead"
     ],
-    "min_level": 16,
-    "peak_floor": 20,
-    "spread": 10,
+    "min_level": 10,
+    "peak_floor": 12,
+    "spread": 4,
     "peak_weight": 5.0,
     "frequency": 4,
     "harvest_tier": 2,
@@ -26507,9 +26507,9 @@
     "tags": [
       "undead"
     ],
-    "min_level": 31,
-    "peak_floor": 35,
-    "spread": 10,
+    "min_level": 20,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
@@ -26564,9 +26564,9 @@
     "tags": [
       "undead"
     ],
-    "min_level": 51,
-    "peak_floor": 55,
-    "spread": 8,
+    "min_level": 43,
+    "peak_floor": 48,
+    "spread": 9,
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 3,
@@ -26624,9 +26624,9 @@
     "tags": [
       "demon"
     ],
-    "min_level": 14,
-    "peak_floor": 18,
-    "spread": 10,
+    "min_level": 3,
+    "peak_floor": 5,
+    "spread": 4,
     "peak_weight": 5.0,
     "frequency": 5,
     "harvest_tier": 1,
@@ -26684,9 +26684,9 @@
     "tags": [
       "demon"
     ],
-    "min_level": 26,
-    "peak_floor": 30,
-    "spread": 10,
+    "min_level": 16,
+    "peak_floor": 19,
+    "spread": 5,
     "peak_weight": 4.0,
     "frequency": 4,
     "harvest_tier": 2,
@@ -26741,9 +26741,9 @@
     "tags": [
       "demon"
     ],
-    "min_level": 41,
-    "peak_floor": 45,
-    "spread": 10,
+    "min_level": 29,
+    "peak_floor": 33,
+    "spread": 7,
     "peak_weight": 2.2,
     "frequency": 2,
     "harvest_tier": 3,
@@ -26799,9 +26799,9 @@
     "tags": [
       "humanoid"
     ],
-    "min_level": 22,
-    "peak_floor": 26,
-    "spread": 10,
+    "min_level": 11,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 2,
@@ -26859,9 +26859,9 @@
       "serpent-cult",
       "caster"
     ],
-    "min_level": 38,
-    "peak_floor": 42,
-    "spread": 10,
+    "min_level": 27,
+    "peak_floor": 31,
+    "spread": 7,
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
@@ -26911,9 +26911,9 @@
       "beast",
       "humanoid"
     ],
-    "min_level": 25,
-    "peak_floor": 35,
-    "spread": 12,
+    "min_level": 20,
+    "peak_floor": 23,
+    "spread": 5,
     "peak_weight": 4.0,
     "frequency": 4,
     "harvest_tier": 2,
@@ -26971,9 +26971,9 @@
       "humanoid",
       "caster"
     ],
-    "min_level": 28,
-    "peak_floor": 35,
-    "spread": 10,
+    "min_level": 16,
+    "peak_floor": 19,
+    "spread": 5,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 2,
@@ -27027,9 +27027,9 @@
       "construct",
       "plant"
     ],
-    "min_level": 28,
-    "peak_floor": 37,
-    "spread": 10,
+    "min_level": 22,
+    "peak_floor": 25,
+    "spread": 5,
     "peak_weight": 3.5,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27083,9 +27083,9 @@
       "beast",
       "reptile"
     ],
-    "min_level": 30,
-    "peak_floor": 38,
-    "spread": 10,
+    "min_level": 16,
+    "peak_floor": 19,
+    "spread": 5,
     "peak_weight": 3.0,
     "frequency": 4,
     "harvest_tier": 2,
@@ -27108,7 +27108,7 @@
       70
     ],
     "ai_pattern": "aggressive",
-    "hp": "36d10+60",
+    "hp": "64d10+107",
     "speed": 10,
     "thac0": 5,
     "attacks": [
@@ -27142,7 +27142,7 @@
     "min_level": 35,
     "peak_floor": 42,
     "spread": 8,
-    "peak_weight": 1.5,
+    "peak_weight": 0.0,
     "frequency": 1,
     "spawn_chance": 0.3,
     "harvest_tier": 4,
@@ -27156,7 +27156,7 @@
     },
     "lore": "He was father to a line of tyrants and outlived all of them. The dungeon found him still wearing his coronation plate, still expecting an audience. He gives one, briefly, to anyone who comes within reach.",
     "is_boss": true,
-    "is_mini_boss": false,
+    "is_mini_boss": true,
     "min_hit_chance": 0.25,
     "enrage_at_hp_pct": 0.5,
     "enraged_pattern": "fenrir_rage",
@@ -27206,9 +27206,9 @@
       "rogue",
       "caster"
     ],
-    "min_level": 38,
-    "peak_floor": 45,
-    "spread": 10,
+    "min_level": 31,
+    "peak_floor": 35,
+    "spread": 7,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27263,9 +27263,9 @@
     "tags": [
       "construct"
     ],
-    "min_level": 38,
-    "peak_floor": 46,
-    "spread": 10,
+    "min_level": 35,
+    "peak_floor": 39,
+    "spread": 7,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27324,9 +27324,9 @@
       "humanoid",
       "caster"
     ],
-    "min_level": 42,
-    "peak_floor": 52,
-    "spread": 12,
+    "min_level": 31,
+    "peak_floor": 35,
+    "spread": 7,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27383,9 +27383,9 @@
       "plant",
       "horror"
     ],
-    "min_level": 42,
-    "peak_floor": 53,
-    "spread": 12,
+    "min_level": 33,
+    "peak_floor": 37,
+    "spread": 7,
     "peak_weight": 3.5,
     "frequency": 4,
     "harvest_tier": 3,
@@ -27408,7 +27408,7 @@
       30
     ],
     "ai_pattern": "mimic",
-    "hp": "31d8+31",
+    "hp": "43d8+43",
     "speed": 10,
     "thac0": 6,
     "attacks": [
@@ -27438,9 +27438,9 @@
       "aberration",
       "shapeshifter"
     ],
-    "min_level": 45,
-    "peak_floor": 55,
-    "spread": 10,
+    "min_level": 39,
+    "peak_floor": 43,
+    "spread": 7,
     "peak_weight": 2.5,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27492,9 +27492,9 @@
       "humanoid",
       "giant"
     ],
-    "min_level": 45,
-    "peak_floor": 55,
-    "spread": 12,
+    "min_level": 35,
+    "peak_floor": 39,
+    "spread": 7,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27551,9 +27551,9 @@
       "humanoid",
       "construct"
     ],
-    "min_level": 48,
-    "peak_floor": 57,
-    "spread": 10,
+    "min_level": 34,
+    "peak_floor": 38,
+    "spread": 7,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 3,
@@ -27579,7 +27579,7 @@
       100
     ],
     "ai_pattern": "summoner",
-    "hp": "60d10+80",
+    "hp": "159d10+212",
     "speed": 9,
     "thac0": -3,
     "summon_kind": [
@@ -27623,7 +27623,7 @@
     "min_level": 55,
     "peak_floor": 62,
     "spread": 8,
-    "peak_weight": 1.5,
+    "peak_weight": 0.0,
     "frequency": 1,
     "spawn_chance": 0.3,
     "harvest_tier": 5,
@@ -27637,7 +27637,7 @@
     },
     "lore": "She was buried alive for telling fortunes too plainly. Decades in the dark and she found friends in the dark. They come when she calls and so will the rest of you, eventually.",
     "is_boss": true,
-    "is_mini_boss": false,
+    "is_mini_boss": true,
     "min_hit_chance": 0.25,
     "enrage_at_hp_pct": 0.3,
     "enraged_pattern": "fenrir_rage",
@@ -27689,9 +27689,9 @@
       "fiend",
       "evil"
     ],
-    "min_level": 55,
-    "peak_floor": 63,
-    "spread": 10,
+    "min_level": 42,
+    "peak_floor": 47,
+    "spread": 9,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
@@ -27751,9 +27751,9 @@
       "aberration",
       "caster"
     ],
-    "min_level": 55,
-    "peak_floor": 64,
-    "spread": 10,
+    "min_level": 44,
+    "peak_floor": 49,
+    "spread": 9,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
@@ -27776,7 +27776,7 @@
       60
     ],
     "ai_pattern": "mimic",
-    "hp": "65d8+57",
+    "hp": "84d8+73",
     "speed": 10,
     "thac0": 2,
     "attacks": [
@@ -27809,9 +27809,9 @@
       "shapeshifter",
       "construct"
     ],
-    "min_level": 58,
-    "peak_floor": 66,
-    "spread": 8,
+    "min_level": 53,
+    "peak_floor": 58,
+    "spread": 9,
     "peak_weight": 2.0,
     "frequency": 2,
     "harvest_tier": 4,
@@ -27834,7 +27834,7 @@
       230
     ],
     "ai_pattern": "aggressive",
-    "hp": "50d10+43",
+    "hp": "77d10+66",
     "speed": 10,
     "thac0": 1,
     "attacks": [
@@ -27866,9 +27866,9 @@
       "giant",
       "humanoid"
     ],
-    "min_level": 62,
-    "peak_floor": 72,
-    "spread": 10,
+    "min_level": 55,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
@@ -27893,7 +27893,7 @@
       130
     ],
     "ai_pattern": "summoner",
-    "hp": "43d8+36",
+    "hp": "91d8+77",
     "speed": 9,
     "thac0": 1,
     "summon_kind": [
@@ -27932,9 +27932,9 @@
       "undead",
       "caster"
     ],
-    "min_level": 62,
-    "peak_floor": 72,
-    "spread": 10,
+    "min_level": 54,
+    "peak_floor": 59,
+    "spread": 9,
     "peak_weight": 2.5,
     "frequency": 2,
     "harvest_tier": 4,
@@ -27958,7 +27958,7 @@
       70
     ],
     "ai_pattern": "ranged",
-    "hp": "50d8+39",
+    "hp": "96d8+75",
     "speed": 12,
     "thac0": 1,
     "attacks": [
@@ -27987,9 +27987,9 @@
       "humanoid",
       "rogue"
     ],
-    "min_level": 63,
-    "peak_floor": 73,
-    "spread": 10,
+    "min_level": 55,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
@@ -28023,7 +28023,7 @@
       50
     ],
     "ai_pattern": "aggressive",
-    "hp": "39d8+36",
+    "hp": "98d8+90",
     "speed": 10,
     "thac0": 1,
     "attacks": [
@@ -28055,9 +28055,9 @@
       "humanoid",
       "caster"
     ],
-    "min_level": 64,
-    "peak_floor": 74,
-    "spread": 10,
+    "min_level": 56,
+    "peak_floor": 61,
+    "spread": 9,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
@@ -28115,9 +28115,9 @@
     "tags": [
       "elemental"
     ],
-    "min_level": 68,
-    "peak_floor": 76,
-    "spread": 10,
+    "min_level": 55,
+    "peak_floor": 60,
+    "spread": 9,
     "peak_weight": 3.0,
     "frequency": 3,
     "harvest_tier": 4,
@@ -28140,7 +28140,7 @@
       30
     ],
     "ai_pattern": "aggressive",
-    "hp": "70d10+100",
+    "hp": "333d10+476",
     "speed": 11,
     "thac0": -10,
     "attacks": [
@@ -28178,7 +28178,7 @@
     "min_level": 75,
     "peak_floor": 82,
     "spread": 8,
-    "peak_weight": 1.5,
+    "peak_weight": 0.0,
     "frequency": 1,
     "spawn_chance": 0.25,
     "harvest_tier": 5,
@@ -28213,7 +28213,7 @@
       200
     ],
     "ai_pattern": "aggressive",
-    "hp": "65d10+50",
+    "hp": "135d10+104",
     "speed": 11,
     "thac0": -2,
     "attacks": [
@@ -28247,9 +28247,9 @@
       "aberration",
       "outsider"
     ],
-    "min_level": 76,
-    "peak_floor": 84,
-    "spread": 8,
+    "min_level": 68,
+    "peak_floor": 73,
+    "spread": 9,
     "peak_weight": 2.5,
     "frequency": 2,
     "harvest_tier": 5,
@@ -28281,7 +28281,7 @@
     "thac0": -14,
     "peak_floor": 85,
     "spread": 5,
-    "peak_weight": 2.0,
+    "peak_weight": 0.0,
     "min_level": 85,
     "is_boss": false,
     "is_mini_boss": true,
@@ -28379,7 +28379,7 @@
     "thac0": -12,
     "peak_floor": 93,
     "spread": 4,
-    "peak_weight": 3.0,
+    "peak_weight": 0.0,
     "min_level": 92,
     "footprint": [
       1,
@@ -28474,8 +28474,8 @@
     "thac0": -10,
     "peak_floor": 90,
     "spread": 5,
-    "peak_weight": 2.0,
-    "min_level": 87,
+    "peak_weight": 0.0,
+    "min_level": 80,
     "multi_attack_count": 2,
     "enraged_multi_attack_count": 4,
     "enrage_at_hp_pct": 0.4,
@@ -28557,7 +28557,7 @@
     "thac0": -9,
     "peak_floor": 85,
     "spread": 4,
-    "peak_weight": 2.0,
+    "peak_weight": 0.0,
     "min_level": 82,
     "multi_attack_count": 2,
     "enraged_multi_attack_count": 3,
@@ -28645,7 +28645,7 @@
     "thac0": -8,
     "peak_floor": 82,
     "spread": 3,
-    "peak_weight": 2.0,
+    "peak_weight": 0.0,
     "min_level": 80,
     "multi_attack_count": 2,
     "enrage_at_hp_pct": 0.3,

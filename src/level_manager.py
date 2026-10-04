@@ -22,6 +22,12 @@ class LevelManager:
     ]
     _MINI_BOSS_PRIMARY_CHANCE = 0.90
     _MINI_BOSS_SECONDARY_CHANCE = 0.30
+    # Legendary wanderers (Tiamat, Surtur, Asmodeus, Ymir's Last Spawn,
+    # Hrungnir's Ghost: mini-bosses tagged `legendary`). Each rolls on its
+    # own, independent of the band slots, and can appear at most once per run
+    # on a free floor at or just past its peak_floor. They used to sit in the
+    # random spawn pool, where one deep floor could roll several Tiamats.
+    _LEGENDARY_CHANCE = 0.50
 
     def __init__(self):
         self._saved: dict = {}          # level_num -> (dungeon, monsters, items)
@@ -132,6 +138,9 @@ class LevelManager:
                     continue
                 if m.get('spawn_chance', 0) <= 0:
                     continue
+                # Legendary wanderers roll separately below.
+                if 'legendary' in (m.get('tags') or []):
+                    continue
                 pf = int(m.get('peak_floor', m.get('min_level', 1)))
                 if not (band_lo <= pf <= band_hi):
                     continue
@@ -179,6 +188,22 @@ class LevelManager:
                     if target not in planned and target not in _BOSS_LEVELS:
                         planned[target] = mid
                         placed_ids.add(mid)
+
+        # Legendary wanderers: one independent roll each. Never share a floor
+        # with a gate boss, a seal demon, or another planned mini-boss.
+        taken = set(_BOSS_LEVELS) | set(self._SEAL_DEMON_LEVELS)
+        for mid, m in _all.items():
+            if not m.get('is_mini_boss') or 'legendary' not in (m.get('tags') or []):
+                continue
+            if m.get('spawn_chance', 0) <= 0:
+                continue
+            if _rng.random() >= self._LEGENDARY_CHANCE:
+                continue
+            pf = int(m.get('peak_floor', m.get('min_level', 1)))
+            for target in range(pf, min(pf + 6, 100)):
+                if target not in planned and target not in taken:
+                    planned[target] = mid
+                    break
 
         return planned
 
