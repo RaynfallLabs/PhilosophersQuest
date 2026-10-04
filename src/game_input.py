@@ -1152,13 +1152,7 @@ class InputMixin:
         if key == pygame.K_c:
             blurb = self.quiz_engine.current_context_blurb()
             if blurb:
-                topic = q.get('topic')
                 self.quiz_engine.pause_timer()
-                self.quiz_engine.mark_context_seen(self.quiz_engine.subject, topic)
-                # If an auto-open was pending for this same (subject, topic)
-                # the manual press pre-empts it; clear the flag so main.py's
-                # update loop doesn't fire a second transition.
-                self.quiz_engine.pending_context_auto_open = None
                 self._quiz_context_scroll = 0
                 self.state = STATE_QUIZ_CONTEXT
             else:

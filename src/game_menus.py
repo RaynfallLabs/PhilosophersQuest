@@ -798,7 +798,6 @@ class MenuMixin:
         # close and advance the turn.
         if key == pygame.K_ESCAPE and getattr(self, '_scroll_identify_pending', False):
             self._scroll_identify_pending = False
-            self._scroll_identify_blessed = False
             self.state = STATE_PLAYER
             self.add_message(
                 "The scroll's revelation fades, unfocused — you chose nothing.",
@@ -820,7 +819,6 @@ class MenuMixin:
         # Scroll-of-Identify path: bypass the philosophy quiz entirely.
         if getattr(self, '_scroll_identify_pending', False):
             self._scroll_identify_pending = False
-            self._scroll_identify_blessed = False
             if is_corpse:
                 # Corpses use the normal lore path — the scroll doesn't
                 # short-circuit corpse identification. Fall through to

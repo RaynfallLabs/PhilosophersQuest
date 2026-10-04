@@ -33,7 +33,7 @@ UNTOPICED_BASELINE = {}
 # Rungs whose keyed answer appears verbatim in their own blurb. Audit state,
 # rounded up slightly so harmless reformatting does not trip the test.
 LEAK_BASELINE = {
-    'history': 95, 'philosophy': 8, 'economics': 674, 'ai': 10,
+    'history': 95, 'philosophy': 5, 'economics': 674, 'ai': 10,
     'theology': 263, 'geography': 174, 'science': 52, 'trivia': 91,
     'animal': 110, 'cooking': 52,
 }

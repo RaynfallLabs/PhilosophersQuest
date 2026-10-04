@@ -3200,7 +3200,6 @@ class MagicMixin:
         # Flag the picker so _identify_menu_input reveals directly
         # instead of starting the philosophy quiz.
         self._scroll_identify_pending = True
-        self._scroll_identify_blessed = bool(bless)
         self.state = STATE_IDENTIFY_MENU
         self.add_message(
             "The scroll trembles in your hand — choose the item to be revealed.",

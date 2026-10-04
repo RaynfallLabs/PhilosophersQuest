@@ -420,7 +420,6 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
     eff_rare = min(1.0, base_rare * FULL_RARE_MULT)
 
     bonus_slots = FULL_BONUS_SLOTS
-    total_slots = n_items + bonus_slots
 
     loot: list = []
     loot_table = template.get('loot_table', {})

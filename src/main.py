@@ -158,7 +158,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # quiz. The old "+ mastery" step is gone -- masteries were removed
         # in the 2026-08-06 identify-v3 redesign (commit 2778305).
         self._scroll_identify_pending: bool = False
-        self._scroll_identify_blessed: bool = False
         self.cook_menu_items: list       = []
         self.cook_compound_recipes: list = []   # available multi-ingredient recipes
         self._cook_tab: int              = 0
@@ -2010,7 +2009,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 get_specials_for_build, get_passives_for_build,
                 get_journal_for_build,
             )
-            bname = (self.secret_build or {}).get('_name', '') if self.secret_build else ''
             # The build dict is keyed by lowercased name in SECRET_BUILDS, but
             # _give_starting_kit doesn't have direct access to the key. The
             # player's typed name is the source of truth.
@@ -6200,12 +6198,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._necro_update(dt)
             else:
                 self.quiz_engine.update(dt)
-            # Opt-in orientation is MANUAL ONLY (user preference 2026-10-03):
-            # the player opens the Context modal by pressing C during a quiz.
-            # No auto-open on first encounter. Clear the pending flag that
-            # _check_context_auto_open sets, so it never fires.
-            if self.quiz_engine.pending_context_auto_open is not None:
-                self.quiz_engine.pending_context_auto_open = None
+            # (The context modal is opened manually with C; there is no auto-open.)
 
         # Effects runtime: feed a per-frame snapshot (chain aura reads this
         # to decide pulses + milestone bursts), then advance timers. The

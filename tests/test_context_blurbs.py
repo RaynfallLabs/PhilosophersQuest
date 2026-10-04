@@ -9,8 +9,8 @@ Covers:
 
 The tests are hermetic: no real quiz-bank or context file is read; the engine
 is poked at the public API surface (pause_timer, resume_timer, get_context_blurb,
-_contexts, mark_context_seen) plus one escalator-style _check_context_auto_open
-smoke check via a synthetic question dict.
+_contexts). The context modal is manual-only (C key); the old auto-open
+plumbing was removed in the pre-v3.0 audit.
 """
 import json
 import os
@@ -207,69 +207,7 @@ def test_pause_timer_is_idempotent_and_safe_untimed():
 # 5. Auto-open hook (one-shot per session per topic)
 # ---------------------------------------------------------------------------
 
-def test_auto_open_fires_once_per_topic(tmp_path, monkeypatch):
-    """A fresh ladder with a blurb flips pending_context_auto_open; after
-    mark_context_seen the same (subject, topic) must NOT re-fire."""
-    monkeypatch.setattr(quiz_engine, '_CONTEXTS_DIR_OVERRIDE', str(tmp_path))
-    _write_subject_file(str(tmp_path), 'philosophy',
-                        {'anselm': {'context_blurb': 'Anselm blurb.'}})
-    eng = QuizEngine()
-    # Simulate the state _next_question leaves behind.
-    eng.subject = 'philosophy'
-    eng.current_question = _q(1, 'q-anselm-T1', 'right', topic='anselm')
-    eng._check_context_auto_open()
-    assert eng.pending_context_auto_open == ('philosophy', 'anselm')
-    # Record seen -> re-check must NOT flag it.
-    eng.pending_context_auto_open = None
-    eng.mark_context_seen('philosophy', 'anselm')
-    eng.current_question = _q(2, 'q-anselm-T2', 'right', topic='anselm')
-    eng._check_context_auto_open()
-    assert eng.pending_context_auto_open is None, \
-        "auto-open must not re-fire on a seen (subject, topic)"
-
-
-def test_auto_open_skipped_when_no_blurb(tmp_path, monkeypatch):
-    """No blurb → no auto-open flag. Players can still press C, but the
-    modal politely says there's nothing to show."""
-    monkeypatch.setattr(quiz_engine, '_CONTEXTS_DIR_OVERRIDE', str(tmp_path))
-    # empty contexts dir
-    eng = QuizEngine()
-    eng.subject = 'philosophy'
-    eng.current_question = _q(1, 'q-anselm-T1', 'right', topic='anselm')
-    eng._check_context_auto_open()
-    assert eng.pending_context_auto_open is None
-
-
-def test_auto_open_skipped_when_no_topic_field(tmp_path, monkeypatch):
-    """A question missing the topic field never auto-opens (nothing to
-    join on). Loader-level graceful handling for the current bank schema
-    which pre-dates the topic field."""
-    monkeypatch.setattr(quiz_engine, '_CONTEXTS_DIR_OVERRIDE', str(tmp_path))
-    _write_subject_file(str(tmp_path), 'philosophy',
-                        {'anselm': {'context_blurb': 'Anselm blurb.'}})
-    eng = QuizEngine()
-    eng.subject = 'philosophy'
-    eng.current_question = _q(1, 'q-anselm-T1', 'right')  # no topic
-    eng._check_context_auto_open()
-    assert eng.pending_context_auto_open is None
-    assert eng.current_context_blurb() is None
-
 
 # ---------------------------------------------------------------------------
 # 6. End-to-end wiring smoke via start_quiz
 # ---------------------------------------------------------------------------
-
-def test_start_quiz_sets_auto_open_when_blurb_present(tmp_path, monkeypatch):
-    """When start_quiz runs and the first question's topic has a blurb,
-    pending_context_auto_open is set; the harness/game loop reads it next
-    tick to transition to STATE_QUIZ_CONTEXT."""
-    monkeypatch.setattr(quiz_engine, '_CONTEXTS_DIR_OVERRIDE', str(tmp_path))
-    _write_subject_file(str(tmp_path), 'philosophy',
-                        {'anselm': {'context_blurb': 'Anselm blurb.'}})
-    eng = QuizEngine()
-    bank = [_q(1, f'anselm-T1-Q{i}', 'right', topic='anselm') for i in range(4)]
-    eng._cache['philosophy'] = bank
-    eng.start_quiz('threshold', 'philosophy', tier=1,
-                   callback=lambda r: None, threshold=1)
-    assert eng.pending_context_auto_open == ('philosophy', 'anselm')
-    assert eng.current_context_blurb() == 'Anselm blurb.'

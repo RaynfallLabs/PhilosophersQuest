@@ -1078,132 +1078,6 @@ class RenderMixin:
             self._ui_footer(panel, "Enter / Space / Esc: continue")
             return
 
-
-        enc = self._npc_encounter_active
-        if enc is None:
-            return
-
-        draw_overlay(self.screen, 190)
-
-        bw, bh = min(780, layout.GAME_W - 40), 440
-        bx = (layout.GAME_W - bw) // 2
-        by = (layout.WINDOW_H - bh) // 2
-
-        draw_dark_panel(self.screen, (bx, by, bw, bh),
-                        border_color=tuple(enc['color']))
-        draw_header_bar(self.screen, (bx, by, bw, 44),
-                        text=enc['name'].upper(),
-                        font=get_font('heading', 20),
-                        text_color=tuple(enc['color']))
-
-        font = get_font('body', 17)
-        font_sm = get_font('body', 15)
-        max_w = bw - 50
-
-        phase = self._npc_encounter_phase
-
-        if phase == 'text':
-            self._draw_npc_wordwrap(enc['text'], font, bx + 25, by + 54,
-                                    max_w, FP.PARCHMENT_LIGHT, line_h=22)
-            footer = font_sm.render("Press ENTER to continue",
-                                    True, FP.HINT_TEXT)
-            self.screen.blit(footer,
-                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
-
-        elif phase == 'options':
-            y = by + 54
-            # Options — all same color, no karma hints
-            for i, opt in enumerate(enc['options']):
-                label = opt['label']
-                col = FP.PARCHMENT_LIGHT
-                prefix = f"[{i+1}] "
-                opt_text = f"{prefix}{label}"
-                # Word-wrap long labels
-                wrapped = self._wordwrap_text(opt_text, font_sm, max_w - 10)
-                for wline in wrapped:
-                    surf = font_sm.render(wline, True, col)
-                    self.screen.blit(surf, (bx + 30, y))
-                    y += 20
-                y += 8
-
-            footer = font_sm.render("Press 1-3 to choose, ESC to walk away",
-                                    True, FP.HINT_TEXT)
-            self.screen.blit(footer,
-                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
-
-        elif phase == 'select_item':
-            y = by + 54
-            header = font.render("Choose an item to give:", True, FP.PARCHMENT_LIGHT)
-            self.screen.blit(header, (bx + 25, y))
-            y += 30
-
-            items = self._npc_item_list
-            visible = items[self._npc_item_scroll:self._npc_item_scroll + 9]
-            for i, item in enumerate(visible):
-                dname = self._display_name(item)
-                txt = f"[{chr(97 + i)}] {dname}"
-                surf = font_sm.render(txt, True, FP.PARCHMENT_LIGHT)
-                self.screen.blit(surf, (bx + 30, y))
-                y += 22
-
-            if len(items) > 9:
-                scroll_hint = font_sm.render(
-                    f"({self._npc_item_scroll + 1}-"
-                    f"{min(self._npc_item_scroll + 9, len(items))}"
-                    f" of {len(items)}, arrows to scroll)",
-                    True, FP.HINT_TEXT)
-                self.screen.blit(scroll_hint, (bx + 30, y + 8))
-
-            footer = font_sm.render("Press a-z to select, ESC to go back",
-                                    True, FP.HINT_TEXT)
-            self.screen.blit(footer,
-                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
-
-        elif phase == 'outcome':
-            self._draw_npc_wordwrap(self._npc_outcome_text, font,
-                                    bx + 25, by + 54, max_w,
-                                    FP.PARCHMENT_LIGHT, line_h=22)
-            footer = font_sm.render("Press ENTER to continue",
-                                    True, FP.HINT_TEXT)
-            self.screen.blit(footer,
-                             (bx + (bw - footer.get_width()) // 2, by + bh - 35))
-
-    def _draw_npc_wordwrap(self, text: str, font, x: int, y: int,
-                            max_w: int, color: tuple, line_h: int = 22):
-        """Helper: word-wrap and draw text for NPC encounter screens."""
-        words = text.split()
-        lines, line = [], []
-        for word in words:
-            test = ' '.join(line + [word])
-            if font.size(test)[0] > max_w:
-                if line:
-                    lines.append(' '.join(line))
-                line = [word]
-            else:
-                line.append(word)
-        if line:
-            lines.append(' '.join(line))
-        for txt_line in lines:
-            surf = font.render(txt_line, True, color)
-            self.screen.blit(surf, (x, y))
-            y += line_h
-
-    def _wordwrap_text(self, text: str, font, max_w: int) -> list[str]:
-        """Return a list of word-wrapped lines for the given text."""
-        words = text.split()
-        lines, line = [], []
-        for word in words:
-            test = ' '.join(line + [word])
-            if font.size(test)[0] > max_w:
-                if line:
-                    lines.append(' '.join(line))
-                line = [word]
-            else:
-                line.append(word)
-        if line:
-            lines.append(' '.join(line))
-        return lines
-
     def _draw_judgment(self):
         """Draw the Altar of the Last Judgment result overlay."""
         if self.karma > 0:
@@ -1935,9 +1809,7 @@ class RenderMixin:
         PAD = L['PAD']
         GAP = L['GAP']
         HEADER_H    = L['header_h']
-        TIMER_H     = L['timer_h']
         STATUS_H    = L['status_h']
-        COMBAT_H    = L['combat_h']
         SECTION_GAP = L['section_gap']
         q_font      = L['question_font']
         c_font      = L['choice_font']
@@ -2975,12 +2847,12 @@ class RenderMixin:
         _ = overflow  # unused but documented via win['overflow']
         return y + 32
 
-    def _draw_decision_menu_variant_a(self, *, title: str, entries: list,
+    def _draw_decision_menu(self, *, title: str, entries: list,
                                       selected: int, context_lines: list,
                                       hint: str, border_color=None, tabs=None,
                                       active_tab: int = 0, tab_counts=None,
                                       scroll_attr: str | None = None):
-        """Large decision menu, Variant B.
+        """Large decision menu (list on the left, detail pane on the right).
 
         Kept under the original helper name so existing menu call sites stay
         stable. The layout is now a wide choices list plus an inspector pane;
@@ -3100,7 +2972,7 @@ class RenderMixin:
         hs = self.font_sm.render(hint, True, FP.HINT_TEXT)
         self.screen.blit(hs, (bx + (bw - hs.get_width()) // 2, by + bh - footer_h + 4))
 
-    def _draw_fast_picker_variant_b(self, *, title: str, entries: list,
+    def _draw_fast_picker(self, *, title: str, entries: list,
                                     selected: int, hint: str, border_color=None,
                                     subtitle: str = '', tabs=None,
                                     active_tab: int = 0, tab_counts=None):
@@ -3298,7 +3170,7 @@ class RenderMixin:
             ("Weapons, armor, shields, accessories, and unequip each keep their own tabs.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="EQUIP / UNEQUIP",
             entries=entries,
             selected=selected,
@@ -3729,7 +3601,7 @@ class RenderMixin:
                 bits.append('+'.join(dt))
             if getattr(w, 'two_handed', False):
                 bits.append('2H')
-            sb = getattr(w, 'special_blessing', None) or getattr(w, 'unique_effect', None)
+            sb = getattr(w, 'unique_effect', None)
             if sb:
                 bits.append(str(sb)[:32])
         return ', '.join(bits) if bits else '-'
@@ -4056,7 +3928,7 @@ class RenderMixin:
                 'badge_color': FP.CYAN_ACCENT,
             })
         selected = self._menu_clamp_selection('_wand_sel', len(entries))
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title="ZAP WAND",
             entries=entries,
             selected=selected,
@@ -4098,7 +3970,7 @@ class RenderMixin:
                 'badge_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
             })
         selected = self._menu_clamp_selection('_spell_sel', len(entries))
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title="CAST SPELL",
             entries=entries,
             selected=selected,
@@ -4193,7 +4065,7 @@ class RenderMixin:
             ("Unknown writings show their unidentified appearance until studied.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="READ",
             entries=entries,
             selected=selected,
@@ -4253,7 +4125,7 @@ class RenderMixin:
             ("One question. Right: fully identified. Wrong: the Shard stuns you.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="IDENTIFY ITEM",
             entries=entries,
             selected=selected,
@@ -4328,7 +4200,7 @@ class RenderMixin:
             ("Cooking uses one cooking question. Right = full meal; wrong = ruined.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="COOK",
             entries=entries,
             selected=selected,
@@ -4381,7 +4253,7 @@ class RenderMixin:
             ("Altars, fountains, forges, and quest tiles may react to what you drop.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="DROP ITEM",
             entries=entries,
             selected=selected,
@@ -4423,7 +4295,7 @@ class RenderMixin:
         _eat_counts = [sum(1 for it in self.eat_menu_items if filt(it))
                        for _, filt in self._EAT_TABS]
         selected = self._menu_clamp_selection('_eat_sel', len(entries))
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title="EAT",
             entries=entries,
             selected=selected,
@@ -4463,7 +4335,7 @@ class RenderMixin:
                 'badge_color': badge_col,
             })
         selected = self._menu_clamp_selection('_quaff_sel', len(entries))
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title="QUAFF POTION",
             entries=entries,
             selected=selected,
@@ -4508,7 +4380,7 @@ class RenderMixin:
         _throw_counts = [sum(1 for it in self.throw_menu_items if filt(it))
                          for _, filt in self._THROW_TABS]
         selected = self._menu_clamp_selection('_throw_sel', len(entries))
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title="THROW",
             entries=entries,
             selected=selected,
@@ -4542,7 +4414,7 @@ class RenderMixin:
                 'badge_color': badge_col,
             })
         selected = self._menu_clamp_selection('_power_sel', len(entries))
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title="ACTIVE POWERS [V]",
             entries=entries,
             selected=selected,
@@ -4614,7 +4486,7 @@ class RenderMixin:
             ("Choose a companion with arrows or letters, then use the action keys.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="COMPANIONS",
             entries=entries,
             selected=selected,
@@ -4654,7 +4526,7 @@ class RenderMixin:
         title = "SPECIAL ATTACKS"
         if pet is not None:
             title = f"{pet.name.upper()} - SPECIAL ATTACKS"
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title=title,
             entries=entries,
             selected=selected,
@@ -4694,7 +4566,7 @@ class RenderMixin:
         full_title = title
         if pet is not None:
             full_title = f"{title} - {pet.name.upper()}"
-        self._draw_fast_picker_variant_b(
+        self._draw_fast_picker(
             title=full_title,
             entries=entries,
             selected=selected,
@@ -5774,8 +5646,6 @@ class RenderMixin:
         is_corpse = isinstance(subject, Corpse)
         id_level = self._lore_direct_id_level(subject)
         border = FP.LORE_GOLD_BORDER if is_corpse else FP.LORE_BLUE_BORDER
-        title_name = (getattr(subject, 'monster_name', None) if is_corpse
-                      else self._display_name(subject))
         panel = self._ui_modal_panel(
             "BESTIARY DOSSIER" if is_corpse else "ITEM DOSSIER",
             border_color=border,
@@ -6071,7 +5941,7 @@ class RenderMixin:
              FP.BODY_TEXT, self.font_sm),
             (f"Known items in tab: {len(entries)}", FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="EXAMINE ITEM",
             entries=entries,
             selected=selected,
@@ -6136,7 +6006,7 @@ class RenderMixin:
             ("Use H before buying if you want one chance to haggle that item.",
              FP.FADED_TEXT, self.font_sm),
         ])
-        self._draw_decision_menu_variant_a(
+        self._draw_decision_menu(
             title="TRAVELLING MERCHANT",
             entries=entries,
             selected=selected,

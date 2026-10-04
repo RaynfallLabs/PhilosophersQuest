@@ -156,14 +156,6 @@ class QuizEngine:
         # (subject, topic). Missing bank file -> that subject contributes no
         # entries; a question without a `topic` field never has a blurb.
         self._contexts: dict[tuple[str, str], str] = {}
-        # Topics the player has already encountered during THIS process. Used
-        # to auto-open the modal exactly once per topic per session; reset by
-        # construction of a fresh QuizEngine (new game) and NOT persisted.
-        self._quiz_context_seen: set[tuple[str, str]] = set()
-        # Set by _next_question when a brand-new (subject, topic) is drawn AND
-        # a blurb exists for it. main.py's update loop reads this and flips to
-        # STATE_QUIZ_CONTEXT, then clears the flag. None means "nothing to do".
-        self.pending_context_auto_open: tuple[str, str] | None = None
         # Timer pause state for the context modal. _timer_paused freezes the
         # countdown in `update()`; the saved value is informational only (the
         # countdown resumes from whatever `time_remaining` already holds).
@@ -293,7 +285,6 @@ class QuizEngine:
         # on close within one quiz lifetime.
         self._timer_paused = False
         self._timer_paused_at = 0.0
-        self.pending_context_auto_open = None
         # Tablet of Destinies: allow one reroll of a wrong answer
         # Set externally by main.py before starting quiz
         # The flag is one-shot: it applies to THIS quiz only. Left sticky, a
@@ -467,10 +458,6 @@ class QuizEngine:
         else:
             self.confused_order = None
 
-        # Opt-in orientation: if this ladder has a blurb AND the player hasn't
-        # seen it this session, flag an auto-open. main.py's update loop
-        # transitions STATE_QUIZ -> STATE_QUIZ_CONTEXT when it sees the flag.
-        self._check_context_auto_open()
 
     def _advance(self):
         mode = self.mode
@@ -772,8 +759,8 @@ class QuizEngine:
     def get_context_blurb(self, subject: str, topic: str | None) -> str | None:
         """Return the blurb for a (subject, topic), or None if unknown.
 
-        A None/empty topic always returns None — see the note in
-        ``_check_context_auto_open`` about questions that lack the field.
+        A None/empty topic always returns None: a question without a topic
+        cannot be matched to a blurb.
         """
         if not subject or not topic:
             return None
@@ -785,35 +772,6 @@ class QuizEngine:
         if not q:
             return None
         return self.get_context_blurb(self.subject, q.get('topic'))
-
-    def mark_context_seen(self, subject: str, topic: str | None):
-        """Record that the player has seen the context for this (subject, topic).
-
-        Called when the modal is opened — manually or auto. Guards against
-        re-firing the one-shot auto-open on the same ladder for the rest of
-        the session.
-        """
-        if not subject or not topic:
-            return
-        self._quiz_context_seen.add((subject, topic))
-
-    def _check_context_auto_open(self):
-        """Set ``pending_context_auto_open`` if the current (subject, topic) has
-        a blurb and hasn't been seen this session. Called from _next_question
-        and _auto_pass_mastered_round so escalator climbs also trigger.
-        """
-        q = self.current_question
-        if not q:
-            return
-        topic = q.get('topic')
-        if not topic:
-            return  # topic field is required to pin a blurb; silently skip
-        key = (self.subject, topic)
-        if key in self._quiz_context_seen:
-            return
-        if key not in self._contexts:
-            return
-        self.pending_context_auto_open = key
 
     # --- Timer pause / resume (context modal) ---
 
