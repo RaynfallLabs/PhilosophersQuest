@@ -1517,6 +1517,7 @@ class CombatMixin:
                         knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
+            self._fire_strike_finisher(monster, chain, damage, killed)
             if chain == 0:
                 self.add_message(
                     f"Your shot flies wide -- you miss the {monster.name}!", 'warning'
@@ -1564,6 +1565,26 @@ class CombatMixin:
         self.player._combat_pets_ref = self.pets
         self.player._combat_player_taken_damage = False
         player_attack(self.player, monster, self.quiz_engine, on_complete, ammo=ammo_item)
+
+    def _fire_strike_finisher(self, monster, chain: int, damage: int,
+                              killed: bool) -> None:
+        """Kick off the end-of-attack flourish (effects/strike_finisher.py).
+        Purely visual and non-blocking; never allowed to break combat."""
+        rt = getattr(self, 'effects_runtime', None)
+        if rt is None:
+            return
+        try:
+            rank_name, rank_color = self._chain_rank(chain)
+        except Exception:
+            rank_name, rank_color = '', (230, 230, 230)
+        rt.fire('strike_finisher', {
+            'chain': chain,
+            'damage': damage,
+            'killed': killed,
+            'rank_name': rank_name,
+            'rank_color': rank_color,
+            'target_name': getattr(monster, 'name', ''),
+        })
 
     # ------------------------------------------------------------------
     # Melee combat
@@ -1621,6 +1642,7 @@ class CombatMixin:
                         knocked: bool = False, crit: bool = False, **kwargs):
             self.state = STATE_PLAYER
             self.combat_target = None
+            self._fire_strike_finisher(monster, chain, damage, killed)
             # Tablet of Destinies: mark reroll as used this floor.
             # Chain-equip passive one_thousand_and_one consumes its per-floor charge when reroll fires.
             if getattr(self.quiz_engine, 'reroll_was_used', False):
@@ -1646,6 +1668,7 @@ class CombatMixin:
                 # Vidar's Sandal instant kill!
                 monster.hp = 0
                 monster.alive = False
+                self._fire_strike_finisher(monster, chain, damage, True)
                 _snd.play('monster_hit')
                 self.add_message(
                     "You plant Vidar's Sandal against Fenrir's lower jaw!", 'combat')

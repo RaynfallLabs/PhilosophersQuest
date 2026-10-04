@@ -310,6 +310,7 @@ def build_default_runtime(config_path: str | None = None) -> EffectsRuntime:
     from effects.chain_aura import ChainAuraPulse
     from effects.fullscreen_takeover import FullscreenTakeover
     from effects.identify_orb import IdentifyOrb
+    from effects.strike_finisher import StrikeFinisher
 
     runtime.register(
         'chain_math_combat',
@@ -326,5 +327,9 @@ def build_default_runtime(config_path: str | None = None) -> EffectsRuntime:
     runtime.register(
         'identify_success_orb',
         IdentifyOrb(runtime.effect_config('identify_success_orb')),
+    )
+    runtime.register(
+        'strike_finisher',
+        StrikeFinisher(runtime.effect_config('strike_finisher')),
     )
     return runtime

@@ -53,6 +53,16 @@
         "shorten_to_ms": 900
       }
     },
+    "strike_finisher": {
+      "handler": "strike_finisher",
+      "scope": "one_shot",
+      "durations_ms": {"miss": 350, "light": 500, "ranked": 750, "big": 900},
+      "big_chain": 10,
+      "reduced_motion": {
+        "disable": ["rings", "streak", "drift"],
+        "static_ms": 300
+      }
+    },
     "identify_success_orb": {
       "handler": "identify_orb",
       "scope": "one_shot",
