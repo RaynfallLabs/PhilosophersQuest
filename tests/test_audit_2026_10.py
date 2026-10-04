@@ -395,7 +395,11 @@ def test_w11_feared_ranged_monster_flees_instead_of_shooting():
     assert called == ['flee']
 
 
-def test_w16_multi_attack_applies_on_hit_effect_once():
+def test_w16_multi_attack_applies_on_hit_effect_once(monkeypatch):
+    # Pin the to-hit rolls: a natural 1 on the first swing made this flaky.
+    import random as _random
+    monkeypatch.setattr(_random, 'randint', lambda a, b: b)
+    monkeypatch.setattr(_random, 'random', lambda: 0.0)
     m = _monster(tags=['giant'])
     seen = []
     m._apply_attack_effect = lambda atk, player: (seen.append(atk['name']) or ' You are stunned!')

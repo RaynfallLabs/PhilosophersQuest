@@ -72,6 +72,11 @@ HP_SET: dict[str, int] = {
     # goblin. (Also keeps it on the same floors as the dragons it is cooked
     # with: see test_every_recipe_monster_parts_share_a_floor_band.)
     "cath_palug": 31,
+    # Reviewer flags: the master was weaker than its own servant.
+    "vampire": 146,          # vampire_spawn is 122
+    "werewolf_alpha": 40,    # werewolf is 31
+    # A stitched golem and a swollen battering-ram corpse had the HP of a rat.
+    "flesh_golem": 31, "zombie_hulk": 23,
 }
 
 # Deep-dungeon monsters whose HP was left far under the band for the depth

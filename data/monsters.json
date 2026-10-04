@@ -2308,14 +2308,14 @@
       30,
       80
     ],
-    "hp": "12d10+42",
+    "hp": "16d10+57",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 2,
-    "peak_floor": 30,
-    "spread": 5,
+    "peak_floor": 34,
+    "spread": 7,
     "peak_weight": 2.0,
-    "min_level": 27,
+    "min_level": 30,
     "attacks": [
       {
         "name": "Bite",
@@ -3638,14 +3638,14 @@
       120,
       100
     ],
-    "hp": "2d8-2",
+    "hp": "9d8-9",
     "speed": 6,
     "ai_pattern": "aggressive",
     "thac0": 15,
-    "peak_floor": 1,
-    "spread": 4,
+    "peak_floor": 14,
+    "spread": 5,
     "peak_weight": 3.0,
-    "min_level": 1,
+    "min_level": 11,
     "attacks": [
       {
         "name": "Slam",
@@ -10388,14 +10388,14 @@
       150,
       80
     ],
-    "hp": "2d8",
+    "hp": "5d8",
     "speed": 4,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 2,
+    "peak_floor": 11,
     "spread": 4,
     "peak_weight": 6.0,
-    "min_level": 1,
+    "min_level": 9,
     "attacks": [
       {
         "name": "Slam",
@@ -14541,14 +14541,14 @@
       160,
       80
     ],
-    "hp": "4d8+3",
+    "hp": "8d8+6",
     "speed": 12,
     "ai_pattern": "aggressive",
     "thac0": 12,
-    "peak_floor": 10,
-    "spread": 4,
+    "peak_floor": 17,
+    "spread": 5,
     "peak_weight": 2.0,
-    "min_level": 8,
+    "min_level": 14,
     "attacks": [
       {
         "name": "Savage Claw",
@@ -22419,15 +22419,15 @@
       {
         "name": "Lion Bite",
         "damage": "2d8+3",
-        "type": "pierce",
-        "effect": "burning",
-        "effect_chance": 0.4,
-        "effect_duration": 3
+        "type": "pierce"
       },
       {
         "name": "Dragon Breath",
         "damage": "2d4+1",
-        "type": "fire"
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.4,
+        "effect_duration": 3
       },
       {
         "name": "Goat Gore",
