@@ -465,6 +465,10 @@ class Pet:
         for m in monsters:
             if not m.alive:
                 continue
+            # Never hunt allies: the secret cow, the unicorn, moral-encounter
+            # NPCs and the Heavenly Host all live in the monster list.
+            if getattr(m, 'is_allied', False):
+                continue
             d = max(abs(m.x - self.x), abs(m.y - self.y))
             if d < nearest_dist:
                 nearest = m

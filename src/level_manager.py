@@ -215,8 +215,13 @@ class LevelManager:
         tiles = list(room.inner_tiles())
         _rng.shuffle(tiles)
         spawn_pos = None
+        # Check the WHOLE footprint, not just the anchor tile: the 2x2
+        # mini-bosses (Tiamat, Surtur, Ymir, Hrungnir) could otherwise spawn
+        # half inside a wall on a room's east or south edge.
+        from dungeon import _footprint_fits
         for tx, ty in tiles:
-            if dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
+            if (dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied
+                    and _footprint_fits(mdata, tx, ty, dungeon, monsters)):
                 spawn_pos = (tx, ty)
                 break
         if spawn_pos is None:

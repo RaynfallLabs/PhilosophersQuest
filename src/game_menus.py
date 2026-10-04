@@ -1895,7 +1895,13 @@ class MenuMixin:
         sphere.lore = (f"A Soul Sphere humming with the bound spirit of "
                        f"{pet.name}. Hurl it to summon them back to your side.")
         sphere.bound_pet = pet
-        self.player.add_to_inventory(sphere)
+        # The pack can refuse the sphere (over carry capacity). Removing the
+        # pet anyway deleted it for good, so stop before touching it.
+        if not self.player.add_to_inventory(sphere):
+            self.add_message(
+                f"You are carrying too much to hold {pet.name}'s sphere.",
+                'warning')
+            return
         # Remove the pet from the active list
         try:
             self.pets.remove(pet)

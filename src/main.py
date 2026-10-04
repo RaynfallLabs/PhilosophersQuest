@@ -4243,9 +4243,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             _snd.play('pickup')
             # Philosopher's Stone grants identify_sight — auto-identify on pickup
             if self.player.has_effect('identify_sight'):
-                item.identified = True
-                item.id_level = max(getattr(item, 'id_level', 0), 4)
-                self.player.known_item_ids.add(item.id)
+                # Full identification of this copy (id_level 5 + BUC), as
+                # the status text promises. It used to stop at 4 ("type
+                # known"), so the item still read "Unidentified <name>".
+                if hasattr(item, 'id_level'):
+                    self._full_identify(item)
+                else:
+                    self.player.known_item_ids.add(item.id)
             # Pattern Recognition (75 IDs): lesser COMMON items reveal their
             # TYPE at a glance (true name + stats + lore). Each copy's BUC
             # and enchant stay hidden — the True Name model applies to

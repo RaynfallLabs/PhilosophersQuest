@@ -306,7 +306,8 @@ class CombatMixin:
                 if crosses_altar:
                     self.player.remove_from_inventory(weapon)
                     self._activate_odin_shrine(weapon, reforge=True)
-                    self._advance_turn()
+                    # No _advance_turn() here: the caller advances the turn
+                    # after every throw, so this one made it cost two.
                     return
             elif self._throw_crosses_tile(px, py, tx, ty, ax, ay):
                 self.add_message(
@@ -1013,10 +1014,12 @@ class CombatMixin:
         target = monster_at_tile(self.monsters, cx, cy)
         if not target or (cx, cy) not in self.visible:
             self.add_message("No valid target.", 'warning')
+            self._refund_pending_spell()
             self.state = STATE_PLAYER
             return
         if not _line_of_sight(self.player.x, self.player.y, cx, cy, self.dungeon):
             self.add_message("No clear line of sight!", 'warning')
+            self._refund_pending_spell()
             self.state = STATE_PLAYER
             return
 
@@ -1568,6 +1571,25 @@ class CombatMixin:
         # shot was resolved with the MELEE weapon's stats.
         player_attack(self.player, monster, self.quiz_engine, on_complete,
                       ammo=ammo_item, ranged=True)
+
+    def _refund_pending_spell(self) -> None:
+        """Give back the MP of a targeted spell that was never cast.
+
+        _cast_spell deducts MP before entering STATE_TARGET. ESC refunds it
+        (game_input); confirming on an invalid tile used to keep the MP and
+        leave _pending_spell set.
+        """
+        spell = getattr(self, '_pending_spell', None)
+        if spell is None:
+            return
+        try:
+            cost = int(spell.get('mp_cost', 0))
+        except (AttributeError, TypeError, ValueError):
+            cost = 0
+        if cost > 0:
+            self.player.mp = min(self.player.max_mp, self.player.mp + cost)
+        self._pending_spell = None
+        self._pending_spell_id = None
 
     def _process_collateral_kills(self, primary, alive_before: set,
                                   chain: int = 0) -> None:

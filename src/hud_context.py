@@ -91,11 +91,17 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
     #                                           but this copy's BUC is a
     #                                           mystery still)
     #   TYPE unknown                         -> unidentified appearance
-    if hasattr(item, "identified"):
+    # "This copy is identified" means id_level 5, the same test the menus
+    # use (Game._display_name). `item.identified` is true from level 4
+    # ("type known"), which made the HUD show a plain name where every menu
+    # showed "Unidentified <name>" for the same item.
+    if hasattr(item, "id_level"):
         try:
-            instance_identified = bool(getattr(item, "identified", False))
-        except Exception:
+            instance_identified = int(getattr(item, "id_level", 0) or 0) >= 5
+        except (TypeError, ValueError):
             instance_identified = False
+    elif hasattr(item, "identified"):
+        instance_identified = bool(getattr(item, "identified", False))
     else:
         instance_identified = True
 

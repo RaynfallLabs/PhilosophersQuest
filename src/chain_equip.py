@@ -149,8 +149,15 @@ def apply_tier_bonuses(player, item, tier: int) -> None:
         elif key.startswith('status_'):
             status_name = key[len('status_'):]
             duration = int(value) if isinstance(value, (int, float)) else 1
-            player.status_effects[status_name] = max(
-                player.status_effects.get(status_name, 0), duration)
+            if duration >= 900:
+                # The data writes "while worn" as 999 turns. Stored as a
+                # countdown it expired three or four floors in with the item
+                # still equipped. -1 is the engine's "permanent" value;
+                # revert_tier_bonuses removes it when the item comes off.
+                player.status_effects[status_name] = -1
+            elif player.status_effects.get(status_name, 0) >= 0:
+                player.status_effects[status_name] = max(
+                    player.status_effects.get(status_name, 0), duration)
             item._chain_statuses.append(status_name)
         else:
             # Unknown key — stash on item for use-site queries

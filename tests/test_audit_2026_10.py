@@ -215,6 +215,85 @@ def test_b8_unequip_reverses_weapon_passives():
     assert 'self.player._remove_weapon_passives(item)' in block
 
 
+# ---- B12: "while worn" chain-equip statuses are permanent, not 999 turns ---
+
+def test_b12_chain_equip_while_worn_status_is_permanent():
+    from types import SimpleNamespace
+    import chain_equip
+    src = (_ROOT / 'src' / 'chain_equip.py').read_text(encoding='utf-8')
+    assert 'player.status_effects[status_name] = -1' in src
+    # tick_all leaves a permanent (-1) effect alone.
+    from player import Player
+    from status_effects import tick_all
+    p = Player()
+    p.status_effects.clear()
+    p.status_effects['fire_resist'] = -1
+    for _ in range(5):
+        tick_all(p)
+    assert p.status_effects.get('fire_resist') == -1
+    assert p.has_effect('fire_resist')
+    del SimpleNamespace, chain_equip
+
+
+# ---- B20: id()-keyed combat marks are not saved -----------------------------
+
+def test_b20_id_keyed_marks_are_dropped_on_save():
+    from player import Player
+    p = Player()
+    p._death_omen_target = 123456
+    p._et_tu_target = 654321
+    p._revealed_tag_ids = {1, 2, 3}
+    state = p.__getstate__()
+    for key in ('_death_omen_target', '_et_tu_target', '_revealed_tag_ids'):
+        assert key not in state
+
+
+# ---- B22: HUD and menus agree on what "identified" means -------------------
+
+def test_b22_hud_needs_id_level_5_for_a_plain_name():
+    from types import SimpleNamespace
+    from hud_context import hud_item_name
+    player = SimpleNamespace(knows_item_type=lambda item: True,
+                             known_item_ids=set())
+    item = SimpleNamespace(id='ring_x', name='Ring of X',
+                           unidentified_name='A Plain Ring', id_level=4,
+                           identified=True, buc='uncursed', buc_known=False,
+                           count=1)
+    assert hud_item_name(player, item).startswith('Unidentified')
+    item.id_level = 5
+    assert hud_item_name(player, item) == 'Ring of X'
+
+
+# ---- W20: Cu Chulainn's permanent fear immunity (-1) actually applies ------
+
+def test_w20_permanent_fear_immunity_blocks_fear():
+    from player import Player
+    p = Player()
+    p.status_effects.clear()
+    p.status_effects['fear_immune'] = -1
+    assert p.add_effect('feared', 5) is False
+    assert not p.has_effect('feared')
+
+
+# ---- W9: pets do not target allied NPCs -------------------------------------
+
+def test_w9_pet_targeting_skips_allies():
+    src = (_ROOT / 'src' / 'pet_system.py').read_text(encoding='utf-8')
+    block = src[src.index('# Find nearest alive enemy monster'):]
+    block = block[:block.index('# Adjacent enemy')]
+    assert "getattr(m, 'is_allied', False)" in block
+
+
+# ---- W18: recalling a pet with a full pack keeps the pet -------------------
+
+def test_w18_pet_recall_checks_the_pack_first():
+    src = (_ROOT / 'src' / 'game_menus.py').read_text(encoding='utf-8')
+    block = src[src.index('sphere.bound_pet = pet'):]
+    block = block[:block.index('dissolves into the sphere')]
+    assert block.index('if not self.player.add_to_inventory(sphere):') < \
+        block.index('self.pets.remove(pet)')
+
+
 # ---- B3: a cursed wielded weapon must not eat the new weapon ---------------
 
 def test_b3_equip_checks_current_weapon_before_removing_new_one():

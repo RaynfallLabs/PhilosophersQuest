@@ -632,6 +632,11 @@ class Player:
         # the run's appearance on accessories entering the pack. Unpicklable;
         # re-set on load. Dropping it on save keeps the player picklable.
         state.pop('_appearance_stamp', None)
+        # Combat marks keyed by id(monster). Object ids do not survive a
+        # save/load, and a stale id can collide with an unrelated monster
+        # after reload (granting its +25% / +50% damage). Drop them.
+        for _mark in ('_death_omen_target', '_et_tu_target', '_revealed_tag_ids'):
+            state.pop(_mark, None)
         return state
 
     def __setstate__(self, state):
@@ -730,7 +735,8 @@ class Player:
                 and self.max_hp > 0 and self.hp <= self.max_hp * 0.3:
             return False
         # Hero buff: fear_immune (Ash's berserk chain >= 3) — block fear application.
-        if name == 'feared' and self.status_effects.get('fear_immune', 0) > 0:
+        # (!= 0, not > 0: Cu Chulainn's quirk stores -1 for "permanent".)
+        if name == 'feared' and self.status_effects.get('fear_immune', 0) != 0:
             return False
         # (Fey/aberration family masteries formerly halved charm/confuse durations
         # here; masteries have been removed from the game entirely.)
