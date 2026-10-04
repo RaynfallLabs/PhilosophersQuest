@@ -6077,7 +6077,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         True Name model:
           - instance identified (id_level >= 5)  -> "Sword of Michael"
           - type known but THIS copy not yet
-            identified                            -> "unidentified Sword of Michael"
+            identified                            -> "Unidentified Sword of Michael"
           - type unknown                          -> "an ornate golden-hilted blade"
 
         The type_class check is what lets one Ring of Strength
@@ -6094,7 +6094,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if instance_known:
                 base = self._fix_name_case(item.name)
             elif type_known:
-                base = f"unidentified {self._fix_name_case(item.name)}"
+                base = f"Unidentified {self._fix_name_case(item.name)}"
             else:
                 base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
         # BUC prefix when known
@@ -6813,9 +6813,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # broken '? +0'.
             return item.item_class.replace('_', ' ').title()
         elif isinstance(item, Wand):
-            return f"effect: {item.effect.replace('_', ' ')}  charges: {item.charges}/{item.max_charges}"
+            return f"Effect: {item.effect.replace('_', ' ').title()}  Charges: {item.charges}/{item.max_charges}"
         elif isinstance(item, Scroll):
-            return f"effect: {item.effect.replace('_', ' ')}  tier {item.quiz_tier}"
+            return f"Effect: {item.effect.replace('_', ' ').title()}  tier {item.quiz_tier}"
         elif isinstance(item, Spellbook):
             return f"teaches: {item.spell_name}  {item.mp_cost} MP"
         elif isinstance(item, Food):

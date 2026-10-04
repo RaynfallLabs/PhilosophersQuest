@@ -90,10 +90,11 @@ def wand_tier_duration(base: int, tier: int) -> int:
 
 
 def fix_name_case(name: str) -> str:
-    """Title-case the name only if it's entirely lowercase (avoids breaking 'STR+1')."""
-    if name == name.lower():
-        return name.title()
-    return name
+    """Title-case a display name. Delegates to ``naming.proper_name`` --
+    words that already carry capitals ('STR+1') are left untouched and
+    joining words ('of', 'the') stay lowercase."""
+    from naming import proper_name
+    return proper_name(name)
 
 
 def a_or_an(name: str) -> str:

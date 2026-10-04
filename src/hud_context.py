@@ -86,7 +86,7 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
     #   INSTANCE identified                  -> full name ("Rapier +2")
     #   TYPE known + BUC known               -> full name (BUC in braces
     #                                           carries the instance info)
-    #   TYPE known + BUC unknown             -> "unidentified <true name>"
+    #   TYPE known + BUC unknown             -> "Unidentified <true name>"
     #                                           (player knows what this is,
     #                                           but this copy's BUC is a
     #                                           mystery still)
@@ -118,7 +118,7 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
                 # HUD purposes; the {buc} tag below carries the delta.
                 raw = true_name
             else:
-                raw = f"unidentified {true_name}"
+                raw = f"Unidentified {true_name}"
         else:
             raw = getattr(item, "unidentified_name", getattr(item, "name", "item"))
 

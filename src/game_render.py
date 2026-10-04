@@ -30,6 +30,7 @@ from game_helpers import (
     fit_text as _gh_fit_text,
     wrap_text as _gh_wrap_text,
 )
+from naming import proper_name
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
 from game_states import (
@@ -54,13 +55,18 @@ def _threshold_line(label: str, n) -> str:
     """Threshold copy shared by kit + lore + bestiary panels.
 
     Phase 1 beautification (2026-10-03): the "(any wrong = fail)" tail used
-    to live here, but it was duplicated across 12+ inspector / card / lore
-    sites. The quiz-modal subtitle (``src/game_render.py:2205``) is now the
-    SOLE place the warning is drawn, where the player is actively taking the
-    quiz. Callers pass their own label ("Equip", "Quiz", "Grammar", ...);
-    the shape is uniform.
+    to live here, duplicated across 12+ inspector / card / lore sites. It
+    is gone everywhere now -- the quiz-modal subtitle that briefly kept it
+    was removed too (2026-10-04 playtest). Callers pass their own label
+    ("Equip", "Quiz", "Grammar", ...); the shape is uniform.
     """
     return f"{label}: {n} correct"
+
+
+def _cap(raw) -> str:
+    """'two_handed sword' -> 'Two Handed Sword': capitalise a raw data value
+    (material, slot, damage type, aura, ...) for display in a panel."""
+    return proper_name(str(raw).replace('_', ' '))
 
 
 def _identify_status_label(id_level: int) -> str:
@@ -639,7 +645,7 @@ class RenderMixin:
                     active = ', '.join(tier_lines(item, achieved, 3))
                     if active:
                         lines.append(f"T{achieved} active: {active}")
-                lines.append(f"Attunes by {get_chain_subject(item)} {mode.replace('_', ' ')}")
+                lines.append(f"Attunes by {get_chain_subject(item)} {mode.replace('_', ' ').title()}")
             if isinstance(item, Weapon):
                 spec = self._kit_weapon_special(item, visible)
                 if spec and spec != '-':
@@ -894,7 +900,7 @@ class RenderMixin:
                 if isinstance(detail_item, Weapon):
                     meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
                 if getattr(detail_item, 'equip_chain_mode', ''):
-                    meta_rows.append(("Attune", getattr(detail_item, 'equip_chain_mode', '').replace('_', ' ')))
+                    meta_rows.append(("Attune", getattr(detail_item, 'equip_chain_mode', '').replace('_', ' ').title()))
             col_w = (body.w - 10) // 2
             for idx, (label, value) in enumerate(meta_rows[:6]):
                 r = pygame.Rect(body.x + (idx % 2) * (col_w + 10),
@@ -2129,10 +2135,18 @@ class RenderMixin:
         # measured off ``get_height`` of the fonts they actually use, so
         # font-size changes elsewhere don't push them out of their rows).
         header_h = max(42, self.font_md.get_height() + 14)
+        if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
+            # The chain counter always renders in font_lg (fixed slot), so
+            # the header must be tall enough for it at every chain length.
+            header_h = max(header_h, self.font_lg.get_height() + 6)
         timer_h  = max(28, self.font_sm.get_height() + 8)
         status_h = max(36, self.font_sm.get_height() + 14)
-        combat_h = max(110, 4 * self.font_sm.get_height() + 32) if is_combat else 0
+        combat_h = self._combat_hud_height() if is_combat else 0
         section_gap = 10
+        # Pinned tail under the question/choices block: optional combat
+        # strip, then the key-hint row, each preceded by one section gap.
+        tail_h = ((section_gap + combat_h) if is_combat else 0) \
+            + section_gap + status_h + PAD
 
         q_text = qe.current_question.get('question', '')
         choices = qe.current_question.get('choices', [])
@@ -2152,20 +2166,28 @@ class RenderMixin:
             (_gf('body', 22),   _gf('body', 17)),
             (_gf('body', 18),   _gf('body', 14)),
         ]
+        if is_combat:
+            # Math combat: the sum and its answers are a handful of
+            # characters, so lead with a larger tier. The normal ladder
+            # still follows if a long word problem needs it.
+            tiers.insert(0, (self.font_lg, self.font_md))
 
         # -- Measure a candidate tier ----------------------------------
         def _measure(q_font, c_font):
             q_lines = self._wrap_text(q_text, q_font, bw - PAD * 2)
             q_line_h = q_font.get_height() + 4
             q_height = len(q_lines) * q_line_h
+            if is_combat:
+                # Fixed-height question band so the answer cards sit at the
+                # same y for one-line and two-line sums alike.
+                q_height = max(q_height, 2 * q_line_h)
             c_line_h = c_font.get_height() + 3
             c_wrapped = [self._wrap_text(str(ch), c_font, c_text_w)
                          for ch in display_choices]
             max_c_lines = max((len(w) for w in c_wrapped), default=1)
             ch_height = max(52, max_c_lines * c_line_h + 20)
             scrollable_h = q_height + section_gap * 2 + ch_height * 2 + GAP
-            total_h = (header_h + timer_h + section_gap + scrollable_h
-                       + status_h + section_gap + combat_h + PAD)
+            total_h = header_h + timer_h + section_gap + scrollable_h + tail_h
             return {
                 'q_lines': q_lines, 'q_line_h': q_line_h, 'q_height': q_height,
                 'c_wrapped': c_wrapped, 'c_line_h': c_line_h,
@@ -2192,8 +2214,7 @@ class RenderMixin:
             # Panel height becomes viewport cap; derive the visible slice
             # the scrollable region gets.
             bh = max_panel_h
-            fixed_h = (header_h + timer_h + section_gap + status_h
-                       + section_gap + combat_h + PAD)
+            fixed_h = header_h + timer_h + section_gap + tail_h
             visible_scroll_h = max(60, bh - fixed_h)
         else:
             bh = measurement['total_h']
@@ -2225,17 +2246,14 @@ class RenderMixin:
                                   bw - PAD * 2,
                                   visible_scroll_h)
 
-        status_rect = pygame.Rect(bx + PAD,
-                                  by + bh - PAD - combat_h - status_h,
-                                  bw - PAD * 2, status_h)
-        if scrollable:
-            # Re-anchor the status rect right below the scroll area so the
-            # non-scrolling tail stays glued to the panel bottom.
-            status_rect = pygame.Rect(
-                bx + PAD,
-                scroll_rect.bottom + section_gap,
-                bw - PAD * 2, status_h,
-            )
+        # Pinned tail, stacked under the scroll area: combat strip (combat
+        # only), then the key-hint row at the very bottom of the panel.
+        tail_y = scroll_rect.bottom + section_gap
+        combat_rect = None
+        if is_combat:
+            combat_rect = pygame.Rect(bx, tail_y, bw, combat_h)
+            tail_y = combat_rect.bottom + section_gap
+        status_rect = pygame.Rect(bx + PAD, tail_y, bw - PAD * 2, status_h)
 
         # Clamp scroll offset to what the content actually allows.
         content_h = measurement['scrollable_h']
@@ -2251,6 +2269,7 @@ class RenderMixin:
             'question_rect': question_rect,
             'choice_rects': choice_rects,
             'status_rect': status_rect,
+            'combat_rect': combat_rect,
             'scroll_rect': scroll_rect,
             'q_lines': measurement['q_lines'],
             'q_line_h': measurement['q_line_h'],
@@ -2335,48 +2354,50 @@ class RenderMixin:
         # Mode / progress counter (top-right). Built BEFORE the header so the
         # title can reserve room for it and never overrun it (e.g. a long
         # lockpick/cook title sliding under "Chain xN").
+        badge = None          # (rect, rank_name, color) for chain modes
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
-            # Chain combat v2: show rank label + color-code the counter at
-            # each milestone. Font scales up one tier for the top ranks so the
-            # counter physically grows as the chain climbs.
+            # Chain combat: "xN" counter in a fixed-width slot at the right
+            # edge, rank badge in its own fixed slot just left of it. Both
+            # slots are sized for their widest content, so the header never
+            # reflows as the chain climbs -- only colour and digits change.
             rank_name, rank_color = self._chain_rank(qe.chain)
-            _c_font = self.font_lg if qe.chain >= 10 else self.font_md
-            c_text = f"Chain x{qe.chain}"
-            if rank_name:
-                c_text = f"{c_text} — {rank_name}"
             c_color = rank_color if qe.chain >= 3 else FP.SUCCESS_TEXT
-            c_surf = _c_font.render(c_text, True, c_color)
-        else:
+            c_surf = self.font_lg.render(f"x{qe.chain}", True, c_color)
+            counter_w = self.font_lg.size("x999")[0]
+            badge_w = max(self.font_sm.size(n)[0]
+                          for _t, n, _c in self._CHAIN_RANKS) + 20
+            badge_h = self.font_sm.get_height() + 6
+            badge_rect = pygame.Rect(
+                bx + bw - PAD - counter_w - 10 - badge_w,
+                by + (HEADER_H - badge_h) // 2, badge_w, badge_h)
+            if rank_name:
+                badge = (badge_rect, rank_name, rank_color)
+            reserve_w = counter_w + 10 + badge_w + PAD + 16
+        elif int(getattr(qe, 'required', 0) or 0) > 1:
             c_text  = f"{qe.correct_count} / {qe.required}"
             c_color = FP.CYAN_ACCENT
             c_surf = self.font_md.render(c_text, True, c_color)
+            reserve_w = c_surf.get_width() + PAD + 16
+        else:
+            # One-question quizzes (identify, harvest, cook, ...) need no
+            # progress counter -- "0 / 1" tells the player nothing.
+            c_surf = None
+            reserve_w = 0
 
-        # Threshold-mode subtitle: make the zero-tolerance rule visible on
-        # the quiz screen itself so the player knows the first wrong answer
-        # ends the run. Chain mode has its own peak-chain UI and skips this.
-        is_threshold = qe.mode in (QuizMode.THRESHOLD, QuizMode.ESCALATOR_THRESHOLD)
-        sub_surf = None
-        if is_threshold:
-            sub_surf = self.font_sm.render("(any wrong = fail)", True, FP.DANGER_TEXT)
-
-        reserve_w = c_surf.get_width()
-        if sub_surf is not None:
-            reserve_w = max(reserve_w, sub_surf.get_width())
         draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
                         text=self.quiz_title, font=self.font_md,
                         text_color=FP.GOLD_BRIGHT, accent=accent,
-                        right_reserve=reserve_w + PAD + 16)
-        if sub_surf is not None:
-            # Stack the counter above the subtitle within the header slot.
-            stack_h = c_surf.get_height() + sub_surf.get_height() + 2
-            stack_top = by + (HEADER_H - stack_h) // 2
-            self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
-                                       stack_top))
-            self.screen.blit(sub_surf, (bx + bw - sub_surf.get_width() - PAD,
-                                         stack_top + c_surf.get_height() + 2))
-        else:
+                        right_reserve=reserve_w)
+        if c_surf is not None:
             self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
                                        by + (HEADER_H - c_surf.get_height()) // 2))
+        if badge is not None:
+            b_rect, b_name, b_color = badge
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, b_rect, border_radius=5)
+            pygame.draw.rect(self.screen, b_color, b_rect, 2, border_radius=5)
+            b_surf = self.font_sm.render(b_name, True, b_color)
+            self.screen.blit(b_surf, (b_rect.centerx - b_surf.get_width() // 2,
+                                       b_rect.centery - b_surf.get_height() // 2))
 
         # -- Timer bar -------------------------------------------------
         ty        = by + HEADER_H + 6
@@ -2405,6 +2426,10 @@ class RenderMixin:
         # read the substantive content the banks now carry. Tier pips above
         # still show progress in escalator-chain modes.
         if getattr(qe, 'timed', True):
+            # Seconds readout gets its own slot right of the bar (sized for
+            # three digits) instead of being painted over the bar's fill.
+            secs_w = self.font_sm.size("000s")[0] + 8
+            bar_w -= secs_w
             ratio = max(0.0, qe.time_remaining / max(1, qe.timer_seconds))
             t_color = (
                 FP.SUCCESS_TEXT if ratio > 0.55 else
@@ -2420,10 +2445,10 @@ class RenderMixin:
                 tx = bar_x + int(bar_w * tick / 5)
                 pygame.draw.line(self.screen, FP.SHADOW, (tx, ty), (tx, ty + bar_h), 1)
 
-            # Timer seconds label -- right-aligned inside the bar
+            # Timer seconds label -- right-aligned in its slot past the bar
             secs = int(qe.time_remaining)
-            t_label = self.font_sm.render(f"{secs}s", True, FP.WHITE)
-            lx = bar_x + bar_w - t_label.get_width() - 4
+            t_label = self.font_sm.render(f"{secs}s", True, t_color)
+            lx = bar_x + bar_w + secs_w - t_label.get_width()
             ly = ty + (bar_h - t_label.get_height()) // 2
             self.screen.blit(t_label, (lx, ly))
 
@@ -2441,7 +2466,10 @@ class RenderMixin:
             self.screen.set_clip(scroll_rect)
 
         # -- Question text (shifted up by scroll_off) ------------------
-        qy = scroll_rect.y - (scroll_off if scrollable else 0)
+        q_top = scroll_rect.y - (scroll_off if scrollable else 0)
+        # Combat reserves a fixed-height band and centres the sum in it;
+        # every other quiz keeps left-aligned text flush to the top.
+        qy = q_top + ((q_height - len(q_lines) * q_line_h) // 2 if is_combat else 0)
         for line in q_lines:
             # Skip lines entirely above the visible slice.
             if scrollable and qy + q_line_h < scroll_rect.y:
@@ -2450,9 +2478,10 @@ class RenderMixin:
             if scrollable and qy > scroll_rect.bottom:
                 break
             surf = q_font.render(line, True, FP.VELLUM)
-            self.screen.blit(surf, (bx + PAD, qy))
+            line_x = (bx + (bw - surf.get_width()) // 2) if is_combat else bx + PAD
+            self.screen.blit(surf, (line_x, qy))
             qy += q_line_h
-        qy += SECTION_GAP
+        qy = q_top + q_height + SECTION_GAP
 
         # Thin separator just above the choice cards.
         pygame.draw.line(self.screen, accent_dim,
@@ -2524,26 +2553,49 @@ class RenderMixin:
         status_rect = L['status_rect']
         status_y = status_rect.y
 
-        if in_result:
-            fb_text  = "*  CORRECT!" if qe.last_correct else "*  WRONG!"
-            fb_color = FP.SUCCESS_TEXT if qe.last_correct else FP.DANGER_TEXT
-            fb_surf  = self.font_lg.render(fb_text, True, fb_color)
-            self.screen.blit(fb_surf, (bx + (bw - fb_surf.get_width()) // 2, status_y))
-        elif qe.state == QuizState.ASKING:
-            hint = self.font_sm.render("Press  1  2  3  4  to answer", True, FP.HINT_TEXT)
-            self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + 10))
-
-        # Context-blurb discoverability hint: only shown when the current
-        # (subject, topic) HAS a blurb — hidden otherwise so a bank without
-        # authored blurbs doesn't tease the key for nothing.
-        if qe.current_context_blurb():
-            c_hint = self.font_sm.render("[C] context", True, FP.FADED_TEXT)
-            self.screen.blit(c_hint, (bx + bw - c_hint.get_width() - PAD,
-                                       status_y + STATUS_H - c_hint.get_height() - 2))
+        # No "CORRECT!" / "WRONG!" banner: the green / red choice cards
+        # already carry the result (2026-10-04 playtest).
+        has_blurb = bool(qe.current_context_blurb())
+        if is_combat:
+            # Four fixed key-hint slots across the row, so the hints never
+            # move and never run into each other.
+            hints = [
+                ("1-4  Answer", FP.HINT_TEXT),
+                ("SPACE  Strike Now" if qe.chain >= 1 else "SPACE  Cancel",
+                 FP.GOLD_PALE if qe.chain >= 1 else FP.FADED_TEXT),
+                ("C  Context" if has_blurb else "", FP.FADED_TEXT),
+                ("ESC  Abort", FP.FADED_TEXT),
+            ]
+            slot_w = status_rect.w // len(hints)
+            for i, (h_text, h_color) in enumerate(hints):
+                if not h_text:
+                    continue
+                h_font, h_text = self._fit_line(h_text, slot_w - 8, (20, 17, 14))
+                h_surf = h_font.render(h_text, True, h_color)
+                slot_x = status_rect.x + i * slot_w
+                if i == 0:
+                    hx = slot_x
+                elif i == len(hints) - 1:
+                    hx = status_rect.right - h_surf.get_width()
+                else:
+                    hx = slot_x + (slot_w - h_surf.get_width()) // 2
+                self.screen.blit(
+                    h_surf, (hx, status_y + (STATUS_H - h_surf.get_height()) // 2))
+        else:
+            if qe.state == QuizState.ASKING:
+                hint = self.font_sm.render("Press  1  2  3  4  to answer", True, FP.HINT_TEXT)
+                self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + 10))
+            # Context-blurb discoverability hint: only shown when the current
+            # (subject, topic) HAS a blurb — hidden otherwise so a bank
+            # without authored blurbs doesn't tease the key for nothing.
+            if has_blurb:
+                c_hint = self.font_sm.render("[C] context", True, FP.FADED_TEXT)
+                self.screen.blit(c_hint, (bx + bw - c_hint.get_width() - PAD,
+                                           status_y + STATUS_H - c_hint.get_height() - 2))
 
         # -- Combat HUD ------------------------------------------------
         if is_combat:
-            self._draw_combat_hud(bx, status_y + STATUS_H + SECTION_GAP, bw, accent)
+            self._draw_combat_hud(L['combat_rect'], accent)
 
         # Effects foreground pass -- the chain aura paints particles /
         # the per-answer pulse ON TOP of the panel, but respects the
@@ -2554,7 +2606,7 @@ class RenderMixin:
                 qe=qe,
                 panel_rect=panel_rect,
                 header_h=HEADER_H,
-                timer_rect=pygame.Rect(bar_x, ty, bar_w, bar_h) if getattr(qe, 'timed', True) else None,
+                timer_rect=pygame.Rect(bar_x, ty, bar_w + secs_w, bar_h) if getattr(qe, 'timed', True) else None,
                 question_rect=L['question_rect'],
                 choices_rect=pygame.Rect(bx + PAD,
                                          scroll_rect.y + q_height + SECTION_GAP,
@@ -2628,7 +2680,7 @@ class RenderMixin:
             getattr(self, '_quiz_context_scroll', 0), line_gap=5)
         self._quiz_context_scroll = scroll
 
-        self._ui_footer(panel, "[C] / [ESC] close")
+        self._ui_footer(panel, "Up/Down: scroll   PgUp/PgDn: jump   C / ESC: close")
 
     def _draw_death_chase_atmosphere(self):
         """Faint red vignette + edge glow when Death is in pursuit.
@@ -2673,101 +2725,123 @@ class RenderMixin:
     # ``src/effects/fullscreen_takeover.py`` and painted via the
     # EffectsRuntime's ``draw_top_overlay`` phase.
 
-    def _combat_hud_row_rects(self, bx: int, strip_y: int, bw: int,
-                              hb_h: int = 16) -> list:
-        """Return the four measured row rects for the combat HUD.
+    def _fit_line(self, text: str, max_w: int, sizes, family: str = 'body'):
+        """Return ``(font, text)`` for a one-line slot ``max_w`` wide.
 
-        Phase 2 beautification (2026-10-04): extracted from
-        ``_draw_combat_hud`` so tests can assert the rows don't overlap
-        without a surface roundtrip. Row heights come from the live
-        ``self.font_md`` / ``self.font_sm`` metrics — same formulas the
-        drawer uses — so a font size change here keeps them aligned.
-
-        Row 0: monster name (primary)
-        Row 1: HP bar + big HP numbers (primary)
-        Row 2: effects + damage-type + chain projection (secondary)
-        Row 3: SPACE hint + weapon name (secondary footer)
+        Walks ``sizes`` largest-first and returns the first font the whole
+        string fits in. Only when it overflows even at the smallest size is
+        the text truncated with an ellipsis -- so long monster / weapon
+        names shrink to fit their slot instead of running out of it.
         """
-        f_name = self.font_md
-        f_hp   = self.font_md
-        f_sm   = self.font_sm
-        sy = strip_y + 8
-        lx = bx + 22
-        row0_h = f_name.get_height()
-        row0 = pygame.Rect(lx, sy, bw - 40, row0_h)
-        row1_y = sy + row0_h + 2
-        row1_h = max(hb_h, f_hp.get_height())
-        row1 = pygame.Rect(lx, row1_y, bw - 40, row1_h)
-        row2_y = row1_y + row1_h + 4
-        row2_h = f_sm.get_height()
-        row2 = pygame.Rect(lx, row2_y, bw - 40, row2_h)
-        row3_y = row2_y + row2_h + 2
-        row3_h = f_sm.get_height()
-        row3 = pygame.Rect(lx, row3_y, bw - 40, row3_h)
-        return [row0, row1, row2, row3]
+        from text_layout import truncate_label
+        font = None
+        for size in sizes:
+            font = get_font(family, size)
+            if font.size(text)[0] <= max_w:
+                return font, text
+        return font, truncate_label(text, max_w, font)
 
-    def _draw_combat_hud(self, bx: int, strip_y: int, bw: int, accent=(80, 80, 180)):
-        """Draw monster HP bar + chain damage preview inside the quiz modal.
+    _COMBAT_HUD_CAP_SIZE = 15
 
-        Phase 1 beautification (2026-10-03): the HUD's two primary call-outs
-        are now **target HP** (monster name in body-md, HP numbers rendered
-        in the hp_color at body-md, a taller color-coded bar) and the
-        **current damage preview** (chain multiplier + damage in heading-lg
-        beside the bar, high-contrast). Weapon name, damage-type label,
-        future-chain projection, and the SPACE hint are muted secondary
-        rows (body-sm + FADED_TEXT) stacked below. No mechanic change —
-        every number, status, and proc still renders; only the visual
-        hierarchy was reordered.
+    def _combat_hud_height(self) -> int:
+        """Pixel height of the combat strip: caption row, one main row
+        (sized for the big damage number) and two detail rows."""
+        cap_h = get_font('body', self._COMBAT_HUD_CAP_SIZE).get_height()
+        return (8 + cap_h + 2 + self.font_lg.get_height() + 4
+                + self.font_sm.get_height() + 5 + self.font_sm.get_height() + 8)
+
+    def _combat_hud_slots(self, bx: int, strip_y: int, bw: int) -> dict:
+        """Return the fixed text slots of the combat strip.
+
+        Two cells side by side -- ``target`` and ``strike`` -- each
+        with the same four stacked rows: ``cap`` (caption), ``main``,
+        ``sub1``, ``sub2``. The target cell additionally splits ``sub1``
+        into ``hp_bar`` + ``hp_text``, and the strike cell's caption row
+        carries a right-hand ``weapon`` slot. Every string the HUD draws is fitted
+        into exactly one of these rects, so nothing is positioned off the
+        measured width of a neighbour (the old layout's failure mode).
+        Extracted so tests can assert the slots never overlap.
+        """
+        PAD, CELL_PAD = 24, 14
+        cap_h  = get_font('body', self._COMBAT_HUD_CAP_SIZE).get_height()
+        main_h = self.font_lg.get_height()
+        sub_h  = self.font_sm.get_height()
+        y_cap  = strip_y + 8
+        y_main = y_cap + cap_h + 2
+        y_sub1 = y_main + main_h + 4
+        y_sub2 = y_sub1 + sub_h + 5
+        height = self._combat_hud_height()
+
+        inner_w = bw - PAD * 2
+        weights = (('target', 5), ('strike', 4))
+        total = sum(w for _k, w in weights)
+        slots = {}
+        x = bx + PAD
+        for key, weight in weights:
+            w = inner_w * weight // total
+            tx, tw = x + CELL_PAD, w - CELL_PAD * 2
+            slots[key] = {
+                'cell': pygame.Rect(x, strip_y, w, height),
+                'cap':  pygame.Rect(tx, y_cap,  tw, cap_h),
+                'main': pygame.Rect(tx, y_main, tw, main_h),
+                'sub1': pygame.Rect(tx, y_sub1, tw, sub_h),
+                'sub2': pygame.Rect(tx, y_sub2, tw, sub_h),
+            }
+            x += w
+
+        # Target HP row: numbers get a slot wide enough for 4-digit HP,
+        # the bar takes whatever is left.
+        sub1 = slots['target']['sub1']
+        hp_w = min(self.font_sm.size("9999/9999 HP")[0], sub1.w // 2)
+        bar_h = 14
+        slots['target']['hp_text'] = pygame.Rect(sub1.right - hp_w, sub1.y,
+                                                 hp_w, sub1.h)
+        slots['target']['hp_bar'] = pygame.Rect(
+            sub1.x, sub1.y + (sub1.h - bar_h) // 2, sub1.w - hp_w - 10, bar_h)
+
+        # Strike caption row: fixed-width caption on the left, the weapon
+        # in use right-aligned in whatever remains.
+        cap = slots['strike']['cap']
+        cap_w = get_font('body', self._COMBAT_HUD_CAP_SIZE).size("STRIKE NOW")[0]
+        slots['strike']['weapon'] = pygame.Rect(
+            cap.x + cap_w + 16, cap.y, max(0, cap.w - cap_w - 16), cap.h)
+        return slots
+
+    def _draw_combat_hud(self, rect: pygame.Rect, accent=(80, 80, 180)):
+        """Draw the combat strip inside the quiz modal.
+
+        Slot layout (2026-10-04 redesign, see ``_combat_hud_slots``):
+
+          TARGET       monster name / HP bar + numbers / status effects
+          STRIKE NOW   weapon / big live damage / chain multiplier /
+                       weakness-type tag
+
+        No mechanic change -- same numbers as before, each in its own
+        reserved slot. Text shrinks to fit its slot before it truncates.
         """
         from combat import _damage_multiplier
         monster = self.combat_target
         # Use ranged weapon for damage preview if this is a ranged attack
-        is_ranged_attack = getattr(self, 'quiz_title', '').startswith('FIRE ')
+        is_ranged_attack = bool(getattr(self, '_combat_is_ranged', False))
         weapon = self.player.ranged_weapon if is_ranged_attack else self.player.weapon
 
-        # Separator
-        pygame.draw.line(self.screen, accent,
-                         (bx + 18, strip_y), (bx + bw - 18, strip_y))
+        slots = self._combat_hud_slots(rect.x, rect.y, rect.w)
 
-        from text_layout import truncate_label
-        sy = strip_y + 8
-        lx = bx + 22
-        rx = bx + 320  # right-column anchor (must match below)
+        def _label(raw) -> str:
+            """'fire_resist' -> 'Fire Resist' for status / damage-type tags."""
+            return str(raw).replace('_', ' ').title()
 
-        f_name   = self.font_md   # primary: monster name
-        f_hp     = self.font_md   # primary: HP numbers (color-coded)
-        f_dmg    = self.font_lg   # primary: current damage preview
-        f_small  = self.font_sm   # secondary: everything else, FADED
+        def put(text, slot, color, sizes=(20, 17, 14), family='body',
+                align='left'):
+            """Fit ``text`` into ``slot`` and blit it vertically centred."""
+            if not text:
+                return
+            font, fitted = self._fit_line(text, slot.w, sizes, family)
+            surf = font.render(fitted, True, color)
+            x = slot.right - surf.get_width() if align == 'right' else slot.x
+            self.screen.blit(surf, (x, slot.y + (slot.h - surf.get_height()) // 2))
 
-        # -------- Row 1: Monster name (primary call-out, left) --------
-        max_name_w = max(40, rx - lx - 16)
-        name_text = truncate_label(monster.name.upper(), max_name_w, f_name)
-        name_surf = f_name.render(name_text, True, FP.GOLD_PALE)
-        self.screen.blit(name_surf, (lx, sy))
-
-        # -------- Row 2: HP bar + big HP numbers (primary) ------------
-        hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
-        hp_color = (
-            FP.SUCCESS_TEXT if hp_ratio > 0.50 else
-            FP.WARNING_TEXT if hp_ratio > 0.25 else
-            FP.DANGER_TEXT
-        )
-        row2_y = sy + name_surf.get_height() + 2
-        hb_h, hb_w = 16, 220
-        bar_y = row2_y + max(0, (f_hp.get_height() - hb_h) // 2)
-        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK,
-                         (lx, bar_y, hb_w, hb_h), border_radius=4)
-        if hp_ratio > 0:
-            pygame.draw.rect(self.screen, hp_color,
-                             (lx, bar_y, max(3, int(hb_w * hp_ratio)), hb_h),
-                             border_radius=4)
-        pygame.draw.rect(self.screen, FP.BURGUNDY,
-                         (lx, bar_y, hb_w, hb_h), 1, border_radius=4)
-        hp_text = f"{monster.hp}/{monster.max_hp} HP"
-        hp_surf = f_hp.render(hp_text, True, hp_color)
-        self.screen.blit(hp_surf, (lx + hb_w + 10, row2_y))
-
-        # -------- Right column, row 1-2: damage preview (primary) -----
+        # -------- Damage maths (unchanged) ----------------------------
         base    = weapon.base_damage  if weapon else 2
         enchant = weapon.enchant_bonus if weapon else 0
         dtypes  = weapon.damage_types if weapon else ['physical']
@@ -2789,62 +2863,99 @@ class RenderMixin:
 
         cur_mult = _mult(cur_chain)
         cur_dmg  = max(0, int((base + enchant) * cur_mult * dm)) if cur_chain >= 1 else 0
+        _rank_name, rank_color = self._chain_rank(cur_chain)
+        live_col = rank_color if cur_chain >= 3 else FP.WHITE
 
-        rank_name, rank_color = self._chain_rank(cur_chain)
-        if cur_chain >= 1:
-            live_text = f"x{cur_mult:.1f}   {cur_dmg} dmg"
-            live_col  = rank_color if cur_chain >= 3 else FP.WHITE
-            live_font = f_dmg
+        # -------- Frame: top rule, cell dividers, strike-cell box ------
+        pygame.draw.line(self.screen, accent,
+                         (rect.x + 18, rect.y), (rect.right - 18, rect.y))
+        cx = slots['strike']['cell'].x
+        pygame.draw.line(self.screen, FP.SHADOW,
+                         (cx, rect.y + 8), (cx, rect.bottom - 8))
+        if cur_chain >= 3:
+            # The live-damage cell takes on the rank colour as a box frame.
+            pygame.draw.rect(self.screen, rank_color,
+                             slots['strike']['cell'].inflate(-6, -8), 2,
+                             border_radius=6)
+
+        # -------- TARGET ----------------------------------------------
+        t = slots['target']
+        put("TARGET", t['cap'], FP.FADED_TEXT, sizes=(self._COMBAT_HUD_CAP_SIZE,))
+        m_name = proper_name(monster.name)
+        name_sizes = (26, 22, 18, 15)
+        _nf, _fitted = self._fit_line(m_name, t['main'].w, name_sizes)
+        if _fitted == m_name:
+            put(m_name, t['main'], FP.GOLD_PALE, sizes=name_sizes)
         else:
-            live_text = "(answer to start chain)"
-            live_col  = FP.FADED_TEXT
-            live_font = f_small
-        self.screen.blit(live_font.render(live_text, True, live_col), (rx, sy))
+            # Too long for one line even at the smallest size: the main row
+            # is tall enough for two small lines, so wrap instead of cutting
+            # the name off.
+            wrapped = self._wrap_text(m_name, _nf, t['main'].w)
+            if len(wrapped) > 2:
+                from text_layout import truncate_label
+                wrapped = [wrapped[0],
+                           truncate_label(" ".join(wrapped[1:]), t['main'].w, _nf)]
+            line_h = _nf.get_height()
+            ny = t['main'].y + max(0, (t['main'].h - line_h * len(wrapped)) // 2)
+            for line in wrapped:
+                self.screen.blit(_nf.render(line, True, FP.GOLD_PALE),
+                                 (t['main'].x, ny))
+                ny += line_h
 
-        # -------- Row 3: muted secondary — effects + dmg-type label ---
-        row3_y = row2_y + max(hb_h, f_hp.get_height()) + 4
+        hp_ratio = max(0.0, monster.hp / max(1, monster.max_hp))
+        hp_color = (
+            FP.SUCCESS_TEXT if hp_ratio > 0.50 else
+            FP.WARNING_TEXT if hp_ratio > 0.25 else
+            FP.DANGER_TEXT
+        )
+        bar = t['hp_bar']
+        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, bar, border_radius=4)
+        if hp_ratio > 0:
+            pygame.draw.rect(self.screen, hp_color,
+                             (bar.x, bar.y, max(3, int(bar.w * hp_ratio)), bar.h),
+                             border_radius=4)
+        pygame.draw.rect(self.screen, FP.BURGUNDY, bar, 1, border_radius=4)
+        put(f"{monster.hp}/{monster.max_hp} HP", t['hp_text'], hp_color,
+            align='right')
 
+        # Status effects: all of them when they fit; otherwise as many as
+        # fit plus a "+N" count, never a clipped half-word.
         effects = [e for e, v in monster.status_effects.items() if v > 0]
         if effects:
-            eff_text = "  ".join(f"[{e}]" for e in effects[:5])
-            eff_text_fit = truncate_label(eff_text, max_name_w, f_small)
-            self.screen.blit(f_small.render(eff_text_fit, True, FP.WARNING_TEXT),
-                             (lx, row3_y))
+            eff_sizes = (20, 17, 14)
+            eff_text = "  ".join(f"[{_label(e)}]" for e in effects)
+            smallest = get_font('body', eff_sizes[-1])
+            if smallest.size(eff_text)[0] > t['sub2'].w:
+                for shown in range(len(effects) - 1, 0, -1):
+                    eff_text = ("  ".join(f"[{_label(e)}]" for e in effects[:shown])
+                                + f"  +{len(effects) - shown}")
+                    if smallest.size(eff_text)[0] <= t['sub2'].w:
+                        break
+            put(eff_text, t['sub2'], FP.WARNING_TEXT, sizes=eff_sizes)
 
-        # Damage-type / weakness label (secondary — keep its signal
-        # colour but shrink and park on the right column).
-        if dm >= 1.5:
-            dm_text, dm_col = "WEAKNESS!", FP.SUCCESS_TEXT
-        elif dm <= 0.5:
-            dm_text, dm_col = "RESISTED", FP.DANGER_TEXT
+        # -------- STRIKE NOW ------------------------------------------
+        s = slots['strike']
+        put("STRIKE NOW", s['cap'], FP.FADED_TEXT, sizes=(self._COMBAT_HUD_CAP_SIZE,))
+        w_name = proper_name(weapon.name) if weapon else "Bare Hands"
+        put(w_name, s['weapon'], FP.FADED_TEXT, align='right',
+            sizes=(self._COMBAT_HUD_CAP_SIZE, 13, 12))
+        if cur_chain >= 1:
+            put(f"{cur_dmg} Damage", s['main'], live_col,
+                sizes=(32, 26, 22), family='heading')
+            put(f"x{cur_mult:.1f} Multiplier", s['sub1'], FP.BODY_TEXT)
         else:
-            dm_text, dm_col = "/".join(dtypes), FP.FADED_TEXT
-        self.screen.blit(f_small.render(dm_text, True, dm_col), (rx, row3_y))
+            put("0 Damage", s['main'], FP.FADED_TEXT, sizes=(32,), family='heading')
+            put("Answer to start a chain", s['sub1'], FP.FADED_TEXT)
 
-        # Milestone projection — small, muted, same row as dmg type
-        _milestones = [3, 5, 8, 10, 15, 20]
-        _next = next((m for m in _milestones if m > cur_chain), None)
-        if _next is not None:
-            proj_dmg = max(1, int((base + enchant) * _mult(_next) * dm))
-            _rank_at = self._chain_rank(_next)[0] or f"x{_next}"
-            proj_text = f"at {_next} ({_rank_at}): {proj_dmg}"
-            dm_w = f_small.size(dm_text)[0]
-            self.screen.blit(
-                f_small.render(proj_text, True, FP.FADED_TEXT),
-                (rx + dm_w + 16, row3_y)
-            )
-
-        # -------- Row 4: muted footer — SPACE hint + weapon name ------
-        row4_y = row3_y + f_small.get_height() + 2
-        space_txt = "SPACE strikes" if cur_chain >= 1 else "SPACE cancels"
-        self.screen.blit(f_small.render(space_txt, True, FP.FADED_TEXT),
-                         (rx, row4_y))
-        w_name = weapon.name if weapon else "bare hands"
-        space_w = f_small.size(space_txt)[0]
-        self.screen.blit(
-            f_small.render(f"({w_name})", True, FP.FADED_TEXT),
-            (rx + space_w + 12, row4_y)
-        )
+        # Damage-type / weakness tag keeps its signal colour.
+        type_str = " / ".join(_label(d) for d in dtypes)
+        if dm >= 1.5:
+            dm_text, dm_col = f"Weakness: {type_str}", FP.SUCCESS_TEXT
+        elif dm <= 0.5:
+            dm_text, dm_col = f"Resisted: {type_str}", FP.DANGER_TEXT
+        else:
+            dm_text, dm_col = type_str, FP.FADED_TEXT
+        put(dm_text, s['sub2'], dm_col)
 
     # ------------------------------------------------------------------
     # Action menu visual system
@@ -2959,7 +3070,7 @@ class RenderMixin:
         p = self.player
         weight = f"{p.get_current_weight():.1f}/{p.get_carry_limit():.0f}"
         effects = getattr(p, 'status_effects', {}) or {}
-        active = [k.replace('_', ' ') for k, v in effects.items() if v != 0]
+        active = [k.replace('_', ' ').title() for k, v in effects.items() if v != 0]
         lines = [
             ("CURRENT RUN", FP.GOLD_BRIGHT, self.font_sm),
             (f"Floor {self.dungeon_level}    Turn {self.turn_count}", FP.BODY_TEXT, self.font_sm),
@@ -3029,12 +3140,12 @@ class RenderMixin:
             return "opens amount prompt"
         idl = self._menu_item_level(item)
         if hasattr(item, 'identified') and idl < 3:
-            cls = getattr(item, 'item_class', 'item').replace('_', ' ')
+            cls = getattr(item, 'item_class', 'item').replace('_', ' ').title()
             return f"{cls} | unidentified"
         try:
             return self._get_item_stats_brief(item)
         except Exception:
-            return getattr(item, 'item_class', 'item').replace('_', ' ')
+            return getattr(item, 'item_class', 'item').replace('_', ' ').title()
 
     def _menu_item_detail_lines(self, item, action: str = 'Select') -> list:
         # Phase 1 beautification (2026-10-03): the kit inspector was dropping
@@ -3058,7 +3169,7 @@ class RenderMixin:
             lines.append(("* Equipped", FP.SUCCESS_TEXT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
-            # ``_display_name`` already shows either "unidentified <name>" or
+            # ``_display_name`` already shows either "Unidentified <name>" or
             # the pure appearance string, so a dedicated Appearance row is
             # redundant. Likewise ``Type: {cls}`` repeats the section header
             # icon, and ``Next action`` repeats the footer hint. We keep the
@@ -3087,7 +3198,7 @@ class RenderMixin:
             from chain_equip import get_chain_mode, get_chain_subject
             lines += [
                 ("Attunement chain", FP.GOLD_BRIGHT, self.font_sm),
-                (f"{get_chain_subject(item).title()} | {get_chain_mode(item).replace('_', ' ')} | fresh quiz on equip",
+                (f"{get_chain_subject(item).title()} | {get_chain_mode(item).replace('_', ' ').title()} | fresh quiz on equip",
                  FP.BODY_TEXT, self.font_sm),
             ]
             bonuses = getattr(item, 'tier_bonuses', {}) or {}
@@ -3151,7 +3262,7 @@ class RenderMixin:
                     stat = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
                     bits.append(f"+{o['stat_grant']}{stat}")
                 if o.get('temp_power'):
-                    tp = str(o.get('temp_power') or '').replace('_', ' ').strip()
+                    tp = str(o.get('temp_power') or '').replace('_', ' ').title().strip()
                     dur = o.get('temp_duration')
                     bits.append(f"{tp} {dur}t" if tp and dur else tp or 'temp buff')
                 if o.get('permanent_power'):
@@ -3171,7 +3282,7 @@ class RenderMixin:
                 stat = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
                 bits.append(f"+{o['stat_grant']}{stat}")
             if o.get('temp_power'):
-                label = str(recipe.get('temp_power') or '').replace('_', ' ').strip()
+                label = str(recipe.get('temp_power') or '').replace('_', ' ').title().strip()
                 dur = recipe.get('temp_duration')
                 bits.append(f"{label} {dur}t" if label and dur else label or 'temp power')
             if o.get('permanent_power'):
@@ -3526,7 +3637,7 @@ class RenderMixin:
         if is_unequip:
             for i, (slot_name, item) in enumerate(display_items):
                 cursed = getattr(item, 'cursed', False)
-                slot_label = slot_name.replace('_', ' ')
+                slot_label = slot_name.replace('_', ' ').title()
                 detail = f"[{slot_label}]"
                 if cursed:
                     detail += "  CURSED"
@@ -3552,9 +3663,9 @@ class RenderMixin:
                 if isinstance(item, Weapon):
                     detail = f"{getattr(item, 'weapon_class', 'weapon')}  {item.base_damage}dmg  chain x{item.max_chain_length or '?'}"
                 elif isinstance(item, Shield):
-                    detail = f"+{item.ac_bonus} AC  {item.material}"
+                    detail = f"+{item.ac_bonus} AC  {_cap(item.material)}"
                 elif isinstance(item, Armor):
-                    detail = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC  {item.material}"
+                    detail = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC  {_cap(item.material)}"
                 elif isinstance(item, Accessory):
                     if item.identified or self.player.knows_item_type(item):
                         fx = item.effects
@@ -4108,7 +4219,7 @@ class RenderMixin:
             return [name, src_tag, dmg, avg_s, mat, buc, wt, special]
 
         if slug == 'armor':
-            slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ')
+            slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ').title()
             if idl >= 3:
                 ac = f"+{getattr(item, 'ac_bonus', 0)}"
                 resists = self._kit_resist_str(item)
@@ -4125,7 +4236,7 @@ class RenderMixin:
             return [name, src_tag, ac, mat, buc, wt, resists]
 
         if slug == 'accessories':
-            slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ')
+            slot_lbl = (getattr(item, 'slot', '') or '').replace('_', ' ').title()
             if idl >= 3:
                 effect = self._kit_accessory_effect(item)
             else:
@@ -4556,7 +4667,7 @@ class RenderMixin:
             )
             charge_text = f"charges: {item.charges}/{item.max_charges}"
             if item.identified or self.player.knows_item_type(item):
-                charge_text += f" | effect: {item.effect.replace('_', ' ')}"
+                charge_text += f" | Effect: {item.effect.replace('_', ' ').title()}"
             entries.append({
                 'name': self._display_name(item),
                 'detail': charge_text,
@@ -4585,7 +4696,7 @@ class RenderMixin:
             )
             charge_text = f"charges: {item.charges}/{item.max_charges}"
             if item.identified or self.player.knows_item_type(item):
-                charge_text += f"  |  effect: {item.effect.replace('_', ' ')}"
+                charge_text += f"  |  Effect: {item.effect.replace('_', ' ').title()}"
             entries.append({
                 'name': self._display_name(item),
                 'detail': charge_text,
@@ -4754,7 +4865,7 @@ class RenderMixin:
                     detail_text = "spellbook"
             else:
                 if item.identified or self.player.knows_item_type(item):
-                    detail_text = f"effect: {item.effect.replace('_', ' ')}"
+                    detail_text = f"Effect: {item.effect.replace('_', ' ').title()}"
                 else:
                     detail_text = "unknown effect"
             entries.append({
@@ -4956,7 +5067,7 @@ class RenderMixin:
                         s = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
                         bits.append(f"+{o['stat_grant']}{s}")
                     if o.get('temp_power'):
-                        tp = str(o.get('temp_power') or '').replace('_', ' ').strip()
+                        tp = str(o.get('temp_power') or '').replace('_', ' ').title().strip()
                         dur = o.get('temp_duration')
                         bits.append(f"{tp} {dur}t" if tp and dur else tp or 'temp buff')
                     if o.get('permanent_power'):
@@ -4980,7 +5091,7 @@ class RenderMixin:
                     s = recipe.get('stat_grant') or recipe.get('stat_grant_default') or '?'
                     bits.append(f"+{o['stat_grant']}{s}")
                 if o.get('temp_power'):
-                    tp = (recipe.get('temp_power') or '').replace('_', ' ').strip()
+                    tp = (recipe.get('temp_power') or '').replace('_', ' ').title().strip()
                     dur = recipe.get('temp_duration')
                     label = tp or 'temp buff'
                     bits.append(f"{label} {dur}t" if dur else label)
@@ -5266,7 +5377,7 @@ class RenderMixin:
         for i, item in enumerate(items):
             known = item.identified or self.player.knows_item_type(item)
             if known:
-                eff = item.effect.replace('_', ' ')
+                eff = item.effect.replace('_', ' ').title()
                 dur = f" ({item.duration} turns)" if item.duration else ""
                 is_good = item.effect in self._BENEFICIAL_EFFECTS
                 detail_text = f"{eff}{dur}"
@@ -5274,7 +5385,7 @@ class RenderMixin:
                 badge = 'BOON' if is_good else 'RISK'
                 badge_col = FP.SUCCESS_TEXT if is_good else FP.DANGER_TEXT_LIGHT
             else:
-                detail_text = "unidentified - effect hidden"
+                detail_text = "Unidentified - effect hidden"
                 detail_col = FP.FADED_TEXT
                 badge = 'UNKNOWN'
                 badge_col = FP.WARNING_TEXT
@@ -5302,7 +5413,7 @@ class RenderMixin:
         for i, item in enumerate(items[:26]):
             known = item.identified or self.player.knows_item_type(item)
             if known:
-                eff = item.effect.replace('_', ' ')
+                eff = item.effect.replace('_', ' ').title()
                 dur = f"  ({item.duration} turns)" if item.duration else ""
                 is_good = item.effect in self._BENEFICIAL_EFFECTS
                 detail_text = f"{'*' if is_good else 'X'} {eff}{dur}"
@@ -5346,11 +5457,11 @@ class RenderMixin:
             elif isinstance(item, Potion):
                 known = item.identified or self.player.knows_item_type(item)
                 if known:
-                    eff = item.effect.replace('_', ' ')
+                    eff = item.effect.replace('_', ' ').title()
                     dur = f" ({item.duration} turns)" if item.duration else ""
                     detail_text = f"{eff}{dur}"
                 else:
-                    detail_text = "unidentified potion - effect hidden"
+                    detail_text = "Unidentified Potion - effect hidden"
                 badge = 'POTION'
                 badge_color = FP.ARCANE_BRIGHT
             else:
@@ -5391,7 +5502,7 @@ class RenderMixin:
             elif isinstance(item, Potion):
                 known = item.identified or self.player.knows_item_type(item)
                 if known:
-                    eff = item.effect.replace('_', ' ')
+                    eff = item.effect.replace('_', ' ').title()
                     dur = f"  ({item.duration} turns)" if item.duration else ""
                     detail_text = f"{eff}{dur}"
                 else:
@@ -5742,7 +5853,7 @@ class RenderMixin:
                 badge = 'FOOD'
                 badge_color = FP.SUCCESS_TEXT
             elif attr == 'effect':
-                detail = getattr(it, 'effect', '').replace('_', ' ')
+                detail = getattr(it, 'effect', '').replace('_', ' ').title()
                 badge = 'HEAL'
                 badge_color = FP.SUCCESS_TEXT
             else:
@@ -6826,18 +6937,21 @@ class RenderMixin:
         return f"{key.replace('_', ' ').title()}: {value}"
 
     def _lore_item_identity_lines(self, item, id_level):
-        lines = [
-            (self._display_name(item), FP.GOLD_BRIGHT, get_font('heading', 20)),
-            (f"Identification: {_identify_status_label(id_level)}", FP.CYAN_ACCENT, self.font_sm),
-        ]
+        shown_name = self._display_name(item)
+        lines = [(shown_name, FP.GOLD_BRIGHT, get_font('heading', 20))]
+        if hasattr(item, 'id_level'):
+            lines.append(("Identified" if id_level >= 5 else "Unidentified",
+                          FP.CYAN_ACCENT, self.font_sm))
+        # The heading already carries the true name once it is known, so the
+        # field below shows what the item LOOKS like unidentified -- that is
+        # what the player needs to recognise it on a later run. Skipped when
+        # the heading is itself the appearance (type still unknown).
         unidentified = getattr(item, 'unidentified_name', '')
-        if id_level < 1 and unidentified:
-            lines.append(("Unidentified description", FP.GOLD_BRIGHT, self.font_sm))
-            lines.append((self._fix_name_case(unidentified), FP.BODY_TEXT, self.font_sm))
-        elif hasattr(item, 'name'):
-            lines.append(("True name", FP.GOLD_BRIGHT, self.font_sm))
-            true_name = item.name if id_level >= 1 else "Unknown"
-            lines.append((self._fix_name_case(true_name), FP.BODY_TEXT, self.font_sm))
+        if unidentified:
+            appearance = self._fix_name_case(unidentified)
+            if appearance.lower() not in shown_name.lower():
+                lines.append(("Appearance", FP.GOLD_BRIGHT, self.font_sm))
+                lines.append((appearance, FP.BODY_TEXT, self.font_sm))
 
         item_class = getattr(item, 'item_class', type(item).__name__)
         lines.append((f"Class: {item_class.replace('_', ' ').title()}",
@@ -6855,7 +6969,7 @@ class RenderMixin:
                 aura = getattr(item, 'buc', 'uncursed')
             else:
                 aura = "unknown"
-            lines.append((f"Aura: {aura}", FP.GOLD_PALE, self.font_sm))
+            lines.append((f"Aura: {_cap(aura)}", FP.GOLD_PALE, self.font_sm))
 
         source = "Equipped" if self._lore_equipped_slot(item) else (
             "Pack" if item in getattr(self.player, 'inventory', []) else "Record")
@@ -6871,10 +6985,10 @@ class RenderMixin:
             return lines
 
         if isinstance(item, Weapon):
-            dmg_types = ', '.join(getattr(item, 'damage_types', []) or ['physical'])
+            dmg_types = ', '.join(_cap(d) for d in (getattr(item, 'damage_types', []) or ['physical']))
             lines += [
                 ("Weapon", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Type: {item.weapon_class}   Material: {item.material}   Tier: {item.tier}",
+                (f"Type: {_cap(item.weapon_class)}   Material: {_cap(item.material)}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (f"Damage: {self._kit_damage_str(item)}   Average: {self._kit_avg_damage(item) or '?'}   Types: {dmg_types}",
                  FP.BODY_TEXT, self.font_sm),
@@ -6890,7 +7004,7 @@ class RenderMixin:
         elif isinstance(item, Armor):
             lines += [
                 ("Armor", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Slot: {item.slot}   Material: {item.material}   Tier: {item.tier}",
+                (f"Slot: {_cap(item.slot)}   Material: {_cap(item.material)}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (f"AC bonus: +{item.ac_bonus}   Enchant: +{getattr(item, 'enchant_bonus', 0)}",
                  FP.BODY_TEXT, self.font_sm),
@@ -6904,7 +7018,7 @@ class RenderMixin:
         elif isinstance(item, Shield):
             lines += [
                 ("Shield", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Material: {item.material}   Tier: {item.tier}",
+                (f"Material: {_cap(item.material)}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (f"AC bonus: +{item.ac_bonus}   Enchant: +{getattr(item, 'enchant_bonus', 0)}",
                  FP.BODY_TEXT, self.font_sm),
@@ -6918,7 +7032,7 @@ class RenderMixin:
         elif isinstance(item, Accessory):
             lines += [
                 ("Accessory", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Slot: {getattr(item, 'slot', 'accessory')}",
+                (f"Slot: {_cap(getattr(item, 'slot', 'accessory'))}",
                  FP.BODY_TEXT, self.font_sm),
             ]
             fx = getattr(item, 'effects', {}) or {}
@@ -6937,7 +7051,7 @@ class RenderMixin:
         elif isinstance(item, Wand):
             lines += [
                 ("Wand", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ')}   Power: {getattr(item, 'power', '?')}",
+                (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ').title()}   Power: {getattr(item, 'power', '?')}",
                  FP.BODY_TEXT, self.font_sm),
                 (f"Charges: {item.charges}/{item.max_charges}",
                  FP.CYAN_ACCENT, self.font_sm),
@@ -6948,7 +7062,7 @@ class RenderMixin:
         elif isinstance(item, Scroll):
             lines += [
                 ("Scroll", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ')}   Power: {getattr(item, 'power', '?')}",
+                (f"Effect: {getattr(item, 'effect', '?').replace('_', ' ').title()}   Power: {getattr(item, 'power', '?')}",
                  FP.BODY_TEXT, self.font_sm),
                 (_threshold_line("Grammar", getattr(item, 'quiz_threshold', '?')),
                  FP.BODY_TEXT, self.font_sm),
@@ -7013,7 +7127,7 @@ class RenderMixin:
             achieved = int(getattr(item, 'achieved_tier', 0) or 0)
             lines += [
                 ("Chain abilities", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Quiz: {subject} / {str(mode).replace('_', ' ')}   Active tier: {achieved}",
+                (f"Quiz: {subject} / {str(mode).replace('_', ' ').title()}   Active tier: {achieved}",
                  FP.CYAN_ACCENT, self.font_sm),
             ]
             for tier in range(1, 6):
@@ -7051,10 +7165,10 @@ class RenderMixin:
             mechanics.append((f"HP: {mdef.get('hp', '?')}   THAC0: {mdef.get('thac0', '?')}   Speed: {mdef.get('speed', 1)}",
                               FP.BODY_TEXT, self.font_sm))
             for atk in mdef.get('attacks', []) or []:
-                line = f"{atk.get('name', '?').replace('_', ' ')}: {atk.get('damage', '?')} ({atk.get('type', 'physical')})"
+                line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 effect = atk.get('effect')
                 if effect:
-                    line += f" -> {effect.replace('_', ' ')} {int(atk.get('effect_chance', 0) * 100)}%"
+                    line += f" -> {effect.replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
                 mechanics.append((line, FP.BODY_TEXT, self.font_sm))
         else:
             mechanics.append(("Stats unrevealed. Study this corpse to learn more.",
@@ -7103,8 +7217,6 @@ class RenderMixin:
                 if ing:
                     label = "Trophy" if prime_info and prime_info.get('is_trophy') else "Prime cut"
                     mechanics.append((f"{label}: {ing.name}", FP.GOLD_PALE, self.font_sm))
-                    mechanics.append(("Harvest with H -- right animal answer yields the cut; "
-                                      "wrong ruins the corpse.", FP.FADED_TEXT, self.font_sm))
                     recipes = get_recipes_for_ingredient(ingredient_id)
                     if recipes:
                         mechanics.append(("Known recipe uses", FP.GOLD_BRIGHT, self.font_sm))
@@ -7523,11 +7635,11 @@ class RenderMixin:
                     f"Speed: {mdef.get('speed', 1)}"
                 )
                 for atk in mdef.get('attacks', []) or []:
-                    line = (f"  \u2022 {atk.get('name','?').replace('_', ' ')}: "
-                            f"{atk.get('damage','?')} ({atk.get('type','physical')})")
+                    line = (f"  \u2022 {atk.get('name','?').replace('_', ' ').title()}: "
+                            f"{atk.get('damage','?')} ({_cap(atk.get('type', 'physical'))})")
                     eff = atk.get('effect')
                     if eff:
-                        line += (f"  \u2192 {eff.replace('_', ' ')} "
+                        line += (f"  \u2192 {eff.replace('_', ' ').title()} "
                                  f"{int(atk.get('effect_chance',0)*100)}%")
                     stat_lines.append(line)
             else:
@@ -7652,7 +7764,7 @@ class RenderMixin:
 
             if id_level >= 3 and isinstance(subject, Weapon):
                 dmg_types = ', '.join(subject.damage_types) if subject.damage_types else 'physical'
-                stat_lines.append(f"Type: {subject.weapon_class}  |  Material: {subject.material}  |  Tier: {subject.tier}")
+                stat_lines.append(f"Type: {_cap(subject.weapon_class)}  |  Material: {_cap(subject.material)}  |  Tier: {subject.tier}")
                 stat_lines.append(f"Base Damage: {subject.base_damage}  |  Damage Type: {dmg_types}")
                 if subject.two_handed:
                     stat_lines.append("Two-handed  |  Reach: " + str(subject.reach))
@@ -7693,7 +7805,7 @@ class RenderMixin:
                 stat_lines.append(f"Value: {subject.value} gold")
 
             elif id_level >= 3 and isinstance(subject, Armor):
-                stat_lines.append(f"Slot: {subject.slot}  |  Material: {subject.material}  |  Tier: {subject.tier}")
+                stat_lines.append(f"Slot: {_cap(subject.slot)}  |  Material: {_cap(subject.material)}  |  Tier: {subject.tier}")
                 _ench = f"+{subject.enchant_bonus}" if _instance_known else "unrevealed"
                 stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: {_ench}")
                 stat_lines.append(_threshold_line("Equip", subject.equip_threshold))
@@ -7704,7 +7816,7 @@ class RenderMixin:
                     stat_lines.append("WARNING: This item can be cursed.")
 
             elif id_level >= 3 and isinstance(subject, Shield):
-                stat_lines.append(f"Material: {subject.material}  |  Tier: {subject.tier}")
+                stat_lines.append(f"Material: {_cap(subject.material)}  |  Tier: {subject.tier}")
                 _ench = f"+{subject.enchant_bonus}" if _instance_known else "unrevealed"
                 stat_lines.append(f"AC Bonus: -{subject.ac_bonus}  |  Enchant: {_ench}")
                 stat_lines.append(_threshold_line("Equip", subject.equip_threshold))
@@ -7713,7 +7825,7 @@ class RenderMixin:
                     stat_lines.append(f"Resistances: {res_str}")
 
             elif id_level >= 3 and isinstance(subject, Accessory):
-                stat_lines.append(f"Slot: {subject.slot}")
+                stat_lines.append(f"Slot: {_cap(subject.slot)}")
                 efx = subject.effects
                 if efx:
                     eff_str = ', '.join(f"{k}={v}" for k, v in efx.items())
@@ -7721,12 +7833,12 @@ class RenderMixin:
                 stat_lines.append(_threshold_line("Equip", subject.equip_threshold))
 
             elif id_level >= 3 and isinstance(subject, Wand):
-                stat_lines.append(f"Effect: {subject.effect.replace('_', ' ')}  |  Power: {subject.power}")
+                stat_lines.append(f"Effect: {subject.effect.replace('_', ' ').title()}  |  Power: {subject.power}")
                 stat_lines.append(f"Charges: {subject.charges}/{subject.max_charges}")
                 stat_lines.append(_threshold_line("Quiz", subject.quiz_threshold))
 
             elif id_level >= 3 and isinstance(subject, Scroll):
-                stat_lines.append(f"Effect: {subject.effect.replace('_', ' ')}  |  Power: {subject.power}")
+                stat_lines.append(f"Effect: {subject.effect.replace('_', ' ').title()}  |  Power: {subject.power}")
                 stat_lines.append(_threshold_line("Quiz", subject.quiz_threshold))
 
             elif id_level >= 3 and isinstance(subject, Food):
@@ -8130,7 +8242,7 @@ class RenderMixin:
                 return f"grants {effects.get('status')}"
             return 'accessory'
         if category in ('wand', 'scroll'):
-            return f"effect: {entry.get('effect', '?')}"
+            return f"Effect: {entry.get('effect', '?')}"
         if category == 'spellbook':
             return f"teaches: {entry.get('spell_name', '?')}"
         if category == 'recipes':
@@ -8154,9 +8266,9 @@ class RenderMixin:
             if wks:
                 lines.append((f"Weak to: {', '.join(wks)}", FP.WARNING_TEXT, self.font_sm))
             for atk in entry.get('attacks', []) or []:
-                line = f"{atk.get('name', '?').replace('_', ' ')}: {atk.get('damage', '?')} ({atk.get('type', 'physical')})"
+                line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 if atk.get('effect'):
-                    line += f" -> {atk.get('effect').replace('_', ' ')} {int(atk.get('effect_chance', 0) * 100)}%"
+                    line += f" -> {atk.get('effect').replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
                 lines.append((line, FP.BODY_TEXT, self.font_sm))
         elif category == 'weapon':
             damage_types = ', '.join(entry.get('damage_types', ['physical']))
@@ -8435,10 +8547,10 @@ class RenderMixin:
                 if wks:
                     stat_lines.append(f"Weak to: {', '.join(wks)}")
                 for atk in entry.get('attacks', []):
-                    line = f"  \u2022 {atk.get('name','?').replace('_', ' ')}: {atk.get('damage','?')} ({atk.get('type','physical')})"
+                    line = f"  \u2022 {atk.get('name','?').replace('_', ' ').title()}: {atk.get('damage','?')} ({_cap(atk.get('type', 'physical'))})"
                     eff = atk.get('effect')
                     if eff:
-                        line += f"  \u2192 {eff.replace('_', ' ')} {int(atk.get('effect_chance',0)*100)}%"
+                        line += f"  \u2192 {eff.replace('_', ' ').title()} {int(atk.get('effect_chance',0)*100)}%"
                     stat_lines.append(line)
                 lore_text = entry.get('lore', 'No lore recorded.')
             elif self.encyclopedia_category == 'weapon':
@@ -8520,9 +8632,9 @@ class RenderMixin:
             elif self.encyclopedia_category in ('armor',):
                 brief = f"{entry.get('slot','?')}  -{entry.get('ac_bonus','?')} AC"
             elif self.encyclopedia_category == 'wand':
-                brief = f"effect: {entry.get('effect','?')}"
+                brief = f"Effect: {entry.get('effect','?')}"
             elif self.encyclopedia_category == 'scroll':
-                brief = f"effect: {entry.get('effect','?')}"
+                brief = f"Effect: {entry.get('effect','?')}"
             elif self.encyclopedia_category == 'spellbook':
                 brief = f"teaches: {entry.get('spell_name','?')}"
             entries.append({

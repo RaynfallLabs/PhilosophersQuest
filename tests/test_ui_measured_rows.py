@@ -107,28 +107,131 @@ class _StubGameForQuiz:
 # A1. Combat HUD measured row offsets
 # ---------------------------------------------------------------------------
 
-def _combat_hud_rects_at(w, h):
-    _reset_layout(w, h)
-    g = _StubGameForQuiz()
+def _combat_render_stub():
+    """RenderMixin subclass carrying just the fonts the combat strip uses,
+    so the production slot / fit / draw code runs unmodified."""
     import game_render
-    return game_render.RenderMixin._combat_hud_row_rects(g, bx=100, strip_y=400,
-                                                         bw=1000)
+    from fantasy_ui import get_font
+
+    class _G(game_render.RenderMixin):
+        @staticmethod
+        def _wrap_text(text, font, max_w):
+            from text_layout import wrap_lines
+            return wrap_lines(text, max_w, font)
+
+    g = _G()
+    g.font_sm = get_font('body', 20)
+    g.font_md = get_font('body', 26)
+    g.font_lg = get_font('heading', 32)
+    return g
 
 
-def test_combat_hud_rows_no_overlap_at_1280_720():
-    rows = _combat_hud_rects_at(1280, 720)
-    for i in range(len(rows) - 1):
-        assert rows[i].bottom <= rows[i + 1].y, (
-            f"row {i} bottom={rows[i].bottom} overlaps row {i + 1} top={rows[i + 1].y}"
-        )
+def _assert_combat_slots_clean(slots, bx, bw):
+    cells = [slots[k]['cell'] for k in ('target', 'strike')]
+    # Cells sit side by side inside the panel, never overlapping.
+    assert cells[0].x >= bx and cells[-1].right <= bx + bw
+    for a, b in zip(cells, cells[1:]):
+        assert a.right <= b.x, (a, b)
+    for key in ('target', 'strike'):
+        s = slots[key]
+        rows = [s['cap'], s['main'], s['sub1'], s['sub2']]
+        for a, b in zip(rows, rows[1:]):
+            assert a.bottom <= b.y, (key, a, b)
+        for r in rows:
+            assert s['cell'].contains(r), (key, r)
+    # HP bar and HP numbers share one row without touching.
+    t = slots['target']
+    assert t['hp_bar'].right <= t['hp_text'].x
+    assert t['sub1'].contains(t['hp_text'])
+    # Weapon name sits right of the STRIKE NOW caption, inside its row.
+    s = slots['strike']
+    assert s['cap'].contains(s['weapon'])
 
 
-def test_combat_hud_rows_no_overlap_at_1920_1080():
-    rows = _combat_hud_rects_at(1920, 1080)
-    for i in range(len(rows) - 1):
-        assert rows[i].bottom <= rows[i + 1].y, (
-            f"row {i} bottom={rows[i].bottom} overlaps row {i + 1} top={rows[i + 1].y}"
-        )
+def test_combat_hud_slots_no_overlap_at_1280_720():
+    _reset_layout(1280, 720)
+    g = _combat_render_stub()
+    _assert_combat_slots_clean(g._combat_hud_slots(100, 400, 1000), 100, 1000)
+
+
+def test_combat_hud_slots_no_overlap_at_1920_1080():
+    _reset_layout(1920, 1080)
+    g = _combat_render_stub()
+    _assert_combat_slots_clean(g._combat_hud_slots(100, 400, 1060), 100, 1060)
+
+
+def test_combat_hud_height_matches_slot_rows():
+    """`_quiz_layout` reserves `_combat_hud_height()`; the last slot row
+    must end inside it."""
+    g = _combat_render_stub()
+    slots = g._combat_hud_slots(0, 0, 1000)
+    assert slots['strike']['sub2'].bottom <= g._combat_hud_height()
+
+
+def test_fit_line_shrinks_before_truncating():
+    """A long monster name steps down the font ladder and only gets an
+    ellipsis when it overflows at the smallest size -- it never runs past
+    its slot."""
+    g = _combat_render_stub()
+    sizes = (26, 22, 18, 15)
+    font, text = g._fit_line("GIANT RAT", 400, sizes)
+    assert text == "GIANT RAT" and font.get_height() == \
+        __import__('fantasy_ui').get_font('body', 26).get_height()
+    long_name = "ANCIENT CRYSTALLINE WYRM OF THE SUNLESS DEEP"
+    font, text = g._fit_line(long_name, 420, sizes)
+    assert font.size(text)[0] <= 420
+    assert text == long_name, "should shrink to fit, not truncate"
+    assert font.get_height() < g.font_md.get_height(), "must have stepped down"
+    font, text = g._fit_line(long_name * 3, 330, sizes)
+    assert font.size(text)[0] <= 330
+    assert text.endswith('…')
+
+
+def test_combat_hud_draws_worst_case_without_error():
+    """Headless smoke test: the strip renders at chain 0, mid chain and a
+    long-name / many-effects / huge-number worst case."""
+    from types import SimpleNamespace
+    _reset_layout(1280, 720)
+    g = _combat_render_stub()
+    g.screen = pygame.Surface((1280, 720))
+    g.quiz_title = 'ATTACK'
+    weapon = SimpleNamespace(
+        name='adamantine composite longbow of the endless hunt',
+        base_damage=40, enchant_bonus=3, damage_types=['piercing', 'fire'],
+        chain_exponent=1.6, chain_multipliers=[1.0])
+    g.player = SimpleNamespace(weapon=weapon, ranged_weapon=weapon)
+    g.combat_target = SimpleNamespace(
+        name='ancient crystalline wyrm of the sunless deep',
+        hp=1284, max_hp=4500, resistances=[], weaknesses=[], tags=[],
+        status_effects={'poisoned': 3, 'slowed': 2, 'burning': 4,
+                        'blinded': 1, 'stunned': 2, 'weakened': 5,
+                        'confused': 2})
+    rect = pygame.Rect(110, 400, 1060, g._combat_hud_height())
+    for chain in (0, 7, 23, 40):
+        g.quiz_engine = SimpleNamespace(chain=chain)
+        g._draw_combat_hud(rect)
+
+
+def test_quiz_layout_combat_strip_sits_between_choices_and_hints():
+    """In combat the pinned tail is: scroll area, combat strip, hint row --
+    stacked without overlap and inside the panel."""
+    from quiz_engine import QuizMode
+    _reset_layout(1280, 720)
+    g = _combat_render_stub()
+    g.combat_target = object()
+    qe = _StubQuizEngine("17 x 6 = ?", ["96", "102", "112", "104"],
+                         mode=QuizMode.CHAIN, chain=7, timed=True)
+    qe.subject = 'math'
+    g.quiz_engine = qe
+    L = g._quiz_layout(qe)
+    assert L['is_combat'] is True
+    combat, status, scroll = L['combat_rect'], L['status_rect'], L['scroll_rect']
+    assert scroll.bottom <= combat.y
+    assert combat.bottom <= status.y
+    assert status.bottom <= L['panel_rect'].bottom
+    assert L['question_font'] is g.font_lg, "combat leads with the large tier"
+    # Fixed-height question band: one-line sum still reserves two lines.
+    assert L['question_rect'].height >= 2 * L['q_line_h']
 
 
 # ---------------------------------------------------------------------------

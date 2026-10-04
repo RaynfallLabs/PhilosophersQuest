@@ -85,8 +85,8 @@ def test_each_cosmetic_type_name_resolves_to_one_item():
     }
     by_name = defaultdict(list)
     for a in accs:
-        if a.name in cosmetic_names:
-            by_name[a.name].append(a.id)
+        if a.name.lower() in cosmetic_names:
+            by_name[a.name.lower()].append(a.id)
     for name, ids in by_name.items():
         assert len(ids) == 1, f"cosmetic type {name!r} has multiple definitions: {ids}"
     # And all expected types are present.
@@ -106,9 +106,9 @@ def test_strength_ring_tiers_distinct_power_and_names():
     assert greater.effects['amount'] == 2
     assert master.effects['amount'] == 3
     # Honest, distinct display names
-    assert base.name == 'ring of strength'
-    assert greater.name == 'ring of greater strength'
-    assert master.name == 'ring of master strength'
+    assert base.name == 'Ring of Strength'
+    assert greater.name == 'Ring of Greater Strength'
+    assert master.name == 'Ring of Master Strength'
     # And distinct mastery classes (each tier is its own type now)
     assert len({type_class(base), type_class(greater),
                 type_class(master)}) == 3
@@ -220,9 +220,9 @@ def test_apply_appearance_stamps_name_and_color():
     amap = _roll(random.Random(5))
     accs = _accessories()
     ring = accs['ring_of_searching']
-    assert ring.unidentified_name == 'a ring'   # neutral before stamp
+    assert ring.unidentified_name == 'A Ring'   # neutral before stamp
     _stamp(ring, amap)
-    assert ring.unidentified_name != 'a ring'
+    assert ring.unidentified_name != 'A Ring'
     assert isinstance(ring.color, tuple) and len(ring.color) == 3
 
 
@@ -305,7 +305,7 @@ def test_heal_accessory_id_rebuilds_a_deleted_variant():
     main_mod.Game._heal_accessory_id(stale)
     # Re-pointed to the canonical id + canonical mechanical fields.
     assert stale.id == 'ring_of_searching'
-    assert stale.name == 'ring of searching'
+    assert stale.name == 'Ring of Searching'
     assert (stale.effects or {}).get('status') == 'searching'
     # Per-instance progress preserved.
     assert stale.buc == 'blessed' and stale.buc_known is True and stale.id_level == 3
@@ -320,7 +320,7 @@ def test_heal_accessory_id_renamed_stat_tier_keeps_power():
     stale = Accessory({**defn_old, 'id': 'ring_strength_adamantine', 'item_class': 'accessory'})
     main_mod.Game._heal_accessory_id(stale)
     assert stale.id == 'ring_of_master_strength'
-    assert stale.name == 'ring of master strength'
+    assert stale.name == 'Ring of Master Strength'
     assert stale.effects['amount'] == 3        # +3 power preserved
 
 

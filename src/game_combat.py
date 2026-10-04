@@ -1508,9 +1508,10 @@ class CombatMixin:
 
         self.state = STATE_QUIZ
         self.combat_target = monster
-        self.quiz_title = (
-            f"FIRE {weapon.name.upper()} at {monster.name.upper()}  --  MATH CHAIN"
-        )
+        # Short fixed title: the combat strip already names the target and
+        # the weapon, so repeating them here only overflowed the header.
+        self.quiz_title = "RANGED ATTACK  --  MATH"
+        self._combat_is_ranged = True
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
                         knocked: bool = False, crit: bool = False, **kwargs):
@@ -1577,7 +1578,10 @@ class CombatMixin:
 
         self.state = STATE_QUIZ
         self.combat_target = monster
-        self.quiz_title = f"COMBAT vs {monster.name.upper()}  --  MATH CHAIN"
+        # Short fixed title: the combat strip already names the target and
+        # the weapon, so repeating them here only overflowed the header.
+        self.quiz_title = "MELEE ATTACK  --  MATH"
+        self._combat_is_ranged = False
         if monster.kind == 'abaddon_destroyer' and not getattr(self, '_chronicle_abaddon_start', False):
             self._chronicle_abaddon_start = True
             self._log_chronicle("Abaddon. The Destroyer. He's real. He's here. This is it.")

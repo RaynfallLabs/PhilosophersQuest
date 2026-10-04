@@ -1119,6 +1119,7 @@ class InputMixin:
                 # the manual press pre-empts it; clear the flag so main.py's
                 # update loop doesn't fire a second transition.
                 self.quiz_engine.pending_context_auto_open = None
+                self._quiz_context_scroll = 0
                 self.state = STATE_QUIZ_CONTEXT
             else:
                 self.add_message("No context available for this question.", 'info')
@@ -1152,6 +1153,27 @@ class InputMixin:
         if key in (pygame.K_c, pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
             self.quiz_engine.resume_timer()
             self.state = STATE_QUIZ
+            return
+
+        # Long blurbs overflow the reader pane; same scroll keys as the
+        # lore dossier. The draw pass clamps the offset to the real maximum.
+        scroll_keys = {
+            pygame.K_UP: -1,
+            pygame.K_DOWN: 1,
+            pygame.K_PAGEUP: -8,
+            pygame.K_PAGEDOWN: 8,
+            pygame.K_HOME: 'home',
+            pygame.K_END: 'end',
+        }
+        if key in scroll_keys:
+            delta = scroll_keys[key]
+            if delta == 'home':
+                self._quiz_context_scroll = 0
+            elif delta == 'end':
+                self._quiz_context_scroll = 9999
+            else:
+                self._quiz_context_scroll = max(
+                    0, getattr(self, '_quiz_context_scroll', 0) + delta)
             return
 
     # ------------------------------------------------------------------

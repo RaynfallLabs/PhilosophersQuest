@@ -2,9 +2,13 @@ import random
 from dice import roll, roll_duration
 from combat import _line_of_sight
 from status_effects import MAX_EFFECT_DURATION
+from naming import ProperNameAttr
 
 
 class Monster:
+    # Always title case, however monsters.json (or an old save) spelled it.
+    name = ProperNameAttr('name')
+
     def __init__(self, defn: dict, x: int, y: int):
         self.kind = defn['id']
         self.name = defn['name']

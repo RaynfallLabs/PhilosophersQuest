@@ -2,6 +2,7 @@ import copy
 import json
 import os
 from paths import data_path
+from naming import ProperNameAttr
 
 _DATA_DIR = data_path('data', 'items')
 
@@ -215,6 +216,11 @@ def effective_enchant_cap(player, slot_name: str) -> int:
 class Item:
     # Item types where identical instances (same id) merge into a stack
     _STACKABLE_CLASSES: tuple = ()   # filled in after subclass definitions
+
+    # Names are always shown in title case, however the data file (or an
+    # old save) spelled them -- see naming.ProperNameAttr.
+    name = ProperNameAttr('name')
+    unidentified_name = ProperNameAttr('unidentified_name')
 
     def __init__(self, defn: dict):
         self.id         = defn['id']
@@ -1025,6 +1031,8 @@ class Ingredient(Item):
 
 
 class Corpse(Item):
+    monster_name = ProperNameAttr('monster_name')
+
     def __init__(self, monster_name: str, monster_id: str, x: int, y: int,
                  harvest_tier: int = 1, harvest_threshold: int = 2,
                  ingredient_id: str | None = None,
