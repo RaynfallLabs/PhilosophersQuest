@@ -33,6 +33,7 @@ added_files = [
     ('data/questions',              'data/questions'),
     ('data/question_contexts',      'data/question_contexts'),
     ('data/templates',              'data/templates'),
+    ('data/ui',                     'data/ui'),
     # Assets — window icon + sprites/fonts
     ('assets/icon.ico',             'assets'),
     ('assets/fonts',                'assets/fonts'),
