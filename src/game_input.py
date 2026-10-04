@@ -947,6 +947,9 @@ class InputMixin:
                             + list(_iter_equipped(self.player)))
                 if not _held:
                     can_pay, fail_msg = False, "You no longer have it to give."
+            # Don't take payment for a service that cannot be rendered.
+            if can_pay and (opt.get('reward') or {}).get('type') == 'enchant_weapon'                     and self.player.weapon is None:
+                can_pay, fail_msg = False, "You have no weapon equipped to enchant."
             if not can_pay:
                 self.add_message(fail_msg, 'warning')
                 return

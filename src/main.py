@@ -2481,7 +2481,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         self.player.quirk_progress.get('sisyphus_boulder_tiles', 0) + 1
                     )
                     _sis_tiles = self.player.quirk_progress['sisyphus_boulder_tiles']
-                    if _sis_tiles >= 25:
+                    # Distance comes from the mystery's own config (15); this
+                    # used to be a hard-coded 25 that disagreed with it.
+                    from mystery_system import MYSTERIES as _MYS
+                    _sis_need = int(_MYS['sisyphus']['challenge'].get('tiles', 15))
+                    if _sis_tiles >= _sis_need:
                         _boulder = next(
                             (i for i in self.player.inventory
                              if getattr(i, 'mystery_id', None) == 'sisyphus'), None

@@ -166,7 +166,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
         'text': (
             "A dwarf sits beside a portable anvil, hammer resting across his knees. "
             "\"I can sharpen that blade of yours,\" he says, eyeing your weapon. "
-            "\"Won't cost much. Fifty gold and I'll put an edge on it "
+            "\"Won't cost much. Eighty gold and I'll put an edge on it "
             "that'll last the rest of your descent — or your life, "
             "whichever ends first.\""
         ),

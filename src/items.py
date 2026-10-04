@@ -2122,6 +2122,11 @@ def pick_random_shield_for_floor(floor: int, rng) -> 'Shield | None':
     for mid, m in materials.items():
         if m.get('material_class', '') not in accepted_classes and accepted_classes:
             continue
+        # A material that lists what it applies to and omits shields is
+        # armor-only (silk, chain steel, ...); it used to roll as a shield.
+        applies = m.get('applies_to')
+        if applies and 'shield' not in applies:
+            continue
         w = material_spawn_weight(m, floor)
         if w > 0:
             weighted.append((mid, m, w))
