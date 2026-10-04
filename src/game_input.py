@@ -68,6 +68,10 @@ class InputMixin:
                              f"this was a spurious OS/display/focus event.")
                 except Exception:
                     pass
+                # Remember where we were: cancelling the dialog must put the
+                # player back in the same state. Dropping to STATE_PLAYER
+                # abandoned an in-progress quiz without firing its callback.
+                self._state_before_exit = self.state
                 self.state = STATE_CONFIRM_EXIT
             return True
         if event.type == pygame.WINDOWRESIZED:
@@ -87,8 +91,22 @@ class InputMixin:
 
         if key == pygame.K_ESCAPE:
             if self.state == STATE_QUIZ:
-                # Cancel the active quiz — treat as chain-0 failure
-                self.quiz_engine._end(success=False)
+                if getattr(self, '_necro_qs', None) is not None:
+                    # The Necronomicon runs its own mini-quiz without
+                    # start_quiz; resolve it through its own path (an
+                    # unfinished recital counts as a failure).
+                    self._necro_complete()
+                elif self.quiz_engine.state == QuizState.ASKING:
+                    # Give up on the question being asked. Chain quizzes
+                    # keep the chain already earned.
+                    self.quiz_engine._end(success=False)
+                elif self.quiz_engine.state in (QuizState.COMPLETE, QuizState.IDLE):
+                    # Safety net: the quiz is over but a callback forgot to
+                    # leave STATE_QUIZ. Never trap the player here.
+                    self.state = STATE_PLAYER
+                # During the result flash ESC does nothing: the answer is
+                # already in, and forcing a failure here turned a correct
+                # answer into a failed quiz.
                 return True
             if self.state == STATE_QUIZ_CONTEXT:
                 # Close the context modal (back to the quiz); the dedicated
@@ -142,6 +160,9 @@ class InputMixin:
                             pass
                         self._pending_spell = None
                         self._pending_spell_id = None
+                if self.state == STATE_CONFIRM_EXIT:
+                    self._leave_confirm_exit()
+                    return True
                 self.state = STATE_PLAYER
                 return True
             if self.state == STATE_STORY_POPUP:
@@ -158,6 +179,7 @@ class InputMixin:
                     self.state = STATE_PLAYER
                 return True
             if self.state == STATE_PLAYER:
+                self._state_before_exit = STATE_PLAYER
                 self.state = STATE_CONFIRM_EXIT
                 return True
             if self.state == STATE_REVIEW_MISSED:
@@ -528,7 +550,14 @@ class InputMixin:
             import pygame as _pg
             _pg.event.post(_pg.event.Event(_pg.QUIT))
         elif key in (pygame.K_ESCAPE, pygame.K_c):
-            self.state = STATE_PLAYER
+            self._leave_confirm_exit()
+
+    def _leave_confirm_exit(self):
+        """Cancel the exit dialog and return to whatever was on screen when
+        it opened (a quiz, a menu, or plain play)."""
+        prior = getattr(self, '_state_before_exit', None)
+        self._state_before_exit = None
+        self.state = prior if prior and prior != STATE_CONFIRM_EXIT else STATE_PLAYER
 
     def _exit_quest_input(self, key: int):
         """Player has the Stone and is at the L1 exit."""

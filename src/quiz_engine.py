@@ -296,7 +296,11 @@ class QuizEngine:
         self.pending_context_auto_open = None
         # Tablet of Destinies: allow one reroll of a wrong answer
         # Set externally by main.py before starting quiz
-        self.reroll_available = getattr(self, '_reroll_flag', False)
+        # The flag is one-shot: it applies to THIS quiz only. Left sticky, a
+        # combat start granted a free mulligan to every later identify /
+        # lockpick / prayer quiz as well (audit B7, 2026-10-04).
+        self.reroll_available = bool(getattr(self, '_reroll_flag', False))
+        self._reroll_flag = False
         self.reroll_was_used = False
 
         # Resume from where the persistent deck left off.
@@ -450,6 +454,9 @@ class QuizEngine:
 
         # Timer is set once in start_quiz() and runs continuously -- no reset per question
         self.state = QuizState.ASKING
+        # Each question starts at the top; a long previous question must not
+        # leave this one pre-scrolled.
+        self._quiz_scroll_offset = 0
 
         # Always shuffle choice order so correct answer position is randomized
         choices = self.current_question.get('choices', [])
@@ -484,7 +491,6 @@ class QuizEngine:
                 if self.reroll_available:
                     self.reroll_available = False
                     self.reroll_was_used = True
-                    self.chain = max(self.chain, 1)  # restore chain
                     self._next_question()
                     return
                 self._end(success=True)   # chain mode: always "succeeds"; score = chain length
@@ -874,6 +880,12 @@ class QuizEngine:
         return True
 
     def _end(self, success: bool):
+        # A finished quiz must not finish twice: a second _end used to re-fire
+        # the previous quiz's callback (e.g. a stray ESC re-running a combat
+        # closure and killing a dead monster again). The callback is cleared
+        # once taken, and start_quiz installs a fresh one.
+        if self.state == QuizState.COMPLETE and self.callback is None:
+            return
         self.state = QuizState.COMPLETE
         self._persist_cross_game_history()
         result = QuizResult(
@@ -886,5 +898,6 @@ class QuizEngine:
             mode_name = self.mode.value if isinstance(self.mode, QuizMode) else str(self.mode)
             self.on_complete(result, mode_name, self.subject,
                              self.correct_count, self.asked_count - self.correct_count)
-        if self.callback:
-            self.callback(result)
+        callback, self.callback = self.callback, None
+        if callback:
+            callback(result)

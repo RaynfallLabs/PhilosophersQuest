@@ -9,6 +9,15 @@ class Monster:
     # Always title case, however monsters.json (or an old save) spelled it.
     name = ProperNameAttr('name')
 
+    def _roll_rage_bonus(self) -> int:
+        """Damage added per rage stack. Data may give dice ("1d6") or a flat
+        number; a bare int used to crash dice.roll() (grave_knight)."""
+        bonus = self.rage_damage_bonus
+        if isinstance(bonus, (int, float)):
+            return int(bonus)
+        text = str(bonus).strip()
+        return int(text) if text.lstrip('-').isdigit() else roll(text)
+
     def __init__(self, defn: dict, x: int, y: int):
         self.kind = defn['id']
         self.name = defn['name']
@@ -517,9 +526,8 @@ class Monster:
         if self.has_effect('blinded') and random.random() < 0.40:
             return 0, f"The {self.name} flails blindly and misses!"
 
-        # Displacement: 30% miss chance even on successful attack roll
-        if player.has_effect('displacement') and random.random() < 0.30:
-            return 0, f"The {self.name} strikes at your displaced image and misses!"
+        # Displacement's 30% miss is rolled once, by the caller in game_combat
+        # (it used to be rolled here as well, for a combined 51% miss).
 
         # Cloak of Sun Wukong (monkey_king_dodge): every Nth attack against the
         # player auto-misses. Counter is on the player; resets when armor unequipped.
@@ -552,7 +560,7 @@ class Monster:
         # Rage damage bonus (Fenrir)
         if self.rage_stacks > 0 and self.rage_damage_bonus:
             for _ in range(self.rage_stacks):
-                dmg += roll(self.rage_damage_bonus)
+                dmg += self._roll_rage_bonus()
 
         # Charge bonus: armed by movement when monster approached along a straight
         # line and is now adjacent. Consume one-shot.
@@ -1527,7 +1535,7 @@ class Monster:
             dmg = roll(atk['damage'])
             if self.rage_stacks > 0 and self.rage_damage_bonus:
                 for _ in range(self.rage_stacks):
-                    dmg += roll(self.rage_damage_bonus)
+                    dmg += self._roll_rage_bonus()
             if self.has_effect('weakened'):
                 dmg = max(1, dmg // 2)
             if self.has_effect('sundered'):

@@ -18,6 +18,11 @@ _SMALL_WORDS = frozenset({
 })
 
 
+# Inside a hyphenated word the same joiners stay lowercase, plus "o'":
+# "will-o'-the-wisp" -> "Will-o'-the-Wisp".
+_HYPHEN_SMALL = _SMALL_WORDS | {"o'"}
+
+
 def _cap_piece(piece: str) -> str:
     """Capitalise the first letter of ``piece`` if the piece is entirely
     lowercase; leave anything already carrying capitals alone ("STR+1",
@@ -38,7 +43,9 @@ def _proper_name_cached(name: str) -> str:
         if idx > 0 and word in _SMALL_WORDS:
             out.append(word)
             continue
-        out.append('-'.join(_cap_piece(p) for p in word.split('-')))
+        out.append('-'.join(
+            p if (i > 0 and p in _HYPHEN_SMALL) else _cap_piece(p)
+            for i, p in enumerate(word.split('-'))))
     return ' '.join(out)
 
 

@@ -653,13 +653,16 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
     stock = unique_stock[:n_stock]
     prices = [_merchant_price(it) for it in stock]
 
-    # Place in a non-starting room
+    # Place in a non-starting room. (This used to compare against a
+    # hard-coded 3, which is STAIRS_DOWN, so the merchant could only ever
+    # stand on the stairs: ~1.7% of floors instead of the intended 20%.)
+    from dungeon import FLOOR as _FLOOR_TILE
     candidate_rooms = rooms[1:]
     room = rng.choice(candidate_rooms)
     tiles = [
         (rx, ry)
         for rx, ry in room.inner_tiles()
-        if dungeon.tiles[ry][rx] == 3  # FLOOR constant
+        if dungeon.tiles[ry][rx] == _FLOOR_TILE
         and not any(gi.x == rx and gi.y == ry for gi in ground_items)
     ]
     if not tiles:

@@ -5454,6 +5454,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if not ok:
                     self.add_message(msg, 'warning')
                     return
+            # The weapon already in that slot may refuse to come off (cursed,
+            # or Stormbringer). _apply_equip bails out silently in that
+            # case, so check first: otherwise the new weapon was removed
+            # from the pack below without ever being equipped (item loss).
+            _is_ranged = getattr(item, 'requires_ammo', None) is not None
+            _current = self.player.ranged_weapon if _is_ranged else self.player.weapon
+            if _current is not None:
+                ok, msg = self.player.try_unequip_slot(_current)
+                if not ok:
+                    self.add_message(msg, 'warning')
+                    return
             dname = self._display_name(item)
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)

@@ -253,6 +253,10 @@ class DivineMixin:
 
         # Quiz challenge
         def _on_mystery_complete(result):
+            # Leave the quiz FIRST (the reward may open its own screen).
+            # Without this the game stayed in STATE_QUIZ with a finished
+            # quiz: a softlock until ESC, which then re-ran this callback.
+            self.state = STATE_PLAYER
             success = result.success
             # For chain mode, check threshold manually
             if ch['mode'] in ('chain', 'escalator_chain') and 'threshold' in ch:
@@ -572,13 +576,15 @@ class DivineMixin:
                     if getattr(i, 'id', '') == 'leather_scrap'
                     and i.x == vx and i.y == vy]
         if len(on_altar) >= 10:
-            # Consume all scraps, create Vidar's Sandal
-            for scrap in on_altar[:10]:
-                self.ground_items.remove(scrap)
             from items import load_items, copy_at
-            armors = load_items('armor')
-            sandal_t = next((a for a in armors if a.id == 'vidars_sandal'), None)
+            # vidars_sandal lives in artifact.json (this used to search
+            # armor.json and never found it). Find the template BEFORE
+            # consuming anything, so a miss can never eat the scraps.
+            sandal_t = next((a for a in load_items('artifact')
+                             if a.id == 'vidars_sandal'), None)
             if sandal_t:
+                for scrap in on_altar[:10]:
+                    self.ground_items.remove(scrap)
                 sandal = copy_at(sandal_t, vx, vy)
                 sandal.identified = True
                 self.ground_items.append(sandal)

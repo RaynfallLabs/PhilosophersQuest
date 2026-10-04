@@ -1199,9 +1199,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None):
             unarmed_bonus = getattr(player, 'quirk_progress', {}).get('beowulf_unarmed_bonus', 0)
             base += unarmed_bonus
 
-        # Weakened status: halve base damage before multipliers
-        if getattr(player, 'status_effects', {}).get('weakened', 0):
-            base = max(1, base // 2)
+        # (Weakened is applied once, with frozen, near the top of this
+        # function. A second halving here used to quarter the damage.)
 
         # Hero passive: Will to Power — +30% damage when below 30% HP.
         hero_passives = getattr(player, 'hero_passives', set())

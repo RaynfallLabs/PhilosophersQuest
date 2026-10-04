@@ -390,10 +390,6 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'parry_armed':       ('Your parry stance lowers.',                'info'),
     'riposte_armed':     ('Your riposte instinct settles.',           'info'),
     'see_invisible':     ('Invisible creatures fade from your sight.', 'info'),
-    'warning':           ('Your danger sense quiets.',                'info'),
-    'searching':         ('You stop searching automatically.',        'info'),
-    'truesight':         ('Your true sight fades.',                   'info'),
-    'dark_vision':       ('Your dark vision dims.',                   'info'),
     'identify_sight':    ('Your identify-sight fades.',               'info'),
     'life_save':         ('The life-save ward is spent.',             'warning'),
     'reloading':         ('The crossbow is cocked and ready.',        'info'),
@@ -611,6 +607,10 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 messages.append(('_teleport', 'info'))
 
         # ---- Decrement timed effects ----
+        # A side effect above can remove an effect mid-tick (poison damage
+        # wakes a sleeper); writing the snapshot value back would re-add it.
+        if effect not in player.status_effects:
+            continue
         if val > 0:
             new_val = val - 1
             if new_val <= 0:
