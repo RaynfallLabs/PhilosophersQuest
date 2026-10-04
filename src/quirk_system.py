@@ -134,6 +134,26 @@ class QuirkSystem:
             result.append((qid, name, pct, unlocked, effect, trigger))
         return result
 
+    def _apply_and_record_statuses(self, apply_fn) -> None:
+        """Run a quirk's reward and remember any PERMANENT status it grants.
+
+        Permanent quirk statuses (telepathy, displacement, regenerating,
+        ...) share their names with statuses that accessories grant. When
+        such an accessory was unequipped, the game popped the status and
+        the quirk's permanent reward went with it. The names recorded here
+        are skipped by Game._remove_status_if_no_other_grants.
+        """
+        pl = self._pl
+        before = {k for k, v in pl.status_effects.items() if v == -1}
+        apply_fn(pl)
+        gained = [k for k, v in pl.status_effects.items()
+                  if v == -1 and k not in before]
+        if gained:
+            kept = pl.quirk_progress.setdefault('quirk_statuses', [])
+            for name in gained:
+                if name not in kept:
+                    kept.append(name)
+
     def _award(self, qid: str, name: str, apply_fn):
         if self.is_unlocked(qid):
             return
@@ -141,7 +161,7 @@ class QuirkSystem:
         if u is None:
             self._pl.unlocked_quirks = set()
         self._pl.unlocked_quirks.add(qid)
-        apply_fn(self._pl)
+        self._apply_and_record_statuses(apply_fn)
         effect  = _QUIRK_EFFECTS.get(qid, '')
         trigger = _QUIRK_TRIGGER.get(qid, '')
         flavor  = _QUIRK_FLAVOR.get(qid, '')

@@ -5536,6 +5536,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 ofx = getattr(other, 'effects', {}) or {}
                 if ofx.get('status') == status:
                     return  # another item still grants this status — keep it
+        # A quirk granted this status permanently: it is the player's own,
+        # not the item's, and must survive the item coming off.
+        if status in (self.player.quirk_progress.get('quirk_statuses') or ()):
+            self.player.status_effects[status] = -1
+            return
         self.player.status_effects.pop(status, None)
 
     def _unequip_slot(self, slot_name: str, item):
