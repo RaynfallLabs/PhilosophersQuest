@@ -898,6 +898,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             chain += _carry
             player._chain_carry = 0
 
+        # Jormungandr quirk: with the weapon the quirk was earned on, any
+        # attack that lands at all counts as one link longer. (The old
+        # reward raised a chain CAP that common weapons no longer have.)
+        if (result.score >= 1 and weapon is not None
+                and getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id')
+                == getattr(weapon, 'id', None)):
+            chain += 1
+
         # Glamdring: Foe-Hammer's signature glow. Against any goblin/orc-
         # tagged enemy, +1 chain rung head start while equipped. Per audit
         # 2026-05-30 — the `glows_near_orcs` JSON flag was previously inert.
@@ -1018,12 +1026,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
             mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
 
-        # Musashi quirk: chain-1 uses 2nd multiplier instead of weakest.
-        # Only meaningful on array-path weapons; polynomial-path chain-1 is
-        # already the sensible minimum (1.0), so the quirk skips gracefully.
-        if (chain == 1 and multipliers is not None
-                and getattr(player, 'quirk_progress', {}).get('musashi_active')):
-            mult = multipliers[min(1, len(multipliers) - 1)]
+        # Musashi quirk: an attack that ends on a chain of exactly 1 deals
+        # double damage ("one cut is enough"). It used to swap in the 2nd
+        # entry of the legacy multiplier array, which did nothing at all on
+        # the polynomial-chain weapons every common weapon now is.
+        if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
+            mult *= 2.0
 
         # Chain combat v2 (v2.14.0): pre-damage per-class chain-special hooks.
         # Sets `player._chain_bypass_dr` when the special calls for it, and

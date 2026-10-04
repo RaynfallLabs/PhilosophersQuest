@@ -94,13 +94,13 @@ class QuirkSystem:
             if qid == 'ragnarok':
                 return 0.0  # can't track "arrive at L100 with <=10 HP"
             if qid == 'archimedes':
-                sci = min(self._p('science_correct_total', 0), 50)
-                eco = min(self._p('economics_correct_total', 0), 50)
-                return (sci + eco) / 100.0
+                sci = min(self._p('science_correct_total', 0), 80)
+                eco = min(self._p('economics_correct_total', 0), 80)
+                return (sci + eco) / 160.0
             if qid == 'hypatia':
-                math_v = min(self._p('math_correct_run', 0), 50)
-                sci = min(self._p('science_correct_total', 0), 50)
-                return (math_v + sci) / 100.0
+                math_v = min(self._p('math_correct_run', 0), 250)
+                sci = min(self._p('science_correct_total', 0), 60)
+                return (math_v / 250.0 + sci / 60.0) / 2.0
             return 0.0
         # Special: athena uses player.known_monster_ids directly
         if qid == 'athena':
@@ -173,7 +173,9 @@ class QuirkSystem:
         # Ceremonial unlock popup — pauses the game until dismissed so the
         # moment lands rather than scrolling past in combat.
         if hasattr(self.game, '_show_quirk_unlock_popup'):
-            self.game._show_quirk_unlock_popup(name, effect, trigger, flavor)
+            from quirk_text import quirk_description
+            self.game._show_quirk_unlock_popup(
+                name, quirk_description(qid) or effect, trigger, flavor)
 
     def _timer_bonus(self, subject: str, amount: int):
         """Original design (pre-2026-05-29): +N seconds on the given subject's
@@ -251,7 +253,9 @@ class QuirkSystem:
         self.game.add_message(f"POWER UNLOCKED: {name}", 'loot')
         self.game.add_message(f"  Effect: {effect}", 'success')
         if hasattr(self.game, '_show_quirk_unlock_popup'):
-            self.game._show_quirk_unlock_popup(name, effect, trigger, flavor)
+            from quirk_text import quirk_description
+            self.game._show_quirk_unlock_popup(
+                name, quirk_description(qid) or effect, trigger, flavor)
 
     def tick_powers(self):
         """Decrement all active power cooldowns by 1 each turn."""
@@ -375,14 +379,14 @@ class QuirkSystem:
                 explored_set.add(floor)
                 self._sp('theseus_explored_floors', explored_set)
                 self._sp('fully_explored_floors', len(explored_set))
-                if len(explored_set) >= 5 and not self.is_unlocked('theseus'):
+                if len(explored_set) >= 8 and not self.is_unlocked('theseus'):
                     self._award('theseus', "Theseus in the Labyrinth",
                                 lambda pl: pl.apply_stat_bonus('PER', 1))
                 # Ancestral Memory (#93 power): fully explore 10 floors
-                if len(explored_set) >= 10 and not self.is_unlocked('ancestral_q'):
+                if len(explored_set) >= 18 and not self.is_unlocked('ancestral_q'):
                     self._award_power('ancestral_q', "Ancestral Memory", lambda pl: None)
                 # Ibn Battuta (#57): fully explore 30 distinct floors
-                if len(explored_set) >= 30 and not self.is_unlocked('ibn_battuta'):
+                if len(explored_set) >= 40 and not self.is_unlocked('ibn_battuta'):
                     self._award('ibn_battuta', "Ibn Battuta's Road",
                                 self._timer_bonus('geography', 4))
 
@@ -394,7 +398,7 @@ class QuirkSystem:
         # Time Dilation (#86 power): 25 consecutive correct answers
         if correct:
             self._inc('consecutive_correct')
-            if self._p('consecutive_correct') >= 25 and not self.is_unlocked('time_dilation'):
+            if self._p('consecutive_correct') >= 50 and not self.is_unlocked('time_dilation'):
                 self._award_power('time_dilation', "Time Dilation", lambda pl: None)
         else:
             self._sp('consecutive_correct', 0)
@@ -405,7 +409,7 @@ class QuirkSystem:
             # was doomed to be right and disbelieved, so "persistent through
             # wrong answers" fits: accumulate 50 wrong answers across the run.
             self._inc('cassandra_wrong_total')
-            if self._p('cassandra_wrong_total') >= 50 and not self.is_unlocked('cassandra'):
+            if self._p('cassandra_wrong_total') >= 100 and not self.is_unlocked('cassandra'):
                 self._award('cassandra', "Cassandra's Persistence",
                             lambda pl: pl.apply_stat_bonus('WIS', 1))
 
@@ -435,26 +439,26 @@ class QuirkSystem:
             # Ramanujan (#56): 500 correct math answers in one run
             if subject == 'math':
                 self._inc('math_correct_run')
-                if self._p('math_correct_run') >= 500 and not self.is_unlocked('ramanujan'):
+                if self._p('math_correct_run') >= 2500 and not self.is_unlocked('ramanujan'):
                     self._award('ramanujan', "The Infinite Sum",
                                 self._timer_bonus('math', 5))
 
             # Solomon (#64): 100 correct philosophy answers
             if subject == 'philosophy':
                 self._inc('philosophy_correct_total')
-                if self._p('philosophy_correct_total') >= 100 and not self.is_unlocked('solomon_q'):
+                if self._p('philosophy_correct_total') >= 150 and not self.is_unlocked('solomon_q'):
                     self._award('solomon_q', "Wisdom of Solomon",
                                 lambda pl: pl.apply_stat_bonus('WIS', 2))
 
             # Sage's Counsel (#99 power): 50 correct history answers
             if subject == 'history':
                 self._inc('history_correct_total')
-                if self._p('history_correct_total') >= 50 and not self.is_unlocked('sage_counsel'):
+                if self._p('history_correct_total') >= 80 and not self.is_unlocked('sage_counsel'):
                     self._award_power('sage_counsel', "Sage's Counsel", lambda pl: None)
 
             # Scholar's Focus (#82 power): 500 total correct answers
             self._inc('total_correct_answers')
-            if self._p('total_correct_answers') >= 500 and not self.is_unlocked('focused_scholar'):
+            if self._p('total_correct_answers') >= 2000 and not self.is_unlocked('focused_scholar'):
                 self._award_power('focused_scholar', "Scholar's Focus", lambda pl: None)
 
             # Mind Fortress (#91 power): 30 correct while mentally debuffed
@@ -467,7 +471,7 @@ class QuirkSystem:
             # Galileo (#66): 100 correct science
             if subject == 'science':
                 self._inc('science_correct_total')
-                if self._p('science_correct_total') >= 100 and not self.is_unlocked('galileo'):
+                if self._p('science_correct_total') >= 150 and not self.is_unlocked('galileo'):
                     self._award('galileo', "Galileo's Heresy", self._timer_bonus('science', 3))
 
             # Confucius (#61): 50 philosophy correct while blessed
@@ -478,25 +482,36 @@ class QuirkSystem:
 
             # Machiavelli (#72): 500 correct answers in one run
             self._inc('machiavelli_run_correct')
-            if self._p('machiavelli_run_correct') >= 500 and not self.is_unlocked('machiavelli'):
+            if self._p('machiavelli_run_correct') >= 3000 and not self.is_unlocked('machiavelli'):
                 self._award('machiavelli', "The Prince", self._all_timer_bonus(1))
 
             # Ouroboros (#100 power): 1000 correct answers in one run
-            if self._p('total_correct_answers') >= 1000 and not self.is_unlocked('ouroboros'):
+            if self._p('total_correct_answers') >= 6000 and not self.is_unlocked('ouroboros'):
                 self._award_power('ouroboros', "The Infinite Circle", lambda pl: None)
 
-            # Archimedes (#71): 50 correct science AND 50 correct economics
+            # Subject masteries (added 2026-10-04). One per subject that had
+            # no quirk of its own; history, science, philosophy and math
+            # already do.
+            for _subj, _qid, _name, _need, _stat in _SUBJECT_MASTERIES:
+                if subject == _subj:
+                    self._inc(f'{_subj}_mastery_correct')
+                    if (self._p(f'{_subj}_mastery_correct') >= _need
+                            and not self.is_unlocked(_qid)):
+                        self._award(_qid, _name,
+                                    lambda pl, _s=_stat: pl.apply_stat_bonus(_s, 1))
+
+            # Archimedes (#71): 80 correct science AND 80 correct economics
             if subject == 'economics':
                 self._inc('economics_correct_total')
-            sci_ok = self._p('science_correct_total', 0) >= 50
-            eco_ok = self._p('economics_correct_total', 0) >= 50
+            sci_ok = self._p('science_correct_total', 0) >= 80
+            eco_ok = self._p('economics_correct_total', 0) >= 80
             if sci_ok and eco_ok and not self.is_unlocked('archimedes'):
                 self._award('archimedes', "Give Me a Lever",
                             lambda pl: pl.apply_stat_bonus('INT', 1))
 
             # Hypatia (#74): 50 correct math AND 50 correct science
-            math_ok = self._p('math_correct_run', 0) >= 50
-            sci50   = self._p('science_correct_total', 0) >= 50
+            math_ok = self._p('math_correct_run', 0) >= 250
+            sci50   = self._p('science_correct_total', 0) >= 60
             if math_ok and sci50 and not self.is_unlocked('hypatia'):
                 self._award('hypatia', "Hypatia's Legacy",
                             lambda pl: pl.apply_stat_bonus('INT', 2))
@@ -518,37 +533,68 @@ class QuirkSystem:
                     self._award('apollo', "Apollo's Perfection",
                                 self._timer_bonus('math', 3))
 
+            # Pythagoras: three attacks in a row ending on chains of exactly
+            # 3, then 4, then 5 -- the oldest right triangle.
+            recent = self._p('pythagoras_recent', None)
+            if not isinstance(recent, list):
+                recent = []
+            recent = (recent + [int(score)])[-3:]
+            self._sp('pythagoras_recent', recent)
+            if recent == [3, 4, 5] and not self.is_unlocked('pythagoras'):
+                self._award('pythagoras', "Pythagoras' Harmony",
+                            lambda pl: pl.apply_stat_bonus('INT', 1))
+
         # Cassandra: unlock trigger moved to on_quiz_answer (accumulates wrong
         # answers across the whole run). See 2026-09-24 retarget comment there.
 
     def on_kill(self, monster_kind: str, chain_score: int, ranged: bool,
                 unarmed: bool, hp_pct_before: float, is_feared: bool):
         """Called whenever player kills a monster."""
-        # Musashi (#7): 30 kills at chain exactly 1
+        # Hercules: slay 12 DISTINCT named foes (bosses, mini-bosses, seal
+        # demons) -- twelve labours.
+        if monster_kind in _named_foe_kinds():
+            self._set_add('hercules_labours', monster_kind)
+            if self._set_len('hercules_labours') >= 12 and not self.is_unlocked('hercules'):
+                self._award('hercules', "The Twelve Labours",
+                            lambda pl: pl.apply_stat_bonus('STR', 2))
+
+        # Achilles: 150 kills with nothing worn on the feet.
+        try:
+            from items import ARMOR_SLOTS
+            barefoot = self._pl.armor_slots[ARMOR_SLOTS.index('feet')] is None
+        except (ValueError, IndexError, AttributeError):
+            barefoot = False
+        if barefoot:
+            self._inc('achilles_barefoot_kills')
+            if self._p('achilles_barefoot_kills') >= 150 and not self.is_unlocked('achilles'):
+                self._award('achilles', "Achilles' Heel",
+                            lambda pl: pl.apply_stat_bonus('DEX', 1))
+
+        # Musashi (#7): 60 kills at chain exactly 1
         if chain_score == 1:
             self._inc('chain1_kills')
-            if self._p('chain1_kills') >= 30 and not self.is_unlocked('musashi'):
+            if self._p('chain1_kills') >= 60 and not self.is_unlocked('musashi'):
                 self._award('musashi', "Musashi's Empty Strike",
                             lambda pl: pl.quirk_progress.update({'musashi_active': True}))
 
         # Valkyrie (#37): 25 ranged kills
         if ranged:
             self._inc('ranged_kills')
-            if self._p('ranged_kills') >= 25 and not self.is_unlocked('valkyrie'):
+            if self._p('ranged_kills') >= 60 and not self.is_unlocked('valkyrie'):
                 self._award('valkyrie', "The Valkyrie's Eye",
                             lambda pl: pl.apply_stat_bonus('DEX', 1))
 
         # Beowulf (#27): 10 unarmed wins
         if unarmed:
             self._inc('unarmed_wins')
-            if self._p('unarmed_wins') >= 10 and not self.is_unlocked('beowulf'):
+            if self._p('unarmed_wins') >= 25 and not self.is_unlocked('beowulf'):
                 self._award('beowulf', "Beowulf's Vow",
                             lambda pl: pl.quirk_progress.update({'beowulf_unarmed_bonus': 5}))
 
         # Gawain (#40): 6 wins starting at <=40% HP
         if hp_pct_before <= 0.40:
             self._inc('gawain_wins')
-            if self._p('gawain_wins') >= 6 and not self.is_unlocked('gawain'):
+            if self._p('gawain_wins') >= 15 and not self.is_unlocked('gawain'):
                 self._award('gawain', "Gawain's Bargain",
                             lambda pl: pl.apply_stat_bonus('CON', 1))
 
@@ -578,7 +624,7 @@ class QuirkSystem:
         if weapon and not ranged:
             wid = weapon.id
             self._dict_inc('thor_weapon_combats', wid)
-            if self._dict_get('thor_weapon_combats', wid) >= 30 and not self.is_unlocked('thor'):
+            if self._dict_get('thor_weapon_combats', wid) >= 150 and not self.is_unlocked('thor'):
                 self._sp('thor_qualifying_weapon', wid)
                 def _apply_thor(pl, _wid=wid):
                     if pl.weapon and pl.weapon.id == _wid:
@@ -588,13 +634,13 @@ class QuirkSystem:
                 self._award('thor', "Thor's Oath", _apply_thor)
 
         # Athena (#24): see 50 distinct monster types
-        if len(getattr(self._pl, 'known_monster_ids', set())) >= 50 and not self.is_unlocked('athena'):
+        if len(getattr(self._pl, 'known_monster_ids', set())) >= 80 and not self.is_unlocked('athena'):
             self._award('athena', "Athena's Owl",
                         self._timer_bonus('history', 4))
 
         # Caesar (#67): 300 kills in one run
         self._inc('caesar_kills')
-        if self._p('caesar_kills') >= 300 and not self.is_unlocked('caesar'):
+        if self._p('caesar_kills') >= 750 and not self.is_unlocked('caesar'):
             def _apply_caesar(pl):
                 for _s in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
                     pl.apply_stat_bonus(_s, 1)
@@ -610,7 +656,7 @@ class QuirkSystem:
         # Spartacus (#55): 20 kills while any debuff is active
         if any(self._pl.has_effect(e) for e in _DEBUFF_EFFECTS):
             self._inc('spartacus_kills')
-            if self._p('spartacus_kills') >= 20 and not self.is_unlocked('spartacus'):
+            if self._p('spartacus_kills') >= 50 and not self.is_unlocked('spartacus'):
                 def _apply_spartacus(pl):
                     pl.apply_stat_bonus('STR', 1)
                     pl.apply_stat_bonus('CON', 1)
@@ -618,13 +664,13 @@ class QuirkSystem:
 
         # Leonidas (#60): kill enemies on 30 distinct dungeon floors
         self._set_add('leonidas_kill_floors', self.game.dungeon_level)
-        if self._set_len('leonidas_kill_floors') >= 30 and not self.is_unlocked('leonidas'):
+        if self._set_len('leonidas_kill_floors') >= 45 and not self.is_unlocked('leonidas'):
             self._award('leonidas', "The Last Stand",
                         lambda pl: pl.apply_stat_bonus('CON', 2))
 
         # Battle Trance (#78 power): 200 total kills
         self._inc('battle_trance_kills')
-        if self._p('battle_trance_kills') >= 200 and not self.is_unlocked('battle_trance'):
+        if self._p('battle_trance_kills') >= 350 and not self.is_unlocked('battle_trance'):
             self._award_power('battle_trance', "Battle Trance", lambda pl: None)
 
         # Death Wish (#84 power): win 10 combats at <=10% HP
@@ -666,7 +712,7 @@ class QuirkSystem:
         # Green Knight (#47): single hit >=30% max_hp, survive
         if pct_of_max >= 0.30 and self._pl.hp > 0:
             self._inc('green_knight_survivals')
-            if self._p('green_knight_survivals') >= 5 and not self.is_unlocked('green_knight'):
+            if self._p('green_knight_survivals') >= 10 and not self.is_unlocked('green_knight'):
                 self._award('green_knight', "The Green Knight",
                             lambda pl: pl.apply_stat_bonus('CON', 1))
 
@@ -682,7 +728,7 @@ class QuirkSystem:
 
         # Temporal Shield (#92 power): take 50 total hits
         self._inc('temporal_shield_hits')
-        if self._p('temporal_shield_hits') >= 50 and not self.is_unlocked('temporal_shield'):
+        if self._p('temporal_shield_hits') >= 500 and not self.is_unlocked('temporal_shield'):
             self._award_power('temporal_shield', "Temporal Shield", lambda pl: None)
 
         # Iron Will (#77 power): take damage 10 times while paralyzed
@@ -700,6 +746,7 @@ class QuirkSystem:
 
     def on_lockpick_fail(self, container_id: str, dungeon_level: int):
         """Called when lockpick quiz fails on a trapped chest."""
+        self._sp('daedalus_streak', 0)   # a fumbled lock breaks the streak
         key = f"{container_id}_{dungeon_level}"
         self._set_add('sisyphus_chests', key)
         if self._set_len('sisyphus_chests') >= 10 and not self.is_unlocked('sisyphus'):
@@ -714,7 +761,7 @@ class QuirkSystem:
 
         # Enkidu (#31): harvest 20 distinct species
         self._set_add('enkidu_harvested', monster_kind)
-        if self._set_len('enkidu_harvested') >= 20 and not self.is_unlocked('enkidu'):
+        if self._set_len('enkidu_harvested') >= 30 and not self.is_unlocked('enkidu'):
             self._award('enkidu', "Enkidu's Wildness",
                         lambda pl: pl.apply_stat_bonus('STR', 1))
 
@@ -884,7 +931,7 @@ class QuirkSystem:
             self._inc('nostradamus_lore')
             if self._p('nostradamus_lore') >= 10 and not self.is_unlocked('nostradamus'):
                 self._award('nostradamus', "The Prophet's Eye",
-                            lambda pl: pl.apply_stat_bonus('WIS', 3))
+                            lambda pl: pl.apply_stat_bonus('WIS', 2))
 
         # Second Sight (#79 power): recall lore 5 times while blinded
         if self._pl.has_effect('blinded'):
@@ -910,7 +957,7 @@ class QuirkSystem:
         """Called when the examine menu is opened."""
         # Narcissus (#48): examine 30 times
         self._inc('narcissus_examines')
-        if self._p('narcissus_examines') >= 30 and not self.is_unlocked('narcissus'):
+        if self._p('narcissus_examines') >= 75 and not self.is_unlocked('narcissus'):
             self._award('narcissus', "Narcissus",
                         lambda pl: pl.apply_stat_bonus('PER', 1))
 
@@ -939,19 +986,11 @@ class QuirkSystem:
             self._set_add('darwin_debuff_types', effect_id)
             if self._set_len('darwin_debuff_types') >= 8 and not self.is_unlocked('darwin'):
                 self._award('darwin', "Survival of the Fittest",
-                            lambda pl: pl.apply_stat_bonus('CON', 3))
+                            lambda pl: pl.apply_stat_bonus('CON', 2))
 
-        # Gorgon Ward (#54 power): petrifying applied 3 times
-        if effect_id == 'petrifying':
-            self._inc('gorgon_ward_petrify')
-            if self._p('gorgon_ward_petrify') >= 3 and not self.is_unlocked('gorgon_ward'):
-                self._award_power('gorgon_ward', "Gorgon Ward", lambda pl: None)
-
-        # Zeus Bolt (#53 power): hasted 15 times in a run
-        if effect_id == 'hasted':
-            self._inc('zeus_bolt_hasted')
-            if self._p('zeus_bolt_hasted') >= 15 and not self.is_unlocked('zeus_bolt'):
-                self._award_power('zeus_bolt', "Zeus' Bolt", lambda pl: None)
+        # Gorgon Ward and Zeus' Bolt are tracked in on_turn(). This hook only
+        # fires for monster melee effects, and no monster applies haste, so
+        # counting them here made both powers impossible to earn.
 
     def on_disease_drain(self, stat: str, amount: int):
         """Called when disease ticks and drains a stat."""
@@ -965,6 +1004,24 @@ class QuirkSystem:
         """Called every advance_turn. Tracks per-turn things."""
         pl = self._pl
 
+        # Zeus' Bolt (power): become Hasted 15 separate times. Counted on
+        # the turn haste BEGINS, whatever granted it (potion, spell, wand).
+        hasted_now = pl.has_effect('hasted')
+        if hasted_now and not self._p('zeus_was_hasted', False):
+            self._inc('zeus_bolt_hasted')
+            if self._p('zeus_bolt_hasted') >= 15 and not self.is_unlocked('zeus_bolt'):
+                self._award_power('zeus_bolt', "Zeus' Bolt", lambda pl2: None)
+        self._sp('zeus_was_hasted', hasted_now)
+
+        # Gorgon Ward (power): survive petrification 3 times. Counted on the
+        # turn the creeping stone ENDS with the player still alive.
+        petrifying_now = pl.has_effect('petrifying')
+        if self._p('gorgon_was_petrifying', False) and not petrifying_now and pl.hp > 0:
+            self._inc('gorgon_ward_petrify')
+            if self._p('gorgon_ward_petrify') >= 3 and not self.is_unlocked('gorgon_ward'):
+                self._award_power('gorgon_ward', "Gorgon Ward", lambda pl2: None)
+        self._sp('gorgon_was_petrifying', petrifying_now)
+
         # Shiva (#30): 100 turns under hallucinating
         if pl.has_effect('hallucinating') or pl.has_effect('hallucinating_pot'):
             self._inc('hallucinating_turns')
@@ -976,7 +1033,7 @@ class QuirkSystem:
         for eff in _DEBUFF_EFFECTS:
             if pl.has_effect(eff):
                 self._inc('fenrir_debuff_turns')
-                if self._p('fenrir_debuff_turns') >= 150 and not self.is_unlocked('fenrir'):
+                if self._p('fenrir_debuff_turns') >= 400 and not self.is_unlocked('fenrir'):
                     self._award('fenrir', "Fenrir's Chains",
                                 lambda p: p.apply_stat_bonus('CON', 1))
                 break
@@ -1074,7 +1131,7 @@ class QuirkSystem:
 
         # Sibyl (#36): 500 correct answers before level 20
         if (not self.is_unlocked('sibyl') and
-                getattr(self.game, 'correct_answers', 0) >= 500 and
+                getattr(self.game, 'correct_answers', 0) >= 1200 and
                 self.game.dungeon_level < 20):
             def _apply_sibyl(pl2):
                 b = getattr(pl2, 'quiz_timer_bonuses', None)
@@ -1097,6 +1154,11 @@ class QuirkSystem:
 
     def on_lockpick_success(self):
         """Called when lockpick quiz succeeds and a chest is opened."""
+        # Daedalus: 12 locks opened in a row without a failure.
+        self._inc('daedalus_streak')
+        if self._p('daedalus_streak') >= 12 and not self.is_unlocked('daedalus'):
+            self._award('daedalus', "Daedalus' Craft",
+                        lambda pl: pl.apply_stat_bonus('DEX', 1))
         # De Medici (#59): 20 successful lockpicks
         self._inc('de_medici_picks')
         if self._p('de_medici_picks') >= 20 and not self.is_unlocked('de_medici'):
@@ -1122,6 +1184,38 @@ class QuirkSystem:
         # Wandering Star (#85 power): teleport 15 times
         if self._p('hermes_teleports') >= 15 and not self.is_unlocked('wandering_star'):
             self._award_power('wandering_star', "Wandering Star", lambda pl: None)
+
+
+# (subject, quirk id, display name, correct answers needed, stat rewarded)
+_SUBJECT_MASTERIES = (
+    ('geography', 'eratosthenes', "Eratosthenes' Measure", 100, 'PER'),
+    ('animal',    'aesop',        "Aesop's Menagerie",     150, 'WIS'),
+    ('cooking',   'apicius',      "The Table of Apicius",   80, 'CON'),
+    ('theology',  'aquinas',      "The Dumb Ox",           100, 'WIS'),
+    ('economics', 'adam_smith',   "The Invisible Hand",     75, 'WIS'),
+    ('grammar',   'johnson',      "Johnson's Dictionary",  100, 'INT'),
+)
+
+_named_foes_cache = None
+
+
+def _named_foe_kinds() -> frozenset:
+    """Monster ids that count as a 'labour': bosses, mini-bosses and seal
+    demons, read once from monsters.json."""
+    global _named_foes_cache
+    if _named_foes_cache is None:
+        import json
+        from paths import data_path
+        try:
+            with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+                defs = json.load(f)
+            _named_foes_cache = frozenset(
+                mid for mid, d in defs.items()
+                if isinstance(d, dict) and (d.get('is_boss') or d.get('is_mini_boss')
+                                            or d.get('is_seal_demon')))
+        except (OSError, ValueError):
+            _named_foes_cache = frozenset()
+    return _named_foes_cache
 
 
 # ---------------------------------------------------------------------------
@@ -1174,12 +1268,12 @@ _QUIRK_PROGRESS = {
     'scheherazade':  ('scheherazade_scrolls', 12, True),
     'paracelsus':    ('disease_drain_total', 5, False),
     'siegfried':     ('siegfried_effect_types_eaten', 5, True),
-    'musashi':       ('chain1_kills', 30, False),
+    'musashi':       ('chain1_kills', 60, False),
     'rasputin':      ('rasputin_survivals', 5, False),
     'merlin':        ('merlin_wands', 10, True),
     'buddha':        ('wait_near_monsters', 500, False),
     'hephaestus':    ('hephaestus_counts', 15, False),   # dict-based, uses max value
-    'cassandra':     ('cassandra_wrong_total', 50, False),
+    'cassandra':     ('cassandra_wrong_total', 100, False),
     'sisyphus':      ('sisyphus_chests', 10, True),
     'job':           ('job_trap_types', 5, True),
     'orpheus':       ('orpheus_sessions', 5, False),
@@ -1191,51 +1285,51 @@ _QUIRK_PROGRESS = {
     'penelope':      ('penelope_count', 100, False),
     'dionysus':      ('potions_while_hallucinating', 10, False),
     'apollo':        ('max_chain_hits', 10, False),
-    'athena':        ('known_monster_ids', 50, True),     # uses player.known_monster_ids
+    'athena':        ('known_monster_ids', 80, True),     # uses player.known_monster_ids
     'loki':          ('loki_done_items', 5, True),
-    'thor':          ('thor_weapon_combats', 30, False),  # dict-based, uses max value
-    'beowulf':       ('unarmed_wins', 10, False),
+    'thor':          ('thor_weapon_combats', 150, False),  # dict-based, uses max value
+    'beowulf':       ('unarmed_wins', 25, False),
     'norns':         ('recall_lore_uses', 20, False),
     'jormungandr':   ('jormungandr_counts', 20, False),   # dict-based, uses max value
     'shiva':         ('hallucinating_turns', 100, False),
-    'enkidu':        ('enkidu_harvested', 20, True),
+    'enkidu':        ('enkidu_harvested', 30, True),
     'perseus':       ('perseus_blocks', 5, False),
-    'theseus':       ('theseus_explored_floors', 5, True),
+    'theseus':       ('theseus_explored_floors', 8, True),
     'persephone':    ('persephone_quality5', 5, True),
     'hermes':        ('hermes_teleports', 8, False),
-    'sibyl':         ('total_correct_answers', 500, False),  # also requires level < 20
-    'valkyrie':      ('ranged_kills', 25, False),
+    'sibyl':         ('total_correct_answers', 1200, False),  # also requires level < 20
+    'valkyrie':      ('ranged_kills', 60, False),
     'ahasverus':     ('tile_moves', 15000, False),
     'circe':         ('circe_bonus_types', 5, True),
-    'gawain':        ('gawain_wins', 6, False),
+    'gawain':        ('gawain_wins', 15, False),
     'ariadne':       ('ariadne_fast_exits', 10, False),
     'morgan':        ('morgan_spells', 6, False),
     'cuchulainn':    ('cuchulainn_wins', 5, False),
-    'fenrir':        ('fenrir_debuff_turns', 150, False),
+    'fenrir':        ('fenrir_debuff_turns', 400, False),
     'kali':          ('kali_kills', 100, False),          # dict-based, uses max value
     'medusa':        ('medusa_episodes_answered', 5, False),
-    'green_knight':  ('green_knight_survivals', 5, False),
-    'narcissus':     ('narcissus_examines', 30, False),
+    'green_knight':  ('green_knight_survivals', 10, False),
+    'narcissus':     ('narcissus_examines', 75, False),
     'cerberus':      ('stair_uses', 300, False),
     'ragnarok':      ('_special', -1, False),             # conditional: level 100 + <=10 HP
-    'spartacus':     ('spartacus_kills', 20, False),
-    'ramanujan':     ('math_correct_run', 500, False),
-    'ibn_battuta':   ('theseus_explored_floors', 30, True),
+    'spartacus':     ('spartacus_kills', 50, False),
+    'ramanujan':     ('math_correct_run', 2500, False),
+    'ibn_battuta':   ('theseus_explored_floors', 40, True),
     'tesla':         ('tesla_zaps', 50, False),
     'de_medici':     ('de_medici_picks', 20, False),
-    'leonidas':      ('leonidas_kill_floors', 30, True),
+    'leonidas':      ('leonidas_kill_floors', 45, True),
     'confucius':     ('confucius_blessed_philosophy', 50, False),
     'zoroaster':     ('zoroaster_pray_floors', 15, True),
     'boudicca':      ('boudicca_kills', 50, False),
-    'solomon_q':     ('philosophy_correct_total', 100, False),
+    'solomon_q':     ('philosophy_correct_total', 150, False),
     'atalanta':      ('atalanta_fast25', 10, False),
-    'galileo':       ('science_correct_total', 100, False),
-    'caesar':        ('caesar_kills', 300, False),
+    'galileo':       ('science_correct_total', 150, False),
+    'caesar':        ('caesar_kills', 750, False),
     'shakespeare':   ('shakespeare_scrolls', 50, False),
     'wanderlust_q':  ('tile_moves', 20000, False),
     'nostradamus':   ('nostradamus_lore', 10, False),
     'archimedes':    ('_special', -1, False),             # needs sci>=50 AND eco>=50
-    'machiavelli':   ('machiavelli_run_correct', 500, False),
+    'machiavelli':   ('machiavelli_run_correct', 3000, False),
     'darwin':        ('darwin_debuff_types', 8, True),
     'hypatia':       ('_special', -1, False),             # needs math>=50 AND sci>=50
     # Power quirks
@@ -1246,34 +1340,45 @@ _QUIRK_PROGRESS = {
     'phoenix_rising': ('phoenix_survivals', 10, False),
     'eye_storm':     ('eye_storm_clean_floors', 5, False),
     'iron_will':     ('iron_will_paralyzed_hits', 10, False),
-    'battle_trance': ('battle_trance_kills', 200, False),
+    'battle_trance': ('battle_trance_kills', 350, False),
     'second_sight':  ('second_sight_blind_lore', 5, False),
     'iron_ration':   ('tile_moves', 15000, False),
     'shadow_step':   ('invisible_moves', 2500, False),
-    'focused_scholar': ('total_correct_answers', 500, False),
+    'focused_scholar': ('total_correct_answers', 2000, False),
     'arcane_surge':  ('arcane_surge_casts', 20, False),
     'death_wish':    ('death_wish_kills', 10, False),
     'wandering_star': ('hermes_teleports', 15, False),
-    'time_dilation': ('consecutive_correct', 25, False),
+    'time_dilation': ('consecutive_correct', 50, False),
     'mirror_mind':   ('items_identified', 100, False),
     'metabolic':     ('tile_moves', 5000, False),
     'venom_lore':    ('venom_lore_turns', 5, False),
     'war_cry':       ('war_cry_kills', 15, False),
     'mind_fortress': ('mental_debuff_correct', 30, False),
-    'temporal_shield': ('temporal_shield_hits', 50, False),
-    'ancestral_q':   ('theseus_explored_floors', 10, True),
+    'temporal_shield': ('temporal_shield_hits', 500, False),
+    'ancestral_q':   ('theseus_explored_floors', 18, True),
     'mystic_eye':    ('mystic_eye_floors', 10, True),
     'life_drain':    ('life_drain_kills', 25, False),
     'reality_anchor': ('reality_anchor_turns', 5, False),
     'runic_armor':   ('runic_armor_turns', 10, False),
     'astral_form':   ('astral_form_invisible_turns', 100, False),
-    'sage_counsel':  ('history_correct_total', 50, False),
-    'ouroboros':     ('total_correct_answers', 1000, False),
+    'sage_counsel':  ('history_correct_total', 80, False),
+    'ouroboros':     ('total_correct_answers', 6000, False),
     'diogenes':     ('levels_without_shard', 10, False),
     # Duck of Doom: wear the cursed +2 AC headgear for 2026 turns to
     # hatch the Waddlekind pet. Progress key counts turns the Duck
     # has been welded to the player's head.
     'duck_of_doom':  ('duck_of_doom_turns', 2026, False),
+    # --- added 2026-10-04 ---
+    'eratosthenes':  ('geography_mastery_correct', 100, False),
+    'aesop':         ('animal_mastery_correct', 150, False),
+    'apicius':       ('cooking_mastery_correct', 80, False),
+    'aquinas':       ('theology_mastery_correct', 100, False),
+    'adam_smith':    ('economics_mastery_correct', 75, False),
+    'johnson':       ('grammar_mastery_correct', 100, False),
+    'hercules':      ('hercules_labours', 12, True),
+    'pythagoras':    ('_special', -1, False),             # chains 3, 4, 5 in a row
+    'achilles':      ('achilles_barefoot_kills', 150, False),
+    'daedalus':      ('daedalus_streak', 12, False),
 }
 
 # Canonical display order and names for all quirks
@@ -1330,6 +1435,12 @@ _QUIRK_NAMES = {
     'sage_counsel': "Sage's Counsel", 'ouroboros': "The Infinite Circle",
     'diogenes': "Diogenes' Lantern",
     'duck_of_doom': "The Duck of Doom",
+    # --- added 2026-10-04 ---
+    'eratosthenes': "Eratosthenes' Measure", 'aesop': "Aesop's Menagerie",
+    'apicius': "The Table of Apicius", 'aquinas': "The Dumb Ox",
+    'adam_smith': "The Invisible Hand", 'johnson': "Johnson's Dictionary",
+    'hercules': "The Twelve Labours", 'pythagoras': "Pythagoras' Harmony",
+    'achilles': "Achilles' Heel", 'daedalus': "Daedalus' Craft",
 }
 
 # Canonical display order
@@ -1343,12 +1454,12 @@ _QUIRK_TRIGGER = {
     'scheherazade':  "You read 12 distinct scrolls before identifying them.",
     'paracelsus':    "Disease drained 5 total stat points from you.",
     'siegfried':     "You ate ingredients from monsters with 5 distinct attack effects.",
-    'musashi':       "You killed 30 enemies with a chain of exactly 1.",
+    'musashi':       "You killed 60 enemies with a chain of exactly 1.",
     'rasputin':      "You survived 5 separate times at 5% HP or below.",
     'merlin':        "You zapped 10 distinct unidentified wands.",
     'buddha':        "You waited 500 times while hostile monsters were nearby.",
     'hephaestus':    "You equipped the same armor piece 15 times.",
-    'cassandra':     "You answered 50 questions wrong in one run and kept going anyway.",
+    'cassandra':     "You answered 100 questions wrong in one run and kept going anyway.",
     'sisyphus':      "You failed the lockpick quiz on 10 distinct trapped chests.",
     'job':           "You triggered 5 distinct trap types.",
     'orpheus':       "You stood beside monsters for 10 turns without fighting, 5 times.",
@@ -1360,87 +1471,98 @@ _QUIRK_TRIGGER = {
     'penelope':      "You equipped or unequipped armor 100 times.",
     'dionysus':      "You drank 10 potions while hallucinating.",
     'apollo':        "You reached a chain of 10 or more, 10 times.",
-    'athena':        "You encountered 50 distinct monster species.",
+    'athena':        "You encountered 80 distinct monster species.",
     'loki':          "You wore 5 cursed items for 10+ turns each.",
-    'thor':          "You fought 30 combats with the same weapon.",
-    'beowulf':       "You won 10 unarmed combats.",
+    'thor':          "You fought 150 combats with the same weapon.",
+    'beowulf':       "You won 25 unarmed combats.",
     'norns':         "You used Recall Lore 20 times.",
     'jormungandr':   "You equipped and unequipped the same weapon 20 times.",
     'shiva':         "You spent 100 turns under hallucination.",
-    'enkidu':        "You harvested 20 distinct monster species.",
+    'enkidu':        "You harvested 30 distinct monster species.",
     'perseus':       "You reflected 5 status effects back at monsters.",
-    'theseus':       "You fully explored 5 dungeon floors.",
+    'theseus':       "You fully explored 8 dungeon floors.",
     'persephone':    "You cooked tier-5 recipes from 5 distinct ingredients.",
     'hermes':        "You teleported 8 or more times.",
-    'sibyl':         "You answered 500 questions correctly before level 20.",
-    'valkyrie':      "You made 25 ranged kills.",
+    'sibyl':         "You answered 1,200 questions correctly before level 20.",
+    'valkyrie':      "You made 60 ranged kills.",
     'ahasverus':     "You moved 15,000 tiles -- a wanderer without equal.",
     'circe':         "You cooked meals from 5 distinct bonus-type categories.",
-    'gawain':        "You won 6 combats starting at 40% HP or below.",
+    'gawain':        "You won 15 combats starting at 40% HP or below.",
     'ariadne':       "You escaped 10 floors within 30 turns of arriving.",
     'morgan':        "You cast 6 spells at 20% HP or below.",
     'cuchulainn':    "You killed 5 enemies while feared.",
-    'fenrir':        "You endured 150 turns under debuffs.",
+    'fenrir':        "You endured 400 turns under debuffs.",
     'kali':          "You killed 100 of the same monster type.",
     'medusa':        "You answered correctly while blinded in 5 separate blinded episodes.",
-    'green_knight':  "You survived 5 single hits dealing 30%+ of your max HP.",
-    'narcissus':     "You examined your inventory 30 times.",
+    'green_knight':  "You survived 10 single hits dealing 30%+ of your max HP.",
+    'narcissus':     "You examined your inventory 75 times.",
     'cerberus':      "You used the stairs 300 times.",
     'ragnarok':      "You descended to level 100 with 10 HP or less.",
     # --- New passive quirks ---
-    'spartacus':     "You killed 20 enemies while at least one debuff was active.",
-    'ramanujan':     "You answered 500 math questions correctly in one run.",
-    'ibn_battuta':   "You fully explored 30 distinct dungeon floors.",
+    'spartacus':     "You killed 50 enemies while at least one debuff was active.",
+    'ramanujan':     "You answered 2,500 math questions correctly in one run.",
+    'ibn_battuta':   "You fully explored 40 distinct dungeon floors.",
     'tesla':         "You zapped 50 wands.",
     'de_medici':     "You successfully picked 20 locks.",
-    'leonidas':      "You killed enemies on 30 distinct dungeon floors.",
+    'leonidas':      "You killed enemies on 45 distinct dungeon floors.",
     'confucius':     "You answered 50 philosophy questions correctly while Blessed.",
     'zoroaster':     "You prayed successfully on 15 distinct dungeon floors.",
     'boudicca':      "You killed 50 enemies while missing more than 60% of your HP.",
-    'solomon_q':     "You answered 100 philosophy questions correctly.",
+    'solomon_q':     "You answered 150 philosophy questions correctly.",
     'atalanta':      "You escaped 10 floors within 25 turns of arriving.",
-    'galileo':       "You answered 100 science questions correctly.",
-    'caesar':        "You killed 300 monsters in one run.",
+    'galileo':       "You answered 150 science questions correctly.",
+    'caesar':        "You killed 750 monsters in one run.",
     'shakespeare':   "You successfully read 50 scrolls.",
     'wanderlust_q':  "You moved 20,000 tiles -- the road is your home.",
     'nostradamus':   "You used Recall Lore 10 times while mentally debuffed.",
-    'archimedes':    "You answered 50 science AND 50 economics questions correctly.",
-    'machiavelli':   "You answered 500 questions correctly in one run.",
+    'archimedes':    "You answered 80 science AND 80 economics questions correctly.",
+    'machiavelli':   "You answered 3,000 questions correctly in one run.",
     'darwin':        "You survived 8 distinct types of debuffs in one run.",
-    'hypatia':       "You answered 50 math AND 50 science questions correctly.",
+    'hypatia':       "You answered 250 math AND 60 science questions correctly.",
     # --- New power quirks ---
     'philosophers_stone': "You identified 200 items.",
     'atlas_burden':  "You carried 90%+ of your weight limit for 100 turns.",
-    'zeus_bolt':     "You were Hasted 15 times in a single run.",
-    'gorgon_ward':   "You survived the petrifying effect 3 times.",
+    'zeus_bolt':     "You became Hasted 15 separate times in a single run.",
+    'gorgon_ward':   "You began turning to stone and survived it, 3 times.",
     'phoenix_rising': "You survived at 5% HP or below 10 separate times.",
     'eye_storm':     "You completed 5 floors without taking any damage.",
     'iron_will':     "You took damage 10 times while paralyzed.",
-    'battle_trance': "You killed 200 monsters.",
+    'battle_trance': "You killed 350 monsters.",
     'second_sight':  "You used Recall Lore 5 times while blinded.",
     'iron_ration':   "You moved 15,000 tiles on foot.",
     'shadow_step':   "You moved 2,500 tiles while invisible.",
-    'focused_scholar': "You answered 500 questions correctly.",
+    'focused_scholar': "You answered 2,000 questions correctly.",
     'arcane_surge':  "You cast 20 spells in one run.",
     'death_wish':    "You won 10 combats while at 10% HP or below.",
     'wandering_star': "You teleported 15 times.",
-    'time_dilation': "You answered 25 questions correctly in a row.",
+    'time_dilation': "You answered 50 questions correctly in a row.",
     'mirror_mind':   "You identified 100 items.",
     'metabolic':     "You moved 5,000 tiles.",
     'venom_lore':    "You endured 5 turns with both poison and disease simultaneously.",
     'war_cry':       "You killed 15 enemies while feared.",
     'mind_fortress': "You answered 30 questions correctly while mentally debuffed.",
-    'temporal_shield': "You took 50 hits in a single run.",
-    'ancestral_q':   "You fully explored 10 dungeon floors.",
+    'temporal_shield': "You took 500 hits in a single run.",
+    'ancestral_q':   "You fully explored 18 dungeon floors.",
     'mystic_eye':    "You had Telepathy active upon entering 10 distinct floors.",
     'life_drain':    "You killed 25 enemies while at 15% HP or below.",
     'reality_anchor': "You endured 5 turns confused AND hallucinating simultaneously.",
     'runic_armor':   "You had fire, cold, AND shock resistance all active for 10 turns.",
     'astral_form':   "You spent 100 turns invisible.",
-    'sage_counsel':  "You answered 50 history questions correctly.",
-    'ouroboros':     "You answered 1,000 questions correctly in one run.",
+    'sage_counsel':  "You answered 80 history questions correctly.",
+    'ouroboros':     "You answered 6,000 questions correctly in one run.",
     'diogenes':     "You dropped the Philosopher's Shard and survived 10 levels without it.",
     'duck_of_doom': "You wore the Duck of Doom on your head for 2,026 turns without removing it.",
+    # --- added 2026-10-04 ---
+    'eratosthenes':  "You answered 100 geography questions correctly.",
+    'aesop':         "You answered 150 animal questions correctly.",
+    'apicius':       "You answered 80 cooking questions correctly.",
+    'aquinas':       "You answered 100 theology questions correctly.",
+    'adam_smith':    "You answered 75 economics questions correctly.",
+    'johnson':       "You answered 100 grammar questions correctly.",
+    'hercules':      "You slew 12 different bosses, mini-bosses or seal demons.",
+    'pythagoras':    "You ended three attacks in a row on chains of exactly 3, 4 and 5.",
+    'achilles':      "You killed 150 enemies with nothing worn on your feet.",
+    'daedalus':      "You opened 12 locks in a row without failing one.",
 }
 
 # Flavor quote shown on unlock -- captures the spirit of the achievement
@@ -1549,6 +1671,17 @@ _QUIRK_FLAVOR = {
     'ouroboros':     "The serpent swallows its own tail and is never diminished. -- Hermetic Corpus",
     'diogenes':     "I am looking for an honest man. I do not need a lantern -- I need only my eyes. -- Diogenes",
     'duck_of_doom': "Always trust a duck wearing a hat. -- The Munchkin Field Manual",
+    # --- added 2026-10-04 ---
+    'eratosthenes':  "A stick, a shadow, and the patience to measure. -- after Eratosthenes",
+    'aesop':         "Every creature carries its own moral. You only have to look.",
+    'apicius':       "A dish well understood is a dish half made.",
+    'aquinas':       "They call him the Dumb Ox, but his bellowing will fill the world. -- Albertus Magnus",
+    'adam_smith':    "It is not from the benevolence of the butcher that we expect our dinner. -- Adam Smith",
+    'johnson':       "Lexicographer: a harmless drudge. -- Samuel Johnson",
+    'hercules':      "Twelve were asked of him. Twelve were done.",
+    'pythagoras':    "There is geometry in the humming of the strings. -- Pythagoras",
+    'achilles':      "She held him by the heel, and the river never touched it.",
+    'daedalus':      "There is no lock I did not build first in my head. -- Daedalus",
 }
 
 # Map quirk IDs to short effect descriptions shown on unlock
@@ -1559,7 +1692,7 @@ _QUIRK_EFFECTS = {
     'scheherazade':  "INT +1.",
     'paracelsus':    "Permanent drain & disease resistance.",
     'siegfried':     "Permanent magic resistance.",
-    'musashi':       "Chain-1 damage uses 2nd multiplier instead of weakest.",
+    'musashi':       "A chain of exactly 1 deals double damage.",
     'rasputin':      "CON +2",
     'merlin':        "INT +1.",
     'buddha':        "Permanent displacement -- monsters may miss.",
@@ -1581,7 +1714,7 @@ _QUIRK_EFFECTS = {
     'thor':          "That weapon gains +2 enchant bonus permanently.",
     'beowulf':       "Unarmed attacks deal +5 base damage.",
     'norns':         "Recall lore cooldown reduced by 50%.",
-    'jormungandr':   "That weapon's max chain length +1.",
+    'jormungandr':   "With that weapon, any landed attack counts as +1 chain.",
     'shiva':         "WIS +1.",
     'enkidu':        "STR +1",
     'perseus':       "+2 to all saving throws -- you turn the blow aside.",
@@ -1595,7 +1728,7 @@ _QUIRK_EFFECTS = {
     'gawain':        "CON +1",
     'ariadne':       "INT +1",
     'morgan':        "INT +2",
-    'cuchulainn':    "STR +1",
+    'cuchulainn':    "STR +2 and permanent immunity to fear.",
     'fenrir':        "CON +1",
     'kali':          "WIS +1.",
     'medusa':        "DEX +2",
@@ -1619,42 +1752,53 @@ _QUIRK_EFFECTS = {
     'caesar':        "All stats +1",
     'shakespeare':   "INT +1.",
     'wanderlust_q':  "SP drain from movement is halved.",
-    'nostradamus':   "WIS +3",
+    'nostradamus':   "WIS +2",
     'archimedes':    "INT +1",
     'machiavelli':   "WIS +1, math combat quiz timer +1s.",
-    'darwin':        "CON +3",
+    'darwin':        "CON +2",
     'hypatia':       "INT +2",
     # --- New power quirks ---
-    'philosophers_stone': "[POWER x1] Blessed + Brilliance for 10 turns.",
-    'atlas_burden':  "[POWER x2] Heroism for 20 turns.",
-    'zeus_bolt':     "[POWER x3] Shock Resist + Hasted for 15 turns.",
-    'gorgon_ward':   "[POWER x2] Sleep Resist + Displacement for 15 turns.",
-    'phoenix_rising': "[POWER x1] Fully restore HP.",
-    'eye_storm':     "[POWER x3] Invisible + Blessed for 10 turns.",
-    'iron_will':     "[POWER x2] Shielded + Reflecting for 10 turns.",
-    'battle_trance': "[POWER x3] Heroism for 15 turns.",
-    'second_sight':  "[POWER x3] Telepathy + Clairvoyance for 15 turns.",
-    'iron_ration':   "[POWER x5] Restore 100 SP.",
-    'shadow_step':   "[POWER x3] Invisible + Phasing for 5 turns.",
-    'focused_scholar': "[POWER x2] Brilliance for 10 turns.",
-    'arcane_surge':  "[POWER x2] Brilliance for 10 turns + restore all MP.",
-    'death_wish':    "[POWER x3] Heroism + Hasted for 10 turns.",
-    'wandering_star': "[POWER CD:50] Teleport to a random location.",
-    'time_dilation': "[POWER x1] Time Stop for 10 turns.",
-    'mirror_mind':   "[POWER x2] Reflecting + Magic Resist for 10 turns.",
-    'metabolic':     "[POWER x3] Restore 100 SP.",
-    'venom_lore':    "[POWER x3] Poison Resist for 20 turns; cures poison.",
-    'war_cry':       "[POWER x3] Hasted for 8 turns.",
-    'mind_fortress': "[POWER x3] Clear all mental debuffs instantly.",
-    'temporal_shield': "[POWER x2] Shielded for 25 turns.",
-    'ancestral_q':   "[POWER x2] Clairvoyance for 20 turns.",
-    'mystic_eye':    "[POWER x3] Telepathy + Clairvoyance + Warning for 15 turns.",
-    'life_drain':    "[POWER x3] Restore 25% of max HP.",
-    'reality_anchor': "[POWER x2] Clear all debuffs instantly.",
-    'runic_armor':   "[POWER x2] Fire Shield + Cold Shield + Shock Resist for 10 turns.",
-    'astral_form':   "[POWER x2] Levitate + Invisible + Phase for 8 turns.",
-    'sage_counsel':  "[POWER x3] Blessed for 15 turns (+25% math combat quiz timer).",
-    'ouroboros':     "[POWER x1] Hasted + Shielded + Regenerating for 20 turns.",
+    'philosophers_stone': "Power, 1 use: Blessed + Brilliance for 10 turns.",
+    'atlas_burden':  "Power, 2 uses: Heroism for 20 turns.",
+    'zeus_bolt':     "Power, 3 uses: Shock Resist + Hasted for 15 turns.",
+    'gorgon_ward':   "Power, 2 uses: Sleep Resist + Displacement for 15 turns.",
+    'phoenix_rising': "Power, 1 use: Fully restore HP.",
+    'eye_storm':     "Power, 3 uses: Invisible + Blessed for 10 turns.",
+    'iron_will':     "Power, 2 uses: Shielded + Reflecting for 10 turns.",
+    'battle_trance': "Power, 3 uses: Heroism for 15 turns.",
+    'second_sight':  "Power, 3 uses: Telepathy + Clairvoyance for 15 turns.",
+    'iron_ration':   "Power, 5 uses: Restore 100 SP.",
+    'shadow_step':   "Power, 3 uses: Invisible + Phasing for 5 turns.",
+    'focused_scholar': "Power, 2 uses: Brilliance for 10 turns.",
+    'arcane_surge':  "Power, 2 uses: Brilliance for 10 turns + restore all MP.",
+    'death_wish':    "Power, 3 uses: Heroism + Hasted for 10 turns.",
+    'wandering_star': "Power, every 50 turns: Teleport to a random location.",
+    'time_dilation': "Power, 1 use: Time Stop for 10 turns.",
+    'mirror_mind':   "Power, 2 uses: Reflecting + Magic Resist for 10 turns.",
+    'metabolic':     "Power, 3 uses: Restore 100 SP.",
+    'venom_lore':    "Power, 3 uses: Poison Resist for 20 turns; cures poison.",
+    'war_cry':       "Power, 3 uses: Hasted for 8 turns.",
+    'mind_fortress': "Power, 3 uses: Clear all mental debuffs instantly.",
+    'temporal_shield': "Power, 2 uses: Shielded for 25 turns.",
+    'ancestral_q':   "Power, 2 uses: Clairvoyance for 20 turns.",
+    'mystic_eye':    "Power, 3 uses: Telepathy + Clairvoyance + Warning for 15 turns.",
+    'life_drain':    "Power, 3 uses: Restore 25% of max HP.",
+    'reality_anchor': "Power, 2 uses: Clear all debuffs instantly.",
+    'runic_armor':   "Power, 2 uses: Fire Shield + Cold Shield + Shock Resist for 10 turns.",
+    'astral_form':   "Power, 2 uses: Levitate + Invisible + Phase for 8 turns.",
+    'sage_counsel':  "Power, 3 uses: Blessed for 15 turns (+25% math combat quiz timer).",
+    'ouroboros':     "Power, 1 use: Hasted + Shielded + Regenerating for 20 turns.",
     'diogenes':     "WIS +2",
     'duck_of_doom': "A celestial duckling hatched off your head as a pet.",
+    # --- added 2026-10-04 ---
+    'eratosthenes':  "PER +1.",
+    'aesop':         "WIS +1.",
+    'apicius':       "CON +1.",
+    'aquinas':       "WIS +1.",
+    'adam_smith':    "WIS +1.",
+    'johnson':       "INT +1.",
+    'hercules':      "STR +2",
+    'pythagoras':    "INT +1.",
+    'achilles':      "DEX +1",
+    'daedalus':      "DEX +1",
 }

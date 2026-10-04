@@ -4100,6 +4100,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Ring of Sustenance halves again (1 per 4 moves)
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
         drain_interval = 4 if self.player.has_effect('sustained') else 2
+        # The Endless Wanderer quirk: walking drains SP at half the rate.
+        # (The quirk set this flag but nothing read it.)
+        if self.player.quirk_progress.get('wanderlust_active'):
+            drain_interval *= 2
         # Chain-equip passive: hunger_slow (Idunn Apple Charm). Multiplier
         # on the drain interval -- 0.33 adds 33% more ticks between drains.
         try:
@@ -6500,7 +6504,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         lines = [
             f'You have earned a new trait: "{name}".',
             '',
-            f'Reward: {effect}',
+            effect,
         ]
         if trigger:
             lines.append('')

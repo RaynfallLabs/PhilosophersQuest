@@ -447,6 +447,7 @@ class RenderMixin:
             (name, FP.GOLD_PALE, get_font('heading', 23)),
             (f"Progress: {int(pct * 100)}%", FP.CYAN_ACCENT, self.font_sm),
         ]
+        from quirk_text import quirk_description, quirk_hint
         if unlocked:
             detail_lines.append(("Unlocked", FP.SUCCESS_TEXT, self.font_sm))
             if effect:
@@ -454,17 +455,37 @@ class RenderMixin:
                     ("Reward", FP.GOLD_BRIGHT, self.font_sm),
                     (effect, FP.BODY_TEXT, self.font_sm),
                 ]
+            desc = quirk_description(qid)
+            if desc:
+                detail_lines += [
+                    ("What it does", FP.GOLD_BRIGHT, self.font_sm),
+                    (desc, FP.BODY_TEXT, self.font_sm),
+                ]
             if trigger:
                 detail_lines += [
                     ("How it unlocked", FP.GOLD_BRIGHT, self.font_sm),
                     (trigger, FP.FADED_TEXT, self.font_sm),
                 ]
+            from quirk_system import _QUIRK_FLAVOR
+            quote = _QUIRK_FLAVOR.get(qid, '')
+            if quote:
+                detail_lines += [
+                    ('', FP.FADED_TEXT, self.font_sm),
+                    (f'"{quote}"', FP.PARCHMENT_LIGHT, self.font_sm),
+                ]
         else:
-            detail_lines += [
-                ("Locked", FP.FADED_TEXT, self.font_sm),
-                ("Reward and trigger stay hidden until this quirk unlocks.",
-                 FP.BODY_TEXT, self.font_sm),
-            ]
+            detail_lines.append(("Locked", FP.FADED_TEXT, self.font_sm))
+            hint = quirk_hint(qid)
+            if hint:
+                # A nudge in the voice of the figure it is named for; the
+                # exact condition and the reward stay hidden until earned.
+                detail_lines += [
+                    ("A hint", FP.GOLD_BRIGHT, self.font_sm),
+                    (hint, FP.PARCHMENT_LIGHT, self.font_sm),
+                ]
+            detail_lines.append(
+                ("The reward stays hidden until this quirk unlocks.",
+                 FP.FADED_TEXT, self.font_sm))
         render_lines = []
         for text, color, fnt in detail_lines:
             for line in self._ui_text_lines(text, fnt, detail_body.w - 12):
