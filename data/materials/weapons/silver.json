@@ -31,7 +31,7 @@
     "bypasses_undead_resistance",
     "blessed_capable"
   ],
-  "lore_descriptor": "moon-bright, slightly heavier than it should be",
+  "lore_descriptor": "moon-bright and a little heavier than it should be, the metal unclean things cannot bear",
   "unidentified_descriptor": "pale, gleaming blade",
   "first_pickup_chronicle": "Silver. The dead will hate this. The good news is, the dungeon has plenty of them.",
   "design_notes": "Chain combat v2 tuning: damage_mult 0.90, weight_mult 1.05, effective_against undead+lycanthrope (T2 specialty). Value is in effective_against, not raw damage. The first 'situational' material — players will swap to silver for undead floors."

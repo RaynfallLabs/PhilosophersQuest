@@ -38,7 +38,7 @@
     "blessed_capable",
     "rare_to_find"
   ],
-  "lore_descriptor": "copper-rose flickering to bronze when shadowed",
+  "lore_descriptor": "red-gold, the metal Plato said flashed like fire on the walls of Atlantis",
   "unidentified_descriptor": "lustrous golden",
   "first_pickup_chronicle": "Orichalcum. Atlantis was real, then. Or my memory of it just became real. The metal is warm to the touch and hums when held near a spell. Plato saw one of these once. He didn't believe it either.",
   "design_notes": "Chain combat v2 tuning: damage_mult 1.60, weight_mult 0.95, effective_against outsider+demon_major (T5 specialty). Deliberately narrow spawn spread (6) — orichalcum is rare-of-rares. armor_ac_bonus 2 and max_enchant 7 (highest of any material) put it above shadowiron for magical builds. spell_damage_bonus_15pct stacks with the player's wand/spell damage."

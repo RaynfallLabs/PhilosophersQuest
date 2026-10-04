@@ -9,7 +9,7 @@
     ],
     "weight": 1.0,
     "min_level": 0,
-    "lore": "Forged in the crucible of creation when Prometheus first stole fire from the gods, the Philosopher's Stone pulses with the captured light of a thousand calcined souls, each one surrendered willingly to the Great Work. It is said that Hermes Trismegistus held it once and wept, for the Stone does not merely transmute lead into gold — it transmutes the bearer, burning away all that is base until only the quintessence remains. To carry it toward the light of the sun is to complete the Magnum Opus, the final conjunction of Sul and Luna, the perfection of matter and spirit made one.",
+    "lore": "The alchemists called their goal the Great Work and wrote that it passes through three colors: the blackening, the whitening, and at last the reddening, when the Stone appears. Zosimos of Panopolis sought it in Roman Egypt. Copyists claimed that Nicolas Flamel made it in Paris. The Emerald Tablet, ascribed to Hermes Trismegistus, puts the method in one line: that which is above is like that which is below. None of them held this. It is red, heavier than gold, and warm as a living hand. What it is carried past, it shows truly. Abaddon kept it in the Pit because its last change needs sunlight.",
     "special_properties": {
       "plot_role": "abaddon_drop_endgame_anchor",
       "effects": [
@@ -37,7 +37,7 @@
     ],
     "weight": 0.5,
     "min_level": 0,
-    "lore": "A small bronze figure of a bull, worn smooth by centuries of prayer. King Minos was given such a bull by Poseidon — and his refusal to sacrifice it at the sacred waters cursed his bloodline forever. The idol still smells faintly of sea-foam.",
+    "lore": "Minos prayed to Poseidon for a sign that Crete was his to rule, and the god sent a white bull walking out of the surf, to be given back in sacrifice. Minos thought it too fine to kill and offered a lesser animal. Poseidon's punishment fell on the king's house: the Minotaur, Asterion, was born of it, and the Labyrinth was built to hide him. This small bronze bull has been worn smooth by centuries of hands. It still smells faintly of sea-foam, and it still wants to be given back at sacred water.",
     "special_properties": {
       "plot_role": "asterion_quest_layer1",
       "effects": [
@@ -63,7 +63,7 @@
     ],
     "weight": 0.2,
     "min_level": 25,
-    "lore": "A single milky eye, cold as sea-stone. The three Grey Sisters — Deino, Enyo, and Pemphredo — shared this one eye between them. Perseus stole it and refused to return it until they revealed the secret of slaying Medusa. It still seems to watch you, even from your pack. The gods rewarded his cunning at a sacred place.",
+    "lore": "A single milky eye, cold as a sea-stone. The three Grey Sisters, Deino, Enyo and Pemphredo, were born old, and they had one eye and one tooth among them, passed from hand to hand. Perseus waited until the eye was between two sisters and all three were blind, and took it. He would not give it back until they told him the road to Medusa. It goes on watching from inside a pack. The gods rewarded that piece of cunning at a place sacred to Athena, and they might again.",
     "spread": 13,
     "peak_weight": 0.4,
     "special_properties": {
@@ -90,7 +90,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A tiny glass vial that makes no sound when shaken. The dwarves of Svartalfheim harvested the silence of a cat's paw to forge Gleipnir, the binding that held Fenrir.",
+    "lore": "A glass vial that makes no sound when shaken. The gods had twice bound the wolf Fenrir with iron, and twice he had burst the chain. So Odin sent to the dwarves, who asked for six things. This was the first: the noise a cat makes when it walks. Snorri adds, quite seriously, that this is why a cat's step has made no sound from that day on. The dwarves used all there was.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -117,7 +117,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "Fine filaments of something that shouldn't exist. The dwarves used them because they are impossible — and impossible things make the strongest chains.",
+    "lore": "A twist of fine filaments, like hair, that the eye keeps sliding off. It is the second of the six things the dwarves of Svartalfheim worked into the fetter Gleipnir: the beard of a woman. The old storyteller who wrote the recipe down told his listener to check it against the world. Women have no beards, he pointed out, because the dwarves took them all.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -144,7 +144,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A gnarled tendril of grey stone that pulses faintly with geologic patience. Mountains have roots that reach to the earth's core. The dwarves knew where to dig.",
+    "lore": "A gnarled tendril of grey stone, cool and very slightly flexible. A mountain looks as though it ought to be rooted like a tree, but dig beneath one and there is only more stone. The Norse account explains why: the dwarves pulled up every root there was for the binding of the wolf Fenrir. This piece was left on the workshop floor.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -171,7 +171,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A sealed bubble of impossibility — air exhaled by a creature that has no lungs. It smells of deep water and cold currents.",
+    "lore": "A sealed bubble that smells of deep water and cold currents. Fish do not breathe air, and no one has ever seen the breath of one hang in a winter morning. According to the Norse reckoning there used to be such a thing, until the dwarves gathered all of it for the cord that holds the wolf. The bubble turns slowly, as if still looking for the surface.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -198,7 +198,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A single drop of moisture from a creature with no salivary glands. It glistens on its own, independent of any light source.",
+    "lore": "One bright drop that keeps its shape and glistens without any light to help it. It is the last ingredient of Gleipnir: the spittle of a bird. Fenrir himself now drools enough to fill a river, which the Norse call Van, where he lies bound with a sword propping his jaws. The birds gave up theirs so that he could be put there.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -225,7 +225,7 @@
     "weight": 0.2,
     "min_level": 60,
     "identified": false,
-    "lore": "A thread of something between nerve and tendon, harvested from the concept of a bear's awareness. It twitches occasionally, sensing things you cannot.",
+    "lore": "A pale thread, something between nerve and tendon, that twitches now and then as if it had felt something move. The dwarves asked for the sinews of a bear, the cords that carry feeling through that enormous body, and wove them into the wolf's fetter with five other things that no longer exist. It senses what its bearer cannot.",
     "spread": 24,
     "peak_weight": 0.2,
     "special_properties": {
@@ -252,7 +252,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A ribbon as thin as silk and as light as nothing. It cannot be broken by any force in the Nine Realms. The dwarves of Svartalfheim forged it from six impossible things, and it held the Wolf of Ragnarok until the end of days. It whispers of binding.",
+    "lore": "The first chain the gods made for Fenrir was called Leyding, and the second, twice as strong, Dromi. He snapped both. The third is this: a ribbon as smooth and soft as silk, made by the dwarves from six things that are not in the world any more. The wolf smelled a trick and would not be bound unless a god laid a hand between his jaws as a pledge. Only Tyr stepped forward. The ribbon tightened the more the wolf struggled, and all the gods laughed except Tyr, who lost his hand. It has never been broken.",
     "special_properties": {
       "identified": true,
       "plot_role": "fenrir_quest_layer1_assembled",
@@ -279,7 +279,7 @@
     "weight": 0.3,
     "min_level": 1,
     "identified": false,
-    "lore": "Useless scrap left over from leather-working. Too small for armor, too stiff for bandages. You can't imagine why anyone would keep this.",
+    "lore": "A stiff offcut of leather, the corner a cobbler trims away at the toe or heel of a shoe. It is too small to patch armor and too hard to bind a wound. There is an old custom in the north that such trimmings should never be saved or reused, only thrown aside. Someone is said to be collecting them, and to be in no hurry.",
     "spread": 8,
     "peak_weight": 0.4,
     "special_properties": {
@@ -307,7 +307,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A blood-red sigil torn from the first guardian of the Abyss. It burns with infernal heat and smells of brimstone. One of seven seals that hold the Pit closed.",
+    "lore": "A blood-red disc, hot as a coin left in the fire, with the smell of brimstone on it. John of Patmos saw a scroll in heaven sealed with seven seals, and woe followed the breaking of each. The Pit has seven of its own, and this was kept by the first of its guardians. It came away from the demon's body only when the demon was dead.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -334,7 +334,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A sickly green sigil that weeps a foul ichor. The air around it hums with plague. One of seven seals that hold the Pit closed.",
+    "lore": "A sickly green disc that weeps something foul and makes the air around it hum like a cloud of flies. Tradition gives the rider on the white horse a crown, a bow and the name of Pestilence, and sends him out conquering. The demon that carried this seal did the same work in the dark below. It holds the Pit shut a little less well for every hand it passes through.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -361,7 +361,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A withered sigil the color of dead grain. Holding it makes you feel hollow, as though you have not eaten in days. One of seven seals that hold the Pit closed.",
+    "lore": "A withered disc the color of dead grain. The third rider of the Apocalypse sits a black horse and holds a pair of scales, and a voice names his prices: a day's wage for a measure of wheat. Whoever holds this seal feels that arithmetic in the stomach, as though days had passed since the last meal. It is one of the seven locks on the Abyss.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -388,7 +388,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A crimson sigil etched with crossed swords. It vibrates with the memory of a thousand battlefields. One of seven seals that hold the Pit closed.",
+    "lore": "A rust-red disc etched with crossed blades. To the rider on the red horse was given a great sword, and power to take peace from the earth so that men should kill one another. The seal trembles with the memory of it: the shouting, the standards, the ground afterward. A demon wore it as a badge of office, and the Pit was the office.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -415,7 +415,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A pale sigil cold as the grave. Your shadow darkens when you hold it. One of seven seals that hold the Pit closed.",
+    "lore": "A pale disc, cold as a headstone in January. John wrote: behold a pale horse, and his name that sat on him was Death, and Hell followed with him. The shadow of whoever holds this seal grows darker and a little longer than it should be. The demon that carried it is dead. The seal does not seem to have noticed.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -442,7 +442,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A cracked sigil that trembles in your hand. The stone beneath your feet groans when you carry it. One of seven seals that hold the Pit closed.",
+    "lore": "A cracked grey disc that shivers in the hand. When the sixth seal was opened, John saw a great earthquake: the sun turned black as sackcloth, the moon became as blood, and every mountain and island was moved out of its place. The stone underfoot groans when this is carried over it, as if it remembered the order and expected it again.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -469,7 +469,7 @@
     "weight": 0.1,
     "min_level": 0,
     "identified": false,
-    "lore": "A sigil of pale silver that absorbs all sound around it. In its presence, even your breathing is muffled. The last and most terrible of the seven seals that hold the Pit closed.",
+    "lore": "A disc of pale silver that swallows sound; near it even breathing is muffled. When the Lamb opened the seventh seal there was silence in heaven for about half an hour, and then the seven trumpets were handed out. This is the last lock on the Pit and the worst, because of what the quiet is waiting for.",
     "special_properties": {
       "identified": true,
       "plot_role": "seal_demon_drop",
@@ -496,7 +496,7 @@
     "weight": 1.0,
     "min_level": 0,
     "identified": false,
-    "lore": "The golden scales of the Archangel Michael, Weigher of Souls and Prince of the Heavenly Host. In the final battle against the Destroyer, the Host answers the call of these scales. For every locust of the Abyss, an angel descends.",
+    "lore": "Michael's name is a question, 'Who is like God?', and it was his battle cry when he threw the Dragon out of heaven. Painters show him with a sword in one hand and a pair of scales in the other, weighing souls at the Judgment while a devil tries to tip the pan. These are the scales. In the Book of Revelation the king of the locusts of the Abyss is named Abaddon, the Destroyer. When he opens the Pit, the Host answers these scales: for every locust that rises, an angel comes down.",
     "special_properties": {
       "identified": true,
       "plot_role": "abaddon_quest_layer4_heavenly_host",
@@ -524,7 +524,7 @@
     "min_level": 0,
     "identified": false,
     "cursed": true,
-    "lore": "A massive black stone that drinks the light around it. You accepted it willingly to save a knight's dying wife. It weighs twenty pounds and cannot be put down — the curse binds it to whoever takes it freely. Only a scroll of Remove Curse can break the bond.",
+    "lore": "Thales of Miletus said the lodestone must have a soul, because it moves iron without touching it. This one has a will as well. It is a massive black stone that drinks the light around it, and it weighs as much as a small anvil. A dying knight begged a stranger to carry it for the sake of his wife, and the curse binds it to anyone who takes it up freely. It cannot be set down. Only a scroll of Remove Curse will break the bond, and the promise would still be owed.",
     "special_properties": {
       "cursed": true,
       "identified": true,
@@ -552,7 +552,7 @@
     "weight": 2.0,
     "min_level": 0,
     "identified": false,
-    "lore": "An iron-bound scroll case sealed with the sigil of the City Watch. It contains troop positions for an ongoing siege — thousands of lives depend on its delivery. A dying courier asked you to carry it to the surface. It is heavy and useless to you, but it is a promise.",
+    "lore": "An iron-bound scroll case closed with the wax seal of the City Watch. Inside are the positions of the companies defending a city under siege, and thousands of lives ride on its reaching the surface. The courier who carried it this far could go no farther and asked with his last breath that someone else finish the run. It is heavy and of no use underground. It is a promise, which is a different kind of weight.",
     "special_properties": {
       "identified": true,
       "plot_role": "courier_promise",
@@ -580,7 +580,7 @@
     "min_level": 45,
     "identified": false,
     "stair_reveal": true,
-    "lore": "A small wooden statue of Athena, fallen from heaven to protect Troy. The city could not be taken while the Palladium remained within its walls — Odysseus and Diomedes had to steal it before the horse could work. It reveals the path forward: while carried, the stairs on every floor glow faintly in the bearer's mind, visible even through walls and darkness.",
+    "lore": "A wooden image of armed Athena, small enough to carry under one arm. The Trojans said it fell from heaven at the feet of their founder Ilus, and a prophecy held that Troy could not fall while it stayed inside the walls. So Odysseus and Diomedes crept in by night and stole it, and only then was the Horse worth building. The goddess of sound strategy still favors whoever carries her likeness: the way down shows itself to the bearer through stone and darkness alike.",
     "spread": 19,
     "peak_weight": 0.3,
     "special_properties": {
@@ -609,7 +609,7 @@
     "min_level": 70,
     "identified": false,
     "quiz_reroll": true,
-    "lore": "Whoever holds the Tablet of Destinies controls the fate of all things. Enlil kept it in his sanctuary; Anzu the storm-bird stole it and plunged the world into chaos. Ninurta slew Anzu and returned it. The Tablet allows its bearer to reject fate once per floor — when a question is answered wrongly, the Tablet cracks and offers a different question. A second chance, drawn from the well of all possible futures.",
+    "lore": "The Tablet of Destinies made its holder master of what must be. Enlil, chief of the gods of Sumer, wore it at his breast and set it aside only to bathe. The lion-headed storm-bird Anzu, who guarded his door, watched for that moment, seized the Tablet and flew to the mountains, and every decree of heaven fell silent. Ninurta hunted him down with arrows and brought it back. It lets its bearer refuse one verdict in each place: a wrong answer is unsaid, the clay cracks a little further, and a different question is asked.",
     "spread": 27,
     "peak_weight": 0.2,
     "special_properties": {
@@ -645,7 +645,7 @@
     "peak_weight": 0.0,
     "can_be_cursed": false,
     "max_enchant": 0,
-    "lore": "A sandal of impossible thickness, reinforced with leather scraps collected over an entire lifetime. Vidar the Silent, son of Odin, wore it when he avenged his father — planting his foot on the lower jaw of the World-Wolf and tearing the beast apart with his bare hands.",
+    "lore": "Vidar, the silent son of Odin, owns a shoe that has been in the making since the world began. It is pieced together from the scraps cobblers trim from the toes and heels of every shoe, which is why the Norse say a man who wants to help the gods should throw those scraps away. At Ragnarok the wolf Fenrir will swallow Odin. Then Vidar will plant this shoe on the wolf's lower jaw, take the upper jaw in his hand, and tear him apart.",
     "special_properties": {
       "identified": true,
       "plot_role": "fenrir_quest_layer2_instant_kill",
@@ -851,7 +851,7 @@
       "score_bonus_on_use": 5000,
       "plot_role": "wonder_relic"
     },
-    "lore": "A small clay pithos sealed with wax and rope, painted with figures fleeing. The gods gave it to Pandora as a wedding gift and told her not to open it. She did, of course -- the lid lifted easily and out flew Plague, Toil, Strife, Famine, Madness, Lies, Old Age, Despair, Tempest. Hesiod says she clapped the lid shut just in time, and Hope alone remained inside. Whether that was mercy or the cruellest trick of all is for the bearer to decide.",
+    "lore": "Hesiod, who told the story first, calls it a pithos: a clay storage jar as tall as a man. More than two thousand years later the scholar Erasmus mistranslated the word, and it has been a box ever since. Zeus sent Pandora and her jar to Epimetheus, whose brother Prometheus had warned him to accept no gifts from Olympus. She lifted the lid. Sickness, toil and every sorrow flew out over the earth, and she clapped it shut with only Hope left inside, caught under the rim. This one is small, sealed with wax and cord, and painted with fleeing figures.",
     "_disabled_reason": "chaos_table dispatcher pending — vision audit 2026-05-30"
   },
   "aladdins_lamp": {
@@ -968,7 +968,7 @@
       "score_bonus_on_use": 7500,
       "plot_role": "wonder_relic"
     },
-    "lore": "A brass oil-lamp, dented and tarnished, worth nothing at market. Aladdin found one like it in a cave under the earth, sent there by a sorcerer who promised it was 'just a lamp.' The djinn bound inside grants ONE wish to whoever rubs the lamp and proves themselves worthy. Not three -- one. The other tales got it wrong. The djinn keeps count and is patient and exact, and an unworthy rub earns a half-answered prayer rather than a full one. Make the wish count.",
+    "lore": "A brass oil lamp, dented and tarnished, worth nothing at market. The tale of Aladdin was not in the old Arabic manuscripts of the Thousand and One Nights. A Syrian storyteller named Hanna Diyab told it to the Frenchman Antoine Galland in Paris in 1709, and Galland wrote it in. A sorcerer from the far west sends a tailor's idle son into a cave for a lamp he calls worthless. The jinni bound in this one is patient and exact. It grants a single wish to a worthy hand, and half of one to an unworthy hand.",
     "_disabled_reason": "wish_categories dispatcher pending — vision audit 2026-05-30"
   },
   "soul_sphere": {

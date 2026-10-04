@@ -16,20 +16,19 @@
     "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
-      "fire": 0.35,
-      "magic": 0.4,
-      "cold": 0.2,
-      "petrifying": 1.0
+      "fire": 0.65,
+      "magic": 0.6,
+      "cold": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a polished shield of supernatural brightness",
+    "unidentified_name": "a bright tasseled shield with a snake-haired face at its center",
     "floorSpawnWeight": {
       "81-100": 2
     },
     "value": 9500,
-    "lore": "The aegis was not originally a shield but a goatskin breastplate — or a thundercloud — worn by Zeus and Athena. Homer describes Athena shaking it during battle to produce fear in armies. The Gorgoneion — Medusa's severed head — was mounted on it after Perseus made his gift. Athena used a weapon whose power was entirely in what it made people see, rather than what it physically did.",
+    "lore": "Homer's aegis is no ordinary shield. It is a goatskin hung with a hundred golden tassels, ringed with Rout and Strife and Terror, and Athena shakes it over armies to break their nerve. After Perseus cut off the Gorgon's head, he gave the head to the goddess, and she fixed it at the center. So the aegis carries the one face nobody could look at and live. Whoever bears it has little to fear from a stony stare, and those who strike at it may get one.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 70,
@@ -40,29 +39,29 @@
     "tier_bonuses": {
       "1": {
         "ac_bonus": 4,
-        "resistance_petrifying": 2
+        "status_petrify_immune": 999
       },
       "2": {
         "ac_bonus": 5,
-        "resistance_petrifying": 2,
+        "status_petrify_immune": 999,
         "resistance_fear": 1
       },
       "3": {
         "ac_bonus": 5,
-        "resistance_petrifying": 2,
+        "status_petrify_immune": 999,
         "resistance_fear": 2,
         "resistance_magic": 1
       },
       "4": {
         "ac_bonus": 6,
-        "resistance_petrifying": 2,
+        "status_petrify_immune": 999,
         "resistance_fear": 2,
         "resistance_magic": 2,
         "passive_reflect_spell": 20
       },
       "5": {
         "ac_bonus": 6,
-        "resistance_petrifying": 2,
+        "status_petrify_immune": 999,
         "resistance_fear": 2,
         "resistance_magic": 2,
         "passive_reflect_spell": 20,
@@ -87,19 +86,19 @@
     "equip_threshold": 2,
     "quiz_tier": 4,
     "damage_resistances": {
-      "magic": 0.4,
-      "fire": 0.15
+      "magic": 0.6,
+      "fire": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a white shield with a painted figure",
+    "unidentified_name": "a white round shield with a figure painted on the inside",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Arthur's shield, named in the Welsh poem Pa gur and the Mabinogion. The image of the Virgin Mary was painted on its inner face, so Arthur fought facing her. This was the interior side — the side that faces the bearer. The image was not for showing to enemies. It was for Arthur to look at.",
+    "lore": "Geoffrey of Monmouth arms Arthur for the battle of Badon with the lance Ron, the sword Caliburn, and a round shield called Pridwen. On its inner face was painted the Virgin Mary, so that the king had her before his eyes whenever he raised his guard. The older Welsh poets give the same name to Arthur's ship, the one he sailed into the Otherworld. Either way it carried him. The painted side is the side that faces the bearer, and spells break on the other.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 60,
@@ -124,8 +123,8 @@
     "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.25,
-      "pierce": 0.35
+      "slash": 0.75,
+      "pierce": 0.65
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -136,7 +135,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "Ajax's shield was described as a tower of seven ox-hides laminated together with bronze — the largest shield in the Iliad. He stood before the Greek ships and held back the Trojans by mass and will. Achilles was the brilliant warrior. Ajax was the one who could not be moved. When Odysseus was awarded Achilles' armour by rhetorical argument, Ajax's grief destroyed him. The shield outlasted its owner.",
+    "lore": "Homer says Ajax carried a shield like a wall, seven layers of bull's hide with an eighth of bronze hammered over them, the work of Tychius, the best leather cutter in Hyle. Hector's spear went through six hides and stopped in the seventh. When the Trojans reached the ships, Ajax stood on the decks alone and held them off with a pike. Achilles was the brilliant one. Ajax was the one who could not be moved, and neither can this.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 72,
@@ -161,9 +160,9 @@
     "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.2,
-      "blunt": 0.2,
-      "fire": 0.2
+      "slash": 0.8,
+      "blunt": 0.8,
+      "fire": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -174,7 +173,7 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Hephaestus forged a new shield for Aeneas with the entire future of Rome inscribed on its surface — battles not yet fought, emperors not yet born, the city not yet founded. Aeneas carried it without understanding what he looked at. He bore the fame and destiny of his descendants on his shoulders, ignorant of their names. Virgil considered this a beautiful image. It is also a description of every ancestor.",
+    "lore": "Venus asked her husband Vulcan to arm her son, and Virgil gives the shield he made most of a book. On it the god hammered things that had not happened yet: the she-wolf nursing the twins, the geese that saved the Capitol, the sea fight at Actium, Augustus in triumph. Aeneas admired the pictures without understanding one of them. Then he lifted onto his shoulder the fame and fortunes of his descendants. It turns a sword as well as it tells the future.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 65,
@@ -203,8 +202,8 @@
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "unidentified_name": "ancient bronze shield",
-    "lore": "The ceremonial shield of a bronze giant, engraved with the eye of Hephaestus. Its curved surface deflects crushing blows better than any iron shield of its age.",
+    "unidentified_name": "an ancient bronze shield, green with age",
+    "lore": "The shield of a bronze giant, engraved with the eye of Hephaestus. The smith god made such guardians and set them to work. The most famous was Talos, who walked the shore of Crete three times a day and threw boulders at strange ships. One vein ran through him from neck to ankle, stopped with a single nail. The curved face of this shield sheds a crushing blow better than any iron of its age.",
     "floorSpawnWeight": {},
     "is_unique": true,
     "template_basis": "tower_shield",
@@ -239,8 +238,8 @@
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "unidentified_name": "mirror-bright bronze shield",
-    "lore": "Athena's own shield, polished to a mirror-bright sheen. She lent it to Perseus so he could face the Gorgon without meeting her eyes. In its reflection, the monster sees only herself — and is turned to stone by her own terrible gaze.",
+    "unidentified_name": "a mirror-bright bronze shield",
+    "lore": "Athena's own shield, polished until it shows a face as clearly as still water. She lent it to Perseus for one purpose. He walked backward toward the sleeping Gorgon, watching her in the bronze, and never once looked at her directly while he swung. The shield has kept its shine. Down here a Gorgon who meets her own eyes in it fares no better than her victims did.",
     "floorSpawnWeight": {},
     "is_unique": true,
     "template_basis": "kite_shield",
@@ -301,7 +300,7 @@
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 1,
-    "unidentified_name": "battered lion shield",
+    "unidentified_name": "a battered steel shield engraved with a lion",
     "lore": "A steel shield engraved with a roaring lion and the motto DUTY UNTO DEATH. The name MARTEN OF THE IRON VALE is inscribed on the inside rim. It was carried into the dungeon four months ago by a knight who promised his wife he would be back for supper.",
     "floorSpawnWeight": {},
     "is_unique": true,
@@ -329,16 +328,16 @@
     "min_level": 12,
     "tier": 1,
     "material": "bronze",
-    "ac_bonus": 3,
+    "ac_bonus": 2,
     "equip_threshold": 3,
     "quiz_tier": 1,
     "damage_resistances": {
-      "pierce": 0.15
+      "pierce": 0.85
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "unidentified_name": "a heavy bronze shield with a lambda",
-    "lore": "The aspis of the Spartans — the great round shield that formed the backbone of the phalanx. The inverted lambda on its face marks it as Lacedaemonian. A Spartan mother's farewell to her son: 'Return with your shield, or on it.' The shield that held at Thermopylae, where three hundred stood against a million. Heavy, unyielding, and utterly reliable.",
+    "unidentified_name": "a heavy round bronze shield painted with a red lambda",
+    "lore": "The round shield of the Spartan line, three feet of wood faced with bronze, marked with the lambda of Lacedaemon. Plutarch records what Spartan mothers said when they handed it over: come back with this, or on it. An exiled king explained the rule. A man wears helmet and breastplate for his own sake, but he carries the shield for the sake of the whole line, since its left half covers the soldier beside him. To drop it was the one thing not forgiven.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-11": 0,
@@ -377,7 +376,7 @@
     "enchant_bonus": 0,
     "fire_reflect": 0.25,
     "unidentified_name": "a golden shield that radiates warmth",
-    "lore": "In Norse myth, Svalinn stands before the sun. Without it, the mountains and the sea would burn. It drinks fire — not merely blocking it but absorbing it entirely. What it cannot absorb, it sends back. Those who strike its bearer with flame find their own fire returned to them.",
+    "lore": "The Sayings of Grimnir name the horses Arvak and Alsvid, who drag the sun across the sky, and then the thing that stands between her and the world: Svalinn, the Cooling One. If it ever fell from its place, the poem says, the mountains and the sea would burn. A shield that shades the earth from the sun is not troubled by a dragon. Fire spends itself against it, and some of it goes back the way it came.",
     "floorSpawnWeight": {
       "41-60": 1,
       "61-80": 2,
@@ -414,7 +413,7 @@
     "enchant_bonus": 0,
     "quiz_timer_bonus": 2,
     "unidentified_name": "an oval bronze shield with an angular notch",
-    "lore": "The sacred shield that fell from heaven during the reign of Numa Pompilius, second king of Rome. A voice declared that Rome would endure as long as the shield was preserved. Numa had eleven copies made so no thief could identify the original. This is one of the twelve — or perhaps the original. Its divine origin steadies the arm in combat, granting extra time under the pressure of a duel.",
+    "lore": "In the reign of Numa Pompilius, second king of Rome, a bronze shield fell out of the sky, and a voice said the city would rule as long as the shield was kept. Numa had the smith Mamurius Veturius make eleven copies so exact that no thief could pick out the true one. The twelve hung in the house of Mars, and the leaping priests carried them through the streets every March. This is one of the twelve. The arm behind it is strangely unhurried.",
     "floorSpawnWeight": {
       "21-40": 1,
       "41-60": 2,
@@ -446,7 +445,7 @@
     "equip_threshold": 3,
     "quiz_tier": 1,
     "damage_resistances": {
-      "pierce": 0.25
+      "pierce": 0.75
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -479,7 +478,7 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {
-      "slash": 0.25
+      "slash": 0.75
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -512,13 +511,13 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {
-      "fire": 0.25
+      "fire": 0.75
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small round shield with cuneiform stamps",
-    "lore": "From the Stele of the Vultures, the oldest war monument in history. Eannatum of Lagash led his men shoulder to shoulder behind small round bucklers, the first phalanx ever drawn in stone. The cuneiform rim reads: 'I am the man whom Ningirsu loves.' Four thousand years later, you carry it. The god is gone. The shield works.",
+    "lore": "The Stele of the Vultures is the oldest picture of an army that survives. Around 2450 BC King Eannatum of Lagash beat the neighboring city of Umma in a quarrel over a field, and had the victory carved: his spearmen in a block, shields locked rim to rim, marching over the fallen while vultures carry off the heads. Lugal is the Sumerian word for king, and it means big man. The wedge marks stamped around this rim praise Ningirsu, the god of Lagash.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 18,
@@ -545,13 +544,13 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "slash": 0.3
+      "slash": 0.7
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a tall Egyptian shield of cowhide and cedar",
-    "lore": "Egyptian infantry carried tall shields shaped like an upright tongue, cowhide stretched over cedar frames. The khopesh — the sickle-sword — was designed to hook past a round shield's edge. The tall Theban shield denied the hook. Sometimes armor design is just the answer to a single bad weapon. The Egyptians won that argument.",
+    "lore": "Egyptian foot soldiers carried a shield shaped like a gravestone, flat at the bottom and rounded at the top, made of cowhide stretched over a wooden frame with the hair left on. A governor named Mesehti took forty wooden model spearmen to his tomb at Asyut, and every one holds such a shield with a different hide pattern. It was light, and tall enough to crouch behind. The sickle sword of the age, the khopesh, slid along its edge and found nothing to hook.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 22,
@@ -578,13 +577,13 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.3
+      "pierce": 0.7
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a figure-eight shield of dark hide",
-    "lore": "Hittite chariots carried three men — driver, archer, and shield-bearer. The shield-bearer stood at the rear and used a figure-eight shield, two ovals fused at the waist, to protect the entire crew from missiles while the chariot turned. At Kadesh the Hittites surprised Ramesses II's army with two thousand of these chariots. The Egyptians never quite admitted they lost.",
+    "unidentified_name": "a waisted shield of dark hide, narrow in the middle",
+    "lore": "Egyptian chariots carried two men. Hittite chariots were heavier and carried three: a driver, a spearman, and a third whose only task was to hold a shield over the other two. At Kadesh in 1274 BC some twenty-five hundred of them forded the Orontes and broke into the marching column of Ramesses II. Both kings claimed the victory. Fifteen years later they signed the oldest peace treaty that survives. The shield is pinched at the waist so a spear arm can work past it.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 25,
@@ -611,13 +610,13 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.4
+      "pierce": 0.6
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a tall wickerwork shield with iron strips",
-    "lore": "When Sennacherib's army besieged Lachish, the archers worked behind man-high wickerwork shields propped on the ground. The reliefs at Nineveh show them — twin curves like a bishop's mitre, the archer's head just visible over the top. Slow to move. Impossible to flank. The Lachish relief is in the British Museum. The shield is here.",
+    "lore": "In 701 BC Sennacherib of Assyria took the Judean city of Lachish and was proud enough of it to line a room of his palace at Nineveh with the carving. The reliefs show his archers working in pairs: one man draws, the other plants a wicker screen taller than both, curved back at the top to catch stones dropped from the wall. The carvings are in the British Museum. This is the screen. It is slow to shift and very hard to shoot around.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 28,
@@ -639,19 +638,19 @@
     "min_level": 18,
     "tier": 2,
     "material": "legendary",
-    "ac_bonus": 2,
+    "ac_bonus": 3,
     "enchant_bonus": 0,
     "equip_threshold": 4,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.25,
-      "slash": 0.25
+      "pierce": 0.75,
+      "slash": 0.75
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a heavy bronze hoplon with a red lambda",
-    "lore": "Not the common Spartan shield. This one bears the king's lambda chased in gold rather than red paint. Leonidas led three hundred Spartans, seven hundred Thespians, and four hundred Theban hostages against the Persian army at Thermopylae. Herodotus says the Persians' arrows blocked out the sun. A Spartan replied: 'Good. Then we shall fight in the shade.' The Thespians stayed by choice.",
+    "unidentified_name": "a heavy bronze hoplon with a lambda chased in gold",
+    "lore": "The king's own shield, its lambda chased in gold. Leonidas took three hundred Spartans to Thermopylae, every one a father of living sons. With them stood seven hundred men of Thespiae, who chose to stay to the end. Before the fight a local man warned that the Persian arrows would blot out the sun. Herodotus gives the answer to a Spartan named Dienekes: so much the better, we shall fight in the shade.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 29,
@@ -678,13 +677,13 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "blunt": 0.3
+      "blunt": 0.7
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a bronze-faced round shield with a gorgon boss",
-    "lore": "The Etruscans were Italy before Rome was Italy. Their language is still mostly undeciphered. Their tombs show heavy infantry with round bronze-faced shields — Greek-influenced, perhaps Greek-built. Rome learned the phalanx from them, then discarded it for the maniple, then conquered them. The shield outlasted both armies. We do not know what the Etruscans called it.",
+    "lore": "The Etruscans held Italy north of the Tiber when Rome was a cluster of huts. They gave the Romans kings, the arch, the triumph, and the rods and axe carried before a magistrate. Scholars can sound out their writing but can translate only a little of it. Their painted tombs show heavy infantry behind round shields faced with bronze, fighting in the Greek manner. Rome learned the phalanx from them and then swallowed them whole. The Gorgon on the boss came from Greece too.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 32,
@@ -711,14 +710,14 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.35,
-      "slash": 0.2
+      "pierce": 0.65,
+      "slash": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a curved red rectangular shield with gold wings",
-    "lore": "Legio XII Fulminata, the Thundering Twelfth. Painted thunderbolts on red. Plywood — three layers of birch glued crosswise — covered in cowhide, edged in iron. Light enough to carry on a thirty-mile march. Strong enough to form the testudo, the tortoise, where every man's shield protected his neighbor. Whoever built this one was a tradesman, not a god. He did the work that won an empire.",
+    "lore": "The Twelfth Legion, called Fulminata, carried the thunderbolt as its badge. Its shield was plywood: three layers of thin strips glued with the grain crossed, covered in hide and linen, bound at the rim, with an iron boss over the grip. It was curved to wrap the body. Locked overhead and on every side it made the tortoise, a formation that walked up to city walls under a rain of missiles. A tradesman built this one, and an empire was won behind his work.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 35,
@@ -745,14 +744,14 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.3
+      "pierce": 0.7
     },
     "fire_reflect": 0.1,
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small concave shield with a sunburst",
-    "lore": "Philip II reformed the Greek phalanx by lengthening the pike to eighteen feet — which meant the shield had to shrink. The Macedonian aspis was strapped to the forearm so both hands could grip the sarissa. Philip's son Alexander used this formation to conquer the known world before age thirty-three. The sun on its face is the Argead star, which modern Greece and modern North Macedonia have argued about for forty years.",
+    "lore": "Philip II gave his infantry the sarissa, a pike eighteen feet long that needed both hands. So the shield had to shrink. He hung a small bronze bowl from a neck strap and slipped it over the left forearm, leaving the hand free for the shaft. Five rows of pike points reached past the front rank. His son Alexander took that hedge of spears to the Indus. The burst of rays on the face is the star of the Macedonian kings, and it throws back a little fire.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 38,
@@ -785,7 +784,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "an oval wooden shield with a spiral boss",
-    "lore": "Caesar's commentary describes the Gauls he fought — tall warriors, oval shields painted with spiral designs, the iron boss central and prominent. The Battersea Shield in the Thames is bronze and ceremonial, but the wooden ones the Gauls actually fought with rotted away two thousand years ago. This is what they would have looked like. The Gauls lost. The shield does not know it lost.",
+    "lore": "The Gauls carried long oval shields of wood, painted with whorls, with an iron boss over the grip. Caesar describes what happened when the Helvetii locked them together and advanced: the Roman javelins punched through two shields at a time and pinned them to each other, the soft iron shanks bent, and the warriors could neither pull them out nor fight with a left arm so burdened. Many threw their shields away. Against a sword edge, the oak does much better.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 42,
@@ -818,7 +817,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a planked round shield with a fur-wrapped rim",
-    "lore": "Tacitus wrote about the Germanic peoples for Romans who feared them. He admired their courage and despised their drunkenness. The shield he describes — round, planked, the rim wrapped in fur for grip — is what Arminius's men carried into the Teutoburg Forest when they annihilated three legions in three days. Rome never put eagles east of the Rhine again. The forest is still there.",
+    "lore": "Tacitus wrote that the German tribes carried little iron, and painted their shields in chosen colors. A warrior who left his shield on the field was barred from sacrifice and council, the deepest disgrace they knew. In AD 9 Arminius led three Roman legions into the Teutoburg Forest and destroyed them over three days. Augustus is said to have beaten his head on a door and shouted for his legions back. The planks are northern pine and do not mind the cold.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 45,
@@ -851,7 +850,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small lacquered shield of overlapping scales",
-    "lore": "The Sarmatians fought from horseback in scale armor — both rider and horse covered. Their small lamellar shields strapped to the arm. Rome eventually hired them as cavalry. Some went as far as Britain and stayed there, garrisoning Hadrian's Wall. The local DNA in Lancashire still shows a Sarmatian thread. Some historians say King Arthur's cavalry was Sarmatian, three centuries later. The targe survived all of it.",
+    "lore": "The Sarmatians were horse nomads of the steppe who armored rider and mount alike in overlapping scales, sometimes cut from horn or hoof when iron was scarce. Marcus Aurelius beat them on the frozen Danube and took eight thousand of their cavalry into Roman service. He sent fifty-five hundred of them to Britain. Some scholars think their dragon banners and their stories of a sword in the ground lingered there long enough to color the legend of Arthur.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 47,
@@ -884,7 +883,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a thin bronze shield set with red glass studs",
-    "lore": "Found in the Thames in 1857. La Tène style — flowing curves, twenty-seven red glass studs. Too thin to fight with. Iron Age Britons threw it in the river as a gift to a river-god whose name we will never know. Two thousand years later it sits in the British Museum and tourists wonder why someone would drown such a beautiful thing. They drowned it because it was beautiful.",
+    "lore": "Workmen dredged it from the Thames at Battersea in 1857: a facing of sheet bronze worked in flowing curves and set with twenty-seven studs of red glass. It is too thin and too short to have stopped a spear. The Britons of the Iron Age made it to give away. They took the finest thing their smiths could make and dropped it in the river for a god whose name nobody wrote down. A gift like that still has a claim on unseen things.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 49,
@@ -912,13 +911,13 @@
     "quiz_tier": 3,
     "damage_resistances": {
       "slash": 0.5,
-      "blunt": 0.2
+      "blunt": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a planked round shield with an iron boss",
-    "lore": "The Sutton Hoo burial held a shield like this — limewood planks, iron boss the size of a fist, leather facing painted with the dragon of the Wuffingas. King Raedwald of East Anglia took it to his grave around 625 AD. Beowulf was written down in this kingdom in this century. The shield in the poem is the shield in the ground is the shield in your hand.",
+    "unidentified_name": "a round limewood shield with gilded beast fittings",
+    "lore": "The great ship burial at Sutton Hoo held a shield of limewood boards covered in hide, with a heavy iron boss and gilded fittings in the shapes of a dragon and a bird of prey. Most scholars think the man buried there was Raedwald, king of the East Angles, who died about 624. The poets of his people called a shield simply 'the linden,' and their battle line was the shield wall, rim over rim. This is the kind of board the Beowulf poet was thinking of.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 52,
@@ -951,8 +950,8 @@
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a planked round shield with a dragon-shaped boss",
-    "lore": "When Beowulf went to fight the dragon at Earnaness, he ordered an iron shield made, knowing wood would burn. The poet says he chose eleven companions and a thirteenth man who knew the way. Only one — young Wiglaf — stayed to help him kill the dragon. The shield melted around the boss but Beowulf finished the work. He died in Wiglaf's arms. Goth-kingdom ended that day. The dragon-boss is still warm.",
+    "unidentified_name": "a round shield of solid iron, scorched blue at the rim",
+    "lore": "Beowulf had ruled the Geats fifty years when a thief stole a cup from a dragon's hoard and the dragon burned his hall. The old king knew a linden shield would not last against that breath, so he ordered one made entirely of iron. He took eleven companions and the thief to show the way. When the fire came, ten ran for the wood. Young Wiglaf stayed, and when his own shield burned he sheltered behind the king's. The iron held long enough. Fire still does poorly against it.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 55,
@@ -980,13 +979,13 @@
     "quiz_tier": 3,
     "damage_resistances": {
       "pierce": 0.5,
-      "magic": 0.2
+      "magic": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small gilt buckler painted with a coiled serpent",
-    "lore": "Sigurd Fafnir's-bane painted his shields with the story of how he killed the dragon and ate its heart. The Ramsund carving in Sweden shows the same images. He used the small buckler in single combat because he trusted his sword Gram more than any shield. Brunhild loved him. Gudrun loved him. He died because he could not choose. The shield says nothing about it.",
+    "lore": "The saga of the Volsungs describes Sigurd riding into the hall of King Gjuki. His shield was layered with red gold and painted with a dragon, dark brown above and red below, and his helmet, saddle and surcoat bore the same mark, so that everyone who saw him knew he had killed the great worm Fafnir. A rock carving at Ramsund in Sweden tells the same story in pictures. He trusted his sword Gram more than any shield, and so he carried a small one.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 58,
@@ -1013,13 +1012,13 @@
     "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
-      "pierce": 0.6
+      "pierce": 0.4
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "an almond-shaped shield with a long lower point",
-    "lore": "Charlemagne's heavy horse rode under the kite — almond-shaped, the long point reaching down to cover the left leg in the saddle. The Bayeux Tapestry shows both Norman and Saxon kites, but the design started in Charlemagne's stables a century earlier. The pope crowned him emperor on Christmas Day 800. The empire fell apart inside his grandsons' lifetimes. The shield did not.",
+    "lore": "Dealers call this pattern Carolingian, though the riders of Charlemagne carried round shields. The long kite came two centuries later, and the Bayeux Tapestry shows it on nearly every Norman arm at Hastings. A horseman's left leg hangs exposed below a round shield. Somebody stretched the bottom edge into a point to cover it from knee to ankle, and within a lifetime every knight from Sicily to Scotland rode behind one. A lance point skids off the long curve.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 63,
@@ -1046,14 +1045,14 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.6,
-      "magic": 0.2
+      "slash": 0.4,
+      "magic": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a flat-topped heater shield quartered in black and gold",
-    "lore": "Edward of Woodstock, the Black Prince, fought at Crécy at sixteen and at Poitiers at twenty-six and won both. He took the French king John II prisoner and kept him in courtly luxury for four years. His heraldry was three feathers and the motto Ich dien — 'I serve' — which the Princes of Wales have used ever since. He died of dysentery at forty-five, never reigned. The shield knows about service. It does not know about reigning.",
+    "unidentified_name": "a flat-topped black shield bearing three white feathers",
+    "lore": "Edward of Woodstock commanded a wing at Crecy when he was sixteen. His father refused to send help and said to let the boy win his spurs. Ten years later at Poitiers he captured the king of France. His badge for tournaments was a black shield with three white ostrich feathers and the motto Ich dien, I serve, which the Princes of Wales still use. He died a year before his father and never reigned. His shield, helm and gauntlets are still kept at his tomb in Canterbury.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 68,
@@ -1086,7 +1085,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small round shield inlaid with golden arabesques",
-    "lore": "The Mamluks were slave-soldiers who became the rulers of Egypt and broke the Mongols at Ain Jalut in 1260 — the only army that did. Their targe was small, light, gold-leafed, useless against missiles but perfect for the saber-duel of horse against horse. Napoleon fought them at the Pyramids and was startled by how good they were. The empire of the slaves outlasted the empire of the emperor.",
+    "lore": "The Mamluks were bought as boys on the steppe, raised in barracks in Cairo, and trained for years with bow, lance and saber. In 1250 they took Egypt from their masters. Ten years later at Ain Jalut, under Qutuz and Baybars, they gave a Mongol army its first great defeat. Napoleon broke their charge at the Pyramids in 1798 and admired them so much that he took a Mamluk squadron into his own guard. The little steel shield is made for saber work on horseback.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 72,
@@ -1113,13 +1112,13 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "pierce": 0.7
+      "pierce": 0.3
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a tall lacquered wooden screen on a single leg",
-    "lore": "Japanese warfare almost never used hand-held shields — both samurai hands belonged to the katana or the bow. Instead the o-tate was a tall wooden screen that stood on the ground in front of the archers. Wall, not gear. At Nagashino in 1575, Oda Nobunaga set up three thousand arquebusiers behind a palisade of o-tate and broke the Takeda cavalry in a single afternoon. The shield wins when it is not being held.",
+    "lore": "A samurai needed both hands for the bow and later for the sword, so Japan never took to the shield a man carries. It used the tate instead: a plank screen as tall as a man, with a hinged prop behind, set up in rows to make a wall that archers and gunners could work from. At Nagashino in 1575 Oda Nobunaga put his gunners behind stockades and screens, and the charging horsemen of the Takeda clan never reached them. Arrows and shot thud into it and stay there.",
     "is_unique": true,
     "template_basis": "tower_shield",
     "peak_floor": 78,
@@ -1146,14 +1145,14 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
-      "cold": 1.0,
-      "magic": 0.3
+      "cold": 0.0,
+      "magic": 0.7
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a pale shield carved with miniature ship-figures",
-    "lore": "Skidbladnir was Freyr's ship, built by the dwarven Sons of Ivaldi, large enough to hold every god — and yet it folded up small enough to fit in a pouch. This shield is carved with its image. A maker once tried to build the same trick into a smaller object. Whether he succeeded is for you to test. Cold of any kind passes through it without resistance, the way wind passes through folded sails.",
+    "lore": "The dwarf sons of Ivaldi built the ship Skidbladnir for the god Freyr. It was large enough to carry all the gods with their weapons, it had a fair wind the moment its sail went up, and when the voyage was over Freyr could fold it like a cloth and put it in his pouch. Some lesser smith carved its likeness on this pale shield and caught a little of the trick. Cold folds itself away before it reaches the bearer.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 82,
@@ -1180,8 +1179,8 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
-      "magic": 1.0,
-      "fire": 0.3
+      "magic": 0.25,
+      "fire": 0.7
     },
     "spell_reflect": 0.3,
     "can_be_cursed": false,
@@ -1245,15 +1244,15 @@
     "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
-      "magic": 0.6,
-      "pierce": 0.4,
-      "cold": 0.4
+      "magic": 0.4,
+      "pierce": 0.6,
+      "cold": 0.6
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a small round shield inscribed with a thunderbolt",
-    "lore": "In Vedic and Buddhist iconography the vajra is both lightning and diamond — what cannot be broken, and what breaks everything else. Indra carries one. So does Vajrapani, the wrathful protector of the Buddha. The paramitas are six perfections — generosity, ethics, patience, effort, meditation, wisdom — that take a soul from this shore to the far shore. Whoever forged this shield believed the vajra could carry a man across.",
+    "lore": "The vajra is both thunderbolt and diamond: the thing that cannot be broken and breaks everything else. Hindu tradition says the sage Dadhichi gave up his life so the gods could make it from his bones, and Indra killed the drought-serpent Vritra with it. Buddhists took the vajra for the mind that nothing shatters. Their six perfections are giving, discipline, patience, effort, meditation and wisdom, and they carry a soul to the far shore. This shield is marked with both ideas.",
     "is_unique": true,
     "template_basis": "buckler",
     "peak_floor": 86,
@@ -1280,15 +1279,15 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
-      "cold": 0.7,
+      "cold": 0.3,
       "magic": 0.5
     },
     "spell_reflect": 0.2,
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a kite shield wreathed in carved running figures",
-    "lore": "Urd, Verdandi, and Skuld — past, becoming, and what-should-be — sit beneath Yggdrasil and weave the fates of gods and men. Even Odin obeys what they decide. The shield carved with their three running figures has the property of returning what was sent — the past as it was, the present as it is, the future as it will be. None of those is comforting. The shield does not pretend otherwise.",
+    "unidentified_name": "a kite shield carved with three women at a well",
+    "lore": "Three women sit by the well under the World Tree. Their names are Urd, Verdandi and Skuld: what was, what is becoming, and what is owed. Each day they water the tree's roots with white clay from the well so that it will not rot, and they cut the fate of every newborn child. The gods hold their court beside them and cannot overrule them. The three figures carved on this shield return what is sent against it. A spell is a debt like any other.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 89,
@@ -1315,16 +1314,16 @@
     "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
-      "magic": 1.0,
-      "fire": 0.6,
-      "cold": 0.6
+      "magic": 0.25,
+      "fire": 0.4,
+      "cold": 0.4
     },
     "spell_reflect": 0.5,
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a round shield carved as a green stone beetle",
-    "lore": "Every night the serpent Apophis tries to swallow the sun-barge of Ra in the underworld, and every night Set or Bastet or sometimes the scarab-god Khepri turns him back. The scarab pushes the sun across the sky each morning. This shield is carved as a scarab and inscribed with the binding-spells from the Book of Overthrowing Apophis. It catches what is thrown and sends it back at the thrower — and Apophis, in the dark beneath the world, hisses with frustration.",
+    "lore": "Every night the sun god Ra sails his boat through the underworld, and every night the serpent Apophis rises to swallow it. Set stands in the prow and spears him. The priests at Karnak helped from above: they made a serpent of wax, wrote the name on it, spat on it, trampled it and burned it, reading from the Book of Overthrowing Apophis. At dawn Khepri the scarab rolls the sun up over the horizon. This green stone beetle is cut with those spells, and it turns malice back.",
     "is_unique": true,
     "template_basis": "heavy_wooden",
     "peak_floor": 95,
@@ -1351,16 +1350,15 @@
     "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
-      "magic": 1.0,
-      "petrifying": 1.0,
-      "cold": 0.8
+      "magic": 0.25,
+      "cold": 0.2
     },
     "spell_reflect": 0.5,
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
     "unidentified_name": "a black iron kite shield with a buffalo-horn crest",
-    "lore": "Yama was the first man, the first to die, and so by right became king of the dead — both in Vedic India and in Buddhist Tibet, where he is the wrathful judge with a buffalo's head. He carries a noose, a club, and the Mirror of Karma in which the dead see every action of their lives unflinching. This shield is forged from the Mirror's outer rim. To attack its bearer is to be measured. Many spells, having been measured, decline to land.",
+    "lore": "The oldest hymns of India say Yama was the first mortal to die. He found the road to the other world, and so became its king. He rides a black buffalo and carries a noose for drawing out the soul. In Tibet he wears the buffalo's head himself and holds up the mirror of karma, in which the dead see every act of their lives. This shield was forged from the mirror's rim. Whatever is aimed at its bearer is weighed first, and much of it is found wanting.",
     "is_unique": true,
     "template_basis": "kite_shield",
     "peak_floor": 97,

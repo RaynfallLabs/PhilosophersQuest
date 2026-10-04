@@ -25,7 +25,7 @@
     "magical_metal",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} maul. Plate, bone, stone — it doesn't care.",
+  "lore_template": "A {material_name} maul, a two-handed hammer made for driving stakes. The English archers at Agincourt swung leaden mauls at fallen knights. Plate, bone and stone all give way to it the same.",
   "design_notes": "v2 chain rebalance: heavy class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 1.75×. Class mechanic: At chain rung 4+, stun + knockdown (target loses 2 turns). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.55 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "heavy",
   "class_mechanic": "stun_knockdown_at_max",

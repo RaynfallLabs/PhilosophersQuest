@@ -14,9 +14,9 @@
     "quiz_tier": 1,
     "effects": {},
     "unidentified_name": "burnished silver ring",
-    "lore": "A small ring of tarnished silver, polished smooth by a child's restless fingers. It holds no enchantment, no hidden power — only the fierce love of a little girl who believed it was the most precious thing in the world. And perhaps, in a way, she was right.",
+    "lore": "A small ring of tarnished silver, polished smooth by a child's restless fingers. It holds no enchantment and no hidden power, only the fierce love of a little girl who believed it was the most precious thing in the world. Perhaps, in a way, she was right.",
     "floorSpawnWeight": {},
-    "peak_weight": 0.4,
+    "peak_weight": 0.0,
     "is_unique": false,
     "spread": 8,
     "peak_floor": 6
@@ -38,8 +38,8 @@
       "status": "magic_resist",
       "duration": -1
     },
-    "unidentified_name": "warded pewter ring",
-    "lore": "Every millimeter of this pewter ring's surface is engraved with layered warding formulae, creating a persistent anti-magical field that deflects directed spells before they can take full effect on the wearer.",
+    "unidentified_name": "scratched pewter ring",
+    "lore": "Some monk scratched three letters around this pewter band, V R S, the way a scribe shortens a prayer he knows by heart: Vade retro Satana, 'Get back, Satan.' The abbreviation has outlived the monk. Hexes aimed at the wearer arrive weakened, as if they had to push through a closed door first.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -69,8 +69,8 @@
       "status": "drain_resist",
       "duration": -1
     },
-    "unidentified_name": "soul-ward jasper ring",
-    "lore": "Carved from jasper found in an old graveyard where necromancers had worked, this ring has developed a natural hostility to life-draining magic — it wraps the wearer's vital energy in a protective shell impervious to drain effects.",
+    "unidentified_name": "red jasper ring",
+    "lore": "In the 1190s the English canon William of Newburgh wrote down, with some embarrassment, several reports of dead men who left their graves at night and wasted the living. Villagers in such places wore red jasper against them. This ring is of that kind: the grave-chill that saps a body does not get past it.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -100,8 +100,8 @@
       "status": "levitating",
       "duration": -1
     },
-    "unidentified_name": "phantom silver ring",
-    "lore": "This ring seems to float on the finger rather than sit against the skin — a subtle preview of the levitation it grants. Wearers drift silently above pit traps and submerged floors, untouchable by ground-level threats.",
+    "unidentified_name": "hollow silver ring",
+    "lore": "The old Acts of Peter tell how Simon the Magician rose into the air over Rome to prove his power, and how the Apostle Peter prayed him down again. Whoever hollowed this silver band learned the first half of the trick and wisely stopped there. Its wearer walks a hand's breadth above pits and floodwater.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -131,8 +131,8 @@
       "status": "invisible",
       "duration": -1
     },
-    "unidentified_name": "ghostly crystal ring",
-    "lore": "Enchanted with a light-bending field that makes the wearer invisible to normal sight. The ring itself becomes invisible along with everything it touches — veteran wearers learn to keep close track of where they left it.",
+    "unidentified_name": "clear rock-crystal ring",
+    "lore": "The Cyclopes made three gifts for the war against the Titans: the thunderbolt for Zeus, the trident for Poseidon, and for Hades a cap that hid its wearer from every eye. Perseus borrowed that cap to escape Medusa's sisters. A sliver of the same craft sits in this clear stone.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -162,8 +162,8 @@
       "status": "hasted",
       "duration": -1
     },
-    "unidentified_name": "quickstep tourmaline ring",
-    "lore": "A haste enchantment locked permanently into tourmaline by a wizard who could never tolerate moving at normal speed. Wearers move at doubled pace, making combat and exploration dramatically more efficient — though hunger accelerates equally.",
+    "unidentified_name": "striped tourmaline ring",
+    "lore": "Herodotus admired the Persian king's couriers, who rode in relays from Sardis to Susa and were stopped, he wrote, by neither snow nor rain nor heat nor darkness. A courier's ring like this one was handed from rider to rider with the message. Everything around its wearer seems to move through honey.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -193,8 +193,8 @@
       "status": "clairvoyant",
       "duration": -1
     },
-    "unidentified_name": "all-seeing onyx ring",
-    "lore": "This near-black onyx ring makes the wearer aware of the entire dungeon level simultaneously — not as a map, but as a felt spatial awareness, like having eyes in every wall. It is profoundly disorienting at first and profoundly useful once mastered.",
+    "unidentified_name": "banded onyx ring",
+    "lore": "Odin has a high seat in Asgard called Hlidskjalf. When he sits in it he sees into all the worlds and everything that anyone is doing there. This band of onyx gives a mortal one small corner of that view: the rooms and corridors nearby, laid out in the mind like a drawn plan.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -224,8 +224,8 @@
       "status": "displacement",
       "duration": -1
     },
-    "unidentified_name": "blurred obsidian ring",
-    "lore": "A displacement effect makes the wearer appear to be slightly offset from their actual position — enemies targeting the image find their attacks passing through empty air while the real body remains untouched.",
+    "unidentified_name": "chipped obsidian ring",
+    "lore": "The poet Stesichorus insisted that Helen never went to Troy at all. The gods sent a phantom in her shape, and the Greeks and Trojans fought ten years over an image while the real woman waited in Egypt. This obsidian ring plays the same trick on a smaller scale: blows land where its wearer only seems to stand.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -255,8 +255,8 @@
       "status": "teleportitis",
       "duration": -1
     },
-    "unidentified_name": "chaotic onyx ring",
-    "lore": "A cursed ring with a broken teleportation enchantment that activates randomly rather than on command. The wearer finds themselves suddenly elsewhere at unpredictable intervals — occasionally useful, often catastrophic.",
+    "unidentified_name": "cracked agate ring",
+    "lore": "Hera sent a gadfly to torment Io, and its sting drove her across the known world without rest. The strait she swam is still called the Bosporus, the Ox-Ford, after her. The cracked stone in this ring holds a sting of the same sort. Its wearer is forever being sent somewhere else.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -286,8 +286,8 @@
       "status": "aggravated",
       "duration": -1
     },
-    "unidentified_name": "aggravating brass ring",
-    "lore": "This cursed ring emits a low-frequency magical irritant that drives nearby creatures to aggression toward the wearer — even docile monsters become hostile, and hostile ones become frenzied. Removing it requires magical assistance.",
+    "unidentified_name": "gaudy brass ring",
+    "lore": "The hunter Actaeon saw Artemis bathing, and the goddess turned him into a stag. His own fifty hounds caught the scent and ran him down, never knowing their master. Something in this gaudy ring carries that scent. Every beast in earshot wakes hungry and turns toward the wearer.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -318,7 +318,7 @@
       "duration": -1
     },
     "unidentified_name": "heavy lead ring",
-    "lore": "A maliciously enchanted band that subtly disrupts motor coordination — objects slip from the wearer's grasp, footfalls become uncertain, and combat becomes a series of embarrassing near-misses. Cursed upon first contact.",
+    "lore": "A thieves' guild in some forgotten port punished a member who stole from his fellows by locking a lead ring on his hand. He never again held a lockpick, a purse or a knife for longer than a breath. The guild is gone. The ring went on looking for hands.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -348,8 +348,8 @@
       "status": "slowed",
       "duration": -1
     },
-    "unidentified_name": "leaden iron ring",
-    "lore": "This ring seems heavier than iron has any right to be, and that heaviness extends to every movement of the wearer — slowed to half speed, they become easy prey for anything with patience enough to follow them.",
+    "unidentified_name": "thick black-iron ring",
+    "lore": "Zeno of Elea argued that swift Achilles could never overtake a tortoise with a head start: each time he reached the place it had been, it had crawled a little farther. The philosophers called it a paradox. Whoever wears this black iron band lives inside it, always a step behind.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -379,8 +379,8 @@
       "status": "regenerating",
       "duration": -1
     },
-    "unidentified_name": "healing jade pendant",
-    "lore": "Carved in the shape of entwined healing herbs, this vivid green jade pendant pulses with restorative energy that continuously repairs the wearer's body — minor cuts closing in moments, deeper wounds mending with remarkable speed.",
+    "unidentified_name": "leaf-carved jade pendant",
+    "lore": "The Han princes of China believed jade kept a body whole. Prince Liu Sheng went to his tomb in a suit of more than two thousand jade plates sewn together with gold wire. This pendant is carved from the same stone on the same hope, and it works better on the living: cuts close, bruises fade.",
     "floorSpawnWeight": {
       "1-20": 80,
       "21-40": 80,
@@ -410,8 +410,8 @@
       "status": "hasted",
       "duration": -1
     },
-    "unidentified_name": "swift-wind talisman",
-    "lore": "Forged by an artificer who studied the flight patterns of swifts, this amulet permanently accelerates the wearer's body to the edge of what flesh can sustain — every action taken at double the normal speed, every threat met and passed before slower opponents can react.",
+    "unidentified_name": "bird-bone talisman",
+    "lore": "Heralds paint the martlet, a swift or swallow, without any feet, because people long believed the bird lived its whole life on the wing and never came to rest. A fowler's wife strung these hollow bones for a son who was always late. He was never late again, nor ever quite still.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -441,8 +441,8 @@
       "status": "invisible",
       "duration": -1
     },
-    "unidentified_name": "mist-silver pendant",
-    "lore": "This pendant phases its wearer partially out of the visible light spectrum, making them effectively invisible to most creatures. The enchantment is more complete than ring versions — even shadows are suppressed.",
+    "unidentified_name": "glass phial pendant",
+    "lore": "Country people said the fern bears an invisible seed on Saint John's Eve, and that whoever catches it on a white cloth at midnight walks unseen. Most who tried caught only dew. Someone caught the real thing once and stoppered it in this glass phial.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -472,8 +472,8 @@
       "status": "levitating",
       "duration": -1
     },
-    "unidentified_name": "cloud-iron locket",
-    "lore": "An amulet forged from a meteorite fragment that fell slowly — impossibly slowly — to earth over the course of three days. The anti-gravity essence locked in that iron now raises the wearer silently above the dungeon floor.",
+    "unidentified_name": "pitted sky-iron locket",
+    "lore": "The Egyptians called iron 'metal of heaven,' because the first iron they knew fell from the sky; a dagger of it lay in Tutankhamun's wrappings. This locket holds a pitted lump of the same sky-iron. It has never quite accepted the ground, and it lifts its wearer a little clear of it.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -503,8 +503,8 @@
       "status": "clairvoyant",
       "duration": -1
     },
-    "unidentified_name": "all-seeing eye pendant",
-    "lore": "An eye carved in dark stone, this amulet grants awareness of the entire dungeon level simultaneously — a gift that feels like omniscience and would be mistaken for madness by anyone who didn't understand its nature.",
+    "unidentified_name": "dark stone eye pendant",
+    "lore": "In 1252 Clare of Assisi lay too ill to leave her bed for the Christmas Mass. She said afterward that she saw and heard the whole service on the wall of her room, as plainly as if she knelt in the church. The sisters of her order carved this eye of dark stone in memory of it.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -534,8 +534,8 @@
       "status": "displacement",
       "duration": -1
     },
-    "unidentified_name": "blurred shadow pendant",
-    "lore": "A constant visual distortion surrounds whoever wears this amulet — their apparent position offset from their actual location, making aimed attacks frustratingly inaccurate. Enemies targeting the image consistently find nothing but air.",
+    "unidentified_name": "smoky quartz pendant",
+    "lore": "Marsh folk call it the fool's fire: a pale light that hangs over the bog at night, always a few steps from where it appears, leading travellers off the causeway. A fen-dweller trapped one in smoky quartz. Now the wearer is the light, and every spear thrown at it finds only reeds.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -565,8 +565,8 @@
       "status": "fire_resist",
       "duration": -1
     },
-    "unidentified_name": "fire-kissed pendant",
-    "lore": "This amulet was worn by a fire-dancer who performed within actual bonfires for audiences. The enchantment protecting her skin has been maintained and strengthened into a reliable and permanent fire resistance.",
+    "unidentified_name": "soot-black pendant",
+    "lore": "Pliny wrote that the salamander is so cold it puts out fire by touching it, and merchants on the Silk Road sold cloth that would not burn as 'salamander's wool.' This pendant hangs on a cord of that cloth. It has been through a furnace and came out cleaner.",
     "floorSpawnWeight": {
       "1-20": 80,
       "21-40": 80,
@@ -588,7 +588,7 @@
       255
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 20,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -596,8 +596,8 @@
       "status": "cold_resist",
       "duration": -1
     },
-    "unidentified_name": "frost-kissed locket",
-    "lore": "A locket that is always slightly cold to the touch, as though it absorbs ambient warmth — in exchange, it provides the wearer complete protection from freezing temperatures and cold-based magical attacks.",
+    "unidentified_name": "white enamel locket",
+    "lore": "The Norse say the end will be announced by Fimbulwinter: three winters running with no summer between them, snow driving from every quarter. A northern mother painted this locket white and filled it with ash from her hearth, so that her children would carry the fire with them when it came.",
     "floorSpawnWeight": {
       "1-20": 80,
       "21-40": 80,
@@ -607,8 +607,8 @@
     },
     "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
+    "spread": 22,
+    "peak_floor": 50
   },
   "amulet_shock_res": {
     "name": "amulet of shock resistance",
@@ -619,7 +619,7 @@
       60
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 20,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -627,8 +627,8 @@
       "status": "shock_resist",
       "duration": -1
     },
-    "unidentified_name": "crackling charm",
-    "lore": "Made by a guild of storm-riders who needed protection during electrified weather events, this amulet wraps the wearer in a grounding field that routes electrical energy harmlessly into the surrounding stonework.",
+    "unidentified_name": "copper-wire charm",
+    "lore": "Sailors in a thunderstorm sometimes see blue flame dancing on the mastheads and burning nothing. They call it Saint Elmo's fire, after Erasmus, their patron, and take it as a sign he is watching. A ship's cooper twisted this charm from copper wire so the saint's fire would know where to go.",
     "floorSpawnWeight": {
       "1-20": 80,
       "21-40": 80,
@@ -638,8 +638,8 @@
     },
     "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
+    "spread": 22,
+    "peak_floor": 50
   },
   "amulet_poison_res": {
     "name": "amulet of poison resistance",
@@ -650,7 +650,7 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 20,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -659,7 +659,7 @@
       "duration": -1
     },
     "unidentified_name": "serpent tooth pendant",
-    "lore": "A genuine serpent tooth from a venomous snake, set in silver and enchanted with an antitoxin field. The irony of using a poison-delivery mechanism as poison protection was apparently not lost on its maker.",
+    "lore": "Andromachus, physician to the emperor Nero, improved the old royal antidote by adding the flesh of vipers, on the reasoning that the snake must carry its own cure. Apothecaries sold his theriac for fifteen hundred years. This fang set in silver follows the same logic, and it seems to hold.",
     "floorSpawnWeight": {
       "1-20": 80,
       "21-40": 80,
@@ -669,8 +669,8 @@
     },
     "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
+    "spread": 22,
+    "peak_floor": 50
   },
   "amulet_sleep_res": {
     "name": "amulet of sleep resistance",
@@ -681,7 +681,7 @@
       220
     ],
     "weight": 0.2,
-    "min_level": 8,
+    "min_level": 20,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -689,8 +689,8 @@
       "status": "sleep_resist",
       "duration": -1
     },
-    "unidentified_name": "dream-ward medallion",
-    "lore": "Enchanted by a monk who had taken a vow of wakefulness, this medallion permanently keeps its wearer from being magically induced into sleep — mundane exhaustion still applies, but no magical somnolence can take hold.",
+    "unidentified_name": "bell-shaped medallion",
+    "lore": "In the garden of Gethsemane the disciples fell asleep three times while their Master prayed, and he asked Peter whether they could not watch with him one hour. Monks who rise for the night office remember it. This small bell-shaped medal was a vigil-keeper's, and no drowsing spell gets past it.",
     "floorSpawnWeight": {
       "1-20": 80,
       "21-40": 80,
@@ -700,8 +700,8 @@
     },
     "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 13
+    "spread": 22,
+    "peak_floor": 50
   },
   "amulet_magic_res": {
     "name": "amulet of magic resistance",
@@ -720,8 +720,8 @@
       "status": "magic_resist",
       "duration": -1
     },
-    "unidentified_name": "ward-woven talisman",
-    "lore": "Woven from threads of anti-magical material and charged with layered warding enchantments, this amulet provides broad-spectrum resistance to directed spells — mage opponents find their carefully prepared attacks losing significant potency.",
+    "unidentified_name": "black root on a cord",
+    "lore": "When Odysseus went to face the witch Circe, Hermes met him on the path and pulled a herb from the ground: black at the root, with a flower white as milk. The gods call it moly. Circe's wand did nothing to him. A dried root of the kind hangs on this cord.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 80,
@@ -743,7 +743,7 @@
       160
     ],
     "weight": 0.2,
-    "min_level": 1,
+    "min_level": 20,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 1,
@@ -751,8 +751,8 @@
       "status": "drain_resist",
       "duration": -1
     },
-    "unidentified_name": "life-ward chain",
-    "lore": "Forged to protect against the vampiric magics that undead creatures employ, this amulet wraps the wearer's life force in a protective shell impervious to energy drain — an essential item for those venturing into undead-heavy dungeon levels.",
+    "unidentified_name": "braided silver chain",
+    "lore": "At the edge of the world Odysseus dug a pit and filled it with blood, and the hungry dead came crowding up to drink. He sat with his sword drawn across the trench and held them back. Silver braided the old way does the same work at the throat, and asks less of the arm.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -762,8 +762,8 @@
     },
     "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 8,
-    "peak_floor": 6
+    "spread": 22,
+    "peak_floor": 50
   },
   "amulet_curse_teleport": {
     "name": "amulet of teleportitis",
@@ -782,8 +782,8 @@
       "status": "teleportitis",
       "duration": -1
     },
-    "unidentified_name": "chaotic silver pendant",
-    "lore": "A ruined teleportation amulet whose control rune has been destroyed, leaving only random teleportation at unpredictable intervals. The wearer finds themselves elsewhere without warning — an effect that is occasionally life-saving and frequently catastrophic.",
+    "unidentified_name": "split silver pendant",
+    "lore": "The prophet Habakkuk was carrying a bowl of stew to the reapers when an angel caught him by the hair and set him down in Babylon, over the lions' den, to feed Daniel. Then the angel carried him home. This split pendant keeps the journey and has lost the angel and the purpose.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -813,8 +813,8 @@
       "status": "slowed",
       "duration": -1
     },
-    "unidentified_name": "leaden-weight medallion",
-    "lore": "A cursed medallion that makes the wearer feel as though every movement is performed underwater — half speed at all times, reactions delayed, and the frustrating sensation that everything around them is moving normally while they struggle through invisible resistance.",
+    "unidentified_name": "thick grey medallion",
+    "lore": "The Gospel says it would be better for a man to have a millstone hung about his neck and be cast into the sea than to lead a child astray. A magistrate with a taste for scripture had these grey medals made for his prisoners. They weigh almost nothing in the hand and a great deal on the neck.",
     "floorSpawnWeight": {
       "1-20": 60,
       "21-40": 60,
@@ -847,7 +847,7 @@
       "duration": -1
     },
     "unidentified_name": "a scorched gold ring",
-    "lore": "Forged from gold salvaged from the hoard of a great wyrm and quenched in dragon's blood, this ring radiates intense warmth. The dragon-hunters of the Western Reach wore one each — fitted at their guild's smithy from gold their first kill paid for. The warmth never quite leaves the hand.",
+    "lore": "When the dragon woke, old King Beowulf ordered a shield made entirely of iron, because he knew linden wood would burn. Eleven picked men went with him to the barrow. Ten ran for the trees. Wiglaf alone stood in the fire beside his lord. This scorched gold ring came out of that hoard, and it remembers which of them stayed.",
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
@@ -953,7 +953,7 @@
       "amount": 1
     },
     "unidentified_name": "a smooth silver ring",
-    "lore": "A silver ring engraved with overlapping ward-circles. The protection it offers is modest but reliable — every experienced adventurer keeps at least one.",
+    "lore": "Since before the Crusades, soldiers have carried the ninety-first Psalm into battle, written small: 'He shall give his angels charge over thee.' A silversmith engraved the verse inside this ring in letters too fine to read without a glass. Blows aimed at the wearer land a little wide.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 80,
@@ -985,7 +985,7 @@
       "amount": 2
     },
     "unidentified_name": "a polished gold band",
-    "lore": "A finely wrought golden ring set with nested protection glyphs. The field it generates slightly deflects incoming attacks, as if the air itself becomes briefly solid around the wearer.",
+    "lore": "Before the battle at the Milvian Bridge in 312, Constantine had his soldiers mark their shields with the Chi-Rho, the first two letters of Christ's name in Greek. He won Rome that day. Officers of the later empire wore the sign on gold bands like this one, and trusted it more than their mail.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1017,7 +1017,7 @@
       "amount": 3
     },
     "unidentified_name": "a dark heavy ring",
-    "lore": "A dense band of adamantine inscribed with protection formulae so complex that identifying the ring correctly requires advanced philosophical training. The field it generates is nearly impenetrable.",
+    "lore": "The Greeks named the hardest thing they could imagine adamas, 'the unconquerable.' The sickle of Kronos was made of it, and Virgil gave the gate of Tartarus columns of solid adamant that neither men nor gods could break. A filing from such a pillar was worked into this dark, heavy ring.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1040,7 +1040,7 @@
       240
     ],
     "weight": 0.1,
-    "min_level": 25,
+    "min_level": 45,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -1048,8 +1048,8 @@
       "status": "hasted",
       "duration": -1
     },
-    "unidentified_name": "a vibrating quicksilver ring",
-    "lore": "Quicksilver rings that vibrate at a specific resonance can entrain the wearer's nervous system to fire slightly faster. The effect is subtle but cumulative — the ring's owner moves, thinks, and reacts just quickly enough to survive situations that would kill others.",
+    "unidentified_name": "a humming grey-metal ring",
+    "lore": "The alchemists named quicksilver for Mercury, the swift messenger, because it is the one metal that runs. No smith can make a ring of it. This grey band is the nearest anyone has come, and it hums on the finger like a struck bell. Its wearer is always a moment ahead.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1060,8 +1060,8 @@
     },
     "peak_weight": 0.4,
     "is_unique": false,
-    "spread": 13,
-    "peak_floor": 30
+    "spread": 19,
+    "peak_floor": 50
   },
   "ring_sustenance_amber": {
     "name": "ring of sustenance",
@@ -1081,7 +1081,7 @@
       "duration": -1
     },
     "unidentified_name": "a warm amber ring",
-    "lore": "An amber ring containing a preserved insect that has not aged for ten thousand years. The preservation field extends to the wearer's metabolism, slowing hunger and reducing the need for rest. Useful in deep dungeons where food is scarce.",
+    "lore": "During the great drought the prophet Elijah lodged with a widow of Zarephath who had one handful of meal and a little oil left. She fed him first. The jar of meal and the cruse of oil did not run out until the rains came. A drop of that oil, they say, hardened into this amber.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 80,
@@ -1110,10 +1110,10 @@
     "quiz_tier": 4,
     "effects": {
       "stat": "STR",
-      "amount": 3
+      "amount": 4
     },
     "unidentified_name": "a massive carved bone ring",
-    "lore": "Carved from the finger-knuckle of a fire giant, this ring channels a fraction of the creature's legendary strength into the wearer. The inscription reads: 'Take from strength; do not merely borrow it.'",
+    "lore": "Og, king of Bashan, was the last of the giants. The Book of Deuteronomy records that his bed was made of iron, nine cubits long and four wide, and that it was kept on show in Rabbah for anyone who doubted. This ring was carved from a knucklebone that would fit such a bed.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1142,10 +1142,10 @@
     "quiz_tier": 4,
     "effects": {
       "stat": "CON",
-      "amount": 3
+      "amount": 4
     },
     "unidentified_name": "a faceted crystal ring",
-    "lore": "A diamond ring that channels the stone's indomitable hardness into the wearer's constitution. Those who have worn it for long periods report an unusual inability to tire, a reduced need for sleep, and a strange clarity of purpose.",
+    "lore": "Pliny believed a true diamond set on an anvil would shatter the hammer and the anvil before it broke itself. He was wrong about the stone and right about the idea. The clear gem in this ring lends its wearer that stubbornness: the body keeps going long after it has every reason to stop.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1174,10 +1174,10 @@
     "quiz_tier": 4,
     "effects": {
       "stat": "INT",
-      "amount": 3
+      "amount": 4
     },
     "unidentified_name": "a shifting prismatic ring",
-    "lore": "The prismatic ring contains a miniature aurora borealis in its setting — an observable phenomenon with no satisfactory mundane explanation. Wearers report accelerated thought, improved memory consolidation, and an occasional overwhelming sense of suddenly understanding something they cannot articulate.",
+    "lore": "The Ptolemies searched every ship that docked at Alexandria and took its books to the Library. The scribes made copies, and it was the copies that went back to the owners. A librarian there cut this stone so that it throws one beam of light into many, as a reminder of what the collection was for.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1209,7 +1209,7 @@
       "duration": -1
     },
     "unidentified_name": "a warm golden medallion",
-    "lore": "A single-use death ward forged from the solidified moment of a healer's last breath. The amulet cannot be refilled — when it triggers, it is spent. But the one time it matters, no price seems too high. Necromancers have offered fortunes to study how this effect works; none have succeeded.",
+    "lore": "Alcestis agreed to die in her husband's place, and did. Heracles, a guest in the mourning house, went out to the tomb, waited for Death to come for his due, and wrestled him until he let her go. This warm gold medal remembers the hold. It works once.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1241,7 +1241,7 @@
       "duration": -1
     },
     "unidentified_name": "a spiral-engraved medallion",
-    "lore": "A medallion inscribed with a möbius-strip ward that sends certain spells back to their casters. The effect is imperfect — complex magics may partially deflect, partially turn, or simply fail. But the look on an enemy wizard's face when their own fireball returns is considered adequate compensation.",
+    "lore": "King Balak of Moab hired the seer Balaam to curse Israel and took him up three mountains to do it. Three times Balaam opened his mouth and a blessing came out, and the curse fell back on the man who paid for it. The spiral cut in this medallion turns ill words the same way.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1273,7 +1273,7 @@
       "duration": -1
     },
     "unidentified_name": "a clear gem pendant",
-    "lore": "A lens of perfectly clear crystal that has been inscribed with wards against illusion, displacement, and invisibility. Looking through it reveals the world as it actually is. The feeling of wearing it has been compared to taking off glasses you did not know you were wearing.",
+    "lore": "On the plain before Troy, Athena told Diomedes she had lifted the mist from his eyes so that he could tell god from man in the fighting. He wounded two immortals before nightfall. A lens of this clear stone does the same for lesser eyes: the hidden thing is simply there.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1305,7 +1305,7 @@
       "duration": -1
     },
     "unidentified_name": "a mirror-faced medallion",
-    "lore": "The face of this medallion is a perfect silver mirror. When hostile magic contacts it, the amulet reflects a portion of the effect back at its source. Powerful spellcasters who encounter this amulet for the first time sometimes cast their second spell into their own reflection.",
+    "lore": "Perseus never looked at Medusa. He watched her in the polished bronze of the shield Athena lent him and struck backward at the reflection. The face of this medallion is polished the same way, and a hex that meets it tends to go home to its maker.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1337,7 +1337,7 @@
       "amount": 5
     },
     "unidentified_name": "a heavy blood-red gem pendant",
-    "lore": "Forged in the crater where a titan fell, this amulet radiates a palpable sense of physical authority. The CON bonus it provides is extraordinary — those who wear it describe simultaneously feeling that their body could survive almost anything and that it probably will have to.",
+    "lore": "Zeus chained Prometheus to a crag in the Caucasus for stealing fire. Each day an eagle came and tore out his liver, and each night it grew back whole, so that the punishment could go on. The blood-red stone in this pendant came from that rock. It makes a body very hard to finish.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1369,7 +1369,7 @@
       "amount": 5
     },
     "unidentified_name": "a violet crystalline pendant",
-    "lore": "This amulet was reportedly the property of a council of arch-mages who each contributed one year of their own intelligence to its enchantment. The cumulative effect of several lifetimes of accumulated intellect is significant.",
+    "lore": "Odin wanted one drink from Mimir's well, where wisdom is kept, and Mimir's price was an eye. Odin paid it. Later he hung nine nights on the windswept tree, wounded with a spear, to learn the runes. The violet stone here is said to be cut from the well's rim. It did not come cheap either.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 0,
@@ -1401,7 +1401,7 @@
       "duration": -1
     },
     "unidentified_name": "a cold purple ring",
-    "lore": "This ring appears valuable and may even feel empowering when first worn. The draining effect is subtle at first — a slight weariness after long use. By the time the wearer notices the full extent of the damage, they have usually worn it for some time.",
+    "lore": "Erysichthon cut down an oak sacred to Demeter, and the goddess sent Hunger to breathe on him as he slept. He ate his herds, sold everything he owned for food, and in Ovid's telling ended by gnawing his own limbs. This cold ring has the same appetite, and the wearer is nearest.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 60,
@@ -1432,8 +1432,8 @@
       "status": "doomed",
       "duration": -1
     },
-    "unidentified_name": "an ominous dark pendant",
-    "lore": "The amulet of doom does not harm the wearer directly. Instead, it makes the universe slightly more hostile — doors that would close slowly now close quickly; enemies that might have hesitated now strike immediately; saving throws always seem to land on the worst possible number. It has no off switch.",
+    "unidentified_name": "a sword-shaped pendant on a hair-thin chain",
+    "lore": "Damocles told the tyrant Dionysius of Syracuse how fortunate a king must be. Dionysius sat him on the throne at a banquet with a sword hung over his head by one horsehair. Damocles lost his appetite. Whoever wears this pendant sits in that chair, and the hair is fraying.",
     "identified": false,
     "floorSpawnWeight": {
       "1-20": 60,
@@ -1465,7 +1465,7 @@
       "duration": -1
     },
     "unidentified_name": "a plain band that seems to blur at the edges",
-    "lore": "In Plato's Republic, Glaucon tells the story of Gyges the shepherd, who found a ring that turned him invisible. He used it to seduce the queen, murder the king, and seize the throne. Plato asked: would a just man behave differently from an unjust man if he could act without consequence? The ring itself does not answer. It merely grants the power — and leaves the moral question to you.",
+    "lore": "In Plato's Republic, Glaucon tells of Gyges, a Lydian shepherd. An earthquake opened the ground, and inside a hollow bronze horse he found a dead man wearing a gold ring. Turning the bezel inward made him invisible. He won over the queen, killed the king and took the throne. Glaucon's question: with such a ring, would anyone stay just?",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-27": 0,
@@ -1503,7 +1503,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Andvari's gold ring, stolen by Loki and given as wergild to the giant Hreidmar. Andvari cursed it: it would destroy every owner. Hreidmar was killed by his son. Fafnir killed his brother for it. Sigurd killed Fafnir. The ring went to Gudrun, who murdered Sigurd. Wagner compressed this into four operas. The curse required no compression.",
+    "lore": "Loki took this ring from the dwarf Andvari to pay the blood-price for Otr, and Andvari swore it would be the death of everyone who owned it. Fafnir killed his father Hreidmar for it. Sigurd killed Fafnir and was murdered in his own bed. Gunnar and Hogni sank the hoard in the Rhine and died in Atli's hall without saying where.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -1525,8 +1525,8 @@
     "equip_threshold": 3,
     "quiz_tier": 5,
     "effects": {
-      "stat": "INT",
-      "amount": 3,
+      "stat": "PER",
+      "amount": 2,
       "status": "searching",
       "duration": -1
     },
@@ -1536,12 +1536,13 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Andvari's magic ring that could find gold wherever it lay hidden. Loki stole it with the rest of the dwarf's hoard to pay the wergild for killing Otr. Andvari cursed both the ring and all the gold as he surrendered them. The ring found gold. It could not find safe owners.",
+    "lore": "Andvari the dwarf lived as a pike under a waterfall, guarding his gold. Loki borrowed the sea-goddess Ran's net, hauled him out, and took everything. The dwarf begged to keep one small ring, because with it he could make his wealth grow again. Loki took that too. Its name means Andvari's Gift, which was the dwarf's idea of a joke.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 22,
     "peak_floor": 60,
-    "can_be_cursed": true
+    "can_be_cursed": true,
+    "gold_multiplier": 2.0
   },
   "draupnir": {
     "name": "Draupnir",
@@ -1602,7 +1603,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The Welsh Arthurian heroine Luned gave this ring to Owain when he was trapped in a portcullis. It rendered him invisible to the castle's inhabitants until he could escape. She retrieved it afterward, which is the appropriate thing to do with a ring of this power. Most people who receive such gifts do not return them.",
+    "lore": "In the Welsh tale of the Lady of the Fountain, Owain chased a wounded knight through a castle gate. The portcullis dropped behind him, cut his horse in two, and left him trapped between the gates. The maiden Luned passed him a ring through the bars: with the stone turned inward and a hand closed over it, she said, no one would see him. No one did.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 21,
@@ -1636,7 +1637,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Freya's necklace, forged by four dwarves over four days. She paid each one a night of her company. Loki stole it in the form of a fly; Heimdall fought him in seal-form to recover it. Freya wore it in battle and her tears became gold. The Brisingamen is the most written-about piece of Norse jewellery. The dwarves received no further acknowledgment in the sagas.",
+    "lore": "Four dwarves made Freyja's necklace: Alfrigg, Dvalin, Berling and Grer. Loki crept into her bower as a fly to steal it, and Heimdall fought him for it on a skerry, both of them in the shape of seals. Thor once wore it under a bridal veil to win back his hammer. When Freyja weeps for her lost husband Od, her tears are red gold.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -1659,7 +1660,9 @@
       "status": "reflecting",
       "duration": -1,
       "stat": "WIS",
-      "amount": 2
+      "amount": 2,
+      "stat2": "AC",
+      "amount2": 2
     },
     "unidentified_name": "a small wooden figure of armed Athena",
     "floorSpawnWeight": {
@@ -1667,7 +1670,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The Palladium — a carved image of Athena that fell from the sky — kept Troy invincible as long as it remained within the city walls. Odysseus and Diomedes stole it. Troy fell. Later, every major city of the ancient world claimed to have the original Palladium: Rome, Athens, Argos, Sparta. They cannot all be correct. They may all be correct.",
+    "lore": "The Palladium was a wooden image of armed Athena that fell from the sky into Troy, and the city could not be taken while it stayed inside the walls. Odysseus and Diomedes crept in by night and carried it off. Rome later claimed that Aeneas had saved the true one, and kept it in the temple of Vesta where only the Vestals might see it.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -1695,7 +1698,7 @@
     "passive_regen_interval": 5,
     "can_be_cursed": false,
     "unidentified_name": "a blue faience eye pendant",
-    "lore": "The wedjat, the restored eye of Horus, torn out by Set and healed by Thoth. It is the oldest symbol of healing in human history. The eye watches over its wearer, mending small wounds with the patience of a god who has eternity to work with. One cannot rush divinity.",
+    "lore": "Set tore out the eye of Horus when they fought over the throne of Egypt. Thoth found the pieces and made it whole, and Horus gave it to his dead father Osiris to restore him. The Egyptians called it the wedjat, the sound eye, and painted it on coffins and on the prows of boats. It mends its wearer slowly and without fuss.",
     "floorSpawnWeight": {
       "16-30": 1,
       "31-50": 2,
@@ -1726,7 +1729,7 @@
       "duration": -1
     },
     "unidentified_name": "a jade ring shaped like a beetle",
-    "lore": "Khepri was the Egyptian god of the dawn — the sacred scarab beetle who rolled the sun across the sky each morning, renewing creation daily. The Egyptians saw in the humble dung beetle a cosmic truth: that life renews itself endlessly, that every morning the world is born again. This jade scarab hums with that eternal cycle of renewal. Wounds close. Strength returns. Dawn comes again.",
+    "lore": "The Egyptians watched the scarab roll its ball of dung across the sand and bury it, and later saw young beetles climb out of the ground as if from nothing. They gave the beetle's face to Khepri, the god who pushes the sun up over the horizon each morning. The carved beetle on this ring renews its wearer the same way, a little every dawn.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-15": 0,
@@ -1766,7 +1769,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The hamsa appears in Islamic, Jewish, and Christian traditions under different names — Hand of Fatima, Hand of Miriam, Hand of Mary. The eye in the palm deflects the evil eye. It is one of the few symbols shared without significant modification across the Mediterranean's three Abrahamic faiths. No one disputes it. Everyone claims it.",
+    "lore": "The open hand with an eye in its palm is older than any of the faiths that now wear it. Muslims call it the Hand of Fatima, Jews the Hand of Miriam, and some Christians of the East the Hand of Mary. Khamsa is simply Arabic for five. In every house it does one job: it turns the envious glance back on the one who cast it.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 18,
@@ -1801,7 +1804,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The oldest image of the ouroboros appears in an Egyptian royal tomb, 1350 BCE. It represents cyclical time, eternal recurrence, the universe sustaining itself. Alchemists adopted it. Jung analysed it. Kekulé claimed the image gave him the ring structure of benzene in a dream. Whether this last part is true, the benzene ring is real.",
+    "lore": "The serpent swallowing its own tail first appears on a gilded shrine in the tomb of Tutankhamun, circling the head and feet of a god. Greek alchemists in Egypt took it up; the one called Cleopatra drew it around three words: 'the all is one.' What the serpent eats, it regrows. So does whoever wears it.",
     "peak_weight": 0.3,
     "is_unique": false,
     "spread": 19,
@@ -1858,7 +1861,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Hephaestus forged it as a wedding gift for Harmonia when she married Cadmus — and cursed it, because Harmonia's mother was Aphrodite, who had cuckolded him with Ares. Every woman who wore it suffered catastrophe: Jocasta, Eriphyle (who betrayed her husband for it), Jocasta again, Callirhoe. The necklace destroyed houses. It is still beautiful.",
+    "lore": "Hephaestus made this necklace as a wedding gift for Harmonia, bride of Cadmus of Thebes, and he bore her mother a grudge. It brought ruin to every owner. Polynices used it to bribe Eriphyle, who sent her husband to die in the war of the Seven against Thebes; her own son killed her for it. It was hung at last in Delphi, where no one could wear it.",
     "cursed": true,
     "peak_weight": 0.2,
     "is_unique": true,
@@ -1942,7 +1945,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Ahriman, the Zoroastrian principle of darkness and chaos, is not merely evil but anti-being — the force that unmakes. His heart, if such a thing could be extracted and held, would contain complete knowledge of all things that can be destroyed. This is a great deal of knowledge. The gem is warm. It should not be warm.",
+    "lore": "The Zoroastrians teach that for every good thing Ohrmazd made, the Hostile Spirit Ahriman made something to spoil it: winter against summer, the lie against the truth, and against the healthy body ninety-nine thousand nine hundred and ninety-nine diseases. This red stone knows how each made thing comes apart. It is warm in the hand. It should not be.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 27,
@@ -2001,7 +2004,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The knot of Isis — the tyet — accompanied the dead as written in Chapter 156 of the Book of the Dead: 'You possess your blood, Isis; you possess your power.' It was always made of red jasper or red stone. Red was the colour of Isis's protective power, not of blood. This distinction mattered to Egyptian physicians.",
+    "lore": "The tyet looks like an ankh with its arms folded down, or like the knot in a tied sash. Egyptian embalmers cut it from red jasper and laid it at the throat of the dead, and the Book of the Dead gives the spell to speak over it, calling on the blood and the power of Isis. She had already brought one husband back.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 24,
@@ -2086,7 +2089,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "A small amulet cast in the likeness of Hermes's Caduceus — two serpents coiled around a winged rod. The staff itself is a different relic; this charm carries only a fragment of its virtue, but is enough to keep the wearer's wits sharp. Hermes received the caduceus from Apollo in exchange for the lyre. It could put people to sleep or wake them, guide souls to the underworld, and — in later tradition — heal. Medical associations adopted it, confusing it with Asclepius's single-serpent staff. The American Military medical corps still uses the caduceus. Doctors point out the distinction; the military finds it difficult to care.",
+    "lore": "Hermes gave Apollo the lyre he had invented, and Apollo gave him a golden staff in return. With it Hermes closes the eyes of the waking, opens the eyes of sleepers, and leads the dead down the road to Hades. The story goes that he once thrust it between two fighting snakes, and they have twined around it in peace ever since.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 21,
@@ -2115,7 +2118,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Lugh of the Long Arm wore a golden torque as one of his divine symbols, along with Fragarach and a magic horse. He was the god of skill — every skill simultaneously — because he argued his way past the Tuatha's gatekeeper by pointing out that while they had specialists, none of them could do everything he could. The gatekeeper let him in.",
+    "lore": "The doorkeeper at Tara turned Lugh away. The Tuatha De Danann already had a smith, he said, and a champion, a harper, a poet and a physician. Lugh asked whether they had one man who was all of those at once. They did not, and the king gave him the seat of the sage. Irish heroes wore gold at the throat; this is his.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -2151,7 +2154,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Amun, whose name means 'the hidden one,' was invisible by definition — his cult image was sealed inside the inner sanctum of Karnak, and even priests could not see it. His pectoral was worn by pharaohs when making decisions of state. The decisions were not actually made by the pectoral. They were, however, required to be made while wearing it.",
+    "lore": "Amun's name means the Hidden One. His image lived in the dark at the back of the temple of Karnak, and when the priests carried it out on its gilded boat, it stayed behind a veil. Pharaohs put questions to it. The boat on the bearers' shoulders dipped forward for yes and drew back for no.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -2182,7 +2185,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Ra holds the ankh — the key of life — in all his standard depictions. He passes it to pharaohs; pharaohs pass it to other gods; everyone passes it. The ankh's shape may derive from a sandal strap, a mirror, or a feminine symbol depending on which scholar you consult. In Coptic Christianity it became the crux ansata and survived into church iconography. It is the oldest recurring symbol in Egyptian art.",
+    "lore": "On temple walls the gods hold the ankh by its loop like a key and press it to a king's lips to give him breath. No one is certain what the sign first pictured; a sandal strap is one good guess. The Christians of Egypt kept it as a cross with a handle. This one is gilded bronze, in the sun god's color.",
     "peak_weight": 0.3,
     "is_unique": false,
     "spread": 21,
@@ -2239,7 +2242,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "In the Alliterative Morte Arthure, Gawain's strength grew until noon, held until three, and then diminished. In the Green Knight poem, he wore a green girdle he believed would protect him, and was ashamed when his small evasion was revealed. The shame was disproportionate; Gawain was the most courteous knight, which meant his lapses troubled him more than other men's crimes troubled them.",
+    "lore": "Sir Thomas Malory says Gawain's strength grew every morning from nine until noon, until he fought with the might of three men, and then ebbed away. The older poem gives him a pentangle on his shield and, after his one small lie to the Green Knight, a green sash worn as a badge of shame. The whole court took up the sash to honor him.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 24,
@@ -2270,7 +2273,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Odysseus had no magical ring. He needed none. He was the man who thought of the wooden horse, who tied himself to the mast to hear the Sirens safely, who invented false identities with the ease of breathing. What he could not solve with cunning he solved with patience. The ring is his, in retrospect — it was always going to be found by someone who didn't go home the easy way.",
+    "lore": "The stone shows a ship. Odysseus was ten years getting home from Troy, and he came through because he noticed things: the trick of the Cyclops's doorstone, the wax that would stop his crew's ears against the Sirens, the bed that Penelope tested him with, which he had built himself around a living olive tree. Nothing hidden stays hidden from this ring for long.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 24,
@@ -2327,7 +2330,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Scheherazade told 1,001 stories to postpone her execution. She did not use magic; she used structure — each story nested inside another, every night's tale ending at a moment too interesting to stop. She survived by being more valuable alive than dead. This is the original argument for intellectual labour. She was also, by the end, the queen.",
+    "lore": "King Shahryar married a new bride each evening and had her executed at dawn. The vizier's daughter Scheherazade volunteered. On her wedding night her sister Dunyazad asked for a story, and Scheherazade stopped it at daybreak, just short of the ending. The king let her live one more day to hear it. She did this for a thousand and one nights.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 24,
@@ -2466,7 +2469,7 @@
       "status": "searching",
       "duration": -1
     },
-    "unidentified_name": "a small golden diadem fragment on a chain",
+    "unidentified_name": "a ring cut from a broken golden diadem",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
@@ -2503,7 +2506,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Njörd ruled the winds and the seas and was responsible for the catch of fish and hunters' luck. He married Skadi, who chose him by his feet — the most beautiful feet among the gods — expecting to have chosen Baldur. They lived six days in her mountains, six by the sea, and both were miserable by turns. Nordic marriage counsellors date their profession's origin to this arrangement.",
+    "lore": "Njord rules the wind, the sea and the fisherman's luck. The giantess Skadi was allowed to choose a husband from among the gods by looking only at their feet; she picked the handsomest pair, hoping for Baldr, and got the sea god. He could not sleep in her mountains for the howling of wolves. She could not sleep at his harbor for the screaming of gulls.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 19,
@@ -2534,7 +2537,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Percival failed the Grail question because he was too polite to ask what was wrong with the Fisher King. He had been told not to ask too many questions. He followed the instruction and failed. When he returned and asked — Who does the Grail serve? — the king was healed. The lesson of the Grail quest is that courtesy has limits, and sometimes the correct action is to inquire.",
+    "lore": "Young Percival saw the Grail carried through the hall of the wounded Fisher King and said nothing, because a kind old knight had taught him that talking too much is rude. One question would have healed the king and his wasted land. Percival spent years finding the castle again in order to ask it. The small hollow in this ring is shaped like a cup.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -2564,7 +2567,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Lancelot was the greatest knight in the world and destroyed the Round Table by being exactly that. His affair with Guinevere was not a secret he kept — it was a secret everyone kept for him because they needed him too much to confront him. The tower on the ring is the tower of Joyous Gard, where he retreated when his virtue finally failed the test he had spent his life avoiding.",
+    "lore": "The Lady of the Lake raised Lancelot and did not tell him his name. He learned it when he took the castle of Dolorous Gard and lifted a slab in its graveyard: his own name was cut beneath, as the man who would one day lie there. He renamed the place Joyous Gard. The tower on this ring is that castle, and he is buried in it.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -2625,7 +2628,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "The philosopher does not merely think — the philosopher perceives. Socrates described his daimon as a voice that told him what not to do; he considered this the most useful kind of guidance. The ring was found in the ruins of the Academy at Athens, described in a catalogue written three centuries after Plato's death. The description ends mid-sentence. The catalogue's final page is missing.",
+    "lore": "Socrates said a voice had come to him since childhood. It never told him what to do; it only stopped him when he was about to do wrong, and he trusted it over every argument. An old catalogue lists this ring among the goods of Plato's Academy. The entry breaks off in the middle of a sentence, and the last page is missing.",
     "peak_weight": 0.2,
     "is_unique": true,
     "spread": 25,
@@ -2656,7 +2659,7 @@
       "81-100": 2
     },
     "identified": false,
-    "lore": "Pythagoras swore his oaths by the Tetractys — the triangular figure of ten points arranged 1-2-3-4 that represented the musical ratios and the structure of the cosmos. His brotherhood at Croton was vegetarian, banned beans, and believed the soul transmigrated between lives. They were also the first people to prove that the square root of 2 is irrational, a discovery so disturbing that Hippasus, who made it, was allegedly drowned at sea.",
+    "lore": "The Pythagoreans of Croton swore their oaths by the tetractys: ten points set in a triangle, rows of one, two, three and four, which hold the ratios of the musical scale. They ate no beans. One of them, Hippasus, is said to have shown that the diagonal of a square cannot be measured by its side, and to have drowned at sea for letting it be known.",
     "peak_weight": 0.3,
     "is_unique": true,
     "spread": 21,
@@ -2714,8 +2717,8 @@
       "duration": -1
     },
     "identified": false,
-    "unidentified_name": "crackling ring",
-    "lore": "Forged in the heart of a perpetual thunderstorm by an Aztec storm-caller, this ring hums with suppressed electrical charge. Lightning that strikes the wearer grounds harmlessly through the stone, while the storm energy sharpens the intellect to razor clarity.",
+    "unidentified_name": "a ring set with a chip of grey stone",
+    "lore": "All over Europe, farmers who turned up a polished stone axe in the furrow took it for a thunderbolt gone cold. They called such things thunderstones and kept them under the eaves, on the reasoning that lightning does not strike the same place twice. A chip of one is set in this ring. It sharpens the wits as well.",
     "floorSpawnWeight": {
       "1-20": 5,
       "21-40": 3,
@@ -2741,11 +2744,13 @@
     "equip_threshold": 3,
     "effects": {
       "stat": "STR",
-      "amount": 3
+      "amount": 3,
+      "stat2": "CON",
+      "amount2": 1
     },
     "identified": false,
-    "unidentified_name": "heavy amulet",
-    "lore": "Cast from ore pulled from the bones of fallen Titans by Hephaestus as a jest, this amulet transfers a sliver of Titanic strength to the wearer. Those with the constitution to bear it find themselves capable of feats of impossible might.",
+    "unidentified_name": "a lump of dark ore on a chain",
+    "lore": "After ten years of war Zeus shut the Titans in Tartarus. Hesiod gives the distance: a bronze anvil dropped from heaven would fall nine days and nights to reach the earth, and nine more from the earth to reach that prison. This lump of dark ore is said to come from the bottom. It is heavier than it looks and makes its wearer equal to the weight.",
     "floorSpawnWeight": {
       "1-21": 0,
       "22-40": 5,
@@ -2777,8 +2782,8 @@
       "duration": -1
     },
     "identified": false,
-    "unidentified_name": "cold blue ring",
-    "lore": "Carved from a bioluminescent crystal found only at extreme ocean depth, this ring adapts the wearer's constitution to the crushing cold of the abyss. Divers of the Phoenician coast traded entire fortunes for such rings, which allowed descent to waters where no natural body could survive.",
+    "unidentified_name": "a faintly glowing blue ring",
+    "lore": "Herodotus tells of Scyllias of Scione, the best diver of his age, who salvaged treasure for the Persians from their wrecked ships and then deserted to the Greeks. People said he swam the whole way underwater, some ten miles. Herodotus thought he probably took a boat. The ring Scyllias wore still glows faintly blue, and its wearer does not feel the cold.",
     "floorSpawnWeight": {
       "1-20": 5,
       "21-40": 3,
@@ -2802,14 +2807,17 @@
     "slot": "amulet",
     "quiz_tier": 2,
     "equip_threshold": 3,
-    "effects": {},
+    "effects": {
+      "stat": "WIS",
+      "amount": 1
+    },
     "save_bonus": {
       "cat": "WIS",
       "amount": 3
     },
     "identified": false,
-    "unidentified_name": "warm amulet",
-    "lore": "Handed down through thirty-six generations of oracle-priests at Delphi, this focus crystal was used to receive the god's voice without distortion. The priests believed wisdom was not intelligence but receptivity — and this amulet sharpens that receptivity to inhuman degree.",
+    "unidentified_name": "a clear crystal on a laurel-wood disc",
+    "lore": "Two sayings were carved at the entrance to Apollo's temple at Delphi, where every pilgrim had to pass them: 'Know thyself' and 'Nothing in excess.' The priests sold small copies to those who could not remember two things at once. This is one. A mind that wears it is harder to frighten, flatter or confuse.",
     "floorSpawnWeight": {
       "1-20": 5,
       "21-40": 3,
@@ -2835,13 +2843,11 @@
     "equip_threshold": 3,
     "effects": {
       "stat": "DEX",
-      "amount": 3,
-      "status": "silent_walk",
-      "duration": -1
+      "amount": 3
     },
     "identified": false,
-    "unidentified_name": "dark ring",
-    "lore": "The signet of the Hashshashin grandmaster, recovered after the sack of Alamut. The ring's stone refracts light around the wearer with unsettling precision. Paired with the supernatural quickness it grants, its bearer becomes effectively impossible to track in dim light.",
+    "unidentified_name": "a black signet with a dagger device",
+    "lore": "In 1090 Hasan-i Sabbah took the mountain castle of Alamut, the Eagle's Nest, without a siege, and from it he sent single men with daggers against viziers and princes. The castle held for a hundred and sixty-six years, until the Mongols under Hulegu pulled it down. This black signet left by a side gate. Its wearer walks very quietly.",
     "floorSpawnWeight": {
       "1-24": 0,
       "25-40": 5,
@@ -2851,7 +2857,8 @@
     "peak_weight": 0.4,
     "is_unique": true,
     "spread": 13,
-    "peak_floor": 30
+    "peak_floor": 30,
+    "passive_silent_walk": true
   },
   "amulet_of_fortitude": {
     "name": "Amulet of Fortitude",
@@ -2875,8 +2882,8 @@
       "amount": 3
     },
     "identified": false,
-    "unidentified_name": "pulsing amulet",
-    "lore": "A gift from Asclepius to a mortal champion whose constitution had been ravaged by poison. The carved serpent at its centre channels a fraction of divine healing energy into the wearer continuously. Wounds knit, poisons fade, and exhaustion retreats in its presence.",
+    "unidentified_name": "a bronze amulet with a coiled serpent",
+    "lore": "The sick came to the temples of Asclepius to sleep. They lay down in the long porch at Epidaurus, and the god's harmless snakes moved among them in the dark; in the morning they told the priests their dreams and were treated. The bronze serpent coiled on this amulet is one of his. Flesh under it mends, and fevers break.",
     "floorSpawnWeight": {
       "1-23": 0,
       "24-40": 5,
@@ -2908,8 +2915,8 @@
       "duration": -1
     },
     "identified": false,
-    "unidentified_name": "pale green ring",
-    "lore": "Fashioned by the eagle-eyed sentinels of the Watchtower of Rhodes, worn by scouts who needed to perceive threats at inhuman range. The iris of its gem dilates and contracts like an eye, and something in that motion transmits itself to the wearer — both sight and instinct are magnified.",
+    "unidentified_name": "a ring set with an eye-like green gem",
+    "lore": "Lynceus sailed as lookout on the Argo. The poets say his eyes were so keen he could see through the trunk of an oak and tell what lay buried under the ground, and that from a mountaintop he once spotted two men hiding inside a hollow tree. The green stone in this ring narrows and widens like a pupil.",
     "floorSpawnWeight": {
       "1-21": 0,
       "22-40": 5,
@@ -2941,8 +2948,8 @@
       "duration": -1
     },
     "identified": false,
-    "unidentified_name": "hot amulet",
-    "lore": "The ceremonial amulet of the Dean of the Arcane Faculty — a position first held by Thales, who wore it when demonstrating that fire could not harm a mind that understood its nature. Since then it has passed through the hands of thirty-seven archmages, each adding a layer of heat-resistant enchantment.",
+    "unidentified_name": "a blackened bronze amulet, warm to the touch",
+    "lore": "Empedocles of Sicily taught that all things are made of four roots: fire, air, water and earth. Legend says he ended by leaping into the crater of Etna to prove himself a god, and that the volcano threw back one of his bronze sandals. This amulet was cast from that bronze. Fire has already had its turn with it.",
     "floorSpawnWeight": {
       "1-27": 0,
       "28-40": 5,
@@ -2974,8 +2981,8 @@
       "duration": -1
     },
     "identified": false,
-    "unidentified_name": "blurring ring",
-    "lore": "The gem in this ring is a shard of a displacer beast's crystallized nervous tissue — the organ responsible for the beast's light-bending ability. It projects a constant false image approximately one step from the wearer's true position, causing every attack to land on air.",
+    "unidentified_name": "a ring set with a wavering grey gem",
+    "lore": "Sailors in the Strait of Messina sometimes see castles and harbors standing in the air above the water, where there is nothing. They call the sight Fata Morgana, after Morgan le Fay, and steer well clear. The grey gem in this ring holds a piece of that air. Its wearer is quick on his feet and never quite where he appears to be.",
     "floorSpawnWeight": {
       "1-25": 0,
       "26-40": 5,
@@ -3007,8 +3014,8 @@
       "duration": -1
     },
     "identified": false,
-    "unidentified_name": "cool amulet",
-    "lore": "Blessed by the last high priest of Esagila, the great ziggurat of Babylon, this amulet projects an invisible ward that absorbs and dissipates magical energy before it can take hold. Even the most precisely aimed enchantments fray and fail against its steady resistance.",
+    "unidentified_name": "a red clay amulet stamped with a dragon",
+    "lore": "When Marduk of Babylon went out to fight Tiamat, the dragon of the salt sea, the old poem says he carried a charm of red paste between his lips and a herb against poison in his hand. His priests at Esagila pressed copies in red clay for travellers. Spells break on this one like waves on a mole.",
     "floorSpawnWeight": {
       "1-21": 0,
       "22-40": 5,
@@ -3039,7 +3046,7 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a golden riddle-crown",
-    "lore": "The crown of the Sphinx, imbued with millennia of accumulated riddle-wisdom. Wearing it sharpens the mind and steadies the answerer against pressure.",
+    "lore": "The Sphinx sat on a rock outside Thebes and asked every traveller what goes on four legs in the morning, two at noon and three in the evening. She ate those who failed. Oedipus answered 'Man,' and she threw herself from the rock. Her crown stayed behind. It steadies the mind of anyone who has to answer under pressure.",
     "floorSpawnWeight": {},
     "peak_floor": 0,
     "spread": 10,
@@ -3071,7 +3078,7 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a driftwood amulet",
-    "lore": "Carved from the wood of a ship that survived Charybdis, this amulet carries the protection of calm water. The wearer reads the currents of danger before they arrive.",
+    "lore": "Three times a day Charybdis swallows the sea and three times spits it out. After Zeus wrecked his last ship, Odysseus drifted back over her and hung from the fig tree above the whirlpool like a bat until she gave back his mast and keel. This amulet was whittled from that timber. Its wearer feels trouble coming the way a sailor feels weather, and does not mind the cold.",
     "floorSpawnWeight": {},
     "peak_floor": 0,
     "spread": 10,
@@ -3101,7 +3108,7 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "balanced golden scales",
-    "lore": "A miniature of the scales Anubis uses to weigh hearts against the feather of Ma'at. Wearing them steadies the pulse and hardens the bearer against the drain of undead.",
+    "lore": "In the Hall of Two Truths the jackal-headed Anubis sets the dead man's heart on one pan of the scale and the feather of Ma'at on the other. Thoth writes down the result. Ammit, who is part crocodile, part lion and part hippopotamus, waits beside the scale for the hearts that fail. This small copy keeps a living heart steady.",
     "floorSpawnWeight": {},
     "peak_floor": 0,
     "spread": 10,
@@ -3131,7 +3138,7 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a crude iron band",
-    "lore": "Crushed from a finger of Ravana himself, this ring channels the demon king's immense physical power into whoever wears it. The grip becomes unbreakable.",
+    "lore": "Ravana, the ten-headed king of Lanka, once tried to tear Mount Kailash out of the ground and carry it off. Shiva pressed down with one toe and pinned him beneath it, and Ravana sang hymns for a thousand years before he was let go. This crude iron band was beaten out of a link of the demon king's armor. Its grip does not loosen.",
     "floorSpawnWeight": {},
     "peak_floor": 0,
     "spread": 10,
@@ -3161,7 +3168,7 @@
     },
     "can_be_cursed": false,
     "unidentified_name": "a jagged black stone",
-    "lore": "Carved from sacrificial obsidian used in Xibalba, the Mayan underworld. It grants the wearer sight in magical darkness and resistance to fear effects from undead.",
+    "lore": "The Popol Vuh tells how the lords of Xibalba, the Maya underworld, tested the Hero Twins in a row of houses: the Dark House, the Cold House, the Jaguar House, the Bat House, and the Razor House, full of blades of living obsidian. Hunahpu and Xbalanque came through them all. This shard is from the last. Darkness does not hide much from its wearer.",
     "floorSpawnWeight": {},
     "peak_floor": 0,
     "spread": 10,
@@ -3187,8 +3194,8 @@
     "value": 3000,
     "min_level": 22,
     "identified": false,
-    "unidentified_name": "a silver thread wound into a pendant",
-    "lore": "Ariadne gave this thread to Theseus so he could find his way out of the Labyrinth. The thread remembers every path it has traveled and guides its bearer toward the exit. In the myth, Theseus abandoned Ariadne on Naxos — but the thread remained faithful.",
+    "unidentified_name": "a ball of silver thread on a belt-hook",
+    "lore": "Ariadne, daughter of King Minos, gave Theseus a ball of thread before he went in to face the Minotaur. He tied one end to the door of the Labyrinth and let it run out behind him, and it brought him back. He left her on the island of Naxos on the way home. The thread has not forgotten a single turning.",
     "containerLootTier": "rare",
     "symbol": "=",
     "color": [
@@ -3223,7 +3230,7 @@
     "min_level": 8,
     "identified": false,
     "unidentified_name": "a small horse-shaped charm",
-    "lore": "Epona was the Celtic goddess of horses, travelers, and safe journeys. Her charm ensures the traveler always arrives in safe harbor — never in a dead end, never in an ambush. The Romans adopted her worship, unique among Gaulish deities.",
+    "lore": "Epona was the horse goddess of the Gauls, shown riding side-saddle with a foal at her knee. Roman cavalrymen recruited in Gaul carried her east and south until her shrine stood in every stable of the empire, the one Celtic deity honored in Rome itself. Her charm keeps a traveller off the bad road and out of the blind alley.",
     "containerLootTier": "uncommon",
     "symbol": "=",
     "color": [
@@ -3254,8 +3261,8 @@
     "value": 1500,
     "min_level": 10,
     "identified": false,
-    "unidentified_name": "a ring woven from spider silk",
-    "lore": "Anansi the spider-god of the Akan people earned all the stories in the world by outwitting the sky-god Nyame. His thread connects all knowledge — what you learn once, you never lose. The Ashanti say that every story belongs to Anansi.",
+    "unidentified_name": "a cord braided from spider silk",
+    "lore": "Anansi the spider asked the sky god Nyame for all the stories in the world. Nyame named a price no one could pay: Onini the python, Osebo the leopard, and the Mmoboro hornets, delivered alive. Anansi tricked each of them into a trap of its own choosing. The Akan have called every tale a spider story since. What this cord's wearer learns, stays learned.",
     "containerLootTier": "uncommon",
     "symbol": "=",
     "color": [
@@ -3289,7 +3296,7 @@
     "min_level": 52,
     "identified": false,
     "unidentified_name": "a shimenawa rope that hums with spiritual energy",
-    "lore": "When Izanagi fled the underworld of Yomi, he sealed the entrance with a great boulder and a sacred rope. The rope divides the world of the living from the dead. Its bearer can feel the boundary thinning — every trap, every hidden passage, every secret door reveals itself to one who knows where life ends and death begins.",
+    "lore": "Izanagi went down to Yomi, the land of the dead, to bring back his wife Izanami, and fled when he saw what she had become. At the pass out of the underworld he rolled a boulder across the road that a thousand men could not move. In Japan a rope of twisted straw marks such a boundary. This one hums near anything hidden.",
     "containerLootTier": "legendary",
     "symbol": "=",
     "color": [
@@ -3354,7 +3361,7 @@
     "min_level": 0,
     "identified": false,
     "unidentified_name": "a silver reliquary containing a saint's fingerbone",
-    "lore": "A silver reliquary containing the fingerbone of a saint, set in gold. The monk who carried it crawled through the dungeon on his hands and knees to keep it safe. It radiates a quiet warmth.",
+    "lore": "A silver case, no longer than a thumb, holding the fingerbone of a saint behind a window of rock crystal. The monk who carried it down here crawled the last corridors on his hands and knees rather than risk a fall with it. It is faintly warm, and the mind and body both rest easier near it.",
     "symbol": "=",
     "color": [
       200,
@@ -3386,7 +3393,7 @@
     "min_level": 0,
     "identified": false,
     "unidentified_name": "a heavy gold signet ring stamped with the Legion crest",
-    "lore": "A solid gold signet ring bearing the crest of the Legion. Officer-grade — only issued to those who have earned command. The previous owner pulled it off his own finger and said he didn't deserve it.",
+    "lore": "A solid gold signet bearing the crest of the Legion, the kind issued only to those who have earned a command. Its last owner pulled it from his own finger and said he did not deserve it. The ring disagrees with nobody. It makes the hand that wears it stronger and surer, and leaves the question of deserving to the wearer.",
     "symbol": "=",
     "color": [
       218,
@@ -3418,7 +3425,7 @@
     "min_level": 0,
     "identified": false,
     "unidentified_name": "an amulet pulsing with gathered visions",
-    "lore": "An amulet worn by a dying prophet who spent his last years carving warnings into stone tablets. It pulses with accumulated foresight — visions of the Destroyer, the Seven Seals, and the final battle. The clarity it grants is almost painful.",
+    "lore": "An old prophet wore this through the last years of his life, which he spent cutting warnings into stone tablets for whoever came after: the Destroyer, the Seven Seals, the final battle. Something of what he saw has soaked into it. The clarity it gives is close to painful.",
     "symbol": "=",
     "color": [
       200,
@@ -3452,7 +3459,7 @@
       "amount": 2
     },
     "unidentified_name": "a feather-shaped ring",
-    "lore": "Aesop was a slave in ancient Greece who earned his freedom through storytelling. His fables — The Tortoise and the Hare, The Boy Who Cried Wolf, The Fox and the Grapes — taught moral wisdom through animals. This quill-shaped ring carries that legacy: the wisdom to see truth in simple things. +2 WIS.",
+    "lore": "Herodotus says Aesop was a slave on the island of Samos, and tradition adds that he talked his way to freedom with stories: the tortoise who beat the hare, the boy who cried wolf, the fox who decided the grapes were sour anyway. This feather-shaped ring was a freedman's. It helps its wearer see the plain point of a thing.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-3": 3,
@@ -3485,7 +3492,7 @@
       "duration": -1
     },
     "unidentified_name": "an amulet shaped like a tiny lyre",
-    "lore": "Orpheus, son of Apollo, played music so beautiful that rocks wept, rivers paused, and the trees leaned in to listen. He descended into Hades to retrieve his beloved Eurydice, charming Cerberus and Persephone with his song. He failed only because he looked back. This tiny lyre amulet hums with that impossible music — while you wear it, no enchantment of sleep can reach you. You will never lose consciousness against your will.",
+    "lore": "Orpheus played so that trees pulled up their roots to follow him and rivers stopped to listen. He went down to Hades for his wife Eurydice, sang the three-headed hound to sleep, and moved Persephone to tears. He lost her only because he looked back. This tiny lyre still hums, and no spell of sleep can close the eyes of anyone who hears it.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-5": 3,
@@ -3523,7 +3530,7 @@
       "amount2": 1
     },
     "unidentified_name": "a clay ring inscribed with cuneiform",
-    "lore": "The Epic of Gilgamesh is the oldest known work of literature — a Sumerian king's quest for immortality, written on clay tablets four thousand years ago. Gilgamesh was two-thirds god and one-third man, and his story teaches that true immortality lies not in living forever, but in the deeds that outlive you. This ring carries a fragment of that first epic — knowledge and endurance in equal measure. +1 INT, +1 CON.",
+    "lore": "Gilgamesh, king of Uruk, watched his friend Enkidu die and went to the end of the world to learn how not to. He found the plant that restores youth at the bottom of the sea, and a snake ate it while he bathed. He went home and looked at the walls he had built. The clay of this ring is stamped with a line of his story, the oldest there is.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-6": 2,
@@ -3558,7 +3565,7 @@
       "amount2": 1
     },
     "unidentified_name": "a ring with tiny golden scales",
-    "lore": "In the Egyptian Hall of Two Truths, the heart of the dead was weighed against the feather of Ma'at, goddess of truth and cosmic order. If the heart was lighter than the feather — free of sin — the soul passed into the Field of Reeds. If heavier, the demon Ammit devoured it. These tiny scales whisper of that judgment: see clearly, judge wisely. +1 WIS, +1 PER.",
+    "lore": "Ma'at is truth, and her sign is a single ostrich feather. In the Hall of Two Truths the heart of each dead Egyptian went on the scale against it. A heart no heavier than the feather passed on to the Field of Reeds; a heavy one went to Ammit the Devourer. The tiny scales on this ring help their wearer weigh things as they are.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-13": 0,
@@ -3591,7 +3598,7 @@
       "amount": 1
     },
     "unidentified_name": "a heavy clay amulet covered in ancient script",
-    "lore": "Hammurabi, King of Babylon, created the first comprehensive written law code around 1750 BC — 282 laws carved in stone, establishing the revolutionary principle that justice should be written, public, and consistent rather than arbitrary. 'An eye for an eye' comes from his code. This tablet-shaped amulet carries the weight of that first attempt to replace chaos with order. +2 INT.",
+    "lore": "About 1750 BC Hammurabi of Babylon had 282 laws cut into a pillar of black stone taller than a man and set up where anyone could read them. At the top the sun god Shamash hands him the rod and ring of kingship. 'An eye for an eye' is in the list. This clay amulet copies a corner of it.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-14": 0,
@@ -3626,7 +3633,7 @@
     "surrounded_ac_bonus": 2,
     "can_be_cursed": false,
     "unidentified_name": "a twisted gold neck-ring",
-    "lore": "The golden torc of Boudicca, queen of the Iceni, who burned Londinium and Camulodunum to the ground rather than submit to Rome. Her fury was greatest when surrounded — the more enemies, the fiercer she fought. The torc channels that defiance. When hemmed in on all sides, the wearer becomes harder to hit, as though Boudicca herself stands beside them.",
+    "lore": "Boudicca, queen of the Iceni, was tall, with a great mass of tawny hair to her hips and a heavy gold torc at her throat. In AD 60 the Romans flogged her and wronged her daughters. She burned Camulodunum, Londinium and Verulamium to the ground. The torc lends its wearer her temper: the more enemies crowd in, the harder they are to hit.",
     "floorSpawnWeight": {
       "26-40": 1,
       "41-60": 2,
@@ -3739,13 +3746,13 @@
     "equip_threshold": 1,
     "quiz_tier": 2,
     "effects": {
-      "status": "poison_immune",
+      "status": "poison_resist",
       "duration": -1
     },
     "death_save": true,
     "can_be_cursed": false,
     "unidentified_name": "a carved green jade insect",
-    "lore": "Placed on the tongues of the dead during the Han Dynasty to ensure resurrection. The cicada burrows into the earth and emerges reborn — the Chinese symbol of immortality. This one was never buried. It clings to life with an insect's tenacity: once per floor, when a blow would kill its wearer, the cicada intervenes. The wearer survives with a single breath left. The jade cracks — but holds.",
+    "lore": "The cicada spends years underground, climbs into the light, splits its old skin and flies. Mourners in Han China laid a cicada of carved jade on the tongue of the dead in the hope that the body would do the same. This one was never buried. When a blow should kill its wearer, the jade cracks instead, and holds.",
     "floorSpawnWeight": {
       "11-25": 1,
       "26-50": 2,
@@ -3778,7 +3785,7 @@
     "pacify_chance": 0.2,
     "can_be_cursed": false,
     "unidentified_name": "a bronze ring engraved with a six-pointed star",
-    "lore": "The ring given to Solomon by the Archangel Michael, engraved with the true name of God. With it Solomon commanded demons to build the First Temple and bound Asmodeus in a jar of brass. Its power compels obedience — nearby enemies may find themselves frozen in place, unable to act, their will subverted by a force older than anger.",
+    "lore": "The Testament of Solomon tells how a demon was tormenting a boy who worked on the Temple. Solomon prayed, and the Archangel Michael brought him a ring with a seal cut in its stone. The boy threw it at the demon's chest and led him back bound. With that ring Solomon set the demons to hauling stone. Lesser things still stop when its wearer speaks.",
     "floorSpawnWeight": {
       "51-70": 1,
       "71-90": 2,
@@ -3811,7 +3818,7 @@
     "resurrect_on_death": true,
     "can_be_cursed": false,
     "unidentified_name": "a golden cross with a looped top",
-    "lore": "The ankh is the key of life, held by every god in the Egyptian pantheon. This one belonged to Isis, who reassembled Osiris from fourteen scattered pieces and breathed life back into him. It carries that same power — one final breath, one last chance. When the wearer dies, the ankh shatters and Isis's magic pulls them back from the threshold. The price is the ankh itself. There are no second miracles.",
+    "lore": "Set cut the body of Osiris into fourteen pieces and scattered them along the Nile. Isis searched the whole river in a boat of papyrus, gathered what she found, bound it together and fanned breath back into her husband with her wings. This ankh was hers. It will do for its wearer what she did for him, once, and it does not survive the effort.",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
@@ -3850,7 +3857,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a heavy iron-banded belt-clasp",
-    "lore": "Thor's belt of power. With Mjölnir alone, Thor is strong; with Megingjörð he is twice as strong. He wore it the morning he fished for Jörmungandr off Hymir's boat and would have hauled the World-Serpent ashore if Hymir hadn't cut the line. From the Hymiskviða."
+    "lore": "Snorri lists three treasures of Thor: the hammer Mjolnir, the iron gloves he needs to grip it, and the belt Megingjord. When he buckles the belt on, his divine strength doubles. That is the strength he used the day he hooked the World-Serpent with an ox's head for bait and braced so hard that both his feet went through the bottom of the boat."
   },
   "kavacha_kundala": {
     "name": "Kavacha and Kundala",
@@ -3909,7 +3916,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "golden armor-plate and earrings",
-    "lore": "Karna was born wearing them — gifts of Surya the Sun, fused to his skin so that no weapon could harm him while he wore them. Indra came to him as a beggar and asked for them as alms; Karna cut them off and gave them, because a Brahmin's request cannot be refused. He died on the eighteenth day of Kurukshetra. From the Mahabharata, Vana Parva."
+    "lore": "Karna was born wearing them: golden armor and earrings from his father Surya, the Sun, grown into his skin so that no weapon could kill him. The god Indra came disguised as a begging Brahmin and asked for them as alms. Karna had vowed never to refuse a gift. He cut them from his own body and handed them over, and fell on the seventeenth day at Kurukshetra."
   },
   "hand_of_glory": {
     "name": "Hand of Glory",
@@ -3944,7 +3951,7 @@
     },
     "identified": false,
     "unidentified_name": "a wax-dipped severed hand",
-    "lore": "A mummified hand, cut from a hanged thief at midnight, dipped in wax. Lights the way for those who walk the wrong path. The wax holds a candle in each finger — three lit, two unlit. When all five have burned, the hand will not let go.",
+    "lore": "Housebreakers in the old tales cut the hand from a hanged thief, pickled it, and dipped the fingers in wax to burn as candles. While it was alight, everyone in the house slept and no door stayed locked. This one has three fingers still unburned. When the last goes out, the hand does not let go.",
     "use_charged": true,
     "charges": 3,
     "max_charges": 3
@@ -3971,8 +3978,8 @@
     "spread": 6,
     "min_level": 1,
     "tier": 1,
-    "unidentified_name": "iron ring",
-    "lore": "A simple ring of cold-forged iron, banded for stability. Plain in design but stout in protection."
+    "unidentified_name": "a banded cold-iron ring",
+    "lore": "Saint Dunstan was a blacksmith before he was Archbishop of Canterbury. The story goes that the Devil came to have a hoof shod, and Dunstan nailed the shoe on so painfully that the Devil swore never to enter a door with iron over it. Cold iron rings like this one trade on that promise."
   },
   "ring_of_solomons_authority": {
     "name": "Solomon's Authority",
@@ -4054,7 +4061,7 @@
     "min_level": 22,
     "identified": false,
     "unidentified_name": "a wide golden war-belt",
-    "lore": "Hippolyta, queen of the Amazons, wore this girdle as proof of her supremacy among warriors. Ares himself gave it to her. Heracles took it as his ninth labor — though whether by force or diplomacy depends on which version you trust. The belt makes its wearer formidable in close combat.",
+    "lore": "Ares gave this war-belt to his daughter Hippolyta, queen of the Amazons, as the sign that she was first among them. Fetching it was the ninth labor of Heracles, set because a princess of Mycenae wanted it. Hippolyta came to his ship ready to hand it over freely. Hera, disguised as an Amazon, spread word of a kidnapping, and it ended in battle.",
     "containerLootTier": "rare",
     "symbol": "=",
     "color": [
@@ -4092,7 +4099,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "Carved from a branch of a prophetic oak tree, this ring faintly pulses when danger approaches, alerting the wearer before their eyes perceive the threat.",
+    "lore": "In 390 BC the Gauls climbed the Capitoline Hill at night so quietly that the dogs slept through it. The sacred geese of Juno did not. Their honking woke Marcus Manlius, who threw the first climber off the cliff. Roman sentries wore rings like this in the geese's honor. It prickles before trouble shows itself.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4123,7 +4130,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "Silver is said to reveal what is hidden from ordinary sight, and this ring sharpens the wearer's perception of concealed passages and secret doors in the dungeon's walls.",
+    "lore": "A novice once ran off with the psalter of Anthony of Padua, full of the friar's own notes. Anthony prayed, and the thief came back with the book. Since then people have asked Saint Anthony for lost things. Rings blessed in his name make a wall give up its hidden door and a floor its trap.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4154,7 +4161,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "The sapphire's deep blue is associated with clarity of mind across many cultures; this ring leverages that association to project the wearer's perception across distance, reading the surface thoughts of nearby creatures.",
+    "lore": "Sigurd roasted the dragon Fafnir's heart, burned his thumb on it, and put the thumb in his mouth. At once he understood the birds in the branches, who were discussing how his foster-father meant to murder him. A ring quenched in the same blood lets its wearer feel every living mind nearby, through stone.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4185,7 +4192,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "The living green of this emerald pulses with regenerative vitality, accelerating the body's natural healing until minor wounds close between heartbeats and major injuries mend in hours rather than days.",
+    "lore": "Every head Heracles struck from the Hydra of Lerna grew back double, until his nephew Iolaus seared each stump with a torch. One drop of the creature's blood went into the cooling of this ring. What is cut on the wearer closes, and what is broken knits, with a patience that unsettles surgeons.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4216,7 +4223,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "A fire opal set in a band of heat-treated iron, this ring was forged in a volcano's mouth by a smith who worked alongside fire elementals. It makes the wearer's skin shed flame like water sheds off oiled leather.",
+    "lore": "Nebuchadnezzar had three young men thrown into a furnace heated seven times over. He looked in and saw four figures walking in the flames. The three came out with their coats unscorched and no smell of fire on them. Rings like this are made in their names: Shadrach, Meshach and Abednego.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4247,7 +4254,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "Quartz formed within glacier ice over thousands of years, this ring carries the cold's patience within it — and grants the wearer an immunity to that very patience, becoming impervious to magical cold.",
+    "lore": "Hannibal took an army and thirty-seven elephants over the Alps in the autumn of 218 BC. Snow fell on the pass and men froze where they sat down to rest. The veterans who came down into Italy had rings like this one made, and swore they never felt a winter afterward.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4278,7 +4285,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "Copper is electricity's preferred path, and this ring was enchanted to make itself that path instead of the wearer — electrical energy flows harmlessly through the ring and dissipates, sparing the body entirely.",
+    "lore": "Three Cyclopes forged the thunderbolt for Zeus: Brontes, Steropes and Arges, whose names mean Thunder, Lightning and Bright. They did not burn their own hands at the work. A smith who claimed to have their method made this ring, and lightning runs off its wearer like rain off a roof.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4309,7 +4316,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "Carved in the shape of a serpent devouring its own tail, this jade ring was used by venomous creature handlers who needed reliable protection against accidental bites. The antitoxin enchantment is thoroughly tested.",
+    "lore": "Mithridates, king of Pontus, feared poisoners so much that he swallowed a little of every poison each day until none could hurt him. When Rome finally cornered him he tried to poison himself and failed. The court physician who mixed his doses also made rings. This is one.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4340,7 +4347,7 @@
       "duration": -1
     },
     "unidentified_name": "a ring",
-    "lore": "Carved from dreamstone — a mineral that forms only in locations where many creatures have died in their sleep — this ring paradoxically protects against the very sleep effects its material evokes.",
+    "lore": "Utnapishtim set Gilgamesh a test: stay awake six days and seven nights and earn eternal life. The hero slept at once. Utnapishtim's wife baked a loaf each day and set it by his head, so the row of stale bread would prove how long. This ring was made for the next man to try.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4371,7 +4378,7 @@
       "duration": -1
     },
     "unidentified_name": "an amulet",
-    "lore": "A simple tooth or claw strung on a leather cord, charged with a warning-sense enchantment by a dungeon shaman. The amulet grows hot against the sternum when danger approaches from any direction.",
+    "lore": "Apollo gave Cassandra of Troy the gift of prophecy and, when she refused him, the curse that no one would believe her. She warned them about the horse. A charm made in her memory warns only the one who wears it, which solves the problem neatly: it grows hot when danger is near.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4402,7 +4409,7 @@
       "duration": -1
     },
     "unidentified_name": "an amulet",
-    "lore": "Carved from the small bones of a creature known for finding hidden caches of food, this amulet extends that natural searching ability to the wearer — detecting hidden doors and secret passages that would otherwise go unnoticed.",
+    "lore": "The empress Helena, mother of Constantine, went to Jerusalem in her old age and had the ground dug up until, tradition says, she found the True Cross under a pagan temple. Pilgrims brought home tokens in her honor. One who wears such a token finds what was buried, walled up or covered over.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4433,7 +4440,7 @@
       "duration": -1
     },
     "unidentified_name": "an amulet",
-    "lore": "A polished silver disc on a delicate chain, engraved with a mind's-eye motif. The silver amplifies the wearer's natural sensitivity to others' thoughts, making nearby creatures' intentions transparent to anyone skilled enough to interpret the impressions.",
+    "lore": "Melampus saved a brood of young snakes, and while he slept they licked his ears clean. He woke understanding every creature. In prison he overheard the woodworms in the roof say the beam was nearly eaten through, and asked to be moved in time. This charm opens the ears the same way.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -4464,7 +4471,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "Iron is the metal of physical labor and martial endurance; this simple band channels that essence into the wearer's muscles, granting a reliable increase to raw strength.",
+    "lore": "Milo of Croton, six times Olympic champion, was said to have lifted a newborn calf onto his shoulders every day until it was a full-grown bull, and then carried the bull around the stadium. Wrestlers of his school wore a plain ring to remember the method. Strength comes to its wearer the same way.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4495,7 +4502,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "The superior refinement of steel over iron is reflected in this ring's stronger enhancement — the muscles of the wearer cord and harden noticeably while it is worn, providing meaningful combat advantage.",
+    "lore": "The Philistines shut Samson inside Gaza and meant to kill him at dawn. He rose at midnight, pulled up the city gates, posts and bar together, and carried them on his shoulders to the top of the hill facing Hebron. A ring made in his memory puts some of that into an ordinary arm.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4526,7 +4533,7 @@
       "amount": 3
     },
     "unidentified_name": "a ring",
-    "lore": "The densest metal known to mortals grants the densest strength enhancement known to ring-makers; wearers of adamantine strength rings have been known to bend iron bars with bare hands.",
+    "lore": "Atlas offered to fetch the golden apples if Heracles would hold up the sky while he was gone. Heracles took the weight of heaven on his neck and stood. He had to trick the Titan into taking it back. This ring was made by someone who thought the standing was the greater feat.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 20,
@@ -4557,7 +4564,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "Rubies were believed by ancient healers to strengthen the blood and harden the body against illness and injury; this ring activates that belief as literal fact, enhancing the wearer's constitution.",
+    "lore": "Spartan boys left home at seven. They were given one cloak a year, went barefoot in every season, and slept on rushes they cut from the riverbank with their hands. A ring like this was the only ornament a grown Spartan valued. It toughens whoever wears it, more kindly than the school did.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4588,7 +4595,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "Coral grows relentlessly despite the crushing pressures of deep water — this ring channels that stubborn vitality, significantly bolstering the wearer's endurance and resistance to harm.",
+    "lore": "Before Marathon the Athenians sent the runner Philippides to ask Sparta for help. Herodotus says he covered the distance, some hundred and fifty miles of mountain road, and arrived the day after he set out. Couriers afterward wore his ring. The wearer's body simply declines to give out.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4619,7 +4626,7 @@
       "amount": 3
     },
     "unidentified_name": "a ring",
-    "lore": "Deep garnet vibrates at a frequency that resonates with the body's fundamental vitality; this ring markedly improves the wearer's stamina, hit point capacity, and resistance to environmental stresses.",
+    "lore": "The sea-nymph Thetis dipped her infant son Achilles in the river Styx to make him proof against every wound, holding him by one heel. This ring was cooled in water drawn from the same river, the story goes, and nobody was holding it by anything.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 20,
@@ -4650,7 +4657,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "Mercury's liquid swiftness is captured in this ring's enchantment, translating the metal's effortless flow into enhanced reflexes and precision of movement for the wearer.",
+    "lore": "On the day he was born, Hermes climbed out of his cradle, stole fifty of Apollo's cattle, and drove them backward so their tracks pointed the wrong way. He was back in his blankets by evening. Pickpockets and jugglers wear his ring. The hands become clever and the feet sure.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4681,7 +4688,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "This impossibly fine wire ring represents the pinnacle of delicate metalworking — wearing it transfers some of that delicacy to the wearer's fingers, greatly enhancing manual precision and overall agility.",
+    "lore": "On the palace walls of Knossos in Crete, painted youths seize a charging bull by the horns and vault clean over its back. No one alive knows how it was done without dying. This ring came from that island, and its wearer moves as if the bull were always a half-step slow.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4712,7 +4719,7 @@
       "amount": 3
     },
     "unidentified_name": "a ring",
-    "lore": "So light it can barely be felt on the finger, this ring was enchanted by a master acrobat-mage who wanted to capture perfect physical grace in an item. The result is a dramatic enhancement to the wearer's coordination and reflexes.",
+    "lore": "David went out against Goliath with a staff, a sling, and five smooth stones chosen from the brook. He needed one. The shepherds of Judah wore rings like this on the sling hand, and what they aimed at they hit. The wearer's hands stop making small mistakes.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 20,
@@ -4743,7 +4750,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "Amethyst has been associated with clarity of thought since antiquity; this ring channels that association into a genuine enhancement of the wearer's reasoning capacity and magical aptitude.",
+    "lore": "Thales of Miletus told the Ionians in advance the year in which day would turn to night. It happened in the middle of a battle between Lydians and Medes, and both armies put down their weapons and made peace. A ring from his school clears the head and leaves more room in it.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4774,7 +4781,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "Purple glass was used in ancient scrying lenses, and this ring carries an echo of that tradition — wearing it sharpens the mind significantly, improving memory, reasoning, and magical power simultaneously.",
+    "lore": "Eratosthenes heard that at noon on midsummer day the sun shone straight down a well in Syene. At Alexandria on the same day a pillar cast a short shadow. From that one angle and the distance between the towns he worked out the size of the whole Earth. His students wore this ring.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4805,7 +4812,7 @@
       "amount": 3
     },
     "unidentified_name": "a ring",
-    "lore": "A ring that splits incoming light into a full spectrum — a metaphor made literal for the wearer's mind, which gains the ability to analyze problems from multiple simultaneous angles. The intelligence enhancement is dramatic and immediate.",
+    "lore": "King Hiero asked Archimedes whether his new crown was pure gold. Archimedes found the method while stepping into a bath, watching the water rise, and ran home through Syracuse shouting 'Eureka!', I have found it. This ring is supposed to hold that moment and to hand it out when needed.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 20,
@@ -4836,7 +4843,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "The opal's shifting internal fire has always been associated with intuition and deeper knowing; this ring enhances the wearer's wisdom and heightens awareness of hidden truths.",
+    "lore": "The oracle at Delphi said no man was wiser than Socrates. Puzzled, he questioned every expert in Athens and concluded that he was wiser in one respect only: he knew what he did not know. A ring made in his honor gives no answers. It gives the pause before a wrong one.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4867,7 +4874,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "Pearls are formed through patient endurance of irritation — an apt metaphor for wisdom itself. This ring bestows the patient acuity that comes from long experience, sharpening judgment under pressure.",
+    "lore": "Two women came before Solomon, each claiming the same infant. He called for a sword and ordered the child divided between them. One agreed. The other begged him to give the baby away alive, and he knew her for the mother. A judge's ring like this one steadies the mind under pressure.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4898,7 +4905,7 @@
       "amount": 3
     },
     "unidentified_name": "a ring",
-    "lore": "White quartz is the stone most used in divination traditions worldwide; this ring concentrates centuries of divinatory enchantment into a permanent wisdom enhancement that provides an exceptional boost to the wearer's perceptive judgment.",
+    "lore": "Fishermen hauled up a golden tripod, and the oracle said to give it to the wisest. They took it to Thales, who sent it to Bias, who sent it on, until it had passed through all Seven Sages and come back around. They gave it to Apollo. This ring commemorates seven men declining a prize.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 20,
@@ -4929,7 +4936,7 @@
       "amount": 1
     },
     "unidentified_name": "a ring",
-    "lore": "Topaz catches light from every angle simultaneously — and this ring extends that quality to the wearer's vision, expanding their effective sight radius in the darkened passages of the dungeon.",
+    "lore": "Argus the watchman had a hundred eyes and never closed more than half of them at once. When Hermes killed him, Hera gathered the eyes and set them in the tail of her peacock, where they still are. A ring made in the watchman's name keeps a few extra open for its wearer.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4960,7 +4967,7 @@
       "amount": 2
     },
     "unidentified_name": "a ring",
-    "lore": "Ancient amber sometimes contains preserved insects whose compound eyes saw in directions simultaneously — this ring channels that multi-directional awareness, meaningfully increasing the wearer's field of perception.",
+    "lore": "Heimdall keeps the bridge into Asgard. He needs less sleep than a bird, sees a hundred leagues by night as well as by day, and can hear the grass growing in the fields and the wool on the sheep. A ring carved with his horn lends the wearer some of that watch.",
     "floorSpawnWeight": {
       "1-20": 20,
       "21-40": 20,
@@ -4991,7 +4998,7 @@
       "amount": 3
     },
     "unidentified_name": "a ring",
-    "lore": "Named for the raptor whose vision is legendary, this ring's enchantment provides an almost supernatural expansion of the wearer's perceptual range — at full effect, wearers describe seeing clearly in conditions that would blind ordinary adventurers entirely.",
+    "lore": "The old bestiaries say that when an eagle grows old and its eyes dim, it flies up toward the sun until the mist is burned from them, then plunges three times into a spring and is young again. Whoever made this ring had read the book. The wearer sees farther into the dark.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 20,
@@ -5022,7 +5029,7 @@
       "amount": 2
     },
     "unidentified_name": "an amulet",
-    "lore": "A heavy iron medallion worn by gladiators in the old arenas, enchanted to significantly enhance physical strength. The enhancement is visible — veins cord against the skin and muscles visibly bulk while the amulet is worn.",
+    "lore": "The poet says Beowulf had the strength of thirty men in the grip of one hand. He fought the monster Grendel without a sword, took hold of its arm, and did not let go until the arm came away at the shoulder. Warriors of the north hung this charm at the throat and hoped.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -5053,7 +5060,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "Named for the mythological giants who could move mountains, this amulet provides a dramatic strength enhancement that leaves the wearer capable of feats of raw power that should be physically impossible for a creature their size.",
+    "lore": "The giant brothers Otus and Ephialtes grew a fathom taller every year. At nine years old they decided to storm heaven, and set Mount Ossa on Olympus and Mount Pelion on Ossa for a stair. Apollo stopped them before they were grown. A charm in their likeness makes its wearer think mountains portable.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,
@@ -5084,7 +5091,7 @@
       "amount": 2
     },
     "unidentified_name": "an amulet",
-    "lore": "A blood-red ruby pendant that resonates with the body's vital force, significantly enhancing the wearer's constitution — their hit points increase, their stamina improves, and minor poisons affect them less severely.",
+    "lore": "Diogenes the Cynic lived in a storage jar in the marketplace of Athens. To harden himself he rolled in hot sand in summer and embraced snow-covered statues in winter. He owned almost nothing, and this charm claims to have been part of the almost. Its wearer shrugs off what would put others in bed.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -5115,7 +5122,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "This deep crimson locket houses a guardian spirit that constantly reinforces the wearer's physical vitality — the constitution boost is dramatic enough that seasoned fighters notice it immediately as a transformation in how punishment their body can absorb.",
+    "lore": "Vegetius wrote that a Roman recruit must learn to march twenty miles in five summer hours carrying his arms, his tools and his rations, and then dig the camp ditch before he ate. The legions hung charms like this on the men who could. It gives its wearer a soldier's reserves.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,
@@ -5146,7 +5153,7 @@
       "amount": 2
     },
     "unidentified_name": "an amulet",
-    "lore": "A small charm containing a sealed vial of actual mercury, enchanted to transfer its liquid swiftness to the wearer — movements become fluid and precise, reflexes sharpen, and armor class improves noticeably.",
+    "lore": "Arachne of Lydia wove so well that she challenged Athena herself, and her finished cloth had no flaw the goddess could find. Athena tore it up and turned her into the first spider. Weavers keep her charm anyway. Fingers that wear it do fine work at speed.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -5177,7 +5184,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "So light that wearing it feels like wearing nothing at all, this air-enchanted locket translates its own near-weightlessness to the wearer's movements — they become preternaturally agile, their every motion flowing with the ease of breath.",
+    "lore": "Cu Chulainn, the Hound of Ulster, learned his feats from the warrior-woman Scathach on her island: the apple feat, the feat of the sword edge, and the salmon leap, by which he cleared a rampart in one bound. Her pupils took a charm away with them. This is one of those.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,
@@ -5208,7 +5215,7 @@
       "amount": 2
     },
     "unidentified_name": "an amulet",
-    "lore": "An amethyst carved into a stylized brain, hung on a silver chain — a fanciful design that nonetheless delivers genuine intellectual enhancement, improving the wearer's reasoning, memory, and magical capacity significantly.",
+    "lore": "King Ptolemy asked Euclid whether there was some shorter way to learn geometry than working through the Elements. Euclid answered that there is no royal road to geometry. This charm is not a royal road either. It only makes the wearer quicker on the ordinary one.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -5239,7 +5246,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "Faceted crystal that catches every available light and throws it back in a dozen directions — a fitting metaphor for the dramatically enhanced intellect this medallion provides. Scholars who have worn it describe the experience as thinking with an extra layer of mind.",
+    "lore": "In ninth-century Baghdad the scholar al-Khwarizmi wrote a book on restoring and balancing equations. Its title gave the world the word algebra, and his own name, worn down by Latin tongues, became algorithm. Students at the House of Wisdom wore charms like this one. Problems come apart more easily under it.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,
@@ -5270,7 +5277,7 @@
       "amount": 2
     },
     "unidentified_name": "an amulet",
-    "lore": "An opal locket that opens to reveal nothing — the container is the enchantment, and what it holds is the distilled wisdom of its original owner, ready to be borrowed by whoever wears it.",
+    "lore": "The little owl was Athena's bird, and Athens stamped it on every silver coin, so that 'bringing owls to Athens' came to mean carrying a thing to where there is already plenty. A charm with her owl on it is never surplus. The wearer sees the consequence before the act.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -5301,7 +5308,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "Carved from the cane of a legendary sage who spent forty years in a dungeon, emerging with knowledge of its every secret, this locket passes on a fragment of that accumulated dungeon-wisdom — dramatically improving judgment and intuitive threat assessment.",
+    "lore": "Anthony of Egypt walked into the desert and shut himself in an abandoned fort for twenty years, living on bread lowered over the wall. When his friends finally broke the door down he came out, Athanasius wrote, neither wasted nor wild, and entirely calm. His followers kept charms like this. So do the wise.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,
@@ -5332,7 +5339,7 @@
       "amount": 2
     },
     "unidentified_name": "an amulet",
-    "lore": "An eagle's eye set in gold, enchanted to share the raptor's legendary visual acuity with the wearer — their effective sight radius expands significantly, allowing them to spot threats and targets at distances that would challenge even keen natural vision.",
+    "lore": "Two ravens sit on Odin's shoulders: Huginn, Thought, and Muninn, Memory. He sends them out at dawn to fly over the whole world, and they are back by breakfast to tell him what they saw. A charm cut with the pair widens the wearer's sight by a good few paces.",
     "floorSpawnWeight": {
       "1-20": 40,
       "21-40": 40,
@@ -5363,7 +5370,7 @@
       "amount": 3
     },
     "unidentified_name": "an amulet",
-    "lore": "Three hawk feathers bound in copper wire and charged with an expanding-sight enchantment, this talisman dramatically increases the wearer's perceptual range — at full effect, they can monitor a radius of dungeon that most adventurers would consider an entire floor.",
+    "lore": "The king of Aram surrounded the town of Dothan by night to seize the prophet Elisha. Elisha's servant saw only the enemy. Elisha prayed, 'Lord, open his eyes,' and the young man saw the hills full of horses and chariots of fire. This charm asks for the same favor, daily.",
     "floorSpawnWeight": {
       "1-20": 1,
       "21-40": 40,
@@ -5392,7 +5399,7 @@
     "effects": {},
     "identified": true,
     "unidentified_name": "Ring of Command",
-    "lore": "A heavy gold band that answers only to a wearer whose judgment has been weighed and found sufficient. The seal of Solomon's throne room is pressed into its surface.",
+    "lore": "The Queen of Sheba travelled to Jerusalem to test Solomon with hard questions, and the Book of Kings says there was nothing he could not answer for her. His throne had six steps, with a lion at either end of each. This heavy gold band carries the seal of that throne room. It answers only to a judgment that has been weighed and found sufficient.",
     "floorSpawnWeight": {},
     "is_unique": false
   }

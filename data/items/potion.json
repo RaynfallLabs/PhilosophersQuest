@@ -14,13 +14,13 @@
     "power": "2d8+4",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 120,
-      "21-40": 80,
-      "41-60": 50,
-      "61-80": 30,
-      "81-100": 20
+      "1-20": 130,
+      "21-40": 90,
+      "41-60": 60,
+      "61-80": 45,
+      "81-100": 35
     },
-    "lore": "Brewed from cave moss and blessed spring water by wandering hedge-witches, this potion knits torn flesh with a gentle warmth that spreads from the stomach outward. The blue fizz is a sign of freshness — flat potions still work, but carry a faintly sour aftertaste. Adventurers the world over consider it as essential as a good pair of boots.",
+    "lore": "Jeremiah asked whether there was no balm in Gilead, and the traders of that hill country grew rich selling the resin behind the question. This is the dungeon's cheaper cousin: cave moss steeped in blessed spring water, fizzing while fresh. One swallow closes cuts and takes the ache out of bruises. Old delvers count their vials before they count their coins.",
     "peak_weight": 0.5
   },
   "potion_of_extra_healing": {
@@ -39,12 +39,12 @@
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 50,
-      "21-40": 100,
-      "41-60": 80,
-      "61-80": 50,
-      "81-100": 30
+      "21-40": 110,
+      "41-60": 105,
+      "61-80": 95,
+      "81-100": 85
     },
-    "lore": "Where ordinary healing potions merely close wounds, this viscous crimson draught reaches deeper — mending cracked bone, soothing bruised organs, and flooding the blood with stolen vitality. It tastes of iron and overripe cherries, and leaves the throat faintly numb for an hour. Apothecaries who make it regularly develop red-stained fingers that never quite wash clean.",
+    "lore": "The Samaritan on the Jericho road poured oil and wine into a beaten stranger's wounds, and this crimson syrup is brewed in that spirit with considerably more ambition. It reaches past the skin to knit cracked ribs and settle bruised organs. It tastes of iron and overripe cherries. Apothecaries who make it have red fingers for life.",
     "peak_weight": 0.5
   },
   "potion_of_full_healing": {
@@ -64,11 +64,11 @@
     "floorSpawnWeight": {
       "1-20": 0,
       "21-40": 0,
-      "41-60": 10,
-      "61-80": 20,
-      "81-100": 30
+      "41-60": 15,
+      "61-80": 35,
+      "81-100": 55
     },
-    "lore": "Said to contain a single tear wept by a dying god, suspended in distilled sunlight and carried in amber so the radiance does not escape. Drinking it is like swallowing a sunrise — every wound closes, every ache vanishes, and for a moment the drinker glimpses what it feels like to be whole. Theologians argue whether this constitutes a miracle or a theft.",
+    "lore": "Athena gave Asclepius two vials of the Gorgon's blood. The blood from the left side killed; the blood from the right raised the dead, and Zeus answered that trespass with a thunderbolt. The amber flask holds something close to the right-hand vial. Every wound closes at once, and for a breath the drinker remembers what it was to be whole.",
     "peak_weight": 0.5
   },
   "potion_of_stamina": {
@@ -83,7 +83,7 @@
     "weight": 0.4,
     "min_level": 1,
     "effect": "restore_sp",
-    "power": "3d10+20",
+    "power": "3d10+35",
     "duration": 0,
     "floorSpawnWeight": {
       "1-20": 100,
@@ -92,7 +92,7 @@
       "61-80": 40,
       "81-100": 30
     },
-    "lore": "Made from the rendered fat of deep-cave beetles mixed with powdered gingerroot and something the recipe only ever calls 'the green,' this thick, bubbling draught replenishes stamina with startling efficiency. It smells appalling and tastes worse, but dungeon runners swear by it — particularly the ones who survive long enough to swear at all. The bubbles are a byproduct of fermentation and serve no known purpose.",
+    "lore": "Elijah lay down under a broom tree ready to die. An angel woke him twice to eat a cake baked on coals, and on the strength of that food he walked forty days to Horeb. The green goo is the poor man's version, rendered from beetle fat and ginger root. It smells appalling and puts the legs back under a starving delver.",
     "peak_weight": 0.5
   },
   "potion_of_cure_poison": {
@@ -116,7 +116,7 @@
       "61-80": 50,
       "81-100": 40
     },
-    "lore": "Alchemists discovered this formula by accident when a batch of rose-water cordial was contaminated with antivenom bark from the Thornwood forests. The resulting pink effervescence neutralises most natural venoms within seconds of reaching the bloodstream. It is one of the few potions considered safe to give to children — though the circumstances that make it necessary for a child are considerably less safe.",
+    "lore": "Mithridates of Pontus feared poisoners so much that he swallowed a little of every venom he could find, daily, until none could kill him. Physicians sold versions of his recipe for nearly two thousand years under the name theriac. The pink fizz is its honest descendant: it hunts venom through the blood and leaves only an aftertaste of rose water.",
     "peak_weight": 0.5
   },
   "potion_of_cure_disease": {
@@ -140,7 +140,7 @@
       "61-80": 50,
       "81-100": 40
     },
-    "lore": "The oily sheen on this liquid comes from the rendered bladder-sac of a marsh lizard, which produces compounds hostile to bacterial and fungal infections alike. Field healers carry these in padded satchels alongside bandages and bone-saws, knowing that in the deep places of the world, disease kills more adventurers than monsters do. It works best administered within the first hour of infection, but late is vastly preferable to never.",
+    "lore": "Naaman the Syrian came to Elisha a leper and was told to wash seven times in the Jordan. He sulked that the rivers of Damascus were cleaner, washed anyway, and came up with skin like a child's. This oily green draught asks even less faith. It burns out fever and the wasting sickness that eats a delver's strength.",
     "peak_weight": 0.5
   },
   "potion_of_cure_all": {
@@ -164,7 +164,7 @@
       "61-80": 40,
       "81-100": 45
     },
-    "lore": "No single alchemist claims credit for this formula — it appears in a dozen traditions simultaneously, as if the ingredients themselves decided to cooperate. The silver shimmer comes from dissolved moonstone suspended in purified quicksilver, and drinking it scours the body clean of poison, plague, corruption, and a handful of maladies that do not yet have names. Physicians who have witnessed its effect describe the colour returning to a dying patient's face as the most beautiful thing they have ever seen.",
+    "lore": "The Hippocratic Oath opens by swearing to Apollo, Asclepius, Hygieia, and Panacea, the daughter whose name means 'all-healing'. Alchemists chased her through every furnace in Christendom. The silver vial is as near as anyone came. It scours out poison, plague, blindness, dread, and curse together, and leaves the drinker clean as a rinsed cup.",
     "peak_weight": 0.5
   },
   "potion_of_haste": {
@@ -182,13 +182,14 @@
     "power": "",
     "duration": 40,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 12,
       "21-40": 30,
       "41-60": 50,
       "61-80": 60,
       "81-100": 55
     },
-    "lore": "Flavoured with citrus peel and frothed by the sheer kinetic energy building inside it, this potion unlocks something in the nervous system that most practitioners consider better left locked. Time does not slow — the drinker simply moves faster through it, heartbeat hammering, thoughts sparking. The crash afterward is legendary: users sleep for twelve hours and wake starving.",
+    "lore": "Hippomenes could not outrun Atalanta, so he rolled three golden apples across her path and won the race while she stooped for them. This frothing orange flask is the fairer method. The drinker moves, and the rest of the world wades through honey behind. The froth never settles, even in a still hand.",
     "peak_weight": 0.5
   },
   "potion_of_invisibility": {
@@ -206,13 +207,14 @@
     "power": "",
     "duration": 60,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 12,
       "21-40": 25,
       "41-60": 45,
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "This liquid is almost impossible to see even before it is drunk — the bottle appears empty, the fluid detectable only by its weight and a faint sparkle when light hits it at precisely the right angle. Rogues who use it regularly report a creeping philosophical unease: if no one can see you, they ask, in what sense are you truly there? The potion does not answer. Neither does anyone else.",
+    "lore": "Plato tells of a Lydian shepherd who found a ring that hid him from sight, and used it to murder his king and take the throne. Plato's question still stands: who stays honest when no one can see? The liquid is clear as air and the flask looks empty. Whoever drains it fades from view, and blows aimed at them go wide.",
     "peak_weight": 0.5
   },
   "potion_of_regeneration": {
@@ -236,7 +238,7 @@
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "Distilled from the blood of creatures too stubborn to die — cave trolls, deep-sea worms, creatures that regrow limbs with cheerful indifference — this dark brew infuses the drinker's cells with borrowed persistence. Wounds close at the edge of perception, like watching ice melt but in reverse. Those who consume it regularly begin to notice their scars fading, then their old injuries, then sometimes memories attached to both.",
+    "lore": "Each time Heracles struck a head from the Hydra, two grew from the stump, until Iolaus seared the necks with a torch. This dark brew is distilled from creatures of that stubborn kind, trolls and deep worms that regrow what they lose. While it lasts, the drinker's wounds close slowly and steadily, like ice melting in reverse.",
     "peak_weight": 0.5
   },
   "potion_of_heroism": {
@@ -254,13 +256,14 @@
     "power": "",
     "duration": 50,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 12,
       "21-40": 20,
       "41-60": 40,
       "61-80": 50,
       "81-100": 45
     },
-    "lore": "Thick as honey and nearly as sweet, this golden draught floods the muscles with something between courage and delusion, temporarily granting the kind of brute strength that moves boulders and bends iron bars. Epic poems have been written about battles won while under its influence. Fewer poems celebrate the aftermath, when the potion wears off and the hero is left holding a door they somehow ripped from its hinges.",
+    "lore": "Homer's heroes had their great hours, when a god breathed strength into one man and the battle line bent around him. Diomedes wounded two gods in his. This golden draught, thick as honey, lends such an hour to anyone: arms that could bend iron and a heart to match. The hour ends. Homer is clear on that too.",
     "peak_weight": 0.5
   },
   "potion_of_brilliance": {
@@ -284,7 +287,7 @@
       "61-80": 14,
       "81-100": 12
     },
-    "lore": "A concentrated masterwork of alchemical art, this shimmering potion floods the drinker's arcane pathways with a torrent of pure magical energy. Unlike the milder mana potion, brilliance fully saturates every magical channel, restoring a far greater portion of MP. It is said the formula was devised by a philosopher who mapped the inner architecture of the human soul.",
+    "lore": "Odin wanted a drink from Mimir's well, where wisdom lies, and Mimir's price was an eye. Odin paid it. The crystalline vial is a kinder bargain. It pours spent magic back into an emptied mind all at once, a far deeper draught than common mana, and asks for nothing but the vial.",
     "peak_weight": 0.5
   },
   "potion_of_levitation": {
@@ -302,13 +305,14 @@
     "power": "",
     "duration": 70,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 15,
       "21-40": 30,
       "41-60": 50,
       "61-80": 45,
       "81-100": 35
     },
-    "lore": "The violet mist inside this vial is not actually liquid — it is a suspension of lighter-than-air particles in a carrier fluid, and drinking it briefly inverts the drinker's relationship with gravity. Used wisely it grants passage over hazards that would be lethal to traverse on foot. Used unwisely, it lifts the drinker to the ceiling where they wait in embarrassed suspension until the effect expires.",
+    "lore": "The apocryphal Acts of Peter tell how Simon Magus rose into the air above Rome to prove his power, how Peter prayed, and how Simon came down rather faster than he went up. The violet mist lifts a drinker a hand's breadth off the floor, clear of pits and snares, and sets them down gently when it fades.",
     "peak_weight": 0.5
   },
   "potion_of_restore_strength": {
@@ -332,7 +336,7 @@
       "61-80": 45,
       "81-100": 40
     },
-    "lore": "The bronze tinge comes from trace minerals drawn from iron-rich cave springs, and the potion works by repairing the subtle cellular damage that disease inflicts on muscle tissue. Fighters who have suffered the wasting sickness clutch these with a desperation that goes beyond tactical — there is something uniquely terrible about watching your own strength drain away, and something uniquely comforting about getting it back.",
+    "lore": "The Philistines shaved Samson, blinded him, and set him to grind grain in Gaza. They forgot that hair grows. This bronze draught works the same quiet restoration: strength that sickness or sorcery drained away returns to the limbs in full. It does nothing for those who have lost nothing, which veterans count as a blessing.",
     "peak_weight": 0.5
   },
   "potion_of_gain_level": {
@@ -356,7 +360,7 @@
       "61-80": 8,
       "81-100": 10
     },
-    "lore": "Something in this potion resonates with the invisible threads that bind the dungeon's architecture together, and drinking it severs the ones holding the drinker to the current floor — propelling them upward, closer to daylight, closer to safety. The stars swirling in the depths of the liquid are not a decoration. Scholars who have studied them claim they form a map, but no one has yet determined what it leads to.",
+    "lore": "Jacob dreamed of a ladder set on the earth with its top in heaven, and angels going up and down it. The stars turning in this blue potion belong to that kind of traffic. The drinker is lifted bodily to the floor above, nearer daylight. Whether that counts as progress depends on which way the quest lies.",
     "peak_weight": 0.5
   },
   "potion_of_fire_resistance": {
@@ -374,13 +378,14 @@
     "power": "",
     "duration": 80,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 10,
       "21-40": 25,
       "41-60": 45,
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "This deceptively cold-looking white potion does not lower your body temperature — it raises the threshold at which your cells begin to suffer from heat damage, a subtle but crucial distinction. Dwarven fire-dancers have used versions of this formula for centuries before sharing it with surface alchemists. Under its protection a brief immersion in ordinary fire produces only warmth; deeper fires remain lethal, but the margin before that point widens considerably.",
+    "lore": "Nebuchadnezzar heated his furnace seven times hotter and threw in Shadrach, Meshach, and Abednego. They walked out without the smell of smoke on their clothes. No alchemist claims that miracle, but this frost-white potion imitates it for a while: flame washes over the drinker and finds nothing to burn. Dwarven smiths sip it before reaching into the forge.",
     "peak_weight": 0.5
   },
   "potion_of_cold_resistance": {
@@ -398,13 +403,14 @@
     "power": "",
     "duration": 80,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 10,
       "21-40": 25,
       "41-60": 45,
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "The ember glow of this vial comes from volcanic stone dust suspended in a warm-compress compound — the alchemist's attempt to bottle the feeling of sitting by a fire in the deep cold. Under its effect the body generates heat with preternatural efficiency, and cold that would ordinarily be agonising registers only as mild discomfort. Ice-giants who have encountered adventurers protected by this potion reportedly find it personally offensive.",
+    "lore": "The Norse placed Muspelheim, the realm of fire, at the southern edge of the first emptiness, and said its sparks became the sun and stars. Something of that spark glows in the ember-orange vial. The drinker carries a hearth under the ribs, and frost that would blacken fingers settles on them like dew. Frost giants take it personally.",
     "peak_weight": 0.5
   },
   "potion_of_shock_resistance": {
@@ -422,13 +428,14 @@
     "power": "",
     "duration": 80,
     "floorSpawnWeight": {
-      "1-20": 0,
+      "1-10": 0,
+      "11-20": 10,
       "21-40": 25,
       "41-60": 45,
       "61-80": 55,
       "81-100": 50
     },
-    "lore": "Brewed using the shed skin of electric eels and the hollow bones of lightning-birds, this copper-coloured draught insulates the nervous system against electrical discharge with a thoroughness that makes practitioners of storm magic extremely frustrated. The copper taste lingers for hours and leaves the tongue feeling slightly numb. Users report that being struck by lightning while under its protection feels remarkably similar to being patted firmly on the back.",
+    "lore": "Salmoneus of Elis dragged bronze kettles behind his chariot and flung torches to play at being Zeus. Zeus replied with the real thing. The copper draught is for those who would rather survive lightning than imitate it. Brewed with eel skin, it lets a thunderbolt pass through the body into the ground, leaving only the taste of coins.",
     "peak_weight": 0.5
   },
   "potion_of_confusion": {
@@ -446,13 +453,13 @@
     "power": "",
     "duration": 30,
     "floorSpawnWeight": {
-      "1-20": 40,
-      "21-40": 40,
-      "41-60": 35,
-      "61-80": 30,
-      "81-100": 25
+      "1-20": 24,
+      "21-40": 24,
+      "41-60": 24,
+      "61-80": 22,
+      "81-100": 20
     },
-    "lore": "At some point between brewing and bottling this murky concoction something went terribly wrong — or perhaps terribly right, depending on who prepared it and for whom. The confusion it induces is profound: cardinal directions lose meaning, faces blur into one another, and simple decisions become agonising labyrinths. Unscrupulous merchants have been known to sell it labelled as something else entirely.",
+    "lore": "At Babel the builders shared one language and one plan, a tower with its top in the heavens. Then no man could understand his neighbor, and the work stopped. This murky draught does the same to a single skull. Left and right trade places, feet go where they please, and plain questions arrive scrambled. Dishonest peddlers label it as tonic.",
     "peak_weight": 0.5
   },
   "potion_of_blindness": {
@@ -470,13 +477,13 @@
     "power": "",
     "duration": 25,
     "floorSpawnWeight": {
-      "1-20": 35,
-      "21-40": 35,
-      "41-60": 30,
-      "61-80": 25,
-      "81-100": 20
+      "1-20": 22,
+      "21-40": 22,
+      "41-60": 22,
+      "61-80": 20,
+      "81-100": 18
     },
-    "lore": "The smoke trapped inside this vial is not decorative — it is the active ingredient, a condensed extract of cave-blind fish eye that, when absorbed through the stomach lining, temporarily disables the optical nerve's ability to interpret light. Assassins use it as a trap, leaving these among valuable items. In the dark of the dungeon, adding blindness to darkness feels like the universe making a particularly cruel joke.",
+    "lore": "Saul rode for Damascus breathing threats, and a light from heaven left him three days blind, led by the hand like a child. The smoke coiled in this black vial does a smaller and less instructive job. The drinker's sight shrinks to arm's length until it clears. In a dungeon already dark, it is the last thing anyone needs to swallow.",
     "peak_weight": 0.5
   },
   "potion_of_poison": {
@@ -494,13 +501,13 @@
     "power": "1d4",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 35,
-      "21-40": 35,
-      "41-60": 30,
-      "61-80": 25,
-      "81-100": 20
+      "1-20": 22,
+      "21-40": 22,
+      "41-60": 22,
+      "61-80": 20,
+      "81-100": 18
     },
-    "lore": "It takes genuine skill to brew something this actively hostile and make it look drinkable, but whoever formulated this slimy concoction was clearly a professional in the worst possible sense. The purple colour comes from concentrated spider toxin, the sliminess from a binder that ensures the poison sticks to whatever it touches. Some dungeon ecologists believe these spawn naturally, as if the dungeon itself wanted to thin the adventurer population.",
+    "lore": "Locusta of Gaul poisoned so skillfully that Nero kept her in his service and, the historians say, sent her pupils. Whoever bottled this purple ooze studied in that tradition. It is spider venom thickened to cling on the way down, and it burns in the blood for a long while. The sliminess is the only warning it offers.",
     "peak_weight": 0.5
   },
   "potion_of_paralysis": {
@@ -518,13 +525,14 @@
     "power": "",
     "duration": 8,
     "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 30,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
+      "1-10": 0,
+      "11-20": 18,
+      "21-40": 18,
+      "41-60": 18,
+      "61-80": 16,
+      "81-100": 14
     },
-    "lore": "Ground from the ash of a particular deep-cave mushroom that the locals call the Stillness Cap, this draught interrupts signals between brain and body with terrifying efficiency. The effect is mercifully brief — the drinker's mind remains active, aware of every detail of their paralysed predicament, while their body refuses to cooperate. Survivors describe it as the longest eight seconds of their lives.",
+    "lore": "Plato records how the hemlock took Socrates: the jailer pinched his feet, then his shins, and he felt nothing as the cold climbed toward his heart. This ashen draught, ground from a cave mushroom called the Stillness Cap, stops short of the heart. The mind stays wide awake inside a body that will not answer. It passes quickly. It does not feel quick.",
     "peak_weight": 0.5
   },
   "potion_of_hallucination": {
@@ -540,15 +548,16 @@
     "min_level": 3,
     "effect": "hallucination",
     "power": "",
-    "duration": 45,
+    "duration": 30,
     "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 30,
-      "41-60": 30,
-      "61-80": 25,
-      "81-100": 20
+      "1-10": 0,
+      "11-20": 15,
+      "21-40": 24,
+      "41-60": 24,
+      "61-80": 22,
+      "81-100": 18
     },
-    "lore": "Every colour of the spectrum is represented in the suspended particles of this flask, which drift and rearrange in patterns that should not be possible in a static liquid. After drinking it, every shadow becomes a lurching creature, every wall a moving tapestry, every monster an ally or vice versa. Long-term users sometimes report that the sober world never quite recovers its ordinary dullness, and are divided on whether this is a gift or a curse.",
+    "lore": "Medieval villagers who ate bread from blighted rye saw visions and felt their limbs burn. They called it Saint Anthony's Fire and walked to his monks for a cure. The rainbow flecks in this flask work on the same principle without the bread. Walls breathe, shadows grow teeth, and no creature looks like itself until the colors drain away.",
     "peak_weight": 0.5
   },
   "potion_of_sleep": {
@@ -566,13 +575,13 @@
     "power": "",
     "duration": 15,
     "floorSpawnWeight": {
-      "1-20": 35,
-      "21-40": 30,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 18,
+      "61-80": 16,
+      "81-100": 14
     },
-    "lore": "There is something fundamentally wrong about a flask that is warm to the touch when no fire has touched it — the warmth comes from a slow exothermic reaction between dreamwood extract and poppy reduction, which in combination produce a soporific effect that overwhelms even the most determined effort to remain awake. The warmth is comforting. That is the problem.",
+    "lore": "Ovid put the cave of Sleep where no rooster crows, with poppies at its mouth and the river Lethe whispering over pebbles. Hypnos once put Zeus himself under, as a favor to Hera. The flask is warm in the hand, like a cup held at bedtime. That comfort is the trap. Monsters do not wait for a sleeper to finish dreaming.",
     "peak_weight": 0.5
   },
   "potion_of_weakness": {
@@ -588,20 +597,20 @@
     "min_level": 2,
     "effect": "weakness",
     "power": "",
-    "duration": 40,
+    "duration": 25,
     "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 30,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
+      "1-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 18,
+      "81-100": 16
     },
-    "lore": "The smell alone should be sufficient warning — this grey ooze reeks of rot and old iron, and the smell intensifies after consumption as the active compounds propagate through the lymphatic system. Muscles that functioned perfectly well an hour ago begin to feel like they belong to someone else, weaker and reluctant. Scholars who study potion warfare note that this formula has ended more dungeon careers than almost anything else in the catalogue.",
+    "lore": "Delilah lulled Samson to sleep on her knees and called a man to shave the seven locks of his head. He woke, went out to fight as before, and did not know his strength had left him. This grey ooze works faster and smells far worse. Blows land soft and the sword arm hangs heavy until it wears off.",
     "peak_weight": 0.5
   },
   "potion_of_slow": {
     "name": "potion of slow",
-    "unidentified_name": "deep violet slow-drip potion",
+    "unidentified_name": "deep violet tincture",
     "symbol": "!",
     "color": [
       100,
@@ -614,13 +623,13 @@
     "power": "",
     "duration": 35,
     "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 32,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
+      "1-20": 20,
+      "21-40": 24,
+      "41-60": 22,
+      "61-80": 20,
+      "81-100": 16
     },
-    "lore": "The potion earns its informal name from its behaviour when poured — it moves with agonising slowness, as though time itself has already begun to slow around it before even being consumed. The effect on the drinker is the same: every movement becomes an exercise in frustrated urgency, the body lagging behind the mind's commands by an interval that grows maddening over time. Dungeon creatures that use this on adventurers have learned to be patient.",
+    "lore": "Zeno of Elea argued that swift Achilles could never catch a tortoise with a head start, since he must first reach where it had been. Nobody believed him. This violet potion makes the argument persuasive. It pours like cold tar, and whoever drinks it moves the same way, a half step behind every enemy in the room.",
     "peak_weight": 0.5
   },
   "potion_of_teleportation": {
@@ -644,7 +653,7 @@
       "61-80": 22,
       "81-100": 18
     },
-    "lore": "The liquid pulses with its own rhythm, as if something inside is trying to get out. Drinking it produces a moment of total spatial disorientation followed by the drinker being elsewhere — where, exactly, depends entirely on the dungeon's mood, which is notoriously poor. Surface alchemists sometimes market these as utility items. Dungeon survivors call them 'the terror in a bottle' and advise carrying them only as a desperate last resort.",
+    "lore": "After Philip baptized the Ethiopian on the Gaza road, the Spirit of the Lord caught him away, and he found himself at Azotus. The magenta flask offers the journey without the guidance. The drinker vanishes and arrives somewhere else on the same floor, wherever the dungeon chooses. It has rescued the cornered and stranded the careless in equal measure.",
     "peak_weight": 0.5
   },
   "potion_of_drain_strength": {
@@ -668,7 +677,7 @@
       "61-80": 15,
       "81-100": 15
     },
-    "lore": "Clouds seem to move inside this vial, compressed into liquid and angry about it. The drain it inflicts is not a weakening of the muscles — it is a permanent diminishment of the nervous pathways that command them. Ancient combat manuals list it as a war crime in at least three jurisdictions. In the dungeon, jurisdictions do not apply, and the formula continues to circulate among those who have both the knowledge and the ethics deficiency to produce it.",
+    "lore": "The giant Antaeus drew his strength from the earth, his mother, and no wrestler could throw him. Heracles lifted him clear of the ground and held him there until the strength ran out. This storm-grey vial holds a man off the ground from the inside. What it takes from the arms does not return on its own.",
     "peak_weight": 0.5
   },
   "potion_of_drain_constitution": {
@@ -692,7 +701,7 @@
       "61-80": 14,
       "81-100": 14
     },
-    "lore": "This brackish, brackwater-smelling draught works on the body's fundamental resilience — the deep biological stubbornness that keeps organisms alive when they have no business being so. Alchemists who have studied it describe the mechanism as 'arguing the body out of caring,' which makes it sound almost philosophical. For those it has been used against, the permanent reduction in hardiness is a wound that heals everything except itself.",
+    "lore": "Eos asked Zeus to make her beloved Tithonus immortal and forgot to ask for youth. He withered year by year until only a thin voice was left, and some say he ended as a cicada. The brackish olive draught gives a taste of that bargain. The drinker lives, and is lastingly less hardy for it.",
     "peak_weight": 0.5
   },
   "potion_of_drain_wisdom": {
@@ -716,7 +725,7 @@
       "61-80": 14,
       "81-100": 14
     },
-    "lore": "The stoppered bottle is a patchwork of mismatched materials — part stone, part ceramic, part something that might be cured skin — as if assembled by someone whose judgment was already compromised. Its contents attack the very capacity for judgment itself. Those who have partially recovered from its effects report that the worst part is knowing you are less wise than you were, while simultaneously being less wise enough to compensate properly.",
+    "lore": "Solomon asked God for an understanding heart and received wisdom beyond any king. In old age he let it slip, and built shrines to the idols of his foreign wives. The bottle is a patchwork of stone, clay, and something like cured hide, plainly made by someone whose judgment had already gone. Its contents take the same toll, and keep it.",
     "peak_weight": 0.5
   },
   "potion_of_drain_intelligence": {
@@ -740,7 +749,7 @@
       "61-80": 14,
       "81-100": 14
     },
-    "lore": "The mottled discolouration of this bottle mirrors the discolouration it produces in higher cognitive function — the formula attacks the structures responsible for abstract reasoning, pattern recognition, and the capacity to understand consequences. Ironically, the drinker is often too affected to fully appreciate what has been taken from them, which is perhaps the one mercy the formula offers, and a fittingly cruel one.",
+    "lore": "Odysseus sent three men to scout the land of the Lotus-Eaters. They tasted the fruit, forgot home, and had to be dragged back to the ships weeping and tied under the benches. This mottled bottle holds a harsher vintage. It dulls the reasoning mind for good, and the drinker is rarely sharp enough afterward to count the loss.",
     "peak_weight": 0.5
   },
   "potion_of_sickness": {
@@ -756,15 +765,15 @@
     "min_level": 4,
     "effect": "sickness",
     "power": "",
-    "duration": 50,
+    "duration": 15,
     "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 30,
-      "41-60": 30,
-      "61-80": 25,
-      "81-100": 20
+      "1-20": 0,
+      "21-40": 24,
+      "41-60": 24,
+      "61-80": 22,
+      "81-100": 18
     },
-    "lore": "The sulfur stench that escapes even through the sealed stopper is not the active ingredient — it is merely a byproduct of the brewing process, which involves cultivating and concentrating dungeon pathogens in a medium of processed alchemical waste. The disease it induces is artificial in origin but indistinguishable in effect from the natural variety. The smell, dungeon runners note grimly, is at least an honest warning.",
+    "lore": "The Iliad opens with plague. Apollo came down from Olympus like nightfall and shot his arrows into the Greek camp for nine days, mules and dogs first, then men. A sulfur-yellow vial does the work of one arrow. The fever it carries saps strength and hardiness by the hour, and the stench through the stopper is the only honest label.",
     "peak_weight": 0.5
   },
   "potion_of_fumbling": {
@@ -782,13 +791,14 @@
     "power": "",
     "duration": 35,
     "floorSpawnWeight": {
-      "1-20": 30,
-      "21-40": 30,
-      "41-60": 28,
-      "61-80": 22,
-      "81-100": 18
+      "1-10": 0,
+      "11-20": 20,
+      "21-40": 20,
+      "41-60": 20,
+      "61-80": 18,
+      "81-100": 16
     },
-    "lore": "It is a bitter irony that a potion whose entire purpose is to cause the drinker to drop things is itself extremely slippery. The turquoise slickness is caused by a film-forming compound that coats every surface it touches, including fingers, weapon grips, and dignity. Dungeon runners who have survived a fumbling episode uniformly describe the experience of watching their weapon clatter away during a fight as formative in ways they prefer not to elaborate on.",
+    "lore": "A hagfish seized by a shark pours out enough slime in a heartbeat to choke the attacker's gills, then ties itself in a knot to wipe clean. The turquoise liquid borrows the trick and leaves out the knot. Hilts, straps, and latches squirt from the drinker's fingers at the worst moments. Dignity goes with them.",
     "peak_weight": 0.5
   },
   "potion_of_fear": {
@@ -806,13 +816,14 @@
     "power": "",
     "duration": 20,
     "floorSpawnWeight": {
-      "1-20": 25,
-      "21-40": 28,
-      "41-60": 25,
-      "61-80": 20,
-      "81-100": 15
+      "1-10": 0,
+      "11-20": 15,
+      "21-40": 22,
+      "41-60": 20,
+      "61-80": 18,
+      "81-100": 14
     },
-    "lore": "The deep wine colour of this phial is deceptive — it looks like something that might accompany a meal. The fear it induces is neither rational nor controllable: it is pure adrenal terror, the kind that bypasses the higher mind entirely and reaches directly into the oldest parts of the brain. Those who have experienced it report that the worst part is not the fear itself but the absolute certainty, while it is happening, that the fear is completely justified.",
+    "lore": "The Greeks said the god Pan could raise a shout that sent whole armies running, and they named the feeling after him: panic. The Athenians built him a shrine for his help against the Persians at Marathon. This wine-dark phial bottles that shout. The drinker cannot make their feet go toward an enemy until the terror runs out.",
     "peak_weight": 0.5
   },
   "potion_of_mana": {
@@ -830,13 +841,13 @@
     "power": "2d8+6",
     "duration": 0,
     "floorSpawnWeight": {
-      "1-20": 8,
-      "21-40": 14,
-      "41-60": 18,
-      "61-80": 16,
-      "81-100": 12
+      "1-20": 15,
+      "21-40": 22,
+      "41-60": 26,
+      "61-80": 24,
+      "81-100": 20
     },
-    "lore": "Distilled from luminescent cave fungi and alchemised under the light of a new moon, this azure liquid restores a substantial portion of magical reserves. Philosophers of the arcane tradition have long argued whether it merely accelerates natural mana recovery or taps into a deeper metaphysical reservoir — either way, the effect on an exhausted mage is profoundly welcome.",
+    "lore": "The dwarves Fjalar and Galar brewed the mead of poetry from honey and the blood of wise Kvasir, and Odin stole it in three swallows. Whoever tasted it could make verses. The azure vial is a humbler brew of glowing cave fungus, but the kinship shows: it refills a mage's spent reserves and puts spells back on the tongue.",
     "peak_weight": 0.5
   },
   "soma": {
@@ -848,8 +859,8 @@
     "value": 5000,
     "min_level": 25,
     "identified": false,
-    "unidentified_name": "a pale golden elixir smelling of honey",
-    "lore": "The Rigveda devotes an entire book — 114 hymns — to Soma, the sacred drink of the Vedic gods. It was pressed from a plant, mixed with milk, and offered to Indra before battle. Scholars have debated its identity for centuries: ephedra, fly agaric, cannabis. Whatever it was, it made gods of men. One drink restores what was broken.",
+    "unidentified_name": "pale golden elixir",
+    "lore": "The Rigveda gives an entire book, one hundred fourteen hymns, to Soma: a plant pressed between stones, strained through wool, mixed with milk, and offered to Indra before he fought the dragon Vritra. Scholars still argue over which plant it was. The hymns say only what it did. One draught of this honeyed gold restores a broken body completely.",
     "floorSpawnWeight": {
       "1-24": 0,
       "25-50": 3,
@@ -874,8 +885,8 @@
     "value": 2000,
     "min_level": 30,
     "identified": false,
-    "unidentified_name": "perfectly clear water with no smell",
-    "lore": "The River Lethe flows through the underworld. In Virgil's Aeneid, souls drink from it to forget their former lives before reincarnation. In Plato's Republic, the dead drink from the Plain of Forgetfulness. This water cures all afflictions of the mind — confusion, fear, madness — by simply erasing them. What you cannot remember cannot hurt you.",
+    "unidentified_name": "still colorless water",
+    "lore": "Virgil shows Aeneas a crowd of souls on the banks of Lethe, drinking forgetfulness before they return to the world above. Plato's Er watched the dead do the same and noted that the unwise drank too much. A mouthful of this still water washes every affliction from body and mind: poison, fever, terror, curse. What is forgotten cannot linger.",
     "floorSpawnWeight": {
       "1-29": 0,
       "30-55": 4,
@@ -899,8 +910,8 @@
     "value": 8000,
     "min_level": 45,
     "identified": false,
-    "unidentified_name": "a murky green liquid with something plant-like inside",
-    "lore": "At the bottom of the sea, Gilgamesh found the plant of immortality. He called it 'The Old Man Becomes a Young Man.' On his way home, he stopped to bathe in a pool, and a serpent ate the plant — which is why snakes shed their skin and are reborn, while humans grow old and die. The eleventh tablet of the Epic is the oldest meditation on mortality in human literature.",
+    "unidentified_name": "thorn-sprigged green bottle",
+    "lore": "Gilgamesh dove to the sea floor with stones tied to his feet and brought up a thorny plant he named The Old Man Becomes Young. While he bathed on the road home, a serpent ate it and shed its skin. A sprig steeps in this green bottle. It cannot return lost years, but it carries the drinker back one floor toward the daylight.",
     "floorSpawnWeight": {
       "1-44": 0,
       "45-70": 2,
@@ -930,7 +941,7 @@
     "power": "0",
     "duration": 0,
     "floorSpawnWeight": {},
-    "lore": "The scalding blood of the dragon Fafnir, said to grant understanding of the speech of birds and visions of hidden truths. In the old tales, Sigurd tasted the blood and gained wisdom beyond mortal ken — including knowledge of how the gods reforge what is broken. Those who drink deeply may glimpse echoes of that ancient craft: a blade unmade, hurled skyward over a sacred place, and caught by divine hands.",
+    "lore": "Sigurd roasted the dragon Fafnir's heart, burned his thumb, and put it to his mouth. At the taste of the blood he understood the birds, who warned him of Regin's treachery. The blood still scalds. It heals every wound and leaves the drinker proof against flame, and some who drink glimpse an older craft: a broken blade hurled skyward over a sacred place and caught by divine hands.",
     "peak_weight": 0
   }
 }

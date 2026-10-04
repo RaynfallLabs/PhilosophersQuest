@@ -8180,7 +8180,8 @@
     "stat_grant": "STR",
     "trophy_desc": "The horn-crown of the Labyrinth's bull. Cooking it answers a calling.",
     "description": "Trophy harvest from Asterion the Minotaur.",
-    "identified": true
+    "identified": true,
+    "trophy_permanent_power": "plus_2_str_confuse_immune"
   },
   "medusa_gorgon_trophy": {
     "name": "Medusa-Gorgon's Blood",

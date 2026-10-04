@@ -34,7 +34,7 @@
     "merchant_price_double",
     "blessed_capable"
   ],
-  "lore_descriptor": "warm yellow, surprisingly heavy",
+  "lore_descriptor": "warm yellow and heavier than it looks, gold alloyed until it holds an edge",
   "unidentified_descriptor": "an ostentatious yellow blade",
   "first_pickup_chronicle": "Hardened gold. The dwarves did something with the alloy — beat the softness out of it. It still glows like a coin. Whoever I face will know what I'm worth.",
   "design_notes": "Peak F38 spread 14 — straddles Medusa gate. damage_mult 1.20, but heavy (1.25× weight) — a tradeoff. max_enchant 3 (gold takes blessing well). merchant_price_double makes it a 'tax cheat' — sell it, don't wield it, unless you have STR. Per curve at F40, weapon_base_damage=5; gold longsword = 5 × 1.0 × 1.20 = 6 base = 36 damage at chain 5, vs monster_hp_med(40)=40 = ~1.1 turn kill on median, ~2 on tough. Correct."

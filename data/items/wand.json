@@ -20,7 +20,7 @@
     "effect": "heal",
     "power": "2d4",
     "unidentified_name": "birch wand",
-    "lore": "The apprentice healer's cantrip stick. A pale birch shaft polished by years of hedge-witch hands. Closes small cuts and eases bruises.",
+    "lore": "The Samaritan on the Jericho road treated a beaten stranger with what he had in his saddlebag: oil to soothe and wine to clean. Hedge-healers bind that same roadside mercy into a pale stick. It closes cuts and takes the ache out of bruises, and not much more.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -46,7 +46,7 @@
     "effect": "heal",
     "power": "4d4",
     "unidentified_name": "green-lacquered wand",
-    "lore": "Temple healers hand these out to any pilgrim brave enough to walk the mountain roads. Twice the mending of the apprentice's cantrip.",
+    "lore": "The Knights of the Hospital of St. John kept a ward in Jerusalem where pilgrims of any faith were fed on white bread and laid in clean beds. The brothers called the sick 'our lords'. Their field wands knit a slashed arm or a cracked rib well enough to walk on.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -72,7 +72,7 @@
     "effect": "heal",
     "power": "7d6",
     "unidentified_name": "oak wand",
-    "lore": "Carved from healing oak that grows only near druidic shrines. The tree's slow, steady vigor passes into flesh at the wand's touch.",
+    "lore": "Pliny wrote that the druids of Gaul climbed the sacred oak in white robes and cut its mistletoe with a golden sickle, calling the plant 'all-heal'. A rod cut from such a tree keeps the slow strength of the oak. Deep wounds close under it as bark closes over a scar.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -98,7 +98,7 @@
     "effect": "heal",
     "power": "10d6",
     "unidentified_name": "silver-banded wand",
-    "lore": "Physician-mages of the late Empire could patch a knight run-through by a lance and send him back to the line. This wand is that art on a stick.",
+    "lore": "Galen of Pergamon learned surgery stitching gladiators, and called their wounds his windows into the body. He lost far fewer fighters than the physician before him and went on to treat emperors. This rod carries the arena surgeon's craft: a man run through stands up again.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -124,7 +124,7 @@
     "effect": "heal",
     "power": "15d8",
     "unidentified_name": "ivory wand",
-    "lore": "A relic-grade healing wand of ivory and gold leaf. What it heals stays healed; what it mends returns stronger than before.",
+    "lore": "Asclepius, son of Apollo and pupil of the centaur Chiron, grew so skilled that he began calling the dead back. Hades complained that his kingdom was emptying, and Zeus ended the physician with a thunderbolt. The rod stops just short of that offence. Nearly everything short of death, it undoes.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -150,7 +150,7 @@
     "effect": "fire_bolt",
     "power": "3d4",
     "unidentified_name": "ash wand",
-    "lore": "An apprentice pyromancer's first wand. Throws a shower of hot orange sparks that scorches the target and, sometimes, the caster's sleeve.",
+    "lore": "Six Vestal Virgins tended Rome's hearth fire, and if it ever died they had to kindle it again by rubbing wood on wood. An apprentice's ash stick does the kindling for them: a spit of orange sparks, hot enough to sting a rat and singe a careless sleeve.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -175,8 +175,8 @@
     "quiz_threshold": 1,
     "effect": "fire_bolt",
     "power": "5d6",
-    "unidentified_name": "red-cored wand",
-    "lore": "A journeyman's wand. Fires a compact bolt of flame that punches through leather and cloth alike.",
+    "unidentified_name": "maple wand",
+    "lore": "The defenders of Saguntum hurled the falarica at Hannibal's men: a heavy javelin with its iron shank wrapped in pitch-soaked tow and set alight. A soldier whose shield caught one had to throw the shield away. The journeyman's wand throws the same answer without the javelin.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -202,7 +202,7 @@
     "effect": "fire_bolt",
     "power": "7d6",
     "unidentified_name": "obsidian wand",
-    "lore": "The classic mage-wand shape. Hurls a rolling ball of fire that bursts on impact with a satisfying whump.",
+    "lore": "Around the year 672 a refugee architect named Kallinikos brought Constantinople a liquid fire that pumped through bronze tubes and went on burning on the sea. It destroyed two Arab fleets, and the recipe was guarded so closely that it is lost. This wand keeps the result: a rolling burst no water quenches.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -228,7 +228,7 @@
     "effect": "fire_bolt",
     "power": "9d8",
     "unidentified_name": "brass-capped wand",
-    "lore": "A senior pyromancer's tool. What it fires is not a bolt but a roaring column of flame that leaves the wall behind the target scorched black.",
+    "lore": "On Mount Carmel the prophet Elijah drenched his altar three times with water and prayed once. Fire fell and consumed the bull, the wood, the stones, and the dust, and licked the trench dry. A senior pyromancer's rod calls down a column of that kind, and leaves the wall behind the target black.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -254,7 +254,7 @@
     "effect": "fire_bolt",
     "power": "12d10",
     "unidentified_name": "iron-shod wand",
-    "lore": "Archmage-grade. The wand's tip glows red-hot before firing, and the target is engulfed in a column of white flame hotter than any forge.",
+    "lore": "Phaethon begged to drive his father's sun chariot for a single day and could not hold the horses. They plunged so low that Libya burned to desert and the rivers boiled, until Zeus struck the boy from the sky. The tip of this rod glows white before it fires. What follows is Phaethon's afternoon, aimed.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -280,7 +280,7 @@
     "effect": "lightning_bolt",
     "power": "2d6",
     "unidentified_name": "amber wand",
-    "lore": "An apprentice's stormweaver stick. Fires a crackling arc of static that makes hair stand up and small creatures yelp.",
+    "lore": "Thales of Miletus noticed that amber rubbed with fur pulls at straw and feathers. The Greeks called amber elektron, and the word has outlived them. An apprentice stormweaver's stick stores a little more than a rubbed bead does: a snapping blue arc that lifts hair and makes small creatures yelp.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -306,7 +306,7 @@
     "effect": "lightning_bolt",
     "power": "5d6",
     "unidentified_name": "copper wand",
-    "lore": "The workhorse of storm-mages. A copper core channels a straight bolt of lightning that arcs in a clean line to the target.",
+    "lore": "In 1752 Benjamin Franklin flew a silk kite into a thundercloud and drew sparks from a key on the string, proving lightning and the spark from amber to be one thing. He then invented the rod that leads it safely to earth. This copper wand leads it the other way, in a straight line through whatever stands there.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -332,7 +332,7 @@
     "effect": "lightning_bolt",
     "power": "7d6",
     "unidentified_name": "brass-inlaid wand",
-    "lore": "The bolt does not stop at one target. It jumps from body to body along the line of sight, ignoring armor and finding metal wherever it hides.",
+    "lore": "Capaneus scaled the walls of Thebes shouting that not even Zeus could stop him. Zeus stopped him on the ladder with a single thunderbolt. The bolt from this wand does not care how many stand in its path. It runs through all of them and leaves each one stunned.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -357,8 +357,8 @@
     "quiz_threshold": 1,
     "effect": "lightning_bolt",
     "power": "9d8",
-    "unidentified_name": "storm-etched wand",
-    "lore": "Master stormweavers cut these from oak struck by real lightning. When fired, the corridor briefly smells of ozone and the walls hum.",
+    "unidentified_name": "yew wand",
+    "lore": "Near Geismar stood an oak sacred to the thunder god Donar, and around 723 the missionary Boniface took an axe to it. The crowd waited for the lightning. None came, and he built a chapel from the timber. Master stormweavers still prize thunder-oak. The air smells of struck metal when this one fires.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -384,7 +384,7 @@
     "effect": "lightning_bolt",
     "power": "12d10",
     "unidentified_name": "gold-capped wand",
-    "lore": "Named for the Olympian thunderer whose weapon it echoes. The bolt is white, silent for an eye-blink, then arrives with a crack that rattles teeth.",
+    "lore": "Three Cyclopes, Brontes, Steropes and Arges, forged the thunderbolt for Zeus in thanks for their release from Tartarus. With it he broke the Titans and buried Typhon. The wand's bolt is white, silent for an eye-blink, and then arrives with a crack that rattles teeth along the whole corridor.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -410,7 +410,7 @@
     "effect": "cold_bolt",
     "power": "2d6",
     "unidentified_name": "pine wand",
-    "lore": "An apprentice cryomancer's wand. Breathes a puff of frost that numbs fingers and slows the target for a step or two.",
+    "lore": "Boreas, the north wind, lived in a cave in Thrace, and the Athenians built him an altar after his gale wrecked four hundred Persian ships off Cape Sepias. An apprentice's frost wand holds one of his lesser breaths. Fingers go numb, and whatever it touches moves stiffly for a few steps.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -436,7 +436,7 @@
     "effect": "cold_bolt",
     "power": "5d6",
     "unidentified_name": "blue-lacquered wand",
-    "lore": "Journeyman-grade ice-craft. Fires a shard of true cold that crusts the target's skin with frost and steals its speed.",
+    "lore": "The Norse counted the frost giants, the Hrimthursar, as the oldest enemies of the gods, a race that dripped into being from melting rime. Journeymen say their spears were icicles. This wand throws a single shard of that cold. Frost crusts the skin where it lands, and the limbs behind it slow.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -462,7 +462,7 @@
     "effect": "cold_bolt",
     "power": "7d6",
     "unidentified_name": "crystal wand",
-    "lore": "A master cryomancer's tool. The shaft is cold to the touch even in summer; the bolt it fires drops the target's body temperature to dangerous lows.",
+    "lore": "Before there was a world, the Norse said, there was Niflheim to the north, all mist and ice, and a yawning gap called Ginnungagap where its rime met the sparks of the south. The shaft of this wand is cold in any season. Its bolt carries the old dark of that place and leaves a body sluggish.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -487,8 +487,8 @@
     "quiz_threshold": 1,
     "effect": "cold_bolt",
     "power": "9d8",
-    "unidentified_name": "frosted-silver wand",
-    "lore": "Fires a howling wall of driven snow and ice needles. Even survivors leave the encounter with skin the color of bruised plums.",
+    "unidentified_name": "pewter wand",
+    "lore": "Fimbulwinter comes before the end, the Eddas say: three winters with no summer between them, snow driving from every quarter, and brother turning on brother for a crust. The wand lets a little of it out at a time. A howl of ice needles fills the passage, and the survivors walk away slowly.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -514,7 +514,7 @@
     "effect": "cold_bolt",
     "power": "12d10",
     "unidentified_name": "diamond-tipped wand",
-    "lore": "Archmage-grade cryomancy. The wand approaches the theoretical limit: motion itself is drained from the target's atoms for one merciless instant.",
+    "lore": "In 1848 Lord Kelvin worked out that cold has a floor: a point some 273 degrees below freezing where the motion of matter stops. Dante had guessed the same about the pit of Hell, which he made a frozen lake. Master cryomancers reach for that floor. For one instant the target nearly gets there.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -539,8 +539,8 @@
     "quiz_threshold": 1,
     "effect": "acid_spray",
     "power": "2d4",
-    "unidentified_name": "green-etched wand",
-    "lore": "Alchemist's cantrip. Squirts a stinging drop of caustic fluid that raises welts and eats through cheap armor stitching.",
+    "unidentified_name": "alder wand",
+    "lore": "In 1671 the naturalist John Ray boiled down a great heap of red ants and collected a sour, biting liquor, the first acid ever taken from an animal. Alchemists call it spirit of ants. Their cantrip stick squirts a drop of something similar, which raises welts and leaves a lingering sickness.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -566,7 +566,7 @@
     "effect": "acid_spray",
     "power": "4d6",
     "unidentified_name": "verdigris-coated wand",
-    "lore": "Fires a spreading cone of green acid. The target smokes for a few turns and its scales or plate turn to soft flakes.",
+    "lore": "Livy says that when a rock face blocked Hannibal's army in the Alps, his engineers heated the stone with great fires and doused it with sour wine until it crumbled. The wand skips the bonfire. A spreading green spray hisses on scale and plate, and whatever it wets sickens.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -592,7 +592,7 @@
     "effect": "acid_spray",
     "power": "6d6",
     "unidentified_name": "green-crystal wand",
-    "lore": "A blast of concentrated caustic that leaves the stone floor pitted where droplets fall. Best not to check what happens to bone.",
+    "lore": "The bombardier beetle keeps two chemicals in separate chambers of its abdomen. Mixed, they boil, and the beetle fires the scalding spray from a turret it can aim over its own back. Some alchemist studied the insect closely. Stone pits where the drops fall, and flesh fares worse.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -617,8 +617,8 @@
     "quiz_threshold": 1,
     "effect": "acid_spray",
     "power": "8d8",
-    "unidentified_name": "acid-scarred wand",
-    "lore": "The corrosion is not merely chemical; the acid finds and eats every weak point in armor, weapon, and flesh at once.",
+    "unidentified_name": "bronze wand",
+    "lore": "The dying centaur Nessus gave Deianira his blood as a love charm. It was tainted with the Hydra's venom, and when Heracles put on the shirt she had smeared with it, the cloth ate into him and would not come off. This wand carries the same clinging ruin, and the sickness after it lasts.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -643,8 +643,8 @@
     "quiz_threshold": 1,
     "effect": "acid_spray",
     "power": "11d10",
-    "unidentified_name": "corroded-iron wand",
-    "lore": "Archmage-grade alchemy. What the wand hits does not merely burn; it comes apart at the bonds that hold matter together.",
+    "unidentified_name": "tin-banded wand",
+    "lore": "Paracelsus named it and van Helmont sought it for years: the alkahest, a solvent that would dissolve anything. Johann Kunckel asked the obvious question, which was what jar they meant to keep it in. Nobody answered him. This wand does not hold the alkahest either, but armour, hide and bone have trouble telling.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -670,7 +670,7 @@
     "effect": "magic_missile",
     "power": "2d4",
     "unidentified_name": "silver wand",
-    "lore": "An apprentice's first offensive spell on a stick. Fires a small dart of pure force that ignores armor entirely.",
+    "lore": "The slingers of the Balearic Islands were the best in the ancient world. Their mothers, the story goes, set a boy's bread on a post and let him eat only when he had knocked it off with a stone. An apprentice's wand throws a small hard dart of nothing at all, which no armour turns.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -696,7 +696,7 @@
     "effect": "magic_missile",
     "power": "4d4",
     "unidentified_name": "steel wand",
-    "lore": "The classic. A missile of pure kinetic force that unerringly finds its target through cover, smoke, and armor alike.",
+    "lore": "Odin's spear Gungnir was made by the dwarf sons of Ivaldi, and it had one property that mattered: once thrown, it could not miss. The standard mage's wand copies that property and nothing else. Its bolt of force goes around cover, through smoke, and into the thing it was pointed at.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -722,7 +722,7 @@
     "effect": "magic_missile",
     "power": "6d6",
     "unidentified_name": "runed-steel wand",
-    "lore": "A barrage of magic missiles fired in rapid succession. Each one is irresistible; together they punch through even magical protection.",
+    "lore": "At Crecy in 1346 the English archers loosed so fast that a chronicler said the arrows fell like snow. The Genoese crossbowmen opposite got off one volley and broke. This wand answers a charging enemy the same way, with one bolt after another and no gap in which to raise a shield.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -748,7 +748,7 @@
     "effect": "magic_missile",
     "power": "9d6",
     "unidentified_name": "platinum-inlaid wand",
-    "lore": "Master abjurers use these to bring down single high-value targets. The storm of missiles cannot be dodged, blocked, or resisted.",
+    "lore": "When Odysseus came home in rags, the test was his own bow: string it, and shoot through the sockets of twelve axe heads set in a row. He did both sitting down, and then turned to the suitors. Master abjurers favour this wand for the one enemy who must not get up.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -774,7 +774,7 @@
     "effect": "magic_missile",
     "power": "12d8",
     "unidentified_name": "mithril-cored wand",
-    "lore": "Archmage-grade force magic. What arrives at the target is not missiles anymore, but the concept of impact rendered undeniable.",
+    "lore": "Archimedes told King Hiero that with a place to stand he could move the earth, and then proved the smaller claim: seated on the beach, he drew a loaded ship up the sand with one hand and a set of pulleys. Force magic at its height works the same way. The hand barely moves.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -800,7 +800,7 @@
     "effect": "striking",
     "power": "1d6",
     "unidentified_name": "hazel wand",
-    "lore": "A schoolmaster's discipline wand, enchanted to strike harder than its weight suggests. Best used on things that cannot rap back.",
+    "lore": "Roman schoolmasters kept order with the ferula, the dried stalk of the giant fennel, light in the hand and smart on the knuckles. The poet Martial called it the sceptre of teachers. Someone enchanted this one to strike well above its weight. It is best used on things that cannot rap back.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -825,8 +825,8 @@
     "quiz_threshold": 1,
     "effect": "striking",
     "power": "3d6",
-    "unidentified_name": "iron-shod wand",
-    "lore": "A journeyman evoker's punch on a stick. The tip flashes and the target is struck as though by an invisible war hammer.",
+    "unidentified_name": "elm wand",
+    "lore": "At Horeb the people cried out for water, and Moses struck the rock with his staff and water came. A journeyman evoker's wand strikes with less purpose but real weight. The tip flashes, and the blow lands as if from a war hammer that nobody in the room is holding.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -852,7 +852,7 @@
     "effect": "striking",
     "power": "5d8",
     "unidentified_name": "steel-bound wand",
-    "lore": "The wand fires a battering-ram of force that has been known to crack shields and dent breastplates on the same blow.",
+    "lore": "The Romans hung a beam from chains under a wheeled shed, capped it with a bronze ram's head, and swung. By custom, a town that surrendered before the ram touched the wall was spared. The wand makes no such offer. Its blow cracks shields and dents the breastplate behind them.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -878,7 +878,7 @@
     "effect": "striking",
     "power": "7d8",
     "unidentified_name": "gold-etched wand",
-    "lore": "The tip strikes the target as though guided by a righteous hand. Armor buckles inward; bone follows.",
+    "lore": "At Lehi the Philistines came for Samson, and the Spirit of the Lord came on him first. He picked up the fresh jawbone of a donkey and struck down a thousand men with it. The wand needs no jawbone. Its blow falls as if a righteous arm were behind it, and armour buckles inward.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -904,7 +904,7 @@
     "effect": "striking",
     "power": "10d10",
     "unidentified_name": "adamantine-tipped wand",
-    "lore": "Archmage-grade evocation. Whatever the wand strikes, the strike is remembered by the stone behind it in the shape of a crater.",
+    "lore": "Thor once swung Mjolnir three times at the head of a sleeping giant, who woke and asked if a leaf had fallen on him. The giant had slipped a mountain in the way, and the three blows left three square valleys in it. This rod strikes like that, and the stone behind the target keeps the shape.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -930,7 +930,7 @@
     "effect": "sleep_monster",
     "power": "5",
     "unidentified_name": "willow wand",
-    "lore": "A hedge-witch's calming wand. The target's eyelids grow heavy for a short spell -- long enough to run past, or line up a killing blow.",
+    "lore": "Hera set Argus, who had a hundred eyes, to guard the heifer Io. Hermes sat down beside him, played the reed pipes, and told a long story until every eye had closed. A hedge-witch's wand works the same trick more quickly. The eyelids drop for a short while, and a blow wakes the sleeper.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -955,8 +955,8 @@
     "quiz_threshold": 1,
     "effect": "sleep_monster",
     "power": "15",
-    "unidentified_name": "poppy-lacquered wand",
-    "lore": "The classic sleep wand. The target folds where it stands and does not stir until slapped awake or hit hard enough to matter.",
+    "unidentified_name": "cherry-wood wand",
+    "lore": "Hera once bribed Hypnos, the god of sleep, with the hand of one of the Graces, and he perched in a pine on Mount Ida and put Zeus himself under while the war at Troy went her way. The wand has that confidence. Its target folds where it stands and stays down until hurt.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -981,8 +981,8 @@
     "quiz_threshold": 1,
     "effect": "sleep_monster",
     "power": "30",
-    "unidentified_name": "black-lacquered wand",
-    "lore": "Archmage-grade enchantment. The sleep is not restful; it is closer to a coma, and even great beasts do not shake it off before you leave the room.",
+    "unidentified_name": "ebony wand",
+    "lore": "The valkyrie Brynhild gave victory to the wrong king, and Odin pricked her with the sleep-thorn and left her on a mountain inside a ring of fire. She lay there in her armour until Sigurd rode through the flames and cut the mail from her. This wand lays a sleep of that kind on even great beasts.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1007,8 +1007,8 @@
     "quiz_threshold": 1,
     "effect": "slow_monster",
     "power": "5",
-    "unidentified_name": "lead-cored wand",
-    "lore": "An apprentice wand. Weighs the target down for a few turns, enough to disengage or set up a clean shot.",
+    "unidentified_name": "beech wand",
+    "lore": "Atalanta would marry only the man who could outrun her, and nobody could. Hippomenes carried three golden apples from Aphrodite and dropped one each time she drew ahead. She stooped for all three and lost. The apprentice's wand is the apple: for a little while the target cannot keep its pace.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1034,7 +1034,7 @@
     "effect": "slow_monster",
     "power": "12",
     "unidentified_name": "walnut wand",
-    "lore": "A senior enchanter's slowing wand. The target's blood flows sluggishly; its swings arrive a full beat late.",
+    "lore": "On the tenth day out from Troy, Odysseus landed among the Lotus-Eaters. The men who tasted the fruit lost all wish to row, to report, or to go home, and he had to drag them back weeping and tie them under the benches. This wand feeds an enemy the same fruit. Its blows arrive a beat late.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1060,7 +1060,7 @@
     "effect": "slow_monster",
     "power": "25",
     "unidentified_name": "obsidian-cored wand",
-    "lore": "Archmage-grade chronomancy. Time thickens around the target like cold honey; it moves, but barely, and you can afford to be patient.",
+    "lore": "Oisin rode to Tir na nOg, the Land of the Young, and stayed what felt like three years. When he came home, three hundred had passed in Ireland and everyone he knew was dust. The wand bends time the same way around one enemy. It still moves, as honey moves, and the bearer can afford patience.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1086,7 +1086,7 @@
     "effect": "confuse_monster",
     "power": "4",
     "unidentified_name": "twisted-wood wand",
-    "lore": "A prankster's wand. The target briefly forgets which way is up and which way you are; useful for slipping out of a bad room.",
+    "lore": "In the west of England a traveller who lost the path in a field he knew was said to be pixy-led. The cure was to turn his coat inside out. The prankster's wand does the pixies' work, and few monsters wear coats. For a short spell the target cannot tell which way is forward.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1112,7 +1112,7 @@
     "effect": "confuse_monster",
     "power": "12",
     "unidentified_name": "cedar wand",
-    "lore": "Standard confusion craft. The target reels, swings at empty air, and sometimes turns on its own allies.",
+    "lore": "The builders at Babel meant their tower to reach heaven. One morning each crew found that it could no longer understand the next, the bricks stopped moving, and the people scattered over the earth. The wand does to one mind what was done to that plain. The target reels and swings at whatever is nearest.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1137,8 +1137,8 @@
     "quiz_threshold": 1,
     "effect": "confuse_monster",
     "power": "25",
-    "unidentified_name": "shifting-color wand",
-    "lore": "Archmage-grade enchantment. The target's mind unravels; it does not merely stumble but forgets what it was doing and, briefly, what it is.",
+    "unidentified_name": "agate-tipped wand",
+    "lore": "When the armour of Achilles went to Odysseus, Ajax set out by night to kill the Greek chiefs. Athena clouded his eyes, and he spent his rage on a flock of sheep, sure they were the kings. He woke among the carcasses. This wand unseats a mind as thoroughly, and for a long while.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1164,7 +1164,7 @@
     "effect": "paralyze_monster",
     "power": "3",
     "unidentified_name": "bone wand",
-    "lore": "An apprentice binder's wand. Fixes the target in place for a heartbeat -- long enough for a decisive move or an honest retreat.",
+    "lore": "Theseus and Pirithous went down to carry off the queen of the dead. Hades welcomed them politely and offered them seats. The stone held them fast, and Theseus sat there until Heracles came and tore him loose. An apprentice binder's wand offers the same chair, though only for a moment.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1190,7 +1190,7 @@
     "effect": "paralyze_monster",
     "power": "8",
     "unidentified_name": "yellowed-ivory wand",
-    "lore": "Journeyman binding-craft. The target locks up entirely; if you have a killing blow in hand, this is the wand that lets you land it.",
+    "lore": "The angels told Lot's household to run from Sodom and not look behind them. His wife looked, and stood there as a pillar of salt. Guides by the Dead Sea still point out a column and give it her name. A creature caught by this wand stops as she did, mid-step, until the hold breaks.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1215,8 +1215,8 @@
     "quiz_threshold": 1,
     "effect": "paralyze_monster",
     "power": "15",
-    "unidentified_name": "stone-grey wand",
-    "lore": "Archmage-grade binding. The target's flesh briefly takes on the density of granite; it cannot move, cannot flinch, cannot bleed until the spell breaks.",
+    "unidentified_name": "horn wand",
+    "lore": "Niobe boasted that her fourteen children made her greater than Leto, who had two. Leto's two were Apollo and Artemis. When the arrows stopped, Niobe wept until she hardened into a rock on Mount Sipylus, and the rock still drips. The wand gives flesh that same stillness for as long as its hold lasts.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1242,7 +1242,7 @@
     "effect": "fear_monster",
     "power": "5",
     "unidentified_name": "blackthorn wand",
-    "lore": "A hedge-witch's fright-stick. The target's courage briefly leaves it and it looks for the nearest exit.",
+    "lore": "Ares drove to war with his two sons at the chariot yoke: Phobos, who is Fear, and Deimos, who is Dread. In 1877 an astronomer gave their names to the two small moons of Mars. A hedge-witch's fright-stick carries a whisper of the elder brother. Courage leaves the target and it looks for a door.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1268,7 +1268,7 @@
     "effect": "fear_monster",
     "power": "10",
     "unidentified_name": "grave-dust wand",
-    "lore": "Standard fear-magic. Even a hardened veteran of the deep floors will drop what it is doing and run when this wand fires.",
+    "lore": "The dragon Fafnir wore the Helm of Awe as he lay on his gold, and no living thing dared come near him. Sigurd took it from the hoard along with the treasure. Icelanders later drew its eight-armed sign between their brows. The wand casts that dread at one enemy, which drops everything and runs.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1294,7 +1294,7 @@
     "effect": "fear_monster",
     "power": "20",
     "unidentified_name": "coffin-nail wand",
-    "lore": "Archmage-grade terror-craft. The wave of unreasoning dread reaches every creature the caster can see; the room empties in seconds.",
+    "lore": "The Greeks blamed sudden, causeless terror on the goat-god Pan, whose shout from the hills could stampede a herd or an army. They said he routed the Persians at Marathon, and they named the feeling after him: panic. This wand gives the shout. Everything in sight short of the mightiest bolts for the exits.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1319,8 +1319,8 @@
     "quiz_threshold": 1,
     "effect": "blind_monster",
     "power": "4",
-    "unidentified_name": "smoked-glass wand",
-    "lore": "A hedge-mage's dazzle wand. The target's sight fogs for a moment -- long enough to slip out of its line of attack.",
+    "unidentified_name": "glass wand",
+    "lore": "The men of Sodom crowded Lot's doorway meaning harm to his guests. The guests were angels. They pulled Lot inside and struck the mob with blindness, so that the men wore themselves out groping for the door. A hedge-mage's wand fogs the eyes the same way, briefly.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1345,8 +1345,8 @@
     "quiz_threshold": 1,
     "effect": "blind_monster",
     "power": "10",
-    "unidentified_name": "dark-mirror wand",
-    "lore": "Standard blinding-craft. The target claws at its eyes; even ranged attackers cannot line up a shot on a foe they cannot see.",
+    "unidentified_name": "jet wand",
+    "lore": "On Cyprus a sorcerer named Elymas tried to turn the Roman governor away from the preaching of Paul. Paul looked straight at him and said he would be blind for a season. A mist fell on the man, and he went about looking for someone to lead him by the hand. The wand repeats the sentence.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1371,8 +1371,8 @@
     "quiz_threshold": 1,
     "effect": "blind_monster",
     "power": "20",
-    "unidentified_name": "shadow-cored wand",
-    "lore": "Archmage-grade curse-craft. The darkness the wand lays on the target's eyes is not merely blindness; it is the absence of the world entirely.",
+    "unidentified_name": "onyx wand",
+    "lore": "The ninth plague of Egypt was a darkness that could be felt. For three days no one saw his neighbour or rose from his place, though the Israelites had light where they lived. This wand lays that darkness on a single creature. To it the world is simply gone, and stays gone a long time.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1398,7 +1398,7 @@
     "effect": "turn_undead",
     "power": "10d4",
     "unidentified_name": "white-oak wand",
-    "lore": "A novice priest's rebuke-wand. Holy light shines on the undead in sight; they take searing damage and flee from it.",
+    "lore": "A priest blesses water with a prayer that every unclean spirit flee the place where it is sprinkled, and medieval parishes kept the font under lock so that nobody would steal it. A novice's wand carries the same blessing. The walking dead in sight are scalded by its light and turn away.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1423,8 +1423,8 @@
     "quiz_threshold": 1,
     "effect": "turn_undead",
     "power": "15d6",
-    "unidentified_name": "sunlight-gold wand",
-    "lore": "A senior cleric's wand of the standard turning rite. Undead in sight are burned by holy fire and driven back in terror.",
+    "unidentified_name": "holly wand",
+    "lore": "In 1614 the Church gathered its prayers of exorcism into one book, the Roman Ritual, and the rite stood almost unchanged for three and a half centuries. A senior cleric's wand holds its commands of departure. Dead things that hear them burn with holy fire and flee as fast as they can.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1450,7 +1450,7 @@
     "effect": "turn_undead",
     "power": "25d8",
     "unidentified_name": "gilded ivory wand",
-    "lore": "Archmage-and-cardinal grade. The wand fires a burst of daylight so pure that lesser undead are unmade where they stand; the greater ones scream and run.",
+    "lore": "At the Easter Vigil the church stands dark until one new fire is struck outside the door. A deacon carries the flame up the aisle and three times sings that this is the light of Christ. The rod looses that moment whole. Lesser dead are unmade where they stand, and the greater ones run.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1476,7 +1476,7 @@
     "effect": "polymorph_monster",
     "power": "",
     "unidentified_name": "rose-quartz wand",
-    "lore": "A journeyman transmuter's wand. Turns the target into something small and unthreatening -- a rat, a frog, an anxious bat.",
+    "lore": "The boy Gwion tasted three drops from Ceridwen's cauldron and ran. He became a hare, and she a greyhound; he a fish, and she an otter; he a bird, and she a hawk; he a grain of wheat, and she a hen. A journeyman's wand runs one leg of that chase. Nobody chooses what comes out.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1501,8 +1501,8 @@
     "quiz_threshold": 1,
     "effect": "polymorph_monster",
     "power": "",
-    "unidentified_name": "shifting-hue wand",
-    "lore": "The standard transmuter's wand. The target becomes another creature -- sometimes better, sometimes worse, always different.",
+    "unidentified_name": "rowan wand",
+    "lore": "Proteus, the Old Man of the Sea, knew everything and would tell nothing unless he was held. Menelaus seized him among his seals, and he became a lion, a serpent, a leopard, a boar, running water and a tall tree before he gave in. The wand turns a creature into another creature. Better or worse is luck.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1528,7 +1528,7 @@
     "effect": "polymorph_monster",
     "power": "",
     "unidentified_name": "iridescent-shell wand",
-    "lore": "Archmage-grade transmutation. What the wand hits becomes some small, weak, twitching thing for a long while, and remembers being it.",
+    "lore": "Ovid finished his Metamorphoses about the year 8 and filled it with some two hundred and fifty changes of shape. Lycaon the tyrant became a wolf, Arachne the weaver a spider, the hunter Actaeon a stag before his own hounds. This rod adds a line to the poem. Only the mightiest are spared the rewriting.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1554,7 +1554,7 @@
     "effect": "charm_monster",
     "power": "",
     "unidentified_name": "rose-gold wand",
-    "lore": "The classic charm wand. The target regards you as a dear friend for as long as the spell holds -- long enough to walk past, or to have it do you a favor.",
+    "lore": "A wolf was killing the people of Gubbio, and Francis of Assisi walked out alone to meet it. He called it Brother Wolf and proposed a bargain: the town would feed it, and it would harm no one. The wolf put its paw in his hand. This wand makes the same peace, for a while.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1580,7 +1580,7 @@
     "effect": "charm_monster",
     "power": "",
     "unidentified_name": "polished-coral wand",
-    "lore": "A master enchanter's wand. Even hardened veterans and larger monsters warm to the wielder for the duration.",
+    "lore": "When Orpheus sang, trees pulled up their roots to come closer and rivers stopped to listen. He walked into the underworld with a lyre, and Cerberus lay down, the Furies wept, and Hades agreed to give back his wife. A master enchanter's wand holds one of his songs. Hardened things stand and listen.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1605,8 +1605,8 @@
     "quiz_threshold": 1,
     "effect": "charm_monster",
     "power": "",
-    "unidentified_name": "royal-purple wand",
-    "lore": "Archmage-grade enchantment. The target does not merely like you; it defers to you as a subject to a rightful king.",
+    "unidentified_name": "jade wand",
+    "lore": "An old legend says the archangel Michael brought King Solomon a ring engraved with a seal, and that with it the king commanded the demons themselves and set them to cutting stone for the Temple. The rod borrows the seal's authority. Its target does not merely soften; it waits on the bearer as a subject.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1631,8 +1631,8 @@
     "quiz_threshold": 1,
     "effect": "light",
     "power": "4",
-    "unidentified_name": "beeswax wand",
-    "lore": "An apprentice's illumination wand. Casts a small warm glow that pushes back the near darkness -- enough to see the next few tiles clearly.",
+    "unidentified_name": "boxwood wand",
+    "lore": "For centuries the Church held that altar candles should be made of beeswax, because bees were thought pure and the flame burned clean. A parish chandler's stub is the model for this apprentice wand. It casts a small warm circle, enough to show the next few paces of floor and what is standing on them.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1657,8 +1657,8 @@
     "quiz_threshold": 1,
     "effect": "light",
     "power": "8",
-    "unidentified_name": "resin-coated wand",
-    "lore": "A journeyman explorer's wand. The tip flares like a well-tarred torch and lights the whole surrounding chamber.",
+    "unidentified_name": "larch wand",
+    "lore": "When Hades carried off Persephone, her mother Demeter lit two pine torches at the fires of Etna and searched the earth for nine days without eating or resting. An explorer's wand burns like one of them. The tip flares, and the whole of a chamber shows itself at once.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1684,7 +1684,7 @@
     "effect": "sunlight",
     "power": "",
     "unidentified_name": "gold-tipped wand",
-    "lore": "Master illuminator's wand. Floods the entire floor with daylight and reveals hidden and invisible creatures alike -- for one merciless instant.",
+    "lore": "Helios drives the sun across the sky and misses nothing. It was Helios who told Hephaestus what his wife was doing, and Helios who told Demeter where her daughter had gone. A master's wand opens his eye over an entire floor for an instant. Every passage is seen, and things that hid unseen are stripped of it.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1709,8 +1709,8 @@
     "quiz_threshold": 1,
     "effect": "wonder",
     "power": "",
-    "unidentified_name": "prismatic wand",
-    "lore": "Nobody knows what this wand will do next. It might heal you, blast your foes, or do something entirely unexpected. The chaos is the point.",
+    "unidentified_name": "porcelain wand",
+    "lore": "Zeus sent Pandora to mankind with a great storage jar and told her not to open it. She did, and every trouble flew out, and only Hope stayed under the lid. Erasmus mistranslated the jar as a box. Nobody knows what this wand will let out: mending, fire, sleep, or a sudden change of scenery.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1735,8 +1735,8 @@
     "quiz_threshold": 1,
     "effect": "wonder",
     "power": "",
-    "unidentified_name": "swirling-color wand",
-    "lore": "A master's wonder-wand. The outcomes are drawn from a much wider pool; the good ones are much better and the bad ones are much worse.",
+    "unidentified_name": "marble wand",
+    "lore": "Boethius, waiting in prison for his execution around 524, imagined Lady Fortune turning her wheel. Kings rise on one side and fall on the other, and she laughs at both. A master's wonder-wand spins the same wheel as the lesser kind, only harder. The good turns are better. Nothing else is promised.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1761,8 +1761,8 @@
     "quiz_threshold": 1,
     "effect": "wonder",
     "power": "",
-    "unidentified_name": "reality-warping wand",
-    "lore": "Archmage-grade chaos-craft. What happens when this wand fires is not on any table anywhere; the wielder is as surprised as the target.",
+    "unidentified_name": "driftwood wand",
+    "lore": "Eris, goddess of strife, was the one guest not invited to the wedding of Peleus and Thetis. She rolled a golden apple among the goddesses marked 'for the fairest', and ten years of war at Troy followed. This rod is her apple. Its bearer is as surprised as its target, every time.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -1788,7 +1788,7 @@
     "effect": "digging",
     "power": "",
     "unidentified_name": "iron-tipped wand",
-    "lore": "A dungeoneer's essential. Blasts open walls, doors, and secret passages in a straight line -- convenient for shortcuts and for escape.",
+    "lore": "In 1215 King John besieged Rochester Castle and set miners to dig beneath a corner of the keep. He then sent for forty of the fattest pigs in the county and burned their lard in the tunnel until the props gave way and the tower fell. The wand skips the pigs. Walls and doors around its bearer burst open.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1814,7 +1814,7 @@
     "effect": "cancellation",
     "power": "",
     "unidentified_name": "grey-crystal wand",
-    "lore": "A master abjurer's wand. Strips the target of every magical buff and enchantment it was wearing, leaving it as it was born.",
+    "lore": "On Carmel four hundred and fifty prophets of Baal called on their god from morning until noon, leaping and cutting themselves, and Elijah mocked that he must be asleep. Nothing answered. This wand brings the same silence to an enemy's magic. Every ward and blessing it wore goes out at once.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1840,7 +1840,7 @@
     "effect": "drain_magic",
     "power": "",
     "unidentified_name": "dull-violet wand",
-    "lore": "Strips magical effects from the target and, in the doing, drains the caster's own spent charge back into the wand for the next zap.",
+    "lore": "At Philippi a slave girl with a spirit of divination earned her owners a good living by telling fortunes. She followed Paul for days until he turned and ordered the spirit out. It left, and her owners' income left with it. The wand empties a creature of its borrowed power in the same abrupt way.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1866,7 +1866,7 @@
     "effect": "dispel_magic",
     "power": "",
     "unidentified_name": "clear-crystal wand",
-    "lore": "The standard dispelling wand. Removes one positive magical effect from the target -- the shield, the haste, the invisibility, whatever mattered most.",
+    "lore": "Pharaoh's magicians matched the first signs of Moses and Aaron. They made their own serpents, turned water to blood, and called up frogs. At the third plague, the gnats, their arts failed, and they told Pharaoh this was the finger of God. The wand ends a contest the same way: the enemy's enchantments simply stop.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1892,7 +1892,7 @@
     "effect": "teleport_monster",
     "power": "",
     "unidentified_name": "silver-sky wand",
-    "lore": "A conjurer's escape-hatch wand. Sends the target to a random tile on the floor -- ideally very far from you.",
+    "lore": "Hephaestus once took his mother's side in a quarrel, and Zeus seized him by the foot and threw him off Olympus. He fell for a whole day and landed at sunset on the island of Lemnos. A conjurer's wand hurls a creature just as freely to some far corner of the floor. It may walk back.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1918,7 +1918,7 @@
     "effect": "poison_monster",
     "power": "",
     "unidentified_name": "green-glass wand",
-    "lore": "An alchemist's wand. The target is poisoned for a long spell -- the damage is not immediate, but it is very reliable.",
+    "lore": "Heracles dipped his arrows in the gall of the Hydra, and from then on any scratch from them was fatal. One grazed the wise centaur Chiron, who was immortal and so could not die of it, and he begged to give his immortality away. The alchemist's wand is slower than those arrows but as patient.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1943,8 +1943,8 @@
     "quiz_threshold": 1,
     "effect": "disease_monster",
     "power": "",
-    "unidentified_name": "plague-brass wand",
-    "lore": "A necromancer's disease-wand. The target is wracked with sickness that lingers long after the fight, and takes a heavy toll immediately.",
+    "unidentified_name": "olive-wood wand",
+    "lore": "The Iliad opens with a plague. Agamemnon insulted a priest of Apollo, and the god came down from Olympus like nightfall and shot his arrows into the Greek camp for nine days, first the mules and dogs, then the men. The wand looses one arrow from that quiver. It hurts at once and goes on hurting.",
     "container_loot_tier": "uncommon",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1970,7 +1970,7 @@
     "effect": "curse_monster",
     "power": "",
     "unidentified_name": "black-lacquer wand",
-    "lore": "A master hexer's wand. Lays a slow-burning curse on the target that saps its speed and its luck at once.",
+    "lore": "At the hot spring of Bath, Romans scratched their grievances on small sheets of lead, rolled them up, and threw them to the goddess Sulis. About a hundred and thirty have been fished out, most asking her to ruin whoever stole a cloak. The hexer's wand delivers such a petition: bad luck and heavy feet.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -1996,7 +1996,7 @@
     "effect": "weaken_monster",
     "power": "",
     "unidentified_name": "dusty-rose wand",
-    "lore": "A journeyman debuffer's wand. Saps the target's strength and endurance for a stretch, softening the fight to come.",
+    "lore": "In the hall of Utgard-Loki, Thor was challenged to wrestle the king's old nurse, a crone named Elli. The harder he gripped, the firmer she stood, and at last she forced him down on one knee. Elli was Old Age, who throws everyone. The wand lends an enemy a few of her years.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -2021,8 +2021,8 @@
     "quiz_threshold": 1,
     "effect": "secret_door_detection",
     "power": "",
-    "unidentified_name": "hazel-fork wand",
-    "lore": "A dungeoneer's dowsing wand. Reveals any secret doors within the caster's sight radius -- the passages become clearly visible in the wall.",
+    "unidentified_name": "juniper wand",
+    "lore": "Georgius Agricola's great book on mining, printed in 1556, shows men walking the hills with forked hazel twigs that dip over hidden veins of ore. He doubted it worked. Down here it does. The dungeoneer's wand twitches toward the false wall and the door behind it shows plainly.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -2047,8 +2047,8 @@
     "quiz_threshold": 1,
     "effect": "opening",
     "power": "",
-    "unidentified_name": "brass-keyed wand",
-    "lore": "A thief-mage's wand. Every closed door within sight swings open; every locked chest clicks and lifts its lid.",
+    "unidentified_name": "antler wand",
+    "lore": "Herod chained Peter between two soldiers with sentries at the door. In the night an angel woke him, the chains dropped from his wrists, and the iron gate to the city opened for them by itself. A thief-mage's wand offers no angel, but every door in sight swings wide and every locked chest clicks.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -2074,7 +2074,7 @@
     "effect": "probing",
     "power": "",
     "unidentified_name": "quartz-tipped wand",
-    "lore": "A scholar's diagnostic wand. Reveals the target's true HP, its saves, and any resistances or vulnerabilities it carries.",
+    "lore": "In 1543 Andreas Vesalius published seven books on the fabric of the human body, drawn from dissections he did with his own hands, and overturned errors that had stood since Galen. A scholar's wand makes the same honest examination without the knife. It tells how much life a creature has left and what it shrugs off.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -2099,8 +2099,8 @@
     "quiz_threshold": 1,
     "effect": "death_ray",
     "power": "",
-    "unidentified_name": "bone-cored wand",
-    "lore": "Archmage-grade necromancy. A single black beam. If the target's save fails, its heart stops; if it saves, its heart wishes it had not.",
+    "unidentified_name": "whalebone wand",
+    "lore": "Balor, king of the Fomorians, had one eye that killed whatever it looked at. It took four men with a polished handle to lift the lid in battle, and whole companies fell when they did. His grandson Lugh put a sling stone through it. This rod opens the eye once. Only the mightiest survive the glance, and badly.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -2125,8 +2125,8 @@
     "quiz_threshold": 1,
     "effect": "disintegrate",
     "power": "12d10",
-    "unidentified_name": "void-black wand",
-    "lore": "Archmage-grade evocation. What the beam touches ceases to be; wall or flesh, the wand does not distinguish, and neither does the aftermath.",
+    "unidentified_name": "soapstone wand",
+    "lore": "Semele asked Zeus to come to her as he came to Hera, in his true form, and he had sworn by the Styx to grant her wish. No mortal could bear the sight. She burned to ash where she stood. The beam from this rod is a sliver of that glory, and what it touches usually ceases to be.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.3
@@ -2151,8 +2151,8 @@
     "quiz_threshold": 1,
     "effect": "drain_life",
     "power": "2d6",
-    "unidentified_name": "blood-oak wand",
-    "lore": "A journeyman necromancer's wand. Steals a portion of the target's life force and returns it to the caster as healing.",
+    "unidentified_name": "chestnut wand",
+    "lore": "At the edge of the world Odysseus dug a trench and filled it with the blood of a ram and a black ewe. The shades of the dead crowded up to drink, because only the blood gave them strength enough to speak. A necromancer's wand makes the same trade: life leaves the target and arrives in the bearer.",
     "container_loot_tier": "common",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -2178,7 +2178,7 @@
     "effect": "drain_life",
     "power": "5d8",
     "unidentified_name": "bone-inlaid wand",
-    "lore": "A master necromancer's wand. Draws a full share of the target's life across the room and pours it into the caster's veins.",
+    "lore": "Ovid describes the striges: birds with hooked beaks and grey feathers that flew by night to the cradles of unguarded infants and fed. Roman nurses hung whitethorn in the window to keep them out. A master necromancer's wand has their appetite. It draws a great draught of an enemy's life across the room.",
     "container_loot_tier": "rare",
     "weight": 0.3,
     "peak_weight": 0.25
@@ -2204,7 +2204,7 @@
     "effect": "heal",
     "power": "7d6",
     "unidentified_name": "a golden rod entwined with two serpents",
-    "lore": "The caduceus -- two serpents wound around a winged staff -- was carried by Hermes, messenger of the gods. Often confused with the Rod of Asclepius (the true medical symbol, with one snake), the caduceus nonetheless became the emblem of healing across the Western world. Each charge restores the body as if guided by divine medicine.",
+    "lore": "The caduceus is the herald's staff of Hermes: two serpents twined about a winged rod, the sign under which messengers passed unharmed. The true emblem of medicine is the single-snake staff of Asclepius, but in 1902 the United States Army Medical Corps adopted the caduceus by mistake, and the confusion stuck. The dungeon has taken the Army's side. This rod heals, and heals well.",
     "container_loot_tier": "rare",
     "identified": false,
     "weight": 0.3,
@@ -2231,7 +2231,7 @@
     "effect": "light",
     "power": "8",
     "unidentified_name": "a battered bronze lantern",
-    "lore": "Diogenes of Sinope carried a lantern through the streets of Athens in broad daylight. When asked why, he said: 'I am looking for an honest man.' He lived in a barrel, owned nothing, and told Alexander the Great to move because he was blocking the sun. This lantern still burns with that relentless search for truth -- its light reveals hidden things and never seems to run out.",
+    "lore": "Diogenes of Sinope lived in a storage jar in the marketplace of Athens and owned a cloak, a staff and a bag. He walked the streets at noon with a lit lantern, and when asked why, said he was looking for an honest man. When Alexander the Great offered him any favour, he asked the king to stop blocking the sun. The lantern still burns. It lights a whole chamber, and it is still looking.",
     "container_loot_tier": "rare",
     "identified": false,
     "weight": 0.3,
@@ -2273,8 +2273,8 @@
       80
     ],
     "weight_lb": 1.5,
-    "min_level": 30,
-    "peak_floor": 40,
+    "min_level": 40,
+    "peak_floor": 55,
     "spread": 12,
     "peak_weight": 0.2,
     "charges_min": 2,
@@ -2316,7 +2316,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a slender ivory wand",
-    "lore": "Circe's wand from her hall on Aeaea. She used it on Odysseus's crew and they became swine -- heads and bristles and grunts, but their minds knew themselves the whole time. Hermes gave Odysseus the herb moly to resist her; she gave up after the swine-spell failed and welcomed him. From the Odyssey, Book X.",
+    "lore": "Circe, daughter of the Sun, kept a house of polished stone on the island of Aeaea, with tame wolves and lions at the door. She gave the crew of Odysseus a drugged wine, touched them with her wand, and drove them into her sties as swine with the minds of men. Hermes gave Odysseus the herb moly, and against him her magic failed. In other hands the wand has grown careless. It still changes a creature, but into what, nobody chooses.",
     "container_loot_tier": "rare",
     "weight": 0.3
   },
@@ -2333,9 +2333,9 @@
     "peak_floor": 85,
     "spread": 12,
     "peak_weight": 0.2,
-    "charges_min": 1,
-    "charges_max": 2,
-    "max_charges": 2,
+    "charges_min": 2,
+    "charges_max": 3,
+    "max_charges": 3,
     "tier": 5,
     "quiz_tier": 5,
     "quiz_threshold": 1,
@@ -2344,7 +2344,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a heavy iron rod",
-    "lore": "The thunderbolt of Indra, made by Tvastr the divine craftsman from the bones of the sage Dadhichi, who gave his body for it. Indra struck Vritra the world-drought serpent with this and freed the seven rivers. From the Rigveda, Book I. It is not lightning -- it is the weapon that lightning was a memory of.",
+    "lore": "The Rigveda sings of the vajra, the thunderbolt that the craftsman-god Tvastr fashioned for Indra. With it Indra split open the serpent Vritra, who lay coiled on the mountains hoarding the waters, and the seven rivers ran to the sea. A later tradition says it was made from the bones of the sage Dadhichi, who gave up his body so the gods could have their weapon. Its bolt runs through everything that stands in a line.",
     "container_loot_tier": "rare",
     "weight": 0.3
   },
@@ -2374,7 +2374,7 @@
     "effect": "fire_bolt",
     "container_loot_tier": "legendary",
     "is_unique": true,
-    "lore": "The scepter of the King of Hell. Its ruby was cut from the fires of Pandemonium's court. Asmodeus carried it into every deal he wrote, and every deal burned in his favor. Now it burns for you.",
+    "lore": "In the Book of Tobit the demon Asmodeus killed seven husbands of Sarah, each on his wedding night, until the angel Raphael showed young Tobias how to drive him out with the smoke of a fish's heart and liver. Raphael chased the demon to Upper Egypt and bound him there. Later ages made him a king of Hell and gave him this sceptre. Its ruby holds a fire that has not cooled, and the rod spends it freely.",
     "design_notes": "Asmodeus L92 boss drop. Wired via monster.treasure.unique_drop_id.",
     "quiz_threshold": 1
   }

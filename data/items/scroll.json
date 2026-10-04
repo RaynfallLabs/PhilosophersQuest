@@ -17,7 +17,7 @@
     "effect": "heal",
     "power": "2d4",
     "unidentified_name": "faded rose parchment",
-    "lore": "A common apprentice-healer's scroll. Two dice of restoration in a single spoken word.",
+    "lore": "The prophet Jeremiah asked whether there was no balm in Gilead, the hill country whose fragrant resin caravans carried down to Egypt as medicine. Apprentice healers copy a short blessing over the balm onto cheap parchment. Read aloud, it closes a cut and steadies the reader, and little more.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -39,7 +39,7 @@
     "effect": "heal",
     "power": "4d4",
     "unidentified_name": "green-inked scroll",
-    "lore": "Temple-scribe copy of the standard healing prayer. Twice the flesh-mending of the apprentice cantrip.",
+    "lore": "At Salerno, on the coast south of Naples, Europe's first medical school taught from Greek, Latin, Arabic and Hebrew books, and admitted women among its teachers. Its masters wrote their best remedies as verses so that students would remember them. This is one such verse, and it mends an honest wound.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -61,7 +61,7 @@
     "effect": "heal",
     "power": "8d4",
     "unidentified_name": "pine-scented scroll",
-    "lore": "Druidic vigor-rite. Bark and sap wash through the reader, closing wounds faster than they were made.",
+    "lore": "The abbess Hildegard of Bingen wrote two books of medicine in the twelfth century and gave a name to the force she saw in sap and in healthy flesh alike: viriditas, the greening power. This rite calls on it. Wounds close over like a tree healing around a nail.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -83,7 +83,7 @@
     "effect": "heal",
     "power": "14d4",
     "unidentified_name": "silver-clasped scroll",
-    "lore": "Physician-mages of the late Empire could patch a mortally wounded knight and return him to the line in one breath. This is that breath, on parchment.",
+    "lore": "Jason's father Aeson was old and failing, and Medea took nine nights to gather herbs by chariot. She drained the old man's blood, filled his veins with her brew, and he rose forty years younger. The olive stick she stirred with had sprouted leaves. This rite restores a badly broken body in one reading.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -105,7 +105,7 @@
     "effect": "heal",
     "power": "22d4",
     "unidentified_name": "pearl-white parchment",
-    "lore": "The lost restorative liturgy of the Cathedral of St. John of God. Read it well and death itself hesitates.",
+    "lore": "Raphael means 'God heals'. In the Book of Tobit the archangel travelled in disguise as a hired guide and at the journey's end taught Tobias to cure his father's blindness with the gall of a fish. The old man saw his son and wept. This is the greatest of the healing rites, and death hesitates over its reader.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -127,7 +127,7 @@
     "effect": "mapping",
     "power": "",
     "unidentified_name": "yellowed parchment",
-    "lore": "A surveyor's rough shorthand. Reveals the ground within a few dozen paces.",
+    "lore": "Ariadne gave Theseus a ball of thread before he entered the Labyrinth. He tied one end to the door, killed the Minotaur at the centre, and followed the thread out. A surveyor's rough shorthand does the thread's work for the ground close by: a few dozen paces of passage, drawn in the mind.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -149,7 +149,7 @@
     "effect": "mapping",
     "power": "",
     "unidentified_name": "blue-inked scroll",
-    "lore": "A journeyman surveyor's kit-scroll. Chalk lines expand across your inner sight in every direction.",
+    "lore": "Roman surveyors laid out roads and camps with the groma, a staff topped by a cross with a plumb line at each arm. Sighting along two lines gave a perfect right angle, which is why their towns are still square. A journeyman's scroll sights down the corridors the same way, a good distance in every direction.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -170,8 +170,8 @@
     "quiz_threshold": 1,
     "effect": "mapping",
     "power": "",
-    "unidentified_name": "compass-marked scroll",
-    "lore": "The Cartographers' Guild seal on the wax. The scroll knows what the walls of the corridor look like even before you round the bend.",
+    "unidentified_name": "deckle-edged scroll",
+    "lore": "Medieval pilots sailed by portolan charts, drawn on a single calfskin with every harbour named along the coast and a web of compass lines crossing the sea. The oldest to survive, the Carta Pisana, is from about 1290. The scroll draws the passages like such a coast, well past the next several bends.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -193,7 +193,7 @@
     "effect": "mapping",
     "power": "",
     "unidentified_name": "sapphire-inked scroll",
-    "lore": "A dwarven deep-survey working. The lines it draws in the mind are the corridors, room by room, out to the boundary of the level.",
+    "lore": "On Samos in the sixth century before Christ, the engineer Eupalinos drove a water tunnel a full kilometre through a mountain. Two crews dug from opposite sides and met in the middle, almost exactly. The scroll holds that kind of knowledge of rock. Room by room, nearly all of a level takes shape.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -214,8 +214,8 @@
     "quiz_threshold": 1,
     "effect": "mapping",
     "power": "",
-    "unidentified_name": "star-charted scroll",
-    "lore": "The entire floor unfolds in your mind at once, every corridor, every chamber, every stairwell.",
+    "unidentified_name": "ivory-rodded scroll",
+    "lore": "About 1300 a cleric drew the whole world on one calfskin for Hereford Cathedral: Jerusalem at the centre, Paradise at the top, and hundreds of towns, beasts and marvels between. It hangs there still. This scroll is as ambitious about a single floor, and it is more accurate. Every corridor and stair appears at once.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -237,7 +237,7 @@
     "effect": "identify",
     "power": "",
     "unidentified_name": "torn scroll",
-    "lore": "Truth-ink from ground moonstone. Reveals the true name and nature of one item you choose.",
+    "lore": "Lydian goldsmiths tested a coin by rubbing it on a slab of black stone and reading the colour of the streak. They called the slab a touchstone, and it could not be fooled. The ink of this scroll is ground from the same idea. It gives the true name and nature of one chosen thing.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -258,8 +258,8 @@
     "quiz_threshold": 1,
     "effect": "identify",
     "power": "",
-    "unidentified_name": "twin-sealed scroll",
-    "lore": "Two truth-sigils bound in a single wax seal. Reveals a pair of items in one breath.",
+    "unidentified_name": "red-waxed scroll",
+    "lore": "Two women came before Solomon with one living child, each swearing it was hers. He called for a sword to divide the baby, and the true mother cried out to give it up. He knew her by that. This scroll settles two questions at a sitting: the first pair of unknown things in the pack are named.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -280,8 +280,8 @@
     "quiz_threshold": 1,
     "effect": "identify",
     "power": "",
-    "unidentified_name": "triple-sealed scroll",
-    "lore": "A merchant-appraiser's stock scroll. Names three items and their honest natures at once.",
+    "unidentified_name": "ribbon-tied scroll",
+    "lore": "A hand appeared at Belshazzar's feast and wrote on the plaster. None of Babylon's wise men could read it. Daniel could: three words, numbered, weighed, divided, and the kingdom fell that night. An appraiser's stock scroll reads three unknown things as plainly, and names them honestly.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -302,8 +302,8 @@
     "quiz_threshold": 1,
     "effect": "identify",
     "power": "",
-    "unidentified_name": "revealing scroll",
-    "lore": "The true-name working, spoken in the tongue of knowledge itself. Every unnamed item you bear is laid bare.",
+    "unidentified_name": "foxed scroll",
+    "lore": "Before there was any other work to do, God brought every beast of the field and bird of the air to Adam to see what he would call them, and whatever he called each one, that was its name. This rite runs the same parade through a pack. Every unnamed thing in it is named.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -325,7 +325,7 @@
     "effect": "identify",
     "power": "",
     "unidentified_name": "golden-lettered scroll",
-    "lore": "The Argus-sight rite. Every hidden name in your pack is revealed, and one corpse you carry gives up its lore as well.",
+    "lore": "Argus Panoptes, the all-seeing, had a hundred eyes and never closed more than a few at once. When Hermes killed him, Hera set the eyes in the peacock's tail. This rite opens all of them. Every hidden name in the pack is read, and one carcass among the baggage gives up its lore as well.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -346,8 +346,8 @@
     "quiz_threshold": 1,
     "effect": "enchant_weapon",
     "power": "",
-    "unidentified_name": "whetstone-scented scroll",
-    "lore": "A smith's first working. Sharpens the melee blade in your hand by one honing.",
+    "unidentified_name": "tallow-spotted scroll",
+    "lore": "Odin, travelling in disguise, showed nine farmhands a whetstone that put a finer edge on their scythes than any other. All nine wanted it. He tossed it in the air and they cut one another down reaching for it. A smith's first scroll is weaker. It takes on a blade only when the parchment itself has been blessed.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -369,7 +369,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "brass-inked scroll",
-    "lore": "A temple-armorer's blessing. Sanctifies both the blade and the bow you carry.",
+    "lore": "The old pontificals include a blessing of the sword, read over a new knight's blade before it was belted on, asking that it defend churches, widows and orphans. A temple armourer copied the prayer here. The weapon in hand comes away keener and truer than the smith left it.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -391,7 +391,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "silver-inked scroll",
-    "lore": "The standard weaponsmith's enchantment scroll. Two runes burn themselves into every weapon you wield.",
+    "lore": "Between the ninth and eleventh centuries, Frankish smiths sold swords with a name inlaid in iron down the blade: Ulfberht, between two crosses. The steel was so good that forgers copied the name and misspelled it. This scroll writes a true inscription. Both the blade in hand and the bow on the back take it.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -413,7 +413,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "gilt-edged scroll",
-    "lore": "The master-armorers of the dwarven academies signed and sealed this working. Three layers of enchantment onto every weapon you carry.",
+    "lore": "King Nidud cut the hamstrings of Wayland the Smith and kept him on an island to forge for the crown. Wayland made the king marvellous things, took his revenge, and flew away on wings of his own making. Beowulf's mail shirt was called Wayland's work. So is this rite, which betters every weapon carried, and betters it twice.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -435,7 +435,7 @@
     "effect": "enchant_weapon",
     "power": "",
     "unidentified_name": "meteor-iron scroll",
-    "lore": "The legendary-edge working. Not only does it enchant three times, it pushes one weapon a full step past its natural ceiling.",
+    "lore": "Odin drove the sword Gram into a tree and only Sigmund could draw it. It broke in his last battle, and the smith Regin reforged the pieces for Sigmund's son. Sigurd tested it by splitting the anvil to its base, then by cutting a tuft of wool that drifted against it in a stream. This rite gives that edge.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -457,7 +457,7 @@
     "effect": "enchant_armor",
     "power": "",
     "unidentified_name": "linen-wrapped scroll",
-    "lore": "A journeyman armorer's bracing-rite. One piece of your kit is tightened, reinforced, and made just a little truer.",
+    "lore": "Saul dressed the boy David in the royal bronze helmet and coat of mail. David took a few steps, said he could not go in armour he had not proved, and took it all off. An armourer's bracing-rite fits a piece of kit to its wearer. It holds only when the parchment has been blessed.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -478,8 +478,8 @@
     "quiz_threshold": 1,
     "effect": "enchant_armor",
     "power": "",
-    "unidentified_name": "chain-inked scroll",
-    "lore": "A temple-armorer's benediction over two pieces of worn kit.",
+    "unidentified_name": "sepia-inked scroll",
+    "lore": "On the night before he was knighted, a squire bathed, put on white, and laid his armour on the altar. He kept watch over it on his knees until morning. A temple armourer wrote down the blessing spoken at dawn. Read over worn harness, it strengthens a couple of pieces.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -501,7 +501,7 @@
     "effect": "enchant_armor",
     "power": "",
     "unidentified_name": "gleaming scroll",
-    "lore": "Standard armorer's-guild enchantment scroll. Three pieces of your kit are tightened, aligned, and hardened by two.",
+    "lore": "Before Beowulf sailed to face Grendel, he asked one thing of his king: if he died, send home his mail shirt, because Wayland had made it. A guild scroll cannot promise Wayland, but it makes a fair copy of his method. Several pieces of worn armour are drawn tighter and harder.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -523,7 +523,7 @@
     "effect": "enchant_armor",
     "power": "",
     "unidentified_name": "steel-clasped scroll",
-    "lore": "The master-armorer's working, signed in three languages. Four pieces of your armor are reinforced by two.",
+    "lore": "In the fifteenth century the Missaglia family of Milan made plate so well fitted that princes sent their measurements across the Alps rather than trust a local smith. Their mark was struck into every piece. This rite carries a master's mark. Most of a harness is reinforced, and well.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -545,7 +545,7 @@
     "effect": "enchant_armor",
     "power": "",
     "unidentified_name": "adamant-inked scroll",
-    "lore": "The legendary-ward working. Every plate, every buckle, every strap of your kit is elevated by three.",
+    "lore": "No weapon could pierce the Nemean lion, so Heracles strangled it. He then found that no knife would skin it either, until he thought to use the beast's own claws. He wore the hide for the rest of his life. The greatest armourer's rite makes every worn piece nearly that stubborn.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -567,7 +567,7 @@
     "effect": "remove_curse",
     "power": "",
     "unidentified_name": "pale scroll",
-    "lore": "An acolyte's uncurse-rite. Loosens the first cursed piece of gear you're wearing.",
+    "lore": "Monks who wanted rid of their abbot handed Benedict of Nursia a cup of poisoned wine. He made the sign of the cross over it, as he did before every meal, and the cup shattered. An acolyte's rite copies the gesture. One cursed thing the reader is wearing lets go.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -589,7 +589,7 @@
     "effect": "remove_curse",
     "power": "",
     "unidentified_name": "white-waxed scroll",
-    "lore": "A monastic purification rite. Every cursed piece of gear you wear is unbound.",
+    "lore": "Before Sunday Mass the priest walks the nave sprinkling the people with blessed water, while the choir sings the psalm verse about being washed whiter than snow. The rite is called the Asperges, after its first word. A monastic copy does the same for gear. Everything cursed that the reader wears is released.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -611,7 +611,7 @@
     "effect": "remove_curse",
     "power": "",
     "unidentified_name": "amethyst-inked scroll",
-    "lore": "A priest-exorcist's cleansing. Curses fall from your gear and afflictions fall from your body.",
+    "lore": "On the Day of Atonement the high priest laid both hands on a live goat, confessed over it the sins of all Israel, and sent it away into the wilderness. English calls it the scapegoat. An exorcist's rite loads a burden and drives it off the same way: curses fall from worn gear and afflictions from the body.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -633,7 +633,7 @@
     "effect": "remove_curse",
     "power": "",
     "unidentified_name": "myrrh-scented scroll",
-    "lore": "The purification liturgy from the Egyptian Book of Coming Forth by Day. Every cursed thing you carry, worn or stowed, is unbound.",
+    "lore": "The Egyptians buried their dead with a papyrus they called the Book of Coming Forth by Day. Its longest spell is a list of forty-two denials, one for each judge in the hall where the heart is weighed against a feather. This liturgy pleads as thoroughly. Every cursed thing carried, worn or stowed, is unbound.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -654,8 +654,8 @@
     "quiz_threshold": 1,
     "effect": "remove_curse",
     "power": "",
-    "unidentified_name": "consecrated scroll",
-    "lore": "The sanctification working. Uncurses everything and, beyond that, blesses one piece of worn gear for free.",
+    "unidentified_name": "vellum scroll",
+    "lore": "Isaiah saw the Lord enthroned and cried that he was a man of unclean lips. A seraph flew to him with a live coal taken from the altar with tongs, touched his mouth, and his guilt was gone. This rite does not stop at cleansing either. Every curse lifts, and one worn piece is left blessed.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -676,8 +676,8 @@
     "quiz_threshold": 1,
     "effect": "protection",
     "power": "",
-    "unidentified_name": "shielded scroll",
-    "lore": "A watchman's ward-charm. A thin shell of protective force wraps you for ten heartbeats.",
+    "unidentified_name": "twine-bound scroll",
+    "lore": "The Law told Israel to write its words on the doorposts of the house. To this day a small case holding a strip of parchment, the mezuzah, is fixed to the right side of a Jewish door. A watchman's charm works on that principle. A thin guard settles on the reader and soon fades.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -698,8 +698,8 @@
     "quiz_threshold": 1,
     "effect": "protection",
     "power": "",
-    "unidentified_name": "silver-warded scroll",
-    "lore": "A prayer of warding inscribed by temple acolytes. The words form a protective shell around the reader.",
+    "unidentified_name": "water-stained scroll",
+    "lore": "The prayer called Saint Patrick's Breastplate binds its speaker to the strength of heaven: Christ before, behind, beneath, above, on the right hand and the left. Tradition says Patrick sang it on the road to Tara and his enemies saw only deer go by. Temple acolytes copy it out. The words close around the reader.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -721,7 +721,7 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "azure-inked scroll",
-    "lore": "A greater-warding rite from the Order of the Shield. Three layers of protection for thirty heartbeats.",
+    "lore": "The ninety-first Psalm promises that no terror by night nor arrow by day will come near the one who trusts. For two thousand years people have worn it: on scraps of papyrus, in lockets, sewn into soldiers' coats. This rite is the Psalm written in full by a careful hand, and the guard it raises lasts.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -743,7 +743,7 @@
     "effect": "protection",
     "power": "",
     "unidentified_name": "bronze-clasped scroll",
-    "lore": "The aegis-rite of Athena's temple. A shield that no ordinary blade can find purchase against.",
+    "lore": "Hephaestus made the aegis for Zeus: a goatskin fringed with a hundred golden tassels, with the Gorgon's head at its centre. Athena wore it into battle more often than her father did, and not even his thunderbolt could break it. Her temple scribes wrote this rite. Ordinary blades find no purchase on its reader.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -764,8 +764,8 @@
     "quiz_threshold": 1,
     "effect": "protection",
     "power": "",
-    "unidentified_name": "star-warded scroll",
-    "lore": "The absolute-ward working. Eight layers of unbreachable armor for the space of eighty heartbeats.",
+    "unidentified_name": "horn-capped scroll",
+    "lore": "Nebuchadnezzar heated his furnace seven times hotter than usual and threw in Shadrach, Meshach and Abednego, bound. The king looked and saw four men walking loose in the fire. The three came out with not a hair singed and no smell of smoke on their coats. This is the longest and strongest of the warding rites.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -786,8 +786,8 @@
     "quiz_threshold": 1,
     "effect": "confuse_monsters",
     "power": "",
-    "unidentified_name": "swirling scroll",
-    "lore": "A tavern-conjurer's parlor trick. Every hostile creature in sight reels for four heartbeats.",
+    "unidentified_name": "crumpled scroll",
+    "lore": "In July 1518 a woman called Frau Troffea began to dance in a Strasbourg street and could not stop. Within a month hundreds had joined her. The council hired pipers and built a stage, which did not help. A tavern conjurer's scroll passes on a mild case. Every enemy in sight staggers for a moment.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -808,8 +808,8 @@
     "quiz_threshold": 1,
     "effect": "confuse_monsters",
     "power": "",
-    "unidentified_name": "spiraling scroll",
-    "lore": "An arena tamer's disorientation-rite. Every hostile creature in sight reels for a dozen heartbeats.",
+    "unidentified_name": "ochre-inked scroll",
+    "lore": "Odysseus told the Cyclops his name was Nobody. When the blinded giant screamed for help, his neighbours called through the rock to ask who was hurting him. Nobody, he roared, and they told him to pray and went back to bed. This rite sows that much muddle among every enemy in view.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -830,8 +830,8 @@
     "quiz_threshold": 1,
     "effect": "confuse_monsters",
     "power": "",
-    "unidentified_name": "vertigo-inked scroll",
-    "lore": "The great madness-working. Every creature in sight is unmoored from sense for twenty-five heartbeats.",
+    "unidentified_name": "violet-inked scroll",
+    "lore": "King Pentheus forbade the worship of Dionysus in Thebes. The god sent the king's own mother into the hills with the dancing women, and when Pentheus crept up to spy, she took him for a mountain lion. She carried her trophy home before her eyes cleared. This working unmoors every creature in sight, and for a long while.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -852,8 +852,8 @@
     "quiz_threshold": 1,
     "effect": "sleep_monsters",
     "power": "",
-    "unidentified_name": "poppy-scented scroll",
-    "lore": "A midwife's soothing-cantrip. Every creature in sight drifts for six heartbeats.",
+    "unidentified_name": "clove-scented scroll",
+    "lore": "A dragon that never slept guarded the Golden Fleece. Medea walked up to it singing, dipped a sprig of fresh-cut juniper in her potion, and sprinkled its eyes until the great head sank. Jason took the Fleece off the oak. A soothing-charm in her manner makes everything in sight nod, briefly.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -874,8 +874,8 @@
     "quiz_threshold": 1,
     "effect": "sleep_monsters",
     "power": "",
-    "unidentified_name": "drowsy scroll",
-    "lore": "Penned by the dream-weavers of Morpheus in ink distilled from poppy essence. Every creature in sight is swept into deep slumber.",
+    "unidentified_name": "thumb-worn scroll",
+    "lore": "Ovid put the house of Sleep in a cave the sun never enters. The river Lethe murmurs over pebbles at its foot, poppies grow at the mouth, and there is no door, in case a hinge should creak. The scroll's ink is pressed from those poppies. Every creature in sight goes down together.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -897,7 +897,7 @@
     "effect": "sleep_monsters",
     "power": "",
     "unidentified_name": "midnight-blue scroll",
-    "lore": "The deep-slumber working, said to have been used to render whole armies unconscious in the wars of the ancient Levant.",
+    "lore": "Seven young Christians of Ephesus hid in a cave from the emperor Decius, who had the entrance walled up. They woke when a farmer broke the wall, and sent one of their number to buy bread with coins nearly two centuries old. This working lays a shadow of that sleep on all in view.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -917,9 +917,9 @@
     "quiz_tier": 2,
     "quiz_threshold": 1,
     "effect": "haste_self",
-    "power": "10",
-    "unidentified_name": "wind-etched scroll",
-    "lore": "A courier's quickness-charm. Ten heartbeats of doubled pace.",
+    "power": "15",
+    "unidentified_name": "papyrus scroll",
+    "lore": "When the Persians landed at Marathon, Athens sent the runner Pheidippides to ask Sparta for help. Herodotus says he covered the distance, about a hundred and fifty miles of mountain road, by the second day. A courier's charm lends his legs for a short stretch: two strides in the time of one.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -940,8 +940,8 @@
     "quiz_threshold": 1,
     "effect": "haste_self",
     "power": "15",
-    "unidentified_name": "blurred scroll",
-    "lore": "Written in quicksilver ink -- or so the seller claimed -- by fleet-footed Hermes himself. Fifteen heartbeats of doubled pace.",
+    "unidentified_name": "copper-inked scroll",
+    "lore": "After the fire fell on Carmel, Elijah warned King Ahab to harness his chariot before the rain stopped him. Then the hand of the Lord came on the prophet. He tucked his cloak into his belt and ran ahead of the horses all the way to Jezreel. The scroll gives that run to its reader.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -961,9 +961,9 @@
     "quiz_tier": 5,
     "quiz_threshold": 1,
     "effect": "haste_self",
-    "power": "38",
-    "unidentified_name": "sunlit scroll",
-    "lore": "The great alacrity-working. Thirty-eight heartbeats of the messenger-god's own pace.",
+    "power": "15",
+    "unidentified_name": "saffron-dyed scroll",
+    "lore": "Virgil says the warrior maiden Camilla ran so lightly that she could cross a field of standing wheat without bending an ear, and skim the sea without wetting her feet. She led the cavalry of the Volsci against Aeneas. The greatest of the speed rites lasts far longer than any other.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -976,7 +976,7 @@
       255
     ],
     "weight_lb": 0.1,
-    "min_level": 8,
+    "min_level": 4,
     "peak_floor": 26,
     "spread": 8,
     "tier": 2,
@@ -984,8 +984,8 @@
     "quiz_threshold": 1,
     "effect": "teleport_self",
     "power": "",
-    "unidentified_name": "trembling scroll",
-    "lore": "An apprentice's short-teleport working. You dissolve here and reconstitute on some walkable tile the scroll picks.",
+    "unidentified_name": "birch-bark scroll",
+    "lore": "The prophet Habakkuk was carrying stew to the reapers in Judea when an angel took him by the hair and set him down in Babylon, beside the lions' den where Daniel sat hungry. He handed over the dinner and was returned. An apprentice's scroll moves its reader as abruptly. It does not say where.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1007,7 +1007,7 @@
     "effect": "teleport_self",
     "power": "",
     "unidentified_name": "shimmering scroll",
-    "lore": "The Alexandrian spatial working. Your body dissolves here and reconstitutes at a place you have already been.",
+    "lore": "The Phaeacians owned ships that needed no helmsman, because the ships knew every harbour and steered by thought. One carried Odysseus home in a single night. The crew laid him asleep on the beach of Ithaca and were gone by dawn. This working is as sure: it sets its reader down somewhere already walked.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1028,8 +1028,8 @@
     "quiz_threshold": 1,
     "effect": "teleport_self",
     "power": "",
-    "unidentified_name": "spiraling scroll",
-    "lore": "The recall-rite of the deep-cave surveyors. Space folds -- you step directly onto the stairs down.",
+    "unidentified_name": "cedar-rodded scroll",
+    "lore": "The Sibyl told Aeneas that the road down to Avernus is easy, for the door of the dark stands open night and day. Getting back up is the labour. The surveyors of the deep caves took her at her word. Space folds, and the reader stands at the head of the stairs going down.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1050,8 +1050,8 @@
     "quiz_threshold": 1,
     "effect": "charging",
     "power": "",
-    "unidentified_name": "static-inked scroll",
-    "lore": "An artificer's apprentice-charm. One wand in your pack gains a single charge.",
+    "unidentified_name": "walnut-inked scroll",
+    "lore": "In the 1780s Luigi Galvani touched a dissected frog's leg with two different metals and it kicked. He thought he had found the animal's own vital spark. An artificer's apprentice-charm passes a twitch of that sort into tired wands. The two most spent in the pack each regain a little.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1072,8 +1072,8 @@
     "quiz_threshold": 1,
     "effect": "charging",
     "power": "",
-    "unidentified_name": "crackling scroll",
-    "lore": "Inscribed by the artificers who first learned to trap raw magical force in crystalline matrices. Every wand you carry gains a charge.",
+    "unidentified_name": "calfskin scroll",
+    "lore": "Alessandro Volta doubted Galvani's frogs and in 1800 stacked discs of zinc and silver between brine-soaked card. The pile gave a steady current, and Napoleon made him a count for it. The unit of electrical pressure bears his name. This rite stacks the discs afresh: every wand carried gains a charge.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1094,8 +1094,8 @@
     "quiz_threshold": 1,
     "effect": "charging",
     "power": "",
-    "unidentified_name": "lightning-veined scroll",
-    "lore": "The full recharge working. Every wand in your pack crackles up to its maximum charges at once.",
+    "unidentified_name": "lead-sealed scroll",
+    "lore": "In a famine, a widow of Zarephath shared her last handful of flour and last drop of oil with Elijah. From that day the jar of flour was never emptied and the jug of oil never ran dry until the rains came. The great working fills every wand in the pack to its brim.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1116,8 +1116,8 @@
     "quiz_threshold": 1,
     "effect": "full_light",
     "power": "",
-    "unidentified_name": "glowing scroll",
-    "lore": "A candle-lighter's cantrip on parchment. Soft light spreads outward, revealing half the floor.",
+    "unidentified_name": "moth-eaten scroll",
+    "lore": "Hero was a priestess at Sestos, and every night she set a lamp in her tower window so that Leander could swim the Hellespont to her by its light. A candle-lighter's cantrip sets out the same lamp. A soft glow spreads from the reader and shows a good half of the floor.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1138,8 +1138,8 @@
     "quiz_threshold": 1,
     "effect": "full_light",
     "power": "",
-    "unidentified_name": "sunlit scroll",
-    "lore": "A greater illumination-rite. The whole floor lights up, and for ten heartbeats you see the position of every living thing.",
+    "unidentified_name": "indigo-inked scroll",
+    "lore": "Sostratus of Cnidus built the Pharos of Alexandria about 280 years before Christ: three tiers of pale stone, among the tallest buildings on earth, with a fire at the top that ships saw some thirty miles out. This rite lights a floor from end to end, and briefly shows what moves on it.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1160,8 +1160,8 @@
     "quiz_threshold": 1,
     "effect": "full_light",
     "power": "",
-    "unidentified_name": "star-bright scroll",
-    "lore": "The revelation-working of the astronomer-priests. Full illumination, and sixty heartbeats of clairvoyance, and every creature on the floor lit like a star in your mind.",
+    "unidentified_name": "cinnabar-inked scroll",
+    "lore": "Lynceus sailed with the Argonauts as their lookout because his eyes could see through the trunk of an oak and into the ground beneath it. From a mountain top he once spotted a man hiding inside a hollow tree. The greatest light-working gives his sight for a long while: the whole floor, and every living thing on it.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1182,8 +1182,8 @@
     "quiz_threshold": 1,
     "effect": "enchant_accessory",
     "power": "",
-    "unidentified_name": "jeweled scroll",
-    "lore": "Written by enchanter-jewelers of the elven courts. One accessory you wear gains an additional layer of power.",
+    "unidentified_name": "leather-cased scroll",
+    "lore": "Eligius was a goldsmith so honest that when King Clotaire gave him gold for one throne he made two and handed back both. He became a bishop, and jewellers still keep his feast. The rite is his workmanship. A pair of worn trinkets are each made a little more than they were.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1204,8 +1204,8 @@
     "quiz_threshold": 1,
     "effect": "enchant_accessory",
     "power": "",
-    "unidentified_name": "gem-studded scroll",
-    "lore": "A master-jeweler's rite. Two accessories on your person are enchanted by two.",
+    "unidentified_name": "tightly-rolled scroll",
+    "lore": "Polycrates of Samos had such unbroken luck that a friend warned him to throw away what he valued most. He rowed out and dropped his emerald signet into the sea. Days later a fisherman brought him a fine fish as a gift, and the ring was inside it. This rite improves a few worn pieces as stubbornly.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1227,7 +1227,7 @@
     "effect": "enchant_accessory",
     "power": "",
     "unidentified_name": "aetheric scroll",
-    "lore": "The great trinketry-working. Every accessory you wear is elevated by three.",
+    "lore": "The dwarf brothers Brokkr and Sindri made the gold arm-ring Draupnir for Odin. Every ninth night eight new rings of equal weight drip from it. Odin laid it on Baldr's pyre, and Baldr sent it back from the land of the dead. Under this working every ring and amulet worn takes a share of that plenty.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1248,8 +1248,8 @@
     "quiz_threshold": 1,
     "effect": "enchant_item",
     "power": "",
-    "unidentified_name": "glowing scroll",
-    "lore": "A universal enchantment-rite from the Alexandrian school. Three pieces of your equipped kit gain a rune.",
+    "unidentified_name": "margin-noted scroll",
+    "lore": "When Israel built the Tabernacle in the desert, the Lord named the craftsman: Bezalel of Judah, filled with skill to work gold, silver and bronze, to cut stones and to carve wood. A universal rite needs hands like his, good at everything. A few pieces of worn gear, of any kind, are improved.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1271,7 +1271,7 @@
     "effect": "enchant_item",
     "power": "",
     "unidentified_name": "brilliant scroll",
-    "lore": "The greater universal-enchantment. Five pieces of your equipped kit gain two runes each.",
+    "lore": "Loki wagered his own head that the dwarf Brokkr could not match the treasures of the sons of Ivaldi, then turned into a fly and bit the smith's eyelid at the bellows. Brokkr won anyway, with a hammer whose handle came out short. The greater rite has a dwarf's thoroughness: a good share of the kit, well bettered.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1293,7 +1293,7 @@
     "effect": "enchant_item",
     "power": "",
     "unidentified_name": "aurora-inked scroll",
-    "lore": "The grand universal-enchantment. Every piece of gear you wear gains three runes at once.",
+    "lore": "Thetis found Hephaestus sweating at his bellows, making twenty tripods on golden wheels that would roll to the gods' feasts and home again unaided. Maids of gold who could think and speak held him by the arm as he limped to greet her. Whatever is worn, this working sends through his forge.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1314,8 +1314,8 @@
     "quiz_threshold": 1,
     "effect": "earth",
     "power": "4d4",
-    "unidentified_name": "granite-grained scroll",
-    "lore": "A stone-caller's rite. A hail of falling rock crashes down on every foe in sight, scaling with your wit.",
+    "unidentified_name": "salt-crusted scroll",
+    "lore": "Five Amorite kings fled from Joshua down the pass of Beth-horon, and great stones fell on their army out of the sky. The book says more died by the hailstones than by the sword. A stone-caller's rite repeats the day on a small scale. Rock drops on every enemy in sight, harder the sharper the reader's mind.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1336,8 +1336,8 @@
     "quiz_threshold": 1,
     "effect": "earth",
     "power": "4d4",
-    "unidentified_name": "rumbling scroll",
-    "lore": "Ancient druidic script that calls upon the weight of the earth itself. Boulders crash down upon every visible foe.",
+    "unidentified_name": "tea-brown scroll",
+    "lore": "Korah and his company rose against Moses in the desert. Moses said that if these men died a common death he had not been sent. The ground split under their tents, swallowed them alive with all they owned, and closed. This rite opens the roof instead of the floor. Boulders fall on all in view.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1358,8 +1358,8 @@
     "quiz_threshold": 1,
     "effect": "earth",
     "power": "4d4",
-    "unidentified_name": "obsidian-flecked scroll",
-    "lore": "The great cataclysm-working. The ceiling opens and a mountain's worth of stone crashes down on everything in sight.",
+    "unidentified_name": "candle-smoked scroll",
+    "lore": "Typhon had a hundred serpent heads and stood taller than the mountains, and the gods fled from him as far as Egypt. Zeus fought him across the world and finally threw Mount Etna on top of him. The smoke is his breath. This working drops a mountainside on everything the reader can see.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1381,7 +1381,7 @@
     "effect": "annihilate",
     "power": "",
     "unidentified_name": "smoldering scroll",
-    "lore": "A minor annihilation-rite. Four of the weakest creatures in sight are unmade in a flash of white light.",
+    "lore": "Nadab and Abihu, sons of Aaron, filled their censers and offered before the Lord a fire he had not commanded. Fire came out from his presence and consumed them where they stood, and Aaron held his peace. The rite is short. A white flash takes a few of the weakest creatures in sight.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1403,7 +1403,7 @@
     "effect": "annihilate",
     "power": "",
     "unidentified_name": "scorched scroll",
-    "lore": "A greater annihilation-rite. Half of every non-boss creature in sight is unmade at once.",
+    "lore": "At midnight in Egypt the Destroyer went through the land, house by house. Where lamb's blood marked the doorposts it passed over. Where there was none it took the firstborn, and there was a great cry. This rite sends something like it through a room. Half of what stands in sight, the lesser half, is gone.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1425,7 +1425,7 @@
     "effect": "annihilate",
     "power": "",
     "unidentified_name": "ash-flecked scroll",
-    "lore": "The most feared rite in the archivist's catalogue. Every non-boss creature in sight dissolves in a flash of obliterating white energy. Bosses and the mightiest of foes are unaffected.",
+    "lore": "Sennacherib of Assyria camped before Jerusalem with an army that had already taken forty-six walled towns. In one night the angel of the Lord went through the camp, and in the morning a hundred and eighty-five thousand lay dead. The king went home. Only the very mightiest are still standing when this rite ends.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1447,7 +1447,7 @@
     "effect": "genocide",
     "power": "",
     "unidentified_name": "crimson-inked scroll",
-    "lore": "A lesser purge-working. The most common kind of creature in sight is erased from this floor.",
+    "lore": "The legend is set in 1284: a piper in many-coloured clothes came to Hamelin and offered to deal with its rats. He played, and every rat in the town followed him into the river Weser and drowned. This working plays one tune. The commonest kind of creature in sight leaves the floor entirely.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1469,7 +1469,7 @@
     "effect": "genocide",
     "power": "",
     "unidentified_name": "blood-red scroll",
-    "lore": "A terrifying scroll of absolute power. Speaking the words erases the two most common kinds of creature in sight from this floor. Even reading it feels like a transgression.",
+    "lore": "Ireland has no snakes and never did. The Irish credit Patrick, who is said to have fasted forty days on a mountain in Mayo and then driven every serpent on the island into the sea with his staff. This rite makes a harsher clearance. The two commonest kinds in sight are erased from the floor.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1491,7 +1491,7 @@
     "effect": "genocide",
     "power": "",
     "unidentified_name": "obsidian-inked scroll",
-    "lore": "The great exile-working. Every kind of non-boss creature in sight is erased from this floor at once.",
+    "lore": "When Pharaoh begged, Moses prayed and the plagues lifted as completely as they had come. The frogs died in the houses and fields. The flies left until not one remained. A west wind carried the locusts into the sea and not a single locust was left in Egypt. Under this working every lesser kind in sight goes the same way.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1512,8 +1512,8 @@
     "quiz_threshold": 1,
     "effect": "time_stop_scroll",
     "power": "10",
-    "unidentified_name": "hourglass-marked scroll",
-    "lore": "A chronomancer's minor time-slowing rite. Ten heartbeats of stillness.",
+    "unidentified_name": "palimpsest scroll",
+    "lore": "King Hezekiah lay dying and asked for a sign that he would recover. Isaiah offered a choice, and the king asked for the harder thing: the shadow on the stairway of Ahaz went backward ten steps. A chronomancer's lesser rite takes back a few moments in which only the reader moves.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1533,9 +1533,9 @@
     "quiz_tier": 4,
     "quiz_threshold": 1,
     "effect": "time_stop_scroll",
-    "power": "15",
-    "unidentified_name": "frozen scroll",
-    "lore": "The theoretical framework for this scroll was laid by Zeno of Elea, who proved logically that motion is an illusion. Fifteen heartbeats of absolute stillness.",
+    "power": "10",
+    "unidentified_name": "onion-skin scroll",
+    "lore": "Zeno of Elea argued that an arrow in flight occupies, at every instant, a space exactly its own size, and so at every instant is at rest. If it never moves in any instant, when does it move? Philosophers argued for two thousand years. The scroll simply agrees with him for a time.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1555,9 +1555,9 @@
     "quiz_tier": 5,
     "quiz_threshold": 1,
     "effect": "time_stop_scroll",
-    "power": "25",
-    "unidentified_name": "eternity-inked scroll",
-    "lore": "The great time-stop working. Twenty-five heartbeats of absolute stillness -- the dungeon holds its breath.",
+    "power": "10",
+    "unidentified_name": "dog-eared scroll",
+    "lore": "Joshua needed daylight to finish the battle at Gibeon, and he spoke in the sight of all Israel. The sun stood still over Gibeon and the moon over the valley of Aijalon for about a whole day. There has been no day like it. The great working gives its reader a long stretch of that stillness.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1579,7 +1579,7 @@
     "effect": "great_power",
     "power": "",
     "unidentified_name": "solar scroll",
-    "lore": "A minor power-rite. The three faculties in which you are weakest are each permanently elevated by one.",
+    "lore": "Milo of Croton won the wrestling at six Olympic Games. The story of his training is that he lifted a newborn calf onto his shoulders every day until it was a full-grown bull. The rite compresses his years into a reading. The reader's three weakest faculties are raised, and they stay raised.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1601,7 +1601,7 @@
     "effect": "great_power",
     "power": "",
     "unidentified_name": "coronal scroll",
-    "lore": "The greater power-working. Five of your faculties are permanently elevated by one.",
+    "lore": "In the fifth century Martianus Capella wrote an allegory in which seven bridesmaids each present one art: Grammar, Logic, Rhetoric, Geometry, Arithmetic, Astronomy, Music. Schools taught those seven for the next thousand years. The rite is a whole education at a sitting. Nearly every faculty of the reader is raised for good.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -1623,7 +1623,7 @@
     "effect": "great_power",
     "power": "",
     "unidentified_name": "blazing scroll",
-    "lore": "The capstone work of the philosopher Porphyry, who spent forty years distilling the essence of Aristotle's categories into a single transformative incantation. Every faculty within you is permanently elevated by one.",
+    "lore": "About the year 270 Porphyry of Tyre wrote a short introduction to Aristotle's logic. It sorted everything that exists into a branching tree, from substance down to Socrates, and students copied it out for a thousand years. This is the tree in full. Every faculty the reader has is permanently raised.",
     "weight": 0.1,
     "peak_weight": 0.25
   },
@@ -2333,7 +2333,7 @@
       "81-100": 0
     },
     "is_unique": true,
-    "lore": "Nine seals, nine names, nine gates of the Pit. Asmodeus wrote this scroll on the vellum of a fallen archon. Reading it unleashes the fire of every layer at once.",
+    "lore": "Dante counted nine circles in his Inferno, narrowing like a funnel to the frozen lake at the bottom, and set a different ruin in each. Nine seals close this vellum, one for every circle, pressed in wax the colour of old blood by the demon Asmodeus. Broken together, they unmake every lesser creature in sight. The mightiest stand untouched.",
     "design_notes": "Asmodeus L92 boss reward. Wired via monster.treasure.boss_scroll_id.",
     "quiz_threshold": 1,
     "peak_weight": 2.5,
@@ -2369,7 +2369,7 @@
       "81-100": 0
     },
     "is_unique": true,
-    "lore": "Tiamat's five heads spoke five breaths — fire, cold, lightning, acid, poison — into this scroll before she fell. Reading it calls all five at once upon whoever stands nearest to you.",
+    "lore": "In the Babylonian creation poem Tiamat is the salt sea, mother of the first gods. When they killed her husband she bore eleven monsters and went to war. Marduk caught her in a net, split her like a dried fish, and made the sky from one half. Dragon-lore gave her five heads and five colours. This scroll speaks for all five at once, and nothing lesser in sight outlives it.",
     "design_notes": "Tiamat L85 boss reward. Wired via monster.treasure.boss_scroll_id.",
     "quiz_threshold": 1,
     "peak_weight": 2.5,

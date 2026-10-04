@@ -26,7 +26,7 @@
     "rare_wood",
     "exotic_organic"
   ],
-  "lore_template": "A {material_name} heavy crossbow. Cranks, levers, and a bolt that goes through plate.",
+  "lore_template": "A {material_name} heavy crossbow, spanned with a windlass because no arm can draw it. In 1139 the Church tried to ban crossbows against Christians, since a peasant with one could kill a knight in full armour.",
   "design_notes": "v2 chain rebalance: heavy class, 3 rungs. Midpoint rung 2 = 1.00× (1.0× anchor band). Peak rung 3 = 1.50×. Class mechanic: Ignores ALL armor AC. Single-shot reload. Speed 6 (slowest). (see weapon_class_chain + class_mechanic fields). damage_modifier 1.4 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "heavy",
   "class_mechanic": "ignores_all_armor",

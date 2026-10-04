@@ -31,7 +31,7 @@
     "common",
     "burnable"
   ],
-  "lore_descriptor": "honest grain, smelling of forest air",
+  "lore_descriptor": "close-grained and stubborn, cut from the tree sacred to Zeus and to Thor",
   "unidentified_descriptor": "a wooden haft",
   "first_pickup_chronicle": "Oak. The first tool any tribe makes. A club, a staff, a bow — oak does all three.",
   "design_notes": "Chain combat v2 tuning: damage_mult 0.75, weight_mult 0.90, no effective_against (T1 core wood). Wood doesn't keep an edge. Vulnerable to fire (rangers learn this fast)."

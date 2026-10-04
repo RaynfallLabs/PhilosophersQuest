@@ -26,7 +26,7 @@
     "rare_wood",
     "exotic_organic"
   ],
-  "lore_template": "A {material_name} light crossbow. Slower than a bow, but anyone can pull the trigger.",
+  "lore_template": "A {material_name} light crossbow, spanned with a lever at the belt. A longbowman takes ten years to train. A crossbowman takes a week, which is why armies loved them.",
   "design_notes": "v2 chain rebalance: heavy class, 4 rungs. Midpoint rung 2 = 1.00× (1.0× anchor band). Peak rung 4 = 1.75×. Class mechanic: Ignores half of target armor AC. Single-shot reload between volleys. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.1 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "heavy",
   "class_mechanic": "ignores_half_armor",

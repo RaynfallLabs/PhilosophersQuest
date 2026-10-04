@@ -18,8 +18,8 @@
     "spell_id": "fire_spark_spell",
     "spell_name": "Fire Spark",
     "mp_cost": 3,
-    "unidentified_name": "scorched slim tome",
-    "lore": "An apprentice's first fire cantrip. A candle-hot dart of flame is enough to teach the shape of the spell.",
+    "unidentified_name": "russet slim tome",
+    "lore": "Zeus hid fire from mankind, and Prometheus stole it back from Olympus inside the pithy stalk of a giant fennel, where an ember will smoulder for hours without burning through. Every apprentice's first fire lesson is a copy of that theft. The spell throws one dart of flame, hot as a candle and about as large.",
     "weight": 0.3
   },
   "spellbook_fire_bolt": {
@@ -41,8 +41,8 @@
     "spell_id": "fire_bolt_spell",
     "spell_name": "Fire Bolt",
     "mp_cost": 6,
-    "unidentified_name": "scorched red tome",
-    "lore": "A bolt of concentrated flame. Dangerous to fire-resistant creatures, devastating to the rest.",
+    "unidentified_name": "ochre tome",
+    "lore": "The Chimera had a lion's head, a goat's body and a serpent's tail, and it breathed fire over Lycia. Bellerophon flew above it on Pegasus and thrust a lump of lead into its throat on the point of his lance. Its own breath melted the lead and choked it. This primer teaches the breath: one hard bolt of flame.",
     "weight": 0.3
   },
   "spellbook_fireball": {
@@ -64,8 +64,8 @@
     "spell_id": "fireball_spell",
     "spell_name": "Fireball",
     "mp_cost": 10,
-    "unidentified_name": "scorched crimson tome",
-    "lore": "The quintessential battle mage's spell. A rolling sphere of flame engulfs everything in sight.",
+    "unidentified_name": "oak-boarded tome",
+    "lore": "Later writers say that when the Roman fleet closed on Syracuse in 212 before Christ, Archimedes lined the walls with polished bronze shields and turned the noon sun onto the ships until their timbers caught. Engineers still argue over whether it could work. The battle-mage's version does. Everything hostile in sight burns at once.",
     "weight": 0.3
   },
   "spellbook_meteor": {
@@ -87,8 +87,8 @@
     "spell_id": "meteor_spell",
     "spell_name": "Meteor",
     "mp_cost": 16,
-    "unidentified_name": "charred obsidian tome",
-    "lore": "A fragment of a dying star, summoned from the void and hurled into the material plane. Everything in sight burns.",
+    "unidentified_name": "nail-studded tome",
+    "lore": "On 7 November 1492 a stone weighing more than a hundred kilograms fell with a thunderclap into a wheat field outside Ensisheim in Alsace. The townsfolk chained it up inside the church so that it could not leave the way it came. This tome teaches how to call one down. Whatever stands in sight is under it.",
     "weight": 0.3
   },
   "spellbook_cataclysm": {
@@ -110,8 +110,8 @@
     "spell_id": "cataclysm_spell",
     "spell_name": "Cataclysm",
     "mp_cost": 24,
-    "unidentified_name": "cinder-black tome that smokes faintly",
-    "lore": "The final chapter of the Book of the Sky-Fall. Five meteors, one word, no survivors within sight.",
+    "unidentified_name": "double-strapped umber tome",
+    "lore": "There were five cities on the plain of the Jordan. Abraham bargained for them down to ten righteous men, and ten could not be found. Brimstone and fire rained from heaven, and in the morning he saw smoke going up like the smoke of a furnace. The last fire spell brings down five burning stones in succession.",
     "weight": 0.3
   },
   "spellbook_frost_touch": {
@@ -133,8 +133,8 @@
     "spell_id": "frost_touch_spell",
     "spell_name": "Frost Touch",
     "mp_cost": 3,
-    "unidentified_name": "frost-rimed slim tome",
-    "lore": "Bound in seal-skin, the pages still cold to the touch decades after copying. The first ice-cantrip every Lapp shaman learned.",
+    "unidentified_name": "sealskin slim tome",
+    "lore": "In Hans Christian Andersen's tale of 1844, a splinter of a goblin's mirror lodges in a boy's heart and it becomes a lump of ice. The Snow Queen has only to kiss him twice and he no longer feels the cold at all. The first frost lesson is a touch of that sort. It bites, and it sometimes slows.",
     "weight": 0.3
   },
   "spellbook_cold_bolt": {
@@ -156,8 +156,8 @@
     "spell_id": "cold_bolt_spell",
     "spell_name": "Cold Bolt",
     "mp_cost": 6,
-    "unidentified_name": "frost-veined tome",
-    "lore": "A shard of ice hurled at speed. The pages shed thin frost when handled.",
+    "unidentified_name": "slate-blue tome",
+    "lore": "The giantess Skadi came down from the mountains in full armour to avenge her father, and the gods bought peace with a husband. She had to choose by feet alone and picked the wrong god. She went home to hunt on skis. This tome teaches her kind of shot: a shard of ice that leaves its mark slow.",
     "weight": 0.3
   },
   "spellbook_ice_storm": {
@@ -179,8 +179,8 @@
     "spell_id": "ice_storm_spell",
     "spell_name": "Ice Storm",
     "mp_cost": 15,
-    "unidentified_name": "frozen indigo tome",
-    "lore": "Freezing shards blast every visible monster. A battlefield-clearing spell.",
+    "unidentified_name": "marbled-edge tome",
+    "lore": "The seventh plague of Egypt was hail, with fire running along the ground among it, the worst since Egypt became a nation. It broke every tree and beat down the flax and the barley in the fields. Only Goshen was spared. The spell is that sky in a single room. Every enemy in sight is under the stones.",
     "weight": 0.3
   },
   "spellbook_cone_of_cold": {
@@ -202,8 +202,8 @@
     "spell_id": "cone_of_cold_spell",
     "spell_name": "Cone of Cold",
     "mp_cost": 22,
-    "unidentified_name": "glacier-blue tome",
-    "lore": "Annals of Norilsk: thirty years of arctic-mage observations. A widening cone of glacial cold that freezes flesh in a heartbeat.",
+    "unidentified_name": "sharkskin tome",
+    "lore": "Dante expected fire at the bottom of Hell and found ice. Traitors lie frozen in the lake Cocytus to their necks, and at its centre Satan stands locked to the chest, beating six wings whose wind keeps the whole lake hard. The last frost spell is one beat of those wings. Everything close in front freezes solid.",
     "weight": 0.3
   },
   "spellbook_spark": {
@@ -225,8 +225,8 @@
     "spell_id": "spark_spell",
     "spell_name": "Spark",
     "mp_cost": 3,
-    "unidentified_name": "static-crackling slim tome",
-    "lore": "The apprentice's first lightning cantrip. A crackling spark leaps between fingers when the words land right.",
+    "unidentified_name": "limp-vellum slim tome",
+    "lore": "Sailors in a storm sometimes saw blue fire hiss on the mastheads and took it for the sign of their patron, Saint Erasmus, whom they called Elmo. It meant the worst of the weather had passed. The apprentice's first lightning lesson draws the same fire down to the fingertips and lets it jump.",
     "weight": 0.3
   },
   "spellbook_lightning_bolt": {
@@ -249,7 +249,7 @@
     "spell_name": "Lightning Bolt",
     "mp_cost": 7,
     "unidentified_name": "gold-veined tome",
-    "lore": "Tesla's diary copy of the bolt-line incantation. Margin notes question whether the chalk was the resonator.",
+    "lore": "Salmoneus, king of Elis, wanted to be worshipped as Zeus. He drove through his city dragging bronze kettles behind his chariot for thunder and throwing torches for lightning. Zeus answered with the real thing. This tome teaches the real thing: a white line through everything that stands in its path.",
     "weight": 0.3
   },
   "spellbook_chain_lightning": {
@@ -271,8 +271,8 @@
     "spell_id": "chain_lightning_spell",
     "spell_name": "Chain Lightning",
     "mp_cost": 15,
-    "unidentified_name": "storm-golden tome",
-    "lore": "Storm-singer's grimoire. Lightning forks through target after target, weakening with each arc.",
+    "unidentified_name": "copper-cornered tome",
+    "lore": "In 1746 the Abbe Nollet linked some two hundred Carthusian monks into one great circle with lengths of iron wire and closed it on a charged Leyden jar. Every monk leapt at the same instant. The spell improves on his experiment. The bolt jumps from one enemy to the next, a little weaker each time.",
     "weight": 0.3
   },
   "spellbook_storm_of_vengeance": {
@@ -294,8 +294,8 @@
     "spell_id": "storm_of_vengeance_spell",
     "spell_name": "Storm of Vengeance",
     "mp_cost": 24,
-    "unidentified_name": "thunderhead-black tome",
-    "lore": "Zeus-rite copied by an Athenian heretic in 320 BCE. He was struck by lightning shortly after. The book was not.",
+    "unidentified_name": "chained tome",
+    "lore": "The Philistines marched on Israel at Mizpah while Samuel was still offering the lamb. The Lord thundered that day with a mighty sound against them and threw them into such confusion that they were routed before a blow was struck. The last storm spell breaks overhead in the same way. All in sight are struck, and many are left stunned.",
     "weight": 0.3
   },
   "spellbook_magic_dart": {
@@ -318,7 +318,7 @@
     "spell_name": "Magic Dart",
     "mp_cost": 2,
     "unidentified_name": "thin sky-blue tome",
-    "lore": "The absolute first spell every apprentice masters. A single dart of pure force, which never misses.",
+    "lore": "The story of William Tell is set in 1307. An Austrian bailiff made him shoot an apple from his own son's head with a crossbow, and he split it. He had kept a second bolt ready for the bailiff. The first spell any apprentice masters is that first bolt: a single dart of force that does not miss.",
     "weight": 0.3
   },
   "spellbook_magic_missile": {
@@ -341,7 +341,7 @@
     "spell_name": "Magic Missile",
     "mp_cost": 5,
     "unidentified_name": "slim blue tome",
-    "lore": "Three unerring darts of pure magical force. The archetypal wizardly attack -- no defence stops it.",
+    "lore": "Jonathan arranged a signal for his friend David, who was hiding in a field from King Saul. He would shoot three arrows beside a certain stone, and what he called to the boy fetching them would mean stay or run. The spell looses three darts of force together, and none of them needs fetching.",
     "weight": 0.3
   },
   "spellbook_force_barrage": {
@@ -364,7 +364,7 @@
     "spell_name": "Force Barrage",
     "mp_cost": 10,
     "unidentified_name": "runed cobalt tome",
-    "lore": "Five darts of shrieking force. The apprentice-mage's answer to a fully armored knight.",
+    "lore": "David refused the king's armour, walked down to the brook, and chose five smooth stones for his shepherd's bag. He needed one. The other four are in this tome. It teaches five darts of force thrown in a breath, and no helmet of bronze has been found that turns them.",
     "weight": 0.3
   },
   "spellbook_force_storm": {
@@ -387,7 +387,7 @@
     "spell_name": "Force Storm",
     "mp_cost": 15,
     "unidentified_name": "midnight-blue tome",
-    "lore": "A storm of seven force darts. No armour, no shield, no ward has ever turned them.",
+    "lore": "Seven priests carried seven rams' horns around Jericho for seven days, and on the seventh day they went round seven times. Then the people shouted and the wall fell down flat. Nobody had touched it. The spell throws seven darts of pure force, and no wall, shield or ward has turned one yet.",
     "weight": 0.3
   },
   "spellbook_annihilation": {
@@ -409,8 +409,8 @@
     "spell_id": "annihilation_spell",
     "spell_name": "Annihilation",
     "mp_cost": 25,
-    "unidentified_name": "void-black tome",
-    "lore": "Final chapter of the Liber Nihili. Weakened creatures vaporize; the rest are torn nearly in half.",
+    "unidentified_name": "salt-stained tome",
+    "lore": "After the Black Death, painters gave Death a scythe and showed him mowing pope, king and ploughman in the same swath. The harvester takes the ripe ears and bruises the green. This tome teaches his stroke. Creatures already failing are simply gone, and those still strong are cut nearly in half.",
     "weight": 0.3
   },
   "spellbook_acid_dart": {
@@ -432,8 +432,8 @@
     "spell_id": "acid_dart_spell",
     "spell_name": "Acid Dart",
     "mp_cost": 5,
-    "unidentified_name": "sickly-green tome",
-    "lore": "A splash of biting acid. The apprentice's answer to armoured foes -- the metal itself begins to hiss.",
+    "unidentified_name": "olive tome",
+    "lore": "Alchemists made aqua fortis, strong water, by heating saltpetre with vitriol and catching the red fumes. It eats silver and leaves gold, which made it the assayer's friend and the forger's enemy. The apprentice learns to throw a splash of it. The burn goes on working after the splash has landed.",
     "weight": 0.3
   },
   "spellbook_acid_arrow": {
@@ -455,8 +455,8 @@
     "spell_id": "acid_arrow_spell",
     "spell_name": "Acid Arrow",
     "mp_cost": 10,
-    "unidentified_name": "corroded green tome",
-    "lore": "An arrow of pure acid that burns on impact and continues to corrode flesh over time.",
+    "unidentified_name": "wormholed tome",
+    "lore": "Roast green vitriol in a sealed retort and a heavy, oily liquid drips from the neck. The alchemists called it oil of vitriol and ranked it first among the acids: poured on cloth it chars, and on flesh it does worse. This tome shapes it into an arrow. The wound keeps eating long after.",
     "weight": 0.3
   },
   "spellbook_dissolution": {
@@ -478,8 +478,8 @@
     "spell_id": "dissolution_spell",
     "spell_name": "Dissolution",
     "mp_cost": 22,
-    "unidentified_name": "acid-etched jade tome",
-    "lore": "A green torrent that eats through steel, stone, and bone alike. Reserved for the enemies you truly hate.",
+    "unidentified_name": "tooled-leather tome",
+    "lore": "Aqua regia, royal water, is the one acid that dissolves gold. When German troops entered Copenhagen in 1940, the chemist George de Hevesy dissolved two Nobel medals in a jar of it and left the jar on a shelf, where the soldiers ignored it. The gold was recovered and recast after the war. The last acid spell spares nothing.",
     "weight": 0.3
   },
   "spellbook_cure_light": {
@@ -502,7 +502,7 @@
     "spell_name": "Cure Light Wounds",
     "mp_cost": 3,
     "unidentified_name": "pale rose tome",
-    "lore": "Field-medicine compendium from a battlefield priest. Cures minor wounds; the first healing prayer every acolyte learns.",
+    "lore": "In the Iliad an arrow strikes Menelaus through the belt, and the army sends for Machaon, son of Asclepius. He draws the arrow, sucks the wound clean, and spreads on it the soothing herbs that the centaur Chiron once gave his father. A battlefield primer teaches that much: a small wound, cleaned and closed.",
     "weight": 0.3
   },
   "spellbook_cure_wounds": {
@@ -525,7 +525,7 @@
     "spell_name": "Cure Wounds",
     "mp_cost": 6,
     "unidentified_name": "sage-green tome",
-    "lore": "The workhorse healing prayer. Every temple physician's second-year reader.",
+    "lore": "The Persian physician Ibn Sina, whom Europe called Avicenna, finished his Canon of Medicine in 1025. It filled five books, and universities from Montpellier to Padua still taught from it six hundred years later. Every temple physician's second-year reader is drawn from its pages. It teaches the working cure for an ordinary wound.",
     "weight": 0.3
   },
   "spellbook_heal": {
@@ -548,7 +548,7 @@
     "spell_name": "Heal",
     "mp_cost": 10,
     "unidentified_name": "worn green tome",
-    "lore": "Channels restorative energy. The major healing word.",
+    "lore": "Achilles speared King Telephus in the thigh, and the wound would not close. An oracle said that the wounder would be the healer. Achilles protested that he was no physician, until Odysseus saw the answer: rust scraped from the spear itself, sprinkled in the wound. This tome teaches the major healing word.",
     "weight": 0.3
   },
   "spellbook_greater_heal": {
@@ -571,7 +571,7 @@
     "spell_name": "Greater Heal",
     "mp_cost": 15,
     "unidentified_name": "verdant tome",
-    "lore": "Galen's Greater Healing -- recovered from the Library of Alexandria fire by an apprentice who lost his arm carrying it out.",
+    "lore": "At Epidaurus the sick slept overnight in the hall of Asclepius and waited for the god to come in a dream. Sacred snakes and dogs moved among the sleepers, licking wounds. The cures were carved on stone tablets, and several of the tablets survive. The spell is a whole night there in a moment.",
     "weight": 0.3
   },
   "spellbook_resurrection": {
@@ -594,7 +594,7 @@
     "spell_name": "Resurrection",
     "mp_cost": 22,
     "unidentified_name": "gold-edged tome",
-    "lore": "Lazarus liturgy -- full text, with the rabbinical disclaimer that nobody who has tried it has reported their experience usefully.",
+    "lore": "Lazarus of Bethany had been four days in the tomb when Jesus came, and his sister warned that there would be a smell. Jesus wept, then called him by name in a loud voice. The dead man walked out still wrapped in his grave cloths. This liturgy asks ahead of time. Its caster's next death is refused.",
     "weight": 0.3
   },
   "spellbook_sleep": {
@@ -617,7 +617,7 @@
     "spell_name": "Sleep",
     "mp_cost": 3,
     "unidentified_name": "dusty violet tome",
-    "lore": "A gentle enchantment that sends a single creature into sudden slumber.",
+    "lore": "The shepherd Endymion was so beautiful that the Moon asked Zeus to keep him as he was. He was granted sleep without age or end in a cave on Mount Latmus, and she visits him every night. The gentlest enchantment in the syllabus sends one creature the same way, though far more briefly.",
     "weight": 0.3
   },
   "spellbook_mass_sleep": {
@@ -640,7 +640,7 @@
     "spell_name": "Mass Sleep",
     "mp_cost": 10,
     "unidentified_name": "twilight-purple tome",
-    "lore": "Lullaby of the Watchman of Antioch -- read aloud, every sleeper in the room dreams of the same hill.",
+    "lore": "Saul hunted David with three thousand men and camped on the hill of Hachilah. A deep sleep from the Lord fell on the whole camp. David walked in among them by night, took the spear and the water jug from beside the king's head, and walked out. The spell lays that sleep on every enemy in sight.",
     "weight": 0.3
   },
   "spellbook_deep_slumber": {
@@ -663,7 +663,7 @@
     "spell_name": "Deep Slumber",
     "mp_cost": 20,
     "unidentified_name": "midnight-indigo tome",
-    "lore": "The final chapter of the Antioch Lullabies. Every ear in sight hears the same silence.",
+    "lore": "In the tale Charles Perrault printed in 1697, the princess pricks her finger and the good fairy touches everything else in the castle with her wand: guards, cooks, horses, even the spits on the fire with their partridges. All of it stops for a hundred years. The last sleep spell holds a whole room that fast.",
     "weight": 0.3
   },
   "spellbook_slow": {
@@ -685,8 +685,8 @@
     "spell_id": "slow_spell",
     "spell_name": "Slow",
     "mp_cost": 3,
-    "unidentified_name": "heavy leaden tome",
-    "lore": "Temporal magic that saps the speed from a creature, leaving it sluggish and vulnerable.",
+    "unidentified_name": "pigskin-bound tome",
+    "lore": "Aesop's hare was so sure of the race that he lay down by the road for a nap. The tortoise never stopped walking. This primer teaches how to trade places with a quick enemy. For a good while the target moves at the tortoise's pace, and the caster is free to be the hare.",
     "weight": 0.3
   },
   "spellbook_mass_slow": {
@@ -709,7 +709,7 @@
     "spell_name": "Mass Slow",
     "mp_cost": 10,
     "unidentified_name": "iron-bound heavy tome",
-    "lore": "Temporal magic broadcast across a battlefield. Every visible foe stumbles as if wading through honey.",
+    "lore": "Pharaoh's chariots followed Israel onto the dry bed of the sea. In the morning watch the Lord looked down from the pillar of fire and cloud and clogged their chariot wheels, so that they drove heavily. The charioteers said to one another that it was time to flee. The spell bogs down every enemy in sight.",
     "weight": 0.3
   },
   "spellbook_time_freeze": {
@@ -732,7 +732,7 @@
     "spell_name": "Time Freeze",
     "mp_cost": 22,
     "unidentified_name": "crystalline tome that hums faintly",
-    "lore": "To freeze time itself -- the ambition that drove the greatest chronomancers to madness. For five heartbeats, nothing moves.",
+    "lore": "Vesuvius buried Pompeii in a day and a night in the year 79. From 1863 Giuseppe Fiorelli poured plaster into the hollows the dead had left in the ash and found them as they were: a man shielding his face, a dog straining at its chain. For a few heartbeats the spell does that to every creature on the floor.",
     "weight": 0.3
   },
   "spellbook_hold_monster": {
@@ -755,7 +755,7 @@
     "spell_name": "Hold Monster",
     "mp_cost": 6,
     "unidentified_name": "amber-bound tome",
-    "lore": "Locks a single creature in magical stasis. The apprentice's first crowd-control cantrip.",
+    "lore": "The gods bound the wolf Fenrir with a ribbon made from six things: the sound of a cat's footfall, a woman's beard, the roots of a mountain, the sinews of a bear, the breath of a fish and the spittle of a bird. None of these exists any longer. The spell ties one creature with a length of it.",
     "weight": 0.3
   },
   "spellbook_paralyze": {
@@ -778,7 +778,7 @@
     "spell_name": "Paralyze",
     "mp_cost": 15,
     "unidentified_name": "gold-clasped tome",
-    "lore": "The stronger binding. Even the most fearsome creatures cannot move while paralyzed by this word.",
+    "lore": "After Baldr's death the gods caught Loki and bound him across three sharp stones in a cave. A serpent drips venom on his face. His wife Sigyn catches it in a bowl, and when she turns to empty the bowl he writhes, and the earth quakes. The stronger binding holds one enemy as fast as that.",
     "weight": 0.3
   },
   "spellbook_mass_paralyze": {
@@ -801,7 +801,7 @@
     "spell_name": "Mass Paralyze",
     "mp_cost": 20,
     "unidentified_name": "iron-crimson tome",
-    "lore": "Carpathian witch's recipe -- paralysis was always her preferred technique, never the killing blow.",
+    "lore": "Perseus came home with the Gorgon's head in a bag and found King Polydectes at dinner with his court, still pressing the hero's mother to marry him. Perseus told his friends to cover their eyes and held up the head. The king and his guests are sitting there yet. This tome teaches how to hold a whole room.",
     "weight": 0.3
   },
   "spellbook_fear": {
@@ -823,8 +823,8 @@
     "spell_id": "fear_spell",
     "spell_name": "Fear",
     "mp_cost": 6,
-    "unidentified_name": "unsettling dark tome",
-    "lore": "Projects raw terror into a creature's mind, sending it fleeing in panic.",
+    "unidentified_name": "tar-stained tome",
+    "lore": "Agamemnon went to war behind a shield with ten rings of bronze, and at its centre the Gorgon glared, with Fear and Rout on either side. Greek soldiers painted her face on shields for centuries. The spell puts that face in front of one enemy, which forgets the fight and runs.",
     "weight": 0.3
   },
   "spellbook_terror": {
@@ -846,8 +846,8 @@
     "spell_id": "terror_spell",
     "spell_name": "Terror",
     "mp_cost": 20,
-    "unidentified_name": "screaming black tome",
-    "lore": "The unspeakable Word of Terror. Every visible foe drops their weapon and runs.",
+    "unidentified_name": "water-stained tome",
+    "lore": "Gideon took three hundred men against the host of Midian and gave each one a trumpet and a torch hidden in a clay jar. At midnight they smashed the jars, blew the trumpets and shouted. The whole camp woke, cried out and fled. The Word of Terror is that midnight. Every enemy in sight runs.",
     "weight": 0.3
   },
   "spellbook_confusion": {
@@ -869,8 +869,8 @@
     "spell_id": "confusion_spell",
     "spell_name": "Confusion",
     "mp_cost": 6,
-    "unidentified_name": "swirling purple tome",
-    "lore": "Scrambles a monster's senses. A confused enemy attacks randomly and loses coordination.",
+    "unidentified_name": "plum-ribboned tome",
+    "lore": "Ate, the spirit of folly, walks on the heads of men with soft feet and they do not feel her. She once fooled Zeus himself into a rash oath, and he seized her by the hair and flung her from Olympus for good. She lives among mortals now. The spell sets her on one enemy's shoulders.",
     "weight": 0.3
   },
   "spellbook_madness": {
@@ -892,8 +892,8 @@
     "spell_id": "madness_spell",
     "spell_name": "Madness",
     "mp_cost": 20,
-    "unidentified_name": "shrieking magenta tome",
-    "lore": "The Word of Madness, whispered in the tongue of things that should not be. Every mind in sight breaks.",
+    "unidentified_name": "wax-spotted tome",
+    "lore": "Nebuchadnezzar walked on the roof of his palace and admired the Babylon he had built. That hour his reason left him. He was driven from men and ate grass like an ox, and his hair grew like eagles' feathers, until seven times had passed over him. The Word of Madness breaks every mind in sight.",
     "weight": 0.3
   },
   "spellbook_mage_armor": {
@@ -916,7 +916,7 @@
     "spell_name": "Mage Armor",
     "mp_cost": 3,
     "unidentified_name": "pale blue tome",
-    "lore": "Mage Armor: the most fundamental defensive cantrip. Every wizards' college copy is dog-eared at this page.",
+    "lore": "Paul wrote to the Ephesians from prison, under Roman guard, and described the kit in front of him piece by piece: belt, breastplate, boots, shield, helmet, sword. He meant truth, righteousness, peace, faith, salvation and the word. A wizard's first defence is armour as invisible as that. Blows land softer through it.",
     "weight": 0.3
   },
   "spellbook_magic_shield": {
@@ -939,7 +939,7 @@
     "spell_name": "Magic Shield",
     "mp_cost": 10,
     "unidentified_name": "thick blue tome",
-    "lore": "A shimmering barrier that halves physical blows and improves your defenses.",
+    "lore": "Hephaestus made the shield of Achilles in five layers: two of bronze, two of tin and one of gold. The spear of Aeneas drove through two and stopped dead in the gold. This tome teaches how to raise a shield of that make from air. It turns hard blows for a good while.",
     "weight": 0.3
   },
   "spellbook_stoneskin": {
@@ -961,8 +961,8 @@
     "spell_id": "stoneskin_spell",
     "spell_name": "Stoneskin",
     "mp_cost": 22,
-    "unidentified_name": "granite-grey tome",
-    "lore": "Dwarven Cantor's diary. The pages describe the breath-technique that hardens the body to stone.",
+    "unidentified_name": "buckram tome",
+    "lore": "Siegfried killed a dragon and bathed in its blood, and his skin grew hard as horn so that no blade could cut it. A linden leaf had stuck between his shoulders, and Hagen learned where. The spell hardens the whole body and lasts longer than any other guard. It leaves no leaf.",
     "weight": 0.3
   },
   "spellbook_haste": {
@@ -985,7 +985,7 @@
     "spell_name": "Haste",
     "mp_cost": 7,
     "unidentified_name": "green-veined tome",
-    "lore": "Accelerates your body to superhuman speed, granting a free second action each turn.",
+    "lore": "Hermes was born at dawn, invented the lyre by noon, and stole his brother Apollo's cattle by evening. His sandals, the talaria, were golden and winged and carried him over land and sea as fast as the wind. The spell laces them on. For a short while its caster acts twice to an enemy's once.",
     "weight": 0.3
   },
   "spellbook_greater_haste": {
@@ -1008,7 +1008,7 @@
     "spell_name": "Greater Haste",
     "mp_cost": 20,
     "unidentified_name": "lightning-green tome",
-    "lore": "Mercury's own footfalls, transcribed by a runner who no longer needed to breathe.",
+    "lore": "Thor's servant Thialfi was the fastest runner among men. In the hall of Utgard-Loki he raced a boy named Hugi three times, and three times Hugi turned at the post before Thialfi reached it. Hugi was the giant king's own thought. This tome teaches a speed nearer to Hugi's, and it lasts.",
     "weight": 0.3
   },
   "spellbook_invisibility": {
@@ -1030,8 +1030,8 @@
     "spell_id": "invisibility_spell",
     "spell_name": "Invisibility",
     "mp_cost": 10,
-    "unidentified_name": "semi-transparent tome",
-    "lore": "Bends light around you. Invisibility is not invulnerability, but it is close.",
+    "unidentified_name": "dove-grey tome",
+    "lore": "Plato tells of the shepherd Gyges, who found a gold ring on a corpse inside a bronze horse in a cleft of the earth. Turned inward on his finger, it made him invisible. He used it to kill the king of Lydia and take the throne. The spell hides its caster until the first blow is struck.",
     "weight": 0.3
   },
   "spellbook_greater_invisibility": {
@@ -1053,8 +1053,8 @@
     "spell_id": "greater_invisibility_spell",
     "spell_name": "Greater Invisibility",
     "mp_cost": 20,
-    "unidentified_name": "barely-there tome",
-    "lore": "Tarnhelm research notes from the Bayreuth Festival library -- three Wagner-era scholars vanished while reading it.",
+    "unidentified_name": "silk-wrapped tome",
+    "lore": "Siegfried won the Tarnkappe, a cloak of hiding, from the dwarf Alberich. When King Gunther had to beat Queen Brunhild at spear, stone and leap to win her, Siegfried stood unseen beside him and did the work while Gunther made the gestures. This greater spell likewise holds through a fight.",
     "weight": 0.3
   },
   "spellbook_displacement": {
@@ -1077,7 +1077,7 @@
     "spell_name": "Displacement",
     "mp_cost": 15,
     "unidentified_name": "shimmering indigo tome",
-    "lore": "Projects a false image of you, causing attackers to strike at empty air.",
+    "lore": "The poet Stesichorus said that Helen never went to Troy. The gods sent a phantom of her with Paris, and the real Helen waited out the war in Egypt while two armies fought ten years over an image made of cloud. The spell stands such an image beside its caster, and blows go wide.",
     "weight": 0.3
   },
   "spellbook_reflect": {
@@ -1099,8 +1099,8 @@
     "spell_id": "reflect_spell",
     "spell_name": "Spell Reflect",
     "mp_cost": 20,
-    "unidentified_name": "mirror-bound tome",
-    "lore": "Creates a shimmering aura that bounces hostile magic and status effects back at their source.",
+    "unidentified_name": "hasped oak tome",
+    "lore": "Medusa's gaze turned men to stone, so Athena lent Perseus a shield of polished bronze. He walked up to the sleeping Gorgon backward, watching her reflection, and struck without ever looking at her. This tome teaches how to carry the shield. Curses and hostile enchantments are often turned back on their senders.",
     "weight": 0.3
   },
   "spellbook_detect_magic": {
@@ -1123,7 +1123,7 @@
     "spell_name": "Detect Magic",
     "mp_cost": 3,
     "unidentified_name": "shimmering pale tome",
-    "lore": "Dee's earliest divination tract -- translation from the original Enochian, partial fragments only.",
+    "lore": "The high priest of Israel carried two objects in his breastpiece, the Urim and the Thummim, and by them put questions to God. Nobody now knows what they looked like. They seem to have answered yes or no. This tract asks a like question of each enchanted thing lying in sight: blessed, or cursed?",
     "weight": 0.3
   },
   "spellbook_identify": {
@@ -1145,8 +1145,8 @@
     "spell_id": "identify_spell",
     "spell_name": "Identify",
     "mp_cost": 10,
-    "unidentified_name": "eye-embroidered tome",
-    "lore": "The Adept's Identification. Reveals the true nature of magical items on the floor and in your pack.",
+    "unidentified_name": "ribbon-marked tome",
+    "lore": "King Hiero suspected his goldsmith of mixing silver into a crown and asked Archimedes to prove it without melting the thing. Archimedes saw the answer as his bath overflowed, and ran home shouting that he had found it. What lies in view and what rides in the pack show whether they are blessed or cursed.",
     "weight": 0.3
   },
   "spellbook_omnisight": {
@@ -1168,8 +1168,8 @@
     "spell_id": "omnisight_spell",
     "spell_name": "Omnisight",
     "mp_cost": 20,
-    "unidentified_name": "gold-eyed indigo tome",
-    "lore": "The archmage's true sight. Every enchanted thing you carry -- pack, hand, and hilt -- names itself.",
+    "unidentified_name": "thumb-indexed tome",
+    "lore": "Odin has a high seat called Hlidskjalf, and from it he looks out over all the worlds and understands everything he sees. Two ravens, Thought and Memory, fly out at dawn and report by breakfast. The archmage's sight takes in as much. Things on the floor, in the pack and on the body all show their blessing or their curse.",
     "weight": 0.3
   },
   "spellbook_detect_monsters": {
@@ -1192,7 +1192,7 @@
     "spell_name": "Detect Monsters",
     "mp_cost": 6,
     "unidentified_name": "luminous teal tome",
-    "lore": "Expands the caster's awareness to sense every living creature on the level.",
+    "lore": "The king of Aram surrounded Dothan by night to seize Elisha, and the prophet's servant woke and despaired. Elisha prayed that the young man's eyes be opened. He looked again, and the hills were full of horses and chariots of fire. The spell opens the eyes likewise. Every living thing on the floor shows itself for a while.",
     "weight": 0.3
   },
   "spellbook_foresight": {
@@ -1215,7 +1215,7 @@
     "spell_name": "Foresight",
     "mp_cost": 20,
     "unidentified_name": "prismatic tome",
-    "lore": "Cassandra's notes, copied centuries later by a librarian who later refused to admit knowing what was in them.",
+    "lore": "Apollo gave Cassandra of Troy the gift of prophecy, and when she refused him he added a curse: she would always see truly and never be believed. She warned against the wooden horse and was laughed at. The spell gives her sight without her curse. Every creature on the floor is known for a long while.",
     "weight": 0.3
   },
   "spellbook_mapping": {
@@ -1238,7 +1238,7 @@
     "spell_name": "Mapping",
     "mp_cost": 7,
     "unidentified_name": "green-inked tome",
-    "lore": "Geomancer's pocket-folio: ink lines that reveal themselves when held over candle smoke.",
+    "lore": "Around the year 150 Claudius Ptolemy of Alexandria listed some eight thousand places by latitude and longitude and explained how to draw the round world on a flat sheet. His Geography was lost to the West for a thousand years, and when it returned it remade every chart. The spell plots a whole floor at once.",
     "weight": 0.3
   },
   "spellbook_greater_mapping": {
@@ -1261,7 +1261,7 @@
     "spell_name": "Greater Mapping",
     "mp_cost": 14,
     "unidentified_name": "gold-inked green tome",
-    "lore": "The master geomancer's revised folio -- foes and treasure appear on the map alongside the walls.",
+    "lore": "The geographer al-Idrisi worked fifteen years at the Norman court of Palermo, questioning every traveller who landed. In 1154 he gave King Roger a map of the world engraved on a silver disc, with a book describing each region. The master's spell is as thorough. Walls, creatures and treasure all appear.",
     "weight": 0.3
   },
   "spellbook_blink": {
@@ -1284,7 +1284,7 @@
     "spell_name": "Blink",
     "mp_cost": 3,
     "unidentified_name": "lavender tome",
-    "lore": "An apprentice's first teleportation primer. Includes a footnote warning against blinking over deep water.",
+    "lore": "Philip met an Ethiopian court official on the desert road to Gaza, and baptised him at a roadside pool. When they came up out of the water the Spirit caught Philip away, and he found himself at Azotus, twenty miles off. The first travelling spell works likewise. The destination is not the caster's to choose.",
     "weight": 0.3
   },
   "spellbook_phase_door": {
@@ -1307,7 +1307,7 @@
     "spell_name": "Phase Door",
     "mp_cost": 10,
     "unidentified_name": "shifting silver tome",
-    "lore": "Bilocation manual by the unknown St-Germain. The author's name still spreads slowly through the table of contents.",
+    "lore": "King Sveigdir of Sweden, the saga says, was walking home drunk at sunset when he saw a dwarf sitting under a boulder as big as a house. The dwarf called to him to come in if he wanted to meet Odin. Sveigdir ran into the stone, it closed, and he never came out. The spell lets its caster come out.",
     "weight": 0.3
   },
   "spellbook_gate": {
@@ -1330,7 +1330,7 @@
     "spell_name": "Gate",
     "mp_cost": 22,
     "unidentified_name": "brass-clasped tome",
-    "lore": "Crowley's annotated translation of the Lemegeton gate-rite. Several entries in the index are crossed out by a different hand.",
+    "lore": "Jacob slept with a stone for a pillow and dreamed of a ladder set between earth and heaven, with angels going up and down it. He woke afraid and called the place the gate of heaven. Babylon's own name means the gate of God. The spell opens a door of that kind, and a strong ally steps through it.",
     "weight": 0.3
   },
   "spellbook_turn_undead": {
@@ -1353,7 +1353,7 @@
     "spell_name": "Turn Undead",
     "mp_cost": 6,
     "unidentified_name": "vestment-white tome",
-    "lore": "Vesper-prayer compendium -- clerical, but the working incantation is the same one wizards use.",
+    "lore": "The monks' last prayer of the day is Compline, and its old hymn asks the Creator to drive far off the dreams and phantoms of the night. It has been sung at bedtime since at least the seventh century. This compendium gives the words their full weight. The dead in sight are burned by light and flee.",
     "weight": 0.3
   },
   "spellbook_sunburst": {
@@ -1376,7 +1376,7 @@
     "spell_name": "Sunburst",
     "mp_cost": 22,
     "unidentified_name": "gilded ivory tome",
-    "lore": "Solar liturgy of the dawn-priests of Heliopolis. When read aloud, every dead thing in sight remembers it is dead.",
+    "lore": "Jesus took Peter, James and John up a high mountain, and there his face shone like the sun and his clothes became white as light. The three fell on their faces. Tradition names the mountain Tabor. The greatest of the holy spells borrows a moment of that brightness, and every dead thing in sight is seared and scattered.",
     "weight": 0.3
   },
   "spellbook_polymorph": {
@@ -1398,8 +1398,8 @@
     "spell_id": "polymorph_spell",
     "spell_name": "Polymorph",
     "mp_cost": 10,
-    "unidentified_name": "shifting iridescent tome",
-    "lore": "Warps reality around a creature, transforming it into something else entirely. Results vary.",
+    "unidentified_name": "foxed tome",
+    "lore": "Zeus came to Arcadia disguised as a traveller, and King Lycaon tested his guest's divinity by serving him human flesh. Zeus brought the roof down. Lycaon fled into the fields, tried to speak, and howled: his robes were fur and his arms were legs. The spell remakes one creature, and often into something lesser.",
     "weight": 0.3
   },
   "spellbook_mass_polymorph": {
@@ -1421,8 +1421,8 @@
     "spell_id": "mass_polymorph_spell",
     "spell_name": "Mass Polymorph",
     "mp_cost": 22,
-    "unidentified_name": "bestiary-bound tome",
-    "lore": "Circe's school-notes from her time on Aeaea. Footnotes mention various species considered for the conversion.",
+    "unidentified_name": "horn-cornered tome",
+    "lore": "Leto, carrying her newborn twins, stopped at a pond in Lycia to drink. The peasants cutting reeds there forbade her, and stamped the water into mud for spite. She prayed that they might live in that pond for ever. They are frogs. This tome teaches her prayer: a room full of enemies turned small and feeble.",
     "weight": 0.3
   },
   "spellbook_drain_life": {
@@ -1444,8 +1444,8 @@
     "spell_id": "drain_life_spell",
     "spell_name": "Drain Life",
     "mp_cost": 6,
-    "unidentified_name": "blood-red tome",
-    "lore": "Vampiric magic that tears life force from a creature and channels it into the caster.",
+    "unidentified_name": "rough-cut tome",
+    "lore": "Old English called a physician a leech, and gave the worm the same name. Medieval doctors set leeches on patients to draw off bad blood, and France alone imported some forty million a year in the 1830s. The spell reverses the bargain. Life is drawn out of an enemy and into the caster.",
     "weight": 0.3
   },
   "spellbook_soul_drain": {
@@ -1468,7 +1468,7 @@
     "spell_name": "Soul Drain",
     "mp_cost": 15,
     "unidentified_name": "carmine-black tome",
-    "lore": "The vampire-lord's Drain, refined. The victim's own life sustains the caster for the next fight.",
+    "lore": "The giant Antaeus challenged every traveller through Libya to wrestle and roofed a temple with the skulls of the losers. His mother was the Earth, and each time he was thrown he rose stronger from her touch. Heracles held him in the air until he weakened. The spell makes an enemy serve as the caster's ground.",
     "weight": 0.3
   },
   "spellbook_light": {
@@ -1491,7 +1491,7 @@
     "spell_name": "Light",
     "mp_cost": 2,
     "unidentified_name": "thin yellow tome",
-    "lore": "Banishes shadows. Simple, essential, and often the spell that saves lives.",
+    "lore": "The first words God speaks in Scripture are a command, and in Jerome's Latin they are two words long: fiat lux. Light came before the sun, the moon or anything to see by it. The simplest spell in the library repeats the phrase, and the dark draws back a good distance on every side.",
     "weight": 0.3
   },
   "spellbook_knock": {
@@ -1513,8 +1513,8 @@
     "spell_id": "knock_spell",
     "spell_name": "Knock",
     "mp_cost": 4,
-    "unidentified_name": "brass-clasped tome",
-    "lore": "A locksmith's nightmare. This spell opens any mundane lock with a burst of arcane force.",
+    "unidentified_name": "dog-eared tome",
+    "lore": "Ali Baba was cutting wood when forty thieves rode up to a rock face, and their captain said two words. The rock opened. Ali Baba's brother later got in the same way, forgot the words, and tried the name of every other grain he knew. The spell is the right grain. A locked chest close by springs open.",
     "weight": 0.3
   },
   "spellbook_cleanse": {
@@ -1537,7 +1537,7 @@
     "spell_name": "Cleanse",
     "mp_cost": 2,
     "unidentified_name": "pale green tome",
-    "lore": "A healer's primer on purification magic. One incantation removes any single affliction -- poison, paralysis, disease, curse.",
+    "lore": "Naaman, commander of the armies of Aram, was a leper. Elisha did not even come to the door, but sent word to wash seven times in the Jordan. Naaman was insulted, since Damascus had better rivers. His servants talked him round, and his flesh came back clean as a child's. One reading lifts one affliction.",
     "weight": 0.3
   },
   "spellbook_empower": {
@@ -1560,7 +1560,7 @@
     "spell_name": "Empower",
     "mp_cost": 4,
     "unidentified_name": "gold-edged battle tome",
-    "lore": "A war-mage's secret: channel arcane energy into a physical weapon for a single devastating strike.",
+    "lore": "Dying at Roncevaux, Roland tried to break his sword Durendal on a rock so that no enemy would carry it. The sword would not break. High in the Pyrenees there is a gap forty metres wide in the cliff wall, and the mountain people say that was the rock. The spell loads one such stroke into the next blow.",
     "weight": 0.3
   },
   "spellbook_levitate": {
@@ -1582,8 +1582,8 @@
     "spell_id": "levitate_spell",
     "spell_name": "Levitate",
     "mp_cost": 6,
-    "unidentified_name": "cloud-white tome",
-    "lore": "St Joseph of Cupertino's confessional notes -- the saint who could not stop floating.",
+    "unidentified_name": "birch-board tome",
+    "lore": "Joseph of Cupertino, a Franciscan friar who died in 1663, was so slow at his books that he passed for the priesthood only because the examiner asked the one question he knew. At prayer he rose into the air, seventy times before witnesses. He is the patron of examinees. The spell lifts its caster clear of pits and snares.",
     "weight": 0.3
   },
   "spellbook_teleport_away": {
@@ -1606,7 +1606,7 @@
     "spell_name": "Teleport Away",
     "mp_cost": 10,
     "unidentified_name": "shimmering violet tome",
-    "lore": "Spatial magic that hurls a creature to a random location on the level. Or yourself, if you prefer.",
+    "lore": "Once a year the Athenians could vote to be rid of one citizen. Each man scratched a name on a broken potsherd, an ostrakon, and the winner had ten days to leave the city for ten years. The spell casts the same vote against the nearest enemy, which finds itself elsewhere. With no enemy near, the caster goes instead.",
     "weight": 0.3
   },
   "spellbook_smite": {
@@ -1629,7 +1629,7 @@
     "spell_name": "Smite",
     "mp_cost": 10,
     "unidentified_name": "radiant ivory tome",
-    "lore": "The word of divine judgment, written in letters of fire. Bypasses all mortal resistances.",
+    "lore": "The Golden Legend tells that a dragon poisoned the countryside of Silene in Libya and was fed first on sheep, then on children chosen by lot. The lot fell on the king's daughter. George rode by, made the sign of the cross, and ran the beast through. The spell is his lance. No hide or ward lessens it.",
     "weight": 0.3
   },
   "spellbook_dispel_magic": {
@@ -1652,7 +1652,7 @@
     "spell_name": "Dispel Magic",
     "mp_cost": 10,
     "unidentified_name": "amethyst-bound tome",
-    "lore": "The Latin original of the rite -- late-Renaissance, copied off a folio Dee burned but didn't burn well enough.",
+    "lore": "An old legend sets Simon the Magician before the emperor in Rome, promising to fly. He leapt from a wooden tower and spirits bore him up over the Forum. The apostle Peter knelt and prayed, the spirits let go, and Simon fell. This tome teaches the prayer's effect. Every enchantment on one enemy drops away.",
     "weight": 0.3
   },
   "spellbook_counterspell": {
@@ -1675,7 +1675,7 @@
     "spell_name": "Counterspell",
     "mp_cost": 10,
     "unidentified_name": "warded plum tome",
-    "lore": "Mordenkainen's Argument -- a single chapter on undoing another's working before it lands.",
+    "lore": "The Sirens sang from a meadow heaped with the bones of sailors who had stopped to listen. Odysseus plugged his crew's ears with beeswax and had himself lashed to the mast, so that he alone heard the song and lived. The spell is wax and rope together. Charms, terrors and confusions slide off its caster for a time.",
     "weight": 0.3
   },
   "spellbook_summon_guardian": {
@@ -1698,7 +1698,7 @@
     "spell_name": "Summon Guardian",
     "mp_cost": 10,
     "unidentified_name": "moss-green tome with claw marks",
-    "lore": "Druids of the ancient groves could call spirit-beasts from the aether to fight alongside them.",
+    "lore": "A lion limped into Jerome's monastery at Bethlehem, and the monks ran. Jerome looked at the paw, drew out a thorn, and dressed the wound. The lion stayed for the rest of its life and was set to guarding the monastery's donkey. The spell calls a beast of that loyalty, though not always a lion.",
     "weight": 0.3
   },
   "spellbook_disintegrate": {
@@ -1721,7 +1721,7 @@
     "spell_name": "Disintegrate",
     "mp_cost": 22,
     "unidentified_name": "ash-flecked obsidian tome",
-    "lore": "The ultimate destruction spell. Reduces a creature to dust with a single word of power.",
+    "lore": "Nebuchadnezzar dreamed of a statue with a head of gold, a chest of silver, thighs of bronze and feet of iron mixed with clay. A stone cut by no human hand struck the feet, and the whole figure became chaff that the wind carried off. The spell throws that stone. Half the time, nothing is left.",
     "weight": 0.3
   },
   "spellbook_power_word_kill": {
@@ -1744,7 +1744,7 @@
     "spell_name": "Power Word: Kill",
     "mp_cost": 22,
     "unidentified_name": "iron-black tome",
-    "lore": "The Vorpal Word, the cantrip the headsmen kept secret. One syllable. Several deaths.",
+    "lore": "The legends of the golem say that its maker wrote the Hebrew word emet, truth, on its brow, and the clay stood up. To end it he rubbed out one letter. What remained was met: dead. This tome holds the shorter word. Spoken at a creature already weakened enough, it is the last thing heard.",
     "weight": 0.3
   },
   "spellbook_wish": {
@@ -1767,7 +1767,7 @@
     "spell_name": "Wish",
     "mp_cost": 25,
     "unidentified_name": "blank-paged golden tome",
-    "lore": "A single page. The page is blank. Read it anyway.",
+    "lore": "Midas asked that all he touched turn to gold, and nearly starved. The Sibyl of Cumae asked for as many years as she held grains of sand and forgot to ask for youth. She shrank until she lived in a jar and wanted only to die. This tome has one blank page. Reality picks the boon, which is safer.",
     "weight": 0.3
   },
   "spellbook_imprisonment": {
@@ -1789,8 +1789,8 @@
     "spell_id": "imprisonment_spell",
     "spell_name": "Imprisonment",
     "mp_cost": 22,
-    "unidentified_name": "stone-bound tome",
-    "lore": "Persian source-text on binding-into-stone -- used originally against a particular djinn who was getting out of hand.",
+    "unidentified_name": "cedar-boxed tome",
+    "lore": "In the Arabian Nights a fisherman hauls up a copper jar stopped with lead and stamped with the seal of Solomon. He pries it open, and smoke pours out and becomes a jinni who has sat inside for eighteen hundred years. The spell is the stopper. One enemy is shut in stone for a very long time.",
     "weight": 0.3
   },
   "spellbook_banishment": {
@@ -1813,7 +1813,7 @@
     "spell_name": "Banishment",
     "mp_cost": 15,
     "unidentified_name": "sigil-bound golden tome",
-    "lore": "Solomon's binding-rite, distilled to the essentials. Useful only against what came from elsewhere.",
+    "lore": "There was war in heaven. Michael and his angels fought the dragon, and the dragon and his angels fought back and did not prevail, and no place was found for them there any longer. The spell repeats the verdict on a small scale. A demon, fey or spirit is sent back where it came from.",
     "weight": 0.3
   },
   "spellbook_army_of_darkness": {
@@ -1835,8 +1835,8 @@
     "spell_id": "army_of_darkness_spell",
     "spell_name": "Army of Darkness",
     "mp_cost": 22,
-    "unidentified_name": "grave-earth-brown tome",
-    "lore": "Raise the dead to serve you. Five will answer the call. Do not read this aloud in a graveyard.",
+    "unidentified_name": "twine-stitched tome",
+    "lore": "The warriors Odin gathers in Valhalla are the Einherjar, men who fell in battle. Every morning they arm and cut one another down in the yard, and every evening they rise whole and go in to supper. This tome borrows the idea and none of the honour. Five of the dead get up and fight for the caster.",
     "weight": 0.3
   },
   "necronomicon": {
@@ -1859,7 +1859,7 @@
     "spell_name": "Army of Darkness",
     "mp_cost": 22,
     "unidentified_name": "a book bound in human flesh",
-    "lore": "Naturom Demonto -- roughly translated, the Book of the Dead. Bound in human flesh and inked in blood, this ancient Sumerian text contains funeral incantations, demon resurrection passages, and prophecies. It is NOT to be read aloud. Seriously. Don't.",
+    "lore": "H. P. Lovecraft swore he made it up. In his stories of the 1920s it is the work of the mad poet Abdul Alhazred, who wrote it at Damascus under the title Al Azif and was later eaten alive by something invisible in a marketplace. Librarians have been asked for it ever since. The copy bound here in something that is not calfskin disagrees with him. It should not be read aloud, and the dead know when it is.",
     "is_unique": true,
     "weight": 0.3,
     "identified": false,
@@ -1883,11 +1883,11 @@
     "quiz_threshold": 1,
     "spell_id": "summon_guardian_spell",
     "spell_name": "Summon Guardian",
-    "mp_cost": 18,
+    "mp_cost": 10,
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a tome of pale parchment",
-    "lore": "The Book of Formation. Attributed to Abraham; the oldest extant Jewish mystical text. It teaches the twenty-two letters of the Hebrew alphabet and the ten sefirot, and how the world was spoken into being. The Maharal of Prague used a copy in the sixteenth century to shape a golem of clay; the golem walked the streets of the Jewish quarter until the Maharal removed the Name from its forehead.",
+    "lore": "The Sefer Yetzirah, the Book of Formation, is a few pages long and among the oldest books of Jewish mysticism. Tradition gives it to Abraham. It teaches that God made the world with thirty-two paths of wisdom: the ten numbers and the twenty-two letters of the Hebrew alphabet. A legend of Prague says the great Rabbi Loew used its letters to raise a man of clay to guard the ghetto. Whoever learns its working raises a guardian too.",
     "weight": 0.3
   },
   "picatrix": {
@@ -1908,11 +1908,11 @@
     "quiz_threshold": 1,
     "spell_id": "fireball_spell",
     "spell_name": "Fireball",
-    "mp_cost": 12,
+    "mp_cost": 10,
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a violet leather-bound tome",
-    "lore": "Picatrix -- Ghayat al-Hakim, the Aim of the Sage. Composed in tenth-century al-Andalus, translated to Latin under Alfonso X, and read across Europe for the next four centuries. It teaches talismanic magic, planetary hours, and how to summon fire by naming a planet's degree of ascension. Dee owned a copy. Ficino read it carefully and pretended he hadn't.",
+    "lore": "Its Arabic title is Ghayat al-Hakim, the Aim of the Sage. It was compiled in Muslim Spain, and in 1256 King Alfonso the Wise of Castile had it put into Spanish and then Latin, under the name Picatrix. For four centuries scholars read it quietly. It teaches how to draw the powers of the planets down into carved images. This working draws on Mars, and every enemy in sight burns.",
     "weight": 0.3
   },
   "lemegeton": {
@@ -1937,7 +1937,7 @@
     "is_unique": true,
     "identified": false,
     "unidentified_name": "a black tome sealed with sigils",
-    "lore": "The Lemegeton. Five books bound as one; the first, the Ars Goetia, lists the seventy-two demons King Solomon bound to his service. Each demon has a sigil, a number of legions, and a particular use -- Bael teaches invisibility, Asmodeus answers questions truthfully, Vassago finds lost things. Crowley translated it in 1904. Read it carefully.",
+    "lore": "The Lemegeton, or Lesser Key of Solomon, is five books bound as one. The first, the Ars Goetia, lists seventy-two spirits that King Solomon is said to have shut in a vessel of brass, each with a seal, a rank and a use. Bael makes men invisible, Vassago finds what is lost, and all of them are liars. Samuel Mathers translated it and Aleister Crowley printed it in 1904. What answers its call in this place is the dead: five of them.",
     "weight": 0.3
   },
   "book_of_thoth": {

@@ -26,7 +26,7 @@
     "rare_wood",
     "exotic_organic"
   ],
-  "lore_template": "A {material_name} longbow. The English answer at Agincourt — and good for whatever this dungeon has to offer.",
+  "lore_template": "A {material_name} longbow, as tall as its archer. At Agincourt in 1415 the bowmen of Henry V shot down the armoured knights of France faster than they could cross a muddy field.",
   "design_notes": "v2 chain rebalance: normal class, 5 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 5 = 2.00×. Class mechanic: Range 8 tiles. STR ≥ 13 recommended for full draw. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.0 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "armor_pierce_at_max",

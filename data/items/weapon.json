@@ -118,7 +118,7 @@
     "value": 5000,
     "min_level": 82,
     "unidentified_name": "a radiant two-handed hammer",
-    "lore": "Dawnbreaker is the hammer that ended the First Darkness, when the elder dead walked the surface and the sun was a rumour. The head holds a sliver of preserved dawn, sealed in adamantine by a smith whose name was burned out of every chronicle the priests could find. Undead creatures struck by it take triple damage from the light: their flesh remembers what it was supposed to be afraid of, and obeys. The faint gold gleam at the hammer's seam never quite goes out, even in a closed sack.",
+    "lore": "Dawnbreaker is the hammer that ended the First Darkness, when the elder dead walked the surface and the sun was a rumour. The head holds a sliver of preserved dawn, sealed in adamantine by a smith whose name was burned out of every chronicle the priests could find. The flesh of the dead remembers what it was supposed to fear, and obeys. The gold gleam at the hammer's seam never quite goes out, even in a closed sack.",
     "quiz_tier": 5,
     "identified": false,
     "burnChance": 0.3,
@@ -195,7 +195,7 @@
     "value": 4800,
     "min_level": 82,
     "unidentified_name": "a darkly gleaming spiked weapon",
-    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, filled with a venom that was synthesized from the distilled suffering of a hundred different creatures. The weapon weeps a thin dark ichor when hungry, which is often. The bleed it inflicts does not merely cut — it corrupts.",
+    "lore": "A master poisoner's commission from an earlier age. The spikes of Venomfang are hollow, and the venom inside them was blended from the stings and bites of a hundred different creatures, so that no single antidote answers it. The weapon weeps a thin dark ichor when hungry, which is often. The wounds it leaves do not merely bleed. They sour.",
     "quiz_tier": 5,
     "identified": false,
     "poisonChance": 0.6,
@@ -269,7 +269,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "an ornate golden-hilted blade",
-    "lore": "The sword in the stone was not merely a test of strength but of worthiness — a distinction Arthur understood only after he had already proven himself in other ways. The blade predates its legend; Merlin admitted he found it. An inscription along the fuller reads in a language older than Latin: 'Take me up; cast me away.' Most kings have trouble with the second part.",
+    "lore": "The Lady of the Lake gave Arthur this sword after his first blade broke, and Merlin told him the scabbard was worth ten of it, since its wearer could lose no blood. Morgan le Fay stole the scabbard. Tennyson has the blade engraved on one side 'Take me' and on the other 'Cast me away.' After Camlann, Sir Bedivere hid it twice before he could bring himself to throw it back.",
     "onEquipStatus": "life_save",
     "killHealAmount": 5,
     "damage_types": [
@@ -410,7 +410,7 @@
     "identified": false,
     "unidentified_name": "a shining foreign blade of pale steel",
     "ignore_resistances": true,
-    "lore": "Odin thrust Gram into the Branstock oak; only Sigmund drew it. His son Sigurd had the pieces reforged and with Gram slew Fafnir the dragon, tasted its blood, and thereafter understood the speech of birds. Its edge cuts through any armor, any hide, any enchantment — nothing can resist it.",
+    "lore": "Odin drove Gram into the oak Barnstokk in King Volsung's hall, and only Sigmund could draw it out. Years later the blade shattered, and the smith Regin reforged the pieces for Sigmund's son Sigurd, who tested the edge by splitting the anvil to its base. With Gram he killed the dragon Fafnir from a pit dug under its path. No hide or mail has turned it since.",
     "damage_types": [
       "slash",
       "pierce"
@@ -432,7 +432,8 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "dragon_bonus_damage": "2d8"
   },
   "broken_gram": {
     "name": "Broken Blade of Gram",
@@ -474,7 +475,7 @@
     "quiz_tier": 1,
     "identified": false,
     "unidentified_name": "a broken sword hilt with a jagged blade",
-    "lore": "The shattered remains of a legendary blade. Odin himself broke it against Sigmund's shield when the hero's time had come. The hilt is wrapped in cracked leather and the blade ends in a jagged fracture halfway up. It is a poor weapon — but something about it still hums with dormant power.",
+    "lore": "These are the shards of Sigmund's sword. In his last battle a one-eyed old man in a wide hat stepped into his path and raised a spear, and the blade broke in two against it. Sigmund understood who had come for him. Dying, he told his wife Hjordis to keep the pieces for their unborn son. It is a poor weapon as it lies, but it is waiting to be made whole.",
     "damage_types": [
       "slash"
     ],
@@ -544,7 +545,7 @@
     "identified": false,
     "unidentified_name": "a sturdy iron shovel",
     "can_dig": true,
-    "lore": "It's just an ordinary shovel. Really. Not everything has to be a magic sword. Sigurd dug a pit with one of these and stabbed a dragon in the belly from below — sometimes the right tool is the humble one.",
+    "lore": "An ordinary iron shovel, and proof that not every legend needs a magic sword. Regin told Sigurd to dig one pit in the dragon's path and stab upward as Fafnir crawled to the water. An old man with one eye stopped by and advised digging several more, so the blood would have somewhere to drain. Sigurd dug. The shovel still moves earth and stone quite well.",
     "damage_types": [
       "blunt"
     ],
@@ -614,7 +615,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a sword that vibrates with cold malice",
-    "lore": "The dwarves Dvalinn and Durin forged Tyrfing under duress and cursed it: it would kill a man every time unsheathed. The blade never rusts, never dulls, cuts through iron and stone. Three kings of the Hervarar line died by it. The curse is intrinsic to those who lack the wisdom to set it down.",
+    "lore": "King Svafrlami trapped the dwarves Dvalin and Durin outside their rock and made them forge a sword that would never rust and would bite iron like cloth. They obeyed, then cursed it: Tyrfing would kill a man every time it left the sheath, work three great evils, and be the death of Svafrlami himself. All of it came true. Hervor later took it from her father's barrow, knowing every word.",
     "cursedMissBacklash": 5,
     "damage_types": [
       "slash",
@@ -688,7 +689,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a slender blade with a sea-blue shimmer",
-    "lore": "The Answerer. No armour could stop it; no man could move once it was held to his throat. Manannan mac Lir forged it; Lugh carried it to end Fomorian tyranny. The Irish poets called it the Wind from the East.",
+    "lore": "Fragarach means the Answerer. The sea-god Manannan mac Lir owned it and passed it to his foster-son Lugh of the Long Arm. The Irish tales say that no one with its point at his throat could move or tell a lie, that no armour stopped it, and that the wounds it gave did not heal. Lugh carried it when the Tuatha De Danann threw off the Fomorians.",
     "damage_types": [
       "pierce",
       "magic",
@@ -762,7 +763,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a massive greatsword of unearthly make",
-    "lore": "Fergus mac Róich's great sword could cut the tops off three hills with one sweep. Forged in the Otherworld, it has no human metallurgical analogue. The original has no fragments because it has never broken.",
+    "lore": "Caladbolg, the hard cleaver, was the two-handed sword of Fergus mac Roich, and it traced an arc like a rainbow when he swung it. In the last battle of the Cattle Raid of Cooley, Fergus had King Conchobar at his mercy. Talked out of the killing, he turned his rage on the landscape instead and sheared the tops off three hills in Meath. The hills are still flat.",
     "damage_types": [
       "slash"
     ],
@@ -832,7 +833,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a radiant blade that shifts colour in lamplight",
-    "lore": "Charlemagne's coronation sword changed colour thirty times per day and shone so brightly that enemies were dazzled before the first blow. Charlemagne was buried with it at Aachen. Or possibly wasn't. The trail goes cold in the ninth century.",
+    "lore": "The Song of Roland says that Charlemagne's sword Joyeuse changed colour thirty times a day and held the point of the Holy Lance sealed in its golden pommel. The French battle cry 'Montjoie!' was said to come from its name. A sword called Joyeuse was carried at the coronations of French kings for centuries and now rests in the Louvre. It dazzles before it cuts.",
     "damage_types": [
       "slash",
       "holy"
@@ -978,7 +979,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a cold grey blade with a dim inner glow",
-    "lore": "Taken from King Hrólf Kraki's burial mound; the twelve berserkers who served him in life inhabited the blade. Wounds dealt by Skofnung could only be healed by the Skofnung Stone. No healer has replicated the Stone.",
+    "lore": "Skofnung was the sword of the Danish king Hrolf Kraki, and the spirits of his twelve berserker bodyguards were said to be bound in it. The Icelander Skeggi of Midfirth broke into Hrolf's mound and took it. It came with rules: never draw it with a woman present, never let the sun touch the hilt. A wound from it would close only if rubbed with the Skofnung Stone.",
     "damage_types": [
       "slash"
     ],
@@ -1052,7 +1053,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a perfectly balanced spear of dark ash",
-    "lore": "An oath sworn on Gungnir's tip is unbreakable. Odin threw it over the Vanir's heads to begin the first war. It has never missed. At Ragnarok he will throw it at the Fenris Wolf. This will not be a contradiction.",
+    "lore": "The dwarf sons of Ivaldi forged Gungnir, and Loki brought it to Odin as a peace offering. It never misses its mark, and an oath sworn on its point cannot be broken. Odin hurled it over the host of the Vanir to open the first war in the world. At Ragnarok he will ride at the wolf Fenrir with it levelled, and the wolf will swallow him anyway.",
     "damage_types": [
       "pierce",
       "holy"
@@ -1129,7 +1130,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a barbed spear of sea-monster bone",
-    "lore": "Made from the bone of the Coinchenn sea-beast, thrown with the foot. When it entered a body it opened thirty barbs — it could not be withdrawn. Cu Chulainn used it twice in single combat; both times he wept after.",
+    "lore": "The warrior-woman Scathach gave the Gae Bulg to Cu Chulainn alone of her pupils. It was made from the bone of a sea monster and cast from the fork of the foot. It entered as one wound and opened into thirty barbs, and it had to be cut out of the body. Cu Chulainn used it on his foster-brother Ferdiad and on his own son Connla. He wept both times.",
     "damage_types": [
       "pierce"
     ],
@@ -1199,7 +1200,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a Roman pilum with a blackened tip",
-    "lore": "Longinus pierced Christ's side at the crucifixion. Blood and water ran from the wound; Longinus was healed of failing eyesight. Charlemagne carried it in 47 battles. He died the one day he set it down.",
+    "lore": "John's Gospel says that a soldier pierced the side of Christ on the cross, and blood and water came out. Later tradition named the soldier Longinus, said that the blood cured his failing eyes, and made him a saint. Emperors and crusaders fought to own his spear; one was dug up at Antioch in 1098 and carried into battle. The dead and the damned flinch from its point.",
     "damage_types": [
       "pierce",
       "holy"
@@ -1277,7 +1278,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a short-handled hammer of unsettling weight",
-    "lore": "The handle came out short due to Loki's sabotage, but Odin declared it the greatest treasure ever made. Thor wore iron gauntlets to wield it. At Ragnarok he will kill the Midgard Serpent, take nine steps, and fall. The hammer will survive him.",
+    "lore": "The dwarves Brokkr and Eitri forged Mjolnir on a wager with Loki, who turned himself into a fly and bit Brokkr's eyelid at the bellows. That is why the handle came out short. The gods judged it the best of all their treasures anyway, because it guarded Asgard from the giants. Thor needs iron gauntlets to grip it. At Ragnarok it kills the Midgard Serpent, and Thor walks nine steps and falls.",
     "damage_types": [
       "blunt",
       "lightning",
@@ -1302,7 +1303,8 @@
     "_curve_note": "Promoted to F90s: peak=92, base=42 (= curve.weapon_base_damage(92) x 1.75).",
     "burnChance": 0.25,
     "effective_against": [
-      "construct"
+      "construct",
+      "giant"
     ],
     "design_notes": "King's blow archetype: every blow of Thor's hammer lands like the first, no warm-up to giant-slaying.",
     "chain_lightning_at_chain_n": {
@@ -1360,7 +1362,7 @@
     "identified": false,
     "unidentified_name": "a golden mace that hums faintly",
     "confuseChance": 0.25,
-    "lore": "The 'Smasher of Thousands,' weapon of Ninurta, the Sumerian god of war and agriculture. Sharur could fly through the air and speak — it served as Ninurta's scout, reporting enemy positions before battle. Its strikes scramble the minds of those it hits, leaving them confused and directionless.",
+    "lore": "Sharur, the Smasher of Thousands, was the mace of the Sumerian warrior-god Ninurta. It could fly, and it could talk. The old poems send it ranging ahead over the mountains to spy out the demon Asag and report back, and at one point it advises its own master to retreat. Ninurta did not listen, and won regardless. A blow from it leaves an enemy reeling and unsure which way is forward.",
     "damage_types": [
       "blunt",
       "magic"
@@ -1433,7 +1435,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a massive iron pillar banded with gold",
-    "lore": "The Compliant Golden-Hooped Rod, originally a pillar used by Yu the Great to measure the depth of the world-flood. It weighs 17,550 pounds and can grow to fill the space between heaven and earth or shrink to the size of a needle. Sun Wukong stole it from the Dragon King's palace. Its reach is unmatched — enemies three paces away are within striking distance.",
+    "lore": "The Compliant Golden-Hooped Rod began as the iron pillar with which Yu the Great measured the depth of the flood waters. It lay in the Dragon King's undersea palace until Sun Wukong, the Monkey King, walked off with it. It weighs thirteen thousand five hundred catties, grows tall enough to prop up heaven, and shrinks to a needle he kept behind his ear. An enemy several paces off is still within its reach.",
     "damage_types": [
       "blunt",
       "magic"
@@ -1509,7 +1511,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a great bow that hums with stored energy",
-    "lore": "Arjuna's divine bow had one hundred strings; when one broke another appeared. Its twang shook the earth. With it Arjuna killed 100,000 soldiers in the Kurukshetra War. When grief made him hesitate before battle, Krishna delivered an 18-chapter philosophical treatise to persuade him to pick it up again.",
+    "lore": "The fire-god Agni asked the sea-god Varuna for Gandiva, and gave it to Arjuna so that he could hold off Indra's rain while the Khandava forest burned. Its twang sounded like thunder. On the field of Kurukshetra, Arjuna saw his own kinsmen in the opposing line and let the bow slip from his hand. Krishna's answer to him fills the eighteen chapters of the Bhagavad Gita. Arjuna picked it up again.",
     "damage_types": [
       "pierce",
       "holy"
@@ -1583,7 +1585,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a yew bow with a single carved inscription",
-    "lore": "Tristan's bow, given by the fairy Morgain. Its name was its promise. The inscription reads 'Fail not.' Arrows loosed in duty flew true; arrows loosed in anger missed. Its owner learned this the hard way.",
+    "lore": "The poet Beroul tells how Tristan, hiding in the forest of Morrois with Queen Iseult, built a bow and set it so cleverly among the branches that any stag brushing past was struck exactly where it touched. He named it Fail-Not, the bow that does not miss. The promise holds while its archer is calm and unhurt. A wounded hand makes it an ordinary bow again.",
     "damage_types": [
       "pierce"
     ],
@@ -1731,7 +1733,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a blade forked at the tip like a serpent's tongue",
-    "lore": "Given to Ali ibn Abi Talib at the Battle of Badr. 'There is no sword but Zulfiqar, and no hero but Ali.' The bifurcated tip could take two lives with one thrust. Shia tradition holds it will be wielded by the Mahdi at the end of time.",
+    "lore": "Zulfiqar came to the Prophet Muhammad among the spoils of the Battle of Badr, and he gave it to his cousin and son-in-law Ali ibn Abi Talib. After Ali's stand at Uhud a saying went round that became famous across the Muslim world: there is no hero like Ali and no sword like Zulfiqar. Artists draw it with a split point, and one thrust of it finds two enemies.",
     "damage_types": [
       "slash",
       "pierce"
@@ -1810,7 +1812,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a curved blade with a small hooked back-edge",
-    "lore": "Given to Perseus by Hermes to slay Medusa. Forged with an adamantine edge. Perseus used it while looking at Medusa's reflection in his shield. Some myths say Cronus used its predecessor to castrate Uranus. The weapon has a history of separating very important things.",
+    "lore": "Hermes lent Perseus this sickle-sword with an edge of adamant, the only blade hard enough for a Gorgon's neck. Perseus walked up to the sleeping Medusa backward, watching her in the polished bronze of his shield, and struck without once looking at her. The old poets say Cronus used a sickle of the same make against his father the Sky. The shape has a history of ending things that were meant to last forever.",
     "damage_types": [
       "slash",
       "pierce"
@@ -1888,7 +1890,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a three-pronged weapon of sea-dark metal",
-    "lore": "Poseidon struck the Acropolis and produced a saltwater spring. Athena planted an olive tree. He lost the vote and flooded the Attic plain. The trident-mark is still visible on the Erechtheion floor. He used it to attempt to drown Odysseus for an entire decade.",
+    "lore": "The Cyclopes forged the trident for Poseidon in the war against the Titans. He struck the rock of the Acropolis with it to win Athens, and a salt spring rose. Athena offered an olive tree and won, and he flooded the plain in a temper. The Greeks called him Earth-Shaker, because the same three prongs that raise the sea also split the ground. Odysseus spent ten years learning how long he holds a grudge.",
     "damage_types": [
       "pierce",
       "cold",
@@ -1961,7 +1963,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a small white-handled knife with no visible edge",
-    "lore": "Arthur's dagger that could shroud its wielder in shadow. Arthur used it to kill the Very Black Witch in the Valley of Grief after Kei and Bedivere had both tried and failed. The Mabinogion records this without elaboration.",
+    "lore": "Carnwennan means Little White Hilt. The Welsh tale of Culhwch and Olwen lists it among the things Arthur would not give away. When the Very Black Witch had beaten four of his men bloody in her cave at the head of the Valley of Grief, Arthur stood in the doorway and threw the knife. It cut her in two like a pair of tubs. Later tellers said it wrapped him in shadow.",
     "onEquipStatus": "invisible",
     "damage_types": [
       "pierce",
@@ -2035,7 +2037,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade that seems to cut shadows as well as flesh",
-    "lore": "The Mistletoe Sword. Mistletoe was the one substance Baldur was not protected against — his mother considered it too small to matter. The sword shares this property. Wielded by Prainn the draugr-king before Hervor took it from his barrow.",
+    "lore": "Mistilteinn means mistletoe, the one plant Frigg never asked to spare her son Baldur, because it seemed too young and small to matter. A dart of it killed him. The sword of that name lay in the barrow of Thrain, a king turned draugr, who boasted it had killed hundreds. Hromund Gripsson wrestled the dead man, won, and carried the blade out. It finds the one gap in every defence.",
     "damage_types": [
       "slash",
       "magic"
@@ -2109,7 +2111,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a broad two-handed blade with a blunt squared tip",
-    "lore": "The Sword of Mercy — its tip broken by an angel at the moment Ogier the Dane was about to kill Charlemagne's son. The broken tip became the symbol of mercy in justice. English coronation regalia still includes a blunt-tipped Sword of Mercy. Mercy is the lesser blade.",
+    "lore": "Curtana, or Cortain, was the sword of Ogier the Dane, and legend made it a sister to Joyeuse and Durendal, forged of the same steel. When Ogier raised it to kill Charlemagne's son in revenge for his own, an angel stayed his arm. English kings have had a blunt-tipped Curtana, the Sword of Mercy, carried before them at their coronations since the thirteenth century. Now and then it lets a beaten enemy live.",
     "damage_types": [
       "slash",
       "holy"
@@ -2183,7 +2185,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a divine axe of celestial bronze",
-    "lore": "Shiva gave Parashu to Parashurama after ten thousand years of penance. Parashurama used it to exterminate the Kshatriya caste twenty-one times over, filling five lakes with blood. He is considered a great teacher of martial arts.",
+    "lore": "Shiva gave this axe to Parashurama, Rama with the Axe, a sage born into the priestly caste who fought like no priest before him. When a king's sons murdered his father, he swore to clear the earth of the warrior caste and did it twenty-one times over, filling five lakes with blood. Afterwards he taught arms to Bhishma, Drona and Karna. Once the axe starts on an army, it does not lose its rhythm.",
     "damage_types": [
       "slash",
       "holy"
@@ -2256,7 +2258,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a symmetrical double-bladed ceremonial axe",
-    "lore": "The double-headed axe of Minoan Crete — labrys means both the axe and the labyrinth. It appears in every Minoan palace fresco, held by women. Modern scholars believe it was primarily religious. The Minotaur had no sword, only size, darkness, and the certainty that no one wanted to be there.",
+    "lore": "The double-headed axe is cut into the pillars of Knossos and painted on its walls, and it turns up in gold in Cretan caves, too thin ever to have chopped anything. It was a holy sign before it was a weapon. Some scholars think the word labyrinth means the House of the Double Axe. That would make the Minotaur's maze a temple, and this the key to it.",
     "damage_types": [
       "slash"
     ],
@@ -2328,7 +2330,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a curved blade cold as moonlight",
-    "lore": "Shiva gave the Moon's Laughter to Ravana after Ravana lifted Mount Kailash with twenty arms. Shiva added the condition that if used for evil it would return to him. Ravana used it for evil almost immediately. The sword returned. This is the problem with giving extraordinary weapons as gifts.",
+    "lore": "Ravana, the ten-headed king of Lanka, once tried to lift Mount Kailash with Shiva still sitting on it. Shiva pressed down with one toe and pinned him there, and Ravana sang hymns of praise for a thousand years until the god relented. Shiva's parting gift was this sword, Chandrahas, the Moon's Laughter, with one condition attached: use it unjustly and it goes straight back to its maker. It still keeps that rule.",
     "damage_types": [
       "slash",
       "cold",
@@ -2402,8 +2404,8 @@
     "min_level": 87,
     "quiz_tier": 5,
     "identified": false,
-    "unidentified_name": "a staff cut from the world-tree with a notch at the top",
-    "lore": "Loki cut it at the gates of Hel. It can destroy Vidofnir, the golden rooster atop Yggdrasil whose crowing will begin Ragnarok. Sinmara guards it and will only surrender it through a series of impossible trades. Preventing Ragnarok is bureaucratically complicated.",
+    "unidentified_name": "a scorched, wand-thin staff carved with runes",
+    "lore": "A poem in the Edda says that Loki forged Laevateinn with runes beneath the gates of the dead. The giantess Sinmara keeps it in an iron chest with nine locks. It is the only weapon that can kill Vidofnir, the golden cock at the top of the World Tree, and Sinmara will hand it over only in exchange for Vidofnir's tail feather. No one has yet solved that. Whatever it marks for death goes on dying long after the blow.",
     "damage_types": [
       "magic",
       "fire",
@@ -2482,7 +2484,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a giant fennel stalk topped with a pine cone",
-    "lore": "The Maenads carried the thyrsus. In the Bacchae, Agave kills her son Pentheus with it, believing in her madness he is a lion. Dionysus watched. This is the instrument of a god who believed experience was the teacher.",
+    "lore": "The thyrsus is a stalk of giant fennel wound with ivy and capped with a pine cone, and the Maenads of Dionysus carried it into the hills. Euripides says they struck rocks with it and water and wine sprang out. In the same play Queen Agave, out of her mind with the god's frenzy, takes her own son Pentheus for a mountain lion. One tap is enough to leave a mind unsure of what it sees.",
     "confuseChance": 0.25,
     "damage_types": [
       "blunt",
@@ -2509,7 +2511,7 @@
     "chain_exponent": 1.15
   },
   "rod_of_moses": {
-    "name": "Rod of Moses",
+    "name": "Rod of Aaron",
     "class": "staff",
     "variant": "2h",
     "tier": 5,
@@ -2556,7 +2558,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a plain shepherd's crook of ancient wood",
-    "lore": "The rod became a serpent in Pharaoh's court; parted the Red Sea; struck the rock at Horeb. Jewish tradition gives it a provenance from Adam through Noah through Abraham. Moses used it. Aaron used it. No one is certain what happened to it afterward.",
+    "lore": "At the burning bush God asked Moses what he held in his hand. It was a shepherd's rod, and it became a serpent on the ground. Before Pharaoh the rod turned to a serpent again and swallowed the serpents of the court magicians. Stretched over Egypt it brought the plagues, and over the sea it parted the waters. Something of the serpent stays in it, and its blow can poison.",
     "poisonChance": 0.3,
     "damage_types": [
       "blunt",
@@ -2631,7 +2633,7 @@
     "identified": false,
     "unidentified_name": "a jeweled spear dripping with brine",
     "aoe_slow_on_kill": true,
-    "lore": "The Heavenly Jeweled Spear, given to Izanagi and Izanami by the elder gods. They stirred the primordial ocean with it and from the brine that dripped from its tip, the first island of Japan was born. Each kill sends a ripple of primordial stillness through nearby enemies.",
+    "lore": "The elder gods gave the Heavenly Jeweled Spear to Izanagi and Izanami and told them to make the drifting world solid. The two stood on the Floating Bridge of Heaven and stirred the sea below. When they lifted the spear, the brine that dripped from its point piled up and became Onogoro, the first island of Japan. Each life it takes sends that first stillness rippling outward through everything nearby.",
     "damage_types": [
       "pierce",
       "magic"
@@ -2703,7 +2705,7 @@
     "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a spinning disc of burning light",
-    "lore": "Vishnu's spinning discus. Forged from the effulgence of the sun itself. When Shiva asked to test Vishnu's most powerful weapon, Vishnu threw it without warning and cut off one of Shiva's heads. Shiva grew a new one. They considered this a satisfactory test.",
+    "lore": "The craftsman of the gods, Vishvakarma, shaved the blazing edge off the sun to make it bearable, and from the shavings he made Vishnu's discus, Sudarshana. Krishna promised to forgive his cousin Shishupala a hundred insults. At the hundred and first he let the discus go. It took the head and flew back to his finger. It always comes back.",
     "burnChance": 0.2,
     "damage_types": [
       "slash",
@@ -2778,7 +2780,7 @@
     "quiz_tier": 3,
     "identified": false,
     "unidentified_name": "a short blade from the dwarf-hoard",
-    "lore": "One of two swords in Fafnir's hoard alongside Gram. Sigurd left it when he took Gram. Ridill was the shorter blade — a dwarf-forged knife of theoretical powers, present at every great event of the Volsung cycle, never called upon. Its potential remains forever theoretical.",
+    "lore": "When Sigurd had killed the dragon Fafnir, the smith Regin walked up to the body, drew the sword Ridill and cut out the heart, and asked Sigurd to roast it for him. Sigurd burned his thumb on the meat, put it in his mouth, and suddenly understood the birds overhead. They were saying that Regin meant to kill him. Ridill has opened one dragon already and remembers the way in.",
     "damage_types": [
       "pierce",
       "magic"
@@ -2924,8 +2926,8 @@
     "min_level": 65,
     "quiz_tier": 4,
     "identified": false,
-    "unidentified_name": "an emerald-inlaid curved blade of Solomonic make",
-    "lore": "The Emerald-Studded Sword of Solomon could bind and command djinn. On each emerald a name of power was engraved. Solomon used it not as a weapon but as an administrative tool, employing djinn in constructing the Temple. Its use as a management instrument is rarely discussed in Western traditions.",
+    "unidentified_name": "an emerald-studded curved blade engraved with tiny names",
+    "lore": "Persian storytellers say this emerald-studded sword hung at the hip of King Solomon, who commanded the djinn. In the romance of Amir Arsalan it is guarded by Fulad-zereh, a horned demon whose mother's spells made him proof against every weapon but this one. To wear it is to be safe from sorcery. A wound from it mends only with a potion that costs the demon his own brains.",
     "damage_types": [
       "slash",
       "magic",
@@ -3006,7 +3008,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a golden-bladed sword of divine origin",
-    "lore": "Chrysaor — the Golden Sword — sprang from Medusa's neck alongside Pegasus when Perseus beheaded her. He carried it through his life and gave it to his son Geryones, who built a kingdom in the far west with its aid. Heracles killed Geryones and the sword passed from the western world's records. Gold swords appear occasionally in Bronze Age hoards. None have been identified as Chrysaor. None have been ruled out.",
+    "lore": "When Perseus cut off Medusa's head, two children sprang from her neck: the winged horse Pegasus and Chrysaor, whose name means Golden Sword, and who was born with one in his hand. He became the father of three-bodied Geryon. Edmund Spenser gave the name to the sword of his knight of Justice, a blade Jove had used against the Titans, tempered so that nothing could dull or break it.",
     "damage_types": [
       "slash",
       "holy"
@@ -3077,7 +3079,7 @@
     "quiz_tier": 2,
     "identified": false,
     "unidentified_name": "a plain but perfectly balanced blade",
-    "lore": "Some scholars distinguish Caliburn — the sword in the stone — from Excalibur, the sword from the lake. Geoffrey of Monmouth uses the name Caliburnus and has it forged in Avalon. In later tradition it became a single weapon. The distinction matters because the stone-sword test and the lake-gift are morally opposite stories: one is earned, one is given. Arthur had both.",
+    "lore": "Geoffrey of Monmouth calls Arthur's sword Caliburnus and says it was forged on the Isle of Avalon. Later romances split the story in two: one sword pulled from a stone to prove a boy was king, another handed up from a lake. Some tellers keep the old name for the first. A sword drawn from a stone has to be earned, and this one still grows with every victory its bearer wins.",
     "growingPower": true,
     "killsToGrow": 10,
     "damage_types": [
@@ -3150,7 +3152,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a blade that runs warm to the touch",
-    "lore": "The word for fire in Old Norse. A sword that shares its name with the ancient word for flame was found in a Norse burial mound in Gotland, its blade still faintly warm centuries later. The metallurgists who examined it in 1947 published their findings in a paper that was subsequently lost. Three colleagues confirmed its content before it vanished. The sword itself remains in a private collection.",
+    "lore": "Brisingr is an old Norse poets' word for fire. The same root is in the Brisingamen, the glowing necklace that four dwarves forged for the goddess Freyja and that Loki once stole in the shape of a seal. No saga records a smith naming this sword, but he named it well. The steel stays warm in the scabbard on the coldest floor, and what it cuts tends to catch.",
     "burnChance": 0.35,
     "damage_types": [
       "slash",
@@ -3293,8 +3295,8 @@
     "min_level": 42,
     "quiz_tier": 3,
     "identified": false,
-    "unidentified_name": "a heavy single-bladed axe with an age-worn grip",
-    "lore": "Beowulf's sword that shattered in his final battle with the dragon. The poem notes that iron could not help him — his grip was too strong for ordinary blades. Naegling broke. He had to kill the dragon with his bare hands and a knife. This is what happens when a warrior outlives the weapons made for lesser men.",
+    "unidentified_name": "a grey, age-worn weapon with a notch near the grip",
+    "lore": "Naegling was the old grey heirloom sword Beowulf carried against the dragon in the fiftieth year of his reign. It snapped on the dragon's skull. The poet explains that Beowulf's hand was too strong, and overtaxed every blade he ever swung. Young Wiglaf, the only man who had not run, stabbed the beast low, and the dying king finished it with his knife. Naegling has unfinished business with dragons.",
     "damage_types": [
       "slash",
       "blunt"
@@ -3418,7 +3420,7 @@
     "unidentified_name": "a ghostly iron longsword",
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "lore": "Taken from the captain of the Wild Hunt, this blade phases between this world and the spectral realm. Its edge is impossibly sharp and its cold is the cold of the grave.",
+    "lore": "The Wild Hunt rides the winter sky across all of northern Europe: a host of dead men, black hounds and a captain who is sometimes Odin and sometimes a damned lord. One tale names King Herla, who must ride until the dog on his saddle jumps down, and it never does. This was the captain's sword. It is half in the world and half out, and it carries the cold of the grave.",
     "effects": {
       "status": "bleeding",
       "effect_chance": 0.25,
@@ -3483,7 +3485,7 @@
     "unidentified_name": "a pale jagged tooth",
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "lore": "A fang torn from the Wendigo's maw. It leaches warmth and stamina from enemies on contact. The wound never feels warm again.",
+    "lore": "The Algonquian peoples of the northern forests tell of the Wendigo, a gaunt spirit of winter and famine with a heart of ice. It grows with every meal, so it can never be full, and the hungrier it gets the more it eats. This fang was torn from such a creature's jaw. It drinks the warmth and the strength out of whatever it bites, and the wound never feels warm again.",
     "effects": {
       "status": "slowed",
       "effect_chance": 0.35,
@@ -3548,7 +3550,7 @@
     "unidentified_name": "a curved ivory fang",
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "lore": "A tooth from Echidna herself, mother of all monsters. Wounds from it fester with a slow-acting venom that mimics her many children's poisons.",
+    "lore": "Hesiod calls Echidna half fair-cheeked nymph and half huge speckled serpent, living in a cave deep under the earth. With Typhon she bore Cerberus, the Hydra and the Chimera, and the Greeks called her the mother of all monsters. This is one of her own teeth. Its venom cannot seem to decide which of her children it takes after, and no two wounds from it fester the same way.",
     "effects": {
       "status": "poisoned",
       "effect_chance": 0.4,
@@ -3623,7 +3625,7 @@
     "unidentified_name": "a red-hot iron blade",
     "can_be_cursed": false,
     "enchant_bonus": 0,
-    "lore": "Forged in Vulcan's own furnace by Cacus who stole the technique from his father. The blade never fully cools and sets enemies alight on a solid strike.",
+    "lore": "Cacus was a son of Vulcan, a fire-breathing giant who lived in a cave on the Aventine Hill. He stole the cattle of Hercules and dragged them in backward by their tails so the tracks would point the wrong way. Hercules tore the roof off the cave and throttled him in his own smoke. This blade came out of that cave. It was quenched in a god's forge and never fully cooled.",
     "effects": {
       "status": "burning",
       "effect_chance": 0.35,
@@ -3697,7 +3699,7 @@
     "value": 300,
     "min_level": 5,
     "unidentified_name": "a worn leather strap with a pouch",
-    "lore": "The shepherd boy David faced the giant Goliath with nothing but a sling and five smooth stones. One stone was enough. The sling is the weapon of the underestimated — it asks only for courage and accuracy. Against the mighty, it is devastating.",
+    "lore": "King Saul offered the shepherd boy his own bronze helmet and coat of mail. David tried them on, could not walk in them, and took them off. He went down to the brook in the Valley of Elah, chose five smooth stones, and met the Philistine giant Goliath with a sling. The first stone sank into the giant's forehead. It is the weapon of the underestimated, and it is never short of stones.",
     "quiz_tier": 1,
     "requiresAmmo": "stone",
     "infiniteAmmo": true,
@@ -3722,7 +3724,10 @@
     "weapon_class_chain": "finesse",
     "identified": false,
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "effective_against": [
+      "giant"
+    ]
   },
   "prometheus_torch": {
     "name": "Narthex of Prometheus",
@@ -3770,7 +3775,7 @@
     "value": 500,
     "min_level": 8,
     "unidentified_name": "a smoldering hollow fennel stalk",
-    "lore": "Hesiod's Theogony says Prometheus stole fire in a hollow fennel stalk — a narthex, the dry pithy stem that smolders slowly inside without burning through. He carried Zeus's ember down to mortals that way. Zeus chained him to the Caucasus and sent an eagle for his liver every day. The stalk in your hand still smokes at the core. It has not gone out for three thousand years.",
+    "lore": "Hesiod says Prometheus stole fire in a hollow fennel stalk, a narthex, whose dry pith smoulders slowly inside without burning through. He carried the ember down to mortals that way. Zeus chained him to a crag in the Caucasus and sent an eagle for his liver every day. The stalk still smokes at the core and throws a steady light. It has not gone out in three thousand years.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt",
@@ -3844,8 +3849,8 @@
     "containerLootTier": "rare",
     "value": 2000,
     "min_level": 12,
-    "unidentified_name": "a jeweled blade suspended by a single horsehair",
-    "lore": "Dionysius II of Syracuse invited the courtier Damocles to sit on his throne and enjoy the luxuries of power. Above the throne hung a sword, suspended by a single horsehair. Damocles understood immediately: power comes with constant peril. This blade cuts magnificently, but the thread grows thinner with every swing.",
+    "unidentified_name": "a jeweled blade with a frayed horsehair knotted at the pommel",
+    "lore": "Cicero tells the story. Damocles, a flatterer at the court of Dionysius of Syracuse, kept saying how happy a tyrant must be, so Dionysius sat him on a golden couch at a banquet. Then Damocles looked up. A sword hung over his neck by a single horsehair, and he begged to go home. The blade cuts magnificently, but its luck is on a thread, and every miss frays it.",
     "quiz_tier": 2,
     "damage_types": [
       "slash",
@@ -3919,7 +3924,7 @@
     "value": 1800,
     "min_level": 14,
     "unidentified_name": "a weathered yew longbow wrapped in green cloth",
-    "lore": "Robin of Loxley, the outlaw of Sherwood Forest, could split an arrow at two hundred paces. His longbow was cut from a yew tree in the heart of the forest. It favors those who strike from the shadows — enemies that cannot see you cannot hear its string.",
+    "lore": "The old ballads say Robin Hood could split a willow wand at a distance other archers would not attempt, and they put him in Sherwood or in Barnsdale with a yew bow and a coat of Lincoln green. Dying at Kirklees Priory, he shot one last arrow through the window and asked to be buried where it fell. The bow favours an archer nobody has seen yet.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"
@@ -3991,7 +3996,7 @@
     "value": 3500,
     "min_level": 1,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
-    "lore": "The spear of Achilles, son of Peleus, forged by Hephaestus. In the myth of Telephus, the spear that wounded also healed — rust scraped from its tip cured the very wound it had made. Those slain by this spear restore vigor to their killer. At Troy, no warrior could stand before it.",
+    "lore": "The centaur Chiron cut this ash on Mount Pelion and gave it to Peleus on his wedding day. Peleus passed it to his son, and Homer says no other Greek could even lift it. Patroclus took all the rest of Achilles's armour and left the spear behind. Rust scraped from its point healed King Telephus of the wound it had given him, and it still gives back strength as it takes life.",
     "quiz_tier": 1,
     "damage_types": [
       "pierce"
@@ -4061,7 +4066,7 @@
     "value": 4500,
     "min_level": 35,
     "unidentified_name": "a heavy bronze axe with cuneiform inscriptions",
-    "lore": "Enkidu dreamed of an axe that fell from the sky — Gilgamesh's equal, his brother in arms. This is that axe: the weapon of the king who sought immortality and found friendship instead. In the Cedar Forest, Gilgamesh and Enkidu fought Humbaba together. The axe remembers that bond — it strikes harder after its wielder has been wounded.",
+    "lore": "Before they met, Gilgamesh dreamed that an axe lay in the street of Uruk and that he loved it like a wife. His mother told him the axe was a man, a friend who would never forsake him. That friend was Enkidu. The smiths of Uruk cast great axes for the two of them, and they carried them to the Cedar Forest to face its guardian Humbaba.",
     "quiz_tier": 3,
     "damage_types": [
       "slash"
@@ -4135,7 +4140,7 @@
     "value": 5500,
     "min_level": 38,
     "unidentified_name": "a curved blade that distorts the air around it",
-    "lore": "Gaia gave this adamantine scythe to Cronus to overthrow his father Uranus. With it, Cronus castrated the sky itself — from the blood sprang the Giants and the Furies, and from the severed flesh arose Aphrodite. The scythe cuts through time and matter alike. Those it wounds age visibly, their vitality draining with each passing moment.",
+    "lore": "Gaia, the Earth, made a great sickle of grey adamant and asked her children who would use it against their father. Only Cronus, the youngest Titan, said yes. He lay in ambush and cut the Sky away from the Earth for good. The Furies and the Giants rose where the blood fell. Cronus was later equated with Time, and what his blade wounds seems to age as it bleeds.",
     "quiz_tier": 3,
     "damage_types": [
       "slash",
@@ -4210,7 +4215,7 @@
     "value": 9000,
     "min_level": 50,
     "unidentified_name": "a spear radiating intense heat",
-    "lore": "One of the Four Treasures of the Tuatha De Danann. The Spear of Lugh was so bloodthirsty it had to be kept submerged in a cauldron of poison to prevent it from igniting everything nearby. No battle was ever sustained against it. Lugh used it to slay Balor of the Evil Eye at the Second Battle of Mag Tuired, striking through his eye and out the back of his head.",
+    "lore": "One of the four treasures of the Tuatha De Danann, brought from the island city of Gorias. No battle was ever sustained against it or against the man who held it. Later tales say it thirsted so badly for blood that its head had to be kept steeped in a cauldron, or it would burst into flame. Lugh carried it to Mag Tuired, where he put out the killing eye of Balor, and it has hated a baleful stare ever since.",
     "quiz_tier": 4,
     "damage_types": [
       "pierce",
@@ -4283,7 +4288,7 @@
     "value": 8500,
     "min_level": 52,
     "unidentified_name": "a crimson-stained spear that weeps red",
-    "lore": "The Red Spear of Diarmuid Ua Duibhne, champion of the Fianna. Diarmuid carried two spears: Gae Buidhe the Yellow, which wounded but could not kill, and Gae Dearg the Red, from which no wound could ever heal. The distinction mattered — Diarmuid chose his spear based on whether mercy was warranted. Gae Dearg offers no mercy.",
+    "lore": "Diarmuid Ua Duibhne of the Fianna owned two spears. Gae Buidhe, the Yellow, was for small troubles. Gae Dearg, the Red, was for mortal danger, and no wound it gave ever healed. On the morning he went to hunt the boar of Ben Bulben, Diarmuid took the Yellow Spear against Grainne's advice. The boar killed him. This is the one he should have carried.",
     "quiz_tier": 4,
     "damage_types": [
       "pierce"
@@ -4353,7 +4358,7 @@
     "value": 4000,
     "min_level": 30,
     "unidentified_name": "a tightly woven metallic mesh",
-    "lore": "Hephaestus forged this net to catch Ares and Aphrodite in their affair. It was so fine it was invisible, so strong not even Ares could break free. In the Odyssey, Demodocus sings of how Hephaestus dragged the ensnared lovers before all the gods of Olympus. This net does almost no damage — but nothing escapes it.",
+    "lore": "Hephaestus, the lame smith of the gods, learned that his wife Aphrodite was meeting Ares in secret. He forged a net of chains as fine as spider silk, too thin to see and too strong for the god of war to break, and dropped it over them. Then he called all Olympus to look, and the gods laughed for a long time. The net does almost no harm. Nothing gets out of it.",
     "quiz_tier": 3,
     "damage_types": [
       "blunt"
@@ -4424,7 +4429,7 @@
     "ignore_resistances": true,
     "abaddon_bonus_damage": "5d10",
     "holy_smite_message": true,
-    "lore": "The flaming sword of the Archangel Michael, Prince of the Heavenly Host. With this blade he cast Lucifer from Heaven and shall wield it again at the end of days. No armor, no enchantment, no infernal resistance can turn its edge. Against the Destroyer, it blazes with the full wrath of Heaven. It is the reward of the righteous — earned not by strength but by the quality of one's soul.",
+    "lore": "The sword of the Archangel Michael, captain of the armies of Heaven. The Book of Revelation tells of war in heaven, where Michael and his angels fought the dragon and cast him down to the earth. No armour, enchantment or infernal hide can turn this edge, and against the Destroyer it blazes with the full wrath of Heaven. It is not won by strength. It is given to a soul that has been weighed and found worthy.",
     "damage_types": [
       "holy",
       "slash"
@@ -4497,8 +4502,8 @@
     "value": 3000,
     "min_level": 30,
     "quiz_tier": 3,
-    "unidentified_name": "well-kept longsword",
-    "lore": "A longsword of excellent make, the name VALE engraved into the crossguard. It was carried into the dungeon by a young man who wanted to prove himself. He didn't come back. The blade is still sharp — someone maintained it with love.",
+    "unidentified_name": "a well-kept longsword with a name on the crossguard",
+    "lore": "A longsword of excellent make, with the name VALE engraved on the crossguard. A young man carried it into the dungeon to prove himself, and he did not come back. The blade is still sharp, and someone oiled and honed it with love for years. It strikes best when its bearer has a companion fighting at his side.",
     "damage_types": [
       "slash"
     ],
@@ -4569,7 +4574,7 @@
     "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a dark iron dagger stained with old blood",
-    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill. The blade drinks blood — wounds dealt with it restore the wielder's vitality, as though the weapon is trying to balance its ledger.",
+    "lore": "A wickedly sharp dagger of dark iron, carried for twenty years by a man who used it to kill and spent the years after trying to atone. The blade drinks from the wounds it makes and returns the strength to the hand that holds it, as though it were trying to balance a ledger. Used long enough against evil things, it may yet come out even.",
     "damage_types": [
       "pierce"
     ],
@@ -4753,7 +4758,7 @@
     "value": 250,
     "min_level": 4,
     "unidentified_name": "a bronze-tipped spear with wolf-hide grip",
-    "lore": "When Romulus hurled his spear from the Aventine Hill into the Palatine, it struck the earth and took root, growing into a great tree. The spear that founded Rome carries the will of a man who built a civilization from nothing — from fratricide to empire. It strikes from further than any common weapon.",
+    "lore": "Plutarch says that Romulus once tested his arm by hurling a spear of cornel wood from the Aventine Hill to the Palatine. The point buried itself so deep that no one could pull it out, and the shaft took root and grew into a tree the Romans fenced and tended for centuries. He was nursed by a she-wolf and killed his own brother over a wall. The spear reaches further than a common one.",
     "quiz_tier": 1,
     "damage_types": [
       "pierce"
@@ -4821,7 +4826,7 @@
     "value": 200,
     "min_level": 3,
     "unidentified_name": "a gold-leafed shepherd's crook",
-    "lore": "The crook and flail were the symbols of pharaonic authority in ancient Egypt — the crook representing the shepherd's duty to guide and protect, the flail representing the power to punish. This crook once rested in the crossed arms of a king. Its strikes carry the weight of divine kingship, stunning those who would oppose the throne.",
+    "lore": "Every pharaoh was shown holding two things crossed on his chest: the crook, called heka, and the flail. The crook is a shepherd's tool, and it meant that the king was herdsman of his people. The same sign was the hieroglyph for the word 'ruler.' This one, striped in gold and blue, once lay in the folded arms of a king. Those who stand beside its bearer stand a little taller.",
     "quiz_tier": 1,
     "damage_types": [
       "blunt"
@@ -4890,7 +4895,7 @@
     "value": 500,
     "min_level": 10,
     "unidentified_name": "a heavy iron fragment crackling with static",
-    "lore": "A jagged fragment of Thor's legendary hammer, Mjolnir — the weapon forged by the dwarves Sindri and Brokkr in Asgard. Though only a shard, it still carries the storm. Lightning arcs between its fractures, and each blow echoes with distant thunder. To wield even a piece of Mjolnir is to hold a fraction of the storm god's wrath.",
+    "lore": "A jagged fragment of iron that claims to be a piece of Mjolnir, the hammer the dwarves Brokkr and Eitri made for Thor. The myths never say the hammer chipped, but lightning arcs across the break all the same and every blow lands with a mutter of distant thunder. Norsemen wore small hammers on a cord for protection. This is a good deal heavier than an amulet.",
     "quiz_tier": 2,
     "damage_types": [
       "blunt",
@@ -4959,7 +4964,7 @@
     "value": 600,
     "min_level": 12,
     "unidentified_name": "a recurved bow radiating faint heat",
-    "lore": "The great bow of Lord Rama, hero of the Ramayana — the divine prince who bent the bow of Shiva to win Sita's hand. His arrows, guided by dharma, struck down the demon king Ravana and his armies. This bow carries that sacred fire. Arrows loosed from it burn with righteous flame, and no act of evil can stand before it.",
+    "lore": "To win Sita's hand a suitor had to string the great bow of Shiva. Prince Rama lifted it, bent it, and snapped it in two with a crack like thunder. His own bow, Kodanda, went with him through fourteen years of forest exile and across the sea to Lanka, where his arrow brought down the ten-headed demon king Ravana. Its shafts fly hot, and demons have reason to fear them.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce",
@@ -5029,7 +5034,7 @@
     "value": 800,
     "min_level": 20,
     "unidentified_name": "a barbed bone spearhead bound to a shaft",
-    "lore": "A fragment of the Gae Bolg, the cursed spear of Cu Chulainn, greatest hero of Irish mythology. The original weapon was made from the bone of a sea monster and, once it pierced flesh, its barbs opened inside the wound, making it impossible to remove without killing the victim. Even this fragment carries that terrible legacy — its strikes rend deep, and its critical blows are devastating.",
+    "lore": "A broken length of the Gae Bulg, the spear the warrior-woman Scathach taught only Cu Chulainn to throw. The whole weapon was carved from the bone of a sea beast that died fighting another, and its head opened into barbs once it was inside the body. Even this piece, lashed to a new shaft, will not come out of a wound cleanly.",
     "quiz_tier": 2,
     "damage_types": [
       "pierce"
@@ -5096,7 +5101,7 @@
     "value": 900,
     "min_level": 25,
     "unidentified_name": "a weathered staff of ancient wood",
-    "lore": "The staff that Moses raised to part the Red Sea, that struck the rock at Horeb to bring forth water, that became a serpent before Pharaoh. It was a simple shepherd's staff before God chose it — and that is the lesson. It is not the weapon that matters, but the hand that wields it and the faith behind it. Against the unholy, it strikes with divine authority.",
+    "lore": "This was a shepherd's staff, cut for walking the hills of Midian behind another man's flock. Then Moses raised it over the Red Sea and the waters stood up like walls. At Horeb he struck the rock with it and water ran for a thirsty people. At Rephidim, Israel prevailed for as long as he held it high. The wood is ordinary. What matters is the hand that holds it and the God who sent him.",
     "quiz_tier": 2,
     "damage_types": [
       "blunt",
@@ -5177,7 +5182,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "a blade of polished silver etched with runes",
-    "lore": "A witcher's silver sword, forged for one purpose: killing monsters. Where steel is for men, silver is for creatures of the night — wraiths, vampires, ghouls, and the nameless things that crawl from cursed earth. This blade was carried through a hundred contracts by a white-haired witcher who was more than human but never quite monster. The runes along its edge hum faintly in the presence of dark magic.",
+    "lore": "A witcher carries two swords: steel for men, silver for monsters. This is the silver one, made for wraiths, vampires, ghouls and the nameless things that crawl out of cursed earth. A white-haired witcher bore it through a hundred contracts, never quite human and never the monster people took him for. The runes along its edge hum faintly when dark magic is near.",
     "quiz_tier": 2,
     "damage_types": [
       "slash",
@@ -5244,7 +5249,7 @@
     "min_level": 9999,
     "identified": false,
     "unidentified_name": "an impossibly light sword with a swallow engraved on the blade",
-    "lore": "Zireael — 'Swallow' in Elder Speech. Forged by the gnome swordsmith Esterhazy of Mahakam, this blade is a masterwork of metallurgy and magic. Lighter than any human-forged sword yet harder than dwarven steel, it was made for a girl who carried the blood of the Elder Folk in her veins. The swallow engraved on the ricasso is not merely decorative — it is a promise. She will return. She always returns.",
+    "lore": "Zireael means Swallow in the Elder Speech. The gnome swordsmith Esterhazy of Mahakam made it, lighter than any sword of human forging and harder than dwarven steel, for a girl with the blood of the Elder Folk in her veins. The swallow engraved on the blade is a promise as much as a decoration: she comes back. In the right hand it is so quick that one kill flows straight into the next stroke.",
     "quiz_tier": 3,
     "damage_types": [
       "slash"
@@ -5323,7 +5328,7 @@
       "effect_chance": 0.3,
       "effect_duration": 5
     },
-    "lore": "The Vel was given to Murugan by his mother Parvati to slay the demon Surapadman. When thrown, it split the demon in two — one half became a peacock, the other a rooster. The lance returned to Murugan's hand. It burns with the fire of righteous war and cannot be turned aside by mortal shields.",
+    "lore": "Parvati gave the Vel, a leaf-bladed lance, to her son Murugan when he rode out against the demon Surapadman. The demon turned himself into a great mango tree in the sea, and the Vel split him down the middle. One half became a peacock, which Murugan took as his mount. The other became a rooster, which he put on his banner. The lance burns, and no shield turns it.",
     "damage_types": [
       "pierce",
       "fire",
@@ -5406,7 +5411,7 @@
     "kill_heal_amount": 3,
     "kill_max_hp_bonus": 1,
     "kill_max_hp_cap": 10,
-    "lore": "Anubis weighed the heart of every Egyptian dead against the feather of Ma'at, truth itself. If the heart was heavier, the demon Ammit ate it on the spot. The priests of Anubis carried khopeshes of black iron during the embalming rites — not for use on the living, but for the symbolic severing of what could not be allowed into the next world. This is one of them. The blade still measures, and what it judges, it keeps.",
+    "lore": "Anubis weighed the heart of every Egyptian dead against the feather of Ma'at, truth itself. If the heart was heavier, the demon Ammit ate it on the spot. The priests of Anubis carried khopeshes of black iron during the embalming rites, not for use on the living but for the symbolic severing of what could not be allowed into the next world. This is one of them. The blade still measures, and what it judges, it keeps.",
     "damage_types": [
       "slash"
     ],
@@ -5477,7 +5482,7 @@
     "identified": false,
     "unidentified_name": "a crescent-shaped blade that glows faintly",
     "low_hp_damage_bonus": true,
-    "lore": "The 'Laughing Moon,' given to Ravana by Shiva himself as a reward for his devotion. The blade laughed as it cut — a high, cold sound like cracking ice. It grows more dangerous as its wielder's life fades, channeling desperation into devastating power. Shiva warned Ravana never to use it unjustly, or it would return to him. Ravana did not listen.",
+    "lore": "Chandrahasa, the Laughing Moon, was the sword Shiva gave to Ravana, the demon king of Lanka, with a warning never to draw it unjustly. Ravana drew it when the old vulture-king Jatayu tried to stop him carrying off Sita, and cut the bird's wings from his body. The blade laughs as it cuts, a high cold sound like cracking ice, and it bites deepest when its bearer is nearest to death.",
     "damage_types": [
       "slash",
       "magic"
@@ -5549,7 +5554,7 @@
     "identified": false,
     "unidentified_name": "a green-hafted axe with living vines",
     "on_hit_regen": 3,
-    "lore": "The axe carried by the Green Knight into Arthur's hall on New Year's Day. He offered a game: any knight may strike one blow, if the Green Knight may return it in a year. Gawain took the challenge and cut off the Knight's head. The Knight picked it up and left. The axe remembers. When its wielder is struck, the wound begins to close — slowly, but surely.",
+    "lore": "The Green Knight carried this axe into Arthur's hall on New Year's Day and offered a game: any knight might strike him one blow, if he might return it in a year. Gawain took the challenge and cut off his head. The Knight picked it up and rode out. A year later, at the Green Chapel, the return stroke only nicked Gawain's neck. A wound taken while holding the axe begins to close, slowly but surely.",
     "damage_types": [
       "slash"
     ],
@@ -5628,7 +5633,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 2040,
-    "unidentified_name": "a spear",
+    "unidentified_name": "a long white-shafted spear rimed with frost",
     "identified": false,
     "freeze_chance": 0.25,
     "ignore_resistances": true,
@@ -5709,7 +5714,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 660,
-    "unidentified_name": "a dagger",
+    "unidentified_name": "a short leaf-bladed dagger in a gold-faced sheath",
     "identified": false,
     "prophecy_blade": true,
     "bleed_chance": 0.25,
@@ -5785,7 +5790,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 1800,
-    "unidentified_name": "a sword",
+    "unidentified_name": "a long bright sword engraved with seven stars",
     "identified": false,
     "undead_bonus": 2.5,
     "on_equip_status": "fear_aura",
@@ -5864,7 +5869,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 420,
-    "unidentified_name": "a bow",
+    "unidentified_name": "a light hunting bow with a bearskin grip",
     "identified": false,
     "first_blood_bonus": true,
     "lore": "The huntress raised by bears, fastest of mortals, who drew first blood on the Calydonian Boar before any of the heroes could land a spear. Meleager awarded her the hide, and his uncles died for the slight. Her arrow flies straight to the first thing that draws breath in her sights.",
@@ -5939,7 +5944,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 660,
-    "unidentified_name": "a spear",
+    "unidentified_name": "a long lance with a lump of lead on its point",
     "identified": false,
     "burn_chance": 0.2,
     "beast_bonus_damage": "2d6",
@@ -6015,7 +6020,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 600,
-    "unidentified_name": "a sword",
+    "unidentified_name": "a notched bronze sword with a great tooth set in the pommel",
     "identified": false,
     "dragon_bonus_damage": "1d8",
     "bleed_chance": 0.2,
@@ -6097,7 +6102,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 1920,
-    "unidentified_name": "a sword",
+    "unidentified_name": "a long pale sword in a jeweled, rune-cut scabbard",
     "identified": false,
     "goblin_bonus_damage": "2d8",
     "glows_near_orcs": true,
@@ -6118,7 +6123,12 @@
       "41-60": 0,
       "61-80": 0,
       "81-100": 2
-    }
+    },
+    "effective_against": [
+      "orc",
+      "goblinoid",
+      "goblin"
+    ]
   },
   "hector_javelin": {
     "name": "Hector's Javelin",
@@ -6173,7 +6183,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 360,
-    "unidentified_name": "a spear",
+    "unidentified_name": "a bronze-headed javelin with a gold ring at the socket",
     "identified": false,
     "bleed_chance": 0.25,
     "lore": "The bronze-headed javelin of Hector, breaker of horses, last shield of Troy. He threw one like it at Ajax in the duel before the ships; it struck the boss of the shield and bent. Patroclus wore Achilles's armor when he fell to the next throw of its kind.",
@@ -6247,12 +6257,12 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 840,
-    "unidentified_name": "a club",
+    "unidentified_name": "a knotted olive-wood club dark with resin",
     "identified": false,
     "stun_chance": 0.35,
     "knockback": true,
     "beast_bonus_damage": "1d10",
-    "lore": "Uprooted from the wild olives of Nemea by the hero's own hands, hardened in the fire of his second labor. The Nemean Lion's hide had turned every blade he tried; the club did not need to cut. The wood is dark with old work and smells of resin even now.",
+    "lore": "Heracles cut this club himself from a wild olive tree near Nemea, on the way to his first labour. The Nemean Lion's hide turned every arrow and blade he tried, so he stunned it with the club and strangled it. He carried the same piece of wood through the eleven labours that followed. It is dark with old work and still smells of resin.",
     "_curve_note": "base_damage = curve.weapon_base_damage(46) x 2.0 unique-mult, signature boss-tier hero weapon. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F40-49 Medusa-era band fill.",
     "stunChance": 0.35,
     "bleedChance": 0.0,
@@ -6324,7 +6334,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 1680,
-    "unidentified_name": "a sword",
+    "unidentified_name": "a bright sword with a watchful face cast on the pommel",
     "identified": false,
     "vigilance_aware": true,
     "stun_chance": 0.15,
@@ -6398,7 +6408,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 480,
-    "unidentified_name": "a spear",
+    "unidentified_name": "a broad-bladed ash spear with a crossbar below the head",
     "identified": false,
     "beast_bonus_damage": "1d6",
     "bleed_chance": 0.3,
@@ -6475,10 +6485,10 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 660,
-    "unidentified_name": "a sword",
+    "unidentified_name": "an old bronze sword with an ivory grip",
     "identified": false,
     "cursed_lineage": true,
-    "lore": "Pelops took the kingdom of Pisa by winning the chariot race against Oenomaus, after bribing the charioteer to remove a linchpin. The king died. The charioteer was thrown into the sea cursing the house. The sword passed down to Atreus, then to Agamemnon, and Mycenae did not stop bleeding for three generations.",
+    "lore": "Pelops won the kingdom of Pisa in a chariot race against King Oenomaus, after bribing the charioteer Myrtilus to swap the bronze linchpins for wax. The king died in the wreck. Pelops then threw Myrtilus into the sea, and the drowning man cursed his house. The sword passed down to Atreus, then to Agamemnon, and Mycenae did not stop bleeding for three generations.",
     "_curve_note": "Redistributed: peak=36, base=9 (= curve.weapon_base_damage(36) x 1.55), min_level=29, quiz_tier=2.",
     "stunChance": 0.0,
     "bleedChance": 0.0,
@@ -6550,7 +6560,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 2280,
-    "unidentified_name": "a sword",
+    "unidentified_name": "a huge black sword cut with red runes",
     "identified": false,
     "lifesteal_percent": 0.25,
     "selects_wielder": true,
@@ -6628,10 +6638,10 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 360,
-    "unidentified_name": "a scimitar",
+    "unidentified_name": "a curved bronze sickle with a rippled edge",
     "identified": false,
     "bleed_chance": 0.3,
-    "lore": "A curved bronze blade said to be ground from one of the molten drops shed when Medea pulled the brass pin from Talos's ankle. The Cretan giant bled his ichor into the sea before he fell. Whatever cooled there still cuts.",
+    "lore": "Talos was the bronze giant who walked the shores of Crete three times a day, with a single vein of ichor sealed at his ankle by a bronze nail. Medea charmed him and drew the nail, and his lifeblood ran out like molten lead into the sand. This curved blade is said to be ground from one of the cooled drops. Whatever it is made of still cuts.",
     "_curve_note": "base_damage = curve.weapon_base_damage(25) x 1.5 unique-mult. Class: finesse 5-rung [0.20, 0.55, 1.00, 1.80, 3.00]. F20-29 Asterion-era band fill.",
     "stunChance": 0.0,
     "bleedChance": 0.3,
@@ -6701,7 +6711,7 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "value": 360,
-    "unidentified_name": "a club",
+    "unidentified_name": "a short bronze-bound club worn smooth at the grip",
     "identified": false,
     "stun_chance": 0.3,
     "lore": "The bronze club Theseus took from the corpse of Periphetes, the lame brigand of Epidaurus who beat travellers to death with it. Theseus kept the weapon for the rest of the road to Athens and carried it down into the labyrinth. The hero who walked the maze did not walk it empty-handed.",
@@ -6789,7 +6799,7 @@
     "max_enchant": 3,
     "unidentified_name": "a crude root-end cudgel stained at the head",
     "identified": false,
-    "lore": "The Bible does not say what Cain used. Talmudic and Quranic commentary settles on a rough club — the first murder weapon, made of nothing in particular. The mark on Cain protected him from retaliation but not from memory. The wood is the wrong colour at one end and no one has been able to wash it clean.",
+    "lore": "Genesis says only that Cain rose up against his brother Abel in the field. It does not name the weapon, and commentators have guessed for centuries: a stone, a staff, a rough club made of nothing in particular. God set a mark on Cain so that no one would kill him, but it did not protect him from memory. The wood is the wrong colour at one end and will not wash clean.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "cursedMissBacklash": 1,
@@ -6862,7 +6872,7 @@
     "max_enchant": 3,
     "unidentified_name": "a slender ceremonial mace topped with a jackal",
     "identified": false,
-    "lore": "Wepwawet — 'Opener of the Ways' — was the jackal-headed war-god of Upper Egypt, older than Anubis and originally separate from him. The Pyramid Texts show him going before the king as scout and standard-bearer, his iconography listing both a mace and a bow. Predynastic pear-shaped mace heads from Hierakonpolis survive in museum cases. They are heavier than they look, and the carved limestone ones are heaviest of all.",
+    "lore": "Wepwawet, the Opener of the Ways, was a jackal god of Upper Egypt, older than Anubis and at first separate from him. His standard was carried in front of the king's procession and in front of the army, and he is shown with a mace and a bow. The pear-shaped mace was Egypt's first royal weapon: on the Narmer Palette the king raises one over a kneeling enemy. This one opens walls as well.",
     "template_basis": "mace",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "can_dig": true,
@@ -6935,7 +6945,7 @@
     "max_enchant": 3,
     "unidentified_name": "a worn ash hurling stick with a stone-hard heel",
     "identified": false,
-    "lore": "Before he was Cu Chulainn — Culann's Hound — he was Setanta, the boy who killed Culann's guard dog by driving a hurling ball down its throat with this stick. He volunteered to replace the dog. The name stuck. The hurley is ash and the heel is dense as river stone.",
+    "lore": "Before he was Cu Chulainn he was a boy named Setanta. Arriving late to a feast at the house of the smith Culann, he was attacked by the smith's great guard hound, and drove his hurling ball down its throat with this stick. Then he offered to guard the house himself until a pup could be raised. Culann's Hound, they called him ever after. The heel of the stick is as dense as river stone.",
     "template_basis": "club",
     "_curve_note": "Pass 4: bumped base damage to 4 to match band effective ratio (~2.0x of curve at low floor scales).",
     "effective_against": [
@@ -7010,7 +7020,7 @@
     "max_enchant": 3,
     "unidentified_name": "a small carved axe-scepter inlaid with cowrie shells",
     "identified": false,
-    "lore": "The Mwindo Epic — collected from the Banyanga of the eastern Congo in the 1950s — gives its hero a conga-scepter that did the work of an axe, a magic wand, and a flyswatter. Born speaking, born walking, born with this in his hand. He used it to bring his uncles back from the dead, and once to kill a dragon.",
+    "lore": "The Nyanga people of the eastern Congo sing the epic of Mwindo, the little one just born who walked. He came into the world talking, already holding his conga, a fly-whisk scepter. His father tried to kill him and failed. With the conga Mwindo raised the dead, his uncles among them, and he once killed the dragon Kirimu. It is generous to whoever carries it now.",
     "template_basis": "handaxe",
     "_curve_note": "Pass 4: bumped base damage to 5 to match band effective ratio (~2.0x of curve at low floor scales).",
     "kill_heal_amount": 2,

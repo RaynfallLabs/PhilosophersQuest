@@ -42,7 +42,7 @@
     "anti_heaven",
     "secret_path"
   ],
-  "lore_descriptor": "absent — the eye refuses to focus on it",
+  "lore_descriptor": "hard to look at: the eye slides off it and refuses to focus",
   "unidentified_descriptor": "void-dark",
   "first_pickup_chronicle": "Void-touched. I don't want to write this down. It bypasses Abaddon's resistances. It cuts angels. It cuts the Host. I know what I am holding. I know what side this puts me on. Whether I have a choice anymore — that I do not know.",
   "design_notes": "Chain combat v2 tuning: damage_mult 1.55, weight_mult 0.80, effective_against aberration+void_spawn (T5 elemental). Abaddon-adjacent ONLY. weight defies physics. The abaddon_resistance_bypass is HUGE — bypasses Abaddon's 5-of-6 resistances. anti_heaven means it damages celestials too. The 'dark ending' material."

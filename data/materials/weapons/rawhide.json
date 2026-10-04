@@ -31,7 +31,7 @@
     "light",
     "supple"
   ],
-  "lore_descriptor": "rough untanned hide, smells of animal",
+  "lore_descriptor": "rough untanned hide that still smells of the animal",
   "unidentified_descriptor": "a strip of rough hide",
   "first_pickup_chronicle": "Rawhide. Untanned. Smells. Works. Shepherds have killed kings with less.",
   "design_notes": "Chain combat v2 tuning: damage_mult 0.75, weight_mult 0.60, no effective_against (T1 leather). Primary sling material. Slings are weak — payoff is chain scaling. Light."

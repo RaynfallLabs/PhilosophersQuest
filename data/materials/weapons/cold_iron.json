@@ -33,7 +33,7 @@
     "cannot_be_blessed",
     "demon_attacks_extra_dmg"
   ],
-  "lore_descriptor": "dark, cold to the touch even after long carry",
+  "lore_descriptor": "dark and cold to the touch however long it is carried, the metal the Fair Folk cannot abide",
   "unidentified_descriptor": "dull, dark blade that feels too cold",
   "first_pickup_chronicle": "Cold iron. The fey will not love this. I am told the trick is in the hammering — cold, never hot. The dwarves who made this never blinked at a fire because they never lit one.",
   "design_notes": "Chain combat v2 tuning: damage_mult 1.10, weight_mult 1.00, effective_against fey+demon (T3 specialty). Weapons-only (cannot be wrought into armor — mythological constraint: cold iron is forged without heat, plate would crack). The vulnerabilities list (demon) is INVERTED — the user takes EXTRA damage from demons when wielding cold iron, as the metal antagonizes them. Bold design: cold iron is a STRONG anti-fey/demon weapon but draws their fury."

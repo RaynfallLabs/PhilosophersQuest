@@ -218,8 +218,11 @@ def test_idunn_threshold_3():
 
 
 def test_assassin_ring_silent_walk():
+    # 'silent_walk' was never a real status; the field the game reads
+    # (items.Accessory / monster detection) is top-level passive_silent_walk.
     a = ACCESSORY['ring_of_the_assassin']
-    assert a['effects']['status'] == 'silent_walk'
+    assert a['passive_silent_walk'] is True
+    assert 'status' not in a['effects']
 
 
 def test_starter_plot_lock_quiz_tier_dropped():

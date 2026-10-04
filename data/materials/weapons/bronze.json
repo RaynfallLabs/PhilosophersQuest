@@ -29,7 +29,7 @@
   "special_properties": [
     "older_than_iron"
   ],
-  "lore_descriptor": "warm-toned, smelling faintly of tin",
+  "lore_descriptor": "warm brown-gold, the metal of Troy and of every hero in Homer",
   "unidentified_descriptor": "tarnished blade",
   "first_pickup_chronicle": "Bronze. Older than iron. The Iliad was written for soldiers who carried this. It is not the strongest metal — it is the FIRST metal. That matters somehow.",
   "design_notes": "Chain combat v2 tuning: damage_mult 0.80, weight_mult 1.05, effective_against fey (T1 specialty). Peak F5 spread 7 — common early. Slight weight penalty (1.05×). effective_against fey is a soft-mythological tie (bronze age vs the Tuatha)."

@@ -17,9 +17,9 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.35,
-      "blunt": 0.3,
-      "pierce": 0.25
+      "slash": 0.5,
+      "pierce": 0.6,
+      "blunt": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -30,7 +30,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Nemean Lion's hide could not be cut by any weapon — that was the point of the first Labour. Heracles strangled it. The lion's own claws were the only things sharp enough to skin it. He wore the hide thereafter. Every subsequent monster he faced had to find a way to harm a man armoured in the unskinnable. Most didn't manage it. The hide renders its wearer virtually invulnerable to conventional weapons — only magical or divine arms can pierce it.",
+    "lore": "No blade could cut the Nemean Lion, which was the whole point of the first Labour. The arrows of Heracles bounced off it and his club broke on its skull. In the end he cornered it in its cave and strangled it, then found that the only edge able to skin the beast was one of its own claws. He wore the pelt for the rest of his life, its jaws over his head. Steel still slides off it. A hard enough blow still bruises the man inside.",
     "max_enchant": 3,
     "peak_floor": 72,
     "spread": 12,
@@ -57,9 +57,9 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "poison": 0.65,
-      "cold": 0.2,
-      "fire": 0.15
+      "poison": 0.35,
+      "cold": 0.8,
+      "fire": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -70,7 +70,7 @@
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Heracles used the Hydra's caustic blood to poison his arrows — the same arrows that killed Chiron by accident and Nessus by intention and started the chain that killed Heracles himself. The Hydra's outer scale was immune to its own venom. This is the standard configuration: weapons made from the thing they destroy are often proof against the same.",
+    "lore": "The Hydra of Lerna grew two heads for each one cut away, until Iolaus brought a torch and seared every stump. Heracles dipped his arrows in its gall, and that venom outlived the monster: it wounded the centaur Chiron past healing, killed Nessus, and through the robe Nessus soaked in his own blood it finally killed Heracles. The beast's scales never minded the poison they carried. Whatever bites the wearer learns what was underneath them.",
     "max_enchant": 3,
     "peak_floor": 68,
     "spread": 12,
@@ -97,10 +97,10 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.2,
-      "pierce": 0.2,
-      "blunt": 0.2,
-      "fire": 0.15
+      "slash": 0.8,
+      "pierce": 0.8,
+      "blunt": 0.8,
+      "fire": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -110,7 +110,7 @@
       "81-100": 2
     },
     "value": 9500,
-    "lore": "Hephaestus was thrown from Olympus by his mother (or his father, depending on which Homer you read) and landed on Lemnos. He survived, became the smith of the gods, and made the best things in existence: Achilles' armour, the golden automata that walked him to his forge, the chain-net that caught Aphrodite and Ares in bed, the bronze giant Talos. Everything he made was perfect. He himself walked with a limp.",
+    "lore": "Hera threw her son from Olympus because he was born lame. He fell into the sea, where the nymph Thetis hid him nine years, and he came back as the one god the others could not do without. Hephaestus built golden handmaids that could speak and carry, the bronze giant Talos who guarded Crete, and a throne that would not let Hera stand up again. This harness is his own bench work. Smiths who handle it find their own hammers strike truer afterward.",
     "max_enchant": 3,
     "peak_floor": 78,
     "spread": 12,
@@ -138,8 +138,8 @@
     "quiz_tier": 4,
     "damage_resistances": {
       "fire": 0.5,
-      "slash": 0.25,
-      "pierce": 0.15
+      "slash": 0.75,
+      "pierce": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -150,7 +150,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "After killing Fafnir, Sigurd bathed in the dragon's blood and became invulnerable — except for a leaf that fell between his shoulder blades. His eventual murder came from a spear through exactly that spot, thrown by a man told about it by a woman who loved him and was told by another man who needed Sigurd dead. The weak point was the information, not the armour.",
+    "lore": "Sigurd dug a pit in the track the dragon Fafnir took to water and stabbed upward as the worm crawled over him. The German poem, which calls him Siegfried, adds that he bathed in the blood and his skin turned hard as horn, except where a linden leaf had stuck between his shoulder blades. His wife sewed a small cross on his tunic to show a friend where to guard him. Hagen read the mark and put a spear through it.",
     "max_enchant": 3,
     "peak_floor": 72,
     "spread": 12,
@@ -214,17 +214,17 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
-      "slash": 0.25,
-      "pierce": 0.25,
-      "fire": 0.25
+      "slash": 0.75,
+      "pierce": 0.75,
+      "fire": 0.75
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a plain white-painted steel breastplate",
+    "unidentified_name": "a plain breastplate of bare polished steel, cut small",
     "floorSpawnWeight": {},
     "value": 10000,
-    "lore": "Joan of Arc described her armour as 'very good' — white-painted steel made specifically for her. She was wounded multiple times and fought on. She told her judges at her trial that her armour had been made by command of God and could not protect against what God willed. They burned her anyway. Twenty-five years later Charles VII had the verdict annulled. Joan had been dead for twenty-five years.",
+    "lore": "At seventeen Joan told the Dauphin that God had sent her to raise the siege of Orleans. Charles had a harness of plain polished steel made for her at Tours, the kind armorers called white. At Orleans an arrow went in above her breast; she had it drawn and returned to the wall the same evening, and the English fort fell. Her enemies burned her at Rouen in 1431. The Church struck down the verdict in 1456 and named her a saint in 1920.",
     "onEquipStatus": "blessed",
     "max_enchant": 3,
     "peak_floor": 84,
@@ -254,19 +254,19 @@
     "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
-      "slash": 0.25,
-      "pierce": 0.2
+      "slash": 0.75,
+      "pierce": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a fine ring-mail shirt of late Republican make",
+    "unidentified_name": "a fine ring-mail shirt with a faded red hem",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Julius Caesar wore chain-mail. He also reportedly wore a special hat to cover his baldness and was sensitive about being called a king by the Senate. He was stabbed twenty-three times. The physician Antistius found only one wound fatal. The other senators had been imprecise or hesitant. Caesar had refused his bodyguard. He had been warned. He understood warnings as challenges.",
+    "lore": "The lorica hamata was the ringed mail shirt of the legions, and it went with Julius Caesar's armies through eight years in Gaul. He wore no armor to the Senate on the Ides of March. He had dismissed his Spanish bodyguard and ignored the soothsayer Spurinna. The conspirators stabbed him twenty-three times, and the physician Antistius judged that only the second wound, in the chest, was mortal. The mail remembers the day it was left at home and answers the first blade that finds it.",
     "max_enchant": 3,
     "peak_floor": 58,
     "spread": 12,
@@ -293,9 +293,9 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "magic": 0.35,
-      "fire": 0.2,
-      "cold": 0.15
+      "magic": 0.65,
+      "fire": 0.8,
+      "cold": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -306,7 +306,7 @@
       "81-100": 2
     },
     "value": 9000,
-    "lore": "Orichalcum was the metal of Atlantis — mentioned by Plato in the Critias as the most prized substance in the world after gold. Its appearance was flame-red. The Atlanteans mined it everywhere, then it vanished when Atlantis sank. Modern scholars identify it as brass or a copper-zinc alloy. The identification is probably correct. Plato's text does not describe its resonance, which the surviving piece still exhibits.",
+    "lore": "Plato says in the Critias that the kings of Atlantis dug orichalcum out of the earth all over their island, and that only gold was worth more. They sheathed the wall of their inner citadel with it, and it flashed red like fire. Then the sea took the island in a single day and night. Scholars suppose the metal was a kind of brass. Brass does not hum. This breastplate does, and at the top of each slow beat it turns blows aside.",
     "max_enchant": 3,
     "peak_floor": 72,
     "spread": 12,
@@ -333,19 +333,19 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "magic": 0.4,
-      "poison": 0.2
+      "magic": 0.6,
+      "poison": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a helm that seems to absorb light around it",
+    "unidentified_name": "a dark helm that the eye keeps sliding away from",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 9000,
-    "lore": "The Helm of Hades was made by the Cyclopes in the same forging that made Poseidon's trident and Zeus's lightning. Perseus borrowed it to approach the Gorgons unseen. Hermes lent it to Athena during the Trojan War. It did not grant invisibility — it prevented perception. The distinction seems technical until you realize the Helm worked on gods. No one can look away from nothing.",
+    "lore": "The Cyclopes forged three gifts for the sons of Cronus before the war with the Titans: the thunderbolt for Zeus, the trident for Poseidon, and for Hades a cap that hid its wearer from every eye. Perseus wore it to escape the Gorgon's sisters. Athena put it on at Troy so that Ares would not see who guided the spear into his belly. It hides a man from gods. The dead, who are its owner's subjects, look straight through whoever wears it.",
     "max_enchant": 2,
     "peak_floor": 72,
     "spread": 12,
@@ -399,20 +399,20 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.2,
-      "fire": 0.1,
-      "magic": 0.15
+      "slash": 0.8,
+      "fire": 0.9,
+      "magic": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a bronze helm with a tall horse-hair crest",
+    "unidentified_name": "a four-ridged helm with a crest of golden hair",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Hephaestus forged Achilles' new armour when Patroclus died wearing the old set. The helmet had a crest of horse-hair and rang like a bell. Achilles wore it for the last weeks of his life. It was awarded after his death to Odysseus over Ajax — a decision based on rhetoric and political judgement, not martial merit. The armour was better than both arguments.",
+    "lore": "Hector stripped the first armor of Achilles from the body of Patroclus. Thetis went to Hephaestus that night, and by dawn she carried down a new set, the helmet ridged four times and crested with gold. Homer says that when she laid the armor before her son it rang aloud, and the Myrmidons trembled and would not look at it. Only Achilles looked, and his anger grew. The helm has not lost its voice. It sounds at every new threshold.",
     "max_enchant": 2,
     "peak_floor": 68,
     "spread": 12,
@@ -439,19 +439,19 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "magic": 0.3,
-      "slash": 0.15
+      "magic": 0.7,
+      "slash": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a white helm with a red cross on the cheek",
+    "unidentified_name": "a white great helm with a small red cross on the cheek",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 8500,
-    "lore": "Galahad arrived at Camelot with a plain white shield and no name. He sat in the Siege Perilous — the seat that killed anyone not pure enough — and nothing happened. He was the only knight who completed the Grail quest because he was the only one who had not already compromised himself. His father Lancelot came within inches of it. Lancelot's single lapse in virtue cost him the quest and gave the world Galahad. The Grail works through irony.",
+    "lore": "Galahad came to Camelot without a shield and sat in the Siege Perilous, the seat that destroyed any knight unworthy of it. Nothing happened. At a white abbey he was given the shield kept for him: white, with a red cross that Joseph of Arimathea's son had drawn in his own blood centuries before. Galahad alone looked into the Grail, and he asked to die in that hour. Nothing foul stays on what he wore. Curses come off the wearer's gear like frost off a window.",
     "max_enchant": 2,
     "peak_floor": 68,
     "spread": 12,
@@ -469,7 +469,7 @@
       150
     ],
     "weight": 3.0,
-    "min_level": 46,
+    "min_level": 60,
     "slot": "arms",
     "tier": 3,
     "material": "legendary",
@@ -478,20 +478,20 @@
     "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
-      "slash": 0.2,
-      "pierce": 0.2,
-      "fire": 0.1
+      "slash": 0.8,
+      "pierce": 0.8,
+      "fire": 0.9
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "bronze arm-guards of divine make",
+    "unidentified_name": "a pair of bronze arm-guards worked with tiny farm scenes",
     "floorSpawnWeight": {},
     "value": 7000,
-    "lore": "Part of the panoply Hephaestus forged. The vambraces bore scenes of working men and women — farmers, shepherds, dancers — as though the smith god remembered that war is fought over ordinary lives. The warriors who wore them over centuries may not have understood the pictures. The pictures were not for them.",
+    "lore": "Homer lists what Hephaestus made for Achilles: a shield, a corselet brighter than fire, a helmet, and greaves of tin. On the shield the god set no battles of heroes. He put two cities, a wedding, a lawsuit, ploughmen, reapers, a vineyard, a dancing floor, and the river Ocean around the rim. These arm-guards are worked in the same hand with the same quiet scenes. They are restful to wear on holy ground, as if the smith wanted his soldier to remember what the fighting was for.",
     "max_enchant": 2,
-    "peak_floor": 55,
-    "spread": 10,
+    "peak_floor": 70,
+    "spread": 12,
     "peak_weight": 0.4,
     "template_basis": "plate_vambraces",
     "is_unique": true,
@@ -517,16 +517,16 @@
     "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
-      "blunt": 0.2,
-      "slash": 0.15
+      "blunt": 0.8,
+      "slash": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "iron gauntlets engraved with wolf-heads",
+    "unidentified_name": "a pair of iron gauntlets engraved with wolf heads",
     "floorSpawnWeight": {},
     "value": 6500,
-    "lore": "Mars was the second most worshipped god in Rome after Jupiter. Unlike Ares, his Greek equivalent, he was not merely the god of war but of agriculture and the protection of boundaries — the army that defends fields is the same army that works them. His priests carried sacred shields believed to have fallen from heaven and danced with them in procession every March. The month is named for him. So is Tuesday, through Tiwaz/Tyr.",
+    "lore": "The Greeks feared Ares. The Romans loved Mars, who was father to Romulus and had been a god of fields and boundaries before he was a god of war. Farmers prayed to him to keep blight off the wheat. His priests, the Salii, danced through the city each March with the sacred shields, and the campaigning season opened when they finished. The wolf was his animal. These gauntlets are happiest holding a line: a gate, a doorway, the edge of a field.",
     "max_enchant": 1,
     "peak_floor": 46,
     "spread": 10,
@@ -555,19 +555,19 @@
     "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
-      "magic": 0.25,
-      "poison": 0.15
+      "magic": 0.75,
+      "poison": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "winged bronze greaves of incredible lightness",
+    "unidentified_name": "a pair of bronze greaves, impossibly light, with wings at the ankle",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 7000,
-    "lore": "Hermes' winged sandals — the Talaria — were given him by his father Zeus or possibly won in trade with Perseus or possibly always his. He carried the dead to Hades in them. Perseus borrowed them for the Medusa mission along with the Helm and Kibisis bag. The wings are the most depicted element of Hermes iconography, which is interesting because Hermes himself is most notable for what he carries between places, not the speed.",
+    "lore": "Greek painters could not agree where the wings of Hermes belonged. Some put them on his sandals, some on his traveler's hat, and some drew them growing from the ankle itself. He needed them. He was herald to Zeus, guide of the dead on the road down to Hades, and the patron of travelers, traders and thieves alike. He stole Apollo's cattle on the day he was born. These bronze shin-guards take the painters' third view, and whoever straps them on finds the world has slowed.",
     "max_enchant": 1,
     "peak_floor": 58,
     "spread": 12,
@@ -594,9 +594,9 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "magic": 0.35,
-      "poison": 0.25,
-      "slash": 0.1
+      "magic": 0.65,
+      "poison": 0.75,
+      "slash": 0.9
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -607,7 +607,7 @@
       "81-100": 2
     },
     "value": 8000,
-    "lore": "The Morrigan — the Phantom Queen — appeared as a crow or raven on the battlefield and chose who lived and died. She approached Cu Chulainn three times in disguise: as a young woman, an eel, a wolf, and a heifer. He rejected and fought each of them. Before his final battle she appeared as an old woman milking a lame cow, and he drank from her and was healed without knowing it. He died anyway. She had been kind to him; he had not recognized it.",
+    "lore": "The Morrigan, the Phantom Queen of the Irish, came to battles as a crow and marked who would fall. She offered Cu Chulainn her love and he refused it. So she attacked him at the ford as an eel, a wolf and a hornless heifer, and he wounded all three. Later he met an old woman milking a cow, blessed her for each of three drinks, and so healed without knowing it the three wounds he had given. On his last day a crow settled on his shoulder.",
     "max_enchant": 2,
     "peak_floor": 68,
     "spread": 12,
@@ -655,7 +655,7 @@
       80
     ],
     "weight": 3.0,
-    "min_level": 50,
+    "min_level": 24,
     "slot": "legs",
     "tier": 3,
     "material": "adamantine",
@@ -664,22 +664,22 @@
     "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
-      "slash": 0.2,
-      "blunt": 0.2,
-      "pierce": 0.15
+      "slash": 0.8,
+      "blunt": 0.8,
+      "pierce": 0.85
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "rough-worked leather greaves from before metallurgy",
+    "unidentified_name": "a pair of rough hide leggings stitched with sinew",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 7500,
-    "lore": "Enkidu was created by the gods as a wild man to counter Gilgamesh. He lived among animals until a temple prostitute civilised him over seven days. He then challenged Gilgamesh to single combat; they fought to a draw and became friends. The Epic of Gilgamesh is the oldest known written epic. Its central subject is not the monsters they killed together but what Gilgamesh does when Enkidu dies first.",
+    "lore": "The goddess Aruru pinched off clay and threw it into the wilderness, and it became Enkidu, shaggy as a beast, who ate grass with the gazelles and tore up the hunters' traps. Shamhat brought him to Uruk. He wrestled King Gilgamesh in the street until the doorposts shook, and the two became brothers. The animals fled from him after that, which grieved him. These leggings are stitched from the wild years. Beasts that walk beside the wearer are harder to kill.",
     "max_enchant": 1,
-    "peak_floor": 58,
+    "peak_floor": 34,
     "spread": 12,
     "peak_weight": 0.4,
     "template_basis": "leather_leggings",
@@ -704,16 +704,16 @@
     "equip_threshold": 2,
     "quiz_tier": 2,
     "damage_resistances": {
-      "fire": 0.3,
-      "magic": 0.2
+      "fire": 0.7,
+      "magic": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a rough prophetic cloak of undyed wool",
+    "unidentified_name": "a rough cloak of undyed hair-cloth",
     "floorSpawnWeight": {},
     "value": 4000,
-    "lore": "Elijah's mantle passed to Elisha when Elijah was taken to heaven in a chariot of fire. Elisha used it to part the Jordan River on his return. In Jewish tradition it represents the transfer of prophetic authority — the mantle is the office, not the man. When Elijah threw it on Elisha's shoulders without asking, Elisha left his oxen and ran after him. He was ploughing when it happened. He finished the field first.",
+    "lore": "Elijah found Elisha ploughing with twelve yoke of oxen and threw his cloak over him as he passed. Elisha slaughtered the oxen, boiled them over the wood of the plough, fed his neighbors, and followed. Years later a chariot of fire parted them and a whirlwind took Elijah up. The cloak fell. Elisha carried it to the Jordan, struck the water as his master had, and the river divided for him. It is a hairy, undyed thing. Fire has reason to respect it.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -742,9 +742,9 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "magic": 0.3,
-      "fire": 0.1,
-      "cold": 0.1
+      "magic": 0.7,
+      "fire": 0.9,
+      "cold": 0.9
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -752,7 +752,7 @@
     "unidentified_name": "a deep blue robe with silver astronomical diagrams",
     "floorSpawnWeight": {},
     "value": 5500,
-    "lore": "The Magi of the ancient Near East were not magicians in the popular sense — they were scholars of astronomy, dream interpretation, and the hidden correspondences between celestial and earthly events. The Star they followed was either a conjunction of Jupiter and Saturn, a comet, or a nova. They brought gold, frankincense, and myrrh and went home 'another way,' having been warned in a dream not to report back to Herod.",
+    "lore": "The Magi were the priestly scholars of Persia, readers of stars and dreams. Matthew says that some of them saw a new star rise, followed it west to Jerusalem, and asked King Herod where the child born king of the Jews might be. They found him at Bethlehem and gave gold, frankincense and myrrh. A dream warned them off Herod, and they went home by another road. The silver diagrams on this robe still track the sky, and they reward a mind that studies them.",
     "max_enchant": 1,
     "peak_floor": 35,
     "spread": 10,
@@ -819,7 +819,7 @@
     "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
-      "magic": 0.2
+      "magic": 0.8
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -830,7 +830,7 @@
       "81-100": 2
     },
     "value": 7000,
-    "lore": "In European folklore, seven-league boots take their wearer seven leagues — about 35 km — per step. Hop-o'-My-Thumb stole them from an ogre. Puss in Boots wore them. They appear across French, German, and Scandinavian tales with minor variation: the boots are always disproportionately large on their original owner and always fit the hero perfectly. The folklore does not explain the sizing mechanism.",
+    "lore": "Charles Perrault wrote them down in 1697. An ogre owned a pair of fairy boots that covered seven leagues at a stride, and he wore them out hunting seven lost brothers. He fell asleep on the rock the boys were hiding under. The smallest, Hop-o'-My-Thumb, pulled the boots off him. They shrank to fit the child, as fairy boots do, and he ran in them to the king's court and made his fortune as a messenger. The pair wears thin slowly. It still wants to go.",
     "onEquipStatus": "hasted",
     "max_enchant": 1,
     "peak_floor": 48,
@@ -858,8 +858,8 @@
     "equip_threshold": 4,
     "quiz_tier": 3,
     "damage_resistances": {
-      "slash": 0.2,
-      "pierce": 0.25
+      "slash": 0.8,
+      "pierce": 0.75
     },
     "can_be_cursed": false,
     "cursed": false,
@@ -870,7 +870,7 @@
       "81-100": 2
     },
     "value": 7500,
-    "lore": "William Wallace was not the painted barbarian of popular cinema. He was a second son of a minor noble family who became a guerrilla commander, won the Battle of Stirling Bridge by understanding terrain better than the English generals, was eventually captured, and was executed by a method the English used specifically to maximise dishonour. He gave no speech at his death. He denied nothing. The armour is real; the speeches were invented later.",
+    "lore": "William Wallace was the younger son of a small Scottish landholder. In 1297 he and Andrew Moray waited above Stirling Bridge while an English army crossed two riders abreast, then came down and cut the half that had crossed away from the half that had not. He fought from forest and narrow ground for years afterward. Edward I had him executed in London in 1305. This coat of small plates was made for a man who chose his ground, and it likes a tight passage.",
     "max_enchant": 3,
     "peak_floor": 58,
     "spread": 12,
@@ -897,20 +897,20 @@
     "equip_threshold": 4,
     "quiz_tier": 4,
     "damage_resistances": {
-      "slash": 0.25,
-      "blunt": 0.15,
-      "pierce": 0.1
+      "slash": 0.75,
+      "blunt": 0.85,
+      "pierce": 0.9
     },
     "can_be_cursed": false,
     "cursed": false,
     "identified": false,
-    "unidentified_name": "a Carthaginian officer's bronze cuirass",
+    "unidentified_name": "a bronze officer's cuirass embossed with a horse and a palm tree",
     "floorSpawnWeight": {
       "61-80": 1,
       "81-100": 2
     },
     "value": 8000,
-    "lore": "Hannibal Barca crossed the Alps with war elephants in 218 BCE and fought Rome for sixteen years on its own soil. He won every major engagement: Trebia, Trasimene, Cannae — Cannae being the most studied battle in military history, used as a model for encirclement tactics by commanders for two millennia. He never took Rome. He was eventually called home to defend Carthage, lost one battle, and died in exile. He won the tactics and lost the war. Military academies still teach him.",
+    "lore": "Hannibal Barca brought an army and thirty-seven elephants over the Alps in 218 BC and stayed in Italy fifteen years. At Cannae he let his center bend backward until the Roman mass had pushed deep into a pocket, then closed his African infantry on both flanks and his cavalry on the rear. Some fifty thousand Romans died in an afternoon. He never took Rome, and Scipio beat him at Zama. His cuirass has one habit: it is at its best when the enemy is all around.",
     "max_enchant": 3,
     "peak_floor": 63,
     "spread": 12,
@@ -929,15 +929,15 @@
     "equip_threshold": 2,
     "quiz_tier": 2,
     "damage_resistances": {
-      "fire": 0.4,
-      "magic": 0.3
+      "fire": 0.6,
+      "magic": 0.7
     },
     "weight": 3.0,
     "value": 5000,
     "min_level": 28,
     "identified": false,
-    "unidentified_name": "a helm inscribed with a terrifying rune",
-    "lore": "The Helm of Awe — ægishjálmr — is described in the Volsunga Saga and the Reginsmal of the Poetic Edda as the prize hoarded by the dragon Fafnir. He boasted of it on his deathbed: while he wore it, no man dared meet his eye. Sigurd took it after the killing, along with the gold and the cursed ring. Later Icelandic grimoires draw the helm as an eight-armed stave to be painted on the forehead in blood or spittle before a fight. It is less a helm than a sign worn on a helm.",
+    "unidentified_name": "a helm marked on the brow with an eight-armed stave",
+    "lore": "The Helm of Awe lay in the hoard of the dragon Fafnir. Dying, he told Sigurd that he had worn it against all men and that none had dared come near him. Sigurd answered that the helm saves no one once he meets a braver man, and then took it, along with the gold and the cursed ring. Later Icelandic books of magic draw the Helm as a stave of eight branching arms, to be marked on the brow before a fight. It is less a helmet than a sign.",
     "containerLootTier": "rare",
     "can_be_cursed": false,
     "symbol": "[",
@@ -1000,14 +1000,14 @@
     "equip_threshold": 3,
     "quiz_tier": 4,
     "damage_resistances": {
-      "magic": 0.2
+      "magic": 0.8
     },
     "weight": 0.5,
     "value": 5500,
     "min_level": 25,
     "identified": false,
-    "unidentified_name": "sandals with small golden wings at the ankles",
-    "lore": "The talaria of Hermes, messenger of the gods, allowed him to fly between Olympus, Earth, and the Underworld in moments. Perseus borrowed them to approach Medusa. These sandals carry their wearer with divine swiftness — each step covers ground that would take mortals three.",
+    "unidentified_name": "a pair of golden sandals with small live wings at the ankles",
+    "lore": "Homer calls them immortal and golden, and says they carried Hermes over the wet sea and the boundless land as fast as the wind blew. He wore them on his father's errands and on the darker road, leading the souls of the dead down to the river. Certain nymphs lent a pair to Perseus, who outflew two Gorgons in them. These are the real thing. The wearer who learns them well stops being where the blow lands.",
     "containerLootTier": "rare",
     "can_be_cursed": false,
     "symbol": "[",
@@ -1075,9 +1075,9 @@
     "value": 400,
     "min_level": 5,
     "identified": false,
-    "unidentified_name": "a pair of sandals with tiny wing motifs",
-    "lore": "Hermes's true talaria — described in the Iliad and the Homeric Hymn to Hermes — were golden and carried him on the wind between Olympus and the underworld. These are a mortal smith's copy, the kind hung on temple walls as a votive after a successful errand. The wings are bronze and the leather is good but ordinary. They carry only one trick from the god, and only briefly: enemies always seem to look the wrong way as you pass.",
-    "onEquipStatus": "hasted",
+    "unidentified_name": "a pair of plain sandals with small bronze wings riveted on",
+    "lore": "The true sandals of Hermes were golden and carried him on the wind between Olympus and the underworld. These are a mortal cobbler's copy, the kind a grateful courier hung on a temple wall after a safe journey. The wings are bronze and the leather is good but ordinary. They kept one trick from the god of travelers and thieves, and only for a moment: the first archer to take aim at the wearer looks the wrong way.",
+    "onEquipStatus": "",
     "containerLootTier": "uncommon",
     "can_be_cursed": false,
     "symbol": "[",
@@ -1098,7 +1098,7 @@
     "peak_weight": 0.6,
     "template_basis": "leather_boots",
     "is_unique": true,
-    "on_equip_status": "hasted",
+    "on_equip_status": "",
     "dodge_first_arrow_per_floor": true
   },
   "blindfold": {
@@ -1113,8 +1113,8 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "identified": false,
-    "unidentified_name": "strip of dark cloth",
-    "lore": "A strip of heavy black cloth. Wearing it plunges you into total darkness — you cannot see anything at all. A desperate measure, but sometimes not seeing is the only way to survive what lurks in the dark.",
+    "unidentified_name": "a strip of dark cloth",
+    "lore": "Perseus needed a borrowed shield to keep from meeting the Gorgon's eyes. There is a cheaper answer, and this is it: a strip of heavy black cloth, long enough to knot twice. Whoever ties it on sees nothing at all, which is the point, because some things in the dark do their harm through the eyes. Blind men learn to read a floor through their boots. After a while the wearer knows where the nearest footsteps are.",
     "symbol": "[",
     "color": [
       40,
@@ -1158,7 +1158,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "identified": false,
-    "unidentified_name": "red and white cap",
+    "unidentified_name": "a red and white cap",
     "pet_regen_bonus": 2,
     "lore": "A well-worn red and white cap, its brim shaped by countless adventures. It radiates a warm, encouraging energy that invigorates companion creatures, helping them recover from wounds more quickly. The inside of the brim reads: 'I choose you.'",
     "floorSpawnWeight": {},
@@ -1192,14 +1192,14 @@
     "equip_threshold": 2,
     "quiz_tier": 3,
     "damage_resistances": {
-      "blunt": 0.15
+      "blunt": 0.85
     },
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "identified": false,
     "unidentified_name": "a crown of golden horns",
     "chain_bonus": 1,
-    "lore": "The gilded horns of the Cow King, ripped from his crowned skull by a victorious adventurer. When worn, the horns channel bovine fury into every strike, granting a free chain hit before the quiz even begins — making it impossible to miss entirely. The left horn is inscribed with a single word: 'Moo.'",
+    "lore": "The gilded horns of the Cow King, pulled from his crowned skull by whoever finally answered the long rumor that there was no such herd and no such king. Worn on the head, they lend a bull's temper: the wearer's first swing lands before the fight has properly begun. The left horn is inscribed with a single word: 'Moo.'",
     "floorSpawnWeight": {},
     "max_enchant": 2,
     "peak_floor": 0,
@@ -1235,7 +1235,7 @@
     "enchant_bonus": 0,
     "on_equip_status": "regenerating",
     "unidentified_name": "an intricately woven robe",
-    "lore": "Penelope, wife of Odysseus, waited twenty years for her husband's return from Troy. Each day she wove a funeral shroud; each night she unraveled it, buying time against the suitors who demanded she remarry. This cloth is woven from that same thread — thread that refused to stay finished, that healed itself every night. When worn, the wearer's wounds close slowly but surely, as if time itself is being unwoven.",
+    "lore": "Odysseus was gone twenty years, and a hundred and eight suitors moved into his hall to eat his herds until his wife chose one of them. Penelope said she would choose when she finished a burial shroud for old Laertes. She wove at the great loom every day and unpicked the work every night by torchlight, and it held them off for three years. This robe is cut from that cloth. What is torn in it by day is whole again by morning, and so is the wearer.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-5": 3,
@@ -1270,12 +1270,12 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "slash": 0.1
+      "slash": 0.9
     },
     "can_be_cursed": false,
     "enchant_bonus": 1,
-    "unidentified_name": "battle-scarred leather bracers",
-    "lore": "Cu Chulainn, the Hound of Ulster, was Ireland's greatest warrior — a man who entered such battle frenzy that his body twisted and contorted, one eye bulging, his hair standing like spikes of flame. These bracers are stained with the blood of a hundred battles. They carry the warp-spasm's echo: the wearer strikes harder, bleeds enemies with every blow, and feels no pain from cuts.",
+    "unidentified_name": "a pair of battle-scarred leather bracers",
+    "lore": "He was a boy called Setanta when the smith Culann's guard hound came at him. He killed it with his bare hands, and then offered to guard the smith's house himself until a pup could be reared. So men named him Cu Chulainn, the Hound of Culann. In his battle frenzy his body twisted in its skin, one eye sank and the other bulged, and a light rose from his brow. These bracers kept a little of that. The wearer hits harder and minds his own cuts less.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-21": 0,
@@ -1314,7 +1314,7 @@
     "enchant_bonus": 0,
     "on_equip_status": "displacement",
     "unidentified_name": "a shimmering golden cloak",
-    "lore": "The Monkey King, Sun Wukong, was born from a stone egg on the Mountain of Flowers and Fruit. He stole the peaches of immortality, defied the Jade Emperor, and was imprisoned under a mountain for five hundred years before accompanying the monk Tripitaka westward. His seventy-two transformations made him impossible to pin down. This cloak carries that trickster spirit — the wearer seems to shimmer and shift, making them difficult to strike.",
+    "lore": "Sun Wukong hatched from a stone egg on the Mountain of Flowers and Fruit. He bullied the Dragon Kings of the four seas out of a golden mail coat, a phoenix-feather cap and cloud-walking boots, ate the peaches of immortality, and fought the armies of Heaven to a standstill. The Buddha shut him under a mountain for five hundred years. He knew seventy-two transformations, and nobody could lay a hand on him twice. The cloak shares the habit. Its wearer is seldom quite where he seems.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-24": 0,
@@ -1359,8 +1359,8 @@
     "berserk_str_bonus": 3,
     "berserk_duration": 10,
     "berserk_hp_cost": 1,
-    "unidentified_name": "a blood-red hide coat that pulses warmly",
-    "lore": "The war-harness of Cú Chulainn, the Hound of Ulster. When his blood was up, his body twisted into the ríastrad — the warp-spasm — and no army could stand before him. The coat remembers. When its wearer's life hangs by a thread, it awakens something primal: strength surges, pain fades, but the fury has a cost.",
+    "unidentified_name": "a blood-red hide coat that is warm to the touch",
+    "lore": "When Queen Medb marched on Ulster to steal the Brown Bull of Cooley, a curse had laid every Ulsterman in his bed. Cu Chulainn was seventeen and exempt. He held the fords alone for months, fighting one champion a day by agreement. This is his war coat. When he was hard pressed the warp-spasm took him, and no army could face what he became. The coat remembers. It wakes when its wearer is nearly dead: strength floods back, pain fades, and the fury takes its own payment.",
     "floorSpawnWeight": {
       "31-50": 1,
       "51-70": 2,
@@ -1399,8 +1399,8 @@
     "can_be_cursed": false,
     "enchant_bonus": 0,
     "first_hit_absorb": true,
-    "unidentified_name": "a tiger-skin coat of impossible toughness",
-    "lore": "The tiger-skin armor of Rostam, greatest hero of the Shahnameh. He wore it through his Seven Labors — against the lion, the desert, the dragon, the witch, the demon Aulad, the Div-e Sepid, and the Div-e Akvan. The skin remembers every blow it absorbed. On each new floor, it will absorb the first strike completely, as though the blow never fell.",
+    "unidentified_name": "a striped tiger-skin coat, unmarked by any blade",
+    "lore": "Rostam of Zabul is the great champion of the Persian Book of Kings. He rode the horse Rakhsh, who killed a lion while his master slept, and he fought his way through seven trials to kill the White Demon in its cave and free his king. Over his mail he wore the Babr-e Bayan, a coat of tiger skin that neither fire nor water nor any weapon could spoil. In each new place the first blow that reaches it is simply refused.",
     "floorSpawnWeight": {
       "51-70": 1,
       "71-90": 2,
@@ -1437,8 +1437,8 @@
     "invisibility_power": true,
     "invisibility_duration": 5,
     "invisibility_cooldown": 30,
-    "unidentified_name": "a dull iron helm that seems hard to look at",
-    "lore": "Forged by the Nibelung dwarf Mime for Alberich, who used it to enslave his own kin. Siegfried took it after slaying Fafnir. The Tarnhelm renders its wearer invisible — not merely hidden, but absent from perception entirely. Monsters lose all awareness of the wearer. The effect is brief, and the helm must recover its power between uses.",
+    "unidentified_name": "a dull helm of fine iron mesh",
+    "lore": "In the old German poem Siegfried wins a cloak of darkness from the dwarf Alberich, keeper of the Nibelung hoard. Wagner turned it into a helm of fine mesh, forged by the smith Mime on his brother Alberich's orders, and Alberich used it to walk unseen among his own people with a whip. The giant Fafner later wore it to take the shape of a dragon. It still hides its wearer completely, though only for a few breaths, and then it must rest.",
     "floorSpawnWeight": {
       "41-60": 1,
       "61-80": 2,
@@ -1471,14 +1471,14 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {
-      "pierce": 0.3
+      "pierce": 0.7
     },
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a stiff cuirass of layered white linen",
     "floorSpawnWeight": {},
     "value": 1500,
-    "lore": "Alexander the Great wore linothorax — layers of linen glued and quilted into a stiff cuirass. It was lighter than bronze, cheaper to make, and stopped arrows. The Macedonian phalanx wore it. The Romans copied it. Modern reconstructions tested with bows confirmed: twenty layers of linen will turn an arrow that punches through wood.",
+    "lore": "The great mosaic found at Pompeii shows Alexander charging the Persian king bareheaded, in a corselet of stiff layered linen with a Gorgon's face on the chest. Plutarch says that at Gaugamela he wore a doubled linen breastplate taken from the spoils of Issus. Linen armor was cooler than bronze and lighter on a long march, and enough layers will stop an arrow. His phalanx marched from Greece to India. A soldier who rests in it on holy ground mends quickly.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -1507,14 +1507,14 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {
-      "slash": 0.2
+      "slash": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a riveted iron coif of Anglo-Saxon make",
+    "unidentified_name": "a riveted iron coif with small boar figures on the brow",
     "floorSpawnWeight": {},
     "value": 1200,
-    "lore": "Beowulf rode to Heorot and killed Grendel bare-handed because his sword would not bite the troll's hide. He kept the arm as a trophy. His coif, the poet says, was 'wound with wires by a weapon-smith of cunning' — the lines of the Sutton Hoo helmet match the description almost exactly. Archaeology caught up with the poem in 1939.",
+    "lore": "Grendel carried no sword, so Beowulf put his own aside and waited in the dark hall of Heorot. He caught the monster's arm and held on until it tore loose at the shoulder, and the Danes hung it under the roof. The poem describes his helmet as banded by a smith of old and set with boar figures so that no blade could bite. In 1939 a ship burial at Sutton Hoo gave up a helmet with boars at the brow. Nothing keeps hold of this coif's wearer for long.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -1543,14 +1543,14 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {
-      "pierce": 0.15
+      "pierce": 0.85
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a worn pair of bronze-buckled sandals",
+    "unidentified_name": "a pair of worn fisherman's sandals with bronze buckles",
     "floorSpawnWeight": {},
     "value": 1100,
-    "lore": "Before Perseus borrowed Hermes' winged talaria, he wore ordinary bronze-buckled sandals — the same Mycenaean style every shepherd and soldier wore. Athena visited him in those sandals. The gods gave him better gear later because the better gear was needed for Medusa, not because his own was inadequate. He kept the originals. The pair found at Lerna may or may not be his.",
+    "lore": "Perseus grew up on the island of Seriphos in the house of a fisherman, after the sea washed him and his mother ashore in a wooden chest. At a feast he boasted that he would fetch the king the Gorgon's head, and the king held him to it. These are what he had on his feet when he set out: plain leather with bronze buckles. The winged pair came later, on loan. A hero starts walking before the gods lend him anything.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -1578,14 +1578,14 @@
     "equip_threshold": 2,
     "quiz_tier": 1,
     "damage_resistances": {
-      "fire": 0.25
+      "fire": 0.75
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a starched pleated linen kilt with gilt threads",
+    "unidentified_name": "a pleated linen kilt shot with gilt thread",
     "floorSpawnWeight": {},
     "value": 1200,
-    "lore": "The shendyt was the kilt worn by Egyptian royalty for three thousand years — pleated linen, sometimes stiffened with starch, sometimes embroidered with gold thread. Tutankhamun was buried with several. The dry climate preserved the linen better than the wood of the coffins. A pharaoh's clothes outlasted his furniture.",
+    "lore": "The shendyt was the royal kilt of Egypt for three thousand years: fine linen wrapped at the hips, pleated sharp, with a tapering panel in front. Sculptors carved it on every pharaoh from the pyramid builders to Cleopatra's line. Howard Carter found heaps of folded linen in Tutankhamun's tomb, kilts and tunics and more than a hundred loincloths, all dry as paper. A king was buried with his wardrobe because he meant to need it. What is lost with this kilt on is not lost for good.",
     "max_enchant": 2,
     "peak_floor": 14,
     "spread": 10,
@@ -1614,15 +1614,15 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "slash": 0.2,
-      "pierce": 0.2
+      "slash": 0.8,
+      "pierce": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a bronze scale shirt of Mesopotamian make",
+    "unidentified_name": "a bronze scale shirt, green at the edges, smelling of salt",
     "floorSpawnWeight": {},
     "value": 3500,
-    "lore": "Dilmun was the Sumerian paradise — somewhere in the Persian Gulf, possibly Bahrain — where Enki and his wife lived without sickness or old age. Gilgamesh sought immortality there and found Utnapishtim, the flood survivor, instead. The scale armour found in Dilmun-era tombs predates the Hittite scale shirts by centuries. The Sumerians invented most things first.",
+    "lore": "The Sumerians told of Dilmun, a pure bright land in the sea toward the sunrise, where the raven did not croak and the lion did not kill. It had no fresh water until the god Enki called springs up from under the earth. After the flood the gods settled Ziusudra there, the one man they let live forever. Most scholars place Dilmun on the island of Bahrain, where sweet springs still rise through salt water. This bronze shirt is at home wherever water stands.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -1652,14 +1652,14 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "blunt": 0.3
+      "blunt": 0.7
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a beaten gold-and-electrum war helm",
+    "unidentified_name": "a beaten gold war helm shaped like braided hair",
     "floorSpawnWeight": {},
     "value": 3200,
-    "lore": "The royal helmets found at Ur are made of beaten gold and electrum, light enough to wear but ornamental enough that a real fight would dent them out of shape. They were buried with the king. Gilgamesh was a real king of Uruk — the tablets list him — and the epic about him was already old when scribes copied it in the second millennium BCE. The story is older than the script that records it.",
+    "lore": "Leonard Woolley dug the Royal Cemetery of Ur in the 1920s and lifted out a helmet beaten from a single sheet of gold alloy, shaped like a wig with every curl and the knot of hair at the back chased into the metal. It belonged to a man named Meskalamdug. The Sumerian King List gives Gilgamesh a reign at nearby Uruk, and his epic was old before Babylon was great. A king's helm expects tribute. Gold offered to it is not wasted.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -1688,14 +1688,14 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.2
+      "pierce": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "weathered leather sandals with bronze studs",
+    "unidentified_name": "a pair of weathered leather sandals with bronze studs",
     "floorSpawnWeight": {},
     "value": 3200,
-    "lore": "Aegeus left his sandals and sword under a rock outside Troezen. When Theseus was old enough to lift the rock, he took both and walked to Athens. The road was infested with bandits. He killed Sinis, Sciron, and Procrustes by their own methods. The sandals walked through every Labour of the Athenian cycle. Athens kept them in the temple of Theseus until the Persians burned it.",
+    "lore": "King Aegeus hid a sword and a pair of sandals under a boulder at Troezen and told the mother that the boy could come to Athens when he was strong enough to lift it. Theseus lifted it at sixteen and took the land road, which was the dangerous one. He bent Sinis between his own pine trees, kicked Sciron off his own cliff, and fitted Procrustes to his own iron bed. The sandals learned the lesson on that road. They return harm in the shape it arrives.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -1724,15 +1724,16 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "pierce": 0.25,
-      "slash": 0.15
+      "pierce": 0.75,
+      "slash": 0.85,
+      "acid": 0.7
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "lacquered leather greaves stamped with seal-script",
+    "unidentified_name": "a pair of lacquered leather greaves stamped with seal script",
     "floorSpawnWeight": {},
     "value": 3000,
-    "lore": "Qin Shi Huangdi's Terracotta Army was eight thousand soldiers in full kit, buried with the first emperor in 210 BCE. Every figure is individual — different face, different armour, different rank. The leg armour on the standing infantry is lacquered leather scales laced with cord. Lacquer waterproofs leather and stiffens it. The Qin engineers understood materials science.",
+    "lore": "The First Emperor of Qin was buried in 210 BC with an army of fired clay to guard him: some eight thousand soldiers, no two faces alike, standing in battle order in pits a mile from his tomb. Farmers digging a well found them in 1974. The sculptors copied the real armor plate by plate, small squares of lacquered leather laced with cord. Lacquer sheds water and stiffens the hide beneath it, and very little eats through it. The seal on these names the workshop foreman.",
     "max_enchant": 2,
     "peak_floor": 26,
     "spread": 10,
@@ -1763,15 +1764,15 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "magic": 0.25,
-      "cold": 0.2
+      "magic": 0.75,
+      "cold": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a deep blue traveler's cloak with one missing eyelet",
     "floorSpawnWeight": {},
     "value": 3800,
-    "lore": "Odin disguised himself as a one-eyed wanderer in a wide-brimmed hat and a blue cloak. He visited halls, drank with mortals, set them riddles, and left without saying who he was. Half the saga heroes have an encounter with a strange old man at a turning point — the old man is always Odin. He came to find out what humans were doing. He never quite trusted his own answer.",
+    "lore": "Odin gave one eye to Mimir's well for a drink of wisdom, and afterward he walked the world as an old man in a blue cloak and a hat pulled low on that side. He called himself Grimnir, or Gangleri, or Vegtam. He asked for a seat by the fire, traded riddles with kings and giants, and left before anyone thought to count his eyes. His ravens Huginn and Muninn brought him the news each morning. The cloak has the same hunger to know what things are.",
     "max_enchant": 2,
     "peak_floor": 36,
     "spread": 10,
@@ -1835,15 +1836,15 @@
     "equip_threshold": 3,
     "quiz_tier": 2,
     "damage_resistances": {
-      "slash": 0.2,
-      "magic": 0.15
+      "slash": 0.8,
+      "magic": 0.85
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "engraved leather bracers with brass studs",
+    "unidentified_name": "a pair of engraved leather archer's bracers with brass studs",
     "floorSpawnWeight": {},
     "value": 4200,
-    "lore": "Arjuna was the third of the Pandava brothers and the greatest archer of the Mahabharata. Before Kurukshetra, his charioteer Krishna delivered the Bhagavad Gita over eighteen chapters while the armies waited. Arjuna had wanted to lay down his bow. By the end of the song he understood why he could not. He fought. The Gita is the oldest battlefield-philosophy text we have.",
+    "lore": "Arjuna was the finest archer among the five Pandava brothers, and he could draw the bow Gandiva with either hand. On the morning of the battle of Kurukshetra he saw his teachers and cousins in the opposing line and let the bow slip from his fingers. His charioteer was Krishna. What Krishna told him between the two waiting armies fills eighteen chapters, and it is called the Bhagavad Gita. Arjuna picked up the bow. The first arrow a wearer looses in a new place flies with that settled mind.",
     "max_enchant": 2,
     "peak_floor": 36,
     "spread": 10,
@@ -1872,15 +1873,15 @@
     "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
-      "slash": 0.2,
-      "magic": 0.15
+      "slash": 0.8,
+      "magic": 0.85
     },
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a braided leather war-girdle with a bronze clasp",
     "floorSpawnWeight": {},
     "value": 5500,
-    "lore": "Hippolyta, queen of the Amazons, owned a war-girdle given her by Ares. Heracles' ninth Labour was to take it. She offered it freely; Hera disguised herself as an Amazon and started a rumor that he was kidnapping the queen. The Amazons attacked. Heracles killed Hippolyta and took the girdle. The story has variants — in some, Hippolyta lives and the girdle is paid for. The variants reflect later discomfort with the source.",
+    "lore": "Ares gave his daughter Hippolyta, queen of the Amazons, a war belt as the sign of her command. Heracles was sent to fetch it for a princess of Mycenae as his ninth Labour. Hippolyta came down to his ship and offered it freely. Then Hera, in the shape of an Amazon, ran through the camp crying that the stranger was carrying off the queen. The riders charged, and Heracles killed her believing himself betrayed. The belt still answers a straight, gathering charge.",
     "max_enchant": 2,
     "peak_floor": 45,
     "spread": 10,
@@ -1888,7 +1889,8 @@
     "template_basis": "leather_leggings",
     "is_unique": true,
     "containerLootTier": "rare",
-    "container_loot_tier": "rare"
+    "container_loot_tier": "rare",
+    "amazon_charge": true
   },
   "helm_of_leonidas": {
     "name": "Helm of Leonidas",
@@ -1908,15 +1910,15 @@
     "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
-      "slash": 0.2,
-      "pierce": 0.2
+      "slash": 0.8,
+      "pierce": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a Corinthian bronze helm with a transverse crest",
+    "unidentified_name": "a Corinthian bronze helm with a crest set ear to ear",
     "floorSpawnWeight": {},
     "value": 5500,
-    "lore": "Leonidas of Sparta held Thermopylae against Xerxes' army with three hundred Spartans and a few thousand allies. He died on the third day. Spartan helmets had a transverse crest — a horsehair brush running ear to ear — that marked officers. Persians who saw the Spartans combing their hair on the morning of the last battle reported it as strange. The Spartans were preparing for death the way their custom required.",
+    "lore": "A Persian scout rode up to the pass at Thermopylae and found the Spartans stripped for exercise and combing their long hair. Xerxes laughed at the report. An exiled Spartan king in his camp explained that these men dressed their hair when they meant to risk their lives. Leonidas held the pass two days, sent most of the allies home on the third, and died with his three hundred. His helm does its best work when its wearer is nearly finished.",
     "max_enchant": 2,
     "peak_floor": 45,
     "spread": 10,
@@ -1945,15 +1947,15 @@
     "equip_threshold": 3,
     "quiz_tier": 3,
     "damage_resistances": {
-      "cold": 0.3,
-      "magic": 0.15
+      "cold": 0.7,
+      "magic": 0.85
     },
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a heavy red wool cloak with frost-line patterns",
     "floorSpawnWeight": {},
     "value": 5800,
-    "lore": "Hua Mulan took her father's place in the army of the Northern Wei. The Ballad of Mulan is from the sixth century and uses sixty-two lines to cover twelve years of war. She came home, changed into a dress, and her comrades did not recognize her. The poem treats her gender disguise as the smallest of her accomplishments. The army-life details are correct enough that historians use the ballad as source material.",
+    "lore": "The Ballad of Mulan dates from the age of the Northern Wei. The Khan's draft scroll carried her father's name, and he had no grown son. She bought a horse in the east market, a saddle in the west, a bridle in the south and a whip in the north, and rode in his place for ten years of frontier war. Her comrades did not know her in a dress. On holy ground the cloak lets the wearer put the soldier down and rest.",
     "max_enchant": 2,
     "peak_floor": 45,
     "spread": 10,
@@ -1973,7 +1975,7 @@
       60
     ],
     "weight": 8.0,
-    "min_level": 75,
+    "min_level": 56,
     "slot": "body",
     "tier": 5,
     "material": "legendary",
@@ -1982,19 +1984,19 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
-      "slash": 0.3,
-      "pierce": 0.25,
-      "fire": 0.2
+      "slash": 0.7,
+      "pierce": 0.75,
+      "fire": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "a deep red lacquer-laced cuirass of small plates",
+    "unidentified_name": "a cuirass of small lacquered plates laced with dark red silk",
     "floorSpawnWeight": {},
     "value": 9500,
-    "lore": "Minamoto no Yoshitsune was the great general of the Genpei War. He won the battles of Ichi-no-Tani and Dan-no-ura by cavalry tactics nobody on either side expected. His older brother Yoritomo, who founded the shogunate, turned on him afterward and hunted him to his death. Yoshitsune's loyalty to family was repaid the way loyalty often is in court politics. The samurai class spent the next eight centuries reading the story.",
+    "lore": "In 1184 the Taira held a fortress at Ichi-no-Tani with the sea in front and a cliff behind. Minamoto no Yoshitsune watched deer pick their way down the cliff, reasoned that a horse could follow where a deer went, and led a handful of riders straight down onto the rear of the camp. A year later he destroyed the Taira fleet at Dan-no-ura. His brother the shogun grew afraid of him and hunted him to death. The armor still quickens on every descent.",
     "onEquipStatus": "blessed",
     "max_enchant": 3,
-    "peak_floor": 84,
+    "peak_floor": 66,
     "spread": 10,
     "peak_weight": 0.35,
     "template_basis": "scale",
@@ -2022,14 +2024,14 @@
     "quiz_tier": 5,
     "damage_resistances": {
       "lightning": 0.5,
-      "blunt": 0.25
+      "blunt": 0.75
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "heavy iron boots scarred by lightning",
+    "unidentified_name": "a pair of heavy iron boots scarred by lightning",
     "floorSpawnWeight": {},
     "value": 9200,
-    "lore": "Thor wore iron gloves to hold Mjolnir without crushing his fingers, a belt of strength that doubled his power, and iron boots for the same reason wrestlers chalk their hands. The Eddas list the three together as his ordinary kit — not the legendary parts of his story, just what he wore to work. The gear was practical. The thunder came from the work he did in it.",
+    "lore": "Snorri counts three treasures of Thor: the hammer, the belt of strength, and the iron gloves he needed to grip the hammer. No poet lists his boots. Yet Thor was the one god who could not ride the rainbow bridge, which would have burned under him, so he waded four rivers every day to reach the judgment seat by the World Tree. He forded Vimur while a giantess swelled the flood. Whatever he wore on his feet did that. Sparks jump from these when enemies crowd close.",
     "max_enchant": 3,
     "peak_floor": 84,
     "spread": 10,
@@ -2058,16 +2060,15 @@
     "equip_threshold": 4,
     "quiz_tier": 5,
     "damage_resistances": {
-      "magic": 0.3,
-      "slash": 0.2,
-      "fear": 0.5
+      "magic": 0.7,
+      "slash": 0.8
     },
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a winged silver helm with a pale gem in the brow",
     "floorSpawnWeight": {},
     "value": 9500,
-    "lore": "Aragorn son of Arathorn was raised in Rivendell because his father had been killed and the line of Isildur could not be allowed to die in the wild. He went by Strider for most of his life. He earned the helm by going north when going north was the work nobody wanted. Tolkien's central argument — that the willing exile is the rightful king — is older than the book. The Britons told it about Arthur. The Israelites told it about David.",
+    "lore": "Tolkien describes the crown of Gondor as a tall white helm with wings of pearl and silver like a gull's and seven gems set in the circlet. It waited in a king's tomb through the long rule of the stewards. The man who claimed it had spent most of his life as a ranger called Strider. To reach his city in time he took the Paths of the Dead and called an army of oathbreakers to keep their word at last. The dead still listen to this helm.",
     "max_enchant": 2,
     "peak_floor": 84,
     "spread": 10,
@@ -2132,14 +2133,14 @@
     "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
-      "magic": 0.4,
-      "fire": 0.3,
-      "cold": 0.3,
-      "poison": 0.3
+      "magic": 0.6,
+      "fire": 0.7,
+      "cold": 0.7,
+      "poison": 0.7
     },
     "can_be_cursed": false,
     "identified": false,
-    "unidentified_name": "robes of gold thread embroidered with seventy-two names",
+    "unidentified_name": "a robe of gold thread embroidered with rows of strange names",
     "floorSpawnWeight": {},
     "value": 14000,
     "lore": "Solomon's wisdom was the gift he asked for when God offered him anything. The wealth and the long reign came as a bonus. Late tradition gave him a signet ring that commanded the demons; the embroidered names on his robes were said to be theirs. The Temple he built was destroyed twice. The Wisdom literature attributed to him survives. The robes are what wisdom looks like when it has been embroidered for the throne room.",
@@ -2216,11 +2217,11 @@
     "equip_threshold": 5,
     "quiz_tier": 5,
     "damage_resistances": {
-      "fire": 0.4,
-      "cold": 0.4,
-      "slash": 0.3,
-      "pierce": 0.3,
-      "blunt": 0.3
+      "fire": 0.6,
+      "cold": 0.6,
+      "slash": 0.7,
+      "pierce": 0.7,
+      "blunt": 0.7
     },
     "can_be_cursed": false,
     "identified": false,
@@ -2296,15 +2297,15 @@
     "quiz_tier": 5,
     "damage_resistances": {
       "magic": 0.5,
-      "fire": 0.4,
-      "lightning": 0.4
+      "fire": 0.6,
+      "lightning": 0.6
     },
     "can_be_cursed": false,
     "identified": false,
     "unidentified_name": "a four-tiered golden crown that hums with mantra",
     "floorSpawnWeight": {},
     "value": 15000,
-    "lore": "Brahma is the creator, the first of the Trimurti. He has four faces because he looked in every direction at once when his consort Saraswati was created and could not stop looking. The crown he wears is unrelated to any earthly metal. The Mahabharata says he gave it to a king who returned it. The king's name is not recorded. Some gifts are too large to keep.",
+    "lore": "Brahma woke on a lotus that grew from the navel of sleeping Vishnu, and from his thought came the worlds. The Puranas say he grew a face for each quarter of the sky so that nothing he had made could pass out of his sight, and that from his four mouths came the four Vedas. He rides a white goose and carries a water pot and a string of prayer beads, never a weapon. His crown has a tier for each face. Its wearer is not easily approached from behind.",
     "max_enchant": 3,
     "peak_floor": 93,
     "spread": 8,

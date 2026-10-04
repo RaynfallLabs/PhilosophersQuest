@@ -364,7 +364,44 @@ def _pull_common_from_category(category: str, common_pool: list, level_cap: int,
                 if getattr(it, 'item_class', '') in sub_cats]
     if not eligible:
         return None
-    return copy.copy(rng.choice(eligible))
+    return copy.copy(_weighted_common_pick(eligible, level_cap, rng))
+
+
+def _spawn_weight_at(item, level: int) -> float:
+    """An item's own floor spawn weight at `level`: the peak_floor bell when it
+    has one, else its floor_spawn_weight band, else 1."""
+    import math
+    pf = getattr(item, 'peak_floor', 0) or 0
+    pw = float(getattr(item, 'peak_weight', 0.0) or 0.0)
+    if pf > 0 and pw > 0:
+        sp = max(1, getattr(item, 'spread', 10) or 10)
+        return pw * math.exp(-((level - pf) ** 2) / (2 * sp * sp))
+    fw = getattr(item, 'floor_spawn_weight', None)
+    if fw:
+        from dungeon import _food_weight
+        return float(_food_weight(fw, max(1, min(100, level))))
+    return 1.0
+
+
+def _weighted_common_pick(eligible: list, level: int, rng):
+    """Pick one common item, honouring each item's floor spawn weight.
+
+    This used to be a flat rng.choice, so a chest ignored the spawn tables
+    entirely: by kind count an early apothecary chest was about 60% harmful
+    potions, and a rare elixir was as likely as a healing potion. The class
+    mix is unchanged (a class is chosen in proportion to how many of its kinds
+    are eligible); the weights decide which kind within the class.
+    """
+    by_class: dict = {}
+    for it in eligible:
+        by_class.setdefault(getattr(it, 'item_class', ''), []).append(it)
+    classes = list(by_class)
+    cls = rng.choices(classes, weights=[len(by_class[c]) for c in classes], k=1)[0]
+    items = by_class[cls]
+    weights = [_spawn_weight_at(it, level) for it in items]
+    if sum(weights) <= 0:
+        return rng.choice(items)
+    return rng.choices(items, weights=weights, k=1)[0]
 
 
 def _pull_unique_from_category(category: str, unique_pool: list, rng) -> object | None:

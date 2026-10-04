@@ -101,7 +101,7 @@
     },
     "value": 20,
     "unidentified_name": "arrows",
-    "lore": "Diamond points ground to molecular sharpness pierce through enchanted armor as though it were wet paper. Only the wealthiest archers can afford to loose these arrows and not retrieve them afterward."
+    "lore": "Diamond points ground finer than any steel edge. They pass through enchanted armour as though it were wet paper. Only the wealthiest archers can afford to loose these and not go looking for them afterward."
   },
   "dragonbone_arrow": {
     "name": "dragonbone arrow",
@@ -231,7 +231,7 @@
     },
     "value": 20,
     "unidentified_name": "bolts",
-    "lore": "Diamond-tipped bolts that can shear through the thickest plate armor. The crystalline tips shatter on impact, sending razor shards into the wound — a gruesome but devastatingly effective design."
+    "lore": "Diamond-tipped bolts that shear through the thickest plate. The crystal tips shatter on impact and stay in the wound, an ugly design that has ended a great many arguments with armoured things."
   },
   "adamantine_bolt": {
     "name": "adamantine bolt",
@@ -270,7 +270,7 @@
     "min_level": 20,
     "identified": false,
     "unidentified_name": "golden-tipped arrows that feel warm",
-    "lore": "Eros, whom the Romans called Cupid, carried two kinds of arrows: gold-tipped to inspire love, lead-tipped to inspire revulsion. Ovid tells how Eros shot Apollo with gold and Daphne with lead, creating the first unrequited love. These golden arrows charm their targets — struck creatures forget their hostility and become docile.",
+    "lore": "Eros, whom the Romans called Cupid, carried two kinds of arrow: gold-tipped to kindle love, lead-tipped to drive it away. Ovid tells how he shot Apollo with gold and the nymph Daphne with lead, and Apollo chased her until she became a laurel tree. These are the golden kind.",
     "floorSpawnWeight": {
       "1-19": 0,
       "20-40": 2,
@@ -297,7 +297,7 @@
     "min_level": 30,
     "identified": false,
     "unidentified_name": "silver arrows fletched with white feathers",
-    "lore": "Artemis the Huntress never missed. In the Iliad, she is 'the lady of wild things.' Her silver arrows brought swift, painless death — Homer describes women dying suddenly as 'slain by the gentle shafts of Artemis.' Callimachus records that she forged them herself on the island of Lipara. Six arrows. Make them count.",
+    "lore": "As a small girl Artemis went to the Cyclopes on the island of Lipara and asked them for a bow and arrows. She never missed. Homer says that when a woman died suddenly and without pain, the Greeks called her slain by the gentle shafts of Artemis.",
     "floorSpawnWeight": {
       "1-29": 0,
       "30-60": 2,
@@ -323,7 +323,7 @@
     "min_level": 55,
     "identified": false,
     "unidentified_name": "crackling bolts of compressed energy",
-    "lore": "The Cyclopes — Brontes, Steropes, and Arges — forged Zeus's thunderbolts in the furnaces beneath Mount Etna. Hesiod's Theogony describes them as having 'thunder and lightning and bright thunderbolt.' With these, Zeus overthrew the Titans and established the order of Olympus. Three bolts. Each one shakes the earth.",
+    "lore": "The Cyclopes Brontes, Steropes and Arges forged the thunderbolt for Zeus in thanks for their freedom. With it he overthrew the Titans and set the order of Olympus. Later poets put the forge under Mount Etna. There are never many of these, and each one shakes the earth.",
     "floorSpawnWeight": {
       "1-54": 0,
       "55-80": 2,

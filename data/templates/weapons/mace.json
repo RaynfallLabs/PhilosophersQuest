@@ -25,7 +25,7 @@
     "magical_metal",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} mace, head heavy and flanged. The cleric's argument against armor.",
+  "lore_template": "A {material_name} mace, its head heavy and flanged. Bishop Odo of Bayeux rides into the Bayeux Tapestry with a club, not a sword. Armour turns an edge, but it cannot turn a blow.",
   "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: On chain rung 3+, 20% chance to stun for 1 turn. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.05 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "stun_at_max",

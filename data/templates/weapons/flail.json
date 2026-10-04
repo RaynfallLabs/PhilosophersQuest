@@ -25,7 +25,7 @@
     "magical_metal",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} flail. Hard to wield, harder to defend against.",
+  "lore_template": "A {material_name} flail, a spiked head on a length of chain. The head swings over the rim of a shield and lands behind it, which is the whole idea.",
   "design_notes": "v2 chain rebalance: normal class, 6 rungs. Midpoint rung 3 = 1.00× (1.0× anchor band). Peak rung 6 = 2.00×. Class mechanic: Ignores shield AC bonus — flail wraps around defenses. (see weapon_class_chain + class_mechanic fields). damage_modifier 1.1 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "normal",
   "class_mechanic": "ignores_shield",

@@ -25,7 +25,7 @@
     "magical_metal",
     "exotic_metal"
   ],
-  "lore_template": "A {material_name} rapier. The duelist's blade — every thrust must count.",
+  "lore_template": "A {material_name} rapier, slender and sharp only where it matters. The duelling masters of Italy and Spain taught that the point always beats the edge, and filled books proving it.",
   "design_notes": "v2 chain rebalance: finesse class, 6 rungs. Midpoint rung 3 = 0.75× (1.0× anchor band). Peak rung 6 = 3.00×. Class mechanic: Finesse: uses DEX instead of STR for damage bonus. (see weapon_class_chain + class_mechanic fields). damage_modifier 0.9 preserved from v1; weapon_base_damage now anchored on curve.weapon_base_damage(min_level) (2.4× higher than v1 due to midpoint=1.0× re-anchor).",
   "weapon_class_chain": "finesse",
   "class_mechanic": "finesse_dex",

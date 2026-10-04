@@ -19,7 +19,7 @@
    "61-100": 15
   },
   "unidentified_name": "bread ration",
-  "lore": "A dense loaf of twice-baked trail bread, hard enough to crack a tooth but sustaining enough to keep a dungeon delver moving for hours. Adventurers claim the dusty flavor grows on you \u2014 they are lying."
+  "lore": "Roman legionaries marched on bucellatum, bread baked twice until it could survive a campaign and break a tooth. This loaf keeps the tradition. Soaked in water it becomes edible; dry, it becomes a test of character. It fills the belly and keeps a delver walking, which is all anyone asks of it."
  },
  "dried_meat": {
   "name": "dried meat",
@@ -41,7 +41,7 @@
    "61-100": 12
   },
   "unidentified_name": "dried meat",
-  "lore": "Salt-cured strips of some unidentified creature, wound tight and wrapped in waxed cloth. The jerky is chewy and intensely flavored \u2014 not pleasant, but undeniably filling and easy to carry."
+  "lore": "Salt and smoke have kept meat through winters and sieges since before anyone wrote the method down. These strips are wound tight in waxed cloth and come from no animal the wrapper admits to. They chew like bootlaces and sustain like a proper meal."
  },
  "hard_cheese": {
   "name": "hard cheese",
@@ -63,7 +63,7 @@
    "61-100": 10
   },
   "unidentified_name": "hard cheese",
-  "lore": "A wheel of cave-aged hard cheese, its rind thick and its interior dense as packed earth. Dungeon merchants prize it because it keeps indefinitely in cool passages and provides solid sustenance without the mess of liquids."
+  "lore": "Odysseus and his men found the Cyclops's cave stacked with racks of cheese and helped themselves before the owner came home. A cave-aged wheel like this one would have been worth the risk. The rind is thick as bark and the heart is dense, salty, and good for a long march."
  },
  "wild_mushroom": {
   "name": "wild mushroom",
@@ -85,7 +85,7 @@
    "61-100": 25
   },
   "unidentified_name": "wild mushroom",
-  "lore": "A large cap of unknown subterranean mushroom, faintly luminescent at the gills. Consuming it restores stamina and has mild restorative properties \u2014 dungeon foragers claim certain varieties even close minor wounds."
+  "lore": "A pale cap from the dungeon's damp corners, faintly luminous at the gills. Foragers above ground say there are old mushroom hunters and bold mushroom hunters, but no old, bold ones. Down here the glowing kind is safe: filling, earthy, and mildly restorative to small hurts."
  },
  "apple": {
   "name": "apple",
@@ -98,7 +98,7 @@
   "weight": 0.4,
   "min_level": 1,
   "sp_restore": 38,
-  "hp_restore": 2,
+  "hp_restore": 6,
   "bonus_type": "none",
   "bonus_amount": 0,
   "floor_spawn_weight": {
@@ -107,7 +107,7 @@
    "61-100": 8
   },
   "unidentified_name": "apple",
-  "lore": "A crisp, red apple \u2014 impossibly fresh considering the depth at which it was found. The flesh is cool and slightly sweet, and eating it leaves the body feeling subtly mended, as though the fruit itself knows what healing means."
+  "lore": "Genesis never names the fruit in Eden. The apple took the blame later, helped by a Latin pun: malum means both 'apple' and 'evil'. This one is innocent, crisp and cold, and impossibly fresh for its depth. It quiets hunger and leaves small hurts feeling a little mended."
  },
  "trail_rations": {
   "name": "trail rations",
@@ -129,7 +129,7 @@
    "61-100": 12
   },
   "unidentified_name": "trail rations",
-  "lore": "A substantial pack of mixed provisions \u2014 dried fruit, salted crackers, hard tack, and a small sealed jar of rendered fat. It's not glamorous but it's thorough, and experienced delvers always carry a week's worth."
+  "lore": "A waxed parcel of dried fruit, salted crackers, hard tack, and a sealed jar of rendered fat. Nobody has ever praised the flavor. Experienced delvers pack it anyway, because it is the most filling thing that fits in a satchel and it never spoils."
  },
  "healing_herb": {
   "name": "healing herb",
@@ -151,7 +151,7 @@
    "61-100": 15
   },
   "unidentified_name": "healing herb",
-  "lore": "A bundle of bruised leaves that smell faintly of pine and citrus. When consumed, they release compounds that accelerate blood clotting and reduce inflammation \u2014 healers once grew these in monastery gardens, but wild specimens thrive in dungeon crevices."
+  "lore": "Yarrow carries the name Achillea because Achilles is said to have packed his soldiers' wounds with it at Troy, having learned the art from the centaur Chiron. Monks grew it in their physic gardens for the same purpose. Chewed, the bitter leaves do little for hunger and a good deal for bleeding."
  },
  "elvish_bread": {
   "name": "elvish bread",
@@ -172,7 +172,7 @@
    "10-100": 30
   },
   "unidentified_name": "elvish bread",
-  "lore": "Baked under starlight using grain that grows only in enchanted groves, this pale, dense loaf is infused with vitality that sustains the body long after ordinary food would be exhausted. A single piece keeps travelers going for days in the world above \u2014 down here, its power is more modest but still remarkable."
+  "lore": "Old tales warn travelers never to eat at the Fair Folk's table, since one bite can keep a guest under the hill for a hundred years. This pale loaf seems to be the exception, baked for the road and not for the snare. It is light as a wafer, faintly sweet, and one piece carries a traveler farther than a full pack of rations."
  },
  "hearty_stew": {
   "name": "hearty stew",
@@ -193,7 +193,7 @@
    "5-100": 25
   },
   "unidentified_name": "hearty stew",
-  "lore": "A thick, rich stew of root vegetables and tender meat, still warm in its sealed clay pot. The recipe, passed down through generations of dungeon tavern-keepers, has been refined to maximize the fighting edge it gives to anyone who eats it \u2014 warriors speak of it almost reverently."
+  "lore": "Esau came in from the field famished and sold his birthright to his brother Jacob for a bowl of red lentil stew. A sealed clay pot of this, still warm, explains the temptation. It is thick with roots and tender meat, and it puts back both strength and blood."
  },
  "deep_fungi": {
   "name": "deep fungi",
@@ -215,7 +215,7 @@
    "61-100": 35
   },
   "unidentified_name": "deep fungi",
-  "lore": "A cluster of deep-dwelling mushrooms that grow only in the lowest passages where no light has ever reached. They absorb residual magical energy from the stone itself, concentrating it in their flesh. Eating them is intensely disorienting for a moment, then extraordinarily nourishing \u2014 the body adapts to the depth they came from."
+  "lore": "These mushrooms grow only in the lowest passages, where no light has ever fallen, feeding on whatever seeps from enchanted stone. The first bite sets the head spinning. Then the body steadies, well fed, and comes away subtly changed: a little stronger, or quicker, or sharper than before."
  },
  "void_ration": {
   "name": "void ration",
@@ -236,7 +236,7 @@
    "60-100": 20
   },
   "unidentified_name": "void ration",
-  "lore": "A dense brick of compressed sustenance infused with void essence, found only in the abyssal depths where conventional food would rot instantly. Consuming it fills the body with a cold, focused energy that sharpens combat reflexes to an inhuman degree. Those who eat it report that hunger becomes an abstract concept for hours afterward."
+  "lore": "A dark brick of pressed provisions from the abyssal floors, where ordinary food rots in an hour. Nobody knows who presses them. Eating one fills the limbs with a cold, steady vigor that lingers as real fighting strength, and hunger becomes a rumor for a long while after."
  },
  "philosopher_tea": {
   "name": "philosopher's tea",
@@ -258,7 +258,7 @@
    "15-100": 20
   },
   "unidentified_name": "philosopher's tea",
-  "lore": "Brewed from leaves found only near ancient ruins, this deep violet tea clears the mind and sharpens perception in ways ordinary stimulants cannot approach. Scholars who have tasted it describe a heightened awareness that makes quiz questions seem to answer themselves."
+  "lore": "Chinese legend says the emperor Shennong was boiling water under a wild tree when a few leaves drifted into the pot, and he liked what happened. Sages have steeped leaves ever since. This violet tea, gathered near old ruins, settles the mind and leaves it lastingly wiser. Scholars claim hard questions seem to wait politely for an answer."
  },
  "ambrosia": {
   "name": "Ambrosia",
@@ -272,7 +272,7 @@
   "value": 8000,
   "min_level": 40,
   "identified": true,
-  "lore": "The food of the Olympian gods. Homer uses the word interchangeably with nectar \u2014 sometimes it is food, sometimes drink, sometimes an anointing oil rubbed on the dead to preserve them. Pindar says it conferred immortality. What is certain is that mortals who tasted it were never the same. It restores everything and improves everything \u2014 but it is not meant for mortal tongues.",
+  "lore": "The food of the Olympian gods. Homer uses the word loosely: it is eaten, it is drunk, and Thetis anoints the dead Patroclus with it to keep his body from decay. Doves carried it to Zeus. It was never meant for mortal tongues. A mortal who tastes it is fed, healed, and bettered in every part.",
   "floorSpawnWeight": {
    "1-39": 0,
    "40-60": 2,
@@ -298,7 +298,7 @@
   "value": 6000,
   "min_level": 40,
   "identified": true,
-  "lore": "Heracles's eleventh labor sent him to the Garden of the Hesperides at the western edge of the world, guarded by the hundred-headed dragon Ladon, to retrieve the golden apples that Gaia had given Hera as a wedding gift. The apples granted immortality to whoever ate them. Eris later used one inscribed 'For the Fairest' to start the Trojan War. Beauty, immortality, and war \u2014 all in one fruit.",
+  "lore": "Gaia gave Hera a tree of golden apples as a wedding gift, and Hera set it at the western edge of the world with the Hesperides to tend it and the serpent Ladon coiled around the trunk. For his eleventh labor Heracles held up the sky while Atlas fetched three. One bite fills, heals, and toughens the body for good.",
   "floorSpawnWeight": {
    "1-39": 0,
    "40-60": 2,
@@ -324,7 +324,7 @@
   "value": 7000,
   "min_level": 45,
   "identified": true,
-  "lore": "Xi Wangmu, the Queen Mother of the West, grows these peaches in her garden on Mount Kunlun. They ripen once every three thousand years. Sun Wukong ate them all during his rampage through Heaven, gaining near-immortality. Journey to the West records that the theft of the peaches was one of three offenses that caused Buddha to imprison the Monkey King beneath Five Elements Mountain for five hundred years.",
+  "lore": "Xi Wangmu, Queen Mother of the West, grows these peaches in her heavenly orchard, where the slowest trees ripen once in nine thousand years. Journey to the West tells how Sun Wukong, set to guard the orchard, ate the best of them himself. Even one mends the body, fills it, and leaves some lasting gift behind.",
   "floorSpawnWeight": {
    "1-44": 0,
    "45-60": 2,
@@ -351,7 +351,7 @@
   "min_level": 12,
   "identified": false,
   "unidentified_name": "a perfect-looking fruit just out of reach",
-  "lore": "Tantalus served his own son Pelops as a feast for the gods, testing their omniscience. His punishment in Tartarus was eternal hunger and thirst: water receded when he bent to drink, and fruit branches pulled away when he reached. This plum is the fruit he could never grasp \u2014 eating it heals greatly but leaves you ravenous.",
+  "lore": "Tantalus served his own son to the gods to test whether they knew everything. They did. In the underworld he stands in a pool that drains when he stoops to drink, under boughs that lift their fruit when he reaches. This is one of that fruit. It heals deep wounds and, true to its tree, barely touches hunger.",
   "floorSpawnWeight": {
    "1-11": 0,
    "12-40": 3,
@@ -379,7 +379,7 @@
   "min_level": 1,
   "identified": true,
   "unidentified_name": "Magic Dungeon Carrot",
-  "lore": "A luminous orange carrot that grows only in the enchanted soil of deep dungeon gardens. It glows faintly with an inner light and smells of wildflowers. Legend says it is the favorite food of a certain magical beast found deeper in the dungeon. You could eat it... but perhaps it would be wiser to hold onto it.",
+  "lore": "A carrot that glows faintly orange and smells of wildflowers, grown in some enchanted bed far from any sun. It is perfectly good to eat. Rumor holds that a certain magical beast deeper in the dungeon loves nothing better, and that a wise traveler keeps one in the pack for that meeting.",
   "floorSpawnWeight": {
    "1-10": 2,
    "11-20": 3,

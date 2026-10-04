@@ -396,12 +396,21 @@ class Weapon(Item):
         # Per-tag bonus damage dice. Each entry rolls a dice expression and
         # adds the result to damage when the target has the matching tag.
         # Built from the legacy *_bonus_damage keys (which were inert except
-        # for abaddon_bonus_damage — left as-is for Sword of Michael).
+        # for abaddon_bonus_damage — left as-is for Sword of Michael), plus
+        # an explicit `bonus_damage_vs_tag` dict when the data carries one.
+        # 'humanoid' and the dict were both authored but never read before
+        # 2026-10: Theseus's Club and the Sword of Michael had no bonus.
         self.bonus_damage_vs_tag: dict[str, str] = {}
-        for _tag in ('dragon', 'beast', 'undead', 'goblin', 'demon', 'fey', 'giant', 'troll'):
+        for _tag in ('dragon', 'beast', 'undead', 'goblin', 'demon', 'fey',
+                     'giant', 'troll', 'humanoid'):
             _dice = defn.get(f'{_tag}_bonus_damage')
             if _dice:
                 self.bonus_damage_vs_tag[_tag] = str(_dice)
+        _explicit = defn.get('bonus_damage_vs_tag')
+        if isinstance(_explicit, dict):
+            for _tag, _dice in _explicit.items():
+                if _dice:
+                    self.bonus_damage_vs_tag[str(_tag)] = str(_dice)
         # Anduril-style multiplier flag: undead_bonus (numeric mult).
         # Converted at use-site into +50% damage vs undead if set above 1.0.
         self.undead_multiplier: float   = float(defn.get('undead_bonus', 1.0) or 1.0)
