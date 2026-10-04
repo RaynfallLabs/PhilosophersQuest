@@ -13,7 +13,7 @@ hook sites in combat.py, player.py, game_menus.py, and main.py.
 """
 from __future__ import annotations
 import random
-from geom import monster_at_tile, is_at_tile
+from geom import monster_at_tile
 
 
 def is_boss_or_huge(monster) -> bool:

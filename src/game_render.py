@@ -18,16 +18,15 @@ import pygame
 
 import layout
 from renderer import TILE_SIZE
-from geom import monster_at_tile, is_at_tile, occupied_tiles, any_tile_in_set
+from geom import monster_at_tile, any_tile_in_set
 from fantasy_ui import (FP, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
-                         draw_glow_text, centered_text, draw_overlay,
+                         draw_glow_text, draw_overlay,
                          draw_rune_circle, draw_filigree_bar, draw_candle_glow,
-                         draw_menu, wrap_text, ITEM_COLOR)
+                         ITEM_COLOR)
 from items import (Weapon, Armor, Shield, Corpse, Accessory,
                    Wand, Scroll, Spellbook, Ammo, Food, Potion)
 from game_helpers import (
-    fit_text as _gh_fit_text,
     wrap_text as _gh_wrap_text,
 )
 from naming import proper_name
@@ -132,13 +131,6 @@ class RenderMixin:
             max_h=460,
         )
 
-    def _draw_page_indicator(self, items, bx, bw, y):
-        """Show item count if list is long."""
-        total = len(items)
-        if total > 9:
-            surf = self.font_sm.render(f"({total} items)", True, FP.HINT_TEXT)
-            self.screen.blit(surf, (bx + (bw - surf.get_width()) // 2, y))
-
     MENU_ICON_SIZE = 32
 
     def _get_menu_sprite(self, item_id: str) -> 'pygame.Surface':
@@ -184,52 +176,6 @@ class RenderMixin:
             gy = (SZ - glyph_surf.get_height()) // 2
             surf.blit(glyph_surf, (gx, gy))
             self.screen.blit(surf, (x, y))
-
-    def _draw_tab_bar(self, tabs, active_idx: int, bx: int, by: int, bw: int,
-                      counts: list[int] | None = None):
-        """Draw a tab bar that fits within the panel width.
-        *tabs* is a list of (label, ...) tuples.  *counts* is optional per-tab
-        item counts (empty tabs with count 0 are hidden unless active).
-        Returns the y position below the tab bar."""
-        tab_y = by + 50
-        avail = bw - 20  # horizontal budget
-        PAD = 4
-        # Build visible tab list: (index, label_text)
-        visible = []
-        for i, tab in enumerate(tabs):
-            label = tab[0]
-            c = counts[i] if counts else None
-            if c is not None and c == 0 and i != active_idx:
-                continue
-            text = f"{label} ({c})" if c is not None else label
-            visible.append((i, text))
-        # Measure total width; if too wide, drop counts
-        def _total(entries):
-            return sum(self.font_sm.size(t)[0] + 14 + PAD for _, t in entries) - PAD
-        if _total(visible) > avail and counts:
-            visible = []
-            for i, tab in enumerate(tabs):
-                c = counts[i] if counts else None
-                if c is not None and c == 0 and i != active_idx:
-                    continue
-                visible.append((i, tab[0]))
-        tab_x = bx + 10
-        max_x = bx + bw - 10
-        for idx, text in visible:
-            tw = self.font_sm.size(text)[0] + 14
-            if tab_x + tw > max_x:
-                break
-            rect = pygame.Rect(tab_x, tab_y, tw, 24)
-            active = idx == active_idx
-            if active:
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, rect, border_radius=4)
-                pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
-                col = FP.GOLD_BRIGHT
-            else:
-                col = FP.FADED_TEXT
-            self.screen.blit(self.font_sm.render(text, True, col), (tab_x + 7, tab_y + 3))
-            tab_x += tw + PAD
-        return tab_y + 28
 
     def _draw_xyzzy_input(self):
         """Draw the hidden green terminal input — 'Speak the First Word'."""
@@ -1108,7 +1054,6 @@ class RenderMixin:
             self._ui_footer(panel, "Enter / Space / Esc: continue")
             return
 
-        from fantasy_ui import get_font as old_get_font, draw_overlay as old_draw_overlay, draw_dark_panel as old_draw_dark_panel, draw_header_bar as old_draw_header_bar
 
         enc = self._npc_encounter_active
         if enc is None:
@@ -1710,7 +1655,6 @@ class RenderMixin:
     # for a given subject. Don't redefine this dict — edit fantasy_ui.py.
     _SUBJECT_COLOR = FP.SUBJECT
 
-    _fit_text = staticmethod(_gh_fit_text)
 
     _wrap_text = staticmethod(_gh_wrap_text)
 
@@ -2665,28 +2609,6 @@ class RenderMixin:
             y += used + 4
         return y
 
-    def _menu_draw_resource_bars(self, rect: pygame.Rect) -> int:
-        y = rect.y
-        bars = [
-            ('HP', self.player.hp, self.player.max_hp, (255, 80, 95)),
-            ('MP', self.player.mp, self.player.max_mp, (105, 150, 255)),
-            ('SP', self.player.sp, self.player.max_sp, (85, 235, 145)),
-        ]
-        for label, val, max_val, color in bars:
-            self.screen.blit(self.font_sm.render(label, True, FP.BODY_TEXT), (rect.x, y))
-            tx = rect.x + 34
-            tw = max(30, rect.w - 94)
-            track = pygame.Rect(tx, y + 7, tw, 10)
-            pygame.draw.rect(self.screen, FP.MIDNIGHT, track, border_radius=5)
-            ratio = max(0.0, min(1.0, float(val) / max(1, float(max_val))))
-            if ratio > 0:
-                fill = pygame.Rect(track.x, track.y, max(1, int(track.w * ratio)), track.h)
-                pygame.draw.rect(self.screen, color, fill, border_radius=5)
-            nums = self.font_sm.render(f"{int(val)}/{int(max_val)}", True, FP.BODY_TEXT)
-            self.screen.blit(nums, (track.right + 8, y - 1))
-            y += 25
-        return y
-
     def _menu_tile_label(self) -> str:
         try:
             from dungeon import (ALTAR, FOUNTAIN, GRAVE, THRONE, WATER, LAVA,
@@ -3601,153 +3523,6 @@ class RenderMixin:
     # absorb leftover space by weight. Truncation is a backstop only.
     # See proposals/v2_audit/IDENTIFY_SYSTEM.md §11 + the kit-menu fix
     # commit 2026-05-28.
-    def _draw_measured_table(
-        self,
-        *,
-        x: int, y: int, w: int, h: int,
-        col_defs,
-        cells_per_row,
-        font,
-        header_color,
-        row_color_fn=None,
-        default_row_color=(200, 200, 200),
-        scroll: int = 0,
-        line_h: int = 24,
-        gutter: int = 12,
-        left_pad: int = 4,
-        header_y_offset: int = 0,
-        divider_y_offset: int = 22,
-        body_y_offset: int = 28,
-    ) -> tuple[int, int]:
-        """Render a column table with content-measured widths.
-
-        Args:
-          col_defs:        list[Column] — labels + flex weights + alignments.
-          cells_per_row:   list[list[str]] — every row's cell text. Used
-                            to measure column widths AND to render.
-          font:            pygame font for both header and cell text.
-          header_color:    color for the header row.
-          row_color_fn:    optional callable(row_index) -> color for the
-                            body row. Falls back to default_row_color.
-          default_row_color: used when row_color_fn is None.
-          scroll:          row index of the first visible row.
-
-        Returns: (max_visible_count, total_rows). The caller can use this
-                  to draw a scrollbar hint.
-        """
-        from text_layout import Column, fit_columns, truncate_label
-        if not col_defs or not cells_per_row:
-            return 0, 0
-
-        max_visible = max(1, (h - body_y_offset) // line_h)
-        scroll = max(0, min(scroll, max(0, len(cells_per_row) - max_visible)))
-
-        # Measure: for each column, natural width = max(header width,
-        # widest cell in that column) + gutter. Flex columns floor at
-        # their declared min_w so they can still absorb leftover space.
-        measured_cols: list[Column] = []
-        for i, c in enumerate(col_defs):
-            natural = font.size(c.label)[0]
-            for cells in cells_per_row:
-                if i < len(cells):
-                    cell_text = str(cells[i] or '')
-                    natural = max(natural, font.size(cell_text)[0])
-            # Floor: header/content width OR declared min_w for flex cols.
-            min_w = max(natural, c.min_w if c.flex > 0 else 0) + gutter
-            measured_cols.append(Column(c.label, min_w, c.flex, c.align))
-
-        widths = fit_columns(measured_cols, w)
-        cols = [(c.label, ww, c.align) for c, ww in zip(measured_cols, widths)]
-
-        # Header row
-        cx = x
-        for label, cw, align in cols:
-            label_text = truncate_label(label, max(1, cw - gutter), font)
-            hdr = font.render(label_text, True, header_color)
-            if align == 'right':
-                self.screen.blit(hdr, (cx + cw - gutter - hdr.get_width(),
-                                        y + header_y_offset))
-            else:
-                self.screen.blit(hdr, (cx + left_pad, y + header_y_offset))
-            cx += cw
-        draw_divider(self.screen, x, y + divider_y_offset, w)
-
-        # Body rows
-        ry = y + body_y_offset
-        for idx, cells in enumerate(cells_per_row[scroll:scroll + max_visible],
-                                     start=scroll):
-            row_col = (row_color_fn(idx) if row_color_fn else default_row_color)
-            cx = x
-            for (label, cw, align), text in zip(cols, cells):
-                if text is None:
-                    text = ''
-                cell_w = max(1, cw - gutter)
-                clipped = truncate_label(str(text), cell_w, font)
-                surf = font.render(clipped, True, row_col)
-                if align == 'right':
-                    self.screen.blit(surf, (cx + cw - gutter - surf.get_width(), ry))
-                else:
-                    self.screen.blit(surf, (cx + left_pad, ry))
-                cx += cw
-            ry += line_h
-
-        return max_visible, len(cells_per_row)
-
-    def _kit_draw_items(self, x: int, y: int, w: int, h: int, slug: str):
-        # Content-measured columns via the shared helper. Every column-
-        # table render in the game goes through _draw_measured_table.
-        all_rows = self._kit_collect_items()
-        rows = self._kit_filter_for_tab(all_rows, [t[1] for t in self._KIT_TABS].index(slug))
-
-        # Sort: floor first (transient interest), then equipped, then pack
-        order = {'floor': 0, 'equip': 1, 'pack': 2}
-        if slug == 'weapons':
-            rows.sort(key=lambda r: (order.get(r[0], 9),
-                                     -float(self._kit_avg_damage(r[1]) or 0)))
-        elif slug in ('armor', 'shields'):
-            rows.sort(key=lambda r: (order.get(r[0], 9),
-                                     -int(getattr(r[1], 'ac_bonus', 0) or 0)))
-        else:
-            rows.sort(key=lambda r: (order.get(r[0], 9), self._display_name(r[1]).lower()))
-
-        if not rows:
-            txt = self.font_sm.render("(nothing of this kind in your pack or on this tile)",
-                                      True, FP.FADED_TEXT)
-            self.screen.blit(txt, (x, y + 10))
-            return
-
-        col_defs = self._kit_column_defs(slug)
-        if not col_defs:
-            return
-
-        # Pre-compute every cell so the helper can measure + render
-        # from the same data. ALL rows (not just visible) measured so
-        # column widths stay stable across scrolls.
-        cells_per_row = [self._kit_cells_for_item(slug, src, item)
-                          for src, item in rows]
-
-        # Row color is per-row (equipped vs floor vs pack)
-        row_colors = [self._KIT_SRC_COLOR.get(src, (200, 200, 200))
-                       for src, _ in rows]
-
-        scroll = max(0, getattr(self, '_kit_scroll', 0))
-        max_visible, total = self._draw_measured_table(
-            x=x, y=y, w=w, h=h,
-            col_defs=col_defs,
-            cells_per_row=cells_per_row,
-            font=self.font_sm,
-            header_color=FP.GOLD_PALE,
-            row_color_fn=lambda i: row_colors[i],
-            scroll=scroll,
-        )
-        # Clamp self._kit_scroll after the helper has computed max_visible
-        self._kit_scroll = max(0, min(scroll, max(0, total - max_visible)))
-
-        if total > max_visible:
-            tag = self.font_sm.render(
-                f"{self._kit_scroll + 1}-{min(self._kit_scroll + max_visible, total)} of {total}",
-                True, FP.FADED_TEXT)
-            self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
 
     def _kit_column_defs(self, slug: str):
         """Per-tab column definitions (label, fallback min_w, flex, align).
@@ -4058,47 +3833,6 @@ class RenderMixin:
                 bits.append(f"{bt}")
             return ', '.join(bits)
         return '-'
-
-    def _kit_draw_spells(self, x: int, y: int, w: int, h: int):
-        # Content-measured columns via the shared helper. Spell + Description
-        # are flex columns; Tier + MP get sized to their actual content
-        # (which is small, so they end up nicely tight).
-        from text_layout import Column
-        rows = self._kit_collect_spells()
-        if not rows:
-            txt = self.font_sm.render("(you have learned no spells yet)",
-                                      True, FP.FADED_TEXT)
-            self.screen.blit(txt, (x, y + 10))
-            return
-        col_defs = [
-            Column('Spell',       180, flex=2, align='left'),
-            Column('Tier',          0, flex=0, align='right'),
-            Column('MP',            0, flex=0, align='right'),
-            Column('Description', 200, flex=4, align='left'),
-        ]
-        cells_per_row = [
-            [r['name'],
-             f"T{r['quiz_tier']}" if r['quiz_tier'] else '-',
-             str(r['mp_cost']),
-             r['desc']]
-            for r in rows
-        ]
-        scroll = max(0, getattr(self, '_kit_scroll', 0))
-        max_visible, total = self._draw_measured_table(
-            x=x, y=y, w=w, h=h,
-            col_defs=col_defs,
-            cells_per_row=cells_per_row,
-            font=self.font_sm,
-            header_color=FP.GOLD_PALE,
-            default_row_color=FP.BODY_TEXT,
-            scroll=scroll,
-        )
-        self._kit_scroll = max(0, min(scroll, max(0, total - max_visible)))
-        if total > max_visible:
-            tag = self.font_sm.render(
-                f"{self._kit_scroll + 1}-{min(self._kit_scroll + max_visible, total)} of {total}",
-                True, FP.FADED_TEXT)
-            self.screen.blit(tag, (x + w - tag.get_width(), y + h - 22))
 
     # ------------------------------------------------------------------
     # Discoveries panel  (J key)
@@ -5478,40 +5212,6 @@ class RenderMixin:
         self._ui_blit_text(label, f, FP.GOLD_BRIGHT if active else FP.FADED_TEXT,
                            rect.centerx, rect.y + 6, align='center',
                            max_width=rect.w - 10)
-
-    def _ui_row(self, rect, title, detail='', *, key='', selected=False,
-                badge='', title_color=None, badge_color=None, row_color=None):
-        fill = row_color or ((34, 43, 84) if selected else FP.MIDNIGHT)
-        pygame.draw.rect(self.screen, fill, rect, border_radius=6)
-        pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
-                         rect, 1, border_radius=6)
-        tx = rect.x + 10
-        if key:
-            krect = pygame.Rect(rect.x + 8, rect.y + 9, 32, 32)
-            pygame.draw.rect(self.screen, (96, 34, 28), krect, border_radius=5)
-            self._ui_blit_text(str(key), get_font('small', 15, bold=True),
-                               FP.GOLD_BRIGHT, krect.centerx, krect.y + 8,
-                               align='center')
-            tx = krect.right + 10
-        bw = 0
-        if badge:
-            bf = get_font('small', 12, bold=True)
-            bw = bf.size(str(badge))[0] + 18
-            brect = pygame.Rect(rect.right - bw - 8, rect.y + 14, bw, 24)
-            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, brect,
-                             border_radius=5)
-            bc = badge_color or FP.CYAN_ACCENT
-            pygame.draw.rect(self.screen, bc, brect, 1, border_radius=5)
-            self._ui_blit_text(str(badge), bf, bc, brect.centerx,
-                               brect.y + 5, align='center')
-        max_w = rect.right - tx - bw - 16
-        self._ui_wrap_text(title, get_font('small', 15, bold=True),
-                           title_color or FP.BODY_TEXT,
-                           pygame.Rect(tx, rect.y + 7, max_w, 36),
-                           line_gap=0, max_lines=2)
-        if detail:
-            self._ui_blit_text(detail, get_font('small', 12), FP.FADED_TEXT,
-                               tx, rect.y + rect.h - 20, max_width=max_w)
 
     def _ui_progress_bar(self, rect, pct, *, color=FP.ARCANE_BRIGHT,
                          label=''):

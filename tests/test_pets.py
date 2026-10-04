@@ -476,7 +476,7 @@ def test_all_pet_subclasses_have_required_attrs():
 def test_bones_corrupt_file_is_cleaned_up(tmp_path, monkeypatch):
     """A corrupt bones JSON must be removed on next load so it doesn't
     permanently occupy a slot under _MAX_BONES."""
-    import bones, random
+    import bones
 
     # Redirect bones dir to a tmp location
     monkeypatch.setattr(bones, 'save_dir', lambda: str(tmp_path))

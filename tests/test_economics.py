@@ -11,7 +11,6 @@
 - Shop haggle uses economics escalator-chain quiz, 10% discount per chain step
 """
 import os
-import random
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))

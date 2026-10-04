@@ -1176,7 +1176,7 @@ class DivineMixin:
         to any is_unique item if the artifact pool is exhausted. Returns
         the item name (for the announce/chronicle message) or '' on total
         failure."""
-        from items import Artifact, load_items, copy_at
+        from items import load_items, copy_at
 
         def _in_play(item_id: str) -> bool:
             for g in getattr(self, 'ground_items', []) or []:

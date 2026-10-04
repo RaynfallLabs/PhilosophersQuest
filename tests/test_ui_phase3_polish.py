@@ -296,7 +296,6 @@ def test_log_wraps_oversized_token():
 def _draw_log_with_tracking(log, w: int, h: int):
     """Run `MessageLog.draw` against a tracking surface with the
     pygame primitive draw calls neutralised. Returns the blits list."""
-    import ui as ui_mod
     screen = _TrackingSurface(w=max(w, 100), h=max(h, 100))
 
     # Neutralise pygame primitive draws so our wrapper doesn't blow up

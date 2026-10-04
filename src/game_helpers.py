@@ -106,17 +106,6 @@ def a_or_an(name: str) -> str:
     return f"{article} {name}"
 
 
-def fit_text(text: str, font: 'pygame.font.Font', max_w: int) -> str:
-    """Truncate text with ellipsis if it exceeds max_w pixels.
-
-    Re-exports text_layout.truncate_label so there's a single canonical
-    implementation. The fantasy_ui.fit_text (older, uses '...' ellipsis)
-    is left in place for menu chrome that depends on it.
-    """
-    from text_layout import truncate_label
-    return truncate_label(text, max_w, font)
-
-
 def wrap_text(text: str, font: 'pygame.font.Font', max_w: int) -> list[str]:
     """Break text into lines that fit within max_w pixels.
 

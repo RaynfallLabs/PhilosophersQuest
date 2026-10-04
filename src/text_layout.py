@@ -161,14 +161,6 @@ def fit_columns(columns: list[Column], available_width: int) -> list[int]:
     return widths
 
 
-def text_block_height(lines: int, line_h: int, line_gap: int = 0) -> int:
-    """Pixel height for `lines` lines of text with `line_h` line height
-    and optional `line_gap` between lines."""
-    if lines <= 0:
-        return 0
-    return lines * line_h + max(0, lines - 1) * line_gap
-
-
 # ----------------------------------------------------------------------
 # Tab strip overflow (Phase 2 beautification, 2026-10-04)
 # ----------------------------------------------------------------------

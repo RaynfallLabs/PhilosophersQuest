@@ -255,7 +255,7 @@ def test_unicorn_pet_spawn_wired():
 # ---------------------------------------------------------------------------
 
 def test_thirty_one_npc_encounters_defined():
-    from npc_encounters import ENCOUNTERS, _BLOCKS
+    from npc_encounters import ENCOUNTERS
     assert len(ENCOUNTERS) >= 30, \
         f"Expected ≥30 NPC encounters, got {len(ENCOUNTERS)}"
 
@@ -307,7 +307,6 @@ def test_npc_boss_levels_excluded():
 def test_npc_trigger_items_resolve_to_real_items():
     from npc_encounters import ENCOUNTERS
     import glob
-    import os
     all_items = set()
     for path in glob.glob(str(ROOT / "data" / "items" / "*.json")):
         all_items.update(json.loads(

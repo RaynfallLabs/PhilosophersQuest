@@ -388,7 +388,7 @@ def test_scenario_17_maze_level_has_stairs():
 def test_scenario_18_quiz_esc_ends_cleanly():
     """quiz_engine._end called with success=False fires callback once and
     settles into COMPLETE (not ASKING) — caller can transition to STATE_PLAYER."""
-    from quiz_engine import QuizEngine, QuizMode, QuizState
+    from quiz_engine import QuizEngine, QuizState
     eng = QuizEngine()
     captured = []
     def cb(result):

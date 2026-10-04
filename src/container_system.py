@@ -21,7 +21,6 @@ Mimic check:
 
 import copy
 import json
-import os
 import random
 
 from dice import roll, roll_duration

@@ -1,6 +1,6 @@
 import random
 from dice import roll
-from geom import monster_at_tile, is_at_tile
+from geom import is_at_tile
 
 # Fallback multipliers used when the player has no weapon equipped.
 # Bare-hand chain table. Caps at the universal 5-chain like every common
@@ -1474,8 +1474,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                     _mname = getattr(monster, 'name', 'the foe')
                     if monster.kind == 'abaddon_destroyer':
                         _gref.add_message(
-                            f"The flame of Michael BLAZES! The blade falls upon "
-                            f"the Destroyer like the wrath of Heaven!",
+                            "The flame of Michael BLAZES! The blade falls upon "
+                            "the Destroyer like the wrath of Heaven!",
                             'success')
                     elif monster.is_dead():
                         _gref.add_message(

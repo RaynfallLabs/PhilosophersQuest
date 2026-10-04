@@ -33,7 +33,6 @@ class _FakeGame:
     # logic without needing pygame init.
     @staticmethod
     def _make(player, ground_items=None):
-        from game_menus import GameMenusMixin  # type: ignore[attr-defined]
         # Import lazily so failures show on the right test
         return _ResolvedFake(player, ground_items or [])
 
@@ -403,7 +402,7 @@ def test_equip_delta_weapon_negative():
 
 
 def test_equip_delta_armor_uses_correct_slot():
-    from items import Armor, ARMOR_SLOTS
+    from items import Armor
     p = _make_player_with_items()
     g = _RenderFake(p, [])
     # Equipped plate mail in 'body' slot (ac_bonus=5); candidate brigandine ac=3

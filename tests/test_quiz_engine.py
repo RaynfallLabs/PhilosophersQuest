@@ -15,7 +15,6 @@ Tests are intentionally hermetic: most use an in-memory question bank
 injected via the engine's `_cache` dict, avoiding any dependency on the
 shipping bank files.
 """
-import json
 import os
 import sys
 

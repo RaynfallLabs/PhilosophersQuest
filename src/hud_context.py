@@ -64,23 +64,6 @@ def spawn_fit_color(dungeon_level: int, peak_floor: int, spread: int = 10,
     return _mix(NEUTRAL, GREEN, score)
 
 
-def item_known_to_player(player, item) -> bool:
-    if not hasattr(item, "identified"):
-        return True
-    try:
-        if bool(getattr(item, "identified", False)):
-            return True
-    except Exception:
-        pass
-    knows = getattr(player, "knows_item_type", None)
-    if callable(knows):
-        try:
-            return bool(knows(item))
-        except Exception:
-            return False
-    return getattr(item, "id", None) in getattr(player, "known_item_ids", set())
-
-
 def hud_item_name(player, item, *, include_count: bool = False) -> str:
     # Identify v3 True-Name model:
     #   INSTANCE identified                  -> full name ("Rapier +2")

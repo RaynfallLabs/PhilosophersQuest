@@ -14,14 +14,13 @@ smoke check via a synthetic question dict.
 """
 import json
 import os
-import sys
 
 import pytest
 
 # src/ is already on sys.path via tests/conftest.py
 
 import quiz_engine  # noqa: E402
-from quiz_engine import QuizEngine, QuizMode, QuizState  # noqa: E402
+from quiz_engine import QuizEngine  # noqa: E402
 
 
 # ---------------------------------------------------------------------------

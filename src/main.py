@@ -45,15 +45,14 @@ import sound_system as _snd
 from quiz_engine import QuizEngine
 from effects_runtime import build_default_runtime
 from renderer import Renderer
-from geom import monster_at_tile, is_at_tile
+from geom import monster_at_tile
 from ui import Sidebar, MessageLog
 from game_helpers import (
     migrate_buc_item, cycle_tab,
     fix_name_case, a_or_an,
 )
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT,
-    STATE_EXIT_QUEST, STATE_ABANDON_QUEST,
+    STATE_PLAYER, STATE_QUIZ, STATE_EXIT_QUEST, STATE_ABANDON_QUEST,
     STATE_VICTORY, STATE_DEAD,
     STATE_LORE,
     STATE_ENCYCLOPEDIA,
@@ -1657,7 +1656,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"The {getattr(_item, 'name', 'blade')} laughs and vanishes — it returns to Shiva.",
                         'warning')
                     self._log_chronicle(
-                        f"Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
+                        "Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
                     break  # one disappearance per floor change is enough
 
         # Place deep-lore items on their designated levels (once per run)

@@ -57,6 +57,6 @@ def test_bat_uses_dice_duration():
     bite = next(a for a in bat['attacks'] if a['name'] == 'bite')
     assert bite['effect'] == 'confused'
     assert bite['effect_chance'] == 0.10, \
-        f'bat confuse chance must be 0.10 (was 0.25 — too brutal at pf 1)'
+        'bat confuse chance must be 0.10 (was 0.25 — too brutal at pf 1)'
     assert bite['effect_duration'] == '1d4', \
-        f"bat confuse duration must be '1d4' (variable, avg 2.5) not fixed 4"
+        "bat confuse duration must be '1d4' (variable, avg 2.5) not fixed 4"

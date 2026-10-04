@@ -13,7 +13,7 @@ from pathlib import Path
 _ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_ROOT / 'src'))
 
-from quiz_engine import QuizEngine, QuizState  # noqa: E402
+from quiz_engine import QuizEngine  # noqa: E402
 
 
 def _q(tier, text, answer='right'):

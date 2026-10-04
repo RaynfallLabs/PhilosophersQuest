@@ -20,7 +20,6 @@ Covered:
 from __future__ import annotations
 
 import glob
-import inspect
 import json
 import os
 import sys

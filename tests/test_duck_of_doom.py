@@ -283,8 +283,8 @@ def test_t1_t2_hints_match_user_spec():
     hints = json.loads((ROOT / "data" / "hints.json").read_text(encoding="utf-8"))
     t1 = "You should know better than to pick up a duck in a dungeon."
     t2 = "I know I shouldn't pick up that duck... but what if..."
-    assert t1 in hints['1'], f"T1 hint missing or modified"
-    assert t2 in hints['2'], f"T2 hint missing or modified"
+    assert t1 in hints['1'], "T1 hint missing or modified"
+    assert t2 in hints['2'], "T2 hint missing or modified"
 
 
 def test_hints_do_not_spoil_the_mechanic():

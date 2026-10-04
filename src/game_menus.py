@@ -1608,7 +1608,6 @@ class MenuMixin:
 
     def _activate_accessory_charge(self, acc_id: str) -> bool:
         """Consume one charge of an equipped charged accessory."""
-        import random as _r
         pl = self.player
         # Find the accessory
         acc = None

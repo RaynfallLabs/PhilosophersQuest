@@ -55,7 +55,7 @@ from game_states import (
 from items import Container
 from quiz_engine import QuizMode, QuizState
 from spells import LEARNABLE_SPELLS
-from geom import monster_at_tile, is_at_tile
+from geom import monster_at_tile
 
 if TYPE_CHECKING:
     from items import Scroll, Spellbook, Wand
@@ -1399,7 +1399,7 @@ class MagicMixin:
             else:
                 # No visible monsters — teleport self
                 self._teleport_player()
-                self.add_message(f"You teleport to a new location!", 'success')
+                self.add_message("You teleport to a new location!", 'success')
             return
 
         # Scale extra_heal duration/amount
@@ -1822,7 +1822,7 @@ class MagicMixin:
                 self.player.mp = self.player.max_mp
                 self.add_message(
                     "WISH GRANTED! You feel utterly whole -- "
-                    f"HP, SP, and MP restored!",
+                    "HP, SP, and MP restored!",
                     'success')
             elif kind == 'stat_bonus':
                 stat = random.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
@@ -1982,7 +1982,7 @@ class MagicMixin:
                     target.add_effect('stunned', stun)
                 self.add_message(
                     f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage"
-                    + (" and stuns it!" if not sr else "!") + f"", 'success')
+                    + (" and stuns it!" if not sr else "!") + "", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster':
@@ -2025,7 +2025,7 @@ class MagicMixin:
                 self.add_message(
                     f"An acid arrow strikes the {target.name} for {actual} damage!"
                     + (f" Acid burns for {dot_dur} turns!" if not dot_resisted else " It resists the acid burn!")
-                    + f"", 'success')
+                    + "", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'drain_life_spell':
@@ -3457,7 +3457,6 @@ class MagicMixin:
         items in inventory lose their known type, 20 turns Stunned). Book is
         consumed either way -- see the flavor lore for the Setna cycle.
         """
-        from dice import roll
         display = self._display_name(book)
         self.state = STATE_QUIZ
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"

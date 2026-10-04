@@ -12,7 +12,6 @@ Fixes, all symmetric blessed<->cursed:
     outright).
   * full_heal: blessed also scours away debuffs.
 """
-import pytest
 
 from items import Armor, Accessory, Wand, Potion
 from player import Player
