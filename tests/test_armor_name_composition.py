@@ -37,6 +37,9 @@ RECOGNIZED_NOUNS = frozenset({
     'breastplate', 'cloak', 'shirt', 'boots', 'helm', 'cap',
     'gauntlets', 'gloves', 'vambraces', 'bracers', 'leggings',
     'chausses', 'greaves', 'chainmail', 'ringmail', 'hauberk',
+    # 2026-10-04: distinct form names so no two templates compose to the
+    # same item name (see test_w24 in test_audit_2026_10.py).
+    'breeches', 'sabatons', 'bascinet', 'barbute',
 })
 
 

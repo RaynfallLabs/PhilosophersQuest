@@ -432,3 +432,25 @@ def test_w19_reveal_floor_uses_real_dungeon_api():
     assert 'game.dungeon.is_door(' not in block
     assert 'game.explored.add' not in block
     assert 'game.dungeon.explored.add' in block
+
+
+def test_w24_no_two_composed_gear_items_share_a_name():
+    """Every (template, material) pair must produce a distinct item name.
+    "Adamantine Shirt" used to be both a chain shirt (body, AC 6) and a
+    padded shirt (shirt slot, AC 4)."""
+    import collections
+    from items import load_templates, load_materials, compose_item_name
+    by_name = collections.defaultdict(set)
+    for tcat, mcat in (('weapons', 'weapons'), ('armor', 'armor'),
+                       ('shields', 'armor')):
+        mats = load_materials(mcat)
+        for tid, tpl in load_templates(tcat).items():
+            ok = set(tpl.get('compatible_material_classes') or [])
+            for mat in mats.values():
+                if ok and mat.get('material_class') not in ok:
+                    continue
+                name = compose_item_name(mat['name'], tpl['name'],
+                                         tpl.get('noun', ''))
+                by_name[name].add((tcat, tid))
+    clashes = {n: sorted(v) for n, v in by_name.items() if len(v) > 1}
+    assert not clashes, list(clashes.items())[:6]
