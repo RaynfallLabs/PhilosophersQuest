@@ -2170,7 +2170,10 @@ class RenderMixin:
             # Math combat: the sum and its answers are a handful of
             # characters, so lead with a larger tier. The normal ladder
             # still follows if a long word problem needs it.
-            tiers.insert(0, (self.font_lg, self.font_md))
+            # The sum uses the plain body face (same family as the answer
+            # cards): its lining numerals read far faster than the Cinzel
+            # heading face does for arithmetic.
+            tiers.insert(0, (_gf('body', 34, bold=True), self.font_md))
 
         # -- Measure a candidate tier ----------------------------------
         def _measure(q_font, c_font):

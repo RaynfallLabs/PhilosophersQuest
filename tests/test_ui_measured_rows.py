@@ -229,7 +229,9 @@ def test_quiz_layout_combat_strip_sits_between_choices_and_hints():
     assert scroll.bottom <= combat.y
     assert combat.bottom <= status.y
     assert status.bottom <= L['panel_rect'].bottom
-    assert L['question_font'] is g.font_lg, "combat leads with the large tier"
+    # Combat leads with a large tier in the plain body face (not Cinzel).
+    from fantasy_ui import get_font
+    assert L['question_font'] is get_font('body', 34, bold=True)
     # Fixed-height question band: one-line sum still reserves two lines.
     assert L['question_rect'].height >= 2 * L['q_line_h']
 
