@@ -174,6 +174,54 @@ MYSTERIES = {
         'fail_text': "",
         'invert_result': False,
     },
+    'brendan': {
+          'name': "The Navigator's Boat",
+          'floor_range': (5, 9),
+          'symbol': 'B',
+          'color': (90, 160, 190),
+          'description': 'A leather boat no bigger than a bathtub sits on dry stone, with a sea '
+                         'chart nailed to its mast. The chart shows an island with an eye. A note '
+                         "beneath it reads: 'Mark where you are, pilgrim, and take what the voyage "
+                         "taught me.'",
+          'key_item': None,
+          'gold_cost': 0,
+          'challenge': {   'mode': 'threshold',
+                           'subject': 'geography',
+                           'tier': 1,
+                           'threshold': 2,
+                           'total': 3},
+          'reward': {'PER': 1, 'gold': 80},
+          'reward_text': "You set your finger on the chart and the island's eye winks. Brendan of "
+                         'Clonfert said Mass on that island one Easter, until it swam away. It was a '
+                         'whale. You will look twice at solid ground from now on, and there are '
+                         'coins under the thwart.',
+          'fail_text': 'The chart rolls itself up. Wherever you are, it is not where you pointed.',
+          'invert_result': False,
+          },
+    'jerome': {
+          'name': "The Translator's Desk",
+          'floor_range': (73, 77),
+          'symbol': 'J',
+          'color': (200, 170, 110),
+          'description': "A scholar's desk in a cave, with a skull for a paperweight and a lion "
+                         'asleep beneath it like a large dog. A half-translated page lies under the '
+                         "lamp. In the margin, in a tired hand: 'Finish the sentence properly or "
+                         "leave it alone.'",
+          'key_item': None,
+          'gold_cost': 0,
+          'challenge': {   'mode': 'threshold',
+                           'subject': 'grammar',
+                           'tier': 4,
+                           'threshold': 3,
+                           'total': 4},
+          'reward': {'WIS': 2, 'INT': 1},
+          'reward_text': 'The sentence holds. The lion opens one eye, approves, and goes back to '
+                         'sleep. Jerome spent half a lifetime in Bethlehem turning Hebrew and Greek '
+                         'into plain Latin, and would not let a hard word go by. Some of his '
+                         'stubbornness stays with you.',
+          'fail_text': 'The lion sighs. The page is exactly as unfinished as you found it.',
+          'invert_result': False,
+          },
     'cauldron': {
         'name': "The Black Cauldron",
         'floor_range': (14, 26),

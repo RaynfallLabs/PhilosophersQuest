@@ -4077,5 +4077,592 @@
       }
     ],
     "sprite_id": "npc_traveler"
+  },
+  {
+    "tag": "flv_baucis_table",
+    "sprite_id": "npc_traveler",
+    "name": "Old Couple",
+    "symbol": "@",
+    "color": [
+      190,
+      170,
+      130
+    ],
+    "min_level": 2,
+    "max_level": 9,
+    "text": "An old man and an old woman have made a home of an alcove: one stool, one pot, and one very suspicious goose. \"A guest!\" says the woman, and the man is already wiping the stool with his sleeve. They have half an onion and a heel of bread between them, and they are setting all of it in front of you.",
+    "options": [
+      {
+        "label": "Eat what they offer; refusing would shame them",
+        "cost": null,
+        "reward": {
+          "type": "sp_restore",
+          "amount": 25
+        },
+        "outcome": "It is the best half onion you have ever eaten. They watch every bite with delight and go to bed hungry, which they are used to.",
+        "chronicle": "An old couple gave me their whole supper, and I ate it."
+      },
+      {
+        "label": "Put your own food on the table and share it out",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "sp_restore",
+              "amount": 40
+            },
+            {
+              "type": "effect",
+              "effect": "blessed",
+              "duration": 60
+            }
+          ]
+        },
+        "outcome": "Three at a table laid for one. The old man tells how they met and the old woman corrects him. Late on you notice the pitcher has been poured a dozen times and is still full. Nobody mentions it. Somebody has been kind to this house before you, and left a mark.",
+        "karma": 1,
+        "chronicle": "Shared my rations with an old couple named Baucis and Philemon. Their pitcher never ran dry."
+      },
+      {
+        "label": "Offer to catch the goose for their pot",
+        "cost": {
+          "type": "sp",
+          "amount": 15
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "In the old story that goose outran two gods. It outruns you. The old couple applaud the attempt, and the goose settles back on its stool looking vindicated.",
+        "chronicle": "Chased an old couple's goose around an alcove. The goose won."
+      }
+    ]
+  },
+  {
+    "tag": "flv_three_purses",
+    "sprite_id": "npc_merchant",
+    "name": "Father of Three",
+    "symbol": "@",
+    "color": [
+      170,
+      150,
+      120
+    ],
+    "min_level": 11,
+    "max_level": 19,
+    "text": "A man in a once-fine coat sits outside a shut door, counting the same four coins over and over. Behind the door three girls are arguing in whispers about which of them should go into service with the goblin tallyman so that the other two can eat. He has not noticed you. Above the door there is a gap about the width of a purse. Ninety gold would settle the whole debt.",
+    "options": [
+      {
+        "label": "Drop a purse through the gap and slip away",
+        "cost": {
+          "type": "gold",
+          "amount": 90
+        },
+        "reward": null,
+        "outcome": "The purse lands with a clink that stops the argument dead. By the time the door opens you are round the corner. Nobody thanks you, because nobody knows. Bishop Nicholas of Myra gave this way on three separate nights, and the father only caught him on the third.",
+        "karma": 1,
+        "chronicle": "Left a purse where a family would find it. They will never know whose."
+      },
+      {
+        "label": "Put the gold in his hand and let him thank you",
+        "cost": {
+          "type": "gold",
+          "amount": 90
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "accessory"
+        },
+        "outcome": "He weeps, calls his daughters out to curtsey, and presses his late wife's ring on you. He will not hear no. The girls look at the floor the whole time. It is a good ring.",
+        "chronicle": "Paid a stranger's debt and was thanked for it at length."
+      },
+      {
+        "label": "Walk on; your own purse is thin enough",
+        "cost": null,
+        "reward": null,
+        "outcome": "The whispering goes on behind the door. The man starts counting his four coins again from the beginning."
+      }
+    ]
+  },
+  {
+    "tag": "flv_utgard_contests",
+    "sprite_id": "npc_warrior",
+    "name": "Courteous Giant",
+    "symbol": "@",
+    "color": [
+      150,
+      170,
+      200
+    ],
+    "min_level": 28,
+    "max_level": 39,
+    "text": "A giant sits at a table far too long for the room it is in, and the room does not seem to mind. \"Nobody stays in my hall who cannot do one thing well,\" he says pleasantly. \"We keep it modest. Empty my drinking horn. Lift my cat off the floor. Or wrestle my old nurse, Elli, if you can wake her.\" The horn is long, the cat is grey and very large, and the nurse is asleep by the fire.",
+    "options": [
+      {
+        "label": "Take the horn and drink",
+        "cost": {
+          "type": "sp",
+          "amount": 40
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "CON",
+          "amount": 1
+        },
+        "outcome": "You drink until your eyes water and the level drops the width of a finger. The giant goes rather pale. \"The far end of that horn lies in the sea,\" he admits. \"You have lowered it. People will call that the tide.\" You feel you could digest a millstone.",
+        "chronicle": "Drank from a giant's horn in Utgard and lowered the sea a little."
+      },
+      {
+        "label": "Get both arms under the cat and lift",
+        "cost": {
+          "type": "sp",
+          "amount": 60
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "STR",
+          "amount": 1
+        },
+        "outcome": "The cat arches. You heave until the floor creaks, and one grey paw leaves the ground. The giant has stopped smiling. \"That cat is the serpent that circles the world,\" he says. \"Nobody was supposed to move it at all.\" Your back will remember this, and so will your arms.",
+        "chronicle": "Lifted one paw of a giant's cat. It was not a cat."
+      },
+      {
+        "label": "Wake the old nurse and wrestle her",
+        "cost": {
+          "type": "hp_percent",
+          "amount": 25
+        },
+        "reward": {
+          "type": "stat",
+          "stat": "WIS",
+          "amount": 1
+        },
+        "outcome": "She is small and bent and she does not budge. The harder you pull, the firmer she stands, and at last she puts you down on one knee, gently, like a parcel. \"Elli is Old Age,\" says the giant. \"Nobody beats her. Most do not last as long as you did.\" You get up knowing something you did not know before.",
+        "chronicle": "Wrestled an old woman named Elli and lost. Everyone does."
+      }
+    ]
+  },
+  {
+    "tag": "flv_singed_squire",
+    "sprite_id": "npc_warrior",
+    "name": "Singed Squire",
+    "symbol": "@",
+    "color": [
+      120,
+      110,
+      100
+    ],
+    "min_level": 1,
+    "max_level": 5,
+    "text": "A squire sits on an upturned helmet with a shield across his knees. He has no eyebrows. The shield is scorched black on the front, and so is most of the squire. \"Do not,\" he says, before you can ask, \"chase the bull. If you meet a shaggy bull with a horse's mane and horns that curl right back on themselves, you will think: those horns are useless, I will chase it. Do not.\"",
+    "options": [
+      {
+        "label": "Ask what the bull did",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"It ran away,\" he says with dignity. \"And as it ran it defended itself. From the back. Across the whole width of the room. The bestiary calls the beast a bonnacon and I call it a disgrace. My master is having a bath. He has been having it since yesterday.\"",
+        "chronicle": "A squire with no eyebrows warned me about a bull called a bonnacon."
+      },
+      {
+        "label": "Give him something to eat and hear the rest",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "He eats like a man who has been living on pride. \"It lairs a floor or two below here, some seasons. Cold slows it. Get close before it turns round, or keep a wall between you and its hindquarters. And take this; my master says he never wants to see a bottle again.\"",
+        "chronicle": "Fed a singed squire. He told me how to hunt the bonnacon: from the front."
+      },
+      {
+        "label": "Leave him to his scorch marks",
+        "cost": null,
+        "reward": null,
+        "outcome": "\"From the back!\" he calls after you. \"Remember that!\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_old_spearman",
+    "sprite_id": "npc_warrior",
+    "name": "Talkative Old Spearman",
+    "symbol": "@",
+    "color": [
+      180,
+      150,
+      90
+    ],
+    "min_level": 21,
+    "max_level": 26,
+    "text": "A very old man in very old bronze is sitting halfway up a broken pillar, with his spear planted beside it like a ladder. \"I am not stuck,\" he says. \"I am resting where I landed. When the Boar of Calydon came at me I vaulted on this spear into a tree, and a man my age does not come down from a thing like that in a hurry. Sit. I will tell you about the hunt. All of it.\"",
+    "options": [
+      {
+        "label": "Sit down and hear all of it",
+        "cost": {
+          "type": "sp",
+          "amount": 25
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "heroism",
+          "duration": 80
+        },
+        "outcome": "Artemis sent the boar because a king forgot her at harvest. Half the heroes of Greece came. A huntress named Atalanta drew first blood with an arrow, which the men have not forgiven, and Meleager finished it with a spear. \"They say a beast of that blood roots about below here still. Blades skid off the bristles. A point goes in.\" You get up stiff, and strangely ready for anything.",
+        "chronicle": "An old spearman told me the whole Calydonian hunt. A point goes in where an edge will not."
+      },
+      {
+        "label": "Ask only where the boar is now",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Below. A few floors, if it is anywhere. Some years it is and some years it is not; that is boars.\" He looks disappointed in you. \"Young people never want the middle of a story.\"",
+        "chronicle": "Heard that the Calydonian Boar may be rooting about on the floors below."
+      },
+      {
+        "label": "Help him down and move on",
+        "cost": {
+          "type": "sp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He comes down slowly, complaining about modern pillars. \"In my day,\" he says, \"we had trees.\""
+      }
+    ]
+  },
+  {
+    "tag": "flv_limping_lion",
+    "sprite_id": "npc_creature",
+    "name": "Limping Lion",
+    "symbol": "f",
+    "color": [
+      220,
+      180,
+      60
+    ],
+    "min_level": 8,
+    "max_level": 18,
+    "text": "A lion lies across the passage, licking one forepaw and growling at it. The paw is swollen to twice its size around a black thorn as long as your finger. He looks at you the way a patient looks at a barber.",
+    "options": [
+      {
+        "label": "Take the paw in both hands and draw the thorn",
+        "cost": {
+          "type": "hp",
+          "amount": 10
+        },
+        "reward": {
+          "type": "specific_item",
+          "item_type": "artifact",
+          "item_id": "lions_thorn"
+        },
+        "outcome": "He roars, and a claw opens your forearm before he has finished deciding not to eat you. Then the thorn is out and he is washing the paw with great dignity, as if the whole thing had been his idea. You keep the thorn. It seems like the kind of thing a person should keep.",
+        "chronicle": "Pulled a thorn out of a lion's paw. He let me keep my arm, and I kept the thorn."
+      },
+      {
+        "label": "Toss him some food and edge round",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He eats it without getting up and watches you go past with yellow eyes. The paw stays as it is."
+      },
+      {
+        "label": "Back away slowly",
+        "cost": null,
+        "reward": null,
+        "outcome": "He lets you. The growling follows you down the passage, aimed at the paw and not at you."
+      }
+    ]
+  },
+  {
+    "tag": "flv_lion_remembers",
+    "sprite_id": "npc_creature",
+    "name": "Great Lion",
+    "symbol": "f",
+    "color": [
+      230,
+      190,
+      80
+    ],
+    "min_level": 22,
+    "max_level": 34,
+    "text": "Something heavy has kept pace with you in the dark for three rooms. Now it steps into the light: a full-maned lion in his prime, scarred across the muzzle, with a pale old mark on one forepaw. He sits down in the middle of the corridor and waits to see what you will do.",
+    "options": [
+      {
+        "label": "Hold out the thorn",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "stat",
+              "stat": "CON",
+              "amount": 1
+            },
+            {
+              "type": "gold",
+              "min": 150,
+              "max": 220
+            },
+            {
+              "type": "effect",
+              "effect": "warning",
+              "duration": 200
+            }
+          ]
+        },
+        "outcome": "He smells the thorn, then your arm, then leans his whole weight against your legs. He walks ahead for a while, and you know where everything nearby is hiding, because he keeps looking at it. When you stop to rest he lays a dead man's purse by your pack. Aulus Gellius tells it of a runaway slave named Androcles: the lion would not touch him in the arena, and Rome set them both free.",
+        "chronicle": "The lion from the upper floors knew me. Androcles had the same luck in the arena."
+      },
+      {
+        "label": "Stand very still",
+        "cost": null,
+        "reward": null,
+        "outcome": "He yawns, which is worse than a roar, and pads away. You are left with the strong impression of having failed to recognise somebody."
+      },
+      {
+        "label": "Throw him food and back off",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He accepts it as his due and lets you go. He looks back once, as if you might have had something else for him."
+      }
+    ],
+    "trigger_item": "lions_thorn",
+    "chain_after": "flv_limping_lion"
+  },
+  {
+    "tag": "flv_coffin_bearer",
+    "sprite_id": "npc_traveler",
+    "name": "Last Bearer",
+    "symbol": "@",
+    "color": [
+      150,
+      120,
+      90
+    ],
+    "min_level": 41,
+    "max_level": 47,
+    "text": "A monk sits against a long oak box, his feet bound in rags. \"Seven of us carried him out of Lindisfarne when the longships came,\" he says. \"Seven years on the road. I am the one left, and I cannot manage the stairs.\" He takes a small red book from his habit. \"This lay in the coffin with him. There is a chapel below where the brothers wait. The saint can rest here. The book should not.\"",
+    "options": [
+      {
+        "label": "Take the book and give your word",
+        "cost": null,
+        "reward": {
+          "type": "specific_item",
+          "item_type": "artifact",
+          "item_id": "cuthberts_gospel"
+        },
+        "outcome": "He puts it in your hands as if it weighed more than the coffin. \"It is John's Gospel. Small enough for a pocket. People will offer you money for it on the way down. They always do.\" He closes his eyes, relieved of the last thing he was carrying.",
+        "chronicle": "A monk of Lindisfarne trusted me with Saint Cuthbert's Gospel. I gave my word."
+      },
+      {
+        "label": "Share a meal with him, but refuse the errand",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 80
+        },
+        "outcome": "He blesses the food and then you, in that order. \"No shame in knowing your load,\" he says. \"Somebody will come.\" He does not sound sure."
+      },
+      {
+        "label": "Wish him well and go on",
+        "cost": null,
+        "reward": null,
+        "outcome": "He nods and tucks the book back inside his habit, next to his heart, where it has been for seven years."
+      }
+    ]
+  },
+  {
+    "tag": "flv_relic_broker",
+    "sprite_id": "npc_merchant",
+    "name": "Relic Broker",
+    "symbol": "@",
+    "color": [
+      170,
+      160,
+      110
+    ],
+    "min_level": 48,
+    "max_level": 53,
+    "text": "A neat little man has set up a folding table of bones, each one labelled in a confident hand. He looks you over once and his eyes stop at your pack. \"If you should happen to be carrying something old and small and red,\" he says, \"the brothers below will give you a blessing for it. I will give you money. Today. With a receipt.\"",
+    "options": [
+      {
+        "label": "Sell him the red book",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "gold",
+          "min": 350,
+          "max": 450
+        },
+        "outcome": "He counts the gold out twice and writes the receipt beautifully. By tomorrow the book will be three books, each with a letter proving it is the real one. The purse is heavy, and it is the wrong kind of heavy.",
+        "karma": -1,
+        "chronicle": "Sold Saint Cuthbert's Gospel to a relic broker. I had given my word about that book."
+      },
+      {
+        "label": "Tell him the book is promised",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Promised,\" he repeats, as if tasting a foreign word. \"Well. If the brothers turn out to be dead, I am here most days.\""
+      },
+      {
+        "label": "Buy one of his vials instead, for sixty gold",
+        "cost": {
+          "type": "gold",
+          "amount": 60
+        },
+        "reward": {
+          "type": "random_item",
+          "category": "potion"
+        },
+        "outcome": "The label says Tears of Saint Swithun. It is a perfectly good potion of something. \"Authentic,\" he says, to nobody in particular."
+      }
+    ],
+    "trigger_item": "cuthberts_gospel",
+    "chain_after": "flv_coffin_bearer"
+  },
+  {
+    "tag": "flv_cuthbert_chapel",
+    "sprite_id": "npc_traveler",
+    "name": "Brother Sacristan",
+    "symbol": "@",
+    "color": [
+      160,
+      140,
+      110
+    ],
+    "min_level": 54,
+    "max_level": 59,
+    "text": "A side chapel, swept clean, with a lamp burning and an empty reading desk. A monk gets up from his knees so fast that he knocks over the stool. \"Is he coming? Is the saint coming down?\" He sees your face and steadies himself. \"No. Of course. The stairs. Did the bearers send anything at all?\"",
+    "options": [
+      {
+        "label": "Lay the red book on the reading desk",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "stat",
+              "stat": "WIS",
+              "amount": 2
+            },
+            {
+              "type": "effect",
+              "effect": "blessed",
+              "duration": 150
+            }
+          ]
+        },
+        "outcome": "He does not touch it at first. Then he opens it to the first line, In the beginning was the Word, and reads it aloud, and the lamp burns steadier. \"You were offered money for this,\" he says. It is not a question. He blesses you slowly and thoroughly, like a man paying a debt in full.",
+        "karma": 1,
+        "chronicle": "Laid Saint Cuthbert's Gospel on the desk it was meant for. The promise is kept."
+      },
+      {
+        "label": "Tell him a bearer still lives, on the floors above",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "He is out of the door before you finish, with the lamp in one hand and a blanket in the other. The chapel is dark without him, and the desk is still empty."
+      },
+      {
+        "label": "Ask for a blessing and say nothing about any book",
+        "cost": null,
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 60
+        },
+        "outcome": "He gives it gladly and asks nothing. If there is a small red book in your pack, it grows no lighter."
+      }
+    ],
+    "trigger_item": "cuthberts_gospel",
+    "chain_after": "flv_relic_broker"
+  },
+  {
+    "tag": "flv_watch_post",
+    "sprite_id": "npc_warrior",
+    "name": "Watch Sergeant",
+    "symbol": "@",
+    "color": [
+      140,
+      150,
+      180
+    ],
+    "min_level": 31,
+    "max_level": 45,
+    "text": "Four soldiers of the City Watch hold a barricade of overturned tables, a long way below any city. The sergeant has the look of a woman who has been told to wait for orders and has waited. \"We were promised a courier,\" she says. \"Iron scroll case, Watch seal. Without it we do not know which gate to fall back on, and neither do the companies above.\"",
+    "options": [
+      {
+        "label": "Hand over the sealed dispatch",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 180,
+              "max": 240
+            },
+            {
+              "type": "random_item",
+              "category": "potion"
+            },
+            {
+              "type": "effect",
+              "effect": "blessed",
+              "duration": 100
+            }
+          ]
+        },
+        "outcome": "She breaks the seal, reads it once, and starts giving orders before she has finished. Two runners go up the stairs at a sprint. \"He did not make it, then,\" she says. \"You did. The Watch pays its debts.\" Somewhere far overhead a city has a better night than it was going to have.",
+        "chronicle": "Delivered the dying courier's dispatch to a Watch post. His run is finished."
+      },
+      {
+        "label": "Ask how the siege stands",
+        "cost": null,
+        "reward": {
+          "type": "message"
+        },
+        "outcome": "\"Badly, the last we heard, and the last we heard was a long time ago.\" She looks at the stairs. \"A courier went down past here with the company positions. If you find a scroll case with our seal, it is worth more to us than to you.\""
+      },
+      {
+        "label": "Leave food for the post",
+        "cost": {
+          "type": "food"
+        },
+        "reward": {
+          "type": "effect",
+          "effect": "heroism",
+          "duration": 60
+        },
+        "outcome": "The soldiers share it out to the crumb, by rank and then by hunger. The sergeant salutes you. It is a proper salute, and nobody has given you one in a while."
+      }
+    ],
+    "trigger_item": "sealed_dispatch"
   }
 ]

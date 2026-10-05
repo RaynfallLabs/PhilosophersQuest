@@ -950,7 +950,13 @@ class EncountersMixin:
                 # Log to chronicle
                 name = enc.get('name', 'someone')
                 import random as _chr_rng
-                if getattr(self, '_npc_is_flavor', False):
+                # An option may carry its own chronicle line; otherwise a
+                # generic one is drawn (which could not tell "gave a child
+                # her mother's pendant" from "kept it").
+                _own = (self._npc_selected_option or {}).get('chronicle')
+                if _own:
+                    self._log_chronicle(_own)
+                elif getattr(self, '_npc_is_flavor', False):
                     _FLAVOR_VERBS = [
                         "Ran into {name}. A brief exchange in the dark.",
                         "Met {name}. Even down here, people find a way.",

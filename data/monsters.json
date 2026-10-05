@@ -27774,7 +27774,7 @@
     "perception_range": 10,
     "alert_radius": 8,
     "alert_all_tag": true,
-    "omen": "The whispering starts as soon as you arrive. It knows your name.",
+    "omen": "A voice starts in as soon as you arrive, low and close. It knows your name.",
     "enrage_message": "The Whispering Crone stops whispering.",
     "rage_messages": [
       "The Whispering Crone speaks a name, and it is yours.",
@@ -28841,5 +28841,121 @@
     "spawn_chance": 1.0,
     "enraged_multi_attack_count": 3,
     "omen": "Chips of whetstone are scattered across the floor, as if thrown."
+  },
+  "bonnacon": {
+    "name": "Bonnacon",
+    "symbol": "q",
+    "color": [
+      150,
+      100,
+      60
+    ],
+    "hp": "9d8+1",
+    "speed": 12,
+    "ai_pattern": "ranged",
+    "thac0": 14,
+    "peak_floor": 6,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 4,
+    "attacks": [
+      {
+        "name": "Useless Horns",
+        "damage": "1d3",
+        "type": "blunt"
+      },
+      {
+        "name": "Scorching Dung",
+        "damage": "1d4+2",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.35,
+        "effect_duration": 3,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        25,
+        60
+      ],
+      "item_chance": 1.0,
+      "item_tier": 2,
+      "unique_drop_id": "amulet_fire_res"
+    },
+    "lore": "The bestiaries place the bonnacon in Paeonia and give it a bull's body and a horse's mane. Its horns curl so far back on themselves that they cannot hurt anyone, which Pliny noted with some sympathy. It has another defence. It runs, and as it runs it sprays dung across the ground behind it, and whatever the dung touches burns as if set alight. Monks painted this in the margins of their books for three hundred years, and the knight in the picture always looks as if he regrets his career.",
+    "frequency": 0,
+    "spawn_chance": 0.15,
+    "is_mini_boss": true,
+    "omen": "The floor ahead is scorched in long streaks, and smells worse than it looks."
+  },
+  "calydonian_boar": {
+    "name": "Calydonian Boar",
+    "symbol": "q",
+    "color": [
+      110,
+      90,
+      70
+    ],
+    "hp": "49d8+48",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": 8,
+    "peak_floor": 27,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 25,
+    "attacks": [
+      {
+        "name": "Tusk Gore",
+        "damage": "2d4+4",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      },
+      {
+        "name": "Trampling Charge",
+        "damage": "1d6+1",
+        "type": "blunt",
+        "effect": "slowed",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "slash"
+    ],
+    "weaknesses": [
+      "pierce"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        70,
+        160
+      ],
+      "item_chance": 1.0,
+      "item_tier": 3,
+      "unique_drop_id": "meleager_spear"
+    },
+    "lore": "King Oeneus of Calydon gave first fruits to every god at harvest and forgot Artemis. She sent a boar. Ovid says it was bigger than a bull, with bristles like spear shafts and tusks like an elephant's, and that it trampled the vines and the corn alike. Half the heroes of Greece came to hunt it. Atalanta's arrow drew first blood, Meleager's spear ended it, and the quarrel over who should keep the hide killed more of them than the boar had.",
+    "frequency": 0,
+    "spawn_chance": 0.4,
+    "is_mini_boss": true,
+    "omen": "The corridors here are ploughed up as if by a harrow, stone and all."
   }
 }

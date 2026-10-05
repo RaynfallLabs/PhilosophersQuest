@@ -1001,5 +1001,59 @@
     "unidentified_name": "black-and-silver sphere",
     "lore": "An unusual soul sphere. Its colors are black and silver. It pulses with a powerful energy...",
     "is_unique": true
+  },
+  "lions_thorn": {
+    "name": "Lion's Thorn",
+    "symbol": "*",
+    "color": [
+      70,
+      50,
+      40
+    ],
+    "weight": 0.1,
+    "min_level": 0,
+    "identified": false,
+    "lore": "A black thorn as long as a finger, drawn from the paw of a lion who took it better than expected. Aulus Gellius tells of a runaway slave named Androcles who did a lion the same service in an African cave. Years later the two met again on the sand of the Circus, in front of all Rome, and the lion remembered. A lion's memory is long, and this still smells of him.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "lion_chain_token",
+      "effects": [
+        "show_to_the_great_lion_deeper_down"
+      ],
+      "spawn_method": "flavor_encounter_limping_lion"
+    },
+    "is_unique": true,
+    "id_level": 0,
+    "unidentified_name": "long black thorn",
+    "_meta": {
+      "plot_locked": true
+    }
+  },
+  "cuthberts_gospel": {
+    "name": "Saint Cuthbert's Gospel",
+    "symbol": "+",
+    "color": [
+      150,
+      40,
+      40
+    ],
+    "weight": 0.5,
+    "min_level": 0,
+    "identified": false,
+    "lore": "A Gospel of John small enough for a pocket, bound in red leather worked with a vine. It lay in the coffin of Cuthbert of Lindisfarne, the shepherd who became a bishop and would rather have stayed a hermit. When the longships came, the monks lifted coffin and book together and carried them from place to place for seven years. The last bearer sent it down to a chapel where his brothers wait. It is worth a great deal of money to the wrong people, and it was handed over on a promise.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "bearer_promise",
+      "effects": [
+        "deliver_to_the_chapel_below"
+      ],
+      "spawn_method": "flavor_encounter_coffin_bearer"
+    },
+    "is_unique": true,
+    "id_level": 0,
+    "unidentified_name": "small red book",
+    "_meta": {
+      "plot_locked": true
+    }
   }
 }

@@ -257,7 +257,7 @@ def test_special_rooms_get_their_sleepers():
     with a one-room list spawned nothing and the zoo was free gold."""
     from dungeon import spawn_monsters
     d = generate_dungeon(80, 50, 30)
-    room = d.rooms[2]
+    room = d.rooms[-1]
     assert spawn_monsters([room, room], 30, d, min_count=4, max_count=8)
     src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
     assert 'spawn_monsters([room], ' not in src

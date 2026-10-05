@@ -30,6 +30,8 @@ _INGREDIENT_IDS = None                                # set of ingredient ids (c
 # uniques never render, and code must not name them (test_quest_item_lifecycle).
 _UNIQUE_SPRITE_FALLBACK = {
     'hand_of_glory': 'hamsa_hand',
+    'lions_thorn':      'toxic_thorn',
+    'cuthberts_gospel': 'book_of_thoth',
     'duck_of_doom':  'adamantine_great_helm',
     # v2.15.0: boss-drop unique wand that doesn't start with wand_of_, so the
     # /^wand_of_/ effect-fallback pathway doesn't catch it. Points at the

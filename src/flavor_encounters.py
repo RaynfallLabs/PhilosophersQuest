@@ -282,4 +282,26 @@ def select_flavor_encounters(level_count: int = 100) -> dict[int, dict]:
         selected[level] = enc
         used_tags.add(enc['tag'])
 
+    # Linked encounters: 'chain_after' names the tag of the encounter that
+    # opens the chain. Place a follow-up if and only if its opener is in the
+    # run, always on a deeper floor. FLAVOR_ENCOUNTERS order = chain order.
+    placed = {e['tag']: lv for lv, e in selected.items()}
+    for enc in FLAVOR_ENCOUNTERS:
+        opener = enc.get('chain_after')
+        if not opener:
+            continue
+        if enc['tag'] in placed:                      # undo the random roll
+            del selected[placed.pop(enc['tag'])]
+        if opener not in placed:
+            continue
+        floors = [lv for lv in range(max(enc['min_level'], placed[opener] + 1),
+                                     enc['max_level'] + 1) if lv not in BOSS_LEVELS]
+        free = [lv for lv in floors if lv not in selected] or floors
+        if free:
+            lv = random.choice(free)
+            if lv in selected:                        # evict a stand-alone
+                placed.pop(selected[lv]['tag'], None)
+            selected[lv] = enc
+            placed[enc['tag']] = lv
+
     return selected
