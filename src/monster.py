@@ -10,6 +10,11 @@ from naming import ProperNameAttr
 RAGE_STACK_CAP = 8
 # Most locusts Abaddon keeps alive at once.
 LOCUST_CAP = 12
+# Longest a hard control effect can hold a named foe, and what counts as one.
+NAMED_FOE_CONTROL_CAP = 2
+_HARD_CONTROL = frozenset({'paralyzed', 'sleeping', 'stunned', 'frozen',
+                           'confused', 'feared', 'charmed', 'petrifying',
+                           'immobilized', 'time_stopped'})
 # How far a petrifying gaze reaches, given a clear line of sight.
 GAZE_RANGE = 8
 # Dragon AI: reach of the breath, and turns between breaths.
@@ -300,6 +305,19 @@ class Monster:
     # --- Status effects ---
 
     def add_effect(self, name: str, duration: int):
+        # Named foes cannot be locked down. Whatever the source, a hard
+        # control effect on a boss, mini-boss or seal demon lasts at most
+        # NAMED_FOE_CONTROL_CAP turns and does not stack. Before this there
+        # was no check on the monster's side at all: a sleep scroll put
+        # Abaddon out for 25 turns, a time-freeze spell held every boss on
+        # the level, and imprisonment was 30 to 60 turns of free hits.
+        # (Quest effects that set the status directly, such as Gleipnir and
+        # the Aegis, are deliberate and do not pass through here.)
+        if name in _HARD_CONTROL and self._is_named_foe():
+            self.status_effects[name] = max(
+                self.status_effects.get(name, 0),
+                min(int(duration), NAMED_FOE_CONTROL_CAP))
+            return
         current = self.status_effects.get(name, 0)
         self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
 

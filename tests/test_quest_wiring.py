@@ -898,9 +898,68 @@ def test_deaths_bonus_step_is_never_a_second_attack():
     assert 'and not result\n                and not self._adjacent_to(player)' in src.replace('\r\n', '\n')
 
 
-def test_time_does_not_stop_for_death():
+def test_time_does_not_stop_for_death_or_named_foes():
     src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
     i = src.index('def _do_monster_turns')
-    block = src[i:i + 2200]
+    block = src[i:i + 4500]
     assert 'if _time_stopped and not (self.death_pursues' in block
-    assert block.index('dm.take_turn(') < block.index('if _time_stopped:\n            return'.replace('\n', os.linesep if os.linesep in block else '\n'))
+    assert 'if _time_stopped and not m._is_named_foe():' in block
+
+
+def test_named_foes_cannot_be_locked_down():
+    """A sleep scroll put Abaddon out for 25 turns; imprisonment was 30 to 60
+    turns of free hits. Any hard control on a named foe now caps at two turns
+    and does not stack; ordinary monsters are unaffected."""
+    from monster import Monster, NAMED_FOE_CONTROL_CAP
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    for mid in ('abaddon_destroyer', 'arachne', 'seal_demon_war', 'fenrir_wolf'):
+        m = Monster({**data[mid], 'id': mid}, 1, 1)
+        for effect in ('paralyzed', 'sleeping', 'confused', 'stunned'):
+            m.add_effect(effect, 25)
+            m.add_effect(effect, 25)
+            assert m.status_effects[effect] <= NAMED_FOE_CONTROL_CAP, (mid, effect)
+        m.add_effect('poisoned', 10)
+        assert m.status_effects['poisoned'] == 10        # damage over time is fine
+    rat = Monster({**data['giant_rat'], 'id': 'giant_rat'}, 1, 1)
+    rat.add_effect('sleeping', 25)
+    assert rat.status_effects['sleeping'] == 25
+
+
+def test_fraction_of_hp_magic_cannot_one_shot_a_boss():
+    """Death ray took half of any boss's max HP per charge."""
+    from game_magic import _big_foe_bite, _is_big_foe
+    from monster import Monster
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    abaddon = Monster({**data['abaddon_destroyer'], 'id': 'abaddon_destroyer'}, 1, 1)
+    assert _is_big_foe(abaddon)
+    assert _big_foe_bite(abaddon, 0.5, 100) <= 0.25 * abaddon.max_hp
+    assert _big_foe_bite(abaddon, 0.5, 100) >= 500          # still a real hit
+    arachne = Monster({**data['arachne'], 'id': 'arachne'}, 1, 1)
+    assert _is_big_foe(arachne)
+    # An ordinary deep monster is NOT a big foe any more (it was, at >500 HP,
+    # which made every tier-5 control and death effect useless at depth).
+    deep = next(k for k, v in data.items() if v.get('peak_weight', 0) > 0
+                and 80 <= v.get('peak_floor', 0) <= 92 and not v.get('is_mini_boss'))
+    ordinary = Monster({**data[deep], 'id': deep}, 1, 1)
+    assert not _is_big_foe(ordinary), deep
+    assert _big_foe_bite(ordinary, 0.5, 90) == ordinary.max_hp // 2
+
+
+def test_merchant_prices_follow_the_floor_and_the_item_not_its_weight():
+    from mystery_system import _merchant_price, _floor_income
+
+    class It:
+        def __init__(self, cls, tier=3, unique=False, weight=1.0):
+            self.item_class, self.quiz_tier = cls, tier
+            self.is_unique, self.weight = unique, weight
+
+    ring, potion = It('accessory', weight=0.1), It('potion', tier=1, weight=0.4)
+    sword = It('weapon', unique=True, weight=3.0)
+    for floor in (5, 25, 50, 90):
+        income = _floor_income(floor)
+        assert 0.08 * income < _merchant_price(potion, floor) < 0.3 * income
+        assert 1.2 * income < _merchant_price(ring, floor) < 2.5 * income
+        assert _merchant_price(sword, floor) > 2.5 * income
+        assert _merchant_price(ring, floor) > _merchant_price(potion, floor)
+    assert _merchant_price(ring, 90) > 10 * _merchant_price(ring, 5)
+    assert _merchant_price(It('accessory', weight=0.1), 50) == _merchant_price(It('accessory', weight=20.0), 50)

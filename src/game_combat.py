@@ -1989,8 +1989,8 @@ class CombatMixin:
                     self.add_message("You have died! Press ESC to quit.", 'danger')
                     return
 
-        if _time_stopped:
-            return      # everything else stands still
+        # (While time is stopped, ordinary monsters stand still: see the
+        # loop below. Named foes do not.)
 
         # --- Ariadne's Thread: neutralize wall-phasing monsters ---
         has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
@@ -2010,6 +2010,11 @@ class CombatMixin:
 
         for m in self.monsters:
             if not m.alive:
+                continue
+            # Time stop holds ordinary monsters only. Bosses, mini-bosses and
+            # seal demons keep acting: a time-stop scroll used to be up to
+            # 25 free turns on Abaddon, about three times his whole HP.
+            if _time_stopped and not m._is_named_foe():
                 continue
             # Allied monsters (angels): handle separately
             if getattr(m, 'is_allied', False):

@@ -3431,8 +3431,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(_acc, 'pacify_chance', 0) > 0:
                 for m in self.monsters:
                     if m.alive and abs(m.x - self.player.x) <= 2 and abs(m.y - self.player.y) <= 2:
-                        if random.random() < _acc.pacify_chance:
-                            m.add_effect('paralyzed', 1)
+                        # Two turns (one was ticked off before the monster
+                        # ever lost an action, so the ring did nothing), and
+                        # never a named foe.
+                        if not m._is_named_foe() and random.random() < _acc.pacify_chance:
+                            m.status_effects['paralyzed'] = max(
+                                m.status_effects.get('paralyzed', 0), 2)
 
         # Clairvoyant: reveal tiles within 10-tile radius each turn.
         if self.player.has_effect('clairvoyant'):

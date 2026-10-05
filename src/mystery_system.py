@@ -605,31 +605,45 @@ _MERCHANT_STOCK_COUNTS = [
     (51, 99,  6),
 ]
 
-# Price multipliers by item class
-_PRICE_MULT = {
-    'weapon':     2.5,
-    'armor':      2.0,
-    'shield':     1.8,
-    'accessory':  3.0,
-    'scroll':     1.5,
-    'potion':     1.2,
-    'wand':       2.0,
-    'spellbook':  2.5,
-    'food':       0.8,
-    'ammo':       0.6,
+# What a floor's worth of gold looks like (measured over simulated runs:
+# about 440 gold a floor on floors 1-10, 1,200 on 11-20, 3,800 on 41-50,
+# 7,800 on 91-100). Prices are set against this, so one floor's income buys
+# one consumable, an accessory takes about two floors and a named unique
+# about four, at every depth.
+def _floor_income(level: int) -> float:
+    return 40.0 * (max(1, min(100, int(level or 1))) ** 1.15)
+
+
+# Share of a floor's income, by item class.
+_PRICE_SHARE = {
+    'potion': 0.15, 'food': 0.10, 'ammo': 0.10,
+    'scroll': 0.50, 'wand': 0.50, 'spellbook': 0.80,
+    'weapon': 0.60, 'armor': 0.60, 'shield': 0.60,
+    'accessory': 1.50,
 }
-_BASE_PRICE = 20
+_UNIQUE_GEAR_SHARE = 3.0
 
 
-def _merchant_price(item) -> int:
-    """Compute a gold cost for one merchant item.  Price is intrinsic to the
-    item (tier, class, weight) — better items cost more naturally."""
-    weight = max(0.1, getattr(item, 'weight', 1.0))
-    tier   = getattr(item, 'quiz_tier', 1) or 1
-    ic     = getattr(item, 'item_class', 'misc')
-    mult   = _PRICE_MULT.get(ic, 1.0)
-    price  = int(_BASE_PRICE * mult * tier * weight)
-    return max(5, price)
+def _merchant_price(item, level: int = 1) -> int:
+    """Gold cost of one merchant item on floor `level`.
+
+    The old price was 20 x class x tier x WEIGHT with no floor term. Weight
+    made the strongest things in the game the cheapest (a ring of
+    regeneration 12 gold, a scroll of time stop 15, a potion of full healing
+    9), and nothing scaled with depth, so a run's 400,000 gold had nowhere
+    to go.
+    """
+    tier = getattr(item, 'quiz_tier', None) or getattr(item, 'tier', 1) or 1
+    try:
+        tier = max(1, min(5, int(tier)))
+    except (TypeError, ValueError):
+        tier = 1
+    ic = getattr(item, 'item_class', 'misc')
+    share = _PRICE_SHARE.get(ic, 0.5)
+    if ic in ('weapon', 'armor', 'shield') and getattr(item, 'is_unique', False):
+        share = _UNIQUE_GEAR_SHARE
+    price = _floor_income(level) * share * (0.6 + 0.2 * tier)
+    return max(5, int(round(price / 5.0)) * 5)
 
 
 class MerchantNPC:
@@ -665,7 +679,9 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
     Returns the MerchantNPC if placed, otherwise None.
     (Caller should append the result to ground_items.)
     """
-    if rng.random() > 0.20:
+    # About one floor in three (was one in five): with prices that mean
+    # something, the choice should come up often enough to plan for.
+    if rng.random() > 0.35:
         return None
     if len(rooms) < 3:
         return None
@@ -711,7 +727,7 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
             break
     rng.shuffle(unique_stock)
     stock = unique_stock[:n_stock]
-    prices = [_merchant_price(it) for it in stock]
+    prices = [_merchant_price(it, level) for it in stock]
 
     # Place in a non-starting room. (This used to compare against a
     # hard-coded 3, which is STAIRS_DOWN, so the merchant could only ever

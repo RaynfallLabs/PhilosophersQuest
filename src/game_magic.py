@@ -72,12 +72,39 @@ MAGIC_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
 
 
 def _is_big_foe(m) -> bool:
-    """Bosses, mini-bosses, seal demons and anything over 500 HP shrug off
-    instant-kill and banish effects. The check used to be `is_boss or
-    max_hp > 500`, which left the early mini-bosses (Arachne, Lamia, Talos,
-    Echidna, the Erlking, Camazotz, Cacus) open to one death ray."""
-    return bool(getattr(m, 'is_boss', False) or getattr(m, 'is_mini_boss', False)
-                or getattr(m, 'is_seal_demon', False) or m.max_hp > 500)
+    """Bosses, mini-bosses, seal demons, and anything with more than twice
+    the HP an ordinary monster of its floor has, shrug off instant-kill and
+    banish effects.
+
+    The size test used to be a flat `max_hp > 500`. After monster HP was
+    scaled to depth that made EVERY ordinary monster past floor 70 a "big
+    foe", so the tier-5 charm, fear, polymorph and death wands and the
+    extinction scrolls did nothing on the floors they are found on. And the
+    named test used to be `is_boss` alone, which left the early mini-bosses
+    open to one death ray."""
+    if (getattr(m, 'is_boss', False) or getattr(m, 'is_mini_boss', False)
+            or getattr(m, 'is_seal_demon', False)):
+        return True
+    from floor_curve import target_hp
+    floor = int(getattr(m, 'peak_floor', 0) or getattr(m, 'min_level', 1) or 1)
+    return m.max_hp > max(60, 2.0 * target_hp(floor))
+
+
+def _big_foe_bite(m, fraction: float, level: int) -> int:
+    """Damage for an effect that takes a FRACTION of a monster's max HP.
+
+    Against an ordinary monster the fraction stands. Against a big foe it is
+    capped at about one strong weapon hit for the floor: death ray used to
+    take half of any boss's HP per charge (2,140 from Abaddon; two charges
+    killed him from full), disintegrate a third, the annihilation spell a
+    quarter of every boss in sight.
+    """
+    raw = max(1, int(m.max_hp * fraction))
+    if not _is_big_foe(m):
+        return raw
+    from floor_curve import target_hp
+    level = max(1, min(100, int(level or 1)))
+    return max(1, min(raw, int(0.5 * target_hp(level))))
 
 
 class MagicMixin:
@@ -690,7 +717,7 @@ class MagicMixin:
                     self.add_message(f"{the_name(target)} is slain instantly by the death ray!", 'success')
                     self._on_monster_killed(target)
                 else:
-                    dmg = max(1, target.max_hp // 2)
+                    dmg = _big_foe_bite(target, 0.5, self.dungeon_level)
                     actual = target.take_damage(dmg)
                     if is_boss:
                         self.add_message(
@@ -784,7 +811,7 @@ class MagicMixin:
                     self.add_message(f"{the_name(target)} shrugs off the disease!", 'warning')
                 else:
                     target.add_effect('diseased', dur)
-                    actual = target.take_damage(max(1, target.max_hp // 5))
+                    actual = target.take_damage(_big_foe_bite(target, 0.2, self.dungeon_level))
                     self.add_message(f"{the_name(target)} is wracked by disease! ({actual} dmg, {dur} turns)", 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
@@ -836,7 +863,7 @@ class MagicMixin:
                     self.add_message(f"{the_name(target)} is disintegrated!", 'success')
                     self._on_monster_killed(target)
                 else:
-                    actual = target.take_damage(target.max_hp // 3)
+                    actual = target.take_damage(_big_foe_bite(target, 1 / 3, self.dungeon_level))
                     if is_boss:
                         self.add_message(
                             f"{the_name(target)} resists disintegration but takes {actual} damage!", 'success')
@@ -1546,7 +1573,7 @@ class MagicMixin:
             for m in list(self.monsters):
                 if not m.alive: continue
                 if (m.x, m.y) not in self.visible: continue
-                if getattr(m, 'is_boss', False): continue   # bosses immune
+                if _is_big_foe(m): continue   # bosses and named foes immune
                 # Crude polymorph: weaken HP + AC + speed to a "small animal"
                 m.max_hp = max(1, m.max_hp // 4)
                 m.hp = min(m.hp, m.max_hp)
@@ -1684,7 +1711,7 @@ class MagicMixin:
                 is_boss = _is_big_foe(m)
                 if is_boss:
                     # Bosses take heavy fixed damage but are never instakilled
-                    actual = m.take_damage(max(20, m.max_hp // 4))
+                    actual = m.take_damage(_big_foe_bite(m, 0.25, self.dungeon_level))
                     if actual > 0:
                         struck += 1
                     if not m.alive:
