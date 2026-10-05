@@ -718,6 +718,57 @@ def eat_food(player, food_item) -> list[str]:
     return messages
 
 
+# Fafnir's Blood: what each step of the bird-speech chain adds. Sigurd tasted
+# the dragon's blood and understood the birds, who told him what he needed to
+# know. How much the drinker takes from it depends on how well they listen.
+FAFNIR_BLOOD_STEPS = (
+    (1, 'heal'),          # the wounds close
+    (2, 'hint'),          # the birds' words come clear (the Gram secret)
+    (3, 'fire_resist'),   # hard to burn, for good
+    (4, 'warning'),       # the birds warn you, as they warned Sigurd of Regin
+    (5, 'wisdom'),        # you understand more than birds
+)
+
+
+def apply_fafnirs_blood(player, chain: int) -> list:
+    """Apply Fafnir's Blood for a bird-speech chain of `chain` (0 to 5).
+
+    It used to be a free drink: full heal, permanent fire protection and the
+    Gram hint, the same in every run that killed him. Now the drinker earns
+    each part by following what the birds say (an animal quiz, started by
+    MenuMixin._drink_fafnirs_blood). Rewards are cumulative.
+    """
+    chain = max(0, min(5, int(chain)))
+    msgs = []
+    if chain == 0:
+        burn = max(1, player.max_hp // 5)
+        player.hp = max(1, player.hp - burn)
+        msgs.append("The blood scalds your mouth and throat, and that is all it does.")
+        msgs.append("Birds are making a noise somewhere overhead. It is only noise.")
+        return msgs
+    earned = {name for need, name in FAFNIR_BLOOD_STEPS if chain >= need}
+    if 'heal' in earned:
+        player.restore_hp(player.max_hp - player.hp)
+        msgs.append("The blood scalds all the way down. Then the pain is gone, "
+                    "and every wound with it.")
+    if 'hint' in earned:
+        msgs.append("Two birds are talking overhead, and the words are plain: "
+                    "a broken sword, a one-eyed god's stone, a throw.")
+    else:
+        msgs.append("Two birds are talking overhead. You almost follow them.")
+    if 'fire_resist' in earned:
+        player.add_effect('fire_resist', -1)
+        msgs.append("Fire will never bite you as deep again.")
+    if 'warning' in earned:
+        player.add_effect('warning', -1)
+        msgs.append("The birds go on talking, and now they are talking to you. "
+                    "Nothing will come up on you unannounced again.")
+    if 'wisdom' in earned:
+        player.apply_stat_bonus('WIS', 1)
+        msgs.append("You find you understand rather more than birds.")
+    return msgs
+
+
 def drink_potion(player, potion) -> list[str]:
     """
     Consume a Potion. Returns a list of message strings.
@@ -1059,17 +1110,10 @@ def drink_potion(player, potion) -> list[str]:
             messages.append("Your mana reserves are already brimming.")
 
     elif effect == 'fafnirs_blood':
-        # Full heal + permanent fire resistance + lore hint about secret reforge
-        amt = player.max_hp - player.hp
-        player.restore_hp(amt)
-        player.add_effect('fire_resist', -1)  # permanent
-        messages.append("The blood scalds all the way down. Then the pain is gone, "
-                        "and every wound with it.")
-        messages.append("Fire will never bite you as deep again.")
-        messages.append(
-            "Two birds are talking somewhere overhead, and the words are plain: "
-            "a broken sword, a one-eyed god's stone, a throw."
-        )
+        # The Blood is drunk through MenuMixin._drink_fafnirs_blood, which
+        # asks the bird-speech quiz first. Reached any other way it is only
+        # a scalding mouthful.
+        messages.extend(apply_fafnirs_blood(player, 0))
 
     else:
         messages.append("The potion does nothing obvious.")

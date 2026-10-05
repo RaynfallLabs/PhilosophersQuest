@@ -199,6 +199,56 @@ class MenuMixin:
         self._quaff_sel = 0
         self.state = STATE_QUAFF_MENU
 
+    def _drink_fafnirs_blood(self):
+        """Sigurd tasted the dragon's blood and understood the birds.
+
+        Drinking starts an animal chain (up to five, getting harder). Each
+        answer is one more thing the birds manage to tell you; see
+        food_system.apply_fafnirs_blood for what each step is worth. A
+        chain of nothing is a burned mouth.
+        """
+        from game_states import STATE_QUIZ
+        self.add_message(
+            "You drink. It is like swallowing a coal. Overhead, birds begin to speak.",
+            'info')
+        self.quiz_title = "THE SPEECH OF BIRDS  --  ANIMAL"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            from food_system import apply_fafnirs_blood
+            chain = int(getattr(result, 'score', 0) or 0)
+            for msg in apply_fafnirs_blood(self.player, chain):
+                self.add_message(msg, 'success' if chain else 'danger')
+            if chain >= 5:
+                self._log_chronicle(
+                    "Drank the dragon's blood and understood every word the birds "
+                    "said. I wish I had not understood all of it.")
+            elif chain >= 2:
+                self._log_chronicle(
+                    "Drank the dragon's blood. The birds spoke of a broken sword, "
+                    "a one-eyed god's stone, and a throw. I wrote it down.")
+            elif chain == 1:
+                self._log_chronicle(
+                    "Drank the dragon's blood. It mended me. The birds said "
+                    "something I could not quite follow.")
+            else:
+                self._log_chronicle(
+                    "Drank the dragon's blood and burned my mouth for nothing.")
+            self.state = STATE_PLAYER
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='escalator_chain',
+            subject='animal',
+            tier=2,
+            callback=on_complete,
+            max_chain=5,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds('animal'),
+            base_seconds=self.player.get_quiz_timer('animal'),
+        )
+
     def _quaff_menu_input(self, key: int):
         if key in self._MENU_CURSOR_KEYS:
             self._quaff_sel = self._move_menu_cursor(
@@ -213,6 +263,13 @@ class MenuMixin:
         self.state = STATE_PLAYER
         item = self.quaff_menu_items[idx]
         self.player.remove_from_inventory(item)
+
+        # Fafnir's Blood asks its own question before it does anything.
+        if getattr(item, 'effect', '') == 'fafnirs_blood':
+            item.identified = True
+            self.player.known_item_ids.add(item.id)
+            self._drink_fafnirs_blood()
+            return
 
         from food_system import drink_potion
         item.identified = True

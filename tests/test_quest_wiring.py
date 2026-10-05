@@ -624,3 +624,58 @@ def test_fire_resistance_halves_fire_and_is_not_immunity():
     r.max_hp = r.hp = 500
     r.add_effect('cold_resist', -1)
     assert r.take_damage(40, 'cold') == 0       # other resistances unchanged
+
+
+# ------------------------------------------------------------ Fafnir's Blood
+
+def test_fafnirs_blood_pays_by_how_well_you_follow_the_birds():
+    """It was a free drink: full heal, permanent fire protection and the Gram
+    hint, identical in every run. Each part is now earned on an animal
+    chain."""
+    from food_system import apply_fafnirs_blood
+    from player import Player
+
+    def drink(chain):
+        p = Player()
+        p.max_hp = 200
+        p.hp = 100
+        wis = p.WIS
+        msgs = apply_fafnirs_blood(p, chain)
+        return p, wis, ' '.join(msgs)
+
+    p, wis, text = drink(0)
+    assert p.hp == 60 and not p.has_effect('fire_resist')       # scalded, nothing gained
+    assert 'throw' not in text
+
+    p, wis, text = drink(1)
+    assert p.hp == 200 and 'throw' not in text
+    assert not p.has_effect('fire_resist')
+
+    p, wis, text = drink(2)
+    assert 'throw' in text and not p.has_effect('fire_resist')   # the Gram secret
+
+    p, wis, text = drink(3)
+    assert p.has_effect('fire_resist') and not p.has_effect('warning')
+
+    p, wis, text = drink(4)
+    assert p.has_effect('warning') and p.WIS == wis
+
+    p, wis, text = drink(5)
+    assert p.has_effect('fire_resist') and p.has_effect('warning')
+    assert p.WIS == wis + 1 and p.hp == 200 and 'throw' in text
+
+    # never lethal
+    low = Player()
+    low.max_hp, low.hp = 200, 5
+    apply_fafnirs_blood(low, 0)
+    assert low.hp >= 1
+
+
+def test_drinking_the_blood_starts_the_bird_speech_quiz():
+    src = open(os.path.join(ROOT, 'src', 'game_menus.py'), encoding='utf-8').read()
+    i = src.index('def _drink_fafnirs_blood')
+    block = src[i:i + 2600]
+    assert "subject='animal'" in block and "mode='escalator_chain'" in block
+    assert 'apply_fafnirs_blood(self.player, chain)' in block
+    j = src.index('def _quaff_menu_input')
+    assert "== 'fafnirs_blood'" in src[j:j + 1400]

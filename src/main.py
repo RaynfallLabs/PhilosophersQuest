@@ -5994,8 +5994,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 pot = copy_at(template, x, y)
                 pot.identified = True
                 self.ground_items.append(pot)
-                self.add_message("A vial of shimmering dragon blood pools at your feet!", 'loot')
-                self._log_chronicle("Fafnir's blood pooled at my feet. Hot as forge-fire. The old myths say dragon blood grants understanding.")
+                self.add_message("The dragon's blood runs out across the stone, still smoking.", 'loot')
+                self._log_chronicle("Fafnir's blood ran out at my feet, hot as forge-fire. Sigurd tasted it and understood the birds. It is said to depend on who is listening.")
         except Exception:
             pass
 
