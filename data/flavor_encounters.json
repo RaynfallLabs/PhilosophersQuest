@@ -1206,7 +1206,9 @@
           "amount": 60
         },
         "reward": {
-          "type": "message"
+          "type": "effect",
+          "effect": "clairvoyant",
+          "duration": 40
         },
         "outcome": "She accepts the supplies with genuine relief and presses something into your hand, a rough sketch of the northern passage, with the creature's patrol route marked in red. \"It circles. There's a window of about forty seconds. That's how I got out.\""
       },
@@ -2554,8 +2556,12 @@
           "type": "gold",
           "amount": 300
         },
-        "reward": null,
-        "outcome": "The Warden considers your gold for a long moment. \"ACCEPTABLE. THE WARDEN HAS BILLS.\" It pockets the coins in a chest compartment that clinks with many others and lumbers aside without further comment."
+        "reward": {
+          "type": "effect",
+          "effect": "shielded",
+          "duration": 80
+        },
+        "outcome": "The Warden considers your gold for a long moment. \"ACCEPTABLE. THE WARDEN HAS BILLS.\" It pockets the coins in a chest compartment that clinks with many others and lumbers aside without further comment. Something of its brass patience goes with you."
       },
       {
         "label": "Refuse and find another way",
@@ -3467,8 +3473,7 @@
       {
         "label": "Give her a scroll from your pack",
         "cost": {
-          "type": "gold",
-          "amount": 250
+          "type": "scroll"
         },
         "reward": {
           "type": "effect",
@@ -3964,7 +3969,7 @@
         },
         "reward": {
           "type": "hp_restore",
-          "amount": 60
+          "amount": 400
         },
         "outcome": "It works with the impersonal efficiency of something that has been doing this for seven hundred years and finds it neither interesting nor tedious, it simply finds it correct. When it finishes, your wounds are sealed, your breathing is even, and it has left a small receipt in your pocket in a language that may not exist anymore."
       },
@@ -3976,7 +3981,7 @@
         },
         "reward": {
           "type": "sp_restore",
-          "amount": 50
+          "amount": 150
         },
         "outcome": "It administers something it calls a \"musculoskeletal optimization procedure,\" which involves exactly three minutes of targeted pressure to specific points that you didn't know you had. You feel the deep exhaustion of eighty-some floors drain out of you like water from a wrung cloth."
       },
