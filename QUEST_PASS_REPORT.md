@@ -85,7 +85,7 @@ All in `tools/balance/respawn_by_hp.py`, each with its reason.
 - **Combat text:** "Arachne is slain", not "The Arachne"; "The Sphinx", not
   "The The Sphinx". The three mini-bosses that borrow Fenrir's rage no longer
   announce "Fenrir snarls". The Green Knight picks up his head.
-- 344 dashes removed from flavor encounters and hints.
+- Dashes removed from all flavor encounters and hints.
 
 ## 5. Hints
 
@@ -108,7 +108,7 @@ The rule followed: say what a thing is, never what to do with it.
 
 ## 6. New side quests
 
-Eleven, none part of the story line, all built from machinery that already
+Ten, none part of the story line, all built from machinery that already
 exists. Odds are per run.
 
 | Quest | Floors | What it is |
