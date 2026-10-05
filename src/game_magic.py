@@ -39,6 +39,7 @@ pointing the same direction as the other helpers.  Class-level constant
 directly.
 """
 from __future__ import annotations
+from monster import the_name
 
 import random
 from typing import TYPE_CHECKING
@@ -68,6 +69,15 @@ if TYPE_CHECKING:
 # gap was worst); modest boost on T5 (where 10d10 was already respectable).
 # Applied by _spell_damage and _wand_tier_damage. INT stacks on top.
 MAGIC_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
+
+
+def _is_big_foe(m) -> bool:
+    """Bosses, mini-bosses, seal demons and anything over 500 HP shrug off
+    instant-kill and banish effects. The check used to be `is_boss or
+    max_hp > 500`, which left the early mini-bosses (Arachne, Lamia, Talos,
+    Echidna, the Erlking, Camazotz, Cacus) open to one death ray."""
+    return bool(getattr(m, 'is_boss', False) or getattr(m, 'is_mini_boss', False)
+                or getattr(m, 'is_seal_demon', False) or m.max_hp > 500)
 
 
 class MagicMixin:
@@ -290,7 +300,7 @@ class MagicMixin:
         """Boss CC resistance: 50% chance to resist; if it lands, half duration.
         Returns (adjusted_duration, resisted_bool)."""
         import random as _rng
-        is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+        is_boss = _is_big_foe(target)
         if not is_boss:
             return duration, False
         if _rng.random() < 0.50:
@@ -522,55 +532,55 @@ class MagicMixin:
                 dur = self._wand_effect_duration(wand, 8)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the sleep!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the sleep!", 'warning')
                 else:
                     target.add_effect('sleeping', dur)
-                    self.add_message(f"The {target.name} slumps into a deep sleep! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} slumps into a deep sleep! ({dur} turns)", 'success')
 
             elif effect == 'slow_monster':
                 dur = self._wand_effect_duration(wand, 8)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
                 else:
                     target.add_effect('slowed', dur)
-                    self.add_message(f"The {target.name} slows to a crawl! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} slows to a crawl! ({dur} turns)", 'success')
 
             elif effect == 'confuse_monster':
                 dur = self._wand_effect_duration(wand, 10)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the confusion!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the confusion!", 'warning')
                 else:
                     target.add_effect('confused', dur)
-                    self.add_message(f"The {target.name} staggers in confusion! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} staggers in confusion! ({dur} turns)", 'success')
 
             elif effect == 'paralyze_monster':
                 dur = self._wand_effect_duration(wand, 6)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} resists the paralysis!", 'warning')
+                    self.add_message(f"{the_name(target)} resists the paralysis!", 'warning')
                 else:
                     target.add_effect('paralyzed', dur)
-                    self.add_message(f"The {target.name} is locked in place! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} is locked in place! ({dur} turns)", 'success')
 
             elif effect == 'blind_monster':
                 dur = self._wand_effect_duration(wand, 8)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the blindness!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the blindness!", 'warning')
                 else:
                     target.add_effect('blinded', dur)
-                    self.add_message(f"The {target.name} claws at its eyes, blinded! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} claws at its eyes, blinded! ({dur} turns)", 'success')
 
             elif effect == 'stoning':
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if is_boss:
-                    self.add_message(f"The {target.name} is far too powerful to petrify!", 'warning')
+                    self.add_message(f"{the_name(target)} is far too powerful to petrify!", 'warning')
                 else:
                     dur = self._wand_tier_duration(5, wand.quiz_tier)
                     target.add_effect('petrifying', dur)
-                    self.add_message(f"The {target.name} begins to turn to stone! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} begins to turn to stone! ({dur} turns)", 'success')
 
             elif effect == 'cancellation':
                 # Strip BUFFS only — don't save the monster from player-applied
@@ -580,14 +590,14 @@ class MagicMixin:
                     if _e in _BUFFS:
                         target.status_effects.pop(_e, None)
                 self.add_message(
-                    f"The {target.name}'s abilities and effects are cancelled!", 'success'
+                    f"{the_name(target)}'s abilities and effects are cancelled!", 'success'
                 )
 
             elif effect == 'fire_bolt':
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 6, wand.quiz_tier)
                 actual = target.take_damage(dmg, 'fire')
                 self.add_message(
-                    f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success'
+                    f"A bolt of fire strikes {the_name(target, lower=True)} for {actual} damage!", 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -600,7 +610,7 @@ class MagicMixin:
                 if not sr:
                     target.add_effect('slowed', dur)
                 self.add_message(
-                    f"A bolt of cold strikes the {target.name} for {actual} damage"
+                    f"A bolt of cold strikes {the_name(target, lower=True)} for {actual} damage"
                     + (f" and slows it! ({dur} turns)" if not sr else "!"), 'success'
                 )
                 if not target.alive:
@@ -639,7 +649,7 @@ class MagicMixin:
                 if not sr:
                     target.add_effect('diseased', dur)
                 self.add_message(
-                    f"Acid dissolves the {target.name} for {actual} damage"
+                    f"Acid dissolves {the_name(target, lower=True)} for {actual} damage"
                     + (f" -- diseased for {dur} turns!" if not sr else "!"), 'success'
                 )
                 if not target.alive:
@@ -657,7 +667,7 @@ class MagicMixin:
                 if target.hp == 0:
                     target.alive = False
                 self.add_message(
-                    f"A magic missile unerringly strikes the {target.name} "
+                    f"A magic missile unerringly strikes {the_name(target, lower=True)} "
                     f"for {dmg} damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -666,36 +676,36 @@ class MagicMixin:
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else 10, wand.quiz_tier)
                 actual = target.take_damage(dmg)
                 self.add_message(
-                    f"The wand slams into the {target.name} for {actual} physical damage!", 'success'
+                    f"The wand slams into {the_name(target, lower=True)} for {actual} physical damage!", 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
 
             elif effect == 'death_ray':
                 # 70% chance instant kill; remaining HP otherwise. Bosses immune to instant kill.
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if not is_boss and _rng.random() < 0.70:
                     target.hp = 0
                     target.alive = False
-                    self.add_message(f"The {target.name} is slain instantly by the death ray!", 'success')
+                    self.add_message(f"{the_name(target)} is slain instantly by the death ray!", 'success')
                     self._on_monster_killed(target)
                 else:
                     dmg = max(1, target.max_hp // 2)
                     actual = target.take_damage(dmg)
                     if is_boss:
                         self.add_message(
-                            f"The death ray strikes the {target.name} for {actual} damage! "
+                            f"The death ray strikes {the_name(target, lower=True)} for {actual} damage! "
                             f"The creature is too powerful for an instant kill.", 'success')
                     else:
                         self.add_message(
-                            f"The death ray grazes the {target.name} for {actual} damage!", 'success')
+                            f"The death ray grazes {the_name(target, lower=True)} for {actual} damage!", 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
 
             elif effect == 'polymorph_monster':
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if is_boss:
-                    self.add_message(f"The {target.name} resists the transformation!", 'warning')
+                    self.add_message(f"{the_name(target)} resists the transformation!", 'warning')
                 else:
                     import json
                     from monster import Monster
@@ -726,14 +736,14 @@ class MagicMixin:
                 # v2.11.0 T5 wand_of_panic_wave: 20-turn fear on EVERY visible
                 # non-boss monster (not just the primary target).
                 _is_panic_wave = (getattr(wand, 'id', '') == 'wand_of_panic_wave')
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 dur = self._wand_effect_duration(wand, 8)
                 if _is_panic_wave:
                     hit = 0
                     for m in self.monsters:
                         if not m.alive or (m.x, m.y) not in self.visible:
                             continue
-                        if getattr(m, 'is_boss', False) or m.max_hp > 500:
+                        if _is_big_foe(m):
                             continue
                         m.add_effect('feared', dur)
                         m.ai_pattern = 'cowardly'
@@ -742,40 +752,40 @@ class MagicMixin:
                         f"A wave of panic sweeps the floor! ({hit} creature{'s' if hit != 1 else ''} flee for {dur} turns)",
                         'success')
                 elif is_boss:
-                    self.add_message(f"The {target.name} resists the fear!", 'warning')
+                    self.add_message(f"{the_name(target)} resists the fear!", 'warning')
                 else:
                     target.add_effect('feared', dur)
                     target.ai_pattern = 'cowardly'
-                    self.add_message(f"The {target.name} turns and flees in terror! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} turns and flees in terror! ({dur} turns)", 'success')
 
             elif effect == 'charm_monster':
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if is_boss:
-                    self.add_message(f"The {target.name} is far too willful to charm!", 'warning')
+                    self.add_message(f"{the_name(target)} is far too willful to charm!", 'warning')
                 else:
                     dur = self._wand_effect_duration(wand, 20)
                     target.add_effect('charmed', dur)
                     target.ai_pattern = 'sessile'
-                    self.add_message(f"The {target.name} gazes at you with adoration. ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} gazes at you with adoration. ({dur} turns)", 'success')
 
             elif effect == 'poison_monster':
                 dur = self._wand_effect_duration(wand, 12)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the poison!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the poison!", 'warning')
                 else:
                     target.add_effect('poisoned', dur)
-                    self.add_message(f"The {target.name} writhes as poison courses through it! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} writhes as poison courses through it! ({dur} turns)", 'success')
 
             elif effect == 'disease_monster':
                 dur = self._wand_effect_duration(wand, 15)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the disease!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the disease!", 'warning')
                 else:
                     target.add_effect('diseased', dur)
                     actual = target.take_damage(max(1, target.max_hp // 5))
-                    self.add_message(f"The {target.name} is wracked by disease! ({actual} dmg, {dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} is wracked by disease! ({actual} dmg, {dur} turns)", 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
 
@@ -784,12 +794,12 @@ class MagicMixin:
                 sdur = self._wand_tier_duration(8, wand.quiz_tier)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the curse!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the curse!", 'warning')
                 else:
-                    sdur = max(1, sdur // 2) if (getattr(target, 'is_boss', False) or target.max_hp > 500) else sdur
+                    sdur = max(1, sdur // 2) if (_is_big_foe(target)) else sdur
                     target.add_effect('cursed', dur)
                     target.add_effect('slowed', sdur)
-                    self.add_message(f"Dark energy envelops the {target.name}! Cursed ({dur}t) and slowed ({sdur}t).", 'success')
+                    self.add_message(f"Dark energy envelops {the_name(target, lower=True)}! Cursed ({dur}t) and slowed ({sdur}t).", 'success')
 
             elif effect == 'teleport_monster':
                 open_tiles = [(x, y)
@@ -812,27 +822,27 @@ class MagicMixin:
                 heal = min(actual, self.player.max_hp - self.player.hp)
                 self.player.hp += heal
                 self.add_message(
-                    f"You drain {actual} life from the {target.name}! (+{heal} HP)", 'success'
+                    f"You drain {actual} life from {the_name(target, lower=True)}! (+{heal} HP)", 'success'
                 )
                 if not target.alive:
                     self._on_monster_killed(target)
 
             elif effect == 'disintegrate':
                 # 85% instant kill. Bosses immune to instant kill, take max_hp/3 instead.
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if not is_boss and _rng.random() < 0.85:
                     target.hp = 0
                     target.alive = False
-                    self.add_message(f"The {target.name} is disintegrated!", 'success')
+                    self.add_message(f"{the_name(target)} is disintegrated!", 'success')
                     self._on_monster_killed(target)
                 else:
                     actual = target.take_damage(target.max_hp // 3)
                     if is_boss:
                         self.add_message(
-                            f"The {target.name} resists disintegration but takes {actual} damage!", 'success')
+                            f"{the_name(target)} resists disintegration but takes {actual} damage!", 'success')
                     else:
                         self.add_message(
-                            f"The {target.name} is partially disintegrated! ({actual} dmg)", 'success')
+                            f"{the_name(target)} is partially disintegrated! ({actual} dmg)", 'success')
                     if not target.alive:
                         self._on_monster_killed(target)
 
@@ -840,27 +850,27 @@ class MagicMixin:
                 dur = self._wand_effect_duration(wand, 15)
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the weakening magic!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the weakening magic!", 'warning')
                 elif target.attacks:
                     target.add_effect('weakened', dur)
-                    self.add_message(f"The {target.name} looks visibly weaker! ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} looks visibly weaker! ({dur} turns)", 'success')
                 else:
                     target.add_effect('weakened', dur)
-                    self.add_message(f"The {target.name} seems diminished. ({dur} turns)", 'success')
+                    self.add_message(f"{the_name(target)} seems diminished. ({dur} turns)", 'success')
 
             elif effect == 'drain_magic':
                 from status_effects import BUFFS as _BUFFS
                 for _e in list(target.status_effects):
                     if _e in _BUFFS:
                         target.status_effects.pop(_e, None)
-                self.add_message(f"The {target.name}'s magical effects are drained away!", 'success')
+                self.add_message(f"{the_name(target)}'s magical effects are drained away!", 'success')
 
             elif effect == 'dispel_magic':
                 from status_effects import BUFFS as _BUFFS
                 for _e in list(target.status_effects):
                     if _e in _BUFFS:
                         target.status_effects.pop(_e, None)
-                self.add_message(f"All enchantments on the {target.name} are dispelled!", 'success')
+                self.add_message(f"All enchantments on {the_name(target, lower=True)} are dispelled!", 'success')
 
         # ---- Effects that don't require a target OR handle mass effects ----
         if effect == 'boost_str':
@@ -1056,7 +1066,7 @@ class MagicMixin:
                 actual = target.take_damage(drain)
                 self.player.restore_hp(actual)
                 self.add_message(
-                    f"Life force drains from the {target.name}! "
+                    f"Life force drains from {the_name(target, lower=True)}! "
                     f"({actual} drained, +{actual} HP to you)", 'success'
                 )
                 if not target.alive:
@@ -1082,7 +1092,7 @@ class MagicMixin:
                 del self.player.status_effects[e]
             if target and cleared_monster:
                 self.add_message(
-                    f"Abjuration strips {cleared_monster} effect(s) from the {target.name}!", 'success'
+                    f"Abjuration strips {cleared_monster} effect(s) from {the_name(target, lower=True)}!", 'success'
                 )
             if cleared_player:
                 self.add_message(
@@ -1671,7 +1681,7 @@ class MagicMixin:
             ]
             slain, struck = 0, 0
             for m in visible_monsters:
-                is_boss = getattr(m, 'is_boss', False) or m.max_hp > 500
+                is_boss = _is_big_foe(m)
                 if is_boss:
                     # Bosses take heavy fixed damage but are never instakilled
                     actual = m.take_damage(max(20, m.max_hp // 4))
@@ -1910,7 +1920,7 @@ class MagicMixin:
                     total_dmg += per_missile
                 self.add_message(
                     f"{missiles} magic missile{'s' if missiles > 1 else ''} "
-                    f"strike{'s' if missiles == 1 else ''} the {target.name} "
+                    f"strike{'s' if missiles == 1 else ''} {the_name(target, lower=True)} "
                     f"for {total_dmg} total damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -1919,7 +1929,7 @@ class MagicMixin:
                 scaled = self._spell_damage(base_dmg, chain)
                 actual = target.take_damage(scaled, 'fire')
                 self.add_message(
-                    f"A bolt of fire strikes the {target.name} for {actual} damage!", 'success')
+                    f"A bolt of fire strikes {the_name(target, lower=True)} for {actual} damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'lightning_bolt':
@@ -1952,26 +1962,26 @@ class MagicMixin:
                 dur = max(2, int(6 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the sleep!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the sleep!", 'warning')
                 else:
                     target.add_effect('sleeping', dur)
-                    self.add_message(f"The {target.name} falls asleep for {dur} turns!", 'success')
+                    self.add_message(f"{the_name(target)} falls asleep for {dur} turns!", 'success')
             elif effect == 'confuse_monster':
                 dur = max(2, int(10 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the confusion!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the confusion!", 'warning')
                 else:
                     target.add_effect('confused', dur)
-                    self.add_message(f"The {target.name} is confused for {dur} turns!", 'success')
+                    self.add_message(f"{the_name(target)} is confused for {dur} turns!", 'success')
             elif effect == 'paralyze_monster':
                 dur = max(2, int(8 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} resists the paralysis!", 'warning')
+                    self.add_message(f"{the_name(target)} resists the paralysis!", 'warning')
                 else:
                     target.add_effect('paralyzed', dur)
-                    self.add_message(f"The {target.name} is paralyzed for {dur} turns!", 'success')
+                    self.add_message(f"{the_name(target)} is paralyzed for {dur} turns!", 'success')
             elif effect == 'aard_blast':
                 base_dmg = _roll(power) if power else 10
                 scaled = self._spell_damage(base_dmg, chain)
@@ -1981,7 +1991,7 @@ class MagicMixin:
                 if not sr:
                     target.add_effect('stunned', stun)
                 self.add_message(
-                    f"Aard! A telekinetic blast strikes the {target.name} for {actual} damage"
+                    f"Aard! A telekinetic blast strikes {the_name(target, lower=True)} for {actual} damage"
                     + (" and stuns it!" if not sr else "!") + "", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
@@ -1989,10 +1999,10 @@ class MagicMixin:
                 dur = max(2, int(8 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
                 else:
                     target.add_effect('slowed', dur)
-                    self.add_message(f"The {target.name} is slowed for {dur} turns!", 'success')
+                    self.add_message(f"{the_name(target)} is slowed for {dur} turns!", 'success')
             elif effect == 'teleport_self':
                 self._teleport_player()
                 self.add_message("The Elder Blood bends space around you!", 'success')
@@ -2003,17 +2013,17 @@ class MagicMixin:
                 if target.hp == 0:
                     target.alive = False
                 self.add_message(
-                    f"Holy fire smites the {target.name} for {scaled} damage!", 'success')
+                    f"Holy fire smites {the_name(target, lower=True)} for {scaled} damage!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster_spell':
                 dur = max(4, int(10 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
-                    self.add_message(f"The {target.name} shrugs off the slowing magic!", 'warning')
+                    self.add_message(f"{the_name(target)} shrugs off the slowing magic!", 'warning')
                 else:
                     target.add_effect('slowed', dur)
-                    self.add_message(f"The {target.name} is slowed for {dur} turns!", 'success')
+                    self.add_message(f"{the_name(target)} is slowed for {dur} turns!", 'success')
             elif effect == 'acid_arrow':
                 base_dmg = _roll(power) if power else 8
                 scaled = self._spell_damage(base_dmg, chain)
@@ -2023,7 +2033,7 @@ class MagicMixin:
                 if not dot_resisted:
                     target.add_effect('poisoned', dot_dur)
                 self.add_message(
-                    f"An acid arrow strikes the {target.name} for {actual} damage!"
+                    f"An acid arrow strikes {the_name(target, lower=True)} for {actual} damage!"
                     + (f" Acid burns for {dot_dur} turns!" if not dot_resisted else " It resists the acid burn!")
                     + "", 'success')
                 if not target.alive:
@@ -2034,23 +2044,23 @@ class MagicMixin:
                 actual = target.take_damage(scaled)
                 healed = self.player.restore_hp(actual)
                 self.add_message(
-                    f"You drain {actual} life from the {target.name} and heal {healed} HP!", 'success')
+                    f"You drain {actual} life from {the_name(target, lower=True)} and heal {healed} HP!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'fear_monster_spell':
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if is_boss:
-                    self.add_message(f"The {target.name} is too powerful to frighten!", 'warning')
+                    self.add_message(f"{the_name(target)} is too powerful to frighten!", 'warning')
                 else:
                     dur = max(3, int(10 * chain_scale))
                     target.add_effect('feared', dur)
                     target.ai_pattern = 'cowardly'
                     self.add_message(
-                        f"The {target.name} turns and flees in terror for {dur} turns!", 'success')
+                        f"{the_name(target)} turns and flees in terror for {dur} turns!", 'success')
             elif effect == 'polymorph_spell':
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if is_boss:
-                    self.add_message(f"The {target.name} resists the polymorph!", 'warning')
+                    self.add_message(f"{the_name(target)} resists the polymorph!", 'warning')
                 else:
                     import json as _pjson
                     from monster import Monster as _PMon
@@ -2079,13 +2089,13 @@ class MagicMixin:
             elif effect == 'disintegrate_spell':
                 # v2.12.0: T5 spell. Fixed 50% instakill vs non-bosses;
                 # bosses get spell.power (10d8) damage instead.
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 kill_chance = 0.50
                 if not is_boss and random.random() < kill_chance:
                     target.hp = 0
                     target.alive = False
                     self.add_message(
-                        f"The {target.name} is disintegrated!", 'success')
+                        f"{the_name(target)} is disintegrated!", 'success')
                     self._on_monster_killed(target)
                 else:
                     base_dmg = _roll(power) if power else 20
@@ -2093,11 +2103,11 @@ class MagicMixin:
                     actual = target.take_damage(scaled)
                     if is_boss:
                         self.add_message(
-                            f"The {target.name} resists disintegration but takes {actual} damage!",
+                            f"{the_name(target)} resists disintegration but takes {actual} damage!",
                             'success')
                     else:
                         self.add_message(
-                            f"The {target.name} partially resists! {actual} damage!",
+                            f"{the_name(target)} partially resists! {actual} damage!",
                             'warning')
                     if not target.alive:
                         self._on_monster_killed(target)
@@ -2112,7 +2122,7 @@ class MagicMixin:
                     dur, _ = self._boss_resist_cc(target, dur)
                     target.add_effect('slowed', dur)
                 self.add_message(
-                    f"Frost touch chills the {target.name} for {actual} cold dmg!", 'success')
+                    f"Frost touch chills {the_name(target, lower=True)} for {actual} cold dmg!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'chain_lightning_jump':
@@ -2144,56 +2154,56 @@ class MagicMixin:
                 # Returns summoned/extraplanar entities — fey, demon, celestial, elemental
                 tags = set(getattr(target, 'tags', []))
                 BANISHABLE = {'fey', 'demon', 'celestial', 'elemental'}
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 if (tags & BANISHABLE) and not is_boss:
                     target.alive = False
                     target.hp = 0
                     # No treasure / on_killed callback — banished, not slain
                     self.add_message(
-                        f"The {target.name} is banished back to its home plane!", 'success')
+                        f"{the_name(target)} is banished back to its home plane!", 'success')
                 elif is_boss:
                     self.add_message(
-                        f"The {target.name} is too anchored to this plane to banish.", 'warning')
+                        f"{the_name(target)} is too anchored to this plane to banish.", 'warning')
                 else:
                     # Non-extraplanar: brief paralyze as a consolation
                     dur = max(2, int(4 * chain_scale))
                     target.add_effect('paralyzed', dur)
                     self.add_message(
-                        f"The {target.name} is a creature of this world — frozen in dread for {dur} turns instead.", 'warning')
+                        f"{the_name(target)} is a creature of this world — frozen in dread for {dur} turns instead.", 'warning')
             elif effect == 'power_word_kill':
                 # Instakill if target HP at or below threshold; threshold scales
                 # with player INT. Bosses immune.
                 # v2.15+ audit sync: chain retired. Fossil expression
                 # `INT * chain * 4` pinned at chain=5 (INT * 20).
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 threshold = self.player.INT * 20
                 if not is_boss and target.hp <= threshold:
                     target.alive = False
                     target.hp = 0
                     self.add_message(
-                        f"POWER WORD: KILL! The {target.name} drops dead. (threshold {threshold} HP)", 'success')
+                        f"POWER WORD: KILL! {the_name(target)} drops dead. (threshold {threshold} HP)", 'success')
                     self._on_monster_killed(target)
                 elif is_boss:
                     self.add_message(
-                        f"The {target.name} resists the death-word but staggers!", 'warning')
+                        f"{the_name(target)} resists the death-word but staggers!", 'warning')
                     # v2.15+ audit sync: chain retired -> `INT * chain` pinned at INT * 5.
                     target.take_damage(self.player.INT * 5)
                 else:
                     self.add_message(
-                        f"The {target.name} ({target.hp} HP) is too strong for the death-word "
+                        f"{the_name(target)} ({target.hp} HP) is too strong for the death-word "
                         f"(threshold {threshold}).", 'warning')
             elif effect == 'imprisonment':
                 # Very long paralyze — effectively removes target from combat
-                is_boss = getattr(target, 'is_boss', False) or target.max_hp > 500
+                is_boss = _is_big_foe(target)
                 dur = max(15, int(60 * chain_scale))
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(
-                        f"The {target.name} resists imprisonment!", 'warning')
+                        f"{the_name(target)} resists imprisonment!", 'warning')
                 else:
                     target.add_effect('paralyzed', dur)
                     self.add_message(
-                        f"The {target.name} is sealed in arcane stone for {dur} turns!", 'success')
+                        f"{the_name(target)} is sealed in arcane stone for {dur} turns!", 'success')
             elif effect == 'dispel_magic':
                 # Strip ALL buffs from target. Player-applied DoTs (poison, bleed,
                 # petrifying, burning) survive — those are the player's investment.
@@ -2205,17 +2215,17 @@ class MagicMixin:
                         stripped += 1
                 if stripped:
                     self.add_message(
-                        f"{stripped} enchantment(s) on the {target.name} are dispelled!",
+                        f"{stripped} enchantment(s) on {the_name(target, lower=True)} are dispelled!",
                         'success')
                 else:
                     self.add_message(
-                        f"The {target.name} has no magical buffs to dispel.", 'info')
+                        f"{the_name(target)} has no magical buffs to dispel.", 'info')
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r
                 scaled = max(1, int((_r(power) if power else 6) * chain_scale))
                 actual = target.take_damage(scaled)
-                self.add_message(f"The {effect.replace('_', ' ')} hits the {target.name} for {actual} dmg!", 'success')
+                self.add_message(f"The {effect.replace('_', ' ')} hits {the_name(target, lower=True)} for {actual} dmg!", 'success')
                 if not target.alive:
                     self._on_monster_killed(target)
 

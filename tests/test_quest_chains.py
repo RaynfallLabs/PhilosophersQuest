@@ -310,7 +310,8 @@ def test_quest_artifacts_chronicled():
 # ---------------------------------------------------------------------------
 
 def test_burden_items_referenced_in_npc_encounters():
-    src = _src('npc_encounters')
+    # The encounter definitions moved to data/npc_encounters.json.
+    src = (ROOT / "data" / "npc_encounters.json").read_text(encoding='utf-8')
     assert "cursed_lodestone" in src
     assert "sealed_dispatch" in src
 

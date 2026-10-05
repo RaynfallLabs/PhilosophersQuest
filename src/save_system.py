@@ -118,6 +118,10 @@ def save_game(game) -> bool:
             '_secret_victory': getattr(game, '_secret_victory', False),
             # Deep-lore item spawn tracking
             '_lore_levels': getattr(game, '_lore_levels', {}),
+            # Duck of Doom spawn state (was not saved: a reload re-rolled the
+            # floor, so a run could get a second duck or none).
+            '_duck_of_doom_floor': getattr(game, '_duck_of_doom_floor', None),
+            '_duck_of_doom_placed': getattr(game, '_duck_of_doom_placed', False),
             '_lore_placed': getattr(game, '_lore_placed', set()),
             # One-cosmetic-per-item: per-run accessory appearance map (one look
             # per collapsed ring/amulet type). Backward-compatible: old saves

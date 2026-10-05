@@ -1,4 +1,5 @@
 import os
+from monster import the_name
 import random
 import sys
 
@@ -612,6 +613,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._npc_trigger_item_levels = state.get('_npc_trigger_item_levels', {})
         self._npc_trigger_items_placed = state.get('_npc_trigger_items_placed', set())
         self.player_title = state.get('player_title', '')
+        if state.get('_duck_of_doom_floor') is not None:
+            self._duck_of_doom_floor = state['_duck_of_doom_floor']
+        self._duck_of_doom_placed = state.get(
+            '_duck_of_doom_placed', getattr(self, '_duck_of_doom_placed', False))
         # Ascent / Death Pursuer state
         self.death_pursues = state.get('death_pursues', False)
         self.death_monster = state.get('death_monster', None)
@@ -1245,11 +1250,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             10: "Level 10. The tunnels twist into a maze. Someone built this to confuse.",
             20: "Level 20. The air is heavier down here. I can hear something large breathing.",
             30: "Level 30. A maze again. The walls feel like they're watching me.",
-            40: "Level 40. Halfway to madness, or halfway to the Stone. Hard to tell the difference.",
+            40: "Level 40. The statues on this floor are too lifelike, and not one of them is smiling.",
             50: "Level 50. Another maze. I'm starting to think these aren't natural.",
             60: "Level 60. The stone itself is warm. Something ancient lives at these depths.",
             70: "Level 70. Maze. The walls here are carved with warnings in dead languages.",
-            80: "Level 80. The darkness has texture. I can feel it pressing against my skin.",
+            80: "Level 80. Claw marks on the walls, higher than I can reach. Something down here has been straining at a leash.",
             90: "Level 90. One last maze. The floor trembles. I'm close to the end, one way or another.",
             100: "Level 100. The deepest place in the world. Whatever waits here, I'm ready. I have to be.",
         }
@@ -2210,7 +2215,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         m.status_effects['sleeping'] = max(
                             m.status_effects.get('sleeping', 0), 15)
                         self.add_message(
-                            f"The Ring of Solomon pacifies the {m.name}!", 'success')
+                            f"The Ring of Solomon pacifies {the_name(m, lower=True)}!", 'success')
                 self._chain_pacify_seen = seen
         except ImportError:
             pass
@@ -2520,6 +2525,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         from mystery_system import apply_mystery_reward
                         apply_mystery_reward('sisyphus', self.player, self, True)
                         self.player.quirk_progress['sisyphus_boulder_active'] = False
+                        # Once per run, like every other mystery (it was the
+                        # one that could be repeated on floors 78 to 92).
+                        _att = self.player.quirk_progress.setdefault('mysteries_attempted', [])
+                        if 'sisyphus' not in _att:
+                            _att.append('sisyphus')
                         # Remove the Sisyphus altar from the floor
                         from mystery_system import MysteryAltar
                         sis_altar = next(
@@ -2530,7 +2540,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             self.ground_items.remove(sis_altar)
                     elif _sis_tiles % 5 == 0:
                         self.add_message(
-                            f"The boulder weighs you down. {25 - _sis_tiles} tiles remain.", 'warning'
+                            f"The boulder drags at every step. {_sis_need - _sis_tiles} more.", 'warning'
                         )
                 elif not _has_boulder:
                     self.player.quirk_progress['sisyphus_boulder_active'] = False
@@ -2634,14 +2644,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Print messages about items and notable features at (x, y)."""
         # Special room notification (once per room per floor)
         _SPECIAL_ROOM_MSGS = {
-            'treasury':    ("You enter a treasure vault -- riches gleam in the darkness!", 'success'),
-            'library':     ("You enter an ancient library -- scrolls line the walls.", 'info'),
-            'shrine':      ("You enter a sacred shrine -- you feel the presence of higher powers.", 'info'),
-            'monster_den': ("You enter a monster den -- the stench of creatures fills the air!", 'danger'),
-            'zoo':         ("Welcome to the treasure zoo! Sleeping creatures surround you!", 'danger'),
-            'graveyard':   ("The air grows deathly cold. Graves stretch before you...", 'danger'),
-            'beehive':     ("A low buzzing fills the air. You've disturbed a hive!", 'danger'),
-            'barracks':    ("Soldiers' quarters -- weapons and armor are stacked neatly.", 'info'),
+            'treasury':    ("Strongboxes line the walls of this chamber. Somebody meant to come back for these.", 'success'),
+            'library':     ("Shelves of scroll-cases climb the walls, dry and undisturbed. A library, this far down.", 'info'),
+            'shrine':      ("A small shrine, swept clean, with an altar that has seen recent use. It is easier to breathe in here.", 'info'),
+            'monster_den': ("The floor here is trampled flat and littered with gnawed bone. This is where they sleep!", 'danger'),
+            'zoo':         ("Gold is heaped along the walls of this chamber, and things are asleep on top of it. Someone has been collecting both!", 'danger'),
+            'graveyard':   ("Rows of graves fill this chamber, each with its marker. Not all of the markers are standing straight.", 'danger'),
+            'beehive':     ("Wax and old honey coat the walls of this chamber. The larder is full. Listen for the owners.", 'danger'),
+            'barracks':    ("Bunks, weapon racks and a cold cook-pot. A garrison slept here, and some of it still does.", 'info'),
             'swamp':       ("Murky water and marsh gas fill this chamber.", 'warning'),
             'throne_room': ("An aura of ancient authority radiates from a throne.", 'info'),
         }
@@ -2660,7 +2670,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             msg, style = _SPECIAL_ROOM_MSGS.get(rtype, ("You enter a special room.", 'info'))
                             self.add_message(msg, style)
                             _ROOM_CHRONICLE = {
-                                'treasury': "Found a treasure vault. Gold everywhere. Someone wanted this hidden.",
+                                'treasury': "Found a strongroom. Whoever filled it never came back to count it.",
                                 'library': "Found an ancient library. The scrolls are still intact. Knowledge survives down here.",
                                 'graveyard': "Stumbled into an underground graveyard. The dead are restless.",
                             }
@@ -2697,6 +2707,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         f"You see {_an} here. You notice a faint, predatory smell.",
                     ]
                     self.add_message(_prng.choice(_MIMIC_HINTS), 'warning')
+
+        # A mystery altar or a trader is a place, not a thing lying on the
+        # floor ("You see a The Sphinx lying here."). Stepping onto an altar
+        # offers it: the only other way in was the look-cursor, which nothing
+        # in the game told the player about.
+        from mystery_system import MysteryAltar, MerchantNPC
+        _altar = next((i for i in here if isinstance(i, MysteryAltar)), None)
+        _trader = next((i for i in here if isinstance(i, MerchantNPC)), None)
+        here = [i for i in here if not isinstance(i, (MysteryAltar, MerchantNPC))]
+        if _trader is not None:
+            self.add_message(
+                "A trader has spread wares on a blanket here. (Y to trade)", 'info')
+        if _altar is not None and self.state == STATE_PLAYER:
+            self._start_mystery(_altar)
 
         if len(here) == 1:
             item = here[0]
@@ -3179,7 +3203,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 m.tick_effects()
                 if not m.alive:
                     self._on_monster_killed(m)
-                    self.add_message(f"The {m.name} succumbs to its wounds!", 'combat')
+                    self.add_message(f"{the_name(m)} succumbs to its wounds!", 'combat')
 
         # Duck of Doom: advance the 2026-turn worn-on-head counter and
         # trigger hatch on completion.
@@ -4025,7 +4049,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _snd.play('trap')
         if (pos in self.visible) or monster in self.monsters:
             self.add_message(
-                f"The rewired {trap_type.replace('_', ' ')} trap snaps on the {monster.name}!",
+                f"The rewired {trap_type.replace('_', ' ')} trap snaps on {the_name(monster, lower=True)}!",
                 'success')
 
         # Apply damage (some traps have damage 0; those are status-only).
@@ -6723,6 +6747,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     ]
 
     def _do_drop_item(self, item):
+        # Sir Aldric's Cursed Lodestone. Its lore and the knight both say it
+        # cannot be put down, but nothing enforced that: accept the burden,
+        # drop it next turn, keep the karma. It now stays until it is laid on
+        # an altar, where the curse breaks.
+        if getattr(item, 'id', '') == 'cursed_lodestone':
+            px, py = self.player.x, self.player.y
+            if self.dungeon.is_altar(px, py):
+                self.player.remove_from_inventory(item)
+                self.add_message(
+                    "You lay the stone on the altar. It cracks along its length "
+                    "and is only a stone. Somewhere a knight sleeps easier.", 'success')
+                self._log_chronicle(
+                    "Carried Sir Aldric's stone to an altar. It broke there. "
+                    "I had almost stopped noticing the weight.")
+                self._advance_turn()
+            else:
+                self.add_message(
+                    "You try to set the stone down. Your hand will not open. "
+                    "This is a thing to be laid before God, not left in a corridor.",
+                    'warning')
+            return
         # Cursed EQUIPPED items cannot be dropped — but cursed items in inventory CAN be
         is_equipped = (item is self.player.weapon or item is self.player.ranged_weapon
                        or item is self.player.shield
@@ -6917,11 +6962,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             None
         )
         if merchant is None:
-            self.add_message("No merchant nearby.  (T opens shop when adjacent)", 'info')
+            self.add_message("No merchant nearby. (Y opens the shop when one stands beside you.)", 'info')
             return
         self._shop_merchant = merchant
         self._shop_selection = 0
-        self._shop_haggled = set()
+        # Haggling is remembered on the goods themselves. It used to reset
+        # every time the shop was opened: close, reopen, haggle again, and
+        # any item could be walked down to 1 gold.
+        self._shop_haggled = {i for i, it in enumerate(merchant.stock)
+                              if getattr(it, '_haggled', False)}
         self.state = STATE_SHOP
 
     @staticmethod
@@ -6965,6 +7014,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             haggled = getattr(self, '_shop_haggled', set())
             haggled.add(sel)
             self._shop_haggled = haggled
+            try:
+                self._shop_merchant.stock[sel]._haggled = True
+            except (AttributeError, IndexError):
+                pass
             self.state = STATE_SHOP
 
         self.quiz_engine.start_quiz(

@@ -202,7 +202,8 @@ def test_npc_reward_items_exist():
 
 
 def test_npc_reward_items_referenced_in_npc_encounters():
-    src = (ROOT / "src" / "npc_encounters.py").read_text(encoding='utf-8')
+    # The encounter definitions moved to data/npc_encounters.json.
+    src = (ROOT / "data" / "npc_encounters.json").read_text(encoding='utf-8')
     bad = [iid for iid in NPC_REWARD_ITEMS if iid not in src]
     assert not bad, f"NPC reward items not referenced in encounters: {bad}"
 

@@ -47,6 +47,7 @@ because the dictionary is co-located with story-popup code that lives in
 main.py.  Bound-method lookup goes through ``self.`` so MRO finds it.
 """
 from __future__ import annotations
+from monster import the_name
 
 import random
 
@@ -631,7 +632,7 @@ class CombatMixin:
         # flag used to be consumed HERE, which meant it sat armed until the
         # next real kill and swallowed that kill's loot and corpse instead.
         self.player._spared_this_attack = False
-        self.add_message(f"The {monster.name} is slain!", 'success')
+        self.add_message(f"{the_name(monster)} is slain!", 'success')
         self._drop_treasure(monster)
 
         # Cadmus / Vel of Murugan / Shamshir (engine wave 4):
@@ -641,7 +642,10 @@ class CombatMixin:
         if _ps:
             self.player._pending_summon = None
             try:
-                from pet_system import Pet, random_pet_species
+                # (Pet and random_pet_species come from the module imports. A
+                # local `from pet_system import ... random_pet_species` named a
+                # function that does not exist; the except below swallowed the
+                # ImportError and no kill-summon ally ever appeared.)
                 _spawn_x, _spawn_y = _ps.get('spawn_at', (self.player.x, self.player.y))
                 # Adjacent fallback if spawn tile occupied
                 if any(p.alive and p.x == _spawn_x and p.y == _spawn_y for p in self.pets) \
@@ -734,13 +738,26 @@ class CombatMixin:
             self.seals_broken.add(seal_id)
             count = len(self.seals_broken)
             self.add_message(
-                f"The {monster.name} falls! A seal is broken! ({count}/7)", 'success')
+                f"{the_name(monster)} falls! A seal is broken! ({count}/7)", 'success')
             self._log_chronicle(f"Broke a seal. {monster.name} is gone. {count} of 7 seals now shattered. The air feels heavier.")
             if count == 7:
                 self.add_message(
                     "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
                 self._log_chronicle("All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
         self.ground_items.append(self._make_corpse(monster))
+
+    def _announce_revive(self, monster):
+        """The Green Knight's beheading game: say so when a foe that should
+        have died stands back up. take_damage set `_just_revived` and nothing
+        ever read it, so his health bar simply refilled in silence."""
+        if not getattr(monster, '_just_revived', False):
+            return
+        monster._just_revived = False
+        line = getattr(monster, 'revive_message', '') or (
+            f"{the_name(monster)} should be dead, and is getting up.")
+        self.add_message(line, 'danger')
+        self._log_chronicle(
+            f"I struck {the_name(monster, lower=True)} down and it stood back up.")
 
     def _drop_philosophers_stone(self, x: int, y: int):
         """Place the Stone at (x, y) unless one already exists in this run
@@ -769,7 +786,7 @@ class CombatMixin:
             from items import add_gold_to_tile
             add_gold_to_tile(self.ground_items, gold, monster.x, monster.y)
             self.add_message(
-                f"The {monster.name} drops {gold} gold coins.", 'loot'
+                f"{the_name(monster)} drops {gold} gold coins.", 'loot'
             )
         item_chance = treasure.get('item_chance', 0.0)
         if _rng.random() < item_chance:
@@ -851,7 +868,13 @@ class CombatMixin:
                             pick_random_weapon_for_floor,
                             pick_random_armor_for_floor,
                             pick_random_shield_for_floor)
-        effective_floor = max(1, tier * 5)
+        # Loot is at least as deep as the floor it drops on. The old rule was
+        # tier * 5 alone and tiers stop at 5, so everything past floor 25
+        # (Anansi on floor 92 included) dropped floor-25 gear.
+        _here = int(getattr(self, 'dungeon_level', 1) or 1)
+        if not 1 <= _here <= 100:      # the Cow Level is numbered 999
+            _here = 1
+        effective_floor = max(1, tier * 5, _here)
 
         # 50% weapon/armor/shield (template+material common), 50% magic item pool
         roll = _rng.random()
@@ -874,7 +897,10 @@ class CombatMixin:
                 except Exception:
                     pass
             if candidates:
-                gear = _rng.choice(candidates)
+                # Weighted by each item's own floor spawn weight (a flat
+                # choice made a harmful potion as likely as a healing one).
+                from container_system import _weighted_common_pick
+                gear = _weighted_common_pick(candidates, effective_floor, _rng)
 
         if gear is not None:
             chosen = copy_at(gear, x, y) if hasattr(gear, 'id') else gear
@@ -1062,7 +1088,7 @@ class CombatMixin:
             # Store target for quiz callback, then start AI escalator chain
             self._sketch_target_monster = target
             self.add_message(
-                f"You begin sketching the {target.name} with furious concentration...", 'info')
+                f"You begin sketching {the_name(target, lower=True)} with furious concentration...", 'info')
             self.quiz_title = "MANIFESTING  --  AI"
             self.state = STATE_QUIZ
             pl = self.player
@@ -1546,13 +1572,14 @@ class CombatMixin:
             self.state = STATE_PLAYER
             self.combat_target = None
             self._fire_strike_finisher(monster, chain, damage, killed)
+            self._announce_revive(monster)
             if chain == 0:
                 self.add_message(
-                    f"Your shot flies wide -- you miss the {monster.name}!", 'warning'
+                    f"Your shot flies wide -- you miss {the_name(monster, lower=True)}!", 'warning'
                 )
             else:
                 self.add_message(
-                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes the {monster.name} for {damage} damage!",
+                    f"Chain x{chain}! Your {weapon.requires_ammo} strikes {the_name(monster, lower=True)} for {damage} damage!",
                     'success'
                 )
                 if killed:
@@ -1713,12 +1740,13 @@ class CombatMixin:
             self.state = STATE_PLAYER
             self.combat_target = None
             self._fire_strike_finisher(monster, chain, damage, killed)
+            self._announce_revive(monster)
             # Curtana: the blow would have killed, but the Sword of Mercy
             # left the foe alive at 1 HP.
             if getattr(self.player, '_spared_this_attack', False):
                 self.player._spared_this_attack = False
                 self.add_message(
-                    f"You spare the {monster.name} — Curtana's mercy. (+1 max HP)",
+                    f"You spare {the_name(monster, lower=True)} — Curtana's mercy. (+1 max HP)",
                     'success')
             # Tablet of Destinies: mark reroll as used this floor.
             # Chain-equip passive one_thousand_and_one consumes its per-floor charge when reroll fires.
@@ -1737,7 +1765,7 @@ class CombatMixin:
                         pass
             if chain == 0:
                 self.add_message(
-                    f"You swing wildly at the {monster.name} and miss!", 'warning'
+                    f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'
                 )
             elif (chain >= 1 and monster.kind == 'fenrir_wolf' and monster.alive
                   and any(getattr(i, 'id', '') == 'vidars_sandal'
@@ -1791,23 +1819,23 @@ class CombatMixin:
                                     'danger')
                 # Chain combat v2 (v2.14.0): crit retired. Chain IS the crit —
                 # the message just calls out the chain rung and the damage.
-                msg = f"Chain x{chain}! You strike the {monster.name} for {damage} damage!"
+                msg = f"Chain x{chain}! You strike {the_name(monster, lower=True)} for {damage} damage!"
                 if stunned:
-                    msg += f" The {monster.name} is stunned!"
+                    msg += f" {the_name(monster)} is stunned!"
                 if monster.status_effects.get('bleeding', 0) > 0:
-                    msg += f" The {monster.name} is bleeding!"
+                    msg += f" {the_name(monster)} is bleeding!"
                 if knocked and not killed:
                     from combat import apply_knockback
                     apply_knockback(self.player, monster, self.dungeon, self.monsters)
-                    msg += f" The {monster.name} is knocked back!"
+                    msg += f" {the_name(monster)} is knocked back!"
                 if kwargs.get('poisoned'):
-                    msg += f" The {monster.name} is poisoned!"
+                    msg += f" {the_name(monster)} is poisoned!"
                 if kwargs.get('burned'):
-                    msg += f" The {monster.name} is burning!"
+                    msg += f" {the_name(monster)} is burning!"
                 if kwargs.get('confused'):
-                    msg += f" The {monster.name} is confused!"
+                    msg += f" {the_name(monster)} is confused!"
                 if kwargs.get('petrified'):
-                    msg += f" The {monster.name} is turning to stone!"
+                    msg += f" {the_name(monster)} is turning to stone!"
                 if kwargs.get('healed'):
                     msg += " You absorb life energy!"
                 self.add_message(msg, 'success')
@@ -1962,7 +1990,7 @@ class CombatMixin:
                 m._confused_hit = None
                 if (m.x, m.y) in self.visible or (victim.x, victim.y) in self.visible:
                     self.add_message(
-                        f"The confused {m.name} attacks the {victim.name} for {dmg} damage!", 'combat')
+                        f"The confused {m.name} attacks {the_name(victim, lower=True)} for {dmg} damage!", 'combat')
                 if not victim.alive:
                     self._on_monster_killed(victim)
             # Abaddon locust swarm spawning
@@ -1978,7 +2006,7 @@ class CombatMixin:
             if heal_target is not None and (m.x, m.y) in self.visible:
                 amt = getattr(m, '_heal_amount', 0)
                 self.add_message(
-                    f"The {m.name} chants and heals the {heal_target.name} for {amt} HP!",
+                    f"{the_name(m)} chants and heals the {heal_target.name} for {amt} HP!",
                     'info')
                 m._heal_target = None
                 m._heal_amount = 0
@@ -2003,14 +2031,14 @@ class CombatMixin:
                     m.alive = False
                 m.status_effects['stuck_in_pit'] = random.randint(3, 4)
                 if (m.x, m.y) in self.visible:
-                    self.add_message(f"The {m.name} falls into a pit!", 'info')
+                    self.add_message(f"{the_name(m)} falls into a pit!", 'info')
                 if not m.alive:
                     self._on_monster_killed(m)
                 continue  # can't attack this turn — just fell
             if did_attack:
                 # Displacement: 30% miss chance
                 if self.player.has_effect('displacement') and random.random() < 0.30:
-                    self.add_message(f"The {m.name}'s attack passes through your displaced image!", 'info')
+                    self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
 
                 _effects_before = set(self.player.status_effects.keys())
@@ -2054,7 +2082,7 @@ class CombatMixin:
                             if _is_melee and hasattr(m, 'add_effect'):
                                 m.add_effect('slowed', 3)
                                 self.add_message(
-                                    f"Arachne's silk drags the {m.name} — slowed!", 'info')
+                                    f"Arachne's silk drags {the_name(m, lower=True)} — slowed!", 'info')
                     except ImportError:
                         pass
 
@@ -2073,7 +2101,7 @@ class CombatMixin:
                                 _eff = random.choice(_candidates)
                                 m.add_effect(_eff, 5)
                                 self.add_message(
-                                    f"Theseus's sandals turn the {m.name}'s tactic against it — {_eff.replace('_', ' ')}!",
+                                    f"Theseus's sandals turn {the_name(m, lower=True)}'s tactic against it — {_eff.replace('_', ' ')}!",
                                     'info')
                     except ImportError:
                         pass
@@ -2091,7 +2119,7 @@ class CombatMixin:
                             if random.random() < _refl_chance and hasattr(m, 'add_effect'):
                                 m.add_effect('poisoned', 4)
                                 self.add_message(
-                                    f"The Hydra carapace bleeds caustic ichor — the {m.name} is poisoned!",
+                                    f"The Hydra carapace bleeds caustic ichor — {the_name(m, lower=True)} is poisoned!",
                                     'combat')
                     except ImportError:
                         pass
@@ -2122,7 +2150,7 @@ class CombatMixin:
                         _cv.hp -= _coll_dmg
                         if (m.x, m.y) in self.visible or (_cv.x, _cv.y) in self.visible:
                             self.add_message(
-                                f"The {m.name}'s attack tears through the {_cv.name} for {_coll_dmg} collateral damage!",
+                                f"{the_name(m)}'s attack tears through the {_cv.name} for {_coll_dmg} collateral damage!",
                                 'combat')
                         if _cv.hp <= 0:
                             _cv.alive = False
@@ -2134,13 +2162,13 @@ class CombatMixin:
                 if _sp_drain > 0 and dmg > 0:
                     self.player.sp = max(0, self.player.sp - _sp_drain)
                     self.add_message(
-                        f"The {m.name}'s attack drains your stamina! (-{_sp_drain} SP)", 'danger')
+                        f"{the_name(m)}'s attack drains your stamina! (-{_sp_drain} SP)", 'danger')
 
                 # Fire shield: reflect melee damage back
                 if self.player.has_effect('fire_shield') and dmg > 0:
                     reflect_dmg = random.randint(2, 9)
                     m.hp -= reflect_dmg
-                    self.add_message(f"Flames lash back at the {m.name} for {reflect_dmg}!", 'danger')
+                    self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
                     if m.hp <= 0:
                         m.alive = False
                         self._on_monster_killed(m)
@@ -2148,7 +2176,7 @@ class CombatMixin:
                 if self.player.has_effect('cold_shield') and dmg > 0:
                     reflect_dmg = random.randint(2, 9)
                     m.hp -= reflect_dmg
-                    self.add_message(f"Ice shatters back at the {m.name} for {reflect_dmg}!", 'danger')
+                    self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
                     if m.hp <= 0 and m.alive:
                         m.alive = False
                         self._on_monster_killed(m)
@@ -2161,7 +2189,7 @@ class CombatMixin:
                         _rip = max(1, int((_w.base_damage or 4) * 0.85))
                         _rip_actual = m.take_damage(_rip)
                         self.add_message(
-                            f"You riposte the {m.name} for {_rip_actual}!", 'success')
+                            f"You riposte {the_name(m, lower=True)} for {_rip_actual}!", 'success')
                         # Consume one charge
                         self.player.status_effects['riposte_armed'] = max(
                             0, self.player.status_effects.get('riposte_armed', 0) - 1)
@@ -2192,7 +2220,7 @@ class CombatMixin:
                     if 'fire' in _atk_types:
                         _fire_ref = max(1, int(dmg * _shld.fire_reflect))
                         m.hp -= _fire_ref
-                        self.add_message(f"Svalinn reflects flame back at the {m.name} for {_fire_ref}!", 'combat')
+                        self.add_message(f"Svalinn reflects flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
                         if m.hp <= 0 and m.alive:
                             m.alive = False
                             self._on_monster_killed(m)
@@ -2373,7 +2401,7 @@ class CombatMixin:
                             m.add_effect(_new_eff, 8)
                             self.add_message(
                                 f"Your spell turning reflects the {_new_eff.replace('_', ' ')} "
-                                f"back at the {m.name}!", 'info'
+                                f"back at {the_name(m, lower=True)}!", 'info'
                             )
 
                 if dmg > 0:

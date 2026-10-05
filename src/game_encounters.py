@@ -45,7 +45,7 @@ class EncountersMixin:
         from monster import Monster
         cow_def = {
             'id': 'secret_cow',
-            'name': 'a cow',
+            'name': 'Cow',
             'symbol': 'C',
             'color': [180, 140, 80],
             'hp': 1,
@@ -871,15 +871,32 @@ class EncountersMixin:
         cls_name = type_map.get(rtype)
         if not cls_name:
             return None
+        lvl = max(1, min(100, self.dungeon_level))
         try:
-            from items import is_random_loot
+            # Gear comes from the floor's own generator. The item files hold
+            # only named uniques, whose stats sat far under floor gear deep
+            # down ("masterwork" was a fifth of a common sword at floor 95).
+            from items import (is_random_loot, pick_random_weapon_for_floor,
+                               pick_random_armor_for_floor, pick_random_shield_for_floor)
+            _gear = {'weapon': pick_random_weapon_for_floor,
+                     'armor': pick_random_armor_for_floor,
+                     'shield': pick_random_shield_for_floor}.get(cls_name)
+            if _gear is not None:
+                result = _gear(lvl, random)
+                if result is not None:
+                    result.x, result.y = self.player.x, self.player.y
+                    result.identified = True
+                    return result
             candidates = []
             for item in load_items(cls_name):
                 ml = getattr(item, 'min_level', 1)
                 if ml <= self.dungeon_level and ml < 9999 and is_random_loot(item):
                     candidates.append(item)
             if candidates:
-                template = random.choice(candidates)
+                # Weighted by floor spawn weight, not a flat pick (on floors 3
+                # to 9 most potion KINDS are harmful).
+                from container_system import _weighted_common_pick
+                template = _weighted_common_pick(candidates, lvl, random)
                 result = copy_at(template, self.player.x, self.player.y)
                 result.identified = True
                 return result

@@ -19,13 +19,13 @@ MYSTERIES = {
         'floor_range': (22, 35),
         'symbol': 'W',
         'color': (218, 165, 32),  # gold
-        'description': "A towering stone sphinx fixes you with ancient eyes. 'Answer my riddles or perish.'",
+        'description': "A stone sphinx lies across the passage, woman-faced and lion-bodied. 'Thebes sent me its cleverest,' she says. 'I ate most of them. Answer.'",
         'key_item': None,
         'gold_cost': 0,
         'challenge': {'mode': 'escalator_threshold', 'subject': 'philosophy', 'tier': 3, 'threshold': 2, 'total': 6},
         'reward': {'WIS': 2, 'INT': 1},
-        'reward_text': "The Sphinx crumbles. Ancient wisdom floods your mind. WIS+2, INT+1.",
-        'fail_text': "The Sphinx dismisses you. Perhaps another time.",
+        'reward_text': "The Sphinx gives one cry and throws herself from her perch, as her sister did at Thebes. Something of her long patience stays with you. (Wisdom +2, Intelligence +1)",
+        'fail_text': "The Sphinx yawns. 'Not clever enough to be worth eating,' she says, and settles back into stone.",
         'invert_result': False,
     },
     'pandora': {
@@ -33,13 +33,13 @@ MYSTERIES = {
         'floor_range': (20, 30),
         'symbol': '[',
         'color': (180, 30, 30),  # dark red
-        'description': "A sealed obsidian coffer. A warning is etched: 'Do not open.' The keyhole glows red.",
+        'description': "A coffer of black stone, cold to the touch. One line is cut into the lid: 'Do not open.' The lock looks as though it would yield to a practised hand.",
         'key_item': {'name': "Pandora's Key", 'symbol': 'P', 'color': (180, 30, 30), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'economics', 'tier': 2, 'threshold': 2, 'total': 5},
         'reward': {'effects': ['magic_resist', 'displacement'], 'gold': 300},
-        'reward_text': "The box opens wrong -- chaos floods out... and so does Hope. Permanent magic resist, displacement, +300 gold.",
-        'fail_text': "You open it 'correctly' -- but nothing is inside. Only gold.",
+        'reward_text': "The lock slips, the lid flies back, and every sorrow in the box goes howling past you into the dark. One small thing is left at the bottom. It is Hope, and it is yours. (Magic Resistance, Displacement, 300 gold)",
+        'fail_text': "The lock opens cleanly under your hand. Inside is a neat stack of coin and nothing else. Whatever else was kept here stays shut in.",
         'fail_reward': {'gold': 100},
         'invert_result': True,  # INVERTED: failure quiz = actual reward
     },
@@ -48,13 +48,13 @@ MYSTERIES = {
         'floor_range': (45, 55),
         'symbol': 'U',
         'color': (200, 200, 255),  # silver-blue
-        'description': "A ruined chapel. A chalice rests on the altar, glowing faintly.",
-        'key_item': {'name': "A Chalice", 'symbol': 'U', 'color': (200, 200, 255), 'weight': 1.0},
+        'description': "A ruined chapel, roofless and quiet. The altar stone is bare, with a ring worn into it where a cup once stood.",
+        'key_item': {'name': "Tarnished Chalice", 'symbol': 'U', 'color': (200, 200, 255), 'weight': 1.0},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 3, 'threshold': 2, 'total': 7},
         'reward': {'max_hp': 30, 'CON': 2},
-        'reward_text': "You are found worthy. Max HP+30, CON+2.",
-        'fail_text': "You are not yet worthy of the Grail.",
+        'reward_text': "The cup fills from nowhere with clear water. You drink, and the ache of the whole descent leaves you. (Max HP +30, Constitution +2)",
+        'fail_text': "The cup stays empty and the chapel stays silent. Galahad's seat is not for everyone.",
         'invert_result': False,
     },
     'fleece': {
@@ -62,13 +62,13 @@ MYSTERIES = {
         'floor_range': (38, 50),
         'symbol': '+',
         'color': (218, 165, 32),  # golden
-        'description': "An altar carved with the image of a ram. Hung above it should be the Golden Fleece.",
+        'description': "A bare oak, and beneath it an altar carved with a ram. A great serpent lies coiled in the roots. It has not blinked since Colchis.",
         'key_item': {'name': "Golden Fleece", 'symbol': '+', 'color': (218, 165, 32), 'weight': 2.0},
         'gold_cost': 0,
         'challenge': {'mode': 'chain', 'subject': 'animal', 'tier': 3, 'threshold': 2, 'max_chain': None},
         'reward': {'effects': ['regenerating', 'poison_resist']},
-        'reward_text': "The Fleece accepts you. Permanent regeneration and poison resistance.",
-        'fail_text': "The serpent guardian rejects your attempt.",
+        'reward_text': "The serpent lowers its head and lets you hang the Fleece where it belongs. Its gold warms you through. (Regeneration, Poison Resistance)",
+        'fail_text': "The serpent takes the Fleece out of your hands and draws it down into the roots. It did not think much of your woodcraft.",
         'invert_result': False,
     },
     'mimir': {
@@ -76,7 +76,7 @@ MYSTERIES = {
         'floor_range': (42, 55),
         'symbol': 'o',
         'color': (50, 120, 200),  # dark teal-blue
-        'description': "A dark well with runes carved around its rim. The water below holds all wisdom. A price is implied.",
+        'description': "A dark well under a root as thick as a tower. A severed head floats in it with its eyes open. 'Odin paid an eye for one horn of this,' says Mimir. 'I do not give credit.'",
         'key_item': None,
         'gold_cost': 0,
         # PER-1 is applied before the quiz starts; it is deliberately KEPT on
@@ -86,22 +86,22 @@ MYSTERIES = {
         'stat_cost': {'PER': -1},  # applied before quiz starts; not refunded on fail
         'challenge': {'mode': 'chain', 'subject': 'philosophy', 'tier': 4, 'threshold': 3, 'max_chain': None},
         'reward': {'WIS': 1, 'INT': 1},
-        'reward_text': "Mimir's Wisdom: +1 WIS, +1 INT (permanent).",
-        'fail_text': "Your mind cannot hold the well's knowledge. The cost was paid for nothing.",
+        'reward_text': "The water is so cold it rings in your teeth. For one breath you see how everything fits. Most of it fades. Enough stays. (Wisdom +1, Intelligence +1)",
+        'fail_text': "The water runs through your mind like a sieve. Mimir keeps the price. He always does.",
         'invert_result': False,
     },
     'mjolnir': {
-        'name': "The Dwarven Forge",
+        'name': "Brokkr's Anvil",
         'floor_range': (33, 45),
         'symbol': '^',
         'color': (255, 140, 0),  # orange
-        'description': "A dwarven forge, still hot. The anvil awaits a hammer worthy of reforging.",
-        'key_item': {'name': "Mjolnir (unfinished)", 'symbol': '^', 'color': (255, 140, 0), 'weight': 8.0},
+        'description': "A dwarven forge, still hot, with the bellows stopped mid-stroke. The story goes that a fly bit the smith's eyelid at the worst moment. Someone has to finish the count.",
+        'key_item': {'name': "Unfinished Hammer-Head", 'symbol': '^', 'color': (255, 140, 0), 'weight': 8.0},
         'gold_cost': 0,
         'challenge': {'mode': 'escalator_threshold', 'subject': 'math', 'tier': 3, 'threshold': 2, 'total': 6},
         'reward': {'special': 'forge_mjolnir', 'STR': 2},
-        'reward_text': "The dwarves' work is complete. Mjolnir reforged (+4 enchant). STR+2.",
-        'fail_text': "The rhythm falters. The hammer remains unfinished.",
+        'reward_text': "You keep the bellows steady to the last stroke. The handle still comes out short. Nobody has ever complained about the rest of it. (Strength +2)",
+        'fail_text': "The count slips and the iron cools grey. The hammer-head is slag now.",
         'invert_result': False,
     },
     'crucible': {
@@ -114,8 +114,8 @@ MYSTERIES = {
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'philosophy', 'tier': 1, 'threshold': 3, 'total': 4},
         'reward': {'gold': 400},
-        'reward_text': "The lead transmutes. 400 gold coins appear.",
-        'fail_text': "The transmutation fails. The lead remains lead.",
+        'reward_text': "The lead shivers, runs bright, and sets as gold. The alchemists were right about one thing. (400 gold)",
+        'fail_text': "The crucible spits and goes dark. The lead has boiled away to a grey smear.",
         'invert_result': False,
     },
     'oracle': {
@@ -123,13 +123,13 @@ MYSTERIES = {
         'floor_range': (25, 35),
         'symbol': 'D',
         'color': (160, 80, 200),  # purple
-        'description': "A smoking rift in the stone, tended by a stone priestess. Visions await those who offer tribute.",
+        'description': "Sweet smoke rises from a crack in the floor. A priestess sits over it on a three-legged stool, and she has plainly been sitting there a long time. A bronze bowl waits for coin.",
         'key_item': None,
         'gold_cost': 50,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 3, 'threshold': 2, 'total': 7},
         'reward': {'special': 'oracle_reveal'},
         'reward_text': "The Oracle speaks. Three hidden paths revealed.",
-        'fail_text': "The Oracle falls silent. Your tribute is forfeit.",
+        'fail_text': "The priestess says something in hexameter that could mean anything. The coin stays in the bowl.",
         'invert_result': False,
     },
     'solomon': {
@@ -137,12 +137,12 @@ MYSTERIES = {
         'floor_range': (30, 42),
         'symbol': '*',
         'color': (255, 220, 50),  # bright gold
-        'description': "A throne room with two doors. A stone inscription reads: 'Judge wisely and be rewarded.'",
+        'description': "Two women carved in stone face an empty judgment seat, and a carved infant lies between them. A sword hangs on the wall behind. The inscription is one word: 'Judge.'",
         'key_item': {'name': "Seal of Solomon", 'symbol': '*', 'color': (255, 220, 50), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'history', 'tier': 3, 'threshold': 3, 'total': 4},
         'reward': {'WIS': 2, 'special': 'ring_of_command'},
-        'reward_text': "Your wisdom is acknowledged. WIS+2. A Ring of Command placed in your hand.",
+        'reward_text': "One stone mother lowers her arms and the other turns her face away. The seat finds your judgment sound. (Wisdom +2, and a signet from the throne room)",
         'fail_text': "Your judgment is found wanting.",
         'invert_result': False,
     },
@@ -151,13 +151,13 @@ MYSTERIES = {
         'floor_range': (58, 72),
         'symbol': '+',
         'color': (100, 220, 100),  # light green
-        'description': "A desolate hall. A wounded king lies motionless. Something nearby could help -- if you ask rightly.",
+        'description': "A cold hall with a dead hearth. A king lies on a litter beside it, wounded through the thigh, and watches you come in. He seems to be waiting for you to say something.",
         'key_item': {'name': "Healing Herb", 'symbol': '+', 'color': (100, 220, 100), 'weight': 0.5},
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 4, 'threshold': 2, 'total': 7},
         'reward': {'max_hp': 30, 'special': 'fisher_cooldown'},
-        'reward_text': "The king heals. He blesses you: Max HP+30, prayer cooldown halved forever.",
-        'fail_text': "You asked the wrong thing. The king remains wounded.",
+        'reward_text': "You ask what ails him, which is all anyone ever had to do. The king stands. Somewhere far above, rain begins to fall on the Waste Land. (Max HP +30. Heaven hears you twice as often.)",
+        'fail_text': "You talk of everything but the wound. The king turns his face to the wall.",
         'invert_result': False,
     },
     'sisyphus': {
@@ -170,7 +170,7 @@ MYSTERIES = {
         'gold_cost': 0,
         'challenge': {'mode': 'physical', 'tiles': 15},  # walk 15 tiles over carry limit while holding boulder
         'reward': {'STR': 2, 'INT': 1},
-        'reward_text': "The boulder vanishes. Your body is transformed by the effort. STR+2, INT+1.",
+        'reward_text': "The boulder reaches the top and, for once, stays there. One must imagine you happy. (Strength +2, Intelligence +1)",
         'fail_text': "",
         'invert_result': False,
     },
@@ -179,13 +179,13 @@ MYSTERIES = {
         'floor_range': (14, 26),
         'symbol': 'Q',
         'color': (40, 140, 100),  # dark green
-        'description': "A bubbling cauldron of Celtic make. It demands a tribute of three prepared meals.",
+        'description': "A black cauldron rimmed with pearls, kept warm by no fire you can see. The Welsh say it will not boil a coward's food. It looks hungry.",
         'key_item': None,  # no key -- requires 3 Food items in inventory
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'cooking', 'tier': 2, 'threshold': 1, 'total': 1},
         'reward': {'effects': ['searching', 'warning']},
-        'reward_text': "The cauldron's magic fills you. Permanent searching and danger-warning.",
-        'fail_text': "The cauldron rejects your offering. The flames gutter and die.",
+        'reward_text': "The cauldron takes all three dishes and boils without complaint. Its steam clears your eyes. (Searching, Danger Sense)",
+        'fail_text': "The cauldron goes cold in an instant. It has decided what kind of cook you are.",
         'invert_result': False,
     },
 }
@@ -583,7 +583,7 @@ class MerchantNPC:
         self.x            = x
         self.y            = y
         self.id           = 'merchant_npc'
-        self.name         = "Svirfneblin Trader"
+        self.name         = "Deep Gnome Trader"
         self.symbol       = '@'
         self.color        = (180, 180, 220)   # pale grey-blue (deep gnome skin)
         self.weight       = 0
@@ -592,8 +592,8 @@ class MerchantNPC:
         self.not_pickable = True
         self.identified   = True
         self.item_class   = 'merchant'
-        self.lore         = "A deep gnome trader who navigates the subterranean passages with ease, "\
-                            "hauling wares between settlements no surface-dweller has ever seen."
+        self.lore         = "A small grey trader with a pack twice his size and a lantern he never seems to need. "\
+                            "He will not say where his stock comes from, only that the previous owners are past caring."
         self.stock        = stock     # list of Item objects for sale
         self.prices       = prices    # parallel list of int prices
         self.sold_out     = False

@@ -12,21 +12,29 @@ RAGE_STACK_CAP = 8
 LOCUST_CAP = 12
 
 
-def the_name(monster) -> str:
-    """Name for a sentence start: "The giant rat", but "Arachne", "The Sphinx".
+def the_name(monster, lower: bool = False) -> str:
+    """A monster's name with the right article.
 
-    Named foes (bosses, mini-bosses) are proper nouns, and four of them
-    already begin with "The". Blindly prefixing "The " produced "The The
-    Sphinx is slain!" and "The Baba Yaga misses!".
+    Sentence start (default): "The giant rat", but "Arachne", "The Sphinx".
+    Mid-sentence (lower=True): "the giant rat", "Arachne", "the Sphinx".
+
+    Named foes (bosses, mini-bosses, scripted NPCs) are proper nouns, and
+    four of them already begin with "The". Blindly prefixing "The " produced
+    "The The Sphinx is slain!" and "The Baba Yaga misses!".
     """
     name = getattr(monster, 'name', '') or 'something'
-    if name.lower().startswith('the '):
-        return name[0].upper() + name[1:]
+    low = name.lower()
+    if low.startswith('the '):
+        return ('t' if lower else 'T') + name[1:]
+    if low.startswith(('a ', 'an ')):
+        return name                     # already carries its own article
     if (getattr(monster, 'is_boss', False) or getattr(monster, 'is_mini_boss', False)
             or getattr(monster, 'is_seal_demon', False)
-            or getattr(monster, 'proper_noun', False)):
+            or getattr(monster, 'proper_noun', False)
+            or getattr(monster, 'kind', '') in ('player_ghost', 'death')
+            or low.startswith(('ghost of ', 'death'))):
         return name
-    return f"The {name}"
+    return f"{'the' if lower else 'The'} {name}"
 
 
 class Monster:
@@ -425,32 +433,32 @@ class Monster:
         # ward is consumed.
         if getattr(player, '_return_to_hand_active', False):
             player._return_to_hand_active = False
-            return 0, f"The {self.name}'s strike is deflected — a discus spins between you!"
+            return 0, f"{the_name(self)}'s strike is deflected — a discus spins between you!"
         if not self.attacks:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:
-                return 0, f"The {self.name} gazes at you, but you cannot see its eyes!"
+                return 0, f"{the_name(self)} gazes at you, but you cannot see its eyes!"
             if not player.has_effect('sleep_resist'):
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
                 applied, _ = apply_debuff_with_save(player, 'paralyzed', 3, dc)
                 if applied:
-                    return 0, f"The {self.name}'s gaze paralyzes you!"
-                return 0, f"You wrench your gaze away from the {self.name} just in time!"
+                    return 0, f"{the_name(self)}'s gaze paralyzes you!"
+                return 0, f"You wrench your gaze away from {the_name(self, lower=True)} just in time!"
             else:
-                return 0, f"The {self.name} gazes at you harmlessly."
+                return 0, f"{the_name(self)} gazes at you harmlessly."
 
         # --- Gaze attack (Medusa): petrifying gaze before normal attack ---
         if self.gaze_paralyze > 0 and self._gaze_cooldown <= 0:
             self._gaze_cooldown = self.gaze_cooldown_max
             # Check player's sight: total blindness negates gaze
             if player.get_sight_radius() == 0:
-                gaze_msg = f"The {self.name} locks eyes on you, but you are blind to her gaze!"
+                gaze_msg = f"{the_name(self)} locks eyes on you, but you are blind to her gaze!"
             # Proof against petrification (Medusa's trophy, the Greater
             # Aegis). The status existed but nothing consulted it: every gaze
             # paralyses, so the reward protected against nothing.
             elif player.has_effect('petrify_immune'):
-                gaze_msg = (f"The {self.name}'s gaze slides off you. "
+                gaze_msg = (f"{the_name(self)}'s gaze slides off you. "
                             f"Stone has no claim on you now.")
             # Check mirror shield (Aegis): reflects gaze back
             elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
@@ -459,15 +467,15 @@ class Monster:
                 # before she ever lost an action, and then she hit anyway.)
                 self.status_effects['paralyzed'] = max(
                     self.status_effects.get('paralyzed', 0), 3)
-                return 0, (f"The {self.name} meets her own eyes in the bronze "
+                return 0, (f"{the_name(self)} meets her own eyes in the bronze "
                            f"and stands rigid, snakes and all.")
             else:
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
                 applied, _ = apply_debuff_with_save(player, 'paralyzed', self.gaze_paralyze, dc)
                 if applied:
-                    return 0, (f"The {self.name}'s terrible gaze freezes you in place!")
-                return 0, (f"You meet the {self.name}'s gaze but tear your eyes away "
+                    return 0, (f"{the_name(self)}'s terrible gaze freezes you in place!")
+                return 0, (f"You meet {the_name(self, lower=True)}'s gaze but tear your eyes away "
                            f"before the stone takes hold!")  # gaze turn: no damage
             # Gaze was blocked or reflected — continue to normal attack
             # (but append the gaze message below)
@@ -482,10 +490,10 @@ class Monster:
             is_boss = getattr(self, 'is_boss', False)
             min_hit = getattr(self, 'min_hit_chance', 0.25 if is_boss else 0.05)
             if d20 == 1:
-                return 0, gaze_msg + f" The {self.name} swings but misses!"
+                return 0, gaze_msg + f" {the_name(self)} swings but misses!"
             if d20 != 20 and d20 < to_hit:
                 if random.random() >= min_hit:
-                    return 0, gaze_msg + f" The {self.name} swings but misses!"
+                    return 0, gaze_msg + f" {the_name(self)} swings but misses!"
             dmg = roll(atk['damage'])
             atk_type = atk.get('type', 'physical')
             if self.has_effect('weakened'):
@@ -507,7 +515,7 @@ class Monster:
             except ImportError:
                 pass
             actual = player.take_damage(dmg, atk_type)
-            return actual, gaze_msg + f" The {self.name} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+            return actual, gaze_msg + f" {the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
 
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
         if self.rage_stacks >= 3 and len(self.attacks) > 1:
@@ -534,7 +542,7 @@ class Monster:
                          'song', 'wail', 'charm', 'psionic', 'disintegrat',
                          'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
         if not self.attacks:
-            return 0, f"The {self.name} flails helplessly!"
+            return 0, f"{the_name(self)} flails helplessly!"
         if getattr(self, '_force_piercing', False):
             # Piercing turn: must use a piercing ranged attack
             self._force_piercing = False
@@ -553,14 +561,14 @@ class Monster:
         # Gaze attacks: blocked by blindness (player can't see the gaze)
         is_gaze = 'gaze' in atk_name or 'evil eye' in atk_name
         if is_gaze and player.get_sight_radius() == 0:
-            return 0, f"The {self.name} tries to lock eyes with you, but you cannot see!"
+            return 0, f"{the_name(self)} tries to lock eyes with you, but you cannot see!"
         if is_gaze and 'petrif' in atk_name and player.has_effect('petrify_immune'):
-            return 0, f"The {self.name}'s gaze finds nothing in you to turn to stone."
+            return 0, f"{the_name(self)}'s gaze finds nothing in you to turn to stone."
 
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
         if is_breath and player.has_effect('in_pit'):
-            return 0, f"The {self.name}'s {atk['name'].replace('_', ' ').lower()} passes harmlessly over your pit!"
+            return 0, f"{the_name(self)}'s {atk['name'].replace('_', ' ').lower()} passes harmlessly over your pit!"
 
         # -- THAC0 Attack Roll ----------------------------------------------
         d20 = random.randint(1, 20)
@@ -580,21 +588,21 @@ class Monster:
 
         # Natural 1 always misses; natural 20 always hits
         if d20 == 1:
-            return 0, f"The {self.name} swings at you and misses!"
+            return 0, f"{the_name(self)} swings at you and misses!"
         if d20 != 20 and d20 < to_hit:
             # Depth minimum hit: even if THAC0 says miss, deep monsters can still connect
             if random.random() < min_hit:
                 pass  # hit anyway — fall through to damage
             else:
-                return 0, f"The {self.name} swings at you and misses! (AC {player_ac} deflects)"
+                return 0, f"{the_name(self)} swings at you and misses! (AC {player_ac} deflects)"
 
         # Confused: 30% chance to swing at nothing
         if self.has_effect('confused') and random.random() < 0.30:
-            return 0, f"The {self.name} swings wildly in confusion and misses!"
+            return 0, f"{the_name(self)} swings wildly in confusion and misses!"
 
         # Blinded: 40% chance to miss (can't see target)
         if self.has_effect('blinded') and random.random() < 0.40:
-            return 0, f"The {self.name} flails blindly and misses!"
+            return 0, f"{the_name(self)} flails blindly and misses!"
 
         # Displacement's 30% miss is rolled once, by the caller in game_combat
         # (it used to be rolled here as well, for a combined 51% miss).
@@ -608,7 +616,7 @@ class Monster:
                 player._monkey_king_counter = int(getattr(player, '_monkey_king_counter', 0)) + 1
                 if player._monkey_king_counter >= mkd_n:
                     player._monkey_king_counter = 0
-                    return 0, f"You shimmer like the Monkey King — the {self.name}'s strike finds nothing!"
+                    return 0, f"You shimmer like the Monkey King — {the_name(self, lower=True)}'s strike finds nothing!"
         except ImportError:
             pass
 
@@ -619,7 +627,7 @@ class Monster:
             try:
                 from armor_procs import consume_floor_charge
                 if consume_floor_charge(player, 'dodge_first_arrow_per_floor'):
-                    return 0, f"The {self.name}'s shot whistles past — the votive sandals carry you a hair's-breadth aside!"
+                    return 0, f"{the_name(self)}'s shot whistles past — the votive sandals carry you a hair's-breadth aside!"
             except ImportError:
                 pass
 
@@ -704,21 +712,21 @@ class Monster:
 
         actual = player.take_damage(dmg, atk_type)
 
-        msg = f"The {self.name} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+        msg = f"{the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
         if charged:
-            msg = f"The {self.name} CHARGES! " + msg
+            msg = f"{the_name(self)} CHARGES! " + msg
         if mimic_strike:
-            msg = f"The {self.name} ERUPTS from its disguise! " + msg
+            msg = f"{the_name(self)} ERUPTS from its disguise! " + msg
 
         # Fire/cold shield: if attack was blocked (actual=0), reflect damage back
         if actual == 0 and atk_type == 'fire' and player.has_effect('fire_shield'):
             refl = max(1, dmg // 2)
             self.take_damage(refl)
-            msg = f"The {self.name}'s fire reflects back! ({refl} dmg)"
+            msg = f"{the_name(self)}'s fire reflects back! ({refl} dmg)"
         elif actual == 0 and atk_type == 'cold' and player.has_effect('cold_shield'):
             refl = max(1, dmg // 2)
             self.take_damage(refl)
-            msg = f"The {self.name}'s cold reflects back! ({refl} dmg)"
+            msg = f"{the_name(self)}'s cold reflects back! ({refl} dmg)"
 
         # Chain-equip passive: reflect_spell / spell_reflect (Aegis of Athena,
         # Smoking Mirror). Magical/elemental damage rolls % chance to reflect
@@ -753,7 +761,7 @@ class Monster:
             try:
                 from chain_passives import roll_gorgoneion_petrify
                 if roll_gorgoneion_petrify(player, self):
-                    msg += f" The Gorgoneion meets the {self.name}'s eyes! Petrified!"
+                    msg += f" The Gorgoneion meets {the_name(self, lower=True)}'s eyes! Petrified!"
             except ImportError:
                 pass
 
@@ -778,7 +786,7 @@ class Monster:
             old_con = player.CON
             player.apply_stat_bonus('CON', -1)
             if player.CON < old_con:
-                msg = f"The {self.name} drains your life force! ({actual} dmg, CON -1)"
+                msg = f"{the_name(self)} drains your life force! ({actual} dmg, CON -1)"
 
         # Drain heals self (vampire lord, life-drainer family): when a
         # drain attack lands, regain a fraction of the damage dealt.
@@ -789,7 +797,7 @@ class Monster:
         if atk_type == 'drain' and _dhs > 0 and actual > 0 and self.alive:
             heal = max(1, int(actual * _dhs))
             self.hp = min(self.max_hp, self.hp + heal)
-            msg += f" The {self.name}'s wounds close as it feeds ({heal} HP regained)."
+            msg += f" {the_name(self)}'s wounds close as it feeds ({heal} HP regained)."
 
         # Chain-disrupt: chance the strike interrupts the player's chain
         # build for the next attack. Sets a flag the quiz engine can read
@@ -804,7 +812,7 @@ class Monster:
         _pc = float(getattr(self, 'pull_chance', 0.0) or 0.0)
         if _pc > 0 and actual > 0 and random.random() < _pc:
             player._pending_pull_toward = (self.x, self.y)
-            msg += f" The {self.name} drags you closer!"
+            msg += f" {the_name(self)} drags you closer!"
 
         # Apply status effect from attack (gated by a D&D-style saving throw).
         msg += self._apply_attack_effect(atk, player)
@@ -829,7 +837,7 @@ class Monster:
         # Reflecting: 50% chance to bounce effect back at attacker
         if player.has_effect('reflecting') and random.random() < 0.50:
             self.add_effect(effect_id, duration)
-            return f" The effect reflects back -- the {self.name} is {effect_id.replace('_', ' ')}!"
+            return f" The effect reflects back -- {the_name(self, lower=True)} is {effect_id.replace('_', ' ')}!"
         from status_effects import apply_debuff_with_save
         # DC scales gently with monster depth; data may override.
         dc = min(18, int(atk.get('effect_save_dc', 12 + self.min_level // 7)))
@@ -1670,7 +1678,7 @@ class Monster:
             if actual > 0 and not effect_msg:
                 effect_msg = self._apply_attack_effect(atk, player)
         hit_str = ", ".join(parts)
-        msg = f"The {self.name} attacks in a frenzy! [{hit_str}] ({total} total)"
+        msg = f"{the_name(self)} attacks in a frenzy! [{hit_str}] ({total} total)"
         return total, msg + effect_msg
 
     # ------------------------------------------------------------------

@@ -97,7 +97,22 @@ DEEP_UNDER_FRACTION = 0.9
 # HP at their floor.  The gate bosses already sit near 3x and are left alone,
 # except Fenrir, whom the rebase capped at 1.3x.
 NAMED_FOE_HP_MULT = 2.0
+# Before floor 40 a chain-5 hit is a larger share of the floor's HP, and the
+# early mini-bosses died in one to three swings; they get 3x.
+NAMED_FOE_HP_MULT_EARLY = 3.0
+NAMED_FOE_EARLY_FLOOR = 40
 HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
+
+# Gate bosses, set to the figures CURVE.md section 6 was written around. The
+# 2026-10 quest audit measured Asterion dying in 2.6 chain-5 attacks and
+# Medusa in 4.4, against a design of 12 to 35 turns: the quest layers
+# (Thread, Aegis, blindfold) had nothing to shorten.
+GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 450, "medusa_gorgon": 1100}
+
+# A named foe's hardest attack should be worth noticing: at least this
+# multiple of the floor's anchor damage. They hit like ordinary monsters of
+# their floor (mean 0.75x) while carrying two to three times the HP.
+NAMED_FOE_DMG_MULT = 1.4
 
 ATTACK_DAMAGE_SET: dict[str, dict[int, str]] = {
     # a morningstar that hit for 2d4+1 on a creature this size
@@ -225,6 +240,24 @@ def scale_hp_to(hp, target_avg: float):
     return scale_hp(hp, target_avg / cur)
 
 
+def damage_dice_to(dmg, target_avg: float) -> str:
+    """A damage dice string averaging at least `target_avg`, keeping the die
+    size. (scale_hp rounds small dice like 2d4+1 back to themselves.)"""
+    m = _DICE_RE.match(str(dmg))
+    if not m:
+        return str(dmg)
+    n, sides = int(m.group(1)), int(m.group(2))
+    cur = dice_avg(dmg)
+    if cur <= 0:
+        return str(dmg)
+    n = max(n, int(round(n * (target_avg / cur) * 0.8)))
+    mod = math.ceil(target_avg - n * (sides + 1) / 2)
+    while mod < 0 and n > 1:
+        n -= 1
+        mod = math.ceil(target_avg - n * (sides + 1) / 2)
+    return f"{n}d{sides}+{mod}" if mod > 0 else f"{n}d{sides}"
+
+
 def apply_stat_fixes(monsters: dict) -> list[str]:
     """Apply the lore-driven corrections in place.  Returns a change log."""
     log = []
@@ -244,13 +277,30 @@ def apply_stat_fixes(monsters: dict) -> list[str]:
         _raise_hp(mid, avg, "lore ladder")
     for mid, floor in DEEP_UNDER_HP.items():
         _raise_hp(mid, DEEP_UNDER_FRACTION * target_hp(floor), "deep monster under its band")
+    for mid, avg in GATE_BOSS_HP.items():
+        _raise_hp(mid, avg, "gate boss, CURVE.md section 6")
     for mid, d in monsters.items():
         named = d.get("is_mini_boss") or d.get("is_seal_demon") or mid in HP_FLOOR_MULT
         if not named:
             continue
-        mult = HP_FLOOR_MULT.get(mid, NAMED_FOE_HP_MULT)
-        want = mult * target_hp(d.get("peak_floor", d.get("min_level", 1)))
-        _raise_hp(mid, want, f"named foe under {mult}x floor anchor")
+        floor = d.get("peak_floor", d.get("min_level", 1))
+        if floor > 100:         # the Cow Level's king is seated by hand
+            continue
+        default = (NAMED_FOE_HP_MULT_EARLY if floor < NAMED_FOE_EARLY_FLOOR
+                   else NAMED_FOE_HP_MULT)
+        mult = HP_FLOOR_MULT.get(mid, default)
+        _raise_hp(mid, mult * target_hp(floor), f"named foe under {mult}x floor anchor")
+        # Hardest attack at least NAMED_FOE_DMG_MULT x the floor's damage.
+        atks = d.get("attacks") or []
+        if not atks or "legendary" in (d.get("tags") or []):
+            continue
+        top = max(atks, key=lambda a: dice_avg(a.get("damage", 0)))
+        want_dmg = NAMED_FOE_DMG_MULT * target_dmg(floor)
+        if dice_avg(top.get("damage", 0)) < 0.93 * want_dmg:
+            old = top["damage"]
+            top["damage"] = damage_dice_to(old, want_dmg)
+            log.append(f"{mid}: attack {top.get('name')!r} damage {old} "
+                       f"({dice_avg(old):.1f}) -> {top['damage']} ({dice_avg(top['damage']):.1f})")
     for mid, atks in ATTACK_DAMAGE_SET.items():
         for idx, dmg in atks.items():
             a = monsters[mid]["attacks"][idx]

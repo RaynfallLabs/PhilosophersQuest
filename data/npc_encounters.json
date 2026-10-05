@@ -1,0 +1,1480 @@
+[
+  {
+    "tag": "elara_amulet",
+    "name": "Lost Girl",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      220
+    ],
+    "block": 1,
+    "trigger_item": "silverlight_pendant",
+    "trigger_level_offset": 1,
+    "text": "A girl no older than seven sits against the wall, hugging her knees. She sees the silver pendant you carry and her whole body goes rigid. \"That's my mama's. She gave it to me before she went away. I dropped it when the rats came.\" She pulls a burnished silver ring from her finger and holds it out with trembling hands. \"You can have this. Please. The pendant is all I have left of her.\"",
+    "options": [
+      {
+        "label": "Give her the pendant. It is hers.",
+        "karma": 1,
+        "outcome": "She presses the pendant to her chest and squeezes her eyes shut. She doesn't say thank you. She doesn't need to. She runs for the stairs clutching it in both hands, and you can hear her sobbing with relief long after she's gone.",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": null
+      },
+      {
+        "label": "Give her the pendant and accept the ring she offers",
+        "karma": 0,
+        "outcome": "\"Thank you, mister. Thank you.\" She tugs the ring from her finger and presses it into your hand with fierce insistence, then clutches the pendant and runs. The ring is warm from her hand.",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "specific_item",
+          "item_type": "accessory",
+          "item_id": "elaras_silver_ring",
+          "no_auto_identify": true
+        }
+      },
+      {
+        "label": "Keep the pendant. You will need every edge down here.",
+        "karma": -1,
+        "outcome": "\"I'm sorry, little one. I need this or I will die down here.\" She doesn't argue. She doesn't cry. She just watches you walk away, her empty hands still outstretched.",
+        "cost": null,
+        "reward": null
+      }
+    ],
+    "sprite_id": "npc_lost_girl"
+  },
+  {
+    "tag": "brother_aldous",
+    "name": "Dying Monk",
+    "symbol": "@",
+    "color": [
+      160,
+      130,
+      90
+    ],
+    "block": 1,
+    "text": "A monk in a filthy brown robe crawls on his hands and knees. His tonsured head is covered in sores and his eyes are so sunken they seem to belong to a skull. He points to his mouth, then clasps his hands in prayer. He is too weak to speak. A silver reliquary hangs from his neck, a saint's fingerbone set in gold.",
+    "options": [
+      {
+        "label": "Give him food from your pack",
+        "karma": 1,
+        "outcome": "He weeps as he eats, making the sign of the cross over and over. He cannot speak, but he grips your hand with both of his and will not let go for a long time.",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you have nothing to spare",
+        "karma": 0,
+        "outcome": "He nods. He understands. He keeps crawling toward the stairs, one hand over the other, impossibly slow.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the reliquary from his neck",
+        "karma": -1,
+        "outcome": "He clutches at it, but his fingers have no strength. He doesn't cry. He is past crying. He just lets his hands fall and stares at the floor.",
+        "cost": null,
+        "reward": {
+          "type": "specific_item",
+          "item_type": "accessory",
+          "item_id": "saints_reliquary"
+        }
+      }
+    ],
+    "sprite_id": "npc_dying_monk"
+  },
+  {
+    "tag": "marta_ratchatcher",
+    "name": "Rat-Catcher",
+    "symbol": "@",
+    "color": [
+      140,
+      130,
+      110
+    ],
+    "block": 1,
+    "text": "A wiry woman sits with her leg splinted between two torches. \"Compound fracture,\" she says through gritted teeth. \"Set it myself, but the bleeding won't stop. I've got a daughter up top who thinks I'm indestructible.\" She looks at you. \"I'm not.\" Her satchel holds vials of rare alchemical compounds.",
+    "options": [
+      {
+        "label": "Give her a healing potion to stop the bleeding",
+        "karma": 1,
+        "outcome": "She drinks, and color slowly returns to her face. \"I owe you a life. My daughter's name is Lena. If you ever make it out, find her. Tell her Marta's coming home.\"",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Keep your supplies and tell her to hold pressure",
+        "karma": 0,
+        "outcome": "\"Maybe someone else will come.\" She presses harder on the wound. You both know no one else is coming.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take her satchel. Those compounds could save your life.",
+        "karma": -1,
+        "outcome": "\"My daughter's name is Lena,\" she says quietly. \"In case you ever grow a conscience.\" The vials clink in your pack all the way down the corridor.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_potion",
+              "count": 2
+            },
+            {
+              "type": "random_food",
+              "count": 1
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_rat_catcher"
+  },
+  {
+    "tag": "sir_aldric",
+    "name": "Burdened Knight",
+    "symbol": "@",
+    "color": [
+      160,
+      160,
+      180
+    ],
+    "block": 2,
+    "text": "A knight kneels in the corridor, bent double under a black stone lashed to his pack. In his hands he cradles a crystal vial of shimmering liquid. \"My wife Elspeth is dying. This cordial is her only hope. But the stone is cursed. I cannot put it down, and it grows heavier with every step.\" He looks up, red-eyed. \"If another takes it willingly, the curse goes with it. I know what I am asking.\"",
+    "options": [
+      {
+        "label": "Take the lodestone so he can reach his wife",
+        "karma": 1,
+        "outcome": "The stone settles into your pack like a dead thing. Sir Aldric rises, weeping, and runs for the stairs without looking back. The weight is yours now. So is the promise.",
+        "cost": {
+          "type": "accept_item",
+          "item_id": "cursed_lodestone"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you cannot carry it",
+        "karma": 0,
+        "outcome": "\"I know. God forgive me, I know.\" He stays on his knees. You can still hear the stone grinding against his armor as you walk away.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the cordial for yourself",
+        "karma": -1,
+        "outcome": "\"I'm sorry, Sir Knight. I wish there were another way.\" He stares at you. He knows there is another way. He just watched you choose not to take it. Warmth floods your body as you drink.",
+        "cost": null,
+        "reward": {
+          "type": "stat",
+          "stat": "CON",
+          "amount": 1
+        }
+      }
+    ],
+    "sprite_id": "npc_burdened_knight"
+  },
+  {
+    "tag": "tam_thief",
+    "name": "Young Thief",
+    "symbol": "@",
+    "color": [
+      180,
+      160,
+      130
+    ],
+    "block": 2,
+    "text": "A boy, fourteen at most, is backed against a dead end, shaking so hard the stolen coins in his arms clink together. One eye is swollen shut and his ribs show through a torn shirt. \"Don't hit me. I know I stole. But Rosie hasn't eaten in four days. She's eight. She doesn't understand why her stomach hurts.\"",
+    "options": [
+      {
+        "label": "Give him food for his sister",
+        "karma": 1,
+        "outcome": "He stares at the food like he's never seen such a thing. \"For Rosie?\" he asks. Then, quieter: \"Can I have some too?\" You tell him yes.",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Let him go with what he stole",
+        "karma": 0,
+        "outcome": "\"Go. Quickly.\" He scrambles away, dropping coins as he runs. Whether Rosie eats tonight is beyond your control.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the stolen goods off him",
+        "karma": -1,
+        "outcome": "He doesn't fight. He just sets everything down, carefully, and backs away. \"Tell Rosie I tried,\" he whispers. Under the coins lies a weapon far too good for a boy to have come by honestly.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 60,
+              "max": 100
+            },
+            {
+              "type": "random_weapon"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_young_thief"
+  },
+  {
+    "tag": "helena_cartographer",
+    "name": "Injured Scholar",
+    "symbol": "@",
+    "color": [
+      160,
+      140,
+      180
+    ],
+    "block": 2,
+    "text": "A young woman in spectacles sits surrounded by meticulous dungeon maps. Her left arm hangs at a wrong angle and the side of her face is purple from a fall. \"Twelve years I've been mapping this place. The Academy said a woman couldn't survive down here alone.\" She winces. \"I need something for the pain or I can't hold the pen. The pen is all I have.\"",
+    "options": [
+      {
+        "label": "Give her a healing potion for the arm",
+        "karma": 1,
+        "outcome": "She drinks and flexes her drawing hand with a gasp of relief. \"I will put your name on the map. Right here. 'A good person stood here.'\" She caps the vial. \"One thing, for nothing. There is a floor below I cannot draw. The walls will not hold still for the pen. The old Greeks never trusted a map in a place like that. They trusted string.\"",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell her you cannot spare it",
+        "karma": 0,
+        "outcome": "She nods sharply. \"Then go. I've survived worse.\" She picks up the pen with her good hand and keeps drawing, teeth clenched.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take her maps. They are worth a fortune.",
+        "karma": -1,
+        "outcome": "\"No! That is my life's work! Twelve years!\" She grabs at the maps with her one good arm. It is not enough. Rolled inside them you find a scroll in no hand of hers.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_scroll",
+              "count": 1
+            },
+            {
+              "type": "gold",
+              "min": 150,
+              "max": 200
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_injured_scholar"
+  },
+  {
+    "tag": "marcus_sword",
+    "name": "Grieving Father",
+    "symbol": "@",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "block": 3,
+    "trigger_item": "oathkeeper_sword",
+    "trigger_level_offset": 2,
+    "text": "An old soldier sits on a fallen pillar, holding a child's blanket faded almost white. He sees the sword you carry and stands so fast his knees crack. \"That's my boy's sword. Vale. He came down here six months ago to prove himself.\" His hands shake. \"He didn't come back. Did you find him? Was there a body?\" There wasn't.",
+    "options": [
+      {
+        "label": "Give him his son's sword",
+        "karma": 1,
+        "outcome": "Marcus holds the sword against his chest and closes his eyes. \"He was a good boy. He was such a good boy.\" He walks toward the stairs, clutching the sword and the blanket. He doesn't look back.",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": null
+      },
+      {
+        "label": "Give him the sword and accept his coin",
+        "karma": 0,
+        "outcome": "\"Take this. For bringing me closure.\" He presses coins into your hand and holds the sword to his chest. \"I'll bring him home now. Both pieces of him.\"",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "gold",
+          "min": 50,
+          "max": 80
+        }
+      },
+      {
+        "label": "Tell him you found no such blade",
+        "karma": -1,
+        "outcome": "\"I found no such blade, old man.\" Marcus looks at the sword. He reads the name VALE on the crossguard. He knows you are lying. He sits back down and stares at the blanket in his hands.",
+        "cost": null,
+        "reward": null
+      }
+    ],
+    "sprite_id": "npc_grieving_father"
+  },
+  {
+    "tag": "blinded_soldier",
+    "name": "Blinded Soldier",
+    "symbol": "@",
+    "color": [
+      160,
+      150,
+      140
+    ],
+    "block": 3,
+    "text": "A soldier in Legion armor sits with both hands clamped over his eyes. Blood seeps between his fingers. An acid trap. \"I can't see,\" he says flatly. \"Both eyes. If I had something to flush them, a healing potion, anything, I might save one. I have a wife. She has green eyes. I would like to see green eyes again.\"",
+    "options": [
+      {
+        "label": "Give him a healing potion for his eyes",
+        "karma": 1,
+        "outcome": "He pours it over his ruined eyes, screaming through clenched teeth. When it's over, one eye opens. Milky, damaged, but open. \"Green,\" he whispers. \"I can still see green.\"",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you have none to spare",
+        "karma": 0,
+        "outcome": "\"Understood. Move along.\" His jaw is clenched so hard the muscles stand out like cords. He sits in the dark and waits for no one.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take his gear. He cannot use it now.",
+        "karma": -1,
+        "outcome": "He hears you unbuckling his pack. He doesn't resist. \"I hope you needed it, friend,\" he says. He means it kindly, which is the worst part. The Legion kept its plate in good order.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_armor"
+            },
+            {
+              "type": "gold",
+              "min": 100,
+              "max": 150
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_blinded_soldier"
+  },
+  {
+    "tag": "dying_messenger",
+    "name": "Dying Courier",
+    "symbol": "@",
+    "color": [
+      150,
+      130,
+      110
+    ],
+    "block": 3,
+    "text": "A young man in a courier's jerkin lies on his side, a crossbow bolt in his back. One hand reaches for a sealed iron scroll case just out of reach. \"The Captain needs this. Troop positions. For the siege. Thousands will die if it doesn't get there.\" His fingers scrape the stone. \"Please. Take it up. Swear to me.\"",
+    "options": [
+      {
+        "label": "Take the dispatch and swear to carry it up",
+        "karma": 1,
+        "outcome": "The iron case goes into your pack. It will open no door and turn no blade down here, and the courier knows it. He smiles and closes his eyes. \"Thank you. Tell them Edric made it almost all the way.\"",
+        "cost": {
+          "type": "accept_item",
+          "item_id": "sealed_dispatch"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you cannot make that promise",
+        "karma": 0,
+        "outcome": "\"I understand. Just... if you see anyone else...\" He trails off. The scroll case lies on the floor between you. You step around it.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take his supplies and leave the dispatch",
+        "karma": -1,
+        "outcome": "His healing draught was pinned under his body. He never even knew it was there. His coin pouch is heavy with hazard pay. He watches you step over the scroll case. \"Thousands,\" he whispers.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 80,
+              "max": 120
+            },
+            {
+              "type": "random_potion",
+              "count": 1
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_dying_courier"
+  },
+  {
+    "tag": "deadite_woman",
+    "name": "Moaning Woman",
+    "symbol": "@",
+    "color": [
+      160,
+      160,
+      210
+    ],
+    "block": 3,
+    "text": "A woman is slumped against the wall, moaning in pain. Her long dark hair hangs over her face, and her body shudders with each ragged breath. One hand clutches her stomach. She doesn't look up as you approach.",
+    "options": [
+      {
+        "label": "Kneel down and try to help her",
+        "karma": 1,
+        "outcome": "You reach out to move her hair aside, and her head snaps up. The face underneath is grey and rotting, the eyes pure white. \"I'LL SWALLOW YOUR SOUL!\" she shrieks, and rakes you across the chest before you can react. You stumble back, bleeding. She was dead the whole time.",
+        "cost": {
+          "type": "spawn_deadite_ambush"
+        },
+        "reward": null
+      },
+      {
+        "label": "Walk away and leave her be",
+        "karma": 0,
+        "outcome": "You give the moaning figure a wide berth. Something about the way she moves doesn't sit right. As you round the corner, the moaning stops. When you glance back, she's gone.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "\"It's a trick. Get an ax.\"",
+        "karma": 0,
+        "outcome": "You draw your weapon and approach carefully. The \"woman\" springs up with inhuman speed, grey flesh splitting into a horrible grin, but you were ready. One clean strike and it's over. The Deadite crumples to the floor, truly dead this time. You wipe your blade clean. Sometimes paranoia pays off.",
+        "cost": null,
+        "reward": null
+      }
+    ],
+    "sprite_id": "npc_deadite_woman"
+  },
+  {
+    "tag": "sister_marguerite",
+    "name": "Starving Nun",
+    "symbol": "@",
+    "color": [
+      200,
+      200,
+      210
+    ],
+    "block": 4,
+    "text": "A nun in a white habit kneels before a makeshift altar of dungeon stones. She is skeletal. Her habit hangs off her like a tent. \"I was called here to minister to the lost souls of this dungeon. I have given away everything I carried. Every scrap, every coin.\" She smiles. \"But now there is no one left to minister to me.\" The altar is decorated with offerings: coins, trinkets, a golden ring.",
+    "options": [
+      {
+        "label": "Give her food. She has given enough.",
+        "karma": 1,
+        "outcome": "She eats slowly, savoring each bite as though it were communion. \"You have fed Christ's servant. He will remember.\" Her eyes are bright with gratitude and something that might be hope.",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Offer her a prayer in place of bread",
+        "karma": 0,
+        "outcome": "\"Then we will pray for each other.\" She bows her head. Her lips move silently. You move on.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the offerings from her altar",
+        "karma": -1,
+        "outcome": "\"Those were given in love,\" she says quietly. You take them anyway. One piece among the trinkets is finer than the rest. Someone treasured it once.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_accessory"
+            },
+            {
+              "type": "gold",
+              "min": 80,
+              "max": 120
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_starving_nun"
+  },
+  {
+    "tag": "chained_priest",
+    "name": "Chained Priest",
+    "symbol": "@",
+    "color": [
+      180,
+      170,
+      140
+    ],
+    "block": 4,
+    "text": "A priest hangs from manacles bolted to the wall, his robes torn, his body covered in ritual cuts. \"Cultists. They needed a consecrated soul for their ritual.\" He manages a ghastly smile. \"The manacles are arcane. A scroll's magic can overload the binding. Any scroll. Please. I have a parish. People depend on me.\" Behind him, the cultists left a chest of ritual components.",
+    "options": [
+      {
+        "label": "Use a scroll to break the binding",
+        "karma": 1,
+        "outcome": "The manacles flash and fall open. The priest drops to his knees, then to his face. \"Thank God. Thank God and thank you.\" He rises slowly and walks toward the stairs.",
+        "cost": {
+          "type": "scroll"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you have no scroll to spare",
+        "karma": 0,
+        "outcome": "\"Hurry, then. The cultists return at dark.\" He closes his eyes. You hope someone else comes.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Leave him chained and open the cultists' chest",
+        "karma": -1,
+        "outcome": "\"You would leave a man in chains to rob his jailers?\" Yes. The chest holds dark things, but valuable ones.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_scroll",
+              "count": 1
+            },
+            {
+              "type": "random_potion",
+              "count": 1
+            },
+            {
+              "type": "gold",
+              "min": 100,
+              "max": 150
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_chained_priest"
+  },
+  {
+    "tag": "old_konstantin",
+    "name": "Old Warrior",
+    "symbol": "@",
+    "color": [
+      150,
+      140,
+      130
+    ],
+    "block": 4,
+    "text": "An ancient warrior sits sharpening a broken sword. Around the corner, something large growls. \"They'll be here in ten minutes. I've been holding this corridor for three days. There are people behind me. Mushroom farmers. Good people.\" He tests the broken blade and shakes his head. \"My sword broke this morning. Without a weapon...\" He shrugs. \"The math gets unfavorable.\"",
+    "options": [
+      {
+        "label": "Give him a weapon from your pack",
+        "karma": 1,
+        "outcome": "He takes it, tests the weight, nods once. \"This'll do. Go on, now. I've got work.\" He pauses. \"One thing. The veterans who came back from below all kept their shields polished like mirrors. Not one of them would say why.\" You hear the first clash of steel before you reach the next corridor. He's holding.",
+        "cost": {
+          "type": "weapon"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you have no blade to spare",
+        "karma": 0,
+        "outcome": "\"Understood. No hard feelings.\" He picks up the broken sword and faces the corridor. \"I'll manage. A broken sword did for a dragon once, after a smith had a second go at it.\"",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Lift his pack while he watches the corridor",
+        "karma": -1,
+        "outcome": "He doesn't notice. His eyes are on the darkness. His pack holds his life savings from forty years of dungeon work. He'll find out after the fight. If he survives it.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 150,
+              "max": 200
+            },
+            {
+              "type": "random_accessory"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_old_warrior"
+  },
+  {
+    "tag": "apprentice_healer",
+    "name": "Poisoned Herbalist",
+    "symbol": "@",
+    "color": [
+      120,
+      180,
+      120
+    ],
+    "block": 5,
+    "text": "A young woman in an herbalist's apron sits surrounded by labeled jars of dried herbs. Her hands shake and black veins creep up her neck. \"Thornwick Blossom. Cures infections surface medicine can't touch. For the children's ward.\" She steadies her hand. \"One pricked me. The toxin reaches my brain in six hours. Any potion will do. The liquid medium can dilute it.\"",
+    "options": [
+      {
+        "label": "Give her a potion to bind the toxin",
+        "karma": 1,
+        "outcome": "She mixes it with something from her kit and drinks. The shaking stops almost immediately. \"The children at Saint Elara's will never know your name. But I will.\"",
+        "cost": {
+          "type": "potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Ask whether anything else would serve",
+        "karma": 0,
+        "outcome": "\"It has to be an alchemical base. Water won't bind the toxin.\" She looks at her shaking hands. \"I have about five hours to find something else.\"",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take her herb jars",
+        "karma": -1,
+        "outcome": "\"Those are for sick children!\" She's too weak to stop you. The jars clink in your pack. They contain compounds any alchemist would kill for.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_potion",
+              "count": 2
+            },
+            {
+              "type": "random_food",
+              "count": 1
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_poisoned_herbalist"
+  },
+  {
+    "tag": "ghost_grave",
+    "name": "Ghost of Edwin",
+    "symbol": "@",
+    "color": [
+      160,
+      180,
+      200
+    ],
+    "block": 5,
+    "text": "A cairn of stacked stones marks a grave. Above it, scratched into the wall: \"HERE LIES EDWIN. HE DESERVED BETTER.\" A ghost stands before it, broad-shouldered, still wearing the wounds that killed him. \"My partner. We fought together seven years. He pushed me behind him.\" He looks at you. \"I buried him with no priest and no prayer, and the dead cannot bless the dead. Keep the vigil for him. It will take something out of you. I won't lie.\"",
+    "options": [
+      {
+        "label": "Keep the vigil and say the prayers for the dead",
+        "karma": 1,
+        "outcome": "You kneel at the cairn and say the prayers for the dead, every word you can remember. The cold of the grave climbs into you as you speak, and some of it stays. The stones grow warm. The ghost smiles. \"Thank you. We can both go now.\" He dissolves into gentle light.",
+        "cost": {
+          "type": "max_hp",
+          "amount": 15
+        },
+        "reward": null
+      },
+      {
+        "label": "Bow your head and tell him you cannot stay",
+        "karma": 0,
+        "outcome": "\"Not everyone can.\" The ghost looks at the cairn. \"I'll stand here. I don't mind. He's worth standing for.\"",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the stash hidden in the cairn",
+        "karma": -1,
+        "outcome": "You pull the stones apart. The ghost does not rage. He only says, very quietly, \"That was his grave,\" and kneels to gather the stones you scattered. His hands pass through every one. Edwin's stash was meant for no one.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 150,
+              "max": 200
+            },
+            {
+              "type": "random_accessory"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_ghost_edwin"
+  },
+  {
+    "tag": "deserter",
+    "name": "Legion Deserter",
+    "symbol": "@",
+    "color": [
+      140,
+      140,
+      130
+    ],
+    "block": 5,
+    "text": "A young soldier sits in the dark, knees drawn up, still wearing his torn Legion tabard. His hands won't stop shaking. \"Something came out of the dark. A hundred of us. I was the only one who ran.\" He stares at his hands. \"I just need food. Enough to reach the surface. I'll disappear.\" A gold officer's signet ring gleams on his finger. He couldn't bring himself to remove it.",
+    "options": [
+      {
+        "label": "Give him food for the climb",
+        "karma": 1,
+        "outcome": "He eats like an animal, then stops, ashamed. \"I don't deserve this.\" You tell him a man who ran can still do some good with the years he kept. He does not believe it yet. He finishes the bread anyway.",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Point him toward the stairs and keep your food",
+        "karma": 0,
+        "outcome": "\"Yes sir.\" He stands mechanically and walks the direction you pointed. He doesn't ask again.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Demand the officer's signet",
+        "karma": -1,
+        "outcome": "He stares at the ring. Pulls it off. \"Take it. Take everything. I don't deserve any of it.\" It is heavier than it looks.",
+        "cost": null,
+        "reward": {
+          "type": "specific_item",
+          "item_type": "accessory",
+          "item_id": "officers_signet"
+        }
+      }
+    ],
+    "sprite_id": "npc_deserter"
+  },
+  {
+    "tag": "blind_seer",
+    "name": "Blind Seer",
+    "symbol": "@",
+    "color": [
+      180,
+      170,
+      200
+    ],
+    "block": 6,
+    "text": "An ancient woman sits before candles that never burn down, surrounded by scrolls and clay jars arranged with obsessive precision. A silk blindfold covers empty sockets. She turns toward you before you make a sound. \"I know your heartbeat. You carry weight.\" She extends a paper-thin hand. \"I have not eaten in... I forget how long. Will you share a meal? I am so tired of being alone.\"",
+    "options": [
+      {
+        "label": "Sit and share a meal with her",
+        "karma": 1,
+        "outcome": "She eats slowly, telling stories from before you were born. One is about a boy who killed a dragon and never once saw its back. He was underneath it at the time, in a hole he had dug himself. For a few minutes the darkness feels warm. \"You have a good heart,\" she says. \"I can hear it.\"",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell her you cannot stay",
+        "karma": 0,
+        "outcome": "\"Everyone says that.\" She lowers her hand. \"Go. I will be here when the next one comes. And the next.\"",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Quietly take her scrolls and jars",
+        "karma": -1,
+        "outcome": "She feels the empty spaces where her things were. Her mouth opens. Closes. She folds both hands in her lap. The silence is worse than screaming.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_scroll",
+              "count": 2
+            },
+            {
+              "type": "random_potion",
+              "count": 1
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_blind_seer"
+  },
+  {
+    "tag": "trapped_seraph",
+    "name": "Caged Angel",
+    "symbol": "@",
+    "color": [
+      220,
+      210,
+      170
+    ],
+    "block": 6,
+    "text": "A winged figure kneels inside a cage of black iron, six wings folded against a frame too large for its prison. The air smells of ozone and wildflowers. \"I was sent to guard this passage. They trapped me instead.\" Its voice resonates in your chest. \"A scroll's arcane energy will overload the binding. I have been here two hundred years. The darkness grows stronger every day I am caged.\"",
+    "options": [
+      {
+        "label": "Use a scroll to shatter the cage",
+        "karma": 1,
+        "outcome": "The bars explode in light. The seraph rises to its full height, nine feet of wings and terrible grace. \"Seven seals hold shut what lies below, and a keeper stands on each. I was the watch set over them.\" \"I will not forget,\" it says, and is gone in a flash that leaves spots in your vision.",
+        "cost": {
+          "type": "scroll"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell it you have no scroll to spare",
+        "karma": 0,
+        "outcome": "\"Then I wait. As I have waited.\" The seraph bows its head. Its wings fold tighter.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Reach through the bars and tear out its feathers",
+        "karma": -1,
+        "outcome": "You reach through the bars and tear out a handful of feathers. The seraph shrieks, a sound like a cathedral organ screaming. Divine energy floods your body, burning through your veins. The seraph huddles in the corner, trembling.",
+        "cost": null,
+        "reward": {
+          "type": "stat",
+          "stat": "WIS",
+          "amount": 1
+        }
+      }
+    ],
+    "sprite_id": "npc_caged_angel"
+  },
+  {
+    "tag": "weeping_mother",
+    "name": "Weeping Ghost",
+    "symbol": "@",
+    "color": [
+      170,
+      190,
+      210
+    ],
+    "block": 6,
+    "text": "She materializes slowly, first the outline, then the tears that fall like silver and vanish before hitting stone. A glowing locket orbits her like a small moon. \"My son wandered in twelve years ago. He was nine. The dog came back without him.\" Her voice fractures. \"Will you pray with me? Not for him. For me. I am so tired. I just want to stop.\"",
+    "options": [
+      {
+        "label": "Kneel and pray with her until she can rest",
+        "karma": 1,
+        "outcome": "The prayer stretches on and on. Her exhaustion presses down on you like stone, twelve years of walking. When you finish, her tears slow. \"Thank you,\" she breathes. \"I can feel peace. After so long.\" She fades into warm light, smiling.",
+        "cost": {
+          "type": "sp",
+          "amount": 60
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell her that her love has outlasted death",
+        "karma": 0,
+        "outcome": "She flickers. \"Thank you for seeing me. Most walk right through.\" She keeps searching. She will always keep searching.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Snatch the locket out of the air",
+        "karma": -1,
+        "outcome": "Her scream is not anger. It is heartbreak. \"That is all I have of him! ALL I HAVE!\" Her hands pass through yours. She crumples, fading into shadow, not into light.",
+        "cost": null,
+        "reward": {
+          "type": "random_accessory"
+        }
+      }
+    ],
+    "sprite_id": "npc_weeping_ghost"
+  },
+  {
+    "tag": "ser_brennan",
+    "name": "Dying Knight",
+    "symbol": "@",
+    "color": [
+      160,
+      155,
+      170
+    ],
+    "block": 7,
+    "text": "The knight's breastplate is split open and the wound beneath is mortal. He sits with the careful dignity of a man who knows how he will spend his last minutes. A fine sword and shield rest beside him. \"My daughter Annalise drew me a picture before I left. A horse, I think. She said it was a dragon.\" He almost laughs. \"If you have a healing potion... not to save me. Just for the pain.\"",
+    "options": [
+      {
+        "label": "Give him a healing potion for the pain",
+        "karma": 1,
+        "outcome": "He drinks, and the tension drains from his face. He pulls a folded parchment from his breastplate, a child's drawing. He looks at it and smiles. \"It's a beautiful dragon, Annalise.\"",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Keep your supplies and sit with him a while",
+        "karma": 0,
+        "outcome": "\"Then sit with me a moment. Just a moment. I don't want to be alone at the end.\" You sit. It is the longest minute of your life.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take his sword and shield",
+        "karma": -1,
+        "outcome": "He watches you lift the sword from beside him, then unbuckle the shield. \"She drew me a dragon,\" he says to no one. You are already walking away. He kept his steel well.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_weapon"
+            },
+            {
+              "type": "random_shield"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_dying_knight"
+  },
+  {
+    "tag": "cursed_scholar",
+    "name": "Cursed Scholar",
+    "symbol": "@",
+    "color": [
+      140,
+      110,
+      170
+    ],
+    "block": 7,
+    "text": "His hands are fused to the book. Veins of black light crawl up his arms and his eyes are pure void. His mouth whispers in a language that makes your teeth ache. Something human surfaces for a moment. \"Kill the book. Not me. The book. I was a teacher. I had a wife named Clara.\" His voice breaks. \"I can't remember her face anymore. It took that from me.\"",
+    "options": [
+      {
+        "label": "Tear the book apart with your bare hands",
+        "karma": 1,
+        "outcome": "Dark energy explodes outward, searing your skin and burning something deeper. The black veins recede. He opens his eyes. They're blue. Human. \"Clara,\" he says. \"Her eyes are brown. I remember.\" He weeps.",
+        "cost": {
+          "type": "hp_percent",
+          "amount": 20
+        },
+        "reward": null
+      },
+      {
+        "label": "Back away from the book",
+        "karma": 0,
+        "outcome": "The human moment passes. His eyes go black again. The whispering resumes. He is gone.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Pull the book free and read it yourself",
+        "karma": -1,
+        "outcome": "Forbidden knowledge floods your mind: centuries of dark scholarship, the true names of things that should not be named. The scholar is a hollow shell on the floor, still breathing. Empty.",
+        "cost": null,
+        "reward": {
+          "type": "stat",
+          "stat": "INT",
+          "amount": 2
+        }
+      }
+    ],
+    "sprite_id": "npc_cursed_scholar"
+  },
+  {
+    "tag": "fairy_jar",
+    "name": "Trapped Fairy",
+    "symbol": "@",
+    "color": [
+      180,
+      220,
+      200
+    ],
+    "block": 7,
+    "text": "A tiny winged woman is trapped inside a thick glass jar sealed with wax and iron wire. Shimmering fairy dust coats the inside, shed from her broken wings over months. She presses both hands against the glass. You lean close. \"Please! A collector caught me. Eight months ago. My wings... I can't feel them anymore. If you have a potion, I think they can still heal.\"",
+    "options": [
+      {
+        "label": "Break the jar carefully and heal her wings",
+        "karma": 1,
+        "outcome": "She drinks a single drop, for the rest is an ocean to her, and flexes her wings. They straighten. She loops around your head and kisses your cheek, a warm spot no bigger than a pinprick. \"You are the kindest giant in the world.\" The fairy dust scattered when the jar broke. You don't care.",
+        "cost": {
+          "type": "potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Smash the jar and let her go",
+        "karma": 0,
+        "outcome": "She tumbles out, gasping. The fairy dust scatters across the floor, lost. Her wings are still bent. \"Thank you. I think.\" She limps into the dark on foot.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Keep her sealed in and shake out the dust",
+        "karma": -1,
+        "outcome": "You tilt the jar, working dust through the wax seal. She hammers on the glass, screaming. The shaking only helps the dust come loose. When you're done, you pocket the jar. Her tiny fists keep pounding.",
+        "cost": null,
+        "reward": {
+          "type": "stat",
+          "stat": "DEX",
+          "amount": 1
+        }
+      }
+    ],
+    "sprite_id": "npc_trapped_fairy"
+  },
+  {
+    "tag": "penitent",
+    "name": "The Penitent",
+    "symbol": "@",
+    "color": [
+      150,
+      140,
+      130
+    ],
+    "block": 8,
+    "text": "A man kneels in a pool of his own blood, a dagger beside him. He has carved the word MURDERER into his own forearm. \"I killed a man. Twenty years ago. Over money. I came here to die where no one would find the body.\" He looks at you. \"I've been kneeling here three hours and I find I am afraid. Isn't that pathetic?\" His purse is thick with gold. The dagger is dark iron, wickedly sharp.",
+    "options": [
+      {
+        "label": "Heal his arm and tell him dying mends nothing",
+        "karma": 1,
+        "outcome": "\"Twenty years,\" he whispers. \"That's a lot of atoning.\" He drinks. He bandages his arm. He takes the stairs. You wonder if he'll make it. You think he will.",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him the choice is his and walk on",
+        "karma": 0,
+        "outcome": "\"Fair enough. Go on, then. I need to think.\" He stares at the dagger. You don't look back.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take his gold and the dagger",
+        "karma": -1,
+        "outcome": "He watches you pick up the murder weapon and laughs, a horrible, cracked sound. \"It suits you better than it suited me.\" The dagger sits in your hand as if it had been waiting.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 300
+            },
+            {
+              "type": "specific_item",
+              "item_type": "weapon",
+              "item_id": "penitents_blade"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_penitent"
+  },
+  {
+    "tag": "roderic_shield",
+    "name": "Young Knight",
+    "symbol": "@",
+    "color": [
+      170,
+      160,
+      150
+    ],
+    "block": 8,
+    "trigger_item": "lionheart_shield",
+    "trigger_level_offset": 2,
+    "text": "A young knight, barely twenty, searches the rooms frantically. His armor is freshly polished, his face clean. He sees the shield you carry and goes white. \"That's my father's shield. Ser Marten of the Iron Vale. He came down four months ago to clear a basilisk nest. He told my mother he'd be back for supper.\" His composure breaks. \"He promised. He doesn't break promises.\"",
+    "options": [
+      {
+        "label": "Give him his father's shield",
+        "karma": 1,
+        "outcome": "Roderic holds the shield to his chest. He can barely lift it. He is not strong enough yet. He carries it anyway. \"He said he would be back for supper,\" he says. \"This much of him will be.\"",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": null
+      },
+      {
+        "label": "Give him the shield and accept his coin",
+        "karma": 0,
+        "outcome": "\"For bringing me this. Thank you.\" He presses his savings into your hand and clutches the shield like a lifeline.",
+        "cost": {
+          "type": "triggered_item"
+        },
+        "reward": {
+          "type": "gold",
+          "min": 60,
+          "max": 100
+        }
+      },
+      {
+        "label": "Tell him you bought it from a merchant",
+        "karma": -1,
+        "outcome": "\"I found this on a merchant's stall.\" Roderic reads MARTEN OF THE IRON VALE on the inside rim. He knows. But he's too young and too scared to call a grown adventurer a liar. He walks away, shoulders hunched.",
+        "cost": null,
+        "reward": null
+      }
+    ],
+    "sprite_id": "npc_young_knight"
+  },
+  {
+    "tag": "forgotten_prisoner",
+    "name": "Forgotten Prisoner",
+    "symbol": "@",
+    "color": [
+      130,
+      130,
+      140
+    ],
+    "block": 8,
+    "text": "The cell is ancient, the iron bars more rust than metal. Inside, a white-haired man sits with the posture of someone who stopped expecting rescue long ago. \"Forty-three years,\" he says pleasantly. \"Time enough to think about chains. Iron is the weak sort. The one that holds the great wolf is soft as a ribbon, and somewhere a patient god is saving scraps of shoe leather against the day it breaks.\" \"The lock is dwarven. Gold coins in the mechanism will trip the tumblers.\" Behind a loose stone in his cell, you glimpse a hidden cache. He sees you looking. \"That is all I have.\"",
+    "options": [
+      {
+        "label": "Feed your gold into the lock",
+        "karma": 1,
+        "outcome": "The lock groans, clicks, and swings open. He stands for the first time in forty-three years. His knees buckle. You catch him. \"I forgot what it feels like,\" he says, \"to be touched by another person.\"",
+        "cost": {
+          "type": "gold",
+          "amount": 150
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him you cannot afford it",
+        "karma": 0,
+        "outcome": "\"No one can. Forty-three years of no one being able to afford it.\" He folds his hands. \"Perhaps the next one.\"",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Reach through the bars for the cache",
+        "karma": -1,
+        "outcome": "\"No. Please. That's all I have. Forty-three years and that is ALL I HAVE.\" You pry the stone out. He turns away.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 300
+            },
+            {
+              "type": "random_accessory"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_forgotten_prisoner"
+  },
+  {
+    "tag": "fallen_paladin",
+    "name": "Fallen Paladin",
+    "symbol": "@",
+    "color": [
+      140,
+      140,
+      160
+    ],
+    "block": 9,
+    "text": "He is enormous and he is on his knees in the dirt, weeping without sound. His armor is blackened and cracked. \"I killed innocents. Forty-six people. I was told they were heretics. I believed it.\" His hands tremble. \"I came here to die. But my armor is still blessed. I cannot wear it. Not after what I did. If you can use it...\" His pack holds everything the church paid him.",
+    "options": [
+      {
+        "label": "Give him gold for the road and send him back to face them",
+        "karma": 1,
+        "outcome": "\"You would send me back? To face them? To face their families?\" Yes. He takes the gold. He hangs his holy symbol around his neck again, cracked as it is, and walks toward the stairs.",
+        "cost": {
+          "type": "gold",
+          "amount": 200
+        },
+        "reward": null
+      },
+      {
+        "label": "Tell him the weight is his to carry",
+        "karma": 0,
+        "outcome": "\"You are right. It is mine.\" He stays on his knees. The decision waits.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the armor he offered, and the pack he did not",
+        "karma": -1,
+        "outcome": "The blessed metal resists your hands for a moment, then gives in. He doesn't resist. He doesn't even notice. What's one more betrayal to a man who betrayed forty-six?",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 300
+            },
+            {
+              "type": "random_armor"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_fallen_paladin"
+  },
+  {
+    "tag": "azarael_demon",
+    "name": "Bound Demon",
+    "symbol": "&",
+    "color": [
+      200,
+      80,
+      60
+    ],
+    "block": 9,
+    "text": "Eight feet tall on its knees, skin like heated bronze. Glowing chains bite into its flesh. Its voice is warm, reasonable, almost kind. \"Look at me. Centuries in chains for a war I did not start. I am a soldier, same as you. Free me and I will give you strength. True strength.\" It leans forward. \"Refuse, and you face the Pit alone. We both know what waits in the Pit.\"",
+    "options": [
+      {
+        "label": "Reinforce the binding with a scroll",
+        "karma": 1,
+        "outcome": "The sigils blaze and the demon screams. The kind mask drops and the furnace shows beneath. \"Fool! You will beg for what I offered!\" The chains draw tight. It is still shouting promises when you turn the corner.",
+        "cost": {
+          "type": "scroll"
+        },
+        "reward": null
+      },
+      {
+        "label": "Walk away without answering",
+        "karma": 0,
+        "outcome": "Its copper eyes follow you until you turn the corner. \"You'll be back,\" it says softly. \"They always come back.\"",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Shatter the chains and take its bargain",
+        "karma": -2,
+        "outcome": "The demon rises to its full height and smiles with far too many teeth. Something cold and vast settles into your bones. \"A pleasure doing business,\" it says, and vanishes in sulfur and distant screaming.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "stat",
+              "stat": "STR",
+              "amount": 2
+            },
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 200
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_bound_demon"
+  },
+  {
+    "tag": "child_shrine",
+    "name": "Small Shrine",
+    "symbol": "@",
+    "color": [
+      200,
+      190,
+      160
+    ],
+    "block": 9,
+    "text": "In a small alcove, someone has built a shrine. A cairn of pebbles, a toy wooden sword, and a child's drawing of a family. Four words scratched into the wall: \"WE WILL FIND YOU.\" A faint light glows from the shrine, grief and love given weight. Coins and small treasures have been left by those who passed before you.",
+    "options": [
+      {
+        "label": "Leave food at the shrine for whoever comes looking",
+        "karma": 1,
+        "outcome": "As you set it down, the light brightens. For just a moment you feel small arms around your waist, a hug from someone who isn't there. Then it's gone.",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Bow your head in respect and move on",
+        "karma": 0,
+        "outcome": "The light flickers. Acknowledgment. Then it dims back to its quiet glow.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the offerings from the shrine",
+        "karma": -1,
+        "outcome": "As you fill your pockets, the light dims. The drawing curls and crumbles to dust. The toy sword cracks down the middle. Something leaves this place. One of the offerings is finer than the rest.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_accessory"
+            },
+            {
+              "type": "gold",
+              "min": 150,
+              "max": 200
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_small_shrine"
+  },
+  {
+    "tag": "dying_prophet",
+    "name": "Dying Prophet",
+    "symbol": "@",
+    "color": [
+      200,
+      200,
+      210
+    ],
+    "block": 10,
+    "text": "An old man in blood-stained white robes lies against an altar, his eyes terrifyingly clear. Stone tablets surround him, fragments carved over years: \"THE DESTROYER WAKES\" and \"SEVEN SEALS.\" \"I need to finish the warning. One more tablet. A healing potion, not to save me, but to give me one more hour.\" Around his neck hangs an amulet that pulses with gathered visions.",
+    "options": [
+      {
+        "label": "Heal him so he can finish the warning",
+        "karma": 1,
+        "outcome": "He drinks, and light returns to his eyes. He takes up his chisel with renewed purpose. The sound of stone being carved follows you down the corridor. He will finish.",
+        "cost": {
+          "type": "healing_potion"
+        },
+        "reward": null
+      },
+      {
+        "label": "Keep your supplies for what lies below",
+        "karma": 0,
+        "outcome": "\"Then you will face it without knowing. Go. Go quickly.\" His clear eyes follow you until you turn the corner.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Take the amulet from his neck",
+        "karma": -1,
+        "outcome": "His hand clutches at it but he's too weak. \"The prophecy dies with me if...\" His eyes lose their clarity. Just an old man now. Dying in the dark.",
+        "cost": null,
+        "reward": {
+          "type": "specific_item",
+          "item_type": "accessory",
+          "item_id": "prophets_amulet"
+        }
+      }
+    ],
+    "sprite_id": "npc_dying_prophet"
+  },
+  {
+    "tag": "petrified_adventurer",
+    "name": "Stone Statue",
+    "symbol": "@",
+    "color": [
+      160,
+      160,
+      160
+    ],
+    "block": 10,
+    "text": "A statue stands in the middle of the corridor, and the pose is wrong. One arm raised, mouth open in a scream turned to stone. Basilisk work. Scratched into the wall: \"CELESTE. STONE BUT ALIVE. ANY SCROLL READ ALOUD WILL WAKE HER. I WILL COME BACK FOR YOU.\" Whoever wrote it never came back. You press your ear to the stone. Faintly, impossibly, a heartbeat. Her armor and sword are masterwork.",
+    "options": [
+      {
+        "label": "Read a scroll over the stone and restore her",
+        "karma": 1,
+        "outcome": "Stone cracks, flakes, falls. Celeste gasps. The scream finishes, then stops. She looks at her hands. She sees the scratched message and her eyes fill. \"Maren. She tried.\" Celeste takes her gear and walks toward the stairs.",
+        "cost": {
+          "type": "scroll"
+        },
+        "reward": null
+      },
+      {
+        "label": "Leave her as she is",
+        "karma": 0,
+        "outcome": "You leave her there. The heartbeat continues behind you, fainter and fainter, as you walk away.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Break the statue to free her gear",
+        "karma": -1,
+        "outcome": "The stone shatters. Whatever was alive ceases. The armor and sword clatter free, undamaged. You try not to look at the fragments that might have been a face.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_weapon"
+            },
+            {
+              "type": "random_armor"
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_stone_statue"
+  },
+  {
+    "tag": "last_merchant",
+    "name": "Lost Merchant",
+    "symbol": "@",
+    "color": [
+      200,
+      180,
+      120
+    ],
+    "block": 10,
+    "text": "A small, fat man in an absurdly fine coat sits on a trunk, looking terrified. His moustache is immaculate. \"I followed the adventurers. I thought there would be profit.\" He pats the trunk. \"Artifacts, enchanted rings, a shimmering cloak. Ten years of collecting. But I cannot carry it back alone. Not through what is up there. I have been here three days, too afraid to move.\"",
+    "options": [
+      {
+        "label": "Give him food for the journey home",
+        "karma": 1,
+        "outcome": "He clutches the food to his chest. \"You are a saint. An absolute saint. If I survive this I will name my next shop after you.\" He lowers his voice. \"A tip, for nothing. I once had a buyer who wanted four things that do not belong together. He said a man holding all four need never fear the one collector nobody outbids. I told him I sell rings.\" He straightens his lapels and begins the long walk up.",
+        "cost": {
+          "type": "food"
+        },
+        "reward": null
+      },
+      {
+        "label": "Point him to the stairs and wish him luck",
+        "karma": 0,
+        "outcome": "He nods frantically, smoothing his lapels. \"Walls. No running. Right.\" He hoists the trunk onto his back with surprising strength and shuffles away.",
+        "cost": null,
+        "reward": null
+      },
+      {
+        "label": "Tell him the trunk stays as your toll",
+        "karma": -1,
+        "outcome": "\"But that's everything. Ten years of...\" He sees your expression. He lets go of the trunk. Ten years of collecting fits in your pack with room to spare.",
+        "cost": null,
+        "reward": {
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "random_weapon"
+            },
+            {
+              "type": "random_accessory"
+            },
+            {
+              "type": "gold",
+              "min": 200,
+              "max": 300
+            }
+          ]
+        }
+      }
+    ],
+    "sprite_id": "npc_lost_merchant"
+  }
+]

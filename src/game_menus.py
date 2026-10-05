@@ -15,6 +15,7 @@ constants (``_EQUIP_TABS``, ``_COOK_TABS``, ``_AZ_KEYS``, ``_GoldDropEntry``,
 co-located with related action code.
 """
 from __future__ import annotations
+from monster import the_name
 
 import pygame
 
@@ -1592,15 +1593,15 @@ class MenuMixin:
         cost = _r.randint(1, 100)
         if pl.gold < cost:
             self.add_message(
-                f"You need {cost} gold to bribe the {target.name}. You have {pl.gold}.",
+                f"You need {cost} gold to bribe {the_name(target, lower=True)}. You have {pl.gold}.",
                 'warning')
             return False
         pl.gold -= cost
         target.add_effect('paralyzed', 1)
         pl._gold_offering_used_this_floor = True
         self.add_message(
-            f"You toss {cost} gold at the {target.name}'s feet. "
-            f"The {target.name} bows and steps aside.",
+            f"You toss {cost} gold at {the_name(target, lower=True)}'s feet. "
+            f"{the_name(target)} bows and steps aside.",
             'success')
         return False
 
@@ -1631,7 +1632,7 @@ class MenuMixin:
             # Charm: pacified for 10 turns (using paralyzed as charm proxy)
             target.add_effect('paralyzed', 10)
             self.add_message(
-                f"You play Orpheus's lyre. The {target.name} is enchanted.",
+                f"You play Orpheus's lyre. {the_name(target)} is enchanted.",
                 'success')
         elif acc_id == 'hand_of_glory':
             # Use the JSON-authored paralyze_duration if present (10 turns
@@ -1640,14 +1641,14 @@ class MenuMixin:
             dur = int(getattr(acc, 'paralyze_duration', 4) or 4)
             target.add_effect('paralyzed', dur)
             self.add_message(
-                f"The candle of the Hand of Glory flares. The {target.name} freezes.",
+                f"The candle of the Hand of Glory flares. {the_name(target)} freezes.",
                 'success')
         else:
             # Generic charge — sleep target 5 turns
             target.add_effect('sleeping', 5)
             self.add_message(
                 f"A charge of the {getattr(acc, 'name', acc_id)} flows out. "
-                f"The {target.name} sleeps.",
+                f"{the_name(target)} sleeps.",
                 'info')
         acc.charges -= 1
         # Hand of Glory (expended_curse): when all five candle-fingers are

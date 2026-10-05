@@ -173,8 +173,13 @@ class InputMixin:
                 # floor so the player can return later. _close_npc_encounter
                 # (with resolved=False) clears all overlay state without
                 # consuming the encounter.
+                # ...unless the choice has already been made. Cost, reward and
+                # karma are applied when the option is picked; Esc on the
+                # outcome screen used to close as "unresolved", leaving the
+                # NPC in place to be milked again (free karma, +2 INT a loop).
+                _done = getattr(self, '_npc_encounter_phase', '') == 'outcome'
                 if hasattr(self, '_close_npc_encounter'):
-                    self._close_npc_encounter(resolved=False)
+                    self._close_npc_encounter(resolved=_done)
                 else:
                     self.state = STATE_PLAYER
                 return True
@@ -1420,8 +1425,12 @@ class InputMixin:
                 if self.player_gold < price:
                     self.add_message(f"You can't afford that ({price} gold needed).", 'warning')
                 else:
+                    # Check the pack first: a full pack used to take the
+                    # gold AND the item.
+                    if self.player.add_to_inventory(item) is False:
+                        self.add_message("That is more than you can carry.", 'warning')
+                        return
                     self.player_gold -= price
-                    self.player.add_to_inventory(item)
                     iname = getattr(item, 'name', 'item')
                     _snd.play('buy')
                     self.add_message(f"You buy {iname} for {price} gold.", 'success')

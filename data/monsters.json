@@ -4006,7 +4006,7 @@
       120,
       180
     ],
-    "hp": "11d8+18",
+    "hp": "17d8+27",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 11,
@@ -4017,7 +4017,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "1d4+1",
+        "damage": "2d4+2",
         "type": "poison"
       },
       {
@@ -4055,7 +4055,8 @@
     "lore": "Lamia was a queen of Libya whom Zeus loved. Hera, in her jealousy, destroyed Lamia's children, and grief turned the queen into a thing that steals the children of others. Zeus gave her the power to take out her own eyes so that she could rest from what she saw. She is a woman above and a serpent below, and she is cold to the touch.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Somewhere close, a woman is singing a lullaby to no one."
   },
   "gorgon_warrior": {
     "name": "Gorgon Warrior",
@@ -19858,7 +19859,7 @@
       80,
       50
     ],
-    "hp": "23d10+58",
+    "hp": "56d10+141",
     "speed": 8,
     "ai_pattern": "hit_and_run",
     "thac0": 7,
@@ -19868,7 +19869,7 @@
     "min_level": 18,
     "attacks": [
       {
-        "damage": "2d4+1",
+        "damage": "2d4+3",
         "type": "slash",
         "name": "Gore"
       },
@@ -19910,7 +19911,7 @@
       180,
       80
     ],
-    "hp": "52d12+309",
+    "hp": "88d12+525",
     "speed": 10,
     "ai_pattern": "dancer",
     "thac0": 2,
@@ -20186,7 +20187,7 @@
       140,
       80
     ],
-    "hp": "11d8-11",
+    "hp": "16d8-16",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 13,
@@ -20197,7 +20198,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "1d2",
+        "damage": "3d2+1",
         "type": "poison"
       },
       {
@@ -20231,7 +20232,8 @@
     "lore": "Arachne of Lydia wove so well that she challenged Athena, and Ovid admits the goddess could find no flaw in her work. Worse, the tapestry showed the gods' own misdeeds. Athena tore it apart and struck her with the shuttle, and Arachne was changed into a spider, to hang and spin forever. Her thread is still perfect, and she still resents a critic.",
     "frequency": 0,
     "spawn_chance": 0.45,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Every doorway on this floor has been measured for a web."
   },
   "talos": {
     "name": "Talos",
@@ -20241,7 +20243,7 @@
       160,
       100
     ],
-    "hp": "24d8+12",
+    "hp": "35d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 9,
@@ -20252,7 +20254,7 @@
     "attacks": [
       {
         "name": "Crush",
-        "damage": "2d4+1",
+        "damage": "2d4+3",
         "type": "blunt"
       }
     ],
@@ -20281,7 +20283,8 @@
     "lore": "Hephaestus forged Talos of bronze to guard Crete, and the giant ran around the island three times a day, hurling rocks at any ship that came near. One vein ran from his neck to his ankle, closed with a single bronze nail. When the Argonauts arrived, Medea bewitched him, the nail came out, and his ichor poured away like molten lead.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "The floor is warm in a path that circles the level, as if something heavy walks its rounds."
   },
   "echidna": {
     "name": "Echidna",
@@ -20291,7 +20294,7 @@
       100,
       160
     ],
-    "hp": "27d8+24",
+    "hp": "40d8+36",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 8,
@@ -20302,7 +20305,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d4+1",
+        "damage": "3d4+1",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.45,
@@ -20340,7 +20343,8 @@
     "lore": "Hesiod calls Echidna half fair-cheeked nymph and half speckled serpent, living in a cave beneath the earth where she never grows old. By Typhon she bore the worst brood in Greek myth: Cerberus, the Lernaean Hydra, the Chimera, and the two-headed hound Orthrus. Most of her children fell to Heracles. The mother of monsters is still down here, and still nesting.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "The walls here are scored with claw marks of a dozen different shapes."
   },
   "erlking": {
     "name": "Erlking",
@@ -20350,7 +20354,7 @@
       140,
       80
     ],
-    "hp": "38d8+33",
+    "hp": "57d8+50",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 7,
@@ -20361,7 +20365,7 @@
     "attacks": [
       {
         "name": "Lure",
-        "damage": "2d6",
+        "damage": "2d6+2",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.4,
@@ -20396,7 +20400,8 @@
     "lore": "Goethe's ballad tells it: a father rides hard through the night with his feverish son in his arms. The boy sees a crowned figure in the mist who whispers of games and golden robes. The father sees only fog and willows. When they reach home, the child is dead. The Erlking still makes his offers in a soft voice, and cold iron still spoils his mood.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "A child's voice calls from the dark, and then a man's, sweetly, in answer."
   },
   "camazotz": {
     "name": "Camazotz",
@@ -20406,7 +20411,7 @@
       60,
       120
     ],
-    "hp": "52d8+49",
+    "hp": "79d8+74",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -20417,7 +20422,7 @@
     "attacks": [
       {
         "name": "Wing Buffet",
-        "damage": "1d8+4",
+        "damage": "1d8+5",
         "type": "physical",
         "effect": "blinded",
         "effect_chance": 0.35,
@@ -20455,7 +20460,8 @@
     "lore": "In the Popol Vuh of the K'iche' Maya, the Hero Twins must spend a night in the House of Bats in Xibalba. They hid inside their blowguns. Hunahpu put his head out to see whether dawn had come, and Camazotz, the death bat, took it off at the neck. The lords of the underworld hung the head in their ball court. He has come hunting another.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Something large shifts on the ceiling, out of the light, and is still."
   },
   "cacus": {
     "name": "Cacus",
@@ -20465,7 +20471,7 @@
       100,
       40
     ],
-    "hp": "52d10+105",
+    "hp": "79d10+159",
     "speed": 10,
     "ai_pattern": "ranged",
     "thac0": 4,
@@ -20476,7 +20482,7 @@
     "attacks": [
       {
         "name": "Fire Breath",
-        "damage": "2d6+2",
+        "damage": "3d6+3",
         "type": "fire",
         "piercing": true
       },
@@ -20511,7 +20517,8 @@
     "lore": "Virgil's Cacus was a fire-breathing son of Vulcan who lived in a cave on the Aventine Hill, its doorway hung with the heads of his victims. He stole cattle from Hercules and dragged them in by their tails, so the tracks would point the wrong way. Their lowing betrayed him. Hercules tore the roof off the hill, plunged through the smoke, and strangled him.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Hoof prints in the dust lead backwards, away from where the cattle went."
   },
   "the_sphinx": {
     "name": "The Sphinx",
@@ -20532,7 +20539,7 @@
     "attacks": [
       {
         "name": "Rake",
-        "damage": "2d8+1",
+        "damage": "3d8+1",
         "type": "slash"
       },
       {
@@ -20565,7 +20572,8 @@
     "lore": "The Sphinx of Thebes had a woman's face, a lion's body, and an eagle's wings. She sat on a rock above the road and asked each traveler what goes on four legs at morning, two at noon, and three at evening, and she ate the ones who could not say. When Oedipus answered her, she threw herself from the cliff. She has learned harder riddles since.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Answers are scratched into the wall here. Every one of them is crossed out."
   },
   "rangda": {
     "name": "Rangda",
@@ -20586,7 +20594,7 @@
     "attacks": [
       {
         "name": "Hex",
-        "damage": "2d8+3",
+        "damage": "3d8+4",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -20624,7 +20632,8 @@
     "lore": "On Bali, Rangda is the widow-witch: wild white hair, tusks, and a tongue that hangs to her waist. She commands the leyaks, sorcerers who fly by night, and she fights an unending duel with Barong, the lion-like guardian of the villages. In the temple dance her spell turns the warriors' own daggers against them. Neither side ever wins, and the dance begins again.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Offerings of rice and flowers lie rotting at every corner of this floor."
   },
   "nemean_lion": {
     "name": "Nemean Lion",
@@ -20645,7 +20654,7 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d6+4",
+        "damage": "4d6+5",
         "type": "slash"
       },
       {
@@ -20672,12 +20681,14 @@
       ],
       "item_chance": 1.0,
       "item_tier": 4,
-      "boss_scroll_id": "scroll_of_the_lion"
+      "boss_scroll_id": "scroll_of_the_lion",
+      "unique_drop_id": "hide_of_nemean_lion"
     },
     "lore": "The first labor of Hercules. His arrows bounced off the Nemean Lion's golden hide and his sword bent on it, so he drove the beast into its cave, blocked one of the two entrances, and choked it to death with his bare arms. Only the lion's own claws could cut the pelt, which he wore ever after. Edges are wasted on it. A crushing blow is not.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "A broken sword lies by the stairs, bent double. There is no blood on it."
   },
   "baba_yaga": {
     "name": "Baba Yaga",
@@ -20698,7 +20709,7 @@
     "attacks": [
       {
         "name": "Iron Bite",
-        "damage": "3d6+6",
+        "damage": "4d6+8",
         "type": "physical",
         "effect": "bleeding",
         "effect_chance": 0.45,
@@ -20740,7 +20751,8 @@
     "frequency": 0,
     "spawn_chance": 0.4,
     "is_mini_boss": true,
-    "regeneration": 3
+    "regeneration": 3,
+    "omen": "The floor is swept clean in one long line, as if by a broom."
   },
   "jormungandr_juvenile": {
     "name": "Jörmungandr (Juvenile)",
@@ -20761,7 +20773,7 @@
     "attacks": [
       {
         "name": "Venom Cloud",
-        "damage": "3d8+5",
+        "damage": "4d8+7",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.6,
@@ -20803,7 +20815,8 @@
     "lore": "Odin threw Loki's serpent child into the sea, where it grew until it circled Midgard and took its own tail in its mouth. Thor once hooked it using an ox head for bait, and the giant Hymir cut the line in terror. At Ragnarok Thor kills it at last, walks nine steps, and falls dead of its venom. This is a young one. The venom is the same.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "A dry riverbed crosses this floor. It is a slough, and it is fresh."
   },
   "sets_jackal": {
     "name": "Set's Jackal",
@@ -20824,7 +20837,7 @@
     "attacks": [
       {
         "name": "Shadow Strike",
-        "damage": "3d8+7",
+        "damage": "4d8+9",
         "type": "drain"
       },
       {
@@ -20861,7 +20874,8 @@
     "lore": "Set murdered his brother Osiris, scattered the pieces across Egypt, and fought Horus for the throne through eighty years of trials. He is lord of the red desert, of storms, and of strangers. Anubis, the jackal who weighs hearts, guides the dead with care. Set's jackals are his dark reflection: they come up out of the desert night and hunt the living for sport.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Red sand has drifted against the walls, though there is no desert for a hundred floors."
   },
   "green_knight": {
     "name": "The Green Knight",
@@ -20882,7 +20896,7 @@
     "attacks": [
       {
         "name": "Greataxe",
-        "damage": "3d8+9",
+        "damage": "4d8+12",
         "type": "slash"
       },
       {
@@ -20921,7 +20935,9 @@
     "is_mini_boss": true,
     "revive_once_on_death": true,
     "revive_hp_pct": 0.5,
-    "regeneration": 5
+    "regeneration": 5,
+    "omen": "Holly grows from the bare stone here, in full berry.",
+    "revive_message": "The Green Knight stoops, lifts his head by the hair, and sets it back on his shoulders. \"Now it is my turn.\""
   },
   "charybdis": {
     "name": "Charybdis",
@@ -20933,7 +20949,7 @@
     ],
     "hp": "250d10+664",
     "speed": 10,
-    "ai_pattern": "aggressive",
+    "ai_pattern": "ranged",
     "thac0": -8,
     "peak_floor": 78,
     "spread": 2,
@@ -20942,8 +20958,9 @@
     "attacks": [
       {
         "name": "Vortex Pull",
-        "damage": "4d10+3",
-        "type": "blunt"
+        "damage": "5d10+4",
+        "type": "blunt",
+        "ranged": true
       },
       {
         "name": "Crushing Maw",
@@ -20977,7 +20994,8 @@
     "frequency": 0,
     "spawn_chance": 0.35,
     "is_mini_boss": true,
-    "pull_chance": 0.45
+    "pull_chance": 0.45,
+    "omen": "The puddles on this floor all lean the same way."
   },
   "ravanas_arm": {
     "name": "Ravana's Arm",
@@ -20998,7 +21016,7 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "4d10+4",
+        "damage": "5d10+5",
         "type": "blunt"
       },
       {
@@ -21039,7 +21057,8 @@
     "lore": "Ravana, king of Lanka, had ten heads and twenty arms, and he carried off Sita, the wife of Rama. In the war that followed, Rama's arrows struck off his heads and each one grew back, until a weapon given by the gods found his heart. This arm did not die with him. It drags itself along by its fingers, and it still has a king's grip.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Five long furrows are gouged into the floor, side by side, wider than a doorway."
   },
   "wendigo": {
     "name": "Wendigo",
@@ -21060,7 +21079,7 @@
     "attacks": [
       {
         "name": "Ice Claw",
-        "damage": "4d10+8",
+        "damage": "5d10+10",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -21101,7 +21120,8 @@
     "lore": "The Algonquian peoples of the northern forests tell of the wendigo: a gaunt giant with a heart of ice, born when a starving person eats human flesh in the dead of winter. It grows with every meal, so its hunger always outruns its feeding, and it is never full. Cold walks ahead of it. Fire is what the old stories use to melt the heart.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "It is colder here than it should be, and you are hungrier than you were on the stair."
   },
   "wild_hunt_captain": {
     "name": "Wild Hunt Captain",
@@ -21122,7 +21142,7 @@
     "attacks": [
       {
         "name": "Spectral Blade",
-        "damage": "4d10+12",
+        "damage": "5d10+15",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -21163,7 +21183,8 @@
     "lore": "On winter nights, all across the north, people heard hounds and horns in the sky and barred their doors. The Germans said Wotan led the riders; the English said Herne the Hunter, or old King Herla, who cannot dismount. To see the Hunt was an omen of death. To be caught in its path was to ride with it. The captain's horn has already sounded.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "A horn sounds, very far off, and then not so far."
   },
   "anansi": {
     "name": "Anansi",
@@ -21184,7 +21205,7 @@
     "attacks": [
       {
         "name": "Web Trick",
-        "damage": "4d10+13",
+        "damage": "5d10+16",
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.55,
@@ -21224,7 +21245,8 @@
     "lore": "Anansi the spider wanted the stories of the world, and Nyame the Sky God named a price no one could pay: Onini the python, Osebo the leopard, the Mmoboro hornets, and a fairy no one could see. Anansi caught all four by talk and trickery, and since then the Akan call every tale a spider story. He does not fight fair. He does not need to.",
     "frequency": 0,
     "spawn_chance": 0.4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "A thread crosses the stair at ankle height. It hums when you step over it."
   },
   "nidhoggr_fragment": {
     "name": "Níðhöggr Fragment",
@@ -21245,7 +21267,7 @@
     "attacks": [
       {
         "name": "Acid Bite",
-        "damage": "4d10+16",
+        "damage": "5d10+19",
         "type": "acid"
       },
       {
@@ -21287,7 +21309,8 @@
     "lore": "Níðhöggr lies beneath the root of Yggdrasil that reaches the spring Hvergelmir, and gnaws. The squirrel Ratatoskr runs up and down the trunk carrying insults between the dragon and the eagle at the top. The seeress of the Voluspa sees him still flying after Ragnarok, with corpses under his wings. Even a piece of him is patient enough to chew through anything.",
     "frequency": 0,
     "spawn_chance": 0.35,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "omen": "Roots as thick as pillars come down through the ceiling. Something has been gnawing them."
   },
   "seal_demon_wrath": {
     "name": "Amon, Demon of Wrath",
@@ -21308,7 +21331,7 @@
     "attacks": [
       {
         "name": "Blazing Fist",
-        "damage": "4d10+6",
+        "damage": "5d10+8",
         "type": "fire"
       },
       {
@@ -21347,7 +21370,8 @@
     "spawn_chance": 1.0,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "seal_demon_pestilence": {
     "name": "Buer, Demon of Pestilence",
@@ -21368,7 +21392,7 @@
     "attacks": [
       {
         "name": "Plague Touch",
-        "damage": "4d10+8",
+        "damage": "5d10+10",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -21408,7 +21432,8 @@
     "spawn_chance": 1.0,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "seal_demon_famine": {
     "name": "Mammon, Demon of Famine",
@@ -21429,7 +21454,7 @@
     "attacks": [
       {
         "name": "Draining Grasp",
-        "damage": "4d10+9",
+        "damage": "5d10+12",
         "type": "drain"
       },
       {
@@ -21469,7 +21494,8 @@
     "sp_drain": 15,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "seal_demon_war": {
     "name": "Bael, Demon of War",
@@ -21490,7 +21516,7 @@
     "attacks": [
       {
         "name": "War Blade",
-        "damage": "4d10+11",
+        "damage": "5d10+14",
         "type": "slash"
       },
       {
@@ -21535,7 +21561,8 @@
     "spawn_chance": 1.0,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "seal_demon_death": {
     "name": "Samael, Demon of Death",
@@ -21556,7 +21583,7 @@
     "attacks": [
       {
         "name": "Death Touch",
-        "damage": "4d10+13",
+        "damage": "5d10+16",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.3,
@@ -21596,7 +21623,8 @@
     "spawn_chance": 1.0,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "seal_demon_earthquake": {
     "name": "Beleth, Demon of the Earthquake",
@@ -21617,7 +21645,7 @@
     "attacks": [
       {
         "name": "Earth Shatter",
-        "damage": "4d10+14",
+        "damage": "5d10+17",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -21657,7 +21685,8 @@
     "spawn_chance": 1.0,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "seal_demon_silence": {
     "name": "Abyzou, Demon of Silence",
@@ -21678,7 +21707,7 @@
     "attacks": [
       {
         "name": "Void Whisper",
-        "damage": "4d10+18",
+        "damage": "5d10+21",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -21721,7 +21750,8 @@
     "spawn_chance": 1.0,
     "is_boss": true,
     "is_mini_boss": true,
-    "is_seal_demon": true
+    "is_seal_demon": true,
+    "multi_attack_count": 2
   },
   "abyssal_locust": {
     "name": "abyssal locust",
@@ -21875,7 +21905,7 @@
       215,
       0
     ],
-    "hp": "30d12+175",
+    "hp": "37d12+216",
     "speed": 10,
     "ai_pattern": "aggressive",
     "thac0": 5,
@@ -21886,7 +21916,7 @@
     "attacks": [
       {
         "name": "Royal Halberd",
-        "damage": "1d8+4",
+        "damage": "1d8+6",
         "type": "slash"
       },
       {
@@ -27257,7 +27287,13 @@
     "rage_interval": 4,
     "rage_damage_bonus": "1d6",
     "alert_radius": 8,
-    "alert_all_tag": true
+    "alert_all_tag": true,
+    "omen": "Someone has kept this floor swept and the torches trimmed, as for a court.",
+    "enrage_message": "The Iron Patriarch rises from his throne. The audience is over.",
+    "rage_messages": [
+      "The Iron Patriarch remembers how he took the crown.",
+      "The Iron Patriarch fights like a man who has outlived every heir."
+    ]
   },
   "mage_slayer_assassin": {
     "name": "Mage-Slayer Assassin",
@@ -27675,11 +27711,11 @@
     "speed": 9,
     "thac0": -3,
     "summon_kind": [
-      "specter",
-      "wraith"
+      "skeleton_horde",
+      "death_knight_lord"
     ],
     "summon_cooldown": 3,
-    "summon_max": 6,
+    "summon_max": 3,
     "attacks": [
       {
         "name": "Soul Whisper",
@@ -27691,7 +27727,7 @@
       },
       {
         "name": "Deathly Bolt",
-        "damage": "3d6+2",
+        "damage": "6d6+4",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.3,
@@ -27737,7 +27773,13 @@
     "rage_damage_bonus": "1d8",
     "perception_range": 10,
     "alert_radius": 8,
-    "alert_all_tag": true
+    "alert_all_tag": true,
+    "omen": "The whispering starts as soon as you arrive. It knows your name.",
+    "enrage_message": "The Whispering Crone stops whispering.",
+    "rage_messages": [
+      "The Whispering Crone speaks a name, and it is yours.",
+      "The Whispering Crone's friends press closer in the dark."
+    ]
   },
   "demonic_trickster": {
     "name": "Demonic Trickster",
@@ -28236,7 +28278,7 @@
     "attacks": [
       {
         "name": "Exsanguinating Blade",
-        "damage": "4d8+5",
+        "damage": "6d8+8",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.6,
@@ -28291,7 +28333,13 @@
     "alert_radius": 10,
     "alert_all_tag": true,
     "can_charge": true,
-    "charge_bonus_mult": 1.8
+    "charge_bonus_mult": 1.8,
+    "omen": "A ledger lies open on the stair. The last entry is your name, with the amount left blank.",
+    "enrage_message": "The Blood Archon closes his ledger.",
+    "rage_messages": [
+      "The Blood Archon collects.",
+      "The Blood Archon adds the interest."
+    ]
   },
   "astral_horror": {
     "name": "Astral Horror",
@@ -28449,7 +28497,8 @@
     },
     "lore": "In the Babylonian Enuma Elish, Tiamat is the salt sea, mother of the first gods and of the monsters she raised against them. The young god Marduk drove the winds into her open jaws, shot an arrow down her throat, and split her body in two to make the sky and the earth. Later storytellers gave her five dragon heads and named her queen of evil dragonkind. That is the shape that wakes beneath the dungeon: five crowned heads, each breathing a different ruin, frost, flame, lightning, acid and venom, and behind them the oldest grudge in the world.",
     "frequency": 1,
-    "spawn_chance": 1.0
+    "spawn_chance": 1.0,
+    "omen": "The air tastes of salt, and the stone is wet with something that is not water."
   },
   "asmodeus": {
     "name": "Asmodeus, Prince of Hell",
@@ -28542,7 +28591,8 @@
     },
     "lore": "The Book of Tobit names Asmodeus as the demon who killed seven husbands of Sarah, each on his wedding night. On the advice of the angel Raphael, young Tobias burned the heart and liver of a fish, and the smoke drove the demon to the far reaches of Egypt, where Raphael bound him. Later tradition made him a prince of Hell who rules by contract instead of fury. Every soul he owns signed its own surrender, and the ruby rod in his hand seals each bargain. He has not forgiven the fish.",
     "frequency": 1,
-    "spawn_chance": 1.0
+    "spawn_chance": 1.0,
+    "omen": "Somewhere on this floor a table is laid for two, and a bell is rung for dinner."
   },
   "surtur": {
     "name": "Surtur the Fire Giant Lord",
@@ -28623,7 +28673,8 @@
     "lore": "Surtur, whom the Norse poets called Surt, stands guard at the border of Muspelheim, the realm of fire, with a sword that outshines the sun. The Voluspa foretells that at Ragnarok he will ride from the south with flame before and behind him, cut down the god Freyr, and cast fire over the whole earth until it sinks into the sea. He has not yet been called to that battle. Until the horn sounds he waits below, and the stone around him runs like wax. Cold is the one thing a lord of fire has reason to respect.",
     "frequency": 1,
     "enraged_pattern": "aggressive",
-    "spawn_chance": 1.0
+    "spawn_chance": 1.0,
+    "omen": "The stone here is warm and runs like wax."
   },
   "ymir_last_spawn": {
     "name": "Ymir's Last Spawn",
@@ -28709,7 +28760,8 @@
     "lore": "Ymir was the first of the frost giants, born where the ice of Niflheim met the sparks of Muspelheim. Odin and his brothers Vili and Ve killed him and built the world from the corpse: his flesh the soil, his blood the sea, his bones the mountains, his skull the dome of the sky. The blood drowned all his kin but Bergelmir and his wife. This giant claims descent from neither. It says it was there before the flood, and it carries the cold of that first morning in its breath.",
     "frequency": 1,
     "enraged_pattern": "aggressive",
-    "spawn_chance": 1.0
+    "spawn_chance": 1.0,
+    "omen": "Frost has grown on the inside of the walls."
   },
   "hrungnirs_ghost": {
     "name": "Hrungnir's Ghost",
@@ -28787,6 +28839,7 @@
     "frequency": 1,
     "enraged_pattern": "aggressive",
     "spawn_chance": 1.0,
-    "enraged_multi_attack_count": 3
+    "enraged_multi_attack_count": 3,
+    "omen": "Chips of whetstone are scattered across the floor, as if thrown."
   }
 }

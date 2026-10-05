@@ -207,7 +207,7 @@ class DivineMixin:
         _done = self.player.quirk_progress.setdefault('mysteries_attempted', [])
         if altar.mystery_id in _done:
             self.add_message(
-                f"{m['name']}: you have already faced this mystery. "
+                f"{m['name']} has nothing more to say to you. "
                 "The altar is silent.", 'info')
             return
         can, reason = can_activate(altar.mystery_id, self.player,
@@ -218,7 +218,7 @@ class DivineMixin:
         self._active_mystery_altar = altar
         if not getattr(self, '_chronicle_first_mystery', False):
             self._chronicle_first_mystery = True
-            self._log_chronicle(f"Found a strange altar. {m['name']}. The inscription dared me to approach.")
+            self._log_chronicle(f"Came upon {m['name']}. Not every altar down here is for praying at.")
         self.state = STATE_MYSTERY_APPROACH
 
     def _begin_mystery_challenge(self):
@@ -235,7 +235,7 @@ class DivineMixin:
         if m.get('stat_cost'):
             for stat, amt in m['stat_cost'].items():
                 self.player.apply_stat_bonus(stat, amt)
-            self.add_message("You feel a part of yourself drain away as payment...", 'warning')
+            self.add_message("The well takes its price before it gives anything. The edges of the world grow a little dimmer.", 'warning')
 
         if m.get('gold_cost', 0) > 0:
             self.player_gold = getattr(self, 'player_gold', 0) - m['gold_cost']
@@ -250,13 +250,13 @@ class DivineMixin:
             foods = get_cauldron_food_items(self.player)
             for food in foods[:3]:
                 self.player.remove_from_inventory(food)
-            self.add_message("Three meals are consumed by the cauldron's fire.", 'info')
+            self.add_message("The cauldron swallows all three dishes, bowls and all.", 'info')
 
         # Sisyphus: physical challenge -- start tracking tiles
         if ch['mode'] == 'physical':
             self.player.quirk_progress['sisyphus_boulder_active'] = True
             self.player.quirk_progress['sisyphus_boulder_tiles'] = 0
-            self.add_message("You grasp the boulder. Begin your ascent.", 'info')
+            self.add_message("You set your shoulder to the boulder. The slope is waiting.", 'info')
             self.state = STATE_PLAYER
             self._active_mystery_altar = None
             return
@@ -399,7 +399,7 @@ class DivineMixin:
         """Apply fountain effects based on chain score."""
         if not getattr(self, '_chronicle_first_fountain', False):
             self._chronicle_first_fountain = True
-            self._log_chronicle("Drank from a dungeon fountain. Tasted like copper and starlight. Something happened.")
+            self._log_chronicle("Drank from a fountain a long way from any spring. It tasted of copper and cold. It seemed to be weighing me up.")
         import random as _rng
         px, py = self.player.x, self.player.y
 
@@ -663,12 +663,12 @@ class DivineMixin:
         """Apply grave-digging effects based on chain score."""
         if not getattr(self, '_chronicle_first_grave', False):
             self._chronicle_first_grave = True
-            self._log_chronicle("Dug up a grave. I'm not proud of it, but the dead don't need what's buried with them.")
+            self._log_chronicle("Dug up a grave. I am not proud of it. I said a prayer over what was left, which is more than the last visitor did.")
         import random as _rng
         px, py = self.player.x, self.player.y
 
         if chain == 0:
-            self.add_message("A restless spirit emerges from the grave!", 'danger')
+            self.add_message("Something was sharing this grave, and now it is awake!", 'danger')
             self._spawn_at(px, py)
         elif chain == 1:
             gold = _rng.randint(5, 30)
@@ -685,20 +685,39 @@ class DivineMixin:
 
         # Grave is consumed
         self.dungeon.tiles[py][px] = FLOOR
-        self.add_message("The grave has been disturbed.", 'info')
+        self.add_message("The grave lies open and empty.", 'info')
 
     def _spawn_grave_item(self, x: int, y: int):
         """Spawn a random level-appropriate item at (x, y) from the grave."""
-        from items import load_items
-        templates = []
-        for cls_name in ('weapon', 'armor', 'shield', 'accessory', 'scroll', 'potion'):
-            try:
-                templates += [t for t in load_items(cls_name)
-                              if getattr(t, 'min_level', 1) <= self.dungeon_level]
-            except FileNotFoundError:
-                pass
-        if templates:
-            item = copy.copy(random.choice(templates))
+        # Ordinary floor loot. This used to pick uniformly from the raw item
+        # files with only a min_level check: weapon/armor/shield.json hold
+        # nothing but named uniques, and the pool included scripted quest
+        # rewards (the Aegis of Athena, the Ring of Command, the Duck of Doom).
+        from items import (load_items, is_random_loot, pick_random_weapon_for_floor,
+                           pick_random_armor_for_floor, pick_random_shield_for_floor)
+        from container_system import _weighted_common_pick
+        lvl = max(1, min(100, self.dungeon_level))
+        roll = random.random()
+        item = None
+        if roll < 0.25:
+            item = pick_random_weapon_for_floor(lvl, random)
+        elif roll < 0.40:
+            item = pick_random_armor_for_floor(lvl, random)
+        elif roll < 0.50:
+            item = pick_random_shield_for_floor(lvl, random)
+        if item is None:
+            templates = []
+            for cls_name in ('accessory', 'scroll', 'potion'):
+                try:
+                    templates += [t for t in load_items(cls_name)
+                                  if getattr(t, 'min_level', 1) <= lvl
+                                  and is_random_loot(t)
+                                  and not getattr(t, 'is_unique', False)]
+                except FileNotFoundError:
+                    pass
+            if templates:
+                item = copy.copy(_weighted_common_pick(templates, lvl, random))
+        if item is not None:
             item.x, item.y = x, y
             self.ground_items.append(item)
 
@@ -748,7 +767,7 @@ class DivineMixin:
                 self.player.add_effect('weakened', 20)
                 self.add_message("A curse settles over you! You feel weakened.", 'danger')
             else:
-                self.add_message("Guards materialize to defend the throne!", 'danger')
+                self.add_message("The throne does not care for pretenders. Two shapes step out of the dark to say so!", 'danger')
                 for _ in range(2):
                     self._spawn_at(px, py)
         elif chain == 1:
