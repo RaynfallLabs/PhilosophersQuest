@@ -2816,9 +2816,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if self.dungeon_level == 99 and len(self.seals_broken) < 7:
             remaining = 7 - len(self.seals_broken)
             self.add_message(
-                f"Seven seals hold the Pit closed. {remaining} remain unbroken.", 'warning')
-            self.add_message(
-                "You must slay the seven guardians before the way opens.", 'info')
+                f"The stair to the Pit is shut. {remaining} of the seven seals still "
+                f"hold{'s' if remaining == 1 else ''}, and "
+                f"{'its keeper' if remaining == 1 else 'their keepers'} still "
+                f"live{'s' if remaining == 1 else ''} on the floors above.", 'warning')
             return
         try:
             self._change_level(self.dungeon_level + 1, enter_from_top=True)
@@ -3007,6 +3008,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Destroy Death
         self.death_pursues = False
         self.death_monster = None
+        # The Complete Tablet IS the Stone now, and it was dropped on the
+        # Shimmer to do this. Put it back in the player's hands: walking out
+        # without it used to count as abandoning the quest, with no reminder.
+        _tab = next((g for g in self.ground_items
+                     if getattr(g, 'id', '') == 'complete_tablet_of_second_death'), None)
+        if _tab is not None:
+            self.ground_items.remove(_tab)
+            self.player.inventory.append(_tab)
+            self.add_message(
+                "The Tablet lies at the lip of the Abyss, unmarked. You take it "
+                "up again. It is cold now.", 'loot')
         # Mark this run as the SECRET-victory path so the victory screen
         # renders the Abyss-distinct variant (arcane purple, "DEATH IS DEAD"
         # headline) instead of the standard gold "VICTORY!" screen.
@@ -3228,8 +3240,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                 if m.alive and m.kind == 'abaddon_destroyer'), None)
                 if abaddon:
                     abaddon.resistances = list(getattr(abaddon, 'base_resistances', []))
+                    abaddon.damage_ward = float(getattr(abaddon, 'base_damage_ward', 0.0) or 0.0)
                     self.add_message(
-                        "The holy fire fades. Abaddon's dark armor reforms.", 'danger')
+                        "The holy fire gutters out. The dark closes round the "
+                        "Destroyer again.", 'danger')
 
         # Decrement hack reality cooldown
         if self.player.hack_reality_cooldown > 0:
@@ -6037,6 +6051,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if getattr(self, '_locusts_strengthened', False):
             lo += 2
             hi += 3
+            # "larger and more numerous": the judgment promised both.
+            abaddon.locust_cap_bonus = 4
         count = random.randint(lo, hi)
 
         locust_def = _all.get('abyssal_locust')
@@ -6072,9 +6088,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             occupied.add((tx, ty))
             spawned += 1
 
-        if spawned > 0:
+        if spawned > 0 and (abaddon.x, abaddon.y) in getattr(self, 'visible', ()):
             self.add_message(
-                "Abaddon raises his hand \u2014 a swarm of locusts erupts from the void!", 'danger')
+                "Abaddon raises his hand, and locusts pour up out of the Pit.", 'danger')
+        elif spawned > 0:
+            self.add_message("Somewhere close, wings begin to rattle.", 'danger')
 
         # Heavenly Host counter-spawn: one angel per locust
         if self.heavenly_host_active and angel_def and spawned > 0:

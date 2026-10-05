@@ -20189,7 +20189,8 @@
     "multi_attack_count": 2,
     "enraged_multi_attack_count": 5,
     "enrage_at_hp_pct": 0.4,
-    "enraged_pattern": "aggressive"
+    "enraged_pattern": "aggressive",
+    "damage_ward": 0.5
   },
   "arachne": {
     "name": "Arachne",
@@ -21383,7 +21384,17 @@
     "is_boss": true,
     "is_mini_boss": true,
     "is_seal_demon": true,
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "enrage_at_hp_pct": 0.6,
+    "enraged_pattern": "fenrir_rage",
+    "rage_interval": 3,
+    "rage_damage_bonus": "1d6",
+    "enrage_message": "Amon's flame goes from red to white. He has stopped holding anything back.",
+    "rage_messages": [
+      "Amon burns hotter.",
+      "Amon's fury feeds itself.",
+      "The air round Amon is too hot to breathe."
+    ]
   },
   "seal_demon_pestilence": {
     "name": "Buer, Demon of Pestilence",
@@ -21414,7 +21425,10 @@
         "name": "Miasma Breath",
         "damage": "3d6+4",
         "type": "poison",
-        "piercing": true
+        "piercing": true,
+        "effect": "diseased",
+        "effect_chance": 0.25,
+        "effect_duration": 4
       }
     ],
     "resistances": [
@@ -21503,7 +21517,7 @@
     "lore": "The Gospel warns that no one can serve both God and mammon, and the Aramaic word simply means wealth. Medieval writers made Mammon a prince of Hell, the demon of avarice. He guards the Third Seal as famine, which is greed's other face: the granary locked while the village starves. Bread goes stale near him and strength leaves the arms. He is never satisfied.",
     "frequency": 0,
     "spawn_chance": 1.0,
-    "sp_drain": 15,
+    "sp_drain": 25,
     "is_boss": true,
     "is_mini_boss": true,
     "is_seal_demon": true,
@@ -21574,7 +21588,8 @@
     "is_boss": true,
     "is_mini_boss": true,
     "is_seal_demon": true,
-    "multi_attack_count": 2
+    "multi_attack_count": 3,
+    "alert_radius": 14
   },
   "seal_demon_death": {
     "name": "Samael, Demon of Death",
@@ -21596,7 +21611,7 @@
       {
         "name": "Death Touch",
         "damage": "5d10+16",
-        "type": "necrotic",
+        "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.3,
         "effect_duration": 5
@@ -21636,7 +21651,8 @@
     "is_boss": true,
     "is_mini_boss": true,
     "is_seal_demon": true,
-    "multi_attack_count": 2
+    "multi_attack_count": 2,
+    "drain_heals_self": 0.5
   },
   "seal_demon_earthquake": {
     "name": "Beleth, Demon of the Earthquake",

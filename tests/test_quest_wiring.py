@@ -816,3 +816,91 @@ def test_gleipnir_must_be_cast_from_close_and_in_sight():
     import game_menus
     assert game_menus.MenuMixin.GLEIPNIR_HOLD >= 3
     assert 3 <= game_menus.MenuMixin.GLEIPNIR_RANGE <= 8
+
+
+# ------------------------------------------------------ seals, Abaddon, Death
+
+def test_each_seal_floor_bars_its_stair_until_the_keeper_dies():
+    """A seal demon could be walked past, and the miss only showed at the
+    floor-99 gate, with a dozen floors to climb back."""
+    from level_manager import LevelManager
+    lm = LevelManager()
+    for lvl, demon in LevelManager._SEAL_DEMON_LEVELS.items():
+        d, monsters, _items = lm.generate(lvl)
+        assert any(m.kind == demon for m in monsters), (lvl, demon)
+        assert d.stairs_guardian == demon
+        assert d.stairs_guardian_line and d.stairs_guardian_open_line
+
+
+def test_seal_demons_are_not_seven_copies_of_one_fight():
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    wrath, war = data['seal_demon_wrath'], data['seal_demon_war']
+    death, famine = data['seal_demon_death'], data['seal_demon_famine']
+    plague = data['seal_demon_pestilence']
+    assert wrath['enraged_pattern'] == 'fenrir_rage' and wrath['rage_messages']
+    assert war['multi_attack_count'] == 3 and war['alert_radius'] > 10
+    assert death['drain_heals_self'] > 0
+    assert any(a['type'] == 'drain' for a in death['attacks'])
+    assert famine['sp_drain'] >= 20
+    assert any(a.get('effect') == 'diseased' for a in plague['attacks'])
+    patterns = {(data[k]['ai_pattern'], data[k].get('enraged_pattern', ''),
+                 data[k].get('multi_attack_count'), bool(data[k].get('drain_heals_self')),
+                 bool(data[k].get('sp_drain')))
+                for k in data if data[k].get('is_seal_demon')}
+    assert len(patterns) >= 5
+
+
+def test_abaddons_ward_halves_blows_until_holy_fire_or_michaels_sword():
+    """His five resistances never mattered: any blessed or piercing weapon
+    went straight past them, so the six altars were decoration."""
+    from monster import Monster
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    a = Monster({**data['abaddon_destroyer'], 'id': 'abaddon_destroyer'}, 5, 5)
+    assert a.damage_ward == 0.5 and a.base_damage_ward == 0.5
+    src = open(os.path.join(ROOT, 'src', 'combat.py'), encoding='utf-8').read()
+    assert 'if damage_ward > 0 and not _skip_dr:' in src
+    div = open(os.path.join(ROOT, 'src', 'game_divine.py'), encoding='utf-8').read()
+    assert 'abaddon.damage_ward = 0.0' in div
+    main = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    assert "abaddon.damage_ward = float(getattr(abaddon, 'base_damage_ward'" in main
+    # every one of the six altars can be used, cooldown or not
+    assert '_fresh_l100_altar' in div
+    weapons = json.load(open(os.path.join(ROOT, 'data', 'items', 'weapon.json'), encoding='utf-8'))
+    assert weapons['sword_of_michael']['ignore_resistances'] is True
+
+
+def test_prayer_can_actually_hold_death():
+    """Death is kept apart from self.monsters. The first version of the
+    prayer freeze required him to be in that list, so it never fired."""
+    src = open(os.path.join(ROOT, 'src', 'game_divine.py'), encoding='utf-8').read()
+    assert '_death in self.monsters' not in src.split('def _resolve_simple_prayer')[1].split('def ')[0].replace(
+        "(Death is kept apart from self.monsters.", '')
+    assert '_death._frozen_turns = max(' in src
+
+
+def test_deaths_bonus_step_is_never_a_second_attack():
+    from monster import DeathMonster
+    from player import Player
+    d = generate_dungeon(80, 50, 10)
+    death = DeathMonster()
+    death._speed_pct = 125
+    p = Player()
+    room = d.rooms[1]
+    p.x, p.y = room.center
+    death.x, death.y = p.x + 1, p.y
+    death.alive = True
+    results = [death.take_turn(p, d, [death], set()) for _ in range(200)]
+    # Adjacent: he may strike (True), but the method never takes a second
+    # action after an attack, and he never ends up on the player's tile.
+    assert all(isinstance(r, bool) for r in results)
+    assert (death.x, death.y) != (p.x, p.y)
+    src = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
+    assert 'and not result\n                and not self._adjacent_to(player)' in src.replace('\r\n', '\n')
+
+
+def test_time_does_not_stop_for_death():
+    src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
+    i = src.index('def _do_monster_turns')
+    block = src[i:i + 2200]
+    assert 'if _time_stopped and not (self.death_pursues' in block
+    assert block.index('dm.take_turn(') < block.index('if _time_stopped:\n            return'.replace('\n', os.linesep if os.linesep in block else '\n'))

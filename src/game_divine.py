@@ -871,7 +871,13 @@ class DivineMixin:
                 self._resolve_judgment()
                 return
 
-        if self.player.prayer_cooldown > 0:
+        # The six altars round Abaddon's arena each answer once, whatever the
+        # prayer cooldown says. (With a cooldown of 100+ turns only one of
+        # the six could ever be used in the fight.)
+        _fresh_l100_altar = (
+            self.dungeon_level == 100 and _on_altar(self)
+            and (self.player.x, self.player.y) not in getattr(self, '_l100_altars_used', set()))
+        if self.player.prayer_cooldown > 0 and not _fresh_l100_altar:
             self.add_message(
                 f"You cannot pray yet. ({self.player.prayer_cooldown} turns remain)",
                 'warning'
@@ -934,8 +940,9 @@ class DivineMixin:
         # "I need to pray" and DeathMonster has always honoured
         # _frozen_turns, but nothing ever set it.
         _death = getattr(self, 'death_monster', None)
-        if (chain >= 1 and getattr(self, 'death_pursues', False) and _death is not None
-                and _death in self.monsters):
+        # (Death is kept apart from self.monsters. An earlier version of this
+        # check required him to be IN that list, so it never fired.)
+        if chain >= 1 and getattr(self, 'death_pursues', False) and _death is not None:
             _hold = 2 + 2 * chain + (2 if at_altar else 0)
             _death._frozen_turns = max(getattr(_death, '_frozen_turns', 0), _hold)
             self.add_message(
@@ -959,9 +966,10 @@ class DivineMixin:
                                 if m.alive and m.kind == 'abaddon_destroyer'), None)
                 if abaddon:
                     abaddon.resistances = []
+                    abaddon.damage_ward = 0.0
                     self.add_message(
-                        f"Holy fire surges around the Destroyer! "
-                        f"His defenses crumble for {turns} turns!", 'success')
+                        f"Holy fire leaps from the altar and wraps the Destroyer. "
+                        f"The dark that guards him burns away. ({turns} turns)", 'success')
                 else:
                     self.add_message(
                         "Holy fire blazes forth but finds no target.", 'info')

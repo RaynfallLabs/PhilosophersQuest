@@ -350,6 +350,16 @@ class LevelManager:
                     mb = Monster(defn, tx, ty)
                     monsters.append(mb)
                     self._placed_mini_bosses.add(demon_id)
+                    # The stair is sealed while its keeper lives, so a seal
+                    # can no longer be walked past and discovered missing at
+                    # the floor-99 gate, a dozen floors of climbing later.
+                    dungeon.stairs_guardian = demon_id
+                    dungeon.stairs_guardian_line = (
+                        "A seal of red wax as wide as a shield is set across "
+                        "the stair. Its keeper is still on this floor.")
+                    dungeon.stairs_guardian_open_line = (
+                        "The seal across the stair cracks from edge to edge "
+                        "and falls away.")
                     return
 
 

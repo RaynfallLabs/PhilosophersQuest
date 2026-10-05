@@ -3,7 +3,7 @@ NPC moral encounter system: one encounter per 10-level block, chosen from
 the candidates in data/npc_encounters.json.
 
 Flow: bump NPC → encounter text (ENTER) → 3 options (1-3) → outcome (ENTER).
-Options show action + justification only — no outcomes, no karma labels.
+Options show action + justification only, no outcomes, no karma labels.
 The player is never cruel; even selfish options are framed as pragmatic necessity.
 One encounter guaranteed per 10-level block, chosen from 3 candidates.
 """
@@ -200,7 +200,7 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
         return False, "You are too exhausted."
 
     if ctype == 'random_item':
-        # Used as a cost — check if player has an item of the requested category
+        # Used as a cost, check if player has an item of the requested category
         from items import Scroll, Potion, Food, Weapon
         cat = cost.get('category', 'scroll')
         cat_map = {'scroll': Scroll, 'potion': Potion, 'food': Food, 'weapon': Weapon}
@@ -220,7 +220,7 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
         return False, "You don't have enough mana."
 
     if ctype == 'triggered_item':
-        # The trigger item should be in inventory — checked by caller
+        # The trigger item should be in inventory, checked by caller
         return True, ''
 
     if ctype == 'accept_item':
@@ -228,7 +228,7 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
         return True, ''
 
     if ctype == 'spawn_deadite_ambush':
-        # Always possible — the Deadite attacks you
+        # Always possible, the Deadite attacks you
         return True, ''
 
     return True, ''
@@ -265,7 +265,7 @@ _JUDGMENT_TIERS = [
 
     (0, 0, 'silence',
      "Michael weighs your soul.\n"
-     "The scales balance perfectly — and remain cold.\n"
+     "The scales balance perfectly, and remain cold.\n"
      "\"You have done nothing worthy of praise or condemnation.\"\n\n"
      "The altar falls silent. Michael has nothing to hand you."),
 

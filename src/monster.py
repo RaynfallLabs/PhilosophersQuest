@@ -186,6 +186,10 @@ class Monster:
         self.kill_chronicle: str   = defn.get('kill_chronicle', '') or ''
         # Loses its footing when it attacks from an ICE tile (Fenrir's hall).
         self.slips_on_ice: bool    = bool(defn.get('slips_on_ice', False))
+        # Fraction of every blow absorbed (Abaddon). base_ keeps the authored
+        # value so it can be restored after an altar strips it.
+        self.damage_ward: float      = float(defn.get('damage_ward', 0.0) or 0.0)
+        self.base_damage_ward: float = self.damage_ward
         self._enraged: bool = False
         self._enrage_message: str = ''
 
@@ -1671,7 +1675,7 @@ class Monster:
                 and self._locust_turn_counter % self.locust_interval == 0):
             _live = sum(1 for m in all_monsters
                         if m.alive and getattr(m, 'kind', '') == 'abyssal_locust')
-            if _live < LOCUST_CAP:
+            if _live < LOCUST_CAP + int(getattr(self, 'locust_cap_bonus', 0) or 0):
                 self._wants_locust_spawn = True
 
         if self._adjacent_to(player):
@@ -1972,13 +1976,15 @@ class DeathMonster(Monster):
             if random.randint(1, 100) > self._speed_pct:
                 return False
         result = super().take_turn(player, dungeon, all_monsters, extra_occupied)
-        # 125% speed: 25% chance of a bonus move
-        if self._speed_pct > 100 and self._frozen_turns == 0:
+        # 125% speed: 25% chance of a bonus STEP. It closes distance; it is
+        # never a second attack. (It could be: at the top of the dungeon a
+        # fleeing player took a free scythe blow on a quarter of all turns,
+        # which nobody can outlast over twenty-five floors.)
+        if (self._speed_pct > 100 and self._frozen_turns == 0 and not result
+                and not self._adjacent_to(player)):
             bonus_chance = self._speed_pct - 100
             if random.randint(1, 100) <= bonus_chance:
-                result2 = super().take_turn(player, dungeon, all_monsters, extra_occupied)
-                if result2:
-                    return result2
+                super().take_turn(player, dungeon, all_monsters, extra_occupied)
         return result
 
     def attack(self, player) -> tuple[int, str]:

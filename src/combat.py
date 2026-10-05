@@ -1347,6 +1347,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # otherwise be completely safe while doing full damage).
         dragon_scales = getattr(monster, 'dragon_scales', 0)
         player._belly_strike = False
+        # A damage ward (Abaddon): the same fraction-absorbed rule as scales,
+        # with no pit to get under it. Holy fire from the floor-100 altars
+        # strips it for a while; a weapon that ignores resistances ignores it.
+        damage_ward = float(getattr(monster, 'damage_ward', 0.0) or 0.0)
+        player._ward_blocked = False
+        if damage_ward > 0 and not _skip_dr:
+            damage = max(1, int(damage * (1.0 - damage_ward)))
+            player._ward_blocked = True
         if dragon_scales > 0:
             if player.has_effect('in_pit') and not is_ranged:
                 damage = int(damage * PIT_BELLY_MULT)

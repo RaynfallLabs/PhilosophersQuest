@@ -763,6 +763,13 @@ class CombatMixin:
 
     def _announce_scale_hit(self, monster, damage: int):
         """Tell the player what the scales did to that blow."""
+        if getattr(self.player, '_ward_blocked', False) and damage > 0:
+            self.player._ward_blocked = False
+            if not getattr(monster, '_ward_hint_shown', False):
+                monster._ward_hint_shown = True
+                self.add_message(
+                    f"Your blow sinks into the dark around {the_name(monster, lower=True)} "
+                    f"and half of it is lost there.", 'warning')
         if not getattr(monster, 'dragon_scales', 0) or damage <= 0:
             return
         if getattr(self.player, '_belly_strike', False):
@@ -1958,8 +1965,11 @@ class CombatMixin:
     # ------------------------------------------------------------------
 
     def _do_monster_turns(self):
-        # Time stop: monsters are frozen this turn
-        if self.player.has_effect('time_stopped'):
+        # Time stop: monsters are frozen this turn. Death is not: he is not
+        # in time. (The return used to come first, so a scroll of time stop
+        # was 25 free turns of the chase.)
+        _time_stopped = self.player.has_effect('time_stopped')
+        if _time_stopped and not (self.death_pursues and self.death_monster is not None):
             return
 
         # Death acts first -- not part of self.monsters to avoid save/load issues
@@ -1978,6 +1988,9 @@ class CombatMixin:
                     self.state = STATE_DEAD
                     self.add_message("You have died! Press ESC to quit.", 'danger')
                     return
+
+        if _time_stopped:
+            return      # everything else stands still
 
         # --- Ariadne's Thread: neutralize wall-phasing monsters ---
         has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
