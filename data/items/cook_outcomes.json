@@ -1190,7 +1190,7 @@
       "temp_amount": 1,
       "temp_duration": 200,
       "permanent_power": "fire_immunity",
-      "permanent_desc": "Fire will never harm you again.",
+      "permanent_desc": "Fire will never bite you as deep again.",
       "desc": "Lavabread — the ember at the middle stays hot for good."
     },
     "trophy_ymir": {
@@ -2277,7 +2277,7 @@
       "stat_grant": 1,
       "stat_grant_default": "STR",
       "permanent_power": "fire_immunity",
-      "permanent_desc": "Flame will not harm you again.",
+      "permanent_desc": "Flame will only ever do half its work on you.",
       "desc": "The red bird's five-part feast; fire becomes a friend."
     },
     "t5_mythic_jotunheim": {
@@ -2319,7 +2319,7 @@
       "stat_grant": 1,
       "stat_grant_default": "DEX",
       "permanent_power": "fire_immunity",
-      "permanent_desc": "The ember at the middle outlasts the flame outside.",
+      "permanent_desc": "The ember at the middle outlasts the flame outside, and takes the worst of it.",
       "desc": "A molten five-pot; the limbs quicken while the heart holds fire."
     },
     "t5_mythic_frostcrown": {
@@ -2360,7 +2360,7 @@
       "temp_duration": 200,
       "max_hp_bonus": 10,
       "permanent_power": "fire_immunity",
-      "permanent_desc": "Fire will not harm you again.",
+      "permanent_desc": "Fire will never bite you as deep again.",
       "desc": "A five that never cools; the chest keeps a slow coal."
     },
     "t5_mythic_rimeheart": {
@@ -2400,7 +2400,7 @@
       "stat_grant": 1,
       "stat_grant_default": "PER",
       "permanent_power": "fire_immunity",
-      "permanent_desc": "Flame will not harm you again, and you will see through it.",
+      "permanent_desc": "Flame will only half harm you again, and you will see through it.",
       "desc": "A kingly five under the forge; the eye reads heat as information."
     },
     "t5_mythic_phoenix_rebirth": {

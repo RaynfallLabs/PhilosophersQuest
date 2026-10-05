@@ -378,11 +378,11 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
         except Exception: pass
         return "Permanent +2 WIS, and hidden doors near you reveal themselves. " + (desc or "")
     elif power_id == 'fire_immunity':
-        # fire_resist is the engine's fire immunity (DAMAGE_IMMUNITY and
-        # the block on 'burning'); 'fire_immune' was read by nothing.
+        # fire_resist halves fire damage and stops the wearer being set
+        # alight (it was a full immunity until 2026-10).
         try: player.add_effect('fire_resist', -1)
         except Exception: pass
-        return "Permanent fire immunity. " + (desc or "")
+        return "Permanent fire resistance: fire does half damage. " + (desc or "")
     elif power_id == 'cold_immunity':
         try: player.add_effect('cold_resist', -1)
         except Exception: pass
@@ -1063,11 +1063,12 @@ def drink_potion(player, potion) -> list[str]:
         amt = player.max_hp - player.hp
         player.restore_hp(amt)
         player.add_effect('fire_resist', -1)  # permanent
-        messages.append("The dragon's blood sears your throat — then fills you with ancient power!")
-        messages.append("You are fully healed and gain permanent fire resistance.")
+        messages.append("The blood scalds all the way down. Then the pain is gone, "
+                        "and every wound with it.")
+        messages.append("Fire will never bite you as deep again.")
         messages.append(
-            "As the blood settles, visions flash: a broken blade tumbling through the air "
-            "over a sacred altar... and being reborn in divine fire."
+            "Two birds are talking somewhere overhead, and the words are plain: "
+            "a broken sword, a one-eyed god's stone, a throw."
         )
 
     else:

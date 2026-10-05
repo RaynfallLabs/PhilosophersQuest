@@ -289,11 +289,13 @@ def test_scenario_12_damage_immunity_correct_type():
     """take_damage returns 0 for the immune type, normal for other types."""
     from player import Player
     p = Player()
-    p.add_effect('fire_resist', -1)
-    fire_dmg = p.take_damage(10, 'fire')
-    assert fire_dmg == 0
+    # cold_resist is a full immunity. (This test used fire_resist until
+    # 2026-10, when fire resistance became half damage, not immunity.)
+    p.add_effect('cold_resist', -1)
     cold_dmg = p.take_damage(10, 'cold')
-    assert cold_dmg > 0
+    assert cold_dmg == 0
+    fire_dmg = p.take_damage(10, 'fire')
+    assert fire_dmg > 0
 
 
 def test_scenario_13_apply_status_already_active_extends():

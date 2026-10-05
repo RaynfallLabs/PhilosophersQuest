@@ -532,7 +532,7 @@ def _level_60_lair():
     _vline(tiles, hoard.y + hoard.height, boss_room.y, hoard.center[0])
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
 
-    # Rock formations -- cover to dig pits behind
+    # Rock formations: cover from the breath on the way in
     for rx, ry in [(36, 41), (36, 42), (48, 44), (48, 45)]:
         tiles[ry][rx] = WALL
 
@@ -543,7 +543,54 @@ def _level_60_lair():
     tiles[exit_room.center[1]][exit_room.x + exit_room.width // 2] = STAIRS_DOWN
 
     dungeon = _make(tiles, rooms, 60)
-    return dungeon, _spawn_boss(dungeon, 'fafnir_dragon', boss_room), []
+
+    # Someone has been here before with Sigurd's idea: one old pit, already
+    # dug, off to one side of the lair. A player who never found the Shovel
+    # (or the broken blade that buys it) can still fight from below, so the
+    # barred stair can never strand a run. The Shovel's worth is choosing
+    # WHERE to dig.
+    dungeon.old_pit = (38, 46)
+    dungeon.pits.add(dungeon.old_pit)
+
+    # The way down is past the lair and shut while he lives.
+    dungeon.stairs_guardian = 'fafnir_dragon'
+    dungeon.stairs_guardian_line = (
+        "A curtain of fire hangs across the stair and does not burn down. "
+        "It is his fire.")
+    dungeon.stairs_guardian_open_line = (
+        "Beyond the lair, the fire across the stair gutters and goes out.")
+    dungeon.atmosphere_messages = [
+        "The rock is warm underfoot. A worn track, wide as a cart road, runs "
+        "down toward the sound of water.",
+    ]
+
+    # The hoard. Boss floors used to return no items at all, so the
+    # "gold-littered hoard chamber" was bare stone.
+    items = []
+    try:
+        import random as _random
+        from items import (add_gold_to_tile, pick_random_weapon_for_floor,
+                           pick_random_armor_for_floor, pick_random_shield_for_floor)
+        hx, hy = hoard.center
+        for dx, dy in ((-9, -5), (-4, 4), (3, -6), (8, 2), (-11, 3), (10, -3)):
+            x, y = hx + dx, hy + dy
+            if tiles[y][x] == FLOOR:
+                add_gold_to_tile(items, _random.randint(150, 350), x, y)
+        gear = (pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                pick_random_shield_for_floor, pick_random_weapon_for_floor)
+        alcoves = [r for r in rooms if r not in (entry, ante1, ante2, ante3, side1,
+                                                 side2, hoard, boss_room, exit_room)]
+        for alcove, pick in zip(alcoves, gear):
+            ax, ay = alcove.center
+            add_gold_to_tile(items, _random.randint(300, 600), ax, ay)
+            it = pick(60, _random)
+            if it is not None:
+                it.x, it.y = ax + 1, ay
+                items.append(it)
+    except Exception:
+        items = [it for it in items if it is not None]
+
+    return dungeon, _spawn_boss(dungeon, 'fafnir_dragon', boss_room), items
 
 
 # ---------------------------------------------------------------------------

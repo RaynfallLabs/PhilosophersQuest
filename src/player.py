@@ -213,7 +213,7 @@ class Player:
 
     def take_damage(self, amount: int, damage_type: str = 'physical') -> int:
         """Apply damage after immunity and resistance checks. Returns actual damage."""
-        from status_effects import DAMAGE_IMMUNITY, SHIELD_IMMUNITY
+        from status_effects import DAMAGE_IMMUNITY, SHIELD_IMMUNITY, DAMAGE_HALVED
         # v2.13.0 Divine Intercession: 'invulnerable' status blocks ALL damage
         # for its duration (10 turns from a successful intercession).
         if self.has_effect('invulnerable'):
@@ -226,6 +226,10 @@ class Player:
         shield_effect = SHIELD_IMMUNITY.get(damage_type)
         if shield_effect and self.has_effect(shield_effect):
             return 0
+        # Resistance (as opposed to immunity): half damage, rounded up.
+        halving_effect = DAMAGE_HALVED.get(damage_type)
+        if halving_effect and self.has_effect(halving_effect) and amount > 0:
+            amount = (amount + 1) // 2
         # Aiglos (Gil-galad's spear): wielder_fire_immunity blocks fire damage
         # while equipped — "Sauron's flame did nothing" (per audit 2026-05-30,
         # the flag was declared in JSON but had no consumer). Checks both

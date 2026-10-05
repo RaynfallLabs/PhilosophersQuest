@@ -1620,6 +1620,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Place player at the stairs they came through
         _snd.play('level_change')
+        # No longer crouched in the last floor's pit.
+        self.player.status_effects.pop('in_pit', None)
         if enter_from_top:
             self.player.x, self.player.y = dungeon.rooms[0].center
             self.add_message(f"You descend to level {new_level}.", 'info')

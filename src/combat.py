@@ -830,6 +830,11 @@ def _is_heavy_armored(monster) -> bool:
 
 # Damage type advantage/disadvantage vs monster flags.
 # Monster defn can set 'resistances': ['slash'] or 'weaknesses': ['pierce']
+# Melee damage multiplier against a scaled dragon when striking up from a
+# pit (the scales themselves do not apply at all from there).
+PIT_BELLY_MULT = 1.25
+
+
 def _damage_multiplier(damage_types: list[str], monster) -> float:
     """Return 0.5 for resistance, 1.5 for weakness, 1.0 otherwise.
     If weapon has multiple types, pick the best result across all types.
@@ -1337,10 +1342,15 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # best case, as in the saga). The old rule was x4 against x0.2, a
         # twenty-fold swing that would have ended Fafnir in one or two hits
         # had the pit status ever lasted long enough to use.
+        # The belly strike is a blade driven upward at arm's length: MELEE
+        # only. An archer in a pit is still shooting at scales (and would
+        # otherwise be completely safe while doing full damage).
         dragon_scales = getattr(monster, 'dragon_scales', 0)
+        player._belly_strike = False
         if dragon_scales > 0:
-            if player.has_effect('in_pit'):
-                damage = int(damage * 1.5)
+            if player.has_effect('in_pit') and not is_ranged:
+                damage = int(damage * PIT_BELLY_MULT)
+                player._belly_strike = True
             elif not _skip_dr:
                 damage = max(1, int(damage * (1.0 - dragon_scales)))
 

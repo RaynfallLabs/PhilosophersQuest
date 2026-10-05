@@ -511,3 +511,116 @@ def test_ordinary_medusas_gaze_respects_the_aegis_and_immunity():
             dmg, _msg = med.attack(p)
             assert dmg == 0
             assert not p.has_effect('paralyzed'), setup
+
+
+# ------------------------------------------------------------ Fafnir's lair
+
+def _lair():
+    from boss_levels import generate_boss_level
+    from player import Player
+    d, monsters, items = generate_boss_level(60)
+    fafnir = next(m for m in monsters if m.kind == 'fafnir_dragon')
+    fafnir._aware = True
+    p = Player()
+    return d, fafnir, monsters, items, p
+
+
+def test_fafnir_breathes_on_the_way_in_then_closes():
+    """The old `ranged` AI stood off at 2 to 8 tiles and breathed for ever, so
+    he never came to the pit. Now he breathes once, then advances while the
+    breath recharges, and ends up beside the player."""
+    d, fafnir, monsters, _items, p = _lair()
+    p.x, p.y = fafnir.x - 6, fafnir.y
+    assert fafnir._has_los(p.x, p.y, d)
+    assert fafnir._dragon_turn(p, d, monsters, set()) is True      # breath
+    start = (fafnir.x, fafnir.y)
+    moved = 0
+    for _ in range(12):
+        before = (fafnir.x, fafnir.y)
+        fafnir._dragon_turn(p, d, monsters, set())
+        moved += (fafnir.x, fafnir.y) != before
+        if fafnir._adjacent_to(p):
+            break
+    assert moved >= 2 and (fafnir.x, fafnir.y) != start
+    assert fafnir._adjacent_to(p), 'he should close to melee'
+
+
+def test_fafnir_does_not_waste_breath_on_a_player_in_a_pit():
+    d, fafnir, monsters, _items, p = _lair()
+    p.x, p.y = fafnir.x - 6, fafnir.y
+    p.add_effect('in_pit', -1)
+    before = (fafnir.x, fafnir.y)
+    fafnir._breath_cd = 0
+    result = fafnir._dragon_turn(p, d, monsters, set())
+    assert (fafnir.x, fafnir.y) != before, 'he advances instead of breathing'
+    assert result is False or fafnir._adjacent_to(p)
+    assert int(getattr(fafnir, '_breath_cd', 0) or 0) == 0
+
+
+def test_fafnir_fights_with_tooth_and_claw_up_close():
+    d, fafnir, _monsters, _items, p = _lair()
+    p.x, p.y = fafnir.x - 1, fafnir.y
+    names = set()
+    for _ in range(40):
+        _dmg, msg = fafnir.attack(p)
+        names.add(msg)
+    assert not any('breath' in m.lower() for m in names)
+
+
+def test_lair_has_a_fallback_pit_a_real_hoard_and_a_barred_stair():
+    from dungeon import STAIRS_UP, STAIRS_DOWN
+    d, fafnir, _monsters, items, _p = _lair()
+    assert d.old_pit in d.pits and d.is_walkable(*d.old_pit)
+    lair = d.rooms[-2]
+    assert lair.x <= d.old_pit[0] < lair.x + lair.width
+    assert lair.y <= d.old_pit[1] < lair.y + lair.height
+    assert d.stairs_guardian == 'fafnir_dragon'
+    lair_tiles = {(x, y) for x in range(lair.x, lair.x + lair.width)
+                  for y in range(lair.y, lair.y + lair.height)}
+    up, down = _find(d, STAIRS_UP), _find(d, STAIRS_DOWN)
+    assert down in _lab_reach(d, up)
+    assert down not in _lab_reach(d, up, blocked=lair_tiles)
+    gold = sum(getattr(i, 'amount', 0) for i in items)
+    assert gold >= 1500, gold
+    assert len(items) >= 8
+    assert all(d.tiles[i.y][i.x] != WALL for i in items)
+    assert fafnir.max_hp >= 1800 and fafnir.ai_pattern == 'dragon'
+
+
+def test_a_dragon_does_not_fall_into_a_man_sized_pit():
+    src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
+    assert "tuple(getattr(m, 'footprint', (1, 1))) == (1, 1)" in src
+
+
+def test_belly_strike_is_melee_only():
+    """An archer in a pit is still shooting at scales (and was otherwise
+    completely safe while doing full damage)."""
+    src = open(os.path.join(ROOT, 'src', 'combat.py'), encoding='utf-8').read()
+    assert "player.has_effect('in_pit') and not is_ranged" in src
+    import combat
+    assert 1.0 < combat.PIT_BELLY_MULT <= 1.5
+
+
+def test_gram_must_be_thrown_over_the_altar_not_from_it():
+    from game_helpers import throw_crosses_tile
+    assert throw_crosses_tile(5, 5, 9, 5, 7, 5)           # altar between
+    assert not throw_crosses_tile(7, 5, 9, 5, 7, 5)       # standing on it
+    assert not throw_crosses_tile(5, 5, 7, 5, 7, 5)       # aiming at it
+    assert not throw_crosses_tile(5, 5, 9, 5, 7, 8)       # nowhere near
+
+
+def test_fire_resistance_halves_fire_and_is_not_immunity():
+    from player import Player
+    p = Player()
+    p.max_hp = p.hp = 500
+    p.add_effect('fire_resist', -1)
+    assert p.take_damage(40, 'fire') == 20
+    assert p.take_damage(41, 'fire') == 21      # rounded up
+    q = Player()
+    q.max_hp = q.hp = 500
+    q.add_effect('fire_shield', 10)
+    assert q.take_damage(40, 'fire') == 0       # the temporary shield still blocks
+    r = Player()
+    r.max_hp = r.hp = 500
+    r.add_effect('cold_resist', -1)
+    assert r.take_damage(40, 'cold') == 0       # other resistances unchanged

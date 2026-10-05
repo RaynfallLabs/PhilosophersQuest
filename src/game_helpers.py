@@ -60,10 +60,15 @@ def cycle_tab(current: int, direction: int, n_tabs: int, has_items: Callable[[in
 
 
 def throw_crosses_tile(px: int, py: int, tx: int, ty: int, ax: int, ay: int) -> bool:
-    """Does a thrown item's path from (px,py) to (tx,ty) pass through (ax,ay)?
+    """Does a thrown item's path from (px,py) to (tx,ty) pass OVER (ax,ay)?
 
-    Bresenham line: returns True if the altar tile is on the path.
+    Bresenham line. The tile must lie strictly between thrower and target:
+    standing on the altar, or aiming at it, is not throwing over it. (Either
+    endpoint used to count, so a player standing on Odin's altar could throw
+    in any direction and reforge Gram.)
     """
+    if (px, py) == (ax, ay) or (tx, ty) == (ax, ay):
+        return False
     dx, dy = abs(tx - px), abs(ty - py)
     sx = 1 if tx > px else -1
     sy = 1 if ty > py else -1

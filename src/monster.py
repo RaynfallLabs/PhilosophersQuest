@@ -12,6 +12,9 @@ RAGE_STACK_CAP = 8
 LOCUST_CAP = 12
 # How far a petrifying gaze reaches, given a clear line of sight.
 GAZE_RANGE = 8
+# Dragon AI: reach of the breath, and turns between breaths.
+DRAGON_BREATH_RANGE = 7
+DRAGON_BREATH_RECHARGE = 3
 
 
 def the_name(monster, lower: bool = False) -> str:
@@ -569,10 +572,15 @@ class Monster:
             piercing_atks = [a for a in self.attacks
                              if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
             atk = random.choice(piercing_atks) if piercing_atks else random.choice(self.attacks)
-        elif self.ai_pattern == 'ranged' and not self._adjacent_to(player) and len(self.attacks) > 1:
+        elif (self.ai_pattern in ('ranged', 'dragon') and not self._adjacent_to(player)
+              and len(self.attacks) > 1):
             ranged_atks = [a for a in self.attacks
                           if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
             atk = random.choice(ranged_atks) if ranged_atks else random.choice(self.attacks)
+        elif self.ai_pattern == 'dragon':
+            # Adjacent: tooth and claw. The breath is for the approach.
+            close_atks = [a for a in self.attacks if 'breath' not in a.get('name', '').lower()]
+            atk = random.choice(close_atks or self.attacks)
         else:
             atk = random.choice(self.attacks)
         atk_name = atk.get('name', 'attack').lower()
@@ -1009,6 +1017,15 @@ class Monster:
         if self.ai_pattern == 'seek_locust':
             return self._seek_locust_turn(player, dungeon, all_monsters, extra_occupied)
 
+        # --- Dragon AI (Fafnir): breathe on the way in, then close ---
+        if self.ai_pattern == 'dragon':
+            if (max(abs(self.x - player.x), abs(self.y - player.y)) <= 10
+                    or player.has_effect('aggravated')):
+                self._aware = True
+            if not getattr(self, '_aware', False) and not self._alerted:
+                return False        # coiled on the hoard until disturbed
+            return self._dragon_turn(player, dungeon, all_monsters, extra_occupied)
+
         # --- Ranged AI: shoot from distance, maintain range ---
         if self.ai_pattern == 'ranged':
             dist_r = abs(self.x - player.x) + abs(self.y - player.y)
@@ -1413,6 +1430,36 @@ class Monster:
             if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS):
                 return True
         return False
+
+    def _dragon_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
+        """Dragon AI: breathe while closing, then fight with tooth and claw.
+
+        The plain `ranged` pattern stands off at 2 to 8 tiles and fires for
+        ever, and backs away when the player comes close. For Fafnir that
+        meant he never came to the pit, which is the whole of Sigurd's plan.
+
+          * Adjacent: attack (attack() picks claw or bite, not the breath).
+          * In sight, 2 to DRAGON_BREATH_RANGE tiles, breath recharged, and
+            the player is NOT down a pit: breathe. The breath then needs
+            DRAGON_BREATH_RECHARGE turns, during which he advances.
+          * Otherwise advance. A player crouched in a pit is out of the
+            breath's path, so he does not waste it: he comes on.
+        """
+        self._piercing_collateral = []
+        cd = int(getattr(self, '_breath_cd', 0) or 0)
+        if cd > 0:
+            self._breath_cd = cd - 1
+        if self._adjacent_to(player):
+            return True
+        dist = max(abs(self.x - player.x), abs(self.y - player.y))
+        if (cd <= 0 and 2 <= dist <= DRAGON_BREATH_RANGE
+                and not player.has_effect('in_pit')
+                and self._has_los(player.x, player.y, dungeon)):
+            self._breath_cd = DRAGON_BREATH_RECHARGE
+            return True
+        if self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive'):
+            return True
+        return self._adjacent_to(player)
 
     def _ranged_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Ranged AI: shoot when player is in LOS within range.

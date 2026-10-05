@@ -761,6 +761,22 @@ class CombatMixin:
                 self._log_chronicle("All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
         self.ground_items.append(self._make_corpse(monster))
 
+    def _announce_scale_hit(self, monster, damage: int):
+        """Tell the player what the scales did to that blow."""
+        if not getattr(monster, 'dragon_scales', 0) or damage <= 0:
+            return
+        if getattr(self.player, '_belly_strike', False):
+            self.add_message(
+                f"From the pit you strike up under the scales, into "
+                f"{the_name(monster, lower=True)}'s soft belly.", 'success')
+        elif not getattr(self.player.weapon, 'ignore_resistances', False):
+            if not getattr(monster, '_scale_hint_shown', False):
+                monster._scale_hint_shown = True
+                self.add_message(
+                    f"Your blow skates off {the_name(monster, lower=True)}'s scales. "
+                    f"Only a little of it gets through.", 'warning')
+        self.player._belly_strike = False
+
     def _announce_revive(self, monster):
         """The Green Knight's beheading game: say so when a foe that should
         have died stands back up. take_damage set `_just_revived` and nothing
@@ -1510,7 +1526,8 @@ class CombatMixin:
         if not hasattr(self.dungeon, 'pits'):
             self.dungeon.pits = set()
         self.dungeon.pits.add((x, y))
-        self.add_message("You dig a pit in the floor!", 'success')
+        self.add_message(
+            "You dig a pit in the floor, deep enough to crouch in.", 'success')
         _snd.play('trap')
         if not getattr(self, '_chronicle_first_pit', False):
             self._chronicle_first_pit = True
@@ -1536,6 +1553,12 @@ class CombatMixin:
         # monster acted, so the pit never protected or helped anyone.
         self.player.add_effect('in_pit', -1)
         self.add_message(f"You drop into the pit and crouch below the rim. ({actual} damage)", 'danger')
+        if (x, y) == getattr(self.dungeon, 'old_pit', None) \
+                and not getattr(self.dungeon, '_old_pit_seen', False):
+            self.dungeon._old_pit_seen = True
+            self.add_message(
+                "This hole is old. Its rim is scorched black, and beside it "
+                "the stone is scored as if by a sword's point.", 'info')
 
     # ------------------------------------------------------------------
     # Ranged attack resolution
@@ -1588,6 +1611,7 @@ class CombatMixin:
             self.combat_target = None
             self._fire_strike_finisher(monster, chain, damage, killed)
             self._announce_revive(monster)
+            self._announce_scale_hit(monster, damage)
             if chain == 0:
                 self.add_message(
                     f"Your shot flies wide -- you miss {the_name(monster, lower=True)}!", 'warning'
@@ -1756,6 +1780,7 @@ class CombatMixin:
             self.combat_target = None
             self._fire_strike_finisher(monster, chain, damage, killed)
             self._announce_revive(monster)
+            self._announce_scale_hit(monster, damage)
             # Curtana: the blow would have killed, but the Sword of Mercy
             # left the foe alive at 1 HP.
             if getattr(self.player, '_spared_this_attack', False):
@@ -2042,6 +2067,9 @@ class CombatMixin:
             # Check if monster moved onto a dug pit
             if (not _was_in_pit and not m.has_effect('stuck_in_pit')
                     and not m.has_effect('levitating')
+                    # A creature bigger than the hole steps over it (a dragon
+                    # stuck in a man-sized pit was possible before).
+                    and tuple(getattr(m, 'footprint', (1, 1))) == (1, 1)
                     and (m.x, m.y) != _pos_before
                     and (m.x, m.y) in getattr(self.dungeon, 'pits', set())):
                 from dice import roll as _pit_roll

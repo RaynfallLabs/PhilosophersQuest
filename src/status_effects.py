@@ -107,7 +107,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'time_stopped':       ('Time Stop',          (245, 220, 100), 'Time is frozen -- monsters cannot act'),
     'invulnerable':       ('Invulnerable',       (255, 240, 160), 'Divine grace — all incoming damage blocked'),
     # ---- Resistances (can be timed or permanent) ----
-    'fire_resist':        ('Fire Resist',        (245, 130,  50), 'Immune to fire damage'),
+    'fire_resist':        ('Fire Resist',        (245, 130,  50), 'Halves fire damage; cannot be set alight'),
     'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Immune to cold damage'),
     'shock_resist':       ('Shock Resist',       (245, 245,  80), 'Immune to electric damage'),
     'poison_resist':      ('Poison Resist',      (100, 245,  80), 'Immune to poison and disease'),
@@ -312,13 +312,21 @@ def _corrode_random_gear(player) -> tuple[str, str] | None:
     return (f'Acid sizzles on your {item.name}, but it holds.', 'warning')
 
 # Damage type -> immunity status effect (first match wins; fire_shield overrides fire_resist)
+# Fire is NOT here: fire_resist halves fire damage (DAMAGE_HALVED below). It
+# used to be a full immunity, which made a floor-10 ring or one drink of
+# Fafnir's Blood switch off every fire attack in the game, Amon's and
+# Abaddon's included. The temporary fire_shield is still a full immunity.
 DAMAGE_IMMUNITY: dict[str, str] = {
-    'fire':      'fire_resist',
     'cold':      'cold_resist',
     'lightning': 'shock_resist',
     'poison':    'poison_resist',
     'drain':     'drain_resist',
     'magic':     'magic_resist',
+}
+
+# Damage type -> status that halves it (rounded up).
+DAMAGE_HALVED: dict[str, str] = {
+    'fire': 'fire_resist',
 }
 
 # Additional damage-type immunities granted by shield effects (checked separately)

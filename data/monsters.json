@@ -19982,9 +19982,9 @@
       100,
       20
     ],
-    "hp": "125d12+695",
+    "hp": "166d12+922",
     "speed": 10,
-    "ai_pattern": "ranged",
+    "ai_pattern": "dragon",
     "thac0": -4,
     "peak_floor": 60,
     "spread": 2,
@@ -20036,7 +20036,8 @@
     "footprint": [
       2,
       2
-    ]
+    ],
+    "is_boss": true
   },
   "fenrir_wolf": {
     "name": "Fenrir, Wolf of Ragnarok",
