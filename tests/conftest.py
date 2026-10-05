@@ -68,3 +68,27 @@ def _isolate_quiz_history():
     finally:
         quiz_engine._HISTORY_DIR_OVERRIDE = saved
         shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+@pytest.fixture(autouse=True, scope='session')
+def _isolate_bones():
+    """Keep the suite away from the player's REAL bones files.
+
+    `LevelManager.generate()` calls `bones.load_bones`, which deletes the
+    file it reads (a ghost appears once). Any test that generates a floor
+    could therefore eat a ghost left by one of the player's own dead
+    characters. Point the bones directory at a throwaway temp dir.
+    """
+    try:
+        import bones
+    except Exception:
+        yield
+        return
+    tmpdir = tempfile.mkdtemp(prefix='pq_test_bones_')
+    saved = bones._bones_dir
+    bones._bones_dir = lambda: tmpdir
+    try:
+        yield
+    finally:
+        bones._bones_dir = saved
+        shutil.rmtree(tmpdir, ignore_errors=True)

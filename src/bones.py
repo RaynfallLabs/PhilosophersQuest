@@ -97,6 +97,10 @@ def load_bones(dungeon_level: int):
     # Check file existence FIRST — no point burning a 50% roll on a level
     # that has no bones file at all. Only levels with real bones need the
     # rarity gate to prevent the ghost from feeling routine.
+    # Offline tooling and tests generate floors by the thousand; they must
+    # never consume a real ghost (set PQ_NO_BONES=1).
+    if os.environ.get('PQ_NO_BONES'):
+        return None
     path = os.path.join(_bones_dir(), f'bones_L{dungeon_level}.json')
     if not os.path.exists(path):
         return None
