@@ -726,6 +726,13 @@ class CombatMixin:
                 'abaddon_destroyer': "Abaddon is destroyed. The Pit is sealed. I can barely hold the pen.",
             }
             self._log_chronicle(_BOSS_CHRONICLE.get(monster.kind, f"Slew {monster.name}. It's done."))
+        # Mini-bosses and legends: their death is an event in the run's story.
+        # (Only the five gate bosses were ever recorded.)
+        if (getattr(monster, 'is_mini_boss', False) and not story_key
+                and not getattr(monster, 'is_seal_demon', False)):
+            self._log_chronicle(
+                getattr(monster, 'kill_chronicle', '')
+                or f"{the_name(monster)} is dead. I had not expected to be the one left standing.")
         # Fafnir drops a unique blood potion with a hint about the throw-over reforge
         if monster.kind == 'fafnir_dragon':
             self._spawn_fafnir_blood(monster.x, monster.y)
@@ -737,8 +744,11 @@ class CombatMixin:
             seal_id = 'seal_of_' + monster.kind.replace('seal_demon_', '')
             self.seals_broken.add(seal_id)
             count = len(self.seals_broken)
+            _ORD = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
+            _short = monster.name.split(',')[0]
             self.add_message(
-                f"{the_name(monster)} falls! A seal is broken! ({count}/7)", 'success')
+                f"{_short} falls. The {_ORD[min(count, 7) - 1]} of seven seals is broken.",
+                'success')
             self._log_chronicle(f"Broke a seal. {monster.name} is gone. {count} of 7 seals now shattered. The air feels heavier.")
             if count == 7:
                 self.add_message(
@@ -1942,8 +1952,13 @@ class CombatMixin:
         # --- Ariadne's Thread: neutralize wall-phasing monsters ---
         has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
                          for i in self.player.inventory)
+        if not has_thread:
+            # The random-loot belt of the same name counts when worn.
+            has_thread = getattr(getattr(self.player, 'belt_slot', None), 'id', '') == 'ariadnes_thread'
         for m in self.monsters:
-            if getattr(m, 'can_phase_walls', False):
+            # Asterion only: the Thread used to slow and re-pattern the two
+            # phasing vampires as well, permanently.
+            if getattr(m, 'can_phase_walls', False) and m.kind == 'asterion_minotaur':
                 if has_thread:
                     m.can_phase_walls = False
                     m.speed = min(m.speed, 6)  # slowed by the Thread's power

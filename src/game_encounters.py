@@ -767,7 +767,9 @@ class EncountersMixin:
         # ── Apply karma ───────────────────────────────────────────
         old_karma = self.karma
         self.karma = max(-10, min(10, self.karma + karma_delta))
-        if self.karma == 10 and old_karma < 10:
+        # At 8 the Sword of Michael is within reach (see judge_karma); this
+        # line is the player's only sign of where they stand.
+        if self.karma >= 8 and old_karma < 8:
             self._log_chronicle("I feel... clean. Like everything I've done down here has mattered. The dungeon feels lighter.")
         elif self.karma == -10 and old_karma > -10:
             self._log_chronicle("Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.")

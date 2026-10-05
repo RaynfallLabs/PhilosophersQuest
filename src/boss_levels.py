@@ -529,8 +529,9 @@ def _level_100_abyss():
                 tiles[sy][sx] = ALTAR
                 break
 
-    # No STAIRS_DOWN -- this is the final level; Philosopher's Stone is spawned here
-    # by LevelManager._place_stone(). We add an exit to the entry for tactical retreat.
+    # No STAIRS_DOWN -- this is the final level. The Philosopher's Stone drops
+    # where Abaddon falls (game_combat._drop_philosophers_stone). We add an
+    # exit to the entry for tactical retreat.
 
     dungeon = _make(tiles, rooms, 100)
     return dungeon, _spawn_boss(dungeon, 'abaddon_destroyer', boss_room), []

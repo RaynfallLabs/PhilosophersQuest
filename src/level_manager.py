@@ -1,5 +1,4 @@
 import copy
-import random
 
 # Single source of truth for boss floors — imported from dungeon.py so
 # `_roll_planned_mini_bosses` and `generate_boss_level` agree on which
@@ -309,6 +308,12 @@ class LevelManager:
         demon_id = self._SEAL_DEMON_LEVELS.get(level_num)
         if not demon_id:
             return
+        if demon_id not in self._placed_mini_bosses:
+            if not hasattr(dungeon, 'omen_messages'):
+                dungeon.omen_messages = []
+            dungeon.omen_messages.append(
+                "A wax-red mark is pressed into the stair. Its keeper is "
+                "somewhere on this floor.")
         if demon_id in self._placed_mini_bosses:
             return  # already placed on a prior visit
 
@@ -473,28 +478,3 @@ def spawn_stone_at(x: int, y: int):
     inst = copy.copy(template)
     inst.x, inst.y = x, y
     return inst
-
-
-def _place_stone(dungeon, existing_items: list):
-    """Place the Philosopher's Stone in the last room of the dungeon."""
-    from items import load_items
-    try:
-        artifacts = load_items('artifact')
-    except (FileNotFoundError, KeyError):
-        return None
-
-    template = next((a for a in artifacts if a.id == 'philosophers_stone'), None)
-    if template is None:
-        return None
-
-    existing_pos = {(i.x, i.y) for i in existing_items}
-    # Prefer the last room (deepest), fall back to any room
-    for room in reversed(dungeon.rooms):
-        tiles = list(room.inner_tiles())
-        random.shuffle(tiles)
-        for tx, ty in tiles:
-            if dungeon.is_walkable(tx, ty) and (tx, ty) not in existing_pos:
-                inst = copy.copy(template)
-                inst.x, inst.y = tx, ty
-                return inst
-    return None

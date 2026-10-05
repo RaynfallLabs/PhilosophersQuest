@@ -2632,8 +2632,36 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             else:
                 self.add_message("Stairs lead up here  --  press '<' to ascend.", 'info')
         elif tile == ALTAR:
+            # A quest altar says what it is, in-world, without saying what to
+            # do. (The forge, Vidar's altar, Odin's altar and the Judgment
+            # altar all read "A sacred altar stands here".)
+            _d = self.dungeon
+            _quest_line = None
+            if (x, y) == getattr(_d, 'dwarven_forge_pos', None):
+                _quest_line = ("A cold anvil. Six shallow cups are cut into its "
+                               "face, each a different shape.")
+            elif (x, y) == getattr(_d, 'vidar_altar_pos', None):
+                _quest_line = ("A cobbler's last stands on this altar, far too "
+                               "large for any man's foot.")
+            elif (x, y) == getattr(_d, 'odin_altar_pos', None):
+                _quest_line = ("Cut into the altar's rim: a spear in flight "
+                               "above a row of helmets.")
+            elif (x, y) == getattr(_d, 'judgment_altar_pos', None):
+                _quest_line = ("A pair of bronze scales hangs over this altar. "
+                               "One pan is lower than it should be.")
+            elif (x, y) == getattr(_d, 'athena_altar_pos', None) \
+                    and getattr(_d, 'athena_shrine_door', None):
+                _quest_line = ("The altar's face shows three old women passing "
+                               "something small from hand to hand.")
+            if _quest_line:
+                self.add_message(_quest_line, 'info')
             self.add_message("A sacred altar stands here. Press '\\' to pray with divine bonus.", 'info')
         elif tile == FOUNTAIN:
+            if (x, y) == getattr(self.dungeon, 'ariadne_fountain_pos', None) \
+                    and getattr(self.dungeon, 'ariadne_shrine_door', None):
+                self.add_message(
+                    "A bull's head is carved on the basin's rim. The horns have "
+                    "been rubbed bright.", 'info')
             self.add_message("A shimmering fountain bubbles here. Press 'D' to drink.", 'info')
         elif tile == GRAVE:
             self.add_message("A weathered gravestone stands here. Press 'D' to dig.", 'info')

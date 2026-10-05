@@ -2111,6 +2111,8 @@ def _create_ariadne_shrine(dungeon: Dungeon, rooms, ground_items, rng):
     if not fountain_pos:
         return
     dungeon.ariadne_fountain_pos = fountain_pos
+    dungeon.atmosphere_messages.append(
+        "Water runs somewhere on this floor. Now and then it sounds like a girl humming.")
     thread = _make_ariadnes_thread()
     carved = _carve_sealed_shrine(dungeon, fountain_pos)
     if carved:
@@ -2133,6 +2135,8 @@ def _create_athena_shrine(dungeon: Dungeon, rooms, ground_items, rng):
     if not altar_pos:
         return
     dungeon.athena_altar_pos = altar_pos
+    dungeon.atmosphere_messages.append(
+        "An owl calls once from deeper in. There should be no owls down here.")
     from items import load_items, copy_at
     template = next((sh for sh in load_items('shield') if sh.id == 'aegis_of_athena'), None)
     if template is None:
@@ -2168,6 +2172,8 @@ def _create_odin_shrine(dungeon: Dungeon, rooms, ground_items, rng):
             break
     if not placed:
         return
+    dungeon.atmosphere_messages.append(
+        "Two ravens watch from a ledge, and are gone before they can be counted twice.")
 
     from items import load_items, copy_at
     shovel_t = next((w for w in load_items('weapon') if w.id == 'sigurds_shovel'), None)
@@ -2544,6 +2550,8 @@ def _create_vidar_altar(dungeon, rooms, rng):
     # Place altar tile and store position
     dungeon.tiles[cy][cx] = ALTAR
     dungeon.vidar_altar_pos = (cx, cy)
+    dungeon.atmosphere_messages.append(
+        "It is very quiet on this floor. Even your own footsteps seem to be holding back.")
 
 
 def _create_judgment_altar(dungeon, rooms, rng):
