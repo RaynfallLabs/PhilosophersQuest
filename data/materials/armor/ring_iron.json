@@ -3,6 +3,7 @@
   "name": "ring iron",
   "material_class": "metal",
   "applies_to": ["armor", "shield"],
+  "tier": 2,
   "peak_floor": 22,
   "spread": 11,
   "peak_weight": 8,

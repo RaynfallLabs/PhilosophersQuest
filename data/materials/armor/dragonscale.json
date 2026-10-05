@@ -3,6 +3,7 @@
   "name": "dragonscale",
   "material_class": "dragon_material",
   "applies_to": ["armor", "shield"],
+  "tier": 4,
   "peak_floor": 65,
   "spread": 12,
   "peak_weight": 4,

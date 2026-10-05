@@ -3,6 +3,7 @@
   "name": "hide",
   "material_class": "hide",
   "applies_to": ["armor", "shield"],
+  "tier": 1,
   "peak_floor": 6,
   "spread": 9,
   "peak_weight": 8,

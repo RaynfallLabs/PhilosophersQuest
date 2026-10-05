@@ -63,31 +63,49 @@ def test_a_cleared_tier_still_auto_passes_outside_combat():
     assert got and got[0].success
 
 
-def test_harder_sums_get_a_longer_clock():
-    from quiz_engine import MATH_TIER_SECONDS, QuizEngine
-    assert MATH_TIER_SECONDS[1] == 0
-    assert list(MATH_TIER_SECONDS[1:]) == sorted(MATH_TIER_SECONDS[1:])
+def test_the_clock_is_wisdom_and_never_grows_with_the_tier():
+    """Seconds are never added because the sums got harder."""
+    from quiz_engine import QuizEngine
     for tier in (1, 3, 5):
         qe = QuizEngine()
         qe.start_quiz(mode='chain', subject='math', tier=tier, callback=lambda r: None,
                       wisdom=10, base_seconds=10)
-        assert qe.timer_seconds == 10 + MATH_TIER_SECONDS[tier]
+        assert qe.timer_seconds == 10, tier
+    qe = QuizEngine()                      # earned time still counts
+    qe.start_quiz(mode='chain', subject='math', tier=5, callback=lambda r: None,
+                  wisdom=10, base_seconds=10, timer_modifier=1.25, extra_seconds=2)
+    assert qe.timer_seconds == round(10 * 1.25) + 2
 
 
-def test_common_weapons_ask_the_math_of_their_depth():
-    """Every common weapon on every floor asked tier 1."""
-    from items import instantiate_weapon, load_materials
-    mats = load_materials('weapons')
+def test_every_material_has_one_tier_and_its_items_inherit_it():
+    from items import (instantiate_armor, instantiate_weapon, load_materials,
+                       material_tier)
+    weapons, armor = load_materials('weapons'), load_materials('armor')
+    for mats in (weapons, armor):
+        for mid, mat in mats.items():
+            assert mat.get('tier') in (1, 2, 3, 4, 5), mid
+    for mid in set(weapons) & set(armor):
+        assert weapons[mid]['tier'] == armor[mid]['tier'], mid
     seen = set()
-    for mat_id, mat in mats.items():
+    for mid, mat in weapons.items():
         try:
-            w = instantiate_weapon('longsword', mat_id)
+            w = instantiate_weapon('longsword', mid)
         except Exception:
             continue
-        want = max(1, min(5, int(mat.get('peak_floor', 1)) // 20 + 1))
-        assert w.quiz_tier == want, (mat_id, w.quiz_tier, want)
-        seen.add(want)
-    assert len(seen) >= 4, f"materials only cover math tiers {sorted(seen)}"
+        assert w.quiz_tier == material_tier(mat) == mat['tier'], mid
+        seen.add(w.quiz_tier)
+    assert seen == {1, 2, 3, 4, 5}
+    made = 0
+    for mid, mat in armor.items():
+        for tpl in ('chainmail', 'breastplate', 'cloak', 'chain_shirt'):
+            try:
+                a = instantiate_armor(tpl, mid)
+            except Exception:
+                continue
+            assert a.quiz_tier == mat['tier'], (tpl, mid)
+            made += 1
+            break
+    assert made >= 10
 
 
 # ------------------------------------------------------------------ hit points

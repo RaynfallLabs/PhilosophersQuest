@@ -8,11 +8,6 @@ from dataclasses import dataclass
 from paths import data_path
 
 
-# Extra seconds on the combat clock by the math tier asked (index = tier).
-# The base clock is the player's WIS in seconds.
-MATH_TIER_SECONDS = (0, 0, 2, 5, 8, 10)
-
-
 class QuizMode(Enum):
     THRESHOLD = "threshold"
     CHAIN = "chain"
@@ -281,10 +276,8 @@ class QuizEngine:
                 self.timer_seconds = round(base_seconds * timer_modifier) + extra_seconds
             else:
                 self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
-            # Harder sums take longer to do: "6 + ? = 9" and "18 squared"
-            # cannot share one clock.
-            if self._combat_chain:
-                self.timer_seconds += MATH_TIER_SECONDS[max(1, min(5, int(tier)))]
+            # (Nothing is added for the tier asked. The clock is the
+            # player's wisdom and what the player has earned on top of it.)
             self.time_remaining = float(self.timer_seconds)
 
         self.score = 0

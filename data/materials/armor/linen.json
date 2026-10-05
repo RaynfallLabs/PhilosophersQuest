@@ -3,6 +3,7 @@
   "name": "linen",
   "material_class": "cloth",
   "applies_to": ["armor"],
+  "tier": 1,
   "peak_floor": 2,
   "spread": 8,
   "peak_weight": 10,

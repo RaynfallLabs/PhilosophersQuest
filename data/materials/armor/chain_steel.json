@@ -3,6 +3,7 @@
   "name": "chain steel",
   "material_class": "metal",
   "applies_to": ["armor", "shield"],
+  "tier": 2,
   "peak_floor": 35,
   "spread": 12,
   "peak_weight": 7,

@@ -3,6 +3,7 @@
   "name": "silk",
   "material_class": "cloth",
   "applies_to": ["armor"],
+  "tier": 2,
   "peak_floor": 30,
   "spread": 12,
   "peak_weight": 6,

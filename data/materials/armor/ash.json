@@ -3,6 +3,7 @@
   "name": "ash",
   "material_class": "wood",
   "applies_to": ["armor", "shield"],
+  "tier": 2,
   "peak_floor": 20,
   "spread": 12,
   "peak_weight": 7,

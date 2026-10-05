@@ -3,6 +3,7 @@
   "name": "dwarven plate",
   "material_class": "magical_metal",
   "applies_to": ["armor", "shield"],
+  "tier": 4,
   "peak_floor": 75,
   "spread": 12,
   "peak_weight": 4,

@@ -3,6 +3,7 @@
   "name": "adamantine",
   "material_class": "magical_metal",
   "applies_to": ["armor", "shield", "weapon"],
+  "tier": 4,
   "peak_floor": 88,
   "spread": 12,
   "peak_weight": 3,

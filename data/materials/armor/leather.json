@@ -3,6 +3,7 @@
   "name": "leather",
   "material_class": "leather",
   "applies_to": ["armor", "shield"],
+  "tier": 1,
   "peak_floor": 3,
   "spread": 8,
   "peak_weight": 10,

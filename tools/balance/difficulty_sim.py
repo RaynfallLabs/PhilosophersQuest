@@ -83,7 +83,6 @@ from items import (Accessory, Armor, Container, Food, Potion, Shield,   # noqa: 
 from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult               # noqa: E402
-from quiz_engine import MATH_TIER_SECONDS        # noqa: E402
 import food_system as food_system_mod            # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
@@ -479,7 +478,6 @@ class QuizModel:
             timer = round(base_seconds * timer_modifier) + extra_seconds
         else:
             timer = round((10 + wisdom) * timer_modifier) + extra_seconds
-        timer += MATH_TIER_SECONDS[tier]          # quiz_engine.start_quiz
         timer *= self.knobs['timer']
         self.n_attacks += 1
         if self.knobs['mastery'] == 2 and tier in self.mastered:
@@ -778,7 +776,7 @@ class Run:
         tier = self.quiz.tier_for(getattr(w, 'quiz_tier', 1) if w else 1)
         exp = getattr(w, 'chain_exponent', None) if w else 1.15
         max_chain = None if (w is None or exp) else w.max_chain_length
-        timer = (self.p.get_quiz_timer('math') + MATH_TIER_SECONDS[tier]) * self.knobs['timer']
+        timer = self.p.get_quiz_timer('math') * self.knobs['timer']
         mastered = bool(self.knobs['mastery'] == 2 and tier in self.quiz.mastered)
         key = (tier, round(timer), max_chain, mastered)
         dist = self._score_cache.get(key)

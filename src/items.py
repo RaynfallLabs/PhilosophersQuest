@@ -1506,6 +1506,18 @@ def load_materials(category: str) -> dict[str, dict]:
     return _MATERIAL_CACHE[category]
 
 
+def material_tier(mat: dict) -> int:
+    """The tier (1-5) of a material. Every item made of it inherits this:
+    it is the math tier a weapon asks and the geography tier an armor piece
+    or shield asks to equip. The `tier` field in the material file is the
+    single source; a material has ONE tier whatever it is made into.
+    (Depth band of peak_floor is only the fallback for a file without one.)"""
+    t = mat.get('tier')
+    if t is None:
+        t = int(mat.get('peak_floor', 1)) // 20 + 1
+    return max(1, min(5, int(t)))
+
+
 def get_template(category: str, template_id: str) -> dict | None:
     """Look up one template by category + id."""
     return load_templates(category).get(template_id)
@@ -1838,12 +1850,11 @@ def instantiate_weapon(template_id: str, material_id: str, *,
         'weapon_class': tpl.get('weapon_class', 'sword'),
         'class': tpl.get('weapon_class', 'sword'),
         'material': material_id,
-        'tier': max(1, peak_floor // 20 + 1),
-        # The math a weapon asks follows its depth band, as armor and shields
-        # already do for their equip quiz (CURVE.md section 2: tier 1 sums to
-        # floor 19, tier 2 to 39, and so on). This line was missing, so every
-        # common weapon on every floor asked tier 1.
-        'quiz_tier': max(1, min(5, peak_floor // 20 + 1)),
+        'tier': material_tier(mat),
+        # The math a weapon asks is its MATERIAL's tier, as armor and shields
+        # take theirs for the equip quiz. (This line was missing, so every
+        # common weapon on every floor asked tier 1.)
+        'quiz_tier': material_tier(mat),
         'base_damage': base_damage,
         'chain_multipliers': tpl.get('chain_multipliers', [0.5, 1.0, 1.5, 2.5]),
         # Chain combat v2: polynomial `mult = chain ** exponent` when the
@@ -1960,7 +1971,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'spread': int(mat.get('spread', 10)),
         'peak_weight': float(mat.get('peak_weight', 1.0)),
         'slot': tpl.get('slot', 'body'),
-        'tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        'tier': material_tier(mat),
         'material': material_id,
         'ac_bonus': base_ac + material_ac,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
@@ -1970,7 +1981,7 @@ def instantiate_armor(template_id: str, material_id: str, *,
             mat.get('unidentified_descriptor', mat['name']), tpl['name'],
             tpl.get('noun', '')),
         'buc': buc,
-        'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        'quiz_tier': material_tier(mat),
         # equip_threshold = complexity, driven by armor_class_tier:
         #   light = 1 (slip-on: cloak, leather, padded)
         #   medium = 2 (straps + lacing: chain shirt, scale, gauntlets)
@@ -2010,7 +2021,7 @@ def instantiate_shield(template_id: str, material_id: str, *,
         'peak_floor': int(mat.get('peak_floor', 1)),
         'spread': int(mat.get('spread', 10)),
         'peak_weight': float(mat.get('peak_weight', 1.0)),
-        'tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        'tier': material_tier(mat),
         'material': material_id,
         'ac_bonus': base_ac + material_ac,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
@@ -2019,7 +2030,7 @@ def instantiate_shield(template_id: str, material_id: str, *,
             mat.get('unidentified_descriptor', mat['name']), tpl['name'],
             tpl.get('noun', '')),
         'buc': buc,
-        'quiz_tier': max(1, int(mat.get('peak_floor', 1)) // 20 + 1),
+        'quiz_tier': material_tier(mat),
     }
     s = Shield(defn)
     s.x, s.y = x, y
