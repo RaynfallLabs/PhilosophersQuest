@@ -8,6 +8,11 @@ from dataclasses import dataclass
 from paths import data_path
 
 
+# Extra seconds on the combat clock by the math tier asked (index = tier).
+# The base clock is the player's WIS in seconds.
+MATH_TIER_SECONDS = (0, 0, 2, 5, 8, 10)
+
+
 class QuizMode(Enum):
     THRESHOLD = "threshold"
     CHAIN = "chain"
@@ -225,6 +230,17 @@ class QuizEngine:
             # Default policy: only math (combat attack) is timed.
             timed = (subject == 'math')
 
+        # The combat chain is never answered FOR the player. Everywhere else a
+        # cleared tier auto-succeeds, which is the reward for clearing it. In
+        # the timed math chain that reward ended the game's core loop: tier 1
+        # has 488 questions, an accurate player clears it by about floor 12,
+        # and from then on every attack landed at chain 5 with no question
+        # asked (measured: 100% of attacks past floor 20). In combat a
+        # cleared tier's deck simply comes round again. The tier asked is the
+        # weapon's own, which follows its depth band (CURVE.md section 2).
+        self._combat_chain = bool(timed and subject == 'math'
+                                  and mode == QuizMode.CHAIN)
+
         all_qs = self.load_questions(subject)
         deck_key = (subject, tier)
 
@@ -265,6 +281,10 @@ class QuizEngine:
                 self.timer_seconds = round(base_seconds * timer_modifier) + extra_seconds
             else:
                 self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
+            # Harder sums take longer to do: "6 + ? = 9" and "18 squared"
+            # cannot share one clock.
+            if self._combat_chain:
+                self.timer_seconds += MATH_TIER_SECONDS[max(1, min(5, int(tier)))]
             self.time_remaining = float(self.timer_seconds)
 
         self.score = 0
@@ -386,8 +406,10 @@ class QuizEngine:
 
     def _next_question(self):
         deck_key = (self.subject, self.tier)
+        combat = getattr(self, '_combat_chain', False)
         # A mastered (subject, tier) auto-succeeds its round -- no question shown.
-        if self.is_mastered(self.subject, self.tier):
+        # (Never in the combat chain: see start_quiz.)
+        if self.is_mastered(self.subject, self.tier) and not combat:
             self._auto_pass_mastered_round()
             return
         last = self._last_q.get(deck_key)
@@ -404,6 +426,13 @@ class QuizEngine:
         # answers retire (stay out of the deck); wrong answers recycle (stay in).
         # If every question is retired, the tier is mastered -> auto-pass.
         retired = self._retired.get(deck_key, set())
+        if combat and (deck_key in self._mastered or len(retired) >= len(
+                {q.get('question') for q in self._pool})):
+            # Combat on a cleared tier: the whole deck is live again.
+            if deck_key not in self._mastered:
+                self._mastered.add(deck_key)
+                self.just_mastered = deck_key
+            retired = set()
         chosen = None
         for _ in range(len(self._pool) * 2 + 1):
             if self._pool_idx >= len(self._pool):
@@ -576,6 +605,7 @@ class QuizEngine:
 
     def is_mastered(self, subject: str, tier: int) -> bool:
         return (subject, tier) in self._mastered
+
 
     def mastered_tiers(self) -> set:
         """Public read for UI: set of (subject, tier) mastered this run."""

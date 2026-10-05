@@ -26,7 +26,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'confused':           ('Confused',           (185, 100, 230), 'Random movement; choices shuffled'),
     'blinded':            ('Blinded',            ( 80,  80,  80), 'Sight radius 1; quiz timer -30%'),
     'hallucinating':      ('Hallucinating',      (210,  85, 230), 'Reality distorted; quiz timer -20%'),
-    'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 1 HP per turn'),
+    'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 2% of max HP per turn'),
     'diseased':           ('Diseased',           (135, 205,  60), 'Slowly drains STR/CON'),
     'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone -- find a cure!'),
     'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 2 HP per turn'),
@@ -43,7 +43,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'bleeding':           ('Bleeding',           (200,  40,  40), 'Losing HP from wounds each turn'),
     'doomed':             ('Doomed',             (100,  20,  20), 'A death-curse; losing 1 HP per ~8 turns'),
     'draining':           ('Draining',           ( 80,  30, 100), 'Ring drains 1 HP per ~6 turns'),
-    'burning':            ('Burning',            (245, 100,  20), 'On fire! Losing 1 HP per turn'),
+    'burning':            ('Burning',            (245, 100,  20), 'On fire! Losing 2% of max HP per turn'),
     'frozen':             ('Frozen',             ( 80, 200, 245), 'Encased in ice; movement slowed'),
     'corroding':          ('Corroding',          (180, 200,  50), 'Acid eats at your gear; defense weakened'),
     'immobilized':        ('Immobilized',        (180, 130,  60), 'Trapped! Cannot move'),
@@ -81,7 +81,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
     'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
     'levitating':         ('Levitating',         (185, 215, 245), 'Floating; immune to floor traps'),
-    'regenerating':       ('Regenerating',       ( 80, 225, 105), 'Recovering 1 HP per turn'),
+    'regenerating':       ('Regenerating',       ( 80, 225, 105), 'Recovering 1 HP every 3 turns'),
     'telepathy':          ('Telepathy',          (205, 145, 245), 'All monsters visible on level'),
     'warning':            ('Warning',            (240, 210, 100), 'Sense monsters within 5 tiles'),
     'searching':          ('Searching',          (160, 200, 160), 'Auto-reveal adjacent tiles'),
@@ -108,11 +108,11 @@ EFFECT_INFO: dict[str, tuple] = {
     'invulnerable':       ('Invulnerable',       (255, 240, 160), 'Divine grace — all incoming damage blocked'),
     # ---- Resistances (can be timed or permanent) ----
     'fire_resist':        ('Fire Resist',        (245, 130,  50), 'Halves fire damage; cannot be set alight'),
-    'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Immune to cold damage'),
-    'shock_resist':       ('Shock Resist',       (245, 245,  80), 'Immune to electric damage'),
-    'poison_resist':      ('Poison Resist',      (100, 245,  80), 'Immune to poison and disease'),
+    'cold_resist':        ('Cold Resist',        (100, 195, 245), 'Halves cold damage; cannot be frozen'),
+    'shock_resist':       ('Shock Resist',       (245, 245,  80), 'Halves lightning damage'),
+    'poison_resist':      ('Poison Resist',      (100, 245,  80), 'Cannot be poisoned or diseased; halves poison damage'),
     'sleep_resist':       ('Sleep Resist',       (130, 130, 245), 'Immune to sleep and paralysis'),
-    'magic_resist':       ('Magic Resist',       (200, 150, 245), 'Reduces magical effects'),
+    'magic_resist':       ('Magic Resist',       (200, 150, 245), 'Halves magic damage; turns aside mind magic'),
     'drain_resist':       ('Drain Resist',       (185,  80, 245), 'Immune to stat drain'),
     'disint_resist':      ('Disint. Resist',     (245, 185, 100), 'Immune to disintegration'),
     # ---- Trophy immunities (permanent; granted by boss-trophy recipes) ----
@@ -178,11 +178,28 @@ BUFFS: frozenset = frozenset({
 # NOTE (v2.15+): `petrifying` moved into HARD_CONTROL. Its val==1 tick sends
 # the '_petrify_death' signal, and half-duration on a save could still kill;
 # HARD_CONTROL means a successful CON save NEGATES it outright.
+# NOTE (2026-10): `feared` moved into HARD_CONTROL. A feared player cannot
+# attack at all (every move becomes flight), a save only halved it, every
+# new hit refreshed it and there was no grace window after: one fear-caster
+# was a lock with no answer. Now a save negates it and the usual grace
+# window follows.
+# Poison, bleeding and burning cost the player this share of max HP a turn
+# (at least 1). They were a flat 1 at every depth, which is a third of a
+# percent of a deep character's health: a status with no bite.
+DOT_SHARE = 0.02
+# Turns per point of the `regenerating` status.
+REGEN_PERIOD = 3
+
+
+def dot_tick(player) -> int:
+    return max(1, int(round(getattr(player, 'max_hp', 1) * DOT_SHARE)))
+
+
 HARD_CONTROL: frozenset = frozenset({
     'paralyzed', 'sleeping', 'immobilized', 'stunned', 'frozen',
-    'petrifying',
+    'petrifying', 'feared',
 })
-SOFT_CONTROL: frozenset = frozenset({'confused', 'feared', 'charmed', 'slowed'})
+SOFT_CONTROL: frozenset = frozenset({'confused', 'charmed', 'slowed'})
 CONTROL: frozenset = HARD_CONTROL | SOFT_CONTROL
 
 # Saving-throw stat per effect (D&D-style): body (CON) / mind (WIS) / reflex (DEX).
@@ -316,17 +333,23 @@ def _corrode_random_gear(player) -> tuple[str, str] | None:
 # used to be a full immunity, which made a floor-10 ring or one drink of
 # Fafnir's Blood switch off every fire attack in the game, Amon's and
 # Abaddon's included. The temporary fire_shield is still a full immunity.
+#
+# 2026-10 balance pass: cold, lightning, poison and magic followed fire. A
+# resistance is half damage; only the temporary elemental shields and
+# drain_resist are still complete. (poison_resist still stops the poisoned
+# and diseased STATUSES outright; it is direct poison damage, a breath or a
+# cloud, that is now halved.)
 DAMAGE_IMMUNITY: dict[str, str] = {
-    'cold':      'cold_resist',
-    'lightning': 'shock_resist',
-    'poison':    'poison_resist',
     'drain':     'drain_resist',
-    'magic':     'magic_resist',
 }
 
 # Damage type -> status that halves it (rounded up).
 DAMAGE_HALVED: dict[str, str] = {
-    'fire': 'fire_resist',
+    'fire':      'fire_resist',
+    'cold':      'cold_resist',
+    'lightning': 'shock_resist',
+    'poison':    'poison_resist',
+    'magic':     'magic_resist',
 }
 
 # Additional damage-type immunities granted by shield effects (checked separately)
@@ -551,7 +574,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
         # ---- Per-turn side effects ----
         if effect == 'poisoned' and not player.has_effect('poison_resist'):
-            dmg = player.take_damage(1, 'poison')
+            dmg = player.take_damage(dot_tick(player), 'poison')
             if dmg:
                 messages.append(('The poison burns through you!', 'danger'))
 
@@ -570,7 +593,10 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 messages.append(('You are being strangled!', 'danger'))
 
         elif effect == 'regenerating':
-            if player.hp < player.max_hp:
+            # One point every REGEN_PERIOD turns (it was every turn: a ring
+            # found by floor 12 refilled the whole bar every minute of play).
+            player._regen_phase = (int(getattr(player, '_regen_phase', 0)) + 1) % REGEN_PERIOD
+            if player._regen_phase == 0 and player.hp < player.max_hp:
                 player.restore_hp(1)
 
         elif effect == 'petrifying':
@@ -584,7 +610,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                 messages.append(('You feel yourself stiffening...', 'warning'))
 
         elif effect == 'bleeding':
-            dmg = player.take_damage(1, 'physical')
+            dmg = player.take_damage(dot_tick(player), 'physical')
             if dmg:
                 messages.append(('You are bleeding!', 'danger'))
 
@@ -600,7 +626,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
         elif effect == 'burning':
             if not player.has_effect('fire_resist') and not player.has_effect('fire_shield'):
-                dmg = player.take_damage(1, 'fire')
+                dmg = player.take_damage(dot_tick(player), 'fire')
                 if dmg:
                     messages.append(('You are on fire!', 'danger'))
                 scorch = _scorch_random_gear(player)

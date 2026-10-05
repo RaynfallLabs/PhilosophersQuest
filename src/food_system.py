@@ -299,6 +299,15 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
             messages.append(f"The meal fortifies you permanently. (+{applied} max HP)")
         elif not bypass:
             messages.append("You feel sated, but your body is already full of nourishment this floor.")
+    elif hasattr(player, 'try_apply_cook_hp_gain'):
+        # Every meal cooked properly builds the cook up a little. Recipes
+        # with a bonus of their own (above) give more. This is where a
+        # run's hit points come from: about four a floor for a cook who
+        # keeps at it, none for one who does not.
+        applied = player.try_apply_cook_hp_gain(
+            int(getattr(player, 'COOK_BASE_MAX_HP', 1)))
+        if applied > 0:
+            messages.append(f"Good food builds you up. (+{applied} max HP)")
 
     # +1 stat (per-floor softcap unless bypassed)
     stat_grant_amount = int(outcome.get('stat_grant', 0))
@@ -386,7 +395,7 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
     elif power_id == 'cold_immunity':
         try: player.add_effect('cold_resist', -1)
         except Exception: pass
-        return "Permanent cold immunity. " + (desc or "")
+        return "Permanent cold resistance. " + (desc or "")
     elif power_id == 'petrify_immunity':
         try: player.add_effect('petrify_immune', -1)
         except Exception: pass
@@ -769,6 +778,11 @@ def apply_fafnirs_blood(player, chain: int) -> list:
     return msgs
 
 
+# Least a healing potion restores, as a share of max HP.
+POTION_HEAL_SHARE = 0.20
+POTION_EXTRA_HEAL_SHARE = 0.40
+
+
 def drink_potion(player, potion) -> list[str]:
     """
     Consume a Potion. Returns a list of message strings.
@@ -815,12 +829,16 @@ def drink_potion(player, potion) -> list[str]:
         return messages
 
     if effect == 'heal':
-        amt = int((roll_dice(power) if power else 10) * _heal_mult)
+        # The dice, or a fixed share of max HP if that is more: a potion
+        # has to stay worth drinking once hit points grow with depth.
+        amt = int(max(roll_dice(power) if power else 10,
+                      player.max_hp * POTION_HEAL_SHARE) * _heal_mult)
         player.restore_hp(amt)
         messages.append(f"Warmth floods through you. (+{amt} HP)")
 
     elif effect == 'extra_heal':
-        amt = int((roll_dice(power) if power else 25) * _heal_mult)
+        amt = int(max(roll_dice(power) if power else 25,
+                      player.max_hp * POTION_EXTRA_HEAL_SHARE) * _heal_mult)
         player.restore_hp(amt)
         messages.append(f"Deep wounds knit closed with startling speed. (+{amt} HP)")
 

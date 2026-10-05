@@ -623,7 +623,13 @@ def test_fire_resistance_halves_fire_and_is_not_immunity():
     r = Player()
     r.max_hp = r.hp = 500
     r.add_effect('cold_resist', -1)
-    assert r.take_damage(40, 'cold') == 0       # other resistances unchanged
+    # cold, lightning, poison and magic followed fire in the balance pass
+    for effect, dtype in (('cold_resist', 'cold'), ('shock_resist', 'lightning'),
+                          ('poison_resist', 'poison'), ('magic_resist', 'magic')):
+        r = Player()
+        r.max_hp = r.hp = 500
+        r.add_effect(effect, -1)
+        assert r.take_damage(40, dtype) == 20, effect
 
 
 # ------------------------------------------------------------ Fafnir's Blood
@@ -933,7 +939,7 @@ def test_fraction_of_hp_magic_cannot_one_shot_a_boss():
     abaddon = Monster({**data['abaddon_destroyer'], 'id': 'abaddon_destroyer'}, 1, 1)
     assert _is_big_foe(abaddon)
     assert _big_foe_bite(abaddon, 0.5, 100) <= 0.25 * abaddon.max_hp
-    assert _big_foe_bite(abaddon, 0.5, 100) >= 500          # still a real hit
+    assert _big_foe_bite(abaddon, 0.5, 100) >= 400          # still a real hit
     arachne = Monster({**data['arachne'], 'id': 'arachne'}, 1, 1)
     assert _is_big_foe(arachne)
     # An ordinary deep monster is NOT a big foe any more (it was, at >500 HP,

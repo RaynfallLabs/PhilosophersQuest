@@ -65,6 +65,11 @@ from items import Artifact, Weapon
 from pet_system import Pet, random_species as random_pet_species
 
 
+# Chance an attack passes through a displaced image. It was 0.30, and a
+# permanent one is available from a quirk and a mystery: nearly a third of
+# every attack in the game, for the whole run.
+DISPLACEMENT_MISS = 0.15
+
 class CombatMixin:
     """Combat orchestration, targeting cursors, throw mechanics, monster/pet turns.
 
@@ -2103,7 +2108,7 @@ class CombatMixin:
                 continue  # can't attack this turn — just fell
             if did_attack:
                 # Displacement: 30% miss chance
-                if self.player.has_effect('displacement') and random.random() < 0.30:
+                if self.player.has_effect('displacement') and random.random() < DISPLACEMENT_MISS:
                     self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
 

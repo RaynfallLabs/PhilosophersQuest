@@ -381,8 +381,14 @@ class InputMixin:
                 if m.alive and abs(m.x - self.player.x) <= 1 and abs(m.y - self.player.y) <= 1
             ]
             if not _adj_monsters and self.player.mp < self.player.max_mp:
-                self.player.restore_mp(1)
-                self.add_message("You meditate briefly. (+1 MP)", 'info')
+                from floor_curve import MEDITATE_PERIOD
+                self._meditate_count = getattr(self, '_meditate_count', 0) + 1
+                if self._meditate_count >= MEDITATE_PERIOD:
+                    self._meditate_count = 0
+                    self.player.restore_mp(1)
+                    self.add_message("You meditate. (+1 MP)", 'info')
+                else:
+                    self.add_message("You meditate...", 'info')
             else:
                 self.add_message("You wait.", 'info')
             # Chain-equip passive: unseen_when_still (Helm of Hades T5) increments
@@ -391,6 +397,9 @@ class InputMixin:
                 getattr(self.player, '_chain_no_move_counter', 0) + 1)
             # three_oclock (Ring of Gawain T5) — resting resets the STR-decay counter.
             self.player._three_oclock_decay = 0
+            # Waiting makes you hungry like walking does. It cost nothing,
+            # so any wound could be slept off for free between fights.
+            self._tick_sp()
             self._advance_turn()
             return
 

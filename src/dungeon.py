@@ -1361,6 +1361,10 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     return monsters
 
 
+# Fewest monsters a generated floor starts with (plus one per eight floors).
+MIN_FLOOR_MONSTERS = 6
+
+
 def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
                    occupancy: float = None) -> list:
     """Populate a whole floor by rolling EVERY room for occupancy.
@@ -1390,11 +1394,15 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     for room in spawn_rooms:
         if rng.random() < per_room_p:
             _spawn_one_in_room(room, eligible, dungeon, monsters, rng)
-    # Never return a completely empty floor (tiny maps / unlucky rolls).
-    if not monsters:
-        for room in spawn_rooms:
-            if _spawn_one_in_room(room, eligible, dungeon, monsters, rng):
-                break
+    # A floor with only a handful of rooms (the maze floors 10, 30, 50, 70
+    # and 90 find three or four) rolled only that many times and started
+    # with one to six monsters: a free floor every ten. Fill those up to a
+    # count that follows depth.
+    floor_min = min(MIN_FLOOR_MONSTERS + level // 8, 18)
+    tries = 0
+    while len(monsters) < floor_min and tries < floor_min * 6:
+        tries += 1
+        _spawn_one_in_room(rng.choice(spawn_rooms), eligible, dungeon, monsters, rng)
     return monsters
 
 
@@ -1650,7 +1658,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         from items import make_item_by_id
         sphere = make_item_by_id('artifact', 'soul_sphere')
         if sphere is not None:
-            sphere_room = rng.choice(rooms[1:])
+            # (A one-room maze floor has no rooms[1:]: this raised IndexError
+            # and took the whole floor's generation with it.)
+            sphere_room = rng.choice(rooms[1:] or rooms)
             _place_one([sphere], sphere_room, dungeon, ground_items, rng)
 
     # Everything below builds floor-level STRUCTURES (mystery altars, the

@@ -2840,8 +2840,10 @@ class MagicMixin:
         elif effect == 'great_power':
             # Chain ladder (Path A): chain controls how many stats are
             # elevated (lowest stats picked first so it's never wasted).
-            # T1: 1 lowest stat; T5: all 6.
-            stat_count = [1, 2, 3, 5, 6][_tstep]
+            # One stat, two at tier 5. (It was 1/2/3/5/6: about fifteen of
+            # these turn up in a run, which was sixty permanent stat points
+            # outside every cap the cooking system keeps.)
+            stat_count = [1, 1, 1, 1, 2][_tstep]
             all_stats = ['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER']
             current = {s: getattr(self.player, s) for s in all_stats}
             # Sort by current value asc, ties broken by canonical order

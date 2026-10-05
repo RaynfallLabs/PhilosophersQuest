@@ -117,6 +117,10 @@ def _outcome_bonus_category(outcome: dict) -> str:
     return 'recovery'
 
 
+from floor_curve import (WANDER_HUNTING_CAP, natural_regen,    # noqa: E402
+                         wander_alive_cap)
+
+
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -3684,17 +3688,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._death_proximity_warning()
         self._tick_hp_regen()
 
-    def _maybe_wander_spawn(self):
+    def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
         """Periodically spawn a wandering monster to keep pressure on the player."""
         import random as _rng
         # Spawn every 18-30 turns; more frequently at deeper levels
         interval = max(10, 22 - self.dungeon_level // 4)
         if self.turn_count % interval != 0:
             return
-        # Cap active monsters: don't overpopulate
-        alive = sum(1 for m in self.monsters if m.alive)
-        max_alive = min(4 + self.dungeon_level // 6, 14)
-        if alive >= max_alive:
+        # Cap by how many are already HUNTING the player, not by how many
+        # are alive. The old cap (4 + level // 6 alive) was below every
+        # floor's starting population, so nothing ever wandered in until the
+        # floor was nearly cleared, and standing still was always safe.
+        hunting = sum(1 for m in self.monsters
+                      if m.alive and getattr(m, '_aware', False)
+                      and not getattr(m, 'is_allied', False)
+                      and not getattr(m, '_npc_encounter_tag', None))
+        if hunting >= WANDER_HUNTING_CAP:
+            return
+        if sum(1 for m in self.monsters if m.alive) >= wander_alive_cap(self.dungeon_level):
             return
         # Spawn on an explored but currently non-visible tile, away from player
         px, py = self.player.x, self.player.y
@@ -4300,7 +4311,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if getattr(self.player, '_weave_unweave_active', False):
             interval = max(5, interval // 2)
         if self.turn_count % interval == 0:
-            base_regen = 1 + max(0, getattr(self.player, 'regen_bonus', 0))
+            # A fiftieth of max HP a tick (at least 1). A flat 1 was a real
+            # rest at 30 hit points and nothing at 300, which left one way
+            # to recover deep down: wait for mana, cast a healing spell,
+            # repeat. Rest now works for everyone and costs food (waiting
+            # makes you hungry) and time (things wander in).
+            base_regen = (natural_regen(self.player.max_hp)
+                          + max(0, getattr(self.player, 'regen_bonus', 0)))
             self.player.restore_hp(base_regen)
 
     # ------------------------------------------------------------------
@@ -5095,11 +5112,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if jm:
                 msubj, mtier = jm
                 name = str(msubj).title()
-                self.add_message(
-                    f"TIER {mtier} {name.upper()} CLEARED -- auto-passes for the "
-                    f"rest of this run.", 'success')
-                self._log_chronicle(
-                    f"Cleared Tier {mtier} {name} -- auto-passes this run.")
+                if msubj == 'math':
+                    # Combat is never answered for you: the deck comes
+                    # round again.
+                    self.add_message(
+                        f"TIER {mtier} MATH CLEARED -- every sum at this tier "
+                        f"answered. They come round again.", 'success')
+                    self._log_chronicle(f"Cleared Tier {mtier} Math.")
+                else:
+                    self.add_message(
+                        f"TIER {mtier} {name.upper()} CLEARED -- auto-passes for the "
+                        f"rest of this run.", 'success')
+                    self._log_chronicle(
+                        f"Cleared Tier {mtier} {name} -- auto-passes this run.")
                 qe.just_mastered = None
         else:
             self.wrong_answers += 1

@@ -42,11 +42,11 @@ ROOT = Path(__file__).resolve().parents[2]
 MONSTERS_PATH = ROOT / "data" / "monsters.json"
 
 # CURVE.md section 4 anchor medians (same table rebase_monster_hp.py used).
-HP_ANCHORS = {1: 8, 10: 21, 20: 55, 30: 110, 40: 210, 50: 325, 60: 500,
-              70: 750, 80: 1100, 90: 1400, 100: 1600}
+HP_ANCHORS = {1: 11, 10: 32, 20: 77, 30: 126, 40: 200, 50: 276, 60: 400,
+              70: 562, 80: 770, 90: 910, 100: 960}
 # Midpoints of the CURVE.md "Monster band ... damage" ranges.
-DMG_ANCHORS = {1: 2.0, 10: 3.75, 20: 5.25, 30: 6.25, 40: 8.75, 50: 12.25,
-               60: 15.75, 70: 20.25, 80: 24.75, 90: 30.25, 100: 35.0}
+DMG_ANCHORS = {1: 4.8, 10: 8.1, 20: 9.46, 30: 9.62, 40: 11.38, 50: 15.31,
+               60: 18.11, 70: 19.0, 80: 19.5, 90: 19.99, 100: 20.48}
 
 # ---------------------------------------------------------------------------
 # Lore-driven HP corrections (2026-10 content pass).
@@ -96,10 +96,18 @@ DEEP_UNDER_FRACTION = 0.9
 # monsters around them.  Raised (never lowered) to this multiple of the anchor
 # HP at their floor.  The gate bosses already sit near 3x and are left alone,
 # except Fenrir, whom the rebase capped at 1.3x.
-NAMED_FOE_HP_MULT = 2.0
+NAMED_FOE_HP_MULT = 4.0
 # Before floor 40 a chain-5 hit is a larger share of the floor's HP, and the
 # early mini-bosses died in one to three swings; they get 3x.
-NAMED_FOE_HP_MULT_EARLY = 3.0
+NAMED_FOE_HP_MULT_EARLY = 5.0
+# Seal demons are seven fights in a row that cannot be skipped: a little
+# under the mini-boss figure.
+SEAL_DEMON_HP_MULT = 3.0
+# From floor 60 a mini-boss also hits for a fifth of a health bar a turn, and
+# at 4x the fight ran long enough to kill a third of prepared players
+# (simulated). 3x there.
+NAMED_FOE_HP_MULT_DEEP = 3.0
+NAMED_FOE_DEEP_FLOOR = 60
 NAMED_FOE_EARLY_FLOOR = 40
 HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
 
@@ -107,13 +115,20 @@ HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
 # 2026-10 quest audit measured Asterion dying in 2.6 chain-5 attacks and
 # Medusa in 4.4, against a design of 12 to 35 turns: the quest layers
 # (Thread, Aegis, blindfold) had nothing to shorten.
-GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 600, "medusa_gorgon": 1100,
-                                "fafnir_dragon": 2000}
+#
+# 2026-10 balance pass: those figures assumed about 26 damage a hit on floor
+# 20 and 220 on floor 100. The weapons a player actually finds do three times
+# that, and the simulator measured every gate boss dying in six to nine
+# attacks. Sized now for about twenty attacks from a prepared player with
+# the quest layer (CURVE.md principle 4: a boss is 20 to 50 hits).
+GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 1500, "medusa_gorgon": 2400,
+                                "fafnir_dragon": 4000, "fenrir_wolf": 5200,
+                                "abaddon_destroyer": 6000}
 
 # A named foe's hardest attack should be worth noticing: at least this
 # multiple of the floor's anchor damage. They hit like ordinary monsters of
 # their floor (mean 0.75x) while carrying two to three times the HP.
-NAMED_FOE_DMG_MULT = 1.4
+NAMED_FOE_DMG_MULT = 0.8
 
 ATTACK_DAMAGE_SET: dict[str, dict[int, str]] = {
     # a morningstar that hit for 2d4+1 on a creature this size
@@ -138,6 +153,7 @@ SCRIPTED_UNIQUES = (
 # A monster whose hardest attack is more than SPIKE_MULT times the floor's
 # anchor damage is pushed deeper (at most MAX_PUSH floors) until it is not.
 SPIKE_MULT = 3.5
+SPIKE_CAP = 2.6
 MAX_PUSH = 8
 
 _DICE_RE = re.compile(r"^\s*(\d+)d(\d+)(?:\s*([+-])\s*(\d+))?\s*$")
@@ -289,6 +305,10 @@ def apply_stat_fixes(monsters: dict) -> list[str]:
             continue
         default = (NAMED_FOE_HP_MULT_EARLY if floor < NAMED_FOE_EARLY_FLOOR
                    else NAMED_FOE_HP_MULT)
+        if floor >= NAMED_FOE_DEEP_FLOOR:
+            default = NAMED_FOE_HP_MULT_DEEP
+        if d.get("is_seal_demon"):
+            default = SEAL_DEMON_HP_MULT
         mult = HP_FLOOR_MULT.get(mid, default)
         _raise_hp(mid, mult * target_hp(floor), f"named foe under {mult}x floor anchor")
         # Hardest attack at least NAMED_FOE_DMG_MULT x the floor's damage.
@@ -312,6 +332,22 @@ def apply_stat_fixes(monsters: dict) -> list[str]:
         if monsters[mid].get("min_level") != ml:
             log.append(f"{mid}: min_level {monsters[mid].get('min_level')} -> {ml}")
             monsters[mid]["min_level"] = ml
+    # No ordinary monster's attack is more than SPIKE_CAP times a normal hit
+    # for the floor it is seated on. (The eleven worst were 2.5 to 3.4 times,
+    # ten of them on floors 30 to 40, where one Curse Bolt was two thirds of
+    # a health bar.) Lower-only, so it is stable on a second run.
+    for mid, d in monsters.items():
+        if not is_random_spawn(d) or d.get("is_mini_boss") or d.get("is_boss"):
+            continue
+        limit = SPIKE_CAP * target_dmg(d.get("peak_floor", 1))
+        for a in d.get("attacks") or []:
+            cur = dice_avg(a.get("damage", 0))
+            if cur > 1.04 * limit and cur > 6:
+                new = damage_dice_to(a["damage"], limit)
+                if dice_avg(new) < cur:
+                    log.append(f"{mid}: attack {a.get('name')!r} damage {a['damage']} "
+                               f"({cur:.1f}) -> {new} ({dice_avg(new):.1f})  [spike cap]")
+                    a["damage"] = new
     for mid in SCRIPTED_UNIQUES:
         d = monsters[mid]
         if float(d.get("peak_weight", 0) or 0) > 0:

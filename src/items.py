@@ -1839,6 +1839,11 @@ def instantiate_weapon(template_id: str, material_id: str, *,
         'class': tpl.get('weapon_class', 'sword'),
         'material': material_id,
         'tier': max(1, peak_floor // 20 + 1),
+        # The math a weapon asks follows its depth band, as armor and shields
+        # already do for their equip quiz (CURVE.md section 2: tier 1 sums to
+        # floor 19, tier 2 to 39, and so on). This line was missing, so every
+        # common weapon on every floor asked tier 1.
+        'quiz_tier': max(1, min(5, peak_floor // 20 + 1)),
         'base_damage': base_damage,
         'chain_multipliers': tpl.get('chain_multipliers', [0.5, 1.0, 1.5, 2.5]),
         # Chain combat v2: polynomial `mult = chain ** exponent` when the

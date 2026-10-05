@@ -154,7 +154,7 @@
       80
     ],
     "weight": 0.1,
-    "min_level": 25,
+    "min_level": 50,
     "slot": "ring",
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -171,10 +171,10 @@
       "61-80": 80,
       "81-100": 80
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.15,
     "is_unique": false,
     "spread": 13,
-    "peak_floor": 30
+    "peak_floor": 58
   },
   "ring_clairvoy": {
     "name": "ring of clairvoyance",
@@ -402,7 +402,7 @@
       80
     ],
     "weight": 0.2,
-    "min_level": 25,
+    "min_level": 50,
     "slot": "amulet",
     "equip_threshold": 3,
     "quiz_tier": 3,
@@ -419,10 +419,10 @@
       "61-80": 80,
       "81-100": 80
     },
-    "peak_weight": 0.4,
+    "peak_weight": 0.15,
     "is_unique": false,
     "spread": 13,
-    "peak_floor": 30
+    "peak_floor": 58
   },
   "amulet_invis": {
     "name": "amulet of invisibility",

@@ -338,7 +338,8 @@ def test_player_apply_equip_wires_prophets_passing():
 # ---------------------------------------------------------------------------
 
 def test_unskinnable_floors_physical_dmg_to_one():
-    """A monster's physical attack against an unskinnable wearer floors at 1.
+    """A monster's physical attack against an unskinnable wearer does half
+    damage (it floored at 1 until the 2026-10 balance pass).
 
     Builds a synthetic monster with a known dice attack, equips the Nemean
     pelt, and verifies the dmg variable in monster.attack is clamped.
@@ -385,8 +386,8 @@ def test_unskinnable_floors_physical_dmg_to_one():
     # Force a fixed roll so the to_hit + damage path is deterministic.
     random.seed(7)
     actual, msg = m.attack(p)
-    # Damage should have been clamped to 1 by unskinnable.
-    assert actual <= 1
+    # 5d6 is 5 to 30; halved by unskinnable it is at most 15.
+    assert 1 <= actual <= 15
 
 
 def test_grendel_grip_clears_paralysis_on_tick():

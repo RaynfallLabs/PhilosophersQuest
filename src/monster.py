@@ -10,6 +10,22 @@ from naming import ProperNameAttr
 RAGE_STACK_CAP = 8
 # Most locusts Abaddon keeps alive at once.
 LOCUST_CAP = 12
+# A monster whose roll misses still connects this often: armor turns blows,
+# it does not make its wearer untouchable. These were 0.05 and 0.25, and a
+# full kit's AC outran every THAC0 from floor 10 (measured hit chance 10 to
+# 22 percent, 25 at floor 90), which is why the deep floors were SAFER than
+# the middle ones.
+MIN_HIT_ORDINARY = 0.30
+MIN_HIT_NAMED = 0.40
+# Drain attacks: most CON one floor can cost, and the lowest drain can take it.
+DRAIN_CON_PER_FLOOR = 2
+DRAIN_CON_FLOOR = 3
+# Share of max HP a bleeding or burning monster loses each turn (1 / N).
+# One in 15 took 267 a turn off Abaddon, more than any weapon in the game;
+# named foes bleed far more slowly.
+BLEED_DIVISOR = 15
+BURN_DIVISOR = 20
+NAMED_DOT_DIVISOR = 100
 # Longest a hard control effect can hold a named foe, and what counts as one.
 NAMED_FOE_CONTROL_CAP = 2
 _HARD_CONTROL = frozenset({'paralyzed', 'sleeping', 'stunned', 'frozen',
@@ -357,6 +373,30 @@ class Monster:
     def has_effect(self, name: str) -> bool:
         return self.status_effects.get(name, 0) > 0
 
+    def _drain_takes_hold(self, player) -> bool:
+        """A drain hit costs a point of CON for good, so it gets a saving
+        throw and a limit. It used to land on every hit with neither, and
+        every point is also a point of max HP: a few wraiths took more off a
+        character than a floor of cooking put on."""
+        if int(getattr(player, 'CON', 10)) <= DRAIN_CON_FLOOR:
+            return False
+        if int(getattr(player, '_con_drained_this_floor', 0)) >= DRAIN_CON_PER_FLOOR:
+            return False
+        mod = (int(player.CON) - 10) // 2
+        bonus = player.save_bonus_for('CON') if hasattr(player, 'save_bonus_for') else 0
+        dc = min(18, 12 + self.min_level // 7)
+        return random.randint(1, 20) + mod + bonus < dc
+
+    def _dot_divisor(self, ordinary: int) -> int:
+        return NAMED_DOT_DIVISOR if self._is_named_foe() else ordinary
+
+    def _min_hit(self) -> float:
+        """Chance a blow that failed its roll lands anyway."""
+        own = getattr(self, 'min_hit_chance', None)
+        if own is not None:
+            return float(own)
+        return MIN_HIT_NAMED if self._is_named_foe() else MIN_HIT_ORDINARY
+
     def tick_effects(self):
         """Decrement all active effects by one turn. Apply damage-over-time effects."""
         bleeding_dmg = 0
@@ -369,13 +409,13 @@ class Monster:
             val = self.status_effects[name]
             if val > 0:
                 if name == 'bleeding':
-                    bleeding_dmg = max(1, self.max_hp // 15)
+                    bleeding_dmg = max(1, self.max_hp // self._dot_divisor(BLEED_DIVISOR))
                 elif name == 'poisoned':
                     poison_dmg = 1
                 elif name == 'diseased':
                     disease_tick = True
                 elif name == 'burning':
-                    burning_dmg = max(1, self.max_hp // 20)
+                    burning_dmg = max(1, self.max_hp // self._dot_divisor(BURN_DIVISOR))
                 elif name == 'doom_dot':
                     # Laevateinn (engine wave 4): doom_dot ticks N% of
                     # max_hp per turn. The % is stashed on the monster
@@ -540,8 +580,7 @@ class Monster:
             d20 = random.randint(1, 20)
             player_ac = player.get_ac()
             to_hit = self.thac0 - player_ac
-            is_boss = getattr(self, 'is_boss', False)
-            min_hit = getattr(self, 'min_hit_chance', 0.25 if is_boss else 0.05)
+            min_hit = self._min_hit()
             if d20 == 1:
                 return 0, gaze_msg + f" {the_name(self)} swings but misses!"
             if d20 != 20 and d20 < to_hit:
@@ -555,7 +594,7 @@ class Monster:
                 # Chain combat v2: sundered halves outgoing monster damage.
                 dmg = max(1, int(dmg * 0.70))
             # Hide of the Nemean Lion (unskinnable): physical/slash/pierce/blunt
-            # attackers floor at 1 damage. Same condition as the main path.
+            # attackers do half damage. Same condition as the main path.
             try:
                 from armor_procs import player_has_armor_proc
                 if player_has_armor_proc(player, 'unskinnable') and \
@@ -564,7 +603,7 @@ class Monster:
                         'magic' not in (getattr(self, 'tags', []) or []) and \
                         'divine' not in (getattr(self, 'tags', []) or []):
                     if dmg > 1:
-                        dmg = 1
+                        dmg = max(1, dmg // 2)
             except ImportError:
                 pass
             actual = player.take_damage(dmg, atk_type)
@@ -612,6 +651,9 @@ class Monster:
             piercing_atks = [a for a in self.attacks
                              if a.get('piercing') and any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
             atk = random.choice(piercing_atks) if piercing_atks else random.choice(self.attacks)
+        elif (self.ai_pattern == 'sessile' and not self._adjacent_to(player)
+              and any(a.get('ranged') for a in self.attacks)):
+            atk = random.choice([a for a in self.attacks if a.get('ranged')])
         elif (self.ai_pattern in ('ranged', 'dragon') and not self._adjacent_to(player)
               and len(self.attacks) > 1):
             ranged_atks = [a for a in self.attacks
@@ -657,9 +699,8 @@ class Monster:
             to_hit += 2
             self._aoo_disengage_pending = False
 
-        # Minimum hit chance: intrinsic to the monster (bosses 25%, regular 5%)
-        is_boss = getattr(self, 'is_boss', False)
-        min_hit = getattr(self, 'min_hit_chance', 0.25 if is_boss else 0.05)
+        # Minimum hit chance (MIN_HIT_ORDINARY / MIN_HIT_NAMED)
+        min_hit = self._min_hit()
 
         # Natural 1 always misses; natural 20 always hits
         if d20 == 1:
@@ -748,9 +789,10 @@ class Monster:
             except ImportError:
                 pass
 
-        # Hide of the Nemean Lion (unskinnable): non-magical attackers floor at
-        # 1 damage. "Only divine arms scratch it" — Heracles used the lion's own
-        # claws. Magic/holy/fire/cold/lightning/acid/poison/radiant all bypass
+        # Hide of the Nemean Lion (unskinnable): non-magical blows do HALF
+        # damage. (They used to do 1: from floor 53 that zeroed four or five
+        # of every ten attacks in the game.) "Only divine arms scratch it" —
+        # Heracles used the lion's own claws. Magic/holy/fire/cold/lightning/acid/poison/radiant all bypass
         # since they are not "blade hits hide." Pure physical/slash/pierce/blunt
         # gets clamped.
         try:
@@ -761,7 +803,7 @@ class Monster:
                     'magic' not in (getattr(self, 'tags', []) or []) and \
                     'divine' not in (getattr(self, 'tags', []) or []):
                 if dmg > 1:
-                    dmg = 1
+                    dmg = max(1, dmg // 2)
         except ImportError:
             pass
 
@@ -857,9 +899,12 @@ class Monster:
                 msg += f" (Counter-strike: {cstrike} dmg!)"
 
         # Drain attack: reduce CON if not drain_resist
-        if atk_type == 'drain' and not player.has_effect('drain_resist'):
+        if (atk_type == 'drain' and not player.has_effect('drain_resist')
+                and self._drain_takes_hold(player)):
             old_con = player.CON
             player.apply_stat_bonus('CON', -1)
+            player._con_drained_this_floor = int(
+                getattr(player, '_con_drained_this_floor', 0)) + 1
             if player.CON < old_con:
                 msg = f"{the_name(self)} drains your life force! ({actual} dmg, CON -1)"
 
@@ -1165,6 +1210,17 @@ class Monster:
             effective_pattern = 'cowardly'
 
         if effective_pattern == 'sessile':
+            # Rooted things do not chase, but they do strike what comes
+            # within reach. This returned False before the adjacency check,
+            # so a lone plant, mold, ooze or statue never attacked at all
+            # (measured: 0 attacks in 200 turns standing next to one).
+            if self._adjacent_to(player):
+                return True
+            if any(a.get('ranged') for a in self.attacks):
+                dist = max(abs(self.x - player.x), abs(self.y - player.y))
+                if (dist <= self._RANGED_MAX
+                        and self._has_los(player.x, player.y, dungeon)):
+                    return True
             return False
 
         # (Fear / charm / confusion / blindness are handled near the top of
@@ -1772,8 +1828,7 @@ class Monster:
         total = 0
         parts = []
         effect_msg = ''
-        is_boss = getattr(self, 'is_boss', False)
-        min_hit = getattr(self, 'min_hit_chance', 0.25 if is_boss else 0.05)
+        min_hit = self._min_hit()
         atks_to_fire = self.attacks[:attack_limit] if attack_limit > 0 else self.attacks
         for atk in atks_to_fire:
             d20 = random.randint(1, 20)

@@ -1511,11 +1511,11 @@
     "quiz_tier": 3,
     "quiz_threshold": 1,
     "effect": "time_stop_scroll",
-    "power": "10",
+    "power": "4",
     "unidentified_name": "palimpsest scroll",
     "lore": "King Hezekiah lay dying and asked for a sign that he would recover. Isaiah offered a choice, and the king asked for the harder thing: the shadow on the stairway of Ahaz went backward ten steps. A chronomancer's lesser rite takes back a few moments in which only the reader moves.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.05
   },
   "scroll_of_time_stop": {
     "name": "scroll of time stop",
@@ -1533,11 +1533,11 @@
     "quiz_tier": 4,
     "quiz_threshold": 1,
     "effect": "time_stop_scroll",
-    "power": "10",
+    "power": "4",
     "unidentified_name": "onion-skin scroll",
     "lore": "Zeno of Elea argued that an arrow in flight occupies, at every instant, a space exactly its own size, and so at every instant is at rest. If it never moves in any instant, when does it move? Philosophers argued for two thousand years. The scroll simply agrees with him for a time.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.05
   },
   "scroll_of_timeless": {
     "name": "scroll of timeless",
@@ -1555,11 +1555,11 @@
     "quiz_tier": 5,
     "quiz_threshold": 1,
     "effect": "time_stop_scroll",
-    "power": "10",
+    "power": "4",
     "unidentified_name": "dog-eared scroll",
     "lore": "Joshua needed daylight to finish the battle at Gibeon, and he spoke in the sight of all Israel. The sun stood still over Gibeon and the moon over the valley of Aijalon for about a whole day. There has been no day like it. The great working gives its reader a long stretch of that stillness.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.05
   },
   "scroll_of_power": {
     "name": "scroll of power",
@@ -1581,7 +1581,7 @@
     "unidentified_name": "solar scroll",
     "lore": "Milo of Croton won the wrestling at six Olympic Games. The story of his training is that he lifted a newborn calf onto his shoulders every day until it was a full-grown bull. The rite compresses his years into a reading. The reader's three weakest faculties are raised, and they stay raised.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.05
   },
   "scroll_of_greater_power": {
     "name": "scroll of greater power",
@@ -1603,7 +1603,7 @@
     "unidentified_name": "coronal scroll",
     "lore": "In the fifth century Martianus Capella wrote an allegory in which seven bridesmaids each present one art: Grammar, Logic, Rhetoric, Geometry, Arithmetic, Astronomy, Music. Schools taught those seven for the next thousand years. The rite is a whole education at a sitting. Nearly every faculty of the reader is raised for good.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.05
   },
   "scroll_of_great_power": {
     "name": "scroll of great power",
@@ -1625,7 +1625,7 @@
     "unidentified_name": "blazing scroll",
     "lore": "About the year 270 Porphyry of Tyre wrote a short introduction to Aristotle's logic. It sorted everything that exists into a branching tree, from substance down to Socrates, and students copied it out for a thousand years. This is the tree in full. Every faculty the reader has is permanently raised.",
     "weight": 0.1,
-    "peak_weight": 0.25
+    "peak_weight": 0.05
   },
   "dead_sea_scroll": {
     "name": "Dead Sea Scroll",

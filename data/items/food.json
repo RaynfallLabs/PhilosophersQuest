@@ -211,8 +211,8 @@
   "bonus_amount": 1,
   "floor_spawn_weight": {
    "1-34": 0,
-   "35-60": 25,
-   "61-100": 35
+   "35-60": 2,
+   "61-100": 3
   },
   "unidentified_name": "deep fungi",
   "lore": "These mushrooms grow only in the lowest passages, where no light has ever fallen, feeding on whatever seeps from enchanted stone. The first bite sets the head spinning. Then the body steadies, well fed, and comes away subtly changed: a little stronger, or quicker, or sharper than before."
@@ -230,10 +230,10 @@
   "sp_restore": 105,
   "hp_restore": 10,
   "bonus_type": "combat_stat",
-  "bonus_amount": 2,
+  "bonus_amount": 1,
   "floor_spawn_weight": {
    "1-59": 0,
-   "60-100": 20
+   "60-100": 2
   },
   "unidentified_name": "void ration",
   "lore": "A dark brick of pressed provisions from the abyssal floors, where ordinary food rots in an hour. Nobody knows who presses them. Eating one fills the limbs with a cold, steady vigor that lingers as real fighting strength, and hunger becomes a rumor for a long while after."
@@ -255,7 +255,7 @@
   "bonus_amount": 1,
   "floor_spawn_weight": {
    "1-14": 0,
-   "15-100": 20
+   "15-100": 2
   },
   "unidentified_name": "philosopher's tea",
   "lore": "Chinese legend says the emperor Shennong was boiling water under a wild tree when a few leaves drifted into the pot, and he liked what happened. Sages have steeped leaves ever since. This violet tea, gathered near old ruins, settles the mind and leaves it lastingly wiser. Scholars claim hard questions seem to wait politely for an answer."
