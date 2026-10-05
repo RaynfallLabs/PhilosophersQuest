@@ -660,7 +660,47 @@ def _level_80_hall():
     tiles[exit_room.center[1]][exit_room.x + exit_room.width // 2] = STAIRS_DOWN
 
     dungeon = _make(tiles, rooms, 80)
-    return dungeon, _spawn_boss(dungeon, 'fenrir_wolf', boss_room), []
+
+    # The way down is past the throne room and shut while the wolf lives.
+    dungeon.stairs_guardian = 'fenrir_wolf'
+    dungeon.stairs_guardian_line = (
+        "The stair is drifted shut with snow that does not melt. It will lie "
+        "there as long as the wolf draws breath.")
+    dungeon.stairs_guardian_open_line = (
+        "Beyond the throne room, the drift across the stair slumps and runs to water.")
+    dungeon.atmosphere_messages = [
+        "Frost has run down the walls of this hall and frozen in mid-drip. Far "
+        "off, something very large is breathing in its sleep.",
+    ]
+
+    # What the ruined hall still holds (boss floors returned no items).
+    items = []
+    try:
+        import random as _random
+        from items import (add_gold_to_tile, load_items, copy_at,
+                           pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                           pick_random_shield_for_floor)
+        potions = {pt.id: pt for pt in load_items('potion')}
+        sides = [r for r in rooms if r not in (entry, hall, hall2, boss_room, exit_room)]
+        picks = (pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                 pick_random_shield_for_floor)
+        for n, side in enumerate(sides):
+            sx, sy = side.center
+            add_gold_to_tile(items, _random.randint(250, 500), sx, sy)
+            if n < 3:
+                it = picks[n](80, _random)
+                if it is not None:
+                    it.x, it.y = sx + 1, sy
+                    items.append(it)
+            else:
+                heal = (potions.get('potion_of_full_healing')
+                        or potions.get('potion_of_extra_healing'))
+                if heal is not None:
+                    items.append(copy_at(heal, sx + 1, sy))
+    except Exception:
+        items = [it for it in items if it is not None]
+
+    return dungeon, _spawn_boss(dungeon, 'fenrir_wolf', boss_room), items
 
 
 # ---------------------------------------------------------------------------

@@ -36,6 +36,11 @@ from game_states import (
 
 
 class MenuMixin:
+    # Gleipnir: how far the ribbon can be cast, and the paralysis value a
+    # cast applies (3 = held on the turn of the cast and the two after).
+    GLEIPNIR_RANGE = 6
+    GLEIPNIR_HOLD = 3
+
     # ------------------------------------------------------------------
     # Cook menu  (C key)
     # ------------------------------------------------------------------
@@ -1081,7 +1086,8 @@ class MenuMixin:
         if any(getattr(i, 'id', '') == 'gleipnir' for i in pl.inventory):
             _bind_def = {
                 'label': 'Bind Odinkiller',
-                'desc': 'Reset Fenrir\'s rage and paralyze him briefly. Costs 1 permanent stat point.',
+                'desc': ('Cast the ribbon over Fenrir from within 6 tiles: he is held for '
+                         'three turns and his rage is gone. Each cast costs 1 permanent stat point.'),
                 'cooldown': 0, 'uses': 0,
             }
             powers.append(('bind_odinkiller', _bind_def, 0, 0))
@@ -1480,29 +1486,47 @@ class MenuMixin:
             fenrir = next((m for m in self.monsters
                            if m.alive and m.kind == 'fenrir_wolf'), None)
             if not fenrir:
-                self.add_message("Bind Odinkiller: Fenrir is not here.", 'warning')
+                self.add_message("The ribbon lies quiet in your hands. The wolf is not here.", 'warning')
+                return
+            # The ribbon has to be thrown: in sight, within GLEIPNIR_RANGE.
+            # (There was no check at all: he could be bound from anywhere on
+            # the floor, through walls.)
+            from combat import _line_of_sight
+            _dist = max(abs(fenrir.x - pl.x), abs(fenrir.y - pl.y))
+            if _dist > self.GLEIPNIR_RANGE or not _line_of_sight(
+                    pl.x, pl.y, fenrir.x, fenrir.y, self.dungeon):
+                self.add_message(
+                    "The ribbon will not reach him from here. You need him in "
+                    "sight and close.", 'warning')
                 return
             fenrir.reset_rage()
-            fenrir.status_effects['paralyzed'] = 2
+            # Held this turn and the two after. (A value of 2 was gone after
+            # a single turn, so a bind bought one attack for a stat point.)
+            fenrir.status_effects['paralyzed'] = max(
+                fenrir.status_effects.get('paralyzed', 0), self.GLEIPNIR_HOLD)
             self.add_message(
-                "You hurl the shimmering ribbon at Fenrir!", 'info')
+                "You cast the ribbon. It settles over the wolf as lightly as a "
+                "thread of spider silk.", 'info')
             self.add_message(
-                "Gleipnir wraps around the World-Wolf's massive jaws! "
-                "He strains, but the binding holds!", 'success')
-            self.add_message(
-                "Fenrir's rage subsides -- for now.", 'success')
-            # Rotating stat cost: STR -> DEX -> CON
+                "Fenrir throws his whole weight against it, and it tightens. "
+                "It has never been broken.", 'success')
+            # Tyr paid a hand. The price here is one permanent stat point a
+            # cast, in turn: STR, DEX, CON. The count lives on the player so
+            # it survives a save (it was a Game attribute and reset on load).
             _stat_cycle = ['STR', 'DEX', 'CON']
-            _stat_names = {'STR': 'strength', 'DEX': 'agility', 'CON': 'vitality'}
-            bind_count = getattr(self, '_gleipnir_bind_count', 0)
+            _stat_names = {'STR': 'strength', 'DEX': 'quickness', 'CON': 'vigour'}
+            bind_count = int(getattr(pl, '_gleipnir_binds',
+                                     getattr(self, '_gleipnir_bind_count', 0)) or 0)
             stat = _stat_cycle[bind_count % 3]
             current = getattr(pl, stat)
             if current > 1:
                 setattr(pl, stat, current - 1)
                 self.add_message(
-                    f"The binding tears something from you... "
-                    f"your {_stat_names[stat]} diminishes permanently. ({stat} -1)",
+                    f"Tyr paid a hand for this. Your price is smaller, and it is "
+                    f"still a price: some of your {_stat_names[stat]} goes into "
+                    f"the ribbon and does not come back. ({stat} -1)",
                     'danger')
+            pl._gleipnir_binds = bind_count + 1
             self._gleipnir_bind_count = bind_count + 1
 
         elif pid == 'summon_heavenly_host':

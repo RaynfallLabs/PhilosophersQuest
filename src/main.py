@@ -4388,6 +4388,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._display_name(item)}.", 'loot')
+            # Leather scraps: keep count for the player. Nothing else in the
+            # game says how many there are or how many are held.
+            if getattr(item, 'id', '') == 'leather_scrap':
+                _n = sum(1 for i in self.player.inventory
+                         if getattr(i, 'id', '') == 'leather_scrap')
+                _WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six',
+                          'seven', 'eight', 'nine', 'ten']
+                if _n == 1:
+                    self._log_chronicle(
+                        "Picked up a scrap of shoe leather. No use to anyone. "
+                        "I kept it anyway.")
+                elif 1 < _n < 10:
+                    self.add_message(
+                        f"Another scrap. That makes {_WORDS[_n]}.", 'info')
+                elif _n == 10:
+                    self.add_message(
+                        "That makes ten. Laid together they would about make a shoe.",
+                        'success')
+                    self._log_chronicle(
+                        "Ten scraps of leather. I do not know why I kept them. "
+                        "Together they would about make a shoe, for a very large foot.")
             # Chronicle notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
                 'philosophers_stone', 'ariadnes_thread', 'bronze_bull',

@@ -679,3 +679,140 @@ def test_drinking_the_blood_starts_the_bird_speech_quiz():
     assert 'apply_fafnirs_blood(self.player, chain)' in block
     j = src.index('def _quaff_menu_input')
     assert "== 'fafnirs_blood'" in src[j:j + 1400]
+
+
+# -------------------------------------------------------------- Fenrir's hall
+
+def _hall():
+    from boss_levels import generate_boss_level
+    from player import Player
+    d, monsters, items = generate_boss_level(80)
+    fenrir = next(m for m in monsters if m.kind == 'fenrir_wolf')
+    return d, fenrir, monsters, items, Player()
+
+
+def test_fenrir_loses_his_footing_on_ice():
+    """The ice in his hall slid the player and did nothing else. A wolf that
+    attacks from an ice tile now misses half his lunges and cannot flurry."""
+    d, fenrir, _monsters, _items, p = _hall()
+    p.max_hp = p.hp = 100000
+    p.x, p.y = fenrir.x + 1, fenrir.y
+    fenrir.rage_stacks = 5                    # would normally be a three-attack flurry
+    fenrir._on_ice = True
+    slips = flurries = 0
+    for _ in range(300):
+        _dmg, msg = fenrir.attack(p)
+        slips += 'no purchase on the ice' in msg
+        flurries += msg.count(' for ') > 1 or 'tears into you' in msg
+    assert 100 < slips < 200
+    fenrir._on_ice = False
+    assert not any('no purchase' in fenrir.attack(p)[1] for _ in range(100))
+    from dungeon import ICE
+    assert sum(row.count(ICE) for row in d.tiles) >= 12
+
+
+def test_fenrirs_hall_bars_the_stair_and_holds_loot():
+    from dungeon import STAIRS_UP, STAIRS_DOWN
+    d, fenrir, _monsters, items, _p = _hall()
+    assert d.stairs_guardian == 'fenrir_wolf'
+    throne = d.rooms[-2]
+    throne_tiles = {(x, y) for x in range(throne.x, throne.x + throne.width)
+                    for y in range(throne.y, throne.y + throne.height)}
+    assert (fenrir.x, fenrir.y) in throne_tiles
+    up, down = _find(d, STAIRS_UP), _find(d, STAIRS_DOWN)
+    assert down in _lab_reach(d, up)
+    assert down not in _lab_reach(d, up, blocked=throne_tiles)
+    assert len(items) >= 8
+    assert all(d.tiles[i.y][i.x] != WALL for i in items)
+
+
+def test_the_forge_is_below_the_last_ingredient():
+    """It stood on floor 76, one above the bear's sinew on 77."""
+    d76, _ = _floor(76)
+    d78, _ = _floor(78)
+    assert getattr(d76, 'dwarven_forge_pos', None) is None
+    assert d78.dwarven_forge_pos is not None
+    d77, items77 = _floor(77)
+    assert any(getattr(i, 'id', '') == 'bear_sinew' for i in items77)
+    assert d77.atmosphere_messages, 'each ingredient floor announces itself'
+
+
+class _QuestGame:
+    """Just enough of Game for the forge and altar checks."""
+
+    def __init__(self):
+        from player import Player
+        self.player = Player()
+        self.player.inventory = []
+        self.ground_items = []
+        self.log = []
+
+    def add_message(self, text, kind='info'):
+        self.log.append(text)
+
+    def _log_chronicle(self, text):
+        self.log.append(text)
+
+
+def _bind(method_name):
+    import game_divine
+    return getattr(game_divine.DivineMixin, method_name)
+
+
+def test_forge_takes_the_other_ingredients_from_the_pack():
+    from dungeon import _quest_artifact
+    import game_divine
+    g = _QuestGame()
+    g._GLEIPNIR_COMPONENT_IDS = game_divine.DivineMixin._GLEIPNIR_COMPONENT_IDS
+    ids = sorted(g._GLEIPNIR_COMPONENT_IDS)
+    first = _quest_artifact(ids[0])
+    first.x, first.y = 5, 5
+    g.ground_items.append(first)
+    g.player.inventory = [_quest_artifact(i) for i in ids[1:]]
+    _bind('_check_gleipnir_forge')(g, 5, 5)
+    assert [i.id for i in g.ground_items] == ['gleipnir']
+    assert g.player.inventory == []
+
+    short = _QuestGame()                      # five of six: nothing is consumed
+    short._GLEIPNIR_COMPONENT_IDS = g._GLEIPNIR_COMPONENT_IDS
+    one = _quest_artifact(ids[0])
+    one.x, one.y = 5, 5
+    short.ground_items.append(one)
+    short.player.inventory = [_quest_artifact(i) for i in ids[1:5]]
+    _bind('_check_gleipnir_forge')(short, 5, 5)
+    assert len(short.player.inventory) == 4
+    assert not any(i.id == 'gleipnir' for i in short.ground_items)
+    assert any('cups' in line for line in short.log)
+
+
+def test_vidars_altar_takes_the_other_scraps_from_the_pack():
+    from dungeon import _quest_artifact
+    g = _QuestGame()
+    one = _quest_artifact('leather_scrap')
+    one.x, one.y = 3, 3
+    g.ground_items.append(one)
+    g.player.inventory = [_quest_artifact('leather_scrap') for _ in range(9)]
+    _bind('_check_vidar_altar')(g, 3, 3)
+    assert [i.id for i in g.ground_items] == ['vidars_sandal']
+    assert g.player.inventory == []
+
+    short = _QuestGame()
+    one = _quest_artifact('leather_scrap')
+    one.x, one.y = 3, 3
+    short.ground_items.append(one)
+    short.player.inventory = [_quest_artifact('leather_scrap') for _ in range(7)]
+    _bind('_check_vidar_altar')(short, 3, 3)
+    assert len(short.player.inventory) == 7
+    assert any('not enough for a shoe' in line for line in short.log)
+
+
+def test_gleipnir_must_be_cast_from_close_and_in_sight():
+    src = open(os.path.join(ROOT, 'src', 'game_menus.py'), encoding='utf-8').read()
+    i = src.index("elif pid == 'bind_odinkiller':")
+    block = src[i:i + 3200]
+    assert '_dist > self.GLEIPNIR_RANGE or not _line_of_sight(' in block
+    assert 'self.GLEIPNIR_HOLD' in block
+    assert 'pl._gleipnir_binds = bind_count + 1' in block
+    import game_menus
+    assert game_menus.MenuMixin.GLEIPNIR_HOLD >= 3
+    assert 3 <= game_menus.MenuMixin.GLEIPNIR_RANGE <= 8

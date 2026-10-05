@@ -184,6 +184,8 @@ class Monster:
         self.rage_messages:  list  = list(defn.get('rage_messages', []) or [])
         self.revive_message: str   = defn.get('revive_message', '') or ''
         self.kill_chronicle: str   = defn.get('kill_chronicle', '') or ''
+        # Loses its footing when it attacks from an ICE tile (Fenrir's hall).
+        self.slips_on_ice: bool    = bool(defn.get('slips_on_ice', False))
         self._enraged: bool = False
         self._enrage_message: str = ''
 
@@ -540,8 +542,18 @@ class Monster:
             actual = player.take_damage(dmg, atk_type)
             return actual, gaze_msg + f" {the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
 
+        # Attacking from ice: half the lunges go wide, and there is no
+        # flurry. (The game loop sets _on_ice before calling attack. The ice
+        # in Fenrir's hall used to slide the player and do nothing else, so
+        # the arena was scenery.)
+        _slipping = (getattr(self, 'slips_on_ice', False)
+                     and getattr(self, '_on_ice', False))
+        if _slipping and random.random() < 0.5:
+            return 0, (f"{the_name(self)}'s claws find no purchase on the ice. "
+                       f"The lunge goes wide.")
+
         # Fenrir rage: at 3+ stacks, use ALL attacks instead of random choice
-        if self.rage_stacks >= 3 and len(self.attacks) > 1:
+        if self.rage_stacks >= 3 and len(self.attacks) > 1 and not _slipping:
             return self._fenrir_multi_attack(player)
 
         # Tiered multi-attack (Tiamat, Asmodeus, Abaddon):

@@ -1816,11 +1816,11 @@ class CombatMixin:
                 self._fire_strike_finisher(monster, chain, damage, True)
                 _snd.play('monster_hit')
                 self.add_message(
-                    "You plant Vidar's Sandal against Fenrir's lower jaw!", 'combat')
+                    "You plant Vidar's shoe on the wolf's lower jaw and take "
+                    "the upper in your hands.", 'combat')
                 self.add_message(
-                    "With impossible strength, you wrench the great wolf's mouth apart!", 'combat')
-                self.add_message(
-                    "FENRIR, THE WORLD-WOLF, IS TORN ASUNDER!", 'success')
+                    "It is not your strength that does it. The wolf comes "
+                    "apart as it was foretold.", 'success')
                 self._on_monster_killed(
                     monster,
                     chain_score=chain,
@@ -2090,6 +2090,9 @@ class CombatMixin:
                     continue
 
                 _effects_before = set(self.player.status_effects.keys())
+                if getattr(m, 'slips_on_ice', False):
+                    from dungeon import ICE as _ICE
+                    m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
                 # Reflect / thorns damage can kill the attacker inside

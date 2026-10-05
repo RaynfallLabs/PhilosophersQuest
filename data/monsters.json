@@ -20096,7 +20096,9 @@
     "lore": "Fenrir is the wolf-son of Loki. The gods bound him with Gleipnir, a ribbon the dwarves made from six things that do not exist, among them the sound of a cat's footfall and the roots of a mountain. He would allow it only if a god laid a hand in his jaws as a pledge. Tyr did, and lost the hand. At Ragnarok the wolf swallows Odin.",
     "frequency": 0,
     "rage_interval": 4,
-    "rage_damage_bonus": "1d6"
+    "rage_damage_bonus": "1d6",
+    "slips_on_ice": true,
+    "is_boss": true
   },
   "abaddon_destroyer": {
     "name": "Abaddon the Destroyer",

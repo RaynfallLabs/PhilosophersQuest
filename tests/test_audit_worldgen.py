@@ -46,7 +46,7 @@ def test_w4_quest_floors_keep_reachable_down_stairs(level):
 
 @pytest.mark.parametrize('level,attr', [
     (53, 'odin_altar_pos'),
-    (76, 'dwarven_forge_pos'),
+    (78, 'dwarven_forge_pos'),
     (79, 'vidar_altar_pos'),
     (99, 'judgment_altar_pos'),
 ])

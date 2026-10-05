@@ -569,6 +569,25 @@ class DivineMixin:
                     if getattr(i, 'id', '') in self._GLEIPNIR_COMPONENT_IDS
                     and i.x == fx and i.y == fy]
         found_ids = {i.id for i in on_forge}
+        # Setting one down while carrying the rest is enough: the others go
+        # onto the anvil with it. (It took six separate drops.)
+        if on_forge and found_ids != self._GLEIPNIR_COMPONENT_IDS:
+            carried = [i for i in self.player.inventory
+                       if getattr(i, 'id', '') in self._GLEIPNIR_COMPONENT_IDS
+                       and i.id not in found_ids]
+            if found_ids | {i.id for i in carried} == self._GLEIPNIR_COMPONENT_IDS:
+                seen = set()
+                for it in carried:
+                    if it.id in seen:
+                        continue
+                    seen.add(it.id)
+                    self.player.remove_from_inventory(it)
+                    it.x, it.y = fx, fy
+                    self.ground_items.append(it)
+                    on_forge.append(it)
+                found_ids = {i.id for i in on_forge}
+                self.add_message(
+                    "One by one you set the other five in their cups.", 'info')
         if on_forge and found_ids != self._GLEIPNIR_COMPONENT_IDS:
             # Tell the player the anvil is counting. (It used to say nothing
             # until all six were down.)
@@ -606,6 +625,19 @@ class DivineMixin:
         on_altar = [i for i in self.ground_items
                     if getattr(i, 'id', '') == 'leather_scrap'
                     and i.x == vx and i.y == vy]
+        # Laying one scrap down while carrying the rest is enough: the others
+        # follow it onto the altar. (It took ten separate drops.)
+        if 0 < len(on_altar) < 10:
+            carried = [i for i in self.player.inventory
+                       if getattr(i, 'id', '') == 'leather_scrap']
+            if len(on_altar) + len(carried) >= 10:
+                for it in carried[:10 - len(on_altar)]:
+                    self.player.remove_from_inventory(it)
+                    it.x, it.y = vx, vy
+                    self.ground_items.append(it)
+                    on_altar.append(it)
+                self.add_message(
+                    "You empty your pack of every scrap you have carried down.", 'info')
         if 0 < len(on_altar) < 10:
             self.add_message(
                 "The leather lies on the stone. It is not enough for a shoe.", 'info')

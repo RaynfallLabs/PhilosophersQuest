@@ -11,7 +11,7 @@ Covered:
 - Athena/Medusa chain: Eye of Graeae (L29), Athena Shrine (L37)
 - Odin/Fafnir chain: Broken Gram (L48), Odin Shrine (L53)
 - Vidar/Fenrir chain: 10 leather_scrap floors (L5-73), Dwarven Forge
-  (L76), Vidar's Altar (L79)
+  (L78), Vidar's Altar (L79)
 - Gleipnir chain: 6 components on L62/65/68/71/74/77, _create_gleipnir_room
 - Pit gate: Judgment Altar on L99
 - Special-tile interactions wired (altar/fountain/grave/throne)
@@ -159,7 +159,7 @@ FIXED_LEVEL_SPAWNS = {
     37: '_create_athena_shrine',
     48: 'broken_gram',  # weapon, loaded via load_items
     53: '_create_odin_shrine',
-    76: '_create_dwarven_forge',
+    78: '_create_dwarven_forge',
     79: '_create_vidar_altar',
     99: '_create_judgment_altar',
 }

@@ -1952,8 +1952,10 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
                               comp_id, comp_name, comp_color)
 
-    # -- Dwarven Forge: guaranteed on L76 ----------------------------------------
-    if level == 76:
+    # -- Dwarven Forge: guaranteed on L78 ----------------------------------------
+    # Below the last ingredient (77) and above Vidar's altar (79), so the
+    # chain runs downhill: it stood on 76 and sent the player back up a floor.
+    if level == 78:
         _create_dwarven_forge(dungeon, rooms, ground_items, rng)
 
     # -- Vidar's Altar: guaranteed on L79 ----------------------------------------
@@ -2424,10 +2426,31 @@ def _structure_anchor(dungeon, room):
     return (best[1], best[2]) if best else (cx, cy)
 
 
+# What the player notices on arriving at each Gleipnir ingredient's floor.
+_GLEIPNIR_FLOOR_LINES = {
+    'cats_footstep': "Something small crosses the passage ahead of you on four "
+                     "feet and makes no sound at all.",
+    'womans_beard':  "Somewhere behind these walls a woman is laughing, low, "
+                     "as if at a private joke.",
+    'mountain_root': "The floor hums, very low, as if something enormous were "
+                     "growing underneath it.",
+    'fish_breath':   "The air is damp here and smells faintly of a tide.",
+    'bird_spittle':  "A single feather turns in the air above the stair and "
+                     "does not come down.",
+    'bear_sinew':    "Something has been dragged through here. The marks are "
+                     "a bear's, and far too deep.",
+}
+
+
 def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
                           comp_id, comp_name, comp_color):
     """Create a themed room containing one Gleipnir component with a light challenge."""
     from items import Artifact
+
+    # One line of atmosphere per ingredient floor: something is here.
+    _hint = _GLEIPNIR_FLOOR_LINES.get(comp_id)
+    if _hint:
+        dungeon.atmosphere_messages.append(_hint)
 
     component = _quest_artifact(comp_id)
     if component is None:   # data entry missing: fall back to a bare item
@@ -2531,7 +2554,7 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
 
 
 def _create_dwarven_forge(dungeon, rooms, ground_items, rng):
-    """Create a Dwarven Forge room on L76 where Gleipnir can be assembled."""
+    """Create a Dwarven Forge room on L78 where Gleipnir can be assembled."""
     # Pick a room away from start (and never the stairs-down room)
     candidates = _structure_rooms(rooms[1:] if len(rooms) > 2 else rooms)
     room = rng.choice(candidates)
