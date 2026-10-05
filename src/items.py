@@ -323,6 +323,8 @@ class Weapon(Item):
         self.quiz_tier: int             = int(defn.get('quiz_tier', defn.get('mathTier', 1)))
         self.damage_types: list[str]    = defn.get('damage_types', defn.get('damageTypes', ['slash']))
         self.two_handed: bool           = bool(defn.get('two_handed', defn.get('twoHanded', False)))
+        # Opt-in for the throw menu regardless of weapon class (Broken Gram).
+        self.throwable: bool            = bool(defn.get('throwable', False))
         self.reach: int                 = int(defn.get('reach', 1))
         self.stun_chance: float         = float(defn.get('stun_chance', defn.get('stunChance', 0.0)))
         self.bleed_chance: float        = float(defn.get('bleed_chance', defn.get('bleedChance', 0.0)))

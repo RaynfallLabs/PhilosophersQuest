@@ -1050,9 +1050,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Damage type advantage vs monster resistances/weaknesses
         # Gram (reforged) ignores all resistances
         dtype_mult = 1.0
-        if weapon and getattr(weapon, 'ignore_resistances', False):
-            dtype_mult = 1.0  # bypass all resistance/weakness checks
-        elif weapon:
+        _ignores_res = bool(weapon and getattr(weapon, 'ignore_resistances', False))
+        if weapon:
             # Include weapon material as a damage type so iron weapons
             # trigger "iron" weakness on fey creatures, etc.
             dtypes = list(weapon.damage_types)
@@ -1063,6 +1062,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             if getattr(weapon, 'buc', 'uncursed') == 'blessed' and 'holy' not in dtypes:
                 dtypes.append('holy')
             dtype_mult = _damage_multiplier(dtypes, monster)
+            # Gram and the Sword of Michael ignore RESISTANCES. They used to
+            # skip the whole check, which also threw away the weakness bonus
+            # (the Sword of Michael got nothing for being holy against a
+            # demon). Resistance is ignored; weakness still counts.
+            if _ignores_res:
+                dtype_mult = max(1.0, dtype_mult)
 
         # Weapon-side effective_against array. Per audit 2026-05-30 — many
         # uniques (Zulfiqar, Vel of Murugan, Spear of Longinus, Mjolnir,
@@ -1326,11 +1331,17 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
 
         # Dragon scales: massive damage reduction (bypassed by ignore_resistances,
         # blade_flow, chain-special bypass flag, or player in pit)
+        # From a pit the player strikes the unarmoured belly: the scales do
+        # not apply at all and the blow lands half again as hard. This holds
+        # for scale-ignoring weapons too (reforged Gram in the pit is the
+        # best case, as in the saga). The old rule was x4 against x0.2, a
+        # twenty-fold swing that would have ended Fafnir in one or two hits
+        # had the pit status ever lasted long enough to use.
         dragon_scales = getattr(monster, 'dragon_scales', 0)
-        if dragon_scales > 0 and not _skip_dr:
+        if dragon_scales > 0:
             if player.has_effect('in_pit'):
-                damage = damage * 4  # devastating underbelly strike from below!
-            else:
+                damage = int(damage * 1.5)
+            elif not _skip_dr:
                 damage = max(1, int(damage * (1.0 - dragon_scales)))
 
         # Sword of Michael vs Abaddon: bonus holy damage

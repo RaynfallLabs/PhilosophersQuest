@@ -5,6 +5,30 @@ from status_effects import MAX_EFFECT_DURATION
 from naming import ProperNameAttr
 
 
+# Ceiling on escalating rage (Fenrir, and the mini-bosses that borrow his
+# pattern when wounded): each stack adds a die to every attack.
+RAGE_STACK_CAP = 8
+# Most locusts Abaddon keeps alive at once.
+LOCUST_CAP = 12
+
+
+def the_name(monster) -> str:
+    """Name for a sentence start: "The giant rat", but "Arachne", "The Sphinx".
+
+    Named foes (bosses, mini-bosses) are proper nouns, and four of them
+    already begin with "The". Blindly prefixing "The " produced "The The
+    Sphinx is slain!" and "The Baba Yaga misses!".
+    """
+    name = getattr(monster, 'name', '') or 'something'
+    if name.lower().startswith('the '):
+        return name[0].upper() + name[1:]
+    if (getattr(monster, 'is_boss', False) or getattr(monster, 'is_mini_boss', False)
+            or getattr(monster, 'is_seal_demon', False)
+            or getattr(monster, 'proper_noun', False)):
+        return name
+    return f"The {name}"
+
+
 class Monster:
     # Always title case, however monsters.json (or an old save) spelled it.
     name = ProperNameAttr('name')
@@ -422,11 +446,21 @@ class Monster:
             # Check player's sight: total blindness negates gaze
             if player.get_sight_radius() == 0:
                 gaze_msg = f"The {self.name} locks eyes on you, but you are blind to her gaze!"
+            # Proof against petrification (Medusa's trophy, the Greater
+            # Aegis). The status existed but nothing consulted it: every gaze
+            # paralyses, so the reward protected against nothing.
+            elif player.has_effect('petrify_immune'):
+                gaze_msg = (f"The {self.name}'s gaze slides off you. "
+                            f"Stone has no claim on you now.")
             # Check mirror shield (Aegis): reflects gaze back
             elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
-                self.status_effects['paralyzed'] = 1
-                gaze_msg = (f"The {self.name} meets her own reflection in your shield "
-                            f"and is turned to stone for a moment!")
+                # Two turns rigid, and she does NOT also attack this turn.
+                # (It used to set 1 turn, which the next status tick removed
+                # before she ever lost an action, and then she hit anyway.)
+                self.status_effects['paralyzed'] = max(
+                    self.status_effects.get('paralyzed', 0), 3)
+                return 0, (f"The {self.name} meets her own eyes in the bronze "
+                           f"and stands rigid, snakes and all.")
             else:
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
@@ -520,6 +554,8 @@ class Monster:
         is_gaze = 'gaze' in atk_name or 'evil eye' in atk_name
         if is_gaze and player.get_sight_radius() == 0:
             return 0, f"The {self.name} tries to lock eyes with you, but you cannot see!"
+        if is_gaze and 'petrif' in atk_name and player.has_effect('petrify_immune'):
+            return 0, f"The {self.name}'s gaze finds nothing in you to turn to stone."
 
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
@@ -856,7 +892,10 @@ class Monster:
             self._enraged = True
             old_pat = self.ai_pattern
             self.ai_pattern = self.enraged_pattern
-            self._enrage_message = f"The {self.name} enters a new phase! ({old_pat} -> {self.enraged_pattern})"
+            del old_pat
+            self._enrage_message = (
+                getattr(self, 'enrage_message', '')
+                or f"{the_name(self)} fights like a thing with nothing left to lose.")
 
         # --- Pack-dependent: aggressive with allies nearby, cowardly alone ---
         # Re-evaluates each turn so the pattern tracks the immediate situation.
@@ -1475,19 +1514,35 @@ class Monster:
         """Fenrir rage AI: aggressive movement + escalating rage stacks.
         Every rage_interval turns, gains a rage stack with increasing damage/speed."""
         self._rage_message = ''
-        self._rage_turn_counter += 1
+        # Rage builds only once the foe has noticed the player, and stops at
+        # RAGE_STACK_CAP. It used to tick from the moment the floor was
+        # entered with no ceiling: Fenrir had about nine stacks by the time
+        # the player crossed his hall, and forty if they explored first.
+        engaged = (getattr(self, '_aware', False) or self._alerted
+                   or self._adjacent_to(player))
+        if engaged:
+            self._rage_turn_counter += 1
 
-        if self.rage_interval > 0 and self._rage_turn_counter % self.rage_interval == 0:
+        if (engaged and self.rage_interval > 0
+                and self._rage_turn_counter % self.rage_interval == 0
+                and self.rage_stacks < RAGE_STACK_CAP):
             self.rage_stacks += 1
-            _RAGE_MSGS = [
-                "Fenrir snarls and grows larger!",
-                "Fenrir's hackles rise -- frost crackles around his jaws!",
-                "Fenrir HOWLS! The ground shakes!",
-                "Fenrir is consumed by Ragnarok fury! His form fills the chamber!",
-                "The World-Wolf's shadow swallows the light! Ragnarok is upon you!",
-            ]
-            idx = min(self.rage_stacks - 1, len(_RAGE_MSGS) - 1)
-            self._rage_message = _RAGE_MSGS[idx]
+            if self.kind == 'fenrir_wolf':
+                _RAGE_MSGS = [
+                    "Fenrir's back rises toward the roof beams.",
+                    "Fenrir's hackles lift. Frost cracks along his jaws.",
+                    "Fenrir howls, and the floor answers.",
+                    "Fenrir fills the hall. This is the wolf the gods were afraid of.",
+                    "The wolf's shadow takes the last of the light.",
+                ]
+                idx = min(self.rage_stacks - 1, len(_RAGE_MSGS) - 1)
+                self._rage_message = _RAGE_MSGS[idx]
+            else:
+                _own = getattr(self, 'rage_messages', None) or []
+                if _own:
+                    self._rage_message = _own[min(self.rage_stacks - 1, len(_own) - 1)]
+                else:
+                    self._rage_message = f"{the_name(self)} presses harder."
 
         if self._adjacent_to(player):
             self.alert_nearby(all_monsters)
@@ -1511,10 +1566,19 @@ class Monster:
         """Abaddon AI: aggressive movement + periodic locust swarm spawning.
         Sets _wants_locust_spawn flag for main.py to handle actual spawning."""
         self._wants_locust_spawn = False
-        self._locust_turn_counter += 1
+        # Swarms come only once Abaddon has noticed the player (they used to
+        # pile up, unseen and uncapped, from the moment floor 100 was entered).
+        engaged = (getattr(self, '_aware', False) or self._alerted
+                   or self._adjacent_to(player))
+        if engaged:
+            self._locust_turn_counter += 1
 
-        if self.locust_interval > 0 and self._locust_turn_counter % self.locust_interval == 0:
-            self._wants_locust_spawn = True
+        if (engaged and self.locust_interval > 0
+                and self._locust_turn_counter % self.locust_interval == 0):
+            _live = sum(1 for m in all_monsters
+                        if m.alive and getattr(m, 'kind', '') == 'abyssal_locust')
+            if _live < LOCUST_CAP:
+                self._wants_locust_spawn = True
 
         if self._adjacent_to(player):
             self.alert_nearby(all_monsters)

@@ -496,7 +496,8 @@
     "max_enchant": 0,
     "weapon_class_chain": "normal",
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 1.15,
+    "throwable": true
   },
   "sigurds_shovel": {
     "name": "Sigurd's Shovel",

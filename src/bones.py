@@ -123,12 +123,13 @@ def spawn_ghost(bones: dict, dungeon, monsters: list, ground_items: list):
     from monster import Monster
 
     name = bones.get('player_name', 'Unknown')
-    plevel = bones.get('player_level', 1)
-    max_hp = bones.get('max_hp', 50)
-    reason = bones.get('defeat_reason', 'died')
 
-    # Scale ghost HP: base on dead player's max HP, capped reasonably
-    ghost_hp = max(20, min(max_hp // 2, 300))
+    # The ghost is as strong as the floor it died on. It used to scale on a
+    # player "level" that does not exist, so it was 1d4+1 at every depth.
+    from floor_curve import target_hp, target_dmg, dice_for_average
+    floor = int(bones.get('dungeon_level', 1) or 1)
+    ghost_hp = max(20, int(round(1.5 * target_hp(floor))))
+    ghost_dmg = dice_for_average(1.2 * target_dmg(floor))
 
     ghost_defn = {
         'id': 'player_ghost',
@@ -139,17 +140,18 @@ def spawn_ghost(bones: dict, dungeon, monsters: list, ground_items: list):
         'ai_pattern': 'aggressive',
         'speed': 8,
         'attacks': [
-            {'name': 'spectral touch', 'damage': f'{max(1, plevel // 5)}d4+{max(1, plevel // 10)}',
-             'type': 'drain'},
+            {'name': 'Spectral Touch', 'damage': ghost_dmg, 'type': 'drain'},
         ],
-        'resistances': ['physical', 'cold', 'poison'],
+        'resistances': ['pierce', 'cold', 'poison'],
         'weaknesses': ['holy', 'fire'],
         'tags': ['undead'],
-        'min_level': 1,
+        'min_level': floor,
+        'peak_floor': floor,
         'max_level': 100,
         'harvest_tier': 0,
         'harvest_threshold': 99,
-        'lore': f'The restless spirit of {name}, who {reason} on this floor.',
+        'lore': (f'{name} carried the same errand down these stairs and did '
+                 f'not carry it back.'),
         'treasure': {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1},
     }
 

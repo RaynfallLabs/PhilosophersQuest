@@ -2006,14 +2006,17 @@ _JUDGMENT_TIERS = [
      "\"You have done nothing worthy of praise or condemnation.\"\n\n"
      "The altar falls silent. You receive nothing."),
 
-    (1, 9, 'scales_granted',
+    (1, 7, 'scales_granted',
      "Michael weighs your soul and nods.\n"
      "\"You have walked in light.\"\n"
      "The scales glow with golden fire. They lift from the altar\n"
      "and float into your hands.\n\n"
      "YOU RECEIVE THE SCALES OF MICHAEL."),
 
-    (10, 10, 'sword_and_scales',
+    # The Sword at 8 or more. It used to need exactly 10, and a run offers
+    # exactly ten chances at +1: one missed encounter in a hundred floors
+    # put the game's best reward out of reach.
+    (8, 10, 'sword_and_scales',
      "Michael descends in a pillar of white fire. He kneels.\n"
      "\"In all the ages of this world, few mortals have walked\n"
      "as you have walked. You gave when you had nothing.\n"
@@ -2034,7 +2037,7 @@ def judge_karma(karma: int) -> tuple[str, str]:
         if lo <= karma <= hi:
             return key, text
     # Fallback (should be unreachable since loop covers clamped range)
-    if karma >= 10:
+    if karma >= 8:
         return _JUDGMENT_TIERS[4][2], _JUDGMENT_TIERS[4][3]
     if karma > 0:
         return _JUDGMENT_TIERS[3][2], _JUDGMENT_TIERS[3][3]

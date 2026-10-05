@@ -436,8 +436,11 @@ class DivineMixin:
             self.player.restore_hp(self.player.max_hp)
             self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
 
-        # 33% chance fountain dries up after use
-        if _rng.random() < 0.33:
+        # 33% chance fountain dries up after use. Ariadne's fountain never
+        # does: drying it before the Bronze Bull is offered would lock the
+        # Thread away for the run.
+        if getattr(self.dungeon, 'ariadne_shrine_door', None) is None \
+                and _rng.random() < 0.33:
 
             self.dungeon.tiles[py][px] = FLOOR
             self.add_message("The fountain dries up.", 'info')
@@ -460,15 +463,16 @@ class DivineMixin:
         self.add_message(
             "The bronze bull sinks into the fountain waters...", 'info')
         self.add_message(
-            "The water shimmers gold! A voice whispers from the depths:", 'info')
+            "The water turns the colour of old gold. A girl's voice, far off:", 'info')
         self.add_message(
-            '"I wove salvation from a simple thread. Take it, and the beast '
-            'shall have no walls to hide behind."', 'success')
+            '"I gave a ball of thread to a man who sailed away without me. '
+            'Take this one. My brother knows his walls, but nothing hides '
+            'from a thread tied at the door."', 'success')
 
         dx, dy = shrine_door
         self.dungeon.tiles[dy][dx] = DOOR
         self.add_message(
-            "A hidden passage opens in a nearby wall!", 'success')
+            "Stone grinds close by. A stretch of wall has become a door.", 'success')
         self._log_chronicle("Dropped the bronze bull into a fountain. The water turned gold. A woman's voice spoke to me about thread and a beast. A passage opened in the wall.")
 
     def _activate_athena_shrine(self, eye_item):
@@ -482,17 +486,17 @@ class DivineMixin:
             self.ground_items.remove(eye_item)
 
         self.add_message(
-            "You place the milky eye upon the altar. It dissolves into pale light...", 'info')
+            "You set the milky eye on the altar. It clouds over and is gone.", 'info')
         self.add_message(
-            "A divine presence fills the room! Athena speaks:", 'info')
+            "A woman's voice, level and unhurried:", 'info')
         self.add_message(
-            '"The Grey Sisters paid for their secret. Take my shield, '
-            'and let the Gorgon see what she truly is."', 'success')
+            '"Perseus paid the same toll. The shield is behind the wall. '
+            'Keep the bronze between you and her, and look nowhere else."', 'success')
 
         dx, dy = shrine_door
         self.dungeon.tiles[dy][dx] = DOOR
         self.add_message(
-            "A hidden passage opens in a nearby wall!", 'success')
+            "Stone grinds close by. A stretch of wall has become a door.", 'success')
         self._log_chronicle("Placed the eye on an altar. It dissolved into light. Athena herself spoke. Told me to take her shield. A passage opened.")
 
     def _activate_odin_shrine(self, gram_item, reforge: bool = False):
@@ -514,8 +518,10 @@ class DivineMixin:
                 "CRACK! A bolt of lightning strikes the altar! "
                 "Thunder shakes the dungeon to its foundations!", 'danger')
             self.add_message(
-                "Odin's voice booms: \"You have thrown your weapon over the enemy, "
-                "as I threw Gungnir. I name you worthy.\"", 'success')
+                "A dry old voice: \"Someone still knows how a thing is given to "
+                "me. I cast my spear over a host once, and the host was mine. "
+                "This blade was mine before it was Sigmund's. Take it back "
+                "whole.\"", 'success')
             self.add_message(
                 "The shattered fragments of Gram fuse together in white-hot light. "
                 "A reforged blade rests upon the altar, whole and gleaming.", 'success')
@@ -531,21 +537,22 @@ class DivineMixin:
         else:
             # Normal path: blade dissolves, Odin speaks
             self.add_message(
-                "The broken blade dissolves into the altar stone...", 'info')
+                "The shards sink into the altar like iron into water.", 'info')
             self.add_message(
-                "Odin speaks: \"The blade is spent. But the earth holds secrets "
-                "that steel cannot reach. Dig, as Sigurd dug.\"", 'success')
+                "A dry old voice: \"Set down like a beggar's coin. So be it. "
+                "Sigurd had a second tool. A dragon wears his armour on his "
+                "back.\"", 'success')
 
         # Always open the shrine (contains the shovel)
         if shrine_door:
             dx, dy = shrine_door
             self.dungeon.tiles[dy][dx] = DOOR
             self.add_message(
-                "A hidden passage opens in a nearby wall!", 'success')
+                "Stone grinds close by. A stretch of wall has become a door.", 'success')
         if reforge:
             self._log_chronicle("I threw the broken blade over the altar like a madman. Lightning struck. When the light cleared, Gram lay whole on the stone, reforged. Odin called me worthy.")
         else:
-            self._log_chronicle("Laid the broken blade on the altar. It dissolved. Odin spoke of digging, of secrets beneath the earth. A passage opened nearby.")
+            self._log_chronicle("Laid the broken blade on the altar and it sank into the stone. An old voice spoke of Sigurd's second tool, and of where a dragon wears no armour. A door opened nearby.")
 
     # ------------------------------------------------------------------
     # Fenrir quest: Gleipnir forging, binding, and Vidar's Altar
@@ -562,24 +569,35 @@ class DivineMixin:
                     if getattr(i, 'id', '') in self._GLEIPNIR_COMPONENT_IDS
                     and i.x == fx and i.y == fy]
         found_ids = {i.id for i in on_forge}
+        if on_forge and found_ids != self._GLEIPNIR_COMPONENT_IDS:
+            # Tell the player the anvil is counting. (It used to say nothing
+            # until all six were down.)
+            _n = len(found_ids)
+            self.add_message(
+                f"The anvil has six cups cut into its face. "
+                f"{_n} {'is' if _n == 1 else 'are'} filled. The forge stays cold.", 'info')
+            return
         if found_ids == self._GLEIPNIR_COMPONENT_IDS:
             # All 6 present — forge Gleipnir!
             for comp in on_forge:
                 self.ground_items.remove(comp)
+            from dungeon import _quest_artifact
             from items import Artifact
-            gleipnir = Artifact({
-                'id': 'gleipnir', 'name': 'Gleipnir',
-                'symbol': '&', 'color': [220, 220, 255],
-                'item_class': 'artifact', 'weight': 0.1, 'min_level': 60,
-            })
-            gleipnir.identified = True
+            gleipnir = _quest_artifact('gleipnir')
+            if gleipnir is None:
+                gleipnir = Artifact({
+                    'id': 'gleipnir', 'name': 'Gleipnir',
+                    'symbol': '&', 'color': [220, 220, 255],
+                    'item_class': 'artifact', 'weight': 0.1, 'min_level': 60,
+                })
+                gleipnir.identified = True
             gleipnir.x, gleipnir.y = fx, fy
             self.ground_items.append(gleipnir)
             self.add_message(
-                "The six impossible ingredients dissolve into the forge's flames...", 'info')
+                "The six things that do not exist go into the fire, and the fire takes them.", 'info')
             self.add_message(
-                "A shimmering ribbon materializes, thin as silk but unbreakable — "
-                "GLEIPNIR, the binding that held the World-Wolf!", 'success')
+                "What lies on the anvil is a ribbon, soft as silk. Gleipnir. "
+                "Nothing has ever broken it.", 'success')
             _snd.play('equip')
             self._log_chronicle("Fed six impossible things to the Dwarven Forge. The flames consumed them all. What came out was a ribbon, thin as silk. Gleipnir. I can't break it. Nothing can.")
 
@@ -588,6 +606,10 @@ class DivineMixin:
         on_altar = [i for i in self.ground_items
                     if getattr(i, 'id', '') == 'leather_scrap'
                     and i.x == vx and i.y == vy]
+        if 0 < len(on_altar) < 10:
+            self.add_message(
+                "The leather lies on the stone. It is not enough for a shoe.", 'info')
+            return
         if len(on_altar) >= 10:
             from items import load_items, copy_at
             # vidars_sandal lives in artifact.json (this used to search
@@ -602,10 +624,10 @@ class DivineMixin:
                 sandal.identified = True
                 self.ground_items.append(sandal)
                 self.add_message(
-                    "The leather scraps melt together on the ancient altar...", 'info')
+                    "The scraps draw together on the altar and close into one thick shoe.", 'info')
                 self.add_message(
-                    "They reshape into a massive sandal of primordial leather — "
-                    "VIDAR'S SANDAL. The Silent God's weapon against the World-Wolf.", 'success')
+                    "Vidar's Sandal. He has been making it, a trimming at a "
+                    "time, since the world began.", 'success')
                 _snd.play('equip')
                 self._log_chronicle("Piled leather scraps on an ancient altar. They melted together into a massive sandal. Vidar's Sandal. The Silent God's secret weapon.")
 
@@ -856,6 +878,18 @@ class DivineMixin:
         karma = int(getattr(self, 'karma', 0) or 0)
         karma_tier = _karma_tier(karma)
         effective = chain + (1 if at_altar else 0)
+
+        # Prayer holds Death back. The chronicle tells the fleeing player
+        # "I need to pray" and DeathMonster has always honoured
+        # _frozen_turns, but nothing ever set it.
+        _death = getattr(self, 'death_monster', None)
+        if (chain >= 1 and getattr(self, 'death_pursues', False) and _death is not None
+                and _death in self.monsters):
+            _hold = 2 + 2 * chain + (2 if at_altar else 0)
+            _death._frozen_turns = max(getattr(_death, '_frozen_turns', 0), _hold)
+            self.add_message(
+                "The scraping stops. For a little while, Death waits on a word "
+                "that is not his.", 'success')
 
         # L100 altar holy-fire strip — preserved from v2.12 behaviour.
         if self.dungeon_level == 100 and at_altar:

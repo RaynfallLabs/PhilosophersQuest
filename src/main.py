@@ -1212,10 +1212,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
         self._stamp_ground_appearances()
         # Track deepest floor reached for the cooking softcap (rises with descent)
+        # The Cow Level (999) is a side trip, not depth: counting it lifted
+        # both cooking softcaps to their floor-100 values and stopped the
+        # per-descent trophies from ever paying again.
         _was_deepest = self.player.deepest_floor_reached
-        self.player.deepest_floor_reached = max(
-            self.player.deepest_floor_reached, new_level
-        )
+        from boss_levels import COW_LEVEL as _COW_LEVEL
+        if new_level != _COW_LEVEL:
+            self.player.deepest_floor_reached = max(
+                self.player.deepest_floor_reached, new_level
+            )
         # Fafnir's Heart trophy (2026-05-31): +2 max HP each NEW deepest floor.
         if self.player.deepest_floor_reached > _was_deepest:
             _per_desc = int(getattr(self.player, '_fafnir_per_descent_hp', 0) or 0)
@@ -1253,8 +1258,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Bones ghost notification
         ghost_name = getattr(dungeon, 'bones_ghost_name', None)
         if ghost_name:
-            self.add_message(f"You sense a restless presence... the {ghost_name} haunts this floor.", 'danger')
-            self._log_chronicle(f"Encountered the {ghost_name}. A chill ran through me.")
+            self.add_message(
+                f"Someone died here with your errand unfinished. The {ghost_name} has not left.",
+                'danger')
+            _who = ghost_name.replace('Ghost of ', '', 1)
+            self._log_chronicle(
+                f"{_who} came this far before me. What is left of {_who} is "
+                f"still here, and it is not glad to see me.")
+            # Announce once: this used to repeat (and re-chronicle) on every
+            # return to the floor, even after the ghost was laid to rest.
+            dungeon.bones_ghost_name = None
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
 
@@ -1700,7 +1713,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if rtype == 'zoo':
                     for room in dungeon.rooms:
                         if room.center == (rcx, rcy):
-                            zoo_extra = spawn_monsters([room], new_level, dungeon, min_count=4, max_count=8)
+                            # [room, room]: spawn_monsters skips rooms[0], so a one-room list
+                            # spawned nothing and the zoo was free gold.
+                            zoo_extra = spawn_monsters([room, room], new_level, dungeon, min_count=4, max_count=8)
                             for zm in zoo_extra:
                                 zm.add_effect('sleeping', 999)
                             monsters.extend(zoo_extra)
@@ -1708,7 +1723,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 elif rtype == 'graveyard':
                     for room in dungeon.rooms:
                         if room.center == (rcx, rcy):
-                            grave_extra = spawn_monsters([room], new_level, dungeon, min_count=2, max_count=4)
+                            grave_extra = spawn_monsters([room, room], new_level, dungeon, min_count=2, max_count=4)
                             for gm in grave_extra:
                                 gm.add_effect('sleeping', 999)
                             monsters.extend(grave_extra)
@@ -1716,7 +1731,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 elif rtype == 'barracks':
                     for room in dungeon.rooms:
                         if room.center == (rcx, rcy):
-                            bar_extra = spawn_monsters([room], new_level, dungeon, min_count=3, max_count=5)
+                            bar_extra = spawn_monsters([room, room], new_level, dungeon, min_count=3, max_count=5)
                             for bm in bar_extra:
                                 bm.add_effect('sleeping', 999)
                             monsters.extend(bar_extra)
@@ -1727,6 +1742,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Display atmospheric messages for this level
         for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
             self.add_message(atmo_msg, 'info')
+        # Omens (a named foe is somewhere on this floor): shown once.
+        _omens = getattr(self.dungeon, 'omen_messages', None)
+        if _omens:
+            for _omen in _omens:
+                self.add_message(_omen, 'warning')
+            self.dungeon.omen_messages = []
 
     def _give_starting_kit(self):
         """Give the player their starting kit, adjusted for their secret build."""
@@ -2430,6 +2451,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif self.dungeon.is_walkable(nx, ny) or (
             self.player.has_effect('phasing') and self.dungeon.in_bounds(nx, ny)
             and self.dungeon.tiles[ny][nx] not in (WATER, LAVA)
+        ) or (
+            # Levitation carries the player over water and lava.
+            self.player.has_effect('levitating') and self.dungeon.in_bounds(nx, ny)
+            and self.dungeon.tiles[ny][nx] in (WATER, LAVA)
         ):
             self.player.x, self.player.y = nx, ny
             self._apply_aoo_disengage(_aoo_pre_adjacent)
@@ -2762,7 +2787,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             "The dungeon shudders. A bone-cold wind rises from the deep.", 'danger'
         )
         self.add_message(
-            "DEATH has come for the Stone.  Flee -- or be reaped.", 'danger'
+            "Death has come for the Stone. He does not hurry, and he does not stop.", 'danger'
         )
         self._log_chronicle("Something is following me. I felt it before I saw it. Death itself. I need to run.")
 
@@ -2770,7 +2795,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Spawn Death near the down-stairs (rooms[-1]) of the given dungeon."""
         d = self.death_monster
         cx, cy = dungeon.rooms[-1].center
-        for dist in range(1, 8):
+        # Start a few tiles off. Death used to appear on the first free tile
+        # at distance 1: adjacent to the player on arrival, on every floor.
+        for dist in list(range(6, 12)) + [5, 4, 3, 2, 1]:
             for ddx, ddy in [(dist,0),(-dist,0),(0,dist),(0,-dist),
                              (dist,dist),(dist,-dist),(-dist,dist),(-dist,-dist)]:
                 nx, ny = cx + ddx, cy + ddy
@@ -2811,7 +2838,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                       "Death is moving faster. The sound of the scythe is closer between each step."),
                 100: ("Death matches your pace now. Every step you take, it takes one too.", 'danger',
                       "Death moves as fast as I do now. No more outrunning it. I have to be smarter."),
-                125: ("Death is FASTER than you. It's gaining. RUN.", 'danger',
+                125: ("Death is faster than you now. The scythe is close enough to hear it cut the air.", 'danger',
                       "It's faster than me. Faster. I can hear it gaining with every step. I need to pray."),
             }
             msg = _SPEED_MSGS.get(dm._speed_pct)
@@ -2961,7 +2988,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                                    'complete_tablet_of_second_death')
             for i in self.player.inventory
         )
-        self._on_game_over()
+        # Walking out alive leaves no ghost behind. (This used to write a
+        # floor-1 bones file with the hero's whole kit for the next run.)
+        self._on_game_over(leave_bones=False)
         if has_stone:
             self._log_chronicle("I made it. I climbed back out with the Stone. The sunlight hurt my eyes. I'd forgotten what it looked like.")
             self._show_story_popup('exit_with_stone', STATE_VICTORY)
@@ -2969,14 +2998,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.defeat_reason = 'fled'
             self._show_story_popup('exit_without_stone', STATE_DEAD)
 
-    def _on_game_over(self):
+    def _on_game_over(self, leave_bones: bool = True):
         """Delete save file on any game-ending event (permadeath).
-        Save bones file so ghost can haunt future runs."""
+        A character who DIED leaves a bones file so a ghost can haunt a
+        future run; one who fled, won, or fell on the Cow Level does not."""
         from save_system import delete_save
         from bones import save_bones
-        save_bones(self.player_name, self.dungeon_level,
-                   getattr(self, 'defeat_reason', 'died'),
-                   self.player, getattr(self, 'player_gold', 0))
+        from boss_levels import COW_LEVEL as _COW_LEVEL
+        _reason = getattr(self, 'defeat_reason', 'died')
+        if leave_bones and _reason in ('died', 'starved') \
+                and self.dungeon_level != _COW_LEVEL:
+            save_bones(self.player_name, self.dungeon_level, _reason,
+                       self.player, getattr(self, 'player_gold', 0))
         delete_save(self.player_name)
         _snd.play('death')
 
@@ -3616,7 +3649,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not hasattr(self.dungeon, 'pits'):
                 self.dungeon.pits = set()
             self.dungeon.pits.add((x, y))
-            self.player.add_effect('in_pit', 1)
+            self.player.add_effect('in_pit', -1)
             self.add_message("A pit opens beneath you! You must climb out.", 'danger')
         elif trap_type == 'alarm':
             for m in self.monsters:

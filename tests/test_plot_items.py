@@ -15,14 +15,49 @@ import pygame
 pygame.init()
 
 
-def test_philosophers_stone_spawns_at_l100():
-    """The Stone is the primary victory item — must always spawn at L100."""
-    from level_manager import LevelManager
+def test_philosophers_stone_is_abaddons_to_guard():
+    """The Stone is the primary victory item. It must NOT lie on the floor of
+    L100 at generation (it could be taken without facing Abaddon); it drops
+    where he falls, exactly once."""
+    from level_manager import LevelManager, spawn_stone_at
     for _ in range(3):
         lm = LevelManager()
         dungeon, monsters, items = lm.generate(100)
-        stone = next((i for i in items if getattr(i, 'id', '') == 'philosophers_stone'), None)
-        assert stone is not None, 'philosophers_stone missing from L100 spawn'
+        assert not any(getattr(i, 'id', '') == 'philosophers_stone' for i in items)
+        assert any(m.kind == 'abaddon_destroyer' for m in monsters)
+    stone = spawn_stone_at(7, 9)
+    assert stone is not None and stone.id == 'philosophers_stone'
+    assert (stone.x, stone.y) == (7, 9)
+
+
+def test_abaddon_kill_drops_the_stone_once():
+    from game_combat import CombatMixin
+    from level_manager import spawn_stone_at
+
+    class _P:
+        inventory = []
+
+    class _G(CombatMixin):
+        def __init__(self):
+            self.ground_items = []
+            self.player = _P()
+            self.msgs = []
+
+        def add_message(self, text, kind='info'):
+            self.msgs.append(text)
+
+    g = _G()
+    g._drop_philosophers_stone(3, 4)
+    assert [i.id for i in g.ground_items] == ['philosophers_stone']
+    g._drop_philosophers_stone(3, 4)          # already on the floor
+    assert len(g.ground_items) == 1
+    g2 = _G()
+    g2.player.inventory = [spawn_stone_at(0, 0)]   # an old save: already held
+    g2._drop_philosophers_stone(3, 4)
+    assert g2.ground_items == []
+    src = open(os.path.join(os.path.dirname(__file__), '..', 'src', 'game_combat.py'),
+               encoding='utf-8').read()
+    assert "if monster.kind == 'abaddon_destroyer':\n            self._drop_philosophers_stone" in src.replace('\r\n', '\n')
 
 
 def test_all_boss_levels_generate_with_their_boss():

@@ -1886,16 +1886,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # -- Ariadne quest items ---------------------------------------------------
     # Bronze Bull: guaranteed single spawn on one level in L10-15
     if level == 12:
-        from items import Artifact
-        bull = Artifact({
-            'id': 'bronze_bull',
-            'name': 'Bronze Bull Idol',
-            'symbol': '!',
-            'color': [180, 120, 60],
-            'item_class': 'artifact',
-            'weight': 0.5,
-            'min_level': 10,
-        })
+        bull = _quest_artifact('bronze_bull')
         bull_room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
         if not _place_one([bull], bull_room, dungeon, ground_items, rng):
             _force_place_quest_item(bull, dungeon, ground_items)
@@ -1907,16 +1898,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # -- Athena quest items (Medusa) -------------------------------------------
     # Eye of the Graeae: guaranteed single spawn on L29
     if level == 29:
-        from items import Artifact
-        eye = Artifact({
-            'id': 'eye_of_graeae',
-            'name': 'Eye of the Graeae',
-            'symbol': 'o',
-            'color': [200, 200, 220],
-            'item_class': 'artifact',
-            'weight': 0.2,
-            'min_level': 25,
-        })
+        eye = _quest_artifact('eye_of_graeae')
         eye_room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
         if not _place_one([eye], eye_room, dungeon, ground_items, rng):
             _force_place_quest_item(eye, dungeon, ground_items)
@@ -1936,6 +1918,12 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
             bg_room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
             if not _place_one([bg], bg_room, dungeon, ground_items, rng):
                 _force_place_quest_item(bg, dungeon, ground_items)
+            # Never cursed (set on the PLACED copy; _place_one rolls BUC): a
+            # pious player tests finds on altars, and an altar consumes a
+            # cursed item, which would eat the quest.
+            for _it in ground_items:
+                if getattr(_it, 'id', '') == 'broken_gram':
+                    _it.buc = 'uncursed'
 
     # Odin's Altar + shrine: guaranteed on L53
     if level == 53:
@@ -1945,14 +1933,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # 10 scraps distributed across the dungeon, guaranteed spawn
     _LEATHER_SCRAP_LEVELS = [5, 13, 21, 28, 35, 42, 50, 58, 66, 73]
     if level in _LEATHER_SCRAP_LEVELS:
-        from items import Artifact
-        scrap = Artifact({
-            'id': 'leather_scrap', 'name': 'leather scrap',
-            'symbol': ',', 'color': [120, 90, 60],
-            'item_class': 'artifact', 'weight': 2.0, 'min_level': 1,
-            'lore': "Useless scrap left over from leather-working. Too small for armor, too stiff for bandages.",
-        })
-        scrap.identified = True
+        scrap = _quest_artifact('leather_scrap')
         scrap_room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
         if not _place_one([scrap], scrap_room, dungeon, ground_items, rng):
             _force_place_quest_item(scrap, dungeon, ground_items)
@@ -1999,206 +1980,182 @@ def _force_place_quest_item(item, dungeon: Dungeon, ground_items: list):
     ground_items.append(item)
 
 
-def _create_ariadne_shrine(dungeon: Dungeon, rooms, ground_items, rng):
-    """Create a small sealed shrine room near a fountain on L16-19.
+def _quest_artifact(item_id: str, **overrides):
+    """A fresh copy of a quest artifact from data/items/artifact.json.
 
-    The shrine contains Ariadne's Thread but is walled off.
-    When the player drops the Bronze Bull at the fountain, the shrine door opens.
+    The quest items used to be built from inline dicts, so the lore written
+    for them in the data file (the best breadcrumbs in the game) was never
+    shown. Quest artifacts arrive identified: their name is the clue.
     """
-    # Find a fountain on this level
-    fountain_pos = None
-    for y in range(dungeon.height):
-        for x in range(dungeon.width):
-            if dungeon.tiles[y][x] == FOUNTAIN:
-                fountain_pos = (x, y)
-                break
-        if fountain_pos:
-            break
+    import copy as _copy
+    from items import load_items
+    template = next((a for a in load_items('artifact') if a.id == item_id), None)
+    if template is None:
+        return None
+    item = _copy.copy(template)
+    item.identified = True
+    item.x = item.y = 0
+    for k, v in overrides.items():
+        setattr(item, k, v)
+    return item
 
-    # If no fountain, place one in a random room
-    if not fountain_pos:
-        room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
-        cx, cy = room.center
-        # Try to place fountain near center
-        for dx, dy in [(0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)]:
-            fx, fy = cx + dx, cy + dy
-            if dungeon.in_bounds(fx, fy) and dungeon.tiles[fy][fx] == FLOOR:
-                dungeon.tiles[fy][fx] = FOUNTAIN
-                fountain_pos = (fx, fy)
-                break
 
-    if not fountain_pos:
-        return  # shouldn't happen, but safety check
+def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
+    """Carve a 3x3 chamber behind a wall near `near`, sealed on every side.
 
-    fx, fy = fountain_pos
+    Returns (door_xy, centre_xy) or None. The door tile stays WALL until the
+    quest opens it and is the chamber's only link to the level.
 
-    # Find a wall adjacent to a floor tile near the fountain to carve the shrine
-    # Search in expanding radius around fountain
-    shrine_carved = False
-    for radius in range(2, 8):
-        if shrine_carved:
-            break
+    Geometry: the door `w` is a wall tile with floor on its near side
+    (w - d). The chamber is the 3x3 centred TWO tiles beyond the door
+    (w + 2d), so its near edge touches the door and nothing else. The whole
+    5x5 around the centre must be solid wall first, which guarantees a wall
+    ring around the carved 3x3.
+
+    The previous version centred the 3x3 ONE tile beyond the door. That 3x3
+    contained the door tile and its two neighbours on the room's own wall
+    line; only the door was re-walled, so the "sealed" shrine stood open on
+    about 98% of floors and the key item was never needed.
+    """
+    nx0, ny0 = near
+    for radius in range(1, max_radius + 1):
         for dx in range(-radius, radius + 1):
-            if shrine_carved:
-                break
             for dy in range(-radius, radius + 1):
-                if shrine_carved:
-                    break
-                wx, wy = fx + dx, fy + dy
-                if not dungeon.in_bounds(wx, wy):
+                if max(abs(dx), abs(dy)) != radius:
+                    continue  # ring only: nearest candidates first
+                wx, wy = nx0 + dx, ny0 + dy
+                if not dungeon.in_bounds(wx, wy) or dungeon.tiles[wy][wx] != WALL:
                     continue
-                if dungeon.tiles[wy][wx] != WALL:
-                    continue
-                # Check if we can carve a 3x3 shrine behind this wall
-                # Find which direction is "into the wall" (away from floor)
-                for ddx, ddy in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
-                    sx, sy = wx + ddx, wy + ddy  # shrine center
-                    # Need a 3x3 block of all-wall tiles for the shrine
-                    can_carve = True
+                for ddx, ddy in ((0, -1), (0, 1), (-1, 0), (1, 0)):
+                    fx, fy = wx - ddx, wy - ddy            # room side of the door
+                    if not dungeon.in_bounds(fx, fy) or dungeon.tiles[fy][fx] != FLOOR:
+                        continue
+                    sx, sy = wx + 2 * ddx, wy + 2 * ddy    # chamber centre
+                    solid = True
+                    for cx in range(sx - 2, sx + 3):
+                        for cy in range(sy - 2, sy + 3):
+                            # Keep one tile of map border intact as well.
+                            if not (1 <= cx < dungeon.width - 1
+                                    and 1 <= cy < dungeon.height - 1) \
+                                    or dungeon.tiles[cy][cx] != WALL:
+                                solid = False
+                                break
+                        if not solid:
+                            break
+                    if not solid:
+                        continue
                     for cx in range(sx - 1, sx + 2):
                         for cy in range(sy - 1, sy + 2):
-                            if not dungeon.in_bounds(cx, cy):
-                                can_carve = False
-                                break
-                            if dungeon.tiles[cy][cx] != WALL:
-                                can_carve = False
-                                break
-                        if not can_carve:
-                            break
-                    # Also need the door tile (wx, wy) to have a floor neighbor
-                    has_floor_neighbor = False
-                    for nx, ny in [(wx-1, wy), (wx+1, wy), (wx, wy-1), (wx, wy+1)]:
-                        if dungeon.in_bounds(nx, ny) and dungeon.tiles[ny][nx] == FLOOR:
-                            has_floor_neighbor = True
-                            break
-                    if can_carve and has_floor_neighbor:
-                        # Carve the 3x3 shrine room
-                        for cx in range(sx - 1, sx + 2):
-                            for cy in range(sy - 1, sy + 2):
-                                dungeon.tiles[cy][cx] = FLOOR
-                        # The door position (wx, wy) stays as WALL -- will become DOOR when quest triggers
-                        dungeon.tiles[wy][wx] = WALL  # ensure it's wall (the sealed door)
-                        dungeon.ariadne_shrine_door = (wx, wy)
-                        dungeon.ariadne_shrine_thread_pos = (sx, sy)
-                        # Place Ariadne's Thread inside the shrine
-                        from items import Artifact
-                        thread = Artifact({
-                            'id': 'ariadnes_thread',
-                            'name': "Ariadne's Thread",
-                            'symbol': '&',
-                            'color': [255, 215, 100],
-                            'item_class': 'artifact',
-                            'weight': 0.1,
-                            'min_level': 15,
-                        })
-                        thread.x = sx
-                        thread.y = sy
-                        ground_items.append(thread)
-                        shrine_carved = True
-                        break
+                            dungeon.tiles[cy][cx] = FLOOR
+                    return (wx, wy), (sx, sy)
+    return None
+
+
+def _open_tile_beside(dungeon: Dungeon, pos: tuple):
+    """A plain floor tile next to `pos` (fallback reward spot)."""
+    px, py = pos
+    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)):
+        x, y = px + dx, py + dy
+        if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR:
+            return x, y
+    return None
+
+
+def _find_or_place_feature(dungeon: Dungeon, rooms, rng, tile):
+    """Position of an existing `tile` (FOUNTAIN / ALTAR), placing one if the
+    floor has none. Returns None only if no room has a free centre."""
+    for y in range(dungeon.height):
+        for x in range(dungeon.width):
+            if dungeon.tiles[y][x] == tile:
+                return (x, y)
+    candidates = list(rooms[1:]) if len(rooms) > 1 else list(rooms)
+    rng.shuffle(candidates)
+    for room in candidates:
+        cx, cy = room.center
+        for dx, dy in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
+            x, y = cx + dx, cy + dy
+            if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR:
+                dungeon.tiles[y][x] = tile
+                return (x, y)
+    return None
+
+
+def _make_ariadnes_thread():
+    from items import Artifact
+    thread = Artifact({
+        'id': 'ariadnes_thread',
+        'name': "Ariadne's Thread",
+        'symbol': '&',
+        'color': [255, 215, 100],
+        'item_class': 'artifact',
+        'weight': 0.1,
+        'min_level': 15,
+        'lore': ("A ball of plain linen thread, wound by a princess of Crete "
+                 "for a stranger she meant to save. Theseus tied one end to "
+                 "the door of the Labyrinth and paid it out behind him. "
+                 "Whatever walks those passages has never been able to step "
+                 "across it, or to hide from whoever holds the other end."),
+    })
+    thread.identified = True
+    return thread
+
+
+def _create_ariadne_shrine(dungeon: Dungeon, rooms, ground_items, rng):
+    """Seal Ariadne's Thread in a chamber near a fountain (floor 17).
+
+    Dropping the Bronze Bull at the fountain turns the chamber's wall into a
+    door (game_divine). If no sealed spot can be carved the Thread is left
+    beside the fountain rather than lost for the run.
+    """
+    fountain_pos = _find_or_place_feature(dungeon, rooms, rng, FOUNTAIN)
+    if not fountain_pos:
+        return
+    dungeon.ariadne_fountain_pos = fountain_pos
+    thread = _make_ariadnes_thread()
+    carved = _carve_sealed_shrine(dungeon, fountain_pos)
+    if carved:
+        door, centre = carved
+        dungeon.ariadne_shrine_door = door
+        dungeon.ariadne_shrine_thread_pos = centre
+        thread.x, thread.y = centre
+    else:
+        spot = _open_tile_beside(dungeon, fountain_pos) or fountain_pos
+        thread.x, thread.y = spot
+    ground_items.append(thread)
 
 
 def _create_athena_shrine(dungeon: Dungeon, rooms, ground_items, rng):
-    """Create a sealed shrine room near an altar on L36-39.
+    """Seal the Aegis of Athena in a chamber near an altar (floor 37).
 
-    The shrine contains the Aegis of Athena (mirror shield).
-    When the player drops the Eye of the Graeae at an altar, the shrine door opens.
+    Dropping the Eye of the Graeae on an altar opens it (game_divine).
     """
-    # Find an altar on this level
-    altar_pos = None
-    for y in range(dungeon.height):
-        for x in range(dungeon.width):
-            if dungeon.tiles[y][x] == ALTAR:
-                altar_pos = (x, y)
-                break
-        if altar_pos:
-            break
-
-    # If no altar, place one in a random room
-    if not altar_pos:
-        room = rng.choice(rooms[1:]) if len(rooms) > 1 else rooms[0]
-        cx, cy = room.center
-        for dx, dy in [(0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)]:
-            ax, ay = cx + dx, cy + dy
-            if dungeon.in_bounds(ax, ay) and dungeon.tiles[ay][ax] == FLOOR:
-                dungeon.tiles[ay][ax] = ALTAR
-                altar_pos = (ax, ay)
-                break
-
+    altar_pos = _find_or_place_feature(dungeon, rooms, rng, ALTAR)
     if not altar_pos:
         return
-
-    ax, ay = altar_pos
-
-    # Find a wall near the altar to carve a 3x3 shrine room
-    shrine_carved = False
-    for radius in range(2, 8):
-        if shrine_carved:
-            break
-        for dx in range(-radius, radius + 1):
-            if shrine_carved:
-                break
-            for dy in range(-radius, radius + 1):
-                if shrine_carved:
-                    break
-                wx, wy = ax + dx, ay + dy
-                if not dungeon.in_bounds(wx, wy):
-                    continue
-                if dungeon.tiles[wy][wx] != WALL:
-                    continue
-                for ddx, ddy in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
-                    sx, sy = wx + ddx, wy + ddy
-                    can_carve = True
-                    for cx in range(sx - 1, sx + 2):
-                        for cy in range(sy - 1, sy + 2):
-                            if not dungeon.in_bounds(cx, cy):
-                                can_carve = False
-                                break
-                            if dungeon.tiles[cy][cx] != WALL:
-                                can_carve = False
-                                break
-                        if not can_carve:
-                            break
-                    has_floor_neighbor = False
-                    for nx, ny in [(wx-1, wy), (wx+1, wy), (wx, wy-1), (wx, wy+1)]:
-                        if dungeon.in_bounds(nx, ny) and dungeon.tiles[ny][nx] == FLOOR:
-                            has_floor_neighbor = True
-                            break
-                    if can_carve and has_floor_neighbor:
-                        for cx in range(sx - 1, sx + 2):
-                            for cy in range(sy - 1, sy + 2):
-                                dungeon.tiles[cy][cx] = FLOOR
-                        dungeon.tiles[wy][wx] = WALL  # sealed door
-                        dungeon.athena_shrine_door = (wx, wy)
-                        dungeon.athena_shrine_aegis_pos = (sx, sy)
-                        # Place Aegis of Athena inside the shrine
-                        from items import Shield
-                        import json as _json
-                        from paths import data_path as _dp
-                        _shield_path = _dp('data', 'items', 'shield.json')
-                        with open(_shield_path, encoding='utf-8') as _f:
-                            _shield_data = _json.load(_f)
-                        aegis_defn = {**_shield_data['aegis_of_athena'],
-                                      'id': 'aegis_of_athena', 'item_class': 'shield'}
-                        aegis = Shield(aegis_defn)
-                        aegis.x = sx
-                        aegis.y = sy
-                        ground_items.append(aegis)
-                        shrine_carved = True
-                        break
+    dungeon.athena_altar_pos = altar_pos
+    from items import load_items, copy_at
+    template = next((sh for sh in load_items('shield') if sh.id == 'aegis_of_athena'), None)
+    if template is None:
+        return
+    carved = _carve_sealed_shrine(dungeon, altar_pos)
+    if carved:
+        door, centre = carved
+        dungeon.athena_shrine_door = door
+        dungeon.athena_shrine_aegis_pos = centre
+        spot = centre
+    else:
+        spot = _open_tile_beside(dungeon, altar_pos) or altar_pos
+    ground_items.append(copy_at(template, spot[0], spot[1]))
 
 
 def _create_odin_shrine(dungeon: Dungeon, rooms, ground_items, rng):
-    """Create Odin's Altar and a sealed shrine room containing Sigurd's Shovel.
+    """Create Odin's Altar and a sealed chamber holding Sigurd's Shovel.
 
     The player drops the Broken Blade of Gram on the altar to open the shrine.
-    Secret: throwing Gram over the altar from one side reforges it.
+    Secret: throwing the blade over the altar reforges it.
     """
-    # Place Odin's Altar in a room (prefer a non-start room)
-    # Try the chosen room first, then every other candidate: the old code
-    # looked only at the centre tile and its four neighbours of ONE room and
-    # silently gave up (no altar, quest unfinishable) if those were water,
-    # a fountain or stairs.
+    # Try every candidate room: the altar is the quest, so never give up
+    # because one room's centre is water, a fountain or stairs.
     candidates = list(_structure_rooms(rooms))
     rng.shuffle(candidates)
     placed = False
@@ -2212,57 +2169,18 @@ def _create_odin_shrine(dungeon: Dungeon, rooms, ground_items, rng):
     if not placed:
         return
 
-    ax, ay = dungeon.odin_altar_pos
-
-    # Carve a sealed 3x3 shrine near the altar
-    shrine_carved = False
-    for radius in range(2, 8):
-        if shrine_carved:
-            break
-        for ddx in range(-radius, radius + 1):
-            if shrine_carved:
-                break
-            for ddy in range(-radius, radius + 1):
-                if shrine_carved:
-                    break
-                wx, wy = ax + ddx, ay + ddy
-                if not dungeon.in_bounds(wx, wy):
-                    continue
-                if dungeon.tiles[wy][wx] != WALL:
-                    continue
-                for dddx, dddy in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
-                    sx, sy = wx + dddx, wy + dddy
-                    can_carve = True
-                    for ccx in range(sx - 1, sx + 2):
-                        for ccy in range(sy - 1, sy + 2):
-                            if not dungeon.in_bounds(ccx, ccy):
-                                can_carve = False
-                                break
-                            if dungeon.tiles[ccy][ccx] != WALL:
-                                can_carve = False
-                                break
-                        if not can_carve:
-                            break
-                    has_floor = False
-                    for nx, ny in [(wx-1, wy), (wx+1, wy), (wx, wy-1), (wx, wy+1)]:
-                        if dungeon.in_bounds(nx, ny) and dungeon.tiles[ny][nx] == FLOOR:
-                            has_floor = True
-                            break
-                    if can_carve and has_floor:
-                        for ccx in range(sx - 1, sx + 2):
-                            for ccy in range(sy - 1, sy + 2):
-                                dungeon.tiles[ccy][ccx] = FLOOR
-                        dungeon.tiles[wy][wx] = WALL  # sealed door
-                        dungeon.odin_shrine_door = (wx, wy)
-                        # Place Sigurd's Shovel inside
-                        from items import load_items, copy_at
-                        weapons = load_items('weapon')
-                        shovel_t = next((w for w in weapons if w.id == 'sigurds_shovel'), None)
-                        if shovel_t:
-                            shovel = copy_at(shovel_t, sx, sy)
-                            ground_items.append(shovel)
-                        shrine_carved = True
-                        break
+    from items import load_items, copy_at
+    shovel_t = next((w for w in load_items('weapon') if w.id == 'sigurds_shovel'), None)
+    if shovel_t is None:
+        return
+    carved = _carve_sealed_shrine(dungeon, dungeon.odin_altar_pos)
+    if carved:
+        door, centre = carved
+        dungeon.odin_shrine_door = door
+        spot = centre
+    else:
+        spot = _open_tile_beside(dungeon, dungeon.odin_altar_pos) or dungeon.odin_altar_pos
+    ground_items.append(copy_at(shovel_t, spot[0], spot[1]))
 
 
 def _item_eligible_weighted(templates: list, level: int,
@@ -2505,12 +2423,14 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
     """Create a themed room containing one Gleipnir component with a light challenge."""
     from items import Artifact
 
-    component = Artifact({
-        'id': comp_id, 'name': comp_name,
-        'symbol': '~', 'color': comp_color,
-        'item_class': 'artifact', 'weight': 0.2, 'min_level': 60,
-    })
-    component.identified = True
+    component = _quest_artifact(comp_id)
+    if component is None:   # data entry missing: fall back to a bare item
+        component = Artifact({
+            'id': comp_id, 'name': comp_name,
+            'symbol': '~', 'color': comp_color,
+            'item_class': 'artifact', 'weight': 0.2, 'min_level': 60,
+        })
+        component.identified = True
 
     # Pick a non-start, non-stairs room and anchor on a plain FLOOR tile.
     room = rng.choice(_structure_rooms(rooms))
@@ -2552,24 +2472,27 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
                         ground_items.append(component)
                         return
                 break  # only try one wall tile
-    elif comp_id == 'mountain_root':
-        # Surrounded by lava tiles
+    elif comp_id in ('mountain_root', 'fish_breath'):
+        # Ringed by lava (the root) or water (the breath), with ONE stepping
+        # stone left in the ring. The player can never enter lava or water on
+        # foot, so the full ring made these two ingredients unobtainable and
+        # Gleipnir impossible in nearly every run. Levitation also crosses.
+        _hazard = LAVA if comp_id == 'mountain_root' else WATER
+        _gap = None
+        for ox, oy in rng.sample([(0, -1), (0, 1), (-1, 0), (1, 0)], 4):
+            gx, gy = cx + ox, cy + oy
+            if dungeon.in_bounds(gx, gy) and dungeon.tiles[gy][gx] == FLOOR:
+                _gap = (gx, gy)
+                break
         for dx in [-1, 0, 1]:
             for dy in [-1, 0, 1]:
                 if dx == 0 and dy == 0:
                     continue
                 lx, ly = cx + dx, cy + dy
-                if dungeon.in_bounds(lx, ly) and dungeon.tiles[ly][lx] == FLOOR:
-                    dungeon.tiles[ly][lx] = LAVA
-    elif comp_id == 'fish_breath':
-        # Surrounded by water tiles
-        for dx in [-1, 0, 1]:
-            for dy in [-1, 0, 1]:
-                if dx == 0 and dy == 0:
+                if (lx, ly) == _gap:
                     continue
-                wx, wy = cx + dx, cy + dy
-                if dungeon.in_bounds(wx, wy) and dungeon.tiles[wy][wx] == FLOOR:
-                    dungeon.tiles[wy][wx] = WATER
+                if dungeon.in_bounds(lx, ly) and dungeon.tiles[ly][lx] == FLOOR:
+                    dungeon.tiles[ly][lx] = _hazard
     elif comp_id == 'bird_spittle':
         # Placed on an altar (requires prayer-style interaction to pick up)
         dungeon.tiles[cy][cx] = ALTAR

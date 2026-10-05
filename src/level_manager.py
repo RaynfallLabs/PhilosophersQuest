@@ -59,11 +59,19 @@ class LevelManager:
         if level_num in BOSS_LEVELS or level_num == COW_LEVEL:
             dungeon, monsters, items = generate_boss_level(level_num)
             # Place Philosopher's Stone on level 100
-            if level_num == STONE_LEVEL:
-                stone = _place_stone(dungeon, items)
-                if stone:
-                    items.append(stone)
-            self.max_level_reached = max(self.max_level_reached, level_num)
+            # The Philosopher's Stone is NOT placed here any more. It used to
+            # lie on the arena floor from the start, so the player could take
+            # it without facing Abaddon. game_combat._on_monster_killed drops
+            # it where he falls (see spawn_stone_at below).
+            # The Cow Level is numbered 999 internally. It is a side trip, not
+            # depth: counting it made "Deepest Level 999" and added 999,000
+            # to the score.
+            if level_num != COW_LEVEL:
+                self.max_level_reached = max(self.max_level_reached, level_num)
+            # A character who died to a gate boss haunts that boss's floor
+            # (never the Cow Level or the Stone floor).
+            if level_num in (20, 40, 60, 80):
+                self._maybe_spawn_bones(level_num, dungeon, monsters, items)
             return dungeon, monsters, items
 
         from dungeon import generate_dungeon, spawn_items, populate_floor
@@ -95,13 +103,17 @@ class LevelManager:
         _populate_hidden_chambers(dungeon, monsters, items, level_num)
 
         # Bones: chance to spawn a ghost from a previous player's death
+        self._maybe_spawn_bones(level_num, dungeon, monsters, items)
+
+        self.max_level_reached = max(self.max_level_reached, level_num)
+        return dungeon, monsters, items
+
+    @staticmethod
+    def _maybe_spawn_bones(level_num: int, dungeon, monsters: list, items: list):
         from bones import load_bones, spawn_ghost
         bones = load_bones(level_num)
         if bones:
             spawn_ghost(bones, dungeon, monsters, items)
-
-        self.max_level_reached = max(self.max_level_reached, level_num)
-        return dungeon, monsters, items
 
 
     def _roll_planned_mini_bosses(self) -> dict:
@@ -168,6 +180,10 @@ class LevelManager:
                     # shift -1. `generate_boss_level` ignores the mini-boss
                     # plan, so a boss-floor target would silently vanish.
                     target = pf if pf not in _BOSS_LEVELS else pf - 1
+                    # Nor on a seal demon's floor (the Wendigo's peak is 85,
+                    # which is Buer's floor): one named fight per floor.
+                    while target in self._SEAL_DEMON_LEVELS or target in _BOSS_LEVELS:
+                        target -= 1
                     planned[target] = mid
                     placed_ids.add(mid)
 
@@ -180,12 +196,14 @@ class LevelManager:
                     # If two mini-bosses share peak_floor OR the shifted
                     # target collides, walk forward — but SKIP boss floors
                     # so the mini-boss actually appears.
-                    while target in planned or target in _BOSS_LEVELS:
+                    while (target in planned or target in _BOSS_LEVELS
+                           or target in self._SEAL_DEMON_LEVELS):
                         target += 1
                         if target > band_hi:
                             target = pf
                             break
-                    if target not in planned and target not in _BOSS_LEVELS:
+                    if (target not in planned and target not in _BOSS_LEVELS
+                            and target not in self._SEAL_DEMON_LEVELS):
                         planned[target] = mid
                         placed_ids.add(mid)
 
@@ -234,20 +252,26 @@ class LevelManager:
             candidate_rooms = dungeon.rooms
         if not candidate_rooms:
             return
-        room = _rng.choice(candidate_rooms)
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(monsters)
-        tiles = list(room.inner_tiles())
-        _rng.shuffle(tiles)
         spawn_pos = None
         # Check the WHOLE footprint, not just the anchor tile: the 2x2
         # mini-bosses (Tiamat, Surtur, Ymir, Hrungnir) could otherwise spawn
-        # half inside a wall on a room's east or south edge.
+        # half inside a wall on a room's east or south edge. Try every
+        # candidate room: this used to pick ONE room and drop the mini-boss
+        # for the whole run if its footprint did not fit there.
         from dungeon import _footprint_fits
-        for tx, ty in tiles:
-            if (dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied
-                    and _footprint_fits(mdata, tx, ty, dungeon, monsters)):
-                spawn_pos = (tx, ty)
+        candidate_rooms = list(candidate_rooms)
+        _rng.shuffle(candidate_rooms)
+        for room in candidate_rooms:
+            tiles = list(room.inner_tiles())
+            _rng.shuffle(tiles)
+            for tx, ty in tiles:
+                if (dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied
+                        and _footprint_fits(mdata, tx, ty, dungeon, monsters)):
+                    spawn_pos = (tx, ty)
+                    break
+            if spawn_pos is not None:
                 break
         if spawn_pos is None:
             return
@@ -259,6 +283,13 @@ class LevelManager:
             mb = Monster(defn, spawn_pos[0], spawn_pos[1])
             monsters.append(mb)
             self._placed_mini_bosses.add(mid)
+            # An omen on arrival: the player learns something named is here
+            # without being told what. (Mini-bosses were never announced.)
+            omen = mdata.get('omen')
+            if omen:
+                if not hasattr(dungeon, 'omen_messages'):
+                    dungeon.omen_messages = []
+                dungeon.omen_messages.append(omen)
         except Exception:
             pass
 
@@ -427,6 +458,21 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
                 final = lair_monsters[:count_target]
 
             monsters.extend(final)
+
+
+def spawn_stone_at(x: int, y: int):
+    """A Philosopher's Stone instance at (x, y), or None if the data is gone."""
+    from items import load_items
+    try:
+        artifacts = load_items('artifact')
+    except (FileNotFoundError, KeyError):
+        return None
+    template = next((a for a in artifacts if a.id == 'philosophers_stone'), None)
+    if template is None:
+        return None
+    inst = copy.copy(template)
+    inst.x, inst.y = x, y
+    return inst
 
 
 def _place_stone(dungeon, existing_items: list):

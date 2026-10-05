@@ -185,6 +185,11 @@ class CombatMixin:
             return False
         if weapon.weight > 5.0:
             return False
+        # `throwable: true` in the data opts a single weapon in regardless of
+        # class. The Broken Blade of Gram needs it: the Odin reforge secret is
+        # "throw it over the altar", and a sword could never be thrown.
+        if getattr(weapon, 'throwable', False):
+            return True
         return weapon.weapon_class in CombatMixin._THROWABLE_CLASSES
 
     def _get_weapon_throw_damage(self, weapon) -> int:
@@ -311,8 +316,8 @@ class CombatMixin:
                     return
             elif self._throw_crosses_tile(px, py, tx, ty, ax, ay):
                 self.add_message(
-                    "A rumble of distant thunder... but nothing happens. "
-                    "Odin will not reforge this.", 'info')
+                    "Thunder mutters a long way off, and stops. "
+                    "The altar wanted something else.", 'info')
 
         self.player.remove_from_inventory(weapon)
         display = weapon.name
@@ -720,6 +725,9 @@ class CombatMixin:
         # Fafnir drops a unique blood potion with a hint about the throw-over reforge
         if monster.kind == 'fafnir_dragon':
             self._spawn_fafnir_blood(monster.x, monster.y)
+        # Abaddon guards the Philosopher's Stone; it falls where he does.
+        if monster.kind == 'abaddon_destroyer':
+            self._drop_philosophers_stone(monster.x, monster.y)
         # Seal demon: track broken seal
         if getattr(monster, 'is_seal_demon', False):
             seal_id = 'seal_of_' + monster.kind.replace('seal_demon_', '')
@@ -733,6 +741,23 @@ class CombatMixin:
                     "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
                 self._log_chronicle("All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
         self.ground_items.append(self._make_corpse(monster))
+
+    def _drop_philosophers_stone(self, x: int, y: int):
+        """Place the Stone at (x, y) unless one already exists in this run
+        (a save made on floor 100 before this change has one on the floor)."""
+        def _is_stone(it):
+            return getattr(it, 'id', '') == 'philosophers_stone'
+        if any(_is_stone(i) for i in self.ground_items) \
+                or any(_is_stone(i) for i in self.player.inventory):
+            return
+        from level_manager import spawn_stone_at
+        stone = spawn_stone_at(x, y)
+        if stone is None:
+            return
+        self.ground_items.append(stone)
+        self.add_message(
+            "Where the Destroyer stood, something small and warm lies on the "
+            "scorched stone.", 'loot')
 
     def _drop_treasure(self, monster):
         """Drop gold and possibly an item when a monster dies."""
@@ -1465,8 +1490,11 @@ class CombatMixin:
         from dice import roll as _dice_roll
         dmg = _dice_roll('1d4')
         actual = self.player.take_damage(dmg, 'physical')
-        self.player.add_effect('in_pit', 1)  # duration 1 = cleared on next move
-        self.add_message(f"You fall into a pit! ({actual} damage)", 'danger')
+        # -1 = until the player climbs out (the move handler clears it). A
+        # duration of 1 expired on the same turn's status tick, before any
+        # monster acted, so the pit never protected or helped anyone.
+        self.player.add_effect('in_pit', -1)
+        self.add_message(f"You drop into the pit and crouch below the rim. ({actual} damage)", 'danger')
 
     # ------------------------------------------------------------------
     # Ranged attack resolution
