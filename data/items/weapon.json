@@ -867,7 +867,7 @@
     "tier": 3,
     "material": "legendary",
     "mathTier": 3,
-    "baseDamage": 36,
+    "baseDamage": 42,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -923,7 +923,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 36,
+    "base_damage": 42,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -1089,9 +1089,9 @@
     "name": "Gáe Bulg",
     "class": "spear",
     "variant": "1h",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "mathTier": 4,
+    "mathTier": 5,
     "baseDamage": 68,
     "chainMultipliers": [
       0.75,
@@ -1128,7 +1128,7 @@
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 60,
-    "quiz_tier": 4,
+    "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a barbed spear of sea-monster bone",
     "lore": "The warrior-woman Scathach gave the Gae Bulg to Cu Chulainn alone of her pupils. It was made from the bone of a sea monster and cast from the fork of the foot. It entered as one wound and opened into thirty barbs, and it had to be cut out of the body. Cu Chulainn used it on his foster-brother Ferdiad and on his own son Connla. He wept both times.",
@@ -1396,7 +1396,7 @@
     "tier": 5,
     "material": "divine iron",
     "mathTier": 5,
-    "baseDamage": 95,
+    "baseDamage": 115,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -1452,7 +1452,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 95,
+    "base_damage": 115,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -1691,9 +1691,9 @@
     "name": "Zulfiqar",
     "class": "sword",
     "variant": "1h",
-    "tier": 4,
+    "tier": 5,
     "material": "adamantine",
-    "mathTier": 4,
+    "mathTier": 5,
     "baseDamage": 62,
     "chainMultipliers": [
       0.5,
@@ -1731,7 +1731,7 @@
     "containerLootTier": "legendary",
     "value": 8500,
     "min_level": 60,
-    "quiz_tier": 4,
+    "quiz_tier": 5,
     "identified": false,
     "unidentified_name": "a blade forked at the tip like a serpent's tongue",
     "lore": "Zulfiqar came to the Prophet Muhammad among the spoils of the Battle of Badr, and he gave it to his cousin and son-in-law Ali ibn Abi Talib. After Ali's stand at Uhud a saying went round that became famous across the Muslim world: there is no hero like Ali and no sword like Zulfiqar. Artists draw it with a split point, and one thrust of it finds two enemies.",
@@ -2445,7 +2445,7 @@
     "tier": 2,
     "material": "hardwood",
     "mathTier": 2,
-    "baseDamage": 24,
+    "baseDamage": 34,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -2502,7 +2502,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 24,
+    "base_damage": 34,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -2518,7 +2518,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 101,
+    "baseDamage": 127,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -2577,7 +2577,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 101,
+    "base_damage": 127,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -2593,7 +2593,7 @@
     "tier": 5,
     "material": "adamantine",
     "mathTier": 5,
-    "baseDamage": 90,
+    "baseDamage": 141,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -2650,7 +2650,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 90,
+    "base_damage": 141,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 5,
@@ -3521,9 +3521,9 @@
     "name": "Echidna's Fang",
     "class": "dagger",
     "variant": "1h",
-    "tier": 3,
+    "tier": 2,
     "material": "fang",
-    "mathTier": 3,
+    "mathTier": 2,
     "baseDamage": 8,
     "chainMultipliers": [
       0.2,
@@ -3546,7 +3546,7 @@
     "weight": 1.0,
     "min_level": 9999,
     "equip_threshold": 2,
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "two_handed": false,
     "unidentified_name": "a curved ivory fang",
     "can_be_cursed": false,
@@ -4030,7 +4030,7 @@
     "tier": 3,
     "material": "bronze",
     "mathTier": 3,
-    "baseDamage": 45,
+    "baseDamage": 55,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -4083,7 +4083,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 45,
+    "base_damage": 55,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -4464,9 +4464,9 @@
     "name": "Oathkeeper",
     "class": "sword",
     "variant": "1h",
-    "tier": 3,
+    "tier": 2,
     "material": "steel",
-    "mathTier": 3,
+    "mathTier": 2,
     "baseDamage": 18,
     "chainMultipliers": [
       0.5,
@@ -4502,7 +4502,7 @@
     },
     "value": 3000,
     "min_level": 30,
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "unidentified_name": "a well-kept longsword with a name on the crossguard",
     "lore": "A longsword of excellent make, with the name VALE engraved on the crossguard. A young man carried it into the dungeon to prove himself, and he did not come back. The blade is still sharp, and someone oiled and honed it with love for years. It strikes best when its bearer has a companion fighting at his side.",
     "damage_types": [
@@ -4791,9 +4791,9 @@
     "name": "Pharaoh's Crook",
     "class": "staff",
     "variant": "1h",
-    "tier": 1,
+    "tier": 2,
     "material": "hardwood",
-    "mathTier": 1,
+    "mathTier": 2,
     "baseDamage": 12,
     "chainMultipliers": [
       0.5,
@@ -4828,7 +4828,7 @@
     "min_level": 3,
     "unidentified_name": "a gold-leafed shepherd's crook",
     "lore": "Every pharaoh was shown holding two things crossed on his chest: the crook, called heka, and the flail. The crook is a shepherd's tool, and it meant that the king was herdsman of his people. The same sign was the hieroglyph for the word 'ruler.' This one, striped in gold and blue, once lay in the folded arms of a king. Those who stand beside its bearer stand a little taller.",
-    "quiz_tier": 1,
+    "quiz_tier": 2,
     "damage_types": [
       "blunt"
     ],
@@ -4998,9 +4998,9 @@
     "name": "Gae Bolg Fragment",
     "class": "spear",
     "variant": "reach",
-    "tier": 2,
+    "tier": 3,
     "material": "bone",
-    "mathTier": 2,
+    "mathTier": 3,
     "baseDamage": 24,
     "chainMultipliers": [
       0.75,
@@ -5036,7 +5036,7 @@
     "min_level": 20,
     "unidentified_name": "a barbed bone spearhead bound to a shaft",
     "lore": "A broken length of the Gae Bulg, the spear the warrior-woman Scathach taught only Cu Chulainn to throw. The whole weapon was carved from the bone of a sea beast that died fighting another, and its head opened into barbs once it was inside the body. Even this piece, lashed to a new shaft, will not come out of a wound cleanly.",
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_types": [
       "pierce"
     ],
@@ -5068,7 +5068,7 @@
     "tier": 2,
     "material": "hardwood",
     "mathTier": 2,
-    "baseDamage": 26,
+    "baseDamage": 31,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -5119,7 +5119,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 26,
+    "base_damage": 31,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,
@@ -5280,9 +5280,9 @@
     "name": "Vel of Murugan",
     "class": "spear",
     "variant": "1h",
-    "tier": 3,
+    "tier": 4,
     "material": "divine bronze",
-    "mathTier": 3,
+    "mathTier": 4,
     "baseDamage": 42,
     "chainMultipliers": [
       0.75,
@@ -5321,7 +5321,7 @@
     "containerLootTier": "very_rare",
     "value": 5500,
     "min_level": 45,
-    "quiz_tier": 3,
+    "quiz_tier": 4,
     "identified": false,
     "unidentified_name": "a bronze lance that radiates heat",
     "effects": {
@@ -5899,8 +5899,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "glaive",
-    "baseDamage": 34,
-    "base_damage": 34,
+    "baseDamage": 46,
+    "base_damage": 46,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -6214,8 +6214,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "maul",
-    "baseDamage": 36,
-    "base_damage": 36,
+    "baseDamage": 54,
+    "base_damage": 54,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -6365,8 +6365,8 @@
     "twoHanded": true,
     "two_handed": true,
     "template_basis": "glaive",
-    "baseDamage": 19,
-    "base_damage": 19,
+    "baseDamage": 29,
+    "base_damage": 29,
     "chainMultipliers": [
       0.75,
       0.9,

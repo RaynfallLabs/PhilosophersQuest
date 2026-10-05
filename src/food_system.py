@@ -911,7 +911,6 @@ def drink_potion(player, potion) -> list[str]:
         already_active = player.has_effect('heroism')
         player.add_effect('heroism', dur)
         if not already_active:
-            player.apply_stat_bonus('STR', 2)
             messages.append(f"Surging strength fills your limbs! STR +2, Heroic ({dur} turns).")
         else:
             messages.append(f"The heroic surge is renewed ({dur} turns).")
@@ -921,8 +920,6 @@ def drink_potion(player, potion) -> list[str]:
         already_active = player.has_effect('brilliance')
         player.add_effect('brilliance', dur)
         if not already_active:
-            player.apply_stat_bonus('INT', 1)
-            player.apply_stat_bonus('WIS', 1)
             messages.append(f"Your mind blazes with clarity! INT +1, WIS +1, Brilliant ({dur} turns).")
         else:
             messages.append(f"Your mental clarity is renewed ({dur} turns).")

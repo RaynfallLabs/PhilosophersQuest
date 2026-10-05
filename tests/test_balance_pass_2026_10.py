@@ -305,3 +305,33 @@ def test_one_room_floor_does_not_crash_item_spawn(seed):
     src = open(os.path.join(ROOT, 'src', 'dungeon.py'), encoding='utf-8').read()
     assert 'sphere_room = rng.choice(rooms[1:] or rooms)' in src
     random.seed(seed)
+
+
+# ------------------------------------------------- stats a status only lends
+
+@pytest.mark.parametrize('effect,stats', [('heroism', ('STR',)), ('brilliance', ('INT', 'WIS'))])
+def test_a_lent_stat_always_comes_back_exactly(effect, stats):
+    """A cooked "Heroic" or "Brilliant" meal granted the status without the
+    stat, and the expiry subtracted it anyway: a permanent loss per meal."""
+    from player import Player
+    from status_effects import tick_all
+    p = Player()
+    before = {s: getattr(p, s) for s in stats}
+    p.add_effect(effect, 5)                 # the path cooking takes
+    assert all(getattr(p, s) > before[s] for s in stats)
+    p.add_effect(effect, 5)                 # renewing does not grant twice
+    lent = {s: getattr(p, s) - before[s] for s in stats}
+    assert all(v in (1, 2) for v in lent.values())
+    for _ in range(80):
+        tick_all(p)
+    assert not p.has_effect(effect)
+    assert {s: getattr(p, s) for s in stats} == before
+
+
+def test_no_caller_grants_a_lent_stat_by_hand():
+    for name in ('food_system.py', 'game_menus.py'):
+        src = open(os.path.join(ROOT, 'src', name), encoding='utf-8').read()
+        for effect in ('heroism', 'brilliance'):
+            for m in __import__('re').finditer(r"add_effect\('%s'" % effect, src):
+                window = src[max(0, m.start() - 260):m.start() + 260]
+                assert 'apply_stat_bonus' not in window, (name, effect)

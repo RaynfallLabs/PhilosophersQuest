@@ -191,6 +191,14 @@ DOT_SHARE = 0.02
 REGEN_PERIOD = 3
 
 
+# Stats a status lends while it lasts: granted when it begins, taken back
+# when it ends, both inside this module.
+TIMED_STAT_GRANTS: dict = {
+    'heroism':    (('STR', 2),),
+    'brilliance': (('INT', 1), ('WIS', 1)),
+}
+
+
 def dot_tick(player) -> int:
     return max(1, int(round(getattr(player, 'max_hp', 1) * DOT_SHARE)))
 
@@ -475,6 +483,14 @@ def apply_effect(player, effect: str, duration: int) -> bool:
             # Soft control (you still act): refresh to the larger value, never stack.
             player.status_effects[effect] = min(max(current, duration), MAX_EFFECT_DURATION)
     else:
+        # Statuses that lend a stat for their duration grant it HERE, once,
+        # when the status begins, so that the grant and the removal at expiry
+        # can never come apart. They used to be granted by each caller, and
+        # the cooking path did not: every "Heroic" or "Brilliant" meal ended
+        # by taking away two STR, or a point each of INT and WIS, for good.
+        if current == 0:
+            for _stat, _amt in TIMED_STAT_GRANTS.get(effect, ()):
+                player.apply_stat_bonus(_stat, _amt)
         player.status_effects[effect] = min(current + duration, MAX_EFFECT_DURATION)
     return True
 
@@ -673,12 +689,10 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
             _g = getattr(player, '_save_guard', None)
             if isinstance(_g, dict):
                 _g.pop(effect[len('save_guard_'):], None)
-        # Reverse stat bonuses granted by timed effects
-        if effect == 'heroism':
-            player.apply_stat_bonus('STR', -2)
-        elif effect == 'brilliance':
-            player.apply_stat_bonus('INT', -1)
-            player.apply_stat_bonus('WIS', -1)
+        # Reverse stat bonuses granted by timed effects (see apply_effect)
+        if effect in TIMED_STAT_GRANTS:
+            for _stat, _amt in TIMED_STAT_GRANTS[effect]:
+                player.apply_stat_bonus(_stat, -_amt)
         elif effect == 'stand_ac':
             # Leonidas Spartan Stand expiry — clear the AC + counter bonuses.
             player._stand_ac_bonus = 0

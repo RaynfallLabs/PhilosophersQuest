@@ -401,11 +401,11 @@
     ],
     "weight": 6.0,
     "min_level": 30,
-    "tier": 2,
+    "tier": 3,
     "material": "divine bronze",
     "ac_bonus": 4,
     "equip_threshold": 1,
-    "quiz_tier": 2,
+    "quiz_tier": 3,
     "damage_resistances": {
       "blunt": 0.7
     },
@@ -539,7 +539,7 @@
     "min_level": 12,
     "tier": 2,
     "material": "legendary",
-    "ac_bonus": 3,
+    "ac_bonus": 4,
     "enchant_bonus": 0,
     "equip_threshold": 3,
     "quiz_tier": 2,
@@ -1126,7 +1126,8 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "containerLootTier": "rare",
-    "floorSpawnWeight": {}
+    "floorSpawnWeight": {},
+    "quiz_timer_bonus": 1
   },
   "skidbladnir_aegis": {
     "name": "Skidbladnir Aegis",
