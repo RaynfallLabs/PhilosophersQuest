@@ -274,9 +274,15 @@ class DivineMixin:
             # For chain mode, check threshold manually
             if ch['mode'] in ('chain', 'escalator_chain') and 'threshold' in ch:
                 success = result.score >= ch['threshold']
-            # Pandora inversion
+            # Pandora inversion: failing is what pays. Only a GENUINE failure
+            # counts (enough wrong answers that the lock could not have been
+            # picked). Pressing Esc ends a quiz as a failure, which used to
+            # hand over the best reward for answering nothing.
             if m.get('invert_result'):
-                success = not success
+                _total = int(ch.get('total', ch.get('threshold', 1)) or 1)
+                _need = int(ch.get('threshold', 1) or 1)
+                _wrong = int(getattr(result, 'asked', 0)) - int(getattr(result, 'correct', 0))
+                success = (not success) and _wrong > (_total - _need)
             apply_mystery_reward(altar.mystery_id, self.player, self, success)
             if not altar.activated:
                 altar.activated = True
@@ -812,8 +818,15 @@ class DivineMixin:
         elif chain == 3:
             count = 0
             for item in self.player.inventory:
-                if not getattr(item, 'identified', True):
-                    item.identified = True
+                if not getattr(item, 'identified', True) \
+                        or int(getattr(item, 'id_level', 5) or 0) < 5:
+                    # A real identification. Setting `identified` alone gives
+                    # id level 4, and names need 5: "N items identified!"
+                    # left every one still reading "Unidentified".
+                    if hasattr(self, '_full_identify'):
+                        self._full_identify(item)
+                    else:
+                        item.identified = True
                     self.player.known_item_ids.add(item.id)
                     count += 1
             if count:

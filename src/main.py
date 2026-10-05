@@ -1278,6 +1278,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Spawn trigger items and NPCs for moral encounters (only on first visit)
         if not saved:
+            # A mystery already faced this run does not appear again. The
+            # floor generator cannot see the run, so about three altars in
+            # four were dead: a silent altar and another copy of its key.
+            _faced = set(self.player.quirk_progress.get('mysteries_attempted', []))
+            if _faced:
+                from mystery_system import MysteryAltar, MysteryKeyItem
+                ground_items[:] = [
+                    g for g in ground_items
+                    if not (isinstance(g, (MysteryAltar, MysteryKeyItem))
+                            and getattr(g, 'mystery_id', None) in _faced)]
             self._maybe_spawn_trigger_item(new_level)
             self._maybe_spawn_npc(new_level)
             self._maybe_spawn_flavor_npc(new_level)
@@ -3119,6 +3129,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             + self.level_mgr.max_level_reached * 1000
             + self.level_mgr.monsters_killed * 100
             + (50000 if has_stone else 0)
+            # Killing Death is the hardest thing in the game and scored nothing.
+            + (50000 if getattr(self, '_secret_victory', False) else 0)
         )
 
     def _get_grade(self, score: int) -> tuple[str, tuple]:

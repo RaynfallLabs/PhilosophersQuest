@@ -95,6 +95,11 @@ class EncountersMixin:
         if self._cow_npc and self._cow_npc in self.monsters:
             self.monsters.remove(self._cow_npc)
         self._cow_npc = None
+        # After a save and reload the reference above is gone, so find her
+        # by her tag as well: she used to stay behind and could be poked
+        # into the finished farm again.
+        self.monsters[:] = [m for m in self.monsters
+                            if getattr(m, '_npc_encounter_tag', None) != '_cow_dialog']
         self.state = STATE_PLAYER
         try:
             self._change_level(COW_LEVEL, enter_from_top=True)

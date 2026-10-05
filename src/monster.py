@@ -417,7 +417,13 @@ class Monster:
 
         ignore_resistance: when True, weaknesses still apply but resistances do not.
         Used by chain-equip unmaking_sense passive (Heart of Ahriman) on spell crits.
+
+        Encounter NPCs (the cow, the karma and flavor NPCs, the unicorn) take
+        no damage at all. They have 1 HP and stand among the monsters, and
+        area spells do not skip them: one blast could delete a quest.
         """
+        if getattr(self, '_npc_encounter_tag', None):
+            return 0
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)
@@ -942,6 +948,18 @@ class Monster:
                 return False
 
         # --- HP-threshold phase change (boss "second phase" mechanic) ---
+        # A foe with summon data but another AI pattern (Tiamat, Asmodeus)
+        # still calls its minions: the timer used to run only inside the
+        # 'summoner' pattern, so theirs never appeared.
+        if (self.summon_kind and self.ai_pattern != 'summoner'
+                and getattr(self, '_aware', False)
+                and self._summons_made < self.summon_max):
+            self._summon_turn_counter += 1
+            if self._summon_turn_counter >= self.summon_cooldown:
+                self._wants_summon = True
+                self._summon_turn_counter = 0
+                self._summons_made += 1
+
         # One-way swap to enraged_pattern when HP drops below threshold.
         if (not self._enraged
                 and self.enraged_pattern

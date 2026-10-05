@@ -439,7 +439,10 @@ def consume_key_item(mystery_id: str, player) -> bool:
 def get_cauldron_food_items(player) -> list:
     """Return up to 3 Food items from player inventory (cooked food only)."""
     from items import Food
-    return [i for i in player.inventory if isinstance(i, Food)][:3]
+    # Never the Magic Dungeon Carrot: it is the unicorn's key, found on
+    # floors 1 to 19, and the Cauldron (14 to 26) used to eat it.
+    return [i for i in player.inventory
+            if isinstance(i, Food) and getattr(i, 'id', '') != 'magic_dungeon_carrot'][:3]
 
 
 # ---------------------------------------------------------------------------
@@ -477,9 +480,17 @@ def _oracle_reveal_quirks(player, game):
         'ragnarok':    "Descend so deep, with so little -- and survive.",
     }
 
+    # Every quirk has a written hint now (quirk_text.QUIRK_HINT). The old
+    # table here covered 12 of 112, so nine answers in ten were "A hidden
+    # path remains unexplored."
+    try:
+        from quirk_text import quirk_hint
+    except ImportError:
+        quirk_hint = None
     game.add_message("The Oracle speaks:", 'info')
     for qid in chosen:
-        hint = _HINTS.get(qid, "A hidden path remains unexplored.")
+        hint = (quirk_hint(qid) if quirk_hint else '') or _HINTS.get(
+            qid, "A hidden path remains unexplored.")
         game.add_message(f"  \u2022 {hint}", 'info')
 
 

@@ -868,11 +868,20 @@ class InputMixin:
             ingredient = next(
                 (i for i in self.player.inventory if isinstance(i, Ingredient)), None
             )
+            # Never a trophy: feeding took the FIRST ingredient in the pack,
+            # which could be a boss's heart. Ordinary cuts only.
+            ingredient = next(
+                (i for i in self.player.inventory if isinstance(i, Ingredient)
+                 and getattr(i, 'tier_role', '') != 'trophy'), None)
             if ingredient:
                 self.player.remove_from_inventory(ingredient)
+                # Feeding calms her: it winds the poke count back by two, so
+                # a kind player learns there is something being counted.
+                self._cow_poke_count = max(0, getattr(self, '_cow_poke_count', 0) - 2)
                 self.add_message(
                     f"You feed the cow your {self._display_name(ingredient)}. "
-                    "The cow chews contentedly. Moo.", 'success'
+                    "She chews. Whatever was about to happen is now slightly "
+                    "further off.", 'success'
                 )
             else:
                 self.add_message("You have nothing to feed the cow. Moo.", 'info')
