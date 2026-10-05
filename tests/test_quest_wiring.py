@@ -303,3 +303,101 @@ def test_sword_of_michael_does_not_need_a_perfect_run():
     assert judge_karma(1)[0] == 'scales_granted'
     assert judge_karma(0)[0] == 'silence'
     assert judge_karma(-6)[0] == 'abaddon_empowered'
+
+
+# ------------------------------------------------------------- the Labyrinth
+
+def _lab_reach(d, start, blocked=frozenset()):
+    seen = {start}
+    q = collections.deque([start])
+    while q:
+        x, y = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            n = (x + dx, y + dy)
+            if n in seen or n in blocked or not d.in_bounds(*n):
+                continue
+            if d.tiles[n[1]][n[0]] == WALL:
+                continue
+            seen.add(n)
+            q.append(n)
+    return seen
+
+
+def _find(d, tile):
+    return next((x, y) for y in range(d.height) for x in range(d.width)
+                if d.tiles[y][x] == tile)
+
+
+def test_labyrinth_is_a_real_maze_with_the_minotaur_between_you_and_the_stair():
+    """Floor 20 used to be three straight corridors, two thirds of which the
+    player could not reach, with a stair that could be walked to without a
+    fight. Now: every open tile is reachable, the stair down can only be
+    reached through Asterion's hall, and it is barred while he lives."""
+    from boss_levels import generate_boss_level, labyrinth_thread_route
+    from dungeon import STAIRS_UP, STAIRS_DOWN
+    layouts = set()
+    for _ in range(12):
+        d, monsters, items = generate_boss_level(20)
+        up, down = _find(d, STAIRS_UP), _find(d, STAIRS_DOWN)
+        open_tiles = {(x, y) for y in range(d.height) for x in range(d.width)
+                      if d.tiles[y][x] != WALL}
+        reach = _lab_reach(d, up)
+        assert reach == open_tiles, 'part of the maze cannot be reached'
+        assert len(open_tiles) > 900
+
+        hall = d.rooms[1]
+        hall_tiles = {(x, y) for x in range(hall.x, hall.x + hall.width)
+                      for y in range(hall.y, hall.y + hall.height)}
+        assert down not in _lab_reach(d, up, blocked=hall_tiles), \
+            'the stair can be reached without crossing the hall'
+
+        asterion = next(m for m in monsters if m.kind == 'asterion_minotaur')
+        assert (asterion.x, asterion.y) in hall_tiles
+        assert d.stairs_guardian == 'asterion_minotaur'
+
+        route = labyrinth_thread_route(d)
+        assert route and route[0] == up and route[-1] in hall_tiles
+        assert all(d.tiles[y][x] != WALL for x, y in route)
+
+        assert len(items) >= 4, 'the dead ends should hold something'
+        assert all((it.x, it.y) in open_tiles for it in items)
+        # Arriving from below puts the player on open floor, not on the stair.
+        ax, ay = d.rooms[-1].center
+        assert d.tiles[ay][ax] not in (WALL, STAIRS_DOWN)
+        layouts.add(tuple(map(tuple, d.tiles)))
+    assert len(layouts) > 6, 'the maze should differ from run to run'
+
+
+def test_asterion_is_a_gate_boss():
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    a = data['asterion_minotaur']
+    import respawn_by_hp as rs
+    assert rs.dice_avg(a['hp']) >= 550
+    assert a['is_boss'] and a['can_charge']
+    assert a['can_phase_walls'] and a['ai_pattern'] == 'hit_and_run'
+    assert a['enraged_pattern'] == 'aggressive' and 0 < a['enrage_at_hp_pct'] < 0.5
+    assert rs.max_attack(a) >= 9
+
+
+def test_a_guarded_stair_refuses_while_the_guardian_lives():
+    src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    i = src.index('def _descend_stairs')
+    block = src[i:i + 1600]
+    assert "getattr(self.dungeon, 'stairs_guardian', None)" in block
+    assert 'm.alive and m.kind == _guard' in block
+
+
+def test_monsters_load_their_own_lines_from_data():
+    """enrage_message / rage_messages / revive_message were written into
+    monsters.json but Monster never read them, so every one fell back to the
+    generic line."""
+    from monster import Monster
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+
+    def mk(mid):
+        return Monster({**data[mid], 'id': mid}, 1, 1)
+
+    assert 'horns' in mk('asterion_minotaur').enrage_message
+    assert mk('whispering_crone').rage_messages
+    assert 'head' in mk('green_knight').revive_message
+    assert mk('giant_rat').enrage_message == ''

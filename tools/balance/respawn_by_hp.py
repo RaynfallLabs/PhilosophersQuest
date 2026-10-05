@@ -107,7 +107,7 @@ HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
 # 2026-10 quest audit measured Asterion dying in 2.6 chain-5 attacks and
 # Medusa in 4.4, against a design of 12 to 35 turns: the quest layers
 # (Thread, Aegis, blindfold) had nothing to shorten.
-GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 450, "medusa_gorgon": 1100}
+GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 600, "medusa_gorgon": 1100}
 
 # A named foe's hardest attack should be worth noticing: at least this
 # multiple of the floor's anchor damage. They hit like ordinary monsters of

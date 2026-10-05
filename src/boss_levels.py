@@ -116,110 +116,234 @@ def _spawn_boss(dungeon, boss_id, boss_room):
 # Level 20 -- Labyrinth of Asterion (The Minotaur)
 # ---------------------------------------------------------------------------
 
-def _level_20_labyrinth():
+# Labyrinth geometry. Cells are 2x2 floor blocks on a pitch of 4, so every
+# passage is two tiles wide (room to sidestep, and for a charge to matter) and
+# every wall is two tiles thick.
+_LAB_X0, _LAB_Y0, _LAB_PITCH = 3, 3, 4
+_LAB_COLS, _LAB_ROWS = 19, 11
+# Asterion's hall: a block of cells in the middle, carved out whole.
+_LAB_HALL = (7, 4, 11, 6)          # col0, row0, col1, row1 (inclusive)
+# The stair chamber lies beyond the hall and is reached only through it.
+_LAB_EXIT = (8, 8, 10, 9)
+_LAB_PASSAGE = (9, 7)              # the cell between them
+
+
+def _lab_cell_origin(i, j):
+    return _LAB_X0 + i * _LAB_PITCH, _LAB_Y0 + j * _LAB_PITCH
+
+
+def _lab_in_block(i, j, block):
+    c0, r0, c1, r1 = block
+    return c0 <= i <= c1 and r0 <= j <= r1
+
+
+def _lab_is_maze_cell(i, j):
+    return (0 <= i < _LAB_COLS and 0 <= j < _LAB_ROWS
+            and not _lab_in_block(i, j, _LAB_HALL)
+            and not _lab_in_block(i, j, _LAB_EXIT)
+            and (i, j) != _LAB_PASSAGE)
+
+
+def _lab_open(tiles, a, b):
+    """Carve the two-wide gap between orthogonally adjacent cells a and b."""
+    (i1, j1), (i2, j2) = sorted((a, b))
+    x, y = _lab_cell_origin(i1, j1)
+    if i2 != i1:        # east-west neighbours
+        _fill(tiles, x + 2, y, x + 3, y + 1)
+    else:               # north-south neighbours
+        _fill(tiles, x, y + 2, x + 1, y + 3)
+
+
+def _level_20_labyrinth(rng=None):
     """
-    The Labyrinth of Knossos. Winding corridors, dead-end alcoves,
-    and a central chamber where Asterion the Minotaur awaits.
+    The Labyrinth of Knossos: a real maze, different every run.
+
+    The player enters at the north-west corner. Asterion's hall is the block
+    at the centre, with one way in from the west and one from the north. The
+    stair down lies in a chamber beyond the hall and can only be reached by
+    crossing it, so the way out is through the Minotaur.
+
+    The maze is a depth-first maze with about 40% of its dead ends opened
+    into loops, so there is usually more than one route and a hunted player
+    can circle. The dead ends that remain hold what earlier visitors left.
+
+    Asterion knows every wall: all interior walls are `phasing_walls` for
+    him (see Monster._phase_move), which is what Ariadne's Thread takes away.
+
+    The old layout was three straight east-west corridors joined by rungs.
+    Two thirds of it, and most of its alcoves, could not be reached by the
+    player at all, and the stairs could be walked to without a fight.
     """
+    import random as _random
+    rng = rng or _random.Random()
     tiles = _blank()
-    rooms = []
 
-    # Entry chamber (top area, center-left)
-    entry = _carve_room(tiles, 12, 6, 5, 3)
-    rooms.append(entry)
-    tiles[entry.y + 1][entry.center[0]] = STAIRS_UP
+    # --- carve every maze cell -------------------------------------------
+    cells = [(i, j) for i in range(_LAB_COLS) for j in range(_LAB_ROWS)
+             if _lab_is_maze_cell(i, j)]
+    for i, j in cells:
+        x, y = _lab_cell_origin(i, j)
+        _fill(tiles, x, y, x + 1, y + 1)
 
-    # Three parallel maze corridors (east-west)
-    _hline(tiles, 4, 75, 14)
-    _hline(tiles, 4, 75, 20)
-    _hline(tiles, 4, 75, 26)
+    def neighbours(c):
+        i, j = c
+        return [n for n in ((i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1))
+                if _lab_is_maze_cell(*n)]
 
-    # Vertical connectors between horizontal corridors
-    for cx in [8, 16, 24, 32, 40, 48, 56, 64, 72]:
-        _vline(tiles, 14, 20, cx)
-    for cx in [12, 20, 28, 36, 44, 52, 60, 68]:
-        _vline(tiles, 20, 26, cx)
+    # --- depth-first maze --------------------------------------------------
+    links = {c: set() for c in cells}
+    start = (0, 0)
+    seen = {start}
+    stack = [start]
+    while stack:
+        cur = stack[-1]
+        fresh = [n for n in neighbours(cur) if n not in seen]
+        if not fresh:
+            stack.pop()
+            continue
+        nxt = rng.choice(fresh)
+        links[cur].add(nxt)
+        links[nxt].add(cur)
+        _lab_open(tiles, cur, nxt)
+        seen.add(nxt)
+        stack.append(nxt)
 
-    # Wall off some connectors to create a proper maze (dead ends)
-    # Note: first block on each corridor is omitted so the player has a
-    # solvable path through the labyrinth (entry→C1→C2→C3→boss room).
-    # Asterion still has phasing-wall shortcuts everywhere.
-    for cx in [32, 48, 64]:
-        tiles[14][cx] = WALL
-        tiles[14][cx + 1] = WALL
-    for cx in [36, 52, 68]:
-        tiles[20][cx] = WALL
-        tiles[20][cx + 1] = WALL
-    for cx in [40, 56]:
-        tiles[26][cx] = WALL
-        tiles[26][cx + 1] = WALL
+    # --- braid: turn some dead ends into loops -----------------------------
+    for c in cells:
+        if len(links[c]) == 1 and c != start and rng.random() < 0.40:
+            closed = [n for n in neighbours(c) if n not in links[c]]
+            if closed:
+                n = rng.choice(closed)
+                links[c].add(n)
+                links[n].add(c)
+                _lab_open(tiles, c, n)
 
-    # Connect entry to top maze corridor
-    _vline(tiles, entry.y + entry.height - 1, 14, entry.center[0])
+    # --- Asterion's hall -----------------------------------------------------
+    c0, r0, c1, r1 = _LAB_HALL
+    hx0, hy0 = _lab_cell_origin(c0, r0)
+    hx1, hy1 = _lab_cell_origin(c1, r1)
+    hx1 += 1
+    hy1 += 1
+    _fill(tiles, hx0, hy0, hx1, hy1)
+    boss_room = Room(hx0, hy0, hx1 - hx0 + 1, hy1 - hy0 + 1)
+    # Four rough pillars, so the hall is not an empty box.
+    for px, py in ((hx0 + 4, hy0 + 2), (hx1 - 4, hy0 + 2),
+                   (hx0 + 4, hy1 - 2), (hx1 - 4, hy1 - 2)):
+        tiles[py][px] = WALL
+    # Ways in: from the west (middle row) and from the north (middle column).
+    wx, wy = _lab_cell_origin(c0 - 1, (r0 + r1) // 2)
+    _fill(tiles, wx + 2, wy, wx + 3, wy + 1)
+    nx, ny = _lab_cell_origin((c0 + c1) // 2, r0 - 1)
+    _fill(tiles, nx, ny + 2, nx + 1, ny + 3)
 
-    # Small dead-end alcoves off the corridors
-    for ax, ay in [(6, 11), (20, 11), (36, 11), (52, 11), (68, 11)]:
-        _fill(tiles, ax - 2, ay - 1, ax + 2, ay + 1)
-    for ax, ay in [(8, 17), (28, 17), (44, 17), (60, 17), (72, 17)]:
-        _fill(tiles, ax - 2, ay - 1, ax + 2, ay + 1)
-    for ax, ay in [(12, 23), (32, 23), (52, 23), (68, 23)]:
-        _fill(tiles, ax - 2, ay - 1, ax + 2, ay + 1)
+    # --- the stair chamber, beyond the hall ---------------------------------
+    e0, f0, e1, f1 = _LAB_EXIT
+    ex0, ey0 = _lab_cell_origin(e0, f0)
+    ex1, ey1 = _lab_cell_origin(e1, f1)
+    ex1 += 1
+    ey1 += 1
+    _fill(tiles, ex0, ey0, ex1, ey1)
+    exit_room = Room(ex0, ey0, ex1 - ex0 + 1, ey1 - ey0 + 1)
+    pcx = _lab_cell_origin(*_LAB_PASSAGE)[0]
+    _vline(tiles, hy1 + 1, ey0 - 1, pcx)            # one tile wide
+    tiles[hy1 + 1][pcx] = DOOR
+    tiles[ey1 - 1][exit_room.center[0]] = STAIRS_DOWN
 
-    # Boss chamber -- large central room
-    boss_room = _carve_room(tiles, 39, 35, 10, 7)
-    rooms.append(boss_room)
-    # Dramatic entrance door
-    tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
+    # --- entry ---------------------------------------------------------------
+    sx, sy = _lab_cell_origin(*start)
+    entry = Room(sx, sy, 2, 2)
+    tiles[sy][sx] = STAIRS_UP
 
-    # Connect bottom maze corridor to boss chamber
-    _vline(tiles, 26, boss_room.y, boss_room.center[0])
-
-    # Treasure alcoves off the boss chamber
-    alcove_l = _carve_room(tiles, 22, 35, 4, 3)
-    alcove_r = _carve_room(tiles, 56, 35, 4, 3)
-    _hline(tiles, alcove_l.x + alcove_l.width, boss_room.x, 35)
-    _hline(tiles, boss_room.x + boss_room.width, alcove_r.x, 35)
-
-    # Exit chamber (bottom-right)
-    exit_room = _carve_room(tiles, 68, 44, 5, 3)
-    rooms.append(exit_room)
-    tiles[exit_room.y + exit_room.height - 2][exit_room.center[0]] = STAIRS_DOWN
-    tiles[exit_room.y - 1][exit_room.center[0]] = DOOR
-
-    # Connect boss room to exit
-    _connect(tiles, boss_room, exit_room)
-
+    rooms = [entry, boss_room, exit_room]
     dungeon = _make(tiles, rooms, 20)
 
-    # --- Phasing walls: secret passages only Asterion knows ---
-    # These are WALL tiles that Asterion can walk through (hit-and-run AI).
-    # Placed at strategic points between corridors so he can ambush from any direction.
-    dungeon.phasing_walls = set()
-    # Vertical shortcuts between the three horizontal corridors
-    for cx in [10, 22, 34, 46, 58, 70]:
-        for y in range(15, 20):   # between corridor 1 and 2
-            if tiles[y][cx] == WALL:
-                dungeon.phasing_walls.add((cx, y))
-        for y in range(21, 26):   # between corridor 2 and 3
-            if tiles[y][cx] == WALL:
-                dungeon.phasing_walls.add((cx, y))
-    # Horizontal shortcuts along blocked connectors
-    for cx in [16, 17, 32, 33, 48, 49, 64, 65]:
-        if tiles[14][cx] == WALL:
-            dungeon.phasing_walls.add((cx, 14))
-    for cx in [20, 21, 36, 37, 52, 53, 68, 69]:
-        if tiles[20][cx] == WALL:
-            dungeon.phasing_walls.add((cx, 20))
-    for cx in [24, 25, 40, 41, 56, 57]:
-        if tiles[26][cx] == WALL:
-            dungeon.phasing_walls.add((cx, 26))
-    # Shortcut from corridor 3 to boss chamber area
-    for y in range(27, 35):
-        for cx in [30, 50]:
-            if tiles[y][cx] == WALL:
-                dungeon.phasing_walls.add((cx, y))
+    # --- Asterion's secret doors: every interior wall -----------------------
+    dungeon.phasing_walls = {
+        (x, y) for y in range(2, _H - 2) for x in range(2, _W - 2)
+        if tiles[y][x] == WALL
+    }
+    # The stair is barred while he lives (main._descend_stairs).
+    dungeon.stairs_guardian = 'asterion_minotaur'
+    dungeon.stairs_guardian_line = (
+        "A bronze grate is shut across the stair. Whatever keeps this maze "
+        "still keeps the key.")
+    dungeon.atmosphere_messages = [
+        "These passages were built to lose people. Something heavy is walking "
+        "on the other side of the wall.",
+    ]
 
-    return dungeon, _spawn_boss(dungeon, 'asterion_minotaur', boss_room), []
+    # --- what earlier visitors left in the dead ends -------------------------
+    items = []
+    dead_ends = [c for c in cells if len(links[c]) == 1 and c != start]
+    rng.shuffle(dead_ends)
+    try:
+        from items import (add_gold_to_tile, load_items, copy_at,
+                           pick_random_weapon_for_floor, pick_random_armor_for_floor)
+        potions = {pt.id: pt for pt in load_items('potion')}
+        for n, (i, j) in enumerate(dead_ends[:7]):
+            x, y = _lab_cell_origin(i, j)
+            if n < 3:
+                add_gold_to_tile(items, rng.randint(40, 110), x, y)
+            elif n == 3:
+                w = pick_random_weapon_for_floor(20, rng)
+                if w is not None:
+                    w.x, w.y = x, y
+                    items.append(w)
+            elif n == 4:
+                arm = pick_random_armor_for_floor(20, rng)
+                if arm is not None:
+                    arm.x, arm.y = x, y
+                    items.append(arm)
+            else:
+                heal = potions.get('potion_of_healing')
+                if heal is not None:
+                    items.append(copy_at(heal, x, y))
+    except Exception:
+        items = [it for it in items if it is not None]
+
+    return dungeon, _spawn_boss(dungeon, 'asterion_minotaur', boss_room), items
+
+
+def labyrinth_thread_route(dungeon) -> list:
+    """Tiles on a shortest walk from the up stair to Asterion's hall.
+
+    Ariadne's Thread shows the way: main marks these explored when the
+    player arrives on floor 20 carrying it."""
+    from collections import deque
+    start = None
+    for y in range(dungeon.height):
+        for x in range(dungeon.width):
+            if dungeon.tiles[y][x] == STAIRS_UP:
+                start = (x, y)
+                break
+        if start:
+            break
+    if start is None or len(dungeon.rooms) < 2:
+        return []
+    goal = dungeon.rooms[1].center
+    prev = {start: None}
+    queue = deque([start])
+    while queue:
+        cur = queue.popleft()
+        if cur == goal:
+            break
+        cx, cy = cur
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nxt = (cx + dx, cy + dy)
+            if nxt in prev or not dungeon.in_bounds(*nxt):
+                continue
+            if dungeon.tiles[nxt[1]][nxt[0]] == WALL:
+                continue
+            prev[nxt] = cur
+            queue.append(nxt)
+    if goal not in prev:
+        return []
+    route = []
+    cur = goal
+    while cur is not None:
+        route.append(cur)
+        cur = prev[cur]
+    return route[::-1]
 
 
 # ---------------------------------------------------------------------------

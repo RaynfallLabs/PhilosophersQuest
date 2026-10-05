@@ -1747,6 +1747,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Display atmospheric messages for this level
         for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
             self.add_message(atmo_msg, 'info')
+        # Ariadne's Thread shows the way through the Labyrinth: the walk from
+        # the stair to Asterion's hall is laid out on the map.
+        if new_level == 20 and not getattr(self.dungeon, '_thread_shown', False):
+            _has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
+                              for i in self.player.inventory) or getattr(
+                getattr(self.player, 'belt_slot', None), 'id', '') == 'ariadnes_thread'
+            if _has_thread:
+                from boss_levels import labyrinth_thread_route
+                _route = labyrinth_thread_route(self.dungeon)
+                if _route:
+                    self.dungeon.explored.update(_route)
+                    self.dungeon._thread_shown = True
+                    self.add_message(
+                        "You tie the Thread to the foot of the stair. It runs out "
+                        "ahead of you into the dark, as if it knew the way.", 'success')
+                    self._log_chronicle(
+                        "Tied Ariadne's Thread at the door of the Labyrinth. "
+                        "It ran on ahead of me. I only had to follow.")
         # Omens (a named foe is somewhere on this floor): shown once.
         _omens = getattr(self.dungeon, 'omen_messages', None)
         if _omens:
@@ -2784,6 +2802,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Cow level portal: return to the dungeon
         if self.dungeon_level == COW_LEVEL:
             self._exit_cow_level()
+            return
+        # A floor may bar its stair while its guardian lives (the Labyrinth).
+        _guard = getattr(self.dungeon, 'stairs_guardian', None)
+        if _guard and any(m.alive and m.kind == _guard for m in self.monsters):
+            self.add_message(
+                getattr(self.dungeon, 'stairs_guardian_line', '')
+                or "The stair is barred. Its keeper still lives.", 'warning')
             return
         # Seven Seals gate: all 7 must be broken before descending to L100
         if self.dungeon_level == 99 and len(self.seals_broken) < 7:

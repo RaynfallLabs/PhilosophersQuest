@@ -733,6 +733,10 @@ class CombatMixin:
             self._log_chronicle(
                 getattr(monster, 'kill_chronicle', '')
                 or f"{the_name(monster)} is dead. I had not expected to be the one left standing.")
+        # A guardian whose death unbars the stair (the Labyrinth).
+        if getattr(self.dungeon, 'stairs_guardian', None) == monster.kind:
+            self.add_message(
+                "Somewhere beyond the hall, a bronze grate swings open.", 'success')
         # Fafnir drops a unique blood potion with a hint about the throw-over reforge
         if monster.kind == 'fafnir_dragon':
             self._spawn_fafnir_blood(monster.x, monster.y)

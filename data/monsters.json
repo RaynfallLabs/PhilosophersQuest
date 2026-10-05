@@ -19859,7 +19859,7 @@
       80,
       50
     ],
-    "hp": "56d10+141",
+    "hp": "75d10+188",
     "speed": 8,
     "ai_pattern": "hit_and_run",
     "thac0": 7,
@@ -19869,14 +19869,20 @@
     "min_level": 18,
     "attacks": [
       {
-        "damage": "2d4+3",
-        "type": "slash",
-        "name": "Gore"
+        "name": "Gore",
+        "damage": "2d6+3",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 4
       },
       {
-        "damage": "1d8+1",
+        "name": "Trample",
+        "damage": "2d4+3",
         "type": "blunt",
-        "name": "Trample"
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2
       }
     ],
     "resistances": [
@@ -19886,7 +19892,8 @@
       "pierce"
     ],
     "tags": [
-      "humanoid"
+      "humanoid",
+      "beast"
     ],
     "harvest_tier": 5,
     "treasure": {
@@ -19898,10 +19905,16 @@
       "item_tier": 4,
       "boss_scroll_id": "scroll_of_the_labyrinth"
     },
-    "lore": "Asterion, 'the starry one', was born to Queen Pasiphae and the white bull of Poseidon. King Minos hid his shame in the Labyrinth that Daedalus built, and fed it with seven youths and seven maidens sent from Athens as tribute. Theseus ended the tribute and found his way back out by Ariadne's thread. Down here there is no thread, and the bull-headed prince is still hungry.",
+    "lore": "Asterion, 'the starry one', was born to Queen Pasiphae and the white bull of Poseidon. King Minos hid his shame in the Labyrinth that Daedalus built, and fed it with seven youths and seven maidens sent from Athens as tribute. Theseus ended the tribute and found his way back out by Ariadne's thread. Down here a thread is harder to come by, and the bull-headed prince is still hungry.",
     "frequency": 0,
     "can_phase_walls": true,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "can_charge": true,
+    "charge_bonus_mult": 1.75,
+    "enrage_at_hp_pct": 0.3,
+    "enraged_pattern": "aggressive",
+    "enrage_message": "Asterion lowers his horns and comes on. There will be no more hiding in the walls.",
+    "is_boss": true
   },
   "medusa_gorgon": {
     "name": "Medusa the Gorgon",
