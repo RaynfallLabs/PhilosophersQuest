@@ -267,6 +267,8 @@ def _level_20_labyrinth(rng=None):
     dungeon.stairs_guardian_line = (
         "A bronze grate is shut across the stair. Whatever keeps this maze "
         "still keeps the key.")
+    dungeon.stairs_guardian_open_line = (
+        "Somewhere beyond the hall, a bronze grate swings open.")
     dungeon.atmosphere_messages = [
         "These passages were built to lose people. Something heavy is walking "
         "on the other side of the wall.",
@@ -406,9 +408,13 @@ def _level_40_temple():
     tiles[boss_room.y - 1][boss_room.center[0]] = DOOR
     _vline(tiles, nave.y + nave.height, boss_room.y, nave.center[0])
 
-    # Pillars in boss room — LOS blockers against Medusa's gaze
-    for px, py in [(35, 41), (43, 41), (35, 45), (43, 45)]:
-        tiles[py][px] = WALL
+    # Pillars in the sanctum: cover against Medusa's gaze, which reaches
+    # across open floor but not through stone. Two rows of four, so there is
+    # always a pillar to step behind, and none on the centre line from the
+    # door: she sees whoever walks straight in.
+    for px in (33, 37, 41, 45):
+        for py in (41, 45):
+            tiles[py][px] = WALL
 
     # Exit passage
     exit_room = _carve_room(tiles, 68, 43, 4, 3)
@@ -417,7 +423,53 @@ def _level_40_temple():
     tiles[exit_room.center[1]][exit_room.x + exit_room.width // 2] = STAIRS_DOWN
 
     dungeon = _make(tiles, rooms, 40)
-    return dungeon, _spawn_boss(dungeon, 'medusa_gorgon', boss_room), []
+
+    # The way down lies past the sanctum and is shut while she lives.
+    dungeon.stairs_guardian = 'medusa_gorgon'
+    dungeon.stairs_guardian_line = (
+        "The stair is choked with statues, shoulder to shoulder, every one "
+        "caught in the act of leaving. They will not move while she still "
+        "looks this way.")
+    dungeon.stairs_guardian_open_line = (
+        "Beyond the sanctum, stone figures topple and break. The stair is clear.")
+    dungeon.atmosphere_messages = [
+        "Statues line the portico. Every one is looking back over its shoulder.",
+    ]
+
+    # The side chapels hold what her earlier visitors carried, and one of
+    # them holds the cheap answer: a blindfold, tied over a statue's eyes too
+    # late to help its owner. It is always here, so a player who missed the
+    # Eye and the Aegis still has a way to fight her.
+    items = []
+    try:
+        import random as _random
+        from items import (add_gold_to_tile, load_items, copy_at,
+                           pick_random_weapon_for_floor, pick_random_shield_for_floor)
+        blindfold = next((a for a in load_items('armor') if a.id == 'blindfold'), None)
+        if blindfold is not None:
+            bx, by = l_chapel2.center
+            bf = copy_at(blindfold, bx, by)
+            bf.buc = 'uncursed'
+            items.append(bf)
+        gx, gy = l_chapel.center
+        add_gold_to_tile(items, _random.randint(120, 260), gx, gy)
+        w = pick_random_weapon_for_floor(40, _random)
+        if w is not None:
+            w.x, w.y = r_chapel.center
+            items.append(w)
+        potions = {pt.id: pt for pt in load_items('potion')}
+        heal = potions.get('potion_of_extra_healing') or potions.get('potion_of_healing')
+        if heal is not None:
+            hx, hy = r_chapel2.center
+            items.append(copy_at(heal, hx, hy))
+        sh = pick_random_shield_for_floor(40, _random)
+        if sh is not None:
+            sh.x, sh.y = r_chapel2.center[0] + 1, r_chapel2.center[1]
+            items.append(sh)
+    except Exception:
+        items = [it for it in items if it is not None]
+
+    return dungeon, _spawn_boss(dungeon, 'medusa_gorgon', boss_room), items
 
 
 # ---------------------------------------------------------------------------

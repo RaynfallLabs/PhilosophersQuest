@@ -736,7 +736,8 @@ class CombatMixin:
         # A guardian whose death unbars the stair (the Labyrinth).
         if getattr(self.dungeon, 'stairs_guardian', None) == monster.kind:
             self.add_message(
-                "Somewhere beyond the hall, a bronze grate swings open.", 'success')
+                getattr(self.dungeon, 'stairs_guardian_open_line', '')
+                or "The way down stands open.", 'success')
         # Fafnir drops a unique blood potion with a hint about the throw-over reforge
         if monster.kind == 'fafnir_dragon':
             self._spawn_fafnir_blood(monster.x, monster.y)

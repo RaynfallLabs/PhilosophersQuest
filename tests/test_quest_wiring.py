@@ -401,3 +401,113 @@ def test_monsters_load_their_own_lines_from_data():
     assert mk('whispering_crone').rage_messages
     assert 'head' in mk('green_knight').revive_message
     assert mk('giant_rat').enrage_message == ''
+
+
+# --------------------------------------------------------- Medusa's temple
+
+def _temple():
+    from boss_levels import generate_boss_level
+    from player import Player
+    d, monsters, items = generate_boss_level(40)
+    medusa = next(m for m in monsters if m.kind == 'medusa_gorgon')
+    medusa._aware = True
+    medusa._gaze_cooldown = 0
+    p = Player()
+    return d, medusa, monsters, items, p
+
+
+def test_medusas_gaze_reaches_across_open_floor():
+    """The gaze used to fire only when she was already adjacent, so there was
+    never a line of sight to block and the temple's pillars did nothing."""
+    d, medusa, monsters, _items, p = _temple()
+    p.x, p.y = medusa.x, medusa.y - 4          # straight up the centre line
+    assert medusa._has_los(p.x, p.y, d)
+    before = (medusa.x, medusa.y)
+    assert medusa._dancer_turn(p, d, monsters, set()) is True
+    assert (medusa.x, medusa.y) == before, 'she looks instead of stepping'
+    dmg, msg = medusa.attack(p)
+    assert dmg == 0
+    assert p.has_effect('paralyzed') or 'tear your eyes away' in msg
+    assert medusa._gaze_cooldown > 0
+
+
+def test_a_pillar_breaks_the_gaze():
+    d, medusa, monsters, _items, p = _temple()
+    # Stand directly behind a sanctum pillar, on the far side from her.
+    pillar = (37, 41)
+    assert d.tiles[pillar[1]][pillar[0]] == WALL
+    dx = pillar[0] - medusa.x
+    dy = pillar[1] - medusa.y
+    p.x, p.y = pillar[0] + (1 if dx > 0 else -1), pillar[1] + (1 if dy > 0 else -1)
+    assert d.is_walkable(p.x, p.y)
+    assert not medusa._has_los(p.x, p.y, d), 'test position should be in cover'
+    assert medusa._dancer_turn(p, d, monsters, set()) is False
+    assert not p.has_effect('paralyzed')
+    assert medusa._gaze_cooldown == 0, 'the gaze is not spent on a hidden target'
+
+
+def test_aegis_turns_a_ranged_gaze_back_on_her():
+    d, medusa, monsters, _items, p = _temple()
+    p.x, p.y = medusa.x, medusa.y - 4
+    p.shield = _Shield('aegis_of_athena')
+    assert medusa._dancer_turn(p, d, monsters, set()) is True
+    dmg, msg = medusa.attack(p)
+    assert dmg == 0 and 'rigid' in msg
+    assert medusa.status_effects.get('paralyzed', 0) >= 2
+    assert not p.has_effect('paralyzed')
+
+
+def test_a_blindfold_makes_the_gaze_harmless_at_range():
+    d, medusa, monsters, _items, p = _temple()
+    p.x, p.y = medusa.x, medusa.y - 4
+    p.armor_slots[0] = _Shield('blindfold')        # head slot
+    assert p.get_sight_radius() == 0
+    for _ in range(6):
+        medusa._gaze_cooldown = 0
+        dmg, _msg = medusa.attack(p)
+        assert dmg == 0, 'at range a failed gaze is her whole turn'
+        assert not p.has_effect('paralyzed')
+
+
+def test_medusas_temple_layout_and_loot():
+    """The stair lies past the sanctum and is shut while she lives; a
+    blindfold is always in a side chapel; her melee attacks carry no second
+    copy of the gaze (it ignored the Aegis)."""
+    from dungeon import STAIRS_UP, STAIRS_DOWN
+    d, medusa, _monsters, items, _p = _temple()
+    assert d.stairs_guardian == 'medusa_gorgon'
+    up, down = _find(d, STAIRS_UP), _find(d, STAIRS_DOWN)
+    sanctum = next(r for r in d.rooms if r.x <= medusa.x < r.x + r.width
+                   and r.y <= medusa.y < r.y + r.height)
+    sanctum_tiles = {(x, y) for x in range(sanctum.x, sanctum.x + sanctum.width)
+                     for y in range(sanctum.y, sanctum.y + sanctum.height)}
+    assert down in _lab_reach(d, up)
+    assert down not in _lab_reach(d, up, blocked=sanctum_tiles)
+    assert any(getattr(i, 'id', '') == 'blindfold' for i in items)
+    assert all(d.tiles[i.y][i.x] != WALL for i in items)
+    assert not any('gaze' in a['name'].lower() for a in medusa.attacks)
+    assert medusa.gaze_paralyze > 0
+    pillars = sum(1 for y in range(sanctum.y, sanctum.y + sanctum.height)
+                  for x in range(sanctum.x, sanctum.x + sanctum.width)
+                  if d.tiles[y][x] == WALL)
+    assert pillars >= 8
+
+
+def test_ordinary_medusas_gaze_respects_the_aegis_and_immunity():
+    from monster import Monster
+    from player import Player
+    data = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    med = Monster({**data['medusa'], 'id': 'medusa'}, 5, 5)
+    med.attacks = [a for a in med.attacks if 'gaze' in a['name'].lower()]
+    assert med.attacks, 'the common medusa should still have her gaze'
+    for setup in ('immune', 'aegis'):
+        p = Player()
+        p.x, p.y = 5, 6
+        if setup == 'immune':
+            p.add_effect('petrify_immune', -1)
+        else:
+            p.shield = _Shield('aegis_of_athena')
+        for _ in range(15):
+            dmg, _msg = med.attack(p)
+            assert dmg == 0
+            assert not p.has_effect('paralyzed'), setup

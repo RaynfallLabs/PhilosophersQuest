@@ -10,6 +10,8 @@ from naming import ProperNameAttr
 RAGE_STACK_CAP = 8
 # Most locusts Abaddon keeps alive at once.
 LOCUST_CAP = 12
+# How far a petrifying gaze reaches, given a clear line of sight.
+GAZE_RANGE = 8
 
 
 def the_name(monster, lower: bool = False) -> str:
@@ -458,22 +460,33 @@ class Monster:
         # --- Gaze attack (Medusa): petrifying gaze before normal attack ---
         if self.gaze_paralyze > 0 and self._gaze_cooldown <= 0:
             self._gaze_cooldown = self.gaze_cooldown_max
+            # The gaze reaches across a room (see _dancer_turn): she may be
+            # several tiles away. At range the gaze is her whole turn; next
+            # to the player a gaze that fails still leaves her fangs.
+            _at_range = not self._adjacent_to(player)
             # Check player's sight: total blindness negates gaze
             if player.get_sight_radius() == 0:
                 gaze_msg = f"{the_name(self)} locks eyes on you, but you are blind to her gaze!"
+                if _at_range:
+                    return 0, (f"{the_name(self)} turns her face full on you. "
+                               f"You see nothing, and nothing happens.")
             # Proof against petrification (Medusa's trophy, the Greater
             # Aegis). The status existed but nothing consulted it: every gaze
             # paralyses, so the reward protected against nothing.
             elif player.has_effect('petrify_immune'):
                 gaze_msg = (f"{the_name(self)}'s gaze slides off you. "
                             f"Stone has no claim on you now.")
+                if _at_range:
+                    return 0, gaze_msg
             # Check mirror shield (Aegis): reflects gaze back
             elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
-                # Two turns rigid, and she does NOT also attack this turn.
+                # She loses this turn and the next, and does NOT also attack.
                 # (It used to set 1 turn, which the next status tick removed
                 # before she ever lost an action, and then she hit anyway.)
+                # With a gaze every gaze_cooldown turns this is about half
+                # her actions, which is what CURVE.md asks of the Aegis.
                 self.status_effects['paralyzed'] = max(
-                    self.status_effects.get('paralyzed', 0), 3)
+                    self.status_effects.get('paralyzed', 0), 2)
                 return 0, (f"{the_name(self)} meets her own eyes in the bronze "
                            f"and stands rigid, snakes and all.")
             else:
@@ -569,8 +582,15 @@ class Monster:
         is_gaze = 'gaze' in atk_name or 'evil eye' in atk_name
         if is_gaze and player.get_sight_radius() == 0:
             return 0, f"{the_name(self)} tries to lock eyes with you, but you cannot see!"
-        if is_gaze and 'petrif' in atk_name and player.has_effect('petrify_immune'):
-            return 0, f"{the_name(self)}'s gaze finds nothing in you to turn to stone."
+        # Any paralysing gaze (the ordinary medusas' "Stony Gaze" as well as a
+        # boss's): proof against petrification stops it, and so does a
+        # mirror-bright shield held between you.
+        if is_gaze and atk.get('effect') == 'paralyzed':
+            if player.has_effect('petrify_immune'):
+                return 0, f"{the_name(self)}'s gaze finds nothing in you to turn to stone."
+            if getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
+                return 0, (f"{the_name(self)} catches her own eyes in the bronze "
+                           f"and flinches away.")
 
         # Breath/spit/hurl attacks miss player hiding in a pit
         is_breath = any(w in atk_name for w in ('breath', 'spit', 'hurl', 'volley'))
@@ -1795,6 +1815,14 @@ class Monster:
 
         px, py = player.x, player.y
         if not self._adjacent_to(player):
+            # The gaze works across open floor: within GAZE_RANGE and with a
+            # clear line of sight she looks instead of stepping. A pillar
+            # between you breaks it. (The gaze used to fire only when she
+            # was already adjacent, so the temple's pillars blocked nothing.)
+            if (self.gaze_paralyze > 0 and self._gaze_cooldown <= 0
+                    and max(abs(self.x - px), abs(self.y - py)) <= GAZE_RANGE
+                    and self._has_los(px, py, dungeon)):
+                return True     # attack() resolves the gaze
             self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive')
             return False
 

@@ -19934,22 +19934,17 @@
     "min_level": 38,
     "attacks": [
       {
+        "name": "Serpent Fang",
+        "damage": "3d8+4",
+        "type": "pierce"
+      },
+      {
+        "name": "Venom Strike",
         "damage": "2d8+3",
-        "type": "pierce",
-        "name": "Serpent Fang"
-      },
-      {
-        "damage": "2d6+2",
         "type": "poison",
-        "name": "Venom Strike"
-      },
-      {
-        "damage": "2d6+2",
-        "type": "magic",
-        "name": "Petrifying Gaze",
-        "effect": "paralyzed",
-        "effect_chance": 0.45,
-        "effect_duration": 4
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 6
       }
     ],
     "resistances": [
@@ -19976,7 +19971,8 @@
     "frequency": 0,
     "gaze_paralyze": 3,
     "gaze_cooldown": 4,
-    "is_mini_boss": true
+    "is_mini_boss": true,
+    "is_boss": true
   },
   "fafnir_dragon": {
     "name": "Fafnir the Dragon",

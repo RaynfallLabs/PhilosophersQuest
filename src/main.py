@@ -6887,13 +6887,24 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if getattr(item, 'id', '') == 'bronze_bull':
             tile = self.dungeon.tiles[self.player.y][self.player.x]
             if tile == FOUNTAIN:
-                self._activate_ariadne_shrine(item)
+                if getattr(self.dungeon, 'ariadne_shrine_door', None):
+                    self._activate_ariadne_shrine(item)
+                else:
+                    # Right kind of place, wrong one: say so, keep the Bull.
+                    self.add_message(
+                        "The bull sits in the shallows and nothing answers. "
+                        "This is not the water it wants.", 'info')
 
         # --- Athena quest: drop Eye of the Graeae at an altar ---
         if getattr(item, 'id', '') == 'eye_of_graeae':
             tile = self.dungeon.tiles[self.player.y][self.player.x]
             if tile == ALTAR:
-                self._activate_athena_shrine(item)
+                if getattr(self.dungeon, 'athena_shrine_door', None):
+                    self._activate_athena_shrine(item)
+                else:
+                    self.add_message(
+                        "The eye lies on the altar and looks at nothing. "
+                        "Whoever it was promised to is not listening here.", 'info')
 
         # --- Odin quest: drop Broken Gram on Odin's Altar ---
         odin_pos = getattr(self.dungeon, 'odin_altar_pos', None)
