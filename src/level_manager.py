@@ -30,6 +30,9 @@ class LevelManager:
 
     def __init__(self):
         self._saved: dict = {}          # level_num -> (dungeon, monsters, items)
+        # Named uniques already handed out this run (items.claim_unique).
+        self.seen_unique_ids: set = set()
+        self._bind_uniques()
         self.max_level_reached: int = 1
         self.monsters_killed: int   = 0
         self._placed_mini_bosses: set = set()
@@ -51,6 +54,35 @@ class LevelManager:
     def has_visited(self, level_num: int) -> bool:
         return level_num in self._saved
 
+    def _bind_uniques(self) -> None:
+        import items
+        if not hasattr(self, 'seen_unique_ids'):
+            self.seen_unique_ids = set()            # a save from before the rule
+        items.bind_unique_registry(self.seen_unique_ids)
+
+    def __setstate__(self, state):
+        self.__dict__.update(state)
+        self._bind_uniques()
+
+    def _once_per_run(self, floor_items: list) -> list:
+        """Drop any named unique this run has already produced, and record
+        the ones that stay (on the floor or on a merchant's shelf)."""
+        from items import claim_unique, unique_available
+        kept = []
+        for it in floor_items:
+            stock = getattr(it, 'stock', None)
+            if isinstance(stock, list) and hasattr(it, 'prices'):
+                keep = [i for i, s in enumerate(stock) if unique_available(s)]
+                it.prices = [it.prices[i] for i in keep]
+                it.stock = [stock[i] for i in keep]
+                for s in it.stock:
+                    claim_unique(s)
+            if not unique_available(it):
+                continue
+            claim_unique(it)
+            kept.append(it)
+        return kept
+
     def generate(self, level_num: int):
         """Create a fresh level, spawn monsters/items, save, and return it."""
         from boss_levels import BOSS_LEVELS, COW_LEVEL, generate_boss_level
@@ -71,6 +103,7 @@ class LevelManager:
             # (never the Cow Level or the Stone floor).
             if level_num in (20, 40, 60, 80):
                 self._maybe_spawn_bones(level_num, dungeon, monsters, items)
+            items = self._once_per_run(items)
             return dungeon, monsters, items
 
         from dungeon import generate_dungeon, spawn_items, populate_floor
@@ -105,6 +138,7 @@ class LevelManager:
         self._maybe_spawn_bones(level_num, dungeon, monsters, items)
 
         self.max_level_reached = max(self.max_level_reached, level_num)
+        items = self._once_per_run(items)
         return dungeon, monsters, items
 
     @staticmethod

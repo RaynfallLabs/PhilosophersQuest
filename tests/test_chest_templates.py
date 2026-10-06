@@ -200,6 +200,8 @@ def _simulate_run(seed: int, success_rate: float = 0.80) -> int:
       - Floor unique drops: 0.15% per room x 20 rooms per floor
       - Boss fixed drops: 5
     """
+    import items as _items
+    _items.bind_unique_registry(set())      # each simulated run is a new run
     from container_system import _generate_loot_from_template
     from items import load_chest_templates
     rng = random.Random(seed)

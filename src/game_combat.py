@@ -209,6 +209,12 @@ class CombatMixin:
         """Return probability [0-1] that this weapon breaks on throw."""
         if weapon.weapon_class == 'net':
             return 0.0  # nets are designed to be thrown and recovered
+        from items import is_random_loot
+        if not is_random_loot(weapon):
+            # Quest pieces (the Broken Blade of Gram) do not break: a throw
+            # that missed Odin's altar had a 35% chance to end the Fafnir
+            # quest for the run.
+            return 0.0
         material = weapon.material.lower()
         base = self._THROW_BREAK_CHANCE.get(material, self._THROW_BREAK_LEGENDARY)
         return base
@@ -908,7 +914,7 @@ class CombatMixin:
         instantiated; the JSON files only hold uniques.
         """
         import random as _rng
-        from items import (load_items, copy_at,
+        from items import (load_items, copy_at, is_random_loot,
                             pick_random_weapon_for_floor,
                             pick_random_armor_for_floor,
                             pick_random_shield_for_floor)
@@ -917,7 +923,7 @@ class CombatMixin:
         # (Anansi on floor 92 included) dropped floor-25 gear.
         _here = int(getattr(self, 'dungeon_level', 1) or 1)
         if not 1 <= _here <= 100:      # the Cow Level is numbered 999
-            _here = 1
+            _here = max(1, min(100, int(getattr(self, '_cow_return_level', 1) or 1)))
         # ...and only a little deeper (items.loot_floor): `tier * 5` on its
         # own put floor-5 and floor-10 gear in floor-1 drops.
         from items import loot_floor
@@ -938,6 +944,8 @@ class CombatMixin:
                 try:
                     for item in load_items(cls_name):
                         if getattr(item, 'is_unique', False):
+                            continue
+                        if not is_random_loot(item):     # scripted rewards
                             continue
                         if item.min_level <= effective_floor:
                             candidates.append(item)

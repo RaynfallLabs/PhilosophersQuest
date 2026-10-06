@@ -897,7 +897,12 @@ class EncountersMixin:
             candidates = []
             for item in load_items(cls_name):
                 ml = getattr(item, 'min_level', 1)
-                if ml <= self.dungeon_level and ml < 9999 and is_random_loot(item):
+                # (Clamped: the Cow Level is numbered 999, which made every
+                # min_level-999 hero keepsake eligible there.)
+                _lvl = self.dungeon_level if 1 <= self.dungeon_level <= 100 else lvl
+                from items import unique_available
+                if (ml <= _lvl and ml < 9999 and is_random_loot(item)
+                        and unique_available(item)):
                     candidates.append(item)
             if candidates:
                 # Weighted by floor spawn weight, not a flat pick (on floors 3
@@ -906,6 +911,8 @@ class EncountersMixin:
                 template = _weighted_common_pick(candidates, lvl, random)
                 result = copy_at(template, self.player.x, self.player.y)
                 result.identified = True
+                from items import claim_unique
+                claim_unique(result)
                 return result
         except Exception:
             pass

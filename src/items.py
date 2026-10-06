@@ -1294,6 +1294,39 @@ def scripted_only_ids() -> frozenset:
     return _scripted_only_cache
 
 
+# --- Named uniques: once per run -------------------------------------------
+# The ids of the named uniques this run has already handed out, by any random
+# path (floor, chest, merchant, reward). The set itself belongs to the run's
+# LevelManager, so it is saved and loaded with the run; this module only
+# holds the reference every loot path checks. Scripted quest items are not
+# tracked: their own scripts place them exactly once.
+#
+# Before this there was no rule at all. Measured over simulated runs: about
+# 115 named uniques found per run, 47 of them second and third copies.
+_UNIQUES_SEEN: set = set()
+
+
+def bind_unique_registry(seen: set) -> None:
+    """Point the loot paths at a run's set of uniques already seen."""
+    global _UNIQUES_SEEN
+    _UNIQUES_SEEN = seen
+
+
+def _tracked_unique(item) -> bool:
+    return bool(getattr(item, 'is_unique', False)) and is_random_loot(item)
+
+
+def unique_available(item) -> bool:
+    """False for a named unique this run has already produced."""
+    return not _tracked_unique(item) or getattr(item, 'id', None) not in _UNIQUES_SEEN
+
+
+def claim_unique(item) -> None:
+    """Record that this run has produced the named unique `item`."""
+    if _tracked_unique(item) and getattr(item, 'id', None):
+        _UNIQUES_SEEN.add(item.id)
+
+
 def is_random_loot(item) -> bool:
     """True if ``item`` may be handed out by a random pool (floor drops,
     chests, merchant stock, random rewards)."""

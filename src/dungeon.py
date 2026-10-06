@@ -1365,6 +1365,12 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
 MIN_FLOOR_MONSTERS = 6
 
 
+# Gold in special rooms, as a share of the floor's income (economy.py).
+ZOO_GOLD_SHARE = 0.5
+VAULT_GOLD_SHARE = 0.5
+TREASURY_GOLD_SHARE = (0.15, 0.35)
+
+
 def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
                    occupancy: float = None) -> list:
     """Populate a whole floor by rolling EVERY room for occupancy.
@@ -1736,7 +1742,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
                 c = pick_container()
                 if c:
                     _place_one([c], special_room, dungeon, ground_items, rng)
-            gold_amount = rng.randint(level * 3, level * 8)
+            import economy
+            gold_amount = economy.roll_share(rng, level, TREASURY_GOLD_SHARE)
             tiles_in_room = [(tx, ty) for tx, ty in special_room.inner_tiles()
                              if dungeon.tiles[ty][tx] == FLOOR and
                              not any(i.x == tx and i.y == ty for i in ground_items)]
@@ -1747,8 +1754,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
 
         elif room_type == 'library':
             try:
-                scrolls = [i for i in load_items('scroll') if i.min_level <= level]
-                books = [i for i in load_items('spellbook') if i.min_level <= level]
+                # Weighted like the rest of the floor (it was a flat pick of
+                # everything with min_level <= floor: half the scroll kinds
+                # on floor 20 were tier 3).
+                from items import is_random_loot
+                scrolls = _item_eligible_weighted(
+                    [i for i in load_items('scroll') if is_random_loot(i)], level, rng)
+                books = _item_eligible_weighted(
+                    [i for i in load_items('spellbook') if is_random_loot(i)], level, rng)
                 for _ in range(3):
                     if scrolls:
                         _place_one([copy.copy(rng.choice(scrolls))], special_room, dungeon, ground_items, rng)
@@ -1771,11 +1784,17 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         elif room_type == 'zoo':
             # Gold piles on most inner tiles; message handled in main.py via special_rooms
             from items import add_gold_to_tile
-            for tx, ty in special_room.inner_tiles():
-                if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.70:
-                    amount = rng.randint(level * 2, level * 5)
-                    if not any(i.x == tx and i.y == ty for i in ground_items):
-                        add_gold_to_tile(ground_items, amount, tx, ty)
+            import economy
+            # The whole hoard is about half a floor's income, spread over the
+            # tiles. (It was level*2..5 a tile with no ceiling: up to 30,000
+            # gold on floor 81, four floors' worth.)
+            _tiles = [(tx, ty) for tx, ty in special_room.inner_tiles()
+                      if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.70
+                      and not any(i.x == tx and i.y == ty for i in ground_items)]
+            _raw = [rng.randint(2, 5) for _ in _tiles]
+            _scale = economy.floor_income(level) * ZOO_GOLD_SHARE / max(1, sum(_raw))
+            for (tx, ty), r in zip(_tiles, _raw):
+                add_gold_to_tile(ground_items, max(1, int(r * _scale)), tx, ty)
 
         elif room_type == 'graveyard':
             # Place GRAVE tiles on ~20% of inner floor tiles; also drop 1-2 corpses
@@ -1864,7 +1883,10 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # would overshoot the cap, distribute proportionally across the tiles.
     if dungeon.vault is not None:
         from items import add_gold_to_tile
-        _VAULT_GOLD_CAP = 2000
+        import economy
+        # (A flat 2,000: most of a floor's income at floor 20 and a fifth
+        # of one at floor 99.)
+        _VAULT_GOLD_CAP = economy.share(level, VAULT_GOLD_SHARE)
         vault_room = dungeon.vault['room']
         candidate_tiles = [(tx, ty) for tx, ty in vault_room.inner_tiles()
                            if dungeon.tiles[ty][tx] == FLOOR]

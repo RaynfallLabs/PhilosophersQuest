@@ -92,3 +92,16 @@ def _isolate_bones():
     finally:
         bones._bones_dir = saved
         shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+@pytest.fixture(autouse=True)
+def _fresh_unique_registry():
+    """Every test starts as a new run: no named unique has been found yet.
+    (items.bind_unique_registry is module state; without this, uniques claimed
+    by one test would be missing from the next.)"""
+    try:
+        import items
+        items.bind_unique_registry(set())
+    except Exception:
+        pass
+    yield

@@ -440,6 +440,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
+        # A named unique in the starting kit is this run's only copy.
+        from items import claim_unique as _claim_unique
+        for _it in list(self.player.inventory) + [
+                x for x in (self.player.weapon, getattr(self.player, 'shield', None),
+                            getattr(self.player, 'ranged_weapon', None)) if x]:
+            _claim_unique(_it)
 
         # One-cosmetic-per-item: stamp this run's appearance onto the starting
         # floor's accessories (and onto any starting-kit ring/amulet in pack).
@@ -4788,7 +4794,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _result = {'status': 'pending', 'loot': [], 'gold': 0, 'messages': []}
                 def _solom_cb(res):
                     _result.update(res)
-                _handle_success(self.player, container, self.dungeon, 3, _solom_cb)
+                # (A stray fifth argument made this raise TypeError after
+                # the floor's charge was already spent.)
+                _handle_success(self.player, container, self.dungeon, _solom_cb)
                 self.ground_items.remove(container)
                 for text, mtype in _result['messages']:
                     self.add_message(text, mtype)

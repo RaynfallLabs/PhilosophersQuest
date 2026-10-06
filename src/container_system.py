@@ -285,6 +285,12 @@ def _build_common_pool(template: dict, level_cap: int) -> list:
                         continue
                     if it.min_level > level_cap:
                         continue
+                    # Scripted rewards (the Ring of Command, Elara's ring)
+                    # are not flagged unique and carry no spawn weight, so
+                    # this pool handed them out on every floor.
+                    from items import is_random_loot
+                    if not is_random_loot(it):
+                        continue
                     # Only terrain-FORAGED ingredients (tier_role 'dungeon')
                     # belong in chests -- apothecary herbs, cave mushrooms, etc.
                     # Monster-derived ingredients (family/prime/trophy) come
@@ -300,7 +306,7 @@ def _build_common_pool(template: dict, level_cap: int) -> list:
 
 def _build_unique_pool(template: dict, level_cap: int) -> list:
     """Build a pool of UNIQUE items appropriate to this template's category mix."""
-    from items import load_items, is_random_loot
+    from items import load_items, is_random_loot, unique_available
     # Map loot-table categories to the unique item classes that could fit.
     # Gear categories => weapon/armor/shield uniques. Magic => wand/scroll/spellbook.
     cat_classes: dict[str, list[str]] = {
@@ -334,6 +340,16 @@ def _build_unique_pool(template: dict, level_cap: int) -> list:
                     continue
                 # Quest pieces and scripted rewards never come from chests.
                 if not is_random_loot(it):
+                    continue
+                # Once per run, and only where it is at home: its own bell
+                # must still be alive on this floor (the ground's rule).
+                # This was a flat pick of everything with min_level in
+                # reach, so floor-1 chests held Achilles' Spear and floor-12
+                # chests a weapon eight times the floor's median.
+                if not unique_available(it):
+                    continue
+                _pw = float(getattr(it, 'peak_weight', 0.0) or 0.0)
+                if _pw > 0 and _spawn_weight_at(it, level_cap) < 0.05 * _pw:
                     continue
                 # Defensive: never let a monster-derived ingredient (prime/
                 # trophy) reach chest loot via the unique path either.
@@ -421,7 +437,8 @@ def _weighted_common_pick(eligible: list, level: int, rng):
     return rng.choices(items, weights=weights, k=1)[0]
 
 
-def _pull_unique_from_category(category: str, unique_pool: list, rng) -> object | None:
+def _pull_unique_from_category(category: str, unique_pool: list, rng,
+                               level: int | None = None) -> object | None:
     """Draw a unique item compatible with the given loot-table category."""
     cat_classes: dict[str, set[str]] = {
         'weapon_common':  {'weapon'},
@@ -445,6 +462,8 @@ def _pull_unique_from_category(category: str, unique_pool: list, rng) -> object 
                 if getattr(it, 'item_class', '') in classes]
     if not eligible:
         return None
+    if level is not None:
+        return copy.copy(_weighted_common_pick(eligible, level, rng))
     return copy.copy(rng.choice(eligible))
 
 
@@ -466,7 +485,8 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
     level_cap = _floor_level_cap(container, dungeon_level)
 
     common_pool = _build_common_pool(template, level_cap)
-    unique_pool = _build_unique_pool(template, level_cap)
+    # Named uniques get no reach: they appear on their own floors only.
+    unique_pool = _build_unique_pool(template, dungeon_level)
 
     chest_tier = max(1, min(5, int(getattr(container, 'tier', 1) or 1)))
     cmin, cmax, bonus_for_tier = ITEMS_BY_CHEST_TIER[chest_tier]
@@ -516,12 +536,15 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
         category = _weighted_pick_category(loot_table, rng)
         if not category or category == 'gold_bonus':
             return None
-        it = _pull_unique_from_category(category, unique_pool, rng)
+        from items import claim_unique, unique_available
+        live = [u for u in unique_pool if unique_available(u)]
+        it = _pull_unique_from_category(category, live, rng, dungeon_level)
+        if it is None and live:
+            # No unique in that category: any one from the pool, by weight.
+            it = copy.copy(_weighted_common_pick(live, dungeon_level, rng))
         if it is not None:
+            claim_unique(it)
             return it
-        # No unique in that category — try a free pick from the unique_pool
-        if unique_pool:
-            return copy.copy(rng.choice(unique_pool))
         return None
 
     for i in range(n_items):

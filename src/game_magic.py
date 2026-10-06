@@ -78,6 +78,16 @@ MAGIC_TIER_MULT = {1: 6.0, 2: 8.75, 3: 11.0, 4: 13.0, 5: 12.75}
 HEAL_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
 
 
+def _is_named_def(defn: dict) -> bool:
+    """A monster definition that polymorph must never produce: bosses,
+    mini-bosses, seal demons and anything placed by script. Eight legends
+    (Tiamat, Asmodeus, Surtur...) could be made by a wand, each with a
+    trophy corpse, a reward scroll and thousands in gold."""
+    return bool(defn.get('is_boss') or defn.get('is_mini_boss')
+                or defn.get('is_seal_demon')
+                or float(defn.get('peak_weight', 1) or 0) <= 0)
+
+
 def _is_big_foe(m) -> bool:
     """Bosses, mini-bosses, seal demons, and anything with more than twice
     the HP an ordinary monster of its floor has, shrug off instant-kill and
@@ -750,7 +760,8 @@ class MagicMixin:
                             all_defs = json.load(f)
                         eligible = [k for k, v in all_defs.items()
                                     if v.get('min_level', 1) <= self.dungeon_level
-                                    and k != target.kind and v.get('frequency', 1) > 0]
+                                    and k != target.kind and v.get('frequency', 1) > 0
+                                    and not _is_named_def(v)]
                         if eligible:
                             old_name = target.name
                             kind = _rng.choice(eligible)
@@ -2107,10 +2118,12 @@ class MagicMixin:
                         max_ml = max(1, target.min_level + 10 - chain * 3)
                         eligible = [k for k, v in _all_defs.items()
                                     if v.get('min_level', 1) <= max_ml
-                                    and k != target.kind and v.get('frequency', 1) > 0]
+                                    and k != target.kind and v.get('frequency', 1) > 0
+                                    and not _is_named_def(v)]
                         if not eligible:
                             eligible = [k for k, v in _all_defs.items()
-                                        if k != target.kind and v.get('frequency', 1) > 0]
+                                        if k != target.kind and v.get('frequency', 1) > 0
+                                        and not _is_named_def(v)]
                         old_name = target.name
                         kind = random.choice(eligible)
                         defn = {**_all_defs[kind], 'id': kind}
@@ -2806,14 +2819,14 @@ class MagicMixin:
                        if m.alive and (m.x, m.y) in self.visible
                        and not getattr(m, 'is_boss', False)
                        and not getattr(m, 'is_seal_demon', False)
-                       and m.max_hp <= 500]
+                       and not _is_big_foe(m)]
             # Immune bosses/huge monsters get an explicit flavor message so
             # the player understands why the scroll didn't kill them.
             immune_present = any(
                 m.alive and (m.x, m.y) in self.visible
                 and (getattr(m, 'is_boss', False)
                      or getattr(m, 'is_seal_demon', False)
-                     or m.max_hp > 500)
+                     or _is_big_foe(m))
                 for m in self.monsters)
             if not visible:
                 if immune_present:
@@ -2943,7 +2956,7 @@ class MagicMixin:
                 kind_counts = Counter(
                     m.kind for m in visible
                     if not getattr(m, 'is_boss', False)
-                    and m.max_hp <= 500
+                    and not _is_big_foe(m)
                     and not getattr(m, 'is_seal_demon', False)
                 )
                 if not kind_counts:
@@ -2962,7 +2975,7 @@ class MagicMixin:
                         kind_members = [m for m in self.monsters
                                         if m.alive and m.kind == kind
                                         and not getattr(m, 'is_boss', False)
-                                        and m.max_hp <= 500
+                                        and not _is_big_foe(m)
                                         and not getattr(m, 'is_seal_demon', False)]
                         if not kind_members:
                             continue

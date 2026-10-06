@@ -662,15 +662,32 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
     import copy as _copy
 
     # Build item pool from multiple categories (never quest / scripted items)
+    # Stock follows the floor like every other source. It was two flat picks
+    # per class from everything with min_level <= floor: tier-3 wands on
+    # floor 20, and, since the gear files hold only named uniques, nothing
+    # but uniques for gear (a base-8 spear for 26,800 gold on floor 81).
+    from items import (pick_random_armor_for_floor, pick_random_shield_for_floor,
+                       pick_random_weapon_for_floor, unique_available)
+    from dungeon import _item_eligible_weighted
     stock_items = []
-    for cat in ('potion', 'scroll', 'weapon', 'armor', 'shield', 'accessory', 'wand', 'food', 'ammo'):
+    for cat in ('potion', 'scroll', 'accessory', 'wand', 'food', 'ammo'):
         try:
-            pool = [i for i in load_items(cat)
-                    if getattr(i, 'min_level', 1) <= level and is_random_loot(i)]
+            pool = _item_eligible_weighted(
+                [i for i in load_items(cat)
+                 if is_random_loot(i) and unique_available(i)], level, rng)
             if pool:
-                stock_items.extend(rng.choices(pool, k=min(2, len(pool))))
+                stock_items.extend(rng.choices(pool, k=2))
         except Exception:
             pass
+    for _pick in (pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                  pick_random_shield_for_floor):
+        for _ in range(2):
+            try:
+                gear = _pick(level, rng)
+            except Exception:
+                gear = None
+            if gear is not None:
+                stock_items.append(gear)
 
     # 15% chance merchant has a Soul Sphere (loaded from artifact.json).
     if rng.random() < 0.15:
