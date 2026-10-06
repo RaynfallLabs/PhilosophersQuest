@@ -497,6 +497,20 @@ def apply_effect(player, effect: str, duration: int) -> bool:
     return True
 
 
+def apply_penalty(player, effect: str, turns: int) -> None:
+    """Apply an effect the player has EARNED as the stated cost of their own
+    action (a failed identification, a botched spellbook), for exactly
+    `turns` turns.
+
+    apply_effect caps control effects (stunned at 3 turns) and refuses them
+    during the grace window. Those rules stop monsters from locking a player
+    down; they are not meant to shorten a price the game has just announced.
+    The identify backlash said "Stunned (10 turns)" and lasted two.
+    """
+    player.status_effects[effect] = max(int(turns),
+                                        int(player.status_effects.get(effect, 0) or 0))
+
+
 # Save-feedback flavor: the player should FEEL which stat saved them (body /
 # will / reflexes) without seeing dice or DCs. Keyed by the save stat.
 _SAVE_FLAVOR: dict = {

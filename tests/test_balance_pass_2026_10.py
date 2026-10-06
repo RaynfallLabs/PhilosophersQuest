@@ -335,3 +335,20 @@ def test_no_caller_grants_a_lent_stat_by_hand():
             for m in __import__('re').finditer(r"add_effect\('%s'" % effect, src):
                 window = src[max(0, m.start() - 260):m.start() + 260]
                 assert 'apply_stat_bonus' not in window, (name, effect)
+
+
+def test_an_announced_penalty_lasts_as_long_as_it_says():
+    """The identify backlash said "Stunned (10 turns)" and wore off in two:
+    add_effect caps a stun at 3 turns, a rule meant for monsters."""
+    from player import Player
+    from status_effects import apply_penalty, tick_all
+    p = Player()
+    p.add_effect('stunned', 10)
+    assert p.status_effects['stunned'] == 3            # the monster rule, unchanged
+    q = Player()
+    apply_penalty(q, 'stunned', 10 + 1)
+    turns = 0
+    while q.has_effect('stunned'):
+        tick_all(q)
+        turns += 1
+    assert turns == 11                                  # this turn's tick, then ten

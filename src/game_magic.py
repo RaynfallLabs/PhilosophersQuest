@@ -3170,7 +3170,9 @@ class MagicMixin:
                 # Standard status rules apply. Successor to the old
                 # zero-chain confusion backlash — a blind attempt must
                 # carry a cost (per user 2026-05-29).
-                self.player.add_effect('stunned', 10)
+                from status_effects import apply_penalty
+                # +1: this turn's own tick. (add_effect capped this at 3.)
+                apply_penalty(self.player, 'stunned', 10 + 1)
                 self.add_message(
                     "The Shard turns cold in your palm. Backlash floods "
                     "your mind — you are Stunned (10 turns).",
@@ -3665,7 +3667,8 @@ class MagicMixin:
                 f"{forgot_count} item{'s' if forgot_count != 1 else ''} in your pack "
                 f"become strangers to you again.",
                 'warning')
-        self.player.add_effect('stunned', 20)
+        from status_effects import apply_penalty
+        apply_penalty(self.player, 'stunned', 20 + 1)
         self.add_message(
             "You are Stunned (20 turns).",
             'danger')

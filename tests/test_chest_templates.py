@@ -133,6 +133,7 @@ def test_v266_success_yields_3_to_5_items():
     counts = []
     for _ in range(50):
         c = _make_container('warlord_warchest')
+        c.tier = 4          # a good chest pays the full haul (see ITEMS_BY_CHEST_TIER)
         loot = _generate_loot_from_template(c, dungeon_level=40)
         counts.append(len(loot))
     median = statistics.median(counts)
@@ -273,3 +274,39 @@ def test_v266_higher_success_rate_gives_more_uniques():
     print(f"success 0.50: median={med_low}; success 0.90: median={med_high}")
     assert med_high > med_low, \
         f"higher success rate should earn more uniques; got low={med_low}, high={med_high}"
+
+
+def test_a_plain_chest_is_a_small_mixed_find():
+    """Every chest paid four or five items, and one floor-1 chest held three
+    suits of armor, two of them tier 2."""
+    from container_system import (ITEMS_BY_CHEST_TIER, MAX_SAME_GEAR_PER_CHEST,
+                                  _generate_loot_from_template)
+    assert ITEMS_BY_CHEST_TIER[1] == (2, 3, 0)
+    assert ITEMS_BY_CHEST_TIER[5][1] > ITEMS_BY_CHEST_TIER[1][1]
+    random.seed(5)
+    for _ in range(120):
+        c = _make_container('wooden_chest')
+        c.tier = 1
+        loot = _generate_loot_from_template(c, dungeon_level=1)
+        assert len(loot) <= 3
+        for cls in ('armor', 'weapon', 'shield'):
+            common = [it for it in loot if getattr(it, 'item_class', '') == cls
+                      and not getattr(it, 'is_unique', False)]
+            assert len(common) <= MAX_SAME_GEAR_PER_CHEST
+            for it in common:
+                assert it.quiz_tier == 1, (cls, it.name, it.quiz_tier)
+
+
+def test_no_material_appears_before_its_first_floor():
+    from items import load_materials, material_spawn_weight
+    for cat in ('weapons', 'armor'):
+        for mid, m in load_materials(cat).items():
+            first = m.get('min_level')
+            if first is None:
+                first = m['peak_floor'] - m.get('spread', 10)
+            if first > 1:
+                assert material_spawn_weight(m, int(first) - 1) == 0.0, (cat, mid)
+            assert material_spawn_weight(m, m['peak_floor']) > 0, (cat, mid)
+        tier2_on_floor_1 = [mid for mid, m in load_materials(cat).items()
+                            if m['tier'] >= 2 and material_spawn_weight(m, 1) > 0]
+        assert not tier2_on_floor_1, (cat, tier2_on_floor_1)

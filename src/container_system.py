@@ -34,6 +34,22 @@ from dice import roll, roll_duration
 # (matches the old chain-5 "Master Thief" tier -- see PLAYABILITY_PASS_AUDIT.md).
 FULL_ITEM_COUNT: tuple[int, int] = (3, 4)
 FULL_BONUS_SLOTS: int = 1
+# The figures above are a GOOD chest's haul. A plain chest holds less: every
+# chest on every floor paid out four or five items, so floor 1 alone (three
+# or four chests) handed over about sixteen. By chest tier:
+#   (lowest count, highest count, bonus slots)
+ITEMS_BY_CHEST_TIER: dict[int, tuple[int, int, int]] = {
+    1: (2, 3, 0),
+    2: (2, 3, 1),
+    3: FULL_ITEM_COUNT + (FULL_BONUS_SLOTS,),
+    4: FULL_ITEM_COUNT + (FULL_BONUS_SLOTS,),
+    5: (4, 5, 1),
+}
+# Most pieces of one kind of gear (armor, weapon, shield) in a single chest:
+# one in a plain chest, two in a good one (a war chest is allowed to be an
+# armory; a wooden box on floor 1 is not).
+MAX_SAME_GEAR_PER_CHEST = 1
+MAX_SAME_GEAR_GOOD_CHEST = 2
 
 # Rare (unique) chance multiplier vs the JSON `rare_chance_chain3` baseline.
 # Matches the old chain-5 multiplier so a successful pick yields the full
@@ -434,7 +450,8 @@ def _pull_unique_from_category(category: str, unique_pool: list, rng) -> object 
 def _generate_loot_from_template(container, dungeon_level: int) -> list:
     """v2.6.6: generate the chest's full authored loot on successful pick.
 
-    Item count = FULL_ITEM_COUNT (3-4 items) + FULL_BONUS_SLOTS (1 bonus common).
+    Item count follows the chest's tier (ITEMS_BY_CHEST_TIER): 2-3 for a
+    plain chest, up to 4-5 plus a bonus for the best.
     Rare (unique) chance = template.rare_chance_chain3 * FULL_RARE_MULT (2x)
     -- matches the pre-v2.6.6 chain-5 "Master Thief" reward tier.
     """
@@ -450,13 +467,15 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
     common_pool = _build_common_pool(template, level_cap)
     unique_pool = _build_unique_pool(template, level_cap)
 
-    cmin, cmax = FULL_ITEM_COUNT
+    chest_tier = max(1, min(5, int(getattr(container, 'tier', 1) or 1)))
+    cmin, cmax, bonus_for_tier = ITEMS_BY_CHEST_TIER[chest_tier]
+    same_gear_cap = MAX_SAME_GEAR_PER_CHEST if chest_tier <= 2 else MAX_SAME_GEAR_GOOD_CHEST
     n_items = rng.randint(cmin, cmax)
 
     base_rare = float(template.get('rare_chance_chain3', 0.0))
     eff_rare = min(1.0, base_rare * FULL_RARE_MULT)
 
-    bonus_slots = FULL_BONUS_SLOTS
+    bonus_slots = bonus_for_tier
 
     loot: list = []
     loot_table = template.get('loot_table', {})
@@ -468,15 +487,28 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
     if unique_pool and rng.random() < eff_rare and n_items > 0:
         rare_slot_index = rng.randrange(n_items)
 
+    def _gear_kind(it) -> str | None:
+        ic = getattr(it, 'item_class', '')
+        return ic if ic in ('armor', 'weapon', 'shield') else None
+
     def draw_common() -> object | None:
-        category = _weighted_pick_category(loot_table, rng)
-        if not category:
-            return None
-        if category == 'gold_bonus':
-            extra = rng.randint(1, 10) * max(1, dungeon_level)
-            container._gold_bonus_accum = getattr(container, '_gold_bonus_accum', 0) + extra
-            return None
-        return _pull_common_from_category(category, common_pool, level_cap, rng)
+        # A chest is a mixed find, not an armory: no more than
+        # MAX_SAME_GEAR_PER_CHEST pieces of any one kind of gear. (Three
+        # suits of armor came out of one floor-1 chest.)
+        for _attempt in range(4):
+            category = _weighted_pick_category(loot_table, rng)
+            if not category:
+                return None
+            if category == 'gold_bonus':
+                extra = rng.randint(1, 10) * max(1, dungeon_level)
+                container._gold_bonus_accum = getattr(container, '_gold_bonus_accum', 0) + extra
+                return None
+            it = _pull_common_from_category(category, common_pool, level_cap, rng)
+            kind = _gear_kind(it) if it is not None else None
+            if kind and sum(1 for x in loot if _gear_kind(x) == kind) >= same_gear_cap:
+                continue
+            return it
+        return None
 
     def draw_unique() -> object | None:
         # Pick a category from the loot table that has a unique counterpart

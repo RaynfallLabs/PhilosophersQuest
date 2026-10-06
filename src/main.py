@@ -6843,7 +6843,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # Mirrors the item-identify branch in
                 # game_magic.py:_identify_item. Per user 2026-05-29 a blind
                 # attempt must carry a cost.
-                self.player.add_effect('stunned', 10)
+                from status_effects import apply_penalty
+                apply_penalty(self.player, 'stunned', 10 + 1)   # add_effect capped this at 3
                 self.add_message(
                     "The Shard turns cold in your palm. Backlash floods "
                     "your mind — you are Stunned (10 turns).",

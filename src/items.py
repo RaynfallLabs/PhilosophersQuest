@@ -2058,6 +2058,17 @@ def material_spawn_weight(material: dict, floor: int) -> float:
     peak_weight = float(material.get('peak_weight', 1.0))
     if peak_weight <= 0:
         return 0.0
+    # Nothing appears before its material's first floor: `min_level` where
+    # the file gives one, else one spread above the peak (the same figure a
+    # finished item reports as its own min_level). This check was missing,
+    # and with the 0.02 floor below every material within reach of the bell
+    # kept a real chance: about one piece of gear in ten on floors 1 to 5
+    # was tier 2, with materials whose home is floor 20 to 38.
+    first = material.get('min_level')
+    if first is None:
+        first = peak_floor - spread
+    if floor < int(first):
+        return 0.0
     distance = floor - peak_floor
     bell = math.exp(-(distance ** 2) / (2 * spread ** 2))
     if bell < 0.005:

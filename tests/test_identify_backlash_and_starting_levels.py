@@ -103,7 +103,8 @@ def test_item_identify_wrong_answer_applies_stunned():
     must apply 'stunned' for 10 turns."""
     import game_magic
     src = inspect.getsource(game_magic.MagicMixin._identify_item)
-    assert "add_effect('stunned', 10)" in src, (
+    # apply_penalty, not add_effect: add_effect caps a stun at 3 turns.
+    assert "apply_penalty(self.player, 'stunned', 10 + 1)" in src, (
         "the wrong-answer branch must apply the 'stunned' status — the "
         "cost that stops blind guess-spam"
     )
@@ -113,7 +114,7 @@ def test_corpse_identify_wrong_answer_applies_stunned():
     """Same backlash on a failed corpse study."""
     import main
     src = inspect.getsource(main.Game._start_corpse_identify)
-    assert "add_effect('stunned', 10)" in src
+    assert "apply_penalty(self.player, 'stunned', 10 + 1)" in src
 
 
 def test_backlash_message_mentions_shard_backlash():
