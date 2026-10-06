@@ -3416,7 +3416,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _tg = int(getattr(_acc, 'tears_of_freya_gold', 1) or 1)
                 _ti = max(1, int(getattr(_acc, 'tears_of_freya_interval', 1) or 1))
                 if _tg > 0 and self.turn_count % _ti == 0:
-                    self.player.gold += _tg
+                    # (This wrote `player.gold`, which does not exist, and
+                    # raised an error while the amulet was worn.) The tears
+                    # are worth a little more the deeper they fall.
+                    self.player_gold = (int(getattr(self, 'player_gold', 0) or 0)
+                                        + _tg * max(1, self.dungeon_level // 20))
                 break  # only first tears_of_freya amulet ticks (no stacking)
 
         # Coat of Cú Chulainn: berserk trigger at low HP, HP cost while active.
@@ -4384,9 +4388,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Lockpicks are no longer needed — player already has the Master
             # Lockpick from char-creation. Treat floor picks as a small gold
             # find so the item isn't a dead drop if old saves still have it.
-            self.player_gold += 5
+            import economy
+            _scrap = max(5, economy.share(self.dungeon_level, economy.SCRAP_SHARE))
+            self.player_gold += _scrap
             self.ground_items.remove(item)
-            self.add_message("You don't need this — your master kit is sufficient. (+5 gold scrap value)", 'info')
+            self.add_message(f"You don't need this — your master kit is sufficient. (+{_scrap} gold scrap value)", 'info')
             self._advance_turn()
             return
         # v2.15.1: seal-of-* artifacts (shatter_on_pickup_with_chronicle).

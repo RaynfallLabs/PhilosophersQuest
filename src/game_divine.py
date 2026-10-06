@@ -238,8 +238,10 @@ class DivineMixin:
             self.add_message("The well takes its price before it gives anything. The edges of the world grow a little dimmer.", 'warning')
 
         if m.get('gold_cost', 0) > 0:
-            self.player_gold = getattr(self, 'player_gold', 0) - m['gold_cost']
-            self.add_message(f"You offer {m['gold_cost']} gold as tribute.", 'info')
+            import economy
+            _cost = economy.written_gold(m['gold_cost'])
+            self.player_gold = getattr(self, 'player_gold', 0) - _cost
+            self.add_message(f"You offer {_cost} gold as tribute.", 'info')
 
         # Consume key item (if any; not cauldron food, not sisyphus boulder)
         if m['key_item'] is not None and altar.mystery_id not in ('cauldron', 'sisyphus'):
@@ -709,14 +711,16 @@ class DivineMixin:
             self.add_message("Something was sharing this grave, and now it is awake!", 'danger')
             self._spawn_at(px, py)
         elif chain == 1:
-            gold = _rng.randint(5, 30)
+            import economy
+            gold = economy.roll_share(_rng, self.dungeon_level, economy.GRAVE_SMALL_SHARE)
             self.player_gold += gold
             self.add_message(f"You find {gold} gold coins buried with the dead.", 'success')
         elif chain == 2:
             self.add_message("You unearth a buried item!", 'success')
             self._spawn_grave_item(px, py)
         elif chain >= 3:
-            gold = _rng.randint(20, 80)
+            import economy
+            gold = economy.roll_share(_rng, self.dungeon_level, economy.GRAVE_RICH_SHARE)
             self.player_gold += gold
             self._spawn_grave_item(px, py)
             self.add_message(f"A rich burial! You find {gold} gold and a buried treasure!", 'success')
@@ -809,7 +813,8 @@ class DivineMixin:
                 for _ in range(2):
                     self._spawn_at(px, py)
         elif chain == 1:
-            gold = _rng.randint(10, 50)
+            import economy
+            gold = economy.roll_share(_rng, self.dungeon_level, economy.THRONE_SHARE)
             self.player_gold += gold
             self.add_message(f"You find {gold} gold wedged in the cushions.", 'success')
         elif chain == 2:

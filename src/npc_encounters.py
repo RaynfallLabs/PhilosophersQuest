@@ -117,7 +117,9 @@ def select_encounter_levels(seed: int | None = None) -> dict:
         level = rng.choice(valid_levels)
         placements[level] = enc
 
-    return placements
+    # Gold costs and rewards at today's scale (economy.py), once, here.
+    import economy
+    return {lvl: economy.price_encounter(enc) for lvl, enc in placements.items()}
 
 
 def get_trigger_item_levels(placements: dict) -> dict:

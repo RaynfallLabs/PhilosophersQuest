@@ -392,8 +392,9 @@ def can_activate(mystery_id: str, player, player_gold: int) -> tuple:
 
     # Gold cost
     if m.get('gold_cost', 0) > 0:
-        if player_gold < m['gold_cost']:
-            return False, f"You need {m['gold_cost']} gold as tribute."
+        _cost = _written_gold(m['gold_cost'])
+        if player_gold < _cost:
+            return False, f"You need {_cost} gold as tribute."
 
     # Key item requirement
     if m['key_item'] is not None and mystery_id != 'sisyphus':
@@ -506,8 +507,9 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         # Apply fail_reward if any
         fail_rew = m.get('fail_reward', {})
         if 'gold' in fail_rew:
-            game.player_gold = getattr(game, 'player_gold', 0) + fail_rew['gold']
-            game.add_message(f"You find {fail_rew['gold']} gold inside.", 'loot')
+            _g = _written_gold(fail_rew['gold'])
+            game.player_gold = getattr(game, 'player_gold', 0) + _g
+            game.add_message(f"You find {_g} gold inside.", 'loot')
         if m['fail_text']:
             game.add_message(m['fail_text'], 'warning')
         return
@@ -530,7 +532,9 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
 
     # --- Gold ---
     if 'gold' in reward:
-        game.player_gold = getattr(game, 'player_gold', 0) + reward['gold']
+        _g = _written_gold(reward['gold'])
+        game.player_gold = getattr(game, 'player_gold', 0) + _g
+        game.add_message(f"+{_g} gold.", 'loot')
 
     # --- All quiz timer bonus (Mimir) ---
     if 'all_timer_bonus' in reward:
@@ -605,45 +609,13 @@ _MERCHANT_STOCK_COUNTS = [
     (51, 99,  6),
 ]
 
-# What a floor's worth of gold looks like (measured over simulated runs:
-# about 440 gold a floor on floors 1-10, 1,200 on 11-20, 3,800 on 41-50,
-# 7,800 on 91-100). Prices are set against this, so one floor's income buys
-# one consumable, an accessory takes about two floors and a named unique
-# about four, at every depth.
-def _floor_income(level: int) -> float:
-    return 40.0 * (max(1, min(100, int(level or 1))) ** 1.15)
-
-
-# Share of a floor's income, by item class.
-_PRICE_SHARE = {
-    'potion': 0.15, 'food': 0.10, 'ammo': 0.10,
-    'scroll': 0.50, 'wand': 0.50, 'spellbook': 0.80,
-    'weapon': 0.60, 'armor': 0.60, 'shield': 0.60,
-    'accessory': 1.50,
-}
-_UNIQUE_GEAR_SHARE = 3.0
-
-
-def _merchant_price(item, level: int = 1) -> int:
-    """Gold cost of one merchant item on floor `level`.
-
-    The old price was 20 x class x tier x WEIGHT with no floor term. Weight
-    made the strongest things in the game the cheapest (a ring of
-    regeneration 12 gold, a scroll of time stop 15, a potion of full healing
-    9), and nothing scaled with depth, so a run's 400,000 gold had nowhere
-    to go.
-    """
-    tier = getattr(item, 'quiz_tier', None) or getattr(item, 'tier', 1) or 1
-    try:
-        tier = max(1, min(5, int(tier)))
-    except (TypeError, ValueError):
-        tier = 1
-    ic = getattr(item, 'item_class', 'misc')
-    share = _PRICE_SHARE.get(ic, 0.5)
-    if ic in ('weapon', 'armor', 'shield') and getattr(item, 'is_unique', False):
-        share = _UNIQUE_GEAR_SHARE
-    price = _floor_income(level) * share * (0.6 + 0.2 * tier)
-    return max(5, int(round(price / 5.0)) * 5)
+# Prices live in economy.py with every other gold rule. These names stay for
+# the callers and tests that already use them.
+from economy import (MERCHANT_SHARE as _PRICE_SHARE,            # noqa: E402,F401
+                     UNIQUE_GEAR_SHARE as _UNIQUE_GEAR_SHARE,   # noqa: F401
+                     floor_income as _floor_income,             # noqa: F401
+                     merchant_price as _merchant_price,
+                     written_gold as _written_gold)
 
 
 class MerchantNPC:

@@ -1157,7 +1157,7 @@ class MenuMixin:
                 if not getattr(pl, '_gold_offering_used_this_floor', False):
                     powers.append(('armor_gold_offering', {
                         'label': 'Gilgamesh\'s Bribe',
-                        'desc': 'Toss 1d100 gold at a visible non-boss monster. It skips its next turn. Once per floor.',
+                        'desc': 'Toss a purse of gold at a visible non-boss monster. It stands aside for a few turns. Once per floor.',
                         'cooldown': 0,
                         'uses': 1,
                     }, 1, 0))
@@ -1636,7 +1636,8 @@ class MenuMixin:
         return False  # don't defer; we already moved
 
     def _activate_gold_offering(self) -> bool:
-        """Pay 1d100 gold to make a visible non-boss INT-5+ monster skip its next turn.
+        """Pay a share of the floor's gold (economy.BRIBE_SHARE) to make a visible
+        non-boss INT-5+ monster stand aside for economy.BRIBE_TURNS turns.
 
         Lore: Gilgamesh was a king first — the bribe-mechanic captures that.
         Picks the closest qualifying visible monster automatically.
@@ -1666,14 +1667,20 @@ class MenuMixin:
             return False
         candidates.sort(key=lambda t: t[0])
         target = candidates[0][1]
-        cost = _r.randint(1, 100)
-        if pl.gold < cost:
+        import economy
+        # (This read `pl.gold`, which does not exist: gold is kept on the
+        # game. The bribe raised an error every time it was tried.)
+        _purse = int(getattr(self, 'player_gold', 0) or 0)
+        cost = economy.roll_share(_r, self.dungeon_level, economy.BRIBE_SHARE)
+        if _purse < cost:
             self.add_message(
-                f"You need {cost} gold to bribe {the_name(target, lower=True)}. You have {pl.gold}.",
+                f"You need {cost} gold to bribe {the_name(target, lower=True)}. You have {_purse}.",
                 'warning')
             return False
-        pl.gold -= cost
-        target.add_effect('paralyzed', 1)
+        self.player_gold = _purse - cost
+        # (One turn was ticked away before the monster ever lost an action.)
+        target.status_effects['paralyzed'] = max(
+            target.status_effects.get('paralyzed', 0), economy.BRIBE_TURNS)
         pl._gold_offering_used_this_floor = True
         self.add_message(
             f"You toss {cost} gold at {the_name(target, lower=True)}'s feet. "

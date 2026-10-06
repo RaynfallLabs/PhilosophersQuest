@@ -45,6 +45,17 @@ Built, tuned and committed locally. Not pushed. Not play-tested: the outcome fig
 - **How long a deep attack feels.** The clock is 30 to 43 seconds from floor 60, and a deep floor asks about 380 sums. Space strikes early.
 - **Real answer speed.** If your kids are faster or slower than my guesses on tier 3 to 5 sums, the deep floors move with them. `tools/balance/scale_monsters.py` re-scales in one command once we know.
 
+## 0b. The gold economy (2026-10-05)
+
+One module, `src/economy.py`, now holds every gold rule.
+
+- **Income is a line:** a floor pays about 150 + 90 x floor in gold (235 on floor 1, 1,950 on floor 20, 8,250 on floor 90), measured from the real generator. The old price formula matched that deep down and was six times too low at the top.
+- **Merchant:** unchanged shares (a consumable is about a sixth of a floor, an accessory about two floors, a named unique about four), now against the right income. A floor-1 potion is 30 gold, not 5.
+- **Encounters and mysteries:** their written gold costs and rewards were about 3% of a floor's income at every depth, so paying was never a decision. They are multiplied by 6 when a run's encounters are chosen (10 to 35% of a floor), and a price quoted in an option's label is rewritten to match.
+- **Found gold** (graves, thrones) and the lockpick scrap value follow the floor instead of being flat.
+- **Bribe (Gilgamesh):** costs 5 to 15% of the floor's income and holds the monster 3 turns. It was 1 to 100 gold for one turn.
+- **Two bugs fixed:** the bribe and the Brisingamen amulet both used a gold counter that does not exist, so each raised an error when used.
+
 ## 1. Fixed this round
 
 | Your point | What was done | Commit |

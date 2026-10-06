@@ -166,7 +166,7 @@ FLAVOR_ENCOUNTERS: list[dict] = [
         'text': (
             "A dwarf sits beside a portable anvil, hammer resting across his knees. "
             "\"I can sharpen that blade of yours,\" he says, eyeing your weapon. "
-            "\"Won't cost much. Eighty gold and I'll put an edge on it "
+            "\"Won't cost much. A purse of gold and I'll put an edge on it "
             "that'll last the rest of your descent — or your life, "
             "whichever ends first.\""
         ),
@@ -304,4 +304,6 @@ def select_flavor_encounters(level_count: int = 100) -> dict[int, dict]:
             selected[lv] = enc
             placed[enc['tag']] = lv
 
-    return selected
+    # Gold costs and rewards at today's scale (economy.py), once, here.
+    import economy
+    return {lvl: economy.price_encounter(enc) for lvl, enc in selected.items()}
