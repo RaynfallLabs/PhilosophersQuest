@@ -1712,7 +1712,7 @@ _QUIRK_EFFECTS = {
     'athena':        "WIS +1.",
     'loki':          "WIS +2",
     'thor':          "That weapon gains +2 enchant bonus permanently.",
-    'beowulf':       "Unarmed attacks deal +5 base damage.",
+    'beowulf':       "Unarmed attacks deal bonus base damage that grows with depth.",
     'norns':         "Recall lore cooldown reduced by 50%.",
     'jormungandr':   "With that weapon, any landed attack counts as +1 chain.",
     'shiva':         "WIS +1.",

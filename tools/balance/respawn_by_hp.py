@@ -42,11 +42,11 @@ ROOT = Path(__file__).resolve().parents[2]
 MONSTERS_PATH = ROOT / "data" / "monsters.json"
 
 # CURVE.md section 4 anchor medians (same table rebase_monster_hp.py used).
-HP_ANCHORS = {1: 22, 10: 79, 20: 231, 30: 504, 40: 1000, 50: 1656, 60: 2800,
-              70: 4215, 80: 6160, 90: 7735, 100: 8640}
+HP_ANCHORS = {1: 22, 10: 79, 20: 231, 30: 481, 40: 903, 50: 1412, 60: 2246,
+              70: 3372, 80: 4928, 90: 6188, 100: 6912}
 # Midpoints of the CURVE.md "Monster band ... damage" ranges.
-DMG_ANCHORS = {1: 2.4, 10: 4.82, 20: 6.62, 30: 8.42, 40: 11.95, 50: 18.37,
-               60: 24.45, 70: 26.12, 80: 27.3, 90: 27.99, 100: 28.67}
+DMG_ANCHORS = {1: 1.32, 10: 2.54, 20: 3.09, 30: 5.84, 40: 12.25, 50: 20.19, 60: 28.28,
+               70: 29.64, 80: 30.28, 90: 30.34, 100: 30.34}
 
 # ---------------------------------------------------------------------------
 # Lore-driven HP corrections (2026-10 content pass).
@@ -121,9 +121,9 @@ HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
 # that, and the simulator measured every gate boss dying in six to nine
 # attacks. Sized now for about twenty attacks from a prepared player with
 # the quest layer (CURVE.md principle 4: a boss is 20 to 50 hits).
-GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 9000, "medusa_gorgon": 24000,
-                                "fafnir_dragon": 56000, "fenrir_wolf": 83000,
-                                "abaddon_destroyer": 108000}
+GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 9000, "medusa_gorgon": 21700,
+                                "fafnir_dragon": 44900, "fenrir_wolf": 66400,
+                                "abaddon_destroyer": 86400}
 # (2026-10-05, wisdom from depth + tiered weapon damage: the figures above are
 # the earlier 1,500 / 2,400 / 4,000 / 5,200 / 6,000 carried through the same
 # HP schedule as ordinary monsters and doubled, which the simulator puts at

@@ -2,37 +2,48 @@
 
 Date: 2026-10-05. Sections 1 and 2 are **done and committed locally**. Sections 3 to 6 are **proposals**: nothing in them is built. All balance figures come from the simulator, and every figure involving maths speed rests on my guess of 1.8 / 2.6 / 4.5 / 6 / 7 seconds per answer for tiers 1 to 5. Nobody has timed a child.
 
-## 0. Built after this plan was written (2026-10-05, later the same day)
+## 0. Current state (2026-10-05, final pass of the day)
 
-You chose +1 Wisdom every 3 floors and a prayer menu. Both are built, and the monsters were re-sized around them. **Sections 3 to 6 below are the earlier proposals and are partly superseded by this section.** Not play-tested.
+Built, tuned and committed locally. Not pushed. Not play-tested: the outcome figures are simulated and rest on guessed answer speeds. **Sections 3 to 6 below are the earlier proposals; where they disagree with this section, this section is what the game does.**
 
-**Built**
+**What the game does now**
 
-- **Wisdom from depth:** +1 for every 3 floors of new depth (10 at the start, 16 on floor 20, 23 on 40, 30 on 60, 43 on 100). The clock is still exactly wisdom in seconds.
-- **The prayer key opens a menu:** "Lord, Have Mercy" (the existing prayer, unchanged) or "Michael, Guide My Hand". More can be added later and gated by karma (`src/prayers.py`).
-- **Michael, Guide My Hand** lends wisdom as a share of what you have, by theology chain: +30% for 6 turns at chain 1, +60% for 10 at chain 3, +100% for 15 at chain 5 (+120% for 18 at an altar). A full chain doubles the clock. Prayed at a quarter health or less it also shields you for a few turns. Same cooldown as any prayer; backing out of the menu costs nothing.
-- **Each weapon tier is a real step up:** base damage x1.9 / x3.1 / x3.5 / x4.9 for tiers 2 to 5. Before, a steel sword out-damaged tier-2 and tier-3 metal.
-- **Monsters re-sized** for stronger weapons and longer clocks: HP x2 on floor 1 rising to x9 on floor 100; damage halved on floor 1 (most of my earlier early-floor raise undone) rising to x1.4 deep. Gate bosses 9,000 / 24,000 / 56,000 / 83,000 / 108,000 HP. Wand and spell damage scaled by tier to keep pace; healing spells were not.
+- **Wisdom from depth:** +1 for every 3 floors of new depth (16 on floor 20, 23 on 40, 30 on 60, 43 on 100). The combat clock is exactly wisdom in seconds, plus earned effects.
+- **The prayer key opens a menu** (`src/prayers.py`; more prayers can be added and gated by karma):
+  1. **Lord, Have Mercy:** the existing prayer, unchanged.
+  2. **Michael, Guide My Hand:** wisdom lent for a short burst, as a share of your own.
+
+| Theology chain | Wisdom lent | Lasts |
+|---|---|---|
+| 1 | +30% | 3 turns |
+| 2 | +45% | 4 turns |
+| 3 | +60% | 5 turns |
+| 4 | +80% | 6 turns |
+| 5 | +100% (the clock doubles) | 8 turns |
+| 5 at an altar | +120% | 10 turns |
+
+  Prayed at a quarter health or less: 2 more turns and a 3-turn shield. Karma moves the length by one turn at most. Same cooldown as any prayer.
+- **Each weapon tier is a real step up:** base damage x1.9 / x3.1 / x3.5 / x4.9 for tiers 2 to 5.
+- **Monsters and bosses re-sized** to match (history in `tools/balance/SCALE_LOG.md`). Gate bosses: Asterion 9,000 HP, Medusa 21,700, Fafnir 44,900, Fenrir 66,400, Abaddon 86,400.
+- **Every fixed damage number follows the dungeon's scale** (`floor_curve.scaled`): pets, hero and quirk powers, thrown and trap damage, weapon bonus dice, scrolls, auras, bare hands, monster poison and monster regeneration. Wands and spells scale by tier. Healing does not scale, because the player's hit points did not.
 
 **Simulated result** (good kid: 95% right on tier 1, 90% on tier 2, 85% below; 200 runs, plus or minus 7)
 
 | Player | Reaches floor 20 | Floor 40 | Floor 60 | Floor 80 | Floor 100 | Wins |
 |---|---|---|---|---|---|---|
-| Prepared, uses Guide My Hand on bosses | 96% | 83% | 60% | 54% | 40% | 22% |
-| Prepared, never uses it | 97% | 87% | 70% | 57% | 37% | 13% |
-| Casual (one meal a floor, skips boss quests) | 62% | 0% | | | | 0% |
+| Prepared: cooks, wears what drops, does the boss quests, prays for the hand at bosses | 100% | 98% | 69% | 55% | 44% | 26% |
+| Patient: the same, and rests fully between fights | 98% | 96% | 82% | 80% | 78% | 50% |
+| Casual: one meal a floor, skips the quests | 92% | 0% | | | | 0% |
 
-- Kills take 1.2 attacks on floors 1 to 19 and about 2 from floor 40 down.
-- Gate bosses with the quest: 15 to 21 attacks with the prayer, 20 to 26 without. Without the quest, Medusa, Fafnir and Fenrir kill 30 to 50%.
-- The prayer is worth about a quarter off a boss fight and takes Abaddon from 82% deaths to 67%.
+- **Low floors:** nobody prepared dies before floor 20, and a casual kid gets there nine times in ten and beats Asterion nine times in ten. Kills take about 1.2 attacks.
+- **The twenties:** a casual kid fades out between floors 22 and 30 (typically around 27), which is the design document's "past Asterion, loses before Medusa".
+- **Floor 40 down:** about 2% deaths a floor at 41 to 59, 5% at 61 to 79, 11% at 81 to 99 for the prepared kid; about 1% or less for the patient one. Kills take about 1.7 attacks.
+- **Bosses with the quest:** 13 to 19 attacks; Medusa kills about 5%, Fafnir about 10%, Fenrir about 1%. **Without the quest:** Medusa 71%, Fafnir 62%, Fenrir 39%. Abaddon kills 40 to 60% of those who reach him.
 
-**Known rough edges**
+**Two things only play can settle**
 
-- **Floors 81 to 99 are still too deadly** (about 15% deaths a floor for the prepared kid).
-- **The casual player hits a wall at floor 20.** Floors 1 to 19 cost them about 4% a floor, and Asterion kills 30 to 47%. If "pretty easily" should cover a casual kid too, the early floors and Asterion need easing further.
-- **Deep attacks are long.** The clock is 30 to 43 seconds from floor 60, so a deep floor asks about 400 sums. Striking early with Space is the player's way out.
-- **Numbers got big.** Deep weapons hit for thousands and Abaddon has 108,000 HP. Anything with a fixed number that was sized for the old scale is now out of proportion deep down: Abaddon's 15 HP regeneration, flat bonus damage on some uniques, pets, thrown potions. I scaled wands and spells; the rest is not yet audited.
-- Everything still rests on guessed answer speeds.
+- **How long a deep attack feels.** The clock is 30 to 43 seconds from floor 60, and a deep floor asks about 380 sums. Space strikes early.
+- **Real answer speed.** If your kids are faster or slower than my guesses on tier 3 to 5 sums, the deep floors move with them. `tools/balance/scale_monsters.py` re-scales in one command once we know.
 
 ## 1. Fixed this round
 

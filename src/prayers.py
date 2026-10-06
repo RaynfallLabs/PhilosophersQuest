@@ -56,17 +56,19 @@ def by_id(prayer_id: str) -> dict:
 # effective chain (theology chain, +1 at an altar) -> (share, least, turns)
 # ---------------------------------------------------------------------------
 GUIDE_TABLE: dict[int, tuple[float, int, int]] = {
-    1: (0.30, 3, 6),
-    2: (0.45, 5, 8),
-    3: (0.60, 6, 10),
-    4: (0.80, 8, 12),
-    5: (1.00, 10, 15),
-    6: (1.20, 12, 18),
+    1: (0.30, 3, 3),
+    2: (0.45, 5, 4),
+    3: (0.60, 6, 5),
+    4: (0.80, 8, 6),
+    5: (1.00, 10, 8),
+    6: (1.20, 12, 10),
 }
+# A burst, not a state of being: a full chain is eight of your turns. (The
+# first cut ran 6 to 18 turns, which covered most of a boss fight.)
 # A prayer made at or below this share of health is heard differently.
 DESPERATE_HP = 0.25
-DESPERATE_SHIELD_TURNS = 4
-DESPERATE_EXTRA_TURNS = 3
+DESPERATE_SHIELD_TURNS = 3
+DESPERATE_EXTRA_TURNS = 2
 
 
 def guide_my_hand(wis: int, effective_chain: int, karma: int = 0,
@@ -78,7 +80,7 @@ def guide_my_hand(wis: int, effective_chain: int, karma: int = 0,
     share, least, turns = GUIDE_TABLE[min(effective_chain, max(GUIDE_TABLE))]
     bonus = max(least, int(round(max(1, wis) * share)))
     # Karma lengthens or shortens the gift a little; it never removes it.
-    turns = max(3, turns + max(-3, min(3, int(karma) // 3)))
+    turns = max(2, turns + max(-1, min(1, int(int(karma) / 5))))
     if desperate:
         turns += DESPERATE_EXTRA_TURNS
     return bonus, turns

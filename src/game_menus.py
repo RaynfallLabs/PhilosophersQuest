@@ -1407,7 +1407,9 @@ class MenuMixin:
 
         elif pid == 'elder_scream':
             from dice import roll as _es_roll
-            base = _es_roll('4d8')
+            from floor_curve import scaled as _floor_scaled
+            # 4d8 is old-scale: size it to the floor's monsters.
+            base = _floor_scaled(_es_roll('4d8'), self.dungeon_level)
             scaled = self._int_scaled_damage(base)
             visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             kills = 0

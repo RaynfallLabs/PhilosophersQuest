@@ -3552,7 +3552,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                     and not (_mm.x == self.player.x and _mm.y == self.player.y)]
                     if _adj_targets:
                         _t = random.choice(_adj_targets)
-                        _dmg = random.randint(1, 6)
+                        from floor_curve import scaled as _floor_scaled
+                        # 1d6 is old-scale: size it to the floor's monsters.
+                        _dmg = _floor_scaled(random.randint(1, 6), self.dungeon_level)
                         _t.take_damage(_dmg, 'lightning')
                         self.add_message(
                             f"Boots of Thor — lightning arcs into the {_t.name} for {_dmg}!",
@@ -4160,7 +4162,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Apply damage (some traps have damage 0; those are status-only).
         dmg_str = str(trap.get('damage', '0'))
         if dmg_str and dmg_str != '0':
-            raw = _dice_roll(dmg_str)
+            from floor_curve import scaled as _floor_scaled
+            # Trap dice are sized for the player's hit points, which did not
+            # grow with the monsters': size them to the floor for a monster.
+            raw = _floor_scaled(_dice_roll(dmg_str), self.dungeon_level)
             monster.take_damage(raw)
 
         # Monster-appropriate status applications (skip player-only effects).

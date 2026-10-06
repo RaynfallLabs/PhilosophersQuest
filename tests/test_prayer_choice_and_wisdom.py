@@ -80,21 +80,24 @@ def test_lent_wisdom_survives_a_save_and_old_saves_load():
 # --------------------------------------------------------- the prayer itself
 
 def test_guide_my_hand_is_a_real_bonus_at_every_depth():
-    """A full chain doubles the clock whatever the player's wisdom."""
+    """A full chain doubles the clock whatever the player's wisdom, and it is
+    a burst: eight turns for a full chain, ten at an altar, never longer."""
     for wis in (10, 23, 43):
         bonus5, turns5 = prayers.guide_my_hand(wis, 5)
-        assert bonus5 >= wis and turns5 >= 12
-        prev = 0
+        assert bonus5 >= wis and turns5 == 8
+        prev_bonus = prev_turns = 0
         for chain in range(1, 7):
             bonus, turns = prayers.guide_my_hand(wis, chain)
-            assert bonus > prev and turns >= 6
-            prev = bonus
+            assert bonus > prev_bonus and turns > prev_turns
+            assert 3 <= turns <= 10
+            prev_bonus, prev_turns = bonus, turns
     assert prayers.guide_my_hand(10, 1)[0] >= 3
     assert prayers.guide_my_hand(30, 0) == (0, 0)
-    # karma bends the time a little and never takes the gift away
-    assert prayers.guide_my_hand(20, 3, karma=9)[1] > prayers.guide_my_hand(20, 3)[1]
-    assert prayers.guide_my_hand(20, 3, karma=-10)[1] >= 3
-    assert prayers.guide_my_hand(20, 3, desperate=True)[1] > prayers.guide_my_hand(20, 3)[1]
+    # karma bends the time by a turn at most and never takes the gift away
+    assert prayers.guide_my_hand(20, 3, karma=9)[1] == prayers.guide_my_hand(20, 3)[1] + 1
+    assert prayers.guide_my_hand(20, 3, karma=-10)[1] == prayers.guide_my_hand(20, 3)[1] - 1
+    assert prayers.guide_my_hand(20, 3, karma=-2)[1] == prayers.guide_my_hand(20, 3)[1]
+    assert prayers.guide_my_hand(20, 3, desperate=True)[1] == prayers.guide_my_hand(20, 3)[1] + 2
 
 
 def test_the_menu_offers_mercy_and_michael():

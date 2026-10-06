@@ -25,6 +25,7 @@ DRAIN_CON_FLOOR = 3
 # named foes bleed far more slowly.
 BLEED_DIVISOR = 15
 BURN_DIVISOR = 20
+POISON_DIVISOR = 40
 NAMED_DOT_DIVISOR = 100
 # Longest a hard control effect can hold a named foe, and what counts as one.
 NAMED_FOE_CONTROL_CAP = 2
@@ -411,7 +412,9 @@ class Monster:
                 if name == 'bleeding':
                     bleeding_dmg = max(1, self.max_hp // self._dot_divisor(BLEED_DIVISOR))
                 elif name == 'poisoned':
-                    poison_dmg = 1
+                    # A share of max HP like bleed and burn (it was a flat 1,
+                    # which stopped meaning anything once HP was sized to depth).
+                    poison_dmg = max(1, self.max_hp // self._dot_divisor(POISON_DIVISOR))
                 elif name == 'diseased':
                     disease_tick = True
                 elif name == 'burning':

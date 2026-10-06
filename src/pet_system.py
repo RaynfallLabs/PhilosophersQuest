@@ -326,15 +326,23 @@ class Pet:
             return self.gain_xp(1)
         return []
 
-    def gain_xp_from_kill(self, monster_max_hp: int) -> list[str]:
+    def gain_xp_from_kill(self, monster_max_hp: int, floor: int | None = None) -> list[str]:
         """Award XP for a kill, scaled by monster strength.
 
         Formula: 3 + max_hp // 10 (so a 10-HP F1 monster grants 4 XP; a
         200-HP F90 monster grants 23 XP). Combined with passive ticks and
         late-pickup catch-up, pets level steadily through normal play.
+
+        The formula was written for the old monster HP. Given the `floor` of
+        the kill, the HP is taken back to that scale first, so pets level at
+        the pace they always did instead of three to five times faster.
         """
         self.kills_count += 1
-        xp = 3 + max(0, int(monster_max_hp)) // 10
+        hp = max(0, int(monster_max_hp))
+        if floor:
+            from floor_curve import power_scale
+            hp = int(hp / power_scale(floor))
+        xp = 3 + hp // 10
         return self.gain_xp(xp)
 
     def apply_late_pickup_bonus(self, floor: int) -> None:

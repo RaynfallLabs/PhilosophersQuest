@@ -170,7 +170,7 @@ QUIRK_DESC = {
     'athena':        f"Wisdom +1. {_WIS} You have looked on a host of creatures, and nothing in the dark is strange to you now.",
     'loki':          f"Wisdom +2. {_WIS} Wearing what was meant to harm you has taught you how harm is made.",
     'thor':          "The weapon you kept faith with gains +2 enchantment for good. It has drunk enough battle at your side to remember it.",
-    'beowulf':       "Your bare-handed attacks deal +5 base damage. You proved you never needed the sword.",
+    'beowulf':       "Your bare-handed attacks deal bonus base damage that grows with depth. You proved you never needed the sword.",
     'norns':         "Recall Lore is ready again in half the usual time. The thread of the past comes to your hand more easily each time you reach for it.",
     'jormungandr':   "With that weapon, every attack that lands at all counts as one link longer than you earned. The serpent has its tail: the end of one strike is the start of the next.",
     'shiva':         f"Wisdom +1. {_WIS} You lived inside the illusion long enough to see how it is put together.",

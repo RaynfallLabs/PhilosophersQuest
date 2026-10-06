@@ -47,6 +47,7 @@ from typing import TYPE_CHECKING
 import pygame
 
 import sound_system as _snd
+from floor_curve import scaled as _floor_scaled
 from game_helpers import wand_tier_duration
 from game_states import (
     STATE_PLAYER, STATE_QUIZ,
@@ -1064,7 +1065,8 @@ class MagicMixin:
                 ('regen',      lambda: (self.player.add_effect('regenerating', 20),
                                         self.add_message("Ground-up hero bones restore your vitality!", 'success'))),
                 ('blast',      lambda: [
-                    (m.take_damage(_rng.randint(5, 15)), self._on_monster_killed(m) if not m.alive else None)
+                    (m.take_damage(_floor_scaled(_rng.randint(5, 15), self.dungeon_level)),
+                     self._on_monster_killed(m) if not m.alive else None)
                     for m in list(self.monsters) if m.alive and (m.x, m.y) in self.visible
                 ] or self.add_message("Chaotic energy blasts all visible enemies!", 'success')),
             ])
@@ -2209,7 +2211,8 @@ class MagicMixin:
                 # v2.15+ audit sync: chain retired. Fossil expression
                 # `INT * chain * 4` pinned at chain=5 (INT * 20).
                 is_boss = _is_big_foe(target)
-                threshold = self.player.INT * 20
+                # INT * 20 is an old-scale HP figure: size it to the floor.
+                threshold = _floor_scaled(self.player.INT * 20, self.dungeon_level)
                 if not is_boss and target.hp <= threshold:
                     target.alive = False
                     target.hp = 0
@@ -2220,7 +2223,7 @@ class MagicMixin:
                     self.add_message(
                         f"{the_name(target)} resists the death-word but staggers!", 'warning')
                     # v2.15+ audit sync: chain retired -> `INT * chain` pinned at INT * 5.
-                    target.take_damage(self.player.INT * 5)
+                    target.take_damage(_floor_scaled(self.player.INT * 5, self.dungeon_level))
                 else:
                     self.add_message(
                         f"{the_name(target)} ({target.hp} HP) is too strong for the death-word "
@@ -2256,7 +2259,11 @@ class MagicMixin:
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r
-                scaled = max(1, int((_r(power) if power else 6) * chain_scale))
+                # No _spell_damage here, so the dice are old-scale: size them
+                # to the floor's monsters.
+                scaled = _floor_scaled(
+                    max(1, int((_r(power) if power else 6) * chain_scale)),
+                    self.dungeon_level)
                 actual = target.take_damage(scaled)
                 self.add_message(f"The {effect.replace('_', ' ')} hits {the_name(target, lower=True)} for {actual} dmg!", 'success')
                 if not target.alive:
@@ -2868,7 +2875,10 @@ class MagicMixin:
             # Chain ladder (Path A): scales damage multiplier on the base roll.
             base_dmg = _roll_e(scroll.power) if scroll.power else 12
             _chain_mult = [1.0, 1.8, 3.0, 5.0, 8.0][_tstep]
-            scaled = self._int_scaled_damage(int(base_dmg * _chain_mult))
+            # Scroll dice are old-scale (no MAGIC_TIER_MULT on this path):
+            # size them to the floor's monsters.
+            scaled = self._int_scaled_damage(
+                _floor_scaled(int(base_dmg * _chain_mult), self.dungeon_level))
             victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in victims:
                 m.take_damage(scaled)

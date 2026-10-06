@@ -53,6 +53,7 @@ import random
 
 import pygame  # noqa: F401  -- kept for parity with sibling mixins; no direct use
 
+import floor_curve
 import sound_system as _snd
 from combat import player_attack
 from game_helpers import throw_crosses_tile
@@ -1206,7 +1207,8 @@ class CombatMixin:
                 from combat import get_cone_tiles
                 # Damage scales with chain: base 3d6, +1d6 per chain level
                 dice = f'{2 + chain}d6'
-                base = _fb_roll(dice)
+                # Old-scale dice, sized to the floor's monsters.
+                base = floor_curve.scaled(_fb_roll(dice), self.dungeon_level)
                 scaled = self._int_scaled_damage(base)
                 tcx, tcy = self._stuffie_cone_target
                 px, py = pl.x, pl.y
@@ -1222,7 +1224,7 @@ class CombatMixin:
                             kills += 1
                 self.add_message(
                     "The Charmander Stuffie glows white-hot! "
-                    f"You breathe a cone of fire! ({dice} damage, chain {chain})", 'success')
+                    f"You breathe a cone of fire! (chain {chain})", 'success')
                 if hits:
                     self.add_message(
                         f"{hits} creatures engulfed for {scaled} fire damage! ({kills} slain)", 'combat')
@@ -1670,6 +1672,7 @@ class CombatMixin:
         # Oathkeeper adjacent-pet work on bow shots too.
         self.player._combat_monsters_ref = self.monsters
         self.player._combat_pets_ref = self.pets
+        self.player._combat_game_ref = self
         self.player._combat_player_taken_damage = False
         _alive_before = {id(m) for m in self.monsters if m.alive}
         # ranged=True explicitly: slings pass ammo=None (infinite ammo), and
@@ -2096,7 +2099,7 @@ class CombatMixin:
                     and (m.x, m.y) != _pos_before
                     and (m.x, m.y) in getattr(self.dungeon, 'pits', set())):
                 from dice import roll as _pit_roll
-                pit_dmg = _pit_roll('1d4')
+                pit_dmg = floor_curve.scaled(_pit_roll('1d4'), self.dungeon_level)
                 m.hp -= pit_dmg
                 if m.hp <= 0:
                     m.alive = False
@@ -2240,7 +2243,7 @@ class CombatMixin:
 
                 # Fire shield: reflect melee damage back
                 if self.player.has_effect('fire_shield') and dmg > 0:
-                    reflect_dmg = random.randint(2, 9)
+                    reflect_dmg = floor_curve.scaled(random.randint(2, 9), self.dungeon_level)
                     m.hp -= reflect_dmg
                     self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
                     if m.hp <= 0:
@@ -2248,7 +2251,7 @@ class CombatMixin:
                         self._on_monster_killed(m)
                 # Cold shield: reflect melee damage back
                 if self.player.has_effect('cold_shield') and dmg > 0:
-                    reflect_dmg = random.randint(2, 9)
+                    reflect_dmg = floor_curve.scaled(random.randint(2, 9), self.dungeon_level)
                     m.hp -= reflect_dmg
                     self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
                     if m.hp <= 0 and m.alive:
@@ -2579,7 +2582,9 @@ class CombatMixin:
         """Apply a pet special's effects (damage + status) per targeting mode."""
         import random as _rng
         targeting = special.get('targeting', 'single')
-        base_dmg = pet.base_damage
+        # Pet damage comes from the pet's level, an old-scale number: size it
+        # to the floor's monsters.
+        base_dmg = floor_curve.scaled(pet.base_damage, self.dungeon_level)
         dmg_mult = float(special.get('damage_mult', 1.5))
         status = special.get('status')
         status_chance = float(special.get('status_chance', 0.0))
@@ -2618,7 +2623,7 @@ class CombatMixin:
                     cur = m.status_effects.get(status, 0)
                     m.status_effects[status] = max(cur, status_duration)
                 if not m.alive:
-                    for k_msg in pet.gain_xp_from_kill(pre_max):
+                    for k_msg in pet.gain_xp_from_kill(pre_max, self.dungeon_level):
                         self.add_message(k_msg, 'success')
                     self._on_monster_killed(m)
                 hit_count += 1
@@ -2637,7 +2642,7 @@ class CombatMixin:
                 cur = m.status_effects.get(status, 0)
                 m.status_effects[status] = max(cur, status_duration)
             if not m.alive:
-                for k_msg in pet.gain_xp_from_kill(pre_max):
+                for k_msg in pet.gain_xp_from_kill(pre_max, self.dungeon_level):
                     self.add_message(k_msg, 'success')
                 self._on_monster_killed(m)
 
@@ -2706,7 +2711,9 @@ class CombatMixin:
                     continue
                 target = result[1] if len(result) > 1 else None
                 if action == 'attack' and target.alive:
-                    dmg = pet.get_attack_damage(quiz_acc)
+                    # Old-scale (level-based) damage, sized to the floor.
+                    dmg = floor_curve.scaled(pet.get_attack_damage(quiz_acc),
+                                             self.dungeon_level)
                     pre_max = target.max_hp
                     actual = target.take_damage(dmg)
                     if getattr(pet, 'is_dad', False):
@@ -2717,7 +2724,7 @@ class CombatMixin:
                         self.add_message(
                             f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat')
                     if not target.alive:
-                        for k_msg in pet.gain_xp_from_kill(pre_max):
+                        for k_msg in pet.gain_xp_from_kill(pre_max, self.dungeon_level):
                             self.add_message(k_msg, 'success')
                         self._on_monster_killed(target)
 

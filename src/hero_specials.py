@@ -13,14 +13,31 @@ hook sites in combat.py, player.py, game_menus.py, and main.py.
 """
 from __future__ import annotations
 import random
+from floor_curve import scaled as _floor_scaled, target_hp as _target_hp
 from geom import monster_at_tile
 
 
 def is_boss_or_huge(monster) -> bool:
-    """Standard boss-immunity check, mirroring game_magic.py."""
+    """Standard boss-immunity check, mirroring game_magic.py.
+
+    "Huge" was a flat `max_hp > 500`. Once monster HP was sized to depth that
+    made every ordinary monster past floor 30 huge: the crowd-control specials
+    did nothing and the damage ones were halved on the floors they are used
+    on. Huge is now 500 HP or twice an ordinary monster of its floor,
+    whichever is more.
+    """
     if monster is None:
         return False
-    return bool(getattr(monster, 'is_boss', False)) or getattr(monster, 'max_hp', 0) > 500
+    if getattr(monster, 'is_boss', False):
+        return True
+    floor = int(getattr(monster, 'peak_floor', 0) or getattr(monster, 'min_level', 1) or 1)
+    return getattr(monster, 'max_hp', 0) > max(500, 2.0 * _target_hp(floor))
+
+
+def _floor_of(game) -> int:
+    """The dungeon level the special is used on (for floor_curve.scaled)."""
+    lvl = getattr(game, 'dungeon_level', 1)
+    return lvl if isinstance(lvl, int) and lvl >= 1 else 1
 
 
 # ---------------------------------------------------------------------------
@@ -597,7 +614,8 @@ def _eff_self_aoe_fire(game, special, tier, chain):
         if not m.alive:
             continue
         if max(abs(m.x - px), abs(m.y - py)) <= radius:
-            dmg = roll(dice)
+            # The dice are old-scale: size them to the floor's monsters.
+            dmg = _floor_scaled(roll(dice), _floor_of(game))
             if is_boss_or_huge(m):
                 dmg = max(1, dmg // 2)
             m.take_damage(dmg)
@@ -741,7 +759,8 @@ def _eff_damage_single(game, special, tier, chain):
         return
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
-    dmg = roll(dice)
+    # The dice are old-scale: size them to the floor's monsters.
+    dmg = _floor_scaled(roll(dice), _floor_of(game))
     if is_boss_or_huge(target):
         dmg = max(1, dmg // 2)
     target.take_damage(dmg)
@@ -766,9 +785,11 @@ def _eff_drain_attractive(game, special, tier, chain):
         game.add_message("No suitably... persuadable... target nearby.", 'info')
         return
     target = adj[0]
-    drained = min(hp_drain, target.hp)
+    # The drain is sized to the floor's monsters; the heal is not (the
+    # player's hit points did not grow with theirs).
+    drained = min(_floor_scaled(hp_drain, _floor_of(game)), target.hp)
     target.take_damage(drained)
-    game.player.hp = min(game.player.max_hp, game.player.hp + drained)
+    game.player.hp = min(game.player.max_hp, game.player.hp + min(hp_drain, drained))
     game.add_message(
         f"Ash drains {drained} HP from {target.name}. \"Groovy.\"", 'success')
     if charm_dur and target.alive and not is_boss_or_huge(target):

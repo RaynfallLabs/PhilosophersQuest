@@ -587,7 +587,8 @@ def test_abaddon_beatable_without_sword_of_michael():
     _want = _gate_boss_hp('abaddon_destroyer')
     assert 0.9 * _want <= avg <= 1.1 * _want, (
         f"Abaddon HP avg {avg:.0f} out of range: must be near {_want}")
-    assert int(a.get('regeneration', 0)) == 15
+    # (Was 15 against 6,000 HP; carried up with his hit points in 2026-10.)
+    assert 60 <= int(a.get('regeneration', 0)) <= 120
     assert int(a.get('multi_attack_count', 0)) == 2
 
 
