@@ -960,6 +960,8 @@ class CombatMixin:
         if gear is not None:
             chosen = copy_at(gear, x, y) if hasattr(gear, 'id') else gear
             chosen.x, chosen.y = x, y
+            from dungeon import dress_spawn
+            dress_spawn(chosen, effective_floor, _rng, buc=False)   # charges and counts only
             self.ground_items.append(chosen)
             self.add_message(f"It drops {self._display_name(chosen)}!", 'loot')
 

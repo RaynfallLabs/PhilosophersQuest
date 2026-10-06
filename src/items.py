@@ -2158,7 +2158,7 @@ def pick_random_weapon_for_floor(floor: int, rng) -> Weapon | None:
     return instantiate_weapon(tid, chosen_mid)
 
 
-def pick_random_armor_for_floor(floor: int, rng, slot: str = 'body') -> 'Armor | None':
+def pick_random_armor_for_floor(floor: int, rng, slot: str | None = None) -> 'Armor | None':
     """Pick a random armor template+material pair for this floor + slot.
     Filters templates to those that BOTH match the slot AND accept the
     chosen material's material_class — so e.g. 'ash' (wood) only goes to
@@ -2166,6 +2166,11 @@ def pick_random_armor_for_floor(floor: int, rng, slot: str = 'body') -> 'Armor |
     materials = load_materials('armor')
     # Pre-filter materials: only those usable in at least one slot-matching template
     templates = load_templates('armor')
+    if slot is None:
+        # Any slot. The default was 'body', and seven callers (chests,
+        # monster drops, graves, rewards, boss floors) never passed one:
+        # every piece of armor from them was body armor.
+        slot = rng.choice(sorted({t.get('slot', 'body') for t in templates.values()}))
     slot_templates = [(tid, t) for tid, t in templates.items()
                       if t.get('slot', 'body') == slot]
     if not slot_templates:

@@ -563,6 +563,13 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
         if it is not None:
             loot.append(it)
 
+    # Wand charges and bundle sizes rolled in their ranges, as on the ground.
+    # (Not curses: chest loot has always been clean, and cursing it made the
+    # early game markedly harder for a player who equips what they find.)
+    from dungeon import dress_spawn
+    for it in loot:
+        dress_spawn(it, dungeon_level, rng, buc=False)
+
     # If template has pre_identified=True (merchant_strongbox), identify all loot
     if template.get('pre_identified'):
         for it in loot:

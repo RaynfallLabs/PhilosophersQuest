@@ -532,7 +532,11 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
 
     # --- Gold ---
     if 'gold' in reward:
-        _g = _written_gold(reward['gold'])
+        # ...but never more than about half a floor (the Crucible's reward
+        # came to twice a floor's income on the floors it appears on).
+        import economy as _eco
+        _lvl = int(getattr(game, 'dungeon_level', 1) or 1)
+        _g = min(_written_gold(reward['gold']), _eco.share(_lvl, MYSTERY_GOLD_CAP_SHARE))
         game.player_gold = getattr(game, 'player_gold', 0) + _g
         game.add_message(f"+{_g} gold.", 'loot')
 
@@ -563,9 +567,11 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
             'two_handed': True,
             'identified': True,
             'unidentified_name': 'Mjolnir',
-            'quiz_tier': 5,
+            # Sized for the floors the forge stands on (33 to 45): it was
+            # base 18 asking tier-5 sums, a third of a common hammer there.
+            'quiz_tier': 3,
             'container_loot_tier': 'legendary',
-            'baseDamage': 18,
+            'baseDamage': 85,
             'damageTypes': ['blunt'],
             'chainMultipliers': [0.5, 1.0, 1.5, 2.0, 2.5, 3.0],
         }
@@ -608,6 +614,8 @@ _MERCHANT_STOCK_COUNTS = [
     (21, 50,  5),
     (51, 99,  6),
 ]
+
+MYSTERY_GOLD_CAP_SHARE = 0.6
 
 # Prices live in economy.py with every other gold rule. These names stay for
 # the callers and tests that already use them.

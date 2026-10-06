@@ -381,9 +381,7 @@
   "unidentified_name": "Magic Dungeon Carrot",
   "lore": "A carrot that glows faintly orange and smells of wildflowers, grown in some enchanted bed far from any sun. It is perfectly good to eat. Rumor holds that a certain magical beast deeper in the dungeon loves nothing better, and that a wise traveler keeps one in the pack for that meeting.",
   "floorSpawnWeight": {
-   "1-10": 2,
-   "11-20": 3,
-   "21-100": 0
+   "1-100": 0
   },
   "containerLootTier": "rare",
   "symbol": "%",
@@ -391,6 +389,9 @@
    255,
    160,
    40
-  ]
+  ],
+  "floor_spawn_weight": {
+   "1-100": 0
+  }
  }
 }

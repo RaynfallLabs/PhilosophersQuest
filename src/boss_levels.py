@@ -9,6 +9,7 @@ Each boss level:
   - Boss spawns in the main chamber (second-to-last room)
 """
 import json
+import economy as _economy
 
 from dungeon import Dungeon, Room, WALL, FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, ALTAR, ICE
 
@@ -285,7 +286,8 @@ def _level_20_labyrinth(rng=None):
         for n, (i, j) in enumerate(dead_ends[:7]):
             x, y = _lab_cell_origin(i, j)
             if n < 3:
-                add_gold_to_tile(items, rng.randint(40, 110), x, y)
+                # written 40-110 a pile, at today's scale (economy.py)
+                add_gold_to_tile(items, _economy.written_gold(rng.randint(40, 110)), x, y)
             elif n == 3:
                 w = pick_random_weapon_for_floor(20, rng)
                 if w is not None:
@@ -452,7 +454,7 @@ def _level_40_temple():
             bf.buc = 'uncursed'
             items.append(bf)
         gx, gy = l_chapel.center
-        add_gold_to_tile(items, _random.randint(120, 260), gx, gy)
+        add_gold_to_tile(items, _economy.roll_share(_random, 40, (0.5, 0.8)), gx, gy)
         w = pick_random_weapon_for_floor(40, _random)
         if w is not None:
             w.x, w.y = r_chapel.center

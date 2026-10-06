@@ -44,6 +44,48 @@ _COMBAT_STATS = ['STR', 'CON']
 #   T0: ruined dish, ingredients consumed
 # ----------------------------------------------------------------------
 
+_monster_floor_cache: dict | None = None
+
+
+def _monster_band_tier(monster_id: str) -> int:
+    """Depth band (1-5) of the floor a monster is seated on; 5 if unknown."""
+    global _monster_floor_cache
+    if _monster_floor_cache is None:
+        try:
+            with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+                _monster_floor_cache = {
+                    k: int(v.get('peak_floor') or v.get('min_level') or 1)
+                    for k, v in json.load(f).items() if isinstance(v, dict)}
+        except (OSError, ValueError):
+            _monster_floor_cache = {}
+    floor = _monster_floor_cache.get(monster_id)
+    if floor is None or floor > 100:
+        return 5
+    return max(1, min(5, floor // 20 + 1))
+
+
+def _nearest_prime(monster_id: str, primes: dict) -> str | None:
+    """The cut of the nearest creature of the same kind and depth, for a
+    monster that has none written for it."""
+    _monster_band_tier(monster_id)                     # fills the floor cache
+    floors = _monster_floor_cache or {}
+    here = floors.get(monster_id, 1)
+    try:
+        with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+            tags = set((json.load(f).get(monster_id) or {}).get('tags') or [])
+    except (OSError, ValueError):
+        tags = set()
+    best = None
+    for mid, entry in primes.items():
+        if entry.get('is_trophy') or not entry.get('ingredient_id'):
+            continue
+        same = entry.get('family') in tags
+        score = (0 if same else 1, abs(floors.get(mid, 999) - here))
+        if best is None or score < best[0]:
+            best = (score, entry['ingredient_id'])
+    return best[1] if best else None
+
+
 def _load_prime_cuts() -> dict:
     """Return the 527-entry prime_cuts.json keyed by monster_id."""
     global _prime_cuts_cache
@@ -67,6 +109,12 @@ def _harvest_outcome_for_tier(tier: int, monster_id: str) -> list[str]:
     if tier <= 0:
         return []
     primes = _load_prime_cuts()
+    if monster_id and monster_id not in primes:
+        # A creature with no cut of its own (the Bonnacon, the Calydonian
+        # Boar) still feeds the pot. It used to cost the corpse and a
+        # question and give nothing.
+        borrowed = _nearest_prime(monster_id, primes)
+        return [borrowed] if borrowed else []
     prime_info = primes.get(monster_id)
     if not prime_info:
         # Defensive — monster has no prime_cut mapping. Nothing to harvest.
@@ -519,6 +567,10 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
     monster_id = getattr(corpse, 'monster_id', '')
     ht = int(getattr(corpse, 'harvest_tier', 1) or 0)
     tier = max(1, min(5, ht)) if ht > 0 else 1
+    # Never harder than the band the monster now lives in. Monsters were
+    # re-seated by HP several times and their harvest tiers were not: 156
+    # creatures of floors 1 to 19 asked tier 3, 4 or 5 animal questions.
+    tier = min(tier, _monster_band_tier(monster_id))
 
     def _callback(result):
         if getattr(result, 'success', False):

@@ -7,6 +7,7 @@ On level generation, there is a 50% chance to check for a matching
 bones file; if found, a ghost + cursed loot are spawned.
 """
 import json
+import economy as _economy
 import os
 import random
 import copy
@@ -63,7 +64,9 @@ def save_bones(player_name: str, dungeon_level: int, defeat_reason: str,
         'player_level': getattr(player, 'level', 1),
         'max_hp': player.max_hp,
         'gear': gear,
-        'gold': min(player_gold, 500),  # cap ghost gold to avoid windfalls
+        # Half a floor's income at most (a flat 500 was two floors' worth
+        # on floor 1 and pocket change on floor 60).
+        'gold': min(player_gold, _economy.share(dungeon_level, 0.5)),
     }
 
     bd = _bones_dir()
@@ -228,6 +231,11 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
             # armor and shield all vanished from the bones pile.
             template = _recompose_gear(item_id, item_class)
         if template is None:
+            continue
+        # Quest pieces, boss rewards and hero keepsakes do not pass from one
+        # run to the next (Gram, the Sword of Michael, the Aegis...).
+        from items import is_random_loot as _is_random_loot
+        if not _is_random_loot(template):
             continue
 
         item = copy.copy(template)

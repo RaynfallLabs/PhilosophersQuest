@@ -1365,6 +1365,9 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
 MIN_FLOOR_MONSTERS = 6
 
 
+MIMIC_FIRST_FLOOR = 8
+MIN_LOOT_ROOMS = 10
+EARLY_POTION_FLOORS = 20
 # Gold in special rooms, as a share of the floor's income (economy.py).
 ZOO_GOLD_SHARE = 0.5
 VAULT_GOLD_SHARE = 0.5
@@ -1453,13 +1456,21 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     rng          = random.Random()
     ground_items = []
 
+    # A floor with only a handful of rooms (the maze floors 10, 30, 50, 70
+    # and 90 find three or four) rolled its loot only that many times and
+    # held about a third of what its neighbours do. Such a floor rolls each
+    # room more than once, up to MIN_LOOT_ROOMS rolls in all.
+    loot_rooms = list(rooms[1:])
+    if 0 < len(loot_rooms) < MIN_LOOT_ROOMS:
+        loot_rooms = (loot_rooms * (MIN_LOOT_ROOMS // len(loot_rooms) + 1))[:MIN_LOOT_ROOMS]
+
     # -- Common gear (weapons / armor / shields) come from template+material
     # composition. Picks one per room (33% chance) using bell-curve material
     # spawn weighted by depth. The legacy weapon.json / armor.json / shield.json
     # entries still load for UNIQUE/NAMED items, which spawn via the secondary
     # pool below — never duplicated against the procedurally-generated set.
     _ARMOR_SLOTS_FOR_DROP = ('body', 'head', 'hands', 'feet', 'legs', 'arms', 'cloak')
-    for room in rooms[1:]:
+    for room in loot_rooms:
         if rng.random() > 0.33:
             continue
         # 60% weapon, 20% armor piece, 15% shield, 5% nothing-special
@@ -1489,7 +1500,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
             pass
 
     magic_eligible = _item_eligible_weighted(magic_pool, level, rng)
-    for room in rooms[1:]:
+    for room in loot_rooms:
         if rng.random() > 0.25:
             continue
         _place_one(magic_eligible, room, dungeon, ground_items, rng)
@@ -1504,7 +1515,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     except FileNotFoundError:
         ammo_pool = []
     ammo_eligible = _item_eligible_weighted(ammo_pool, level, rng)
-    for room in rooms[1:]:
+    for room in loot_rooms:
         if rng.random() > 0.08:
             continue
         _place_one(ammo_eligible, room, dungeon, ground_items, rng)
@@ -1525,7 +1536,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         except FileNotFoundError:
             pass
     unique_eligible = _item_eligible_weighted(unique_pool, level, rng)
-    for room in rooms[1:]:
+    for room in loot_rooms:
         if rng.random() > UNIQUE_DROP_CHANCE_PER_ROOM:
             continue
         _place_one(unique_eligible, room, dungeon, ground_items, rng)
@@ -1541,7 +1552,12 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     # Mimic chance scales with depth — keeps mimics a real threat through
     # endgame, when players have more HP and might otherwise treat chests as
     # free loot. F1-20 = 6%; F21-50 = 9%; F51-80 = 12%; F81+ = 15%.
-    if level <= 20:
+    if level < MIMIC_FIRST_FLOOR:
+        # The mimic is a floor-8 monster. On floor 1 it had three times the
+        # hit points of anything else there and bit for a fifth of a new
+        # character's health before the fight began.
+        _MIMIC_CHANCE = 0.0
+    elif level <= 20:
         _MIMIC_CHANCE = 0.06
     elif level <= 50:
         _MIMIC_CHANCE = 0.09
@@ -1587,14 +1603,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         return inst
 
     # Guaranteed first container
-    for room in rng.sample(rooms[1:], min(len(rooms) - 1, len(rooms) - 1)):
+    for room in rng.sample(loot_rooms, len(loot_rooms)):
         c = pick_container()
         if c and _place_one([c], room, dungeon, ground_items, rng):
             break
 
     # Additional containers with diminishing probability
     extra_chance = 0.55
-    for room in rng.sample(rooms[1:], min(len(rooms) - 1, len(rooms) - 1)):
+    for room in rng.sample(loot_rooms, len(loot_rooms)):
         if rng.random() > extra_chance:
             continue
         c = pick_container()
@@ -1654,7 +1670,9 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         all_potions = []
 
     eligible_potions = _item_eligible_weighted(all_potions, level, rng)
-    potion_count = rng.randint(1, 2)
+    # One more on the early floors: plain chests now hold two or three
+    # things, not five, and most of a new character's healing came from them.
+    potion_count = rng.randint(1, 2) + (1 if level <= EARLY_POTION_FLOORS else 0)
     potion_rooms = rng.sample(rooms[1:], min(potion_count, len(rooms) - 1))
     for room in potion_rooms:
         _place_one(eligible_potions, room, dungeon, ground_items, rng)
@@ -2311,10 +2329,13 @@ def _food_eligible(templates: list, level: int) -> list:
     """Return food items eligible for this level, weighted by floor_spawn_weight."""
     eligible = []
     for item in templates:
+        if int(getattr(item, 'min_level', 1) or 1) > level:
+            continue                       # (min_level was ignored for food)
         w = _food_weight(item.floor_spawn_weight, level)
         if w > 0:
             eligible.extend([item] * w)
-    return eligible or templates[:]
+    return eligible or [t for t in templates
+                        if int(getattr(t, 'min_level', 1) or 1) <= level] or templates[:]
 
 
 def _food_weight(spawn_weights: dict, level: int) -> int:
@@ -2339,6 +2360,26 @@ _BUC_RATES = {
     'scroll':    (0.10, 0.80, 0.10),
     'wand':      (0.05, 0.90, 0.05),
 }
+
+
+def dress_spawn(inst, level: int, rng, buc: bool = True) -> None:
+    """Finish an item that has just been created as loot: wand charges and
+    ammo count rolled in their ranges, and (with `buc`) a curse or blessing
+    and an enchantment for the floor.
+
+    Chests and monster drops call this with buc=False: their wands came with
+    the minimum charges and their arrows in the smallest bundle, which this
+    fixes, but their loot stays uncursed and unenchanted as it always was.
+    Quest and scripted items are left exactly as written.
+    """
+    from items import is_random_loot
+    if hasattr(inst, 'charges_min'):
+        inst.charges = rng.randint(inst.charges_min, inst.charges_max)
+    if hasattr(inst, 'count_min'):
+        inst.count = rng.randint(inst.count_min, inst.count_max)
+    if buc and is_random_loot(inst):
+        _assign_buc(inst, level, rng)
+        _assign_enchant(inst, level, rng)
 
 
 def _assign_buc(inst, level: int, rng: random.Random):
@@ -2404,12 +2445,7 @@ def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
         if any(i.x == tx and i.y == ty for i in ground_items):
             continue
         inst = copy.copy(rng.choice(templates))
-        # Re-roll wand charges semi-randomly at spawn time
-        if hasattr(inst, 'charges_min'):
-            inst.charges = rng.randint(inst.charges_min, inst.charges_max)
-        # Re-roll ammo count at spawn time
-        if hasattr(inst, 'count_min'):
-            inst.count = rng.randint(inst.count_min, inst.count_max)
+        dress_spawn(inst, dungeon.level, rng, buc=False)
         # --- BUC assignment (depth-scaled) ---
         _assign_buc(inst, dungeon.level, rng)
         # --- Random enchantment for weapon/armor/shield ---

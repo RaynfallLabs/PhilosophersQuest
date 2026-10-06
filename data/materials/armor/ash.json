@@ -4,6 +4,7 @@
   "material_class": "wood",
   "applies_to": ["armor", "shield"],
   "tier": 2,
+  "min_level": 15,
   "peak_floor": 20,
   "spread": 12,
   "peak_weight": 7,

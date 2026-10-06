@@ -153,8 +153,10 @@ def test_harvest_quiz_tier_matches_corpse_harvest_tier():
     from player import Player
 
     p = Player()
+    # A deep creature (floor 80+), so its own floor band does not hold the
+    # tier down: see test_harvest_is_never_harder_than_the_monsters_floor.
     for ht in (1, 2, 3, 4, 5):
-        corpse = MockCorpse('giant_rat', harvest_tier=ht)
+        corpse = MockCorpse('arch_lich', harvest_tier=ht)
         quiz = MockQuizEngine(scripted_success=True)
         harvest_corpse(p, corpse, quiz, lambda i, m: None)
         assert quiz.last_quiz_kwargs['tier'] == ht, \
@@ -168,7 +170,7 @@ def test_harvest_quiz_tier_clamps_and_defaults():
 
     p = Player()
     for bad, expected in ((0, 1), (7, 5), (-3, 1)):
-        corpse = MockCorpse('giant_rat', harvest_tier=bad)
+        corpse = MockCorpse('arch_lich', harvest_tier=bad)
         quiz = MockQuizEngine(scripted_success=True)
         harvest_corpse(p, corpse, quiz, lambda i, m: None)
         assert quiz.last_quiz_kwargs['tier'] == expected, \
@@ -390,3 +392,29 @@ def test_full_lifecycle_harvest_then_cook():
 
     # SP should be higher (rat prime is T1 → 30-50 SP outcome)
     assert p.sp > 100
+
+
+def test_harvest_is_never_harder_than_the_monsters_floor():
+    """Monsters were re-seated by HP and their harvest tiers were not: 156
+    creatures of floors 1 to 19 asked tier 3 to 5 animal questions."""
+    from food_system import harvest_corpse, _monster_band_tier
+    from player import Player
+
+    assert _monster_band_tier('giant_rat') == 1
+    assert _monster_band_tier('no_such_monster') == 5
+    p = Player()
+    for ht in (1, 3, 5):
+        corpse = MockCorpse('giant_rat', harvest_tier=ht)
+        quiz = MockQuizEngine(scripted_success=True)
+        harvest_corpse(p, corpse, quiz, lambda i, m: None)
+        assert quiz.last_quiz_kwargs['tier'] == 1
+
+
+def test_a_monster_with_no_cut_of_its_own_still_feeds_the_pot():
+    from food_system import _harvest_outcome_for_tier
+    from food_system import load_ingredient_for
+    got = _harvest_outcome_for_tier(2, 'bonnacon')
+    assert len(got) == 1 and load_ingredient_for(got[0]) is not None
+    boar = _harvest_outcome_for_tier(4, 'calydonian_boar')
+    assert len(boar) == 1 and load_ingredient_for(boar[0]) is not None
+    assert _harvest_outcome_for_tier(0, 'bonnacon') == []

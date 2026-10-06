@@ -4,6 +4,7 @@
   "material_class": "dragon_material",
   "applies_to": ["armor", "shield"],
   "tier": 4,
+  "min_level": 55,
   "peak_floor": 65,
   "spread": 12,
   "peak_weight": 4,

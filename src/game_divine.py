@@ -1343,8 +1343,11 @@ class DivineMixin:
     def _resolve_intercession_failure(self):
         """SMITE: curse every equipped item + blinded 100t."""
         p = self.player
+        from items import is_random_loot
         for it in _iter_equipped(p):
-            if hasattr(it, 'buc'):
+            # Not quest pieces: a cursed Aegis or Sandal was then destroyed
+            # by the next friendly altar, ending that quest for the run.
+            if hasattr(it, 'buc') and is_random_loot(it):
                 it.buc = 'cursed'
                 it.buc_known = True
         p.add_effect('blinded', 100)

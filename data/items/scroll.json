@@ -2336,7 +2336,7 @@
     "lore": "Dante counted nine circles in his Inferno, narrowing like a funnel to the frozen lake at the bottom, and set a different ruin in each. Nine seals close this vellum, one for every circle, pressed in wax the colour of old blood by the demon Asmodeus. Broken together, they unmake every lesser creature in sight. The mightiest stand untouched.",
     "design_notes": "Asmodeus L92 boss reward. Wired via monster.treasure.boss_scroll_id.",
     "quiz_threshold": 1,
-    "peak_weight": 2.5,
+    "peak_weight": 0.0,
     "spread": 8
   },
   "scroll_of_chromatic_doom": {
@@ -2372,7 +2372,7 @@
     "lore": "In the Babylonian creation poem Tiamat is the salt sea, mother of the first gods. When they killed her husband she bore eleven monsters and went to war. Marduk caught her in a net, split her like a dried fish, and made the sky from one half. Dragon-lore gave her five heads and five colours. This scroll speaks for all five at once, and nothing lesser in sight outlives it.",
     "design_notes": "Tiamat L85 boss reward. Wired via monster.treasure.boss_scroll_id.",
     "quiz_threshold": 1,
-    "peak_weight": 2.5,
+    "peak_weight": 0.0,
     "spread": 8
   }
 }
