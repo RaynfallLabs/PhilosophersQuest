@@ -44,7 +44,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT,
+    STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT,
 )
@@ -1261,6 +1261,8 @@ class RenderMixin:
             self._draw_spell_menu()
         elif self.state == STATE_INTERCESSION_PROMPT:
             self._draw_intercession_prompt()
+        elif self.state == STATE_PRAYER_MENU:
+            self._draw_prayer_menu()
         elif self.state == STATE_IDENTIFY_MENU:
             self._draw_identify_menu()
         elif self.state == STATE_PET_NAME_INPUT:
@@ -3999,6 +4001,48 @@ class RenderMixin:
             hint="Up/Down: move   Enter or a-z: cast   ESC: cancel",
             border_color=FP.ARCANE_BRIGHT,
         )
+
+    def _draw_prayer_menu(self):
+        """Which prayer? One numbered line each, with what it asks for."""
+        from fantasy_ui import get_font
+        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 200))
+        self.screen.blit(overlay, (0, 0))
+
+        choices = self._prayer_choices()
+        font_title = get_font('heading', 24)
+        font_name  = get_font('body', 20, bold=True)
+        font_body  = get_font('body', 15)
+        font_hint  = get_font('body', 13)
+
+        bw = 700
+        row_h = font_name.get_height() + font_body.get_height() + 18
+        bh = 96 + row_h * len(choices) + 44
+        bx = (layout.WINDOW_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        pygame.draw.rect(self.screen, (16, 12, 6), (bx, by, bw, bh), border_radius=8)
+        pygame.draw.rect(self.screen, FP.GOLD, (bx, by, bw, bh), 3, border_radius=8)
+        pygame.draw.rect(self.screen, (110, 82, 20),
+                         (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
+
+        title = font_title.render("YOU KNEEL. WHAT DO YOU ASK?", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 22))
+        pygame.draw.line(self.screen, FP.GOLD,
+                         (bx + 32, by + 60), (bx + bw - 32, by + 60), 1)
+
+        y = by + 78
+        for i, prayer in enumerate(choices):
+            name = font_name.render(f"{i + 1}.  {prayer['name']}", True, FP.GOLD_BRIGHT)
+            self.screen.blit(name, (bx + 40, y))
+            y += font_name.get_height() + 2
+            asks = font_body.render(prayer['asks'], True, FP.BODY_TEXT)
+            self.screen.blit(asks, (bx + 72, y))
+            y += font_body.get_height() + 16
+
+        hint = font_hint.render(
+            "Press The Number To Pray  //  Esc: Rise Without Praying",
+            True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
 
     def _draw_intercession_prompt(self):
         """v2.13.0: Y/N confirm popup for Divine Intercession. Terse,

@@ -51,6 +51,10 @@ class Player:
 
         # Prayer system
         self.prayer_cooldown: int   = 0   # turns remaining until next prayer
+        # Wisdom lent by the `inspired` status (a prayer, later a potion or
+        # scroll). Counted by effective_wis() while the status lasts; the
+        # real WIS is never touched, so nothing can be left behind.
+        self.insight_wis: int       = 0
         self.prayer_boon_count: int = 0   # permanent bonuses received (diminishing returns)
         # v2.13.0: Divine Intercession is once-per-game. True once the player
         # has invoked Shift+\ (whether it succeeded or the smite fell).
@@ -872,7 +876,41 @@ class Player:
         keeps those call sites safe.
         """
         base, wis_scale = self.SUBJECT_TIMER.get(subject, (0, 1.0))
-        return max(5, round(base + self.WIS * wis_scale))
+        return max(5, round(base + self.effective_wis() * wis_scale))
+
+    # ----- wisdom: what the dungeon teaches, and what prayer lends -----
+
+    # One point of wisdom for every DEPTH_WIS_EVERY floors of new depth. The
+    # combat clock is wisdom in seconds and the sums get harder with depth;
+    # wisdom used to stay at 10 for forty floors, so a deep fight had time
+    # for two answers. This is earned by going down, not handed out: it is
+    # counted on the deepest floor reached, once.
+    DEPTH_WIS_EVERY = 3
+
+    def learn_from_depth(self, was_deepest: int, now_deepest: int) -> int:
+        """Grant the wisdom owed for new depth. Returns the points gained."""
+        gained = (max(0, int(now_deepest)) // self.DEPTH_WIS_EVERY
+                  - max(0, int(was_deepest)) // self.DEPTH_WIS_EVERY)
+        if gained > 0:
+            self.apply_stat_bonus('WIS', gained)
+        return max(0, gained)
+
+    def effective_wis(self) -> int:
+        """Wisdom as the clock sees it: the stat, plus what is lent while
+        `inspired`. (Saving throws and everything else read the real stat.)"""
+        lent = int(getattr(self, 'insight_wis', 0) or 0)
+        return self.WIS + (lent if lent and self.has_effect('inspired') else 0)
+
+    def grant_insight(self, amount: int, turns: int) -> None:
+        """Lend `amount` wisdom for `turns` turns. A second gift takes the
+        larger amount and the longer time; they never add together."""
+        if amount <= 0 or turns <= 0:
+            return
+        active = self.has_effect('inspired')
+        self.insight_wis = max(int(amount),
+                               int(getattr(self, 'insight_wis', 0) or 0) if active else 0)
+        self.status_effects['inspired'] = max(
+            int(turns), int(self.status_effects.get('inspired', 0)) if active else 0)
 
     def get_quiz_timer_modifier(self) -> float:
         """Multiplier applied to quiz timer based on active effects.

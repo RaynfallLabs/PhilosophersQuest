@@ -36,7 +36,7 @@ from game_states import (
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
-    STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT,
+    STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT,
 )
@@ -130,7 +130,8 @@ class InputMixin:
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
                               STATE_PET_MENU,
-                              STATE_INTERCESSION_PROMPT, STATE_JUDGMENT):
+                              STATE_INTERCESSION_PROMPT, STATE_PRAYER_MENU,
+                              STATE_JUDGMENT):
                 if self.state == STATE_MYSTERY_APPROACH:
                     self._active_mystery_altar = None
                 if self.state == STATE_TARGET:
@@ -266,6 +267,8 @@ class InputMixin:
             self._throw_menu_input(key)
         elif self.state == STATE_INTERCESSION_PROMPT:
             self._intercession_prompt_input(key)
+        elif self.state == STATE_PRAYER_MENU:
+            self._prayer_menu_input(key)
         elif self.state == STATE_HELP:
             self._help_input(key)
         elif self.state == STATE_LORE:
@@ -1037,6 +1040,18 @@ class InputMixin:
     # ------------------------------------------------------------------
     # Divine Intercession Y/N confirm prompt (v2.13.0)
     # ------------------------------------------------------------------
+
+    def _prayer_menu_input(self, key: int):
+        """1-9 = make that prayer; Esc = rise without praying (no cost)."""
+        if key == pygame.K_ESCAPE:
+            self._prayer_menu_cancel()
+            return
+        for i, k in enumerate((pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4,
+                               pygame.K_5, pygame.K_6, pygame.K_7, pygame.K_8,
+                               pygame.K_9)):
+            if key == k or key == getattr(pygame, f'K_KP{i + 1}'):
+                self._prayer_menu_pick(i)
+                return
 
     def _intercession_prompt_input(self, key: int):
         """Y = launch the Divine Intercession quiz; N/ESC = silent cancel."""

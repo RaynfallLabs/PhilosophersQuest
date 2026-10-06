@@ -44,7 +44,7 @@ import sound_system as _snd
 from dungeon import FLOOR, DOOR, ALTAR
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_TARGET, STATE_MYSTERY_APPROACH,
-    STATE_INTERCESSION_PROMPT,
+    STATE_INTERCESSION_PROMPT, STATE_PRAYER_MENU,
 )
 
 
@@ -871,8 +871,9 @@ class DivineMixin:
     # Karma-tiered verse still shows.
 
     def _start_pray(self):
-        """Launch simple prayer directly — theology escalator_chain, no menu.
-        Cooldown-gated; L99 judgment altar still handled directly."""
+        """The prayer key. Cooldown-gated; the L99 judgment altar is handled
+        directly; otherwise the player chooses which prayer to make
+        (prayers.PRAYERS), then answers the theology chain for it."""
         # Altar of the Last Judgment on L99: special one-time judgment
         if self.dungeon_level == 99:
             jpos = getattr(self.dungeon, 'judgment_altar_pos', None)
@@ -897,10 +898,32 @@ class DivineMixin:
             )
             return
 
+        # Choose the prayer. Backing out costs nothing: no turn, no cooldown.
+        self.state = STATE_PRAYER_MENU
+
+    def _prayer_choices(self) -> list:
+        import prayers
+        return prayers.available(int(getattr(self, 'karma', 0) or 0))
+
+    def _prayer_menu_pick(self, index: int):
+        """Called by the prayer menu with the number the player pressed."""
+        choices = self._prayer_choices()
+        if not (0 <= index < len(choices)):
+            return
+        self._begin_prayer(choices[index]['id'])
+
+    def _prayer_menu_cancel(self):
+        self.state = STATE_PLAYER
+        self.add_message("You rise without a word.", 'info')
+
+    def _begin_prayer(self, kind: str):
+        """Kneel and answer the theology chain for the chosen prayer."""
+        import prayers
+        prayer = prayers.by_id(kind)
         at_altar = _on_altar(self)
         bonus_desc = " The altar amplifies your prayer." if at_altar else ""
-        self.add_message(f"You kneel and pray.{bonus_desc}", 'info')
-        self.quiz_title = "PRAYER  --  THEOLOGY"
+        self.add_message(f"You kneel. \"{prayer['name']}.\"{bonus_desc}", 'info')
+        self.quiz_title = prayer['title']
         self.state = STATE_QUIZ
 
         # HP as the player knelt: the Fisher King quirk asks for prayer at
@@ -910,7 +933,8 @@ class DivineMixin:
 
         def on_complete(result):
             chain = result.score
-            self._resolve_simple_prayer(chain, at_altar)
+            self._resolve_simple_prayer(chain, at_altar, kind=kind,
+                                        hp_pct=_hp_pct_at_prayer)
             self.state = STATE_PLAYER
             _qs_pray = getattr(self, 'quirk_system', None)
             if _qs_pray and chain > 0:
@@ -929,7 +953,36 @@ class DivineMixin:
             base_seconds=self.player.get_quiz_timer('theology'),
         )
 
-    def _resolve_simple_prayer(self, chain: int, at_altar: bool = False):
+    def _answer_guide_my_hand(self, chain: int, effective: int, karma: int,
+                              hp_pct: float) -> None:
+        """Michael, Guide My Hand: wisdom lent for the fight (prayers.py)."""
+        import prayers
+        p = self.player
+        desperate = hp_pct <= prayers.DESPERATE_HP
+        bonus, turns = prayers.guide_my_hand(p.WIS, effective, karma, desperate)
+        if bonus <= 0:
+            return
+        before = p.get_quiz_timer('math')
+        # +1: the prayer's own turn ticks the status once before any blow.
+        p.grant_insight(bonus, turns + 1)
+        after = p.get_quiz_timer('math')
+        self.add_message(
+            f"A Hand Closes Over Yours. Wisdom +{bonus} For {turns} Turns. "
+            f"(Combat Clock {before} -> {after} Seconds.)", 'success')
+        if desperate:
+            # Out of the depths: the prayer made at death's door also
+            # shelters the one who made it, long enough to strike.
+            p.add_effect('shielded', prayers.DESPERATE_SHIELD_TURNS)
+            self.add_message(
+                "Out Of The Depths You Cried, And Were Heard. "
+                "A Shield Stands Over You.", 'success')
+        if chain >= 5:
+            self._log_chronicle(
+                "I asked Michael to guide my hand, and for a little while "
+                "every sum was simple.")
+
+    def _resolve_simple_prayer(self, chain: int, at_altar: bool = False,
+                               kind: str = 'mercy', hp_pct: float = 1.0):
         """Apply the stacking simple-prayer bonuses.
 
         - Each chain tier ADDS its bonus (they do not replace each other).
@@ -1007,6 +1060,14 @@ class DivineMixin:
         karma_bonus_hp   = max(-15, karma_for_bonuses)
         karma_bonus_mp   = max(-5,  karma_for_bonuses // 2)
         karma_bonus_buff = max(-15, karma_for_bonuses * 3)
+
+        # A prayer for the Archangel's hand is answered with wisdom, not with
+        # the mercies below: that is the choice the player made on the menu.
+        if kind == 'guide_my_hand':
+            self._answer_guide_my_hand(chain, effective, karma, hp_pct)
+            self._apply_prayer_cooldown_quirks()
+            self._show_prayer_verse(karma_tier, min(chain, 5))
+            return
 
         msgs: list[tuple[str, str]] = []
 

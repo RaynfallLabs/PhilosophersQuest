@@ -30,6 +30,7 @@ STATE_QUAFF_MENU     = 'quaff_menu'      # quaff a potion
 STATE_HELP           = 'help'
 STATE_LORE           = 'lore'
 STATE_INTERCESSION_PROMPT = 'intercession_prompt'  # v2.13.0: Y/N confirm for Divine Intercession (Shift+\)
+STATE_PRAYER_MENU    = 'prayer_menu'     # choose which prayer to make (prayers.py)
 STATE_SPELL_MENU     = 'spell_menu'
 STATE_HINT           = 'hint'            # Recall Lore result display
 STATE_EXAMINE        = 'examine'         # Examine identified inventory item

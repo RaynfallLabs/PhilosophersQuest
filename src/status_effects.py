@@ -99,6 +99,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'spell_turning':      ('Spell Turning',      (210, 175, 255), 'Reflects 100% of monster-cast debuffs back at attacker'),
     # ---- Active buffs (wand/accessory-granted) ----
     'blessed':            ('Blessed',            (200, 240, 160), 'All quiz timers +25%; divine clarity'),
+    'inspired':           ('Inspired',           (255, 215,  90), 'Wisdom lent from above: the combat clock runs long'),
     'shielded':          ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
     'fire_shield':        ('Fire Shield',        (245, 120,  40), 'Immune to fire; reflects fire attacks'),
     'cold_shield':        ('Cold Shield',        ( 80, 200, 245), 'Immune to cold; reflects cold attacks'),
@@ -147,7 +148,7 @@ DEBUFFS: frozenset = frozenset({
 
 BUFFS: frozenset = frozenset({
     'hasted', 'invisible', 'levitating', 'regenerating', 'telepathy',
-    'warning', 'searching', 'clairvoyant', 'displacement', 'heroism', 'brilliance',
+    'warning', 'searching', 'clairvoyant', 'displacement', 'heroism', 'brilliance', 'inspired',
     'shielded', 'fire_shield', 'cold_shield', 'reflecting', 'phasing', 'time_stopped', 'blessed',
     'invulnerable',
     'fire_resist', 'cold_resist', 'shock_resist', 'poison_resist',
@@ -398,6 +399,7 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'time_stopped':   ('Time resumes its flow.',                 'info'),
     'invulnerable':   ('The divine shield around you fades.',    'info'),
     'blessed':        ('The divine clarity fades.',              'info'),
+    'inspired':       ('The Guiding Hand Lifts. Your Wisdom Is Your Own Again.', 'warning'),
     'feared':         ('Your fear subsides.',                    'info'),
     'charmed':        ('The charm over you breaks.',             'info'),
     'cursed':         ('The curse lifts.',                       'success'),
@@ -690,6 +692,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
             if isinstance(_g, dict):
                 _g.pop(effect[len('save_guard_'):], None)
         # Reverse stat bonuses granted by timed effects (see apply_effect)
+        if effect == 'inspired':
+            player.insight_wis = 0
         if effect in TIMED_STAT_GRANTS:
             for _stat, _amt in TIMED_STAT_GRANTS[effect]:
                 player.apply_stat_bonus(_stat, -_amt)

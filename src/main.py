@@ -1230,6 +1230,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.deepest_floor_reached = max(
                 self.player.deepest_floor_reached, new_level
             )
+        # The dungeon teaches whoever goes down it: wisdom for new depth.
+        if self.player.deepest_floor_reached > _was_deepest:
+            _learned = self.player.learn_from_depth(
+                _was_deepest, self.player.deepest_floor_reached)
+            if _learned > 0:
+                self.add_message(
+                    f"The Dungeon Has Taught You Something. Wisdom +{_learned}. "
+                    f"(The Combat Clock Is Now {self.player.get_quiz_timer('math')} Seconds.)",
+                    'success')
         # Fafnir's Heart trophy (2026-05-31): +2 max HP each NEW deepest floor.
         if self.player.deepest_floor_reached > _was_deepest:
             _per_desc = int(getattr(self.player, '_fafnir_per_descent_hp', 0) or 0)
