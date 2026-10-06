@@ -918,7 +918,10 @@ class CombatMixin:
         _here = int(getattr(self, 'dungeon_level', 1) or 1)
         if not 1 <= _here <= 100:      # the Cow Level is numbered 999
             _here = 1
-        effective_floor = max(1, tier * 5, _here)
+        # ...and only a little deeper (items.loot_floor): `tier * 5` on its
+        # own put floor-5 and floor-10 gear in floor-1 drops.
+        from items import loot_floor
+        effective_floor = max(_here, min(tier * 5, loot_floor(_here, tier * 5)))
 
         # 50% weapon/armor/shield (template+material common), 50% magic item pool
         roll = _rng.random()

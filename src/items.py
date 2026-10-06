@@ -2050,6 +2050,22 @@ def instantiate_shield(template_id: str, material_id: str, *,
     return s
 
 
+def loot_floor(floor: int, bonus: int = 0) -> int:
+    """The floor whose gear a chest or a monster's drop may hold: the floor
+    it is found on, plus a little.
+
+    `bonus` is how far ahead the source would like to reach (a better chest,
+    a richer monster). The reach is held to a third of the current depth and
+    never less than one floor, because gear power climbs fastest at the top:
+    a floor-5 material is four times a floor-1 one. A tier-2 chest used to
+    reach four floors ahead and a monster's drop was never shallower than
+    floor 5, so floor 1 could hand over a volcanic iron axe (base 8, against
+    copper's 2).
+    """
+    floor = max(1, int(floor))
+    return floor + max(0, min(int(bonus), max(1, floor // 3)))
+
+
 def material_spawn_weight(material: dict, floor: int) -> float:
     """Bell-curve spawn weight for a material at the given floor."""
     import math

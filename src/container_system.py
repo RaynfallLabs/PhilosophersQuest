@@ -241,8 +241,9 @@ _COMMON_CATEGORIES: dict[str, list[str]] = {
 def _floor_level_cap(container, dungeon_level: int) -> int:
     """Chest sees a small amount of floors ahead of the player. Kept modest
     since CHAIN is the new dial — chest_tier scales the lookahead bonus."""
+    from items import loot_floor
     chest_tier = max(1, min(5, int(getattr(container, 'tier', 1))))
-    return dungeon_level + chest_tier * 2
+    return loot_floor(dungeon_level, chest_tier * 2)
 
 
 def _pull_common_gear(category: str, level_cap: int, rng) -> object | None:

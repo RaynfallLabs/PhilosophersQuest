@@ -310,3 +310,33 @@ def test_no_material_appears_before_its_first_floor():
         tier2_on_floor_1 = [mid for mid, m in load_materials(cat).items()
                             if m['tier'] >= 2 and material_spawn_weight(m, 1) > 0]
         assert not tier2_on_floor_1, (cat, tier2_on_floor_1)
+
+
+def test_loot_reaches_only_a_little_ahead_of_its_floor():
+    """Floor 1 handed over a volcanic iron axe: a tier-2 chest reached four
+    floors ahead, and a monster's drop was never shallower than floor 5."""
+    from items import (load_materials, loot_floor, material_spawn_weight,
+                       pick_random_weapon_for_floor)
+    assert loot_floor(1, 10) == 2 and loot_floor(3, 10) == 4
+    assert loot_floor(12, 10) == 16 and loot_floor(60, 10) == 70
+    assert loot_floor(30, 0) == 30
+    c = _make_container('wooden_chest')
+    for tier in (1, 2, 5):
+        c.tier = tier
+        from container_system import _floor_level_cap
+        assert _floor_level_cap(c, 1) == 2
+        assert _floor_level_cap(c, 60) == 60 + tier * 2
+    # nothing a floor-1 chest or drop can roll is more than twice the
+    # strongest thing lying on floor 1
+    mats = load_materials('weapons')
+    from items import instantiate_weapon
+    def best(floor):
+        return max(instantiate_weapon('battleaxe', mid).base_damage
+                   for mid, m in mats.items() if material_spawn_weight(m, floor) > 0)
+    assert best(loot_floor(1, 10)) <= 2 * best(1)
+    random.seed(9)
+    assert all(pick_random_weapon_for_floor(loot_floor(1, 10), random).base_damage <= 2 * best(1)
+               for _ in range(200))
+    src = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            'src', 'game_combat.py'), encoding='utf-8').read()
+    assert 'min(tier * 5, loot_floor(_here, tier * 5))' in src
