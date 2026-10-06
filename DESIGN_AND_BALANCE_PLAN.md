@@ -2,6 +2,38 @@
 
 Date: 2026-10-05. Sections 1 and 2 are **done and committed locally**. Sections 3 to 6 are **proposals**: nothing in them is built. All balance figures come from the simulator, and every figure involving maths speed rests on my guess of 1.8 / 2.6 / 4.5 / 6 / 7 seconds per answer for tiers 1 to 5. Nobody has timed a child.
 
+## 0. Built after this plan was written (2026-10-05, later the same day)
+
+You chose +1 Wisdom every 3 floors and a prayer menu. Both are built, and the monsters were re-sized around them. **Sections 3 to 6 below are the earlier proposals and are partly superseded by this section.** Not play-tested.
+
+**Built**
+
+- **Wisdom from depth:** +1 for every 3 floors of new depth (10 at the start, 16 on floor 20, 23 on 40, 30 on 60, 43 on 100). The clock is still exactly wisdom in seconds.
+- **The prayer key opens a menu:** "Lord, Have Mercy" (the existing prayer, unchanged) or "Michael, Guide My Hand". More can be added later and gated by karma (`src/prayers.py`).
+- **Michael, Guide My Hand** lends wisdom as a share of what you have, by theology chain: +30% for 6 turns at chain 1, +60% for 10 at chain 3, +100% for 15 at chain 5 (+120% for 18 at an altar). A full chain doubles the clock. Prayed at a quarter health or less it also shields you for a few turns. Same cooldown as any prayer; backing out of the menu costs nothing.
+- **Each weapon tier is a real step up:** base damage x1.9 / x3.1 / x3.5 / x4.9 for tiers 2 to 5. Before, a steel sword out-damaged tier-2 and tier-3 metal.
+- **Monsters re-sized** for stronger weapons and longer clocks: HP x2 on floor 1 rising to x9 on floor 100; damage halved on floor 1 (most of my earlier early-floor raise undone) rising to x1.4 deep. Gate bosses 9,000 / 24,000 / 56,000 / 83,000 / 108,000 HP. Wand and spell damage scaled by tier to keep pace; healing spells were not.
+
+**Simulated result** (good kid: 95% right on tier 1, 90% on tier 2, 85% below; 200 runs, plus or minus 7)
+
+| Player | Reaches floor 20 | Floor 40 | Floor 60 | Floor 80 | Floor 100 | Wins |
+|---|---|---|---|---|---|---|
+| Prepared, uses Guide My Hand on bosses | 96% | 83% | 60% | 54% | 40% | 22% |
+| Prepared, never uses it | 97% | 87% | 70% | 57% | 37% | 13% |
+| Casual (one meal a floor, skips boss quests) | 62% | 0% | | | | 0% |
+
+- Kills take 1.2 attacks on floors 1 to 19 and about 2 from floor 40 down.
+- Gate bosses with the quest: 15 to 21 attacks with the prayer, 20 to 26 without. Without the quest, Medusa, Fafnir and Fenrir kill 30 to 50%.
+- The prayer is worth about a quarter off a boss fight and takes Abaddon from 82% deaths to 67%.
+
+**Known rough edges**
+
+- **Floors 81 to 99 are still too deadly** (about 15% deaths a floor for the prepared kid).
+- **The casual player hits a wall at floor 20.** Floors 1 to 19 cost them about 4% a floor, and Asterion kills 30 to 47%. If "pretty easily" should cover a casual kid too, the early floors and Asterion need easing further.
+- **Deep attacks are long.** The clock is 30 to 43 seconds from floor 60, so a deep floor asks about 400 sums. Striking early with Space is the player's way out.
+- **Numbers got big.** Deep weapons hit for thousands and Abaddon has 108,000 HP. Anything with a fixed number that was sized for the old scale is now out of proportion deep down: Abaddon's 15 HP regeneration, flat bonus damage on some uniques, pets, thrown potions. I scaled wands and spells; the rest is not yet audited.
+- Everything still rests on guessed answer speeds.
+
 ## 1. Fixed this round
 
 | Your point | What was done | Commit |

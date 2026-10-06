@@ -42,11 +42,11 @@ ROOT = Path(__file__).resolve().parents[2]
 MONSTERS_PATH = ROOT / "data" / "monsters.json"
 
 # CURVE.md section 4 anchor medians (same table rebase_monster_hp.py used).
-HP_ANCHORS = {1: 11, 10: 32, 20: 77, 30: 126, 40: 200, 50: 276, 60: 400,
-              70: 562, 80: 770, 90: 910, 100: 960}
+HP_ANCHORS = {1: 22, 10: 79, 20: 231, 30: 504, 40: 1000, 50: 1656, 60: 2800,
+              70: 4215, 80: 6160, 90: 7735, 100: 8640}
 # Midpoints of the CURVE.md "Monster band ... damage" ranges.
-DMG_ANCHORS = {1: 4.8, 10: 8.1, 20: 9.46, 30: 9.62, 40: 11.38, 50: 15.31,
-               60: 18.11, 70: 19.0, 80: 19.5, 90: 19.99, 100: 20.48}
+DMG_ANCHORS = {1: 2.4, 10: 4.82, 20: 6.62, 30: 8.42, 40: 11.95, 50: 18.37,
+               60: 24.45, 70: 26.12, 80: 27.3, 90: 27.99, 100: 28.67}
 
 # ---------------------------------------------------------------------------
 # Lore-driven HP corrections (2026-10 content pass).
@@ -102,7 +102,7 @@ NAMED_FOE_HP_MULT = 4.0
 NAMED_FOE_HP_MULT_EARLY = 5.0
 # Seal demons are seven fights in a row that cannot be skipped: a little
 # under the mini-boss figure.
-SEAL_DEMON_HP_MULT = 3.0
+SEAL_DEMON_HP_MULT = 4.5
 # From floor 60 a mini-boss also hits for a fifth of a health bar a turn, and
 # at 4x the fight ran long enough to kill a third of prepared players
 # (simulated). 3x there.
@@ -121,9 +121,13 @@ HP_FLOOR_MULT: dict[str, float] = {"fenrir_wolf": 2.2}
 # that, and the simulator measured every gate boss dying in six to nine
 # attacks. Sized now for about twenty attacks from a prepared player with
 # the quest layer (CURVE.md principle 4: a boss is 20 to 50 hits).
-GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 1500, "medusa_gorgon": 2400,
-                                "fafnir_dragon": 4000, "fenrir_wolf": 5200,
-                                "abaddon_destroyer": 6000}
+GATE_BOSS_HP: dict[str, int] = {"asterion_minotaur": 9000, "medusa_gorgon": 24000,
+                                "fafnir_dragon": 56000, "fenrir_wolf": 83000,
+                                "abaddon_destroyer": 108000}
+# (2026-10-05, wisdom from depth + tiered weapon damage: the figures above are
+# the earlier 1,500 / 2,400 / 4,000 / 5,200 / 6,000 carried through the same
+# HP schedule as ordinary monsters and doubled, which the simulator puts at
+# 15 to 20 attacks for a prepared player with the quest layer.)
 
 # A named foe's hardest attack should be worth noticing: at least this
 # multiple of the floor's anchor damage. They hit like ordinary monsters of

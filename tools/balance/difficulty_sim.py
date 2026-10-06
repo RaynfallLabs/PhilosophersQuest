@@ -84,6 +84,7 @@ from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult               # noqa: E402
 import food_system as food_system_mod            # noqa: E402
+import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
@@ -252,6 +253,9 @@ ANSWER_SIGMA = 0.30            # lognormal spread of one answer's time
 # subjects (equip, prayer, cooking ...). --accuracy is the tier-1 value.
 ACC_DROP_PER_TIER = 0.03
 
+# Whether the simulated player uses the Guide My Hand prayer on named foes.
+GUIDE_AT_NAMED = True
+
 # ---- Engagement ---------------------------------------------------------------
 # A competent player waits for a melee monster to step adjacent and so strikes
 # first (monster.take_turn returns False on the turn it moves in), EXCEPT
@@ -317,6 +321,18 @@ PROFILES = {
         quests=True,             # has each gate boss's quest layer
     ),
     # Dives, cooks rarely, wears little, drinks late, never rests.
+    # Good at the sums, casual about the rest: cooks one meal a floor, wears
+    # most of what drops, prays, rests a little, skips the boss quests.
+    'casual': dict(
+        loot_fraction=0.65, engage_fraction=0.75, explore_turns=220,
+        opens_chests=True,
+        equips_armor=True, equips_accessories=True, avoids_cursed=False,
+        armor_equip_chance=0.7,
+        cooks_per_floor=1, eats_for_hp=True,
+        potion_at=0.25, heal_at=0.35, top_up_to=0.6,
+        prays=True, casts=False, flees=True, flee_at=0.15,
+        rest_turns=150, quests=False,
+    ),
     'unprepared': dict(
         loot_fraction=0.45, engage_fraction=0.60, explore_turns=160,
         opens_chests=False,
@@ -373,7 +389,15 @@ def dice_mean(expr) -> float:
     return total
 
 
+# The owner's basis for balance (2026-10-05): a kid who is good at simple sums.
+# When set (--kid, or KID_MODEL = True), accuracy by tier replaces --accuracy.
+KID_ACC = {1: 0.95, 2: 0.90, 3: 0.85, 4: 0.85, 5: 0.85}
+KID_MODEL = False
+
+
 def acc_at(accuracy: float, tier: int) -> float:
+    if KID_MODEL:
+        return KID_ACC[max(1, min(5, tier))]
     return max(0.05, min(0.999, accuracy - ACC_DROP_PER_TIER * (max(1, tier) - 1)))
 
 
@@ -1320,6 +1344,15 @@ class Run:
         p._combat_pets_ref = []
         p._combat_game_ref = None
         p._combat_player_taken_damage = False
+        # Michael, Guide My Hand: a prepared player opens a named fight with
+        # it when prayer is ready and they are not already badly hurt.
+        if (GUIDE_AT_NAMED and self.prof['prays'] and p.prayer_cooldown <= 0
+                and p.hp >= 0.5 * p.max_hp and any(is_named(m) for m in group)):
+            chain = self.quiz.escalator_chain(5)
+            p.prayer_cooldown = max(100, 100 + 25 * chain)
+            bonus, turns = prayers_mod.guide_my_hand(p.WIS, chain)
+            p.grant_insight(bonus, turns)
+            self.fs['guide'] = self.fs.get('guide', 0) + 1
         slots = [(6, 5), (5, 6), (6, 6), (4, 5), (5, 4), (4, 4), (6, 4), (4, 6)]
 
         def enter(m, opening: bool):
@@ -1677,6 +1710,8 @@ class Run:
                 per = round(per * self.knobs['player_hp'])
                 p.max_hp += per
                 p.hp = min(p.hp + per, p.max_hp)
+        if floor > p.deepest_floor_reached:
+            p.learn_from_depth(p.deepest_floor_reached, floor)   # +1 WIS / 3 floors
         p.deepest_floor_reached = max(p.deepest_floor_reached, floor)
         p.reset_floor_cook_caps()
         p._death_save_used_this_floor = False

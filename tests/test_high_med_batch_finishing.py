@@ -57,6 +57,17 @@ def _monster(mid):
 # 1. Hand of Glory
 # ---------------------------------------------------------------------------
 
+
+def _gate_boss_hp(mid):
+    """The designed HP of a gate boss (tools/balance/respawn_by_hp.py)."""
+    import os as _os
+    import sys as _sys
+    _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.dirname(
+        _os.path.abspath(__file__))), 'tools', 'balance'))
+    import respawn_by_hp
+    return respawn_by_hp.GATE_BOSS_HP[mid]
+
+
 def test_hand_of_glory_passive_flags_in_json():
     h = _accessory('hand_of_glory')
     assert h.get('paralyze_charges') == 3
@@ -278,9 +289,13 @@ def test_sword_of_michael_balanced_for_climax():
     with_crit_plus_abaddon = with_demon * crit + 27
     # Must be substantially LESS than Abaddon's HP (~2800), so the climax
     # is multi-turn. Audit reference: previous 4353 dmg vs 1235 HP one-shot.
-    assert with_crit_plus_abaddon < 2500, \
-        f"Sword peak vs Abaddon = {with_crit_plus_abaddon:.0f}; must " \
-        f"be < 2500 to require a multi-turn climax"
+    # Relative to Abaddon's HP (it was an absolute 2,500 against a 6,000 HP
+    # boss; both numbers moved in the 2026-10 re-size): no single peak blow
+    # may take more than a twentieth of him.
+    _limit = 0.05 * _gate_boss_hp('abaddon_destroyer')
+    assert with_crit_plus_abaddon < _limit, (
+        f"Sword peak vs Abaddon = {with_crit_plus_abaddon:.0f}; must "
+        f"be < {_limit:.0f} to require a multi-turn climax")
 
 
 def test_sword_of_michael_carries_signature_flags():
@@ -569,8 +584,9 @@ def test_abaddon_beatable_without_sword_of_michael():
     m = re.match(r'(\d+)d(\d+)\+?(\d+)?', a.get('hp', ''))
     n, sides, plus = int(m.group(1)), int(m.group(2)), int(m.group(3) or 0)
     avg = n * (sides + 1) / 2 + plus
-    assert 4000 <= avg <= 6500, \
-        f"Abaddon HP avg {avg:.0f} out of range — must be 4000-6500 post chain combat v2"
+    _want = _gate_boss_hp('abaddon_destroyer')
+    assert 0.9 * _want <= avg <= 1.1 * _want, (
+        f"Abaddon HP avg {avg:.0f} out of range: must be near {_want}")
     assert int(a.get('regeneration', 0)) == 15
     assert int(a.get('multi_attack_count', 0)) == 2
 

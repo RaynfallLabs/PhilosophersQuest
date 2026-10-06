@@ -68,7 +68,13 @@ if TYPE_CHECKING:
 # chain-5-ish weapon hit at the same tier. Bigger boost on low tiers (where the
 # gap was worst); modest boost on T5 (where 10d10 was already respectable).
 # Applied by _spell_damage and _wand_tier_damage. INT stacks on top.
-MAGIC_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
+# 2026-10-05: ordinary monster HP was re-sized x2 (floor 1) to x9 (floor 100)
+# when weapons gained a damage step per tier. Magic follows by tier, or a
+# deep wand would tickle: the old figures x 2 / 3.5 / 5.5 / 7.5 / 8.5.
+MAGIC_TIER_MULT = {1: 6.0, 2: 8.75, 3: 11.0, 4: 13.0, 5: 12.75}
+# Healing spells keep the earlier figures: the player's hit points did not
+# grow with the monsters'.
+HEAL_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
 
 
 def _is_big_foe(m) -> bool:
@@ -1318,7 +1324,7 @@ class MagicMixin:
             base_seconds=self.player.get_quiz_timer('science'),
         )
 
-    def _spell_damage(self, base_dmg: int, chain: int = 5) -> int:
+    def _spell_damage(self, base_dmg: int, chain: int = 5, healing: bool = False) -> int:
         """Chain combat v2 (2026-09-07): scale by INT + chain-equip passives +
         per-tier multiplier (see _MAGIC_TIER_MULT). The `chain` arg is retained
         for back-compat but is a no-op (spells retired chain scaling in
@@ -1327,7 +1333,7 @@ class MagicMixin:
         """
         from chain_passives import apply_spell_damage_passives
         tier = int(getattr(self, '_active_spell_tier', 5) or 5)
-        tier_mult = MAGIC_TIER_MULT.get(tier, 1.5)
+        tier_mult = (HEAL_TIER_MULT if healing else MAGIC_TIER_MULT).get(tier, 1.5)
         dmg, c, a = apply_spell_damage_passives(
             self.player, base_dmg * tier_mult * (1.0 + self.player.INT * 0.1))
         self._last_spell_crit, self._last_spell_anti_being = c, a
@@ -1443,7 +1449,7 @@ class MagicMixin:
         if effect == 'extra_heal':
             from dice import roll
             base = roll(power) if power else 8
-            healed = self._spell_damage(base, chain)
+            healed = self._spell_damage(base, chain, healing=True)
             self.player.restore_hp(healed)
             self.add_message(f"You are healed for {healed} HP!", 'success')
             return

@@ -412,14 +412,16 @@ def test_wand_tier_damage_scales_higher_at_low_tiers():
     dmg_t1 = MagicMixin._wand_tier_damage(_G(), 100, 1)
     dmg_t3 = MagicMixin._wand_tier_damage(_G(), 100, 3)
     dmg_t5 = MagicMixin._wand_tier_damage(_G(), 100, 5)
-    # T1 multiplier is 3.0, T3 is 2.0, T5 is 1.5 -- monotone-decreasing.
-    assert dmg_t1 > dmg_t3 > dmg_t5, (
-        f"tier multipliers should decrease with tier; got T1={dmg_t1} T3={dmg_t3} T5={dmg_t5}"
+    # 2026-10: monster HP was re-sized x2 (floor 1) to x9 (floor 100), and
+    # magic follows by tier so a deep wand still matters: T1 6.0, T3 11.0,
+    # T5 12.75. The multipliers now RISE with tier (they used to fall).
+    assert dmg_t1 < dmg_t3 < dmg_t5, (
+        f"tier multipliers should rise with tier; got T1={dmg_t1} T3={dmg_t3} T5={dmg_t5}"
     )
     # INT 10 gives (1.0 + 10*0.1) = 2.0x INT scaling (pre-existing behavior);
     # tier mult stacks. T1: 100 * 3.0 * 2.0 = 600. T5: 100 * 1.5 * 2.0 = 300.
-    assert dmg_t1 == 600, f"T1: 3.0x tier * 2.0x INT -> 600; got {dmg_t1}"
-    assert dmg_t5 == 300, f"T5: 1.5x tier * 2.0x INT -> 300; got {dmg_t5}"
+    assert dmg_t1 == 1200, f"T1: 6.0x tier * 2.0x INT -> 1200; got {dmg_t1}"
+    assert dmg_t5 == 2550, f"T5: 12.75x tier * 2.0x INT -> 2550; got {dmg_t5}"
 
 
 def test_wand_effect_sprite_fallback_covers_new_wands():

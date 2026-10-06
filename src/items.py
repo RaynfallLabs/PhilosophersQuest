@@ -1506,6 +1506,18 @@ def load_materials(category: str) -> dict[str, dict]:
     return _MATERIAL_CACHE[category]
 
 
+# A weapon of a higher tier asks harder sums against the same clock, so its
+# wielder chains fewer answers: about half as many going from tier 1 to 2,
+# and again from 2 to 3. Base damage used to climb smoothly across those
+# boundaries, which made the first weapons of every new tier WORSE than the
+# best of the tier below (a steel sword out-damaged tier-3 metal). Each tier
+# now starts with a step in base damage large enough that, at the wisdom a
+# player has on that floor, moving up a tier is worth the harder sums by
+# about a tenth. That is the reason to change weapons: a tier-1 blade cannot
+# be scaled to deep monsters.
+TIER_DAMAGE_STEP = {1: 1.0, 2: 1.9, 3: 3.1, 4: 3.5, 5: 4.9}
+
+
 def material_tier(mat: dict) -> int:
     """The tier (1-5) of a material. Every item made of it inherits this:
     it is the math tier a weapon asks and the geography tier an armor piece
@@ -1829,7 +1841,8 @@ def instantiate_weapon(template_id: str, material_id: str, *,
     # materials produce base values 3+ naturally.
     base_damage = max(2, round(weapon_base
                                * float(mat.get('damage_mult', 1.0))
-                               * float(tpl.get('damage_modifier', 1.0))))
+                               * float(tpl.get('damage_modifier', 1.0))
+                               * TIER_DAMAGE_STEP[material_tier(mat)]))
 
     weight = max(0.1, tpl.get('base_weight_lb', 3.0) * mat.get('weight_mult', 1.0))
     name = compose_item_name(mat['name'], tpl['name'], tpl.get('noun', ''))

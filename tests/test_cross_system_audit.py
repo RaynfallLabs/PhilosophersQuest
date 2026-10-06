@@ -72,7 +72,9 @@ def test_monster_hp_curve_increases_with_depth():
         bands.setdefault(band, []).append(hp)
     avg_low = sum(bands[0]) / len(bands[0])    # F1-10
     avg_high = sum(bands[9]) / len(bands[9])   # F91-100
-    assert avg_low < 30, f"F1-10 average HP {avg_low:.1f} should be < 30"
+    # (Was < 30. Monster HP was re-sized in 2026-10 for wisdom from depth and
+    # tiered weapon damage: x2 at floor 1 rising to x9 at floor 100.)
+    assert avg_low < 60, f"F1-10 average HP {avg_low:.1f} should be < 60"
     assert avg_high > 100, f"F91-100 average HP {avg_high:.1f} should be > 100"
     assert avg_high > avg_low * 5, \
         f"Endgame monsters should be at least 5x F1 (got {avg_low:.1f} -> {avg_high:.1f})"

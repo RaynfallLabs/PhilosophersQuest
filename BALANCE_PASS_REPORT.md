@@ -1,5 +1,7 @@
 # Balance pass: is the game hard for a player who answers most questions right?
 
+> **Superseded in part (2026-10-05, later).** The tier seconds described below were removed, the basis changed to a child who is good at simple sums, and monsters and bosses were re-sized again. See `DESIGN_AND_BALANCE_PLAN.md`, section 0, for the current state.
+
 Date: 2026-10-05. Everything here is committed locally, not pushed, and **not play-tested**. The numbers come from a simulator, not from a person at the keyboard.
 
 ## The short version

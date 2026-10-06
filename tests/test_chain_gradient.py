@@ -203,7 +203,10 @@ def test_no_super_weapon_uniques():
                 continue
             cm = t['chain_multipliers']
             wb = max(1, round(mob_hp(pf) / cm[-1]))
-            bd = max(2, round(wb * m['damage_mult'] * t['damage_modifier']))
+            # each material tier carries a step in base damage (2026-10)
+            from items import TIER_DAMAGE_STEP, material_tier
+            bd = max(2, round(wb * m['damage_mult'] * t['damage_modifier']
+                              * TIER_DAMAGE_STEP[material_tier(m)]))
             best = max(best, bd)
         return best
 
