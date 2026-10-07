@@ -390,6 +390,11 @@ SIM_CONTROL = (('haste_self', 'hasted', 10, True),
                ('slow_monster', 'slowed', 8, False))
 BIG_FIGHT = 4.0                # x one attack: worth a spell
 
+# Committed, with a pet that has kept pace with the dungeon (its level equal
+# to the floor from floor 3 on). The pet bites whatever the player is
+# fighting, every turn; its own health is not modelled.
+PROFILES['companion'] = dict(PROFILES['committed'], pet=True)
+
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
 
@@ -1616,6 +1621,14 @@ class Run:
                     else:
                         self._player_attack(target, active)
                         action = 'attack'
+
+            # ---------------- the pet's bite (game_combat pet turn) ----------------
+            if self.prof.get('pet') and self.floor >= 3:
+                bitten = [m for m in active if m.alive and m._sim_away <= 0]
+                if bitten:
+                    foe = min(bitten, key=lambda m: m.hp)
+                    foe.take_damage(int(floor_curve_mod.pet_attack(self.floor) * min(
+                        1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)))
 
             # ---------------- the world's turn ----------------
             # hasted: the world tick is skipped on every other player action

@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. **Phases 0, 1, 2 and 3 are built** (each has an "As built" note under its heading); Phases 4 to 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
+Date: 2026-10-06. **Phases 0 to 4 are built** (each has an "As built" note under its heading); Phases 5 to 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -132,6 +132,14 @@ What the simulator can and cannot say about the exit line:
 
 Exit: with a pet, kills take about a fifth fewer attacks; a ranged player's losses per floor are within 20% of a melee player's.
 
+**As built (2026-10-06).**
+
+- **Pets were strong at the top and useless at the bottom.** A pet's bite was 72% of the player's own attack on floor 5 and 7% on floor 100, and deep down it died to two or three hits. A pet that keeps pace with the dungeon (its level about equal to the floor, which is the pace they level at) now bites for a quarter of one weapon attack at every depth, has 70% of the player's health bar for that depth (four to eleven hits' worth), and regenerates 1% of its health every third turn. Pets in old saves are brought up to date on load.
+- **Pet specials needed no change:** 1.2 to 2.5 times the pet's bite (so 0.3 to 0.6 of one attack) plus a short status, about once a floor.
+- **Sketched monsters no longer hit several times too hard.** A drawing copied a monster's current-scale dice and was then multiplied by the depth scale again.
+- **Measured with a pet (committed build):** 6% fewer attacks per kill, about 10% less damage taken per monster, 66% reach floor 80 against 48%, wins 42% against 38%. The plan said "a fifth fewer attacks"; with most monsters dying in one chain there is not a fifth to save, and a quarter of the player's damage is the ceiling the stacking table allows a pet.
+- **Ranged (decision D4, built as recommended: a specialist's tool).** Measured, and it already has that shape, so nothing was changed: a bow's base equals a blade's of the same material; a floor yields about 15 shots against the 30 or so attacks it takes to clear; and a shot gets no Strength multiplier, so a Strength build's blade out-hits its bow by up to two thirds. The code now says so where the multiplier is, and tests hold all three facts. The simulator does not fire bows, so "losses within 20% of melee" is not measured; ranged here is an opening shot on top of melee, never a replacement for it.
+
 ### Phase 5: who you are (hero builds, quirks, curses and identification)
 
 - **Hero builds:** see decision D5. Signature weapons get a floor-band rule; powers priced like spells; the misnamed build fixed.
@@ -174,7 +182,7 @@ What that fixes for Phase 3:
 **D3. Should resting be nearly free? (BUILT 2026-10-06 on the recommendation below, as limits rather than a food price: rest mends to 60%, meditation gives half a mana bar a floor. Food turned out too plentiful for a price in meals to bind.)**
 Recommend **no, but gently.** Raise what rest costs in food until a fully rested floor costs about one extra meal, and keep wandering monsters. Reason: with your 40 to 50% target the top of the range is already reached today by a player who simply rests between every fight (50%), with no build at all. If rest stays free, the stat build and the power-ups have nothing left to add, and the difference between a prepared player and a great one comes from patience rather than knowledge. The aim is not to make the game harder overall, only to move where the wins come from.
 
-**D4. Ranged combat: equal to melee, or a specialist tool?**
+**D4. Ranged combat: equal to melee, or a specialist tool? (Measured 2026-10-06: it already is a specialist tool; left as is.)**
 Recommend **a specialist tool:** first strike and safety, paid for in ammo and slightly lower damage. Reason: you already ruled that Fafnir must not be killable from range. A general rule makes that boss consistent instead of a special case.
 
 **D5. Hero builds: front-loaded, or level with the dungeon?**

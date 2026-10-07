@@ -2651,9 +2651,8 @@ class CombatMixin:
         """Apply a pet special's effects (damage + status) per targeting mode."""
         import random as _rng
         targeting = special.get('targeting', 'single')
-        # Pet damage comes from the pet's level, an old-scale number: size it
-        # to the floor's monsters.
-        base_dmg = floor_curve.scaled(pet.base_damage, self.dungeon_level)
+        # What this pet's blow is worth here (pet_system.Pet.special_base_on).
+        base_dmg = pet.special_base_on(self.dungeon_level)
         dmg_mult = float(special.get('damage_mult', 1.5))
         status = special.get('status')
         status_chance = float(special.get('status_chance', 0.0))
@@ -2780,9 +2779,9 @@ class CombatMixin:
                     continue
                 target = result[1] if len(result) > 1 else None
                 if action == 'attack' and target.alive:
-                    # Old-scale (level-based) damage, sized to the floor.
-                    dmg = floor_curve.scaled(pet.get_attack_damage(quiz_acc),
-                                             self.dungeon_level)
+                    # pet_system.Pet.damage_on: a quarter of one weapon
+                    # attack for a pet that has kept pace with the dungeon.
+                    dmg = pet.damage_on(self.dungeon_level, quiz_acc)
                     pre_max = target.max_hp
                     actual = target.take_damage(dmg)
                     if getattr(pet, 'is_dad', False):

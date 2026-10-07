@@ -39,8 +39,11 @@ def test_poison_on_a_monster_is_a_share_of_its_health():
 def test_pets_hit_for_the_floor_and_level_at_the_old_pace():
     from pet_system import Pet
     src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
-    assert 'floor_curve.scaled(pet.get_attack_damage(quiz_acc)' in src
-    assert 'floor_curve.scaled(pet.base_damage, self.dungeon_level)' in src
+    # 2026-10-06 (Phase 4): an ordinary pet's numbers are sized by its own
+    # level against the yardsticks; the game asks the pet (damage_on /
+    # special_base_on) and only the scripted companions scale by floor.
+    assert 'pet.damage_on(self.dungeon_level, quiz_acc)' in src
+    assert 'pet.special_base_on(self.dungeon_level)' in src
     calls = []
     stub = types.SimpleNamespace(kills_count=0, gain_xp=lambda xp: calls.append(xp) or [])
     Pet.gain_xp_from_kill(stub, 5600, 60)        # a floor-60 monster today

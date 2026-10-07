@@ -1289,6 +1289,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             if hp_pct < 0.5:
                 low_hp_mult = 1.0 + (0.5 - hp_pct) * 2.0  # up to 2x at 0% HP
 
+        # Decision D4 (2026-10-06): ranged is a specialist's tool. Measured:
+        # a bow's base equals a blade's of the same material, a floor yields
+        # about 15 shots against the 30 or so attacks it takes to clear, and
+        # a shot gets no Strength multiplier, so a Strength build's blade
+        # out-hits its bow by up to two thirds. That is the intended shape
+        # (first strike and safety, paid for in ammunition and damage); do
+        # not add a stat multiplier here.
         # STR scales MELEE damage only. RANGED shots scale on PER (the base
         # bonus added above) -- applying str_factor to ranged too made bows and
         # crossbows double-dip on STR *and* PER, the persistent "ranged hits way

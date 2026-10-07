@@ -236,12 +236,36 @@ class Pet:
     # --- Stats ---------------------------------------------------------------
 
     def _calc_max_hp(self) -> int:
-        """HP: 20 at L1, ~200 at L100."""
-        return 20 + int(self.level * 1.8)
+        """A share of the player's health bar at the pet's level
+        (floor_curve.pet_health): 21 at L1, about 315 at L100."""
+        from floor_curve import pet_health
+        return pet_health(self.level)
 
     def _calc_damage(self) -> int:
-        """Base attack damage: 3 at L1, ~30 at L100."""
-        return 3 + int(self.level * 0.27)
+        """A quarter of one weapon attack at the pet's level
+        (floor_curve.pet_attack): 4 at L1, about 535 at L100."""
+        from floor_curve import pet_attack
+        return pet_attack(self.level)
+
+    def __setstate__(self, state):
+        """Saves from before 2026-10-06 hold old-scale HP and damage (20 to
+        200 HP, 3 to 30 damage); bring an ordinary pet's up to date."""
+        self.__dict__.update(state)
+        if type(self) is Pet and getattr(self, 'alive', False):
+            try:
+                self._refresh_stats()
+            except Exception:
+                pass
+
+    # Where the game asks what a pet's blow is worth on a floor. An
+    # ordinary pet's numbers are already sized by its level; the scripted
+    # companions below (Fenrir, Dad) still carry old-scale numbers and
+    # override these to scale by the floor.
+    def damage_on(self, floor: int, quiz_accuracy: float = 0.5) -> int:
+        return self.get_attack_damage(quiz_accuracy)
+
+    def special_base_on(self, floor: int) -> int:
+        return self.base_damage
 
     def _refresh_stats(self):
         old_max = self.max_hp
@@ -361,13 +385,14 @@ class Pet:
     # --- Combat --------------------------------------------------------------
 
     def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
-        """Basic melee attack. Scaled by recent quiz accuracy (capped 0.5-1.2)."""
-        mult = 0.5 + min(0.7, quiz_accuracy * 0.7)
+        """Basic melee attack. Scaled by recent quiz accuracy: the full
+        bite at 95% right or better, down to under half at none."""
+        mult = min(1.0, (0.5 + min(0.7, quiz_accuracy * 0.7)) / 1.165)
         return max(1, int(self.base_damage * mult))
 
     def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:
         """Special elemental attack — 1.5× base, same quiz scaling."""
-        mult = 0.5 + min(0.7, quiz_accuracy * 0.7)
+        mult = min(1.0, (0.5 + min(0.7, quiz_accuracy * 0.7)) / 1.165)
         return max(1, int(self.base_damage * 1.5 * mult))
 
     def available_specials(self) -> list[dict]:
@@ -431,14 +456,16 @@ class Pet:
     # --- HP Regen ------------------------------------------------------------
 
     def tick_regen(self, bonus: int = 0):
-        """Regen 1+bonus HP every 3 turns."""
+        """Regen 1% of max HP (at least 1) plus bonus, every 3 turns."""
         if not self.alive:
             return
         self._regen_timer += 1
         if self._regen_timer >= 3:
             self._regen_timer = 0
             if self.hp < self.max_hp:
-                self.hp = min(self.max_hp, self.hp + 1 + bonus)
+                from floor_curve import PET_REGEN_SHARE
+                self.hp = min(self.max_hp, self.hp + bonus
+                              + max(1, int(self.max_hp * PET_REGEN_SHARE)))
 
     # --- Take damage ---------------------------------------------------------
 
@@ -633,6 +660,15 @@ class FenrirPet(Pet):
 
     def _calc_damage(self) -> int:
         return 45
+
+    # Old-scale numbers (45 damage): sized to the floor's monsters.
+    def damage_on(self, floor: int, quiz_accuracy: float = 0.5) -> int:
+        from floor_curve import scaled
+        return scaled(self.get_attack_damage(quiz_accuracy), floor)
+
+    def special_base_on(self, floor: int) -> int:
+        from floor_curve import scaled
+        return scaled(self.base_damage, floor)
 
     def gain_xp(self, amount: int = 1) -> list[str]:
         return []   # Fenrir doesn't level

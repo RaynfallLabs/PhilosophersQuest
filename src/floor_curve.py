@@ -161,6 +161,26 @@ def natural_regen(max_hp: int) -> int:
     return max(1, int(max_hp) // 50)
 
 
+# A pet that has kept pace with the dungeon (its level about equal to the
+# floor) bites for PET_ATTACK_SHARE of one weapon attack and has
+# PET_HEALTH_SHARE of the player's health bar for that depth. Pet numbers
+# were written as "3 damage at level 1, 30 at level 100" and then multiplied
+# by the monster-health scale, which made a pet 72% of the player's attack
+# on floor 5 and 7% on floor 100, dying to two or three hits deep down.
+PET_ATTACK_SHARE = 0.25
+PET_HEALTH_SHARE = 0.70
+PET_REGEN_SHARE = 0.01        # of max HP, every third turn
+
+
+def pet_attack(level: int) -> int:
+    """A pet's base bite at `level` (levels track floors, 1 to 100)."""
+    return max(3, int(round(PET_ATTACK_SHARE * one_attack(max(1, min(100, int(level)))))))
+
+
+def pet_health(level: int) -> int:
+    return max(20, int(round(PET_HEALTH_SHARE * health_bar(max(1, min(100, int(level)))))))
+
+
 # Meditation gives back at most this share of max MP on any one floor; a new
 # floor brings a new allowance. Unlimited, waiting turned into healing with
 # no ceiling: eight waits bought a point of mana, three points a Cure Light
