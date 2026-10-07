@@ -1197,8 +1197,62 @@ class Player:
 
     # --- Stat bonuses ---
 
+    # Stat points from traits (quirks). There are 112 traits and most give a
+    # point or two with no limit: the one source of power that grows with
+    # hours played rather than with depth (decision D6). They are paid from
+    # an allowance that grows as the player descends (4 at the top, 16 at the
+    # bottom); what a trait gives beyond today's allowance is OWED, and comes
+    # in as the allowance grows. Nothing earned is ever lost.
+    QUIRK_STAT_BASE = 4
+    QUIRK_STAT_FLOORS = 8
+
+    def quirk_stat_room(self) -> int:
+        floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
+        cap = self.QUIRK_STAT_BASE + floor // self.QUIRK_STAT_FLOORS
+        return max(0, cap - int(getattr(self, 'quirk_stat_gained', 0)))
+
+    def gain_quirk_stat(self, stat: str, amount: int) -> int:
+        """A stat point from a trait. Returns the points that landed now;
+        the rest are recorded in quirk_stat_owed."""
+        amount = int(amount)
+        now = min(amount, self.quirk_stat_room())
+        if now > 0:
+            self.quirk_stat_gained = int(getattr(self, 'quirk_stat_gained', 0)) + now
+            flag, self._quirk_grant = getattr(self, '_quirk_grant', False), False
+            try:
+                self.apply_stat_bonus(stat, now)
+            finally:
+                self._quirk_grant = flag
+        if amount > now:
+            if not isinstance(getattr(self, 'quirk_stat_owed', None), list):
+                self.quirk_stat_owed = []
+            self.quirk_stat_owed.append([stat, amount - max(0, now)])
+        return max(0, now)
+
+    def pay_quirk_stats_owed(self) -> list:
+        """Pay out owed trait points as far as the allowance now reaches.
+        Returns [(stat, points)] paid. Called on reaching a new depth."""
+        owed = getattr(self, 'quirk_stat_owed', None) or []
+        paid = []
+        while owed and self.quirk_stat_room() > 0:
+            stat, amount = owed[0]
+            give = min(int(amount), self.quirk_stat_room())
+            self.quirk_stat_gained = int(getattr(self, 'quirk_stat_gained', 0)) + give
+            self.apply_stat_bonus(stat, give)
+            paid.append((stat, give))
+            if give >= amount:
+                owed.pop(0)
+            else:
+                owed[0][1] = amount - give
+        return paid
+
     def apply_stat_bonus(self, stat: str, amount: int):
         """Permanently change a stat and update derived maximums."""
+        # While a trait's reward is being applied (quirk_system sets the
+        # flag), stat points go through the trait allowance.
+        if amount > 0 and stat != 'AC' and getattr(self, '_quirk_grant', False):
+            self.gain_quirk_stat(stat, amount)
+            return
         if stat == 'AC':
             # AC is computed, not stored directly — accumulate in a bonus field
             self._accessory_ac_bonus = getattr(self, '_accessory_ac_bonus', 0) + amount

@@ -1246,6 +1246,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"The Dungeon Has Taught You Something. Wisdom +{_learned}. "
                     f"(The Combat Clock Is Now {self.player.get_quiz_timer('math')} Seconds.)",
                     'success')
+        # Trait points held back by the allowance come in with new depth.
+        if self.player.deepest_floor_reached > _was_deepest:
+            for _stat, _n in self.player.pay_quirk_stats_owed():
+                self.add_message(
+                    f"A Trait You Earned Comes Into Its Own: {_stat} +{_n}.", 'success')
+        # A hero's signature weapon grows with new depth (decision D5).
+        if self.player.deepest_floor_reached > _was_deepest:
+            from items import grow_signature_weapon
+            _held = list(self.player.inventory) + [
+                self.player.weapon, getattr(self.player, 'ranged_weapon', None)]
+            for _w in _held:
+                _tier_was = int(getattr(_w, 'quiz_tier', 1) or 1) if _w is not None else 1
+                _grew = grow_signature_weapon(_w, self.player.deepest_floor_reached)
+                if _grew:
+                    self.add_message(
+                        f"{self._display_name(_w)} Grows With You: Base Damage "
+                        f"{_grew[0]} Becomes {_grew[1]}.", 'success')
+                if _w is not None and int(getattr(_w, 'quiz_tier', 1) or 1) > _tier_was:
+                    self.add_message(
+                        f"{self._display_name(_w)} Now Asks Tier "
+                        f"{_w.quiz_tier} Sums, Like The Weapons Of This Depth.", 'warning')
         # Fafnir's Heart trophy (2026-05-31): +2 max HP each NEW deepest floor.
         if self.player.deepest_floor_reached > _was_deepest:
             _per_desc = int(getattr(self.player, '_fafnir_per_descent_hp', 0) or 0)
@@ -1853,6 +1874,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     w = instantiate_weapon(start_weapon[0], start_weapon[1])
                 else:
                     w = next((x for x in weapons if x.id == start_weapon), None)
+                    if w is not None and not b.get('_no_weapon_growth'):
+                        # A hero's own named weapon keeps pace with the
+                        # dungeon (items.grow_signature_weapon). Copies of
+                        # the same unique found as loot do not.
+                        w.grows_with_depth = True
                 if w:
                     _mark_starting_item_known(w)
                     self.player.known_item_ids.add(w.id)

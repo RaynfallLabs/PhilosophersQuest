@@ -161,6 +161,21 @@ def natural_regen(max_hp: int) -> int:
     return max(1, int(max_hp) // 50)
 
 
+# A hero's signature weapon (the named one a secret build starts with) is
+# worth this much of a typical common weapon of the deepest floor reached:
+# 1.3 at the top, easing to 1.1 by floor 40. It starts far above that (three
+# to five times a floor-1 sword), so the starting edge fades on its own and
+# from about floor 12 the weapon grows instead of being thrown away.
+HERO_WEAPON_SHARE_START = 1.3
+HERO_WEAPON_SHARE_END = 1.1
+HERO_WEAPON_SHARE_END_FLOOR = 40
+
+
+def hero_weapon_share(floor: int) -> float:
+    t = min(1.0, max(0.0, (int(floor) - 1) / float(HERO_WEAPON_SHARE_END_FLOOR - 1)))
+    return HERO_WEAPON_SHARE_START + (HERO_WEAPON_SHARE_END - HERO_WEAPON_SHARE_START) * t
+
+
 # A pet that has kept pace with the dungeon (its level about equal to the
 # floor) bites for PET_ATTACK_SHARE of one weapon attack and has
 # PET_HEALTH_SHARE of the player's health bar for that depth. Pet numbers

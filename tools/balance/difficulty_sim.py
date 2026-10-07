@@ -394,6 +394,9 @@ BIG_FIGHT = 4.0                # x one attack: worth a spell
 # to the floor from floor 3 on). The pet bites whatever the player is
 # fighting, every turn; its own health is not modelled.
 PROFILES['companion'] = dict(PROFILES['committed'], pet=True)
+# Everything at once: the build, the secrets, a pet and magic. The stacking
+# limit (REBALANCE_MASTER_PLAN.md section 3) is checked against this one.
+PROFILES['stacked'] = dict(PROFILES['secrets'], pet=True, magic=True)
 
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')

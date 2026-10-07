@@ -2391,6 +2391,11 @@ def _assign_buc(inst, level: int, rng: random.Random):
     # Depth scaling: cursed +0.1%/level, blessed +0.05%/level
     cursed_pct  = min(0.50, cursed_base + level * 0.001)
     blessed_pct = min(0.30, blessed_base + level * 0.0005)
+    # `can_be_cursed: false` on an item (108 of them: holy relics, quest
+    # gear, gifts) was written and never read. Such an item is never found
+    # cursed; the chance goes to plain.
+    if not getattr(inst, 'can_be_cursed', True):
+        cursed_pct = 0.0
     roll = rng.random()
     if roll < cursed_pct:
         inst.buc = 'cursed'

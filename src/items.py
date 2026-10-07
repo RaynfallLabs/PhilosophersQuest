@@ -668,7 +668,7 @@ class Armor(Item):
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
-        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
+        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', True))
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'unknown armor')
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
@@ -764,7 +764,7 @@ class Shield(Item):
         self.equip_threshold     = int(defn.get('equip_threshold', 2))
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
-        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', False))
+        self.can_be_cursed: bool = bool(defn.get('can_be_cursed', True))
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
@@ -809,7 +809,7 @@ class Accessory(Item):
         self.pacify_chance: float        = float(defn.get('pacify_chance', 0.0))       # Seal of Solomon
         self.death_save: bool            = bool(defn.get('death_save', False))         # Jade Cicada
         self.resurrect_on_death: bool    = bool(defn.get('resurrect_on_death', False)) # Ankh of Isis
-        self.can_be_cursed: bool         = bool(defn.get('can_be_cursed', False))
+        self.can_be_cursed: bool         = bool(defn.get('can_be_cursed', True))
         # ----- Engine wave 6: charge-based accessories (Lyre of Orpheus,
         # Hand of Glory). `use_charged: true` exposes the item in the power
         # menu when equipped; `charges` / `max_charges` track remaining uses.
@@ -2123,6 +2123,52 @@ def material_spawn_weight(material: dict, floor: int) -> float:
     if bell < 0.005:
         return 0.0
     return max(0.02, peak_weight * bell)
+
+
+_TYPICAL_BASE_CACHE: dict[int, dict] = {}
+
+
+def typical_weapon_base(floor: int, tier: int | None = None) -> int:
+    """Base damage of a typical common melee weapon found on `floor` (the
+    median of what the generator makes there). With `tier`, the median of
+    the weapons of that maths tier there, or of all of them if the floor
+    has none of it. Cached; deterministic."""
+    floor = max(1, min(100, int(floor)))
+    if floor not in _TYPICAL_BASE_CACHE:
+        import random as _random
+        rng = _random.Random(7919 * floor)
+        by_tier: dict = {}
+        for _ in range(240):
+            w = pick_random_weapon_for_floor(floor, rng)
+            if w is not None and not getattr(w, 'requires_ammo', None):
+                by_tier.setdefault(int(w.quiz_tier), []).append(int(w.base_damage))
+                by_tier.setdefault(None, []).append(int(w.base_damage))
+        _TYPICAL_BASE_CACHE[floor] = {
+            t: sorted(v)[len(v) // 2] for t, v in by_tier.items() if len(v) >= 8}
+    table = _TYPICAL_BASE_CACHE[floor]
+    return table.get(tier, table.get(None, 2))
+
+
+def grow_signature_weapon(weapon, floor: int) -> tuple[int, int] | None:
+    """A hero's own weapon keeps pace with the dungeon (decision D5): its
+    base is at least floor_curve.hero_weapon_share(floor) of a typical
+    common's on the deepest floor reached, and it asks the sums of that
+    floor's band. Never lowers anything. Returns (old base, new base) if it
+    grew, else None."""
+    if weapon is None or not getattr(weapon, 'grows_with_depth', False):
+        return None
+    from floor_curve import hero_weapon_share
+    floor = max(1, min(100, int(floor)))
+    band_tier = min(5, 1 + floor // 20)
+    if int(getattr(weapon, 'quiz_tier', 1) or 1) < band_tier:
+        weapon.quiz_tier = band_tier
+    want = int(round(hero_weapon_share(floor)
+                     * typical_weapon_base(floor, int(weapon.quiz_tier))))
+    old = int(getattr(weapon, 'base_damage', 0) or 0)
+    if want <= old:
+        return None
+    weapon.base_damage = want
+    return old, want
 
 
 def pick_random_weapon_for_floor(floor: int, rng) -> Weapon | None:

@@ -145,7 +145,7 @@ class QuirkSystem:
         """
         pl = self._pl
         before = {k for k, v in pl.status_effects.items() if v == -1}
-        apply_fn(pl)
+        self._apply_within_caps(apply_fn)
         gained = [k for k, v in pl.status_effects.items()
                   if v == -1 and k not in before]
         if gained:
@@ -153,6 +153,30 @@ class QuirkSystem:
             for name in gained:
                 if name not in kept:
                     kept.append(name)
+
+    def _apply_within_caps(self, apply_fn) -> None:
+        """Run a trait's reward with its permanent gains inside the caps
+        (decision D6): stat points go through Player.gain_quirk_stat, and
+        seconds on the combat clock become Wisdom, which is the same thing
+        (a point is a second) but counted."""
+        pl = self._pl
+        clock_before = int((getattr(pl, 'quiz_timer_bonuses', None) or {}).get('math', 0))
+        owed_before = sum(int(a) for _s, a in (getattr(pl, 'quirk_stat_owed', None) or []))
+        pl._quirk_grant = True
+        try:
+            apply_fn(pl)
+            bonuses = getattr(pl, 'quiz_timer_bonuses', None) or {}
+            extra = int(bonuses.get('math', 0)) - clock_before
+            if extra > 0:
+                bonuses['math'] = clock_before
+                pl.gain_quirk_stat('WIS', extra)
+        finally:
+            pl._quirk_grant = False
+        owed = sum(int(a) for _s, a in (getattr(pl, 'quirk_stat_owed', None) or []))
+        if owed > owed_before and hasattr(self.game, 'add_message'):
+            self.game.add_message(
+                "Part Of This Trait's Gift Is Held For You: It Comes In As You Go Deeper.",
+                'info')
 
     def _award(self, qid: str, name: str, apply_fn):
         if self.is_unlocked(qid):
@@ -235,7 +259,7 @@ class QuirkSystem:
         if u is None:
             self._pl.unlocked_quirks = set()
         self._pl.unlocked_quirks.add(qid)
-        apply_fn(self._pl)
+        self._apply_within_caps(apply_fn)
         # Initialise tracking from definition
         pdef = _ACTIVE_POWER_DEFS.get(qid, {})
         pl = self._pl

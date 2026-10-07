@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. **Phases 0 to 4 are built** (each has an "As built" note under its heading); Phases 5 to 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
+Date: 2026-10-06. **Phases 0 to 5 are built** (each has an "As built" note under its heading); Phases 6 and 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -148,6 +148,15 @@ Exit: with a pet, kills take about a fifth fewer attacks; a ranged player's loss
 
 Exit: the "everything stacked" player is inside the stacking limit at every band.
 
+**As built (2026-10-06).**
+
+- **A hero's named weapon grows with the dungeon (decision D5, built as recommended).** The six signature weapons (Achilles' Spear, Romulus' Spear, the Torch of Prometheus, the Witcher's Silver Blade, Zireael, the Boomstick) start at three to five times a floor-1 sword, so the starting edge is real and fades by itself. From about floor 12 the weapon's base is kept at 1.3 times a typical common's of the deepest floor reached, easing to 1.1 times by floor 40, and at floors 20, 40, 60 and 80 it starts asking that band's sums, exactly as a common of that depth would. Nobody is told to throw the hero's sword away. Only the copy a hero starts with grows; the same unique found as loot does not. The log says when it grows and when it starts asking harder sums.
+- **Trait (quirk) rewards are inside the caps (decision D6, built as recommended).** Stat points from traits are paid from an allowance that grows with depth: 4 at the top, 16 at the bottom. What a trait gives beyond today's allowance is held and comes in as the player descends, with a message each time; nothing earned is lost. Seconds a trait adds to the combat clock become Wisdom (the same thing, a point is a second) and are counted in the same allowance. Before this, 112 traits each gave "+1 or +2, no limit": the one source of power that grew with hours played instead of depth.
+- **`can_be_cursed: false` is honoured (decision D7, built as recommended).** 108 items carried the field and nothing read it. They are never found cursed now. Chest and drop loot stays uncursed, as before.
+- **Not done: the 112 unlock thresholds were not restated one by one.** They are conditions in code, not data, and each needs reading by hand. With the rewards capped, a threshold that is too easy can no longer break anything; it only decides when a held point is earned. Hero powers were already sized to the floor in an earlier pass and were not revisited. The Tesla build's name is still on your list.
+
+**Where the table stands after Phases 3 to 5** (400 runs each): prepared 19%, committed 29%, everything stacked (build, secrets, pet, magic) 50%. Capping lucky stat points and flattening what Intelligence adds to healing cost every profile 7 to 10 points since Phase 2. The curve is brought back onto the targets in Phase 6, together with the gates, because Abaddon alone now takes a fifth of everyone who reaches him.
+
 ### Phase 6: the end of the game
 
 - Seal demons, Abaddon and his altars, Death and the climb out, the Abyss ritual, all re-sized against the yardsticks **after** Phases 1 to 5, since they are the place every system meets.
@@ -185,13 +194,13 @@ Recommend **no, but gently.** Raise what rest costs in food until a fully rested
 **D4. Ranged combat: equal to melee, or a specialist tool? (Measured 2026-10-06: it already is a specialist tool; left as is.)**
 Recommend **a specialist tool:** first strike and safety, paid for in ammo and slightly lower damage. Reason: you already ruled that Fafnir must not be killable from range. A general rule makes that boss consistent instead of a special case.
 
-**D5. Hero builds: front-loaded, or level with the dungeon?**
+**D5. Hero builds: front-loaded, or level with the dungeon? (BUILT 2026-10-06 as recommended.)**
 Recommend **signature weapons grow with depth, the starting edge fades.** A hero's named weapon gains a tier each floor band, staying about equal to a good common, with its special trait as the reason to keep it. Reason: a child who earned a secret build should not be told to throw the hero's sword away on floor 12, which is what fixed damage means now that each tier is a real step.
 
-**D6. Quirk rewards: inside the caps or outside?**
+**D6. Quirk rewards: inside the caps or outside? (BUILT 2026-10-06 as recommended.)**
 Recommend **inside.** Clock seconds become Wisdom, permanent stats count against the same per-stat cap as cooking, and all quirks together stay under 1.25x. Reason: they are the one remaining source that scales with hours played rather than depth, so they are where a patient player would break everything else.
 
-**D7. Cursed loot: where can it come from?**
+**D7. Cursed loot: where can it come from? (BUILT 2026-10-06 as recommended.)**
 Recommend **ground loot only, as now, and honour the "cannot be cursed" field.** I tried cursing chest and drop loot this week and it made the early game markedly harder for a child who wears what they find, for no gain in interest.
 
 **D8. Death and the escape: how hard?**
