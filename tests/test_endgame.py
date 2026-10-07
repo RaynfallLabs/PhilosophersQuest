@@ -65,3 +65,29 @@ def test_the_gate_bosses_keep_their_order_of_size():
     hp = [_mean(d[k]['hp']) for k in ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon',
                                       'fenrir_wolf', 'abaddon_destroyer')]
     assert hp == sorted(hp)
+
+
+# ------------------------------------------------- Phase 7: what the player sees
+
+def test_the_sidebar_clock_is_the_clock_the_fight_will_get():
+    p = Player()
+    assert p.combat_clock() == 10
+    p.add_effect('hasted', 5)
+    assert p.combat_clock() == 12 or p.combat_clock() == 13        # x1.25
+    q = Player()
+    q.add_effect('confused', 5)
+    assert q.combat_clock() < 10
+    r = Player()
+    r.grant_insight(6, 4)                                          # Michael, Guide My Hand
+    assert r.combat_clock() == 16
+    ui = open(os.path.join(ROOT, 'src', 'ui.py'), encoding='utf-8').read()
+    assert 'player.combat_clock()' in ui and "get_quiz_timer('math')" not in ui
+
+
+def test_a_weapon_card_says_which_sums_it_asks():
+    import types
+    import game_render
+    w = types.SimpleNamespace(quiz_tier=3, class_mechanic=None, damage_types=['slash'],
+                              two_handed=False, unique_effect=None)
+    text = game_render.RenderMixin._kit_weapon_special(types.SimpleNamespace(), w, 5)
+    assert text.startswith('Tier 3 Sums')

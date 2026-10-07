@@ -1007,6 +1007,14 @@ class Player:
         self.status_effects['inspired'] = max(
             int(turns), int(self.status_effects.get('inspired', 0)) if active else 0)
 
+    def combat_clock(self) -> int:
+        """Seconds the next maths chain will actually get: Wisdom (and any
+        lent by prayer), times haste, blessing and the debuffs, plus earned
+        extra seconds. The same sum quiz_engine.start_quiz does. The sidebar
+        used to show bare Wisdom, which hid haste and every debuff."""
+        return (round(self.get_quiz_timer('math') * self.get_quiz_timer_modifier())
+                + int(self.get_quiz_extra_seconds('math')))
+
     def get_quiz_timer_modifier(self) -> float:
         """Multiplier applied to quiz timer based on active effects.
         Floor of 0.40x prevents stacked debuffs from making quizzes unsolvable."""

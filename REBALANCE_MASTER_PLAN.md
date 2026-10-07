@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. **Phases 0 to 6 are built** (each has an "As built" note under its heading); Phase 7 is not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
+Date: 2026-10-06. **Phases 0 to 6 are built, and the screen half of Phase 7** (each has an "As built" note under its heading); What is left: your play-test (`PLAYTEST_PHASES_2_TO_7.md`), then the last tune from it, then the `main.py` split. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -194,6 +194,14 @@ Each figure carries about four points of noise. The pet is the single most valua
 - **Context cards**, if you want them: see the parked analysis. They belong here because open-book answers change accuracy in every non-combat system above.
 - One final simulator pass with real answer times, then play-test, then release.
 - **Splitting `main.py`** is deliberately last: doing it mid-balance would turn every later change into a merge.
+
+**As built (2026-10-06), the screen half.**
+
+- The sidebar and the character sheet show **Clock**: the seconds the next fight will really get, with haste, blessing, the Guiding Hand and every debuff counted. Gold when lengthened, red when shortened. It used to show bare Wisdom.
+- A weapon's card starts with **Tier N Sums**.
+- The character sheet shows **Dodge** and **Tough**.
+- Already in place from earlier phases: the Wisdom message on every third floor, the Inspired effect and its ending line, the prayer menu, the gate-boss gift panel, the fury and mending lines, the "held for you" line for traits, prices that follow the floor.
+- **Not done, on purpose:** context cards (you parked them); a simulator pass with real answer times (none are recorded yet: the game writes `answer_times.json` as your children play, and `python tools/balance/yardsticks.py --times` reads it); the `main.py` split, which the plan puts after the play-test so that play-test fixes are not merges.
 
 ## 5. Decisions that are truly yours
 

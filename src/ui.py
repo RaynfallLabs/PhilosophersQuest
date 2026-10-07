@@ -287,7 +287,13 @@ class Sidebar:
             (f"AC {ac}", ac_color),
             (f"Gold {gold:,}", FP.GOLD_PALE),
             (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
-            (f"Timer {player.get_quiz_timer('math')}s", FP.WARNING_TEXT),
+            # The clock the next fight will really get. Gold when something
+            # is lengthening it (haste, a blessing, the Guiding Hand), red
+            # when something is shortening it.
+            (f"Clock {player.combat_clock()}s",
+             FP.GOLD_BRIGHT if player.combat_clock() > player.WIS
+             else FP.DANGER_TEXT if player.combat_clock() < player.WIS
+             else FP.WARNING_TEXT),
             (f"Wt {wt:.0f}/{lim}", wt_color),
             (f"Spells {spell_count}", FP.MP_BLUE_TEXT),
         ]

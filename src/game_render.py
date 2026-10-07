@@ -716,7 +716,7 @@ class RenderMixin:
         metrics = [
             ("AC", str(p.get_ac()), FP.SUCCESS_TEXT if p.get_ac() <= 5 else FP.GOLD_BRIGHT),
             ("Sight", str(p.get_sight_radius()), FP.BODY_TEXT),
-            ("Timer", f"{p.get_quiz_timer('math')}s", FP.GOLD_BRIGHT),
+            ("Clock", f"{p.combat_clock()}s", FP.GOLD_BRIGHT),
             ("Spells", str(len(getattr(p, 'known_spells', {}))), FP.MP_BLUE_TEXT),
             # What Dexterity and Constitution are doing for you right now.
             ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
@@ -3615,6 +3615,11 @@ class RenderMixin:
 
     def _kit_weapon_special(self, w, idl: int = 5) -> str:
         bits = []
+        # Which sums it asks: the one fact that decides whether a stronger
+        # weapon is actually better in this player's hands.
+        _tier = int(getattr(w, 'quiz_tier', 0) or 0)
+        if _tier:
+            bits.append(f"Tier {_tier} Sums")
         # Class mechanic FIRST -- the weapon's signature ability (Backstab,
         # Reach 2, Master Strike...). Shown once the weapon class is known.
         mech = getattr(w, 'class_mechanic', None)
