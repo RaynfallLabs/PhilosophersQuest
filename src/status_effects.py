@@ -29,7 +29,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'poisoned':           ('Poisoned',           ( 80, 210,  60), 'Losing 2% of max HP per turn'),
     'diseased':           ('Diseased',           (135, 205,  60), 'Slowly drains STR/CON'),
     'petrifying':         ('Petrifying',         (205, 205, 130), 'Turning to stone -- find a cure!'),
-    'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 2 HP per turn'),
+    'strangulation':      ('Strangled',          (200,  80,  80), 'Losing 4% of max HP per turn'),
     'fumbling':           ('Fumbling',           (220, 170,  80), '20% chance actions fail'),
     'slowed':             ('Slowed',             (155, 155, 230), 'Every other action is skipped'),
     'aggravated':         ('Aggravated',         (230, 100,  50), 'All monsters are alerted'),
@@ -620,7 +620,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                     messages.append((f'The disease saps your strength! {stat} -1.', 'danger'))
 
         elif effect == 'strangulation':
-            dmg = player.take_damage(2, 'physical')
+            dmg = player.take_damage(dot_tick(player) * 2, 'physical')
             if dmg:
                 messages.append(('You are being strangled!', 'danger'))
 
@@ -648,12 +648,12 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
         elif effect == 'doomed':
             if random.random() < 0.12:
-                player.hp = max(0, player.hp - 1)
+                player.hp = max(0, player.hp - max(1, dot_tick(player) // 2))
                 messages.append(('The doom curse gnaws at your life force!', 'danger'))
 
         elif effect == 'draining':
             if random.random() < 0.17:
-                player.hp = max(0, player.hp - 1)
+                player.hp = max(0, player.hp - max(1, dot_tick(player) // 2))
                 messages.append(('The ring drains your life force!', 'danger'))
 
         elif effect == 'burning':

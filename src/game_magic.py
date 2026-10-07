@@ -47,7 +47,14 @@ from typing import TYPE_CHECKING
 import pygame
 
 import sound_system as _snd
-from floor_curve import scaled as _floor_scaled
+from floor_curve import mend as _mend, scaled as _floor_scaled
+
+# Least a healing wand, spell or scroll restores, as a share of max HP (the
+# written dice still apply when they are more). By spell tier / scroll tier.
+WAND_HEAL_SHARE = 0.15
+WAND_EXTRA_HEAL_SHARE = 0.30
+SPELL_HEAL_SHARE = {1: 0.10, 2: 0.18, 3: 0.30, 4: 0.45, 5: 0.45}
+SCROLL_HEAL_SHARE = (0.12, 0.18, 0.25, 0.32, 0.40)
 from game_helpers import wand_tier_duration
 from game_states import (
     STATE_PLAYER, STATE_QUIZ,
@@ -380,12 +387,14 @@ class MagicMixin:
 
         # -- CHARACTER EFFECTS ------------------------------------------------
         if effect == 'heal':
-            amount = roll(wand.power) if wand.power else 8
+            amount = _mend(roll(wand.power) if wand.power else 8,
+                           self.player.max_hp, WAND_HEAL_SHARE)
             self.player.restore_hp(amount)
             self.add_message(f"The wand heals you for {amount} HP!", 'success')
 
         elif effect == 'extra_heal':
-            amount = (roll(wand.power) if wand.power else 20) + 10
+            amount = _mend((roll(wand.power) if wand.power else 20) + 10,
+                           self.player.max_hp, WAND_EXTRA_HEAL_SHARE)
             self.player.restore_hp(amount)
             self.add_message(f"Intense healing washes over you -- {amount} HP restored!", 'success')
 
@@ -1462,7 +1471,9 @@ class MagicMixin:
         if effect == 'extra_heal':
             from dice import roll
             base = roll(power) if power else 8
-            healed = self._spell_damage(base, chain, healing=True)
+            _tier = int(getattr(self, '_active_spell_tier', 1) or 1)
+            healed = _mend(self._spell_damage(base, chain, healing=True),
+                           self.player.max_hp, SPELL_HEAL_SHARE.get(_tier, 0.45))
             self.player.restore_hp(healed)
             self.add_message(f"You are healed for {healed} HP!", 'success')
             return
@@ -2403,7 +2414,8 @@ class MagicMixin:
 
         if effect == 'heal':
             base = roll(scroll.power) if scroll.power else 10
-            amount = max(1, int(base))
+            amount = _mend(max(1, int(base)), self.player.max_hp,
+                           SCROLL_HEAL_SHARE[_tstep])
             if _scroll_buc == 'blessed':
                 amount = amount * 2
             elif _scroll_buc == 'cursed':
@@ -3642,7 +3654,8 @@ class MagicMixin:
         """
         from dice import roll
         import random as _rng
-        dmg = roll('3d6')
+        from floor_curve import hazard
+        dmg = hazard(roll('3d6'), self.player.max_hp)
         actual = self.player.take_damage(dmg)
         self.add_message(
             "Setne's curse boils up out of the book -- your mind reels and "

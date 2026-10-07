@@ -802,7 +802,8 @@ class DivineMixin:
         if chain == 0:
             outcome = _rng.choice(['shock', 'curse', 'summon'])
             if outcome == 'shock':
-                dmg = _rng.randint(5, 15)
+                from floor_curve import hazard
+                dmg = hazard(_rng.randint(5, 15), self.player.max_hp)
                 self.player.take_damage(dmg, 'lightning')
                 self.add_message(f"The throne shocks you for {dmg} damage!", 'danger')
             elif outcome == 'curse':

@@ -65,3 +65,62 @@ def test_answer_times_are_recorded_and_totalled(tmp_path, monkeypatch):
     qe.answer(str(qe.current_question['answer']))
     qe._persist_answer_times()
     assert quiz_engine.load_answer_times()['math|1']['n'] == 2
+
+
+# ------------------------------------------- Phase 1: hazards and healing
+
+def test_a_hazard_is_a_share_of_the_players_own_health():
+    """A pit trap's 2d6 was a quarter of a new character and under 2% of a
+    deep one."""
+    assert floor_curve.hazard(7, 60) == 7                   # as written at 60 HP
+    assert floor_curve.hazard(7, 30) == 4 and floor_curve.hazard(7, 420) == 49
+    assert floor_curve.hazard(0, 400) == 0 and floor_curve.hazard(1, 20) == 1
+    assert floor_curve.hazard(500, 400) == round(floor_curve.HAZARD_CAP * 400)
+    for name, needle in (
+            ('main.py', "_hazard(_dice_roll(dmg_str), self.player.max_hp)"),
+            ('main.py', "_of_health(STARVE_SHARE, 1, self.player.max_hp)"),
+            ('container_system.py', "hazard(raw_dmg, player.max_hp)"),
+            ('game_combat.py', "floor_curve.hazard(_dice_roll('1d4'), self.player.max_hp)"),
+            ('game_divine.py', "hazard(_rng.randint(5, 15), self.player.max_hp)"),
+            ('game_magic.py', "hazard(roll('3d6'), self.player.max_hp)")):
+        src = open(os.path.join(ROOT, 'src', name), encoding='utf-8').read()
+        assert needle in src, (name, needle)
+
+
+def test_chest_traps_hurt_in_proportion():
+    import container_system as cs
+    from player import Player
+    for max_hp in (30, 400):
+        worst = 0.0
+        for tier, pool in cs._load_trap_pool().items():
+            for trap in pool:
+                for _ in range(15):
+                    p = Player()
+                    p.max_hp = p.hp = max_hp
+                    cs._trigger_trap(p, dict(trap), [])
+                    worst = max(worst, (max_hp - p.hp) / max_hp)
+        assert 0.10 <= worst <= floor_curve.HAZARD_CAP + 0.02, (max_hp, worst)
+
+
+def test_healing_keeps_pace_with_the_health_bar():
+    assert floor_curve.mend(9, 60, 0.15) == 9 and floor_curve.mend(9, 400, 0.15) == 60
+    import game_magic
+    assert game_magic.WAND_HEAL_SHARE < game_magic.WAND_EXTRA_HEAL_SHARE <= 0.4
+    shares = [game_magic.SPELL_HEAL_SHARE[t] for t in (1, 2, 3, 4)]
+    assert shares == sorted(shares) and shares[-1] <= 0.5
+    from food_system import _apply_outcome_body
+    from player import Player
+    p = Player()
+    p.max_hp, p.hp = 400, 100
+    _apply_outcome_body(p, {'name': 'Stew'}, {'sp': 10, 'hp': 14})
+    assert p.hp - 100 >= 30                                  # 14 written; 7.8% of 400 + the meal's max HP
+
+
+def test_starving_and_strangling_follow_the_health_bar():
+    from player import Player
+    from status_effects import tick_all
+    p = Player()
+    p.max_hp = p.hp = 400
+    p.status_effects['strangulation'] = 3
+    tick_all(p)
+    assert 400 - p.hp == 16

@@ -101,6 +101,31 @@ def of_health(share: float, floor: float, max_hp: int | None = None) -> int:
     return max(1, int(round(share * bar)))
 
 
+# Fixed hazard and healing numbers (a trap's 2d6, a wand's 2d8) were written
+# when a character had 30 to 60 hit points. A steady cook now has 100 by
+# floor 20 and over 400 deep down, so the same numbers had become a tickle:
+# a pit trap on floor 80 took under 2% of a health bar.
+HAZARD_BAR = 60          # the health bar the written hazard numbers assumed
+HAZARD_CAP = 0.30        # no single hazard takes more than this share
+
+
+def hazard(written: float, max_hp: int) -> int:
+    """`written` points of hazard damage (a trap, a shock, a backlash) as the
+    same share of the player's own health bar that it was of a 60-point one,
+    never more than HAZARD_CAP of it."""
+    if written <= 0:
+        return 0
+    share = min(HAZARD_CAP, float(written) / HAZARD_BAR)
+    return max(1, int(round(share * max(1, int(max_hp)))))
+
+
+def mend(written: float, max_hp: int, least_share: float = 0.0) -> int:
+    """Healing: the written amount, or `least_share` of the player's health
+    bar if that is more. Keeps a wand or a meal worth using once hit points
+    have grown, the way healing potions already work."""
+    return max(int(round(written)), int(round(least_share * max(1, int(max_hp)))))
+
+
 def target_dmg(floor: float) -> float:
     """Typical damage of one ordinary monster hit on `floor`."""
     return _interp(DMG_ANCHORS, floor)

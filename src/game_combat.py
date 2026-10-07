@@ -1573,7 +1573,7 @@ class CombatMixin:
         if self.player.has_effect('in_pit'):
             return  # already in a pit
         from dice import roll as _dice_roll
-        dmg = _dice_roll('1d4')
+        dmg = floor_curve.hazard(_dice_roll('1d4'), self.player.max_hp)
         actual = self.player.take_damage(dmg, 'physical')
         # -1 = until the player climbs out (the move handler clears it). A
         # duration of 1 expired on the same turn's status tick, before any

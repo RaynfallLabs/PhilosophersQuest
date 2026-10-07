@@ -77,7 +77,8 @@ import dungeon as dungeon_mod                    # noqa: E402
 import items as items_mod                        # noqa: E402
 import level_manager as level_manager_mod        # noqa: E402
 from dice import roll                            # noqa: E402
-from floor_curve import dice_for_average, target_dmg   # noqa: E402
+from floor_curve import dice_for_average, hazard, mend, target_dmg   # noqa: E402
+from game_magic import SPELL_HEAL_SHARE          # noqa: E402
 from items import (Accessory, Armor, Container, Food, Potion, Shield,   # noqa: E402
                    Spellbook, Weapon)
 from monster import Monster                      # noqa: E402
@@ -989,7 +990,8 @@ class Run:
         for sid, (cost, power, tier) in self.spells.items():
             if cost > self.p.mp:
                 continue
-            heal = dice_mean(power) * MAGIC_TIER_MULT[tier] * (1 + self.p.INT * 0.1)
+            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * (1 + self.p.INT * 0.1),
+                       SPELL_HEAL_SHARE.get(tier, 0.45) * self.p.max_hp)   # floor_curve.mend
             score = min(heal, missing) / cost
             if best is None or score > best[0]:
                 best = (score, sid, cost, power, tier)
@@ -1005,7 +1007,8 @@ class Run:
         sid, cost, power, tier = sp
         p.mp -= cost                                    # spent even on a fizzle
         if self.quiz.one_question(tier):                # one science question
-            amt = int(roll(power) * MAGIC_TIER_MULT[tier] * (1.0 + p.INT * 0.1))
+            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * (1.0 + p.INT * 0.1)),
+                       p.max_hp, SPELL_HEAL_SHARE.get(tier, 0.45))
             self.fs['heal_used'] += p.heal(amt * self.knobs['spell_heal'])
         return True
 
@@ -1186,6 +1189,7 @@ class Run:
                 continue
             p_hp, hp_amt, heal_amt, p_stat = COOK_TABLE[tier]
             p.restore_sp(60 + 20 * tier)
+            heal_amt = mend(heal_amt, p.max_hp, min(0.12, heal_amt / 180.0))   # food_system
             got = p.heal(heal_amt)
             self.fs['heal_used'] += got
             self.fs['heal_supply'] += heal_amt * self.kv('heal')
@@ -1211,7 +1215,7 @@ class Run:
                 r = random.random()
                 if r < 1 / 3:
                     self.last_hit_by = 'throne'
-                    p.take_damage(random.randint(5, 15), 'lightning')
+                    p.take_damage(hazard(random.randint(5, 15), p.max_hp), 'lightning')
                 elif r < 2 / 3:
                     p.status_effects['weakened'] = max(p.status_effects.get('weakened', 0), 20)
                 else:

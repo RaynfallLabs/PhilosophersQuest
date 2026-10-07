@@ -117,6 +117,7 @@ def _outcome_bonus_category(outcome: dict) -> str:
     return 'recovery'
 
 
+STARVE_SHARE = 0.02
 from floor_curve import (WANDER_HUNTING_CAP, natural_regen,    # noqa: E402
                          wander_alive_cap)
 
@@ -3781,7 +3782,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(trap['message'], 'danger')
         dmg_str = str(trap.get('damage', '0'))
         if dmg_str != '0' and dmg_str:
-            raw = _dice_roll(dmg_str)
+            from floor_curve import hazard as _hazard
+            # A share of the player's own health (the dice assumed 60 HP).
+            raw = _hazard(_dice_roll(dmg_str), self.player.max_hp)
             actual = self.player.take_damage(raw, trap.get('damage_type', 'physical'))
             if actual:
                 self.add_message(f"You take {actual} damage!", 'danger')
@@ -4297,7 +4300,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.player.sp == 0:
                 self.add_message("You are hungry! Find food before you starve.", 'warning')
         else:
-            dmg = self.player.take_damage(1, 'starvation')
+            from floor_curve import of_health as _of_health
+            # 2% of max HP a tick (a flat 1 took 860 steps to starve a deep
+            # character, against 60 for a new one).
+            dmg = self.player.take_damage(
+                _of_health(STARVE_SHARE, 1, self.player.max_hp), 'starvation')
             self.add_message(f"Starving! You take {dmg} damage.", 'danger')
             if self.player.is_dead():
                 self.defeat_reason = 'starved'

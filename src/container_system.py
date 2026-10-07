@@ -186,6 +186,9 @@ def _trigger_trap(player, trap: dict, messages: list):
     """Apply trap damage and optional status effect to the player."""
     dmg_roll = trap.get('damage', '0')
     raw_dmg  = roll(dmg_roll) if dmg_roll != '0' else 0
+    if raw_dmg:
+        from floor_curve import hazard
+        raw_dmg = hazard(raw_dmg, player.max_hp)     # a share of the health bar
     actual   = player.take_damage(raw_dmg, 'physical') if raw_dmg else 0
 
     messages.append((trap.get('message', 'A trap triggers!'), 'danger'))

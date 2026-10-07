@@ -600,6 +600,8 @@ def _eff_self_aoe_fire(game, special, tier, chain):
     from dice import roll
     cost = int(special.get('self_cost_hp', 0))
     if cost > 0:
+        from floor_curve import hazard
+        cost = hazard(cost, game.player.max_hp)       # a share of the health bar
         game.player.hp -= cost
         game.add_message(f"Your liver burns: -{cost} HP.", 'warning')
     radius = int(tier.get('radius', 0))

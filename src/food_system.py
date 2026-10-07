@@ -327,6 +327,10 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
         player.restore_sp(sp)
     hp = int(outcome.get('hp', 0))
     if hp > 0:
+        # A cooked meal mends at least a few percent of the health bar, more
+        # for a better dish (the written figures run 3 to 22).
+        from floor_curve import mend
+        hp = mend(hp, player.max_hp, min(0.12, hp / 180.0))
         player.restore_hp(hp)
     if sp > 0 or hp > 0:
         bits = []
