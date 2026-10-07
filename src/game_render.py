@@ -45,6 +45,7 @@ from game_states import (
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
+    STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT,
 )
@@ -717,6 +718,9 @@ class RenderMixin:
             ("Sight", str(p.get_sight_radius()), FP.BODY_TEXT),
             ("Timer", f"{p.get_quiz_timer('math')}s", FP.GOLD_BRIGHT),
             ("Spells", str(len(getattr(p, 'known_spells', {}))), FP.MP_BLUE_TEXT),
+            # What Dexterity and Constitution are doing for you right now.
+            ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
+            ("Tough", f"{round(100 * p.toughness())}%", FP.BODY_TEXT),
         ]
         for idx, (label, value, col) in enumerate(metrics):
             r = pygame.Rect(body.x + (idx % 2) * (chip_w + 10), y + (idx // 2) * 27,
@@ -724,7 +728,7 @@ class RenderMixin:
             row_rect(r)
             text(label, font_tiny, FP.FADED_TEXT, r.x + 7, r.y + 4)
             text(value, font_bold, col, r.x + 58, r.y + 3)
-        y += 68
+        y += 95
         text("Effects", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += 22
         active = [(eid, dur) for eid, dur in getattr(p, 'status_effects', {}).items() if dur != 0]
@@ -1261,6 +1265,8 @@ class RenderMixin:
             self._draw_spell_menu()
         elif self.state == STATE_INTERCESSION_PROMPT:
             self._draw_intercession_prompt()
+        elif self.state == STATE_BOON_MENU:
+            self._draw_boon_menu()
         elif self.state == STATE_PRAYER_MENU:
             self._draw_prayer_menu()
         elif self.state == STATE_IDENTIFY_MENU:
@@ -4001,6 +4007,58 @@ class RenderMixin:
             hint="Up/Down: move   Enter or a-z: cast   ESC: cancel",
             border_color=FP.ARCANE_BRIGHT,
         )
+
+    def _draw_boon_menu(self):
+        """A gate boss's three gifts: name, what it gives, one line each."""
+        import boons
+        from fantasy_ui import get_font
+        kind = getattr(self, '_boon_kind', None)
+        offer = boons.offer_for(kind) if kind else None
+        if not offer:
+            return
+        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 210))
+        self.screen.blit(overlay, (0, 0))
+
+        font_title = get_font('heading', 24)
+        font_name  = get_font('body', 20, bold=True)
+        font_body  = get_font('body', 15)
+        font_hint  = get_font('body', 13)
+        gifts = offer.get('gifts') or []
+        quest_line = offer.get('quest_line') if boons.solved_quest(self.player, kind) else ''
+
+        bw = 780
+        row_h = font_name.get_height() + font_body.get_height() + 18
+        bh = 96 + row_h * len(gifts) + (font_body.get_height() + 14 if quest_line else 0) + 44
+        bx = (layout.WINDOW_W - bw) // 2
+        by = (layout.WINDOW_H - bh) // 2
+        pygame.draw.rect(self.screen, (16, 12, 6), (bx, by, bw, bh), border_radius=8)
+        pygame.draw.rect(self.screen, FP.GOLD, (bx, by, bw, bh), 3, border_radius=8)
+        pygame.draw.rect(self.screen, (110, 82, 20),
+                         (bx + 4, by + 4, bw - 8, bh - 8), 1, border_radius=6)
+
+        title = font_title.render(str(offer.get('title', 'Three Gifts')).upper(),
+                                  True, FP.GOLD_BRIGHT)
+        self.screen.blit(title, (bx + (bw - title.get_width()) // 2, by + 22))
+        pygame.draw.line(self.screen, FP.GOLD,
+                         (bx + 32, by + 60), (bx + bw - 32, by + 60), 1)
+
+        y = by + 78
+        for i, gift in enumerate(gifts):
+            head = f"{i + 1}.  {gift['name']}   ({boons.describe(self.player, kind, gift)})"
+            self.screen.blit(font_name.render(head, True, FP.GOLD_BRIGHT), (bx + 40, y))
+            y += font_name.get_height() + 2
+            self.screen.blit(font_body.render(gift.get('text', ''), True, FP.BODY_TEXT),
+                             (bx + 72, y))
+            y += font_body.get_height() + 16
+        if quest_line:
+            line = font_body.render(quest_line, True, FP.GOLD)
+            self.screen.blit(line, (bx + (bw - line.get_width()) // 2, y))
+
+        hint = font_hint.render(
+            "Press 1, 2 Or 3 To Take One  //  The Other Two Are Lost For Good",
+            True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
 
     def _draw_prayer_menu(self):
         """Which prayer? One numbered line each, with what it asks for."""

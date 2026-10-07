@@ -25,8 +25,8 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 
 ## Player Stats
 - **STR** — Carry capacity
-- **CON** — Max HP and SP
-- **DEX** — Armor class bonus
+- **CON** — Max HP (3 per point) and toughness (1% less damage per point over 10, cap 40%)
+- **DEX** — Armor class (up to 3 points) and dodge (0.75% per point over 10, cap 30%)
 - **INT** — Max MP
 - **WIS** — Quiz timer bonus (+1 second per point)
 - **PER** — Sight radius

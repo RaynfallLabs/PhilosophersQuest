@@ -15,11 +15,20 @@ LOCUST_CAP = 12
 # full kit's AC outran every THAC0 from floor 10 (measured hit chance 10 to
 # 22 percent, 25 at floor 90), which is why the deep floors were SAFER than
 # the middle ones.
+# A gate boss left alone recovers. Nothing stopped a player walking off,
+# resting to full and coming back to a boss still carrying every wound, as
+# often as they liked: no gate boss could be lost to by anyone patient.
+# After RECOVER_AFTER_TURNS without taking damage, a monster flagged
+# `recovers_when_left` heals RECOVER_SHARE of its health each turn. (Asterion
+# hides in the walls for 9 to 12 turns at a time: short of the threshold.)
+RECOVER_AFTER_TURNS = 25
+RECOVER_SHARE = 0.03
+
 MIN_HIT_ORDINARY = 0.30
 MIN_HIT_NAMED = 0.40
 # Drain attacks: most CON one floor can cost, and the lowest drain can take it.
-DRAIN_CON_PER_FLOOR = 2
-DRAIN_CON_FLOOR = 3
+DRAIN_CON_PER_FLOOR = 1      # (2 until a point of CON became 3 hit points)
+DRAIN_CON_FLOOR = 8
 # Share of max HP a bleeding or burning monster loses each turn (1 / N).
 # One in 15 took 267 a turn off Abaddon, more than any weapon in the game;
 # named foes bleed far more slowly.
@@ -133,6 +142,16 @@ class Monster:
 
         # Regeneration: HP per turn (trolls, hydras; fire stops it)
         self.regeneration: int = int(defn.get('regeneration', 0))
+        self.recovers_when_left: bool = bool(defn.get('recovers_when_left', False))
+        self._unhurt_turns: int = 0
+        # Fury: every blow this monster swings adds `fury_per_attack` to its
+        # damage, up to +`fury_cap`. A fight against it is a race, won by
+        # long chains rather than by a deep pack of potions. It cools when
+        # the monster is left alone (see _recover_when_left).
+        self.fury_per_attack: float = float(defn.get('fury_per_attack', 0.0))
+        self.fury_cap: float = float(defn.get('fury_cap', 1.0))
+        self._fury_swings: int = 0
+        self._fury_told: int = 0
 
         # --- Hit-and-run AI state (Asterion) ---
         self.can_phase_walls: bool = defn.get('can_phase_walls', False)
@@ -303,6 +322,9 @@ class Monster:
         'summon_kind': '', 'summon_cooldown': 5, 'summon_max': 4,
         '_summon_turn_counter': 0, '_summons_made': 0, '_wants_summon': False,
         'can_charge': False, 'charge_bonus_mult': 1.5, '_charge_ready': False,
+        'recovers_when_left': False, '_unhurt_turns': 0, '_recovered_note': False,
+        'fury_per_attack': 0.0, 'fury_cap': 1.0, '_fury_swings': 0, '_fury_told': 0,
+        'fury_message': '',
         'pack_dependent': False, 'pack_min_allies': 1,
         'prefers_flank': False,
         'can_phase_blink': False, 'phase_blink_chance': 0.30,
@@ -462,6 +484,45 @@ class Monster:
                     and not self.has_effect('deep_wound')
                     and not self.has_effect('ruptured')):
                 self.hp = min(self.max_hp, self.hp + regen)
+        self._unhurt_turns = int(getattr(self, '_unhurt_turns', 0)) + 1
+        self._tick_fury()
+        self._recover_when_left()
+
+    def _tick_fury(self):
+        if (getattr(self, 'fury_per_attack', 0.0) and self.alive
+                and self._unhurt_turns >= RECOVER_AFTER_TURNS):
+            self._fury_swings = 0                 # left alone: it cools
+            self._fury_told = 0
+
+    def fury_mult(self) -> float:
+        """Damage multiplier from fury (1.0 for almost every monster)."""
+        per = getattr(self, 'fury_per_attack', 0.0)
+        if not per:
+            return 1.0
+        return 1.0 + min(self.fury_cap, per * int(getattr(self, '_fury_swings', 0)))
+
+    def fury_line(self) -> str:
+        """Said once each time fury passes another quarter: the player
+        should be able to see the race they are in."""
+        step = int((self.fury_mult() - 1.0) / 0.25)
+        if step <= int(getattr(self, '_fury_told', 0)):
+            return ''
+        self._fury_told = step
+        return (getattr(self, 'fury_message', '')
+                or f"{the_name(self)} grows more furious the longer this lasts.")
+
+    def _recover_when_left(self):
+        """Gate bosses: heal once the challenger has backed off (see
+        RECOVER_AFTER_TURNS). Returns the HP regained this turn."""
+        if not getattr(self, 'recovers_when_left', False) or not self.alive:
+            return 0
+        if self._unhurt_turns < RECOVER_AFTER_TURNS or self.hp >= self.max_hp:
+            return 0
+        before = self.hp
+        self.hp = min(self.max_hp, self.hp + max(1, int(self.max_hp * RECOVER_SHARE)))
+        if self.hp > before:
+            self._recovered_note = True
+        return self.hp - before
 
     # --- Combat ---
 
@@ -485,6 +546,8 @@ class Monster:
         """
         if getattr(self, '_npc_encounter_tag', None):
             return 0
+        if amount > 0:
+            self._unhurt_turns = 0           # see _recover_when_left
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)
@@ -758,6 +821,10 @@ class Monster:
         if self.rage_stacks > 0 and self.rage_damage_bonus:
             for _ in range(self.rage_stacks):
                 dmg += self._roll_rage_bonus()
+
+        if getattr(self, 'fury_per_attack', 0.0):
+            dmg = max(1, int(round(dmg * self.fury_mult())))
+            self._fury_swings = int(getattr(self, '_fury_swings', 0)) + 1
 
         # Charge bonus: armed by movement when monster approached along a straight
         # line and is now adjacent. Consume one-shot.

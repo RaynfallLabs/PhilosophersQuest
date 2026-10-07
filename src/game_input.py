@@ -37,6 +37,7 @@ from game_states import (
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
     STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
+    STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
     STATE_QA_WARP_INPUT,
 )
@@ -166,6 +167,9 @@ class InputMixin:
                     return True
                 self.state = STATE_PLAYER
                 return True
+            if self.state == STATE_BOON_MENU:
+                # A gate boss's gifts cannot be declined; Escape waits.
+                return True
             if self.state == STATE_STORY_POPUP:
                 self.state = self.popup_next_state
                 return True
@@ -267,6 +271,8 @@ class InputMixin:
             self._throw_menu_input(key)
         elif self.state == STATE_INTERCESSION_PROMPT:
             self._intercession_prompt_input(key)
+        elif self.state == STATE_BOON_MENU:
+            self._boon_menu_input(key)
         elif self.state == STATE_PRAYER_MENU:
             self._prayer_menu_input(key)
         elif self.state == STATE_HELP:
@@ -383,13 +389,19 @@ class InputMixin:
                 m for m in self.monsters
                 if m.alive and abs(m.x - self.player.x) <= 1 and abs(m.y - self.player.y) <= 1
             ]
-            if not _adj_monsters and self.player.mp < self.player.max_mp:
+            if (not _adj_monsters and self.player.mp < self.player.max_mp
+                    and self.player.meditation_left() > 0):
                 from floor_curve import MEDITATE_PERIOD
                 self._meditate_count = getattr(self, '_meditate_count', 0) + 1
                 if self._meditate_count >= MEDITATE_PERIOD:
                     self._meditate_count = 0
-                    self.player.restore_mp(1)
-                    self.add_message("You meditate. (+1 MP)", 'info')
+                    self.player.meditate(1)
+                    if self.player.meditation_left() > 0:
+                        self.add_message("You meditate. (+1 MP)", 'info')
+                    else:
+                        self.add_message(
+                            "You meditate. (+1 MP) This floor's quiet has no more "
+                            "to give; the next will.", 'warning')
                 else:
                     self.add_message("You meditate...", 'info')
             else:
@@ -1040,6 +1052,14 @@ class InputMixin:
     # ------------------------------------------------------------------
     # Divine Intercession Y/N confirm prompt (v2.13.0)
     # ------------------------------------------------------------------
+
+    def _boon_menu_input(self, key: int):
+        """1-3 takes that gift. There is no backing out: the choice is the
+        reward, and the other two are gone once one is taken."""
+        for i, k in enumerate((pygame.K_1, pygame.K_2, pygame.K_3)):
+            if key == k or key == getattr(pygame, f'K_KP{i + 1}'):
+                self._boon_pick(i)
+                return
 
     def _prayer_menu_input(self, key: int):
         """1-9 = make that prayer; Esc = rise without praying (no cost)."""

@@ -44,6 +44,26 @@ _COMBAT_STATS = ['STR', 'CON']
 #   T0: ruined dish, ingredients consumed
 # ----------------------------------------------------------------------
 
+_cut_stat_cache: dict | None = None
+
+
+def cut_stat(ingredient_id: str) -> str | None:
+    """The stat a prime cut raises when cooked properly ('STR', 'WIS', ...),
+    or None for foraged ingredients, plain parts and trophies."""
+    global _cut_stat_cache
+    if _cut_stat_cache is None:
+        try:
+            with open(data_path('data', 'items', 'ingredient.json'), encoding='utf-8') as f:
+                raw = json.load(f)
+            _cut_stat_cache = {
+                k: v.get('stat_grant') for k, v in raw.items()
+                if isinstance(v, dict) and v.get('tier_role') == 'prime'
+                and v.get('stat_grant') in _ALL_STATS}
+        except (OSError, ValueError):
+            _cut_stat_cache = {}
+    return _cut_stat_cache.get(ingredient_id)
+
+
 _monster_floor_cache: dict | None = None
 
 
@@ -361,11 +381,32 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
         if applied > 0:
             messages.append(f"Good food builds you up. (+{applied} max HP)")
 
-    # +1 stat (per-floor softcap unless bypassed)
+    # You are what you eat: the first good meal on a floor raises the stat
+    # stamped on the MEAT (ingredient.json `stat_grant`). Every prime cut has
+    # carried one all along; cooking read the recipe's outcome instead, so
+    # only 132 of 893 recipes raised anything and 14 of those raised Wisdom.
+    # A boss trophy (`permanent_power`) still grants its own stat outright.
+    cut_stat = recipe.get('_cut_stat')
     stat_grant_amount = int(outcome.get('stat_grant', 0))
-    if stat_grant_amount > 0:
+    trophy = bool(outcome.get('permanent_power')) and stat_grant_amount > 0
+    meal_stat = cut_stat or (outcome.get('stat_grant_default')
+                             if stat_grant_amount > 0 else None)
+    if meal_stat and not trophy and hasattr(player, 'feed_cut_stat'):
+        # The meal is banked toward that stat, and COOK_MEALS_PER_STAT_POINT
+        # of them (one a floor) make a point. The richer recipes used to
+        # give a whole point each; deep down that was a point a floor.
+        cut_stat = meal_stat
+        gained, banked = player.feed_cut_stat(cut_stat)
+        label = _STAT_LABELS.get(cut_stat, cut_stat)
+        if gained > 0:
+            messages.append(f"Your {label} increases by {gained}!")
+        elif banked > 0:
+            messages.append(
+                f"You feel it doing you good. ({label}: {banked} of "
+                f"{player.COOK_MEALS_PER_STAT_POINT} meals toward +1)")
+    elif stat_grant_amount > 0:
         bypass = bool(outcome.get('permanent_power'))
-        stat = outcome.get('stat_grant_default') or 'STR'
+        stat = cut_stat or outcome.get('stat_grant_default') or 'STR'
         if hasattr(player, 'try_apply_cook_stat_gain'):
             applied = player.try_apply_cook_stat_gain(stat, stat_grant_amount, bypass=bypass)
         else:
@@ -664,6 +705,7 @@ def cook_ingredient(player, ingredient, quiz_engine, on_complete):
     if recipe is None:
         on_complete([f"You don't know what to do with the {ingredient.name}."])
         return
+    recipe = dict(recipe, _cut_stat=cut_stat(getattr(ingredient, 'id', '')))
 
     def _callback(result):
         messages = _apply_recipe_outcome(player, recipe,

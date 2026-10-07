@@ -142,9 +142,14 @@ def test_success_grants_stat():
     p = Player()
     str0 = p.STR
     # t4_feast_str: stat_grant=1, stat_grant_default=STR
+    # 2026-10: a meal is banked toward its stat; two of them, on two
+    # floors, make the point (Player.feed_cut_stat).
     _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
-    assert p.STR > str0
+    assert p.STR == str0 and p.cook_stat_meals['STR'] == 1
     assert p._cook_stat_gain_this_floor > 0
+    p.reset_floor_cook_caps()
+    _apply_recipe_outcome(p, _recipe_with_outcome('t4_feast_str'))
+    assert p.STR == str0 + 1
 
 
 def test_success_applies_temp_power():

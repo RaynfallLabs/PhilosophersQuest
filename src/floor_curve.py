@@ -15,8 +15,8 @@ import math
 
 HP_ANCHORS = {1: 22, 10: 79, 20: 231, 30: 481, 40: 903, 50: 1412, 60: 2246,
               70: 3372, 80: 4928, 90: 6188, 100: 6912}
-DMG_ANCHORS = {1: 1.32, 10: 2.54, 20: 3.09, 30: 5.84, 40: 12.25, 50: 20.19, 60: 28.28,
-               70: 29.64, 80: 30.28, 90: 30.34, 100: 30.34}
+DMG_ANCHORS = {1: 1.19, 10: 2.19, 20: 2.87, 30: 6.13, 40: 13.97, 50: 22.85, 60: 32.9,
+               70: 35.79, 80: 38.01, 90: 39.59, 100: 41.26}
 
 
 def _interp(anchors: dict, floor: float) -> float:
@@ -159,6 +159,53 @@ def wander_alive_cap(level: int) -> int:
 def natural_regen(max_hp: int) -> int:
     """HP regained per natural regeneration tick."""
     return max(1, int(max_hp) // 50)
+
+
+# Meditation gives back at most this share of max MP on any one floor; a new
+# floor brings a new allowance. Unlimited, waiting turned into healing with
+# no ceiling: eight waits bought a point of mana, three points a Cure Light
+# Wounds, and a patient player cast twenty healing spells a floor and won
+# twice as often as one who did not (measured, 71% against 35%).
+MEDITATE_FLOOR_SHARE = 0.5
+
+
+def meditation_allowance(max_mp: int) -> int:
+    """Mana that meditating can restore on one floor."""
+    return max(1, int(round(int(max_mp) * MEDITATE_FLOOR_SHARE)))
+
+
+# The first floors go easy: an ordinary monster's blow lands for EARLY_MERCY
+# of its damage down to floor EARLY_MERCY_FULL_TO, easing back to full by
+# floor EARLY_MERCY_ENDS. Named foes are exempt. This is a rule rather than
+# smaller dice because the dice up here are already 1d2 and 1d3: there is
+# nothing smaller to write. (Measured: a casual player reached floor 20 in
+# 79% of runs without it; the aim is about nine in ten.)
+EARLY_MERCY = 0.75
+EARLY_MERCY_FULL_TO = 13
+EARLY_MERCY_ENDS = 26
+
+
+def early_mercy(floor: int) -> float:
+    """Multiplier on an ordinary monster's damage on this floor (1.0 deep)."""
+    floor = int(floor)
+    if floor <= EARLY_MERCY_FULL_TO:
+        return EARLY_MERCY
+    if floor >= EARLY_MERCY_ENDS:
+        return 1.0
+    t = (floor - EARLY_MERCY_FULL_TO) / float(EARLY_MERCY_ENDS - EARLY_MERCY_FULL_TO)
+    return EARLY_MERCY + (1.0 - EARLY_MERCY) * t
+
+
+# Rest closes wounds only so far: natural regeneration stops at this share
+# of max HP. Above it, health comes from food, potions, spells and prayer.
+# (Unlimited, a player who simply waited to full before every fight won
+# twice as often as one who did not, with no other difference between them.)
+REST_MENDS_TO = 0.60
+
+
+def rest_room(hp: int, max_hp: int) -> int:
+    """HP that natural regeneration may still restore."""
+    return max(0, int(int(max_hp) * REST_MENDS_TO) - int(hp))
 
 
 # Waits per point of mana regained by meditating (it was 1: three waits then

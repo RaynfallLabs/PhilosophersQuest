@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. Nothing in this plan is built. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
+Date: 2026-10-06. **Phases 0, 1 and 2 are built** (each has an "As built" note under its heading); Phases 3 to 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -72,6 +72,33 @@ These three are one system: they decide how much damage arrives, how much health
 
 Exit: a plain prepared player and a patient one are within 15 points of each other in win rate; each of the six stats, fed all run, lands inside its ceiling in section 3.
 
+**As built (2026-10-06).** Measured with the simulator, 480 runs per player type over four independent sets of dungeons, a child who is 95% right on simple sums.
+
+| Player | Reaches floor 20 | Past Asterion | Floor 40 | Floor 60 | Floor 80 | Wins | Target |
+|---|---|---|---|---|---|---|---|
+| Casual: cooks a little, skips quests | 90% | 47% of all runs (he beats about half who reach him) | 0 | 0 | 0 | 0 | 90% to floor 20, about half past Asterion |
+| Prepared: cooks, does the quests | 100% | 100% | 94% | 58% | 43% | **26%** | 25 to 30% |
+| Committed build (Strength and Constitution) | 100% | 100% | 96% | 71% | 52% | **39%** | 40 to 50% |
+| Committed, and found the four secrets | 99% | 99% | 92% | 68% | 51% | **42%** | 60 to 70% |
+| Rests as long as it takes before every fight | 99% | 99% | 94% | 64% | 50% | **35%** | within 15 points of prepared |
+
+What was built, in the order it was found to be needed:
+
+- **Constitution** is 3 hit points a point and takes 1% off every blow per point over 10 (40% at most). **Dexterity** gives a 0.75% chance per point over 10 to slip a blow from something beside you (30% at most), and its armor is capped at 3 points. The character sheet shows both as Dodge and Tough.
+- **The meat decides the stat.** A proper meal from a prime cut is banked toward the stat stamped on that cut; two such meals, on two floors, make one point. One lesson a floor. A run feeds about fifty points. One stat can take 2 plus a point per five floors from cooking (22 at the bottom); Wisdom half that, because depth already teaches it.
+- **Gate bosses leave three gifts; you take one, for good.** Asterion: Strength, Perception or Intelligence +4. Medusa: Wisdom +3, Dexterity +5 or Constitution +5. Fafnir: Strength +6, Constitution +6 or Wisdom +3. Fenrir: Intelligence, Dexterity or Perception +7. One more point if you solved that boss's quest (the Thread, the Aegis, the strike from the pit, the ribbon). Data in `data/boss_boons.json`.
+- **Armor needed no change.** Two points of armor take 13 to 20% off incoming hits at every depth from floor 10 to 100.
+- **A gate boss left alone heals.** After 25 turns without being hurt it regains 3% of its health a turn. Before this, anyone could walk away, recover and return to a boss still carrying every wound: no gate could be lost to by a patient player.
+- **Asterion grows furious.** Each blow he swings adds 2% to his damage (up to double). He now beats about half the casual players who reach him (a third of those carrying the Thread) and almost no one who arrives prepared. That last part is short of the 85% I proposed: a prepared character absorbs three to four times its own health in that fight through potions and prayer, and any setting that threatens it kills every casual player. He is a gate for the typical child, and a reward for the prepared one.
+- **Rest mends to 60% of health and no further; meditation gives back half a mana bar per floor.** This is decision D3. The first half alone was not enough: the measured edge of the patient player (71% wins against 35%) came from waiting for mana and casting fifteen to twenty healing spells a floor, not from sleeping. With both limits the patient player wins 35%.
+- **The first floors go easy.** An ordinary monster's blow lands for three quarters of its damage down to floor 13, easing to full by floor 26. Two early outliers were softened by hand (the dark elf's poison, the anzu bird's six-turn paralysis).
+- **Deep monsters hit harder,** because the new stats made a prepared character roughly twice as durable: nothing at floor 26, about x1.1 at floor 50, x1.35 at floor 100, ordinary monsters only (`tools/balance/SCALE_LOG.md`).
+
+Two things this phase did not reach, and where they are handled:
+
+- **The secrets are worth 3 points, not 20.** They pay at their own bosses, and with the ordinary quest items those bosses are already nearly safe (Fenrir with the ribbon kills no one, so the Sandal saves nothing). That is Phase 6: when the gates are made dangerous, the secrets become worth what they should.
+- **A committed build is 13 points ahead of a plain one, not 15 to 20.** In the simulator "committed" means only where the stat points go. Magic, pets, hero kits and quirks (Phases 3 to 5) are the other tools a committed player uses and a plain one does not.
+
 ### Phase 3: magic
 
 - **Role (decided, D2):** a variable, fun way to play that changes the shape of a fight. Never a substitute for maths.
@@ -117,7 +144,7 @@ Exit: the stated win rates in decision D9.
 
 Each has my recommendation, weighed against everything already changed.
 
-**D1. The stat design: go ahead?**
+**D1. The stat design: go ahead? (Step one BUILT 2026-10-06 on the recommendation below; say if you want it changed.)**
 Recommend **yes, in two steps.** Step one in Phase 2: the meat decides the stat, Constitution gives 3 health a point and blunts damage, Dexterity gives a dodge, and the gate bosses each leave three gifts. Step two later: the "stars" at 25, 35 and 50. Reason: Wisdom from depth already supplies the baseline clock, so the build's job is no longer to make the game playable, only to make a character distinctive. That means the stat ceilings can be modest (1.6x), which keeps the stacking limit reachable. With depth Wisdom in place, I would cut the Wisdom a build can add by about half from my earlier proposal.
 
 **D2. What is magic for? (DECIDED 2026-10-06)**
@@ -129,7 +156,7 @@ What that fixes for Phase 3:
 - Variety is the measure of success: every tier of spell and wand should offer something a sword cannot do, and no two should be the same effect with a bigger number.
 - Intelligence makes magic available more often and makes its effects last or reach further. It does not make it hit harder than a blade.
 
-**D3. Should resting be nearly free?**
+**D3. Should resting be nearly free? (BUILT 2026-10-06 on the recommendation below, as limits rather than a food price: rest mends to 60%, meditation gives half a mana bar a floor. Food turned out too plentiful for a price in meals to bind.)**
 Recommend **no, but gently.** Raise what rest costs in food until a fully rested floor costs about one extra meal, and keep wandering monsters. Reason: with your 40 to 50% target the top of the range is already reached today by a player who simply rests between every fight (50%), with no build at all. If rest stays free, the stat build and the power-ups have nothing left to add, and the difference between a prepared player and a great one comes from patience rather than knowledge. The aim is not to make the game harder overall, only to move where the wins come from.
 
 **D4. Ranged combat: equal to melee, or a specialist tool?**

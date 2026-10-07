@@ -55,7 +55,7 @@ def test_refresh_applies_bonus_when_item_in_inventory():
     p.inventory.append(_stuffie())
     p.refresh_carry_bonuses()
     assert p.CON == base_con + 2, f"CON should be {base_con+2}; got {p.CON}"
-    assert p.max_hp == base_max_hp + 2
+    assert p.max_hp == base_max_hp + 2 * p.HP_PER_CON
     assert 'charmander_stuffie' in p.active_carry_bonuses
 
 

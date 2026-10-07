@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "about": "The gifts a gate boss leaves when it dies. The player takes exactly one of the three; the choice is permanent. `amount` is added to `stat`; `quest_bonus` more if the player solved that boss's quest (src/boons.py decides how that is recognised).",
+    "design": "REBALANCE_MASTER_PLAN.md decision D1. Each stat is offered at exactly two gates. Wisdom gifts are smaller: depth already supplies the clock."
+  },
+  "asterion_minotaur": {
+    "title": "Three Things Lie Where The Bull-Man Fell",
+    "quest_bonus": 1,
+    "quest_line": "The Thread is still warm in your pack. Whatever you take, you take a little more of it.",
+    "gifts": [
+      {"id": "bulls_horn", "name": "The Bull's Horn", "stat": "STR", "amount": 4,
+       "text": "You break the horn from his head. It is heavier than a sword."},
+      {"id": "ariadnes_clew", "name": "Ariadne's Clew", "stat": "PER", "amount": 4,
+       "text": "The thread remembers every turning."},
+      {"id": "daedalus_design", "name": "Daedalus's Design", "stat": "INT", "amount": 4,
+       "text": "A wax tablet cut with the plan of the maze, in the builder's own hand."}
+    ]
+  },
+  "medusa_gorgon": {
+    "title": "Three Gifts Wait In The Quiet Temple",
+    "quest_bonus": 1,
+    "quest_line": "The Aegis hums on your arm. The gift you choose comes with a little more.",
+    "gifts": [
+      {"id": "athenas_counsel", "name": "Athena's Counsel", "stat": "WIS", "amount": 3,
+       "text": "The grey-eyed goddess does not thank you. She advises you."},
+      {"id": "hermes_sandals", "name": "Hermes's Sandals", "stat": "DEX", "amount": 5,
+       "text": "Perseus left them where he stood."},
+      {"id": "healing_vein", "name": "The Healing Vein", "stat": "CON", "amount": 5,
+       "text": "Blood from her right side mends what blood from her left would kill."}
+    ]
+  },
+  "fafnir_dragon": {
+    "title": "Three Things Remain In The Dragon's Hollow",
+    "quest_bonus": 1,
+    "quest_line": "You met him the way Sigurd did, from below. The gift is the greater for it.",
+    "gifts": [
+      {"id": "sigurds_arm", "name": "Sigurd's Arm", "stat": "STR", "amount": 6,
+       "text": "The stroke that opened a dragon stays in the shoulder that made it."},
+      {"id": "dragons_bath", "name": "The Dragon's Bath", "stat": "CON", "amount": 6,
+       "text": "Where the blood pooled, skin turns to horn."},
+      {"id": "roasted_heart", "name": "The Roasted Heart", "stat": "WIS", "amount": 3,
+       "text": "Burn your thumb on it, as Sigurd did."}
+    ]
+  },
+  "fenrir_wolf": {
+    "title": "Three Things The Wolf Leaves Behind",
+    "quest_bonus": 1,
+    "quest_line": "The ribbon held. What you take now, you take with interest.",
+    "gifts": [
+      {"id": "dwarves_cunning", "name": "The Dwarves' Cunning", "stat": "INT", "amount": 7,
+       "text": "A ribbon held what no chain could."},
+      {"id": "cats_footfall", "name": "A Cat's Footfall", "stat": "DEX", "amount": 7,
+       "text": "The first of the six things that are not."},
+      {"id": "wolfs_nose", "name": "The Wolf's Nose", "stat": "PER", "amount": 7,
+       "text": "You smell the snow three rooms away."}
+    ]
+  }
+}

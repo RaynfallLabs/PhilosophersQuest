@@ -24,6 +24,7 @@ added_files = [
     # Game data — top-level JSONs
     ('data/monsters.json',          'data'),
     ('data/hints.json',             'data'),
+    ('data/boss_boons.json',        'data'),
     ('data/chest_templates.json',   'data'),
     ('data/chest_traps.json',       'data'),
     ('data/flavor_encounters.json', 'data'),

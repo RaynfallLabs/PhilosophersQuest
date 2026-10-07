@@ -118,7 +118,7 @@ def _outcome_bonus_category(outcome: dict) -> str:
 
 
 STARVE_SHARE = 0.02
-from floor_curve import (WANDER_HUNTING_CAP, natural_regen,    # noqa: E402
+from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa: E402
                          wander_alive_cap)
 
 
@@ -4317,7 +4317,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _tick_hp_regen(self):
-        """Regen 1 HP every 15 turns (faster with high CON). Blocked by bleeding/poisoned.
+        """Regen a fiftieth of max HP every 20 turns (faster with high CON),
+        only up to floor_curve.REST_MENDS_TO of max HP. Blocked by
+        bleeding/poisoned.
 
         Chain-equip tier_bonuses can set `player.regen_bonus`, which adds extra
         HP per tick (e.g. Cloak of the Morrigan T2+, Helm of Aragorn T3+).
@@ -4331,8 +4333,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.restore_hp(max(1, self.player.max_hp // 20))
             return
 
-        if self.player.hp >= self.player.max_hp:
-            return
+        room = rest_room(self.player.hp, self.player.max_hp)
+        if room <= 0:
+            return                    # rest mends only so far (REST_MENDS_TO)
         if self.player.has_effect('bleeding') or self.player.has_effect('poisoned'):
             return
         # CON above 12 shaves 1 turn off the interval per point; floor at 10
@@ -4349,7 +4352,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # makes you hungry) and time (things wander in).
             base_regen = (natural_regen(self.player.max_hp)
                           + max(0, getattr(self.player, 'regen_bonus', 0)))
-            self.player.restore_hp(base_regen)
+            self.player.restore_hp(min(base_regen, room))
 
     # ------------------------------------------------------------------
     # Pickup
@@ -6428,6 +6431,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
 
     def update(self, dt: float):
+        if self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None):
+            self._open_boon_menu()
         if self.state == STATE_QUIZ:
             if hasattr(self, '_necro_qs') and self._necro_qs is not None:
                 self._necro_update(dt)

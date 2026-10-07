@@ -1377,6 +1377,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             if player.has_effect('in_pit') and not is_ranged:
                 damage = int(damage * PIT_BELLY_MULT)
                 player._belly_strike = True
+                player.struck_from_the_pit = True     # remembered: boons.solved_quest
             elif not _skip_dr:
                 damage = max(1, int(damage * (1.0 - dragon_scales)))
 

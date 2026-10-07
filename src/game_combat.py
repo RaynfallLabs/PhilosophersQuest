@@ -745,6 +745,12 @@ class CombatMixin:
             self._log_chronicle(
                 getattr(monster, 'kill_chronicle', '')
                 or f"{the_name(monster)} is dead. I had not expected to be the one left standing.")
+        # A gate boss leaves three gifts; the player takes one (boons.py).
+        # Only noted here: main.update opens the choice once the kill, its
+        # messages and the story popup are finished.
+        import boons
+        if boons.offer_for(monster.kind) and not boons.already_taken(self.player, monster.kind):
+            self.player.pending_boon = monster.kind
         # A guardian whose death unbars the stair (the Labyrinth).
         if getattr(self.dungeon, 'stairs_guardian', None) == monster.kind:
             self.add_message(
@@ -782,6 +788,12 @@ class CombatMixin:
                 self.add_message(
                     f"Your blow sinks into the dark around {the_name(monster, lower=True)} "
                     f"and half of it is lost there.", 'warning')
+        if getattr(monster, '_recovered_note', False):
+            monster._recovered_note = False
+            if monster.alive:
+                self.add_message(
+                    f"{the_name(monster)} has had time to mend. Wounds you gave have closed.",
+                    'warning')
         if not getattr(monster, 'dragon_scales', 0) or damage <= 0:
             return
         if getattr(self.player, '_belly_strike', False):
@@ -825,6 +837,36 @@ class CombatMixin:
         self.add_message(
             "Where the Destroyer stood, something small and warm lies on the "
             "scorched stone.", 'loot')
+
+    def _open_boon_menu(self) -> bool:
+        """Show a fallen gate boss's three gifts. Returns True if it opened."""
+        import boons
+        from game_states import STATE_BOON_MENU
+        kind = getattr(self.player, 'pending_boon', None)
+        if not kind or self.state != STATE_PLAYER:
+            return False
+        if boons.already_taken(self.player, kind) or not boons.offer_for(kind):
+            self.player.pending_boon = None
+            return False
+        self._boon_kind = kind
+        self.state = STATE_BOON_MENU
+        return True
+
+    def _boon_pick(self, index: int):
+        import boons
+        kind = getattr(self, '_boon_kind', None) or getattr(self.player, 'pending_boon', None)
+        got = boons.take(self.player, kind, index) if kind else None
+        if got is None:
+            return
+        gift, amount = got
+        self.player.pending_boon = None
+        self._boon_kind = None
+        self.state = STATE_PLAYER
+        self.add_message(gift['text'], 'success')
+        self.add_message(
+            f"You Take {gift['name']}: {boons.STAT_NAMES.get(gift['stat'], gift['stat'])} "
+            f"+{amount}, For Good.", 'success')
+        self._log_chronicle(f"I took {gift['name']} and left the other two where they lay.")
 
     def _drop_treasure(self, monster):
         """Drop gold and possibly an item when a monster dies."""
@@ -2127,13 +2169,27 @@ class CombatMixin:
                 if self.player.has_effect('displacement') and random.random() < DISPLACEMENT_MISS:
                     self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
+                # Dodge (Dexterity): a blow from something next to you can be
+                # slipped outright. Breath, gaze and thrown things cannot.
+                if (m._adjacent_to(self.player)
+                        and random.random() < self.player.dodge_chance()):
+                    self.add_message(f"You slip {the_name(m, lower=True)}'s blow.", 'success')
+                    continue
 
                 _effects_before = set(self.player.status_effects.keys())
                 if getattr(m, 'slips_on_ice', False):
                     from dungeon import ICE as _ICE
                     m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
-                dmg, msg = m.attack(self.player)
+                self.player._mercy = (1.0 if m._is_named_foe()
+                                      else floor_curve.early_mercy(self.dungeon_level))
+                try:
+                    dmg, msg = m.attack(self.player)
+                finally:
+                    self.player._mercy = 1.0
                 self.add_message(msg, 'danger')
+                _fury = m.fury_line() if m.alive else ''
+                if _fury:
+                    self.add_message(_fury, 'warning')
                 # Reflect / thorns damage can kill the attacker inside
                 # attack(); that death used to go unprocessed.
                 if not m.alive and not getattr(m, '_kill_handled', False):

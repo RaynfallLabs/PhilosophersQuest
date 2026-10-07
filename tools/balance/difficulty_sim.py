@@ -85,6 +85,9 @@ from monster import Monster                      # noqa: E402
 from player import Player                        # noqa: E402
 from quiz_engine import QuizResult               # noqa: E402
 import food_system as food_system_mod            # noqa: E402
+import boons as boons_mod                        # noqa: E402
+import monster as monster_mod                    # noqa: E402
+import floor_curve as floor_curve_mod            # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
@@ -357,6 +360,21 @@ PROFILES = {
         rest_turns=4000, quests=True,
     ),
 }
+
+# A committed build: prepared, and every cooking and gift choice goes to the
+# same two stats (the cook picks which corpse to butcher; boons.py offers the
+# gifts). `stat_focus` is tried in order; `focus_rate` is how often the floor
+# has a cut of the wanted stat to cook.
+PROFILES['committed'] = dict(
+    PROFILES['prepared'], loot_fraction=0.9, cooks_per_floor=4,
+    stat_focus=('STR', 'CON'), focus_rate=0.8)
+# Committed, and has found the four secrets: the Cow King's Horns (floors
+# 30-39), Gram reforged (after Fafnir), Vidar's Sandal (Fenrir dies to the
+# first blow that lands) and the Sword of Michael for Abaddon.
+PROFILES['secrets'] = dict(PROFILES['committed'], secrets=True)
+
+CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
+GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
 
 HEAL_SPELL_IDS = ('cure_light_spell', 'cure_wounds_spell', 'heal_spell',
                   'greater_heal_spell')
@@ -744,6 +762,7 @@ class Run:
         self._score_cache = {}
         self.last_hit_by = '?'
         self.fountain_uses = 0     # drinks left at fountains found on this floor
+        self._secrets_got = set()
         self._give_starting_kit()
 
     def kv(self, name: str):
@@ -1051,12 +1070,13 @@ class Run:
         whole = int(self.regen_carry)
         if whole:
             self.regen_carry -= whole
+            whole = min(whole, floor_curve_mod.rest_room(p.hp, p.max_hp))   # main._tick_hp_regen
             got = p.heal(whole)
             self.fs['heal_used'] += got
             self.fs['heal_free'] += got
         p.prayer_cooldown = max(0, p.prayer_cooldown - n)
         if resting:
-            p.restore_mp(int(n * self.knobs['mp_rest']))  # game_input: meditation
+            p.meditate(int(n * self.knobs['mp_rest']))    # game_input: meditation
         if moving or resting:                            # game_input: wait ticks SP
             need = n * SP_PER_MOVE
             while p.sp - need < p.max_sp * 0.25 and self.food:
@@ -1145,7 +1165,8 @@ class Run:
             if sp is None:
                 cheapest = min(c for c, _, _ in self.spells.values())
                 need = math.ceil((cheapest - p.mp) / max(0.01, self.knobs['mp_rest']))
-                if need > budget or cheapest > p.max_mp:
+                if (need > budget or cheapest > p.max_mp
+                        or p.meditation_left() < cheapest - p.mp):   # floor's allowance spent
                     break
                 budget -= need
                 found = self.pass_time(int(need), moving=False, resting=True)
@@ -1161,7 +1182,8 @@ class Run:
                 break
         # 4. plain rest
         iv = self._regen_interval()
-        while p.hp < target and budget >= iv:
+        while (p.hp < target and budget >= iv
+               and floor_curve_mod.rest_room(p.hp, p.max_hp) > 0):
             budget -= iv
             found = self.pass_time(iv, moving=False, resting=True)
             if found:
@@ -1201,8 +1223,57 @@ class Run:
                 # food_system._apply_outcome_body: every proper meal builds
                 # the cook up when the recipe has no max-HP bonus of its own
                 p.try_apply_cook_hp_gain(int(getattr(p, 'COOK_BASE_MAX_HP', 0)))
-            if random.random() < p_stat:
-                p.try_apply_cook_stat_gain(random.choice(COOK_STATS), 1)
+            # food_system: a proper meal raises the stat stamped on the cut
+            # (one a floor, under the per-stat cap); richer recipes still
+            # carry a stat of their own.
+            if random.random() < max(p_stat, CUT_HAS_STAT):
+                p.feed_cut_stat(self._cook_stat())
+
+    def _cook_stat(self) -> str:
+        """Which stat this meal raises: the build's, when it can choose."""
+        p = self.p
+        focus = self.prof.get('stat_focus')
+        if focus and random.random() < self.prof.get('focus_rate', 0.8):
+            for stat in focus:
+                if p.cooking_stat_gained.get(stat, 0) < p.cooking_stat_softcap(stat):
+                    return stat
+        return random.choice(COOK_STATS)
+
+    def take_boon(self, kind: str):
+        """boons.take: the build's stat if it is offered, else the first gift."""
+        offer = boons_mod.offer_for(kind)
+        if not offer or boons_mod.already_taken(self.p, kind):
+            return
+        stats = [g['stat'] for g in offer['gifts']]
+        pick = 0
+        for stat in self.prof.get('stat_focus', ()) or ('CON', 'STR', 'DEX', 'WIS'):
+            if stat in stats:
+                pick = stats.index(stat)
+                break
+        got = boons_mod.take(self.p, kind, pick)
+        if got and self.prof['quests'] and got[1] == got[0]['amount']:
+            self.p.apply_stat_bonus(got[0]['stat'], int(offer.get('quest_bonus', 0)))
+
+    def find_secrets(self, floor: int):
+        """The four secret rewards, each when its quest can first be done."""
+        if not self.prof.get('secrets'):
+            return
+        got = self._secrets_got
+        def give(cls, iid):
+            it = items_mod.make_item_by_id(cls, iid)
+            if it is not None:
+                got.add(iid)
+                self._equip(it)
+        if floor >= 36 and 'cow_kings_horns' not in got:
+            give('armor', 'cow_kings_horns')
+        if floor >= 60 and 'gram' not in got:     # reforged BEFORE Fafnir by one who knows
+            gram = items_mod.make_item_by_id('weapon', 'gram')
+            got.add('gram')
+            if gram is not None and (self.p.weapon is None
+                                     or self._weapon_score(gram) > self._weapon_score(self.p.weapon)):
+                self._equip(gram)
+        if floor >= 100 and 'sword_of_michael' not in got:
+            give('weapon', 'sword_of_michael')
 
     def sit_throne(self) -> list:
         """game_divine._resolve_throne (history escalator chain). Returns any
@@ -1440,7 +1511,7 @@ class Run:
                         elif self.potions and hpf < 0.5:
                             self.drink()
                         else:
-                            p.restore_mp(1)
+                            p.meditate(1)
                     action = 'wait'
                 if action is None:
                     # Abaddon: pray at an altar to strip the ward
@@ -1532,6 +1603,10 @@ class Run:
         for m in active:
             if m.alive and getattr(m, 'regeneration', 0):
                 m.hp = min(m.max_hp, m.hp + m.regeneration * away)
+            if m.alive and getattr(m, 'recovers_when_left', False):
+                # monster._recover_when_left, for the turns spent away
+                turns = max(0, away - monster_mod.RECOVER_AFTER_TURNS)
+                m.hp = min(m.max_hp, m.hp + int(m.max_hp * monster_mod.RECOVER_SHARE) * turns)
             m.status_effects.clear()
 
     def _locust(self):
@@ -1546,12 +1621,18 @@ class Run:
 
     def _monster_attack(self, m):
         p = self.p
+        # game_combat._do_monster_turns: a blow from beside you can be slipped
+        if (getattr(m, 'ai_pattern', '') not in RANGED_PATTERNS
+                and random.random() < p.dodge_chance()):
+            return
         p._incoming_scale = getattr(m, '_sim_dmg_x', 1.0)
+        p._mercy = 1.0 if is_named(m) else floor_curve_mod.early_mercy(self.floor)   # game_combat
         before = p.hp
         try:
             m.attack(p)
         finally:
             p._incoming_scale = 1.0
+            p._mercy = 1.0
         if p.hp < before:
             m._sim_dmg += before - p.hp
             self.last_hit_by = m.kind
@@ -1586,7 +1667,8 @@ class Run:
             p.prayer_cooldown -= 1
         if (self.turn % self._regen_interval() == 0 and p.hp < p.max_hp
                 and not p.has_effect('bleeding') and not p.has_effect('poisoned')):
-            got = p.heal(max(1, p.max_hp // 50) * self.knobs['regen'])
+            got = p.heal(min(max(1, p.max_hp // 50) * self.knobs['regen'],
+                             floor_curve_mod.rest_room(p.hp, p.max_hp)))
             self.fs['heal_used'] += got
 
     def _player_dead(self) -> bool:
@@ -1732,6 +1814,7 @@ class Run:
         self.rest_left = int(self.prof['rest_turns'] * self.knobs['rest'])
         self.floor_kills = 0
 
+        self.find_secrets(floor)
         snap = self.cache.get(floor)
         groups = [[fresh_monster(m, self.knobs, self.floor) for m in g] for g in snap.groups]
         is_boss_floor = floor in BOSS_FLOORS
@@ -1812,6 +1895,10 @@ class Run:
                 self._boss_prefight(boss_ctx)
             self._fight_and_account(g, mandatory=must, boss_ctx=boss_ctx)
             self.p.status_effects.pop('in_pit', None)
+            if not self.p.is_dead():
+                for m in g:
+                    if m.kind in GATE_BOSSES and not m.alive:
+                        self.take_boon(m.kind)
             if (floor == 60 and self.prof['cooks_per_floor'] >= 1
                     and any(m.kind == 'fafnir_dragon' and not m.alive for m in g)
                     and self.quiz.one_question(5) and self.quiz.one_question(5)):
@@ -1853,8 +1940,13 @@ class Run:
                 ctx['pit'] = True
             if 'fenrir_wolf' in kinds:
                 ctx['gleipnir'] = True
+                if self.prof.get('secrets'):
+                    for m in group:                    # Vidar's Sandal: the first
+                        if m.kind == 'fenrir_wolf':    # blow that lands kills him
+                            m.hp = 1
             if 'abaddon_destroyer' in kinds:
-                ctx['altars'] = True
+                # the Sword of Michael ignores his ward: no need to walk the altars
+                ctx['altars'] = not getattr(self.p.weapon, 'ignore_resistances', False)
                 ctx['scales'] = True
             if 'medusa_gorgon' in kinds:
                 ctx['aegis'] = True

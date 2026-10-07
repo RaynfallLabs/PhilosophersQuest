@@ -234,6 +234,13 @@ class Player:
         halving_effect = DAMAGE_HALVED.get(damage_type)
         if halving_effect and self.has_effect(halving_effect) and amount > 0:
             amount = (amount + 1) // 2
+        # floor_curve.early_mercy: set by the game around a monster's attack.
+        mercy = getattr(self, '_mercy', 1.0)
+        if mercy != 1.0 and amount > 1:
+            amount = max(1, int(round(amount * mercy)))
+        # Toughness: a hardy body shrugs off part of every blow.
+        if amount > 1 and damage_type != 'starvation':
+            amount = max(1, int(round(amount * (1.0 - self.toughness()))))
         # Aiglos (Gil-galad's spear): wielder_fire_immunity blocks fire damage
         # while equipped — "Sauron's flame did nothing" (per audit 2026-05-30,
         # the flag was declared in JSON but had no consumer). Checks both
@@ -487,27 +494,47 @@ class Player:
         floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
         return max(self.COOKING_SOFTCAP_MIN, self.COOKING_SOFTCAP_PER_FLOOR * floor)
 
-    # Per-stat cooking softcap. Diligent cook at F100 caps near +15 per stat;
-    # baseline starts at 10-18, so +15 from cooking = roughly 1.5x baseline
-    # (matches the HP scaling philosophy of "1.5x baseline by deep descent").
-    # Below F20 the cap is very tight to prevent early-game stat snowballing.
-    _COOKING_STAT_SOFTCAP_BY_FLOOR = (
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,         # F0-F10  cap 1
-        2, 2, 2, 2, 2, 2, 2, 2, 2, 2,            # F11-F20 cap 2
-        3, 3, 3, 3, 3, 4, 4, 4, 4, 4,            # F21-F30 cap 3-4
-        5, 5, 5, 5, 5, 6, 6, 6, 6, 6,            # F31-F40 cap 5-6
-        7, 7, 7, 7, 7, 8, 8, 8, 8, 8,            # F41-F50 cap 7-8
-        9, 9, 9, 9, 9, 10, 10, 10, 10, 10,       # F51-F60 cap 9-10
-        11, 11, 11, 11, 11, 12, 12, 12, 12, 12,  # F61-F70 cap 11-12
-        13, 13, 13, 13, 13, 14, 14, 14, 14, 14,  # F71-F80 cap 13-14
-        14, 14, 14, 14, 14, 15, 15, 15, 15, 15,  # F81-F90 cap 14-15
-        15, 15, 15, 15, 15, 15, 15, 15, 15, 15,  # F91-F100 cap 15
-    )
+    # Most a single stat can ever gain from cooking: 2, plus 1 for every five
+    # floors of depth (6 at floor 20, 10 at 40, 22 at 100). A run feeds about
+    # fifty points in all (see feed_cut_stat), so that is room for one real
+    # speciality and a second interest, not six maxed stats. +22 Strength is
+    # 1.66x damage: the ceiling the stacking table allows a stat build.
+    COOK_STAT_CAP_BASE = 2
+    COOK_STAT_CAP_FLOORS = 5
+    # Proper meals of a stat's cut it takes to raise that stat by one. Only
+    # the first such meal on a floor counts, so a point takes two floors.
+    # (One point a floor was measured: a hundred points by the end, and a
+    # prepared character that could not lose.)
+    COOK_MEALS_PER_STAT_POINT = 2
 
-    def cooking_stat_softcap(self) -> int:
-        """Per-stat cooking lifetime cap. Capped at +15 per stat at endgame."""
-        idx = max(0, min(100, self.deepest_floor_reached))
-        return max(1, self._COOKING_STAT_SOFTCAP_BY_FLOOR[idx])
+    def feed_cut_stat(self, stat: str) -> tuple[int, int]:
+        """A proper meal cooked from a cut of `stat`. Returns (points gained,
+        meals now banked toward the next point); (0, -1) if it taught
+        nothing (this floor's lesson is used, or the stat is at its cap)."""
+        if stat not in self.cooking_stat_gained:
+            return 0, -1
+        if int(getattr(self, '_cook_stat_gain_this_floor', 0)) >= self.PER_FLOOR_STAT_CAP:
+            return 0, -1
+        if self.cooking_stat_gained[stat] >= self.cooking_stat_softcap(stat):
+            return 0, -1
+        self._cook_stat_gain_this_floor = int(
+            getattr(self, '_cook_stat_gain_this_floor', 0)) + 1
+        if not isinstance(getattr(self, 'cook_stat_meals', None), dict):
+            self.cook_stat_meals = {}
+        banked = int(self.cook_stat_meals.get(stat, 0)) + 1
+        if banked < self.COOK_MEALS_PER_STAT_POINT:
+            self.cook_stat_meals[stat] = banked
+            return 0, banked
+        self.cook_stat_meals[stat] = 0
+        return self.apply_cooking_stat_bonus(stat, 1), 0
+
+    def cooking_stat_softcap(self, stat: str | None = None) -> int:
+        """Per-stat lifetime cap on cooking gains at the deepest floor reached.
+        Wisdom's is half: the dungeon already teaches a point every three
+        floors, and every point of it is a second on the clock."""
+        floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
+        cap = self.COOK_STAT_CAP_BASE + floor // self.COOK_STAT_CAP_FLOORS
+        return max(1, cap // 2) if stat == 'WIS' else cap
 
     # ----- Harvest+Cook redesign 2026-05-31 -----
     # Hard per-floor caps for cooking stat + HP gains. Both reset on
@@ -574,6 +601,7 @@ class Player:
         self._cook_stat_gain_this_floor = 0
         self._cook_hp_gain_this_floor = 0
         self._con_drained_this_floor = 0      # monster.DRAIN_CON_PER_FLOOR
+        self._meditated_this_floor = 0        # floor_curve.MEDITATE_FLOOR_SHARE
 
     def apply_cooking_stat_bonus(self, stat: str, amount: int) -> int:
         """Apply a cooked-food stat bonus with diminishing returns + per-stat
@@ -585,7 +613,7 @@ class Player:
         """
         if stat not in self.cooking_stat_gained or amount <= 0:
             return 0
-        softcap = self.cooking_stat_softcap()
+        softcap = self.cooking_stat_softcap(stat)
         gained = self.cooking_stat_gained[stat]
         if gained >= softcap:
             return 0
@@ -616,6 +644,22 @@ class Player:
             self.cooking_hp_gained += amount
         self.max_hp += amount
         self.hp = min(self.hp + amount, self.max_hp)
+
+    def meditation_left(self) -> int:
+        """Mana that meditating can still restore on this floor."""
+        from floor_curve import meditation_allowance
+        return max(0, meditation_allowance(self.max_mp)
+                   - int(getattr(self, '_meditated_this_floor', 0)))
+
+    def meditate(self, amount: int = 1) -> int:
+        """Restore mana by meditating, within this floor's allowance.
+        Returns the mana actually regained."""
+        amount = min(int(amount), self.meditation_left(), self.max_mp - self.mp)
+        if amount <= 0:
+            return 0
+        self._meditated_this_floor = int(getattr(self, '_meditated_this_floor', 0)) + amount
+        self.restore_mp(amount)
+        return amount
 
     def restore_mp(self, amount: int):
         self.mp = min(self.max_mp, self.mp + amount)
@@ -760,7 +804,10 @@ class Player:
         """Armor class -- lower is better (harder for monsters to hit).
         Base 10, reduced by DEX modifier, armor ac_bonus + enchant_bonus, shield,
         and status effects like invisibility."""
-        dex_mod = (self.DEX - 10) // 2
+        # Dexterity is worth armor up to DEX_AC_CAP points; past that it
+        # shows up as dodge_chance(). (Uncapped, +22 Dexterity was eleven
+        # points of armor: more than a full suit of plate.)
+        dex_mod = min(self.DEX_AC_CAP, (self.DEX - 10) // 2)
         armor_bonus = sum(
             getattr(s, 'ac_bonus', 0) + getattr(s, 'enchant_bonus', 0)
             for s in self.armor_slots if s is not None
@@ -877,6 +924,30 @@ class Player:
         """
         base, wis_scale = self.SUBJECT_TIMER.get(subject, (0, 1.0))
         return max(5, round(base + self.effective_wis() * wis_scale))
+
+    # ----- what a high stat DOES (2026-10 stat design, step one) -----
+    # Constitution and Dexterity were close to dead weight: a point of CON
+    # was one hit point, and DEX stopped mattering once armor did the work.
+    HP_PER_CON = 3
+    TOUGHNESS_PER_CON = 0.01      # of all damage, per point of CON above 10
+    TOUGHNESS_CAP = 0.40
+    DODGE_PER_DEX = 0.0075        # chance per point of DEX above 10
+    DEX_AC_CAP = 3                # most armor class Dexterity alone gives
+    DODGE_CAP = 0.30
+
+    def toughness(self) -> float:
+        """Share of every blow a hardy body ignores (0 at CON 10)."""
+        return max(0.0, min(self.TOUGHNESS_CAP,
+                            (int(self.CON) - 10) * self.TOUGHNESS_PER_CON))
+
+    def dodge_chance(self) -> float:
+        """Chance to slip a blow that would have landed (0 at DEX 10). Rolled
+        after the monster's hit roll, so it also beats a glancing hit."""
+        if self.has_effect('paralyzed') or self.has_effect('sleeping') \
+                or self.has_effect('immobilized'):
+            return 0.0
+        return max(0.0, min(self.DODGE_CAP,
+                            (int(self.DEX) - 10) * self.DODGE_PER_DEX))
 
     # ----- wisdom: what the dungeon teaches, and what prayer lends -----
 
@@ -1110,7 +1181,9 @@ class Player:
             return
         setattr(self, stat, getattr(self, stat) + amount)
         if stat == 'CON':
-            self.max_hp += amount   # preserve level scaling
+            # HP_PER_CON hit points a point, gained or lost. (It was 1, on a
+            # health bar that runs to several hundred: the stat did nothing.)
+            self.max_hp = max(1, self.max_hp + amount * self.HP_PER_CON)
             self.hp = min(self.hp, self.max_hp)
         elif stat == 'STR':
             self.max_sp += amount
