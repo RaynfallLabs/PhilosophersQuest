@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. Nothing in this plan is built. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D9, the target win rates, is decided).
+Date: 2026-10-06. Nothing in this plan is built. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -31,7 +31,7 @@ The systems below all add power on top of a plain character: a stat build, a pra
 | Michael, Guide My Hand | 1.9x damage for 8 turns, once per fight | built |
 | Haste | 1.25x clock and double actions | exists; permanent sources start at floor 50 |
 | A pet | 0.25 of the player's own damage | Phase 4 |
-| Magic | one cast is worth about one attack; a full mana pool is worth about one fight | Phase 3 |
+| Magic | changes a fight's shape (control, area, position); single-target damage under one weapon chain; worth about a fifth off a floor's losses | Phase 3 |
 | Hero kit | 1.3x at the start, falling to 1.1x by floor 40 | Phase 5 |
 | Quirks, all earned | 1.25x in total by floor 100 | Phase 5 |
 | A named unique | 1.25x a common of its floor, or equal with a side benefit | built |
@@ -74,13 +74,14 @@ Exit: a plain prepared player and a patient one are within 15 points of each oth
 
 ### Phase 3: magic
 
-- **Role.** See decision D2.
-- Every spell, wand and scroll priced as shares of the yardsticks: damage in attacks, healing in health bars, control in turns, and mana as a pool worth one fight.
-- Intelligence becomes a build (larger pool, mana back on kills) inside the stat ceiling.
+- **Role (decided, D2):** a variable, fun way to play that changes the shape of a fight. Never a substitute for maths.
+- Every spell, wand and scroll priced by its effect: control in turns, area in targets, reach, position, information, escape, healing in health bars. Single-target damage is capped below a weapon chain.
+- A variety pass: list what each one does that a sword cannot; merge or replace the ones that are only "the same, bigger".
+- Intelligence becomes a build that casts more often and makes effects last or reach further, inside the stat ceiling.
 - Utility scrolls (mapping, teleport, enchant, identify) checked for supply against one floor's time and gold.
 - Wands of wonder, wish and polymorph: confirm nothing can produce a permanent gain outside the caps.
 
-Exit: a caster who answers science and grammar well clears a floor in about the same time and with about the same losses as a fighter who answers maths well.
+Exit: a player who uses magic well takes noticeably fewer losses per floor than one who does not (about a fifth), still kills with sums, and no spell or wand alone ends a fight with a named foe.
 
 ### Phase 4: companions and distance (pets, ranged combat)
 
@@ -119,8 +120,14 @@ Each has my recommendation, weighed against everything already changed.
 **D1. The stat design: go ahead?**
 Recommend **yes, in two steps.** Step one in Phase 2: the meat decides the stat, Constitution gives 3 health a point and blunts damage, Dexterity gives a dodge, and the gate bosses each leave three gifts. Step two later: the "stars" at 25, 35 and 50. Reason: Wisdom from depth already supplies the baseline clock, so the build's job is no longer to make the game playable, only to make a character distinctive. That means the stat ceilings can be modest (1.6x), which keeps the stacking limit reachable. With depth Wisdom in place, I would cut the Wisdom a build can add by about half from my earlier proposal.
 
-**D2. What is magic for?**
-Recommend **a second way to fight, never a way around the clock.** A cast should be worth about one attack and cost a question in another subject, with mana lasting about one fight. Reason: if magic out-damages maths for a child who is weak at sums, the core loop is optional; if it is much weaker, 3,700 science questions gate nothing that matters.
+**D2. What is magic for? (DECIDED 2026-10-06)**
+Your ruling: magic is a **variable way to play.** Spells cause effects and delays, open new ways to fight, hit areas, chain between targets. It should make playing more **fun**, not replace maths. Mental maths is the core skill being trained; the rest the player picks up casually along the way.
+
+What that fixes for Phase 3:
+- Magic is priced by what it **does**, not as a second damage track: control in turns, area in targets, position, information, escape. Raw single-target damage stays below a weapon chain, always.
+- No magic build skips the clock. A fight is still won with sums; a spell changes the shape of the fight (who is in it, for how long, from where).
+- Variety is the measure of success: every tier of spell and wand should offer something a sword cannot do, and no two should be the same effect with a bigger number.
+- Intelligence makes magic available more often and makes its effects last or reach further. It does not make it hit harder than a blade.
 
 **D3. Should resting be nearly free?**
 Recommend **no, but gently.** Raise what rest costs in food until a fully rested floor costs about one extra meal, and keep wandering monsters. Reason: with your 40 to 50% target the top of the range is already reached today by a player who simply rests between every fight (50%), with no build at all. If rest stays free, the stat build and the power-ups have nothing left to add, and the difference between a prepared player and a great one comes from patience rather than knowledge. The aim is not to make the game harder overall, only to move where the wins come from.
@@ -150,6 +157,9 @@ For a child who is good at sums (95% on simple ones, 85% on hard ones):
 | Casual: cooks a little, skips quests | 90% | about half | 30% | 8% | 1% | 0 |
 | Prepared: cooks, does the quests | 98% | 85% | 85% | 65% | 48% | 25 to 30% |
 | Prepared with a committed build, uses every tool well | 98% | 90% | 90% | 78% | 62% | 40 to 50% |
+| The same, and has worked out the secret quests | 98% | 95% | 93% | 85% | 75% | 60 to 70% |
+
+**The secret quests pay (your ruling):** a player who figures out the hidden ones (the Cow Level, Vidar's Sandal, Reforged Gram, the Sword of Michael) should win even more. Each is worth a clear, measured step at its own boss (the Sandal at Fenrir, Gram at Fafnir, the Sword at Abaddon, the Cow Level as a mid-game windfall), and the simulator gets a "found the secrets" player so that step is checked rather than assumed. The 60 to 70% figure is my reading of "even more"; say if you want it higher.
 
 What this means against today's numbers:
 
