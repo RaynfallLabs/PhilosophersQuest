@@ -547,7 +547,7 @@
     "attacks": [
       {
         "name": "Devouring Embrace",
-        "damage": "3d10+28",
+        "damage": "3d10+25",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.35,
@@ -555,7 +555,7 @@
       },
       {
         "name": "Soul Drain",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.5,
@@ -2115,7 +2115,7 @@
     "attacks": [
       {
         "name": "Stone Fist",
-        "damage": "3d8+13",
+        "damage": "3d8+12",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.3,
@@ -2319,7 +2319,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d10+12",
+        "damage": "2d10+11",
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -2378,7 +2378,7 @@
     "attacks": [
       {
         "name": "Accursed Blade",
-        "damage": "3d8+13",
+        "damage": "3d8+12",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -2537,7 +2537,7 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d6+20",
+        "damage": "3d6+19",
         "type": "slash"
       },
       {
@@ -2604,7 +2604,7 @@
     "attacks": [
       {
         "name": "Paralyzing Ray",
-        "damage": "2d8+25",
+        "damage": "2d8+24",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -2684,7 +2684,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "3d6+20",
+        "damage": "3d6+19",
         "type": "drain"
       },
       {
@@ -2740,7 +2740,7 @@
     "attacks": [
       {
         "name": "Death Touch",
-        "damage": "3d6+20",
+        "damage": "3d6+19",
         "type": "drain"
       },
       {
@@ -2802,17 +2802,17 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d8+35",
+        "damage": "3d8+32",
         "type": "slash"
       },
       {
         "name": "Bite",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "physical"
       },
       {
         "name": "Fire Breath",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
@@ -2861,11 +2861,11 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "3d8+35",
+        "damage": "3d8+32",
         "type": "blunt"
       },
       {
-        "damage": "3d8+40",
+        "damage": "3d8+37",
         "type": "poison",
         "name": "Toxic Gas Breath",
         "effect": "poisoned",
@@ -2916,12 +2916,12 @@
     "attacks": [
       {
         "name": "Death Bolt",
-        "damage": "3d8+35",
+        "damage": "3d8+32",
         "type": "drain"
       },
       {
         "name": "Cold Wave",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.6,
@@ -2974,7 +2974,7 @@
     "attacks": [
       {
         "name": "Hellfire",
-        "damage": "3d8+35",
+        "damage": "3d8+32",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.8,
@@ -2982,7 +2982,7 @@
       },
       {
         "name": "Rend",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "slash"
       }
     ],
@@ -3029,17 +3029,17 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "5d10+31",
+        "damage": "5d10+28",
         "type": "slash"
       },
       {
         "name": "Bite",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "physical"
       },
       {
         "name": "Frost Breath",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.5,
@@ -3048,7 +3048,7 @@
       },
       {
         "name": "Tail Strike",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.35,
@@ -3056,7 +3056,7 @@
       },
       {
         "name": "Wing Buffet",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -3105,12 +3105,12 @@
     "attacks": [
       {
         "name": "Death Ray",
-        "damage": "5d10+24",
+        "damage": "5d10+22",
         "type": "drain"
       },
       {
         "name": "Withering Curse",
-        "damage": "4d6+15",
+        "damage": "4d6+14",
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 1.0,
@@ -3118,7 +3118,7 @@
       },
       {
         "name": "Cold Nova",
-        "damage": "4d6+15",
+        "damage": "4d6+14",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.7,
@@ -3176,7 +3176,7 @@
     "attacks": [
       {
         "name": "Soul Rend",
-        "damage": "5d10+31",
+        "damage": "5d10+28",
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -3184,7 +3184,7 @@
       },
       {
         "name": "Fear Aura",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.35,
@@ -3192,7 +3192,7 @@
       },
       {
         "name": "Death Gaze",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -3243,7 +3243,7 @@
     "attacks": [
       {
         "name": "Chaos Touch",
-        "damage": "5d10+31",
+        "damage": "5d10+28",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.8,
@@ -3251,7 +3251,7 @@
       },
       {
         "name": "Void Claw",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "drain"
       }
     ],
@@ -3297,7 +3297,7 @@
     "attacks": [
       {
         "name": "Soul Drain",
-        "damage": "5d10+31",
+        "damage": "5d10+28",
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -3305,7 +3305,7 @@
       },
       {
         "name": "Terror",
-        "damage": "4d6+18",
+        "damage": "4d6+17",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.35,
@@ -4606,7 +4606,7 @@
     "attacks": [
       {
         "name": "Ice Club",
-        "damage": "3d8+18",
+        "damage": "3d8+17",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.4,
@@ -4663,7 +4663,7 @@
     "attacks": [
       {
         "name": "Flaming Sword",
-        "damage": "3d10+24",
+        "damage": "3d10+23",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.45,
@@ -8243,7 +8243,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "physical",
         "effect": "poisoned",
         "effect_chance": 0.7,
@@ -8251,12 +8251,12 @@
       },
       {
         "name": "Claws",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "physical"
       },
       {
         "name": "Tail Crush",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -8264,7 +8264,7 @@
       },
       {
         "name": "Inferno Breath",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -12915,7 +12915,7 @@
     "attacks": [
       {
         "name": "Death Bite",
-        "damage": "3d6+20",
+        "damage": "3d6+19",
         "type": "drain",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -15868,7 +15868,7 @@
     "attacks": [
       {
         "name": "Wave Crash",
-        "damage": "2d10+14",
+        "damage": "2d10+13",
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -15925,7 +15925,7 @@
     "attacks": [
       {
         "name": "Wind Slash",
-        "damage": "2d10+14",
+        "damage": "2d10+13",
         "type": "slash",
         "effect": "confused",
         "effect_chance": 0.3,
@@ -17588,7 +17588,7 @@
     "attacks": [
       {
         "name": "Stone Fist",
-        "damage": "3d8+13",
+        "damage": "3d8+12",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -17694,7 +17694,7 @@
     "attacks": [
       {
         "name": "Greatsword",
-        "damage": "3d10+36",
+        "damage": "3d10+33",
         "type": "lightning",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -17702,7 +17702,7 @@
       },
       {
         "name": "Thunderstrike",
-        "damage": "1d8+10",
+        "damage": "1d8+9",
         "type": "lightning",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -19168,7 +19168,7 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d6+16",
+        "damage": "3d6+15",
         "type": "slash"
       },
       {
@@ -19222,7 +19222,7 @@
     "attacks": [
       {
         "name": "Psionic Blast",
-        "damage": "3d6+20",
+        "damage": "3d6+19",
         "type": "psionic",
         "effect": "confused",
         "effect_chance": 0.7,
@@ -19282,12 +19282,12 @@
     "attacks": [
       {
         "name": "Void Bite",
-        "damage": "3d6+26",
+        "damage": "3d6+24",
         "type": "drain"
       },
       {
         "name": "Crushing Coil",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -19336,7 +19336,7 @@
     "attacks": [
       {
         "name": "Death Ray",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.6,
@@ -19344,12 +19344,12 @@
       },
       {
         "name": "Disintegrate",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "magic"
       },
       {
         "name": "Fear Ray",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.5,
@@ -19357,7 +19357,7 @@
       },
       {
         "name": "Slow Ray",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.8,
@@ -19365,7 +19365,7 @@
       },
       {
         "name": "Charm Ray",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.7,
@@ -19373,7 +19373,7 @@
       },
       {
         "name": "Bite",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "physical"
       }
     ],
@@ -19418,12 +19418,12 @@
     "attacks": [
       {
         "name": "Crushing Bite",
-        "damage": "3d8+29",
+        "damage": "3d8+27",
         "type": "slash"
       },
       {
         "name": "Inferno Breath",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
@@ -19432,7 +19432,7 @@
       },
       {
         "name": "Tail Sweep",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.5,
@@ -19481,7 +19481,7 @@
     "attacks": [
       {
         "name": "Hellfire Slam",
-        "damage": "3d8+35",
+        "damage": "3d8+32",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -19489,12 +19489,12 @@
       },
       {
         "name": "Soul Crush",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "drain"
       },
       {
         "name": "Chaos Bolt",
-        "damage": "2d8+16",
+        "damage": "2d8+15",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -19545,12 +19545,12 @@
     "attacks": [
       {
         "name": "Crushing Claw",
-        "damage": "3d8+39",
+        "damage": "3d8+36",
         "type": "slash"
       },
       {
         "name": "Elder Breath",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.8,
@@ -19559,7 +19559,7 @@
       },
       {
         "name": "Tail Crush",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.5,
@@ -19567,12 +19567,12 @@
       },
       {
         "name": "Bite",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "physical"
       },
       {
         "name": "Wing Buffet",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -19621,12 +19621,12 @@
     "attacks": [
       {
         "name": "Death Lance",
-        "damage": "4d10+30",
+        "damage": "4d10+27",
         "type": "drain"
       },
       {
         "name": "Soul Frost",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.35,
@@ -19634,7 +19634,7 @@
       },
       {
         "name": "Doom Aura",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.3,
@@ -19686,12 +19686,12 @@
     "attacks": [
       {
         "name": "Unholy Blade",
-        "damage": "5d10+24",
+        "damage": "5d10+21",
         "type": "fire"
       },
       {
         "name": "Aura of Doom",
-        "damage": "3d6+17",
+        "damage": "3d6+16",
         "type": "drain",
         "effect": "feared",
         "effect_chance": 0.6,
@@ -19699,7 +19699,7 @@
       },
       {
         "name": "Chaos Storm",
-        "damage": "3d6+17",
+        "damage": "3d6+16",
         "type": "magic",
         "piercing": true
       }
@@ -19748,7 +19748,7 @@
     "attacks": [
       {
         "name": "Venomous Bite",
-        "damage": "5d10+28",
+        "damage": "5d10+25",
         "type": "poison",
         "effect": "slowed",
         "effect_chance": 0.7,
@@ -19756,7 +19756,7 @@
       },
       {
         "name": "World Crush",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.5,
@@ -19764,7 +19764,7 @@
       },
       {
         "name": "Tail Slam",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "blunt"
       }
     ],
@@ -19812,12 +19812,12 @@
     "attacks": [
       {
         "name": "Entropy Touch",
-        "damage": "5d10+27",
+        "damage": "5d10+24",
         "type": "drain"
       },
       {
         "name": "Void Shriek",
-        "damage": "4d6+16",
+        "damage": "4d6+15",
         "type": "cold",
         "effect": "confused",
         "effect_chance": 0.6,
@@ -19825,7 +19825,7 @@
       },
       {
         "name": "Unmaking",
-        "damage": "4d6+16",
+        "damage": "4d6+15",
         "type": "necrotic"
       }
     ],
@@ -20066,17 +20066,17 @@
     "min_level": 78,
     "attacks": [
       {
-        "damage": "4d10+59",
+        "damage": "5d10+103",
         "type": "slash",
         "name": "Devouring Bite"
       },
       {
-        "damage": "4d10+40",
+        "damage": "5d10+72",
         "type": "cold",
         "name": "Frost Howl"
       },
       {
-        "damage": "4d10+40",
+        "damage": "5d10+72",
         "type": "blunt",
         "name": "Crushing Paw"
       }
@@ -20130,29 +20130,29 @@
     "min_level": 98,
     "attacks": [
       {
-        "damage": "4d10+32",
+        "damage": "3d10+27",
         "type": "magic",
         "name": "Apocalypse Blast",
         "piercing": true
       },
       {
-        "damage": "4d10+21",
+        "damage": "3d10+18",
         "type": "fire",
         "name": "Hellfire"
       },
       {
-        "damage": "4d10+21",
+        "damage": "3d10+18",
         "type": "poison",
         "name": "Plague Breath",
         "piercing": true
       },
       {
-        "damage": "4d10+21",
+        "damage": "3d10+18",
         "type": "cold",
         "name": "Soul Chill"
       },
       {
-        "damage": "4d10+21",
+        "damage": "3d10+18",
         "type": "slash",
         "name": "Abyssal Claw"
       }
@@ -22817,7 +22817,7 @@
     "attacks": [
       {
         "name": "Warclub",
-        "damage": "3d6+26",
+        "damage": "3d6+24",
         "type": "blunt",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -22825,7 +22825,7 @@
       },
       {
         "name": "Rend",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "slash"
       }
     ],
@@ -22870,12 +22870,12 @@
     "attacks": [
       {
         "name": "Ice Greataxe",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "cold"
       },
       {
         "name": "Hurled Boulder",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "blunt"
       }
     ],
@@ -22920,12 +22920,12 @@
     "attacks": [
       {
         "name": "Molten Hammer",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "fire"
       },
       {
         "name": "Flame Breath",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "fire"
       }
     ],
@@ -22970,12 +22970,12 @@
     "attacks": [
       {
         "name": "Drain Bite",
-        "damage": "3d6+26",
+        "damage": "3d6+24",
         "type": "drain"
       },
       {
         "name": "Shadow Claw",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "necrotic"
       }
     ],
@@ -23023,7 +23023,7 @@
     "attacks": [
       {
         "name": "Soul Blade",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "necrotic",
         "effect": "frozen",
         "effect_chance": 0.4,
@@ -23031,7 +23031,7 @@
       },
       {
         "name": "Death Strike",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "drain"
       }
     ],
@@ -23079,12 +23079,12 @@
     "attacks": [
       {
         "name": "Force Fist",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "magic"
       },
       {
         "name": "Arcane Pulse",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "magic"
       }
     ],
@@ -23129,12 +23129,12 @@
     "attacks": [
       {
         "name": "Hellfire Bite",
-        "damage": "3d6+26",
+        "damage": "3d6+24",
         "type": "fire"
       },
       {
         "name": "Claw",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "slash"
       }
     ],
@@ -23182,7 +23182,7 @@
     "attacks": [
       {
         "name": "Riddle Curse",
-        "damage": "3d6+25",
+        "damage": "3d6+23",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -23190,7 +23190,7 @@
       },
       {
         "name": "Lion Rend",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "slash"
       }
     ],
@@ -23232,12 +23232,12 @@
     "attacks": [
       {
         "name": "Death Bolt",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "necrotic"
       },
       {
         "name": "Paralyze Touch",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -23289,12 +23289,12 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "3d6+20",
+        "damage": "3d6+18",
         "type": "blunt"
       },
       {
         "name": "Root Entangle",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.25,
@@ -23344,12 +23344,12 @@
     "attacks": [
       {
         "name": "Mass Strike",
-        "damage": "3d6+20",
+        "damage": "3d6+18",
         "type": "slash"
       },
       {
         "name": "Bone Volley",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "pierce"
       }
     ],
@@ -23397,12 +23397,12 @@
     "attacks": [
       {
         "name": "Ghostfire Breath",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "necrotic"
       },
       {
         "name": "Phase Claw",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "shadow"
       }
     ],
@@ -23448,12 +23448,12 @@
     "attacks": [
       {
         "name": "Hellforged Blade",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "fire"
       },
       {
         "name": "Abyssal Strike",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "necrotic"
       }
     ],
@@ -23499,12 +23499,12 @@
     "attacks": [
       {
         "name": "Iron Fist",
-        "damage": "3d8+26",
+        "damage": "3d8+24",
         "type": "blunt"
       },
       {
         "name": "Grinding Gears",
-        "damage": "1d8+16",
+        "damage": "1d8+15",
         "type": "slash"
       }
     ],
@@ -23552,12 +23552,12 @@
     "attacks": [
       {
         "name": "Sovereign Drain",
-        "damage": "4d10+30",
+        "damage": "4d10+27",
         "type": "drain"
       },
       {
         "name": "Nightmare Claw",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "necrotic"
       }
     ],
@@ -23607,7 +23607,7 @@
     "attacks": [
       {
         "name": "Storm Hammer",
-        "damage": "4d10+30",
+        "damage": "4d10+27",
         "type": "lightning",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -23615,7 +23615,7 @@
       },
       {
         "name": "Thunder Clap",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "physical"
       }
     ],
@@ -23658,7 +23658,7 @@
     "attacks": [
       {
         "name": "Solar Flare",
-        "damage": "4d10+30",
+        "damage": "4d10+27",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -23706,7 +23706,7 @@
     "attacks": [
       {
         "name": "Absolute Zero",
-        "damage": "5d10+22",
+        "damage": "5d10+19",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
@@ -23754,17 +23754,17 @@
     "attacks": [
       {
         "name": "Doom Blade",
-        "damage": "5d10+22",
+        "damage": "5d10+19",
         "type": "fire"
       },
       {
         "name": "Corruption",
-        "damage": "2d8+17",
+        "damage": "2d8+16",
         "type": "necrotic"
       },
       {
         "name": "Command Strike",
-        "damage": "2d8+17",
+        "damage": "2d8+16",
         "type": "physical"
       }
     ],
@@ -23811,12 +23811,12 @@
     "attacks": [
       {
         "name": "Mass Claw",
-        "damage": "3d8+39",
+        "damage": "3d8+36",
         "type": "slash"
       },
       {
         "name": "Overwhelm",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "physical"
       }
     ],
@@ -23864,12 +23864,12 @@
     "attacks": [
       {
         "name": "Death Breath",
-        "damage": "5d10+22",
+        "damage": "5d10+19",
         "type": "necrotic"
       },
       {
         "name": "Bone Claw",
-        "damage": "2d8+17",
+        "damage": "2d8+16",
         "type": "slash"
       }
     ],
@@ -23918,17 +23918,17 @@
     "attacks": [
       {
         "name": "Multi Bite",
-        "damage": "4d10+30",
+        "damage": "4d10+27",
         "type": "pierce"
       },
       {
         "name": "Acid Spray",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "acid"
       },
       {
         "name": "Tail Sweep",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "blunt"
       }
     ],
@@ -23980,7 +23980,7 @@
     "attacks": [
       {
         "name": "Fallen Blade",
-        "damage": "5d10+22",
+        "damage": "5d10+19",
         "type": "magic",
         "effect": "blinded",
         "effect_chance": 0.4,
@@ -23988,7 +23988,7 @@
       },
       {
         "name": "Dark Radiance",
-        "damage": "2d8+17",
+        "damage": "2d8+16",
         "type": "necrotic"
       }
     ],
@@ -24033,12 +24033,12 @@
     "attacks": [
       {
         "name": "Titan Fist",
-        "damage": "5d10+24",
+        "damage": "5d10+21",
         "type": "blunt"
       },
       {
         "name": "Earth Shatter",
-        "damage": "2d8+19",
+        "damage": "2d8+18",
         "type": "physical"
       }
     ],
@@ -24084,7 +24084,7 @@
     "attacks": [
       {
         "name": "Shadow Blade",
-        "damage": "2d12+35",
+        "damage": "2d12+32",
         "type": "pierce",
         "effect": "blinded",
         "effect_chance": 0.35,
@@ -24092,7 +24092,7 @@
       },
       {
         "name": "Backstab",
-        "damage": "2d8+17",
+        "damage": "2d8+16",
         "type": "pierce"
       }
     ],
@@ -24138,7 +24138,7 @@
     "attacks": [
       {
         "name": "Plague Touch",
-        "damage": "3d8+39",
+        "damage": "3d8+36",
         "type": "poison",
         "effect": "diseased",
         "effect_chance": 0.5,
@@ -24187,7 +24187,7 @@
     "attacks": [
       {
         "name": "Ruin Slam",
-        "damage": "5d10+24",
+        "damage": "5d10+21",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 0.35,
@@ -24195,7 +24195,7 @@
       },
       {
         "name": "Chaos Breath",
-        "damage": "2d8+19",
+        "damage": "2d8+18",
         "type": "fire"
       }
     ],
@@ -24241,17 +24241,17 @@
     "attacks": [
       {
         "name": "Annihilation Ray",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "necrotic"
       },
       {
         "name": "Soul Rend",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "drain"
       },
       {
         "name": "Paralysis Touch",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.35,
@@ -24303,7 +24303,7 @@
     "attacks": [
       {
         "name": "Void Breath",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "necrotic",
         "effect": "cursed",
         "effect_chance": 0.4,
@@ -24311,12 +24311,12 @@
       },
       {
         "name": "Ancient Claw",
-        "damage": "4d8+13",
+        "damage": "4d8+12",
         "type": "slash"
       },
       {
         "name": "Tail Crush",
-        "damage": "4d8+13",
+        "damage": "4d8+12",
         "type": "blunt"
       }
     ],
@@ -24365,12 +24365,12 @@
     "attacks": [
       {
         "name": "World Breaker",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "blunt"
       },
       {
         "name": "Titan Stomp",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -24420,7 +24420,7 @@
     "attacks": [
       {
         "name": "Reality Bolt",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "shadow",
         "effect": "hallucinating",
         "effect_chance": 0.4,
@@ -24428,7 +24428,7 @@
       },
       {
         "name": "Void Bite",
-        "damage": "4d8+13",
+        "damage": "4d8+12",
         "type": "drain"
       }
     ],
@@ -24475,17 +24475,17 @@
     "attacks": [
       {
         "name": "Hellfire Greatsword",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "fire"
       },
       {
         "name": "Doom Bolt",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "necrotic"
       },
       {
         "name": "Corruption Wave",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "poison"
       }
     ],
@@ -24534,12 +24534,12 @@
     "attacks": [
       {
         "name": "Holy Smite",
-        "damage": "5d10+27",
+        "damage": "5d10+25",
         "type": "holy"
       },
       {
         "name": "Divine Blade",
-        "damage": "3d8+16",
+        "damage": "3d8+15",
         "type": "slash"
       }
     ],
@@ -24585,7 +24585,7 @@
     "attacks": [
       {
         "name": "Entropy Touch",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "drain",
         "effect": "cursed",
         "effect_chance": 0.35,
@@ -24593,7 +24593,7 @@
       },
       {
         "name": "Decay Pulse",
-        "damage": "4d8+13",
+        "damage": "4d8+12",
         "type": "necrotic"
       }
     ],
@@ -24641,12 +24641,12 @@
     "attacks": [
       {
         "name": "Legion Charge",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "slash"
       },
       {
         "name": "Death Aura",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "necrotic"
       }
     ],
@@ -24695,17 +24695,17 @@
     "attacks": [
       {
         "name": "Chaos Breath",
-        "damage": "5d10+27",
+        "damage": "5d10+25",
         "type": "fire"
       },
       {
         "name": "Abyssal Claw",
-        "damage": "3d8+16",
+        "damage": "3d8+15",
         "type": "slash"
       },
       {
         "name": "Corruption Bite",
-        "damage": "3d8+16",
+        "damage": "3d8+15",
         "type": "poison"
       }
     ],
@@ -24753,12 +24753,12 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "5d10+30",
+        "damage": "5d10+27",
         "type": "blunt"
       },
       {
         "name": "Absorb",
-        "damage": "4d8+12",
+        "damage": "4d8+11",
         "type": "drain"
       }
     ],
@@ -24808,7 +24808,7 @@
       {
         "name": "Chitin Scythe",
         "type": "slash",
-        "damage": "3d8+24"
+        "damage": "3d8+22"
       },
       {
         "name": "Swarm Call",
@@ -24816,7 +24816,7 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "damage": "3d8+24"
+        "damage": "3d8+22"
       }
     ],
     "resistances": [
@@ -24861,7 +24861,7 @@
       {
         "name": "Great Cleaver",
         "type": "slash",
-        "damage": "5d10+24",
+        "damage": "5d10+22",
         "effect": "bleeding",
         "effect_chance": 0.5,
         "effect_duration": 4
@@ -24872,7 +24872,7 @@
         "effect": "stunned",
         "effect_chance": 0.3,
         "effect_duration": 2,
-        "damage": "2d8+20"
+        "damage": "2d8+19"
       }
     ],
     "resistances": [
@@ -24919,7 +24919,7 @@
         "name": "Void Lance",
         "type": "magic",
         "piercing": true,
-        "damage": "5d10+31"
+        "damage": "5d10+28"
       },
       {
         "name": "Unmaking Gaze",
@@ -24927,7 +24927,7 @@
         "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 5,
-        "damage": "4d8+13"
+        "damage": "4d8+12"
       }
     ],
     "resistances": [
@@ -24976,12 +24976,12 @@
         "effect": "feared",
         "effect_chance": 0.2,
         "effect_duration": 3,
-        "damage": "4d8+13"
+        "damage": "4d8+12"
       },
       {
         "name": "Sickle of the Harvest",
         "type": "slash",
-        "damage": "5d10+18",
+        "damage": "5d10+16",
         "effect": "bleeding",
         "effect_chance": 0.5,
         "effect_duration": 4
@@ -25031,12 +25031,12 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "damage": "4d8+16"
+        "damage": "4d8+15"
       },
       {
         "name": "Rotting Touch",
         "type": "poison",
-        "damage": "5d10+18"
+        "damage": "5d10+16"
       }
     ],
     "resistances": [
@@ -25084,7 +25084,7 @@
       {
         "name": "Lance Charge",
         "type": "pierce",
-        "damage": "5d10+33"
+        "damage": "5d10+31"
       },
       {
         "name": "Hoof Crush",
@@ -25092,7 +25092,7 @@
         "effect": "stunned",
         "effect_chance": 0.3,
         "effect_duration": 2,
-        "damage": "4d8+16"
+        "damage": "4d8+15"
       }
     ],
     "resistances": [
@@ -25339,12 +25339,12 @@
     "attacks": [
       {
         "name": "Greatcleaver",
-        "damage": "4d8+22",
+        "damage": "4d8+20",
         "type": "slash"
       },
       {
         "name": "Tusked Headbutt",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -25554,7 +25554,7 @@
     "attacks": [
       {
         "name": "Envenomed Shortsword",
-        "damage": "3d8+22",
+        "damage": "3d8+20",
         "type": "slash",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -25562,7 +25562,7 @@
       },
       {
         "name": "Throat Slash",
-        "damage": "2d6+17",
+        "damage": "2d6+16",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -25730,7 +25730,7 @@
     "attacks": [
       {
         "name": "Lich Claw",
-        "damage": "2d6+15",
+        "damage": "2d6+14",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -25738,7 +25738,7 @@
       },
       {
         "name": "Ice Wave",
-        "damage": "3d6+17",
+        "damage": "3d6+16",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
@@ -25796,7 +25796,7 @@
     "attacks": [
       {
         "name": "Soul-Tearing Wail",
-        "damage": "3d8+24",
+        "damage": "3d8+22",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.45,
@@ -25804,7 +25804,7 @@
       },
       {
         "name": "Grave-Cold Touch",
-        "damage": "2d10+22",
+        "damage": "2d10+20",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
@@ -26545,7 +26545,7 @@
     "attacks": [
       {
         "name": "Obsidian Dagger",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -26553,7 +26553,7 @@
       },
       {
         "name": "Void Invocation",
-        "damage": "3d6+16",
+        "damage": "3d6+15",
         "type": "shadow",
         "effect": "silenced",
         "effect_chance": 0.35,
@@ -26721,12 +26721,12 @@
     "attacks": [
       {
         "name": "Rusted Greatsword",
-        "damage": "3d8+22",
+        "damage": "3d8+20",
         "type": "slash"
       },
       {
         "name": "Doom-Pronouncement",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.3,
@@ -27368,7 +27368,7 @@
     "attacks": [
       {
         "name": "Backstab",
-        "damage": "2d12+14",
+        "damage": "2d12+13",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -27600,7 +27600,7 @@
     "attacks": [
       {
         "name": "Engulfing Maw",
-        "damage": "3d6+15",
+        "damage": "3d6+14",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -27855,7 +27855,7 @@
     "attacks": [
       {
         "name": "Warpfire Blade",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.3,
@@ -27863,7 +27863,7 @@
       },
       {
         "name": "Mocking Strike",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "slash",
         "effect": "confused",
         "effect_chance": 0.25,
@@ -27915,7 +27915,7 @@
     "attacks": [
       {
         "name": "Tide Invocation",
-        "damage": "2d6+13",
+        "damage": "2d6+12",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.25,
@@ -27923,7 +27923,7 @@
       },
       {
         "name": "Barbed Staff",
-        "damage": "1d8+11",
+        "damage": "1d8+10",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.3,
@@ -27974,7 +27974,7 @@
     "attacks": [
       {
         "name": "Treasure Maw",
-        "damage": "3d8+23",
+        "damage": "3d8+21",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.35,
@@ -27982,7 +27982,7 @@
       },
       {
         "name": "Gold-Strangling Tongue",
-        "damage": "2d6+17",
+        "damage": "2d6+16",
         "type": "blunt",
         "effect": "weakened",
         "effect_chance": 0.25,
@@ -28032,7 +28032,7 @@
     "attacks": [
       {
         "name": "Glacial Maul",
-        "damage": "3d8+28",
+        "damage": "3d8+26",
         "type": "blunt",
         "effect": "frozen",
         "effect_chance": 0.25,
@@ -28040,7 +28040,7 @@
       },
       {
         "name": "Frost Breath",
-        "damage": "2d6+17",
+        "damage": "2d6+16",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -28097,7 +28097,7 @@
     "attacks": [
       {
         "name": "Grave Hex",
-        "damage": "2d6+18",
+        "damage": "2d6+17",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -28105,7 +28105,7 @@
       },
       {
         "name": "Bone Shard",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.25,
@@ -28156,7 +28156,7 @@
     "attacks": [
       {
         "name": "Umbral Arrow",
-        "damage": "3d6+22",
+        "damage": "3d6+20",
         "type": "shadow",
         "effect": "blinded",
         "effect_chance": 0.3,
@@ -28164,7 +28164,7 @@
       },
       {
         "name": "Shortsword",
-        "damage": "2d6+17",
+        "damage": "2d6+16",
         "type": "slash"
       }
     ],
@@ -28220,7 +28220,7 @@
     "attacks": [
       {
         "name": "Scourge",
-        "damage": "2d8+19",
+        "damage": "2d8+18",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -28228,7 +28228,7 @@
       },
       {
         "name": "Censer Swing",
-        "damage": "1d8+13",
+        "damage": "1d8+12",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.25,
@@ -28279,7 +28279,7 @@
     "attacks": [
       {
         "name": "Molten Slam",
-        "damage": "3d6+22",
+        "damage": "3d6+20",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -28287,7 +28287,7 @@
       },
       {
         "name": "Ember Spray",
-        "damage": "2d6+17",
+        "damage": "2d6+16",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.35,
@@ -28416,7 +28416,7 @@
     "attacks": [
       {
         "name": "Mind Drain",
-        "damage": "3d6+17",
+        "damage": "3d6+16",
         "type": "drain",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -28424,7 +28424,7 @@
       },
       {
         "name": "Psychic Lash",
-        "damage": "2d8+18",
+        "damage": "2d8+17",
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.3,

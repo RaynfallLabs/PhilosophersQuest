@@ -2149,7 +2149,12 @@ class DeathMonster(Monster):
         return result
 
     def attack(self, player) -> tuple[int, str]:
-        """Death always hits -- no THAC0 roll needed."""
-        dmg = roll(self._DEFN['attacks'][0]['damage'])
+        """Death always hits -- no THAC0 roll needed. The scythe takes a
+        share of the player's own health (floor_curve.DEATH_REAP_SHARE): the
+        written 2d12+15 was nearly half of a 60-point health bar when it was
+        set, and a scratch on the 450-point one a winner carries now."""
+        from floor_curve import DEATH_REAP_SHARE
+        dmg = max(roll(self._DEFN['attacks'][0]['damage']),
+                  int(round(DEATH_REAP_SHARE * max(1, int(player.max_hp)))))
         actual = player.take_damage(dmg, 'physical')
         return actual, f"Death's scythe tears through you for {actual} damage!"

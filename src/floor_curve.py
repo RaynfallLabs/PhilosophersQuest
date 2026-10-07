@@ -15,8 +15,8 @@ import math
 
 HP_ANCHORS = {1: 22, 10: 79, 20: 231, 30: 481, 40: 903, 50: 1412, 60: 2246,
               70: 3372, 80: 4928, 90: 6188, 100: 6912}
-DMG_ANCHORS = {1: 1.19, 10: 2.19, 20: 2.87, 30: 6.13, 40: 13.97, 50: 22.85, 60: 32.9,
-               70: 35.79, 80: 38.01, 90: 39.59, 100: 41.26}
+DMG_ANCHORS = {1: 1.19, 10: 2.19, 20: 2.87, 30: 6.07, 40: 13.47, 50: 21.29, 60: 30.6,
+               70: 33.28, 80: 35.64, 90: 37.76, 100: 40.02}
 
 
 def _interp(anchors: dict, floor: float) -> float:
@@ -159,6 +159,15 @@ def wander_alive_cap(level: int) -> int:
 def natural_regen(max_hp: int) -> int:
     """HP regained per natural regeneration tick."""
     return max(1, int(max_hp) // 50)
+
+
+# Death's scythe on the climb out: this share of the player's max health a
+# blow (or the written dice, if more). The climb is the last stretch of a
+# won game, and decision D9 counts a win as getting out, so it is meant to
+# be tense rather than a second coin-flip: Death hits a dozen or two times
+# over the last twenty-five floors, and each must matter without ending the
+# run by itself. Not simulated (the chase is geometry); confirm by play.
+DEATH_REAP_SHARE = 0.08
 
 
 # A hero's signature weapon (the named one a secret build starts with) is

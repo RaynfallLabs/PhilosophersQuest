@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. **Phases 0 to 5 are built** (each has an "As built" note under its heading); Phases 6 and 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
+Date: 2026-10-06. **Phases 0 to 6 are built** (each has an "As built" note under its heading); Phase 7 is not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -165,6 +165,29 @@ Exit: the "everything stacked" player is inside the stacking limit at every band
 
 Exit: the stated win rates in decision D9.
 
+**As built (2026-10-06).** 480 runs per player type over four independent sets of dungeons, a child who is 95% right on simple sums. "Wins" here means Abaddon dead and the Stone in hand; the climb out is not simulated (see below).
+
+| Player | Reaches floor 20 | Past Asterion | Floor 40 | Floor 60 | Floor 80 | Wins | Target |
+|---|---|---|---|---|---|---|---|
+| Casual: cooks a little, skips quests | 93% | 52% of all runs | 0 | 0 | 0 | 0 | 90% to floor 20, about half past Asterion |
+| Prepared: cooks, does the quests | 98% | 98% | 92% | 61% | 44% | **32%** | 25 to 30% |
+| Committed build (stat choices only) | 100% | 100% | 95% | 67% | 48% | **35%** | |
+| Committed build with a pet | 100% | 100% | 98% | 85% | 68% | **55%** | 40 to 50% (build plus the tools) |
+| Committed, and found the four secrets | 100% | 100% | 93% | 70% | 56% | **45%** | |
+| Everything: build, secrets, pet, magic | 99% | 99% | 95% | 84% | 67% | **59%** | 60 to 70% |
+| Rests as long as it takes | 100% | 100% | 94% | 67% | 48% | **35%** | within 15 points of prepared |
+
+Each figure carries about four points of noise. The pet is the single most valuable tool (twenty points), which is more than its "quarter of your damage" suggests: a kill that comes one turn sooner is one monster turn never taken.
+
+- **Fenrir is now worth a quest.** With the ribbon he killed no one, so Vidar's Sandal saved nothing and the secret was worthless. His blows are about 60% heavier. Measured on fresh characters: he kills about a third of prepared players who come without the ribbon, about one in twenty with it, and none who wear the Sandal.
+- **Abaddon is not a coin-flip any more.** He was taking half of everyone who reached him and used the altars. His blows are a fifth lighter: about four in ten with the altars, two in ten with the Sword of Michael, and in whole runs the Sword-carriers lose almost no one on floor 100.
+- **The secrets now pay ten points** (35% to 45%) on their own, against three before. Still short of what I had in mind for "even more"; the rest of the top row comes from the pet and magic.
+- **Floors 40 to 90 were eased by about 7%** to undo what Phase 3 took: capping lucky stat points and flattening Intelligence on healing had cost every profile 7 to 10 points.
+- **Death's scythe takes a share of your health** (decision D8, see below): 8% of full health a blow, or the written 2d12+15 if that is more. The written number was nearly half of a 60-point health bar when it was set and a scratch on the 450-point one a winner carries.
+- **Seal demons were measured and left alone:** four to five attacks each, and they kill about 1% of fresh characters. They are a toll on the way to Abaddon, not a gate.
+
+**Not simulated: the climb out.** Death's chase is geometry (who reaches the stair first on a hundred maps), and the simulator has no map. So the table's "wins" stop at the Stone. I set the scythe so that the dozen or two blows a climber takes over the last twenty-five floors each cost something and none ends the run alone; whether that makes the escape a tense coda or a second boss can only be told by doing it. This is the one number in the plan I could not measure.
+
 ### Phase 7: what the player sees, and the last tune
 
 - Screen: Wisdom gained, the Inspired effect, the maths tier printed on a weapon, the real clock in the sidebar (it hides haste today), prices, the prayer menu.
@@ -203,7 +226,7 @@ Recommend **inside.** Clock seconds become Wisdom, permanent stats count against
 **D7. Cursed loot: where can it come from? (BUILT 2026-10-06 as recommended.)**
 Recommend **ground loot only, as now, and honour the "cannot be cursed" field.** I tried cursing chest and drop loot this week and it made the early game markedly harder for a child who wears what they find, for no gain in interest.
 
-**D8. Death and the escape: how hard?**
+**D8. Death and the escape: how hard? (Built 2026-10-06 GENTLER than recommended below: your ruling on D9 counts a win as getting out, and a one-in-two escape would have halved every figure in that table. Death's blow is 8% of full health. Say if you want the climb to be the coin-flip I first proposed.)**
 Recommend **the hardest stretch in the game, but short:** about one prepared character in two who kills Abaddon gets out, and the secret kill stays roughly one in fifty. Reason: the design document sets the win at one in five to ten for a master; the escape is where that last factor of two should sit, not in more floors of attrition.
 
 **D9. Who is the game balanced for, in numbers? (DECIDED 2026-10-06)**
