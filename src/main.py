@@ -6061,8 +6061,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
 
     def _int_scaled_damage(self, base_dmg: int) -> int:
-        """Scale magic damage by INT: 1.0x at INT 0, 2.0x at INT 10, 3.0x at INT 20."""
-        return max(1, int(base_dmg * (1.0 + self.player.INT * 0.1)))
+        """Scale magic damage by INT (thrown potions, scrolls, hero powers):
+        2.0x at INT 10 and a little more per point, 2.8x at most. The same
+        rule spells and wands use (game_magic.int_damage_factor)."""
+        from game_magic import int_damage_factor
+        return max(1, int(base_dmg * int_damage_factor(self.player.INT)))
 
 
 

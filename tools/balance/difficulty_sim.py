@@ -87,6 +87,7 @@ from quiz_engine import QuizResult               # noqa: E402
 import food_system as food_system_mod            # noqa: E402
 import boons as boons_mod                        # noqa: E402
 import monster as monster_mod                    # noqa: E402
+import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
@@ -372,6 +373,22 @@ PROFILES['committed'] = dict(
 # 30-39), Gram reforged (after Fafnir), Vidar's Sandal (Fenrir dies to the
 # first blow that lands) and the Sword of Michael for Abaddon.
 PROFILES['secrets'] = dict(PROFILES['committed'], secrets=True)
+
+# Committed, and uses magic the way it pays in this game: against a foe that
+# will outlast several blows (a named one, or something far bigger than the
+# floor's usual), haste yourself and slow it. One science question a cast.
+# Ordinary monsters die in one or two chains: a spell spent on one is a
+# wasted turn (measured: casting hold on everything LOST 12 points).
+PROFILES['mage'] = dict(PROFILES['committed'], magic=True)
+
+# spell effect -> (status, base turns, on self?), game_magic._apply_spell_effect.
+# Hard control (hold, sleep) is left out: named foes shrug most of it off
+# (monster.NAMED_FOE_CONTROL_CAP), and damage wakes a sleeper.
+SIM_CONTROL = (('haste_self', 'hasted', 10, True),
+               ('greater_haste_self', 'hasted', 20, True),
+               ('slow_monster_spell', 'slowed', 10, False),
+               ('slow_monster', 'slowed', 8, False))
+BIG_FIGHT = 4.0                # x one attack: worth a spell
 
 CUT_HAS_STAT = 0.85            # share of proper meals cooked from a prime cut
 GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wolf')
@@ -763,6 +780,7 @@ class Run:
         self.last_hit_by = '?'
         self.fountain_uses = 0     # drinks left at fountains found on this floor
         self._secrets_got = set()
+        self.control = {}          # control spells known: id -> (mp cost, effect, tier)
         self._give_starting_kit()
 
     def kv(self, name: str):
@@ -866,6 +884,14 @@ class Run:
             if prof['eats_for_hp']:
                 self.fs['heal_supply'] += item.hp_restore * self.kv('heal')
             return
+        if isinstance(item, Spellbook) and prof.get('magic'):
+            sp = SPELLS.get(item.spell_id) or {}
+            if (any(sp.get('effect') == fx for fx, _, _, _ in SIM_CONTROL)
+                    and item.spell_id not in self.control
+                    and self.quiz.one_question(item.quiz_tier)):       # grammar
+                self.control[item.spell_id] = (int(sp['mp_cost']), sp['effect'],
+                                               int(sp.get('tier', 1)))
+                return
         if isinstance(item, Spellbook):
             if (prof['casts'] and self.knobs['heal_spell']
                     and item.spell_id in HEAL_SPELL_IDS
@@ -1009,12 +1035,47 @@ class Run:
         for sid, (cost, power, tier) in self.spells.items():
             if cost > self.p.mp:
                 continue
-            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * (1 + self.p.INT * 0.1),
+            heal = max(dice_mean(power) * MAGIC_TIER_MULT[tier] * game_magic_mod.int_damage_factor(self.p.INT),
                        SPELL_HEAL_SHARE.get(tier, 0.45) * self.p.max_hp)   # floor_curve.mend
             score = min(heal, missing) / cost
             if best is None or score > best[0]:
                 best = (score, sid, cost, power, tier)
         return best[1:] if best else None
+
+    def cast_control(self, target) -> bool:
+        """A 'mage' hastes and slows for a long fight. Returns True if a turn
+        was spent casting."""
+        p = self.p
+        if not self.control or p.has_effect('silenced'):
+            return False
+        if target.hp <= BIG_FIGHT * floor_curve_mod.one_attack(self.floor):
+            return False                                # over in a few chains anyway
+        # keep enough mana back for one healing spell when hurt
+        reserve = 0
+        if self.spells and p.hp < 0.7 * p.max_hp:
+            reserve = min(c for c, _, _ in self.spells.values())
+        for fx, status, base, on_self in SIM_CONTROL:
+            known = [(cost, tier) for cost, eff, tier in self.control.values() if eff == fx]
+            holder = p if on_self else target
+            if not known or holder.has_effect(status):
+                continue
+            cost, tier = min(known)
+            if p.mp - cost < reserve:
+                continue
+            p.mp -= cost                                # spent even on a fizzle
+            self.fs['control'] = self.fs.get('control', 0) + 1
+            if self.quiz.one_question(tier):            # one science question
+                dur = max(2, int(base * game_magic_mod.int_reach(p.INT)))
+                if on_self:
+                    p.add_effect(status, dur)
+                else:
+                    if game_magic_mod._is_big_foe(target):  # MagicMixin._boss_resist_cc
+                        if random.random() < 0.5:
+                            return True
+                        dur = max(1, dur // 2)
+                    target.add_effect(status, dur)
+            return True
+        return False
 
     def cast_heal(self) -> bool:
         p = self.p
@@ -1026,7 +1087,7 @@ class Run:
         sid, cost, power, tier = sp
         p.mp -= cost                                    # spent even on a fizzle
         if self.quiz.one_question(tier):                # one science question
-            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * (1.0 + p.INT * 0.1)),
+            amt = mend(int(roll(power) * MAGIC_TIER_MULT[tier] * game_magic_mod.int_damage_factor(p.INT)),
                        p.max_hp, SPELL_HEAL_SHARE.get(tier, 0.45))
             self.fs['heal_used'] += p.heal(amt * self.knobs['spell_heal'])
         return True
@@ -1303,7 +1364,7 @@ class Run:
                 p.hp = min(p.hp + bonus, p.max_hp)
             elif chain >= 5:
                 for stat in random.sample(COOK_STATS, 2):
-                    p.apply_stat_bonus(stat, 1)
+                    p.gain_fortune_stat(stat, 1)          # game_divine: the run's allowance
             if out or p.hp <= 0 or random.random() < FEATURE_BREAK_CHANCE:
                 return out
 
@@ -1550,6 +1611,8 @@ class Run:
                     elif (target.ai_pattern in RANGED_PATTERNS
                           and random.random() < RANGED_KITE_PROB):
                         action = 'closing'
+                    elif prof.get('magic') and self.cast_control(target):
+                        action = 'cast'
                     else:
                         self._player_attack(target, active)
                         action = 'attack'

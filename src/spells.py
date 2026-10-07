@@ -228,7 +228,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Deep Slumber', 'effect': 'mass_sleep', 'power': '',
         'mp_cost': 20, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'sleep',
-        'desc': 'A lullaby that puts every visible foe into deep paralysis.',
+        'desc': 'A lullaby that puts every visible foe to sleep for 20 turns. A blow wakes the one it lands on.',
     },
 
     # ==================================================================

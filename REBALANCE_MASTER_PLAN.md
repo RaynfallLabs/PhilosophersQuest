@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. **Phases 0, 1 and 2 are built** (each has an "As built" note under its heading); Phases 3 to 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
+Date: 2026-10-06. **Phases 0, 1, 2 and 3 are built** (each has an "As built" note under its heading); Phases 4 to 7 are not. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
 ## 1. The idea in one paragraph
 
@@ -109,6 +109,21 @@ Two things this phase did not reach, and where they are handled:
 - Wands of wonder, wish and polymorph: confirm nothing can produce a permanent gain outside the caps.
 
 Exit: a player who uses magic well takes noticeably fewer losses per floor than one who does not (about a fifth), still kills with sums, and no spell or wand alone ends a fight with a named foe.
+
+**As built (2026-10-06).**
+
+- **One cast now lands under one weapon chain.** Measured against the attack yardstick (`python tools/balance/magic_audit.py`), one spell, for one science question and no clock, was doing 0.9 to 1.6 weapon attacks from a plain character and up to 2.4 from an Intelligence build; a wand charge up to 3. Magic was the better damage track, which is the opposite of your ruling. Now the strongest bolt of each tier is about 0.7 of one attack on the floors it is found on, area spells 0.35 to 0.6 per target, a wand charge about 0.85. Effects that only bite the undead may reach one attack. A test holds every spell and wand to those lines.
+- **Intelligence gives reach, not a bigger number.** It was +10% damage a point (an Intelligence of 36 multiplied every spell by 4.6). Now it adds 1.5% a point to damage and healing (at most +40%), and 3% a point to how long a spell's effect lasts and how far it reaches (at most +75%). It still gives one mana a point, so a caster casts more often.
+- **Nothing ends a named fight alone.** Checked every instant-kill and banish effect (death ray, disintegrate, power word, annihilation, banishment, extinction): each already skips named foes and bites them for no more than half an ordinary monster's health. Hard control on a named foe is capped at three turns and does not stack. No change was needed.
+- **Lucky stat points have one allowance for the run:** 3, plus 1 per ten floors. A wish, a fountain, a throne and a scroll of great power each gave "+1, no limit", and the wish is a spell that can be cast on every floor. Scripted rewards (quests, encounters, mysteries) are outside it.
+- **Two top-tier spells were the same spell.** Deep Slumber and Mass Paralyze both paralysed everything in sight for 8 turns at the same price. Deep Slumber is now a 20-turn sleep that a blow breaks (for slipping past, or taking a room one at a time); Mass Paralyze holds through blows for 8.
+- **Supply was measured and left alone.** A full run finds about 250 wands, 250 spellbooks, 30 each of mapping and identify, 17 teleports and 88 enchant scrolls; enchantment is already capped per item.
+
+What the simulator can and cannot say about the exit line:
+
+- It models fights one monster at a time, and an ordinary monster dies in one or two chains. In that model there is nothing for control magic to change: a simulated player who cast Hold on everything lost 12 points of win rate (wasted turns, and mana that would have been healing). One who hastes and slows only for long fights does about as well as a non-caster overall (32% against 35%, inside the noise) and clearly better at Abaddon (40 to 51% deaths against 51 to 68%).
+- So "a fifth fewer losses per floor" is **not shown**. What magic is for in this game, area effects on a room that has surrounded you, sleep to split a group, a blink out of a corner, is exactly what a one-at-a-time model cannot see. This is a play-test question: does a room of five feel different with Mass Sleep in hand?
+- Healing spells are the part of magic the simulator does see, and they are strong: limiting the mana that waiting gives back (Phase 2) cost every caster about 15 points.
 
 ### Phase 4: companions and distance (pets, ranged combat)
 

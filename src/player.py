@@ -645,6 +645,30 @@ class Player:
         self.max_hp += amount
         self.hp = min(self.hp + amount, self.max_hp)
 
+    # Stat points from luck: a wish, a fountain, a throne, a scroll of great
+    # power. Each was written as "+1, no limit", and the wish is a spell that
+    # can be cast every floor. Together they get one allowance for the run,
+    # growing with depth (4 at the top, 13 at the bottom), so the stat a
+    # character ends with is decided by what it cooked and chose, not by how
+    # many fountains it drank from.
+    FORTUNE_STAT_BASE = 3
+    FORTUNE_STAT_FLOORS = 10
+
+    def fortune_stat_room(self) -> int:
+        floor = max(1, min(100, int(getattr(self, 'deepest_floor_reached', 1) or 1)))
+        cap = self.FORTUNE_STAT_BASE + floor // self.FORTUNE_STAT_FLOORS
+        return max(0, cap - int(getattr(self, 'fortune_stat_gained', 0)))
+
+    def gain_fortune_stat(self, stat: str, amount: int = 1) -> int:
+        """A permanent stat point from a chance source. Returns the points
+        actually gained (0 once the run's allowance is spent)."""
+        amount = min(int(amount), self.fortune_stat_room())
+        if amount <= 0:
+            return 0
+        self.fortune_stat_gained = int(getattr(self, 'fortune_stat_gained', 0)) + amount
+        self.apply_stat_bonus(stat, amount)
+        return amount
+
     def meditation_left(self) -> int:
         """Mana that meditating can still restore on this floor."""
         from floor_curve import meditation_allowance

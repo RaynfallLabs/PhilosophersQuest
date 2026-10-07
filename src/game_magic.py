@@ -79,7 +79,39 @@ if TYPE_CHECKING:
 # 2026-10-05: ordinary monster HP was re-sized x2 (floor 1) to x9 (floor 100)
 # when weapons gained a damage step per tier. Magic follows by tier, or a
 # deep wand would tickle: the old figures x 2 / 3.5 / 5.5 / 7.5 / 8.5.
-MAGIC_TIER_MULT = {1: 6.0, 2: 8.75, 3: 11.0, 4: 13.0, 5: 12.75}
+# 2026-10-06 (REBALANCE_MASTER_PLAN.md, decision D2): magic changes the
+# shape of a fight and never replaces maths. Measured against the yardstick
+# (floor_curve.one_attack), one cast for one science question, with no
+# clock, was landing 0.9 to 1.6 weapon attacks from a plain character and
+# up to 2.4 from an Intelligence build; wands up to 3. These tables put the
+# strongest ordinary single-target spell of each tier at about 0.7 of one
+# attack on the floors it is found on, and a wand charge at about 0.85
+# (tools/balance/magic_audit.py prints the table; a test holds it).
+# Previous spell figures: 6.0 / 8.75 / 11.0 / 13.0 / 12.75, shared by wands.
+MAGIC_TIER_MULT = {1: 2.6, 2: 4.9, 3: 5.8, 4: 7.9, 5: 10.5}
+WAND_TIER_MULT = {1: 1.9, 2: 3.7, 3: 5.6, 4: 6.8, 5: 8.0}
+
+# What Intelligence does for magic: more casts (max MP is 10 + INT), and
+# effects that last longer and reach further. It adds a little to damage
+# and healing, never the +10% a point it used to (INT 36 was x4.6).
+INT_DAMAGE_PER_POINT = 0.015
+INT_DAMAGE_CAP = 1.4
+INT_REACH_PER_POINT = 0.03
+INT_REACH_CAP = 1.75
+
+
+def int_damage_factor(intelligence: int) -> float:
+    """Multiplier on spell and wand dice from Intelligence (2.0 at INT 10,
+    which is what the old `1 + INT * 0.1` gave there; 2.8 at most)."""
+    step = 1.0 + (int(intelligence) - 10) * INT_DAMAGE_PER_POINT
+    return 2.0 * max(0.7, min(INT_DAMAGE_CAP, step))
+
+
+def int_reach(intelligence: int) -> float:
+    """Multiplier on how long a spell's effect lasts and how far it reaches
+    (1.0 at INT 10, +3% a point, x1.75 at most; named foes keep their own
+    cap on control, monster.NAMED_FOE_CONTROL_CAP)."""
+    return max(0.85, min(INT_REACH_CAP, 1.0 + (int(intelligence) - 10) * INT_REACH_PER_POINT))
 # Healing spells keep the earlier figures: the player's hit points did not
 # grow with the monsters'.
 HEAL_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
@@ -374,11 +406,10 @@ class MagicMixin:
         return self._wand_tier_duration(default_base, getattr(wand, 'quiz_tier', 1))
 
     def _wand_tier_damage(self, base_dmg: int, tier: int) -> int:
-        """Scale wand damage by player INT and the chain combat v2 per-tier
-        boost. INT scaling: +10% per point of INT (INT 10 = 1.0x, 15 = 1.5x,
-        20 = 2.0x). Tier scaling: see MAGIC_TIER_MULT."""
-        tier_mult = MAGIC_TIER_MULT.get(int(tier), 1.5)
-        return max(1, int(base_dmg * tier_mult * (1.0 + self.player.INT * 0.1)))
+        """Wand damage: dice x the wand tier's multiplier x the (small)
+        Intelligence factor. See WAND_TIER_MULT and int_damage_factor."""
+        tier_mult = WAND_TIER_MULT.get(int(tier), 1.5)
+        return max(1, int(base_dmg * tier_mult * int_damage_factor(self.player.INT)))
 
     def _apply_wand_effect(self, wand: 'Wand'):
         import random as _rng
@@ -1357,7 +1388,7 @@ class MagicMixin:
         tier = int(getattr(self, '_active_spell_tier', 5) or 5)
         tier_mult = (HEAL_TIER_MULT if healing else MAGIC_TIER_MULT).get(tier, 1.5)
         dmg, c, a = apply_spell_damage_passives(
-            self.player, base_dmg * tier_mult * (1.0 + self.player.INT * 0.1))
+            self.player, base_dmg * tier_mult * int_damage_factor(self.player.INT))
         self._last_spell_crit, self._last_spell_anti_being = c, a
         return max(1, int(dmg))
 
@@ -1376,7 +1407,8 @@ class MagicMixin:
         # embedded "(chain N)" now just says "(chain 5)" -- harmless echo,
         # since MP was already deducted before this call.
         chain = 5
-        chain_scale = 1.0
+        # Intelligence lengthens and widens what a spell does (decision D2).
+        chain_scale = int_reach(self.player.INT)
 
         # Chain combat v2: publish the active spell's tier so _spell_damage can
         # read the per-tier multiplier. Default 5 keeps callers that go through
@@ -1770,10 +1802,17 @@ class MagicMixin:
         # (T5) share this effect. T3 applies sleeping (breaks on damage); T5
         # applies paralyzed (the stronger lock).
         if effect == 'mass_sleep':
-            # Higher-tier spell = stronger status. tier 4+ = paralyzed.
+            # Two different things (they were one: Deep Slumber and Mass
+            # Paralyze were the same spell under two names). The sleep
+            # family puts the room to sleep for a long time, and a blow wakes
+            # the one it lands on: for slipping past, or taking them one at a
+            # time. The paralyze family holds them through blows, briefly.
             _stier = int(spell.get('tier', spell.get('quiz_tier', 2)))
-            status_name = 'paralyzed' if _stier >= 4 else 'sleeping'
-            dur = 10 if status_name == 'sleeping' else 8
+            if spell.get('spell_family') == 'paralyze':
+                status_name, dur = 'paralyzed', 8
+            else:
+                status_name, dur = 'sleeping', (20 if _stier >= 4 else 10)
+            dur = max(2, int(dur * chain_scale))          # Intelligence: reach
             visible_monsters = [
                 m for m in self.monsters
                 if m.alive and (m.x, m.y) in self.visible
@@ -1883,6 +1922,8 @@ class MagicMixin:
                 ('strong_buff',  None),  # message generated dynamically
             ]
             kind, _msg = random.choice(outcomes)
+            if kind == 'stat_bonus' and self.player.fortune_stat_room() <= 0:
+                kind = 'strong_buff'      # the run's allowance of lucky points is spent
             if kind == 'full_restore':
                 self.player.hp = self.player.max_hp
                 self.player.sp = self.player.max_sp
@@ -1894,7 +1935,7 @@ class MagicMixin:
             elif kind == 'stat_bonus':
                 stat = random.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
                 old = getattr(self.player, stat)
-                self.player.apply_stat_bonus(stat, 1)
+                self.player.gain_fortune_stat(stat, 1)
                 self.add_message(
                     f"WISH GRANTED! {stat}: {old} -> {getattr(self.player, stat)} "
                     f"", 'success')
@@ -2886,10 +2927,13 @@ class MagicMixin:
             current = {s: getattr(self.player, s) for s in all_stats}
             # Sort by current value asc, ties broken by canonical order
             ordered = sorted(all_stats, key=lambda s: (current[s], all_stats.index(s)))
-            chosen = ordered[:stat_count]
-            for stat in chosen:
-                self.player.apply_stat_bonus(stat, 1)
-            if stat_count >= 6:
+            chosen = [stat for stat in ordered[:stat_count]
+                      if self.player.gain_fortune_stat(stat, 1)]
+            if not chosen:
+                self.add_message(
+                    "The words blaze and fade. You have already been given all "
+                    "that fortune will give; the rest you must earn.", 'warning')
+            elif stat_count >= 6:
                 self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
             else:
                 self.add_message(

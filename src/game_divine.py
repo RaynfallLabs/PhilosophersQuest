@@ -440,9 +440,13 @@ class DivineMixin:
             self.add_message("Divine water purifies you! All ailments are cured!", 'success')
         elif chain >= 5:
             stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
-            self.player.apply_stat_bonus(stat, 1)
             self.player.restore_hp(self.player.max_hp)
-            self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
+            if self.player.gain_fortune_stat(stat, 1):
+                self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
+            else:
+                self.add_message(
+                    "The fountain glows with divine light and makes you whole. "
+                    "It has no more than that to give you.", 'success')
 
         # 33% chance fountain dries up after use. Ariadne's fountain never
         # does: drying it before the Bronze Bull is offered would lock the
@@ -845,10 +849,17 @@ class DivineMixin:
             self.player.hp = min(self.player.hp + bonus, self.player.max_hp)
             self.add_message(f"The throne's blessing strengthens you! +{bonus} max HP!", 'success')
         elif chain >= 5:
-            stats = _rng.sample(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'], 2)
-            for s in stats:
-                self.player.apply_stat_bonus(s, 1)
-            self.add_message(f"The throne crowns you worthy! +1 {stats[0]}, +1 {stats[1]}!", 'success')
+            stats = [s for s in _rng.sample(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'], 2)
+                     if self.player.gain_fortune_stat(s, 1)]
+            if stats:
+                self.add_message(
+                    "The throne crowns you worthy! " + ", ".join(f"+1 {s}" for s in stats) + "!",
+                    'success')
+            else:
+                self.player.restore_hp(self.player.max_hp)
+                self.add_message(
+                    "The throne crowns you worthy. Fortune has given you all it "
+                    "will; you rise from it rested instead.", 'success')
 
         # 33% chance throne crumbles
         if _rng.random() < 0.33:
