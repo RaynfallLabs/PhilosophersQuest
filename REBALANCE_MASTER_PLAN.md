@@ -1,6 +1,6 @@
 # Master plan: rebalance every remaining system around the core
 
-Date: 2026-10-06. Nothing in this plan is built. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you.
+Date: 2026-10-06. Nothing in this plan is built. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D9, the target win rates, is decided).
 
 ## 1. The idea in one paragraph
 
@@ -100,6 +100,7 @@ Exit: the "everything stacked" player is inside the stacking limit at every band
 ### Phase 6: the end of the game
 
 - Seal demons, Abaddon and his altars, Death and the climb out, the Abyss ritual, all re-sized against the yardsticks **after** Phases 1 to 5, since they are the place every system meets.
+- **Asterion is handled earlier, at the end of Phase 2,** because he is the gate at the end of the gentle floors and should be tuned as soon as health, armor and rest are settled: see decision D9.
 - Target for the escape: see decision D8.
 
 Exit: the stated win rates in decision D9.
@@ -122,7 +123,7 @@ Recommend **yes, in two steps.** Step one in Phase 2: the meat decides the stat,
 Recommend **a second way to fight, never a way around the clock.** A cast should be worth about one attack and cost a question in another subject, with mana lasting about one fight. Reason: if magic out-damages maths for a child who is weak at sums, the core loop is optional; if it is much weaker, 3,700 science questions gate nothing that matters.
 
 **D3. Should resting be nearly free?**
-Recommend **no.** Raise what rest costs in food until a fully rested floor costs about one extra meal, and keep wandering monsters. Reason: your target is a game that is hard for a good player. Today the difference between "prepared" and "patient" is 26% against 50% wins, and it comes entirely from free time, not from knowledge.
+Recommend **no, but gently.** Raise what rest costs in food until a fully rested floor costs about one extra meal, and keep wandering monsters. Reason: with your 40 to 50% target the top of the range is already reached today by a player who simply rests between every fight (50%), with no build at all. If rest stays free, the stat build and the power-ups have nothing left to add, and the difference between a prepared player and a great one comes from patience rather than knowledge. The aim is not to make the game harder overall, only to move where the wins come from.
 
 **D4. Ranged combat: equal to melee, or a specialist tool?**
 Recommend **a specialist tool:** first strike and safety, paid for in ammo and slightly lower damage. Reason: you already ruled that Fafnir must not be killable from range. A general rule makes that boss consistent instead of a special case.
@@ -139,16 +140,24 @@ Recommend **ground loot only, as now, and honour the "cannot be cursed" field.**
 **D8. Death and the escape: how hard?**
 Recommend **the hardest stretch in the game, but short:** about one prepared character in two who kills Abaddon gets out, and the secret kill stays roughly one in fifty. Reason: the design document sets the win at one in five to ten for a master; the escape is where that last factor of two should sit, not in more floors of attrition.
 
-**D9. Who is the game balanced for, in numbers?**
-Recommend, for a child who is good at sums (95% on simple ones, 85% on hard ones):
+**D9. Who is the game balanced for, in numbers? (DECIDED 2026-10-06)**
+Your ruling: a well-prepared, committed build that has learned the systems and answers consistently, especially in maths, should win **40 to 50%** of the time. Most kids are strong enough at simple sums to reach floor 20 most times, but **Asterion should feel like an accomplishment.**
 
-| Player | Reaches floor 20 | Floor 40 | Floor 60 | Floor 80 | Wins |
-|---|---|---|---|---|---|
-| Casual: cooks a little, skips quests | 90% | 25% | 5% | 0 | 0 |
-| Prepared: cooks, does the quests | 98% | 85% | 60% | 40% | 12 to 18% |
-| Prepared with a committed build, uses every tool well | 98% | 90% | 75% | 55% | 25 to 30% |
+For a child who is good at sums (95% on simple ones, 85% on hard ones):
 
-Today the prepared player wins about 26 to 35% and the patient one 50%, so this is a little harder than now at the top and the same at the bottom. Every phase is tuned toward this table; if you change it, the plan does not change, only the numbers.
+| Player | Reaches floor 20 | Beats Asterion | Floor 40 | Floor 60 | Floor 80 | Wins |
+|---|---|---|---|---|---|---|
+| Casual: cooks a little, skips quests | 90% | about half | 30% | 8% | 1% | 0 |
+| Prepared: cooks, does the quests | 98% | 85% | 85% | 65% | 48% | 25 to 30% |
+| Prepared with a committed build, uses every tool well | 98% | 90% | 90% | 78% | 62% | 40 to 50% |
+
+What this means against today's numbers:
+
+- **Floors 1 to 19 stay gentle.** They are about right now for a prepared player (98%) and slightly rough for a casual one (about 80% since the loot fixes); the casual line comes up to 90%.
+- **Asterion gets harder, not easier.** Today he kills nobody who is prepared and about a quarter of casual players, in 20 to 24 attacks. The target is a fight a casual kid loses about half the time and a prepared one wins five times in six, with the Thread clearly mattering. He is the first place the game says "you have to have learned something".
+- **The deep game is close already.** The prepared player wins about 26 to 35% today and the patient one about 50%. The work is to make that 40 to 50% come from a committed build and good use of the tools, not from resting for free.
+
+Every phase is tuned toward this table.
 
 ## 6. What I will decide myself, unless you object
 
