@@ -59,6 +59,48 @@ def scaled(amount: float, floor: float) -> int:
     return max(1, int(round(amount * power_scale(floor)))) if amount > 0 else int(amount)
 
 
+# ---------------------------------------------------------------------------
+# The other two yardsticks (REBALANCE_MASTER_PLAN.md section 2).
+#
+# Anything that helps or hurts by a FIXED amount should be written as a share
+# of one of these, never as a bare number: a trap as a share of a health bar,
+# a spell or a pet's bite as a share of one attack. Bare numbers are how a
+# floor-1 monster came to drop a floor-15 axe and a ten-turn stun came to
+# last two.
+#
+# ONE_ATTACK: damage of a single chain from a weapon typical of the floor, at
+# that floor's clock, for the child the game is balanced for. Recomputed by
+# tools/balance/yardsticks.py; tests/test_yardsticks.py checks for drift.
+# HEALTH_BAR: max HP of a player who cooks steadily, from the simulator.
+# ---------------------------------------------------------------------------
+ONE_ATTACK = {1: 16, 10: 34, 20: 105, 30: 195, 40: 299, 50: 354, 60: 520,
+              70: 715, 80: 1158, 90: 1653, 100: 2143}
+HEALTH_BAR = {1: 30, 10: 66, 20: 100, 30: 143, 40: 180, 50: 219, 60: 265,
+              70: 311, 80: 365, 90: 424, 100: 450}
+
+
+def one_attack(floor: float) -> float:
+    """Damage one weapon chain does on `floor` (see ONE_ATTACK)."""
+    return _interp(ONE_ATTACK, floor)
+
+
+def health_bar(floor: float) -> float:
+    """Max HP of a steady cook on `floor` (see HEALTH_BAR)."""
+    return _interp(HEALTH_BAR, floor)
+
+
+def attacks(amount: float, floor: float) -> int:
+    """`amount` weapon chains' worth of damage on `floor`."""
+    return max(1, int(round(amount * one_attack(floor))))
+
+
+def of_health(share: float, floor: float, max_hp: int | None = None) -> int:
+    """`share` of a health bar: the player's own when given, else the
+    floor's typical one."""
+    bar = max_hp if max_hp else health_bar(floor)
+    return max(1, int(round(share * bar)))
+
+
 def target_dmg(floor: float) -> float:
     """Typical damage of one ordinary monster hit on `floor`."""
     return _interp(DMG_ANCHORS, floor)

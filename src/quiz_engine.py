@@ -2,6 +2,7 @@ import json
 import math
 import os
 import random
+import time
 from enum import Enum, auto
 from dataclasses import dataclass
 
@@ -47,6 +48,22 @@ _CONTEXT_SUBJECTS = (
 _CROSS_GAME_RECENT_CAP = 30          # questions remembered per (subject, tier)
 _HISTORY_DIR_OVERRIDE = None         # tests point this at a temp dir
 _CONTEXTS_DIR_OVERRIDE = None        # tests point this at a temp dir to override _CONTEXTS_DIR
+
+
+def _answer_times_path() -> str:
+    """Path to the answer-time record (same folder as quiz_history.json)."""
+    return os.path.join(os.path.dirname(_quiz_history_path()), 'answer_times.json')
+
+
+def load_answer_times() -> dict:
+    """{'subject|tier': {'n', 'seconds', 'right', 'seconds_right'}} as recorded
+    from real play. Empty if nothing has been recorded yet."""
+    try:
+        with open(_answer_times_path(), encoding='utf-8') as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError):
+        return {}
 
 
 def _quiz_history_path() -> str:
@@ -338,6 +355,7 @@ class QuizEngine:
         self.last_answer = choice
         self.asked_count += 1
         self.last_correct = is_correct
+        self._record_answer_time(is_correct)
 
         if is_correct:
             self.correct_count += 1
@@ -449,6 +467,9 @@ class QuizEngine:
             self._auto_pass_mastered_round()
             return
         self.current_question = chosen
+        # When this question went up, for the answer-time record.
+        self._q_shown_at = time.monotonic()
+        self._q_timing_ok = not getattr(self, '_timer_paused', False)
 
         # Track this question as seen.
         if deck_key not in self._seen:
@@ -808,6 +829,7 @@ class QuizEngine:
         """
         if self._timer_paused:
             return
+        self._q_timing_ok = False        # time spent reading a card is not answer time
         self._timer_paused = True
         self._timer_paused_at = float(self.time_remaining)
 
@@ -816,6 +838,53 @@ class QuizEngine:
         if not self._timer_paused:
             return
         self._timer_paused = False
+
+    # --- How long answers really take ------------------------------------
+    # Every balance figure for combat rests on seconds per answer by math
+    # tier, and those were guesses. This keeps a running total per
+    # (subject, tier) across runs, so the balance tools can read the real
+    # numbers (tools/balance/answer_times.py). Totals only: no question
+    # text, nothing per player.
+    _ANSWER_TIME_MIN, _ANSWER_TIME_MAX = 0.25, 90.0
+
+    def _record_answer_time(self, is_correct: bool) -> None:
+        shown = getattr(self, '_q_shown_at', None)
+        if shown is None or not getattr(self, '_q_timing_ok', False):
+            return
+        seconds = time.monotonic() - shown
+        if not self._ANSWER_TIME_MIN <= seconds <= self._ANSWER_TIME_MAX:
+            return                       # a key mash, or the player walked away
+        if not hasattr(self, '_answer_times'):
+            self._answer_times = {}
+        row = self._answer_times.setdefault(f'{self.subject}|{self.tier}',
+                                            {'n': 0, 'seconds': 0.0,
+                                             'right': 0, 'seconds_right': 0.0})
+        row['n'] += 1
+        row['seconds'] += seconds
+        if is_correct:
+            row['right'] += 1
+            row['seconds_right'] += seconds
+
+    def _persist_answer_times(self) -> None:
+        """Fold this session's answer times into the record on disk."""
+        fresh = getattr(self, '_answer_times', None)
+        if not fresh:
+            return
+        try:
+            total = load_answer_times()
+            for key, row in fresh.items():
+                have = total.setdefault(key, {'n': 0, 'seconds': 0.0,
+                                              'right': 0, 'seconds_right': 0.0})
+                for k, v in row.items():
+                    have[k] = round(have.get(k, 0) + v, 3)
+            path = _answer_times_path()
+            tmp = path + '.tmp'
+            with open(tmp, 'w', encoding='utf-8') as f:
+                json.dump(total, f)
+            os.replace(tmp, path)
+            self._answer_times = {}
+        except OSError:
+            return
 
     def _persist_cross_game_history(self):
         """Atomically write the last N shown questions per (subject, tier) so a
@@ -869,6 +938,7 @@ class QuizEngine:
             return
         self.state = QuizState.COMPLETE
         self._persist_cross_game_history()
+        self._persist_answer_times()
         result = QuizResult(
             success=success,
             score=self.score,
