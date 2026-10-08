@@ -665,25 +665,29 @@ class Player:
         self.apply_stat_bonus(stat, amount)
         return amount
 
-    def new_floor_of_quiet(self) -> None:
-        """A floor never stood on before: its quiet is untouched. Called on
-        reaching a new deepest floor only. (The allowance used to come back
-        on every level change, so one step down and up refilled it.)"""
-        self._meditated_this_floor = 0
+    def _quiet_used(self) -> dict:
+        used = getattr(self, 'meditated_by_floor', None)
+        if not isinstance(used, dict):
+            used = self.meditated_by_floor = {}
+        return used
 
-    def meditation_left(self) -> int:
-        """Mana that meditating can still restore until a new floor is reached."""
+    def meditation_left(self, floor: int = 0) -> int:
+        """Mana that meditating can still restore on `floor`. Every floor has
+        its own quiet, and it is drawn once: leaving and coming back does
+        not refill it (it used to, on any staircase), but a floor not yet
+        meditated on still has all of its own, on the way down or up."""
         from floor_curve import meditation_allowance
         return max(0, meditation_allowance(self.max_mp)
-                   - int(getattr(self, '_meditated_this_floor', 0)))
+                   - int(self._quiet_used().get(int(floor), 0)))
 
-    def meditate(self, amount: int = 1) -> int:
-        """Restore mana by meditating, within this floor's allowance.
+    def meditate(self, amount: int = 1, floor: int = 0) -> int:
+        """Restore mana by meditating, within that floor's allowance.
         Returns the mana actually regained."""
-        amount = min(int(amount), self.meditation_left(), self.max_mp - self.mp)
+        amount = min(int(amount), self.meditation_left(floor), self.max_mp - self.mp)
         if amount <= 0:
             return 0
-        self._meditated_this_floor = int(getattr(self, '_meditated_this_floor', 0)) + amount
+        used = self._quiet_used()
+        used[int(floor)] = int(used.get(int(floor), 0)) + amount
         self.restore_mp(amount)
         return amount
 
@@ -866,7 +870,9 @@ class Player:
             if _b == 'blessed':
                 buc_ac += 1
             elif _b == 'cursed':
-                buc_ac -= 1
+                # Diogenes (cynic_detachment): a curse is only somebody's opinion.
+                if 'cynic_detachment' not in getattr(self, 'hero_passives', set()):
+                    buc_ac -= 1
         # Invisibility: harder to hit -> lowers AC by 2
         invisible_bonus = 2 if self.has_effect('invisible') else 0
         # Shielded status effect (from wand of shielding): -2 AC
@@ -1262,14 +1268,16 @@ class Player:
             self.quirk_stat_owed.append([stat, amount - max(0, now)])
         return max(0, now)
 
-    def pay_quirk_stats_owed(self) -> list:
+    def pay_quirk_stats_owed(self, everything: bool = False) -> list:
         """Pay out owed trait points as far as the allowance now reaches.
-        Returns [(stat, points)] paid. Called on reaching a new depth."""
+        Returns [(stat, points)] paid. Called on reaching a new depth, and
+        with `everything` when Abaddon falls: there is no deeper floor for
+        the rest to wait for."""
         owed = getattr(self, 'quirk_stat_owed', None) or []
         paid = []
-        while owed and self.quirk_stat_room() > 0:
+        while owed and (everything or self.quirk_stat_room() > 0):
             stat, amount = owed[0]
-            give = min(int(amount), self.quirk_stat_room())
+            give = int(amount) if everything else min(int(amount), self.quirk_stat_room())
             self.quirk_stat_gained = int(getattr(self, 'quirk_stat_gained', 0)) + give
             self.apply_stat_bonus(stat, give)
             paid.append((stat, give))

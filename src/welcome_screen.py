@@ -6,6 +6,10 @@ hands the matching stat/equipment override dict back to main(), which uses it
 to spawn a special Player.
 """
 
+# Longest name the entry box takes. It was 30, and four hero names are longer
+# (Sherlock 40, Joan 33, Musashi 32): those builds could never be typed.
+NAME_MAX = 48
+
 import math
 import sys
 
@@ -54,6 +58,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_plato",
         "_start_wand": "wand_of_candle_light",
         "_start_book": "spellbook_light",
+        "_no_shard": True,       # he identifies by the Forms, and is handed no Shard
         "_greeting": "Plato descends into the cave and finds it uncomfortably on-the-nose.",
     },
     "friedrich nietzsche": {
@@ -308,7 +313,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_book": "spellbook_light",
         "_greeting": "Hildegard prays. The world greens around her in answer.",
     },
-    "nikola tesla the wizard of menlo park": {
+    "nikola tesla": {
         "INT": 18, "CON": 13, "PER": 14, "DEX": 12, "WIS": 12, "STR": 9,
         "_sprite": "player_tesla",
         "_start_weapon": ("dagger", "iron"),
@@ -489,7 +494,7 @@ class WelcomeScreen:
                         self._show_alltime = True
                     elif event.key == pygame.K_F3:
                         return '__STUDY_MODE__', None
-                    elif len(self.name_buf) < 30 and event.unicode.isprintable():
+                    elif len(self.name_buf) < NAME_MAX and event.unicode.isprintable():
                         self.name_buf += event.unicode
 
             self._draw()

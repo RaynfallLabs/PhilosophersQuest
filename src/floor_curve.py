@@ -69,8 +69,10 @@ def wound(share: float, max_hp: int, named: bool = False) -> int:
     return max(1, int(round(share * max(1, int(max_hp)))))
 
 
-POWER_BAR = 120.0         # hero-power dice were written against about this much health
-POWER_CAP = 0.30
+# One weapon chain takes most of an ordinary monster's health, and a hero
+# power is on a long cooldown: 2d6 is about a sixth of a creature, 6d6 half.
+POWER_BAR = 40.0
+POWER_CAP = 0.60
 
 
 def power_share(written: float) -> float:
@@ -189,17 +191,12 @@ def natural_regen(max_hp: int) -> int:
 DEATH_REAP_SHARE = 0.08
 
 
-# A pet that has kept pace with the dungeon (its level about equal to the
-# floor) bites for PET_ATTACK_SHARE of one weapon attack and has
-# PET_HEALTH_SHARE of the player's health bar for that depth. Pet numbers
-# were written as "3 damage at level 1, 30 at level 100" and then multiplied
-# by the monster-health scale, which made a pet 72% of the player's attack
-# on floor 5 and 7% on floor 100, dying to two or three hits deep down.
+# A pet's health and bite are real numbers by its own level: data/pet_growth.json.
 PET_REGEN_SHARE = 0.01        # of a pet's max HP, every third turn
 
 
-# Meditation gives back at most this share of max MP on any one floor; a new
-# floor brings a new allowance. Unlimited, waiting turned into healing with
+# Meditation gives back at most this share of max MP on any one floor, once
+# (Player.meditate keeps the tally per floor). Unlimited, waiting turned into healing with
 # no ceiling: eight waits bought a point of mana, three points a Cure Light
 # Wounds, and a patient player cast twenty healing spells a floor and won
 # twice as often as one who did not (measured, 71% against 35%).

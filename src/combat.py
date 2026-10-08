@@ -17,16 +17,6 @@ from geom import is_at_tile
 _DEFAULT_MULTIPLIERS = [0.3, 0.5, 0.7, 0.9, 1.2]
 
 
-def _hit_floor(player, monster) -> int:
-    """The dungeon level a blow lands on, for sizing fixed bonus damage
-    (floor_curve.scaled). The game's level when combat has a game ref, else
-    the floor the monster belongs to."""
-    lvl = getattr(getattr(player, '_combat_game_ref', None), 'dungeon_level', None)
-    if not isinstance(lvl, int) or lvl < 1:
-        lvl = getattr(monster, 'peak_floor', None) or getattr(monster, 'min_level', 1)
-    return lvl if isinstance(lvl, int) and lvl >= 1 else 1
-
-
 # ---------------------------------------------------------------------------
 # Weapon class-mechanic display info
 # ---------------------------------------------------------------------------
@@ -1002,10 +992,6 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             on_complete(0, True, chain)
             return
 
-        # Fixed bonus numbers below were written for the old monster HP; they
-        # are sized to this floor with floor_curve.scaled (weapon base damage
-        # already follows the floor through the material tables).
-        _floor = _hit_floor(player, monster)
 
         # Base damage: new integer field preferred over legacy dice string.
         # Unarmed (fist) uses the chain combat v2 STR-scaled base: 2 × (1 + STR/10)
@@ -1029,9 +1015,11 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             # A share of the weapon's own base: RANGED_STAT_SHARE for every
             # four points of the stat above 10.
             _own = int(base)
-            base += int(round(_own * RANGED_STAT_SHARE * max(0, (player.PER - 10) // 4)))
-            if _wc != 'crossbow':
-                base += int(round(_own * RANGED_STAT_SHARE * max(0, (player.STR - 10) // 4)))
+            # At least one point a step, so the bonus exists on a small bow too.
+            for _step in ((max(0, (player.PER - 10) // 4),)
+                          + ((max(0, (player.STR - 10) // 4),) if _wc != 'crossbow' else ())):
+                if _step:
+                    base += max(_step, int(round(_own * RANGED_STAT_SHARE * _step)))
 
         # Weakened / frozen: halve player attack damage. Both effects
         # describe "attack damage halved" / "encased in ice." Previously

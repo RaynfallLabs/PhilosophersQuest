@@ -3765,13 +3765,6 @@
     "ignoreShield": false,
     "burnChance": 0.4,
     "requiresAmmo": null,
-    "floorSpawnWeight": {
-      "1-20": 4,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 0,
-      "81-100": 0
-    },
     "containerLootTier": "uncommon",
     "value": 500,
     "min_level": 50,
@@ -3959,7 +3952,7 @@
     "tier": 3,
     "material": "bronze",
     "mathTier": 3,
-    "baseDamage": 74,
+    "baseDamage": 125,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -3986,16 +3979,9 @@
     "ignoreShield": false,
     "killHealAmount": 15,
     "requiresAmmo": null,
-    "floorSpawnWeight": {
-      "1-20": 4,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 0,
-      "81-100": 0
-    },
     "containerLootTier": "rare",
     "value": 3500,
-    "min_level": 38,
+    "min_level": 45,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
     "lore": "The centaur Chiron cut this ash on Mount Pelion and gave it to Peleus on his wedding day. Peleus passed it to his son, and Homer says no other Greek could even lift it. Patroclus took all the rest of Achilles's armour and left the spear behind. Rust scraped from its point healed King Telephus of the wound it had given him, and it still gives back strength as it takes life.",
     "quiz_tier": 3,
@@ -4004,7 +3990,7 @@
     ],
     "template_basis": "spear",
     "spread": 5,
-    "peak_floor": 45,
+    "peak_floor": 55,
     "chain_multipliers": [
       0.75,
       0.9,
@@ -4013,7 +3999,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 74,
+    "base_damage": 125,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -4748,13 +4734,6 @@
     "stunChance": 0.0,
     "bleedChance": 0.1,
     "requiresAmmo": null,
-    "floorSpawnWeight": {
-      "1-20": 4,
-      "21-40": 0,
-      "41-60": 0,
-      "61-80": 0,
-      "81-100": 0
-    },
     "containerLootTier": "rare",
     "value": 250,
     "min_level": 22,

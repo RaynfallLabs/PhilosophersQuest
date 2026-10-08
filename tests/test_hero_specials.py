@@ -113,7 +113,7 @@ def test_all_8_new_builds_present():
         "sir arthur conan doyle's sherlock holmes",
         'miyamoto musashi the sword saint',
         'saint hildegard von bingen',
-        'nikola tesla the wizard of menlo park',
+        'nikola tesla',
     ]
     for name in new_builds:
         assert name in welcome_screen.SECRET_BUILDS, f"missing build: {name}"

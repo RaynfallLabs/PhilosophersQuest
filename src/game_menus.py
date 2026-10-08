@@ -1097,7 +1097,7 @@ class MenuMixin:
             _ELDER_POWERS = [
                 ('elder_blink', {
                     'label': 'Blink',
-                    'desc': 'Teleport to safety. The Elder Blood bends space.',
+                    'desc': 'Vanish and reappear somewhere else on the floor. The Elder Blood bends space.',
                     'cooldown': 8, 'uses': 0,
                 }),
                 ('elder_charge', {
@@ -1107,7 +1107,7 @@ class MenuMixin:
                 }),
                 ('elder_scream', {
                     'label': 'Scream',
-                    'desc': 'Unleash the Elder Blood — cold damage to all visible enemies.',
+                    'desc': 'Unleash the Elder Blood: every enemy in sight loses a share of its health.',
                     'cooldown': 20, 'uses': 0,
                 }),
             ]
@@ -1243,7 +1243,12 @@ class MenuMixin:
             pl.power_cooldowns[pid] = pdef['cooldown']
 
         # --- Effect dispatch ---
-        if pid == 'metabolic' or pid == 'iron_ration':
+        if pid == 'iron_ration':
+            # (It was the same +100 SP as Metabolic, three times as far to walk.)
+            pl.restore_sp(pl.max_sp)
+            self.add_message(f"{label}: You Could March For A Week. (Stamina Full)", 'success')
+
+        elif pid == 'metabolic':
             pl.restore_sp(100)
             self.add_message(f"{label}: You surge with renewed stamina! (+100 SP)", 'success')
 
@@ -1401,7 +1406,7 @@ class MenuMixin:
             pl.power_cooldowns['elder_blink'] = 8
 
         elif pid == 'elder_charge':
-            pl.status_effects['empowered'] = 1
+            pl.status_effects['empowered'] = -1     # until the next strike (combat pops it)
             self.add_message("Elder Blood surges through your blade — next strike deals 3x damage!", 'success')
             pl.power_cooldowns['elder_charge'] = 12
 

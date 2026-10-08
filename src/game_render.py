@@ -4023,7 +4023,8 @@ class RenderMixin:
             entries=entries,
             selected=selected,
             subtitle=f"MP: {self.player.mp}/{self.player.max_mp}",
-            hint="Up/Down: move   Enter or a-z: cast   ESC: cancel",
+            hint="Up/Down: move   Enter or a-z: cast   ESC: cancel   |   "
+                 "Effects last longer and reach further with Intelligence",
             border_color=FP.ARCANE_BRIGHT,
         )
 

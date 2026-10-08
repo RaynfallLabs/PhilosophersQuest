@@ -22,6 +22,11 @@ LOCUST_CAP = 12
 # `recovers_when_left` heals RECOVER_SHARE of its health each turn. (Asterion
 # hides in the walls for 9 to 12 turns at a time: short of the threshold.)
 RECOVER_AFTER_TURNS = 25
+# What an attacker loses, as a share of its own health, for striking Tesla
+# (every blow) or a Spartan in his stand (when the counter fires). Both were
+# a third or a half of the MONSTER's damage: a point or two against thousands.
+RESONANCE_SHARE = 0.04
+SPARTAN_COUNTER_SHARE = 0.10
 RECOVER_SHARE = 0.03
 
 MIN_HIT_ORDINARY = 0.30
@@ -531,6 +536,21 @@ class Monster:
             self._recovered_note = True
         return self.hp - before
 
+    _UNDODGEABLE = ('breath', 'spit', 'hurl', 'volley', 'gaze', 'stare', 'glare', 'howl',
+                    'scream', 'wail', 'song', 'curse')
+
+    def _slipped(self, player, atk) -> bool:
+        """Dexterity: did the player slip this blow? Only a blow from beside
+        them, and only something that can be sidestepped (not a breath, a
+        gaze or a sound). Used on every melee path, single or multi-attack."""
+        dodge = getattr(player, 'dodge_chance', None)
+        if dodge is None or not self._adjacent_to(player):
+            return False
+        name = str((atk or {}).get('name', '')).lower()
+        if any(w in name for w in self._UNDODGEABLE):
+            return False
+        return random.random() < dodge()
+
     def _recover_when_left(self):
         """Gate bosses: heal once the challenger has backed off (see
         RECOVER_AFTER_TURNS). Returns the HP regained this turn."""
@@ -676,6 +696,8 @@ class Monster:
             if d20 != 20 and d20 < to_hit:
                 if random.random() >= min_hit:
                     return 0, gaze_msg + f" {the_name(self)} swings but misses!"
+            if self._slipped(player, atk):
+                return 0, gaze_msg + f" You slip {the_name(self, lower=True)}'s blow."
             dmg = roll(atk['damage'])
             atk_type = atk.get('type', 'physical')
             if self.has_effect('weakened'):
@@ -812,9 +834,7 @@ class Monster:
 
         # Dodge (Dexterity): a blow from beside you can be slipped. Breath,
         # spit and thrown things cannot, and nor can a gaze (handled above).
-        _dodge = getattr(player, 'dodge_chance', None)
-        if (_dodge is not None and not is_breath and self._adjacent_to(player)
-                and random.random() < _dodge()):
+        if not is_breath and self._slipped(player, atk):
             return 0, f"You slip {the_name(self, lower=True)}'s blow."
 
         # Displacement's 30% miss is rolled once, by the caller in game_combat
@@ -986,7 +1006,8 @@ class Monster:
         # Hero passive: Tesla's Resonant Frequency — shock-counter on melee hits.
         if actual > 0 and atk_type in ('physical', 'pierce', 'slash', 'blunt') and \
                 'resonant_frequency' in getattr(player, 'hero_passives', set()):
-            shock = max(1, dmg // 3)
+            from floor_curve import wound
+            shock = wound(RESONANCE_SHARE, self.max_hp, self._is_named_foe())
             self.take_damage(shock)
             msg += f" (Resonance arcs back: {shock} shock!)"
 
@@ -995,7 +1016,8 @@ class Monster:
             import random as _ssr
             cpct = getattr(player, '_stand_counter_pct', 0)
             if cpct > 0 and _ssr.randint(1, 100) <= cpct:
-                cstrike = max(1, dmg // 2)
+                from floor_curve import wound
+                cstrike = wound(SPARTAN_COUNTER_SHARE, self.max_hp, self._is_named_foe())
                 self.take_damage(cstrike)
                 msg += f" (Counter-strike: {cstrike} dmg!)"
 
@@ -1942,6 +1964,9 @@ class Monster:
                 if random.random() >= min_hit:
                     parts.append("miss")
                     continue
+            if self._slipped(player, atk):
+                parts.append("slipped")
+                continue
             dmg = roll(atk['damage'])
             if self.rage_stacks > 0 and self.rage_damage_bonus:
                 for _ in range(self.rage_stacks):

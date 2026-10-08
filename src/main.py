@@ -128,6 +128,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                  player_name: str = 'Adventurer',
                  secret_build: dict | None = None):
         self.screen        = screen
+        # A hero's name is shown as a name ("Achilles Son Of Peleus"), however
+        # it was typed; every lookup lowercases it again.
+        if secret_build:
+            import string
+            player_name = string.capwords(player_name)
         self.player_name   = player_name
         self.secret_build  = secret_build   # dict of stat overrides, or None
         # FANTASY: Grimoire font set -- larger for readability
@@ -1200,6 +1205,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Notify quirk system before level change (fast-exit check)
         qs = getattr(self, 'quirk_system', None)
         if qs:
+            # Traits that count floors left quickly, cleanly or without the
+            # Shard count only a first descent: ten bounces on one staircase
+            # used to earn four of them.
+            qs.fresh_descent = new_level > self.player.deepest_floor_reached
             qs.on_stairs_taken_fast()
 
         # A monster on a floor the player has left is not simulated. Note the
@@ -1257,8 +1266,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"The Dungeon Has Taught You Something. Wisdom +{_learned}. "
                     f"(The Combat Clock Is Now {self.player.combat_clock()} Seconds.)",
                     'success')
-        if self.player.deepest_floor_reached > _was_deepest:
-            self.player.new_floor_of_quiet()
         # Trait points held back by the allowance come in with new depth.
         if self.player.deepest_floor_reached > _was_deepest:
             for _stat, _n in self.player.pay_quirk_stats_owed():
@@ -1636,7 +1643,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Track levels without Philosopher's Shard (Diogenes quirk)
         has_shard = any(getattr(i, 'id', '') == 'philosophers_shard'
                         for i in self.player.inventory)
-        if not has_shard and self.player.quirk_progress.get('shard_dropped'):
+        if (not has_shard and self.player.quirk_progress.get('shard_dropped')
+                and new_level > self.player.deepest_floor_reached):
             self.player.quirk_progress['levels_without_shard'] = (
                 self.player.quirk_progress.get('levels_without_shard', 0) + 1
             )
@@ -1855,8 +1863,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'lore': "A tiny fragment of the Philosopher's Stone, warm to the touch and faintly luminous. It resonates with philosophical understanding, allowing its bearer to perceive the true nature of unknown items through rigorous examination. Ancient texts warn that those who abandon it walk blind through the dungeon — but some say that blindness teaches its own kind of wisdom.",
         })
         _mark_starting_item_known(shard)
-        self.player.inventory.append(shard)
-        self.player.known_item_ids.add('philosophers_shard')
+        # Plato refuses the Shard (his passive, `plato_no_shard`): he is not handed one.
+        if not b.get('_no_shard'):
+            self.player.inventory.append(shard)
+            self.player.known_item_ids.add('philosophers_shard')
 
         # -- Weapon: default dagger OR build override ----------------------
         # _start_weapon is either a unique's str id ("excalibur") or a
@@ -2048,8 +2058,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for pid in start_potions:
                     pot = next((p for p in all_pots if p.id == pid), None)
                     if pot:
-                        import copy
-                        p = copy.copy(pot)
+                        import copy as _copy_pot     # (a bare `import copy` here made `copy`
+                        p = _copy_pot.copy(pot)      # local to the whole function: see below)
                         _mark_starting_item_known(p)
                         self.player.known_item_ids.add(p.id)
                         self.player.add_to_inventory(p)
@@ -2068,7 +2078,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 master_src = next(
                     (p for p in picks if getattr(p, 'id', '') == 'master_lockpick'),
                     picks[0])
-                master = copy.copy(master_src)
+                import copy as _copy_pick      # (`copy` was never imported here: the
+                master = _copy_pick.copy(master_src)   # NameError was swallowed, no lockpick)
                 _mark_starting_item_known(master)
                 self.player.add_to_inventory(master)
         except Exception:
@@ -2175,7 +2186,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for tile in row
                 if tile != 0  # non-wall tiles
             )
-            explored = len(self.dungeon.explored)
+            # Explored floor only: `explored` also holds every wall tile seen,
+            # which made "99% explored" fire at about two thirds.
+            _tiles = self.dungeon.tiles
+            explored = sum(1 for (ex, ey) in self.dungeon.explored
+                           if 0 <= ey < len(_tiles) and 0 <= ex < len(_tiles[ey])
+                           and _tiles[ey][ex] != 0)
             if total > 0:
                 qs.on_floor_explored(explored / total)
 

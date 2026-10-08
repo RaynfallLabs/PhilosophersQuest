@@ -404,7 +404,7 @@ GATE_BOSSES = ('asterion_minotaur', 'medusa_gorgon', 'fafnir_dragon', 'fenrir_wo
 
 HEAL_SPELL_IDS = ('cure_light_spell', 'cure_wounds_spell', 'heal_spell',
                   'greater_heal_spell')
-# game_magic.py:71 and :1296-1306: heal = roll(power) * MULT[tier] * (1 + INT*0.1)
+# game_magic.HEAL_TIER_MULT (this name is historical): heal = roll(power) * MULT[tier] * int_damage_factor(INT)
 MAGIC_TIER_MULT = {1: 3.0, 2: 2.5, 3: 2.0, 4: 1.75, 5: 1.5}
 
 BANDS = [(1, 9), (10, 19), (21, 29), (30, 39), (41, 49), (50, 59),
@@ -1146,7 +1146,7 @@ class Run:
             self.fs['heal_free'] += got
         p.prayer_cooldown = max(0, p.prayer_cooldown - n)
         if resting:
-            p.meditate(int(n * self.knobs['mp_rest']))    # game_input: meditation
+            p.meditate(int(n * self.knobs['mp_rest']), self.floor)    # game_input: meditation
         if moving or resting:                            # game_input: wait ticks SP
             need = n * SP_PER_MOVE
             while p.sp - need < p.max_sp * 0.25 and self.food:
@@ -1236,7 +1236,7 @@ class Run:
                 cheapest = min(c for c, _, _ in self.spells.values())
                 need = math.ceil((cheapest - p.mp) / max(0.01, self.knobs['mp_rest']))
                 if (need > budget or cheapest > p.max_mp
-                        or p.meditation_left() < cheapest - p.mp):   # floor's allowance spent
+                        or p.meditation_left(self.floor) < cheapest - p.mp):   # floor's allowance spent
                     break
                 budget -= need
                 found = self.pass_time(int(need), moving=False, resting=True)
@@ -1581,7 +1581,7 @@ class Run:
                         elif self.potions and hpf < 0.5:
                             self.drink()
                         else:
-                            p.meditate(1)
+                            p.meditate(1, self.floor)
                     action = 'wait'
                 if action is None:
                     # Abaddon: pray at an altar to strip the ward

@@ -159,20 +159,21 @@ def test_the_early_outliers_were_softened():
     assert breath['effect'] == 'paralyzed' and breath['effect_duration'] <= 3
 
 
-def test_meditation_gives_half_a_mana_bar_until_a_new_floor_is_reached():
+def test_every_floor_has_its_own_quiet_and_it_is_drawn_once():
     assert floor_curve.MEDITATE_FLOOR_SHARE == 0.5
     p = Player()
     p.max_mp, p.mp = 30, 0
-    assert p.meditation_left() == 15
-    got = sum(p.meditate(1) for _ in range(40))
-    assert got == 15 and p.mp == 15 and p.meditation_left() == 0
-    p.reset_floor_cook_caps()                 # any staircase: up, down, the cow level
-    assert p.meditation_left() == 0           # (it used to refill here)
-    p.new_floor_of_quiet()                    # a floor never stood on before
-    assert p.meditation_left() == 15
-    src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
-    i = src.index('self.player.new_floor_of_quiet()')
-    assert 'deepest_floor_reached > _was_deepest' in src[i - 120:i]
+    assert p.meditation_left(7) == 15
+    got = sum(p.meditate(1, 7) for _ in range(40))
+    assert got == 15 and p.mp == 15 and p.meditation_left(7) == 0
+    p.reset_floor_cook_caps()                 # down a staircase and back up
+    assert p.meditation_left(7) == 0          # (it used to refill here)
+    p.mp = 0
+    assert p.meditation_left(8) == 15         # another floor has its own
+    assert p.meditate(20, 8) == 15
+    assert p.meditation_left(6) == 15         # so does one passed on the way down: the climb out
+    src = open(os.path.join(ROOT, 'src', 'game_input.py'), encoding='utf-8').read()
+    assert 'self.player.meditate(1, self.dungeon_level)' in src
 
 
 def test_a_boss_that_is_swinging_or_hit_by_magic_has_not_been_left_alone():
@@ -193,8 +194,9 @@ def test_a_boss_that_is_swinging_or_hit_by_magic_has_not_been_left_alone():
 
 def test_dodge_lives_in_the_blow_and_spares_no_one_from_breath():
     src = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
-    i = src.index('_dodge = getattr(player, \'dodge_chance\', None)')
-    assert 'not is_breath' in src[i:i + 300]
+    assert src.count('self._slipped(player, atk)') >= 3      # single, multi-attack, Medusa's swing
+    import monster as _m
+    assert 'gaze' in _m.Monster._UNDODGEABLE and 'breath' in _m.Monster._UNDODGEABLE
     combat = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
     assert 'dodge_chance()' not in combat
     p = Player()

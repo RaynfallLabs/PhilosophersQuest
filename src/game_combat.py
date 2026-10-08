@@ -78,8 +78,8 @@ def _monster_level(m) -> int:
 
 
 # Shares of the creature's own health (floor_curve.wound).
-PIT_FALL_SHARE = 0.05         # a monster that blunders into a pit
-SHIELD_LASH_SHARE = 0.06      # fire / cold shield, each time it is struck
+PIT_FALL_SHARE = 0.10         # a monster that blunders into a pit
+SHIELD_LASH_SHARE = 0.10      # fire / cold shield, each time it is struck
 
 
 class CombatMixin:
@@ -780,6 +780,10 @@ class CombatMixin:
         # Abaddon guards the Philosopher's Stone; it falls where he does.
         if monster.kind == 'abaddon_destroyer':
             self._drop_philosophers_stone(monster.x, monster.y)
+            # Every trait point still held for a deeper floor comes in now.
+            for _stat, _n in self.player.pay_quirk_stats_owed(everything=True):
+                self.add_message(
+                    f"A Trait You Earned Comes Into Its Own: {_stat} +{_n}.", 'success')
         # Seal demon: track broken seal
         if getattr(monster, 'is_seal_demon', False):
             seal_id = 'seal_of_' + monster.kind.replace('seal_demon_', '')

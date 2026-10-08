@@ -50,7 +50,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'in_pit':             ('In Pit',             (140, 100,  60), 'Stuck in a pit; must climb out'),
     'silenced':           ('Silenced',           (120, 120, 160), 'Cannot cast spells or read scrolls'),
     'empowered':          ('Empowered',          (255, 200,  80), 'Next melee attack deals 3x damage'),
-    'berserk':            ('Berserk',            (220,  60,  40), 'Ríastrad — bonus STR, HP cost per turn'),
+    'berserk':            ('Berserk',            (220,  60,  40), 'Battle-fury: your blows land harder while it lasts'),
     'riposte_armed':      ('Riposte Armed',      (220, 220, 160), 'Next melee hit against you triggers a free counter'),
     'parry_armed':        ('Parry Armed',        (200, 210, 180), 'Quarterstaff defensive stance: +2 AC for 2 turns'),
     # ---- Chain combat v2 (v2.14.0): weapon chain-special statuses ----
@@ -79,7 +79,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'save_guard_all':     ('Warded',             (210, 230, 255), 'Bonus to all saving throws'),
     # ---- Buffs ----
     'hasted':             ('Hasted',             (245, 245,  60), 'Monsters act half as often'),
-    'invisible':          ('Invisible',          (185, 235, 235), 'Monsters have 30% miss chance'),
+    'invisible':          ('Invisible',          (185, 235, 235), 'Harder to hit: 2 points of armor'),
     'levitating':         ('Levitating',         (185, 215, 245), 'Floating; immune to floor traps'),
     'regenerating':       ('Regenerating',       ( 80, 225, 105), 'Recovering 1 HP every 3 turns'),
     'telepathy':          ('Telepathy',          (205, 145, 245), 'All monsters visible on level'),

@@ -416,7 +416,9 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
                 f"{player.COOK_MEALS_PER_STAT_POINT} meals toward +1)")
     elif stat_grant_amount > 0:
         bypass = bool(outcome.get('permanent_power'))
-        stat = cut_stat or outcome.get('stat_grant_default') or 'STR'
+        # A trophy grants ITS OWN stat (the one its preview shows), not the meat's.
+        stat = (outcome.get('stat_grant_default') or cut_stat or 'STR') if bypass \
+            else (cut_stat or outcome.get('stat_grant_default') or 'STR')
         if hasattr(player, 'try_apply_cook_stat_gain'):
             applied = player.try_apply_cook_stat_gain(stat, stat_grant_amount, bypass=bypass)
         else:

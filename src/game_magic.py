@@ -50,12 +50,12 @@ import sound_system as _snd
 from floor_curve import mend as _mend, wound as _wound
 
 # Shares of the target's own health (floor_curve.wound), not floor multipliers.
-MORTAR_BLAST_SHARE = 0.15     # Baba Yaga's mortar, everything in sight
+MORTAR_BLAST_SHARE = 0.25     # Baba Yaga's mortar, everything in sight
 DEATH_WORD_BASE = 0.25        # Power Word Kill slays what is at or below this share of
 DEATH_WORD_PER_INT = 0.01     # its health, plus this per point of Intelligence,
 DEATH_WORD_CAP = 0.60         # up to this
 DEATH_WORD_STAGGER = 0.30     # what a named foe loses instead (a tenth of it lands)
-EARTH_SHARE = (0.06, 0.10, 0.16, 0.24, 0.35)    # scroll of earth, by tier
+EARTH_SHARE = (0.12, 0.20, 0.30, 0.42, 0.55)    # scroll of earth, by tier
 
 # What a summoning calls up is decided by the spell, not by where it is cast.
 SUMMON_GUARDIAN_LEVEL = 45    # Summon Guardian (a tier-3 spell)
@@ -88,7 +88,8 @@ if TYPE_CHECKING:
 # afterthought. Per-tier multipliers here bring magic back into line with a
 # chain-5-ish weapon hit at the same tier. Bigger boost on low tiers (where the
 # gap was worst); modest boost on T5 (where 10d10 was already respectable).
-# Applied by _spell_damage and _wand_tier_damage. INT stacks on top.
+# (History: this table was once shared by spells and wands with +10% per point
+# of INT on top. Spells use MAGIC_TIER_MULT, wands WAND_TIER_MULT, below.)
 # 2026-10-05: ordinary monster HP was re-sized x2 (floor 1) to x9 (floor 100)
 # when weapons gained a damage step per tier. Magic follows by tier, or a
 # deep wand would tickle: the old figures x 2 / 3.5 / 5.5 / 7.5 / 8.5.
@@ -1408,18 +1409,15 @@ class MagicMixin:
 
     def _apply_spell_effect(self, spell: dict, target=None):
         """v2.12.0: apply a learned spell's effect at its FIXED per-tier
-        magnitude. spell.power is authoritative for damage/heal dice; buff
-        durations use their full base (no chain scaling). Called with the
+        magnitude. spell.power is authoritative for damage/heal dice; durations,
+        radii and reach are the base figure times int_reach(INT). Called with the
         target monster already resolved (or None for self/AOE spells).
         """
         effect = spell['effect']
         power  = spell.get('power', '')
 
-        # v2.12.0: chain retired. Local aliases keep the existing handler
-        # bodies working without a mass edit: chain=5 => chain_scale=1.0 =>
-        # all buff durations fire at full base. Any message that formerly
-        # embedded "(chain N)" now just says "(chain 5)" -- harmless echo,
-        # since MP was already deducted before this call.
+        # v2.12.0: chain retired; `chain` stays as a constant for the handler
+        # bodies that still take it. `chain_scale` is now Intelligence's reach.
         chain = 5
         # Intelligence lengthens and widens what a spell does (decision D2).
         chain_scale = int_reach(self.player.INT)
@@ -1547,7 +1545,7 @@ class MagicMixin:
 
         # Empower: next melee attack deals 3x damage
         if effect == 'empower_next':
-            self.player.status_effects['empowered'] = 1
+            self.player.status_effects['empowered'] = -1    # until the next strike (combat pops it)
             self.add_message("Arcane power surges through your weapon! Next attack deals 3x damage!", 'success')
             return
 
@@ -1596,12 +1594,18 @@ class MagicMixin:
         if effect == 'time_freeze':
             dur = max(3, int(5 * chain_scale))
             count = 0
+            _named = 0
             for m in self.monsters:
                 if m.alive:
                     m.add_effect('paralyzed', dur)
                     count += 1
+                    _named += 1 if m._is_named_foe() else 0
             self.add_message(
                 f"TIME FREEZES! {count} creatures locked in place for {dur} turns!", 'success')
+            if _named:
+                from monster import NAMED_FOE_CONTROL_CAP as _cap
+                self.add_message(
+                    f"The greatest of them will not be held so long: {_cap} turns at most.", 'warning')
             return
 
         # Light spell: reveal tiles in a radius (tier scales radius)
@@ -2240,8 +2244,9 @@ class MagicMixin:
                 # Slow chance from the frost
                 if random.random() < 0.50:
                     dur = max(2, int(5 * chain_scale))
-                    dur, _ = self._boss_resist_cc(target, dur)
-                    target.add_effect('slowed', dur)
+                    dur, _resisted = self._boss_resist_cc(target, dur)
+                    if not _resisted and dur > 0:
+                        target.add_effect('slowed', dur)
                 self.add_message(
                     f"Frost touch chills {the_name(target, lower=True)} for {actual} cold dmg!", 'success')
                 if not target.alive:
@@ -2954,7 +2959,7 @@ class MagicMixin:
                 self.add_message(
                     "The words blaze and fade. You have already been given all "
                     "that fortune will give; the rest you must earn.", 'warning')
-            elif stat_count >= 6:
+            elif len(chosen) >= 6:
                 self.add_message("Every faculty within you is elevated! All stats permanently +1!", 'success')
             else:
                 self.add_message(

@@ -3,7 +3,7 @@
 Monster HP was re-sized (about x3 near the top, x5 deep) when weapons gained
 a damage step per tier. Weapon and spell damage followed through their own
 tables. Everything else that hurts a monster by a fixed amount is passed
-through floor_curve.scaled so it stays worth what it was worth.
+(historically through a floor multiplier; see tests/test_lore_not_floor.py).
 """
 import os
 import sys

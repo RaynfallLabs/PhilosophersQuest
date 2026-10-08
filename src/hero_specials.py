@@ -18,6 +18,12 @@ from pet_system import growth as _pet_growth
 from geom import monster_at_tile
 
 
+# A hero's healing power restores at least this share of their own health per
+# link of the chain (or the written figure, if more): 50 HP was a full heal
+# at the top of the dungeon and a twentieth of one at the bottom.
+HERO_HEAL_SHARE = 0.06
+
+
 def is_boss_or_huge(monster) -> bool:
     """Standard boss-immunity check, mirroring game_magic.py.
 
@@ -35,10 +41,20 @@ def is_boss_or_huge(monster) -> bool:
     return getattr(monster, 'max_hp', 0) > max(500, 2.0 * _target_hp(floor))
 
 
-def _floor_of(game) -> int:
-    """The dungeon level the special is used on (for floor_curve.scaled)."""
-    lvl = getattr(game, 'dungeon_level', 1)
-    return lvl if isinstance(lvl, int) and lvl >= 1 else 1
+def _is_foe(monster) -> bool:
+    """Something a hero power should be spent on: not the cow, an encounter
+    NPC, the unicorn, or a creature already charmed to the player's side."""
+    return not (getattr(monster, '_npc_encounter_tag', None)
+                or getattr(monster, '_flavor_encounter_tag', None)
+                or getattr(monster, '_is_unicorn', False)
+                or (hasattr(monster, 'has_effect') and monster.has_effect('charmed')))
+
+
+def _named_or_huge(monster) -> bool:
+    """Who takes a tenth of a share-of-health effect: any named foe (boss,
+    mini-boss, seal demon) or anything huge for its floor."""
+    return bool(is_boss_or_huge(monster) or getattr(monster, 'is_mini_boss', False)
+                or getattr(monster, 'is_seal_demon', False))
 
 
 # ---------------------------------------------------------------------------
@@ -99,7 +115,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "prometheus the firebearer": {
         'id': 'hero_liver_bound_fire',
         'name': 'Liver-Bound Fire',
-        'desc': 'AoE fire burst around you. Costs 5 HP regardless.',
+        'desc': 'A burst of fire around you. Costs a twelfth of your health, never your life.',
         'cooldown': 350,
         'effect': 'self_aoe_fire',
         'self_cost_hp': 5,
@@ -323,7 +339,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "saint joan of arc maid of orleans": {
         'id': 'hero_standard_of_the_maid',
         'name': 'Standard of the Maid',
-        'desc': "Rally: self-heal and empower your next strike (+50% damage).",
+        'desc': "Rally: heal yourself, and every strike deals +50% damage for a few turns.",
         'cooldown': 350,
         'effect': 'heal_and_crit_buff',
         'tier_effects': {
@@ -338,7 +354,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "sir arthur conan doyle's sherlock holmes": {
         'id': 'hero_deduction',
         'name': 'Deduction',
-        'desc': 'Reveal traps + monster HP + identify items in a radius.',
+        'desc': 'Reveal traps in a radius; a long chain also identifies what lies on the floor.',
         'cooldown': 400,
         'effect': 'reveal_radius',
         'tier_effects': {
@@ -354,7 +370,7 @@ HERO_SPECIALS: dict[str, dict] = {
     "saint hildegard von bingen": {
         'id': 'hero_viriditas',
         'name': 'Viriditas',
-        'desc': "Greenness — AoE heal + cleanse around you.",
+        'desc': "Greenness: heal yourself and wash away what ails you.",
         'cooldown': 350,
         'effect': 'aoe_heal_self',
         'tier_effects': {
@@ -366,7 +382,7 @@ HERO_SPECIALS: dict[str, dict] = {
             5: {'self_heal': 50, 'cleanse': 999},
         },
     },
-    "nikola tesla the wizard of menlo park": None,   # passive shock counter
+    "nikola tesla": None,   # passive shock counter
 }
 
 
@@ -383,7 +399,7 @@ HERO_PASSIVES: dict[str, list[str]] = {
     "ciri riannon":                ['elder_blood_escape'],
     "boudicca queen of the iceni": ['vengeance_wakes'],
     "miyamoto musashi the sword saint": ['niten_ichi_ryu'],
-    "nikola tesla the wizard of menlo park": ['resonant_frequency'],
+    "nikola tesla": ['resonant_frequency'],
 }
 
 
@@ -458,14 +474,14 @@ HERO_JOURNAL: dict[str, str] = {
         "real page-turner once you stop reading the words wrong.",
     "ash ketchum":
         "Ash Ketchum from Pallet Town. Going to be the very best, like no one "
-        "ever was. The Trainer's Cap helps the pets level faster, and I never "
+        "ever was. The Trainer's Cap helps the pets mend faster, and I never "
         "run out of friends.",
     "corwin":
         "Corwin the Ranger. The shortbow was a gift from Dad on my eleventh "
         "birthday. Charmander has been with me since the beginning. "  
 	"Together, they make me brave.",
     "cain":
-        "Cain the Hunter. My twin's bow is fine, but ash flexes farther than oak. "
+        "Cain the Hunter. My twin's bow is oak; mine is yew, and I say it sings. "
         "I carry the same Stuffie because some traditions are worth keeping.",
     "fianna":
         "Fianna the Wizard, age Thirteen. I have a wand, a sketchbook, and a "
@@ -508,7 +524,7 @@ HERO_JOURNAL: dict[str, str] = {
         "Hildegard of Bingen, abbess and visionary. Viriditas — the greening "
         "power of God — flows through everything that lives. I bring it down "
         "even here.",
-    "nikola tesla the wizard of menlo park":
+    "nikola tesla":
         "Nikola Tesla. I tuned the resonance of the earth; I split light at "
         "Colorado Springs. Whatever touches me, I touch back — with current.",
 }
@@ -583,7 +599,8 @@ def _eff_self_heal(game, special, tier, chain):
     if dice == '0d0':
         game.add_message("The music falters; nothing happens.", 'warning')
         return
-    heal = roll(dice)
+    from floor_curve import mend
+    heal = mend(roll(dice), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
     game.player.restore_hp(heal) if hasattr(game.player, 'restore_hp') else None
     if not hasattr(game.player, 'restore_hp'):
         game.player.hp = min(game.player.max_hp, game.player.hp + heal)
@@ -603,6 +620,7 @@ def _eff_self_aoe_fire(game, special, tier, chain):
     if cost > 0:
         from floor_curve import hazard
         cost = hazard(cost, game.player.max_hp)       # a share of the health bar
+        cost = max(0, min(cost, game.player.hp - 1))  # the fire never kills its bearer
         game.player.hp -= cost
         game.add_message(f"Your liver burns: -{cost} HP.", 'warning')
     radius = int(tier.get('radius', 0))
@@ -618,9 +636,7 @@ def _eff_self_aoe_fire(game, special, tier, chain):
             continue
         if max(abs(m.x - px), abs(m.y - py)) <= radius:
             # A share of the creature's own health (floor_curve.power_share).
-            dmg = _wound(_power_share(roll(dice)), m.max_hp, is_boss_or_huge(m))
-            if is_boss_or_huge(m):
-                dmg = max(1, dmg // 2)
+            dmg = _wound(_power_share(roll(dice)), m.max_hp, _named_or_huge(m))
             m.take_damage(dmg)
             hits += 1
             if m.alive and burn and not is_boss_or_huge(m):
@@ -689,7 +705,7 @@ def _eff_reveal_floor(game, special, tier, chain):
                 if game.dungeon.is_walkable(x, y) or tiles[y][x] == DOOR:
                     game.dungeon.explored.add((x, y))
                     revealed += 1
-    elif tier.get('traps_near'):
+    if tier.get('traps_near'):
         for (tx, ty) in list(game.dungeon.traps):
             if max(abs(tx - game.player.x), abs(ty - game.player.y)) <= 8:
                 game.dungeon.traps[(tx, ty)]['revealed'] = True
@@ -702,6 +718,16 @@ def _eff_reveal_floor(game, special, tier, chain):
             if hasattr(it, 'identified'):
                 it.identified = True
                 game.player.known_item_ids.add(getattr(it, 'id', ''))
+    if tier.get('stairs'):
+        from dungeon import STAIRS_DOWN, STAIRS_UP
+        tiles = game.dungeon.tiles
+        for y in range(len(tiles)):
+            for x in range(len(tiles[y])):
+                if tiles[y][x] in (STAIRS_DOWN, STAIRS_UP):
+                    game.dungeon.explored.add((x, y))
+    if not any(tier.get(k) for k in ('traps_near', 'full_map', 'all_traps', 'stairs', 'items')):
+        game.add_message("You turn and turn. The labyrinth keeps its secrets.", 'warning')
+        return
     game.add_message("The labyrinth opens to you.", 'success')
 
 
@@ -756,16 +782,17 @@ def _eff_damage_single(game, special, tier, chain):
         return
     # Damage the cursor-target monster if any (player targets via cursor),
     # otherwise nearest visible enemy. For simplicity in v1, pick nearest visible.
-    targets = [m for m in game.monsters if m.alive and (m.x, m.y) in game.visible]
+    reach = int(tier.get('range', 0) or 0)
+    targets = [m for m in game.monsters
+               if m.alive and (m.x, m.y) in game.visible and _is_foe(m)
+               and (not reach or max(abs(m.x - game.player.x), abs(m.y - game.player.y)) <= reach)]
     if not targets:
         game.add_message("No target in sight.", 'warning')
         return
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
     # A share of the creature's own health (floor_curve.power_share).
-    dmg = _wound(_power_share(roll(dice)), target.max_hp, is_boss_or_huge(target))
-    if is_boss_or_huge(target):
-        dmg = max(1, dmg // 2)
+    dmg = _wound(_power_share(roll(dice)), target.max_hp, _named_or_huge(target))
     target.take_damage(dmg)
     game.add_message(f"A star falls on {target.name} for {dmg} damage.", 'success')
     if not target.alive:
@@ -790,7 +817,7 @@ def _eff_drain_attractive(game, special, tier, chain):
     target = adj[0]
     # The drain is a share of the target's own health; the heal is the
     # written figure.
-    drained = min(_wound(_power_share(hp_drain), target.max_hp, is_boss_or_huge(target)),
+    drained = min(_wound(_power_share(hp_drain), target.max_hp, _named_or_huge(target)),
                   target.hp)
     target.take_damage(drained)
     game.player.hp = min(game.player.max_hp, game.player.hp + min(hp_drain, drained))
@@ -812,7 +839,8 @@ def _eff_self_buff_berserk(game, special, tier, chain):
     game.player.status_effects['berserk'] = max(cur, dur)
     if tier.get('fear_immune'):
         cur = game.player.status_effects.get('fear_immune', 0)
-        game.player.status_effects['fear_immune'] = max(cur, dur)
+        if cur != -1:            # never shorten a permanent immunity (Cu Chulainn)
+            game.player.status_effects['fear_immune'] = max(cur, dur)
     if tier.get('crit'):
         cur = game.player.status_effects.get('crit_buff', 0)
         game.player.status_effects['crit_buff'] = max(cur, dur)
@@ -841,12 +869,8 @@ def _eff_gain_ammo(game, special, tier, chain):
     stack = copy.copy(proto)
     stack.count = cnt
     game.player.add_to_inventory(stack)
-    game.add_message(f"BOOM. {cnt} {ammo_id.replace('_', ' ')} shells appear.",
+    game.add_message(f"BOOM. {cnt} {getattr(proto, 'name', 'Shotgun Shell')}s Appear.",
                      'success')
-    if tier.get('aoe_next'):
-        cur = game.player.status_effects.get('boomstick_aoe_next', 0)
-        game.player.status_effects['boomstick_aoe_next'] = max(cur, 1)
-        game.add_message("Your next shot will scatter.", 'success')
 
 
 def _eff_heal_pet(game, special, tier, chain):
@@ -923,7 +947,8 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
 
 
 def _eff_heal_and_crit_buff(game, special, tier, chain):
-    heal = int(tier['heal'])
+    from floor_curve import mend
+    heal = mend(int(tier['heal']), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
     crit_turns = int(tier['crit_turns'])
     if heal == 0 and crit_turns == 0:
         game.add_message("The Voices are silent.", 'warning')
@@ -964,7 +989,8 @@ def _eff_reveal_radius(game, special, tier, chain):
 
 def _eff_aoe_heal_self(game, special, tier, chain):
     """Hildegard Viriditas: self-heal + cleanse N debuffs."""
-    heal = int(tier['self_heal'])
+    from floor_curve import mend
+    heal = mend(int(tier['self_heal']), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
     cleanse_n = int(tier['cleanse'])
     if heal == 0 and cleanse_n == 0:
         game.add_message("The green light does not bloom.", 'warning')

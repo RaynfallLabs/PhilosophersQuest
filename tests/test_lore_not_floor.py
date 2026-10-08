@@ -64,7 +64,7 @@ def test_a_share_of_health_is_a_share_of_the_targets_own_health():
     assert floor_curve.wound(0.0, 1000) == 0
     assert floor_curve.wound(0.01, 10) == 1                      # at least 1
     assert floor_curve.power_share(0) == 0.0
-    assert abs(floor_curve.power_share(12) - 0.10) < 1e-9
+    assert abs(floor_curve.power_share(12) - 12 / floor_curve.POWER_BAR) < 1e-9
     assert floor_curve.power_share(1000) == floor_curve.POWER_CAP
 
 
@@ -176,3 +176,30 @@ def test_what_a_summoning_calls_up_is_set_by_the_spell():
     src = open(os.path.join(SRC, 'game_magic.py'), encoding='utf-8').read()
     assert 'pet.level = max(1, self.dungeon_level' not in src
     assert 'pet.level = max(3, self.dungeon_level' not in src
+
+
+def test_every_hero_name_can_be_typed():
+    import welcome_screen
+    longest = max(len(k) for k in welcome_screen.SECRET_BUILDS)
+    assert longest <= welcome_screen.NAME_MAX, longest       # four could not be, at 30
+    assert 'nikola tesla' in welcome_screen.SECRET_BUILDS    # not "the wizard of Menlo Park": that was Edison
+    import hero_specials
+    assert hero_specials.get_passives_for_build('nikola tesla') == ['resonant_frequency']
+
+
+def test_empower_lasts_until_the_next_strike():
+    for name in ('game_menus.py', 'game_magic.py'):
+        src = open(os.path.join(SRC, name), encoding='utf-8').read()
+        assert "status_effects['empowered'] = -1" in src and "status_effects['empowered'] = 1\n" not in src
+
+
+def test_the_fire_bearer_cannot_burn_himself_to_death():
+    import types
+    import hero_specials
+    from player import Player
+    p = Player()
+    p.hp = 1
+    p.x = p.y = 5
+    g = types.SimpleNamespace(player=p, monsters=[], add_message=lambda *a, **k: None)
+    hero_specials._eff_self_aoe_fire(g, {'self_cost_hp': 5}, {'radius': 0}, 0)
+    assert p.hp == 1

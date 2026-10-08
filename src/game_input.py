@@ -381,7 +381,8 @@ class InputMixin:
 
         if key == pygame.K_PERIOD:
             qs = getattr(self, 'quirk_system', None)
-            near = any(m.alive for m in self.monsters)
+            # "Near" means in sight, not anywhere on the floor.
+            near = any(m.alive and (m.x, m.y) in self.visible for m in self.monsters)
             if qs:
                 qs.on_wait(near_monsters=near)
             # Meditation: restore 1 MP when waiting if no monsters are adjacent
@@ -390,18 +391,18 @@ class InputMixin:
                 if m.alive and abs(m.x - self.player.x) <= 1 and abs(m.y - self.player.y) <= 1
             ]
             if (not _adj_monsters and self.player.mp < self.player.max_mp
-                    and self.player.meditation_left() > 0):
+                    and self.player.meditation_left(self.dungeon_level) > 0):
                 from floor_curve import MEDITATE_PERIOD
                 self._meditate_count = getattr(self, '_meditate_count', 0) + 1
                 if self._meditate_count >= MEDITATE_PERIOD:
                     self._meditate_count = 0
-                    self.player.meditate(1)
-                    if self.player.meditation_left() > 0:
+                    self.player.meditate(1, self.dungeon_level)
+                    if self.player.meditation_left(self.dungeon_level) > 0:
                         self.add_message("You meditate. (+1 MP)", 'info')
                     else:
                         self.add_message(
-                            "You meditate. (+1 MP) The quiet has no more to give "
-                            "until you reach a floor you have not seen.", 'warning')
+                            "You meditate. (+1 MP) This floor's quiet is spent for "
+                            "good. Another floor has its own.", 'warning')
                 else:
                     self.add_message("You meditate...", 'info')
             else:

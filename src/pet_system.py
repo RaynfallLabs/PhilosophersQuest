@@ -667,6 +667,17 @@ class FenrirPet(Pet):
     FENRIR_HP = 1600
     FENRIR_BITE = 800
 
+    def __setstate__(self, state):
+        """A wolf saved with the old numbers (500 health, 45 bite, scaled by
+        floor at the time) is given the written ones."""
+        self.__dict__.update(state)
+        if getattr(self, 'base_damage', 0) != self.FENRIR_BITE:
+            full = int(getattr(self, 'hp', 0)) >= int(getattr(self, 'max_hp', 1))
+            self.max_hp = self.FENRIR_HP
+            self.base_damage = self.FENRIR_BITE
+            if full and getattr(self, 'alive', False):
+                self.hp = self.max_hp
+
     def _calc_max_hp(self) -> int:
         return self.FENRIR_HP
 
