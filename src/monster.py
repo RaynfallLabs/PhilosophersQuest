@@ -156,6 +156,9 @@ class Monster:
         self.fury_per_attack: float = float(defn.get('fury_per_attack', 0.0))
         self.fury_cap: float = float(defn.get('fury_cap', 1.0))
         self.fury_message: str = str(defn.get('fury_message', '') or '')
+        # A monster's own chance to land a blow that failed its roll (four
+        # carry one). `_min_hit` read this attribute and nothing set it.
+        self.min_hit_chance = defn.get('min_hit_chance')
         self._fury_swings: int = 0
         self._fury_told: int = 0
 
@@ -330,7 +333,7 @@ class Monster:
         'can_charge': False, 'charge_bonus_mult': 1.5, '_charge_ready': False,
         'recovers_when_left': False, '_unhurt_turns': 0, '_recovered_note': False, '_left_at_turn': None,
         'fury_per_attack': 0.0, 'fury_cap': 1.0, '_fury_swings': 0, '_fury_told': 0,
-        'fury_message': '',
+        'fury_message': '', 'min_hit_chance': None,
         'pack_dependent': False, 'pack_min_allies': 1,
         'prefers_flank': False,
         'can_phase_blink': False, 'phase_blink_chance': 0.30,

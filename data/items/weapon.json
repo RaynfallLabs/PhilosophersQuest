@@ -433,7 +433,7 @@
     "weapon_class_chain": "normal",
     "id_level": 0,
     "chain_exponent": 1.15,
-    "dragon_bonus_damage": "2d8"
+    "dragon_bonus_damage": "14d8"
   },
   "broken_gram": {
     "name": "Broken Blade of Gram",
@@ -1836,9 +1836,14 @@
     "weapon_class_chain": "finesse",
     "design_notes": "Trickster/nimble archetype: Hermes' gift, quick footwork then a single decisive separation.",
     "skip_chain_warmup_vs_tag": [
-      "gaze",
-      "aberration",
-      "petrification"
+      "medusa_gorgon",
+      "medusa",
+      "basilisk",
+      "basilisk_lesser",
+      "elder_basilisk",
+      "floating_eye",
+      "catoblepas",
+      "cockatrice"
     ],
     "petrify_on_crit": true,
     "chain_exponent": 1.15
@@ -2805,7 +2810,7 @@
     "_curve_note": "Redistributed: peak=55, base=13 (= curve.weapon_base_damage(55) x 1.5), min_level=43, quiz_tier=3.",
     "design_notes": "Sniper/precise archetype: the theoretical blade, patient and undemonstrated until at last it is.",
     "chain_exponent": 1.15,
-    "dragon_bonus_damage": "1d8"
+    "dragon_bonus_damage": "5d8"
   },
   "kladenets": {
     "name": "Samosek",
@@ -3252,7 +3257,7 @@
   },
   "naegling": {
     "name": "Naegling",
-    "class": "axe",
+    "class": "sword",
     "variant": "1h",
     "tier": 3,
     "material": "legendary",
@@ -3321,7 +3326,7 @@
     "_curve_note": "Redistributed: peak=54, base=13 (= curve.weapon_base_damage(54) x 1.55), min_level=42, quiz_tier=3.",
     "design_notes": "Brute/crushing archetype: Beowulf's grip was always too strong, heavy from the first cut as the steel braces for the end.",
     "chain_exponent": 1.15,
-    "dragon_bonus_damage": "1d8"
+    "dragon_bonus_damage": "13d8"
   },
   "punch_in_the_face": {
     "name": "Punch in the Face",
@@ -4439,9 +4444,9 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "bonus_damage_vs_tag": {
-      "demon": "9d8",
-      "undead": "4d8",
-      "evil": "4d8"
+      "demon": "48d8",
+      "undead": "24d8",
+      "evil": "24d8"
     },
     "id_level": 0,
     "chain_exponent": 1.15
@@ -5773,7 +5778,6 @@
     "unidentified_name": "a long bright sword engraved with seven stars",
     "identified": false,
     "undead_bonus": 2.5,
-    "on_equip_status": "fear_aura",
     "ignore_resistances": true,
     "lore": "Flame of the West, reforged from the shards of Narsil by the smiths of Imladris. The blade that cut the Ring from Sauron's hand, broken when Isildur fell, sleeping for an Age in Rivendell until the Heir of Elendil came to claim it. The Dead of Dunharrow followed it down the Paths and a city held the line.",
     "_curve_note": "base_damage = curve.weapon_base_damage(84) x 1.6 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F80-89 Fenrir-era band fill; signature LOTR Northern-fantasy entry.",
@@ -5927,7 +5931,7 @@
     "unidentified_name": "a long lance with a lump of lead on its point",
     "identified": false,
     "burn_chance": 0.2,
-    "beast_bonus_damage": "2d6",
+    "beast_bonus_damage": "7d6",
     "lore": "Tipped with a lump of lead, this is the lance Bellerophon couched from the back of Pegasus when he charged the Chimera. The monster's own fire melted the lead in its throat, and the molten metal did the killing the spearhead alone could not. Pride later threw Bellerophon off the winged horse; the lance survived him.",
     "_curve_note": "base_damage = curve.weapon_base_damage(42) x 1.6 unique-mult. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F40-49 Medusa-era band fill.",
     "stunChance": 0.0,
@@ -6002,7 +6006,7 @@
     "value": 600,
     "unidentified_name": "a notched bronze sword with a great tooth set in the pommel",
     "identified": false,
-    "dragon_bonus_damage": "1d8",
+    "dragon_bonus_damage": "6d8",
     "bleed_chance": 0.2,
     "lore": "Cadmus of Tyre slew the great water-dragon of Ares at the spring that would water Thebes. Athena told him to sow the teeth in the furrow; the Sown Men sprang up armed and killed each other until five remained to found the city. The sword that opened the dragon is the same sword that opened the founding line.",
     "_curve_note": "base_damage = curve.weapon_base_damage(44) x 1.5 unique-mult. Class: normal 5-rung [0.50, 0.85, 1.00, 1.45, 2.00]. F40-49 Medusa-era band fill.",
@@ -6084,7 +6088,7 @@
     "value": 1920,
     "unidentified_name": "a long pale sword in a jeweled, rune-cut scabbard",
     "identified": false,
-    "goblin_bonus_damage": "2d8",
+    "goblin_bonus_damage": "33d8",
     "glows_near_orcs": true,
     "burn_chance": 0.2,
     "lore": "Foe-Hammer, the orc-cleaver. Forged in Gondolin during the First Age, lost when the hidden city burned, recovered from a stone-troll's hoard in the wilderlands. Gandalf carried it through Moria and into the deep where the Balrog waited. The blade glows blue when goblins are near, which is most of the time, this far down.",
@@ -6108,7 +6112,11 @@
       "orc",
       "goblinoid",
       "goblin"
-    ]
+    ],
+    "bonus_damage_vs_tag": {
+      "goblinoid": "33d8",
+      "orc": "33d8"
+    }
   },
   "hector_javelin": {
     "name": "Hector's Javelin",
@@ -6182,7 +6190,7 @@
       "61-80": 0,
       "81-100": 0
     },
-    "beast_bonus_damage": "1d6"
+    "beast_bonus_damage": "3d6"
   },
   "heracles_club": {
     "name": "Heracles's Olive-Club",
@@ -6241,7 +6249,7 @@
     "identified": false,
     "stun_chance": 0.35,
     "knockback": true,
-    "beast_bonus_damage": "1d10",
+    "beast_bonus_damage": "6d10",
     "lore": "Heracles cut this club himself from a wild olive tree near Nemea, on the way to his first labour. The Nemean Lion's hide turned every arrow and blade he tried, so he stunned it with the club and strangled it. He carried the same piece of wood through the eleven labours that followed. It is dark with old work and still smells of resin.",
     "_curve_note": "base_damage = curve.weapon_base_damage(46) x 2.0 unique-mult, signature boss-tier hero weapon. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F40-49 Medusa-era band fill.",
     "stunChance": 0.35,
@@ -6390,7 +6398,7 @@
     "value": 480,
     "unidentified_name": "a broad-bladed ash spear with a crossbar below the head",
     "identified": false,
-    "beast_bonus_damage": "1d6",
+    "beast_bonus_damage": "3d6",
     "bleed_chance": 0.3,
     "lore": "The ash-shafted spear with which Meleager pinned the Calydonian Boar that Artemis sent in vengeance for a forgotten sacrifice. His mother carried a brand from his birth-fire; when he killed her brothers over Atalanta's prize, she threw it on the hearth, and the hero burned with it. The spear was a king's weapon either way.",
     "_curve_note": "base_damage = curve.weapon_base_damage(26) x 1.8 unique-mult, rounded. Class: heavy 5-rung [0.75, 0.90, 1.00, 1.30, 1.75]. F20-29 Asterion-era band fill.",
@@ -6710,7 +6718,7 @@
       "61-80": 0,
       "81-100": 0
     },
-    "humanoid_bonus_damage": "1d6"
+    "humanoid_bonus_damage": "3d6"
   },
   "cain_club": {
     "name": "Cain's Club",

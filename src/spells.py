@@ -60,7 +60,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Cataclysm', 'effect': 'meteor_swarm', 'power': '6d8',
         'mp_cost': 24, 'tier': 5, 'quiz_tier': 5, 'needs_target': False,
         'spell_family': 'fire',
-        'desc': 'A rain of five meteors -- 6d8 fire damage per meteor, sky-fire everywhere.',
+        'desc': 'A rain of five meteors: 6d8 fire damage shared between them, on everything in sight.',
     },
 
     # ==================================================================

@@ -91,3 +91,39 @@ def test_a_weapon_card_says_which_sums_it_asks():
                               two_handed=False, unique_effect=None)
     text = game_render.RenderMixin._kit_weapon_special(types.SimpleNamespace(), w, 5)
     assert text.startswith('Tier 3 Sums')
+
+
+# ------------------------------------------- Death's chase, measured on real maps
+
+def test_death_follows_up_the_stair_instead_of_waiting_in_ambush():
+    """He was placed 6 tiles from the arrival stair: on the player's own
+    path on 42% of floors, with 96% of his blows inside twelve turns."""
+    assert floor_curve.DEATH_ARRIVAL_DELAY == {50: 6, 75: 5, 100: 4, 125: 3}
+    assert floor_curve.death_arrival_delay(125) < floor_curve.death_arrival_delay(50)
+    main = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    i = main.index('def _place_death_on_level')
+    body = main[i:main.index('def _death_steps_onto_the_floor')]
+    assert 'd._arrive_in = death_arrival_delay(' in body and 'range(6, 12)' not in body
+    combat = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
+    assert 'self._death_steps_onto_the_floor()' in combat
+    assert '(dm.x, dm.y) == (self.player.x, self.player.y)' in combat     # no safe square under him
+
+
+def test_dead_mechanics_found_by_the_audit_are_wired():
+    from monster import Monster
+    d = _defs()
+    for mid in ('blood_archon', 'cult_zealot'):
+        m = Monster(dict(d[mid], id=mid), 1, 1)
+        assert m.min_hit_chance == d[mid]['min_hit_chance']
+        assert m._min_hit() == d[mid]['min_hit_chance']
+    src = open(os.path.join(ROOT, 'src', 'combat.py'), encoding='utf-8').read()
+    i = src.index("Cow King's Horns")
+    assert 'if result.score >= 1:' in src[i:i + 600]              # never turns a miss into a hit
+    import items
+    assert items._material_resists({'resistances': ['fire', 'bludgeon']}) == {'fire': 0.75, 'blunt': 0.75}
+    with open(os.path.join(ROOT, 'data', 'items', 'weapon.json'), encoding='utf-8') as f:
+        w = json.load(f)
+    assert 'medusa_gorgon' in w['harpe']['skip_chain_warmup_vs_tag']
+    assert _mean(w['gram']['dragon_bonus_damage']) > 0.25 * w['gram']['base_damage']
+    glam = next(x for x in items.load_items('weapon') if x.id == 'glamdring')
+    assert {'goblin', 'goblinoid', 'orc'} <= set(glam.bonus_damage_vs_tag)

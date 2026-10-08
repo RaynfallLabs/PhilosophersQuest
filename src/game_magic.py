@@ -783,7 +783,7 @@ class MagicMixin:
             elif effect == 'death_ray':
                 # 70% chance instant kill; remaining HP otherwise. Bosses immune to instant kill.
                 is_boss = _is_big_foe(target)
-                if not is_boss and _rng.random() < 0.70:
+                if not is_boss and _rng.random() < 0.85:      # the death ray is the surer of the two
                     target.hp = 0
                     target.alive = False
                     self.add_message(f"{the_name(target)} is slain instantly by the death ray!", 'success')
@@ -930,7 +930,7 @@ class MagicMixin:
             elif effect == 'disintegrate':
                 # 85% instant kill. Bosses immune to instant kill, take max_hp/3 instead.
                 is_boss = _is_big_foe(target)
-                if not is_boss and _rng.random() < 0.85:
+                if not is_boss and _rng.random() < 0.70:
                     target.hp = 0
                     target.alive = False
                     self.add_message(f"{the_name(target)} is disintegrated!", 'success')
@@ -3113,11 +3113,8 @@ class MagicMixin:
                 self.player.add_effect('clairvoyant', clair_dur)
                 self.add_message(
                     f"Your vision extends to sense all creatures for {clair_dur} turns!", 'success')
-            if _tstep >= 3:
-                detect_dur = [0, 0, 0, 30, 60][_tstep]
-                self.player.add_effect('detect_monsters', detect_dur)
-                self.add_message(
-                    f"Every living creature lights up in your mind for {detect_dur} turns!", 'success')
+            # (A second status, `detect_monsters`, was applied here and read by
+            # nothing: clairvoyance above is what shows the creatures.)
 
         elif effect == 'dead_sea_map':
             # v2.10.0 Dead Sea Scroll: reveals the LAYOUT of every floor of

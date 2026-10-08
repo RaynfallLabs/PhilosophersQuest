@@ -2062,8 +2062,15 @@ class CombatMixin:
             dm = self.death_monster
             all_m = self.monsters + [dm]
             _pet_occ_d = {(p.x, p.y) for p in self.pets if p.alive}
-            did_attack = dm.take_turn(self.player, self.dungeon, all_m,
-                                      extra_occupied=_pet_occ_d)
+            if not self._death_steps_onto_the_floor():
+                did_attack = False         # still climbing the stair
+            elif (dm.x, dm.y) == (self.player.x, self.player.y):
+                # Standing on his tile was total immunity: "adjacent" did not
+                # include the same square, so he neither struck nor moved.
+                did_attack = True
+            else:
+                did_attack = dm.take_turn(self.player, self.dungeon, all_m,
+                                          extra_occupied=_pet_occ_d)
             if did_attack:
                 dmg, msg = dm.attack(self.player)
                 self.add_message(msg, 'danger')

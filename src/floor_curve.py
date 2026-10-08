@@ -190,6 +190,14 @@ def natural_regen(max_hp: int) -> int:
 # run by itself. Not simulated (the chase is geometry); confirm by play.
 DEATH_REAP_SHARE = 0.08
 
+# Turns after the player reaches a floor on the climb before Death steps off
+# the stair behind them, by his speed (50 / 75 / 100 / 125 percent).
+DEATH_ARRIVAL_DELAY = {50: 6, 75: 5, 100: 4, 125: 3}
+
+
+def death_arrival_delay(speed_pct: int) -> int:
+    return DEATH_ARRIVAL_DELAY.get(int(speed_pct), 4)
+
 
 # A pet's health and bite are real numbers by its own level: data/pet_growth.json.
 PET_REGEN_SHARE = 0.01        # of a pet's max HP, every third turn

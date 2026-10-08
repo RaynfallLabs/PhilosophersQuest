@@ -11,7 +11,7 @@
   "peak_weight": 2.0,
   "min_level": 5,
   "damage_mult": 0.95,
-  "weight_mult": 1.00,
+  "weight_mult": 1.0,
   "max_enchant": 2,
   "color": [
     120,
@@ -24,10 +24,7 @@
   ],
   "weaknesses": [],
   "vulnerabilities": [],
-  "effective_against": [
-    "ice_creature",
-    "frost_creature"
-  ],
+  "effective_against": [],
   "compatible_weapon_classes": [
     "dagger",
     "rapier",

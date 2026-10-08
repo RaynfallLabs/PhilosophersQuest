@@ -120,7 +120,7 @@ def test_ammunition_and_bonus_dice_are_real_numbers_in_the_data():
     with open(os.path.join(ROOT, 'data', 'items', 'weapon.json'), encoding='utf-8') as f:
         sword = json.load(f)['sword_of_michael']
     assert sword['abaddon_bonus_damage'] == '22d10'
-    assert sword['bonus_damage_vs_tag']['demon'] == '9d8'
+    assert sword['bonus_damage_vs_tag']['demon'] == '48d8'       # about a third of its base
 
 
 def test_starting_constitution_is_worth_what_every_other_point_is():

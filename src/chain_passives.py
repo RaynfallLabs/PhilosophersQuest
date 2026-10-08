@@ -268,7 +268,10 @@ def get_reflect_spell_chance(player) -> float:
     """0..1 chance to reflect an incoming spell. Stacks additively."""
     a = float(sum_passive_values(player, 'reflect_spell'))
     b = float(sum_passive_values(player, 'spell_reflect'))
-    return min(1.0, (a + b) / 100.0)
+    # A shield's own top-level `spell_reflect` (a 0..1 chance): four shields
+    # carry it and only the chain-passive form was ever read.
+    own = float(getattr(getattr(player, 'shield', None), 'spell_reflect', 0.0) or 0.0)
+    return min(1.0, (a + b) / 100.0 + own)
 
 
 def get_pacify_demon_chance(player) -> float:

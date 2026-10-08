@@ -2213,7 +2213,7 @@
         "name": "Curse Bolt",
         "damage": "2d8+3",
         "type": "magic",
-        "effect": "cursed",
+        "effect": "weakened",
         "effect_chance": 0.45,
         "effect_duration": 4
       },
@@ -24305,7 +24305,7 @@
         "name": "Void Breath",
         "damage": "5d10+22",
         "type": "necrotic",
-        "effect": "cursed",
+        "effect": "weakened",
         "effect_chance": 0.4,
         "effect_duration": 5
       },
@@ -24587,7 +24587,7 @@
         "name": "Entropy Touch",
         "damage": "5d10+22",
         "type": "drain",
-        "effect": "cursed",
+        "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 4
       },
@@ -26491,7 +26491,7 @@
         "name": "Two-Handed Cleaver",
         "damage": "2d8",
         "type": "slash",
-        "effect": "cursed",
+        "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 4
       },
@@ -28618,7 +28618,7 @@
         "name": "Infernal Contract",
         "damage": "3d10+13",
         "type": "drain",
-        "effect": "cursed",
+        "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 6
       }

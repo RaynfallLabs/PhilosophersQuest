@@ -896,9 +896,19 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         chain = result.score
 
         # Cow King's Horns (or any armor with chain_bonus): free chain head start
-        for slot in getattr(player, 'armor_slots', []):
-            if slot and getattr(slot, 'chain_bonus', 0):
-                chain += slot.chain_bonus
+        # Only on an attack that lands: added to a chain of 0 it turned every
+        # wrong first answer into a hit, and combat never does a sum for you.
+        if result.score >= 1:
+            for slot in getattr(player, 'armor_slots', []):
+                if slot and getattr(slot, 'chain_bonus', 0):
+                    chain += slot.chain_bonus
+            # Chain-equip passive attack_chain_cap_bonus (Ring of Gawain,
+            # Torque of Lugh). It raised a chain cap no weapon has any more.
+            try:
+                from chain_passives import get_attack_chain_cap_bonus
+                chain += int(get_attack_chain_cap_bonus(player) or 0)
+            except ImportError:
+                pass
 
         # Parashu (engine wave 3): chain_no_reset_on_tag carry. After a kill
         # of a matching-tag target, the next attack starts at the same

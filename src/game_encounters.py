@@ -78,6 +78,16 @@ class EncountersMixin:
 
     def _start_cow_encounter(self, cow_monster):
         """Open the cow dialog when player bumps the cow NPC."""
+        if getattr(self, '_cow_level_done', False):
+            # The farm is finished (a save from before the cow was removed
+            # on return could still hold her): she wanders off for good.
+            try:
+                cow_monster.alive = False
+                self.monsters.remove(cow_monster)
+            except (ValueError, AttributeError):
+                pass
+            self.add_message("The Cow Gives You A Long Look And Wanders Off.", 'info')
+            return
         self._active_cow = cow_monster
         self._cow_dialog_phase = 'options'
         self.state = STATE_COW_ENCOUNTER

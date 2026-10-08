@@ -12,7 +12,7 @@
   "spread": 14,
   "peak_weight": 5.0,
   "min_level": 15,
-  "damage_mult": 0.90,
+  "damage_mult": 0.9,
   "weight_mult": 1.05,
   "max_enchant": 5,
   "color": [
@@ -26,7 +26,7 @@
   "vulnerabilities": [],
   "effective_against": [
     "undead",
-    "lycanthrope"
+    "shapeshifter"
   ],
   "special_properties": [
     "bypasses_undead_resistance",

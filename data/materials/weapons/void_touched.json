@@ -11,7 +11,7 @@
   "peak_weight": 1.5,
   "min_level": 85,
   "damage_mult": 1.55,
-  "weight_mult": 0.80,
+  "weight_mult": 0.8,
   "max_enchant": 6,
   "color": [
     60,
@@ -32,8 +32,7 @@
     "holy"
   ],
   "effective_against": [
-    "aberration",
-    "void_spawn"
+    "aberration"
   ],
   "special_properties": [
     "void_aligned",

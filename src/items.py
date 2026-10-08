@@ -193,6 +193,22 @@ ENCHANT_CAP = {
 SPAWN_ENCHANT_CAP_ARMOR = 1
 
 
+MATERIAL_RESIST = 0.75        # damage multiplier for a type an armor material resists
+_RESIST_ALIAS = {'bludgeon': 'blunt'}
+
+
+def _material_resists(mat: dict) -> dict:
+    """An armor material's resistances as {damage type: multiplier}. The
+    material files write them as a list of types (23 of them do), and only a
+    dict was ever accepted, so no common armor resisted anything."""
+    r = mat.get('resistances')
+    if isinstance(r, dict):
+        return dict(r)
+    if isinstance(r, (list, tuple)):
+        return {_RESIST_ALIAS.get(str(t), str(t)): MATERIAL_RESIST for t in r}
+    return {}
+
+
 def effective_enchant_cap(player, slot_name: str) -> int:
     """ENCHANT_CAP lookup that respects Panoply of Hephaestus (divine_smithing).
 
@@ -203,6 +219,12 @@ def effective_enchant_cap(player, slot_name: str) -> int:
     cap = ENCHANT_CAP.get(slot_name, 1)
     if player is None:
         return cap
+    # An item's own `max_enchant` lowers the cap for it (Broken Gram and Dad's
+    # punch say 0); it never raises it above the slot's.
+    _own = getattr(player, 'weapon', None) if slot_name == 'weapon' else None
+    _own_cap = getattr(_own, 'max_enchant_own', None)
+    if _own_cap is not None:
+        cap = min(cap, int(_own_cap))
     try:
         from armor_procs import proc_value
         bonus = int(proc_value(player, 'divine_smithing') or 0)
@@ -307,6 +329,10 @@ class Weapon(Item):
         # New structured fields (camelCase keys from JSON, fallback to legacy snake_case)
         self.weapon_class: str          = defn.get('class', defn.get('weapon_class', 'sword'))
         self.can_be_cursed: bool        = bool(defn.get('can_be_cursed', True))
+        # Only a unique states its own cap (commons take the material's).
+        self.max_enchant_own = (defn.get('max_enchant')
+                                if defn.get('is_unique') and defn.get('max_enchant') is not None
+                                else None)
         self.variant: str               = defn.get('variant', '1h')
         self.tier: int                  = int(defn.get('tier', 1))
         self.material: str              = defn.get('material', 'iron')
@@ -766,6 +792,7 @@ class Shield(Item):
         self.quiz_tier: int      = int(defn.get('quiz_tier', 1))
         self.damage_resistances: dict = defn.get('damage_resistances', {})
         self.can_be_cursed: bool = bool(defn.get('can_be_cursed', True))
+        self.spell_reflect: float = float(defn.get('spell_reflect', 0.0) or 0.0)
         self.id_level: int = int(defn.get("id_level", 5 if defn.get("identified", False) else 0))
         self.unidentified_name: str = defn.get('unidentified_name', 'an unknown shield')
         self.container_loot_tier: str = defn.get('container_loot_tier', defn.get('containerLootTier', 'common'))
@@ -2022,7 +2049,8 @@ def instantiate_armor(template_id: str, material_id: str, *,
         'material': material_id,
         'ac_bonus': base_ac + material_ac,
         'enchant_bonus': max(0, min(enchant, int(mat.get('max_enchant', 2)))),
-        'damage_resistances': mat.get('resistances', {}) if isinstance(mat.get('resistances'), dict) else {},
+        'damage_resistances': _material_resists(mat),
+        'can_be_cursed': bool(mat.get('can_be_cursed', True)),
         'identified': False,
         'unidentified_name': compose_unidentified_name(
             mat.get('unidentified_descriptor', mat['name']), tpl['name'],
