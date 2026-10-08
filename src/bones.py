@@ -243,6 +243,8 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
         if gear_entry.get('preserved'):
             item.buc = 'uncursed'
             item.buc_known = True  # the inscription is visible — "preserved by the Pharaoh"
+        elif not getattr(item, 'can_be_cursed', True):
+            item.buc = 'uncursed'     # a relic that cannot be cursed stays clean in the grave
         else:
             item.buc = 'cursed'
             item.buc_known = False

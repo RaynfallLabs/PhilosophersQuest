@@ -10,7 +10,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 10.0,
@@ -51,7 +51,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -94,7 +94,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "grid_bug",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 12.0,
@@ -136,7 +136,7 @@
     "hp": "6d8+6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -180,7 +180,7 @@
     "hp": "6d6",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -224,7 +224,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 6.0,
@@ -270,7 +270,7 @@
     "hp": "6d6",
     "speed": 6,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -317,7 +317,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -372,7 +372,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -430,7 +430,7 @@
     "hp": "7d8+7",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 8,
     "spread": 2,
     "peak_weight": 0.0,
@@ -490,7 +490,7 @@
     "attacks": [
       {
         "name": "Crushing Maw",
-        "damage": "1d8+9",
+        "damage": "1d8+8",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.25,
@@ -547,7 +547,7 @@
     "attacks": [
       {
         "name": "Devouring Embrace",
-        "damage": "3d10+25",
+        "damage": "3d10+21",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.35,
@@ -555,7 +555,7 @@
       },
       {
         "name": "Soul Drain",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.5,
@@ -600,7 +600,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "cowardly",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -645,7 +645,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 10.0,
@@ -687,7 +687,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -733,7 +733,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 6.0,
@@ -781,7 +781,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -828,7 +828,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 6.0,
@@ -869,7 +869,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -910,7 +910,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -951,7 +951,7 @@
     "hp": "2d10+6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -1005,7 +1005,7 @@
     "hp": "2d10+6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -1049,7 +1049,7 @@
     "hp": "2d10+6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -1097,7 +1097,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -1147,7 +1147,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -1188,7 +1188,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -1231,7 +1231,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -1281,7 +1281,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -1324,7 +1324,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -1369,7 +1369,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -1410,7 +1410,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 15,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -1461,7 +1461,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -1518,7 +1518,7 @@
     "hp": "9d8",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 14,
+    "thac0": 18,
     "peak_floor": 5,
     "spread": 4,
     "peak_weight": 4.0,
@@ -1571,7 +1571,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -1617,7 +1617,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -1670,7 +1670,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -1729,7 +1729,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -1780,7 +1780,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -1849,7 +1849,7 @@
     "attacks": [
       {
         "name": "Gore",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.45,
@@ -1889,7 +1889,7 @@
     "hp": "62d8+62",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 6,
+    "thac0": 8,
     "peak_floor": 25,
     "spread": 5,
     "peak_weight": 3.0,
@@ -1949,7 +1949,7 @@
     "attacks": [
       {
         "name": "Snake Bite",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.5,
@@ -2003,7 +2003,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -2066,7 +2066,7 @@
     "attacks": [
       {
         "name": "Fire Slam",
-        "damage": "3d8+9",
+        "damage": "3d8+7",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -2115,7 +2115,7 @@
     "attacks": [
       {
         "name": "Stone Fist",
-        "damage": "3d8+12",
+        "damage": "3d8+10",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.3,
@@ -2164,7 +2164,7 @@
     "attacks": [
       {
         "name": "Lightning Bolt",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "lightning",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -2267,7 +2267,7 @@
     "attacks": [
       {
         "name": "Mind Blast",
-        "damage": "2d8+9",
+        "damage": "2d8+7",
         "type": "psionic",
         "effect": "confused",
         "effect_chance": 0.6,
@@ -2319,7 +2319,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d10+11",
+        "damage": "2d10+9",
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -2378,7 +2378,7 @@
     "attacks": [
       {
         "name": "Accursed Blade",
-        "damage": "3d8+12",
+        "damage": "3d8+10",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -2437,7 +2437,7 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "blunt"
       }
     ],
@@ -2485,7 +2485,7 @@
     "attacks": [
       {
         "name": "Burning Claw",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "fire"
       },
       {
@@ -2537,12 +2537,12 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "slash"
       },
       {
         "name": "Fire Breath",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -2551,12 +2551,12 @@
       },
       {
         "name": "Bite",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "physical"
       },
       {
         "name": "Tail Lash",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.3,
@@ -2604,7 +2604,7 @@
     "attacks": [
       {
         "name": "Paralyzing Ray",
-        "damage": "2d8+24",
+        "damage": "2d8+21",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -2612,7 +2612,7 @@
       },
       {
         "name": "Confusion Ray",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -2620,7 +2620,7 @@
       },
       {
         "name": "Blinding Ray",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "magic",
         "effect": "blinded",
         "effect_chance": 0.4,
@@ -2628,12 +2628,12 @@
       },
       {
         "name": "Disintegration Ray",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "magic"
       },
       {
         "name": "Slow Ray",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.7,
@@ -2641,7 +2641,7 @@
       },
       {
         "name": "Bite",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "physical"
       }
     ],
@@ -2684,12 +2684,12 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "drain"
       },
       {
         "name": "Charm Gaze",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -2740,17 +2740,17 @@
     "attacks": [
       {
         "name": "Death Touch",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "drain"
       },
       {
         "name": "Cold Bolt",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "cold"
       },
       {
         "name": "Fear Gaze",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.4,
@@ -2802,17 +2802,17 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d8+32",
+        "damage": "3d8+28",
         "type": "slash"
       },
       {
         "name": "Bite",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "physical"
       },
       {
         "name": "Fire Breath",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
@@ -2861,11 +2861,11 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "3d8+32",
+        "damage": "3d8+28",
         "type": "blunt"
       },
       {
-        "damage": "3d8+37",
+        "damage": "3d8+32",
         "type": "poison",
         "name": "Toxic Gas Breath",
         "effect": "poisoned",
@@ -2916,12 +2916,12 @@
     "attacks": [
       {
         "name": "Death Bolt",
-        "damage": "3d8+32",
+        "damage": "3d8+28",
         "type": "drain"
       },
       {
         "name": "Cold Wave",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.6,
@@ -2974,7 +2974,7 @@
     "attacks": [
       {
         "name": "Hellfire",
-        "damage": "3d8+32",
+        "damage": "3d8+28",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.8,
@@ -2982,7 +2982,7 @@
       },
       {
         "name": "Rend",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "slash"
       }
     ],
@@ -3029,17 +3029,17 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "5d10+28",
+        "damage": "5d10+23",
         "type": "slash"
       },
       {
         "name": "Bite",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "physical"
       },
       {
         "name": "Frost Breath",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.5,
@@ -3048,7 +3048,7 @@
       },
       {
         "name": "Tail Strike",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.35,
@@ -3056,7 +3056,7 @@
       },
       {
         "name": "Wing Buffet",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -3105,12 +3105,12 @@
     "attacks": [
       {
         "name": "Death Ray",
-        "damage": "5d10+22",
+        "damage": "5d10+18",
         "type": "drain"
       },
       {
         "name": "Withering Curse",
-        "damage": "4d6+14",
+        "damage": "4d6+12",
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 1.0,
@@ -3118,7 +3118,7 @@
       },
       {
         "name": "Cold Nova",
-        "damage": "4d6+14",
+        "damage": "4d6+12",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.7,
@@ -3176,7 +3176,7 @@
     "attacks": [
       {
         "name": "Soul Rend",
-        "damage": "5d10+28",
+        "damage": "5d10+23",
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -3184,7 +3184,7 @@
       },
       {
         "name": "Fear Aura",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.35,
@@ -3192,7 +3192,7 @@
       },
       {
         "name": "Death Gaze",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "drain",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -3243,7 +3243,7 @@
     "attacks": [
       {
         "name": "Chaos Touch",
-        "damage": "5d10+28",
+        "damage": "5d10+23",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.8,
@@ -3251,7 +3251,7 @@
       },
       {
         "name": "Void Claw",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "drain"
       }
     ],
@@ -3297,7 +3297,7 @@
     "attacks": [
       {
         "name": "Soul Drain",
-        "damage": "5d10+28",
+        "damage": "5d10+23",
         "type": "drain",
         "effect": "weakened",
         "effect_chance": 0.4,
@@ -3305,7 +3305,7 @@
       },
       {
         "name": "Terror",
-        "damage": "4d6+17",
+        "damage": "4d6+14",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.35,
@@ -3347,7 +3347,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -3391,7 +3391,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -3438,7 +3438,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -3493,7 +3493,7 @@
     "hp": "6d8+2",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 5.0,
@@ -3542,7 +3542,7 @@
     "hp": "6d8+2",
     "speed": 10,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 5.0,
@@ -3588,7 +3588,7 @@
     "hp": "6d8+2",
     "speed": 14,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 4.0,
@@ -3641,7 +3641,7 @@
     "hp": "35d8-35",
     "speed": 6,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 13,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -3693,7 +3693,7 @@
     "hp": "6d8-6",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -3747,7 +3747,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 3.0,
@@ -3798,7 +3798,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -3848,7 +3848,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -3898,7 +3898,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 5.0,
@@ -3954,7 +3954,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -4070,7 +4070,7 @@
     "hp": "9d8+2",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 4.0,
@@ -4123,7 +4123,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 2.0,
@@ -4175,7 +4175,7 @@
     "hp": "24d8+11",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 1.0,
@@ -4226,7 +4226,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 3.0,
@@ -4275,7 +4275,7 @@
     "hp": "24d8+11",
     "speed": 14,
     "ai_pattern": "ranged",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -4325,7 +4325,7 @@
     "hp": "55d8+36",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 6,
+    "thac0": 8,
     "peak_floor": 23,
     "spread": 5,
     "peak_weight": 1.0,
@@ -4388,7 +4388,7 @@
     "attacks": [
       {
         "name": "Triple Bite",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "shadow"
       },
       {
@@ -4444,7 +4444,7 @@
     "hp": "55d8+36",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 6,
+    "thac0": 8,
     "peak_floor": 23,
     "spread": 5,
     "peak_weight": 1.0,
@@ -4497,7 +4497,7 @@
     "hp": "15d8+10",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -4544,7 +4544,7 @@
     "hp": "55d8+36",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 6,
+    "thac0": 8,
     "peak_floor": 23,
     "spread": 5,
     "peak_weight": 1.0,
@@ -4606,7 +4606,7 @@
     "attacks": [
       {
         "name": "Ice Club",
-        "damage": "3d8+17",
+        "damage": "3d8+14",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.4,
@@ -4663,7 +4663,7 @@
     "attacks": [
       {
         "name": "Flaming Sword",
-        "damage": "3d10+23",
+        "damage": "3d10+19",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.45,
@@ -4712,7 +4712,7 @@
     "hp": "15d8+10",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -4767,7 +4767,7 @@
     "hp": "9d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -4812,7 +4812,7 @@
     "hp": "9d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 4.0,
@@ -4869,7 +4869,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -4924,7 +4924,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -4977,7 +4977,7 @@
     "hp": "38d8+27",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 19,
     "spread": 5,
     "peak_weight": 2.0,
@@ -5033,7 +5033,7 @@
     "hp": "6d6",
     "speed": 14,
     "ai_pattern": "hit_and_run",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 6.0,
@@ -5078,7 +5078,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -5135,7 +5135,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -5187,7 +5187,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -5241,7 +5241,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 1.0,
@@ -5298,7 +5298,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 2.0,
@@ -5350,7 +5350,7 @@
     "hp": "9d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 4.0,
@@ -5405,7 +5405,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -5452,7 +5452,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 1.0,
@@ -5506,7 +5506,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -5560,7 +5560,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -5613,7 +5613,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 4.0,
@@ -5666,7 +5666,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -5719,7 +5719,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -5772,7 +5772,7 @@
     "hp": "9d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 4.0,
@@ -5821,7 +5821,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 3.0,
@@ -5875,7 +5875,7 @@
     "hp": "15d8+10",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -5931,7 +5931,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -5985,7 +5985,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -6041,7 +6041,7 @@
     "hp": "15d8+18",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -6095,7 +6095,7 @@
     "hp": "24d8+19",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 15,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -6148,7 +6148,7 @@
     "hp": "9d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 4.0,
@@ -6196,7 +6196,7 @@
     "hp": "6d8",
     "speed": 14,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -6245,7 +6245,7 @@
     "hp": "15d8+10",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -6302,7 +6302,7 @@
     "hp": "14d8-7",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 3.0,
@@ -6358,7 +6358,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -6412,7 +6412,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -6466,7 +6466,7 @@
     "hp": "24d8+16",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -6521,7 +6521,7 @@
     "hp": "9d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 14,
+    "thac0": 18,
     "peak_floor": 5,
     "spread": 4,
     "peak_weight": 3.0,
@@ -6574,7 +6574,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -6625,7 +6625,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -6685,7 +6685,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -6741,7 +6741,7 @@
     "hp": "38d8+27",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 19,
     "spread": 5,
     "peak_weight": 2.0,
@@ -6797,7 +6797,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -6851,7 +6851,7 @@
     "hp": "9d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 3.0,
@@ -6902,7 +6902,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -6952,7 +6952,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -7002,7 +7002,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "ambush",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -7052,7 +7052,7 @@
     "hp": "55d8+36",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 6,
+    "thac0": 8,
     "peak_floor": 23,
     "spread": 5,
     "peak_weight": 2.0,
@@ -7115,12 +7115,12 @@
     "attacks": [
       {
         "name": "Flaming Sword",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "fire"
       },
       {
         "name": "Flame Whip",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -7128,7 +7128,7 @@
       },
       {
         "name": "Slam",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical"
       }
     ],
@@ -7175,7 +7175,7 @@
     "attacks": [
       {
         "name": "Blade Flurry",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical"
       },
       {
@@ -7226,7 +7226,7 @@
     "hp": "24d8+16",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -7287,7 +7287,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -7348,7 +7348,7 @@
     "attacks": [
       {
         "name": "Pincers",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical"
       },
       {
@@ -7459,7 +7459,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -7513,7 +7513,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 10.0,
@@ -7573,7 +7573,7 @@
     "hp": "6d8-6",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -7623,7 +7623,7 @@
     "hp": "9d8",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 14,
+    "thac0": 18,
     "peak_floor": 5,
     "spread": 4,
     "peak_weight": 4.0,
@@ -7683,7 +7683,7 @@
     "hp": "9d8-6",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 3.0,
@@ -7744,7 +7744,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -7797,7 +7797,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 12.0,
@@ -7849,7 +7849,7 @@
     "hp": "24d8+11",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 4.0,
@@ -7906,7 +7906,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 5.0,
@@ -7963,7 +7963,7 @@
     "hp": "24d8+19",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 4.0,
@@ -8022,7 +8022,7 @@
     "hp": "24d8+16",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -8082,7 +8082,7 @@
     "hp": "15d8+10",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -8139,7 +8139,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 9.0,
@@ -8188,7 +8188,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 12.0,
@@ -8243,7 +8243,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "physical",
         "effect": "poisoned",
         "effect_chance": 0.7,
@@ -8251,12 +8251,12 @@
       },
       {
         "name": "Claws",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "physical"
       },
       {
         "name": "Tail Crush",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -8264,7 +8264,7 @@
       },
       {
         "name": "Inferno Breath",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -8308,7 +8308,7 @@
     "hp": "24d8+16",
     "speed": 5,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -8363,7 +8363,7 @@
     "hp": "15d8+7",
     "speed": 5,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -8412,7 +8412,7 @@
     "hp": "6d8",
     "speed": 6,
     "ai_pattern": "ambush",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -8458,7 +8458,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 6.0,
@@ -8512,7 +8512,7 @@
     "hp": "24d8+11",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -8558,7 +8558,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -8603,7 +8603,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -8654,7 +8654,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -8706,7 +8706,7 @@
     "hp": "25d8+25",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 8,
+    "thac0": 10,
     "peak_floor": 15,
     "spread": 5,
     "peak_weight": 5.0,
@@ -8756,7 +8756,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -8803,7 +8803,7 @@
     "hp": "6d8-6",
     "speed": 6,
     "ai_pattern": "ambush",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -8850,7 +8850,7 @@
     "hp": "9d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 6.0,
@@ -8900,7 +8900,7 @@
     "hp": "6d8+2",
     "speed": 6,
     "ai_pattern": "ambush",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -8940,7 +8940,7 @@
     "hp": "15d8+10",
     "speed": 6,
     "ai_pattern": "ambush",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -8985,7 +8985,7 @@
     "hp": "15d8+7",
     "speed": 6,
     "ai_pattern": "ambush",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -9031,7 +9031,7 @@
     "hp": "24d8+11",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -9085,7 +9085,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -9135,7 +9135,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -9181,7 +9181,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 5.0,
@@ -9231,7 +9231,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -9282,7 +9282,7 @@
     "hp": "9d8+17",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 5.0,
@@ -9328,7 +9328,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -9376,7 +9376,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -9434,7 +9434,7 @@
     "hp": "6d8+6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 10.0,
@@ -9483,7 +9483,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -9535,7 +9535,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 9.0,
@@ -9585,7 +9585,7 @@
     "hp": "6d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 7.0,
@@ -9637,7 +9637,7 @@
     "hp": "57d8+53",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 5,
+    "thac0": 7,
     "peak_floor": 24,
     "spread": 5,
     "peak_weight": 3.0,
@@ -9696,7 +9696,7 @@
     "hp": "25d8+25",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 8,
+    "thac0": 10,
     "peak_floor": 15,
     "spread": 5,
     "peak_weight": 3.0,
@@ -9748,7 +9748,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -9799,7 +9799,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "ambush",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -9849,7 +9849,7 @@
     "hp": "9d8+2",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 6.0,
@@ -9909,7 +9909,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "ambush",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -9956,7 +9956,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 5.0,
@@ -10003,7 +10003,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "ambush",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 5.0,
@@ -10049,7 +10049,7 @@
     "hp": "24d8+16",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -10102,7 +10102,7 @@
     "hp": "6d8+6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 9.0,
@@ -10153,7 +10153,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -10212,7 +10212,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -10276,7 +10276,7 @@
     "hp": "2d10+6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -10335,7 +10335,7 @@
     "hp": "2d10+6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -10394,7 +10394,7 @@
     "hp": "17d8",
     "speed": 4,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 6.0,
@@ -10445,7 +10445,7 @@
     "hp": "2d10+6",
     "speed": 6,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -10502,7 +10502,7 @@
     "hp": "6d6",
     "speed": 5,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 10.0,
@@ -10551,7 +10551,7 @@
     "hp": "9d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -10608,7 +10608,7 @@
     "hp": "6d6",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -10657,7 +10657,7 @@
     "hp": "2d10+6",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 6.0,
@@ -10714,7 +10714,7 @@
     "hp": "9d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 14,
+    "thac0": 18,
     "peak_floor": 5,
     "spread": 4,
     "peak_weight": 3.0,
@@ -10772,7 +10772,7 @@
     "hp": "6d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -10830,7 +10830,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -10878,7 +10878,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 5.0,
@@ -10937,7 +10937,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -10987,7 +10987,7 @@
     "hp": "6d8+2",
     "speed": 14,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 4.0,
@@ -11037,7 +11037,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -11096,7 +11096,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -11144,7 +11144,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -11201,7 +11201,7 @@
     "hp": "9d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 14,
+    "thac0": 18,
     "peak_floor": 5,
     "spread": 4,
     "peak_weight": 3.0,
@@ -11260,7 +11260,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -11318,7 +11318,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -11377,7 +11377,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 3.0,
@@ -11443,7 +11443,7 @@
     "attacks": [
       {
         "name": "Wail",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.6,
@@ -11494,7 +11494,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -11552,7 +11552,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -11613,7 +11613,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -11673,7 +11673,7 @@
     "hp": "25d8+25",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 8,
+    "thac0": 10,
     "peak_floor": 15,
     "spread": 5,
     "peak_weight": 2.0,
@@ -11742,7 +11742,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 2.0,
@@ -11804,7 +11804,7 @@
     "hp": "24d8+11",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -11862,7 +11862,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -11920,7 +11920,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -11970,7 +11970,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -12027,7 +12027,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -12084,7 +12084,7 @@
     "hp": "9d8",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 14,
+    "thac0": 18,
     "peak_floor": 5,
     "spread": 4,
     "peak_weight": 3.0,
@@ -12141,7 +12141,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -12200,7 +12200,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -12257,7 +12257,7 @@
     "hp": "6d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 5.0,
@@ -12306,7 +12306,7 @@
     "hp": "15d8+10",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -12364,7 +12364,7 @@
     "hp": "15d8+18",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -12423,7 +12423,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -12482,7 +12482,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -12539,7 +12539,7 @@
     "hp": "6d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -12596,7 +12596,7 @@
     "hp": "6d8-6",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -12654,7 +12654,7 @@
     "hp": "24d8+11",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -12712,7 +12712,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -12778,7 +12778,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -12846,7 +12846,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical",
         "effect": null,
         "effect_chance": 0.0,
@@ -12915,7 +12915,7 @@
     "attacks": [
       {
         "name": "Death Bite",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "drain",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -12923,7 +12923,7 @@
       },
       {
         "name": "Lich Breath",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.45,
@@ -12932,7 +12932,7 @@
       },
       {
         "name": "Wing Buffet",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.3,
@@ -12976,7 +12976,7 @@
     "hp": "9d8-6",
     "speed": 14,
     "ai_pattern": "cowardly",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 4.0,
@@ -13025,7 +13025,7 @@
     "hp": "9d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 3.0,
@@ -13083,7 +13083,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -13142,7 +13142,7 @@
     "hp": "55d8+36",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 6,
+    "thac0": 8,
     "peak_floor": 23,
     "spread": 5,
     "peak_weight": 2.0,
@@ -13209,7 +13209,7 @@
     "attacks": [
       {
         "name": "Wing Buffet",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.3,
@@ -13217,7 +13217,7 @@
       },
       {
         "name": "Deathscream",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.45,
@@ -13225,7 +13225,7 @@
       },
       {
         "name": "Desecrating Touch",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "shadow",
         "effect": "blinded",
         "effect_chance": 0.4,
@@ -13268,7 +13268,7 @@
     "hp": "6d8",
     "speed": 6,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -13316,7 +13316,7 @@
     "hp": "6d6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 10.0,
@@ -13365,7 +13365,7 @@
     "hp": "6d6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -13412,7 +13412,7 @@
     "hp": "2d10+6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -13459,7 +13459,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -13515,7 +13515,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -13563,7 +13563,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -13613,7 +13613,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 7.0,
@@ -13658,7 +13658,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -13702,7 +13702,7 @@
     "hp": "6d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -13750,7 +13750,7 @@
     "hp": "24d8+19",
     "speed": 12,
     "ai_pattern": "ambush",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -13805,7 +13805,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "ambush",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -13850,7 +13850,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "ambush",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 9.0,
@@ -13905,7 +13905,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -13958,7 +13958,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -14006,7 +14006,7 @@
     "hp": "6d8-6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -14058,7 +14058,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 6.0,
@@ -14109,7 +14109,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -14162,7 +14162,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 9.0,
@@ -14210,7 +14210,7 @@
     "hp": "6d8+2",
     "speed": 6,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 7.0,
@@ -14258,7 +14258,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -14304,7 +14304,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 8.0,
@@ -14350,7 +14350,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -14398,7 +14398,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -14446,7 +14446,7 @@
     "hp": "9d8-6",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -14494,7 +14494,7 @@
     "hp": "24d8+16",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 15,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 4.0,
@@ -14547,7 +14547,7 @@
     "hp": "31d8+26",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 14,
     "peak_floor": 17,
     "spread": 5,
     "peak_weight": 2.0,
@@ -14610,7 +14610,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -14663,7 +14663,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -14716,7 +14716,7 @@
     "hp": "15d8+10",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -14777,7 +14777,7 @@
     "hp": "9d8+2",
     "speed": 14,
     "ai_pattern": "ranged",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 5.0,
@@ -14830,7 +14830,7 @@
     "hp": "6d8",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -14872,7 +14872,7 @@
     "hp": "6d8-6",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -14928,7 +14928,7 @@
     "hp": "6d8",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -14973,7 +14973,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -15029,7 +15029,7 @@
     "attacks": [
       {
         "name": "Talon Crush",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.6,
@@ -15077,7 +15077,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 9.0,
@@ -15126,7 +15126,7 @@
     "hp": "6d8-6",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -15176,7 +15176,7 @@
     "hp": "15d8+7",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -15228,7 +15228,7 @@
     "hp": "6d6",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -15275,7 +15275,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -15322,7 +15322,7 @@
     "hp": "6d8",
     "speed": 14,
     "ai_pattern": "ranged",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -15370,7 +15370,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 4.0,
@@ -15424,7 +15424,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 4.0,
@@ -15478,7 +15478,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -15539,7 +15539,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -15597,7 +15597,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -15647,7 +15647,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 5.0,
@@ -15704,7 +15704,7 @@
     "hp": "6d8+2",
     "speed": 14,
     "ai_pattern": "cowardly",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 6.0,
@@ -15756,7 +15756,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 6.0,
@@ -15807,7 +15807,7 @@
     "hp": "2d10+6",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -15868,7 +15868,7 @@
     "attacks": [
       {
         "name": "Wave Crash",
-        "damage": "2d10+13",
+        "damage": "2d10+11",
         "type": "blunt",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -15925,7 +15925,7 @@
     "attacks": [
       {
         "name": "Wind Slash",
-        "damage": "2d10+13",
+        "damage": "2d10+11",
         "type": "slash",
         "effect": "confused",
         "effect_chance": 0.3,
@@ -15970,7 +15970,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -16025,7 +16025,7 @@
     "hp": "15d8+7",
     "speed": 6,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -16139,7 +16139,7 @@
     "hp": "15d8+7",
     "speed": 6,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -16195,7 +16195,7 @@
     "hp": "9d8-6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 6.0,
@@ -16246,7 +16246,7 @@
     "hp": "2d10+6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 7.0,
@@ -16294,7 +16294,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 9.0,
@@ -16341,7 +16341,7 @@
     "hp": "15d8+10",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -16403,7 +16403,7 @@
     "hp": "6d8-6",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -16460,7 +16460,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 5.0,
@@ -16508,7 +16508,7 @@
     "hp": "6d8",
     "speed": 6,
     "ai_pattern": "sessile",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 7.0,
@@ -16561,7 +16561,7 @@
     "hp": "15d8+7",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -16616,7 +16616,7 @@
     "hp": "24d8+19",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -16673,7 +16673,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 3.0,
@@ -16723,7 +16723,7 @@
     "hp": "15d8+7",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -16779,7 +16779,7 @@
     "hp": "6d8",
     "speed": 14,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -16831,7 +16831,7 @@
     "hp": "6d8+2",
     "speed": 12,
     "ai_pattern": "hit_and_run",
-    "thac0": 16,
+    "thac0": 20,
     "peak_floor": 3,
     "spread": 4,
     "peak_weight": 5.0,
@@ -16881,7 +16881,7 @@
     "hp": "57d8+53",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 5,
+    "thac0": 7,
     "peak_floor": 24,
     "spread": 5,
     "peak_weight": 2.0,
@@ -16941,7 +16941,7 @@
     "hp": "6d6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 5.0,
@@ -16998,7 +16998,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 2.0,
@@ -17048,7 +17048,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 3.0,
@@ -17097,7 +17097,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -17146,7 +17146,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -17190,7 +17190,7 @@
     "hp": "14d8-7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 2.0,
@@ -17239,7 +17239,7 @@
     "hp": "6d8",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 4.0,
@@ -17280,7 +17280,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -17329,7 +17329,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 12,
+    "thac0": 16,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -17375,7 +17375,7 @@
     "hp": "2d10+6",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 17,
+    "thac0": 21,
     "peak_floor": 1,
     "spread": 4,
     "peak_weight": 4.0,
@@ -17430,7 +17430,7 @@
     "hp": "9d8+2",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 6,
     "spread": 4,
     "peak_weight": 3.0,
@@ -17478,7 +17478,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -17534,7 +17534,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -17588,7 +17588,7 @@
     "attacks": [
       {
         "name": "Stone Fist",
-        "damage": "3d8+12",
+        "damage": "3d8+10",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.35,
@@ -17694,7 +17694,7 @@
     "attacks": [
       {
         "name": "Greatsword",
-        "damage": "3d10+33",
+        "damage": "3d10+29",
         "type": "lightning",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -17702,7 +17702,7 @@
       },
       {
         "name": "Thunderstrike",
-        "damage": "1d8+9",
+        "damage": "1d8+8",
         "type": "lightning",
         "effect": "slowed",
         "effect_chance": 0.5,
@@ -17741,7 +17741,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 2.0,
@@ -17787,7 +17787,7 @@
     "hp": "15d8+18",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 2.0,
@@ -17833,7 +17833,7 @@
     "hp": "24d8+16",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 15,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 3.0,
@@ -17887,7 +17887,7 @@
     "hp": "9d8-6",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 4,
     "spread": 4,
     "peak_weight": 4.0,
@@ -17945,7 +17945,7 @@
     "hp": "9d8+17",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 2.0,
@@ -18004,7 +18004,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -18061,7 +18061,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 3.0,
@@ -18109,7 +18109,7 @@
     "hp": "15d8+18",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 10,
+    "thac0": 14,
     "peak_floor": 11,
     "spread": 4,
     "peak_weight": 2.0,
@@ -18252,7 +18252,7 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical"
       },
       {
@@ -18325,17 +18325,17 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "physical"
       },
       {
         "name": "Bite",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical"
       },
       {
         "name": "Inferno Breath",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -18344,7 +18344,7 @@
       },
       {
         "name": "Tail Strike",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.3,
@@ -18352,7 +18352,7 @@
       },
       {
         "name": "Wing Buffet",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.2,
@@ -18392,7 +18392,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 3.0,
@@ -18445,7 +18445,7 @@
     "hp": "14d8-7",
     "speed": 12,
     "ai_pattern": "ranged",
-    "thac0": 11,
+    "thac0": 15,
     "peak_floor": 8,
     "spread": 4,
     "peak_weight": 3.0,
@@ -18499,7 +18499,7 @@
     "hp": "6d8",
     "speed": 10,
     "ai_pattern": "aggressive",
-    "thac0": 15,
+    "thac0": 19,
     "peak_floor": 2,
     "spread": 4,
     "peak_weight": 3.0,
@@ -18551,7 +18551,7 @@
     "hp": "24d8+16",
     "speed": 12,
     "ai_pattern": "aggressive",
-    "thac0": 9,
+    "thac0": 11,
     "peak_floor": 14,
     "spread": 5,
     "peak_weight": 2.0,
@@ -18602,7 +18602,7 @@
     "hp": "15d8+7",
     "speed": 10,
     "ai_pattern": "ranged",
-    "thac0": 13,
+    "thac0": 17,
     "peak_floor": 10,
     "spread": 4,
     "peak_weight": 2.0,
@@ -18673,7 +18673,7 @@
     "attacks": [
       {
         "name": "Shadow Claw",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "drain"
       },
       {
@@ -18729,7 +18729,7 @@
     "attacks": [
       {
         "name": "Tentacle",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical",
         "effect": "hallucinating",
         "effect_chance": 0.5,
@@ -18783,7 +18783,7 @@
     "attacks": [
       {
         "name": "Flame Slash",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.4,
@@ -18840,7 +18840,7 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "blunt"
       },
       {
@@ -18896,7 +18896,7 @@
     "attacks": [
       {
         "name": "Bite",
-        "damage": "2d8+5",
+        "damage": "2d8+4",
         "type": "physical",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -18952,7 +18952,7 @@
     "attacks": [
       {
         "name": "Hellfire Blade",
-        "damage": "2d8+7",
+        "damage": "2d8+6",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -19007,7 +19007,7 @@
     "attacks": [
       {
         "name": "Colossal Slam",
-        "damage": "2d8+11",
+        "damage": "2d8+10",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -19059,12 +19059,12 @@
     "attacks": [
       {
         "name": "Soul Siphon",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "drain"
       },
       {
         "name": "Wail",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.5,
@@ -19115,7 +19115,7 @@
     "attacks": [
       {
         "name": "Rend",
-        "damage": "3d6+14",
+        "damage": "3d6+12",
         "type": "slash",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -19123,7 +19123,7 @@
       },
       {
         "name": "Bite",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical"
       }
     ],
@@ -19168,12 +19168,12 @@
     "attacks": [
       {
         "name": "Claw",
-        "damage": "3d6+15",
+        "damage": "3d6+13",
         "type": "slash"
       },
       {
         "name": "Fire Breath",
-        "damage": "2d4+8",
+        "damage": "2d4+7",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -19222,7 +19222,7 @@
     "attacks": [
       {
         "name": "Psionic Blast",
-        "damage": "3d6+19",
+        "damage": "3d6+17",
         "type": "psionic",
         "effect": "confused",
         "effect_chance": 0.7,
@@ -19231,12 +19231,12 @@
       },
       {
         "name": "Brain Extraction",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "drain"
       },
       {
         "name": "Tentacle Grasp",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -19282,12 +19282,12 @@
     "attacks": [
       {
         "name": "Void Bite",
-        "damage": "3d6+24",
+        "damage": "3d6+21",
         "type": "drain"
       },
       {
         "name": "Crushing Coil",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.4,
@@ -19336,7 +19336,7 @@
     "attacks": [
       {
         "name": "Death Ray",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.6,
@@ -19344,12 +19344,12 @@
       },
       {
         "name": "Disintegrate",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "magic"
       },
       {
         "name": "Fear Ray",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "magic",
         "effect": "feared",
         "effect_chance": 0.5,
@@ -19357,7 +19357,7 @@
       },
       {
         "name": "Slow Ray",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "magic",
         "effect": "slowed",
         "effect_chance": 0.8,
@@ -19365,7 +19365,7 @@
       },
       {
         "name": "Charm Ray",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.7,
@@ -19373,7 +19373,7 @@
       },
       {
         "name": "Bite",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "physical"
       }
     ],
@@ -19418,12 +19418,12 @@
     "attacks": [
       {
         "name": "Crushing Bite",
-        "damage": "3d8+27",
+        "damage": "3d8+23",
         "type": "slash"
       },
       {
         "name": "Inferno Breath",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.7,
@@ -19432,7 +19432,7 @@
       },
       {
         "name": "Tail Sweep",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.5,
@@ -19481,7 +19481,7 @@
     "attacks": [
       {
         "name": "Hellfire Slam",
-        "damage": "3d8+32",
+        "damage": "3d8+28",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -19489,12 +19489,12 @@
       },
       {
         "name": "Soul Crush",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "drain"
       },
       {
         "name": "Chaos Bolt",
-        "damage": "2d8+15",
+        "damage": "2d8+13",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.5,
@@ -19545,12 +19545,12 @@
     "attacks": [
       {
         "name": "Crushing Claw",
-        "damage": "3d8+36",
+        "damage": "3d8+32",
         "type": "slash"
       },
       {
         "name": "Elder Breath",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.8,
@@ -19559,7 +19559,7 @@
       },
       {
         "name": "Tail Crush",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.5,
@@ -19567,12 +19567,12 @@
       },
       {
         "name": "Bite",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "physical"
       },
       {
         "name": "Wing Buffet",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -19621,12 +19621,12 @@
     "attacks": [
       {
         "name": "Death Lance",
-        "damage": "4d10+27",
+        "damage": "4d10+23",
         "type": "drain"
       },
       {
         "name": "Soul Frost",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.35,
@@ -19634,7 +19634,7 @@
       },
       {
         "name": "Doom Aura",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.3,
@@ -19686,12 +19686,12 @@
     "attacks": [
       {
         "name": "Unholy Blade",
-        "damage": "5d10+21",
+        "damage": "5d10+17",
         "type": "fire"
       },
       {
         "name": "Aura of Doom",
-        "damage": "3d6+16",
+        "damage": "3d6+14",
         "type": "drain",
         "effect": "feared",
         "effect_chance": 0.6,
@@ -19699,7 +19699,7 @@
       },
       {
         "name": "Chaos Storm",
-        "damage": "3d6+16",
+        "damage": "3d6+14",
         "type": "magic",
         "piercing": true
       }
@@ -19748,7 +19748,7 @@
     "attacks": [
       {
         "name": "Venomous Bite",
-        "damage": "5d10+25",
+        "damage": "5d10+20",
         "type": "poison",
         "effect": "slowed",
         "effect_chance": 0.7,
@@ -19756,7 +19756,7 @@
       },
       {
         "name": "World Crush",
-        "damage": "3d6+17",
+        "damage": "3d6+15",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.5,
@@ -19764,7 +19764,7 @@
       },
       {
         "name": "Tail Slam",
-        "damage": "3d6+17",
+        "damage": "3d6+15",
         "type": "blunt"
       }
     ],
@@ -19812,12 +19812,12 @@
     "attacks": [
       {
         "name": "Entropy Touch",
-        "damage": "5d10+24",
+        "damage": "5d10+19",
         "type": "drain"
       },
       {
         "name": "Void Shriek",
-        "damage": "4d6+15",
+        "damage": "4d6+13",
         "type": "cold",
         "effect": "confused",
         "effect_chance": 0.6,
@@ -19825,7 +19825,7 @@
       },
       {
         "name": "Unmaking",
-        "damage": "4d6+15",
+        "damage": "4d6+13",
         "type": "necrotic"
       }
     ],
@@ -21923,7 +21923,7 @@
     "attacks": [
       {
         "name": "Halberd Swing",
-        "damage": "1d8+9",
+        "damage": "1d8+8",
         "type": "slash"
       },
       {
@@ -22360,12 +22360,12 @@
     "attacks": [
       {
         "name": "Warlord Axe",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "slash"
       },
       {
         "name": "War Cry",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical"
       }
     ],
@@ -22407,12 +22407,12 @@
     "attacks": [
       {
         "name": "Longsword Combo",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "slash"
       },
       {
         "name": "Shield Slam",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "blunt"
       }
     ],
@@ -22456,7 +22456,7 @@
     "attacks": [
       {
         "name": "Inferno Touch",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -22505,12 +22505,12 @@
     "attacks": [
       {
         "name": "Lion Bite",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "pierce"
       },
       {
         "name": "Dragon Breath",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.4,
@@ -22518,7 +22518,7 @@
       },
       {
         "name": "Goat Gore",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "blunt"
       }
     ],
@@ -22562,12 +22562,12 @@
     "attacks": [
       {
         "name": "Bone Crush",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "blunt"
       },
       {
         "name": "Bone Shard",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "pierce"
       }
     ],
@@ -22615,12 +22615,12 @@
     "attacks": [
       {
         "name": "Hellfire Sword",
-        "damage": "3d6+14",
+        "damage": "3d6+12",
         "type": "fire"
       },
       {
         "name": "Dark Shield",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "necrotic"
       }
     ],
@@ -22666,7 +22666,7 @@
     "attacks": [
       {
         "name": "Engulf",
-        "damage": "2d8+11",
+        "damage": "2d8+10",
         "type": "acid",
         "effect": "paralyzed",
         "effect_chance": 0.25,
@@ -22715,7 +22715,7 @@
     "attacks": [
       {
         "name": "Phase Bite",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -22723,7 +22723,7 @@
       },
       {
         "name": "Web Snare",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -22770,12 +22770,12 @@
     "attacks": [
       {
         "name": "Tail Spike Volley",
-        "damage": "2d8+14",
+        "damage": "2d8+12",
         "type": "pierce"
       },
       {
         "name": "Rend",
-        "damage": "2d4+9",
+        "damage": "2d4+8",
         "type": "slash"
       }
     ],
@@ -22817,7 +22817,7 @@
     "attacks": [
       {
         "name": "Warclub",
-        "damage": "3d6+24",
+        "damage": "3d6+21",
         "type": "blunt",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -22825,7 +22825,7 @@
       },
       {
         "name": "Rend",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "slash"
       }
     ],
@@ -22870,12 +22870,12 @@
     "attacks": [
       {
         "name": "Ice Greataxe",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "cold"
       },
       {
         "name": "Hurled Boulder",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "blunt"
       }
     ],
@@ -22920,12 +22920,12 @@
     "attacks": [
       {
         "name": "Molten Hammer",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "fire"
       },
       {
         "name": "Flame Breath",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "fire"
       }
     ],
@@ -22970,12 +22970,12 @@
     "attacks": [
       {
         "name": "Drain Bite",
-        "damage": "3d6+24",
+        "damage": "3d6+21",
         "type": "drain"
       },
       {
         "name": "Shadow Claw",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "necrotic"
       }
     ],
@@ -23023,7 +23023,7 @@
     "attacks": [
       {
         "name": "Soul Blade",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "necrotic",
         "effect": "frozen",
         "effect_chance": 0.4,
@@ -23031,7 +23031,7 @@
       },
       {
         "name": "Death Strike",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "drain"
       }
     ],
@@ -23079,12 +23079,12 @@
     "attacks": [
       {
         "name": "Force Fist",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "magic"
       },
       {
         "name": "Arcane Pulse",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "magic"
       }
     ],
@@ -23129,12 +23129,12 @@
     "attacks": [
       {
         "name": "Hellfire Bite",
-        "damage": "3d6+24",
+        "damage": "3d6+21",
         "type": "fire"
       },
       {
         "name": "Claw",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "slash"
       }
     ],
@@ -23182,7 +23182,7 @@
     "attacks": [
       {
         "name": "Riddle Curse",
-        "damage": "3d6+23",
+        "damage": "3d6+20",
         "type": "magic",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -23190,7 +23190,7 @@
       },
       {
         "name": "Lion Rend",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "slash"
       }
     ],
@@ -23232,12 +23232,12 @@
     "attacks": [
       {
         "name": "Death Bolt",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "necrotic"
       },
       {
         "name": "Paralyze Touch",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -23289,12 +23289,12 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "3d6+18",
+        "damage": "3d6+16",
         "type": "blunt"
       },
       {
         "name": "Root Entangle",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.25,
@@ -23344,12 +23344,12 @@
     "attacks": [
       {
         "name": "Mass Strike",
-        "damage": "3d6+18",
+        "damage": "3d6+16",
         "type": "slash"
       },
       {
         "name": "Bone Volley",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "pierce"
       }
     ],
@@ -23397,12 +23397,12 @@
     "attacks": [
       {
         "name": "Ghostfire Breath",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "necrotic"
       },
       {
         "name": "Phase Claw",
-        "damage": "1d8+14",
+        "damage": "1d8+13",
         "type": "shadow"
       }
     ],
@@ -23448,12 +23448,12 @@
     "attacks": [
       {
         "name": "Hellforged Blade",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "fire"
       },
       {
         "name": "Abyssal Strike",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "necrotic"
       }
     ],
@@ -23499,12 +23499,12 @@
     "attacks": [
       {
         "name": "Iron Fist",
-        "damage": "3d8+24",
+        "damage": "3d8+21",
         "type": "blunt"
       },
       {
         "name": "Grinding Gears",
-        "damage": "1d8+15",
+        "damage": "1d8+14",
         "type": "slash"
       }
     ],
@@ -23552,12 +23552,12 @@
     "attacks": [
       {
         "name": "Sovereign Drain",
-        "damage": "4d10+27",
+        "damage": "4d10+23",
         "type": "drain"
       },
       {
         "name": "Nightmare Claw",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "necrotic"
       }
     ],
@@ -23607,7 +23607,7 @@
     "attacks": [
       {
         "name": "Storm Hammer",
-        "damage": "4d10+27",
+        "damage": "4d10+23",
         "type": "lightning",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -23615,7 +23615,7 @@
       },
       {
         "name": "Thunder Clap",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "physical"
       }
     ],
@@ -23658,7 +23658,7 @@
     "attacks": [
       {
         "name": "Solar Flare",
-        "damage": "4d10+27",
+        "damage": "4d10+23",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.6,
@@ -23706,7 +23706,7 @@
     "attacks": [
       {
         "name": "Absolute Zero",
-        "damage": "5d10+19",
+        "damage": "5d10+15",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
@@ -23754,17 +23754,17 @@
     "attacks": [
       {
         "name": "Doom Blade",
-        "damage": "5d10+19",
+        "damage": "5d10+15",
         "type": "fire"
       },
       {
         "name": "Corruption",
-        "damage": "2d8+16",
+        "damage": "2d8+14",
         "type": "necrotic"
       },
       {
         "name": "Command Strike",
-        "damage": "2d8+16",
+        "damage": "2d8+14",
         "type": "physical"
       }
     ],
@@ -23811,12 +23811,12 @@
     "attacks": [
       {
         "name": "Mass Claw",
-        "damage": "3d8+36",
+        "damage": "3d8+32",
         "type": "slash"
       },
       {
         "name": "Overwhelm",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "physical"
       }
     ],
@@ -23864,12 +23864,12 @@
     "attacks": [
       {
         "name": "Death Breath",
-        "damage": "5d10+19",
+        "damage": "5d10+15",
         "type": "necrotic"
       },
       {
         "name": "Bone Claw",
-        "damage": "2d8+16",
+        "damage": "2d8+14",
         "type": "slash"
       }
     ],
@@ -23918,17 +23918,17 @@
     "attacks": [
       {
         "name": "Multi Bite",
-        "damage": "4d10+27",
+        "damage": "4d10+23",
         "type": "pierce"
       },
       {
         "name": "Acid Spray",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "acid"
       },
       {
         "name": "Tail Sweep",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "blunt"
       }
     ],
@@ -23980,7 +23980,7 @@
     "attacks": [
       {
         "name": "Fallen Blade",
-        "damage": "5d10+19",
+        "damage": "5d10+15",
         "type": "magic",
         "effect": "blinded",
         "effect_chance": 0.4,
@@ -23988,7 +23988,7 @@
       },
       {
         "name": "Dark Radiance",
-        "damage": "2d8+16",
+        "damage": "2d8+14",
         "type": "necrotic"
       }
     ],
@@ -24033,12 +24033,12 @@
     "attacks": [
       {
         "name": "Titan Fist",
-        "damage": "5d10+21",
+        "damage": "5d10+17",
         "type": "blunt"
       },
       {
         "name": "Earth Shatter",
-        "damage": "2d8+18",
+        "damage": "2d8+16",
         "type": "physical"
       }
     ],
@@ -24084,7 +24084,7 @@
     "attacks": [
       {
         "name": "Shadow Blade",
-        "damage": "2d12+32",
+        "damage": "2d12+28",
         "type": "pierce",
         "effect": "blinded",
         "effect_chance": 0.35,
@@ -24092,7 +24092,7 @@
       },
       {
         "name": "Backstab",
-        "damage": "2d8+16",
+        "damage": "2d8+14",
         "type": "pierce"
       }
     ],
@@ -24138,7 +24138,7 @@
     "attacks": [
       {
         "name": "Plague Touch",
-        "damage": "3d8+36",
+        "damage": "3d8+32",
         "type": "poison",
         "effect": "diseased",
         "effect_chance": 0.5,
@@ -24187,7 +24187,7 @@
     "attacks": [
       {
         "name": "Ruin Slam",
-        "damage": "5d10+21",
+        "damage": "5d10+17",
         "type": "physical",
         "effect": "feared",
         "effect_chance": 0.35,
@@ -24195,7 +24195,7 @@
       },
       {
         "name": "Chaos Breath",
-        "damage": "2d8+18",
+        "damage": "2d8+16",
         "type": "fire"
       }
     ],
@@ -24241,17 +24241,17 @@
     "attacks": [
       {
         "name": "Annihilation Ray",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "necrotic"
       },
       {
         "name": "Soul Rend",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "drain"
       },
       {
         "name": "Paralysis Touch",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "magic",
         "effect": "paralyzed",
         "effect_chance": 0.35,
@@ -24303,7 +24303,7 @@
     "attacks": [
       {
         "name": "Void Breath",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "necrotic",
         "effect": "cursed",
         "effect_chance": 0.4,
@@ -24311,12 +24311,12 @@
       },
       {
         "name": "Ancient Claw",
-        "damage": "4d8+12",
+        "damage": "4d8+9",
         "type": "slash"
       },
       {
         "name": "Tail Crush",
-        "damage": "4d8+12",
+        "damage": "4d8+9",
         "type": "blunt"
       }
     ],
@@ -24365,12 +24365,12 @@
     "attacks": [
       {
         "name": "World Breaker",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "blunt"
       },
       {
         "name": "Titan Stomp",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "physical",
         "effect": "stunned",
         "effect_chance": 0.4,
@@ -24420,7 +24420,7 @@
     "attacks": [
       {
         "name": "Reality Bolt",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "shadow",
         "effect": "hallucinating",
         "effect_chance": 0.4,
@@ -24428,7 +24428,7 @@
       },
       {
         "name": "Void Bite",
-        "damage": "4d8+12",
+        "damage": "4d8+9",
         "type": "drain"
       }
     ],
@@ -24475,17 +24475,17 @@
     "attacks": [
       {
         "name": "Hellfire Greatsword",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "fire"
       },
       {
         "name": "Doom Bolt",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "necrotic"
       },
       {
         "name": "Corruption Wave",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "poison"
       }
     ],
@@ -24534,12 +24534,12 @@
     "attacks": [
       {
         "name": "Holy Smite",
-        "damage": "5d10+25",
+        "damage": "5d10+20",
         "type": "holy"
       },
       {
         "name": "Divine Blade",
-        "damage": "3d8+15",
+        "damage": "3d8+13",
         "type": "slash"
       }
     ],
@@ -24585,7 +24585,7 @@
     "attacks": [
       {
         "name": "Entropy Touch",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "drain",
         "effect": "cursed",
         "effect_chance": 0.35,
@@ -24593,7 +24593,7 @@
       },
       {
         "name": "Decay Pulse",
-        "damage": "4d8+12",
+        "damage": "4d8+9",
         "type": "necrotic"
       }
     ],
@@ -24641,12 +24641,12 @@
     "attacks": [
       {
         "name": "Legion Charge",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "slash"
       },
       {
         "name": "Death Aura",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "necrotic"
       }
     ],
@@ -24695,17 +24695,17 @@
     "attacks": [
       {
         "name": "Chaos Breath",
-        "damage": "5d10+25",
+        "damage": "5d10+20",
         "type": "fire"
       },
       {
         "name": "Abyssal Claw",
-        "damage": "3d8+15",
+        "damage": "3d8+13",
         "type": "slash"
       },
       {
         "name": "Corruption Bite",
-        "damage": "3d8+15",
+        "damage": "3d8+13",
         "type": "poison"
       }
     ],
@@ -24753,12 +24753,12 @@
     "attacks": [
       {
         "name": "Slam",
-        "damage": "5d10+27",
+        "damage": "5d10+22",
         "type": "blunt"
       },
       {
         "name": "Absorb",
-        "damage": "4d8+11",
+        "damage": "4d8+9",
         "type": "drain"
       }
     ],
@@ -24808,7 +24808,7 @@
       {
         "name": "Chitin Scythe",
         "type": "slash",
-        "damage": "3d8+22"
+        "damage": "3d8+19"
       },
       {
         "name": "Swarm Call",
@@ -24816,7 +24816,7 @@
         "effect": "poisoned",
         "effect_chance": 0.4,
         "effect_duration": 6,
-        "damage": "3d8+22"
+        "damage": "3d8+19"
       }
     ],
     "resistances": [
@@ -24861,7 +24861,7 @@
       {
         "name": "Great Cleaver",
         "type": "slash",
-        "damage": "5d10+22",
+        "damage": "5d10+18",
         "effect": "bleeding",
         "effect_chance": 0.5,
         "effect_duration": 4
@@ -24872,7 +24872,7 @@
         "effect": "stunned",
         "effect_chance": 0.3,
         "effect_duration": 2,
-        "damage": "2d8+19"
+        "damage": "2d8+17"
       }
     ],
     "resistances": [
@@ -24919,7 +24919,7 @@
         "name": "Void Lance",
         "type": "magic",
         "piercing": true,
-        "damage": "5d10+28"
+        "damage": "5d10+23"
       },
       {
         "name": "Unmaking Gaze",
@@ -24927,7 +24927,7 @@
         "effect": "weakened",
         "effect_chance": 0.35,
         "effect_duration": 5,
-        "damage": "4d8+12"
+        "damage": "4d8+9"
       }
     ],
     "resistances": [
@@ -24976,12 +24976,12 @@
         "effect": "feared",
         "effect_chance": 0.2,
         "effect_duration": 3,
-        "damage": "4d8+12"
+        "damage": "4d8+9"
       },
       {
         "name": "Sickle of the Harvest",
         "type": "slash",
-        "damage": "5d10+16",
+        "damage": "5d10+12",
         "effect": "bleeding",
         "effect_chance": 0.5,
         "effect_duration": 4
@@ -25031,12 +25031,12 @@
         "effect": "poisoned",
         "effect_chance": 0.5,
         "effect_duration": 8,
-        "damage": "4d8+15"
+        "damage": "4d8+12"
       },
       {
         "name": "Rotting Touch",
         "type": "poison",
-        "damage": "5d10+16"
+        "damage": "5d10+12"
       }
     ],
     "resistances": [
@@ -25084,7 +25084,7 @@
       {
         "name": "Lance Charge",
         "type": "pierce",
-        "damage": "5d10+31"
+        "damage": "5d10+26"
       },
       {
         "name": "Hoof Crush",
@@ -25092,7 +25092,7 @@
         "effect": "stunned",
         "effect_chance": 0.3,
         "effect_duration": 2,
-        "damage": "4d8+15"
+        "damage": "4d8+12"
       }
     ],
     "resistances": [
@@ -25129,7 +25129,7 @@
     "ai_pattern": "ranged",
     "hp": "9d6+7",
     "speed": 10,
-    "thac0": 13,
+    "thac0": 17,
     "attacks": [
       {
         "name": "Shortbow",
@@ -25183,7 +25183,7 @@
     "ai_pattern": "healer",
     "hp": "18d8+15",
     "speed": 10,
-    "thac0": 12,
+    "thac0": 16,
     "attacks": [
       {
         "name": "Club",
@@ -25236,7 +25236,7 @@
     "ai_pattern": "aggressive",
     "hp": "41d8+29",
     "speed": 12,
-    "thac0": 10,
+    "thac0": 12,
     "attacks": [
       {
         "name": "Boarding Axe",
@@ -25288,7 +25288,7 @@
     "attacks": [
       {
         "name": "War Banner",
-        "damage": "2d8+7",
+        "damage": "2d8+6",
         "type": "blunt"
       },
       {
@@ -25339,12 +25339,12 @@
     "attacks": [
       {
         "name": "Greatcleaver",
-        "damage": "4d8+20",
+        "damage": "4d8+17",
         "type": "slash"
       },
       {
         "name": "Tusked Headbutt",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -25390,7 +25390,7 @@
     "ai_pattern": "ranged",
     "hp": "9d6+7",
     "speed": 11,
-    "thac0": 13,
+    "thac0": 17,
     "attacks": [
       {
         "name": "Crossbow Bolt",
@@ -25445,7 +25445,7 @@
     "ai_pattern": "healer",
     "hp": "41d8+29",
     "speed": 10,
-    "thac0": 10,
+    "thac0": 12,
     "attacks": [
       {
         "name": "Censer-Mace",
@@ -25503,7 +25503,7 @@
     "attacks": [
       {
         "name": "Longsword",
-        "damage": "3d6+7",
+        "damage": "3d6+6",
         "type": "slash"
       },
       {
@@ -25554,7 +25554,7 @@
     "attacks": [
       {
         "name": "Envenomed Shortsword",
-        "damage": "3d8+20",
+        "damage": "3d8+17",
         "type": "slash",
         "effect": "poisoned",
         "effect_chance": 0.4,
@@ -25562,7 +25562,7 @@
       },
       {
         "name": "Throat Slash",
-        "damage": "2d6+16",
+        "damage": "2d6+14",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -25608,7 +25608,7 @@
     "ai_pattern": "summoner",
     "hp": "24d8+19",
     "speed": 10,
-    "thac0": 11,
+    "thac0": 13,
     "attacks": [
       {
         "name": "Withering Touch",
@@ -25730,7 +25730,7 @@
     "attacks": [
       {
         "name": "Lich Claw",
-        "damage": "2d6+14",
+        "damage": "2d6+12",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -25738,7 +25738,7 @@
       },
       {
         "name": "Ice Wave",
-        "damage": "3d6+16",
+        "damage": "3d6+14",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
@@ -25796,7 +25796,7 @@
     "attacks": [
       {
         "name": "Soul-Tearing Wail",
-        "damage": "3d8+22",
+        "damage": "3d8+19",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.45,
@@ -25804,7 +25804,7 @@
       },
       {
         "name": "Grave-Cold Touch",
-        "damage": "2d10+20",
+        "damage": "2d10+17",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
@@ -25854,7 +25854,7 @@
     "ai_pattern": "ambush",
     "hp": "6d6+6",
     "speed": 12,
-    "thac0": 14,
+    "thac0": 18,
     "attacks": [
       {
         "name": "Barbed Dart",
@@ -25903,7 +25903,7 @@
     "ai_pattern": "aggressive",
     "hp": "24d8+19",
     "speed": 10,
-    "thac0": 11,
+    "thac0": 13,
     "attacks": [
       {
         "name": "Scale-Spear",
@@ -25956,7 +25956,7 @@
     "ai_pattern": "aggressive",
     "hp": "51d8+38",
     "speed": 12,
-    "thac0": 9,
+    "thac0": 11,
     "attacks": [
       {
         "name": "Dragon-Tooth Axe",
@@ -26008,7 +26008,7 @@
     "ai_pattern": "ranged",
     "hp": "6d8+6",
     "speed": 11,
-    "thac0": 14,
+    "thac0": 18,
     "attacks": [
       {
         "name": "Yew Longbow",
@@ -26062,7 +26062,7 @@
     "ai_pattern": "aggressive",
     "hp": "31d8+31",
     "speed": 12,
-    "thac0": 10,
+    "thac0": 12,
     "attacks": [
       {
         "name": "Demon-Blessed Flail",
@@ -26121,7 +26121,7 @@
     "attacks": [
       {
         "name": "Two-Handed Bone-Axe",
-        "damage": "3d6+9",
+        "damage": "3d6+8",
         "type": "slash"
       },
       {
@@ -26173,7 +26173,7 @@
     "ai_pattern": "aggressive",
     "hp": "6d8+6",
     "speed": 10,
-    "thac0": 16,
+    "thac0": 20,
     "attacks": [
       {
         "name": "Studded Club",
@@ -26221,7 +26221,7 @@
     "ai_pattern": "ranged",
     "hp": "6d6+6",
     "speed": 10,
-    "thac0": 14,
+    "thac0": 18,
     "attacks": [
       {
         "name": "Hunting Bow",
@@ -26277,7 +26277,7 @@
     "ai_pattern": "ambush",
     "hp": "9d6+7",
     "speed": 13,
-    "thac0": 12,
+    "thac0": 16,
     "attacks": [
       {
         "name": "Backstab",
@@ -26330,12 +26330,12 @@
     "attacks": [
       {
         "name": "Saber",
-        "damage": "2d8+10",
+        "damage": "2d8+9",
         "type": "slash"
       },
       {
         "name": "Thrown Wheel-Lock",
-        "damage": "2d6+7",
+        "damage": "2d6+6",
         "type": "pierce",
         "effect": "stunned",
         "effect_chance": 0.2,
@@ -26377,7 +26377,7 @@
     "ai_pattern": "aggressive",
     "hp": "6d6+6",
     "speed": 10,
-    "thac0": 14,
+    "thac0": 18,
     "attacks": [
       {
         "name": "Ritual Knife",
@@ -26430,7 +26430,7 @@
     "ai_pattern": "healer",
     "hp": "18d8+15",
     "speed": 10,
-    "thac0": 12,
+    "thac0": 16,
     "attacks": [
       {
         "name": "Consecrated Mace",
@@ -26485,11 +26485,11 @@
     "ai_pattern": "aggressive",
     "hp": "52d8+62",
     "speed": 11,
-    "thac0": 8,
+    "thac0": 10,
     "attacks": [
       {
         "name": "Two-Handed Cleaver",
-        "damage": "2d8+1",
+        "damage": "2d8",
         "type": "slash",
         "effect": "cursed",
         "effect_chance": 0.35,
@@ -26545,7 +26545,7 @@
     "attacks": [
       {
         "name": "Obsidian Dagger",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -26553,7 +26553,7 @@
       },
       {
         "name": "Void Invocation",
-        "damage": "3d6+15",
+        "damage": "3d6+13",
         "type": "shadow",
         "effect": "silenced",
         "effect_chance": 0.35,
@@ -26605,7 +26605,7 @@
     "ai_pattern": "aggressive",
     "hp": "18d8+15",
     "speed": 11,
-    "thac0": 13,
+    "thac0": 17,
     "attacks": [
       {
         "name": "Rending Claw",
@@ -26664,7 +26664,7 @@
     "ai_pattern": "aggressive",
     "hp": "52d8+62",
     "speed": 10,
-    "thac0": 8,
+    "thac0": 10,
     "attacks": [
       {
         "name": "Draining Touch",
@@ -26721,12 +26721,12 @@
     "attacks": [
       {
         "name": "Rusted Greatsword",
-        "damage": "3d8+20",
+        "damage": "3d8+17",
         "type": "slash"
       },
       {
         "name": "Doom-Pronouncement",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "shadow",
         "effect": "feared",
         "effect_chance": 0.3,
@@ -26779,7 +26779,7 @@
     "ai_pattern": "aggressive",
     "hp": "9d6+7",
     "speed": 13,
-    "thac0": 13,
+    "thac0": 17,
     "attacks": [
       {
         "name": "Barbed Sting",
@@ -26835,7 +26835,7 @@
     "ai_pattern": "aggressive",
     "hp": "41d8+29",
     "speed": 14,
-    "thac0": 10,
+    "thac0": 12,
     "attacks": [
       {
         "name": "Hellfire Sting",
@@ -26899,7 +26899,7 @@
     "attacks": [
       {
         "name": "Blackiron Rapier",
-        "damage": "2d8+8",
+        "damage": "2d8+7",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -26955,7 +26955,7 @@
     "ai_pattern": "summoner",
     "hp": "24d8+19",
     "speed": 10,
-    "thac0": 11,
+    "thac0": 13,
     "attacks": [
       {
         "name": "Curved Khanjar",
@@ -27068,7 +27068,7 @@
     "ai_pattern": "aggressive",
     "hp": "52d8+62",
     "speed": 9,
-    "thac0": 9,
+    "thac0": 11,
     "attacks": [
       {
         "name": "Boulder Slam",
@@ -27123,7 +27123,7 @@
     "ai_pattern": "ranged",
     "hp": "41d8+29",
     "speed": 10,
-    "thac0": 10,
+    "thac0": 12,
     "attacks": [
       {
         "name": "Hex Bolt",
@@ -27238,7 +27238,7 @@
     "ai_pattern": "ambush",
     "hp": "38d8+41",
     "speed": 12,
-    "thac0": 9,
+    "thac0": 11,
     "attacks": [
       {
         "name": "Venom Strike",
@@ -27368,7 +27368,7 @@
     "attacks": [
       {
         "name": "Backstab",
-        "damage": "2d12+13",
+        "damage": "2d12+11",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -27376,7 +27376,7 @@
       },
       {
         "name": "Silenced Blade",
-        "damage": "1d8+8",
+        "damage": "1d8+7",
         "type": "slash",
         "effect": "silenced",
         "effect_chance": 0.2,
@@ -27425,7 +27425,7 @@
     "attacks": [
       {
         "name": "Granite Fist",
-        "damage": "3d6+11",
+        "damage": "3d6+9",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.15,
@@ -27433,7 +27433,7 @@
       },
       {
         "name": "Earth Slam",
-        "damage": "2d6+13",
+        "damage": "2d6+11",
         "type": "blunt"
       }
     ],
@@ -27543,7 +27543,7 @@
     "attacks": [
       {
         "name": "Grasping Tendril",
-        "damage": "2d6+9",
+        "damage": "2d6+8",
         "type": "blunt",
         "effect": "paralyzed",
         "effect_chance": 0.25,
@@ -27551,7 +27551,7 @@
       },
       {
         "name": "Thorn Whip",
-        "damage": "1d8+8",
+        "damage": "1d8+7",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.35,
@@ -27600,7 +27600,7 @@
     "attacks": [
       {
         "name": "Engulfing Maw",
-        "damage": "3d6+14",
+        "damage": "3d6+12",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.3,
@@ -27608,7 +27608,7 @@
       },
       {
         "name": "Acid Pseudopod",
-        "damage": "1d8+10",
+        "damage": "1d8+9",
         "type": "acid"
       }
     ],
@@ -27655,12 +27655,12 @@
     "attacks": [
       {
         "name": "Twin Maul",
-        "damage": "2d8+13",
+        "damage": "2d8+11",
         "type": "blunt"
       },
       {
         "name": "Iron Club",
-        "damage": "2d6+10",
+        "damage": "2d6+9",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.2,
@@ -27711,7 +27711,7 @@
     "attacks": [
       {
         "name": "Halberd Cleave",
-        "damage": "2d8+13",
+        "damage": "2d8+11",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.3,
@@ -27719,7 +27719,7 @@
       },
       {
         "name": "Shield Bash",
-        "damage": "1d8+11",
+        "damage": "1d8+10",
         "type": "blunt",
         "effect": "stunned",
         "effect_chance": 0.25,
@@ -27855,7 +27855,7 @@
     "attacks": [
       {
         "name": "Warpfire Blade",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.3,
@@ -27863,7 +27863,7 @@
       },
       {
         "name": "Mocking Strike",
-        "damage": "2d6+11",
+        "damage": "2d6+10",
         "type": "slash",
         "effect": "confused",
         "effect_chance": 0.25,
@@ -27915,7 +27915,7 @@
     "attacks": [
       {
         "name": "Tide Invocation",
-        "damage": "2d6+12",
+        "damage": "2d6+11",
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.25,
@@ -27923,7 +27923,7 @@
       },
       {
         "name": "Barbed Staff",
-        "damage": "1d8+10",
+        "damage": "1d8+9",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.3,
@@ -27974,7 +27974,7 @@
     "attacks": [
       {
         "name": "Treasure Maw",
-        "damage": "3d8+21",
+        "damage": "3d8+18",
         "type": "physical",
         "effect": "paralyzed",
         "effect_chance": 0.35,
@@ -27982,7 +27982,7 @@
       },
       {
         "name": "Gold-Strangling Tongue",
-        "damage": "2d6+16",
+        "damage": "2d6+14",
         "type": "blunt",
         "effect": "weakened",
         "effect_chance": 0.25,
@@ -28032,7 +28032,7 @@
     "attacks": [
       {
         "name": "Glacial Maul",
-        "damage": "3d8+26",
+        "damage": "3d8+23",
         "type": "blunt",
         "effect": "frozen",
         "effect_chance": 0.25,
@@ -28040,7 +28040,7 @@
       },
       {
         "name": "Frost Breath",
-        "damage": "2d6+16",
+        "damage": "2d6+14",
         "type": "cold",
         "effect": "slowed",
         "effect_chance": 0.4,
@@ -28097,7 +28097,7 @@
     "attacks": [
       {
         "name": "Grave Hex",
-        "damage": "2d6+17",
+        "damage": "2d6+15",
         "type": "necrotic",
         "effect": "weakened",
         "effect_chance": 0.35,
@@ -28105,7 +28105,7 @@
       },
       {
         "name": "Bone Shard",
-        "damage": "1d8+13",
+        "damage": "1d8+12",
         "type": "pierce",
         "effect": "bleeding",
         "effect_chance": 0.25,
@@ -28156,7 +28156,7 @@
     "attacks": [
       {
         "name": "Umbral Arrow",
-        "damage": "3d6+20",
+        "damage": "3d6+17",
         "type": "shadow",
         "effect": "blinded",
         "effect_chance": 0.3,
@@ -28164,7 +28164,7 @@
       },
       {
         "name": "Shortsword",
-        "damage": "2d6+16",
+        "damage": "2d6+14",
         "type": "slash"
       }
     ],
@@ -28220,7 +28220,7 @@
     "attacks": [
       {
         "name": "Scourge",
-        "damage": "2d8+18",
+        "damage": "2d8+16",
         "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.4,
@@ -28228,7 +28228,7 @@
       },
       {
         "name": "Censer Swing",
-        "damage": "1d8+12",
+        "damage": "1d8+11",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.25,
@@ -28279,7 +28279,7 @@
     "attacks": [
       {
         "name": "Molten Slam",
-        "damage": "3d6+20",
+        "damage": "3d6+17",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.5,
@@ -28287,7 +28287,7 @@
       },
       {
         "name": "Ember Spray",
-        "damage": "2d6+16",
+        "damage": "2d6+14",
         "type": "fire",
         "effect": "burning",
         "effect_chance": 0.35,
@@ -28416,7 +28416,7 @@
     "attacks": [
       {
         "name": "Mind Drain",
-        "damage": "3d6+16",
+        "damage": "3d6+14",
         "type": "drain",
         "effect": "confused",
         "effect_chance": 0.35,
@@ -28424,7 +28424,7 @@
       },
       {
         "name": "Psychic Lash",
-        "damage": "2d8+17",
+        "damage": "2d8+15",
         "type": "magic",
         "effect": "weakened",
         "effect_chance": 0.3,

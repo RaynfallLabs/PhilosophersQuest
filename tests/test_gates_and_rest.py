@@ -139,53 +139,14 @@ def test_waiting_still_costs_food():
     assert 'self._tick_sp()' in src[i:i + 900]
 
 
-def test_meditation_gives_half_a_mana_bar_a_floor():
-    assert floor_curve.MEDITATE_FLOOR_SHARE == 0.5
-    p = Player()
-    p.max_mp, p.mp = 30, 0
-    assert p.meditation_left() == 15
-    got = sum(p.meditate(1) for _ in range(40))
-    assert got == 15 and p.mp == 15 and p.meditation_left() == 0
-    assert p.meditate(1) == 0
-    p.reset_floor_cook_caps()                          # a new floor
-    assert p.meditation_left() == 15
-    p.mp = p.max_mp
-    assert p.meditate(5) == 0 and p.meditation_left() == 15    # full: nothing spent
-    old = Player()
-    old.__dict__.pop('_meditated_this_floor', None)             # a save from before
-    assert old.meditation_left() > 0
-    src = open(os.path.join(ROOT, 'src', 'game_input.py'), encoding='utf-8').read()
-    assert 'self.player.meditate(1)' in src and 'self.player.restore_mp(1)' not in src
-
-
 # ------------------------------------------------------------ the first floors
-
-def test_the_first_floors_go_easy_and_the_deep_ones_do_not():
-    assert floor_curve.early_mercy(1) == floor_curve.early_mercy(13) == 0.75
-    assert 0.75 < floor_curve.early_mercy(20) < 1.0
-    assert floor_curve.early_mercy(26) == floor_curve.early_mercy(90) == 1.0
-    p = Player()
-    p.max_hp = p.hp = 1000
-    p._mercy = 0.75
-    assert p.take_damage(100, 'physical') == 75
-    p._mercy = 1.0
-    assert p.take_damage(100, 'physical') == 100
-
-
-def test_mercy_is_set_only_around_an_ordinary_monsters_blow():
-    src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
-    i = src.index('floor_curve.early_mercy(self.dungeon_level)')
-    block = src[i - 120:i + 260]
-    assert 'm._is_named_foe()' in block and 'finally:' in block
-    assert 'self.player._mercy = 1.0' in block
-
 
 def test_deep_monsters_hit_harder_than_before_and_the_anchors_say_so():
     # Stat design step one made a prepared character about twice as durable
     # deep down; the damage anchors rose with depth to match (SCALE_LOG.md).
     a = floor_curve.DMG_ANCHORS
     assert a[1] < 1.5 and a[20] < 3.5                  # the top is untouched
-    assert a[60] > 30 and a[100] > 38
+    assert a[60] > 25 and a[100] > 33
     vals = [a[k] for k in sorted(a)]
     assert vals == sorted(vals)
 
@@ -196,3 +157,74 @@ def test_the_early_outliers_were_softened():
     assert elf['effect_chance'] <= 0.25 and elf['effect_duration'] <= 4
     breath = d['anzu_bird']['attacks'][1]
     assert breath['effect'] == 'paralyzed' and breath['effect_duration'] <= 3
+
+
+def test_meditation_gives_half_a_mana_bar_until_a_new_floor_is_reached():
+    assert floor_curve.MEDITATE_FLOOR_SHARE == 0.5
+    p = Player()
+    p.max_mp, p.mp = 30, 0
+    assert p.meditation_left() == 15
+    got = sum(p.meditate(1) for _ in range(40))
+    assert got == 15 and p.mp == 15 and p.meditation_left() == 0
+    p.reset_floor_cook_caps()                 # any staircase: up, down, the cow level
+    assert p.meditation_left() == 0           # (it used to refill here)
+    p.new_floor_of_quiet()                    # a floor never stood on before
+    assert p.meditation_left() == 15
+    src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    i = src.index('self.player.new_floor_of_quiet()')
+    assert 'deepest_floor_reached > _was_deepest' in src[i - 120:i]
+
+
+def test_a_boss_that_is_swinging_or_hit_by_magic_has_not_been_left_alone():
+    m = _mon('asterion_minotaur')
+    m.take_damage(m.max_hp // 2)
+    p = Player()
+    p.max_hp = p.hp = 10 ** 6
+    p.x, p.y = 3, 4
+    hurt = m.hp
+    for _ in range(80):                       # he attacks every turn; nobody hits him
+        m.tick_effects()
+        m.attack(p)
+    assert m.hp == hurt and m.fury_mult() > 1.0
+    src = open(os.path.join(ROOT, 'src', 'game_magic.py'), encoding='utf-8').read()
+    assert src.count('target._unhurt_turns = 0') >= 3      # missiles and smite count as hurt
+    assert _mon('asterion_minotaur').fury_message.startswith("Asterion's breath")
+
+
+def test_dodge_lives_in_the_blow_and_spares_no_one_from_breath():
+    src = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
+    i = src.index('_dodge = getattr(player, \'dodge_chance\', None)')
+    assert 'not is_breath' in src[i:i + 300]
+    combat = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
+    assert 'dodge_chance()' not in combat
+    p = Player()
+    p.DEX = 40
+    for effect in ('stunned', 'frozen', 'paralyzed'):
+        q = Player()
+        q.DEX = 40
+        q.add_effect(effect, 3)
+        assert q.dodge_chance() == 0.0, effect
+    assert p.dodge_chance() > 0
+
+
+def test_the_dead_are_not_offered_gifts_or_given_pet_turns():
+    main = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    i = main.index('self._do_monster_turns()')
+    assert 'if not self.player.is_dead():' in main[i:i + 200]
+    combat = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
+    assert 'story_key and self.player.is_dead()' in combat
+    assert 'self.state != STATE_PLAYER or self.player.is_dead()' in combat
+
+
+def test_a_gate_boss_mends_for_the_time_spent_on_another_floor():
+    m = _mon('medusa_gorgon')
+    m.take_damage(m.max_hp // 2)
+    hurt = m.hp
+    assert m.mend_for_absence(10) == 0 and m.hp == hurt      # a quick trip upstairs
+    assert m.mend_for_absence(500) > 0 and m.hp == m.max_hp and m._recovered_note
+    rat = _mon('giant_rat')
+    rat.take_damage(max(1, rat.max_hp // 2))
+    assert rat.mend_for_absence(500) == 0
+    src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    assert '_m._left_at_turn = self.turn_count' in src
+    assert '_m.mend_for_absence(self.turn_count - int(_left))' in src

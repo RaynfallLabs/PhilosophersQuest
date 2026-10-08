@@ -87,6 +87,7 @@ from quiz_engine import QuizResult               # noqa: E402
 import food_system as food_system_mod            # noqa: E402
 import boons as boons_mod                        # noqa: E402
 import monster as monster_mod                    # noqa: E402
+import pet_system as pet_system_mod              # noqa: E402
 import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
@@ -1630,7 +1631,7 @@ class Run:
                 bitten = [m for m in active if m.alive and m._sim_away <= 0]
                 if bitten:
                     foe = min(bitten, key=lambda m: m.hp)
-                    foe.take_damage(int(floor_curve_mod.pet_attack(self.floor) * min(
+                    foe.take_damage(int(pet_system_mod.growth('bite', self.floor) * min(
                         1.0, (0.5 + 0.7 * acc_at(self.quiz.accuracy, 1)) / 1.165)))
 
             # ---------------- the world's turn ----------------
@@ -1700,18 +1701,12 @@ class Run:
 
     def _monster_attack(self, m):
         p = self.p
-        # game_combat._do_monster_turns: a blow from beside you can be slipped
-        if (getattr(m, 'ai_pattern', '') not in RANGED_PATTERNS
-                and random.random() < p.dodge_chance()):
-            return
         p._incoming_scale = getattr(m, '_sim_dmg_x', 1.0)
-        p._mercy = 1.0 if is_named(m) else floor_curve_mod.early_mercy(self.floor)   # game_combat
         before = p.hp
         try:
             m.attack(p)
         finally:
             p._incoming_scale = 1.0
-            p._mercy = 1.0
         if p.hp < before:
             m._sim_dmg += before - p.hp
             self.last_hit_by = m.kind

@@ -1407,19 +1407,19 @@ class MenuMixin:
 
         elif pid == 'elder_scream':
             from dice import roll as _es_roll
-            from floor_curve import scaled as _floor_scaled
-            # 4d8 is old-scale: size it to the floor's monsters.
-            base = _floor_scaled(_es_roll('4d8'), self.dungeon_level)
-            scaled = self._int_scaled_damage(base)
+            from floor_curve import power_share as _power_share, wound as _wound
+            # The scream takes a share of each creature's own health.
+            _share = _power_share(_es_roll('4d8')) * self._int_share_factor()
             visible = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             kills = 0
             for m in visible:
-                m.take_damage(scaled)
+                m.take_damage(_wound(_share, m.max_hp, m._is_named_foe()))
                 if not m.alive:
                     self._on_monster_killed(m)
                     kills += 1
             self.add_message(
-                f"The Elder Blood SCREAMS! {len(visible)} creatures take {scaled} cold damage! ({kills} slain)",
+                f"The Elder Blood SCREAMS! {len(visible)} creatures lose "
+                f"{round(100 * _share)}% of their health! ({kills} slain)",
                 'success')
             pl.power_cooldowns['elder_scream'] = 20
 
@@ -1510,7 +1510,7 @@ class MenuMixin:
             stat = _stat_cycle[bind_count % 3]
             current = getattr(pl, stat)
             if current > 1:
-                setattr(pl, stat, current - 1)
+                pl.apply_stat_bonus(stat, -1)      # the same price any lost point costs
                 self.add_message(
                     f"Tyr paid a hand for this. Your price is smaller, and it is "
                     f"still a price: some of your {_stat_names[stat]} goes into "

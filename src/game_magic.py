@@ -47,7 +47,20 @@ from typing import TYPE_CHECKING
 import pygame
 
 import sound_system as _snd
-from floor_curve import mend as _mend, scaled as _floor_scaled
+from floor_curve import mend as _mend, wound as _wound
+
+# Shares of the target's own health (floor_curve.wound), not floor multipliers.
+MORTAR_BLAST_SHARE = 0.15     # Baba Yaga's mortar, everything in sight
+DEATH_WORD_BASE = 0.25        # Power Word Kill slays what is at or below this share of
+DEATH_WORD_PER_INT = 0.01     # its health, plus this per point of Intelligence,
+DEATH_WORD_CAP = 0.60         # up to this
+DEATH_WORD_STAGGER = 0.30     # what a named foe loses instead (a tenth of it lands)
+EARTH_SHARE = (0.06, 0.10, 0.16, 0.24, 0.35)    # scroll of earth, by tier
+
+# What a summoning calls up is decided by the spell, not by where it is cast.
+SUMMON_GUARDIAN_LEVEL = 45    # Summon Guardian (a tier-3 spell)
+GATE_ALLY_LEVEL = 85          # Gate (tier 5)
+DEADITE_LEVEL = 30            # each thrall of the Army of Darkness
 
 # Least a healing wand, spell or scroll restores, as a share of max HP (the
 # written dice still apply when they are more). By spell tier / scroll tier.
@@ -748,6 +761,7 @@ class MagicMixin:
                 base = roll(wand.power) if wand.power else 4
                 dmg = self._wand_tier_damage(base, wand.quiz_tier)
                 target.hp = max(0, target.hp - dmg)
+                target._unhurt_turns = 0          # it has been hurt: no mending
                 if target.hp == 0:
                     target.alive = False
                 self.add_message(
@@ -1116,7 +1130,7 @@ class MagicMixin:
                 ('regen',      lambda: (self.player.add_effect('regenerating', 20),
                                         self.add_message("Ground-up hero bones restore your vitality!", 'success'))),
                 ('blast',      lambda: [
-                    (m.take_damage(_floor_scaled(_rng.randint(5, 15), self.dungeon_level)),
+                    (m.take_damage(_wound(MORTAR_BLAST_SHARE, m.max_hp, _is_big_foe(m))),
                      self._on_monster_killed(m) if not m.alive else None)
                     for m in list(self.monsters) if m.alive and (m.x, m.y) in self.visible
                 ] or self.add_message("Chaotic energy blasts all visible enemies!", 'success')),
@@ -1512,7 +1526,7 @@ class MagicMixin:
 
         # Army of Darkness: summon undead pet horde
         if effect == 'summon_undead_horde':
-            count = max(3, int(5 * chain_scale))
+            count = 5            # five, as the spell says, whatever the caster's mind
             self._summon_undead_pets(count)
             self.add_message(
                 f"The dead rise to serve you! {count} undead minions summoned!",
@@ -1552,7 +1566,7 @@ class MagicMixin:
                         continue
                     species = random_species()
                     pet = Pet(species, nx, ny)
-                    pet.level = max(1, self.dungeon_level // 3)
+                    pet.level = SUMMON_GUARDIAN_LEVEL
                     pet._refresh_stats()
                     self.pets.append(pet)
                     self.add_message(
@@ -1651,7 +1665,8 @@ class MagicMixin:
             from dice import roll as _roll_ms
             shots = max(2, chain)   # chain 1 = 2 meteors, chain 5 = 5 meteors
             base_dmg = _roll_ms(power) if power else 18
-            scaled_per = self._spell_damage(base_dmg, chain)
+            # One cast's damage, shared between its meteors.
+            scaled_per = max(1, self._spell_damage(base_dmg, chain) // shots)
             total = 0
             for _ in range(shots):
                 hit = 0
@@ -1699,7 +1714,7 @@ class MagicMixin:
                     if monster_at_tile(self.monsters, nx, ny) is not None: continue
                     species = random_species()
                     pet = Pet(species, nx, ny)
-                    pet.level = max(3, self.dungeon_level // 2)   # ~2x summon_guardian level
+                    pet.level = GATE_ALLY_LEVEL
                     pet._refresh_stats()
                     pet.hp = pet.max_hp
                     self.pets.append(pet)
@@ -1798,9 +1813,8 @@ class MagicMixin:
             return
 
         # --- Mass Sleep / Mass Paralyze: lock all visible monsters ---
-        # Both `mass_sleep_spell` (T3) and `mass_paralyze_spell` / `deep_slumber`
-        # (T5) share this effect. T3 applies sleeping (breaks on damage); T5
-        # applies paralyzed (the stronger lock).
+        # `mass_sleep_spell` (T3), `deep_slumber` (T5) and `mass_paralyze_spell`
+        # (T5) share this effect; the spell's family decides which it is.
         if effect == 'mass_sleep':
             # Two different things (they were one: Deep Slumber and Mass
             # Paralyze were the same spell under two names). The sleep
@@ -1841,6 +1855,7 @@ class MagicMixin:
         }
         if effect in _MASS_STATUS:
             status_name, base_dur = _MASS_STATUS[effect]
+            base_dur = max(2, int(base_dur * chain_scale))     # Intelligence: reach
             visible_monsters = [
                 m for m in self.monsters
                 if m.alive and (m.x, m.y) in self.visible
@@ -1976,7 +1991,8 @@ class MagicMixin:
         }
         if effect in _SELF_BUFF_DURATIONS:
             eff_name, base_dur = _SELF_BUFF_DURATIONS[effect]
-            dur = max(2, int(base_dur * chain_scale))
+            from status_effects import MAX_EFFECT_DURATION as _MAXD
+            dur = min(_MAXD, max(2, int(base_dur * chain_scale)))     # what is applied is what is said
             self.player.add_effect(eff_name, dur)
             self.add_message(
                 f"{spell['name']} -- {eff_name} for {dur} turns!", 'success')
@@ -2011,8 +2027,12 @@ class MagicMixin:
                     if not target.alive:
                         break
                     base_dmg = _roll(power) if power else 4
-                    per_missile = self._spell_damage(base_dmg, chain)
+                    # One cast's damage, shared between its missiles: each
+                    # used to carry the whole of it, so seven missiles were
+                    # seven spells (2.2 weapon attacks from Force Storm).
+                    per_missile = max(1, self._spell_damage(base_dmg, chain) // missiles)
                     target.hp = max(0, target.hp - per_missile)
+                    target._unhurt_turns = 0
                     if target.hp == 0:
                         target.alive = False
                     total_dmg += per_missile
@@ -2108,6 +2128,7 @@ class MagicMixin:
                 base_dmg = _roll(power) if power else 20
                 scaled = self._spell_damage(base_dmg, chain)
                 target.hp = max(0, target.hp - scaled)  # holy — bypasses resistances
+                target._unhurt_turns = 0
                 if target.hp == 0:
                     target.alive = False
                 self.add_message(
@@ -2276,8 +2297,10 @@ class MagicMixin:
                 # v2.15+ audit sync: chain retired. Fossil expression
                 # `INT * chain * 4` pinned at chain=5 (INT * 20).
                 is_boss = _is_big_foe(target)
-                # INT * 20 is an old-scale HP figure: size it to the floor.
-                threshold = _floor_scaled(self.player.INT * 20, self.dungeon_level)
+                # The word kills what is already this far gone: a share of the
+                # target's own health, wider for a sharper mind.
+                threshold = int(target.max_hp * min(
+                    DEATH_WORD_CAP, DEATH_WORD_BASE + DEATH_WORD_PER_INT * self.player.INT))
                 if not is_boss and target.hp <= threshold:
                     target.alive = False
                     target.hp = 0
@@ -2288,7 +2311,7 @@ class MagicMixin:
                     self.add_message(
                         f"{the_name(target)} resists the death-word but staggers!", 'warning')
                     # v2.15+ audit sync: chain retired -> `INT * chain` pinned at INT * 5.
-                    target.take_damage(_floor_scaled(self.player.INT * 5, self.dungeon_level))
+                    target.take_damage(_wound(DEATH_WORD_STAGGER, target.max_hp, True))
                 else:
                     self.add_message(
                         f"{the_name(target)} ({target.hp} HP) is too strong for the death-word "
@@ -2296,7 +2319,7 @@ class MagicMixin:
             elif effect == 'imprisonment':
                 # Very long paralyze — effectively removes target from combat
                 is_boss = _is_big_foe(target)
-                dur = max(15, int(60 * chain_scale))
+                dur = min(60, max(15, int(60 * chain_scale)))     # monster.MAX_EFFECT_DURATION
                 dur, resisted = self._boss_resist_cc(target, dur)
                 if resisted:
                     self.add_message(
@@ -2324,11 +2347,9 @@ class MagicMixin:
             else:
                 # Fallback: generic targeted damage
                 from dice import roll as _r
-                # No _spell_damage here, so the dice are old-scale: size them
-                # to the floor's monsters.
-                scaled = _floor_scaled(
-                    max(1, int((_r(power) if power else 6) * chain_scale)),
-                    self.dungeon_level)
+                # Any targeted effect without a handler of its own is a plain
+                # bolt: the same dice, tier and Intelligence rule as the rest.
+                scaled = self._spell_damage(_r(power) if power else 6)
                 actual = target.take_damage(scaled)
                 self.add_message(f"The {effect.replace('_', ' ')} hits {the_name(target, lower=True)} for {actual} dmg!", 'success')
                 if not target.alive:
@@ -2769,7 +2790,7 @@ class MagicMixin:
             #   T5: teleport directly to the downstairs.
             from dungeon import STAIRS_DOWN
             import random as _rng
-            from monster import monster_at_tile
+            from geom import monster_at_tile
             if _tstep >= 4:
                 target = None
                 for y in range(self.dungeon.height):
@@ -2944,18 +2965,18 @@ class MagicMixin:
             # Chain ladder (Path A): scales damage multiplier on the base roll.
             base_dmg = _roll_e(scroll.power) if scroll.power else 12
             _chain_mult = [1.0, 1.8, 3.0, 5.0, 8.0][_tstep]
-            # Scroll dice are old-scale (no MAGIC_TIER_MULT on this path):
-            # size them to the floor's monsters.
-            scaled = self._int_scaled_damage(
-                _floor_scaled(int(base_dmg * _chain_mult), self.dungeon_level))
+            # The earth takes a share of each creature's own health, by the
+            # scroll's tier (EARTH_SHARE), a little more for a sharp mind.
+            _earth_share = EARTH_SHARE[_tstep] * self._int_share_factor()
             victims = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
             for m in victims:
-                m.take_damage(scaled)
+                m.take_damage(_wound(_earth_share, m.max_hp, _is_big_foe(m)))
                 if not m.alive:
                     self._on_monster_killed(m)
             if victims:
                 self.add_message(
-                    f"Boulders crash from the ceiling! {len(victims)} creature(s) take {scaled} damage!", 'success')
+                    f"Boulders crash from the ceiling! {len(victims)} creature(s) lose "
+                    f"{round(100 * _earth_share)}% of their health!", 'success')
             else:
                 self.add_message("Rocks tumble from above, but nothing is in the way.", 'info')
 
@@ -3991,10 +4012,9 @@ class MagicMixin:
                     'special_status': 'slowed',
                     'special_status_chance': 0.3,
                 }
-                pet.level = max(1, self.dungeon_level // 10)
-                pet.max_hp = 15 + self.dungeon_level
-                pet.hp = pet.max_hp
+                pet.level = DEADITE_LEVEL
                 pet._refresh_stats()
+                pet.hp = pet.max_hp
                 self.pets.append(pet)
                 occupied.add((nx, ny))
                 spawned += 1

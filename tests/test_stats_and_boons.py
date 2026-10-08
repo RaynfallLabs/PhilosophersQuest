@@ -255,12 +255,30 @@ def test_the_gift_menu_draws_headless():
             or g.screen.get_bounding_rect().width > 0
 
 
-def test_dodge_is_rolled_for_a_blow_from_beside_you():
-    src = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()
-    i = src.index('self.player.dodge_chance()')
-    assert 'm._adjacent_to(self.player)' in src[i - 120:i]
-    random.seed(1)
+
+
+def test_the_recipes_menu_path_feeds_the_cuts_stat():
+    """The stamp was set only in cook_ingredient, which nothing calls: in
+    play no meal ever fed a stat, and the unit test built its own recipe."""
+    import items
+    cut = next(k for k in (food_system.cut_stat('x') or 1, ) and food_system._cut_stat_cache
+               if food_system.cut_stat(k) == 'STR')
+    assert food_system.recipe_cut_stat({'ingredients': ['salt_that_is_not_a_cut', cut]}) == 'STR'
+    assert food_system.recipe_cut_stat({'ingredients': []}) is None
+    oid = next(k for k, v in food_system._load_outcomes().items()
+               if isinstance(v, dict) and not v.get('stat_grant') and not v.get('permanent_power'))
+
+    class Quiz:                                   # answers the one cooking question right
+        def start_quiz(self, **kw):
+            kw['callback'](types.SimpleNamespace(success=True))
+
     p = Player()
-    p.DEX = 30
-    slipped = sum(random.random() < p.dodge_chance() for _ in range(4000))
-    assert 500 < slipped < 700                          # 15%
+    p.deepest_floor_reached = 10
+    got = []
+    food_system.cook_compound_recipe(
+        p, {'name': 'Test Roast', 'ingredients': [cut], 'outcome_id': oid, 'tier': 1},
+        p.inventory, Quiz(), got.extend)
+    assert p.cook_stat_meals.get('STR') == 1
+    assert any('Strength: 1 of 2 meals' in m for m in got), got
+    src = open(os.path.join(ROOT, 'src', 'game_render.py'), encoding='utf-8').read()
+    assert 'bits.append(f"Feeds {fed}")' in src

@@ -53,7 +53,7 @@ MYSTERIES = {
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'theology', 'tier': 3, 'threshold': 2, 'total': 7},
         'reward': {'max_hp': 30, 'CON': 2},
-        'reward_text': "The cup fills from nowhere with clear water. You drink, and the ache of the whole descent leaves you. (Max HP +30, Constitution +2)",
+        'reward_text': "The cup fills from nowhere with clear water. You drink, and the ache of the whole descent leaves you. (Max HP +36, Constitution +2)",
         'fail_text': "The cup stays empty and the chapel stays silent. Galahad's seat is not for everyone.",
         'invert_result': False,
     },

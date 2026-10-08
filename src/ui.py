@@ -291,8 +291,8 @@ class Sidebar:
             # is lengthening it (haste, a blessing, the Guiding Hand), red
             # when something is shortening it.
             (f"Clock {player.combat_clock()}s",
-             FP.GOLD_BRIGHT if player.combat_clock() > player.WIS
-             else FP.DANGER_TEXT if player.combat_clock() < player.WIS
+             FP.GOLD_BRIGHT if player.combat_clock() > player.plain_clock()
+             else FP.DANGER_TEXT if player.combat_clock() < player.plain_clock()
              else FP.WARNING_TEXT),
             (f"Wt {wt:.0f}/{lim}", wt_color),
             (f"Spells {spell_count}", FP.MP_BLUE_TEXT),

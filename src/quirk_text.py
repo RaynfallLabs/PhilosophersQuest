@@ -19,10 +19,10 @@ entry in both tables and that no hint quotes its own threshold.
 
 # What each stat does, appended to rewards that raise it.
 _STR = "Strength raises how much you can carry."
-_CON = "Constitution raises your maximum HP and SP."
-_DEX = "Dexterity improves your armor class."
+_CON = "Constitution is 3 health a point and blunts every blow."
+_DEX = "Dexterity helps your armor a little and, past that, lets you slip blows."
 _INT = "Intelligence raises your maximum MP."
-_WIS = "Wisdom adds a second to your quiz timer for every point."
+_WIS = "Every point of Wisdom is a second on the combat clock."
 _PER = "Perception widens how far you can see."
 
 
@@ -163,10 +163,10 @@ QUIRK_DESC = {
     'asclepius':     f"Wisdom +1. {_WIS} You know the venomous creatures the way a healer does: from the inside.",
     'fisher_king':   "You may pray again in half the usual time. Heaven has grown used to hearing from you at your worst.",
     'anansi':        f"Intelligence +1. {_INT} A tangled head is no obstacle to a mind that enjoys the tangle.",
-    'prometheus':    "Permanent regeneration: you recover 1 HP every turn. The wound opens; the wound closes. You have learned to outlast it.",
+    'prometheus':    "Permanent regeneration: you recover 1 HP every third turn, past the point where rest alone stops. The wound opens; the wound closes. You have learned to outlast it.",
     'penelope':      f"Perception +1. {_PER} All that fastening and unfastening has given you an eye for small things.",
     'dionysus':      f"Wisdom +1. {_WIS} You drank through the visions and came out the other side seeing straighter.",
-    'apollo':        f"Intelligence +1, and 3 more seconds on the math combat timer. {_INT} Perfect volleys have become your habit.",
+    'apollo':        f"Intelligence +1 and Wisdom +3. {_INT} {_WIS} Perfect volleys have become your habit.",
     'athena':        f"Wisdom +1. {_WIS} You have looked on a host of creatures, and nothing in the dark is strange to you now.",
     'loki':          f"Wisdom +2. {_WIS} Wearing what was meant to harm you has taught you how harm is made.",
     'thor':          "The weapon you kept faith with gains +2 enchantment for good. It has drunk enough battle at your side to remember it.",
@@ -179,7 +179,7 @@ QUIRK_DESC = {
     'theseus':       f"Perception +1. {_PER} You leave no corridor unwalked, and the habit has sharpened your eye.",
     'persephone':    "A ruined dish still gives you half its SP and HP. What goes down into the dark comes back, a little.",
     'hermes':        "Haste lasts twice as long on you. You have been in two places often enough that speed clings to you.",
-    'sibyl':         "2 more seconds on the math combat timer. You answered a great deal while still near the surface, and the habit of quickness stayed.",
+    'sibyl':         f"Wisdom +4. {_WIS} You answered a great deal while still near the surface, and the habit of quickness stayed.",
     'valkyrie':      f"Dexterity +1. {_DEX} You have chosen the slain from a distance, and your hands are surer for it.",
     'ahasverus':     "Permanent searching: hidden doors and traps beside you reveal themselves as you pass. No one has looked at more walls than you.",
     'circe':         f"Constitution +1. {_CON} You have cooked for every kind of change, and some of it has stayed with you.",
@@ -195,13 +195,13 @@ QUIRK_DESC = {
     'cerberus':      "Permanent warning: you sense monsters within 5 tiles, even through walls. You have guarded so many thresholds that nothing crosses one unnoticed.",
     'ragnarok':      f"Constitution +5. {_CON} You reached the end of the world with almost nothing left, and kept walking.",
     'spartacus':     f"Strength +1 and Constitution +1. {_STR} {_CON} You learned to fight in chains.",
-    'ramanujan':     f"Intelligence +1, and 5 more seconds on the math combat timer. {_INT} The numbers have started answering before you finish asking.",
+    'ramanujan':     f"Intelligence +1 and Wisdom +5. {_INT} {_WIS} The numbers have started answering before you finish asking.",
     'ibn_battuta':   f"Perception +1. {_PER} You have surveyed more of this place than anyone who ever entered it.",
     'tesla':         f"Intelligence +1. {_INT} So many sparks have passed through your hands that you understand the current itself.",
     'de_medici':     f"Wisdom +1. {_WIS} Every lock is a price, and you have learned to pay in knowledge.",
     'leonidas':      f"Constitution +2. {_CON} You have stood and fought on every kind of ground.",
     'confucius':     f"Wisdom +1. {_WIS} You did your deepest thinking under heaven's favour, and some of the favour remained.",
-    'zoroaster':     f"Wisdom +1, and 1 more second on the math combat timer. {_WIS} You carried prayer onto floor after floor.",
+    'zoroaster':     f"Wisdom +2. {_WIS} You carried prayer onto floor after floor.",
     'boudicca':      f"Strength +2. {_STR} They drew first blood. You have been collecting on the debt ever since.",
     'solomon_q':     f"Wisdom +2. {_WIS} You asked the deep questions often enough that the answers began to stay.",
     'atalanta':      f"Dexterity +2. {_DEX} You are gone before the dust settles.",
@@ -211,7 +211,7 @@ QUIRK_DESC = {
     'wanderlust_q':  "Walking drains your SP at half the usual rate. The road has become the place you rest.",
     'nostradamus':   f"Wisdom +2. {_WIS} You read the past clearly through a fog in your own head, and the clarity stayed when the fog lifted.",
     'archimedes':    f"Intelligence +1. {_INT} You know both how the world moves and what it costs, which is all a lever needs.",
-    'machiavelli':   f"Wisdom +1, and 1 more second on the math combat timer. {_WIS} Relentless preparation has become your nature.",
+    'machiavelli':   f"Wisdom +2. {_WIS} Relentless preparation has become your nature.",
     'darwin':        f"Constitution +2. {_CON} You have suffered nearly every affliction this place offers, and adapted to each.",
     'hypatia':       f"Intelligence +2. {_INT} You hold the numbers and the natural world in the same hand.",
     'philosophers_stone': "Power, 1 use this run. Blessed and Brilliant for 10 turns: all quiz timers run 25% longer, and INT and WIS each rise by 1. You have named so many things that for a moment you can see how all of them fit.",

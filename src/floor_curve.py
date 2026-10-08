@@ -15,8 +15,8 @@ import math
 
 HP_ANCHORS = {1: 22, 10: 79, 20: 231, 30: 481, 40: 903, 50: 1412, 60: 2246,
               70: 3372, 80: 4928, 90: 6188, 100: 6912}
-DMG_ANCHORS = {1: 1.19, 10: 2.19, 20: 2.87, 30: 6.07, 40: 13.47, 50: 21.29, 60: 30.6,
-               70: 33.28, 80: 35.64, 90: 37.76, 100: 40.02}
+DMG_ANCHORS = {1: 1.19, 10: 2.19, 20: 2.79, 30: 5.66, 40: 12.12, 50: 19.16, 60: 27.54,
+               70: 29.95, 80: 32.08, 90: 33.98, 100: 36.02}
 
 
 def _interp(anchors: dict, floor: float) -> float:
@@ -41,22 +41,41 @@ ORIGINAL_HP_ANCHORS = {1: 8, 10: 21, 20: 55, 30: 110, 40: 210, 50: 325, 60: 500,
 
 
 def power_scale(floor: float) -> float:
-    """How much bigger an ordinary monster's HP is on `floor` than it was when
-    the game's FIXED damage numbers were written (about x3 near the top of
-    the dungeon, x5 to x6 deep).
-
-    Weapon damage follows monster HP through the material tables, and spells
-    and wands through MAGIC_TIER_MULT. Everything else that hurts a monster
-    by a fixed amount (a thrown potion, a pet's bite, a hero power, a trap,
-    a weapon's bonus dice, a scroll) was sized for the old numbers and is
-    multiplied by this, so it stays worth what it was worth.
+    """OFFLINE TOOLS ONLY. How much bigger an ordinary monster's HP is on
+    `floor` than when the game's first numbers were written. The balance
+    tools use it to convert an old figure ONCE and write the result into the
+    data. Nothing in the running game may call it (a test checks): damage is
+    never multiplied by the floor at the moment it lands.
     """
     return max(1.0, target_hp(floor) / _interp(ORIGINAL_HP_ANCHORS, floor))
 
 
-def scaled(amount: float, floor: float) -> int:
-    """`amount` of old-scale damage, as it should land on `floor` today."""
-    return max(1, int(round(amount * power_scale(floor)))) if amount > 0 else int(amount)
+# LORE, NOT FLOOR. Nothing in the game multiplies damage or health by the
+# dungeon floor at the moment it lands. (`scaled(amount, floor)` did, in
+# twenty-seven places; it is gone.) A thing's power is written as a real
+# number in its data, or it is a stated SHARE of what it acts on:
+
+WOUND_NAMED = 0.10        # a named foe takes this much of any share-of-health effect
+
+
+def wound(share: float, max_hp: int, named: bool = False) -> int:
+    """`share` of a creature's own full health, as hit points (at least 1).
+    Named foes (bosses, mini-bosses, seal demons) take a tenth of it: their
+    health is many times an ordinary monster's."""
+    if share <= 0:
+        return 0
+    if named:
+        share *= WOUND_NAMED
+    return max(1, int(round(share * max(1, int(max_hp)))))
+
+
+POWER_BAR = 120.0         # hero-power dice were written against about this much health
+POWER_CAP = 0.30
+
+
+def power_share(written: float) -> float:
+    """Dice written for a hero power, as a share of the target's health."""
+    return max(0.0, min(POWER_CAP, float(written) / POWER_BAR))
 
 
 # ---------------------------------------------------------------------------
@@ -170,39 +189,13 @@ def natural_regen(max_hp: int) -> int:
 DEATH_REAP_SHARE = 0.08
 
 
-# A hero's signature weapon (the named one a secret build starts with) is
-# worth this much of a typical common weapon of the deepest floor reached:
-# 1.3 at the top, easing to 1.1 by floor 40. It starts far above that (three
-# to five times a floor-1 sword), so the starting edge fades on its own and
-# from about floor 12 the weapon grows instead of being thrown away.
-HERO_WEAPON_SHARE_START = 1.3
-HERO_WEAPON_SHARE_END = 1.1
-HERO_WEAPON_SHARE_END_FLOOR = 40
-
-
-def hero_weapon_share(floor: int) -> float:
-    t = min(1.0, max(0.0, (int(floor) - 1) / float(HERO_WEAPON_SHARE_END_FLOOR - 1)))
-    return HERO_WEAPON_SHARE_START + (HERO_WEAPON_SHARE_END - HERO_WEAPON_SHARE_START) * t
-
-
 # A pet that has kept pace with the dungeon (its level about equal to the
 # floor) bites for PET_ATTACK_SHARE of one weapon attack and has
 # PET_HEALTH_SHARE of the player's health bar for that depth. Pet numbers
 # were written as "3 damage at level 1, 30 at level 100" and then multiplied
 # by the monster-health scale, which made a pet 72% of the player's attack
 # on floor 5 and 7% on floor 100, dying to two or three hits deep down.
-PET_ATTACK_SHARE = 0.25
-PET_HEALTH_SHARE = 0.70
-PET_REGEN_SHARE = 0.01        # of max HP, every third turn
-
-
-def pet_attack(level: int) -> int:
-    """A pet's base bite at `level` (levels track floors, 1 to 100)."""
-    return max(3, int(round(PET_ATTACK_SHARE * one_attack(max(1, min(100, int(level)))))))
-
-
-def pet_health(level: int) -> int:
-    return max(20, int(round(PET_HEALTH_SHARE * health_bar(max(1, min(100, int(level)))))))
+PET_REGEN_SHARE = 0.01        # of a pet's max HP, every third turn
 
 
 # Meditation gives back at most this share of max MP on any one floor; a new
@@ -216,28 +209,6 @@ MEDITATE_FLOOR_SHARE = 0.5
 def meditation_allowance(max_mp: int) -> int:
     """Mana that meditating can restore on one floor."""
     return max(1, int(round(int(max_mp) * MEDITATE_FLOOR_SHARE)))
-
-
-# The first floors go easy: an ordinary monster's blow lands for EARLY_MERCY
-# of its damage down to floor EARLY_MERCY_FULL_TO, easing back to full by
-# floor EARLY_MERCY_ENDS. Named foes are exempt. This is a rule rather than
-# smaller dice because the dice up here are already 1d2 and 1d3: there is
-# nothing smaller to write. (Measured: a casual player reached floor 20 in
-# 79% of runs without it; the aim is about nine in ten.)
-EARLY_MERCY = 0.75
-EARLY_MERCY_FULL_TO = 13
-EARLY_MERCY_ENDS = 26
-
-
-def early_mercy(floor: int) -> float:
-    """Multiplier on an ordinary monster's damage on this floor (1.0 deep)."""
-    floor = int(floor)
-    if floor <= EARLY_MERCY_FULL_TO:
-        return EARLY_MERCY
-    if floor >= EARLY_MERCY_ENDS:
-        return 1.0
-    t = (floor - EARLY_MERCY_FULL_TO) / float(EARLY_MERCY_ENDS - EARLY_MERCY_FULL_TO)
-    return EARLY_MERCY + (1.0 - EARLY_MERCY) * t
 
 
 # Rest closes wounds only so far: natural regeneration stops at this share

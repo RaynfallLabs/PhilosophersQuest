@@ -118,6 +118,7 @@ def _outcome_bonus_category(outcome: dict) -> str:
 
 
 STARVE_SHARE = 0.02
+ARC_SHARE = 0.05          # a stray arc of lightning: this share of a creature's health
 from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa: E402
                          wander_alive_cap)
 
@@ -398,7 +399,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 setattr(self.player, stat, value)
         if b:
             # Recompute derived stats after overrides (STR->max_sp, CON->max_hp, INT->max_mp)
-            self.player.max_hp = self.player.BASE_HP + self.player.CON
+            self.player.max_hp = self.player.starting_max_hp()
             self.player.hp     = self.player.max_hp
             self.player.max_sp = self.player.BASE_SP + self.player.STR
             self.player.sp     = self.player.max_sp
@@ -1201,6 +1202,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if qs:
             qs.on_stairs_taken_fast()
 
+        # A monster on a floor the player has left is not simulated. Note the
+        # turn, so a gate boss can be mended for the time away on return.
+        for _m in self.monsters:
+            if getattr(_m, 'recovers_when_left', False):
+                _m._left_at_turn = self.turn_count
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
@@ -1217,6 +1223,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         saved = self.level_mgr.load(new_level)
         if saved:
             dungeon, monsters, ground_items = saved
+            for _m in monsters:
+                _left = getattr(_m, '_left_at_turn', None)
+                if _left is not None and getattr(_m, 'alive', False):
+                    _m.mend_for_absence(self.turn_count - int(_left))
+                    _m._left_at_turn = None
         else:
             dungeon, monsters, ground_items = self.level_mgr.generate(new_level)
 
@@ -1244,29 +1255,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if _learned > 0:
                 self.add_message(
                     f"The Dungeon Has Taught You Something. Wisdom +{_learned}. "
-                    f"(The Combat Clock Is Now {self.player.get_quiz_timer('math')} Seconds.)",
+                    f"(The Combat Clock Is Now {self.player.combat_clock()} Seconds.)",
                     'success')
+        if self.player.deepest_floor_reached > _was_deepest:
+            self.player.new_floor_of_quiet()
         # Trait points held back by the allowance come in with new depth.
         if self.player.deepest_floor_reached > _was_deepest:
             for _stat, _n in self.player.pay_quirk_stats_owed():
                 self.add_message(
                     f"A Trait You Earned Comes Into Its Own: {_stat} +{_n}.", 'success')
-        # A hero's signature weapon grows with new depth (decision D5).
-        if self.player.deepest_floor_reached > _was_deepest:
-            from items import grow_signature_weapon
-            _held = list(self.player.inventory) + [
-                self.player.weapon, getattr(self.player, 'ranged_weapon', None)]
-            for _w in _held:
-                _tier_was = int(getattr(_w, 'quiz_tier', 1) or 1) if _w is not None else 1
-                _grew = grow_signature_weapon(_w, self.player.deepest_floor_reached)
-                if _grew:
-                    self.add_message(
-                        f"{self._display_name(_w)} Grows With You: Base Damage "
-                        f"{_grew[0]} Becomes {_grew[1]}.", 'success')
-                if _w is not None and int(getattr(_w, 'quiz_tier', 1) or 1) > _tier_was:
-                    self.add_message(
-                        f"{self._display_name(_w)} Now Asks Tier "
-                        f"{_w.quiz_tier} Sums, Like The Weapons Of This Depth.", 'warning')
         # Fafnir's Heart trophy (2026-05-31): +2 max HP each NEW deepest floor.
         if self.player.deepest_floor_reached > _was_deepest:
             _per_desc = int(getattr(self.player, '_fafnir_per_descent_hp', 0) or 0)
@@ -1874,11 +1871,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     w = instantiate_weapon(start_weapon[0], start_weapon[1])
                 else:
                     w = next((x for x in weapons if x.id == start_weapon), None)
-                    if w is not None and not b.get('_no_weapon_growth'):
-                        # A hero's own named weapon keeps pace with the
-                        # dungeon (items.grow_signature_weapon). Copies of
-                        # the same unique found as loot do not.
-                        w.grows_with_depth = True
                 if w:
                     _mark_starting_item_known(w)
                     self.player.known_item_ids.add(w.id)
@@ -3589,9 +3581,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                     and not (_mm.x == self.player.x and _mm.y == self.player.y)]
                     if _adj_targets:
                         _t = random.choice(_adj_targets)
-                        from floor_curve import scaled as _floor_scaled
-                        # 1d6 is old-scale: size it to the floor's monsters.
-                        _dmg = _floor_scaled(random.randint(1, 6), self.dungeon_level)
+                        from floor_curve import wound as _wound
+                        # A share of the creature's own health.
+                        _dmg = _wound(ARC_SHARE, _t.max_hp, _t._is_named_foe())
                         _t.take_damage(_dmg, 'lightning')
                         self.add_message(
                             f"Boots of Thor — lightning arcs into the {_t.name} for {_dmg}!",
@@ -3731,8 +3723,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         if not self._haste_skip_world:
             self._do_monster_turns()
-            self._do_pet_turns()
-            self._maybe_wander_spawn()
+            if not self.player.is_dead():
+                self._do_pet_turns()
+                self._maybe_wander_spawn()
         self._death_proximity_warning()
         self._tick_hp_regen()
 
@@ -3893,9 +3886,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         replacement.x = getattr(victim, 'x', 0)
                         replacement.y = getattr(victim, 'y', 0)
                         idx = self.player.inventory.index(victim)
-                        for slot, eq in list(self.player.equipment.items()):
-                            if eq is victim:
-                                self.player.equipment[slot] = None
+                        # (The pack only: worn and wielded things are not in
+                        # player.inventory. This read `player.equipment`, which
+                        # does not exist, and crashed every time.)
                         self.player.inventory[idx] = replacement
                         self.add_message(f"Your {old_name} transforms into {self._a_or_an(replacement.name)}!", 'warning')
                     else:
@@ -4201,10 +4194,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Apply damage (some traps have damage 0; those are status-only).
         dmg_str = str(trap.get('damage', '0'))
         if dmg_str and dmg_str != '0':
-            from floor_curve import scaled as _floor_scaled
-            # Trap dice are sized for the player's hit points, which did not
-            # grow with the monsters': size them to the floor for a monster.
-            raw = _floor_scaled(_dice_roll(dmg_str), self.dungeon_level)
+            from floor_curve import HAZARD_BAR, HAZARD_CAP, wound as _wound
+            # A trap takes the same share of whoever is in it: the dice were
+            # written against a 60-point health bar (floor_curve.hazard).
+            raw = _wound(min(HAZARD_CAP, _dice_roll(dmg_str) / HAZARD_BAR),
+                         monster.max_hp, monster._is_named_foe())
             monster.take_damage(raw)
 
         # Monster-appropriate status applications (skip player-only effects).
@@ -6086,6 +6080,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         )
 
 
+    def _int_share_factor(self) -> float:
+        """What Intelligence adds to a share-of-health effect: 1.0 at INT 10,
+        up to 1.4 (game_magic.int_damage_factor, without its doubling)."""
+        from game_magic import int_damage_factor
+        return int_damage_factor(self.player.INT) / 2.0
+
     def _int_scaled_damage(self, base_dmg: int) -> int:
         """Scale magic damage by INT (thrown potions, scrolls, hero powers):
         2.0x at INT 10 and a little more per point, 2.8x at most. The same
@@ -6460,7 +6460,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
 
     def update(self, dt: float):
-        if self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None):
+        if (self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None)
+                and not self.player.is_dead()):
             self._open_boon_menu()
         if self.state == STATE_QUIZ:
             if hasattr(self, '_necro_qs') and self._necro_qs is not None:

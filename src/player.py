@@ -26,8 +26,9 @@ class Player:
         self.PER = 10
 
         # Resources
-        self.max_hp = self.BASE_HP + self.CON
+        self.max_hp = self.starting_max_hp()
         self.hp = self.max_hp
+        self._con_hp_rule = 3          # see __setstate__: saves from the 1-HP rule
         self.max_sp = self.BASE_SP + self.STR
         self.sp = self.max_sp
         self.max_mp = self.BASE_MP + self.INT
@@ -234,10 +235,6 @@ class Player:
         halving_effect = DAMAGE_HALVED.get(damage_type)
         if halving_effect and self.has_effect(halving_effect) and amount > 0:
             amount = (amount + 1) // 2
-        # floor_curve.early_mercy: set by the game around a monster's attack.
-        mercy = getattr(self, '_mercy', 1.0)
-        if mercy != 1.0 and amount > 1:
-            amount = max(1, int(round(amount * mercy)))
         # Toughness: a hardy body shrugs off part of every blow.
         if amount > 1 and damage_type != 'starvation':
             amount = max(1, int(round(amount * (1.0 - self.toughness()))))
@@ -601,7 +598,6 @@ class Player:
         self._cook_stat_gain_this_floor = 0
         self._cook_hp_gain_this_floor = 0
         self._con_drained_this_floor = 0      # monster.DRAIN_CON_PER_FLOOR
-        self._meditated_this_floor = 0        # floor_curve.MEDITATE_FLOOR_SHARE
 
     def apply_cooking_stat_bonus(self, stat: str, amount: int) -> int:
         """Apply a cooked-food stat bonus with diminishing returns + per-stat
@@ -669,8 +665,14 @@ class Player:
         self.apply_stat_bonus(stat, amount)
         return amount
 
+    def new_floor_of_quiet(self) -> None:
+        """A floor never stood on before: its quiet is untouched. Called on
+        reaching a new deepest floor only. (The allowance used to come back
+        on every level change, so one step down and up refilled it.)"""
+        self._meditated_this_floor = 0
+
     def meditation_left(self) -> int:
-        """Mana that meditating can still restore on this floor."""
+        """Mana that meditating can still restore until a new floor is reached."""
         from floor_curve import meditation_allowance
         return max(0, meditation_allowance(self.max_mp)
                    - int(getattr(self, '_meditated_this_floor', 0)))
@@ -738,6 +740,17 @@ class Player:
         ):
             state.pop(_dead, None)
         self.__dict__.update(state)
+        # Saves from before Constitution was 3 health a point hold a max HP
+        # built at 1 a point. Bring it to the one rule, once, so that taking
+        # off a Constitution ring does not cost more than putting it on gave.
+        if state.get('_con_hp_rule') != 3:
+            try:
+                extra = (int(self.CON) - 10) * (self.HP_PER_CON - 1)
+                self.max_hp = max(1, int(self.max_hp) + extra)
+                self.hp = max(1, min(int(self.hp) + max(0, extra), self.max_hp))                     if int(self.hp) > 0 else self.hp
+            except Exception:
+                pass
+            self._con_hp_rule = 3
         if not hasattr(self, 'known_forms'):
             self.known_forms = set()
         if not hasattr(self, 'known_materials'):
@@ -959,6 +972,11 @@ class Player:
     DEX_AC_CAP = 3                # most armor class Dexterity alone gives
     DODGE_CAP = 0.30
 
+    def starting_max_hp(self) -> int:
+        """Health of a fresh character: 30 at Constitution 10, and HP_PER_CON
+        for every point above or below it, the same as any later point."""
+        return max(1, self.BASE_HP + 10 + (int(self.CON) - 10) * self.HP_PER_CON)
+
     def toughness(self) -> float:
         """Share of every blow a hardy body ignores (0 at CON 10)."""
         return max(0.0, min(self.TOUGHNESS_CAP,
@@ -967,8 +985,9 @@ class Player:
     def dodge_chance(self) -> float:
         """Chance to slip a blow that would have landed (0 at DEX 10). Rolled
         after the monster's hit roll, so it also beats a glancing hit."""
-        if self.has_effect('paralyzed') or self.has_effect('sleeping') \
-                or self.has_effect('immobilized'):
+        # Nobody who cannot act can sidestep.
+        if any(self.has_effect(e) for e in ('paralyzed', 'sleeping', 'immobilized',
+                                            'stunned', 'frozen', 'petrifying')):
             return 0.0
         return max(0.0, min(self.DODGE_CAP,
                             (int(self.DEX) - 10) * self.DODGE_PER_DEX))
@@ -1014,6 +1033,12 @@ class Player:
         used to show bare Wisdom, which hid haste and every debuff."""
         return (round(self.get_quiz_timer('math') * self.get_quiz_timer_modifier())
                 + int(self.get_quiz_extra_seconds('math')))
+
+    def plain_clock(self) -> int:
+        """The clock with nothing lengthening or shortening it: the base
+        timer for the character's own Wisdom, no lent wisdom, no modifier."""
+        lent = int(getattr(self, 'insight_wis', 0) or 0) if self.has_effect('inspired') else 0
+        return max(1, int(self.get_quiz_timer('math')) - lent)
 
     def get_quiz_timer_modifier(self) -> float:
         """Multiplier applied to quiz timer based on active effects.

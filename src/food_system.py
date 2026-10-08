@@ -64,6 +64,16 @@ def cut_stat(ingredient_id: str) -> str | None:
     return _cut_stat_cache.get(ingredient_id)
 
 
+def recipe_cut_stat(recipe: dict) -> str | None:
+    """The stat a recipe's meat feeds: that of its first prime cut, or None
+    if it has none (foraged dishes, trophies)."""
+    for ing_id in recipe.get('ingredients', []) or []:
+        stat = cut_stat(ing_id)
+        if stat:
+            return stat
+    return None
+
+
 _monster_floor_cache: dict | None = None
 
 
@@ -397,7 +407,7 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
         # give a whole point each; deep down that was a point a floor.
         cut_stat = meal_stat
         gained, banked = player.feed_cut_stat(cut_stat)
-        label = _STAT_LABELS.get(cut_stat, cut_stat)
+        label = _STAT_LABELS.get(cut_stat, cut_stat).title()
         if gained > 0:
             messages.append(f"Your {label} increases by {gained}!")
         elif banked > 0:
@@ -563,6 +573,10 @@ def cook_compound_recipe(player, recipe: dict, inventory: list, quiz_engine, on_
             if isinstance(item, Ingredient) and item.id == ing_id:
                 player.remove_from_inventory(item)
                 break
+    # The meat decides the stat. This is the path the Recipes menu takes;
+    # the stamp used to be set only in cook_ingredient, which nothing calls,
+    # so in play no meal ever fed a stat.
+    recipe = dict(recipe, _cut_stat=recipe_cut_stat(recipe))
 
     def _callback(result):
         messages = _apply_recipe_outcome(player, recipe,

@@ -150,6 +150,7 @@ class Monster:
         # the monster is left alone (see _recover_when_left).
         self.fury_per_attack: float = float(defn.get('fury_per_attack', 0.0))
         self.fury_cap: float = float(defn.get('fury_cap', 1.0))
+        self.fury_message: str = str(defn.get('fury_message', '') or '')
         self._fury_swings: int = 0
         self._fury_told: int = 0
 
@@ -322,7 +323,7 @@ class Monster:
         'summon_kind': '', 'summon_cooldown': 5, 'summon_max': 4,
         '_summon_turn_counter': 0, '_summons_made': 0, '_wants_summon': False,
         'can_charge': False, 'charge_bonus_mult': 1.5, '_charge_ready': False,
-        'recovers_when_left': False, '_unhurt_turns': 0, '_recovered_note': False,
+        'recovers_when_left': False, '_unhurt_turns': 0, '_recovered_note': False, '_left_at_turn': None,
         'fury_per_attack': 0.0, 'fury_cap': 1.0, '_fury_swings': 0, '_fury_told': 0,
         'fury_message': '',
         'pack_dependent': False, 'pack_min_allies': 1,
@@ -511,6 +512,25 @@ class Monster:
         return (getattr(self, 'fury_message', '')
                 or f"{the_name(self)} grows more furious the longer this lasts.")
 
+    def mend_for_absence(self, turns: int) -> int:
+        """The player was on another floor for `turns` turns: recover as if
+        those turns had passed here (see _recover_when_left). Returns the HP
+        regained."""
+        if not getattr(self, 'recovers_when_left', False) or not self.alive or turns <= 0:
+            return 0
+        self._unhurt_turns = int(getattr(self, '_unhurt_turns', 0)) + int(turns)
+        mending = self._unhurt_turns - RECOVER_AFTER_TURNS + 1
+        if mending <= 0:
+            return 0
+        self._fury_swings = 0
+        self._fury_told = 0
+        before = self.hp
+        self.hp = min(self.max_hp,
+                      self.hp + max(1, int(self.max_hp * RECOVER_SHARE)) * min(mending, int(turns)))
+        if self.hp > before:
+            self._recovered_note = True
+        return self.hp - before
+
     def _recover_when_left(self):
         """Gate bosses: heal once the challenger has backed off (see
         RECOVER_AFTER_TURNS). Returns the HP regained this turn."""
@@ -576,6 +596,10 @@ class Monster:
 
     def attack(self, player) -> tuple[int, str]:
         """Monster attacks player using THAC0 vs player AC. Returns (damage_dealt, message)."""
+        # A monster that is swinging has not been left alone: it neither
+        # mends nor cools (see _recover_when_left). Fury used to reset in the
+        # middle of a fight whenever the player went 25 turns without a hit.
+        self._unhurt_turns = 0
         # Sudarshana (engine wave 4): return_to_hand_ward. The previous
         # chain-5 kill set this flag — this attack misses outright and the
         # ward is consumed.
@@ -785,6 +809,13 @@ class Monster:
         # Blinded: 40% chance to miss (can't see target)
         if self.has_effect('blinded') and random.random() < 0.40:
             return 0, f"{the_name(self)} flails blindly and misses!"
+
+        # Dodge (Dexterity): a blow from beside you can be slipped. Breath,
+        # spit and thrown things cannot, and nor can a gaze (handled above).
+        _dodge = getattr(player, 'dodge_chance', None)
+        if (_dodge is not None and not is_breath and self._adjacent_to(player)
+                and random.random() < _dodge()):
+            return 0, f"You slip {the_name(self, lower=True)}'s blow."
 
         # Displacement's 30% miss is rolled once, by the caller in game_combat
         # (it used to be rolled here as well, for a combined 51% miss).

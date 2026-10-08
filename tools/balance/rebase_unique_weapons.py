@@ -56,6 +56,12 @@ SCRIPTED_FLOOR = {
     "oathkeeper_sword": 25,     # Grieving Father, floors 21-29
     "penitents_blade": 75,      # The Penitent, floors 71-79
     "caliburn": 32,
+    # Hero weapons locked to their builds. LORE, not floor: each is placed
+    # where its legend puts its power, and a hero simply starts with it.
+    "witcher_silver_blade": 30,   # a master-forged silver sword for monsters
+    "zireael": 45,                # the gnomish gwyhyr, the best blade in its world
+    "boomstick": 45,              # a twelve-gauge in a world of swords
+    "chainsaw_prosthetic": 42,    # a chainsaw, likewise
 }
 # Tools and broken things are not weapons to be tuned.
 SKIP = ("broken_gram", "sigurds_shovel", "punch_in_the_face")

@@ -13,7 +13,8 @@ hook sites in combat.py, player.py, game_menus.py, and main.py.
 """
 from __future__ import annotations
 import random
-from floor_curve import scaled as _floor_scaled, target_hp as _target_hp
+from floor_curve import power_share as _power_share, target_hp as _target_hp, wound as _wound
+from pet_system import growth as _pet_growth
 from geom import monster_at_tile
 
 
@@ -311,11 +312,11 @@ HERO_SPECIALS: dict[str, dict] = {
         'effect': 'summon_sketch_helper',
         'tier_effects': {
             0: {'duration': 0,  'level': 0,  'damage': '0d0'},
-            1: {'duration': 15, 'level': 5,  'damage': '1d8+2'},
-            2: {'duration': 20, 'level': 10, 'damage': '1d10+3'},
-            3: {'duration': 25, 'level': 15, 'damage': '2d8+4'},
-            4: {'duration': 30, 'level': 25, 'damage': '2d10+5'},
-            5: {'duration': 40, 'level': 40, 'damage': '3d8+6'},
+            1: {'duration': 15, 'level': 15, 'damage': '1d8+2'},
+            2: {'duration': 20, 'level': 30, 'damage': '1d10+3'},
+            3: {'duration': 25, 'level': 45, 'damage': '2d8+4'},
+            4: {'duration': 30, 'level': 60, 'damage': '2d10+5'},
+            5: {'duration': 40, 'level': 80, 'damage': '3d8+6'},
         },
     },
     "boudicca queen of the iceni": None,   # passive
@@ -616,8 +617,8 @@ def _eff_self_aoe_fire(game, special, tier, chain):
         if not m.alive:
             continue
         if max(abs(m.x - px), abs(m.y - py)) <= radius:
-            # The dice are old-scale: size them to the floor's monsters.
-            dmg = _floor_scaled(roll(dice), _floor_of(game))
+            # A share of the creature's own health (floor_curve.power_share).
+            dmg = _wound(_power_share(roll(dice)), m.max_hp, is_boss_or_huge(m))
             if is_boss_or_huge(m):
                 dmg = max(1, dmg // 2)
             m.take_damage(dmg)
@@ -761,8 +762,8 @@ def _eff_damage_single(game, special, tier, chain):
         return
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
-    # The dice are old-scale: size them to the floor's monsters.
-    dmg = _floor_scaled(roll(dice), _floor_of(game))
+    # A share of the creature's own health (floor_curve.power_share).
+    dmg = _wound(_power_share(roll(dice)), target.max_hp, is_boss_or_huge(target))
     if is_boss_or_huge(target):
         dmg = max(1, dmg // 2)
     target.take_damage(dmg)
@@ -787,9 +788,10 @@ def _eff_drain_attractive(game, special, tier, chain):
         game.add_message("No suitably... persuadable... target nearby.", 'info')
         return
     target = adj[0]
-    # The drain is sized to the floor's monsters; the heal is not (the
-    # player's hit points did not grow with theirs).
-    drained = min(_floor_scaled(hp_drain, _floor_of(game)), target.hp)
+    # The drain is a share of the target's own health; the heal is the
+    # written figure.
+    drained = min(_wound(_power_share(hp_drain), target.max_hp, is_boss_or_huge(target)),
+                  target.hp)
     target.take_damage(drained)
     game.player.hp = min(game.player.max_hp, game.player.hp + min(hp_drain, drained))
     game.add_message(
@@ -910,7 +912,7 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
         name = "Mechanical Helper"
         symbol = 'h'
         min_level = lvl
-        max_hp = 30 + lvl * 4
+        max_hp = int(_pet_growth('health', lvl) / 0.4)     # SketchedPet keeps 40% of it
         attacks = [{'damage': dmg}]
     from pet_system import SketchedPet
     px, py = game.player.x, game.player.y

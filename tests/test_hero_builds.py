@@ -27,58 +27,6 @@ def _weapon(wid, grows=True):
     return w
 
 
-def test_a_signature_weapon_starts_ahead_and_keeps_pace():
-    for wid in SIGNATURE:
-        w = _weapon(wid)
-        start = w.base_damage
-        assert start >= 2 * items.typical_weapon_base(1), wid       # the starting edge
-        for floor in range(1, 101):
-            items.grow_signature_weapon(w, floor)
-            if floor in (40, 60, 80, 100):
-                typical = items.typical_weapon_base(floor, w.quiz_tier)
-                assert w.base_damage >= 1.05 * typical, (wid, floor)
-                assert w.base_damage <= 1.35 * max(typical, items.typical_weapon_base(floor)), (wid, floor)
-                assert w.quiz_tier == min(5, 1 + floor // 20), (wid, floor)
-        assert w.base_damage > 10 * start
-
-
-def test_growth_never_lowers_and_only_touches_a_heros_own_weapon():
-    w = _weapon('prometheus_torch')
-    assert items.grow_signature_weapon(w, 1) is None and w.base_damage == 14
-    loot = _weapon('prometheus_torch', grows=False)
-    for floor in (20, 60, 100):
-        assert items.grow_signature_weapon(loot, floor) is None
-    assert loot.base_damage == 14 and loot.quiz_tier == 1
-    assert items.grow_signature_weapon(None, 50) is None
-    high = _weapon('zireael')                      # asks tier-3 sums from the start
-    items.grow_signature_weapon(high, 5)
-    assert high.quiz_tier == 3
-
-
-def test_the_share_fades_from_thirty_percent_to_ten():
-    assert floor_curve.hero_weapon_share(1) == 1.3
-    assert abs(floor_curve.hero_weapon_share(40) - 1.1) < 1e-9
-    assert abs(floor_curve.hero_weapon_share(100) - 1.1) < 1e-9
-    assert 1.1 < floor_curve.hero_weapon_share(20) < 1.3
-
-
-def test_typical_base_is_stable_and_rises_with_depth():
-    a = [items.typical_weapon_base(f) for f in (1, 20, 40, 60, 80, 100)]
-    assert a == sorted(a) and a[0] <= 4 and a[-1] > 300
-    assert items.typical_weapon_base(50) == items.typical_weapon_base(50)
-
-
-def test_the_start_code_marks_named_weapons_and_the_floor_hook_grows_them():
-    src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
-    assert 'w.grows_with_depth = True' in src
-    assert 'grow_signature_weapon(_w, self.player.deepest_floor_reached)' in src
-    import welcome_screen
-    named = [b.get('_start_weapon') for b in welcome_screen.SECRET_BUILDS.values()
-             if isinstance(b.get('_start_weapon'), str)]
-    ids = {x.id for x in items.load_items('weapon')}
-    assert len(named) >= 6 and all(n in ids for n in named)
-
-
 # ------------------------------------------------------------ traits (quirks), D6
 
 def test_trait_stat_points_are_paid_from_an_allowance_that_grows_with_depth():

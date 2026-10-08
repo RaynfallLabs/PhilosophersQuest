@@ -118,3 +118,11 @@ def test_deep_slumber_and_mass_paralyze_are_different_spells():
     i = src.index("Deep Slumber and Mass")
     block = src[i:i + 1200]
     assert "spell.get('spell_family') == 'paralyze'" in block and "'sleeping', (20 if" in block
+
+
+def test_a_multi_hit_spell_shares_one_casts_damage_between_its_hits():
+    """Each missile used to carry the whole cast: Force Storm's seven were
+    2.2 weapon attacks while the audit, counting one, said 0.31."""
+    src = open(os.path.join(ROOT, 'src', 'game_magic.py'), encoding='utf-8').read()
+    assert 'self._spell_damage(base_dmg, chain) // missiles' in src
+    assert 'self._spell_damage(base_dmg, chain) // shots' in src

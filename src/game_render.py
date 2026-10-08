@@ -745,6 +745,8 @@ class RenderMixin:
         text("Resistances", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += 22
         for dtype, mult in list(getattr(p, 'resistances', {}).items())[:5]:
+            if y + 18 > body.bottom:
+                break                 # a short window: never draw past the panel
             col = FP.SUCCESS_TEXT if mult < 1 else FP.DANGER_TEXT
             text(dtype.title(), font_body, FP.BODY_TEXT, body.x, y)
             text(f"x{mult:.2f}", font_bold, col, body.x + 110, y)
@@ -2746,9 +2748,21 @@ class RenderMixin:
                 if o.get('sp'):            bits.append(f"+{o['sp']}SP")
                 if o.get('hp'):            bits.append(f"+{o['hp']}HP")
                 if o.get('max_hp_bonus'):  bits.append(f"+{o['max_hp_bonus']}maxHP")
-                if o.get('stat_grant'):
+                # A trophy grants its stat outright. Any other meal is banked
+                # toward the stat of its meat (two meals, on two floors, make
+                # a point): say which stat, and promise no number.
+                if o.get('permanent_power') and o.get('stat_grant'):
                     stat = o.get('stat_grant_default') or recipe.get('stat_grant_default') or '?'
                     bits.append(f"+{o['stat_grant']}{stat}")
+                else:
+                    try:
+                        from food_system import recipe_cut_stat
+                        fed = recipe_cut_stat(recipe) or (
+                            o.get('stat_grant_default') if o.get('stat_grant') else None)
+                    except Exception:
+                        fed = None
+                    if fed:
+                        bits.append(f"Feeds {fed}")
                 if o.get('temp_power'):
                     tp = _temp_power_label(o.get('temp_power'))
                     dur = o.get('temp_duration')

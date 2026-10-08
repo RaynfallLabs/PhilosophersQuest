@@ -1,6 +1,11 @@
 import random
 from dice import roll
-from floor_curve import scaled as _floor_scaled
+
+# Shares, not floor multipliers (floor_curve: LORE, NOT FLOOR).
+RANGED_STAT_SHARE = 0.03      # of a bow's own base, per four points of PER / STR over 10
+LAST_STAND_SHARE = 0.15       # Helm of Leonidas, below a fifth of health
+ENCIRCLED_SHARE = 0.04        # Cuirass of Hannibal, per adjacent enemy when surrounded
+GROWING_SHARE = 0.02          # Caliburn: of its forged base, each time it grows
 from geom import is_at_tile
 
 # Fallback multipliers used when the player has no weapon equipped.
@@ -1006,14 +1011,13 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Unarmed (fist) uses the chain combat v2 STR-scaled base: 2 × (1 + STR/10)
         # above 10 STR. STR 10 = 2, STR 15 = 3, STR 20 = 4. Intentionally weak —
         # this is the "you dropped your weapon" fallback, not an alternative build.
-        # (Sized to the floor: fists have no material to carry them deeper.)
+        # (A real, small number: fists are fists on any floor.)
         if weapon and weapon.base_damage:
             base = weapon.base_damage
         elif weapon and weapon.damage:
             base = roll(weapon.damage)
         else:
-            base = _floor_scaled(
-                max(1, round(2 * (1 + max(0, player.STR - 10) / 10.0))), _floor)
+            base = max(1, round(2 * (1 + max(0, player.STR - 10) / 10.0)))
 
         # Ranged stat bonuses (chain combat v2). Per-hit additive on the base
         # BEFORE material/chain scaling. Bow/sling get STR + PER at /4;
@@ -1022,9 +1026,12 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # attacks are unaffected.
         if is_ranged:
             _wc = getattr(weapon, 'weapon_class', '') if weapon else ''
-            base += _floor_scaled(max(0, (player.PER - 10) // 4), _floor)
+            # A share of the weapon's own base: RANGED_STAT_SHARE for every
+            # four points of the stat above 10.
+            _own = int(base)
+            base += int(round(_own * RANGED_STAT_SHARE * max(0, (player.PER - 10) // 4)))
             if _wc != 'crossbow':
-                base += _floor_scaled(max(0, (player.STR - 10) // 4), _floor)
+                base += int(round(_own * RANGED_STAT_SHARE * max(0, (player.STR - 10) // 4)))
 
         # Weakened / frozen: halve player attack damage. Both effects
         # describe "attack damage halved" / "encased in ice." Previously
@@ -1034,7 +1041,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             base = max(1, base // 2)
 
         # Ammo damage bonus (ranged shots only)
-        ammo_bonus  = _floor_scaled(ammo.damage_bonus, _floor) if ammo else 0
+        ammo_bonus  = int(ammo.damage_bonus) if ammo else 0      # real numbers, data/items/ammo.json
         enchant     = weapon.enchant_bonus if weapon else 0
         # Chain combat v2: polynomial `mult = chain ** chain_exponent` when the
         # weapon opts in; otherwise fall back to the legacy per-rung array.
@@ -1238,7 +1245,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Beowulf quirk: unarmed attacks deal +5 base damage
         if weapon is None:
             unarmed_bonus = getattr(player, 'quirk_progress', {}).get('beowulf_unarmed_bonus', 0)
-            base += _floor_scaled(unarmed_bonus, _floor)
+            base += int(unarmed_bonus)
 
         # (Weakened is applied once, with frozen, near the top of this
         # function. A second halving here used to quarter the damage.)
@@ -1391,7 +1398,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Sword of Michael vs Abaddon: bonus holy damage
         if weapon and getattr(weapon, 'abaddon_bonus_damage', '') and monster.kind == 'abaddon_destroyer':
             from dice import roll as _ab_roll
-            bonus = _floor_scaled(_ab_roll(weapon.abaddon_bonus_damage), _floor)
+            bonus = _ab_roll(weapon.abaddon_bonus_damage)       # real dice, weapon.json
             damage += bonus
 
         # Spear of Lugh (engine wave 4): damage_bonus_vs_gaze. Multiplies
@@ -1425,7 +1432,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             for _bt_tag, _bt_dice in _tag_bonuses.items():
                 if _tag_match(monster, _bt_tag):
                     try:
-                        damage += _floor_scaled(_tb_roll(_bt_dice), _floor)
+                        damage += _tb_roll(_bt_dice)             # real dice, weapon.json
                     except Exception:
                         pass
 
@@ -1434,18 +1441,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         if getattr(player, '_death_omen_target', None) == id(monster):
             damage = int(damage * 1.25)
 
-        # Helm of Leonidas (last_stand_bonus): +3 flat damage (old scale,
-        # sized to the floor) while at <20% HP.
+        # Helm of Leonidas (last_stand_bonus): LAST_STAND_SHARE more damage
+        # while at <20% HP.
         try:
             from armor_procs import player_has_armor_proc
             if player.hp > 0 and player.max_hp > 0 and \
                     player.hp / player.max_hp < 0.20 and \
                     player_has_armor_proc(player, 'last_stand_bonus'):
-                damage += _floor_scaled(3, _floor)
+                damage += max(1, int(round(damage * LAST_STAND_SHARE)))
         except ImportError:
             pass
 
-        # Cuirass of Hannibal (cannae_encirclement): +1 damage per adjacent
+        # Cuirass of Hannibal (cannae_encirclement): ENCIRCLED_SHARE more damage per adjacent
         # *other* enemy when surrounded by 3 or more. Bug-bash fix aac:
         # gate to melee only (no `ammo`) and exclude the target monster
         # itself from the adjacency count.
@@ -1464,7 +1471,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                                 and not (_mm.x == player.x and _mm.y == player.y):
                             _adj += 1
                     if _adj >= 3:
-                        damage += _floor_scaled(_adj, _floor)
+                        damage += max(1, int(round(damage * ENCIRCLED_SHARE * _adj)))
             except ImportError:
                 pass
 
@@ -1911,8 +1918,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         if monster.is_dead() and weapon and getattr(weapon, 'growing_power', False):
             weapon.kill_count = getattr(weapon, 'kill_count', 0) + 1
             if weapon.kill_count % weapon.kills_to_grow == 0:
-                # One old-scale point, sized to the floor it was earned on.
-                weapon.base_damage += _floor_scaled(1, _floor)
+                # It grows by GROWING_SHARE of the base it was forged with.
+                if not getattr(weapon, '_forged_base', 0):
+                    weapon._forged_base = int(weapon.base_damage)
+                weapon.base_damage += max(1, int(round(weapon._forged_base * GROWING_SHARE)))
 
         # Kill max HP bonus (Khopesh of Anubis)
         if monster.is_dead() and weapon and getattr(weapon, 'kill_max_hp_bonus', 0) > 0:

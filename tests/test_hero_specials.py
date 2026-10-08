@@ -201,17 +201,16 @@ def test_get_passives_for_build():
 # Off-curve item rebalance smoke checks
 # ---------------------------------------------------------------------------
 
-def test_achilles_spear_is_tier_1_now():
-    """Chain combat v2 (v2.14.0) rebase: T1 spear uniques land at base ~8
-    (formula: 5 × 1.0 × 1.5 = 7.5 → 8). Test relaxed from <=7 to <=9 to
-    accommodate the new curve while still guarding against a T4+ misclass."""
+def test_achilles_spear_is_placed_by_its_legend():
+    """LORE not FLOOR (2026-10-07): the spear that killed Hector is a tier-3
+    artifact found around floor 45, and Achilles simply starts with it."""
     import json
     from pathlib import Path
     w = json.loads(Path('data/items/weapon.json').read_text(encoding='utf-8'))
     spear = w['achilles_spear']
-    assert spear['tier'] == 1
-    assert spear['peak_floor'] <= 10
-    assert spear['baseDamage'] <= 9
+    assert spear['tier'] == 3
+    assert 35 <= spear['peak_floor'] <= 55
+    assert spear['baseDamage'] == spear['base_damage'] >= 50
 
 
 def test_tablet_of_hammurabi_is_starter_grade():

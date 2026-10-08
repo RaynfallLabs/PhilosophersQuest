@@ -3327,10 +3327,10 @@
     "name": "Punch in the Face",
     "class": "fist",
     "variant": "1h",
-    "tier": 5,
+    "tier": 1,
     "material": "dad",
     "mathTier": 1,
-    "baseDamage": 35,
+    "baseDamage": 9999,
     "chainMultipliers": [
       0.2,
       0.55,
@@ -3379,13 +3379,13 @@
       3.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 35,
+    "base_damage": 9999,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 0,
     "weapon_class_chain": "finesse",
     "id_level": 0,
-    "chain_exponent": 1.15
+    "chain_exponent": 3.0
   },
   "hunt_captains_sword": {
     "name": "Hunt Captain's Sword",
@@ -3734,10 +3734,10 @@
     "name": "Narthex of Prometheus",
     "class": "staff",
     "variant": "2h",
-    "tier": 1,
+    "tier": 3,
     "material": "wood",
-    "mathTier": 1,
-    "baseDamage": 14,
+    "mathTier": 3,
+    "baseDamage": 137,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -3774,17 +3774,17 @@
     },
     "containerLootTier": "uncommon",
     "value": 500,
-    "min_level": 8,
+    "min_level": 50,
     "unidentified_name": "a smoldering hollow fennel stalk",
     "lore": "Hesiod says Prometheus stole fire in a hollow fennel stalk, a narthex, whose dry pith smoulders slowly inside without burning through. He carried the ember down to mortals that way. Zeus chained him to a crag in the Caucasus and sent an eagle for his liver every day. The stalk still smokes at the core and throws a steady light. It has not gone out in three thousand years.",
-    "quiz_tier": 1,
+    "quiz_tier": 3,
     "damage_types": [
       "blunt",
       "fire"
     ],
     "template_basis": "quarterstaff",
     "spread": 8,
-    "peak_floor": 18,
+    "peak_floor": 58,
     "chain_multipliers": [
       0.5,
       0.85,
@@ -3793,7 +3793,7 @@
       2.0
     ],
     "peak_weight": 0.5,
-    "base_damage": 14,
+    "base_damage": 137,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -3956,10 +3956,10 @@
     "name": "Achilles's Spear",
     "class": "spear",
     "variant": "2h",
-    "tier": 1,
+    "tier": 3,
     "material": "bronze",
-    "mathTier": 1,
-    "baseDamage": 8,
+    "mathTier": 3,
+    "baseDamage": 74,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -3995,16 +3995,16 @@
     },
     "containerLootTier": "rare",
     "value": 3500,
-    "min_level": 5,
+    "min_level": 38,
     "unidentified_name": "a bronze-tipped ash spear with a worn grip",
     "lore": "The centaur Chiron cut this ash on Mount Pelion and gave it to Peleus on his wedding day. Peleus passed it to his son, and Homer says no other Greek could even lift it. Patroclus took all the rest of Achilles's armour and left the spear behind. Rust scraped from its point healed King Telephus of the wound it had given him, and it still gives back strength as it takes life.",
-    "quiz_tier": 1,
+    "quiz_tier": 3,
     "damage_types": [
       "pierce"
     ],
     "template_basis": "spear",
     "spread": 5,
-    "peak_floor": 8,
+    "peak_floor": 45,
     "chain_multipliers": [
       0.75,
       0.9,
@@ -4013,7 +4013,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 8,
+    "base_damage": 74,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -4428,7 +4428,7 @@
     "identified": false,
     "unidentified_name": "a blade of blinding white radiance",
     "ignore_resistances": true,
-    "abaddon_bonus_damage": "5d10",
+    "abaddon_bonus_damage": "22d10",
     "holy_smite_message": true,
     "lore": "The sword of the Archangel Michael, captain of the armies of Heaven. The Book of Revelation tells of war in heaven, where Michael and his angels fought the dragon and cast him down to the earth. No armour, enchantment or infernal hide can turn this edge, and against the Destroyer it blazes with the full wrath of Heaven. It is not won by strength. It is given to a soul that has been weighed and found worthy.",
     "damage_types": [
@@ -4453,9 +4453,9 @@
     "max_enchant": 5,
     "weapon_class_chain": "normal",
     "bonus_damage_vs_tag": {
-      "demon": "2d8",
-      "undead": "1d8",
-      "evil": "1d8"
+      "demon": "9d8",
+      "undead": "4d8",
+      "evil": "4d8"
     },
     "id_level": 0,
     "chain_exponent": 1.15
@@ -4606,7 +4606,7 @@
     "tier": 3,
     "material": "iron",
     "mathTier": 3,
-    "baseDamage": 11,
+    "baseDamage": 74,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -4651,7 +4651,7 @@
       1.75
     ],
     "peak_weight": 0.0,
-    "base_damage": 11,
+    "base_damage": 74,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
@@ -4667,7 +4667,7 @@
     "tier": 3,
     "material": "iron",
     "mathTier": 3,
-    "baseDamage": 9,
+    "baseDamage": 69,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -4709,7 +4709,7 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 9,
+    "base_damage": 69,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
@@ -4721,10 +4721,10 @@
     "name": "Spear of Romulus",
     "class": "spear",
     "variant": "reach",
-    "tier": 1,
+    "tier": 2,
     "material": "bronze",
-    "mathTier": 1,
-    "baseDamage": 9,
+    "mathTier": 2,
+    "baseDamage": 30,
     "chainMultipliers": [
       0.75,
       0.9,
@@ -4757,16 +4757,16 @@
     },
     "containerLootTier": "rare",
     "value": 250,
-    "min_level": 4,
+    "min_level": 22,
     "unidentified_name": "a bronze-tipped spear with wolf-hide grip",
     "lore": "Plutarch says that Romulus once tested his arm by hurling a spear of cornel wood from the Aventine Hill to the Palatine. The point buried itself so deep that no one could pull it out, and the shaft took root and grew into a tree the Romans fenced and tended for centuries. He was nursed by a she-wolf and killed his own brother over a wall. The spear reaches further than a common one.",
-    "quiz_tier": 1,
+    "quiz_tier": 2,
     "damage_types": [
       "pierce"
     ],
     "template_basis": "spear",
     "spread": 8,
-    "peak_floor": 14,
+    "peak_floor": 28,
     "chain_multipliers": [
       0.75,
       0.9,
@@ -4775,7 +4775,7 @@
       1.75
     ],
     "peak_weight": 0.5,
-    "base_damage": 9,
+    "base_damage": 30,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 2,
@@ -5147,7 +5147,7 @@
     "tier": 2,
     "material": "silver",
     "mathTier": 2,
-    "baseDamage": 8,
+    "baseDamage": 30,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -5200,7 +5200,7 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 8,
+    "base_damage": 30,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 3,
@@ -5215,7 +5215,7 @@
     "tier": 3,
     "material": "steel",
     "mathTier": 3,
-    "baseDamage": 9,
+    "baseDamage": 74,
     "chainMultipliers": [
       0.5,
       0.85,
@@ -5266,7 +5266,7 @@
       2.0
     ],
     "peak_weight": 0.0,
-    "base_damage": 9,
+    "base_damage": 74,
     "max_chain_length": 5,
     "is_unique": true,
     "max_enchant": 4,

@@ -193,6 +193,25 @@ _EVOLVE_2 = 55
 # pet's life, stage 2 only with deep play.
 _XP_PER_LEVEL = 20
 
+_GROWTH: dict | None = None
+
+
+def growth(what: str, level: int) -> int:
+    """An ordinary pet's 'health' or 'bite' at `level` (data/pet_growth.json)."""
+    global _GROWTH
+    if _GROWTH is None:
+        import json
+        from paths import data_path
+        try:
+            with open(data_path('data', 'pet_growth.json'), encoding='utf-8') as f:
+                _GROWTH = json.load(f)
+        except (OSError, ValueError):
+            _GROWTH = {}
+    row = _GROWTH.get(what) or []
+    if not row:
+        return 20 if what == 'health' else 3
+    return int(row[max(1, min(len(row), int(level))) - 1])
+
 # Duck of Doom quirk: turns of wearing the cursed headgear before the
 # Waddlekind pet hatches. Single source of truth for both the quirk
 # gate in main.py and any hero-special / summon path that needs to
@@ -236,16 +255,12 @@ class Pet:
     # --- Stats ---------------------------------------------------------------
 
     def _calc_max_hp(self) -> int:
-        """A share of the player's health bar at the pet's level
-        (floor_curve.pet_health): 21 at L1, about 315 at L100."""
-        from floor_curve import pet_health
-        return pet_health(self.level)
+        """Full health at the pet's level, from data/pet_growth.json."""
+        return growth('health', self.level)
 
     def _calc_damage(self) -> int:
-        """A quarter of one weapon attack at the pet's level
-        (floor_curve.pet_attack): 4 at L1, about 535 at L100."""
-        from floor_curve import pet_attack
-        return pet_attack(self.level)
+        """Bite at the pet's level, from data/pet_growth.json."""
+        return growth('bite', self.level)
 
     def __setstate__(self, state):
         """Saves from before 2026-10-06 hold old-scale HP and damage (20 to
@@ -257,15 +272,6 @@ class Pet:
             except Exception:
                 pass
 
-    # Where the game asks what a pet's blow is worth on a floor. An
-    # ordinary pet's numbers are already sized by its level; the scripted
-    # companions below (Fenrir, Dad) still carry old-scale numbers and
-    # override these to scale by the floor.
-    def damage_on(self, floor: int, quiz_accuracy: float = 0.5) -> int:
-        return self.get_attack_damage(quiz_accuracy)
-
-    def special_base_on(self, floor: int) -> int:
-        return self.base_damage
 
     def _refresh_stats(self):
         old_max = self.max_hp
@@ -357,16 +363,17 @@ class Pet:
         200-HP F90 monster grants 23 XP). Combined with passive ticks and
         late-pickup catch-up, pets level steadily through normal play.
 
-        The formula was written for the old monster HP. Given the `floor` of
-        the kill, the HP is taken back to that scale first, so pets level at
-        the pace they always did instead of three to five times faster.
+        Since 2026-10-07 the second argument is the slain MONSTER's own
+        level (its peak floor in monsters.json), and the experience is
+        3 + 0.6 x that level: about what the old health-based figure gave,
+        without reading the dungeon floor. With no level, the old
+        health formula applies.
         """
         self.kills_count += 1
-        hp = max(0, int(monster_max_hp))
         if floor:
-            from floor_curve import power_scale
-            hp = int(hp / power_scale(floor))
-        xp = 3 + hp // 10
+            xp = 3 + int(max(1, min(100, int(floor))) * 6 // 10)
+        else:
+            xp = 3 + max(0, int(monster_max_hp)) // 10
         return self.gain_xp(xp)
 
     def apply_late_pickup_bonus(self, floor: int) -> None:
@@ -651,24 +658,20 @@ class FenrirPet(Pet):
         self.command: str = 'return'
         self.last_pet_floor: int = -1
 
-        self.max_hp = 500
-        self.hp = 500
-        self.base_damage = 45      # ~1.5× a max-level normal pet
+        # The wolf that will swallow the sun: half again a full-grown pet's
+        # bite and five times its health. Real numbers, the same on any floor.
+        self.max_hp = self.FENRIR_HP
+        self.hp = self.FENRIR_HP
+        self.base_damage = self.FENRIR_BITE
+
+    FENRIR_HP = 1600
+    FENRIR_BITE = 800
 
     def _calc_max_hp(self) -> int:
-        return 500
+        return self.FENRIR_HP
 
     def _calc_damage(self) -> int:
-        return 45
-
-    # Old-scale numbers (45 damage): sized to the floor's monsters.
-    def damage_on(self, floor: int, quiz_accuracy: float = 0.5) -> int:
-        from floor_curve import scaled
-        return scaled(self.get_attack_damage(quiz_accuracy), floor)
-
-    def special_base_on(self, floor: int) -> int:
-        from floor_curve import scaled
-        return scaled(self.base_damage, floor)
+        return self.FENRIR_BITE
 
     def gain_xp(self, amount: int = 1) -> list[str]:
         return []   # Fenrir doesn't level
@@ -739,7 +742,10 @@ class SketchedPet(Pet):
         self._attack_dice = '1d4'
         if hasattr(monster, 'attacks') and monster.attacks:
             self._attack_dice = monster.attacks[0].get('damage', '1d4')
-        self.base_damage = max(3, int(self._calc_dice_avg(self._attack_dice) * self.SCALE))
+        # A drawing bites like a pet as old as its subject (the subject's own
+        # level, from monsters.json). The monster's dice are sized against a
+        # player's health and mean little against another monster.
+        self.base_damage = growth('bite', self.level)
 
         # Monster identity (for sprite rendering and messages)
         self.monster_kind = monster.kind
@@ -765,10 +771,9 @@ class SketchedPet(Pet):
         return f'Sketched {self.monster_name}'
 
     def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
-        """Roll the monster's attack dice at 40% power."""
-        from dice import roll
-        raw = roll(self._attack_dice)
-        return max(1, int(raw * self.SCALE))
+        """The drawing's bite, give or take a fifth."""
+        import random
+        return max(1, int(self.base_damage * random.uniform(0.8, 1.2)))
 
     def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:
         return self.get_attack_damage(quiz_accuracy)
@@ -823,7 +828,7 @@ class DadPet(Pet):
 
         self.max_hp = 99999
         self.hp = 99999
-        self.base_damage = 9999
+        self.base_damage = 999999
 
         self.is_dad = True
         self.turns_remaining = duration
@@ -833,7 +838,7 @@ class DadPet(Pet):
         return 'Dad'
 
     def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
-        return 9999
+        return 999999             # Dad. The number is the joke.
 
     def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:
         return 9999

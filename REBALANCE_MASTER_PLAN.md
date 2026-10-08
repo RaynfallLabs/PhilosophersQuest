@@ -2,6 +2,44 @@
 
 Date: 2026-10-06. **Phases 0 to 6 are built, and the screen half of Phase 7** (each has an "As built" note under its heading); What is left: your play-test (`PLAYTEST_PHASES_2_TO_7.md`), then the last tune from it, then the `main.py` split. It covers the fifteen systems listed as still needing review, in the order they depend on each other, with nine decisions flagged for you (D2, what magic is for, and D9, the target win rates, are decided).
 
+## Correction, 2026-10-07 (read this before the "As built" notes below)
+
+A bug bash by six reviewers and your ruling the same day changed several things the notes below describe. Where they disagree, this section is right.
+
+**Your ruling: lore, not floor.** A thing's power comes from what it is and is written as a real number in its data. Nothing multiplies damage or health by the dungeon floor at runtime, and a weapon's maths tier never changes. I had broken that three ways, and all three are removed:
+
+- **Early mercy** (Phase 2: ordinary monsters at 75% damage on floors 1 to 13). Replaced in the data: monsters placed on floors 1 to 13 are 4 points worse at hitting, those on 14 to 25 are 2 points worse.
+- **Hero weapons that grew with depth and changed tier** (Phase 5, decision D5). Removed. Each hero weapon is a fixed unique artifact placed by its legend: Romulus' Spear base 30 at tier 2 (found around floor 28), Achilles' Spear 74 at tier 3 (floor 45), the Torch of Prometheus 137 at tier 3 (floor 58), the Witcher's blade 30 at tier 2, Zireael and the Boomstick 74 and the Chainsaw 69 at tier 3 (locked to their builds). Dad's punch is base 9999 at tier 1 with a cubed chain.
+- **`floor_curve.scaled()`**, a depth multiplier on 27 fixed numbers, shipped in v3.0.0. Removed everywhere. Ammunition bonuses and the Sword of Michael's bonus dice are now real numbers in the data. Effects that hit monsters with a fixed amount (a pit, a fire shield, a hero's scream or breath, the scroll of earth, a rewired trap, Power Word Kill) take a stated share of the target's own health, a tenth as much from a named foe. Pets read their health and bite from `data/pet_growth.json` by their own level; summoned allies get a level from the spell that calls them; the Fenrir pet has fixed numbers.
+
+A test (`tests/test_lore_not_floor.py`) now fails if game code multiplies by the floor or writes a weapon's tier, and the rule is in `CLAUDE.md`.
+
+**Starting Constitution** is 3 health a point like every later point (your ruling). Old saves are brought to that rule once on load, so removing a Constitution item no longer costs more than it gave.
+
+**Two things I reported as working were not:**
+
+- **Cooking a cut never raised its stat in the real game.** It was wired to a cook function the menus do not call. Fixed in the function the Recipes menu uses, with a test that goes through it; the preview now says "Feeds Strength" instead of promising a point.
+- **Multi-hit spells were still over the damage line.** Each missile carried the whole cast: Force Storm did about 2.2 weapon attacks, Cataclysm 1.7 per monster. A cast's damage is now shared between its hits.
+
+**Other fixes from the bug bash:**
+
+- Two older crashes: every teleport scroll, and the polymorph trap.
+- A player killed on the turn their pet killed a gate boss was shown the story and the gift panel. No longer.
+- Boss recovery: a gate boss now also mends for the time you spend on another floor; a boss that is swinging, or being hit by magic missile, smite or a reflecting shield, is no longer treated as left alone; Asterion's own fury line now loads.
+- Meditation refilled on any staircase. It now refills only on a floor never reached before.
+- The dodge roll moved into the blow itself, so it cannot skip a gaze or a breath; a stunned or frozen player cannot dodge.
+- "Cannot be cursed" is honoured for weapons, in bones piles and by a failed Divine Intercession.
+- Mass slow, fear and confuse take Intelligence's reach like their single-target versions; Army of Darkness always raises five; the fountain heals after its Constitution point.
+- Text: five traits no longer promise clock seconds; two spell messages no longer print more turns than were applied; the character sheet stops its resistance list at the panel edge on a short window.
+
+**Known and not fixed:**
+
+- Spell descriptions state durations that are true at Intelligence 10 only.
+- The scroll of great power's lore promises more stats than it gives.
+- The 112 trait thresholds remain unreviewed.
+
+**The table after all of this** (480 runs each; win = Abaddon dead): casual reaches floor 20 in 91% and about half then beat Asterion; prepared wins 29%; committed 34%; committed with a pet 51%; with the secrets 39%; everything stacked 60%; rest-heavy 27%.
+
 ## 1. The idea in one paragraph
 
 The core is settled: every action is a quiz, the combat clock is Wisdom in seconds, a weapon asks the maths of its material, and each tier is a real step up. What is missing is that the other systems were each sized on their own, at different times, against numbers that have since moved. The plan fixes that by giving every system the same six yardsticks to be measured against, and one shared limit on how much optional power can stack. No system is tuned against "the core" alone; it is tuned against the yardsticks **with the other systems switched on**.

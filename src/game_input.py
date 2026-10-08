@@ -400,8 +400,8 @@ class InputMixin:
                         self.add_message("You meditate. (+1 MP)", 'info')
                     else:
                         self.add_message(
-                            "You meditate. (+1 MP) This floor's quiet has no more "
-                            "to give; the next will.", 'warning')
+                            "You meditate. (+1 MP) The quiet has no more to give "
+                            "until you reach a floor you have not seen.", 'warning')
                 else:
                     self.add_message("You meditate...", 'info')
             else:

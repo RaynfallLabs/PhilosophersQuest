@@ -440,8 +440,9 @@ class DivineMixin:
             self.add_message("Divine water purifies you! All ailments are cured!", 'success')
         elif chain >= 5:
             stat = _rng.choice(['STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'])
-            self.player.restore_hp(self.player.max_hp)
-            if self.player.gain_fortune_stat(stat, 1):
+            _gained = self.player.gain_fortune_stat(stat, 1)
+            self.player.restore_hp(self.player.max_hp)     # after: a CON point adds health
+            if _gained:
                 self.add_message(f"The fountain glows with divine light! +1 {stat}!", 'success')
             else:
                 self.add_message(
@@ -1359,7 +1360,8 @@ class DivineMixin:
         for it in _iter_equipped(p):
             # Not quest pieces: a cursed Aegis or Sandal was then destroyed
             # by the next friendly altar, ending that quest for the run.
-            if hasattr(it, 'buc') and is_random_loot(it):
+            if (hasattr(it, 'buc') and is_random_loot(it)
+                    and getattr(it, 'can_be_cursed', True)):
                 it.buc = 'cursed'
                 it.buc_known = True
         p.add_effect('blinded', 100)

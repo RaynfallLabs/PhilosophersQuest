@@ -116,6 +116,10 @@ _STARTER_ICONIC_EXEMPT = {
     'lantern_of_diogenes',          # Aristotle, Diogenes
     'prometheus_torch',             # Prometheus
     'shield_of_the_spartans',       # Leonidas
+    # LORE not FLOOR (2026-10-07): a hero's weapon is an unbalanced artifact on
+    # purpose, placed in the dungeon where its legend puts its power.
+    'achilles_spear',               # Achilles
+    'romulus_spear',                # Leonidas
 }
 
 

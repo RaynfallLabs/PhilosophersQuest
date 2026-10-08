@@ -71,6 +71,17 @@ from pet_system import Pet, random_species as random_pet_species
 # every attack in the game, for the whole run.
 DISPLACEMENT_MISS = 0.15
 
+def _monster_level(m) -> int:
+    """A monster's own level: where monsters.json places it (1 to 100)."""
+    lvl = getattr(m, 'peak_floor', None) or getattr(m, 'min_level', 1) or 1
+    return max(1, min(100, int(lvl)))
+
+
+# Shares of the creature's own health (floor_curve.wound).
+PIT_FALL_SHARE = 0.05         # a monster that blunders into a pit
+SHIELD_LASH_SHARE = 0.06      # fire / cold shield, each time it is struck
+
+
 class CombatMixin:
     """Combat orchestration, targeting cursors, throw mechanics, monster/pet turns.
 
@@ -674,6 +685,10 @@ class CombatMixin:
                                 break
                 _species = random_pet_species()
                 _ally = Pet(_species, _spawn_x, _spawn_y)
+                # It springs from the slain creature and is as strong as that
+                # creature was (its own level, from monsters.json).
+                _ally.level = _monster_level(monster)
+                _ally._refresh_stats()
                 # Temp pet: scale max_hp + flag duration.
                 _max_pct = float(_ps.get('max_hp_pct', 0.5) or 0.5)
                 _ally.max_hp = max(5, int(_ally.max_hp * _max_pct))
@@ -728,6 +743,8 @@ class CombatMixin:
             )
         # Boss narrative popup
         story_key = self._BOSS_STORY_KEYS.get(monster.kind)
+        if story_key and self.player.is_dead():
+            story_key = None          # a pet finished it after the player fell
         if story_key:
             self._show_story_popup(story_key, STATE_PLAYER)
             _BOSS_CHRONICLE = {
@@ -749,7 +766,8 @@ class CombatMixin:
         # Only noted here: main.update opens the choice once the kill, its
         # messages and the story popup are finished.
         import boons
-        if boons.offer_for(monster.kind) and not boons.already_taken(self.player, monster.kind):
+        if (boons.offer_for(monster.kind) and not self.player.is_dead()
+                and not boons.already_taken(self.player, monster.kind)):
             self.player.pending_boon = monster.kind
         # A guardian whose death unbars the stair (the Labyrinth).
         if getattr(self.dungeon, 'stairs_guardian', None) == monster.kind:
@@ -843,7 +861,7 @@ class CombatMixin:
         import boons
         from game_states import STATE_BOON_MENU
         kind = getattr(self.player, 'pending_boon', None)
-        if not kind or self.state != STATE_PLAYER:
+        if not kind or self.state != STATE_PLAYER or self.player.is_dead():
             return False
         if boons.already_taken(self.player, kind) or not boons.offer_for(kind):
             self.player.pending_boon = None
@@ -1262,9 +1280,8 @@ class CombatMixin:
                 from combat import get_cone_tiles
                 # Damage scales with chain: base 3d6, +1d6 per chain level
                 dice = f'{2 + chain}d6'
-                # Old-scale dice, sized to the floor's monsters.
-                base = floor_curve.scaled(_fb_roll(dice), self.dungeon_level)
-                scaled = self._int_scaled_damage(base)
+                # A share of each target's own health (floor_curve.power_share).
+                _share = floor_curve.power_share(_fb_roll(dice)) * self._int_share_factor()
                 tcx, tcy = self._stuffie_cone_target
                 px, py = pl.x, pl.y
                 cone = get_cone_tiles(px, py, tcx, tcy, max_range=6)
@@ -1272,7 +1289,7 @@ class CombatMixin:
                 kills = 0
                 for m in list(self.monsters):
                     if m.alive and (m.x, m.y) in cone and (m.x, m.y) in self.visible:
-                        m.take_damage(scaled)
+                        m.take_damage(floor_curve.wound(_share, m.max_hp, m._is_named_foe()))
                         hits += 1
                         if not m.alive:
                             self._on_monster_killed(m)
@@ -1282,7 +1299,8 @@ class CombatMixin:
                     f"You breathe a cone of fire! (chain {chain})", 'success')
                 if hits:
                     self.add_message(
-                        f"{hits} creatures engulfed for {scaled} fire damage! ({kills} slain)", 'combat')
+                        f"{hits} creatures engulfed: the fire takes {round(100 * _share)}% "
+                        f"of each one's health! ({kills} slain)", 'combat')
                 else:
                     self.add_message("The flames find no target.", 'info')
                 pl.power_cooldowns['stuffie_fire_breath'] = 500
@@ -2154,8 +2172,10 @@ class CombatMixin:
                     and (m.x, m.y) != _pos_before
                     and (m.x, m.y) in getattr(self.dungeon, 'pits', set())):
                 from dice import roll as _pit_roll
-                pit_dmg = floor_curve.scaled(_pit_roll('1d4'), self.dungeon_level)
+                _pit_roll('1d4')          # (keeps the random stream as it was)
+                pit_dmg = floor_curve.wound(PIT_FALL_SHARE, m.max_hp, m._is_named_foe())
                 m.hp -= pit_dmg
+                m._unhurt_turns = 0
                 if m.hp <= 0:
                     m.alive = False
                 m.status_effects['stuck_in_pit'] = random.randint(3, 4)
@@ -2169,23 +2189,12 @@ class CombatMixin:
                 if self.player.has_effect('displacement') and random.random() < DISPLACEMENT_MISS:
                     self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
-                # Dodge (Dexterity): a blow from something next to you can be
-                # slipped outright. Breath, gaze and thrown things cannot.
-                if (m._adjacent_to(self.player)
-                        and random.random() < self.player.dodge_chance()):
-                    self.add_message(f"You slip {the_name(m, lower=True)}'s blow.", 'success')
-                    continue
 
                 _effects_before = set(self.player.status_effects.keys())
                 if getattr(m, 'slips_on_ice', False):
                     from dungeon import ICE as _ICE
                     m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
-                self.player._mercy = (1.0 if m._is_named_foe()
-                                      else floor_curve.early_mercy(self.dungeon_level))
-                try:
-                    dmg, msg = m.attack(self.player)
-                finally:
-                    self.player._mercy = 1.0
+                dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
                 _fury = m.fury_line() if m.alive else ''
                 if _fury:
@@ -2294,6 +2303,7 @@ class CombatMixin:
                         if not _cv.alive:
                             continue
                         _cv.hp -= _coll_dmg
+                        _cv._unhurt_turns = 0
                         if (m.x, m.y) in self.visible or (_cv.x, _cv.y) in self.visible:
                             self.add_message(
                                 f"{the_name(m)}'s attack tears through the {_cv.name} for {_coll_dmg} collateral damage!",
@@ -2312,16 +2322,18 @@ class CombatMixin:
 
                 # Fire shield: reflect melee damage back
                 if self.player.has_effect('fire_shield') and dmg > 0:
-                    reflect_dmg = floor_curve.scaled(random.randint(2, 9), self.dungeon_level)
+                    reflect_dmg = floor_curve.wound(SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe())
                     m.hp -= reflect_dmg
+                    m._unhurt_turns = 0
                     self.add_message(f"Flames lash back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
                     if m.hp <= 0:
                         m.alive = False
                         self._on_monster_killed(m)
                 # Cold shield: reflect melee damage back
                 if self.player.has_effect('cold_shield') and dmg > 0:
-                    reflect_dmg = floor_curve.scaled(random.randint(2, 9), self.dungeon_level)
+                    reflect_dmg = floor_curve.wound(SHIELD_LASH_SHARE, m.max_hp, m._is_named_foe())
                     m.hp -= reflect_dmg
+                    m._unhurt_turns = 0
                     self.add_message(f"Ice shatters back at {the_name(m, lower=True)} for {reflect_dmg}!", 'danger')
                     if m.hp <= 0 and m.alive:
                         m.alive = False
@@ -2366,6 +2378,7 @@ class CombatMixin:
                     if 'fire' in _atk_types:
                         _fire_ref = max(1, int(dmg * _shld.fire_reflect))
                         m.hp -= _fire_ref
+                        m._unhurt_turns = 0
                         self.add_message(f"Svalinn reflects flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
                         if m.hp <= 0 and m.alive:
                             m.alive = False
@@ -2651,8 +2664,7 @@ class CombatMixin:
         """Apply a pet special's effects (damage + status) per targeting mode."""
         import random as _rng
         targeting = special.get('targeting', 'single')
-        # What this pet's blow is worth here (pet_system.Pet.special_base_on).
-        base_dmg = pet.special_base_on(self.dungeon_level)
+        base_dmg = pet.base_damage          # real numbers: data/pet_growth.json
         dmg_mult = float(special.get('damage_mult', 1.5))
         status = special.get('status')
         status_chance = float(special.get('status_chance', 0.0))
@@ -2691,7 +2703,7 @@ class CombatMixin:
                     cur = m.status_effects.get(status, 0)
                     m.status_effects[status] = max(cur, status_duration)
                 if not m.alive:
-                    for k_msg in pet.gain_xp_from_kill(pre_max, self.dungeon_level):
+                    for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(m)):
                         self.add_message(k_msg, 'success')
                     self._on_monster_killed(m)
                 hit_count += 1
@@ -2710,7 +2722,7 @@ class CombatMixin:
                 cur = m.status_effects.get(status, 0)
                 m.status_effects[status] = max(cur, status_duration)
             if not m.alive:
-                for k_msg in pet.gain_xp_from_kill(pre_max, self.dungeon_level):
+                for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(m)):
                     self.add_message(k_msg, 'success')
                 self._on_monster_killed(m)
 
@@ -2779,9 +2791,7 @@ class CombatMixin:
                     continue
                 target = result[1] if len(result) > 1 else None
                 if action == 'attack' and target.alive:
-                    # pet_system.Pet.damage_on: a quarter of one weapon
-                    # attack for a pet that has kept pace with the dungeon.
-                    dmg = pet.damage_on(self.dungeon_level, quiz_acc)
+                    dmg = pet.get_attack_damage(quiz_acc)
                     pre_max = target.max_hp
                     actual = target.take_damage(dmg)
                     if getattr(pet, 'is_dad', False):
@@ -2792,7 +2802,7 @@ class CombatMixin:
                         self.add_message(
                             f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat')
                     if not target.alive:
-                        for k_msg in pet.gain_xp_from_kill(pre_max, self.dungeon_level):
+                        for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(target)):
                             self.add_message(k_msg, 'success')
                         self._on_monster_killed(target)
 
