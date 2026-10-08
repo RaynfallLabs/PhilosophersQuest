@@ -38,7 +38,24 @@ A test (`tests/test_lore_not_floor.py`) now fails if game code multiplies by the
 - The scroll of great power's lore promises more stats than it gives.
 - The 112 trait thresholds remain unreviewed.
 
-**The table after all of this** (480 runs each; win = Abaddon dead): casual reaches floor 20 in 91% and about half then beat Asterion; prepared wins 29%; committed 34%; committed with a pet 51%; with the secrets 39%; everything stacked 60%; rest-heavy 27%.
+**Second review round, 2026-10-07 (six more reviewers: two on the rework itself, one on every hero build, one on all 112 traits, one measuring Death's chase on real maps, one hunting dead data).** What it found and what was done:
+
+- **A boss could die without the game noticing.** A thrown drain potion, Power Word Kill's stagger and the wonder wand's fire killed without reporting it: no Stone, no broken seal, no gift. Every turn now sweeps for unhandled deaths.
+- **Four heroes could not be typed** (the name box stopped at 30 characters): Sherlock, Tesla, Joan, Musashi. The box takes 48. Tesla's key is now `nikola tesla` ("the Wizard of Menlo Park" was Edison).
+- **Hero powers that did nothing or worse:** Empower and Elder Charge expired before any attack; Liver-Bound Fire could kill its caster; Labyrinth Sense skipped tiers; Stardrop could be spent on the cow; the Boomstick promised a scatter that was never built; Tesla's shock and the Spartan counter did a point or two. All fixed. Hero heals restore at least 6% of own health per chain link. Hero names show in Title Case. Leonidas carries his own spear, not Romulus'. Achilles' Spear moved to base 125, loot floor 45 to 55, beside its peers.
+- **Traits:** five could not be earned (War Cry, Kali, Odin, Gorgon Ward, Ragnarok) and now can; four were earned by bouncing on one staircase and now need a first descent; the exploration traits fired at two thirds explored because seen walls were counted; a clock running out counted as a wrong answer. Seven thresholds eased, texts corrected. Held trait points are paid in full when Abaddon falls.
+- **Death's chase, measured:** 40 climbs on real maps. He had been placed 6 tiles from the arrival stair, on the player's own path on 42% of floors, so 96% of his blows came in the first twelve turns and then he fell behind. A player who never stopped took about 87 blows over the climb. Standing on his tile was total immunity. He now climbs the stair behind the player after 6, 5, 4 or 3 turns by speed, and strikes anyone standing on him. The blows that remain are the ones a player earns by stopping: about one a turn while standing still in the last fifty floors. With monsters left alive on the way down the count is far higher (several hundred with half of them left), so a floor cleared on the way down is a floor made safe for the way up. The changed chase has not been re-measured.
+- **Dead data:** four monsters' own hit rule was never loaded; the Cow King's Horns turned every miss into a hit; bane weapons' bonus dice were a rounding error (Gram's 2d8 on a hit of over a thousand) and are now about a third of each weapon's base; 23 armor materials' resistances were never read; the Harpe named tags no monster has; a status called "cursed" did nothing. All wired or corrected.
+- **Rework regressions:** dodge had stopped working against about forty multi-attack monsters; six trophy recipes raised the wrong stat; the bow bonus was zero on small bows; cooking lessons and health reset on any staircase. Fixed.
+- **Retuned through the monster data only:** these fixes made characters much tougher (prepared 46%), so ordinary damage from floor 26 down went up 15%.
+
+**Still open, and whose call it is:**
+
+- Yours: Ciri's three powers ask no quiz while every other hero's do; Leonardo's chain-5 Mechanical Helper can win early named fights alone; the Jade Cicada asks tier 4 where its neighbours ask 3; Hermes Trismegistus is written as the Olympian; whether Pandora's Box and Aladdin's Lamp get built or deleted; the Dead Sea Scroll works now but nothing drops it.
+- New content, not fixes: no identify wand, no escape wand early or late, no early damage scroll, thin unique armor in some slots, three legends with no named drop, 71 monsters without art.
+- Not done: about twenty dead legacy data fields that change nothing either way (listed in the audit) were left in place; spell descriptions still quote Intelligence-10 durations (the menu now says effects grow with Intelligence); saves from before today keep a hero weapon's old numbers.
+
+**The table now** (480 runs each; win = Abaddon dead): casual reaches floor 20 in 86% and about half then beat Asterion; prepared wins 26%; committed 38%; committed with a pet 52%; with the secrets 40%; everything stacked 55%; rest-heavy 40%.
 
 ## 1. The idea in one paragraph
 

@@ -753,6 +753,10 @@ def _apply_bonus(player, recipe) -> list[str]:
 
         Falls back to apply_stat_bonus if the player doesn't yet have the
         cooking-cap method (old saves, harness mocks)."""
+        # A potion or dish that raises a stat counts against the same one
+        # lesson a floor as any other meal (it used to slip past it).
+        if hasattr(player, 'try_apply_cook_stat_gain'):
+            return player.try_apply_cook_stat_gain(stat, amt)
         if hasattr(player, 'apply_cooking_stat_bonus'):
             return player.apply_cooking_stat_bonus(stat, amt)
         player.apply_stat_bonus(stat, amt)

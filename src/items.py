@@ -193,7 +193,9 @@ ENCHANT_CAP = {
 SPAWN_ENCHANT_CAP_ARMOR = 1
 
 
-MATERIAL_RESIST = 0.75        # damage multiplier for a type an armor material resists
+# Per piece, and the pieces multiply (Player.resistance_multiplier): a full
+# suit and shield of one resisting material comes to about three quarters.
+MATERIAL_RESIST = 0.96        # damage multiplier for a type an armor material resists
 _RESIST_ALIAS = {'bludgeon': 'blunt'}
 
 

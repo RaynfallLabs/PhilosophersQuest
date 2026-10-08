@@ -747,14 +747,21 @@ class Player:
         # Saves from before Constitution was 3 health a point hold a max HP
         # built at 1 a point. Bring it to the one rule, once, so that taking
         # off a Constitution ring does not cost more than putting it on gave.
-        if state.get('_con_hp_rule') != 3:
+        # A save written by the few local builds between the two rules (they
+        # have per-floor meditation, gifts or trait allowances but no marker)
+        # already paid 3 a point for everything but starting Constitution,
+        # which cannot be told apart now: leave those as they are.
+        _interim = any(k in state for k in ('_meditated_this_floor', 'boons_taken', 'cook_stat_meals',
+                                            'fortune_stat_gained', 'quirk_stat_gained'))
+        if state.get('_con_hp_rule') != 3 and not _interim:
             try:
                 extra = (int(self.CON) - 10) * (self.HP_PER_CON - 1)
                 self.max_hp = max(1, int(self.max_hp) + extra)
-                self.hp = max(1, min(int(self.hp) + max(0, extra), self.max_hp))                     if int(self.hp) > 0 else self.hp
+                if int(self.hp) > 0:
+                    self.hp = max(1, min(int(self.hp) + max(0, extra), self.max_hp))
             except Exception:
                 pass
-            self._con_hp_rule = 3
+        self._con_hp_rule = 3
         if not hasattr(self, 'known_forms'):
             self.known_forms = set()
         if not hasattr(self, 'known_materials'):

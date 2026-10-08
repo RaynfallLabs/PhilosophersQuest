@@ -59,6 +59,7 @@ SCRIPTED_FLOOR = {
     # Hero weapons locked to their builds. LORE, not floor: each is placed
     # where its legend puts its power, and a hero simply starts with it.
     "witcher_silver_blade": 30,   # a master-forged silver sword for monsters
+    "leonidas_dory": 28,          # a Spartan line spear
     "zireael": 45,                # the gnomish gwyhyr, the best blade in its world
     "boomstick": 45,              # a twelve-gauge in a world of swords
     "chainsaw_prosthetic": 42,    # a chainsaw, likewise

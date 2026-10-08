@@ -103,7 +103,7 @@ def test_a_hero_starts_with_the_weapon_as_written():
     by_id = {x.id: x for x in items.load_items('weapon')}
     named = {b['_start_weapon'] for b in welcome_screen.SECRET_BUILDS.values()
              if isinstance(b.get('_start_weapon'), str)}
-    assert {'achilles_spear', 'romulus_spear', 'prometheus_torch', 'punch_in_the_face'} <= named
+    assert {'achilles_spear', 'leonidas_dory', 'prometheus_torch', 'punch_in_the_face'} <= named
     assert all(n in by_id for n in named)
     main = open(os.path.join(SRC, 'main.py'), encoding='utf-8').read()
     i = main.index("start_weapon  = b.get('_start_weapon', None)")

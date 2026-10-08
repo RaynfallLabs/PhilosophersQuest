@@ -155,6 +155,11 @@ def _is_big_foe(m) -> bool:
     if (getattr(m, 'is_boss', False) or getattr(m, 'is_mini_boss', False)
             or getattr(m, 'is_seal_demon', False)):
         return True
+    # The cow, the unicorn and encounter NPCs stand among the monsters. No
+    # kill-everything effect may take them: one scroll could end a quest.
+    if (getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+            or getattr(m, '_is_unicorn', False)):
+        return True
     from floor_curve import target_hp
     floor = int(getattr(m, 'peak_floor', 0) or getattr(m, 'min_level', 1) or 1)
     return m.max_hp > max(60, 2.0 * target_hp(floor))
@@ -1134,7 +1139,7 @@ class MagicMixin:
                     (m.take_damage(_wound(MORTAR_BLAST_SHARE, m.max_hp, _is_big_foe(m))),
                      self._on_monster_killed(m) if not m.alive else None)
                     for m in list(self.monsters) if m.alive and (m.x, m.y) in self.visible
-                ] or self.add_message("Chaotic energy blasts all visible enemies!", 'success')),
+                ] and self.add_message("Chaotic energy blasts all visible enemies!", 'success')),
             ])
             _chaos[1]()
             self.add_message("Baba Yaga's Iron Mortar churns with unpredictable magic!", 'warning')
@@ -2994,7 +2999,10 @@ class MagicMixin:
                 bonus = [1, 2, 3, 5, 8][_tstep] + (2 if _buc == 'blessed' else 0)
             dur = [10, 20, 30, 50, 80][_tstep]
             self.player.add_effect('shielded', dur)
-            self.add_message(f"A protective ward envelops you! +{bonus} AC for {dur} turns!", 'success')
+            # (It printed "+{bonus} AC", up to +10; the ward is the Shielded
+            # status, which is 2 points of armor whatever the scroll's tier.)
+            self.add_message(
+                f"A protective ward envelops you: 2 points of armor for {dur} turns.", 'success')
 
         elif effect == 'enchant_accessory':
             _buc = getattr(scroll, 'buc', 'uncursed')
@@ -3132,36 +3140,13 @@ class MagicMixin:
                     if (x, y) not in self.dungeon.explored:
                         self.dungeon.explored.add((x, y))
                         revealed_current += 1
-            # Then: generate + mark every floor 1..100 not yet visited.
-            lm = getattr(self, 'level_manager', None)
-            if lm is not None:
-                for lvl in range(1, 101):
-                    if lvl == self.dungeon_level:
-                        continue
-                    if lm.has_visited(lvl):
-                        # Already-saved floor: reveal every tile of the saved dungeon.
-                        saved = lm.load(lvl)
-                        if saved:
-                            d, _mons, _items = saved
-                            for y in range(d.height):
-                                for x in range(d.width):
-                                    if (x, y) not in d.explored:
-                                        d.explored.add((x, y))
-                                        revealed_new += 1
-                    else:
-                        # Never visited: generate + immediately reveal, then save
-                        # so the next visit picks up the same layout.
-                        try:
-                            d, mons, items = lm.generate(lvl)
-                            for y in range(d.height):
-                                for x in range(d.width):
-                                    d.explored.add((x, y))
-                                    revealed_new += 1
-                            lm.save(lvl, d, mons, items)
-                        except Exception:
-                            # If generation fails for any reason (boss level
-                            # oddity, etc.), skip -- don't brick the scroll.
-                            pass
+            # Every other floor is revealed when the player arrives on it
+            # (main._change_level reads this flag). The old loop looked for
+            # `self.level_manager`, which does not exist, so it never ran; and
+            # generating all hundred floors here would have marked every one
+            # visited, claimed every unique and skipped every first-arrival
+            # event.
+            self.player.knows_all_maps = True
             self.add_message(
                 "The scroll survives your reading; the shape of the whole dungeon "
                 "rises in your memory -- corridors, rooms, stairs, and doors from "

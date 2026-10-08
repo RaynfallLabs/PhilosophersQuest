@@ -120,10 +120,45 @@ def test_dead_mechanics_found_by_the_audit_are_wired():
     i = src.index("Cow King's Horns")
     assert 'if result.score >= 1:' in src[i:i + 600]              # never turns a miss into a hit
     import items
-    assert items._material_resists({'resistances': ['fire', 'bludgeon']}) == {'fire': 0.75, 'blunt': 0.75}
+    assert items._material_resists({'resistances': ['fire', 'bludgeon']}) == {
+        'fire': items.MATERIAL_RESIST, 'blunt': items.MATERIAL_RESIST}
     with open(os.path.join(ROOT, 'data', 'items', 'weapon.json'), encoding='utf-8') as f:
         w = json.load(f)
     assert 'medusa_gorgon' in w['harpe']['skip_chain_warmup_vs_tag']
     assert _mean(w['gram']['dragon_bonus_damage']) > 0.25 * w['gram']['base_damage']
     glam = next(x for x in items.load_items('weapon') if x.id == 'glamdring')
     assert {'goblin', 'goblinoid', 'orc'} <= set(glam.bonus_damage_vs_tag)
+
+
+def test_no_monster_dies_unnoticed():
+    """A thrown drain potion, Power Word Kill's stagger and the wonder
+    wand's fire could kill a boss without the game being told: no Stone, no
+    broken seal, no gift."""
+    import types
+    main = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    i = main.index('    def _advance_turn(self):')
+    assert 'self._reap_unnoticed_kills()' in main[i:i + 120]
+    j = main.index('    def _reap_unnoticed_kills(self):')
+    ns = {}
+    body = main[j:i]
+    exec('class G:\n' + body, ns)
+    handled = []
+    dead = types.SimpleNamespace(alive=False)
+    done = types.SimpleNamespace(alive=False, _kill_handled=True)
+    live = types.SimpleNamespace(alive=True)
+    g = ns['G']()
+    g.monsters = [dead, done, live]
+    g._on_monster_killed = handled.append
+    g._reap_unnoticed_kills()
+    assert handled == [dead]
+
+
+def test_cooking_lessons_reset_on_a_new_floor_only():
+    main = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
+    i = main.index('self.player.reset_floor_cook_caps()')
+    assert 'self.player.deepest_floor_reached > _was_deepest' in main[i - 200:i]
+
+
+def test_a_full_suit_of_resisting_armor_is_about_three_quarters():
+    import items
+    assert 0.70 <= items.MATERIAL_RESIST ** 8 <= 0.80          # seven pieces and a shield

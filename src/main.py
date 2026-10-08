@@ -1243,6 +1243,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.dungeon      = dungeon
         self.monsters     = monsters
         self.ground_items = ground_items
+        # The Dead Sea Scroll: its reader knows the shape of every floor.
+        if getattr(self.player, 'knows_all_maps', False):
+            for _y in range(dungeon.height):
+                for _x in range(dungeon.width):
+                    dungeon.explored.add((_x, _y))
         self.dungeon_level = new_level
         # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
@@ -1388,7 +1393,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         reset_per_floor_charges(self.player)
         # Harvest+Cook redesign 2026-05-31: per-floor cooking caps reset
         # (+1 stat / +5 HP per floor; trophies bypass).
-        if hasattr(self.player, 'reset_floor_cook_caps'):
+        # Only on a floor reached for the first time: one step down and back
+        # up used to give a second lesson and a second helping of max HP.
+        if (hasattr(self.player, 'reset_floor_cook_caps')
+                and self.player.deepest_floor_reached > _was_deepest):
             self.player.reset_floor_cook_caps()
         # Engine wave 5 — flat-armor per-floor charges (dodge_first_arrow,
         # gita_focus, maid_does_not_fall, story_thread).
@@ -2123,6 +2131,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             actives = get_specials_for_build(key)
             passives = get_passives_for_build(key)
             journal = get_journal_for_build(key)
+            if key == 'titivillus' and not getattr(self.player, 'qa_tools', False):
+                journal = ''          # the QA build's notes are not for a player who shares the name
             self.player.hero_specials = list(actives)
             self.player.hero_passives = set(passives)
             self.player.hero_special_cooldowns = {}
@@ -3262,7 +3272,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
+    def _reap_unnoticed_kills(self):
+        """Anything that died without its death being handled is handled
+        now. Three effects (a thrown drain potion, Power Word Kill's stagger
+        on a named foe, the wonder wand's fire burst) killed without telling
+        the game: a boss ended that way left no Stone, no broken seal, no
+        gift and no stair."""
+        for m in list(self.monsters):
+            if not getattr(m, 'alive', True) and not getattr(m, '_kill_handled', False):
+                try:
+                    self._on_monster_killed(m)
+                except Exception:
+                    m._kill_handled = True
+
     def _advance_turn(self):
+        self._reap_unnoticed_kills()
         self.turn_count += 1
         # Periodic in-play autosave (every 50 turns) so an abrupt close costs at
         # most ~50 turns instead of the whole session. A floor is ~200-400 turns.

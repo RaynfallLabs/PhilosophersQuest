@@ -99,7 +99,7 @@ SECRET_BUILDS: dict[str, dict] = {
     "leonidas of sparta": {
         "STR": 17, "CON": 18, "DEX": 12, "INT": 9, "WIS": 10, "PER": 8,
         "_sprite": "player_leonidas",
-        "_start_weapon": "romulus_spear",
+        "_start_weapon": "leonidas_dory",
         "_start_shield": "shield_of_the_spartans",
         "_greeting": "Leonidas has 299 fewer soldiers than he would like.",
     },

@@ -7013,5 +7013,67 @@
     "_curve_note": "Pass 4: bumped base damage to 5 to match band effective ratio (~2.0x of curve at low floor scales).",
     "kill_heal_amount": 2,
     "chain_exponent": 1.15
+  },
+  "leonidas_dory": {
+    "name": "Dory of Leonidas",
+    "class": "spear",
+    "variant": "reach",
+    "tier": 2,
+    "material": "bronze",
+    "mathTier": 2,
+    "baseDamage": 30,
+    "chainMultipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "pierce"
+    ],
+    "symbol": ")",
+    "color": [
+      180,
+      140,
+      60
+    ],
+    "weight": 4.0,
+    "twoHanded": false,
+    "reach": 2,
+    "stunChance": 0.0,
+    "bleedChance": 0.1,
+    "requiresAmmo": null,
+    "value": 250,
+    "min_level": 9999,
+    "unidentified_name": "a long ash spear with a bronze butt-spike",
+    "lore": "The dory was the Spartan's first weapon: eight feet of ash with an iron head and a bronze spike on the butt, called the lizard-killer, for finishing what the line had walked over. At Thermopylae the spears broke on the second day and the three hundred fought on with swords, then with hands and teeth. This one did not break.",
+    "quiz_tier": 2,
+    "damage_types": [
+      "pierce"
+    ],
+    "template_basis": "spear",
+    "spread": 8,
+    "peak_floor": 0,
+    "chain_multipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "peak_weight": 0.0,
+    "base_damage": 30,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 2,
+    "weapon_class_chain": "heavy",
+    "effective_against": [
+      "humanoid"
+    ],
+    "identified": false,
+    "id_level": 0,
+    "chain_exponent": 1.15
   }
 }

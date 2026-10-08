@@ -266,7 +266,8 @@ class Pet:
         """Saves from before 2026-10-06 hold old-scale HP and damage (20 to
         200 HP, 3 to 30 damage); bring an ordinary pet's up to date."""
         self.__dict__.update(state)
-        if type(self) is Pet and getattr(self, 'alive', False):
+        if (type(self) is Pet and getattr(self, 'alive', False)
+                and not hasattr(self, '_temp_duration')):        # a short-lived ally keeps its halved health
             try:
                 self._refresh_stats()
             except Exception:
