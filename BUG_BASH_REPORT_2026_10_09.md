@@ -2,7 +2,7 @@
 
 Eight reviewers each attacked a frozen copy of the game from one angle, and all eight have reported.
 
-**Bottom line:** no reviewer found a crash in normal play, including a headless "monkey" that played about 3.1 million random actions across roughly 12,000 games as every hero on every floor. They found about 115 real faults, most of them "does the wrong thing quietly". I fixed about 80 in code and data and left the rest for you because they are design calls, balance-affecting, or large. Everything is committed locally (nine commits after `b9a07b7`, ending `48b8b469`, plus this report); nothing is pushed. The suite is at 2,166 passing. Nothing has been played by a person.
+**Bottom line:** no reviewer found a crash in normal play, including a headless "monkey" that played about 3.1 million random actions across roughly 12,000 games as every hero on every floor. They found about 115 real faults, most of them "does the wrong thing quietly". I fixed about 80 in code and data and left the rest for you because they are design calls, balance-affecting, or large. Everything is committed locally (twelve commits after `b9a07b7`); nothing is pushed. The suite is at 2,166 passing. Nothing has been played by a person.
 
 ## Read these first
 
