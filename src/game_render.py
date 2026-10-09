@@ -172,12 +172,12 @@ class RenderMixin:
         """
         if item_id in self._menu_sprite_cache:
             return self._menu_sprite_cache[item_id]
-        from renderer import _resolve_item_sprite_path
+        from renderer import _resolve_item_sprite_path, fit_sprite
         SZ = self.MENU_ICON_SIZE
         path = _resolve_item_sprite_path(item_id)
         if path:
             raw = pygame.image.load(path).convert_alpha()
-            surf = pygame.transform.smoothscale(raw, (SZ, SZ))
+            surf = fit_sprite(raw, SZ, SZ)
         else:
             surf = None
         self._menu_sprite_cache[item_id] = surf

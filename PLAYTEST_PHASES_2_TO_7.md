@@ -1,6 +1,6 @@
 # Play-test list: the rebalance, after the bug bash
 
-Date: 2026-10-08, after two review rounds and the armor and art pass. Nothing here has been played. 2,137 tests pass; they prove the rules do what they say, not that the game feels right.
+Date: 2026-10-08, after two review rounds and the armor and art pass. Nothing here has been played. 2,145 tests pass; they prove the rules do what they say, not that the game feels right.
 
 Run from source: `python src/main.py`
 
@@ -29,7 +29,9 @@ Removed on 2026-10-07 because they broke that rule: the early-floor damage reduc
 | Find Martin's Half Cloak, the Cestus of Polydeuces, the Bracers of Atalanta or Becket's Hair Shirt (floors 5 to 20) | Each has an icon, a story, and a line on its card such as **Toughness +3%** or **Dodge +4%**. The character sheet's Dodge and Tough readouts rise by that much when it is worn. |
 | Put on any unidentified armor | The log says "You equip the pair of worn sandals", not "the A Pair of Worn Sandals". |
 | Put a named piece on, then take it off (Cloth of Penelope on floor 10 is the easy one) | Its status goes with it. Regenerating, Hasted, Blinded and Displacement used to stay for the rest of the run. |
-| Walk the first floors | No monster shows as a letter: all 71 that had no art have a sprite now (bandits, cultists, kobolds, gnolls, orcs and goblins are the early ones). |
+| Look at anything | Every monster, item, tile and hero is redrawn in one pixel-art style (2026-10-08). Press **Tab** for the medium and close views: that is where the art shows; the full-map view draws tiles about 12 to 19 pixels wide. Solid rock is dark and plain; brick shows only where a wall faces a room or passage. |
+| Open the inventory, the cooking menu and an item card | Every item has its own icon, including each monster's prime cut (they all shared one meat icon). |
+| Meet a gold pile, the Deep Gnome Trader, a mystery shrine | Each has a picture; they used to show as `$`, `@` and other letters. |
 
 ## Hero builds
 

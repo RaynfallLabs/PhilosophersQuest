@@ -11,6 +11,26 @@ _ITEM_SPRITE_DIR  = data_path('assets', 'tiles', 'items')
 _ENV_SPRITE_DIR   = data_path('assets', 'tiles', 'env')
 
 
+PIXEL_ART_MAX = 64      # a source this small is pixel art, not a painting
+
+
+def fit_sprite(raw: 'pygame.Surface', w: int, h: int) -> 'pygame.Surface':
+    """A sprite at the size it will be drawn.
+
+    A painting (large source) is smooth-scaled down. Pixel art is first
+    enlarged by a whole number with hard edges, then smooth-scaled to the
+    target: every source pixel stays a crisp square with a clean edge at any
+    tile size. Smooth-scaling 32px art straight to a 40px tile, as this did,
+    blurs every edge."""
+    sw, sh = raw.get_size()
+    if (sw, sh) == (w, h):
+        return raw
+    if max(sw, sh) <= PIXEL_ART_MAX:
+        k = max(2, -(-2 * max(w, h) // max(sw, sh)))      # at least twice the target
+        raw = pygame.transform.scale(raw, (sw * k, sh * k))
+    return pygame.transform.smoothscale(raw, (w, h))
+
+
 # --- Item sprite path resolution -------------------------------------------
 # Weapons/armor are instanced as "<material>_<template>" (e.g. "iron_maul"), and
 # each combo normally ships its own art file. Some legitimate materials never
@@ -549,6 +569,27 @@ _TILE_SPRITE = {
     ICE:         'ice',
 }
 
+_SOLID = (WALL, SECRET_DOOR)
+
+
+def _tile_sprite_name(dungeon, tx: int, ty: int, tile) -> 'str | None':
+    """The picture for a map tile. A wall with nothing but wall around it is
+    solid rock and is drawn dark and plain; brickwork shows only where a wall
+    faces something. (A secret door counts as wall here as everywhere, so
+    the rock gives nothing away.)"""
+    if tile in _SOLID:
+        tiles = dungeon.tiles
+        h, w = len(tiles), len(tiles[0])
+        for ny in (ty - 1, ty, ty + 1):
+            if 0 <= ny < h:
+                row = tiles[ny]
+                for nx in (tx - 1, tx, tx + 1):
+                    if 0 <= nx < w and row[nx] not in _SOLID:
+                        return 'wall'
+        return 'rock'
+    return _TILE_SPRITE.get(tile)
+
+
 # Visible tile colors
 _VISIBLE = {
     WALL:        (130, 130, 140),
@@ -651,6 +692,7 @@ class Renderer:
             self._sprite_cache.clear()
             self._item_sprite_cache.clear()
             self._env_sprite_cache.clear()
+            self.__dict__.pop('_big_sprite_cache', None)
             self._player_sprite = None
 
     def world_to_screen(self, wx: int, wy: int) -> tuple[int, int]:
@@ -664,11 +706,7 @@ class Renderer:
         path = os.path.join(_ENV_SPRITE_DIR, f"{name}.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
-            # smoothscale (bilinear) instead of scale (nearest-neighbour)
-            # so high-res illustrations downscale cleanly to the tile
-            # size. Same-size pass-through is harmless for pixel art
-            # that's already at the target resolution.
-            surf = pygame.transform.smoothscale(raw, (self.map_tile_size, self.map_tile_size))
+            surf = fit_sprite(raw, self.map_tile_size, self.map_tile_size)
             self._env_sprite_cache[name] = surf
         else:
             self._env_sprite_cache[name] = None
@@ -680,11 +718,7 @@ class Renderer:
         path = _resolve_item_sprite_path(item_id)
         if path:
             raw  = pygame.image.load(path).convert_alpha()
-            # smoothscale (bilinear) instead of scale (nearest-neighbour)
-            # so high-res illustrations downscale cleanly to the tile
-            # size. Same-size pass-through is harmless for pixel art
-            # that's already at the target resolution.
-            surf = pygame.transform.smoothscale(raw, (self.map_tile_size, self.map_tile_size))
+            surf = fit_sprite(raw, self.map_tile_size, self.map_tile_size)
             self._item_sprite_cache[item_id] = surf
         else:
             self._item_sprite_cache[item_id] = None
@@ -706,15 +740,25 @@ class Renderer:
                 path = os.path.join(_SPRITE_DIR, f"{fallback_mid}.png")
         if os.path.exists(path):
             raw  = pygame.image.load(path).convert_alpha()
-            # smoothscale (bilinear) instead of scale (nearest-neighbour)
-            # so high-res illustrations downscale cleanly to the tile
-            # size. Same-size pass-through is harmless for pixel art
-            # that's already at the target resolution.
-            surf = pygame.transform.smoothscale(raw, (self.map_tile_size, self.map_tile_size))
+            surf = fit_sprite(raw, self.map_tile_size, self.map_tile_size)
             self._sprite_cache[mid] = surf
         else:
             self._sprite_cache[mid] = None
         return self._sprite_cache[mid]
+
+    def _get_big_sprite(self, mid: str, w: int, h: int) -> 'pygame.Surface | None':
+        """A multi-tile monster's sprite, scaled from the source file (not
+        from the already tile-sized copy, which doubled the blur)."""
+        key = (mid, w, h)
+        cache = self.__dict__.setdefault('_big_sprite_cache', {})
+        if key not in cache:
+            path = os.path.join(_SPRITE_DIR, f"{mid}.png")
+            if not os.path.exists(path):
+                fb = _resolve_monster_sprite_fallback(mid)
+                path = os.path.join(_SPRITE_DIR, f"{fb}.png") if fb else ''
+            cache[key] = (fit_sprite(pygame.image.load(path).convert_alpha(), w, h)
+                          if path and os.path.exists(path) else None)
+        return cache[key]
 
     # Pre-built overlay surfaces for explored-tile dimming, keyed by tile size
     _dim_overlay_cache: dict[int, pygame.Surface] = {}
@@ -737,7 +781,7 @@ class Renderer:
 
                 if (tx, ty) in visible:
                     dungeon.explored.add((tx, ty))
-                    sprite_name = _TILE_SPRITE.get(tile)
+                    sprite_name = _tile_sprite_name(dungeon, tx, ty, tile)
                     sprite = self._get_env_sprite(sprite_name) if sprite_name else None
                     if sprite:
                         self.screen.blit(sprite, (sx, sy))
@@ -763,7 +807,7 @@ class Renderer:
                             self.screen.blit(shimmer_surf, (sx, sy))
 
                 elif (tx, ty) in dungeon.explored:
-                    sprite_name = _TILE_SPRITE.get(tile)
+                    sprite_name = _tile_sprite_name(dungeon, tx, ty, tile)
                     sprite = self._get_env_sprite(sprite_name) if sprite_name else None
                     if sprite:
                         self.screen.blit(sprite, (sx, sy))
@@ -855,8 +899,7 @@ class Renderer:
                     target_w = fw * T
                     target_h = fh * T
                     if sprite.get_size() != (target_w, target_h):
-                        sprite = pygame.transform.smoothscale(
-                            sprite, (target_w, target_h))
+                        sprite = self._get_big_sprite(mid, target_w, target_h) or sprite
                 if tint:
                     sprite = sprite.copy()
                     overlay = pygame.Surface(sprite.get_size(), pygame.SRCALPHA)

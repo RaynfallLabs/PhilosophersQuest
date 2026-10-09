@@ -7,7 +7,7 @@ Hrungnir's Ghost) and the six mini-bosses that had lost theirs.
 Offline tooling (not loaded at runtime). Idempotent.
 
     python tools/content/add_unique_armor_2026_10.py            # report
-    python tools/content/add_unique_armor_2026_10.py --write    # write data + icons
+    python tools/content/add_unique_armor_2026_10.py --write    # write data (icons: tools/content/art/build.py)
 
 LORE, NOT FLOOR: each piece is what its story says it is, and sits on the
 floor where that much armor belongs. Its numbers are fixed here and nothing
@@ -297,7 +297,6 @@ DROPS = {
     'nidhoggr_fragment': 'nidhoggr_scale',
 }
 
-ICON = {'body': 'draw_body_armor', 'hands': None, 'arms': 'draw_bracers', 'shirt': 'draw_shirt', 'cloak': 'draw_cloak', 'legs': 'draw_leggings'}
 
 
 def _jload(rel):
@@ -309,20 +308,6 @@ def _jload(rel):
 def _jsave(p, raw, d):
     out = json.dumps(d, indent=2, ensure_ascii=False) + '\n'
     open(p, 'w', encoding='utf-8', newline='').write(out.replace('\n', '\r\n') if '\r\n' in raw else out)
-
-
-def _icon(item_id, d, shield=False):
-    import item_sprite_gen as g
-    P = g.C(d['color'])
-    L, D = g.lt(P, 1.35), g.dk(P, 0.55)
-    if shield:
-        return g.draw_shield(P, L, D, large=True)
-    slot = d['slot']
-    if slot == 'hands':
-        fn = g.draw_gauntlets if 'gauntlets' in d['template_basis'] else g.draw_gloves
-    else:
-        fn = getattr(g, ICON[slot])
-    return fn(P, L, D)
 
 
 def main(argv):
@@ -346,14 +331,7 @@ def main(argv):
     _jsave(pa, rawa, armor)
     _jsave(ps, raws, shield)
     _jsave(pm, rawm, mons)
-    out = ROOT / 'assets' / 'tiles' / 'items'
-    for k, d in ARMOR.items():          # a piece that already has art keeps it
-        if not (out / f'{k}.png').exists():
-            _icon(k, d).save(out / f'{k}.png')
-    for k, d in SHIELD.items():
-        if not (out / f'{k}.png').exists():
-            _icon(k, d, shield=True).save(out / f'{k}.png')
-    print('written, with icons')
+    print('written. Draw their icons with: python tools/content/art/build.py --write armor')
     return 0
 
 
