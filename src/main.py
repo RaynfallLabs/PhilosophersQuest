@@ -344,8 +344,35 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Message helper
     # ------------------------------------------------------------------
 
+    # A line in the log that has a sound of its own. Checked in order; the
+    # first match plays. (Kills, chains and the clock are played where they
+    # happen, not from here.)
+    _SOUND_CUES = (
+        ('trait unlocked', 'trait'),
+        ('death has come for the stone', 'dread'),
+        ('increases by', 'stat_up'), ('wisdom +', 'stat_up'), ('comes into its own', 'stat_up'),
+        ('has hatched', 'trait'), ('evolves into', 'trait'), ('it has become', 'trait'),
+        ('grows stronger', 'pet'),
+        ('secret door', 'secret'), ('has become a door', 'secret'), ('hidden passages', 'secret'),
+        ('the lock yields', 'chest_open'),
+        ('you eat the', 'eat'), ('you prepare', 'cook'), ('you harvest the', 'harvest'),
+        ('you drink', 'drink'), ('you quaff', 'drink'),
+        ('you read the', 'scroll'), ('you kneel', 'pray'),
+        ('its nature is known', 'identify'), ('it is the ', 'identify'), ('illuminates the', 'identify'),
+        ('and miss!', 'miss'), ('swing at the empty space', 'miss'),
+        ("'s blow.", 'dodge'),
+    )
+
     def add_message(self, text: str, msg_type: str = 'info'):
         self.msg_log.add(text, msg_type)
+        try:
+            low = str(text).lower()
+            for needle, cue in self._SOUND_CUES:
+                if needle in low:
+                    _snd.play(cue)
+                    break
+        except Exception:
+            pass
 
     def _log_chronicle(self, text: str):
         """Add an entry to the player's chronicle (passive event log)."""
@@ -5508,7 +5535,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         qe = self.quiz_engine
         if is_correct:
             self.correct_answers += 1
-            _snd.play('quiz_correct')
+            # In a fight each right answer is a link, and the links climb.
+            if getattr(qe, 'subject', '') == 'math' and getattr(qe, 'chain', 0):
+                _snd.play_chain(qe.chain)
+            else:
+                _snd.play('quiz_correct')
             # Subject mastery: a (subject, tier) just cleared this run -- every
             # distinct question at that tier answered correctly. Announce it; the
             # tier now auto-succeeds for the rest of the run.
@@ -6844,7 +6875,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if hasattr(self, '_necro_qs') and self._necro_qs is not None:
                 self._necro_update(dt)
             else:
+                _left_before = getattr(self.quiz_engine, 'time_remaining', 0) or 0
                 self.quiz_engine.update(dt)
+                # The last three seconds of the clock tick; running out sounds.
+                try:
+                    _qe = self.quiz_engine
+                    _left = getattr(_qe, 'time_remaining', 0) or 0
+                    if getattr(_qe, 'timed', False) and _left_before > 0:
+                        if _left <= 0:
+                            _snd.play('time_up')
+                        elif _left <= 3.0 and int(_left) != int(_left_before):
+                            _snd.play('tick')
+                except Exception:
+                    pass
             # (The context modal is opened manually with C; there is no auto-open.)
 
         # Effects runtime: feed a per-frame snapshot (chain aura reads this

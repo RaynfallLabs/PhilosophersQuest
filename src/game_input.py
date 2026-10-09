@@ -88,6 +88,12 @@ class InputMixin:
         if key == pygame.K_F11:
             pygame.display.toggle_fullscreen()
             return True
+        if key == pygame.K_F10:
+            _on = _snd.toggle()
+            if _on:
+                _snd.play('toggle')
+            self.add_message(f"Sound: {'On' if _on else 'Off'}. (F10 switches it.)", 'info')
+            return True
         # The debug overlay (raw ids, monster health) is a developer's tool:
         # it was live for every player in every state, quizzes included.
         if key == pygame.K_F2 and os.environ.get('PQ_QA_MODE'):

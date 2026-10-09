@@ -5122,6 +5122,11 @@ class RenderMixin:
                           self.level_mgr.monsters_killed,
                           self.turn_count, victory=True)
             self._score_saved = True
+            try:
+                import sound_system as _vs
+                _vs.play('victory')
+            except Exception:
+                pass
 
         self._draw_end_summary(
             cx, start_y, grade, grade_col, score, stats,
@@ -6606,6 +6611,7 @@ class RenderMixin:
                 ("C", "Quiz context", FP.GOLD_BRIGHT),
                 ("PgUp/PgDn", "Scroll long quiz", FP.BODY_TEXT),
                 ("?", "Command help", FP.BODY_TEXT),
+                ("F10", "Sound on / off", FP.BODY_TEXT),
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
             ]),
         ]

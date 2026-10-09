@@ -269,3 +269,6 @@ bankbuild/*/manifest.json
 bankbuild/*/_*.json
 bankbuild/*/_*.txt
 final_rungs.json
+
+# the player's own settings (sound on/off), written beside the saves
+/settings.json

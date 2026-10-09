@@ -440,6 +440,7 @@ class MagicMixin:
         return max(1, int(base_dmg * tier_mult * int_damage_factor(self.player.INT)))
 
     def _apply_wand_effect(self, wand: 'Wand'):
+        _snd.play('zap')
         import random as _rng
         from dice import roll
         effect = wand.effect

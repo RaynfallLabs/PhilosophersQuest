@@ -23,6 +23,7 @@ Supported events:
 from __future__ import annotations
 
 import math
+import os
 import array as _array
 from typing import TYPE_CHECKING
 
@@ -129,6 +130,111 @@ def _make_noise_burst(duration: float, volume: float = 0.2) -> 'pygame.mixer.Sou
 # Public API
 # ---------------------------------------------------------------------------
 
+def _make_notes(notes, wave: str = 'sine', volume: float = 0.25, gap: float = 0.0):
+    """A short tune: `notes` is [(frequency, seconds), ...] played one after
+    another, each with its own quick fade. A frequency of 0 is a rest; a
+    tuple of frequencies is a chord."""
+    try:
+        import numpy as np
+        parts = []
+        for freq, dur in notes:
+            n = max(1, int(_SAMPLE_RATE * dur))
+            t = np.arange(n) / _SAMPLE_RATE
+            freqs = freq if isinstance(freq, (tuple, list)) else (freq,)
+            wav = np.zeros(n)
+            for fq in freqs:
+                if not fq:
+                    continue
+                ph = 2 * np.pi * fq * t
+                if wave == 'square':
+                    wav += np.sign(np.sin(ph))
+                elif wave == 'triangle':
+                    wav += 2 * np.abs(2 * (t * fq - np.floor(t * fq + 0.5))) - 1
+                else:
+                    wav += np.sin(ph)
+            wav /= max(1, len([x for x in freqs if x]))
+            env = np.minimum(1.0, t / 0.008) * np.exp(-t / max(0.02, dur * 0.6))
+            parts.append(wav * env)
+            if gap:
+                parts.append(np.zeros(int(_SAMPLE_RATE * gap)))
+        buf = np.concatenate(parts) * int(32767 * min(1.0, volume))
+        return _to_sound(buf.astype('int16'))
+    except Exception:
+        return None
+
+
+# The pentatonic climb a combat chain sings: one step per link, so a long
+# chain is heard as a rising run.
+_CHAIN_SCALE = (392, 440, 523, 587, 659, 784, 880, 1047, 1175, 1319, 1568, 1760, 2093)
+
+
+def play_chain(link: int) -> None:
+    """The note for the Nth link of a chain (it tops out and stays there)."""
+    play(f'chain_{max(1, min(len(_CHAIN_SCALE), int(link)))}')
+
+
+# ---- on / off, remembered between sessions -------------------------------
+_USER_ON: bool = True
+
+
+def _settings_path() -> str:
+    try:
+        from paths import save_dir
+        return os.path.join(save_dir(), 'settings.json')
+    except Exception:
+        return 'settings.json'
+
+
+def _load_setting() -> None:
+    global _USER_ON
+    try:
+        import json
+        with open(_settings_path(), encoding='utf-8') as fh:
+            data = json.load(fh)
+        if isinstance(data, dict) and isinstance(data.get('sound'), bool):
+            _USER_ON = data['sound']
+    except Exception:
+        pass
+
+
+def is_on() -> bool:
+    return bool(_USER_ON)
+
+
+def set_on(on: bool) -> bool:
+    """Turn sound on or off and remember the choice. Returns the new state."""
+    global _USER_ON
+    _USER_ON = bool(on)
+    try:
+        import json
+        path = _settings_path()
+        data = {}
+        try:
+            with open(path, encoding='utf-8') as fh:
+                data = json.load(fh)
+            if not isinstance(data, dict):
+                data = {}
+        except Exception:
+            data = {}
+        data['sound'] = _USER_ON
+        with open(path + '.tmp', 'w', encoding='utf-8') as fh:
+            json.dump(data, fh)
+        os.replace(path + '.tmp', path)
+    except Exception:
+        pass
+    if not _USER_ON:
+        try:
+            import pygame
+            pygame.mixer.stop()
+        except Exception:
+            pass
+    return _USER_ON
+
+
+def toggle() -> bool:
+    return set_on(not _USER_ON)
+
+
 def _to_sound(samples):
     """A Sound from mono 16-bit samples, shaped for whatever mixer is open.
 
@@ -184,7 +290,39 @@ def init() -> bool:
         'spell_cast':   lambda: _make_sweep(300, 700, 0.28, volume=0.28, decay=0.20),
         'equip':        lambda: _make_tone(350, 0.10, wave='square', volume=0.18, decay=0.06),
         'player_healed': lambda: _make_sweep(440, 660, 0.22, volume=0.22, decay=0.15),
+        # ---- added 2026-10-09 ----
+        'miss':         lambda: _make_sweep(300, 170, 0.14, volume=0.20, decay=0.09),
+        'strike_big':   lambda: _make_sweep(190, 55, 0.30, volume=0.42, decay=0.20),
+        'kill':         lambda: _make_notes([(523, 0.07), (784, 0.14)], volume=0.24),
+        'boss_kill':    lambda: _make_notes([(392, 0.12), (523, 0.12), (659, 0.12), ((523, 659, 784), 0.45)],
+                                            wave='triangle', volume=0.34),
+        'dodge':        lambda: _make_sweep(900, 1500, 0.08, volume=0.14, decay=0.05),
+        'stat_up':      lambda: _make_notes([(523, 0.08), (659, 0.08), (784, 0.08), (1047, 0.22)], volume=0.26),
+        'trait':        lambda: _make_notes([(659, 0.10), (784, 0.10), (988, 0.10), ((784, 988, 1319), 0.40)],
+                                            wave='triangle', volume=0.32),
+        'chest_open':   lambda: _make_notes([(220, 0.06), (330, 0.06), (440, 0.16)], wave='square', volume=0.16),
+        'lock_fail':    lambda: _make_notes([(150, 0.10), (120, 0.16)], wave='square', volume=0.16),
+        'eat':          lambda: _make_notes([(190, 0.05), (150, 0.05), (175, 0.06)], wave='triangle', volume=0.24, gap=0.03),
+        'drink':        lambda: _make_notes([(430, 0.06), (360, 0.06), (300, 0.10)], volume=0.22, gap=0.02),
+        'cook':         lambda: _make_noise_burst(0.50, volume=0.10),
+        'harvest':      lambda: _make_notes([(140, 0.05), (110, 0.09)], wave='square', volume=0.18),
+        'identify':     lambda: _make_notes([(880, 0.07), (1175, 0.07), (1568, 0.22)], volume=0.22),
+        'scroll':       lambda: _make_sweep(700, 1150, 0.22, volume=0.20, decay=0.16),
+        'zap':          lambda: _make_sweep(1500, 280, 0.20, volume=0.26, decay=0.14),
+        'pray':         lambda: _make_notes([((262, 330, 392), 0.70)], volume=0.24),
+        'pet':          lambda: _make_notes([(988, 0.06), (1319, 0.12)], volume=0.20),
+        'secret':       lambda: _make_notes([(659, 0.08), (622, 0.08), (659, 0.08), (988, 0.24)], volume=0.24),
+        'dread':        lambda: _make_notes([((65, 69), 0.90)], wave='triangle', volume=0.45),
+        'boon':         lambda: _make_notes([((392, 494, 587, 784), 0.80)], wave='triangle', volume=0.30),
+        'victory':      lambda: _make_notes([(523, 0.14), (523, 0.07), (523, 0.07), (659, 0.14), (784, 0.14),
+                                             (659, 0.10), ((523, 659, 784, 1047), 0.70)], wave='triangle', volume=0.36),
+        'tick':         lambda: _make_notes([(1000, 0.035)], wave='square', volume=0.12),
+        'time_up':      lambda: _make_sweep(520, 190, 0.32, volume=0.30, decay=0.22),
+        'toggle':       lambda: _make_notes([(660, 0.05), (880, 0.08)], volume=0.20),
     }
+    for _i, _hz in enumerate(_CHAIN_SCALE, start=1):
+        defs[f'chain_{_i}'] = (lambda hz=_hz: _make_notes([(hz, 0.11)], wave='triangle', volume=0.26))
+    _load_setting()
 
     ok = 0
     for name, factory in defs.items():
@@ -202,7 +340,7 @@ def init() -> bool:
 
 def play(event: str, volume: float = 1.0) -> None:
     """Play a named sound event. Silently no-ops if not available."""
-    if not _ENABLED:
+    if not _ENABLED or not _USER_ON:
         return
     snd = _sounds.get(event)
     if snd is None:

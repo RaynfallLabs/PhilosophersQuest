@@ -661,6 +661,10 @@ class CombatMixin:
         # and for a boss two drops and two gifts.
         if getattr(monster, '_kill_handled', False):
             return
+        _snd.play('boss_kill' if (getattr(monster, 'is_boss', False)
+                                  or 'legendary' in (getattr(monster, 'tags', None) or ())
+                                  or (getattr(monster, 'treasure', None) or {}).get('boss_scroll_id'))
+                  else 'kill')
         self.level_mgr.monsters_killed += 1
         # Marker read by _process_collateral_kills so a monster handled here
         # is not processed a second time by the post-attack sweep.
@@ -887,6 +891,7 @@ class CombatMixin:
             return False
         self._boon_kind = kind
         self.state = STATE_BOON_MENU
+        _snd.play('boon')
         return True
 
     def _boon_pick(self, index: int):
@@ -1965,6 +1970,8 @@ class CombatMixin:
                 # Chain combat v2 (v2.14.0): crit retired. Chain IS the crit —
                 # the message just calls out the chain rung and the damage.
                 msg = f"Chain x{chain}! You strike {the_name(monster, lower=True)} for {damage} damage!"
+                if chain >= 5:
+                    _snd.play('strike_big')
                 if stunned:
                     msg += f" {the_name(monster)} is stunned!"
                 if monster.status_effects.get('bleeding', 0) > 0:
