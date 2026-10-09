@@ -124,6 +124,7 @@ from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa
 
 
 RING_FEAR_CHANCE = 0.40        # Helm of Achilles: a monster's chance to flee on first sight
+DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until woken (the status cap of 60 woke them all on a timer)
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
@@ -1779,7 +1780,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             # spawned nothing and the zoo was free gold.
                             zoo_extra = spawn_monsters([room, room], new_level, dungeon, min_count=4, max_count=8)
                             for zm in zoo_extra:
-                                zm.add_effect('sleeping', 999)
+                                zm.status_effects['sleeping'] = DEEP_SLEEP
                             monsters.extend(zoo_extra)
                             break
                 elif rtype == 'graveyard':
@@ -1787,7 +1788,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         if room.center == (rcx, rcy):
                             grave_extra = spawn_monsters([room, room], new_level, dungeon, min_count=2, max_count=4)
                             for gm in grave_extra:
-                                gm.add_effect('sleeping', 999)
+                                gm.status_effects['sleeping'] = DEEP_SLEEP
                             monsters.extend(grave_extra)
                             break
                 elif rtype == 'barracks':
@@ -1795,10 +1796,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         if room.center == (rcx, rcy):
                             bar_extra = spawn_monsters([room, room], new_level, dungeon, min_count=3, max_count=5)
                             for bm in bar_extra:
-                                bm.add_effect('sleeping', 999)
+                                bm.status_effects['sleeping'] = DEEP_SLEEP
                             monsters.extend(bar_extra)
                             break
 
+        self._settle_monsters()
         self._refresh_fov()
 
         # Display atmospheric messages for this level
@@ -2623,6 +2625,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if (px, py) in getattr(self.dungeon, 'pits', set()):
                 self._player_fall_in_pit(px, py)
                 if self.player.is_dead():
+                    # It returned with the player in control at 0 health; a
+                    # potion then undid the death.
+                    self.add_message("You have died!", 'danger')
+                    self.defeat_reason = 'died'
+                    self._on_game_over()
+                    self.state = STATE_DEAD
                     return
             _qs_walk = getattr(self, 'quirk_system', None)
             if _qs_walk:
@@ -3303,6 +3311,36 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
+    def _settle_monsters(self):
+        """Move any monster that begins a floor on a tile it cannot have: on
+        top of another creature, or on water, lava or rock. The extra packs
+        of a den, zoo, graveyard or barracks were placed without sight of the
+        monsters already there, and pools are carved after monsters are set
+        down (about one floor in twenty had a stacked pair)."""
+        from geom import occupied_tiles
+        taken = {(self.player.x, self.player.y)}
+        taken |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
+        for m in self.monsters:
+            if not getattr(m, 'alive', False):
+                continue
+            mine = list(occupied_tiles(m))
+            ok = all(self.dungeon.in_bounds(x, y) and self.dungeon.is_walkable(x, y)
+                     and (x, y) not in taken for x, y in mine)
+            if not ok and tuple(getattr(m, 'footprint', (1, 1))) == (1, 1):
+                spot = None
+                for r in range(1, 9):
+                    ring = [(m.x + dx, m.y + dy) for dx in range(-r, r + 1) for dy in range(-r, r + 1)
+                            if max(abs(dx), abs(dy)) == r]
+                    ring = [(x, y) for x, y in ring if self.dungeon.in_bounds(x, y)
+                            and self.dungeon.is_walkable(x, y) and (x, y) not in taken]
+                    if ring:
+                        spot = ring[0]
+                        break
+                if spot is not None:
+                    m.x, m.y = spot
+                    mine = [spot]
+            taken.update(mine)
+
     def _reap_unnoticed_kills(self):
         """Anything that died without its death being handled is handled
         now. Three effects (a thrown drain potion, Power Word Kill's stagger
@@ -3310,7 +3348,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         the game: a boss ended that way left no Stone, no broken seal, no
         gift and no stair."""
         for m in list(self.monsters):
-            if not getattr(m, 'alive', True) and not getattr(m, '_kill_handled', False):
+            if getattr(m, 'alive', True) or getattr(m, '_kill_handled', False):
+                continue
+            # A creature that LEFT is not a kill. Encounter NPCs, the unicorn
+            # and the Heavenly Host are taken off the floor by clearing
+            # `alive` with their health untouched; reaping those printed "The
+            # Lost Girl is slain!", dropped her corpse and counted a kill.
+            if (getattr(m, 'hp', 0) > 0 or getattr(m, 'is_allied', False)
+                    or getattr(m, '_npc_encounter_tag', None)
+                    or getattr(m, '_flavor_encounter_tag', None)
+                    or getattr(m, '_is_unicorn', False)):
+                m._kill_handled = True
+                continue
+            if True:
                 try:
                     self._on_monster_killed(m)
                 except Exception:
@@ -4017,6 +4067,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._log_chronicle(f"Stepped on a {trap_type.replace('_', ' ')} trap. Should have watched where I was walking.")
         if self.player.is_dead():
             self.add_message("You have died!", 'danger')
+            # The whole game-over path, as every other death takes: this set
+            # the state alone, so the save was kept (reload and carry on)
+            # and no bones were left.
+            self.defeat_reason = 'died'
+            self._on_game_over()
             self.state = STATE_DEAD
 
     def _teleport_player(self):
@@ -4324,11 +4379,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             monster.status_effects['burning'] = max(
                 monster.status_effects.get('burning', 0), 3)
         elif trap_type == 'sleep_gas':
-            monster.status_effects['sleeping'] = max(
-                monster.status_effects.get('sleeping', 0), _trng.randint(3, 8))
+            monster.add_effect('sleeping', _trng.randint(3, 8))
         elif trap_type == 'bear_trap':
-            monster.status_effects['immobilized'] = max(
-                monster.status_effects.get('immobilized', 0), _trng.randint(2, 4))
+            monster.add_effect('immobilized', _trng.randint(2, 4))
         elif trap_type == 'alarm':
             for m in self.monsters:
                 if m.alive and abs(m.x - pos[0]) <= 10 and abs(m.y - pos[1]) <= 10:
@@ -6395,7 +6448,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters.append(minion)
         if (summoner.x, summoner.y) in self.visible or (sx, sy) in self.visible:
             self.add_message(
-                f"The {summoner.name} summons a {minion.name}!", 'danger')
+                f"{the_name(summoner)} summons {self._a_or_an(minion.name)}!", 'danger')
 
     # ------------------------------------------------------------------
     # NPC moral encounter system

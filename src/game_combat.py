@@ -648,6 +648,11 @@ class CombatMixin:
         trap kill paths use defaults (chain_score=0, ranged=False) and still fire the hook
         for kill-count quirks like Caesar, Kali, Boudicca, Leonidas, Battle Trance, etc.
         """
+        # One death, one handling. A monster that died inside its own attack
+        # with a fire shield up was handled twice: two corpses, two kills,
+        # and for a boss two drops and two gifts.
+        if getattr(monster, '_kill_handled', False):
+            return
         self.level_mgr.monsters_killed += 1
         # Marker read by _process_collateral_kills so a monster handled here
         # is not processed a second time by the post-attack sweep.
@@ -2178,6 +2183,7 @@ class CombatMixin:
                 m._enrage_message = ''
             # Fenrir rage escalation message
             rage_msg = getattr(m, '_rage_message', '')
+            m._rage_message = ''        # said once, not every turn he is held
             if rage_msg and (m.x, m.y) in self.visible:
                 self.add_message(rage_msg, 'danger')
             # Check if monster moved onto a dug pit
@@ -2804,8 +2810,9 @@ class CombatMixin:
         elif targeting == 'line':
             from combat import get_line_tiles
             line = get_line_tiles(pet.x, pet.y, tx, ty)
-            # Drop the pet's own tile from the line
-            for (lx, ly) in line[1:]:
+            # (get_line_tiles already leaves the pet's own tile out; dropping
+            # one more meant the wave never touched the creature beside it)
+            for (lx, ly) in line:
                 for m in self.monsters:
                     if m.alive and is_at_tile(m, lx, ly) and m not in affected:
                         affected.append(m)
@@ -2887,6 +2894,15 @@ class CombatMixin:
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
         for m in self.monsters:
             if not m.alive:
+                continue
+            # A sleeping or held monster, a friend, or something with no
+            # attack does not bite: the Lost Girl could kill a pet.
+            if (not getattr(m, 'attacks', None) or getattr(m, 'is_allied', False)
+                    or getattr(m, '_npc_encounter_tag', None)
+                    or getattr(m, '_flavor_encounter_tag', None)
+                    or getattr(m, '_is_unicorn', False)
+                    or any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
+                                                     'feared', 'charmed'))):
                 continue
             for pet in self.pets:
                 if not pet.alive:

@@ -587,7 +587,8 @@ class Monster:
         no damage at all. They have 1 HP and stand among the monsters, and
         area spells do not skip them: one blast could delete a quest.
         """
-        if getattr(self, '_npc_encounter_tag', None):
+        if (getattr(self, '_npc_encounter_tag', None) or getattr(self, '_flavor_encounter_tag', None)
+                or getattr(self, '_is_unicorn', False) or getattr(self, 'is_allied', False)):
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
@@ -1115,9 +1116,16 @@ class Monster:
 
         if not self.alive:
             return False
+        if tuple(self.footprint) != (1, 1):
+            from geom import all_occupied_tiles
+            self._turn_occupied = (all_occupied_tiles(all_monsters, exclude=self)
+                                   | set(extra_occupied or ()) | {(player.x, player.y)})
 
-        # Immobilised by sleep or paralysis
-        if self.has_effect('sleeping') or self.has_effect('paralyzed'):
+        # Held: asleep, paralysed, stunned or frozen. The last two were
+        # applied by thirteen weapon specials and four spells, announced
+        # ("is stunned!") and then read by nothing.
+        if (self.has_effect('sleeping') or self.has_effect('paralyzed')
+                or self.has_effect('stunned') or self.has_effect('frozen')):
             return False
 
         # Stuck in a pit: can attack if adjacent, but cannot move
@@ -1539,11 +1547,16 @@ class Monster:
         tiles at the new position must be walkable — a 2×2 dragon
         can't step into a 1-tile gap."""
         fw, fh = self.footprint
+        # A creature larger than one tile must find every tile it would cover
+        # free of other creatures; only its corner tile was ever compared.
+        _busy = getattr(self, '_turn_occupied', None) if (fw, fh) != (1, 1) else None
         # Validate every footprint tile at the proposed new position
         for dy in range(fh):
             for dx in range(fw):
                 tx, ty = nx + dx, ny + dy
                 if not dungeon.in_bounds(tx, ty):
+                    return False
+                if _busy and (tx, ty) in _busy:
                     return False
                 if dungeon.is_walkable(tx, ty):
                     continue

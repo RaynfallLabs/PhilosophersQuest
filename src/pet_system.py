@@ -512,7 +512,10 @@ class Pet:
             # NPCs and the Heavenly Host all live in the monster list.
             if getattr(m, 'is_allied', False):
                 continue
-            d = max(abs(m.x - self.x), abs(m.y - self.y))
+            # to the nearest tile it covers: a pet south or east of a
+            # two-by-two monster measured to its far corner and never attacked
+            from geom import chebyshev_distance
+            d = chebyshev_distance(self.x, self.y, m)
             if d < nearest_dist:
                 nearest = m
                 nearest_dist = d
