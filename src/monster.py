@@ -78,6 +78,13 @@ def the_name(monster, lower: bool = False) -> str:
     return f"{'the' if lower else 'The'} {name}"
 
 
+# Words in an attack's name that mark it as coming from a distance.
+_RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
+                 'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
+                 'song', 'wail', 'charm', 'psionic', 'disintegrat',
+                 'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
+
+
 class Monster:
     # Always title case, however monsters.json (or an old save) spelled it.
     name = ProperNameAttr('name')
@@ -760,10 +767,6 @@ class Monster:
             return self._fenrir_multi_attack(player)
 
         # Ranged monsters at distance: prefer ranged attacks over melee
-        _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
-                         'volley', 'ray', 'blast', 'breath', 'spike', 'gaze',
-                         'song', 'wail', 'charm', 'psionic', 'disintegrat',
-                         'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
         if not self.attacks:
             return 0, f"{the_name(self)} flails helplessly!"
         if getattr(self, '_force_piercing', False):
@@ -786,6 +789,19 @@ class Monster:
             atk = random.choice(close_atks or self.attacks)
         else:
             atk = random.choice(self.attacks)
+        return self._resolve_blow(atk, player)
+
+    def _resolve_blow(self, atk: dict, player, in_flurry: bool = False) -> tuple[int, str]:
+        """One blow with one attack, start to finish: the rules that can stop
+        it, the roll to hit, the damage and everything that changes it, and
+        everything that follows from it landing. Returns (damage, message).
+
+        Both a single attack and each blow of a flurry come through here.
+        The flurry used to have its own short copy (roll, damage, one status)
+        and so 41 monsters, every mini-boss, seal demon and end boss among
+        them, skipped the rest: no drain that heals, no Constitution drain,
+        no pull, no charge, no rule about breath and a pit, no gaze immunity,
+        no reflection, no Nemean hide."""
         atk_name = atk.get('name', 'attack').lower()
         atk_type = atk.get('type', 'physical')
 
@@ -1071,7 +1087,13 @@ class Monster:
             msg += f" {the_name(self)} drags you closer!"
 
         # Apply status effect from attack (gated by a D&D-style saving throw).
-        msg += self._apply_attack_effect(atk, player)
+        # In a flurry at most one lands, so a five-attack boss cannot stack a
+        # stun, a freeze and a slow in one turn.
+        if not (in_flurry and getattr(self, '_flurry_effect_done', False)):
+            _eff = self._apply_attack_effect(atk, player) if (actual > 0 or not in_flurry) else ''
+            if in_flurry and _eff:
+                self._flurry_effect_done = True
+            msg += _eff
 
         return actual, msg
 
@@ -1976,47 +1998,38 @@ class Monster:
         """
         total = 0
         parts = []
-        effect_msg = ''
-        min_hit = self._min_hit()
+        extras: list[str] = []
+        self._flurry_effect_done = False
         atks_to_fire = self.attacks[:attack_limit] if attack_limit > 0 else self.attacks
         for atk in atks_to_fire:
-            d20 = random.randint(1, 20)
-            player_ac = player.get_ac()
-            to_hit = self.thac0 - player_ac
-            if d20 == 1:
-                parts.append("miss")
-                continue
-            if d20 != 20 and d20 < to_hit:
-                if random.random() >= min_hit:
-                    parts.append("miss")
-                    continue
-            if self._slipped(player, atk):
+            if not self.alive or player.hp <= 0:
+                break               # a blow turned back killed it, or the player is already down
+            actual, m = self._resolve_blow(atk, player, in_flurry=True)
+            low = m.lower()
+            label = atk['name'].replace('_', ' ').lower()
+            tail = ''
+            if actual > 0:
+                total += actual
+                parts.append(f"{label} {actual}")
+                if 'drains your life force' in low:
+                    tail = "Your life force drains away! (CON -1)"
+                elif 'damage!' in m:
+                    tail = m.split('damage!', 1)[1].strip()
+            elif 'you slip' in low:
                 parts.append("slipped")
-                continue
-            dmg = roll(atk['damage'])
-            # What was swung and how hard, before any armor: read by the
-            # armor that answers a blow (Hydra carapace, Svalinn).
-            self._last_attack_type = atk.get('type', 'physical')
-            self._last_attack_roll = dmg
-            if self.rage_stacks > 0 and self.rage_damage_bonus:
-                for _ in range(self.rage_stacks):
-                    dmg += self._roll_rage_bonus()
-            if self.has_effect('weakened'):
-                dmg = max(1, dmg // 2)
-            if self.has_effect('sundered'):
-                # Chain combat v2: sundered halves outgoing monster damage.
-                dmg = max(1, int(dmg * 0.70))
-            actual = player.take_damage(dmg, atk.get('type', 'physical'))
-            total += actual
-            parts.append(f"{atk['name'].replace('_', ' ').lower()} {actual}")
-            # On-hit effect of this blow (save-gated). At most one effect
-            # lands per flurry so a five-attack boss cannot stack a stun,
-            # a freeze and a slow in a single turn.
-            if actual > 0 and not effect_msg:
-                effect_msg = self._apply_attack_effect(atk, player)
+            elif 'miss' in low:
+                parts.append("miss")
+            else:
+                parts.append(f"{label} 0")
+                tail = m            # turned aside by something worth saying
+            if tail and tail not in extras:
+                extras.append(tail)
+        self._flurry_effect_done = False
         hit_str = ", ".join(parts)
         msg = f"{the_name(self)} attacks in a frenzy! [{hit_str}] ({total} total)"
-        return total, msg + effect_msg
+        if extras:
+            msg += " " + " ".join(extras)
+        return total, msg
 
     # ------------------------------------------------------------------
     # New 2026 AI patterns: healer, summoner, mimic, phase_blink, charge

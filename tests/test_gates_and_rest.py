@@ -194,7 +194,10 @@ def test_a_boss_that_is_swinging_or_hit_by_magic_has_not_been_left_alone():
 
 def test_dodge_lives_in_the_blow_and_spares_no_one_from_breath():
     src = open(os.path.join(ROOT, 'src', 'monster.py'), encoding='utf-8').read()
-    assert src.count('self._slipped(player, atk)') >= 3      # single, multi-attack, Medusa's swing
+    # one blow, one place: a flurry is a run of ordinary blows now (2026-10-09),
+    # so the dodge is rolled in _resolve_blow and in Medusa's own swing
+    assert src.count('self._slipped(player, atk)') >= 2
+    assert 'self._resolve_blow(atk, player, in_flurry=True)' in src
     import monster as _m
     assert 'gaze' in _m.Monster._UNDODGEABLE and 'breath' in _m.Monster._UNDODGEABLE
     combat = open(os.path.join(ROOT, 'src', 'game_combat.py'), encoding='utf-8').read()

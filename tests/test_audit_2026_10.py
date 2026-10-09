@@ -407,14 +407,12 @@ def test_w16_multi_attack_applies_on_hit_effect_once(monkeypatch):
                  {'name': 'b', 'damage': '2d4', 'effect': 'frozen'}]
     m.thac0 = -50          # always hits
 
-    class _P:
-        def get_ac(self):
-            return 10
-
-        def take_damage(self, dmg, dtype='physical'):
-            return dmg
-
-    total, msg = m._fenrir_multi_attack(_P())
+    # a real player: each blow of a flurry is a full blow now (2026-10-09)
+    from player import Player
+    p = Player()
+    p.max_hp = p.hp = 10 ** 6
+    p.x, p.y = m.x + 1, m.y
+    total, msg = m._fenrir_multi_attack(p)
     assert total > 0
     assert seen == ['a'], "one effect per flurry"
     assert msg.endswith('You are stunned!')

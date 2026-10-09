@@ -2375,8 +2375,13 @@ class RenderMixin:
         # -------- Damage maths (unchanged) ----------------------------
         base    = weapon.base_damage  if weapon else 2
         enchant = weapon.enchant_bonus if weapon else 0
-        dtypes  = weapon.damage_types if weapon else ['physical']
-        dm      = _damage_multiplier(dtypes, monster)
+        dtypes  = weapon.damage_types if weapon else ['blunt']      # bare hands crush
+        # the same reckoning the blow itself uses (form x substance)
+        from combat import weapon_type_multiplier as _wtm
+        _fm, _sm = _wtm(weapon, monster)
+        if weapon and getattr(weapon, 'ignore_resistances', False):
+            _fm = max(1.0, _fm)
+        dm      = _fm * _sm
 
         # Current chain multiplier — polynomial for `chain_exponent`-set
         # weapons (and unarmed @ 1.15), otherwise the legacy array.
@@ -2480,9 +2485,9 @@ class RenderMixin:
 
         # Damage-type / weakness tag keeps its signal colour.
         type_str = " / ".join(_label(d) for d in dtypes)
-        if dm >= 1.5:
+        if dm > 1.0:
             dm_text, dm_col = f"Weakness: {type_str}", FP.SUCCESS_TEXT
-        elif dm <= 0.5:
+        elif dm < 1.0:
             dm_text, dm_col = f"Resisted: {type_str}", FP.DANGER_TEXT
         else:
             dm_text, dm_col = type_str, FP.FADED_TEXT

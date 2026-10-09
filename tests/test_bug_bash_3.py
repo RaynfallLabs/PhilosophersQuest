@@ -331,3 +331,83 @@ def test_the_art_tool_for_the_tiles_is_not_hidden_from_git():
     module that draws the dungeon tiles was in no commit."""
     gi = open(os.path.join(ROOT, '.gitignore'), encoding='utf-8').read()
     assert '!tools/content/art/env/' in gi
+
+
+# ---------------------------------------------------------------- rulings, 2026-10-09
+def _always_hits(m):
+    m.thac0 = -100
+    m._slipped = lambda player, atk: False
+    return m
+
+
+def test_every_blow_of_a_flurry_follows_the_rules_of_a_blow():
+    """A monster that attacks more than once a turn had a short copy of the
+    attack code: 41 monsters skipped drain healing, the pit rule, the Nemean
+    hide and the rest."""
+    import random
+    random.seed(3)
+    mons = _data('monsters.json')
+    mid = next(k for k, v in mons.items() if isinstance(v, dict) and v.get('drain_heals_self')
+               and (v.get('multi_attack_count') or v.get('multi_attack_always')))
+    m = _always_hits(_monster(mid))
+    m.attacks = [dict(a, type='drain') for a in m.attacks]
+    m.hp = m.max_hp // 2
+    p = Player()
+    p.max_hp = p.hp = 10 ** 6
+    p.x, p.y = m.x + 1, m.y
+    before = m.hp
+    total, msg = m._fenrir_multi_attack(p)
+    assert total > 0 and 'frenzy' in msg
+    assert m.hp > before, 'a drain that heals did not heal in a flurry'
+
+
+def test_breath_in_a_flurry_passes_over_a_pit():
+    m = _always_hits(_monster('goblin'))
+    m.attacks = [{'name': 'Fire Breath', 'damage': '5d6', 'type': 'fire'},
+                 {'name': 'Fire Breath', 'damage': '5d6', 'type': 'fire'}]
+    p = Player()
+    p.max_hp = p.hp = 10 ** 6
+    p.x, p.y = m.x + 1, m.y
+    p.add_effect('in_pit', -1)
+    total, msg = m._fenrir_multi_attack(p)
+    assert total == 0 and 'pit' in msg
+
+
+def test_a_flurry_lands_one_status_at_most_and_stops_when_the_player_is_down():
+    import random
+    random.seed(1)
+    m = _always_hits(_monster('goblin'))
+    m.attacks = [{'name': 'Claw', 'damage': '2d4', 'type': 'slash', 'effect': 'bleeding',
+                  'effect_chance': 1.0, 'effect_duration': '1d4'}] * 5
+    calls = []
+    real = m._apply_attack_effect
+    m._apply_attack_effect = lambda atk, player: (calls.append(1), real(atk, player))[1] or ' It bleeds.'
+    p = Player()
+    p.max_hp = p.hp = 10 ** 6
+    p.x, p.y = m.x + 1, m.y
+    m._fenrir_multi_attack(p)
+    assert len(calls) == 1
+    p2 = Player()
+    p2.hp = 1
+    p2.x, p2.y = m.x + 1, m.y
+    total, msg = m._fenrir_multi_attack(p2)
+    assert msg.count('claw') == 1          # the first blow dropped the player; the rest were not swung
+
+
+def test_a_ward_answers_poison_and_a_trap_but_not_hunger():
+    """The wards lived inside the monster-attack loop."""
+    calls = []
+    p = Player()
+    p._combat_game_ref = types.SimpleNamespace(
+        _answer_a_killing_blow=lambda: (calls.append(1), setattr(p, 'hp', 1)))
+    p.hp = 0
+    assert p.is_dead() is False and p.hp == 1 and calls == [1]
+    p.hp = 0
+    p._no_ward = True                      # the starvation check sets this
+    assert p.is_dead() is True and calls == [1]
+    gc = _src('game_combat.py')
+    assert 'def _answer_a_killing_blow(self):' in gc
+    assert gc.count("has_effect('life_save')") == 1
+    main = _src('main.py')
+    at = main.index("self.defeat_reason = 'starved'")
+    assert 'self.player._no_ward = True' in main[at - 400:at]

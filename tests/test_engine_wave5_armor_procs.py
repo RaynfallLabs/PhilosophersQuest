@@ -254,19 +254,19 @@ def test_armor_procs_consume_run_charge_once_per_run():
 
 def test_monster_attack_wires_unskinnable():
     from monster import Monster
-    src = inspect.getsource(Monster.attack)
+    src = inspect.getsource(Monster.attack) + inspect.getsource(Monster._resolve_blow)
     assert 'unskinnable' in src
 
 
 def test_monster_attack_wires_dodge_first_arrow():
     from monster import Monster
-    src = inspect.getsource(Monster.attack)
+    src = inspect.getsource(Monster.attack) + inspect.getsource(Monster._resolve_blow)
     assert 'dodge_first_arrow_per_floor' in src
 
 
 def test_monster_attack_wires_monkey_king_dodge():
     from monster import Monster
-    src = inspect.getsource(Monster.attack)
+    src = inspect.getsource(Monster.attack) + inspect.getsource(Monster._resolve_blow)
     assert 'monkey_king_dodge' in src
 
 
