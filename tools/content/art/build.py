@@ -25,10 +25,10 @@ sys.path.insert(0, str(HERE))
 
 import manifest  # noqa: E402
 
-# Brandon's own painted portraits for Corwin/Cain (player_ranger) and
+# Brandon's own painted portraits for Robyn (player_robyn), Corwin/Cain (player_ranger) and
 # Fianna/Fluffs (player_wizard_f). NEVER redraw these: they were replaced
 # with pixel versions on 2026-10-09 and he asked for them back the same day.
-PAINTINGS = {'player_ranger', 'player_wizard_f'}
+PAINTINGS = {'player_ranger', 'player_wizard_f', 'player_robyn'}
 
 
 def _load(kind: str):
