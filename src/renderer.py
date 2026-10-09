@@ -12,24 +12,6 @@ _ENV_SPRITE_DIR   = data_path('assets', 'tiles', 'env')
 
 
 PIXEL_ART_MAX = 64      # a source this small is pixel art, not a painting
-UNKNOWN_LOOKS = 6       # stand-in pictures per kind of unidentified thing
-
-
-def unknown_sprite_id(item) -> 'str | None':
-    """The stand-in picture for a thing whose kind hides what it is, or None
-    if this is not such a thing. Chosen by its unidentified NAME, so one
-    unknown potion always looks the same and tells nothing about its effect.
-    An unidentified wand used to be drawn with its true picture."""
-    import zlib
-    kind = type(item).__name__.lower()
-    if kind == 'accessory':
-        kind = 'amulet' if getattr(item, 'slot', 'ring') == 'amulet' else 'ring'
-    if kind not in ('potion', 'wand', 'scroll', 'spellbook', 'ring', 'amulet'):
-        return None
-    label = str(getattr(item, 'unidentified_name', '') or getattr(item, 'id', ''))
-    return f'unknown_{kind}_{zlib.crc32(label.encode()) % UNKNOWN_LOOKS}'
-
-
 def fit_sprite(raw: 'pygame.Surface', w: int, h: int) -> 'pygame.Surface':
     """A sprite at the size it will be drawn.
 
@@ -965,10 +947,9 @@ class Renderer:
         T = self.map_tile_size
         sx, sy = self.world_to_screen(item.x, item.y)
 
+        # An item is drawn as what it is, identified or not: a player who has
+        # seen enough of them learns to know a thing by sight.
         item_id = getattr(item, 'id', None)
-        _known = getattr(self, 'is_item_known', None)
-        if item_id and _known is not None and not _known(item):
-            item_id = unknown_sprite_id(item) or item_id
         if item_id:
             sprite = self._get_item_sprite(item_id)
             if sprite:

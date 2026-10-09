@@ -201,6 +201,11 @@ SECRET_BUILDS: dict[str, dict] = {
         "_sprite": "player_dad",
         "_no_dagger": True,
         "_start_weapon": "punch_in_the_face",
+        # Dad's fist is Dad's hand: on from the first turn and never off
+        # (it started in the pack, so until a child found Equip he hit for 33).
+        "_lock_weapon": True,
+        # A joke build: it keeps no high score and earns no boss scrolls.
+        "_joke": True,
         "_immortal": True,
         "_greeting": "Dad has arrived. Everything will be fine.",
     },

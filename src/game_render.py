@@ -185,14 +185,7 @@ class RenderMixin:
 
     def _draw_menu_icon(self, item, x: int, y: int):
         """Blit a menu-sized sprite for an item at (x, y), with glyph fallback."""
-        _sid = item.id
-        try:
-            if hasattr(item, 'identified') and not self._item_is_known(item):
-                from renderer import unknown_sprite_id
-                _sid = unknown_sprite_id(item) or _sid
-        except Exception:
-            pass
-        sprite = self._get_menu_sprite(_sid)
+        sprite = self._get_menu_sprite(item.id)
         SZ = self.MENU_ICON_SIZE
         if sprite is not None:
             self.screen.blit(sprite, (x, y))
@@ -5123,10 +5116,11 @@ class RenderMixin:
         from highscore_system import add_score
         if not self._score_saved:
             pname = getattr(self, 'player_name', None) or 'Hero'
-            add_score(pname, score, grade,
-                      self.level_mgr.max_level_reached,
-                      self.level_mgr.monsters_killed,
-                      self.turn_count, victory=True)
+            if not (getattr(self, 'secret_build', None) or {}).get('_joke'):     # a joke build keeps no score
+                add_score(pname, score, grade,
+                          self.level_mgr.max_level_reached,
+                          self.level_mgr.monsters_killed,
+                          self.turn_count, victory=True)
             self._score_saved = True
 
         self._draw_end_summary(
@@ -5181,10 +5175,11 @@ class RenderMixin:
         from highscore_system import add_score
         if not self._score_saved:
             pname = getattr(self, 'player_name', None) or 'Hero'
-            add_score(pname, score, grade,
-                      self.level_mgr.max_level_reached,
-                      self.level_mgr.monsters_killed,
-                      self.turn_count, victory=False)
+            if not (getattr(self, 'secret_build', None) or {}).get('_joke'):     # a joke build keeps no score
+                add_score(pname, score, grade,
+                          self.level_mgr.max_level_reached,
+                          self.level_mgr.monsters_killed,
+                          self.turn_count, victory=False)
             self._score_saved = True
 
         review_text = None

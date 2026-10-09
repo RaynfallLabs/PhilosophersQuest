@@ -23,7 +23,7 @@ import renderer  # noqa: E402
 from dungeon import FLOOR, SECRET_DOOR, WALL  # noqa: E402
 
 TILES = os.path.join(ROOT, 'assets', 'tiles')
-PAINTINGS = {'player_ranger.png', 'player_robyn.png', 'player_wizard_f.png'}
+PAINTINGS: set = set()        # the painted hero portraits are pixel art now (2026-10-09)
 
 
 def _png_size(path):
@@ -32,7 +32,7 @@ def _png_size(path):
     return int.from_bytes(head[16:20], 'big'), int.from_bytes(head[20:24], 'big')
 
 
-def test_every_sprite_is_one_size_except_the_three_paintings():
+def test_every_sprite_is_one_size():
     for folder in ('monsters', 'items', 'env'):
         for name in os.listdir(os.path.join(TILES, folder)):
             if name.endswith('.png') and name not in PAINTINGS:

@@ -12,7 +12,7 @@ with a `kind`; the module of that name (monster_A/monster_A.py, weapon/weapon.py
 in the folder of that name exposes draw(record) -> a 32x32 RGBA image. Art is written at 32x32 whatever
 size the old file was: the renderer scales pixel art crisply to the tile.
 
-The three large painted hero portraits (ranger, Robyn, wizard) are kept unless --paintings is given.
+Every sprite is drawn, the hero portraits that used to be large paintings included.
 """
 from __future__ import annotations
 
@@ -25,8 +25,9 @@ sys.path.insert(0, str(HERE))
 
 import manifest  # noqa: E402
 
-# `player` was a painting too, on a solid white square: it is pixel art now.
-PAINTINGS = {'player_ranger', 'player_robyn', 'player_wizard_f'}
+# The four hero sprites that were large paintings are pixel art like every
+# other hero now (Brandon, 2026-10-09). Nothing is kept back.
+PAINTINGS: set = set()
 
 
 def _load(kind: str):

@@ -268,18 +268,50 @@ def test_pandoras_coffer_can_pay_and_the_fleece_quiz_ends():
 
 
 # ---------------------------------------------------------------- pictures
-def test_an_unidentified_thing_shows_a_stand_in_not_its_true_picture():
+def test_an_item_looks_like_itself_identified_or_not():
+    """Brandon, 2026-10-09: the picture is what the item looks like. A player
+    who has seen enough of them knows a thing by sight. (Stand-in pictures
+    for unidentified things were added during this bug bash and removed the
+    next morning.)"""
     import renderer
+    assert not hasattr(renderer, 'unknown_sprite_id')
     tiles = os.path.join(ROOT, 'assets', 'tiles', 'items')
-    for kind in ('potion', 'wand', 'scroll', 'spellbook', 'ring', 'amulet'):
-        for k in range(renderer.UNKNOWN_LOOKS):
-            assert os.path.exists(os.path.join(tiles, f'unknown_{kind}_{k}.png')), (kind, k)
+    assert not [f for f in os.listdir(tiles) if f.startswith('unknown_')]
+    for src in ('renderer.py', 'game_render.py', 'main.py'):
+        assert 'unknown_sprite_id' not in _src(src) and 'is_item_known  =' not in _src(src)
     potion = make_item_by_id('potion', 'potion_of_healing')
-    sid = renderer.unknown_sprite_id(potion)
-    assert sid.startswith('unknown_potion_') and sid == renderer.unknown_sprite_id(potion)
-    assert renderer.unknown_sprite_id(make_item_by_id('weapon', 'excalibur')) is None
-    assert 'unknown_sprite_id(item)' in _src('game_render.py')
-    assert 'self.renderer.is_item_known  = self._item_is_known' in _src('main.py')
+    assert renderer._resolve_item_sprite_path(potion.id).endswith('potion_of_healing.png')
+
+
+def test_every_kind_of_chest_has_a_picture():
+    """Ten of twelve were a square with an ampersand in it."""
+    tiles = os.path.join(ROOT, 'assets', 'tiles', 'items')
+    t = _data('chest_templates.json')
+    t = t.get('templates', t)
+    kinds = [k for k, v in t.items() if isinstance(v, dict)]
+    assert len(kinds) >= 12
+    for k in kinds:
+        assert os.path.exists(os.path.join(tiles, f'{k}.png')), k
+
+
+def test_dads_fist_is_on_his_hand_and_dad_keeps_no_score():
+    import welcome_screen
+    dad = welcome_screen.SECRET_BUILDS['dad']
+    assert dad['_lock_weapon'] and dad['_joke'] and dad['_start_weapon'] == 'punch_in_the_face'
+    p = Player()
+    fist = make_item_by_id('weapon', 'punch_in_the_face')
+    fist.bound_to_wielder = True
+    p._apply_equip(fist)
+    assert p.weapon is fist
+    ok, msg = p.try_unequip_slot(fist)
+    assert not ok and 'part of you' in msg
+    p._apply_equip(make_item_by_id('weapon', 'excalibur'))      # cannot be swapped out either
+    assert p.weapon is fist
+    src = _src('game_render.py')
+    assert src.count("get('_joke'):     # a joke build keeps no score") == 2
+    main = _src('main.py')
+    at = main.index('def _spawn_boss_scroll')
+    assert "get('_joke')" in main[at:at + 400]
 
 
 def test_every_recipe_has_a_picture_under_the_name_the_menu_asks_for():

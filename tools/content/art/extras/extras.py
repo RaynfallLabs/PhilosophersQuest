@@ -273,71 +273,94 @@ def mystery_key_sisyphus(s):
     s.px([(9, 22), (22, 24)], (112, 112, 116))
 
 
-# ---------------------------------------------------------------- not yet identified
-# Six looks for each kind of thing that hides what it is. The look follows the
-# item's unidentified name, so "a fizzy blue potion" always looks the same and
-# two different unknown potions look different, but no look says what the
-# thing does. (Before this an unidentified item was drawn with its true
-# picture: the healing wand showed its green cross.)
-UNKNOWN_LOOKS = 6
-_HUES = ((70, 130, 220), (200, 70, 70), (90, 180, 90), (190, 150, 60), (150, 90, 190), (90, 180, 190))
+# ---------------------------------------------------------------- chests
+# Ten of the twelve kinds of chest had no picture and were drawn as a square
+# with an ampersand in it.
+def _chest(s, body, band, lid=None, x0=4, y0=11, x1=27, y1=27):
+    lid = lid or body
+    s.rect(x0, y0 + 5, x1, y1, body)
+    s.poly([(x0, y0 + 5), (x0 + 3, y0), (x1 - 3, y0), (x1, y0 + 5)], lid)
+    s.rect(x0, y0 + 5, x1, y0 + 6, band)
+    s.rect(x0 + 2, y0, x0 + 4, y1, band); s.rect(x1 - 4, y0, x1 - 2, y1, band)
 
 
-def _unknown(kind, k):
-    c = _HUES[k]
-
-    def potion(s):
-        glass = (188, 204, 214)
-        if k % 3 == 0:
-            s.rect(13, 4, 18, 9, (150, 110, 70)); s.ell(7, 9, 24, 28, glass); s.ell(9, 15, 22, 26, c)
-        elif k % 3 == 1:
-            s.rect(13, 3, 18, 8, (150, 110, 70))
-            s.poly([(13, 8), (18, 8), (25, 26), (22, 29), (9, 29), (6, 26)], glass)
-            s.poly([(10, 19), (21, 19), (23, 26), (21, 28), (10, 28), (8, 26)], c)
-        else:
-            s.rect(13, 3, 18, 7, (150, 110, 70)); s.rect(10, 7, 21, 29, glass); s.rect(12, 14, 19, 27, c)
-        s.px([(11, 13), (11, 14)], (240, 248, 255))
-
-    def wand(s):
-        s.line([(6, 26), (25, 7)], (112, 80, 52), 3)
-        s.line([(11, 21), (14, 18)], c, 3); s.ell(23, 4, 28, 9, (190, 190, 200))
-        s.px([(6, 27), (7, 26)], (70, 50, 34))
-
-    def scroll(s):
-        page = (232, 220, 186)
-        s.rect(7, 8, 24, 23, page); s.ell(5, 5, 26, 11, page); s.ell(5, 20, 26, 26, page)
-        s.rect(14, 12, 17, 19, c); s.ell(13, 13, 18, 18, c)
-        s.line([(9, 14), (12, 14)], (150, 138, 110)); s.line([(19, 17), (22, 17)], (150, 138, 110))
-
-    def spellbook(s):
-        s.rect(7, 5, 24, 27, c); s.rect(7, 5, 9, 27, tuple(v * 6 // 10 for v in c))
-        s.rect(22, 7, 24, 25, (232, 224, 200)); s.rect(12, 12, 19, 19, tuple(min(255, v + 50) for v in c))
-        s.px([(10, 7), (21, 7), (10, 25), (21, 25)], GOLD)
-
-    def ring(s):
-        band = ((196, 170, 90), (176, 180, 190), (150, 110, 80))[k % 3]
-        s.ell(7, 11, 24, 27, band); s.ell(11, 15, 20, 23, DARK)
-        s.ell(12, 6, 19, 13, c); s.px([(14, 8)], (240, 248, 255))
-
-    def amulet(s):
-        s.line([(8, 3), (15, 14)], (176, 180, 190)); s.line([(23, 3), (16, 14)], (176, 180, 190))
-        if k % 2:
-            s.ell(9, 13, 22, 27, (196, 170, 90)); s.ell(12, 16, 19, 24, c)
-        else:
-            s.poly([(15, 13), (22, 20), (15, 28), (9, 20)], (196, 170, 90)); s.poly([(15, 16), (19, 20), (15, 25), (12, 20)], c)
-
-    return {'potion': potion, 'wand': wand, 'scroll': scroll, 'spellbook': spellbook,
-            'ring': ring, 'amulet': amulet}[kind]
+@art('items')
+def apothecary_chest(s):
+    _chest(s, (150, 108, 64), (90, 62, 40))
+    s.rect(13, 18, 18, 25, (236, 236, 226)); s.rect(15, 19, 16, 24, (60, 160, 80)); s.rect(14, 21, 17, 22, (60, 160, 80))
+    s.rect(9, 5, 11, 10, (120, 190, 220)); s.rect(20, 6, 22, 10, (200, 90, 150)); s.px([(10, 4), (21, 5)], (150, 110, 70))
 
 
-for _kind in ('potion', 'wand', 'scroll', 'spellbook', 'ring', 'amulet'):
-    for _k in range(UNKNOWN_LOOKS):
-        def _run(rec=None, _fn=_unknown(_kind, _k)):
-            s = Sprite()
-            s.shadow = False
-            _fn(s)
-            return s.finish()
-        D[f'unknown_{_kind}_{_k}'] = ('items', _run)
+@art('items')
+def iron_lockbox(s):
+    _chest(s, IRON, (70, 72, 88), x0=5, y0=13, x1=26, y1=27)
+    s.rect(14, 19, 17, 24, GOLD); s.px([(15, 21), (16, 22)], DARK)
+    s.px([(7, 15), (24, 15), (7, 25), (24, 25)], STEEL)
+
+
+@art('items')
+def warlord_warchest(s):
+    _chest(s, (120, 40, 40), IRON)
+    for x in (6, 11, 20, 25):
+        s.poly([(x - 1, 11), (x, 6), (x + 1, 11)], STEEL)
+    s.rect(14, 18, 17, 23, GOLD)
+    s.line([(9, 21), (12, 24)], STEEL); s.line([(12, 21), (9, 24)], STEEL)
+    s.line([(19, 21), (22, 24)], STEEL); s.line([(22, 21), (19, 24)], STEEL)
+
+
+@art('items')
+def scholar_satchel(s):
+    hide = (140, 96, 58)
+    s.rect(6, 12, 25, 27, hide); s.poly([(6, 12), (25, 12), (22, 20), (9, 20)], (112, 74, 44))
+    s.line([(9, 12), (9, 5), (22, 5), (22, 12)], (96, 62, 38)); s.rect(14, 18, 17, 21, GOLD)
+    s.rect(18, 7, 24, 10, (232, 220, 186)); s.px([(18, 8), (24, 9)], (176, 50, 50))
+
+
+@art('items')
+def gilded_chest(s):
+    _chest(s, GOLD, (176, 124, 30), lid=(240, 200, 90))
+    s.ell(13, 18, 18, 23, s.lit((120, 220, 255))); s.px([(7, 13), (24, 13)], (255, 244, 190))
+
+
+@art('items')
+def ornate_chest(s):
+    _chest(s, (90, 50, 110), GOLD, lid=(120, 70, 140))
+    s.ell(13, 18, 18, 23, s.lit((240, 90, 120)))
+    s.px([(8, 22), (10, 24), (21, 22), (23, 24), (8, 14), (23, 14)], GOLD)
+
+
+@art('items')
+def jewelry_box(s):
+    velvet = (150, 40, 70)
+    s.rect(7, 17, 24, 27, (120, 84, 50)); s.rect(9, 19, 22, 25, velvet)
+    s.poly([(7, 17), (9, 9), (22, 9), (24, 17)], (150, 108, 64)); s.rect(10, 11, 21, 15, velvet)
+    s.rect(14, 16, 17, 18, GOLD)
+    s.px([(11, 21), (12, 21)], s.lit((120, 220, 255))); s.px([(16, 22), (16, 23)], s.lit((240, 220, 90)))
+    s.px([(20, 21), (19, 23)], s.lit((250, 110, 160))); s.line([(12, 13), (18, 13)], (236, 236, 226))
+
+
+@art('items')
+def crypt_chest(s):
+    stone = (128, 126, 138)
+    s.rect(4, 16, 27, 27, stone); s.poly([(3, 16), (6, 10), (25, 10), (28, 16)], (150, 148, 160))
+    s.ell(12, 17, 19, 24, BONE); s.px([(14, 20), (17, 20)], DARK); s.rect(14, 23, 17, 25, BONE)
+    s.px([(6, 25), (25, 18), (8, 13)], (84, 120, 80))
+
+
+@art('items')
+def merchant_strongbox(s):
+    steel = (150, 156, 172)
+    s.rect(5, 10, 26, 27, steel); s.rect(5, 10, 26, 12, IRON); s.rect(5, 25, 26, 27, IRON)
+    s.ell(12, 14, 19, 21, IRON); s.ell(14, 16, 17, 19, GOLD); s.line([(15, 12), (15, 14)], IRON)
+    s.px([(7, 14), (24, 14), (7, 23), (24, 23)], DARK); s.rect(10, 5, 21, 9, IRON); s.rect(12, 6, 19, 9, DARK)
+
+
+@art('items')
+def reliquary(s):
+    glow = s.lit((255, 244, 190))
+    s.rect(7, 14, 24, 27, GOLD); s.poly([(5, 14), (15, 4), (16, 4), (26, 14)], (240, 200, 90))
+    s.rect(12, 17, 19, 25, (60, 40, 70)); s.rect(15, 18, 16, 24, glow); s.rect(13, 20, 18, 21, glow)
+    s.rect(15, 1, 16, 5, GOLD); s.rect(14, 2, 17, 3, GOLD); s.px([(8, 16), (23, 16), (8, 25), (23, 25)], (240, 90, 120))
 
 
 # ---------------------------------------------------------------- the duck that hatches

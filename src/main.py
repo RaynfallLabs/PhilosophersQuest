@@ -447,7 +447,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, layout.VIEWPORT_W, layout.VIEWPORT_H)
-        self.renderer.is_item_known  = self._item_is_known     # unknown things get a stand-in picture
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
@@ -1926,7 +1925,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if w:
                     _mark_starting_item_known(w)
                     self.player.known_item_ids.add(w.id)
-                    self.player.inventory.append(w)
+                    if b.get('_lock_weapon'):
+                        # part of the hero: wielded from the start, never removed
+                        w.bound_to_wielder = True
+                        self.player._apply_equip(w)
+                    else:
+                        self.player.inventory.append(w)
             elif not no_dagger:
                 sword = instantiate_weapon('shortsword', 'iron')
                 if sword:
@@ -1964,6 +1968,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if b.get('_lock_melee'):
                         # Auto-equip and lock (can't be removed)
                         melee_w.cursed = True
+                        melee_w.bound_to_wielder = True     # a scroll of remove curse does not unbolt it
                         self.player.weapon = melee_w
                     else:
                         self.player.inventory.append(melee_w)
@@ -6474,6 +6479,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _spawn_boss_scroll(self, x: int, y: int, scroll_id: str):
         """Place a pre-identified boss reward scroll at (x, y)."""
+        if (getattr(self, 'secret_build', None) or {}).get('_joke'):
+            return          # a joke build earns no boss scrolls
         from items import load_items, copy_at
         try:
             scrolls = load_items('scroll')

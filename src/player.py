@@ -1462,6 +1462,10 @@ class Player:
         """Attempt to remove an equipped item. Returns (success, message).
         Fails if the item is cursed OR has the selects_wielder flag
         (Stormbringer — the runesword has chosen you)."""
+        # Part of the hero (Dad's fist, Ash's chainsaw): there is nothing to
+        # take off, whatever a scroll has done to its curse.
+        if slot_item and getattr(slot_item, 'bound_to_wielder', False):
+            return False, f"The {slot_item.name} is a part of you. It does not come off."
         if slot_item and getattr(slot_item, 'cursed', False):
             return False, f"The {slot_item.name} is welded to you!"
         # Stormbringer: selects_wielder — refuses to be put down. Per audit
