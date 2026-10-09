@@ -38,7 +38,7 @@ MYSTERIES = {
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'economics', 'tier': 2, 'threshold': 2, 'total': 5},
         'reward': {'effects': ['magic_resist', 'displacement'], 'gold': 300},
-        'reward_text': "The lock slips, the lid flies back, and every sorrow in the box goes howling past you into the dark. One small thing is left at the bottom. It is Hope, and it is yours. (Magic Resistance, Displacement, 300 gold)",
+        'reward_text': "The lock slips, the lid flies back, and every sorrow in the box goes howling past you into the dark. One small thing is left at the bottom. It is Hope, and it is yours. (Magic Resistance, Displacement, gold)",
         'fail_text': "The lock opens cleanly under your hand. Inside is a neat stack of coin and nothing else. Whatever else was kept here stays shut in.",
         'fail_reward': {'gold': 100},
         'invert_result': True,  # INVERTED: failure quiz = actual reward
@@ -65,7 +65,7 @@ MYSTERIES = {
         'description': "A bare oak, and beneath it an altar carved with a ram. A great serpent lies coiled in the roots. It has not blinked since Colchis.",
         'key_item': {'name': "Golden Fleece", 'symbol': '+', 'color': (218, 165, 32), 'weight': 2.0},
         'gold_cost': 0,
-        'challenge': {'mode': 'chain', 'subject': 'animal', 'tier': 3, 'threshold': 2, 'max_chain': None},
+        'challenge': {'mode': 'chain', 'subject': 'animal', 'tier': 3, 'threshold': 2, 'max_chain': 2},
         'reward': {'effects': ['regenerating', 'poison_resist']},
         'reward_text': "The serpent lowers its head and lets you hang the Fleece where it belongs. Its gold warms you through. (Regeneration, Poison Resistance)",
         'fail_text': "The serpent takes the Fleece out of your hands and draws it down into the roots. It did not think much of your woodcraft.",
@@ -84,7 +84,7 @@ MYSTERIES = {
         # of insight is paid up front and does not refund if the player
         # cannot hold the well's knowledge.
         'stat_cost': {'PER': -1},  # applied before quiz starts; not refunded on fail
-        'challenge': {'mode': 'chain', 'subject': 'philosophy', 'tier': 4, 'threshold': 3, 'max_chain': None},
+        'challenge': {'mode': 'chain', 'subject': 'philosophy', 'tier': 4, 'threshold': 3, 'max_chain': 3},
         'reward': {'WIS': 1, 'INT': 1},
         'reward_text': "The water is so cold it rings in your teeth. For one breath you see how everything fits. Most of it fades. Enough stays. (Wisdom +1, Intelligence +1)",
         'fail_text': "The water runs through your mind like a sieve. Mimir keeps the price. He always does.",
@@ -114,7 +114,7 @@ MYSTERIES = {
         'gold_cost': 0,
         'challenge': {'mode': 'threshold', 'subject': 'philosophy', 'tier': 1, 'threshold': 3, 'total': 4},
         'reward': {'gold': 400},
-        'reward_text': "The lead shivers, runs bright, and sets as gold. The alchemists were right about one thing. (400 gold)",
+        'reward_text': "The lead shivers, runs bright, and sets as gold. The alchemists were right about one thing.",
         'fail_text': "The crucible spits and goes dark. The lead has boiled away to a grey smear.",
         'invert_result': False,
     },

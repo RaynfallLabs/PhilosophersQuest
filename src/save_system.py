@@ -205,6 +205,23 @@ def load_game(name: str):
         return None
 
 
+def set_aside_save(name: str) -> str | None:
+    """Move a save that will not load out of the way, keeping it. Returns the
+    new path, or None if it could not be moved.
+
+    A save that exists but cannot be read used to be treated as "no save":
+    the game started a new hero under the name and its first autosave
+    overwrote the unreadable file, which might have been recoverable."""
+    import time
+    src = _save_path(name)
+    dst = f"{src}.unreadable-{time.strftime('%Y%m%d-%H%M%S')}"
+    try:
+        os.replace(src, dst)
+        return dst
+    except OSError:
+        return None
+
+
 def delete_save(name: str):
     """Delete save file (called on death for permadeath)."""
     try:

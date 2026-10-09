@@ -114,6 +114,19 @@ def load_bones(dungeon_level: int):
             bones = json.load(f)
         # Consume the bones file so this ghost only appears once
         os.remove(path)
+        # Trust nothing in it but its shape: a hand-edited or damaged file
+        # raised inside level generation, and one named for floor 4 that
+        # claimed floor 90 put a 9,000-health ghost there.
+        if not isinstance(bones, dict):
+            return None
+        bones['dungeon_level'] = int(dungeon_level)
+        if not isinstance(bones.get('gear'), list):
+            bones['gear'] = []
+        try:
+            bones['gold'] = max(0, min(int(bones.get('gold', 0) or 0), 100000))
+        except (TypeError, ValueError):
+            bones['gold'] = 0
+        bones['player_name'] = str(bones.get('player_name', 'Unknown'))[:48]
         return bones
     except (OSError, json.JSONDecodeError):
         # Corrupt bones file -- remove so it doesn't permanently occupy a slot

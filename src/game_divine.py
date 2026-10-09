@@ -284,7 +284,11 @@ class DivineMixin:
                 _total = int(ch.get('total', ch.get('threshold', 1)) or 1)
                 _need = int(ch.get('threshold', 1) or 1)
                 _wrong = int(getattr(result, 'asked', 0)) - int(getattr(result, 'correct', 0))
-                success = (not success) and _wrong > (_total - _need)
+                # One wrong answer is the genuine failure: a threshold quiz
+                # ends on the first miss, so "more wrong than the quiz allows"
+                # could never happen and the Coffer never once paid Hope.
+                # (Esc asks nothing, so it still pays nothing.)
+                success = (not success) and _wrong >= 1
             apply_mystery_reward(altar.mystery_id, self.player, self, success)
             if not altar.activated:
                 altar.activated = True

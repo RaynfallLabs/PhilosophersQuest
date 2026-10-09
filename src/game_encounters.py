@@ -756,6 +756,8 @@ class EncountersMixin:
             elif ctype == 'spawn_deadite_ambush':
                 # Free hit: 10% HP, then spawn a hostile Deadite
                 loss = max(5, int(self.player.hp * 10 / 100))
+                # never the killing blow: a talk option is not a death trap
+                loss = min(loss, max(0, self.player.hp - 1))
                 self.player.hp -= loss
                 self.add_message(f"The Deadite rakes you for {loss} damage!", 'danger')
                 self._spawn_npc_deadite()
@@ -788,6 +790,18 @@ class EncountersMixin:
             self._log_chronicle("I feel... clean. Like everything I've done down here has mattered. The dungeon feels lighter.")
         elif self.karma == -10 and old_karma > -10:
             self._log_chronicle("Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.")
+
+        # The encounter is spent the moment its effects land, not when the
+        # outcome page is dismissed: quitting on that page and reloading gave
+        # the reward and the karma again, as often as wanted.
+        _enc = getattr(self, '_npc_encounter_active', None)
+        if _enc and _enc.get('tag'):
+            if getattr(self, '_npc_is_flavor', False):
+                if not hasattr(self, '_encountered_flavor_npcs') or self._encountered_flavor_npcs is None:
+                    self._encountered_flavor_npcs = set()
+                self._encountered_flavor_npcs.add(_enc['tag'])
+            else:
+                self._encountered_npcs.add(_enc['tag'])
 
         # Show outcome
         self._npc_outcome_text = opt['outcome']

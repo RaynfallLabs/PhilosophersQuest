@@ -719,8 +719,13 @@ class Player:
         # Combat marks keyed by id(monster). Object ids do not survive a
         # save/load, and a stale id can collide with an unrelated monster
         # after reload (granting its +25% / +50% damage). Drop them.
-        for _mark in ('_death_omen_target', '_et_tu_target', '_revealed_tag_ids'):
-            state.pop(_mark, None)
+        # (The death-omen and "Et tu" marks are the monster itself now, saved
+        # in the same file, so they are kept: dropping them cost the bonus for
+        # the rest of the floor after any load.)
+        state.pop('_revealed_tag_ids', None)
+        for _mark in ('_death_omen_target', '_et_tu_target'):
+            if isinstance(state.get(_mark), int):       # an id from an old build
+                state.pop(_mark, None)
         return state
 
     def __setstate__(self, state):

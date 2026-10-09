@@ -197,13 +197,13 @@ def build_tier2() -> list[dict]:
 
     # Round to nearest 10
     for n in list(range(11, 100, 3)):
-        rounded = 10 * round(n / 10)
+        rounded = 10 * ((n + 5) // 10)      # half up (Python's round() sends 65 to 60)
         out.append(_int_q(2, f"Round {n} to nearest 10?", rounded,
                           "Round: <5 down, ≥5 up."))
 
     # Round to nearest 100
     for n in list(range(105, 950, 27)):
-        rounded = 100 * round(n / 100)
+        rounded = 100 * ((n + 50) // 100)   # half up
         out.append(_int_q(2, f"Round {n} to nearest 100?", rounded,
                           "Round: look at the tens digit."))
 
@@ -612,7 +612,7 @@ def build_tier5() -> list[dict]:
     # Cube roots
     for n in range(1, 8):
         cube = n ** 3
-        out.append(_int_q(5, f"∛{cube} = ?", n,
+        out.append(_int_q(5, f"Cube root of {cube} = ?"      # the body font has no cube-root sign, n,
                           "Memorized cube root."))
 
     # 2-digit × 2-digit via distribution (expanded pool — the T5 workhorse)

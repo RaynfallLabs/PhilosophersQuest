@@ -4756,10 +4756,11 @@ class RenderMixin:
     def _draw_confirm_exit(self):
         self._ui_message_card(
             "SAVE YOUR PROGRESS?",
-            ["Your run will be saved so you can resume it later."],
+            ["Save & Exit keeps this run so you can resume it later.",
+             "Abandon ends this run for good: its save is deleted."],
             options=[
                 {'key': 'Y', 'label': 'Save & Exit', 'color': FP.GOLD_BRIGHT},
-                {'key': 'N', 'label': 'Exit without saving', 'color': FP.WARNING_TEXT},
+                {'key': 'N', 'label': 'Abandon This Run (Deletes The Save)', 'color': FP.WARNING_TEXT},
                 {'key': 'C / Esc', 'label': 'Keep playing', 'color': FP.HINT_TEXT},
             ],
             footer="Enter also saves",

@@ -872,18 +872,25 @@ class QuizEngine:
             return
         try:
             total = load_answer_times()
+            if not isinstance(total, dict):
+                total = {}
             for key, row in fresh.items():
-                have = total.setdefault(key, {'n': 0, 'seconds': 0.0,
-                                              'right': 0, 'seconds_right': 0.0})
+                have = total.get(key)
+                if not isinstance(have, dict):          # a damaged row is replaced, not trusted
+                    have = total[key] = {'n': 0, 'seconds': 0.0, 'right': 0, 'seconds_right': 0.0}
                 for k, v in row.items():
-                    have[k] = round(have.get(k, 0) + v, 3)
+                    old = have.get(k, 0)
+                    have[k] = round((old if isinstance(old, (int, float)) else 0) + v, 3)
             path = _answer_times_path()
             tmp = path + '.tmp'
             with open(tmp, 'w', encoding='utf-8') as f:
                 json.dump(total, f)
             os.replace(tmp, path)
             self._answer_times = {}
-        except OSError:
+        except Exception:
+            # Bookkeeping must never cost the player the answer they just
+            # gave: this ran before the quiz's callback and a damaged file
+            # left every attack unresolved.
             return
 
     def _persist_cross_game_history(self):
@@ -937,18 +944,24 @@ class QuizEngine:
         if self.state == QuizState.COMPLETE and self.callback is None:
             return
         self.state = QuizState.COMPLETE
-        self._persist_cross_game_history()
-        self._persist_answer_times()
+        for _keep in (self._persist_cross_game_history, self._persist_answer_times):
+            try:
+                _keep()
+            except Exception:
+                pass
         result = QuizResult(
             success=success,
             score=self.score,
             correct=self.correct_count,
             asked=self.asked_count,
         )
-        if self.on_complete:
-            mode_name = self.mode.value if isinstance(self.mode, QuizMode) else str(self.mode)
-            self.on_complete(result, mode_name, self.subject,
-                             self.correct_count, self.asked_count - self.correct_count)
         callback, self.callback = self.callback, None
-        if callback:
-            callback(result)
+        try:
+            if self.on_complete:
+                mode_name = self.mode.value if isinstance(self.mode, QuizMode) else str(self.mode)
+                self.on_complete(result, mode_name, self.subject,
+                                 self.correct_count, self.asked_count - self.correct_count)
+        finally:
+            # The action's own callback runs whatever the bookkeeping hook did.
+            if callback:
+                callback(result)

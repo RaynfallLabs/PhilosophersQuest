@@ -604,6 +604,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.dungeon_level = state['dungeon_level']
         self.player_gold   = state['player_gold']
         self.level_mgr     = state['level_mgr']
+        # The registry of named items already seen this run belongs to THIS
+        # manager. main() builds a throwaway Game before load_state, whose own
+        # manager had bound the registry to an empty set: after any load,
+        # uniques stopped being once-per-run (one item turned up four times).
+        self.level_mgr._bind_uniques()
         self.dungeon       = state['dungeon']
         if not hasattr(self.dungeon, 'pits'):
             self.dungeon.pits = set()
@@ -3237,6 +3242,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         from save_system import delete_save
         from bones import save_bones
         from boss_levels import COW_LEVEL as _COW_LEVEL
+        # Nothing saves this run again: closing the window from the ending
+        # popup (the state is the popup's, not "dead") used to write the save
+        # back, so a fled or victorious hero could be resumed.
+        self._run_over = True
         _reason = getattr(self, 'defeat_reason', 'died')
         if leave_bones and _reason in ('died', 'starved') \
                 and self.dungeon_level != _COW_LEVEL:
@@ -3292,11 +3301,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         persisted at a clean exit, so any non-clean close reverted the player to
         wherever they loaded from. Never raises; logs OK/FAILED so a 'didn't
         save' report is diagnosable from ERROR_LOG.txt."""
-        if getattr(self, 'state', None) in (STATE_DEAD, STATE_VICTORY):
+        if getattr(self, 'state', None) in (STATE_DEAD, STATE_VICTORY) \
+                or getattr(self, '_run_over', False):
             return
         try:
             from save_system import save_game
             ok = save_game(self)
+            if not ok and not getattr(self, '_autosave_warned', False):
+                self._autosave_warned = True
+                try:
+                    self.add_message("The game could not save just now. Keep playing; it will "
+                                     "try again. (Details are in the error log.)", 'danger')
+                except Exception:
+                    pass
             try:
                 from game_log import log_info
                 log_info(f"autosave[{reason}] {'OK' if ok else 'FAILED'} "
@@ -7581,7 +7598,11 @@ def _recover_in_loop(game, where):
     except Exception:
         pass
     try:
-        game.state = STATE_PLAYER
+        # A run that has ended stays ended: an error on the death screen used
+        # to put a dead hero back in play, and the next save brought them back.
+        if (getattr(game, 'state', None) not in (STATE_DEAD, STATE_VICTORY)
+                and not getattr(game, '_run_over', False)):
+            game.state = STATE_PLAYER
     except Exception:
         pass
 
@@ -7624,12 +7645,44 @@ def main():
         # and an explicit "exit without saving" deletes it too. Deleting on load —
         # before load_state was known to have succeeded — is what silently
         # destroyed progress when a restore only partially took.
-        state = load_game(player_name) if save_exists(player_name) else None
+        state = None
+        if save_exists(player_name):
+            state = load_game(player_name)
+            if not isinstance(state, dict) or not state:
+                # There IS a save and it will not read. Keep it, out of the
+                # way, and say so: starting a new hero here overwrote it.
+                from save_system import set_aside_save
+                _kept = set_aside_save(player_name)
+                _load_notice = ("That saved journey could not be read. It has been kept as "
+                                f"{os.path.basename(_kept)} and was not overwritten."
+                                if _kept else
+                                "That saved journey could not be read. It was left untouched.")
+                continue
         if state:
-            game = Game(screen,
-                        player_name=state.get('player_name', player_name),
-                        secret_build=state.get('secret_build'))
-            game.load_state(state)
+            try:
+                # The throwaway Game below builds a real floor 1, which rolled
+                # for (and half the time consumed) a floor-1 bones file.
+                _had_nb = os.environ.get('PQ_NO_BONES')
+                os.environ['PQ_NO_BONES'] = '1'
+                try:
+                    game = Game(screen,
+                                player_name=state.get('player_name', player_name),
+                                secret_build=state.get('secret_build'))
+                finally:
+                    if _had_nb is None:
+                        os.environ.pop('PQ_NO_BONES', None)
+                game.load_state(state)
+            except Exception:
+                # A save that unpickles but lacks something crashed here at
+                # every launch under that name.
+                try:
+                    from game_log import log_error
+                    log_error(f"load_state failed for {player_name!r}")
+                except Exception:
+                    pass
+                _load_notice = ("Your saved journey didn't load cleanly -- but it "
+                                "is safe. Please try again.")
+                continue
             if not game._load_looks_valid(state):
                 # The restore did not take. Do NOT enter the game loop — a broken
                 # game would overwrite the still-intact save on quit. Bounce back
@@ -7687,8 +7740,22 @@ def main():
                 _recover_in_loop(game, "render")
 
         # Save on clean exit if the game is still in progress and player chose to save
-        if game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit:
-            if not save_game(game):
+        if (game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit
+                and not getattr(game, '_run_over', False)):
+            # A question left unanswered is a wrong answer. The quiz is not
+            # saved, so quitting in the middle of one lost what the action had
+            # already spent (the corpse, the ingredients, the one Intercession
+            # of the run) or gave a free second try.
+            try:
+                from quiz_engine import QuizState as _QS
+                _qe = getattr(game, 'quiz_engine', None)
+                if _qe is not None and getattr(_qe, 'callback', None) is not None \
+                        and _qe.state != _QS.COMPLETE:
+                    _qe._end(success=False)
+            except Exception:
+                pass
+            if (game.state not in (STATE_DEAD, STATE_VICTORY)
+                    and not getattr(game, '_run_over', False)) and not save_game(game):
                 # The on-disk save is no longer deleted on load, so the previous
                 # good state remains and the run is still recoverable — but record
                 # that this session did not persist.

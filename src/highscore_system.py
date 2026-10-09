@@ -30,16 +30,36 @@ def _load() -> list[dict]:
         with open(_SCORE_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
         if isinstance(data, list):
-            return data
+            # Only rows that are a real entry: the table, the welcome screen
+            # and the death screen all trust every field, and one bad row
+            # stopped the game from opening.
+            good = []
+            for e in data:
+                if isinstance(e, dict) and isinstance(e.get('score'), (int, float)) \
+                        and not isinstance(e.get('score'), bool):
+                    e.setdefault('name', '?')
+                    for k in ('level', 'kills', 'turns'):
+                        if not isinstance(e.get(k), (int, float)):
+                            e[k] = 0
+                    e.setdefault('grade', '')
+                    e.setdefault('victory', False)
+                    e.setdefault('date', '')
+                    e['name'] = str(e['name'])
+                    good.append(e)
+            return good
     except (FileNotFoundError, json.JSONDecodeError, OSError):
         pass
     return []
 
 
 def _save(entries: list[dict]) -> None:
+    # Written beside the table and swapped in, so a kill mid-write cannot
+    # leave half a file (which read as "no scores").
     try:
-        with open(_SCORE_FILE, 'w', encoding='utf-8') as f:
+        tmp = _SCORE_FILE + '.tmp'
+        with open(tmp, 'w', encoding='utf-8') as f:
             json.dump(entries, f, indent=2)
+        os.replace(tmp, _SCORE_FILE)
     except OSError:
         pass
 

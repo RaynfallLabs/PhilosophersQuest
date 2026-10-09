@@ -146,7 +146,10 @@ class LevelManager:
         from bones import load_bones, spawn_ghost
         bones = load_bones(level_num)
         if bones:
-            spawn_ghost(bones, dungeon, monsters, items)
+            try:
+                spawn_ghost(bones, dungeon, monsters, items)
+            except Exception:
+                pass        # a damaged bones file costs its ghost, never the floor
 
 
     def _roll_planned_mini_bosses(self) -> dict:
