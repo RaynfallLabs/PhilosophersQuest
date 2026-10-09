@@ -1617,7 +1617,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chain-equip passive: life_save_resets_per_floor (Tyet of Isis T2+).
         # Refresh the life_save status effect each floor entry.
         try:
-            if player_has_passive(self.player, 'life_save_resets_per_floor'):
+            if (player_has_passive(self.player, 'life_save_resets_per_floor')
+                    and new_level > _was_deepest):         # a new floor, not any stair
                 self.player.add_effect('life_save', -1)
         except (ImportError, NameError):
             pass
