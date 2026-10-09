@@ -131,6 +131,9 @@ def build() -> list[dict]:
             r.update(kind=OWNER.get(cat, 'magic'), category=cat, **_slim(data[cat][iid]))
         elif iid.startswith('recipe_'):
             r.update(kind='food', category='recipe')
+            _rv = (data.get('recipes') or {}).get(iid[len('recipe_'):])
+            if _rv:
+                r.update(new=True, **_slim(_rv))
         else:
             mat = next((m for m in mat_ids if iid.startswith(m + '_')), None)
             rest = iid[len(mat) + 1:] if mat else iid
@@ -165,6 +168,38 @@ def build() -> list[dict]:
             if ('items', iid) not in have:
                 recs.append({'folder': 'items', 'id': iid, 'kind': OWNER.get(cat, 'magic'),
                              'category': cat, 'new': True, **_slim(v)})
+    # Every recipe: the menu asks for recipe_<recipe id>. The 364 pictures
+    # that existed were named for an older recipe set, so not one was shown.
+    for rid, v in (data.get('recipes') or {}).items():
+        if ('items', f'recipe_{rid}') not in have:
+            recs.append({'folder': 'items', 'id': f'recipe_{rid}', 'kind': 'food', 'category': 'recipe',
+                         'new': True, **_slim(v)})
+    # Every material x template pair the game can make. A third had no picture
+    # and borrowed another material's (leather gloves drawn as teal plate).
+    have = {(r['folder'], r['id']) for r in recs}
+    for cat, sub, mdirs in (('weapon', 'weapons', ('weapons',)), ('armor', 'armor', ('armor',)),
+                            ('shield', 'shields', ('armor', 'weapons'))):
+        mats = {}
+        for md in mdirs:
+            for p in glob.glob(str(ROOT / 'data' / 'materials' / md / '*.json')):
+                mats.setdefault(os.path.basename(p)[:-5], _load(p))
+        for tid, (tcat, tpl) in templates.items():
+            if tcat != cat:
+                continue
+            accepts = set(tpl.get('compatible_material_classes') or ())
+            for mid, mat in mats.items():
+                mclass = str(mat.get('material_class', ''))
+                if accepts and not (accepts & (set(mclass.split(',')) | {mclass})):
+                    continue
+                iid = f'{mid}_{tid}'
+                if ('items', iid) in have:
+                    continue
+                have.add(('items', iid))
+                recs.append({'folder': 'items', 'id': iid, 'kind': OWNER[cat], 'category': cat,
+                             'combo': True, 'new': True, 'material': mid, 'template': tid,
+                             'material_color': mat.get('color'),
+                             **{k: v for k, v in _slim(tpl).items()
+                                if k in ('slot', 'class', 'weapon_class', 'two_handed')}})
     for mid, v in mons.items():
         if isinstance(v, dict) and ('monsters', mid) not in have:
             fam = monster_family(v.get('tags'))

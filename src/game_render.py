@@ -185,7 +185,14 @@ class RenderMixin:
 
     def _draw_menu_icon(self, item, x: int, y: int):
         """Blit a menu-sized sprite for an item at (x, y), with glyph fallback."""
-        sprite = self._get_menu_sprite(item.id)
+        _sid = item.id
+        try:
+            if hasattr(item, 'identified') and not self._item_is_known(item):
+                from renderer import unknown_sprite_id
+                _sid = unknown_sprite_id(item) or _sid
+        except Exception:
+            pass
+        sprite = self._get_menu_sprite(_sid)
         SZ = self.MENU_ICON_SIZE
         if sprite is not None:
             self.screen.blit(sprite, (x, y))

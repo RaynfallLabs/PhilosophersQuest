@@ -446,6 +446,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, layout.VIEWPORT_W, layout.VIEWPORT_H)
+        self.renderer.is_item_known  = self._item_is_known     # unknown things get a stand-in picture
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()

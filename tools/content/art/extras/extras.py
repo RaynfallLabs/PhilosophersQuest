@@ -273,6 +273,103 @@ def mystery_key_sisyphus(s):
     s.px([(9, 22), (22, 24)], (112, 112, 116))
 
 
+# ---------------------------------------------------------------- not yet identified
+# Six looks for each kind of thing that hides what it is. The look follows the
+# item's unidentified name, so "a fizzy blue potion" always looks the same and
+# two different unknown potions look different, but no look says what the
+# thing does. (Before this an unidentified item was drawn with its true
+# picture: the healing wand showed its green cross.)
+UNKNOWN_LOOKS = 6
+_HUES = ((70, 130, 220), (200, 70, 70), (90, 180, 90), (190, 150, 60), (150, 90, 190), (90, 180, 190))
+
+
+def _unknown(kind, k):
+    c = _HUES[k]
+
+    def potion(s):
+        glass = (188, 204, 214)
+        if k % 3 == 0:
+            s.rect(13, 4, 18, 9, (150, 110, 70)); s.ell(7, 9, 24, 28, glass); s.ell(9, 15, 22, 26, c)
+        elif k % 3 == 1:
+            s.rect(13, 3, 18, 8, (150, 110, 70))
+            s.poly([(13, 8), (18, 8), (25, 26), (22, 29), (9, 29), (6, 26)], glass)
+            s.poly([(10, 19), (21, 19), (23, 26), (21, 28), (10, 28), (8, 26)], c)
+        else:
+            s.rect(13, 3, 18, 7, (150, 110, 70)); s.rect(10, 7, 21, 29, glass); s.rect(12, 14, 19, 27, c)
+        s.px([(11, 13), (11, 14)], (240, 248, 255))
+
+    def wand(s):
+        s.line([(6, 26), (25, 7)], (112, 80, 52), 3)
+        s.line([(11, 21), (14, 18)], c, 3); s.ell(23, 4, 28, 9, (190, 190, 200))
+        s.px([(6, 27), (7, 26)], (70, 50, 34))
+
+    def scroll(s):
+        page = (232, 220, 186)
+        s.rect(7, 8, 24, 23, page); s.ell(5, 5, 26, 11, page); s.ell(5, 20, 26, 26, page)
+        s.rect(14, 12, 17, 19, c); s.ell(13, 13, 18, 18, c)
+        s.line([(9, 14), (12, 14)], (150, 138, 110)); s.line([(19, 17), (22, 17)], (150, 138, 110))
+
+    def spellbook(s):
+        s.rect(7, 5, 24, 27, c); s.rect(7, 5, 9, 27, tuple(v * 6 // 10 for v in c))
+        s.rect(22, 7, 24, 25, (232, 224, 200)); s.rect(12, 12, 19, 19, tuple(min(255, v + 50) for v in c))
+        s.px([(10, 7), (21, 7), (10, 25), (21, 25)], GOLD)
+
+    def ring(s):
+        band = ((196, 170, 90), (176, 180, 190), (150, 110, 80))[k % 3]
+        s.ell(7, 11, 24, 27, band); s.ell(11, 15, 20, 23, DARK)
+        s.ell(12, 6, 19, 13, c); s.px([(14, 8)], (240, 248, 255))
+
+    def amulet(s):
+        s.line([(8, 3), (15, 14)], (176, 180, 190)); s.line([(23, 3), (16, 14)], (176, 180, 190))
+        if k % 2:
+            s.ell(9, 13, 22, 27, (196, 170, 90)); s.ell(12, 16, 19, 24, c)
+        else:
+            s.poly([(15, 13), (22, 20), (15, 28), (9, 20)], (196, 170, 90)); s.poly([(15, 16), (19, 20), (15, 25), (12, 20)], c)
+
+    return {'potion': potion, 'wand': wand, 'scroll': scroll, 'spellbook': spellbook,
+            'ring': ring, 'amulet': amulet}[kind]
+
+
+for _kind in ('potion', 'wand', 'scroll', 'spellbook', 'ring', 'amulet'):
+    for _k in range(UNKNOWN_LOOKS):
+        def _run(rec=None, _fn=_unknown(_kind, _k)):
+            s = Sprite()
+            s.shadow = False
+            _fn(s)
+            return s.finish()
+        D[f'unknown_{_kind}_{_k}'] = ('items', _run)
+
+
+# ---------------------------------------------------------------- the duck that hatches
+@art('monsters', shadow=True)
+def waddlekind(s):
+    yel = (250, 214, 70)
+    s.ell(8, 14, 23, 27, yel); s.ell(9, 6, 19, 16, yel)
+    s.poly([(9, 11), (4, 12), (9, 14)], (240, 140, 40)); s.px([(12, 10)], DARK)
+    s.poly([(14, 19), (20, 18), (20, 23)], (236, 190, 40)); s.rect(11, 27, 13, 29, (240, 140, 40)); s.rect(17, 27, 19, 29, (240, 140, 40))
+
+
+@art('monsters', shadow=True)
+def drake_of_the_covenant(s):
+    green, white = (40, 120, 70), (236, 236, 226)
+    s.ell(6, 13, 24, 27, (150, 110, 80)); s.poly([(21, 14), (28, 10), (25, 20)], (120, 86, 60))
+    s.rect(10, 8, 14, 16, white); s.ell(8, 2, 18, 11, green)
+    s.poly([(8, 6), (3, 7), (8, 9)], (240, 190, 50)); s.px([(11, 5)], DARK); s.line([(10, 11), (14, 11)], white)
+    s.poly([(12, 17), (21, 16), (22, 23), (14, 24)], (110, 150, 200))
+    s.rect(11, 27, 13, 29, (240, 140, 40)); s.rect(18, 27, 20, 29, (240, 140, 40))
+
+
+@art('monsters', shadow=True)
+def seraphimallard(s):
+    light = s.lit((255, 244, 180)); white = (244, 244, 236)
+    for pts in ([(10, 14), (1, 6), (4, 16)], [(10, 17), (0, 14), (5, 21)], [(11, 20), (2, 23), (8, 25)],
+                [(21, 14), (30, 6), (27, 16)], [(21, 17), (31, 14), (26, 21)], [(20, 20), (29, 23), (23, 25)]):
+        s.poly(pts, light)
+    s.ell(9, 13, 22, 27, white); s.ell(11, 5, 20, 14, white)
+    s.poly([(11, 9), (6, 10), (11, 12)], (240, 170, 40)); s.px([(14, 8)], DARK)
+    s.ell(11, 1, 20, 4, light); s.rect(12, 27, 14, 29, (240, 170, 40)); s.rect(17, 27, 19, 29, (240, 170, 40))
+
+
 def draw(rec):
     return D[rec['id']][1](rec)
 

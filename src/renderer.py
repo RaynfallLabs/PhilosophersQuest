@@ -12,6 +12,22 @@ _ENV_SPRITE_DIR   = data_path('assets', 'tiles', 'env')
 
 
 PIXEL_ART_MAX = 64      # a source this small is pixel art, not a painting
+UNKNOWN_LOOKS = 6       # stand-in pictures per kind of unidentified thing
+
+
+def unknown_sprite_id(item) -> 'str | None':
+    """The stand-in picture for a thing whose kind hides what it is, or None
+    if this is not such a thing. Chosen by its unidentified NAME, so one
+    unknown potion always looks the same and tells nothing about its effect.
+    An unidentified wand used to be drawn with its true picture."""
+    import zlib
+    kind = type(item).__name__.lower()
+    if kind == 'accessory':
+        kind = 'amulet' if getattr(item, 'slot', 'ring') == 'amulet' else 'ring'
+    if kind not in ('potion', 'wand', 'scroll', 'spellbook', 'ring', 'amulet'):
+        return None
+    label = str(getattr(item, 'unidentified_name', '') or getattr(item, 'id', ''))
+    return f'unknown_{kind}_{zlib.crc32(label.encode()) % UNKNOWN_LOOKS}'
 
 
 def fit_sprite(raw: 'pygame.Surface', w: int, h: int) -> 'pygame.Surface':
@@ -828,8 +844,13 @@ class Renderer:
                 sprite_key = f'trap_{trap_type}_rewired' if rewired else f'trap_{trap_type}'
                 sprite = self._get_env_sprite(sprite_key)
                 if not sprite and rewired:
-                    # No rewired-variant sprite — fall back to the standard sprite, tinted via caret.
-                    sprite = None
+                    # No picture of its own: the trap's ordinary picture in a
+                    # cyan frame (it used to fall to a bare "^").
+                    sprite = self._get_env_sprite(f'trap_{trap_type}')
+                    if sprite:
+                        self.screen.blit(sprite, (sx, sy))
+                        pygame.draw.rect(self.screen, (80, 230, 255), (sx, sy, T, T), max(1, T // 16))
+                        continue
                 if sprite:
                     self.screen.blit(sprite, (sx, sy))
                 else:
@@ -945,6 +966,9 @@ class Renderer:
         sx, sy = self.world_to_screen(item.x, item.y)
 
         item_id = getattr(item, 'id', None)
+        _known = getattr(self, 'is_item_known', None)
+        if item_id and _known is not None and not _known(item):
+            item_id = unknown_sprite_id(item) or item_id
         if item_id:
             sprite = self._get_item_sprite(item_id)
             if sprite:

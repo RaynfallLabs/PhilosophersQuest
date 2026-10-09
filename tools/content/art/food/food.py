@@ -2001,11 +2001,44 @@ def _draw(rec):
     return s
 
 
+# A recipe's id no longer names its dish (prime_ghoul_recipe), but its NAME
+# does ("Smoked Ghoul Shoulder"): choose the dish from the name, and colour
+# it from the creature its first ingredient came from.
+NAME_DISH = {
+    'shoulder': 'roast', 'haunch': 'roast', 'shank': 'roast', 'loin': 'roast', 'flank': 'roast',
+    'belly': 'roast', 'roast': 'roast', 'grill': 'roast', 'leg': 'roast',
+    'rib': 'steak', 'cheek': 'steak', 'meat': 'steak', 'tongue': 'steak', 'steak': 'steak',
+    'liver': 'medallions', 'kidney': 'medallions', 'heart': 'medallions', 'medallions': 'medallions',
+    'fat': 'crisps', 'sinew': 'skewer', 'marrow': 'platter', 'scrap': 'hash', 'grease': 'crisps',
+    'pot': 'pot', 'pyre': 'pot', 'coldforge': 'pot', 'cauldron': 'pot',
+    'broth': 'broth', 'stock': 'broth', 'soup': 'soup', 'chowder': 'chowder', 'bisque': 'bisque',
+    'stew': 'stew', 'braise': 'braise', 'ragout': 'ragout',
+    'reduction': 'reduction', 'glaze': 'glaze', 'ichor': 'elixir', 'sap': 'elixir',
+    'terrine': 'terrine', 'cake': 'pie', 'crust': 'pie', 'pie': 'pie', 'confit': 'terrine',
+    'tea': 'tea', 'moss': 'salad', 'mushroom': 'salad', 'kelp': 'salad', 'salad': 'salad',
+    'shard': 'platter', 'iron': 'platter', 'ember': 'curry', 'filament': 'skewer',
+    'feast': 'feast', 'banquet': 'feast', 'skewer': 'skewer', 'curry': 'curry', 'loaf': 'loaf',
+    'dumplings': 'dumplings', 'jelly': 'jelly', 'pudding': 'pudding', 'hash': 'hash',
+}
+
+
+def _recipe_alias(rec):
+    import re
+    words = [w for w in re.split(r'[^a-z]+', str(rec.get('name', '')).lower()) if w]
+    dish = next((NAME_DISH[w] for w in reversed(words) if w in NAME_DISH), None)
+    if dish is None:
+        dish = 'brined' if 'pickled' in words else 'platter'
+    src = str((rec.get('ingredients') or [''])[0]).replace('_prime', '')
+    return dict(rec, id=f"recipe_{src or 'house'}_{dish}")
+
+
 def draw(rec):
     import prime
     img = prime.draw(rec)
     if img is not None:
         return img
+    if rec.get('category') == 'recipe' and rec.get('new') and rec.get('name'):
+        rec = _recipe_alias(rec)
     s = _draw(rec)
     px = s.img.load()
     for k in range(32):       # keep the frame clear for the outline
