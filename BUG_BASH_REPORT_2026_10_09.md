@@ -4,6 +4,36 @@ Eight reviewers each attacked a frozen copy of the game from one angle, and all 
 
 **Bottom line:** no reviewer found a crash in normal play, including a headless "monkey" that played about 3.1 million random actions across roughly 12,000 games as every hero on every floor. They found about 115 real faults, most of them "does the wrong thing quietly". I fixed about 80 in code and data and left the rest for you because they are design calls, balance-affecting, or large. Everything is committed locally (twelve commits after `b9a07b7`); nothing is pushed. The suite is at 2,166 passing. Nothing has been played by a person.
 
+## Your rulings of 2026-10-09, applied
+
+| Ruling | What was done |
+|---|---|
+| Monster resistance must work, lore first | A weapon has a form (cut, thrust, crush) and a substance (silver, iron, blessed) and each meets the monster. 87 monsters now resist as written. Fafnir resists cuts and crushing and is weak to a thrust; Fenrir resists cuts; Abaddon resists cuts and crushing and is weak to holy. Bare hands crush. |
+| Fix multi-attack monsters; no nerf | Each blow of a flurry is a full blow: drain heals, Constitution drain, pull, charge, breath over a pit, gaze immunity, reflection, the Nemean hide. 41 monsters. |
+| Death wards stop any outside killing blow, not starvation | One function holds every ward and every death check asks it. Hunger does not. |
+| Dad | The fist is on his hand from turn one and cannot be removed (Ash's chainsaw has the same lock). No high score. No boss scrolls. |
+| Pixel heroes | Ranger, Robyn and the wizard are pixel art. |
+| An item looks the same identified or not | The stand-in pictures I added overnight are removed. Item 2 under "Read these first" below is withdrawn: the picture is the item. |
+| Chests that are a square and an ampersand | Ten kinds of chest had no picture; all twelve have one. I generated 300 floors and checked every object: nothing else falls back to a letter. |
+| Sound toggle and more sounds | F10 turns sound on and off (remembered, listed in help). 38 new sounds: a note that climbs with each chain link, a clock tick for the last three seconds, kills, boss kills, stat gains, trait unlocks, chests, eating, cooking, praying, Death's arrival, victory. I cannot hear them: volumes need your ear. |
+| Context blurbs | Left for a later update. |
+
+**Balance after these changes.** The simulator uses the real attack code, so it sees all three mechanics. 480 runs per player type:
+
+| Player | Reaches floor 20 | Wins, before | Wins, after | Target |
+|---|---|---|---|---|
+| Casual | 86% (41% of all beat Asterion) | 0 | 0 | 90%, about half beat Asterion |
+| Prepared | 99% | 26% | 27% | 25 to 30% |
+| Committed build | 99% | 38% | 37% | |
+| Committed with a pet | 99% | 52% | 52% | 40 to 50% |
+| Found the four secrets | 99% | 40% | 37% | |
+| Everything stacked | 99% | 55% | 53% | 60 to 70% |
+| Rests as long as it takes | 99% | 40% | 29% | within 15 of prepared |
+
+Every figure is within noise of where it was except the rest-heavy player, who dropped because wards and absorbs no longer recharge on a staircase. No monster data was retuned: there was nothing to correct. Resistances shift average damage by 4% at most (they bite on particular monsters, which is the point), and the flurry change adds rules without adding damage.
+
+**Not played.** All of this is tested and simulated, not played.
+
 ## Read these first
 
 1. **The game has sound now.** All 14 sounds had always failed to build, silently. They build now, so you will hear the game for the first time. I have not heard it: volumes and pitch are untested, and there is no mute key.
