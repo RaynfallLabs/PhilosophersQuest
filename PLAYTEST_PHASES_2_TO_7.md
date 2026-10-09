@@ -29,7 +29,12 @@ Removed on 2026-10-07 because they broke that rule: the early-floor damage reduc
 | Find Martin's Half Cloak, the Cestus of Polydeuces, the Bracers of Atalanta or Becket's Hair Shirt (floors 5 to 20) | Each has an icon, a story, and a line on its card such as **Toughness +3%** or **Dodge +4%**. The character sheet's Dodge and Tough readouts rise by that much when it is worn. |
 | Put on any unidentified armor | The log says "You equip the pair of worn sandals", not "the A Pair of Worn Sandals". |
 | Put a named piece on, then take it off (Cloth of Penelope on floor 10 is the easy one) | Its status goes with it. Regenerating, Hasted, Blinded and Displacement used to stay for the rest of the run. |
-| Look at anything | Every monster, item, tile and hero is redrawn in one pixel-art style (2026-10-08). Press **Tab** for the medium and close views: that is where the art shows; the full-map view draws tiles about 12 to 19 pixels wide. Solid rock is dark and plain; brick shows only where a wall faces a room or passage. |
+| Press **F10** | "Sound: Off." and silence; again, "Sound: On." It is remembered next launch. |
+| Fight anything | Each right answer plays a note one step higher than the last; the clock ticks in its last three seconds; a kill has its own sound. Tell me which are too loud. |
+| Attack a Skeleton with a sword, then a mace | The combat panel says **Resisted** for the thrust and **Weakness** for the mace, and the damage shows it. |
+| Open any chest | It looks like a chest (ten kinds were a square with an ampersand). |
+| Start as Dad | The fist is already wielded and will not come off. |
+| Look at anything | Every monster, item, tile and hero is redrawn in one pixel-art style (2026-10-08). Press **Tab** for the medium and close views: that is where the art shows; the full-map view draws tiles about 12 to 19 pixels wide. All hero sprites are pixel art now. Solid rock is dark and plain; brick shows only where a wall faces a room or passage. |
 | Open the inventory, the cooking menu and an item card | Every item has its own icon, including each monster's prime cut (they all shared one meat icon). |
 | Meet a gold pile, the Deep Gnome Trader, a mystery shrine | Each has a picture; they used to show as `$`, `@` and other letters. |
 
