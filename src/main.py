@@ -1234,6 +1234,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # lives on the weapon and was never reset, making it a lifetime cap.
         for _w in (self.player.weapon, self.player.ranged_weapon,
                    *self.player.inventory):
+            if new_level <= self.player.deepest_floor_reached:
+                break                    # a floor already walked gives no fresh allowance
             if _w is not None and getattr(_w, '_spare_kill_floor_hp', 0):
                 _w._spare_kill_floor_hp = 0
 
@@ -1266,6 +1268,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # both cooking softcaps to their floor-100 values and stopped the
         # per-descent trophies from ever paying again.
         _was_deepest = self.player.deepest_floor_reached
+        # Everything below that is spent "once a floor" is given back only on
+        # a floor reached for the first time. Going down and up one stair
+        # used to recharge every death ward, absorb, free cast and escape:
+        # six lethal blows in a row survived on one charge each.
+        _held_charges = None if new_level > _was_deepest else self._once_a_floor_state()
         from boss_levels import COW_LEVEL as _COW_LEVEL
         if new_level != _COW_LEVEL:
             self.player.deepest_floor_reached = max(
@@ -1435,7 +1442,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Achilles' helm (ringing_intimidation) is rolled when a monster first
         # sees the wearer (_refresh_fov): on arrival nothing is within reach.
         # Haramaki of Yoshitsune (descent_haste): on descent, gain hasted for N turns.
-        if enter_from_top:
+        if enter_from_top and new_level > _was_deepest:      # a descent into new depth
             try:
                 from armor_procs import proc_value as _pv_desc
                 _dh = int(_pv_desc(self.player, 'descent_haste') or 0)
@@ -1646,8 +1653,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Track levels without Philosopher's Shard (Diogenes quirk)
         has_shard = any(getattr(i, 'id', '') == 'philosophers_shard'
                         for i in self.player.inventory)
+        # (compared with the depth BEFORE this move: deepest_floor_reached was
+        # raised above, so "deeper than the deepest" was never true and the
+        # Lantern could not be earned)
         if (not has_shard and self.player.quirk_progress.get('shard_dropped')
-                and new_level > self.player.deepest_floor_reached):
+                and new_level > _was_deepest):
             self.player.quirk_progress['levels_without_shard'] = (
                 self.player.quirk_progress.get('levels_without_shard', 0) + 1
             )
@@ -1805,6 +1815,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             monsters.extend(bar_extra)
                             break
 
+        if _held_charges is not None:
+            self._restore_once_a_floor_state(_held_charges)
         self._settle_monsters()
         self._refresh_fov()
 
@@ -3328,6 +3340,95 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
+    _ONCE_A_FLOOR_GAME = ('_first_hit_used', '_death_save_used', '_quiz_reroll_used', '_tarnhelm_used')
+    _ONCE_A_FLOOR_PLAYER = ('_elder_blood_escape_used', '_hrunting_save_used',
+                            '_death_save_used_this_floor', '_seven_league_used_this_floor',
+                            '_gold_offering_used_this_floor', '_eluned_auto_invis_used',
+                            '_hypatia_protected_used', '_gorgoneion_used_this_floor')
+
+    def _once_a_floor_state(self) -> dict:
+        p = self.player
+        return {
+            'game': {k: getattr(self, k, False) for k in self._ONCE_A_FLOOR_GAME},
+            'player': {k: getattr(p, k, False) for k in self._ONCE_A_FLOOR_PLAYER},
+            'armor': dict(getattr(p, '_armor_proc_charges', None) or {}),
+            'chain': dict(getattr(p, '_chain_passive_charges', None) or {}),
+        }
+
+    def _restore_once_a_floor_state(self, held: dict) -> None:
+        p = self.player
+        for k, v in held['game'].items():
+            setattr(self, k, v)
+        for k, v in held['player'].items():
+            setattr(p, k, v)
+        p._armor_proc_charges = dict(held['armor'])
+        p._chain_passive_charges = dict(held['chain'])
+
+    def _reachable_tiles(self, sx: int, sy: int) -> set:
+        """Every tile that can be walked to from (sx, sy), going through
+        doors (secret ones too: they can be found)."""
+        from dungeon import DOOR, SECRET_DOOR
+        d = self.dungeon
+        seen = {(sx, sy)}
+        stack = [(sx, sy)]
+        while stack:
+            x, y = stack.pop()
+            for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1),
+                           (x + 1, y + 1), (x - 1, y - 1), (x + 1, y - 1), (x - 1, y + 1)):
+                if (nx, ny) in seen or not d.in_bounds(nx, ny):
+                    continue
+                if d.is_walkable(nx, ny) or d.tiles[ny][nx] in (DOOR, SECRET_DOOR):
+                    seen.add((nx, ny))
+                    stack.append((nx, ny))
+        return seen
+
+    @staticmethod
+    def _needed_to_finish(thing) -> bool:
+        """A creature or object the run cannot be completed, or a quest
+        cannot be done, without reaching."""
+        tags = set(getattr(thing, 'tags', None) or ())
+        tre = getattr(thing, 'treasure', None) or {}
+        kind = str(getattr(thing, 'kind', '') or getattr(thing, 'id', '') or '')
+        return bool(
+            tags & {'boss', 'legendary'}
+            or (isinstance(tre, dict) and (tre.get('boss_scroll_id') or tre.get('unique_drop_id')))
+            or kind.startswith(('seal_demon', 'mystery_altar_', 'mystery_key_'))
+            or kind == 'merchant_npc'
+            or getattr(thing, '_npc_encounter_tag', None) or getattr(thing, '_flavor_encounter_tag', None)
+            or getattr(thing, 'item_class', '') in ('artifact', 'merchant')
+            or type(thing).__name__ in ('Artifact', 'MysteryAltar', 'MysteryKeyItem', 'MerchantNPC'))
+
+    def _bring_within_reach(self):
+        """Nothing the run needs may sit where the player cannot walk.
+
+        A pool floods the ring of a room and leaves its middle an island; a
+        lava river or a swamp can cut a region off. About one floor in six
+        had such a pocket, and a seal keeper stood in one about once in nine
+        runs: its stair then stayed sealed for good. Mystery shrines, their
+        keys, the trader and quest pieces were stranded the same way."""
+        reach = self._reachable_tiles(self.player.x, self.player.y)
+        taken = {(m.x, m.y) for m in self.monsters if getattr(m, 'alive', False)}
+        taken.add((self.player.x, self.player.y))
+        free = [t for t in reach if self.dungeon.is_walkable(*t) and t not in taken]
+        if not free:
+            return
+        import random as _r
+        rng = _r.Random(self.dungeon_level * 7919 + len(reach))
+
+        def nearest(x, y):
+            best = min(free, key=lambda t: (abs(t[0] - x) + abs(t[1] - y), rng.random()))
+            free.remove(best)
+            return best
+
+        for m in self.monsters:
+            if (getattr(m, 'alive', False) and (m.x, m.y) not in reach
+                    and tuple(getattr(m, 'footprint', (1, 1))) == (1, 1)
+                    and self._needed_to_finish(m) and free):
+                m.x, m.y = nearest(m.x, m.y)
+        for it in self.ground_items:
+            if (it.x, it.y) not in reach and self._needed_to_finish(it) and free:
+                it.x, it.y = nearest(it.x, it.y)
+
     def _settle_monsters(self):
         """Move any monster that begins a floor on a tile it cannot have: on
         top of another creature, or on water, lava or rock. The extra packs
@@ -3357,6 +3458,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     m.x, m.y = spot
                     mine = [spot]
             taken.update(mine)
+        try:
+            self._bring_within_reach()
+        except Exception:
+            pass
 
     def _reap_unnoticed_kills(self):
         """Anything that died without its death being handled is handled
@@ -3548,18 +3653,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 and not self.player.has_effect('levitating')     # held over water or lava
                 and self.dungeon.in_bounds(self.player.x, self.player.y)
                 and not self.dungeon.is_walkable(self.player.x, self.player.y)):
-            for _dy in range(-2, 3):
-                for _dx in range(-2, 3):
-                    _nx, _ny = self.player.x + _dx, self.player.y + _dy
-                    if self.dungeon.is_walkable(_nx, _ny):
-                        self.player.x, self.player.y = _nx, _ny
-                        self.add_message(
-                            "You feel solid again — the wall pushes you back into open space.",
-                            'info')
-                        break
-                else:
-                    continue
-                break
+            # The nearest open tile, however far: the search stopped two
+            # tiles out, and a player four steps into rock stayed there.
+            _px, _py = self.player.x, self.player.y
+            _spots = [(x, y) for y in range(self.dungeon.height) for x in range(self.dungeon.width)
+                      if self.dungeon.is_walkable(x, y)
+                      and monster_at_tile(self.monsters, x, y) is None]
+            if _spots:
+                self.player.x, self.player.y = min(
+                    _spots, key=lambda t: max(abs(t[0] - _px), abs(t[1] - _py)))
+                self.add_message(
+                    "You feel solid again — the wall pushes you back into open space.",
+                    'info')
 
         # Warning: alert for nearby monsters
         self._do_warning()
@@ -4052,16 +4157,28 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif trap_type == 'polymorph':
             import copy as _copy
             from items import load_items as _load
+            # Ordinary gear only, into ordinary gear. The pools for weapons,
+            # armor and shields hold nothing but named pieces now, so a tin
+            # flail became a legend and a wooden shield became the Aegis the
+            # Medusa quest is for; everything else "transformed" into itself.
             transformable = [i for i in self.player.inventory
-                             if not getattr(i, 'id', '').startswith('philosopher')]
+                             if type(i).__name__ in ('Weapon', 'Armor', 'Shield')
+                             and not getattr(i, 'is_unique', False)
+                             and not getattr(i, 'id', '').startswith('philosopher')]
             if transformable:
                 victim = random.choice(transformable)
                 old_name = victim.name
                 cls_name = type(victim).__name__.lower()
                 try:
-                    pool = [t for t in _load(cls_name) if t.min_level <= self.dungeon_level]
+                    from items import (pick_random_weapon_for_floor, pick_random_armor_for_floor,
+                                       pick_random_shield_for_floor)
+                    _pick = {'weapon': pick_random_weapon_for_floor, 'armor': pick_random_armor_for_floor,
+                             'shield': pick_random_shield_for_floor}[cls_name]
+                    pool = [x for x in (_pick(self.dungeon_level, random) for _ in range(6))
+                            if x is not None and not getattr(x, 'is_unique', False)
+                            and getattr(x, 'id', '') != getattr(victim, 'id', None)]
                     if pool:
-                        replacement = _copy.copy(random.choice(pool))
+                        replacement = random.choice(pool)
                         replacement.x = getattr(victim, 'x', 0)
                         replacement.y = getattr(victim, 'y', 0)
                         idx = self.player.inventory.index(victim)
@@ -4101,6 +4218,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             and not monster_at_tile(self.monsters, x, y) is not None
             and not any(p.alive and p.x == x and p.y == y for p in self.pets)
         ]
+        # ... and only where the stairs can be walked to from: a two-tile
+        # island in a pool was a landing place, and there was no way off it.
+        _stair = next(((x, y) for y in range(self.dungeon.height)
+                       for x in range(self.dungeon.width)
+                       if self.dungeon.tiles[y][x] in (STAIRS_DOWN, STAIRS_UP)), None)
+        if _stair is not None:
+            _reach = self._reachable_tiles(*_stair)
+            floors = [t for t in floors if t in _reach] or floors
         if floors:
             self.player.x, self.player.y = _rng.choice(floors)
             self._refresh_fov()
@@ -4590,8 +4715,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not hasattr(self, 'player_gold'):
                 self.player_gold = 0
             _gold_amt = item.amount
-            # Draupnir: double gold pickups.
-            for _acc in self.player.equipped_accessories:
+            # Draupnir: double gold pickups. Found gold only: a pile the
+            # player put down doubled each time it was picked up again
+            # (100 gold became 102,400 in ten drops).
+            for _acc in (() if getattr(item, '_dropped_by_player', False)
+                         else self.player.equipped_accessories):
                 _gm = getattr(_acc, 'gold_multiplier', 0)
                 if _gm > 0:
                     _gold_amt = int(_gold_amt * _gm)

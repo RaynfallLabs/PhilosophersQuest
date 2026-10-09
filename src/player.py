@@ -296,6 +296,10 @@ class Player:
                 'witcher_resists' in self.hero_passives:
             resistance *= 0.85
         actual = max(0, int(amount * resistance))
+        # Resisting is not immunity: a one-point poison or bleed tick was
+        # rounded to nothing by any resistance at all.
+        if actual == 0 and amount > 0 and resistance > 0:
+            actual = 1
         self.hp = max(0, self.hp - actual)
         # Hero passive trigger: Ciri's Elder Blood — auto-teleport when HP drops <25%
         # once per floor (gated by the existing _elder_blood_escape_used floor flag).

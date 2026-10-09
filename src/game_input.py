@@ -1404,6 +1404,7 @@ class InputMixin:
             if amount > 0:
                 from items import GoldPile
                 pile = GoldPile(amount, self.player.x, self.player.y)
+                pile._dropped_by_player = True       # a gold ring multiplies FOUND gold
                 self.player_gold -= amount
                 self.ground_items.append(pile)
                 self.add_message(f"You drop {amount} gold coins.", 'info')

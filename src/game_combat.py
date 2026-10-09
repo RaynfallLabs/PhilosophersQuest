@@ -2218,6 +2218,7 @@ class CombatMixin:
                     from dungeon import ICE as _ICE
                     m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
                 m._last_attack_type = None      # set by the monster only when a blow lands
+                _hp_before_blow = self.player.hp
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
                 # Perseus's trait counts every gaze or effect thrown back at its
@@ -2246,8 +2247,8 @@ class CombatMixin:
                             dmg / max(1, self.player.max_hp) >= 0.25:
                         if consume_floor_charge(self.player, 'story_thread'):
                             # Reverse the damage spike by healing back to pre-hit HP - 1.
-                            self.player.hp = min(self.player.max_hp,
-                                                 self.player.hp + max(0, dmg - 1))
+                            self.player.hp = max(self.player.hp,
+                                                 min(self.player.max_hp, max(1, _hp_before_blow - 1)))
                             self.add_message(
                                 "The thread of a thousand stories catches the blow — only a scratch!",
                                 'success')
@@ -2429,7 +2430,10 @@ class CombatMixin:
                     _absorbed = False
                     for _arm_slot in self.player.armor_slots:
                         if _arm_slot and getattr(_arm_slot, 'first_hit_absorb', False):
-                            self.player.hp = min(self.player.max_hp, self.player.hp + dmg)
+                            # back to what it was, not "plus the blow": health
+                            # stops at 0, so undoing a 50-point blow on a
+                            # 5-health wearer healed them to 50
+                            self.player.hp = max(self.player.hp, min(self.player.max_hp, _hp_before_blow))
                             self._first_hit_used = True
                             self.add_message("The tiger-skin absorbs the blow completely!", 'success')
                             _absorbed = True

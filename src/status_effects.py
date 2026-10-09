@@ -201,6 +201,34 @@ TIMED_STAT_GRANTS: dict = {
 }
 
 
+def sync_timed_grants(player) -> None:
+    """Make the stats a status lends match the statuses actually present.
+
+    The grant used to be made when a timed status began and taken back when
+    it ran out. A status can also begin as permanent (an item that grants it)
+    and can be removed by a plain pop (taking that item off), and neither of
+    those paths granted or took back anything: the Pharaoh's Crook showed
+    "Heroic" and gave nothing, and a heroism potion followed by wielding and
+    unwielding the Crook left +2 Strength for good, once per potion."""
+    held = getattr(player, '_timed_grants_held', None)
+    if held is None:
+        # first sight of this character (or an older save): whatever is
+        # active now has already been granted
+        held = {e for e in TIMED_STAT_GRANTS if player.status_effects.get(e, 0) != 0}
+        player._timed_grants_held = held
+        return
+    for effect, grants in TIMED_STAT_GRANTS.items():
+        active = player.status_effects.get(effect, 0) != 0
+        if active and effect not in held:
+            held.add(effect)
+            for stat, amt in grants:
+                player.apply_stat_bonus(stat, amt)
+        elif not active and effect in held:
+            held.discard(effect)
+            for stat, amt in grants:
+                player.apply_stat_bonus(stat, -amt)
+
+
 def dot_tick(player) -> int:
     return max(1, int(round(getattr(player, 'max_hp', 1) * DOT_SHARE)))
 
@@ -464,12 +492,14 @@ def apply_effect(player, effect: str, duration: int) -> bool:
         if effect in blocked and player.has_effect(resist):
             return False
 
+    sync_timed_grants(player)
     current = player.status_effects.get(effect, 0)
     if current == -1:
         return False  # permanent -- can't be changed
 
     if duration == -1:
         player.status_effects[effect] = -1
+        sync_timed_grants(player)
     elif effect in CONTROL:
         cap = CONTROL_CAP.get(effect)
         if cap is not None:
@@ -491,10 +521,8 @@ def apply_effect(player, effect: str, duration: int) -> bool:
         # can never come apart. They used to be granted by each caller, and
         # the cooking path did not: every "Heroic" or "Brilliant" meal ended
         # by taking away two STR, or a point each of INT and WIS, for good.
-        if current == 0:
-            for _stat, _amt in TIMED_STAT_GRANTS.get(effect, ()):
-                player.apply_stat_bonus(_stat, _amt)
         player.status_effects[effect] = min(current + duration, MAX_EFFECT_DURATION)
+        sync_timed_grants(player)
     return True
 
 
@@ -583,6 +611,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         '_teleport'      -- teleport the player to a random tile
         '_petrify_death' -- player has fully turned to stone (death)
     """
+    sync_timed_grants(player)
     import random
     messages: list[tuple[str, str]] = []
     to_expire: list[str] = []
@@ -714,8 +743,7 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
         if effect == 'inspired':
             player.insight_wis = 0
         if effect in TIMED_STAT_GRANTS:
-            for _stat, _amt in TIMED_STAT_GRANTS[effect]:
-                player.apply_stat_bonus(_stat, -_amt)
+            sync_timed_grants(player)        # the status is gone: its stats go with it
         elif effect == 'stand_ac':
             # Leonidas Spartan Stand expiry — clear the AC + counter bonuses.
             player._stand_ac_bonus = 0
