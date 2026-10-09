@@ -70,7 +70,7 @@ def _make_tone(
             else:
                 sample = math.sin(2 * math.pi * freq * t)
             buf.append(int(peak * env * sample))
-        snd = pygame.sndarray.make_sound(
+        snd = _to_sound(
             __import__('numpy').array(buf, dtype='int16').reshape(-1, 1)
             if _CHANNELS == 1 else
             __import__('numpy').array(buf, dtype='int16')
@@ -104,7 +104,7 @@ def _make_sweep(
             buf[i] = env * math.sin(2 * math.pi * freq * t)
         peak = int(32767 * min(1.0, volume))
         arr = (buf * peak).astype('int16').reshape(-1, 1)
-        return pygame.sndarray.make_sound(arr)
+        return _to_sound(arr)
     except Exception:
         return None
 
@@ -120,7 +120,7 @@ def _make_noise_burst(duration: float, volume: float = 0.2) -> 'pygame.mixer.Sou
         env = np.exp(-t_arr / max(0.001, duration * 0.4))
         noise = np.random.randint(-peak, peak + 1, n)
         arr = (noise * env).astype('int16').reshape(-1, 1)
-        return pygame.sndarray.make_sound(arr)
+        return _to_sound(arr)
     except Exception:
         return None
 
@@ -128,6 +128,22 @@ def _make_noise_burst(duration: float, volume: float = 0.2) -> 'pygame.mixer.Sou
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
+
+def _to_sound(samples):
+    """A Sound from mono 16-bit samples, shaped for whatever mixer is open.
+
+    The builders handed over an (n, 1) array. A mono mixer wants a flat one
+    and a mixer with C channels wants (n, C), so every sound failed to build,
+    the failure was swallowed, and the game has been silent."""
+    import numpy as np
+    import pygame
+    flat = np.asarray(samples, dtype='int16').reshape(-1)
+    info = pygame.mixer.get_init()
+    channels = int(info[2]) if info else 1
+    if channels <= 1:
+        return pygame.sndarray.make_sound(flat)
+    return pygame.sndarray.make_sound(np.ascontiguousarray(np.repeat(flat.reshape(-1, 1), channels, axis=1)))
+
 
 def init() -> bool:
     """
@@ -138,8 +154,17 @@ def init() -> bool:
     try:
         import pygame
         import numpy  # noqa -- just checking availability
-        if not pygame.mixer.get_init():
-            pygame.mixer.init(frequency=_SAMPLE_RATE, size=-16, channels=1, buffer=512)
+        # pygame.init() has already opened the mixer at the device's own
+        # settings; the tones here are written for _SAMPLE_RATE, so reopen it
+        # (at another rate they would play at the wrong pitch).
+        _now = pygame.mixer.get_init()
+        if not _now or _now[0] != _SAMPLE_RATE:
+            try:
+                pygame.mixer.quit()
+                pygame.mixer.init(frequency=_SAMPLE_RATE, size=-16, channels=1, buffer=512)
+            except Exception:
+                if not pygame.mixer.get_init():
+                    pygame.mixer.init()
     except Exception:
         _ENABLED = False
         return False

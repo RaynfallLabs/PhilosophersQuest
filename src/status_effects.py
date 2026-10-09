@@ -648,6 +648,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                     player.apply_stat_bonus(stat, -1)
                     # Signal for main.py to dispatch the Paracelsus quirk hook.
                     messages.append((f'_disease_drain:{stat}:1', 'info'))
+                    if stat == 'STR':        # what a potion of restore strength gives back
+                        player._str_lost_to_disease = int(getattr(player, '_str_lost_to_disease', 0) or 0) + 1
                     messages.append((f'The disease saps your strength! {stat} -1.', 'danger'))
 
         elif effect == 'strangulation':

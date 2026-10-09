@@ -123,6 +123,21 @@ from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa
                          wander_alive_cap)
 
 
+def _stored_floors(lm):
+    """Each stored floor of a LevelManager, as a dict the load migrations
+    understand. They asked for `lm.levels`, which has never existed (floors
+    are kept in `_saved` as (dungeon, monsters, items)), so every migration
+    skipped every floor but the one the player stood on."""
+    out = []
+    for val in (getattr(lm, '_saved', None) or {}).values():
+        if isinstance(val, dict):
+            out.append(val)
+        elif isinstance(val, (tuple, list)) and len(val) >= 3:
+            out.append({'dungeon': val[0], 'monsters': val[1], 'items': val[2],
+                        'ground_items': val[2]})
+    return out
+
+
 RING_FEAR_CHANCE = 0.40        # Helm of Achilles: a monster's chance to flee on first sight
 DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until woken (the status cap of 60 woke them all on a timer)
 
@@ -1020,7 +1035,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             fix(item)
         lm = state.get('level_mgr')
         if lm:
-            for lvl_data in getattr(lm, 'levels', {}).values():
+            for lvl_data in _stored_floors(lm):
                 for item in lvl_data.get('ground_items', []) or []:
                     fix(item)
         # Carry identified-TYPE knowledge across the collapse: an old save still
@@ -1111,7 +1126,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             walk(item)
         lm = state.get('level_mgr')
         if lm:
-            for lvl_data in getattr(lm, 'levels', {}).values():
+            for lvl_data in _stored_floors(lm):
                 for item in lvl_data.get('ground_items', []) or []:
                     walk(item)
 
@@ -1148,7 +1163,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Stored levels in level_mgr
         lm = state.get('level_mgr')
         if lm:
-            for lvl_data in getattr(lm, 'levels', {}).values():
+            for lvl_data in _stored_floors(lm):
                 for item in lvl_data.get('ground_items', []):
                     migrate(item)
 
@@ -1204,7 +1219,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         total += _migrate_list(state.get('ground_items'))
         lm = state.get('level_mgr')
         if lm:
-            for lvl_data in getattr(lm, 'levels', {}).values():
+            for lvl_data in _stored_floors(lm):
                 total += _migrate_list(lvl_data.get('ground_items'))
         if total > 0:
             print(f'[Migration] Translated {total} legacy ingredients to Assorted Monster Parts')
@@ -1626,7 +1641,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if player_has_passive(self.player, 'death_omen_mark') and self.monsters:
                 _best = max(
                     (m for m in self.monsters if m.alive
-                     and not getattr(m, 'is_npc', False) and not getattr(m, 'peaceful', False)
+                     and not getattr(m, 'is_allied', False)
+                     and not getattr(m, '_npc_encounter_tag', None)
+                     and not getattr(m, '_flavor_encounter_tag', None)
                      and getattr(m, 'attacks', None)),
                     key=lambda m: getattr(m, 'min_level', 0),
                     default=None,
@@ -7107,7 +7124,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'lines':  lines,
             'code':   None,
         }
-        self.popup_next_state = self.state if self.state != STATE_STORY_POPUP else STATE_PLAYER
+        # A popup raised while another is up returns to where the FIRST one
+        # was going. It fell back to plain play, so two traits unlocking on
+        # one answer dropped the player out of an open quiz.
+        if self.state != STATE_STORY_POPUP:
+            self.popup_next_state = self.state
         self.state = STATE_STORY_POPUP
 
 

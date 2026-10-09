@@ -152,6 +152,8 @@ celerybeat.pid
 env/
 venv/
 ENV/
+# (the art tool that draws the dungeon tiles lives in a folder called env)
+!tools/content/art/env/
 env.bak/
 venv.bak/
 

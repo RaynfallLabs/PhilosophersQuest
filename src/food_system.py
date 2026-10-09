@@ -1049,8 +1049,11 @@ def drink_potion(player, potion) -> list[str]:
 
     elif effect == 'restore_str':
         # Restore STR to base value (undoes disease drain)
-        base_str = getattr(player, '_base_STR', player.STR)
-        loss = base_str - player.STR
+        # What disease took, as the disease tick records it. This read
+        # `_base_STR`, which nothing ever set: the one cure in the game for
+        # drained Strength always said "already at its peak".
+        loss = int(getattr(player, '_str_lost_to_disease', 0) or 0)
+        player._str_lost_to_disease = 0
         if loss > 0:
             player.apply_stat_bonus('STR', loss)
             messages.append(f"Strength floods back into your muscles. STR +{loss}.")
@@ -1151,6 +1154,7 @@ def drink_potion(player, potion) -> list[str]:
         else:
             amt = 2 if buc == 'cursed' else 1
             player.apply_stat_bonus('STR', -amt)
+            player._str_lost_to_disease = int(getattr(player, '_str_lost_to_disease', 0) or 0) + amt
             messages.append(f"Something vital drains away. STR -{amt}!")
 
     elif effect == 'drain_con':
