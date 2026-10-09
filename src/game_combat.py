@@ -647,6 +647,192 @@ class CombatMixin:
     # On-kill side effects
     # ------------------------------------------------------------------
 
+    def _answer_a_killing_blow(self):
+        """Every ward against death, tried in order, when the player has been
+        brought to 0 health by anything from outside: a monster, a spell, a
+        trap, poison, a curse. (Not hunger: Player.is_dead does not call this
+        for starvation.)
+
+        These lived inside the monster-attack loop, so they answered a
+        monster's blow and nothing else: poison, a trap or a chest's needle
+        killed straight through the Amulet of Life Saving, the Jade Cicada and
+        Joan's breastplate, each of which says it stops a killing blow."""
+        if self.player.hp > 0:
+            return
+        # Jade Cicada: death save (once per floor).
+        # death_save_bonus (chain-equip) adds to the d20 roll determining
+        # whether non-Cicada death-saves succeed — and `life_save_resets_per_floor`
+        # refreshes the `life_save` status effect each floor.
+        if self.player.hp <= 0 and not getattr(self, '_death_save_used', False):
+            for _acc in self.player.equipped_accessories:
+                if getattr(_acc, 'death_save', False):
+                    self.player.hp = 1
+                    self._death_save_used = True
+                    self.add_message("The jade cicada cracks — but holds! You cling to life!", 'success')
+                    _snd.play('player_healed')
+                    break
+
+        # Chain-equip passive: reassembly (Tyet of Isis T5) — once per run,
+        # restore to full HP + 10 turns regen on lethal damage.
+        if self.player.hp <= 0:
+            try:
+                from chain_passives import consume_run_passive
+                if consume_run_passive(self.player, 'reassembly'):
+                    self.player.hp = self.player.max_hp
+                    self.player._reassembly_regen_remaining = 10
+                    self.add_message(
+                        "The Tyet of Isis reassembles you from death!", 'success')
+            except ImportError:
+                pass
+
+        # Breastplate of Joan (maid_does_not_fall): per-floor death save —
+        # first lethal hit each floor heals back to 1 HP. Joan fought
+        # wounded at Orléans, Patay, Reims; "could not protect against
+        # what God willed" but kept her standing through three campaigns.
+        if self.player.hp <= 0:
+            try:
+                from armor_procs import consume_floor_charge
+                if consume_floor_charge(self.player, 'maid_does_not_fall'):
+                    self.player.hp = 1
+                    self.add_message(
+                        "BY COMMAND OF GOD — the Maid does not fall! You stand at 1 HP.",
+                        'success')
+                    _snd.play('player_healed')
+            except ImportError:
+                pass
+
+        # Chain-equip passive: second_beheading_returns (Green Knight's Plate).
+        # On death, revive at full HP next floor; armor is broken.
+        if self.player.hp <= 0:
+            try:
+                from chain_passives import (
+                    consume_run_passive, find_passive_item,
+                )
+                if consume_run_passive(self.player, 'second_beheading_returns'):
+                    self.player.hp = self.player.max_hp
+                    self.add_message(
+                        "GREEN KNIGHT'S OATH: your second beheading returns!", 'success')
+                    # Break the armor: clear its chain bonuses
+                    _src = find_passive_item(self.player, 'second_beheading_returns')
+                    if _src is not None and _src in self.player.armor_slots:
+                        idx = self.player.armor_slots.index(_src)
+                        self.player.armor_slots[idx] = None
+                        self.player.shed_worn_grants(_src)
+            except ImportError:
+                pass
+
+        # Chain-equip passive: doom_of_the_gods (Armor of Ragnarok T5).
+        # On player death, fire a massive AoE blast — last stand against everyone.
+        if self.player.hp <= 0:
+            try:
+                from chain_passives import (
+                    consume_run_passive, find_passive_item,
+                )
+                _src = find_passive_item(self.player, 'doom_of_the_gods')
+                if _src is not None and consume_run_passive(self.player, 'doom_of_the_gods'):
+                    # The world burns and one walks out of it. Each foe
+                    # near loses a share of ITS OWN health (a named foe
+                    # a tenth of that); the wearer is left at 1; the
+                    # armor is spent. It used to blast for the wearer's
+                    # max health, a sixth of a deep monster's, announce
+                    # them "annihilated", and leave the wearer dead.
+                    from floor_curve import wound
+                    px, py = self.player.x, self.player.y
+                    _hits = _kills = 0
+                    for mm in list(self.monsters):
+                        if not mm.alive or abs(mm.x - px) + abs(mm.y - py) > 6:
+                            continue
+                        _named = bool(getattr(mm, 'is_boss', False)
+                                      or 'legendary' in (getattr(mm, 'tags', None) or ()))
+                        mm.take_damage(wound(DOOM_SHARE, mm.max_hp, named=_named))
+                        _hits += 1
+                        if not mm.alive:
+                            _kills += 1
+                            self._on_monster_killed(mm)
+                        else:
+                            # Whatever lives through it is thrown down
+                            # for DOOM_STAGGER turns: without this the
+                            # next foe in the same turn finished the
+                            # wearer and the armor bought nothing.
+                            mm.status_effects['paralyzed'] = max(
+                                int(mm.status_effects.get('paralyzed', 0) or 0), DOOM_STAGGER)
+                    self.player.hp = 1
+                    if _hits:
+                        self.add_message(
+                            f"DOOM OF THE GODS! Your armor erupts: {_hits} "
+                            f"{'foe is' if _hits == 1 else 'foes are'} burned, {_kills} destroyed, the rest thrown down. "
+                            "You stand in the ash with 1 health.", 'success')
+                    else:
+                        self.add_message(
+                            "DOOM OF THE GODS! Your armor erupts and is gone. "
+                            "You stand in the ash with 1 health.", 'success')
+                    if _src in self.player.armor_slots:
+                        idx = self.player.armor_slots.index(_src)
+                        self.player.armor_slots[idx] = None
+                    self.player.shed_worn_grants(_src)
+            except ImportError:
+                pass
+
+        # Chain-equip passive: psychopomp_step (Winged Sandals of Hermes T5).
+        # On death, ascend one floor with 1 HP. Once per run.
+        if self.player.hp <= 0 and self.dungeon_level > 1:
+            try:
+                from chain_passives import consume_run_passive
+                if consume_run_passive(self.player, 'psychopomp_step'):
+                    self.player.hp = 1
+                    self.add_message(
+                        "WINGED SANDALS OF HERMES: a psychopomp's step pulls you back!", 'success')
+                    self._change_level(self.dungeon_level - 1, enter_from_top=False)
+            except ImportError:
+                pass
+
+        # Ankh of Isis: resurrect on death (consumes the item).
+        if self.player.hp <= 0:
+            for _acc in self.player.equipped_accessories:
+                if getattr(_acc, 'resurrect_on_death', False):
+                    self.player.hp = max(1, self.player.max_hp // 2)
+                    # Clear the slot that held the Ankh
+                    if self.player.amulet_slot is _acc:
+                        self.player.amulet_slot = None
+                    else:
+                        for _i, _r in enumerate(self.player.accessory_slots):
+                            if _r is _acc:
+                                self.player.accessory_slots[_i] = None
+                                break
+                    self.add_message(
+                        "The Ankh of Isis shatters! Isis breathes life back into you!",
+                        'success')
+                    self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
+                    _snd.play('player_healed')
+                    break
+
+        # Life Save: if the blow was fatal, survive at 1 HP (burns the amulet)
+        if self.player.hp <= 0 and self.player.has_effect('life_save'):
+            self.player.hp = 1
+            del self.player.status_effects['life_save']
+            # The thing that gave it is spent with it. It was not, so
+            # taking Excalibur or the amulet off and putting it back
+            # on bought another life every time.
+            _src = None
+            for _it in ([self.player.weapon, getattr(self.player, 'ranged_weapon', None),
+                         self.player.shield, getattr(self.player, 'amulet_slot', None),
+                         getattr(self.player, 'belt_slot', None)]
+                        + list(self.player.armor_slots) + list(self.player.accessory_slots)):
+                if _it is None:
+                    continue
+                if getattr(_it, 'on_equip_status', '') == 'life_save':
+                    _it.on_equip_status = ''
+                    _src = _src or _it
+                _fx = getattr(_it, 'effects', None)
+                if isinstance(_fx, dict) and _fx.get('status') == 'life_save':
+                    _it.effects = {k: v for k, v in _fx.items() if k != 'status'}
+                    _src = _src or _it
+            self.add_message(
+                f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
+                "Its life-saving magic is spent.", 'success'
+            )
+            _snd.play('player_healed')
+
     def _on_monster_killed(self, monster, *, chain_score: int = 0, ranged: bool = False,
                            unarmed: bool = False, hp_pct_before: float | None = None):
         """Central handler for ALL monster kills: treasure, corpse, boss popup, seal tracking,
@@ -2458,179 +2644,8 @@ class CombatMixin:
                         except ImportError:
                             pass
 
-                # Jade Cicada: death save (once per floor).
-                # death_save_bonus (chain-equip) adds to the d20 roll determining
-                # whether non-Cicada death-saves succeed — and `life_save_resets_per_floor`
-                # refreshes the `life_save` status effect each floor.
-                if self.player.hp <= 0 and not getattr(self, '_death_save_used', False):
-                    for _acc in self.player.equipped_accessories:
-                        if getattr(_acc, 'death_save', False):
-                            self.player.hp = 1
-                            self._death_save_used = True
-                            self.add_message("The jade cicada cracks — but holds! You cling to life!", 'success')
-                            _snd.play('player_healed')
-                            break
-
-                # Chain-equip passive: reassembly (Tyet of Isis T5) — once per run,
-                # restore to full HP + 10 turns regen on lethal damage.
-                if self.player.hp <= 0:
-                    try:
-                        from chain_passives import consume_run_passive
-                        if consume_run_passive(self.player, 'reassembly'):
-                            self.player.hp = self.player.max_hp
-                            self.player._reassembly_regen_remaining = 10
-                            self.add_message(
-                                "The Tyet of Isis reassembles you from death!", 'success')
-                    except ImportError:
-                        pass
-
-                # Breastplate of Joan (maid_does_not_fall): per-floor death save —
-                # first lethal hit each floor heals back to 1 HP. Joan fought
-                # wounded at Orléans, Patay, Reims; "could not protect against
-                # what God willed" but kept her standing through three campaigns.
-                if self.player.hp <= 0:
-                    try:
-                        from armor_procs import consume_floor_charge
-                        if consume_floor_charge(self.player, 'maid_does_not_fall'):
-                            self.player.hp = 1
-                            self.add_message(
-                                "BY COMMAND OF GOD — the Maid does not fall! You stand at 1 HP.",
-                                'success')
-                            _snd.play('player_healed')
-                    except ImportError:
-                        pass
-
-                # Chain-equip passive: second_beheading_returns (Green Knight's Plate).
-                # On death, revive at full HP next floor; armor is broken.
-                if self.player.hp <= 0:
-                    try:
-                        from chain_passives import (
-                            consume_run_passive, find_passive_item,
-                        )
-                        if consume_run_passive(self.player, 'second_beheading_returns'):
-                            self.player.hp = self.player.max_hp
-                            self.add_message(
-                                "GREEN KNIGHT'S OATH: your second beheading returns!", 'success')
-                            # Break the armor: clear its chain bonuses
-                            _src = find_passive_item(self.player, 'second_beheading_returns')
-                            if _src is not None and _src in self.player.armor_slots:
-                                idx = self.player.armor_slots.index(_src)
-                                self.player.armor_slots[idx] = None
-                                self.player.shed_worn_grants(_src)
-                    except ImportError:
-                        pass
-
-                # Chain-equip passive: doom_of_the_gods (Armor of Ragnarok T5).
-                # On player death, fire a massive AoE blast — last stand against everyone.
-                if self.player.hp <= 0:
-                    try:
-                        from chain_passives import (
-                            consume_run_passive, find_passive_item,
-                        )
-                        _src = find_passive_item(self.player, 'doom_of_the_gods')
-                        if _src is not None and consume_run_passive(self.player, 'doom_of_the_gods'):
-                            # The world burns and one walks out of it. Each foe
-                            # near loses a share of ITS OWN health (a named foe
-                            # a tenth of that); the wearer is left at 1; the
-                            # armor is spent. It used to blast for the wearer's
-                            # max health, a sixth of a deep monster's, announce
-                            # them "annihilated", and leave the wearer dead.
-                            from floor_curve import wound
-                            px, py = self.player.x, self.player.y
-                            _hits = _kills = 0
-                            for mm in list(self.monsters):
-                                if not mm.alive or abs(mm.x - px) + abs(mm.y - py) > 6:
-                                    continue
-                                _named = bool(getattr(mm, 'is_boss', False)
-                                              or 'legendary' in (getattr(mm, 'tags', None) or ()))
-                                mm.take_damage(wound(DOOM_SHARE, mm.max_hp, named=_named))
-                                _hits += 1
-                                if not mm.alive:
-                                    _kills += 1
-                                    self._on_monster_killed(mm)
-                                else:
-                                    # Whatever lives through it is thrown down
-                                    # for DOOM_STAGGER turns: without this the
-                                    # next foe in the same turn finished the
-                                    # wearer and the armor bought nothing.
-                                    mm.status_effects['paralyzed'] = max(
-                                        int(mm.status_effects.get('paralyzed', 0) or 0), DOOM_STAGGER)
-                            self.player.hp = 1
-                            if _hits:
-                                self.add_message(
-                                    f"DOOM OF THE GODS! Your armor erupts: {_hits} "
-                                    f"{'foe is' if _hits == 1 else 'foes are'} burned, {_kills} destroyed, the rest thrown down. "
-                                    "You stand in the ash with 1 health.", 'success')
-                            else:
-                                self.add_message(
-                                    "DOOM OF THE GODS! Your armor erupts and is gone. "
-                                    "You stand in the ash with 1 health.", 'success')
-                            if _src in self.player.armor_slots:
-                                idx = self.player.armor_slots.index(_src)
-                                self.player.armor_slots[idx] = None
-                            self.player.shed_worn_grants(_src)
-                    except ImportError:
-                        pass
-
-                # Chain-equip passive: psychopomp_step (Winged Sandals of Hermes T5).
-                # On death, ascend one floor with 1 HP. Once per run.
-                if self.player.hp <= 0 and self.dungeon_level > 1:
-                    try:
-                        from chain_passives import consume_run_passive
-                        if consume_run_passive(self.player, 'psychopomp_step'):
-                            self.player.hp = 1
-                            self.add_message(
-                                "WINGED SANDALS OF HERMES: a psychopomp's step pulls you back!", 'success')
-                            self._change_level(self.dungeon_level - 1, enter_from_top=False)
-                    except ImportError:
-                        pass
-
-                # Ankh of Isis: resurrect on death (consumes the item).
-                if self.player.hp <= 0:
-                    for _acc in self.player.equipped_accessories:
-                        if getattr(_acc, 'resurrect_on_death', False):
-                            self.player.hp = max(1, self.player.max_hp // 2)
-                            # Clear the slot that held the Ankh
-                            if self.player.amulet_slot is _acc:
-                                self.player.amulet_slot = None
-                            else:
-                                for _i, _r in enumerate(self.player.accessory_slots):
-                                    if _r is _acc:
-                                        self.player.accessory_slots[_i] = None
-                                        break
-                            self.add_message(
-                                "The Ankh of Isis shatters! Isis breathes life back into you!",
-                                'success')
-                            self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
-                            _snd.play('player_healed')
-                            break
-
-                # Life Save: if the blow was fatal, survive at 1 HP (burns the amulet)
-                if self.player.hp <= 0 and self.player.has_effect('life_save'):
-                    self.player.hp = 1
-                    del self.player.status_effects['life_save']
-                    # The thing that gave it is spent with it. It was not, so
-                    # taking Excalibur or the amulet off and putting it back
-                    # on bought another life every time.
-                    _src = None
-                    for _it in ([self.player.weapon, getattr(self.player, 'ranged_weapon', None),
-                                 self.player.shield, getattr(self.player, 'amulet_slot', None),
-                                 getattr(self.player, 'belt_slot', None)]
-                                + list(self.player.armor_slots) + list(self.player.accessory_slots)):
-                        if _it is None:
-                            continue
-                        if getattr(_it, 'on_equip_status', '') == 'life_save':
-                            _it.on_equip_status = ''
-                            _src = _src or _it
-                        _fx = getattr(_it, 'effects', None)
-                        if isinstance(_fx, dict) and _fx.get('status') == 'life_save':
-                            _it.effects = {k: v for k, v in _fx.items() if k != 'status'}
-                            _src = _src or _it
-                    self.add_message(
-                        f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
-                        "Its life-saving magic is spent.", 'success'
-                    )
-                    _snd.play('player_healed')
+                # Every ward against death (see _answer_a_killing_blow).
+                self._answer_a_killing_blow()
 
                 # Reflecting: negate 50% of newly applied status effects
                 _new_effects = set(self.player.status_effects.keys()) - _effects_before

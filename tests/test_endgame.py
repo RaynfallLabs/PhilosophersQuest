@@ -137,7 +137,7 @@ def test_no_monster_dies_unnoticed():
     import types
     main = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
     i = main.index('    def _advance_turn(self):')
-    assert 'self._reap_unnoticed_kills()' in main[i:i + 120]
+    assert 'self._reap_unnoticed_kills()' in main[i:i + 320]
     j = main.index('    def _reap_unnoticed_kills(self):')
     ns = {}
     body = main[j:i]

@@ -3553,6 +3553,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     m._kill_handled = True
 
     def _advance_turn(self):
+        self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._reap_unnoticed_kills()
         self.turn_count += 1
         if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0:
@@ -4697,7 +4698,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             dmg = self.player.take_damage(
                 _of_health(STARVE_SHARE, 1, self.player.max_hp), 'starvation')
             self.add_message(f"Starving! You take {dmg} damage.", 'danger')
-            if self.player.is_dead():
+            self.player._no_ward = True          # a ward stops a blow, not hunger
+            try:
+                _starved = self.player.is_dead()
+            finally:
+                self.player._no_ward = False
+            if _starved:
                 self.defeat_reason = 'starved'
                 self._on_game_over()
                 self.state = STATE_DEAD

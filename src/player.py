@@ -361,6 +361,22 @@ class Player:
     def is_dead(self) -> bool:
         if self.immortal and self.hp <= 0:
             self.hp = self.max_hp   # snap back to full health instantly
+        # The game's wards (life save, the Jade Cicada, Joan's breastplate, the
+        # Ankh, the Tyet and the rest) answer a killing blow from any outside
+        # source. Hunger is not a blow: the starvation check sets _no_ward.
+        if (self.hp <= 0 and not self.immortal and not getattr(self, '_no_ward', False)
+                and not getattr(self, '_warding', False)):
+            _g = getattr(self, '_combat_game_ref', None)
+            if _g is not None and hasattr(_g, '_answer_a_killing_blow'):
+                self._warding = True
+                try:
+                    _g._answer_a_killing_blow()
+                except Exception:
+                    pass
+                finally:
+                    self._warding = False
+                if self.hp > 0:
+                    return False
         # Harvest+Cook redesign trophies (2026-05-31):
         # Asmodeus's Pact-Blood: one-time death save. When the player would
         # die, the contract is consumed instead — full HP restore.
@@ -716,6 +732,8 @@ class Player:
         loss). It is re-set on the next combat, so dropping it on save is safe."""
         state = self.__dict__.copy()
         state.pop('_combat_game_ref', None)
+        state.pop('_warding', None)
+        state.pop('_no_ward', None)
         # Transient bound-method hook set by Game (one-cosmetic-per-item): stamps
         # the run's appearance on accessories entering the pack. Unpicklable;
         # re-set on load. Dropping it on save keeps the player picklable.
