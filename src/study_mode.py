@@ -100,6 +100,13 @@ class StudyMode:
                             if not self._questions:
                                 self._questions = all_qs[:]
                             random.shuffle(self._questions)
+                            # ... and each question's choices. The banks store
+                            # the answer first for nearly every question and
+                            # only the order of QUESTIONS was shuffled, so in
+                            # Study Mode the right answer was always choice [1].
+                            self._questions = [
+                                dict(_q, choices=random.sample(list(_q['choices']), len(_q['choices'])))
+                                for _q in self._questions]
                         except Exception:
                             self._questions = []
                         self._idx = 0
