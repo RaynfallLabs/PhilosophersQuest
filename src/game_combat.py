@@ -790,7 +790,7 @@ class CombatMixin:
             # Every trait point still held for a deeper floor comes in now.
             for _stat, _n in self.player.pay_quirk_stats_owed(everything=True):
                 self.add_message(
-                    f"A Trait You Earned Comes Into Its Own: {_stat} +{_n}.", 'success')
+                    f"A trait you earned comes into its own: {_stat} +{_n}.", 'success')
         # Seal demon: track broken seal
         if getattr(monster, 'is_seal_demon', False):
             seal_id = 'seal_of_' + monster.kind.replace('seal_demon_', '')

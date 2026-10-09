@@ -871,7 +871,8 @@ class RenderMixin:
                 id_text = _identify_status_label(idl)
             except Exception:
                 id_text = "Unknown"
-            meta = f"{getattr(item, 'item_class', 'item')}   {getattr(item, 'slot', getattr(item, 'item_class', 'item'))}   wt {getattr(item, 'weight', 0):g}   {id_text}"
+            _kind = str(getattr(item, 'slot', None) or getattr(item, 'item_class', 'item'))
+            meta = f"{_kind.replace('_', ' ').title()}   Wt {getattr(item, 'weight', 0):g}   {id_text}"
             text(meta, font_tiny, FP.FADED_TEXT, r.x + 68, r.bottom - 15)
             y += pack_row_h
 
@@ -4101,7 +4102,7 @@ class RenderMixin:
             self.screen.blit(line, (bx + (bw - line.get_width()) // 2, y))
 
         hint = font_hint.render(
-            "Press 1, 2 Or 3 To Take One  //  The Other Two Are Lost For Good",
+            "Press 1, 2 or 3 to take one  //  the other two are lost for good",
             True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
 
@@ -4143,7 +4144,7 @@ class RenderMixin:
             y += font_body.get_height() + 16
 
         hint = font_hint.render(
-            "Press The Number To Pray  //  Esc: Rise Without Praying",
+            "Press the number to pray  //  Esc: rise without praying",
             True, FP.HINT_TEXT)
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 28))
 
@@ -6617,7 +6618,7 @@ class RenderMixin:
         panel = self._ui_modal_panel("COMMAND REFERENCE",
                                      border_color=FP.GOLD,
                                      max_w=1380,
-                                     max_h=620)
+                                     max_h=760)
         body = pygame.Rect(panel.x + 24, panel.y + 72, panel.w - 48,
                            panel.h - 124)
 
@@ -6641,7 +6642,10 @@ class RenderMixin:
             pygame.draw.line(self.screen, FP.GOLD_DARK,
                              (rect.x, rect.y + 24), (rect.right, rect.y + 24), 1)
             y = rect.y + 34
-            row_h = max(28, (rect.bottom - y) // max(1, len(commands)))
+            # every row is shown: a small window makes the rows shorter
+            # (they used to stop at 28px and drop whatever did not fit, so
+            # "R: Read" was never listed)
+            row_h = max(18, (rect.bottom - y) // max(1, len(commands)))
             key_w = 74 if col_w < 360 else 88
             for key_label, desc, color in commands:
                 if y + row_h > rect.bottom + 2:

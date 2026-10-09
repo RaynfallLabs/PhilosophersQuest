@@ -86,7 +86,7 @@ class EncountersMixin:
                 self.monsters.remove(cow_monster)
             except (ValueError, AttributeError):
                 pass
-            self.add_message("The Cow Gives You A Long Look And Wanders Off.", 'info')
+            self.add_message("The cow gives you a long look and wanders off.", 'info')
             return
         self._active_cow = cow_monster
         self._cow_dialog_phase = 'options'

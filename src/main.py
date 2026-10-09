@@ -1300,14 +1300,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _was_deepest, self.player.deepest_floor_reached)
             if _learned > 0:
                 self.add_message(
-                    f"The Dungeon Has Taught You Something. Wisdom +{_learned}. "
-                    f"(The Combat Clock Is Now {self.player.combat_clock()} Seconds.)",
+                    f"The dungeon has taught you something. Wisdom +{_learned}. "
+                    f"(The combat clock is now {self.player.combat_clock()} seconds.)",
                     'success')
         # Trait points held back by the allowance come in with new depth.
         if self.player.deepest_floor_reached > _was_deepest:
             for _stat, _n in self.player.pay_quirk_stats_owed():
                 self.add_message(
-                    f"A Trait You Earned Comes Into Its Own: {_stat} +{_n}.", 'success')
+                    f"A trait you earned comes into its own: {_stat} +{_n}.", 'success')
         # Fafnir's Heart trophy (2026-05-31): +2 max HP each NEW deepest floor.
         if self.player.deepest_floor_reached > _was_deepest:
             _per_desc = int(getattr(self.player, '_fafnir_per_descent_hp', 0) or 0)
@@ -6055,7 +6055,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if not ok:
                     self.add_message(msg, 'warning')
                     return
-            dname = self._display_name(item)
+            dname = self._bare_name(item)        # "the A Dark Curved Blade" otherwise
             self.player._apply_equip(item)
             self.player.remove_from_inventory(item)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
@@ -7766,6 +7766,13 @@ def main():
     _start_h = min(layout.WINDOW_H, _di.current_h)
     layout.update(_start_w, _start_h)
     screen = pygame.display.set_mode((_start_w, _start_h), pygame.RESIZABLE)
+    # Below about 400x300 every panel computes a negative size and raises;
+    # below 1280x720 several screens run out of room. Hold the window there
+    # (or at the display's own size, on a smaller screen).
+    try:
+        pygame.display.set_window_minimum_size(min(1280, _di.current_w), min(720, _di.current_h))
+    except Exception:
+        pass
     pygame.display.set_caption("Philosopher's Quest")
     clock = pygame.time.Clock()
 

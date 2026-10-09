@@ -69,7 +69,7 @@ def test_a_traits_clock_seconds_become_counted_wisdom():
     assert p.get_quiz_timer('math') == 10 + 3
     qs._apply_within_caps(reward)                    # allowance (4) nearly spent
     assert p.WIS == wis + 4 and p.quirk_stat_owed == [['WIS', 2]]
-    assert any('Held For You' in m for m in msgs)
+    assert any('held for you' in m for m in msgs)
     assert p._quirk_grant is False
 
 

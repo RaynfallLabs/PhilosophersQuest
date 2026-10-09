@@ -19,6 +19,8 @@ constants owned exclusively by handlers in this module (``_MOVE_KEYS`` and
 """
 from __future__ import annotations
 
+import os
+
 import pygame
 
 import sound_system as _snd
@@ -86,7 +88,9 @@ class InputMixin:
         if key == pygame.K_F11:
             pygame.display.toggle_fullscreen()
             return True
-        if key == pygame.K_F2:
+        # The debug overlay (raw ids, monster health) is a developer's tool:
+        # it was live for every player in every state, quizzes included.
+        if key == pygame.K_F2 and os.environ.get('PQ_QA_MODE'):
             self._debug_overlay = not self._debug_overlay
             return True
 

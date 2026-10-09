@@ -1251,7 +1251,7 @@ class MenuMixin:
         if pid == 'iron_ration':
             # (It was the same +100 SP as Metabolic, three times as far to walk.)
             pl.restore_sp(pl.max_sp)
-            self.add_message(f"{label}: You Could March For A Week. (Stamina Full)", 'success')
+            self.add_message(f"{label}: you could march for a week. (Stamina full)", 'success')
 
         elif pid == 'metabolic':
             pl.restore_sp(100)

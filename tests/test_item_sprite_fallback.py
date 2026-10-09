@@ -16,11 +16,25 @@ def test_existing_material_sprite_resolves_directly():
     assert p and p.endswith('iron_maul.png') and os.path.exists(p)
 
 
-def test_tin_maul_falls_back_to_a_maul_sprite():
-    p = renderer._resolve_item_sprite_path('tin_maul')   # no tin_*.png exists
-    assert p is not None, 'tin_maul should fall back to a base sprite, not a glyph'
-    assert p.endswith('_maul.png') and os.path.exists(p)
-    assert os.path.basename(p) != 'tin_maul.png'         # because none exists
+def test_tin_maul_has_a_picture_of_its_own_now():
+    """Every material x template pair is drawn (2026-10-09); tin gear used to
+    borrow another material's picture."""
+    p = renderer._resolve_item_sprite_path('tin_maul')
+    assert p is not None and os.path.basename(p) == 'tin_maul.png' and os.path.exists(p)
+
+
+def test_a_material_item_without_art_still_falls_back_to_its_base():
+    """The fallback remains for anything added before its art is drawn."""
+    import renderer as r
+    mats = r._material_ids()
+    assert mats
+    saved = list(mats)
+    try:
+        mats.append('zzmadeup')
+        p = r._resolve_item_sprite_path('zzmadeup_maul')
+    finally:
+        mats[:] = saved
+    assert p is not None and p.endswith('_maul.png') and os.path.exists(p)
 
 
 def test_instantiate_tin_maul_has_expected_id():

@@ -996,7 +996,7 @@ class DivineMixin:
             # shelters the one who made it, long enough to strike.
             p.add_effect('shielded', prayers.DESPERATE_SHIELD_TURNS)
             self.add_message(
-                "Out Of The Depths You Cried, And Were Heard. "
+                "Out of the depths you cried, and were heard. "
                 "A Shield Stands Over You.", 'success')
         if chain >= 5:
             self._log_chronicle(

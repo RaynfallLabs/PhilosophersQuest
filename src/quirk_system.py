@@ -183,7 +183,7 @@ class QuirkSystem:
         owed = sum(int(a) for _s, a in (getattr(pl, 'quirk_stat_owed', None) or []))
         if owed > owed_before and hasattr(self.game, 'add_message'):
             self.game.add_message(
-                "Part Of This Trait's Gift Is Held For You: It Comes In As You Go Deeper.",
+                "Part of this trait's gift is held for you: it comes in as you go deeper.",
                 'info')
 
     def _award(self, qid: str, name: str, apply_fn):
