@@ -23,7 +23,7 @@ import renderer  # noqa: E402
 from dungeon import FLOOR, SECRET_DOOR, WALL  # noqa: E402
 
 TILES = os.path.join(ROOT, 'assets', 'tiles')
-PAINTINGS: set = set()        # the painted hero portraits are pixel art now (2026-10-09)
+PAINTINGS = {'player_ranger.png', 'player_wizard_f.png'}     # Brandon's painted portraits: kept as they are
 
 
 def _png_size(path):
