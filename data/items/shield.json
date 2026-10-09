@@ -1368,5 +1368,41 @@
     "max_enchant": 3,
     "containerLootTier": "rare",
     "floorSpawnWeight": {}
+  },
+  "hrungnirs_stone_shield": {
+    "name": "Hrungnir's Stone Shield",
+    "symbol": ")",
+    "color": [
+      150,
+      150,
+      150
+    ],
+    "weight": 16.0,
+    "min_level": 80,
+    "tier": 5,
+    "material": "legendary",
+    "ac_bonus": 6,
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "damage_resistances": {
+      "blunt": 0.6,
+      "slash": 0.8
+    },
+    "can_be_cursed": false,
+    "enchant_bonus": 0,
+    "unidentified_name": "a slab of grey stone with a grip cut into the back",
+    "lore": "Hrungnir came to his duel with Thor carrying a shield of stone as broad as a door. Thor's servant Thjalfi ran up and told him he was holding it wrong: Thor meant to come at him from under the ground. So the strongest of the giants laid his shield flat and stood on it, and Thor came from the front with the hammer. It is a very good shield. It does the most good held up.",
+    "floorSpawnWeight": {},
+    "is_unique": true,
+    "template_basis": "heavy_wooden",
+    "peak_floor": 82,
+    "spread": 10,
+    "peak_weight": 0.0,
+    "max_enchant": 3,
+    "identified": false,
+    "id_level": 0,
+    "value": 11000,
+    "containerLootTier": "rare",
+    "container_loot_tier": "rare"
   }
 }

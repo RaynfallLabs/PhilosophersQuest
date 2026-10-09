@@ -1657,6 +1657,10 @@ class CombatMixin:
 
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
+        # Health as the shot is loosed, for the traits that count kills made
+        # while badly hurt. Only a melee attack recorded it, so an archer's
+        # kills were judged on their health at their last sword swing.
+        self._combat_hp_pct_before = self.player.hp / max(1, self.player.max_hp)
         weapon = self.player.ranged_weapon
         ammo_type = weapon.requires_ammo
         ammo_item = None
@@ -2207,6 +2211,15 @@ class CombatMixin:
                     m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
+                # Perseus's trait counts every gaze or effect thrown back at its
+                # sender. Only the reflection aura's second chance (below) was
+                # counted: the Aegis turning Medusa's gaze, the thing the trait
+                # is named for, never was.
+                if getattr(self.player, '_reflected_back', False):
+                    self.player._reflected_back = False
+                    _qs_pers = getattr(self, 'quirk_system', None)
+                    if _qs_pers:
+                        _qs_pers.on_status_reflected()
                 _fury = m.fury_line() if m.alive else ''
                 if _fury:
                     self.add_message(_fury, 'warning')

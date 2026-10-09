@@ -645,6 +645,20 @@ class RenderMixin:
             if getattr(item, 'damage_resistances', None):
                 bits = ', '.join(f"{k.title()} x{v}" for k, v in item.damage_resistances.items())
                 lines.append(f"Resists {bits}")
+            if not isinstance(item, Weapon):
+                # What a named piece of armor does, in its own words, and the
+                # plain worn bonuses. These used to be told nowhere: the card
+                # of the Gauntlets of Mars said "No revealed special abilities".
+                if getattr(item, 'special', ''):
+                    lines.append(item.special)
+                if getattr(item, 'dodge_bonus', 0):
+                    lines.append(f"Dodge +{item.dodge_bonus:.0%}")
+                if getattr(item, 'toughness_bonus', 0):
+                    lines.append(f"Toughness +{item.toughness_bonus:.0%}")
+                if getattr(item, 'quiz_timer_bonus', 0):
+                    lines.append(f"Combat Clock +{int(item.quiz_timer_bonus)}s")
+                if getattr(item, 'chain_bonus', 0):
+                    lines.append(f"Every Chain That Lands Counts {int(item.chain_bonus)} Longer")
             fx = getattr(item, 'effects', None) or {}
             if fx:
                 if 'stat' in fx:

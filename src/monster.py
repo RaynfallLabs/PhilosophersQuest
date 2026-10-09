@@ -666,6 +666,7 @@ class Monster:
                     return 0, gaze_msg
             # Check mirror shield (Aegis): reflects gaze back
             elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
+                player._reflected_back = True      # read by game_combat for Perseus's trait
                 # She loses this turn and the next, and does NOT also attack.
                 # (It used to set 1 turn, which the next status tick removed
                 # before she ever lost an action, and then she hit anyway.)
@@ -1083,6 +1084,7 @@ class Monster:
         # Reflecting: 50% chance to bounce effect back at attacker
         if player.has_effect('reflecting') and random.random() < 0.50:
             self.add_effect(effect_id, duration)
+            player._reflected_back = True          # read by game_combat for Perseus's trait
             return f" The effect reflects back -- {the_name(self, lower=True)} is {effect_id.replace('_', ' ')}!"
         from status_effects import apply_debuff_with_save
         # DC scales gently with monster depth; data may override.

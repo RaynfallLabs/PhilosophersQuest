@@ -984,6 +984,16 @@ class Player:
     DODGE_PER_DEX = 0.0075        # chance per point of DEX above 10
     DEX_AC_CAP = 3                # most armor class Dexterity alone gives
     DODGE_CAP = 0.30
+    # Worn armor that says so adds to either, on top of what the stat gives,
+    # by at most this much in all.
+    GEAR_BONUS_CAP = 0.10
+
+    def _worn_bonus(self, attr: str) -> float:
+        total = 0.0
+        for piece in getattr(self, 'armor_slots', ()) or ():
+            if piece is not None:
+                total += float(getattr(piece, attr, 0.0) or 0.0)
+        return min(self.GEAR_BONUS_CAP, max(0.0, total))
 
     def starting_max_hp(self) -> int:
         """Health of a fresh character: 30 at Constitution 10, and HP_PER_CON
@@ -993,7 +1003,8 @@ class Player:
     def toughness(self) -> float:
         """Share of every blow a hardy body ignores (0 at CON 10)."""
         return max(0.0, min(self.TOUGHNESS_CAP,
-                            (int(self.CON) - 10) * self.TOUGHNESS_PER_CON))
+                            (int(self.CON) - 10) * self.TOUGHNESS_PER_CON)) \
+            + self._worn_bonus('toughness_bonus')
 
     def dodge_chance(self) -> float:
         """Chance to slip a blow that would have landed (0 at DEX 10). Rolled
@@ -1003,7 +1014,8 @@ class Player:
                                             'stunned', 'frozen', 'petrifying')):
             return 0.0
         return max(0.0, min(self.DODGE_CAP,
-                            (int(self.DEX) - 10) * self.DODGE_PER_DEX))
+                            (int(self.DEX) - 10) * self.DODGE_PER_DEX)) \
+            + self._worn_bonus('dodge_bonus')
 
     # ----- wisdom: what the dungeon teaches, and what prayer lends -----
 
@@ -1096,6 +1108,10 @@ class Player:
         shld = getattr(self, 'shield', None)
         if shld and getattr(shld, 'quiz_timer_bonus', 0) > 0:
             base += shld.quiz_timer_bonus
+        # Worn armor that steadies the hand (Wayland's gloves).
+        for piece in getattr(self, 'armor_slots', ()) or ():
+            if piece is not None:
+                base += int(getattr(piece, 'quiz_timer_bonus', 0) or 0)
         return base
 
     def get_identify_tier_reduction(self) -> int:

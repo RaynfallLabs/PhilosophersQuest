@@ -304,13 +304,13 @@ class QuirkSystem:
 
     def on_wait(self, near_monsters: bool):
         """Called when player presses '.' wait command."""
-        # Odin (#3): 12960 total waits
+        # Odin (#3): 1500 total waits
         self._inc('wait_total')
         if self._p('wait_total') >= 1500 and not self.is_unlocked('odin'):
             self._award('odin', "Odin's Vigil",
                         lambda pl: pl.add_effect('telepathy', -1))
 
-        # Buddha (#10): 500 waits near hostile monsters
+        # Buddha (#10): 150 waits near hostile monsters
         if near_monsters:
             self._inc('wait_near_monsters')
             if self._p('wait_near_monsters') >= 150 and not self.is_unlocked('buddha'):
@@ -319,22 +319,22 @@ class QuirkSystem:
 
     def on_move(self):
         """Called whenever player moves to a new tile."""
-        # Ahasverus (#38): 15000 tile moves -> permanent searching
+        # Ahasverus (#38): 8000 tile moves -> permanent searching
         self._inc('tile_moves')
         if self._p('tile_moves') >= 8000 and not self.is_unlocked('ahasverus'):
             self._award('ahasverus', "Ahasverus",
                         lambda pl: pl.add_effect('searching', -1))
-        # Wanderlust (#69): 20000 moves -> SP drain halved
+        # Wanderlust (#69): 14,000 moves -> SP drain halved
         if self._p('tile_moves') >= 14000 and not self.is_unlocked('wanderlust_q'):
             self._award('wanderlust_q', "The Endless Wanderer",
                         lambda pl: pl.quirk_progress.update({'wanderlust_active': True}))
         # Metabolic (#88 power): 5000 moves
         if self._p('tile_moves') >= 5000 and not self.is_unlocked('metabolic'):
             self._award_power('metabolic', "Metabolic Surge", lambda pl: None)
-        # Iron Ration (#80 power): 15000 moves
+        # Iron Ration (#80 power): 11,000 moves
         if self._p('tile_moves') >= 11000 and not self.is_unlocked('iron_ration'):
             self._award_power('iron_ration', "Iron Ration", lambda pl: None)
-        # Shadow Step (#81 power): 2500 moves while invisible
+        # Shadow Step (#81 power): 500 moves while invisible
         if self._pl.has_effect('invisible'):
             self._inc('invisible_moves')
             if self._p('invisible_moves') >= 500 and not self.is_unlocked('shadow_step'):
@@ -342,7 +342,7 @@ class QuirkSystem:
 
     def on_stair_use(self, new_level: int):
         """Called when player uses stairs (any direction)."""
-        # Cerberus (#49): 300 stair uses -> warning permanent
+        # Cerberus (#49): 120 stair uses -> warning permanent
         self._inc('stair_uses')
         if self._p('stair_uses') >= 120 and not self.is_unlocked('cerberus'):
             self._award('cerberus', "Cerberus",
@@ -415,10 +415,10 @@ class QuirkSystem:
                 if len(explored_set) >= 8 and not self.is_unlocked('theseus'):
                     self._award('theseus', "Theseus in the Labyrinth",
                                 lambda pl: pl.apply_stat_bonus('PER', 1))
-                # Ancestral Memory (#93 power): fully explore 10 floors
+                # Ancestral Memory (#93 power): fully explore 18 floors
                 if len(explored_set) >= 18 and not self.is_unlocked('ancestral_q'):
                     self._award_power('ancestral_q', "Ancestral Memory", lambda pl: None)
-                # Ibn Battuta (#57): fully explore 30 distinct floors
+                # Ibn Battuta (#57): fully explore 40 distinct floors
                 if len(explored_set) >= 40 and not self.is_unlocked('ibn_battuta'):
                     self._award('ibn_battuta', "Ibn Battuta's Road",
                                 self._timer_bonus('geography', 4))
@@ -428,7 +428,7 @@ class QuirkSystem:
                        while_hallucinating: bool, while_feared: bool,
                        wrong_this_session: int, score_this_session: int):
         """Called after every individual quiz answer."""
-        # Time Dilation (#86 power): 25 consecutive correct answers
+        # Time Dilation (#86 power): 50 consecutive correct answers
         if correct:
             self._inc('consecutive_correct')
             if self._p('consecutive_correct') >= 50 and not self.is_unlocked('time_dilation'):
@@ -442,7 +442,8 @@ class QuirkSystem:
             # under the zero-tolerance rule that ends a threshold quiz on the
             # first wrong. The new trigger honors the same spirit -- Cassandra
             # was doomed to be right and disbelieved, so "persistent through
-            # wrong answers" fits: accumulate 50 wrong answers across the run.
+            # wrong answers" fits: accumulate 100 wrong answers across the run
+            # (a clock running out is not one).
             self._inc('cassandra_wrong_total')
             if self._p('cassandra_wrong_total') >= 100 and not self.is_unlocked('cassandra'):
                 self._award('cassandra', "Cassandra's Persistence",
@@ -471,27 +472,27 @@ class QuirkSystem:
                     self._award('medusa', "Medusa's Gaze",
                                 lambda pl: pl.apply_stat_bonus('DEX', 2))
 
-            # Ramanujan (#56): 500 correct math answers in one run
+            # Ramanujan (#56): 2500 correct math answers in one run
             if subject == 'math':
                 self._inc('math_correct_run')
                 if self._p('math_correct_run') >= 2500 and not self.is_unlocked('ramanujan'):
                     self._award('ramanujan', "The Infinite Sum",
                                 self._timer_bonus('math', 5))
 
-            # Solomon (#64): 100 correct philosophy answers
+            # Solomon (#64): 150 correct philosophy answers
             if subject == 'philosophy':
                 self._inc('philosophy_correct_total')
                 if self._p('philosophy_correct_total') >= 150 and not self.is_unlocked('solomon_q'):
                     self._award('solomon_q', "Wisdom of Solomon",
                                 lambda pl: pl.apply_stat_bonus('WIS', 2))
 
-            # Sage's Counsel (#99 power): 50 correct history answers
+            # Sage's Counsel (#99 power): 80 correct history answers
             if subject == 'history':
                 self._inc('history_correct_total')
                 if self._p('history_correct_total') >= 80 and not self.is_unlocked('sage_counsel'):
                     self._award_power('sage_counsel', "Sage's Counsel", lambda pl: None)
 
-            # Scholar's Focus (#82 power): 500 total correct answers
+            # Scholar's Focus (#82 power): 2000 total correct answers
             self._inc('total_correct_answers')
             if self._p('total_correct_answers') >= 2000 and not self.is_unlocked('focused_scholar'):
                 self._award_power('focused_scholar', "Scholar's Focus", lambda pl: None)
@@ -503,24 +504,24 @@ class QuirkSystem:
                 if self._p('mental_debuff_correct') >= 30 and not self.is_unlocked('mind_fortress'):
                     self._award_power('mind_fortress', "Mind Fortress", lambda pl: None)
 
-            # Galileo (#66): 100 correct science
+            # Galileo (#66): 150 correct science
             if subject == 'science':
                 self._inc('science_correct_total')
                 if self._p('science_correct_total') >= 150 and not self.is_unlocked('galileo'):
                     self._award('galileo', "Galileo's Heresy", self._timer_bonus('science', 3))
 
-            # Confucius (#61): 50 philosophy correct while blessed
+            # Confucius (#61): 15 philosophy correct while blessed
             if subject == 'philosophy' and self._pl.has_effect('blessed'):
                 self._inc('confucius_blessed_philosophy')
                 if self._p('confucius_blessed_philosophy') >= 15 and not self.is_unlocked('confucius'):
                     self._award('confucius', "The Analects", self._timer_bonus('philosophy', 4))
 
-            # Machiavelli (#72): 500 correct answers in one run
+            # Machiavelli (#72): 3000 correct answers in one run
             self._inc('machiavelli_run_correct')
             if self._p('machiavelli_run_correct') >= 3000 and not self.is_unlocked('machiavelli'):
                 self._award('machiavelli', "The Prince", self._all_timer_bonus(1))
 
-            # Ouroboros (#100 power): 1000 correct answers in one run
+            # Ouroboros (#100 power): 6000 correct answers in one run
             if self._p('total_correct_answers') >= 6000 and not self.is_unlocked('ouroboros'):
                 self._award_power('ouroboros', "The Infinite Circle", lambda pl: None)
 
@@ -544,7 +545,7 @@ class QuirkSystem:
                 self._award('archimedes', "Give Me a Lever",
                             lambda pl: pl.apply_stat_bonus('INT', 1))
 
-            # Hypatia (#74): 50 correct math AND 50 correct science
+            # Hypatia (#74): 250 correct math AND 60 correct science
             math_ok = self._p('math_correct_run', 0) >= 250
             sci50   = self._p('science_correct_total', 0) >= 60
             if math_ok and sci50 and not self.is_unlocked('hypatia'):
@@ -612,14 +613,14 @@ class QuirkSystem:
                 self._award('musashi', "Musashi's Empty Strike",
                             lambda pl: pl.quirk_progress.update({'musashi_active': True}))
 
-        # Valkyrie (#37): 25 ranged kills
+        # Valkyrie (#37): 60 ranged kills
         if ranged:
             self._inc('ranged_kills')
             if self._p('ranged_kills') >= 60 and not self.is_unlocked('valkyrie'):
                 self._award('valkyrie', "The Valkyrie's Eye",
                             lambda pl: pl.apply_stat_bonus('DEX', 1))
 
-        # Beowulf (#27): 10 unarmed wins
+        # Beowulf (#27): 25 unarmed wins
         if unarmed:
             self._inc('unarmed_wins')
             if self._p('unarmed_wins') >= 25 and not self.is_unlocked('beowulf'):
@@ -633,7 +634,7 @@ class QuirkSystem:
                 self._award('gawain', "Gawain's Bargain",
                             lambda pl: pl.apply_stat_bonus('CON', 1))
 
-        # Cu Chulainn (#43): 5 combat wins while feared
+        # Cu Chulainn (#43): 10 combat wins while feared
         # v2.15.0 audit fix: previously granted only STR+1 despite promising
         # the legendary Irish warp-spasm. Now grants STR+2 AND fear immunity
         # (grants the `fear_immune` status permanently). The full warp-spasm
@@ -648,13 +649,13 @@ class QuirkSystem:
                     pl.status_effects['fear_immune'] = -1  # -1 = permanent
                 self._award('cuchulainn', "Cu Chulainn's Riastrad", _riastrad)
 
-        # Kali (#45): 100 kills of same monster type
+        # Kali (#45): 25 kills of same monster type
         self._dict_inc('kali_kills', monster_kind)
         if self._dict_get('kali_kills', monster_kind) >= 25 and not self.is_unlocked('kali'):
             self._award('kali', "Kali's Dance",
                         self._timer_bonus('theology', 3))
 
-        # Thor (#26): 30 combats with same weapon
+        # Thor (#26): 150 combats with same weapon
         weapon = self._pl.weapon
         if weapon and not ranged:
             wid = weapon.id
@@ -668,12 +669,12 @@ class QuirkSystem:
                     pl.quirk_progress['thor_enchant_pending'] = True
                 self._award('thor', "Thor's Oath", _apply_thor)
 
-        # Athena (#24): see 50 distinct monster types
+        # Athena (#24): see 80 distinct monster types
         if len(getattr(self._pl, 'known_monster_ids', set())) >= 80 and not self.is_unlocked('athena'):
             self._award('athena', "Athena's Owl",
                         self._timer_bonus('history', 4))
 
-        # Caesar (#67): 300 kills in one run
+        # Caesar (#67): 750 kills in one run
         self._inc('caesar_kills')
         if self._p('caesar_kills') >= 750 and not self.is_unlocked('caesar'):
             def _apply_caesar(pl):
@@ -688,7 +689,7 @@ class QuirkSystem:
                 self._award('boudicca', "Boudicca's Fury",
                             lambda pl: pl.apply_stat_bonus('STR', 2))
 
-        # Spartacus (#55): 20 kills while any debuff is active
+        # Spartacus (#55): 50 kills while any debuff is active
         if any(self._pl.has_effect(e) for e in _DEBUFF_EFFECTS):
             self._inc('spartacus_kills')
             if self._p('spartacus_kills') >= 50 and not self.is_unlocked('spartacus'):
@@ -697,13 +698,13 @@ class QuirkSystem:
                     pl.apply_stat_bonus('CON', 1)
                 self._award('spartacus', "The Gladiator's Defiance", _apply_spartacus)
 
-        # Leonidas (#60): kill enemies on 30 distinct dungeon floors
+        # Leonidas (#60): kill enemies on 45 distinct dungeon floors
         self._set_add('leonidas_kill_floors', self.game.dungeon_level)
         if self._set_len('leonidas_kill_floors') >= 45 and not self.is_unlocked('leonidas'):
             self._award('leonidas', "The Last Stand",
                         lambda pl: pl.apply_stat_bonus('CON', 2))
 
-        # Battle Trance (#78 power): 200 total kills
+        # Battle Trance (#78 power): 350 total kills
         self._inc('battle_trance_kills')
         if self._p('battle_trance_kills') >= 350 and not self.is_unlocked('battle_trance'):
             self._award_power('battle_trance', "Battle Trance", lambda pl: None)
@@ -720,7 +721,7 @@ class QuirkSystem:
             if self._p('life_drain_kills') >= 25 and not self.is_unlocked('life_drain'):
                 self._award_power('life_drain', "Life Drain", lambda pl: None)
 
-        # War Cry (#90 power): 15 kills while feared
+        # War Cry (#90 power): 4 kills while feared
         if is_feared:
             self._inc('war_cry_kills')
             if self._p('war_cry_kills') >= 4 and not self.is_unlocked('war_cry'):
@@ -761,7 +762,7 @@ class QuirkSystem:
         else:
             self._sp('phoenix_was_low', False)
 
-        # Temporal Shield (#92 power): take 50 total hits
+        # Temporal Shield (#92 power): take 500 total hits
         self._inc('temporal_shield_hits')
         if self._p('temporal_shield_hits') >= 500 and not self.is_unlocked('temporal_shield'):
             self._award_power('temporal_shield', "Temporal Shield", lambda pl: None)
@@ -794,7 +795,7 @@ class QuirkSystem:
         if not success:
             return
 
-        # Enkidu (#31): harvest 20 distinct species
+        # Enkidu (#31): harvest 30 distinct species
         self._set_add('enkidu_harvested', monster_kind)
         if self._set_len('enkidu_harvested') >= 30 and not self.is_unlocked('enkidu'):
             self._award('enkidu', "Enkidu's Wildness",
@@ -824,7 +825,7 @@ class QuirkSystem:
                 self._award('tantalus', "Tantalus' Resolve",
                             lambda pl: pl.apply_stat_bonus('STR', 1))
 
-        # Persephone (#34): quality-5 meals from 5 distinct ingredient sources
+        # Persephone (#34): fine meals (quality 4 or better) from 5 distinct ingredient sources
         if quality >= 4 and ingredient_id:
             self._set_add('persephone_quality5', ingredient_id)
             if self._set_len('persephone_quality5') >= 5 and not self.is_unlocked('persephone'):
@@ -990,7 +991,7 @@ class QuirkSystem:
 
     def on_examine_used(self):
         """Called when the examine menu is opened."""
-        # Narcissus (#48): examine 30 times
+        # Narcissus (#48): examine 75 times
         self._inc('narcissus_examines')
         if self._p('narcissus_examines') >= 75 and not self.is_unlocked('narcissus'):
             self._award('narcissus', "Narcissus",
@@ -1064,7 +1065,7 @@ class QuirkSystem:
                 self._award('shiva', "Shiva's Third Eye",
                             self._timer_bonus('philosophy', 5))
 
-        # Fenrir (#44): 150 debuff turns total
+        # Fenrir (#44): 400 debuff turns total
         for eff in _DEBUFF_EFFECTS:
             if pl.has_effect(eff):
                 self._inc('fenrir_debuff_turns')

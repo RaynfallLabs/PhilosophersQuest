@@ -705,6 +705,14 @@ class Armor(Item):
         self.floor_spawn_weight: dict = defn.get('floor_spawn_weight', defn.get('floorSpawnWeight', {}))
         self.pet_regen_bonus: int    = int(defn.get('pet_regen_bonus', 0))
         self.chain_bonus: int        = int(defn.get('chain_bonus', 0))
+        # Plain worn bonuses, read where the number is used (nothing is
+        # applied on equip, so nothing can be left behind on unequip or load).
+        self.dodge_bonus: float      = float(defn.get('dodge_bonus', 0.0) or 0.0)       # Player.dodge_chance
+        self.toughness_bonus: float  = float(defn.get('toughness_bonus', 0.0) or 0.0)   # Player.toughness
+        self.quiz_timer_bonus: int   = int(defn.get('quiz_timer_bonus', 0) or 0)        # seconds on the combat clock
+        # One plain sentence saying what the piece does, shown on its card
+        # once it is identified.
+        self.special: str            = str(defn.get('special', '') or '')
         # Coat of Cú Chulainn: berserk at low HP
         self.berserk_trigger: bool   = bool(defn.get('berserk_trigger', False))
         self.berserk_hp_threshold: float = float(defn.get('berserk_hp_threshold', 0.25))
@@ -803,6 +811,7 @@ class Shield(Item):
         self.fire_reflect: float     = float(defn.get('fire_reflect', 0.0))
         # Ancile: bonus seconds on quiz timers
         self.quiz_timer_bonus: int   = int(defn.get('quiz_timer_bonus', 0))
+        self.special: str            = str(defn.get('special', '') or '')
         # True for named/legendary shields; controls spawn pool filtering.
         self.is_unique: bool         = bool(defn.get('is_unique', False))
         # Chain-equip fields (see Armor)

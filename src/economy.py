@@ -114,6 +114,15 @@ def price_encounter(encounter: dict) -> dict:
             for key in ('label', 'outcome'):
                 if isinstance(opt.get(key), str):
                     opt[key] = _requote(opt[key], changed)
+        # A choice that costs gold says so. Several did not ("Ask about
+        # treasure", 350 gold, shown only as a missing purse afterwards).
+        cost = opt.get('cost')
+        if isinstance(cost, dict) and cost.get('type') == 'gold':
+            amount = cost.get('amount', cost.get('max', cost.get('min')))
+            label = opt.get('label')
+            if (isinstance(amount, (int, float)) and amount > 0 and isinstance(label, str)
+                    and str(int(amount)) not in label and f'{int(amount):,}' not in label):
+                opt['label'] = f"{label.rstrip()} ({int(amount):,} Gold)"
     enc['_gold_priced'] = True
     return enc
 
