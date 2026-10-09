@@ -1415,7 +1415,10 @@ class InputMixin:
                 self._advance_turn()
             else:
                 self.add_message("No gold dropped.", 'info')
-            self.state = STATE_PLAYER
+            # (not over a death that turn just dealt: a poisoned hero who
+            # died while dropping gold got one more action and ended twice)
+            if self.state != STATE_DEAD:
+                self.state = STATE_PLAYER
             return
         if key == pygame.K_BACKSPACE:
             self.drop_gold_input = self.drop_gold_input[:-1]

@@ -1391,6 +1391,7 @@ class Player:
             self.hp = min(self.hp, self.max_hp)
         elif stat == 'STR':
             self.max_sp += amount
+            self.sp = min(self.sp, self.max_sp)        # stamina sat above its maximum after Strength was lost
         elif stat == 'INT':
             self.max_mp += amount
             self.mp = min(self.mp, self.max_mp)

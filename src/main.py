@@ -1242,6 +1242,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         for _m in self.monsters:
             if getattr(_m, 'recovers_when_left', False):
                 _m._left_at_turn = self.turn_count
+        # The dead are not kept: nothing ever removed a handled corpse-maker
+        # from the list (107 entries on one floor after a long stay, all saved).
+        self.monsters = [m for m in self.monsters
+                         if getattr(m, 'alive', False) or not getattr(m, '_kill_handled', False)]
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
@@ -7773,6 +7777,17 @@ def _recover_in_loop(game, where):
     try:
         # A run that has ended stays ended: an error on the death screen used
         # to put a dead hero back in play, and the next save brought them back.
+        # A question that was on screen when the frame broke is answered
+        # wrong, not forgotten: dropping it left the attack, prayer or
+        # identify unresolved and unpunished.
+        try:
+            from quiz_engine import QuizState as _QS
+            _qe = getattr(game, 'quiz_engine', None)
+            if (_qe is not None and getattr(_qe, 'callback', None) is not None
+                    and _qe.state != _QS.COMPLETE and 'render' not in str(where)):
+                _qe._end(success=False)
+        except Exception:
+            pass
         if (getattr(game, 'state', None) not in (STATE_DEAD, STATE_VICTORY)
                 and not getattr(game, '_run_over', False)):
             game.state = STATE_PLAYER

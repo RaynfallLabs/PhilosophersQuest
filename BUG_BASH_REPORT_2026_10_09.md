@@ -1,8 +1,8 @@
 # Bug bash report, night of 2026-10-08 to 09
 
-Eight reviewers each attacked a frozen copy of the game from one angle. Seven have reported; the eighth (a headless "monkey" playing random actions to hunt crashes) was still running when this was written, and its findings are in the last section if it finished.
+Eight reviewers each attacked a frozen copy of the game from one angle, and all eight have reported.
 
-**Bottom line:** no reviewer found a crash in normal play. They found about 110 real faults, most of them "does the wrong thing quietly". I fixed about 75 in code and data and left the rest for you because they are design calls, balance-affecting, or large. Everything is committed locally (nine commits after `b9a07b7`, ending `48b8b469`, plus this report); nothing is pushed. The suite is at 2,166 passing. Nothing has been played by a person.
+**Bottom line:** no reviewer found a crash in normal play, including a headless "monkey" that played about 3.1 million random actions across roughly 12,000 games as every hero on every floor. They found about 115 real faults, most of them "does the wrong thing quietly". I fixed about 80 in code and data and left the rest for you because they are design calls, balance-affecting, or large. Everything is committed locally (nine commits after `b9a07b7`, ending `48b8b469`, plus this report); nothing is pushed. The suite is at 2,166 passing. Nothing has been played by a person.
 
 ## Read these first
 
@@ -128,4 +128,18 @@ Checked and found sound: no undefined names, no missing methods, no broken impor
 
 ## The eighth reviewer (crash hunting)
 
-Not finished when this was written. I ran its monkey myself against the fixed code as a smoke test: six runs of 2,000 to 2,500 random actions on floors 1, 12, 45, 83 and 100 gave no crashes. Its own report, when it arrives, will be added here.
+It drove the real game through its real input path: about 3.1 million actions, 12,000 games, 11,400 deaths, all 33 secret builds, floors 1 to 100, seven window sizes, packs of 150 items, 200-monster floors, every status at once, and six scripted runs to the ending. A hook recorded every exception raised inside the game, including swallowed ones.
+
+- **No uncaught exception at any normal window size**, and no hidden programming error (no missing attribute, bad key or bad index swallowed anywhere). The only swallowed errors were the sound failure and the too-small-window failure, both fixed.
+- **Its worst finding: the polymorph trap could turn any artifact into the Philosopher's Stone.** It won the game from floor 2. Fixed (the trap now only changes ordinary weapons, armor and shields into ordinary ones).
+- It independently found the phasing entombment, the stacked spawns, loot under water and the monster on the arrival stair. All fixed, as above.
+- **Also fixed from its list:** dying on the turn a gold drop was spent gave one more action and ended the game twice; stamina could sit above its maximum after losing Strength; dead monsters were never removed from a floor's list; a frame error with a question on screen dropped the question unpunished.
+
+Two more decisions for you from this reviewer:
+
+| # | What | Why I left it |
+|---|---|---|
+| 15 | **Dad's fist starts in the pack, not on his hand.** Until a child finds Equip, Dad hits for 33; after, for 1.6 million. Every build's starting weapon goes to the pack, but for Dad the weapon is his own hand. | Probably not intended. Say the word and Dad starts with it wielded. |
+| 16 | **Fleeing, dying with the Stone and winning all grade A+** (scores 106,100, 151,860 and 156,130). | A scoring choice. |
+
+Missed questions are kept without limit (2,667 after 27,000 turns in one soak run) and saved with the game; harmless at that size, worth a cap some day.

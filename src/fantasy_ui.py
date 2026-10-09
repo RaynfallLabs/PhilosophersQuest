@@ -398,6 +398,8 @@ def draw_dark_panel(surf: pygame.Surface, rect: tuple,
     if border_color is None:
         border_color = FP.GOLD
     x, y, w, h = rect
+    if w <= 0 or h <= 0:        # a window too small for the panel: draw nothing, raise nothing
+        return
 
     # Dark bg
     bg_surf = pygame.Surface((w, h), pygame.SRCALPHA)
@@ -716,6 +718,8 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
         bg_col = FP.MIDNIGHT
         border_col = FP.GOLD_DARK
 
+    if w <= 0 or h <= 0:
+        return
     bg_s = pygame.Surface((w, h), pygame.SRCALPHA)
     bg_s.fill((*bg_col, 220))
     surf.blit(bg_s, (x, y))
