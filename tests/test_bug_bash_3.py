@@ -411,3 +411,40 @@ def test_a_ward_answers_poison_and_a_trap_but_not_hunger():
     main = _src('main.py')
     at = main.index("self.defeat_reason = 'starved'")
     assert 'self.player._no_ward = True' in main[at - 400:at]
+
+
+def test_a_weapons_form_and_substance_each_meet_the_monster():
+    """The material used to be one more damage type and the best multiplier
+    won, so no blow was ever resisted."""
+    import combat
+    W = lambda types_, mat='steel', buc='uncursed': types.SimpleNamespace(   # noqa: E731
+        damage_types=list(types_), material=mat, buc=buc)
+    M = lambda res=(), weak=(), tags=(): types.SimpleNamespace(              # noqa: E731
+        resistances=list(res), weaknesses=list(weak), tags=list(tags))
+    f = combat.weapon_type_multiplier
+    assert f(W(['pierce']), M(res=['pierce'])) == (0.5, 1.0)                 # a rapier against bones
+    assert f(W(['blunt']), M(res=['pierce'], weak=['blunt'])) == (1.5, 1.0)  # a mace against bones
+    assert f(W(['slash', 'pierce']), M(res=['slash'])) == (1.0, 1.0)         # a sword may thrust instead
+    assert f(W(['slash', 'pierce']), M(res=['slash', 'pierce'])) == (0.5, 1.0)
+    assert f(None, M(res=['blunt'])) == (0.5, 1.0)                           # bare hands crush
+    assert f(W(['slash'], mat='silver'), M(res=['slash'], tags=['undead'])) == (0.5, 1.5)   # the right metal still tells
+    assert f(W(['slash'], buc='blessed'), M(weak=['holy'])) == (1.0, 1.5)
+    assert f(W(['slash', 'holy'], buc='blessed'), M(weak=['holy'])) == (1.5, 1.0)           # holy is counted once
+    assert f(W(['slash']), M(res=['steel'])) == (1.0, 1.0)                   # substance never weakens a blow
+
+
+def test_the_monsters_written_to_resist_a_kind_of_blow_now_do():
+    import combat
+    mons = _data('monsters.json')
+    sword = types.SimpleNamespace(damage_types=['slash'], material='steel', buc='uncursed')
+    resisted = 0
+    for mid, v in mons.items():
+        if isinstance(v, dict) and 'slash' in (v.get('resistances') or []):
+            m = _monster(mid)
+            form, sub = combat.weapon_type_multiplier(sword, m)
+            if 'slash' not in (v.get('weaknesses') or []):
+                assert form == 0.5, mid
+                resisted += 1
+    assert resisted >= 30
+    src = _src('combat.py')
+    assert 'mat not in dtypes' not in src            # the material is no longer a damage type
