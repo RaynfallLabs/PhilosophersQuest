@@ -182,6 +182,15 @@ def _big_foe_bite(m, fraction: float, level: int) -> int:
     return max(1, min(raw, int(0.5 * target_hp(level))))
 
 
+def _the_less(name: str) -> str:
+    """A name without its own leading article, for a sentence that supplies
+    one ("It is the The Seamless Tunic")."""
+    for art in ('a ', 'an ', 'the '):
+        if name.lower().startswith(art):
+            return name[len(art):]
+    return name
+
+
 class MagicMixin:
     """Spell, scroll, spellbook, wand, identification, and recall-lore actions.
 
@@ -333,7 +342,7 @@ class MagicMixin:
             )
             return
 
-        display = self._display_name(wand)
+        display = self._bare_name(wand)
         self.quiz_title = f"INVOKING {display.upper()}  --  SCIENCE"
         self.state = STATE_QUIZ
         _was_identified_before = getattr(wand, 'identified', False) or \
@@ -2385,7 +2394,7 @@ class MagicMixin:
         outcome, tier-scaled magnitude), consistent with the identify /
         harvest / cook philosophy.
         """
-        display = self._display_name(scroll)
+        display = self._bare_name(scroll)
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
         self.state = STATE_QUIZ
         _was_identified_before = getattr(scroll, 'identified', False) or \
@@ -2566,7 +2575,7 @@ class MagicMixin:
             elif _scroll_buc == 'cursed':
                 delta = -1
             else:
-                delta = [0, 1, 1, 2, 3][_tstep]
+                delta = [1, 1, 1, 2, 3][_tstep]      # tier 1 gave 0: an uncursed Sharpen or Bracing did nothing
             multi = _tstep >= 2
             targets = []
             if self.player.weapon:
@@ -2637,6 +2646,10 @@ class MagicMixin:
                 if self.player.shield:
                     equipped.append(self.player.shield)
                 equipped.extend(s for s in getattr(self.player, 'accessory_slots', []) if s)
+                # (a cursed belt cannot be taken off, and no scroll reached it)
+                for _worn in (getattr(self.player, 'amulet_slot', None), getattr(self.player, 'belt_slot', None)):
+                    if _worn is not None and _worn not in equipped:
+                        equipped.append(_worn)
                 # Inventory: only at T4+ or blessed
                 inv_pool = []
                 if _scope >= 3 or _scroll_buc == 'blessed':
@@ -2724,7 +2737,7 @@ class MagicMixin:
             elif _scroll_buc == 'cursed':
                 delta = -1
             else:
-                delta = [0, 1, 1, 2, 3][_tstep]
+                delta = [1, 1, 1, 2, 3][_tstep]      # tier 1 gave 0: an uncursed Sharpen or Bracing did nothing
             if equipped:
                 # T1: just first slot. T2: 2 slots. T3: 3 slots. T4: 4. T5: all.
                 slot_count = [1, 2, 3, 4, 99][_tstep]
@@ -2771,7 +2784,7 @@ class MagicMixin:
             elif _scroll_buc == 'cursed':
                 delta = -1
             else:
-                delta = [0, 1, 1, 2, 3][_tstep]
+                delta = [1, 1, 1, 2, 3][_tstep]      # tier 1 gave 0: an uncursed Sharpen or Bracing did nothing
             count_by_step = [1, 2, 3, 5, 99]
             n = count_by_step[_tstep]
             if candidates:
@@ -3026,10 +3039,19 @@ class MagicMixin:
                 touched = 0
                 for acc in accs[:n]:
                     fx = acc.effects
-                    if 'amount' in fx:
-                        fx['amount'] = max(0, fx['amount'] + bonus)
+                    if 'amount' in fx and bonus:
+                        _old = fx['amount']
+                        fx['amount'] = max(0, _old + bonus)
+                        # The stat was given when the ring went on: change it
+                        # by the same step now. It was left alone, so taking
+                        # the ring off later removed the NEW amount (three
+                        # points lost for good, or a cursed scroll turning a
+                        # ring's points into permanent ones).
+                        if fx.get('stat') and fx['amount'] != _old:
+                            self.player.apply_stat_bonus(fx['stat'], fx['amount'] - _old)
                         self.add_message(
-                            f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} by {abs(bonus)}!", 'success')
+                            f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} "
+                            f"by {abs(fx['amount'] - _old)}!", 'success' if bonus > 0 else 'warning')
                         touched += 1
                     else:
                         self.add_message(f"The {acc.name} shimmers briefly but nothing happens.", 'info')
@@ -3197,7 +3219,7 @@ class MagicMixin:
         Shard's backlash stuns the kid. No partial levels, no resume math,
         no mastery — see items.item_id_tier for where the tier comes from.
         """
-        display = self._display_name(item)
+        display = self._bare_name(item)
         # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin
         # T2+). Skip the quiz entirely and grant a full identify, 1/floor.
         try:
@@ -3206,7 +3228,7 @@ class MagicMixin:
                     consume_passive_charge(self.player, 'identify_one_per_floor_free'):
                 self._full_identify(item)
                 self.add_message(
-                    f"Odin's wisdom illuminates the {item.name}!", 'success')
+                    f"Odin's wisdom illuminates the {_the_less(item.name)}!", 'success')
                 if item.lore:
                     self._lore_subject = item
                     self.state = STATE_LORE
@@ -3234,7 +3256,7 @@ class MagicMixin:
                 aura = {'blessed': "a holy radiance", 'cursed': "a dark aura",
                         'uncursed': "no clinging aura"}.get(_buc, "an unclear aura")
                 self.add_message(
-                    f"It is the {item.name}. You sense {aura}.", 'success')
+                    f"It is the {_the_less(item.name)}. You sense {aura}.", 'success')
                 # The whole story arrives at once — push the lore screen.
                 # Lore IS the celebration here (full-panel reveal of
                 # the identified item). The orb flourish from Phase 3
@@ -3295,7 +3317,7 @@ class MagicMixin:
                 _qs_id.on_item_identified(item.id)
             self._on_full_identify(item)
             self._log_chronicle(
-                f"Identified the {item.name}. Its nature is known to me.")
+                f"Identified the {_the_less(item.name)}. Its nature is known to me.")
 
     def _on_full_identify(self, item) -> None:
         """Hook called once per item when it crosses into full-ID state.
@@ -3352,7 +3374,7 @@ class MagicMixin:
         """
         self._full_identify(item)
         self.add_message(
-            f"Truth crashes through you — it is the {item.name}!",
+            f"Truth crashes through you — it is the {_the_less(item.name)}!",
             'success')
         if item.lore:
             self._lore_subject = item
@@ -3596,7 +3618,7 @@ class MagicMixin:
         items in inventory lose their known type, 20 turns Stunned). Book is
         consumed either way -- see the flavor lore for the Setna cycle.
         """
-        display = self._display_name(book)
+        display = self._bare_name(book)
         self.state = STATE_QUIZ
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
 

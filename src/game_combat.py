@@ -362,7 +362,15 @@ class CombatMixin:
             self.add_message(
                 f"The {display} clatters to the ground.", 'info'
             )
-            land_x, land_y = tx, ty
+            # the last tile of its flight that can be stood on: aimed at a
+            # wall it landed inside the wall and was gone (the Broken Blade of
+            # Gram, which the Fafnir quest needs, among them)
+            from combat import get_line_tiles
+            land_x, land_y = self.player.x, self.player.y
+            for _lx, _ly in get_line_tiles(self.player.x, self.player.y, tx, ty):
+                if not self.dungeon.is_walkable(_lx, _ly):
+                    break
+                land_x, land_y = _lx, _ly
 
         # Break check
         if _rng.random() < break_chance:
@@ -1517,11 +1525,8 @@ class CombatMixin:
         # Decrement ammo (skip for infinite-ammo weapons like Sling of David)
         if not getattr(weapon, 'infinite_ammo', False):
             ammo_type = weapon.requires_ammo
-            ammo_item = next(
-                (i for i in self.player.inventory
-                 if getattr(i, 'ammo_type', None) == ammo_type),
-                None
-            )
+            ammo_item = min((i for i in self.player.inventory if getattr(i, 'ammo_type', None) == ammo_type),
+                key=lambda i: (float(getattr(i, 'damage_bonus', 0) or 0), getattr(i, 'name', '')), default=None)
             if ammo_item is not None:
                 if getattr(ammo_item, 'count', 1) > 1:
                     ammo_item.count -= 1
@@ -1685,11 +1690,8 @@ class CombatMixin:
 
         # Consume one ammo item (skip for infinite ammo weapons)
         if not getattr(weapon, 'infinite_ammo', False):
-            ammo_item = next(
-                (i for i in self.player.inventory
-                 if getattr(i, 'ammo_type', None) == ammo_type),
-                None
-            )
+            ammo_item = min((i for i in self.player.inventory if getattr(i, 'ammo_type', None) == ammo_type),
+                key=lambda i: (float(getattr(i, 'damage_bonus', 0) or 0), getattr(i, 'name', '')), default=None)
             if not ammo_item:
                 self.add_message(f"Out of {ammo_type}s!", 'warning')
                 return
@@ -2600,8 +2602,26 @@ class CombatMixin:
                 if self.player.hp <= 0 and self.player.has_effect('life_save'):
                     self.player.hp = 1
                     del self.player.status_effects['life_save']
+                    # The thing that gave it is spent with it. It was not, so
+                    # taking Excalibur or the amulet off and putting it back
+                    # on bought another life every time.
+                    _src = None
+                    for _it in ([self.player.weapon, getattr(self.player, 'ranged_weapon', None),
+                                 self.player.shield, getattr(self.player, 'amulet_slot', None),
+                                 getattr(self.player, 'belt_slot', None)]
+                                + list(self.player.armor_slots) + list(self.player.accessory_slots)):
+                        if _it is None:
+                            continue
+                        if getattr(_it, 'on_equip_status', '') == 'life_save':
+                            _it.on_equip_status = ''
+                            _src = _src or _it
+                        _fx = getattr(_it, 'effects', None)
+                        if isinstance(_fx, dict) and _fx.get('status') == 'life_save':
+                            _it.effects = {k: v for k, v in _fx.items() if k != 'status'}
+                            _src = _src or _it
                     self.add_message(
-                        "The amulet blazes -- death averted! Its life-saving magic is spent.", 'success'
+                        f"{'The ' + _src.name if _src is not None else 'A ward'} blazes -- death averted! "
+                        "Its life-saving magic is spent.", 'success'
                     )
                     _snd.play('player_healed')
 

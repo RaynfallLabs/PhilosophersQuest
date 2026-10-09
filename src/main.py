@@ -1,4 +1,5 @@
 import os
+import re
 from monster import the_name
 import random
 import sys
@@ -3476,6 +3477,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     m.x, m.y = spot
                     mine = [spot]
             taken.update(mine)
+        # ... and no loot lies under water or lava (pools are carved after
+        # items are set down: about one item every 25 floors)
+        _lie = [(x, y) for y in range(self.dungeon.height) for x in range(self.dungeon.width)
+                if self.dungeon.is_walkable(x, y)]
+        for _it in self.ground_items:
+            if (self.dungeon.in_bounds(_it.x, _it.y) and not self.dungeon.is_walkable(_it.x, _it.y)
+                    and not getattr(_it, 'not_pickable', False) and _lie):
+                _it.x, _it.y = min(_lie, key=lambda t: abs(t[0] - _it.x) + abs(t[1] - _it.y))
         try:
             self._bring_within_reach()
         except Exception:
@@ -4816,7 +4825,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.player.philosophers_mantle and hasattr(item, 'buc_known'):
                 item.buc_known = True
             if isinstance(item, Ammo):
-                self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
+                self.add_message(
+                    f"You pick up {item.count} {re.sub(r' x[0-9]+$', '', self._display_name(item))}s.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
             # Leather scraps: keep count for the player. Nothing else in the
@@ -6275,6 +6285,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.player.amulet_slot is not None:
                 self.add_message("You are already wearing an amulet!", 'warning')
                 return
+        elif getattr(item, 'slot', '') == 'belt':
+            pass        # the belt has its own slot (four rings used to block it)
+        elif getattr(item, 'slot', '') == 'none':
+            # carried, not worn: this ran the quiz, said "You slip on ..." and
+            # equipped nothing
+            self.add_message(f"The {self._bare_name(item)} is carried, not worn. It works from your pack.", 'info')
+            return
         elif all(s is not None for s in self.player.accessory_slots):
             self.add_message("All ring slots are full!", 'warning')
             return
@@ -6296,15 +6313,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.player.remove_from_inventory(item)
                 fx = item.effects
                 if 'status' in fx:
+                    # the status by its name, not its id ("You feel fire_resist!")
+                    from status_effects import EFFECT_INFO as _EI
+                    _label = (_EI.get(fx['status']) or (str(fx['status']).replace('_', ' ').title(),))[0]
                     self.add_message(
-                        f"You slip on the {item_name}. You feel {fx['status']}!", 'success'
+                        f"You slip on the {item_name}. You feel {_label}!", 'success'
+                    )
+                elif fx.get('stat') and fx.get('amount'):
+                    self.add_message(
+                        f"You slip on the {item_name}. {fx['stat']} {int(fx['amount']):+d}!", 'success'
                     )
                 else:
-                    stat = fx.get('stat', '')
-                    amt  = fx.get('amount', 0)
-                    self.add_message(
-                        f"You slip on the {item_name}. {stat} +{amt}!", 'success'
-                    )
+                    self.add_message(f"You slip on the {item_name}.", 'success')
             else:
                 self.add_message(
                     f"You fumble with the {item_name} and give up.", 'warning'
@@ -7355,7 +7375,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.ground_items.append(item)
         _dc = getattr(item, 'count', 1)
         if _dc > 1:
-            self.add_message(f"You drop {_dc} {self._display_name(item)}.", 'info')
+            self.add_message(
+                f"You drop {_dc} {re.sub(r' x[0-9]+$', '', self._display_name(item))}"
+                f"{'s' if _dc != 1 else ''}.", 'info')
         else:
             self.add_message(f"You drop the {self._bare_name(item)}.", 'info')
 

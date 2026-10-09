@@ -1691,7 +1691,10 @@ class Player:
                         return
                     self.inventory.append(old)
                     old_fx = old.effects
-                    if 'status' in old_fx:
+                    self.belt_slot = None
+                    # only if nothing else worn still grants it: swapping one
+                    # belt for another took Haste away from a ring's wearer
+                    if 'status' in old_fx and not self._still_granted(old_fx['status'], old):
                         self.status_effects.pop(old_fx['status'], None)
                     if 'stat' in old_fx:
                         self.apply_stat_bonus(old_fx['stat'], -old_fx.get('amount', 0))

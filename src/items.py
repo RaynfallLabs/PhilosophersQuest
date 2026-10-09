@@ -833,7 +833,7 @@ class Accessory(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
         self.slot             = defn['slot']
-        self.effects          = defn.get('effects', {})
+        self.effects          = dict(defn.get('effects', {}) or {})
         self.equip_threshold  = int(defn.get('equip_threshold', 2))
         self.quiz_tier        = int(defn.get('quiz_tier', 1))
         self.unidentified_name = defn.get('unidentified_name', defn['name'])
