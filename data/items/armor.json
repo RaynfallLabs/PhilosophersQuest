@@ -25,10 +25,7 @@
     "cursed": false,
     "identified": false,
     "unidentified_name": "a rough amber pelt of unnatural density",
-    "floorSpawnWeight": {
-      "61-80": 1,
-      "81-100": 2
-    },
+    "floorSpawnWeight": {},
     "value": 9000,
     "lore": "No blade could cut the Nemean Lion, which was the whole point of the first Labour. The arrows of Heracles bounced off it and his club broke on its skull. In the end he cornered it in its cave and strangled it, then found that the only edge able to skin the beast was one of its own claws. He wore the pelt for the rest of his life, its jaws over his head. Steel still slides off it. A hard enough blow still bruises the man inside.",
     "max_enchant": 3,
@@ -37,7 +34,8 @@
     "peak_weight": 0.0,
     "template_basis": "hide",
     "is_unique": true,
-    "unskinnable": true
+    "unskinnable": true,
+    "special": "Halves every cut, stab and blow, on top of its resistances."
   },
   "carapace_of_the_hydra": {
     "name": "Carapace of the Hydra",
@@ -77,7 +75,8 @@
     "peak_weight": 0.35,
     "template_basis": "scale",
     "is_unique": true,
-    "caustic_blood": 0.4
+    "caustic_blood": 0.4,
+    "special": "A monster that poisons you has a 40% chance of being poisoned itself."
   },
   "panoply_of_hephaestus": {
     "name": "Panoply of Hephaestus",
@@ -117,7 +116,8 @@
     "peak_weight": 0.25,
     "template_basis": "full_plate",
     "is_unique": true,
-    "divine_smithing": 1
+    "divine_smithing": 1,
+    "special": "While it is worn, your weapon can be enchanted one step higher."
   },
   "dragon_mail_of_sigurd": {
     "name": "Dragon-Sewn Mail of Sigurd",
@@ -234,7 +234,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "maid_does_not_fall": true
+    "maid_does_not_fall": true,
+    "special": "Once a floor, a blow that would kill you leaves you at 1 health. Blessed while worn."
   },
   "lorica_hamata_of_caesar": {
     "name": "Lorica of Caesar",
@@ -273,7 +274,8 @@
     "peak_weight": 0.4,
     "template_basis": "chain_shirt",
     "is_unique": true,
-    "et_tu_charge": true
+    "et_tu_charge": true,
+    "special": "The first monster to wound you is marked: you deal half again as much damage to it."
   },
   "orichalcum_breastplate": {
     "name": "Orichalcum Breastplate",
@@ -313,7 +315,8 @@
     "peak_weight": 0.3,
     "template_basis": "breastplate",
     "is_unique": true,
-    "atlantean_resonance": 30
+    "atlantean_resonance": 30,
+    "special": "Now and then it hums, and for that moment you are Shielded."
   },
   "helm_of_hades": {
     "name": "Helm of Darkness",
@@ -419,7 +422,8 @@
     "peak_weight": 0.35,
     "template_basis": "plate_helm",
     "is_unique": true,
-    "ringing_intimidation": 3
+    "ringing_intimidation": 3,
+    "special": "Each monster that first sees you has a 40% chance of fleeing in fear."
   },
   "great_helm_of_galahad": {
     "name": "Great Helm of Galahad",
@@ -458,7 +462,8 @@
     "peak_weight": 0.35,
     "template_basis": "great_helm",
     "is_unique": true,
-    "purity": true
+    "purity": true,
+    "special": "Lifts the curse from everything you wear, and from anything you put on later."
   },
   "vambraces_of_achilles": {
     "name": "Vambraces of Achilles",
@@ -497,7 +502,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "peace_at_the_forge": 2
+    "peace_at_the_forge": 2,
+    "special": "Standing on an altar restores 2 mana and 2 stamina a turn."
   },
   "gauntlets_of_mars": {
     "name": "Gauntlets of Mars",
@@ -535,7 +541,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "boundary_guardian": true
+    "boundary_guardian": true,
+    "special": "Armor improves by 1 while you stand beside a door."
   },
   "greaves_of_hermes": {
     "name": "Greaves of Hermes",
@@ -574,7 +581,8 @@
     "peak_weight": 0.4,
     "template_basis": "leather_boots",
     "is_unique": true,
-    "onEquipStatus": "hasted"
+    "onEquipStatus": "hasted",
+    "special": "Hasted while worn."
   },
   "cloak_of_the_morrigan": {
     "name": "Cloak of the Morrigan",
@@ -684,7 +692,8 @@
     "peak_weight": 0.4,
     "template_basis": "leather_leggings",
     "is_unique": true,
-    "wild_friend": 0.2
+    "wild_friend": 0.2,
+    "special": "Your pet takes a fifth less damage."
   },
   "mantle_of_elijah": {
     "name": "Mantle of Elijah",
@@ -722,7 +731,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "prophets_passing": true
+    "prophets_passing": true,
+    "special": "+3 maximum mana while worn."
   },
   "robe_of_the_magus": {
     "name": "Robe of the Magus",
@@ -838,7 +848,8 @@
     "peak_weight": 0.4,
     "template_basis": "leather_boots",
     "is_unique": true,
-    "seven_league_step": true
+    "seven_league_step": true,
+    "special": "Hasted while worn. Once a floor, a power dashes you up to 7 tiles."
   },
   "brigandine_of_william_wallace": {
     "name": "Brigandine of Wallace",
@@ -877,7 +888,8 @@
     "peak_weight": 0.4,
     "template_basis": "scale",
     "is_unique": true,
-    "guerrilla_terrain": true
+    "guerrilla_terrain": true,
+    "special": "Armor improves by 2 in a corridor or with your back in a corner."
   },
   "cuirass_of_hannibal": {
     "name": "Cuirass of Hannibal",
@@ -917,7 +929,8 @@
     "peak_weight": 0.4,
     "template_basis": "breastplate",
     "is_unique": true,
-    "cannae_encirclement": true
+    "cannae_encirclement": true,
+    "special": "With three or more enemies beside you, armor improves by 2 and your blows land harder."
   },
   "aegishjalmr": {
     "name": "Aegishjalmr",
@@ -998,7 +1011,7 @@
     "ac_bonus": 3,
     "enchant_bonus": 0,
     "equip_threshold": 3,
-    "quiz_tier": 4,
+    "quiz_tier": 3,
     "damage_resistances": {
       "magic": 0.8
     },
@@ -1099,7 +1112,8 @@
     "template_basis": "leather_boots",
     "is_unique": true,
     "on_equip_status": "",
-    "dodge_first_arrow_per_floor": true
+    "dodge_first_arrow_per_floor": true,
+    "special": "The first arrow, bolt or hex aimed at you on each floor misses."
   },
   "blindfold": {
     "name": "blindfold",
@@ -1136,7 +1150,8 @@
     "is_unique": true,
     "on_equip_status": "blinded",
     "id_level": 0,
-    "tremor_sense": 3
+    "tremor_sense": 3,
+    "special": "Blinded while worn, but you feel every monster within 3 tiles, and no gaze can catch you."
   },
   "trainers_cap": {
     "name": "Trainer's Cap",
@@ -1173,7 +1188,8 @@
     "bond_check": true,
     "_meta": {
       "spawn_method": "easter_egg"
-    }
+    },
+    "special": "Your pet heals faster and gains a level on each new floor you reach."
   },
   "cow_kings_horns": {
     "name": "Cow King's Horns",
@@ -1209,7 +1225,6 @@
     "is_unique": true,
     "plot_locked": true,
     "id_level": 0,
-    "bovine_fury": true,
     "_meta": {
       "spawn_method": "boss_drop_cow_king"
     }
@@ -1251,7 +1266,8 @@
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "weave_and_unweave": true
+    "weave_and_unweave": true,
+    "special": "You regenerate while it is worn, and faster when badly hurt."
   },
   "bracers_of_cu_chulainn": {
     "name": "Bracers of Cu Chulainn",
@@ -1275,7 +1291,7 @@
     "can_be_cursed": false,
     "enchant_bonus": 1,
     "unidentified_name": "a pair of battle-scarred leather bracers",
-    "lore": "He was a boy called Setanta when the smith Culann's guard hound came at him. He killed it with his bare hands, and then offered to guard the smith's house himself until a pup could be reared. So men named him Cu Chulainn, the Hound of Culann. In his battle frenzy his body twisted in its skin, one eye sank and the other bulged, and a light rose from his brow. These bracers kept a little of that. The wearer hits harder and minds his own cuts less.",
+    "lore": "He was a boy called Setanta when the smith Culann's guard hound came at him. He killed it with his bare hands, and then offered to guard the smith's house himself until a pup could be reared. So men named him Cu Chulainn, the Hound of Culann. In his battle frenzy his body twisted in its skin, one eye sank and the other bulged, and a light rose from his brow. These bracers kept a little of that. Every third blow the wearer lands tears a wound that will not close.",
     "containerLootTier": "rare",
     "floorSpawnWeight": {
       "1-21": 0,
@@ -1291,7 +1307,8 @@
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "riastrad_echo": true
+    "riastrad_echo": true,
+    "special": "Every third blow you land opens a bleeding wound."
   },
   "cloak_of_sun_wukong": {
     "name": "Cloak of Sun Wukong",
@@ -1308,7 +1325,7 @@
     "material": "silk",
     "ac_bonus": 3,
     "equip_threshold": 2,
-    "quiz_tier": 3,
+    "quiz_tier": 2,
     "damage_resistances": {},
     "can_be_cursed": false,
     "enchant_bonus": 0,
@@ -1330,7 +1347,8 @@
     "is_unique": true,
     "identified": false,
     "id_level": 0,
-    "monkey_king_dodge": 10
+    "monkey_king_dodge": 10,
+    "special": "Blows sometimes land where you are not, and every tenth that would hit misses outright."
   },
   "coat_of_cu_chulainn": {
     "name": "Coat of Cú Chulainn",
@@ -1373,7 +1391,8 @@
     "template_basis": "hide",
     "is_unique": true,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "special": "Below a quarter health the frenzy takes you: +3 Strength for 10 turns, at 1 health a turn."
   },
   "babr_e_bayan": {
     "name": "Babr-e Bayan",
@@ -1413,7 +1432,8 @@
     "template_basis": "hide",
     "is_unique": true,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "special": "Soaks up the first blow that lands on each floor."
   },
   "tarnhelm": {
     "name": "Tarnhelm",
@@ -1436,7 +1456,6 @@
     "enchant_bonus": 0,
     "invisibility_power": true,
     "invisibility_duration": 5,
-    "invisibility_cooldown": 30,
     "unidentified_name": "a dull helm of fine iron mesh",
     "lore": "In the old German poem Siegfried wins a cloak of darkness from the dwarf Alberich, keeper of the Nibelung hoard. Wagner turned it into a helm of fine mesh, forged by the smith Mime on his brother Alberich's orders, and Alberich used it to walk unseen among his own people with a whip. The giant Fafner later wore it to take the shape of a dragon. It still hides its wearer completely, though only for a few breaths, and then it must rest.",
     "floorSpawnWeight": {
@@ -1451,7 +1470,8 @@
     "template_basis": "iron_helm",
     "is_unique": true,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "special": "Once a floor, falling below 30% health turns you invisible for 5 turns."
   },
   "linothorax_of_alexander": {
     "name": "Linothorax of Alexander",
@@ -1487,7 +1507,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "phalanx_recovery": 2
+    "phalanx_recovery": 2,
+    "special": "Standing on an altar heals 2 health a turn."
   },
   "coif_of_beowulf": {
     "name": "Coif of Beowulf",
@@ -1523,7 +1544,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "grendel_grip": true
+    "grendel_grip": true,
+    "special": "Nothing holds you: paralysis, sleep, stuns, ice and strangling grips break at once."
   },
   "sandals_of_perseus": {
     "name": "Sandals of Perseus",
@@ -1594,7 +1616,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "royal_burial": true
+    "royal_burial": true,
+    "special": "If you die wearing it, one thing you wore is kept whole in your grave for whoever finds it."
   },
   "scale_of_dilmun": {
     "name": "Scale of Dilmun",
@@ -1632,7 +1655,8 @@
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
     "water_tile_ac_bonus": 2,
-    "water_tile_regen_bonus": 1
+    "water_tile_regen_bonus": 1,
+    "special": "Beside water or a fountain, armor improves by 2 and you heal 1 health a turn."
   },
   "helm_of_gilgamesh": {
     "name": "Helm of Gilgamesh",
@@ -1668,7 +1692,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "gold_offering": true
+    "gold_offering": true,
+    "special": "Once a floor, a power pays a thinking creature in sight to stand aside."
   },
   "sandals_of_theseus": {
     "name": "Sandals of Theseus",
@@ -1704,7 +1729,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "their_own_methods": 0.2
+    "their_own_methods": 0.2,
+    "special": "When a monster hits you, 1 time in 5 an ailment you are suffering passes to it."
   },
   "greaves_of_qin": {
     "name": "Greaves of the Qin Guard",
@@ -1741,10 +1767,7 @@
     "template_basis": "leather_leggings",
     "is_unique": true,
     "containerLootTier": "rare",
-    "container_loot_tier": "rare",
-    "resistances": {
-      "acid": 0.3
-    }
+    "container_loot_tier": "rare"
   },
   "cloak_of_odin": {
     "name": "Wanderer's Cloak of Odin",
@@ -1853,7 +1876,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "gita_focus": true
+    "gita_focus": true,
+    "special": "Your first shot on each floor hits half again as hard."
   },
   "girdle_of_hippolyta": {
     "name": "Girdle of Hippolyta",
@@ -1890,7 +1914,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "amazon_charge": true
+    "amazon_charge": true,
+    "special": "After four steps in a straight line, your next blow hits half again as hard."
   },
   "helm_of_leonidas": {
     "name": "Helm of Leonidas",
@@ -1927,7 +1952,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "last_stand_bonus": true
+    "last_stand_bonus": true,
+    "special": "When you are badly hurt, your blows land 15% harder."
   },
   "cloak_of_mulan": {
     "name": "Cloak of Mulan",
@@ -1964,7 +1990,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "disguise_at_camp": true
+    "disguise_at_camp": true,
+    "special": "Once a floor, stepping onto an altar restores you completely."
   },
   "haramaki_of_yoshitsune": {
     "name": "Haramaki of Yoshitsune",
@@ -2003,7 +2030,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "descent_haste": 5
+    "descent_haste": 5,
+    "special": "Hasted for 5 turns each time you go down a stair. Blessed while worn."
   },
   "boots_of_thor": {
     "name": "Iron Boots of Thor",
@@ -2040,7 +2068,8 @@
     "is_unique": true,
     "containerLootTier": "rare",
     "container_loot_tier": "rare",
-    "thors_step": 0.05
+    "thors_step": 0.05,
+    "special": "Each turn, 1 chance in 20 that lightning takes a twentieth of the health of a monster beside you."
   },
   "helm_of_aragorn": {
     "name": "Helm of the King Returned",
@@ -2384,7 +2413,8 @@
     "lore": "You should know better than to pick up a duck in a dungeon.",
     "is_unique": true,
     "peak_floor": 1,
-    "plot_locked": true
+    "plot_locked": true,
+    "special": "It will not come off. Be patient with it."
   },
   "cestus_of_polydeuces": {
     "name": "Cestus of Polydeuces",

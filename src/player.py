@@ -256,10 +256,11 @@ class Player:
                 if damage_type in _imm:
                     return 0
 
-        # Flat damage reduction from chain-equip tier_bonuses (resistance_<type>).
-        # Each "level" subtracts 1 damage of the matching type; clamped to >=0.
-        flat_reduction = int(getattr(self, 'damage_resistances', {}).get(damage_type, 0))
-        amount = max(0, amount - flat_reduction)
+        # Chain-equip tier_bonuses (resistance_<type>): each level takes
+        # CHAIN_RESIST_STEP off a blow of that type (applied with the other
+        # resistances below). It used to subtract one point per level, which
+        # is 3% of a hit on the floors these items are found on.
+        _chain_resist_levels = int(getattr(self, 'damage_resistances', {}).get(damage_type, 0))
 
         # 'shielded' status halves physical damage (matches the description
         # at status_effects.py:82 and the Mage Armor / Magic Shield / Stoneskin
@@ -280,6 +281,8 @@ class Player:
         # Fractional resistance: status/accessory effects x armor resistances
         resistance = self.resistances.get(damage_type, 1.0)
         resistance *= self.get_armor_resistance(damage_type)
+        if _chain_resist_levels > 0:
+            resistance *= (1.0 - self.CHAIN_RESIST_STEP) ** min(5, _chain_resist_levels)
         # Charmander Stuffie: 50% fire damage reduction while in inventory
         if damage_type == 'fire' and any(
                 getattr(i, 'id', '') == 'charmander_stuffie' for i in self.inventory):
@@ -818,6 +821,11 @@ class Player:
             sb = getattr(it, 'save_bonus', None) if it is not None else None
             if isinstance(sb, dict) and sb.get('cat') in (cat, 'all'):
                 total += int(sb.get('amount', 0) or 0)
+        # A chain item's `resistance_fear` (Aegishjalmr, both Aegises, the
+        # Helm of Aragorn): fear is not a kind of damage, so the level was
+        # read by nothing. It steadies the will instead.
+        if cat == 'WIS':
+            total += min(2, int((getattr(self, 'damage_resistances', None) or {}).get('fear', 0) or 0))
         return total
 
     def add_effect(self, name: str, duration: int) -> bool:
@@ -987,6 +995,51 @@ class Player:
     # Worn armor that says so adds to either, on top of what the stat gives,
     # by at most this much in all.
     GEAR_BONUS_CAP = 0.10
+    CHAIN_RESIST_STEP = 0.08      # one level of a chain item's resistance_<type>
+
+    def _still_granted(self, status: str, but_not) -> bool:
+        """Does anything else worn (or a trait) still grant this status?"""
+        worn = [self.weapon, getattr(self, 'ranged_weapon', None), self.shield,
+                getattr(self, 'amulet_slot', None), getattr(self, 'belt_slot', None)]
+        worn.extend(self.armor_slots or [])
+        worn.extend(getattr(self, 'accessory_slots', None) or [])
+        for it in worn:
+            if it is None or it is but_not:
+                continue
+            if getattr(it, 'on_equip_status', '') == status:
+                return True
+            if status in (getattr(it, '_chain_statuses', None) or ()):
+                return True
+            if (getattr(it, 'effects', None) or {}).get('status') == status:
+                return True
+        return status in ((getattr(self, 'quirk_progress', None) or {}).get('quirk_statuses') or ())
+
+    def shed_worn_grants(self, old) -> None:
+        """Everything a piece of armor or a shield gave while worn comes off
+        with it, whichever way it leaves the body: taken off, pushed out by
+        another piece, knocked off by the Duck, or destroyed.
+
+        Each path used to do part of this. A chain item pushed out of its slot
+        kept its tier bonuses and they stacked on every re-equip (Crown of
+        Brahma: +4 Intelligence a swap); armor taken off by hand kept its
+        status for ever (the Blindfold left its wearer blind)."""
+        if old is None:
+            return
+        try:
+            from chain_equip import is_chain_equip, revert_tier_bonuses
+            if is_chain_equip(old) and int(getattr(old, 'achieved_tier', 0) or 0) > 0:
+                revert_tier_bonuses(self, old)
+        except ImportError:
+            pass
+        status = getattr(old, 'on_equip_status', '')
+        if status and not self._still_granted(status, old):
+            self.status_effects.pop(status, None)
+        # Mantle of Elijah: the +max MP it lent.
+        drop = int(getattr(old, '_prophets_mp_grant', 0) or 0)
+        if drop > 0:
+            self.max_mp = max(0, self.max_mp - drop)
+            self.mp = min(self.mp, self.max_mp)
+            old._prophets_mp_grant = 0
 
     def _worn_bonus(self, attr: str) -> float:
         total = 0.0
@@ -1563,17 +1616,8 @@ class Player:
             if not ok:
                 return
             if old:
-                # Remove old armor's on-equip status
-                old_status = getattr(old, 'on_equip_status', '')
-                if old_status:
-                    self.status_effects.pop(old_status, None)
-                # Mantle of Elijah (prophets_passing): unequip drops the +max_MP bonus.
-                if getattr(old, 'prophets_passing', False):
-                    _drop = int(getattr(old, '_prophets_mp_grant', 0) or 0)
-                    if _drop > 0:
-                        self.max_mp = max(0, self.max_mp - _drop)
-                        self.mp = min(self.mp, self.max_mp)
-                        old._prophets_mp_grant = 0
+                self.armor_slots[idx] = None
+                self.shed_worn_grants(old)
                 self.inventory.append(old)
             self.armor_slots[idx] = item
             # Grant new armor's on-equip status
@@ -1598,9 +1642,8 @@ class Player:
             if not ok:
                 return
             if old:
-                old_status = getattr(old, 'on_equip_status', '')
-                if old_status:
-                    self.status_effects.pop(old_status, None)
+                self.shield = None
+                self.shed_worn_grants(old)
                 self.inventory.append(old)
             self.shield = item
             new_status = getattr(item, 'on_equip_status', '')

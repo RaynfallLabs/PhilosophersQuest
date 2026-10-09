@@ -1,6 +1,6 @@
 # Play-test list: the rebalance, after the bug bash
 
-Date: 2026-10-07, after two review rounds. Nothing here has been played. 2,108 tests pass; they prove the rules do what they say, not that the game feels right.
+Date: 2026-10-08, after two review rounds and the armor and art pass. Nothing here has been played. 2,137 tests pass; they prove the rules do what they say, not that the game feels right.
 
 Run from source: `python src/main.py`
 
@@ -25,6 +25,11 @@ Removed on 2026-10-07 because they broke that rule: the early-floor damage reduc
 | Read a teleport scroll (Blink, Teleportation, Recall) | It works. It crashed every time before. |
 | Step on a polymorph trap with something in your pack | An item changes. It crashed every time before. |
 | Hatch a pet | Its bite and health come from a table by its own level (`data/pet_growth.json`). |
+| Kill Arachne (mini-boss, around floor 9) | She drops Arachne's Silk Cloak. Identify it and open its card: under Special Abilities it says what it does (a monster that strikes you hand to hand is slowed for 3 turns). |
+| Find Martin's Half Cloak, the Cestus of Polydeuces, the Bracers of Atalanta or Becket's Hair Shirt (floors 5 to 20) | Each has an icon, a story, and a line on its card such as **Toughness +3%** or **Dodge +4%**. The character sheet's Dodge and Tough readouts rise by that much when it is worn. |
+| Put on any unidentified armor | The log says "You equip the pair of worn sandals", not "the A Pair of Worn Sandals". |
+| Put a named piece on, then take it off (Cloth of Penelope on floor 10 is the easy one) | Its status goes with it. Regenerating, Hasted, Blinded and Displacement used to stay for the rest of the run. |
+| Walk the first floors | No monster shows as a letter: all 71 that had no art have a sprite now (bandits, cultists, kobolds, gnolls, orcs and goblins are the early ones). |
 
 ## Hero builds
 

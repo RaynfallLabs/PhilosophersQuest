@@ -280,7 +280,8 @@
     "id_level": 0,
     "_meta": {
       "spawn_method": "medusa_quest_athena_altar"
-    }
+    },
+    "special": "A gaze meant for you freezes the one who looked."
   },
   "lionheart_shield": {
     "name": "Lionheart Shield",
@@ -389,7 +390,8 @@
     "peak_weight": 0.4,
     "max_enchant": 2,
     "identified": false,
-    "id_level": 0
+    "id_level": 0,
+    "special": "No fire can hurt you behind it."
   },
   "ancile": {
     "name": "Ancile",

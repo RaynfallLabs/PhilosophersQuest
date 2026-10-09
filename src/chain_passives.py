@@ -155,6 +155,11 @@ def consume_passive_charge(player, flag: str) -> bool:
     return True
 
 
+def refund_passive_charge(player, flag: str) -> None:
+    """Give a per-floor charge back (the action it paid for did not happen)."""
+    _ensure_charge_dict(player)[flag] = False
+
+
 def is_run_spent(player, flag: str) -> bool:
     """Run-permanent "spent" flag set?"""
     return flag in _ensure_run_set(player)
@@ -370,8 +375,10 @@ def apply_fear_auras(player, monsters, visible) -> int:
             continue
         if pos not in visible:
             continue
-        if has_awe and id(m) not in seen:
-            seen.add(id(m))
+        # Marked on the monster itself: id() is reused once a dead monster is
+        # freed, so a newcomer could inherit "already saved".
+        if has_awe and not getattr(m, '_saw_awe', False):
+            m._saw_awe = True
             # 50% save vs fear; failures get a brief fear
             if random.random() < 0.50:
                 if hasattr(m, 'add_effect'):

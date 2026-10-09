@@ -102,7 +102,7 @@ def test_gold_lives_on_the_game_not_on_the_player():
 
 def test_bribe_charges_the_purse_and_holds_the_monster():
     import game_menus
-    mon = types.SimpleNamespace(alive=True, is_boss=False, intelligence=10, x=2, y=1,
+    mon = types.SimpleNamespace(alive=True, is_boss=False, tags=['humanoid'], x=2, y=1,
                                 name='Orc', kind='orc', status_effects={}, is_unique_named=False)
     pl = types.SimpleNamespace(x=1, y=1)
     msgs = []

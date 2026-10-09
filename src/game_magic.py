@@ -1290,10 +1290,13 @@ class MagicMixin:
         if not spell:
             return
         mp_cost = spell['mp_cost']
-        from chain_passives import consume_passive_charge
-        if consume_passive_charge(self.player, 'free_cast_once_per_floor'):
+        from chain_passives import consume_passive_charge, find_passive_item, refund_passive_charge
+        _free_cast = consume_passive_charge(self.player, 'free_cast_once_per_floor')
+        if _free_cast:
             mp_cost = 0
-            self.add_message("The Robe of the Magus drinks the spell's cost!", 'success')
+            _fc_src = find_passive_item(self.player, 'free_cast_once_per_floor')
+            self.add_message(
+                f"The {getattr(_fc_src, 'name', 'robe')} drinks the spell's cost!", 'success')
         if self.player.mp < mp_cost:
             self.add_message(
                 f"Not enough MP to cast {spell['name']}! "
@@ -1313,6 +1316,8 @@ class MagicMixin:
             candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
             if not candidates:
                 self.add_message("No visible target for this spell.", 'warning')
+                if _free_cast:      # nothing was cast: the floor's free spell is still owed
+                    refund_passive_charge(self.player, 'free_cast_once_per_floor')
                 self.state = STATE_PLAYER
                 return
             self.player.mp -= mp_cost
@@ -2648,7 +2653,8 @@ class MagicMixin:
                 for eq in pool:
                     if eq is None:
                         continue
-                    if getattr(eq, 'buc', 'uncursed') == 'cursed':
+                    # The Duck of Doom answers to patience, not to a scroll.
+                    if getattr(eq, 'buc', 'uncursed') == 'cursed' and getattr(eq, 'id', '') != 'duck_of_doom':
                         eq.buc = 'uncursed'
                         eq.buc_known = True
                         cursed_items.append(eq.name)

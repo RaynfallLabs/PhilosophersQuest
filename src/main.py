@@ -123,6 +123,9 @@ from floor_curve import (WANDER_HUNTING_CAP, natural_regen, rest_room,    # noqa
                          wander_alive_cap)
 
 
+RING_FEAR_CHANCE = 0.40        # Helm of Achilles: a monster's chance to flee on first sight
+
+
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -1423,24 +1426,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Those two accessories now grant flat save_bonus + attack_chain_cap_bonus.
         # `_rotating_chain_subject` remains None for save-compat.
         self.player._rotating_chain_subject = None
-        # Achilles' helm (ringing_intimidation): on floor entry, monsters in
-        # the player's FOV save vs fear. Pure cosmetic-shaped fear pulse.
-        try:
-            from armor_procs import proc_value as _pv_helm
-            _rng = int(_pv_helm(self.player, 'ringing_intimidation') or 0)
-            if _rng > 0:
-                for _mm in self.monsters:
-                    if not getattr(_mm, 'alive', False):
-                        continue
-                    if abs(_mm.x - self.player.x) <= _rng and \
-                            abs(_mm.y - self.player.y) <= _rng:
-                        if random.random() < 0.40 and hasattr(_mm, 'add_effect'):
-                            _mm.add_effect('feared', 4)
-                if _rng > 0:
-                    self.add_message(
-                        "Achilles' helm rings out — nearby foes flinch!", 'info')
-        except ImportError:
-            pass
+        # Achilles' helm (ringing_intimidation) is rolled when a monster first
+        # sees the wearer (_refresh_fov): on arrival nothing is within reach.
         # Haramaki of Yoshitsune (descent_haste): on descent, gain hasted for N turns.
         if enter_from_top:
             try:
@@ -1458,7 +1445,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # "I choose you" — the bond strengthens with each floor cleared.
         try:
             from armor_procs import player_has_armor_proc as _pap_bc
-            if _pap_bc(self.player, 'bond_check') and getattr(self, 'pets', None):
+            # A new floor only: five trips up and down one stair gave five levels.
+            if (_pap_bc(self.player, 'bond_check') and getattr(self, 'pets', None)
+                    and self.player.deepest_floor_reached > _was_deepest):
                 _first_pet = next((p for p in self.pets if getattr(p, 'alive', False)), None)
                 if _first_pet is not None and hasattr(_first_pet, 'gain_xp'):
                     # Grant a level by feeding enough xp for one level-up.
@@ -1504,6 +1493,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             )
             if (player_has_passive(self.player, 'wisdom_at_a_price')
                     and self.player.max_hp >= 20
+                    and self.player.deepest_floor_reached > _was_deepest     # a new floor only
                     and consume_passive_charge(self.player, 'wisdom_at_a_price')):
                 self.player.max_hp -= 1
                 self.player.hp = min(self.player.hp, self.player.max_hp)
@@ -1548,6 +1538,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         _tx = self.player.x + _dx
                         _ty = self.player.y + _dy
                         if 0 <= _tx < self.dungeon.width and 0 <= _ty < self.dungeon.height:
+                            self.dungeon.explored.add((_tx, _ty))
+                # The extended flight (tier 4 and up) maps the whole floor;
+                # it used to do exactly what tier 3 does.
+                if player_has_passive(self.player, 'raven_scout_extended'):
+                    for _ty in range(self.dungeon.height):
+                        for _tx in range(self.dungeon.width):
                             self.dungeon.explored.add((_tx, _ty))
                 self.add_message(
                     "The Morrigan's ravens trace the dungeon's bones for you.",
@@ -1602,21 +1598,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from chain_passives import (
                 player_has_passive, consume_run_passive,
             )
-            if (player_has_passive(self.player, 'paths_of_the_dead')
-                    and self.player.hp <= self.player.max_hp * 0.5
-                    and consume_run_passive(self.player, 'paths_of_the_dead')):
-                # Use SketchedPet machinery: borrow a strong monster template.
-                from monster_classes import get_monster_family
-                # Find ANY strong allied template within visible monsters; if
-                # none, just charm a random visible foe as a stand-in.
-                _candidates = [m for m in self.monsters
-                               if m.alive and (m.x, m.y) in self.visible]
-                if _candidates:
-                    _ally = max(_candidates, key=lambda m: m.max_hp)
-                    _ally.add_effect('charmed', 30)
-                    self.add_message(
-                        f"The Paths of the Dead open -- the {_ally.name} bends to your service for 30 turns!",
-                        'success')
+            # Arm it; it is spent in _refresh_fov when a monster is in
+            # sight. It used to spend the one charge of the run on arrival,
+            # whether or not anything was there to charm (11 times in 12).
+            self.player._paths_armed = bool(
+                player_has_passive(self.player, 'paths_of_the_dead')
+                and self.player.hp <= self.player.max_hp * 0.5)
         except (ImportError, NameError):
             pass
 
@@ -1625,11 +1612,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         try:
             if player_has_passive(self.player, 'death_omen_mark') and self.monsters:
                 _best = max(
-                    (m for m in self.monsters if m.alive),
+                    (m for m in self.monsters if m.alive
+                     and not getattr(m, 'is_npc', False) and not getattr(m, 'peaceful', False)
+                     and getattr(m, 'attacks', None)),
                     key=lambda m: getattr(m, 'min_level', 0),
                     default=None,
                 )
-                self.player._death_omen_target = id(_best) if _best else None
+                self.player._death_omen_target = _best
                 if _best:
                     self.add_message(
                         f"The Morrigan marks the {_best.name} for death.",
@@ -2172,7 +2161,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from armor_procs import proc_value
             _fh_r = int(proc_value(self.player, 'forest_hearing') or 0)
             _ts_r = int(proc_value(self.player, 'tremor_sense') or 0)
-            _sense_r = max(_fh_r, _ts_r)
+            # Huginn and Muninn (Cloak of Odin): the ravens' five turns aloft.
+            _hm_r = 10 if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0 else 0
+            _sense_r = max(_fh_r, _ts_r, _hm_r)
             if _sense_r > 0:
                 _px, _py = self.player.x, self.player.y
                 for _mm in self.monsters:
@@ -2234,6 +2225,46 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         'warning')
         except ImportError:
             pass
+
+        # Helm of Achilles (ringing_intimidation): each monster, the first time
+        # it comes into sight, has a RING_FEAR_CHANCE of fleeing.
+        try:
+            from armor_procs import player_has_armor_proc as _pap_ring
+            if _pap_ring(self.player, 'ringing_intimidation'):
+                _rung = 0
+                for _mm in self.monsters:
+                    if (getattr(_mm, 'alive', False) and (_mm.x, _mm.y) in self.visible
+                            and not getattr(_mm, '_heard_the_ring', False)):
+                        _mm._heard_the_ring = True
+                        if random.random() < RING_FEAR_CHANCE and hasattr(_mm, 'add_effect'):
+                            _mm.add_effect('feared', 4)
+                            _rung += 1
+                if _rung:
+                    self.add_message(
+                        f"Achilles' helm rings out: {_rung} "
+                        f"{'foe flinches' if _rung == 1 else 'foes flinch'} and runs!", 'info')
+        except ImportError:
+            pass
+
+        # Helm of Aragorn (paths_of_the_dead): armed on arriving hurt, spent
+        # when there is someone to answer the call.
+        if getattr(self.player, '_paths_armed', False):
+            try:
+                from chain_passives import consume_run_passive as _crp, player_has_passive as _php
+                _cands = [m for m in self.monsters
+                          if m.alive and (m.x, m.y) in self.visible
+                          and not getattr(m, 'is_boss', False)]
+                if not _php(self.player, 'paths_of_the_dead'):
+                    self.player._paths_armed = False
+                elif _cands and _crp(self.player, 'paths_of_the_dead'):
+                    self.player._paths_armed = False
+                    _ally = max(_cands, key=lambda m: m.max_hp)
+                    _ally.add_effect('charmed', 30)
+                    self.add_message(
+                        f"The Paths of the Dead open: {_ally.name} bends to your service for 30 turns!",
+                        'success')
+            except ImportError:
+                pass
 
         # Chain-equip passive: fear auras (aura_of_awe, fafnirs_glare, no_man_dares).
         try:
@@ -3288,6 +3319,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _advance_turn(self):
         self._reap_unnoticed_kills()
         self.turn_count += 1
+        if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0:
+            self.player._huginn_muninn_remaining -= 1
         # Periodic in-play autosave (every 50 turns) so an abrupt close costs at
         # most ~50 turns instead of the whole session. A floor is ~200-400 turns.
         if self.turn_count % 50 == 0:
@@ -3445,6 +3478,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # nearest walkable neighbor so movement isn't soft-locked. Floor
         # tiles always cover this — only triggers on the rare wall-stand.
         if (not self.player.has_effect('phasing')
+                and not self.player.has_effect('levitating')     # held over water or lava
                 and self.dungeon.in_bounds(self.player.x, self.player.y)
                 and not self.dungeon.is_walkable(self.player.x, self.player.y)):
             for _dy in range(-2, 3):
@@ -3626,8 +3660,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if _has_water:
             try:
                 from dungeon import WATER as _W_TILE
-                _cur_t = self.dungeon.tiles[self.player.y][self.player.x]
-                self.player._armor_proc_on_water = (_cur_t == _W_TILE)
+                from dungeon import FOUNTAIN as _F_TILE
+                # On or beside water or a fountain. Water cannot be walked on,
+                # so "standing on it" never once happened.
+                _wet = False
+                for _wy in range(self.player.y - 1, self.player.y + 2):
+                    for _wx in range(self.player.x - 1, self.player.x + 2):
+                        if self.dungeon.in_bounds(_wx, _wy) and \
+                                self.dungeon.tiles[_wy][_wx] in (_W_TILE, _F_TILE):
+                            _wet = True
+                self.player._armor_proc_on_water = _wet
             except (ImportError, IndexError):
                 self.player._armor_proc_on_water = False
         else:
@@ -3768,7 +3810,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if self.player.sp < self.player.max_sp:
                         self.player.sp = min(self.player.max_sp, self.player.sp + _pf)
                 # disguise_at_camp: full restore once per altar visit
-                if _pap_r(self.player, 'disguise_at_camp') and not _was_on_altar:
+                # Once a floor: stepping off and on again was a full heal each time.
+                if not _was_on_altar and __import__('armor_procs').consume_floor_charge(
+                        self.player, 'disguise_at_camp'):
                     self.player.hp = self.player.max_hp
                     self.player.mp = self.player.max_mp
                     self.player.sp = self.player.max_sp
@@ -4558,7 +4602,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if isinstance(item, Ammo):
                 self.add_message(f"You pick up {item.count} {self._display_name(item)}s.", 'loot')
             else:
-                self.add_message(f"You pick up the {self._display_name(item)}.", 'loot')
+                self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
             # Leather scraps: keep count for the player. Nothing else in the
             # game says how many there are or how many are held.
             if getattr(item, 'id', '') == 'leather_scrap':
@@ -4720,9 +4764,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         old = self.player.armor_slots[head_idx] if self.player.armor_slots else None
         if old is not None:
             self.player.armor_slots[head_idx] = None
-            old_status = getattr(old, 'on_equip_status', '')
-            if old_status:
-                self.player.status_effects.pop(old_status, None)
+            self.player.shed_worn_grants(old)
             # Try to put old into inventory; if over weight, drop on floor
             if not self.player.add_to_inventory(old):
                 old.x, old.y = self.player.x, self.player.y
@@ -5891,9 +5933,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._remove_status_if_no_other_grants(_w_status)
         elif slot_name == 'shield':
             self.player.shield = None
+            self.player.shed_worn_grants(item)
         elif slot_name in ARMOR_SLOTS:
             idx = ARMOR_SLOTS.index(slot_name)
             self.player.armor_slots[idx] = None
+            # Its status and anything else it lent come off with it (only the
+            # swap path did this: the Blindfold left its wearer blind).
+            self.player.shed_worn_grants(item)
         elif slot_name.startswith('accessory_'):
             acc_idx = int(slot_name.split('_')[1])
             self.player.accessory_slots[acc_idx] = None
@@ -5929,7 +5975,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if 'status' in fx:
                     self._remove_status_if_no_other_grants(fx['status'])
         self.player.inventory.append(item)
-        self.add_message(f"You remove the {self._display_name(item)}.", 'info')
+        self.add_message(f"You remove the {self._bare_name(item)}.", 'info')
         _qs_uneq = getattr(self, 'quirk_system', None)
         if _qs_uneq:
             itype = 'weapon' if slot_name in ('weapon', 'ranged_weapon') else \
@@ -5948,7 +5994,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if is_chain_equip(item):
             self._start_chain_equip_quiz(item, item_type='armor')
             return
-        item_name = self._display_name(item)
+        item_name = self._bare_name(item)
         cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  GEOGRAPHY"
         self.state = STATE_QUIZ
@@ -5970,7 +6016,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         f"The Grail's light flows from the helm. "
                         f"{_cleansed} cursed item{'s' if _cleansed != 1 else ''} "
-                        f"on your person is purified.",
+                        f"on your person {'are' if _cleansed != 1 else 'is'} purified.",
                         'success')
                     self.player._galahad_cleansed_count = 0
                 _qs_arm = getattr(self, 'quirk_system', None)
@@ -6023,7 +6069,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._start_chain_equip_quiz(item, item_type='accessory')
             return
 
-        item_name = self._display_name(item)
+        item_name = self._bare_name(item)
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  HISTORY"
         self.state = STATE_QUIZ
 
@@ -6073,7 +6119,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         sticky state. On failure the item is NOT equipped.
         """
         from chain_equip import get_chain_subject, get_chain_mode, apply_tier_bonuses
-        item_name = self._display_name(item)
+        item_name = self._bare_name(item)
         cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
         subject = get_chain_subject(item)
         mode = get_chain_mode(item)
@@ -6102,11 +6148,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 #   dragon_blood_bath -> permanent elemental resist statuses
                 #   aesir_young -> 5t protected when newly re-equipped
                 _passives = getattr(item, '_chain_passives', {}) or {}
-                if 'dragon_blood_bath' in _passives and not getattr(
-                        self.player, '_dragon_blood_active', False):
-                    self.player._dragon_blood_active = True
+                if 'dragon_blood_bath' in _passives:
+                    # Listed on the item so they come off with it (two of the
+                    # three used to stay for the rest of the run).
+                    _held = list(getattr(item, '_chain_statuses', None) or [])
                     for _stat in ('fire_resist', 'cold_resist', 'shock_resist'):
                         self.player.add_effect(_stat, -1)
+                        if _stat not in _held:
+                            _held.append(_stat)
+                    item._chain_statuses = _held
                     self.add_message(
                         "You bathe in the dragon's blood. Elements turn aside!", 'success')
                 if 'aesir_young' in _passives:
@@ -6474,6 +6524,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             base = f"{{{buc}}} {base}"
         count = getattr(item, 'count', 1)
         return f"{base} x{count}" if count > 1 else base
+
+    def _bare_name(self, item) -> str:
+        """The display name without a leading article, for a sentence that
+        supplies its own ("You equip the ..."). An unidentified piece is named
+        "a pair of heavy iron boots", which read "the A Pair of Heavy Iron
+        Boots"."""
+        name = self._display_name(item)
+        for art in ('a ', 'an ', 'the '):
+            if name.lower().startswith(art):
+                return name[len(art):]
+        return name
 
     def _show_item_comparison(self, item):
         """Show a brief comparison hint if the ground item is comparable to equipped gear."""
@@ -7076,7 +7137,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if _dc > 1:
             self.add_message(f"You drop {_dc} {self._display_name(item)}.", 'info')
         else:
-            self.add_message(f"You drop the {self._display_name(item)}.", 'info')
+            self.add_message(f"You drop the {self._bare_name(item)}.", 'info')
 
         # Track shard drop for Diogenes' Lantern quirk
         if getattr(item, 'id', '') == 'philosophers_shard':

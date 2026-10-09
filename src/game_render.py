@@ -657,6 +657,10 @@ class RenderMixin:
                     lines.append(f"Toughness +{item.toughness_bonus:.0%}")
                 if getattr(item, 'quiz_timer_bonus', 0):
                     lines.append(f"Combat Clock +{int(item.quiz_timer_bonus)}s")
+                if getattr(item, 'spell_reflect', 0):
+                    lines.append(f"Turns Back {item.spell_reflect:.0%} Of Spells And Fire")
+                if getattr(item, 'fire_reflect', 0):
+                    lines.append(f"Throws Back {item.fire_reflect:.0%} Of Every Fire Attack")
                 if getattr(item, 'chain_bonus', 0):
                     lines.append(f"Every Chain That Lands Counts {int(item.chain_bonus)} Longer")
             fx = getattr(item, 'effects', None) or {}
@@ -5566,7 +5570,7 @@ class RenderMixin:
         elif isinstance(item, Armor):
             lines += [
                 ("Armor", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Slot: {_cap(item.slot)}   Material: {_cap(item.material)}   Tier: {item.tier}",
+                (f"Slot: {_cap(item.slot)}   Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
                  FP.BODY_TEXT, self.font_sm),
@@ -5580,7 +5584,7 @@ class RenderMixin:
         elif isinstance(item, Shield):
             lines += [
                 ("Shield", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Material: {_cap(item.material)}   Tier: {item.tier}",
+                (f"Material: {('Unique' if getattr(item, 'is_unique', False) and str(item.material).lower() in ('legendary', 'adamantine') else _cap(item.material))}   Tier: {item.tier}",
                  FP.BODY_TEXT, self.font_sm),
                 (f"AC bonus: +{item.ac_bonus}   Enchant: {self._lore_enchant_text(item)}",
                  FP.BODY_TEXT, self.font_sm),

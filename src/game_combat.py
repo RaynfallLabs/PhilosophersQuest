@@ -80,6 +80,8 @@ def _monster_level(m) -> int:
 # Shares of the creature's own health (floor_curve.wound).
 PIT_FALL_SHARE = 0.10         # a monster that blunders into a pit
 SHIELD_LASH_SHARE = 0.10      # fire / cold shield, each time it is struck
+DOOM_SHARE = 0.60              # Armor of Ragnarok: of each nearby monster's health (a named foe's a tenth of it)
+DOOM_STAGGER = 3               # turns the survivors of that blast lie stunned
 
 
 class CombatMixin:
@@ -2200,7 +2202,7 @@ class CombatMixin:
                     self._on_monster_killed(m)
                 continue  # can't attack this turn — just fell
             if did_attack:
-                # Displacement: 30% miss chance
+                # Displacement: DISPLACEMENT_MISS chance that the blow lands where you are not
                 if self.player.has_effect('displacement') and random.random() < DISPLACEMENT_MISS:
                     self.add_message(f"{the_name(m)}'s attack passes through your displaced image!", 'info')
                     continue
@@ -2209,6 +2211,7 @@ class CombatMixin:
                 if getattr(m, 'slips_on_ice', False):
                     from dungeon import ICE as _ICE
                     m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
+                m._last_attack_type = None      # set by the monster only when a blow lands
                 dmg, msg = m.attack(self.player)
                 self.add_message(msg, 'danger')
                 # Perseus's trait counts every gaze or effect thrown back at its
@@ -2287,14 +2290,14 @@ class CombatMixin:
 
                 # Carapace of the Hydra (caustic_blood): when the wearer takes
                 # poison damage, the attacker also gets poisoned. Reflects the
-                # "immune to its own venom" lore.
-                if dmg > 0:
+                # "immune to its own venom" lore. Keyed on the bite landing, not on
+                # damage getting through: the carapace's own poison resistance
+                # turns a small bite to 0, and then nothing was answered.
+                if getattr(m, '_last_attack_type', None) == 'poison':
                     try:
                         from armor_procs import proc_value
                         _refl_chance = float(proc_value(self.player, 'caustic_blood') or 0.0)
-                        if _refl_chance > 0 and \
-                                'poison' in (getattr(m, 'damage_types', []) or
-                                             getattr(m, 'attack_types', []) or []):
+                        if _refl_chance > 0 and getattr(m, '_last_attack_type', None) == 'poison':
                             if random.random() < _refl_chance and hasattr(m, 'add_effect'):
                                 m.add_effect('poisoned', 4)
                                 self.add_message(
@@ -2309,9 +2312,11 @@ class CombatMixin:
                 if dmg > 0:
                     try:
                         from armor_procs import player_has_armor_proc
+                        # The mark is the monster itself, and moves on when it dies.
+                        _marked = getattr(self.player, '_et_tu_target', None)
                         if player_has_armor_proc(self.player, 'et_tu_charge') and \
-                                getattr(self.player, '_et_tu_target', None) is None:
-                            self.player._et_tu_target = id(m)
+                                (_marked is None or not getattr(_marked, 'alive', True)):
+                            self.player._et_tu_target = m
                             self.add_message(
                                 f"\"Et tu, {m.name}?\" — Caesar's lorica marks the first betrayer.",
                                 'info')
@@ -2397,13 +2402,17 @@ class CombatMixin:
 
                 # Svalinn: reflect fire damage back at attacker
                 _shld = self.player.shield
-                if _shld and getattr(_shld, 'fire_reflect', 0) > 0 and dmg > 0:
-                    _atk_types = getattr(m, 'damage_types', getattr(m, 'attack_types', []))
-                    if 'fire' in _atk_types:
-                        _fire_ref = max(1, int(dmg * _shld.fire_reflect))
+                # A share of the attacker's own roll, not of what got through:
+                # Svalinn lets no fire through at all, so it reflected nothing.
+                # (And it read a field no monster has, so it never fired.)
+                if _shld and getattr(_shld, 'fire_reflect', 0) > 0 \
+                        and getattr(m, '_last_attack_type', None) == 'fire' and m.alive:
+                    _roll = int(getattr(m, '_last_attack_roll', 0) or 0)
+                    if _roll > 0:
+                        _fire_ref = max(1, int(_roll * _shld.fire_reflect))
                         m.hp -= _fire_ref
                         m._unhurt_turns = 0
-                        self.add_message(f"Svalinn reflects flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
+                        self.add_message(f"The {_shld.name} throws flame back at {the_name(m, lower=True)} for {_fire_ref}!", 'combat')
                         if m.hp <= 0 and m.alive:
                             m.alive = False
                             self._on_monster_killed(m)
@@ -2488,6 +2497,7 @@ class CombatMixin:
                             if _src is not None and _src in self.player.armor_slots:
                                 idx = self.player.armor_slots.index(_src)
                                 self.player.armor_slots[idx] = None
+                                self.player.shed_worn_grants(_src)
                     except ImportError:
                         pass
 
@@ -2498,26 +2508,48 @@ class CombatMixin:
                         from chain_passives import (
                             consume_run_passive, find_passive_item,
                         )
-                        if consume_run_passive(self.player, 'doom_of_the_gods'):
+                        _src = find_passive_item(self.player, 'doom_of_the_gods')
+                        if _src is not None and consume_run_passive(self.player, 'doom_of_the_gods'):
+                            # The world burns and one walks out of it. Each foe
+                            # near loses a share of ITS OWN health (a named foe
+                            # a tenth of that); the wearer is left at 1; the
+                            # armor is spent. It used to blast for the wearer's
+                            # max health, a sixth of a deep monster's, announce
+                            # them "annihilated", and leave the wearer dead.
+                            from floor_curve import wound
                             px, py = self.player.x, self.player.y
-                            _hits = 0
+                            _hits = _kills = 0
                             for mm in list(self.monsters):
-                                if not mm.alive:
+                                if not mm.alive or abs(mm.x - px) + abs(mm.y - py) > 6:
                                     continue
-                                d = abs(mm.x - px) + abs(mm.y - py)
-                                if d <= 6:
-                                    mm.take_damage(max(20, self.player.max_hp))
-                                    if not mm.alive:
-                                        self._on_monster_killed(mm)
-                                    _hits += 1
-                            self.add_message(
-                                f"DOOM OF THE GODS! Your armor erupts -- {_hits} foes annihilated!",
-                                'success')
-                            # Break the armor that was carrying the passive.
-                            _src = find_passive_item(self.player, 'doom_of_the_gods')
-                            if _src is not None and _src in self.player.armor_slots:
+                                _named = bool(getattr(mm, 'is_boss', False)
+                                              or 'legendary' in (getattr(mm, 'tags', None) or ()))
+                                mm.take_damage(wound(DOOM_SHARE, mm.max_hp, named=_named))
+                                _hits += 1
+                                if not mm.alive:
+                                    _kills += 1
+                                    self._on_monster_killed(mm)
+                                else:
+                                    # Whatever lives through it is thrown down
+                                    # for DOOM_STAGGER turns: without this the
+                                    # next foe in the same turn finished the
+                                    # wearer and the armor bought nothing.
+                                    mm.status_effects['paralyzed'] = max(
+                                        int(mm.status_effects.get('paralyzed', 0) or 0), DOOM_STAGGER)
+                            self.player.hp = 1
+                            if _hits:
+                                self.add_message(
+                                    f"DOOM OF THE GODS! Your armor erupts: {_hits} "
+                                    f"{'foe is' if _hits == 1 else 'foes are'} burned, {_kills} destroyed, the rest thrown down. "
+                                    "You stand in the ash with 1 health.", 'success')
+                            else:
+                                self.add_message(
+                                    "DOOM OF THE GODS! Your armor erupts and is gone. "
+                                    "You stand in the ash with 1 health.", 'success')
+                            if _src in self.player.armor_slots:
                                 idx = self.player.armor_slots.index(_src)
                                 self.player.armor_slots[idx] = None
+                            self.player.shed_worn_grants(_src)
                     except ImportError:
                         pass
 

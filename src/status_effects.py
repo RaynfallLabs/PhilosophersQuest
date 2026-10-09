@@ -190,6 +190,7 @@ BUFFS: frozenset = frozenset({
 DOT_SHARE = 0.02
 # Turns per point of the `regenerating` status.
 REGEN_PERIOD = 3
+REGEN_SHARE = 1 / 300          # of max health, each REGEN_PERIOD turns
 
 
 # Stats a status lends while it lasts: granted when it begins, taken back
@@ -592,7 +593,8 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
     try:
         from armor_procs import player_has_armor_proc
         if player_has_armor_proc(player, 'grendel_grip'):
-            for _gg_eff in ('paralyzed', 'strangulation', 'sleeping'):
+            for _gg_eff in ('paralyzed', 'strangulation', 'sleeping',
+                            'immobilized', 'stunned', 'frozen'):
                 if player.status_effects.get(_gg_eff, 0) > 0:
                     player.status_effects[_gg_eff] = 0
                     messages.append((f'Grendel-grip — you wrench free of {_gg_eff.replace("_", " ")}!', 'success'))
@@ -629,7 +631,10 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
             # found by floor 12 refilled the whole bar every minute of play).
             player._regen_phase = (int(getattr(player, '_regen_phase', 0)) + 1) % REGEN_PERIOD
             if player._regen_phase == 0 and player.hp < player.max_hp:
-                player.restore_hp(1)
+                # A share of the body it mends: one point for a small one, and
+                # REGEN_SHARE of a large one (one flat point was nothing at
+                # 1,500 health, where the Crown of Brahma grants this).
+                player.restore_hp(max(1, int(player.max_hp * REGEN_SHARE)))
 
         elif effect == 'petrifying':
             if val <= 3:

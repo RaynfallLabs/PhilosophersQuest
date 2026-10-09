@@ -35,6 +35,11 @@ from game_states import (
 )
 
 
+# Helm of Gilgamesh: the kinds of creature that can be paid to stand aside.
+BRIBE_TAGS = frozenset({'humanoid', 'goblinoid', 'goblin', 'orc', 'giant', 'bandit', 'cultist',
+                        'kobold', 'gnoll', 'troll', 'demon', 'fey', 'dragon', 'caster'})
+
+
 class MenuMixin:
     # Gleipnir: how far the ribbon can be cast, and the paralysis value a
     # cast applies (3 = held on the turn of the cast and the two after).
@@ -1659,7 +1664,10 @@ class MenuMixin:
                 continue
             if getattr(m, 'is_boss', False):
                 continue
-            if int(getattr(m, 'intelligence', 0)) < 5:
+            # Something that can want gold. This tested an `intelligence`
+            # no monster has, so the bribe never worked once.
+            _tags = set(getattr(m, 'tags', None) or ())
+            if not (_tags & BRIBE_TAGS) or (_tags & {'boss', 'legendary'}):
                 continue
             if (m.x, m.y) not in self.visible:
                 continue
@@ -1667,7 +1675,7 @@ class MenuMixin:
             candidates.append((d, m))
         if not candidates:
             self.add_message(
-                "No bribeable mortals in sight — only dumb beasts or kings.",
+                "Nothing in sight would take gold: only beasts, the dead, or kings.",
                 'warning')
             return False
         candidates.sort(key=lambda t: t[0])

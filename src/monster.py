@@ -703,6 +703,10 @@ class Monster:
             if self._slipped(player, atk):
                 return 0, gaze_msg + f" You slip {the_name(self, lower=True)}'s blow."
             dmg = roll(atk['damage'])
+            # What was swung and how hard, before any armor: read by the
+            # armor that answers a blow (Hydra carapace, Svalinn).
+            self._last_attack_type = atk.get('type', 'physical')
+            self._last_attack_roll = dmg
             atk_type = atk.get('type', 'physical')
             if self.has_effect('weakened'):
                 dmg = max(1, dmg // 2)
@@ -870,6 +874,10 @@ class Monster:
 
         # -- Hit: roll damage -----------------------------------------------
         dmg = roll(atk['damage'])
+        # What was swung and how hard, before any armor: read by the
+        # armor that answers a blow (Hydra carapace, Svalinn).
+        self._last_attack_type = atk.get('type', 'physical')
+        self._last_attack_roll = dmg
         atk_type = atk.get('type', 'physical')
 
         # Rage damage bonus (Fenrir)
@@ -1973,6 +1981,10 @@ class Monster:
                 parts.append("slipped")
                 continue
             dmg = roll(atk['damage'])
+            # What was swung and how hard, before any armor: read by the
+            # armor that answers a blow (Hydra carapace, Svalinn).
+            self._last_attack_type = atk.get('type', 'physical')
+            self._last_attack_roll = dmg
             if self.rage_stacks > 0 and self.rage_damage_bonus:
                 for _ in range(self.rage_stacks):
                     dmg += self._roll_rage_bonus()

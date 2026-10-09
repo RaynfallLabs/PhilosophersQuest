@@ -1436,7 +1436,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
 
         # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
         # +25% damage against the floor's highest-level monster.
-        if getattr(player, '_death_omen_target', None) == id(monster):
+        if getattr(player, '_death_omen_target', None) is monster:
             damage = int(damage * 1.25)
 
         # Helm of Leonidas (last_stand_bonus): LAST_STAND_SHARE more damage
@@ -1475,7 +1475,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
 
         # Lorica Hamata of Caesar (et_tu_charge): +50% damage against the
         # marked first-attacker.
-        if getattr(player, '_et_tu_target', None) == id(monster):
+        if getattr(player, '_et_tu_target', None) is monster:
             damage = int(damage * 1.50)
 
         # Hippolyta girdle (amazon_charge): if armed (3+ straight-line moves),
