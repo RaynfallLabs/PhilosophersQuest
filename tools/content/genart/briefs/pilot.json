@@ -1,0 +1,764 @@
+[
+ {
+  "id": "goblin",
+  "family": "goblin",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a goblin: a small, scrawny, hunched green-skinned creature with long pointed ears, a hooked nose and yellow eyes.",
+  "colours": "bright leaf-green skin, dirty brown rags.",
+  "wears": "It wears only a ragged brown loincloth and scraps of cloth; no armour at all.",
+  "holds": "It holds exactly one small rusty knife in its right hand. Its left hand is an open empty claw with nothing in it.",
+  "pose": "It is lunging forward in a low crouch, knife arm stabbing out, mouth open in a shriek.",
+  "must_show": [
+   "small scrawny green goblin",
+   "rags only, no armour",
+   "one small rusty knife"
+  ],
+  "must_not_show": [
+   "armour",
+   "crown",
+   "mask",
+   "staff",
+   "bow or crossbow",
+   "second weapon"
+  ]
+ },
+ {
+  "id": "goblin_shaman",
+  "family": "goblin",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a goblin shaman: a small hunched green-skinned goblin whose face is hidden behind a mask cut from a big spotted mushroom cap, with long pointed ears sticking out at the sides.",
+  "colours": "green skin, a red-and-white spotted mushroom-cap mask, bone-white charms, a dull teal hex glow.",
+  "wears": "It wears a ragged robe hung with small bones, feathers and dried mushrooms.",
+  "holds": "It shakes exactly one rattle made of knucklebones on a stick in its right hand; its left hand is empty and raised, with a dull teal magic glow around the fingers.",
+  "pose": "It is hopping on one foot mid-dance, rattle raised high, left hand thrust forward casting a hex.",
+  "must_show": [
+   "goblin (green skin, long ears)",
+   "mushroom-cap mask",
+   "knucklebone rattle",
+   "magic glow or bone charms that say 'caster'"
+  ],
+  "must_not_show": [
+   "sword",
+   "knife",
+   "armour",
+   "crown",
+   "wizard hat",
+   "tall staff"
+  ]
+ },
+ {
+  "id": "goblin_sniper",
+  "family": "goblin",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a goblin sniper: a small wiry green-skinned goblin marksman with long pointed ears, one eye squinted shut to aim.",
+  "colours": "olive-green skin, a dark brown patched hood and cloak, a wooden crossbow with an iron bow.",
+  "wears": "It wears a dark patched hood and short cloak, and a quiver of bolts on its hip.",
+  "holds": "It aims exactly one medieval wooden crossbow, with a curved bow of iron mounted crosswise at the front and a taut string, held in both hands and raised to its cheek.",
+  "pose": "It kneels on one knee, leaning into the crossbow and sighting along it to the left.",
+  "must_show": [
+   "goblin (green skin, long ears)",
+   "crossbow held in both hands, aimed",
+   "hood or cloak",
+   "kneeling or crouched aiming pose"
+  ],
+  "must_not_show": [
+   "sword",
+   "longbow",
+   "armour",
+   "crown",
+   "mask",
+   "second weapon",
+   "rifle",
+   "gun",
+   "gun barrel"
+  ]
+ },
+ {
+  "id": "hobgoblin",
+  "family": "goblin",
+  "rank": 4,
+  "key": "magenta",
+  "what": "a hobgoblin soldier: a tall, broad-shouldered, upright goblinoid, a full head taller and far heavier than a goblin, with dark green skin, a flat fierce face, short pointed ears and small tusks.",
+  "colours": "dark forest-green skin, blackened iron armour with dull red cloth.",
+  "wears": "It wears a disciplined soldier's kit: an iron helmet, a mail shirt and iron shoulder plates over a red tabard.",
+  "holds": "It holds exactly one curved sword in its right hand; its left hand is an empty clenched fist.",
+  "pose": "It strides forward in a drilled fighting stance, sword drawn back for a cut, chin down.",
+  "must_show": [
+   "taller and broader than a goblin, upright",
+   "soldier's armour and helmet",
+   "one sword",
+   "disciplined, military look"
+  ],
+  "must_not_show": [
+   "rags",
+   "crown",
+   "mask",
+   "staff",
+   "crossbow",
+   "scrawny body",
+   "second weapon"
+  ]
+ },
+ {
+  "id": "goblin_king",
+  "family": "goblin",
+  "rank": 5,
+  "key": "magenta",
+  "what": "a goblin king: an old, pot-bellied, scarred green-skinned goblin with long pointed ears and a wide shrieking mouth, small like other goblins but puffed up with stolen finery.",
+  "colours": "green skin, a crown of bent copper coins, a tattered royal-purple cape with a mangy fur collar, gold rings.",
+  "wears": "It wears a lopsided crown made of bent copper coins wired together with teeth, a tattered cape far too long for it that drags behind, and too many stolen necklaces.",
+  "holds": "It holds exactly one jewelled dagger in its right hand; its left hand points forward giving an order.",
+  "pose": "It stands on tiptoe with its chest puffed out, head thrown back, shrieking a command.",
+  "must_show": [
+   "goblin (green skin, long ears)",
+   "coin crown",
+   "cape and stolen finery",
+   "commanding, shrieking pose",
+   "clearly the leader, more ornate than every other goblin"
+  ],
+  "must_not_show": [
+   "plate armour",
+   "mask",
+   "staff",
+   "crossbow",
+   "tall muscular body",
+   "second weapon"
+  ]
+ },
+ {
+  "id": "skeleton",
+  "family": "skeleton",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a skeleton: a human skeleton of bare ivory bones and nothing else, with an empty grinning skull and exposed ribs.",
+  "colours": "ivory and yellowed bone with grey-brown shadows.",
+  "wears": "It wears nothing at all: no armour, no helmet, no clothes, only a few threads of rotted cloth at the hips.",
+  "holds": "It holds exactly one old wooden club in its right hand; its left hand is empty.",
+  "pose": "It lurches forward with the club raised overhead, jaw hanging open.",
+  "must_show": [
+   "bare bones, ribs and skull clearly visible",
+   "no armour or clothing",
+   "one crude club"
+  ],
+  "must_not_show": [
+   "armour",
+   "helmet",
+   "shield",
+   "sword",
+   "robe",
+   "bow",
+   "flames",
+   "flesh"
+  ]
+ },
+ {
+  "id": "skeleton_warrior",
+  "family": "skeleton",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a skeleton warrior: a human skeleton man-at-arms. Its head is a bare bone skull, and its forearms, hands, legs and feet are bare bone with no skin or flesh anywhere.",
+  "colours": "ivory bone, dark grey iron chainmail speckled with orange rust, a grey iron helmet, a plain brown wooden shield with an iron rim.",
+  "wears": "It wears a knee-length shirt of rusted iron chainmail and an old dented iron kettle helmet with a wide brim. It wears no cloth tunic and no bandana.",
+  "holds": "It holds exactly one notched sword in its right hand and exactly one round wooden shield on its left arm.",
+  "pose": "It advances behind its raised shield in a drilled stance, sword drawn back to thrust.",
+  "must_show": [
+   "skeleton (skull face, bare bone arms and legs)",
+   "rusted chainmail shirt",
+   "iron helmet",
+   "one sword and one round wooden shield",
+   "soldier's stance"
+  ],
+  "must_not_show": [
+   "skin or flesh",
+   "cloth tunic",
+   "bandana or cloth cap",
+   "blue shield",
+   "full plate armour hiding the bones",
+   "robe",
+   "bow",
+   "flames",
+   "second sword"
+  ]
+ },
+ {
+  "id": "skeleton_archer",
+  "family": "skeleton",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a skeleton archer: a human skeleton bowman with a bare skull face and exposed ribs.",
+  "colours": "ivory bone, a faded green hood, a dark wooden longbow.",
+  "wears": "It wears only a tattered green hood and a quiver of arrows on its back; no armour.",
+  "holds": "It draws exactly one longbow with an arrow nocked, bow in the left hand and string pulled back with the right.",
+  "pose": "It stands side-on at full draw, aiming to the left.",
+  "must_show": [
+   "skeleton (skull, ribs visible)",
+   "longbow at full draw with an arrow",
+   "quiver",
+   "no armour"
+  ],
+  "must_not_show": [
+   "sword",
+   "shield",
+   "armour",
+   "robe",
+   "crossbow",
+   "flames",
+   "flesh"
+  ]
+ },
+ {
+  "id": "skeleton_mage",
+  "family": "skeleton",
+  "rank": 4,
+  "key": "green",
+  "what": "a skeleton mage: the skeleton of a wizard, a bare skull under a deep hood, with bare ribs showing where its robe hangs open.",
+  "colours": "ivory bone, faded violet robes with silver trim, a pale violet magic light.",
+  "wears": "It wears a tattered violet wizard's robe and hood hanging loose on bare ribs, with a spellbook chained at its belt.",
+  "holds": "Its hands are empty; a pale violet light crawls between the finger bones of its raised right hand. It has no staff and no weapon.",
+  "pose": "It leans forward with its right hand thrust out casting a ray, robe sleeves swept back.",
+  "must_show": [
+   "skeleton (skull, ribs visible through the robe)",
+   "wizard's robe and hood",
+   "pale violet magic at the hand",
+   "empty hands"
+  ],
+  "must_not_show": [
+   "staff",
+   "sword",
+   "shield",
+   "armour",
+   "bow",
+   "crown",
+   "flesh"
+  ]
+ },
+ {
+  "id": "burning_skeleton",
+  "family": "skeleton",
+  "rank": 5,
+  "key": "magenta",
+  "what": "a burning skeleton: a human skeleton of blackened, glowing-hot bones wrapped head to foot in orange and yellow flame, with fire pouring from its eye sockets and ribcage.",
+  "colours": "charred black and ember-red bone, bright orange and yellow fire.",
+  "wears": "It wears nothing; the flames are its only covering.",
+  "holds": "Its hands are empty and wreathed in fire.",
+  "pose": "It strides forward with both burning arms spread wide to grapple.",
+  "must_show": [
+   "skeleton (skull and ribs visible inside the fire)",
+   "wrapped in flame",
+   "blackened bones",
+   "empty hands"
+  ],
+  "must_not_show": [
+   "armour",
+   "sword",
+   "shield",
+   "robe",
+   "bow",
+   "flesh"
+  ]
+ },
+ {
+  "id": "giant_rat",
+  "family": "rat",
+  "rank": 1,
+  "key": "green",
+  "what": "a giant rat: an ordinary rat grown to the size of a terrier, a four-legged animal with a pointed snout, round ears, long whiskers and a long bare tail.",
+  "colours": "grey-brown fur, a pale belly, pink ears, feet and tail, yellow incisors.",
+  "wears": "It is a plain animal and wears nothing.",
+  "holds": "It is an animal on four legs and holds nothing.",
+  "pose": "Seen from the side, it scurries to the left low to the ground with its mouth open and incisors bared.",
+  "must_show": [
+   "a rat on all four legs",
+   "long bare tail",
+   "bared incisors",
+   "ordinary animal, not monstrous"
+  ],
+  "must_not_show": [
+   "standing upright on two legs",
+   "humanoid body",
+   "muscular arms",
+   "clothes",
+   "weapon",
+   "spikes",
+   "horns"
+  ]
+ },
+ {
+  "id": "dire_rat",
+  "family": "rat",
+  "rank": 2,
+  "key": "green",
+  "what": "a dire rat: a savage rat the size of a large dog, a heavy four-legged animal with a scarred muzzle, a torn ear, a spiky raised ridge of fur along its back and oversized fangs.",
+  "colours": "dark chocolate-brown and black matted fur, red eyes, a scabby pink tail, yellow fangs.",
+  "wears": "It is an animal and wears nothing.",
+  "holds": "It is an animal on four legs and holds nothing.",
+  "pose": "Seen from the side, it is leaping to the left with jaws wide open and front claws reaching.",
+  "must_show": [
+   "a rat on four legs",
+   "bigger, darker and more savage than a giant rat",
+   "scars and spiky hackles",
+   "red eyes"
+  ],
+  "must_not_show": [
+   "standing upright on two legs",
+   "humanoid body",
+   "clothes",
+   "weapon",
+   "horns",
+   "wings"
+  ]
+ },
+ {
+  "id": "wererat",
+  "family": "rat",
+  "rank": 3,
+  "key": "green",
+  "what": "a wererat: a hunched rat-man standing upright on two legs, with a rat's head, whiskers, round ears, clawed hands and a long bare tail.",
+  "colours": "dirty grey-tan fur, a patched dark brown hooded cloak, a pink tail.",
+  "wears": "It wears a thief's patched hooded cloak and a belt of pouches.",
+  "holds": "It holds exactly one thin dagger in its right hand, held low; its left hand is empty.",
+  "pose": "It slinks forward on tiptoe in a sneaking crouch, dagger ready, tail curled, glancing sideways.",
+  "must_show": [
+   "upright rat-man (rat head, two legs, tail)",
+   "thief's cloak",
+   "one dagger",
+   "sneaking pose"
+  ],
+  "must_not_show": [
+   "four-legged animal",
+   "armour",
+   "sword",
+   "shield",
+   "second weapon",
+   "human face"
+  ]
+ },
+ {
+  "id": "cave_spider",
+  "family": "spider",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a cave spider: a spider the size of a cat with a small round body, eight thin jointed legs and a cluster of small black eyes.",
+  "colours": "dull sandy brown with darker brown leg bands.",
+  "wears": "It is an animal and wears nothing.",
+  "holds": "It holds nothing.",
+  "pose": "Seen from slightly above, it crouches low with its legs gathered, hanging from one thin strand of silk.",
+  "must_show": [
+   "a spider with eight thin legs",
+   "small and plain brown",
+   "a strand of silk"
+  ],
+  "must_not_show": [
+   "huge hairy body",
+   "purple or blue colour",
+   "crown",
+   "humanoid parts",
+   "weapon",
+   "glow"
+  ]
+ },
+ {
+  "id": "giant_spider",
+  "family": "spider",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a giant spider: a real spider scaled up to the size of a horse, with the true body of a tarantula: a small head section, a huge round hairy abdomen behind it, and exactly eight thick hairy jointed legs, four on each side. It has a cluster of eight small red eyes and two long curved fangs.",
+  "colours": "black and dark charcoal hair, red eyes, pale green venom dripping from the fangs.",
+  "wears": "It is an animal and wears nothing.",
+  "holds": "It holds nothing.",
+  "pose": "Seen from the front and slightly above, it crouches wide and low with all eight legs spread out to the sides, the front pair lifted off the ground, fangs spread.",
+  "must_show": [
+   "a true spider body (two body sections, eight legs)",
+   "thick hairy legs",
+   "much larger and heavier than a cave spider",
+   "red eyes",
+   "long fangs"
+  ],
+  "must_not_show": [
+   "humanoid torso",
+   "arms",
+   "muscular chest",
+   "horns",
+   "beast head with a snout",
+   "thin plain brown body",
+   "blue colour",
+   "crown",
+   "weapon"
+  ]
+ },
+ {
+  "id": "phase_spider",
+  "family": "spider",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a phase spider: a large real spider with the true body of a spider (a small head section, a sleek oval abdomen, and exactly eight long thin jointed legs), coloured in pale blue and white bands. Its rear half is fading away into thin pale mist as if it were only half in this world.",
+  "colours": "pale ice-blue and white bands, cyan eyes, a pale blue mist.",
+  "wears": "It is an animal and wears nothing.",
+  "holds": "It holds nothing.",
+  "pose": "Seen from the front and slightly above, it steps forward with its four front legs solid and reaching, while its abdomen and back legs dissolve into wisps of pale blue mist.",
+  "must_show": [
+   "a true spider body with eight long legs",
+   "pale blue and white banding",
+   "rear of the body fading into mist",
+   "cyan eyes"
+  ],
+  "must_not_show": [
+   "horse",
+   "pony",
+   "unicorn",
+   "horn",
+   "mane",
+   "four-legged animal body",
+   "black hairy body",
+   "brown colour",
+   "crown",
+   "weapon"
+  ]
+ },
+ {
+  "id": "spider_queen",
+  "family": "spider",
+  "rank": 4,
+  "key": "green",
+  "what": "a spider queen: an enormous, regal spider with a vast swollen abdomen marked with a bright violet pattern, eight long armoured legs tipped with blades, a crown-like ring of spines on her head and a cluster of glowing violet eyes.",
+  "colours": "glossy black body, royal violet and magenta markings, gold-tipped spines.",
+  "wears": "She is an animal and wears nothing; her crown is a natural ring of spines.",
+  "holds": "She holds nothing.",
+  "pose": "She towers with her body raised high on all eight legs, front legs spread wide, a pale egg sac under her abdomen.",
+  "must_show": [
+   "a spider with eight legs",
+   "the largest and most ornate spider of the family",
+   "violet markings",
+   "crown of spines",
+   "regal, towering stance"
+  ],
+  "must_not_show": [
+   "plain brown body",
+   "small body",
+   "human torso",
+   "weapon",
+   "pale blue colour"
+  ]
+ },
+ {
+  "id": "zombie",
+  "family": "zombie",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a zombie: a walking human corpse of ordinary build, with sunken eyes, a slack jaw and long filthy fingernails.",
+  "colours": "sickly grey-green flesh, a dirty off-white burial shroud, dark stains.",
+  "wears": "It wears a torn burial shroud hanging off one shoulder.",
+  "holds": "Its hands are empty and it holds nothing.",
+  "pose": "It shambles forward off balance, one arm clawing ahead, head tilted to one side.",
+  "must_show": [
+   "a human corpse of ordinary size",
+   "grey-green rotting flesh",
+   "burial shroud",
+   "empty clawing hands"
+  ],
+  "must_not_show": [
+   "huge muscles",
+   "armour",
+   "weapon",
+   "boils",
+   "bare skeleton",
+   "glow"
+  ]
+ },
+ {
+  "id": "plague_zombie",
+  "family": "zombie",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a plague zombie: a walking human corpse from a plague pit, bloated and covered in swollen dark boils, with black fingertips, a lolling tongue and a faint sickly yellow-green haze around its mouth.",
+  "colours": "mottled sickly yellow-green flesh, black fingers and boils, filthy brown plague rags.",
+  "wears": "It wears filthy plague-pit rags and a strip of cloth tied round its head.",
+  "holds": "Its hands are empty and it holds nothing.",
+  "pose": "It staggers forward doubled over and retching, both blackened hands reaching out.",
+  "must_show": [
+   "a human corpse of ordinary size",
+   "boils and black fingers",
+   "sickly yellow-green colour",
+   "visibly diseased, unlike a plain zombie"
+  ],
+  "must_not_show": [
+   "huge muscles",
+   "armour",
+   "weapon",
+   "clean shroud",
+   "bare skeleton"
+  ]
+ },
+ {
+  "id": "zombie_hulk",
+  "family": "zombie",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a giant stitched corpse: an enormous dead body sewn together from several corpses, twice the width of a man, with mismatched patches of rotting grey-green and yellowed skin joined by thick black rope stitches, a small lopsided head with one dead white eye and a slack jaw, a sagging swollen belly, and two huge club-like fists.",
+  "colours": "rotting grey-green and sallow yellow dead skin in mismatched patches, black stitches, dark red open seams, rusty iron chains.",
+  "wears": "It wears only a torn filthy brown sackcloth wrap at the waist and broken rusty chains hanging from its wrists.",
+  "holds": "Its hands are empty; it holds nothing.",
+  "pose": "It lumbers forward hunched over, dragging one foot, with both huge fists raised to hammer down.",
+  "must_show": [
+   "dead rotting flesh in mismatched patches",
+   "thick black stitches across the body",
+   "enormous bulk, far bigger than a zombie",
+   "slack dead face",
+   "huge fists, no weapon"
+  ],
+  "must_not_show": [
+   "healthy muscles",
+   "six-pack abs",
+   "superhero",
+   "blue trousers or jeans",
+   "angry heroic face",
+   "weapon",
+   "armour",
+   "tusks",
+   "bare skeleton"
+  ]
+ },
+ {
+  "id": "troll",
+  "family": "troll",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a troll: a tall, lanky, stooped giant with warty skin, very long arms that hang to its knees, a long drooping nose, small tusks and long hooked claws.",
+  "colours": "mossy green warty skin, yellow eyes, dirty yellow claws.",
+  "wears": "It wears only a ragged hide loincloth.",
+  "holds": "Its clawed hands are empty and it holds nothing.",
+  "pose": "It lopes forward with one long arm swinging in a wide raking claw swipe, mouth open in a roar.",
+  "must_show": [
+   "tall lanky giant with very long arms",
+   "mossy green warty skin",
+   "long nose and claws",
+   "no weapon"
+  ],
+  "must_not_show": [
+   "weapon",
+   "club",
+   "armour",
+   "ice",
+   "blue or white skin",
+   "stone-grey skin",
+   "boulder"
+  ]
+ },
+ {
+  "id": "ice_troll",
+  "family": "troll",
+  "rank": 2,
+  "key": "magenta",
+  "what": "an ice troll: a tall, lanky, stooped giant with very long arms, a long nose and tusks, its skin pale blue-white like glacier ice, with a shaggy white mane, icicles hanging from its chin and elbows, and claws of clear ice.",
+  "colours": "pale ice-blue and white skin, white fur, cyan ice claws, frosty breath.",
+  "wears": "It wears only a white fur loincloth.",
+  "holds": "Its clawed hands are empty and it holds nothing.",
+  "pose": "It lunges forward raking with one frozen claw, breath steaming in a white cloud.",
+  "must_show": [
+   "troll build (tall, lanky, long arms, long nose)",
+   "pale blue-white skin",
+   "icicles or ice claws",
+   "frosty breath",
+   "no weapon"
+  ],
+  "must_not_show": [
+   "weapon",
+   "club",
+   "armour",
+   "green skin",
+   "stone-grey skin",
+   "boulder",
+   "fire"
+  ]
+ },
+ {
+  "id": "cave_troll",
+  "family": "troll",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a cave troll: a massive, heavy-set giant, much bulkier than an ordinary troll, with a thick ridged hide like cracked grey rock, long powerful arms, a long nose, big tusks and pale blind-looking eyes.",
+  "colours": "slate-grey and stone-brown ridged hide, pale eyes, a rough grey boulder.",
+  "wears": "It wears only a rough hide loincloth.",
+  "holds": "It holds exactly one large boulder lifted over its head in both hands, about to throw it.",
+  "pose": "It leans back with the boulder hoisted overhead in both hands, roaring.",
+  "must_show": [
+   "troll build with long arms and long nose",
+   "heavier and bulkier than a troll",
+   "grey rocky ridged hide",
+   "one boulder held overhead"
+  ],
+  "must_not_show": [
+   "sword",
+   "club",
+   "armour",
+   "green skin",
+   "ice",
+   "blue skin",
+   "second boulder"
+  ]
+ },
+ {
+  "id": "kobold",
+  "family": "kobold",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a kobold: a very small, skinny reptilian creature like a little upright lizard, with a long snout full of small teeth, small backswept horns, big yellow eyes and a thin tail.",
+  "colours": "rust-orange and tan scales, a pale belly, dirty brown rags.",
+  "wears": "It wears a ragged miner's loincloth and a little candle-stub strapped to its head.",
+  "holds": "It holds exactly one short spear in both hands.",
+  "pose": "It jabs the short spear forward in a nervous crouch, tail up for balance.",
+  "must_show": [
+   "small upright lizard-like creature with snout, horns and tail",
+   "scales, not green goblin skin",
+   "one short spear",
+   "small and skinny"
+  ],
+  "must_not_show": [
+   "goblin ears",
+   "armour",
+   "fire",
+   "robe",
+   "second weapon",
+   "big muscular body",
+   "wings"
+  ]
+ },
+ {
+  "id": "kobold_trapsetter",
+  "family": "kobold",
+  "rank": 2,
+  "key": "magenta",
+  "what": "a kobold trapsetter: a very small, skinny reptilian creature like a little upright lizard, with a long snout, small backswept horns, sly narrowed yellow eyes and a thin tail.",
+  "colours": "rust-orange and tan scales, dark leather straps, grey iron darts.",
+  "wears": "It wears a leather bandolier of barbed darts across its chest, a coil of tripwire over one shoulder and a small iron jaw-trap hanging from its belt.",
+  "holds": "It holds exactly one barbed dart in its right hand, drawn back to throw; its left hand is empty.",
+  "pose": "It twists side-on, right arm cocked back to throw the dart, grinning.",
+  "must_show": [
+   "kobold (small lizard-like, snout, horns, tail)",
+   "bandolier of darts",
+   "coil of wire or a trap",
+   "one dart ready to throw"
+  ],
+  "must_not_show": [
+   "spear",
+   "sword",
+   "armour plates",
+   "fire",
+   "robe",
+   "goblin ears",
+   "wings",
+   "blue fins",
+   "backpack",
+   "sack"
+  ]
+ },
+ {
+  "id": "kobold_sorcerer",
+  "family": "kobold",
+  "rank": 3,
+  "key": "magenta",
+  "what": "a kobold sorcerer: a very small reptilian creature like a little upright lizard, with a long snout, a tall proud crest of horns like a tiny dragon, glowing orange eyes and a thin tail.",
+  "colours": "bright crimson-red scales, a gold necklace, orange and yellow fire.",
+  "wears": "It wears a scrap of gold-trimmed red cloth as a mantle and a necklace of gold coins, like tiny royalty.",
+  "holds": "Its hands are empty; a ball of orange fire burns in its raised right palm, touching the hand. It has no staff and no weapon.",
+  "pose": "It stands tall and haughty with its right hand raised hurling the fire, chin lifted.",
+  "must_show": [
+   "kobold (small lizard-like, snout, tail)",
+   "red scales, unlike the orange-tan common kobold",
+   "fire at its hand",
+   "dragon-like crest and gold: the tribe's royalty"
+  ],
+  "must_not_show": [
+   "spear",
+   "sword",
+   "staff",
+   "armour",
+   "wings",
+   "goblin ears",
+   "large body"
+  ]
+ },
+ {
+  "id": "minotaur",
+  "family": "minotaur",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a minotaur: a huge, heavily muscled man standing upright on two human legs, with the head of a bull: a broad bull's muzzle, a brass nose ring and long curved horns.",
+  "colours": "tan-brown human skin on the body, dark brown fur on the bull's head and shoulders, ivory horns, a bronze harness.",
+  "wears": "He wears a bronze-studded leather harness across his chest and a leather war-kilt.",
+  "holds": "His hands are empty clenched fists and he holds nothing.",
+  "pose": "He stands on two legs in mid-stride, bent forward at the waist with his head lowered to present the horns, one arm swung back, steam snorting from his nostrils.",
+  "must_show": [
+   "upright on two legs with a man's body",
+   "a bull's head with horns",
+   "muscular",
+   "harness and kilt",
+   "no weapon"
+  ],
+  "must_not_show": [
+   "four-legged bull",
+   "hooves on the front limbs",
+   "purple colour",
+   "weapon",
+   "axe",
+   "wings",
+   "human face"
+  ]
+ },
+ {
+  "id": "lich",
+  "family": "lich",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a lich: a tall, gaunt undead sorcerer-king, a bare skull with cold blue fire in the eye sockets and skeletal hands, wrapped in grand but rotting robes.",
+  "colours": "ivory bone, deep midnight-blue robes with tarnished gold embroidery, a tarnished gold crown, cold blue magic.",
+  "wears": "He wears long tattered royal robes with a high collar, a tarnished gold crown and a jewelled amulet on a chain at his chest.",
+  "holds": "His hands are empty; crackling cold-blue magic gathers around his outstretched right hand. He has no staff and no weapon.",
+  "pose": "He floats just off the ground with robes billowing, right hand thrust forward casting, left hand curled like a claw.",
+  "must_show": [
+   "skull face with blue fire eyes",
+   "crown",
+   "grand tattered robes",
+   "amulet",
+   "cold blue magic at an empty hand",
+   "far more regal and powerful than a skeleton mage"
+  ],
+  "must_not_show": [
+   "staff",
+   "sword",
+   "armour",
+   "flesh",
+   "violet robes",
+   "hood hiding the crown"
+  ]
+ },
+ {
+  "id": "wraith",
+  "family": "wraith",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a wraith: a hooded ghost made of drifting tatters of black cloth with no body inside, only two cold pale lights for eyes in the empty hood, long thin shadowy claws, and no legs: below the waist it trails away into ragged wisps.",
+  "colours": "black and deep grey cloth, pale icy blue-white eye lights and a faint pale blue-white edge glow.",
+  "wears": "It is nothing but an empty tattered hooded shroud.",
+  "holds": "Its clawed hands are empty and it holds nothing.",
+  "pose": "It swoops diagonally down to the left with both claws reaching out, cloth streaming behind it.",
+  "must_show": [
+   "empty hood with two pale eye lights",
+   "ragged black cloth",
+   "no legs, trailing wisps",
+   "reaching claws",
+   "no weapon"
+  ],
+  "must_not_show": [
+   "scythe",
+   "sword",
+   "legs or feet",
+   "skull face",
+   "crown",
+   "green glow"
+  ]
+ }
+]

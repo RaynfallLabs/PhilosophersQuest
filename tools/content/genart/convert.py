@@ -1,0 +1,92 @@
+"""Generated picture -> game sprite, the same way every time.
+
+The generator is asked for a flat key-colour background (magenta, or green for a
+purple creature). Everything of that hue is background wherever it sits, so the
+gap between two legs goes and so does any shadow on the ground. The figure is
+then shrunk to the tile size, cut to a small set of colours and outlined.
+
+Run with ComfyUI's Python (it has numpy, scipy and Pillow).
+"""
+import colorsys
+import numpy as np
+from PIL import Image
+from scipy import ndimage as ndi
+
+TILE = 48
+COLOURS = 24
+OUTLINE = (20, 16, 24)
+KEYS = {'magenta': (255, 0, 255), 'green': (0, 255, 0)}
+WORK = 512                                   # the mask is made at this size
+
+
+def _hsv(a):
+    r, g, b = a[..., 0] / 255.0, a[..., 1] / 255.0, a[..., 2] / 255.0
+    mx, mn = a.max(2) / 255.0, a.min(2) / 255.0
+    d = mx - mn
+    h = np.zeros_like(mx)
+    m = d > 1e-6
+    rm = m & (mx == r); gm = m & (mx == g) & ~rm; bm = m & ~rm & ~gm
+    h[rm] = ((g - b)[rm] / d[rm]) % 6
+    h[gm] = (b - r)[gm] / d[gm] + 2
+    h[bm] = (r - g)[bm] / d[bm] + 4
+    return h / 6.0, np.where(mx > 0, d / np.maximum(mx, 1e-6), 0), mx
+
+
+def figure_mask(im, key='magenta'):
+    """(rgb float array at WORK size, bool mask of the figure, facts about the cut)."""
+    a = np.asarray(im.convert('RGB').resize((WORK, WORK), Image.LANCZOS)).astype(np.float32)
+    h, s, v = _hsv(a)
+    kh = colorsys.rgb_to_hsv(*[c / 255.0 for c in KEYS[key]])[0]
+    dh = np.abs(h - kh); dh = np.minimum(dh, 1 - dh)
+    back = (dh < 0.075) & (s > 0.42) & (v > 0.16)          # the key colour, lit or in shadow
+    back = ndi.binary_dilation(back, iterations=1)         # take the fringe with it
+    fig = ~back
+    lab, n = ndi.label(fig)
+    parts = 0
+    if n:
+        sizes = ndi.sum(fig, lab, range(1, n + 1))
+        big = max(sizes)
+        keep = [i + 1 for i, sz in enumerate(sizes) if sz >= big * 0.03]
+        parts = len(keep)
+        fig = np.isin(lab, keep)
+    edge = np.concatenate([fig[0], fig[-1], fig[:, 0], fig[:, -1]])
+    border_key = np.concatenate([back[:3].ravel(), back[-3:].ravel(), back[:, :3].ravel(), back[:, -3:].ravel()])
+    facts = {
+        'parts': parts,                                    # separate pieces that survived
+        'coverage': float(fig.mean()),                     # how much of the frame the figure fills
+        'touches_edge': float(edge.mean()),                # cropped by the frame?
+        'background_ok': float(border_key.mean()),         # the frame's rim really is the key colour
+    }
+    return a, fig, facts
+
+
+def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS):
+    """(RGBA sprite Image of tile x tile, facts)."""
+    a, fig, facts = figure_mask(im, key)
+    if not fig.any():
+        return Image.new('RGBA', (tile, tile)), dict(facts, empty=True)
+    ys, xs = np.where(fig)
+    y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
+    side = max(y1 - y0, x1 - x0)
+    canvas = np.zeros((side, side, 4), np.float32)
+    oy, ox = side - (y1 - y0), (side - (x1 - x0)) // 2     # stand on the bottom edge, centred
+    canvas[oy:oy + y1 - y0, ox:ox + x1 - x0, :3] = a[y0:y1, x0:x1] * fig[y0:y1, x0:x1, None]
+    canvas[oy:oy + y1 - y0, ox:ox + x1 - x0, 3] = fig[y0:y1, x0:x1] * 255
+    inner = tile - 2                                       # room for the outline
+    small = np.asarray(Image.fromarray(canvas.astype(np.uint8), 'RGBa').resize((inner, inner), Image.BOX)).astype(np.float32)
+    al = small[..., 3:4]
+    rgb = np.where(al > 0, small[..., :3] * 255.0 / np.maximum(al, 1), 0)
+    solid = al[..., 0] > 110
+    # a small fixed number of colours, chosen from this sprite's own pixels
+    px = rgb[solid].astype(np.uint8)
+    if len(px):
+        q = Image.fromarray(px.reshape(1, -1, 3), 'RGB').quantize(min(colours, max(2, len(px))), method=Image.MEDIANCUT, kmeans=6)
+        rgb[solid] = np.asarray(q.convert('RGB')).reshape(-1, 3)
+    out = np.zeros((tile, tile, 4), np.uint8)
+    out[1:-1, 1:-1, :3] = rgb
+    out[1:-1, 1:-1, 3] = solid * 255
+    full = out[..., 3] > 0
+    ring = ndi.binary_dilation(full) & ~full
+    out[ring] = (*OUTLINE, 255)
+    facts['sprite_fill'] = float((out[..., 3] > 0).mean())
+    return Image.fromarray(out, 'RGBA'), facts

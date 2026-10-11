@@ -272,3 +272,8 @@ final_rungs.json
 
 # the player's own settings (sound on/off), written beside the saves
 /settings.json
+
+# Generated-sprite work files and test sheets (tools/content/genart)
+/_genart/
+/SPRITE_TEST_*.png
+/SPRITE_REVIEW_*.png
