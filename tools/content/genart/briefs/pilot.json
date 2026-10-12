@@ -57,12 +57,12 @@
   "colours": "olive-green skin, a dark brown patched hood and cloak, a wooden crossbow with an iron bow.",
   "wears": "It wears a dark patched hood and short cloak, and a quiver of bolts on its hip.",
   "holds": "It holds exactly one medieval crossbow in both hands. The crossbow is a straight wooden stock with a short, thick steel bow fixed crosswise at its front end, so the weapon makes a clear T shape: the two curved arms of the bow stick out to the left and right of the stock and a taut string runs between their tips, with one short bolt lying along the top of the stock.",
-  "pose": "It kneels on one knee and levels the crossbow at chest height, pointed to the left and tilted a little towards the viewer so the T shape of the weapon and both of its arms are plainly seen.",
+  "pose": "It crouches low on both feet, knees bent and back hunched, both feet flat on the ground and neither knee touching it, levelling the crossbow at chest height, pointed to the left and tilted a little towards the viewer so the T shape of the weapon and both of its arms are plainly seen.",
   "must_show": [
    "goblin (green skin, long ears)",
    "a crossbow that reads as a crossbow: stock, crosswise bow with two arms, string",
    "hood or cloak",
-   "kneeling or crouched aiming pose"
+   "crouching on both feet, aiming (not kneeling)"
   ],
   "must_not_show": [
    "sword",
@@ -77,7 +77,9 @@
    "longbow held upright",
    "pickaxe",
    "hammer",
-   "anchor shape"
+   "anchor shape",
+   "kneeling on one knee",
+   "sitting"
   ]
  },
  {
@@ -260,13 +262,14 @@
   "family": "skeleton",
   "rank": 5,
   "key": "green",
-  "what": "a burning skeleton: a human skeleton whose bones are blackened and cracked with glowing ember-orange lines. The whole skeleton is plainly visible: skull, ribs, spine, arms and legs. Tongues of orange and yellow flame rise only from its skull, shoulders and hands, and fire shines out through its eye sockets and ribcage. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
-  "colours": "charred black bone with glowing ember-orange cracks, bright orange and yellow flames.",
+  "what": "a burning skeleton: a human skeleton in which every single bone is burnt black and cracked with glowing ember-orange lines: the skull is charred black exactly like the ribs, spine, arms and legs, with no white or ivory bone anywhere. The whole skeleton is plainly visible. Tongues of orange and yellow flame rise only from its skull, shoulders and hands, and fire shines out through its eye sockets and ribcage. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
+  "colours": "charred black bone with glowing ember-orange cracks on every bone including the skull, bright orange and yellow flames.",
   "wears": "It wears nothing; the flames are its only covering.",
   "holds": "Its hands are empty and wreathed in fire.",
   "pose": "It lunges forward with one burning hand thrust out to grab and the other drawn back, trailing fire.",
   "must_show": [
-   "black bones clearly visible (skull, ribs, limbs), not hidden in fire",
+   "every bone burnt black, the skull included",
+   "bones clearly visible (skull, ribs, limbs), not hidden in fire",
    "flames from the skull, shoulders and hands",
    "glow inside the ribcage and eyes",
    "empty hands",
@@ -283,7 +286,9 @@
    "cartoon proportions",
    "short stubby body",
    "body hidden inside a column of fire",
-   "solid ball of flame"
+   "solid ball of flame",
+   "white skull",
+   "ivory or pale bone"
   ]
  },
  {
@@ -367,7 +372,7 @@
   "family": "spider",
   "rank": 1,
   "key": "green",
-  "what": "a cave spider: a spider the size of a cat with a small round body, eight thin jointed legs and a cluster of small black eyes, sitting on a small patch of pale cobweb.",
+  "what": "a cave spider: a spider the size of a cat with a small round body, eight thin jointed legs and a cluster of small black eyes.",
   "colours": "dull sandy brown with darker brown leg bands.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It holds nothing.",
@@ -375,7 +380,8 @@
   "must_show": [
    "a spider with eight thin legs",
    "small and plain brown",
-   "small and light next to the giant spider"
+   "small and light next to the giant spider",
+   "nothing under it: no web, no ground"
   ],
   "must_not_show": [
    "huge hairy body",
@@ -385,7 +391,11 @@
    "weapon",
    "glow",
    "thick heavy legs",
-   "tarantula bulk"
+   "tarantula bulk",
+   "cobweb",
+   "web platform",
+   "silk thread",
+   "patch of ground"
   ]
  },
  {
@@ -668,7 +678,7 @@
   "what": "a kobold trapsetter: a very small, skinny reptilian creature like a little upright lizard, with a long snout, small backswept horns, sly narrowed yellow eyes and a thin tail.",
   "colours": "rust-orange and tan scales, dark leather straps, grey iron darts.",
   "wears": "It wears a leather bandolier of barbed darts across its chest and a coil of tripwire over one shoulder.",
-  "holds": "It holds exactly one large open iron jaw-trap with jagged teeth, dangling from a chain in its left hand, and exactly one barbed dart in its right hand, drawn back to throw.",
+  "holds": "It holds exactly one iron bear-trap in its left hand, carried open by its chain: two curved iron jaws lined with big triangular teeth, like an open mouth. In its right hand it holds exactly one barbed dart, drawn back to throw.",
   "pose": "It twists side-on, right arm cocked back to throw the dart, grinning.",
   "must_show": [
    "kobold (small lizard-like, snout, horns, tail)",
@@ -686,7 +696,10 @@
    "wings",
    "blue fins",
    "backpack",
-   "sack"
+   "sack",
+   "plain iron ring",
+   "hoop",
+   "shackle"
   ]
  },
  {

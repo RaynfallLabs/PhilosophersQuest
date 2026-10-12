@@ -57,6 +57,44 @@ Rules learned the hard way:
 - **Never redraw Brandon's own portraits** (`player_ranger`, `player_wizard_f`,
   `player_robyn`).
 
+## What goes wrong, and the wording that stops it
+
+Every line here was a real failure in the pilot. Read them before writing a brief,
+and look for the same kind of slip when reviewing.
+
+- **A loaded word draws the wrong thing.** "Pony-sized" spider became a unicorn;
+  "zombie hulk" became the comic-book Hulk in jeans; "charging" minotaur became a
+  bull on four legs. Describe the body in plain parts and leave the loaded word out.
+- **One part contradicts the rest.** The burning skeleton had a clean white skull on
+  a charred body. When a creature is made of something or is in some state (burnt,
+  frozen, rotting, stone, rusted), say it of EVERY part and name the head.
+- **The pose word must be the pose.** "Kneels" and "crouches" are different pictures.
+  Say where the feet and knees are.
+- **Nothing under the figure.** A web, a rock, a patch of ground or a puddle under
+  the creature becomes a mess in the cut-out. Never ask for one; a floating or
+  hanging creature simply floats.
+- **Thin things must be drawn bold.** A bow, wand, string or chain thinner than a
+  sprite pixel is lost. Ask for thick, sturdy, slightly oversized held things, held
+  clear of the body. A bowstring or a silk thread will not survive: do not make it
+  a `must_show`.
+- **Describe a weapon by its shape** when its name is not enough: a crossbow is "a
+  stock with a short bow fixed crosswise, a T shape, two arms, a string".
+- **Extra props appear in idle hands.** State both hands. Casters grow staffs:
+  write "no staff" and put the magic "in the palm, touching the hand".
+- **A glow becomes a halo or a loose piece.** Keep magic and fire attached to the
+  body and small. A cloud of mist round a creature swallows it.
+- **Human-shaped creatures get big heads** unless the brief gives the build:
+  "realistic adult proportions, small skull, long limbs, about eight heads tall".
+- **A beast becomes a muscle-man** unless told it is "a real animal on four legs,
+  seen from the side".
+- **Tier is shown by gear and build, not size.** Every sprite fills the same tile.
+  The lowest tier is plain; each step up adds one or two things the tier below
+  must not have, and those go in the lower tier's `must_not_show`.
+- **Colours drift.** Name the colour of skin, cloth, metal and magic. The data's
+  `color` field is the old map glyph colour: ignore it.
+- **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
+  stitches and fangs are fine. Female creatures are clothed like anyone else.
+
 ## Review
 
 `_genart/<run>/REVIEW_<family>.png` shows each creature's candidates with its lists
@@ -65,3 +103,18 @@ records in `review.json`: every `must_show` item present, no `must_not_show` ite
 present, the hands hold what `holds` says, and in the lineup each tier is told
 apart from the one below. A creature with no passing candidate gets its brief
 reworded and is drawn again; it is not passed with a note.
+
+The reviewer also asks, of every pick, the questions that have no line in the brief:
+
+1. Would someone who knows the game name this creature from the sprite alone?
+2. Is anything inconsistent inside the figure (a clean part on a ruined body, two
+   left hands, a weapon merging into an arm, a face on the wrong side)?
+3. Is there anything under, behind or around the figure that is not the figure?
+4. Does the 64 px sprite still show what the painting shows (the held thing, the
+   face, the key feature)? If the painting passes and the sprite does not, it fails.
+5. In the family lineup, can each tier be told from the one below at a glance?
+
+`review.json` holds one entry per creature:
+`{"<id>": {"pick": 2, "fails": {"1": "reason", "3": "reason"}, "note": "one line"}}`.
+`"pick": null` with a note means no candidate is good enough after rework.
+`picks.py` draws the overview sheet from it.

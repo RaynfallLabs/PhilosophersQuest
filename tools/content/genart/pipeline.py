@@ -55,11 +55,12 @@ DRAFT = ("A classic fantasy oil painting of {what} Colours: {colours} {wears} {h
          "enough away that the figure is small in the picture: it fills only the middle two thirds, with wide empty "
          "backdrop above its head, below its feet and on both sides. Nothing it holds reaches the edge of the picture. "
          "The background is one completely flat, evenly lit, solid {key} filling the whole picture, with no shading or "
-         "gradient in it. There is no ground, no floor, no horizon and no shadow of any kind under or behind the figure.")
+         "gradient in it. There is no ground, no floor, no horizon and no shadow of any kind under or behind the figure, and nothing lies under or around it: no base, no rock, no web, no grass, no puddle, no rubble, no smoke.")
 DRAFT_NEG = ("shadow on the ground, cast shadow, drop shadow, floor, ground, scenery, multiple figures, character sheet, "
              "text, labels, border, photo, 3d render, blurry, chibi, cute, big head, cartoon, cartoon proportions, "
              "bright candy colours, flat lighting, dark silhouette, cropped, close-up, portrait, half-length, cut off at the knees, "
-             "standing still, stiff symmetrical pose, arms hanging at the sides, thin spindly weapon")
+             "standing still, stiff symmetrical pose, arms hanging at the sides, thin spindly weapon, "
+             "pedestal, base, platform, patch of ground, cobweb, rocks underfoot, debris, gore, blood, nudity")
 PIXEL = ("detailed pixel art of a classic fantasy oil painting, realistic proportions, dramatic warm side lighting, "
          "rich earthy colours, intricate detail, dark outline, serious high fantasy, {what} {colours} {holds} "
          "single figure, flat solid {keyname} background, no shadow")
@@ -198,12 +199,18 @@ def main():
     ap.add_argument('--only', default=''); ap.add_argument('--out', default='_genart/pilot')
     ap.add_argument('--sheets-only', action='store_true'); ap.add_argument('--seed', type=int, default=5000)
     ap.add_argument('--retries', type=int, default=3)
+    ap.add_argument('--check', action='store_true', help='only check the briefs, draw nothing')
     a = ap.parse_args()
     briefs = json.load(open(a.briefs, encoding='utf-8'))
     todo = [b for b in briefs if not a.only or b['id'] in a.only.split(',')]
     problems = check_briefs(todo)
     if problems:
         raise SystemExit('Briefs need fixing first:\n  ' + '\n  '.join(problems))
+    if a.check:
+        ids = [b['id'] for b in briefs]
+        dup = sorted({i for i in ids if ids.count(i) > 1})
+        print(f'{len(briefs)} briefs OK' + (f'; DUPLICATE ids: {dup}' if dup else ''))
+        return
     os.makedirs(a.out, exist_ok=True)
     if not a.sheets_only:
         generate([(b, c) for b in todo for c in range(1, a.n + 1)], a.out, a.seed)
@@ -225,7 +232,8 @@ def main():
     print(f'{len(report)} candidates, {len(failing)} fail a mechanical check')
     for k, v in sorted(failing.items()):
         print('  ', k, v)
-    for p in sheets(briefs, a.out, a.n, report):
+    fams = {b['family'] for b in todo}
+    for p in sheets([b for b in briefs if b['family'] in fams], a.out, a.n, report):
         print(p)
 
 
