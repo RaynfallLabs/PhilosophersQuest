@@ -487,6 +487,21 @@ and look for the same kind of slip when reviewing.
   to the viewer, nothing in it or near it".
 - **"Bony brow, deep-set eyes, slit nostrils" on a bald monster draws a skull;**
   "broad fleshy face, jowls, thick lips" gives a living one.
+- **A single eye the model will not draw on a face is drawn when something
+  physical forces it:** a helmet face-plate with one round hole.
+- **Three heads on one body:** "cheek to cheek so that they touch, chins level", a
+  crown on every head, and no cloak behind them (a cloak makes the side heads
+  look like animals standing behind him). A toad's head needs "hairless, no ears,
+  no whiskers, mouth one slit the full width, eyes on top".
+- **Burning fists:** "on fire like the head of a burning torch, the dark knuckles
+  showing in the middle". A "thin white-hot rim" cuts out as a white outline.
+- **Six arms, second recipe:** "three growing from each side, one below the other,
+  like the spokes of a wheel".
+- **A female figure's armour must be a different colour from her skin,** or it
+  reads as bare at 64 px.
+- **A leather coat over a furred humanoid's chest stops the bodybuilder torso.**
+- **A long brief on a blue backdrop can come back as a sky gradient** and fail the
+  cut-out; move it to green or magenta.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
