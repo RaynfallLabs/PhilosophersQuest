@@ -218,6 +218,30 @@ and look for the same kind of slip when reviewing.
   "lurches, jaw open, arms reaching" is kept.
 - **After changing a creature's `key`, redraw it** before any other call, or its
   old candidates are cut with the wrong backdrop and listed as failures.
+- **A white beard, red mantle and white fur on an armoured king draws Father
+  Christmas.** Change one of the three.
+- **A shape word used for a detail gets stamped everywhere.** "Cross-shaped eye
+  slit" put gold crosses on the chest and hammer.
+- **"Beetle's shell, domed back" draws a turtle.** Say "ridged horny plates, banded
+  across the chest, spikes down the spine".
+- **A limb that ends in a blade or hook:** raised overhead it becomes a horn; called
+  a "hook" it becomes a held tool. Say "from the elbow down the arm is one curved
+  blade of pale bone, shaped like a crescent moon", and keep the arms in front of
+  the chest.
+- **A small painted mark tints the whole body its colour** (a blue woad spiral made
+  a blue coat). Drop the mark or expect to reroll.
+- **"Earth-brown" drifts to bright orange.** Say "dark mud-brown, the colour of wet
+  peat".
+- **A sting:** "ends in a sting" draws a plain tail; "a swollen black bulb with one
+  curved needle-point" draws a scorpion's.
+- **A creature made of metal that has a living form (an iron horse) comes out
+  alive with tack on.** Give the metal its own parts: "the mane is a row of iron
+  spikes, the tail a bundle of iron chains, no hair".
+- **A lance or spear points wherever it likes** unless placed in the picture: "flat
+  and horizontal, its point sticking out in front of the horse's nose at the left".
+- **A monstrous hag given an unusual skin colour can come out as an ordinary living
+  woman of that colouring.** Make the skin plainly unnatural (stone-blue, corpse
+  grey, bark green) and give her inhuman features: iron claws, tusks, lamp eyes.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
