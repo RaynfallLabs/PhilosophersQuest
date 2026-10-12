@@ -306,6 +306,24 @@ and look for the same kind of slip when reviewing.
   colour, headgear, magic colour and one signature object from its lore (g11's
   liches: lantern and keys; a carried skull; Koschei's egg; spears through the
   ribs; a comb; an ermine mantle and ledger).
+- **The backdrop colour tints skin.** Grey-green orcs on a blue backdrop came out
+  yellow, brown or pink; on magenta they stayed green. Keep a whole family on one
+  backdrop, and prefer magenta for green skin.
+- **"Smeared with pale ash" removes the skin colour.** Say "broad stripes of white
+  ash painted across".
+- **"Single-bladed axe" draws a double axe.** Say "the blade sticks out on one side
+  of the haft only; the other side is bare wood". A flame on a club is a torch.
+- **Slimes, molds and oozes: words that worked and did not.** "Lobes" drew dead
+  leaves, "round domes" furry fruit, "bloated folds" a muscle-man, "grit and
+  mineral crust" a rock. "One rounded mound, soft all over, a front lip curling"
+  and "one ragged uneven crust, no two lumps alike" drew a slime. A round shield
+  sunk in a slime becomes an eye; broken blades sticking out are safe. Keep the
+  colours dull and dirty, never glassy or candy-bright.
+- **"Warty as a toad's" draws a toad's head.** Say "covered in warts".
+- **A fat giant with plain skin is a fat pink man.** Give him a monster's face
+  (jutting fanged jaw, pointed ears) and unnatural skin.
+- **A boss told to "stamp forward" stands still facing the viewer.** Say "seen from
+  the side, running at full tilt, body pitched far forward, one knee driving up".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
