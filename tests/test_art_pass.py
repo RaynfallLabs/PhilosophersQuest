@@ -24,6 +24,8 @@ from dungeon import FLOOR, SECRET_DOOR, WALL  # noqa: E402
 
 TILES = os.path.join(ROOT, 'assets', 'tiles')
 PAINTINGS = {'player_ranger.png', 'player_wizard_f.png', 'player_robyn.png'}     # Brandon's painted portraits: kept as they are
+with open(os.path.join(ROOT, 'tools', 'content', 'genart', 'installed.json'), encoding='utf-8') as _f:
+    GENERATED = set(json.load(_f))     # monsters carrying a reviewed 64px picture
 
 
 def _png_size(path):
@@ -36,7 +38,16 @@ def test_every_sprite_is_one_size():
     for folder in ('monsters', 'items', 'env'):
         for name in os.listdir(os.path.join(TILES, folder)):
             if name.endswith('.png') and name not in PAINTINGS:
-                assert _png_size(os.path.join(TILES, folder, name)) == (32, 32), (folder, name)
+                want = (64, 64) if folder == 'monsters' and name[:-4] in GENERATED else (32, 32)
+                assert _png_size(os.path.join(TILES, folder, name)) == want, (folder, name)
+
+
+def test_every_monster_has_its_generated_sprite():
+    """The 529 monsters carry the reviewed 64px pictures (2026-10-12); pets, NPCs
+    and the rest of that folder are still 32px code art."""
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        mons = {k for k, v in json.load(f).items() if isinstance(v, dict)}
+    assert mons <= GENERATED, sorted(mons - GENERATED)[:10]
 
 
 def test_every_map_object_defined_in_code_has_a_picture():

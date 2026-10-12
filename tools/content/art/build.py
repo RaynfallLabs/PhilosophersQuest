@@ -30,6 +30,12 @@ import manifest  # noqa: E402
 # with pixel versions on 2026-10-09 and he asked for them back the same day.
 PAINTINGS = {'player_ranger', 'player_wizard_f', 'player_robyn'}
 
+# Monsters whose sprite is a reviewed 64px picture from tools/content/genart.
+# This build draws the older 32px code art and must not write over them.
+import json as _json
+_GEN_LIST = HERE.parent / 'genart' / 'installed.json'
+GENERATED = set(_json.loads(_GEN_LIST.read_text(encoding='utf-8'))) if _GEN_LIST.exists() else set()
+
 
 def _load(kind: str):
     """Import <kind>/<kind>.py with its own folder first on the path. Two
@@ -70,6 +76,8 @@ def main(argv: list[str]) -> int:
             if only is not None and r['id'] not in only:
                 continue
             if r['folder'] == 'env' and r['id'] in PAINTINGS and '--paintings' not in argv:
+                continue
+            if r['folder'] == 'monsters' and r['id'] in GENERATED:
                 continue
             try:
                 img = mod.draw(r)
