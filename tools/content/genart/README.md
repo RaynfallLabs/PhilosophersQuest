@@ -37,6 +37,7 @@ Output goes to `_genart/` (not committed).
 | `pose` | An action. For a beast, say "seen from the side" and "on four legs". |
 | `must_show` | What makes it this creature and this tier. The reviewer checks each. |
 | `must_not_show` | What belongs to its relatives or to a mistake seen before. Also sent to the model as things to avoid. |
+| `body` | Optional. `"shapeless"` for anything with no head, feet or legs (a flame, slime, cloud, whirlwind, eyeball, pillar, swarm, serpent, floating orb). It swaps the fixed prompt wording, which otherwise says "head to the soles of its feet" and "weight on one leg" and so grows legs or a small man under such creatures. |
 | `key` | The backdrop colour: `magenta`, `green` or `blue`. It must be a colour the creature does not have, or the cut-out eats part of it. `pipeline.py` refuses a brief whose `colours` name the key. |
 
 The style is the one Brandon chose from a board of six on 2026-10-11: painted
@@ -165,6 +166,23 @@ and look for the same kind of slip when reviewing.
 - **A single eye:** "no ordinary eyes, smooth skin there; one eyeball as wide as
   half his face" worked where "an eye as big as his fist" gave a third eye.
 - **A half-and-half face (half skull, half flesh) does not draw.** Pick one.
+- **Mark shapeless creatures `"body": "shapeless"`** (see the field table). Without
+  it a storm cloud got a small man under it three rounds running.
+- **A creature made of an element must not be given a person's parts.** "Head,
+  shoulders, arms, upper body" on a fire creature gives a red muscle-man with legs.
+  Say "one tall flame; tongues of flame lash out from each side; two eyes set
+  directly in the fire".
+- **"A chain of boulders" draws metal chains.** Say "an arm made of three boulders,
+  one after the other, touching". "Angular blocks" gives toy-block robots: say
+  "jagged slabs with slanting broken faces, none of them square".
+- **"Hollow eye-pits" draw a skull, on ice or rock too.** Use "two small glowing
+  eyes set in the rock". "Eyes bright as lamps" on a shapeless creature gives googly
+  cartoon eyes: say "narrow slanted glowing slits, no pupils".
+- **"A small sun" draws a sun with a human face.** Say "a ball of fire with spikes
+  of flame". "Looming" with "fierce eyes" on an abstract shape draws an old man's face.
+- **An abstract creature (void, entropy, shadow) comes out as a flat cartoon blob
+  with dot eyes.** Give it painted substance: depth, an edge that catches light,
+  torn or boiling texture, and something it is doing.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
