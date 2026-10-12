@@ -324,6 +324,25 @@ and look for the same kind of slip when reviewing.
   (jutting fanged jaw, pointed ears) and unnatural skin.
 - **A boss told to "stamp forward" stands still facing the viewer.** Say "seen from
   the side, running at full tilt, body pitched far forward, one knee driving up".
+- **A woman-serpent in a long dress becomes a woman sitting on a snake.** End the
+  tunic at the belt, say "her snake body stands straight up under her like a
+  pillar for the length of her torso, then coils", and give dress and scales
+  different colours.
+- **Yellow cloth:** "sand-yellow" comes out bright yellow and "cloth-of-gold" a
+  yellow bathrobe. Say "undyed pale sand-beige linen", or "old dark gold brocade,
+  the brown-gold of tarnished brass".
+- **Hair "bound up in a column" draws a white post or a chef's hat.** Say "every
+  strand floats straight upward, a tapering plume".
+- **A covering over a woman's mouth is ignored however it is worded.** A gesture
+  (finger at the lips) is kept.
+- **"A ball of smoke in the palm" draws a solid orb.** Say "one small twisting wisp
+  of smoke rising from the palm, joined to the hand".
+- **A fish-man described feature by feature is an old zombie.** Say "the head of a
+  fish set on a man's shoulders".
+- **Several limbs round a centre all point down** unless each is given a direction
+  ("one straight up, one left, one right, two down").
+- **Glowing fists drawn as flat pale yellow look like cartoon gloves.** Give the
+  glow a rim and keep the hand's knuckles and shape dark inside it.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
