@@ -29,13 +29,15 @@ def check_briefs(briefs):
     """Front-end check: every brief is complete and its backdrop will not eat its own colours."""
     bad = []
     for b in briefs:
-        for f in FIELDS + (() if b.get('body') == 'object' else ('pose',)):
+        for f in FIELDS + (() if b.get('body') in ('object', 'item') else ('pose',)):
             if not b.get(f):
                 bad.append(f"{b.get('id', '?')}: no {f}")
         text = (b.get('colours', '') + ' ' + b.get('what', '')).lower()
         hit = [w for w in KEY_CLASH[b.get('key', 'magenta')] if re.search(r'\b' + w, text)]
         if hit:
             bad.append(f"{b['id']}: a {b.get('key', 'magenta')} backdrop would eat its {', '.join(hit)}")
+        if b.get('body') == 'item' and b.get('scale') not in SCALES:
+            bad.append(f"{b['id']}: an item needs a scale: one of {', '.join(SCALES)}")
         if 'holds' in b and 'exactly' not in b['holds'] and 'nothing' not in b['holds'] and 'empty' not in b['holds']:
             bad.append(f"{b['id']}: 'holds' does not say exactly what, or that the hands are empty")
     return bad
@@ -43,8 +45,8 @@ def check_briefs(briefs):
 # The look Brandon chose on 2026-10-11 (row C of the style board): a classic painted
 # high-fantasy illustration, then a light pixel pass that keeps the painting.
 DRAFT = ("A classic fantasy oil painting of {what} Colours: {colours} {wears} {holds} {pose} "
-         "Painted like the cover illustration of a 1980s fantasy roleplaying rulebook: realistic anatomy, dramatic warm "
-         "light from the upper left with a cold rim light on the right, rich earthy colours with jewel-bright accents, "
+         "Painted like the cover illustration of a 1980s fantasy roleplaying rulebook: realistic anatomy, {light}, "
+         "rich earthy colours with jewel-bright accents, "
          "weathered and intricate detail on every surface, heroic and serious. The figure itself is clearly and brightly "
          "lit so every part of it can be read; it is never a dark silhouette. "
          "{action} "
@@ -76,12 +78,25 @@ ACTION = {
     'object': "It is a still, lifeless object, a piece of dungeon furniture, drawn the way objects are drawn on the map "
               "of a classic top-down roleplaying game: seen from the front and a little from above, upright, whole "
               "and solid, with its top face showing. It has no face, no eyes and no limbs, and nobody is near it.",
+    'item': "It is one single thing that can be picked up and carried, shown by itself the way an item is pictured in "
+            "the pack of a classic roleplaying game: floating flat against the backdrop, nothing holding it, nobody "
+            "wearing it, no hand, no mannequin, no stand and no hook. It has no face, no eyes and no limbs.",
 }
 WHOLE = {
     'legged': 'shown full length from the top of its head to the soles of its feet',
     'shapeless': 'shown whole from its highest point to its lowest, with nothing else beneath it',
     'object': 'shown whole from its top to its base, with nothing else beneath it',
+    'item': 'shown whole, every end of it inside the picture, with nothing else near it',
 }
+# How much of its square an item's longest side fills. Every item is cut to one of
+# these, so a ring is small beside a sword and a sword small beside a halberd.
+SCALES = {'tiny': 0.50, 'small': 0.64, 'medium': 0.76, 'large': 0.88, 'huge': 1.0}
+LIGHT = {'creature': 'dramatic warm light from the upper left with a cold rim light on the right',
+         # an item's grey parts are tinted afterwards, so no coloured light may fall on them
+         'item': 'plain neutral white light from the upper left, with no coloured light, no blue rim light and no '
+                 'coloured reflections anywhere on it'}
+ITEM_BOLD = (' It is drawn bold, chunky and a little thicker than life, like a game icon: blades broad, shafts and '
+             'bands thick, so that its shape is plain when shrunk very small.')
 PIXEL_DENOISE = 0.42       # low: the painting survives, the edges sharpen
 INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 
@@ -89,15 +104,18 @@ INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 def prompts(b):
     holds = b.get('holds') or 'Its hands are empty and it holds nothing.'
     wears = b.get('wears', '')
-    body = b.get('body') if b.get('body') in ('shapeless', 'object') else 'legged'
+    body = b.get('body') if b.get('body') in ('shapeless', 'object', 'item') else 'legged'
     f = dict(what=b['what'], colours=b['colours'], wears=wears, holds=holds, pose=b.get('pose', ''))
     if body == 'shapeless' and not b.get('holds'):
         f['holds'] = 'It holds nothing.'
-    if body == 'object':
+    if body in ('object', 'item'):
         f['holds'] = b.get('holds', '')
         f['pose'] = b.get('pose', '')
     neg = DRAFT_NEG + ''.join(', ' + x for x in b.get('must_not_show', []))
-    return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=ACTION[body], whole=WHOLE[body], **f), neg,
+    if body == 'item':
+        f['what'] = f['what'] + ITEM_BOLD
+    return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=ACTION[body], whole=WHOLE[body],
+                         light=LIGHT['item' if body == 'item' else 'creature'], **f), neg,
             PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + ''.join(', ' + x for x in b.get('must_not_show', [])))
 
 
@@ -112,7 +130,7 @@ def mechanical(facts):
         bad.append('cropped by the frame')
     if facts['background_ok'] < 0.85:
         bad.append('background is not the flat key colour')
-    if not 0.06 <= facts['coverage'] <= 0.72:
+    if not (0.012 if facts.get('thin_ok') else 0.06) <= facts['coverage'] <= 0.72:
         bad.append(f"figure fills {facts['coverage']:.0%} of the frame")
     return bad
 
@@ -149,7 +167,10 @@ def cut(briefs, out, n):
             p = os.path.join(out, b['id'], f'c{c}_pixel.png')
             if not os.path.exists(p):
                 continue
-            spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'))
+            item = b.get('body') == 'item'
+            spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'),
+                                           scale=SCALES[b.get('scale', 'large')] if item else 1.0, stand=not item)
+            facts['thin_ok'] = item
             spr.save(os.path.join(out, b['id'], f'c{c}_sprite.png'))
             facts['mechanical_fail'] = mechanical(facts)
             report[f"{b['id']}/c{c}"] = facts

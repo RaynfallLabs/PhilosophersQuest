@@ -77,8 +77,12 @@ def figure_mask(im, key='magenta'):
     return a, fig, facts
 
 
-def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS):
-    """(RGBA sprite Image of tile x tile, facts)."""
+def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True):
+    """(RGBA sprite Image of tile x tile, facts).
+
+    `scale` is how much of the tile the thing's longest side fills (an item's size
+    class: a ring is small in its square, a halberd fills it). `stand` sets it on
+    the bottom edge like a creature; otherwise it sits in the middle like an item."""
     a, fig, facts = figure_mask(im, key)
     if not fig.any():
         return Image.new('RGBA', (tile, tile)), dict(facts, empty=True)
@@ -86,10 +90,10 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS):
     y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
     side = max(y1 - y0, x1 - x0)
     canvas = np.zeros((side, side, 4), np.float32)
-    oy, ox = side - (y1 - y0), (side - (x1 - x0)) // 2     # stand on the bottom edge, centred
+    oy, ox = (side - (y1 - y0)) if stand else (side - (y1 - y0)) // 2, (side - (x1 - x0)) // 2
     canvas[oy:oy + y1 - y0, ox:ox + x1 - x0, :3] = a[y0:y1, x0:x1] * fig[y0:y1, x0:x1, None]
     canvas[oy:oy + y1 - y0, ox:ox + x1 - x0, 3] = fig[y0:y1, x0:x1] * 255
-    inner = tile - 2                                       # room for the outline
+    inner = max(8, int(round((tile - 2) * scale)))         # room for the outline; smaller for a small thing
     small = np.asarray(Image.fromarray(canvas.astype(np.uint8), 'RGBa').resize((inner, inner), Image.BOX)).astype(np.float32)
     al = small[..., 3:4]
     rgb = np.where(al > 0, small[..., :3] * 255.0 / np.maximum(al, 1), 0)
@@ -116,8 +120,10 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS):
         q = Image.fromarray(px.reshape(1, -1, 3), 'RGB').quantize(min(colours, max(2, len(px))), method=Image.MEDIANCUT, kmeans=6)
         rgb[solid] = np.asarray(q.convert('RGB')).reshape(-1, 3)
     out = np.zeros((tile, tile, 4), np.uint8)
-    out[1:-1, 1:-1, :3] = rgb
-    out[1:-1, 1:-1, 3] = solid * 255
+    px0 = (tile - inner) // 2
+    py0 = (tile - 1 - inner) if stand else (tile - inner) // 2
+    out[py0:py0 + inner, px0:px0 + inner, :3] = rgb
+    out[py0:py0 + inner, px0:px0 + inner, 3] = solid * 255
     full = out[..., 3] > 0
     ring = ndi.binary_dilation(full) & ~full
     out[ring] = (*OUTLINE, 255)

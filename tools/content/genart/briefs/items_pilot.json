@@ -1,0 +1,326 @@
+[
+ {
+  "id": "tpl_w_longsword",
+  "family": "blades",
+  "rank": 2,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "a knight's longsword: a long straight double-edged blade with a central groove, a plain straight crossguard, a two-hand grip and a wheel pommel.",
+  "colours": "The blade, crossguard and pommel are plain neutral grey steel with bright highlights and no tint of colour in them. The grip is wrapped in dark brown leather.",
+  "pose": "It lies on a diagonal, pommel at the bottom left corner and point at the top right corner, the whole sword inside the picture.",
+  "must_show": [
+   "one longsword",
+   "straight blade, crossguard, wheel pommel",
+   "grey steel, brown grip",
+   "diagonal, point at top right"
+  ],
+  "must_not_show": [
+   "hand",
+   "scabbard",
+   "second sword",
+   "gems",
+   "gold",
+   "glow",
+   "blood",
+   "curved blade"
+  ]
+ },
+ {
+  "id": "tpl_w_dagger",
+  "family": "blades",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a dagger: a short straight double-edged blade no longer than a hand and a half, a small crossguard and a short grip with a round pommel.",
+  "colours": "The blade, guard and pommel are plain neutral grey steel with bright highlights and no tint of colour in them. The grip is wrapped in dark brown leather.",
+  "pose": "It lies on a diagonal, pommel at the bottom left corner and point at the top right corner.",
+  "must_show": [
+   "one short dagger",
+   "blade no longer than twice the grip",
+   "grey steel, brown grip",
+   "diagonal"
+  ],
+  "must_not_show": [
+   "hand",
+   "sheath",
+   "long sword blade",
+   "gems",
+   "gold",
+   "glow",
+   "blood",
+   "second blade"
+  ]
+ },
+ {
+  "id": "tpl_w_glaive",
+  "family": "blades",
+  "rank": 3,
+  "body": "item",
+  "scale": "huge",
+  "key": "magenta",
+  "what": "a glaive: a very long straight wooden pole with one broad single-edged curved blade, like a big knife, fixed to its top end.",
+  "colours": "The blade is plain neutral grey steel with bright highlights and no tint of colour in it. The pole is dark brown wood with two iron-grey bands.",
+  "pose": "It lies on a diagonal, the butt of the pole at the bottom left corner and the blade at the top right corner. The pole is four times as long as the blade.",
+  "must_show": [
+   "one polearm",
+   "long wooden pole",
+   "one single-edged blade at the top end only",
+   "diagonal"
+  ],
+  "must_not_show": [
+   "hand",
+   "axe head",
+   "spear point at both ends",
+   "second blade",
+   "flag",
+   "gems",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_w_mace",
+  "family": "blunt",
+  "rank": 1,
+  "body": "item",
+  "scale": "medium",
+  "key": "magenta",
+  "what": "a flanged mace: a short thick metal handle with a heavy head made of six flat steel flanges set round the top like the fins of a dart.",
+  "colours": "The head and handle are plain neutral grey steel with bright highlights and no tint of colour in them. The lower grip is wrapped in dark brown leather.",
+  "pose": "It lies on a diagonal, grip at the bottom left and head at the top right.",
+  "must_show": [
+   "one mace",
+   "flanged head",
+   "short handle",
+   "grey steel"
+  ],
+  "must_not_show": [
+   "hand",
+   "hammer head",
+   "spiked ball on a chain",
+   "long staff",
+   "gems",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_w_longbow",
+  "family": "bows",
+  "rank": 1,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "a longbow: one tall, gently curved stave of wood, thick at the middle grip and tapering to both tips, strung with a single taut bowstring from tip to tip, and no arrow.",
+  "colours": "The whole stave is plain neutral pale grey wood with no tint of colour in it. The grip in the middle is wrapped in dark brown leather; the string is off-white.",
+  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curve bulging to the upper left.",
+  "must_show": [
+   "one bow",
+   "a single D-shaped curve",
+   "string from tip to tip",
+   "no arrow"
+  ],
+  "must_not_show": [
+   "hand",
+   "arrow",
+   "quiver",
+   "crossbow",
+   "second bow",
+   "recurved horns",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_a_plate_helm",
+  "family": "armour",
+  "rank": 2,
+  "body": "item",
+  "scale": "medium",
+  "key": "magenta",
+  "what": "a knight's plate helmet with nobody inside it: a rounded steel skull, a pointed visor with a narrow eye slit and breathing holes, and a short neck guard.",
+  "colours": "The whole helmet is plain neutral grey steel with bright highlights and dark seams and no tint of colour in it.",
+  "pose": "Seen from the front and a little to one side, sitting level, the eye slit black and empty.",
+  "must_show": [
+   "one empty helmet",
+   "visor with an eye slit",
+   "grey steel"
+  ],
+  "must_not_show": [
+   "face",
+   "eyes",
+   "head inside",
+   "neck",
+   "body",
+   "plume",
+   "horns",
+   "crown",
+   "gold",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_a_full_plate",
+  "family": "armour",
+  "rank": 3,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "the body of a suit of full plate armour with nobody inside it: a steel breastplate with a central ridge, layered shoulder plates, and a skirt of overlapping steel bands at the waist. It has no helmet, no arms and no legs: only the torso piece, hollow, with dark empty openings at the neck and arms.",
+  "colours": "Every plate is plain neutral grey steel with bright highlights and dark seams and no tint of colour in it. The few straps are dark brown leather.",
+  "pose": "Seen from the front, upright, as if hung in the air.",
+  "must_show": [
+   "one empty torso armour",
+   "breastplate, shoulder plates, waist bands",
+   "grey steel",
+   "hollow neck and arm openings"
+  ],
+  "must_not_show": [
+   "head",
+   "helmet",
+   "face",
+   "arms",
+   "hands",
+   "legs",
+   "mannequin",
+   "stand",
+   "person",
+   "cape",
+   "gold",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_a_leather_boots",
+  "family": "armour",
+  "rank": 1,
+  "body": "item",
+  "scale": "medium",
+  "key": "magenta",
+  "what": "a pair of tall leather boots with nobody in them, standing side by side: soft turned-down tops, a seam down the front and thick soles.",
+  "colours": "Both boots are plain neutral mid-grey leather with soft highlights and no tint of colour in them. The soles are a darker grey.",
+  "pose": "Seen from the front and a little to one side, the two boots upright and touching.",
+  "must_show": [
+   "two boots, a pair",
+   "empty",
+   "tall with turned-down tops",
+   "grey"
+  ],
+  "must_not_show": [
+   "legs",
+   "feet",
+   "person",
+   "spurs",
+   "metal plates",
+   "single boot",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_a_kite_shield",
+  "family": "armour",
+  "rank": 2,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "a kite shield: a tall shield, rounded at the top and tapering to a point at the bottom, with a raised rim, a central boss and a row of rivets round the edge.",
+  "colours": "The whole face of the shield is plain neutral grey steel with bright highlights and no tint of colour in it, and no painted emblem.",
+  "pose": "Seen from the front, upright, its face towards the viewer.",
+  "must_show": [
+   "one kite-shaped shield",
+   "rounded top, pointed bottom",
+   "rim and boss",
+   "plain face, no emblem"
+  ],
+  "must_not_show": [
+   "hand",
+   "arm",
+   "sword",
+   "cross",
+   "lion",
+   "painted emblem",
+   "round shield",
+   "glow"
+  ]
+ },
+ {
+  "id": "tpl_a_cloak",
+  "family": "armour",
+  "rank": 1,
+  "body": "item",
+  "scale": "large",
+  "key": "magenta",
+  "what": "a long hooded cloak with nobody inside it, hanging open as if from a peg: a deep empty hood at the top and heavy folds of cloth falling to a ragged hem, fastened at the throat by a small round clasp.",
+  "colours": "The whole cloak is plain neutral mid-grey cloth with soft highlights and deep grey folds and no tint of colour in it. The clasp is dull brass.",
+  "pose": "Seen from the front, the hood dark and empty.",
+  "must_show": [
+   "one empty cloak",
+   "hood",
+   "long folds",
+   "grey cloth"
+  ],
+  "must_not_show": [
+   "face",
+   "head",
+   "person",
+   "arms",
+   "hands",
+   "legs",
+   "peg",
+   "hanger",
+   "glow"
+  ]
+ },
+ {
+  "id": "ring_pilot_ruby",
+  "family": "jewels",
+  "rank": 1,
+  "body": "item",
+  "scale": "tiny",
+  "key": "blue",
+  "what": "a finger ring: a thick round hoop of gold with a clear round hole through the middle, and one oval red ruby in a claw mount on top of the hoop.",
+  "colours": "Warm yellow gold, a deep red ruby with one white highlight.",
+  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the stone at the top.",
+  "must_show": [
+   "one finger ring",
+   "a round hoop with a visible hole",
+   "one red stone on top"
+  ],
+  "must_not_show": [
+   "hand",
+   "finger",
+   "box",
+   "chain",
+   "second ring",
+   "glow",
+   "pendant",
+   "brooch",
+   "earring",
+   "flame"
+  ]
+ },
+ {
+  "id": "potion_pilot_smoky",
+  "family": "jewels",
+  "rank": 2,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a potion: a small round-bellied glass vial with a short neck and a cork stopper tied down with a thread, three-quarters full of smoky black liquid with grey swirls in it.",
+  "colours": "Clear greenish glass, smoky black liquid, a brown cork.",
+  "pose": "Seen from the front, standing upright.",
+  "must_show": [
+   "one small glass vial",
+   "cork stopper",
+   "smoky black liquid"
+  ],
+  "must_not_show": [
+   "hand",
+   "label with writing",
+   "second bottle",
+   "shelf",
+   "skull",
+   "bubbles outside the bottle",
+   "glow"
+  ]
+ }
+]
