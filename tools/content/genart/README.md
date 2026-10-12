@@ -343,6 +343,27 @@ and look for the same kind of slip when reviewing.
   ("one straight up, one left, one right, two down").
 - **Glowing fists drawn as flat pale yellow look like cartoon gloves.** Give the
   glow a rim and keep the hand's knuckles and shape dark inside it.
+- **Shadow creatures.** "A torn shroud of soot-black smoke hanging in the air with
+  nothing inside it" draws a dark, folded, readable body. "The shape of a man made
+  of smoke" or "a man's shadow" draws a naked man, an alien or a bodybuilder.
+  Shade it "coal-black in the folds, dark slate-grey on the ridges" ("paler grey
+  highlights on every fold" gives a pale gargoyle). The rim light is "one thin
+  bright line of amber along its edge" ("a broad band of light" tints the whole
+  body). "Cloak" comes out brown burlap: say "shroud of smoke, black as coal and
+  never brown". Give it pale claws, a mask or a crown so the sprite reads on a dark
+  floor.
+- **A ghost that is dark all over is ignored and a living person is drawn.** A
+  one-colour ghost has to be pale: "made entirely of pale ghost-light, every part
+  the same pale colour". "Rose-white" gives candy pink: say "pale ash-grey with a
+  faint dull mauve tint".
+- **Smoke on a green backdrop leaves a green fringe.** Put smoky creatures on blue
+  or magenta. **Legs that "dissolve into smoke" cut out as loose pieces:** have the
+  smoke stream from the back, joined to the body.
+- **Faces in a mass of souls:** "bone-white theatre masks of grief, hairless, black
+  eye and mouth holes" survive at 64 px; "pale faces" gives realistic portraits.
+- **A giant skeleton is an ordinary skeleton** until given a squat build ("nearly
+  as wide as tall, skull sunk between the shoulders") and a small whole human
+  skeleton in its fist for scale.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
