@@ -149,6 +149,22 @@ and look for the same kind of slip when reviewing.
   blob. Ask for fewer, larger parts with dark gaps between them.
 - **A long dagger is drawn as a second sword**, and "pistol" as a modern revolver.
   Say "a short knife no longer than his hand" and "a single-shot flintlock".
+- **A named animal brings its whole look.** "Male lion" forces a mane even with "no
+  mane" stated; "looks like an enormous lioness" removed it. "Donkey-like ears" on a
+  lion's head made a jackal: say "small round ears".
+- **"Flanged mace" draws a hammer.** Say "a round ball on a rod; nothing sticks out
+  sideways".
+- **"Wrapped in chains", with rust named, drew a skinless red muscle-man.** Say
+  "coiled like rope round a post, big oval links, gunmetal grey, no flesh".
+- **A magic colour leaks into robes and skin.** State the cloth and skin colours and
+  put "green robes, green skin" (or whatever the magic's colour is) in `must_not_show`.
+- **A number of wings or heads is ignored; a silhouette is kept.** "Four wings" gave
+  two; "two up, two down, an X shape" gave four. Two heads need the necks placed:
+  "forks like a Y, one head high, one low".
+- **A hood "pushed back" is drawn up.** Write "no hood, bare head".
+- **A single eye:** "no ordinary eyes, smooth skin there; one eyeball as wide as
+  half his face" worked where "an eye as big as his fist" gave a third eye.
+- **A half-and-half face (half skull, half flesh) does not draw.** Pick one.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
