@@ -3,7 +3,8 @@
 The generator is asked for a flat key-colour background (magenta, or green for a
 purple creature). Everything of that hue is background wherever it sits, so the
 gap between two legs goes and so does any shadow on the ground. The figure is
-then shrunk to the tile size, cut to a small set of colours and outlined.
+then shrunk to the tile size, lifted a little (a painting shrinks darker than it
+looks), cut to a small set of colours and outlined.
 
 Run with ComfyUI's Python (it has numpy, scipy and Pillow).
 """
@@ -12,10 +13,12 @@ import numpy as np
 from PIL import Image
 from scipy import ndimage as ndi
 
-TILE = 48
-COLOURS = 24
+TILE = 64
+COLOURS = 32
 OUTLINE = (20, 16, 24)
-KEYS = {'magenta': (255, 0, 255), 'green': (0, 255, 0)}
+LIFT_GAMMA = 0.82
+LIFT_COLOUR = 1.15
+KEYS = {'magenta': (255, 0, 255), 'green': (0, 255, 0), 'blue': (0, 0, 255)}
 WORK = 512                                   # the mask is made at this size
 
 
@@ -37,6 +40,15 @@ def figure_mask(im, key='magenta'):
     a = np.asarray(im.convert('RGB').resize((WORK, WORK), Image.LANCZOS)).astype(np.float32)
     h, s, v = _hsv(a)
     kh = colorsys.rgb_to_hsv(*[c / 255.0 for c in KEYS[key]])[0]
+    # A painted style shades its backdrop and drifts it (magenta towards crimson), so
+    # read the backdrop's real hue off the rim of the picture when the rim is coloured.
+    rim = np.zeros(h.shape, bool); rim[:10] = rim[-10:] = True; rim[:, :10] = rim[:, -10:] = True
+    rim &= s > 0.5
+    if rim.mean() > 0.02:
+        ang = h[rim] * 2 * np.pi
+        seen = (np.arctan2(np.sin(ang).mean(), np.cos(ang).mean()) / (2 * np.pi)) % 1.0
+        if min(abs(seen - kh), 1 - abs(seen - kh)) < 0.2:
+            kh = seen
     dh = np.abs(h - kh); dh = np.minimum(dh, 1 - dh)
     back = (dh < 0.075) & (s > 0.42) & (v > 0.16)          # the key colour, lit or in shadow
     back = ndi.binary_dilation(back, iterations=1)         # take the fringe with it
@@ -77,6 +89,11 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS):
     al = small[..., 3:4]
     rgb = np.where(al > 0, small[..., :3] * 255.0 / np.maximum(al, 1), 0)
     solid = al[..., 0] > 110
+    # A painted figure's soft shadows average down to mud at this size: lift the
+    # midtones and put a little colour back. Black and white stay where they are.
+    rgb = 255.0 * (np.clip(rgb, 0, 255) / 255.0) ** LIFT_GAMMA
+    grey = rgb.mean(2, keepdims=True)
+    rgb = np.clip(grey + (rgb - grey) * LIFT_COLOUR, 0, 255)
     # a small fixed number of colours, chosen from this sprite's own pixels
     px = rgb[solid].astype(np.uint8)
     if len(px):

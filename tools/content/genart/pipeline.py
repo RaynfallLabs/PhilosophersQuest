@@ -1,4 +1,4 @@
-"""Brief -> draft -> pixel art -> 48px sprite -> checks -> review sheets.
+"""Brief -> painted draft -> pixel pass -> 64px sprite -> checks -> review sheets.
 
     <ComfyUI python> tools/content/genart/pipeline.py tools/content/genart/briefs/pilot.json
         [--n 3] [--only id,id] [--out _genart/pilot] [--sheets-only]
@@ -10,27 +10,58 @@ BACK END: each candidate gets mechanical checks here (one piece, not cropped, cl
 background), and a review sheet per family prints the lists beside the pictures so
 a reviewer can mark each one. Verdicts live in <out>/review.json.
 """
-import argparse, json, os, sys, textwrap
+import argparse, json, os, re, sys, textwrap
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comfy, convert
 from PIL import Image, ImageDraw, ImageFont
 
-KEY_WORDS = {'magenta': 'pure magenta (#FF00FF)', 'green': 'pure bright green (#00FF00)'}
+KEY_WORDS = {'magenta': 'pure magenta (#FF00FF)', 'green': 'pure bright green (#00FF00)', 'blue': 'pure bright blue (#0000FF)'}
+# Colour words a backdrop of each key would eat. A brief that names one of them in
+# `colours` with that key is refused before anything is drawn.
+KEY_CLASH = {'magenta': ('magenta', 'pink', 'purple', 'violet', 'crimson', 'red', 'orange', 'rose'),
+             'green': ('green', 'lime', 'olive', 'moss'),
+             'blue': ('blue', 'navy', 'indigo', 'azure', 'cyan', 'violet', 'purple')}
+FIELDS = ('id', 'family', 'what', 'colours', 'pose', 'must_show', 'must_not_show')
 
-DRAFT = ("Pixel art game sprite of {what} Colours: {colours} {wears} {holds} {pose} "
-         "Detailed 16-bit JRPG sprite style: chunky visible pixels, heavy black outline, bright rich saturated colours "
-         "with strong highlights and deep shadows on the figure itself, dramatic, high-fantasy tone. "
-         "One single figure only, the whole body inside the frame with a clear margin on every side. "
-         "The background is one completely flat, solid {key} filling the whole picture. There is no ground, no floor, "
-         "no horizon and no shadow of any kind under or behind the figure.")
+
+def check_briefs(briefs):
+    """Front-end check: every brief is complete and its backdrop will not eat its own colours."""
+    bad = []
+    for b in briefs:
+        for f in FIELDS:
+            if not b.get(f):
+                bad.append(f"{b.get('id', '?')}: no {f}")
+        text = (b.get('colours', '') + ' ' + b.get('what', '')).lower()
+        hit = [w for w in KEY_CLASH[b.get('key', 'magenta')] if re.search(r'' + w, text)]
+        if hit:
+            bad.append(f"{b['id']}: a {b.get('key', 'magenta')} backdrop would eat its {', '.join(hit)}")
+        if 'holds' in b and 'exactly' not in b['holds'] and 'nothing' not in b['holds'] and 'empty' not in b['holds']:
+            bad.append(f"{b['id']}: 'holds' does not say exactly what, or that the hands are empty")
+    return bad
+
+# The look Brandon chose on 2026-10-11 (row C of the style board): a classic painted
+# high-fantasy illustration, then a light pixel pass that keeps the painting.
+DRAFT = ("A classic fantasy oil painting of {what} Colours: {colours} {wears} {holds} {pose} "
+         "Painted like the cover illustration of a 1980s fantasy roleplaying rulebook: realistic anatomy, dramatic warm "
+         "light from the upper left with a cold rim light on the right, rich earthy colours with jewel-bright accents, "
+         "weathered and intricate detail on every surface, heroic and serious. The figure itself is clearly and brightly "
+         "lit so every part of it can be read; it is never a dark silhouette. "
+         "One single figure only, shown full length from the top of its head to the soles of its feet, seen from far "
+         "enough away that the figure is small in the picture: it fills only the middle two thirds, with wide empty "
+         "backdrop above its head, below its feet and on both sides. Nothing it holds reaches the edge of the picture. "
+         "The background is one completely flat, evenly lit, solid {key} filling the whole picture, with no shading or "
+         "gradient in it. There is no ground, no floor, no horizon and no shadow of any kind under or behind the figure.")
 DRAFT_NEG = ("shadow on the ground, cast shadow, drop shadow, floor, ground, scenery, multiple figures, character sheet, "
-             "text, labels, border, photo, 3d render, smooth painting, blurry, muddy brown colours, chibi, cute, big head, cartoon proportions, cropped")
-PIXEL = ("high-detail 16-bit JRPG pixel art sprite, chunky pixels, bold black outline, rich saturated colours, crisp pixel "
-         "shading with bright highlights, serious high fantasy, realistic proportions, {what} {colours} {holds} single figure, isolated game asset, "
-         "flat solid {keyname} background, no shadow")
-PIXEL_NEG = ("blurry, painterly, realistic, photograph, 3d render, smooth gradients, muddy colours, low contrast, text, frame, "
-             "chibi, cute, cartoon, big head, super-deformed, extra limbs, extra weapons, multiple characters, ground, floor, cast shadow, drop shadow")
+             "text, labels, border, photo, 3d render, blurry, chibi, cute, big head, cartoon, cartoon proportions, "
+             "bright candy colours, flat lighting, dark silhouette, cropped, close-up, portrait, half-length, cut off at the knees")
+PIXEL = ("detailed pixel art of a classic fantasy oil painting, realistic proportions, dramatic warm side lighting, "
+         "rich earthy colours, intricate detail, dark outline, serious high fantasy, {what} {colours} {holds} "
+         "single figure, flat solid {keyname} background, no shadow")
+PIXEL_NEG = ("blurry, photograph, 3d render, text, frame, chibi, cute, cartoon, big head, super-deformed, extra limbs, "
+             "extra weapons, multiple characters, ground, floor, cast shadow, drop shadow")
+PIXEL_DENOISE = 0.42       # low: the painting survives, the edges sharpen
+INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 
 
 def prompts(b):
@@ -58,17 +89,17 @@ def mechanical(facts):
     return bad
 
 
-def generate(briefs, out, n, base_seed=5000):
+def generate(items, out, base_seed=5000):
+    """items: [(brief, candidate number)]. Draws each one, both passes."""
     if not comfy.running():
         raise SystemExit('ComfyUI is not running on 127.0.0.1:8188')
     drafts, meta = [], {}
-    for b in briefs:
+    for b, c in items:
         dp, dn, pp, pn = prompts(b)
-        for c in range(1, n + 1):
-            seed = base_seed + c * 97 + sum(map(ord, b['id'])) % 1000
-            d = os.path.join(out, b['id'], f'c{c}_draft.png')
-            meta[(b['id'], c)] = (pp, pn, seed)
-            drafts.append((comfy.draft_workflow(dp, dn, seed), d))
+        seed = base_seed + c * 97 + sum(map(ord, b['id'])) % 1000
+        d = os.path.join(out, b['id'], f'c{c}_draft.png')
+        meta[(b['id'], c)] = (pp, pn, seed)
+        drafts.append((comfy.draft_workflow(dp, dn, seed), d))
     print(f'pass 1: {len(drafts)} drafts'); sys.stdout.flush()
     for f in comfy.run(drafts):
         print('  FAILED', f)
@@ -77,7 +108,7 @@ def generate(briefs, out, n, base_seed=5000):
         d = os.path.join(out, bid, f'c{c}_draft.png')
         if os.path.exists(d):
             name = comfy.stage_input(d, f'genart_{bid}_c{c}.png')
-            pix.append((comfy.pixel_workflow(name, pp, pn, seed), os.path.join(out, bid, f'c{c}_pixel.png')))
+            pix.append((comfy.pixel_workflow(name, pp, pn, seed, PIXEL_DENOISE), os.path.join(out, bid, f'c{c}_pixel.png')))
     print(f'pass 2: {len(pix)} redraws'); sys.stdout.flush()
     for f in comfy.run(pix):
         print('  FAILED', f)
@@ -91,7 +122,7 @@ def cut(briefs, out, n):
             if not os.path.exists(p):
                 continue
             spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'))
-            spr.save(os.path.join(out, b['id'], f'c{c}_48.png'))
+            spr.save(os.path.join(out, b['id'], f'c{c}_sprite.png'))
             facts['mechanical_fail'] = mechanical(facts)
             report[f"{b['id']}/c{c}"] = facts
     json.dump(report, open(os.path.join(out, 'mechanical.json'), 'w'), indent=1)
@@ -101,7 +132,7 @@ def cut(briefs, out, n):
 def sheets(briefs, out, n, report):
     """One sheet per family, creatures in tier order, the brief's lists printed beside the pictures."""
     font = ImageFont.truetype('consola.ttf', 12); bold = ImageFont.truetype('consolab.ttf', 18)
-    BIG, PAD, TEXT_W = 240, 10, 470
+    BIG, PAD, TEXT_W = 280, 10, 470
     floor = (58, 52, 46)
     fams = {}
     for b in briefs:
@@ -111,7 +142,7 @@ def sheets(briefs, out, n, report):
         bs.sort(key=lambda b: b.get('rank', 0))
         W = PAD + TEXT_W + n * (BIG + PAD) + PAD
         rowh = BIG + PAD
-        H = PAD + len(bs) * rowh + 150
+        H = PAD + len(bs) * rowh + INSET + 54
         sh = Image.new('RGB', (W, H), (24, 22, 28)); dr = ImageDraw.Draw(sh)
         for r, b in enumerate(bs):
             y = PAD + r * rowh
@@ -128,30 +159,30 @@ def sheets(briefs, out, n, report):
                 dr.text((PAD, yy), ln, fill=col, font=font); yy += step
             for c in range(1, n + 1):
                 x = PAD + TEXT_W + (c - 1) * (BIG + PAD)
-                p = os.path.join(out, b['id'], f'c{c}_pixel.png'); s = os.path.join(out, b['id'], f'c{c}_48.png')
+                p = os.path.join(out, b['id'], f'c{c}_pixel.png'); s = os.path.join(out, b['id'], f'c{c}_sprite.png')
                 if not os.path.exists(p):
                     continue
                 sh.paste(Image.open(p).convert('RGB').resize((BIG, BIG), Image.LANCZOS), (x, y))
                 spr = Image.open(s)
-                tile = Image.new('RGB', (100, 100), floor)
-                big = spr.resize((96, 96), Image.NEAREST); tile.paste(big, (2, 2), big)
-                sh.paste(tile, (x + BIG - 100, y + BIG - 100))
+                tile = Image.new('RGB', (INSET + 4, INSET + 4), floor)
+                big = spr.resize((INSET, INSET), Image.NEAREST); tile.paste(big, (2, 2), big)
+                sh.paste(tile, (x + BIG - INSET - 4, y + BIG - INSET - 4))
                 fails = report.get(f"{b['id']}/c{c}", {}).get('mechanical_fail', [])
                 dr.rectangle((x, y, x + 26, y + 22), fill=(0, 0, 0))
                 dr.text((x + 4, y + 2), str(c), fill=(255, 255, 255), font=bold)
                 if fails:
-                    dr.rectangle((x, y + BIG - 20, x + BIG - 102, y + BIG), fill=(120, 20, 20))
+                    dr.rectangle((x, y + BIG - 20, x + BIG - INSET - 6, y + BIG), fill=(120, 20, 20))
                     dr.text((x + 3, y + BIG - 19), '; '.join(fails)[:24], fill=(255, 255, 255), font=font)
         # the lineup: first candidate of each tier at true scale x2, to read the family as a set
         y = PAD + len(bs) * rowh + 10
         dr.text((PAD, y), 'LINEUP (candidate 1 of each, low tier to high):', fill=(236, 226, 200), font=bold)
         x = PAD
         for b in bs:
-            s = os.path.join(out, b['id'], 'c1_48.png')
+            s = os.path.join(out, b['id'], 'c1_sprite.png')
             if os.path.exists(s):
-                spr = Image.open(s); tile = Image.new('RGB', (100, 100), floor)
-                big = spr.resize((96, 96), Image.NEAREST); tile.paste(big, (2, 2), big)
-                sh.paste(tile, (x, y + 28)); x += 108
+                spr = Image.open(s); tile = Image.new('RGB', (INSET + 4, INSET + 4), floor)
+                big = spr.resize((INSET, INSET), Image.NEAREST); tile.paste(big, (2, 2), big)
+                sh.paste(tile, (x, y + 28)); x += INSET + 12
         path = os.path.join(out, f'REVIEW_{fam}.png'); sh.save(path); made.append(path)
     return made
 
@@ -161,13 +192,30 @@ def main():
     ap.add_argument('briefs'); ap.add_argument('--n', type=int, default=3)
     ap.add_argument('--only', default=''); ap.add_argument('--out', default='_genart/pilot')
     ap.add_argument('--sheets-only', action='store_true'); ap.add_argument('--seed', type=int, default=5000)
+    ap.add_argument('--retries', type=int, default=3)
     a = ap.parse_args()
     briefs = json.load(open(a.briefs, encoding='utf-8'))
     todo = [b for b in briefs if not a.only or b['id'] in a.only.split(',')]
+    problems = check_briefs(todo)
+    if problems:
+        raise SystemExit('Briefs need fixing first:\n  ' + '\n  '.join(problems))
     os.makedirs(a.out, exist_ok=True)
     if not a.sheets_only:
-        generate(todo, a.out, a.n, a.seed)
+        generate([(b, c) for b in todo for c in range(1, a.n + 1)], a.out, a.seed)
     report = cut(briefs, a.out, a.n)
+    # A candidate that fails a mechanical check is drawn again from a new seed, so the
+    # reviewer is not handed pictures that are cropped or in pieces.
+    by_id = {b['id']: b for b in todo}
+    for attempt in range(1, a.retries + 1):
+        if a.sheets_only:
+            break
+        again = [(by_id[k.split('/')[0]], int(k.split('/c')[1])) for k, v in report.items()
+                 if v['mechanical_fail'] and k.split('/')[0] in by_id]
+        if not again:
+            break
+        print(f'retry {attempt}: {len(again)} candidates failed a mechanical check')
+        generate(again, a.out, a.seed + 1000 * attempt)
+        report = cut(briefs, a.out, a.n)
     failing = {k: v['mechanical_fail'] for k, v in report.items() if v['mechanical_fail']}
     print(f'{len(report)} candidates, {len(failing)} fail a mechanical check')
     for k, v in sorted(failing.items()):
