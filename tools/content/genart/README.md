@@ -200,6 +200,24 @@ and look for the same kind of slip when reviewing.
   stop it; reroll.
 - **"Death-blue" skin comes out bright blue.** Say "very dark slate-grey with a
   blue-black tinge".
+- **"Bulb" draws a glass light bulb; "pearl-white scale" draws a pearl.** Say "a
+  glowing spot in the shell", "one pale scale".
+- **"Greatclub" draws a mallet; a morningstar with a long handle becomes a staff.**
+  Say "one straight length of wood, narrow at the grip, swelling to a knobbly end,
+  nothing fixed to it", and "a short thick handle" for a mace or morningstar.
+- **"Ruddy" or "sunburnt" skin goes bright orange.** Say "weather-beaten light tan".
+- **A bird with a woman's head keeps the beak.** Lead with "the head of a human
+  woman", list nose, lips and chin, and turn the face to the viewer.
+- **A stone creature called a "statue" comes out as a flesh-toned bodybuilder.** Say
+  "built of rough-hewn blocks like a castle wall, black seams between".
+- **A side-view centipede turns into a shrimp.** Say "seen from above, an S-curve, a
+  row of legs down each edge".
+- **A ghost's gear takes its natural colour** (a brown wooden shield). Say the gear
+  is the same ghost colour as the body.
+- **A calm pose is ignored.** "Walks like a sleepwalker" drew a man strolling;
+  "lurches, jaw open, arms reaching" is kept.
+- **After changing a creature's `key`, redraw it** before any other call, or its
+  old candidates are cut with the wrong backdrop and listed as failures.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
