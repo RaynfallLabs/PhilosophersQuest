@@ -113,6 +113,23 @@ and look for the same kind of slip when reviewing.
   three heads), and then say it as a plain positive sentence.
 - **Keep earlier rounds.** A rework overwrites a creature's three candidates; copy
   the folder to `_r1`, `_r2` first in case an earlier one was better.
+- **A simile is drawn literally, even for one part.** "Legs like a bulldog's" gave
+  a bulldog's face; "shaped like a pumpkin" gave a pumpkin with a stem; "parrot's
+  beak" gave an eagle's head. Describe the part plainly and put the compared thing
+  in `must_not_show`.
+- **"Stands", "shoulders" and "mouth" on a shapeless creature give it a gorilla's
+  body.** List what it lacks ("no head, no neck, no chest, no arms, no legs") in
+  `must_not_show` and say where the features sit ("the eye is set directly in the
+  rock", "the entire front is the mouth"). Never give a shapeless creature "a
+  woman's face" or any person's: list the features only (two eye-pits, a gash of a
+  mouth).
+- **Furry humanoids come out with a bare bodybuilder's chest** unless the brief
+  says the chest, belly and arms are furred.
+- **Natural animal colours drift:** a wolf goes German-shepherd tan, unnamed grey
+  goes blue. Name the colour and exclude the drift ("grey and black, no tan, no blue").
+- **A creature that is only a big real animal reads as the ordinary animal.** Give
+  it a scale prop that touches it (the roc carries a small elephant) or a feature
+  the ordinary animal lacks.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
