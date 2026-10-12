@@ -163,12 +163,12 @@
   "what": "a bandit captain: a scarred, grim human veteran soldier turned outlaw, with a short grey-flecked beard and a scar across one cheek. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
   "colours": "a dented grey steel breastplate, a faded dark red soldier's coat, a bright red sash, brown leather gloves and tall boots, grey steel blades.",
   "wears": "He wears a dented steel breastplate over a faded dark red soldier's coat with the sleeves rolled, a red sash at the waist, leather gloves and tall boots. He is bare-headed. He wears no scabbard and no second blade on his belt.",
-  "holds": "He holds exactly one straight soldier's sword in his right hand, pointed forward. In his left hand he holds exactly one broad throwing dagger, as long as his forearm, with a bright leaf-shaped steel blade: the left arm is stretched up and back, high above his head, so the whole dagger stands clear of his head against the backdrop.",
-  "pose": "He advances on two legs in a trained fencer's stance, the sword held out level in front of him in his right hand, his left arm raised high above and behind his head with the big dagger, about to throw it.",
+  "holds": "He holds exactly one straight soldier's sword in his right hand, held out level in front of him with its point toward the left edge of the picture. In his left hand he holds exactly one small throwing knife, a short knife no longer than his hand, with a small bright leaf-shaped blade and no cross-guard, pinched by its handle between finger and thumb: the left hand is cocked back beside his ear, ready to flick the little knife forward. The knife is a tenth as long as the sword.",
+  "pose": "He advances to the left on two legs in a trained fencer's stance, knees bent, the sword held out level in front of him in his right hand with its point to the left, his left hand cocked back beside his ear with the small throwing knife, about to throw it.",
   "must_show": [
    "steel breastplate over a red coat: an ex-soldier",
-   "one straight sword in the right hand",
-   "one small dagger raised to throw in the left hand",
+   "one straight sword in the right hand, pointed forward",
+   "one small throwing knife, no longer than his hand, cocked back at his ear in the left hand: plainly not a second sword",
    "bare head, scarred veteran's face",
    "better armed than the brigand and thug"
   ],
@@ -186,7 +186,13 @@
    "scabbard",
    "second sword at the hip",
    "empty raised fist",
-   "hook or sickle"
+   "hook or sickle",
+   "two swords",
+   "second sword",
+   "long dagger",
+   "short sword in the left hand",
+   "blade as long as his forearm in the left hand",
+   "spear"
   ]
  },
  {
@@ -541,14 +547,15 @@
   "family": "beetle",
   "rank": 2,
   "key": "magenta",
-  "what": "a Khepri beetle: a real Egyptian sacred scarab, a dung beetle, an insect, drawn large. It has the true body of a scarab: a broad, low, rounded oval body like half an egg, a flat shovel-shaped head with a toothed front edge like a little rake, and exactly six thin, jointed, spiny insect legs. Its back is two hard, closed, polished golden wing cases meeting in a straight seam down the middle. Gripped tight between its two raised front legs, touching its head, it carries one small round ball of bright sunlight, about the size of its own head, as scarabs are shown in Egyptian carvings.",
-  "colours": "polished gold and bronze shell on the whole body and head, black thin legs, one small bright yellow-white sun ball.",
+  "what": "a Khepri beetle: a real Egyptian sacred scarab, a dung beetle, an insect, drawn large and seen from straight above. It has the true body of a scarab: a broad rounded oval body, a flat shovel-shaped head with a toothed front edge like a little rake, and exactly six thick, sturdy, jointed, spiny black insect legs, three on each side, all six plainly seen spread out from the body against the backdrop. Its back is two hard, closed, polished wing cases of old gold meeting in a straight seam down the middle, with a darker bronze-brown plate between them and the head. Gripped between its two front legs, touching the front of its head, it carries one small round ball of bright sunlight, about the size of its own head, as scarabs are shown in Egyptian carvings.",
+  "colours": "old gold wing cases with dark bronze-brown shading and a dark bronze-brown head and chest plate, thick black legs, one small bright yellow-white sun ball.",
   "wears": "It is an insect and wears nothing.",
   "holds": "It grips exactly one small glowing yellow-white sun ball between its two front legs, pressed against the front of its head. The ball touches the beetle and has no rays and no halo.",
-  "pose": "Seen from the side and slightly above, it stands on its four back legs facing left, front end raised, the two front legs lifted and clasping the small sun ball in front of its head.",
+  "pose": "Seen from straight above, looking down on its back, its head toward the upper left: it crawls up and to the left with all six thick black legs spread wide, three on each side, the two front legs reaching forward past its head and clasping the small sun ball, the middle legs out sideways, the back legs trailing behind.",
   "must_show": [
-   "a true scarab beetle: low rounded insect body, thin insect legs",
-   "golden shell, unlike the dark giant beetle",
+   "a true scarab beetle seen from above: rounded oval insect body, wing cases with a seam down the middle",
+   "six thick black legs, three each side, all visible",
+   "old-gold shell, unlike the dark giant beetle",
    "one small glowing sun ball held in the front legs, touching the beetle",
    "broad scarab head, no long tong jaws"
   ],
@@ -570,7 +577,15 @@
    "brown ball of dung",
    "eight legs",
    "flames",
-   "patch of sand"
+   "patch of sand",
+   "only four legs",
+   "legs hidden under the body",
+   "blue edge on the shell",
+   "blue sheen",
+   "green sheen",
+   "rainbow sheen",
+   "lemon-yellow shell",
+   "side view"
   ]
  },
  {

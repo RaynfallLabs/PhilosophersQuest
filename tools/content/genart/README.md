@@ -514,6 +514,19 @@ and look for the same kind of slip when reviewing.
   lurker draw bat wings:** say "two triangular fins of solid flesh".
 - **Making a dark sprite "brighter" can make it gaudy.** Prefer a lit edge and one
   bright feature to brightening the whole figure.
+- **"Gaunt" with "bone-grey plates" on a fiend draws a ribcage and skull face.** Say
+  "lean, wiry, fully fleshed". A demon is told apart most cheaply by giving its
+  wings a different material and colour from its body (patched sailcloth, moth
+  wings, vulture feathers).
+- **Clay:** "two deep black holes for eyes" draws a skull; "two dark pebbles pressed
+  in" does not.
+- **Faces "sunk in the chest" draws flat masks in the flesh;** "faces on the
+  shoulders" draws extra heads.
+- **A prop that reads as the wrong object is fixed by listing its parts** (a
+  saddle's high front, side flaps and stirrup irons). A small thing hung on the
+  chest never reads; held up against the backdrop, it does.
+- **To change one part of a good pick, reuse its seed** and change only that
+  paragraph of the brief: the rest of the composition holds.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 

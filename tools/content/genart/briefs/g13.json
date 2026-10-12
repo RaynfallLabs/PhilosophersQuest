@@ -156,9 +156,9 @@
   "rank": 4,
   "key": "blue",
   "what": "Bael, the demon of war, first of the kings of Hell, as the old grimoires draw him: a three-headed giant king, one body with three heads. He is one massive, very broad, heavily armoured giant standing on two legs and facing the viewer. His three heads sit in one row across the top of his body, crowded together cheek to cheek so that they touch, all three the same size, their three chins level, all three faces turned to the viewer, like the three heads of Cerberus. The middle head is the head of a grim human king: a hard scarred face with a hooked nose, cold eyes and a thick black beard. Pressed against his cheek at the left of the picture is the head of a monstrous toad, exactly as big as the king's head: a real toad's head, hairless, wet and covered in big round warts, dark mud-grey all over, wider than it is tall, with no ears, no fur and no whiskers, a mouth that is one long grim down-turned slit running the whole width of the head, a pale grey throat pouch below it, and two big round bulging dull yellow eyes with black slot pupils set high on top of the head. Pressed against his other cheek at the right of the picture is the head of a great black cat, exactly as big as the king's head: lean and scarred, ears laid back, yellow slit eyes, jaws open snarling with long white fangs. Each of the three heads wears its own spiked black iron crown; the king's is the tallest. The three heads share the one body: all three necks run down into one wide dark iron collar that spans his chest, and the toad and the cat have no bodies, no backs and no legs of their own. Below the collar he is one armoured man with two arms and two legs.",
-  "colours": "dark gunmetal-grey iron plate armour, nearly black, with worn steel edges, never bronze and never gold, a wide dark iron collar, a black beard and weather-beaten pale tan skin on the middle head, three black iron crowns, a dark mud-grey hairless warty toad head with dull yellow eyes, a black cat head with yellow eyes and white fangs, a dark red armoured skirt lining, a bright steel sword, a dark iron shield.",
-  "wears": "He wears a full suit of heavy dark iron plate hammered together from the broken swords of the fallen: one great wide iron collar under the three heads, a breastplate, arm and leg plates, and an armoured skirt of long narrow overlapping sword blades, points downward, with bright worn edges, over a dark red lining. He has no cloak, no cape, no fur and no hood: there is nothing behind his heads but the plain backdrop. Each head wears a spiked black iron crown.",
-  "holds": "He holds exactly one great broad straight war sword in his right hand, the blade bright steel and as long as his leg, lowered and pointing down to the side, well below the heads. On his left arm he carries exactly one tall heavy shield of plain dark iron with a dented riveted rim, held low beside his hip so that it hides none of the three heads.",
+  "colours": "a king's full plate armour of blackened steel, dark gunmetal-grey and nearly black, with pale worn steel edges, a wide dark iron collar, a black beard and weather-beaten pale tan skin on the middle head, three black iron crowns, a dark mud-grey hairless warty toad head with dull yellow eyes, a black cat head with yellow eyes and white fangs, a dark red armoured skirt lining, a bright steel sword, a dark iron shield.",
+  "wears": "He wears a king's full suit of heavy plate armour of blackened steel: one great wide iron collar under the three heads; below it one smooth, rounded, plain breastplate with a single raised ridge down its middle, covering his whole chest and belly as one unbroken curved sheet of dark steel with no body shapes on it; big layered round shoulder plates; arm plates, gauntlets and leg plates; and an armoured skirt of long narrow overlapping sword blades, points downward, with bright worn edges, over a dark red lining. No bare skin shows anywhere below the three heads. He has no cloak, no cape, no fur and no hood: there is nothing behind his heads but the plain backdrop. Each head wears a spiked black iron crown.",
+  "holds": "He holds exactly one great broad straight war sword in his right hand, a long knightly greatsword with a bright steel blade as long as he is tall from heel to shoulder and a wide cross-guard, held low with the arm out to the side and the long blade slanting down and outward so that its point is level with his ankle, well below the heads. On his left arm he carries exactly one tall heavy shield of plain dark iron with a dented riveted rim, held low beside his hip so that it hides none of the three heads.",
   "pose": "He strides straight toward the viewer on two legs with one armoured foot forward, his chest and all three heads facing the viewer, the three crowned heads in one tight row, cheek to cheek, the toad at the left, the bearded king in the middle, the cat at the right; his right arm is out to the side with the war sword pointing down and outward, the iron shield low on his left arm, the bearded mouth open in a hoarse shout.",
   "must_show": [
    "three crowned heads of equal size in one tight row, cheek to cheek, on one body: a toad's head, a bearded king's head, a black cat's head, readable in the small sprite",
@@ -223,7 +223,16 @@
    "tan toad",
    "yellow toad",
    "bronze armour",
-   "brass armour"
+   "brass armour",
+   "bronze muscle cuirass",
+   "breastplate shaped like a bare chest",
+   "abs on the armour",
+   "bare chest",
+   "bare arms",
+   "Roman armour",
+   "leather kilt",
+   "short sword",
+   "dagger"
   ]
  },
  {
@@ -521,11 +530,11 @@
   "family": "serpent",
   "rank": 5,
   "key": "green",
-  "what": "one of the brood of Nidhogg, the corpse-gnawing dragon that chews the roots of the World Tree in Norse myth: a lean, long-bodied, wingless wyrm that walks on all four legs like a huge lizard, a real beast seen from the side, with its body horizontal. It has a long narrow dragon's head with a crown of short backswept pale horns and a heavy jaw of long teeth, a long neck, a long low body with every rib showing under the scales, four short strong legs with long pale claws, a ragged ridge of spines down its back and a very long thin tail. Its scales are black, and here and there are patches of pale grey rot where the scales have gone dull and flaky. Clamped crosswise in its jaws is one thick pale length of tree root, as thick as its own neck, which it is gnawing.",
-  "colours": "black and dark charcoal scales with patches of pale ash-grey rot, a dull grey belly, pale bone-coloured horns, spines and claws, dull yellow eyes, yellowed teeth, one pale cream-white tree root in its jaws.",
+  "what": "one of the brood of Nidhogg, the corpse-gnawing dragon that chews the roots of the World Tree in Norse myth: a lean, long-bodied, wingless wyrm that walks on all four legs like a huge lizard, a real beast seen from the side, with its body horizontal. It has a long narrow dragon's head with a crown of short backswept pale horns and a heavy jaw of long teeth, a long neck, a long low body with every rib showing under the scales, four short strong legs with long pale claws, a ridge of tall pale bone spines, each as long as its head, standing all the way down its neck and back, and a very long thin tail. Its scales are black with a dull grey sheen on every ridge, its whole belly and throat are broad pale ash-grey plates, and on its flank, shoulder and thigh are three very large patches of pale ash-grey rot, each as big as its head, where the scales have gone dull and flaky. Clamped crosswise in its jaws is one thick pale length of tree root, as thick as its own neck, which it is gnawing.",
+  "colours": "black and dark charcoal scales with a dull grey sheen and three very large patches of pale ash-grey rot, a pale ash-grey plated belly and throat, pale bone-white horns, tall pale bone-white spines and claws, dull yellow eyes, pale teeth, one pale cream-white tree root in its jaws.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing in its feet; exactly one thick pale tree root is clamped in its jaws.",
-  "pose": "Seen from the side, it prowls to the left with all four of its feet planted on the ground and its body low and horizontal, its head turned a little to the viewer and tilted as it gnaws the pale root clamped crosswise in its jaws, the long tail curving up behind.",
+  "pose": "Seen from the side, it prowls to the left with all four of its feet planted on the ground and its body low and horizontal; its long neck is raised in an S-curve so that its head is the highest part of it, turned a little to the viewer and tilted as it gnaws the pale root clamped crosswise in its jaws; its long tail curls up high behind it and over its back in one big loop, so that the beast is nearly as tall as it is long and fills the picture.",
   "must_show": [
    "a lean black wingless dragon on four legs, seen from the side, body horizontal",
    "black scales with pale grey patches of rot",
@@ -553,7 +562,11 @@
    "rock under it",
    "glowing aura",
    "blue or purple scales",
-   "cartoon dragon"
+   "cartoon dragon",
+   "all-black silhouette",
+   "small figure in an empty picture",
+   "tail lying flat on the ground",
+   "running at full stretch"
   ]
  },
  {
@@ -852,18 +865,18 @@
   "family": "pit",
   "rank": 1,
   "key": "blue",
-  "what": "a pit fiend spawn: a devil newly raised to the highest rank of the Nine Hells, a cold commander who kills without anger. It is a very tall, gaunt, long-limbed, narrow-waisted fiend standing bolt upright on two legs like a judge, lean, hard and sinewy, never bulky. Its whole body, head, neck, chest, arms and legs alike, is covered in big hard overlapping scales the dark red-black of cooling iron, almost black in the hollows, with dull dark red showing only on the ridges of the scales. Down the front of its chest and belly runs one column of broad flat plates of pale bone-grey. Its head is long, narrow and gaunt with a long reptile jaw, hollow cheeks and a row of six short straight black horns standing up along its brow like the points of an iron crown. Its two small eyes burn bright venom-green, and bright venom-green slaver runs in thick strings from its long white fangs. Its two enormous wings are folded shut and hang closed from the tops of its shoulders down to its heels, one on each side of its body, like two tall furled sails of dull ash-black hide, patched and tattered at the lower edge, the long wing bones showing as dark ridges, with one hooked black claw standing up above each shoulder. It has long thin arms with long black claws, clawed feet and one long thin scaled tail. It has a small head for its body.",
-  "colours": "scales the dark red-black of cooling iron with dull dark red ridges, a column of pale bone-grey plates down the chest and belly, black horns and claws, bright venom-green eyes and venom-green slaver, white fangs, folded wings of dull ash-black hide with dark red-black bones, one plain black iron collar.",
+  "what": "a pit fiend spawn: a devil newly raised to the highest rank of the Nine Hells, a cold commander who kills without anger. It is a very tall, lean, wiry, long-limbed, narrow-waisted fiend standing bolt upright on two legs like a judge, hard and sinewy, never bulky, and fully fleshed and scaled, with no bones showing anywhere. Its whole body, head, neck, arms and legs alike, is covered in big hard overlapping scales the dark red-black of cooling iron, almost black in the hollows, with dull dark red showing only on the ridges of the scales. The front of its chest and belly is covered by broad flat overlapping plates of dull black horn, banded one above the other like the belly plates of a great snake. Its head is long and narrow and scaled, with a long reptile jaw and a row of six short straight black horns standing up along its brow like the points of an iron crown. Its two small eyes burn bright venom-green, and bright venom-green slaver runs in thick strings from its long white fangs. Its two enormous wings are like the sails of an old ship: the wing bones are dark red-black, but the skin stretched between them is dull pale grey-tan like weathered sailcloth, stained, patched with darker squares and torn at the lower edge. The wings are folded half shut and hang from the tops of its shoulders down to its heels, one on each side of its body, with one hooked black claw standing up above each shoulder. It has long thin arms with long black claws, clawed feet and one long thin scaled tail. It has a small head for its body.",
+  "colours": "scales the dark red-black of cooling iron with dull dark red ridges, broad dull black horn plates down the chest and belly, black horns and claws, bright venom-green eyes and venom-green slaver, white fangs, wings with dark red-black bones and dull pale grey-tan skin like weathered sailcloth with darker patches, one plain black iron collar.",
   "wears": "It wears nothing but one plain heavy black iron collar round its neck, the mark of its new rank.",
   "holds": "Its hands are empty and it holds nothing: its right arm is stretched straight out ahead of it, one long black-clawed finger pointing in command; its left hand hangs open at its side, claws spread.",
-  "pose": "On two legs, it walks to the left with a slow measured stride, bolt upright, one clawed foot forward, its right arm stretched straight out ahead pointing one long clawed finger at its enemy like a commander giving an order, its left hand hanging open, its two great wings folded shut and hanging from shoulders to heels on either side of it, its long head lowered a little, jaws open with green venom running from the fangs, the thin tail curling behind its heels.",
+  "pose": "On two legs, it walks to the left with a slow measured stride, bolt upright, one clawed foot forward, its right arm stretched straight out ahead pointing one long clawed finger at its enemy like a commander giving an order, its left hand hanging open, its two great pale sail-like wings folded half shut and hanging from shoulders to heels behind it, its long head lowered a little, jaws open with green venom running from the fangs, the thin tail curling behind its heels.",
   "must_show": [
-   "a tall, gaunt, upright fiend in dark red-black scales with a pale bone-grey plated front",
-   "two great wings folded shut, hanging from shoulders to heels like furled sails",
+   "a tall, lean, upright fiend in dark red-black scales with black banded belly plates, fully fleshed",
+   "two great wings like old patched ship's sails: pale grey-tan skin on dark bones, hanging half folded",
    "a long narrow head with a row of short black horns like an iron crown",
    "venom-green eyes and green venom running from the fangs",
    "one arm stretched out pointing in command; empty hands, an iron collar",
-   "not the common bright red horned bat-winged devil"
+   "not the common bright red horned bat-winged devil, and not a skeleton"
   ],
   "must_not_show": [
    "bright red skin",
@@ -894,7 +907,22 @@
    "four-legged dragon",
    "glowing aura",
    "oversized head",
-   "cartoon devil"
+   "cartoon devil",
+   "ribcage",
+   "bare ribs",
+   "skeleton chest",
+   "skull face",
+   "bones showing",
+   "starved thin body",
+   "pale chest",
+   "white belly",
+   "red wings",
+   "wings the same red as the body",
+   "wings spread wide and symmetrical",
+   "standing square-on with both arms hanging",
+   "white cloth sails",
+   "ship",
+   "mast"
   ]
  },
  {
@@ -1075,10 +1103,10 @@
   "family": "wild",
   "rank": 1,
   "key": "magenta",
-  "what": "a roc chick: the half-grown nestling of the giant bird of the Sinbad stories, drawn as a real eagle nestling a few weeks old, a gawky, fierce, ugly young bird of prey standing on two legs. Its whole body is covered in thick shaggy ash-grey down, with the first dark brown feathers pushing through in rows on its short stubby wings, which are far too small to fly. It has a head that looks too big, with a huge heavy smooth hooked beak like an eagle's, a wide gaping mouth with a pointed tongue, a bare patch of grey skin round each fierce dark eye and a scruffy crest of down; a scrawny neck; a round belly; and two thick scaly yellow legs with enormous yellow feet and long black curved talons, far too big for it. Hanging from the hooked tip of its beak by the strap is one small leather horse saddle, no bigger than the bird's own head: the chick has eaten the horse.",
-  "colours": "shaggy ash-grey and dirty white down, dark brown new feathers on the wings, a horn-yellow beak with a dark grey hooked tip, dull yellow scaly legs and feet, black talons, dark eyes, one small dark brown leather saddle.",
+  "what": "a roc chick: the half-grown nestling of the giant bird of the Sinbad stories, drawn as a real eagle nestling a few weeks old, a gawky, fierce, ugly young bird of prey standing on two legs. Its whole body is covered in thick shaggy ash-grey down, with the first dark brown feathers pushing through in rows on its short stubby wings, which are far too small to fly. It has a head that looks too big, with a huge heavy smooth hooked beak like an eagle's, a wide gaping mouth with a pointed tongue, a bare patch of grey skin round each fierce dark eye and a scruffy crest of down; a scrawny neck; a round belly; and two thick scaly yellow legs with enormous yellow feet and long black curved talons, far too big for it. Hanging from the hooked tip of its beak is one small knight's horse saddle, no bigger than the bird's own head, gripped by its girth strap: a curved brown leather seat that rises to a high peak at the front and a high curved back, with a flat leather flap on each side, and below each flap one iron stirrup, a D-shaped iron loop, dangling on a long strap. The chick has eaten the horse.",
+  "colours": "shaggy ash-grey and dirty white down, dark brown new feathers on the wings, a horn-yellow beak with a dark grey hooked tip, dull yellow scaly legs and feet, black talons, dark eyes, one small dark brown leather saddle with two grey iron stirrups.",
   "wears": "It is an animal and wears nothing.",
-  "holds": "Exactly one small brown leather saddle hangs by its strap from the tip of its beak. Its feet hold nothing.",
+  "holds": "Exactly one small brown leather horse saddle with two dangling iron stirrups hangs by its girth strap from the tip of its beak. Its feet hold nothing.",
   "pose": "Seen from the side, it lurches to the left on its two big yellow feet, one foot lifted high with the talons spread to grab, its two short stubby wings raised and flapping for balance, neck stretched forward and up, shaking the small saddle that hangs from its huge hooked beak.",
   "must_show": [
    "a real eagle nestling: shaggy grey down, short stubby wings with a few dark feathers",
@@ -1111,7 +1139,14 @@
    "ground",
    "four legs",
    "griffin",
-   "gore"
+   "gore",
+   "satchel",
+   "handbag",
+   "shoulder bag",
+   "purse",
+   "bag with a buckle flap",
+   "pouch",
+   "basket"
   ]
  },
  {

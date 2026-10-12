@@ -520,15 +520,15 @@
   "family": "colossus",
   "rank": 2,
   "key": "green",
-  "what": "a flesh colossus: a vast hulking dead giant made of the corpses of many soldiers sewn into one body, far wider and heavier than any other stitched giant, hunched and neckless, with arms thicker than its legs. Every part of it is dead flesh, cold and grey, never living pink. Its bare hide is a patchwork of a few very large mismatched patches of dead skin, some pale ash-grey and some dark slate-grey, with a clear edge where a pale patch meets a dark one, and along every edge runs a seam of thick black stitches, bold as bootlaces, each stitch as long as a finger: one seam straight down the middle of its body, one across its belly, one round each shoulder, one round each elbow and each wrist. Its body is one huge slab-sided barrel with no muscle shapes on it at all, only the big patches and black seams. Three faces are sunk flat into the front of its body like masks pressed into wet clay, part of the skin and no higher than the skin around them: one in the middle of its chest, as wide as its own head, and one on the front of each upper arm just below the shoulder. Each is a bone-white mask of grief, hairless, with two black eye holes and one black open mouth hole, and no neck, no skull and no ears. Its own head is small, bald and grey, sunk low between its great rounded shoulders, with blank white eyes and a slack jaw; it is the only head. Exactly four thick copper rods stand up from the top of its back behind the head, each tipped with one small blue-white spark.",
-  "colours": "cold dead skin in very large patches of pale ash-grey and dark slate-grey, thick black stitched seams over the whole body, three bone-white mask faces with black eye and mouth holes sunk in the chest and upper arms, four bright copper rods, small blue-white sparks, a dark brown leather kilt.",
+  "what": "a flesh colossus: a vast hulking dead giant made of the corpses of many soldiers sewn into one body, far wider and heavier than any other stitched giant, hunched and neckless, with arms thicker than its legs. Every part of it is dead flesh, cold and grey, never living pink. Its hide is a patchwork quilt of skin: about a dozen very large irregular patches, each as big as its own head or bigger, in three plainly different tones set side by side, pale ash-grey next to dark slate-grey next to dull sallow tan, on its chest, belly, shoulders, arms and legs alike. Every patch is outlined all the way round by a broad black seam as thick as a rope, crossed by big dull iron staples, so that the whole body is covered in a bold black net of seams. Its trunk is one great lumpy uneven mass, bulging in the wrong places, with no chest muscles and no belly muscles drawn on it, only patches and seams. Three faces are sunk flat into the front of its body like masks pressed into wet clay, part of the skin and no higher than the skin around them: one on each side of its chest, each as wide as its own head, and one in its belly below them. Each is a bone-white mask of grief, hairless, with two black eye holes and one black open mouth hole, and no neck and no ears. Its own head is small, bald and grey, sunk low between its great rounded shoulders, with blank white eyes and a slack jaw; it is the only head. Exactly four thick copper rods stand up from the top of its back behind the head, each tipped with one small blue-white spark.",
+  "colours": "cold dead skin in very large patches of three tones, pale ash-grey, dark slate-grey and dull sallow tan, each patch outlined by a broad black seam with dull iron staples, three bone-white mask faces with black eye and mouth holes sunk in the chest and belly, four bright copper rods, small blue-white sparks, a dark brown leather kilt.",
   "wears": "It wears only a long ragged dark brown leather kilt that hangs from its waist to its knees, made of soldiers' belts. It has no armour, no helmet and no metal plates anywhere.",
   "holds": "Its hands are empty; it holds nothing.",
-  "pose": "Seen from the front: it stomps forward on two legs with one foot raised, hunched under its own shoulders, both enormous bare hands open and reaching forward and outward to grab, so that its whole chest with the mask face in the middle of it and both upper arms with their mask faces are turned to the viewer.",
+  "pose": "Seen from the front: it stomps forward on two legs with one foot raised, hunched under its own shoulders, both enormous bare hands open and reaching forward and outward to grab, so that its whole patchwork chest and belly with the three mask faces sunk in them are turned to the viewer.",
   "must_show": [
-   "a vast hunched patchwork giant: very large patches of pale grey and dark grey dead skin",
-   "thick black stitched seams between the patches, bold enough to see at 64 px",
-   "three flat bone-white mask faces sunk in the flesh of its chest and upper arms: faces in the skin, not extra heads",
+   "a vast hunched patchwork giant: about a dozen very large skin patches in three tones, pale grey, dark grey and sallow tan",
+   "a bold black net of seams round every patch, plain to see at 64 px",
+   "three flat bone-white mask faces sunk in the flesh of its chest and belly: faces in the skin, not extra heads",
    "one small head only, low between the shoulders",
    "copper rods on the back with small blue-white sparks",
    "open empty hands"
@@ -566,7 +566,11 @@
    "glowing aura",
    "bare skeleton",
    "gore",
-   "blood"
+   "blood",
+   "one even grey colour all over",
+   "smooth grey bodybuilder",
+   "abs",
+   "pectoral muscles"
   ]
  },
  {
@@ -605,15 +609,15 @@
   "family": "corrupted_steed",
   "rank": 2,
   "key": "green",
-  "what": "a corrupted unicorn: a real horse with one long horn growing from the middle of its forehead, and no wings. The horn is jet black, thick, crooked and twisted like a dead branch. Its once-white coat has gone a dull ashen grey with black veins creeping down the neck and face from the base of the horn. It has a tangled black mane and tail, a short tuft of beard under the chin, cloven hooves, and angry glowing violet eyes.",
-  "colours": "dull ashen grey-white coat with black veins on the neck and face, a jet-black twisted horn, a tangled black mane and tail, glowing violet eyes, black hooves.",
+  "what": "a corrupted unicorn: a real horse with one horn growing from the middle of its forehead, and no wings. The horn is jet black, as thick as the horse's own foreleg at its base, gnarled and knotted, and it is not straight: it bends in two crooked kinks, first up and then forward, ending in a blunt broken point. Its once-white coat has gone the dull grey of cold ash. From the base of the horn a web of thick black branching lines, each as thick as a finger, spreads over its whole face, down its neck and across its shoulder and chest, bold and plainly seen against the grey coat. It has a tangled black mane and tail, a short tuft of beard under the chin, cloven hooves, and angry glowing violet eyes.",
+  "colours": "dull ash-grey coat, the grey of cold ash, with a web of thick black branching lines on the face, neck, shoulder and chest, a jet-black crooked horn, a tangled black mane and tail, glowing violet eyes, black hooves.",
   "wears": "It is an animal and wears nothing: no saddle, no bridle.",
   "holds": "It is an animal on four legs and holds nothing.",
-  "pose": "Seen from the side, it gallops to the left on four legs at a full charge, front legs reaching and hind legs kicked out behind, its head lowered so the long black horn points straight ahead like a lance, mane streaming back.",
+  "pose": "Seen from the side, it gallops to the left on four legs at a full charge, front legs reaching and hind legs kicked out behind, its neck stretched out and its head lowered to the level of its own chest so the thick crooked black horn points ahead at the left edge of the picture, mane streaming back.",
   "must_show": [
    "a horse with one horn on the forehead",
-   "the horn black, thick and twisted",
-   "ashen grey coat with black veins, black mane",
+   "the horn black, thick, knotted and bent in crooked kinks, not straight",
+   "ash-grey coat with a bold web of black lines on the face, neck and shoulder; black mane",
    "violet eyes",
    "charging with the horn lowered, on four legs",
    "no wings"
@@ -630,7 +634,13 @@
    "two horns",
    "flames",
    "humanoid body",
-   "armour"
+   "armour",
+   "thin straight horn",
+   "smooth needle horn",
+   "pink coat",
+   "lilac coat",
+   "purple coat",
+   "white coat"
   ]
  },
  {
@@ -804,15 +814,15 @@
   "family": "crypt",
   "rank": 1,
   "key": "green",
-  "what": "a crypt thing: a skeleton tomb-guardian, a bare ivory skull with small pale cyan lights in its eye sockets inside a deep plain hood, with bare bone hands and bare bone feet. One huge old-fashioned black iron key, as long as its forearm, hangs on its chest from a thick black iron chain round its neck: the key has a big round ring at the top, a thick straight shank, and two square teeth at the bottom. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, long thin arms and legs, and it stands about eight heads tall.",
-  "colours": "ivory bone, a plain dusty earth-brown hooded burial robe, a black iron key and black iron chain, a small pale cyan light.",
-  "wears": "It wears a plain dusty earth-brown hooded burial robe that hangs to its ankles, tied with a rope belt, frayed at the hem, with no trim or decoration at all, and the huge black iron key on its chain lying against the brown cloth of its chest.",
-  "holds": "Its hands are empty and it holds nothing. A small tight spiral of pale cyan light, no bigger than its fist, turns just above the palm of its raised left hand, touching the fingers. It has no staff and no weapon.",
-  "pose": "It lunges forward on two legs out of a stoop, its left hand thrust out ahead with the cyan spiral in its palm, its right hand raised behind with bony fingers hooked to claw, robe swinging.",
+  "what": "a crypt thing: a skeleton tomb-guardian, a bare ivory skull with small pale cyan lights in its eye sockets inside a deep plain hood, with bare bone hands and bare bone feet. It carries the key of the crypt it guards: one huge old-fashioned black iron key as long as its whole arm, held up like a mace. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, long thin arms and legs, and it stands about eight heads tall.",
+  "colours": "ivory bone, a plain dusty earth-brown hooded burial robe, one huge black iron key, a small pale cyan light.",
+  "wears": "It wears a plain dusty earth-brown hooded burial robe that hangs to its ankles, tied with a rope belt, frayed at the hem, with no trim or decoration at all. Nothing hangs round its neck.",
+  "holds": "In its right bone hand, raised high beside its hood, it grips exactly one huge black iron key as long as its arm, held upright and clear of its body against the plain backdrop: at the bottom, in its fist, a big round iron ring as wide as its skull; from the ring a thick straight iron shank as thick as its wrist rising straight up; and at the top end of the shank two big square iron teeth sticking out to the left like a small flag. Its left hand is empty and thrust out ahead: a small tight spiral of pale cyan light, no bigger than its fist, turns just above the palm, touching the fingers. It has no staff and no other weapon.",
+  "pose": "It lunges forward to the left on two legs out of a stoop, its left hand thrust out ahead with the cyan spiral in its palm, its right hand raised high behind its hood brandishing the huge black iron key upright like a mace, robe swinging.",
   "must_show": [
    "skeleton (bare skull, bone hands)",
    "plain brown hooded robe, no finery",
-   "one huge black iron key on a chain at the chest, readable as a key",
+   "one huge black iron key brandished in the right hand: a ring at the bottom, a thick shank, two square teeth at the top, readable as a key at 64 px",
    "a small pale cyan light at an empty palm (not a big ball)",
    "realistic adult proportions (small skull, long limbs)"
   ],
@@ -834,7 +844,14 @@
    "rosary beads",
    "oversized head",
    "cartoon proportions",
-   "short stubby body"
+   "short stubby body",
+   "torch",
+   "mace with a ball",
+   "hammer",
+   "axe",
+   "ring on a chain at the chest",
+   "black scarf",
+   "second key"
   ]
  },
  {

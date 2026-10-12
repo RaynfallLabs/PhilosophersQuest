@@ -4,17 +4,17 @@
   "family": "hag",
   "rank": 1,
   "key": "magenta",
-  "what": "a sea hag: a gaunt, stooped old woman of the cold deep sea who looks long drowned, painted seriously like a figure from an old saga, never a storybook witch. She has a long bony face with sunken cheeks, a wide thin mouth of small needle teeth and two large round bulging pale fish eyes. Her skin is clammy and pale like a fish's belly, faintly scaled, on the face, neck, arms and hands alike. Her hair is long wet ropes of dark seaweed hanging to her waist. Her fingers are long, webbed and tipped with hooked nails. A few grey barnacles crust her shoulders. She has the realistic proportions of a thin adult woman with a small head and long limbs.",
-  "colours": "pale fish-belly grey-white skin with grey-teal mottling, dark kelp-brown seaweed hair, pale yellow bulging eyes, a dull grey-brown dress of old sailcloth and dark brown fishing net, grey barnacles.",
+  "what": "a sea hag: a gaunt, stooped old woman of the cold deep sea who looks long drowned, painted seriously like a figure from an old saga, never a storybook witch. She has a long bony face with sunken cheeks, a wide thin mouth of small needle teeth and two large round bulging pale fish eyes. Her skin is clammy and pale like a fish's belly, faintly scaled, on the face, neck, arms and hands alike. She has no hair: in its place long, flat, broad ribbons of wet kelp grow from her scalp and hang to her knees, each ribbon as wide as her hand, dark green-black and glossy, with crinkled edges, plainly seaweed and not hair. Her hands are broad as paddles: sheets of pale grey skin join her long fingers together right to their tips, like the fin of a fish, and each finger ends in a hooked black nail. A few grey barnacles crust her shoulders. She has the realistic proportions of a thin adult woman with a small head and long limbs.",
+  "colours": "pale fish-belly grey-white skin with grey-teal mottling, broad ribbons of dark green-black kelp in place of hair, pale yellow bulging eyes, a dull grey-brown dress of old sailcloth and dark brown fishing net, grey barnacles, black nails.",
   "wears": "She wears a long ragged dress of old grey-brown sailcloth that covers her from the neck to the ankles, with a torn dark fishing net draped over her shoulders like a shawl; her feet are bare. No hat, no jewellery.",
-  "holds": "Her hands are empty: two long webbed clawed hands holding nothing. She has no staff.",
-  "pose": "On two legs, she wades forward stooped, with one bare foot ahead of the other and her weight on the front foot, her right arm stretched out ahead with the webbed claws spread to seize and her left arm drawn back, her head thrust forward and her bulging eyes staring straight at the viewer, her seaweed hair swinging.",
+  "holds": "Her hands are empty: two broad webbed clawed hands, spread open, holding nothing. She has no staff.",
+  "pose": "On two legs, she wades forward stooped, with one bare foot ahead of the other and her weight on the front foot, both arms raised in front of her with the broad webbed hands spread wide open, palms to the viewer, one high and one low, so the sheets of skin between the fingers are plainly seen; her head is thrust forward and her bulging eyes stare straight at the viewer, the kelp ribbons swinging.",
   "must_show": [
    "a gaunt old woman with pale fish-belly skin, face and hands alike",
    "large bulging pale fish eyes",
-   "long ropes of dark seaweed for hair",
+   "broad flat ribbons of dark green-black kelp in place of hair, to her knees",
    "a ragged sailcloth dress and a fishing-net shawl, fully clothed",
-   "empty webbed clawed hands"
+   "empty webbed hands spread open: skin between the fingers plainly seen"
   ],
   "must_not_show": [
    "pointed witch hat",
@@ -40,7 +40,13 @@
    "rock",
    "ordinary thin stringy hair",
    "zombie",
-   "torn open flesh"
+   "torn open flesh",
+   "ordinary grey hair",
+   "black human hair",
+   "red hair",
+   "living rosy skin",
+   "thin separate fingers",
+   "starfish"
   ]
  },
  {
@@ -361,13 +367,13 @@
   "rank": 1,
   "key": "blue",
   "what": "a hostile leprechaun: the fairy shoemaker of old Irish folklore in a foul temper, painted seriously like an Arthur Rackham fairy, never a cereal-box mascot. He is a short, stocky, weathered old man with the proportions of a small grown man, a normal-sized head, a deeply lined scowling face, a red bulb of a nose, small hard eyes under bushy brows and a thick bristling copper-red beard with no moustache gap. His teeth are bared in a snarl.",
-  "colours": "weathered ruddy tan skin, a copper-red beard, a faded dark bottle-green coat with dull brass buttons, a brown leather cobbler's apron, tan breeches, grey stockings, black shoes with dull brass buckles, a battered dark green hat, a dark brown-black club, one gold coin.",
-  "wears": "He wears a faded dark bottle-green tail coat with brass buttons, a worn brown leather cobbler's apron over it, tan knee breeches, grey stockings, black buckled shoes, and a battered, dented dark green tall-crowned hat with a brass buckle on its band.",
+  "colours": "weathered light tan skin, a copper-red beard, a faded deep emerald-green coat with dull brass buttons, a brown leather cobbler's apron, tan breeches, grey stockings, black shoes with dull brass buckles, a battered deep emerald-green hat with a black band, a dark brown-black club, one gold coin.",
+  "wears": "He wears a faded deep emerald-green tail coat with brass buttons, a worn brown leather cobbler's apron over it, tan knee breeches, grey stockings, black buckled shoes, and a battered, dented tall-crowned hat of the same deep emerald-green cloth as his coat, with a black band and a brass buckle. The hat and the coat are the same green.",
   "holds": "He holds exactly one shillelagh in his right hand, raised high: a short, thick, knobbly dark blackthorn club with a heavy round knot at its end, as thick as his wrist. In his left hand he holds exactly one large gold coin, pinched between finger and thumb and held out in front of him. He holds nothing else.",
   "pose": "On two legs, he charges forward with his weight on his front foot and his body twisted, his right arm raised high and back with the club ready to bring down, his left hand thrust out ahead showing the gold coin, his chin down and his teeth bared.",
   "must_show": [
    "a short stocky scowling old man with a copper-red beard",
-   "a faded dark green coat and a battered buckled hat",
+   "a faded emerald-green coat and a battered buckled hat of the same green",
    "a cobbler's leather apron",
    "one thick knobbly club raised in the right hand",
    "one gold coin held out in the left hand",
@@ -394,7 +400,11 @@
    "garden gnome",
    "pointed red cap",
    "cartoon mascot",
-   "rock"
+   "rock",
+   "brown hat",
+   "black hat",
+   "leather hat",
+   "orange waistcoat"
   ]
  },
  {
@@ -756,7 +766,7 @@
   "rank": 1,
   "key": "blue",
   "body": "shapeless",
-  "what": "a fungal horror: a great heaving mound of fungus that has grown over a dead adventurer and never stopped growing, painted seriously as rotting woodland growth, never a storybook mushroom. It is one tall lopsided heap of pale mould and fungus flesh, crusted all over with tiers of broad shelf fungi like the brackets on a dead tree, clusters of thin-stalked pale toadstools, and round puffballs that have burst open at the top. Long ropes of pale root-threads hang from it and trail out to one side. Half sunk in the front of the mound are the remains it grew from: one dented steel helmet and a few ribs of a ribcage, with fungus growing through them. It has no face of any kind.",
+  "what": "a fungal horror: a great heaving mound of fungus that has grown over a dead adventurer and never stopped growing, painted seriously as rotting woodland growth, never a storybook mushroom. It is one tall lopsided heap of pale mould and fungus flesh, crusted all over with tiers of broad shelf fungi like the brackets on a dead tree, clusters of thin-stalked pale toadstools, and round puffballs that have burst open at the top. Its bottom edge is one plain rounded line like the bottom of a sack, with nothing spreading out from under it. Half sunk in the front of the mound are the remains it grew from: one dented steel helmet and a few ribs of a ribcage, with fungus growing through them. It has no face of any kind.",
   "colours": "pale bone-grey and sickly cream mould, dull ochre and rust-brown shelf fungi with pale tan edges, dark brown rot in the hollows, a dull grey steel helmet, ivory ribs, one small puff of dull ochre-yellow spores.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
@@ -791,7 +801,12 @@
    "ground",
    "floor",
    "grass",
-   "rock"
+   "rock",
+   "roots spreading on the ground",
+   "root mat under it",
+   "tangle of roots at the base",
+   "threads trailing on the ground",
+   "tree stump"
   ]
  },
  {
@@ -987,13 +1002,13 @@
   "family": "iron",
   "rank": 2,
   "key": "green",
-  "what": "an iron sentinel: a vault guardian built by dwarven smiths a thousand years ago, a machine in the rough shape of a very broad, thick-limbed armoured warrior, far wider at the shoulders than at the hips, with a barrel chest, short thick legs and long heavy arms that end in huge iron fists like anvils. It is made of thick, curved, hand-forged plates of dark iron joined with rows of big round rivets, weathered, pitted and streaked with rust, never smooth and never square. Its head is a low riveted iron dome sunk between the shoulders like a dwarf's helmet, with one narrow horizontal slit across the front glowing dull amber, and an iron grille below it shaped like a braided beard. In the middle of its chest a round opening shows a cluster of big brass cogwheels meshed together. Bands of angular dwarven runes are cut round its wrists and across its brow.",
-  "colours": "dark iron-grey plates with brown rust streaks and black joints, bright yellow brass cogwheels in the chest, one dull amber-yellow eye slit, pale grey rune cuts.",
+  "what": "an iron sentinel: a vault guardian built by dwarven smiths a thousand years ago, a machine in the rough shape of a very broad, thick-limbed armoured warrior, far wider at the shoulders than at the hips, with a barrel chest, short thick legs and long heavy arms that end in huge iron fists like anvils. It is made of thick, curved, hand-forged plates of dark iron joined with rows of big round rivets, weathered, pitted, scratched and dented, never smooth and never square. The iron is black-grey like an old anvil, with cold pale steel-grey on every worn edge. Its head is a low riveted iron dome sunk between the shoulders like a dwarf's helmet, with one narrow horizontal slit across the front glowing dull amber, and an iron grille below it shaped like a braided beard. In the middle of its chest a round opening shows a cluster of big brass cogwheels meshed together. Bands of angular dwarven runes are cut round its wrists and across its brow.",
+  "colours": "black and dark gunmetal-grey iron plates on every part with cold steel-grey worn edges and black joints, bright yellow brass cogwheels in the chest, one dull amber-yellow eye slit, pale grey rune cuts. The iron is black-grey.",
   "wears": "It is a machine of iron plates and wears nothing over them.",
   "holds": "Its hands are empty: two huge clenched iron fists holding nothing.",
   "pose": "On two legs, it stamps forward with its weight on its front foot and its body twisted, its right fist drawn far back at shoulder height to punch and its left fist held out low in front as a guard, its domed head lowered.",
   "must_show": [
-   "a broad, heavy machine-warrior of dark riveted, rusted iron plates",
+   "a broad, heavy machine-warrior of dark grey riveted iron plates: grey-black, not brown",
    "brass cogwheels showing in a round opening in the chest",
    "a low domed head with one glowing amber slit and a beard-shaped grille",
    "two huge iron fists, empty",
@@ -1023,7 +1038,14 @@
    "steam cloud",
    "oversized head",
    "cartoon",
-   "rock"
+   "rock",
+   "rust-brown armour",
+   "brown metal",
+   "red-brown metal",
+   "copper armour",
+   "bronze armour",
+   "orange rust all over",
+   "bare toes"
   ]
  },
  {

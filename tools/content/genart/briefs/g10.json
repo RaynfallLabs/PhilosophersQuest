@@ -227,10 +227,10 @@
   "family": "knight",
   "rank": 1,
   "key": "green",
-  "what": "a dread knight: a dead fallen paladin, the lowest rank of the undead knights, a tall lean warrior standing on two legs in a plain suit of soot-black iron plate armour with nothing of him showing. His head is entirely inside a plain closed bucket-shaped helm with a flat top and one narrow eye slit; the slit is pitch dark except for two small dull red points of light. The armour is plain, dull and unadorned, the black iron drinking the light, with dents and scratches. He has realistic adult proportions: a small head, wide shoulders, long limbs, about eight heads tall.",
-  "colours": "dull soot-black iron plate armour with dark grey scratched edges, two small dull red eye lights in a black eye slit, a ragged charcoal-grey tabard, a plain sword with a dark grey iron blade, a plain black iron shield with a dark grey rim.",
-  "wears": "He wears a plain full suit of dull soot-black iron plate armour from head to foot: a plain flat-topped closed helm with one narrow eye slit and nothing on it, plain rounded shoulder plates, gauntlets and greaves. Over the breastplate hangs a short ragged charcoal-grey tabard with no emblem. He has no cape.",
-  "holds": "He holds exactly one plain straight sword in his right hand, with a dark grey iron blade and a simple cross-guard; the blade does not glow. On his left arm he carries exactly one plain black iron shield, pointed at the bottom, with no emblem.",
+  "what": "a dread knight: a dead fallen paladin, the lowest rank of the undead knights, a tall lean warrior standing on two legs in a plain suit of dark iron plate armour, the grey-black of an old anvil, with nothing of him showing. His head is entirely inside a plain closed bucket-shaped helm with a flat top and one narrow eye slit; the slit is pitch dark except for two small dull red points of light. The armour is plain, dull and unadorned, with dents and scratches, and every plate has a worn edge of pale steel-grey that catches the light, so each plate is plainly seen. Over it hangs the ragged remains of his old paladin's tabard, once white, now a dirty bone-grey. He has realistic adult proportions: a small head, wide shoulders, long limbs, about eight heads tall.",
+  "colours": "dark anvil-grey iron plate armour with pale steel-grey worn edges on every plate, two small dull red eye lights in a black eye slit, a ragged dirty bone-grey tabard of plain cloth, a plain sword with a pale steel-grey blade, a plain dark iron shield with a broad pale steel-grey dented rim.",
+  "wears": "He wears a plain full suit of dark anvil-grey iron plate armour from head to foot, each plate with a pale worn steel edge: a plain flat-topped closed helm with one narrow eye slit and nothing on it, plain rounded shoulder plates, gauntlets and greaves. Over the breastplate hangs a ragged knee-length tabard of plain dirty bone-grey cloth, stained and torn at the hem, the same plain cloth all over. He has no cape.",
+  "holds": "He holds exactly one plain straight sword in his right hand, with a pale steel-grey blade and a simple cross-guard; the blade does not glow. On his left arm he carries exactly one shield, pointed at the bottom: a plain sheet of dark iron with a broad pale steel-grey dented rim and nothing on its face but scratches.",
   "pose": "He advances to the left on two legs with one foot forward and knees bent, the plain black shield held up before his body on his left arm, his right arm drawn back with the sword raised level beside his helm, point forward, ready to thrust.",
   "must_show": [
    "plain soot-black plate armour, no flesh or bone showing",
@@ -264,7 +264,13 @@
    "shining clean silver armour",
    "second sword",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "all-black figure",
+   "black silhouette",
+   "cross on the tabard",
+   "cross on the shield",
+   "red cross",
+   "white clean tabard"
   ]
  },
  {
