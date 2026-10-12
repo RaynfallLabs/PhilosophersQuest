@@ -183,6 +183,23 @@ and look for the same kind of slip when reviewing.
 - **An abstract creature (void, entropy, shadow) comes out as a flat cartoon blob
   with dot eyes.** Give it painted substance: depth, an edge that catches light,
   torn or boiling texture, and something it is doing.
+- **Winged four-legged beasts stand up like men.** "One front claw raised",
+  "rearing" or "chest out" turned nearly every dragon into an upright muscle-man.
+  Put "walks on all four legs like a huge lizard" in `what`, and "all four of its
+  feet are planted on the ground and its body is horizontal" in the pose.
+- **"Half folded" wings come out fully spread.** Say "folded shut, lying closed
+  along its back like a furled umbrella".
+- **A long breath runs off the picture or turns into a rope or a held thing.** Say
+  "one short jet shooting straight out of its mouth, joined to the mouth, no longer
+  than its own head".
+- **White or pale lightning on a magenta backdrop turns into a pink cone.** Bright
+  yellow zigzag lightning survives.
+- **"A ball of light the size of an apple" has drawn a literal apple.** Say "a
+  round ball of flame as big as her fist".
+- **Dragons grow a second head now and then.** `must_not_show` does not always
+  stop it; reroll.
+- **"Death-blue" skin comes out bright blue.** Say "very dark slate-grey with a
+  blue-black tinge".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
