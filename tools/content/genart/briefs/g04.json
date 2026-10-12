@@ -311,17 +311,17 @@
   "family": "hound",
   "rank": 2,
   "key": "blue",
-  "what": "a death dog: Orthrus, the two-headed hound of Greek myth, one single big starved black hound on four legs with two heads. At its shoulders its neck forks like the letter Y into two separate long thin necks that spread well apart, and each neck carries one complete dog's head with its own ears and jaws: exactly two heads, one body, four legs and one tail. There is a clear gap between the two heads. In each head the two eyes are large and round and filled with solid glowing red light, with no pupils, the brightest things in the picture. The hound is starved nearly to a skeleton under its hide: every rib stands out as a pale grey ridge with a black hollow between it and the next, its hip bones and shoulder blades jut up in points, its spine is a row of knobs, its belly is sucked up tight against its backbone, and its long legs are thin as sticks with knobbly joints. Its short coarse fur is patchy and mangy, its ears are cropped and ragged, and it has a thin whip tail.",
-  "colours": "short patchy charcoal-black fur with dull ash-grey on the ribs, hip bones and scars, black hollows between the ribs, large glowing red eyes in both heads, yellowed fangs, dark red gums, black claws.",
+  "what": "a death dog: Orthrus, the two-headed hound of Greek myth, one single big gaunt black hound on four legs with two heads. At its shoulders its neck forks like the letter Y into two separate long thick necks that spread well apart, and each neck carries one complete dog's head with its own ears, glowing red eyes and jaws: exactly two heads, one body, four legs and one tail. There is a clear gap between the two heads. It is a lean, hungry, long-legged hound like a huge black mastiff gone thin, with a deep chest, a tucked-up belly, ribs showing through short coarse fur, cropped ragged ears and a thin whip tail.",
+  "colours": "short coal-black fur with dull grey scars, glowing red eyes in both heads, yellowed fangs, dark red gums, black claws.",
   "wears": "It is an animal and wears nothing: no collar and no chain.",
   "holds": "It is an animal on four legs and holds nothing.",
   "pose": "Seen from the side, it stalks to the left on four legs with its front legs braced and its hackles up. Its upper head is lifted high on its neck, pointing up and to the left, jaws wide open snarling. Its lower head is stretched out low and forward on its neck, pointing down and to the left, fangs bared. The two heads are far apart, one above the other.",
   "must_show": [
    "a dog on four legs with exactly two heads on two necks",
    "both heads readable in the small sprite, with a gap between them",
-   "starved: ribs, hip bones and spine standing out, belly tucked up",
-   "large glowing red eyes in both heads, plain in the small sprite",
-   "fangs bared; savage and grim, unlike the golden blink dog"
+   "gaunt black body with ribs, red eyes",
+   "fangs bared",
+   "savage and grim, unlike the golden blink dog"
   ],
   "must_not_show": [
    "three heads",
@@ -342,15 +342,7 @@
    "eight legs",
    "heads pressed together",
    "fat well-fed dog",
-   "pet dog",
-   "sleek glossy coat",
-   "muscular healthy dog",
-   "thick strong legs",
-   "brown eyes",
-   "dark eyes",
-   "labrador",
-   "great dane show dog",
-   "bare white bones"
+   "pet dog"
   ]
  },
  {

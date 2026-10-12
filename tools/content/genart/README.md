@@ -502,6 +502,18 @@ and look for the same kind of slip when reviewing.
 - **A leather coat over a furred humanoid's chest stops the bodybuilder torso.**
 - **A long brief on a blue backdrop can come back as a sky gradient** and fail the
   cut-out; move it to green or magenta.
+- **A blank or unfinished face needs a hood or a bald head round it.** With hair on
+  the head the model always paints a finished face.
+- **A coloured thing held in the hand can tint the whole creature** (a red gem made
+  a rock creature maroon). Hold something of the body's own colour family.
+- **A master's mark on a thrall works as a creature riding the skull;** a forehead
+  mark and an eye glow do not draw.
+- **Mark a legless flier "body": "shapeless" and never name its limbs:** that
+  removed hind legs nine earlier candidates had kept.
+- **"Starved" with a forked neck adds a third head.** **"Wing-flaps" on a flat
+  lurker draw bat wings:** say "two triangular fins of solid flesh".
+- **Making a dark sprite "brighter" can make it gaudy.** Prefer a lit edge and one
+  bright feature to brightening the whole figure.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 

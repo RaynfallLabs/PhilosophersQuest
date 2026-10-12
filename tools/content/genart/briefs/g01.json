@@ -385,17 +385,17 @@
   "family": "ambusher",
   "rank": 2,
   "key": "magenta",
-  "what": "a lurker above: a huge flat cave creature shaped like a great manta ray with no tail, a living blanket of muscle that hangs on a cave ceiling disguised as rock and drops on whatever walks beneath. It is one broad, thick-edged, fleshy sheet with two wide wing-flaps, soft and heavy, rippling and buckling as it falls, plainly an animal and not a slab. Its back, which shows where the edges curl, is rough, warty, cracked hide coloured like grey cave rock. Its underside, which we see, is bare pale flesh: wet, wrinkled, pale grey-cream skin with thick ribs of muscle running out from the middle to the edges like the ribs of a bat's wing, and in the middle of it gapes one wide dark mouth, a curved slit a third as wide as the whole creature, rimmed with a row of small pale teeth. All along the rim of both wing-flaps runs a fringe of short thick hooked grey claws for gripping the ceiling.",
-  "colours": "rough slate-grey and charcoal-grey cracked hide on the back and the curled edges, a wet pale grey-cream wrinkled underside with darker grey shadows between the muscle ribs, a wide black mouth with small pale teeth, dark grey hooked claws along the rim.",
+  "what": "a lurker above: a cave creature shaped like a manta ray with no tail, a living blanket of muscle that hangs on a cave ceiling disguised as rock and drops on whatever walks beneath. It is one broad, flat, thick, fleshy body shaped like a wide diamond: two great triangular fins of smooth solid flesh, with no bones, no fingers and no ribs in them, joined in one piece across a low flat middle, soft and heavy, rippling and buckling as it falls. It has no head. Its back, which shows where the edges curl, is rough, warty, cracked hide coloured like grey cave rock. Its underside, which we see, is bare pale flesh: wet, wrinkled, pale grey-cream skin with soft folds, and in the very middle of the underside gapes one wide round mouth, a third as wide as the whole creature, pitch-black inside and ringed with one row of big pale triangular teeth.",
+  "colours": "rough slate-grey and charcoal-grey cracked hide on the back and the curled edges, a wet pale grey-cream wrinkled underside with darker grey folds, one wide black mouth ringed with big pale teeth.",
   "wears": "It wears nothing.",
   "holds": "It has no hands and holds nothing.",
-  "pose": "Caught in mid-air as it falls toward the viewer, seen from below and a little from one side, tilted, lopsided and alive: its left wing-flap is flung up and curling over at the upper left, showing a strip of its rocky grey back, its right wing-flap droops lower and folds inward like a closing cloak, the fleshy edges ripple in waves, and the dark mouth in the middle of the pale underside gapes open. Empty air all round it and nothing beneath it.",
+  "pose": "Caught in mid-air as it falls toward the viewer, seen from below and a little from one side, tilted, lopsided and alive: its left fin is flung up and curling over at the upper left, showing a broad strip of its rocky grey back, its right fin droops lower and folds inward like a closing cloak, the thick fleshy edges ripple in waves, and the round toothed mouth in the middle of the pale underside gapes open. Empty air all round it and nothing beneath it.",
   "must_show": [
-   "a broad fleshy sheet of a creature with two wing-flaps, plainly a living animal falling: not a stone tray, not a slab",
+   "a broad flat fleshy creature shaped like a manta ray, plainly a living animal falling: not a stone tray, not a slab",
    "rough grey rock-coloured back hide showing on the curled edges",
-   "pale wrinkled ribbed underside with a wide dark toothed mouth",
-   "lopsided: one flap curling up, one folding in, rippling edges",
-   "no tail and no eyes"
+   "pale wrinkled underside with one wide round toothed mouth in the middle",
+   "lopsided: one fin curling up, one folding in, rippling edges",
+   "no head, no tail, no eyes, no bat wings"
   ],
   "must_not_show": [
    "stone tray",
@@ -413,8 +413,6 @@
    "legs or a body hanging underneath",
    "tail",
    "pointed tail end",
-   "fish",
-   "fins",
    "spots",
    "eyes",
    "red eyes",
@@ -426,7 +424,20 @@
    "bat head",
    "victim underneath",
    "bird",
-   "wings with feathers"
+   "wings with feathers",
+   "bat wings",
+   "wing fingers",
+   "wing bones",
+   "dragon wings",
+   "shark head",
+   "crocodile head",
+   "head with jaws at the front",
+   "neck",
+   "claws",
+   "talons",
+   "long whip tail",
+   "sea water",
+   "stripes"
   ],
   "body": "shapeless"
  },
@@ -500,17 +511,17 @@
   "family": "abyssal",
   "rank": 1,
   "key": "blue",
-  "what": "an abyssal champion: a tall, broad-shouldered, powerful demon duellist standing on two legs, with bright blood-red skin, a hard narrow face, pointed ears, burning yellow-orange eyes and two short pale bone-coloured horns curving back from his brow. He has the realistic proportions of a tall adult man, about eight heads tall, with no wings.",
-  "colours": "bright blood-red skin on the face, neck and bare upper arms, pale bone-coloured horns, burning yellow-orange eyes, dark iron plate armour with broad bright brass edging and a bright brass sun-burst boss on the breastplate, a tattered dark crimson half-cape with a black lining, a sword blade wrapped in bright orange and yellow flame.",
-  "wears": "He wears a duellist's fighting armour: a dark iron breastplate with broad bright brass edging and a brass boss, one large spiked shoulder plate edged in brass on his left shoulder, iron gauntlets and greaves edged in brass, a broad brass-studded belt, and a tattered dark crimson half-cape hanging from the left shoulder. His red upper arms are bare. His head is bare.",
-  "holds": "He holds exactly one long, broad, straight sword in his right hand, its whole blade burning with bright orange and yellow flame that stays on the blade. His left hand is empty: the arm is flung out wide to the side, sweeping his half-cape open.",
-  "pose": "On two legs, in a duellist's salute before the lunge: his feet are planted wide apart with the front knee bent and his weight on the front foot, his body turned a little to the left, the burning sword raised upright in front of his face in his right hand with the blade pointing straight up, his empty left arm flung out wide to the right sweeping the tattered half-cape out sideways behind him so that it spreads wide, a cold smile. The figure is as wide as it is tall.",
+  "what": "an abyssal champion: a tall, lean, powerful demon duellist standing on two legs, with dark crimson skin, a hard narrow face, pointed ears, burning orange eyes and two short horns curving back from his brow. He has the realistic proportions of a tall adult man, about eight heads tall, with no wings.",
+  "colours": "dark crimson-red skin, blackened iron plate armour with dull brass edging, a tattered black half-cape, a sword blade wrapped in orange and yellow flame.",
+  "wears": "He wears a duellist's fighting armour: a blackened iron breastplate, one large spiked shoulder plate on his left shoulder, iron gauntlets and greaves, and a tattered black half-cape hanging from the left shoulder. His head is bare.",
+  "holds": "He holds exactly one long, broad, straight sword in his right hand, its whole blade burning with orange flame that stays on the blade. His left hand is empty, an open hand held behind his back.",
+  "pose": "He stands tall on two legs in a fencer's salute, feet together, the burning sword raised upright in front of his face with the blade pointing straight up, left hand behind his back, a cold smile.",
   "must_show": [
-   "demon swordsman: bright blood-red skin, short pale horns",
-   "dark plate armour with bright brass edging, and a half-cape swept out wide",
+   "demon swordsman: crimson skin, short horns",
+   "blackened plate armour and a half-cape",
    "exactly one sword with a burning blade, raised upright in salute",
-   "left hand empty, flung wide",
-   "no wings; a wide stance that fills the tile and reads on a dark floor"
+   "left hand empty",
+   "no wings"
   ],
   "must_not_show": [
    "wings",
@@ -525,12 +536,7 @@
    "fire on the ground",
    "column of flame hiding the body",
    "oversized head",
-   "cartoon proportions",
-   "feet together",
-   "narrow standing figure",
-   "arms at the sides",
-   "all-black armour",
-   "dark maroon skin"
+   "cartoon proportions"
   ]
  },
  {
