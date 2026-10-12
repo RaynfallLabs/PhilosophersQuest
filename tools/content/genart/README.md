@@ -364,6 +364,30 @@ and look for the same kind of slip when reviewing.
 - **A giant skeleton is an ordinary skeleton** until given a squat build ("nearly
   as wide as tall, skull sunk between the shoulders") and a small whole human
   skeleton in its fist for scale.
+- **"Dark dead skin" on an undead draws a living dark-skinned person.** Undead
+  skin must be a colour no living person has: "cold chalk-grey", "blue-grey like
+  a drowned man", "grey-green", with sunken blank white eyes and lips dried back
+  from the teeth. Check every wight, ghoul and hag for this.
+- **A void creature given a "front end" and bracing limbs is a four-legged
+  beast.** Say "one great knot of thick tentacles and nothing else, round a
+  central mound no bigger than a barrel".
+- **A black creature with "thin silver edges" is plain dark grey.** Name whole
+  bright parts (silver-white horns, spine ridge, belly plates, claws) and a few
+  large marks ("five very large stars, each as big as its paw").
+- **Six wings:** counts and spokes give two. Say "a large upper pair; a second,
+  separate, smaller pair from the small of its back, tips pointing at the lower
+  corners; two more folded shut round its lower body like a sheath".
+- **Leather "over" mail hides the mail.** Say the mail "covers his arms to the
+  wrists and his thighs" and the leather is "on his chest only".
+- **An undead warrior in full gear is a living Viking.** Bare the arms so dead skin
+  shows.
+- **A ball of light with flame tongues is a cartoon sun, and lightning on it is an
+  onion with roots.** A wisp is "a small pale flame shaped like a candle flame, a
+  white core, a faint trailing tail", and nothing else.
+- **Length:** "four times as long as it is tall, belly on the ground" gets a long
+  serpent where "immensely long" does not.
+- **A made metal beast needs to look made:** "like a suit of armour in the shape of
+  a bull, big riveted plates, jointed legs, black gaps between the plates".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
