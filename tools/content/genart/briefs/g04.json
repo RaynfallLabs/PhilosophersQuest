@@ -311,17 +311,17 @@
   "family": "hound",
   "rank": 2,
   "key": "blue",
-  "what": "a death dog: Orthrus, the two-headed hound of Greek myth, one single big gaunt black hound on four legs with two heads. At its shoulders its neck forks like the letter Y into two separate long thick necks that spread well apart, and each neck carries one complete dog's head with its own ears, glowing red eyes and jaws: exactly two heads, one body, four legs and one tail. There is a clear gap between the two heads. It is a lean, hungry, long-legged hound like a huge black mastiff gone thin, with a deep chest, a tucked-up belly, ribs showing through short coarse fur, cropped ragged ears and a thin whip tail.",
-  "colours": "short coal-black fur with dull grey scars, glowing red eyes in both heads, yellowed fangs, dark red gums, black claws.",
+  "what": "a death dog: Orthrus, the two-headed hound of Greek myth, one single big starved black hound on four legs with two heads. At its shoulders its neck forks like the letter Y into two separate long thin necks that spread well apart, and each neck carries one complete dog's head with its own ears and jaws: exactly two heads, one body, four legs and one tail. There is a clear gap between the two heads. In each head the two eyes are large and round and filled with solid glowing red light, with no pupils, the brightest things in the picture. The hound is starved nearly to a skeleton under its hide: every rib stands out as a pale grey ridge with a black hollow between it and the next, its hip bones and shoulder blades jut up in points, its spine is a row of knobs, its belly is sucked up tight against its backbone, and its long legs are thin as sticks with knobbly joints. Its short coarse fur is patchy and mangy, its ears are cropped and ragged, and it has a thin whip tail.",
+  "colours": "short patchy charcoal-black fur with dull ash-grey on the ribs, hip bones and scars, black hollows between the ribs, large glowing red eyes in both heads, yellowed fangs, dark red gums, black claws.",
   "wears": "It is an animal and wears nothing: no collar and no chain.",
   "holds": "It is an animal on four legs and holds nothing.",
   "pose": "Seen from the side, it stalks to the left on four legs with its front legs braced and its hackles up. Its upper head is lifted high on its neck, pointing up and to the left, jaws wide open snarling. Its lower head is stretched out low and forward on its neck, pointing down and to the left, fangs bared. The two heads are far apart, one above the other.",
   "must_show": [
    "a dog on four legs with exactly two heads on two necks",
    "both heads readable in the small sprite, with a gap between them",
-   "gaunt black body with ribs, red eyes",
-   "fangs bared",
-   "savage and grim, unlike the golden blink dog"
+   "starved: ribs, hip bones and spine standing out, belly tucked up",
+   "large glowing red eyes in both heads, plain in the small sprite",
+   "fangs bared; savage and grim, unlike the golden blink dog"
   ],
   "must_not_show": [
    "three heads",
@@ -342,7 +342,15 @@
    "eight legs",
    "heads pressed together",
    "fat well-fed dog",
-   "pet dog"
+   "pet dog",
+   "sleek glossy coat",
+   "muscular healthy dog",
+   "thick strong legs",
+   "brown eyes",
+   "dark eyes",
+   "labrador",
+   "great dane show dog",
+   "bare white bones"
   ]
  },
  {
@@ -831,14 +839,14 @@
   "rank": 3,
   "key": "blue",
   "what": "a chain devil spawn: a tall lean man-shaped devil jailer standing upright on two legs, whose whole body is hidden under heavy iron chain. Thick dark grey iron chain is wound round and round it in tight level coils, like rope coiled round a post: round its head, its chest, its waist, each arm and each leg, so that it looks like a statue made of coiled chain. The links are big chunky ovals of dark grey metal, each as large as a hand, and every link is plainly a chain link. No skin, no flesh and no muscle shows anywhere. Its head is a round ball of wound chain with no face, only two small glowing orange eyes in a dark gap. It has no wings, no horns and no tail. It has realistic adult proportions: a small head, long limbs.",
-  "colours": "dark gunmetal-grey iron chain on every part of the body and head, black shadow between the links, a few small spots of orange-brown rust, two small glowing orange eyes, black iron hooks.",
+  "colours": "dark gunmetal-grey iron chain on every part of the body and head, black shadow between the links, a few small spots of orange-brown rust, two small glowing orange eyes, two great hooks of bright bare polished steel, pale silver-white.",
   "wears": "It wears nothing but the chains that wrap its whole body.",
-  "holds": "It holds no weapon and no whip. From each of its two wrists hangs exactly one length of the same thick chunky grey chain, as long as its arm, each ending in one big black iron hook like a meat hook. The right chain is swung up and forward in a short curve; the left chain hangs down low. Both chains stay joined to its arms.",
-  "pose": "It lurches to the left on two legs with one foot forward, its right arm flung up and forward lashing its short hooked chain out ahead, its left arm lowered behind with the other hooked chain hanging from the wrist, body leaning into the throw.",
+  "holds": "It holds no weapon and no whip. From each of its two wrists hangs exactly one short length of the same thick chunky grey chain, only four big links long, and each ends in one enormous hook like a butcher's meat hook: a thick bar of bright bare polished steel, pale silver-white, bent into the shape of the letter J, as big as its own head and as thick as its wrist, with a sharp upturned point. The right hook is swung up beside its head at the upper left, clear of the body against the backdrop; the left hook hangs beside its left knee, held out away from the leg. Both chains stay joined to its arms.",
+  "pose": "It lurches to the left on two legs with one foot forward, its right arm flung up and forward so that its short chain and great pale steel hook swing up at the upper left, clear of its head, its left arm held out low and away from its side with the other great pale hook hanging from the wrist by its knee, body leaning into the throw.",
   "must_show": [
    "a man-shaped figure made of coiled grey iron chain from head to foot: big chain links readable, no flesh",
    "two glowing orange eyes in the wrapped head",
-   "two thick hooked chains lashing from the wrists, joined to the arms",
+   "two enormous pale steel J-shaped hooks on short chains from the wrists, each as big as its head, plain in the small sprite",
    "dark grey iron colour, not red",
    "no wings, no horns, no spines"
   ],
@@ -870,7 +878,15 @@
    "rope",
    "thin wire",
    "skeleton",
-   "ribs"
+   "ribs",
+   "small hooks",
+   "thin wire hooks",
+   "black hooks lost against the body",
+   "long trailing chain",
+   "anchor",
+   "sickle",
+   "scythe",
+   "fish hooks"
   ]
  },
  {

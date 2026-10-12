@@ -419,7 +419,7 @@
   "rank": 4,
   "key": "blue",
   "what": "a giant scorpion: a real black emperor scorpion, an animal, drawn large, with a flat armoured body of hard plates, eight jointed walking legs, two big heavy smooth rounded crab-like pincers held out in front of its head, each pincer a fat hand with two blunt fingers, and one long thick tail of fat bead-like segments that curls up and forward over its back and ends in one short, thick, curved black sting like a rose thorn.",
-  "colours": "glossy black armour on the body, pincers and the whole tail, with dark red-brown highlights, dark amber-brown legs, a black sting. Nothing on it glows.",
+  "colours": "deep chestnut-red armour on the body, pincers and the whole tail, the colour of old polished mahogany, with a bright rust-orange highlight along the edge of every plate and segment and black shadow in the joints, paler amber-yellow walking legs, black tips on the pincers, a black sting. Nothing on it glows.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is an animal and holds nothing; both pincers are empty and open.",
   "pose": "Seen from the side and a little above, it faces left, crouched low on its eight legs with both big pincers raised and open in front of it at the left of the picture, one a little higher than the other, the thick tail arched high over its back with the sting pointing forward and down, ready to stab.",
@@ -427,7 +427,7 @@
    "a real scorpion: flat plated body, eight legs",
    "big open pincers held out in front (in side view the near pincer hides most of the far one)",
    "one thick segmented tail arched over the back, ending in one curved sting",
-   "glossy black armour"
+   "chestnut-red armour with bright orange plate edges and amber legs: light enough to read on a dark floor"
   ],
   "must_not_show": [
    "humanoid body",
@@ -449,7 +449,11 @@
    "glow",
    "weapon",
    "sand under it",
-   "rock under it"
+   "rock under it",
+   "all-black body",
+   "black silhouette",
+   "bright red lobster",
+   "crab"
   ]
  },
  {
@@ -773,15 +777,15 @@
   "family": "cerberus",
   "rank": 1,
   "key": "blue",
-  "what": "Cerberus, the three-headed hound of Hades from Greek myth: one enormous, heavy, deep-chested black guard dog on four legs, a real mastiff-like hound, with three dog heads. Three thick necks fan out from its one pair of shoulders like three spread fingers: one head held high, one head straight ahead in the middle, one head held low. All three heads have short ears, red eyes and open jaws with big white fangs. The hound has no dog's tail: where its tail should be, one thick scaly snake grows out of its rump, curves up behind it like a raised tail and ends in a snake's head with open jaws. The snake is the tail.",
-  "colours": "short jet-black and charcoal fur, red eyes on all three heads, white fangs, dark pink tongues, a dull olive-green scaly snake for a tail, a heavy dark iron spiked collar on each neck.",
+  "what": "Cerberus, the three-headed hound of Hades from Greek myth: one enormous, heavy, deep-chested black guard dog on four legs, a real mastiff-like hound, with three dog heads. Three long thick necks spring from its one pair of shoulders and spread wide apart like the ribs of an open fan, with the backdrop showing between them: the left head is turned out to the left and held low, the middle head is lifted high and faces the viewer, the right head is turned out to the right at shoulder height. Each head is a whole separate mastiff's head with its own short cropped ears, two large round eyes of solid glowing red, and wide-open jaws with big white fangs and a red tongue. The hound has no dog's tail: where its tail should be, one thick scaly snake grows out of its rump, curves up behind it like a raised tail and ends in a snake's head with open jaws. The snake is the tail.",
+  "colours": "short black fur with slate-grey highlights on every muscle and along each neck, large glowing red eyes on all three heads, white fangs, red tongues, a dull olive scaly snake for a tail, a heavy dark iron spiked collar on each neck.",
   "wears": "It wears three heavy dark iron collars with short spikes, one on each neck.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, it stands braced on four legs facing left, front legs wide, hackles up, its three heads fanned out to the left, one high, one in the middle, one low, all three snarling with jaws open, the snake tail hooked up behind the rump, hissing.",
+  "pose": "Seen from the front and a little from its right side, it stands braced on four legs with its chest toward the viewer and its body running back to the right, front legs planted wide, hackles up, its three necks spread like a fan, the left head low and snarling to the left, the middle head high and roaring at the viewer, the right head snapping to the right, backdrop plainly showing between the three necks, the snake tail hooked up behind the rump at the upper right, hissing.",
   "must_show": [
-   "one hound's body on four legs, seen from the side",
-   "exactly three dog heads on three necks, fanned out high, middle and low",
-   "black fur, red eyes, fangs",
+   "one hound's body on four legs",
+   "exactly three dog heads on three necks spread apart like a fan, each head separate in the small sprite, backdrop between the necks",
+   "black fur, large red eyes, fangs",
    "a snake for a tail, raised, ending in a snake's head",
    "a huge fearsome guard dog"
   ],
@@ -799,7 +803,11 @@
    "flames all over the body",
    "chain trailing on the ground",
    "gate or pillar behind it",
-   "tan or brown fur"
+   "tan or brown fur",
+   "three heads bunched together",
+   "heads overlapping",
+   "one wide head with three mouths",
+   "four heads"
   ]
  },
  {
@@ -807,26 +815,31 @@
   "family": "flayer",
   "rank": 1,
   "key": "green",
-  "what": "a mind flayer's thrall: a thin human man whose mind has been emptied and filled with his master's will. His skin is colourless grey-white like candle wax on his face, hands and feet alike. He has a shaved bald head, hollow cheeks and a jaw hanging wide open. His master's power shines out of his face: his two round eyes and his open mouth are each filled with bright violet light, three bright violet spots on the pale face, and a round violet mark glows in the middle of his forehead. A heavy dark iron collar is locked round his neck. He has realistic adult proportions: a small head, long thin limbs, about eight heads tall.",
-  "colours": "colourless grey-white waxy skin, bright violet light in the two eyes and the open mouth, a glowing violet mark on the forehead, a ragged faded brown robe, a dark iron collar.",
-  "wears": "He wears a ragged, torn, faded brown scholar's robe with tattered sleeves and a tattered hem at his shins, a rope belt, bare feet, and the heavy dark iron collar. His head is bare and bald.",
+  "what": "a mind flayer's thrall: a thin human man whose mind has been emptied and filled with his master's will, and who carries his master's mark where all can see it. His skin is colourless grey-white like candle wax on his face, hands and feet alike. He has a shaved bald head, hollow cheeks, blank white staring eyes and a jaw hanging wide open. Clamped on the top of his bald skull like a cap sits his master's leech: one slick, glistening, deep violet-purple creature as big as two fists, a smooth domed lump with four short thick tentacles that grip down over his head, one down each temple in front of the ear, one down the middle of his forehead to the bridge of his nose, one down the back of his skull. It is bright violet against the pale head and plainly a separate living thing riding him. His own face below it is a man's face with a nose, a mouth and a chin. A heavy dark iron collar is locked round his neck. He has realistic adult proportions: a small head, long thin limbs, about eight heads tall.",
+  "colours": "colourless grey-white waxy skin, blank white eyes, one slick deep violet-purple tentacled leech on top of the skull, a ragged faded brown robe, a dark iron collar.",
+  "wears": "He wears a ragged, torn, faded brown scholar's robe with tattered sleeves and a tattered hem at his shins, a rope belt, bare feet, and the heavy dark iron collar. His head is bald and bare but for the violet leech clamped on it.",
   "holds": "His hands are empty and he holds nothing. He has no weapon and no staff.",
-  "pose": "He lurches to the left on two legs, body leaning forward, head tipped back with the jaw wide open and violet light in his eyes and mouth, both arms reaching forward to the left with the hands open and the fingers spread to seize, one arm a little higher than the other, one bare foot dragging behind.",
+  "pose": "He lurches to the left on two legs, body leaning forward, head tipped back with the jaw wide open and the violet leech gripping his skull, both arms reaching forward to the left with the hands open and the fingers spread to seize, one arm a little higher than the other, one bare foot dragging behind.",
   "must_show": [
-   "a thin bald human man with grey-white waxy skin",
-   "violet light in the eyes and open mouth, and a violet mark on the forehead, readable in the small sprite",
+   "a thin bald human man with grey-white waxy skin, blank eyes, jaw hanging",
+   "his master's mark: one violet-purple tentacled leech clamped on top of his skull, plain in the small sprite",
+   "his own human face below it: nose, mouth, chin",
    "both arms reaching forward, empty hands",
    "ragged brown robe, iron collar"
   ],
   "must_not_show": [
-   "healthy pink or tan skin",
+   "healthy tan skin",
    "calm monk strolling with arms at his sides",
    "closed mouth",
    "neat clean robe",
    "necklace",
-   "tentacles on the face",
-   "octopus head",
+   "tentacles hanging from his mouth",
+   "tentacles in place of a mouth",
+   "octopus for a head",
+   "mind flayer",
+   "squid face",
    "purple skin",
+   "purple robe",
    "rotting flesh",
    "green zombie skin",
    "bare skull",
@@ -834,11 +847,14 @@
    "staff",
    "armour",
    "hood",
+   "hat",
+   "turban",
    "hair",
    "beard",
    "glowing aura round the body",
    "beam of light",
-   "big ball of light"
+   "big ball of light",
+   "plain bald head with nothing on it"
   ]
  },
  {

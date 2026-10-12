@@ -259,17 +259,16 @@
   "family": "dragon_b",
   "rank": 2,
   "key": "blue",
-  "what": "a dread wyrm: a misgrown dragon, a four-legged reptile whose body is far too heavy for the rest of it. It has a huge swollen hunched barrel body and a thick short neck, an oversized underslung lower jaw crowded with crooked fangs, one long horn and one horn broken off to a stump, and two tiny shrivelled crumpled wings far too small to lift it. Its hide is lumpy and blotched, and its eyes burn orange.",
-  "colours": "sickly ochre-yellow and dull grey-brown blotched hide, a pale grey belly, dark brown shrivelled wings, grey horns, burning orange eyes, orange and yellow fire.",
+  "what": "a dread wyrm: a misgrown, sickly dragon that walks on all four legs like a huge lizard, a reptile whose body is far too heavy for the rest of it. It has a huge swollen sagging barrel body with loose folds of lumpy hide hanging at the belly and neck, never muscular, a hunched back with a ragged ridge of uneven spines, a thick short neck, an oversized underslung lower jaw crowded with crooked fangs, two crooked grey horns of different lengths, and two tiny shrivelled crumpled wings far too small to lift it. Its hide is diseased: dull grey-brown, the colour of wet peat, covered with big pale sickly yellow-grey blotches, each as large as its head, warty and peeling. Its eyes burn orange.",
+  "colours": "dull grey-brown hide the colour of wet peat with big pale sickly yellow-grey blotches, a pale grey sagging belly, dark brown shrivelled wings, grey horns and spines, burning orange eyes, orange and yellow fire.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left, on four legs: it stamps forward on thick bowed legs with its hunched back high and its head held low, its oversized jaws gaping wide with one thick stream of orange fire no longer than its own neck, its tiny wings sticking up uselessly from its shoulders and its heavy tail sweeping sideways behind.",
+  "pose": "Seen from the side, facing left, all four of its feet are planted on the ground and its body is horizontal: it lumbers forward on thick bowed legs with its hunched back high, its belly sagging nearly to the ground and its head held low, its oversized jaws gaping wide with one short thick jet of orange fire shooting straight out of its mouth, joined to the mouth, no longer than its own head, its tiny wings sticking up uselessly from its shoulders and its heavy tail sweeping behind.",
   "must_show": [
-   "a bloated, hunched, misshapen dragon on four legs",
+   "a bloated, sagging, misshapen dragon on four legs",
    "tiny shrivelled wings far too small for the body",
    "an oversized jaw with crooked fangs",
-   "one horn broken off",
-   "blotched ochre and grey-brown hide",
+   "blotched diseased hide: grey-brown with big pale yellow-grey patches, not plain orange",
    "fire from the jaws"
   ],
   "must_not_show": [
@@ -284,7 +283,16 @@
    "standing upright on two legs",
    "humanoid body",
    "rider",
-   "rock"
+   "rock",
+   "plain orange hide",
+   "bright orange body",
+   "tan skin",
+   "bodybuilder muscles",
+   "muscular arms",
+   "bulging biceps",
+   "bull",
+   "toad",
+   "smooth healthy skin"
   ]
  },
  {
@@ -534,14 +542,14 @@
   "family": "dragon_dark",
   "rank": 3,
   "key": "magenta",
-  "what": "a spectral dragon: the ghost of a dragon, a pale see-through phantom. It is only the front half of a dragon: a horned dragon head with open jaws, a long neck, a ribbed chest, two clawed front legs and two great spread bat-like wings. At the waist its body stops in a ragged torn edge, and from that edge five or six long thin streamers of pale mist trail away behind it, like the torn hem of a ghost's sheet. It has two legs only, the front two; there is nothing behind the waist but the streamers. Its whole body is pale and milky like frosted glass, with the darker lines of its ribs showing through the chest, and a ball of cold blue-white fire burning inside the ribcage.",
+  "what": "a spectral dragon: the ghost of a dragon, a pale phantom drifting in the air. What is left of it is a horned dragon's head with open jaws, a long curving neck, a deep ribbed chest and two great spread bat-like wings. Behind the wings the chest narrows at once into one long, ragged, tapering tail of pale mist, three times as long as the head, that streams away to the right like the tail of a comet, fraying into five or six long thin streamers at its end, joined to the body. Its whole form is pale and milky like frosted glass, with the darker lines of its ribs showing through the chest, and a ball of cold blue-white fire burning inside the ribcage.",
   "colours": "pale milky white and pale aqua-blue ghost body, darker grey-blue rib lines, bright blue-white ghost fire in the chest, eyes and jaws.",
   "wears": "It is a ghost and wears nothing.",
-  "holds": "It is a beast and holds nothing.",
-  "pose": "Seen from the side, facing left: it swoops level through empty air towards the left with both wings spread wide above it, its two front claws reaching out ahead under its chin, its jaws open with one short lick of blue-white ghost fire no longer than its own head. Behind its waist the long pale streamers trail away to the right.",
+  "holds": "It holds nothing.",
+  "pose": "Seen from the side, facing left: it swoops level through empty air toward the left with both wings spread wide above it, bent sharply at the wrist like two tall arches, its neck curved like an S, its jaws open with one short lick of blue-white ghost fire no longer than its own head, and behind the wings its body is only the long pale tail of mist streaming away to the right, wholly inside the picture.",
   "must_show": [
-   "a pale ghostly dragon: head, neck, wings and front claws clear",
-   "the rear of the body trailing away into pale streamers",
+   "a pale ghostly dragon: head, neck, ribbed chest and wings clear",
+   "behind the wings the body is one tapering tail of mist and streamers: nothing hangs beneath it",
    "blue-white fire glowing inside the chest",
    "pale milky white and aqua-blue all over"
   ],
@@ -563,8 +571,18 @@
    "back feet",
    "long solid tail",
    "lightning",
-   "purple sparks"
-  ]
+   "purple sparks",
+   "legs",
+   "feet",
+   "talons hanging down",
+   "claws under the body",
+   "haunches",
+   "thighs",
+   "lizard body",
+   "wyvern legs",
+   "bird legs"
+  ],
+  "body": "shapeless"
  },
  {
   "id": "dracolich",
@@ -753,17 +771,17 @@
   "family": "undead",
   "rank": 4,
   "key": "magenta",
-  "what": "a dread wraith: an ancient wraith lord, a towering hooded ghost made of drifting tatters of black cloth with no body inside, only two cold pale lights for eyes in the empty hood. A tall crown of jagged black iron spikes sits on top of the hood. Two broad spiked black iron shoulder plates sit on its shoulders, with broken iron chains hanging from them. It has long thin shadowy claws and no legs: below the waist it trails away into long ragged wisps.",
+  "what": "a dread wraith: an ancient wraith lord, a towering hooded ghost made of drifting tatters of black cloth with nothing inside, only two cold pale lights for eyes in the empty hood. A tall crown of jagged black iron spikes sits on top of the hood. Two broad spiked black iron shoulder plates sit where the cloth hangs widest, with broken iron chains hanging from them. Two long sleeves of torn black cloth end in long thin shadowy claws. Below the waist the cloth has no hem: it tears into long ragged wisps that stream away to the lower right, joined to the body.",
   "colours": "black and deep grey cloth, a black iron crown and shoulder plates with dull silver edges, dark iron chains, pale icy blue-white eye lights.",
   "wears": "It is an empty tattered hooded shroud with a spiked iron crown on the hood and two spiked iron shoulder plates.",
   "holds": "Its clawed hands are empty and it holds nothing.",
-  "pose": "It rises up with both long arms flung out wide to the sides and claws spread, its hooded head tipped back wailing, its cloth and chains streaming downward and its tattered lower half trailing away to the right.",
+  "pose": "It lunges to the left through the air, its whole shape one slanting curve leaning far over to the left: the crowned hood is thrust forward at the upper left, one long arm is stretched far out ahead to the left with the claws spread to seize, the other arm is drawn back and raised high behind it at the upper right with the claws hooked, the chains swing back, and the tattered lower half streams away to the lower right in long ragged wisps. The two arms are at different heights and point in different directions.",
   "must_show": [
    "empty hood with two pale eye lights",
    "a tall spiked black iron crown on the hood",
    "spiked iron shoulder plates",
-   "ragged black cloth, no legs, trailing wisps",
-   "empty claws spread wide",
+   "ragged black cloth, trailing wisps streaming to one side",
+   "a lunging lopsided pose: one claw reaching ahead, one raised behind, not a symmetrical T",
    "plainly a grander wraith than the common one"
   ],
   "must_not_show": [
@@ -776,8 +794,16 @@
    "green glow",
    "wings",
    "cloud of mist round the body",
-   "full suit of armour"
-  ]
+   "full suit of armour",
+   "arms held straight out to both sides",
+   "T-pose",
+   "scarecrow pose",
+   "symmetrical figure",
+   "standing straight upright",
+   "robe hanging to a level hem",
+   "priest with arms spread"
+  ],
+  "body": "shapeless"
  },
  {
   "id": "soul_eater",

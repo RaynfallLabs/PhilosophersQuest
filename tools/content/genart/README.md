@@ -470,6 +470,23 @@ and look for the same kind of slip when reviewing.
 - **A fat undead ("belly like a drum") is a jolly fat man.** If the lore needs the
   bloat, make every other feature dead: grey skin, blank eyes, burial clothes,
   grave earth.
+- **Eyes on a dark shapeless creature survive at 64 px** when written as "the two
+  brightest things in the picture, each as long as a quarter of the body is wide",
+  slanted, with no pupils.
+- **"Shroud of ash" draws a cloth ghost;** "pillar of crumbling ash and cinders"
+  draws a solid thing.
+- **A lion's mane beats a man's face on a manticore.** Give the head human hair, say
+  "no mane", and add a piece of human headgear; "as large as the lion's chest"
+  makes the head oversized.
+- **A slime that is "lumpy, clotted" with bones in it grows a face;** "smooth
+  unbroken skin, nothing in it" does not. Scattered eyes and mouths collapse into
+  one giant face unless each one's position is named.
+- **Green cloth:** "moss-green" and "bottle-green" come out brown or olive; "deep
+  emerald-green" gives green.
+- **A caster's idle hand keeps growing props** until it is "a bare open palm turned
+  to the viewer, nothing in it or near it".
+- **"Bony brow, deep-set eyes, slit nostrils" on a bald monster draws a skull;**
+  "broad fleshy face, jowls, thick lips" gives a living one.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
