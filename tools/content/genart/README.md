@@ -242,6 +242,24 @@ and look for the same kind of slip when reviewing.
 - **A monstrous hag given an unusual skin colour can come out as an ordinary living
   woman of that colouring.** Make the skin plainly unnatural (stone-blue, corpse
   grey, bark green) and give her inhuman features: iron claws, tusks, lamp eyes.
+- **A food simile for a colour brings the food.** "Like lime jelly" drew a slice of
+  lime. "Ropes of jelly" drew braided rope. Name the colour plainly; say "strands".
+- **A helmet or boot inside a slime** becomes a bottle, or the slime becomes a man
+  wearing it. Put "head wearing the helmet" in `must_not_show`.
+- **Rust:** "rust-brown and orange-brown" armour comes out bright orange. Say "very
+  dark brown, the colour of an old iron nail, nearly black in the shadows".
+- **A beast with a human head** (sphinx, manticore, lamassu) keeps the beast's face
+  unless the brief leads with "the head of a human man", lists nose, lips and chin,
+  and turns the face to the viewer. "Ape's arms" gave an ape's face: describe the
+  arms as "long thick shaggy arms".
+- **Dull grey-blue on a magenta backdrop came out mint green.** Say "pale icy
+  blue, the blue of a winter sky".
+- **A short rod still draws a floor-length staff.** Say "gripped at its lower end,
+  comes nowhere near the ground, like a king's mace".
+- **A robed or caped lord in a still pose is a playing-card king.** Give him a
+  stride with the weapon swung back.
+- **A plain emblem ban is not kept** (a faint cross appeared on a tabard). Say what
+  the surface is instead: "a plain black shield with a dented rim".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
