@@ -388,6 +388,28 @@ and look for the same kind of slip when reviewing.
   serpent where "immensely long" does not.
 - **A made metal beast needs to look made:** "like a suit of armour in the shape of
   a bull, big riveted plates, jointed legs, black gaps between the plates".
+- **A swarm asked for as "many" or "a dense cloud" draws texture or the wrong
+  animal.** Count and place them: "five, each a third of the picture, bunched two
+  in front, one above, one below, one behind, overlapping so no backdrop shows
+  between them", or for a heap "about fifteen, each a fifth of the heap wide".
+  Ask for it "wholly inside the picture": a wave of them runs off the frame.
+- **A simile for behaviour is drawn too.** "Like a swarm of angry wasps" turned
+  pixies into flies; "like the spikes of a thistle" turned a nailed club into a
+  cactus.
+- **A headless figure keeps a head on its neck** unless told "the body ends at the
+  shoulders; the only head in the picture is the one he carries". Expect 1 in 3.
+- **"Bald, domed skull" with a rock beside the ear draws a man holding a skull.**
+  Say "hairless head, a living face" and "a jagged lump of quarry stone".
+- **A jelly "slab of wall" is carved stone.** Say "soft, wet, bulging faces,
+  rounded corners, things inside dim and blurred".
+- **Six arms:** name the pairs ("top pair raised, middle pair sideways, bottom pair
+  low; six swords in all, nothing behind her"). "Three on each side" gives a dozen.
+- **A rock giant is "three boulders to an arm, one after the other, touching; legs
+  are pillars of stacked slabs".** Moss turns it green all over: leave moss off.
+- **A thin living servant comes out young and handsome** unless given an age,
+  stubble, straggling hair and a stoop.
+- **Keep denials ("no red", "never green") out of the `colours` field:** the
+  backdrop check reads them as colours.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
