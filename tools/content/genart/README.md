@@ -428,6 +428,29 @@ and look for the same kind of slip when reviewing.
 - **Extra pairs of legs do not draw** (a six-legged beast came out with four in six
   candidates). Do not make them a `must_show`; carry the creature with another
   feature.
+- **Demons need not be red horned bat-winged muscle-men.** Give each its own body
+  plan and colour from its tradition (g18: a vulture-headed vrock, a toad-bodied
+  hezrou, a jackal-headed glabrezu with crab pincers, a Maya death bat, a Balinese
+  masked Rangda, one giant jewelled arm). Write the design table first, with the
+  already-drawn creature each must not be confused with.
+- **A hairy folk creature** "like an old sheepdog" gets a goat's head, and a "brown
+  weather-beaten face" makes it a living bearded man. Describe the hair plainly,
+  list a goblin face, and give stone-grey skin and pointed ears.
+- **"Barrel-shaped" with eyes round the middle is a grinning cartoon egg.** Say "a
+  massive upright boulder like a standing stone, plainly stone".
+- **Something growing from the chest (a horn, a mouth) goes to the face in a side
+  view.** Use a front view: "sunk into its ribcage and opening toward the viewer".
+- **A legless djinn keeps its legs.** Say "the sash is the bottom edge of its body;
+  directly under it one column of flame pours straight down".
+- **Yellow skin words ("tallow", "ochre") come out gold or orange.** Say "cold
+  grey-white like a wax candle".
+- **Broad stripes on a robe draw a clown in pyjamas.** Use a plain dark robe with
+  one patterned sash.
+- **An empty suit of armour with a closed visor is a knight.** Raise the visor over
+  "one large pure black hole" and put a black rent in the breastplate.
+- **Thin head spikes vanish at 64 px.** Make each "as long as his face and as thick
+  as a finger". **A wide-winged flier is cropped** unless the wings are "bent
+  sharply at the wrist like two tall arches, tips pointing down".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
