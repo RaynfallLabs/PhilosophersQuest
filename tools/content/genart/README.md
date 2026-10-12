@@ -260,6 +260,27 @@ and look for the same kind of slip when reviewing.
   stride with the weapon swung back.
 - **A plain emblem ban is not kept** (a faint cross appeared on a tabard). Say what
   the surface is instead: "a plain black shield with a dented rim".
+- **A golem called "man-shaped", with a torso, chest and face, is a bodybuilder
+  painted in that material.** Describe it as a carved statue of something clothed
+  or armoured ("a granite statue of a helmeted sentinel", "an oak statue of a
+  door-warden in a long coat"). Building it from plain parts ("a log trunk, a log
+  head with two notches") gives a toy puppet instead. For a brute: "hunched and
+  neckless, small head sunk between the shoulders, arms thicker than its legs".
+- **"Terracotta" clay comes out as bright orange skin;** "red-brown brick earth"
+  gives a red ogre. Say "pale dried river clay, cracked".
+- **Many small eyes and mouths become dots at 64 px.** Say "five big eyes and five
+  big mouths, each a quarter of the body wide".
+- **A dead guardian needs the word "corpse"** and a dead face (lips dried back from
+  the teeth, skin shrunk on the skull); "withered" alone gives a living old man.
+- **A glow "like a glove" draws white gloves.** Say "sparks crackle round the fist".
+- **"Hanging from a ceiling" draws the ceiling and crops the figure.** Say "caught
+  in mid-air as it falls".
+- **A flail's ball on a chain is cut off as a loose piece.** Prefer a mace, or have
+  the chain lie against the body.
+- **A wyvern grows small arms on its chest.** Say "its wings are its only front
+  limbs, like a bat's; it has two legs and no arms" and reroll if they appear.
+- **To go back to an earlier round, copy that round's files back** from `_rN` into
+  the creature's folder and rerun with `--sheets-only`.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
