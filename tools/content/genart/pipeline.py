@@ -47,6 +47,10 @@ DRAFT = ("A classic fantasy oil painting of {what} Colours: {colours} {wears} {h
          "light from the upper left with a cold rim light on the right, rich earthy colours with jewel-bright accents, "
          "weathered and intricate detail on every surface, heroic and serious. The figure itself is clearly and brightly "
          "lit so every part of it can be read; it is never a dark silhouette. "
+         "The figure is caught in the middle of an action like a frozen frame of a fight: weight on one leg, body "
+         "twisted, limbs at different heights; it is never standing straight with its arms at its sides. "
+         "Anything it holds is drawn bold, sturdy and a little larger than life, with thick shafts, limbs and blades, "
+         "and is held out clear of the body so its whole shape can be seen against the backdrop. "
          "One single figure only, shown full length from the top of its head to the soles of its feet, seen from far "
          "enough away that the figure is small in the picture: it fills only the middle two thirds, with wide empty "
          "backdrop above its head, below its feet and on both sides. Nothing it holds reaches the edge of the picture. "
@@ -54,7 +58,8 @@ DRAFT = ("A classic fantasy oil painting of {what} Colours: {colours} {wears} {h
          "gradient in it. There is no ground, no floor, no horizon and no shadow of any kind under or behind the figure.")
 DRAFT_NEG = ("shadow on the ground, cast shadow, drop shadow, floor, ground, scenery, multiple figures, character sheet, "
              "text, labels, border, photo, 3d render, blurry, chibi, cute, big head, cartoon, cartoon proportions, "
-             "bright candy colours, flat lighting, dark silhouette, cropped, close-up, portrait, half-length, cut off at the knees")
+             "bright candy colours, flat lighting, dark silhouette, cropped, close-up, portrait, half-length, cut off at the knees, "
+             "standing still, stiff symmetrical pose, arms hanging at the sides, thin spindly weapon")
 PIXEL = ("detailed pixel art of a classic fantasy oil painting, realistic proportions, dramatic warm side lighting, "
          "rich earthy colours, intricate detail, dark outline, serious high fantasy, {what} {colours} {holds} "
          "single figure, flat solid {keyname} background, no shadow")

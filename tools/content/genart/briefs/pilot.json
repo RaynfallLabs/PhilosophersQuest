@@ -8,7 +8,7 @@
   "colours": "bright leaf-green skin, dirty brown rags.",
   "wears": "It wears only a ragged brown loincloth and scraps of cloth; no armour at all.",
   "holds": "It holds exactly one small rusty knife in its right hand. Its left hand is an open empty claw with nothing in it.",
-  "pose": "It is lunging forward in a low crouch, knife arm stabbing out, mouth open in a shriek.",
+  "pose": "It is springing forward off one foot in a low pounce, knife arm stabbing out ahead of it, its free hand clawing the air, mouth open in a shriek.",
   "must_show": [
    "small scrawny green goblin",
    "rags only, no armour",
@@ -31,7 +31,7 @@
   "what": "a goblin shaman: a small hunched green-skinned goblin whose face is hidden behind a mask cut from a big spotted mushroom cap, with long pointed ears sticking out at the sides.",
   "colours": "green skin, a red-and-white spotted mushroom-cap mask, bone-white charms, a pale yellow-green hex glow.",
   "wears": "It wears a ragged robe hung with small bones, feathers and dried mushrooms.",
-  "holds": "It shakes exactly one rattle made of knucklebones on a stick in its right hand; its left hand is empty and raised, with a pale yellow-green magic glow around the fingers.",
+  "holds": "It shakes exactly one rattle in its right hand, held high: a thick wooden stick with a cluster of big white knucklebones tied to the top. Its left hand is empty and raised, with a pale yellow-green magic glow close around the fingers.",
   "pose": "It is hopping on one foot mid-dance, rattle raised high, left hand thrust forward casting a hex.",
   "must_show": [
    "goblin (green skin, long ears)",
@@ -56,11 +56,11 @@
   "what": "a goblin sniper: a small wiry green-skinned goblin marksman with long pointed ears, one eye squinted shut to aim.",
   "colours": "olive-green skin, a dark brown patched hood and cloak, a wooden crossbow with an iron bow.",
   "wears": "It wears a dark patched hood and short cloak, and a quiver of bolts on its hip.",
-  "holds": "It aims exactly one medieval wooden crossbow, with a curved bow of iron mounted crosswise at the front and a taut string, held in both hands and raised to its cheek.",
-  "pose": "It kneels on one knee, leaning into the crossbow and sighting along it to the left.",
+  "holds": "It holds exactly one medieval crossbow in both hands. The crossbow is a straight wooden stock with a short, thick steel bow fixed crosswise at its front end, so the weapon makes a clear T shape: the two curved arms of the bow stick out to the left and right of the stock and a taut string runs between their tips, with one short bolt lying along the top of the stock.",
+  "pose": "It kneels on one knee and levels the crossbow at chest height, pointed to the left and tilted a little towards the viewer so the T shape of the weapon and both of its arms are plainly seen.",
   "must_show": [
    "goblin (green skin, long ears)",
-   "crossbow held in both hands, aimed",
+   "a crossbow that reads as a crossbow: stock, crosswise bow with two arms, string",
    "hood or cloak",
    "kneeling or crouched aiming pose"
   ],
@@ -73,7 +73,11 @@
    "second weapon",
    "rifle",
    "gun",
-   "gun barrel"
+   "gun barrel",
+   "longbow held upright",
+   "pickaxe",
+   "hammer",
+   "anchor shape"
   ]
  },
  {
@@ -137,7 +141,7 @@
   "colours": "ivory and yellowed bone with grey-brown shadows.",
   "wears": "It wears nothing at all: no armour, no helmet, no clothes, only a few threads of rotted cloth at the hips.",
   "holds": "It holds exactly one old wooden club in its right hand; its left hand is empty.",
-  "pose": "It lurches forward with the club raised overhead, jaw hanging open.",
+  "pose": "It lunges forward on one bent leg with the club swung far back over its shoulder for a blow, its free arm thrown out for balance, jaw hanging open.",
   "must_show": [
    "bare bones, ribs and skull clearly visible",
    "no armour or clothing",
@@ -199,8 +203,8 @@
   "what": "a skeleton archer: a human skeleton bowman with a bare skull face and exposed ribs. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory bone, a faded green hood, a dark wooden longbow.",
   "wears": "It wears only a tattered green hood and a quiver of arrows on its back; no armour.",
-  "holds": "It draws exactly one longbow with an arrow nocked, bow in the left hand and string pulled back with the right.",
-  "pose": "It stands side-on at full draw, aiming to the left.",
+  "holds": "It draws exactly one large, thick wooden longbow with one arrow nocked: the bow upright in its left hand, the string pulled back to its jaw with the right.",
+  "pose": "It stands side-on in a wide archer's stance, leaning back into the draw, aiming up and to the left.",
   "must_show": [
    "skeleton (skull, ribs visible)",
    "longbow at full draw with an arrow",
@@ -256,15 +260,15 @@
   "family": "skeleton",
   "rank": 5,
   "key": "green",
-  "what": "a burning skeleton: a human skeleton of blackened, glowing-hot bones wrapped head to foot in orange and yellow flame, with fire pouring from its eye sockets and ribcage. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
-  "colours": "charred black and ember-red bone, bright orange and yellow fire.",
+  "what": "a burning skeleton: a human skeleton whose bones are blackened and cracked with glowing ember-orange lines. The whole skeleton is plainly visible: skull, ribs, spine, arms and legs. Tongues of orange and yellow flame rise only from its skull, shoulders and hands, and fire shines out through its eye sockets and ribcage. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
+  "colours": "charred black bone with glowing ember-orange cracks, bright orange and yellow flames.",
   "wears": "It wears nothing; the flames are its only covering.",
   "holds": "Its hands are empty and wreathed in fire.",
-  "pose": "It strides forward with both burning arms spread wide to grapple.",
+  "pose": "It lunges forward with one burning hand thrust out to grab and the other drawn back, trailing fire.",
   "must_show": [
-   "skeleton (skull and ribs visible inside the fire)",
-   "wrapped in flame",
-   "blackened bones",
+   "black bones clearly visible (skull, ribs, limbs), not hidden in fire",
+   "flames from the skull, shoulders and hands",
+   "glow inside the ribcage and eyes",
    "empty hands",
    "realistic adult proportions (small skull, long limbs)"
   ],
@@ -277,7 +281,9 @@
    "flesh",
    "oversized head",
    "cartoon proportions",
-   "short stubby body"
+   "short stubby body",
+   "body hidden inside a column of fire",
+   "solid ball of flame"
   ]
  },
  {
@@ -361,15 +367,15 @@
   "family": "spider",
   "rank": 1,
   "key": "green",
-  "what": "a cave spider: a spider the size of a cat with a small round body, eight thin jointed legs and a cluster of small black eyes.",
+  "what": "a cave spider: a spider the size of a cat with a small round body, eight thin jointed legs and a cluster of small black eyes, sitting on a small patch of pale cobweb.",
   "colours": "dull sandy brown with darker brown leg bands.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "Seen from slightly above, it crouches low with its legs gathered, hanging from one thin strand of silk.",
+  "pose": "Seen from slightly above, it crouches low with its legs drawn in ready to spring, front pair of legs raised.",
   "must_show": [
    "a spider with eight thin legs",
    "small and plain brown",
-   "a strand of silk"
+   "small and light next to the giant spider"
   ],
   "must_not_show": [
    "huge hairy body",
@@ -377,7 +383,9 @@
    "crown",
    "humanoid parts",
    "weapon",
-   "glow"
+   "glow",
+   "thick heavy legs",
+   "tarantula bulk"
   ]
  },
  {
@@ -414,15 +422,15 @@
   "family": "spider",
   "rank": 3,
   "key": "magenta",
-  "what": "a phase spider: a large real spider with the true body of a spider (a small head section, a sleek oval abdomen, and exactly eight long thin jointed legs), coloured in pale blue and white bands. Its rear half is fading away into thin pale mist as if it were only half in this world.",
+  "what": "a phase spider: a large real spider with the true body of a spider (a small head section, a sleek oval abdomen, and exactly eight long thin jointed legs), coloured in sharp pale blue and white bands. It is solid and clearly drawn except for the tips of its two rearmost legs and the very end of its abdomen, which thin out into a few short wisps of pale mist.",
   "colours": "pale ice-blue and white bands, cyan eyes, a pale blue mist.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "Seen from the front and slightly above, it steps forward with its four front legs solid and reaching, while its abdomen and back legs dissolve into wisps of pale blue mist.",
+  "pose": "Seen from the front and slightly above, it stalks forward with two front legs lifted and reaching, the other legs planted wide.",
   "must_show": [
-   "a true spider body with eight long legs",
+   "a true spider body with eight long legs, solid and clear",
    "pale blue and white banding",
-   "rear of the body fading into mist",
+   "only the rear tips fading into a little mist",
    "cyan eyes"
   ],
   "must_not_show": [
@@ -435,7 +443,10 @@
    "black hairy body",
    "brown colour",
    "crown",
-   "weapon"
+   "weapon",
+   "cloud of mist around the body",
+   "glowing aura",
+   "flames"
   ]
  },
  {
@@ -550,7 +561,7 @@
   "colours": "mossy green warty skin, yellow eyes, dirty yellow claws.",
   "wears": "It wears only a ragged hide loincloth.",
   "holds": "Its clawed hands are empty and it holds nothing.",
-  "pose": "It lopes forward in a long stride with one long arm swinging across in a wide raking claw swipe, mouth open in a roar.",
+  "pose": "It is in the middle of a huge sideways claw swipe: its body twisted at the waist, one long arm flung far across in front of it with claws spread, the other trailing behind, one foot off the ground, mouth roaring.",
   "must_show": [
    "tall lanky giant with very long arms",
    "mossy green warty skin",
@@ -656,14 +667,14 @@
   "key": "green",
   "what": "a kobold trapsetter: a very small, skinny reptilian creature like a little upright lizard, with a long snout, small backswept horns, sly narrowed yellow eyes and a thin tail.",
   "colours": "rust-orange and tan scales, dark leather straps, grey iron darts.",
-  "wears": "It wears a leather bandolier of barbed darts across its chest, a coil of tripwire over one shoulder and a small iron jaw-trap hanging from its belt.",
-  "holds": "It holds exactly one barbed dart in its right hand, drawn back to throw; its left hand is empty.",
+  "wears": "It wears a leather bandolier of barbed darts across its chest and a coil of tripwire over one shoulder.",
+  "holds": "It holds exactly one large open iron jaw-trap with jagged teeth, dangling from a chain in its left hand, and exactly one barbed dart in its right hand, drawn back to throw.",
   "pose": "It twists side-on, right arm cocked back to throw the dart, grinning.",
   "must_show": [
    "kobold (small lizard-like, snout, horns, tail)",
    "bandolier of darts",
-   "coil of wire or a trap",
-   "one dart ready to throw"
+   "an iron jaw-trap in the left hand",
+   "one dart ready to throw in the right hand"
   ],
   "must_not_show": [
    "spear",
@@ -713,7 +724,7 @@
   "colours": "tan-brown human skin on the body, dark brown fur on the bull's head and shoulders, ivory horns, a bronze harness.",
   "wears": "He wears a bronze-studded leather harness across his chest and a leather war-kilt.",
   "holds": "His hands are empty clenched fists and he holds nothing.",
-  "pose": "He stands on two legs in mid-stride, bent forward at the waist with his head lowered to present the horns, one arm swung back, steam snorting from his nostrils.",
+  "pose": "He is charging: running at full tilt on his two legs, body pitched far forward, head down with the horns aimed ahead, one knee driving up, both arms pumping, hair and kilt streaming back.",
   "must_show": [
    "upright on two legs with a man's body",
    "a bull's head with horns",

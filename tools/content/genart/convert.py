@@ -19,7 +19,9 @@ OUTLINE = (20, 16, 24)
 LIFT_GAMMA = 0.82
 LIFT_COLOUR = 1.15
 KEYS = {'magenta': (255, 0, 255), 'green': (0, 255, 0), 'blue': (0, 0, 255)}
-WORK = 512                                   # the mask is made at this size
+WORK = 1024                                  # the mask is made at this size (full size: a bowstring is 3 px wide)
+SOLID = 0.43                                 # a sprite pixel is kept when the figure covers this much of it...
+THIN = 0.10                                  # ...or this much, where the figure is a thin thing (a bow, a wand, a blade)
 
 
 def _hsv(a):
@@ -51,14 +53,17 @@ def figure_mask(im, key='magenta'):
             kh = seen
     dh = np.abs(h - kh); dh = np.minimum(dh, 1 - dh)
     back = (dh < 0.075) & (s > 0.42) & (v > 0.16)          # the key colour, lit or in shadow
-    back = ndi.binary_dilation(back, iterations=1)         # take the fringe with it
+    # The fringe: a pixel beside the backdrop that is still mostly the backdrop's colour.
+    # (This used to grow the backdrop by a pixel all round, which ate thin things whole:
+    # a bow limb, a wand, a crossbow's arms.)
+    back |= ndi.binary_dilation(back, iterations=2) & (dh < 0.10) & (s > 0.28) & (v > 0.16)
     fig = ~back
     lab, n = ndi.label(fig)
     parts = 0
     if n:
         sizes = ndi.sum(fig, lab, range(1, n + 1))
         big = max(sizes)
-        keep = [i + 1 for i, sz in enumerate(sizes) if sz >= big * 0.03]
+        keep = [i + 1 for i, sz in enumerate(sizes) if sz >= big * 0.012]
         parts = len(keep)
         fig = np.isin(lab, keep)
     edge = np.concatenate([fig[0], fig[-1], fig[:, 0], fig[:, -1]])
@@ -88,7 +93,18 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS):
     small = np.asarray(Image.fromarray(canvas.astype(np.uint8), 'RGBa').resize((inner, inner), Image.BOX)).astype(np.float32)
     al = small[..., 3:4]
     rgb = np.where(al > 0, small[..., :3] * 255.0 / np.maximum(al, 1), 0)
-    solid = al[..., 0] > 110
+    # Thin things are whatever an opening removes: parts narrower than about one sprite
+    # pixel. They never cover half of any pixel, so they get their own, lower bar;
+    # otherwise the archer loses his bow and the shaman her rattle.
+    px_per = max(1.0, side / float(inner))
+    r = max(1, int(round(px_per * 0.6)))
+    yy, xx = np.ogrid[-r:r + 1, -r:r + 1]
+    disk = (xx * xx + yy * yy) <= r * r
+    whole = canvas[..., 3] > 0
+    thin = whole & ~ndi.binary_opening(whole, structure=disk)
+    thin_cov = np.asarray(Image.fromarray((thin * 255).astype(np.uint8)).resize((inner, inner), Image.BOX)).astype(np.float32) / 255.0
+    solid = (al[..., 0] > SOLID * 255) | (thin_cov > THIN)
+    facts['thin_pixels'] = int(((thin_cov > THIN) & ~(al[..., 0] > SOLID * 255)).sum())
     # A painted figure's soft shadows average down to mud at this size: lift the
     # midtones and put a little colour back. Black and white stay where they are.
     rgb = 255.0 * (np.clip(rgb, 0, 255) / 255.0) ** LIFT_GAMMA
