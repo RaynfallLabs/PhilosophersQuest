@@ -119,13 +119,30 @@ def prompts(b):
             PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + ''.join(', ' + x for x in b.get('must_not_show', [])))
 
 
+def tint_leak(sprite):
+    """Share of a template sprite that is cool-coloured (blue, teal, green, purple)
+    strongly enough that recolour.tint leaves it alone: steel that was painted blue."""
+    import numpy as np
+    a = np.asarray(sprite.convert('RGBA')).astype(np.float32)
+    rgb, al = a[..., :3], a[..., 3] > 0
+    mx, mn = rgb.max(2), rgb.min(2)
+    sat = np.where(mx > 0, (mx - mn) / np.maximum(mx, 1), 0)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    outline = np.abs(rgb - np.array([20, 16, 24])).sum(2) < 12
+    cool = ((b > r * 1.08) | (g > r * 1.10)) & (sat >= 0.45)
+    body = al & ~outline
+    return float((cool & body).sum()) / max(1, int(body.sum()))
+
+
 def mechanical(facts):
     """The reasons a candidate fails before anyone looks at it."""
     bad = []
     if facts.get('empty'):
         return ['nothing left after the cut-out']
-    if facts['parts'] != 1:
+    if not 1 <= facts['parts'] <= facts.get('pieces', 1):
         bad.append(f"{facts['parts']} separate pieces")
+    if facts.get('tint_leak', 0) > 0.06:
+        bad.append(f"{facts['tint_leak']:.0%} of it is blue or green and will not take a material's colour")
     if facts['touches_edge'] > 0.02:
         bad.append('cropped by the frame')
     if facts['background_ok'] < 0.85:
@@ -171,6 +188,9 @@ def cut(briefs, out, n):
             spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'),
                                            scale=SCALES[b.get('scale', 'large')] if item else 1.0, stand=not item)
             facts['thin_ok'] = item
+            facts['pieces'] = int(b.get('pieces', 1))        # a pair (bracers, greaves) may be two
+            if b['id'].startswith('tpl_'):
+                facts['tint_leak'] = tint_leak(spr)
             spr.save(os.path.join(out, b['id'], f'c{c}_sprite.png'))
             facts['mechanical_fail'] = mechanical(facts)
             report[f"{b['id']}/c{c}"] = facts
