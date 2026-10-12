@@ -26,6 +26,8 @@ TILES = os.path.join(ROOT, 'assets', 'tiles')
 PAINTINGS = {'player_ranger.png', 'player_wizard_f.png', 'player_robyn.png'}     # Brandon's painted portraits: kept as they are
 with open(os.path.join(ROOT, 'tools', 'content', 'genart', 'installed.json'), encoding='utf-8') as _f:
     GENERATED = set(json.load(_f))     # monsters carrying a reviewed 64px picture
+with open(os.path.join(ROOT, 'tools', 'content', 'genart', 'installed_tiles.json'), encoding='utf-8') as _f:
+    GENERATED_TILES = json.load(_f)    # map tiles and objects carrying one, by folder
 
 
 def _png_size(path):
@@ -38,7 +40,8 @@ def test_every_sprite_is_one_size():
     for folder in ('monsters', 'items', 'env'):
         for name in os.listdir(os.path.join(TILES, folder)):
             if name.endswith('.png') and name not in PAINTINGS:
-                want = (64, 64) if folder == 'monsters' and name[:-4] in GENERATED else (32, 32)
+                big = (folder == 'monsters' and name[:-4] in GENERATED) or name[:-4] in GENERATED_TILES.get(folder, ())
+                want = (64, 64) if big else (32, 32)
                 assert _png_size(os.path.join(TILES, folder, name)) == want, (folder, name)
 
 
@@ -116,7 +119,18 @@ def test_solid_rock_is_drawn_apart_from_a_wall_that_faces_something():
     assert name(d, 1, 1, WALL) == 'rock'
     assert name(d, 2, 2, WALL) == 'wall'            # touches the room at a corner
     assert name(d, 3, 2, WALL) == 'wall'
-    assert name(d, 3, 3, FLOOR) == 'floor'
+    assert name(d, 3, 3, FLOOR).startswith('floor')    # one of the flagstone pictures
+
+
+def test_the_floor_varies_by_place_and_stays_put():
+    """One flagstone on every tile read as wallpaper. Each tile takes one of a
+    few floor pictures, fixed by its position so it never changes underfoot."""
+    d = _Dungeon(['.' * 30] * 30)
+    name = renderer._tile_sprite_name
+    seen = {name(d, x, y, FLOOR) for y in range(30) for x in range(30)}
+    assert len(seen) >= 3 and all(n.startswith('floor') for n in seen)
+    assert all(os.path.exists(os.path.join(TILES, 'env', n + '.png')) for n in seen)
+    assert name(d, 7, 9, FLOOR) == name(d, 7, 9, FLOOR)
 
 
 def test_the_rock_does_not_give_a_secret_door_away():

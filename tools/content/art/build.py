@@ -35,6 +35,8 @@ PAINTINGS = {'player_ranger', 'player_wizard_f', 'player_robyn'}
 import json as _json
 _GEN_LIST = HERE.parent / 'genart' / 'installed.json'
 GENERATED = set(_json.loads(_GEN_LIST.read_text(encoding='utf-8'))) if _GEN_LIST.exists() else set()
+_TILE_LIST = HERE.parent / 'genart' / 'installed_tiles.json'
+GENERATED_TILES = _json.loads(_TILE_LIST.read_text(encoding='utf-8')) if _TILE_LIST.exists() else {}
 
 
 def _load(kind: str):
@@ -78,6 +80,8 @@ def main(argv: list[str]) -> int:
             if r['folder'] == 'env' and r['id'] in PAINTINGS and '--paintings' not in argv:
                 continue
             if r['folder'] == 'monsters' and r['id'] in GENERATED:
+                continue
+            if r['id'] in GENERATED_TILES.get(r['folder'], ()):
                 continue
             try:
                 img = mod.draw(r)
