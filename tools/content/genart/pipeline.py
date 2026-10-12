@@ -47,13 +47,12 @@ DRAFT = ("A classic fantasy oil painting of {what} Colours: {colours} {wears} {h
          "light from the upper left with a cold rim light on the right, rich earthy colours with jewel-bright accents, "
          "weathered and intricate detail on every surface, heroic and serious. The figure itself is clearly and brightly "
          "lit so every part of it can be read; it is never a dark silhouette. "
-         "The figure is caught in the middle of an action like a frozen frame of a fight: weight on one leg, body "
-         "twisted, limbs at different heights; it is never standing straight with its arms at its sides. "
+         "{action} "
          "Anything it holds is drawn bold, sturdy and a little larger than life, with thick shafts, limbs and blades, "
          "and is held out clear of the body so its whole shape can be seen against the backdrop. "
-         "One single figure only, shown full length from the top of its head to the soles of its feet, seen from far "
+         "One single figure only, {whole}, seen from far "
          "enough away that the figure is small in the picture: it fills only the middle two thirds, with wide empty "
-         "backdrop above its head, below its feet and on both sides. Nothing it holds reaches the edge of the picture. "
+         "backdrop above it, below it and on both sides. Nothing it holds reaches the edge of the picture. "
          "The background is one completely flat, evenly lit, solid {key} filling the whole picture, with no shading or "
          "gradient in it. There is no ground, no floor, no horizon and no shadow of any kind under or behind the figure, and nothing lies under or around it: no base, no rock, no web, no grass, no puddle, no rubble, no smoke.")
 DRAFT_NEG = ("shadow on the ground, cast shadow, drop shadow, floor, ground, scenery, multiple figures, character sheet, "
@@ -66,6 +65,19 @@ PIXEL = ("detailed pixel art of a classic fantasy oil painting, realistic propor
          "single figure, flat solid {keyname} background, no shadow")
 PIXEL_NEG = ("blurry, photograph, 3d render, text, frame, chibi, cute, cartoon, big head, super-deformed, extra limbs, "
              "extra weapons, multiple characters, ground, floor, cast shadow, drop shadow")
+# The fixed wording once assumed a head, feet and legs, which pushed fire, slime, clouds
+# and eyeballs towards legs or a small man underneath. A brief with "body": "shapeless"
+# gets wording that names no body part.
+ACTION = {
+    'legged': "The figure is caught in the middle of an action like a frozen frame of a fight: weight on one leg, "
+              "body twisted, limbs at different heights; it is never standing straight with its arms at its sides.",
+    'shapeless': "It is caught in the middle of a movement like a frozen frame: its mass leaning, surging or "
+                 "lashing to one side, lopsided and alive, never a still symmetrical lump.",
+}
+WHOLE = {
+    'legged': 'shown full length from the top of its head to the soles of its feet',
+    'shapeless': 'shown whole from its highest point to its lowest, with nothing else beneath it',
+}
 PIXEL_DENOISE = 0.42       # low: the painting survives, the edges sharpen
 INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 
@@ -73,9 +85,12 @@ INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 def prompts(b):
     holds = b.get('holds') or 'Its hands are empty and it holds nothing.'
     wears = b.get('wears', '')
+    body = 'shapeless' if b.get('body') == 'shapeless' else 'legged'
     f = dict(what=b['what'], colours=b['colours'], wears=wears, holds=holds, pose=b['pose'])
+    if body == 'shapeless' and not b.get('holds'):
+        f['holds'] = 'It holds nothing.'
     neg = DRAFT_NEG + ''.join(', ' + x for x in b.get('must_not_show', []))
-    return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], **f), neg,
+    return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=ACTION[body], whole=WHOLE[body], **f), neg,
             PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + ''.join(', ' + x for x in b.get('must_not_show', [])))
 
 
