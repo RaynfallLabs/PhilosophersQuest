@@ -281,6 +281,31 @@ and look for the same kind of slip when reviewing.
   limbs, like a bat's; it has two legs and no arms" and reroll if they appear.
 - **To go back to an earlier round, copy that round's files back** from `_rN` into
   the creature's folder and rerun with `--sheets-only`.
+- **"Yellowed" bone comes out as polished gold.** Say "dull grey-brown, dug from a
+  grave, never gold" or "chalk grey-white".
+- **A trail under a floating thing cuts out as a string** (a floating skull looked
+  like a balloon). Ask for nothing beneath it.
+- **A skull with its jaw wide open grows a red tongue** unless the inside is "only
+  empty pitch-black darkness".
+- **Eye beams are drawn as lines across the whole picture.** Ask for sockets
+  "filled to the brim with solid light".
+- **A pale head in front of a pale headdress vanishes at 64 px.** Make whatever is
+  behind the head dark.
+- **"Big, heavy, broad" with a beard, helmet and mail draws a living dwarf.** For an
+  undead lord say "very tall, gaunt, long-limbed, never stout".
+- **A withered face still draws a skull** unless the soft parts are listed: ears,
+  nose, eyelids, lips.
+- **A thing held near a flame catches fire too.** Say it is "cold, with no flame
+  and no glow on it", and hold it low, away from the flame.
+- **A missing limb is not drawn; both arms come back.** Do not design around a
+  stump. **A two-handed sword is drawn one-handed, and a short sceptre as a tall
+  rod:** accept it or describe the grip in the picture.
+- **The backdrop check reads denials too.** "Never living pink" trips the magenta
+  rule. Move the creature to another key rather than fight it.
+- **Ten of one kind can be ten different creatures.** Give each its own robe
+  colour, headgear, magic colour and one signature object from its lore (g11's
+  liches: lantern and keys; a carried skull; Koschei's egg; spears through the
+  ribs; a comb; an ermine mantle and ledger).
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
