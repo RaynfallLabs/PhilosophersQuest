@@ -570,6 +570,23 @@ _TILE_SPRITE = {
 _SOLID = (WALL, SECRET_DOOR)
 
 
+def _floor_variants() -> tuple:
+    """The floor pictures in the env folder, plain slabs listed more often than
+    the busier ones. Empty when there is only floor.png."""
+    have = [n for n in ('floor_2', 'floor_3', 'floor_4', 'floor_5', 'floor_6')
+            if os.path.exists(os.path.join(_ENV_SPRITE_DIR, n + '.png'))]
+    if not have:
+        return ()
+    weight = {'floor_2': 4, 'floor_6': 3}
+    out = ['floor'] * 5
+    for n in have:
+        out += [n] * weight.get(n, 1)
+    return tuple(out)
+
+
+_FLOOR_VARIANTS = _floor_variants()
+
+
 def _tile_sprite_name(dungeon, tx: int, ty: int, tile) -> 'str | None':
     """The picture for a map tile. A wall with nothing but wall around it is
     solid rock and is drawn dark and plain; brickwork shows only where a wall
@@ -585,6 +602,10 @@ def _tile_sprite_name(dungeon, tx: int, ty: int, tile) -> 'str | None':
                     if 0 <= nx < w and row[nx] not in _SOLID:
                         return 'wall'
         return 'rock'
+    if tile == FLOOR and _FLOOR_VARIANTS:
+        # the same flagstone on every tile reads as wallpaper: each tile takes one of
+        # a few, fixed by where it is, so the floor does not change as you move
+        return _FLOOR_VARIANTS[((tx * 73856093) ^ (ty * 19349663)) % len(_FLOOR_VARIANTS)]
     return _TILE_SPRITE.get(tile)
 
 

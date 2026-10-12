@@ -527,6 +527,19 @@ and look for the same kind of slip when reviewing.
   chest never reads; held up against the backdrop, it does.
 - **To change one part of a good pick, reuse its seed** and change only that
   paragraph of the brief: the rest of the composition holds.
+- **Objects (`"body": "object"`).** Stairs draw a person on them: say "the stairway
+  is empty" and reroll. Floor slabs come out cornerwise unless "seen from directly
+  above like a floor tile on a game map, edges parallel to the edges of the
+  picture". Pale wood words ("ash", "ivory", "golden oak") come out as cream toys:
+  use dark walnut or dark oak, "scuffed, darkened with age". "Satchel" is a modern
+  handbag and "tan leather" bright orange: say "old courier's satchel of dark
+  scuffed chestnut leather". A chair on legs is not a throne: give it "a solid box
+  beneath the seat that goes straight down to the ground". Gas does not draw as
+  gas. For a set of ten containers, settle each one's material and colour first.
+- **A flat material is not a "face".** "The dressed face of a stone block" painted
+  a carved human face on every wall. Say "a flat blank surface, nothing carved".
+  Water and lava paint a bullseye unless told "the same everywhere, no centre, no
+  rings, no part of the picture differs from any other".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 

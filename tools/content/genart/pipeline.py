@@ -22,14 +22,14 @@ KEY_WORDS = {'magenta': 'pure magenta (#FF00FF)', 'green': 'pure bright green (#
 KEY_CLASH = {'magenta': ('magenta', 'pink', 'purple', 'violet', 'crimson', 'red', 'orange', 'rose'),
              'green': ('green', 'lime', 'olive', 'moss'),
              'blue': ('blue', 'navy', 'indigo', 'azure', 'cyan', 'violet', 'purple')}
-FIELDS = ('id', 'family', 'what', 'colours', 'pose', 'must_show', 'must_not_show')
+FIELDS = ('id', 'family', 'what', 'colours', 'must_show', 'must_not_show')
 
 
 def check_briefs(briefs):
     """Front-end check: every brief is complete and its backdrop will not eat its own colours."""
     bad = []
     for b in briefs:
-        for f in FIELDS:
+        for f in FIELDS + (() if b.get('body') == 'object' else ('pose',)):
             if not b.get(f):
                 bad.append(f"{b.get('id', '?')}: no {f}")
         text = (b.get('colours', '') + ' ' + b.get('what', '')).lower()
@@ -73,10 +73,14 @@ ACTION = {
               "body twisted, limbs at different heights; it is never standing straight with its arms at its sides.",
     'shapeless': "It is caught in the middle of a movement like a frozen frame: its mass leaning, surging or "
                  "lashing to one side, lopsided and alive, never a still symmetrical lump.",
+    'object': "It is a still, lifeless object, a piece of dungeon furniture, drawn the way objects are drawn on the map "
+              "of a classic top-down roleplaying game: seen from the front and a little from above, upright, whole "
+              "and solid, with its top face showing. It has no face, no eyes and no limbs, and nobody is near it.",
 }
 WHOLE = {
     'legged': 'shown full length from the top of its head to the soles of its feet',
     'shapeless': 'shown whole from its highest point to its lowest, with nothing else beneath it',
+    'object': 'shown whole from its top to its base, with nothing else beneath it',
 }
 PIXEL_DENOISE = 0.42       # low: the painting survives, the edges sharpen
 INSET = 128                # the 64 px sprite shown at 2x on the review sheets
@@ -85,10 +89,13 @@ INSET = 128                # the 64 px sprite shown at 2x on the review sheets
 def prompts(b):
     holds = b.get('holds') or 'Its hands are empty and it holds nothing.'
     wears = b.get('wears', '')
-    body = 'shapeless' if b.get('body') == 'shapeless' else 'legged'
-    f = dict(what=b['what'], colours=b['colours'], wears=wears, holds=holds, pose=b['pose'])
+    body = b.get('body') if b.get('body') in ('shapeless', 'object') else 'legged'
+    f = dict(what=b['what'], colours=b['colours'], wears=wears, holds=holds, pose=b.get('pose', ''))
     if body == 'shapeless' and not b.get('holds'):
         f['holds'] = 'It holds nothing.'
+    if body == 'object':
+        f['holds'] = b.get('holds', '')
+        f['pose'] = b.get('pose', '')
     neg = DRAFT_NEG + ''.join(', ' + x for x in b.get('must_not_show', []))
     return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=ACTION[body], whole=WHOLE[body], **f), neg,
             PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + ''.join(', ' + x for x in b.get('must_not_show', [])))

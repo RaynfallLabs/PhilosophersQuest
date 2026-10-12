@@ -1,0 +1,1231 @@
+[
+ {
+  "id": "altar",
+  "family": "fixture",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "a church altar of plain grey stone: one heavy rectangular stone table, wider than it is tall, made of a thick flat top slab resting on a solid stone block. A large plain Latin cross is carved deep into the middle of its front face. Two thick white wax candles stand on the top, one near each end, each with a small yellow flame.",
+  "colours": "weathered pale grey stone with darker grey in the cracks, a white linen runner across the top, white candles in short brass holders, small yellow flames.",
+  "pose": "Seen from the front and a little from above, so the front face with its cross and the top with its two candles both show.",
+  "must_show": [
+   "plain grey stone altar table",
+   "one large cross carved on the front",
+   "two lit candles on top"
+  ],
+  "must_not_show": [
+   "idol",
+   "statue",
+   "skull",
+   "blood",
+   "pentagram",
+   "chalice",
+   "book",
+   "more than two candles",
+   "steps",
+   "church wall",
+   "window"
+  ]
+ },
+ {
+  "id": "fountain",
+  "family": "fixture",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "a stone fountain: one wide, low, round basin of carved grey stone with a thick rim, filled nearly to the brim with clear water. In the centre of the water stands a short stone spout no taller than the rim is wide, a plain stone knob, with a small jet of water bubbling up from it and falling straight back into the basin.",
+  "colours": "weathered pale grey stone, clear pale blue water with white ripples.",
+  "pose": "Seen from the front and well above, so the round pool of water inside the rim shows as a wide blue oval.",
+  "must_show": [
+   "round stone basin",
+   "blue water filling it",
+   "low central spout"
+  ],
+  "must_not_show": [
+   "statue",
+   "figure",
+   "fish",
+   "tall tiered fountain",
+   "second bowl",
+   "plants",
+   "coins",
+   "face",
+   "water spilling over the rim",
+   "puddle"
+  ]
+ },
+ {
+  "id": "grave",
+  "family": "fixture",
+  "rank": 3,
+  "key": "magenta",
+  "body": "object",
+  "what": "a grave: one old upright headstone of grey stone with a rounded top, leaning a little to one side, chipped and cracked, with a small plain cross cut into its face. It stands at the head of a low oblong mound of dark bare earth, and the mound is joined to the foot of the stone.",
+  "colours": "weathered grey stone with pale lichen-grey patches, a mound of dark brown earth.",
+  "pose": "Seen from the front and a little from above, the headstone at the back and the mound of earth coming toward the viewer.",
+  "must_show": [
+   "upright round-topped headstone",
+   "low mound of earth in front of it",
+   "old and weathered"
+  ],
+  "must_not_show": [
+   "skull",
+   "bones",
+   "hand reaching from the earth",
+   "ghost",
+   "flowers",
+   "grass",
+   "fence",
+   "tree",
+   "second headstone",
+   "open coffin",
+   "shovel"
+  ]
+ },
+ {
+  "id": "throne",
+  "family": "fixture",
+  "rank": 4,
+  "key": "blue",
+  "body": "object",
+  "what": "an empty royal throne: one massive, broad seat of state covered all over in gold leaf, nearly as wide as it is tall. Its back is a broad, tall, solid gilded panel with an arched top ending in three pointed finials. Its two armrests are thick solid gilded slabs with a round gold knob at the front of each. Beneath the seat the throne is a solid gilded box that goes straight down to the ground on all sides, with carved panels and no gap under it. A fat crimson velvet cushion lies on the seat and a tall panel of crimson velvet covers the middle of the back. Nobody sits in it.",
+  "colours": "rich old gold leaf all over, worn to dark brown-gold in the hollows, crimson velvet.",
+  "pose": "Seen from the front and a little from above, facing the viewer.",
+  "must_show": [
+   "broad solid gilded throne, gold all over",
+   "tall arched back",
+   "crimson cushion",
+   "empty seat"
+  ],
+  "must_not_show": [
+   "thin chair legs",
+   "gap under the seat",
+   "plain brown wood",
+   "dining chair",
+   "bishop's chair",
+   "king",
+   "person sitting",
+   "crown",
+   "sceptre",
+   "skull",
+   "steps",
+   "dais",
+   "carpet",
+   "curtains",
+   "lion heads",
+   "animal feet"
+  ]
+ },
+ {
+  "id": "door",
+  "family": "fixture",
+  "rank": 5,
+  "key": "magenta",
+  "body": "object",
+  "what": "a closed dungeon door seen straight on: one heavy door of thick dark oak planks with a rounded top, bound across by three broad black iron bands studded with big round iron nail-heads, with one large black iron ring handle hanging at the right side. The door is set in its own frame of big grey stone blocks, an arch of stone all round it, and the door and its frame together are the whole object.",
+  "colours": "dark brown oak, black iron, grey stone blocks.",
+  "pose": "Seen exactly from the front, flat and upright like a playing card, the stone frame standing on its own with backdrop all round it.",
+  "must_show": [
+   "closed oak door",
+   "iron bands and studs",
+   "iron ring handle",
+   "stone doorframe round it"
+  ],
+  "must_not_show": [
+   "open door",
+   "doorway showing a room",
+   "wall stretching to the sides",
+   "torches",
+   "steps",
+   "window",
+   "face",
+   "door knocker shaped like a head",
+   "floor"
+  ]
+ },
+ {
+  "id": "stairs_down",
+  "family": "fixture",
+  "rank": 6,
+  "key": "magenta",
+  "body": "object",
+  "what": "a stairway going down into the ground: one thick square slab of grey stone floor with a large square hole cut in its middle. Inside the hole a flight of five worn stone steps goes down, the top step at the near edge of the hole and each step after it lower, farther away and darker, until the far end of the hole is pitch-black darkness. The slab's broad stone rim runs all the way round the hole. The stairway is empty.",
+  "colours": "pale grey stone rim, steps going from grey to dark grey, pitch-black at the bottom.",
+  "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise, and the viewer looks down the steps into the hole.",
+  "must_show": [
+   "square hole in a stone slab",
+   "steps descending into black darkness",
+   "stone rim all round"
+  ],
+  "must_not_show": [
+   "man",
+   "figure",
+   "person on the steps",
+   "warrior",
+   "steps rising above the floor",
+   "railing",
+   "ladder",
+   "trapdoor lid",
+   "light at the bottom",
+   "walls",
+   "torch",
+   "spikes"
+  ]
+ },
+ {
+  "id": "stairs_up",
+  "family": "fixture",
+  "rank": 7,
+  "key": "magenta",
+  "body": "object",
+  "what": "a short flight of stairs going up: five broad worn steps of pale grey stone built as one solid block, each step higher than the one in front, rising from the ground at the front to the highest step at the back, like a mounting block or the steps of a monument. The top step is washed with pale golden daylight and is the brightest part of the picture; the lowest step is in shade.",
+  "colours": "pale grey stone, worn pale edges on each step, pale golden light on the top step.",
+  "pose": "Seen from the front and a little from above, the lowest step nearest the viewer, the steps climbing away and upward; solid stone sides, no hole.",
+  "must_show": [
+   "solid block of stone steps rising upward",
+   "pale light on the top step",
+   "no hole, nothing dark"
+  ],
+  "must_not_show": [
+   "hole in the floor",
+   "black pit",
+   "darkness",
+   "railing",
+   "door",
+   "arch",
+   "walls",
+   "person",
+   "carpet",
+   "spiral staircase"
+  ]
+ },
+ {
+  "id": "trap_pit",
+  "family": "trap_a",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "a pit trap: one square flagstone of plain grey stone whose whole middle has fallen in, leaving a large ragged round hole with broken jagged edges. The hole is pitch-black. Six short, thick, rough stakes of dark split timber, bark still on them, each hacked to a blunt point with an axe, stand in the blackness leaning outward against the edge of the hole.",
+  "colours": "plain grey stone, a pitch-black hole, stakes of dark weathered grey-brown timber with paler hacked points.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture.",
+  "must_show": [
+   "grey stone slab",
+   "ragged round black hole",
+   "sharpened stakes inside"
+  ],
+  "must_not_show": [
+   "pencils",
+   "painted tips",
+   "smooth turned wood",
+   "steps",
+   "stairs",
+   "ladder",
+   "bones",
+   "skeleton",
+   "blood",
+   "rope",
+   "trapdoor lid",
+   "water",
+   "person"
+  ]
+ },
+ {
+  "id": "trap_arrow",
+  "family": "trap_a",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "an arrow trap: one square flagstone of plain grey stone with three straight grooves cut across it side by side. In each groove lies one thick arrow, so that three arrows lie flat on the slab in a neat parallel row, all pointing the same way, toward the top of the picture: each has a big broad steel arrowhead, a thick wooden shaft and grey goose-feather fletching. The arrows are shorter than the slab and lie wholly on it. Below the feathers a small square bronze pressure plate is set flat in the stone.",
+  "colours": "plain grey stone, pale wooden arrow shafts, bright steel arrowheads, grey feathers, a dull bronze plate.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, and everything on it lies flat.",
+  "must_show": [
+   "grey stone slab",
+   "three arrows lying flat in a parallel row",
+   "small pressure plate"
+  ],
+  "must_not_show": [
+   "arrows standing upright",
+   "arrows stuck in the stone",
+   "bow",
+   "crossbow",
+   "archer",
+   "quiver",
+   "spikes",
+   "target",
+   "blood",
+   "wall",
+   "stone block with holes"
+  ]
+ },
+ {
+  "id": "trap_bear_trap",
+  "family": "trap_a",
+  "rank": 3,
+  "key": "magenta",
+  "body": "object",
+  "what": "a bear trap set on a floor stone: one square flagstone of plain grey stone, and lying flat and open on top of it one big iron spring trap. Its two semicircular iron jaws lie open and flat so that together they make one full circle, nearly as wide as the slab, and a row of tall triangular iron teeth stands straight up all the way round that circle. A round flat trigger pan sits in the centre of the circle, and a flat iron spring bar sticks out from the circle at the left and at the right.",
+  "colours": "plain pale grey stone, black iron jaws and springs, bright worn steel on the points of the teeth.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, the trap a toothed circle in its middle.",
+  "must_show": [
+   "grey stone slab",
+   "one full circle of iron jaws with teeth all round",
+   "trigger pan in the centre"
+  ],
+  "must_not_show": [
+   "two separate crescents",
+   "horns",
+   "scythe blades",
+   "bear",
+   "animal",
+   "leg",
+   "boot",
+   "blood",
+   "bones",
+   "closed jaws",
+   "mouth",
+   "monster",
+   "long chain"
+  ]
+ },
+ {
+  "id": "trap_squeaky_board",
+  "family": "trap_a",
+  "rank": 4,
+  "key": "magenta",
+  "body": "object",
+  "what": "a floor stone with one loose floorboard in it: one square flagstone of plain grey stone, and running straight across its middle from the left edge to the right edge, level and parallel to the top and bottom edges, one broad old oak floorboard set down into a slot in the stone, as long as the slab is wide and a third as broad. The board is cracked along its grain and warped, so that its right-hand end has lifted a little out of the slot, and four big black iron nail-heads show along it, the two at the right end pulled half out.",
+  "colours": "plain grey stone, an old floorboard of dull weathered grey-brown oak with dark grain, black iron nails.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, the board a level brown band straight across its middle with grey stone above it and below it.",
+  "must_show": [
+   "grey stone slab",
+   "one wooden board straight across its middle, set into the stone",
+   "one end lifted, nails showing"
+  ],
+  "must_not_show": [
+   "board lying diagonally",
+   "board sticking out past the slab",
+   "rope",
+   "person",
+   "tools",
+   "pliers",
+   "bright yellow wood",
+   "whole wooden floor",
+   "many planks",
+   "hole",
+   "pit",
+   "trapdoor",
+   "mouse",
+   "spikes",
+   "hammer",
+   "door"
+  ]
+ },
+ {
+  "id": "trap_fire",
+  "family": "trap_b",
+  "rank": 1,
+  "key": "blue",
+  "body": "object",
+  "what": "a fire trap: one square flagstone of plain grey stone with a round black iron grating set in its middle, and a short thick column of flame bursting straight up out of the grating, joined to it, no taller than the slab is wide. The stone round the grating is scorched black with soot.",
+  "colours": "plain cold ash-grey stone, black soot, a black iron grating, flame that is yellow at the heart and deep orange at the edges.",
+  "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise, the flame standing up from its centre.",
+  "must_show": [
+   "grey stone slab",
+   "iron grating in the middle",
+   "flame rising from it",
+   "scorched stone"
+  ],
+  "must_not_show": [
+   "tan or beige stone",
+   "pipe",
+   "torch",
+   "smoke plume",
+   "sparks flying loose",
+   "campfire logs",
+   "brazier",
+   "candle",
+   "face in the fire",
+   "fire creature",
+   "lava"
+  ]
+ },
+ {
+  "id": "trap_acid",
+  "family": "trap_b",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "an acid trap: one square flagstone of plain grey stone with a short bronze nozzle like the neck of a bottle sticking up out of its middle. Bright yellow-green acid wells out of the nozzle and lies in a wide bubbling pool round it, and where the acid has lain the stone is eaten into deep pits and channels.",
+  "colours": "plain grey stone, a dull bronze nozzle, bright yellow-green acid with pale bubbles, dark pitted holes.",
+  "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise, the acid pool wholly on top of it.",
+  "must_show": [
+   "grey stone slab",
+   "bronze nozzle",
+   "bright green acid pooled on the stone",
+   "pitted, eaten stone"
+  ],
+  "must_not_show": [
+   "slime creature",
+   "eyes",
+   "bottle",
+   "flask",
+   "skull",
+   "bones",
+   "acid running off the slab",
+   "spray into the air",
+   "plants",
+   "water"
+  ]
+ },
+ {
+  "id": "trap_sleep_gas",
+  "family": "trap_b",
+  "rank": 3,
+  "key": "magenta",
+  "body": "object",
+  "what": "a sleeping-gas trap: one thin flat square flagstone of plain grey stone, lying flat. Round its middle is a ring of six round black vent holes, each as wide as a fist. In the very middle of the slab, inside the ring of holes, sits one soft, round, billowing heap of thick pale grey-green fog, half as wide as the slab and resting on the stone, made of slow rounded swirls with a paler top. Thin trails of the same fog join it to each of the holes.",
+  "colours": "plain grey stone, black vent holes, thick fog of a pale sickly grey-green, nearly white at the top of each swirl.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, the fog a pale round swirl in its middle.",
+  "must_show": [
+   "flat grey stone slab",
+   "ring of black vent holes",
+   "one round swirl of pale green fog in the middle, on the slab"
+  ],
+  "must_not_show": [
+   "upright stone block",
+   "wall",
+   "trees",
+   "bushes",
+   "leaves",
+   "cauliflower",
+   "creature",
+   "eyes",
+   "tentacles",
+   "elephant trunk",
+   "cream puddle",
+   "white disc",
+   "fire",
+   "face in the gas",
+   "skull",
+   "sleeping person"
+  ]
+ },
+ {
+  "id": "trap_rust",
+  "family": "trap_b",
+  "rank": 4,
+  "key": "magenta",
+  "body": "object",
+  "what": "a rust trap: one square flagstone of plain grey stone lying under a shallow sheet of water, with a square iron drain grating in its middle that is eaten through with rust, its bars flaking and broken. Wide stains of rust spread across the wet stone from the grating, and a rusted, crumbling iron helmet lies on its side on the slab beside the drain.",
+  "colours": "plain grey stone, clear pale blue water, rust that is a dark brown the colour of an old iron nail with dull ochre-brown stains.",
+  "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise.",
+  "must_show": [
+   "grey stone slab",
+   "rust-eaten iron grating",
+   "brown rust stains",
+   "wet with water"
+  ],
+  "must_not_show": [
+   "head inside the helmet",
+   "skull",
+   "bones",
+   "sword",
+   "fire",
+   "bright shiny metal",
+   "rust monster",
+   "insect",
+   "fountain",
+   "water running off the slab"
+  ]
+ },
+ {
+  "id": "trap_alarm",
+  "family": "trap_c",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "an alarm trap: one square flagstone of plain grey stone with a round brass pressure plate set flat in its middle. At the back edge of the slab stands a short iron post bent over at the top like a shepherd's crook, part of the slab, and from the crook hangs one big polished brass bell as wide as the pressure plate.",
+  "colours": "plain grey stone, bright yellow brass plate and bell, a black iron post.",
+  "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise, the post and bell at its far edge.",
+  "must_show": [
+   "grey stone slab",
+   "one big brass bell on an iron post",
+   "round brass pressure plate"
+  ],
+  "must_not_show": [
+   "horn",
+   "gong",
+   "drum",
+   "rope to the ceiling",
+   "bell tower",
+   "several bells",
+   "person",
+   "wall",
+   "lantern",
+   "church"
+  ]
+ },
+ {
+  "id": "trap_teleport",
+  "family": "trap_c",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "a teleport trap: one square flagstone of plain grey stone with one great ring of runes cut into it, as wide as the slab. The grooves of the ring and its runes are filled with bright blue-white light, and inside the ring the stone has turned into a flat whirlpool of dark blue and bright blue light turning round a white point at the centre.",
+  "colours": "plain grey stone, bright sky-blue and blue-white light, a dark midnight-blue whirl, a white centre.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, and the light stays flat in the stone.",
+  "must_show": [
+   "grey stone slab",
+   "glowing blue ring of runes",
+   "blue whirlpool inside the ring"
+  ],
+  "must_not_show": [
+   "beam of light shooting upward",
+   "lightning",
+   "floating orb",
+   "eye",
+   "stars and sky",
+   "standing portal arch",
+   "water",
+   "person",
+   "pentagram"
+  ]
+ },
+ {
+  "id": "trap_polymorph",
+  "family": "trap_c",
+  "rank": 3,
+  "key": "green",
+  "body": "object",
+  "what": "a shape-changing trap: one square flagstone of plain grey stone with one large spiral groove cut into it, winding three times round from the centre to the edge. The groove is filled with glowing violet light, and at the centre of the spiral a large violet crystal with many flat faces is set into the stone, standing up no higher than a fist.",
+  "colours": "plain grey stone, bright violet light in the spiral, a deep violet crystal with pale lilac highlights.",
+  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, and the glow stays in the groove.",
+  "must_show": [
+   "grey stone slab",
+   "glowing violet spiral",
+   "violet crystal at the centre"
+  ],
+  "must_not_show": [
+   "blue light",
+   "ring of runes",
+   "whirlpool",
+   "beam shooting upward",
+   "eye",
+   "animal",
+   "frog",
+   "smoke",
+   "floating crystal",
+   "snail shell"
+  ]
+ },
+ {
+  "id": "apothecary_chest",
+  "family": "chest_a",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "a closed apothecary's medicine chest: one old, well-travelled physician's chest of dark oiled walnut wood, wider than it is tall, with a flat closed lid and one stout curved brass carrying handle on top. Its front is two rows of three small square drawers, six in all, each with one round brass knob. The lid is painted a faded dark green, worn through to the wood at the corners, and the wood is scuffed, stained and darkened with age.",
+  "colours": "dark walnut-brown oiled wood with worn paler edges, a faded dark green painted lid, dull tarnished brass knobs and handle.",
+  "must_show": [
+   "dark wooden chest, wider than tall",
+   "front made of six small drawers with brass knobs",
+   "brass carrying handle on top",
+   "faded green lid"
+  ],
+  "must_not_show": [
+   "bright yellow wood",
+   "cream paint",
+   "toy",
+   "tall cupboard",
+   "open lid",
+   "open drawers",
+   "loose bottles",
+   "mortar and pestle",
+   "domed treasure chest lid",
+   "padlock",
+   "gold coins",
+   "skull",
+   "legs"
+  ]
+ },
+ {
+  "id": "iron_lockbox",
+  "family": "chest_a",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "a closed iron lockbox: one squat, flat-topped box made entirely of dark grey iron plates, twice as wide as it is tall, with sharp square corners. Broad iron straps cross its lid and front like the bars of a cage, held by rows of big round bolt-heads, and in the middle of the front is one large square iron lock plate with a black keyhole.",
+  "colours": "dark gunmetal-grey iron all over, paler steel-grey on the worn edges and bolt-heads, a black keyhole.",
+  "must_show": [
+   "all-iron box, no wood",
+   "low and flat-topped",
+   "bolted iron straps",
+   "big square lock plate with keyhole"
+  ],
+  "must_not_show": [
+   "wood",
+   "gold",
+   "brass",
+   "domed lid",
+   "open lid",
+   "padlock hanging",
+   "chains",
+   "coins",
+   "safe with a dial",
+   "wheels",
+   "face"
+  ]
+ },
+ {
+  "id": "warlord_warchest",
+  "family": "chest_a",
+  "rank": 3,
+  "key": "blue",
+  "body": "object",
+  "what": "a closed campaign war chest: one very long, low trunk, three times as wide as it is tall, with a flat lid, built of scorched dark oak planks painted a dull oxblood colour. Three heavy black iron bands wrap over it, every corner is capped with a thick dented black iron plate, a big iron ring handle hangs at each end, and a shield-shaped iron lock plate sits in the middle of the front. The wood is scarred with deep sword cuts.",
+  "colours": "dull dark oxblood-brown painted planks, black iron bands and corners, pale scratches and cuts in the wood.",
+  "must_show": [
+   "long low flat-lidded trunk",
+   "heavy black iron bands and dented corner plates",
+   "ring handle at each end",
+   "battered and scarred"
+  ],
+  "must_not_show": [
+   "open lid",
+   "weapons lying on it",
+   "sword",
+   "shield leaning on it",
+   "domed lid",
+   "gold",
+   "jewels",
+   "skull",
+   "blood",
+   "wheels",
+   "coffin shape"
+  ]
+ },
+ {
+  "id": "scholar_satchel",
+  "family": "chest_a",
+  "rank": 4,
+  "key": "blue",
+  "body": "object",
+  "what": "a closed scholar's satchel: one old medieval courier's satchel of thick, dark, scuffed chestnut-brown leather, wider than it is tall, with a rounded bulging bottom and one big flap folded down over its whole front, fastened by two short leather straps with square brass buckles. Its single broad shoulder strap rises from the two top corners and stands in one arch above the bag. The ends of two thick rolled parchment scrolls stick out sideways from under the flap at the left, and a white goose-feather quill is tucked under one buckle strap. The leather is creased, cracked and stained dark with age and ink.",
+  "colours": "dark chestnut-brown leather, nearly black in the creases, with paler worn edges, dull tarnished brass buckles, cream parchment scroll ends, one white quill.",
+  "must_show": [
+   "soft dark leather satchel, not a box",
+   "flap closed with two brass buckles",
+   "one shoulder strap arched above",
+   "scroll ends sticking out"
+  ],
+  "must_not_show": [
+   "bright orange leather",
+   "new shiny leather",
+   "handbag",
+   "modern backpack",
+   "two handles",
+   "emblem",
+   "cross",
+   "holes",
+   "zip",
+   "wooden chest",
+   "box",
+   "open bag",
+   "loose books",
+   "person",
+   "legs"
+  ]
+ },
+ {
+  "id": "gilded_chest",
+  "family": "chest_a",
+  "rank": 5,
+  "key": "blue",
+  "body": "object",
+  "what": "a closed gilded treasure chest: one large, heavy chest with a high rounded barrel lid, every surface of it covered in gold leaf, so that the whole chest is gold. Thick raised gold bands cross the lid and the body, each band set with a row of round gold studs, and a big gold lock plate with a dark keyhole is in the middle of the front. It is closed tight.",
+  "colours": "rich yellow gold all over, deep brown-gold in the shadows and grooves, bright pale gold highlights, a black keyhole.",
+  "must_show": [
+   "high barrel-lidded chest",
+   "gold all over, no bare wood",
+   "raised studded bands",
+   "closed"
+  ],
+  "must_not_show": [
+   "bare brown wood",
+   "iron bands",
+   "open lid",
+   "coins spilling",
+   "pile of treasure",
+   "jewels heaped beside it",
+   "purple",
+   "skull",
+   "feet",
+   "legs"
+  ]
+ },
+ {
+  "id": "ornate_chest",
+  "family": "chest_b",
+  "rank": 1,
+  "key": "green",
+  "body": "object",
+  "what": "a closed ornate chest: one fine chest with a gently arched lid, its panels of deep violet enamel, every edge framed in a thin gold border. Large curling scrolls of gold filigree wind across each violet panel, and one oval amethyst is set in the gold clasp at the middle of the front. It rests on four small gold balls.",
+  "colours": "deep violet enamel panels, bright gold filigree and borders, one pale lilac gem.",
+  "must_show": [
+   "violet panels",
+   "gold scrollwork over them",
+   "arched lid, closed",
+   "four small ball supports"
+  ],
+  "must_not_show": [
+   "all-gold chest",
+   "plain brown wood",
+   "iron bands",
+   "open lid",
+   "coins",
+   "animal feet",
+   "claws",
+   "face",
+   "skull",
+   "padlock"
+  ]
+ },
+ {
+  "id": "jewelry_box",
+  "family": "chest_b",
+  "rank": 2,
+  "key": "blue",
+  "body": "object",
+  "what": "a closed jewellery box: one small dainty casket, wide and low, with eight sides, made of bright polished silver worked in fine raised scrolls, each side set with one oval panel of white mother-of-pearl. Its lid rises in a shallow eight-sided pyramid to one large round ruby set as the knob at the very top. A small silver heart-shaped clasp closes the front, and a string of big white pearls is set in a ring round the base.",
+  "colours": "bright silver-white metal with cool grey shadows, white mother-of-pearl panels with a faint sheen, one deep ruby, white pearls.",
+  "must_show": [
+   "low eight-sided silver casket",
+   "pyramid lid",
+   "one ruby knob on top",
+   "closed"
+  ],
+  "must_not_show": [
+   "gold",
+   "yellow metal",
+   "cream or yellow box",
+   "open lid",
+   "necklace hanging out",
+   "rings lying beside it",
+   "mirror",
+   "ballerina",
+   "plain wooden chest",
+   "iron",
+   "legs",
+   "face",
+   "crown"
+  ]
+ },
+ {
+  "id": "crypt_chest",
+  "family": "chest_b",
+  "rank": 3,
+  "key": "magenta",
+  "body": "object",
+  "what": "a closed crypt chest: one flat-lidded burial coffer of pitted, corroded black iron, as wide as it is deep, cold and furred with pale grey frost along its edges. Instead of iron bands it is clasped with bone: two long pale thigh-bones lie crossed in an X on the lid, and three curved pale rib-bones hook down over the front edge of the lid as its clasps.",
+  "colours": "pitted black iron with dark grey rust-eaten patches, pale chalk-grey bone, a dusting of pale grey frost.",
+  "must_show": [
+   "black corroded iron chest",
+   "two bones crossed on the lid",
+   "rib-bone clasps down the front",
+   "closed"
+  ],
+  "must_not_show": [
+   "skull",
+   "skeleton",
+   "hand",
+   "eyes",
+   "teeth",
+   "mouth",
+   "open lid",
+   "coffin",
+   "gold",
+   "wood",
+   "cobwebs",
+   "ghost"
+  ]
+ },
+ {
+  "id": "merchant_strongbox",
+  "family": "chest_b",
+  "rank": 4,
+  "key": "magenta",
+  "body": "object",
+  "what": "a closed merchant's strongbox: one tidy cube-shaped travelling box of dark walnut-brown oak planks with a flat lid, every edge and corner bound in polished brass strips held by brass nails. One very large heart-shaped padlock of solid yellow brass, a third as wide as the box, with a thick curved brass shackle and a black keyhole, hangs from a brass hasp at the middle of the front. A brass drop handle is fixed to the left side, and one square cream parchment price tag hangs from that handle against the side of the box.",
+  "colours": "dark walnut-brown oak with visible grain, yellow brass edges, a yellow brass padlock with a black keyhole, one cream parchment tag with small black marks.",
+  "must_show": [
+   "cube-shaped dark brown wooden box with brass edges",
+   "one very large brass padlock on the front",
+   "parchment tag",
+   "closed"
+  ],
+  "must_not_show": [
+   "yellow or golden wood",
+   "white painted wood",
+   "white padlock",
+   "domed lid",
+   "iron bands",
+   "open lid",
+   "coins",
+   "scales",
+   "money bags beside it",
+   "skull",
+   "legs",
+   "safe with a dial"
+  ]
+ },
+ {
+  "id": "reliquary",
+  "family": "chest_b",
+  "rank": 5,
+  "key": "blue",
+  "body": "object",
+  "what": "a closed reliquary casket: one long, low casket, twice as long as it is tall, a long box whose lid is a steep pitched roof with its ridge running the whole length from left to right. Its long front wall and its roof are panels of pale carved bone held in a heavy frame of black iron, with a row of five small pointed arches carved along the front wall. A plain black iron cross stands upright on the middle of the roof ridge, and one large round seal of dark red wax, as wide as a hand, sits in the middle of the long front where roof meets wall. It stands on four short black iron stubs.",
+  "colours": "pale ivory-white bone panels, black iron frame and cross, one dark red wax seal.",
+  "must_show": [
+   "long low casket with a pitched roof lid, wider than tall",
+   "pale bone panels in black iron",
+   "cross on the ridge",
+   "one large red wax seal"
+  ],
+  "must_not_show": [
+   "tall narrow building",
+   "birdhouse",
+   "tower",
+   "seen from the gable end",
+   "skull",
+   "skeleton",
+   "open lid",
+   "gold all over",
+   "door",
+   "windows with glass",
+   "candles",
+   "ghost",
+   "face",
+   "legs"
+  ],
+  "pose": "Seen from its long side and a little from above, the long front wall facing the viewer and the roof ridge running level across the picture from left to right; much wider than it is tall."
+ },
+ {
+  "id": "mystery_altar_sphinx",
+  "family": "shrine_a",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "a stone statue of a sphinx on a plinth, carved all of one block of weathered sandstone: a lion's body lying down with its front paws stretched out before it and its tail curled against its flank, and a woman's head with a plain Egyptian headcloth, raised and looking straight ahead. The statue lies on a long low rectangular stone plinth of the same stone, and every part, head, body and plinth, is the same pale sandstone, chipped and cracked, plainly carved stone and not alive.",
+  "colours": "pale sandy tan stone all over, darker brown in the cracks and hollows, blank stone eyes.",
+  "pose": "Seen from the side and a little from above, the head at the left; statue and plinth are one solid piece.",
+  "must_show": [
+   "lion body lying down, woman's head",
+   "plainly a carved stone statue, one colour",
+   "long low plinth under it"
+  ],
+  "must_not_show": [
+   "living fur",
+   "flesh-coloured face",
+   "coloured eyes",
+   "wings",
+   "gold",
+   "paint",
+   "pyramid",
+   "sand",
+   "desert",
+   "second statue",
+   "standing lion"
+  ]
+ },
+ {
+  "id": "mystery_altar_pandora",
+  "family": "shrine_a",
+  "rank": 2,
+  "key": "green",
+  "body": "object",
+  "what": "Pandora's coffer: one small cube-shaped coffer cut from polished black stone, with a thick flat black stone lid that overhangs the box a little. One line of carved letters runs across the top of the lid. A heavy bronze lock plate with a keyhole sits in the middle of the front, and all the way round, in the crack between lid and box, a thin line of sullen dark red light leaks out.",
+  "colours": "glossy black stone with cold grey highlights on its edges, a dull bronze lock, a thin dark red glow in the seam.",
+  "must_show": [
+   "black stone coffer, cube-shaped",
+   "flat lid, closed",
+   "bronze lock on the front",
+   "thin red glow at the seam"
+  ],
+  "must_not_show": [
+   "wood",
+   "iron bands",
+   "open lid",
+   "smoke",
+   "ghosts",
+   "demons flying out",
+   "eyes",
+   "skull",
+   "gold",
+   "domed lid",
+   "vase",
+   "jar"
+  ]
+ },
+ {
+  "id": "mystery_altar_grail",
+  "family": "shrine_a",
+  "rank": 3,
+  "key": "magenta",
+  "body": "object",
+  "what": "the altar of a ruined chapel: one broad, low, solid block of grey stone, an altar, twice as wide as it is tall, with a thick flat top slab that overhangs it and no legs. Its top is bare and empty, with one pale worn ring marked in the middle of the stone where a cup once stood. Behind the altar and joined to it rises a ragged piece of ruined chapel wall, as wide as the altar, holding the broken frame of one great pointed window: the left side of the arch still stands to its point, the right side has fallen away halfway up, and the window opening is empty.",
+  "colours": "weathered pale grey stone with dark cracks, a paler ring worn into the altar top.",
+  "pose": "Seen from the front and a little from above; the wide altar block in front, the broken wall and half-fallen window arch rising behind it, both one piece.",
+  "must_show": [
+   "wide solid altar block",
+   "bare top with a worn ring",
+   "broken pointed window arch behind it",
+   "ruined and old"
+  ],
+  "must_not_show": [
+   "chair",
+   "throne",
+   "table on legs",
+   "statue in the arch",
+   "figure",
+   "niche",
+   "cup",
+   "chalice",
+   "grail",
+   "candles",
+   "cross",
+   "cloth",
+   "stained glass",
+   "roof",
+   "whole building",
+   "knight",
+   "ivy",
+   "grass"
+  ]
+ },
+ {
+  "id": "mystery_altar_fleece",
+  "family": "shrine_a",
+  "rank": 4,
+  "key": "magenta",
+  "body": "object",
+  "what": "a bare oak with an altar at its foot: one old leafless oak tree with a short, very thick, twisted trunk and five thick bare boughs spreading above, no leaves on it at all. Against the foot of the trunk, joined to it between two big roots, stands a square block of grey stone, an altar, and the front of the block is carved with the head of a ram in relief: two big curling horns, one each side.",
+  "colours": "dark grey-brown bark, a pale grey stone block, the carved ram's head the same grey stone.",
+  "pose": "Seen from the front; the stone altar low at the centre, the tree rising behind and above it, both one piece.",
+  "must_show": [
+   "bare leafless oak, thick boughs",
+   "stone altar block at its foot",
+   "ram's horns carved on the altar"
+  ],
+  "must_not_show": [
+   "leaves",
+   "living ram",
+   "sheep",
+   "snake",
+   "golden fleece",
+   "gold",
+   "face in the trunk",
+   "tree creature",
+   "grass",
+   "fire",
+   "birds"
+  ]
+ },
+ {
+  "id": "mystery_altar_mimir",
+  "family": "shrine_a",
+  "rank": 5,
+  "key": "magenta",
+  "body": "object",
+  "what": "a well at the foot of a giant tree root: one low round well-head, a thick ring of rough dark stones with still, black-blue water inside it, and three large Norse runes cut into its front stones. Directly behind the well, joined to it, rises the base of one colossal tree root, a gnarled, ridged pillar of wood as wide as the well itself and twice as tall, ending in a rough broken top well inside the picture. From that pillar two thick roots spread down, one curving round the left side of the well and one round the right, clasping the stone ring between them.",
+  "colours": "dark grey stones, very dark teal-blue water with one pale glint, pale grey-brown ridged root wood.",
+  "pose": "Seen from the front and above, so the dark water inside the ring shows as an oval at the front; the great root stands behind it; root and well are one piece wholly inside the picture, with empty backdrop above.",
+  "must_show": [
+   "round stone well with dark water",
+   "one huge gnarled root rising behind it and clasping it",
+   "nothing floating in the water"
+  ],
+  "must_not_show": [
+   "basket handle",
+   "thin arch over the well",
+   "root running off the top of the picture",
+   "branches",
+   "head",
+   "face",
+   "eyes",
+   "bucket",
+   "rope",
+   "roof",
+   "winch",
+   "leaves",
+   "tentacle",
+   "snake",
+   "drinking horn"
+  ]
+ },
+ {
+  "id": "mystery_altar_mjolnir",
+  "family": "shrine_b",
+  "rank": 1,
+  "key": "blue",
+  "body": "object",
+  "what": "a dwarven smith's anvil by its forge: one big black iron anvil, the largest thing in the picture, with a flat bright top, a long pointed horn sticking out to the left and a square heel to the right, standing on a thick upright oak stump banded with iron. Directly behind the stump and touching it is a low square forge-hearth of dark stone blocks, no taller than the stump, its open top heaped with glowing coals whose glow lights the back of the anvil.",
+  "colours": "a black iron anvil with a bright worn steel top, a dark brown oak stump with black iron bands, dark grey stone blocks, coals glowing deep orange with yellow hearts.",
+  "pose": "Seen from the side and a little from above, the anvil's horn pointing left; anvil on its stump in front, the low hearth of coals behind, all touching as one piece.",
+  "must_show": [
+   "black anvil with a horn, on a stump",
+   "low stone hearth of glowing coals behind it"
+  ],
+  "must_not_show": [
+   "hammer",
+   "smith",
+   "dwarf",
+   "tongs",
+   "tall brick furnace",
+   "chimney",
+   "tall flames",
+   "smoke plume",
+   "sword",
+   "sparks flying",
+   "bowl",
+   "cauldron"
+  ]
+ },
+ {
+  "id": "mystery_altar_crucible",
+  "family": "shrine_b",
+  "rank": 2,
+  "key": "blue",
+  "body": "object",
+  "what": "an alchemist's furnace and crucible: one narrow round tower-furnace of pale fire-brick, taller than it is wide, with a small arched stoke-hole in its front glowing with coals. On top of the furnace, sunk into it to half its depth, sits one thick-walled crucible, a deep cup of grey fired clay with a pouring lip, and the molten metal inside it glows bright yellow-gold. A band of carved letters runs round the top of the furnace.",
+  "colours": "pale buff-grey fire-brick, a grey clay crucible, bright yellow-gold molten glow, a deep orange glow in the stoke-hole.",
+  "pose": "Seen from the front and from above, so the glowing surface inside the cup shows.",
+  "must_show": [
+   "grey crucible cup with a pouring lip",
+   "bright molten glow inside it",
+   "small brick furnace under it"
+  ],
+  "must_not_show": [
+   "black cauldron",
+   "pearls",
+   "tripod legs",
+   "glass flasks",
+   "bubbling green liquid",
+   "smoke plume",
+   "flames leaping",
+   "alchemist",
+   "skull",
+   "gold coins"
+  ]
+ },
+ {
+  "id": "mystery_altar_oracle",
+  "family": "shrine_b",
+  "rank": 3,
+  "key": "blue",
+  "body": "object",
+  "what": "an oracle's seat over a smoking crack: one flat round slab of dark grey rock split across by a wide jagged black crack. A bronze tripod stool stands astride the crack on three thick straight legs that spread outward to the slab, with a round, empty, dished bronze seat on top; the seat is the highest thing in the picture. Thick pale smoke wells up out of the crack and fills the space between the three legs under the seat like wool, touching the legs and the slab, and none of it rises above the seat. A shallow bronze offering bowl sits on the slab against one leg.",
+  "colours": "dark grey rock, a black crack, bronze the colour of an old penny with dull grey tarnish in the hollows, thick pale grey-white smoke.",
+  "pose": "Seen from the front and a little from above; the seat is empty, and there is wide empty backdrop above it.",
+  "must_show": [
+   "three-legged bronze stool",
+   "empty seat",
+   "smoke under the seat, between the legs",
+   "rock slab with a crack"
+  ],
+  "must_not_show": [
+   "smoke rising above the seat",
+   "tall column of smoke",
+   "rope",
+   "priestess",
+   "woman",
+   "person sitting",
+   "face in the smoke",
+   "fire",
+   "cauldron",
+   "snake",
+   "temple columns",
+   "laurel",
+   "ghost"
+  ]
+ },
+ {
+  "id": "mystery_altar_solomon",
+  "family": "shrine_b",
+  "rank": 4,
+  "key": "magenta",
+  "body": "object",
+  "what": "an empty judgment seat of stone: one severe, square-cut seat carved from pale marble, with a tall flat slab for a back and solid block sides, standing on two broad marble steps that are part of it. One great bronze sword hangs point-downward on the middle of the tall back, above the seat, its crossguard making a T. Nobody sits in it and there is no cushion.",
+  "colours": "pale cream-white marble with grey veins and grey shadows, a dark bronze sword with a bright edge.",
+  "pose": "Seen from the front and a little from above, facing the viewer; seat, steps and sword are one piece.",
+  "must_show": [
+   "plain pale marble seat with a tall back",
+   "one sword hanging point-down on the back",
+   "two steps",
+   "empty"
+  ],
+  "must_not_show": [
+   "gold throne",
+   "cushion",
+   "velvet",
+   "king",
+   "person",
+   "crown",
+   "baby",
+   "statues",
+   "lions",
+   "scales",
+   "second sword"
+  ]
+ },
+ {
+  "id": "mystery_altar_fisher_king",
+  "family": "shrine_b",
+  "rank": 5,
+  "key": "magenta",
+  "body": "object",
+  "what": "an empty litter beside a cold hearth: at the back, one low stone fireplace of grey blocks whose mouth is a plain pitch-black hole with a low heap of pale grey ash on its floor and nothing else in it; it is stone cold and dark. In front of it and touching it lies an empty litter: a narrow wooden bed frame with two long carrying poles sticking out at each end, a rumpled dark green blanket thrown back on it, and a plain gold crown lying on its white pillow. Nobody lies on it.",
+  "colours": "cold grey stone, a pitch-black hearth mouth with pale grey ash, dark brown wooden poles, a deep emerald-green blanket, a white pillow, a yellow gold crown.",
+  "pose": "Seen from the front and from above; the hearth behind, the litter lying crosswise in front of it, both one piece.",
+  "must_show": [
+   "empty litter with carrying poles",
+   "gold crown lying on the pillow",
+   "cold fireplace with no fire",
+   "green blanket"
+  ],
+  "must_not_show": [
+   "fire",
+   "flames",
+   "embers",
+   "glowing coals",
+   "candles in the hearth",
+   "any light in the fireplace",
+   "king",
+   "person lying down",
+   "body",
+   "blood",
+   "spear",
+   "fish",
+   "fishing rod",
+   "four-poster bed"
+  ]
+ },
+ {
+  "id": "mystery_altar_sisyphus",
+  "family": "shrine_c",
+  "rank": 1,
+  "key": "magenta",
+  "body": "object",
+  "what": "a stone hill with a boulder at its foot: one steep wedge of pale grey rock shaped like a ramp, low at the left and rising in a straight slope to a flat top at the upper right, with a smooth worn track up the middle of the slope. At the foot of the slope, at the lower left and touching it, rests one enormous round boulder of darker brown-grey stone, nearly half as tall as the hill, with one pale worn print of a human hand pressed flat on its side.",
+  "colours": "pale grey rock for the slope, a darker brown-grey boulder, a pale hand-shaped mark.",
+  "pose": "Seen from the side; the slope climbing from lower left to upper right, the round boulder at the bottom left; one piece.",
+  "must_show": [
+   "steep stone slope",
+   "one huge round boulder at its foot",
+   "worn track up the slope"
+  ],
+  "must_not_show": [
+   "man pushing",
+   "person",
+   "face on the boulder",
+   "eyes",
+   "rock creature",
+   "arms",
+   "grass",
+   "trees",
+   "sky",
+   "snow",
+   "second boulder",
+   "volcano"
+  ]
+ },
+ {
+  "id": "mystery_altar_brendan",
+  "family": "shrine_c",
+  "rank": 2,
+  "key": "magenta",
+  "body": "object",
+  "what": "a tiny leather boat with a chart on its mast: one very small, tubby, round-ended boat, a currach, hardly longer than a bathtub, made of dark brown ox-hides stitched over a wooden frame, with a thick wooden rim and bold pale stitching along the seams. One short, thick mast stands in the middle with no sail on it; nailed flat to the mast is one big square sheet of cream parchment, a sea chart drawn with a dark coastline. The boat sits upright and empty.",
+  "colours": "dark tarred brown leather hull, pale stitching, a pale wooden rim and mast, cream parchment with brown ink lines.",
+  "pose": "Seen from the side and a little from above, so the inside of the empty boat shows; boat, mast and chart are one piece.",
+  "must_show": [
+   "small tubby leather boat",
+   "short mast with no sail",
+   "parchment chart nailed to the mast",
+   "empty"
+  ],
+  "must_not_show": [
+   "water",
+   "waves",
+   "sea",
+   "sail",
+   "oars sticking out",
+   "monk",
+   "person",
+   "whale",
+   "eye",
+   "flag",
+   "big ship",
+   "anchor"
+  ]
+ },
+ {
+  "id": "mystery_altar_jerome",
+  "family": "shrine_c",
+  "rank": 3,
+  "key": "blue",
+  "body": "object",
+  "what": "a translator's writing desk: one old scholar's desk of dark oak with a sloping top, standing on two solid plank ends joined by a low shelf. On the sloping top lies one big open sheet of cream parchment half covered with lines of writing, with a white goose-quill lying across it. On the flat upper ledge of the desk, at the left, sits one human skull used as a paperweight, and at the right stands a small brass oil lamp with one yellow flame. The space beneath the desk is empty.",
+  "colours": "dark brown oak, cream parchment with black writing, a chalk grey-white skull, a yellow brass lamp with a small yellow flame, a white quill.",
+  "pose": "Seen from the front and from above, so the sloping top with the page shows; everything stands on the desk and touches it.",
+  "must_show": [
+   "sloping wooden writing desk",
+   "skull on it",
+   "small lit lamp",
+   "written page"
+  ],
+  "must_not_show": [
+   "lion",
+   "animal",
+   "monk",
+   "scholar",
+   "chair",
+   "bookshelf",
+   "candle stuck on the skull",
+   "cardinal's hat",
+   "cave wall",
+   "hourglass",
+   "skeleton"
+  ]
+ },
+ {
+  "id": "mystery_altar_cauldron",
+  "family": "shrine_c",
+  "rank": 4,
+  "key": "magenta",
+  "body": "object",
+  "what": "the Black Cauldron: one great round-bellied cauldron of black iron, wider than it is tall, with a thick out-turned rim, an iron ring handle hanging at each side, standing on three short stubby iron stubs. All the way round the rim is set one row of big round white pearls, each as large as a hen's egg, touching one another like a string of beads. Inside, the cauldron is full to just below the rim with dark emerald-green broth that glows faintly. There is no fire under it.",
+  "colours": "soot-black iron with cold grey highlights, large white pearls, dark emerald-green glowing broth.",
+  "pose": "Seen from the front and from above, so the round green surface inside the pearl rim shows as an oval.",
+  "must_show": [
+   "big black round cauldron",
+   "ring of large white pearls on the rim",
+   "green broth inside",
+   "no fire"
+  ],
+  "must_not_show": [
+   "fire",
+   "logs",
+   "flames",
+   "witch",
+   "ladle",
+   "bones",
+   "skull",
+   "face",
+   "tentacles",
+   "smoke plume",
+   "bubbles floating in the air",
+   "tripod stand"
+  ]
+ }
+]
