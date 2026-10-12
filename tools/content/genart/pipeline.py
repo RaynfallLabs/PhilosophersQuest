@@ -33,7 +33,7 @@ def check_briefs(briefs):
             if not b.get(f):
                 bad.append(f"{b.get('id', '?')}: no {f}")
         text = (b.get('colours', '') + ' ' + b.get('what', '')).lower()
-        hit = [w for w in KEY_CLASH[b.get('key', 'magenta')] if re.search(r'' + w, text)]
+        hit = [w for w in KEY_CLASH[b.get('key', 'magenta')] if re.search(r'\b' + w, text)]
         if hit:
             bad.append(f"{b['id']}: a {b.get('key', 'magenta')} backdrop would eat its {', '.join(hit)}")
         if 'holds' in b and 'exactly' not in b['holds'] and 'nothing' not in b['holds'] and 'empty' not in b['holds']:

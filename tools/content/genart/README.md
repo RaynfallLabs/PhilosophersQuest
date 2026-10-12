@@ -92,6 +92,27 @@ and look for the same kind of slip when reviewing.
   must not have, and those go in the lower tier's `must_not_show`.
 - **Colours drift.** Name the colour of skin, cloth, metal and magic. The data's
   `color` field is the old map glyph colour: ignore it.
+- **Saying what is absent draws it.** "No eyes at the sides of his face" kept two
+  eyes; "a cyclops with one giant eye in the centre of his forehead" is what moved
+  it. Listing "scraps of armour, a shield rim, a helmet" on a flesh giant drew an
+  armoured ogre. Put the denial in `must_not_show`; in `what`, say what IS there.
+- **A second head or an animal tail needs its extra body denied.** "A goat's head
+  rising from the back" draws a whole goat. Say "one goat neck with one goat head,
+  growing from the lion like a second head; no goat body", and for a snake tail,
+  "the lion has no lion's tail; the snake is the tail".
+- **A dead creature described only by its build comes out alive and pink.** Put
+  "dead flesh, corpse-grey, never living pink" in `what` and give it blank eyes.
+- **A round mouth seen face-on reads as an eyeball** at 64 px unless the teeth are
+  large and white and the hole is "pitch-black, no pupil, no iris".
+- **Sea creatures seen face-on grow little legs** unless told "no legs, no feet".
+- **Light in a hand:** "a ball of light the size of an apple in the open palm"
+  draws; "a small glare" draws nothing. Yellow or white light on a green backdrop
+  leaves a fringe: give those creatures a blue or magenta backdrop.
+- **A count is not kept.** "Eight tentacles" comes out as twelve. Do not make an
+  exact count a `must_show` unless it is the creature's whole identity (one eye,
+  three heads), and then say it as a plain positive sentence.
+- **Keep earlier rounds.** A rework overwrites a creature's three candidates; copy
+  the folder to `_r1`, `_r2` first in case an earlier one was better.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
