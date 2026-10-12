@@ -451,6 +451,25 @@ and look for the same kind of slip when reviewing.
 - **Thin head spikes vanish at 64 px.** Make each "as long as his face and as thick
   as a finger". **A wide-winged flier is cropped** unless the wings are "bent
   sharply at the wrist like two tall arches, tips pointing down".
+- **"Bark-brown" or "resin-brown" undead skin also draws a living person.** For a
+  mummy say no skin shows anywhere and the head is "a bundle of bandages with no
+  face"; a gold collar or "Egyptian lord" draws a bare-headed man in jewellery.
+- **Grey undead skin on a blue backdrop turned bright green, tan or living.** Put
+  undead on green or magenta.
+- **"Shirt and trousers" on a corpse draws a modern jacket and jeans.** Say "a
+  medieval peasant's knee-length homespun tunic, rope belt, rag leg-wrappings".
+- **Things stuck in a body are not drawn** (arrows became a quiver, a sword through
+  the chest vanished). Use something worn instead: a noose, a broken chain.
+- **A dead animal described as "dried hide over bones" is a healthy animal.**
+  Describe its skeleton with a few tatters of hide, and name the skull's shape ("a
+  dog's long narrow skull") or it gets a human one.
+- **"Full profile like a figure on a coin" on an undead draws a living portrait.**
+  Keep that wording for archers and riders.
+- **Ghost-light:** "sea-green-white" comes out saturated mint. Say "pale bone-white
+  with a faint grey-green tint, nearly white".
+- **A fat undead ("belly like a drum") is a jolly fat man.** If the lore needs the
+  bloat, make every other feature dead: grey skin, blank eyes, burial clothes,
+  grave earth.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
