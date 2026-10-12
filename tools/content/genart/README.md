@@ -410,6 +410,24 @@ and look for the same kind of slip when reviewing.
   stubble, straggling hair and a stoop.
 - **Keep denials ("no red", "never green") out of the `colours` field:** the
   backdrop check reads them as colours.
+- **Wyvern:** "shaped like a pterodactyl; its wings are its arms; its two legs hang
+  beneath its hips" removes the chest arms about half the time. "Talons thrust
+  forward" brings four legs back.
+- **A sting or club simile is drawn as its own object** ("like a scorpion's tail"
+  drew a scorpion beside it; "round like a plum" drew a plum). Say "the tail
+  swells into a fat glossy black club ending in a curved spike".
+- **"Wildcat" or "tabby" draws a house cat at any size.** Say "a sabre-toothed cat,
+  a smilodon", or "a heavy black panther with a broad blunt muzzle".
+- **A drooping neck on a hoofed beast is ignored.** Say "head lowered to the level
+  of its front hooves like a beast grazing".
+- **A jewel on a forehead** "as large as its ear" is a balloon; "set flat like a
+  third eye" replaces an eye. Say "a red gem the size of a walnut set in the
+  middle of its brow, both eyes below it".
+- **An animal's head on another animal's body only reads if the two are different
+  colours** (pale barred feathers over dark fur for an owlbear).
+- **Extra pairs of legs do not draw** (a six-legged beast came out with four in six
+  candidates). Do not make them a `must_show`; carry the creature with another
+  feature.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
