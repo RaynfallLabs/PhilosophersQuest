@@ -133,7 +133,7 @@
   "family": "skeleton",
   "rank": 1,
   "key": "magenta",
-  "what": "a skeleton: a human skeleton of bare ivory bones and nothing else, with an empty grinning skull and exposed ribs.",
+  "what": "a skeleton: a human skeleton of bare ivory bones and nothing else, with an empty grinning skull and exposed ribs. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory and yellowed bone with grey-brown shadows.",
   "wears": "It wears nothing at all: no armour, no helmet, no clothes, only a few threads of rotted cloth at the hips.",
   "holds": "It holds exactly one old wooden club in its right hand; its left hand is empty.",
@@ -141,7 +141,8 @@
   "must_show": [
    "bare bones, ribs and skull clearly visible",
    "no armour or clothing",
-   "one crude club"
+   "one crude club",
+   "realistic adult proportions (small skull, long limbs)"
   ],
   "must_not_show": [
    "armour",
@@ -151,7 +152,10 @@
    "robe",
    "bow",
    "flames",
-   "flesh"
+   "flesh",
+   "oversized head",
+   "cartoon proportions",
+   "short stubby body"
   ]
  },
  {
@@ -159,7 +163,7 @@
   "family": "skeleton",
   "rank": 2,
   "key": "magenta",
-  "what": "a skeleton warrior: a human skeleton man-at-arms. Its head is a bare bone skull, and its forearms, hands, legs and feet are bare bone with no skin or flesh anywhere.",
+  "what": "a skeleton warrior: a human skeleton man-at-arms. Its head is a bare bone skull, and its forearms, hands, legs and feet are bare bone with no skin or flesh anywhere. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory bone, dark grey iron chainmail speckled with orange rust, a grey iron helmet, a plain brown wooden shield with an iron rim.",
   "wears": "It wears a knee-length shirt of rusted iron chainmail and an old dented iron kettle helmet with a wide brim. It wears no cloth tunic and no bandana.",
   "holds": "It holds exactly one notched sword in its right hand and exactly one round wooden shield on its left arm.",
@@ -169,7 +173,8 @@
    "rusted chainmail shirt",
    "iron helmet",
    "one sword and one round wooden shield",
-   "soldier's stance"
+   "soldier's stance",
+   "realistic adult proportions (small skull, long limbs)"
   ],
   "must_not_show": [
    "skin or flesh",
@@ -180,7 +185,10 @@
    "robe",
    "bow",
    "flames",
-   "second sword"
+   "second sword",
+   "oversized head",
+   "cartoon proportions",
+   "short stubby body"
   ]
  },
  {
@@ -188,7 +196,7 @@
   "family": "skeleton",
   "rank": 3,
   "key": "magenta",
-  "what": "a skeleton archer: a human skeleton bowman with a bare skull face and exposed ribs.",
+  "what": "a skeleton archer: a human skeleton bowman with a bare skull face and exposed ribs. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory bone, a faded green hood, a dark wooden longbow.",
   "wears": "It wears only a tattered green hood and a quiver of arrows on its back; no armour.",
   "holds": "It draws exactly one longbow with an arrow nocked, bow in the left hand and string pulled back with the right.",
@@ -197,7 +205,8 @@
    "skeleton (skull, ribs visible)",
    "longbow at full draw with an arrow",
    "quiver",
-   "no armour"
+   "no armour",
+   "realistic adult proportions (small skull, long limbs)"
   ],
   "must_not_show": [
    "sword",
@@ -206,7 +215,10 @@
    "robe",
    "crossbow",
    "flames",
-   "flesh"
+   "flesh",
+   "oversized head",
+   "cartoon proportions",
+   "short stubby body"
   ]
  },
  {
@@ -214,7 +226,7 @@
   "family": "skeleton",
   "rank": 4,
   "key": "green",
-  "what": "a skeleton mage: the skeleton of a wizard, a bare skull under a deep hood, with bare ribs showing where its robe hangs open.",
+  "what": "a skeleton mage: the skeleton of a wizard, a bare skull under a deep hood, with bare ribs showing where its robe hangs open. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory bone, faded violet robes with silver trim, a pale violet magic light.",
   "wears": "It wears a tattered violet wizard's robe and hood hanging loose on bare ribs, with a spellbook chained at its belt.",
   "holds": "Its hands are empty; a pale violet light crawls between the finger bones of its raised right hand. It has no staff and no weapon.",
@@ -223,7 +235,8 @@
    "skeleton (skull, ribs visible through the robe)",
    "wizard's robe and hood",
    "pale violet magic at the hand",
-   "empty hands"
+   "empty hands",
+   "realistic adult proportions (small skull, long limbs)"
   ],
   "must_not_show": [
    "staff",
@@ -232,7 +245,10 @@
    "armour",
    "bow",
    "crown",
-   "flesh"
+   "flesh",
+   "oversized head",
+   "cartoon proportions",
+   "short stubby body"
   ]
  },
  {
@@ -240,7 +256,7 @@
   "family": "skeleton",
   "rank": 5,
   "key": "magenta",
-  "what": "a burning skeleton: a human skeleton of blackened, glowing-hot bones wrapped head to foot in orange and yellow flame, with fire pouring from its eye sockets and ribcage.",
+  "what": "a burning skeleton: a human skeleton of blackened, glowing-hot bones wrapped head to foot in orange and yellow flame, with fire pouring from its eye sockets and ribcage. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "charred black and ember-red bone, bright orange and yellow fire.",
   "wears": "It wears nothing; the flames are its only covering.",
   "holds": "Its hands are empty and wreathed in fire.",
@@ -249,7 +265,8 @@
    "skeleton (skull and ribs visible inside the fire)",
    "wrapped in flame",
    "blackened bones",
-   "empty hands"
+   "empty hands",
+   "realistic adult proportions (small skull, long limbs)"
   ],
   "must_not_show": [
    "armour",
@@ -257,7 +274,10 @@
    "shield",
    "robe",
    "bow",
-   "flesh"
+   "flesh",
+   "oversized head",
+   "cartoon proportions",
+   "short stubby body"
   ]
  },
  {
@@ -713,7 +733,7 @@
   "family": "lich",
   "rank": 1,
   "key": "magenta",
-  "what": "a lich: a tall, gaunt undead sorcerer-king, a bare skull with cold blue fire in the eye sockets and skeletal hands, wrapped in grand but rotting robes.",
+  "what": "a lich: a tall, gaunt undead sorcerer-king, a bare skull with cold blue fire in the eye sockets and skeletal hands, wrapped in grand but rotting robes. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory bone, deep midnight-blue robes with tarnished gold embroidery, a tarnished gold crown, cold blue magic.",
   "wears": "He wears long tattered royal robes with a high collar, a tarnished gold crown and a jewelled amulet on a chain at his chest.",
   "holds": "His hands are empty; crackling cold-blue magic gathers around his outstretched right hand. He has no staff and no weapon.",
@@ -724,7 +744,8 @@
    "grand tattered robes",
    "amulet",
    "cold blue magic at an empty hand",
-   "far more regal and powerful than a skeleton mage"
+   "far more regal and powerful than a skeleton mage",
+   "realistic adult proportions (small skull, long limbs)"
   ],
   "must_not_show": [
    "staff",
@@ -732,7 +753,10 @@
    "armour",
    "flesh",
    "violet robes",
-   "hood hiding the crown"
+   "hood hiding the crown",
+   "oversized head",
+   "cartoon proportions",
+   "short stubby body"
   ]
  },
  {

@@ -25,12 +25,12 @@ DRAFT = ("Pixel art game sprite of {what} Colours: {colours} {wears} {holds} {po
          "The background is one completely flat, solid {key} filling the whole picture. There is no ground, no floor, "
          "no horizon and no shadow of any kind under or behind the figure.")
 DRAFT_NEG = ("shadow on the ground, cast shadow, drop shadow, floor, ground, scenery, multiple figures, character sheet, "
-             "text, labels, border, photo, 3d render, smooth painting, blurry, muddy brown colours, chibi, cute, cropped")
+             "text, labels, border, photo, 3d render, smooth painting, blurry, muddy brown colours, chibi, cute, big head, cartoon proportions, cropped")
 PIXEL = ("high-detail 16-bit JRPG pixel art sprite, chunky pixels, bold black outline, rich saturated colours, crisp pixel "
-         "shading with bright highlights, high fantasy, {what} {colours} {holds} single figure, isolated game asset, "
+         "shading with bright highlights, serious high fantasy, realistic proportions, {what} {colours} {holds} single figure, isolated game asset, "
          "flat solid {keyname} background, no shadow")
 PIXEL_NEG = ("blurry, painterly, realistic, photograph, 3d render, smooth gradients, muddy colours, low contrast, text, frame, "
-             "chibi, cute, cartoon, extra limbs, extra weapons, multiple characters, ground, floor, cast shadow, drop shadow")
+             "chibi, cute, cartoon, big head, super-deformed, extra limbs, extra weapons, multiple characters, ground, floor, cast shadow, drop shadow")
 
 
 def prompts(b):
