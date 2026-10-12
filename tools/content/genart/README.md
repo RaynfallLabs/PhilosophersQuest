@@ -130,6 +130,25 @@ and look for the same kind of slip when reviewing.
 - **A creature that is only a big real animal reads as the ordinary animal.** Give
   it a scale prop that touches it (the roc carries a small elephant) or a feature
   the ordinary animal lacks.
+- **Archers:** "side-on" is not enough; the model draws the archer front-on with a
+  bow arc on each side. Say "seen in full profile like a figure on a coin, the bow
+  a single D shape at the left of the picture, entirely in front of him".
+- **A big skeleton turns into a muscle-man** on words like "huge fists", "thick as
+  tree trunks", "towering giant". Describe it bone by bone, say "no muscle" in the
+  body sentence, and put "muscles, bodybuilder body" in `must_not_show`.
+- **A size comparison draws the compared animal.** "The size of a hound" gave a dog
+  in a beetle's shell. Say "a real scarab, an insect, drawn large".
+- **An animal pelt worn as a hood becomes an animal-headed man.** Drop the hood or
+  say "a fur cloak; his own human head is bare".
+- **A glow's colour tints the whole body.** A yellow-green eye glow turned a bone
+  giant green. Keep glows small and say the body's colour again after them.
+- **Do not name limbs in the body sentence of a limbless creature, even to deny
+  them.** "No arms and no legs" there invites them. List limbs only in
+  `must_not_show`.
+- **Many small parts wash out at 64 px.** Hundreds of small bones became a pale
+  blob. Ask for fewer, larger parts with dark gaps between them.
+- **A long dagger is drawn as a second sword**, and "pistol" as a modern revolver.
+  Say "a short knife no longer than his hand" and "a single-shot flintlock".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
