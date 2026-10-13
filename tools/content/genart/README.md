@@ -662,6 +662,22 @@ and look for the same kind of slip when reviewing.
   brightest colour in the picture" over a pale garment.
 - **A scourge has no reliable wording yet** (thick ropes: giant loops; thin cords: a
   paddle).
+- **A mirror-bright surface:** "brightest in the centre, shading to the rim, with two
+  broad slanting streaks of white light, like sunlight on a window pane". "Upper left
+  half bright, lower right half dark" draws a hard two-tone split.
+- **A T-shirt-shaped armour** is fixed by removing the sleeves and making the hem a
+  row of scale tips or a fringe of tabs; "neutral iron-grey with no other colour in
+  it" stops lilac drift on green.
+- **Scars as "three slanting pale slashes" become candy stripes.**
+- **Ancient sandals:** thin sole, "mostly open air: a sole and a few thongs"; high
+  ones "a tall open lattice of straps standing up by itself like an empty cage".
+- **A hand-wrap** needs "four short open finger tubes, each showing a dark empty
+  hole", in the gauntlet pose, or it is leg guards.
+- **Black lacquer with red lacing becomes tartan**; "one small red knot in the middle
+  of every plate" keeps it black.
+- **Lift above about 1.35 greys cloth and leather**; 1.2 to 1.3 is enough.
+- **A single giant scale still has no reliable wording** (tortoise rings: a whole
+  shell; bell outline: a skirt; teardrop: a ribbed pod).
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
