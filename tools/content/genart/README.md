@@ -618,6 +618,23 @@ and look for the same kind of slip when reviewing.
   "burnished gold" gives orange.
 - **A pale hooded coat with red drifts toward a trademarked game assassin**; check
   each candidate.
+- **`lift` below 1 (0.6 to 0.8) cuts darker** with no redraw; it does not desaturate.
+- **"Rust-red" fur is bright orange.** "Dark red-brown, the colour of old mahogany,
+  nearly black along the spine" is sober.
+- **"Pale amber glue" in an open chest is lava.** "Dull grey-white, the colour of old
+  candle wax", the inside "nearly black", gives a mimic.
+- **A slime "sagging in heavy rolls one above the other" is a coiled snake.**
+- **A pale mask under pale hair has no face at 64 px.** A black iron mask with
+  eye-holes "filled to the brim with solid light, each a third of the mask wide" reads.
+- **A snake-woman's scales must be neither skin colour nor her dress colour**
+  ("pale grey-green, the colour of dry sage leaves").
+- **Ghost white:** "pale ash-white, the colour of fog and old bone"; "bone-white with
+  a grey-green tint" comes out mint on magenta. **A female ghost's gown must be "a
+  second, much darker ghost-colour"**, loose, or she reads as bare.
+- **"Light brown skin" round a masked man's eyes turns his black clothes brown.**
+- **A steel plate under a hanging chain cuts out as a white ball**; make it dark.
+- **A thing "raised to the chin" hides the face**; say "a hand's width below his
+  chin, his whole face showing above".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
