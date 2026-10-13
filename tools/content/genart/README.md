@@ -635,6 +635,17 @@ and look for the same kind of slip when reviewing.
 - **A steel plate under a hanging chain cuts out as a white ball**; make it dark.
 - **A thing "raised to the chin" hides the face**; say "a hand's width below his
   chin, his whole face showing above".
+- **The blue backdrop is behind most orange drift** on tawny beasts (sphinx, griffin,
+  peryton). Move to magenta with "dusty sand-brown, the dull dun colour of a real lion".
+- **Sand or dust trails on green leave an olive fringe**, as smoke does.
+- **A black creature reads when its extremities are named pale** ("pale bone-grey
+  horns, claws and shroud").
+- **A sober cockatrice:** "black feathers with a dark green sheen, a collar of dull
+  straw-gold hackle feathers, grey legs and beak"; any "tawny gold" gives a rooster.
+- **A swarm of three, "each half the picture wide"**, reads at 64 px; five do not.
+- **"Big bright eyes" on a spider draws a cartoon face.** "A tight cluster of eight
+  small round black eyes like beads, the blank head of a real spider, with no face".
+- **Sphinx redraws still give one bare-chested candidate in three**; check every one.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
