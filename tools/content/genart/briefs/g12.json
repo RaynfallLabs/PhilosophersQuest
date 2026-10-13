@@ -4,8 +4,8 @@
   "family": "manticore",
   "rank": 1,
   "key": "blue",
-  "what": "a manticore, the man-eater of Persian legend: a monster with the head of a human man on the body of a red lion, one animal on four legs, painted seriously as a real and dangerous beast. In place of a lion's head it has a man's head, the size of a lion's head: the fierce face of an ancient Persian king looking straight at the viewer, with smooth bare pale tan human skin on the forehead, cheeks and nose, a high human forehead, a straight narrow human nose, human lips, human ears, and two cold pale human eyes under heavy black brows. A plain narrow gold band lies across his forehead. He has thick black curled human hair hanging to the shoulders and a long, square-cut, tightly curled black human beard, and no mane. His human mouth is stretched very wide open, crowded with rows of sharp white teeth. Behind the head it is all animal: the thick neck, deep chest, long lean body, four legs and great clawed paws of a real lion, covered all over in short thick rust-red fur, darker along the spine. The lion has no lion's tail: its tail is the tail of a giant black scorpion, held high, thick, jointed and armoured in glossy black plates, curving up and forward over its back, and the tail swells at its end into a fat glossy black bulb with one long curved needle-point.",
-  "colours": "short rust-red and dark brick-brown fur on the body and legs, a smooth pale tan human face, black curled human hair and a long black beard, a narrow gold brow band, a glossy black jointed scorpion tail and sting, white teeth, black claws.",
+  "what": "a manticore, the man-eater of Persian legend: a monster with the head of a human man on the body of a dark red-brown lion, one animal on four legs, painted seriously as a real and dangerous beast. In place of a lion's head it has a man's head, the size of a lion's head: the fierce face of an ancient Persian king looking straight at the viewer, with smooth bare pale tan human skin on the forehead, cheeks and nose, a high human forehead, a straight narrow human nose, human lips, human ears, and two cold pale human eyes under heavy black brows. A plain narrow gold band lies across his forehead. He has thick black curled human hair hanging to the shoulders and a long, square-cut, tightly curled black human beard, and no mane. His human mouth is stretched very wide open, crowded with rows of sharp white teeth. Behind the head it is all animal: the thick neck, deep chest, long lean body, four legs and great clawed paws of a real lion, covered all over in short thick dark red-brown fur the colour of old mahogany, nearly black along the spine and under the belly. The lion has no lion's tail: its tail is the tail of a giant black scorpion, held high, thick, jointed and armoured in glossy black plates, curving up and forward over its back, and the tail swells at its end into a fat glossy black bulb with one long curved needle-point.",
+  "colours": "short dark red-brown fur the colour of old mahogany on the body and legs, nearly black along the spine and under the belly, a smooth pale tan human face, black curled human hair and a long black beard, a narrow gold brow band, a glossy black jointed scorpion tail and sting, white teeth, black claws.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
   "pose": "Seen from the side, its body faces left on four legs: all four paws are on the ground, front end crouched low and hindquarters high, ready to spring, its black scorpion tail arched up over its back with the sting aimed forward; the man's head is raised and turned full-face to the viewer, so the whole bare human face, the gold brow band and the black beard show, roaring with the mouth wide open.",
@@ -66,7 +66,10 @@
    "tall crown",
    "orange face",
    "tawny face",
-   "black lion nose"
+   "black lion nose",
+   "orange fur",
+   "bright orange body",
+   "ginger fur"
   ]
  },
  {
@@ -110,7 +113,8 @@
    "cartoon",
    "rock",
    "patch of ground"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "pale_master",
@@ -169,9 +173,9 @@
   "id": "hollow_one",
   "family": "hollow",
   "rank": 1,
-  "key": "green",
-  "what": "a hollow one: the walking corpse of a person who sold their soul, gaunt as famine, dead flesh, corpse-grey, never living pink, on the face, neck, arms, hands and legs alike. It has a long bald head with sunken temples, two empty black eye sockets, and a lower jaw dropped far open in an endless shriek, the mouth a tall black oval. In the middle of its chest, where the heart was, is the mark of the bargain: one large, perfectly round, pitch-black hole as wide as its two fists, clean-edged, empty and dark, with a thin rim of pale ash-grey round it. Its arms are long and thin with long bony grasping fingers. It has the realistic proportions of a starved adult: a small head, long limbs, about eight heads tall.",
-  "colours": "corpse-grey and ash-grey dead skin, a neutral warm grey with no blue tint, black eye sockets, a black open mouth, one round pitch-black hole in the chest, a ragged dull mud-brown burial shroud.",
+  "key": "magenta",
+  "what": "a hollow one: the walking corpse of a person who sold their soul, gaunt as famine, dead flesh the colour of old putty, a cold chalk-grey with a faint grey-green tinge that no living person has, on the face, neck, arms, hands and legs alike. It has a long bald head with sunken temples, two empty black eye sockets, and a lower jaw dropped far open in an endless shriek, the mouth a tall black oval. In the middle of its chest, where the heart was, is the mark of the bargain: one large, perfectly round, pitch-black hole as wide as its two fists, clean-edged, empty and dark, with a thin rim of pale ash-grey round it. Its arms are long and thin, and each hand has five long thin bony fingers spread wide apart like the ribs of a fan. It has the realistic proportions of a starved adult: a small head, long limbs, about eight heads tall.",
+  "colours": "cold chalk-grey dead skin with a faint grey-green tinge, like old putty, the same on every bare part, black eye sockets, a black open mouth, one round pitch-black hole in the chest, a ragged dull mud-brown burial shroud.",
   "wears": "It wears the rags of a dull mud-brown burial shroud, wound round its hips and legs to the shins and hanging in tatters from one shoulder, torn open over the chest so the round black hole shows. Its feet are bare.",
   "holds": "Its hands are empty: two long bony grey hands, open, the fingers hooked to grasp, holding nothing.",
   "pose": "On two legs, it lurches forward with its weight on its front foot and its knees bent, both long arms stretched out ahead with the fingers hooked to seize, its head thrown back and its jaw gaping wide in a shriek, the shroud tatters trailing behind.",
@@ -189,7 +193,7 @@
    "ribs showing",
    "bare skull head",
    "whole skeleton",
-   "living pink skin",
+   "living skin colour",
    "green skin",
    "blue skin",
    "glowing eyes",
@@ -207,7 +211,12 @@
    "oversized head",
    "cartoon",
    "rock",
-   "patch of ground"
+   "patch of ground",
+   "mauve skin",
+   "violet skin",
+   "lilac skin",
+   "closed fists",
+   "round knobs for hands"
   ]
  },
  {
@@ -283,11 +292,11 @@
   "rank": 1,
   "key": "blue",
   "body": "shapeless",
-  "what": "a mimic: a small monster in the shape of a plain, cheap, battered wooden storage chest, caught at the moment it bites. It is one small box of rough grey-brown pine planks with a flat lid, two rusty iron strap hinges, a rusty iron hasp and a loop of old rope for a handle at each end, with no metal bands and no ornament. The flat lid has swung half open, and the chest is a pair of jaws: a row of short, thick, uneven yellowed fangs runs along the rim of the lid and along the rim of the box, and the inside is dark wet red-brown flesh. Between the lid and the box stretch a dozen thick strings of pale amber glue, sagging, and fat beads of the same amber glue ooze down the front planks. The wood is scarred, stained and weathered. It has no eyes and no tongue.",
-  "colours": "rough grey-brown weathered pine planks, dark brown rusty iron hinges the colour of an old nail, frayed tan rope handles, yellowed ivory fangs, a dark red-brown wet inside, thick pale amber-yellow glue strands and beads.",
+  "what": "a mimic: a small monster in the shape of a plain, cheap, battered wooden storage chest, caught at the moment it bites. It is one small box of rough grey-brown pine planks with a flat lid, two rusty iron strap hinges, a rusty iron hasp and a loop of old rope for a handle at each end, with no metal bands and no ornament. The flat lid has swung half open, and the chest is a pair of jaws: a row of short, thick, uneven yellowed fangs runs along the rim of the lid and along the rim of the box, and the inside is very dark wet flesh, a brown so dark it is nearly black. Between the lid and the box stretch a dozen thick strings of dull grey-white glue, the colour of old candle wax, sagging, and fat beads of the same dull grey-white glue ooze down the front planks. The wood is scarred, stained and weathered. It has no eyes and no tongue.",
+  "colours": "rough grey-brown weathered pine planks, dark brown rusty iron hinges the colour of an old nail, frayed tan rope handles, yellowed ivory fangs, a very dark brown wet inside that is nearly black, thick dull grey-white glue strands and beads the colour of old candle wax.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "Seen from the front and a little to one side: the chest lurches up and to the left, tilted on one corner, its flat fanged lid snapping open with the amber glue strings stretching between the two rows of fangs, glue beading on its front. It has nothing under it.",
+  "pose": "Seen from the front and a little to one side: the chest lurches up and to the left, tilted on one corner, its flat fanged lid snapping open with the grey-white glue strings stretching between the two rows of fangs, glue beading on its front. It has nothing under it.",
   "must_show": [
    "a small plain plank chest with rope handles that is a monster",
    "the lid and the box rim lined with short thick fangs",
@@ -321,7 +330,15 @@
    "spider web",
    "green slime",
    "floor",
-   "rock"
+   "rock",
+   "lava",
+   "fire",
+   "flames",
+   "molten glow",
+   "orange glow inside",
+   "honey",
+   "bright orange",
+   "amber"
   ]
  },
  {
@@ -390,7 +407,8 @@
    "sack",
    "cloak hanging out",
    "claws"
-  ]
+  ],
+  "lift": 0.75
  },
  {
   "id": "asterion_minotaur",
@@ -585,7 +603,8 @@
    "bread loaf",
    "sand dune",
    "haystack"
-  ]
+  ],
+  "lift": 0.8
  },
  {
   "id": "myconid_worker",
@@ -875,11 +894,11 @@
   "rank": 1,
   "key": "green",
   "body": "shapeless",
-  "what": "a gray ooze: a foul dungeon slime that passes for a patch of wet stone until it strikes, painted with depth, weight and grime. It is one single thick mass of heavy, wet, cloudy slime, the colour of wet slate. Its lower part is a low, lumpy, sagging heap, and out of that heap one thick column of the same slime rears up high and bends over at the top in a hook, ending in a blunt, swollen, dripping tip with no features. Its skin is dull and murky, not clear: mottled with darker streaks, pitted, slick with wet grey highlights, with thick drips sagging from the underside of the reared column. Stuck in the heap at its base, half eaten away, is one piece of rusted iron mail, a ragged scrap of chain links, pitted and crumbling.",
+  "what": "a gray ooze: a foul dungeon slime that passes for a patch of wet stone until it strikes, painted with depth, weight and grime. It is one single thick mass of heavy, wet, cloudy slime, the colour of wet slate. It is one low rounded mound, soft all over, twice as wide as it is tall, heaped in three or four heavy sagging rolls, and its front edge lifts in one thick rounded lip that curls up and over, no higher than the mound itself, blunt and swollen, with no features. Its skin is dull and murky, not clear: mottled with darker streaks, pitted, slick with wet grey highlights, with a few thick drips sagging from the underside of the curled lip. Stuck in the top of the mound, half eaten away, is one piece of rusted iron mail, a ragged scrap of chain links, pitted and crumbling.",
   "colours": "dark slate-grey and neutral stone-grey murky slime with charcoal streaks and pale grey wet highlights, a warm neutral grey with no blue tint, one very dark brown rusted scrap of chain mail the colour of an old iron nail.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "The heap sits at the lower right and the thick column of slime rears up from it and arches over to the left, its blunt dripping tip hanging forward and down, about to slap down. It is one joined mass with a clean lower edge.",
+  "pose": "The mound heaves and rolls to the left, heaped highest at the right, its front edge at the left lifting in one thick rounded lip that curls up and over, about to slap down, a few thick drips hanging from the lip. It is one joined compact mass, twice as wide as tall, with a clean lower edge.",
   "must_show": [
    "one mass of murky stone-grey slime with a thick column reared up and bent over to strike",
    "dull, mottled and pitted, not clear and not bright",
@@ -919,7 +938,15 @@
    "crystals",
    "helmet",
    "sword",
-   "loose droplets"
+   "loose droplets",
+   "tall column",
+   "hook shape",
+   "wizard's hat",
+   "pointed hat",
+   "sea wave",
+   "breaking wave",
+   "tall spire",
+   "cone"
   ]
  },
  {
@@ -998,8 +1025,8 @@
   "rank": 3,
   "key": "magenta",
   "body": "shapeless",
-  "what": "a corrosive ooze: a great heap of metal-eating dungeon slime, foul and dangerous, painted with depth, weight and grime. It is one single big, heavy, rounded mound of thick, opaque, murky slime, as tall as it is wide, with a lumpy sagging skin, soft all over, running with thick slow drips and streaks. A scum of dirty pale yellow froth and big burst bubbles crusts its top and trickles down its sides. It is not clear: nothing shows through it. Three old iron sword blades stick out of the mound at different angles, each one eaten thin, pitted, full of ragged holes and broken off short, with no hilts showing. Where each blade enters the slime one short thin curl of pale steam rises, joined to the slime. It is only slime and the ruined blades stuck in it.",
-  "colours": "dull murky grey-green and dark olive-drab opaque slime, the colour of stagnant ditch water, with dark brown-black depths, a scum of dirty pale yellow froth, dull wet highlights, three very dark brown corroded iron blades the colour of an old iron nail, thin pale grey steam.",
+  "what": "a corrosive ooze: a great heap of metal-eating dungeon slime, foul and dangerous, painted with depth, weight and grime. It is one single big, heavy, rounded mound of thick, opaque, murky slime, as tall as it is wide, with a smooth wet skin, soft all over, sagging in four or five heavy rolls one above the other, with pale wet highlights on the top of every roll. A few small patches of dirty grey-white froth and three or four big burst bubbles sit near its top only. It is not clear: nothing shows through it. Three old iron sword blades stick out of the mound at different angles, each one eaten thin, pitted, full of ragged holes and broken off short, with no hilts showing. Where each blade enters the slime one short thin curl of pale steam rises, joined to the slime. It is only slime and the ruined blades stuck in it.",
+  "colours": "dull dark olive-green opaque slime all over, the colour of stagnant ditch water, with nearly black depths between the rolls and pale grey-green wet highlights on them, a few small patches of dirty grey-white froth near the top, three very dark brown corroded iron blades the colour of an old iron nail, thin pale grey steam.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
   "pose": "The mound heaves and rolls to the left, piled highest at the right, its front edge bulging forward in one thick rounded lip that lifts to pour down, the three ruined blades jutting from its top and back. It is one compact mass with a clean lower edge.",
@@ -1061,7 +1088,15 @@
    "blue or purple colour",
    "tentacle",
    "antlers",
-   "branches"
+   "branches",
+   "haystack",
+   "straw",
+   "thatch",
+   "hay",
+   "long hanging strands",
+   "yellow froth covering the top",
+   "cream",
+   "fur"
   ]
  },
  {
@@ -1152,7 +1187,8 @@
    "dinosaur spine",
    "horns",
    "tusks"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "orc_scout",
@@ -1476,7 +1512,8 @@
    "cartoon",
    "rock",
    "patch of ground"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "orc_warchief",
@@ -1635,7 +1672,7 @@
   "family": "orc_b",
   "rank": 4,
   "key": "blue",
-  "what": "an orc warlord: a big, heavy, thick-necked brute who stands upright like a man, with dull grey-green skin on the face, neck, arms and hands alike, a heavy jutting lower jaw with two big ivory tusks rising from it past the upper lip, a broad flat nose, a low heavy brow, small deep-set dull yellow eyes and small notched ears. He is the lord of the whole horde, a towering, massive, grizzled orc, his grey-green face seamed with pale scars, one eye lost under a scar, his tusks long and capped with iron. He is sealed in a great suit of armour forged from the melted weapons of his enemies: thick, layered, overlapping plates of dark iron, each plate a different shape, jagged at the edges, with sword blades and axe heads still half visible where they were hammered into the plates. He has the realistic proportions of a big heavy adult warrior with a small head.",
+  "what": "an orc warlord: a big, heavy, thick-necked brute who stands upright like a man, with dull grey-green skin, the green of a toad, on the face, neck, arms and hands alike, a heavy jutting lower jaw with two big ivory tusks rising from it past the upper lip, a broad flat nose, a low heavy brow, small deep-set dull yellow eyes and small notched ears. He is the lord of the whole horde, a towering, massive, grizzled orc, his grey-green face seamed with pale scars, one eye lost under a scar, his tusks long and capped with iron. He is sealed in a great suit of armour forged from the melted weapons of his enemies: thick, layered, overlapping plates of black iron with dull steel-grey edges, never rusty and never brown, each plate a different shape, jagged at the edges, with sword blades and axe heads still half visible where they were hammered into the plates. He has the realistic proportions of a big heavy adult warrior with a small head.",
   "colours": "dull grey-green scarred skin, ivory tusks with dark iron caps, black and dark gunmetal-grey layered iron plate armour with dull steel-grey edges, a helmet of dark iron topped with a ring of upright sword blades, a long ragged dark blood-red cloak, a great axe with a black iron haft and two broad dull steel-grey blades.",
   "wears": "He wears the heaviest armour of any orc: layered dark iron plates on his chest, shoulders, arms and legs, huge shoulder plates each topped with three upright blade points, an open-faced dark iron helmet whose top is a ring of short upright sword blades, and a long, ragged, dark blood-red cloak hanging from his shoulders to his heels.",
   "holds": "He holds exactly one great axe in both hands: a long thick black iron haft as tall as his chest, with a double head at the top, two broad crescent axe blades, one on each side of the haft, back to back. Both of his hands grip the haft. He holds nothing else.",
@@ -1671,7 +1708,7 @@
    "bright leaf-green skin",
    "long pointed goblin ears",
    "small scrawny goblin",
-   "pink skin",
+   "skin of a living man",
    "human face",
    "red tabard",
    "polished armour",
@@ -1679,7 +1716,15 @@
    "oversized head",
    "cartoon",
    "rock",
-   "patch of ground"
+   "patch of ground",
+   "rust-brown armour",
+   "copper armour",
+   "bronze armour",
+   "brown armour",
+   "flesh-coloured armour",
+   "yellow skin",
+   "tan skin",
+   "brown skin"
   ]
  },
  {
@@ -1687,9 +1732,9 @@
   "family": "orc_b",
   "rank": 5,
   "key": "magenta",
-  "what": "a dread orc champion: the chained champion of the deep-tunnel tribes, the most terrible orc of all. He is a giant, hulking, hunched brute who stands upright like a man, with skin of a darker kind than other orcs: very dark charcoal-grey with only a faint dull green tinge, the colour of wet slate, far darker than any other orc and nearly black in the shadows, on the face, scalp, neck, arms and hands alike. He has a huge jutting lower jaw with two enormous ivory tusks, each as long as his whole face, curving up past his cheekbones to the level of his eyes, a broad flat nose, a low brow, small deep-set dull yellow eyes, and a bald scarred head. His whole chest and belly are covered by armour, with no bare skin showing on his torso. The armour is three big battered plates taken from three beaten men, each a different metal, size and shape, none of them square: across his chest one large breastplate of black iron with a dented ridge down its middle; below it, hanging crooked over his belly, one smaller rounded plate of scratched dull steel-grey; and on his left shoulder one big jagged plate of dark brown tarnished bronze. Dark leather straps and rough brown hide show in the gaps between the three plates. Round his neck is a thick black iron collar, and from the front of the collar one heavy chain of six huge pale steel-grey oval links, each link as big as his fist, hangs straight down the middle of his chest over the black breastplate as far as his belt, plainly seen against the black iron, its last link broken open. He has the realistic proportions of a big heavy adult warrior with a small head.",
-  "colours": "very dark charcoal-grey skin with a faint dull green tinge on every bare part, enormous ivory tusks, dull yellow eyes, one black iron breastplate, one scratched dull steel-grey belly plate, one dark brown tarnished bronze shoulder plate, black leather straps over rough dark brown hide, a black iron collar and a heavy pale steel-grey chain hanging down the chest, a dark brown hide kilt with iron plates, a greatcleaver with a dark wooden grip and a huge dull steel-grey blade.",
-  "wears": "He wears three mismatched plates strapped over a rough dark brown hide shirt so that his chest, belly and shoulders are covered: a large black iron breastplate, a smaller crooked steel-grey belly plate and a jagged dark brown bronze plate on the left shoulder, held with black straps and big rivets; thick iron bands on his forearms; a hide kilt hung with iron plates; iron-shod boots; the black iron collar with its heavy pale steel-grey chain of six huge links hanging down the middle of his chest to his belt. His head is bare. No helmet, no cloak.",
+  "what": "a dread orc champion: the chained champion of the deep-tunnel tribes, the most terrible orc of all. He is a giant, hulking, hunched brute who stands upright like a man, with skin of a darker kind than other orcs: very dark charcoal-grey with only a faint dull green tinge, the colour of wet slate, far darker than any other orc and nearly black in the shadows, on the face, scalp, neck, arms and hands alike. He has a huge jutting lower jaw with two enormous ivory tusks, each as long as his whole face, curving up past his cheekbones to the level of his eyes, a broad flat nose, a low brow, small deep-set dull yellow eyes, and a bald scarred head. His whole chest and belly are covered by armour, with no bare skin showing on his torso. The armour is three big battered plates taken from three beaten men, each a different metal, size and shape, none of them square: across his chest one large breastplate of black iron with a dented ridge down its middle; below it, hanging crooked over his belly, one smaller plate of very dark brown rusted iron, the colour of an old nail, with a ragged lower edge; and on his left shoulder one big jagged plate of dark brown tarnished bronze. Dark leather straps and rough brown hide show in the gaps between the three plates. Round his neck is a thick black iron collar, and from the front of the collar one heavy chain of six huge pale steel-grey oval links, each link as big as his fist, hangs straight down the middle of his chest over the black breastplate as far as his belt, plainly seen against the black iron, its last link broken open. He has the realistic proportions of a big heavy adult warrior with a small head.",
+  "colours": "very dark charcoal-grey skin with a faint dull green tinge on every bare part, enormous ivory tusks, dull yellow eyes, one black iron breastplate, one very dark brown rusted iron belly plate the colour of an old nail, one dark brown tarnished bronze shoulder plate, black leather straps over rough dark brown hide, a black iron collar and a heavy pale steel-grey chain hanging down the chest, a dark brown hide kilt with iron plates, a greatcleaver with a dark wooden grip and a huge dull steel-grey blade.",
+  "wears": "He wears three mismatched plates strapped over a rough dark brown hide shirt so that his chest, belly and shoulders are covered: a large black iron breastplate, a smaller crooked dark brown rusted iron belly plate and a jagged dark brown bronze plate on the left shoulder, held with black straps and big rivets; thick iron bands on his forearms; a hide kilt hung with iron plates; iron-shod boots; the black iron collar with its heavy pale steel-grey chain of six huge links hanging down the middle of his chest to his belt. His head is bare. No helmet, no cloak.",
   "holds": "He holds exactly one greatcleaver in both hands: a butcher's cleaver made huge, a very broad, flat, heavy rectangular steel blade as long as his leg and as wide as his forearm is long, with a straight edge, a squared-off end, a round hole near its top corner, and a long dark two-handed grip. Both of his fists are clenched round the grip, one above the other, in front of his right shoulder, and the great blade stands up above that shoulder. He holds nothing else, and nothing hangs from his belt.",
   "pose": "On two legs, he lunges forward hunched with his weight on his front foot and his head lowered so the great tusks point ahead, the greatcleaver swung up and back over his right shoulder in both hands ready to hew down, the heavy chain swinging from his collar, his mouth open in a roar.",
   "must_show": [
@@ -1749,7 +1794,14 @@
    "double axe head",
    "shovel",
    "spade",
-   "empty hands"
+   "empty hands",
+   "padlock",
+   "weight hanging on the chain",
+   "medallion",
+   "round white disc on the belly",
+   "pot lid",
+   "white ball",
+   "round shield on the belly"
   ]
  }
 ]

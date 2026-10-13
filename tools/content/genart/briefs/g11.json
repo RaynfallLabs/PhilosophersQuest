@@ -49,13 +49,13 @@
   "what": "a lich apprentice: a living mage who has gone most of the way to undeath, a tall, thin, sickly young man, painted seriously. He has a gaunt, hollow-cheeked, clean-shaven face with skin as grey-white as candle wax, dark bruised rings round sunken eyes whose irises glow dull yellow, thin colourless lips, and long lank black hair hanging to his shoulders. Dark grey veins show on his neck and on the backs of his thin hands. He still has flesh everywhere: a wasted man, not a skeleton. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "wax grey-white skin, long black hair, dull yellow eyes, plain charcoal-grey scholar's robes with a black hem, a dull brass chain belt, a brown leather book hanging at the belt, one old yellowed ivory human skull, a sickly yellow-green flame.",
   "wears": "He wears a plain long charcoal-grey apprentice's robe with wide sleeves, a dull brass chain for a belt with one thick brown leather book hanging from it, and black shoes. The robe has no hood and his head is bare. No jewellery.",
-  "holds": "He holds exactly one human skull in his left hand, low at his hip, his fingers hooked in its eye sockets: an old, plain, yellowed bone skull with no jaw; the skull is cold dead bone with no flame and no glow on it. His right hand is empty and raised high: a round ball of sickly yellow-green flame as big as his fist burns in the open palm, touching the hand. He has no staff and no weapon.",
-  "pose": "On two legs, he strides forward to the left with his weight on his front foot, his right arm raised high ahead of him with the one flame in its palm, the plain skull carried low at his left hip, his head lowered and his yellow eyes fixed on the viewer, his robe and black hair swinging.",
+  "holds": "He holds exactly one human skull in his left hand, low at his hip, his fingers hooked in its eye sockets: an old, plain, yellowed bone skull with no jaw; the skull is cold dead bone with no flame and no glow on it. His right hand is empty and raised high: one tall tongue of sickly yellow-green fire rises from the open palm, joined to the hand: shaped like a big candle flame as long as his forearm, pointed at the top, with ragged licking edges and no round glow round it. He has no staff and no weapon.",
+  "pose": "On two legs, he strides forward to the left with his weight on his front foot, his right arm raised high ahead of him with the one tall pointed flame rising from its palm, the plain skull carried low at his left hip, his head lowered and his yellow eyes fixed on the viewer, his robe and black hair swinging.",
   "must_show": [
    "a living, gaunt young man with wax-pale skin and long black hair: his own face is flesh, not a skull",
    "plain charcoal robes, bare head",
    "one yellowed skull held in the left hand",
-   "a yellow-green flame in the right palm",
+   "a tall pointed yellow-green flame in the right palm, plainly a flame and not an orb",
    "plainer than any true lich: no crown, no regalia"
   ],
   "must_not_show": [
@@ -84,7 +84,14 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body",
-   "rock"
+   "rock",
+   "round orb",
+   "glowing ball",
+   "crystal ball",
+   "halo round the flame",
+   "round glow",
+   "sun",
+   "lantern"
   ]
  },
  {
@@ -393,7 +400,8 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "ancient_lich",
@@ -401,14 +409,14 @@
   "rank": 5,
   "key": "magenta",
   "what": "an ancient lich: the oldest of all liches, thousands of years dead, the last relic of a forgotten bronze-age kingdom, and the grandest of its kind. It is a tall thin skeleton whose every bone has turned dark like a fossil: the skull, the hands, the ribs and the arms alike are dark brown-black as bog oak and faintly polished, with no white or ivory bone anywhere. Two bright turquoise flames burn in its eye sockets. Long thin strands of grey cobweb hang from its jaw and from its arms. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
-  "colours": "dark brown-black fossil bone on every part including the skull, faded saffron-yellow robes with an ochre border, a tall crown and a broad collar of corroded bronze gone verdigris grey-turquoise, grey cobwebs, bright turquoise flames.",
-  "wears": "It wears long, faded saffron-yellow robes of an ancient cut, pleated and hanging in dusty folds to the ground, with an ochre border. Over its shoulders and upper chest lies a broad flat collar made of rows of corroded verdigris bronze plates. On its skull sits a tall, narrow, cone-shaped crown of corroded verdigris bronze, banded with rings. No hood.",
+  "colours": "dark brown-black fossil bone on every part including the skull, dusty dull ochre-brown robes, the brown-gold of tarnished brass, with a dark umber border, a low horned crown and a broad collar of corroded bronze gone verdigris grey-turquoise, grey cobwebs, bright turquoise flames.",
+  "wears": "It wears long, dusty dull ochre-brown robes, the brown-gold of tarnished brass, of an ancient cut, pleated and hanging in dusty folds to the ground, with a dark umber border. Over its shoulders and upper chest lies a broad flat collar made of rows of corroded verdigris bronze plates. On its skull sits a low, broad, flat-topped crown of corroded verdigris bronze, shaped like a drum, as wide as the skull and no taller than the skull's own forehead, with a row of short square teeth along its top edge, and one pair of long curved bull's horns of the same bronze sweeping out and up from its two sides. No hood.",
   "holds": "Both of its dark bony hands are empty and raised, one at each side at shoulder height, palms up: in each open palm burns a ball of bright turquoise flame as big as its skull, touching the hand. It has no staff, no book and no weapon.",
-  "pose": "It floats upright just off the ground, turned a little to the left, both arms raised out to its sides with a turquoise flame in each palm, its chin lowered and its burning eyes on the viewer, its yellow robes drifting and the cobwebs trailing.",
+  "pose": "It floats upright just off the ground, turned a little to the left, both arms raised out to its sides with a turquoise flame in each palm, its chin lowered and its burning eyes on the viewer, its robes drifting and the cobwebs trailing.",
   "must_show": [
    "dark brown-black bone on every part, the skull included",
-   "a tall cone-shaped crown and a broad collar of verdigris bronze",
-   "faded saffron-yellow robes",
+   "a low flat-topped horned crown and a broad collar of verdigris bronze",
+   "dusty dull ochre-brown robes, the brown-gold of tarnished brass,",
    "a turquoise flame in each palm and turquoise fire in the eyes",
    "hanging cobwebs",
    "plainly the oldest and grandest lich"
@@ -434,7 +442,13 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body",
-   "rock"
+   "rock",
+   "pointed wizard hat",
+   "cone hat",
+   "witch hat",
+   "tall pointed crown",
+   "bright yellow robes",
+   "lemon yellow"
   ]
  },
  {
@@ -442,8 +456,8 @@
   "family": "lord_a",
   "rank": 1,
   "key": "blue",
-  "what": "a gnoll pack lord: the biggest gnoll of its pack, a tall, rangy, long-limbed, stooping man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with big yellowed fangs, small round ears, and a tall stiff crest of dark brown hair down the back of the neck. It is furred like a hyena on every part that shows: its head, neck, shoulders, arms, hands, legs and feet are covered in thick, coarse, shaggy sandy-tan fur with dark brown spots, and a thick shaggy ruff of the same spotted fur bursts out round its neck and over its collar; there is no bare skin anywhere on it. Its body from the collarbone to the hips is covered by a heavy studded leather coat. It has realistic proportions: a small head, long limbs.",
-  "colours": "shaggy sandy-tan fur with dark brown spots on head, arms and legs, a black muzzle and black lower legs, a dark brown neck crest, yellow eyes, yellowed fangs, a sleeveless coat of dark brown boiled leather with rows of dull iron studs, one dull iron shoulder plate, a necklace of big ivory fangs, a ragged dark brown hide kilt, a glaive with a dark wooden shaft and a grey steel blade.",
+  "what": "a gnoll pack lord: the biggest gnoll of its pack, a tall, rangy, long-limbed, stooping man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with big yellowed fangs, small round ears, and a tall stiff crest of dark brown hair down the back of the neck. It is furred like a hyena on every part that shows: its head, neck, shoulders, arms, hands, legs and feet are covered in thick, coarse, shaggy dull grey-tan fur, the colour of dry earth, with dark brown spots, and a thick shaggy ruff of the same spotted fur bursts out round its neck and over its collar; there is no bare skin anywhere on it. Its body from the collarbone to the hips is covered by a heavy studded leather coat. It has realistic proportions: a small head, long limbs.",
+  "colours": "shaggy dull grey-tan fur, the colour of dry earth, with dark brown spots on head, arms and legs, a black muzzle and black lower legs, a dark brown neck crest, yellow eyes, yellowed fangs, a sleeveless coat of dark brown boiled leather with rows of dull iron studs, one dull iron shoulder plate, a necklace of big ivory fangs, a ragged dark brown hide kilt, a glaive with a dark wooden shaft and a grey steel blade.",
   "wears": "It wears a heavy sleeveless coat of dark brown boiled leather, closed down the front and covering its whole chest and belly from the throat to the hips, set with rows of dull iron studs; one dull iron plate strapped on its left shoulder; a necklace of big ivory fangs lying on the leather; a broad belt; and a ragged dark brown hide kilt to the knees. Its spotted furry arms and legs are bare of clothing. No helmet, no collar, no chains.",
   "holds": "It holds exactly one glaive in both hands: a thick dark wooden pole taller than itself, and fixed at its top one long, broad, heavy steel blade with a single curved cutting edge, shaped like the blade of a great curved cleaver, three times as broad as the pole and as long as its arm. Both furred hands grip the shaft and it holds nothing else.",
   "pose": "It lopes to the left on two legs, seen from the side and a little from the front, leaning forward with its knees bent and its weight on its front foot, both hands driving the glaive forward and upward so that the long broad curved blade is high and clear at the upper left, its jaws wide open in a snarl.",
@@ -483,7 +497,12 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body",
-   "rock"
+   "rock",
+   "bright yellow fur",
+   "leopard",
+   "cheetah",
+   "golden fur",
+   "orange fur"
   ]
  },
  {
@@ -581,7 +600,8 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "imp_lord",
@@ -630,13 +650,13 @@
   "family": "lord_a",
   "rank": 5,
   "key": "magenta",
-  "what": "a spectral lord: the ghost of a warlord, a tall, broad figure made entirely of pale light in the shape of a knight in plate armour. Every part of him, the armour, the helm, the cape and the gauntlets alike, is the same translucent pale teal-white ghost-light, with darker dull teal in the hollows, drawn solid enough to read clearly. His head is a closed helm with a narrow visor slit in which two bright white eyes burn, and a crown of tall spikes rises from the top of the helm as one piece with it. He has broad shoulder plates, a breastplate and gauntlets, and a long tattered cape. His legs are armoured in the same pale light, and the long cape behind him frays away into ragged trailing wisps of it.",
-  "colours": "pale teal-white ghost-light on every part, the armour, helm, crown and cape alike, with darker dull teal shadows and two bright white eye points. No brown, no steel grey and no gold anywhere.",
+  "what": "a spectral lord: the ghost of a warlord, a tall, gaunt, long-limbed figure made entirely of pale light in the shape of a knight in full plate armour; he is plainly wearing armour everywhere: big round shoulder plates, a breastplate with a ridge down its middle, a skirt of armour plates over the hips and jointed leg armour, and nowhere is there a bare body. Every part of him, the armour, the helm, the cape and the gauntlets alike, is the same pale bone-white ghost-light with a faint grey-green tint, nearly white, with dark grey-teal lines in the hollows and between the plates so that every armour plate reads clearly, drawn solid enough to read clearly. His head is a closed helm with a narrow visor slit in which two bright white eyes burn, and a crown of tall spikes rises from the top of the helm as one piece with it. He has broad shoulder plates, a breastplate and gauntlets, and a long tattered cape. His legs are armoured in the same pale light, and the long cape behind him frays away into ragged trailing wisps of it.",
+  "colours": "pale bone-white ghost-light with a faint grey-green tint, nearly white, on every part, the armour, helm, crown and cape alike, with dark grey-teal shadows in the hollows and joints between the plates, and two bright white eye points.",
   "wears": "He wears the ghost of his plate armour, a crowned closed helm and a tattered cape, all made of the same pale light as the rest of him.",
   "holds": "Both of his ghostly gauntlets are empty and he holds nothing: his right arm reaches forward with the open hand spread to draw the life out of its prey, and his left hand is a clenched fist drawn back. He has no sword and no shield.",
   "pose": "He swoops forward to the left through empty air, leaning into it, his right arm stretched out ahead with the fingers spread, his left fist drawn back, his feet off the ground, his cape and its wisps streaming away to the right.",
   "must_show": [
-   "a ghost in the shape of an armoured knight, all of one pale teal-white light",
+   "a ghost in the shape of an armoured knight, all of one pale bone-white light with a faint grey-green tint",
    "a crowned closed helm with two white eye points",
    "a tattered ghostly cape",
    "the cape fraying into trailing wisps",
@@ -661,7 +681,14 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body",
-   "rock"
+   "rock",
+   "bare muscular chest",
+   "bodybuilder",
+   "naked body",
+   "mint green",
+   "bright turquoise",
+   "saturated teal",
+   "gold"
   ]
  },
  {
@@ -703,7 +730,8 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "death_knight_lord",
@@ -743,7 +771,8 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ancient_vampire_lord",
@@ -789,20 +818,21 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "death_lord",
   "family": "lord_b",
   "rank": 4,
   "key": "green",
-  "what": "a death lord: a rider in the train of Death from the Book of Revelation, one horse and one rider. The horse is a gaunt, bony, corpse-pale horse on four legs, pale as ash, with its ribs showing under its hide, a long bony head, blank white eyes and a thin ragged white mane and tail. The rider sits upright in the saddle: a tall dead conqueror, a skeleton in ancient armour. His head is a bare ivory skull with two white lights in the eye sockets, under a dark bronze helmet with a tall black horsehair crest running front to back. His hands are bare bone.",
-  "colours": "an ash-pale grey-white horse with a white mane and tail, an ivory skull, a dark bronze helmet with a black horsehair crest, dark bronze scale armour, a long ragged black cloak, black saddle and reins, white eye lights.",
+  "what": "a death lord: a rider in the train of Death from the Book of Revelation, one horse and one rider. The horse is starving, as thin as a greyhound: a walking carcass of a horse on four legs, corpse-grey as cold ash, every rib showing as a dark stripe along its sunken flank, its hip bones and spine jutting, its belly hollow, its legs like sticks with knobbly joints, with a long bony head like a skull with sunken cheeks and blank white eyes, a thin drooping neck, and only a few thin ragged strands of grey mane and tail. The rider sits upright in the saddle: a tall dead conqueror, a skeleton in ancient armour. His head is a bare ivory skull with two white lights in the eye sockets, under a dark bronze helmet with a tall black horsehair crest running front to back. His hands are bare bone.",
+  "colours": "a starved corpse-grey horse the colour of cold ash with dark grey hollows between its ribs, a few strands of grey mane and tail, an ivory skull, a dark bronze helmet with a black horsehair crest, dark bronze scale armour, a long ragged black cloak, black saddle and reins, white eye lights.",
   "wears": "The rider wears a coat of dark bronze scale armour, a dark bronze helmet with a tall black horsehair crest, and a long ragged black cloak that hangs from his shoulders over the horse's rump. The horse wears a plain black saddle and bridle.",
   "holds": "The rider's right hand is empty: his right arm is stretched straight out ahead over the horse's neck with one bony finger pointing forward to the left. His left hand holds the black reins at the horse's neck. He holds nothing else: no weapon.",
-  "pose": "Seen in full profile from the side like a figure on a coin, facing left: the pale horse strides forward on four legs with one front leg lifted high and its neck arched and head lowered; the rider sits upright with his right arm stretched straight out pointing to the left, his skull turned to the left, his black cloak streaming behind to the right.",
+  "pose": "Seen in full profile from the side like a figure on a coin, facing left: the pale horse strides forward on four legs with one front leg lifted high and its thin neck stretched low and its bony head hanging; the rider sits upright with his right arm stretched straight out pointing to the left, his skull turned to the left, his black cloak streaming behind to the right.",
   "must_show": [
-   "one gaunt ash-pale horse on four legs, seen from the side",
+   "one starved corpse-grey horse on four legs with every rib showing, seen from the side",
    "one skeleton rider with a bare skull under a crested bronze helmet",
    "dark bronze scale armour and a long black cloak",
    "the rider's right arm stretched out pointing, no weapon"
@@ -829,7 +859,14 @@
    "dust cloud",
    "rock",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "healthy white horse",
+   "sleek horse",
+   "fat horse",
+   "glossy coat",
+   "proud arched neck",
+   "thick flowing mane",
+   "muscular horse"
   ]
  },
  {
@@ -869,21 +906,22 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "nemean_lion",
   "family": "lion",
   "rank": 1,
   "key": "blue",
-  "what": "the Nemean Lion of the Greek myth, the first labour of Hercules: a real male lion, a real animal on four legs, enormous, deep-chested and heavily muscled, with a huge thick mane round its head, neck and chest, a broad scarred muzzle, small round ears, long ivory fangs and long ivory claws. Its hide cannot be cut: its short fur shines like polished metal, bright burnished gold over the whole body, with sharp bright highlights along the back, shoulders and flanks as if the beast were beaten out of gold. The mane is darker, a deep bronze-brown.",
-  "colours": "bright burnished metallic gold fur over the whole body with pale gold highlights, a deep bronze-brown mane, amber eyes, a dark brown nose, ivory fangs and claws, a dark bronze tail tuft.",
+  "what": "the Nemean Lion of the Greek myth, the first labour of Hercules: a real male lion, a real animal on four legs, enormous, deep-chested and heavily muscled, with a huge thick mane round its head, neck and chest, a broad scarred muzzle, small round ears, long ivory fangs and long ivory claws. Its hide cannot be cut: its short fur is pale tawny straw-gold over the whole body with a dull metallic sheen, with pale highlights along the back, shoulders and flanks as if the hide were hammered metal. The mane is very dark brown, nearly black, and runs on under the chest and belly.",
+  "colours": "pale tawny straw-gold fur over the whole body with a dull metallic sheen and pale highlights, a very dark brown mane that is nearly black, amber eyes, a dark brown nose, ivory fangs and claws, a black tail tuft.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is an animal on four legs and holds nothing.",
   "pose": "Seen from the side, facing left, on four legs: it lunges forward with its front legs braced and its claws out, its hind legs driving behind, its body horizontal, its huge maned head low and thrust forward with the jaws wide open roaring, its tail lashing behind.",
   "must_show": [
-   "a huge male lion on four legs with a great dark bronze mane",
-   "a hide of bright burnished gold with a metallic shine",
+   "a huge male lion on four legs with a great dark, nearly black mane",
+   "a hide of pale tawny gold with a dull metallic sheen, not orange",
    "jaws open roaring, long fangs and claws",
    "a mythic beast, plainly grander than an ordinary lion"
   ],
@@ -907,7 +945,11 @@
    "ground",
    "grass",
    "rock",
-   "cartoon"
+   "cartoon",
+   "bright orange fur",
+   "orange mane",
+   "cartoon lion",
+   "glossy orange"
   ]
  },
  {
@@ -957,11 +999,11 @@
   "family": "locust",
   "rank": 1,
   "key": "blue",
-  "what": "a locust swarmlord: a captain of the locusts of the bottomless pit, from the Book of Revelation: a giant locust as big as a war-horse. It has a real locust's body, long and horizontal: a long segmented abdomen, jointed insect walking legs, the two big folded jumping legs at the back, and two pairs of long narrow wings. In place of an insect head it has a man's stern face with long flowing black hair, a forked black beard and a wide-open mouth of long lion's fangs. Its two front limbs are not legs: each one is a single great curved blade of dark chitin, shaped like a crescent moon, as long as its own body is deep, raised in front of it. Its abdomen ends in a curled scorpion's tail: a swollen black bulb with one curved needle-point.",
-  "colours": "dark bronze-black locust shell, a blackened iron breastplate with gold edges, a tall gold crown, long black hair and beard, a pale tan human face, smoky amber wings, dark brown-black scythe limbs with pale tan cutting edges, a black sting.",
-  "wears": "It wears a tall gold crown with long points on its head, and a blackened iron breastplate with gold edging strapped round its chest like a war-horse's armour.",
+  "what": "a locust swarmlord: a captain of the locusts of the bottomless pit, from the Book of Revelation: a giant locust as big as a war-horse. It has a real locust's body, long and horizontal: a long segmented abdomen, jointed insect walking legs, the two big folded jumping legs at the back, and long narrow wings folded shut, lying closed along its back like a furled umbrella. In place of an insect head it has a man's stern face with long flowing black hair, a forked black beard and a wide-open mouth of long lion's fangs. Its two front limbs are not legs: each one is a single great curved blade of dark chitin, shaped like a crescent moon, as long as its own body is deep, raised in front of it. Its abdomen ends in a curled scorpion's tail: a swollen black bulb with one curved needle-point.",
+  "colours": "dull olive-brown locust shell with a paler tan underside, a tall gold crown, long black hair and beard, a pale grey-tan human face, smoky amber-grey wings folded along the back, two dark brown scythe limbs with broad pale bone-coloured cutting edges, a black sting.",
+  "wears": "It wears only a tall gold crown with long points on its head.",
   "holds": "It has no hands and holds nothing: its two front limbs are themselves the great curved chitin blades.",
-  "pose": "Seen from the side, facing left: its long body is horizontal on its insect legs with the front end lifted, its two great scythe limbs raised in front of its chest, one a little higher than the other, curving forward and down to the left, its wings raised and spread above its back, its scorpion tail arched high over its body, its fanged mouth wide open bellowing.",
+  "pose": "Seen from the side, facing left: its long body is horizontal on its insect legs with the front end lifted, its two great scythe limbs raised in front of its chest, one a little higher than the other, curving forward and down to the left, its wings folded shut along its back, its scorpion tail arched high over its body, its fanged mouth wide open bellowing.",
   "must_show": [
    "a giant locust's body with insect legs and wings, horizontal",
    "a man's crowned, bearded face with a fanged mouth, in place of an insect head",
@@ -985,7 +1027,14 @@
    "ground",
    "rock",
    "cartoon",
-   "cute"
+   "cute",
+   "spread wings",
+   "butterfly wings",
+   "breastplate",
+   "armour",
+   "many extra legs",
+   "orange wings",
+   "tangle of limbs"
   ]
  },
  {
@@ -1066,7 +1115,8 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "mage_slayer_assassin",
@@ -1074,13 +1124,13 @@
   "rank": 3,
   "key": "blue",
   "what": "a mage-slayer assassin: a lean, hard, athletic human killer trained to hunt wizards. His hood is up, and the lower half of his face is covered by a black cloth mask up to the bridge of the nose, so that only two narrow cold grey eyes and a strip of pale skin show. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
-  "colours": "a long charcoal-grey hooded coat whose inside lining is dull ochre-gold cloth stitched with rows of black sigils, a black face mask, dark grey trousers, black boots, black leather gloves, a short sword with a bright steel blade and a black grip, three snapped pale wooden wands at the belt, pale skin round the eyes.",
-  "wears": "He wears a long charcoal-grey hooded coat that reaches his knees, hanging open and flaring out so that its dull ochre-gold lining, stitched with rows of black ward-sigils, shows on both sides; a black cloth mask over his nose and mouth; black leather gloves; dark grey trousers and black boots. Three snapped wooden wizard's wands are tied at his belt as trophies.",
+  "colours": "a long charcoal-grey hooded coat whose inside lining is dark oxblood-red cloth stitched with rows of black sigils, a black face mask, dark grey trousers, black boots, black leather gloves, a short sword with a bright steel blade and a black grip, three snapped pale wooden wands at the belt, pale skin round the eyes.",
+  "wears": "He wears a long charcoal-grey hooded coat that reaches his knees, hanging open and flaring out so that its dark oxblood-red lining, stitched with rows of black ward-sigils, shows on both sides; a black cloth mask over his nose and mouth; black leather gloves; dark grey trousers and black boots. Three snapped wooden wizard's wands are tied at his belt as trophies.",
   "holds": "He holds exactly one short sword in his right hand: a broad, plain, straight steel blade as long as his forearm, held point-forward. His left hand is empty: a black-gloved hand reaching out ahead to seize. He holds no second blade.",
-  "pose": "On two legs, he lunges low to the left with his front knee deeply bent and his rear leg stretched out behind, his sword arm thrust forward at waist height, his empty left hand reaching ahead above it, his coat flaring wide behind him so the ochre-gold lining shows.",
+  "pose": "On two legs, he lunges low to the left with his front knee deeply bent and his rear leg stretched out behind, his sword arm thrust forward at waist height, his empty left hand reaching ahead above it, his coat flaring wide behind him so the dark oxblood-red lining shows.",
   "must_show": [
    "a hooded, masked human in a long charcoal-grey coat",
-   "the coat's ochre-gold lining with black sigils showing",
+   "the coat's dark oxblood-red lining with black sigils showing",
    "one short straight sword in the right hand",
    "an empty gloved left hand reaching",
    "no magic: a killer, not a caster"
@@ -1104,7 +1154,12 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body",
-   "rock"
+   "rock",
+   "orange lining",
+   "yellow lining",
+   "bright orange cape",
+   "gold cloak",
+   "orange coat"
   ]
  }
 ]

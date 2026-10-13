@@ -104,17 +104,17 @@
   "family": "elem_fire",
   "rank": 3,
   "key": "blue",
-  "what": "a primordial fire elemental: the oldest fire in the world, a living blaze burning white-hot, real fire and nothing else, painted seriously and fiercely. It is one great towering flame burning in mid-air with nothing beneath it, the flame of a furnace: very broad in the middle, drawn up into three tall pointed tips at the top, the middle one the tallest, and down to one thin curling wisp at the bottom, made of many thick licking tongues of flame with ragged edges, so that the backdrop shows between the tongues. The heart of the blaze is white-hot; round it the flame is pale gold, and only the outermost tips are deep orange. Two thirds of the way up, set directly in the white fire, are two narrow slanted eye slits of dark burning orange, fierce, with no pupils, and nothing else. From each side of the blaze two long thick whips of golden flame lash outward, one curling high and one sweeping low, four in all, each tapering to a point.",
+  "what": "a primordial fire elemental: the oldest fire in the world, a living blaze burning white-hot, real fire and nothing else, painted seriously and fiercely. It is one great towering flame burning in mid-air with nothing beneath it, the flame of a furnace: very broad in the middle, drawn up into three tall pointed tips at the top, the middle one the tallest, and down to one thin curling wisp at the bottom, made of many thick licking tongues of flame with ragged edges, so that the backdrop shows between the tongues. The heart of the blaze is white-hot; round it the flame is pale gold, and only the outermost tips are deep orange. Two thirds of the way up, set directly in the white fire, are two narrow slanted eye slits of dark burning orange, fierce, with no pupils, and nothing else. Four broad ragged streamers of golden flame sweep out of the blaze, joined to it and part of it. Each streamer is as wide at its root as the eye slits are long, narrows slowly to a ragged point, and is curved like the blade of a sabre: two sweep up and outward toward the upper corners of the picture, bending upward at their tips, and two shorter ones sweep down and outward toward the lower corners, bending downward at their tips. They are fire, ragged-edged and flickering, never straight and never thin.",
   "colours": "a white-hot heart, pale gold flame round it, deep orange only at the outermost tips; four golden whips of flame; two narrow dark burning-orange eye slits. White and gold all through.",
   "wears": "It is fire and wears nothing.",
   "holds": "It is a flame and holds nothing.",
-  "pose": "The whole blaze surges and leans to the left as if blown, its three tips curling over, the two whips of flame on its left side lashing far out ahead and the two on its right side whipped up high and back.",
+  "pose": "The whole blaze surges and leans to the left as if blown, its three tips bent over, its four broad curved streamers of flame flung wide, the two upper ones raised like great horns and the two lower ones swept down and out.",
   "must_show": [
    "real fire in every part: licking tongues of flame, no solid body and no ball",
    "white-hot and pale gold all through, far brighter than the orange fire elementals",
    "one great flame shape with tall pointed tips and a thin wisp below",
-   "two whips of flame on each side",
-   "two narrow slanted eye slits set in the fire and no other face"
+   "two narrow slanted eye slits set in the fire and no other face",
+   "four broad curved streamers of flame, two swept up and two swept down: fire, not rods and not loops"
   ],
   "must_not_show": [
    "man's body",
@@ -170,7 +170,22 @@
    "smoke cloud",
    "blue flame",
    "candle",
-   "torch"
+   "torch",
+   "loops",
+   "rings",
+   "handles",
+   "urn",
+   "vase",
+   "trophy cup",
+   "rope",
+   "lasso",
+   "whip that curls round into a circle",
+   "straight sticks",
+   "thin straight lines",
+   "crossed spears",
+   "crossed swords",
+   "crossed staves",
+   "letter X of rods"
   ],
   "body": "shapeless"
  },
@@ -270,24 +285,25 @@
    "puddle under it",
    "pool of lava",
    "man's face"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "ice_elemental",
   "family": "elem_ice",
   "rank": 1,
   "key": "magenta",
-  "what": "an ice elemental: a small piece of the first cold, walking, the lesser kin of the primordial ice elemental and plainly the same kind, painted seriously with weight and depth. It is a hunched, heavy, neckless figure of glacier ice, standing on two legs, ice in every part, hard and jagged with nothing soft anywhere, built of big rough shards of old ice with slanting broken faces, none of them square: two massive jagged shoulder shards, a broad chest of split ice with dark cracks running through it, heavy arms of ice thicker than its legs, each ending in a great claw of four long sharp icicles, and two thick legs that are rough pillars of ice. Its head is one low jagged wedge of ice sunk between the shoulder shards, and set directly in the ice of the head are two small glowing white eyes, narrow and slanted, with no pupils. Its ice is cold steel-blue with deep dark blue in the cracks and hollows, crusted on the upper faces with rough white rime.",
-  "colours": "cold steel-blue glacier ice on every part, the head included; deep dark blue cracks and hollows; rough white rime on the upper faces; pale icicle claws; two small glowing white eyes.",
+  "what": "an ice elemental: a small piece of the first cold, walking, the lesser kin of the primordial ice elemental and plainly the same kind, painted seriously with weight and depth. It is a hunched, heavy, neckless figure of glacier ice, standing on two legs, ice in every part, hard and jagged with nothing soft anywhere, built of big rough shards of old ice with slanting broken faces, none of them square: two massive jagged shoulder shards, a broad chest of split ice with dark cracks running through it, heavy arms of ice thicker than its legs, each ending in a great claw of four long sharp icicles, and two thick legs that are rough pillars of ice. Its head is one low jagged wedge of ice sunk between the shoulder shards, and set directly in the ice of the head are two glowing white eye slits, narrow and slanted, each as long as a third of the head is wide, with no pupils, the two brightest things in the picture; the ice of the head round them is the darkest blue on the figure. Its ice is cold steel-blue with deep dark blue in the cracks and hollows, crusted on the upper faces with rough white rime.",
+  "colours": "cold steel-blue glacier ice on every part, the head included; deep dark blue cracks and hollows; rough white rime on the upper faces; pale icicle claws; two large glowing white eye slits.",
   "wears": "It is ice and wears nothing.",
   "holds": "It holds nothing; both ice claws are empty.",
   "pose": "It strides forward to the left on two pillar legs, hunched and leaning far over, body twisted, one great icicle claw thrust out ahead to seize and the other drawn back high.",
   "must_show": [
    "ice in every part, the head included: rough jagged shards, not cubes",
    "hunched and neckless, a low wedge head sunk between jagged shoulders",
-   "two small glowing white eyes set in the ice",
    "great claws of long icicles, empty",
-   "plainly the lesser kin of the primordial ice elemental: no crown of spires, no beard of icicles, no core in the chest"
+   "plainly the lesser kin of the primordial ice elemental: no crown of spires, no beard of icicles, no core in the chest",
+   "two glowing white eye slits set in the dark ice of the head, plain in the small sprite"
   ],
   "must_not_show": [
    "square cube head",
@@ -364,17 +380,17 @@
   "family": "elem_earth",
   "rank": 1,
   "key": "magenta",
-  "what": "an earth elemental: a heap of rock that has stood up, the lesser kin of the greater earth elemental and plainly the same kind, painted seriously with weight and depth. It is built of about ten separate big jagged slabs and broken boulders of weathered sandstone, stacked with black gaps between them. Every stone is real quarried rock: rough, split, pitted and irregular, with slanting broken faces, none of them square and none of them smooth or round. The trunk is one great rough upright slab. On top of it, sunk low between two big jagged shoulder rocks, is one low rough lump of rock with nothing on it except two small glowing amber eyes set directly in the stone. On each side is an arm made of two jagged rocks, one after the other, touching, ending in one very large rough boulder, a fist as big as the slab itself. Underneath are two thick stacks of rock that it walks on. The rock is dull sandy grey-brown, the colour of a dry stone wall, darker brown in the cracks.",
-  "colours": "dull sandy grey-brown and dun sandstone on every part, darker brown in the cracks; black gaps between the rocks; two small glowing amber eyes.",
+  "what": "an earth elemental: a heap of rock that has stood up, the lesser kin of the greater earth elemental and plainly the same kind, painted seriously with weight and depth. It is built of about ten separate big jagged slabs and broken boulders of weathered sandstone, stacked with black gaps between them. Every stone is real quarried rock: rough, split, pitted and irregular, with slanting broken faces, none of them square and none of them smooth or round. The trunk is one great rough upright slab. On top of it, sunk low between two big jagged shoulder rocks, is one low rough lump of rock with nothing on it except two glowing amber eye slits set directly in the stone, narrow and slanted, each as long as a third of the lump is wide, the two brightest things in the picture. On each side is an arm made of two jagged rocks, one after the other, touching, ending in one very large rough boulder, a fist as big as the slab itself. Underneath are two thick stacks of rock that it walks on. The rock is dark weathered grey-brown, the colour of an old field wall in the rain, nearly black in the cracks, with paler grey only on the upper edges.",
+  "colours": "dark weathered grey-brown rock on every part, nearly black in the cracks, paler grey on the upper edges; black gaps between the rocks; two glowing amber eye slits.",
   "wears": "It is stone and wears nothing.",
   "holds": "It holds nothing; both boulder fists are empty.",
   "pose": "It strides forward to the left on two thick rock legs, hunched and leaning, body twisted, one great boulder fist drawn back high to punch and the other swung low in front. Nothing is under its feet.",
   "must_show": [
    "separate jagged slabs and broken boulders in every part, with black gaps between them",
-   "dull sandy grey-brown weathered rock, rough and pitted",
-   "a low lump of a head sunk between two shoulder rocks, with two small glowing amber eyes and nothing else",
    "two big boulder fists, empty",
-   "plainly the lesser kin of the greater earth elemental: no crystals, no gold veins"
+   "plainly the lesser kin of the greater earth elemental: no crystals, no gold veins",
+   "dark weathered grey-brown rock, rough and pitted, not pale and not toy-like",
+   "a low lump of a head sunk between two shoulder rocks, with two glowing amber eye slits plain in the small sprite"
   ],
   "must_not_show": [
    "man's face",
@@ -536,7 +552,8 @@
    "statue",
    "figure standing below",
    "superhero"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "air_elemental",
@@ -652,17 +669,16 @@
   "family": "elem_void",
   "rank": 1,
   "key": "magenta",
-  "what": "a void elemental: a scrap of the first emptiness, a wound torn in the air, painted with depth and light, dreadful and never cute. It is one tall ragged rent hanging in mid-air, taller than it is wide, pointed at the top and the bottom like a tear in a sail. The rent itself, in the middle, is pitch-black emptiness. All round it the torn edge of the world curls outward in thick ragged flaps and tatters, like the edges of torn burnt cloth, painted coal-black in the folds and dark slate-grey on the ridges, and every flap is edged with one thin bright line of cold silver-white light. Six or seven long curved streaks of pale silver-white light sweep inward across the tatters from every side and bend down into the black, being swallowed. In the middle of the black, side by side, are two large slanted eye slits filled to the brim with solid silver-white light, each as long as a quarter of the rent is wide, with no pupils, the two brightest things in the picture, and nothing else. From its left side and its right side one long ragged tatter of the same black stretches outward, tapering to a point, silver-edged.",
-  "colours": "pitch-black emptiness in the middle; coal-black and dark slate-grey torn tatters round it; thin bright cold silver-white lines of light on every torn edge; long pale silver-white streaks of light bending into the black; two large slanted eye slits of solid silver-white light.",
+  "what": "a void elemental: a scrap of the first emptiness, a hole in the air, painted with depth and light, dreadful and never cute. It is one great round hole of pitch-black nothing hanging in mid-air, as round as the moon and filling half the picture, perfectly black inside with no shading at all. All round the edge of the hole runs one thick ragged boiling rim of cold blue-white light, bright as the rim of the sun in an eclipse, broad at the upper left and thin at the lower right. From the rim, torn ragged streamers of dark slate-grey shadow are dragged round the hole in a spiral, like water going down a drain, each streamer edged with the same blue-white light, the longest reaching out to the left. Four jagged chunks of broken grey masonry, each as big as a quarter of the hole, are being pulled into it: each chunk touches the bright rim and is half swallowed by the black. In the middle of the black, side by side, are two large slanted eye slits filled to the brim with solid blue-white light, each as long as a quarter of the hole is wide, with no pupils, and nothing else.",
+  "colours": "a round hole of pitch black; a thick bright rim of cold blue-white light all round it; dark slate-grey spiral streamers edged with blue-white light; four chunks of plain grey masonry; two large slanted eye slits of solid blue-white light.",
   "wears": "It is emptiness and wears nothing.",
-  "holds": "It is a rent in the air and holds nothing.",
-  "pose": "The whole rent leans to the left in the air, its tatters streaming, the long black tatter on its left side stretched far forward to touch and the other slanting up, streaks of light bending into it from every side. Nothing is under it.",
+  "holds": "It is a hole in the air and holds nothing.",
+  "pose": "The hole hangs in the air and drinks everything in: its bright rim boils, its grey streamers wind round it in a spiral with the longest reaching far out to the left, the four chunks of masonry tip over the rim into the black, and the two eye slits glare out of the middle. Nothing is under it.",
   "must_show": [
-   "a tall ragged rent of pitch black with a torn, curling, folded edge that has depth: painted, not a flat cut-out",
-   "thin bright silver-white light along the torn edges, plain in the small sprite",
-   "streaks of light bending into the black",
-   "two large slanted eye slits of solid white light in the black, plain in the small sprite",
-   "one long black tatter reaching out on each side"
+   "one great round hole of pitch black: plainly a hole in the air, not a creature's body",
+   "a thick bright blue-white rim of light all round the hole, plain in the small sprite",
+   "ragged grey streamers spiralling round it, and chunks of masonry being swallowed at the rim",
+   "two large slanted eye slits of solid light in the black, plain in the small sprite"
   ],
   "must_not_show": [
    "man's body",
@@ -693,10 +709,8 @@
    "skull",
    "mouth",
    "purple smoke",
-   "galaxy swirl",
    "stars and planets",
    "tentacles",
-   "ring floating apart from it",
    "scythe",
    "weapon",
    "bird",
@@ -708,7 +722,20 @@
    "spider",
    "star burst",
    "straight needles",
-   "swords"
+   "swords",
+   "heap of black feathers",
+   "black crystal shards",
+   "crow",
+   "mask",
+   "helmet",
+   "planet",
+   "planet with rings",
+   "eyeball",
+   "iris",
+   "pupil",
+   "loose stones floating apart from it",
+   "purple",
+   "halo ring floating apart from the hole"
   ],
   "body": "shapeless"
  },
@@ -717,16 +744,16 @@
   "family": "elem_void",
   "rank": 2,
   "key": "magenta",
-  "what": "an entropy elemental: the slow law that everything runs down, given a shape and in a hurry, painted with depth and grime, dreadful and never cute. It is one tall ragged pillar of crumbling grey ash and cinders hanging in the air, a thick clotted column of ash, taller than it is wide, coarse, gritty and solid-looking, made of heavy lumps and ridges of ash, pale ash-grey on the ridges and dark charcoal in the deep hollows, with broad dark stains of rust-brown running down it. It is coming apart as it moves: its whole right side and its lower end are breaking up into big ragged flakes and clots of ash that peel away, still touching it. Near the top of the pillar is one deep black hollow, and set in that hollow, side by side, are two large slanted slits of cold white light, each as long as a quarter of the pillar is wide, with no pupils, the two brightest things in the picture. From the left side of the pillar one long thick tapering tongue of the same grey ash reaches far out, and three old iron sword blades are stuck in the pillar at different angles, each one rusted very dark brown, eaten thin and full of ragged holes, broken off short, with no hilts showing.",
-  "colours": "pale ash-grey and dark charcoal ash and cinders in every part, a plain neutral grey; dark rust-brown stains; three very dark brown rusted iron blades the colour of an old iron nail; one black hollow with two large slits of cold white light.",
+  "what": "an entropy elemental: the slow law that everything runs down, given a shape and in a hurry, painted with depth and grime, dreadful and never cute. Its heart is one great old hourglass hanging in mid-air, as tall as half the picture: two bulbs of thick cracked cloudy glass held in a heavy frame of three iron posts between two round iron end plates, every bit of the iron rusted very dark brown and eaten into ragged holes. The upper bulb is broken wide open, and out of the break the grey sand pours upward and outward and becomes the creature's body: one thick ragged whirling cloud of grey sand, ash and flakes of rust that wraps round the hourglass and heaps up above it into a rounded hump no taller than the hourglass itself, coarse and gritty, pale ash-grey on its ridges and dark charcoal in its hollows, with broad stains of dark rust-brown. Above the hourglass, in the middle of that hump, is one deep black hollow, and set in that hollow, side by side, are two large slanted slits of cold white light, each as long as a quarter of the column is wide, with no pupils, the two brightest things in the picture. From the left side of the column one long thick tapering tongue of the same grey sand reaches far out. Along its right side and its lower end the column is breaking up into big ragged flakes that peel away, still touching it. The whole creature is compact and wholly inside the picture, with clear backdrop above it, below it and on both sides.",
+  "colours": "pale ash-grey and dark charcoal sand and ash in every part of the column, a plain neutral grey; an hourglass of very dark brown rusted iron, the colour of an old iron nail, with cloudy grey-white cracked glass; dark rust-brown stains and flakes; one black hollow with two large slits of cold white light.",
   "wears": "It wears nothing.",
-  "holds": "It holds nothing; three rusted sword blades are stuck in it.",
-  "pose": "The pillar of ash drifts and leans to the left, its tongue of ash stretched far forward to touch, its two white eye slits glaring from the black hollow, its right side and lower end peeling away in flakes, the rusted blades jutting from its back. Nothing is under it.",
+  "holds": "It holds nothing; the broken hourglass hangs in the middle of it, joined to the column of sand.",
+  "pose": "The cloud of sand drifts and leans to the left with the rusted hourglass tilted in its middle, sand streaming out of the broken bulb, its tongue of sand stretched forward to touch, its two white eye slits glaring from the black hollow in the hump above, its right side and lower end peeling away in flakes. It is one compact mass in the middle of the picture; nothing is under it and nothing reaches the edge of the picture.",
   "must_show": [
-   "a tall ragged pillar of crumbling grey ash with lumps, ridges and depth: painted, not a flat grey egg and not cloth",
-   "crumbling into big flakes along one side and below",
-   "rust-brown stains and rusted, hole-eaten blades stuck in it",
-   "two large slanted white eye slits in a black hollow, plain in the small sprite",
+   "one big rusted, broken hourglass in the middle of it, plain in the small sprite: iron frame, two glass bulbs",
+   "a tall ragged column of grey sand and ash pouring out of the hourglass and wrapping round it: gritty, with depth",
+   "dark rust-brown stains and flakes, crumbling along one side and below",
+   "two large slanted white eye slits in a black hollow above the hourglass, plain in the small sprite",
    "plainly grey where the void elemental is black"
   ],
   "must_not_show": [
@@ -772,16 +799,24 @@
    "owl",
    "yeti",
    "flames",
-   "clock",
-   "hourglass",
    "scythe",
-   "whole shiny sword",
-   "sword hilt",
    "stone pillar",
    "concrete slab",
    "carved column",
    "tree trunk",
-   "tornado funnel"
+   "tornado funnel",
+   "clock face",
+   "shiny new brass hourglass",
+   "gold",
+   "wooden hourglass on a table",
+   "table",
+   "hand holding the hourglass",
+   "sword",
+   "desert dune under it",
+   "pile of sand under it",
+   "tall column running off the top of the picture",
+   "tornado",
+   "long roots"
   ],
   "body": "shapeless"
  },
@@ -789,9 +824,9 @@
   "id": "ettin",
   "family": "ettin",
   "rank": 1,
-  "key": "blue",
-  "what": "an ettin: a huge, crude, pot-bellied two-headed giant. He has one thick body with one pair of broad shoulders, exactly two arms and exactly two legs, and on the shoulders two thick necks side by side, each with its own ugly bald head: heavy brows, big lumpy noses and jutting lower jaws with two blunt tusks. The two heads lean away from each other, the left one shouting with its mouth wide open, the right one scowling with its mouth shut. Each head is small for the big body.",
-  "colours": "dirty ochre-tan skin with grey warts on both heads and the whole body, a dark brown hide loincloth, two plain pale brown wooden clubs.",
+  "key": "magenta",
+  "what": "an ettin: a huge, crude, pot-bellied two-headed giant, filthy and weather-beaten, painted seriously. He has one thick body with one pair of broad shoulders, exactly two arms and exactly two legs, and on the shoulders two thick necks side by side, each with its own ugly bald head: heavy brows, big lumpy noses and jutting lower jaws with two blunt tusks. The two heads lean away from each other, the left one shouting with its mouth wide open, the right one scowling with its mouth shut. Each head is small for the big body.",
+  "colours": "weather-beaten light tan skin gone grey with dirt, with grey warts and dark grime in the creases, on both heads and the whole body; a hide loincloth of dark mud-brown, the colour of wet peat; two plain clubs of dark weathered wood.",
   "wears": "He wears only a ragged patched hide loincloth tied with rope, and is barefoot. No armour, no helmets, nothing on either head.",
   "holds": "He holds exactly one plain rough wooden club in each hand: the club in his right hand is raised high, the club in his left hand is held low out to the side. Two clubs in all.",
   "pose": "He stomps forward to the left on two legs, weight on the front foot, body twisted, right club raised high to strike and left club swung out low.",
@@ -820,16 +855,22 @@
    "shield",
    "oversized heads",
    "blue skin",
-   "green skin"
+   "green skin",
+   "bright orange skin",
+   "orange body",
+   "yellow skin",
+   "clean smooth skin",
+   "cartoon",
+   "toy"
   ]
  },
  {
   "id": "ettin_warchief",
   "family": "ettin",
   "rank": 2,
-  "key": "blue",
+  "key": "magenta",
   "what": "an ettin warchief: a giant with two heads. Two separate heads sit side by side on his one pair of broad shoulders, each on its own thick neck, both heads the same size and both plainly seen from the front, with a gap between them. He is huge, scarred and heavy-shouldered, the old chief of a ruined clan, with one thick body, exactly two arms and exactly two legs. Each head has heavy brows, a big lumpy nose, a jutting lower jaw with two blunt tusks and a braided dark beard. The head on the right of the picture bellows an order with its mouth wide open; the head on the left of the picture glares the other way with its mouth shut. Each head is small for the big body.",
-  "colours": "dirty ochre-tan scarred skin on both heads and the whole body, dark grey iron helmets, weapon heads and shoulder plate, a dark brown fur mantle, a brown hide war-kilt, bone-white skulls on the belt.",
+  "colours": "weather-beaten light tan scarred skin gone grey with dirt on both heads and the whole body; dark grey iron helmets, weapon heads and shoulder plate; a fur mantle of very dark brown, nearly black; a war-kilt of dark mud-brown hide, the colour of wet peat; bone-white skulls on the belt; black braided beards.",
   "wears": "He wears a heavy dark brown fur mantle over both shoulders, one big spiked iron plate strapped on his left shoulder, a wide iron-studded belt hung with three small skulls, a hide war-kilt and iron-bound boots. Each of his two heads wears its own crude dented iron helmet: one helmet has two short horns, the other helmet has one tall spike and no horns.",
   "holds": "He holds exactly one weapon in each hand, two weapons in all. In his right hand, raised high, is an iron maul: a thick iron haft with a massive block-shaped iron hammer head. In his left hand, held straight out to the side at arm's length, clear of his body, is an iron-banded club: a thick dark wooden club, fat at the end, ringed with three wide grey iron bands.",
   "pose": "He stomps forward on two legs facing the viewer and turned a little to the left, weight on the front foot, both heads up, the iron maul raised high in his right hand and the banded club held out wide in his left hand.",
@@ -860,7 +901,13 @@
    "green skin",
    "one head hidden behind the other",
    "empty left hand",
-   "second hammer"
+   "second hammer",
+   "bright orange skin",
+   "orange body",
+   "yellow skin",
+   "clean smooth skin",
+   "cartoon",
+   "toy"
   ]
  },
  {
@@ -986,18 +1033,18 @@
   "id": "manticore_elder",
   "family": "manticore_elder",
   "rank": 1,
-  "key": "blue",
-  "what": "an elder manticore, the man-eater of Persian legend: a real lion's body on four legs with a man's face. The body, legs and paws are a lion's, covered in cinnabar-red fur. The head has a lion's great shaggy mane, but the face inside the mane is the face of an old bearded man, with a broad flat nose, pale staring eyes and a very wide open mouth crowded with rows of sharp white teeth. Its mane and beard are streaked grey-white with age, and old scars cross its flank. The lion has no tuft on its tail: its long thick red tail curves up and forward over its back and ends in one big round knob, and the knob bristles all over with dozens of long thick ivory spines pointing outward in every direction.",
-  "colours": "cinnabar-red and rust-red fur on the body and legs, a dark red-brown mane and beard streaked with grey-white, a weathered tan man's face, ivory tail spines, white teeth, black claws.",
+  "key": "green",
+  "what": "an elder manticore, the man-eater of Persian legend: a real lion's body on four legs with a man's face. The body, legs and paws are a lion's, covered in short dusky dark red-brown fur, the colour of old brick. On the lion's shoulders, in place of a lion's head, is the head of an old human man, turned toward the viewer: a weather-beaten light tan human face with a human nose, human lips and chin, human ears, heavy black eyebrows and pale staring eyes, long straight black human hair hanging to the shoulders, and a long black human beard streaked with iron-grey. Round his brow is a plain band of dark bronze. His mouth is stretched very wide open and crowded with rows of sharp white teeth. Old scars cross its flank. The lion has no tuft on its tail: its long thick dark red-brown tail curves up and forward over its back and ends in one big round knob, and the knob bristles all over with dozens of long thick ivory spines pointing outward in every direction.",
+  "colours": "dusky dark red-brown fur on the body and legs, the colour of old brick and dried rust, darker on the back and nearly black-brown on the legs; long black human hair and a black beard streaked with iron-grey; a dark bronze brow band; a weather-beaten light tan man's face; ivory tail spines; white teeth; black claws.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, it faces left on four legs, front end crouched low and hindquarters high, its tail arched up over its back with the spined knob aimed forward, its man's face roaring with the mouth wide open.",
+  "pose": "Seen from the side, it faces left on four legs, front end crouched low and hindquarters high, its tail arched up over its back with the spined knob aimed forward, its man's face turned to the viewer and shouting with the mouth wide open.",
   "must_show": [
-   "a lion's body on four legs with red fur",
-   "an old bearded man's face inside the mane",
    "a wide mouth with rows of sharp teeth",
    "a tail arched over the back ending in a big cluster of long spines",
-   "grey-streaked mane: an old beast"
+   "a lion's body on four legs with dusky dark red-brown fur, never candy red",
+   "the head of an old bearded human man on the lion's body: human nose, lips, hair and beard, plain in the small sprite",
+   "black hair and beard streaked with grey, a bronze brow band"
   ],
   "must_not_show": [
    "wings",
@@ -1013,7 +1060,21 @@
    "loose spines in the air",
    "golden-yellow fur",
    "blue or purple fur",
-   "patch of ground"
+   "patch of ground",
+   "bright red fur",
+   "scarlet",
+   "candy red",
+   "white beard",
+   "white mane",
+   "ring of white spikes round the head",
+   "Father Christmas",
+   "cartoon",
+   "lion's mane",
+   "lion's nose",
+   "cat's muzzle",
+   "whiskers",
+   "lion's round ears",
+   "spines shooting from the mouth"
   ]
  },
  {
@@ -1096,17 +1157,17 @@
   "family": "elder_beholder",
   "rank": 1,
   "key": "green",
-  "what": "an elder beholder: an ancient floating eyeball monster. Its whole body is one round sphere of cracked, scarred, stony hide, a ball hanging in the air, with a perfectly round outline at the sides and underneath. In the middle of the front of the sphere is exactly one enormous round eyeball with a blood-red iris and a slit pupil, as wide as half the sphere, the single eye of a cyclops, under a heavy brow ridge that carries a row of short thick pale grey horns; there is no nose and no second eye on the sphere. Directly under the big eye is a very wide mouth of long sharp ivory fangs. The only things that stick out of the sphere are on its top: a great thick crown of very many long, thick, curving stalks crowded together in two rows, each stalk ending in one small yellow eye.",
-  "colours": "charcoal-black and ash-grey cracked hide, pale grey brow horns, one huge blood-red central eye, small yellow stalk eyes, ivory fangs.",
+  "what": "an elder beholder: an ancient floating eyeball monster. Its whole body is one round sphere of cracked, scarred, stony hide, dull and rough like old lava rock, lit plainly from the front with no coloured light on it, a ball hanging in the air, with a perfectly round outline at the sides and underneath. In the middle of the front of the sphere is exactly one enormous round eyeball with a blood-red iris and a slit pupil, as wide as half the sphere, the single eye of a cyclops, under a heavy brow ridge that carries a row of short thick pale grey horns; there is no nose and no second eye on the sphere. Directly under the big eye is a very wide mouth of long sharp ivory fangs. The only things that stick out of the sphere are on its top: a crown of seven long stalks fanned out like the ribs of an open fan, with backdrop showing between them. Each stalk is as thick as a man's arm, the same charcoal hide as the sphere, and ends in one big round eyeball, bloodshot ivory-white with a dull amber iris and a black slit pupil, under a heavy grey lid.",
+  "colours": "charcoal-black and ash-grey cracked hide on the sphere and on every stalk, pale grey brow horns, one huge blood-red central eye, seven big ivory-white stalk eyes with dull amber irises, ivory fangs.",
   "wears": "It wears nothing.",
   "holds": "It is only a sphere and holds nothing.",
-  "pose": "It hangs in the air, tilted forward and turned slightly to the left, the one big red eye wide open and glaring, fanged mouth open, its many long stalks fanned out above it in a great crown, every stalk eye turned forward.",
+  "pose": "It hangs in the air, tilted forward and turned slightly to the left, the one big red eye wide open and glaring, fanged mouth open, its seven thick stalks fanned out above it in a great crown, every stalk eye turned forward.",
   "must_show": [
    "a round sphere body with a clean round outline underneath and at the sides",
    "exactly one huge central eye, red",
    "a wide mouth of long fangs under the eye",
-   "a dense crown of very many long eyestalks on top",
-   "black and ash-grey cracked hide with a horned brow: older and grimmer than a maroon, golden-eyed beholder"
+   "black and ash-grey cracked hide with a horned brow: older and grimmer than a maroon, golden-eyed beholder",
+   "a crown of thick eyestalks on top, each as thick as an arm with a big yellow eye: stalks, not hair, in the small sprite"
   ],
   "must_not_show": [
    "two eyes side by side",
@@ -1125,7 +1186,23 @@
    "tentacles hanging underneath",
    "wings",
    "magic rays",
-   "patch of ground"
+   "patch of ground",
+   "hair",
+   "grass",
+   "bristles",
+   "pins",
+   "thin wires",
+   "sea anemone",
+   "blue rim light",
+   "blue glow",
+   "blood",
+   "red drips",
+   "cartoon face",
+   "grin",
+   "bright yellow balls",
+   "lemons",
+   "row of yellow beads",
+   "second or third eye on the sphere"
   ]
  },
  {
@@ -1205,6 +1282,7 @@
    "black silhouette",
    "patch of ground",
    "pile of bones under it"
-  ]
+  ],
+  "lift": 1.4
  }
 ]

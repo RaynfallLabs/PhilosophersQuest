@@ -74,13 +74,13 @@
   "rank": 2,
   "key": "blue",
   "body": "shapeless",
-  "what": "an ochre jelly: one single thick, heavy, wet heap of dull mustard-yellow slime, a cave ooze painted with depth and weight. It is a low, wide, lumpy, sagging heap, wider than it is tall, made of three uneven lobes of different sizes slumped against each other, and from its front one thick blunt arm of the same slime, as thick as a man's leg, rears up and curls over. Its skin is wet, wrinkled and cloudy, not clean: darker brown-amber clots and streaks hang inside it, thick drips sag down its sides, and long pale wet highlights run along its folds. It eats flesh and leather but cannot eat metal: riding on top of the heap, half sunk into the slime and tilted, is one dented grey steel soldier's helmet, clean and uneaten. It is only slime and the helmet caught in it.",
-  "colours": "dull mustard-yellow and dark ochre slime with brown-amber clots and depths and pale cream wet highlights, one dented grey steel helmet half sunk in its top.",
+  "what": "an ochre jelly: one single thick, heavy, wet heap of dull dirty brown-yellow slime, the colour of old mustard gone dark, a cave ooze painted with depth and weight. It is a low, wide, lumpy, sagging heap, wider than it is tall, made of three uneven lobes of different sizes slumped against each other, and from its front one thick blunt arm of the same slime, as thick as a man's leg, rears up and curls over. Its skin is wet, wrinkled and cloudy, not clean: darker brown-amber clots and streaks hang inside it, thick drips sag down its sides, and long pale wet highlights run along its folds. It eats flesh and leather but cannot eat metal: riding on top of the heap, half sunk into the slime and tilted, is one dented grey steel soldier's helmet, clean and uneaten. It is only slime and the helmet caught in it.",
+  "colours": "dull dirty brown-yellow slime, the colour of old mustard gone dark, with dark umber-brown clots and depths and a few dull pale tan wet highlights, one dented grey steel helmet half sunk in its top.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing; one grey steel helmet is half sunk in the top of the heap.",
   "pose": "The heap pours to the left, its front bulging forward with the one thick blunt arm of slime reared up at the left and curling over to slap down, the rest slumped and dragging behind at the right, the steel helmet tilted on top.",
   "must_show": [
-   "one lumpy sagging heap of dull mustard-yellow slime, uneven lobes",
+   "one lumpy sagging heap of dull dirty brown-yellow slime, the colour of old mustard gone dark, uneven lobes",
    "one thick blunt arm of slime rearing up at the front",
    "a grey steel helmet half sunk in it",
    "wet, cloudy, clotted painted slime with depth; no face at all"
@@ -135,7 +135,13 @@
    "pudding dessert",
    "face under the helmet",
    "skull",
-   "head wearing the helmet"
+   "head wearing the helmet",
+   "bright yellow",
+   "orange",
+   "golden",
+   "honey",
+   "glassy",
+   "candy"
   ]
  },
  {
@@ -312,7 +318,8 @@
    "second sword",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "veteran_knight",
@@ -362,14 +369,14 @@
   "family": "knight",
   "rank": 4,
   "key": "blue",
-  "what": "a grave knight: a knight long dead who has climbed out of his cairn to keep an oath, a tall gaunt skeleton standing on two legs inside a suit of ancient plate armour that has rusted through. His head is a bare weathered bone skull, yellowed and earth-stained, with an open jaw and two cold pale white points of light deep in the dark eye sockets; over the skull sits an open-faced rusted helm with a broken rim. Every plate of the armour is old dark iron eaten by rust: a very dark brown, the colour of an old iron nail or a ship's anchor, nearly black in the shadows, with dull dark red-brown patches, pitted and flaking, with a few holes eaten through. He has no flesh at all. He has realistic adult proportions: a small skull, wide shoulders, long limbs, about eight heads tall.",
-  "colours": "very dark brown rusted iron plate armour, the colour of an old nail, nearly black in the shadows with dull dark red-brown patches and black pits, a yellowed earth-stained bone skull, two cold pale white eye lights, a tattered earth-grey burial shroud worn as a cloak, patches of dull olive grave moss, a greatsword with a dark grey-brown pitted iron blade.",
-  "wears": "He wears a full suit of ancient plate armour, very dark brown rusted iron on every plate: an open-faced helm with a broken rim that leaves the whole skull face showing, a breastplate, dented shoulder plates, gauntlets and greaves, all whole enough to cover his body. A long tattered earth-grey burial shroud hangs from his shoulders as a cloak, and dull olive moss grows on one shoulder plate.",
-  "holds": "He grips exactly one great two-handed sword with both gauntleted hands together on its long grip, one fist above the other: a very long, broad, heavy blade of dark grey-brown pitted iron with a notched edge and a wide cross-guard. He has no shield and holds nothing else.",
+  "what": "a grave knight: a knight long dead who has climbed out of his cairn to keep an oath, a tall gaunt skeleton standing on two legs inside a suit of ancient plate armour that has rusted through. His head is a bare weathered bone skull, chalk grey-white and earth-stained, with an open jaw and two cold pale white points of light deep in the dark eye sockets; over the skull sits an open-faced rusted helm with a broken rim. Every plate of the armour is old pitted iron, dark gunmetal-grey with worn paler grey edges, blotched with patches of very dark brown rust, flaking, with a few holes eaten through. He has no flesh at all. He has realistic adult proportions: a small skull, wide shoulders, long limbs, about eight heads tall.",
+  "colours": "pitted dark gunmetal-grey iron plate armour with patches of very dark brown rust and black pits, a chalk grey-white weathered bone skull, two cold pale white eye lights, a tattered pale ash-grey burial shroud worn as a cloak, patches of dull olive grave moss, a greatsword with a pale grey pitted iron blade.",
+  "wears": "He wears a full suit of ancient plate armour, pitted dark gunmetal-grey iron with dark rust patches on every plate: an open-faced helm with a broken rim that leaves the whole skull face showing, a breastplate, dented shoulder plates, gauntlets and greaves, all whole enough to cover his body. A long tattered pale ash-grey burial shroud hangs from his shoulders as a cloak, and dull olive moss grows on one shoulder plate.",
+  "holds": "He grips exactly one great two-handed sword with both gauntleted hands together on its long grip, one fist above the other: a very long, broad, heavy blade of pale grey pitted iron with a notched edge and a wide cross-guard. He has no shield and holds nothing else.",
   "pose": "He strides to the left on two legs with a long step, front knee bent, leaning forward; both of his arms are lifted to his right and both gauntlets grip the long sword grip together, one fist above the other, the great dark sword swung up high over his right shoulder with the blade slanting up and back behind his helm, about to chop down; his skull is thrust forward with the jaw wide open, pronouncing doom, shroud streaming back to the right.",
   "must_show": [
    "a bare skull face under an open rusted helm, readable in the small sprite",
-   "plate armour of very dark brown rusted iron on every plate, pitted, dark not orange",
+   "plate armour of pitted dark gunmetal-grey iron with dark rust patches on every plate, pitted, dark not orange",
    "one long rusted greatsword held in both hands, no shield",
    "tattered grey shroud-cloak",
    "older and more ruined than the black dread knight, with a far bigger sword"
@@ -409,17 +416,22 @@
    "hand resting on the belt",
    "sword held out in one hand",
    "leather tunic with no plate armour",
-   "bare skull with no helm"
+   "bare skull with no helm",
+   "orange armour",
+   "brown leather armour",
+   "tan cloak",
+   "golden skull",
+   "orange-brown all over"
   ]
  },
  {
   "id": "green_knight",
   "family": "knight",
   "rank": 5,
-  "key": "blue",
-  "what": "the Green Knight of Arthurian legend: a giant of a knight, enormously tall, lean-waisted, deep-chested and very wide in the shoulders, a warrior in his prime standing on two legs, and green all over. His skin is deep leaf-green on his face, neck and hands alike, as green as a leaf, with no pink and no tan anywhere. He has a proud, fierce, wild face, red eyes, and a huge bushy beard and long thick wild hair of bright grass-green that spread over his chest and shoulders like a bush. His head is bare, crowned only with a wreath of dark holly leaves with red berries. He has realistic adult proportions: a small head, very wide shoulders, long legs, about eight heads tall.",
-  "colours": "deep leaf-green skin on face and hands, bright grass-green hair and beard, a dark emerald-green breastplate, arm plates and leg plates edged with dull gold, a dark emerald-green tunic, a gold belt, a long dark green mantle, a dark holly wreath with red berries, an axe with a dark green haft and one huge pale steel blade.",
-  "wears": "He wears a warrior lord's war gear, all dark green with a little dull gold: a dark emerald-green breastplate, arm plates and leg plates edged with dull gold over a dark emerald-green tunic to his knees, a wide gold belt, and a long dark green mantle hanging from his shoulders and swept back. On his bare head sits a wreath of dark holly leaves with red berries. He wears no helmet.",
+  "key": "magenta",
+  "what": "the Green Knight of Arthurian legend: a giant of a knight, enormously tall, lean-waisted, deep-chested and very wide in the shoulders, a warrior in his prime standing on two legs, and green all over. His skin is dark pond-weed green on his face, neck and hands alike, plainly green, a green no living person has. He has a proud, fierce, wild face, pale yellow eyes, and a huge bushy beard and long thick wild hair of dark holly-green that spread over his chest and shoulders like a bush. His head is bare, crowned only with a wreath of dark holly leaves. He has realistic adult proportions: a small head, very wide shoulders, long legs, about eight heads tall.",
+  "colours": "dark pond-weed green skin on face and hands, dark holly-green hair and beard, a very dark emerald-green breastplate, arm plates and leg plates, nearly black in the shadows, edged with dull tarnished gold, a dark emerald-green tunic, a dull gold belt, a long dark forest-green mantle with a dull grey-white fur collar, a dark holly wreath, an axe with a dark brown haft and one huge pale steel blade.",
+  "wears": "He wears a warrior lord's war gear, all dark green with a little dull gold: a dark emerald-green breastplate, arm plates and leg plates edged with dull gold over a dark emerald-green tunic to his knees, a wide gold belt, and a long dark forest-green wool mantle with a broad collar of dull grey-white fur, hanging from his shoulders and swept back. On his bare head sits a wreath of dark holly leaves. He wears no helmet.",
   "holds": "He grips exactly one enormous woodsman's axe with both fists close together on its haft, swinging it: a long thick dark green haft, and at its top one huge pale steel blade on one side only, shaped like a broad crescent as long as his forearm; the other side of the haft is bare wood. He holds nothing else.",
   "pose": "He strides to the left on two legs with a long step, front knee bent, his body twisted, both arms lifted to his right with both fists on the haft and the great axe swung back high over his right shoulder, its single blade behind and above his head, about to chop down, green beard and hair flying, mouth open in a roar of laughter, mantle streaming back to the right.",
   "must_show": [
@@ -461,7 +473,19 @@
    "one hand on his hip",
    "black beard",
    "sword behind his back",
-   "short fat body"
+   "short fat body",
+   "bright lime green",
+   "glowing green",
+   "neon green",
+   "glossy plastic armour",
+   "the Hulk",
+   "green all one flat colour",
+   "tan skin",
+   "pink skin",
+   "living human skin",
+   "brown beard",
+   "brown hair",
+   "ordinary bearded man"
   ]
  },
  {
@@ -505,7 +529,8 @@
    "grass",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "kobold_dragonshield",
@@ -552,7 +577,7 @@
   "rank": 2,
   "key": "blue",
   "what": "a kobold pack leader: the oldest survivor of the warren, a small, lean, wiry reptilian creature like a little upright lizard standing on two legs, with a long snout, sharp clever yellow eyes, and a thin tail. He is old and scarred: one of his two backswept horns is broken off short, three pale claw scars cross his snout, and the scales of his muzzle have faded to grey.",
-  "colours": "dull rust-orange and tan scales faded to grey on the muzzle, a pale belly, a ragged dark red dragon-hide cloak, dark brown leather harness, a bright brass whistle on a brown thong, an axe with a brown wooden handle and a big pale ivory tooth for a blade.",
+  "colours": "dull dark red-brown scales, the colour of an old brick in shadow, faded to grey on the muzzle, a pale grey-tan belly, a ragged dark red dragon-hide cloak, dark brown leather harness, a bright brass whistle on a brown thong, an axe with a brown wooden handle and a big pale ivory tooth for a blade.",
   "wears": "He wears a leader's ragged cloak of dark red dragon hide over his shoulders, pinned with a bone pin, a dark brown leather harness across his chest hung with a few small ivory teeth, and round his neck a leather thong.",
   "holds": "In his right hand he holds exactly one hand axe: a short thick brown wooden handle with one huge curved pale ivory dragon tooth, as long as his forearm, lashed across its top as the blade. In his left hand he holds exactly one short thick bright brass whistle, shaped like a little tube, lifted to the tip of his snout and blown, its thong looped round his neck.",
   "pose": "He stands on two legs turned to the left, feet apart, his left hand lifted holding the brass whistle to the end of his snout, blowing it, cheeks puffed, his right arm raised with the tooth axe held high and pointing forward to send the pack in, cloak swinging, tail up.",
@@ -584,7 +609,11 @@
    "big muscular body",
    "second axe",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "bright orange scales",
+   "yellow scales",
+   "golden skin",
+   "orange skin"
   ]
  },
  {
@@ -592,18 +621,18 @@
   "family": "legend",
   "rank": 1,
   "key": "green",
-  "what": "the Cow King: the war-king of the hell cattle, a massive, heavy, grim beast-warrior standing upright on two legs. He has the head of a real bull, painted as a real animal: a broad heavy muzzle with wide nostrils, small fierce dark red eyes under a heavy brow, drooping ears, and two long forward-curving horns covered in bright gold. His whole body is covered in short cattle hide in big bold patches of black and white, like a dairy bull: the head, thick neck, deep chest, belly, thick arms and legs alike. His legs are an upright bull's hind legs ending in two big black cloven hooves. His hands are thick three-fingered fists. He is a painted, weathered, fearsome war-beast with a small head for his enormous shoulders.",
-  "colours": "short cattle hide in big black and white patches on every part, a pink-grey muzzle, dark red eyes, two bright gold horns, a tall gold crown, a long faded dusty-purple cape with a worn ermine-white collar, a wide dark brown leather war belt with a gold buckle, black hooves, a halberd with a dark wooden shaft and a bright steel head.",
-  "wears": "He wears a tall heavy gold crown with square points set between his gold horns, a long faded dusty-purple royal cape with a worn white fur collar hanging from his shoulders to his hooves, and a wide dark brown leather war belt with a big gold buckle and a hanging leather war skirt to his knees. His chest and arms are covered in his own black and white hide.",
+  "what": "the Cow King: the war-king of the hell cattle, a huge, grim, fearsome bull-headed warrior king standing upright on two legs, painted as seriously as a minotaur lord, never comic. He has the head of a real fighting bull: a broad heavy scarred muzzle with wide flaring nostrils and a thick iron ring through the nose, small fierce glowing red eyes under a heavy brow, and two long thick forward-curving horns banded with tarnished gold. His head, thick neck, arms and legs are covered in short coarse piebald cattle hide like a black and white bull's: black, with big ragged pure white patches: a broad white blaze down the middle of his black face, one white forearm, and white patches on both thighs. There is no bare skin anywhere on him, and his chest and belly are covered by armour. His legs are an upright bull's hind legs ending in two big black cloven hooves. His hands are thick dark fists. He has a small head for his enormous shoulders.",
+  "colours": "short coarse piebald cattle hide, black with big pure white patches, a white blaze on the black face, a dark grey muzzle with an iron nose ring, glowing red eyes, two pale horn-grey horns banded with tarnished gold, a heavy tarnished dark gold crown, a long ragged dark wine-purple cape with a dull grey-white fur collar, a coat of blackened iron scales and blackened iron shoulder plates, a wide dark brown leather war belt with a tarnished gold buckle, black hooves, a halberd with a dark wooden shaft and a pale steel head.",
+  "wears": "He wears a heavy tarnished dark gold crown with tall square points set between his horns, two blackened iron shoulder plates with dull gold edges, a long ragged dark wine-purple royal cape with a dull grey-white fur collar hanging from his shoulders to his hooves, and a wide dark brown leather war belt with a big tarnished gold buckle and a hanging war skirt of dark leather strips to his knees. Over his whole chest and belly, from the throat to the belt, he wears a coat of blackened iron scales. His arms and legs show his own black and white hide.",
   "holds": "He grips exactly one royal halberd in both fists, both hands on its shaft: a thick dark wooden shaft taller than himself, and at its top a bright steel head with one broad axe blade on one side, a hooked spike on the other side and a long spear point on top. He holds nothing else.",
-  "pose": "He stands upright on his two hoofed legs with hooves planted wide, turned a little to the left, body leaning forward, the halberd held slantwise across his body in both fists with its steel head high at the upper left, about to chop down, head lowered so the gold horns point forward, nostrils flared, bellowing.",
+  "pose": "On his two hoofed legs, seen a little from the side, he stamps forward to the left with a long step, his front knee bent and his body pitched forward, the halberd gripped in both fists and swung back over his right shoulder with its steel head high at the upper right, about to chop down, his head lowered so the horns point forward, nostrils flared, bellowing, his cape flying out behind him to the right.",
   "must_show": [
    "an upright bull-headed beast-warrior on two hoofed legs",
-   "black and white patched cattle hide all over",
-   "gold horns and a gold crown",
-   "faded purple royal cape",
    "one halberd (axe blade, hook and spear point on a long shaft) held in both hands",
-   "grim and kingly, not a joke"
+   "grim and kingly, not a joke",
+   "cattle hide, mostly black with a few big white patches",
+   "gold-banded horns, a nose ring and a heavy tarnished gold crown",
+   "ragged dark purple royal cape"
   ],
   "must_not_show": [
    "cow on four legs",
@@ -627,7 +656,21 @@
    "grass under the hooves",
    "second weapon",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "comic cow",
+   "cute face",
+   "big round eyes",
+   "smile",
+   "tongue hanging out",
+   "bright violet cape",
+   "milk cow",
+   "toy",
+   "bare muscular chest",
+   "bare belly",
+   "blue-grey skin",
+   "grey skin",
+   "hairless skin",
+   "bodybuilder"
   ]
  },
  {
@@ -635,8 +678,8 @@
   "family": "legend",
   "rank": 2,
   "key": "blue",
-  "what": "Surtur, lord of the fire giants of Norse myth, who will burn the world at Ragnarok: a colossal, enormously broad, mountain-chested giant standing on two legs. His skin is black cooled lava rock on his face, chest, arms and legs alike, and it is split all over by a net of deep cracks that glow molten yellow-orange from the fire inside him. His hair and his long beard are real fire: tall bright flames standing up from his scalp and streaming down from his jaw. His eyes are two white-hot points. From his brow rise two great thick black horns that curve up and outward. He has realistic adult proportions: a small head, enormously wide shoulders, thick limbs, about seven heads tall.",
-  "colours": "black lava-rock skin split by glowing molten yellow-orange cracks on every part, hair and beard of bright orange and yellow flame, white-hot eyes, two great black horns, black iron shoulder plates and a black iron belt with dull gold edges, a ragged charred-black kilt of iron scales, a sword with a blade of blinding white-yellow fire.",
+  "what": "Surtur, lord of the fire giants of Norse myth, who will burn the world at Ragnarok: a colossal, enormously broad, mountain-chested giant standing on two legs. His whole body is made of black cooled lava rock, coal-black and rough like clinker, on his face, chest, arms and legs alike; it is rock and not skin, and it is split all over by a net of broad deep cracks that glow molten yellow-orange from the fire inside him. His hair and his long beard are real fire: tall bright flames standing up from his scalp and streaming down from his jaw. His eyes are two white-hot points. From his brow rise two great thick black horns that curve up and outward. He has realistic adult proportions: a small head, enormously wide shoulders, thick limbs, about seven heads tall.",
+  "colours": "coal-black lava rock on every part of the body, split by broad glowing molten yellow-orange cracks, hair and beard of bright orange and yellow flame, white-hot eyes, two great black horns, black iron shoulder plates and a black iron belt with dull gold edges, a ragged charred-black kilt of iron scales, a sword with a blade of blinding white-yellow fire.",
   "wears": "He wears little, for his own burning rock is his armour: two great jagged black iron shoulder plates edged with dull gold, a wide black iron belt with a plain round dull gold buckle, a ragged kilt of charred black iron scales to his knees, and black iron bracers. His chest is bare black cracked rock. His head is bare but for his own two horns and his hair of flame.",
   "holds": "He grips exactly one colossal straight sword in both hands, both fists on its long black hilt: a very broad, very long blade made of blinding white-yellow fire from the cross-guard to the tip, brighter than everything else in the picture, with short flames along both edges. He holds nothing else.",
   "pose": "He stands on two legs with his feet planted wide, turned a little to the left, the great burning sword held upright in both fists before his right shoulder with its point high above his head, about to sweep down, his horned head lowered and glaring, flame beard streaming to the right.",
@@ -668,7 +711,12 @@
    "rocks under his feet",
    "second sword",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "brown skin",
+   "tan skin",
+   "living human skin",
+   "brown bodybuilder",
+   "red skin"
   ]
  },
  {
@@ -676,11 +724,11 @@
   "family": "legend",
   "rank": 3,
   "key": "blue",
-  "what": "Tiamat, the five-headed queen of dragons: one enormous, heavy, ancient dragon that walks on all four legs like a huge lizard, with one massive body and five long thick necks growing side by side from its one pair of shoulders. The five necks spread apart like the five fingers of an open hand, and each ends in one horned dragon's head with open jaws; each head is a different colour. From top to bottom the five heads are: a bone-white head, a bright red head, a golden-yellow head, a dark green head and a coal-black head. Each head wears a crown of long backswept horns. The body has a deep chest, four thick clawed legs, a long heavy spiked tail, and two great dark bat-like wings.",
-  "colours": "a body of dark crimson-brown scales with a pale bone-yellow plated belly; five heads and necks coloured bone-white, bright red, golden-yellow, dark green and coal-black; pale ivory horns and claws; glowing yellow eyes; dark crimson-brown wings with black membranes.",
+  "what": "Tiamat, the five-headed queen of dragons: one enormous, heavy, ancient dragon that walks on all four legs like a huge lizard, with one massive body and five long thick necks growing side by side from its one pair of shoulders. The five necks are long, each as thick as one of its legs, and they spread wide apart like the ribs of an open fan, with clear backdrop showing between every two necks; each ends in one large horned dragon's head, as long as its forefoot, with open jaws, and each whole neck and head together is one single colour from shoulder to snout. From top to bottom the five heads are: a bone-white head, a dark red head, a dull brass-yellow head, a dark green head and a coal-black head. Each head wears a crown of long backswept horns. The body has a deep chest, four thick clawed legs, a long heavy spiked tail, and two great dark bat-like wings.",
+  "colours": "a body of dark crimson-brown scales with a pale bone-yellow plated belly; five heads and necks coloured bone-white, dark red, dull brass-yellow, dark green and coal-black; pale ivory horns and claws; glowing yellow eyes; dark crimson-brown wings with black membranes.",
   "wears": "It is a beast and wears nothing; the crowns are horns growing from each skull.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left: it stands with all four of its feet planted on the ground and its body horizontal, the two wings raised straight up above its back; the five necks fan out to the left from the shoulders, the white head highest, then the red, the yellow, the green, and the black head lowest near the ground, all five heads facing left with jaws open, roaring; the spiked tail curls up at the right.",
+  "pose": "Seen from the side, facing left: it stands with all four of its feet planted on the ground and its body horizontal, the two wings raised straight up above its back; the five necks fan out from the shoulders across the whole left half of the picture, far apart: the white head points straight up, the red head up and to the left, the yellow head straight to the left, the green head down and to the left, and the black head lowest, near the ground; every head is separate, with backdrop round it, jaws open, roaring; the spiked tail curls up at the right.",
   "must_show": [
    "one dragon body on four legs, seen from the side, body horizontal",
    "five necks fanned out like fingers, each with a dragon head",
@@ -705,7 +753,11 @@
    "gold coins under it",
    "rock under it",
    "sea",
-   "glowing aura"
+   "glowing aura",
+   "rainbow stripes",
+   "striped mane",
+   "necks pressed together in one bundle",
+   "one head with a striped crest"
   ]
  },
  {
@@ -755,7 +807,8 @@
    "walking stick",
    "thin pole",
    "standing still facing the viewer with arms down"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "leprechaun",
@@ -835,7 +888,8 @@
    "brown top hat",
    "olive hat",
    "black top hat"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "basilisk_lesser",
@@ -1015,7 +1069,8 @@
    "second sword",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "lesser_death",
@@ -1101,8 +1156,8 @@
   "family": "lesser_b",
   "rank": 1,
   "key": "blue",
-  "what": "a lesser sphinx: a young guardian sphinx of the Egyptian kind, a living monster on four legs: the head of a human man on the body of a lean big cat. Its head is a real human head, as large as the cat's whole chest: the lean, sharp, clean-shaven, impatient face of a young Egyptian man with smooth bronze-brown human skin, a straight human nose, thin human lips, a firm human chin, human ears, and two dark human eyes lined with black under straight black brows. The head wears a plain headcloth of undyed cream linen that covers the hair and hangs in two plain flaps down to the chest. Below the chin the human neck joins the furred shoulders, and from there back it is all animal: a narrow chest, long legs, paws with claws, and a long tail with a dark tuft, covered in short dull sandy-tan fur.",
-  "colours": "short dull sandy-tan lion's fur on the body with a cream belly, a dark brown tail tuft, a bronze-brown human face, a plain cream linen headcloth with one thin dark brown band at the brow, dark eyes.",
+  "what": "a lesser sphinx: a young guardian sphinx of the Egyptian kind, a living monster on four legs: the head of a human man on the body of a lean big cat. Its head is a real human head, of natural size for the body, no bigger than a lion's own head would be: the lean, sharp, clean-shaven, impatient face of a young Egyptian man with smooth brown human skin, a straight human nose, thin human lips, a firm human chin, human ears, and two dark human eyes lined with black under straight black brows. The head wears a plain headcloth of undyed cream linen that covers the hair and hangs in two plain flaps down to the chest. Below the chin the human neck joins the furred shoulders, and from there back it is all animal: a narrow chest, long legs, paws with claws, and a long tail with a dark tuft, covered in short pale dusty sand-grey fur, the colour of desert dust.",
+  "colours": "short pale dusty sand-grey lion's fur on the body with a cream belly, a dark brown tail tuft, a bronze-brown human face, a plain cream linen headcloth with one thin dark brown band at the brow, dark eyes.",
   "wears": "It wears only a plain cream linen headcloth with one thin dark brown band at the brow. It wears nothing else: no collar, no gold, no beard.",
   "holds": "It is a beast on four legs and holds nothing.",
   "pose": "Seen from the side, its body facing left, it crouches low on four legs like a cat about to pounce, hindquarters raised, chest low, one front paw lifted off the ground with the claws out, tail curled up behind; its man's head is turned to face the viewer so the whole human face shows, one brow raised, the human mouth open, speaking its riddle sharply.",
@@ -1143,7 +1198,11 @@
    "furred face",
    "round cat ears",
    "animal snout",
-   "beard"
+   "beard",
+   "orange fur",
+   "bright orange",
+   "golden fur",
+   "giant head"
   ]
  },
  {
@@ -1203,7 +1262,8 @@
    "pedestal",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "aboleth_lesser",
@@ -1262,7 +1322,7 @@
   "rank": 4,
   "key": "magenta",
   "what": "a lesser behir: a young behir, a very long snake-bodied reptile that runs on twelve short legs and climbs a cliff as easily as it crosses a floor. It is painted as if the viewer is looking straight down on its back while it runs. Its body is one very long thick serpent's body, eight times as long as it is wide, the same thickness nearly all the way along, bent in a big S-curve that fills the picture. Down each edge of the long body runs a row of six short, thick, scaly legs, twelve in all, sticking out sideways and bent at the elbow, each ending in a broad foot with black claws, with a stretch of scaled body between every two legs: legs all the way from the neck to where the tail begins. At the top left the body ends in a long narrow flat head with a mouth full of teeth, seen from above, with a smooth hornless skull. At the other end it tapers into a long thin tail. One ridge of broad dark plates runs down the middle of its back from head to tail.",
-  "colours": "deep sapphire-blue scales on the body and legs, one ridge of dark navy-black plates down the middle of the back, paler grey-blue on the feet, black claws, yellow eyes, one short bright yellow zigzag spark of lightning at the jaws.",
+  "colours": "dark steel-blue scales, the dull blue of a storm cloud, on the body and legs, one ridge of dark navy-black plates down the middle of the back, paler grey-blue on the feet, black claws, yellow eyes, one short bright yellow zigzag spark of lightning at the jaws.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is a beast on many legs and holds nothing.",
   "pose": "Seen from straight above, looking down on its back: its very long body lies in one big S-curve from the top left of the picture to the bottom right, wholly inside the picture, with nothing beneath it; six short legs stick out from each edge of the body all along its length, some reaching forward and some pushing back as it runs; the head is at the top left with the jaws open and one short thick bright yellow zigzag spark of lightning shooting straight out of its mouth, joined to the mouth and no longer than its head; the thin tail curls at the bottom right.",
@@ -1302,7 +1362,11 @@
    "storm cloud",
    "glowing aura",
    "fire breath",
-   "orange flame"
+   "orange flame",
+   "bright royal blue",
+   "glossy",
+   "toy lizard",
+   "candy blue"
   ]
  },
  {

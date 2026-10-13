@@ -143,19 +143,18 @@
   "id": "gibbering_mouther",
   "family": "ooze",
   "rank": 3,
-  "key": "blue",
+  "key": "magenta",
   "body": "shapeless",
-  "what": "a gibbering mouther: a heap of soft dead-looking flesh that pours across the floor, covered in eyes and mouths that open wherever they please, painted with depth, weight and grime, dreadful and never cute. It is one tall, heavy, lumpy mound of loose grey hide, bigger and bulkier than a slime, wrinkled and sagging, corpse-grey with dull mauve blotches and dark grey-brown shadows in its creases, never living tan. It is not a head and has no face. Set in its surface, scattered at random and pointing different ways, are five big eyeballs and five big mouths, mixed up together: one eye at the very top staring upward, a mouth beside it gaping at the sky, an eye and a mouth side by side in the middle, a mouth high on the right side, two eyes low on the right, an eye near the bottom edge, and low down at the front two thick blunt lobes of the same grey flesh bulge forward to the left, each lobe ending in one more big snapping mouth. Each eyeball is as wide as a sixth of the mound, bulging, bloodshot, with a dull sickly yellow iris and a narrow black slit of a pupil. Each mouth is as wide as a quarter of the mound, a ragged lipless gash stretched open, ringed with long, sharp, uneven grey-ivory fangs round a pitch-black inside.",
-  "colours": "corpse-grey loose wrinkled hide with dull mauve bruises and dark grey-brown creases; dull sickly yellow eyes with black slit pupils under grey lids; long grey-ivory fangs; pitch-black mouth insides.",
+  "what": "a gibbering mouther: a heap of soft dead-looking flesh that pours across the floor, covered in eyes and mouths that open wherever they please, painted with depth, weight and grime, dreadful and never cute. It is one single smooth-topped mound of loose grey hide, like a great heap of wet dough gone grey, wider than it is tall, sagging and wrinkled, with one unbroken rounded outline and no lumps or knobs sticking out of it. It is not a head, it is not a pile of heads, and it has no face anywhere. Opening straight out of its flat surface, each one alone, are three huge mouths and four huge eyeballs, and no mouth has eyes above it. One mouth lies across the very top of the mound, gaping straight up at the sky. One mouth is a tall upright gash down the left side, open sideways. One mouth is a wide gash low on the right side, hanging open. Each mouth is as wide as a third of the mound: a ragged lipless hole ringed with long, thick, sharp, uneven ivory fangs, each fang as long as an eyeball is wide, round a pitch-black inside. Between the mouths, far apart from one another, sit the four eyeballs, each one alone and each staring a different way: one in the very middle of the mound, one near the upper right edge, one near the lower left edge and one at the bottom in the middle. Each eyeball is as wide as a quarter of the mound, as big as the mouths are wide, round, bulging and bloodshot, with a dull sickly yellow iris and a narrow black slit of a pupil, sunk in a wrinkled pit of grey hide. The mound ends below in one clean rounded edge tucked under itself, with nothing spreading out sideways from it. The whole mound is wholly inside the picture, with clear backdrop above it, below it and on both sides.",
+  "colours": "corpse-grey loose wrinkled hide, the cold mid-grey of a drowned man, with dark grey-brown blotches and deep dark creases, on every part; four big dull sickly yellow eyeballs with black slit pupils; long ivory fangs; pitch-black mouth insides.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "It surges and slumps to the left, its mass heaped high at the back and sagging forward, the two blunt lobes of flesh pushing ahead low on the left with their mouths snapping, every eye staring a different way. It is one compact mass with a clean lower edge.",
+  "pose": "It slumps and pours to the left, its mass heaped high at the back and sagging forward in one low rounded lip at the left, its three mouths gaping in three different directions, each of its four eyes staring a different way. It is one compact mass with a clean lower edge.",
   "must_show": [
-   "a tall mound of corpse-grey wrinkled hide: dead flesh, not bread and not jelly",
-   "five big eyes AND five big fanged mouths scattered all over it, top to bottom, pointing different ways",
-   "never one big face, never a head",
+   "one single shapeless mound of corpse-grey wrinkled hide with a smooth unbroken outline: dead flesh, not bread and not jelly",
+   "three huge fanged mouths and four huge eyeballs, each alone, scattered and pointing different ways",
+   "never a face and never a heap of heads: no mouth with a pair of eyes above it, no snouts or muzzles sticking out",
    "eyes and fangs readable in the small sprite",
-   "two blunt lobes of flesh pushing forward with biting mouths",
    "bulkier and more dreadful than the pale gibbering slime"
   ],
   "must_not_show": [
@@ -213,25 +212,42 @@
    "elephant",
    "dozens of tiny eyes",
    "small dots",
-   "pores"
+   "pores",
+   "pile of heads",
+   "heap of animal heads",
+   "dog heads",
+   "wolf heads",
+   "snouts",
+   "muzzles",
+   "jaws sticking out",
+   "pair of eyes above a mouth",
+   "faces",
+   "brow ridges",
+   "pink flesh",
+   "flesh-coloured skin",
+   "skirt of slime spreading on the ground",
+   "flat base running off the picture",
+   "pale white ghost",
+   "bed sheet",
+   "small dot eyes"
   ]
  },
  {
   "id": "gnoll",
   "family": "gnoll",
   "rank": 1,
-  "key": "blue",
-  "what": "a gnoll: a lean, rangy, hunched man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with big yellowed teeth, small round ears and a short stiff crest of dark hair down the back of the neck. Its whole body is furred: chest, belly, arms and legs are covered in short coarse sandy fur with dark brown spots. It has sloping shoulders, long arms, and clawed feet. It has realistic adult proportions: a small head, long limbs.",
-  "colours": "sandy-tan fur with dark brown spots over the whole body, a black muzzle and black lower legs, a dark brown neck crest, yellow eyes, yellowed teeth, a dirty brown hide loincloth, a spear with a plain wooden shaft and a grey flint head.",
-  "wears": "It wears only a ragged brown hide loincloth tied with a strip of hide. It has no armour, no helmet, no paint and no trophies.",
+  "key": "green",
+  "what": "a gnoll: a lean, rangy, hunched man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with big yellowed teeth, small round ears and a short stiff crest of dark hair down the back of the neck. Its whole body is furred: chest, belly, arms and legs are covered in short coarse dull grey-buff fur, the pale dusty colour of dry grass, with dark brown spots. It has sloping shoulders, long arms, and clawed feet. It has realistic adult proportions: a small head, long limbs.",
+  "colours": "dull grey-buff fur, the pale dusty colour of dry grass, with large dark brown spots, over the whole body; a black muzzle and black lower legs; a dark brown neck crest; yellow eyes; yellowed teeth; a ragged tunic of dark mud-brown hide, the colour of wet peat; a spear with a plain dark wooden shaft and a grey flint head.",
+  "wears": "It wears one ragged sleeveless tunic of dark mud-brown hide that covers its chest and belly and hangs to its thighs, tied at the waist with a strip of hide. Its furred arms and legs are bare. It has no armour, no helmet, no paint and no trophies.",
   "holds": "It holds exactly one spear in both hands: a thick plain wooden shaft as tall as itself with a big broad leaf-shaped grey flint head. Both hands grip the shaft and it holds nothing else.",
   "pose": "It lopes to the left on two legs, leaning forward with knees bent, both hands thrusting the spear forward and low so the big spearhead is clear on the left, its jaws wide open in a cackle.",
   "must_show": [
    "a spotted hyena's head on a furred man-shaped body, on two legs",
-   "sandy fur with dark spots on chest, arms and legs",
    "one spear held in both hands",
-   "hide loincloth only, no armour",
-   "the plainest gnoll"
+   "the plainest gnoll",
+   "dusty grey-buff fur with dark spots on arms and legs, not yellow and not orange",
+   "one ragged dark hide tunic over the chest, no armour"
   ],
   "must_not_show": [
    "bare human chest",
@@ -253,16 +269,20 @@
    "four-legged animal",
    "second weapon",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "bright yellow fur",
+   "orange fur",
+   "golden fur",
+   "bodybuilder muscles"
   ]
  },
  {
   "id": "gnoll_fang_of_yeenoghu",
   "family": "gnoll",
   "rank": 2,
-  "key": "blue",
-  "what": "a gnoll fang of Yeenoghu, a sworn fanatic of the gnoll packs: a tall, rangy, long-limbed, upright man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with long yellowed fangs, small round ears and a tall stiff crest of hair down the back of the neck, the crest dyed bright red. One broad band of bright red paint, as wide as two fingers, runs straight across its forehead from ear to ear above the eyes. Its whole body is furred: head, arms, belly and legs are covered in short coarse sandy fur with dark brown spots. It stands taller and straighter than a plain gnoll, with long legs, long arms and a lean waist. It has realistic adult proportions: a small head, long limbs, about eight heads tall.",
-  "colours": "sandy-tan fur with dark brown spots over the whole body, a black muzzle and black lower legs, one bright red band of paint across the forehead and a bright red neck crest, yellow eyes, yellowed fangs, a sleeveless coat of dark brown boiled leather with dull iron studs, a dark red hide kilt, a flail with a dark wooden handle, a black iron chain and a black iron spiked ball.",
+  "key": "green",
+  "what": "a gnoll fang of Yeenoghu, a sworn fanatic of the gnoll packs: a tall, rangy, long-limbed, upright man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with long yellowed fangs, small round ears and a tall stiff crest of hair down the back of the neck, the crest dyed bright red. One broad band of bright red paint, as wide as two fingers, runs straight across its forehead from ear to ear above the eyes. Its whole body is furred: head, arms, belly and legs are covered in short coarse dull grey-buff fur, the pale dusty colour of dry grass, with dark brown spots. It stands taller and straighter than a plain gnoll, with long legs, long arms and a lean waist. It has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "colours": "dull grey-buff fur, the pale dusty colour of dry grass, with large dark brown spots, over the whole body, a black muzzle and black lower legs, one bright red band of paint across the forehead and a bright red neck crest, yellow eyes, yellowed fangs, a sleeveless coat of dark brown boiled leather with dull iron studs, a dark red hide kilt, a flail with a dark wooden handle, a black iron chain and a black iron spiked ball.",
   "wears": "It wears a sleeveless coat of thick dark brown boiled leather set with rows of dull iron studs, which covers its chest and belly from the collar to the belt, a wide black belt, and a dark red hide kilt to the knees. Its furred arms are bare. It has no helmet, no metal plate and no necklace.",
   "holds": "It holds exactly one flail in its right hand, gripped low beside its right hip: a short thick dark wooden handle as long as its forearm; from the top end of the handle hangs a short thick black chain of three big oval links, and on the chain one black iron ball as big as its fist, covered in short blunt spikes. The chain and ball hang straight down in front of its red kilt and its right thigh, lying against its body, the ball overlapping the kilt. Its left hand is empty: a clawed furred hand reaching out ahead.",
   "pose": "It strides to the left on two long legs, upright, with its weight on its front foot and its back leg stretched behind, its head thrust forward with the jaws wide open snarling, its empty clawed left hand reaching out ahead, its right hand gripping the flail handle low at its hip with the chain and spiked ball hanging down against its kilt.",
@@ -271,7 +291,8 @@
    "a bright red band across the brow and a red crest, readable in the small sprite",
    "a studded dark leather coat covering the chest, and a dark red kilt",
    "one flail: handle, short chain and spiked ball, the ball joined to the figure",
-   "empty left hand"
+   "empty left hand",
+   "dusty grey-buff spotted fur like its kin, not yellow"
   ],
   "must_not_show": [
    "bare chest",
@@ -306,17 +327,20 @@
    "two balls",
    "second flail",
    "long tail",
-   "bare human skin"
+   "bare human skin",
+   "bright yellow fur",
+   "orange fur",
+   "golden fur"
   ]
  },
  {
   "id": "gnoll_alpha_of_yeenoghu",
   "family": "gnoll",
   "rank": 3,
-  "key": "blue",
-  "what": "a gnoll alpha of Yeenoghu: the pack lord of the gnolls, the tallest and heaviest gnoll, a long-limbed, deep-chested, stooping man-shaped creature with the head of a huge real spotted hyena: a long broad scarred black muzzle, enormous jaws with long fangs, small round torn ears, eyes that glow ember red, and a great shaggy black mane standing up from its skull and running down its neck and back. Its whole body is furred like a hyena's: its chest, belly, arms and legs are covered in coarse dull tawny-brown fur marked all over with big black spots, darker than a plain gnoll's. Its arms are very long and thick. It has a small head for its body, very wide shoulders and long legs.",
-  "colours": "dull tawny-brown fur with big black spots over the whole body, a shaggy black mane, a black muzzle and black lower legs, ember-red eyes, a great axe made of one pale ivory thighbone with dark iron bands and a dark iron blade, a heavy rusted iron collar and iron wrist cuffs with short broken chains, a necklace of big ivory fangs, a black hide kilt.",
-  "wears": "It wears a heavy rusted iron collar round its neck and a rusted iron cuff on each wrist, each cuff with two or three broken links of chain hanging from it; a necklace of big ivory fangs across its chest; a mantle of black hide over its humped shoulders; and a black hide kilt with a wide belt hung with two small skulls.",
+  "key": "green",
+  "what": "a gnoll alpha of Yeenoghu: the pack lord of the gnolls, the tallest and heaviest gnoll, a long-limbed, deep-chested, stooping man-shaped creature with the head of a huge real spotted hyena: a long broad scarred black muzzle, enormous jaws with long fangs, small round torn ears, eyes that glow ember red, and a great shaggy black mane standing up from its skull and running down its neck and back. Its whole body is furred like a hyena's: its chest, belly, arms and legs are covered in coarse dark grey-brown fur, the colour of dry bark, marked all over with big black spots, darker than a plain gnoll's. Its arms are very long and thick. It has a small head for its body, very wide shoulders and long legs.",
+  "colours": "dark grey-brown fur, the colour of dry bark, with big black spots over the whole body, a shaggy black mane, a black muzzle and black lower legs, ember-red eyes, a great axe made of one pale ivory thighbone with dark iron bands and a dark iron blade, a heavy rusted iron collar and iron wrist cuffs with short broken chains, a necklace of big ivory fangs, a sleeveless coat and kilt of black hide.",
+  "wears": "It wears a heavy rusted iron collar round its neck and a rusted iron cuff on each wrist, each cuff with two or three broken links of chain hanging from it; a sleeveless coat of thick black hide that covers its chest and belly from the collar to the belt; a necklace of big ivory fangs lying across the black coat; a mantle of black hide over its humped shoulders; and a black hide kilt with a wide belt hung with two small skulls.",
   "holds": "It holds exactly one great axe in both hands: its shaft is one enormous pale ivory thighbone, thicker than its arm and as long as its body, with a big knobbed joint at each end, and bound to the top end with three dark iron bands is one huge broad rough dark iron axe blade. Both hands grip the bone shaft and it holds nothing else.",
   "pose": "It lopes to the left on two long bent legs, stooping forward with its head low and thrust out ahead, both long arms hauling the bone axe up over its right shoulder for a downward chop, the iron blade high and clear above its back, jaws wide open howling.",
   "must_show": [
@@ -324,7 +348,8 @@
    "the biggest of the three, with a shaggy black mane and red eyes",
    "one great axe with a thighbone shaft and iron blade, in both hands",
    "iron collar and wrist cuffs with broken chain links",
-   "fang necklace and skull trophies: the most adorned gnoll"
+   "fang necklace and skull trophies: the most adorned gnoll",
+   "dark grey-brown spotted fur, not orange, and a black hide coat over the chest"
   ],
   "must_not_show": [
    "bare human chest",
@@ -356,7 +381,13 @@
    "hairless chest",
    "bodybuilder body",
    "black fur all over",
-   "squat body"
+   "squat body",
+   "orange fur",
+   "bright tan fur",
+   "golden fur",
+   "bare chest",
+   "bare muscled belly",
+   "bodybuilder muscles"
   ]
  },
  {
@@ -522,25 +553,26 @@
    "toy soldier",
    "nutcracker",
    "painted colours"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "clay_golem",
   "family": "golem_a",
   "rank": 2,
   "key": "blue",
-  "what": "a clay golem: the Golem of Prague, a huge crude figure that a potter built by hand from river mud, come to life. Every part of it is the same clay and nothing else: it is a clay figure roughly in the shape of a hulking man wrapped in a long heavy apron, and it shows no muscles, no skin, no cloth and no bone anywhere. It is twice as broad as a man, hunched and neckless. From its shoulders to its shins it is one thick heavy bell-shaped slab of clay, smeared roughly flat by hand, with no buttons, no collar and no seams, only the potter's long finger-drag grooves running down it, big thumb dents, and one thick rope of twisted clay round the middle. All over the slab, the arms and the head runs a bold web of wide dry cracks, pale against the dark clay, like the cracks in the bed of a dried-up pond, so the whole figure is plainly dried mud. Its head is small for its body, a rough round clay lump sunk between the great round shoulders, hairless and earless, lumpy and lopsided, with a face only roughed in by a thumb: a thick overhanging brow ridge, two dark round pebbles pressed into the clay for eyes, a flat pressed lump for a nose and one grim straight gouged line for a mouth. Its arms are enormous, thicker than its legs and reaching to its knees: plain thick rolls of clay with no shapes on them, swelling into great lumpen clay fists like mittens. Below the slab stand two short thick clay pillars on broad flat pads. Flakes of pale dry crust peel from its shoulders and fists.",
-  "colours": "dark mud-brown clay, the colour of wet peat, on every part, head, apron slab, arms and feet alike, nearly black-brown in the grooves, with a bold web of wide pale grey-tan dry cracks all over it and pale dusty grey-tan crust flaking on the shoulders, head and fists; two dark pebble eyes.",
-  "wears": "It wears nothing: the apron shape and the rope round its middle are modelled in the same dark clay as the rest of it.",
+  "what": "a clay golem: the Golem of Prague, a huge crude figure that a potter built by hand from river mud, come to life. Every part of it is the same clay and nothing else: it is a clay figure roughly in the shape of a hulking man wrapped in a long heavy apron, and it shows no muscles, no skin, no cloth and no bone anywhere. It is twice as broad as a man, hunched and neckless. From its shoulders to its shins it is one thick heavy bell-shaped slab of clay, smeared roughly flat by hand, with no buttons, no collar and no seams, only the potter's long finger-drag grooves running down it, big thumb dents, and one thick rope of twisted clay round the middle. All over the slab, the arms and the head runs a bold web of wide deep cracks, black against the pale clay, like the cracks in the bed of a dried-up pond, splitting the surface into big curling plates, so the whole figure is plainly dried mud. Its head is small for its body, a rough round clay lump sunk between the great round shoulders, hairless and earless, lumpy and lopsided, with a face only roughed in by a thumb: a thick overhanging brow ridge, two dark round pebbles pressed into the clay for eyes, a flat pressed lump for a nose and one grim straight gouged line for a mouth. Its arms are enormous, thicker than its legs and reaching to its knees: plain thick rolls of clay with no shapes on them, swelling into great lumpen clay fists like mittens. Below the slab stand two short thick clay pillars on broad flat pads. Flakes of pale dry crust peel from its shoulders and fists.",
+  "colours": "pale dried river clay, a dusty grey-buff, on every part, head, apron slab, arms and feet alike, with a bold web of wide black cracks all over it and darker grey-brown damp clay in the grooves and under the arms; two dark pebble eyes.",
+  "wears": "It wears nothing: the apron shape and the rope round its middle are modelled in the same pale cracked clay as the rest of it.",
   "holds": "It holds nothing: its two great lumpen clay hands are empty.",
   "pose": "It lumbers to the left on its two pillar legs, its whole mass leaning forward, its right fist swung up high above its head to smash down, its left fist hanging low and forward, its small head lowered between its shoulders.",
   "must_show": [
-   "a massive hunched brute made wholly of dark mud-brown clay, head included",
-   "a bold web of pale dry cracks all over it: plainly dried mud, painted with weight",
+   "a massive hunched brute made wholly of pale dried river clay, head included",
+   "a bold web of wide black cracks all over it, plain in the small sprite: dried mud, painted with weight",
    "a body that is one heavy apron-shaped slab of clay with a twisted clay rope: no chest, no belly, no muscle",
    "a small lumpy roughed-in clay head: brow ridge, two pebble eyes, gouged mouth; not a skull",
    "enormous empty clay fists, one raised",
-   "darker than pale tan; told from the carved-oak wood golem by its cracked mud surface and lumpy make"
+   "told from the carved-oak wood golem by its pale cracked mud surface and lumpy make"
   ],
   "must_not_show": [
    "pale tan skin",
@@ -607,7 +639,14 @@
    "sleeves with cuffs",
    "boots",
    "wooden figure",
-   "carved wood"
+   "carved wood",
+   "smooth brown skin",
+   "chocolate",
+   "gingerbread",
+   "bright orange clay",
+   "fat man",
+   "belly button",
+   "wood"
   ]
  },
  {
@@ -663,18 +702,18 @@
   "family": "golem_a",
   "rank": 4,
   "key": "blue",
-  "what": "a shield guardian: a hulking bodyguard machine that a wizard's carpenters and smiths built of timber, stone and old bronze, with no flesh anywhere and nothing human in it. It is plainly a made thing, like a siege engine in the rough shape of a guard. Its body is one big upright cask of thick dark oak staves, bound with three broad hoops of dull dark bronze with rows of big rivets, with black gaps between the staves. Bolted to the front of the cask is one square plate of the same dull dark bronze, and in the middle of that plate sits one round dull red gem. Its head is small: a plain dome of dull dark bronze like an upturned cooking pot, bolted directly onto the top of the cask, with one dark level eye slit across it and nothing else. Its arms and its upper legs are thick squared beams of dark oak, showing the grain, pinned at the shoulders, elbows and knees with big dark bronze pins. Its lower legs and feet are blocks of rough grey stone. Its right arm ends in one big block of rough grey stone for a fist. Its left arm has no hand: it ends in one great round shield as wide as its body, made of thick dark oak planks with a broad dull bronze rim and a raised dull bronze boss in the middle, bolted to the end of the arm. That is its only shield. Everything is old: split wood, dents, chipped stone, and bronze gone dark brown with age. It has a small head and very wide shoulders.",
-  "colours": "dark brown oak timber on the body, arms, upper legs and shield; dull dark bronze hoops, plate, dome, pins and shield rim, the brown-gold of tarnished brass and nearly black in the hollows; rough mid-grey stone fist, lower legs and feet; one dull red gem in the chest; a black eye slit; black gaps between the timbers.",
-  "wears": "It wears nothing over its own body of oak, bronze and stone.",
+  "what": "a shield guardian: a hulking bodyguard that a wizard's smiths built of old bronze, oak and stone, with no flesh anywhere, painted seriously with weight. It is made like an enormous suit of armour in the shape of a hunched guardsman, with nobody inside: big overlapping plates of old bronze, riveted along their edges, with black gaps at every joint. It is hunched and neckless, twice as broad as a man, its arms thicker than its legs. Its head is small and sunk between two great rounded bronze shoulder plates: a plain closed bronze helm with a flat top and one dark level eye slit across it, and nothing else. Its chest is one broad bronze plate with a round dull red gem as big as a fist set in the middle of it, held by four bronze claws. Through the gaps at its elbows, waist and knees show thick dark oak beams, the frame it is built on. Its right arm ends in one great fist that is a rough block of grey stone. Its left forearm has no hand: built onto it is one great round shield as wide as its body, of thick dark oak planks with a broad bronze rim and a raised bronze boss in the middle. That is its only shield. Its feet are heavy blocks of grey stone. Everything is old: the bronze is gone dark brown with age, dented and scratched, with a little green tarnish in the rivet lines.",
+  "colours": "old dark bronze plates on the head, shoulders, chest, arms and legs, the brown-gold of tarnished brass, nearly black in the hollows, with a dull pale gleam on the edges; dark brown oak beams in the joints and dark oak shield planks; a rough mid-grey stone fist and stone feet; one dull red gem in the chest; a black eye slit; black gaps between the plates.",
+  "wears": "It wears nothing over its own body of bronze, oak and stone.",
   "holds": "It holds no weapon and its one hand is empty. Its left arm ends in exactly one great round oak-and-bronze shield, the only shield. Its right arm ends in one empty grey stone fist with no shield on it.",
-  "pose": "It strides to the left on two legs with its front knee bent, its left arm pushing the one great round shield out ahead of it on the left side of the picture, its right stone fist drawn back and raised high on the right side of the picture, plainly seen with nothing on it, body braced behind the shield.",
+  "pose": "It strides to the left on two legs with its front knee bent, hunched low, its left arm pushing the one great round shield out ahead of it on the left side of the picture, its right stone fist drawn back and raised high on the right side of the picture, plainly seen with nothing on it, body braced behind the shield.",
   "must_show": [
-   "a hulking made thing of three materials: a dark oak cask body and beam limbs, dull bronze hoops and dome, grey stone fist and feet",
+   "a hulking hunched made thing like an empty suit of old dark bronze armour, riveted plates with black gaps: heavy and grim, not a toy",
    "one great round shield of oak planks with a bronze rim and boss built onto the left arm",
-   "a small plain dark bronze dome head with an eye slit, no face",
+   "a small plain closed bronze helm sunk between the shoulders, one eye slit, no face",
    "one red gem in the chest plate",
-   "empty right stone fist, no weapon",
-   "old, dark and dull: not a man in shiny armour"
+   "a grey stone right fist, empty, no weapon",
+   "old, dark and dull: not a living knight in shiny armour"
   ],
   "must_not_show": [
    "bright orange metal",
@@ -717,7 +756,18 @@
    "white gloves",
    "ball for a hand",
    "wine barrel with a tap",
-   "grinning face on the barrel"
+   "grinning face on the barrel",
+   "barrel",
+   "cask",
+   "wooden tub",
+   "cartoon robot",
+   "cooking pot head",
+   "round rivet eyes",
+   "white feet",
+   "bright orange wood",
+   "bright copper",
+   "bright gold",
+   "living face in the helmet"
   ]
  },
  {
@@ -948,25 +998,26 @@
    "copper",
    "leather",
    "wood"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "medusa_gorgon",
   "family": "medusa",
   "rank": 1,
   "key": "blue",
-  "what": "Medusa the Gorgon of Greek myth: a tall, stately, beautiful and terrible woman standing on two legs, with a proud pale face, high cheekbones, a cruel open mouth showing two long snake fangs, and wide eyes that glow bright yellow. She has no hair: growing from her whole scalp in its place is a great writhing crown of about a dozen thick living emerald-green snakes, each as thick as her wrist, rearing up and outward in every direction with their mouths open and fangs showing. One more green snake coils round each of her forearms. She has realistic adult proportions: a small head, long limbs, about eight heads tall.",
-  "colours": "pale olive skin, a crown of thick emerald-green snakes with pale yellow bellies, glowing yellow eyes, a long deep wine-crimson Greek gown with a wide gold key-pattern border, a bronze scale corselet, a gold snake diadem, gold armbands and a gold belt.",
-  "wears": "She wears a long, flowing, deep wine-crimson Greek gown that covers her from shoulders to ankles, with a wide gold key-pattern border at the hem and neck; over it a fitted corselet of small bronze scales from chest to waist; a wide gold belt with a clasp shaped like a gorgon's face; a gold diadem shaped like a rearing snake across her brow; broad gold armbands; and gold sandals.",
-  "holds": "Her hands are empty and she holds nothing: two pale hands with long bronze-coloured nails, fingers spread.",
-  "pose": "She strides to the left on two legs with one foot forward under the gown, leaning in, her right arm stretched out ahead with the fingers clawed and the snake on that arm striking forward, her left arm flung back, her head thrust forward with the yellow eyes glaring, every snake of her hair rearing outward, gown swirling.",
+  "what": "Medusa the Gorgon of Greek myth, the cursed queen herself, a monster and the mother of monsters: a tall, gaunt, hunched and terrible woman-shaped creature standing on two legs, nothing like a living lady. Her skin is cold ash-grey, the grey of a stone statue, on her face, neck, arms and hands alike, with patches of dark green-black snake scales on her cheeks, neck and the backs of her arms, a colour no living woman has. Her face is the gorgon mask from an old Greek shield: broad and fierce, with a heavy scowling brow, a flat wide nose, two huge round glaring eyes filled to the brim with solid yellow light, and a very wide mouth stretched open in a snarl from cheek to cheek, showing a row of teeth and two long white tusks curving up from the lower jaw. She has no hair: growing from her whole scalp in its place are seven very thick living snakes, each as thick as her arm, dark emerald-green with pale yellow bellies and big wedge-shaped heads, rearing up and outward in different directions with their white mouths gaping wide. Her arms are long and sinewy, her forearms are covered in dark green-black scales, and her fingers end in long hooked bronze claws. She has a small head, long limbs and a stooped back, about eight heads tall.",
+  "colours": "cold ash-grey skin with dark green-black scales; seven thick dark emerald-green snakes with pale yellow bellies and white mouths; huge solid glowing yellow eyes; white tusks; a long dark wine-crimson gown, tattered at the hem, with a tarnished gold border; a corselet of dark bronze scales; a tarnished gold snake diadem and armbands; bronze claws.",
+  "wears": "She wears the ruined finery of a queen: a long, heavy, dark wine-crimson gown with sleeves to the elbow that covers her from the neck to the ankles. Its skirt is whole and closed all the way round from the waist to the ankles, a single unbroken bell of heavy cloth that hides both legs completely; only the last hand's breadth of the hem is torn into ragged points, and a tarnished gold border runs just above the tears; over it a heavy corselet of dark bronze scales from her collar to her hips; a wide dark leather belt; and a tarnished gold diadem shaped like a rearing snake across her brow, and broad tarnished gold armbands.",
+  "holds": "Her hands are empty and she holds nothing: two grey scaled hands with long hooked bronze claws, fingers spread wide.",
+  "pose": "She lunges to the left on two legs under the gown, hunched far forward, both long arms thrust out ahead with the hooked claws spread to seize, her head thrust forward and low with the yellow eyes glaring and the tusked mouth wide open, every snake of her hair rearing outward and striking, the torn gown dragging behind.",
   "must_show": [
-   "a woman with a great crown of thick living green snakes for hair, readable in the small sprite",
-   "glowing yellow eyes, fangs",
-   "long crimson Greek gown with gold border, fully clothed",
-   "bronze scale corselet, gold diadem and armbands: a boss, ornate and imposing",
-   "empty clawed hands, one reaching",
-   "legs under the gown, not a snake's tail"
+   "a monster, not a lady: a hunched grey-skinned gorgon with a broad fierce mask of a face, huge glowing yellow eyes and a tusked snarling mouth",
+   "seven very thick dark green snakes for hair, readable as snakes in the small sprite",
+   "long dark crimson gown with tattered hem, fully clothed from neck to ankles",
+   "dark bronze scale corselet and tarnished gold diadem: a boss, a ruined queen",
+   "empty hooked bronze claws, both reaching",
+   "legs under the gown, not a snake's tail; plainly more monstrous than the pale-dressed lesser medusa"
   ],
   "must_not_show": [
    "ordinary hair",
@@ -989,7 +1040,31 @@
    "thin wispy snakes",
    "glowing aura",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "beautiful woman",
+   "pretty young face",
+   "graceful dancer",
+   "ball gown",
+   "smiling",
+   "bright scarlet dress",
+   "bright shiny gold",
+   "pink or tan living skin",
+   "bare shoulders",
+   "bare chest",
+   "thin green hair",
+   "green dreadlocks",
+   "seaweed",
+   "cream dress",
+   "black snakes",
+   "boar",
+   "pig snout",
+   "skirt split open at the front",
+   "bare thighs",
+   "bare knees",
+   "legs showing through the skirt",
+   "short dress",
+   "tan skin",
+   "brown skin"
   ]
  },
  {
@@ -1192,7 +1267,8 @@
    "facing straight at the viewer",
    "standing upright and symmetrical",
    "floating"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "greater_mimic",
