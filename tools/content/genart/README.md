@@ -583,6 +583,23 @@ and look for the same kind of slip when reviewing.
 - **Place a part by picture position** ("the crossguard exactly at the middle of the
   picture") when length ratios fail.
 - **Lead: never `git checkout` a briefs file while a batch's edits are uncommitted.**
+- **Tendrils "curling" on a flame close into loops** that read as handles. Use
+  "broad streamers curved like a sabre blade, two swept up, two swept down".
+- **A void:** "one round hole of pitch black with a thick bright rim, as round as the
+  moon", masonry "touching the rim, half swallowed". "Torn rent" gives shards.
+- **An abstract creature needs one concrete emblem** (an hourglass for entropy),
+  "compact, wholly inside the picture, clear backdrop on every side".
+- **Pale grey skin on magenta comes out mint green**; use the green or blue backdrop.
+- **"Murky slime" draws a mossy stone block.** Keep "see-through jelly" and dull the
+  colour: "dull dark olive-green like bottle glass full of ditch water".
+- **Clay:** "pale dried river clay with wide black cracks" draws the cracks.
+- **A construct as "a cask of oak staves" is a toy barrel.** "An enormous suit of
+  armour in the shape of a hunched guardsman, nobody inside" worked.
+- **Manticore:** a black mane brings the lion's face back; give human hair, a human
+  beard and a brow band.
+- **Eyestalks need a thickness and a small count** ("seven, each as thick as an arm").
+- **Gorgon as monster:** "the gorgon mask from an old Greek shield", hunched, claws
+  thrust out; skirt "whole and closed all the way round, hides both legs".
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
