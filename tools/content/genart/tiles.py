@@ -72,10 +72,11 @@ MATERIALS = {
         colours="Black and dark red crust, bright orange cracks, yellow-white at the hottest points.",
         short="lava surface, black crust plates with orange glowing cracks spread evenly all over, no centre"),
     'ice': dict(
-        what="a sheet of thick old ice over dark water: pale blue-white ice with long white cracks, frosted patches and "
-             "darker blue where the ice is clear.",
+        what="the surface of a sheet of thick old ice, the same everywhere: cloudy pale blue-white ice with a fine "
+             "net of short thin white cracks running in every direction and small frosted patches. No long cracks, no "
+             "big dark patches, no direction to it: no part of the picture differs from any other.",
         colours="Pale blue-white with darker glacier-blue patches and white crack lines.",
-        short="thick pale blue-white ice sheet with long white cracks and frosted patches"),
+        short="cloudy pale blue-white ice surface, fine net of short white cracks in every direction, even all over"),
 }
 
 
@@ -119,16 +120,18 @@ def big(mid, pick, tiles=4, region=256):
 
 def wrap(a):
     """Make a texture repeat: cross-fade it with itself shifted by half a tile, so the
-    original edges (which do not meet) are replaced by its own middle (which does)."""
+    original edges (which do not meet) are replaced by its own middle (which does).
+    The fade is a smooth round window, so no square shows where the halves mix."""
     n = a.shape[0]
     r = np.roll(a, (n // 2, n // 2), axis=(0, 1))
-    d = np.minimum(np.arange(n), n - 1 - np.arange(n)) / (n / 2.0)
-    w = np.clip((np.minimum.outer(d, d) - 0.15) / 0.45, 0, 1)
-    w = (w * w * (3 - 2 * w))[..., None]
+    c = 0.5 - 0.5 * np.cos(2 * np.pi * (np.arange(n) + 0.5) / n)
+    w = np.outer(c, c) ** 0.6
+    w = w[..., None]
     out = a * w + r * (1 - w)
-    # the fade lowers contrast where the two halves mix: put it back
+    # mixing two halves lowers contrast most where they are equal: put it back evenly
     m = out.mean((0, 1), keepdims=True)
-    return np.clip(m + (out - m) * (1 + 0.25 * (1 - w)), 0, 255)
+    gain = 1.0 / np.sqrt(w * w + (1 - w) * (1 - w))
+    return np.clip(m + (out - m) * gain, 0, 255)
 
 
 def tone(a, gain=1.0, lift=0.0, sat=1.0):
@@ -229,7 +232,7 @@ def build(picks):
     tiles.update(build_plain('rock', picks.get('rock', 1), 'rock', gain=0.62, sat=0.6))
     tiles.update(build_plain('water', picks.get('water', 1), 'water', region=320, gain=0.95))
     tiles.update(build_plain('lava', picks.get('lava', 1), 'lava', region=320, gain=0.95, sat=1.0))
-    tiles.update(build_plain('ice', picks.get('ice', 1), 'ice', gain=0.92, sat=0.8))
+    tiles.update(build_plain('ice', picks.get('ice', 1), 'ice', gain=0.80, sat=0.9))
     for name, a in tiles.items():
         quant(a, 20 if name.startswith(('floor', 'wall', 'rock')) else 28).save(os.path.join(OUT, 'out', name + '.png'))
     json.dump(picks, open(os.path.join(OUT, 'picks.json'), 'w'), indent=1)
