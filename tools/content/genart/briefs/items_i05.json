@@ -1998,13 +1998,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a cuirass carved from clear pale blue crystal, with nobody inside it: a breastplate cut in large flat angular facets like a gemstone, meeting in a sharp ridge down the middle of the chest, a shoulder guard on each shoulder made of three upright crystal points, a short upright collar, and below the waist a short skirt of long pointed crystal shards hanging side by side. Every facet has a bright white edge. It is solid, hard and angular, with white glints. It has no arm armour: under each shoulder guard is a dark empty armhole. The neck is a dark empty opening.",
+  "what": "a knight's cuirass carved from clear pale blue crystal, with nobody inside it: a broad heavy breastplate, as wide as it is tall, cut in a few large flat angular facets like a gemstone, meeting in one sharp ridge down the middle of the chest, with a straight waist as wide as the chest. On each shoulder sits a big round shoulder plate of crystal, as large as the collar, sticking out sideways so the armour is widest at the shoulders. It has a short upright collar. Below the waist hang four broad square plates of crystal side by side, each as wide as a hand and no longer than it is wide, like the skirt plates of a suit of armour. Every facet has a bright white edge. It is solid, hard, thick and angular, with white glints. It has no arm armour: under each shoulder plate is a dark empty armhole. The neck is a dark empty opening.",
   "colours": "Pale icy blue crystal, the blue of a winter sky, with bright white facet edges and glints and deeper blue in the shadows; the openings are black.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty cuirass",
    "made of faceted pale blue crystal",
-   "crystal points on the shoulders",
+   "broad square build, big round shoulder plates",
+   "four short square skirt plates",
    "white glints"
   ],
   "must_not_show": [
@@ -2031,7 +2032,16 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "gown",
+   "bodice",
+   "narrow waist",
+   "long skirt",
+   "skirt of long spikes",
+   "icicles",
+   "shoulder straps",
+   "ballgown",
+   "corset"
   ]
  },
  {
@@ -2190,14 +2200,14 @@
   "rank": 2,
   "body": "item",
   "scale": "large",
-  "key": "blue",
-  "what": "a vest made from the pelt of a gnoll, a hyena-man, with nobody inside it: a short, wide, sleeveless vest of coarse shaggy fur, warm sandy tan-brown all over like the coat of a lion, scattered unevenly with many small black spots, each no bigger than a thumbnail, with a stiff upright ridge of long black mane hair running across the shoulders as a collar, laced down the middle of the front with dark thong, and a ragged uneven bottom edge at the hips. The fur is plainly animal fur, long and tufted, with no pockets. It is only the vest: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
-  "colours": "Warm sandy tan-brown fur, the colour of a lion's coat, darker brown in the shadows, with small scattered black spots; a black mane collar; dark brown thong lacing.",
+  "key": "magenta",
+  "what": "a vest made from the pelt of a gnoll, a hyena-man, with nobody inside it: a short, wide, sleeveless vest of coarse short dull sandy-buff fur marked with a dozen large irregular dark brown blotches, each as big as a fist, with a stiff upright ridge of long dark brown mane hair running across the shoulders as a collar, laced down the middle of the front with dark thong, and a ragged uneven bottom edge at the hips. It is only the vest: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
+  "colours": "Dull sandy-buff fur, the pale dusty brown of dry grass, with large irregular dark chocolate-brown blotches; a dark brown mane collar; dark brown thong lacing.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty fur vest",
-   "sandy tan-brown fur with small black spots",
-   "black mane collar",
+   "sandy fur with big dark spots",
+   "dark mane collar",
    "laced front"
   ],
   "must_not_show": [
@@ -2239,21 +2249,7 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing",
-   "cow hide",
-   "cow",
-   "white fur",
-   "cream fur",
-   "big brown blotches",
-   "dalmatian",
-   "green",
-   "olive",
-   "khaki",
-   "canvas",
-   "pockets",
-   "fishing vest",
-   "army vest",
-   "cloth"
+   "label with writing"
   ]
  },
  {

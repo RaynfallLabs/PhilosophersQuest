@@ -141,12 +141,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a dark wine phial: a tall, very slender glass phial, five times as tall as it is wide, shaped like a long narrow drop: widest low down, with a rounded bottom, narrowing smoothly upward into a long thin neck. It is filled with wine so dark it is almost black, a deep maroon that shows dark wine-colour only where a long glint runs down its left side. The top is sealed with a round blob of glossy black wax. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Very dark maroon, the colour of old wine, almost black, one long dull maroon glint, a glossy black wax seal with a grey highlight.",
+  "what": "a dark wine phial: a tall slender glass phial, three times as tall as it is wide, shaped like a long narrow drop: widest low down, with a rounded bottom, narrowing smoothly upward into a long neck. It is filled with wine so dark it is almost black, a deep maroon, with one long broad glint of clear wine-red running down its whole left side and a thin line of the same wine-red light along its right edge. Round the neck sits a collar of tarnished pale silver, a plain thick ring, and the top is sealed with a round blob of glossy black wax that has run down the neck in two thick drips. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Very dark maroon, the colour of old wine, almost black in the middle, one broad wine-red glint on the left and a thin wine-red lit edge on the right, a pale tarnished silver neck ring, a glossy black wax seal with a grey highlight.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "tall very slender phial",
-   "almost black maroon contents",
+   "tall slender drop-shaped phial",
+   "almost black maroon contents with a wine-red glint",
+   "pale silver ring round the neck",
    "black wax blob on top"
   ],
   "must_not_show": [
@@ -177,7 +178,10 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "modern wine bottle",
+   "straight-sided bottle with shoulders",
+   "nail polish bottle"
   ]
  },
  {
@@ -277,13 +281,14 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "an ember-orange vial: a short, stubby glass vial, a plain straight-sided cylinder with a flat bottom, only a little taller than it is wide, with no neck at all. It is filled with glowing ember-orange liquid like the heart of a coal fire: deep orange-red at the bottom and the sides, bright yellow-orange in the middle. It is closed with a heavy flat cap of black iron as wide as the vial, with a thick iron ring standing on top of it. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Glowing ember orange, deep orange-red at the edges and yellow-orange in the middle, a black iron cap and ring with grey lit edges.",
+  "what": "an ember-orange vial bound in black iron: a short, stubby glass vial, a plain straight-sided cylinder with a flat bottom, only a little taller than it is wide, with no neck at all. A broad band of black wrought iron with big round rivets clasps its foot, and it is closed with a heavy domed lid of the same black iron, as wide as the vial, studded with rivets; on top of the lid stands one big thick iron ring, upright like the ring of a door-knocker, half as wide as the vial. Between the iron foot and the iron lid the glass is filled with glowing ember-orange liquid like the heart of a coal fire: deep orange-red at the bottom and the sides, bright yellow-orange in the middle. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Glowing ember orange, deep orange-red at the edges and yellow-orange in the middle, a black iron foot band, domed lid and ring with grey lit edges and pale rivets.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "short stubby cylinder vial with no neck",
    "glowing ember-orange contents",
-   "black iron cap with a ring"
+   "black iron foot band and domed riveted lid",
+   "big upright iron ring on the lid"
   ],
   "must_not_show": [
    "cork",
@@ -314,7 +319,12 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "screw cap",
+   "plastic lid",
+   "pill bottle",
+   "spice jar",
+   "smooth flat cap"
   ]
  },
  {
@@ -324,13 +334,14 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a frothing orange flask: a glass flask shaped like a cone, with a wide flat bottom and straight sides sloping in to a narrow mouth at the top. It is filled with bright, clean tangerine-orange liquid. It has no stopper: out of its open mouth swells a thick round head of white froth, like the head on a mug of ale, as wide as the flask's middle, with one fat dribble of white froth running down the left side of the glass. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Bright tangerine orange with a paler orange glint, thick white froth with pale cream shadows.",
+  "what": "a frothing orange flask: a stout glass flask, round and heavy at the bottom and narrowing smoothly upward to a short wide mouth, standing on a thick foot-ring of dark bronze, with one broad band of dark bronze round its neck. It is filled with bright, clean tangerine-orange liquid. It has no stopper: out of its open mouth swells a thick round head of white froth, like the head on a mug of ale, wider than the neck, with one fat dribble of white froth running down the left side of the glass. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Bright tangerine orange with a paler orange glint, thick white froth with pale cream shadows, a dark brown bronze foot-ring and neck band with dull gold glints.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "cone-shaped flask with a wide flat bottom",
+   "stout flask, fat and round at the bottom",
    "bright orange contents",
-   "head of white froth on the open mouth"
+   "head of white froth on the open mouth",
+   "dark bronze foot-ring and neck band"
   ],
   "must_not_show": [
    "cork",
@@ -361,7 +372,11 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "laboratory flask",
+   "cone-shaped chemistry flask",
+   "measuring marks",
+   "straight sloping sides"
   ]
  },
  {
@@ -511,13 +526,14 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a sulfur-yellow vial: a narrow glass vial made of three round bulges stacked one on top of another, like three beads on a string, each the same size, with a short neck on the top one. It is filled with harsh, chalky, opaque sulfur-yellow liquid, a sour pale lemon-yellow with a faint sickly tinge and dull mustard shadows, flat and not shining. The mouth is stopped with a twisted plug of dirty grey rag whose ragged end sticks up. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Harsh pale sulfur yellow, sour lemon-yellow with dull mustard shadows, a dirty grey rag stopper.",
+  "what": "a sulfur-yellow vial of old hand-blown glass: three round glass balls stacked one on top of another, each the same size, joined by narrow pinched waists, and each of the two waists is tied round with several turns of dark brown twine; a short neck rises from the top ball. It is filled with harsh, chalky, opaque sulfur-yellow liquid, a sour pale lemon-yellow with a faint sickly tinge and dull mustard shadows, flat and not shining, and a crust of dark yellow-brown grime clings round the bottom ball. The mouth is stopped with a fat dark brown cork sealed over with a blob of dull dark grey wax. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Harsh pale sulfur yellow, sour lemon-yellow with dull mustard shadows, dark yellow-brown grime at the foot, dark brown twine at the two waists, a dark brown cork under dark grey wax.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "vial of three stacked round bulges",
+   "vial of three stacked round glass balls with pinched waists",
    "pale sulfur-yellow contents",
-   "grey rag stopper"
+   "dark twine round each waist",
+   "dark cork and wax"
   ],
   "must_not_show": [
    "cork",
@@ -549,7 +565,14 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "plastic bottle",
+   "squeeze bottle",
+   "sauce bottle",
+   "nozzle",
+   "metal cap",
+   "screw cap",
+   "smooth straight tube"
   ]
  },
  {
@@ -664,12 +687,12 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a dark copper potion: a tall narrow glass bottle with four flat sides and square shoulders, wound round its middle with five thick turns of bright copper wire like a spring. It is filled with very dark copper-brown liquid, the brown of an old worn copper coin, nearly black at the edges, with a dull warm brown shine. On top is a copper cap from which a short thick copper rod stands straight up, ending in a round copper ball. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Very dark brown like an old worn copper coin, nearly black in the shadows; bright polished copper wire coil, cap, rod and ball with pale glints.",
+  "what": "a dark copper potion: a stout glass bottle with four flat sides and square shoulders, twice as tall as it is wide. Round the outside of its middle are wound three very thick turns of bright copper rod, each turn as thick as a finger, standing proud of the glass like hoops round a barrel. It is filled with very dark copper-brown liquid, the brown of an old worn copper coin, nearly black at the edges, with a dull warm brown shine. On top is a broad copper cap from which a short thick copper rod stands straight up, ending in a round copper ball as wide as the neck. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Very dark brown like an old worn copper coin, nearly black in the shadows; three bright polished copper hoops, a bright copper cap, rod and ball with pale glints.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "tall square-sided bottle",
-   "thick coil of copper wire round its middle",
+   "stout square-sided bottle",
+   "three thick bright copper hoops round its middle",
    "copper rod with a ball on top"
   ],
   "must_not_show": [
@@ -701,7 +724,12 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "measuring marks",
+   "ladder pattern",
+   "dropper",
+   "medicine bottle",
+   "thin narrow vial"
   ]
  },
  {
@@ -920,12 +948,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "an oily green bottle: a tall glass bottle with four flat sides, like a tall narrow box, with sharp square shoulders and a short round neck. It is filled with heavy oil of a yellow-green colour, like dark olive oil: a strong yellowish green, darker olive-green toward the bottom, with a greasy sheen and one long pale yellow glint down the left edge. It is stopped with a plain fat cork that sticks up from the neck. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Yellowish olive-oil green, darker olive-green toward the bottom, a pale yellow greasy glint, a tan cork.",
+  "what": "an oily green bottle in a bronze frame: a tall glass bottle with four flat sides, like a tall narrow box, with sharp square shoulders and a short round neck. It is held in a frame of dark old bronze: a strip of bronze runs up each of its corners, a broad bronze band circles its foot and another circles its shoulders. Between the bronze the bare glass shows heavy oil of a yellow-green colour, like dark olive oil: a strong yellowish green, darker olive-green toward the bottom, with a greasy sheen and one long pale yellow glint down the left side. It is stopped with a plain fat cork that sticks up from the neck, tied down with a loop of dark cord. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Yellowish olive-oil green, darker olive-green toward the bottom, a pale yellow greasy glint, dark brown-gold bronze frame and bands, a tan cork and dark cord.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "tall square-sided bottle with square shoulders",
    "yellow-green oily contents",
+   "dark bronze corner strips and bands",
    "plain cork"
   ],
   "must_not_show": [
@@ -956,7 +985,13 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "paper label",
+   "cooking oil bottle",
+   "kitchen bottle",
+   "screw cap",
+   "pouring spout",
+   "dark rectangle on the front"
   ]
  },
  {
@@ -966,11 +1001,11 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a jar of brackish olive draught: a tall, straight-sided glass jar, like a drum twice as tall as it is wide, with a wide mouth and no neck. It is filled with stagnant, cloudy, drab olive liquid, a grey-brown khaki green like marsh water, with a darker layer of silt at the bottom and a thin pale scum line at the top. The wide mouth is covered with a round cap of old grey-brown waxed cloth, tied down with three turns of dark cord, its edge hanging in a short frill. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "what": "a jar of brackish olive draught: a squat, heavy jar of thick hand-blown glass, uneven and a little lopsided, widest at its belly and narrower at its foot and at its mouth, like a small burial urn, with a wide mouth and no neck. It is filled with stagnant, cloudy, drab olive liquid, a grey-brown khaki green like marsh water, with a darker layer of silt at the bottom and a thin pale scum line at the top. The wide mouth is covered with a round cap of old grey-brown waxed cloth, tied down with three turns of dark cord whose two long ends hang down the side, the edge of the cloth hanging in a short ragged frill. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
   "colours": "Drab cloudy olive, a grey-brown khaki green, darker silt at the bottom, a grey-brown cloth cap tied with dark cord.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "tall wide-mouthed jar with no neck",
+   "squat bellied wide-mouthed jar with no neck",
    "drab olive contents",
    "cloth cap tied with cord"
   ],
@@ -1003,7 +1038,11 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "preserving jar",
+   "straight-sided jar",
+   "screw lid",
+   "glass lid"
   ]
  },
  {
@@ -1013,26 +1052,24 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a pot of bubbling green goo: a round glass pot like a fishbowl, a ball with its top cut off to make a wide open mouth with a thick rolled rim, and no neck. It is filled to the brim with thick, bright, opaque grass-green goo, the green of fresh peas, and on its surface big round bubbles swell up above the rim: one large bubble, two middling ones and three small ones, glossy, each with a white glint. It has no stopper and no lid. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Bright opaque grass green, darker leaf-green in the shadows, glossy green bubbles with white glints.",
+  "what": "a pot of bubbling green goo: a round glass pot, a ball with a short wide neck and a thick rolled rim at its open mouth. It is filled to the brim with thick, bright, opaque grass-green goo, the green of fresh peas. It has no stopper and no lid: out of its open mouth swells one single big glossy green bubble, a dome as wide as the neck, with a white glint on it, and one small bubble beside it; one short fat drip of green goo hangs over the rim on the left. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Bright opaque grass green, darker leaf-green in the shadows, one glossy green bubble with a white glint.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "round fishbowl pot with a wide open mouth",
+   "round glass pot with a short wide neck and rolled rim",
    "bright green goo",
-   "big bubbles swelling above the rim"
+   "one big bubble swelling out of the mouth"
   ],
   "must_not_show": [
    "cork",
    "stopper",
    "lid",
-   "neck",
    "cauldron legs",
    "handle",
    "fish",
    "eyes",
    "face",
    "slime monster",
-   "goo spilling down the outside",
    "spoon",
    "skull",
    "label",
@@ -1053,7 +1090,14 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "bowl of fruit",
+   "apples",
+   "peas",
+   "grapes",
+   "heap of balls",
+   "many bubbles",
+   "frog"
   ]
  },
  {
@@ -1154,13 +1198,14 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "an azure vial: a tall, slim glass vial like a straight column, four times as tall as it is wide, cut with flat faces down its length like a pencil, the same width from bottom to top. A thick ring of bright silver clasps its foot and another its top. It is filled with vivid azure liquid, a strong pure mid-blue that glows from within, lighter and brighter up the middle face. It is closed with a flat-topped silver cap. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Vivid glowing azure, a strong pure mid-blue, lighter in the middle, bright silver rings at foot and top and a silver cap.",
+  "what": "an azure vial: a tall, slim glass vial like a straight column, three times as tall as it is wide, cut with flat faces down its length, the same width from bottom to top. It stands on a wide round foot of bright silver, like the foot of a candlestick, twice as wide as the vial; one broad ring of bright silver clasps its middle and another its top. It is filled with vivid azure liquid, a strong pure mid-blue that glows from within, lighter and brighter up the middle face. It is closed with a domed silver cap, and standing on the cap is one bold crescent moon of bright silver with both its horns pointing straight up, as wide as the vial. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Vivid glowing azure, a strong pure mid-blue, lighter in the middle; a bright silver foot, two silver rings, cap and crescent moon.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "tall slim straight column vial",
    "vivid azure-blue contents",
-   "silver rings at foot and top"
+   "wide silver foot and silver rings",
+   "silver crescent moon on the cap, horns up"
   ],
   "must_not_show": [
    "cork",
@@ -1191,7 +1236,12 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "test tube",
+   "laboratory tube",
+   "plastic",
+   "rounded glass bottom",
+   "thin needle-like vial"
   ]
  },
  {
@@ -1334,7 +1384,8 @@
    "second object",
    "empty bottle",
    "see-through empty glass"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "potion_of_poison",
@@ -1536,13 +1587,15 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a frosty white potion: a stout bottle with six flat sides, like a short thick column, with sloping six-sided shoulders and a short neck. It is filled with dense, opaque, snow-white liquid, pure white like milk, with the faintest cold tint in the shadows. The outside of the glass is crusted with white frost, thickest at the bottom, and four short thick icicles hang from the rim of its shoulders. The stopper is a rough lump of pale ice, white with a cold pale grey-blue core. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Opaque snow white with very pale cold grey-blue shadows, white frost crust and icicles, a pale ice lump stopper.",
+  "what": "a frosty white potion: a stout bottle with six flat sides, like a short thick column, with sloping six-sided shoulders and a short neck. It is filled with dense, opaque, snow-white liquid, pure white like milk. The whole bottom third of the bottle is sunk in a thick ragged crust of white frost and ice that spreads out wider than the bottle, and from the rim of its shoulders hang five big icicles of clear pale blue ice, each as long as the neck and as thick as a finger, plain to see against the white glass. The stopper is one large jagged crystal of pale blue ice, as tall as the neck and wider than it, pointed at the top. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Opaque snow white with pale cold blue shadows, the blue of a winter sky; a white frost crust; clear pale blue icicles and a pale blue ice-crystal stopper with white glints.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "stout six-sided bottle",
    "snow-white contents",
-   "frost and short icicles on it, ice lump stopper"
+   "big pale blue icicles hanging from the shoulders",
+   "frost crust round the foot",
+   "pointed ice-crystal stopper"
   ],
   "must_not_show": [
    "cork",
@@ -1572,7 +1625,11 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "plain smooth white bottle",
+   "correction fluid bottle",
+   "screw cap",
+   "plastic"
   ]
  },
  {
@@ -1628,13 +1685,14 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a plain bottle of still water: a tall, simple, straight-sided glass bottle, a cylinder three times as tall as it is wide with a gently rounded shoulder and a short neck, of thick pale glass. It holds perfectly still, colourless water, shown as pale silver-grey: lightest grey-white on the left, a soft mid-grey down the right side, with a dead flat, level waterline drawn as one straight dark line across the bottle just below the shoulder, and plain pale empty glass above it. No bubbles, nothing in it. It is stopped with a plain dark cork.",
-  "colours": "Pale silver-grey and grey-white, soft mid-grey shading on the right, one straight dark waterline, a dark brown cork.",
+  "what": "a plain flask of still water from the ancient world: a tall, simple bottle of thick, uneven, hand-blown glass, a cylinder three times as tall as it is wide with a gently rounded shoulder, a short neck and a thick rolled lip, a little lopsided, the glass wavy and old. It holds perfectly still, colourless water, shown as pale silver-grey: lightest grey-white on the left, a soft mid-grey down the right side, with a dead flat, level waterline drawn as one straight dark line across the bottle just below the shoulder, and plain pale empty glass above it. No bubbles, nothing in it. A strip of dark grey linen is tied round the neck in one knot with two short hanging ends, and the mouth is stopped with a plain dark cork.",
+  "colours": "Pale silver-grey and grey-white, soft mid-grey shading on the right, one straight dark waterline, a dark charcoal-grey linen tie, a dark brown cork.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "tall plain straight cylinder bottle",
-   "colourless pale grey water with a flat level waterline",
-   "plain dark cork"
+   "tall plain hand-blown bottle with a rolled lip",
+   "colourless grey-white water with a level waterline",
+   "dark linen strip tied round the neck",
+   "dark cork"
   ],
   "must_not_show": [
    "bubbles",
@@ -1665,7 +1723,12 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "milk bottle",
+   "modern factory bottle",
+   "screw thread",
+   "plastic",
+   "perfectly smooth machine-made glass"
   ]
  },
  {
@@ -1675,13 +1738,14 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a grey ashen draught: a small squat bottle shaped like a cube, as wide as it is tall, with four flat sides, sharp corners and flat square shoulders, and a short narrow neck in the middle of the top, like an old ink bottle. It is filled with flat, chalky, opaque pale grey liquid, the grey of cold wood ash, with a darker grey sediment settled in a layer at the bottom. It is stopped with a round peg of pale grey stone. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Flat chalky pale ash grey, a darker grey layer at the bottom, a dull white glint on one corner, a pale grey stone peg.",
+  "what": "a grey ashen draught: a small squat bottle shaped like a cube, as wide as it is tall, with four flat sides, sharp corners and flat square shoulders, and a short narrow neck in the middle of the top, like an old ink bottle. It is filled right up to its shoulders with flat, chalky, opaque pale grey liquid, the grey of cold wood ash, the same solid grey from the bottom all the way up to the shoulders with no empty space above it, and a darker charcoal-grey sediment settled in a thick layer at the bottom. Round the neck is a thick collar of dull dark grey lead, and it is stopped with a round ball of dark grey stone as wide as the collar. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Flat chalky pale ash grey with no colour in it, a charcoal-grey layer at the bottom, a dull white glint on one corner, a dark grey lead collar and a dark grey stone ball stopper.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "squat cube-shaped bottle with a short neck",
-   "pale ash-grey contents",
-   "stone peg stopper"
+   "solid pale ash-grey contents up to the shoulders",
+   "dark sediment layer at the bottom",
+   "dark lead collar and stone ball stopper"
   ],
   "must_not_show": [
    "cork",
@@ -1712,7 +1776,13 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "perfume bottle",
+   "spray top",
+   "empty upper half",
+   "clear see-through glass",
+   "green tint",
+   "half-full bottle"
   ]
  },
  {
@@ -1769,13 +1839,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a jar of foul grey ooze: a low, wide glass jar, a shallow drum twice as wide as it is tall, with thick walls and a thick rim, and no neck and no lid. It is brim-full of thick, smooth, heavy grey ooze exactly the colour of wet cement, a plain colourless mid-grey with paler grey highlights and charcoal folds, which heaps up above the rim in a sagging mound and slumps over the rim on the left side in one fat sluggish tongue that hangs half way down the outside of the jar. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
-  "colours": "Plain colourless mid-grey ooze like wet cement, paler grey highlights, charcoal-grey folds, thick pale grey glass.",
+  "what": "a dish of foul grey ooze: a low, wide bowl of thick old glass standing on a short thick round foot, like a squat goblet with no stem, twice as wide as it is tall, with a thick rolled rim and no lid. It is brim-full of thick, smooth, heavy grey ooze exactly the colour of wet cement, a plain colourless mid-grey with paler grey highlights and charcoal folds, which heaps up above the rim in one sagging rounded mound, as tall again as the bowl, and slumps over the rim on the left side in one fat sluggish tongue that hangs half way down the outside. The glass is thick and the vessel is full nearly to the top, so the whole of it shows the strong colour of what is inside; nothing can be seen through it and the backdrop does not show through it.",
+  "colours": "Plain colourless mid-grey ooze like wet cement, paler grey highlights, charcoal-grey folds, thick pale grey glass with white glints on the rim and foot.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "low wide jar, wider than tall",
-   "dull grey ooze heaped above the rim",
-   "one fat tongue of ooze slumping over the side"
+   "low wide glass bowl on a short thick foot",
+   "mound of grey ooze heaped above the rim",
+   "one fat tongue of ooze slumping over the rim"
   ],
   "must_not_show": [
    "cork",
@@ -1817,7 +1887,16 @@
    "glow outside the bottle",
    "second object",
    "empty bottle",
-   "see-through empty glass"
+   "see-through empty glass",
+   "tall jar",
+   "preserving jar",
+   "screw lid",
+   "metal lid",
+   "cloth",
+   "rag",
+   "wire clasp",
+   "ice cream",
+   "whipped cream"
   ]
  },
  {

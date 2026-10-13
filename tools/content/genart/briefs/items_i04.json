@@ -579,15 +579,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a monster-hunter's silver longsword: a long straight double-edged blade of brightly polished silver, broad, with a row of big angular runes engraved down its middle from hilt to point; a long straight silver crossguard with a small spike at each end; a long grip wrapped criss-cross in dark brown leather; and a silver pommel cast as a small wolf's head, snarling, facing away from the blade.",
-  "colours": "Brilliant white polished silver blade, guard and pommel, whiter than steel, the runes dark grey; a dark brown leather grip.",
+  "what": "a monster-hunter's silver longsword. At the bottom left is a plain silver disc pommel. Then a long grip wrapped in black leather, bound with three bright silver rings. Then a long straight silver crossguard with a small spike at each end. Then the blade: long, straight, double-edged and broad, of brightly polished white silver, and down its middle, inlaid in black, a row of five big angular rune marks, each made of two or three straight strokes, each as tall as the blade is wide, spaced evenly from the guard to near the point, plain to see from far away.",
+  "colours": "Brilliant white polished silver blade, guard and pommel, whiter than steel; five bold black rune marks on the blade; a black leather grip with three silver rings.",
   "pose": "It lies on a diagonal, pommel at the bottom left corner and point at the top right corner, the whole sword inside the picture.",
   "must_show": [
    "one longsword",
-   "bright polished silver blade",
-   "a row of runes down the blade",
-   "dark brown criss-cross grip",
-   "small wolf's-head pommel",
+   "bright white silver blade",
+   "a row of five bold black rune marks down the blade",
+   "black grip with silver rings",
    "diagonal, point at top right"
   ],
   "must_not_show": [
@@ -607,7 +606,15 @@
    "gold",
    "gems",
    "glow",
-   "second sword on its back"
+   "second sword on its back",
+   "wolf",
+   "wolf head",
+   "animal head",
+   "brown grip",
+   "red grip",
+   "plain blade with no marks",
+   "writing",
+   "letters of the alphabet"
   ]
  },
  {

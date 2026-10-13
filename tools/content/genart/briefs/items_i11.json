@@ -80,8 +80,8 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a dark grey iron rod wound from end to end with a thick coil of old dull brown copper wire, like a worn coin in colour; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a lightning-bolt sign cut from one flat thick plate of bright yellow gold: a jagged streak with two sharp elbows, running up to the right, jogging back to the left, then running up to the right again to a sharp point; it is three times as long as it is wide and is not an arrowhead.",
-  "colours": "Dark grey iron; old dull brown copper wire; a bright yellow gold thunderbolt.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a thick rod of dark grey iron wound from end to end with a heavy coil of copper wire, each turn as thick as a finger, old dull brown copper like a worn coin, with a round copper ball on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a lightning-bolt sign cut from one flat thick plate of bright yellow gold: a jagged streak with two sharp elbows, running up to the right, jogging back to the left, then running up to the right again to a sharp point; it is three times as long as it is wide and is not an arrowhead.",
+  "colours": "Dark grey iron; old dull brown copper wire and butt ball; a bright yellow gold thunderbolt.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
    "yellow zigzag thunderbolt tip",
@@ -110,7 +110,9 @@
    "straight spike",
    "arrowhead",
    "triangle",
-   "spear point"
+   "spear point",
+   "thin shaft",
+   "needle-thin rod"
   ]
  },
  {
@@ -120,13 +122,13 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a thick glass tube filled with bright yellow-green liquid, capped at the butt with dull grey pewter and ringed by two broad pewter bands; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: one big faceted crystal of bright yellow-green, shaped like a fat drop with its point onward, sitting in a pewter cup.",
-  "colours": "Bright yellow-green liquid and crystal; dull grey pewter fittings.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of blackened iron, pitted and eaten into holes and hollows as if by acid, dark charcoal grey with pale grey worn edges, its grip wrapped in dark brown leather, with a dull pewter cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: one big faceted crystal of bright yellow-green, shaped like a fat drop with its point onward, gripped by three short pewter claws on a pewter cup.",
+  "colours": "Pitted charcoal-grey iron with pale grey worn edges; dark brown leather; dull grey pewter; one bright yellow-green crystal, the only green thing in the picture.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
    "yellow-green drop-shaped crystal tip",
-   "glass tube shaft of yellow-green liquid",
-   "grey pewter bands",
+   "dark pitted iron shaft",
+   "grey pewter claws",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -149,7 +151,13 @@
    "puddle",
    "bottle",
    "potion flask",
-   "wood"
+   "wood",
+   "glass tube shaft",
+   "green shaft",
+   "glow stick",
+   "marker pen",
+   "syringe",
+   "liquid inside the shaft"
   ]
  },
  {
@@ -309,13 +317,13 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a straight rod of bright polished steel, its grip wrapped in dark blue leather, with a steel ball on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a broad flat steel arrowhead, a triangle with two swept-back barbs, with one round bright blue gem set in its middle.",
-  "colours": "Bright silver-grey steel; a dark blue leather grip; one bright blue gem.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a stout rod wrapped from end to end in dark blue leather, bound with three broad bands of bright steel, with a big steel ball on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a broad flat steel arrowhead, a triangle with two swept-back barbs, with one round bright blue gem set in its middle.",
+  "colours": "Dark blue leather shaft; bright silver-grey steel bands, butt ball and arrowhead; one bright blue gem.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
    "broad steel arrowhead tip with a blue gem",
-   "steel shaft",
-   "dark blue grip",
+   "thick dark blue shaft with steel bands",
+   "steel ball on the butt",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -338,7 +346,11 @@
    "whole arrow",
    "spear",
    "wood",
-   "bow"
+   "bow",
+   "arrow",
+   "thin arrow shaft",
+   "fletching",
+   "bare steel shaft"
   ]
  },
  {
@@ -616,11 +628,12 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of dark cherry wood, deep brown with a wine tint, polished, with two silver bands and a silver cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a big crescent moon of bright silver, its two horns pointing onward, with one small deep blue star-shaped sapphire set between the horns.",
-  "colours": "Deep wine-brown cherry wood; bright silver bands and crescent moon; one deep blue sapphire.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of dark cherry wood, deep brown with a wine tint, polished, with two silver bands and a silver cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a flat round disc of deep midnight-blue enamel, seen flat-on, rimmed with a thick band of bright silver; inlaid on the blue and filling most of the disc is one bold crescent moon of bright silver in the shape of the letter C, with one small silver star beside it.",
+  "colours": "Deep wine-brown cherry wood; bright silver bands and rim; a deep midnight-blue enamel disc with a bright silver crescent moon and star on it.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "silver crescent moon at the tip",
+   "round midnight-blue disc with a silver rim",
+   "bold silver crescent moon on the disc",
    "dark cherry shaft with silver bands",
    "diagonal, tip at top right"
   ],
@@ -644,7 +657,14 @@
    "full round moon",
    "clouds",
    "sickle blade",
-   "axe"
+   "axe",
+   "spanner",
+   "wrench",
+   "open jaws",
+   "two prongs",
+   "fork",
+   "lollipop",
+   "hand mirror"
   ]
  },
  {
@@ -767,12 +787,12 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of dark hazel wood, twisted in a bold spiral from end to end so that deep grooves wind round it; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a toadstool growing straight out of the end of the wood: a broad domed cap of bright red with big white spots, on a short thick white stalk.",
-  "colours": "Dark brown twisted hazel; a bright red toadstool cap with white spots; a white stalk.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of dark hazel wood, twisted in a bold spiral from end to end so that deep grooves wind round it; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a toadstool growing straight out of the end of the wood: one broad flattened cap, twice as wide as it is tall, its skin tough and leathery, dull dark crimson, cracked with age, with about six raised warts of dull bone-grey on it, uneven in size and shape, no two alike; the rim of the cap is ragged and nibbled, a band of tan-brown gills shows beneath it, and it sits on a short thick stalk of dirty grey-brown.",
+  "colours": "Dark brown twisted hazel; a dull dark crimson toadstool cap, nearly black-red in the shadows, with uneven bone-grey warts; tan-brown gills; a dirty grey-brown stalk.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "red toadstool with white spots at the tip",
-   "spirally twisted dark wood shaft",
+   "dull dark crimson toadstool cap with uneven grey warts",
+   "twisted dark hazel shaft",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -795,7 +815,15 @@
    "grass",
    "gem",
    "fairy",
-   "straight smooth shaft"
+   "straight smooth shaft",
+   "toy",
+   "cartoon",
+   "glossy plastic",
+   "bright candy red",
+   "perfectly round white spots",
+   "pure white stalk",
+   "eyes",
+   "smiling face"
   ]
  },
  {
@@ -911,7 +939,8 @@
    "devil face",
    "skull",
    "smooth shaft"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "wand_of_death",
@@ -989,7 +1018,8 @@
    "drips",
    "skull",
    "feathered wings"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "wand_of_drain_magic",
@@ -998,11 +1028,12 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a six-sided rod of dull violet amethyst crystal, cloudy and dim, with a dark iron cap on the butt and a dark iron collar at the top; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: two thick curved horns of dark iron rising from the collar and bending inward toward each other like the jaws of pincers, their points almost touching, with nothing between them.",
-  "colours": "Dull cloudy violet crystal; dark grey iron cap, collar and pincer horns.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a six-sided rod of dull violet amethyst crystal, cloudy and dim, with a dark iron cap on the butt and a dark iron collar at the top; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a claw of dark iron: four thick curved talons rise from the collar and close round one ball of dull grey glass as wide as three shaft-widths; the ball is cloudy and lifeless, with one bold black crack running across it, and it does not glow.",
+  "colours": "Dull cloudy violet crystal; dark grey iron cap, collar and talons with pale lit edges; one dull cloudy pale grey ball with a black crack.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "two inward-curving iron horns like pincers at the tip",
+   "iron claw of talons gripping a ball",
+   "dull grey cracked ball",
    "dull violet crystal shaft",
    "diagonal, tip at top right"
   ],
@@ -1026,7 +1057,14 @@
    "glow",
    "closed ring",
    "crab",
-   "crescent moon"
+   "crescent moon",
+   "spanner",
+   "wrench",
+   "open jaws",
+   "two prongs",
+   "pincers",
+   "glowing orb",
+   "bright purple orb"
   ]
  },
  {
@@ -1190,12 +1228,13 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of bright polished silver, its grip wrapped in white cloth, with a silver ball on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a small bell of bright silver: its rounded crown sits on the end of the rod and its wide flaring mouth opens onward toward the top right corner, the round clapper showing inside the mouth.",
-  "colours": "Bright polished silver rod and bell; a white cloth grip.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of very dark navy-blue lapis stone flecked with gold, with two broad bright silver bands and a silver ball on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a church hand-bell of bright silver seen from the side, so that only its outside shows and never the inside of its mouth: a small round crown fixed on the end of the rod, a tall body with gently curving sides that widens steadily, and a thick flaring lip at its far end; just beyond the lip hangs the round silver ball of its clapper, half showing. Two raised silver ribs circle the body of the bell.",
+  "colours": "Very dark navy-blue lapis with gold flecks; bright polished silver bands, butt and bell with white glints and grey shading.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "silver bell at the tip, mouth outward",
-   "silver shaft with a white grip",
+   "silver bell seen from the side at the tip, widening to a lip",
+   "clapper ball showing beyond the lip",
+   "dark navy-blue shaft with silver bands",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -1219,7 +1258,19 @@
    "ribbon",
    "gold",
    "gem",
-   "wood"
+   "wood",
+   "ladle",
+   "spoon",
+   "ring",
+   "hoop",
+   "cup",
+   "pale silver shaft",
+   "white grip",
+   "horn",
+   "funnel",
+   "gramophone horn",
+   "dark round hole",
+   "open mouth facing the viewer"
   ]
  },
  {
@@ -1268,12 +1319,13 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of polished deep green jade with two broad gold bands and a gold cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: one big bird's tail feather standing straight up from a gold socket: a straight pale quill down its middle and soft barbs spreading from the quill on both sides in the long leaf shape of a feather, with a notch or two in its edge; the barbs are scarlet near the socket and golden yellow at the rounded end.",
-  "colours": "Deep green jade; bright gold; a feather that is scarlet below and golden yellow at its end, with a pale quill.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of polished deep green jade, dark and rich, with two broad gold bands and a gold cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: one big bird's tail feather standing straight up from a gold socket: a straight pale quill down its middle and soft barbs spreading from the quill on both sides in the long leaf shape of a feather, with a notch or two in its edge; the whole feather is deep scarlet, darker crimson near the quill, the same red from the socket to its rounded end.",
+  "colours": "Deep dark green jade; bright gold bands and socket; one deep scarlet feather with a pale quill.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "big red-to-gold feather plume at the tip",
-   "green jade shaft with gold bands",
+   "one broad deep scarlet feather",
+   "deep green jade shaft",
+   "gold bands",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -1298,7 +1350,13 @@
    "curled spiral",
    "peacock eye",
    "quill pen nib",
-   "several feathers"
+   "several feathers",
+   "yellow feather",
+   "yellow tip",
+   "striped red yellow and green",
+   "flame",
+   "paint brush",
+   "arrow fletching"
   ]
  },
  {
@@ -1347,12 +1405,12 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of smooth polished coral, warm salmon-red, with two gold bands and a gold cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: one big heart-shaped stone of pale pink rose quartz, the point of the heart set in a gold cup on the end of the rod.",
-  "colours": "Warm salmon-red coral; bright gold; a pale pink heart-shaped stone.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of dark rosewood, deep red-brown, polished, with two gold bands and a gold cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: one big heart-shaped jewel of deep red garnet, cut with flat facets, dark wine-red in its depths with one bright glint on its upper left lobe; the point of the heart sits in a gold cup and four gold claws grip its sides.",
+  "colours": "Deep red-brown rosewood; bright gold bands, cup and claws; one deep wine-red faceted heart-shaped jewel.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "pink heart-shaped stone at the tip",
-   "salmon-red shaft with gold bands",
+   "deep red faceted heart-shaped jewel in gold claws",
+   "dark red-brown wooden shaft with gold bands",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -1375,7 +1433,13 @@
    "wings",
    "anatomical heart",
    "ribbon",
-   "flowers"
+   "flowers",
+   "pale pink heart",
+   "salmon-pink rod",
+   "candy",
+   "sweet",
+   "lollipop",
+   "smooth plastic heart"
   ]
  },
  {
@@ -1541,12 +1605,13 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of wood painted a faded dusty pink, worn to bare grey at the grip, with two brass bands and a brass cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a classic sand timer, an hourglass, much wider than the rod and standing in line with it: at the bottom a wide round brass plate fixed on the end of the rod; on it a glass cone, wide at the bottom and narrowing upward to a point; touching that point, a second glass cone upside down, narrow at the bottom and widening upward; and on top of it a second wide round brass plate. The two cones meet point to point so the glass is very thin in the middle and wide at both plates. Three thin brass posts join the two plates. Dark brown sand fills the lower cone.",
-  "colours": "Faded dusty pink paint worn to grey; bright yellow brass; clear glass and dark brown sand.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of wood painted a dull faded rose-grey, like a dried flower, more grey than pink, worn to bare grey wood at the grip, with two dark bronze bands and a dark bronze cap on the butt; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a big hourglass standing in line with the rod, four times as wide as the rod: two wide round end-plates of dark bronze, and between them two round glass bulbs, each as big as a hen's egg, meeting at one narrow waist; the bulb nearer the rod is full of pale gold sand, the farther bulb is clear and empty; two thick dark bronze posts join the plates, one on each side of the glass.",
+  "colours": "Dull faded rose-grey paint worn to grey wood; dark brown bronze bands, plates and posts; clear pale glass and pale gold sand.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "big hourglass with a pinched waist at the tip, wider than the shaft",
-   "faded dusty pink shaft",
+   "hourglass at the tip: two glass bulbs with a narrow waist between two round plates",
+   "pale gold sand in one bulb",
+   "dull rose-grey shaft",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -1569,7 +1634,13 @@
    "lantern",
    "bottle",
    "gem",
-   "bright candy pink"
+   "bright candy pink",
+   "bright pink",
+   "bubblegum pink",
+   "hand mirror",
+   "ring round the hourglass",
+   "single bulb",
+   "goblet"
   ]
  },
  {
