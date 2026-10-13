@@ -678,6 +678,18 @@ and look for the same kind of slip when reviewing.
 - **Lift above about 1.35 greys cloth and leather**; 1.2 to 1.3 is enough.
 - **A single giant scale still has no reliable wording** (tortoise rings: a whole
   shell; bell outline: a skirt; teardrop: a ribbed pod).
+- **"Woad-blue wool" draws cobalt ski gloves.** "Dull slate blue-grey, the colour of
+  a rain cloud" gives a muted blue.
+- **A cloak with a fur collar grows sleeves** unless drawn "seen from directly behind,
+  one unbroken trapezoid, no opening down it, the collar a roll of fur across the top".
+- **A hammer head with ends that "slope inward to blunt points" is a double axe.**
+  Keep the block; change the fittings.
+- **A belt on a sleeveless scale coat makes a dress.** Put the gold on a broad collar;
+  "straight-sided, as wide at the hem as at the shoulders, no waist".
+- **"Red-brown" in `colours` trips the magenta check**; say "the brown of a chestnut".
+- **A net does not survive 64 px**: the cut fills the mesh solid. Use another idea.
+- **A T-shirt-shaped mail shirt** is broken by a dagged hem plus a leather-bound neck
+  slit.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
