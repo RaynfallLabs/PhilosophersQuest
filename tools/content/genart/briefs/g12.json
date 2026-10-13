@@ -1025,8 +1025,8 @@
   "rank": 3,
   "key": "magenta",
   "body": "shapeless",
-  "what": "a corrosive ooze: a great heap of metal-eating dungeon slime, foul and dangerous, painted with depth, weight and grime. It is one single big, heavy, rounded mound of thick, opaque, murky slime, as tall as it is wide, with a smooth wet skin, soft all over, sagging in four or five heavy rolls one above the other, with pale wet highlights on the top of every roll. A few small patches of dirty grey-white froth and three or four big burst bubbles sit near its top only. It is not clear: nothing shows through it. Three old iron sword blades stick out of the mound at different angles, each one eaten thin, pitted, full of ragged holes and broken off short, with no hilts showing. Where each blade enters the slime one short thin curl of pale steam rises, joined to the slime. It is only slime and the ruined blades stuck in it.",
-  "colours": "dull dark olive-green opaque slime all over, the colour of stagnant ditch water, with nearly black depths between the rolls and pale grey-green wet highlights on them, a few small patches of dirty grey-white froth near the top, three very dark brown corroded iron blades the colour of an old iron nail, thin pale grey steam.",
+  "what": "a corrosive ooze: a great heap of metal-eating dungeon slime, foul and dangerous, painted with depth, weight and grime. It is one single big, heavy, rounded mound of thick, opaque, murky slime, as tall as it is wide, with a lumpy sagging skin, soft all over, running with thick slow drips and streaks. A few small patches of dirty grey-white froth and three or four big burst bubbles sit on its very top only; the rest of the mound is bare dark wet slime. It is not clear: nothing shows through it. Three old iron sword blades stick out of the mound at different angles, each one eaten thin, pitted, full of ragged holes and broken off short, with no hilts showing. Where each blade enters the slime one short thin curl of pale steam rises, joined to the slime. It is only slime and the ruined blades stuck in it.",
+  "colours": "dull murky grey-green and dark olive-drab opaque slime, the colour of stagnant ditch water, with dark brown-black depths, a few small patches of dirty grey-white froth on the very top, dull wet highlights, three very dark brown corroded iron blades the colour of an old iron nail, thin pale grey steam.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
   "pose": "The mound heaves and rolls to the left, piled highest at the right, its front edge bulging forward in one thick rounded lip that lifts to pour down, the three ruined blades jutting from its top and back. It is one compact mass with a clean lower edge.",
@@ -1093,10 +1093,11 @@
    "straw",
    "thatch",
    "hay",
-   "long hanging strands",
    "yellow froth covering the top",
    "cream",
-   "fur"
+   "pale yellow cap",
+   "coiled snake",
+   "bright green"
   ]
  },
  {

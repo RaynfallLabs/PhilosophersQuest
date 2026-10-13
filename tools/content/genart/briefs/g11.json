@@ -46,16 +46,16 @@
   "family": "lich_a",
   "rank": 2,
   "key": "magenta",
-  "what": "a lich apprentice: a living mage who has gone most of the way to undeath, a tall, thin, sickly young man, painted seriously. He has a gaunt, hollow-cheeked, clean-shaven face with skin as grey-white as candle wax, dark bruised rings round sunken eyes whose irises glow dull yellow, thin colourless lips, and long lank black hair hanging to his shoulders. Dark grey veins show on his neck and on the backs of his thin hands. He still has flesh everywhere: a wasted man, not a skeleton. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "what": "a lich apprentice: a living mage who has gone most of the way to undeath, a tall, thin, sickly young man, painted seriously. He has a gaunt, hollow-cheeked, clean-shaven living face with a nose, ears, eyelids and lips, and skin as grey-white as candle wax, dark bruised rings round sunken eyes whose irises glow dull yellow, thin colourless lips, and long lank black hair hanging to his shoulders. Dark grey veins show on his neck and on the backs of his thin hands. He still has flesh everywhere: a wasted man, not a skeleton. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "wax grey-white skin, long black hair, dull yellow eyes, plain charcoal-grey scholar's robes with a black hem, a dull brass chain belt, a brown leather book hanging at the belt, one old yellowed ivory human skull, a sickly yellow-green flame.",
   "wears": "He wears a plain long charcoal-grey apprentice's robe with wide sleeves, a dull brass chain for a belt with one thick brown leather book hanging from it, and black shoes. The robe has no hood and his head is bare. No jewellery.",
-  "holds": "He holds exactly one human skull in his left hand, low at his hip, his fingers hooked in its eye sockets: an old, plain, yellowed bone skull with no jaw; the skull is cold dead bone with no flame and no glow on it. His right hand is empty and raised high: one tall tongue of sickly yellow-green fire rises from the open palm, joined to the hand: shaped like a big candle flame as long as his forearm, pointed at the top, with ragged licking edges and no round glow round it. He has no staff and no weapon.",
-  "pose": "On two legs, he strides forward to the left with his weight on his front foot, his right arm raised high ahead of him with the one tall pointed flame rising from its palm, the plain skull carried low at his left hip, his head lowered and his yellow eyes fixed on the viewer, his robe and black hair swinging.",
+  "holds": "He holds exactly one human skull in his left hand, low at his hip, his fingers hooked in its eye sockets: an old, plain, yellowed bone skull with no jaw; the skull is cold dead bone with no flame and no glow on it. His right hand is empty and raised high: the whole hand is wrapped in sickly yellow-green fire, on fire like the head of a burning torch, the dark fingers showing in the middle, with ragged tongues of flame rising a hand's length above the fingertips; the fire is his own bare hand burning and he holds no candle, no torch and no stick. He has no staff and no weapon.",
+  "pose": "On two legs, he strides forward to the left with his weight on his front foot, his right arm raised high ahead of him with the hand itself burning in yellow-green fire, the plain skull carried low at his left hip, his head lowered and his yellow eyes fixed on the viewer, his robe and black hair swinging.",
   "must_show": [
    "a living, gaunt young man with wax-pale skin and long black hair: his own face is flesh, not a skull",
    "plain charcoal robes, bare head",
    "one yellowed skull held in the left hand",
-   "a tall pointed yellow-green flame in the right palm, plainly a flame and not an orb",
+   "the raised right hand wrapped in yellow-green fire, plainly fire and not an orb",
    "plainer than any true lich: no crown, no regalia"
   ],
   "must_not_show": [
@@ -91,7 +91,14 @@
    "halo round the flame",
    "round glow",
    "sun",
-   "lantern"
+   "lantern",
+   "skull face",
+   "skeleton face",
+   "bare skull for a head",
+   "candle",
+   "torch",
+   "stick",
+   "green candle"
   ]
  },
  {

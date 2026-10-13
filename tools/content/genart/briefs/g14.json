@@ -351,9 +351,9 @@
   "family": "shade",
   "rank": 3,
   "key": "green",
-  "what": "a succubus shade: the faded ghost of a she-demon who preys on sleepers, worn so thin that lamplight passes through her, painted seriously as a sorrowful and dangerous ghost. She is a figure made entirely of pale ghost-light in the shape of a tall, slender, graceful woman in a long gown: every part of her, her face, her hair, her horns, her wings and her gown alike, is the same translucent pale ash-grey with a faint dull mauve tint, like cold mist at dusk, with dark slate-grey in the folds and hollows, drawn solid enough to read clearly; she is never bright pink. Nothing on her has any other colour: no skin colour, no blonde or brown hair, no gold cloth. She has a cold, gaunt, sharp-featured face with hollow cheeks and two eyes of bright rose-red light, the only strong colour on her, long hair flowing behind her, two short curved horns on her brow, and a pair of small tattered bat wings on her back, their edges fraying into wisps. Her fingers end in long thin claws. She has the realistic proportions of a tall adult woman, about eight heads tall, with a small head and long limbs.",
-  "colours": "translucent pale ash-grey ghost-mist with a faint dull mauve tint on every part, face, hair, wings and gown alike, with dark slate-grey folds and hollows, two bright rose-red eyes. No skin colour, no gold, no brown and no black anywhere.",
-  "wears": "She wears the ghost of a long, modest, high-necked gown with long sleeves that covers her from the throat to the ground, made of the same pale ash-grey mist as the rest of her, its long skirt fraying at the hem into trailing wisps that hide her feet.",
+  "what": "a succubus shade: the faded ghost of a she-demon who preys on sleepers, worn so thin that lamplight passes through her, painted seriously as a sorrowful and dangerous ghost. She is a figure made entirely of pale ghost-light in the shape of a tall, slender, graceful woman in a long gown: her face, her hands, her hair, her horns and her wings are all the same translucent pale ash-grey with a faint dull mauve tint, like cold mist at dusk, drawn solid enough to read clearly, and her gown is a second, much darker ghost-colour: a deep dusky plum-grey, plainly far darker than her pale face and hands, with nearly black folds. She has no skin colour, no blonde or brown hair and no gold cloth. She has a cold, gaunt, sharp-featured face with hollow cheeks and two eyes of bright rose-red light, the only strong colour on her, long hair flowing behind her, two short curved horns on her brow, and a pair of small tattered bat wings on her back, their edges fraying into wisps. Her fingers end in long thin claws. She has the realistic proportions of a tall adult woman, about eight heads tall, with a small head and long limbs.",
+  "colours": "translucent pale ash-grey ghost-mist with a faint dull mauve tint on the face, hands, hair, horns and wings; a deep dusky plum-grey gown, far darker than the face and hands, with nearly black folds and a pale frayed hem; two bright rose-red eyes.",
+  "wears": "She wears the ghost of a long, loose, heavy, modest gown of deep dusky plum-grey, cut like a nun's habit: a high collar closed at the throat, long wide sleeves to the wrists, and a full wide skirt that hangs in deep straight folds from the shoulders to the ground and hides the shape of her body, its long skirt fraying at the hem into trailing wisps that hide her feet.",
   "holds": "Both of her hands are empty and she holds nothing: her right hand is stretched forward, palm up, beckoning with one clawed finger, and her left hand is raised beside her shoulder with the claws spread.",
   "pose": "On two legs hidden by her long gown, she glides forward to the left, leaning into it with her weight on her front foot, her right arm extended ahead beckoning, her left claw raised beside her shoulder, her head tilted and her glowing eyes on the viewer, her hair, tattered wings and the wisps of her skirt streaming behind to the right.",
   "must_show": [
@@ -398,7 +398,13 @@
    "coloured clothes",
    "bare feet",
    "armour",
-   "red wings"
+   "red wings",
+   "close-fitting dress",
+   "clinging dress",
+   "gown the same colour as the skin",
+   "pale lilac gown",
+   "bare arms",
+   "figure-hugging gown"
   ]
  },
  {
@@ -461,11 +467,11 @@
   "id": "valkyrie_shade",
   "family": "shade",
   "rank": 5,
-  "key": "blue",
-  "what": "a valkyrie shade: the ghost of one of Odin's shield-maidens who fell from his favour, painted seriously. She is a figure made entirely of pale ghost-light in the shape of a tall, strong, grim warrior woman in full war gear: every part of her, her face, her braids, her helmet, her mail, her boots, her spear shaft and her cloak alike, is the same translucent pale gold-white, like mist lit by a low winter sun, with darker dull grey-bronze in the folds and hollows, drawn solid enough to read clearly. Nothing on her has any other colour: no skin colour, no brown leather, no dark hair, no black feathers, no steel grey. Her face is stern and hollow-cheeked, with two eyes of bright white light, and two long thick braids hang from under her helmet. She has the realistic proportions of a tall adult woman, about eight heads tall, with a small head and long limbs.",
-  "colours": "translucent pale gold-white ghost-light on every part, face, hair, helmet, mail, boots and feathered cloak alike, with darker dull grey-bronze folds and hollows, two bright white eyes, a spearhead of bright white-gold light. No skin colour, no brown, no black and no steel grey anywhere.",
-  "wears": "She wears the ghost of a round helmet with a nose guard and two swept-back raven wings fixed to its sides, a knee-length mail shirt belted at the waist, arm guards, tall boots, and a long ragged cloak of big feathers that hangs from her shoulders and frays into wisps. All of it is made of the same pale gold-white light as she is.",
-  "holds": "She holds exactly one spear in her right hand: a thick straight shaft of the same pale light, taller than she is, with one long, broad, leaf-shaped head that blazes bright white-gold, the brightest thing in the picture. Her left hand is empty: the arm is stretched forward and down with the open hand reaching to seize. She has no shield and no sword.",
+  "key": "magenta",
+  "what": "a valkyrie shade: the ghost of one of Odin's shield-maidens who fell from his favour, painted seriously. She is a figure made entirely of pale ghost-light in the shape of a tall, strong, grim warrior woman in full war gear: every part of her, her face, her braids, her helmet, her mail, her boots, her spear shaft and her cloak alike, is the same translucent pale ash-white, the colour of fog and old bone, nearly white, like mist under a winter moon, with darker dull slate-grey in the folds and hollows, drawn solid enough to read clearly. Nothing on her has any other colour: no skin colour, no brown leather, no dark hair, no black feathers, no steel grey. Her face is stern and hollow-cheeked, with two eyes of bright white light, and two long thick braids hang from under her helmet. She has the realistic proportions of a tall adult woman, about eight heads tall, with a small head and long limbs.",
+  "colours": "translucent pale ash-white ghost-light, the colour of fog and old bone, nearly white, on every part, face, hair, helmet, mail, boots and feathered cloak alike, with darker dull slate-grey folds and hollows, two bright white eyes, a spearhead of bright pure white light. No skin colour, no brown, no black and no steel grey anywhere.",
+  "wears": "She wears the ghost of a round helmet with a nose guard and two swept-back raven wings fixed to its sides, a knee-length mail shirt belted at the waist, arm guards, tall boots, and a long ragged cloak of big feathers that hangs from her shoulders and frays into wisps. All of it is made of the same pale bone-white light as she is.",
+  "holds": "She holds exactly one spear in her right hand: a thick straight shaft of the same pale light, taller than she is, with one long, broad, leaf-shaped head that blazes bright pure white, the brightest thing in the picture. Her left hand is empty: the arm is stretched forward and down with the open hand reaching to seize. She has no shield and no sword.",
   "pose": "On two legs, she lunges forward and downward to the left with her front knee deeply bent and her rear leg stretched behind, her right arm raised high and drawn back with the thick spear held overhand, level, its glowing head pointing to the left, her empty left hand reaching down ahead of her, her braids and feathered cloak streaming up behind to the right.",
   "must_show": [
    "a ghost in the shape of a warrior woman, all of one pale gold-white light, face and gear alike",
@@ -486,7 +492,7 @@
    "bare legs",
    "bare midriff",
    "armoured bikini",
-   "living pink skin",
+   "living skin colour",
    "blonde hair",
    "bright shining silver armour",
    "skull face",
@@ -515,7 +521,17 @@
    "dark hair",
    "tan skin",
    "grey steel armour",
-   "solid gold metal armour"
+   "solid gold metal armour",
+   "gold statue",
+   "golden yellow body",
+   "orange",
+   "yellow ghost",
+   "straw",
+   "green ghost",
+   "mint green",
+   "sea-green",
+   "turquoise",
+   "jade statue"
   ]
  },
  {
@@ -897,8 +913,8 @@
   "family": "shadow_b",
   "rank": 3,
   "key": "blue",
-  "what": "a shadow assassin: a killer of an order like the old Assassins of Alamut in Persia, who has bargained his own shadow away so that he can walk inside the dark, a lean, wiry, athletic living man dressed entirely in black, painted seriously. His whole head is wrapped in a black turban, and a black cloth mask covers his nose, mouth and chin up to the bridge of the nose, so that only two narrow dark eyes and a thin strip of light brown skin show. His clothes are coal-black and dark charcoal-grey, painted with dark slate-grey highlights on every fold so that they read clearly. He has realistic adult proportions: a small head, long limbs, about eight heads tall. He casts no shadow; instead, thick black smoke pours off his back and off the tail of his coat and streams out behind him in three long ragged ribbons, joined to his coat like a tattered cape of smoke.",
-  "colours": "coal-black and dark charcoal-grey cloth with dark slate-grey highlights, a black turban and black face mask, a broad dull dark red sash, a thin strip of light brown skin round the eyes, black leather gloves, bracers and soft boots, one knife with a bright silver-white steel blade and a brass hilt, black smoke streaming from his back.",
+  "what": "a shadow assassin: a killer of an order like the old Assassins of Alamut in Persia, who has bargained his own shadow away so that he can walk inside the dark, a lean, wiry, athletic living man dressed entirely in black, painted seriously. His whole head is wrapped in a black turban, and a black cloth mask covers his nose, mouth and chin up to the bridge of the nose, so that only two narrow dark eyes and a thin strip of pale olive skin show. His clothes are soot-black, black as coal and never brown, painted with cold dark slate-grey highlights on every fold so that they read clearly. He has realistic adult proportions: a small head, long limbs, about eight heads tall. He casts no shadow; instead, thick soot-black smoke, black as coal and never brown, pours off his back and off the tail of his coat and streams out behind him in three long ragged ribbons, joined to his coat like a tattered cape of smoke.",
+  "colours": "soot-black cloth, black as coal, with cold dark slate-grey highlights, a black turban and black face mask, a broad dull dark red sash, a thin strip of pale olive skin round the eyes, black leather gloves, bracers and soft boots, one knife with a bright silver-white steel blade and a brass hilt, black smoke streaming from his back.",
   "wears": "He wears a black turban wound close round his head, a black cloth mask over his nose and mouth, a plain knee-length black wrap-over coat with a crossed front, no buttons and long close sleeves, a broad dull dark red sash wound round his waist, loose black trousers tucked into soft black boots, and black leather gloves and bracers. No cloak, no hood, no armour. No skin shows except round his eyes.",
   "holds": "He holds exactly one knife in his right hand: a short, broad, straight, double-edged blade no longer than his hand, bright silver-white steel, the brightest thing in the picture, with a brass crossguard, held point-down in a stabbing grip. His left hand is empty: an open black-gloved hand stretched forward with the fingers spread to grab. He holds no second blade.",
   "pose": "He springs forward to the left with his front knee bent and his body low and twisted, his right arm raised high above and behind his head with the bright knife pointing down to stab, his empty left hand reaching out ahead, the ribbons of black smoke streaming from his back and coat tail to the right, touching him.",
@@ -952,8 +968,15 @@
    "steps",
    "grey blocks",
    "loose puffs of smoke apart from the body",
-   "smoke on the ground"
-  ]
+   "smoke on the ground",
+   "brown clothes",
+   "brown coat",
+   "brown turban",
+   "brown smoke",
+   "brown face",
+   "dark brown skin"
+  ],
+  "lift": 1.25
  },
  {
   "id": "lizardfolk_shaman",

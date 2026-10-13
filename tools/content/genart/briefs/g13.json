@@ -298,11 +298,11 @@
   "family": "seal",
   "rank": 6,
   "key": "green",
-  "what": "Abyzou, the demon of silence, the sleepless demoness of the Testament of Solomon: a very tall, gaunt, terrible queen of the abyss who floats upright in the air. She wears a mask over her whole face: one smooth, blank, polished silver mask, oval like an egg, with no mouth, no nose and no lips shaped on it at all, only two big round eye-holes, and in each eye-hole one wide staring pale yellow eye that never closes. The blank mouthless silver mask is her face. Her hair is very long, straight and pure white, and every strand of it floats straight upward from the top of her head, as hair does on someone falling: it rises above the mask in one tall, narrow, tapering plume of loose white strands, three times the height of her head. Her hands are cold pale lavender-grey, long and thin, with long black nails. She has realistic adult proportions: a small head, a long neck, long thin arms, about nine heads tall.",
-  "colours": "a smooth polished silver mask with two round pale yellow eyes, pure white hair, pale lavender-grey hands with black nails, a heavy deep midnight-violet gown with wide hanging sleeves lined in pale silver-grey, silver embroidery down the front and round the hem, a tall silver collar and a broad silver belt.",
+  "what": "Abyzou, the demon of silence, the sleepless demoness of the Testament of Solomon: a very tall, gaunt, terrible queen of the abyss who floats upright in the air. She wears a mask over her whole face: one smooth, blank mask of black iron, oval like an egg, the darkest thing in the picture, with no mouth, no nose and no lips shaped on it at all, only two big round eye-holes, each a third of the mask wide, and each eye-hole is filled to the brim with solid bright pale yellow light. The blank mouthless black iron mask is her face. Her hair is very long, straight and pure white, and every strand of it floats straight upward from the top of her head, as hair does on someone falling: it rises above the mask in one tall, narrow, tapering plume of loose white strands, three times the height of her head. Her hands are cold pale lavender-grey, long and thin, with long black nails. She has realistic adult proportions: a small head, a long neck, long thin arms, about nine heads tall.",
+  "colours": "a smooth black iron mask with two big round eyes of solid bright pale yellow light, pure white hair, pale lavender-grey hands with black nails, a heavy deep midnight-violet gown with wide hanging sleeves lined in pale silver-grey, silver embroidery down the front and round the hem, a tall silver collar and a broad silver belt.",
   "wears": "She wears a heavy, rich, high-necked gown of deep midnight-violet with silver embroidery down the front and round the hem, a tall stiff silver collar round her throat, a broad silver belt, and enormous wide sleeves that hang from her wrists nearly to her knees, lined with pale silver-grey, tattered at their ends. The gown falls straight down past where her feet would be and ends in a long ragged trailing hem, so that she has no feet to be seen.",
-  "holds": "Her hands are empty and she holds nothing. Her right hand is raised to the mask with one long forefinger held upright against it, touching the blank silver where a mouth would be, the sign for silence; her left arm is stretched out ahead with the palm open and the long thin black-nailed fingers spread.",
-  "pose": "She drifts to the left through the air, leaning forward, her right forefinger upright against the front of her blank silver mask, her left arm stretched far out ahead so that its great wide sleeve hangs open below it, the heavy gown and its ragged hem trailing down and back to the right, the tall plume of white hair streaming straight up above her head, her yellow eyes staring at the viewer out of the mask. The tip of the hair and the hem of the gown are both well inside the picture.",
+  "holds": "Her hands are empty and she holds nothing. Her right hand is raised to the mask with one long forefinger held upright against it, touching the blank black iron where a mouth would be, the sign for silence; her left arm is stretched out ahead with the palm open and the long thin black-nailed fingers spread.",
+  "pose": "She drifts to the left through the air, leaning forward, her right forefinger upright against the front of her blank black iron mask, her left arm stretched far out ahead so that its great wide sleeve hangs open below it, the heavy gown and its ragged hem trailing down and back to the right, the tall plume of white hair streaming straight up above her head, her yellow eyes staring at the viewer out of the mask. The tip of the hair and the hem of the gown are both well inside the picture.",
   "must_show": [
    "a tall gaunt woman demon floating, fully clothed in a rich dark violet gown with enormous hanging sleeves",
    "a blank smooth silver mask for a face: two round eye-holes, no mouth, no nose",
@@ -357,7 +357,11 @@
    "theatre mask",
    "skull mask",
    "helmet",
-   "beak mask"
+   "beak mask",
+   "silver mask",
+   "white mask",
+   "pale face",
+   "white face"
   ]
  },
  {
@@ -406,11 +410,11 @@
   "rank": 2,
   "key": "magenta",
   "body": "shapeless",
-  "what": "a sea snake: a real yellow-bellied sea snake, an animal, swimming. It is one long slender smooth snake with a narrow pointed head, small dark eyes and a mouth open at the tip to show two small fangs. Its body is flattened from side to side like a ribbon standing on its edge. The last part of its tail does not taper to a point: it stays flat and deep and ends in a blunt rounded oar-blade, only twice as deep as the body, a smooth continuation of the tail with no neck or stalk before it. The upper half of its body is glossy black from nose to tail and the lower half is bright yellow, with a sharp straight line between the two; the flat tail blade is pale yellow with a few large black blotches.",
-  "colours": "glossy black upper half, bright lemon-yellow lower half, a yellow paddle tail with big black spots, small dark eyes, white fangs.",
+  "what": "a sea snake: a real yellow-bellied sea snake, an animal, swimming. It is one long, thick, heavy, smooth snake, as thick as a man's arm, with a narrow pointed head, small dark eyes and a mouth open at the tip to show two small fangs. Its body is flattened from side to side like a ribbon standing on its edge. The last part of its tail does not taper to a point: it stays flat and deep and ends in a blunt rounded oar-blade, only twice as deep as the body, a smooth continuation of the tail with no neck or stalk before it. The upper half of its body is glossy black from nose to tail and the lower half is bright yellow, with a sharp straight line between the two; the flat tail blade is coloured like the rest of the snake, black above and yellow below, crossed by three broad black bars.",
+  "colours": "glossy black upper half, bright lemon-yellow lower half, a flat paddle tail black above and yellow below with three broad black bars, small dark eyes, white fangs.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "Seen from the side, it swims to the left through empty water in two deep S-shaped waves that fill the picture from left to right, its head at the left raised a little with the mouth open to bite, its broad spotted paddle tail at the right.",
+  "pose": "Seen from the side, it swims to the left through empty water in three deep S-shaped waves, each wave half the height of the picture, so that its thick body fills the picture from left to right and from top to bottom, its head at the left raised a little with the mouth open to bite, its flat barred paddle tail at the right.",
   "must_show": [
    "a real snake seen from the side, swimming in S-waves",
    "black back and bright yellow belly with a sharp line between",
@@ -442,7 +446,13 @@
    "tail shaped like a cup, fan or wedge of cheese",
    "huge tail fin",
    "fish tail fin",
-   "tail wider than the head is long"
+   "tail wider than the head is long",
+   "spotted fan",
+   "net",
+   "leaf on the tail",
+   "thin thread-like body",
+   "cheese",
+   "tail with small spots"
   ]
  },
  {
@@ -576,8 +586,8 @@
   "rank": 6,
   "key": "blue",
   "body": "shapeless",
-  "what": "Echidna of Greek myth, the mother of monsters, half fair-cheeked nymph and half speckled serpent, as Hesiod describes her: a woman down to the hips, and from the hips down one great snake. Her upper half is a tall, strong, savage woman with a fair but furious face: brows drawn down in rage, wild amber eyes, lips pulled back in a snarl from clenched white teeth with two long white fangs, and a great mass of long tangled dark auburn hair. She has two arms, and her hands end in long hooked dark claws. She has no hips, no lap and no knees: at her belt her own body simply continues downward as one single enormous serpent's body, as wide as her waist, covered in dull sandy-yellow scales with big black spots, each spot as big as her hand. This snake body stands straight up under her like a thick pillar for the length of her own torso, then bends and winds into two heavy coils and ends in a tail tip raised behind her. She has a small head, a long neck and long strong arms.",
-  "colours": "fair living skin on the face and arms, long tangled dark auburn hair, amber eyes, white fangs, a dark pine-green Greek dress with a bronze border, a bronze diadem, a broad bronze collar and bronze arm rings, a serpent body of dull sandy-yellow scales covered with big black spots, a pale cream belly, dark claws.",
+  "what": "Echidna of Greek myth, the mother of monsters, half fair-cheeked nymph and half speckled serpent, as Hesiod describes her: a woman down to the hips, and from the hips down one great snake. Her upper half is a tall, strong, savage woman with a fair but furious face: brows drawn down in rage, wild amber eyes, lips pulled back in a snarl from clenched white teeth with two long white fangs, and a great mass of long tangled dark auburn hair. She has two arms, and her hands end in long hooked dark claws. She has no hips, no lap and no knees: at her belt her own body simply continues downward as one single enormous serpent's body, as wide as her waist, covered in pale grey-green scales, the colour of dry sage leaves, with big black spots, each spot as big as her hand. This snake body stands straight up under her like a thick pillar for the length of her own torso, then bends and winds into two heavy coils and ends in a tail tip raised behind her. She has a small head, a long neck and long strong arms.",
+  "colours": "fair living skin on the face and arms, long tangled dark auburn hair, amber eyes, white fangs, a dark pine-green Greek dress with a bronze border, a bronze diadem, a broad bronze collar and bronze arm rings, a serpent body of pale grey-green scales, the colour of dry sage leaves, covered with big black spots, a pale cream belly, dark claws.",
   "wears": "She wears a short dark pine-green ancient Greek tunic pinned with a bronze brooch at each shoulder, which covers her upper body from the collarbone down and stops at a broad bronze belt at her waist. Nothing hangs below the belt: there the spotted serpent scales begin at once. She wears a bronze diadem on her brow, a broad bronze collar and heavy bronze arm rings on both upper arms.",
   "holds": "Her hands are empty and she holds nothing; both clawed hands are raised and spread to rake.",
   "pose": "She rears up tall and lunges to the left, her woman's body held high on the upright pillar of her own serpent body, her right clawed hand raised high above her head to slash down and her left clawed hand reaching out low ahead, snarling with her fangs bared, hair flying, the two heavy spotted coils heaped below and the tail tip lashing up behind at the right.",
@@ -625,7 +635,15 @@
    "thighs",
    "skirt hanging over the coils",
    "third arm",
-   "extra arms"
+   "extra arms",
+   "orange scales",
+   "bright yellow scales",
+   "golden scales",
+   "leopard skin",
+   "brown snake body",
+   "net stockings",
+   "sword",
+   "knife"
   ]
  },
  {
@@ -933,11 +951,11 @@
   "rank": 2,
   "key": "blue",
   "body": "shapeless",
-  "what": "a wormwood blight: the thing that grew where the burning star Wormwood of the Book of Revelation fell and turned the waters bitter. It is one tall, leaning, spreading growth, part fungus and part dead thornbush, as pale as ash, painted in thick detail. At its heart, held fast in the growth, sits one fallen star-stone: a jagged black cinder as big as a boulder, split by cracks that glow dull bitter yellow. Round and over the stone climbs a dense thicket of thick, twisted, pale stalks like the bare stems of a dead shrub, each as thick as an arm, with dark gaps between them, and swollen among the stalks are a few big round pale bladders like puffballs, each as big as the star-stone, some split open at the top and spilling a short curl of bile-yellow spore dust that is joined to the bladder. Several long pale root-like arms of the growth lash out to the left, ending in frayed feelers. It has no face.",
+  "what": "a wormwood blight: the thing that grew where the burning star Wormwood of the Book of Revelation fell and turned the waters bitter. It is one upright, bushy, spreading growth, as tall as it is wide, part fungus and part dead thornbush, as pale as ash, painted in thick detail. At its heart, held fast in the growth, sits one fallen star-stone: a jagged black cinder as big as a boulder, split by cracks that glow dull bitter yellow. Round the stone stand about eight thick, twisted, pale stalks, each as thick as a leg, rising upright side by side with wide dark gaps between them, bare, knotted and thorny, and swollen among the stalks are a few big round pale bladders, each as big as the star-stone, some split open at the top and spilling a short curl of bile-yellow spore dust that is joined to the bladder. Three thick pale stalks bend out to the left at different heights, each ending in a blunt frayed tip. It has no face.",
   "colours": "pale ash-white and bone-grey stalks with dark charcoal gaps and shadows between them, pale grey-white bladders with dull yellow stains, one black cinder stone with dull bitter-yellow glowing cracks, short curls of bile-yellow spore dust.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "The whole growth leans and surges to the left, taller at the right and reaching out at the left, its long pale root-arms lashing forward to the left at different heights, two of the big bladders bursting open at the top with short curls of bile-yellow dust.",
+  "pose": "The growth stands upright in the middle of the picture, wholly inside the picture with empty backdrop on every side, the black star-stone with its yellow cracks in its centre, the thick pale stalks rising round it, three of them bending out to the left to strike, two of the big bladders at the top bursting open with short curls of bile-yellow dust. It is one compact mass with a clean lower edge.",
   "must_show": [
    "a pale ash-white growth of thick twisted stalks and big round bladders, painted and weathered",
    "one black star-stone with yellow glowing cracks lodged in its middle, readable in the small sprite",
@@ -968,7 +986,14 @@
    "puddle",
    "cartoon blob",
    "flat shape with dot eyes",
-   "candy colours"
+   "candy colours",
+   "feather",
+   "feather duster",
+   "thin hairs",
+   "fine roots",
+   "hundreds of thin threads",
+   "slanting diagonal shape",
+   "eye in the middle"
   ]
  },
  {
@@ -1158,10 +1183,10 @@
   "rank": 2,
   "key": "blue",
   "what": "a satyr trickster of Greek myth, a follower of Dionysus: a lean, wiry, sly man above the waist and a goat below, standing on two goat legs. He has a sharp weather-beaten light tan face with a crooked knowing grin, a short pointed dark brown beard, a snub nose, long pointed ears that stick out sideways, a mop of curly dark brown hair, and two short thick ridged goat horns curving back from his forehead. From the waist down he has the hind legs of a goat: shaggy dark brown hair, backward-bending hocks and two black cloven hooves, with a short upturned goat tail. He has realistic adult proportions: a small head, long limbs, about seven heads tall.",
-  "colours": "weather-beaten light tan skin, curly dark brown hair and beard, grey-brown ridged horns, shaggy dark brown goat legs with black hooves, a short dull ochre-yellow tunic, a wreath of dark ivy leaves, pale straw-yellow reed panpipes, a small dark red leather purse.",
-  "wears": "He wears a short ragged sleeveless tunic of dull ochre-yellow cloth that covers his chest and belly and hangs to the tops of his goat thighs, tied with a cord, and a wreath of dark ivy leaves in his hair. He wears no armour.",
-  "holds": "He holds exactly one set of panpipes in his right hand, raised to his chin: a row of seven thick pale reed pipes of stepped lengths bound side by side, as wide as his face. In his left hand, held out behind him, he dangles exactly one small dark red leather coin purse by its drawstring: a stolen purse.",
-  "pose": "He skips away to the left on his two goat legs, one hoof lifted high in a dancing step, his body twisted to look back over his shoulder at the viewer with a sly grin, his right hand holding the panpipes up at his chin, his left arm stretched out behind him dangling the stolen purse.",
+  "colours": "weather-beaten light tan skin, curly dark brown hair and beard, grey-brown ridged horns, shaggy dark brown goat legs with black hooves, a short dull dark olive-green tunic, a wreath of dark ivy leaves, pale straw-yellow reed panpipes, a small dark red leather purse.",
+  "wears": "He wears a short ragged sleeveless tunic of dull dark olive-green wool that covers his chest and belly and hangs to the tops of his goat thighs, tied with a cord, and a wreath of dark ivy leaves in his hair. He wears no armour.",
+  "holds": "He holds exactly one set of panpipes in his right hand, held a hand's width below his chin and clear of his face, so that his whole grinning bearded face shows above them: a row of seven thick pale reed pipes of stepped lengths bound side by side, as wide as his face. In his left hand, held out behind him, he dangles exactly one small dark red leather coin purse by its drawstring: a stolen purse.",
+  "pose": "He skips away to the left on his two goat legs, one hoof lifted high in a dancing step, his body twisted to look back over his shoulder at the viewer with a sly grin, his right hand holding the panpipes just below his chin, his whole face showing above them, his left arm stretched out behind him dangling the stolen purse.",
   "must_show": [
    "a man above the waist with goat legs and black cloven hooves",
    "short goat horns, pointed ears, pointed beard",
@@ -1192,7 +1217,10 @@
    "grass under his hooves",
    "ground",
    "oversized head",
-   "cartoon faun"
+   "cartoon faun",
+   "orange tunic",
+   "bright yellow tunic",
+   "pipes covering the face"
   ]
  },
  {

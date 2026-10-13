@@ -188,19 +188,19 @@
   "id": "cloud_giant",
   "family": "giant_fire",
   "rank": 2,
-  "key": "magenta",
-  "what": "a cloud giant: a proud giant lord from a castle on the storm clouds, the giant of the beanstalk tale, a true giant and no ordinary man. He is immensely heavy-boned and thick: a deep barrel chest, a thick neck, arms like tree boughs, legs like pillars, very big hands and very big booted feet. His skin is pale stone-grey, the colour of a rain cloud, on his face, arms, hands and legs alike, a colour no living man has. His face is a giant's: a long heavy jaw, a great hooked nose, a heavy overhanging brow and small cold pale eyes, clean-shaven, with the chin raised in contempt. His long white hair stands up and back from his head in one great heaped mass like a thunderhead. He has a small head for his body, very broad shoulders and thick limbs, about seven heads tall.",
-  "colours": "pale stone-grey skin the colour of a rain cloud, white hair, a knee-length tunic of dark storm-grey wool with a wide silver border, a long cloak of deep indigo, a silver circlet, silver armbands and a wide silver-studded black belt, a morningstar with a dark iron handle and a dark iron spiked ball.",
-  "wears": "He wears the finery of a giant lord: a knee-length tunic of dark storm-grey wool with a wide silver border, a wide black belt with silver studs, a broad silver circlet on his brow, broad silver armbands on his bare upper arms, a long deep indigo cloak hanging from two big silver shoulder clasps, and heavy laced boots. He has no armour.",
+  "key": "green",
+  "what": "a cloud giant: a proud giant lord from a castle on the storm clouds, the giant of the beanstalk tale, a true giant and no ordinary man. He is immensely heavy-boned and thick: a deep barrel chest, a thick neck, arms like tree boughs, legs like pillars, very big hands and very big booted feet. His skin is cold pale grey like weathered marble, a plain neutral grey with no other tint in it, on his face, arms, hands and legs alike, a colour no living man has. His face is a giant's: a long heavy jaw, a great hooked nose, a heavy overhanging brow and small cold pale eyes, clean-shaven, with the chin raised in contempt. His long white hair stands up and back from his head in one great heaped mass like a thunderhead. He has a small head for his body, very broad shoulders and thick limbs, about seven heads tall.",
+  "colours": "cold pale neutral grey skin like weathered marble, white hair, a knee-length tunic of dark charcoal-grey wool with a wide silver border, a long cloak of deep indigo, a silver circlet, silver armbands and a wide silver-studded black belt, a morningstar with a dark iron handle and a dark iron spiked ball.",
+  "wears": "He wears the finery of a giant lord: a knee-length tunic of dark charcoal-grey wool with a wide silver border, a wide black belt with silver studs, a broad silver circlet on his brow, broad silver armbands on his bare upper arms, a long deep indigo cloak hanging from two big silver shoulder clasps, and heavy laced boots. He has no armour.",
   "holds": "He grips exactly one morningstar in his right fist, a short heavy war club: a short thick dark iron handle no longer than his forearm and as thick as his wrist, with one big round dark iron ball, as big as his head, fixed straight onto its end, the ball covered all over with thick iron spikes as long as fingers. There is no chain and no long pole. His left hand is empty, held open and raised palm-out in a gesture of disdain.",
   "pose": "He stamps to the left on two thick legs with his chin up, looking down his great nose, his right arm bent and lifted with the short spiked morningstar raised above his right shoulder ready to swing down, its spiked ball beside his head, his empty left hand raised palm-out before him, cloak and hair billowing.",
   "must_show": [
-   "a true giant: heavy-boned, thick-limbed, a long heavy jaw and great hooked nose, pale stone-grey skin",
    "white hair heaped up like a thunderhead, clean-shaven",
-   "a lord's finery: storm-grey tunic with a silver border, silver circlet, indigo cloak",
    "one morningstar: a short thick handle with a big spiked iron ball, a weapon and not a staff",
    "empty left hand",
-   "proud, not a ragged brute, and not a Greek god"
+   "proud, not a ragged brute, and not a Greek god",
+   "a true giant: heavy-boned, thick-limbed, a long heavy jaw and great hooked nose, cold pale grey skin with no tint",
+   "a lord's finery: charcoal tunic with a silver border, silver circlet, indigo cloak"
   ],
   "must_not_show": [
    "beard",
@@ -232,7 +232,13 @@
    "gold",
    "sandals",
    "slender build",
-   "living pale flesh skin"
+   "living pale flesh skin",
+   "mint skin",
+   "olive skin",
+   "ogre",
+   "orc",
+   "troll",
+   "tusks"
   ]
  },
  {
@@ -913,16 +919,16 @@
   "family": "cube",
   "rank": 1,
   "key": "magenta",
-  "what": "a gelatinous cube: one single great cube of murky, wet, wobbling slime, as tall as it is wide, with straight edges and flat sides whose faces bulge a little and whose corners are slightly rounded, seen from a little above and to one side so that its top face and two side faces show. The slime is cloudy and dim, a dull grey-green like stagnant pond water, darker and murkier toward the middle, wet and slick, with only one thin dull wet gleam along its top edges. Sunk inside the middle of it, dim and blurred as if seen through dirty water, hangs one whole human skeleton held upright, dull grey-brown, and near it are sunk one rusted sword, one dented iron helmet and a few dull brass coins. The cube is only slime and the things sunk in it.",
-  "colours": "murky dull grey-green slime, the colour of stagnant pond water, dark olive-grey in the middle and at the lower edges, with one thin dull pale wet gleam along the top edges; a dim grey-brown skeleton inside; a dark rusted sword and a dark dented iron helmet inside; a few dull brass coins inside. Dim, dirty and wet, never bright.",
+  "what": "a gelatinous cube: one single perfect cube of clear wobbling jelly, as tall as it is wide, with straight edges, flat faces and sharp corners, seen from a little above and to one side so that its top face and two side faces show. The jelly is see-through and dim, a dull dark olive-green like bottle glass full of ditch water, with one thin pale wet gleam along its top edges and no other shine. Hanging inside the middle of the jelly, held upright as if floating, is one whole pale grey-ivory human skeleton, and near it float one rusted sword, one dark dented iron helmet and a few dull brass coins. The cube is only jelly and the things caught inside it.",
+  "colours": "see-through dull dark olive-green jelly, darker at the edges and corners, with one thin pale wet gleam along the top edges; a pale grey-ivory skeleton inside; a dark rusted sword and a dark iron helmet inside; a few dull brass coins inside. Dim and dirty, never bright.",
   "wears": "It is a cube of jelly and wears nothing.",
   "holds": "It holds nothing; the skeleton, sword, helmet and coins are sunk inside the jelly.",
-  "pose": "The cube slides to the left, its whole shape leaning and bulging a little in that direction, its wet faces sagging, the dim skeleton inside it swaying.",
+  "pose": "The cube slides to the left, its whole shape leaning and bulging a little in that direction like jelly on a tilted plate, the skeleton inside it swaying.",
   "must_show": [
-   "a cube: straight edges, three faces showing, wet and slightly bulging",
-   "dim, murky grey-green slime, like stagnant pond water: not bright, not clean, not glassy",
-   "a whole skeleton sunk upright inside it, dim and blurred but readable in the small sprite",
-   "a sword or helmet and coins sunk in it too",
+   "a cube: straight edges, three faces showing",
+   "see-through jelly, dim dull olive-green: not bright lime, not clean",
+   "a whole skeleton floating upright inside it, readable in the small sprite",
+   "a sword or helmet and coins inside it too",
    "no face, no limbs"
   ],
   "must_not_show": [
@@ -944,14 +950,16 @@
    "bright lime green",
    "yellow-green",
    "glowing",
-   "clean clear glass",
-   "crystal",
-   "gemstone",
    "candy",
    "dessert jelly",
-   "fruit",
-   "white shiny highlights all over",
-   "bright white skeleton"
+   "stone block",
+   "mossy stone",
+   "carved niches",
+   "shelves",
+   "box with windows",
+   "cage",
+   "several skulls",
+   "pile of skulls"
   ]
  },
  {
