@@ -719,6 +719,23 @@ and look for the same kind of slip when reviewing.
 - **A black bat with spread wings on amber is a comic-book emblem**; reverse the
   tones. **A "strap and buckle" on a slim bright book is an elastic-band notebook**;
   ask for corner pieces and a clasp.
+- **A sauce "running down over the top" of round white food draws a sundae.** Put the
+  sauce underneath as a pool; "nothing is poured over them". Pleats and a knotted top
+  say "dumpling" at 64 px.
+- **Points standing round the top of a cake are birthday candles.** Draw the motif
+  flat on the top.
+- **A tall yellow stack with leaves on top is a pineapple; a coiled dark sausage is
+  dung** (use a horseshoe with tied string ends).
+- **A simile gets drawn:** "straight-sided like a drum" drew a drum. A wedge cut out
+  showing the filling makes a pie read as a pie.
+- **A bone standing straight up in a pot is a pestle.** Lean it past the rim and name
+  the double knob.
+- **Darkening candy colours to "deep jewel" makes food muddy**; a candy-looking dish
+  needs a different dish.
+- **A loaf "on a slab" grows a brim and becomes a hat.** "Sitting by itself with
+  nothing under it".
+- **A tall thing in a bowl shrinks the bowl and the tier.** Cap the height and say
+  the bowl is the biggest thing in the picture.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
