@@ -47,14 +47,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "one very thick, massive old spellbook, a great tome, closed: bound in coal-black leather, with a thin line of pale light along every edge so its shape is clear. Two broad brass bands run across the cover from the spine, and a heavy brass clasp holds it shut on the right edge. In the middle of the front cover, large and plain, is one single bold emblem: a big round disc of bright polished brass, like a large seal, and cut into the disc a solid black star with five points inside a black ring. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Coal-black leather, slate-grey on the ridges, bright yellow brass, cream page edges.",
+  "what": "one very thick, massive old spellbook, a great tome, closed: bound in coal-black leather, with a thin line of pale light along every edge so its shape is clear. Two broad bands of old dull gold run across the cover from the spine, and a heavy clasp of the same old gold holds it shut on the right edge. In the middle of the front cover, large and plain, is one single bold emblem: a big seal of old dull gold fixed to the leather: one thick ring as wide as half the cover, and inside the ring a five-pointed star built of five thick straight bars of the same gold that cross one another, the black leather showing through in the gaps between the bars and the ring. The seal is openwork, like a wrought gate, never a solid plate. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Coal-black leather, slate-grey on the ridges; old dull gold, the brown-gold of tarnished brass, for the seal, bands and clasp; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "brass seal disc with a black star",
-   "bound in coal-black leather",
-   "Two broad brass bands run across the cover from the spine, and a heavy"
+   "coal-black leather",
+   "openwork gold ring with a five-pointed star of bars inside it",
+   "gold bands and clasp"
   ],
   "must_not_show": [
    "wax",
@@ -79,7 +79,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "solid yellow disc",
+   "badge",
+   "button",
+   "coin",
+   "bright lemon yellow"
   ]
  },
  {
@@ -89,14 +94,14 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "one thick old spellbook, closed: bound in dark, wrinkled, leathery hide the colour of old saddle leather gone nearly black, creased and puckered all over like the skin of a dried fig. One tarnished iron clasp on the right edge. The cover has no picture on it. In the middle of the front cover, large and plain, is one single bold emblem: one long crooked seam running from the top left corner of the cover to the bottom right, sewn shut with big, coarse, widely spaced stitches of thick pale cord, each stitch as long as a finger. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Very dark brown hide, nearly black in the creases, dull tan on the ridges, pale bone-coloured cord stitches, dark grey iron, dull grey-cream page edges.",
+  "what": "one thick old spellbook, closed: bound in pale, dead-looking hide, cold grey-white like an old wax candle, wrinkled and puckered all over, darker grey in the creases. Heavy black iron plates cover all four corners and one broad black iron hasp with a big square lock plate holds it shut on the right edge. In the middle of the front cover, large and plain, is one single bold emblem: one long crooked seam running from the top left corner of the cover to the bottom right, sewn shut with seven big, coarse, widely spaced stitches of thick jet-black cord, each stitch as long as a finger and as thick as a bootlace, plainly black against the pale hide. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Cold grey-white wrinkled hide, mid-grey in the creases; jet-black cord stitches; black iron fittings with pale worn edges; dull grey-cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "big pale stitched seam across the cover",
-   "bound in dark",
-   "One tarnished iron clasp on the right edge. The cover has no picture o"
+   "pale grey-white wrinkled hide cover",
+   "one slanting seam of big black stitches",
+   "black iron corners and hasp"
   ],
   "must_not_show": [
    "face",
@@ -128,7 +133,10 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "nose",
+   "brown leather",
+   "plain brown book"
   ]
  },
  {
@@ -178,14 +186,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "one thick, heavy old spellbook, closed: bound in limp pale parchment, creamy white and a little wrinkled, with no boards. It is tied shut by two dark brown leather thongs knotted at the right edge. In the middle of the front cover, large and plain, is one single bold emblem: drawn in dark blue ink, three big round circles set at the points of a triangle and joined by three thick straight lines. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Creamy white parchment, dark blue ink, dark brown thongs, cream page edges.",
+  "what": "one thick, heavy old spellbook, closed: bound in limp old vellum the colour of weak tea, a pale warm tan, wrinkled, mottled, and stained darker brown toward every edge and corner; it has no boards and its corners curl a little. Three thick raised cords show across the spine. It is tied shut by two dark brown leather thongs knotted at the right edge. In the middle of the front cover, large and plain, is one single bold emblem: three big solid round discs of dark blue, each as big as a large coin and each ringed with a thin line of gold, set at the three points of a triangle, one at the top and two below, and joined to one another by three thick straight dark blue lines. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Pale warm tan vellum, mottled, brown-stained at the edges; dark blue discs and lines; a little gold round each disc; dark brown thongs; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "three dark blue circles joined in a triangle",
-   "bound in limp pale parchment",
-   "It is tied shut by two dark brown leather thongs knotted at the right "
+   "aged tan vellum cover, darker at the edges",
+   "three dark blue discs joined in a triangle",
+   "leather thongs tied at the right edge"
   ],
   "must_not_show": [
    "metal clasp",
@@ -209,7 +217,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "pure white cover",
+   "elastic strap",
+   "modern notebook",
+   "logo",
+   "pyramid with an eye"
   ]
  },
  {
@@ -219,14 +232,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "one thick old spellbook, closed: bound in dull yellow-brown leather that is riddled with round black wormholes, each as big as a pea, and eaten ragged at the corners. Two pitted, dull copper-brown corner pieces and one plain strap. In the middle of the front cover, large and plain, is one single bold emblem: one fat bright acid-green arrow pointing to the top right corner, with a big barbed head, and one green drop falling from its tip. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Dull yellow-brown leather, black holes, bright acid green for the arrow only, cream page edges.",
+  "what": "one thick old spellbook, closed: bound in dull dark tan-brown leather that is riddled with round black wormholes, each as big as a pea, and eaten ragged at the corners. Two pitted, dull copper-brown corner pieces and one plain strap. In the middle of the front cover, large and plain, is one single bold emblem: one real arrow lying slantwise across the cover, its point toward the top right corner: a straight shaft as thick as a finger, a broad barbed arrowhead at the top right end, and two short feathers at the bottom left end. The whole arrow is one colour: a pale, dull, greyed green, the colour of dry sage leaves. From the arrowhead hangs one fat drop of the same pale green. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Dull dark tan-brown leather, black holes, old brown copper, a pale dull sage-green arrow and drop, cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "bright green arrow",
-   "bound in dull yellow-brown leather that is riddled with round black wo",
-   "Two pitted, dull copper-brown corner pieces and one plain strap."
+   "leather riddled with black wormholes",
+   "one pale green arrow with a barbed head and feathers, slanting to the top right",
+   "one green drop"
   ],
   "must_not_show": [
    "green cover",
@@ -250,7 +263,13 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "neon green",
+   "bright lime green",
+   "arrow sign",
+   "chart arrow",
+   "thick block arrow",
+   "two arrows"
   ]
  },
  {
@@ -260,8 +279,8 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "one very thick, massive old spellbook, a great tome, closed: bound in leather so dark a plum that it is nearly black, blotched along its bottom edge with rough patches of chalk-white dried salt. Heavy tarnished silver corner plates, a silver band down the spine edge and two silver clasps. In the middle of the front cover, large and plain, is one single bold emblem: a bright silver scythe: one long straight pole running slantwise from the lower left to the upper right, and from its top end one single long curved blade sweeping out to the left side only and tapering to a sharp point, like the beak of a great bird; the other side of the pole is bare. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Blackish plum leather, chalk-white salt crust, bright silver, cream page edges.",
+  "what": "one very thick, massive old spellbook, a great tome, closed: bound in dark plum leather, a deep purple-brown, rubbed paler along its edges, and blotched along its bottom edge with rough patches of chalk-white dried salt. Heavy bright silver corner plates, a silver band down the spine edge and two silver clasps. In the middle of the front cover, large and plain, is one single bold emblem: a bright silver-white scythe drawn very thick and bold: its pole is one straight bar as thick as a thumb running slantwise from the lower left of the cover to the upper right, and from the top end of the pole one single broad curved blade, as wide as three fingers at its root, sweeps out to the left side only and tapers to a sharp point, a wide crescent like a thick slice of the moon; the other side of the pole is bare. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Dark plum leather, paler at the rubbed edges; chalk-white salt crust; bright silver-white scythe and fittings; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
@@ -297,8 +316,11 @@
    "shelf",
    "stand",
    "label",
-   "second object"
-  ]
+   "second object",
+   "thin hairline scythe",
+   "two blades"
+  ],
+  "lift": 1.25
  },
  {
   "id": "spellbook_army_of_darkness",
@@ -391,14 +413,13 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "one thin, slim old spellbook, closed: bound in plain soft lavender cloth, a little faded. No metal on it at all. In the middle of the front cover, large and plain, is one single bold emblem: one single thick silver arrow that curves in a half circle: its plain blunt tail starts at the lower left, it rises, bends over the top, and comes down on the right to one big triangular arrowhead pointing downward; one line only, as thick as a finger. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Soft pale lavender cloth, bright silver arrow, cream page edges.",
+  "what": "one thin, slim old spellbook, closed: bound in plain soft lavender cloth, a little faded and worn darker at the corners. No metal on it at all. In the middle of the front cover, large and plain, is one single bold emblem: one single thick arrow that curves in a half circle, drawn in very dark purple, the deep royal purple of an amethyst, nearly black, plainly dark against the pale cloth: its plain blunt tail starts at the lower left, it rises, bends over the top, and comes down on the right to one big triangular arrowhead pointing downward; one line only, as thick as a finger. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Soft pale lavender cloth; a very dark royal-purple arrow; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "curved silver arrow",
-   "bound in plain soft lavender cloth",
-   "No metal on it at all."
+   "pale lavender cloth cover",
+   "one thick dark purple arrow curving in a half circle to a downward arrowhead"
   ],
   "must_not_show": [
    "rainbow",
@@ -427,7 +448,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "pale silver arrow",
+   "white arrow",
+   "two arrows",
+   "anchor",
+   "hook"
   ]
  },
  {
@@ -562,14 +588,14 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "one thick old spellbook, closed: bound in dark plum leather. Dark iron corner pieces and one iron clasp. In the middle of the front cover, large and plain, is one single bold emblem: a thick ring of dark iron bolted to the cover, as wide as half the cover, with one thick straight iron bar running slantwise across the ring from upper left to lower right. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Dark plum leather, dark grey iron with pale highlights, cream page edges.",
+  "what": "one thick old spellbook, closed: bound in plum leather, a rich dark purple-brown, rubbed paler along its edges. Pale worn steel corner pieces and one steel clasp. In the middle of the front cover, large and plain, is one single bold emblem: a big bright silver-white star with five broad points, as wide as half the cover, broken clean in two: one jagged black crack runs through it from top to bottom, and the left half and the right half have been pulled a finger's width apart, the plum leather showing in the gap. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Plum leather, paler at the rubbed edges; bright silver-white star; pale grey steel fittings; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "iron ring crossed by a slanting bar",
-   "bound in dark plum leather",
-   "Dark iron corner pieces and one iron clasp."
+   "plum leather cover",
+   "one big silver-white star split in two halves by a jagged crack",
+   "steel corners and clasp"
   ],
   "must_not_show": [
    "gem",
@@ -593,8 +619,15 @@
    "shelf",
    "stand",
    "label",
-   "second object"
-  ]
+   "second object",
+   "ring with a bar across it",
+   "no-entry sign",
+   "prohibition sign",
+   "road sign",
+   "two whole stars",
+   "lightning bolt"
+  ],
+  "lift": 1.2
  },
  {
   "id": "spellbook_cure_wounds",
@@ -1202,8 +1235,8 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "one thick, heavy old spellbook, closed: bound in rich deep emerald-green leather, fresh and glossy. Four gold corner pieces, a gold band down the spine edge and two gold clasps. In the middle of the front cover, large and plain, is one single bold emblem: a gold staff standing upright with one gold snake coiled round it three times, the snake's head at the top. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Deep emerald-green leather, plain yellow gold staff, snake and fittings, cream page edges.",
+  "what": "one thick, heavy old spellbook, closed: bound in rich deep emerald-green leather, fresh and glossy. Four gold corner pieces, a gold band down the spine edge and two gold clasps. In the middle of the front cover, large and plain, is one single bold emblem: a gold staff standing upright, as thick as a thumb, and wound round it one fat gold snake in three big wide loops that bulge far out on each side of the staff, the snake's broad head at the top; the whole emblem is a third as wide as the cover and solid bright gold. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Deep emerald-green leather, plain bright yellow gold staff, snake and fittings, cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
@@ -1235,7 +1268,9 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "thin hairline staff",
+   "wings"
   ]
  },
  {
@@ -1293,14 +1328,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "one thick old spellbook, closed: bound in worn, rubbed emerald-green leather, scuffed pale at the corners and along the spine. One plain brass clasp and nothing else. In the middle of the front cover, large and plain, is one single bold emblem: a white staff standing upright with one white snake coiled round it three times, the snake's head at the top. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Worn emerald-green leather, paler at the scuffs, white staff and snake, yellow brass, cream page edges.",
+  "what": "one thick old spellbook, closed: bound in worn, rubbed emerald-green leather, scuffed pale at the corners and along the spine. One plain brass clasp and nothing else. In the middle of the front cover, large and plain, is one single bold emblem: a white cup: one wide round bowl on a short thick stem with a broad round foot, a plain goblet, drawn solid white and as wide as half the cover. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Worn emerald-green leather, paler at the scuffs, one solid white cup, yellow brass, cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "white staff with a coiled snake",
-   "bound in worn",
-   "One plain brass clasp and nothing else."
+   "worn emerald-green leather",
+   "one solid white cup emblem",
+   "one brass clasp"
   ],
   "must_not_show": [
    "two snakes",
@@ -1327,7 +1362,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "staff",
+   "snake",
+   "thin line emblem",
+   "real cup standing on the book",
+   "trophy with handles"
   ]
  },
  {
@@ -1553,14 +1593,13 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "one thin, slim old spellbook, closed: bound in plain butter-yellow cloth. No metal on it at all. In the middle of the front cover, large and plain, is one single bold emblem: a white sun: one round white disc with eight short thick straight white rays all round it. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Soft butter-yellow cloth, white sun shaded pale cream, cream page edges.",
+  "what": "one thin, slim old spellbook, closed: bound in old linen cloth dyed a deep mustard yellow, the brown-yellow of old straw, faded and frayed, stained darker brown along the spine and at all four corners, with the weave of the cloth showing. No metal on it at all. In the middle of the front cover, large and plain, is one single bold emblem: a sun: one round white disc with eight short thick straight white rays all round it, the disc and every ray edged with a thin dark brown line so it stands out from the cloth. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Deep mustard-yellow linen, brown-stained at the spine and corners; a white sun edged in dark brown; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "white sun with rays",
-   "bound in plain butter-yellow cloth",
-   "No metal on it at all."
+   "worn mustard-yellow cloth cover, darker at the corners",
+   "white sun with eight rays"
   ],
   "must_not_show": [
    "face on the sun",
@@ -1586,7 +1625,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "bright lemon yellow",
+   "glossy plastic cover",
+   "smooth clean new book",
+   "smiling sun",
+   "face"
   ]
  },
  {
@@ -1680,14 +1724,13 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "one old spellbook of middling thickness, closed: a slim book bound in bright blue leather. One narrow silver strap and buckle. In the middle of the front cover, large and plain, is one single bold emblem: three white darts of light flying side by side toward the top right corner, each a short thick streak with a pointed bright head. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Bright blue leather, white darts, silver strap, cream page edges.",
+  "what": "one old spellbook of middling thickness, closed: a slim book bound in deep blue leather, old, cracked and scuffed, rubbed pale along the spine and darker at the corners. Four small tarnished silver corner pieces and one small silver clasp on the right edge; no strap, no band. In the middle of the front cover, large and plain, is one single bold emblem: three white darts of light flying side by side toward the top right corner, each a short thick streak as thick as a finger with a broad pointed bright head and a short tapering tail. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Deep blue weathered leather, paler where it is rubbed; white darts; tarnished silver corners and clasp; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "three white darts",
-   "a slim book bound in bright blue leather",
-   "One narrow silver strap and buckle."
+   "weathered deep blue leather with silver corners",
+   "three white darts flying to the top right"
   ],
   "must_not_show": [
    "bow",
@@ -1712,7 +1755,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "elastic strap",
+   "band round the cover",
+   "modern notebook",
+   "glossy plastic cover",
+   "thin scratch lines"
   ]
  },
  {
@@ -1764,14 +1812,14 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "one very thick, massive old spellbook, a great tome, closed: bound in dark red leather, with heavy plates of dark grey iron riveted over all four corners and a broad iron band down the spine edge. Two heavy iron clasps and big iron rivets. In the middle of the front cover, large and plain, is one single bold emblem: a big gold spider web: eight straight gold threads spreading from the centre like the spokes of a wheel, joined by three rings of gold thread, covering most of the cover. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Dark red leather, dark grey iron with pale highlights, bright yellow gold web, cream page edges.",
+  "what": "one very thick, massive old spellbook, a great tome, closed: bound in dark red leather, with heavy plates of dark grey iron riveted over all four corners and a broad iron band down the spine edge. Two heavy iron clasps and big iron rivets. In the middle of the front cover, large and plain, is one single bold emblem: a big gold spider web: eight straight gold threads spreading from the centre like the spokes of a wheel, joined by three rings of gold thread, covering most of the cover; and sitting right in the middle of the web, on top of it, one big jet-black spider with a fat round body and eight thick bent legs, the spider as wide as a third of the cover. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Dark red leather, dark grey iron with pale highlights, bright yellow gold web, one jet-black spider, cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
+   "dark red leather with heavy iron corners",
    "gold spider web",
-   "bound in dark red leather",
-   "Two heavy iron clasps and big iron rivets."
+   "one big black spider in the middle of the web"
   ],
   "must_not_show": [
    "spider",
@@ -1795,7 +1843,10 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "web with no spider",
+   "living spider crawling off the book",
+   "several spiders"
   ]
  },
  {
@@ -1805,14 +1856,13 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "one very thick, massive old spellbook, a great tome, closed: bound in pale buff-brown leather speckled with small dark brown age spots, with big corner pieces of pale polished horn on all four corners. A thick band of pale horn down the spine edge and two horn toggles as clasps. In the middle of the front cover, large and plain, is one single bold emblem: one big butterfly with its four wings spread, dark amber-orange with black edges and a black body, as wide as half the cover. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Pale buff-brown spotted leather, creamy grey horn, dark amber-orange and black butterfly, cream page edges.",
+  "what": "one very thick, massive old spellbook, a great tome, closed: bound in pale buff-brown leather speckled with small dark brown age spots, with big corner pieces of pale polished horn on all four corners. A thick band of pale horn down the spine edge and two horn toggles as clasps. In the middle of the front cover, large and plain, is one single bold emblem: one big frog seen from directly above, squatting, its head toward the top of the cover, its two short front legs and two long bent back legs sticking out at its sides: a solid flat shape in deep emerald green with a few black spots, as wide as half the cover. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Pale buff-brown spotted leather, creamy grey horn, one deep emerald-green frog with black spots, cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "amber butterfly",
-   "bound in pale buff-brown leather speckled with small dark brown age sp",
-   "A thick band of pale horn down the spine edge and two horn toggles as "
+   "buff leather with pale horn corners",
+   "one big green frog seen from above"
   ],
   "must_not_show": [
    "living butterfly flying off",
@@ -1837,7 +1887,12 @@
    "shelf",
    "stand",
    "label",
-   "second object"
+   "second object",
+   "butterfly",
+   "living frog sitting on the book",
+   "several frogs",
+   "lizard",
+   "turtle"
   ]
  },
  {

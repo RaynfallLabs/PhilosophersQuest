@@ -119,13 +119,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a coil of sinew cord: one thick pale cord, as thick as a little finger, wound round and round into a flat neat coil of five turns like a coiled bowstring, with one loose end of the cord sticking out from the coil at the upper right. The cord is smooth, waxy and a little glistening.",
-  "colours": "Pale cream-white cord with warm tan shadows between the turns and a faint flesh-pink tint; nothing else.",
-  "pose": "Seen from above and a little to one side, the coil a flat ring with a dark gap in its middle.",
+  "what": "a hank of dried sinew cord: one long tough cord, as thick as a little finger, twisted of two strands, gathered into a bundle of six long loops lying side by side and bound tightly round the middle with several turns of the same cord, so that the bundle is pinched at its waist and the loops fan out a little at both ends. One loose frayed end of the cord sticks out at the upper right. The cord is dry, stiff and waxy.",
+  "colours": "Dull grey-tan sinew, the colour of old parchment, with dark brown shadows between the cords and pale straw highlights; nothing else.",
+  "pose": "Lying on a diagonal, one fan of loops at the bottom left, the other at the top right, seen from a little above.",
   "must_show": [
-   "one flat coil of thick pale cord",
-   "several turns",
-   "one loose end"
+   "one bundle of looped cord bound round its middle",
+   "twisted grey-tan cord",
+   "one loose frayed end"
   ],
   "must_not_show": [
    "bear",
@@ -147,7 +147,15 @@
    "shelf",
    "stand",
    "label with writing",
-   "second object"
+   "second object",
+   "flat ring",
+   "doughnut",
+   "flat spiral coil",
+   "pastry",
+   "sheaf of wheat",
+   "bow tie",
+   "ribbon bow",
+   "pink"
   ]
  },
  {
@@ -194,12 +202,12 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a tiny vial: one very small bottle of thick clear crystal shaped like a falling teardrop, round and fat at the bottom and narrowing to a point at the top, where it is sealed by a small cap of yellow gold with a ring on it. Hanging in the middle of the crystal is one single large round drop of bright liquid light, as wide as half the vial.",
-  "colours": "Clear colourless crystal with white glints, one drop of bright pale yellow-white light, a yellow gold cap.",
+  "what": "a tiny crystal phial: one very small bottle of thick clear crystal, a ball as round as a marble, flattened a little underneath so that it stands. It is held in a setting of yellow gold: a gold ring round its foot, two broad gold bands crossing over the ball, one from front to back and one from side to side, and at the top a short thick gold neck closed by a round gold stopper like a bead. Hanging in the middle of the crystal is one single large round drop of bright liquid light, as wide as half the ball.",
+  "colours": "Clear colourless crystal with white glints, one drop of bright pale yellow-white light, bright yellow gold bands, neck and stopper.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "one teardrop-shaped crystal vial",
-   "gold cap",
+   "one round crystal phial banded in gold",
+   "round gold stopper",
    "one bright drop inside"
   ],
   "must_not_show": [
@@ -220,7 +228,14 @@
    "shelf",
    "stand",
    "label with writing",
-   "second object"
+   "second object",
+   "light bulb",
+   "screw thread",
+   "teardrop shape",
+   "pointed top",
+   "lamp",
+   "cross on top",
+   "crown"
   ]
  },
  {
@@ -273,13 +288,13 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "one ancient shoe of the Viking age: a single soft slipper-like shoe with no heel at all, a flat sole as thick as two fingers built of many stacked layers, a blunt round toe, and a low soft upper that rises only to the ankle bone, with no laces, no strap and no fastening of any kind. The whole upper is a crude patchwork: about a dozen large odd-shaped scraps of leather, each a different dark brown, sewn edge to edge with big thick pale stitches like the stitches on a rag doll. The shoe is empty, with a dark hollow opening at the ankle.",
-  "colours": "Scraps of very dark walnut brown, dull grey-brown and dark chestnut leather, never bright, pale bone-coloured stitching, a nearly black sole.",
+  "what": "one ancient shoe of the Viking age, of the kind dug out of a peat bog: a single soft shoe made like a leather bag for the foot, with no separate sole and no heel at all: the dark leather simply wraps under the foot. It is low and shapeless, slumped and wrinkled because nobody is in it, with a blunt toe that turns up a little, and its opening is gathered and puckered round the ankle by one leather thong threaded in and out through a row of slits, the two ends of the thong hanging loose. The whole shoe is a crude patchwork: about ten large odd-shaped scraps of leather, each a different dark brown, sewn edge to edge with big thick pale stitches like the stitches on a rag doll. The shoe is empty, with a dark hollow opening at the ankle.",
+  "colours": "Scraps of very dark walnut brown, dull grey-brown and dark chestnut leather, never bright, pale bone-coloured stitching, a darker brown thong.",
   "pose": "Seen from the side and a little from the front, upright as if resting, toe pointing to the left, the dark empty ankle opening at the top right.",
   "must_show": [
-   "one single leather shoe",
-   "patchwork of many leather scraps with visible stitches",
-   "thick sole",
+   "one single soft leather shoe with no separate sole",
+   "patchwork of many leather scraps with visible pale stitches",
+   "opening gathered by a leather thong",
    "empty"
   ],
   "must_not_show": [
@@ -290,8 +305,6 @@
    "modern boot",
    "biker boot",
    "buckle",
-   "laces",
-   "strap",
    "heel",
    "high heel",
    "tread",
@@ -307,7 +320,15 @@
    "shelf",
    "stand",
    "label with writing",
-   "second object"
+   "second object",
+   "stacked sole",
+   "welted sole",
+   "rubber sole",
+   "eyelets",
+   "elastic ankle boot",
+   "loafer",
+   "moccasin with a flat seam",
+   "tongue of a shoe"
   ]
  },
  {
@@ -317,13 +338,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a scrap of leather: one small stiff flat offcut of thick shoe leather, shaped like a rough triangle with one curved side, as if trimmed from round the toe of a shoe. Its top is smooth dark hide; its cut edges are thick, pale and fuzzy, and a row of four empty stitch holes runs along the curved side.",
-  "colours": "Dark chestnut-brown leather on top, pale tan raw cut edges, black stitch holes.",
+  "what": "a scrap of leather: one small flat offcut of thick dark shoe leather, an uneven four-sided patch with one curved side and one torn ragged corner, as if cut from an old shoe. It is the same dark hide all over, creased and scuffed, and its cut edges are thin and dark. A row of five large round stitch holes runs along the curved side, and a short length of pale waxed thread is still threaded through the last two holes and hangs loose from the corner.",
+  "colours": "Dark walnut-brown leather with a dull worn sheen and a few paler tan scuffs, black stitch holes, one pale cream thread.",
   "pose": "Lying flat, seen from above and a little to one side, so its thick cut edge shows.",
   "must_show": [
-   "one small flat piece of leather",
-   "rough triangle with a curved side",
-   "thick pale cut edge"
+   "one small flat piece of dark leather",
+   "row of stitch holes along one side",
+   "loose pale thread"
   ],
   "must_not_show": [
    "shoe",
@@ -345,7 +366,16 @@
    "shelf",
    "stand",
    "label with writing",
-   "second object"
+   "second object",
+   "pale thick border",
+   "crust",
+   "slice of toast",
+   "slice of pizza",
+   "steak",
+   "meat",
+   "rind of fat",
+   "biscuit",
+   "fur edge"
   ]
  },
  {
@@ -1365,12 +1395,12 @@
   "rank": 5,
   "key": "magenta",
   "body": "object",
-  "what": "a small steel vault: one upright strongbox of thick bright steel plate, a block a little taller than it is wide, with sharp square corners and a flat top. Its whole front is one heavy steel door, set in a thick frame, with two massive hinges down its left side and three thick round bolt-ends showing down its right side. In the middle of the door is one big handle made of four straight steel bars joined at the centre like a plus sign, with a round knob at the end of each bar, and below it a keyhole. It is shut.",
-  "colours": "Bright pale steel with a cool blue-grey sheen, the blue of a winter sky in its highlights, dark slate-grey in the seams, a black keyhole.",
+  "what": "a small steel vault of the old dwarf-smith kind: one upright strongbox built of thick plates of grey steel riveted together, a block a little taller than it is wide, with square corners and a flat top. Broad flat steel straps studded with big round rivet heads run round all its edges and across its front in two level bands. Its whole front is one heavy steel door set in a thick frame, with two massive strap hinges on its left side. In the middle of the door hangs one big round ring handle of dark iron, a third as wide as the door, like the ring of a door-knocker, and below the ring is a large black keyhole in a keyhole-shaped plate. It is shut.",
+  "colours": "Battle-worn grey steel: dark gunmetal grey in the seams, with bright pale steel-white worn edges and rivet heads; a dark iron ring handle; a black keyhole.",
   "must_show": [
-   "upright block of bright steel",
-   "one big door on the front with hinges",
-   "four-armed handle in the middle of the door",
+   "upright block of riveted grey steel",
+   "one big door on the front with strap hinges",
+   "big ring handle in the middle of the door",
    "closed"
   ],
   "must_not_show": [
@@ -1388,7 +1418,16 @@
    "person",
    "face",
    "legs",
-   "skull"
+   "skull",
+   "cross",
+   "plus sign",
+   "pale blue paint",
+   "sky blue",
+   "refrigerator",
+   "combination dial",
+   "wheel handle",
+   "first-aid box",
+   "smooth modern cabinet"
   ]
  },
  {
@@ -1707,13 +1746,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "an unfinished hammer-head straight from a dwarf's forge, with no handle: one heavy block of dark iron, a plain rectangular brick twice as long as it is tall, with two flat square striking faces at its ends and one round empty hole straight down through its middle from the top face, the socket where a handle will one day go. The hole is empty and dark. The block is still rough: its faces are dented with hammer marks and flaked with black forge scale, its corners not yet squared. Its right-hand end still glows from the fire.",
-  "colours": "Dark charcoal-grey iron with pale steel-grey lit edges; the right-hand third glowing deep orange with a yellow heart, cooling to dull dark iron on the left.",
-  "pose": "Lying level by itself, its long side to the viewer, seen from the front and a little from above so the round socket hole in its top face shows as a dark oval.",
+  "what": "an unfinished hammer-head straight from a dwarf's forge, with no handle: one heavy block of dark iron, a plain rectangular brick twice as long as it is tall, lying with its long side to the viewer. In the very middle of that long side is one big round hole, a third as tall as the block, going straight through it: the empty socket where a handle will one day go. Deep inside the hole the iron still glows from the forge, a dull ember light. The two square ends of the block are plain dark striking faces and do not glow. The block is still rough: dented with hammer marks, flaked with black forge scale, its corners not yet squared, pale and worn along its top edges.",
+  "colours": "Dark charcoal-grey iron with pale steel-grey lit edges and a paler grey top face; the inside of the one round hole glowing dull orange with a yellow heart; no other glow.",
+  "pose": "Lying level by itself, its long side to the viewer, seen from the front and a little from above so that its top face shows as a pale strip.",
   "must_show": [
    "one rough iron block, a hammer head",
-   "no handle: an empty round socket hole in the top",
-   "one end glowing orange"
+   "no handle: one round socket hole in the middle of its long side",
+   "the hole glowing orange inside"
   ],
   "must_not_show": [
    "key",
@@ -1743,7 +1782,15 @@
    "stand",
    "tray",
    "label with writing",
-   "second object"
+   "second object",
+   "glowing end face",
+   "orange end cap",
+   "two holes",
+   "several holes",
+   "battery",
+   "tube",
+   "window",
+   "eye"
   ],
   "family": "keys_a",
   "rank": 4

@@ -6,13 +6,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of smooth cream-white parchment, as thick as a man's wrist. It is tied round its middle with a broad white linen ribbon in a bow. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one solid heart shape, bright scarlet red. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Cream-white parchment; white ribbon; one scarlet red heart.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of old parchment, a warm pale tan, mottled and stained darker brown at its edges, as thick as a man's wrist. It is tied round its middle with a broad ribbon of undyed grey-white linen in a bow. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one solid heart shape in deep dark wine red, the colour of a garnet, shaded darker toward its lower point and edged all round with a thick dark brown line, painted with a brush, a little uneven. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Warm pale tan parchment, brown-stained at the edges; grey-white linen ribbon; one deep dark garnet-red heart with a dark brown edge.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "red heart sign",
-   "white ribbon",
-   "cream roll",
+   "dark red heart sign",
+   "linen ribbon",
+   "aged tan roll",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -37,7 +37,11 @@
    "magic rays",
    "thin spindly roll",
    "cross",
-   "real heart organ"
+   "real heart organ",
+   "bright scarlet",
+   "glossy cartoon heart",
+   "valentine card",
+   "clean white paper"
   ]
  },
  {
@@ -171,13 +175,14 @@
   "rank": 5,
   "body": "item",
   "scale": "small",
-  "key": "green",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of dull pale buff parchment blotched with large pale brown water stains, as thick as a man's wrist. It is held shut by a broad ring of dark iron slipped over the roll. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one solid shield shape with a flat top and a pointed bottom, deep cobalt blue with one white band down its middle. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Dull pale buff parchment with pale brown stains; dark grey iron ring; a cobalt blue and white shield.",
+  "key": "magenta",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of dull pale buff parchment, the colour of dry sand, blotched with large brown water stains, as thick as a man's wrist. It is held shut by a broad ring of dark iron slipped over the roll. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one solid shield shape with a flat top and a pointed bottom: deep cobalt blue, with a broad rim of bright gold all round it and one round gold boss in its middle. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Dull pale sand-buff parchment with brown stains; dark grey iron ring; a cobalt blue shield with a gold rim and a gold boss.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "blue shield sign",
-   "iron ring round the roll",
+   "blue shield sign with a gold rim and boss",
+   "iron ring",
+   "buff roll with brown water stains",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -202,7 +207,12 @@
    "magic rays",
    "thin spindly roll",
    "real metal shield lying beside it",
-   "sword"
+   "sword",
+   "white band across the shield",
+   "road sign",
+   "badge",
+   "salmon paper",
+   "peach paper"
   ]
  },
  {
@@ -287,7 +297,8 @@
    "real sword lying beside it",
    "two swords",
    "pale paper"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "scroll_of_enchant_armor",
@@ -296,13 +307,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of pale silver-grey silk with a soft sheen, as thick as a man's wrist. It is rolled on a brass rod, with a round gold knob sticking out at each end of the roll. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one helmet, a great helm: a plain bucket shape with a flat top and one dark eye-slit, solid bright yellow gold. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Pale silver-grey silk; gold knobs; a yellow gold helmet sign.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of pale silver-grey silk with a soft sheen, as thick as a man's wrist. It is rolled on a brass rod, with a round gold knob sticking out at each end of the roll. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: the solid dark silhouette of one knight's helmet seen from the side, facing right: a round dome, a pointed visor jutting forward like a beak, a broad neck guard at the back, and one thick plume curling back from the top. The helmet is dark gunmetal grey, nearly black, plainly dark against the pale silk, with one broad band of bright gold round its brow. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Pale silver-grey silk; gold knobs; a dark gunmetal helmet sign with one gold band.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "gold helmet sign",
-   "gold knobs at the ends of the roll",
-   "silver-grey silk",
+   "dark helmet sign with a plume, seen from the side",
+   "gold knobs on the rod",
+   "pale silver-grey roll",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -328,7 +339,14 @@
    "thin spindly roll",
    "real helmet lying beside it",
    "knight",
-   "face"
+   "face",
+   "pale gold helmet",
+   "gold lump",
+   "bucket",
+   "drum",
+   "eye",
+   "face inside the helmet",
+   "real helmet lying on the scroll"
   ]
  },
  {
@@ -463,8 +481,8 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of gleaming gold leaf: the whole sheet, roll and panel, is bright metallic yellow gold like gold foil, as thick as a man's wrist. It is tied with a thick scarlet silk cord ending in two tassels. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one crown, solid black, a band with three tall points. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Bright metallic yellow gold sheet; scarlet red cord and tassels; a black crown sign.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of beaten gold: the whole sheet, roll and panel, is old rich deep gold, dented and wrinkled like hammered metal, brown-gold like tarnished brass in every fold and hollow and bright yellow only where the light catches a ridge, as thick as a man's wrist. It is tied with a thick scarlet silk cord ending in two tassels. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one crown, solid black: a broad band with three tall points, each point tipped with a round ball, the crown as wide as half the panel. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Old deep gold sheet, brown-gold in the folds, bright yellow highlights; scarlet red cord and tassels; a black crown sign.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
    "whole scroll is gold",
@@ -496,7 +514,11 @@
    "real crown lying beside it",
    "king",
    "cream paper",
-   "jewels"
+   "jewels",
+   "flat lemon yellow",
+   "plastic",
+   "smooth yellow paper",
+   "logo"
   ]
  },
  {
@@ -892,13 +914,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of pale bone-white vellum, as thick as a man's wrist. It is rolled on a rod of black ebony, with a round silver knob sticking out at each end of the roll, and tied with a black ribbon. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one skull, solid black, wearing a small bright gold crown. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Pale bone-white vellum; black ebony rod and black ribbon; silver knobs; a black skull with a gold crown.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of pale bone-white vellum, as thick as a man's wrist. It is rolled on a rod of black ebony, with a round silver knob sticking out at each end of the roll, and tied with a black ribbon. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one very big skull seen from the front, solid black, as wide as half the panel, with two large round eye holes and a nose hole showing the pale vellum through them; and sitting on top of the skull one broad bright gold crown with three points, as wide as the skull itself. No bones under the skull. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Pale bone-white vellum; black ebony rod and black ribbon; silver knobs; a big black skull with a bright gold crown.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "black skull sign with a gold crown",
-   "silver knobs at the ends of the roll",
-   "black ribbon",
+   "big black skull sign",
+   "gold crown on the skull",
+   "pale roll on a black rod with silver knobs",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -924,7 +946,11 @@
    "thin spindly roll",
    "real skull lying beside it",
    "scythe",
-   "red paper"
+   "red paper",
+   "crossed bones",
+   "pirate flag",
+   "tiny skull",
+   "bow tie"
   ]
  },
  {
@@ -934,14 +960,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "an ancient scroll in its clay jar, drawn thick and bold. A storage jar of pale dried river clay, cracked and plain, with no handles, lies on its side: the jar has a closed rounded bottom like the blunt end of an egg, a fat swelling belly, a short narrower neck and a thick rim round its mouth. Out of the jar's open mouth sticks half of one fat roll of brittle dark brown parchment, its end frayed and crumbling, with one short curl of the sheet come loose. The jar and the scroll touch and make one shape. There is no writing anywhere.",
-  "colours": "Pale dried river clay, dusty buff-grey; dark brown brittle parchment.",
-  "pose": "It lies on a diagonal, the round bottom of the jar at the bottom left corner and the jar's mouth with the scroll sticking out of it at the top right corner; the whole thing is inside the picture.",
+  "what": "an ancient scroll kept in its clay jar, drawn thick and bold. A tall plain storage jar of pale dried river clay stands upright: it is twice as tall as it is wide, with straight sides like a length of pipe, a flat bottom, rounded shoulders and a wide open mouth with a thick rim; no handles, no lid. A long black crack runs down its side and its rim is chipped. Standing up out of the open mouth is the top third of one fat roll of brittle dark brown parchment, as thick as a man's wrist, its upper end frayed and crumbling. The jar and the scroll touch and make one shape. There is no writing anywhere.",
+  "colours": "Pale dried river clay, dusty buff-grey, with a black crack; dark brown brittle parchment.",
+  "pose": "Standing upright, seen from the front and a little from above; the whole thing is inside the picture.",
   "must_show": [
-   "pale clay jar on its side",
-   "dark brown scroll sticking out of the jar mouth",
-   "frayed crumbling scroll end",
-   "no writing"
+   "tall straight-sided clay jar standing upright",
+   "end of a dark brown roll of parchment standing out of its mouth",
+   "plain cracked clay, no handles"
   ],
   "must_not_show": [
    "hand",
@@ -971,7 +996,19 @@
    "vase standing upright",
    "bright orange terracotta",
    "tube open at both ends",
-   "pipe"
+   "pipe",
+   "sack",
+   "bag",
+   "pouch",
+   "gourd",
+   "round pot",
+   "jar lying on its side",
+   "vase with handles",
+   "flowers",
+   "quiver",
+   "arrows",
+   "paint brushes",
+   "lid"
   ]
  },
  {
@@ -1107,13 +1144,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of dark brown leather hide, rough and scuffed, pale buff on its inner side, as thick as a man's wrist. It is held shut by a leather strap with one big white curved fang as its toggle. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: three large pale cream eggs in a cluster, two below and one on top, each with a dark outline. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Dark brown hide, pale buff inside; a white fang; three pale cream eggs.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of dark brown leather hide, rough and scuffed, pale buff on its inner side, as thick as a man's wrist. It is held shut by a leather strap with one big white curved fang as its toggle. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: three large eggs in a cluster, two below and one on top, touching: each egg is a solid dark shape, deep bottle-green mottled with black spots, with one small pale glint on its upper left, plainly dark against the pale sheet. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Dark brown hide, pale buff inside; a white fang; three dark bottle-green eggs spotted with black.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "three eggs sign",
-   "white fang toggle",
-   "dark leather roll",
+   "three dark green spotted eggs in a cluster",
+   "fang toggle on a strap",
+   "dark hide roll, pale inside",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -1140,7 +1177,12 @@
    "real eggs lying beside it",
    "nest",
    "bird",
-   "snake"
+   "snake",
+   "pale eggs",
+   "egg outlines only",
+   "rings",
+   "circles",
+   "bubbles"
   ]
  },
  {
@@ -1360,12 +1402,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of rough fibrous bark-paper, dull dark buff-brown, as thick as a man's wrist. It is closed with a big round seal of jade-green wax. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one bat with its wings spread wide, solid black. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Dull dark buff-brown bark-paper; a jade-green wax seal; a black bat sign.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of rough fibrous bark-paper painted a dull dark jade, a greyed deep green like old jade stone, paler and scuffed along its edges, as thick as a man's wrist. It is closed with a big round seal of dark wine-coloured wax. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one bat seen from the front with its two wings spread wide and two pointed ears, drawn solid in pale bone-white, plainly pale against the dark green sheet. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Dull dark jade-green bark-paper; a dark wine wax seal; a pale bone-white bat sign.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "black bat sign",
-   "green wax seal",
+   "pale bone-white bat sign with spread wings",
+   "wax seal",
+   "dark jade-green roll",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -1391,7 +1434,13 @@
    "thin spindly roll",
    "real bat",
    "several bats",
-   "moon"
+   "moon",
+   "black bat",
+   "yellow paper",
+   "bright amber-yellow paper",
+   "bat inside an oval",
+   "superhero emblem",
+   "pumpkin"
   ]
  },
  {
@@ -1744,13 +1793,14 @@
   "rank": 6,
   "body": "item",
   "scale": "small",
-  "key": "green",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of pale sand-beige papyrus, as thick as a man's wrist. It is rolled on a rod of deep lapis blue, with a round gold knob sticking out at each end of the roll. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one pyramid: a solid golden-brown triangle with one side shaded darker. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Pale sand-beige papyrus; deep lapis blue rod; gold knobs; a golden-brown pyramid.",
+  "key": "blue",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of pale sand-beige papyrus, the dull dun colour of desert sand, with its crossed woven strips showing, as thick as a man's wrist. It is rolled on a rod of dark ebony, with a round gold knob sticking out at each end of the roll. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: the solid dark silhouette of a sphinx lying down, seen from the side and facing left: the long body of a lion lying on its belly with both front paws stretched out flat in front of it and its tail curled over its haunch, and at the front, held upright, the head of a person wearing a broad headcloth that falls square to the shoulders. The whole sphinx is one flat shape in very dark brown, nearly black. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Pale sand-beige papyrus; dark ebony rod; gold knobs; a very dark brown sphinx sign.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "pyramid sign",
-   "blue rod with gold knobs",
+   "dark sphinx sign: lying lion body with a human head in a headcloth",
+   "gold knobs on a dark rod",
+   "sand-beige papyrus roll",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -1777,7 +1827,16 @@
    "sphinx statue",
    "camel",
    "palm tree",
-   "eye in the triangle"
+   "eye in the triangle",
+   "triangle",
+   "pyramid",
+   "warning sign",
+   "salmon paper",
+   "peach paper",
+   "living lion",
+   "cat",
+   "dog",
+   "wings"
   ]
  },
  {
@@ -1787,13 +1846,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of cream paper; the roll itself is wrapped in cloth chequered in big black and white squares, as thick as a man's wrist. It is tied with a thick lock of long white hair, its ends hanging loose. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: a fanged mouth: a row of white teeth with two long curved tusks, and one long scarlet tongue hanging down from it. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Cream paper; black and white chequered cloth; white hair; white teeth and a scarlet red tongue.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of cream paper; the roll itself is wrapped in cloth chequered in big black and white squares, as thick as a man's wrist. It is tied with a thick lock of long white hair, its ends hanging loose. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: the face of a carved demon mask seen from the front, as wide as half the panel: the face is solid black, with two big round white eyes that bulge, each with a black dot in the middle, two long white tusks curving upward from the corners of a wide mouth, and one long scarlet tongue hanging straight down from the mouth past the chin. A fringe of shaggy black hair stands out round the top of the mask. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Cream paper; black and white chequered cloth; white hair; a black mask face with white eyes and tusks and a scarlet red tongue.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "black and white chequered cloth round the roll",
-   "fanged mouth sign with a red tongue",
-   "lock of white hair",
+   "black demon mask face with round white eyes and white tusks",
+   "long red tongue hanging from the mask",
+   "black and white chequered cloth on the roll",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -1820,7 +1879,13 @@
    "whole face",
    "mask lying beside it",
    "eyes",
-   "woman"
+   "woman",
+   "mouth by itself",
+   "lips",
+   "lips and tongue logo",
+   "human face",
+   "skull",
+   "blood"
   ]
  },
  {
@@ -1873,13 +1938,14 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of dull pale buff papyrus with its crossed woven strips showing, dusted with red-brown sand, as thick as a man's wrist. It is tied with a thick scarlet cord. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: the head of a beast seen from the side, solid black: a long down-curved snout and two tall upright ears with square flat tops. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Dull pale buff papyrus dusted red-brown; scarlet red cord; a black beast-head sign.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of dull pale buff papyrus with its crossed woven strips showing, dusted with rust-brown sand, as thick as a man's wrist. It is tied with a thick scarlet cord. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: the solid black silhouette of a strange lean beast sitting upright on its haunches, seen from the side and facing left: a slender body like a greyhound's, a long thin neck, a long thin snout that bends downward at its end, two tall straight ears standing up from the head that are the same width all the way up and cut off square across the top, and a stiff thin tail standing straight up behind it and ending in a fork of two prongs. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Dull pale buff papyrus dusted rust-brown; scarlet cord; a black beast sign.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "black long-snouted beast head sign with tall square ears",
-   "red cord",
-   "papyrus",
+   "black sitting beast sign with a down-bent snout",
+   "two tall square-topped ears",
+   "stiff upright forked tail",
+   "papyrus roll tied with a scarlet cord",
    "one fat roll on the diagonal with an open panel",
    "no writing"
   ],
@@ -1906,7 +1972,14 @@
    "whole animal",
    "man with an animal head",
    "hieroglyphs",
-   "pyramid"
+   "pyramid",
+   "wolf",
+   "donkey",
+   "hare",
+   "rabbit",
+   "horse",
+   "pointed ears",
+   "head only"
   ]
  },
  {

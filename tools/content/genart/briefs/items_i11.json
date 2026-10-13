@@ -824,7 +824,8 @@
    "pure white stalk",
    "eyes",
    "smiling face"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "wand_of_madness",
@@ -940,7 +941,7 @@
    "skull",
    "smooth shaft"
   ],
-  "lift": 1.4
+  "lift": 1.3
  },
  {
   "id": "wand_of_death",
@@ -1449,12 +1450,13 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of old ivory, dull cream-brown and darker brown in its cracks, never gold, bound with two black iron bands; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a cluster of big square white salt crystals, cubes with sharp corners stacked together, chalk white with pale grey shadows.",
-  "colours": "Dull cream-brown old ivory; black iron bands; chalk-white salt cubes with pale grey shadows.",
+  "what": "a short, thick, sturdy magic wand, about ten times as long as it is thick, described from one end to the other. From the bottom left, the grip and shaft: a rod of old ivory, dull cream-brown and darker brown in its cracks, never gold, bound with two black iron bands; the shaft is the same bold thickness all along. At the top right end, the tip, three times as wide as the shaft and the boldest part of the wand: a cluster of just three big cubes of white salt crystal grown together, each cube as wide as two shaft-widths, with sharp square corners and flat faces; on every cube one face is bright chalk white, one pale grey and one mid-grey, so that each plainly reads as a solid cube. A black iron collar holds the cluster to the rod.",
+  "colours": "Dull cream-brown old ivory; black iron bands and collar; three chalk-white salt cubes with pale grey and mid-grey faces.",
   "pose": "It lies on a diagonal, the butt of the grip at the bottom left corner and the tip at the top right corner, the whole wand inside the picture.",
   "must_show": [
-   "cluster of white cube crystals at the tip",
-   "cream-brown ivory shaft with black bands",
+   "three big square salt cubes at the tip, sharp-cornered",
+   "cream-brown ivory shaft",
+   "black iron bands",
    "diagonal, tip at top right"
   ],
   "must_not_show": [
@@ -1477,7 +1479,15 @@
    "ice",
    "dice with dots",
    "statue",
-   "gem"
+   "gem",
+   "marshmallow",
+   "cotton",
+   "popcorn",
+   "cauliflower",
+   "many small lumps",
+   "rounded lumps",
+   "dice spots",
+   "sugar"
   ]
  },
  {

@@ -275,13 +275,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "one single huge dragon scale lying flat: a thick curved plate shaped like a broad teardrop, round at the top and coming to a point at the bottom, with one raised ridge down its middle. It is jet black like polished coal, glossy, black in every part, with one broad white-grey streak of shine down the left of the ridge and a faint dull grey shimmer on the right. Its whole rim is a thick band of pale bone-white, chipped along the bottom. Hard as iron, like a plate of black armour.",
-  "colours": "Jet black like polished coal with a white-grey streak of shine, a thick pale bone-white rim.",
-  "pose": "Lying flat by itself, seen from the front and a little above, point downward.",
+  "what": "a piece of black dragon hide with its scales on, lying flat: five huge thick scales overlapping one another like roof tiles, three in the upper row and two in the lower row, the lower ones tucked under the upper ones, so the whole piece is one joined shape like a blunt triangle pointing downward. Every scale is a thick curved plate rounded at its lower edge, jet black like polished coal with one broad white-grey streak of shine across it, and every scale has a thick rim of pale bone-white along its rounded lower edge, so the five scales can be counted. Hard as iron.",
+  "colours": "Jet black scales like polished coal with white-grey streaks of shine, each with a thick pale bone-white lower rim.",
+  "pose": "Lying flat by itself, seen from the front and a little above, the blunt point downward.",
   "must_show": [
-   "one teardrop-shaped black scale",
-   "pale bone-white rim",
-   "ridge down the middle"
+   "a few big overlapping black scales like roof tiles, one joined piece",
+   "pale bone-white rim on each scale",
+   "white-grey shine"
   ],
   "must_not_show": [
    "dragon",
@@ -313,7 +313,14 @@
    "plastic",
    "blood",
    "dripping",
-   "gore"
+   "gore",
+   "seed",
+   "guitar pick",
+   "single plain teardrop",
+   "pine cone",
+   "artichoke",
+   "fish",
+   "snake"
   ]
  },
  {
@@ -410,14 +417,13 @@
   "body": "item",
   "scale": "small",
   "key": "green",
-  "what": "a witch's tongue kept as a charm, dried and harmless, seen from directly above and lying flat: one short, broad, flat tongue, wide and plump, twice as long as it is wide, with level sides and a broad fully rounded tip at the top right, one deep dark groove straight down the middle of it from root to tip, and a rough pebbled top. It is dry as old leather and dusty pink, the dull faded pink of an old brick, greyer at the edges. Its straight-cut root end, at the bottom left, is bound round and round with thick black thread, eight turns, and tied to the thread and lying against the tongue is one small silver bell. Nothing about it is wet.",
-  "colours": "Dull dusty faded pink with grey-mauve shading and a darker groove; thick black thread binding; one small bright silver bell.",
+  "what": "a witch's tongue kept as a charm, dried flat and hard like a strip of old leather, harmless, seen from directly above and lying flat: one flat tongue, short and very broad, only one and a half times as long as it is wide and the same width all along, with straight level sides, a wide fully rounded tip at the top right, and a straight-cut root end at the bottom left that is just as wide as the rest. One deep black groove runs straight down the middle of it from root to tip, and its top is rough, pebbled and cracked. It is a dull dusky red, the faded red of an old brick, paler and dusty on top, darker at the edges. Near the root a hole is punched through it, and knotted through the hole is a short loop of thick black cord with one small silver bell on it, lying against the tongue. Nothing about it is wet.",
+  "colours": "Dull dusky brick red with a black groove, paler dusty highlights; thick black cord; one small bright silver bell.",
   "pose": "Lying flat on a diagonal, the thread-bound root at the bottom left, the broad rounded tip at the top right.",
   "must_show": [
-   "short broad flat pink tongue with a centre groove",
-   "rounded tip",
-   "black thread binding at the root",
-   "one small silver bell"
+   "short broad flat dull-red tongue with a black centre groove",
+   "wide rounded tip, root just as wide",
+   "black cord and one small silver bell at the root"
   ],
   "must_not_show": [
    "mouth",
@@ -461,7 +467,16 @@
    "stand",
    "tray",
    "label with writing",
-   "second object"
+   "second object",
+   "plump",
+   "long and narrow",
+   "narrow neck",
+   "handle",
+   "sausage",
+   "finger",
+   "candy pink",
+   "bottle",
+   "tassel"
   ],
   "family": "trophy_parts",
   "rank": 5
@@ -566,12 +581,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "one large cut gemstone, a pear-cut jewel shaped like a teardrop, round at the bottom and drawn up to a point at the top, cut all over with large sharp flat facets like a cut diamond, each facet catching the light. The gem is made of five upright slices of colour standing side by side from left to right, like the five fingers of a hand, each slice running from the bottom of the gem to the top: coal-black at the far left, then dark emerald, then golden-yellow in the middle, then bright scarlet, then bone-white at the far right. Hard white glints flash on the facet edges. A hard, cold, precious jewel.",
-  "colours": "Five upright slices of colour side by side: coal-black, dark emerald, golden-yellow, bright scarlet, bone-white; white glints on the facets.",
+  "what": "one large precious gemstone shaped like a teardrop, round at the bottom and drawn up to a point at the top, smooth and polished like a black opal. The stone is dark, nearly black and glassy, and deep inside it lie broad flakes of coloured fire, each as big as a thumbnail and well apart from the others: flakes of scarlet, of emerald, of golden yellow and of white, scattered over the whole stone like the scales of a fish. A broad curved streak of bright white shine runs down its upper left side, and a thin pale line of light follows its whole outline so its shape is clear. A hard, cold, precious jewel.",
+  "colours": "A black opal: glassy black body with separate flakes of scarlet, emerald, golden yellow and white inside it; a white streak of shine and a thin pale outline of light.",
   "pose": "Upright by itself, point at the top, seen from the front.",
   "must_show": [
-   "faceted teardrop gem",
-   "five upright slices of colour: black, emerald, yellow, scarlet, white"
+   "one dark teardrop gemstone, point at the top",
+   "flakes of scarlet, emerald, yellow and white inside it",
+   "white shine so it reads on a dark floor"
   ],
   "must_not_show": [
    "dragon",
@@ -606,7 +622,13 @@
    "plastic",
    "blood",
    "dripping",
-   "gore"
+   "gore",
+   "upright stripes",
+   "flag",
+   "beach ball",
+   "striped egg",
+   "sweet corn",
+   "bands of colour"
   ]
  },
  {
@@ -846,21 +868,28 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "elvish waybread: one thin square cake of very pale cream-white bread with crisp golden-brown edges, scored corner to corner with one cross, lying on and half wrapped in one large broad leaf of deep emerald with pale veins. Two corners of the leaf are folded up over the cake, and the leaf is tied round with one thin strand of silver cord. Light, fine and clean.",
-  "colours": "Very pale cream-white cake with golden-brown edges, a deep emerald leaf with pale veins, a silver cord.",
+  "what": "fine waybread baked by the Fair Folk: one small round flat loaf, a thick disc of very pale cream-white bread with a thin golden-brown crust round its edge. Pressed deep into its top is one big star with eight points that reaches nearly to the edge of the loaf, its grooves baked golden-brown. The loaf sits on a square of silver-grey silk cloth whose four corners are folded up against its sides, and a thin silver cord is tied once round the cloth. Light, fine and clean.",
+  "colours": "Very pale cream-white bread with golden-brown grooves and crust; silver-grey silk cloth; a silver cord.",
   "pose": "Lying by itself, seen from a little above.",
   "must_show": [
-   "pale square cake",
-   "deep emerald leaf wrapped round it"
+   "one small round pale loaf",
+   "big eight-pointed star pressed into its top",
+   "silver-grey cloth folded round it"
   ],
   "must_not_show": [
-   "round loaf",
+   "leaf",
+   "leaf wrapping",
+   "square wafer",
+   "square cake",
+   "dark brown crust",
    "slices",
    "plate",
    "cracker with holes",
    "ravioli",
    "flowers",
-   "ribbon bow",
+   "pie",
+   "cheese wheel",
+   "coin",
    "several cakes",
    "elf",
    "hand",
@@ -926,7 +955,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "apple",
@@ -1842,7 +1872,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "void_essence",
