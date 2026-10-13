@@ -38,6 +38,7 @@ Output goes to `_genart/` (not committed).
 | `must_show` | What makes it this creature and this tier. The reviewer checks each. |
 | `must_not_show` | What belongs to its relatives or to a mistake seen before. Also sent to the model as things to avoid. |
 | `body` | Optional. `"shapeless"` for anything with no head, feet or legs (a flame, slime, cloud, whirlwind, eyeball, pillar, swarm, serpent, floating orb). It swaps the fixed prompt wording, which otherwise says "head to the soles of its feet" and "weight on one leg" and so grows legs or a small man under such creatures. |
+| `lift` | Optional number, default 1.0. Above 1 (try 1.3 to 1.6) brightens the midtones when the sprite is cut, for a dark thing that vanishes on the dark floor. It needs no redraw: change it and rerun with `--sheets-only`. |
 | `key` | The backdrop colour: `magenta`, `green` or `blue`. It must be a colour the creature does not have, or the cut-out eats part of it. `pipeline.py` refuses a brief whose `colours` name the key. |
 
 The style is the one Brandon chose from a board of six on 2026-10-11: painted

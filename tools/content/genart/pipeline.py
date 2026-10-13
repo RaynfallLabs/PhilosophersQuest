@@ -186,7 +186,8 @@ def cut(briefs, out, n):
                 continue
             item = b.get('body') == 'item'
             spr, facts = convert.to_sprite(Image.open(p), b.get('key', 'magenta'),
-                                           scale=SCALES[b.get('scale', 'large')] if item else 1.0, stand=not item)
+                                           scale=SCALES[b.get('scale', 'large')] if item else 1.0, stand=not item,
+                                           lift=float(b.get('lift', 1.0)))
             facts['thin_ok'] = item
             facts['pieces'] = int(b.get('pieces', 1))        # a pair (bracers, greaves) may be two
             if b['id'].startswith('tpl_'):

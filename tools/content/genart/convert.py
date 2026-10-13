@@ -77,7 +77,7 @@ def figure_mask(im, key='magenta'):
     return a, fig, facts
 
 
-def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True):
+def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True, lift=1.0):
     """(RGBA sprite Image of tile x tile, facts).
 
     `scale` is how much of the tile the thing's longest side fills (an item's size
@@ -111,7 +111,9 @@ def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=Tr
     facts['thin_pixels'] = int(((thin_cov > THIN) & ~(al[..., 0] > SOLID * 255)).sum())
     # A painted figure's soft shadows average down to mud at this size: lift the
     # midtones and put a little colour back. Black and white stay where they are.
-    rgb = 255.0 * (np.clip(rgb, 0, 255) / 255.0) ** LIFT_GAMMA
+    # `lift` above 1 raises the midtones further, for a dark thing that would vanish on the
+    # dark dungeon floor (a shadow, a black blade). 1.0 is the ordinary lift.
+    rgb = 255.0 * (np.clip(rgb, 0, 255) / 255.0) ** (LIFT_GAMMA / max(0.5, lift))
     grey = rgb.mean(2, keepdims=True)
     rgb = np.clip(grey + (rgb - grey) * LIFT_COLOUR, 0, 255)
     # a small fixed number of colours, chosen from this sprite's own pixels
