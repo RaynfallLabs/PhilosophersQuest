@@ -896,14 +896,15 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a god-smith's throwing net made of fine silver chain: one net gathered up into a single bundle, bunched together at the top where its edges are drawn into one thick knot with a short loop, and spreading below into a wide heap of hanging folds like a gathered curtain. The mesh is a bold open diamond lattice of bright silver chain, with the dark gaps of the mesh showing clearly, and a row of small round silver weights hangs along its bottom edge.",
-  "colours": "Bright silver-white chain with pale grey shadows and dark gaps between the strands; small silver ball weights.",
-  "pose": "It is seen from the front and a little from above: the knot at the top of the picture, the folds of mesh spreading down and out below it, the whole net inside the picture.",
+  "what": "a god-smith's throwing net forged of golden bronze chain, spread open like a fan. At the bottom left corner of the picture its chains are gathered into one thick knot with a short loop for the hand. From the knot the net opens out towards the top right into one wide flat fan, a quarter of a circle. The net is a very coarse open lattice of thick chains: only five chains fan out from the knot and only four chains cross them, every chain as thick as a thumb, so that the net is nothing but a few big diamond-shaped holes, each hole as wide as an apple, and there is far more hole than chain. The backdrop shows plainly through every hole. Along the wide curved outer edge hang six round bronze ball weights, each as big as an apple.",
+  "colours": "Bright warm yellow-brown bronze chain like a polished brass door-knob, with dark brown shadows; bright bronze ball weights.",
+  "pose": "It lies flat, seen from above: the knot at the bottom left corner, the fan of mesh spreading to the top right, the whole net inside the picture.",
   "must_show": [
-   "one net gathered in a bundle",
-   "open diamond mesh with dark gaps",
-   "bright silver chain",
-   "small round weights along the edge"
+   "one net",
+   "a few thick chains crossing, with big open holes and the backdrop showing through",
+   "golden bronze chain",
+   "a knot at the bottom left and a fan spreading to the top right",
+   "ball weights along the outer edge"
   ],
   "must_not_show": [
    "hand",
@@ -924,7 +925,26 @@
    "hammock",
    "second net",
    "anvil",
-   "gold"
+   "gold",
+   "dress",
+   "skirt",
+   "gown",
+   "ghost",
+   "tassel",
+   "solid cloth",
+   "veil",
+   "curtain",
+   "green patina",
+   "silver",
+   "fine mesh",
+   "woven cloth",
+   "fan",
+   "leaf",
+   "racket",
+   "lute",
+   "pan",
+   "solid surface",
+   "wicker"
   ]
  },
  {
@@ -1264,9 +1284,9 @@
   "id": "khopesh_of_anubis",
   "body": "item",
   "scale": "large",
-  "key": "blue",
+  "key": "magenta",
   "what": "a khopesh, the sickle-sword of ancient Egypt, of black iron: a short heavy sword whose blade is broad everywhere, as broad as a hand from the hilt to the tip, never a thin rod. At the bottom left is a small round gold pommel, then a short straight grip of black wood ringed with four gold bands, with no crossguard. The broad blade leaves the grip straight for one hand's length. Then it bends hard over to the right and sweeps round in a deep curve like the blade of a great sickle, a broad crescent as long as the whole hilt and straight part together, ending in a point at the top right. The blade is twice as long as the grip and four times as broad as the grip is thick. The sharp edge is the outer, bulging side of the crescent and has one bright silver-white line along it.",
-  "colours": "Coal-black iron blade with dark grey highlights and one thin bright silver-white edge along the outside of the curve; a black grip with yellow gold bands; a small yellow gold pommel.",
+  "colours": "Dark gunmetal-grey iron blade, plainly cold grey metal, nearly black in the shadows, with one broad bright silver-white band along the outside of the curve, a third as wide as the blade; a black grip with yellow gold bands; a small yellow gold pommel.",
   "pose": "It lies on a diagonal, the gold pommel at the bottom left corner and the round bow of the blade at the top right corner, the whole sword inside the picture.",
   "must_show": [
    "one sickle-sword with a short hilt",
@@ -1323,7 +1343,14 @@
    "long handle",
    "polearm",
    "hook on a pole",
-   "wand"
+   "wand",
+   "brown blade",
+   "wooden blade",
+   "wood grain",
+   "horn",
+   "copper",
+   "rust",
+   "leather blade"
   ],
   "family": "curved",
   "rank": 3
@@ -2249,14 +2276,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "the thunder-god's hammer, famous for its short handle: an enormous head of dark iron, a massive rectangular block twice as long as it is tall with slightly sloping ends, its side carved all over with deep interlaced Norse knotwork whose grooves are lined with silver; and a handle that is plainly too short for it, thick, no longer than the head itself, wrapped in dark brown leather, ending in a big iron ring with a short loop of leather thong through it. The head is as big as the handle is long.",
-  "colours": "Dark blue-grey iron head with bright silver in the knotwork grooves and on the worn corners; a dark brown leather handle; an iron ring.",
-  "pose": "It lies on a diagonal, the ring at the butt of the short handle at the bottom left and the great block head at the top right, the whole thing inside the picture.",
+  "what": "the thunder-god's war hammer, famous for its short handle. It is a hammer with two blunt flat ends, not an axe: it has no blade and no cutting edge. The head is an enormous block of dark iron, twice as long as it is tall, with slightly sloping ends, its side carved with deep interlaced Norse knotwork whose grooves are lined with silver. A broad band of bright bronze is clamped round each end of the head, so the head is grey in the middle and bronze at both ends. The handle is plainly too short for it: thick, no longer than the head itself, wrapped in dark brown leather, ending in a plain round iron knob. The head is as big as the handle is long.",
+  "colours": "Dark charcoal-grey iron head with bright silver in the knotwork grooves; a broad band of bright warm yellow-brown bronze, like a polished brass door-knob, round each end of the head; a dark brown leather handle; a dark iron knob.",
+  "pose": "It lies on a diagonal, the knob at the butt of the short handle at the bottom left and the great block head at the top right, the whole thing inside the picture.",
   "must_show": [
-   "one hammer",
-   "enormous dark iron block head carved with knotwork",
-   "handle no longer than the head",
-   "leather wrap and a ring with a thong loop at the butt",
+   "one short-handled war hammer",
+   "a huge blocky iron head with two blunt flat ends",
+   "a bronze band round each end of the head",
+   "a handle no longer than the head, ending in a knob",
    "diagonal, head at top right"
   ],
   "must_not_show": [
@@ -2266,19 +2293,22 @@
    "person",
    "table",
    "label with writing",
-   "long haft",
-   "lightning bolts",
-   "cloud",
-   "goat",
-   "glove",
-   "belt",
-   "wings on the head",
-   "spike",
+   "axe",
    "axe blade",
+   "double axe",
+   "cutting edge",
+   "crescent blade",
+   "leather loop",
+   "wrist strap",
+   "ring at the butt",
+   "blue stone head",
+   "blue head",
    "wooden mallet",
+   "long handle",
+   "lightning",
+   "glow",
    "second hammer",
-   "gems",
-   "gold"
+   "green patina"
   ]
  }
 ]

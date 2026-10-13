@@ -162,13 +162,14 @@
   "body": "item",
   "scale": "tiny",
   "key": "green",
-  "what": "a master thief's lockpick made of gold: a thick straight golden rod ending in a small upturned hook, set in a stout handle wrapped in dark purple leather with a silver collar and one small red gem at the butt.",
-  "colours": "Bright yellow gold rod, dark purple leather handle, silver collar, a red gem.",
+  "what": "a master thief's lockpick made of gold, drawn short and very stout, only five times as long as it is thick. The lower half is the handle: a fat barrel of dark purple leather as thick as a thumb, with a broad silver collar where it meets the rod and one round red gem at the butt. The upper half is a golden rod as thick as a finger that ends in one bold hook, bent back on itself like the top of a shepherd's crook, as wide as the handle is thick.",
+  "colours": "Bright yellow gold rod and hook with white highlights; a rich purple leather handle, the purple of an amethyst; a bright silver collar; one red gem.",
   "pose": "It lies on a diagonal, the handle at the bottom left and the hooked tip at the top right.",
   "must_show": [
    "one lockpick",
-   "golden rod with a small hooked tip",
-   "purple handle"
+   "a thick golden rod with a bold hooked tip",
+   "a fat purple handle",
+   "bold and stout, not a hairline"
   ],
   "must_not_show": [
    "hand",
@@ -185,7 +186,11 @@
    "second pick",
    "needle",
    "wand",
-   "glow"
+   "glow",
+   "thin wire",
+   "long thin rod",
+   "hairline",
+   "walking cane"
   ]
  },
  {
@@ -400,14 +405,15 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a high king's longsword reforged by elven smiths: a long straight double-edged blade of brilliant silver steel, broad, with a row of small star shapes engraved down the middle of the blade between a crescent moon near the hilt and a rayed sun near the point; a long silver crossguard whose ends curl a little towards the blade; a long grip wrapped in black leather; and a silver pommel shaped like a flat disc.",
-  "colours": "Brilliant silver-white steel, the engraved stars a darker grey; silver guard and pommel; a black leather grip.",
+  "what": "a high king's longsword reforged by elven smiths, the sword of the sun and the moon. At the bottom left is the pommel: a large flat disc of bright silver with short points all round its rim like the rays of a sun. Then a long grip wrapped in black leather. Then the crossguard: a broad bar of bright silver bent into a crescent, both of its ends sweeping up towards the blade like the horns of a new moon. Then the blade: long, straight, double-edged and broad, of brilliant silver-white steel, with one bold dark grey stripe, a third as wide as the blade, running down its middle from the guard nearly to the point. There is only one crossguard, at the hilt.",
+  "colours": "Brilliant silver-white steel blade with one dark slate-grey stripe down the middle; bright silver crescent guard and rayed pommel; a black leather grip.",
   "pose": "It lies on a diagonal, pommel at the bottom left corner and point at the top right corner, the whole sword inside the picture.",
   "must_show": [
    "one longsword",
-   "bright silver blade",
-   "a row of engraved stars down the blade",
-   "black grip, silver guard",
+   "bright silver blade with one bold dark stripe down the middle",
+   "a crescent crossguard with upswept ends",
+   "a rayed disc pommel",
+   "black grip",
    "diagonal, point at top right"
   ],
   "must_not_show": [
@@ -423,7 +429,11 @@
    "gold",
    "large gems",
    "glow",
-   "broken blade"
+   "broken blade",
+   "second crossguard",
+   "crossguard near the point",
+   "blue grip",
+   "straight plain crossguard"
   ]
  },
  {
@@ -971,9 +981,9 @@
   "id": "cuchulainn_hurley",
   "body": "item",
   "scale": "medium",
-  "key": "blue",
+  "key": "magenta",
   "what": "an Irish hurley, the stick used in the game of hurling: it is not round like a club but flat like a plank, cut in one piece from a board of ash wood no thicker than a thumb. At the bottom left is the grip, narrow, as wide as two fingers, wrapped in a strip of dark leather. From the grip the flat board runs straight up towards the top right, growing slowly wider all the way. In its last third it spreads out into a broad flat blade as wide as an open hand, and this broad end curves over to the right side and finishes in a rounded end, like the blade of a wide hockey stick. The broad flat face of the blade is turned to the viewer. One thin band of dull iron is nailed across the broad blade near its end. The wood is scuffed and battered at the heel of the curve.",
-  "colours": "Warm mid-brown ash wood all over, darkened and scuffed with age and handling, darker brown at the battered heel; a dark brown leather grip; one dull grey iron band.",
+  "colours": "Dark walnut-brown wood all over, scuffed and darkened with age and handling, nearly black at the battered heel, with dull grey-brown worn edges; a black leather grip; one dull grey iron band.",
   "pose": "It lies on a diagonal, the leather grip at the bottom left corner and the broad curved flat blade at the top right corner, the blade curving over to the right, its flat face to the viewer.",
   "must_show": [
    "one flat wooden stick",
@@ -1018,7 +1028,14 @@
    "stand",
    "tray",
    "label with writing",
-   "second object"
+   "second object",
+   "orange wood",
+   "bright orange",
+   "varnished",
+   "new wood",
+   "cricket bat",
+   "paddle",
+   "toy"
   ],
   "family": "clubs",
   "rank": 2
@@ -1842,15 +1859,15 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "a hunting bow: one tall, gently curved stave of dark wood, thick at the middle and tapering to both tips, strung with a single taut bowstring from tip to tip, and no arrow. The grip at the middle of the stave is wrapped in a short sleeve of shaggy bear fur. Each tip is capped with pale horn.",
-  "colours": "A dark chestnut-brown stave, pale horn tips, a shaggy very dark brown fur grip, an off-white string.",
-  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curve bulging to the upper left.",
+  "what": "a huntress's bow: one bow and its string, nothing else. The stave is one tall, gently curved beam of chestnut-brown wood, as thick as a fence post, very thick at the middle and tapering to both tips; each tip is capped with a long pale horn point. The grip at the middle is wrapped in a short sleeve of shaggy dark fur no longer than a hand. From the very tip at one end to the very tip at the other runs the bowstring: one perfectly straight taut cord of bright off-white, as thick as a finger, plainly visible, standing well clear of the stave, so that the stave and the string together enclose one long empty space, wide in the middle and pointed at both ends. It has no arrow.",
+  "colours": "A warm chestnut-brown stave with paler brown highlights along its back; pale cream horn tips; a short very dark brown fur grip; one thick bright off-white string.",
+  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curved stave bulging to the upper left and the straight string on the lower right side.",
   "must_show": [
    "one bow",
-   "a single gentle curve",
-   "a shaggy fur grip in the middle",
+   "one thick curved brown stave",
+   "one straight pale string from tip to tip, clear of the stave",
    "pale horn tips",
-   "no arrow"
+   "a short fur grip"
   ],
   "must_not_show": [
    "hand",
@@ -1874,7 +1891,14 @@
    "letter",
    "alphabet letter",
    "lettering",
-   "typography"
+   "typography",
+   "stick with no string",
+   "whip",
+   "club",
+   "animal",
+   "boar",
+   "tusks",
+   "string touching the stave"
   ]
  },
  {
@@ -2033,15 +2057,14 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "an outlaw's weathered longbow of yew: one tall, gently curved stave of dark wood, thick at the middle and tapering to both plain tips, scuffed and nicked with long use, strung with a single taut bowstring from tip to tip, and no arrow. The middle third of the stave is wrapped round and round in strips of deep emerald-green woollen cloth.",
-  "colours": "A dark brown yew stave darkened with weather, a deep emerald-green cloth wrapping, dark horn tips, an off-white string.",
-  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curve bulging to the upper left.",
+  "what": "an outlaw's weathered longbow of yew: one bow and its string, nothing else. The stave is one tall beam of wood bent in a single smooth even curve like a new moon, as thick as a fence post, very thick at the middle and tapering to both plain tips, scuffed and nicked with long use. The middle third of the stave is wrapped round and round in strips of deep emerald-green woollen cloth. From the very tip at one end to the very tip at the other runs the bowstring: one perfectly straight taut cord of bright off-white, as thick as a finger, plainly visible, standing well clear of the stave, so that the stave and the string together enclose one long empty space, wide in the middle and pointed at both ends. It has no arrow.",
+  "colours": "A warm mid-brown yew stave, the brown of a chestnut, with paler honey-brown worn edges; a deep emerald-green cloth wrapping; one thick bright off-white string.",
+  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curved stave bulging to the upper left and the straight string on the lower right side.",
   "must_show": [
-   "one tall longbow",
-   "a single gentle curve",
-   "green cloth wrapped round the middle",
-   "weathered dark wood",
-   "no arrow"
+   "one bow",
+   "one thick stave in a single curve",
+   "one straight pale string from tip to tip, clear of the stave",
+   "green cloth wrapping at the middle"
   ],
   "must_not_show": [
    "hand",
@@ -2070,7 +2093,13 @@
    "letter",
    "alphabet letter",
    "lettering",
-   "typography"
+   "typography",
+   "stick with no string",
+   "S-shaped stave",
+   "wavy stave",
+   "black wood",
+   "snake",
+   "string touching the stave"
   ]
  }
 ]

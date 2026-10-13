@@ -388,13 +388,13 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a pair of simple pilgrim's sandals with nobody in them: each is a thick flat sole of dark leather with a broad band of pale woven cloth across the toes, a second band across the instep, and a cloth strap round the heel tied in a knot. They are flat, open and empty, the two soles lying side by side and touching, toes pointing up and a little to the right.",
-  "colours": "Dark walnut-brown leather soles; the straps are undyed pale sand-beige cloth with brown shadows.",
+  "what": "a pair of ancient pilgrim's sandals with nobody in them, of the kind worn on the roads of the Holy Land two thousand years ago: each sole is a flat pad woven of thick straw rope, the rope lying in bold ridged rows across the sole from side to side, cut to the long narrow outline of a foot. Over each sole three narrow straps of pale cloth cross one another in an X, and from the heel two long cloth ties trail loose and curl. They are flat, open and empty, the two soles lying side by side and touching, toes pointing up and a little to the right.",
+  "colours": "Dull straw-brown rope soles, the brown of old thatch, with dark brown gaps between the rows; the straps and ties are undyed pale sand-beige cloth with brown shadows.",
   "pose": "Seen from above and a little to one side, the two sandals lying flat side by side and touching, a matching left and right.",
   "must_show": [
    "a pair of two open sandals",
-   "flat soles",
-   "pale cloth straps",
+   "soles of woven rope in ridged rows",
+   "narrow pale cloth straps crossing in an X",
    "empty"
   ],
   "must_not_show": [
@@ -419,7 +419,15 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "slippers",
+   "slides",
+   "clogs",
+   "broad band across the toes",
+   "leather shoes",
+   "buckles",
+   "rubber",
+   "bandaged feet"
   ]
  },
  {
@@ -469,13 +477,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a pair of chain mail boots with nobody in them: calf-high boots made of chain mail, a coarse mesh of big interlinked steel rings drawn large enough to see, covering the foot and the shin, each with a thick dark leather sole, a dark leather band round the top and one leather strap with a buckle across the ankle.",
-  "colours": "Silver-grey steel rings with bright highlights and dark gaps; dark walnut-brown leather soles, top bands and straps.",
+  "what": "a pair of medieval chain mail leggings-feet, the mail stockings of a crusader knight, with nobody in them: each is a soft calf-high stocking made wholly of chain mail, a coarse mesh of big interlinked steel rings drawn large enough to see, that covers the shin, the ankle and the whole foot down to a long pointed toe. The mail is slumped and wrinkled at the ankle like a loose sock. There is no leather shoe: the foot itself is mail. The only leather is one narrow dark band round the top edge of each.",
+  "colours": "Silver-grey steel rings with bright highlights and dark gaps, all over, foot and shin alike; one narrow dark walnut-brown leather band at the top of each.",
   "pose": "Seen from the front and a little to one side, the two boots standing upright side by side and touching, the tops dark empty openings.",
   "must_show": [
-   "a pair of two empty boots",
-   "ring mesh over foot and shin",
-   "dark leather soles and top bands"
+   "a pair of two mail stockings",
+   "ring mesh all over, including the foot",
+   "long pointed toes",
+   "dark empty openings at the top"
   ],
   "must_not_show": [
    "smooth plates",
@@ -497,7 +506,17 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "buckles",
+   "straps",
+   "laces",
+   "leather toe caps",
+   "thick soles",
+   "heels",
+   "work boots",
+   "biker boots",
+   "modern boots",
+   "brown leather shoes"
   ]
  },
  {
@@ -584,14 +603,14 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a pair of plain cloth gloves with nobody in them: soft five-fingered gloves of woven undyed linen with thick fingers, a seam down the back of each hand, and a short cuff bound with a darker band.",
-  "colours": "Pale cream-beige linen with brown shadows in the creases; the cuff bands are dark walnut-brown.",
+  "what": "a pair of plain woollen gloves with nobody in them: soft thick five-fingered gloves of coarse woven wool dyed a dull blue, with short stubby fingers, a bold line of pale stitching down the back of each hand, and a wide turned-back cuff of pale undyed wool. They are plainly cloth gloves and plainly blue, never the colour of skin.",
+  "colours": "Dull dusty woad-blue wool, the blue of a faded peasant's tunic, with dark blue shadows in the creases; pale cream stitching and pale cream cuffs.",
   "pose": "Seen from the back of the hand, the two gloves upright side by side and touching, fingers pointing up and thumbs outward, the wrist openings at the bottom dark and empty.",
   "must_show": [
-   "a pair of two empty gloves",
-   "five separate fingers each",
-   "soft pale cloth",
-   "dark cuff bands"
+   "a pair of two cloth gloves",
+   "dull blue wool",
+   "pale cuffs",
+   "empty"
   ],
   "must_not_show": [
    "metal",
@@ -615,7 +634,12 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "bare hands",
+   "fingernails",
+   "beige gloves",
+   "flesh colour",
+   "rubber gloves"
   ]
  },
  {
@@ -1146,14 +1170,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a heavy northern fur cloak with nobody inside it and no sleeves and no hood: one great mantle of thick shaggy brown bear fur that falls straight down like a closed curtain from the shoulders to a ragged hem, wider at the bottom than at the top, a tall bell shape, with a very thick collar of long pale cream fur lying across both shoulders, fastened at the throat by one round bronze brooch. The fur is long and coarse and hangs in tufts. Above the collar there is only a dark empty neck opening.",
+  "what": "a heavy northern fur cloak with nobody inside it and no sleeves and no hood: one sheet of thick shaggy brown bear fur that falls straight down from the shoulders to the hem, wide at the shoulders and a little wider still at the ragged hem, its two side edges perfectly straight and unbroken from shoulder to hem with nothing sticking out of them. The two front edges meet down the middle from throat to hem. A very thick collar of long pale cream fur lies across both shoulders, fastened at the throat by one round bronze brooch. The fur is long and coarse and hangs in tufts. Above the collar there is only a dark empty neck opening.",
   "colours": "Dark chestnut-brown shaggy fur with darker brown shadows between the tufts; a broad pale cream fur collar; one dull bronze brooch.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty fur cloak",
    "shaggy brown fur all over",
    "thick pale fur collar",
-   "closed bell shape"
+   "straight unbroken sides, no sleeves"
   ],
   "must_not_show": [
    "hood",
@@ -1181,7 +1205,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "coat",
+   "fur coat",
+   "cuffs",
+   "sleeve openings",
+   "buttons",
+   "pockets",
+   "lapels"
   ]
  },
  {
@@ -1539,14 +1570,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a short chain mail shirt with nobody inside it: a light vest of chain mail that ends at the waist in a straight edge, with short sleeves that end above the elbow and a round neck hole bound with a narrow strip of dark leather. It is made of a mesh of interlinked steel rings drawn large and bold, sagging softly. It is no longer than it is wide. The two short sleeves are empty, ending in dark hollow openings. The neck is a dark empty opening.",
-  "colours": "Silver-grey steel rings with bright highlights and dark gaps between the rings; a narrow dark brown leather binding at the neck.",
+  "what": "a short medieval shirt of chain mail, a byrnie, with nobody inside it: a mail shirt that reaches the hips, where its bottom edge is cut into a row of five big downward-pointing triangles like the teeth of a saw. Its sleeves are wide and loose, end above the elbow, and each sleeve's edge is cut into the same big triangular points. The round neck hole is bound with a broad band of dark leather, and below it a short slit runs down the chest, closed by one leather thong. It is made of a coarse mesh of interlinked steel rings drawn large and bold, every ring as big as a man's open hand, only six across the chest, in strong rows of bright rings and dark gaps, sagging heavily. Each sleeve ends in a round dark empty hole with nothing coming out of it. The neck is a dark empty opening.",
+  "colours": "Silver-grey steel rings with bright highlights and black gaps between the rings; a dark brown leather binding and thong at the neck.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty short mail shirt",
-   "ring mesh all over",
-   "waist length",
-   "short sleeves"
+   "big ring mesh all over",
+   "hip length, the hem cut into big triangular points",
+   "short wide sleeves with pointed edges"
   ],
   "must_not_show": [
    "long skirt",
@@ -1572,7 +1603,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "t-shirt",
+   "tee shirt",
+   "knitted jumper",
+   "sweater",
+   "smooth cloth",
+   "straight hem",
+   "tight sleeves"
   ]
  },
  {
@@ -2137,13 +2175,13 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a vest made from the pelt of a gnoll, a hyena-man, with nobody inside it: a short, wide, sleeveless vest of coarse short dull sandy-buff fur marked with a dozen large irregular dark brown blotches, each as big as a fist, with a stiff upright ridge of long dark brown mane hair running across the shoulders as a collar, laced down the middle of the front with dark thong, and a ragged uneven bottom edge at the hips. It is only the vest: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
-  "colours": "Dull sandy-buff fur, the pale dusty brown of dry grass, with large irregular dark chocolate-brown blotches; a dark brown mane collar; dark brown thong lacing.",
+  "what": "a vest made from the pelt of a gnoll, a hyena-man, with nobody inside it: a short, wide, sleeveless vest of coarse shaggy fur, dull tawny grey-brown all over like the coat of a wolf, scattered unevenly with many small black spots, each no bigger than a thumbnail, with a stiff upright ridge of long black mane hair running across the shoulders as a collar, laced down the middle of the front with dark thong, and a ragged uneven bottom edge at the hips. It is only the vest: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
+  "colours": "Dull tawny grey-brown fur, the dusty brown of a wild dog's coat, darker brown in the shadows, with small scattered black spots; a black mane collar; dark brown thong lacing.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty fur vest",
-   "sandy fur with big dark spots",
-   "dark mane collar",
+   "tawny grey-brown fur with small black spots",
+   "black mane collar",
    "laced front"
   ],
   "must_not_show": [
@@ -2185,7 +2223,13 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "cow hide",
+   "cow",
+   "white fur",
+   "cream fur",
+   "big brown blotches",
+   "dalmatian"
   ]
  },
  {
@@ -2479,14 +2523,13 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a coat of lizardfolk scales, made by the marsh lizard-people, with nobody inside it: a sleeveless hip-length coat covered from collar to hem in rows of large rounded reptile scales, each as big as a palm, every row overlapping the one below like roof tiles, the bottom edge a row of scale tips. Straight down the middle of the front, from collar to hem, runs one broad stripe of pale cream belly plates, wide flat bars one above the other like the underside of a snake. A fringe of dry marsh reeds hangs from the collar over each shoulder. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
-  "colours": "Dull marsh-green scales, the colour of pond weed, with dark green shadows; one broad pale cream stripe of belly plates down the front; straw-coloured reed fringes.",
+  "what": "a coat of lizardfolk scales, made by the marsh lizard-people, with nobody inside it: a sleeveless hip-length coat covered from collar to hem, all over its front, in rows of large rounded reptile scales, each as big as a palm, every row overlapping the one below like roof tiles, the bottom edge a row of scale tips. The front is closed down the middle by a row of four short toggles of dark bone. A thick fringe of dry marsh reeds hangs from the collar over each shoulder like a short mantle of straw. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
+  "colours": "Dull dark olive-green scales, the green of ditch water, with darker green shadows and a dull sheen, the same green all over the front; straw-coloured reed fringes; dark brown bone toggles.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty sleeveless scale coat",
    "big overlapping scales all over",
-   "marsh-green scales",
-   "pale cream stripe of belly plates down the middle",
+   "dull olive-green scales",
    "reed fringe on the shoulders"
   ],
   "must_not_show": [
@@ -2519,7 +2562,13 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "white stripe",
+   "pale stripe down the front",
+   "scarf",
+   "necktie",
+   "sash",
+   "ribbon"
   ]
  },
  {
@@ -2529,15 +2578,15 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a coat of naga scales, shed by the serpent-queens of the deep temples, with nobody inside it: a sleeveless hip-length coat covered from collar to hem in rows of smooth glossy diamond-shaped serpent scales, each as big as a palm, laid point down, every row overlapping the one below like roof tiles, the bottom edge a row of scale tips. Round the waist is a broad belt of bright gold plates with one large round white pearl at its centre, and the collar is a band of gold. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
-  "colours": "Deep teal blue-green scales with bright turquoise highlights and dark sea-green shadows; a bright yellow gold belt and collar; one white pearl.",
+  "what": "a coat of naga scales, shed by the serpent-queens of the deep temples, with nobody inside it: a sleeveless hip-length coat, straight-sided, as wide at the hem as at the shoulders, with no waist and no belt, covered from collar to hem in rows of smooth glossy diamond-shaped serpent scales, each as big as a palm, laid point down, every row overlapping the one below like roof tiles, the bottom edge a row of scale tips. Round the neck lies a very broad flat collar of bright gold plates that covers the top of the chest from shoulder to shoulder, like the collar of an Egyptian king, with one large round white pearl at its centre. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
+  "colours": "Deep teal blue-green scales with bright turquoise highlights and dark sea-green shadows; a broad bright yellow gold collar; one white pearl.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty sleeveless scale coat",
    "big overlapping scales all over",
    "teal diamond-shaped scales",
-   "broad gold belt with one white pearl",
-   "gold collar"
+   "broad gold collar with one white pearl",
+   "straight sides, no waist"
   ],
   "must_not_show": [
    "chain mail",
@@ -2568,7 +2617,13 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "belt",
+   "narrow waist",
+   "flared skirt",
+   "gown",
+   "frock",
+   "hourglass shape"
   ]
  },
  {
@@ -2578,15 +2633,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a coat of behir scales, cut from the hide of the great blue lightning-serpent, with nobody inside it: a sleeveless hip-length coat covered from collar to hem in rows of thick broad scales with squared ends, each as big as a hand, of deep cobalt blue, every row overlapping the one below like roof tiles, the bottom edge a row of scale tips. Two bold jagged zigzag marks of bright yellow, like forks of lightning, run down the front of the coat, one on each side of the chest from shoulder to hem. The collar and armholes are bound in dark navy leather. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
-  "colours": "Deep cobalt-blue scales with paler blue highlights and dark navy shadows; two bright yellow zigzag lightning marks; dark navy leather bindings.",
+  "what": "a coat of behir scales, cut from the hide of the great blue lightning-serpent, with nobody inside it: a sleeveless hip-length coat covered from collar to hem in rows of thick broad scales with squared ends, each as big as a hand, every row overlapping the one below like roof tiles, the bottom edge a row of scale tips. The scales are deep cobalt blue, except the bottom two rows, which are pale yellow like the belly of the serpent. The collar and both armholes are bound with a broad band of the same pale yellow hide. It bears no mark and no picture. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
+  "colours": "Deep cobalt-blue scales with paler blue highlights and dark navy shadows; the bottom two rows of scales, the collar and the armhole bindings are pale straw-yellow.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty sleeveless scale coat",
    "big overlapping scales all over",
    "deep blue squared scales",
-   "two bright yellow zigzag lightning marks down the front",
-   "dark navy bindings"
+   "pale yellow bottom rows, collar and armhole bindings"
   ],
   "must_not_show": [
    "chain mail",
@@ -2617,7 +2671,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "lightning bolt",
+   "zigzag mark",
+   "emblem",
+   "badge",
+   "superhero costume",
+   "sports vest",
+   "jersey"
   ]
  },
  {

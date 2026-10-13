@@ -434,7 +434,8 @@
    "hanger",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "leggings_of_enkidu",
@@ -529,14 +530,14 @@
   "body": "item",
   "scale": "large",
   "key": "blue",
-  "what": "a pair of ancient Chinese soldier's shin guards with nobody wearing them: two separate tall guards, each covering one leg from the knee to the ankle only, each made of four rows of small square plates of hard black lacquered leather laced together with bright red cord in bold criss-cross stitches, edged at top and bottom with a band of red lacquer, and each stamped in the middle with one square red seal mark. They cover the shins only.",
-  "colours": "Glossy black-brown lacquered leather with pale glints on each plate; bright vermilion red lacing, bands and seal marks.",
+  "what": "a pair of ancient Chinese soldier's shin guards with nobody wearing them: two separate tall guards, each covering one leg from the knee to the ankle only. Each is built of five broad horizontal rows of hard black lacquered leather plates, one row below another, every row overlapping the one below it like roof tiles, each row three plates wide, each plate rounded along its lower edge and as big as a palm. In the middle of every plate sits one small knot of bright red cord. The top and the bottom of each guard are bound with one broad band of red lacquer. They cover the shins only.",
+  "colours": "Glossy black-brown lacquered leather with a pale grey glint along the lower edge of every plate; small bright vermilion red knots; broad vermilion red bands at top and bottom.",
   "pose": "Seen from the front, the two shin guards standing upright side by side with a narrow gap between them, the openings dark and empty.",
   "must_show": [
-   "a pair of shin guards",
-   "rows of black lacquered square plates",
-   "red lacing and red bands",
-   "shins only"
+   "two separate shin guards",
+   "rows of black lacquered plates",
+   "small red knots",
+   "red bands at top and bottom"
   ],
   "must_not_show": [
    "steel plate",
@@ -562,7 +563,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "tartan",
+   "plaid",
+   "checked cloth",
+   "red grid",
+   "wire cage",
+   "net",
+   "mostly red"
   ],
   "pieces": 2
  },
@@ -781,7 +789,8 @@
    "label with writing",
    "back of the shield",
    "straps"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "svalinn_shield",
@@ -1104,14 +1113,15 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a Thracian skirmisher's light wicker shield in the shape of a crescent. It is wider than it is tall. Its bottom edge is one long smooth curve like the bottom of a bowl. Its top edge is not straight: one big half-round bite, half as wide as the whole shield, has been taken out of the middle of the top, and on each side of the bite the shield ends in one rounded horn pointing straight up. So it has two rounded horns at the top and a round belly at the bottom, with no points and no corners below. The whole shield is woven of thick dark willow rods in a bold basket weave, bound round the edge with a strip of dark leather, and in the middle of its belly is sewn one round patch of shaggy black-and-white goat hide.",
-  "colours": "Dark honey-brown wicker with deep brown gaps in the weave; a dark chestnut leather edge; a black-and-white hide patch.",
+  "what": "a Thracian skirmisher's light wicker shield in the shape of a crescent. It is much wider than it is tall. Its bottom edge is one long smooth curve like the bottom of a bowl. Its top edge is not straight: one big half-round bite, half as wide as the whole shield, has been taken out of the middle of the top, and on each side of the bite the shield ends in one rounded horn pointing straight up, the two horns far apart. So it has two rounded horns at the top and a round belly at the bottom, with no points and no corners below. The whole shield is woven of thick willow rods in a bold basket weave, each rod as thick as a finger, with dark gaps between them, bound all round the edge with a broad strip of dark chestnut leather, and in the middle of its belly is fixed one round domed bronze boss as big as a fist.",
+  "colours": "Warm honey-brown wicker like an old basket, golden on the top of each rod and deep brown in the gaps of the weave; a dark chestnut leather edge; one bright bronze boss.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
-   "one wide crescent shield: two rounded horns at the top, round belly at the bottom",
-   "a big half-round bite out of the top edge",
-   "woven wicker",
-   "goat-hide patch"
+   "one crescent shield with two horns pointing up",
+   "wider than tall",
+   "bold basket weave",
+   "leather edge",
+   "one bronze boss"
   ],
   "must_not_show": [
    "heater shield",
@@ -1141,7 +1151,14 @@
    "table",
    "label with writing",
    "back of the shield",
-   "straps"
+   "straps",
+   "bib",
+   "horseshoe",
+   "fur patch",
+   "animal hide",
+   "black and white patch",
+   "cream",
+   "pale straw"
   ]
  },
  {
@@ -1192,8 +1209,8 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a dragon-slayer's small round shield, a perfect circle: its whole face is bright yellow gold, the same gold as its rim and its plain domed central boss. Painted on the gold, standing out dark against it, is one big wingless serpent-dragon coiled once round the central boss like a ring, its body as thick as a thumb, its head with open jaws near the top. The serpent's back is dark brown and its belly is dark red. Bright yellow gold shows all round the serpent, inside the coil and outside it.",
-  "colours": "Bright yellow gold face, boss and rim; the serpent is dark chocolate brown along its back and dark red along its belly.",
+  "what": "a dragon-slayer's small round shield, a perfect circle: its whole face is hammered old gold, covered in small hammer dents, deep and rich in colour and darker toward the edge, with a thick raised gold rim set with eight big round rivet heads and a plain domed gold boss in the centre. Painted on the gold, standing out dark against it, is one big wingless serpent-dragon coiled once round the central boss like a ring, its body as thick as a wrist, its head with open jaws and one swept-back horn near the top, its tail tapering to a point beside the head. The serpent's back is dark brown and its belly is dark red. Old gold shows all round the serpent, inside the coil and outside it.",
+  "colours": "Rich old gold face, boss and rim, deep amber-brown in the dents and toward the edge, with a few white glints; the serpent is dark chocolate brown along its back and dark red along its belly.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
    "one small round gold shield",
@@ -1225,7 +1242,13 @@
    "table",
    "label with writing",
    "back of the shield",
-   "straps"
+   "straps",
+   "flat yellow",
+   "lemon yellow",
+   "coin",
+   "cartoon snake",
+   "smooth plastic",
+   "sun rays"
   ]
  },
  {
@@ -1857,14 +1880,14 @@
   "body": "item",
   "scale": "large",
   "key": "blue",
-  "what": "the goddess Athena's polished shield, the one lent to Perseus as a mirror: a large round shield, a perfect circle, gently domed, of pale bronze polished until it shines like a mirror, completely smooth and blank in the middle, with broad sweeping streaks of white reflected light across it. Round the edge runs a raised border of olive leaves in darker gold, laid end to end like a wreath.",
-  "colours": "Pale bright yellow bronze, almost gold, with broad white reflections and warm brown shadow at the lower edge; a darker gold leaf border.",
+  "what": "the goddess Athena's polished shield, the one lent to Perseus as a mirror: a large round shield, a perfect circle, gently domed, of pale silver-bronze polished until it shines like a mirror. The middle is completely smooth and blank and shows only reflected light: its upper left half is bright white-gold, its lower right half is deep shadowed bronze-brown, the two divided by one soft curved edge, and near the upper left sits one sharp glint of white light in the shape of a plus sign: one spike up, one down, one left, one right. Round the edge runs a broad raised rim of darker old bronze, as wide as a hand, set with twelve big round bright studs spaced evenly all round.",
+  "colours": "Pale bright silver-bronze, white-gold where the light falls and deep warm brown in the shadowed half; a darker old bronze rim with bright golden studs.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
-   "one large round shield",
-   "mirror-bright pale bronze with white reflections",
-   "blank smooth middle",
-   "border of olive leaves"
+   "one round mirror-bright shield",
+   "smooth blank middle with a bold reflection",
+   "one plus-shaped glint",
+   "broad dark bronze rim with round studs"
   ],
   "must_not_show": [
    "gorgon face",
@@ -1889,7 +1912,16 @@
    "table",
    "label with writing",
    "back of the shield",
-   "straps"
+   "straps",
+   "planet",
+   "moon",
+   "marble",
+   "wood grain",
+   "bread",
+   "wreath",
+   "leaves",
+   "cloud bands",
+   "stripes"
   ]
  },
  {
@@ -2414,8 +2446,8 @@
   "body": "item",
   "scale": "huge",
   "key": "blue",
-  "what": "a Mycenaean tower shield of ox-hide, shown by itself: a huge tall flat rectangular shield, twice as tall as it is wide, with four sharp square corners, a straight top edge, a straight bottom edge and two straight parallel upright sides, like a tall door. Its whole face is one blank flat covering of bull's hide with the short hair left on, dark chestnut brown with about six big cream-white blotches, and nothing is painted on it: no picture, no figure. A thick bronze rim binds all four edges, and down the middle of the face, one above another, are three plain round bronze discs, each the size of a plate.",
-  "colours": "Dark chestnut-brown hide with big cream-white blotches; the rim and three discs are bright warm yellow-brown bronze like a polished brass door-knob, with dark brown shadows and no patina.",
+  "what": "a Mycenaean tower shield of ox-hide, shown by itself: a huge tall flat rectangular shield, twice as tall as it is wide, with a gently arched top edge, a straight bottom edge and two straight parallel upright sides, like a tall door. Its whole face is one blank flat covering of bull's hide with the short hair left on, dark chocolate brown with about six big cream-white blotches, and nothing is painted on it: no picture, no figure. A thick rim of dull bronze binds all the edges, lined with round rivets, and down the middle of the face, one above another, are three plain round bronze discs, each the size of a plate.",
+  "colours": "Dark chocolate-brown hide, the colour of a bay horse, nearly black-brown in the shadows, with big cream-white blotches; the rim and three discs are dull brown-gold bronze, the colour of tarnished brass.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
    "one very tall rectangular shield with square corners",
@@ -2457,7 +2489,13 @@
    "table",
    "label with writing",
    "back of the shield",
-   "straps"
+   "straps",
+   "orange",
+   "bright orange hide",
+   "giraffe",
+   "cheese",
+   "bright yellow gold",
+   "amber"
   ]
  },
  {
@@ -2613,14 +2651,14 @@
   "body": "item",
   "scale": "huge",
   "key": "blue",
-  "what": "an ancient Greek tower shield, shown by itself with nobody near it: a huge tall flat rectangular shield, twice as tall as it is wide, with four sharp square corners, a straight top edge, a straight bottom edge and two straight parallel upright sides, like a tall door, massive and thick. The whole front is one blank flat sheet of hammered bronze, covered in small round hammer marks and a few deep dents, with no picture, no figure and nothing raised on it. All round the bronze, as a broad frame on all four sides, show the edges of the thick layers of dark bull's hide beneath it: three dark brown stripes with pale lines between them, with a row of big round bronze rivets along the innermost stripe.",
-  "colours": "The face and boss are bright warm yellow-brown bronze like a polished brass door-knob, with dark brown shadows and no patina; the layered hide edge is very dark brown with paler brown lines between the layers.",
+  "what": "an ancient Greek hero's tower shield, shown by itself with nobody near it: a huge tall rectangular shield, twice as tall as it is wide, with a gently arched top edge, a straight bottom edge and two straight parallel upright sides, massive and thick like a slab of wall. The front is one sheet of dark old bronze hammered over layers of hide, covered in round hammer dents. In the very centre of it stands one big round domed boss of brighter bronze, a third as wide as the shield. Near the upper right corner is one deep black gash where a spear struck. All round the bronze, as a broad frame on all four sides, show the edges of the seven thick layers of dark bull's hide beneath it: a thick very dark brown border with pale lines between the layers, with a row of big round bronze rivets all the way round.",
+  "colours": "The face is dark brown-gold bronze, the colour of tarnished brass, with deep brown shadows in the dents and warm golden highlights; the central boss is brighter golden bronze; the layered hide border is very dark brown with paler brown lines.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
-   "one very tall rectangular shield with square corners",
-   "blank hammered bronze face with dents",
-   "striped frame of dark hide layers all round",
-   "row of big rivets"
+   "one huge tall rectangular shield",
+   "dark hammered bronze face",
+   "one big round central boss",
+   "broad dark hide border with rivets"
   ],
   "must_not_show": [
    "man",
@@ -2661,7 +2699,16 @@
    "table",
    "label with writing",
    "back of the shield",
-   "straps"
+   "straps",
+   "door",
+   "double door",
+   "door handle",
+   "hinges",
+   "picture frame",
+   "gold ingot",
+   "bright yellow gold",
+   "smooth blank gold",
+   "mirror"
   ]
  },
  {
@@ -2847,14 +2894,15 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a Norse hero's charmed shirt with nobody inside it: a plain straight-cut long-sleeved man's shirt that reaches the hips, flat-chested and loose, hanging straight down like a sack from the shoulders to the hem, woven of fine silver-grey hair so tightly that it shines like silk, smooth and seamless, with a soft sheen running down it in long bright streaks. It has a plain round neck with no opening down the front. Its only ornament is one thick braid of darker grey running round the neck, round each cuff and along the hem. The two sleeves are empty and hang straight down at its sides; each sleeve ends in a round dark empty hole with nothing coming out of it. The neck is a dark empty opening.",
-  "colours": "Shining pale silver-grey with white sheen and soft mid-grey folds; darker charcoal-grey braid at neck, cuffs and hem.",
+  "what": "a Norse hero's charmed tunic with nobody inside it: a Viking man's knee-length tunic of the ninth century, narrow at the shoulders and flaring out below the waist into a wide skirt like a bell, with long loose straight sleeves. It is woven of fine silver-grey hair so tightly that it shines like silk, smooth and seamless, with a soft sheen running down it in long bright streaks. It has a round neck with one short slit at the throat, like a keyhole. A broad band of darker charcoal-grey braid runs round the neck, round the end of each sleeve and all along the hem, and a narrow belt of the same dark braid is tied round the waist with its two ends hanging down. The two sleeves are empty and hang down at its sides; each sleeve ends in a round dark empty hole with nothing coming out of it. The neck is a dark empty opening.",
+  "colours": "Shining pale silver-grey like polished pewter, a pure neutral grey with white sheen and soft mid-grey folds; dark charcoal-grey braid at neck, sleeve ends, hem and belt.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical, nobody inside it.",
   "must_show": [
-   "one empty hip-length shirt",
-   "smooth shining silver-grey",
-   "dark grey braid at neck, cuffs and hem",
-   "empty sleeves and neck"
+   "one empty knee-length tunic",
+   "silver-grey with a silky sheen",
+   "flared skirt",
+   "dark braid at neck, sleeves and hem",
+   "braid belt"
   ],
   "must_not_show": [
    "woman's blouse",
@@ -2888,7 +2936,17 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "sweatshirt",
+   "sweater",
+   "jumper",
+   "ribbed cuffs",
+   "ribbed collar",
+   "ribbed hem",
+   "pale blue",
+   "blue",
+   "modern shirt",
+   "mittens"
   ]
  }
 ]

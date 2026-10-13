@@ -187,8 +187,8 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "the cap of a giant mushroom king, cut off to be worn as a helmet, with nobody under it: one broad thick domed mushroom cap, wider than it is tall, the right way up like a hat resting on a table, its skin deep red with six large round cream-white warts on it. Round the very top of the dome grows a small crown: a ring of five short upright golden points. Under the rim a band of cream-white gills shows, and in the middle of the underside is a dark empty hollow where a head would go. It has no stalk.",
-  "colours": "Deep red cap with darker red shadows; large cream-white warts and cream gills; a small crown of dull gold points; black hollow beneath.",
+  "what": "the cap of a giant toadstool, cut off to be worn as a helmet, with nobody under it: one broad thick domed cap, wider than it is tall, the right way up like a hat resting on a table. Its skin is tough and leathery, dull dark crimson, cracked with age, with about eight raised warts of dull bone-grey on it, uneven in size and shape, no two alike. Round the very top of the dome sits a crown of tarnished old gold: a ring with five tall upright points, a third as tall as the cap. The rim of the cap is ragged and nibbled. Under the rim a band of tan-brown gills shows, and in the middle of the underside is a dark empty hollow where a head would go. It has no stalk.",
+  "colours": "Dull dark crimson cap, the colour of dried rose hips, nearly black-red in the shadows, with a warm red sheen on top; uneven bone-grey warts; tan-brown gills; a crown of tarnished old gold; black hollow beneath.",
   "pose": "Seen from the front and a little from above, sitting level the right way up, as if hung in the air.",
   "must_show": [
    "one mushroom cap worn as a hat",
@@ -220,7 +220,15 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "toy",
+   "cartoon",
+   "glossy plastic",
+   "bright candy red",
+   "perfectly round white spots",
+   "smiling face",
+   "door",
+   "window"
   ]
  },
  {
@@ -349,7 +357,8 @@
    "hanger",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "scale_bracers",
@@ -483,14 +492,14 @@
   "body": "item",
   "scale": "medium",
   "key": "green",
-  "what": "a pair of an Irish champion's battle-scarred leather bracers with nobody wearing them: two heavy tapered forearm guards of very thick dark red-brown leather, each a little longer than it is wide and wider at the elbow end, each bound with two broad bands of bronze, one at each end. Across each bracer run three deep pale slash scars, cut slantwise, where blades have bitten the leather. Each is closed by two leather straps.",
-  "colours": "Very dark red-brown leather, the colour of old dried wine, with pale tan slash scars; two bright golden-bronze bands on each; dark brown straps.",
+  "what": "a pair of an Irish champion's battle-worn leather bracers with nobody wearing them: two heavy tapered forearm guards of very thick dark red-brown leather, each a little longer than it is wide and wider at the elbow end, each bound with two broad bands of bronze, one at each end. Fixed in the middle of each bracer is one round domed bronze boss as big as a fist. The leather between the bands is plain, old and scuffed, with a few short uneven nicks near the edges, no two alike. Each is closed by two leather straps.",
+  "colours": "Very dark red-brown leather, the colour of old dried wine, paler and scuffed on the high spots; two bright golden-bronze bands and one bright golden-bronze boss on each; dark brown straps.",
   "pose": "Seen from the front, the two pieces standing upright side by side and almost touching, like two short tubes, the openings at both ends dark and empty.",
   "must_show": [
-   "a pair of two empty heavy leather bracers",
-   "dark red-brown leather",
-   "bronze bands",
-   "three pale slash scars on each"
+   "two separate bracers",
+   "dark red leather",
+   "bronze bands at each end",
+   "one round bronze boss on each"
   ],
   "must_not_show": [
    "steel plates",
@@ -512,7 +521,12 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "diagonal stripes",
+   "slanting stripes",
+   "barber's pole",
+   "candy stripes",
+   "white stripes"
   ],
   "pieces": 2
  },
@@ -732,15 +746,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a short shirt of bronze scale armour with nobody inside it: a light vest that ends at the waist in a straight edge, with short sleeves that end above the elbow and a round neck hole, covered all over in rows of small overlapping rounded bronze scales, every row overlapping the one below like roof tiles. It is no longer than it is wide. The neck and the hem are bound in dark leather. The two short sleeves are empty, ending in dark hollow openings. The neck is a dark empty opening.",
+  "what": "a short corselet of bronze scale armour of the ancient world, with nobody inside it: a sleeveless vest that ends at the waist, hanging from two broad shoulder straps, covered all over in rows of large overlapping rounded bronze scales, each scale as big as a palm, only five scales across the chest, every row overlapping the one below like roof tiles. The bottom edge is not straight: it is a row of big rounded scale tips. The neck and the two armholes are bound in dark leather, and on each shoulder strap sits one round bronze stud. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening. It is no longer than it is wide.",
   "colours": "Warm golden-brown bronze scales with bright yellow highlights and dark brown shadows between; dark walnut-brown leather binding.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
-   "one empty short scale shirt",
-   "small overlapping bronze scales",
-   "short sleeves",
-   "ends at the waist",
-   "bronze colour"
+   "one empty sleeveless scale vest",
+   "large bronze scales",
+   "bottom edge of rounded scale tips",
+   "dark armholes"
   ],
   "must_not_show": [
    "long coat",
@@ -769,7 +782,12 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "T-shirt",
+   "sleeves",
+   "short sleeves",
+   "cloth shirt",
+   "straight hem"
   ]
  },
  {
@@ -869,8 +887,8 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a coat of sea-dragon scale armour with nobody inside it: a sleeveless hip-length coat covered from collar to hem in rows of large overlapping rounded scales, every row overlapping the one below like roof tiles, the bottom edge a row of rounded scale tips. Each scale is a real sea-dragon's scale, as big as a palm, glossy turquoise with a pearl-white lower edge. On each shoulder stands one stiff spined fin, a fan of five turquoise spines joined by pale webbing, pointing up and outward. The collar is a band of pearl-white shell. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
-  "colours": "Glossy turquoise scales, deep sea-teal in the shadows, each with a pearl-white lower edge; turquoise fins with pale webbing; a pearl-white collar.",
+  "what": "a coat of sea-dragon scale armour with nobody inside it: a sleeveless hip-length coat of armour covered from collar to hem in rows of large overlapping rounded scales, every row overlapping the one below like roof tiles, the bottom edge a row of rounded scale tips. Each scale is a real sea-dragon's scale, as big as a palm, hard and thick, deep sea-teal with a narrow pearl-grey lower edge. On each shoulder stands one stiff spined fin, a fan of five dark teal spines joined by pale grey-green webbing, pointing up and outward. The collar is a band of pearl-grey shell, and round the waist runs a broad belt of dark sharkskin with a round silver buckle. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
+  "colours": "Deep sea-teal scales, as much green as blue, the colour of deep ocean water, dark blue-green in the shadows, each with a narrow pearl-grey lower edge; dark teal fins with pale grey-green webbing; a pearl-grey collar; a dark grey belt with a silver buckle.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty scale coat",
@@ -906,7 +924,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "bright sky blue",
+   "light turquoise",
+   "candy colours",
+   "dress",
+   "frilly white hem",
+   "white lace",
+   "doll's dress"
   ]
  },
  {
@@ -1122,15 +1147,15 @@
   "body": "item",
   "scale": "large",
   "key": "green",
-  "what": "a Roman general's ring-mail shirt with nobody inside it: a hip-length shirt made of nothing but a fine mesh of small interlinked iron rings, sagging softly, with short sleeves that end above the elbow. Over each shoulder lies a broad doubled flap of the same mail edged with dark leather, and the two flaps are joined across the top of the chest by one bronze clasp shaped like the letter S. Along the whole bottom edge runs a broad border of faded red cloth. The two short sleeves are empty, ending in dark hollow openings. The neck is a dark empty opening.",
-  "colours": "Fine iron-grey ring mail with pale grey glints and dark grey shadows; dark brown leather edging on the shoulder flaps; one bright bronze clasp on the chest; a broad hem of faded dull red cloth.",
+  "what": "a Roman general's ring-mail shirt with nobody inside it: a sleeveless hip-length shirt of iron ring mail, every ring as big as a man's open hand, only six rings across the chest, twelve rows from neck to hem, each ring a bold pale circle with a dark middle. Over each shoulder lies one broad separate strap of dark brown leather edged with round bronze studs, running down to the middle of the chest, where the two straps are joined by one big bright bronze clasp. From the bottom edge of the mail hangs a row of eight short square-ended strips of dull red leather, side by side like a fringe of tabs. It is sleeveless: the shoulder straps overhang two dark empty armholes. The neck is a dark empty opening.",
+  "colours": "Neutral iron-grey ring mail, pale steel-grey on the rings and near-black between them, with no other colour in it; dark brown leather shoulder straps with bronze studs; one bright bronze clasp on the chest; a fringe of dull brick-red leather tabs at the hem.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty mail shirt",
-   "fine ring mesh all over",
-   "doubled mail flaps over the shoulders",
-   "bronze clasp on the chest",
-   "faded red hem"
+   "grey ring mail",
+   "two leather shoulder straps joined by a bronze clasp",
+   "fringe of red tabs at the hem",
+   "dark armholes"
   ],
   "must_not_show": [
    "plate bands",
@@ -1160,7 +1185,15 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "T-shirt",
+   "sleeves",
+   "cloth shirt",
+   "lilac",
+   "purple",
+   "violet",
+   "blue mail",
+   "smooth cloth"
   ]
  },
  {
@@ -1399,14 +1432,14 @@
   "body": "item",
   "scale": "large",
   "key": "green",
-  "what": "the war coat of an Irish champion, with nobody inside it: a short, wide, sleeveless coat of thick stiff leather dyed a deep blood red, reaching the hips, made of broad overlapping panels stitched with heavy thong, with a thick collar of shaggy dark brown fur lying across both shoulders, and closed at the chest by one big round bronze brooch with a long pin. The bottom edge is cut into broad square tabs. It is only the garment: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
+  "what": "the war jerkin of an ancient Irish champion, with nobody inside it: a short, wide, sleeveless body armour of thick stiff leather dyed deep blood red, reaching the hips. Its body is built of five broad horizontal bands of leather, one below the other, each band overlapping the one below it like the plates of a lobster's tail, and along the lower edge of every band runs a row of big round bronze studs. Across both shoulders lies a broad mantle of shaggy dark brown fur. At the throat is one big round bronze brooch. The lowest band is cut into broad square tabs. It has no opening down the front. It is only the armour: an empty shell. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
   "colours": "Deep blood-red leather, darker wine-red in the creases with a warm bright red sheen on the highlights; a collar of shaggy dark brown fur; one bright golden-bronze round brooch; dark brown stitching.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
-   "one empty hide coat",
-   "deep red leather",
-   "dark fur collar",
-   "one round bronze brooch at the chest",
+   "one empty sleeveless jerkin",
+   "blood-red leather in broad horizontal bands",
+   "rows of bronze studs",
+   "dark fur across the shoulders",
    "square tabs at the hem"
   ],
   "must_not_show": [
@@ -1445,7 +1478,19 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "zip",
+   "zipper",
+   "lapels",
+   "jacket",
+   "hood",
+   "waistcoat",
+   "modern vest",
+   "biker vest",
+   "buttons",
+   "pockets",
+   "opening down the front",
+   "lobster"
   ]
  },
  {
@@ -1688,7 +1733,8 @@
    "hanger",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "carapace_of_the_hydra",
@@ -1884,15 +1930,15 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a coat made of the cast scales of a giant sea serpent, with nobody inside it: a sleeveless hip-length coat covered from collar to hem in rows of very large overlapping rounded scales, each as big as a hand, only four scales across the chest, every row overlapping the one below like roof tiles, the bottom edge a row of big rounded scale tips. Every scale is glossy bright emerald-green with a pale yellow-green lower edge and one raised ridge down its middle. The collar is a twisted ring of silver, thick as a rope. It is sleeveless: it ends at the shoulders with two dark empty armholes. The neck is a dark empty opening.",
-  "colours": "Glossy bright emerald-green scales, dark green in the shadows, each with a pale yellow-green lower edge; one thick twisted silver collar.",
+  "what": "a coat made of the cast scales of a giant sea serpent, with nobody inside it: a sleeveless hip-length coat of armour covered from collar to hem in rows of very large overlapping rounded scales, each as big as a hand, only four scales across the chest, every row overlapping the one below like roof tiles, the bottom edge a row of big rounded scale tips of the same green as the rest. Every scale is hard, thick and dark sea-green, with a pale grey-green lower edge and one raised ridge down its middle. Over each shoulder one row of three scales stands out sideways like a short stiff shoulder cap. The collar is a twisted ring of silver, thick as a rope, and round the waist runs a broad black leather belt with one round silver buckle. Under each shoulder cap is a dark empty armhole. The neck is a dark empty opening.",
+  "colours": "Deep sea-green scales, the colour of dark jade, nearly black-green in the shadows, each with a pale grey-green lower edge; one thick twisted silver collar; a black leather belt with a silver buckle.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty scale coat",
-   "very large bright green scales, few and bold",
-   "ridge down each scale",
-   "twisted silver collar",
-   "sleeveless"
+   "very large dark green scales",
+   "silver collar",
+   "black belt with silver buckle",
+   "dark armholes"
   ],
   "must_not_show": [
    "small scales",
@@ -1923,7 +1969,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "yellow hem",
+   "lime green",
+   "neon green",
+   "bright grass green",
+   "tank top",
+   "cloth vest",
+   "dress"
   ]
  },
  {
@@ -2598,15 +2651,15 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "one single scale shed by a dragon as old as the world, so large that it is worn as a cloak: one enormous thick hard plate of dark green horn, a little taller than it is wide, straight across the top and rounded at the bottom, its outline plain and smooth. Its surface is smooth and glossy like polished stone, gently domed, and across it from side to side run six broad curved ridges, one below the other, each one following the curve of the rounded bottom edge. The rim is thick, with two small chips. It is very dark green with a glassy shine. At the top two round holes are bored through it, and one short thick leather strap with a bronze buckle runs from one hole to the other in a loop above the scale.",
-  "colours": "Very dark bottle-green horn with bright emerald-green highlights along each curved ridge and the rim and a glassy pale green shine; a dark brown leather strap with a bronze buckle.",
-  "pose": "Seen from the front, hanging upright from its strap, the straight edge at the top and the rounded edge at the bottom.",
+  "what": "one single scale shed by a dragon as old as the world, so large that it is worn on the back as a cloak: one enormous thick rigid plate of dark green horn, a little taller than it is wide, broad and rounded across the top, its two sides curving down to meet in one blunt point at the bottom. Down its middle, from the top to the point, runs one thick raised keel ridge. On each side of the keel the surface is marked with four broad curved growth bands, one inside the other, each following the outer edge of the scale, like the rings on a plate of a tortoise's shell. It is hard as stone, with no folds anywhere, and its thick rim has two chips broken out of it. At the very top a short chain of three big bronze links with one round bronze brooch is fixed to it.",
+  "colours": "Very dark bottle-green horn with bright emerald-green highlights along the keel, the growth bands and the rim, and a glassy pale green shine; a bright bronze chain and brooch.",
+  "pose": "Seen from the front, upright as if hung in the air by its chain, the rounded edge at the top and the blunt point at the bottom.",
   "must_show": [
-   "one single enormous smooth scale",
-   "dark green",
-   "curved ridges running across it",
-   "rounded bottom",
-   "a leather strap looped at the top"
+   "one single huge dragon scale",
+   "rounded top and blunt point at the bottom",
+   "one keel ridge down the middle",
+   "curved growth bands",
+   "bronze chain at the top"
   ],
   "must_not_show": [
    "many scales",
@@ -2642,7 +2695,20 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "leaf stalk",
+   "backpack",
+   "rucksack",
+   "bag",
+   "pockets",
+   "zip",
+   "quilting",
+   "cushion",
+   "cloth folds",
+   "drapery",
+   "many small scales",
+   "leather strap",
+   "tortoise"
   ]
  },
  {
@@ -2742,14 +2808,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a pair of a thunder god's heavy iron boots with nobody in them: two massive knee-high boots built entirely of thick dark iron plates, each with a broad square toe cap, three overlapping plates over the foot, a tall shin plate rimmed with big square rivets, and a thick iron sole. Down the front of each shin plate runs one jagged zigzag crack of bright yellow, like a fork of lightning burnt into the iron, from the top to the toe. The boots are far thicker and heavier than a man's.",
-  "colours": "Dark blue-black iron with pale steel-grey highlights and rivets; one bright yellow zigzag lightning scar down the front of each boot.",
+  "what": "a pair of a Norse thunder god's heavy iron war boots with nobody in them: two massive knee-high armoured boots built entirely of thick dark grey iron plates, like the leg armour of a knight: each has a broad rounded iron toe cap, four overlapping curved iron bands over the foot and ankle, and a tall shin plate with a raised ridge down its front, every plate edge lined with big round rivets. The top of each boot is bound with one broad band of bright bronze. Down the front of each shin plate, from the bronze band to the toe, runs one jagged zigzag scar of bright yellow, burnt into the iron. The boots are far thicker and heavier than a man's.",
+  "colours": "Dark charcoal-grey iron, the colour of an old anvil, with pale steel-grey highlights on every plate edge and rivet; one bright bronze band round the top of each boot; one bright yellow zigzag scar down the front of each.",
   "pose": "Seen from the front and a little to one side, the two boots standing upright side by side and touching, the tops dark empty openings.",
   "must_show": [
-   "a pair of two empty heavy iron boots",
-   "dark iron plates",
-   "square toes",
-   "one bright yellow zigzag down each shin"
+   "two heavy armoured iron boots, touching",
+   "dark grey iron plates and rivets",
+   "bronze band at the top",
+   "yellow zigzag scar on each"
   ],
   "must_not_show": [
    "legs",
@@ -2773,7 +2839,17 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "rubber boots",
+   "wellington boots",
+   "rain boots",
+   "blue boots",
+   "blue",
+   "laces",
+   "buckles",
+   "straps",
+   "motorcycle boots",
+   "thick tread sole"
   ]
  },
  {
@@ -2783,14 +2859,13 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a pair of plain leather sandals with small metal wings fixed on, a courier's offering, with nobody in them: each is a thick flat sole of brown leather with one broad strap across the toes, one across the instep and a strap round the heel, all plain. Riveted to the heel strap of each sandal with two round rivets is one small stiff wing cut from sheet bronze, no longer than the heel is tall, flat as a badge, its feathers only scratched lines. They are a humble mortal copy, plain and a little clumsy.",
-  "colours": "Plain mid-brown leather with dark brown edges and soles; one small dull golden-bronze metal wing on the heel of each.",
+  "what": "a pair of plain ancient Greek sandals with a small metal wing fixed on each, a courier's offering, with nobody in them: each is one thin flat sole of dark brown leather, and nothing holds it on but a few narrow leather thongs: one thong coming up between the toes, splitting in two like the letter Y, and one thong round the heel, tied in a small knot. The sandal is mostly open air: a thin sole and a few thin thongs. Riveted to the heel thong of each sandal, standing straight up, is one stiff wing cut from sheet bronze, half as long as the sole, flat as a badge. They are a humble mortal copy, plain and a little clumsy.",
+  "colours": "Dark weathered brown leather sole and thongs with paler worn edges; one bright golden-bronze metal wing standing at the heel of each.",
   "pose": "Seen from the side and a little from above, the two sandals standing on their soles, toes pointing left, the nearer one overlapping and partly hiding the other so they make one joined shape.",
   "must_show": [
-   "a pair of two open sandals",
-   "plain brown leather straps",
-   "one small flat bronze wing riveted at each heel",
-   "empty"
+   "two flat thong sandals",
+   "thin sole, narrow thongs",
+   "one bronze wing standing at each heel"
   ],
   "must_not_show": [
    "feet",
@@ -2814,7 +2889,17 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "broad straps",
+   "buckles",
+   "thick cork footbed",
+   "moulded footbed",
+   "modern sandals",
+   "shoes",
+   "loafers",
+   "closed toe",
+   "feathers",
+   "white wings"
   ],
   "pieces": 2
  },
@@ -2825,8 +2910,8 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a pair of a poor island fisherman's sandals with nobody in them: ancient Greek sandals, each with a thin flat sole made of coiled rope, the coils plainly visible round its edge. Over the toes is one loop of narrow dark leather thong, and from it one long narrow thong runs back, crosses over the instep, and winds three times round where the ankle would be, tied in a knot. Where the thongs cross on the instep sits one round bronze ring-buckle. The thongs are narrow, cracked and salt-stained. The sandal is mostly open air: a sole and a few thongs.",
-  "colours": "Pale sand-beige coiled rope soles; dark weathered grey-brown leather straps with pale salt stains; small bright bronze square buckles.",
+  "what": "a pair of a poor island fisherman's sandals with nobody in them: ancient Greek sandals, each with a thin flat sole made of coiled hemp rope, the coils plainly visible round its edge. Nothing holds it on but narrow dark leather thongs: one loop over the toes, and from it one long thong that runs back, crosses over the instep and stands up in three turns where the ankle would be, tied in a knot, like a little empty cage of thongs above the heel. Where the thongs cross on the instep sits one round bright bronze ring. The thongs are narrow, cracked and salt-stained. The sandal is mostly open air: a sole and a few thongs.",
+  "colours": "Weathered tan hemp-rope soles, the colour of old ship's rope, with dark brown gaps between the coils; very dark brown leather thongs with pale salt stains; one bright bronze ring on each.",
   "pose": "Seen from the side and a little from above, the two sandals standing on their soles, toes pointing left, the nearer one overlapping and partly hiding the other so they make one joined shape.",
   "must_show": [
    "a pair of two open sandals",
@@ -2863,7 +2948,14 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "slippers",
+   "espadrilles",
+   "white soles",
+   "thick footbed",
+   "modern sandals",
+   "buckles with prongs",
+   "closed toe"
   ],
   "pieces": 2
  },
@@ -2874,9 +2966,9 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a pair of an ancient Greek traveller's high-laced sandals with nobody in them: each has a thick leather sole and above it a tall open cage of leather straps that criss-cross up to well above the ankle, tied at the top with a thong in a bow. Every crossing of the straps is set with one big round bronze stud. The leather is weathered and dusty, a road-walker's sandals. Between the straps the inside shows dark and empty.",
+  "what": "a pair of an ancient Greek traveller's high-laced sandals with nobody in them, made like a Roman legionary's marching sandals: each has a thick leather sole, and rising from the sole a tall open lattice of narrow leather straps that criss-cross upward to the middle of the shin, standing up by itself like an empty cage, as tall as the sole is long, tied at the top with a thong in a bow. The toes are open. Every crossing of the straps is set with one big round bronze stud. The leather is weathered and dusty, a road-walker's sandals. Between the straps the inside shows dark and empty.",
   "colours": "Weathered mid-brown leather straps and soles, dusty and paler at the edges; big bright bronze studs at every crossing.",
-  "pose": "Seen from the side and a little from above, the two sandals standing on their soles, toes pointing left, the nearer one overlapping and partly hiding the other so they make one joined shape.",
+  "pose": "Seen from the side and a little from above, the two sandals standing upright on their soles, toes pointing left, the tall laced ankle parts standing straight up, the nearer one overlapping and partly hiding the other so they make one joined shape.",
   "must_show": [
    "a pair of two tall open sandals",
    "criss-cross straps rising above the ankle",
@@ -2905,7 +2997,16 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "modern sandals",
+   "fisherman sandals",
+   "shoes",
+   "boots",
+   "closed toe",
+   "shoe laces",
+   "eyelets",
+   "thick rubber sole",
+   "buckles"
   ],
   "pieces": 2
  },
@@ -2916,8 +3017,8 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "the golden winged sandals of the messenger god, with nobody in them: each has a sole of solid bright gold and slim gold straps: one across the toes, one across the instep and a gold band round the ankle. From the ankle band of each sandal springs one living wing of white feathers, as long as the sandal itself, lifted and half spread, pointing up and backward. The gold is bright and flawless.",
-  "colours": "Bright shining gold soles and straps with yellow-white highlights and deep amber shadows; two wings of clean white feathers with pale grey shading.",
+  "what": "the golden winged sandals of the messenger god, with nobody in them: ancient Greek sandals made of gold. Each has a thin flat sole of gold, and nothing holds it on but slim gold thongs: one across the toes, two crossing over the instep and a gold band round the ankle, with dark open gaps between the thongs. The sandal is mostly open air: a thin sole and a few thin thongs. From the ankle band of each sandal springs one wing of white feathers, no longer than the sandal itself, lifted and pointing up and backward.",
+  "colours": "Rich old gold soles and thongs, deep amber-brown in the shadows with a few white glints; dark gaps between the thongs; two wings of white feathers with pale grey shading.",
   "pose": "Seen from the side and a little from above, the two sandals standing on their soles, toes pointing left, the nearer one overlapping and partly hiding the other so they make one joined shape.",
   "must_show": [
    "a pair of two open sandals",
@@ -2948,7 +3049,16 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "clogs",
+   "shoes",
+   "closed toe",
+   "slippers",
+   "solid gold block",
+   "lemon yellow",
+   "broad straps",
+   "four wings",
+   "wings bigger than the sandals"
   ],
   "pieces": 2
  },
@@ -2959,14 +3069,14 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a pair of ancient Greek boxing thongs with nobody in them: two fingerless hand-wrappings, each made of one long strap of thick ox-hide wound round and round in broad overlapping bands, covering the wrist, the palm and the knuckles and stopping at the knuckles, so that each is shaped like a short fingerless mitten with a thick padded band across the knuckles. Each has a hole for the thumb at the side. From the wrist of each hangs one short loose end of the strap. They are stiff and keep their shape, hollow and empty.",
-  "colours": "Mid-brown ox-hide straps with dark brown shadows between the bands and paler worn edges; the knuckle bands a darker brown.",
-  "pose": "Seen from the back of the hand, the two wrappings upright side by side and touching, knuckle ends up, the openings at the top and at the wrist dark and empty.",
+  "what": "a pair of an ancient Greek boxer's fighting gloves with nobody in them: two fingerless gloves, each made of one long strap of thick ox-hide wound round and round the hand and the wrist in broad overlapping bands. At the top each glove ends in four short open finger tubes, side by side, cut off at the first knuckle, each showing a dark empty hole, and at the side is one short open thumb tube. Across the knuckles of each glove lies one thick hard band of darker leather set with four big round bronze studs. From the wrist of each hangs one short loose end of the strap. They are stiff and keep the shape of a hand, hollow and empty.",
+  "colours": "Mid-brown ox-hide straps with dark brown shadows between the bands and paler worn edges; the knuckle bands dark brown with four bright bronze studs each.",
+  "pose": "Seen from the back of the hand, the two gloves upright side by side and touching, finger ends pointing up and thumbs outward, the finger holes and the wrist openings dark and empty.",
   "must_show": [
-   "a pair of two fingerless strap wrappings",
-   "bands of leather strap wound round and round",
-   "thick band over the knuckles",
-   "empty"
+   "two fingerless hand wrappings",
+   "wound straps of brown hide",
+   "short open finger tubes at the top",
+   "knuckle band with bronze studs"
   ],
   "must_not_show": [
    "fingers",
@@ -2990,7 +3100,15 @@
    "stand",
    "hanger",
    "second object",
-   "label with writing"
+   "label with writing",
+   "leggings",
+   "greaves",
+   "bracers",
+   "boots",
+   "knee pads",
+   "full fingers",
+   "fingertips",
+   "red gloves"
   ],
   "pieces": 2
  },
@@ -3035,7 +3153,8 @@
    "hanger",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "gauntlets_of_mars",
