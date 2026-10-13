@@ -646,6 +646,22 @@ and look for the same kind of slip when reviewing.
 - **"Big bright eyes" on a spider draws a cartoon face.** "A tight cluster of eight
   small round black eyes like beads, the blank head of a real spider, with no face".
 - **Sphinx redraws still give one bare-chested candidate in three**; check every one.
+- **Plain steel takes the backdrop's opposite tint** (rose on green, brass on blue).
+  "Blackened iron, dark gunmetal grey, with bright pale steel-white worn edges" on
+  magenta gives true grey steel.
+- **Do not ask a dark rock creature for "mid-grey rock with pale lit edges"** (pale
+  bodybuilders); keep the dark wording and use `lift`.
+- **Rock head:** "a lumpy boulder of the very same basalt as the body, wider than
+  tall, set low between the shoulders".
+- **Stairs down:** "every step one wide flat bar of stone with a black shadow under
+  it, the top step as pale as the rim", the hole two thirds of the slab.
+- **Gas trap:** wispy smoke over a grille with a pale green stain on the stone; the
+  stain carries the "gas" read.
+- **"Bright jade green" is neon**; "dull dark jade stone, a greyed deep green".
+- **An identity cap (redcap)** needs "strong, saturated blood red, by far the
+  brightest colour in the picture" over a pale garment.
+- **A scourge has no reliable wording yet** (thick ropes: giant loops; thin cords: a
+  paddle).
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
