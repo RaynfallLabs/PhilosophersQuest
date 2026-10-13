@@ -541,6 +541,29 @@ and look for the same kind of slip when reviewing.
   a carved human face on every wall. Say "a flat blank surface, nothing carved".
   Water and lava paint a bullseye unless told "the same everywhere, no centre, no
   rings, no part of the picture differs from any other".
+- **A skin colour leaks into the clothes** ("grey-green skin" gave a green tunic).
+  Name the cloth with its own strong colour. **Boils or sores on a bare chest read
+  as a bare female chest at 64 px:** clothe the chest and put them on the head
+  and hands.
+- **To dull a good slime, change only its `colours` line.** Changing its shape
+  words draws a crouching ogre.
+- **When a pose keeps failing, change the action** (an archer holding the bow out
+  with no arrow nocked drew cleanly where three draw poses failed).
+- **A dark sprite redrawn with bright parts needs little or no `lift`:** 1.3 on top
+  of a good redraw greys it.
+- **A curved horn:** "bend in kinks" or "zigzag" is drawn straight; "one long single
+  horn in the shape of a crescent moon, in one bold arc" is drawn curved.
+- **A misshapen creature described deformity-first becomes another animal** (a
+  bloated dragon was a rhinoceros). List the creature's own parts first (long neck,
+  horned head, long tail), then the deformity.
+- **Breath still runs off the edge:** stand the beast "in the right-hand two thirds
+  of the picture; the whole left quarter is empty backdrop".
+- **Close-fitting dark clothing on a dark-skinned figure reads as bare skin.** Give
+  the clothing its own colour. **A gaunt animal comes out well fed** unless the body
+  sentence leads with "starving, as thin as a greyhound".
+- **Eyes at 64 px:** "one round spot of solid bright red light as big as its nose".
+- **A sphinx with a large woman's head gets a woman's bare chest.** Say "the deep
+  furred chest of a lion between its front legs" and give it a broad collar.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
