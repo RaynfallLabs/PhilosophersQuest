@@ -149,13 +149,14 @@
   "rank": 6,
   "key": "magenta",
   "body": "object",
-  "what": "a stairway going down into the ground: one thick square slab of grey stone floor with a large square hole cut in its middle. Inside the hole a flight of five worn stone steps goes down, the top step at the near edge of the hole and each step after it lower, farther away and darker, until the far end of the hole is pitch-black darkness. The slab's broad stone rim runs all the way round the hole. The stairway is empty.",
-  "colours": "pale grey stone rim, steps going from grey to dark grey, pitch-black at the bottom.",
+  "what": "a stairway going down into the ground: one thick square slab of grey stone floor with one very large square hole cut in its middle, taking up two thirds of the slab. Inside the hole a flight of six broad worn stone steps goes down, and every step is plainly drawn as one wide flat bar of stone with a black shadow under it: the top step at the near edge of the hole is as pale as the rim, and each step after it is lower, farther away, a little narrower and darker, until the far end of the hole is pitch-black darkness. The slab's stone rim runs all the way round the hole, a narrow border. The stairway is empty.",
+  "colours": "pale grey stone rim, the top three steps pale grey like the rim, the lower steps dark grey, pitch-black at the bottom.",
   "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise, and the viewer looks down the steps into the hole.",
   "must_show": [
    "square hole in a stone slab",
    "steps descending into black darkness",
-   "stone rim all round"
+   "stone rim all round",
+   "at least four separate steps plainly seen as pale bars, the nearest brightest"
   ],
   "must_not_show": [
    "man",
@@ -169,7 +170,13 @@
    "light at the bottom",
    "walls",
    "torch",
-   "spikes"
+   "spikes",
+   "barred window",
+   "iron grating",
+   "vent",
+   "shutter",
+   "fireplace",
+   "one flat black square"
   ]
  },
  {
@@ -383,13 +390,13 @@
   "rank": 3,
   "key": "magenta",
   "body": "object",
-  "what": "a sleeping-gas trap: one thin flat square flagstone of plain grey stone, lying flat. Round its middle is a ring of six round black vent holes, each as wide as a fist. In the very middle of the slab, inside the ring of holes, sits one soft, round, billowing heap of thick pale grey-green fog, half as wide as the slab and resting on the stone, made of slow rounded swirls with a paler top. Thin trails of the same fog join it to each of the holes.",
-  "colours": "plain grey stone, black vent holes, thick fog of a pale sickly grey-green, nearly white at the top of each swirl.",
-  "pose": "Seen from directly above like a floor tile on a game map: the slab is a flat square with its edges parallel to the edges of the picture, the fog a pale round swirl in its middle.",
+  "what": "a sleeping-gas trap: one thin flat square flagstone of plain grey stone, lying flat. Set in the very middle of the slab is one round iron grille as wide as a third of the slab, black between its bars. Out of the grille rise exactly three broad streamers of thick pale grey-green vapour, each one curved like a sabre blade, as thick as an arm at its base and tapering to a curled tip, joined to the grille at the bottom, one leaning left, one rising straight, one leaning right, none taller than the slab is wide. The stone round the grille is stained a dull pale green.",
+  "colours": "plain grey stone, a black iron grille, three streamers of pale sickly grey-green vapour, nearly white along their upper edges, a dull pale green stain on the stone.",
+  "pose": "Seen from the front and steeply from above like a floor tile on a game map: the slab is a flat square with its front edge parallel to the bottom of the picture, never turned cornerwise, and the three streamers of vapour rise from its middle, wholly inside the picture.",
   "must_show": [
    "flat grey stone slab",
-   "ring of black vent holes",
-   "one round swirl of pale green fog in the middle, on the slab"
+   "one round black iron grille in the middle",
+   "three curved streamers of pale grey-green vapour rising from the grille, joined to it"
   ],
   "must_not_show": [
    "upright stone block",
@@ -407,7 +414,17 @@
    "fire",
    "face in the gas",
    "skull",
-   "sleeping person"
+   "sleeping person",
+   "ball",
+   "sphere",
+   "orb",
+   "dome",
+   "green flames",
+   "plant",
+   "seaweed",
+   "horns",
+   "snakes",
+   "puffs floating loose"
   ]
  },
  {
@@ -546,7 +563,8 @@
    "gold coins",
    "skull",
    "legs"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "iron_lockbox",
@@ -929,7 +947,8 @@
    "grass",
    "fire",
    "birds"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "mystery_altar_mimir",
@@ -997,13 +1016,13 @@
   "rank": 2,
   "key": "blue",
   "body": "object",
-  "what": "an alchemist's furnace and crucible: one narrow round tower-furnace of pale fire-brick, taller than it is wide, with a small arched stoke-hole in its front glowing with coals. On top of the furnace, sunk into it to half its depth, sits one thick-walled crucible, a deep cup of grey fired clay with a pouring lip, and the molten metal inside it glows bright yellow-gold. A band of carved letters runs round the top of the furnace.",
-  "colours": "pale buff-grey fire-brick, a grey clay crucible, bright yellow-gold molten glow, a deep orange glow in the stoke-hole.",
+  "what": "an alchemist's furnace and crucible: one squat round furnace built of soot-darkened grey-brown brick, as wide as it is tall, every brick plainly drawn with black mortar lines, blackened with soot round its top and round its stoke-hole; the stoke-hole is one large arched opening in its front, a third as wide as the furnace, glowing with orange coals. On top of the furnace, sunk into it to half its depth, sits one wide thick-walled crucible, a deep cup of dark grey fired clay with a pouring lip, nearly as wide as the furnace, and the molten metal inside it glows bright yellow-gold. A band of carved letters runs round the top of the furnace.",
+  "colours": "soot-darkened grey-brown brick with black mortar lines, a dark grey clay crucible, bright yellow-gold molten glow, a deep orange glow in the stoke-hole.",
   "pose": "Seen from the front and from above, so the glowing surface inside the cup shows.",
   "must_show": [
    "grey crucible cup with a pouring lip",
    "bright molten glow inside it",
-   "small brick furnace under it"
+   "squat dark brick furnace under it with a large glowing stoke-hole"
   ],
   "must_not_show": [
    "black cauldron",
@@ -1015,7 +1034,17 @@
    "flames leaping",
    "alchemist",
    "skull",
-   "gold coins"
+   "gold coins",
+   "tower",
+   "tall chimney",
+   "lighthouse",
+   "candle",
+   "pink brick",
+   "orange brick",
+   "salmon-coloured brick",
+   "terracotta pot",
+   "arms",
+   "handles sticking out"
   ]
  },
  {

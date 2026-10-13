@@ -174,7 +174,8 @@
    "oversized head",
    "cartoon proportions",
    "rock"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "rutterkin",
@@ -235,7 +236,8 @@
    "sick man",
    "sores",
    "spots like a rash"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "incubus",
@@ -278,7 +280,8 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "hezrou",
@@ -363,21 +366,22 @@
    "oversized head",
    "cartoon proportions",
    "rock"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "glabrezu",
   "family": "demon_mid",
   "rank": 3,
   "key": "blue",
-  "what": "a glabrezu: a bargaining demon of the Abyss, fifteen feet of muscle, standing upright on two legs, painted seriously, cunning and terrible. It has the head of a jackal: a long narrow black muzzle with bared white fangs, two very tall upright pointed ears, and sly narrow amber eyes. Its whole body, its chest, belly, back, arms and legs alike, is covered in short sleek coal-black fur with dark charcoal-grey highlights. It has four arms. The upper pair grow from its broad shoulders and are enormous, and each ends not in a hand but in one gigantic crab's pincer, as long as its own head and chest together: a hard, knobbly shell claw of dull orange and cream like a boiled crab's, with two thick toothed jaws standing open. The lower pair are small, slim arms growing from the middle of its chest, ending in ordinary clever five-fingered hands with dark nails. It has a jackal's legs and paws and no tail.",
-  "colours": "sleek coal-black fur with charcoal-grey highlights on the head and every part of the body, two huge crab pincers of dull orange and cream shell, amber eyes, white fangs, a broad collar of dull gold, a kilt of dark wine-coloured cloth with a gold belt.",
+  "what": "a glabrezu: a bargaining demon of the Abyss, fifteen feet of muscle, standing upright on two legs, painted seriously, cunning and terrible. It has the head of a jackal: a long narrow black muzzle with bared white fangs, two very tall upright pointed ears, and sly narrow amber eyes. Its whole body, its chest, belly, back, arms and legs alike, is covered in short sleek coal-black fur with dark charcoal-grey highlights. It has four arms. The upper pair grow from its broad shoulders and are enormous, each arm as thick as its thigh and furred black down to the pincer, and each ends not in a hand but in one gigantic crab's pincer, as long as its own head and chest together: a hard, knobbly shell claw of very dark blood-red mottled with black, paling to dull bone-grey only along its toothed inner edges, with two thick toothed jaws standing open. The lower pair are small, slim arms growing from the middle of its chest, ending in ordinary clever five-fingered hands with dark nails. It has a jackal's legs and paws and no tail.",
+  "colours": "sleek coal-black fur with charcoal-grey highlights on the head and every part of the body, two huge crab pincers of very dark blood-red shell mottled with black, bone-grey along the teeth, amber eyes, white fangs, a broad collar of dull gold, a kilt of dark wine-coloured cloth with a gold belt.",
   "wears": "It wears a broad flat collar of dull gold round its neck and a knee-length kilt of dark wine-coloured cloth with a gold belt.",
   "holds": "Its hands are empty and it holds nothing: the two great crab pincers are raised wide, one to each upper corner, jaws open, and the two small hands at its chest are held out forward, palms up and open, as if offering a bargain.",
-  "pose": "On two legs, seen from the front, it strides forward to the left with its weight on its front foot, its jackal head lowered with a thin sly snarl, the two giant orange pincers lifted high and wide apart, one at each side above its shoulders, and the two small hands at its chest held out open in front of it.",
+  "pose": "On two legs, seen from the front, it strides forward to the left with its weight on its front foot, its jackal head lowered with a thin sly snarl, the two giant dark red pincers lifted high and wide apart, one at each side above its shoulders, and the two small hands at its chest held out open in front of it.",
   "must_show": [
    "a jackal's head with a long black muzzle and tall pointed ears",
-   "two gigantic orange-and-cream crab pincers in place of its upper hands, raised",
+   "two gigantic dark blood-red crab pincers in place of its upper hands, raised",
    "two smaller arms at the chest with ordinary open hands",
    "black fur over the whole body",
    "a gold collar and a dark kilt; no wings"
@@ -407,7 +411,11 @@
    "tail",
    "oversized head",
    "cartoon proportions",
-   "rock"
+   "rock",
+   "bright orange pincers",
+   "orange",
+   "cream-coloured pincers",
+   "pincers floating apart from the arms"
   ]
  },
  {
@@ -415,16 +423,16 @@
   "family": "demon_mid",
   "rank": 4,
   "key": "magenta",
-  "what": "Camazotz, the death bat of the K'iche' Maya, lord of the House of Bats in Xibalba, painted seriously as an ancient and dreadful god-beast. He is a gigantic real leaf-nosed vampire bat, drawn very large, seen from the front in flight. He has a bat's head with huge tall pointed ears, a nose that turns up into one tall, sharp, blade-shaped leaf like a flint knife, small burning yellow eyes, and a wide open mouth with two very long curved white upper fangs. His body, head and neck are covered in thick, shaggy fur, dark brown-black with dusty grey-brown highlights. His wings are his arms: two enormous leathery bat wings of dark grey-brown, with long thin finger bones plainly drawn and a hooked thumb-claw at the bend of each, their edges ragged. His two short legs hang below with big hooked black claws. Round his neck he wears a wide heavy collar of big carved jade plaques, bright jade green, and a large round jade disc is set in each ear, as on a Maya carving.",
-  "colours": "shaggy dark brown-black fur with dusty grey-brown highlights, dark grey-brown wing membranes with paler finger bones, burning yellow eyes, long white fangs, a broad collar and ear discs of bright jade green stone, a short kilt of pale undyed cloth with a jade green border, black claws.",
-  "wears": "He wears a wide collar of big carved jade plaques, a round jade disc in each ear, and a short stiff Maya kilt of pale undyed cloth with a jade green border.",
+  "what": "Camazotz, the death bat of the K'iche' Maya, lord of the House of Bats in Xibalba, painted seriously as an ancient and dreadful god-beast. He is a gigantic real leaf-nosed vampire bat, drawn very large, seen from the front in flight. He has a bat's head with huge tall pointed ears, a nose that turns up into one tall, sharp, blade-shaped leaf like a flint knife, small burning yellow eyes, and a wide open mouth with two very long curved white upper fangs. His body, head and neck are covered in thick, shaggy fur, dark brown-black with dusty grey-brown highlights. His wings are his arms: two enormous leathery bat wings of dark grey-brown, with long thin finger bones plainly drawn and a hooked thumb-claw at the bend of each, their edges ragged. His two short legs hang below with big hooked black claws. Round his neck he wears a wide heavy collar of big carved jade plaques, a dull, dark, greyed deep green stone, and a large round jade disc is set in each ear, as on a Maya carving.",
+  "colours": "shaggy dark brown-black fur with dusty grey-brown highlights, dark grey-brown wing membranes with paler finger bones, burning yellow eyes, long white fangs, a broad collar and ear discs of dull dark jade stone, a greyed deep green, a short kilt of pale undyed cloth with a black border, black claws.",
+  "wears": "He wears a wide collar of big carved jade plaques, a round jade disc in each ear, and a short stiff Maya kilt of pale undyed cloth with a black border.",
   "holds": "He holds nothing: his arms are his wings.",
   "pose": "Seen from the front, in the air, small in the picture with wide empty backdrop all round him, he swoops down toward the lower left: both wings are half spread, bent sharply at the wrist like two tall arches with the wing tips pointing down, one a little higher than the other, so that he is taller than he is wide, his head thrust forward and down with the jaws wide open and the long fangs bared, and his clawed feet hanging open below him to snatch.",
   "must_show": [
    "a gigantic bat with real bat wings for arms, spread wide",
    "a bat's head with huge pointed ears, a tall blade-shaped nose leaf and long white fangs",
    "shaggy dark brown-black fur",
-   "a wide collar of bright jade green plaques and jade ear discs",
+   "a wide collar of dull dark jade plaques and jade ear discs",
    "no extra arms: the wings are the arms"
   ],
   "must_not_show": [
@@ -457,7 +465,12 @@
    "wings stretched flat",
    "dog face",
    "boar tusks",
-   "wolf"
+   "wolf",
+   "bright green",
+   "neon green",
+   "glowing green",
+   "green kilt",
+   "mint green"
   ]
  },
  {
@@ -466,15 +479,15 @@
   "rank": 1,
   "key": "blue",
   "what": "Rangda, the widow-witch and demon queen of Bali, exactly as she appears in the Balinese temple dance, painted seriously as a terrible, ancient, inhuman figure, frightening and never comic. She is a tall, stooped figure, fully covered from neck to ankle. Her face is a great carved and painted demon mask, not a living face: chalk-white with gold and black painted lines, two huge round bulging gold eyes ringed in black, a wide snarling mouth with a row of big white teeth, and four long curved white tusks, two pointing up and two pointing down. From the mouth hangs one very long, broad, flat tongue of dull dark red leather set with small gold flames, hanging straight down the front of her body to her waist. Round the mask bursts an enormous shaggy mane of wild, coarse, tangled hair, white and pale grey, that covers her shoulders, chest and back like a great pelt and hangs in long ragged hanks down to her knees on every side. Below the hair she wears a long, heavy, dark skirt. Her hands are covered in white gloves and every finger ends in a very long, thick, curved nail of pale horn, as long as her forearm.",
-  "colours": "a chalk-white mask with gold and black painted lines, bulging gold eyes, white tusks and teeth, a long dull dark red tongue with gold studs, a huge shaggy mane of white and pale grey hair to the knees, a long heavy skirt of dark brown-black cloth with a broad border of old gold brocade, a hanging sash in a chequerboard of black and white squares, long sleeves of dull dark red, a tall gold crown, white gloves with long pale horn nails.",
-  "wears": "She is fully clothed: long close sleeves of dull dark red cloth, a long, heavy, ankle-length skirt of dark brown-black cloth with a broad border of old gold brocade, one long sash in a chequerboard of big black and white squares hanging down the front from her waist, and white gloves with long nails. The shaggy white mane covers her whole upper body. On her head, above the mask, is a tall gold crown of carved flame shapes.",
+  "colours": "a chalk-white mask with gold and black painted lines, bulging gold eyes, white tusks and teeth, a long dull dark red tongue with gold studs, a huge shaggy mane of white and pale grey hair to the knees, a long heavy skirt of black cloth, charcoal-grey on the folds, with a narrow border of dull old gold, a hanging sash in a chequerboard of black and white squares, long sleeves of dull dark red, white gloves with long pale horn nails.",
+  "wears": "She is fully clothed: long close sleeves of dull dark red cloth, a long, heavy, ankle-length skirt of black cloth, charcoal-grey on the folds, with a narrow border of dull old gold, one long sash in a chequerboard of big black and white squares hanging down the front from her waist, and white gloves with long nails. The shaggy white mane covers her whole upper body. Above the mask her coarse white hair stands straight up in a wild ragged crest, as tall as the mask itself.",
   "holds": "Both of her hands are empty and she holds nothing: both arms are raised with the hands spread wide and the very long curved nails fanned out like claws, one hand high at the upper left and one lower at the right.",
   "pose": "Seen from the side and a little from the front, on two legs, she lunges forward to the left in a long stalking stride with her front knee bent and her back leg stretched behind, her body bent forward, her masked head thrust out ahead and tilted, her right arm reaching far forward to the left and her left arm raised high behind her, all ten long nails fanned wide like talons, her long tongue swinging and her shaggy white mane and chequered sash flying out behind to the right.",
   "must_show": [
    "a carved chalk-white demon mask face with bulging gold eyes and long white tusks",
    "one very long dull red tongue hanging down to her waist",
    "an enormous shaggy white mane covering her upper body to her knees",
-   "a long dark skirt with a gold border and a black-and-white chequered sash: fully covered",
+   "a long black skirt with a narrow gold border and a black-and-white chequered sash: fully covered",
    "both hands empty, with very long curved nails fanned out"
   ],
   "must_not_show": [
@@ -515,7 +528,16 @@
    "squatting facing front",
    "frog pose",
    "symmetrical pose",
-   "both arms raised the same"
+   "both arms raised the same",
+   "crown",
+   "gold crown",
+   "king",
+   "queen in a crown",
+   "orange robe",
+   "brown robe",
+   "orange skirt",
+   "fur-trimmed robe",
+   "Father Christmas"
   ]
  },
  {
@@ -697,7 +719,8 @@
    "long-handled blade",
    "glaive",
    "spear"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "homunculus",
@@ -755,14 +778,14 @@
   "id": "animated_armor",
   "family": "construct",
   "rank": 2,
-  "key": "green",
-  "what": "an animated armour: a full suit of plate armour walking about with nobody inside it, painted seriously and eerily. It is a complete, plain, old, battered knight's harness of dull grey steel standing on two legs like a man: a helmet, a breastplate, shoulder plates, jointed arms, gauntlets, a skirt of steel strips, leg plates and pointed steel shoes. The steel is dull, scratched and dented, with streaks of dark brown stain and cobweb-grey dust in the joints. There is plainly no one in it. The visor of its helmet is lifted wide open, pushed right up onto the top of the helmet, and the whole big face opening underneath is one large, empty, pure black hole with nothing in it: no face, no eyes, no glow. The breastplate has one wide jagged rent torn across it from an old blow, and through the rent there is only the same pure black emptiness. The helmet sits crooked, tilted far over to one side on the collar as if listening, as no living neck could hold it. It has the proportions of a tall adult man's armour, with a small helmet, about eight heads tall.",
-  "colours": "dull grey steel with paler worn edges, dark brown stains and grey dust in the joints, a pure black empty face opening and a pure black rent in the breastplate, a plain shield of dull grey steel with a dented rim and old leather straps of dark brown.",
+  "key": "blue",
+  "what": "an animated armour: a full suit of plate armour walking about with nobody inside it, painted seriously and eerily. It is a complete, plain, old, battered knight's harness of cold dark iron-grey steel standing on two legs like a man: a helmet, a breastplate, shoulder plates, jointed arms, gauntlets, a skirt of steel strips, leg plates and pointed steel shoes. The steel is dull, scratched and dented, with streaks of black tarnish and cobweb-grey dust in the joints. There is plainly no one in it. The visor of its helmet is lifted wide open, pushed right up onto the top of the helmet, and the whole big face opening underneath is one large, empty, pure black hole with nothing in it: no face, no eyes, no glow. The breastplate has one wide jagged rent torn across it from an old blow, and through the rent there is only the same pure black emptiness. The helmet sits crooked, tilted far over to one side on the collar as if listening, as no living neck could hold it. It has the proportions of a tall adult man's armour, with a small helmet, about eight heads tall.",
+  "colours": "cold dark iron-grey steel with paler worn edges, black tarnish and grey dust in the joints, a pure black empty face opening and a pure black rent in the breastplate, a plain shield of cold dark iron-grey steel with a dented rim and old leather straps of dark brown.",
   "wears": "It is the armour. There is no cloth on it: no cape, no plume, no tabard, no emblem.",
-  "holds": "On its left arm it carries exactly one shield: a plain, bare, heater-shaped shield of dull dented grey steel with nothing painted on it, thrust forward. Its right hand is empty: a steel gauntlet clenched into a fist and drawn back to punch. It holds no sword and no weapon.",
+  "holds": "On its left arm it carries exactly one shield: a plain, bare, heater-shaped shield of cold dark dented iron-grey steel with nothing painted on it, thrust forward. Its right hand is empty: a steel gauntlet clenched into a fist and drawn back to punch. It holds no sword and no weapon.",
   "pose": "On two legs, it lunges forward to the left with its front knee bent, driving the plain shield forward on its left arm but held low at its hip so that the torn breastplate is seen, its right arm cocked back at the shoulder with the gauntlet clenched to strike, its crooked open helmet turned straight toward the viewer so the big black empty face opening is plainly seen.",
   "must_show": [
-   "a plain battered full suit of dull grey plate armour on two legs",
+   "a plain battered full suit of cold dark iron-grey plate armour on two legs",
    "the visor raised: a big pure black empty hole where the face would be, no eyes, no glow",
    "a jagged black rent in the breastplate showing emptiness inside",
    "one plain steel shield on the left arm",
@@ -799,7 +822,13 @@
    "knight's face",
    "man inside",
    "polished shining armour",
-   "new armour"
+   "new armour",
+   "pink armour",
+   "rose-tinted metal",
+   "copper armour",
+   "bronze armour",
+   "brown armour",
+   "warm-coloured metal"
   ]
  },
  {
@@ -974,14 +1003,14 @@
   "family": "fey_small",
   "rank": 2,
   "key": "green",
-  "what": "a redcap: the murderous goblin of the ruined peel towers on the Scottish Border, painted seriously as a short, thick-set, wicked old man, frightening and never cute. He is the height of a ten-year-old child but has the body of a stocky, broad-shouldered, hunched old man with long wiry arms and a head of ordinary adult size for his body. His skin is weather-beaten grey like old stone, on his face and hands alike. He has a gaunt hook-nosed face, fierce bloodshot pale eyes under grey brows, long lank grizzled grey hair hanging to his shoulders, a long straggling grey beard, and a mouth of very long, prominent, yellow teeth like a rat's. His fingers are thin and bony with long nails like a hawk's talons. On his head is a close-fitting, floppy, pointed cap dyed a deep, dark, wet red, dark and stained, the strongest colour in the picture. On his feet are huge, heavy, clumsy boots shod and plated with dark iron.",
-  "colours": "a deep dark red cap, weather-beaten stone-grey skin, grizzled grey hair and beard, long yellow teeth, a rough tunic of dark brown wool, a wide black leather belt, big dark iron boots, a pike with a dark brown shaft and a dull iron head.",
-  "wears": "He wears the dark red cap, a rough, patched, knee-length tunic of dark brown wool with a wide black leather belt, dark grey leggings, and the huge iron-plated boots.",
+  "what": "a redcap: the murderous goblin of the ruined peel towers on the Scottish Border, painted seriously as a short, thick-set, wicked old man, frightening and never cute. He is the height of a ten-year-old child but has the body of a stocky, broad-shouldered, hunched old man with long wiry arms and a head of ordinary adult size for his body. His skin is weather-beaten grey like old stone, on his face and hands alike. He has a gaunt hook-nosed face, fierce bloodshot pale eyes under grey brows, long lank grizzled grey hair hanging to his shoulders, a long straggling grey beard, and a mouth of very long, prominent, yellow teeth like a rat's. His fingers are thin and bony with long nails like a hawk's talons. On his head is a close-fitting, floppy, pointed cap dyed a strong, saturated blood red, by far the brightest and strongest colour in the picture. On his feet are huge, heavy, clumsy boots shod and plated with dark iron.",
+  "colours": "a strong blood-red cap, weather-beaten stone-grey skin, grizzled grey hair and beard, long yellow teeth, a rough tunic of grimy undyed wool, pale grey-buff, a wide black leather belt, big iron-plated boots of grey iron with pale worn edges, a pike with a dark brown shaft and a dull iron head.",
+  "wears": "He wears the dark red cap, a rough, patched, knee-length tunic of grimy undyed wool, pale grey-buff, with a wide black leather belt, dark grey leggings, and the huge iron-plated boots.",
   "holds": "He holds exactly one pike in both hands: a thick, sturdy wooden shaft of dark brown, taller than he is, tipped with one long, broad, leaf-shaped head of dull dark iron, held level across his body and thrust forward with its point sticking out to the left. Both hands are on the shaft and he holds nothing else.",
   "pose": "On two legs, he charges forward to the left with a heavy stamping stride, one big iron boot lifted high in front of him, his body bent forward, both bony hands driving the thick pike forward and level with its iron point to the left, his long teeth bared and his grey hair and beard flying back.",
   "must_show": [
    "a short stocky wicked old man with grey skin, a long grey beard and long yellow teeth",
-   "a dark red floppy pointed cap, the strongest colour on him",
+   "a strong blood-red floppy pointed cap, the strongest colour on him",
    "huge heavy dark iron boots",
    "one thick pike with an iron head, held in both hands, thrust to the left",
    "frightening and serious, not a garden gnome"
@@ -991,7 +1020,6 @@
    "garden gnome",
    "Santa hat with white trim",
    "white pom-pom",
-   "bright cheerful red",
    "white beard",
    "rosy cheeks",
    "smile",
@@ -1008,7 +1036,11 @@
    "big head",
    "cute",
    "cartoon proportions",
-   "rock"
+   "rock",
+   "brown cap",
+   "dull brown-red cap",
+   "red tunic",
+   "brown tunic"
   ]
  },
  {
@@ -1108,7 +1140,8 @@
    "cute",
    "ground",
    "rock"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "erlking",
@@ -1214,8 +1247,8 @@
   "rank": 3,
   "key": "blue",
   "body": "shapeless",
-  "what": "Anansi, the spider of the Akan stories of Ghana, who won all the stories of the world from the Sky God by trickery, painted seriously as a great, ancient, clever spider-lord; a mini-boss, the most splendid of all spiders. He is one real spider, drawn very large, seen from the front and a little from above: a golden orb-weaver with a small head-and-chest and a big, long, oval abdomen held high behind it, and eight very long, thin, jointed legs. His abdomen is the brightest thing in the picture: it is patterned all over like a woven kente cloth, in bold, big, square blocks and zigzag bands of bright gold-yellow, black, and dark brick-red. His head-and-chest is glossy black with a covering of short gold hairs, with a cluster of eight shining amber eyes, the two in the middle large and knowing, and two big black fangs below. His long legs are black, and each joint is ringed with a broad band of bright gold, like bracelets.",
-  "colours": "a big abdomen in bold square blocks and zigzags of bright gold-yellow, black and dark brick-red, a glossy black head-and-chest with short gold hairs, amber eyes, black fangs, long black legs with broad bright gold bands at the joints, one small carved box of dark brown wood with brass corners.",
+  "what": "Anansi, the spider of the Akan stories of Ghana, who won all the stories of the world from the Sky God by trickery, painted seriously as a great, ancient, clever spider-lord; a mini-boss, the most splendid of all spiders. He is one real spider, drawn very large, seen from the front and a little from above: a golden orb-weaver with a small head-and-chest and a big, long, oval abdomen held high behind it, and eight very long, thin, jointed legs. His abdomen is the most richly patterned thing in the picture: it is patterned all over like an old woven kente cloth, in bold, big, square blocks and zigzag bands of dull old gold, black, and dark brick-red, the gold the brown-gold of tarnished brass. His head-and-chest is glossy black with a covering of short gold hairs, with a cluster of eight shining amber eyes, the two in the middle large and knowing, and two big black fangs below. His long legs are black, and each joint is ringed with a broad band of dull old gold, like bracelets.",
+  "colours": "a big abdomen in bold square blocks and zigzags of dull old gold, black and dark brick-red, a glossy black head-and-chest with short gold hairs, amber eyes, black fangs, long black legs with broad dull old gold bands at the joints, one small carved box of dark brown wood with brass corners.",
   "wears": "It is a spider and wears nothing; the gold bands on its legs are its own markings.",
   "holds": "With its two front legs it holds up exactly one small box in front of its head: a square carved box of dark brown wood with brass corners and a closed lid, the box of stories. It holds nothing else.",
   "pose": "Seen from the front and a little from above, it rears up to the left on its six back legs, which are spread wide and bent at sharp angles, three on each side, its patterned abdomen lifted high behind, its two front legs raised together in front of it holding up the little wooden box, its head tilted with the amber eyes on the viewer.",
@@ -1252,7 +1285,12 @@
    "big round cute eyes",
    "cute",
    "ground",
-   "rock"
+   "rock",
+   "bright orange",
+   "bright yellow",
+   "neon colours",
+   "orange abdomen",
+   "wasp"
   ]
  },
  {
@@ -1311,14 +1349,14 @@
   "rank": 1,
   "key": "green",
   "what": "a veiled inquisitor: a living man sent long ago by an authority that no longer exists to hunt heretics, who has gone on alone and made up his own creed, painted seriously as a tall, lean, fanatical, sinister figure. He has realistic adult proportions, a small head and long limbs, about eight heads tall. His face cannot be seen at all: from the brim of his hat hangs a plain, flat, square veil of thick white linen that covers his whole face from brow to chin like a blank page, with nothing on it. On his head is a wide, round, flat-brimmed black hat with a low crown. He wears a long, severe, floor-length cassock and a short shoulder cape. His hands are in black gloves.",
-  "colours": "a long black cassock with a row of small dull dark red buttons, a short shoulder cape of dull dark red, a broad dull dark red sash, a wide black hat, a plain white linen face veil, black gloves and black boots, a scourge with a dark brown wooden handle and thick tan knotted cords, a round censer of dull brass with orange fire glowing through its holes.",
+  "colours": "a long black cassock with a row of small dull dark red buttons, a short shoulder cape of dull dark red, a broad dull dark red sash, a wide black hat, a plain white linen face veil, black gloves and black boots, a scourge with a dark brown wooden handle and three thick knotted ropes of pale bone-white, a round censer of dull brass with orange fire glowing through its holes.",
   "wears": "He wears a wide flat-brimmed black hat, a plain white linen veil hanging from it over his whole face, a long black floor-length cassock buttoned down the front, a short shoulder cape of dull dark red, a broad dull dark red sash at his waist, black gloves and black boots. There is no badge, emblem or symbol on him anywhere.",
-  "holds": "He holds exactly one scourge in his right hand: a short thick dark wooden handle with five thick, heavy, knotted tan cords, each as thick as a finger and as long as his arm, raised high so the cords fly out. In his left hand he holds exactly one censer: a round pierced ball of dull brass as big as his head, hanging close under his fist on one short thick brass chain no longer than his hand, with orange fire glowing through the holes in it and one small curl of grey smoke rising from its top. He holds nothing else.",
-  "pose": "On two legs, he strides forward to the left with a long step, his weight on his front foot and his cassock swinging, his right arm raised high and back with the scourge, its thick knotted cords flying out behind above his head, his left arm thrust forward and low, swinging the glowing brass censer out ahead of him, his veiled faceless head turned straight at the viewer.",
+  "holds": "He holds exactly one scourge in his right hand: a short thick dark wooden handle with exactly three thick, heavy ropes of pale bone-white, each as thick as his wrist and only as long as his forearm, spread well apart from one another with dark backdrop between them, and each ending in one knot as big as his fist, raised high so the three ropes hang and swing. In his left hand he holds exactly one censer: a round pierced ball of dull brass as big as his head, hanging close under his fist on one short thick brass chain no longer than his hand, with orange fire glowing through the holes in it and one small curl of grey smoke rising from its top. He holds nothing else.",
+  "pose": "On two legs, he strides forward to the left with a long step, his weight on his front foot and his cassock swinging, his right arm raised high and back with the scourge, its three thick pale knotted ropes swinging apart above his head, his left arm thrust forward and low, swinging the glowing brass censer out ahead of him, his veiled faceless head turned straight at the viewer.",
   "must_show": [
    "a tall man in a long black cassock with a dark red shoulder cape and sash",
    "a wide flat black hat with a plain white veil hiding his whole face",
-   "one scourge with thick knotted cords raised in the right hand",
+   "one scourge of three thick pale knotted ropes raised in the right hand",
    "one round brass censer with fire glowing in it, swung low on a short chain in the left hand",
    "a living man, not a ghost; no emblem anywhere"
   ],
@@ -1350,8 +1388,16 @@
    "bride's veil",
    "oversized head",
    "cartoon proportions",
-   "rock"
-  ]
+   "rock",
+   "paddle",
+   "fan",
+   "broom",
+   "hand shape",
+   "bundle of many thin strings",
+   "net",
+   "feather duster"
+  ],
+  "lift": 1.2
  },
  {
   "id": "xorn",
@@ -1487,7 +1533,8 @@
    "fur tail",
    "flame growing from the back",
    "flame as a tail behind legs"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "nidhoggr_fragment",
@@ -1539,6 +1586,7 @@
    "cartoon",
    "ground",
    "rock"
-  ]
+  ],
+  "lift": 1.2
  }
 ]

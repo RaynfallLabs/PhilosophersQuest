@@ -204,8 +204,8 @@
   "family": "warrior",
   "rank": 5,
   "key": "green",
-  "what": "a minotaur warrior: a huge, heavily muscled man standing upright on two human legs, with the head of a bull: a broad bull's muzzle, small angry eyes, and two long thick curved ivory horns. Dark brown fur covers the bull's head, the thick neck and the tops of the shoulders; the rest of his body is tan-brown human skin, scarred. Unlike a common minotaur he is armed and armoured in the Cretan fashion. He has the realistic proportions of a giant adult man, with the bull's head no larger than his chest.",
-  "colours": "tan-brown human skin on the body, dark brown fur on the bull's head and shoulders, ivory horns, a bronze breast-harness, one bronze shoulder plate and two bronze shin guards, a dark brown leather war-kilt with bronze studs, a double axe with a dark wooden haft and two bright bronze blades.",
+  "what": "a minotaur warrior: a huge, heavily muscled man standing upright on two human legs, with the head of a bull: a broad bull's muzzle, small angry eyes, and two long thick curved ivory horns. Dark brown fur covers the bull's head, the thick neck and the tops of the shoulders; the rest of his body, chest, belly, arms and legs alike, is covered in the same short bull's hide, dark umber-brown, dull and matt, scarred. Unlike a common minotaur he is armed and armoured in the Cretan fashion. He has the realistic proportions of a giant adult man, with the bull's head no larger than his chest.",
+  "colours": "dark umber-brown short hide on the whole body, darker brown fur on the bull's head and shoulders, ivory horns, a dull bronze breast-harness, one dull bronze shoulder plate and two dull bronze shin guards, a dark brown leather war-kilt with bronze studs, a double axe with a dark wooden haft and two bright bronze blades.",
   "wears": "He wears a harness of broad bronze-studded leather straps crossed over his chest with a round bronze plate at the centre, one large bronze shoulder plate on his left shoulder, a war-kilt of dark brown leather strips with bronze studs hanging to the knee, and a bronze guard on each shin. His feet are bare. No helmet.",
   "holds": "He holds exactly one double axe, gripped in both fists on its one thick wooden haft: the haft is as long as his arm, and at its top are two broad crescent bronze blades, one on each side of the haft, mirror images of each other. Both hands are on the haft. He holds nothing else.",
   "pose": "Seen from the side and a little from the front, facing left, on two legs: he strides forward in a long heavy step with his weight on his bent front leg, the double axe swung up over his right shoulder in both fists ready to chop down, his horned head lowered and thrust forward, his mouth open in a bellow.",
@@ -244,7 +244,12 @@
    "cartoon proportions",
    "short stubby body",
    "rock",
-   "patch of ground"
+   "patch of ground",
+   "orange skin",
+   "red skin",
+   "sunburnt skin",
+   "bright orange body",
+   "bare pink skin"
   ]
  },
  {
@@ -915,10 +920,10 @@
   "id": "desert_wraith",
   "family": "wraith",
   "rank": 1,
-  "key": "blue",
+  "key": "green",
   "body": "shapeless",
-  "what": "a desert wraith: the ghost of a traveller who died without tomb or rites in the Red Land of Egypt and was dried to a husk by sun and wind. It is an empty hooded shroud of sun-bleached, wind-shredded linen with nothing inside it: the hood is a deep black hollow in which burn two small fierce ember-orange lights, its eyes. Out of its long ragged sleeves reach two long, thin, dried-up husk hands, dark leather-brown like old dates, with long bony fingers. The linen is torn into long strips that whip sideways in a hot wind. Below the waist it has nothing: the shroud narrows and twists into one tight, thin, tapering spiral of blown dull red-ochre sand, a little whirlwind, joined to the cloth and ending in a point.",
-  "colours": "sun-bleached undyed pale sand-beige linen with darker dun-brown folds and frayed dark edges, a black hollow hood, two ember-orange eye lights, dark leather-brown dried hands, a tapering twist of dull red-ochre sand.",
+  "what": "a desert wraith: the ghost of a traveller who died without tomb or rites in the Red Land of Egypt and was dried to a husk by sun and wind. It is an empty hooded shroud of sun-bleached, wind-shredded linen, pale grey-beige like old dry parchment, with nothing inside it: the hood is a deep black hollow in which burn two small fierce ember-orange lights, its eyes. Out of its long ragged sleeves reach two long, thin, dried-up husk hands, dark grey-brown, the colour of dry bark, with long bony fingers. The linen is torn into long strips that whip sideways in a hot wind. Below the waist it has nothing: the shroud narrows and twists into one tight, thin, tapering spiral of blown dull dun-brown sand, darker than the linen, a little whirlwind, joined to the cloth and ending in a point.",
+  "colours": "sun-bleached undyed pale grey-beige linen with darker dun-brown folds and frayed dark edges, a black hollow hood, two ember-orange eye lights, dark grey-brown dried hands, a tapering twist of dull dun-brown sand.",
   "wears": "It is nothing but an empty tattered hooded linen shroud.",
   "holds": "Its two dried hands are empty and it holds nothing.",
   "pose": "It sweeps down and to the left through empty air on the hot wind, leaning far forward, both long husk hands reaching out ahead with the fingers spread to draw the water out of the living, its torn linen strips streaming back to the right and its twist of sand curling away behind and below.",
@@ -926,7 +931,7 @@
    "an empty hood with two ember-orange eye lights",
    "pale sun-bleached sand-beige linen tatters: the pale desert kin of the black wraith",
    "two dark dried husk hands reaching, empty",
-   "the lower half narrowing to one tight twist of red-ochre sand",
+   "the lower half narrowing to one tight twist of dun-brown sand",
    "painted with weight and wind, not a bedsheet ghost"
   ],
   "must_not_show": [
@@ -955,7 +960,14 @@
    "white bedsheet ghost",
    "cartoon ghost",
    "smile",
-   "scarab"
+   "scarab",
+   "salmon cloth",
+   "pink cloth",
+   "orange cloth",
+   "red cloth",
+   "red tail",
+   "red sand",
+   "red hands"
   ]
  },
  {

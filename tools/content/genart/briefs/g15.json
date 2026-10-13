@@ -158,16 +158,16 @@
   "family": "spawn",
   "rank": 4,
   "key": "magenta",
-  "what": "a nightshade spawn: a dead thing made of solid darkness, a very tall, gaunt, long-limbed figure on two legs, painted with real substance, never a flat shadow. Its whole body is one material: dull black, cracked and flaking like charred wood from a burnt-out fire, with ash-grey edges along every crack and ridge where the light catches, on the head, chest, arms and legs alike. Its head is long and narrow with no nose and no hair, two long horns of the same charred black sweeping straight back, a lipless mouth of long ash-grey teeth, and two narrow slanted eyes of cold white light. Its ribs and hip bones show under the charred hide. Its arms hang to its knees and end in very long, thin, hooked black claws. It has a small head and very long thin limbs, about nine heads tall.",
-  "colours": "dull charcoal-black charred hide on every part with ash-grey cracked edges and highlights, ash-grey teeth, two cold white eye slits, a ragged dark grey shroud, a few dead dry grey-brown leaves and vines.",
-  "wears": "It wears only a ragged dark grey burial shroud hanging from its hips in long tatters, and a few strands of dead, dry, withered grey-brown ivy that cling round its shoulders and one arm.",
+  "what": "a nightshade spawn: a dead thing made of solid darkness, a very tall, gaunt, long-limbed figure on two legs, painted with real substance, never a flat shadow. Its whole body is one material: dull black, cracked and flaking like charred wood from a burnt-out fire, with ash-grey edges along every crack and ridge where the light catches, on the head, chest, arms and legs alike. Its head is long and narrow with no nose and no hair, two long thick horns of pale bone-grey sweeping straight back, each as long as its face and as thick as a finger, a lipless mouth of long ash-grey teeth, and two narrow slanted eyes of cold white light. Its ribs and hip bones show under the charred hide. Its arms hang to its knees and end in very long, thick, hooked claws of pale bone-grey, each as long as its hand. One thin bright line of cold pale light runs along the whole left edge of its body, from the horn down the arm and the leg. It has a small head and very long thin limbs, about nine heads tall.",
+  "colours": "dull charcoal-black charred hide on every part with ash-grey cracked edges; the two long horns, the long claws and the long teeth are pale bone-grey, the palest things on it; two cold white eye slits; a ragged pale ash-grey shroud; a few dead dry grey-brown vines; one thin line of cold pale light along its left edge.",
+  "wears": "It wears only a ragged pale ash-grey burial shroud hanging from its hips in long tatters, and a few strands of dead, dry, withered grey-brown ivy that cling round its shoulders and one arm.",
   "holds": "Both of its clawed hands are empty and it holds nothing: its right arm is stretched forward with the long claws spread to drain, and its left arm hangs low with the claws open.",
   "pose": "On two legs, it stalks forward to the left with a long stride, stooping, its weight on its front foot, its right arm reaching far out ahead with the claws spread, its left arm trailing low, its horned head thrust forward with the jaws open.",
   "must_show": [
    "a tall gaunt figure of cracked charred black with ash-grey edges, not a flat silhouette",
-   "two swept-back horns and narrow white eye slits",
-   "very long arms with long hooked claws, empty",
-   "a ragged grey shroud and dead withered ivy",
+   "two swept-back pale bone-grey horns and narrow white eye slits",
+   "very long arms with long hooked pale claws, empty; the pale horns, claws and shroud read on a dark floor",
+   "a ragged pale ash-grey shroud and dead withered ivy",
    "painted with depth and texture"
   ],
   "must_not_show": [
@@ -196,8 +196,11 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body",
-   "rock"
-  ]
+   "rock",
+   "black horns",
+   "black claws"
+  ],
+  "lift": 1.2
  },
  {
   "id": "star_spawn",
@@ -345,9 +348,9 @@
   "id": "sphinx",
   "family": "sphinx",
   "rank": 1,
-  "key": "blue",
-  "what": "a sphinx of the Greek kind, the riddler at the crossroads: one animal on four legs with the whole body of a lean lioness, short tawny fur over the chest, belly, back and all four legs, a lion's long tufted tail, and two feathered eagle's wings growing from its shoulders. Only its head is human: the head of a human woman, as large as the lioness's whole chest, set on the furred neck: a sharp, clever, unsmiling woman's face with smooth olive-tan human skin, a straight human nose, human lips, a pointed human chin, and two dark human eyes under arched dark brows. Her dark brown hair is bound up close to her head in a knot at the back with one plain white ribbon round it. The fur stops at the neck: the face is bare human skin.",
-  "colours": "short tawny golden-tan lion fur with a cream belly, a dark brown tail tuft, brown eagle's wing feathers with paler tan edges, an olive-tan woman's face, dark brown hair, one plain white hair ribbon, dark eyes, ivory claws.",
+  "key": "magenta",
+  "what": "a sphinx of the Greek kind, the riddler at the crossroads: one animal on four legs with the whole body of a lean lioness, short dusty sand-brown fur, the dull dun colour of a real lioness, over the chest, belly, back and all four legs, a lion's long tufted tail, and two feathered eagle's wings growing from its shoulders. Only its head is human: the head of a human woman, as large as the lioness's whole chest, set on the furred neck: a sharp, clever, unsmiling woman's face with smooth olive-tan human skin, a straight human nose, human lips, a pointed human chin, and two dark human eyes under arched dark brows. Her dark brown hair is bound up close to her head in a knot at the back with one plain white ribbon round it. The fur stops at the neck: the face is bare human skin.",
+  "colours": "short dusty sand-brown lion fur, the dull dun colour of a real lioness, with a pale cream belly, a dark brown tail tuft, dark brown eagle's wing feathers with paler grey-brown edges, an olive-tan woman's face, dark brown hair, one plain white hair ribbon, dark eyes, ivory claws.",
   "wears": "She wears only one plain white ribbon binding her hair. She wears nothing else: no crown, no collar, no gold.",
   "holds": "It is a beast on four legs and holds nothing.",
   "pose": "Seen from the side, her body facing left, on four legs with her body horizontal: she crouches with her hindquarters low and one front paw lifted off the ground with the claws out, both brown wings raised above her back, her tail curled up behind; her woman's head is turned to face the viewer so the whole human face shows, one brow raised, her human mouth open, asking her riddle.",
@@ -387,7 +390,11 @@
    "rock",
    "glow round the body",
    "cartoon face",
-   "oversized head"
+   "oversized head",
+   "orange fur",
+   "bright orange",
+   "ginger fur",
+   "orange wings"
   ]
  },
  {
@@ -443,8 +450,8 @@
   "family": "spider",
   "rank": 1,
   "key": "magenta",
-  "what": "a phase spider matriarch: the ancient mother of the phase spiders, a real spider drawn very large, with the true body of a spider: a small head section, a huge, heavy, swollen oval abdomen behind it, three times the size of the head section, and exactly eight long, thick, jointed legs, four on each side. Her whole body is a pale, cold, icy blue, the blue of a winter sky, and her great abdomen is boldly marked with broad dark navy-blue bands across it and one big dark navy-blue diamond in the middle of its top. A ridge of long, stiff, white bristles like frost runs down the middle of her back and stands along her upper legs. She has a cluster of big bright cyan eyes and two very long, curved, white fangs. She is solid and clearly drawn except for the tips of her two rearmost legs, which thin out into a few short wisps of pale mist.",
-  "colours": "pale icy sky-blue body and legs, broad dark navy-blue bands and one dark navy-blue diamond on the abdomen, white frost-like bristles and white leg joints, big bright cyan eyes, long white fangs, a little pale blue-white mist at the two rear leg tips. No green anywhere.",
+  "what": "a phase spider matriarch: the ancient mother of the phase spiders, a real spider drawn very large, with the true body of a spider: a small head section, a huge, heavy, swollen oval abdomen behind it, three times the size of the head section, and exactly eight long, thick, jointed legs, four on each side. Her whole body is a pale icy blue, the blue of a winter sky, dulled with grey, matt and never glossy, covered in short coarse hair like a real hunting spider, and her great abdomen is boldly marked with broad dark navy-blue bands across it and one big dark navy-blue diamond in the middle of its top. A ridge of long, stiff, white bristles like frost runs down the middle of her back and stands along her upper legs. On the front of her small head section sits a tight cluster of eight small round black eyes like beads, and under them hang two very long, curved, bone-white fangs. She has the blank head of a real spider, with no face. She is solid and clearly drawn except for the tips of her two rearmost legs, which thin out into a few short wisps of pale mist.",
+  "colours": "pale icy sky-blue body and legs dulled with grey, matt, broad dark navy-blue bands and one dark navy-blue diamond on the abdomen, white frost-like bristles and white leg joints, small black eyes, long bone-white fangs, a little pale blue-white mist at the two rear leg tips. No green anywhere.",
   "wears": "She is an animal and wears nothing.",
   "holds": "She holds nothing.",
   "pose": "Seen from the front and slightly above, she rears with her body tilted up, her legs planted wide to both sides and her two front legs lifted high and spread to seize, her long white fangs open wide, her huge banded abdomen raised behind her.",
@@ -453,7 +460,7 @@
    "pale icy blue, blue not green",
    "a huge swollen abdomen with bold dark navy bands and a diamond mark",
    "white frost bristles and very long white fangs",
-   "big cyan eyes",
+   "a cluster of small black bead eyes, no face",
    "heavier, older and more boldly marked than the plain phase spider"
   ],
   "must_not_show": [
@@ -482,7 +489,15 @@
    "teal",
    "grey-green",
    "crab",
-   "claws"
+   "claws",
+   "cartoon face",
+   "big round eyes",
+   "two big eyes",
+   "smiling mouth",
+   "glossy shell",
+   "beetle",
+   "tick",
+   "fluffy white fur"
   ]
  },
  {
@@ -816,16 +831,16 @@
   "id": "pixie_swarm",
   "family": "swarm",
   "rank": 1,
-  "key": "blue",
+  "key": "magenta",
   "body": "shapeless",
-  "what": "a pixie swarm of the Cornish moors: three wild pixies flying together, drawn large and clear, painted seriously, feral and spiteful, never cute and never pretty. Each pixie is a tiny winged person: a thin, wiry, sharp-boned little human-shaped figure with a small head, two arms and two long thin legs, very dark bark-brown skin, a narrow mean face with a long pointed nose, long pointed ears and a snarling mouth, a shock of wild black hair, a ragged tunic of dark dead leaves, and two pairs of long narrow pale wings on its back. Each of the three is drawn big, half the picture tall, a whole clear figure with its own dark outline. They are placed like this: one pixie at the lower left, in front; one pixie above it at the top of the picture, a little behind; one pixie at the right, behind them both. Their bodies are apart, each one seen whole against the plain backdrop, and only the tips of their long pale wings cross and touch one another, joining the three into one group. There is nothing else in the picture: no cloud and no dust.",
-  "colours": "very dark bark-brown skin, wild black hair, ragged tunics of dark dead-leaf brown, long narrow wings of pale cream-white with dark brown veins, painted solid, long thick black thorns, small yellow eyes.",
+  "what": "a pixie swarm of the Cornish moors: three wild pixies flying together, drawn large and clear, painted seriously, feral and spiteful, never cute and never pretty. Each pixie is a tiny winged person: a thin, wiry, sharp-boned little human-shaped figure with a small head, two arms and two long thin legs, dull grey-green skin, the colour of lichen on a stone, a narrow mean face with a long pointed nose, long pointed ears and a snarling mouth, a shock of wild black hair, a ragged tunic of dark dead leaves, and two pairs of long narrow pale wings on its back. Each of the three is drawn big, half the picture tall, a whole clear figure with its own dark outline. They are placed like this: one pixie at the lower left, in front; one pixie above it at the top of the picture, a little behind; one pixie at the right, behind them both. Their bodies are apart, each one seen whole against the plain backdrop, and only the tips of their long pale wings cross and touch one another, joining the three into one group. There is nothing else in the picture: no cloud and no dust.",
+  "colours": "dull grey-green skin, the colour of lichen on a stone, wild black hair, ragged tunics of dark dead-leaf brown, long narrow wings of pale cream-white with dark brown veins, painted solid, long thick black thorns, small yellow eyes.",
   "wears": "Each pixie wears only a short ragged tunic of dark dead leaves.",
   "holds": "Each pixie grips exactly one long thick black thorn in both hands like a spear, as long as its own body and as thick as its arm, pointing forward to the left, and holds nothing else.",
   "pose": "The three pixies dive through the air to the left together, bodies stretched out, legs trailing, each with its thick black thorn spear levelled straight ahead to the left, the front one lowest, one above it and one behind at the right, all their long pale wings raised and spread so that the wing tips cross and touch, all snarling.",
   "must_show": [
    "three small human-shaped pixies (head, arms, legs), each a clear separate dark figure, joined only by touching wings",
-   "thin, pointed-eared, mean-faced, dark bark-brown: feral, not cute fairies",
+   "thin, pointed-eared, mean-faced, dull grey-green skinned: feral, not cute fairies",
    "long narrow pale wings on each",
    "a thick black thorn spear in the hands of each pixie, pointing left",
    "reads as three little winged people at 64 px, not as one blob"
@@ -869,7 +884,15 @@
    "glowing halo",
    "ground",
    "rock",
-   "tree"
+   "tree",
+   "red skin",
+   "orange skin",
+   "red-brown skin",
+   "imps",
+   "devils",
+   "horns",
+   "tails",
+   "feathered wings"
   ]
  },
  {
@@ -988,18 +1011,18 @@
   "id": "stirge_swarm",
   "family": "swarm",
   "rank": 4,
-  "key": "blue",
+  "key": "magenta",
   "body": "shapeless",
-  "what": "a stirge swarm: five stirges flying packed tight together in one bunch, their wings overlapping, so that the five of them make one connected group with one clear ragged outline, painted seriously, ugly and hungry, never cute. A stirge is a blood-drinking cave pest, part bat and part mosquito. Every stirge has a small round body covered in short dark red-brown fur, two wide hairless leathery bat wings of thin dark skin stretched between long black finger-bones, four thin hooked clinging legs, a small round furred head with two small pale yellow eyes and no ears, and, sticking straight out of the middle of its face in place of a nose and mouth, one very long, straight, stiff, thick needle of pale bone, as long as its whole body and as thick as its leg, tapering to a sharp point. All five are drawn large, each one a third of the picture wide. They are bunched like this: two side by side at the front left, one above them, one below them and one behind, their leathery wings overlapping so that no backdrop shows between them.",
-  "colours": "dark red-brown short fur on the bodies and heads, very dark maroon-brown hairless leathery wing skin with black finger-bones, long bone-pale cream needles with dark red tips, small pale yellow eyes.",
+  "what": "a stirge swarm: three stirges flying packed tight together in one bunch, their wings overlapping, so that the three of them make one connected group with one clear ragged outline, painted seriously, ugly and hungry, never cute. A stirge is a blood-drinking cave pest, part bat and part mosquito. Every stirge has a small round body covered in short dull grey-brown fur, two wide hairless leathery bat wings of thin dark skin stretched between long black finger-bones, four thin hooked clinging legs, a small round furred head with two small pale yellow eyes and no ears, and, sticking straight out of the middle of its face in place of a nose and mouth, one very long, straight, stiff, thick needle of pale bone, as long as its whole body and as thick as its leg, tapering to a sharp point. All three are drawn large, each one half the picture wide, each a clear whole animal. They are bunched like this: one at the front left, one above and a little behind it, one below and a little behind it, their leathery wings overlapping so that no backdrop shows between them.",
+  "colours": "dull grey-brown short fur on the bodies and heads, dark slate-grey hairless leathery wing skin with black finger-bones and a paler grey edge to each wing, long bone-pale cream needles, small pale yellow eyes.",
   "wears": "It wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "The bunch of five stirges dives through the air to the left all together, the two in front with their long pale needles levelled straight ahead like spears, the others crowding close above, below and behind, every leathery wing raised and spread.",
+  "pose": "The bunch of three stirges dives through the air to the left all together, wholly inside the picture, every one with its long pale needle levelled straight ahead to the left, the upper and lower ones crowding close behind the front one, every leathery wing raised and spread.",
   "must_show": [
-   "five stirges bunched in one connected group, not scattered",
+   "three stirges bunched in one connected group, each one readable, not scattered",
    "leathery hairless bat wings with dark finger-bones on each",
    "one long straight pale bone needle on each face, pointing left",
-   "small round dark red-brown furred bodies",
+   "small round dull grey-brown furred bodies",
    "ugly, hungry and painted: not cute bats, not birds"
   ],
   "must_not_show": [
@@ -1035,7 +1058,12 @@
    "cave",
    "ground",
    "rock",
-   "branch"
+   "branch",
+   "orange",
+   "red-brown fur",
+   "red wings",
+   "five stirges",
+   "heap of bodies"
   ]
  },
  {

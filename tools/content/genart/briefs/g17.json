@@ -281,11 +281,11 @@
   "family": "beast_a",
   "rank": 3,
   "key": "blue",
-  "what": "a cockatrice of the medieval bestiaries: a monster with the front of a fighting cock and the back of a serpent. Its head is a real rooster's head, fierce and lean: a sharp yellow beak, a tall jagged red comb on top, two red wattles hanging under the beak and a hard round orange eye. Its neck and breast are covered in long tawny gold and black feathers. It stands on exactly two scaly yellow rooster legs with long spurs and spread toes. Two feathered wings rise from its shoulders. Behind the legs its body has no bird's tail: it narrows into one long thick scaly dark green serpent's tail that curls round behind it in a big loop and ends in a point.",
-  "colours": "a red comb and red wattles, a yellow beak, tawny gold and black neck and breast feathers, dark bronze-brown wings, scaly yellow legs, a dark green scaly serpent tail with a pale yellow underside, an orange eye.",
+  "what": "a cockatrice of the medieval bestiaries: a monster with the front of a fighting cock and the back of a serpent. Its head is a real rooster's head, fierce and lean: a sharp horn-grey beak, a tall jagged red comb on top, two red wattles hanging under the beak and a hard round pale yellow eye. Its neck and breast are covered in black feathers with a dark green sheen, with a collar of long dull straw-gold hackle feathers round the neck. It stands on exactly two scaly grey rooster legs with long spurs and spread toes. Two feathered wings rise from its shoulders. Behind the legs its body has no bird's tail: it narrows into one long thick scaly dark green serpent's tail that curls round behind it in a big loop and ends in a point.",
+  "colours": "a dark red comb and dark red wattles, a horn-grey beak, black neck and breast feathers with a dark green sheen, a collar of dull straw-gold hackle feathers, black wings with dark grey edges to the feathers, scaly grey legs, a dark green scaly serpent tail with a pale grey underside, a pale yellow eye.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is an animal and holds nothing.",
-  "pose": "Seen from the side, it faces left, standing on its two rooster legs with one foot lifted and the claws spread to strike, breast pushed out, both wings raised and half open above its back, neck stretched forward with the beak wide open in a screech, and the green serpent tail curled up behind it in a big loop.",
+  "pose": "Seen from the side, it faces left, standing on its two rooster legs with one foot lifted and the claws spread to strike, breast pushed out, both wings raised and half open above its back, wholly inside the picture, neck stretched forward with the beak wide open in a screech, and the green serpent tail curled up behind it in a big loop.",
   "must_show": [
    "a rooster's head with a red comb and wattles",
    "two bird legs and feathered wings",
@@ -310,8 +310,13 @@
    "rock under it",
    "patch of ground",
    "cute chicken",
-   "cartoon"
-  ]
+   "cartoon",
+   "orange feathers",
+   "bright yellow body",
+   "golden body",
+   "farmyard rooster"
+  ],
+  "lift": 1.2
  },
  {
   "id": "carbuncle",
@@ -519,16 +524,16 @@
   "id": "peryton",
   "family": "beast_b",
   "rank": 2,
-  "key": "blue",
-  "what": "a peryton, the winged stag of drowned Atlantis: a gaunt, fierce stag with the plumage of a bird. Its head and neck are a real red deer stag's, with a long muzzle, a black nose, upright ears, a rough throat mane and two big branching ivory antlers with many sharp points, and its mouth is open showing a row of sharp teeth. Its four long thin legs are a deer's legs with black cloven hooves. Its whole body, from the shoulders to the rump, is covered in dark green bird feathers in place of hide, and from its shoulders grow two great bird's wings of dark green feathers with black tips. Its tail is a fan of long dark green feathers. Its eyes are small and glow dull red.",
-  "colours": "a tawny brown deer's head, neck and legs, ivory antlers, dark bottle-green feathers on the body, wings and tail with black wing tips, black hooves, small dull red eyes.",
+  "key": "magenta",
+  "what": "a peryton, the winged stag of drowned Atlantis: a gaunt, fierce stag with the plumage of a bird. Its head and neck are a real stag's, with a long muzzle, a black nose, upright ears, a rough throat mane and two big branching ivory antlers with many sharp points, and its mouth is open showing a row of sharp teeth. Its four long thin legs are a deer's legs with black cloven hooves. Its whole body, from the shoulders to the rump, is covered in very dark blackish-green bird feathers in place of hide, each feather edged in paler grey-green, and from its shoulders grow two great bird's wings of the same very dark blackish-green feathers with paler grey-green edges. Its tail is a fan of long blackish-green feathers. Its eyes are small and glow dull amber.",
+  "colours": "a dull dark grey-brown deer's head, neck and legs, the winter coat of a stag, pale ivory antlers, very dark blackish-green feathers with paler grey-green edges on the body, wings and tail, black hooves, small dull amber eyes.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
   "pose": "Seen from the side, it dives to the left through empty air with nothing beneath it, its body horizontal like a leaping deer, front legs reaching forward and hind legs stretched out behind, both feathered wings raised high above its back, head lowered with the antler points aimed forward to gore, mouth open.",
   "must_show": [
    "a stag's head with big branching antlers",
    "four deer legs with hooves, body horizontal, seen from the side",
-   "two large feathered bird wings and a feathered body, dark green",
+   "two large feathered bird wings and a feathered body, very dark green, sober",
    "diving to gore, antlers lowered"
   ],
   "must_not_show": [
@@ -552,8 +557,14 @@
    "cloud under it",
    "ground",
    "cartoon",
-   "cute"
-  ]
+   "cute",
+   "orange deer",
+   "orange head",
+   "bright green",
+   "parrot green",
+   "ginger fur"
+  ],
+  "lift": 1.15
  },
  {
   "id": "bonnacon",
@@ -605,9 +616,9 @@
   "id": "griffin",
   "family": "beast_b",
   "rank": 4,
-  "key": "blue",
-  "what": "a griffin: the gold-guarding beast of the ancients, eagle before and lion behind, a real beast that walks on all four legs with its body horizontal. Its head is a great eagle's head with a heavy hooked yellow beak, a fierce frowning brow, a golden eye and two upright pointed feathered ears. Its head, neck and chest are covered in white feathers. Its two front legs are an eagle's legs: scaly yellow, each ending in a big bird's foot with black talons. From the shoulders back it is a lion: a tawny gold lion's body, two strong lion hind legs with paws, and a long lion's tail with a dark tuft. Two great eagle's wings of dark brown feathers grow from its shoulders.",
-  "colours": "white feathers on the head, neck and chest, a yellow beak, scaly yellow front legs with black talons, tawny gold lion fur on the body and hind legs, dark brown wings with paler tawny bars, a dark brown tail tuft, golden eyes.",
+  "key": "magenta",
+  "what": "a griffin: the gold-guarding beast of the ancients, eagle before and lion behind, a real beast that walks on all four legs with its body horizontal. Its head is a great eagle's head with a heavy hooked horn-yellow beak, a fierce frowning brow, a golden eye and two upright pointed feathered ears. Its head, neck and chest are covered in white feathers. Its two front legs are an eagle's legs: scaly dull yellow-grey, each ending in a big bird's foot with black talons. From the shoulders back it is a lion: a lion's body of short dusty sand-brown fur, the dull dun colour of a real lion, two strong lion hind legs with paws, and a long lion's tail with a dark tuft. Two great eagle's wings of dark brown feathers grow from its shoulders.",
+  "colours": "white feathers on the head, neck and chest, a horn-yellow beak, scaly dull yellow-grey front legs with black talons, dusty sand-brown lion fur, the dull dun colour of a real lion, on the body and hind legs, dark brown wings with paler grey-brown bars, a dark brown tail tuft, golden eyes.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
   "pose": "Seen from the side, facing left: all four of its feet are planted on the ground and its body is horizontal, like a stalking lion's. Its front talons are braced wide, its head is thrust forward and low with the hooked beak wide open screaming, both wings are raised straight up above its back, and its lion's tail lashes behind.",
@@ -616,7 +627,7 @@
    "front legs with bird talons, lion hind legs and tufted tail",
    "four feet on the ground, body horizontal, seen from the side",
    "two large dark feathered wings raised",
-   "tawny gold lion body"
+   "dusty sand-brown lion body, not orange and not bright yellow"
   ],
   "must_not_show": [
    "standing upright on two legs",
@@ -637,7 +648,10 @@
    "grass under it",
    "second head",
    "cartoon",
-   "cute"
+   "cute",
+   "orange fur",
+   "bright yellow fur",
+   "golden-orange body"
   ]
  },
  {
@@ -727,7 +741,7 @@
    "pointed cat ears",
    "slim house cat body"
   ],
-  "lift": 1.45
+  "lift": 1.3
  },
  {
   "id": "nue",
