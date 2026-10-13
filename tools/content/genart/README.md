@@ -704,6 +704,21 @@ and look for the same kind of slip when reviewing.
 - **Lift on black glass turns it grey**; on dark wood 1.2 is the limit.
 - **A pipeline call re-cuts every sprite in the group**, so a `lift` set mid-session
   is applied on the group's next call.
+- **A red emblem:** "the red of red sealing wax" with a thin dark brown edge; "garnet"
+  or "dark wine red" comes out black.
+- **"Mustard yellow linen" is orange-brown leather.** "Plain yellow like a buttercup
+  faded in the sun, stained brown only at the spine and corner tips".
+- **A scroll in a narrow jar is a corked bottle.** Jar with "a very wide mouth", the
+  roll "much narrower than the mouth", "the rolled-up layers as a spiral at its end".
+- **A thorn "tapering evenly" is a courgette.** "Only three times as long as its base
+  is wide, from a broad flared base it narrows quickly in one hooked curve".
+- **A many-coloured gem as "slices of colour" is a flag.** "Polished like a black
+  opal, separate flakes of scarlet, emerald, yellow and white inside".
+- **A solid metal disc with a mark is a badge.** "Openwork: a ring with a star of
+  crossing bars, the leather showing through the gaps" is a seal.
+- **A black bat with spread wings on amber is a comic-book emblem**; reverse the
+  tones. **A "strap and buckle" on a slim bright book is an elastic-band notebook**;
+  ask for corner pieces and a clasp.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
