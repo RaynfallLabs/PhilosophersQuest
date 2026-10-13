@@ -690,6 +690,20 @@ and look for the same kind of slip when reviewing.
 - **A net does not survive 64 px**: the cut fills the mesh solid. Use another idea.
 - **A T-shirt-shaped mail shirt** is broken by a dagged hem plus a leather-bound neck
   slit.
+- **A potion reads as modern from straight sides plus a flat cap, or a cone.** One
+  piece of period metalwork fixes it without changing the colour: a bronze foot-ring
+  and neck band, a riveted iron band with a ring lid, a silver foot.
+- **A crescent on a rod with "horns pointing onward" is a spanner**, as are two pincer
+  horns. Put the crescent on a dark enamel disc; turn pincers into talons gripping a
+  ball.
+- **A bell "opening onward" is a trumpet mouth.** "Seen from the side, so only its
+  outside shows; the clapper ball hangs just beyond the lip".
+- **Leather with "thick, pale, fuzzy cut edges" is a crust** (toast, pizza).
+- **Crystals: "just three big cubes, each two shaft-widths wide, one face white, one
+  pale grey, one mid-grey"**; a cluster of small cubes is a marshmallow.
+- **Lift on black glass turns it grey**; on dark wood 1.2 is the limit.
+- **A pipeline call re-cuts every sprite in the group**, so a `lift` set mid-session
+  is applied on the group's next call.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
