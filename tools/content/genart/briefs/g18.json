@@ -416,7 +416,8 @@
    "orange",
    "cream-coloured pincers",
    "pincers floating apart from the arms"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "camazotz",
@@ -778,14 +779,14 @@
   "id": "animated_armor",
   "family": "construct",
   "rank": 2,
-  "key": "blue",
-  "what": "an animated armour: a full suit of plate armour walking about with nobody inside it, painted seriously and eerily. It is a complete, plain, old, battered knight's harness of cold dark iron-grey steel standing on two legs like a man: a helmet, a breastplate, shoulder plates, jointed arms, gauntlets, a skirt of steel strips, leg plates and pointed steel shoes. The steel is dull, scratched and dented, with streaks of black tarnish and cobweb-grey dust in the joints. There is plainly no one in it. The visor of its helmet is lifted wide open, pushed right up onto the top of the helmet, and the whole big face opening underneath is one large, empty, pure black hole with nothing in it: no face, no eyes, no glow. The breastplate has one wide jagged rent torn across it from an old blow, and through the rent there is only the same pure black emptiness. The helmet sits crooked, tilted far over to one side on the collar as if listening, as no living neck could hold it. It has the proportions of a tall adult man's armour, with a small helmet, about eight heads tall.",
-  "colours": "cold dark iron-grey steel with paler worn edges, black tarnish and grey dust in the joints, a pure black empty face opening and a pure black rent in the breastplate, a plain shield of cold dark iron-grey steel with a dented rim and old leather straps of dark brown.",
+  "key": "magenta",
+  "what": "an animated armour: a full suit of plate armour walking about with nobody inside it, painted seriously and eerily. It is a complete, plain, old, battered knight's harness of blackened iron, dark gunmetal grey, standing on two legs like a man: a helmet, a breastplate, shoulder plates, jointed arms, gauntlets, a skirt of steel strips, leg plates and pointed steel shoes. The steel is dull, scratched and dented, with streaks of black tarnish and cobweb-grey dust in the joints. There is plainly no one in it. The visor of its helmet is lifted wide open, pushed right up onto the top of the helmet, and the whole big face opening underneath is one large, empty, pure black hole with nothing in it: no face, no eyes, no glow. The breastplate has one wide jagged rent torn across it from an old blow, and through the rent there is only the same pure black emptiness. The helmet sits crooked, tilted far over to one side on the collar as if listening, as no living neck could hold it. It has the proportions of a tall adult man's armour, with a small helmet, about eight heads tall.",
+  "colours": "blackened iron, dark gunmetal grey, with bright pale steel-white worn edges and rivets, black tarnish and grey dust in the joints, a pure black empty face opening and a pure black rent in the breastplate, a plain shield of blackened iron, dark gunmetal grey, with a dented rim and old leather straps of dark brown.",
   "wears": "It is the armour. There is no cloth on it: no cape, no plume, no tabard, no emblem.",
-  "holds": "On its left arm it carries exactly one shield: a plain, bare, heater-shaped shield of cold dark dented iron-grey steel with nothing painted on it, thrust forward. Its right hand is empty: a steel gauntlet clenched into a fist and drawn back to punch. It holds no sword and no weapon.",
+  "holds": "On its left arm it carries exactly one shield: a plain, bare, heater-shaped shield of dented blackened iron, dark gunmetal grey, with nothing painted on it, thrust forward. Its right hand is empty: a steel gauntlet clenched into a fist and drawn back to punch. It holds no sword and no weapon.",
   "pose": "On two legs, it lunges forward to the left with its front knee bent, driving the plain shield forward on its left arm but held low at its hip so that the torn breastplate is seen, its right arm cocked back at the shoulder with the gauntlet clenched to strike, its crooked open helmet turned straight toward the viewer so the big black empty face opening is plainly seen.",
   "must_show": [
-   "a plain battered full suit of cold dark iron-grey plate armour on two legs",
+   "a plain battered full suit of blackened gunmetal-grey iron plate armour on two legs",
    "the visor raised: a big pure black empty hole where the face would be, no eyes, no glow",
    "a jagged black rent in the breastplate showing emptiness inside",
    "one plain steel shield on the left arm",
@@ -828,7 +829,12 @@
    "copper armour",
    "bronze armour",
    "brown armour",
-   "warm-coloured metal"
+   "warm-coloured metal",
+   "gold armour",
+   "brass armour",
+   "yellow metal",
+   "golden shield",
+   "green-tinted metal"
   ]
  },
  {
@@ -1349,14 +1355,14 @@
   "rank": 1,
   "key": "green",
   "what": "a veiled inquisitor: a living man sent long ago by an authority that no longer exists to hunt heretics, who has gone on alone and made up his own creed, painted seriously as a tall, lean, fanatical, sinister figure. He has realistic adult proportions, a small head and long limbs, about eight heads tall. His face cannot be seen at all: from the brim of his hat hangs a plain, flat, square veil of thick white linen that covers his whole face from brow to chin like a blank page, with nothing on it. On his head is a wide, round, flat-brimmed black hat with a low crown. He wears a long, severe, floor-length cassock and a short shoulder cape. His hands are in black gloves.",
-  "colours": "a long black cassock with a row of small dull dark red buttons, a short shoulder cape of dull dark red, a broad dull dark red sash, a wide black hat, a plain white linen face veil, black gloves and black boots, a scourge with a dark brown wooden handle and three thick knotted ropes of pale bone-white, a round censer of dull brass with orange fire glowing through its holes.",
+  "colours": "a long black cassock with a row of small dull dark red buttons, a short shoulder cape of dull dark red, a broad dull dark red sash, a wide black hat, a plain white linen face veil, black gloves and black boots, a scourge with a dark brown wooden handle and thick tan knotted cords, a round censer of dull brass with orange fire glowing through its holes.",
   "wears": "He wears a wide flat-brimmed black hat, a plain white linen veil hanging from it over his whole face, a long black floor-length cassock buttoned down the front, a short shoulder cape of dull dark red, a broad dull dark red sash at his waist, black gloves and black boots. There is no badge, emblem or symbol on him anywhere.",
-  "holds": "He holds exactly one scourge in his right hand: a short thick dark wooden handle with exactly three thick, heavy ropes of pale bone-white, each as thick as his wrist and only as long as his forearm, spread well apart from one another with dark backdrop between them, and each ending in one knot as big as his fist, raised high so the three ropes hang and swing. In his left hand he holds exactly one censer: a round pierced ball of dull brass as big as his head, hanging close under his fist on one short thick brass chain no longer than his hand, with orange fire glowing through the holes in it and one small curl of grey smoke rising from its top. He holds nothing else.",
-  "pose": "On two legs, he strides forward to the left with a long step, his weight on his front foot and his cassock swinging, his right arm raised high and back with the scourge, its three thick pale knotted ropes swinging apart above his head, his left arm thrust forward and low, swinging the glowing brass censer out ahead of him, his veiled faceless head turned straight at the viewer.",
+  "holds": "He holds exactly one scourge in his right hand: a short thick dark wooden handle with five thick, heavy, knotted tan cords, each as thick as a finger and as long as his arm, raised high so the cords fly out. In his left hand he holds exactly one censer: a round pierced ball of dull brass as big as his head, hanging close under his fist on one short thick brass chain no longer than his hand, with orange fire glowing through the holes in it and one small curl of grey smoke rising from its top. He holds nothing else.",
+  "pose": "On two legs, he strides forward to the left with a long step, his weight on his front foot and his cassock swinging, his right arm raised high and back with the scourge, its thick knotted cords flying out behind above his head, his left arm thrust forward and low, swinging the glowing brass censer out ahead of him, his veiled faceless head turned straight at the viewer.",
   "must_show": [
    "a tall man in a long black cassock with a dark red shoulder cape and sash",
    "a wide flat black hat with a plain white veil hiding his whole face",
-   "one scourge of three thick pale knotted ropes raised in the right hand",
+   "one scourge with thick knotted cords raised in the right hand",
    "one round brass censer with fire glowing in it, swung low on a short chain in the left hand",
    "a living man, not a ghost; no emblem anywhere"
   ],
@@ -1388,16 +1394,9 @@
    "bride's veil",
    "oversized head",
    "cartoon proportions",
-   "rock",
-   "paddle",
-   "fan",
-   "broom",
-   "hand shape",
-   "bundle of many thin strings",
-   "net",
-   "feather duster"
+   "rock"
   ],
-  "lift": 1.2
+  "lift": 1.25
  },
  {
   "id": "xorn",

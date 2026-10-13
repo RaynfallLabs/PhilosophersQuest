@@ -963,7 +963,8 @@
    "brown unburnt wood",
    "chest",
    "locks"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "prometheus_torch",
@@ -1042,7 +1043,8 @@
    "ribbon",
    "bell",
    "tree"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "staff_of_moses",
@@ -1086,7 +1088,8 @@
    "second staff",
    "pale cream toy wood",
    "leather wrap"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "ruyi_jingu_bang",
@@ -1125,7 +1128,8 @@
    "second rod",
    "tassel",
    "thin wand"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "thyrsus",
@@ -1404,7 +1408,8 @@
    "wings",
    "straight blade",
    "open mouth"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "talos_sickle",
@@ -2062,7 +2067,8 @@
    "standard",
    "wooden shaft all the way to the head",
    "arrow feathers"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "spear_of_lugh",
