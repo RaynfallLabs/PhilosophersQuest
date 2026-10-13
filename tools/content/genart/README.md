@@ -564,6 +564,25 @@ and look for the same kind of slip when reviewing.
 - **Eyes at 64 px:** "one round spot of solid bright red light as big as its nose".
 - **A sphinx with a large woman's head gets a woman's bare chest.** Say "the deep
   furred chest of a lion between its front legs" and give it a broad collar.
+- **Crossbow:** "a capital T made of two thick parts: the upright is the stock, the
+  crossbar is the bow, bent in a deep curve with both ends swept far back" draws
+  reliably (upright; the diagonal pose is ignored). "Broad flat bar" gives a mallet.
+- **A thick bow stave:** "a heavy curved beam of timber, as thick as a fence post
+  along its whole length, only seven times as long as it is thick".
+- **Mail mesh at 64 px needs a ring count:** "every ring as big as a man's open
+  hand, only six across the chest, fourteen rows neck to hem".
+- **Templates: use two greys** (dark charcoal hide, bright pale iron hoops) so bands
+  survive every tint.
+- **Oddly coloured meat:** put the colour on the hide or rind; keep the cut face
+  ordinary red or pink with white fat and a bone, or it becomes a vegetable.
+- **A sac** drawn upright with a neck is a potion flask; lying on its side with a
+  limp tied tail it is a sac. A dark mass "seen through the skin" drifts to an eye;
+  an opaque warty skin, longer than tall, drifts to a cucumber.
+- **A glint of light:** "a plus sign: one spike up, one down, one left, one right";
+  "four-pointed star" draws five points.
+- **Place a part by picture position** ("the crossguard exactly at the middle of the
+  picture") when length ratios fail.
+- **Lead: never `git checkout` a briefs file while a batch's edits are uncommitted.**
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
