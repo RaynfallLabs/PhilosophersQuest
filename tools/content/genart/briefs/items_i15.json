@@ -320,7 +320,7 @@
    "thin hairline scythe",
    "two blades"
   ],
-  "lift": 1.25
+  "lift": 0.7
  },
  {
   "id": "spellbook_army_of_darkness",
@@ -1593,12 +1593,12 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "one thin, slim old spellbook, closed: bound in old linen cloth dyed a deep mustard yellow, the brown-yellow of old straw, faded and frayed, stained darker brown along the spine and at all four corners, with the weave of the cloth showing. No metal on it at all. In the middle of the front cover, large and plain, is one single bold emblem: a sun: one round white disc with eight short thick straight white rays all round it, the disc and every ray edged with a thin dark brown line so it stands out from the cloth. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
-  "colours": "Deep mustard-yellow linen, brown-stained at the spine and corners; a white sun edged in dark brown; cream page edges.",
+  "what": "one thin, slim old spellbook, closed: bound in old linen cloth dyed plain yellow, a clear soft yellow like a buttercup that has faded in the sun, with the weave of the cloth showing; the cloth is frayed at the edges and stained pale brown only along the spine and at the very tips of the four corners. No metal on it at all. In the middle of the front cover, large and plain, is one single bold emblem: a sun: one round white disc with eight short thick straight white rays all round it, the disc and every ray edged with a thin dark brown line so it stands out from the cloth. The emblem is simple and big enough to be seen from far away, and the rest of the cover is plain. The block of pages shows cream at the edges.",
+  "colours": "Soft faded yellow linen, plainly yellow, a little brown at the spine and corner tips; a white sun edged in dark brown; cream page edges.",
   "pose": "Closed, the front cover to the viewer, tilted a little so that the spine at the left and the cream page edges at the bottom show.",
   "must_show": [
    "one closed book, spine and page edges showing",
-   "worn mustard-yellow cloth cover, darker at the corners",
+   "worn yellow cloth cover, plainly yellow",
    "white sun with eight rays"
   ],
   "must_not_show": [
@@ -1630,7 +1630,10 @@
    "glossy plastic cover",
    "smooth clean new book",
    "smiling sun",
-   "face"
+   "face",
+   "brown leather cover",
+   "amber cover",
+   "tan cover"
   ]
  },
  {

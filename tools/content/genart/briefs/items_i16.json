@@ -6,11 +6,11 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a magic scroll, drawn thick and bold. It is one fat roll of old parchment, a warm pale tan, mottled and stained darker brown at its edges, as thick as a man's wrist. It is tied round its middle with a broad ribbon of undyed grey-white linen in a bow. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one solid heart shape in deep dark wine red, the colour of a garnet, shaded darker toward its lower point and edged all round with a thick dark brown line, painted with a brush, a little uneven. The sign is the only thing on the sheet; the rest of the sheet is bare.",
-  "colours": "Warm pale tan parchment, brown-stained at the edges; grey-white linen ribbon; one deep dark garnet-red heart with a dark brown edge.",
+  "what": "a magic scroll, drawn thick and bold. It is one fat roll of old parchment, a warm pale tan, mottled and stained darker brown at its edges, as thick as a man's wrist. It is tied round its middle with a broad ribbon of undyed grey-white linen in a bow. The last part of the sheet is unrolled from the roll and lies open and flat as one broad panel, as wide as the roll is long. In the middle of the open panel is one single very large sign that fills most of the panel: one solid heart shape painted in strong true red, the warm bright red of red sealing wax, a little darker red toward its lower point, with one small pale glint at its upper left, and edged all round with a thin dark brown line; painted with a brush, a little uneven. The sign is the only thing on the sheet; the rest of the sheet is bare.",
+  "colours": "Warm pale tan parchment, brown-stained at the edges; grey-white linen ribbon; one strong warm red heart with a thin dark brown edge.",
   "pose": "The roll lies on a diagonal, its lower end at the bottom left corner and its upper end at the top right corner; the open panel of the sheet spreads out flat from the roll toward the lower right, facing the viewer; the whole scroll is inside the picture.",
   "must_show": [
-   "dark red heart sign",
+   "red heart sign, plainly red",
    "linen ribbon",
    "aged tan roll",
    "one fat roll on the diagonal with an open panel",
@@ -41,7 +41,10 @@
    "bright scarlet",
    "glossy cartoon heart",
    "valentine card",
-   "clean white paper"
+   "clean white paper",
+   "black heart",
+   "dark maroon heart",
+   "nearly black heart"
   ]
  },
  {
@@ -960,12 +963,12 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "an ancient scroll kept in its clay jar, drawn thick and bold. A tall plain storage jar of pale dried river clay stands upright: it is twice as tall as it is wide, with straight sides like a length of pipe, a flat bottom, rounded shoulders and a wide open mouth with a thick rim; no handles, no lid. A long black crack runs down its side and its rim is chipped. Standing up out of the open mouth is the top third of one fat roll of brittle dark brown parchment, as thick as a man's wrist, its upper end frayed and crumbling. The jar and the scroll touch and make one shape. There is no writing anywhere.",
-  "colours": "Pale dried river clay, dusty buff-grey, with a black crack; dark brown brittle parchment.",
+  "what": "an ancient scroll kept in its clay jar, drawn thick and bold. A big plain storage jar of pale dried river clay stands upright: it is one and a half times as tall as it is wide, with straight sides, a flat bottom, rounded shoulders and a very wide open mouth with a thick rim, nearly as wide as the jar itself; no handles, no lid. A long black crack runs down its side and its rim is chipped. Standing up out of the wide mouth, and leaning a little to the right, is the upper half of one fat scroll: a thick roll of old parchment as thick as a man's forearm and as long again as the jar's neck is wide, pale tan on its outside, and its top end, turned a little toward the viewer, plainly shows the rolled-up layers as a spiral of dark lines, like the end of a rolled carpet. One loose corner of the sheet curls away from the roll. The roll is much narrower than the mouth, with dark empty space showing inside the mouth beside it. The jar and the scroll touch and make one shape. There is no writing anywhere.",
+  "colours": "Pale dried river clay, dusty buff-grey, with a black crack and a dark inside; a pale tan parchment roll with dark brown spiral lines at its end.",
   "pose": "Standing upright, seen from the front and a little from above; the whole thing is inside the picture.",
   "must_show": [
-   "tall straight-sided clay jar standing upright",
-   "end of a dark brown roll of parchment standing out of its mouth",
+   "big wide-mouthed clay jar standing upright",
+   "a fat pale roll of parchment standing out of its mouth, spiral end showing",
    "plain cracked clay, no handles"
   ],
   "must_not_show": [
@@ -1008,7 +1011,14 @@
    "quiver",
    "arrows",
    "paint brushes",
-   "lid"
+   "lid",
+   "cork",
+   "stopper",
+   "bottle",
+   "narrow neck",
+   "torch",
+   "stick of wood",
+   "cinnamon stick"
   ]
  },
  {

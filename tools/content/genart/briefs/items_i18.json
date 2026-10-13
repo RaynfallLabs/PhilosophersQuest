@@ -275,13 +275,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a piece of black dragon hide with its scales on, lying flat: five huge thick scales overlapping one another like roof tiles, three in the upper row and two in the lower row, the lower ones tucked under the upper ones, so the whole piece is one joined shape like a blunt triangle pointing downward. Every scale is a thick curved plate rounded at its lower edge, jet black like polished coal with one broad white-grey streak of shine across it, and every scale has a thick rim of pale bone-white along its rounded lower edge, so the five scales can be counted. Hard as iron.",
-  "colours": "Jet black scales like polished coal with white-grey streaks of shine, each with a thick pale bone-white lower rim.",
-  "pose": "Lying flat by itself, seen from the front and a little above, the blunt point downward.",
+  "what": "one single huge dragon scale lying flat: a thick curved plate shaped like a broad teardrop, round at the top and coming to a point at the bottom, with one raised ridge down its middle. It is jet black like polished coal, glossy, black in every part, with one broad white-grey streak of shine down the left of the ridge and a faint dull grey shimmer on the right. Its whole rim is a thick band of pale bone-white, chipped along the bottom. Hard as iron, like a plate of black armour.",
+  "colours": "Jet black like polished coal with a white-grey streak of shine, a thick pale bone-white rim.",
+  "pose": "Lying flat by itself, seen from the front and a little above, point downward.",
   "must_show": [
-   "a few big overlapping black scales like roof tiles, one joined piece",
-   "pale bone-white rim on each scale",
-   "white-grey shine"
+   "one teardrop-shaped black scale",
+   "pale bone-white rim",
+   "ridge down the middle"
   ],
   "must_not_show": [
    "dragon",
@@ -313,14 +313,7 @@
    "plastic",
    "blood",
    "dripping",
-   "gore",
-   "seed",
-   "guitar pick",
-   "single plain teardrop",
-   "pine cone",
-   "artichoke",
-   "fish",
-   "snake"
+   "gore"
   ]
  },
  {
@@ -417,13 +410,13 @@
   "body": "item",
   "scale": "small",
   "key": "green",
-  "what": "a witch's tongue kept as a charm, dried flat and hard like a strip of old leather, harmless, seen from directly above and lying flat: one flat tongue, short and very broad, only one and a half times as long as it is wide and the same width all along, with straight level sides, a wide fully rounded tip at the top right, and a straight-cut root end at the bottom left that is just as wide as the rest. One deep black groove runs straight down the middle of it from root to tip, and its top is rough, pebbled and cracked. It is a dull dusky red, the faded red of an old brick, paler and dusty on top, darker at the edges. Near the root a hole is punched through it, and knotted through the hole is a short loop of thick black cord with one small silver bell on it, lying against the tongue. Nothing about it is wet.",
+  "what": "a witch's tongue kept as a charm, dried flat and hard like old leather, harmless, hanging from a cord and seen from the front: one flat tongue, short and very broad, nearly as wide as it is long. Its top edge is cut straight across and is as wide as the rest; its two sides run straight down; its bottom end is one wide, fully rounded tip. One deep black groove runs straight down the middle of it from the top edge almost to the tip, and its surface is rough and pebbled. It is a dull dusky red, the faded red of an old brick, paler and dusty in the middle, darker at the edges. A hole is punched through it near the top edge, and through the hole is knotted a short loop of thick black cord that stands up above it, with one small silver bell tied at the knot. Nothing about it is wet.",
   "colours": "Dull dusky brick red with a black groove, paler dusty highlights; thick black cord; one small bright silver bell.",
-  "pose": "Lying flat on a diagonal, the thread-bound root at the bottom left, the broad rounded tip at the top right.",
+  "pose": "Hanging straight down from its loop of cord, the straight-cut root at the top, the wide rounded tip at the bottom, seen from the front.",
   "must_show": [
-   "short broad flat dull-red tongue with a black centre groove",
-   "wide rounded tip, root just as wide",
-   "black cord and one small silver bell at the root"
+   "short broad flat dull-red tongue with a black centre groove, rounded tip downward",
+   "nearly as wide as long",
+   "loop of black cord and one small silver bell at the top"
   ],
   "must_not_show": [
    "mouth",
@@ -476,7 +469,13 @@
    "finger",
    "candy pink",
    "bottle",
-   "tassel"
+   "tassel",
+   "long narrow strip",
+   "chilli pepper",
+   "salami",
+   "shield",
+   "heart shape",
+   "pointed tip"
   ],
   "family": "trophy_parts",
   "rank": 5
@@ -1826,13 +1825,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "one great poisonous thorn broken from a monstrous plant: a single smooth, thick, strongly curved thorn, bent like a crescent moon, as thick as a thumb at its blunt end and tapering evenly to a needle point, hard and glossy with nothing fixed to it. It is very dark bottle-black along most of its length with a dull olive shine, and only its last quarter, the tip, is bright poison-yellow, glowing a little. Its thick end simply stops in a small flat pale woody break, no wider than the thorn. Bold and stout.",
-  "colours": "Very dark bottle-black with a dull olive shine, a bright poison-yellow glowing tip, a small pale woody broken end.",
+  "what": "one great poisonous thorn broken from a monstrous briar, short and stout: it is only three times as long as its base is wide. It starts from a broad, flared, oval woody base, pale where it was snapped from the stem, and from that base it narrows quickly in one strong hooked curve to a needle-sharp point, a shape like a hooked fang. It is hard and glossy, with nothing fixed to it: dark brown-black over most of its length with a broad pale streak of shine along its outer curve so its shape is clear, and only its last quarter, the tip, is bright poison-yellow, glowing a little. Bold and stout.",
+  "colours": "Dark brown-black thorn with a broad pale grey-tan streak of shine along the outer curve, a bright poison-yellow glowing tip, a pale tan woody base.",
   "pose": "Lying on a diagonal, the broad broken base at the bottom left and the sharp tip at the top right.",
   "must_show": [
-   "one thick smoothly curved dark thorn",
+   "one short stout hooked thorn, broad base narrowing to a point",
    "bright yellow glowing tip",
-   "small pale broken end"
+   "pale woody base"
   ],
   "must_not_show": [
    "several thorns",
@@ -1871,9 +1870,17 @@
    "plastic",
    "blood",
    "dripping",
-   "gore"
+   "gore",
+   "long rod",
+   "vegetable",
+   "courgette",
+   "cucumber",
+   "chilli pepper",
+   "eel",
+   "stalk",
+   "the same width all along"
   ],
-  "lift": 1.4
+  "lift": 1.3
  },
  {
   "id": "void_essence",

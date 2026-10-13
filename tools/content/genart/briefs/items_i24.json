@@ -213,7 +213,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "dish_t1_snack_perception",
@@ -331,19 +332,27 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a small shallow round bowl turned from dark brown walnut wood, plain, scuffed and thick-rimmed, a poor traveller's bowl, full of thick dark brown gravy in which sit three big round pale dumplings, each as wide as a third of the bowl, smooth and cream-white, standing well clear of the gravy. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Dark brown walnut wood bowl. Dark brown gravy, three cream-white dumplings.",
+  "what": "a small shallow round bowl turned from dark brown walnut wood, plain, scuffed and thick-rimmed, a poor traveller's bowl, full to the rim with thick glossy dark brown meat gravy, the wide round pool of gravy plainly seen from above. Three big round boiled bread dumplings sit in the gravy side by side in a triangle, half sunk in it, each nearly a third as wide as the bowl, matt cream-white and a little rough, each flecked with chopped dark green parsley. Dark gravy shows all round them and between them. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Dark brown walnut wood bowl. Wide pool of glossy dark brown gravy, three matt cream-white dumplings flecked with dark green.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "small plain dark wooden bowl",
-   "three big pale round dumplings",
-   "dark brown gravy"
+   "three big pale round dumplings half sunk in gravy",
+   "wide pool of dark brown gravy round them"
   ],
   "must_not_show": [
+   "ice cream",
+   "scoops",
+   "chocolate sauce",
+   "drizzle on top",
+   "cream puffs",
+   "popcorn",
+   "cauliflower",
+   "pleated dumplings",
+   "garlic bulbs",
    "eggs",
    "yolk",
    "meatballs",
-   "herbs",
    "spoon",
    "fork",
    "knife",
@@ -386,14 +395,20 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a small shallow round bowl turned from dark brown walnut wood, plain, scuffed and thick-rimmed, a poor traveller's bowl, holding a stack of three thick flat round discs of hard dark rye crispbread, one on top of the other, the stack rising well above the rim. Each disc is dark grey-brown, coarse and gritty, and studded with pale seeds; the top disc shows its flat round face. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Dark brown walnut wood bowl. Dark grey-brown coarse rye discs, pale seeds.",
+  "what": "a small shallow round bowl turned from dark brown walnut wood, plain, scuffed and thick-rimmed, a poor traveller's bowl, holding one thick round flat loaf of dark rye hearth-bread, as wide as the bowl, lying flat on the bowl like a lid and standing a little above its rim, much wider than it is tall. Its crust is warm dark chestnut brown dusted with pale flour, and two deep straight cuts cross on its top and divide it into four quarters. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Dark brown walnut wood bowl. Warm dark chestnut-brown rye loaf dusted with pale flour.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "small plain dark wooden bowl",
-   "stack of three flat dark rye discs"
+   "one round flat dark rye loaf scored in four quarters"
   ],
   "must_not_show": [
+   "stack",
+   "tower",
+   "stone discs",
+   "millstone",
+   "coins",
+   "grey stone",
    "pancakes",
    "syrup",
    "butter",
@@ -496,15 +511,19 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a squat round cooking pot of rough tawny-brown unglazed fired clay, as wide as it is tall, with a thick rolled rim, a wide open mouth and one small lug handle on each side, full to the rim with deep dark brown broth, the round pool plainly seen from above. One big white knuckle bone stands up out of the middle of the broth, pale barley grains float round it and one dark bay leaf lies on top. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Tawny-brown rough fired clay pot. Deep dark brown broth, one white knuckle bone, pale barley, one dark leaf.",
+  "what": "a squat round cooking pot of rough tawny-brown unglazed fired clay, as wide as it is tall, with a thick rolled rim, a wide open mouth and one small lug handle on each side, full to the rim with deep dark brown broth, the round pool plainly seen from above, with pale barley grains floating on it. One big white knuckle bone stands in the broth leaning far over to the right, so that it sticks out past the rim: a short thick shaft ending in a big knobbly double-knobbed joint twice as wide as the shaft, the plain shape of the end of a leg bone. One dark bay leaf lies on the broth. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Tawny-brown rough fired clay pot. Deep dark brown broth, one white knob-ended knuckle bone leaning right, pale barley, one dark leaf.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "squat tawny clay pot with two lug handles",
    "dark brown broth",
-   "one big white knuckle bone"
+   "one big white knob-ended bone leaning to the right"
   ],
   "must_not_show": [
+   "pestle",
+   "mortar",
+   "straight stick",
+   "mushroom",
    "carrot",
    "meat chunks",
    "spoon",
@@ -1193,15 +1212,20 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a flat round plate of rough tawny-brown unglazed fired clay with a thick raised rim, holding one thick round flat hearth-cake as wide as the plate's middle, baked deep golden yellow, its top scored with eight straight cuts running out from the centre to the edge, and at its centre one round disc of dark red pepper paste. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Tawny-brown rough fired clay plate. Deep golden-yellow cake, one dark red disc at its centre.",
+  "what": "a flat round plate of rough tawny-brown unglazed fired clay with a thick raised rim, holding one round flat loaf baked in the shape of the sun: a thick round middle, and all round its edge twelve short fat pointed rays of dough sticking straight outward like the points of a star, each ray a plain triangle. The whole loaf is baked deep golden brown with paler golden rays, matt and floury, and at its centre sits one round disc of dark red pepper paste a quarter as wide as the loaf. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Tawny-brown rough fired clay plate. Deep golden-brown sun-shaped loaf with paler pointed rays, one dark red disc at its centre.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "flat tawny clay plate",
-   "round golden hearth-cake scored from the centre",
+   "round golden loaf with pointed rays all round its edge",
    "red disc at its centre"
   ],
   "must_not_show": [
+   "pineapple ring",
+   "doughnut",
+   "flower petals",
+   "sunflower",
+   "jam biscuit",
    "pizza",
    "cheese",
    "sliced wedge removed",
@@ -1410,15 +1434,18 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a squat round cooking pot of rough tawny-brown unglazed fired clay, as wide as it is tall, with a thick rolled rim, a wide open mouth and one small lug handle on each side, full to the rim with thick yellow-green lentil pottage, the round pool plainly seen from above. On top of the pottage lies one long dark brown smoked sausage coiled round and round into a flat spiral of three turns, as wide as half the pot. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Tawny-brown rough fired clay pot. Yellow-green pottage, one dark brown coiled sausage.",
+  "what": "a squat round cooking pot of rough tawny-brown unglazed fired clay, as wide as it is tall, with a thick rolled rim, a wide open mouth and one small lug handle on each side, full to the rim with thick yellow-green lentil pottage, the round pool plainly seen from above. On top of the pottage lies one fat smoked sausage bent into a horseshoe, one single open curve with its two blunt ends pointing toward the viewer, glossy reddish-brown, each end tied off with pale string. The horseshoe is as wide as half the pot. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Tawny-brown rough fired clay pot. Yellow-green pottage, one glossy reddish-brown horseshoe sausage with pale string ends.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "squat tawny clay pot with two lug handles",
    "yellow-green pottage",
-   "one sausage coiled in a spiral on top"
+   "one horseshoe-shaped sausage on top"
   ],
   "must_not_show": [
+   "spiral",
+   "coil",
+   "closed ring",
    "snake head",
    "snake",
    "scales",
@@ -1628,15 +1655,19 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a squat round cooking pot of rough tawny-brown unglazed fired clay, as wide as it is tall, with a thick rolled rim, a wide open mouth and one small lug handle on each side, full to the rim with clear pale milk-white broth, the round pool plainly seen from above, pale as moonlight. One thick marrow bone, charred black, lies across the middle of it, and a ring of black peppercorns floats round the edge. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Tawny-brown rough fired clay pot. Pale milk-white broth, one charred black bone, black peppercorns.",
+  "what": "a squat round cooking pot of rough tawny-brown unglazed fired clay, as wide as it is tall, with a thick rolled rim, a wide open mouth and one small lug handle on each side, full to the rim with pale milk-white broth, the round pool plainly seen from above, pale as moonlight. One charred coal-black bone lies flat across the middle of the white broth from left to right, three quarters as wide as the pool: a thick straight shaft with a big round double knob at each end, the plain shape of a bone, black against the white. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Tawny-brown rough fired clay pot. Pale milk-white broth, one coal-black bone with knobbed ends.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "squat tawny clay pot with two lug handles",
    "pale milk-white broth",
-   "one black bone lying across it"
+   "one black bone with a knob at each end lying across it"
   ],
   "must_not_show": [
+   "flat strip",
+   "plank",
+   "stick",
+   "peppercorns",
    "skull",
    "cross",
    "meat",
@@ -1953,18 +1984,21 @@
   "rank": 4,
   "body": "item",
   "scale": "medium",
-  "key": "blue",
-  "what": "a flat round plate of rough tawny-brown unglazed fired clay with a thick raised rim, holding one thick rectangular slice of terrine standing on its long edge, its cut face to the viewer, showing three broad level stripes one above the other: cream at the bottom, pale lilac-grey in the middle, cream at the top. One short sprig of lavender lies beside it. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Tawny-brown rough fired clay plate. Cream and pale lilac-grey striped terrine, one lavender sprig.",
+  "key": "green",
+  "what": "a flat round plate of rough tawny-brown unglazed fired clay with a thick raised rim, holding one big wedge of pale cream cheese cut from a round wheel, standing on its flat bottom with its two cut faces toward the viewer and its pointed tip at the front. A thick tan rind covers its curved back and its top, and one bold level stripe of dusky grey-violet ash runs through the middle of both cut faces from side to side. One short sprig of lavender lies beside it. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Tawny-brown rough fired clay plate. Pale cream cheese, tan rind, one dusky grey-violet stripe, one lavender sprig.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "flat tawny clay plate",
-   "one thick slice of striped terrine",
-   "lilac-grey stripe through its middle"
+   "one big wedge of pale cheese",
+   "one grey-violet stripe through its middle"
   ],
   "must_not_show": [
+   "pink",
+   "layer cake",
+   "frosting",
+   "toast",
    "cake with icing",
-   "cheese holes",
    "brain",
    "spoon",
    "fork",
@@ -2162,7 +2196,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "dish_t3_combo_coldforge",
@@ -2388,15 +2423,19 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, filled by one thick round cake covered all over in hard white rime frosting that sparkles with big sugar crystals. A ring of six short pointed icicles of pale icy blue sugar stands up round the edge of its top like a small crown. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Black cast iron skillet with a pale grey lit rim. Sparkling white frosting, pale icy blue sugar points.",
+  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, filled by one thick round flat-topped cake covered all over in hard white rime frosting, rough with big sugar crystals. Its flat top is bare except for one big snowflake drawn across it in pale icy blue, as wide as the cake: six straight arms spreading evenly from the centre, each arm with two small side twigs. Nothing stands up from the cake. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Black cast iron skillet with a pale grey lit rim. Rough white frosting, one big pale icy blue snowflake on top.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "black iron skillet with one short handle",
    "round white frosted cake",
-   "ring of pale blue sugar points on top"
+   "one big pale blue snowflake on its flat top"
   ],
   "must_not_show": [
+   "icicles",
+   "spikes",
+   "crown",
+   "birthday candles",
    "candles",
    "snowman",
    "berries",
@@ -2825,15 +2864,20 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, holding two thick marrow bones cut straight across and standing on end side by side, each a short fat roasted cylinder of pale browned bone as tall as the skillet's side is high three times over, and in the flat top of each a round pool of glistening golden marrow. A heap of chopped dark parsley lies in front. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Black cast iron skillet with a pale grey lit rim. Pale browned bone, golden marrow pools, dark parsley.",
+  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, holding two short fat marrow bones sawn straight across and standing on end side by side, like two short thick sawn logs, each no taller than it is wide and as wide as a third of the skillet. The bone is ivory white with browned roasted edges, a thick white ring of bone round the top of each, and inside each ring a round pool of glistening dark golden-brown marrow. A heap of chopped dark parsley lies in front. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Black cast iron skillet with a pale grey lit rim. Ivory-white bone browned at the edges, dark golden-brown marrow pools, dark parsley.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "black iron skillet with one short handle",
-   "two short thick marrow bones standing on end",
-   "round golden marrow in the top of each"
+   "two short squat ivory-white marrow bones standing on end",
+   "round dark golden marrow in the top of each"
   ],
   "must_not_show": [
+   "tall tubes",
+   "orange tubes",
+   "carrots",
+   "horns",
+   "bread sticks",
    "candles",
    "skull",
    "long bone",
@@ -3428,16 +3472,20 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, holding one tall raised pie, straight-sided like a drum, as tall as it is wide, with a hard thick crust of dark golden brown. Its flat top has a crimped edge all round and one round hole in the middle, and its straight sides are plain. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Black cast iron skillet with a pale grey lit rim. Dark golden-brown hard pie crust.",
+  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, holding one hand-raised meat pie, round, a little wider than it is tall, its thick hard crust deep golden brown and its sides bulging a little. Its lid is slightly domed, with a thick wavy crimped edge all round like a rope and one small round steam hole in the middle. One wedge, a quarter of the pie, has been cut out of the front, and the cut shows a thick wall of crust and a solid dark brown meat filling under a thin pale layer. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Black cast iron skillet with a pale grey lit rim. Deep golden-brown hard pie crust, dark brown meat filling in the cut.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "black iron skillet with one short handle",
-   "one tall straight-sided raised pie",
-   "round hole in the middle of its lid"
+   "one round raised pie with a crimped lid",
+   "one wedge cut out showing dark meat filling"
   ],
   "must_not_show": [
-   "slice removed",
+   "drum",
+   "barrel",
+   "bucket",
+   "wooden tub",
+   "tall cylinder",
    "sauce",
    "castle towers",
    "X strips",
@@ -3529,7 +3577,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "dish_t3_tri_courage",
@@ -3702,15 +3751,20 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, holding one thick rectangular slice of terrine standing on its long edge, its cut face to the viewer, showing three broad level stripes one above the other: deep blue-black berry at the bottom, bright sky blue in the middle, cream-white at the top. One sharp sky-blue sugar crystal stands on top of it. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Black cast iron skillet with a pale grey lit rim. Blue-black, sky-blue and cream-white striped terrine, one sky-blue crystal.",
+  "what": "a round black cast-iron skillet with low sides, its rim catching the light in pale grey, and one short thick iron handle sticking out to the right, filled by one round open tart: a thick crimped rim of golden-brown pastry all round, and inside it a level filling of whole bilberries, deep indigo blue and glossy, with a few white glints. Three leaf shapes cut from pale cream pastry lie on the middle of the blue filling, their points outward like a three-armed star. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Black cast iron skillet with a pale grey lit rim. Golden-brown pastry rim, deep indigo-blue berry filling, three pale cream pastry leaves.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "black iron skillet with one short handle",
-   "one thick slice of terrine in three stripes",
-   "sky-blue middle stripe"
+   "round open tart with deep blue berry filling",
+   "three pale pastry leaves in the middle"
   ],
   "must_not_show": [
+   "layer cake",
+   "cake slice",
+   "stripes",
+   "crystal",
+   "gem",
    "cake with candles",
    "brain",
    "tentacles",
@@ -4587,15 +4641,21 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing four tall moulded jellies standing in a row, each shaped like a small dome with fluted sides, made of clear glassy sapphire-blue jelly that the light shines through, each with one small white sugar star on its top. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Bright polished silver platter. Clear glassy sapphire-blue jellies, small white stars.",
+  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing four whole poached pears standing upright in a row, touching one another, each a fat pear shape with a round bottom, a narrow neck and one short brown stalk at the top. Every pear is stained all over a deep dark indigo blue by bilberry wine, glossy, with one white glint, and they stand in a shallow pool of dark blue syrup. One pale star-shaped spice pod lies in front. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Bright polished silver platter. Deep dark indigo-blue glossy pears, short brown stalks, dark blue syrup, one pale spice star.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "bright silver oval platter",
-   "four tall clear blue jellies in a row",
-   "a white star on each"
+   "four deep indigo-blue poached pears standing in a row",
+   "a short brown stalk on each"
   ],
   "must_not_show": [
+   "jelly",
+   "jello",
+   "glass domes",
+   "light bulbs",
+   "sky blue",
+   "candy",
    "gems",
    "potion bottles",
    "candles",
@@ -4859,16 +4919,21 @@
   "rank": 6,
   "body": "item",
   "scale": "medium",
-  "key": "blue",
-  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing one great round pie with a smooth golden-brown lid. Cut clean through the middle of the lid is one large opening in the shape of a keyhole, a round hole above with a narrow wedge below it, a third of the pie wide, and through it shows a filling of four colours in bands: gold, emerald, ruby and white. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Bright polished silver platter. Golden-brown pie lid, a keyhole opening showing gold, emerald, ruby and white filling.",
+  "key": "green",
+  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing one great round pie with a smooth golden-brown lid and a thick crimped edge. Cut clean through the middle of the lid is one large opening in the plain shape of a keyhole: a round hole, and joined beneath it a short straight slot that widens a little downward. The opening is a third of the pie wide and it is solid dark purple-black inside, the dark berry filling seen through it, the darkest thing in the picture. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Bright polished silver platter. Golden-brown pie lid, one solid dark purple-black keyhole-shaped opening.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "bright silver oval platter",
    "one round golden pie",
-   "large keyhole-shaped opening in its lid"
+   "one large dark keyhole-shaped opening in its lid"
   ],
   "must_not_show": [
+   "figure",
+   "little man",
+   "chess piece",
+   "coloured bands",
+   "flag",
    "key",
    "lock",
    "metal",
@@ -4915,15 +4980,22 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, covered with a pool of glossy sauce black as ink, and sitting in the pool four large round steamed dumplings in a row, each smooth and snow-white, each pinched at the top into a little twisted knot. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Bright polished silver platter. Glossy ink-black sauce, four snow-white dumplings.",
+  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, covered with a wide pool of glossy sauce black as ink. Sitting in the pool are four large round steamed dumplings in a heap, three side by side and one resting on top of them, each as wide as a quarter of the platter, snow-white and matt, its dough gathered in many fine pleats that run up to a little twisted knot at its top, like a tied money-bag. Nothing is poured over them; the black sauce is only underneath. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Bright polished silver platter. Snow-white pleated dumplings, glossy ink-black sauce under them.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "bright silver oval platter",
-   "four snow-white round dumplings in a row",
+   "four snow-white pleated dumplings with knotted tops, heaped",
    "pool of black sauce under them"
   ],
   "must_not_show": [
+   "ice cream",
+   "scoops",
+   "chocolate sauce",
+   "drizzle on top",
+   "cream puffs",
+   "flat row",
+   "garlic bulbs",
    "ghosts",
    "faces",
    "skulls",
@@ -5025,14 +5097,24 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing one large round flat pinwheel loaf standing a little tilted so that its round face is toward the viewer. The face is one bold spiral of two doughs wound together, one very dark chocolate-brown and one pale cream, four full turns from the centre to the edge. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Bright polished silver platter. Very dark chocolate-brown and pale cream spiral loaf.",
+  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing one very fat short twisted loaf that covers the platter, lying on a slant with one end at the lower left and the other at the upper right, half as thick as it is long and standing high above the rim. It is made of two enormous ropes of dough wound round each other in only three big bulging turns, one rope of very dark near-black rye and the other of pale cream wheat, so that the loaf shows six fat bulges, dark and pale by turns. The crust is matt and floury. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Bright polished silver platter. One fat loaf twisted of near-black rye and pale cream wheat, in big alternating bulges.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "bright silver oval platter",
-   "one round loaf with a bold dark-and-pale spiral face"
+   "one fat twisted loaf with big dark and pale bulges by turns"
   ],
   "must_not_show": [
+   "thin braid",
+   "long thin loaf",
+   "rope",
+   "baguette",
+   "spiral",
+   "roll cake",
+   "swiss roll",
+   "cream filling",
+   "chocolate",
+   "cut face",
    "snail",
    "shell",
    "lollipop stick",
@@ -5459,16 +5541,20 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing a tall stack of five thick round honey cakes, one on top of the other, each smaller than the one below, bright golden yellow, with shining gold honey running down the sides. One sprig of three dark bay leaves stands on the top cake. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Bright polished silver platter. Bright golden-yellow honey cakes, shining gold honey, dark bay leaves.",
+  "what": "a broad oval feast platter of bright polished silver with a thick raised beaded rim, bearing a low stack of three big round honey cakes, one on top of the other, each a thick flat disc like a wheel of cheese and each a little narrower than the one below, the whole stack wider than it is tall. The cakes are baked deep amber-brown with darker brown flat tops, and thick shining gold honey runs down their sides in long drops. On the flat top of the top cake sits one square chunk of pale yellow honeycomb. There are no leaves anywhere. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Bright polished silver platter. Deep amber-brown honey cakes, shining gold honey, one pale yellow honeycomb chunk.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "bright silver oval platter",
-   "tall stack of golden honey cakes",
-   "honey running down",
-   "bay sprig on top"
+   "low stack of three round amber-brown honey cakes",
+   "one honeycomb chunk on top"
   ],
   "must_not_show": [
+   "pineapple",
+   "leaves on top",
+   "green sprig",
+   "tall tower",
+   "fruit",
    "candles",
    "pancakes with butter",
    "berries",
@@ -5789,16 +5875,21 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a wide round feast bowl of bright polished silver standing on a short round silver foot, with a thick beaded rim, full to the rim with thick snow-white chowder, the round pool plainly seen from above. A ring of six open mussel shells, shining blue-black, stands round the edge with their points up, and in the middle rises one tall soft peak of white whipped cream. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Bright polished silver bowl. Snow-white chowder, shining blue-black mussel shells, a white cream peak.",
+  "what": "a wide round feast bowl of bright polished silver standing on a short round silver foot, with a thick beaded rim, full to the rim with thick snow-white chowder, the round pool plainly seen from above. A ring of six open mussel shells, shining blue-black, stands round the edge with their points up, and in the middle of the chowder sits one big round white fish dumpling, rough and matt like a snowball, half sunk, dusted with coarse white salt. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Bright polished silver bowl. Snow-white chowder, shining blue-black mussel shells, one round white dumpling like a snowball.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "bright silver footed bowl",
    "snow-white chowder",
    "ring of dark mussel shells",
-   "white peak in the middle"
+   "one round white snowball dumpling in the middle"
   ],
   "must_not_show": [
+   "whipped cream",
+   "cream swirl",
+   "ice cream",
+   "pointed peak",
+   "meringue",
    "ice cubes",
    "snowman",
    "fish head",
@@ -6619,15 +6710,20 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a broad round platter of polished yellow gold, its thick raised rim set all round with large round dark red garnets, a vessel fit for a legend, bearing one very large whole cooked lobster lying across it from left to right, bright orange-red, its two great claws reaching forward at the left and its fanned tail at the right,, on a bed of dark green kelp. Pale golden-yellow lemon halves lie round it. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Polished yellow gold platter set with dark red garnets. Bright orange-red lobster, dark green kelp, pale golden-yellow lemon halves.",
+  "what": "a broad round platter of polished yellow gold, its thick raised rim set all round with large round dark red garnets, a vessel fit for a legend, bearing one enormous whole boiled lobster that covers the platter from end to end, seen from above, its body lying on a diagonal with its fanned tail at the lower right and its two huge fat claws raised and spread wide at the upper left, each claw as big as the lobster's body. The whole lobster is one bright orange-red, glossy, with paler orange edges. Under it shows only the bare gold of the platter and a little dark green kelp at its sides. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Polished yellow gold platter set with dark red garnets. One bright orange-red lobster, a little dark green kelp.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "jewelled gold platter",
-   "one large whole orange-red lobster",
-   "bed of dark green kelp"
+   "one enormous whole orange-red lobster with two huge claws"
   ],
   "must_not_show": [
+   "lemon",
+   "lemon slices",
+   "salad",
+   "small lobster",
+   "crab",
+   "shrimp",
    "tentacles",
    "sea monster",
    "eyes on stalks drawn large",
@@ -6841,15 +6937,19 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a wide round bowl of polished yellow gold standing on a short round gold foot, its side set with a row of five large round dark red garnets, a vessel fit for a legend, full to the rim with clear amber-brown broth, the round pool plainly seen from above. Standing upright in the middle of the broth is one big floret shaped like a tree: a thick pale trunk and a wide round crown of dark leafy green, rising well above the rim. Three pale root pieces lie in the broth round its foot. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "what": "a wide round bowl of polished yellow gold standing on a short round gold foot, its side set with a row of five large round dark red garnets, a vessel fit for a legend, the bowl the biggest thing in the picture and nearly as wide as the picture, full to the rim with clear amber-brown broth, the wide round pool plainly seen from above. Standing upright in the middle of the broth is one short stout floret shaped like a little tree, no taller than the bowl is wide: a very thick pale stalk for a trunk and a wide round crown of dark leafy green as wide as half the bowl. Three thick pale root pieces and three small round golden dumplings float in the broth round its foot. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
   "colours": "Polished yellow gold bowl set with dark red garnets. Amber-brown broth, a pale trunk with a round dark green crown, pale roots.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
-   "jewelled gold footed bowl",
-   "one tree-shaped green floret standing upright in the broth",
-   "amber-brown broth"
+   "jewelled gold footed bowl, wide",
+   "one short stout tree-shaped green floret standing in the broth",
+   "amber-brown broth with pale roots floating"
   ],
   "must_not_show": [
+   "tall thin trunk",
+   "potted plant",
+   "bonsai",
+   "small bowl",
    "real tree with branches",
    "serpent",
    "apples",
@@ -7061,14 +7161,18 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a bowl of Apocalypse Pottage: a squat round cauldron-bowl of black iron, its whole outside clad in overlapping long pointed plates of polished gold like the wing-cases of locusts, with a thick gold rim. It is full to the rim with thick pottage glowing deep amber, the round pool plainly seen from above, with one narrow slit of white-hot light across its middle. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Black iron clad in polished gold plates, glowing deep amber pottage, one white-hot slit.",
+  "what": "a bowl of Apocalypse Pottage: a squat round cauldron-bowl of black iron, its whole outside clad in overlapping long pointed plates of polished gold like the wing-cases of locusts, with a thick gold rim. It is full to the rim with thick dark crimson-red bean pottage, the round pool plainly seen from above, deep red and matt, quite unlike the gold, with whole dark beans showing in it and one narrow slit of white-hot yellow light across its middle from left to right. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Black iron clad in polished gold plates. Thick dark crimson-red pottage, one narrow white-yellow glowing slit.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "black bowl clad in overlapping gold plates",
-   "glowing amber pottage inside"
+   "dark crimson-red pottage inside",
+   "one narrow glowing slit across it"
   ],
   "must_not_show": [
+   "empty bowl",
+   "liquid gold",
+   "molten gold",
    "insects",
    "locust",
    "wings spread",
@@ -7276,7 +7380,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "dish_trophy_fafnir",
@@ -7612,7 +7717,8 @@
    "blood",
    "dripping",
    "gore"
-  ]
+  ],
+  "lift": 1.2
  },
  {
   "id": "dish_trophy_surtur",
@@ -7621,14 +7727,21 @@
   "body": "item",
   "scale": "medium",
   "key": "blue",
-  "what": "a loaf of Lavabread: one big round domed loaf sitting on a rough flat slab of black basalt. The crust of the loaf is coal-black and rough like cooled lava, and it is split by five wide jagged cracks running down from the top, and every crack glows bright orange with yellow-white at its heart, like molten rock. The glow lights the edges of the crust beside each crack. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
-  "colours": "Coal-black crust, wide cracks glowing bright orange and yellow-white, black basalt slab.",
+  "what": "a loaf of Lavabread: one big round loaf, wider than it is tall, a low rough lumpy dome with a flat bottom, sitting by itself with nothing under it. Its crust is coal-black and rough like cooled lava, and it is torn open by three wide jagged branching cracks like forked lightning, each crack wider than a finger, and every crack glows bright orange with yellow-white at its heart, like molten rock. The glow lights the lumpy black crust beside each crack in dull red. Hand-made medieval cooking, hearty and appetising, the whole dish wholly inside the picture.",
+  "colours": "Coal-black lumpy crust lit dull red beside the cracks; wide jagged cracks glowing bright orange and yellow-white.",
   "pose": "Standing upright, seen from the front and a little from above.",
   "must_show": [
    "round coal-black loaf",
-   "wide glowing orange cracks all over it"
+   "wide jagged glowing orange cracks"
   ],
   "must_not_show": [
+   "slab",
+   "plate",
+   "brim",
+   "hat",
+   "helmet",
+   "straight ribs",
+   "segments",
    "flames above it",
    "smoke",
    "volcano",
