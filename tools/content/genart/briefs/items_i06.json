@@ -2651,15 +2651,15 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "one single scale shed by a dragon as old as the world, so large that it is worn on the back as a cloak: one enormous thick rigid plate of dark green horn, a little taller than it is wide, broad and rounded across the top, its two sides curving down to meet in one blunt point at the bottom. Down its middle, from the top to the point, runs one thick raised keel ridge. On each side of the keel the surface is marked with four broad curved growth bands, one inside the other, each following the outer edge of the scale, like the rings on a plate of a tortoise's shell. It is hard as stone, with no folds anywhere, and its thick rim has two chips broken out of it. At the very top a short chain of three big bronze links with one round bronze brooch is fixed to it.",
-  "colours": "Very dark bottle-green horn with bright emerald-green highlights along the keel, the growth bands and the rim, and a glassy pale green shine; a bright bronze chain and brooch.",
-  "pose": "Seen from the front, upright as if hung in the air by its chain, the rounded edge at the top and the blunt point at the bottom.",
+  "what": "a cape made of one single scale shed by a dragon as old as the world: one enormous thick rigid curved plate of dark green horn, worn on the back. It is as wide as a man's shoulders at its straight top edge, grows wider as it goes down, and ends in one broad rounded bottom edge, so that its outline is a bell. It is one unbroken piece with no joints and no seams. Down its middle, from the top edge to the bottom edge, runs one thick raised keel ridge, and on each side of the keel three shallow straight grooves fan out from the top toward the bottom edge. Its surface is glossy like polished stone. It is hard as stone, with no folds anywhere, and its thick bottom rim has two chips broken out of it. Across the top edge runs a chain of big bronze links with one round bronze brooch at each end.",
+  "colours": "Very dark bottle-green horn with bright emerald-green highlights along the keel, the grooves and the rim, and a glassy pale green shine; a bright bronze chain and two bronze brooches.",
+  "pose": "Seen from the front, upright as if hung in the air, the straight edge with its chain at the top and the broad rounded edge at the bottom.",
   "must_show": [
-   "one single huge dragon scale",
-   "rounded top and blunt point at the bottom",
+   "one single huge dragon scale worn as a cape",
+   "bell-shaped outline, wider at the bottom",
    "one keel ridge down the middle",
-   "curved growth bands",
-   "bronze chain at the top"
+   "glossy dark green horn",
+   "bronze chain across the top"
   ],
   "must_not_show": [
    "many scales",
@@ -2708,7 +2708,15 @@
    "drapery",
    "many small scales",
    "leather strap",
-   "tortoise"
+   "tortoise",
+   "turtle shell",
+   "shell plates",
+   "hexagons",
+   "pendant",
+   "jewel",
+   "amulet",
+   "seed pod",
+   "beetle"
   ]
  },
  {

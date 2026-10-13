@@ -1112,9 +1112,9 @@
   "rank": 4,
   "body": "item",
   "scale": "medium",
-  "key": "magenta",
-  "what": "a Thracian skirmisher's light wicker shield in the shape of a crescent. It is much wider than it is tall. Its bottom edge is one long smooth curve like the bottom of a bowl. Its top edge is not straight: one big half-round bite, half as wide as the whole shield, has been taken out of the middle of the top, and on each side of the bite the shield ends in one rounded horn pointing straight up, the two horns far apart. So it has two rounded horns at the top and a round belly at the bottom, with no points and no corners below. The whole shield is woven of thick willow rods in a bold basket weave, each rod as thick as a finger, with dark gaps between them, bound all round the edge with a broad strip of dark chestnut leather, and in the middle of its belly is fixed one round domed bronze boss as big as a fist.",
-  "colours": "Warm honey-brown wicker like an old basket, golden on the top of each rod and deep brown in the gaps of the weave; a dark chestnut leather edge; one bright bronze boss.",
+  "key": "blue",
+  "what": "a Thracian skirmisher's light wicker shield in the shape of a crescent. It is much wider than it is tall. Its bottom edge is one long smooth round curve like the bottom of a bowl, with no point anywhere. Its top edge is not straight: one big half-round bite, half as wide as the whole shield, has been taken out of the middle of the top, and on each side of the bite the shield ends in one rounded horn pointing straight up, the two horns far apart. So it has two rounded horns at the top and a broad round belly at the bottom. The whole shield is woven of thick willow rods in a bold basket weave, each rod as thick as a finger, with dark gaps between them, bound all round the edge with a broad strip of dark chestnut leather, and in the middle of its belly is fixed one round domed boss of yellow brass as big as a fist.",
+  "colours": "Warm honey-brown wicker like an old basket, golden on the top of each rod and deep brown in the gaps of the weave; a dark chestnut leather edge; one boss of bright warm yellow-brown brass like a polished brass door-knob.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
    "one crescent shield with two horns pointing up",
@@ -1158,7 +1158,13 @@
    "animal hide",
    "black and white patch",
    "cream",
-   "pale straw"
+   "pale straw",
+   "green boss",
+   "green gem",
+   "green",
+   "notch",
+   "small square notch",
+   "tapering to a point"
   ]
  },
  {
@@ -1880,13 +1886,13 @@
   "body": "item",
   "scale": "large",
   "key": "blue",
-  "what": "the goddess Athena's polished shield, the one lent to Perseus as a mirror: a large round shield, a perfect circle, gently domed, of pale silver-bronze polished until it shines like a mirror. The middle is completely smooth and blank and shows only reflected light: its upper left half is bright white-gold, its lower right half is deep shadowed bronze-brown, the two divided by one soft curved edge, and near the upper left sits one sharp glint of white light in the shape of a plus sign: one spike up, one down, one left, one right. Round the edge runs a broad raised rim of darker old bronze, as wide as a hand, set with twelve big round bright studs spaced evenly all round.",
-  "colours": "Pale bright silver-bronze, white-gold where the light falls and deep warm brown in the shadowed half; a darker old bronze rim with bright golden studs.",
+  "what": "the goddess Athena's polished shield, the one lent to Perseus as a mirror: a large round shield, a perfect circle, gently domed, of pale silver-bronze polished until it shines like a mirror. The middle is completely smooth and blank and shows only reflected light: it is brightest white-gold in the centre and shades smoothly to deep warm bronze toward the rim, and across it, slanting from the upper left to the lower right, lie two broad straight streaks of pure white light, side by side, like sunlight on a window pane. Near the upper left sits one sharp glint of white light in the shape of a plus sign: one spike up, one down, one left, one right. Round the edge runs a broad raised rim of darker old bronze, as wide as a hand, set with twelve big round bright studs spaced evenly all round.",
+  "colours": "Pale bright silver-bronze, white-gold in the middle and deep warm bronze-brown toward the rim, with pure white streaks of light; a darker old bronze rim with bright golden studs.",
   "pose": "Seen from the front, upright, its face flat towards the viewer, the whole shield inside the picture.",
   "must_show": [
    "one round mirror-bright shield",
-   "smooth blank middle with a bold reflection",
-   "one plus-shaped glint",
+   "smooth blank middle",
+   "two slanting streaks of white light",
    "broad dark bronze rim with round studs"
   ],
   "must_not_show": [
@@ -1921,7 +1927,14 @@
    "wreath",
    "leaves",
    "cloud bands",
-   "stripes"
+   "stripes",
+   "half white and half dark",
+   "split down the middle",
+   "half moon",
+   "yin and yang",
+   "porthole",
+   "window frame",
+   "glass"
   ]
  },
  {

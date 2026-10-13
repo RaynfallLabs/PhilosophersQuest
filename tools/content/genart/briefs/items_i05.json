@@ -428,7 +428,8 @@
    "buckles",
    "rubber",
    "bandaged feet"
-  ]
+  ],
+  "pieces": 2
  },
  {
   "id": "padded_boots",
@@ -517,7 +518,8 @@
    "biker boots",
    "modern boots",
    "brown leather shoes"
-  ]
+  ],
+  "pieces": 2
  },
  {
   "id": "plate_boots",
@@ -603,13 +605,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a pair of plain woollen gloves with nobody in them: soft thick five-fingered gloves of coarse woven wool dyed a dull blue, with short stubby fingers, a bold line of pale stitching down the back of each hand, and a wide turned-back cuff of pale undyed wool. They are plainly cloth gloves and plainly blue, never the colour of skin.",
-  "colours": "Dull dusty woad-blue wool, the blue of a faded peasant's tunic, with dark blue shadows in the creases; pale cream stitching and pale cream cuffs.",
+  "what": "a pair of plain medieval woollen gloves with nobody in them: soft thick five-fingered gloves of coarse heavy woven wool, with short stubby fingers, a bold seam down the back of each hand, and a short cuff bound with a darker band. They are plainly cloth gloves, grey-blue, never the colour of skin.",
+  "colours": "Dull slate blue-grey wool, the colour of a rain cloud, with dark blue-grey shadows in the creases; the cuff bands are dark walnut-brown.",
   "pose": "Seen from the back of the hand, the two gloves upright side by side and touching, fingers pointing up and thumbs outward, the wrist openings at the bottom dark and empty.",
   "must_show": [
    "a pair of two cloth gloves",
-   "dull blue wool",
-   "pale cuffs",
+   "dull slate grey-blue wool",
+   "dark cuff bands",
    "empty"
   ],
   "must_not_show": [
@@ -639,7 +641,14 @@
    "fingernails",
    "beige gloves",
    "flesh colour",
-   "rubber gloves"
+   "rubber gloves",
+   "bright blue",
+   "royal blue",
+   "cobalt",
+   "white cuffs",
+   "knitted ribbing",
+   "ski gloves",
+   "modern gloves"
   ]
  },
  {
@@ -1170,14 +1179,14 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a heavy northern fur cloak with nobody inside it and no sleeves and no hood: one sheet of thick shaggy brown bear fur that falls straight down from the shoulders to the hem, wide at the shoulders and a little wider still at the ragged hem, its two side edges perfectly straight and unbroken from shoulder to hem with nothing sticking out of them. The two front edges meet down the middle from throat to hem. A very thick collar of long pale cream fur lies across both shoulders, fastened at the throat by one round bronze brooch. The fur is long and coarse and hangs in tufts. Above the collar there is only a dark empty neck opening.",
-  "colours": "Dark chestnut-brown shaggy fur with darker brown shadows between the tufts; a broad pale cream fur collar; one dull bronze brooch.",
-  "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
+  "what": "a heavy northern fur cloak seen from behind, hanging flat with nobody inside it: the back of the cloak, one single unbroken sheet of thick shaggy brown bear fur in the shape of a tall trapezoid, narrow at the top and twice as wide at the ragged bottom edge, its two side edges straight slanting lines from top to bottom with nothing sticking out of them. The sheet has no opening down it, no front edges, no fastening. Across the narrow top lies the collar, one thick roll of long pale cream fur as wide as the top of the cloak. The fur is long and coarse and hangs in tufts.",
+  "colours": "Dark chestnut-brown shaggy fur with darker brown shadows between the tufts; one broad pale cream fur collar across the top.",
+  "pose": "Seen from directly behind, upright, as if hung in the air by its collar, perfectly symmetrical.",
   "must_show": [
    "one empty fur cloak",
    "shaggy brown fur all over",
-   "thick pale fur collar",
-   "straight unbroken sides, no sleeves"
+   "thick pale fur collar across the top",
+   "a plain trapezoid with straight sides, no sleeves"
   ],
   "must_not_show": [
    "hood",
@@ -1212,7 +1221,14 @@
    "sleeve openings",
    "buttons",
    "pockets",
-   "lapels"
+   "lapels",
+   "jacket",
+   "front opening",
+   "white stripe down the middle",
+   "zip",
+   "brooch",
+   "shoulders with arms",
+   "rug with a head"
   ]
  },
  {
@@ -2174,13 +2190,13 @@
   "rank": 2,
   "body": "item",
   "scale": "large",
-  "key": "magenta",
-  "what": "a vest made from the pelt of a gnoll, a hyena-man, with nobody inside it: a short, wide, sleeveless vest of coarse shaggy fur, dull tawny grey-brown all over like the coat of a wolf, scattered unevenly with many small black spots, each no bigger than a thumbnail, with a stiff upright ridge of long black mane hair running across the shoulders as a collar, laced down the middle of the front with dark thong, and a ragged uneven bottom edge at the hips. It is only the vest: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
-  "colours": "Dull tawny grey-brown fur, the dusty brown of a wild dog's coat, darker brown in the shadows, with small scattered black spots; a black mane collar; dark brown thong lacing.",
+  "key": "blue",
+  "what": "a vest made from the pelt of a gnoll, a hyena-man, with nobody inside it: a short, wide, sleeveless vest of coarse shaggy fur, warm sandy tan-brown all over like the coat of a lion, scattered unevenly with many small black spots, each no bigger than a thumbnail, with a stiff upright ridge of long black mane hair running across the shoulders as a collar, laced down the middle of the front with dark thong, and a ragged uneven bottom edge at the hips. The fur is plainly animal fur, long and tufted, with no pockets. It is only the vest: an empty shell, flat as if pinned to a wall. Each armhole is a plain dark empty hole and the neck is a dark empty hole.",
+  "colours": "Warm sandy tan-brown fur, the colour of a lion's coat, darker brown in the shadows, with small scattered black spots; a black mane collar; dark brown thong lacing.",
   "pose": "Seen from the front, upright, as if hung in the air, perfectly symmetrical.",
   "must_show": [
    "one empty fur vest",
-   "tawny grey-brown fur with small black spots",
+   "sandy tan-brown fur with small black spots",
    "black mane collar",
    "laced front"
   ],
@@ -2229,7 +2245,15 @@
    "white fur",
    "cream fur",
    "big brown blotches",
-   "dalmatian"
+   "dalmatian",
+   "green",
+   "olive",
+   "khaki",
+   "canvas",
+   "pockets",
+   "fishing vest",
+   "army vest",
+   "cloth"
   ]
  },
  {

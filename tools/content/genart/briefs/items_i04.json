@@ -896,15 +896,14 @@
   "body": "item",
   "scale": "medium",
   "key": "magenta",
-  "what": "a god-smith's throwing net forged of golden bronze chain, spread open like a fan. At the bottom left corner of the picture its chains are gathered into one thick knot with a short loop for the hand. From the knot the net opens out towards the top right into one wide flat fan, a quarter of a circle. The net is a very coarse open lattice of thick chains: only five chains fan out from the knot and only four chains cross them, every chain as thick as a thumb, so that the net is nothing but a few big diamond-shaped holes, each hole as wide as an apple, and there is far more hole than chain. The backdrop shows plainly through every hole. Along the wide curved outer edge hang six round bronze ball weights, each as big as an apple.",
-  "colours": "Bright warm yellow-brown bronze chain like a polished brass door-knob, with dark brown shadows; bright bronze ball weights.",
-  "pose": "It lies flat, seen from above: the knot at the bottom left corner, the fan of mesh spreading to the top right, the whole net inside the picture.",
+  "what": "a god-smith's throwing net made of fine silver chain: one net gathered up into a single bundle, bunched together at the top where its edges are drawn into one thick knot with a short loop, and spreading below into a wide heap of hanging folds like a gathered curtain. The mesh is a bold open diamond lattice of bright silver chain, with the dark gaps of the mesh showing clearly, and a row of small round silver weights hangs along its bottom edge.",
+  "colours": "Bright silver-white chain with pale grey shadows and dark gaps between the strands; small silver ball weights.",
+  "pose": "It is seen from the front and a little from above: the knot at the top of the picture, the folds of mesh spreading down and out below it, the whole net inside the picture.",
   "must_show": [
-   "one net",
-   "a few thick chains crossing, with big open holes and the backdrop showing through",
-   "golden bronze chain",
-   "a knot at the bottom left and a fan spreading to the top right",
-   "ball weights along the outer edge"
+   "one net gathered in a bundle",
+   "open diamond mesh with dark gaps",
+   "bright silver chain",
+   "small round weights along the edge"
   ],
   "must_not_show": [
    "hand",
@@ -925,26 +924,7 @@
    "hammock",
    "second net",
    "anvil",
-   "gold",
-   "dress",
-   "skirt",
-   "gown",
-   "ghost",
-   "tassel",
-   "solid cloth",
-   "veil",
-   "curtain",
-   "green patina",
-   "silver",
-   "fine mesh",
-   "woven cloth",
-   "fan",
-   "leaf",
-   "racket",
-   "lute",
-   "pan",
-   "solid surface",
-   "wicker"
+   "gold"
   ]
  },
  {
