@@ -1271,11 +1271,11 @@
   "rank": 3,
   "key": "blue",
   "body": "shapeless",
-  "what": "a lesser aboleth: a young one of an ancient race of deep-sea horrors, one long, heavy, slimy fish, a real primeval fish like a huge catfish crossed with an eel, drawn large. It has a broad, tall, blunt armoured head with a high flat forehead, a wide downturned mouth lined with small teeth, a thick body that tapers to a long flat eel's tail with a ragged fin along its top and bottom, and a low ridged fin down its back. Along the side of its big head, in one straight row from the snout back toward the gills, are three big round glowing red eyes, one behind another, all the same size, each a round spot of solid bright red light as big as a fist, with dark skin between them. From just behind its head grow four long thick tentacles, like the arms of an octopus without suckers, that trail and coil. Its skin is wet and glistening with slime.",
-  "colours": "dark murky olive-grey skin on the back mottled with black, a pale sickly grey-cream belly, three bright red eyes, dark olive-grey tentacles with pale grey-cream undersides, wet pale highlights.",
+  "what": "a lesser aboleth: a young one of an ancient race of deep-sea horrors, one long, heavy, slimy fish, a real primeval fish like a huge catfish crossed with an eel, drawn large. It has a broad, tall, blunt armoured head with a high flat forehead, a wide downturned mouth lined with small teeth, a thick body that tapers to a long flat eel's tail with a ragged fin along its top and bottom, and a low ridged fin down its back. Its face has no ordinary pair of eyes. Instead a column of three big round glowing red eyes runs straight down the middle of its high forehead, one above another: the top eye near the crown of its head, the second eye directly beneath it, the third eye directly beneath that, just above the mouth. The three eyes are the same size, each as big as a fist, bright red, and they touch nothing but the dark skin between them. From just behind its head grow four long thick tentacles, like the arms of an octopus without suckers, that trail and coil. Its skin is wet and glistening with slime.",
+  "colours": "dark murky olive-grey skin on the back mottled with black, a pale sickly grey-cream belly, three bright red eyes, dark olive-grey tentacles with pale grey-cream undersides, wet pale highlights, strings of pale grey-green slime hanging from the tentacles.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It holds nothing; its tentacles are empty.",
-  "pose": "Seen from the side, facing left: its long body swims through empty air in a slow S curve with nothing under it, the big blunt head at the left with the mouth a little open and the row of three red eyes along its side plainly seen; two tentacles reach forward past the snout and two trail back along its body, and the flat eel tail curves up at the right.",
+  "pose": "Its long body swims to the left through empty air in a slow S curve with nothing under it, but its big head is turned to face the viewer, so that the whole forehead shows with the column of three red eyes one above another down its middle, the mouth open beneath them; two tentacles reach forward and two trail back along its body, and the eel tail curves up at the right.",
   "must_show": [
    "one long heavy fish with an eel's tail",
    "three red eyes in a column, one above another, down the middle of the forehead, readable in the small sprite",
@@ -1313,13 +1313,7 @@
    "eyes side by side in a level row",
    "frog",
    "toad",
-   "frog legs",
-   "blood",
-   "red drool",
-   "dripping slime",
-   "octopus body",
-   "face seen from the front",
-   "onion-shaped head"
+   "frog legs"
   ]
  },
  {

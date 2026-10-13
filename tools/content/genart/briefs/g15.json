@@ -150,7 +150,8 @@
    "gentleman with a face",
    "second head",
    "head held up high"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "nightshade_spawn",
@@ -980,7 +981,8 @@
    "rock",
    "sun disc",
    "dung ball"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "stirge_swarm",
@@ -1101,7 +1103,8 @@
    "dry surface",
    "hard sharp corners",
    "wall"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "troll_brute",
@@ -1265,7 +1268,8 @@
    "broom",
    "bright lime-green skin",
    "short snub nose"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "vampire_thrall",
@@ -1445,6 +1449,7 @@
    "cartoon proportions",
    "short stubby body",
    "rock"
-  ]
+  ],
+  "lift": 1.35
  }
 ]
