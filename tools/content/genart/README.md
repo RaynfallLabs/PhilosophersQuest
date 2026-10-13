@@ -600,6 +600,24 @@ and look for the same kind of slip when reviewing.
 - **Eyestalks need a thickness and a small count** ("seven, each as thick as an arm").
 - **Gorgon as monster:** "the gorgon mask from an old Greek shield", hunched, claws
   thrust out; skirt "whole and closed all the way round, hides both legs".
+- **Dulled green skin on a blue backdrop is lost** ("pond scum", "sage" drew living
+  people). On magenta, "dark pond-weed green, plainly green, a green no living person
+  has" drew green skin.
+- **A flame in the hand:** "the whole hand is wrapped in fire, like the head of a
+  burning torch; he holds no candle, no torch, no stick". "A candle flame rising from
+  the palm" draws a candle.
+- **A skull carried in the hand turns the carrier's face into a skull** unless the
+  face's soft parts are listed (nose, ears, eyelids, lips).
+- **A beast-man "covered in hide" with a bare chest is a grey bodybuilder.** Armour
+  the chest and name the hide patches on face, forearm and thighs.
+- **"Coal-black lava rock; it is rock and not skin"** stops a fire giant coming out
+  as a brown-skinned man.
+- **Crown:** "low, flat-topped, shaped like a drum, with bull's horns from its sides".
+  "Cone-shaped crown" is a wizard's hat.
+- **A sober lion:** "tawny straw-gold with a dull sheen" and a near-black mane;
+  "burnished gold" gives orange.
+- **A pale hooded coat with red drifts toward a trademarked game assassin**; check
+  each candidate.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
