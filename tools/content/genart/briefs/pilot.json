@@ -262,8 +262,8 @@
   "family": "skeleton",
   "rank": 5,
   "key": "green",
-  "what": "a burning skeleton: a human skeleton in which every single bone is burnt black and cracked with glowing ember-orange lines: the skull is charred black exactly like the ribs, spine, arms and legs, with no white or ivory bone anywhere. The whole skeleton is plainly visible. Tongues of orange and yellow flame rise only from its skull, shoulders and hands, and fire shines out through its eye sockets and ribcage. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
-  "colours": "charred black bone with glowing ember-orange cracks on every bone including the skull, bright orange and yellow flames.",
+  "what": "a burning skeleton: a human skeleton on fire, made of thick sturdy bones. Every single bone is burnt black like charcoal and split by broad glowing cracks, so that each bone is banded half charcoal-black and half bright glowing ember-orange: the skull is charred black with glowing cracks exactly like the ribs, spine, arms and legs, with no white or ivory bone anywhere. The whole skeleton is plainly visible. A crown of orange and yellow flame as tall as the skull rises from the skull, flames run along both shoulders and both forearms and wrap both hands, and the inside of the ribcage is filled with bright yellow-orange fire that shines out between the black ribs and out through the eye sockets. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long arms and legs, and it stands about eight heads tall.",
+  "colours": "charcoal-black bone banded with broad bright ember-orange glowing cracks on every bone including the skull, bright orange and yellow flames, bright yellow-orange fire inside the ribcage.",
   "wears": "It wears nothing; the flames are its only covering.",
   "holds": "Its hands are empty and wreathed in fire.",
   "pose": "It lunges forward with one burning hand thrust out to grab and the other drawn back, trailing fire.",
@@ -273,7 +273,9 @@
    "flames from the skull, shoulders and hands",
    "glow inside the ribcage and eyes",
    "empty hands",
-   "realistic adult proportions (small skull, long limbs)"
+   "realistic adult proportions (small skull, long limbs)",
+   "broad bright glowing cracks on the arm and leg bones, so the limbs show in the small sprite",
+   "the ribcage full of bright fire"
   ],
   "must_not_show": [
    "armour",
@@ -289,7 +291,8 @@
    "solid ball of flame",
    "white skull",
    "ivory or pale bone"
-  ]
+  ],
+  "lift": 1.0
  },
  {
   "id": "giant_rat",
@@ -425,7 +428,8 @@
    "blue colour",
    "crown",
    "weapon"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "phase_spider",
@@ -514,23 +518,34 @@
   "family": "zombie",
   "rank": 2,
   "key": "magenta",
-  "what": "a plague zombie: a walking human corpse from a plague pit, bloated and covered in swollen dark boils, with black fingertips, a lolling tongue and a faint sickly yellow-green haze around its mouth.",
-  "colours": "mottled sickly yellow-green flesh, black fingers and boils, filthy brown plague rags.",
-  "wears": "It wears filthy plague-pit rags and a strip of cloth tied round its head.",
-  "holds": "Its hands are empty and it holds nothing.",
-  "pose": "It staggers forward doubled over and retching, both blackened hands reaching out.",
+  "what": "a plague zombie: the walking corpse of a man from a plague pit, dead flesh and never living: gaunt and hunched, bald, with sunken blank white eyes, hollow cheeks and lips dried back from the teeth. Big round swollen black boils, each as large as his eye, stand out on his bald head, his cheeks, his neck and the backs of his hands, and his fingers are black to the knuckles.",
+  "colours": "sickly pale grey-yellow dead skin, cold like a wax candle, blotched with big black boils; black fingers; a filthy very dark brown tunic, the colour of an old iron nail; dirty grey rag wrappings.",
+  "wears": "He wears a medieval peasant's knee-length homespun tunic of very dark brown cloth with long torn sleeves, filthy and ragged at the hem, that covers his chest, belly, shoulders and upper arms completely, a rope belt, grey rag leg-wrappings, and a strip of dirty grey cloth tied round his jaw and over the top of his head.",
+  "holds": "His hands are empty and he holds nothing.",
+  "pose": "He lurches forward doubled over, jaw hanging open, both blackened hands reaching out in front of him.",
   "must_show": [
-   "a human corpse of ordinary size",
-   "boils and black fingers",
-   "sickly yellow-green colour",
-   "visibly diseased, unlike a plain zombie"
+   "a human corpse of ordinary size, plainly dead",
+   "a brown peasant tunic covering the chest and belly",
+   "big dark boils on face and arms, black fingers",
+   "sickly grey-green skin",
+   "visibly diseased, unlike a plain zombie in its shroud"
   ],
   "must_not_show": [
    "huge muscles",
    "armour",
    "weapon",
    "clean shroud",
-   "bare skeleton"
+   "bare skeleton",
+   "bare chest",
+   "bare belly",
+   "a woman",
+   "glow, haze or halo round the figure",
+   "bright yellow skin",
+   "loincloth",
+   "modern clothes",
+   "green tunic",
+   "green clothes",
+   "bright green skin"
   ]
  },
  {
@@ -733,17 +748,19 @@
   "family": "minotaur",
   "rank": 1,
   "key": "green",
-  "what": "a minotaur: a huge, heavily muscled man standing upright on two human legs, with the head of a bull: a broad bull's muzzle, a brass nose ring and long curved horns.",
-  "colours": "tan-brown human skin on the body, dark brown fur on the bull's head and shoulders, ivory horns, a bronze harness.",
+  "what": "a minotaur: a huge, heavily muscled man standing upright on two human legs, with the head of a bull: a broad bull's muzzle, a brass nose ring and long curved horns. A thick shaggy mane of very dark brown bull's hair covers his whole head, his neck, both shoulders, his upper back and his chest; only his forearms, belly and thighs are bare skin.",
+  "colours": "very dark brown, nearly black, shaggy hair on the head, neck, shoulders, chest and upper back; weather-beaten light tan skin on the forearms, belly and thighs; ivory horns; a dark leather kilt and harness with dull bronze studs.",
   "wears": "He wears a bronze-studded leather harness across his chest and a leather war-kilt.",
   "holds": "His hands are empty clenched fists and he holds nothing.",
-  "pose": "He is charging: running at full tilt on his two legs, body pitched far forward, head down with the horns aimed ahead, one knee driving up, both arms pumping, hair and kilt streaming back.",
+  "pose": "Seen from the side, facing the left edge of the picture. He is charging: running at full tilt upright on his two human legs, body pitched far forward, head down with the horns aimed ahead to the left, one knee driving up, both arms pumping with the fists clenched, hair and kilt streaming back.",
   "must_show": [
    "upright on two legs with a man's body",
    "a bull's head with horns",
    "muscular",
    "harness and kilt",
-   "no weapon"
+   "no weapon",
+   "dark brown shaggy mane over head, shoulders and chest",
+   "seen from the side, running left, horns lowered"
   ],
   "must_not_show": [
    "four-legged bull",
@@ -752,7 +769,11 @@
    "weapon",
    "axe",
    "wings",
-   "human face"
+   "human face",
+   "bright orange skin",
+   "front view facing the viewer",
+   "white hide",
+   "red kilt"
   ]
  },
  {
@@ -784,24 +805,28 @@
    "oversized head",
    "cartoon proportions",
    "short stubby body"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "wraith",
   "family": "wraith",
   "rank": 1,
   "key": "magenta",
-  "what": "a wraith: a hooded ghost made of drifting tatters of black cloth with no body inside, only two cold pale lights for eyes in the empty hood, long thin shadowy claws, and no legs: below the waist it trails away into ragged wisps.",
-  "colours": "black and deep grey cloth, pale icy blue-white eye lights and a faint pale blue-white edge glow.",
+  "what": "a wraith: a torn hooded shroud of soot-black cloth hanging in the air with nothing inside it. The hood is empty: inside it is only pitch darkness and two cold eye lights, which are the two brightest things in the picture, each as long as a quarter of the hood is wide, slanted, with no pupils. Two long ragged sleeves reach forward, and out of each sleeve comes one long thin hand of pale bone-white claws, each finger as long as the hood is tall, plainly seen against the backdrop. Below the chest the shroud narrows into one long ragged tapering tail of torn cloth that streams back behind it, joined to the body. The cloth is coal-black in the folds and dark slate-grey on the ridges, with one thin bright line of pale icy blue light along its outer edge.",
+  "colours": "coal-black and dark slate-grey cloth, one thin pale icy-blue line of light along its edges, two bright icy blue-white eye lights, pale bone-white claws.",
   "wears": "It is nothing but an empty tattered hooded shroud.",
-  "holds": "Its clawed hands are empty and it holds nothing.",
-  "pose": "It swoops diagonally down to the left with both claws reaching out, cloth streaming behind it.",
+  "holds": "Its two pale clawed hands are empty and spread wide; it holds nothing.",
+  "pose": "It swoops diagonally down to the left, hood first, both pale clawed hands reaching out ahead of it with the fingers spread, the ragged tail of the shroud streaming up behind it to the upper right. Empty air all round it and nothing beneath it.",
   "must_show": [
    "empty hood with two pale eye lights",
    "ragged black cloth",
    "no legs, trailing wisps",
    "reaching claws",
-   "no weapon"
+   "no weapon",
+   "two bright eye lights in a black hood, clear in the small sprite",
+   "pale bone-white claws clear of the body",
+   "the shroud ends in one ragged tail"
   ],
   "must_not_show": [
    "scythe",
@@ -809,7 +834,15 @@
    "legs or feet",
    "skull face",
    "crown",
-   "green glow"
-  ]
+   "green glow",
+   "legs",
+   "feet",
+   "boots",
+   "a man's body under the cloth",
+   "brown cloth",
+   "purple cloth"
+  ],
+  "lift": 1.1,
+  "body": "shapeless"
  }
 ]

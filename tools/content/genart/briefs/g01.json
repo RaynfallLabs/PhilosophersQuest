@@ -4,8 +4,8 @@
   "family": "dungeon_pest",
   "rank": 1,
   "key": "magenta",
-  "what": "an acid blob: a single knee-high mound of thick, glistening, half-transparent slime with a rounded top, no face, no eyes and no limbs. Inside the slime float a few half-dissolved things: a pitted iron helmet and two small bones.",
-  "colours": "acid yellow-green slime with a bright lime highlight on top and a darker olive base, a rust-brown pitted helmet and ivory bones inside it.",
+  "what": "an acid blob: a single knee-high mound of thick, dirty, murky, half-transparent slime with a rounded top, no face, no eyes and no limbs. Inside the slime float a few half-dissolved things: a pitted iron helmet and two small bones.",
+  "colours": "dull sickly yellow-olive slime, murky olive-brown toward the base, with one small pale highlight on top; a dark rusty pitted helmet and grey-white bones inside it.",
   "wears": "It is an ooze and wears nothing.",
   "holds": "It has no hands and holds nothing; the helmet and bones are sunk inside its body.",
   "pose": "It rears up on one side like a wave about to fall, one thick blunt lobe of slime stretched forward and upward to engulf, a few fat drops falling from that lobe. It is one solid lump with a clean lower edge.",
@@ -25,7 +25,19 @@
    "trail of slime",
    "patch of ground",
    "blue or purple colour",
-   "several separate blobs"
+   "several separate blobs",
+   "candy-bright lime green",
+   "tall pointed cone",
+   "pointed hat shape",
+   "hooded figure",
+   "glassy shine",
+   "head wearing the helmet",
+   "muscles",
+   "a crouching man or ogre",
+   "arms",
+   "hands",
+   "skull face",
+   "a body sitting"
   ]
  },
  {
@@ -33,16 +45,16 @@
   "family": "dungeon_pest",
   "rank": 2,
   "key": "green",
-  "what": "a grid bug: a tiny magical creature the size of a hand, not a real insect. Its body is one flat, hard, glossy square plate with rounded corners, like a small floor tile, with two tiny round yellow eyes near the front edge. It has exactly four short, thick, straight legs and no more: one sticks straight out from the middle of each of the four sides of the square, so the whole creature makes a plus sign or a cross. It has no antennae.",
-  "colours": "glossy violet-purple shell with a darker purple edge, bright yellow eyes, small bright yellow-white sparks.",
-  "wears": "It is an insect and wears nothing.",
+  "what": "a grid bug: a tiny magical vermin the size of a hand, seen from straight above. Its body is one flat squarish shell of hard dark violet chitin with blunt corners, a seam down the middle and scuffed, pitted plates like old armour; the shell is blank, with nothing else on it. It has exactly four short, thick, straight black legs and no more: one sticks straight out from the middle of each of the four sides of the square, so the whole creature makes a plus sign or a cross. The four corners of the shell are bare and smooth.",
+  "colours": "dull dark violet shell with near-black edges and a paler violet highlight along the ridge, thick black legs, bright yellow zigzag sparks.",
+  "wears": "It is vermin and wears nothing.",
   "holds": "It holds nothing.",
-  "pose": "Seen from directly above, perfectly flat and symmetrical: the square body in the centre, one leg pointing straight up the picture, one straight down, one straight left and one straight right. A small yellow-white spark sits on the tip of each of the four legs, touching it.",
+  "pose": "Seen from directly above, perfectly flat and symmetrical: the square shell in the centre, one leg pointing straight up the picture, one straight down, one straight left and one straight right, and nothing between them. One short bright yellow zigzag spark, as thick as the leg, sits on the tip of each of the four legs, touching it.",
   "must_show": [
-   "a flat square purple body seen from above",
-   "exactly four straight legs, one per side, making a plus shape",
-   "small yellow sparks at the leg tips",
-   "tiny and harmless-looking"
+   "a flat square dark violet armoured shell seen from above",
+   "exactly four thick straight black legs, one per side, making a plus shape",
+   "bright yellow sparks at the leg tips, big enough for the small sprite",
+   "a weathered painted creature, not a toy"
   ],
   "must_not_show": [
    "six legs",
@@ -57,7 +69,22 @@
    "lightning bolt filling the picture",
    "glowing aura",
    "grid lines or floor tiles under it",
-   "scorpion tail"
+   "scorpion tail",
+   "face",
+   "eyes",
+   "smile",
+   "mouth",
+   "cube",
+   "gem",
+   "jewel",
+   "glossy candy purple",
+   "toy",
+   "wooden sticks",
+   "brass rods",
+   "diagonal legs",
+   "legs at the corners",
+   "star shape with eight points",
+   "spider"
   ]
  },
  {
@@ -378,15 +405,16 @@
    "fish swimming in water",
    "ghost wisps",
    "weapon"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "lurker_above",
   "family": "ambusher",
   "rank": 2,
   "key": "magenta",
-  "what": "a lurker above: a cave creature shaped like a manta ray with no tail, a living blanket of muscle that hangs on a cave ceiling disguised as rock and drops on whatever walks beneath. It is one broad, flat, thick, fleshy body shaped like a wide diamond: two great triangular fins of smooth solid flesh, with no bones, no fingers and no ribs in them, joined in one piece across a low flat middle, soft and heavy, rippling and buckling as it falls. It has no head. Its back, which shows where the edges curl, is rough, warty, cracked hide coloured like grey cave rock. Its underside, which we see, is bare pale flesh: wet, wrinkled, pale grey-cream skin with soft folds, and in the very middle of the underside gapes one wide round mouth, a third as wide as the whole creature, pitch-black inside and ringed with one row of big pale triangular teeth.",
-  "colours": "rough slate-grey and charcoal-grey cracked hide on the back and the curled edges, a wet pale grey-cream wrinkled underside with darker grey folds, one wide black mouth ringed with big pale teeth.",
+  "what": "a lurker above: a cave creature shaped like a manta ray with no tail, a living blanket of muscle that hangs on a cave ceiling disguised as rock and drops on whatever walks beneath. It is one broad, flat, thick, fleshy body shaped like a wide diamond: two great triangular fins of smooth solid flesh joined in one piece across a low flat middle, soft and heavy, rippling and buckling as it falls. Its back, which shows where the edges curl, is rough, warty, cracked hide coloured like grey cave rock. Its underside, which we see, is bare pale flesh: wet, wrinkled, pale grey-cream skin with soft folds. In the very middle of the underside gapes one perfectly round hole, a third as wide as the whole creature: it is pitch-black inside, only empty darkness, and it is ringed all the way round with one circle of long, thin, curved needle fangs of pale bone, every fang pointing inward to the centre of the hole. Apart from the round ring of fangs the underside is blank wrinkled skin.",
+  "colours": "rough slate-grey and charcoal-grey cracked hide on the back and the curled edges, a wet pale grey-cream wrinkled underside with darker grey folds, one round pitch-black hole ringed with long pale needle fangs.",
   "wears": "It wears nothing.",
   "holds": "It has no hands and holds nothing.",
   "pose": "Caught in mid-air as it falls toward the viewer, seen from below and a little from one side, tilted, lopsided and alive: its left fin is flung up and curling over at the upper left, showing a broad strip of its rocky grey back, its right fin droops lower and folds inward like a closing cloak, the thick fleshy edges ripple in waves, and the round toothed mouth in the middle of the pale underside gapes open. Empty air all round it and nothing beneath it.",
@@ -395,7 +423,8 @@
    "rough grey rock-coloured back hide showing on the curled edges",
    "pale wrinkled underside with one wide round toothed mouth in the middle",
    "lopsided: one fin curling up, one folding in, rippling edges",
-   "no head, no tail, no eyes, no bat wings"
+   "no head, no tail, no eyes, no bat wings",
+   "a round black hole ringed with long needle fangs all the way round: a monster's maw, not a person's mouth"
   ],
   "must_not_show": [
    "stone tray",
@@ -437,7 +466,16 @@
    "talons",
    "long whip tail",
    "sea water",
-   "stripes"
+   "stripes",
+   "human teeth",
+   "lips",
+   "gums",
+   "tongue",
+   "a screaming human mouth",
+   "nose",
+   "eye dots",
+   "a face",
+   "green skin"
   ],
   "body": "shapeless"
  },
@@ -445,17 +483,17 @@
   "id": "trapper",
   "family": "ambusher",
   "rank": 3,
-  "key": "blue",
-  "what": "a trapper: a flat creature that lies on the floor pretending to be the floor. It is one thick square sheet of flesh whose top surface is patterned exactly like a pavement of square sandy flagstones with dark joints between them. In the middle of the sheet it has raised a lump shaped like a small wooden treasure chest, as bait. The underside of the sheet is smooth pale flesh.",
-  "colours": "sandy tan and warm yellow-brown flagstone pattern with dark brown joints, a pale cream-pink underside, a brown bait chest with dull gold bands.",
+  "key": "green",
+  "what": "a trapper: a flat monster that lies on the floor pretending to be the floor. It is one thick square sheet of flesh whose top surface is patterned exactly like a dungeon pavement of large square grey flagstones, nine in all, three rows of three, worn and cracked, with deep black joints between them. In the middle of the sheet it has raised a lump shaped like a wooden treasure chest, as bait; the chest is a third as wide as the sheet. The underside of the sheet is smooth pale flesh, and the lifted edges of the sheet are lined with a row of large white triangular teeth.",
+  "colours": "dull grey flagstones, the cold grey of old castle paving, with black joints; a pale cream fleshy underside; a dark oak bait chest with black iron bands; white teeth along the lifted edges.",
   "wears": "It wears nothing.",
   "holds": "It has no hands and holds nothing.",
-  "pose": "Seen from above at an angle, it is springing its trap: all four corners of the square sheet are lifting and curling up and inward like a closing fist, showing the pale underside on the raised corners, with the chest-shaped lump still sitting in the middle. It is one clean-edged shape alone in empty space.",
+  "pose": "Seen from above at an angle, it is springing its trap: all four corners of the square sheet are lifting and curling high up and inward like a closing fist, showing the pale underside and the white teeth on the raised corners, with the chest-shaped lump still sitting in the middle. It is one clean-edged shape alone in empty space.",
   "must_show": [
-   "a square sheet patterned like sandy flagstones",
+   "a square sheet patterned like grey dungeon flagstones",
    "corners curling up and inward",
-   "a chest-shaped lump in the middle",
-   "pale underside showing on the lifted corners"
+   "a chest-shaped lump in the middle, big enough for the small sprite",
+   "pale underside and white teeth on the lifted corners: plainly a monster"
   ],
   "must_not_show": [
    "wing-flaps like a manta ray",
@@ -467,7 +505,14 @@
    "pile of gold coins",
    "dungeon room or walls around it",
    "adventurer",
-   "arms or legs"
+   "arms or legs",
+   "orange or yellow floor",
+   "sand colour",
+   "carpet",
+   "waffle",
+   "hands",
+   "fingers",
+   "many small tiles"
   ]
  },
  {
@@ -537,7 +582,8 @@
    "column of flame hiding the body",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "abyssal_hound",
@@ -568,7 +614,8 @@
    "fire on the ground",
    "bulky bear or bull body",
    "shaggy wolf fur"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "abyssal_overlord",
@@ -733,7 +780,8 @@
    "wings",
    "glowing aura",
    "oversized head"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "dire_wolf_alpha",

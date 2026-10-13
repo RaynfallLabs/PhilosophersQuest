@@ -67,7 +67,8 @@
    "sitting upright",
    "long green ribbon",
    "green scythe blade"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "sea_dragon_spawn",
@@ -186,16 +187,16 @@
   "rank": 6,
   "key": "blue",
   "what": "an adult red dragon: a full-grown, massive western dragon, a four-legged reptile that walks on all four legs like a huge lizard, with a deep barrel chest, a long thick neck, a long heavy tail and two great bat-like wings. It has two long horns sweeping backward from its head, spiked cheek frills, and a row of tall black-tipped spines down its neck and back. Its scales are dark blood-red all over, and its throat, chest and belly are armoured in broad golden-yellow plates.",
-  "colours": "dark blood-red scales, golden-yellow belly plates, dark red wing membranes, long black horns, black-tipped spines, yellow eyes, orange and yellow fire.",
+  "colours": "dark blood-red scales, golden-yellow belly plates, dark red wing membranes, long black horns, black-tipped spines, yellow eyes, deep orange fire with a bright yellow core.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left, drawn small in the middle of the picture: all four of its feet are planted on the ground and its long body is horizontal. Both great wings are raised straight up and spread wide open above its back. Its long neck is arched up and forward and its jaws are wide open with one small puff of orange flame at its lips, no bigger than its own snout, joined to the mouth; there is wide empty backdrop to the left of the flame. Its heavy tail is swung up behind.",
+  "pose": "Seen from the side, facing left, drawn small and standing in the right-hand two thirds of the picture: all four of its feet are planted on the ground and its long body is horizontal. Both great wings are raised straight up and spread wide open above its back. Its long neck is arched up and forward and its jaws are wide open, with one short thick tongue of fire bursting from its mouth to the left, joined to the mouth, no longer than its own head but just as thick, deep orange with a bright yellow core, ending in a ragged point. The fire stops well short of the edge: the whole left quarter of the picture is empty backdrop. Its heavy tail is swung up behind.",
   "must_show": [
    "a massive dark-red dragon with all four feet on the ground",
    "golden-yellow throat and belly plates",
    "both great wings spread open (an adult)",
    "long swept-back horns and tall spines",
-   "a small puff of fire joined to the mouth"
+   "one short thick burst of orange fire joined to the mouth, as big as its head, wholly inside the picture"
   ],
   "must_not_show": [
    "small folded wings",
@@ -216,7 +217,13 @@
    "muscular man's chest and arms",
    "bodybuilder",
    "fire reaching the edge of the picture",
-   "long stream of fire"
+   "two heads",
+   "second head",
+   "tiny wisp of smoke",
+   "white fire",
+   "long stream of fire",
+   "fire touching the left edge",
+   "beam of fire"
   ]
  },
  {
@@ -259,14 +266,15 @@
   "family": "dragon_b",
   "rank": 2,
   "key": "blue",
-  "what": "a dread wyrm: a misgrown, sickly dragon that walks on all four legs like a huge lizard, a reptile whose body is far too heavy for the rest of it. It has a huge swollen sagging barrel body with loose folds of lumpy hide hanging at the belly and neck, never muscular, a hunched back with a ragged ridge of uneven spines, a thick short neck, an oversized underslung lower jaw crowded with crooked fangs, two crooked grey horns of different lengths, and two tiny shrivelled crumpled wings far too small to lift it. Its hide is diseased: dull grey-brown, the colour of wet peat, covered with big pale sickly yellow-grey blotches, each as large as its head, warty and peeling. Its eyes burn orange.",
-  "colours": "dull grey-brown hide the colour of wet peat with big pale sickly yellow-grey blotches, a pale grey sagging belly, dark brown shrivelled wings, grey horns and spines, burning orange eyes, orange and yellow fire.",
+  "what": "a dread wyrm: a misgrown, sickly dragon that walks on all four legs like a huge lizard. It is plainly a dragon, a scaly reptile: it has a long thick scaly neck, a long narrow dragon's head with a long snout, two crooked grey horns of different lengths sweeping back from its skull, a long heavy tail as long as its body, and a ragged ridge of uneven spines running from its head to the tip of its tail. But it grew wrong. Its body is far too heavy for the rest of it: a swollen sagging barrel with loose folds of scaly hide hanging at the belly and throat, never muscular, carried on four short bowed legs. Its lower jaw is oversized and underslung and crowded with crooked fangs. Its two wings are stunted: two crumpled bat wings, each no bigger than its own head, standing half open on its shoulders, far too small to lift it. Its scales are diseased: dull grey-brown, the colour of wet peat, covered with big pale sickly yellow-grey blotches, each as large as its head, cracked and peeling. Its eyes burn orange.",
+  "colours": "dull grey-brown scaly hide the colour of wet peat with big pale sickly yellow-grey blotches, a pale grey sagging belly, dark brown stunted wings, grey horns and spines, burning orange eyes, deep orange fire with a yellow core.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left, all four of its feet are planted on the ground and its body is horizontal: it lumbers forward on thick bowed legs with its hunched back high, its belly sagging nearly to the ground and its head held low, its oversized jaws gaping wide with one short thick jet of orange fire shooting straight out of its mouth, joined to the mouth, no longer than its own head, its tiny wings sticking up uselessly from its shoulders and its heavy tail sweeping behind.",
+  "pose": "Seen from the side, facing left, all four of its feet are planted on the ground and its body is horizontal: it lumbers forward on short bowed legs with its hunched back high and its belly sagging nearly to the ground, its long neck stretched forward and up so its horned head is held out well ahead of its chest, its oversized jaws gaping wide with one short thick jet of deep orange fire shooting straight out of its mouth, joined to the mouth, as long as its own head, its two stunted wings sticking up uselessly from its shoulders and its long heavy tail sweeping out behind.",
   "must_show": [
-   "a bloated, sagging, misshapen dragon on four legs",
-   "tiny shrivelled wings far too small for the body",
+   "plainly a dragon: long neck, long-snouted horned head, long tail, scales, on four legs",
+   "a bloated, sagging, misgrown body",
+   "stunted crumpled wings far too small for the body",
    "an oversized jaw with crooked fangs",
    "blotched diseased hide: grey-brown with big pale yellow-grey patches, not plain orange",
    "fire from the jaws"
@@ -292,7 +300,16 @@
    "bulging biceps",
    "bull",
    "toad",
-   "smooth healthy skin"
+   "smooth healthy skin",
+   "rhinoceros",
+   "armadillo",
+   "hippopotamus",
+   "boar",
+   "fur",
+   "hair",
+   "no neck",
+   "short neck",
+   "mammal"
   ]
  },
  {
@@ -661,7 +678,8 @@
    "rearing up",
    "muscular man's chest and arms",
    "long stream of fire"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "draugr",
@@ -803,7 +821,8 @@
    "robe hanging to a level hem",
    "priest with arms spread"
   ],
-  "body": "shapeless"
+  "body": "shapeless",
+  "lift": 1.4
  },
  {
   "id": "soul_eater",
@@ -837,7 +856,8 @@
    "green glow",
    "cloud of mist round the body",
    "muscular body"
-  ]
+  ],
+  "lift": 1.6
  },
  {
   "id": "drow_priestess",
@@ -878,22 +898,23 @@
    "snakes coiled round her body",
    "loose snakes with no handle",
    "bare feet"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "dread_sphinx",
   "family": "sphinx",
   "rank": 1,
   "key": "blue",
-  "what": "a dread sphinx: the Greek sphinx of Thebes turned cruel, one animal on four legs with the whole body of a powerful lioness, short dark fur over the chest, belly, back and all four legs, a lion's long tufted tail, and two great feathered eagle's wings growing from its shoulders. Only its head is human: a stern, pale woman's face with glowing amber eyes and long black hair in braids, set on the lion's furred neck. On her brow sits a tarnished gold diadem.",
+  "what": "a dread sphinx: the Greek sphinx of Thebes turned cruel, the head of a human woman on the body of a lioness. Her head is large, as large as a lion's own head would be, and it is turned fully to face the viewer: a stern pale grey-white woman's face with a straight nose, dark lips, a pointed chin and two glowing amber eyes, framed on both sides by long straight jet-black hair that hangs to her shoulders, so that the pale face stands out sharply against the black hair. On her brow sits a broad tarnished gold diadem. Below the neck everything is animal: one beast on four legs with the whole body of a powerful lioness, and the deep furred chest of a lion between its front legs, exactly as on a real lion; short dark fur covers the neck, chest, belly, back and all four legs, a lion's long tufted tail, and two great black feathered eagle's wings growing from the shoulders.",
   "colours": "dark tawny-brown lion fur, black feathered wings, a pale grey-white woman's face, long black hair, a tarnished gold diadem, glowing amber-yellow eyes, ivory claws.",
-  "wears": "It wears a tarnished gold diadem on its brow and a broad gold collar round the furred lion's neck; nothing else.",
+  "wears": "It wears a tarnished gold diadem on its brow and a very broad gold collar that covers the whole furred neck from the chin down to the lion's chest; nothing else.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left, on four legs: it stalks forward with its hind legs crouched and one front paw raised high with the claws out to rend, both black wings raised and half spread above its back, its head turned a little toward the viewer with a cold stare, its tail lashing.",
+  "pose": "The body is seen from the side, facing left, on four legs: it stalks forward with its hind legs crouched, three paws on the ground and one front paw lifted a little way off the ground and stretched forward low with the claws out, both black wings raised and half spread above its back, well behind the head. Her large pale face is turned squarely to the viewer with a cold stare, held high and clear at the upper left with nothing in front of it and nothing beside it, her tail lashing.",
   "must_show": [
    "a lion's body on four legs, furred all over",
    "black feathered wings",
-   "a woman's face with long black hair",
+   "a woman's pale face turned to the viewer, framed by long black hair, large enough to read as a face in the small sprite",
    "a gold diadem",
    "one clawed paw raised"
   ],
@@ -911,7 +932,18 @@
    "stone statue",
    "pedestal",
    "rock",
-   "glow round the body"
+   "glow round the body",
+   "tiny head",
+   "face in profile",
+   "brown hair",
+   "face hidden by the wing",
+   "breasts",
+   "woman's bust",
+   "woman's shoulders",
+   "bare chest",
+   "cleavage",
+   "paw raised beside the face",
+   "centaur"
   ]
  }
 ]

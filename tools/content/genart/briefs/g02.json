@@ -95,10 +95,10 @@
   "id": "brigand",
   "family": "bandit",
   "rank": 1,
-  "key": "blue",
+  "key": "green",
   "what": "a brigand: a lean, hard-faced human robber, a deserter soldier with stubble and a broken nose. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
-  "colours": "a mustard-tan padded cloth jacket, dull brown trousers and boots, a plain brown wooden shield with an iron boss, a grey steel dagger, sun-browned skin, dark hair.",
-  "wears": "He wears a stained, patched padded cloth jacket, a rope belt, brown trousers and worn boots, and a dirty tan cloth tied round his head. No metal armour.",
+  "colours": "a dull grey-brown undyed padded cloth jacket darkened with dirt, dark brown trousers and boots, a plain dark brown wooden shield with an iron boss and iron rim, a grey steel dagger, weather-beaten light tan skin, dark hair.",
+  "wears": "He wears a stained, patched, quilted padded cloth jacket of undyed grey-brown cloth, a rope belt, dark brown trousers and worn boots, and a dirty grey cloth tied round his head. No metal armour.",
   "holds": "He holds exactly one broad dagger in his right hand and exactly one small round wooden shield strapped on his left arm.",
   "pose": "He lunges forward on two legs, punching the round shield out ahead of him with his left arm, the dagger drawn back low in his right hand to stab.",
   "must_show": [
@@ -117,7 +117,10 @@
    "hooded cloak",
    "pistol",
    "second dagger",
-   "oversized head"
+   "oversized head",
+   "mustard-yellow or orange jacket",
+   "orange skin",
+   "clean bright clothes"
   ]
  },
  {
@@ -199,9 +202,9 @@
   "id": "bandit_thug",
   "family": "bandit",
   "rank": 4,
-  "key": "blue",
-  "what": "a bandit thug: a big, heavy, thick-necked human bruiser with a bald head, a stubbled jaw, a flat broken nose and thick bare forearms. He has a real man's proportions: a small head on broad sloping shoulders, a barrel chest and a heavy belly.",
-  "colours": "a sleeveless rough brown sackcloth tunic, a wide black leather belt, grey-brown trousers, a dark wooden club with grey iron studs, ruddy skin.",
+  "key": "green",
+  "what": "a bandit thug: a big, heavy, thick-necked human bruiser, dirty and unshaven, with a bald head, a grey-stubbled jaw, a flat broken nose, a scar through one eyebrow and thick bare forearms. He has a real man's proportions: a small head on broad sloping shoulders, a barrel chest and a heavy belly.",
+  "colours": "a sleeveless rough dark grey-brown sackcloth tunic, the colour of wet peat, a wide black leather belt, dull grey trousers, dark boots, a dark wooden club with grey iron studs, weather-beaten light tan skin.",
   "wears": "He wears a sleeveless rough brown farmhand's tunic, a wide leather belt, patched trousers and heavy boots with the handle of a small knife sticking out of the top of one boot. No armour, no hood, nothing on his bald head.",
   "holds": "He holds exactly one heavy wooden club studded with iron nails, gripped in his right hand. His left hand is an empty clenched fist.",
   "pose": "He stomps forward on two legs with the studded club swung back over his right shoulder for a big overhand blow, left fist forward, teeth bared.",
@@ -222,7 +225,12 @@
    "green skin",
    "tusks",
    "superhero muscles",
-   "second club"
+   "second club",
+   "orange skin",
+   "red skin",
+   "bright orange tunic",
+   "clean bright clothes",
+   "cartoon face"
   ]
  },
  {
@@ -342,15 +350,16 @@
   "key": "magenta",
   "what": "a helmeted skeletal archer: the skeleton of a trained soldier-bowman with a rusted round iron helmet with a narrow brim sitting on top of its skull. Under the helmet is a bare bone skull face; its arms, hands, legs and feet are bare bone with no skin or flesh anywhere. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory bone, a rusty grey iron skullcap helmet, a cracked dark brown leather jerkin, a brown leather quiver, a dark wooden bow.",
-  "wears": "On its skull it wears a round rusted iron helmet with a narrow brim, like an upturned bowl. It also wears a cracked sleeveless dark brown leather jerkin hanging open over its bare ribs, and a quiver of arrows on its back. No hood, no cloak.",
-  "holds": "It shoots exactly one large, thick, dark wooden war bow with one arrow nocked, and it uses both arms. The bow is a single tall curved D shape standing upright at the left side of the picture, gripped in the bone fist of its front arm, which is stretched straight out. Its rear arm is bent double with the elbow lifted high behind it and the bone hand at its jaw, pinching the tail of the arrow and holding the string fully drawn. Neither arm hangs down.",
-  "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its skull and its feet all point to the left edge of the picture, and we see only one side of it. It stands upright and drilled like a soldier on two legs, one foot ahead of the other, front arm stretched straight out to the left holding the bow, aiming level to the left at full draw.",
+  "wears": "On its skull it wears a medieval foot-soldier's rusted iron kettle hat, round, with a flat brim. It also wears a cracked sleeveless dark brown leather jerkin hanging open over its bare ribs, and a large quiver of arrows on its back, the feathered ends standing up behind its shoulder. No hood, no cloak.",
+  "holds": "Its front arm, stretched straight out to the left, grips exactly one large, thick, dark wooden war bow in its bone fist: a single tall curved D shape standing upright at the left side of the picture. There is no arrow on the bow yet. Its rear arm is bent sharply upward, the elbow pointing at the sky and the bone hand behind its own skull, pulling one arrow out of the quiver on its back.",
+  "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its skull and its feet all point to the left edge of the picture, and we see only one side of it. It stands upright and drilled like a soldier on two legs, one foot ahead of the other, front arm stretched straight out to the left holding the bow upright, rear hand reaching back over its shoulder to the quiver for the next arrow, skull turned to its target.",
   "must_show": [
    "skeleton (skull face, ribs, bare bone limbs)",
    "a rusted iron helmet on the skull",
    "leather jerkin and quiver: a soldier's kit",
    "seen in profile, facing left",
-   "one dark wooden bow in front of it, drawn with both arms"
+   "one dark wooden bow held upright in the outstretched front arm",
+   "the rear hand raised over the shoulder to the quiver, elbow up"
   ],
   "must_not_show": [
    "hood",
@@ -368,25 +377,31 @@
    "two bows",
    "an arm hanging at its side",
    "hand on hip",
-   "skirt"
+   "skirt",
+   "an arm lying along an arrow",
+   "both arms stretched out sideways",
+   "an arrow as long as the picture",
+   "modern army helmet"
   ]
  },
  {
   "id": "gnoll_archer",
   "family": "gnoll",
   "rank": 1,
-  "key": "blue",
+  "key": "magenta",
   "what": "a gnoll archer: a tall, lean, hunched hyena-man standing upright on two legs, with the head of a spotted hyena: a blunt dark muzzle, round ears, a wide laughing mouth full of teeth, a bristly crest of mane down its neck and back, and a body covered in spotted fur.",
-  "colours": "sandy tawny-yellow fur with dark brown spots, a black muzzle, a dark brown mane, rough brown hide armour, an elegant pale golden yew longbow, tan arrow feathers.",
-  "wears": "It wears a necklace of teeth and bones, a ragged brown hide kilt and a quiver of arrows on its back; its spotted fur is otherwise bare.",
+  "colours": "dull grey-buff fur, the pale dusty colour of dry grass, with large dark brown spots; a black muzzle; a dark brown mane; a dark brown leather jerkin and hide kilt; a pale yew longbow; grey arrow feathers.",
+  "wears": "It wears a sleeveless jerkin of dark brown leather, laced at the front, that covers its chest and belly, a necklace of teeth and bones over it, a ragged brown hide kilt and a quiver of arrows on its back. Its arms and legs are bare spotted fur.",
   "holds": "It draws exactly one tall, thick, elegant longbow of pale golden wood with one arrow nocked. The bow is a single tall curved D shape standing upright at the left side of the picture, gripped in the fist of its outstretched front arm; its other hand pulls the arrow back to its muzzle. There is only one bow and it is entirely in front of the gnoll, never behind its back. It holds nothing else.",
   "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its hyena muzzle and its feet all point to the left edge of the picture, and we see only one side of it. It stands on two legs in a wide archer's stance, back hunched, front arm stretched straight out to the left holding the bow, aiming to the left at full draw, mouth open in a laughing snarl.",
   "must_show": [
-   "upright hyena-man: hyena head, round ears, spotted tawny fur",
    "one tall pale longbow at full draw with an arrow",
-   "hide kilt and bone necklace",
    "quiver",
-   "seen in profile, facing left"
+   "seen in profile, facing left",
+   "upright hyena-man: hyena head, round ears, spotted fur",
+   "dusty grey-buff spotted fur, not orange",
+   "a dark leather jerkin over the chest",
+   "hide kilt"
   ],
   "must_not_show": [
    "wolf head with pointed ears",
@@ -402,7 +417,10 @@
    "front view facing the viewer",
    "two bows",
    "bow curving behind the body",
-   "arms spread to both sides"
+   "arms spread to both sides",
+   "bright orange fur",
+   "bare muscled chest",
+   "leopard"
   ]
  },
  {
@@ -436,7 +454,8 @@
    "wall",
    "patch of ground",
    "pot"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "banshee",
@@ -540,7 +559,8 @@
    "humanoid parts",
    "ball of dung",
    "patch of ground"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "khepri_beetle",
@@ -586,18 +606,19 @@
    "rainbow sheen",
    "lemon-yellow shell",
    "side view"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "beholder_spawn",
   "family": "beholder",
   "rank": 1,
   "key": "green",
-  "what": "a beholder spawn: a small floating eyeball monster. Its whole body is one smooth round sphere of lumpy hide, like a ball hanging in the air, with a perfectly round outline at the sides and underneath. In the middle of the front of the sphere is exactly one enormous round eyeball with an amber iris, as wide as half the sphere, like the single eye of a cyclops; there is no nose and no second eye on the sphere. Directly under the big eye is a wide mouth of small crooked teeth. The only things that stick out of the sphere are exactly three short, stubby stalks on its top, each ending in one small eye.",
-  "colours": "smooth rust-orange and tan-brown hide, a big amber-yellow central eye, small yellow stalk eyes, off-white teeth.",
+  "what": "a beholder spawn: a small floating eyeball monster. Its whole body is one round ball of rough, warty, cracked hide hanging in the air, with a round outline at the sides and underneath. In the middle of the front of the ball is exactly one enormous bloodshot eyeball with a pale yellow iris and a narrow black slit pupil, as wide as half the ball, half-hooded by a heavy wrinkled lid so that it glares. Directly under the big eye is a wide gash of a mouth, pulled open in a snarl over one row of jagged, uneven, sharp teeth. Out of the top of the ball grow exactly three short, thick stalks of the same hide, each ending in one small lidded eye.",
+  "colours": "dull dark grey-brown hide with darker creases and a few paler warts, a bloodshot eyeball with a pale yellow iris, small yellow stalk eyes, dirty off-white teeth.",
   "wears": "It wears nothing.",
   "holds": "It is only a sphere and holds nothing.",
-  "pose": "It hangs in the air, tilted forward and turned slightly to the left, the one big eye wide open and staring, mouth open, the three short stalks pointing forward.",
+  "pose": "It hangs in the air, tilted forward and turned slightly to the left, the one big eye glaring, the mouth snarling, the three short stalks leaning forward. Empty air all round it and nothing beneath it.",
   "must_show": [
    "a round sphere body with a clean round outline underneath and at the sides",
    "exactly one big central eye, cyclops-like",
@@ -620,8 +641,17 @@
    "tentacles hanging underneath",
    "wings",
    "magic rays",
-   "patch of ground"
-  ]
+   "patch of ground",
+   "grin",
+   "smile",
+   "friendly or comic face",
+   "an orange fruit",
+   "bright orange skin",
+   "smooth shiny ball",
+   "eyebrows",
+   "round cartoon pupil"
+  ],
+  "body": "shapeless"
  },
  {
   "id": "beholder",
@@ -808,7 +838,8 @@
    "drips flying off",
    "plate or dish",
    "second sword"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "bone_witch",
@@ -880,17 +911,18 @@
   "id": "bone_titan",
   "family": "bone",
   "rank": 3,
-  "key": "green",
-  "what": "a bone titan: a bare skeleton, and only a skeleton, of a heavy-built ogre. It is all dry bone with empty air between the bones: there is no muscle, no skin and no flesh anywhere on it. Its bones are short and very thick: a wide ribcage of fat curved ribs with dark empty gaps between them and a bare knobbly spine showing below it down to a broad pelvis bone, a wide collarbone, each upper arm one single thick bone, each forearm two thick bones, big knobbly elbow and knee joints, and large hands made of thick separate finger bones. Its skull is small compared with its very wide shoulders: a heavy low-browed skull with a jutting lower jaw and two blunt tusks. Black iron bands with rivets clamp each joint.",
-  "colours": "weathered grey-white and pale ivory dry bone on every part, dark empty gaps between the bones, black iron bands and rivets, a dull red glow in the eye sockets.",
+  "key": "magenta",
+  "what": "a bone titan: the bare skeleton of a giant, squat and massive: it is nearly as wide as it is tall, and its heavy skull with a jutting lower jaw is sunk low between enormously wide shoulders. The skull is the same dull grey-brown as every other bone. It is all dry bone with dark empty air between the bones: there is no muscle, no skin and no flesh anywhere on it. It has a wide barrel ribcage of fat curved ribs with black gaps between them, a knobbly spine showing below it down to a broad pelvis bone, arm bones and leg bones as thick as its own skull, and big knobbly joints. Thick black iron bands with rivets clamp every joint to hold the bones together. In its lowered right fist it grips one small whole human skeleton, tiny beside it, no taller than the titan's forearm.",
+  "colours": "dull grey-brown old bone on every part, skull included, the colour of bones dug from a grave, with chalk-grey on the ridges; black empty gaps between the bones; black iron bands and rivets; empty black eye sockets; the small human skeleton is pale chalk-white.",
   "wears": "It wears no clothes and no armour; only black iron bands clamped round its shoulders, elbows, hips and knees to hold the bones together.",
-  "holds": "Both bony hands are empty, the finger bones curled shut. It holds nothing.",
-  "pose": "It stands on two thick bony legs set wide apart, both arms lifted with the two bony hands clasped together above its skull, about to hammer them down, skull tilted forward.",
+  "holds": "Its right fist grips one small whole human skeleton, pale chalk-white, dangling limp. Its left hand is an empty fist of thick finger bones, raised high above its skull to hammer down.",
+  "pose": "It stands on two short, thick bony legs set very wide apart, leaning forward, the left fist raised overhead to slam, the right fist low at its side holding the little skeleton.",
   "must_show": [
    "a bare skeleton: ribs with gaps, spine, pelvis, bony arms and legs",
-   "very thick heavy bones and very wide shoulders",
+   "squat: nearly as wide as tall, skull sunk between very wide shoulders",
    "black iron bands at the joints",
-   "both empty bone hands raised overhead",
+   "a small human skeleton in its right fist, for scale",
+   "grey-brown bone, darker than an ordinary skeleton",
    "no muscle or flesh anywhere"
   ],
   "must_not_show": [
@@ -910,7 +942,16 @@
    "helmet",
    "robe",
    "flames",
-   "oversized head"
+   "oversized head",
+   "tall thin build",
+   "ordinary man-sized skeleton with long thin limbs",
+   "both hands empty",
+   "gold bone",
+   "white skull on a dark body",
+   "blue-grey metal body",
+   "steel armour",
+   "green glow",
+   "bottle"
   ]
  },
  {

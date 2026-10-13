@@ -65,7 +65,8 @@
    "second dagger",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "cult_priest",
@@ -115,9 +116,9 @@
   "family": "cult",
   "rank": 4,
   "key": "blue",
-  "what": "a cult zealot: a big, broad, heavily muscled human fanatic warrior of a dark cult, his whole head covered by a black cloth executioner's hood with two eye holes. His bare arms and shoulders are tanned and crossed with old pale healed scars. He has realistic adult proportions: a small head, wide shoulders, long limbs, about eight heads tall.",
-  "colours": "a black cloth hood over the head, tanned skin with pale scars, a sleeveless deep crimson robe, black leather straps and bracers, a grey steel cleaver blade on a dark wooden handle, black boots.",
-  "wears": "He wears a black cloth hood covering his whole head and neck, a sleeveless deep crimson robe belted at the waist that hangs to his shins, two black leather straps crossed over his chest, thick black leather bracers on both forearms and heavy black boots. He has no metal armour.",
+  "what": "a cult zealot: a big, broad, heavily muscled human fanatic warrior of a dark cult, his whole head covered by a black cloth executioner's hood with two eye holes. His bare forearms are weather-beaten light tan, the skin of a man who works outdoors, crossed with old pale healed scars. He is a strong labourer, thick in the arm and chest, not a bodybuilder. He has realistic adult proportions: a small head, wide shoulders, long limbs, about eight heads tall.",
+  "colours": "a black cloth hood over the head, weather-beaten light tan skin with pale scars, a deep crimson robe with short sleeves, black leather straps and bracers, a grey steel cleaver blade on a dark wooden handle, black boots.",
+  "wears": "He wears a black cloth hood covering his whole head and neck, a heavy deep crimson robe that covers his chest and shoulders, with short wide sleeves to the elbow, belted at the waist and hanging to his shins, two black leather straps crossed over the chest of the robe, thick black leather bracers on both forearms and heavy black boots. He has no metal armour.",
   "holds": "He holds exactly one enormous cleaver in both hands, both fists on its long dark wooden handle: the blade is a huge broad rectangle of grey steel, as wide as his chest and as long as his arm, like a giant butcher's cleaver. Both hands are on this one weapon and he holds nothing else.",
   "pose": "He charges to the left on two legs with his front knee bent and his body twisted, both hands lifting the huge cleaver up and back over his right shoulder for a great downward chop, the broad blade plainly seen above and behind his head.",
   "must_show": [
@@ -145,7 +146,14 @@
    "weapon held in one hand",
    "whip",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "bare chest",
+   "bare shoulders",
+   "orange skin",
+   "bodybuilder",
+   "bulging muscles",
+   "wrestler",
+   "superhero"
   ]
  },
  {
@@ -154,15 +162,15 @@
   "rank": 5,
   "key": "green",
   "what": "a cult hierophant: the ancient high priest of a dark cult, a very tall, thin, stooped old man with a gaunt hollow-cheeked face, sunken eyes, a hooked nose and a long white beard down to his chest. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
-  "colours": "black ceremonial robes heavy with gold embroidery, a tall gold and black headdress, a wide gold collar set with dark red stones, a long white beard, a glossy black glass dagger, a black orb of void with a thin violet rim.",
+  "colours": "black ceremonial robes heavy with gold embroidery, a tall gold and black headdress, a wide gold collar set with dark red stones, a long white beard, one short knife of glossy black glass with a gold handle, a black orb of void with a thin violet rim.",
   "wears": "He wears a tall two-pointed high priest's headdress of black cloth banded with gold, long layered black ceremonial robes covered with gold embroidery at the collar, sleeves and hem, a wide gold collar set with dark red stones over his shoulders, and a long gold-edged black mantle trailing behind him.",
-  "holds": "He holds exactly one dagger in his right hand: a broad leaf-shaped blade of glossy black volcanic glass with chipped edges, on a short gold handle. His left hand is empty and raised with the palm up, and one round black orb the size of an apple, a ball of pure darkness with a thin violet rim, floats in that palm, touching the fingers. He has no staff.",
-  "pose": "He stands on two legs leaning forward with one foot ahead, his left arm lifted high holding up the black orb in his open palm, his right hand holding the black glass dagger out low and forward, beard and mantle swept back, mouth open intoning.",
+  "holds": "He holds exactly one short knife in his right hand, a knife no longer than his own hand: a short broad leaf-shaped blade of glossy black volcanic glass with one bright glint along its edge, set in a thick gold handle with a small gold crossguard. It is plainly a small knife, much shorter than his forearm, and it is the only thing in that hand. His left hand is empty and raised with the palm up, and one round black orb as big as his fist, a ball of pure darkness with a thin violet rim, floats in that palm, touching the fingers. He has no staff.",
+  "pose": "He stands on two legs leaning forward with one foot ahead, his left arm lifted high holding up the black orb in his open palm, his right arm stretched out low and forward to the left at waist height, holding the short black knife point-forward at arm's length, clear of his robes against the empty backdrop, beard and mantle swept back, mouth open intoning.",
   "must_show": [
    "very old man with a long white beard",
    "tall gold and black priest's headdress",
    "black robes rich with gold, wide gold collar",
-   "one black glass dagger",
+   "one short black glass knife with a gold handle, no longer than his hand",
    "a black orb with a violet rim in the empty left palm",
    "clearly the leader, the most ornate of the cult"
   ],
@@ -182,7 +190,14 @@
    "second dagger",
    "wizard's pointed hat",
    "oversized head",
-   "cartoon proportions"
+   "cartoon proportions",
+   "long jagged blade",
+   "black feather",
+   "quill",
+   "torch",
+   "wand",
+   "rod",
+   "blade as long as his arm"
   ]
  },
  {
@@ -233,8 +248,8 @@
   "rank": 1,
   "key": "green",
   "what": "a dark elf: a slim, wiry elf scout-assassin from deep under the earth. His skin is jet black like coal, as black as his boots, on his face, ears and hands alike. He has long pointed ears, a narrow sharp face, pale silver eyes and long straight white hair hanging loose, with his head bare. He has realistic adult proportions: a small head, long slender limbs, about eight heads tall.",
-  "colours": "jet-black coal-coloured skin, long white hair, pale silver eyes, dark grey leather armour, a short dark red cape, one grey iron dart with a pale yellow venom-wet tip and small black flights.",
-  "wears": "He wears a close-fitting suit of dark grey leather scout's armour, soft dark grey boots, a belt with a small leather pouch, and a short dark red cape hanging from his shoulders. The cape has no hood and his head is bare, so his white hair and pointed black ears show.",
+  "colours": "jet-black coal-coloured skin, long white hair, pale silver eyes, a deep violet tunic with a silver-grey hem, a dark brown studded leather jerkin, a short charcoal-grey cloak with a silver clasp, one grey iron dart with a pale yellow venom-wet tip and small black flights.",
+  "wears": "He is fully clothed from neck to boots. He wears a long-sleeved tunic of deep violet cloth that reaches his knees, with a silver-grey band at the hem and cuffs; over it a sleeveless jerkin of dark brown leather set with rows of round iron studs; a wide brown belt with a silver buckle and a small pouch; a brown leather strap across his chest with a row of spare darts; grey leggings and tall soft dark brown boots; and a short charcoal-grey cloak pinned at the throat with a silver clasp, hanging behind his shoulders to his hips. The cloak has no hood and his head is bare, so his white hair and pointed black ears show.",
   "holds": "He holds exactly one throwing dart in his raised right hand, gripped in his fist beside his ear like a man about to throw a dart at a board: a short, fat grey iron dart no longer than his forearm, with a heavy pointed iron head wet with pale yellow venom and small black flights at its tail. His left hand is empty: an open bare black hand with the fingers spread and nothing in it.",
   "pose": "He twists side-on facing left on two legs in a thrower's stance, knees bent, his right hand raised beside his head holding the one dart with its point aimed forward to the left, his empty open left hand stretched straight out ahead of him, cape swinging.",
   "must_show": [
@@ -242,7 +257,7 @@
    "pitch-black skin and white hair",
    "one short fat dart in the raised right hand",
    "left hand open and empty",
-   "dark leather scout's gear and short cloak",
+   "clothed: violet tunic and studded brown leather jerkin, plainly clothing and not bare skin, short grey cloak",
    "realistic adult proportions (small head, long limbs)"
   ],
   "must_not_show": [
@@ -270,8 +285,17 @@
    "long shaft",
    "big white feathers",
    "feathers in the left hand",
-   "something held in the left hand"
-  ]
+   "something held in the left hand",
+   "bare chest",
+   "bare torso",
+   "muscles showing",
+   "skin-tight suit",
+   "red cape",
+   "long cape",
+   "vampire",
+   "superhero"
+  ],
+  "lift": 1.15
  },
  {
   "id": "blink_dog",
@@ -311,15 +335,16 @@
   "family": "hound",
   "rank": 2,
   "key": "blue",
-  "what": "a death dog: Orthrus, the two-headed hound of Greek myth, one single big gaunt black hound on four legs with two heads. At its shoulders its neck forks like the letter Y into two separate long thick necks that spread well apart, and each neck carries one complete dog's head with its own ears, glowing red eyes and jaws: exactly two heads, one body, four legs and one tail. There is a clear gap between the two heads. It is a lean, hungry, long-legged hound like a huge black mastiff gone thin, with a deep chest, a tucked-up belly, ribs showing through short coarse fur, cropped ragged ears and a thin whip tail.",
-  "colours": "short coal-black fur with dull grey scars, glowing red eyes in both heads, yellowed fangs, dark red gums, black claws.",
+  "what": "a death dog: one single starving black hound on four legs with two heads, Orthrus, the two-headed hound of Greek myth. Its body is as thin as a greyhound's: a deep narrow chest, a waist tucked up high and tight under the spine, the curved lines of its ribs and the knobs of its backbone and hip bones showing plainly through short coarse black fur, long thin bony legs and a thin whip tail. At its shoulders its neck forks like the letter Y into two separate long thick necks that spread well apart, and each neck carries one complete dog's head, heavy and blunt-muzzled, with its own cropped ragged ears and open jaws: exactly two heads, one body, four legs and one tail. There is a clear gap between the two heads. In each head the eye is one round spot of solid bright red light, as big as the dog's nose, with no pupil; the two red eyes are the brightest things in the picture.",
+  "colours": "short coal-black fur with dull grey scars and pale grey rib lines, one bright red glowing eye showing in each head, yellowed fangs, dark red gums, black claws.",
   "wears": "It is an animal and wears nothing: no collar and no chain.",
   "holds": "It is an animal on four legs and holds nothing.",
   "pose": "Seen from the side, it stalks to the left on four legs with its front legs braced and its hackles up. Its upper head is lifted high on its neck, pointing up and to the left, jaws wide open snarling. Its lower head is stretched out low and forward on its neck, pointing down and to the left, fangs bared. The two heads are far apart, one above the other.",
   "must_show": [
    "a dog on four legs with exactly two heads on two necks",
    "both heads readable in the small sprite, with a gap between them",
-   "gaunt black body with ribs, red eyes",
+   "a starved black body: tucked-up waist, ribs and hip bones showing, thin legs",
+   "a bright red glowing eye in each head, plain in the small sprite",
    "fangs bared",
    "savage and grim, unlike the golden blink dog"
   ],
@@ -342,8 +367,14 @@
    "eight legs",
    "heads pressed together",
    "fat well-fed dog",
-   "pet dog"
-  ]
+   "pet dog",
+   "brown fur",
+   "heavy muscular body",
+   "thick legs",
+   "dark eyes",
+   "third head"
+  ],
+  "lift": 1.25
  },
  {
   "id": "death_echo",
@@ -428,7 +459,8 @@
    "rhinoceros horn",
    "white stripes",
    "brown shell"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "death_mage",
@@ -515,7 +547,8 @@
    "crown",
    "oversized head",
    "cartoon proportions"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "seal_demon_death",
@@ -556,7 +589,8 @@
    "oversized head",
    "green eyes",
    "glowing eyes"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "mane_demon",
@@ -672,7 +706,8 @@
    "bloated belly",
    "cape",
    "oversized head"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "demon_general",
@@ -829,9 +864,9 @@
   "id": "chain_devil_spawn",
   "family": "devil",
   "rank": 3,
-  "key": "blue",
-  "what": "a chain devil spawn: a tall lean man-shaped devil jailer standing upright on two legs, whose whole body is hidden under heavy iron chain. Thick dark grey iron chain is wound round and round it in tight level coils, like rope coiled round a post: round its head, its chest, its waist, each arm and each leg, so that it looks like a statue made of coiled chain. The links are big chunky ovals of dark grey metal, each as large as a hand, and every link is plainly a chain link. No skin, no flesh and no muscle shows anywhere. Its head is a round ball of wound chain with no face, only two small glowing orange eyes in a dark gap. It has no wings, no horns and no tail. It has realistic adult proportions: a small head, long limbs.",
-  "colours": "dark gunmetal-grey iron chain on every part of the body and head, black shadow between the links, a few small spots of orange-brown rust, two small glowing orange eyes, two great hooks of bright bare polished steel, pale silver-white.",
+  "key": "green",
+  "what": "a chain devil spawn: a tall lean man-shaped devil jailer standing upright on two legs, whose whole body is hidden under heavy iron chain. Thick iron chain is wound round and round it in tight level coils, like rope coiled round a post: round its head, its chest, its waist, each arm and each leg, so that it looks like a statue made of coiled chain. The links are huge: every link is a fat oval ring of dark gunmetal-grey iron as big as its own fist, with a pitch-black hole through its middle and one bright pale steel highlight on its outer curve, so that only about six links span its chest and each one is plainly a chain link. Between the coils there is only black shadow. No skin, no flesh and no muscle shows anywhere. Its head is a round ball of wound chain with no face, only two glowing orange eyes, each as big as a link, in a black gap. It has no wings, no horns and no tail. It has realistic adult proportions: a small head, long limbs.",
+  "colours": "dark gunmetal-grey iron chain on every part of the body and head, with bright pale steel highlights on the links and black shadow in and between them, two glowing orange eyes, two great hooks of bright bare polished steel, pale silver-white.",
   "wears": "It wears nothing but the chains that wrap its whole body.",
   "holds": "It holds no weapon and no whip. From each of its two wrists hangs exactly one short length of the same thick chunky grey chain, only four big links long, and each ends in one enormous hook like a butcher's meat hook: a thick bar of bright bare polished steel, pale silver-white, bent into the shape of the letter J, as big as its own head and as thick as its wrist, with a sharp upturned point. The right hook is swung up beside its head at the upper left, clear of the body against the backdrop; the left hook hangs beside its left knee, held out away from the leg. Both chains stay joined to its arms.",
   "pose": "It lurches to the left on two legs with one foot forward, its right arm flung up and forward so that its short chain and great pale steel hook swing up at the upper left, clear of its head, its left arm held out low and away from its side with the other great pale hook hanging from the wrist by its knee, body leaning into the throw.",
@@ -878,7 +913,15 @@
    "anchor",
    "sickle",
    "scythe",
-   "fish hooks"
+   "fish hooks",
+   "clay",
+   "mud",
+   "stone golem",
+   "brown body",
+   "beige body",
+   "smooth body",
+   "knitted wool",
+   "mummy"
   ]
  },
  {
@@ -951,6 +994,7 @@
    "spikes on the back",
    "rocks under it",
    "bear on all four legs"
-  ]
+  ],
+  "lift": 1.35
  }
 ]

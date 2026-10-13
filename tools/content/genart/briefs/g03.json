@@ -247,7 +247,8 @@
    "helmet hiding the horns",
    "goat legs",
    "feathered wings"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "wild_hunt_captain",
@@ -602,21 +603,22 @@
    "skeleton horse",
    "cloud of smoke around it",
    "armour"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "unicorn_corrupted",
   "family": "corrupted_steed",
   "rank": 2,
   "key": "green",
-  "what": "a corrupted unicorn: a real horse with one horn growing from the middle of its forehead, and no wings. The horn is jet black, as thick as the horse's own foreleg at its base, gnarled and knotted, and it is not straight: it bends in two crooked kinks, first up and then forward, ending in a blunt broken point. Its once-white coat has gone the dull grey of cold ash. From the base of the horn a web of thick black branching lines, each as thick as a finger, spreads over its whole face, down its neck and across its shoulder and chest, bold and plainly seen against the grey coat. It has a tangled black mane and tail, a short tuft of beard under the chin, cloven hooves, and angry glowing violet eyes.",
-  "colours": "dull ash-grey coat, the grey of cold ash, with a web of thick black branching lines on the face, neck, shoulder and chest, a jet-black crooked horn, a tangled black mane and tail, glowing violet eyes, black hooves.",
+  "what": "a corrupted unicorn: a real horse with one horn growing from the middle of its forehead, and no wings. The horn is jet black, as thick as the horse's own foreleg at its base, gnarled and knotted, and it is curved: one long single horn in the shape of a crescent moon, sweeping forward and upward from the forehead in one bold arc to a sharp point, as long as the horse's whole head. Its once-white coat has gone the dull grey of cold ash. From the base of the horn a web of thick black branching lines, each as thick as a finger, spreads over its whole face, down its neck and across its shoulder and chest, bold and plainly seen against the grey coat. It has a tangled black mane and tail, a short tuft of beard under the chin, cloven hooves, and angry glowing violet eyes.",
+  "colours": "dull ash-grey coat, the grey of cold ash, with a web of thick black branching lines on the face, neck, shoulder and chest, a jet-black curved horn, a tangled black mane and tail, glowing violet eyes, black hooves.",
   "wears": "It is an animal and wears nothing: no saddle, no bridle.",
   "holds": "It is an animal on four legs and holds nothing.",
-  "pose": "Seen from the side, it gallops to the left on four legs at a full charge, front legs reaching and hind legs kicked out behind, its neck stretched out and its head lowered to the level of its own chest so the thick crooked black horn points ahead at the left edge of the picture, mane streaming back.",
+  "pose": "Seen from the side, it gallops to the left on four legs at a full charge, front legs reaching and hind legs kicked out behind, its neck stretched out low and its head lowered to the level of its own chest, so the great curved black horn hooks forward and up against the empty backdrop at the left of the picture, mane streaming back.",
   "must_show": [
    "a horse with one horn on the forehead",
-   "the horn black, thick, knotted and bent in crooked kinks, not straight",
+   "the horn black, thick and plainly curved like a crescent moon, not straight",
    "ash-grey coat with a bold web of black lines on the face, neck and shoulder; black mane",
    "violet eyes",
    "charging with the horn lowered, on four legs",
@@ -640,8 +642,13 @@
    "pink coat",
    "lilac coat",
    "purple coat",
-   "white coat"
-  ]
+   "white coat",
+   "straight horn",
+   "rhinoceros",
+   "goat",
+   "ram horns"
+  ],
+  "lift": 1.2
  },
  {
   "id": "corrupted_treant",
@@ -672,7 +679,8 @@
    "grass",
    "rocks under it",
    "bird nest"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "corrupted_angel",
@@ -745,7 +753,8 @@
    "tail with a head on it",
    "furry tail",
    "tail lying low by the feet"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "carrion_crawler",
@@ -858,15 +867,15 @@
   "id": "crypt_summoner",
   "family": "crypt",
   "rank": 2,
-  "key": "blue",
-  "what": "a crypt summoner: a long-dead necromancer scholar, a tall gaunt withered corpse with dry grey skin stretched tight over a bony face, sunken eyes that glow sickly green, a thin wispy white beard and long thin withered fingers. He has the look of a stern old bookkeeper. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
-  "colours": "withered grey skin, long black scholar's robes with dull gold trim, a flat black scholar's cap, a thick brown leather ledger with yellowed pages, small ivory bones, a sickly green magic light.",
-  "wears": "He wears long black scholar's robes with dull gold embroidered trim at the collar, cuffs and hem, a flat black scholar's cap, and a belt hung with a row of small ivory finger bones and an inkpot.",
-  "holds": "He holds exactly one big thick open ledger book in his left hand, propped against his forearm. His right hand is empty and raised with one long finger pointing, a small sickly green light burning at the fingertips, touching the hand. He has no staff and no weapon.",
-  "pose": "He leans forward on two legs with one foot ahead, the open ledger held up before his chest in his left hand, his right arm stretched out pointing at his target with green light at the fingertips, robe sleeves swept back.",
+  "key": "magenta",
+  "what": "a crypt summoner: the corpse of a long-dead necromancer scholar, a tall gaunt withered dead man. His skin is cold chalk-grey, the grey of cold ash, on his face, neck, hands and feet alike, dry and shrunk tight on the skull, with the lips dried back from the teeth, a thin sharp nose, withered ears, sunken eyes that glow, a thin wispy white beard and long thin withered fingers. He has the look of a stern old bookkeeper. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "colours": "cold chalk-grey dead skin, long black scholar's robes with dull gold trim, a close-fitting round black cloth skullcap, a thick brown leather ledger with grey-white pages, small ivory bones, one ball of bright emerald-green flame, a wispy white beard.",
+  "wears": "He wears long black scholar's robes that reach his ankles, with dull gold embroidered trim at the collar, cuffs and hem, a close-fitting round black cloth skullcap that sits tight on the crown of his head like a medieval clerk's, and a belt hung with a row of small ivory finger bones and an inkpot.",
+  "holds": "He holds exactly one big thick open ledger book in his left hand, propped against his forearm. His right hand is empty and raised with the palm open, and one round ball of bright emerald-green flame as big as his fist burns in that palm, touching the hand, deep green with a bright green core. He has no staff and no weapon.",
+  "pose": "He leans forward on two legs with one foot ahead, the open ledger held up before his chest in his left hand, his right arm stretched out and up toward his target with the ball of emerald-green flame burning in the open palm, robe sleeves swept back.",
   "must_show": [
-   "withered grey dead face with flesh on it and a wispy beard (not a bare skull)",
-   "black scholar's robes with gold trim and a scholar's cap",
+   "withered chalk-grey dead face with flesh on it and a wispy beard (not a bare skull, not green)",
+   "black scholar's robes with gold trim and a round black skullcap",
    "one big open ledger book in the left hand",
    "green magic at the empty right hand",
    "richer and more learned-looking than the plain crypt thing",
@@ -886,7 +895,20 @@
    "second book",
    "oversized head",
    "cartoon proportions",
-   "short stubby body"
+   "short stubby body",
+   "green skin",
+   "green face",
+   "green hands",
+   "green robes",
+   "mortarboard",
+   "graduation cap",
+   "tassel",
+   "flat square cap",
+   "bare legs",
+   "living tan skin",
+   "white smoke",
+   "grey smoke",
+   "pale wisp"
   ]
  }
 ]
