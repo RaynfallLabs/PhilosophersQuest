@@ -44,15 +44,16 @@ def main():
             continue
         pic = Image.open(os.path.join(GEN, 'objects', oid, f"c{v['pick']}_pixel.png"))
         key = briefs[oid].get('key', 'magenta')
+        glow = float(briefs[oid].get('lift', 1.0))      # the brief's brightening, as the pipeline cuts it
         rule = ON_FLOOR.get(oid) or (TRAP if oid.startswith('trap_') else None)
         if rule:
             size, under, lift = rule
-            spr, _ = convert.to_sprite(pic, key, tile=size)
+            spr, _ = convert.to_sprite(pic, key, tile=size, lift=glow)
             tile = (dark if under == 'dark' else floor).copy()
             tile.alpha_composite(spr, ((T - size) // 2, T - size - lift))
             tile.save(os.path.join(env, oid + '.png')); out['env'].append(oid)
         else:
-            spr, _ = convert.to_sprite(pic, key, tile=T)
+            spr, _ = convert.to_sprite(pic, key, tile=T, lift=glow)
             spr.save(os.path.join(items, oid + '.png')); out['items'].append(oid)
     if os.path.abspath(a.to) == os.path.abspath(ROOT):
         json.dump(out, open(os.path.join(HERE, 'installed_tiles.json'), 'w', encoding='utf-8'), indent=0)
