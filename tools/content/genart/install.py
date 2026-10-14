@@ -7,7 +7,7 @@ c<N>_sprite.png to assets/tiles/monsters/<id>.png, and writes the list of what
 was installed to tools/content/genart/installed.json. The old code-drawn art
 build (tools/content/art/build.py) reads that list and leaves those files alone.
 """
-import json, os, shutil, sys
+import json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 GEN = os.path.join(ROOT, '_genart')
@@ -19,7 +19,7 @@ def picks():
     out = {}
     for run in sorted(os.listdir(GEN)):
         f = os.path.join(GEN, run, 'review.json')
-        if run in ('pilot',) or not os.path.exists(f):      # 'pilot' is the superseded 48px run
+        if not (run == 'pilot64' or re.fullmatch(r'g\d\d', run)) or not os.path.exists(f):   # monster runs only ('pilot' is the old 48px run; objects and items install elsewhere)
             continue
         for mid, v in json.load(open(f, encoding='utf-8')).items():
             if v.get('pick'):
