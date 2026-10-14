@@ -28,8 +28,8 @@ with open(os.path.join(ROOT, 'tools', 'content', 'genart', 'installed.json'), en
     GENERATED = set(json.load(_f))     # monsters carrying a reviewed 64px picture
 with open(os.path.join(ROOT, 'tools', 'content', 'genart', 'installed_tiles.json'), encoding='utf-8') as _f:
     GENERATED_TILES = json.load(_f)    # map tiles and objects carrying one, by folder
-_items = os.path.join(ROOT, 'tools', 'content', 'genart', 'installed_items.json')
-if os.path.exists(_items):             # items (and the trader) carrying one, by folder
+for _items in (os.path.join(ROOT, 'tools', 'content', 'genart', n) for n in ('installed_items.json', 'installed_rest.json')):
+  if os.path.exists(_items):           # items, heroes, NPCs and pets carrying one, by folder
     with open(_items, encoding='utf-8') as _f:
         for _folder, _ids in json.load(_f).items():
             GENERATED_TILES[_folder] = sorted(set(GENERATED_TILES.get(_folder, ())) | set(_ids))

@@ -37,8 +37,8 @@ _GEN_LIST = HERE.parent / 'genart' / 'installed.json'
 GENERATED = set(_json.loads(_GEN_LIST.read_text(encoding='utf-8'))) if _GEN_LIST.exists() else set()
 _TILE_LIST = HERE.parent / 'genart' / 'installed_tiles.json'
 GENERATED_TILES = _json.loads(_TILE_LIST.read_text(encoding='utf-8')) if _TILE_LIST.exists() else {}
-_ITEM_LIST = HERE.parent / 'genart' / 'installed_items.json'
-if _ITEM_LIST.exists():
+for _ITEM_LIST in (HERE.parent / 'genart' / 'installed_items.json', HERE.parent / 'genart' / 'installed_rest.json'):
+  if _ITEM_LIST.exists():
     for _folder, _ids in _json.loads(_ITEM_LIST.read_text(encoding='utf-8')).items():
         GENERATED_TILES[_folder] = sorted(set(GENERATED_TILES.get(_folder, ())) | set(_ids))
 
