@@ -736,6 +736,16 @@ and look for the same kind of slip when reviewing.
   nothing under it".
 - **A tall thing in a bowl shrinks the bowl and the tier.** Cap the height and say
   the bowl is the biggest thing in the picture.
+- **A plain ring with no stone comes out as a tall oval: the digit 0.** "A perfect
+  circle exactly as wide as it is tall" works only when something sits on the hoop or
+  the hoop has texture (hammered facets, stripes).
+- **A cross on a ring draws the female symbol** standing on the hoop, and a screw
+  head on a round knob.
+- **"Mirror-bright steel plate" or "lozenge" on a ring is a diamond solitaire**; say
+  no diamond, no solitaire.
+- **An amber dome with something trapped in it draws a mushroom.**
+- **Check near-twins across families** (a rounder twisted iron ring becomes the
+  thin-wire ring).
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
