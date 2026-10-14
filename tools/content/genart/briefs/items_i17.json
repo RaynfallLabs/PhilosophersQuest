@@ -41,7 +41,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_strength_steel",
@@ -128,7 +129,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_strength_mithril",
@@ -420,15 +422,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a finger ring, drawn thick and bold: the whole ring is made of glass, with no metal at all: two thick strands of glass, one clear pale icy blue and one milk white, twisted round each other like the strands of a rope and bent into a hoop with a clear round hole through the middle, so that slanting stripes of pale blue and white go all the way round it. It has no stone.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is made of glass, with no metal at all: two thick strands of glass, one clear pale icy blue and one milk white, twisted round each other like the strands of a rope and bent into a hoop that is a perfect circle, with a round hole through the middle as wide as half the ring. Bold slanting stripes of pale blue and white go all the way round it, each stripe as wide as the hoop is thick. It has no stone.",
   "colours": "Clear pale icy blue glass, the blue of a winter sky, striped with milk-white glass, with sharp white glints.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "the hoop is a twist of two glass strands",
-   "slanting pale blue and white stripes all round",
-   "no metal"
+   "a round glass hoop with a visible hole",
+   "bold slanting blue and white stripes"
   ],
   "must_not_show": [
    "gold",
@@ -450,7 +450,11 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "plain smooth hoop"
   ]
  },
  {
@@ -502,14 +506,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "green",
-  "what": "a finger ring, drawn thick and bold: a hoop of silver with a clear round hole through the middle, and standing on top of the hoop one tall raw amethyst crystal: a six-sided column with flat faces, short and stout, as thick as the hoop is thick three times over and only as tall as a third of the hoop, ending at the top in a sharp six-sided point. Its foot is gripped by a plain silver collar. The hoop is large and round, much bigger than the crystal, and its hole shows plainly.",
+  "what": "a finger ring, drawn thick and bold: a heavy hoop of silver as thick as a finger, a perfect circle, with a clear round hole through the middle, and on top of the hoop, rising from one plain silver collar, a small cluster of three raw amethyst crystals, each a short stout six-sided point with flat faces, growing side by side and fanned out a little, the middle one the tallest; the cluster is as wide as half the hoop and no taller than a third of it.",
   "colours": "The hoop is bright silver, pale grey with white glints and charcoal shadows; the crystal is clear violet, deep violet in its depths and pale lilac on its lit faces, with white glints.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "one short stout pointed violet crystal standing on top",
-   "large round silver hoop"
+   "a thick round hoop with a visible hole",
+   "three short violet crystal points on top"
   ],
   "must_not_show": [
    "round stone",
@@ -530,7 +533,13 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "single tall crystal",
+   "pin",
+   "key"
   ]
  },
  {
@@ -702,15 +711,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a finger ring, drawn thick and bold: a slim hoop of yellow gold with a clear round hole through the middle. The hole is empty: nothing hangs inside the hoop. Above the hoop, sitting on top of it and outside it, in a small gold cup with one short gold prong at its left and one at its right, is one big lump of raw amber, uncut, a smooth rounded pebble with an uneven outline, wider than it is tall and as wide as the hoop itself, clear, with light glowing in its depths.",
+  "what": "a finger ring, drawn thick and bold: a heavy hoop of yellow gold as thick as a finger, a perfect circle, with a clear round hole through the middle, and on top of it, in a low gold cup, one big lump of raw amber lying on its long side: a squat smooth rounded pebble with an uneven outline, twice as wide as it is tall and as wide as two thirds of the hoop, clear, with light glowing in its depths.",
   "colours": "The hoop is warm yellow gold with deep brown-gold shadows and white glints; the lump is deep honey amber, golden where the light passes through and dark brown-amber at its thick edges, with one white glint.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "slim gold hoop with an empty hole",
-   "the stone sits on top of the hoop between two short gold prongs",
-   "one big uneven lump of honey amber as wide as the hoop"
+   "a thick round gold hoop with a visible hole",
+   "one squat amber lump on top"
   ],
   "must_not_show": [
    "stone hanging inside the hoop",
@@ -736,7 +743,13 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "tall stone",
+   "acorn",
+   "thin hoop"
   ]
  },
  {
@@ -746,15 +759,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a finger ring, drawn thick and bold: a slim hoop of yellow gold with a clear round hole through the middle. The hole is empty: nothing hangs inside the hoop. Above the hoop, sitting on top of it and outside it, in a small gold cup with one short gold prong at its left and one at its right, is one long narrow citrine standing upright, pointed at the top and pointed at the bottom like a grain of wheat, with flat cut faces, as tall as half the hoop and a third as wide as it is tall; its lower point rests in the cup and it does not reach down into the hole.",
+  "what": "a finger ring, drawn thick and bold: a heavy hoop of yellow gold as thick as a finger, a perfect circle, with a clear round hole through the middle, and lying on its side across the top of the hoop, in a plain gold rim, one long citrine cut as a pointed oval, pointed at its left end and at its right end, as wide as the whole hoop and a third as tall as it is wide, with flat cut faces.",
   "colours": "The hoop is warm yellow gold with deep brown-gold shadows and white glints; the stone is pale clear lemon yellow, nearly white on its lit faces, with white glints.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "slim gold hoop with an empty hole",
-   "the stone sits on top of the hoop between two short gold prongs",
-   "one tall narrow pale yellow gem, pointed at both ends, standing upright"
+   "a thick round gold hoop with a visible hole",
+   "one long pointed pale yellow stone lying crosswise on top"
   ],
   "must_not_show": [
    "stone hanging inside the hoop",
@@ -780,7 +791,14 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "upright stone",
+   "cup",
+   "prongs",
+   "thin hoop"
   ]
  },
  {
@@ -1355,7 +1373,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "ring_searching_gleaming_iron",
@@ -1364,15 +1383,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a finger ring, drawn thick and bold: the whole ring is brightly polished iron with no stone: it is made like a tiny belt. The hoop with a clear round hole through the middle is a flat iron strap, and at the top it is fastened with one big square buckle of the same iron: a square frame as wide as half the hoop, turned to the viewer, with one straight thick pin across its middle, and the pointed end of the strap sticking out past the buckle to the right.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is one piece of brightly polished iron with no stone: a heavy hoop as thick as a finger, a perfect circle, with a clear round hole through the middle. At the top the iron of the hoop itself is hammered out into one broad flat oval plate lying crosswise, wider than it is tall, flat against the top of the hoop, as wide as half the hoop, with a raised rim; its flat face is polished like a mirror and one broad white glint crosses it. Nothing stands up above the plate.",
   "colours": "Gleaming polished iron: pale steel grey, colourless, with broad white highlights and dark charcoal shadows.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
    "a round hoop with a visible hole",
-   "the hoop is a flat strap",
-   "one big square buckle at the top",
-   "bright polished grey metal, no stone"
+   "one flat polished plate at the top, part of the hoop"
   ],
   "must_not_show": [
    "leather",
@@ -1396,7 +1413,20 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "buckle",
+   "strap",
+   "pin",
+   "diamond",
+   "gemstone",
+   "solitaire",
+   "prongs",
+   "crystal",
+   "engagement ring",
+   "shield"
   ]
  },
  {
@@ -1759,7 +1789,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_warning_runed_metal",
@@ -1902,14 +1933,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a finger ring, drawn thick and bold: the whole ring is one thick square bar of black iron, twisted hard along its length like a stick of barley sugar, so that sharp spiral ridges run all the way round it, and bent into a hoop with a clear round hole through the middle. The bar's two ends are welded together so that no join shows: the hoop is the same twisted bar all the way round, with nothing fixed on top of it. It has no stone.",
-  "colours": "Dark charcoal-grey iron, colourless, with cold pale grey light along every spiral ridge and black in the grooves between.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is one thick square bar of iron, twisted hard along its length like a stick of barley sugar, so that sharp spiral ridges run all the way round it, and bent into a hoop that is a perfect circle, exactly as wide as it is tall, with a round hole through the middle as wide as half the ring. The bar's two ends are welded together so that no join shows. It has no stone and nothing on top.",
+  "colours": "Mid grey iron, colourless, with bright pale grey light along every spiral ridge and black in the grooves between.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "dark iron hoop with spiral ridges all the way round",
-   "nothing on top, no stone"
+   "a round twisted iron hoop",
+   "hole showing"
   ],
   "must_not_show": [
    "gold",
@@ -1936,7 +1966,11 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "square outline"
   ]
  },
  {
@@ -2075,14 +2109,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a finger ring, drawn thick and bold: a hoop of yellow gold with a clear round hole through the middle, and standing on top of the hoop one large fire opal carved in the shape of a single flame: broad and round at the bottom, narrowing upward and ending in one sharp tip that curls over to the right, as tall as half the hoop. The flame's round foot rests directly on the top of the hoop. The hoop is large and round and there is nothing beneath it: it is a finger ring, not a lamp.",
+  "what": "a finger ring, drawn thick and bold: a heavy hoop of yellow gold as thick as a finger, a perfect circle, with a clear round hole through the middle, and standing on top of the hoop one large fire opal carved in the shape of a single flame: broad and round at the bottom, narrowing upward and ending in one sharp tip that curls over to the right, as wide as half the hoop and as tall as half the hoop. The flame's round foot rests directly on the top of the hoop.",
   "colours": "The hoop is plain warm yellow gold with deep brown-gold shadows and white glints; the flame-shaped stone is bright glowing orange, with a yellow heart low down in its middle and deep red at its curling tip.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "one flame-shaped orange stone standing on top, its tip curling to one side",
-   "gold hoop"
+   "a thick round gold hoop with a visible hole",
+   "one flame-shaped orange stone standing on top, its tip curling to one side"
   ],
   "must_not_show": [
    "torch",
@@ -2112,7 +2145,11 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "thin hoop"
   ]
  },
  {
@@ -2321,15 +2358,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a finger ring, drawn thick and bold: the whole ring is carved from one piece of deep green jade, with no metal at all, in the shape of one snake coiled into a hoop with a clear round hole through the middle: the snake's thick smooth body goes once round, and at the top its neck lifts clear of the hoop and its broad flat head rears up above its own back, turned to the right, mouth shut. Its back is cut with one row of big diamond-shaped scales. Its tail tip lies along the hoop.",
-  "colours": "Glossy deep green jade, darker green between the scales, with pale green shine and white glints; one tiny eye of yellow gold.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is carved from one piece of deep green jade, with no metal at all, in the shape of a cobra: its thick smooth body is coiled once round into a hoop, a perfect circle, with a clear round hole through the middle, and at the top of the hoop its head rises and faces the viewer, with a broad flat spread hood as wide as half the hoop, two small eyes of yellow gold and the mouth shut. Its back is cut with one row of big diamond-shaped scales.",
+  "colours": "Glossy deep green jade, darker green between the scales, with pale green shine and white glints; two tiny eyes of yellow gold.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "the hoop is a green jade snake",
-   "the snake's head rears up above the top of the hoop",
-   "no metal"
+   "a round green hoop with a visible hole",
+   "a cobra's spread hood and head at the top, facing the viewer"
   ],
   "must_not_show": [
    "gold snake",
@@ -2353,7 +2388,13 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "digit six",
+   "head in profile",
+   "open jaws"
   ]
  },
  {
@@ -2605,12 +2646,12 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a charm of quicksilver: three perfectly round balls of mirror-bright liquid metal, like beads of mercury, hanging one below another in a straight upright line and touching: the top one the biggest, as big as a walnut, the middle one smaller, the bottom one the smallest. A small plain silver ring on top of the biggest ball takes the cord. It hangs from a short closed loop of thick black silk cord, which is part of it; the loop is no taller than the pendant itself and is knotted at the pendant's top.",
+  "what": "a charm of quicksilver: one large perfectly round ball of mirror-bright liquid metal, as wide as half the picture, and clinging beneath it two smaller balls of the same metal side by side, each half as wide, touching it and each other, like drops about to fall, so the three make a triangle pointing down. A small plain silver ring on top of the big ball takes the cord. It hangs from a short closed loop of thick black silk cord, which is part of it; the loop is no taller than the big ball and is knotted at its top.",
   "colours": "Mirror-bright quicksilver: brilliant white highlights, pale grey bodies and near-black reflections, colourless; black cord.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "three mirror-bright balls in an upright line, biggest at the top",
-   "black cord loop"
+   "one big mirror-bright ball with two smaller ones beneath",
+   "short black cord loop"
   ],
   "must_not_show": [
    "ball of wound thread",
@@ -2635,7 +2676,10 @@
    "long necklace chain",
    "chain running off the picture",
    "second object",
-   "label with writing"
+   "label with writing",
+   "three balls in a line",
+   "bubbles",
+   "planets"
   ]
  },
  {
@@ -2676,7 +2720,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "amulet_intellect_brilliant_crystal_medallion",
@@ -2765,12 +2810,12 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a talisman that is one large hawk's wing feather hanging quill upward and tip downward: broad, stiff and bold, as long as a hand, its vanes dark brown crossed by five broad bars of pale cream, with a pale shaft down its middle. The bare quill at the top is wrapped in a tight binding of dark red thread, and just below the binding sits one big round bead of yellow amber. It hangs from a short closed loop of thick dark brown leather cord, which is part of it; the loop is no taller than the pendant itself and is knotted at the pendant's top.",
+  "what": "a talisman that is one large, very broad hawk's tail feather hanging quill upward and tip downward: its vane is half as wide as the feather is long, with a rounded tip, dark brown crossed by four broad level bars of pale cream, each bar as wide as the brown between, with a pale shaft down its middle. The bare quill at the top is wrapped in a tight binding of dark red thread, and just below the binding sits one big round bead of yellow amber. It hangs from a short closed loop of thick dark brown leather cord, which is part of it; the loop is no taller than the feather is wide and is knotted at its top.",
   "colours": "The feather is dark brown with broad pale cream bars and a cream shaft; dark red thread binding; one yellow amber bead; dark brown cord.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "one big brown feather barred with cream, tip down",
-   "a bound quill and one bead at the top",
+   "one very broad barred brown feather, tip down",
+   "red binding and amber bead at the top",
    "cord loop"
   ],
   "must_not_show": [
@@ -2796,7 +2841,10 @@
    "long necklace chain",
    "chain running off the picture",
    "second object",
-   "label with writing"
+   "label with writing",
+   "narrow feather",
+   "pine cone",
+   "fish"
   ]
  },
  {

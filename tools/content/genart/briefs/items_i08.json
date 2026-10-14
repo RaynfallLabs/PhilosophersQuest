@@ -40,11 +40,12 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a plain finger ring: one very thick, smooth, rounded hoop of bright yellow gold, as thick as a finger all the way round, with a clear round hole through the middle. It has no stone, no mount and no marks: it is perfectly plain, and it gleams.",
-  "colours": "Bright plain yellow gold, deep brown-gold in the shadows, one white glint.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a plain finger ring of dwarf-made gold, drawn thick and bold: one very thick, heavy hoop of deep rich yellow gold, a perfect circle exactly as wide as it is tall, as thick as a finger all the way round, with a round hole through the middle as wide as half the ring. The whole outside of the hoop is hammered by hand into many small flat facets, each catching the light, with one raised rounded rim along each edge. It has no stone and no mount.",
+  "colours": "Deep rich yellow gold, brown-gold in the shadows, bright white glints on the hammered facets.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
-   "one plain thick gold hoop",
+   "one thick round gold hoop",
+   "hammered facets",
    "hole showing",
    "no stone"
   ],
@@ -65,7 +66,10 @@
    "brooch",
    "earring",
    "person",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape"
   ]
  },
  {
@@ -209,9 +213,9 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a small plain finger ring: one smooth rounded hoop of old silver, of even thickness all the way round, with a clear round hole through the middle. It has no stone and no marks; it is worn smooth and softly polished, a little dark with tarnish on the inside.",
+  "what": "a small plain finger ring: one smooth rounded hoop of old silver, a perfect circle exactly as wide as it is tall, as thick as a finger and of even thickness all the way round, with a round hole through the middle as wide as half the ring. It has no stone and no marks; it is worn smooth and softly polished, a little dark with tarnish on the inside.",
   "colours": "Pale silver-white with soft grey shading and dark grey tarnish inside the hoop, one white glint.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one plain silver hoop",
    "hole showing",
@@ -233,7 +237,13 @@
    "brooch",
    "earring",
    "person",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "figure",
+   "knight",
+   "sword"
   ]
  },
  {
@@ -390,11 +400,12 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a pendant in the shape of a small sword hanging point downward: a short broad double-edged blade of dark grey steel with bright edges, a straight crossguard and a round pommel of black iron; the pommel is at the top and the point at the bottom. A sturdy ring on the pommel joins it to a short closed loop of thick dark iron chain with big oval links, no taller than the sword.",
-  "colours": "Dark grey steel with bright pale edges; black iron guard, pommel and chain.",
+  "what": "a pendant in the shape of a small sword hanging point downward, drawn very broad and stubby: from the top, a big round pommel of black iron; a short thick grip wrapped in dark brown leather; a thick straight crossguard of black iron, twice as wide as the blade; then the blade, one broad flat leaf of pale bright steel, only three times as long as it is wide and as wide as the grip is long, with one dark groove down its middle, ending in a sharp point at the bottom. A sturdy ring on the pommel joins it to a short closed loop of thick dark iron chain with three big oval links, no taller than the grip.",
+  "colours": "Pale bright steel blade with white edges and a dark groove; black iron pommel, guard and chain with pale grey lit edges; dark brown leather grip.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "one small sword hanging point down",
+   "one small broad sword hanging point down",
+   "pale steel blade",
    "chain loop joined to the pommel"
   ],
   "must_not_show": [
@@ -417,7 +428,9 @@
    "long necklace chain",
    "chain running off the picture",
    "second object",
-   "label with writing"
+   "label with writing",
+   "thin blade",
+   "long blade"
   ]
  },
  {
@@ -535,7 +548,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "amulet_drain_res",
@@ -621,27 +635,29 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a talisman of bird bones: three hollow wing bones, chalk-white, each as thick as a finger with a knobbed end at the bottom, hanging side by side and touching, the middle one the longest. They are bound together across their tops by a broad wrapping of dark brown leather thong, and two short black swallow feathers are tied in at the binding and lie against the bones. From the binding rises a short closed loop of dark brown leather cord.",
-  "colours": "Chalk-white bones with grey shading; dark brown leather binding and cord; two black feathers.",
+  "what": "a talisman that is the skull of a small bird, a swallow: one clean chalk-white bird skull seen from the side, facing left: a round braincase as big as a walnut with one large round dark eye-hole, and a short pointed beak of pale horn-grey as long as the braincase is wide. Bound against the back of the skull by a broad wrapping of dark brown leather thong are two long black swallow feathers that hang down below it side by side, each feather as long as the skull and beak together. From the binding rises a short closed loop of dark brown leather cord.",
+  "colours": "Chalk-white bird skull with grey shading and a pale horn-grey beak; two glossy jet-black feathers; dark brown leather binding and cord.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "three white bones side by side",
-   "dark leather binding at the top",
+   "one small white bird skull with a beak, seen from the side",
+   "two black feathers hanging below",
    "cord loop"
   ],
   "must_not_show": [
-   "skull",
-   "crossed bones",
-   "human bones",
+   "human skull",
+   "teeth",
+   "jaw",
    "whole bird",
+   "living bird",
+   "feathered head",
    "wing",
+   "three bones",
    "beads",
    "gem",
    "neck",
    "chest",
    "person",
    "face",
-   "head",
    "hands",
    "mannequin",
    "stand",
@@ -804,7 +820,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "amulet_of_fortitude",
@@ -880,7 +897,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "amulet_of_merlin",
@@ -1038,7 +1056,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "amulet_of_the_titan",
@@ -1232,7 +1251,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.25
  },
  {
   "id": "amulet_sleep_res",
@@ -1400,13 +1420,13 @@
   "body": "item",
   "scale": "small",
   "key": "green",
-  "what": "an ankh of bright yellow gold: an upright cross whose top arm is one large open oval loop with a clear hole through it; a short straight arm to the left and to the right; and a long straight stem below; every part thick and flat. Each of the two side arms and the stem is inlaid with one broad band of deep blue lapis. It hangs from a short closed loop of thick gold chain with big oval links, which is part of it; the loop is no taller than the pendant itself and joins a sturdy ring at the pendant's top.",
-  "colours": "Bright yellow gold; three broad bands of deep blue; gold chain.",
+  "what": "an ankh of bright yellow gold, drawn very thick and stubby, every part as thick as a thumb: at the top one large open loop shaped like an egg standing on its narrow end, with a clear hole through it, the loop as tall as the stem below it; directly beneath the loop one single straight crossbar, short and thick, flaring a little at each end; and beneath the crossbar one short thick stem, widening a little toward its foot. There is exactly one crossbar. The crossbar and the stem are each inlaid along the middle with one broad band of deep blue lapis, half as wide as the bar. A small gold ring on top of the loop holds a short closed loop of thick gold chain with three big oval links.",
+  "colours": "Bright yellow gold with brown-gold shadows and white glints; broad bands of deep blue lapis.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "one gold ankh: loop on top, two arms, a stem",
-   "hole through the loop",
-   "blue bands"
+   "one thick gold ankh: loop on top, one crossbar, short stem",
+   "blue inlay",
+   "short chain loop"
   ],
   "must_not_show": [
    "plain cross with no loop",
@@ -1428,7 +1448,12 @@
    "long necklace chain",
    "chain running off the picture",
    "second object",
-   "label with writing"
+   "label with writing",
+   "two crossbars",
+   "second crossbar",
+   "Latin cross",
+   "thin wire",
+   "long stem"
   ]
  },
  {
@@ -1438,12 +1463,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "an ankh of gilded bronze, dark rich gold: an upright cross whose top arm is one large oval loop; a short straight arm to the left and to the right, flaring a little at the ends; and a long straight stem below; every part thick and flat. The oval loop is completely filled by one smooth disc of bright red carnelian, a red sun, so there is no hole. It hangs from a short closed loop of thick dark gold chain with big oval links, which is part of it; the loop is no taller than the pendant itself and joins a sturdy ring at the pendant's top.",
+  "what": "an ankh of gilded bronze, dark rich gold, drawn very thick and stubby, every part as thick as a thumb: at the top one large loop shaped like an egg standing on its narrow end, as tall as the stem below it; directly beneath the loop one single straight crossbar, short and thick, flaring wide at each end; and beneath the crossbar one short thick stem, widening toward its foot. There is exactly one crossbar. The loop is completely filled by one smooth domed disc of bright red carnelian, a red sun, so there is no hole. A small ring on top of the loop holds a short closed loop of thick dark gold chain with three big oval links.",
   "colours": "Dark rich yellow-brown gold; one bright red stone filling the loop.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "one dark gold ankh: loop on top, two arms, a stem",
-   "red disc filling the loop"
+   "one thick gold ankh: loop on top, one crossbar, short stem",
+   "red stone filling the loop",
+   "short chain loop"
   ],
   "must_not_show": [
    "plain cross with no loop",
@@ -1465,7 +1491,12 @@
    "long necklace chain",
    "chain running off the picture",
    "second object",
-   "label with writing"
+   "label with writing",
+   "two crossbars",
+   "second crossbar",
+   "Latin cross",
+   "thin wire",
+   "long stem"
   ]
  },
  {
@@ -1773,7 +1804,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "heart_of_ahriman",
@@ -1812,7 +1844,8 @@
    "chain running off the picture",
    "second object",
    "label with writing"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "idunn_apple_charm",
@@ -1982,12 +2015,13 @@
   "body": "item",
   "scale": "small",
   "key": "magenta",
-  "what": "a talisman: one jagged shard of black volcanic glass, a long flake with broken slanting faces and razor edges, pointed at the bottom, glossy coal-black with sharp bright white glints along its edges. Its blunt top is wrapped in a binding of bright gold wire with a ring. It hangs from a short closed loop of thick dark brown leather cord, which is part of it; the loop is no taller than the pendant itself and is knotted at the pendant's top.",
-  "colours": "Glossy coal-black with white glints on the edges and dark grey faces; bright yellow gold wire; dark brown cord.",
+  "what": "a talisman: one broad jagged flake of black volcanic glass, widest a third of the way down and tapering to a sharp point at the bottom, half as wide as it is long, its faces chipped into big slanting flakes. It is glossy coal-black, but every edge and every ridge between the flakes is lit with a bold line of pale icy grey-white, and one broad flat face near the top catches the light and shines pale grey. Its blunt top is wrapped in a broad band of bright gold wire, five turns, a quarter of the flake's length. It hangs from a short closed loop of thick dark brown leather cord, which is part of it; the loop is no taller than the flake and is knotted at its top.",
+  "colours": "Glossy coal-black glass with bold pale icy grey-white edges and one pale grey face; bright yellow gold wire; dark brown cord.",
   "pose": "Seen from the front, hanging straight down from its short loop, the loop above and the pendant below, the whole thing inside the picture.",
   "must_show": [
-   "one jagged glossy black shard, point down",
-   "gold wire binding at the top",
+   "one broad black glass shard, point down",
+   "bright pale edges",
+   "gold wire binding",
    "cord loop"
   ],
   "must_not_show": [
@@ -2010,7 +2044,11 @@
    "long necklace chain",
    "chain running off the picture",
    "second object",
-   "label with writing"
+   "label with writing",
+   "thin sliver",
+   "dagger",
+   "spearhead on a shaft",
+   "feather"
   ]
  },
  {

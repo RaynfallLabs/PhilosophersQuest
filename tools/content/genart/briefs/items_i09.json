@@ -362,15 +362,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a finger ring, drawn thick and bold: a narrow hoop of yellow gold with a clear round hole through the middle, and on top of the hoop one long rectangular bar of polished stone lying crosswise, three times as long as it is tall, sticking out past the hoop on both sides, held by a gold clasp at each end. The bar is striped across in broad bands: a band of bright green, then a band of bright pink, then green, then pink.",
-  "colours": "Warm yellow gold with deep brown-gold shadows and white glints; the stone bar is striped in broad bands of bright green and bright pink.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a finger ring, drawn thick and bold: a thick hoop of yellow gold, as thick as a finger, with a clear round hole through the middle, and on top of the hoop one large oval stone lying on its side, smooth and domed like a polished pebble, as wide as two thirds of the hoop, in a plain gold rim. The stone is two colours side by side with a straight line between them down its middle: its left half bright rose pink and its right half bright green.",
+  "colours": "Warm yellow gold with deep brown-gold shadows and white glints; the stone half bright rose pink and half bright green, with one white glint.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
    "a round hoop with a visible hole",
-   "one long rectangular stone lying crosswise",
-   "green and pink stripes",
-   "gold hoop"
+   "one oval stone, half pink and half green"
   ],
   "must_not_show": [
    "round stone",
@@ -391,7 +389,13 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "bar",
+   "rod",
+   "stripes"
   ]
  },
  {
@@ -837,14 +841,14 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a finger ring, drawn thick and bold: the hoop is made of eight fat round beads of mirror-bright liquid metal, each bead a shining ball like a drop of mercury, set side by side in a circle and touching, so that together they make one closed ring with a clear round hole through the middle. The beads at the top are a little bigger than those at the bottom. It has no stone.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is one fat smooth band of mirror-bright liquid metal wound round twice, like a coiled spring of two turns lying one in front of the other, with a clear round hole through the middle. Each of its two free ends finishes in one round drop of the same liquid metal, as big as the band is thick, one at the upper left and one at the lower right. It has no stone.",
   "colours": "Mirror-bright quicksilver: brilliant white highlights, pale grey bodies and near-black reflections, colourless.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "the hoop is a circle of fat mirror-bright balls",
-   "no stone"
+   "a coiled band of two turns",
+   "mirror-bright metal",
+   "a round drop at each end"
   ],
   "must_not_show": [
    "string of pearls necklace",
@@ -867,7 +871,14 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "beads",
+   "pearls",
+   "bracelet of balls",
+   "spring with many turns"
   ]
  },
  {
@@ -992,15 +1003,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a finger ring, drawn thick and bold: the whole ring is carved from one piece of rock crystal, with no metal at all: a thick hoop of frosty white crystal with a clear round hole through the middle, cut all the way round in broad flat faces like a nut, so that its outline is many-sided, not smooth. It has no separate stone.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is carved from one piece of rock crystal, with no metal at all: a thick hoop, a perfect circle exactly as wide as it is tall, with a round hole through the middle as wide as half the ring. Its outside is cut into eight broad flat faces all the way round, so its outline is eight-sided, every face catching the light differently. It has no separate stone.",
   "colours": "Frosty milk-white crystal, solid to look at, with pale grey shadows on the faces turned away, pale icy highlights and sharp white glints.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
-   "one finger ring",
-   "a round hoop with a visible hole",
-   "the whole hoop is frosty white crystal",
-   "flat faces cut round the hoop",
-   "no metal, no stone"
+   "one finger ring of clear crystal",
+   "a round hole",
+   "eight-sided faceted outline"
   ],
   "must_not_show": [
    "silver band",
@@ -1022,7 +1031,12 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "gem without a hole",
+   "tall hexagon"
   ]
  },
  {
@@ -1145,7 +1159,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "philosophers_ring_legendary",
@@ -1154,14 +1169,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "green",
-  "what": "a finger ring, drawn thick and bold: a broad hoop of strange pale lilac metal with a clear round hole through the middle, and on top of the hoop one large perfectly round stone like an eye looking straight at the viewer: a ring of bright violet round a large round black centre, with one white glint, held in a plain round rim of the same lilac metal.",
-  "colours": "The hoop is pale lilac-silver metal with violet shadows and white glints; the stone is bright violet with a round black centre.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a finger ring, drawn thick and bold: a broad heavy hoop of strange pale lilac-silver metal, a perfect circle, with a clear round hole through the middle, and on top of the hoop, in a thick rim of bright yellow gold, one large stone shaped like an open eye lying on its side: a pointed oval of milk white, as wide as the whole hoop, with a large round bright violet iris and a round black pupil in its middle and one white glint. The eye looks straight at the viewer.",
+  "colours": "The hoop is pale lilac-silver metal with deep violet shadows and white glints; the gold rim bright yellow gold; the eye milk white with a bright violet iris and a black pupil.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
    "a round hoop with a visible hole",
-   "one round violet stone with a round black centre, like an eye",
-   "pale lilac metal hoop"
+   "one eye-shaped stone with a violet iris, in a gold rim"
   ],
   "must_not_show": [
    "real eyeball",
@@ -1183,7 +1197,14 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "figure eight",
+   "round ball stone",
+   "face",
+   "plastic"
   ]
  },
  {
@@ -1225,7 +1246,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.3
  },
  {
   "id": "ring_of_iron_grip",
@@ -1266,7 +1288,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_curse_slow",
@@ -1306,7 +1329,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_drain_res_a",
@@ -1315,14 +1339,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "blue",
-  "what": "a finger ring, drawn thick and bold: a plain hoop of dark grey iron with a clear round hole through the middle, and on top of the hoop one large oval stone of red jasper standing upright, smooth and domed and not see-through, like a polished pebble, in a plain iron rim. The stone is as tall as half the hoop.",
-  "colours": "The hoop is dark grey iron; the stone is solid brick red, dull and earthy, with one small white glint.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a finger ring, drawn thick and bold: a heavy hoop of iron as thick as a finger, a perfect circle, with a clear round hole through the middle, and on top of the hoop one large round stone of red jasper, domed like half a ball, smooth and not see-through, as wide as two thirds of the hoop, set in a thick plain iron rim.",
+  "colours": "The hoop and rim are mid steel-grey iron with pale grey highlights along the upper edges and charcoal shadows; the stone is solid brick red, dull and earthy, with one small white glint.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
    "one finger ring",
-   "a round hoop with a visible hole",
-   "one large oval brick-red stone on top",
-   "dark iron hoop"
+   "a thick round iron hoop",
+   "one large round domed red stone"
   ],
   "must_not_show": [
    "clear ruby",
@@ -1343,7 +1366,12 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "thin hoop",
+   "tall upright stone"
   ]
  },
  {
@@ -1383,7 +1411,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_strength_dragonbone",
@@ -1433,15 +1462,13 @@
   "body": "item",
   "scale": "tiny",
   "key": "magenta",
-  "what": "a finger ring, drawn thick and bold: the whole ring is cut from one piece of banded onyx, with no metal at all: a thick smooth glossy hoop with a clear round hole through the middle. The hoop is black, crossed by five broad white stripes that run across it like the stripes on a zebra, each white stripe as wide as the black between.",
-  "colours": "Glossy jet black with broad pure white stripes and white glints.",
-  "pose": "Seen from the front and a little to one side, the hoop standing upright like the letter O with the hole plainly showing and the top fitting at the top.",
+  "what": "a finger ring, drawn thick and bold: the whole ring is cut from one piece of banded onyx, with no metal at all: a thick smooth glossy black hoop, a perfect circle, with a clear round hole through the middle. At the top the same stone swells into one large flat oval face lying on its side, as wide as two thirds of the hoop, turned to the viewer, and that face is banded straight across in three level stripes: black at the top, one broad pure white stripe across the middle, black at the bottom.",
+  "colours": "Glossy jet black with pale grey shine along its upper edges and white glints; one broad pure white stripe across the oval face.",
+  "pose": "Seen exactly from the front, the hoop standing upright like the letter O, a perfect circle exactly as wide as it is tall, with the hole plainly showing and the top fitting at the top.",
   "must_show": [
-   "one finger ring",
+   "one black stone ring",
    "a round hoop with a visible hole",
-   "the whole hoop is black stone",
-   "broad white stripes across the hoop",
-   "no metal, no stone on top"
+   "an oval face on top with one white stripe across it"
   ],
   "must_not_show": [
    "gold",
@@ -1462,7 +1489,14 @@
    "bracelet",
    "person",
    "table",
-   "label with writing"
+   "label with writing",
+   "tall oval hoop",
+   "digit zero",
+   "egg shape",
+   "tyre",
+   "wheel",
+   "life ring",
+   "stripes round the hoop"
   ]
  },
  {
@@ -1502,7 +1536,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "ring_of_the_assassin",
@@ -1542,7 +1577,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "shadow_walker_ring",
@@ -1583,7 +1619,8 @@
    "person",
    "table",
    "label with writing"
-  ]
+  ],
+  "lift": 1.5
  },
  {
   "id": "ring_of_eluned",
@@ -1895,7 +1932,8 @@
    "second object",
    "long necklace",
    "label with writing"
-  ]
+  ],
+  "lift": 1.35
  },
  {
   "id": "talisman_of_troy",
@@ -1946,7 +1984,8 @@
    "second object",
    "long necklace",
    "label with writing"
-  ]
+  ],
+  "lift": 1.4
  },
  {
   "id": "seal_of_agrippa",
@@ -2231,13 +2270,13 @@
   "body": "item",
   "scale": "small",
   "key": "blue",
-  "what": "a Celtic sun-god's neck-ring of gold with nobody wearing it: one smooth round bar of gold, slimmer than a finger, cut all along with a fine spiral groove, bent round into a ring that is not closed: there is a wide gap at the bottom, as wide as a hand. Each of the two ends at the gap is finished with one big flat round disc of gold facing the viewer, like a coin as big as a walnut, and in the centre of each disc is one round stud of bright red enamel with short gold rays cut round it. The inside of the neck-ring is empty.",
-  "colours": "Pale bright yellow gold with brown-gold shadows and white glints; two round studs of bright red enamel.",
-  "pose": "Seen from the front and a little from above, hanging in the air, the open ring upright like the letter C turned so that its gap is at the bottom, the two end pieces side by side at the bottom.",
+  "what": "a Celtic neck-ring of gold with nobody wearing it, seen from the front: one thick bar of gold, as thick as a thumb, twisted along its length like a rope, bent round into one full closed circle that fills the upper two thirds of the picture; the inside of the circle is empty. Fixed to the very bottom of the circle, overlapping the bar, is one big flat round sun-disc of gold, as wide as a third of the ring, with twelve short pointed gold rays sticking out all round its edge and one round stud of bright red enamel in its centre. There is exactly one disc.",
+  "colours": "Pale bright yellow gold with brown-gold shadows and white glints; one round stud of bright red enamel.",
+  "pose": "Seen from the front, upright, the ring above and the sun-disc at its bottom, the whole thing inside the picture.",
   "must_show": [
-   "one open ring of slim gold bar",
-   "a wide gap at the bottom",
-   "a flat round disc with a red stud on each end"
+   "one closed twisted gold neck-ring",
+   "one rayed gold sun-disc at the bottom",
+   "red stud in the disc"
   ],
   "must_not_show": [
    "thick cable rope",
@@ -2258,7 +2297,12 @@
    "mannequin",
    "stand",
    "second object",
-   "label with writing"
+   "label with writing",
+   "two discs",
+   "headphones",
+   "earmuffs",
+   "gap in the ring",
+   "open ring"
   ]
  },
  {
