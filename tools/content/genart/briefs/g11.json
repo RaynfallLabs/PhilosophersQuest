@@ -1133,7 +1133,7 @@
   "what": "a mage-slayer assassin: a lean, hard, athletic human killer trained to hunt wizards. His hood is up, and the lower half of his face is covered by a black cloth mask up to the bridge of the nose, so that only two narrow cold grey eyes and a strip of pale skin show. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "a long charcoal-grey hooded coat whose inside lining is dark oxblood-red cloth stitched with rows of black sigils, a black face mask, dark grey trousers, black boots, black leather gloves, a short sword with a bright steel blade and a black grip, three snapped pale wooden wands at the belt, pale skin round the eyes.",
   "wears": "He wears a long charcoal-grey hooded coat that reaches his knees, hanging open and flaring out so that its dark oxblood-red lining, stitched with rows of black ward-sigils, shows on both sides; a black cloth mask over his nose and mouth; black leather gloves; dark grey trousers and black boots. Three snapped wooden wizard's wands are tied at his belt as trophies.",
-  "holds": "He holds exactly one short sword in his right hand: a broad, plain, straight steel blade as long as his forearm, held point-forward. His left hand is empty: a black-gloved hand reaching out ahead to seize. He holds no second blade.",
+  "holds": "He holds exactly one short sword in his right fist: a broad, plain, straight steel blade as long as his forearm, held level at waist height and pointing to the left, its hilt in his right fist. His left hand is empty and open, held up ahead at head height with the black-gloved fingers spread, nothing in it. He holds no second blade, no knife and no dagger.",
   "pose": "On two legs, he lunges low to the left with his front knee deeply bent and his rear leg stretched out behind, his sword arm thrust forward at waist height, his empty left hand reaching ahead above it, his coat flaring wide behind him so the dark oxblood-red lining shows.",
   "must_show": [
    "a hooded, masked human in a long charcoal-grey coat",
@@ -1166,7 +1166,11 @@
    "yellow lining",
    "bright orange cape",
    "gold cloak",
-   "orange coat"
+   "orange coat",
+   "blade in the left hand",
+   "knife",
+   "two swords",
+   "sword across the body"
   ]
  }
 ]

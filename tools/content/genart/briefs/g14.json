@@ -861,10 +861,10 @@
   "family": "shadow_b",
   "rank": 2,
   "key": "green",
-  "what": "a shadow archer: a living human bowman trained in a hidden tower to shoot from the dark and never be where the arrow came from, lean, tall and still, painted seriously. He is seen in full profile like a figure on a coin, facing left. His hood is up and a dark cloth wraps the lower half of his face, so that only a strip of pale skin and one narrow eye show. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "what": "a shadow archer: a living human bowman trained in a hidden tower to shoot from the dark and never be where the arrow came from, lean, tall and still, painted seriously. He is seen in full profile like a figure on a coin, facing left. His black hood is up, covering all his hair, and a black cloth wraps his face from the bridge of the nose down to the chin, covering his mouth and chin completely, so that only a strip of pale skin and one narrow eye show. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "a hooded coat of soot-black cloth, black as coal in the folds and dark charcoal-grey on the ridges, a lining and a waist sash of deep dark violet, black leather bracers, belt and boots with dull pewter buckles, a black face wrap, pale skin round the eye, a big bow of pale ash-grey wood, pale bone-white arrows with deep violet feathers, a bright violet glow on one arrowhead.",
   "wears": "He wears a long hooded coat of soot-black cloth that reaches his knees, split at the back into two long tails lined with deep dark violet, a deep violet sash at the waist, a black face wrap, black leather bracers, a broad black belt, tall soft black boots, and on his back a big quiver full of pale bone-white arrows with deep violet feathers. A short plain sword in a black scabbard hangs at his hip, sheathed. Hood, coat, sleeves, trousers and boots are all black as a shadow; only the lining and sash are violet.",
-  "holds": "He draws exactly one bow: a big, thick, sturdy recurved bow of pale ash-grey wood, as tall as he is, held upright at arm's length in his left hand, a single D shape at the left of the picture, entirely in front of him. His right hand is drawn back to his cheek holding one thick pale arrow on the string, and the arrow's head, at the bow, is wrapped in a ball of bright violet light as big as his fist with dark smoke curling off it. He holds nothing else: the sword stays in its scabbard.",
+  "holds": "He draws exactly one bow: a big, thick, sturdy bow of pale ash-grey wood, as tall as he is, bent in one smooth even curve from tip to tip with no kinks, wiggles or waves, its upper and lower limbs mirror images of each other and as thick as a broom handle all along, held upright at arm's length in his left hand, a single D shape at the left of the picture, entirely in front of him. His right hand is drawn back to his cheek holding one thick pale arrow on the string, and the arrow's head, at the bow, is wrapped in a ball of bright violet light as big as his fist with dark smoke curling off it. He holds nothing else: the sword stays in its scabbard.",
   "pose": "Seen in full profile, facing left, on two legs in a wide archer's stance with his front knee bent and his weight on his back leg, leaning back into a full draw, the pale bow upright at the left, the arrow level and aimed to the left, his coat tails and sash swinging out behind to the right.",
   "must_show": [
    "a hooded, masked human archer all in soot-black, a shadow of a man, in full profile facing left",
@@ -904,7 +904,14 @@
    "lilac coat",
    "lavender clothes",
    "light grey hood",
-   "white hood"
+   "white hood",
+   "wavy bow",
+   "kinked bow",
+   "bow with an S-shaped limb",
+   "beard",
+   "bare face",
+   "long loose hair",
+   "hood down"
   ],
   "lift": 1.4
  },

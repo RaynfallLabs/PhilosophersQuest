@@ -638,11 +638,11 @@
   "family": "knight",
   "rank": 1,
   "key": "magenta",
-  "what": "a young knight barely twenty, searching for his lost father: a slim young man with short fair hair, a clean, smooth, beardless, open face with warm light skin, frightened and pale with sudden shock, mouth open. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
-  "colours": "warm light skin, short fair hair, freshly polished bright steel plate armour gleaming white at the edges, a clean deep blue surcoat with a grey iron-coloured mountain on it, a brown leather sword belt, a steel helmet.",
+  "what": "a young knight barely twenty, searching for his lost father: a slim young man, bare-headed, with short fair hair uncovered and nothing on his head, a clean, smooth, beardless, open face with warm light skin, frightened and pale with sudden shock, mouth open. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "colours": "warm light skin, short fair hair, freshly polished bright steel plate armour gleaming white at the edges, a clean deep blue surcoat with a grey iron-coloured mountain on it, a brown leather sword belt, one steel helmet carried under his arm.",
   "wears": "He wears a full suit of freshly polished bright steel plate armour, spotless and new, with a clean deep blue surcoat over the breastplate and a sword in its scabbard at his left hip.",
-  "holds": "He holds exactly one steel helmet with a plain visor under his left arm against his side. His right hand is stretched out toward the viewer, open and reaching, trembling. He holds nothing else.",
-  "pose": "He has stopped mid-stride, one foot forward, his body leaning toward the viewer, his right hand reaching out open in shock, his helmet under his left arm, his face pale and stricken.",
+  "holds": "He holds exactly one steel helmet with a plain visor, tucked under his left arm against his left side. His right hand is empty: it is stretched out toward the viewer, open and reaching, trembling. There is only one helmet in the picture. He holds nothing else.",
+  "pose": "He has stopped mid-stride, one foot forward, his body leaning toward the viewer, his bare head uncovered, his right hand reaching out open in shock, the one helmet tucked under his left arm, his face pale and stricken.",
   "must_show": [
    "a very young knight with a clean beardless face, bare head",
    "spotless polished steel armour and a clean blue surcoat",
@@ -657,7 +657,10 @@
    "blood",
    "helmet on his head",
    "cape",
-   "spear"
+   "spear",
+   "second helmet",
+   "helmet in the right hand",
+   "two helmets"
   ]
  },
  {
@@ -1260,7 +1263,7 @@
   "what": "Marta Irontemper, a travelling dwarven smith: a short, stout, broad, strong dwarf woman with thick soot-black hair in two heavy braids, soot on her cheeks, a broad, shrewd, warm light tan face squinting, no beard. She has a dwarf's real proportions: short and broad, about four and a half heads tall, never a child and never a cartoon.",
   "colours": "warm light tan skin with soot smudges, soot-black braided hair, a heavy dark brown leather smith's apron, a dull mustard-brown shirt with rolled sleeves, brown leather gloves, a smith's hammer with a dark iron head, iron tongs, a sword blade glowing bright yellow-white at the edge.",
   "wears": "She wears a long heavy leather smith's apron over a shirt with rolled sleeves, thick leather gloves, a broad belt hung with tools and stout boots.",
-  "holds": "Her right hand holds exactly one smith's hammer raised high, ready to strike. Her left hand holds exactly one pair of long iron tongs gripping one short sword blade that glows bright yellow-white with heat, held out in front of her. She holds nothing else.",
+  "holds": "Her right hand holds exactly one smith's hammer raised high, ready to strike. Her left hand holds exactly one pair of long iron tongs, clamped shut on the base of exactly one single sword blade: one short, straight blade of one even width that glows bright yellow-white with heat, held out level in front of her. There is only one blade. She holds nothing else.",
   "pose": "She stands with her feet planted wide, hunched forward over the glowing blade held out in the tongs, her hammer raised high to strike it, sparks flying from the blade, squinting at the viewer with a shrewd half-grin.",
   "must_show": [
    "a short, stout dwarf woman with soot-black braids, no beard",
@@ -1277,7 +1280,10 @@
    "forge",
    "child",
    "tall woman",
-   "bare arms to the shoulder"
+   "bare arms to the shoulder",
+   "two blades",
+   "second blade",
+   "forked blade"
   ]
  },
  {

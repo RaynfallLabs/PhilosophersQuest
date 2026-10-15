@@ -191,9 +191,9 @@
   "key": "green",
   "what": "a cloud giant: a proud giant lord from a castle on the storm clouds, the giant of the beanstalk tale, a true giant and no ordinary man. He is immensely heavy-boned and thick: a deep barrel chest, a thick neck, arms like tree boughs, legs like pillars, very big hands and very big booted feet. His skin is cold pale grey like weathered marble, a plain neutral grey with no other tint in it, on his face, arms, hands and legs alike, a colour no living man has. His face is a giant's: a long heavy jaw, a great hooked nose, a heavy overhanging brow and small cold pale eyes, clean-shaven, with the chin raised in contempt. His long white hair stands up and back from his head in one great heaped mass like a thunderhead. He has a small head for his body, very broad shoulders and thick limbs, about seven heads tall.",
   "colours": "cold pale neutral grey skin like weathered marble, white hair, a knee-length tunic of dark charcoal-grey wool with a wide silver border, a long cloak of deep indigo, a silver circlet, silver armbands and a wide silver-studded black belt, a morningstar with a dark iron handle and a dark iron spiked ball.",
-  "wears": "He wears the finery of a giant lord: a knee-length tunic of dark charcoal-grey wool with a wide silver border, a wide black belt with silver studs, a broad silver circlet on his brow, broad silver armbands on his bare upper arms, a long deep indigo cloak hanging from two big silver shoulder clasps, and heavy laced boots. He has no armour.",
-  "holds": "He grips exactly one morningstar in his right fist, a short heavy war club: a short thick dark iron handle no longer than his forearm and as thick as his wrist, with one big round dark iron ball, as big as his head, fixed straight onto its end, the ball covered all over with thick iron spikes as long as fingers. There is no chain and no long pole. His left hand is empty, held open and raised palm-out in a gesture of disdain.",
-  "pose": "He stamps to the left on two thick legs with his chin up, looking down his great nose, his right arm bent and lifted with the short spiked morningstar raised above his right shoulder ready to swing down, its spiked ball beside his head, his empty left hand raised palm-out before him, cloak and hair billowing.",
+  "wears": "He wears the finery of a giant lord: a knee-length tunic of dark charcoal-grey wool with a wide silver border, a wide black belt with silver studs, a broad shining silver circlet round his brow above his eyes, plainly seen, broad silver armbands on his bare upper arms, a long deep indigo cloak hanging from two big silver shoulder clasps, and heavy laced boots. He has no armour. His face is bare and clean-shaven: no beard and no moustache, his long heavy jaw and chin bare.",
+  "holds": "In his right fist he grips exactly one spiked mace, a short heavy war club made of two parts joined together: one straight, smooth, thick dark iron handle as thick as his wrist and no longer than his forearm, whose bottom end is inside his fist with nothing below the fist, and, fixed on the top end of that handle with no gap between them, one big round dark iron ball as big as his head, studded all over with short thick iron spikes. The handle goes straight up into the centre of the underside of the ball and stops there. The handle itself is plain and smooth with no spikes or crossbars on it. There is no chain and no long pole. His left hand is empty, held open and raised palm-out in a gesture of disdain.",
+  "pose": "He stamps to the left on two thick legs with his chin up, looking down his great nose, his right arm bent and lifted with the spiked mace held upright above his right shoulder, handle in his fist and the spiked ball on top of it beside his head, ready to swing down, his empty left hand raised palm-out before him, cloak and hair billowing.",
   "must_show": [
    "white hair heaped up like a thunderhead, clean-shaven",
    "one morningstar: a short thick handle with a big spiked iron ball, a weapon and not a staff",
@@ -238,7 +238,16 @@
    "ogre",
    "orc",
    "troll",
-   "tusks"
+   "tusks",
+   "ball floating beside the handle",
+   "spikes on the handle",
+   "cross-shaped handle",
+   "ball on a chain",
+   "handle sticking out above the ball",
+   "moustache",
+   "white beard",
+   "long pole below the fist",
+   "handle reaching the ground"
   ]
  },
  {
@@ -249,8 +258,8 @@
   "what": "a fire giant king: the king of the fire giants, kin of Surtr of Norse legend, a massive, enormously broad, barrel-chested giant standing on two legs. His skin has baked as dark and hard as slag: it is black and rough on his face and hands alike. His long forked beard and his hair are bright flame-orange, flickering like fire at the tips, and his eyes glow yellow-orange. He has realistic adult proportions: a small head, very broad shoulders, thick limbs, about seven heads tall.",
   "colours": "black slag-dark skin, bright flame-orange hair and forked beard, a tall black iron crown with gold points, ornate black iron plate armour with gold trim, a long dark crimson cape, a hammer with a black iron haft and a huge head glowing molten yellow-orange.",
   "wears": "He wears a tall black iron crown with five gold points, a full suit of ornate black iron plate armour edged with gold, great layered shoulder plates, a gold medallion on the breastplate, and a long dark crimson cape hanging from his shoulders. His face is uncovered.",
-  "holds": "He holds exactly one great war hammer in his right hand: a long thick black iron haft with a huge block-shaped hammer head that glows molten yellow-orange like metal in a forge, small flames rising from it. His left hand is an empty clenched fist.",
-  "pose": "He stands on two legs with his feet planted wide, turned a little to the left, the molten hammer raised over his right shoulder in his right hand about to smash down, his left fist clenched before his belt, head lowered, glaring, beard and cape swept back.",
+  "holds": "He holds exactly one great war hammer upright in his right fist, raised beside his head: one straight thick black iron haft, as long as his forearm, rises straight up out of his fist, its bottom end inside the fist with nothing below it, and on the top end of that same haft sits the hammer head, joined to it: one long heavy block lying crosswise across the top of the haft like the head of a smith's sledgehammer, three times as wide as it is tall, glowing molten yellow-orange like metal in a forge, with no flames on it. The whole hammer, haft and head, is on the left side of the picture beside his head, against the plain backdrop and clear of his body. His left hand is an empty clenched fist.",
+  "pose": "He stands on two legs with his feet planted wide, turned a little to the left, his right arm bent and raised so his fist is beside his right shoulder holding the molten hammer upright on the left side of the picture, about to smash down, his left fist clenched before his belt, head lowered, glaring, beard and cape swept back.",
   "must_show": [
    "giant with a black slag-dark face and hands",
    "flame-orange beard and hair",
@@ -274,7 +283,16 @@
    "tail",
    "flames all over the body",
    "glowing aura",
-   "second hammer"
+   "second hammer",
+   "hammer head floating apart from the haft",
+   "haft hidden behind the body",
+   "hammer head behind the other shoulder",
+   "short stub of haft in the fist",
+   "torch",
+   "flames rising from the hammer head",
+   "cube-shaped hammer head",
+   "haft reaching the ground",
+   "long staff"
   ]
  },
  {

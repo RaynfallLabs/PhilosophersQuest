@@ -244,13 +244,15 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "a zweihander, a giant two-handed sword: a very long, broad, straight double-edged blade and a very long two-handed grip with a pear pommel. Two steel bars cross it: the main crossguard, very wide, at the top of the grip; and, a hand's width further up the blade, a second crossbar half as wide with pointed ends. Between the two bars the blade is plain and blunt.",
-  "colours": "The blade, both crossbars and the pommel are pure colourless neutral grey steel, light grey in the highlights and charcoal grey in the shadows, exactly as steel looks in a black-and-white photograph. The long grip is wrapped in dark brown leather.",
+  "what": "a zweihander, a giant two-handed sword, drawn as a bold simple icon, described from the bottom left corner to the top right corner. At the bottom left corner a heavy round steel pommel. Then a very long two-handed grip wrapped in dark brown leather, running a third of the way to the middle of the picture. Then the main crossguard: one very wide perfectly straight steel bar, square across the blade at a right angle. Then the long straight blade to the point in the top right corner. On the blade, very close above the crossguard, a gap no wider than two fingers, two small sharp spikes stick out from the blade's two edges like a pair of tiny horns, much smaller than the crossguard: together they are a third as wide. Above them the blade is bare to the point: very long, broad, perfectly straight, as straight as a ruler, one even width, double-edged.",
+  "colours": "The blade, the crossguard, the two small spikes and the pommel are pure colourless neutral grey, light grey in the highlights and charcoal in the shadows, exactly as it would look in a black-and-white photograph. The long grip and the short wrapped stretch of blade above the guard are dark brown leather.",
   "pose": "It lies on a straight diagonal, the pommel at the bottom left corner and the point at the top right corner, the whole thing inside the picture.",
   "must_show": [
    "one giant two-handed sword",
-   "two crossbars: a wide crossguard and a smaller one further up the blade",
+   "one wide straight crossguard",
+   "two tiny spikes on the blade just above the crossguard",
    "very long grip",
+   "long straight blade",
    "grey steel, brown grip"
   ],
   "must_not_show": [
@@ -279,7 +281,15 @@
    "blue tint",
    "teal",
    "cyan",
-   "green tint"
+   "green tint",
+   "second crossguard",
+   "crossbar halfway up the blade",
+   "two crossguards",
+   "pear",
+   "fruit",
+   "yellow pommel",
+   "green pommel",
+   "wooden pommel"
   ]
  },
  {
@@ -1071,9 +1081,9 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a short hunting bow, drawn as a bold simple icon, very thick and heavy: one curved stave and one string, nothing else. The stave is a heavy curved beam of timber, as thick as a fence post along its whole length, thickest at the grip in its middle and still thick at its two blunt rounded tips; the whole bow is only seven times as long as the stave is thick. The stave bends in one deep plain even curve like a crescent moon, with no kink and no backward bend at the tips. From one tip to the other runs one straight taut string, a rope as thick as a finger. The gap between the grip and the string is a third of the bow's length. It has no arrow.",
+  "what": "a short hunting bow, drawn as a bold simple icon, very thick and heavy: one curved stave and one string, nothing else. The stave is a heavy curved beam of timber, as thick as a fence post along its whole length, thickest at the grip in its middle and still thick at its two blunt rounded tips; the whole bow is only seven times as long as the stave is thick. The stave bends in one deep plain even curve like a crescent moon, both halves the same length and the same curve, with no kink and no backward bend at the tips. The bowstring is one perfectly straight taut cord, as thick as a finger, the longest straight line in the picture: its upper end is tied to the very tip of the stave near the top right corner and its lower end is tied to the very tip of the stave near the bottom left corner. Nowhere else does the string touch the stave: it passes well clear of the grip, so that the stave and the string together enclose one tall empty space shaped like a half-moon, widest at the grip. It has no arrow.",
   "colours": "The whole stave is pure colourless neutral grey, light grey in the highlights and charcoal in the shadows, exactly as it would look in a black-and-white photograph. The grip in the middle is wrapped in a broad band of dark brown leather. The string is off-white.",
-  "pose": "It stands leaning: its lower tip at the bottom left corner and its upper tip at the top right corner, the curve of the stave bulging towards the upper left corner and the straight string on the lower right side, the whole bow inside the picture.",
+  "pose": "It stands nearly upright, leaning a little to the right: the lower tip near the bottom left corner, the upper tip near the top right corner, the curved stave bulging out to the upper left and the straight string on the lower right side, the whole bow inside the picture.",
   "must_show": [
    "one bow",
    "one very thick, evenly curved stave",
@@ -1121,7 +1131,13 @@
    "label with writing",
    "second object",
    "recurved tips",
-   "S-shaped stave"
+   "S-shaped stave",
+   "string tied to the grip",
+   "string ending at the middle of the bow",
+   "slack string",
+   "bent string",
+   "wavy stave",
+   "two strings"
   ],
   "family": "bows",
   "rank": 1
@@ -1133,9 +1149,9 @@
   "body": "item",
   "scale": "large",
   "key": "magenta",
-  "what": "a horseman's short recurved bow, drawn as a bold simple icon, very thick and heavy: one curved stave and one string, nothing else. The stave is a heavy curved beam, as thick as a fence post along its whole length; the whole bow is only seven times as long as the stave is thick. The stave bends in one deep even curve like a crescent moon, and then, at each end, its last short piece bends sharply back the other way, pointing outward, away from the string, so that each tip is a short stiff outward-pointing ear. From the base of one ear to the base of the other runs one straight taut string, a rope as thick as a finger. The gap between the grip and the string is a third of the bow's length. It has no arrow. There is only one stave and only one string.",
+  "what": "a horseman's short recurved bow, drawn as a bold simple icon, very thick and heavy: one curved stave and one string, nothing else, standing upright. The stave is a heavy beam as thick as a fence post along its whole length; the whole bow is only seven times as long as the stave is thick. The stave stands on the left and its middle bows out to the left in one deep even curve, the top half and the bottom half the same length and the same curve. Near the top end and near the bottom end the stave turns sharply back and its last short piece, no longer than a sixth of the bow, points out to the left, away from the string, like a short stiff ear. The string is one perfectly straight vertical taut cord as thick as a finger on the right, tied at the top to the base of the upper ear and at the bottom to the base of the lower ear. Between the grip and the string there is only empty backdrop: no bar, no rod, no arrow.",
   "colours": "Both limbs of the stave, hooks and all, are pure colourless neutral grey, light grey in the highlights and charcoal in the shadows, exactly as it would look in a black-and-white photograph. The grip in the middle and one binding below each hooked tip are dark brown leather. The string is off-white.",
-  "pose": "It stands leaning: its lower tip at the bottom left corner and its upper tip at the top right corner, the curve of the stave bulging towards the upper left corner and the straight string on the lower right side, the whole bow inside the picture.",
+  "pose": "It stands upright, leaning a little to the right, the stave on the left and the straight string on the right, the whole bow inside the picture.",
   "must_show": [
    "one recurved bow",
    "both tips hooking back the other way",
@@ -1193,7 +1209,21 @@
    "ring at the bottom",
    "hook handle",
    "sling",
-   "slingshot"
+   "slingshot",
+   "string tied to the grip",
+   "string ending at the middle of the bow",
+   "slack string",
+   "bent string",
+   "S-shaped stave",
+   "wavy stave",
+   "two strings",
+   "hook shape",
+   "open ring",
+   "question mark shape",
+   "bar across the grip",
+   "rod from the grip to the string",
+   "string pulled back",
+   "V-shaped string"
   ]
  },
  {

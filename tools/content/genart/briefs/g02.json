@@ -7,7 +7,7 @@
   "what": "an angel of the heavenly host: a tall, stern warrior angel with a calm clean-shaven face and short golden hair, and two great feathered wings rising from the shoulders, half spread. It has the realistic anatomy and proportions of a tall adult: a small head, long limbs, about eight heads tall.",
   "colours": "pure white feathers and white robe, polished gold armour, golden hair, a bright yellow-white flame on the sword blade.",
   "wears": "It wears a long white robe to the ankles, a polished gold breastplate and gold shoulder plates over it, gold bracers and sandals.",
-  "holds": "It holds exactly one long straight sword in its right hand, the whole thick blade burning with yellow-white fire that clings to the blade. Its left hand is open and empty, palm forward.",
+  "holds": "In his right hand he grips exactly one straight longsword by its hilt, held upright beside his right shoulder, point to the sky: a perfectly straight blade, as straight as a ruler, one even width from the crossguard to the point, with a plain gold crossguard square across it. The whole blade glows red-hot orange like iron fresh from the forge and small flames lick from its edges; it is plainly a steel sword, not a torch. His left hand is open and empty.",
   "pose": "It strides forward on two legs with the burning sword raised high over its right shoulder to strike, left hand thrust out ahead, wings lifted and half spread behind it.",
   "must_show": [
    "two large white feathered wings",
@@ -28,7 +28,11 @@
    "baby cherub",
    "bare chest",
    "second sword",
-   "oversized head"
+   "oversized head",
+   "torch",
+   "wavy blade",
+   "curved blade",
+   "plume of fire"
   ]
  },
  {
@@ -313,11 +317,11 @@
   "what": "a bone archer: a human skeleton bowman of bare ivory bones and nothing else, with an empty grinning skull and exposed ribs, whose bow is itself made of bone. It has the realistic anatomy and proportions of a tall adult man: a small skull, a long neck and spine, a narrow ribcage, long thin arms and legs, and it stands about eight heads tall.",
   "colours": "ivory and yellowed bone with grey-brown shadows, a bone-white bow, a small violet glow on the arrowhead.",
   "wears": "It wears nothing at all: no hood, no helmet, no armour, no cloth, no quiver.",
-  "holds": "It draws exactly one large, thick bow made of pale bone, two big curved rib bones lashed together at the grip, with one thick white bone arrow nocked. The bow is a single tall curved D shape at the left side of the picture, gripped in the bone fist of its outstretched front arm; its other hand pulls the arrow back to its jaw. There is only one bow and it is entirely in front of the skeleton. The arrowhead has a small violet glow touching it.",
-  "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its skull and its feet all point to the left edge of the picture. It stands on two legs with knees bent, the front arm stretched out to the left holding the bow, aiming to the left at full draw.",
+  "holds": "Its front arm, stretched straight out to the left, grips exactly one large, thick bow made of pale bone, standing upright at the left side of the picture: one tall curved D shape, gripped at its exact middle in the bone fist, the top half and the bottom half of the bow the same length. One straight string runs from the top tip of the bow to the bottom tip, behind the fist. There is no arrow on the bow. Its rear hand hangs down at its side and holds exactly one thick white bone arrow pointing at the ground, its sharp bone head touched by a small violet glow. There is only one bow and it is entirely in front of the skeleton.",
+  "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its skull and its feet all point to the left edge of the picture, and we see only one side of it. It stands on two legs with knees bent, the front arm stretched straight out to the left holding the bow upright, the rear arm hanging at its side with the arrow, skull turned to its target.",
   "must_show": [
    "bare skeleton: skull and ribs visible, no clothing at all",
-   "a bow made of pale bone, in front of it, at full draw",
+   "a bow made of pale bone, held upright in front of it",
    "a bone arrow",
    "seen in profile, facing left",
    "realistic adult proportions (small skull, long limbs)"
@@ -340,7 +344,16 @@
    "front view facing the viewer",
    "two bows",
    "bow behind the body",
-   "aiming upward"
+   "aiming upward",
+   "string on only one half of the bow",
+   "bow with one long limb and one short limb",
+   "grip near the top of the bow",
+   "arrow pointing backwards",
+   "feathers at the front of the arrow",
+   "arms spread to both sides",
+   "second bow",
+   "arrow pointing both ways",
+   "front view"
   ]
  },
  {
@@ -392,10 +405,10 @@
   "what": "a gnoll archer: a tall, lean, hunched hyena-man standing upright on two legs, with the head of a spotted hyena: a blunt dark muzzle, round ears, a wide laughing mouth full of teeth, a bristly crest of mane down its neck and back, and a body covered in spotted fur.",
   "colours": "dull grey-buff fur, the pale dusty colour of dry grass, with large dark brown spots; a black muzzle; a dark brown mane; a dark brown leather jerkin and hide kilt; a pale yew longbow; grey arrow feathers.",
   "wears": "It wears a sleeveless jerkin of dark brown leather, laced at the front, that covers its chest and belly, a necklace of teeth and bones over it, a ragged brown hide kilt and a quiver of arrows on its back. Its arms and legs are bare spotted fur.",
-  "holds": "It draws exactly one tall, thick, elegant longbow of pale golden wood with one arrow nocked. The bow is a single tall curved D shape standing upright at the left side of the picture, gripped in the fist of its outstretched front arm; its other hand pulls the arrow back to its muzzle. There is only one bow and it is entirely in front of the gnoll, never behind its back. It holds nothing else.",
-  "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its hyena muzzle and its feet all point to the left edge of the picture, and we see only one side of it. It stands on two legs in a wide archer's stance, back hunched, front arm stretched straight out to the left holding the bow, aiming to the left at full draw, mouth open in a laughing snarl.",
+  "holds": "Its front arm, stretched straight out to the left, grips exactly one tall, thick, elegant longbow of pale golden wood, standing upright at the left side of the picture: one tall curved D shape, gripped at its exact middle in the fist, the top half and the bottom half of the bow the same length. One straight string runs from the top tip of the bow to the bottom tip, behind the fist. There is no arrow on the bow. Its rear hand hangs down at its side and holds exactly one arrow pointing at the ground, iron head down and grey feathers up. There is only one bow and it is entirely in front of the gnoll, never behind its back. It holds nothing else.",
+  "pose": "Seen from the side in full profile, like a figure on a coin: its whole body, its hyena muzzle and its feet all point to the left edge of the picture, and we see only one side of it. It stands on two legs in a wide stance, back hunched, front arm stretched straight out to the left holding the bow upright, rear arm hanging at its side with the arrow, mouth open in a laughing snarl.",
   "must_show": [
-   "one tall pale longbow at full draw with an arrow",
+   "one tall pale longbow held upright, with one arrow in the other hand",
    "quiver",
    "seen in profile, facing left",
    "upright hyena-man: hyena head, round ears, spotted fur",
@@ -420,7 +433,14 @@
    "arms spread to both sides",
    "bright orange fur",
    "bare muscled chest",
-   "leopard"
+   "leopard",
+   "string on only one half of the bow",
+   "bow with one long limb and one short limb",
+   "grip near the top of the bow",
+   "arrow pointing backwards",
+   "second bow",
+   "arrow pointing both ways",
+   "front view"
   ]
  },
  {
@@ -567,11 +587,11 @@
   "family": "beetle",
   "rank": 2,
   "key": "magenta",
-  "what": "a Khepri beetle: a real Egyptian sacred scarab, a dung beetle, an insect, drawn large and seen from straight above. It has the true body of a scarab: a broad rounded oval body, a flat shovel-shaped head with a toothed front edge like a little rake, and exactly six thick, sturdy, jointed, spiny black insect legs, three on each side, all six plainly seen spread out from the body against the backdrop. Its back is two hard, closed, polished wing cases of old gold meeting in a straight seam down the middle, with a darker bronze-brown plate between them and the head. Gripped between its two front legs, touching the front of its head, it carries one small round ball of bright sunlight, about the size of its own head, as scarabs are shown in Egyptian carvings.",
+  "what": "a Khepri beetle: a real Egyptian sacred scarab, a dung beetle, an insect, drawn large and seen from straight above. It has the true body of a scarab: a broad rounded oval body, a flat shovel-shaped head with a toothed front edge like a little rake, two very short clubbed antennae, and exactly six thick, sturdy, jointed, spiny black insect legs and no more: three on the left side and three on the right side, each leg shown once, all six plainly seen against the backdrop. Its back is two hard, closed, polished wing cases of old gold meeting in a straight seam down the middle, with a darker bronze-brown plate between them and the head. Gripped between its two front legs, touching the front of its head, it carries one small round ball of bright sunlight, about the size of its own head, as scarabs are shown in Egyptian carvings.",
   "colours": "old gold wing cases with dark bronze-brown shading and a dark bronze-brown head and chest plate, thick black legs, one small bright yellow-white sun ball.",
   "wears": "It is an insect and wears nothing.",
   "holds": "It grips exactly one small glowing yellow-white sun ball between its two front legs, pressed against the front of its head. The ball touches the beetle and has no rays and no halo.",
-  "pose": "Seen from straight above, looking down on its back, its head toward the upper left: it crawls up and to the left with all six thick black legs spread wide, three on each side, the two front legs reaching forward past its head and clasping the small sun ball, the middle legs out sideways, the back legs trailing behind.",
+  "pose": "Seen from straight above, looking down on its back, its head toward the upper left: it crawls up and to the left. Its front pair of legs reach forward, one on each side of the small sun ball, and clasp it against its head; its middle pair point straight out sideways, one each side; its back pair point backwards, one each side. Six legs in all.",
   "must_show": [
    "a true scarab beetle seen from above: rounded oval insect body, wing cases with a seam down the middle",
    "six thick black legs, three each side, all visible",
@@ -605,7 +625,12 @@
    "green sheen",
    "rainbow sheen",
    "lemon-yellow shell",
-   "side view"
+   "side view",
+   "seven legs",
+   "nine legs",
+   "ten legs",
+   "extra leg",
+   "long antennae"
   ],
   "lift": 1.3
  },

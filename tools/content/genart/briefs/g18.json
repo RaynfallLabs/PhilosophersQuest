@@ -845,7 +845,7 @@
   "what": "a Thoth construct: a temple guardian of ancient Egypt, a carved sandstone statue of the ibis-headed god Thoth as a scribe, come to life, painted seriously. It is a statue of a figure in a pleated kilt and a broad collar, standing on two legs, built of big rough-hewn blocks of pale sandstone with black seams between the blocks at the neck, shoulders, elbows, waist and knees, chipped and worn at the edges. Its head is the head of an ibis carved in the same stone: a small round head on a long neck, with one very long, thin, smooth, down-curving beak like a sickle, and a striped headcloth of carved stone hanging down behind to the shoulders. Its eyes are two inlaid discs of bright lapis. Every flat surface of its chest, arms, kilt and legs is cut with rows of big, deep hieroglyphs, each as big as its hand, and the cuts are filled with bright lapis and turquoise paint so that the signs stand out dark and bright against the pale stone.",
   "colours": "pale sandstone, the colour of dry sand, on every part including the head and beak, black seams between the blocks, big hieroglyphs filled with bright lapis and turquoise, lapis eyes, a broad collar of carved stone banded in lapis and dull gold, a blade of dark bronze shaped like a reed pen, a pale stone tablet.",
   "wears": "Its clothes are carved stone and part of it: a pleated knee-length kilt, a broad banded collar, and a striped headcloth. Nothing on it is cloth.",
-  "holds": "It holds exactly one blade in its right hand: a long, straight, narrow blade of dark bronze shaped like a scribe's reed pen, cut slantwise to a sharp point at the tip, as long as its arm, raised. In its left hand it holds exactly one flat rectangular stone tablet covered in rows of signs, held up in front of its chest like a shield. It holds nothing else.",
+  "holds": "It holds exactly one blade in its right hand: a long blade of dark bronze shaped like a scribe's reed pen, perfectly straight, as straight as a ruler, as thick as two fingers and one even width along its whole length, with a bright lit bronze edge, cut slantwise to a sharp point at the tip, as long as its arm, raised. In its left hand it holds exactly one flat rectangular stone tablet covered in rows of signs, held up in front of its chest like a shield. It holds nothing else.",
   "pose": "On two legs, it strides stiffly forward to the left with its front knee bent and its weight on its front foot, its right arm raised high behind its head with the pen-shaped bronze blade ready to stab downward, its left arm holding the stone tablet out in front of it, its long curved beak lowered and pointing to the lower left.",
   "must_show": [
    "a pale sandstone statue built of blocks with black seams, in a carved pleated kilt and collar",
@@ -880,7 +880,10 @@
    "second blade",
    "oversized head",
    "cartoon proportions",
-   "rock under the feet"
+   "rock under the feet",
+   "wavy blade",
+   "bent stick",
+   "whip"
   ]
  },
  {
@@ -1253,11 +1256,11 @@
   "rank": 3,
   "key": "blue",
   "body": "shapeless",
-  "what": "Anansi, the spider of the Akan stories of Ghana, who won all the stories of the world from the Sky God by trickery, painted seriously as a great, ancient, clever spider-lord; a mini-boss, the most splendid of all spiders. He is one real spider, drawn very large, seen from the front and a little from above: a golden orb-weaver with a small head-and-chest and a big, long, oval abdomen held high behind it, and eight very long, thin, jointed legs. His abdomen is the most richly patterned thing in the picture: it is patterned all over like an old woven kente cloth, in bold, big, square blocks and zigzag bands of dull old gold, black, and dark brick-red, the gold the brown-gold of tarnished brass. His head-and-chest is glossy black with a covering of short gold hairs, with a cluster of eight shining amber eyes, the two in the middle large and knowing, and two big black fangs below. His long legs are black, and each joint is ringed with a broad band of dull old gold, like bracelets.",
+  "what": "Anansi, the spider of the Akan stories of Ghana, who won all the stories of the world from the Sky God by trickery, painted seriously as a great, ancient, clever spider-lord; a mini-boss, the most splendid of all spiders. He is one real spider, drawn very large, seen from the front and a little from above: a golden orb-weaver with a small head-and-chest and a big, long, oval abdomen held high behind it, and exactly eight very long, thin, jointed legs, no more: four on its left side and four on its right side. Two of those eight, the front pair, hold the box, so below the box only six legs show, three on each side. His abdomen is the most richly patterned thing in the picture: it is patterned all over like an old woven kente cloth, in bold, big, square blocks and zigzag bands of dull old gold, black, and dark brick-red, the gold the brown-gold of tarnished brass. His head-and-chest is glossy black with a covering of short gold hairs, with a cluster of eight shining amber eyes, the two in the middle large and knowing, and two big black fangs below. His long legs are black, and each joint is ringed with a broad band of dull old gold, like bracelets.",
   "colours": "a big abdomen in bold square blocks and zigzags of dull old gold, black and dark brick-red, a glossy black head-and-chest with short gold hairs, amber eyes, black fangs, long black legs with broad dull old gold bands at the joints, one small carved box of dark brown wood with brass corners.",
   "wears": "It is a spider and wears nothing; the gold bands on its legs are its own markings.",
-  "holds": "With its two front legs it holds up exactly one small box in front of its head: a square carved box of dark brown wood with brass corners and a closed lid, the box of stories. It holds nothing else.",
-  "pose": "Seen from the front and a little from above, it rears up to the left on its six back legs, which are spread wide and bent at sharp angles, three on each side, its patterned abdomen lifted high behind, its two front legs raised together in front of it holding up the little wooden box, its head tilted with the amber eyes on the viewer.",
+  "holds": "The front pair of its eight legs, one leg from each side, curls up and holds exactly one small box just above its head: a square carved box of dark brown wood with brass corners and a closed lid, the box of stories. The other six legs, three on each side, stand spread out below. It holds nothing else.",
+  "pose": "Seen from above and a little from the front, it crouches facing the viewer, the front pair of legs raised holding the box over its head, the six other legs, three on each side, spread wide and bent at sharp angles, its long patterned abdomen behind, its amber eyes on the viewer.",
   "must_show": [
    "one great spider with eight long thin black legs banded in gold",
    "a big abdomen patterned in bold blocks and zigzags of gold, black and brick-red, like woven cloth",
@@ -1296,7 +1299,13 @@
    "bright yellow",
    "neon colours",
    "orange abdomen",
-   "wasp"
+   "wasp",
+   "ten legs",
+   "extra legs",
+   "four legs holding the box",
+   "two pairs of legs on the box",
+   "five legs on a side",
+   "box resting on its head with no legs holding it"
   ]
  },
  {

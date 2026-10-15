@@ -624,7 +624,7 @@
   "what": "the Cow King: the war-king of the hell cattle, a huge, grim, fearsome bull-headed warrior king standing upright on two legs, painted as seriously as a minotaur lord, never comic. He has the head of a real fighting bull: a broad heavy scarred muzzle with wide flaring nostrils and a thick iron ring through the nose, small fierce glowing red eyes under a heavy brow, and two long thick forward-curving horns banded with tarnished gold. His head, thick neck, arms and legs are covered in short coarse piebald cattle hide like a black and white bull's: black, with big ragged pure white patches: a broad white blaze down the middle of his black face, one white forearm, and white patches on both thighs. There is no bare skin anywhere on him, and his chest and belly are covered by armour. His legs are an upright bull's hind legs ending in two big black cloven hooves. His hands are thick dark fists. He has a small head for his enormous shoulders.",
   "colours": "short coarse piebald cattle hide, black with big pure white patches, a white blaze on the black face, a dark grey muzzle with an iron nose ring, glowing red eyes, two pale horn-grey horns banded with tarnished gold, a heavy tarnished dark gold crown, a long ragged dark wine-purple cape with a dull grey-white fur collar, a coat of blackened iron scales and blackened iron shoulder plates, a wide dark brown leather war belt with a tarnished gold buckle, black hooves, a halberd with a dark wooden shaft and a pale steel head.",
   "wears": "He wears a heavy tarnished dark gold crown with tall square points set between his horns, two blackened iron shoulder plates with dull gold edges, a long ragged dark wine-purple royal cape with a dull grey-white fur collar hanging from his shoulders to his hooves, and a wide dark brown leather war belt with a big tarnished gold buckle and a hanging war skirt of dark leather strips to his knees. Over his whole chest and belly, from the throat to the belt, he wears a coat of blackened iron scales. His arms and legs show his own black and white hide.",
-  "holds": "He grips exactly one royal halberd in both fists, both hands on its shaft: a thick dark wooden shaft taller than himself, and at its top a bright steel head with one broad axe blade on one side, a hooked spike on the other side and a long spear point on top. He holds nothing else.",
+  "holds": "He grips exactly one royal halberd in both fists, both hands on its shaft, and one unbroken straight shaft runs through both fists: a thick dark wooden shaft taller than himself, and at its top a bright steel head made of three parts: a long spear point straight up at the very top; just below it, on one side, one big broad flat axe blade shaped like a half moon, as big as his head; and on the other side one short hooked spike. He holds nothing else.",
   "pose": "On his two hoofed legs, seen a little from the side, he stamps forward to the left with a long step, his front knee bent and his body pitched forward, the halberd gripped in both fists and swung back over his right shoulder with its steel head high at the upper right, about to chop down, his head lowered so the horns point forward, nostrils flared, bellowing, his cape flying out behind him to the right.",
   "must_show": [
    "an upright bull-headed beast-warrior on two hoofed legs",
@@ -670,7 +670,10 @@
    "blue-grey skin",
    "grey skin",
    "hairless skin",
-   "bodybuilder"
+   "bodybuilder",
+   "plain spear",
+   "spear point with no axe blade",
+   "lower hand beside the shaft"
   ]
  },
  {
@@ -1156,16 +1159,16 @@
   "family": "lesser_b",
   "rank": 1,
   "key": "blue",
-  "what": "a lesser sphinx: a young guardian sphinx of the Egyptian kind, a living monster on four legs: the head of a human man on the body of a lean big cat. Its head is a real human head, of natural size for the body, no bigger than a lion's own head would be: the lean, sharp, clean-shaven, impatient face of a young Egyptian man with smooth brown human skin, a straight human nose, thin human lips, a firm human chin, human ears, and two dark human eyes lined with black under straight black brows. The head wears a plain headcloth of undyed cream linen that covers the hair and hangs in two plain flaps down to the chest. Below the chin the human neck joins the furred shoulders, and from there back it is all animal: a narrow chest, long legs, paws with claws, and a long tail with a dark tuft, covered in short pale dusty sand-grey fur, the colour of desert dust.",
+  "what": "a lesser sphinx: a young guardian sphinx of the Egyptian kind, a living monster on four legs: the head of a human man on the body of a lean big cat. Its face is a young man's face, the same as any man's in every way and nothing like a cat's: its head is a real human head, of natural size for the body, no bigger than a lion's own head would be: the lean, sharp, clean-shaven, impatient face of a young Egyptian man with smooth brown human skin, a straight human nose, thin human lips, a firm human chin, human ears, and two dark human eyes lined with black under straight black brows. The head wears a plain headcloth of undyed cream linen that covers the hair and hangs in two plain flaps down to the chest. Below the chin the human neck joins the furred shoulders, and from there back it is all animal: a narrow chest, long legs, paws with claws, and a long tail with a dark tuft, covered in short pale dusty sand-grey fur, the colour of desert dust.",
   "colours": "short pale dusty sand-grey lion's fur on the body with a cream belly, a dark brown tail tuft, a bronze-brown human face, a plain cream linen headcloth with one thin dark brown band at the brow, dark eyes.",
   "wears": "It wears only a plain cream linen headcloth with one thin dark brown band at the brow. It wears nothing else: no collar, no gold, no beard.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, its body facing left, it crouches low on four legs like a cat about to pounce, hindquarters raised, chest low, one front paw lifted off the ground with the claws out, tail curled up behind; its man's head is turned to face the viewer so the whole human face shows, one brow raised, the human mouth open, speaking its riddle sharply.",
+  "pose": "Seen from the side, its body facing left, it crouches low like a cat about to pounce, hindquarters raised and chest low, standing on exactly four legs and no more: two front legs and two hind legs, all four shown once each, all four paws planted on the ground with the claws out, tail curled up behind; its man's head is turned to face the viewer so the whole human face shows, one brow raised, the human mouth open, speaking its riddle sharply.",
   "must_show": [
    "a lean lion's body on four legs, seen from the side",
    "one human man's face (nose, lips, chin, bronze skin, no muzzle) in a plain cream headcloth, readable in the small sprite",
    "no wings, no gold, no collar",
-   "crouched to pounce, one paw lifted",
+   "crouched to pounce, exactly four legs, all four paws on the ground",
    "leaner and plainer than the gold-collared sphinx guardian"
   ],
   "must_not_show": [
@@ -1202,7 +1205,11 @@
    "orange fur",
    "bright orange",
    "golden fur",
-   "giant head"
+   "giant head",
+   "fifth leg",
+   "extra leg",
+   "raised paw",
+   "lifted paw"
   ]
  },
  {

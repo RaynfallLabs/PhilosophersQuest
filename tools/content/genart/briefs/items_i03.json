@@ -1901,9 +1901,9 @@
   "body": "item",
   "scale": "huge",
   "key": "blue",
-  "what": "an Indian prince's war bow: one tall, gently curved stave, thick at the middle and tapering to both tips, lacquered deep red and ringed with five broad bands of gold, strung with a single taut bowstring from tip to tip, and no arrow. Each tip ends in a small gold cap. The grip at the middle is wrapped in gold cord.",
+  "what": "an Indian prince's war bow: one bow and its string, nothing else. The stave is one tall beam, as thick as a fence post, thick at the middle and tapering to both tips, lacquered deep red and ringed with five broad bands of gold; each tip ends in a small gold cap; the grip at the middle is wrapped in gold cord. The stave bends in one single smooth even curve like a crescent moon, both halves the same length and the same curve, with no kink, no wave and no backward bend anywhere. The bowstring is one perfectly straight taut cord of bright off-white, as thick as a finger, the longest straight line in the picture: its upper end is tied to the very tip of the stave near the top right corner and its lower end is tied to the very tip of the stave near the bottom left corner. Nowhere else does the string touch the stave: it passes well clear of the grip, so that the stave and the string together enclose one tall empty space shaped like a half-moon, widest at the grip. It has no arrow.",
   "colours": "Deep dark red lacquer, bright yellow gold bands, tips and grip, with a faint warm orange shine on the red; a pale string.",
-  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curve bulging to the upper left.",
+  "pose": "It stands nearly upright, leaning a little to the right: the lower tip near the bottom left corner, the upper tip near the top right corner, the curved stave bulging out to the upper left and the straight string on the lower right side, the whole bow inside the picture.",
   "must_show": [
    "one bow",
    "a single gentle curve",
@@ -1935,7 +1935,15 @@
    "letter",
    "alphabet letter",
    "lettering",
-   "typography"
+   "typography",
+   "string tied to the grip",
+   "string ending at the middle of the bow",
+   "slack string",
+   "bent string",
+   "S-shaped stave",
+   "wavy stave",
+   "two strings",
+   "straight rod"
   ]
  },
  {
@@ -1945,9 +1953,9 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "a forester's longbow of yew: one tall, gently curved stave of wood, thick at the middle and tapering to both tips, dark heartwood with a paler stripe of sapwood along its outer edge, strung with a single taut bowstring from tip to tip, and no arrow. A row of big angular runes is carved into the upper limb and filled with dark stain. The grip at the middle is a narrow band of dark leather.",
+  "what": "a forester's longbow of yew: one bow and its string, nothing else. The stave is one tall beam of wood, as thick as a fence post, thick at the middle and tapering to both tips, dark heartwood with a paler stripe of sapwood along its outer edge. A row of big angular runes is carved into the upper limb and filled with dark stain. The grip at the middle is a narrow band of dark leather. The stave bends in one single smooth even curve like a crescent moon, both halves the same length and the same curve, with no kink, no wave and no backward bend anywhere. The bowstring is one perfectly straight taut cord of bright off-white, as thick as a finger, the longest straight line in the picture: its upper end is tied to the very tip of the stave near the top right corner and its lower end is tied to the very tip of the stave near the bottom left corner. Nowhere else does the string touch the stave: it passes well clear of the grip, so that the stave and the string together enclose one tall empty space shaped like a half-moon, widest at the grip. It has no arrow.",
   "colours": "Dark honey-brown heartwood with a strip of paler tan sapwood along the back, both darkened with age; dark carved letters; a dark brown leather grip; an off-white string.",
-  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curve bulging to the upper left.",
+  "pose": "It stands nearly upright, leaning a little to the right: the lower tip near the bottom left corner, the upper tip near the top right corner, the curved stave bulging out to the upper left and the straight string on the lower right side, the whole bow inside the picture.",
   "must_show": [
    "one tall longbow",
    "a single gentle curve",
@@ -1981,7 +1989,14 @@
    "bolt",
    "stock",
    "alphabet letter",
-   "typography"
+   "typography",
+   "string tied to the grip",
+   "string ending at the middle of the bow",
+   "slack string",
+   "bent string",
+   "S-shaped stave",
+   "wavy stave",
+   "two strings"
   ]
  },
  {
@@ -1989,9 +2004,9 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "a god's great war bow made of gold: one bow and its string, nothing else. The stave is one tall, gently curved bar of solid gold, very thick at the middle and tapering to both tips, studded along its whole length with a row of big raised round golden bosses. The grip at the middle is wrapped in deep blue silk. From the very tip at one end to the very tip at the other runs the bowstring: one perfectly straight taut cord of bright white silver, as thick as a finger, plainly visible, standing well clear of the stave, so that the stave and the string together enclose one long empty space, wide in the middle and pointed at both ends. It has no arrow.",
+  "what": "a god's great war bow made of gold: one bow and its string, nothing else. The stave is one tall curved bar of solid gold, very thick at the middle and tapering to both tips, studded along its whole length with a row of big raised round golden bosses. The grip at the middle is wrapped in deep blue silk. The stave bends in one single smooth even curve like a crescent moon, both halves the same length and the same curve, with no kink, no wave and no backward bend anywhere. The bowstring is one perfectly straight taut cord of bright white silver, as thick as a finger, the longest straight line in the picture: its upper end is tied to the very tip of the stave near the top right corner and its lower end is tied to the very tip of the stave near the bottom left corner. Nowhere else does the string touch the stave: it passes well clear of the grip, so that the stave and the string together enclose one tall empty space shaped like a half-moon, widest at the grip. It has no arrow.",
   "colours": "Rich yellow gold stave with white highlights and deep amber shadows; a deep blue silk grip; one thick bright silver-white string.",
-  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curved stave bulging to the upper left and the straight string on the lower right side.",
+  "pose": "It stands nearly upright, leaning a little to the right: the lower tip near the bottom left corner, the upper tip near the top right corner, the curved stave bulging out to the upper left and the straight string on the lower right side, the whole bow inside the picture.",
   "must_show": [
    "one great gold bow",
    "one thick straight silver-white string from tip to tip",
@@ -2038,7 +2053,14 @@
    "stand",
    "tray",
    "label with writing",
-   "second object"
+   "second object",
+   "string tied to the grip",
+   "string ending at the middle of the bow",
+   "slack string",
+   "bent string",
+   "S-shaped stave",
+   "wavy stave",
+   "two strings"
   ],
   "family": "bows",
   "rank": 4
@@ -2050,9 +2072,9 @@
   "body": "item",
   "scale": "huge",
   "key": "magenta",
-  "what": "an outlaw's weathered longbow of yew: one bow and its string, nothing else. The stave is one tall beam of wood bent in a single smooth even curve like a new moon, as thick as a fence post, very thick at the middle and tapering to both plain tips, scuffed and nicked with long use. The middle third of the stave is wrapped round and round in strips of deep emerald-green woollen cloth. From the very tip at one end to the very tip at the other runs the bowstring: one perfectly straight taut cord of bright off-white, as thick as a finger, plainly visible, standing well clear of the stave, so that the stave and the string together enclose one long empty space, wide in the middle and pointed at both ends. It has no arrow.",
+  "what": "an outlaw's weathered longbow of yew: one bow and its string, nothing else. The stave is one tall beam of wood, as thick as a fence post, very thick at the middle and tapering to both plain tips, scuffed and nicked with long use. The middle third of the stave is wrapped round and round in strips of deep emerald-green woollen cloth. The stave bends in one single smooth even curve like a crescent moon, both halves the same length and the same curve, with no kink, no wave and no backward bend anywhere. The bowstring is one perfectly straight taut cord of bright off-white, as thick as a finger, the longest straight line in the picture: its upper end is tied to the very tip of the stave near the top right corner and its lower end is tied to the very tip of the stave near the bottom left corner. Nowhere else does the string touch the stave: it passes well clear of the grip, so that the stave and the string together enclose one tall empty space shaped like a half-moon, widest at the grip. It has no arrow.",
   "colours": "A warm mid-brown yew stave, the brown of a chestnut, with paler honey-brown worn edges; a deep emerald-green cloth wrapping; one thick bright off-white string.",
-  "pose": "It stands upright but leaning: lower tip at the bottom left, upper tip at the top right, the curved stave bulging to the upper left and the straight string on the lower right side.",
+  "pose": "It stands nearly upright, leaning a little to the right: the lower tip near the bottom left corner, the upper tip near the top right corner, the curved stave bulging out to the upper left and the straight string on the lower right side, the whole bow inside the picture.",
   "must_show": [
    "one bow",
    "one thick stave in a single curve",
@@ -2092,7 +2114,12 @@
    "wavy stave",
    "black wood",
    "snake",
-   "string touching the stave"
+   "string touching the stave",
+   "string tied to the grip",
+   "string ending at the middle of the bow",
+   "slack string",
+   "bent string",
+   "two strings"
   ]
  }
 ]

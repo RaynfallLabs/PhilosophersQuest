@@ -659,17 +659,18 @@
   "family": "beast_b",
   "rank": 5,
   "key": "green",
-  "what": "Arachne of Lydia, the weaver of Greek myth whom Athena changed into a spider: a woman above the waist and a great spider below. Her upper half is a proud, stern, pale woman with a long neck, dark angry eyes, two thin fangs showing at her lips, and black hair bound up high with a gold band. At her belt the woman ends and her body joins the front of one huge spider: a great round glossy black abdomen swelling out behind her, marked with one bold dull-gold hourglass shape, carried on eight long, thick, jointed, glossy black spider legs that arch up high and come down in sharp points all round her. She has a small head, a long neck and long slender arms.",
+  "what": "Arachne of Lydia, the weaver of Greek myth whom Athena changed into a spider: a woman above the waist and a great spider below. Her upper half is a proud, stern, pale woman with a long neck, dark angry eyes, two thin fangs showing at her lips, and black hair bound up high with a gold band. At her belt the woman ends and her body joins the front of one huge spider: a great round glossy black abdomen swelling out behind her, marked with one bold dull-gold hourglass shape, carried on exactly eight long, thick, jointed, glossy black spider legs, four on her left side and four on her right side, all eight shown, each arching up high from the spider body and coming down in a sharp point. She has a small head, a long neck and long slender arms.",
   "colours": "pale ash-white skin on the face and hands, black hair with a gold band, a dark wine-red long-sleeved tunic with a gold border and a gold belt, a glossy black spider body and legs with charcoal highlights and one dull gold hourglass mark.",
   "wears": "She wears a weaver's fine ancient Greek tunic of dark wine-red with a gold border, with a high neckline and long sleeves to the wrists, which covers her whole upper body from throat to waist and ends at a broad gold belt where the black spider body begins; and a gold band in her hair.",
-  "holds": "Her hands are empty and she holds nothing; both hands are raised in front of her with the long fingers hooked like claws.",
-  "pose": "Seen from the front and a little from the left, she rears her woman's body upright above the spider body and leans to the left, both clawed hands raised to seize, head tilted down glaring, mouth a little open showing the fangs; her eight black legs are spread wide round her, the two front legs lifted off the ground and reaching forward, the black abdomen raised behind.",
+  "holds": "Both her hands are empty, with nothing in them at all; both are raised in front of her with the long fingers hooked like claws.",
+  "pose": "Seen from the front and a little from the left, she rears her woman's body upright above the spider body and leans to the left, both clawed hands raised to seize, head tilted down glaring, mouth a little open showing the fangs; her eight black spider legs, four on each side, are spread wide round her like the spokes of a wheel, the black abdomen raised behind.",
   "must_show": [
    "a woman above the waist, fully clothed in a long-sleeved wine-red tunic",
    "a huge black spider body with long jointed legs below the waist",
    "pale stern face, black bound hair, gold band",
    "empty clawed hands raised",
-   "ornate and imposing: a named monster of myth"
+   "ornate and imposing: a named monster of myth",
+   "exactly eight spider legs, four on each side"
   ],
   "must_not_show": [
    "human legs",
@@ -695,7 +696,18 @@
    "crown of spines",
    "patch of ground",
    "oversized head",
-   "cartoon"
+   "cartoon",
+   "six legs",
+   "only six legs",
+   "ten legs",
+   "extra legs",
+   "teapot",
+   "urn",
+   "jar",
+   "vase",
+   "vial",
+   "anything held in her hands",
+   "two round bodies stacked"
   ]
  },
  {

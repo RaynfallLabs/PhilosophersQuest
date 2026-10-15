@@ -46,7 +46,7 @@
   "what": "Leonidas, the bearded warrior-king of Sparta: a hard, weathered man in his prime with a full short dark beard, his face showing through the opening of a tall bronze Corinthian helmet. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
   "colours": "a polished bronze Corinthian helmet gleaming warm gold-bronze with bright highlights, a crest of stiff deep red horsehair running from ear to ear across the top, a long strong crimson-red cloak, a polished bronze breastplate, a deep red tunic, a big round shield of dark bronze whose broad rim is polished bright gold-bronze and catches the light, with a big cream chevron on it, a dark ash-wood spear with a bright iron head.",
   "wears": "He wears a full polished bronze Corinthian helmet that covers his cheeks and nose, its edges gleaming with bright highlights, his eyes and his dark beard plainly visible in the opening, with a tall stiff crest of red horsehair standing up across the top from ear to ear like a fan, a polished bronze breastplate lit along its edges, a deep red tunic, bronze greaves, sandals, and a long heavy crimson-red cloak hanging from both shoulders.",
-  "holds": "His left arm carries exactly one very large round convex shield of dark brown-gold bronze, as wide as his body from chin to knee, facing the viewer. Painted on its face in cream is one big upward-pointing chevron: two thick separate straight stripes that meet in a point near the top rim and spread apart down to the bottom rim, with only bare bronze between them, no crossbar. His right hand holds exactly one long thick dark spear raised level above his shoulder, over the top of the shield, its iron point aimed to the left. Nothing else.",
+  "holds": "His left arm carries exactly one very large round convex shield of dark brown-gold bronze, as wide as his body from chin to knee, facing the viewer. Painted on its face in cream is one big upward-pointing chevron: two thick separate straight stripes that meet in a point near the top rim and spread apart down to the bottom rim, with only bare bronze between them, no crossbar. His right hand holds exactly one long thick dark spear raised level above his shoulder, over the top of the shield, its one iron point aimed to the left; the back end of the shaft is finished with a small plain round bronze knob, not a blade, so the spear has only one blade. Nothing else.",
   "pose": "He stands tall and upright on two straight strong legs planted wide apart, braced like a wall, left foot forward, the great round shield held before his body, the spear held overhand above his shoulder ready to stab forward, his helmeted head held high above the shield rim, red cloak swinging behind him. He is standing, never sitting, never squatting, never kneeling.",
   "must_show": [
    "bronze Corinthian helmet with a transverse red crest",
@@ -76,7 +76,9 @@
    "plain shield with no letter",
    "letter A",
    "crossbar on the chevron",
-   "bright orange copper shield"
+   "bright orange copper shield",
+   "spear with a blade at both ends",
+   "second spearhead"
   ]
  },
  {
@@ -118,7 +120,7 @@
   "what": "Theseus, the young Athenian hero who slew the Minotaur in the labyrinth: a lean, athletic young man with short dark curly hair and a short dark beard, bare-headed. He has the realistic anatomy and proportions of an adult man: a small head, long limbs, about eight heads tall.",
   "colours": "short dark curly hair, a brown leather breastplate studded with bronze, a short undyed cream linen tunic, a bright red rope of thick thread, brown leather sandals, a short broad iron sword, a small round shield of plain dark oak wood.",
   "wears": "He wears a brown leather breastplate studded with bronze rivets over a short cream linen tunic, leather sandals laced to the knee, and a thick coil of bright red thread slung across his chest from his left shoulder to his right hip like a bandolier: Ariadne's thread. No cloak, no helmet.",
-  "holds": "His right hand grips exactly one short, broad, leaf-shaped iron sword, thrust forward low at waist height to the left. His left forearm carries exactly one small round shield of plain dark oak wood with an iron rim. Nothing else.",
+  "holds": "His right hand grips exactly one short, broad iron sword, thrust forward low at waist height to the left: a perfectly straight blade, as straight as a ruler, both edges mirror images, swelling a little in the middle like a leaf and narrowing to a point. His left forearm carries exactly one small round shield of plain dark oak wood with an iron rim. Nothing else.",
   "pose": "He moves forward on two legs in a crouching fighter's step, as if creeping through a dark maze, knees bent, left foot ahead, shield raised before his chest, short sword held low and ready, head turned watchfully to the left.",
   "must_show": [
    "bare head, short dark curly hair, short beard",
@@ -139,7 +141,10 @@
    "minotaur",
    "bare chest",
    "oversized head",
-   "modern clothing"
+   "modern clothing",
+   "curved blade",
+   "sabre",
+   "scimitar"
   ]
  },
  {
@@ -292,8 +297,8 @@
   "what": "a young swordswoman of elder blood, about twenty: a slim, agile young woman with ash-white hair cut to her jaw, pale skin and bright green eyes. She has the realistic anatomy and proportions of an adult woman: a small head, long limbs, about eight heads tall.",
   "colours": "ash-white hair, a loose long-sleeved white linen shirt, a dark brown leather corset-vest laced over it, dark brown leather gloves, loose matte black wool trousers, tall dark brown boots, a slender bright steel sword, a few small pale cyan-white sparks.",
   "wears": "She wears a loose white long-sleeved linen shirt buttoned to the collar, a dark brown leather vest laced over it, a wide leather belt, loose matte black wool trousers tucked into tall brown boots, and leather gloves; she is fully and modestly clothed. No cloak, no armour plates.",
-  "holds": "Her right hand holds exactly one slender straight steel sword, light and elegant, swept out behind her at hip height. Her left hand is open and empty, with a few small pale cyan-white sparks crackling round the fingers, touching the hand. Nothing else.",
-  "pose": "She is caught mid-leap on two legs as she springs forward to the left, one knee driven up, the other leg stretched behind, body leaning low, sword swept back for a slash, her short white hair swinging.",
+  "holds": "Her right hand holds exactly one slender, perfectly straight steel sword, light and elegant, held out low ahead of her and pointing forward and down to the left, the whole blade in front of her body and clear of it. Her left hand is open and empty, with a few small pale cyan-white sparks crackling round the fingers, touching the hand. Nothing on her back. Nothing else.",
+  "pose": "She is caught mid-leap on two legs as she springs forward to the left, one knee driven up, the other leg stretched behind, body leaning low, sword held out low ahead of her, her short white hair swinging.",
   "must_show": [
    "young woman with jaw-length ash-white hair",
    "white linen shirt with a dark brown leather vest",
@@ -324,7 +329,9 @@
    "oversized head",
    "anime eyes",
    "photograph of an actress",
-   "video game character"
+   "video game character",
+   "sword on her back",
+   "blade behind her shoulder"
   ]
  },
  {

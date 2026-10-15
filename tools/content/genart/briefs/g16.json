@@ -4,18 +4,19 @@
   "family": "warrior",
   "rank": 1,
   "key": "blue",
-  "what": "a satyr warrior of Greek myth, an exile cast out of his band: a hard, scarred, scowling man above the waist and a goat below, standing on two goat legs. He has a lean weather-beaten light tan face twisted in a bitter snarl, a ragged black beard, a broken nose, long pointed ears that stick out sideways, a tangle of black hair, and two heavy, thick, ridged dark grey goat horns that rise from his forehead and curve back over his skull. From the waist down he has the hind legs of a goat: shaggy grey-black hair, backward-bending hocks and two black cloven hooves, with a short goat tail. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "what": "a satyr warrior of Greek myth, an exile cast out of his band: a hard, scarred, scowling man above the waist and a goat below, standing on two goat legs. He has a lean weather-beaten light tan face twisted in a bitter snarl, a ragged black beard, a broken nose, long pointed ears that stick out sideways, a tangle of black hair, and two heavy, thick, ridged dark grey goat horns that rise from his forehead and curve back over his skull. He stands upright like a man, with a man's hips and no animal body behind him. From the hips down his two legs are a goat's legs, one on the left and one on the right, exactly two and no more: covered in shaggy grey-black hair, with backward-bending hocks, each ending in one black cloven hoof. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "weather-beaten light tan skin, black hair and beard, dark grey ridged horns, shaggy grey-black goat legs with black hooves, a rough dark red-brown hide tunic, a dark brown leather strap, a dark brown wooden club.",
   "wears": "He wears a rough sleeveless tunic of dark red-brown animal hide that covers his chest and belly and hangs to the tops of his goat thighs, with one dark leather strap across it. No wreath, no armour, no helmet.",
   "holds": "He holds exactly one crude club in his right hand: one straight length of dark wood as long as his arm, narrow at the grip and swelling to a thick knobbly end, with nothing fixed to it. His left hand is empty, a clenched fist. He holds nothing else.",
-  "pose": "Seen from the side and a little from the front, he runs to the left on his two goat legs with his body pitched forward and his head lowered so the heavy horns point ahead to butt, one hoof lifted high, the club swung up and back behind his shoulder in his right hand, his left fist punched forward.",
+  "pose": "Upright like a man and seen a little from the front, he strides to the left on his two goat legs only, his left leg stepping forward and his right leg back, both hooves on the ground, his body leaning forward and his head lowered so the heavy horns point ahead to butt, the club swung up and back behind his shoulder in his right hand, his left fist punched forward.",
   "must_show": [
    "a man above the waist with shaggy goat legs and black cloven hooves",
    "heavy ridged goat horns, pointed ears, a black beard",
    "a hide tunic covering the chest",
    "exactly one crude wooden club in the right hand",
    "an empty left fist",
-   "a bitter fighter with his head lowered to butt: no pipes, no wreath, no purse"
+   "a bitter fighter with his head lowered to butt: no pipes, no wreath, no purse",
+   "exactly two goat legs, each ending in one black cloven hoof"
   ],
   "must_not_show": [
    "panpipes",
@@ -45,7 +46,15 @@
    "cartoon proportions",
    "short stubby body",
    "rock",
-   "patch of ground"
+   "patch of ground",
+   "third leg",
+   "extra leg",
+   "three legs",
+   "sandal",
+   "goat body",
+   "animal body behind him",
+   "horse body",
+   "tail"
   ]
  },
  {
@@ -207,8 +216,8 @@
   "what": "a minotaur warrior: a huge, heavily muscled man standing upright on two human legs, with the head of a bull: a broad bull's muzzle, small angry eyes, and two long thick curved ivory horns. Dark brown fur covers the bull's head, the thick neck and the tops of the shoulders; the rest of his body, chest, belly, arms and legs alike, is covered in the same short bull's hide, dark umber-brown, dull and matt, scarred. Unlike a common minotaur he is armed and armoured in the Cretan fashion. He has the realistic proportions of a giant adult man, with the bull's head no larger than his chest.",
   "colours": "dark umber-brown short hide on the whole body, darker brown fur on the bull's head and shoulders, ivory horns, a dull bronze breast-harness, one dull bronze shoulder plate and two dull bronze shin guards, a dark brown leather war-kilt with bronze studs, a double axe with a dark wooden haft and two bright bronze blades.",
   "wears": "He wears a harness of broad bronze-studded leather straps crossed over his chest with a round bronze plate at the centre, one large bronze shoulder plate on his left shoulder, a war-kilt of dark brown leather strips with bronze studs hanging to the knee, and a bronze guard on each shin. His feet are bare. No helmet.",
-  "holds": "He holds exactly one double axe, gripped in both fists on its one thick wooden haft: the haft is as long as his arm, and at its top are two broad crescent bronze blades, one on each side of the haft, mirror images of each other. Both hands are on the haft. He holds nothing else.",
-  "pose": "Seen from the side and a little from the front, facing left, on two legs: he strides forward in a long heavy step with his weight on his bent front leg, the double axe swung up over his right shoulder in both fists ready to chop down, his horned head lowered and thrust forward, his mouth open in a bellow.",
+  "holds": "He holds exactly one double axe, a labrys, gripped in both fists one above the other on its one thick straight wooden haft as long as his arm. At the top of the haft are two identical broad crescent bronze blades, one sticking out to the left of the haft and one to the right, mirror images of each other like the two wings of a butterfly, both cutting edges facing outward. Both hands are on the haft. He holds nothing else.",
+  "pose": "Seen from the side and a little from the front, facing left, on two legs: he strides forward in a long heavy step with his weight on his bent front leg, the double axe raised in both fists with the haft slanting up across his chest and the two-bladed head high above his right shoulder, both blades plain against the backdrop, ready to chop down, his horned head lowered and thrust forward, his mouth open in a bellow.",
   "must_show": [
    "a massive upright man with a brown bull's head and long ivory horns, on two legs",
    "exactly one double-bladed bronze axe held in both hands, readable in the small sprite",
@@ -249,7 +258,12 @@
    "red skin",
    "sunburnt skin",
    "bright orange body",
-   "bare pink skin"
+   "bare pink skin",
+   "pickaxe",
+   "hook on the axe",
+   "spike on the axe head",
+   "scythe blade",
+   "only one blade on the axe"
   ],
   "lift": 1.2
  },
@@ -588,8 +602,8 @@
   "what": "a draugr wight: a Norse barrow-king buried in his war gear who would not lie still, the strongest of the common wights, a very tall, gaunt, long-limbed walking corpse of a Viking sea-king, towering and lean, never stout. He is dead flesh, a corpse, never the colour of living skin: his skin is very dark slate-grey with a black tinge, shrunken tight on the bones, on the face, neck, arms and hands alike. He still has ears, a thin nose, eyelids and dried lips drawn back from long teeth, and two round eyes that glow cold white with no pupils. He has the realistic proportions of a very tall thin adult man: a small head, long limbs, about eight heads tall. His long thin arms are bare from the shoulder, dark slate-grey dead flesh like his face, ending in big hands with long black nails. He has a long grey-white beard plaited into one thick braid that hangs to his belt, and his cheeks above it are sunken, dark and dead.",
   "colours": "very dark slate-grey dead skin with a black tinge on the face and bare arms, a long grey-white braided beard, cold white glowing eyes, a dark iron helmet with a round eye-guard and dull brass edging, a sleeveless knee-length dark iron-grey mail shirt streaked with very dark brown rust, a broad brown leather belt with a brass buckle, one tarnished gold arm ring, rotted brown boots, a black pitted iron sword with a broad pale icy-white edge.",
   "wears": "He wears his burial war gear: a round dark iron helmet with a guard like a pair of spectacles round the eyes and dull brass edging; a sleeveless knee-length shirt of dark iron mail streaked with rust, hanging loose on his thin frame, which leaves both dead arms bare from the shoulder; a broad leather belt; rotted brown boots; and one tarnished gold ring on his left upper arm. No cloak, no fur, no cloth sleeves.",
-  "holds": "He holds exactly one sword in his right hand: a broad, straight, heavy Viking sword of black pitted barrow-iron with a short straight guard and a three-lobed pommel, and a broad band of pale icy-white light along its whole cutting edge. His left hand is empty: an open dark hand with long black nails, reaching forward to touch. He has no shield and holds nothing else.",
-  "pose": "On two legs, he strides forward to the left in a long heavy step with his weight on his front foot and his body leaning in, the black sword swung up and back over his right shoulder ready to hew down, his open left hand stretched out ahead to seize, his braided beard swinging, his mouth open bellowing.",
+  "holds": "He holds exactly one sword in his right fist, gripped by its short hilt: the hilt is no longer than his fist, with a short straight guard just above the fist and a three-lobed pommel just below it, and above the guard one broad, heavy Viking blade of black pitted barrow-iron, perfectly straight, as straight as a ruler, one even width up to the point, with a broad band of pale icy-white light along its whole cutting edge. His left hand is empty: an open dark hand with long black nails, reaching forward to touch. He has no shield and holds nothing else.",
+  "pose": "On two legs, he strides forward to the left in a long heavy step with his weight on his front foot and his body leaning in, his right arm raised high with the black sword held upright above his head, point to the sky, ready to hew down, his open left hand stretched out ahead to seize, his braided beard swinging, his mouth open bellowing.",
   "must_show": [
    "a tall gaunt corpse with dark slate dead skin, face and hands alike",
    "an iron helmet with an eye-guard, a long braided grey beard, cold white glowing eyes",
@@ -640,7 +654,10 @@
    "cartoon proportions",
    "short stubby body",
    "rock",
-   "patch of ground"
+   "patch of ground",
+   "sword resting on the shoulder",
+   "long grip",
+   "sword through the shoulder"
   ]
  },
  {

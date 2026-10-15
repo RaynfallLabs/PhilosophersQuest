@@ -1227,7 +1227,7 @@
   "colours": "dull grey-brown grave-stained bone with dark brown shadows, a few tatters of dark brown dried hide, long white teeth, two small pale white eye lights, a broad collar of tarnished brown-gold, the colour of old brass.",
   "wears": "It wears only the broad tarnished gold collar of a king's hound.",
   "holds": "It is an animal on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left, on four legs: the skeleton hound runs at full stretch in a hunting gallop, front leg bones reaching far forward and hind leg bones driving out behind, skull low and level with the jaws wide open to bite, the bony tail streaming straight back.",
+  "pose": "Seen from the side, facing left: the skeleton hound runs at full stretch in a hunting gallop on exactly four legs and no more, two front legs and two hind legs, all four shown once each; the two front leg bones reach far forward and the two hind leg bones drive out behind; each leg is one single chain of bones ending in one bony paw; skull low and level with the jaws wide open to bite, the bony tail streaming straight back.",
   "must_show": [
    "the bare skeleton of a lean hound on four legs, seen from the side, running",
    "ribs with dark gaps between them, spine and leg bones plain to see",
@@ -1254,7 +1254,12 @@
    "gold-coloured bones",
    "clean white bones",
    "a human skull",
-   "a round human-shaped skull"
+   "a round human-shaped skull",
+   "fifth leg",
+   "extra leg",
+   "forked leg",
+   "two paws on one leg",
+   "three front legs"
   ],
   "lift": 1.4
  },

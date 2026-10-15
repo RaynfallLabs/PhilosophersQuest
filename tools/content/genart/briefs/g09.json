@@ -221,7 +221,7 @@
   "what": "a hobgoblin warlord: a very tall, massively broad, battle-scarred goblinoid war chief, upright like a man, with dark forest-green skin, a flat fierce face, short pointed ears, a heavy jaw with two small tusks and a roaring open mouth. He has the realistic proportions of a big heavy adult warrior with a small head.",
   "colours": "dark forest-green skin, blackened iron plate armour, dull red cloth, a short dull red horsehair crest, pale ivory bone and tooth trophies, a dark wooden axe haft and a grey steel axe head.",
   "wears": "He wears heavy blackened iron plate armour on his chest, shoulders, arms and legs over a dull red tabard, and an open-faced iron helmet with a short red horsehair crest. Trophies hang on the plates: a string of big ivory teeth across the breastplate and one small pale skull fixed on the left shoulder plate. No cape.",
-  "holds": "He holds exactly one great axe in both hands: a long thick dark wooden haft as tall as his chest with one broad, heavy, single-bladed steel axe head at the top. Both of his hands grip the haft. He holds nothing else.",
+  "holds": "He holds exactly one great axe in both hands: a long thick straight dark wooden haft as tall as his chest with one broad, heavy, single-bladed steel axe head at the top. Both fists grip the lower half of the haft close together, one above the other, and one unbroken straight haft runs through both fists and up over his right shoulder, the axe head behind the shoulder at the upper right. He holds nothing else.",
   "pose": "On two legs, he strides forward with his weight on his front foot and his body twisted, the great axe swung up and back over his right shoulder in both hands ready to chop, his head thrust forward and his mouth wide open in a war cry.",
   "must_show": [
    "a big dark-green hobgoblin in blackened plate armour and a crested helmet",
@@ -248,7 +248,10 @@
    "oversized head",
    "cartoon",
    "banner",
-   "rock"
+   "rock",
+   "one hand off the haft",
+   "empty fist at his side",
+   "haft carried across the chest in one hand"
   ]
  },
  {
@@ -697,7 +700,7 @@
   "family": "horror_a",
   "rank": 2,
   "key": "green",
-  "what": "a hook horror: a tall, gaunt cave monster that walks upright on two thick legs, hunched forward. Its head is a vulture's: bald, wrinkled and grey, with a large, heavy, sharply hooked ivory beak and two small round black eyes, on a short thick neck. Its chest, belly, back, arms and legs are covered in thick, dark, ridged horny plates, banded across the chest and belly in segments, with a row of blunt spikes down its spine. Its two arms are long, and neither arm has a hand: from the elbow down, each arm is one single great curved blade of pale bone, shaped like a crescent moon, as long as its whole leg and tapering to a sharp point. The two pale bone crescents are the biggest and brightest things on it. Its feet are broad with three blunt claws.",
+  "what": "a hook horror: a tall, gaunt cave monster that walks upright on two thick legs, hunched forward. Its head is a vulture's: bald, wrinkled and grey, with a large, heavy, sharply hooked ivory beak and two small round black eyes, on a short thick neck. Its chest, belly, back, arms and legs are covered in thick, dark, ridged horny plates, banded across the chest and belly in segments, with a row of blunt spikes down its spine. Its two arms are long, and neither arm has a hand or a wrist: from the elbow down, each arm is one single great curved blade of pale bone, shaped like a crescent moon, as long as its whole leg and tapering to a sharp point. The thick root of each crescent grows straight out of the end of the dark plated upper arm at the elbow, bone joined to horn with nothing between them, smooth and unbroken. The two pale bone crescents are the biggest and brightest things on it. Its feet are broad with three blunt claws.",
   "colours": "dark grey-brown and black chitin plates with dull tan edges, a wrinkled grey head, a yellowed ivory beak, two pale bone-ivory arm hooks, small black eyes.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It has no hands and no fingers and holds nothing: each arm ends at the elbow in one great curved crescent of pale bone that grows out of the arm.",
@@ -745,7 +748,11 @@
    "crescent on the head",
    "bare ribs",
    "skeleton",
-   "skull head"
+   "skull head",
+   "wrist",
+   "knuckles",
+   "fist gripping the crescent",
+   "thumb"
   ]
  },
  {
@@ -995,7 +1002,7 @@
   "what": "the Iron Patriarch: an ancient tyrant king sealed for centuries inside the suit of plate armour he was crowned in, a tall, massive armoured figure, enormously broad across the shoulders, with huge round shoulder plates each as big as his helm, caught in the middle of a great hammer blow. No skin, no face and no hair show anywhere: every part of him is cased in thick, old, dark gunmetal-grey iron plate, pitted, with worn pale steel-grey edges and ridges that catch the light on every plate, a few streaks of brown rust and broad tarnished gold bands at the edges of the plates. His head is entirely enclosed in a great helm: a flat-topped iron bucket helm that covers the whole head and neck, its front a blank iron face plate with one narrow black cross-shaped eye slit and a few small breathing holes. A heavy crown with tall square points is forged onto the top of the helm as one piece with it. He has the realistic proportions of a big adult man, about eight heads tall, with a small head.",
   "colours": "dark gunmetal-grey iron plate armour with worn pale steel-grey edges, brown rust streaks and broad tarnished gold edge bands, a dark iron crown with tarnished gold points, a long ragged dark royal-purple mantle with a dull grey fur collar, a dark iron warhammer.",
   "wears": "He wears a full suit of heavy dark iron plate armour from head to foot with a crowned, fully closed great helm, and a long, faded, moth-eaten dark royal-purple mantle with a dull grey fur collar hanging from his shoulders down his back to his heels.",
-  "holds": "He grips exactly one warhammer with both iron gauntlets together on its haft: a thick iron haft as long as his leg with one massive square block of iron for a head, as big as his helm, flat on one face and with a short spike on the other. He holds nothing else.",
+  "holds": "He grips exactly one warhammer with both iron gauntlets together on its haft, one fist above the other: one unbroken, perfectly straight thick iron haft, as straight as a ruler and as long as his leg, runs through both fists to the head. The head is one long rectangular block of dark iron, twice as long as it is tall and as big as his helm, set crosswise across the top end of the haft like the top bar of a letter T, the haft meeting the middle of its long side; one end of the block is flat and the other ends in a short spike. He holds nothing else.",
   "pose": "On two legs, seen a little from the side, he lunges to the left with a long step, his front knee deeply bent and his body pitched forward and twisted, both arms swinging the warhammer down from over his right shoulder so that the square hammer head is high at the upper right behind his crown, his crowned helm lowered like a bull's head, his purple mantle flying out behind him to the right.",
   "must_show": [
    "a massive figure sealed in dark grey iron plate with tarnished gold bands",
@@ -1039,7 +1046,15 @@
    "gold hammer",
    "standing stiffly upright",
    "thin body",
-   "slender knight"
+   "slender knight",
+   "curved haft",
+   "bent haft",
+   "haft that breaks behind the body",
+   "shovel",
+   "sign",
+   "placard",
+   "haft entering the corner of the head",
+   "head in line with the haft"
   ],
   "lift": 1.2
  },

@@ -53,11 +53,11 @@
   "family": "goblin",
   "rank": 3,
   "key": "magenta",
-  "what": "a goblin sniper: a small wiry green-skinned goblin marksman with long pointed ears, one eye squinted shut to aim.",
-  "colours": "olive-green skin, a dark brown patched hood and cloak, a wooden crossbow with an iron bow.",
+  "what": "a goblin crossbowman: a small wiry green-skinned goblin ambusher with long pointed ears, one eye squinted shut to aim down an old wooden crossbow.",
+  "colours": "olive-green skin, a dark brown patched hood and cloak, a plain wooden crossbow with a dark iron bow and a pale string.",
   "wears": "It wears a dark patched hood and short cloak, and a quiver of bolts on its hip.",
-  "holds": "It holds exactly one medieval crossbow in both hands. The crossbow is a straight wooden stock with a short, thick steel bow fixed crosswise at its front end, so the weapon makes a clear T shape: the two curved arms of the bow stick out to the left and right of the stock and a taut string runs between their tips, with one short bolt lying along the top of the stock.",
-  "pose": "It crouches low on both feet, knees bent and back hunched, both feet flat on the ground and neither knee touching it, levelling the crossbow at chest height, pointed to the left and tilted a little towards the viewer so the T shape of the weapon and both of its arms are plainly seen.",
+  "holds": "It holds exactly one old medieval crossbow in both hands, made only of wood, iron and string: a capital T made of two thick parts. The upright of the T is a plain wooden stock no longer than its arm, flat-topped, with one short bolt lying in a groove along its top. The crossbar of the T is a thick dark iron bow fixed across the front end of the stock, bent in a deep curve with both ends swept far back towards the goblin, and one pale string runs straight between the two tips of the bow, past the goblin's hands. There is nothing on top of the stock but the bolt: no tube, no sight, no barrel.",
+  "pose": "It crouches low on both feet, knees bent and back hunched, both feet flat on the ground and neither knee touching it, levelling the crossbow at chest height, pointed to the left and tilted a little towards the viewer so the T shape of the weapon and both arms of the bow are plainly seen sticking out to either side of the stock.",
   "must_show": [
    "goblin (green skin, long ears)",
    "a crossbow that reads as a crossbow: stock, crosswise bow with two arms, string",
@@ -79,7 +79,12 @@
    "hammer",
    "anchor shape",
    "kneeling on one knee",
-   "sitting"
+   "sitting",
+   "telescopic sight",
+   "scope",
+   "metal barrel",
+   "rifle stock with a trigger guard",
+   "musket"
   ]
  },
  {

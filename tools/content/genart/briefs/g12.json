@@ -1676,7 +1676,7 @@
   "what": "an orc warlord: a big, heavy, thick-necked brute who stands upright like a man, with dull grey-green skin, the green of a toad, on the face, neck, arms and hands alike, a heavy jutting lower jaw with two big ivory tusks rising from it past the upper lip, a broad flat nose, a low heavy brow, small deep-set dull yellow eyes and small notched ears. He is the lord of the whole horde, a towering, massive, grizzled orc, his grey-green face seamed with pale scars, one eye lost under a scar, his tusks long and capped with iron. He is sealed in a great suit of armour forged from the melted weapons of his enemies: thick, layered, overlapping plates of black iron with dull steel-grey edges, never rusty and never brown, each plate a different shape, jagged at the edges, with sword blades and axe heads still half visible where they were hammered into the plates. He has the realistic proportions of a big heavy adult warrior with a small head.",
   "colours": "dull grey-green scarred skin, ivory tusks with dark iron caps, black and dark gunmetal-grey layered iron plate armour with dull steel-grey edges, a helmet of dark iron topped with a ring of upright sword blades, a long ragged dark blood-red cloak, a great axe with a black iron haft and two broad dull steel-grey blades.",
   "wears": "He wears the heaviest armour of any orc: layered dark iron plates on his chest, shoulders, arms and legs, huge shoulder plates each topped with three upright blade points, an open-faced dark iron helmet whose top is a ring of short upright sword blades, and a long, ragged, dark blood-red cloak hanging from his shoulders to his heels.",
-  "holds": "He holds exactly one great axe in both hands: a long thick black iron haft as tall as his chest, with a double head at the top, two broad crescent axe blades, one on each side of the haft, back to back. Both of his hands grip the haft. He holds nothing else.",
+  "holds": "He holds exactly one great axe in both hands: a long thick straight black iron haft as tall as his chest, with a double head at the top, two broad crescent axe blades, one on each side of the haft, back to back. Both fists grip the lower half of the haft close together, one above the other, and one unbroken straight haft runs through both fists and up over his right shoulder, the double head behind the shoulder at the upper right. He holds nothing else.",
   "pose": "On two legs, he strides forward in a long heavy step with his weight on his front foot and his body twisted, the great double axe swung up and back over his right shoulder in both hands ready to cleave, his head thrust forward and his tusked mouth wide open in a war cry, the red cloak sweeping out behind him.",
   "must_show": [
    "a towering scarred grey-green orc with long tusks",
@@ -1725,7 +1725,10 @@
    "flesh-coloured armour",
    "yellow skin",
    "tan skin",
-   "brown skin"
+   "brown skin",
+   "one hand off the haft",
+   "empty fist at his side",
+   "haft carried across the chest in one hand"
   ]
  },
  {
@@ -1736,7 +1739,7 @@
   "what": "a dread orc champion: the chained champion of the deep-tunnel tribes, the most terrible orc of all. He is a giant, hulking, hunched brute who stands upright like a man, with skin of a darker kind than other orcs: very dark charcoal-grey with only a faint dull green tinge, the colour of wet slate, far darker than any other orc and nearly black in the shadows, on the face, scalp, neck, arms and hands alike. He has a huge jutting lower jaw with two enormous ivory tusks, each as long as his whole face, curving up past his cheekbones to the level of his eyes, a broad flat nose, a low brow, small deep-set dull yellow eyes, and a bald scarred head. His whole chest and belly are covered by armour, with no bare skin showing on his torso. The armour is three big battered plates taken from three beaten men, each a different metal, size and shape, none of them square: across his chest one large breastplate of black iron with a dented ridge down its middle; below it, hanging crooked over his belly, one smaller plate of very dark brown rusted iron, the colour of an old nail, with a ragged lower edge; and on his left shoulder one big jagged plate of dark brown tarnished bronze. Dark leather straps and rough brown hide show in the gaps between the three plates. Round his neck is a thick black iron collar, and from the front of the collar one heavy chain of six huge pale steel-grey oval links, each link as big as his fist, hangs straight down the middle of his chest over the black breastplate as far as his belt, plainly seen against the black iron, its last link broken open. He has the realistic proportions of a big heavy adult warrior with a small head.",
   "colours": "very dark charcoal-grey skin with a faint dull green tinge on every bare part, enormous ivory tusks, dull yellow eyes, one black iron breastplate, one very dark brown rusted iron belly plate the colour of an old nail, one dark brown tarnished bronze shoulder plate, black leather straps over rough dark brown hide, a black iron collar and a heavy pale steel-grey chain hanging down the chest, a dark brown hide kilt with iron plates, a greatcleaver with a dark wooden grip and a huge dull steel-grey blade.",
   "wears": "He wears three mismatched plates strapped over a rough dark brown hide shirt so that his chest, belly and shoulders are covered: a large black iron breastplate, a smaller crooked dark brown rusted iron belly plate and a jagged dark brown bronze plate on the left shoulder, held with black straps and big rivets; thick iron bands on his forearms; a hide kilt hung with iron plates; iron-shod boots; the black iron collar with its heavy pale steel-grey chain of six huge links hanging down the middle of his chest to his belt. His head is bare. No helmet, no cloak.",
-  "holds": "He holds exactly one greatcleaver in both hands: a butcher's cleaver made huge, a very broad, flat, heavy rectangular steel blade as long as his leg and as wide as his forearm is long, with a straight edge, a squared-off end, a round hole near its top corner, and a long dark two-handed grip. Both of his fists are clenched round the grip, one above the other, in front of his right shoulder, and the great blade stands up above that shoulder. He holds nothing else, and nothing hangs from his belt.",
+  "holds": "He holds exactly one greatcleaver in both hands: a butcher's cleaver made huge, a very broad, flat, heavy rectangular steel blade as long as his leg and as wide as his forearm is long, with a straight edge, a squared-off end, a round hole near its top corner, and a long dark two-handed grip. Both of his fists are clenched round the grip close together, one above the other, in front of his right shoulder at chest height, and the great blade rises straight up out of the top fist above that shoulder, plainly joined to the grip. He holds nothing else, and nothing hangs from his belt.",
   "pose": "On two legs, he lunges forward hunched with his weight on his front foot and his head lowered so the great tusks point ahead, the greatcleaver swung up and back over his right shoulder in both hands ready to hew down, the heavy chain swinging from his collar, his mouth open in a roar.",
   "must_show": [
    "a hulking very dark charcoal-grey orc, darker than every other orc, bare bald head, tusks as long as his face",
@@ -1802,7 +1805,10 @@
    "round white disc on the belly",
    "pot lid",
    "white ball",
-   "round shield on the belly"
+   "round shield on the belly",
+   "cleaver behind the back",
+   "handle and blade far apart",
+   "handle at the hip"
   ]
  }
 ]

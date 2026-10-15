@@ -184,11 +184,11 @@
   "family": "aberration_a",
   "rank": 1,
   "key": "green",
-  "what": "an intellect devourer: a bare, wrinkled brain the size of a hound that walks on four legs. The whole body is the brain: a big oval lump covered in deep folds and grooves, with no head, no face, no eyes and no tail. Four short, muscular, hairless legs like a bulldog's grow straight out of its underside, each ending in three large hooked claws.",
+  "what": "an intellect devourer: a bare, wrinkled brain the size of a hound that walks on four legs. The whole body is the brain: a big oval lump covered in deep folds and grooves all over, front and back alike, with no head, no face, no eyes, no nose, no mouth and no tail; the front end of the brain is just more rounded brain folds. Four short, thick, muscular, hairless legs grow straight down out of its underside, each ending in three large hooked claws.",
   "colours": "glistening pale pink and rose-tan brain with darker red-brown grooves, legs of the same pinkish-tan flesh, ivory claws.",
   "wears": "It wears nothing.",
   "holds": "It walks on four legs and holds nothing.",
-  "pose": "Seen from the side, it trots to the left on four legs, body low and leaning forward, one front paw lifted with its claws spread.",
+  "pose": "Seen from the side, it trots to the left, body low and leaning forward. It has exactly four legs and no more: two front legs and two hind legs, all four shown once each, the near pair in front of the far pair, every foot on the ground or reaching for it.",
   "must_show": [
    "the body is a wrinkled brain",
    "four clawed legs, like a walking animal",
@@ -207,7 +207,13 @@
    "spider legs",
    "six or eight legs",
    "purple or blue colour",
-   "glow"
+   "glow",
+   "dog's face",
+   "snout",
+   "nose",
+   "fifth leg",
+   "extra leg",
+   "raised paw"
   ]
  },
  {
@@ -827,12 +833,12 @@
   "colours": "tawny gold lion fur, a dark brown-black mane, a grey-white goat head and neck with black horns, an emerald-green scaled serpent tail with a pale yellow belly, orange and yellow fire.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, the lion facing left, it strides forward on four lion legs with one front paw raised, claws out. On the left, the lion head roars with fangs bared. In the middle, the goat head on its back breathes a short thick tongue of fire forward over the lion's mane. On the right, the serpent tail arches up from the rump with its snake head hissing towards the right edge of the picture.",
+  "pose": "Seen from the side, the lion facing left, it strides forward on its lion legs, claws out. It has exactly four legs and no more: two front legs under the mane and two hind legs under the rump, all four shown once each, with clear empty backdrop under its belly between the front pair and the hind pair; every paw on the ground or reaching for it. On the left, the lion head roars with fangs bared and breathes one short thick tongue of orange fire straight out of its own mouth, joined to the mouth. In the middle, the goat head on its back looks forward over the mane with its mouth shut. On the right, the serpent tail grows out of the rump and rises in one smooth curve, and its top end is a real snake's head, plainly seen against the backdrop: a flat green scaly head with a yellow eye, its fanged jaws open and a red forked tongue out, facing the right edge of the picture.",
   "must_show": [
-   "a lion's body on four legs with a maned lion head",
+   "a lion's body on exactly four legs with a maned lion head",
    "a horned white goat's head rising from the middle of the back",
-   "a green serpent growing from the rump as the tail, snake head facing backward",
-   "a short tongue of fire from the goat's mouth",
+   "a green serpent growing from the rump as the tail, one snake with one head",
+   "a short tongue of fire from the lion's mouth",
    "three clearly separate heads: lion at the front, goat in the middle, snake at the rear"
   ],
   "must_not_show": [
@@ -848,7 +854,20 @@
    "human face",
    "fire on the ground",
    "body hidden in flames",
-   "rider"
+   "rider",
+   "fifth leg",
+   "extra leg",
+   "extra head",
+   "raised paw",
+   "leg under the middle of the belly",
+   "lion's tufted tail as well as the snake",
+   "two snakes",
+   "forked snake tail",
+   "beak",
+   "fire from the goat's mouth",
+   "tuft on the end of the tail",
+   "tail with no head",
+   "tail curled into a ring"
   ]
  },
  {
@@ -859,8 +878,8 @@
   "what": "an adult roc, the giant bird of the Sinbad stories and Marco Polo's travels, big enough to carry off an elephant. It is drawn as a real eagle in full adult plumage with massive, heavy proportions: a thick neck, a deep chest, a huge hooked beak, very broad wings with long fingered feathers at the tips, a fan tail, and thick scaly legs ending in enormous curved talons. To show how vast the bird is, it carries a whole elephant in its talons: a complete small grey elephant with trunk, tusks, big ears and four legs, gripped round the body and dangling under the bird, looking tiny next to it, about one quarter of the bird's size.",
   "colours": "dark golden-brown body and wing feathers with paler tan edges, a white head and neck, a bright yellow hooked beak, yellow scaly legs, black talons, fierce amber eyes, a plain stone-grey elephant with ivory tusks.",
   "wears": "It is a bird and wears nothing.",
-  "holds": "Its two talons together grip exactly one small grey elephant round the body. It carries nothing else.",
-  "pose": "It is flying to the left, seen from the side and a little below, with both great wings raised high and spread wide above its back, beak open in a scream, both legs stretched down beneath it clutching the small elephant, which hangs directly under the bird's body and touches it. It flies in empty space.",
+  "holds": "Its two big yellow feet grip exactly one small grey elephant by the back: both scaly yellow legs reach straight down from the bird's belly and both feet are clenched round the top of the elephant's body, the black talons sunk into the grey hide, one foot over the elephant's shoulders and one over its hips. The elephant hangs below the bird's feet, its own four thick grey legs with round grey elephant feet and its trunk dangling limp. The bird carries nothing else.",
+  "pose": "It is flying to the left, seen from the side and a little below, with both great wings raised high and spread wide above its back, beak open in a scream, both legs stretched straight down beneath its belly with both feet clenched on the back of the small elephant, which hangs directly under the bird. The bird has exactly two legs and both of them are holding the elephant. It flies in empty space.",
   "must_show": [
    "a giant eagle with both wings spread wide",
    "golden-brown plumage with a white head",
@@ -882,7 +901,13 @@
    "nest or eggs",
    "saddle or rider",
    "ground, grass or landscape",
-   "blue or purple feathers"
+   "blue or purple feathers",
+   "empty talons",
+   "talons hanging free beside the elephant",
+   "elephant with bird feet",
+   "elephant held against the chest by a wing",
+   "third leg",
+   "extra leg"
   ]
  }
 ]

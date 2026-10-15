@@ -270,7 +270,7 @@
   "colours": "dull grey-brown scaly hide the colour of wet peat with big pale sickly yellow-grey blotches, a pale grey sagging belly, dark brown stunted wings, grey horns and spines, burning orange eyes, deep orange fire with a yellow core.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left, all four of its feet are planted on the ground and its body is horizontal: it lumbers forward on short bowed legs with its hunched back high and its belly sagging nearly to the ground, its long neck stretched forward and up so its horned head is held out well ahead of its chest, its oversized jaws gaping wide with one short thick jet of deep orange fire shooting straight out of its mouth, joined to the mouth, as long as its own head, its two stunted wings sticking up uselessly from its shoulders and its long heavy tail sweeping out behind.",
+  "pose": "Seen from the side, facing left, all four of its feet are planted on the ground and its body is horizontal: it lumbers forward on short bowed legs with its hunched back high and its belly sagging nearly to the ground. It has exactly four legs and no more: two front legs and two hind legs, all four shown once each, the near pair in front of the far pair: the two front legs are thick, short and bowed, standing straight down under its chest with their feet on the ground, never folded against the belly; it has no arms. Its long neck is stretched forward and up so its horned head is held out well ahead of its chest, its oversized jaws gaping wide with one short thick jet of deep orange fire shooting straight out of its mouth, joined to the mouth, as long as its own head, its two stunted wings sticking up uselessly from its shoulders and its long heavy tail sweeping out behind.",
   "must_show": [
    "plainly a dragon: long neck, long-snouted horned head, long tail, scales, on four legs",
    "a bloated, sagging, misgrown body",
@@ -309,7 +309,13 @@
    "hair",
    "no neck",
    "short neck",
-   "mammal"
+   "mammal",
+   "fifth leg",
+   "extra leg",
+   "arms on the chest",
+   "small front arms",
+   "claw held up at the chest",
+   "claw hanging in the air"
   ]
  },
  {
@@ -361,7 +367,7 @@
   "colours": "dark bronze and brown-gold scales with bright gold edges, a pale gold belly, dark bronze wing membranes, black horns with gold tips, yellow eyes, orange and yellow fire.",
   "wears": "It is a beast and wears nothing.",
   "holds": "It is a beast on four legs and holds nothing.",
-  "pose": "Seen from the side, facing left: all four of its feet are planted on the ground and its long heavy body is horizontal. Both great wings are raised straight up and spread wide open above its back. Its horned head is lowered on its thick neck with the jaws open, shooting one short thick burst of orange fire straight out of its mouth, joined to the mouth and no longer than its own head. Its tail is lifted high behind it with the spiked knob at the top, ready to smash down.",
+  "pose": "Seen from the side, facing left: all four of its feet are planted on the ground and its long heavy body is horizontal. It has exactly four legs and no more: two front legs and two hind legs, all four shown once each, the near pair in front of the far pair; it has no arms, and its two great wings grow from its back. Both great wings are raised straight up and spread wide open above its back. Its horned head is lowered on its thick neck with the jaws open, shooting one short thick burst of orange fire straight out of its mouth, joined to the mouth and no longer than its own head. Its tail is lifted high behind it with the spiked knob at the top, ready to smash down.",
   "must_show": [
    "an enormous dark bronze-and-gold dragon with all four feet on the ground",
    "a crown of many long horns round the head",
@@ -390,7 +396,13 @@
    "forked tail",
    "trident tail",
    "fire in its claw",
-   "wing cut off by the edge of the picture"
+   "wing cut off by the edge of the picture",
+   "fifth leg",
+   "extra leg",
+   "arms on the chest",
+   "small front arms",
+   "claw held up at the chest",
+   "raised front claw"
   ]
  },
  {

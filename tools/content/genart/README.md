@@ -751,6 +751,26 @@ and look for the same kind of slip when reviewing.
   bear shipped like this). Write "exactly four legs and no more: two front legs and two
   hind legs, all four shown once each", and put "fifth leg, extra leg, raised paw" in
   `must_not_show`. **Count the limbs on every pick.**
+- **Count every limb and check every held thing on every pick** (anatomy and held-object
+  sweeps, 2026-10-14, found 36 limb-count errors and 41 bad grips the earlier passes missed).
+- **When some legs hold something, do the sum:** "eight legs; two of them, the front pair,
+  hold the box, so below the box only six legs show". **A dragon needs "no arms"**, or a
+  fifth limb folds on its chest. **One raised foot on a bird or a goat-legged figure draws a
+  third leg.** "Exactly four legs" in side view can hide one: add "seen a little from the
+  front, so all four feet can be seen".
+- **Two-handed weapons:** "one unbroken straight haft runs through both fists", with "curved
+  haft, bent haft" in `must_not_show`. **Flaming blade:** "the whole blade glows red-hot
+  orange like iron fresh from the forge, small flames lick from its edges"; "wrapped in
+  flame" draws a torch. **Flail:** the chain is fixed "to the far tip of the handle, a
+  forearm's length in front of the fist".
+- **Bows:** name each end of the string by its tip, "nowhere else does the string touch the
+  stave", bow nearly upright, "one smooth even curve tip to tip, limbs mirror images". An
+  archer holding the bow upright by its middle with the arrow in the other hand works where
+  draw poses fail.
+- **"Leaf-shaped" draws a sabre**; add "perfectly straight, as straight as a ruler". **A spear
+  seen end to end gets two blades**: "the back end is a small plain round knob". **A double
+  axe:** "two identical crescents, one left and one right of the haft, like butterfly wings".
+  **"Sniper" draws a scoped rifle.** **A black forked tongue draws a cigarette**: make it red.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 

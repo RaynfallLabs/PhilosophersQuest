@@ -241,14 +241,14 @@
   "family": "seal",
   "rank": 5,
   "key": "blue",
-  "what": "Beleth, the demon of the earthquake, a king of Hell who rides a pale horse, and the ground breaks where he passes: one horse and one rider, and both look as if they were hewn from cracked rock. The horse is a huge, heavy, gaunt war-horse, a real horse on four legs seen from the side, pale as ash: its ash-grey hide is split all over by long, dark, jagged cracks like dried and broken earth, on the neck, shoulder, flank and rump alike, and a dull blood-red glow shows deep in every crack. From the knee down each of its four legs is rough dark grey stone, ending in an enormous hoof that is a cracked block of dark stone with red light in its cracks. Its mane and tail are ragged and black, and its eyes burn dull red. The rider is a giant sitting upright on the horse's back, built like a tower and clad from neck to foot in armour of rock: rough-hewn blocks of dark grey stone fitted together like a castle wall, with jagged broken edges and wide black seams between the blocks, and in every seam a deep blood-red light, the colour of the moon in eclipse. His head is a closed helm that is one rough block of the same dark rock with one narrow glowing red eye-slit, and on the helm stands a tall crown of jagged black stone spikes. A long ragged cloak of coarse black sackcloth hangs from his shoulders over the horse's rump.",
+  "what": "Beleth, the demon of the earthquake, a king of Hell who rides a pale horse, and the ground breaks where he passes: one horse and one rider, and both look as if they were hewn from cracked rock. The horse is a huge, heavy, gaunt war-horse, a real horse seen from the side with exactly four legs and no more: two front legs and two hind legs, all four shown once each, pale as ash: its ash-grey hide is split all over by long, dark, jagged cracks like dried and broken earth, on the neck, shoulder, flank and rump alike, and a dull blood-red glow shows deep in every crack. From the knee down each of its four legs is rough dark grey stone, ending in an enormous hoof that is a cracked block of dark stone with red light in its cracks. Its mane and tail are ragged and black, and its eyes burn dull red. The rider is a giant sitting upright on the horse's back, built like a tower and clad from neck to foot in armour of rock: rough-hewn blocks of dark grey stone fitted together like a castle wall, with jagged broken edges and wide black seams between the blocks, and in every seam a deep blood-red light, the colour of the moon in eclipse. His head is a closed helm that is one rough block of the same dark rock with one narrow glowing red eye-slit, and on the helm stands a tall crown of jagged black stone spikes. A long ragged cloak of coarse black sackcloth hangs from his shoulders over the horse's rump.",
   "colours": "a pale ash-grey horse with dark jagged cracks all over its hide, dull blood-red light in the cracks, dark grey stone lower legs and hooves, a ragged black mane and tail and dull red eyes; a rider in dark charcoal-grey rough stone-block armour with black seams and blood-red glowing fissures, a red eye-slit, a crown of black stone spikes, a ragged black sackcloth cloak, a maul with a dark iron-bound haft and a huge rough dark grey boulder for a head.",
   "wears": "The rider wears armour of rough dark stone blocks over his whole body, cracked, with red light in the seams, a closed rock helm, a tall crown of black stone spikes and a ragged black sackcloth cloak. The horse wears no saddle cloth and no bridle; it is bare cracked ash-grey hide and stone.",
-  "holds": "The rider holds exactly one great war-maul in both hands, swung down in front of him to the left: a thick dark haft as long as his arm, and for its head one huge, rough, jagged dark grey boulder as big as the horse's head, cracked, with red light in its cracks. The boulder head of the maul is at the left of the picture, ahead of the horse's chest and level with the horse's shoulder, in the middle of its downward stroke. He holds nothing else.",
-  "pose": "Seen in full profile from the side like a figure on a coin, facing left: the pale cracked horse tramps forward on four legs with its head lowered and its neck arched, its near front leg lifted high and bent with the great stone hoof about to stamp down, its other three stone hooves planted; the rider leans far forward over the horse's neck, both arms stretched down and forward in the middle of a great downward blow, the boulder-headed maul sweeping down ahead of the horse's chest, cloak streaming behind to the right.",
+  "holds": "The rider holds exactly one great war-maul in both fists, swung down in front of him to the left: one long thick dark haft, as long as a man is tall, runs in one unbroken line from his two fists down and forward to its head, one huge, rough, jagged dark grey boulder as big as the horse's head, cracked, with red light in its cracks. The haft is joined to his fists at one end and to the boulder at the other. The boulder is at the left of the picture beside the horse's chest, in the middle of its downward stroke. He holds nothing else.",
+  "pose": "Seen in full profile from the side like a figure on a coin, facing left: the pale cracked horse tramps forward with its head lowered and its neck arched, on exactly four legs, all four shown once each, its great stone hooves striking the air; the rider leans far forward over the horse's neck, both arms stretched down and forward gripping the long haft in the middle of a great downward blow, the boulder-headed maul sweeping down beside the horse's chest, cloak streaming behind to the right.",
   "must_show": [
    "one ash-pale horse on four legs, seen from the side, its hide cracked like broken earth with red light in the cracks",
-   "stone lower legs and huge cracked stone hooves, one front hoof raised to stamp",
+   "stone lower legs and huge cracked stone hooves, exactly four legs",
    "one giant rider armoured in rough dark stone blocks with blood-red glowing fissures, plainly rock and not steel",
    "a crown of black stone spikes on a closed rock helm",
    "one boulder-headed maul swinging down, readable in the small sprite",
@@ -290,7 +290,14 @@
    "cracked ground under the hooves",
    "rocks under the hooves",
    "dust cloud",
-   "second rider"
+   "second rider",
+   "fifth leg",
+   "extra leg",
+   "raised hoof",
+   "loose boulder",
+   "boulder on a rope",
+   "haft growing out of the horse",
+   "maul not held"
   ]
  },
  {
@@ -651,11 +658,11 @@
   "family": "scalefolk",
   "rank": 1,
   "key": "blue",
-  "what": "a yuan-ti pureblood: one of the serpent folk who passes for a human at a glance, a lean, wiry desert caravan guide, a man standing on two legs. His head is shaved bare and hairless with no eyebrows. His face is a narrow human face with weather-beaten light tan skin, a thin mouth and two unblinking yellow eyes with black slit pupils. What gives him away: glossy dark emerald snake scales cover his whole throat and neck, both sides of his jaw up to the cheekbones, and all of the top and back of his bare skull like a tight cap, leaving only the middle of his face as tan skin; both his hands and bare forearms are scaled the same dark emerald; and a long thin forked black tongue flicks out of his mouth. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
+  "what": "a yuan-ti pureblood: one of the serpent folk who passes for a human at a glance, a lean, wiry desert caravan guide, a man standing on two legs. His head is shaved bare and hairless with no eyebrows. His face is a narrow human face with weather-beaten light tan skin, a thin mouth and two unblinking yellow eyes with black slit pupils. What gives him away: glossy dark emerald snake scales cover his whole throat and neck, both sides of his jaw up to the cheekbones, and all of the top and back of his bare skull like a tight cap, leaving only the middle of his face as tan skin; both his hands and bare forearms are scaled the same dark emerald; and a long thin forked dark red snake's tongue, split into two points at its tip, flicks out of his open mouth. He has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "weather-beaten light tan skin on the face, glossy dark emerald-green scales on the neck, jaw, skull, hands and forearms, yellow slit eyes, a long dusty travelling coat of undyed pale sand-beige linen, the colour of dry sand, a dark red sash, dark brown boots and belt, a scimitar with a bright steel blade and a brass hilt.",
   "wears": "He wears a caravan guide's plain travelling clothes, dusty and travel-worn: a long coat of undyed pale sand-beige linen to his knees with the collar open at the scaled throat and the sleeves rolled to the elbows, a wide dark red sash round his waist, loose trousers of the same pale linen tucked into dark brown boots, and a coil of rope at his belt. His head is bare. He wears no armour.",
-  "holds": "He holds exactly one scimitar in his right hand: a broad curved single-edged steel blade, widest near the tip, with a brass hilt. His left hand is empty, held open and low at his side with the scaled back of the hand showing.",
-  "pose": "He steps to the left on two legs in a low fencer's stance, knees bent, front foot forward, his right arm raised with the scimitar swept up and back over his shoulder to cut, his empty left hand held out low for balance, head turned to the viewer with the forked tongue flicking out.",
+  "holds": "He holds exactly one scimitar in his right hand: a broad curved single-edged steel blade, widest near the tip, curving in one clean arc, with a brass hilt in his fist. He holds it out level away from his body, pointing to the left, the whole blade clear of his head and body. His left hand is empty, held open and low at his side with the scaled back of the hand showing.",
+  "pose": "He steps to the left on two legs in a low fencer's stance, knees bent, front foot forward, his right arm stretched out ahead of him to the left with the scimitar held out level, pointing to the left, its curved blade clear of his head, his empty left hand held out low behind for balance, head turned to the viewer with the forked tongue flicking out.",
   "must_show": [
    "a lean bare-headed human-looking man in a pale sand-beige travelling coat",
    "dark green scales on the neck, jaw, skull and forearms, readable in the small sprite",
@@ -685,7 +692,16 @@
    "orange coat",
    "yellow jumpsuit",
    "martial-arts monk robe",
-   "pale white skull"
+   "pale white skull",
+   "blade behind the neck",
+   "sword across the shoulders",
+   "blade over the shoulder",
+   "blade crossing the face",
+   "cigarette",
+   "cigar",
+   "smoking pipe",
+   "smoke",
+   "white stick in the mouth"
   ]
  },
  {
@@ -836,7 +852,7 @@
   "what": "a deep-one priest: a priest of the sea-folk who were once coast villagers, a stooped, broad-backed creature of the deep sea standing on two legs, with the body of a man and the head of a fish. His head is a big fish's head set straight on his shoulders with no neck: broad, blunt and scaly, with a huge wide gaping mouth right across it, thick pale lips turned down at the corners, no nose, no chin, no ears and no hair, and two enormous round flat yellow eyes with black pupils, one on each side of the head, each as big as his fist, that never blink. Three dark gill slits open on each side of his thick throat, and a low spiny fin runs over the top of his head. His skin is wet and scaly, dark sea-green on his head, arms and hands, with a pale yellowish-white throat. His big hands and his bare feet are webbed between long fingers and toes.",
   "colours": "wet dark sea-green scaly skin with a pale yellowish-white throat, enormous yellow eyes with black pupils, a long sea-rotted robe of dark teal with a pale gold border, a tall pale gold tiara, a staff of black driftwood with a pale bone harpoon head.",
   "wears": "He wears the sea-rotted vestments of a priest: a long heavy dark teal robe to his ankles, its hem ragged and hung with a few pale barnacles, a broad stole edged in pale gold hanging round his shoulders, a rope belt, and on his head a tall strange tiara of pale gold, oval at the front, worked with wave patterns. His webbed feet are bare.",
-  "holds": "He holds exactly one barbed staff upright in his right hand: a thick straight staff of black driftwood as tall as he is, topped with one big pale bone harpoon head with three backward-pointing barbs down each side. His left hand is empty, raised high with the webbed fingers spread wide in invocation.",
+  "holds": "He holds exactly one barbed staff upright in his right hand: one perfectly straight smooth staff of black wood, as straight as a ruler and one even width, as tall as he is, topped with one long pale bone harpoon point shaped like a big arrowhead, with three short backward-pointing barbs down each side. His left hand is empty, raised high with the webbed fingers spread wide in invocation.",
   "pose": "He shuffles forward to the left on two bowed legs with one webbed foot ahead, stooped, his left arm raised high with the webbed hand spread open calling up the tide, his right hand planting the barbed staff forward at an angle, his wide mouth open croaking a prayer, his round eyes staring at the viewer.",
   "must_show": [
    "a fish's head on a man's body: enormous round yellow eyes, a huge wide gaping mouth, no nose, no hair",
@@ -876,7 +892,12 @@
    "white hair",
    "crown of spikes",
    "axe head on the staff",
-   "double axe"
+   "double axe",
+   "gnarled staff",
+   "crooked staff",
+   "candle",
+   "flame",
+   "torch"
   ]
  },
  {
@@ -1131,11 +1152,11 @@
   "family": "wild",
   "rank": 1,
   "key": "magenta",
-  "what": "a roc chick: the half-grown nestling of the giant bird of the Sinbad stories, drawn as a real eagle nestling a few weeks old, a gawky, fierce, ugly young bird of prey standing on two legs. Its whole body is covered in thick shaggy ash-grey down, with the first dark brown feathers pushing through in rows on its short stubby wings, which are far too small to fly. It has a head that looks too big, with a huge heavy smooth hooked beak like an eagle's, a wide gaping mouth with a pointed tongue, a bare patch of grey skin round each fierce dark eye and a scruffy crest of down; a scrawny neck; a round belly; and two thick scaly yellow legs with enormous yellow feet and long black curved talons, far too big for it. Hanging from the hooked tip of its beak is one small knight's horse saddle, no bigger than the bird's own head, gripped by its girth strap: a curved brown leather seat that rises to a high peak at the front and a high curved back, with a flat leather flap on each side, and below each flap one iron stirrup, a D-shaped iron loop, dangling on a long strap. The chick has eaten the horse.",
+  "what": "a roc chick: the half-grown nestling of the giant bird of the Sinbad stories, drawn as a real eagle nestling a few weeks old, a gawky, fierce, ugly young bird of prey standing on two legs. Its whole body is covered in thick shaggy ash-grey down, with the first dark brown feathers pushing through in rows on its short stubby wings, which are far too small to fly. It has a head that looks too big, with a huge heavy smooth hooked beak like an eagle's, a wide gaping mouth with a pointed tongue, a bare patch of grey skin round each fierce dark eye and a scruffy crest of down; a scrawny neck; a round belly; and exactly two legs and no more: two thick scaly yellow legs with enormous yellow feet and long black curved talons, far too big for it. Hanging from the hooked tip of its beak is one small knight's horse saddle, no bigger than the bird's own head, gripped by its girth strap: a curved brown leather seat that rises to a high peak at the front and a high curved back, with a flat leather flap on each side, and below each flap one iron stirrup, a D-shaped iron loop, dangling on a long strap. The chick has eaten the horse.",
   "colours": "shaggy ash-grey and dirty white down, dark brown new feathers on the wings, a horn-yellow beak with a dark grey hooked tip, dull yellow scaly legs and feet, black talons, dark eyes, one small dark brown leather saddle with two grey iron stirrups.",
   "wears": "It is an animal and wears nothing.",
   "holds": "Exactly one small brown leather horse saddle with two dangling iron stirrups hangs by its girth strap from the tip of its beak. Its feet hold nothing.",
-  "pose": "Seen from the side, it lurches to the left on its two big yellow feet, one foot lifted high with the talons spread to grab, its two short stubby wings raised and flapping for balance, neck stretched forward and up, shaking the small saddle that hangs from its huge hooked beak.",
+  "pose": "Seen from the side, it lurches to the left standing on its two big yellow feet, both feet on the ground with the talons spread, its two short stubby wings raised and flapping for balance, neck stretched forward and up, shaking the small saddle that hangs from its huge hooked beak.",
   "must_show": [
    "a real eagle nestling: shaggy grey down, short stubby wings with a few dark feathers",
    "a huge hooked beak, enormous yellow feet and black talons",
@@ -1174,7 +1195,13 @@
    "purse",
    "bag with a buckle flap",
    "pouch",
-   "basket"
+   "basket",
+   "third leg",
+   "third foot",
+   "extra leg",
+   "foot holding the saddle",
+   "raised foot",
+   "saddle on its back"
   ]
  },
  {
@@ -1182,11 +1209,11 @@
   "family": "wild",
   "rank": 2,
   "key": "blue",
-  "what": "a satyr trickster of Greek myth, a follower of Dionysus: a lean, wiry, sly man above the waist and a goat below, standing on two goat legs. He has a sharp weather-beaten light tan face with a crooked knowing grin, a short pointed dark brown beard, a snub nose, long pointed ears that stick out sideways, a mop of curly dark brown hair, and two short thick ridged goat horns curving back from his forehead. From the waist down he has the hind legs of a goat: shaggy dark brown hair, backward-bending hocks and two black cloven hooves, with a short upturned goat tail. He has realistic adult proportions: a small head, long limbs, about seven heads tall.",
+  "what": "a satyr trickster of Greek myth, a follower of Dionysus: a lean, wiry, sly man above the waist and a goat below, standing on two goat legs. He has a sharp weather-beaten light tan face with a crooked knowing grin, a short pointed dark brown beard, a snub nose, long pointed ears that stick out sideways, a mop of curly dark brown hair, and two short thick ridged goat horns curving back from his forehead. From the waist down he has exactly two legs and no more, joined to his hips like a man's, with no animal body behind them: two hind legs of a goat, with shaggy dark brown hair, backward-bending hocks and two black cloven hooves, with a short upturned goat tail. He has realistic adult proportions: a small head, long limbs, about seven heads tall.",
   "colours": "weather-beaten light tan skin, curly dark brown hair and beard, grey-brown ridged horns, shaggy dark brown goat legs with black hooves, a short dull dark olive-green tunic, a wreath of dark ivy leaves, pale straw-yellow reed panpipes, a small dark red leather purse.",
   "wears": "He wears a short ragged sleeveless tunic of dull dark olive-green wool that covers his chest and belly and hangs to the tops of his goat thighs, tied with a cord, and a wreath of dark ivy leaves in his hair. He wears no armour.",
-  "holds": "He holds exactly one set of panpipes in his right hand, held a hand's width below his chin and clear of his face, so that his whole grinning bearded face shows above them: a row of seven thick pale reed pipes of stepped lengths bound side by side, as wide as his face. In his left hand, held out behind him, he dangles exactly one small dark red leather coin purse by its drawstring: a stolen purse.",
-  "pose": "He skips away to the left on his two goat legs, one hoof lifted high in a dancing step, his body twisted to look back over his shoulder at the viewer with a sly grin, his right hand holding the panpipes just below his chin, his whole face showing above them, his left arm stretched out behind him dangling the stolen purse.",
+  "holds": "He holds exactly one set of panpipes upright in his right hand in front of his chest, below his chin and clear of his face, so that his whole grinning bearded face shows above them: seven dark brown hollow cane pipes standing side by side in one flat row like the teeth of a comb, their open black mouths along the top, the tallest pipe at one end and each next pipe shorter like a staircase, tied across with two dark cords, the whole row as wide as his hand. In his left hand, held out behind him, he dangles exactly one small dark red leather coin purse by its drawstring: a stolen purse.",
+  "pose": "He skips away to the left on his two goat legs, only two, each shown once: the front leg bent up in a dancing step and the back leg down on its hoof, his body twisted to look back over his shoulder at the viewer with a sly grin, his right hand holding the panpipes just below his chin, his whole face showing above them, his left arm stretched out behind him dangling the stolen purse.",
   "must_show": [
    "a man above the waist with goat legs and black cloven hooves",
    "short goat horns, pointed ears, pointed beard",
@@ -1220,7 +1247,21 @@
    "cartoon faun",
    "orange tunic",
    "bright yellow tunic",
-   "pipes covering the face"
+   "pipes covering the face",
+   "third leg",
+   "extra leg",
+   "four legs",
+   "goat's body",
+   "goat's rump",
+   "centaur",
+   "bundle of straw",
+   "sheaf",
+   "bundle of sticks",
+   "pale straw",
+   "bunch of reeds",
+   "fan",
+   "cigars",
+   "bundle of sticks on the shoulder"
   ]
  },
  {

@@ -284,13 +284,13 @@
   "what": "a gnoll fang of Yeenoghu, a sworn fanatic of the gnoll packs: a tall, rangy, long-limbed, upright man-shaped creature with the head of a real spotted hyena: a broad blunt black muzzle, powerful jaws with long yellowed fangs, small round ears and a tall stiff crest of hair down the back of the neck, the crest dyed bright red. One broad band of bright red paint, as wide as two fingers, runs straight across its forehead from ear to ear above the eyes. Its whole body is furred: head, arms, belly and legs are covered in short coarse dull grey-buff fur, the pale dusty colour of dry grass, with dark brown spots. It stands taller and straighter than a plain gnoll, with long legs, long arms and a lean waist. It has realistic adult proportions: a small head, long limbs, about eight heads tall.",
   "colours": "dull grey-buff fur, the pale dusty colour of dry grass, with large dark brown spots, over the whole body, a black muzzle and black lower legs, one bright red band of paint across the forehead and a bright red neck crest, yellow eyes, yellowed fangs, a sleeveless coat of dark brown boiled leather with dull iron studs, a dark red hide kilt, a flail with a dark wooden handle, a black iron chain and a black iron spiked ball.",
   "wears": "It wears a sleeveless coat of thick dark brown boiled leather set with rows of dull iron studs, which covers its chest and belly from the collar to the belt, a wide black belt, and a dark red hide kilt to the knees. Its furred arms are bare. It has no helmet, no metal plate and no necklace.",
-  "holds": "It holds exactly one flail in its right hand, gripped low beside its right hip: a short thick dark wooden handle as long as its forearm; from the top end of the handle hangs a short thick black chain of three big oval links, and on the chain one black iron ball as big as its fist, covered in short blunt spikes. The chain and ball hang straight down in front of its red kilt and its right thigh, lying against its body, the ball overlapping the kilt. Its left hand is empty: a clawed furred hand reaching out ahead.",
-  "pose": "It strides to the left on two long legs, upright, with its weight on its front foot and its back leg stretched behind, its head thrust forward with the jaws wide open snarling, its empty clawed left hand reaching out ahead, its right hand gripping the flail handle low at its hip with the chain and spiked ball hanging down against its kilt.",
+  "holds": "It holds exactly one flail in its right fist, low beside its right hip, and it holds the flail by the bottom end of its handle: a short thick straight dark wooden handle as long as its forearm sticks forward and slightly down out of the front of its fist, the wood plainly seen; the chain is fixed to the far tip of the handle, a forearm's length in front of the fist, and nowhere near the fist: a short thick black chain of three big oval links hangs down from that tip, with one black iron ball as big as its fist, covered in short blunt spikes, against its right thigh. Its left hand is empty: a clawed furred hand reaching out ahead.",
+  "pose": "It strides to the left on two long legs, upright, with its weight on its front foot and its back leg stretched behind, its head thrust forward with the jaws wide open snarling, its empty clawed left hand reaching out ahead, its right hand low at its hip holding the flail handle pointing forward, the chain and spiked ball hanging from the handle's far tip against its thigh.",
   "must_show": [
    "a hyena-headed spotted gnoll on two legs, tall and rangy like its kin, not squat",
    "a bright red band across the brow and a red crest, readable in the small sprite",
    "a studded dark leather coat covering the chest, and a dark red kilt",
-   "one flail: handle, short chain and spiked ball, the ball joined to the figure",
+   "one flail: a wooden handle sticking straight up out of the fist, the short chain and spiked ball hanging from the handle's top tip",
    "empty left hand",
    "dusty grey-buff spotted fur like its kin, not yellow"
   ],
@@ -330,7 +330,12 @@
    "bare human skin",
    "bright yellow fur",
    "orange fur",
-   "golden fur"
+   "golden fur",
+   "chain held in the bare fist",
+   "no handle",
+   "ball on a chain with no handle",
+   "chain hanging from the fist",
+   "chain fixed to the bottom of the handle"
   ]
  },
  {
@@ -1073,14 +1078,14 @@
   "family": "imp",
   "rank": 1,
   "key": "green",
-  "what": "a greater imp: a small, lean, sinewy, mean old devil in flight, with tough brick-red leathery skin, a narrow sly wrinkled face with a long pointed chin, a sharp-toothed sneer, slanted yellow eyes, long pointed ears, and two short curved black horns. It has a pair of hard leathery bat wings with dark bony ribs, thin wiry arms ending in long black talons, bent legs with clawed feet, and one tail as thick as its arm: the tail rises behind its back, curves forward high above its head, and ends in front of its horns in one big black barbed stinger the size of its fist, wet with yellow venom. It is small but fully grown and wicked: thin limbs, a small head, a hard knotted body.",
+  "what": "a greater imp: a small, lean, sinewy, mean old devil in flight, with tough brick-red leathery skin, a narrow sly wrinkled face with a long pointed chin, a sharp-toothed sneer, slanted yellow eyes, long pointed ears, and two short curved black horns. It has a pair of hard leathery bat wings with dark bony ribs, thin wiry arms ending in long black talons, bent legs with clawed feet, and exactly one tail and no other, as thick as its arm and the same brick-red as its skin all along: it grows from the base of its spine, rises up behind its back in one big hook, and ends behind its head in one big black barbed stinger the size of its fist, wet with yellow venom; that stinger is the only black part of the tail. It is small but fully grown and wicked: thin limbs, a small head, a hard knotted body.",
   "colours": "brick-red leathery skin, dark maroon wing membranes with black ribs, black horns, talons and stinger, yellow eyes, a frayed dark grey waistcoat with two brass buttons. The tail is brick-red and thick; the stinger is black.",
   "wears": "It wears only one shabby, frayed, dark grey waistcoat with two brass buttons, hanging open, the worn finery of a third-rate ambassador. It has no armour and no hat.",
   "holds": "Its hands are empty and it holds nothing: two thin hands with long black talons, spread to slash.",
-  "pose": "It swoops to the left in mid-air with both wings spread up behind it, its legs tucked under, both taloned hands reaching forward to slash, its thick tail curled up from behind and forward over the top of its head so the big black barbed stinger hangs above and in front of its horns, pointing to the left, mouth open in a sneer.",
+  "pose": "It swoops to the left in mid-air with both wings spread up behind it, its legs tucked under, both taloned hands reaching forward to slash, its one thick red tail rising from the base of its spine up behind its back in a big hook, the big black barbed stinger at its tip held high behind its head, mouth open in a sneer. It has two arms, two legs, two wings and one tail, each shown once.",
   "must_show": [
    "a small lean red winged devil in flight",
-   "a thick tail arched over the head ending in one big barbed stinger, readable in the small sprite",
+   "exactly one thick red tail hooked up behind its back ending in one big black barbed stinger, readable in the small sprite",
    "hard leathery bat wings, small horns",
    "empty taloned hands",
    "a shabby grey waistcoat",
@@ -1108,7 +1113,13 @@
    "cartoon proportions",
    "thin whip tail",
    "tail hanging down",
-   "tail trailing behind"
+   "tail trailing behind",
+   "second tail",
+   "extra tail",
+   "dark whip curling over its head",
+   "tail between its legs",
+   "extra arm",
+   "extra leg"
   ]
  },
  {
@@ -1117,7 +1128,7 @@
   "rank": 1,
   "key": "magenta",
   "body": "shapeless",
-  "what": "a greater shadow: a great hungry shade of the dead. It is one tall torn shroud of soot-black smoke hanging in the air with nothing inside it, black as coal and never brown or pale grey, taller than a man and widest at the top, drawn wholly inside the picture with plain backdrop on all four sides of it. It is painted with depth: heavy hanging folds, coal-black in the folds and dark slate-grey only on the ridges, with one thin bright line of cold pale light along its left edge, and all its edges fray into short curling wisps of the same black smoke that stay joined to it. Near the top of the shroud are its two eyes, the two brightest things in the picture: two narrow slanted slits of cold white light with no pupils, each as long as a quarter of the shroud is wide. Above the eyes the top of the shroud is torn into a ring of five tall ragged points, like a broken crown of smoke. Out of the front of the shroud reach two long thin streamers of the same black smoke, and each ends in five long hooked claws of pale bone-white, each claw as long as a dagger, plainly seen. The bottom of the shroud is torn into a few broad ragged tatters that taper to points.",
+  "what": "a greater shadow: a great hungry shade of the dead. It is one tall torn shroud of soot-black smoke hanging in the air with nothing inside it, black as coal and never brown or pale grey, taller than a man and widest at the top, drawn wholly inside the picture with plain backdrop on all four sides of it. It is painted with depth: heavy hanging folds, coal-black in the folds and dark slate-grey only on the ridges, with one thin bright line of cold pale light along its left edge, and all its edges fray into short curling wisps of the same black smoke that stay joined to it. Near the top of the shroud are its two eyes, the two brightest things in the picture: two narrow slanted slits of cold white light with no pupils, each as long as a quarter of the shroud is wide. Above the eyes the top of the shroud is torn into a ring of short ragged points of the same coal-black smoke, dark like the rest of it, like a broken crown of smoke. It has exactly two arms and no more: out of the front of the shroud reach two long thin streamers of the same black smoke, and each one ends in one hand of five long hooked claws of pale bone-white, each claw as long as a dagger, plainly seen. Those two hands are the only pale things on it besides the eyes. The bottom of the shroud is torn into a few broad ragged tatters that taper to points.",
   "colours": "coal-black and dark slate-grey smoke, one thin line of cold pale grey-white light along the left edge, two bright white eye slits, ten long pale bone-white claws; no other colour.",
   "wears": "It wears nothing: it is itself a shroud of smoke, with nothing inside.",
   "holds": "It holds nothing: its two sets of pale bone claws are empty and spread.",
@@ -1166,7 +1177,14 @@
    "white sheet ghost",
    "grey cloth robe",
    "rounded cloth hood",
-   "anything touching the edge of the picture"
+   "anything touching the edge of the picture",
+   "third hand",
+   "extra hand",
+   "extra arm",
+   "two hands on one side",
+   "pale spikes on its head",
+   "fingers on its head",
+   "hand on top of its head"
   ]
  },
  {
@@ -1174,7 +1192,7 @@
   "family": "wyvern",
   "rank": 1,
   "key": "blue",
-  "what": "a greater wyvern: the two-legged dragon of heraldry, an old and heavy one, a real flying reptile seen from the side, shaped like a pterodactyl with a dragon's head. Its wings are its arms, like a bat's: two broad leathery wings stretched on long thick finger bones, and it has no other front limbs; its chest is a smooth keel of pale plated scales. It has exactly two legs, thick scaly hind legs with big hooked black talons, set far back under its hips. It has a thick strong neck and a long heavy dragon's head with two long straight black horns sweeping back from the skull and a jaw of big sharp teeth, and a row of tall black spines runs down its neck and back. Its scales are large, old, scarred and heavy. Its long thick scaly tail swings down and forward beneath its body in a hook. The last part of the tail is its sting: there the tail swells into one fat glossy jet-black club, twice as thick as the tail itself and as long as the wyvern's head, which ends in one long curved black spike. The black sting is part of the tail.",
+  "what": "a greater wyvern: the two-legged dragon of heraldry, an old and heavy one, a real flying reptile seen from the side, shaped like a pterodactyl with a dragon's head. Its wings are its arms, like a bat's: two broad leathery wings stretched on long thick finger bones, and it has no other front limbs; its chest is a smooth keel of pale plated scales. It has exactly two legs and no more, thick scaly hind legs with big hooked black talons, set far back under its hips; its chest and belly are smooth plated scales with nothing growing from them. It has a thick strong neck and a long heavy dragon's head with two long straight black horns sweeping back from the skull and a jaw of big sharp teeth, and a row of tall black spines runs down its neck and back. Its scales are large, old, scarred and heavy. Its long thick scaly tail swings down and forward beneath its body in a hook. The last part of the tail is its sting: there the tail swells into one fat glossy jet-black club, twice as thick as the tail itself and as long as the wyvern's head, which ends in one long curved black spike. The black sting is part of the tail.",
   "colours": "dark forest-green scales on the head, neck, back, legs and tail, a pale yellow-tan plated belly and throat, dull dark rust-brown wing membranes on dark green finger bones, black horns, black back spines, a glossy black sting, black talons, amber eyes.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is an animal and holds nothing; both taloned feet are empty and open.",
@@ -1220,7 +1238,11 @@
    "wing cut off by the edge of the picture",
    "signature",
    "thin plain tail tip",
-   "facing right"
+   "facing right",
+   "third leg",
+   "extra leg",
+   "leg under its chest",
+   "small arm under its neck"
   ]
  },
  {
@@ -1618,8 +1640,8 @@
   "what": "a celestial guardian: one of the cherubim set to guard the way to Eden, a very tall, mighty, stern and beautiful angel standing on two legs, with a calm severe young man's face, level grey eyes, a firm closed mouth and shoulder-length golden hair, his head bare. Behind him spread four separate great white feathered wings that together make the shape of a big letter X with his body at the crossing: one wing points up to the upper left, one wing points up to the upper right, one wing points down to the lower left beside his knee, and one wing points down to the lower right beside his other knee. The two lower wings are as large as the two upper wings and hang down outside his legs, their tips level with his ankles, with a clear gap of backdrop between each upper wing and the lower wing beneath it. He has realistic adult proportions: a small head, wide shoulders, long limbs, about eight heads tall.",
   "colours": "four white feathered wings with pale gold tips, bright polished gold plate armour engraved with fine lines, long white robes with a gold border, a deep crimson sash, golden hair, fair skin, a long sword whose blade is wrapped in orange and yellow flame.",
   "wears": "He wears magnificent polished gold plate armour: a breastplate engraved with a sunburst, layered shoulder plates shaped as feathers, gold vambraces and greaves; under it long white robes that fall to his ankles with a wide gold border; a deep crimson sash across his chest from one shoulder; and a thin plain gold circlet on his brow. His head has no helmet.",
-  "holds": "He holds exactly one long straight broad sword in his right hand, raised, its whole blade wrapped in orange and yellow flame from guard to point, the flame attached to the blade. His left hand is empty and thrust straight out ahead with the palm open and flat, fingers up, barring the way.",
-  "pose": "He stands barring the way, facing left on two legs with his feet set wide and his front knee bent, his empty left hand thrust straight out ahead at shoulder height with the palm flat and open in a halt, his right arm raised high with the flaming sword lifted above his head ready to strike, the four wings spread behind him in a big X, two pointing up and two pointing down beside his legs, robes blowing back.",
+  "holds": "He holds exactly one long broad sword in his right fist, held upright beside his right shoulder, point to the sky: a perfectly straight steel blade, as straight as a ruler, one even width to the point; the whole blade glows red-hot orange like iron fresh from the forge, and small bright yellow flames lick up from both of its edges from the crossguard to the point. His left hand is empty and thrust straight out ahead with the palm open and flat, fingers up, barring the way.",
+  "pose": "He stands barring the way, facing left on two legs with his feet set wide and his front knee bent, his empty left hand thrust straight out ahead at shoulder height with the palm flat and open in a halt, his right arm held out to his side with the elbow bent and the flaming sword held upright beside his shoulder, the four wings spread behind him in a big X, two pointing up and two pointing down beside his legs, robes blowing back.",
   "must_show": [
    "an angel with four white wings in an X: two raised, two swept down",
    "polished engraved gold armour over white robes, crimson sash",
@@ -1654,7 +1676,14 @@
    "cartoon proportions",
    "two wings only",
    "one pair of wings",
-   "wings only above the shoulders"
+   "wings only above the shoulders",
+   "wavy blade",
+   "blade made only of fire",
+   "torch",
+   "bent blade",
+   "gold blade",
+   "sword pointing down",
+   "plain cold steel blade"
   ]
  }
 ]
