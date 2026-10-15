@@ -771,6 +771,11 @@ and look for the same kind of slip when reviewing.
   seen end to end gets two blades**: "the back end is a small plain round knob". **A double
   axe:** "two identical crescents, one left and one right of the haft, like butterfly wings".
   **"Sniper" draws a scoped rifle.** **A black forked tongue draws a cigarette**: make it red.
+- **When three redraw rounds fail on a count, hand-edit the painting** with
+  `_genart/quality/fixpaint.py`: erase extra parts by polygon, or copy the creature's own
+  leg or wing (flipped, scaled, rotated, dimmed for the far side) behind the figure, then
+  re-cut with `--sheets-only`. It fixed Buer's legs, the locust's blades, the displacer's
+  middle legs and the four- and six-winged creatures in one sitting.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
