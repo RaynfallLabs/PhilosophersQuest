@@ -746,6 +746,11 @@ and look for the same kind of slip when reviewing.
 - **An amber dome with something trapped in it draws a mushroom.**
 - **Check near-twins across families** (a rounder twisted iron ring becomes the
   thin-wire ring).
+- **Never ask a four-legged creature for one lifted limb.** "On four legs" plus "one
+  front paw lifted high" draws FIVE legs: four planted and an extra one raised (the cave
+  bear shipped like this). Write "exactly four legs and no more: two front legs and two
+  hind legs, all four shown once each", and put "fifth leg, extra leg, raised paw" in
+  `must_not_show`. **Count the limbs on every pick.**
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
