@@ -294,12 +294,11 @@
   "colours": "shaggy dark chestnut-brown fur with a lighter tawny muzzle, a black nose, yellowed fangs, ivory claws.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is an animal on four legs and holds nothing.",
-  "pose": "Seen from the side, it charges to the left on four legs, hind legs driving, one front paw lifted high and swiping with its claws spread, head low, jaws wide open roaring.",
+  "pose": "Seen from the side, it charges to the left at a heavy gallop, head low and thrust forward, jaws wide open roaring. It has exactly four legs and no more: two front legs and two hind legs, all four shown once each, the near pair in front of the far pair, every paw on the ground or reaching for it.",
   "must_show": [
-   "a real bear on four legs, seen from the side",
+   "a real bear seen from the side with exactly four legs, two front and two hind",
    "enormous, shaggy, humped shoulders",
-   "jaws open with fangs",
-   "one front paw swiping with long claws"
+   "jaws open with fangs"
   ],
   "must_not_show": [
    "standing upright like a man",
@@ -311,7 +310,13 @@
    "horns",
    "white polar fur",
    "teddy bear",
-   "rocks under it"
+   "rocks under it",
+   "fifth leg",
+   "extra leg",
+   "extra paw",
+   "raised paw",
+   "lifted paw",
+   "six legs"
   ]
  },
  {
