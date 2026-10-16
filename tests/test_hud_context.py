@@ -32,7 +32,7 @@ def test_hud_item_name_uses_real_name_when_class_or_type_known():
         count=2,
     )
 
-    assert hud_item_name(player, item, include_count=True) == "{blessed} Ring of Secret Goodness x2"
+    assert hud_item_name(player, item, include_count=True) == "Blessed Ring of Secret Goodness x2"
 
 
 def test_spawn_fit_color_inverts_item_and_monster_meaning():

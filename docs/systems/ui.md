@@ -333,7 +333,7 @@ rows all go through this helper.
 
 ```
 INSTANCE identified       → full name ("Rapier +2")
-TYPE known + BUC known    → full name (BUC {blessed}/{cursed} prefix)
+TYPE known + BUC known    → full name (BUC "Blessed"/"Cursed" prefix)
 TYPE known + BUC unknown  → "Unidentified <true name>"
 TYPE unknown              → item.unidentified_name (appearance)
 ```
@@ -349,7 +349,7 @@ knows what the item CLASS is, but THIS copy's BUC is still a mystery.
 The HUD surfaces that explicitly so the player doesn't quaff a cursed
 healing potion thinking it's identified.
 
-BUC prefix is wrapped in braces (`{blessed}` / `{cursed}`); only
+BUC prefix is a capitalised word (`Blessed` / `Cursed`; braces until 2026-10-16); only
 rendered when `buc_known`. Count suffix (`x3`) added if
 `include_count` and count > 1.
 
@@ -525,7 +525,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |
 | `o` | observe cursor |
-| `k` | kit comparison |
+| `k` | kit: compare, then act on the selected item (E/D/I/X, see §22) |
 | `j` | discoveries |
 | `;` | study journal (missed questions in-run) |
 | `TAB` | cycle zoom |
@@ -1175,6 +1175,30 @@ new line is honest about math-only timing. Also deleted: the
 **Rule:** sheet rows must be live-data-driven. If a feature is
 retired, remove its row entirely, don't leave a `0` or `−`
 placeholder — that reads as "worth earning" to a new player.
+
+**Item actions (Kit and character sheet, 2026-10-16).** Both screens
+act on the selected item with the same keys, routed by
+`src/item_actions.py` (`ItemActionsMixin`) through the map commands'
+own paths, so turn cost, quiz gating, curses, weight and messages are
+unchanged:
+
+| Key | Action |
+|---|---|
+| `E` | Equip a pack item (`_equip_item`, quiz included); Unequip a worn one (`_unequip_slot`). On the Kit a floor item is picked up (`_pickup(target=item)`) and then equipped. `U` on the sheet is the same toggle. |
+| `D` | Drop (`_do_drop_item`, stacks ask how many). A worn item is unequipped first, then dropped. |
+| `I` | Identify (`_identify_item`); needs the Philosopher's Shard, as the I menu does. |
+| `X` | Lore page. |
+
+`_item_actions(item, where)` lists only actions that apply; one that
+applies but is blocked by something the player can already see (a
+known curse, full ring slots, too heavy, no Shard) is greyed with its
+reason. Both screens show the actions as key badges in the footer
+(enabled only) and in the detail pane. After an action the player is
+returned to the same screen, tab and item (`_item_screen_return`,
+resumed by `_item_screen_resume`: chained onto the quiz callback, and
+from the quantity prompt, the lore page and `update()`), and the
+messages the action wrote (the quiz result too) are shown under
+"Result" in the detail pane.
 
 ---
 

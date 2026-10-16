@@ -189,6 +189,10 @@ class InputMixin:
                     self._leave_confirm_exit()
                     return True
                 self.state = STATE_PLAYER
+                # Leaving a lore page or quantity prompt that a Kit /
+                # character-sheet action opened: back to that screen.
+                if getattr(self, '_item_screen_return', None):
+                    self._item_screen_resume()
                 return True
             if self.state == STATE_BOON_MENU:
                 # A gate boss's gifts cannot be declined; Escape waits.
@@ -1340,6 +1344,9 @@ class InputMixin:
         if key in (pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE, pygame.K_x):
             self.state = STATE_PLAYER
             self._lore_subject = None
+            # Opened from the Kit / character sheet (X): back there.
+            if hasattr(self, '_item_screen_resume'):
+                self._item_screen_resume()
             return
 
         subject = getattr(self, '_lore_subject', None)
@@ -1461,6 +1468,9 @@ class InputMixin:
                 self._finish_drop(item, qty)
             else:
                 self.add_message("Nothing dropped.", 'info')
+            # A drop from the Kit / character sheet: back there.
+            if hasattr(self, '_item_screen_resume'):
+                self._item_screen_resume()
             return
         if key == pygame.K_BACKSPACE:
             self.drop_qty_input = self.drop_qty_input[:-1]

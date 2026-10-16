@@ -295,8 +295,8 @@ Then the final string prepends a BUC tag when both `buc_known` *and*
 `buc != "uncursed"`:
 
 ```
-"{blessed} Rapier +2"
-"{cursed} Long Sword (Enchant Unknown)"
+"Blessed Rapier +2"
+"Cursed Long Sword (Enchant Unknown)"
 ```
 
 **Why the suffix names what is unknown (2026-10-16).** With identify v3,

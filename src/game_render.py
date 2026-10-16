@@ -825,7 +825,12 @@ class RenderMixin:
         margin = S(22) if narrow else S(34)
         header_h = S(74)
         gap = S(14)
-        footer = "Arrows: move focus   1-4/Tab: filter pack   Enter: actions/select   E/U/I/X/D: action   ESC: close"
+        # The selected item's actions, by key (the same keys as the Kit);
+        # only those possible right now are listed.
+        footer = "   ".join(
+            ["Arrows: move", "1-4/Tab: filter", "Enter: actions"]
+            + [f"{k}: {lab}" for k, lab in self._item_action_hints(actions)]
+            + ["ESC: close"])
         if kit:
             gap = S(10)
             outer = pygame.Rect(sheet_x + S(8), S(8), sheet_w - S(16), layout.WINDOW_H - S(16))
@@ -1146,11 +1151,17 @@ class RenderMixin:
                                 y + (idx // 2) * (btn_h + S(6)), btn_w, btn_h)
                 selected = focus == 'actions' and idx == getattr(self, '_charsheet_action_idx', 0)
                 row_rect(r, selected=selected, focus=(focus == 'actions'))
+                bg = KT.SELECTED if selected and focus == 'actions' else KT.RAISED
+                enabled = action.get('enabled', True)
+                off = readable(FP.FADED_TEXT, bg)
                 kr = pygame.Rect(r.x + S(5), r.centery - S(12), S(24), S(24))
-                draw_key_badge(screen, kr, action['key'], f16b)
-                text(action['label'], f16, KT.TEXT_BODY, kr.right + S(8),
-                     r.centery - lh // 2)
+                draw_key_badge(screen, kr, action['key'], f16b,
+                               color=None if enabled else off)
+                text(action['label'], f16, readable(KT.TEXT_BODY, bg) if enabled else off,
+                     kr.right + S(8), r.centery - lh // 2)
             y += ((len(actions) + 1) // 2) * (btn_h + S(6)) + S(8)
+            y = self._draw_item_action_reasons(body.x, y, body.w, actions, KT.RAISED)
+        y = self._draw_item_feedback(body.x, y, body.w, body.bottom, KT.RAISED)
 
         try:
             visible = self._kit_visible_level(detail_item)
@@ -1426,9 +1437,14 @@ class RenderMixin:
                                     y + (idx // cols) * S(35), btn_w, btn_h)
                     selected = focus == 'actions' and idx == getattr(self, '_charsheet_action_idx', 0)
                     row_rect(r, selected=selected, focus=(focus == 'actions'))
-                    text(action['key'], font_bold, FP.GOLD_BRIGHT, r.x + S(8), r.y + S(7))
-                    text(action['label'], font_small, FP.BODY_TEXT, r.x + S(30), r.y + S(7))
+                    enabled = action.get('enabled', True)
+                    text(action['key'], font_bold, FP.GOLD_BRIGHT if enabled else FP.FADED_TEXT,
+                         r.x + S(8), r.y + S(7))
+                    text(action['label'], font_small, FP.BODY_TEXT if enabled else FP.FADED_TEXT,
+                         r.x + S(30), r.y + S(7))
                 y += ((len(actions) + 1) // 2) * S(35) + S(10)
+                y = self._draw_item_action_reasons(body.x, y, body.w, actions, FP.MIDNIGHT)
+            y = self._draw_item_feedback(body.x, y, body.w, body.bottom, FP.MIDNIGHT)
 
             try:
                 visible = self._kit_visible_level(detail_item)
@@ -4700,6 +4716,80 @@ class RenderMixin:
         self._ui_draw_scroll_lines(render_lines, self.font_sm, FP.BODY_TEXT,
                                    rect, 0, line_gap=5)
 
+    # -- Item actions (shared by the Kit and the character sheet) ----------
+
+    def _item_action_hints(self, actions):
+        """Footer key hints for the ENABLED item actions: [(key, label)]."""
+        return [(a['key'], a['label']) for a in actions if a.get('enabled', True)]
+
+    def _draw_item_action_strip(self, x, y, w, actions, bg):
+        """The selected item's actions as key badges ("[E] Equip   [D] Drop"),
+        wrapped to ``w``; a blocked action is greyed with its reason on a
+        line below. Returns the y under what was drawn."""
+        if not actions:
+            return y
+        kf = get_font('body', 16, bold=True)
+        lf = get_font('body', 16)
+        key_h = max(kf.get_height() + S(8), S(26))
+        pad, inner, gap = S(7), S(8), S(18)
+        on_col = readable(KT.TEXT_BODY if kit_on() else FP.BODY_TEXT, bg)
+        off_col = readable(FP.FADED_TEXT, bg)
+        cx = x
+        for a in actions:
+            kw = kf.size(a['key'])[0] + 2 * pad
+            unit = kw + inner + lf.size(a['label'])[0]
+            if cx > x and cx + unit > x + w:
+                cx = x
+                y += key_h + S(6)
+            enabled = a.get('enabled', True)
+            draw_key_badge(self.screen, (cx, y, kw, key_h), a['key'], kf,
+                           color=None if enabled else off_col)
+            ls = lf.render(a['label'], True, on_col if enabled else off_col)
+            self.screen.blit(ls, (cx + kw + inner, y + (key_h - ls.get_height()) // 2))
+            cx += unit + gap
+        y += key_h + S(6)
+        return self._draw_item_action_reasons(x, y, w, actions, bg)
+
+    def _draw_item_action_reasons(self, x, y, w, actions, bg):
+        """One faded line per blocked action: "Unequip: Cursed, it will not
+        come off". Returns the y under them."""
+        lf = get_font('body', 16)
+        off_col = readable(FP.FADED_TEXT, bg)
+        # One line per reason ("Unequip, Drop: Cursed, it will not come off").
+        reasons: dict = {}
+        for a in actions:
+            if not a.get('enabled', True) and a.get('why'):
+                reasons.setdefault(a['why'], []).append(a['label'])
+        for why, labels in reasons.items():
+            for ln in self._wrap_text(f"{', '.join(labels)}: {why}", lf, w):
+                self.screen.blit(lf.render(ln, True, off_col), (x, y))
+                y += lf.get_height() + S(2)
+        return y + S(4)
+
+    def _draw_item_feedback(self, x, y, w, bottom, bg):
+        """What the last Kit / sheet action said (the quiz result included),
+        under a "Result" label. Returns the y under it."""
+        lines = self._item_feedback_lines() if hasattr(self, '_item_feedback_lines') else []
+        if not lines:
+            return y
+        hf = get_font('body', 16, bold=True)
+        lf = get_font('body', 16)
+        lh = lf.get_height() + S(2)
+        if y + hf.get_height() + lh > bottom:
+            return y
+        self.screen.blit(hf.render("Result", True, readable(FP.GOLD_BRIGHT, bg)), (x, y))
+        y += hf.get_height() + S(4)
+        wrapped = []
+        for text, kind in lines:
+            col = readable(KT.LOG.get(kind, KT.LOG['info']), bg)
+            for ln in self._wrap_text(display_text(str(text)), lf, w):
+                wrapped.append((ln, col))
+        room = max(1, (bottom - y) // lh)
+        for ln, col in wrapped[-room:]:
+            self.screen.blit(lf.render(ln, True, col), (x, y))
+            y += lh
+        return y + S(6)
+
     def _draw_kit_browser(self):
         active = getattr(self, '_kit_tab', 0)
         slug = self._KIT_TABS[active][1]
@@ -4739,6 +4829,8 @@ class RenderMixin:
                 "(nothing of this kind in your pack, equipment, or current tile)"
             )
             self._ui_wrap_text(empty, self.font_sm, FP.FADED_TEXT, table_body)
+            self._draw_item_feedback(detail_body.x, detail_body.y, detail_body.w,
+                                     detail_body.bottom, KT.RAISED if kit_on() else FP.MIDNIGHT)
             self._ui_footer(panel, "Left/Right: tab   ESC: close")
             return
 
@@ -4827,13 +4919,29 @@ class RenderMixin:
         if total > visible:
             self._ui_scrollbar(table_body, scroll, total, max(1, visible))
 
+        hints = [("Left/Right", "Tab"), ("Up/Down", "Select")]
         if slug == 'spells':
             detail_lines = self._kit_detail_lines_for_spell(rows[sel])
         else:
             src, item = rows[sel]
             detail_lines = self._kit_detail_lines_for_item(slug, src, item)
+            # The selected item's actions on top of the card (the keys shared
+            # with the character sheet), then what the last action said.
+            bg = KT.RAISED if kit_on() else FP.MIDNIGHT
+            actions = self._item_actions(item, src)
+            y = self._draw_item_action_strip(detail_body.x, detail_body.y,
+                                             detail_body.w, actions, bg)
+            y = self._draw_item_feedback(detail_body.x, y, detail_body.w,
+                                         detail_body.bottom, bg)
+            if y > detail_body.y:
+                # The divider's centre ornament rises ~12 px above its line.
+                draw_divider(self.screen, detail_body.x, y + S(14), detail_body.w)
+                y += S(30)
+                detail_body = pygame.Rect(detail_body.x, y, detail_body.w,
+                                          max(0, detail_body.bottom - y))
+            hints += self._item_action_hints(actions)
         self._draw_kit_detail_lines(detail_body, detail_lines)
-        self._ui_footer(panel, "Left/Right: tab   Up/Down: select   PgUp/PgDn: jump   ESC: close")
+        self._ui_footer(panel, "   ".join(f"{k}: {lab}" for k, lab in hints + [("ESC", "Close")]))
 
     def _draw_kit_panel(self):
         self._draw_kit_browser()
@@ -8498,10 +8606,10 @@ class RenderMixin:
                 ("R", "Read scroll or book", FP.BODY_TEXT),
             ]),
             ("Knowledge", [
-                ("@", "Character sheet", FP.BODY_TEXT),
+                ("@", "Character: equip, drop", FP.BODY_TEXT),
                 ("B", "Encyclopedia", FP.BODY_TEXT),
                 ("J", "Discoveries", FP.BODY_TEXT),
-                ("K", "Kit comparison", FP.BODY_TEXT),
+                ("K", "Kit: compare, equip, drop", FP.BODY_TEXT),
                 ("W", "Quirks progress", FP.BODY_TEXT),
                 (";", "Study journal", FP.BODY_TEXT),
                 ("N", "Recall lore", FP.BODY_TEXT),

@@ -1217,6 +1217,32 @@ def _(g):
     g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
 
 
+@scene('menu_kit_result', 'Menus',
+       'K, Armor, E on the pack armor, pass the geography quiz: back on the Kit '
+       'with the item worn and the result shown.', expect='kit')
+def _(g):
+    from items import Armor
+    press(g, pygame.K_k)
+    g._kit_tab = [t[1] for t in g._KIT_TABS].index('armor')
+    rows = g._kit_rows_for_slug('armor')
+    g._kit_sel = next(i for i, (src, it) in enumerate(rows)
+                      if src == 'pack' and isinstance(it, Armor))
+    press(g, pygame.K_e)
+    play_quiz(g, 'cccccccc')
+
+
+@scene('menu_charsheet_cursed', 'Menus',
+       '@, Body: a worn armor known to be cursed (Unequip and Drop greyed, '
+       'with the reason).', expect='character_sheet')
+def _(g):
+    from items import ARMOR_SLOTS
+    body = g.player.armor_slots[ARMOR_SLOTS.index('body')]
+    body.cursed, body.buc, body.buc_known = True, 'cursed', True
+    g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
+    g._charsheet_loadout_idx = next(i for i, e in enumerate(g._charsheet_loadout_entries())
+                                    if e['item'] is body)
+
+
 @scene('menu_equip_tab2', 'Menus', 'E, Right: second equip tab.', expect='equip_menu')
 def _(g):
     press(g, pygame.K_e)

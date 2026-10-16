@@ -477,13 +477,16 @@ class MenuMixin:
                 self._unequip_slot(slot_name, slot_item)
 
     # ------------------------------------------------------------------
-    # Kit comparison panel  (K key -- side-by-side view, read-only)
+    # Kit comparison panel  (K key -- compare, then equip / drop in place)
     # ------------------------------------------------------------------
     #
     # The Kit panel shows the player's items + items on the current tile
     # in a tabbed table. It deliberately reveals only what the player has
     # earned: hidden columns show '?' until the relevant id_level is reached
     # (id_level 2 -> BUC, 3 -> stats, 4 -> lore/special). No recommendations.
+    # The selected item can be acted on with the keys shared with the
+    # character sheet (E equip/unequip, D drop, I identify, X lore); see
+    # item_actions.py. Every action uses the map command's own path.
 
     _KIT_TABS = [
         ('Weapons',     'weapons'),
@@ -536,6 +539,7 @@ class MenuMixin:
         for acc in self.player.accessory_slots:
             _push_equipped(acc)
         _push_equipped(self.player.amulet_slot)
+        _push_equipped(getattr(self.player, 'belt_slot', None))
 
         for it in self.player.inventory:
             if id(it) in equipped_ids:
@@ -598,11 +602,62 @@ class MenuMixin:
         self._kit_tab = 0
         self._kit_scroll = 0
         self._kit_sel = 0
+        self._item_feedback = []
         self.state = STATE_KIT
+
+    def _kit_selected(self):
+        """(source, item) of the selected Kit row, or (None, None) on the
+        Spells tab or an empty tab. Rows are in the order the panel draws."""
+        slug = self._KIT_TABS[getattr(self, '_kit_tab', 0)][1]
+        if slug == 'spells':
+            return None, None
+        rows = self._kit_rows_for_slug(slug)
+        if not rows:
+            return None, None
+        sel = max(0, min(getattr(self, '_kit_sel', 0), len(rows) - 1))
+        return rows[sel]
+
+    def _kit_actions(self):
+        """The item actions on offer for the selected Kit row."""
+        src, item = self._kit_selected()
+        if item is None:
+            return []
+        return self._item_actions(item, src)
+
+    def _kit_return_ctx(self) -> dict:
+        return {'screen': 'kit', 'tab': getattr(self, '_kit_tab', 0),
+                'sel': getattr(self, '_kit_sel', 0)}
+
+    def _kit_restore(self, ctx: dict) -> None:
+        """Back on the Kit after an action: the same tab, the same item
+        selected wherever it now is (pack, worn, floor), else the nearest
+        row."""
+        self._kit_tab = ctx.get('tab', 0)
+        slug = self._KIT_TABS[self._kit_tab][1]
+        rows = [] if slug == 'spells' else self._kit_rows_for_slug(slug)
+        item = ctx.get('item')
+        idx = next((i for i, (_s, it) in enumerate(rows) if it is item), None)
+        if idx is None:
+            idx = ctx.get('sel', 0)
+        self._kit_sel = max(0, min(idx, max(0, len(rows) - 1)))
+        self.state = STATE_KIT
+
+    _KIT_ACTION_KEYS = {
+        pygame.K_e: 'equip',
+        pygame.K_d: 'drop',
+        pygame.K_i: 'identify',
+        pygame.K_x: 'lore',
+    }
 
     def _kit_input(self, key: int):
         if key == pygame.K_ESCAPE:
             self.state = STATE_PLAYER
+            return
+        if key in self._KIT_ACTION_KEYS:
+            _src, item = self._kit_selected()
+            if item is not None:
+                self._item_action_run(self._KIT_ACTION_KEYS[key], item,
+                                      self._kit_return_ctx())
             return
         n_tabs = len(self._KIT_TABS)
         if key == pygame.K_LEFT:
@@ -647,8 +702,8 @@ class MenuMixin:
     # ------------------------------------------------------------------
     #
     # Tracks what the player has done, never what's left. No spoilers.
-    # Implementation lives below alongside the Kit panel because both are
-    # read-only info screens.
+    # Implementation lives below alongside the Kit panel (the Kit also acts
+    # on items now; Discoveries stays read-only).
 
     def _open_discoveries(self):
         self._disc_scroll = 0

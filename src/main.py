@@ -75,6 +75,7 @@ from game_encounters import EncountersMixin
 from game_magic import MagicMixin
 from game_combat import CombatMixin
 from game_divine import DivineMixin
+from item_actions import ItemActionsMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -143,7 +144,8 @@ RING_FEAR_CHANCE = 0.40        # Helm of Achilles: a monster's chance to flee on
 DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until woken (the status cap of 60 woke them all on a timer)
 
 
-class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
+class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
+           ItemActionsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -248,6 +250,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.drop_gold_input: str  = ''   # digit buffer for gold-drop amount prompt
         self.drop_qty_input: str   = ''   # digit buffer for stack-drop quantity prompt
         self._drop_qty_item        = None # the stacked item awaiting a drop quantity
+        # Kit / character-sheet item actions (item_actions.py): the screen
+        # to return to after an action, and what the action said.
+        self._item_screen_return   = None
+        self._item_feedback        = []
+        self._item_feedback_on     = False
         # Story popup state (quest intro, boss victory, endings)
         self.popup_data: dict | None = None     # title, lines, accent, code
         self.popup_next_state: str   = STATE_PLAYER
@@ -374,6 +381,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def add_message(self, text: str, msg_type: str = 'info'):
         self.msg_log.add(text, msg_type)
+        # An action started from the Kit / character sheet keeps what it
+        # said, so the screen it returns to can show it (item_actions.py).
+        if getattr(self, '_item_feedback_on', False):
+            self._item_feedback.append((str(text), msg_type))
         try:
             low = str(text).lower()
             for needle, cue in self._SOUND_CUES:
@@ -4777,7 +4788,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Pickup
     # ------------------------------------------------------------------
 
-    def _pickup(self):
+    def _pickup(self, target=None):
+        """Pick up the first item on this tile, or ``target`` when given (the
+        Kit's Take & Equip names the exact floor item; same rules)."""
         from items import GoldPile
         px, py = self.player.x, self.player.y
         # Skip the Abyssal Shimmer -- it's fixed to the floor
@@ -4785,6 +4798,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         item = next(
             (i for i in self.ground_items
              if i.x == px and i.y == py
+             and (target is None or i is target)
              and i.id != 'abyssal_shimmer'
              and not getattr(i, 'not_pickable', False)),
             None
@@ -5878,6 +5892,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._charsheet_action_source = 'loadout'
         self._charsheet_pack_scroll = 0
         self._charsheet_pack_filter = 'all'
+        self._item_feedback = []
         entries = self._charsheet_loadout_entries()
         for idx, entry in enumerate(entries):
             if entry.get('item') is not None:
@@ -5993,23 +6008,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             0, min(getattr(self, '_charsheet_pack_idx', 0), max(0, pack_len - 1)))
 
     def _charsheet_actions(self):
+        """The item actions for the selected loadout / pack item: the same
+        set, keys and rules as the Kit (item_actions.py)."""
         source, entry, item = self._charsheet_selection(source=self._charsheet_detail_source())
         if item is None:
             return []
-        actions = []
-        if source == 'pack':
-            if isinstance(item, (Weapon, Armor, Shield, Accessory)):
-                actions.append({'id': 'equip', 'key': 'E', 'label': 'Equip'})
-            if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 5)) < 5:
-                actions.append({'id': 'identify', 'key': 'I', 'label': 'Identify'})
-            actions.append({'id': 'lore', 'key': 'X', 'label': 'Lore'})
-            actions.append({'id': 'drop', 'key': 'D', 'label': 'Drop'})
-        else:
-            actions.append({'id': 'unequip', 'key': 'U', 'label': 'Unequip'})
-            if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 5)) < 5:
-                actions.append({'id': 'identify', 'key': 'I', 'label': 'Identify'})
-            actions.append({'id': 'lore', 'key': 'X', 'label': 'Lore'})
-        return actions
+        return self._item_actions(item, 'equip' if source == 'loadout' else 'pack')
 
     def _charsheet_focus_actions(self) -> None:
         focus = getattr(self, '_charsheet_focus', 'loadout')
@@ -6025,6 +6029,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         return getattr(self, '_charsheet_action_source', 'loadout')
 
     def _charsheet_activate_action(self, action_id: str | None = None) -> bool:
+        """Run an item action on the selected item (Enter on the actions
+        column, or its key). The action goes through the map command's own
+        path; afterwards the sheet comes back with the item still selected."""
         self._charsheet_clamp()
         if action_id is None:
             actions = self._charsheet_actions()
@@ -6036,41 +6043,40 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if item is None:
             self.add_message("Nothing selected.", 'info')
             return False
+        return self._item_action_run(action_id, item, self._charsheet_return_ctx())
 
-        if action_id == 'equip':
-            if source != 'pack' or not isinstance(item, (Weapon, Armor, Shield, Accessory)):
-                self.add_message("That item cannot be equipped from here.", 'info')
-                return False
-            self._equip_item(item)
-            return True
+    def _charsheet_return_ctx(self) -> dict:
+        return {
+            'screen': 'charsheet',
+            'focus': getattr(self, '_charsheet_focus', 'loadout'),
+            'source': self._charsheet_detail_source(),
+            'loadout_idx': getattr(self, '_charsheet_loadout_idx', 0),
+            'pack_idx': getattr(self, '_charsheet_pack_idx', 0),
+            'action_idx': getattr(self, '_charsheet_action_idx', 0),
+        }
 
-        if action_id == 'unequip':
-            if source != 'loadout' or not entry:
-                self.add_message("Choose an equipped item first.", 'info')
-                return False
-            self._unequip_slot(entry.get('slot', ''), item)
-            return True
-
-        if action_id == 'identify':
-            if not hasattr(item, 'id_level') or int(getattr(item, 'id_level', 5)) >= 5:
-                self.add_message("You already understand that item.", 'info')
-                return False
-            self._identify_item(item)
-            return True
-
-        if action_id == 'lore':
-            self._lore_subject = item
-            self.state = STATE_LORE
-            return True
-
-        if action_id == 'drop':
-            if source != 'pack':
-                self.add_message("Unequip it before dropping it.", 'warning')
-                return False
-            self._do_drop_item(item)
-            return True
-
-        return False
+    def _charsheet_restore(self, ctx: dict) -> None:
+        """Back on the sheet after an action. The selected item stays
+        selected wherever it went (equipping moves it to the loadout,
+        unequipping to the pack); gone (dropped), the cursor keeps its row in
+        the panel it was in, clamped to what is left."""
+        item = ctx.get('item')
+        source = ctx.get('source', 'loadout')
+        self._charsheet_loadout_idx = ctx.get('loadout_idx', 0)
+        self._charsheet_pack_idx = ctx.get('pack_idx', 0)
+        loadout = self._charsheet_loadout_entries()
+        lidx = next((i for i, e in enumerate(loadout) if e.get('item') is item), None)
+        pack = self._charsheet_pack_entries()
+        pidx = next((i for i, e in enumerate(pack) if e.get('item') is item), None)
+        if lidx is not None:
+            source, self._charsheet_loadout_idx = 'loadout', lidx
+        elif pidx is not None:
+            source, self._charsheet_pack_idx = 'pack', pidx
+        self._charsheet_action_source = source
+        self._charsheet_focus = 'actions' if ctx.get('focus') == 'actions' else source
+        self._charsheet_action_idx = ctx.get('action_idx', 0)
+        self.state = STATE_CHARACTER_SHEET
+        self._charsheet_clamp()
 
 
     def _get_effect_source(self, effect_id: str) -> str:
@@ -6834,7 +6840,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         buc = getattr(item, 'buc', 'uncursed')
         buc_known = getattr(item, 'buc_known', False)
         if buc_known and buc != 'uncursed':
-            base = f"{{{buc}}} {base}"
+            base = f"{buc.title()} {base}"   # "Cursed Rough Hide Armor" (was "{cursed} ...")
         count = getattr(item, 'count', 1)
         return f"{base} x{count}" if count > 1 else base
 
@@ -6912,6 +6918,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if (self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None)
                 and not self.player.is_dead()):
             self._open_boon_menu()
+        # An action taken from the Kit / character sheet whose flow just
+        # ended (quiz, quantity prompt, lore page): back to that screen.
+        if getattr(self, '_item_screen_return', None):
+            self._item_screen_resume()
         if self.state == STATE_QUIZ:
             if hasattr(self, '_necro_qs') and self._necro_qs is not None:
                 self._necro_update(quiz_dt)

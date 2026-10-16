@@ -529,8 +529,8 @@ scrolls can push to the per-slot cap.
 - Cursed weapons/armor welded on (`try_unequip_slot`).
 - Cursed status applies penalties through `Player.get_ac` (±1 per piece).
 - Blessed wands get +1 charge at spawn; cursed −1.
-- `buc_known` is a per-instance flag. The HUD prints `{blessed}` /
-  `{cursed}` tags only when `buc_known` is true; see
+- `buc_known` is a per-instance flag. The HUD prints a `Blessed` /
+  `Cursed` prefix only when `buc_known` is true; see
   `hud_item_name` in [ui](ui.md).
 
 Instance BUC is revealed by the one-question identify quiz; see

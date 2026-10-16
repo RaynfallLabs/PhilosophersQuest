@@ -105,7 +105,7 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
     #                                           unknown>" (unknown_copy_suffix:
     #                                           "Potion of Healing (Curse
     #                                           Unknown)"); a known curse shows
-    #                                           as the {cursed} prefix
+    #                                           as a "Cursed" prefix
     #   TYPE unknown                         -> unidentified appearance
     # "This copy is identified" means id_level 5, the same test the menus
     # use (Game._display_name), and the same suffix, so the HUD and every
@@ -142,7 +142,7 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
     base = fix_name_case(str(raw))
     buc = getattr(item, "buc", "uncursed")
     if getattr(item, "buc_known", False) and buc != "uncursed":
-        base = f"{{{buc}}} {base}"
+        base = f"{buc.title()} {base}"   # "Cursed Rough Hide Armor" (was "{cursed} ...")
     count = int(getattr(item, "count", 1) or 1)
     if include_count and count > 1:
         return f"{base} x{count}"
