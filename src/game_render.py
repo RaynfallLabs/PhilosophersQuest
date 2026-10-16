@@ -21,6 +21,7 @@ from ui_scale import px as S
 from renderer import TILE_SIZE
 from geom import monster_at_tile, any_tile_in_set
 import ui_theme
+import lore_art
 from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, draw_overlay,
@@ -7614,6 +7615,48 @@ class RenderMixin:
         )
         return identity, mechanics, lore or "No lore recorded."
 
+    _LORE_PLATE_PAD = 5          # dark well round a lore picture, UI px
+
+    def _lore_plate_lines(self, ref, body_w, font, line_gap):
+        """The picture for a lore pane and the blank lines that make room for
+        it at the top of the pane's scrolled text: ``(plate, spacers)``, or
+        ``(None, [])`` when the subject has no art (the pane then has no
+        picture well at all). The plate leaves the scrollbar lane free."""
+        if ref is None:
+            return None, []
+        pad = S(self._LORE_PLATE_PAD)
+        surf = lore_art.plate(ref[0], ref[1], body_w - S(12) - 2 * pad)
+        if surf is None:
+            return None, []
+        line_h = font.get_height() + S(line_gap)
+        n = -(-(surf.get_height() + 2 * pad + S(12)) // line_h)
+        return surf, [('', None, font)] * n
+
+    def _draw_lore_plate(self, surf, body, scroll, n_spacers, line_h):
+        """Draw a lore picture in its framed well at the top of ``body``,
+        moved up with the pane's scroll (and clipped to the pane)."""
+        if surf is None or scroll >= n_spacers:
+            return
+        pad = S(self._LORE_PLATE_PAD)
+        off = scroll * line_h
+        well = pygame.Rect(0, 0, surf.get_width() + 2 * pad, surf.get_height() + 2 * pad)
+        well.midtop = (body.x + (body.w - S(12)) // 2, body.y - off)
+        old_clip = self.screen.get_clip()
+        self.screen.set_clip(body.clip(old_clip))
+        pygame.draw.rect(self.screen, KT.WELL, well)
+        self.screen.blit(surf, (well.x + pad, well.y + pad))
+        inner = pygame.Rect(well.x + pad - 1, well.y + pad - 1,
+                            surf.get_width() + 2, surf.get_height() + 2)
+        if off == 0:
+            pygame.draw.rect(self.screen, KT.GOLD_DARK, well, 1)
+            pygame.draw.rect(self.screen, KT.VOID, inner, 1)
+        else:
+            # Sliding under the pane's top edge: no top rule.
+            x0, x1, y0, y1 = well.left, well.right - 1, well.top, well.bottom - 1
+            pygame.draw.lines(self.screen, KT.GOLD_DARK, False,
+                              [(x0, y0), (x0, y1), (x1, y1), (x1, y0)])
+        self.screen.set_clip(old_clip)
+
     def _draw_lore_dossier_screen(self):
         """The item / bestiary dossier: Identity, Mechanics and Lore panes.
 
@@ -7668,6 +7711,11 @@ class RenderMixin:
         # pane bodies are their rect minus the subpanel chrome (12 px each
         # side, 42 above, 12 below)
         id_render_lines = wrap(identity_lines, left_w - 2 * S(12) - S(10))
+        # The subject's picture heads the Identity pane: the item itself, or
+        # the living creature a corpse was. It scrolls with the pane's text.
+        plate, spacers = self._lore_plate_lines(
+            lore_art.subject_ref(subject), left_w - 2 * S(12), self.font_sm, 4)
+        id_render_lines = spacers + id_render_lines
         mech_render_lines = wrap(mech_lines, mid_w - 2 * S(12) - S(10))
         lore_lines = [(line, lore_color, lore_font)
                       for line in self._ui_text_lines(lore_text, lore_font, right_w - 2 * S(12) - S(12))]
@@ -7708,6 +7756,8 @@ class RenderMixin:
         self._lore_identity_scroll = self._ui_draw_scroll_lines(
             id_render_lines, self.font_sm, FP.BODY_TEXT, id_body,
             getattr(self, '_lore_identity_scroll', 0), line_gap=4)
+        self._draw_lore_plate(plate, id_body, self._lore_identity_scroll,
+                              len(spacers), self.font_sm.get_height() + S(4))
         self._lore_mech_scroll = self._ui_draw_scroll_lines(
             mech_render_lines, self.font_sm, FP.BODY_TEXT, mech_body,
             getattr(self, '_lore_mech_scroll', 0), line_gap=4)
@@ -8017,6 +8067,13 @@ class RenderMixin:
             scroll_attr='_shop_scroll',
         )
 
+    @staticmethod
+    def _encyclopedia_weapon_type(entry) -> str:
+        """A weapon's kind for the encyclopedia ('Sword'); the data calls it
+        'class' (it read 'weapon_class', which no weapon has: every entry said '?')."""
+        kind = entry.get('weapon_class') or entry.get('class') or ''
+        return proper_name(str(kind).replace('_', ' ')) if kind else 'Weapon'
+
     def _encyclopedia_entry_brief(self, category, entry):
         if not entry:
             return ''
@@ -8025,7 +8082,7 @@ class RenderMixin:
             min_lvl = entry.get('min_level', '?')
             return f"HP {hp} / min level {min_lvl}"
         if category == 'weapon':
-            return f"{entry.get('weapon_class', '?')} / {entry.get('base_damage', '?')} damage"
+            return f"{self._encyclopedia_weapon_type(entry)} / {entry.get('base_damage', '?')} damage"
         if category == 'armor':
             return f"{entry.get('slot', 'armor')} / AC {entry.get('ac_bonus', '?')}"
         if category == 'accessory':
@@ -8065,14 +8122,16 @@ class RenderMixin:
                     line += f" -> {atk.get('effect').replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
                 lines.append((line, FP.BODY_TEXT, self.font_sm))
         elif category == 'weapon':
-            damage_types = ', '.join(entry.get('damage_types', ['physical']))
+            damage_types = ', '.join(_cap(t) for t in entry.get('damage_types', ['physical']))
             lines += [
-                (f"Type: {entry.get('weapon_class', '?')}   Tier: {entry.get('tier', '?')}",
-                 FP.BODY_TEXT, self.font_sm),
-                (f"Damage: {entry.get('base_damage', '?')}   Types: {damage_types}",
-                 FP.BODY_TEXT, self.font_sm),
+                # one fact a line: the article pane is narrow at 1280x720 and a
+                # pair per line wrapped mid-pair ("Tier:" / "5")
+                (f"Type: {self._encyclopedia_weapon_type(entry)}", FP.BODY_TEXT, self.font_sm),
+                (f"Tier: {entry.get('tier', '?')}", FP.BODY_TEXT, self.font_sm),
+                (f"Damage: {entry.get('base_damage', '?')}", FP.BODY_TEXT, self.font_sm),
+                (f"Damage types: {damage_types}", FP.BODY_TEXT, self.font_sm),
             ]
-            if entry.get('two_handed'):
+            if entry.get('two_handed') or entry.get('twoHanded'):
                 lines.append(("Two-handed", FP.BODY_TEXT, self.font_sm))
         elif category == 'armor':
             lines.append((f"AC bonus: +{entry.get('ac_bonus', '?')}   Tier: {entry.get('tier', '?')}",
@@ -8105,6 +8164,7 @@ class RenderMixin:
         lore = entry.get('lore', '')
         if lore:
             lines += [
+                ("", FP.BODY_TEXT, get_font('body', 10)),   # space above the heading, not only below
                 ("Lore", FP.GOLD_BRIGHT, self.font_sm),
                 (lore, FP.LORE_BLUE_BODY, get_font('body', 17)),
             ]
@@ -8245,11 +8305,20 @@ class RenderMixin:
             for line in self._ui_text_lines(text, fnt, article_body.w - S(14)):
                 render_lines.append((line, color, fnt))
             if color in (FP.GOLD_PALE, FP.GOLD_BRIGHT):
-                render_lines.append(("", color, fnt))
+                # a small spacer under a heading (it was a blank line in the
+                # heading's own 24 px font: a two-line gap under the title)
+                render_lines.append(("", color, get_font('body', 10)))
+        # The creature's or item's picture heads the article; the text flows
+        # below it and the picture scrolls away with it.
+        plate, spacers = self._lore_plate_lines(
+            lore_art.encyclopedia_ref(category, entry), article_body.w, self.font_sm, 5)
+        render_lines = spacers + render_lines
         self._encyclopedia_article_scroll = self._ui_draw_scroll_lines(
             render_lines, self.font_sm, FP.BODY_TEXT, article_body,
             getattr(self, '_encyclopedia_article_scroll', 0),
             line_gap=5)
+        self._draw_lore_plate(plate, article_body, self._encyclopedia_article_scroll,
+                              len(spacers), self.font_sm.get_height() + S(5))
 
         if getattr(self, '_encyclopedia_entry', None) is not None:
             footer = "Up/Down/PgUp/PgDn: scroll article   ESC: list"

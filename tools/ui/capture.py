@@ -1223,11 +1223,25 @@ def _(g):
     press(g, pygame.K_RIGHT)
 
 
-@scene('menu_encyclopedia_entry', 'Menus', 'B, Enter into a category, Enter on an entry.',
+@scene('menu_encyclopedia_entry', 'Menus',
+       'B, Enter into the Bestiary, Enter on an entry (creatures met on the way down).',
        expect='encyclopedia')
 def _(g):
+    # The creatures a player has met by turn 412 (combat adds each kind it
+    # sees to known_monster_ids); without them the Bestiary is empty.
+    g.player.known_monster_ids.update(('giant_rat', 'goblin', 'jackal', 'kobold'))
     press(g, pygame.K_b)
     press(g, pygame.K_RETURN)
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_encyclopedia_weapon', 'Menus',
+       'B, b: the Armory, Enter on an entry (weapons the player has learned).',
+       expect='encyclopedia')
+def _(g):
+    g.player.known_item_ids.update(('excalibur', 'venomfang'))
+    press(g, pygame.K_b)
+    press(g, pygame.K_b, 'b')
     press(g, pygame.K_RETURN)
 
 
@@ -1276,6 +1290,16 @@ def _(g):
     g._lore_subject = next(i for i in g.player.inventory if hasattr(i, 'id_level'))
     g.state = _S().STATE_LORE
     press(g, pygame.K_TAB)
+
+
+@scene('lore_item_unidentified', 'Lore',
+       'X / lore on an item not yet identified: its dossier (the art is the item).',
+       expect='lore')
+def _(g):
+    g._lore_subject = next(i for i in g.player.inventory
+                           if hasattr(i, 'id_level') and not getattr(i, 'identified', True)
+                           and getattr(i, 'id_level', 0) == 0)
+    g.state = _S().STATE_LORE
 
 
 @scene('lore_corpse', 'Lore', 'Identify a corpse: bestiary dossier.', expect='lore', key=True)
