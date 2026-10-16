@@ -1055,7 +1055,7 @@ class RenderMixin:
         pack = self._charsheet_pack_entries()
         pack_total = len(self._charsheet_pack_entries(filtered=False))
         count_y = y
-        text(f"{active_filter.title()}: {len(pack)}/{pack_total} shown", f16b,
+        text(self._charsheet_count_label(active_filter, len(pack), pack_total), f16b,
              FP.SUCCESS_TEXT, body.x, count_y)
         y += lh + S(8)
         isz = self.MENU_ICON_SIZE
@@ -1367,7 +1367,7 @@ class RenderMixin:
         pack_total = len(self._charsheet_pack_entries(filtered=False))
         filter_label = active_filter.title()
         count_y = y
-        text(f"{filter_label}: {len(pack)}/{pack_total} shown", font_bold, FP.SUCCESS_TEXT, body.x, count_y)
+        text(self._charsheet_count_label(active_filter, len(pack), pack_total), font_bold, FP.SUCCESS_TEXT, body.x, count_y)
         y += S(26)
         pack_row_h = S(57)
         visible_rows = max(1, (body.bottom - y) // pack_row_h)
@@ -8174,6 +8174,17 @@ class RenderMixin:
             border_color=FP.GOLD,
             scroll_attr='_shop_scroll',
         )
+
+    def _charsheet_count_label(self, active_filter: str, shown: int, total: int) -> str:
+        """The pack count line: how many things you carry, not a limit.
+
+        It read "All: 26/26 shown", which looked like a 26-item cap; the only
+        carry limit is weight (Wt, top right). "26 items in pack" with every
+        filter, "Gear: 8 of 26 items" when a filter hides some."""
+        noun = "item" if total == 1 else "items"
+        if active_filter == 'all' or shown == total:
+            return f"{total} {noun} in pack"
+        return f"{active_filter.title()}: {shown} of {total} {noun}"
 
     @staticmethod
     def _encyclopedia_weapon_type(entry) -> str:
