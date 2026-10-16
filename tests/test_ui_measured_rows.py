@@ -314,7 +314,11 @@ def test_quiz_modal_fits_within_panel_bounds_at_1280_720():
     import layout as layout_mod
     assert L['panel_rect'].height <= layout_mod.WINDOW_H - 40
     assert L['panel_rect'].x >= 0
-    assert L['panel_rect'].right <= layout_mod.GAME_W
+    # Width stays inside the play-area budget (left of the right rail, as
+    # always); the panel itself is centred on the WINDOW (SCALE_PLAN.md 3).
+    assert L['panel_rect'].width <= layout_mod.GAME_W - 40
+    assert L['panel_rect'].right <= layout_mod.WINDOW_W
+    assert abs(L['panel_rect'].centerx - layout_mod.WINDOW_W / 2) <= 1
 
 
 # ---------------------------------------------------------------------------

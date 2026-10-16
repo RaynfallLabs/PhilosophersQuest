@@ -31,7 +31,7 @@ import pygame
 
 # FANTASY: get_font is the only fantasy_ui name still consumed by main.py;
 # every other UI helper is used exclusively from game_render.RenderMixin.
-from fantasy_ui import get_font
+from fantasy_ui import ScaledFont
 
 from pet_system import Pet, FenrirPet
 from quirk_system import QuirkSystem
@@ -144,6 +144,19 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin):
+    # FANTASY: Grimoire font set -- larger for readability. Read through the
+    # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
+    # a font of the old size behind.
+    font_sm = ScaledFont('body',    20)
+    font_md = ScaledFont('body',    26)
+    font_lg = ScaledFont('heading', 32)
+    font_xl = ScaledFont('title',   42, bold=True)
+
+    # After a resize the quiz clock is given at most one nominal frame for
+    # this many updates: a window drag (Windows blocks the loop while an edge
+    # is dragged) or a scale change must never cost the player quiz seconds.
+    RESIZE_GRACE_FRAMES = 2
+
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
                  secret_build: dict | None = None):
@@ -155,11 +168,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             player_name = string.capwords(player_name)
         self.player_name   = player_name
         self.secret_build  = secret_build   # dict of stat overrides, or None
-        # FANTASY: Grimoire font set -- larger for readability
-        self.font_sm   = get_font('body',    20)
-        self.font_md   = get_font('body',    26)
-        self.font_lg   = get_font('heading', 32)
-        self.font_xl   = get_font('title',   42, bold=True)
+        self._resize_grace = 0
 
         _snd.init()   # initialise procedural sound synthesis (best-effort)
         self.quiz_engine        = QuizEngine()
@@ -193,7 +202,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.cook_menu_items: list       = []
         self.cook_compound_recipes: list = []   # available multi-ingredient recipes
         self._cook_tab: int              = 0
-        self._menu_sprite_cache: dict    = {}   # item_id -> Surface|None at MENU_ICON_SIZE
+        self._menu_sprite_cache: dict    = {}   # (item_id, size) -> Surface|None
         self._examine_tab: int           = 0
         self._eat_tab: int               = 0
         self._scroll_tab: int            = 0
@@ -2466,8 +2475,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def on_resize(self, w: int, h: int):
-        """Called after window is resized -- syncs renderer and sidebar."""
+        """Called after window is resized -- syncs renderer and sidebar.
+
+        ``layout.update`` also sets the UI scale for the new size; if it
+        changed, the fonts and the UI art kit are rebuilt right there (the
+        scale listeners), never on a later draw. Menu icons of the old size
+        are dropped. The quiz clock gets a short grace (RESIZE_GRACE_FRAMES)."""
         layout.update(w, h)
+        self._resize_grace = self.RESIZE_GRACE_FRAMES
+        icon = self.MENU_ICON_SIZE
+        cache = getattr(self, '_menu_sprite_cache', None)
+        if cache:
+            for k in [k for k in cache if not (isinstance(k, tuple) and k[1] == icon)]:
+                del cache[k]
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(
             self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H
@@ -6874,15 +6894,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     _MOVE_HOLD_INTERVAL = 0.07  # seconds between repeated moves once repeat is active
 
     def update(self, dt: float):
+        # A resize in this frame or the one before: the quiz clock advances
+        # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
+        quiz_dt = dt
+        grace = getattr(self, '_resize_grace', 0)
+        if grace > 0:
+            self._resize_grace = grace - 1
+            quiz_dt = min(dt, 1.0 / FPS)
         if (self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None)
                 and not self.player.is_dead()):
             self._open_boon_menu()
         if self.state == STATE_QUIZ:
             if hasattr(self, '_necro_qs') and self._necro_qs is not None:
-                self._necro_update(dt)
+                self._necro_update(quiz_dt)
             else:
                 _left_before = getattr(self.quiz_engine, 'time_remaining', 0) or 0
-                self.quiz_engine.update(dt)
+                self.quiz_engine.update(quiz_dt)
                 # The last three seconds of the clock tick; running out sounds.
                 try:
                     _qe = self.quiz_engine
@@ -7992,6 +8019,15 @@ def main():
                 except Exception:
                     _recover_in_loop(
                         game, f"handle_event (event type {getattr(event, 'type', '?')})")
+            # Backstop: if the window's real size differs from the layout
+            # (maximise, fullscreen, a display change, any missed event),
+            # resize now. Two tuples compared: free.
+            try:
+                _sz = screen.get_size()
+                if _sz != (layout.WINDOW_W, layout.WINDOW_H):
+                    game.on_resize(*_sz)
+            except Exception:
+                _recover_in_loop(game, "resize sync")
             try:
                 game.update(dt)
             except Exception:

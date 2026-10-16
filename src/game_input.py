@@ -80,6 +80,14 @@ class InputMixin:
         if event.type == pygame.WINDOWRESIZED:
             self.on_resize(event.x, event.y)
             return True
+        if event.type == pygame.WINDOWSIZECHANGED:
+            # Fires for every size change (API calls, maximise, fullscreen),
+            # usually alongside WINDOWRESIZED: act only on a size the layout
+            # does not already have.
+            import layout as _layout
+            if (event.x, event.y) != (_layout.WINDOW_W, _layout.WINDOW_H):
+                self.on_resize(event.x, event.y)
+            return True
         if event.type != pygame.KEYDOWN:
             return True
 
@@ -87,6 +95,11 @@ class InputMixin:
 
         if key == pygame.K_F11:
             pygame.display.toggle_fullscreen()
+            # Whatever events the toggle does or does not send, lay out for
+            # the size the window now really has (FOUNDATION_REVIEW 3.3).
+            surf = pygame.display.get_surface()
+            if surf is not None:
+                self.on_resize(*surf.get_size())
             return True
         if key == pygame.K_F10:
             _on = _snd.toggle()

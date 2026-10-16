@@ -15,7 +15,8 @@ import sys
 
 import pygame
 
-from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
+from ui_scale import px as S
+from fantasy_ui import (FP, ScaledFont, draw_panel, draw_dark_panel,
                         draw_header_bar, draw_filigree_bar, draw_shadow_text,
                         draw_overlay, draw_rune_circle, draw_candle_glow,
                         centered_text)
@@ -369,6 +370,15 @@ class WelcomeScreen:
         ("AI",        330, 'ai',         "W"),
     ]
 
+    # FANTASY: grimoire theme fonts, read through the UI scale on every use
+    # (a resize across a scale step re-sizes them; SCALE_PLAN.md).
+    font_xl   = ScaledFont('title',   52, bold=True)
+    font_lg   = ScaledFont('heading', 32)
+    font_md   = ScaledFont('body',    20)
+    font_sm   = ScaledFont('body',    15)
+    font_icon = ScaledFont('symbol',  26)
+    font_tiny = ScaledFont('body',    12)
+
     def __init__(self, screen: pygame.Surface, version: str, notice: str | None = None):
         self.screen   = screen
         self.version  = version
@@ -376,13 +386,6 @@ class WelcomeScreen:
         self.W, self.H = screen.get_size()
         self.cx = self.W // 2
         self.cy = self.H // 2
-        # FANTASY: Replace consolas fonts with grimoire theme fonts
-        self.font_xl   = get_font('title',   52, bold=True)
-        self.font_lg   = get_font('heading', 32)
-        self.font_md   = get_font('body',    20)
-        self.font_sm   = get_font('body',    15)
-        self.font_icon = get_font('symbol',  26)
-        self.font_tiny = get_font('body',    12)
         self.name_buf    = ''
         self.cursor_on   = True
         self.cursor_timer = 0.0
@@ -451,7 +454,13 @@ class WelcomeScreen:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.WINDOWRESIZED:
+                if event.type in (pygame.WINDOWRESIZED, pygame.WINDOWSIZECHANGED):
+                    if (event.x, event.y) == (self.W, self.H):
+                        continue
+                    # The UI scale follows the window here too (layout is
+                    # the one place it is set), so the game starts with it.
+                    import layout
+                    layout.update(event.x, event.y)
                     self.W, self.H = event.x, event.y
                     self.cx = self.W // 2
                     self.cy = self.H // 2
@@ -539,19 +548,19 @@ class WelcomeScreen:
     def _draw_god_prompt(self):
         """The 'Did you mean Dad?' easter-egg confirm — now in grimoire chrome."""
         draw_overlay(self.screen, alpha=200)
-        bw, bh = 420, 150
+        bw, bh = S(420), S(150)
         bx = (self.W - bw) // 2
         by = (self.H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, bw, 36),
+        draw_header_bar(self.screen, (bx, by, bw, S(36)),
                         text="A Question of Address",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT,
                         frame=((bx, by, bw, bh), FP.GOLD))
         msg = self.font_lg.render("Did you mean, 'Dad'?",
                                   True, FP.PARCHMENT_LIGHT)
-        self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 56))
+        self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + S(56)))
         hint = self.font_md.render("(Y)es   /   (N)o", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 32))
+        self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - S(32)))
 
     def _draw_radial_glow(self, cx, cy):
         # Static for a given window size + centre: built once and kept (it
@@ -593,7 +602,7 @@ class WelcomeScreen:
             # Mini grimoire-panel as the icon backdrop. The double-border +
             # diamond accents match the rest of the game's modal chrome at
             # icon scale.
-            box_w, box_h = 68, 58
+            box_w, box_h = S(68), S(58)
             bx, by = ix - box_w // 2, iy - box_h // 2
             # Translucent midnight fill
             inner = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
@@ -616,14 +625,14 @@ class WelcomeScreen:
 
             # Domain symbol (large glyph) — gold-bright so the eye finds it
             sym_surf = self.font_icon.render(symbol, True, FP.GOLD_BRIGHT)
-            self.screen.blit(sym_surf, (ix - sym_surf.get_width() // 2, iy - 18))
+            self.screen.blit(sym_surf, (ix - sym_surf.get_width() // 2, iy - S(18)))
 
             # Domain-specific mini pixel art shape (drawn in subject color)
             self._draw_domain_detail(ix, iy, label, color, t)
 
             # Label below box — pale gold so it sits as caption, not headline
             lbl = self.font_tiny.render(label, True, FP.GOLD_PALE)
-            self.screen.blit(lbl, (ix - lbl.get_width() // 2, by + box_h + 3))
+            self.screen.blit(lbl, (ix - lbl.get_width() // 2, by + box_h + S(3)))
 
     def _draw_domain_detail(self, cx, cy, label, color, t):
         """Draw a small iconic shape for each domain beneath the symbol."""
@@ -799,38 +808,39 @@ class WelcomeScreen:
 
     def _draw_title_banner(self, cx):
         # FANTASY: Illuminated manuscript title -- gold text on midnight panel
-        bw, bh = 640, 106
-        bx, by = cx - bw // 2, 22
+        bw, bh = S(640), S(106)
+        bx, by = cx - bw // 2, S(22)
         draw_panel(self.screen, (bx, by, bw, bh), bg=False)
         # FANTASY: Decorative filigree under title
-        draw_filigree_bar(self.screen, bx + 20, by + bh - 12, bw - 40, FP.GOLD_DARK)
+        draw_filigree_bar(self.screen, bx + S(20), by + bh - S(12), bw - 2 * S(20), FP.GOLD_DARK)
 
         for text, y, font, is_main in [
-            (self._TITLE_LINE1, by + 12, self.font_lg, False),
-            (self._TITLE_LINE2, by + 48, self.font_xl, True),
+            (self._TITLE_LINE1, by + S(12), self.font_lg, False),
+            (self._TITLE_LINE2, by + S(48), self.font_xl, True),
         ]:
             col = FP.GOLD if not is_main else FP.GOLD_BRIGHT
             centered_text(self.screen, font, text, col, y, shadow=True)
 
     def _draw_name_input(self, cx, cy):
         # FANTASY: Parchment dialog box for name entry
-        box_w, box_h = 500, 96
+        box_w, box_h = S(500), S(96)
         bx = cx - box_w // 2
         by = cy + int(min(cy, self.H - cy) * 0.60)
         draw_panel(self.screen, (bx, by, box_w, box_h), border_color=FP.GOLD)
-        draw_header_bar(self.screen, (bx, by, box_w, 32),
+        draw_header_bar(self.screen, (bx, by, box_w, S(32)),
                         text=self._PROMPT, font=self.font_sm, text_color=FP.GOLD_PALE,
                         frame=((bx, by, box_w, box_h), FP.GOLD, 'parchment'))
         # FANTASY: Input field
-        field_y = by + 38
-        pygame.draw.rect(self.screen, FP.MIDNIGHT, (bx + 14, field_y, box_w - 28, 34))
-        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx + 14, field_y, box_w - 28, 34), 1)
+        field_y = by + S(38)
+        field_h = S(34)
+        pygame.draw.rect(self.screen, FP.MIDNIGHT, (bx + S(14), field_y, box_w - 2 * S(14), field_h))
+        pygame.draw.rect(self.screen, FP.GOLD_DARK, (bx + S(14), field_y, box_w - 2 * S(14), field_h), 1)
         display = self.name_buf + ('|' if self.cursor_on else ' ')
         draw_shadow_text(self.screen, self.font_lg, display, FP.PARCHMENT_LIGHT,
-                         (bx + 20, field_y + (34 - self.font_lg.get_height()) // 2))
+                         (bx + S(20), field_y + (field_h - self.font_lg.get_height()) // 2))
         if self.name_buf.strip().lower() in SECRET_BUILDS:
             badge = self.font_sm.render("[*] SECRET BUILD ACTIVE!", True, FP.GOLD_BRIGHT)
-            self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + 8))
+            self.screen.blit(badge, (cx - badge.get_width() // 2, by + box_h + S(8)))
 
     def _draw_footer(self, cx):
         has_save = getattr(self, '_has_save', False)
@@ -839,22 +849,22 @@ class WelcomeScreen:
         notice = getattr(self, '_notice', None)
         if notice:
             note = self.font_sm.render(notice, True, FP.GOLD_BRIGHT)
-            self.screen.blit(note, (cx - note.get_width() // 2, self.H - 78))
+            self.screen.blit(note, (cx - note.get_width() // 2, self.H - S(78)))
         text = "[ ENTER ] begin your quest     [ F2 ] leaderboard     [ F3 ] study mode     [ ESC ] quit"
         hint = self.font_tiny.render(text, True, FP.HINT_TEXT)
-        self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - 28))
+        self.screen.blit(hint, (cx - hint.get_width() // 2, self.H - S(28)))
         # Version number — bottom-right corner (FP.FADED_TEXT keeps it
         # legible without competing with the title)
         ver = self.font_tiny.render(f"v{self.version}", True, FP.FADED_TEXT)
-        self.screen.blit(ver, (self.W - ver.get_width() - 10, self.H - 20))
+        self.screen.blit(ver, (self.W - ver.get_width() - S(10), self.H - S(20)))
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
         if flash > 0.0:
             del_msg = self.font_sm.render("[X] Save deleted -- press ENTER to start fresh", True, FP.DANGER_TEXT_LIGHT)
-            self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - 52))
+            self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - S(52)))
         elif has_save:
             save_hint = self.font_sm.render("[S] Saved journey found -- ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
-            self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - 52))
+            self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - S(52)))
 
     def _draw_leaderboard(self):
         """Right-side panel showing Top 10 runs."""
@@ -867,14 +877,14 @@ class WelcomeScreen:
             return
 
         W, H = self.W, self.H
-        bw  = 390
-        bx  = W - bw - 18
+        bw  = S(390)
+        bx  = W - bw - S(18)
         # Header + rows + divider + footer hint
-        row_h    = 22
-        header_h = 36
+        row_h    = S(22)
+        header_h = S(36)
         n        = len(entries)
-        bh       = header_h + 6 + n * row_h + 10 + 26
-        by       = max(130, H // 2 - bh // 2)
+        bh       = header_h + S(6) + n * row_h + S(10) + S(26)
+        by       = max(S(130), H // 2 - bh // 2)
 
         # Grimoire panel chrome (matches every other modal in the game)
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
@@ -884,12 +894,12 @@ class WelcomeScreen:
                         frame=((bx, by, bw, bh), FP.GOLD))
 
         # Column header line
-        y = by + header_h + 4
+        y = by + header_h + S(4)
         col_hdr = self.font_tiny.render("     NAME             LVL      SCORE   GR", True, FP.GOLD_PALE)
-        self.screen.blit(col_hdr, (bx + 8, y))
-        y += 14
-        pygame.draw.line(self.screen, FP.GOLD_DARK, (bx + 8, y), (bx + bw - 8, y))
-        y += 4
+        self.screen.blit(col_hdr, (bx + S(8), y))
+        y += S(14)
+        pygame.draw.line(self.screen, FP.GOLD_DARK, (bx + S(8), y), (bx + bw - S(8), y))
+        y += S(4)
 
         # Rows
         for i, e in enumerate(entries):
@@ -902,35 +912,35 @@ class WelcomeScreen:
 
             # rank
             rank_s = self.font_tiny.render(f"{i+1:>2}.", True, FP.FADED_TEXT)
-            self.screen.blit(rank_s, (bx + 8, y))
+            self.screen.blit(rank_s, (bx + S(8), y))
             # crown
             if victory:
                 crown_s = self.font_tiny.render("[V]", True, FP.GOLD_BRIGHT)
-                self.screen.blit(crown_s, (bx + 30, y))
+                self.screen.blit(crown_s, (bx + S(30), y))
             # name
             name_s = self.font_tiny.render(f"{name:<11}", True, col)
-            self.screen.blit(name_s, (bx + 54, y))
+            self.screen.blit(name_s, (bx + S(54), y))
             # level
             level_s = self.font_tiny.render(f"L{level:<3}", True, FP.FADED_TEXT)
-            self.screen.blit(level_s, (bx + 140, y))
+            self.screen.blit(level_s, (bx + S(140), y))
             # score (right-aligned)
             score_s = self.font_tiny.render(f"{score:>9,}", True, col)
-            self.screen.blit(score_s, (bx + 183, y))
+            self.screen.blit(score_s, (bx + S(183), y))
             # grade
             grade_s = self.font_tiny.render(f"{grade:>2}", True, FP.GOLD_PALE)
-            self.screen.blit(grade_s, (bx + 285, y))
+            self.screen.blit(grade_s, (bx + S(285), y))
 
             y += row_h
             # Mid divider after top 5
             if i == 4:
                 pygame.draw.line(self.screen, FP.MIDNIGHT_MID,
-                                 (bx + 8, y - row_h // 2), (bx + bw - 8, y - row_h // 2))
+                                 (bx + S(8), y - row_h // 2), (bx + bw - S(8), y - row_h // 2))
 
         # Footer hint
         pygame.draw.line(self.screen, FP.GOLD_DARK,
-                         (bx + 8, y + 2), (bx + bw - 8, y + 2))
+                         (bx + S(8), y + S(2)), (bx + bw - S(8), y + S(2)))
         hint = self.font_tiny.render("[ F2 ]  View All-Time Top 100", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + bw // 2 - hint.get_width() // 2, y + 6))
+        self.screen.blit(hint, (bx + bw // 2 - hint.get_width() // 2, y + S(6)))
 
     def _draw_alltime(self):
         """Full-screen overlay showing all-time top 100 scores."""
@@ -944,43 +954,43 @@ class WelcomeScreen:
 
         # Dim overlay + grimoire panel chrome
         draw_overlay(self.screen, alpha=220)
-        bw, bh = min(1380, W - 40), min(830, H - 40)
+        bw, bh = min(S(1380), W - S(40)), min(S(830), H - S(40))
         bx = (W - bw) // 2
         by = (H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        header_h = 44
+        header_h = S(44)
         draw_header_bar(self.screen, (bx, by, bw, header_h),
                         text="ALL-TIME HIGH SCORES",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT,
                         accent=FP.GOLD, frame=((bx, by, bw, bh), FP.GOLD))
 
         # Footer
-        footer_h = 28
+        footer_h = S(28)
         footer_y  = by + bh - footer_h
         pygame.draw.line(self.screen, FP.GOLD_DARK,
-                         (bx + 16, footer_y - 4), (bx + bw - 16, footer_y - 4))
+                         (bx + S(16), footer_y - S(4)), (bx + bw - S(16), footer_y - S(4)))
         close_hint = self.font_tiny.render("[ Any Key ]  Close", True, FP.HINT_TEXT)
         self.screen.blit(close_hint, (bx + bw // 2 - close_hint.get_width() // 2,
                                        footer_y + (footer_h - close_hint.get_height()) // 2))
 
         # Content area -- two columns
-        content_top = by + header_h + 6
-        content_bot = footer_y - 8
+        content_top = by + header_h + S(6)
+        content_bot = footer_y - S(8)
         content_h   = content_bot - content_top
-        row_h       = 17
-        col_w       = bw // 2 - 16
+        row_h       = S(17)
+        col_w       = bw // 2 - S(16)
 
         # Column header
         col_hdr_txt = "  #  NAME              LVL       SCORE  GR  DATE"
-        for col_x in (bx + 12, bx + bw // 2 + 8):
+        for col_x in (bx + S(12), bx + bw // 2 + S(8)):
             hdr_s = self.font_tiny.render(col_hdr_txt, True, FP.GOLD_PALE)
             self.screen.blit(hdr_s, (col_x, content_top))
             pygame.draw.line(self.screen, FP.GOLD_DARK,
-                             (col_x, content_top + 16),
-                             (col_x + col_w, content_top + 16))
+                             (col_x, content_top + S(16)),
+                             (col_x + col_w, content_top + S(16)))
 
-        max_rows = (content_h - 22) // row_h
-        row_top  = content_top + 22
+        max_rows = (content_h - S(22)) // row_h
+        row_top  = content_top + S(22)
 
         for i, e in enumerate(entries):
             col_idx = 0 if i < max_rows else 1
@@ -988,7 +998,7 @@ class WelcomeScreen:
             if row_idx >= max_rows:
                 break
 
-            col_x = bx + 12 if col_idx == 0 else bx + bw // 2 + 8
+            col_x = bx + S(12) if col_idx == 0 else bx + bw // 2 + S(8)
             ry    = row_top + row_idx * row_h
 
             victory = e.get('victory', False)
@@ -1006,16 +1016,16 @@ class WelcomeScreen:
             self.screen.blit(rank_s, (col_x, ry))
             # name
             name_s = self.font_tiny.render(f"{name:<13}", True, text_col)
-            self.screen.blit(name_s, (col_x + 34, ry))
+            self.screen.blit(name_s, (col_x + S(34), ry))
             # level
             level_s = self.font_tiny.render(f"L{level:<3}", True, FP.FADED_TEXT)
-            self.screen.blit(level_s, (col_x + 128, ry))
+            self.screen.blit(level_s, (col_x + S(128), ry))
             # score
             score_s = self.font_tiny.render(f"{score:>9,}", True, text_col)
-            self.screen.blit(score_s, (col_x + 165, ry))
+            self.screen.blit(score_s, (col_x + S(165), ry))
             # grade
             grade_s = self.font_tiny.render(f"{grade:>2}", True, FP.GOLD_PALE)
-            self.screen.blit(grade_s, (col_x + 240, ry))
+            self.screen.blit(grade_s, (col_x + S(240), ry))
             # date
             date_s = self.font_tiny.render(date[-5:] if len(date) >= 5 else date, True, FP.FADED_TEXT)
-            self.screen.blit(date_s, (col_x + 262, ry))
+            self.screen.blit(date_s, (col_x + S(262), ry))

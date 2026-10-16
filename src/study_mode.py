@@ -9,7 +9,8 @@ import sys
 
 import pygame
 
-from fantasy_ui import FP, get_font, centered_text, draw_divider
+from fantasy_ui import FP, ScaledFont, centered_text, draw_divider
+from ui_scale import px as S
 
 
 class StudyMode:
@@ -34,12 +35,14 @@ class StudyMode:
         ]
     ]
 
+    # Fonts follow the UI scale (read on use; SCALE_PLAN.md).
+    font_lg = ScaledFont('heading', 32)
+    font_md = ScaledFont('body', 22)
+    font_sm = ScaledFont('body', 18)
+    font_tiny = ScaledFont('body', 14)
+
     def __init__(self, screen):
         self.screen = screen
-        self.font_lg = get_font('heading', 32)
-        self.font_md = get_font('body', 22)
-        self.font_sm = get_font('body', 18)
-        self.font_tiny = get_font('body', 14)
         self._questions = []
         self._idx = 0
         self._phase = 'subject'  # subject -> tier -> quiz -> result
@@ -64,7 +67,12 @@ class StudyMode:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.WINDOWRESIZED:
+                if event.type in (pygame.WINDOWRESIZED, pygame.WINDOWSIZECHANGED):
+                    # The window is read every frame; only the UI scale
+                    # needs setting (layout is where it lives).
+                    import layout
+                    if (event.x, event.y) != (layout.WINDOW_W, layout.WINDOW_H):
+                        layout.update(event.x, event.y)
                     continue
                 if event.type != pygame.KEYDOWN:
                     continue
@@ -159,7 +167,7 @@ class StudyMode:
     def _draw_frame(self, W, H):
         """Paint the full-viewport grimoire panel that frames every phase."""
         from fantasy_ui import draw_dark_panel, draw_header_bar, draw_divider
-        margin = 24
+        margin = S(24)
         rect = (margin, margin, W - 2 * margin, H - 2 * margin)
         draw_dark_panel(self.screen, rect, border_color=FP.GOLD)
         # Header bar with the current phase's title baked in
@@ -170,12 +178,12 @@ class StudyMode:
             'result':  'STUDY: RESULT',
         }
         title = titles.get(self._phase, 'STUDY MODE')
-        draw_header_bar(self.screen, (margin, margin, W - 2 * margin, 44),
+        draw_header_bar(self.screen, (margin, margin, W - 2 * margin, S(44)),
                         text=title, font=self.font_lg,
                         text_color=FP.GOLD_BRIGHT, accent=FP.GOLD,
                         frame=(rect, FP.GOLD))
-        draw_divider(self.screen, margin + 20, margin + 50,
-                     W - 2 * margin - 40)
+        draw_divider(self.screen, margin + S(20), margin + S(50),
+                     W - 2 * margin - 2 * S(20))
 
     def _draw_score(self, W, text):
         """The running score, right-aligned INSIDE the header strip and
@@ -184,21 +192,21 @@ class StudyMode:
         border lines ran through the middle of it: GROUNDWORK_REVIEW 2.)
         Right edge kept clear of the strip's side diamond (x + w - 15)."""
         from fantasy_ui import draw_shadow_text
-        margin, header_h = 24, 44           # the same strip _draw_frame draws
+        margin, header_h = S(24), S(44)     # the same strip _draw_frame draws
         tw, th = self.font_sm.size(text)
-        x = W - margin - 30 - tw
+        x = W - margin - S(30) - tw
         y = margin + (header_h - th) // 2
         draw_shadow_text(self.screen, self.font_sm, text, FP.GOLD_PALE, (x, y))
 
     def _draw_subject_picker(self, W, H):
         # Panel header is painted by _draw_frame; just the sub-line + list here.
-        centered_text(self.screen, self.font_sm, "Choose a subject to study", FP.BODY_TEXT, 100)
+        centered_text(self.screen, self.font_sm, "Choose a subject to study", FP.BODY_TEXT, S(100))
 
-        y = 140
+        y = S(140)
         for i, (sid, name, color) in enumerate(self._SUBJECTS):
             sel = i == self._selected
             bg = FP.MIDNIGHT_MID if sel else FP.MIDNIGHT
-            rect = pygame.Rect(W // 2 - 200, y, 400, 32)
+            rect = pygame.Rect(W // 2 - S(200), y, S(400), S(32))
             pygame.draw.rect(self.screen, bg, rect, border_radius=4)
             if sel:
                 pygame.draw.rect(self.screen, color, rect, 2, border_radius=4)
@@ -207,34 +215,34 @@ class StudyMode:
             # and let the BORDER carry the subject signal.
             text_col = FP.GOLD_BRIGHT if sel else FP.BODY_TEXT
             surf = self.font_md.render(name, True, text_col)
-            self.screen.blit(surf, (rect.x + 20, rect.y + 4))
-            y += 38
+            self.screen.blit(surf, (rect.x + S(20), rect.y + S(4)))
+            y += S(38)
 
         hint = self.font_tiny.render("Up/Down to select, ENTER to choose, ESC to go back", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - 30))
+        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - S(30)))
 
     def _draw_tier_picker(self, W, H):
         subj_name = next(n for s, n, _ in self._SUBJECTS if s == self._subject)
         # Panel header shows phase title; we add subject sub-line.
-        centered_text(self.screen, self.font_md, subj_name.upper(), FP.GOLD_PALE, 90)
-        centered_text(self.screen, self.font_sm, "Choose difficulty tier", FP.BODY_TEXT, 124)
+        centered_text(self.screen, self.font_md, subj_name.upper(), FP.GOLD_PALE, S(90))
+        centered_text(self.screen, self.font_sm, "Choose difficulty tier", FP.BODY_TEXT, S(124))
 
         tier_labels = ["Tier 1 — Easy", "Tier 2 — Medium", "Tier 3 — Hard",
                        "Tier 4 — Expert", "Tier 5 — Master"]
-        y = 150
+        y = S(150)
         for i, label in enumerate(tier_labels):
             sel = i == self._selected
             bg = FP.MIDNIGHT_MID if sel else FP.MIDNIGHT
-            rect = pygame.Rect(W // 2 - 180, y, 360, 36)
+            rect = pygame.Rect(W // 2 - S(180), y, S(360), S(36))
             pygame.draw.rect(self.screen, bg, rect, border_radius=4)
             if sel:
                 pygame.draw.rect(self.screen, FP.GOLD, rect, 2, border_radius=4)
             surf = self.font_md.render(label, True, FP.GOLD_BRIGHT if sel else FP.BODY_TEXT)
-            self.screen.blit(surf, (rect.x + 20, rect.y + 6))
-            y += 44
+            self.screen.blit(surf, (rect.x + S(20), rect.y + S(6)))
+            y += S(44)
 
         hint = self.font_tiny.render("Up/Down to select, ENTER to choose, ESC to go back", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - 30))
+        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - S(30)))
 
     def _draw_quiz(self, W, H):
         if not self._questions:
@@ -247,64 +255,65 @@ class StudyMode:
 
         # Question
         q_text = q['question']
-        lines = self._wrap(q_text, self.font_md, W - 120)
-        y = 80
+        lines = self._wrap(q_text, self.font_md, W - 2 * S(60))
+        y = S(80)
         for line in lines:
             surf = self.font_md.render(line, True, FP.PARCHMENT_LIGHT)
-            self.screen.blit(surf, (60, y))
-            y += 30
+            self.screen.blit(surf, (S(60), y))
+            y += S(30)
 
         # Choices
-        y = max(y + 30, 200)
+        y = max(y + S(30), S(200))
         for i, choice in enumerate(q['choices'][:4]):
             key_label = f"[{i+1}]"
             key_surf = self.font_md.render(key_label, True, FP.GOLD_BRIGHT)
             choice_surf = self.font_md.render(f"  {choice}", True, FP.BODY_TEXT)
-            self.screen.blit(key_surf, (100, y))
-            self.screen.blit(choice_surf, (140, y))
-            y += 36
+            self.screen.blit(key_surf, (S(100), y))
+            self.screen.blit(choice_surf, (S(140), y))
+            y += S(36)
 
         hint = self.font_tiny.render("Press 1-4 to answer, ESC to quit", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - 30))
+        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - S(30)))
 
     def _draw_result(self, W, H):
         q = self._last_q
         is_correct = self._last_correct
 
         if is_correct:
-            centered_text(self.screen, self.font_lg, "CORRECT!", FP.SUCCESS_TEXT, 40, shadow=True)
+            centered_text(self.screen, self.font_lg, "CORRECT!", FP.SUCCESS_TEXT, S(40), shadow=True)
         else:
-            centered_text(self.screen, self.font_lg, "INCORRECT", FP.DANGER_TEXT, 40, shadow=True)
+            centered_text(self.screen, self.font_lg, "INCORRECT", FP.DANGER_TEXT, S(40), shadow=True)
             # Show correct answer
             correct = q['answer']
-            centered_text(self.screen, self.font_md, f"The correct answer is: {correct}", FP.GOLD_BRIGHT, 90)
+            centered_text(self.screen, self.font_md, f"The correct answer is: {correct}",
+                          FP.GOLD_BRIGHT, S(90))
 
         # Show question
-        q_lines = self._wrap(q['question'], self.font_sm, W - 120)
-        y = 140
+        q_lines = self._wrap(q['question'], self.font_sm, W - 2 * S(60))
+        y = S(140)
         for line in q_lines:
             surf = self.font_sm.render(line, True, FP.FADED_TEXT)
-            self.screen.blit(surf, (60, y))
-            y += 24
+            self.screen.blit(surf, (S(60), y))
+            y += S(24)
 
         # Show context (educational explanation) if available
         context = q.get('context', '')
         if context:
-            y += 20
-            draw_divider(self.screen, 60, y, W - 120)
-            y += 16
-            ctx_lines = self._wrap(context, self.font_sm, W - 120)
+            y += S(20)
+            draw_divider(self.screen, S(60), y, W - 2 * S(60))
+            y += S(16)
+            ctx_lines = self._wrap(context, self.font_sm, W - 2 * S(60))
             for line in ctx_lines:
                 surf = self.font_sm.render(line, True, FP.BODY_TEXT)
-                self.screen.blit(surf, (60, y))
-                y += 24
+                self.screen.blit(surf, (S(60), y))
+                y += S(24)
         elif not is_correct:
-            y += 20
+            y += S(20)
             surf = self.font_tiny.render("(No additional context available for this question)", True, FP.FADED_TEXT)
-            self.screen.blit(surf, (60, y))
+            self.screen.blit(surf, (S(60), y))
 
         hint = self.font_tiny.render("Press ENTER or SPACE for next question, ESC to quit", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - 30))
+        self.screen.blit(hint, (W // 2 - hint.get_width() // 2, H - S(30)))
 
     @staticmethod
     def _wrap(text, font, max_w):

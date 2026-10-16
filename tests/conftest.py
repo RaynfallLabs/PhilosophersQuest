@@ -107,6 +107,29 @@ def _fresh_unique_registry():
     yield
 
 
+@pytest.fixture(autouse=True)
+def _restore_layout_and_ui_scale():
+    """``layout.update`` sets module state: the window size AND the UI scale
+    (_genart/ui/SCALE_PLAN.md), which every font fetched through get_font
+    follows. Every test starts from the same baseline -- the default
+    1600x900 window at UI scale 1.0, i.e. the unscaled UI the suite's
+    geometry and pixel tests were written against -- and the state is put
+    back afterwards, so no test inherits another's window size (e.g. a
+    3440x1440 render leaving every font 1.5x). Tests about the scale set the
+    window themselves with ``layout.update``."""
+    try:
+        import layout
+    except Exception:
+        yield
+        return
+    snap = layout.snapshot()
+    layout.restore((1600, 900, 1.0))
+    try:
+        yield
+    finally:
+        layout.restore(snap)
+
+
 @pytest.fixture
 def ui_theme_isolated():
     """Each test starts with an EMPTY UI art kit and gets the previous kit

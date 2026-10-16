@@ -211,24 +211,46 @@ class Rec:
     outside_panels: list
     in_no_panel: list
     n_panels: int
+    size: tuple = MIN_SIZE
+    panels: tuple = ()          # top-layer panel rects
+    overlays: int = 0
+    text_h_min: int = 0         # smallest text line box on the whole screen
 
 
-def _record(sc, surf):
+def _record(sc, surf, size=MIN_SIZE):
     blits, infos, panels = surf.top_layer()
+    heights = [r.h for r, t in surf.text_blits if any(c.isalnum() for c in t)]
     return Rec(sc.name, sc.group,
                [(r, t, i) for (r, t), i in zip(blits, infos)],
                surf.text_outside(), surf.text_outside_panels(),
-               surf.text_in_no_panel(), len(panels))
+               surf.text_in_no_panel(), len(panels), size,
+               tuple(pygame.Rect(p) for p, _ in panels), surf.overlays,
+               min(heights) if heights else 0)
+
+
+def _render_all(size):
+    recs = {}
+    with capture.harness():
+        for sc in capture.SCENES:
+            surf, _state = capture.render_scene(sc, size, measure_contrast=True)
+            recs[sc.name] = _record(sc, surf, size)
+    return recs
 
 
 @pytest.fixture(scope='module')
 def min_records():
-    recs = {}
-    with capture.harness():
-        for sc in capture.SCENES:
-            surf, _state = capture.render_scene(sc, MIN_SIZE, measure_contrast=True)
-            recs[sc.name] = _record(sc, surf)
-    return recs
+    return _render_all(MIN_SIZE)
+
+
+# The UI scales with the window (_genart/ui/SCALE_PLAN.md): the contrast and
+# layout gates also run at 1920x1080 (scale 1.25) and 3440x1440 (Brandon's
+# monitor, scale 1.5), with the centring and text-size checks in (e).
+SCALED_SIZES = [(1920, 1080), (3440, 1440)]
+
+
+@pytest.fixture(scope='module')
+def scaled_records():
+    return {size: _render_all(size) for size in SCALED_SIZES}
 
 
 # =============================================================================
@@ -240,9 +262,9 @@ def _is_quiz_body(scene, info):
             and info['color'] in (FP.VELLUM, FP.PARCHMENT_LIGHT))
 
 
-def _log_pane():
+def _log_pane(size=MIN_SIZE):
     import layout
-    layout.update(*MIN_SIZE)
+    layout.update(*size)
     return pygame.Rect(layout.MAP_X, layout.GAME_H, layout.MAP_W, layout.MSG_H)
 
 
@@ -259,8 +281,8 @@ def test_contrast_tracer_sees_low_contrast():
     assert lo < 1.5 and hi > 3.0
 
 
-def _contrast_failures(min_records, used=None):
-    log_pane = _log_pane()
+def _contrast_failures(min_records, used=None, size=MIN_SIZE):
+    log_pane = _log_pane(size)
     failures, measured_quiz = [], {}
     for name, rec in min_records.items():
         for r, text, info in rec.top:
@@ -444,3 +466,101 @@ def test_every_screen_renders_within_the_frame_budget():
         scale, "\n".join(f"{capture.size_tag(z)} {n}: {v['median']:.1f} ms "
                          f"(budget {budget(z):.1f} ms)"
                          for (n, z), v in sorted(slow.items())))
+
+
+# =============================================================================
+# (b, c) at the scaled sizes
+# =============================================================================
+
+@pytest.mark.parametrize('size', SCALED_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+def test_text_contrast_at_scaled_sizes(scaled_records, size):
+    failures, measured_quiz = _contrast_failures(scaled_records[size], size=size)
+    assert not failures, f"Text below its contrast floor at {size}:\n" + "\n".join(failures)
+    quiz = [n for n in scaled_records[size]
+            if n.startswith('quiz_') and n != 'quiz_context_modal']
+    assert not [n for n in quiz if n not in measured_quiz]
+
+
+@pytest.mark.parametrize('size', SCALED_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+def test_layout_at_scaled_sizes(scaled_records, size):
+    recs = scaled_records[size]
+    bad = [f"outside window: {n}: {t[:40]!r} at {tuple(r)}"
+           for n, rec in recs.items() for r, t in rec.outside_window]
+    bad += [f"over panel edge: {n}: {t[:40]!r} ink {tuple(r)} panel {tuple(p)}"
+            for n, rec in recs.items() for r, t, p in rec.outside_panels
+            if _match(KNOWN_OUTSIDE_PANEL, n, t) is None]
+    bad += [f"in no panel: {n}: {t[:40]!r} ink {tuple(r)}"
+            for n, rec in recs.items() if _no_panel_checked(rec)
+            for r, t in rec.in_no_panel
+            if _match(KNOWN_NO_PANEL, n, t) is None and _match(DESIGNED_FREE_TEXT, n, t) is None]
+    assert not bad, f"Layout problems at {size}:\n" + "\n".join(bad)
+
+
+# =============================================================================
+# (e) UI scale: centring and text size (SCALE_PLAN.md 3 and 7)
+# =============================================================================
+
+# Quick pickers over a lightly dimmed map: bottom-anchored by design,
+# centred horizontally (SCALE_PLAN.md 3, exception 1).
+BOTTOM_ANCHORED = ('menu_wand', 'menu_spell', 'menu_eat', 'menu_quaff', 'menu_throw',
+                   'menu_powers', 'menu_pet_feed', 'menu_pet_heal', 'menu_pet_specials')
+# Centred horizontally only: the character sheet is full height with its key
+# hint under it (exception 2); an ending's grade panel sits under the title
+# set on the wash above it.
+HORIZONTAL_ONLY = ('menu_charsheet', 'end_')
+
+
+def _modal_records(recs):
+    """Screens with a modal layer: a full-window overlay with panels on top."""
+    for name, rec in recs.items():
+        if rec.group in ('Play', 'Study') or not rec.overlays or not rec.panels:
+            continue
+        if rec.group == 'Title' and name not in NO_PANEL_CHECKED_TITLES:
+            continue
+        yield name, rec
+
+
+def _centring_errors(recs):
+    import ui_scale
+    bad = []
+    for name, rec in _modal_records(recs):
+        W, H = rec.size
+        box = rec.panels[0].unionall(list(rec.panels[1:]))
+        if abs(box.centerx - W / 2) > 2:
+            bad.append(f"{name} @ {W}x{H}: centre x {box.centerx} != {W // 2}  {tuple(box)}")
+        if name.startswith(BOTTOM_ANCHORED):
+            gap = int(30 * ui_scale.scale_for(W, H) + 0.5)
+            if abs(H - box.bottom - gap) > 1:
+                bad.append(f"{name} @ {W}x{H}: bottom gap {H - box.bottom} != {gap}")
+        elif not name.startswith(HORIZONTAL_ONLY):
+            if abs(box.centery - H / 2) > 2:
+                bad.append(f"{name} @ {W}x{H}: centre y {box.centery} != {H // 2}  {tuple(box)}")
+    return bad
+
+
+def test_every_modal_is_centred_on_the_window(min_records, scaled_records):
+    """Every modal and menu centres on the WINDOW (not on the play area left
+    of the right rail) at 1280x720, 1920x1080 and 3440x1440; the panel
+    rects come from the capture harness's own record of what was drawn."""
+    bad = _centring_errors(min_records)
+    for size in SCALED_SIZES:
+        bad += _centring_errors(scaled_records[size])
+    assert not bad, "Off-centre modals:\n" + "\n".join(bad)
+    checked = sum(1 for _ in _modal_records(min_records))
+    assert checked >= 50, f"only {checked} modal screens were checked"
+
+
+def test_text_is_never_smaller_than_at_the_minimum_window(min_records, scaled_records):
+    """Brandon: 'never smaller than today at 1280x720'. On every screen the
+    smallest line of text at a bigger window is at least as tall as the
+    smallest at 1280x720 -- and at 3440x1440 the text has grown."""
+    bad = []
+    for size in SCALED_SIZES:
+        for name, rec in scaled_records[size].items():
+            base = min_records[name].text_h_min
+            if rec.text_h_min < base:
+                bad.append(f"{name} @ {size}: smallest text {rec.text_h_min} px < {base} px")
+    assert not bad, "\n".join(bad)
+    grown = [n for n, rec in scaled_records[(3440, 1440)].items()
+             if rec.text_h_min > min_records[n].text_h_min]
+    assert len(grown) >= len(min_records) * 0.9, "text did not grow at 3440x1440"

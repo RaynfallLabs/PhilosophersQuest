@@ -1,9 +1,14 @@
 import pygame
 
+from ui_scale import px as S
+
 # FANTASY: Import theme helpers from the central fantasy_ui module
-from fantasy_ui import FP, get_font, ITEM_COLOR
+from fantasy_ui import FP, ITEM_COLOR, ScaledFont
 from hud_context import active_power_rows, visible_context_rows
 
+# Rail widths at UI scale 1 (1280x720). On screen they are ``ui_scale.px``
+# of these; layout.LEFT_SIDEBAR_W / layout.SIDEBAR_W hold the live values
+# (_genart/ui/SCALE_PLAN.md).
 LEFT_SIDEBAR_W = 248
 SIDEBAR_W = 330
 
@@ -24,27 +29,32 @@ class MessageLog:
     MAX = 60
     # Phase 3 (UI beautification 2026-10-04): line stride is derived from
     # font metrics so the log keeps up with font-size changes instead of
-    # being pinned to a magic 26 px row.
+    # being pinned to a magic 26 px row. Spacing below is at UI scale 1 and
+    # drawn as ui_scale.px() of it.
     LEADING = 6     # px of visual breathing room between lines
     PAD_X = 8       # px padding each side (inner text column)
     PAD_Y = 4       # px padding top (and symmetrically at the bottom)
 
     def __init__(self):
         self.entries: list[tuple[str, str]] = []
-        self._font = get_font('body', 20)
         # Wrap cache (2026-10-15, UI art foundation): the log used to re-wrap
         # all <=60 entries on every frame, the single largest per-frame cost
         # with a full log (FOUNDATION_REVIEW.md 2.2). ``_wrapped[i]`` is
         # ``(text, lines)``: the wrapped lines of ``entries[i]`` and the exact
         # string they were wrapped from (None = not wrapped yet), for the
         # (font, text width) in ``_wrap_key``. A different font or pane width
-        # invalidates every entry. Each lookup also checks the cached string
+        # invalidates every entry (a UI-scale change is both). Each lookup also checks the cached string
         # is still the entry's text (an ``is`` test, then ``==``), so a
         # replaced ``entries`` list or an entry edited in place re-wraps
         # instead of drawing stale text (GROUNDWORK_REVIEW 7). Prefer
         # ``add`` / ``clear`` / ``replace`` over mutating ``entries``.
         self._wrapped: list[tuple[str, list[str]] | None] = []
         self._wrap_key: tuple | None = None
+
+    # The log font at the current UI scale, fetched on use (a dict lookup)
+    # so a resize cannot leave a stale font behind. An instance may still
+    # assign its own font (non-data descriptor).
+    _font = ScaledFont('body', 20)
 
     def add(self, text: str, msg_type: str = 'info'):
         self.entries.append((text, msg_type))
@@ -64,7 +74,8 @@ class MessageLog:
 
     def _wrapped_lines(self, i: int, text_w: int) -> list[str]:
         """Wrapped lines of entry ``i`` at ``text_w``, from the cache."""
-        key = (self._font, text_w)
+        font = self._font
+        key = (font, text_w)
         if key != self._wrap_key or len(self._wrapped) != len(self.entries):
             # Font or pane width changed (resize), or ``entries`` changed
             # length behind add(): rebuild the cache's shape.
@@ -74,7 +85,7 @@ class MessageLog:
         got = self._wrapped[i]
         if got is not None and (got[0] is text or got[0] == text):
             return got[1]
-        lines = self._wrap(text, self._font, text_w)
+        lines = self._wrap(text, font, text_w)
         self._wrapped[i] = (text, lines)
         return lines
 
@@ -99,15 +110,17 @@ class MessageLog:
         the stride responds to font changes without having to intercept
         the draw path.
         """
-        return self._font.get_height() + self.LEADING
+        return self._font.get_height() + S(self.LEADING)
 
     def draw(self, screen: pygame.Surface, x: int, y: int, w: int, h: int):
         # FANTASY: Midnight background + gold-dark top border
         pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
         pygame.draw.line(screen, FP.GOLD_DARK, (x, y), (x + w, y), 1)
 
+        font = self._font
+        pad_x, pad_y = S(self.PAD_X), S(self.PAD_Y)
         line_h = self.line_height()
-        available_h = h - self.PAD_Y * 2
+        available_h = h - pad_y * 2
         # Phase 3 zero-row guard: on a pane shorter than one text line
         # bail out BEFORE slicing ``messages[-0:]`` (which would select
         # the entire log instead of nothing).
@@ -116,7 +129,7 @@ class MessageLog:
         max_lines = available_h // line_h
         if max_lines <= 0:
             return
-        text_w = w - self.PAD_X * 2
+        text_w = w - pad_x * 2
 
         # The newest ``max_lines`` display lines (text, msg_type), walking
         # back from the newest entry; wraps come from the cache.
@@ -135,13 +148,30 @@ class MessageLog:
             base = _MSG_COLORS.get(msg_type, _MSG_COLORS['info'])
             fade = max(0.35, 1.0 - age * 0.09)
             color = tuple(int(c * fade) for c in base)
-            surf = self._font.render(text, True, color)
-            screen.blit(surf, (x + self.PAD_X, y + self.PAD_Y + i * line_h))
+            surf = font.render(text, True, color)
+            screen.blit(surf, (x + pad_x, y + pad_y + i * line_h))
 
 
 class Sidebar:
-    PAD = 10
-    SECTION_GAP = 8
+    # Spacing at UI scale 1. Every length in this class goes through
+    # ui_scale.px (``S``), so the rails grow with the window
+    # (_genart/ui/SCALE_PLAN.md).
+    PAD_BASE = 10
+    SECTION_GAP_BASE = 8
+
+    @property
+    def PAD(self) -> int:
+        return S(self.PAD_BASE)
+
+    @property
+    def SECTION_GAP(self) -> int:
+        return S(self.SECTION_GAP_BASE)
+
+    # FANTASY: Grimoire font set -- larger for readability. Fetched on use
+    # (a dict lookup) so they always match the current UI scale.
+    _fsm = ScaledFont('body', 18)
+    _fbold = ScaledFont('body', 18, bold=True)
+    _fhd = ScaledFont('heading', 17)
 
     @staticmethod
     def _cap(name: str) -> str:
@@ -153,20 +183,16 @@ class Sidebar:
         """Truncate text with ellipsis so it fits within max_px pixels."""
         if font.size(text)[0] <= max_px:
             return text
-        while len(text) > 1 and font.size(text + '\u2026')[0] > max_px:
+        while len(text) > 1 and font.size(text + '…')[0] > max_px:
             text = text[:-1]
-        return text + '\u2026'
+        return text + '…'
 
     def __init__(self, screen: pygame.Surface, x: int):
         self.screen = screen
         self.left_x = 0
         self.right_x = x
         self.x = x
-        self.w = SIDEBAR_W
-        # FANTASY: Grimoire font set -- larger for readability
-        self._fsm   = get_font('body', 18)
-        self._fbold = get_font('body', 18, bold=True)
-        self._fhd   = get_font('heading', 17)
+        self.w = S(SIDEBAR_W)
 
     def draw(self, player, dungeon_level: int, turn_count: int, gold: int = 0,
              *, player_name: str = "Adventurer", visible_monsters=(),
@@ -175,7 +201,7 @@ class Sidebar:
         h = self.screen.get_height()
         visible_tiles = visible_tiles or set()
 
-        self._set_pane(self.left_x, LEFT_SIDEBAR_W)
+        self._set_pane(self.left_x, S(LEFT_SIDEBAR_W))
         self._pane_bg(h, edge="right")
         y = self.PAD
         y = self._identity(player_name, dungeon_level, turn_count, y)
@@ -184,7 +210,7 @@ class Sidebar:
         y = self._derived(player, dungeon_level, gold, y)
         self._effects(player, y)
 
-        self._set_pane(self.right_x, SIDEBAR_W)
+        self._set_pane(self.right_x, S(SIDEBAR_W))
         self._pane_bg(h, edge="left")
         y = self.PAD
         y = self._powers(player, y, secret_build=secret_build,
@@ -213,11 +239,11 @@ class Sidebar:
         than a lighter-weight cousin (per audit beauty-sidebar-status-flat).
         """
         from fantasy_ui import draw_header_bar
-        rect = (self.x + self.PAD, y, self.w - self.PAD * 2, 24)
+        rect = (self.x + self.PAD, y, self.w - self.PAD * 2, S(24))
         draw_header_bar(self.screen, rect, text=text,
                         font=self._fhd, text_color=FP.GOLD_BRIGHT,
                         accent=FP.GOLD_DARK, kind='header_small')
-        return y + 26
+        return y + S(26)
 
     def _bar(self, y: int, label: str, val: int, max_val: int,
              bar_color: tuple) -> int:
@@ -226,24 +252,25 @@ class Sidebar:
             self._fsm.render(label, True, FP.FADED_TEXT),
             (self.x + self.PAD, y)
         )
-        readout_w = 100
-        bx = self.x + self.PAD + 26
-        bw = self.w - self.PAD * 2 - 26 - readout_w
-        bh = 10
+        readout_w = S(100)
+        bx = self.x + self.PAD + S(26)
+        bw = self.w - self.PAD * 2 - S(26) - readout_w
+        bh = S(10)
         ratio = max(0.0, min(1.0, val / max(1, max_val)))
+        by = y + S(1)
 
         # FANTASY: Dark bar background
         pygame.draw.rect(self.screen, (18, 18, 30),
-                         (bx, y + 1, bw, bh), border_radius=3)
+                         (bx, by, bw, bh), border_radius=3)
         if ratio > 0:
             pygame.draw.rect(self.screen, bar_color,
-                             (bx, y + 1, max(2, int(bw * ratio)), bh),
+                             (bx, by, max(2, int(bw * ratio)), bh),
                              border_radius=3)
 
         # FANTASY: Readout right-aligned inside reserved space
         rsurf = self._fsm.render(f"{val}/{max_val}", True, FP.BODY_TEXT)
         self.screen.blit(rsurf, (bx + bw + readout_w - rsurf.get_width(), y))
-        return y + 22
+        return y + S(22)
 
     # ------------------------------------------------------------------
     # Sections
@@ -253,12 +280,12 @@ class Sidebar:
         y = self._header("CHARACTER", y)
         name = self._fit(self._fbold, player_name or "Adventurer", self.w - self.PAD * 2)
         self.screen.blit(self._fbold.render(name, True, FP.GOLD_PALE), (self.x + self.PAD, y))
-        y += 23
+        y += S(23)
         line = f"Floor {dungeon_level}   Turn {turn_count}"
         self.screen.blit(self._fsm.render(self._fit(self._fsm, line, self.w - self.PAD * 2),
                                           True, FP.FADED_TEXT),
                          (self.x + self.PAD, y))
-        return y + 24 + self.SECTION_GAP
+        return y + S(24) + self.SECTION_GAP
 
     def _vitals(self, player, y: int) -> int:
         y = self._header("VITALS", y)
@@ -286,9 +313,9 @@ class Sidebar:
             ('DEX', player.DEX), ('PER', player.PER),  # row 2
         ]
         inner_w = self.w - self.PAD * 2
-        gutter = 8  # keep columns visually separated
+        gutter = S(8)  # keep columns visually separated
         col_w = (inner_w - gutter) // 2
-        row_h = 24
+        row_h = S(24)
         for i, (name, val) in enumerate(attrs):
             col = i % 2
             row = i // 2
@@ -303,11 +330,11 @@ class Sidebar:
             # Right-align value inside the cell with a 2 px safety gap, so
             # 3-digit stats never crash into the next column (or the pane
             # midpoint divider between the two columns).
-            vx = ax + col_w - val_surf.get_width() - 2
+            vx = ax + col_w - val_surf.get_width() - S(2)
             # Guard against negative offsets if a cell ever shrinks below
             # the label width — in that case fall back to a nudge past the
             # label rather than overlapping it.
-            min_vx = ax + label_surf.get_width() + 4
+            min_vx = ax + label_surf.get_width() + S(4)
             if vx < min_vx:
                 vx = min_vx
             self.screen.blit(val_surf, (vx, ay))
@@ -343,24 +370,24 @@ class Sidebar:
         metric_w = (self.w - self.PAD * 2) // 2
         for i, (label, color) in enumerate(metrics):
             ax = self.x + self.PAD + (i % 2) * metric_w
-            ay = y + (i // 2) * 22
-            self.screen.blit(self._fsm.render(self._fit(self._fsm, label, metric_w - 8),
+            ay = y + (i // 2) * S(22)
+            self.screen.blit(self._fsm.render(self._fit(self._fsm, label, metric_w - S(8)),
                                               True, color), (ax, ay))
-        return y + ((len(metrics) + 1) // 2) * 22 + self.SECTION_GAP
+        return y + ((len(metrics) + 1) // 2) * S(22) + self.SECTION_GAP
 
     def _effect_chip(self, x: int, y: int, w: int, label: str, color: tuple) -> None:
-        rect = pygame.Rect(x, y, w, 21)
+        rect = pygame.Rect(x, y, w, S(21))
         pygame.draw.rect(self.screen, (22, 26, 48), rect, border_radius=4)
-        pygame.draw.rect(self.screen, color, (rect.x, rect.y, 3, rect.h), border_radius=2)
-        text = self._fit(self._fbold, label, w - 10)
-        self.screen.blit(self._fbold.render(text, True, color), (x + 7, y + 1))
+        pygame.draw.rect(self.screen, color, (rect.x, rect.y, S(3), rect.h), border_radius=2)
+        text = self._fit(self._fbold, label, w - S(10))
+        self.screen.blit(self._fbold.render(text, True, color), (x + S(7), y + S(1)))
 
     def _effect_label(self, display_name: str, duration: int) -> str:
         if duration < 0:
             return display_name
         full = f"{display_name} {duration}"
-        col_w = (self.w - self.PAD * 2 - 6) // 2
-        if self._fbold.size(full)[0] <= col_w - 10:
+        col_w = (self.w - self.PAD * 2 - S(6)) // 2
+        if self._fbold.size(full)[0] <= col_w - S(10):
             return full
         compact_names = {
             "Poisoned": "Pois",
@@ -395,26 +422,26 @@ class Sidebar:
         if not rows:
             self.screen.blit(self._fsm.render("(none)", True, FP.SLOT_EMPTY),
                              (self.x + self.PAD, y))
-            return y + 22 + self.SECTION_GAP
+            return y + S(22) + self.SECTION_GAP
 
         # Cap the chip grid so a big stack of buffs/debuffs never runs off
         # the pane; overflow gets a POWERS-style "+N more" hint underneath.
         max_chips = 8
         visible = rows[:max_chips]
-        col_w = (self.w - self.PAD * 2 - 6) // 2
+        col_w = (self.w - self.PAD * 2 - S(6)) // 2
         bottom = self.screen.get_height() - self.PAD
         for i, (label, color) in enumerate(visible):
-            ay = y + (i // 2) * 24
-            if ay + 21 > bottom:
+            ay = y + (i // 2) * S(24)
+            if ay + S(21) > bottom:
                 break
-            ax = self.x + self.PAD + (i % 2) * (col_w + 6)
+            ax = self.x + self.PAD + (i % 2) * (col_w + S(6))
             self._effect_chip(ax, ay, col_w, label, color)
-        y_end = y + ((len(visible) + 1) // 2) * 24
+        y_end = y + ((len(visible) + 1) // 2) * S(24)
         if len(rows) > max_chips:
             more = f"+{len(rows) - max_chips} more"
             self.screen.blit(self._fsm.render(more, True, FP.FADED_TEXT),
                              (self.x + self.PAD, y_end))
-            y_end += 22
+            y_end += S(22)
         return y_end + self.SECTION_GAP
 
     def _power_color(self, state: str) -> tuple:
@@ -426,16 +453,16 @@ class Sidebar:
 
     def _compact_row(self, y: int, label: str, meta: str, color: tuple,
                      *, label_color: tuple | None = None) -> int:
-        row = pygame.Rect(self.x + self.PAD, y, self.w - self.PAD * 2, 24)
+        row = pygame.Rect(self.x + self.PAD, y, self.w - self.PAD * 2, S(24))
         pygame.draw.rect(self.screen, (18, 22, 42), row, border_radius=4)
-        pygame.draw.rect(self.screen, color, (row.x, row.y, 4, row.h), border_radius=2)
-        meta_w = min(88, max(50, self._fsm.size(meta)[0] + 8))
-        self.screen.blit(self._fbold.render(self._fit(self._fbold, label, row.w - meta_w - 18),
+        pygame.draw.rect(self.screen, color, (row.x, row.y, S(4), row.h), border_radius=2)
+        meta_w = min(S(88), max(S(50), self._fsm.size(meta)[0] + S(8)))
+        self.screen.blit(self._fbold.render(self._fit(self._fbold, label, row.w - meta_w - S(18)),
                                             True, label_color or FP.BODY_TEXT),
-                         (row.x + 10, row.y + 2))
+                         (row.x + S(10), row.y + S(2)))
         meta_surf = self._fbold.render(self._fit(self._fbold, meta, meta_w), True, color)
-        self.screen.blit(meta_surf, (row.right - meta_surf.get_width() - 8, row.y + 2))
-        return y + 27
+        self.screen.blit(meta_surf, (row.right - meta_surf.get_width() - S(8), row.y + S(2)))
+        return y + S(27)
 
     def _powers(self, player, y: int, *, secret_build=None,
                 heavenly_host_active: bool = False) -> int:
@@ -449,7 +476,7 @@ class Sidebar:
             more = f"+{len(rows) - max_rows} more"
             self.screen.blit(self._fsm.render(more, True, FP.FADED_TEXT),
                              (self.x + self.PAD, y))
-            y += 22
+            y += S(22)
         return y + self.SECTION_GAP
 
     def _in_sight(self, player, visible_monsters, visible_items, visible_tiles,
@@ -464,19 +491,19 @@ class Sidebar:
         def section(title: str, rows, y: int) -> int:
             self.screen.blit(self._fbold.render(title, True, FP.GOLD_PALE),
                              (self.x + self.PAD, y))
-            y += 22
+            y += S(22)
             if not rows:
                 self.screen.blit(self._fsm.render("(none)", True, FP.SLOT_EMPTY),
                                  (self.x + self.PAD, y))
-                return y + 24
+                return y + S(24)
             for row in rows:
-                if y + 24 > bottom:
+                if y + S(24) > bottom:
                     return y
                 y = self._compact_row(y, row.label, row.meta, row.color,
                                       label_color=row.color)
-            return y + 8
+            return y + S(8)
 
         y = section("Enemies", monsters, y)
-        if y + 44 <= bottom:
+        if y + S(44) <= bottom:
             y = section("Items", items, y)
         return y

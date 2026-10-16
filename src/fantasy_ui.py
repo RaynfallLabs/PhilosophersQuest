@@ -22,6 +22,7 @@ import random
 import pygame
 from paths import data_path
 
+import ui_scale
 import ui_theme
 
 # -----------------------------------------------------------------------------
@@ -226,10 +227,42 @@ _MONO_FAMILIES = (
 
 # Unicode-capable font families for symbol/icon rendering (* o x Sum Omega * etc.)
 _SYMBOL_FAMILIES = 'segoe ui symbol,segoe ui emoji,noto sans symbols,dejavu sans,arial unicode ms,unifont'
+# Fonts are cached by their LOGICAL key (role, size, bold) -- the size as at
+# 1280x720 -- for the CURRENT UI scale. A scale change (ui_scale listener,
+# inside layout.update) rebuilds the cache for every key the game has asked
+# for so far, so no draw ever creates a font for a size it used before
+# (~0.1 ms a font; SCALE_PLAN.md 4). ``_font_px`` holds fixed-size fonts
+# (``unscaled=True``), keyed by real pixel size.
 _font_cache: dict = {}
+_font_px: dict = {}
 
 
-def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
+def _make_font(role: str, size: int, bold: bool) -> pygame.font.Font:
+    """A new font of ``size`` real pixels for ``role``."""
+    if role == 'symbol':
+        # Unicode-capable font for rendering special characters (* o x Sum Omega * etc.)
+        return pygame.font.SysFont(_SYMBOL_FAMILIES, size, bold=bold)
+    if role in ('mono', 'body', 'small'):
+        # Use Consolas for all body/small roles -- crisp and highly readable.
+        # Fallback chain covers Windows / macOS / Linux monospace families.
+        return pygame.font.SysFont(_MONO_FAMILIES, size, bold=bold)
+    fname = _ROLE_FILES.get(role, 'Cinzel-Variable.ttf')
+    path  = os.path.join(_FONT_DIR, fname)
+    if os.path.exists(path):
+        try:
+            font = pygame.font.Font(path, size)
+            # Title role is implicitly bold; heading is regular weight.
+            # Synthetic bold via pygame works on variable fonts too.
+            if role == 'title' or bold:
+                font.bold = True
+            return font
+        except Exception:
+            pass
+    return pygame.font.SysFont(_FALLBACK_FAMILIES, size, bold=bold)
+
+
+def get_font(role: str, size: int, bold: bool = False, *,
+             unscaled: bool = False) -> pygame.font.Font:
     """
     # FANTASY: Return a themed font.
     role: 'title'   -> Cinzel Bold (large display, all-caps)
@@ -240,35 +273,55 @@ def get_font(role: str, size: int, bold: bool = False) -> pygame.font.Font:
           'gothic'  -> UnifrakturMaguntia (dramatic blackletter)
           'mono'    -> Consolas (monospace -- code/numbers)
     Falls back gracefully if TTF not installed.
+
+    ``size`` is the size at 1280x720 (UI scale 1): the font returned is
+    ``ui_scale.font_px(size)`` pixels, so every caller grows with the window
+    (SCALE_PLAN.md). ``unscaled=True`` returns exactly ``size`` pixels.
     """
+    if unscaled:
+        key = (role, int(size), bold)
+        font = _font_px.get(key)
+        if font is None:
+            font = _font_px[key] = _make_font(role, int(size), bold)
+        return font
     key = (role, size, bold)
-    if key in _font_cache:
-        return _font_cache[key]
-
-    if role == 'symbol':
-        # Unicode-capable font for rendering special characters (* o x Sum Omega * etc.)
-        font = pygame.font.SysFont(_SYMBOL_FAMILIES, size, bold=bold)
-    elif role in ('mono', 'body', 'small'):
-        # Use Consolas for all body/small roles -- crisp and highly readable.
-        # Fallback chain covers Windows / macOS / Linux monospace families.
-        font = pygame.font.SysFont(_MONO_FAMILIES, size, bold=bold)
-    else:
-        fname = _ROLE_FILES.get(role, 'Cinzel-Variable.ttf')
-        path  = os.path.join(_FONT_DIR, fname)
-        if os.path.exists(path):
-            try:
-                font = pygame.font.Font(path, size)
-                # Title role is implicitly bold; heading is regular weight.
-                # Synthetic bold via pygame works on variable fonts too.
-                if role == 'title' or bold:
-                    font.bold = True
-            except Exception:
-                font = pygame.font.SysFont(_FALLBACK_FAMILIES, size, bold=bold)
-        else:
-            font = pygame.font.SysFont(_FALLBACK_FAMILIES, size, bold=bold)
-
-    _font_cache[key] = font
+    font = _font_cache.get(key)
+    if font is None:
+        font = _font_cache[key] = _make_font(role, ui_scale.font_px(size), bold)
     return font
+
+
+def _rescale_fonts(_scale: float) -> None:
+    """ui_scale listener: rebuild every cached font at the new scale, now
+    (during the resize), not on the first draw that needs it. Keys that land
+    on the same pixel size share one font."""
+    keys = list(_font_cache)
+    _font_cache.clear()
+    made = {}
+    for role, size, bold in keys:
+        k = (role, ui_scale.font_px(size), bold)
+        if k not in made:
+            made[k] = _make_font(*k)
+        _font_cache[(role, size, bold)] = made[k]
+
+
+ui_scale.add_listener(_rescale_fonts)
+
+
+class ScaledFont:
+    """Class attribute that reads as ``get_font(role, size, bold)`` at the
+    current UI scale: ``font_sm = ScaledFont('body', 20)``. Objects used to
+    keep a Font made once in ``__init__``, which went stale when the window
+    was resized across a scale step. A non-data descriptor, so an instance
+    may still assign its own font (tests do)."""
+
+    __slots__ = ('role', 'size', 'bold')
+
+    def __init__(self, role: str, size: int, bold: bool = False):
+        self.role, self.size, self.bold = role, size, bold
+
+    def __get__(self, obj, objtype=None):
+        return get_font(self.role, self.size, self.bold)
 
 
 # -----------------------------------------------------------------------------
@@ -570,10 +623,11 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
             _repaint_frame(surf, frame, rect)
 
         # Bottom separator line
-        pygame.draw.line(surf, accent, (x + 8, y + h - 1), (x + w - 8, y + h - 1), 1)
+        S = ui_scale.px
+        pygame.draw.line(surf, accent, (x + S(8), y + h - 1), (x + w - S(8), y + h - 1), 1)
 
         # Side diamond accents
-        for ax in [x + 14, x + w - 15]:
+        for ax in [x + S(14), x + w - S(15)]:
             _edge_diamond(surf, ax, y + h//2, accent, vertical=True, size=4)
 
     # Title text — truncate with ellipsis if wider than the header so the
@@ -583,13 +637,14 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
         # Reserve room on the right (e.g. a quiz chain counter) so the centered
         # title never runs under it; clip + center within the remaining region.
         reserve = max(0, right_reserve)
-        text = fit_text(text, font, max(20, w - 56 - reserve))
+        text = fit_text(text, font, max(20, w - ui_scale.px(56) - reserve))
         ts = font.render(text, True, text_color)
         region_w = w - reserve
         sx = x + region_w//2 - ts.get_width()//2
         sy = y + h//2 - ts.get_height()//2
         shadow = font.render(text, True, FP.INK)
-        surf.blit(shadow, (sx + 2, sy + 2))
+        off = ui_scale.px(2)
+        surf.blit(shadow, (sx + off, sy + off))
         surf.blit(ts,     (sx,     sy))
 
 
@@ -613,8 +668,9 @@ def draw_divider(surf: pygame.Surface, x: int, y: int, w: int,
     if ui_theme.draw_hbar(surf, 'divider', x, y, w, accent=color):
         return
     cx = x + w // 2
-    pygame.draw.line(surf, color, (x + 18, y), (cx - 14, y), 1)
-    pygame.draw.line(surf, color, (cx + 14, y), (x + w - 18, y), 1)
+    S = ui_scale.px
+    pygame.draw.line(surf, color, (x + S(18), y), (cx - S(14), y), 1)
+    pygame.draw.line(surf, color, (cx + S(14), y), (x + w - S(18), y), 1)
     d = 5
     pts = [(cx-d*2, y), (cx, y-d), (cx+d*2, y), (cx, y+d)]
     pygame.draw.polygon(surf, color, pts)
@@ -787,7 +843,7 @@ def draw_input_box(surf: pygame.Surface, rect: tuple, value: str,
         pygame.draw.rect(surf, border_color, (x, y, w, h), 1, border_radius=4)
     display = value if value else placeholder
     val_surf = font.render(display, True, text_color)
-    surf.blit(val_surf, (x + 10, y + (h - val_surf.get_height()) // 2))
+    surf.blit(val_surf, (x + ui_scale.px(10), y + (h - val_surf.get_height()) // 2))
 
 
 def draw_choice_button(surf: pygame.Surface, rect: tuple,
@@ -821,7 +877,7 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
 
     if w <= 0 or h <= 0:
         return
-    badge_w = 44
+    badge_w = ui_scale.px(44)
     if not _choice_button_art(surf, rect, badge_w, correct, incorrect, selected):
         _choice_button_procedural(surf, rect, badge_w, bg_col, border_col)
 
@@ -840,10 +896,10 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
         lines = text or ['']
     else:
         lines = [text]
-    line_h = text_font.get_height() + 3
+    line_h = text_font.get_height() + ui_scale.px(3)
     block_h = len(lines) * line_h
     ty = y + (h - block_h) // 2
-    tx = x + badge_w + 10
+    tx = x + badge_w + ui_scale.px(10)
     for line in lines:
         t_surf = text_font.render(line, True, t_color)
         surf.blit(t_surf, (tx, ty))
@@ -874,7 +930,8 @@ def _choice_button_procedural(surf, rect, badge_w, bg_col, border_col) -> None:
     pygame.draw.rect(surf, border_col, (x, y, w, h), 1, border_radius=3)
 
     # Inner double-stroke for grimoire flavor (matches draw_dark_panel pattern)
-    pygame.draw.rect(surf, FP.GOLD_DARK, (x + 3, y + 3, w - 6, h - 6), 1, border_radius=2)
+    i = ui_scale.px(3)
+    pygame.draw.rect(surf, FP.GOLD_DARK, (x + i, y + i, w - 2 * i, h - 2 * i), 1, border_radius=2)
 
     # Key badge (left side) — bigger rune-stone block
     badge_s = pygame.Surface((badge_w, h), pygame.SRCALPHA)

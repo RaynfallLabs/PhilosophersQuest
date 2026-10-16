@@ -27,7 +27,10 @@ Design rules (see _genart/ui/FOUNDATION_REVIEW.md and assets/ui/README.md):
   at least ``_MIN_STRIP`` px so tiling needs few blits. Drawing a panel of ANY
   size is corners + tiled edge blits + a centre fill, so a quiz panel whose
   height changes every question costs the same as a fixed one, and a window
-  resize invalidates nothing.
+  resize within one UI-scale step invalidates nothing. A resize ACROSS a
+  scale step (_genart/ui/SCALE_PLAN.md) re-cuts the pieces once, from the
+  source images kept in memory since ``load()`` (``rescale``, run by the
+  ui_scale listener inside ``layout.update``): no disk, never on a draw.
 * **Untinted art + a separate accent layer.** Painted gold is never tinted.
   A piece may carry an ``accent`` image (greyscale, same geometry) that is
   multiplied by the caller's colour (the quiz subject colour, a lore blue...)
@@ -52,6 +55,7 @@ from collections import OrderedDict
 import pygame
 
 from paths import data_path
+import ui_scale as _ui_scale_mod
 
 log = logging.getLogger(__name__)
 
@@ -283,6 +287,13 @@ class Kit:
         self.errors: list[str] = []
         self.source: str | None = None
         self.factor = 1.0
+        # For ``rescale``: the decoded source images (file -> Surface), the
+        # folders, and whether this kit follows the UI scale (it does unless
+        # ``load`` was given an explicit ``ui_scale``).
+        self.images: dict[str, pygame.Surface] = {}
+        self.texture_dir: str | None = None
+        self.ui_scale: float = 1.0
+        self.follows_scale = False
 
 
 _kit: Kit = Kit()
@@ -370,9 +381,15 @@ def _rgb(v, what: str) -> tuple:
     return tuple(v[:3])
 
 
-def load(asset_dir: str | None = None, ui_scale: float = 1.0,
+def load(asset_dir: str | None = None, ui_scale: float | None = None,
          texture_dir: str | None = None) -> Kit:
     """Load the art kit from ``asset_dir`` (default ``assets/ui``).
+
+    ``ui_scale`` (screen px per UI px) defaults to the game's current UI
+    scale (``ui_scale.get()``), and the kit then FOLLOWS it: when the window
+    is resized across a scale step, ``rescale`` re-cuts every piece from the
+    source images kept in memory (SCALE_PLAN.md 5). An explicit ``ui_scale``
+    pins the kit at that scale.
 
     Call once at startup, AFTER ``pygame.display.set_mode`` (so pieces can be
     ``convert_alpha``-ed). Never raises: a missing folder or manifest loads
@@ -384,6 +401,9 @@ def load(asset_dir: str | None = None, ui_scale: float = 1.0,
     """
     global _kit
     k = Kit()
+    k.follows_scale = ui_scale is None
+    if ui_scale is None:
+        ui_scale = _ui_scale_mod.get()
     _tinted.clear()
     _scaled_textures.clear()
     _icon_extra.clear()
@@ -403,23 +423,66 @@ def load(asset_dir: str | None = None, ui_scale: float = 1.0,
     return k
 
 
-def _load_into(k: Kit, asset_dir, ui_scale, texture_dir) -> None:
+def rescale(ui_scale: float) -> Kit:
+    """Re-cut the loaded kit for a new UI scale, from the source images kept
+    in memory since ``load`` (no disk access). Runs from the ui_scale
+    listener, inside ``layout.update``: once per scale step, never on a draw.
+    A kit that does not follow the scale, or is already at it, is left alone."""
+    global _kit
+    old = _kit
+    if not old.follows_scale or not old.source or ui_scale == old.ui_scale:
+        return old
+    k = Kit()
+    k.follows_scale = True
+    k.textures = old.textures
+    _tinted.clear()
+    _scaled_textures.clear()
+    _icon_extra.clear()
     try:
-        _load_textures(k, texture_dir)
-    except Exception as e:
-        k.textures.clear()
-        k.errors.append(f"textures not loaded: {type(e).__name__}: {e}")
+        _load_into(k, old.source, ui_scale, old.texture_dir, images=old.images,
+                   textures=False)
+    except Exception as e:                       # backstop, as in load()
+        k.pieces.clear()
+        k.icons.clear()
+        k.errors.append(f"art kit not rescaled: {type(e).__name__}: {e}")
+    if k.errors and k.errors != old.errors:
+        log.warning("ui_theme: %d problem(s) rescaling %s:\n  %s",
+                    len(k.errors), k.source, "\n  ".join(k.errors))
+    _kit = k
+    return k
+
+
+def _on_ui_scale(new_scale: float) -> None:
+    rescale(new_scale)
+
+
+def _load_into(k: Kit, asset_dir, ui_scale, texture_dir, images=None,
+               textures=True) -> None:
+    k.ui_scale = ui_scale if _is_num(ui_scale) else 1.0
+    k.texture_dir = texture_dir
+    if images is not None:
+        k.images = images
+    if textures:
+        try:
+            _load_textures(k, texture_dir)
+        except Exception as e:
+            k.textures.clear()
+            k.errors.append(f"textures not loaded: {type(e).__name__}: {e}")
     folder = asset_dir or ASSET_DIR
     k.source = folder
     mpath = os.path.join(folder, MANIFEST_NAME)
-    if not os.path.isfile(mpath):
-        return
-    try:
-        with open(mpath, encoding='utf-8') as f:
-            manifest = json.load(f)
-    except (OSError, ValueError) as e:
-        k.errors.append(f"manifest unreadable: {e}")
-        return
+    if images is not None and MANIFEST_NAME in images:
+        manifest = images[MANIFEST_NAME]
+    else:
+        if not os.path.isfile(mpath):
+            return
+        try:
+            with open(mpath, encoding='utf-8') as f:
+                manifest = json.load(f)
+        except (OSError, ValueError) as e:
+            k.errors.append(f"manifest unreadable: {e}")
+            return
+        k.images[MANIFEST_NAME] = manifest
     if not isinstance(manifest, dict):
         k.errors.append(f"manifest must be a JSON object, not {type(manifest).__name__}")
         return
@@ -444,19 +507,23 @@ def _load_into(k: Kit, asset_dir, ui_scale, texture_dir) -> None:
 
     def load_img(rel, what):
         rel = _rel_path(rel, what)
-        path = os.path.join(folder, rel)
-        if not os.path.isfile(path):
-            raise _Bad(f"missing file {rel}")
-        try:
-            img = pygame.image.load(path)
-        except Exception as e:                   # corrupt / not an image
-            raise _Bad(f"cannot load {rel}: {e}") from None
+        img = k.images.get(rel)
+        if img is None:
+            path = os.path.join(folder, rel)
+            if not os.path.isfile(path):
+                raise _Bad(f"missing file {rel}")
+            try:
+                img = pygame.image.load(path)
+            except Exception as e:               # corrupt / not an image
+                raise _Bad(f"cannot load {rel}: {e}") from None
+            img = _convert(img)
+            k.images[rel] = img                  # kept for rescale()
         w, h = img.get_size()
         if w <= 0 or h <= 0:
             raise _Bad(f"{rel} is empty")
         if max(w, h) * max(factor, 1.0) > _MAX_IMAGE_PX:
             raise _Bad(f"{rel} is {w}x{h}; at most {_MAX_IMAGE_PX} px a side on screen")
-        return _convert(img)
+        return img
 
     pieces = manifest.get('pieces', {})
     if pieces is None:
@@ -500,7 +567,9 @@ def _load_into(k: Kit, asset_dir, ui_scale, texture_dir) -> None:
         try:
             img = load_img(rel, f"icon {name!r}")
             pixel = max(img.get_size()) <= 64
-            fitted = {s: _fit_icon(img, s, pixel) for s in sizes}
+            # Manifest sizes are UI px: pre-fit at their screen size now.
+            fitted = {int(sz * k.ui_scale + 0.5): None for sz in sizes}
+            fitted = {sz: _fit_icon(img, sz, pixel) for sz in fitted}
         except _Bad as e:
             k.errors.append(str(e))
             continue
@@ -811,3 +880,6 @@ def draw_icon(surf: pygame.Surface, name: str, rect) -> bool:
     surf.blit(img, (rect.centerx - img.get_width() // 2,
                     rect.centery - img.get_height() // 2))
     return True
+
+
+_ui_scale_mod.add_listener(_on_ui_scale)

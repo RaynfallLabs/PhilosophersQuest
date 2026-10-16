@@ -193,10 +193,10 @@ class FullscreenTakeover:
                          intensity=(0.8 + 0.4 * pulse) * fade)
 
         # Headline + sub-line.
-        if self._title_font is None:
-            self._title_font = get_font('title', 42, bold=True)
-        if self._sub_font is None:
-            self._sub_font = get_font('heading', 32)
+        # Fetched every frame (a dict lookup): a kept font would go stale
+        # when the window is resized across a UI-scale step.
+        self._title_font = get_font('title', 42, bold=True)
+        self._sub_font = get_font('heading', 32)
 
         headline, sub = _ART_HEADLINES.get(self.art,
                                            ('MAX CHAIN!', 'Perfect Combo!'))

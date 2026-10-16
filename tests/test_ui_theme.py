@@ -38,7 +38,12 @@ from fantasy_ui import FP  # noqa: E402
 
 @pytest.fixture(autouse=True)
 def _no_art():
-    """Every test starts (and ends) with an empty kit."""
+    """Every test starts (and ends) with an empty kit, at UI scale 1: the
+    pixel references below are today's drawing at 1280x720 (the UI scale,
+    _genart/ui/SCALE_PLAN.md, is tested in test_ui_scale.py). conftest puts
+    the layout back afterwards."""
+    import layout
+    layout.update(1280, 720)
     ui_theme.unload()
     ui_theme.clear_overlay_cache()
     yield
