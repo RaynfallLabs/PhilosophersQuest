@@ -138,10 +138,10 @@ _EXEMPT = {
     # it as a join base.
     ("flavor_encounters.py", "data"),
     ("main.py", "data"),
-    # Parchment background is loaded with an os.path.exists() fallback;
-    # bundle is fine without it (the UI just paints a solid colour).
-    # See src/fantasy_ui.py:_try_parchment_png.
-    ("fantasy_ui.py", "assets/textures/parchment.png"),
+    # Parchment background is loaded once at startup with an isfile()
+    # fallback; the bundle is fine without it (the welcome name box paints
+    # its procedural parchment). See src/ui_theme.py:_load_textures.
+    ("ui_theme.py", "assets/textures/parchment.png"),
 }
 
 
@@ -195,6 +195,10 @@ _BUNDLED_DIR_ALLOWED = {
     "data/templates":          {".json"},
     "assets/fonts":            {".ttf", ".otf"},
     "assets/tiles":            {".png"},
+    # The UI art kit ships runtime art + its manifest only (plus the README
+    # documenting the asset contract). Never .psd/.kra sources, ComfyUI
+    # workflows or drafts: those live in _genart/.
+    "assets/ui":               {".png", ".json", ".md"},
 }
 _ARTIFACT_MARKERS = ("_v2", "_pre_v2", "_tellgate", "_backup", "_staging")
 

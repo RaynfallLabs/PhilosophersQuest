@@ -32,11 +32,51 @@ class MessageLog:
     def __init__(self):
         self.entries: list[tuple[str, str]] = []
         self._font = get_font('body', 20)
+        # Wrap cache (2026-10-15, UI art foundation): the log used to re-wrap
+        # all <=60 entries on every frame, the single largest per-frame cost
+        # with a full log (FOUNDATION_REVIEW.md 2.2). ``_wrapped[i]`` is
+        # ``(text, lines)``: the wrapped lines of ``entries[i]`` and the exact
+        # string they were wrapped from (None = not wrapped yet), for the
+        # (font, text width) in ``_wrap_key``. A different font or pane width
+        # invalidates every entry. Each lookup also checks the cached string
+        # is still the entry's text (an ``is`` test, then ``==``), so a
+        # replaced ``entries`` list or an entry edited in place re-wraps
+        # instead of drawing stale text (GROUNDWORK_REVIEW 7). Prefer
+        # ``add`` / ``clear`` / ``replace`` over mutating ``entries``.
+        self._wrapped: list[tuple[str, list[str]] | None] = []
+        self._wrap_key: tuple | None = None
 
     def add(self, text: str, msg_type: str = 'info'):
         self.entries.append((text, msg_type))
+        self._wrapped.append(None)
         if len(self.entries) > self.MAX:
             self.entries.pop(0)
+            self._wrapped.pop(0)
+
+    def clear(self) -> None:
+        self.entries = []
+        self._wrapped = []
+
+    def replace(self, entries) -> None:
+        """Replace every entry (e.g. a restored log); the cache is reset."""
+        self.entries = list(entries)[-self.MAX:]
+        self._wrapped = [None] * len(self.entries)
+
+    def _wrapped_lines(self, i: int, text_w: int) -> list[str]:
+        """Wrapped lines of entry ``i`` at ``text_w``, from the cache."""
+        key = (self._font, text_w)
+        if key != self._wrap_key or len(self._wrapped) != len(self.entries):
+            # Font or pane width changed (resize), or ``entries`` changed
+            # length behind add(): rebuild the cache's shape.
+            self._wrap_key = key
+            self._wrapped = [None] * len(self.entries)
+        text = self.entries[i][0]
+        got = self._wrapped[i]
+        if got is not None and (got[0] is text or got[0] == text):
+            return got[1]
+        lines = self._wrap(text, self._font, text_w)
+        self._wrapped[i] = (text, lines)
+        return lines
 
     @staticmethod
     def _wrap(text: str, font: pygame.font.Font, max_w: int) -> list[str]:
@@ -78,14 +118,17 @@ class MessageLog:
             return
         text_w = w - self.PAD_X * 2
 
-        # Pre-wrap all entries into display lines (text, msg_type).
-        all_lines: list[tuple[str, str]] = []
-        for text, msg_type in self.entries:
-            wrapped = self._wrap(text, self._font, text_w)
-            for wl in wrapped:
-                all_lines.append((wl, msg_type))
-
-        visible = all_lines[-max_lines:]
+        # The newest ``max_lines`` display lines (text, msg_type), walking
+        # back from the newest entry; wraps come from the cache.
+        visible: list[tuple[str, str]] = []
+        for i in range(len(self.entries) - 1, -1, -1):
+            msg_type = self.entries[i][1]
+            for wl in reversed(self._wrapped_lines(i, text_w)):
+                visible.append((wl, msg_type))
+            if len(visible) >= max_lines:
+                break
+        visible = visible[:max_lines]
+        visible.reverse()
 
         for i, (text, msg_type) in enumerate(visible):
             age = len(visible) - 1 - i
@@ -173,7 +216,7 @@ class Sidebar:
         rect = (self.x + self.PAD, y, self.w - self.PAD * 2, 24)
         draw_header_bar(self.screen, rect, text=text,
                         font=self._fhd, text_color=FP.GOLD_BRIGHT,
-                        accent=FP.GOLD_DARK)
+                        accent=FP.GOLD_DARK, kind='header_small')
         return y + 26
 
     def _bar(self, y: int, label: str, val: int, max_val: int,

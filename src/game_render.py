@@ -19,6 +19,7 @@ import pygame
 import layout
 from renderer import TILE_SIZE
 from geom import monster_at_tile, any_tile_in_set
+import ui_theme
 from fantasy_ui import (FP, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, draw_overlay,
@@ -205,9 +206,7 @@ class RenderMixin:
     def _draw_xyzzy_input(self):
         """Draw the hidden green terminal input — 'Speak the First Word'."""
         from fantasy_ui import get_font
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 220))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 220)
 
         bw, bh = 520, 200
         bx = (layout.WINDOW_W - bw) // 2
@@ -249,9 +248,7 @@ class RenderMixin:
     def _draw_xyzzy_confirm(self):
         """Draw the 'WARNING: You are about to hack reality' confirmation."""
         from fantasy_ui import get_font
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 220))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 220)
 
         bw, bh = 580, 240
         bx = (layout.WINDOW_W - bw) // 2
@@ -312,9 +309,7 @@ class RenderMixin:
             self.state = STATE_PLAYER
             return
 
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 190)
 
         bw, bh = min(760, layout.WINDOW_W - 80), 400
         bx = (layout.WINDOW_W - bw) // 2
@@ -507,9 +502,7 @@ class RenderMixin:
         self._charsheet_clamp()
         p = self.player
         screen = self.screen
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        screen.blit(overlay, (0, 0))
+        draw_overlay(screen, 190)
 
         font_title = get_font('heading', 25)
         font_head = get_font('body', 15, bold=True)
@@ -1066,7 +1059,8 @@ class RenderMixin:
                         text=enc['name'].upper(),
                         font=get_font('heading', 20),
                         text_color=border,
-                        accent=border)
+                        accent=border,
+                        frame=(panel, border))
         self._ui_chip(pygame.Rect(bx + bw - 136, by + 10, 110, 28),
                       phase_label, active=True, color=border)
         draw_divider(self.screen, bx + 20, by + 54, bw - 40)
@@ -1634,8 +1628,8 @@ class RenderMixin:
                      viewport_h: int | None = None) -> dict:
         """Pre-compute the quiz modal layout — shrink-then-scroll.
 
-        Measures the full content block (header + timer + question + four
-        choice cards + status + optional combat HUD) and picks the first
+        Measures the full content block (header + timer + question + the
+        choice cards, four or more + status + optional combat HUD) and picks the first
         strategy that fits:
           (1) **base fonts** (``self.font_md`` / ``self.font_sm``) if the
               content already fits inside the viewport,
@@ -1684,6 +1678,13 @@ class RenderMixin:
             display_choices = [choices[i] for i in qe.confused_order]
         else:
             display_choices = choices
+        # Two columns; every bank question has four choices (two rows), but
+        # a malformed question with more extends the grid downward (and the
+        # shrink-then-scroll ladder below copes with the extra height)
+        # instead of raising (GROUNDWORK_REVIEW 6). Keys 1-4 answer the
+        # first four; the cards are always laid out for at least four.
+        n_cards = max(4, len(display_choices))
+        n_rows = (n_cards + 1) // 2
 
         # -- Candidate font tiers (base, mid, small) -------------------
         # ``self.font_md`` is get_font('body', 26); ``self.font_sm`` is
@@ -1719,7 +1720,8 @@ class RenderMixin:
                          for ch in display_choices]
             max_c_lines = max((len(w) for w in c_wrapped), default=1)
             ch_height = max(52, max_c_lines * c_line_h + 20)
-            scrollable_h = q_height + section_gap * 2 + ch_height * 2 + GAP
+            scrollable_h = (q_height + section_gap * 2
+                            + ch_height * n_rows + GAP * (n_rows - 1))
             total_h = header_h + timer_h + section_gap + scrollable_h + tail_h
             return {
                 'q_lines': q_lines, 'q_line_h': q_line_h, 'q_height': q_height,
@@ -1766,14 +1768,14 @@ class RenderMixin:
                                     measurement['q_height'])
         choices_top = q_y + measurement['q_height'] + section_gap * 2
         choice_rects = []
-        for i in range(4):
+        for i in range(n_cards):
             col = i % 2
             row = i // 2
             cx_ = bx + PAD + col * (cw + GAP)
             cy_ = choices_top + row * (measurement['ch_height'] + GAP)
             choice_rects.append(pygame.Rect(cx_, cy_, cw, measurement['ch_height']))
 
-        # The scroll region bounds the question + 2 rows of choices.
+        # The scroll region bounds the question + the rows of choices.
         scroll_rect = pygame.Rect(bx + PAD,
                                   by + header_h + timer_h + section_gap,
                                   bw - PAD * 2,
@@ -1843,9 +1845,7 @@ class RenderMixin:
         accent_dim = tuple(max(0, v - 90) for v in accent)
 
         # -- Overlay ----------------------------------------------------
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 190))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 190)
 
         # -- Pre-computed layout (Phase 2 beautification, 2026-10-04) --
         # ``_quiz_layout`` measures the full content block and either keeps
@@ -1857,7 +1857,6 @@ class RenderMixin:
         panel_rect  = L['panel_rect']
         bx, by, bw, bh = L['bx'], L['by'], L['bw'], L['bh']
         PAD = L['PAD']
-        GAP = L['GAP']
         HEADER_H    = L['header_h']
         STATUS_H    = L['status_h']
         SECTION_GAP = L['section_gap']
@@ -1868,8 +1867,6 @@ class RenderMixin:
         q_height    = L['question_rect'].height
         c_wrapped   = L['c_wrapped']
         display_choices = L['display_choices']
-        cw          = L['cw']
-        ch_height   = L['ch_height']
 
         # Effects background pass -- the chain aura paints a soft border
         # glow around the panel here. Runs BEFORE the opaque panel so
@@ -1880,7 +1877,8 @@ class RenderMixin:
             rt.draw_background(self.screen, panel_rect)
 
         # FANTASY: Arcane grimoire quiz panel
-        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent)
+        draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent,
+                        kind='quiz')
 
         # Mode / progress counter (top-right). Built BEFORE the header so the
         # title can reserve room for it and never overrun it (e.g. a long
@@ -1918,7 +1916,8 @@ class RenderMixin:
         draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
                         text=self.quiz_title, font=self.font_md,
                         text_color=FP.GOLD_BRIGHT, accent=accent,
-                        right_reserve=reserve_w)
+                        right_reserve=reserve_w,
+                        frame=(panel_rect, accent, 'quiz'))
         if c_surf is not None:
             self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
                                        by + (HEADER_H - c_surf.get_height()) // 2))
@@ -2012,11 +2011,19 @@ class RenderMixin:
             line_x = (bx + (bw - surf.get_width()) // 2) if is_combat else bx + PAD
             self.screen.blit(surf, (line_x, qy))
             qy += q_line_h
-        qy = q_top + q_height + SECTION_GAP
 
-        # Thin separator just above the choice cards.
+        # The answer cards are drawn exactly where ``_quiz_layout`` put them
+        # (``L['choice_rects']``, in unscrolled coordinates), shifted by the
+        # scroll offset. The layout is the one source of truth: until
+        # 2026-10-15 the cards were drawn one section gap (10 px) above the
+        # layout's rects (FOUNDATION_REVIEW 2.1).
+        dy = -(scroll_off if scrollable else 0)
+        choice_rects = [r.move(0, dy) for r in L['choice_rects']]
+
+        # Thin separator midway between the question and the cards.
+        sep_y = q_top + q_height + SECTION_GAP
         pygame.draw.line(self.screen, accent_dim,
-                         (bx + PAD, qy - 4), (bx + bw - PAD, qy - 4))
+                         (bx + PAD, sep_y), (bx + bw - PAD, sep_y))
 
         # -- Choice cards (2 x 2 grid) — grimoire chrome via draw_choice_button --
         from fantasy_ui import draw_choice_button
@@ -2029,14 +2036,11 @@ class RenderMixin:
         in_result   = (qe.state == QuizState.RESULT)
 
         for i, (choice, wrapped_lines) in enumerate(zip(display_choices, c_wrapped)):
-            col = i % 2
-            row = i // 2
-            cx_ = bx + PAD + col * (cw + GAP)
-            cy_ = qy + row * (ch_height + GAP)
+            card = choice_rects[i]
 
             # Skip entirely-offscreen cards when scrolling (cheap cull).
-            if scrollable and (cy_ + ch_height < scroll_rect.y
-                               or cy_ > scroll_rect.bottom):
+            if scrollable and (card.bottom < scroll_rect.y
+                               or card.y > scroll_rect.bottom):
                 continue
 
             c_str       = str(choice).strip()
@@ -2050,7 +2054,7 @@ class RenderMixin:
             mark_incorrect = in_result and is_selected and not is_correct
 
             draw_choice_button(
-                self.screen, (cx_, cy_, cw, ch_height),
+                self.screen, tuple(card),
                 key_label=str(i + 1),
                 text=wrapped_lines,
                 key_font=self.font_md,
@@ -2139,10 +2143,7 @@ class RenderMixin:
                 header_h=HEADER_H,
                 timer_rect=pygame.Rect(bar_x, ty, bar_w + secs_w, bar_h) if getattr(qe, 'timed', True) else None,
                 question_rect=L['question_rect'],
-                choices_rect=pygame.Rect(bx + PAD,
-                                         scroll_rect.y + q_height + SECTION_GAP,
-                                         bw - PAD * 2,
-                                         ch_height * 2 + GAP),
+                choices_rect=choice_rects[0].unionall(choice_rects[1:]),
                 status_rect=status_rect,
                 pad=PAD,
             )
@@ -2933,7 +2934,8 @@ class RenderMixin:
         by = (layout.WINDOW_H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=border)
         draw_header_bar(self.screen, (bx, by, bw, 44), text=title,
-                        font=self.font_lg, text_color=FP.GOLD_BRIGHT)
+                        font=self.font_lg, text_color=FP.GOLD_BRIGHT,
+                        frame=((bx, by, bw, bh), border))
 
         content_x = bx + 16
         content_y = by + 56
@@ -3071,7 +3073,7 @@ class RenderMixin:
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=border)
         draw_header_bar(self.screen, (bx, by, bw, 40), text=title,
                         font=self.font_md, text_color=FP.GOLD_BRIGHT,
-                        accent=border)
+                        accent=border, frame=((bx, by, bw, bh), border))
         if subtitle:
             ss = get_font('small', 14).render(subtitle, True, FP.FADED_TEXT)
             title_w = self.font_md.size(title)[0]
@@ -4060,9 +4062,7 @@ class RenderMixin:
         offer = boons.offer_for(kind) if kind else None
         if not offer:
             return
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 210))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 210)
 
         font_title = get_font('heading', 24)
         font_name  = get_font('body', 20, bold=True)
@@ -4107,9 +4107,7 @@ class RenderMixin:
     def _draw_prayer_menu(self):
         """Which prayer? One numbered line each, with what it asks for."""
         from fantasy_ui import get_font
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 200))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 200)
 
         choices = self._prayer_choices()
         font_title = get_font('heading', 24)
@@ -4150,9 +4148,7 @@ class RenderMixin:
         """v2.13.0: Y/N confirm popup for Divine Intercession. Terse,
         heavy-lidded warning styling — this is the one big ask per run."""
         from fantasy_ui import get_font
-        overlay = pygame.Surface((layout.WINDOW_W, layout.WINDOW_H), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 200))
-        self.screen.blit(overlay, (0, 0))
+        draw_overlay(self.screen, 200)
 
         bw, bh = 620, 260
         bx = (layout.WINDOW_W - bw) // 2
@@ -4870,7 +4866,8 @@ class RenderMixin:
         panel = pygame.Rect(bx, by, bw, bh)
         draw_dark_panel(self.screen, panel, border_color=accent)
         draw_header_bar(self.screen, (bx, by, bw, 48), text=d['title'],
-                        font=self.font_lg, text_color=accent, accent=accent)
+                        font=self.font_lg, text_color=accent, accent=accent,
+                        frame=(panel, accent))
         draw_divider(self.screen, bx + 18, by + 58, bw - 36)
 
         y = by + 74
@@ -4980,7 +4977,6 @@ class RenderMixin:
             self.screen,
             (cx - panel_w // 2, panel_y, panel_w, panel_h),
             border_color=accent,
-            alpha=218,
         )
 
         grade_s = grade_font.render(grade, True, grade_col)
@@ -5250,15 +5246,22 @@ class RenderMixin:
         draw_dark_panel(self.screen, rect, border_color=border_color)
         draw_header_bar(self.screen, (bx, by, bw, 48), text=title,
                         font=self.font_lg, text_color=FP.GOLD_BRIGHT,
-                        accent=border_color)
+                        accent=border_color, frame=(rect, border_color))
         draw_divider(self.screen, bx + 18, by + 58, bw - 36)
         return rect
 
     def _ui_subpanel(self, rect, label, *, border_color=FP.GOLD_DARK):
-        pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=6)
-        pygame.draw.rect(self.screen, border_color, rect, 1, border_radius=6)
+        # Art kit first (ui_theme pieces 'subpanel' + 'subpanel_header');
+        # procedural rounded box + label strip otherwise.
         head = pygame.Rect(rect.x + 1, rect.y + 1, rect.w - 2, 29)
-        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, head, border_radius=6)
+        if ui_theme.draw_piece(self.screen, 'subpanel', rect,
+                               accent=border_color, body_color=FP.MIDNIGHT):
+            ui_theme.draw_piece(self.screen, 'subpanel_header', head,
+                                accent=border_color)
+        else:
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=6)
+            pygame.draw.rect(self.screen, border_color, rect, 1, border_radius=6)
+            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, head, border_radius=6)
         f = get_font('small', 14, bold=True)
         self._ui_blit_text(label.upper(), f, FP.GOLD_BRIGHT,
                            rect.centerx, rect.y + 7, align='center')
@@ -5275,10 +5278,12 @@ class RenderMixin:
                            max_width=panel_rect.w - 44)
 
     def _ui_chip(self, rect, label, *, active=False, color=FP.GOLD):
-        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if active else FP.MIDNIGHT,
-                         rect, border_radius=5)
-        pygame.draw.rect(self.screen, color if active else FP.GOLD_DARK,
-                         rect, 1, border_radius=5)
+        if not ui_theme.draw_piece(self.screen, 'chip_active' if active else 'chip',
+                                   rect, accent=color if active else None):
+            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if active else FP.MIDNIGHT,
+                             rect, border_radius=5)
+            pygame.draw.rect(self.screen, color if active else FP.GOLD_DARK,
+                             rect, 1, border_radius=5)
         f = get_font('small', 14, bold=True)
         self._ui_blit_text(label, f, FP.GOLD_BRIGHT if active else FP.FADED_TEXT,
                            rect.centerx, rect.y + 6, align='center',
@@ -5286,13 +5291,16 @@ class RenderMixin:
 
     def _ui_progress_bar(self, rect, pct, *, color=FP.ARCANE_BRIGHT,
                          label=''):
-        pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=4)
+        if not ui_theme.draw_piece(self.screen, 'bar_track', rect,
+                                   body_color=FP.MIDNIGHT):
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=4)
         fill_w = int(rect.w * max(0.0, min(1.0, float(pct))))
         if fill_w:
             pygame.draw.rect(self.screen, color,
                              (rect.x, rect.y, fill_w, rect.h),
                              border_radius=4)
-        pygame.draw.rect(self.screen, FP.ARCANE_DIM, rect, 1, border_radius=4)
+        if not ui_theme.draw_piece(self.screen, 'bar_frame', rect, body=False):
+            pygame.draw.rect(self.screen, FP.ARCANE_DIM, rect, 1, border_radius=4)
         if label:
             self._ui_blit_text(label, get_font('small', 12), FP.BODY_TEXT,
                                rect.centerx, rect.y - 2, align='center')
@@ -5302,15 +5310,18 @@ class RenderMixin:
         if total_lines <= visible_lines:
             return
         track = pygame.Rect(rect.right - 8, rect.y, 5, rect.h)
-        pygame.draw.rect(self.screen, FP.MIDNIGHT, track, border_radius=3)
+        if not ui_theme.draw_piece(self.screen, 'scroll_track', track,
+                                   body_color=FP.MIDNIGHT):
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, track, border_radius=3)
         ratio = visible_lines / max(1, total_lines)
         thumb_h = max(20, int(track.h * ratio))
         max_scroll = max(1, total_lines - visible_lines)
         thumb_y = track.y + int((track.h - thumb_h) *
                                 (max(0, scroll) / max_scroll))
-        pygame.draw.rect(self.screen, color,
-                         (track.x, thumb_y, track.w, thumb_h),
-                         border_radius=3)
+        thumb = pygame.Rect(track.x, thumb_y, track.w, thumb_h)
+        if not ui_theme.draw_piece(self.screen, 'scroll_thumb', thumb,
+                                   accent=color):
+            pygame.draw.rect(self.screen, color, thumb, border_radius=3)
 
     def _ui_text_lines(self, text, font, width):
         lines = []
@@ -5320,18 +5331,21 @@ class RenderMixin:
 
     def _ui_action_row(self, rect, key, label, *, color=FP.BODY_TEXT,
                        selected=False):
-        fill = FP.MIDNIGHT_MID if selected else FP.MIDNIGHT
-        pygame.draw.rect(self.screen, fill, rect, border_radius=6)
-        pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
-                         rect, 1, border_radius=6)
+        if not ui_theme.draw_piece(self.screen, 'row_selected' if selected else 'row',
+                                   rect, body_color=FP.MIDNIGHT):
+            fill = FP.MIDNIGHT_MID if selected else FP.MIDNIGHT
+            pygame.draw.rect(self.screen, fill, rect, border_radius=6)
+            pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
+                             rect, 1, border_radius=6)
 
         key = str(key)
         key_font = get_font('small', 14, bold=True)
         label_font = get_font('small', 15, bold=True)
         key_w = max(42, min(rect.w // 3, key_font.size(key)[0] + 20))
         key_rect = pygame.Rect(rect.x + 8, rect.y + 8, key_w, rect.h - 16)
-        pygame.draw.rect(self.screen, (96, 34, 28), key_rect, border_radius=5)
-        pygame.draw.rect(self.screen, color, key_rect, 1, border_radius=5)
+        if not ui_theme.draw_piece(self.screen, 'key', key_rect, accent=color):
+            pygame.draw.rect(self.screen, (96, 34, 28), key_rect, border_radius=5)
+            pygame.draw.rect(self.screen, color, key_rect, 1, border_radius=5)
         self._ui_blit_text(key, key_font, color, key_rect.centerx,
                            key_rect.y + max(4, (key_rect.h - key_font.get_height()) // 2),
                            align='center')
@@ -5378,7 +5392,7 @@ class RenderMixin:
         draw_dark_panel(self.screen, panel, border_color=border_color)
         draw_header_bar(self.screen, (bx, by, bw, 48), text=title,
                         font=self.font_lg, text_color=title_color or FP.GOLD_BRIGHT,
-                        accent=border_color)
+                        accent=border_color, frame=(panel, border_color))
         draw_divider(self.screen, bx + 18, by + 58, bw - 36)
 
         y = by + 72
@@ -5423,7 +5437,7 @@ class RenderMixin:
         draw_dark_panel(self.screen, panel, border_color=border_color)
         draw_header_bar(self.screen, (bx, by, bw, 48), text=title,
                         font=self.font_lg, text_color=title_color or FP.GOLD_BRIGHT,
-                        accent=border_color)
+                        accent=border_color, frame=(panel, border_color))
         draw_divider(self.screen, bx + 18, by + 58, bw - 36)
 
         prompt_rect = pygame.Rect(bx + 36, by + 76, bw - 72, 46)
@@ -6130,7 +6144,7 @@ class RenderMixin:
         )
 
     def _draw_shop(self):
-        """Draw the merchant shop overlay through grimoire PanelBuilder.
+        """Draw the merchant shop overlay through the shared decision menu (_draw_decision_menu).
 
         Frame: standard dark-panel chrome with filigree bars under the title
         (keeps the "merchant tent" flourish flavor from the prior layout).

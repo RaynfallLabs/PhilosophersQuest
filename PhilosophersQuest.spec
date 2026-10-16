@@ -41,6 +41,9 @@ added_files = [
     ('assets/icon.ico',             'assets'),
     ('assets/fonts',                'assets/fonts'),
     ('assets/tiles',                'assets/tiles'),
+    # UI art kit (optional painted panels/frames; see assets/ui/README.md).
+    # Loaded by src/ui_theme.py at startup; missing art = procedural UI.
+    ('assets/ui',                   'assets/ui'),
 ]
 
 a = Analysis(

@@ -172,9 +172,23 @@ class StudyMode:
         title = titles.get(self._phase, 'STUDY MODE')
         draw_header_bar(self.screen, (margin, margin, W - 2 * margin, 44),
                         text=title, font=self.font_lg,
-                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD)
+                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD,
+                        frame=(rect, FP.GOLD))
         draw_divider(self.screen, margin + 20, margin + 50,
                      W - 2 * margin - 40)
+
+    def _draw_score(self, W, text):
+        """The running score, right-aligned INSIDE the header strip and
+        centred on it. (It used to be drawn at y=20, across the panel's top
+        edge; once the header stopped painting over the frame, the two gold
+        border lines ran through the middle of it: GROUNDWORK_REVIEW 2.)
+        Right edge kept clear of the strip's side diamond (x + w - 15)."""
+        from fantasy_ui import draw_shadow_text
+        margin, header_h = 24, 44           # the same strip _draw_frame draws
+        tw, th = self.font_sm.size(text)
+        x = W - margin - 30 - tw
+        y = margin + (header_h - th) // 2
+        draw_shadow_text(self.screen, self.font_sm, text, FP.GOLD_PALE, (x, y))
 
     def _draw_subject_picker(self, W, H):
         # Panel header is painted by _draw_frame; just the sub-line + list here.
@@ -229,7 +243,7 @@ class StudyMode:
 
         q = self._questions[self._idx % len(self._questions)]
         score = f"{self._correct_count}/{self._asked_count}" if self._asked_count else "0/0"
-        centered_text(self.screen, self.font_sm, f"Score: {score}", FP.GOLD_PALE, 20)
+        self._draw_score(W, f"Score: {score}")
 
         # Question
         q_text = q['question']

@@ -34,6 +34,10 @@ def _load_capture():
 
 
 capture = _load_capture()
+
+# Every test starts with an empty UI art kit and restores the previous one
+# (the capture harness loads assets/ui/; GROUNDWORK_REVIEW 9).
+pytestmark = pytest.mark.usefixtures('ui_theme_isolated')
 KEY_SCENES = [s for s in capture.SCENES if s.key]
 
 

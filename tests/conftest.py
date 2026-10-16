@@ -105,3 +105,18 @@ def _fresh_unique_registry():
     except Exception:
         pass
     yield
+
+
+@pytest.fixture
+def ui_theme_isolated():
+    """Each test starts with an EMPTY UI art kit and gets the previous kit
+    back afterwards, so a test never depends on whether an earlier test (or
+    the capture harness) loaded assets/ui/ (GROUNDWORK_REVIEW 9). Opt in
+    with ``pytestmark = pytest.mark.usefixtures('ui_theme_isolated')``."""
+    import ui_theme
+    saved = ui_theme.save_state()
+    ui_theme.unload()
+    try:
+        yield
+    finally:
+        ui_theme.restore_state(saved)

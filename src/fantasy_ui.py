@@ -3,10 +3,16 @@ fantasy_ui.py -- High-fantasy medieval / arcane grimoire UI theme.
 # FANTASY: Central theme module. All visual helpers live here so main.py
 #          and ui.py stay logic-focused. Import what you need:
 #
-#   from fantasy_ui import (FP, get_font, draw_panel, draw_divider,
+#   from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
+#                            draw_panel_frame, draw_divider,
 #                            draw_shadow_text, draw_glow_text,
 #                            make_parchment, draw_header_bar,
-#                            draw_overlay, draw_corner_flourish)
+#                            draw_overlay, draw_choice_button)
+#
+# ART KIT: the panel / header / divider / choice-button / input-box / overlay
+# helpers ask ``ui_theme`` (the optional painted-art kit loaded from
+# assets/ui/ at startup) first, and draw procedurally when that art is
+# missing. With assets/ui/ empty, everything below draws exactly as before.
 """
 
 import math
@@ -15,6 +21,8 @@ import random
 
 import pygame
 from paths import data_path
+
+import ui_theme
 
 # -----------------------------------------------------------------------------
 # FANTASY PALETTE  (FP namespace -- "Fantasy Palette")
@@ -319,17 +327,13 @@ def make_parchment(w: int, h: int, dark: bool = False, alpha: int = 255) -> pyga
 
 
 def _try_parchment_png(w: int, h: int, alpha: int = 235) -> pygame.Surface | None:
-    """Try to load assets/textures/parchment.png and scale it."""
-    path = data_path('assets', 'textures', 'parchment.png')
-    if not os.path.exists(path):
-        return None
-    try:
-        img = pygame.image.load(path).convert_alpha()
-        img = pygame.transform.smoothscale(img, (w, h))
-        img.set_alpha(alpha)
-        return img
-    except Exception:
-        return None
+    """The optional assets/textures/parchment.png, scaled to (w, h).
+
+    The image is loaded ONCE, by ``ui_theme.load()`` at startup, and each
+    scaled copy is cached per size (``ui_theme.texture``). This used to stat
+    the file on every call and, had the file existed, load + smoothscale it on
+    every frame (FOUNDATION.md 5, "the parchment trap"). None when absent."""
+    return ui_theme.texture('parchment', w, h, alpha)
 
 
 # -----------------------------------------------------------------------------
@@ -338,10 +342,11 @@ def _try_parchment_png(w: int, h: int, alpha: int = 235) -> pygame.Surface | Non
 
 def draw_overlay(surf: pygame.Surface, alpha: int = 185,
                  color: tuple = (0, 0, 0)):
-    """# FANTASY: Dark semi-transparent overlay (full screen)."""
-    ov = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
-    ov.fill((*color, alpha))
-    surf.blit(ov, (0, 0))
+    """# FANTASY: Dark semi-transparent overlay (full screen).
+
+    Every full-window darkening wash in the game goes through here; the
+    surface is cached per (window size, colour, alpha) in ui_theme."""
+    ui_theme.draw_overlay(surf, alpha, color)
 
 
 # -----------------------------------------------------------------------------
@@ -367,6 +372,12 @@ def draw_panel(surf: pygame.Surface, rect: tuple,
     else:
         pygame.draw.rect(surf, (*FP.MIDNIGHT, alpha), (x, y, w, h))
 
+    # Double border, corner flourishes, mid-edge diamonds
+    _parchment_panel_frame(surf, x, y, w, h, border_color)
+
+
+def _parchment_panel_frame(surf, x, y, w, h, border_color) -> None:
+    """The procedural frame of ``draw_panel`` (square corners)."""
     # Outer border
     pygame.draw.rect(surf, border_color, (x, y, w, h), 2)
     # Inner double border
@@ -390,27 +401,84 @@ def draw_panel(surf: pygame.Surface, rect: tuple,
 
 def draw_dark_panel(surf: pygame.Surface, rect: tuple,
                     border_color: tuple | None = None,
-                    alpha: int = 230) -> None:
+                    alpha: int = 255, kind: str = 'panel') -> None:
     """
     # FANTASY: Dark arcane panel (midnight blue bg + gold border).
     Used for quiz, menus etc. over the game world.
+
+    The body is OPAQUE (lead decision 2026-10-15: no text may bleed through
+    a panel). ``alpha`` < 255 keeps the old translucent body for a caller
+    that really wants one; nothing in the game asks for it.
+
+    ``kind`` names the art piece (``'panel'``, or ``'quiz'`` for the quiz
+    modal). With that art loaded the painted frame is drawn instead and
+    ``border_color`` tints only its accent layer, never the painted gold.
+    A header strip drawn over the top of the panel must repaint the frame:
+    pass ``frame=(rect, border_color, kind)`` to ``draw_header_bar``.
     """
     if border_color is None:
         border_color = FP.GOLD
     x, y, w, h = rect
     if w <= 0 or h <= 0:        # a window too small for the panel: draw nothing, raise nothing
         return
+    if ui_theme.draw_piece(surf, kind, rect, accent=border_color,
+                           body_color=FP.MIDNIGHT):
+        return
 
-    # Dark bg
-    bg_surf = pygame.Surface((w, h), pygame.SRCALPHA)
-    bg_surf.fill((*FP.MIDNIGHT, alpha))
-    # Subtle horizontal texture lines
-    for row in range(0, h, 5):
-        shade = 4 if (row // 5) % 2 == 0 else 0
-        c = tuple(min(255, v + shade) for v in FP.MIDNIGHT)
-        pygame.draw.line(bg_surf, (*c, alpha - 10), (3, row + 2), (w - 3, row + 2))
-    surf.blit(bg_surf, (x, y))
+    # Dark bg with subtle horizontal texture lines
+    if alpha >= 255:
+        surf.fill(FP.MIDNIGHT, (x, y, w, h))
+        lit = tuple(min(255, v + 4) for v in FP.MIDNIGHT)
+        for row in range(0, h - 2, 10):
+            pygame.draw.line(surf, lit, (x + 3, y + row + 2), (x + w - 3, y + row + 2))
+    else:
+        bg_surf = pygame.Surface((w, h), pygame.SRCALPHA)
+        bg_surf.fill((*FP.MIDNIGHT, alpha))
+        for row in range(0, h, 5):
+            shade = 4 if (row // 5) % 2 == 0 else 0
+            c = tuple(min(255, v + shade) for v in FP.MIDNIGHT)
+            pygame.draw.line(bg_surf, (*c, alpha - 10), (3, row + 2), (w - 3, row + 2))
+        surf.blit(bg_surf, (x, y))
 
+    _dark_panel_frame(surf, x, y, w, h, border_color)
+
+
+def draw_panel_frame(surf: pygame.Surface, rect: tuple,
+                     border_color: tuple | None = None,
+                     kind: str = 'panel', clip=None) -> None:
+    """Repaint ONLY the frame (border + ornaments) of a panel, optionally
+    clipped to ``clip``. ``kind`` is the panel's art piece (``'panel'`` /
+    ``'quiz'``), or ``'parchment'`` for a ``draw_panel`` parchment box.
+
+    Used by ``draw_header_bar(frame=...)``: the opaque header strip covers
+    the top of the panel, so the frame is painted again over the strip,
+    clipped to the strip. The procedural frame is opaque and not
+    anti-aliased, so painting it twice changes nothing outside the strip."""
+    if border_color is None:
+        border_color = FP.GOLD
+    x, y, w, h = rect
+    if w <= 0 or h <= 0:
+        return
+    if kind != 'parchment' and ui_theme.draw_piece(
+            surf, kind, rect, accent=border_color, body=False, clip=clip):
+        return
+    old_clip = None
+    if clip is not None:
+        old_clip = surf.get_clip()
+        surf.set_clip(pygame.Rect(clip).clip(old_clip))
+    try:
+        if kind == 'parchment':
+            _parchment_panel_frame(surf, x, y, w, h, border_color)
+        else:
+            _dark_panel_frame(surf, x, y, w, h, border_color)
+    finally:
+        if old_clip is not None:
+            surf.set_clip(old_clip)
+
+
+def _dark_panel_frame(surf, x, y, w, h, border_color) -> None:
+    """The procedural frame of ``draw_dark_panel``: double border, corner
+    flourishes, mid-edge diamonds."""
     # Double border
     pygame.draw.rect(surf, border_color, (x, y, w, h), 2, border_radius=4)
     pygame.draw.rect(surf, FP.GOLD_DARK, (x+5, y+5, w-10, h-10), 1, border_radius=2)
@@ -469,10 +537,21 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
                     text: str = '', font: pygame.font.Font | None = None,
                     text_color: tuple | None = None,
                     accent: tuple | None = None,
-                    right_reserve: int = 0) -> None:
+                    right_reserve: int = 0, *,
+                    frame: tuple | None = None,
+                    kind: str = 'header') -> None:
     """
     # FANTASY: Decorative header strip inside a panel.
     rect = (x, y, w, h)  -- usually HEADER_H = 44 tall.
+
+    ``frame=(panel_rect, border_color[, panel_kind])`` names the panel this
+    strip sits in. The strip is opaque and starts at the panel's own edge,
+    so on its own it paints over the panel's top and side borders
+    (FOUNDATION_REVIEW 1). With ``frame`` the panel's frame is repainted
+    over the strip, clipped to the strip, before the title is drawn.
+
+    ``kind`` is the art piece for the strip (``'header'``; the sidebar uses
+    ``'header_small'``). The title text is always drawn here, on top.
     """
     if text_color is None:
         text_color = FP.GOLD_BRIGHT
@@ -480,16 +559,22 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
         accent = FP.GOLD
     x, y, w, h = rect
 
-    # Two-tone bg
-    pygame.draw.rect(surf, FP.MIDNIGHT,     (x, y,      w, h // 2))
-    pygame.draw.rect(surf, FP.MIDNIGHT_MID, (x, y+h//2, w, h - h//2))
+    if ui_theme.draw_piece(surf, kind, rect, accent=accent):
+        if frame is not None:
+            _repaint_frame(surf, frame, rect)
+    else:
+        # Two-tone bg
+        pygame.draw.rect(surf, FP.MIDNIGHT,     (x, y,      w, h // 2))
+        pygame.draw.rect(surf, FP.MIDNIGHT_MID, (x, y+h//2, w, h - h//2))
+        if frame is not None:
+            _repaint_frame(surf, frame, rect)
 
-    # Bottom separator line
-    pygame.draw.line(surf, accent, (x + 8, y + h - 1), (x + w - 8, y + h - 1), 1)
+        # Bottom separator line
+        pygame.draw.line(surf, accent, (x + 8, y + h - 1), (x + w - 8, y + h - 1), 1)
 
-    # Side diamond accents
-    for ax in [x + 14, x + w - 15]:
-        _edge_diamond(surf, ax, y + h//2, accent, vertical=True, size=4)
+        # Side diamond accents
+        for ax in [x + 14, x + w - 15]:
+            _edge_diamond(surf, ax, y + h//2, accent, vertical=True, size=4)
 
     # Title text — truncate with ellipsis if wider than the header so the
     # text never overflows the panel sides. Mid-edge diamonds + side padding
@@ -508,6 +593,14 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
         surf.blit(ts,     (sx,     sy))
 
 
+def _repaint_frame(surf, frame, strip_rect) -> None:
+    """Repaint a panel's frame over a header strip, clipped to the strip."""
+    panel_rect, border_color = frame[0], frame[1]
+    panel_kind = frame[2] if len(frame) > 2 else 'panel'
+    draw_panel_frame(surf, panel_rect, border_color, panel_kind,
+                     clip=pygame.Rect(strip_rect))
+
+
 # -----------------------------------------------------------------------------
 # SECTION DIVIDER
 # -----------------------------------------------------------------------------
@@ -517,6 +610,8 @@ def draw_divider(surf: pygame.Surface, x: int, y: int, w: int,
     """# FANTASY: Ornamental horizontal divider with center diamond."""
     if color is None:
         color = FP.GOLD_DARK
+    if ui_theme.draw_hbar(surf, 'divider', x, y, w, accent=color):
+        return
     cx = x + w // 2
     pygame.draw.line(surf, color, (x + 18, y), (cx - 14, y), 1)
     pygame.draw.line(surf, color, (cx + 14, y), (x + w - 18, y), 1)
@@ -549,15 +644,19 @@ def draw_glow_text(surf: pygame.Surface, font: pygame.font.Font,
     if glow_color is None:
         glow_color = tuple(min(255, c + 70) for c in color[:3])
     sx, sy = pos
-    # Glow passes (low-alpha renders offset in a halo)
-    glow_surf = pygame.Surface(surf.get_size(), pygame.SRCALPHA)
+    # Glow passes (low-alpha renders offset in a halo). Composed on a layer
+    # just big enough for the halo, not the whole window (that was a
+    # window-sized allocation per call, twice a frame on the end screens);
+    # the pixels are the same, since the rest of the layer was transparent.
+    gs = font.render(text, True, (*glow_color[:3], 55))
+    tw, th = gs.get_size()
+    glow_surf = pygame.Surface((tw + 2 * glow_r, th + 2 * glow_r), pygame.SRCALPHA)
     for dx in range(-glow_r, glow_r + 1, 2):
         for dy in range(-glow_r, glow_r + 1, 2):
             if dx == 0 and dy == 0:
                 continue
-            gs = font.render(text, True, (*glow_color[:3], 55))
-            glow_surf.blit(gs, (sx + dx, sy + dy))
-    surf.blit(glow_surf, (0, 0))
+            glow_surf.blit(gs, (glow_r + dx, glow_r + dy))
+    surf.blit(glow_surf, (sx - glow_r, sy - glow_r))
     ts = font.render(text, True, color)
     surf.blit(ts, (sx, sy))
     return ts.get_width(), ts.get_height()
@@ -682,8 +781,10 @@ def draw_input_box(surf: pygame.Surface, rect: tuple, value: str,
     if text_color is None:
         text_color = FP.PARCHMENT_LIGHT
     x, y, w, h = rect
-    pygame.draw.rect(surf, FP.MIDNIGHT_LIGHT, (x, y, w, h), border_radius=4)
-    pygame.draw.rect(surf, border_color, (x, y, w, h), 1, border_radius=4)
+    if not ui_theme.draw_piece(surf, 'input', rect, accent=border_color,
+                               body_color=FP.MIDNIGHT_LIGHT):
+        pygame.draw.rect(surf, FP.MIDNIGHT_LIGHT, (x, y, w, h), border_radius=4)
+        pygame.draw.rect(surf, border_color, (x, y, w, h), 1, border_radius=4)
     display = value if value else placeholder
     val_surf = font.render(display, True, text_color)
     surf.blit(val_surf, (x + 10, y + (h - val_surf.get_height()) // 2))
@@ -720,21 +821,9 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
 
     if w <= 0 or h <= 0:
         return
-    bg_s = pygame.Surface((w, h), pygame.SRCALPHA)
-    bg_s.fill((*bg_col, 220))
-    surf.blit(bg_s, (x, y))
-
-    pygame.draw.rect(surf, border_col, (x, y, w, h), 1, border_radius=3)
-
-    # Inner double-stroke for grimoire flavor (matches draw_dark_panel pattern)
-    pygame.draw.rect(surf, FP.GOLD_DARK, (x + 3, y + 3, w - 6, h - 6), 1, border_radius=2)
-
-    # Key badge (left side) — bigger rune-stone block
     badge_w = 44
-    badge_s = pygame.Surface((badge_w, h), pygame.SRCALPHA)
-    badge_s.fill((*FP.MIDNIGHT_MID, 200))
-    surf.blit(badge_s, (x, y))
-    pygame.draw.line(surf, border_col, (x + badge_w, y), (x + badge_w, y + h), 1)
+    if not _choice_button_art(surf, rect, badge_w, correct, incorrect, selected):
+        _choice_button_procedural(surf, rect, badge_w, bg_col, border_col)
 
     k_surf = key_font.render(key_label, True, FP.GOLD_BRIGHT)
     surf.blit(k_surf, (x + badge_w//2 - k_surf.get_width()//2,
@@ -759,6 +848,39 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
         t_surf = text_font.render(line, True, t_color)
         surf.blit(t_surf, (tx, ty))
         ty += line_h
+
+
+def _choice_button_art(surf, rect, badge_w, correct, incorrect, selected) -> bool:
+    """Painted quiz answer card: the state's card piece, the key badge, then
+    the card's frame again over the badge (a badge must never cover the card
+    border; FOUNDATION_REVIEW 2.4). False if this state's art is missing."""
+    name = ('choice_correct' if correct else 'choice_incorrect' if incorrect
+            else 'choice_selected' if selected else 'choice')
+    x, y, w, h = rect
+    if not ui_theme.draw_piece(surf, name, rect, body_color=FP.MIDNIGHT):
+        return False
+    ui_theme.draw_piece(surf, 'choice_badge', (x, y, badge_w, h))
+    ui_theme.draw_piece(surf, name, rect, body=False)
+    return True
+
+
+def _choice_button_procedural(surf, rect, badge_w, bg_col, border_col) -> None:
+    """The procedural answer-card chrome: background, borders, key badge."""
+    x, y, w, h = rect
+    bg_s = pygame.Surface((w, h), pygame.SRCALPHA)
+    bg_s.fill((*bg_col, 220))
+    surf.blit(bg_s, (x, y))
+
+    pygame.draw.rect(surf, border_col, (x, y, w, h), 1, border_radius=3)
+
+    # Inner double-stroke for grimoire flavor (matches draw_dark_panel pattern)
+    pygame.draw.rect(surf, FP.GOLD_DARK, (x + 3, y + 3, w - 6, h - 6), 1, border_radius=2)
+
+    # Key badge (left side) — bigger rune-stone block
+    badge_s = pygame.Surface((badge_w, h), pygame.SRCALPHA)
+    badge_s.fill((*FP.MIDNIGHT_MID, 200))
+    surf.blit(badge_s, (x, y))
+    pygame.draw.line(surf, border_col, (x + badge_w, y), (x + badge_w, y + h), 1)
 
 
 # =============================================================================

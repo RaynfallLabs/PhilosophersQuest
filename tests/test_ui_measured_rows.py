@@ -16,9 +16,9 @@ Guards four Phase 2 deliverables:
      a 10-tab strip constrained to a narrow width keeps the active tab
      inside the visible window and raises both arrow flags.
 
-  D. Panel footer region split (`PanelBuilder.footer_regions`): the
-     scroll-count rect and hint rect do NOT intersect, even on a narrow
-     panel with a long hint.
+  D. The quiz answer cards are DRAWN where ``_quiz_layout`` puts them
+     (``choice_rects``), scrolled or not. (Until 2026-10-15 they were drawn
+     10 px above the layout's rects and the tests only looked at the layout.)
 
 Headless — SDL dummy driver — these guard the layout math, not the pixels.
 """
@@ -32,9 +32,14 @@ _ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_ROOT / 'src'))
 
 import pygame  # noqa: E402
+import pytest  # noqa: E402
 
 pygame.init()
 pygame.display.set_mode((16, 16))  # minimal video surface for Font/Surface
+
+# Every test starts with an empty UI art kit and restores the previous one
+# (the capture harness loads assets/ui/; GROUNDWORK_REVIEW 9).
+pytestmark = pytest.mark.usefixtures('ui_theme_isolated')
 
 
 # ---------------------------------------------------------------------------
@@ -450,5 +455,109 @@ def test_tab_strip_last_tab_no_right_arrow():
 
 
 # ---------------------------------------------------------------------------
-# D. Panel footer region split
+# D. The answer cards are drawn exactly at the layout's choice_rects
 # ---------------------------------------------------------------------------
+
+def _quiz_game(size):
+    import layout
+    from main import Game
+    import game_states as S
+    screen = pygame.display.set_mode(size)
+    layout.update(*size)
+    g = Game(screen, player_name='CardTest')
+    g.on_resize(*size)
+    g.state = S.STATE_QUIZ
+    g.quiz_title = "EQUIPPING A TEST HELM  --  HISTORY"
+    g.quiz_engine.start_quiz(mode='threshold', subject='history', tier=2,
+                             callback=lambda _r: None, threshold=1, total_qs=1,
+                             timed=False)
+    return g
+
+
+def _drawn_cards(monkeypatch, g):
+    import fantasy_ui
+    drawn = []
+    real = fantasy_ui.draw_choice_button
+
+    def spy(surf, rect, *a, **k):
+        drawn.append(pygame.Rect(rect))
+        return real(surf, rect, *a, **k)
+    monkeypatch.setattr(fantasy_ui, 'draw_choice_button', spy)
+    g.render()
+    return drawn
+
+
+def test_quiz_cards_are_drawn_at_the_layout_rects(monkeypatch):
+    for size in ((1280, 720), (1920, 1080)):
+        g = _quiz_game(size)
+        drawn = _drawn_cards(monkeypatch, g)
+        L = g._quiz_layout(g.quiz_engine)
+        n = len(L['display_choices'])
+        assert n >= 2
+        assert drawn == L['choice_rects'][:n], (size, drawn, L['choice_rects'])
+        # And the pixels agree: the card border is ON the layout rect's top
+        # edge, not 10 px above it.
+        top = L['choice_rects'][0]
+        assert g.screen.get_at((top.centerx, top.y))[:3] != g.screen.get_at(
+            (top.centerx, top.y - 10))[:3]
+        # Nothing is left over at the bottom of the scroll area.
+        last = L['choice_rects'][n - 1]
+        assert last.bottom == L['scroll_rect'].bottom
+
+
+def test_quiz_cards_scrolled_are_drawn_at_the_layout_rects_moved(monkeypatch):
+    g = _quiz_game((1280, 720))
+    qe = g.quiz_engine
+    long_q = " ".join(["An extremely long question that will not fit."] * 30)
+    long_c = " ".join(["A long answer that wraps over many lines."] * 6)
+    qe.current_question = dict(qe.current_question, question=long_q,
+                               choices=[long_c + " A", long_c + " B", long_c + " C",
+                                        long_c + " D"],
+                               answer=long_c + " A")
+    qe.confused_order = None
+    qe._quiz_scroll_offset = 0
+    L0 = g._quiz_layout(qe)
+    assert L0['scrollable'], "the fixture must force the scrolling layout"
+    qe._quiz_scroll_offset = L0['scroll_max']        # scrolled to the bottom
+    drawn = _drawn_cards(monkeypatch, g)
+    L = g._quiz_layout(qe)
+    off = L['scroll_offset']
+    assert off > 0
+    expected = [r.move(0, -off) for r in L['choice_rects']]
+    visible = [r for r in expected
+               if not (r.bottom < L['scroll_rect'].y or r.y > L['scroll_rect'].bottom)]
+    assert drawn == visible
+
+
+
+def test_quiz_with_more_than_four_choices_degrades_gracefully(monkeypatch):
+    """GROUNDWORK_REVIEW 6: ``choice_rects`` had exactly four entries, so a
+    (malformed) question with a fifth choice raised IndexError in the draw.
+    The grid now grows downward: every choice gets its own card, the cards
+    stay in two columns without overlapping, inside the scroll area."""
+    for size in ((1280, 720), (1920, 1080)):
+        for n in (5, 6, 9):
+            g = _quiz_game(size)
+            qe = g.quiz_engine
+            choices = [f"Choice number {i + 1}" for i in range(n)]
+            qe.current_question = dict(qe.current_question, choices=choices,
+                                       answer=choices[0])
+            qe.confused_order = None
+            qe._quiz_scroll_offset = 0
+            drawn = _drawn_cards(monkeypatch, g)
+            L = g._quiz_layout(qe)
+            assert len(L['choice_rects']) >= n
+            if not L['scrollable']:
+                assert drawn == L['choice_rects'][:n], (size, n)
+                assert L['choice_rects'][n - 1].bottom <= L['scroll_rect'].bottom
+            for i, a in enumerate(L['choice_rects'][:n]):
+                assert L['panel_rect'].contains(a) or L['scrollable'], (size, n, a)
+                for b in L['choice_rects'][i + 1:n]:
+                    assert not a.colliderect(b), (size, n, a, b)
+    # Fewer than four still lays out four slots (the old shape).
+    g = _quiz_game((1280, 720))
+    qe = g.quiz_engine
+    qe.current_question = dict(qe.current_question, choices=['A', 'B', 'C'], answer='A')
+    qe.confused_order = None
+    assert len(g._quiz_layout(qe)['choice_rects']) == 4
+    g.render()

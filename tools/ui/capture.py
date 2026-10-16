@@ -112,28 +112,108 @@ def size_tag(size) -> str:
 # ---------------------------------------------------------------------------
 
 _TEXT = weakref.WeakKeyDictionary()     # text surface -> the string drawn
+_TEXT_COLOR = weakref.WeakKeyDictionary()   # text surface -> (rgb, has_bg)
 
 
 class TracingFont(pygame.font.Font):
-    """pygame Font that remembers which surfaces it rendered."""
+    """pygame Font that remembers which surfaces it rendered, and in which
+    colour."""
 
     def render(self, text, *args, **kwargs):
         surf = super().render(text, *args, **kwargs)
         try:
             _TEXT[surf] = str(text)
-        except TypeError:
+            color = args[1] if len(args) > 1 else kwargs.get('color')
+            bg = args[2] if len(args) > 2 else kwargs.get('bgcolor')
+            if color is not None:
+                _TEXT_COLOR[surf] = (tuple(pygame.Color(color))[:3], bg is not None)
+        except (TypeError, ValueError):
             pass
         return surf
 
 
+def luminance(rgb) -> float:
+    """WCAG relative luminance of an sRGB colour (0-255 channels)."""
+    def ch(c):
+        c = c / 255.0
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = rgb[:3]
+    return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b)
+
+
+def contrast_ratio(a, b) -> float:
+    la, lb = luminance(a), luminance(b)
+    return (max(la, lb) + 0.05) / (min(la, lb) + 0.05)
+
+
+def _lum_array(rgb):
+    import numpy as np
+    c = rgb.astype(np.float64) / 255.0
+    c = np.where(c <= 0.03928, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    return 0.2126 * c[..., 0] + 0.7152 * c[..., 1] + 0.0722 * c[..., 2]
+
+
 class TracingSurface(pygame.Surface):
-    """The game screen. Records every text blit's intended rectangle."""
+    """The game screen. Records every text blit's intended rectangle.
+
+    Also records, per text blit (``text_info``, index-aligned with
+    ``text_blits``): its colour, the clip in force, and -- when
+    ``measure_contrast`` is on -- the contrast ratio between that colour and
+    the pixels actually under its glyphs at the moment it was drawn (5th
+    percentile over the glyph pixels). ``last_overlay`` is the index of the
+    first text blit after the most recent full-window blit (an overlay):
+    text before it lies under a dimming wash. ``panels`` lists the panels
+    drawn, as (rect, index of the next text blit)."""
+
+    measure_contrast = False
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.text_blits: list[tuple[pygame.Rect, str]] = []
+        self.text_info: list[dict] = []
+        self.panels: list[tuple[pygame.Rect, int]] = []
+        self.last_overlay = 0
+        self.last_overlay_panel = 0
+        self.overlays = 0
+
+    def reset_trace(self):
+        self.text_blits.clear()
+        self.text_info.clear()
+        self.panels.clear()
+        self.last_overlay = 0
+        self.last_overlay_panel = 0
+        self.overlays = 0
+
+    def _contrast_under(self, source, x, y, area, color):
+        import numpy as np
+        sx0, sy0 = 0, 0
+        if area is not None:
+            sx0, sy0, w, h = pygame.Rect(area)
+        else:
+            w, h = source.get_size()
+        drawn = pygame.Rect(x, y, w, h).clip(self.get_clip()).clip(self.get_rect())
+        if drawn.w <= 0 or drawn.h <= 0:
+            return None
+        try:
+            alpha = pygame.surfarray.array_alpha(source)
+        except (ValueError, pygame.error):
+            return None
+        ox, oy = sx0 + drawn.x - x, sy0 + drawn.y - y
+        mask = alpha[ox:ox + drawn.w, oy:oy + drawn.h] >= 160
+        if not mask.any():
+            return None
+        bg = pygame.surfarray.array3d(self.subsurface(drawn))[mask]
+        lt = luminance(color)
+        lb = _lum_array(bg)
+        ratio = (np.maximum(lt, lb) + 0.05) / (np.minimum(lt, lb) + 0.05)
+        return float(np.percentile(ratio, 5))
 
     def _note(self, source, dest, area=None):
+        if area is None and source.get_size() == self.get_size():
+            self.last_overlay = len(self.text_blits)
+            self.last_overlay_panel = len(self.panels)
+            self.overlays += 1
+            return
         text = _TEXT.get(source)
         if text is None or not text.strip():
             return
@@ -146,7 +226,61 @@ class TracingSurface(pygame.Surface):
             w, h = a.w, a.h
         else:
             w, h = source.get_size()
-        self.text_blits.append((pygame.Rect(int(x), int(y), w, h), text))
+        x, y = int(x), int(y)
+        color, has_bg = _TEXT_COLOR.get(source, (None, False))
+        ink = source.get_bounding_rect()
+        if area is not None:
+            ink = ink.clip(pygame.Rect(area)).move(-pygame.Rect(area).x, -pygame.Rect(area).y)
+        info = {'color': color, 'has_bg': has_bg, 'contrast': None,
+                'clip': pygame.Rect(self.get_clip()),
+                # The glyphs' own pixels (no line-box padding), on screen.
+                'ink': ink.move(x, y)}
+        if self.measure_contrast and color is not None and not has_bg:
+            info['contrast'] = self._contrast_under(source, x, y, area, color)
+        self.text_blits.append((pygame.Rect(x, y, w, h), text))
+        self.text_info.append(info)
+
+    def top_layer(self):
+        """(text blits, infos, panels) drawn after the last full-window
+        overlay: what the player actually reads on a modal screen."""
+        i, j = self.last_overlay, self.last_overlay_panel
+        return self.text_blits[i:], self.text_info[i:], self.panels[j:]
+
+    def text_outside_panels(self) -> list[tuple[pygame.Rect, str, pygame.Rect]]:
+        """Top-layer text whose ink overlaps a top-layer panel without lying
+        inside it (text running over a panel's edge). Clipped text is judged
+        by what its clip lets through."""
+        blits, infos, panels = self.top_layer()
+        out = []
+        for (r, t), info in zip(blits, infos):
+            vis = info['ink'].clip(info['clip'])
+            if vis.w <= 0 or vis.h <= 0:
+                continue
+            hit = [p for p, _ in panels if p.colliderect(vis)]
+            if hit and not any(p.contains(vis) for p in hit):
+                out.append((vis, t, hit[-1]))
+        return out
+
+    def text_in_no_panel(self) -> list[tuple[pygame.Rect, str]]:
+        """On a MODAL screen (a full-window overlay was drawn and at least
+        one panel sits on top of it): top-layer text whose ink touches no
+        top-layer panel at all -- text pushed wholly below or beside the
+        panel it belongs to (the usual failure of a footer hint at the
+        minimum window). ``text_outside_panels`` only sees text that
+        overlaps a panel edge."""
+        if not self.overlays:
+            return []
+        blits, infos, panels = self.top_layer()
+        if not panels:
+            return []
+        out = []
+        for (r, t), info in zip(blits, infos):
+            vis = info['ink'].clip(info['clip'])
+            if vis.w <= 0 or vis.h <= 0:
+                continue
+            if not any(p.colliderect(vis) for p, _ in panels):
+                out.append((vis, t))
+        return out
 
     def blit(self, source, dest, area=None, special_flags=0):
         self._note(source, dest, area)
@@ -162,6 +296,40 @@ class TracingSurface(pygame.Surface):
         win = self.get_rect()
         return [(r, t) for r, t in self.text_blits
                 if r.w > 0 and r.h > 0 and not win.contains(r)]
+
+
+def _panel_spy(real):
+    """Wrap a panel-drawing helper so a TracingSurface records the panel."""
+    def spy(surf, rect, *a, **k):
+        if isinstance(surf, TracingSurface):
+            surf.panels.append((pygame.Rect(rect), len(surf.text_blits)))
+        return real(surf, rect, *a, **k)
+    spy.__wrapped__ = real
+    return spy
+
+
+# A box drawn as an OUTLINED ``pygame.draw.rect`` at least this big counts as
+# a panel for the layout check: the hand-drawn prayer / boon / intercession
+# boxes, ``_ui_subpanel``, the decision menu's CHOICES / DETAIL panes and
+# rows, answer cards. Smaller outlines (key badges, chips, bar frames) and
+# filled rects (backgrounds, bars, highlights) are not panels.
+BOX_MIN_W, BOX_MIN_H = 120, 40
+
+
+def _rect_spy(real):
+    """Wrap pygame.draw.rect so an outlined box drawn on a TracingSurface
+    is recorded as a panel (``TracingSurface.boxes`` too, for reports)."""
+    def spy(surface, color, rect, width=0, *a, **k):
+        if isinstance(surface, TracingSurface) and width > 0:
+            try:
+                r = pygame.Rect(rect)
+            except (TypeError, ValueError):
+                r = None
+            if r is not None and r.w >= BOX_MIN_W and r.h >= BOX_MIN_H:
+                surface.panels.append((r, len(surface.text_blits)))
+        return real(surface, color, rect, width, *a, **k)
+    spy.__wrapped__ = real
+    return spy
 
 
 # ---------------------------------------------------------------------------
@@ -251,9 +419,13 @@ def reset_sandbox() -> None:
 
 
 @contextlib.contextmanager
-def harness():
+def harness(trace: bool = True):
     """Patch module globals for a deterministic, sandboxed capture; restore
-    everything on exit. Game code is not modified."""
+    everything on exit. Game code is not modified.
+
+    ``trace=False`` leaves pygame's Font class alone (no text tracing), which
+    is what the frame-time measurement wants: the game's real fonts drawing
+    onto the real display surface."""
     pygame.init()
     tmp = Path(tempfile.mkdtemp(prefix='pq_capture_'))
     saves = tmp / 'saves'
@@ -277,6 +449,10 @@ def harness():
         restore.append((obj, attr, getattr(obj, attr)))
         setattr(obj, attr, value)
 
+    import ui_theme
+    saved_kit = ui_theme.save_state()
+    _disp = pygame.display.get_surface() if pygame.display.get_init() else None
+    saved_display = _disp.get_size() if _disp is not None else None
     saved_env = {k: os.environ.get(k) for k in ('PQ_NO_BONES',)}
     os.environ['PQ_NO_BONES'] = '1'
     saved_font_cache = dict(fantasy_ui._font_cache)
@@ -291,11 +467,31 @@ def harness():
             patch(sound_system, '_settings_path', lambda: str(tmp / 'settings.json'))
         patch(random, 'Random', DetRandom)
         patch(pygame.time, 'get_ticks', lambda: FROZEN_TICKS_MS)
-        patch(pygame.font, 'Font', TracingFont)
-        patch(pygame.sysfont, 'Font', TracingFont)
+        if trace:
+            patch(pygame.font, 'Font', TracingFont)
+            patch(pygame.sysfont, 'Font', TracingFont)
+            import game_render
+            import welcome_screen
+            for mod in (fantasy_ui, game_render, welcome_screen):
+                for fn in ('draw_dark_panel', 'draw_panel'):
+                    if hasattr(mod, fn):
+                        patch(mod, fn, _panel_spy(getattr(mod, fn)))
+            patch(pygame.draw, 'rect', _rect_spy(pygame.draw.rect))
         fantasy_ui._font_cache.clear()
+        # As main() does right after creating the window: load the UI art
+        # kit (assets/ui/) once, up front. The caller's kit and window size
+        # are put back on exit, so a test that runs after the harness draws
+        # with whatever kit it had before (GROUNDWORK_REVIEW 9).
+        pygame.display.set_mode(default_size())
+        ui_theme.load()
         yield tmp
     finally:
+        ui_theme.restore_state(saved_kit)
+        if saved_display is not None:
+            try:
+                pygame.display.set_mode(saved_display)
+            except pygame.error:
+                pass
         for obj, attr, old in reversed(restore):
             setattr(obj, attr, old)
         fantasy_ui._font_cache.clear()
@@ -308,10 +504,15 @@ def harness():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-def make_screen(size) -> TracingSurface:
-    pygame.display.set_mode(size)
+def make_screen(size, trace: bool = True):
+    """The surface the game draws on. Traced: a TracingSurface (records text
+    blits). Untraced: the real display surface, as in play."""
+    display = pygame.display.set_mode(size)
     import layout
     layout.update(*size)
+    if not trace:
+        display.fill((0, 0, 0))
+        return display
     surf = TracingSurface(size)
     surf.fill((0, 0, 0))
     return surf
@@ -694,42 +895,42 @@ def _run_one_frame(fn):
 @scene('title_welcome', 'Title', 'Launch the game: the welcome screen (high-score fixture loaded).',
        kind='welcome', key=True)
 def _(screen):
-    run_welcome_frame(screen)
+    return run_welcome_frame(screen)
 
 
 @scene('title_name_typed', 'Title', 'Welcome screen, type a name.', kind='welcome')
 def _(screen):
-    run_welcome_frame(screen, keys=list(PLAYER_NAME))
+    return run_welcome_frame(screen, keys=list(PLAYER_NAME))
 
 
 @scene('title_secret_build', 'Title', 'Welcome screen, type a secret-build name (Corwin) -- badge appears.',
        kind='welcome')
 def _(screen):
-    run_welcome_frame(screen, keys=list('Corwin'))
+    return run_welcome_frame(screen, keys=list('Corwin'))
 
 
 @scene('title_save_found', 'Title', 'Welcome screen, type the name of a hero with a saved journey.',
        kind='welcome')
 def _(screen):
-    run_welcome_frame(screen, keys=list(PLAYER_NAME), save_for=PLAYER_NAME)
+    return run_welcome_frame(screen, keys=list(PLAYER_NAME), save_for=PLAYER_NAME)
 
 
 @scene('title_load_notice', 'Title', 'Welcome screen after a save failed to load (one-shot notice).',
        kind='welcome')
 def _(screen):
-    run_welcome_frame(screen, notice=("Your saved journey didn't load cleanly -- but it "
+    return run_welcome_frame(screen, notice=("Your saved journey didn't load cleanly -- but it "
                                       "is safe. Please try again."))
 
 
 @scene('title_alltime_scores', 'Title', 'Welcome screen, F2: all-time top 100.', kind='welcome')
 def _(screen):
-    run_welcome_frame(screen, keys=[pygame.K_F2])
+    return run_welcome_frame(screen, keys=[pygame.K_F2])
 
 
 @scene('title_god_prompt', 'Title', "Welcome screen, type 'god' + Enter: \"Did you mean, 'Dad'?\"",
        kind='welcome')
 def _(screen):
-    run_welcome_frame(screen, keys=list('god') + [pygame.K_RETURN])
+    return run_welcome_frame(screen, keys=list('god') + [pygame.K_RETURN])
 
 
 # -- Study mode (from the title, F3) -----------------------------------------
@@ -744,18 +945,18 @@ def run_study_frame(screen, keys):
 
 @scene('study_subjects', 'Study mode', 'Title, F3: study mode subject picker.', kind='study')
 def _(screen):
-    run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN])
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN])
 
 
 @scene('study_tiers', 'Study mode', 'Study mode: pick History, Enter -> tier picker.', kind='study')
 def _(screen):
-    run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_DOWN])
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN, pygame.K_DOWN])
 
 
 @scene('study_question', 'Study mode', 'Study mode: History, Tier 2, Enter -> a question.',
        kind='study', key=True)
 def _(screen):
-    run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN,
+    return run_study_frame(screen, [pygame.K_DOWN, pygame.K_DOWN, pygame.K_RETURN,
                              pygame.K_DOWN, pygame.K_RETURN])
 
 
@@ -771,17 +972,18 @@ def _study_answer_frame(screen, correct):
     pick = right if correct else (right + 1) % len(choices)
     _post_keys([(pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4)[pick]])
     _run_one_frame(lambda: s.run(FakeClock()))
+    return s
 
 
 @scene('study_result_correct', 'Study mode', 'Study mode: answer a question correctly.', kind='study')
 def _(screen):
-    _study_answer_frame(screen, True)
+    return _study_answer_frame(screen, True)
 
 
 @scene('study_result_wrong', 'Study mode', 'Study mode: answer a question wrongly (shows the answer + context).',
        kind='study')
 def _(screen):
-    _study_answer_frame(screen, False)
+    return _study_answer_frame(screen, False)
 
 
 # -- Main play view ------------------------------------------------------------
@@ -1310,6 +1512,132 @@ def _(g):
 
 
 # ---------------------------------------------------------------------------
+# Frame time (the performance gate)
+# ---------------------------------------------------------------------------
+
+# A long, two-line-at-1080p log message: the worst case for the message log,
+# which used to re-wrap every entry every frame (FOUNDATION_REVIEW.md 2.2).
+FULL_LOG_TEXT = ("You strike the cave troll with the Sword of Saint Michael for 23 damage; "
+                 "it reels back, howling, and the torchlight shudders across the wet stone "
+                 "of the Labyrinth of Echoes as its blood hisses on the floor.")
+
+
+def fill_log(g, n: int = 60) -> None:
+    """Fill the message log to its cap with long messages."""
+    kinds = ('info', 'success', 'warning', 'danger', 'loot')
+    for i in range(n):
+        g.add_message(f"{FULL_LOG_TEXT} ({i})", kinds[i % len(kinds)])
+
+
+def time_scene(sc: Scene, size, frames: int = 7, full_log: bool = True) -> dict:
+    """Build the scene untraced on the real display surface, draw one warm-up
+    frame, then time ``frames`` more, each INCLUDING ``pygame.display.flip()``
+    (what the game loop does after drawing). Returns, in ms:
+
+    * ``median`` / ``max``: steady-state frames (render + flip). The first
+      (warm-up) frame is excluded: it pays one-off costs (font glyphs, the
+      overlay surface, the log wrap). The rule that nothing is LOADED on a
+      draw is guarded separately (test_ui_theme
+      ``test_key_screens_draw_with_a_full_kit_and_the_quiz_never_loads_art``).
+    * ``warm``: that first frame.
+    * ``flip``: median of the flip alone. Under the SDL dummy driver this is
+      the cost of SDL's software present path only (near zero); a real
+      GPU / compositor present is not measurable headless.
+
+    Must run inside ``harness(trace=False)``."""
+    screen = make_screen(size, trace=False)
+    reset_sandbox()
+    reseed()
+    times, flips = [], []
+    if sc.kind == 'game':
+        g = build_game(screen, size)
+        sc.setup(g)
+        if sc.expect_state and g.state != sc.expect_state:
+            raise RuntimeError(f"setup reached state {g.state!r}, expected {sc.expect_state!r}")
+        if full_log:
+            fill_log(g)
+
+        def frame():
+            g.render()
+    else:
+        obj = sc.setup(screen)
+
+        def frame():
+            pygame.event.clear()
+            _run_one_frame(lambda: obj.run(FakeClock()))
+    flip = pygame.display.flip
+    # The garbage collector is paused while frames are timed (and run once
+    # before): a GC pass triggered by whatever the test process allocated
+    # earlier is noise, not the screen's draw cost.
+    import gc
+    gc.collect()
+    gc_was_on = gc.isenabled()
+    gc.disable()
+    try:
+        for _ in range(frames + 1):
+            t0 = time.perf_counter()
+            frame()
+            t1 = time.perf_counter()
+            flip()
+            t2 = time.perf_counter()
+            times.append((t2 - t0) * 1000.0)
+            flips.append((t2 - t1) * 1000.0)
+    finally:
+        if gc_was_on:
+            gc.enable()
+    warm, rest = times[0], sorted(times[1:])
+    fl = sorted(flips[1:])
+    return {'warm': warm, 'median': rest[len(rest) // 2], 'max': rest[-1],
+            'flip': fl[len(fl) // 2]}
+
+
+def calibration_ms(reps: int = 15) -> float:
+    """Median ms of a fixed, frame-like pygame workload (fills, a
+    full-surface alpha blit, rects, 40 lines of text) at 2560x1440. It slows
+    down with the machine (another process hogging the CPU or memory bus,
+    battery saver) the same way a screen does, so the frame-time gate
+    scales its budgets by ``calibration_ms() / reference`` and a busy
+    machine cannot fail it; a screen that got slower relative to this
+    workload still does."""
+    import fantasy_ui
+    W, H = 2560, 1440
+    dst = pygame.Surface((W, H))
+    wash = pygame.Surface((W, H), pygame.SRCALPHA)
+    wash.fill((0, 0, 0, 190))
+    font = fantasy_ui.get_font('body', 20)
+    line = "You strike the cave troll with the Sword of Saint Michael for 23 damage."
+    times = []
+    for i in range(reps + 1):
+        t0 = time.perf_counter()
+        dst.fill((12, 14, 30))
+        dst.blit(wash, (0, 0))
+        for k in range(20):
+            pygame.draw.rect(dst, (200, 160, 40), (40 + k * 60, 100, 300, 200), 2,
+                             border_radius=4)
+            dst.fill((20, 24, 50), (60 + k * 60, 120, 260, 160))
+        for k in range(40):
+            dst.blit(font.render(f"{line} {k}", True, (230, 220, 190)), (60, 300 + k * 26))
+        times.append((time.perf_counter() - t0) * 1000.0)
+    rest = sorted(times[1:])
+    return rest[len(rest) // 2]
+
+
+def time_scenes(scenes, sizes, frames: int = 7, verbose: bool = True) -> dict:
+    """{(scene name, size): timing dict} for every scene at every size."""
+    out = {}
+    with harness(trace=False):
+        for size in sizes:
+            for sc in scenes:
+                r = time_scene(sc, size, frames)
+                out[(sc.name, size)] = r
+                if verbose:
+                    print(f"  {size_tag(size):>9}  {sc.name:<28} median {r['median']:6.2f} ms"
+                          f"   max {r['max']:6.2f}   first {r['warm']:6.2f}"
+                          f"   flip {r['flip']:5.2f}")
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Capture
 # ---------------------------------------------------------------------------
 
@@ -1325,10 +1653,12 @@ class Shot:
     surface: object = None
 
 
-def render_scene(sc: Scene, size) -> tuple[TracingSurface, str]:
+def render_scene(sc: Scene, size, measure_contrast: bool = False) -> tuple[TracingSurface, str]:
     """Build the scene at `size` and draw one frame; returns (screen, state).
+    ``measure_contrast``: record the contrast under every text blit (slower).
     Must run inside harness()."""
     screen = make_screen(size)
+    screen.measure_contrast = measure_contrast
     reset_sandbox()
     reseed()
     state = ''
@@ -1338,7 +1668,7 @@ def render_scene(sc: Scene, size) -> tuple[TracingSurface, str]:
         state = g.state
         if sc.expect_state and g.state != sc.expect_state:
             raise RuntimeError(f"setup reached state {g.state!r}, expected {sc.expect_state!r}")
-        screen.text_blits.clear()
+        screen.reset_trace()
         g.render()
     else:
         sc.setup(screen)
@@ -1490,6 +1820,8 @@ def main(argv=None):
     ap.add_argument('--only', nargs='*', help='substrings of screen names')
     ap.add_argument('--list', action='store_true')
     ap.add_argument('--out', default=str(OUT_DIR))
+    ap.add_argument('--time', action='store_true',
+                    help='measure frame times (full message log) instead of capturing')
     args = ap.parse_args(argv)
 
     if os.environ.get('PYTHONHASHSEED') != '0':
@@ -1505,6 +1837,14 @@ def main(argv=None):
             print(f"{s.name:<28} {s.group:<12} {s.reach}")
         return 0
     sizes = [_parse_size(s) for s in args.sizes] if args.sizes else all_sizes()
+    if args.time:
+        res = time_scenes(scenes, sizes)
+        for z in sizes:
+            vals = sorted(((r['median'], n) for (n, zz), r in res.items() if zz == z),
+                          reverse=True)
+            print(f"\n{size_tag(z)}: slowest {vals[0][1]} {vals[0][0]:.2f} ms; "
+                  f"mean {sum(v for v, _ in vals) / len(vals):.2f} ms over {len(vals)} screens")
+        return 0
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.time()

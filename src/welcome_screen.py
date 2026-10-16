@@ -545,7 +545,8 @@ class WelcomeScreen:
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
         draw_header_bar(self.screen, (bx, by, bw, 36),
                         text="A Question of Address",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT)
+                        font=self.font_md, text_color=FP.GOLD_BRIGHT,
+                        frame=((bx, by, bw, bh), FP.GOLD))
         msg = self.font_lg.render("Did you mean, 'Dad'?",
                                   True, FP.PARCHMENT_LIGHT)
         self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, by + 56))
@@ -553,10 +554,17 @@ class WelcomeScreen:
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, by + bh - 32))
 
     def _draw_radial_glow(self, cx, cy):
-        glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
-        for r, alpha in [(300, 12), (240, 18), (180, 22), (130, 28), (90, 20)]:
-            pygame.draw.circle(glow, (*FP.ARCANE_DIM, alpha), (cx, cy), r)
-        self.screen.blit(glow, (0, 0))
+        # Static for a given window size + centre: built once and kept (it
+        # used to allocate a full-window SRCALPHA surface every frame,
+        # GROUNDWORK_REVIEW 10). A resize rebuilds it.
+        key = (self.W, self.H, cx, cy)
+        cached = getattr(self, '_glow_cache', None)
+        if cached is None or cached[0] != key:
+            glow = pygame.Surface((self.W, self.H), pygame.SRCALPHA)
+            for r, alpha in [(300, 12), (240, 18), (180, 22), (130, 28), (90, 20)]:
+                pygame.draw.circle(glow, (*FP.ARCANE_DIM, alpha), (cx, cy), r)
+            cached = self._glow_cache = (key, glow)
+        self.screen.blit(cached[1], (0, 0))
 
     def _draw_domain_ring(self, cx, cy, t):
         ring_r = min(cx, cy) * 0.52
@@ -774,15 +782,20 @@ class WelcomeScreen:
             pygame.draw.line(self.screen, FP.WHITE, (ex, ey), (ex2, ey2), 2)
 
     def _draw_vignette(self):
+        # Static per window size: built once and kept (was a full-window
+        # surface + 28 rect draws every frame, GROUNDWORK_REVIEW 10).
         W, H = self.W, self.H
-        vig = pygame.Surface((W, H), pygame.SRCALPHA)
-        for step in range(28):
-            ratio  = step / 28
-            alpha  = int(220 * ratio ** 2.2)
-            margin = int(step * 16)
-            pygame.draw.rect(vig, (0, 0, 0, alpha),
-                             (margin, margin, W - 2*margin, H - 2*margin), 10)
-        self.screen.blit(vig, (0, 0))
+        cached = getattr(self, '_vignette_cache', None)
+        if cached is None or cached[0] != (W, H):
+            vig = pygame.Surface((W, H), pygame.SRCALPHA)
+            for step in range(28):
+                ratio  = step / 28
+                alpha  = int(220 * ratio ** 2.2)
+                margin = int(step * 16)
+                pygame.draw.rect(vig, (0, 0, 0, alpha),
+                                 (margin, margin, W - 2*margin, H - 2*margin), 10)
+            cached = self._vignette_cache = ((W, H), vig)
+        self.screen.blit(cached[1], (0, 0))
 
     def _draw_title_banner(self, cx):
         # FANTASY: Illuminated manuscript title -- gold text on midnight panel
@@ -806,7 +819,8 @@ class WelcomeScreen:
         by = cy + int(min(cy, self.H - cy) * 0.60)
         draw_panel(self.screen, (bx, by, box_w, box_h), border_color=FP.GOLD)
         draw_header_bar(self.screen, (bx, by, box_w, 32),
-                        text=self._PROMPT, font=self.font_sm, text_color=FP.GOLD_PALE)
+                        text=self._PROMPT, font=self.font_sm, text_color=FP.GOLD_PALE,
+                        frame=((bx, by, box_w, box_h), FP.GOLD, 'parchment'))
         # FANTASY: Input field
         field_y = by + 38
         pygame.draw.rect(self.screen, FP.MIDNIGHT, (bx + 14, field_y, box_w - 28, 34))
@@ -866,7 +880,8 @@ class WelcomeScreen:
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
         draw_header_bar(self.screen, (bx, by, bw, header_h),
                         text="TOP RUNS", font=self.font_sm,
-                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD)
+                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD,
+                        frame=((bx, by, bw, bh), FP.GOLD))
 
         # Column header line
         y = by + header_h + 4
@@ -937,7 +952,7 @@ class WelcomeScreen:
         draw_header_bar(self.screen, (bx, by, bw, header_h),
                         text="ALL-TIME HIGH SCORES",
                         font=self.font_md, text_color=FP.GOLD_BRIGHT,
-                        accent=FP.GOLD)
+                        accent=FP.GOLD, frame=((bx, by, bw, bh), FP.GOLD))
 
         # Footer
         footer_h = 28

@@ -7868,6 +7868,17 @@ def main():
     except Exception:
         pass
     pygame.display.set_caption("Philosopher's Quest")
+    # UI art kit (assets/ui/): loaded ONCE, here, after the window exists
+    # and before anything is drawn. Draw calls never load art: a stall in
+    # a draw would come off the combat quiz timer. With no art present the
+    # kit is empty and every UI helper draws procedurally.
+    # load() never raises by contract; the guard is a backstop so a broken
+    # assets/ui/ can never stop the game from starting (empty kit instead).
+    import ui_theme
+    try:
+        ui_theme.load()
+    except Exception:
+        ui_theme.unload()
     clock = pygame.time.Clock()
 
     global _crash_game_ref
