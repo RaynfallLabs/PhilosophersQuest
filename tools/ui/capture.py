@@ -1217,6 +1217,34 @@ def _(g):
     g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
 
 
+def _make_burdened(g):
+    """Spare mail shirts in the pack until past 75% of the limit (worn gear
+    counts, 2026-10-16). The game's own per-turn check says so in the log."""
+    from items import instantiate_armor
+    p = g.player
+    while not p.is_burdened():
+        suit = instantiate_armor('chain_shirt', 'chain_steel')
+        suit.buc_known, suit.id_level = True, 5
+        if not p.can_carry(suit.weight):
+            p.inventory.append(instantiate_armor('padded_shirt', 'linen'))
+            continue
+        p.add_to_inventory(suit)
+    g._note_burden()
+
+
+@scene('play_burdened', 'Play', 'In a game, carrying past 75% of the limit: Burdened '
+       '(amber Carrying line, EFFECTS chip, log message).', expect='player')
+def _(g):
+    _make_burdened(g)
+
+
+@scene('menu_charsheet_burdened', 'Menus', '@ while Burdened: header, Kit Summary and '
+       'effect chip show it.', expect='character_sheet')
+def _(g):
+    _make_burdened(g)
+    g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
+
+
 @scene('menu_kit_result', 'Menus',
        'K, Armor, E on the pack armor, pass the geography quiz: back on the Kit '
        'with the item worn and the result shown.', expect='kit')

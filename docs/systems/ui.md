@@ -275,9 +275,13 @@ PER). Values are right-aligned inside each cell so 3-digit stats stay
 on their own side of the midpoint. Value color: `GOLD_BRIGHT` > 12,
 `BODY_TEXT` 10-12, `DANGER_TEXT` below 10.
 
-**DERIVED** (`_derived`): 2-column grid of 6 metrics —
-`AC`, `Gold`, `Sight`, `Timer`, `Wt`, `Spells`. Weight color
-turns `WARNING_TEXT` above 75% of carry limit. The old `Depth` row
+**DERIVED** (`_derived`): 2-column grid of 5 metrics —
+`AC`, `Gold`, `Sight`, `Clock`, `Spells` — then one full-width line
+`Carrying 43 / 100` (`_carrying`; worn gear + pack, `ui.carry_state`):
+green, `WARNING_TEXT` with "Burdened" beside it above 75% of the limit,
+`DANGER_TEXT` with "Over Limit" past it. Burdened / Over Limit is also
+the first chip under EFFECTS (2026-10-16 carry rebalance,
+`_genart/ui/WEIGHT_PLAN.md`). The old `Depth` row
 was removed in v2.22.0 — the CHARACTER identity section's `Floor N`
 is the sole dungeon-level readout.
 

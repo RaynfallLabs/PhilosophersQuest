@@ -469,11 +469,31 @@ category's `is_unique: true` entries; the per-chest draw rolls one
 
 ## 9. Carry, encumbrance, inventory
 
-`Player.inventory: list[Item]`. Max weight is
-`CARRY_BASE (50) + STR * CARRY_PER_STR (5)` = 100 at STR 10, 175 at
-STR 25. Encumbrance is intentional: item weights are deliberately
-realistic (full plate ~65 lb, maul ~8 lb) and STR is the lever
-(`Player.get_carry_limit`, `src/player.py:928`).
+`Player.inventory: list[Item]`. The limit is
+`CARRY_BASE (20) + STR * CARRY_PER_STR (8)` = 100 at STR 10, 164 at
+STR 18, 220 at STR 25 (re-derived 2026-10-16, `_genart/ui/WEIGHT_PLAN.md`,
+measured with `tools/balance/carry_sim.py`). Carrying is intentional: item
+weights are deliberately realistic (full plate 65 lb, tower shield 30,
+maul 8) and STR is the lever (`Player.get_carry_limit`).
+
+- **Everything counts:** `get_current_weight()` = `get_worn_weight()`
+  (weapons, shield, armour, rings, amulet, belt) + `get_pack_weight()`.
+  Equipping or unequipping moves weight between body and pack; the total
+  never changes. (Before 2026-10-16 worn gear weighed nothing.)
+- **Burdened** above `BURDENED_SHARE` (75%) of the limit: every
+  `BURDEN_STEP_EVERY`-th (4th) step costs an extra turn
+  (`Game._burden_extra_turn`). Nothing else: attacks, spells, AC, dodge
+  and the quiz clock are untouched. Messages "You are Burdened. ..." /
+  "You are no longer Burdened." (`Game._note_burden`, every turn and on
+  load). Sidebar, character sheet and menus read `ui.carry_state`.
+- **Refused past the limit:** `add_to_inventory` refuses an item that
+  would go over (`can_carry`); the message is
+  `Player.too_heavy_message()` ("Too heavy: that would put you over your
+  limit of 100."). Kit/sheet "Take & Equip" checks the same.
+  Rewards that do not fit go to the hero's feet (`Game._give_item`).
+  Exception: Sisyphus' Boulder (`carry_past_limit`).
+- Over the limit (an old save, lost STR, the Boulder, a cursed lodestone)
+  is allowed: the hero is Burdened, sees "Over Limit", and can drop.
 
 Stacking: `Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll,
 Ammo)`. `add_to_inventory` merges same-id items only when `buc`

@@ -158,9 +158,11 @@ class ItemActionsMixin:
         elif wearable and where == 'floor' and not getattr(item, 'not_pickable', False):
             why = self._item_equip_block(item)
             if not why:
+                # Worn gear counts, so a swap adds the new piece's weight
+                # (the old one goes to the pack and still weighs the same).
                 weight = getattr(item, 'weight', 0) * getattr(item, 'count', 1)
-                if weight + self.player.get_current_weight() > self.player.get_carry_limit():
-                    why = "Too heavy to pick up"
+                if not self.player.can_carry(weight):
+                    why = f"Too heavy for your limit of {self.player.get_carry_limit()}"
             add('equip', 'Take & Equip', why)
         # D -- Drop
         if where == 'pack':

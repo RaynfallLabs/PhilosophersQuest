@@ -1519,7 +1519,7 @@ class InputMixin:
                     # Check the pack first: a full pack used to take the
                     # gold AND the item.
                     if self.player.add_to_inventory(item) is False:
-                        self.add_message("That is more than you can carry.", 'warning')
+                        self.add_message(self.player.too_heavy_message(), 'warning')
                         return
                     self.player_gold -= price
                     iname = getattr(item, 'name', 'item')

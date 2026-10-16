@@ -338,7 +338,10 @@ up-front cost (net: WIS +1, INT +1, PER -1).
   (`game_divine.py:258` adds this check manually because
   `QuizResult.success` is False for chain mode).
 - **physical** (`sisyphus`): no quiz. The player must walk `tiles`
-  tiles while over the carry limit, holding The Boulder (20 lb).
+  tiles while over the carry limit (worn gear + pack), holding The
+  Boulder (20 lb). The Boulder can always be picked up, whatever the
+  load (`MysteryKeyItem.carry_past_limit`); every other pickup past the
+  limit is refused, so the trial is: load up, then take the Boulder.
   State is tracked via `quirk_progress['sisyphus_boulder_active']`
   and `quirk_progress['sisyphus_boulder_tiles']`. On success, the
   boulder vanishes and the reward applies.
@@ -440,7 +443,7 @@ gate. Reward: permanent searching + warning.
 
 **Sisyphus' Hill** (`sisyphus`) — "A steep slope carved into the
 stone." Physical challenge: walk 15 tiles while over the carry limit,
-holding The Boulder (20 lb). No quiz. Reward: STR +3, INT +1. See
+holding The Boulder (20 lb; it can be taken up past the limit). No quiz. Reward: STR +3, INT +1. See
 also [progression.md](progression.md) for the `sisyphus` quirk, which
 is a parallel 100-floor-at-STR-5 achievement, not this mystery.
 

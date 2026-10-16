@@ -26,6 +26,25 @@ _LOG_FADE_STEP = 0.07          # per line of age, toward the background
 _line_color_cache: dict = {}
 
 
+def carry_state(player) -> tuple[float, int, str]:
+    """(weight carried, limit, state) where state is '' / 'Burdened' /
+    'Over Limit'. Worn gear and the pack both count (Player.get_current_weight).
+    One reading for the sidebar, the character sheet and the menus."""
+    wt = float(player.get_current_weight())
+    lim = int(player.get_carry_limit())
+    share = float(getattr(player, 'BURDENED_SHARE', 0.75))
+    if wt > lim:
+        return wt, lim, 'Over Limit'
+    if wt > lim * share:
+        return wt, lim, 'Burdened'
+    return wt, lim, ''
+
+
+def carry_color(state: str) -> tuple:
+    return (FP.DANGER_TEXT if state == 'Over Limit'
+            else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
+
+
 def log_line_color(msg_type: str, age: int) -> tuple:
     """Colour of a log line of ``msg_type`` that is ``age`` lines older than
     the newest. Older lines blend toward ``LOG_BG`` but never below
@@ -278,8 +297,9 @@ class Sidebar:
         'Clock': 'stat_clock', 'Wt': 'stat_weight', 'Spells': 'stat_spells',
     }
 
-    # Derived stats whose icon stands for the word (coin, hourglass, sack).
-    _ICON_IS_LABEL = frozenset({'Gold', 'Clock', 'Wt'})
+    # Derived stats whose icon stands for the word (coin, hourglass). The
+    # sack ('Wt') is drawn beside the full-width "Carrying" line instead.
+    _ICON_IS_LABEL = frozenset({'Gold', 'Clock'})
 
     @staticmethod
     def _icon_size() -> int:
@@ -403,9 +423,6 @@ class Sidebar:
         y = self._header("DERIVED", y)
         ac = player.get_ac()
         ac_color = FP.SUCCESS_TEXT if ac <= 0 else FP.SP_GREEN if ac <= 5 else FP.WARNING_TEXT
-        wt = player.get_current_weight()
-        lim = player.get_carry_limit()
-        wt_color = FP.WARNING_TEXT if wt > lim * 0.75 else FP.SUCCESS_TEXT
         spell_count = len(getattr(player, 'known_spells', {}))
         # Phase 3 (UI beautification 2026-10-04): "Depth" removed — the
         # CHARACTER identity section already prints "Floor {dungeon_level}"
@@ -423,7 +440,6 @@ class Sidebar:
              FP.GOLD_BRIGHT if player.combat_clock() > player.plain_clock()
              else FP.DANGER_TEXT if player.combat_clock() < player.plain_clock()
              else FP.WARNING_TEXT),
-            (f"Wt {wt:.0f}/{lim}", wt_color),
             (f"Spells {spell_count}", FP.MP_BLUE_TEXT),
         ]
         metric_w = (self.w - self.PAD * 2) // 2
@@ -435,12 +451,38 @@ class Sidebar:
                             self._fsm.get_height())
             if ax != cell_x and word in self._ICON_IS_LABEL:
                 # the painted icon names the stat; its value says the rest
-                # ("1,234", "12s", "43/100"), so the cell never truncates
+                # ("1,234", "12s"), so the cell never truncates
                 label = label[len(word) + 1:]
             self.screen.blit(self._fsm.render(
                 self._fit(self._fsm, label, metric_w - S(8) - (ax - cell_x)),
                 True, color), (ax, ay))
-        return y + ((len(metrics) + 1) // 2) * S(22) + self.SECTION_GAP
+        y += ((len(metrics) + 1) // 2) * S(22)
+        y = self._carrying(player, y)
+        return y + self.SECTION_GAP
+
+    @staticmethod
+    def carry_state(player) -> tuple[float, int, str]:
+        return carry_state(player)
+
+    def _carrying(self, player, y: int) -> int:
+        """One full-width line, 'Carrying 43 / 100': green, amber when
+        Burdened (the load slows the hero's steps), red past the limit."""
+        wt, lim, state = self.carry_state(player)
+        cell_x = self.x + self.PAD
+        ax = self._icon(self._STAT_ICONS['Wt'], cell_x, y, self._fsm.get_height())
+        color = (FP.DANGER_TEXT if state == 'Over Limit'
+                 else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
+        room = self.x + self.w - self.PAD - ax
+        label = f"Carrying {wt:.0f} / {lim}"
+        surf = self._fsm.render(self._fit(self._fsm, label, room), True, color)
+        self.screen.blit(surf, (ax, y))
+        if state:
+            mx = ax + surf.get_width() + S(8)
+            # Beside the number when it fits; the EFFECTS list always shows
+            # it as a chip as well (see _effects), so a narrow rail loses nothing.
+            if self._fbold.size(state)[0] <= self.x + self.w - self.PAD - mx:
+                self.screen.blit(self._fbold.render(state, True, color), (mx, y))
+        return y + S(22)
 
     _fchip_small = ScaledFont('body', 16, bold=True)
 
@@ -477,6 +519,9 @@ class Sidebar:
         from status_effects import EFFECT_INFO
         y = self._header("EFFECTS", y)
         rows = []
+        _wt, _lim, carry = self.carry_state(player)
+        if carry:
+            rows.append((carry, FP.DANGER_TEXT if carry == 'Over Limit' else FP.WARNING_TEXT, None))
         if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
             rows.append(("Fire Protect", FP.PASSIVE_FIRE, None))
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in player.inventory):

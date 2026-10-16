@@ -22,6 +22,7 @@ from renderer import TILE_SIZE
 from geom import monster_at_tile, any_tile_in_set
 import ui_theme
 import lore_art
+from ui import carry_state, carry_color
 from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, draw_overlay,
@@ -845,8 +846,11 @@ class RenderMixin:
                                  True, KT.TEXT_DIM)
             iy = header.y + (header.h - S(4) - info.get_height()) // 2
             screen.blit(info, (header.x + S(40), iy))
+            _cwt, _clim, _cstate = carry_state(p)
+            _ccol = carry_color(_cstate)
             wt = get_font('body', 16, bold=True).render(
-                f"Wt {p.get_current_weight():.0f}/{p.get_carry_limit()}", True, FP.SUCCESS_TEXT)
+                f"Carrying {_cwt:.0f} / {_clim}" + (f"   {_cstate}" if _cstate else ""),
+                True, _ccol)
             gd = get_font('body', 16, bold=True).render(
                 f"Gold {self.player_gold:,}", True, FP.GOLD_BRIGHT)
             screen.blit(gd, (header.right - S(40) - gd.get_width(), iy))
@@ -867,8 +871,11 @@ class RenderMixin:
             text("CHARACTER / PACK", font_title, FP.GOLD_BRIGHT, header.x + S(18), header.y + S(12))
             text(f"{getattr(self, 'player_name', 'Adventurer')}   Floor {self.dungeon_level}   Turn {self.turn_count}",
                  font_body, FP.FADED_TEXT, header.x + S(20), header.y + S(44))
-            text(f"Wt {p.get_current_weight():.0f}/{p.get_carry_limit()}",
-                 font_bold, FP.SUCCESS_TEXT, header.right - S(198), header.y + S(15))
+            _cwt, _clim, _cstate = carry_state(p)
+            _ctext = f"Carrying {_cwt:.0f} / {_clim}" + (f"  {_cstate}" if _cstate else "")
+            text(_ctext, font_bold, carry_color(_cstate),
+                 min(header.right - S(198), header.right - S(18) - font_bold.size(_ctext)[0]),
+                 header.y + S(15))
             text(f"Gold {self.player_gold:,}", font_bold, FP.GOLD_BRIGHT,
                  header.right - S(198), header.y + S(40))
             top = header.bottom + S(14)
@@ -969,14 +976,20 @@ class RenderMixin:
 
         text("Effects", f16b, FP.GOLD_BRIGHT, body.x, y)
         y += lh + S(4)
-        active = [(eid, dur) for eid, dur in getattr(p, 'status_effects', {}).items() if dur != 0]
+        active = []
+        _cstate = carry_state(p)[2]
+        if _cstate:          # the load first: it is why the steps are slow
+            active.append((_cstate, carry_color(_cstate)))
+        for eid, dur in getattr(p, 'status_effects', {}).items():
+            if dur == 0:
+                continue
+            info = EFFECT_INFO.get(eid)
+            name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
+            active.append((f"{name} {dur}" if dur > 0 else name, col))
         chip_h = lh + S(6)
         room = max(0, (body.bottom - y - 2 * (lh + S(4)) - lh) // (chip_h + S(4)))
         shown = active[:max(1, room)] if active else []
-        for eid, dur in shown:
-            info = EFFECT_INFO.get(eid)
-            name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
-            label = f"{name} {dur}" if dur > 0 else name
+        for label, col in shown:
             r = pygame.Rect(body.x, y, body.w, chip_h)
             row_rect(r)
             pygame.draw.rect(screen, col, (r.x, r.y, S(3), r.h))
@@ -1283,11 +1296,17 @@ class RenderMixin:
         y += S(95)
         text("Effects", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += S(22)
-        active = [(eid, dur) for eid, dur in getattr(p, 'status_effects', {}).items() if dur != 0]
-        for idx, (eid, dur) in enumerate(active[:4]):
+        chips = []
+        _cwt, _clim, _cstate = carry_state(p)
+        if _cstate:          # the load, first: it is why the steps are slow
+            chips.append((_cstate, carry_color(_cstate)))
+        for eid, dur in getattr(p, 'status_effects', {}).items():
+            if dur == 0:
+                continue
             info = EFFECT_INFO.get(eid)
             name, col = (info[0], info[1]) if info else (eid.replace('_', ' ').title(), FP.BODY_TEXT)
-            label = f"{name} {dur}" if dur > 0 else name
+            chips.append((f"{name} {dur}" if dur > 0 else name, col))
+        for idx, (label, col) in enumerate(chips[:4]):
             r = pygame.Rect(body.x + (idx % 2) * (chip_w + S(10)), y + (idx // 2) * S(27),
                             chip_w, S(22))
             row_rect(r)
@@ -1329,9 +1348,11 @@ class RenderMixin:
             pygame.draw.rect(screen, FP.MIDNIGHT, summary, border_radius=6)
             pygame.draw.rect(screen, FP.ARCANE_DIM, summary, 1, border_radius=6)
         text("Kit Summary", font_bold, FP.GOLD_BRIGHT, summary.x + S(10), summary.y + S(8))
+        _load = carry_state(p)
         for i, (label, value, col) in enumerate([
             ("Armor", f"AC {p.get_ac()}", FP.SUCCESS_TEXT),
-            ("Carry", f"{p.get_current_weight():.0f}/{p.get_carry_limit()}", FP.SUCCESS_TEXT),
+            ("Carrying", f"{_load[0]:.0f} / {_load[1]}" + (f"  {_load[2]}" if _load[2] else ""),
+             carry_color(_load[2])),
             ("Flat DR", " / ".join(f"{k[:3]} {v}" for k, v in getattr(p, 'damage_resistances', {}).items()) or "-",
              FP.MP_BLUE_TEXT),
             ("Pack", f"{len(self._charsheet_pack_entries(filtered=False))}/26 items", FP.BODY_TEXT),
@@ -3520,14 +3541,15 @@ class RenderMixin:
 
     def _menu_base_context(self, extra: list | None = None) -> list:
         p = self.player
-        weight = f"{p.get_current_weight():.1f}/{p.get_carry_limit():.0f}"
+        _cwt, _clim, _cstate = carry_state(p)
+        weight = f"{_cwt:.0f} / {_clim}" + (f"  ({_cstate})" if _cstate else "")
         effects = getattr(p, 'status_effects', {}) or {}
         active = [k.replace('_', ' ').title() for k, v in effects.items() if v != 0]
         lines = [
             ("CURRENT RUN", FP.GOLD_BRIGHT, self.font_sm),
             (f"Floor {self.dungeon_level}    Turn {self.turn_count}", FP.BODY_TEXT, self.font_sm),
             (f"Tile: {self._menu_tile_label()}", FP.FADED_TEXT, self.font_sm),
-            (f"Weight: {weight}", FP.BODY_TEXT, self.font_sm),
+            (f"Carrying {weight}", FP.WARNING_TEXT if _cstate else FP.BODY_TEXT, self.font_sm),
             '',
             ("STATS", FP.GOLD_BRIGHT, self.font_sm),
             (f"STR {p.STR}  CON {p.CON}  DEX {p.DEX}", FP.BODY_TEXT, self.font_sm),
@@ -8179,7 +8201,7 @@ class RenderMixin:
         """The pack count line: how many things you carry, not a limit.
 
         It read "All: 26/26 shown", which looked like a 26-item cap; the only
-        carry limit is weight (Wt, top right). "26 items in pack" with every
+        carry limit is weight ("Carrying 43 / 100", top right). "26 items in pack" with every
         filter, "Gear: 8 of 26 items" when a filter hides some."""
         noun = "item" if total == 1 else "items"
         if active_filter == 'all' or shown == total:

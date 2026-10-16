@@ -868,9 +868,13 @@ def _eff_gain_ammo(game, special, tier, chain):
     import copy
     stack = copy.copy(proto)
     stack.count = cnt
-    game.player.add_to_inventory(stack)
     game.add_message(f"BOOM. {cnt} {getattr(proto, 'name', 'Shotgun Shell')}s Appear.",
                      'success')
+    give = getattr(game, '_give_item', None)
+    if give is not None:
+        give(stack)                 # at your feet when the pack is too heavy
+    else:
+        game.player.add_to_inventory(stack)
 
 
 def _eff_heal_pet(game, special, tier, chain):

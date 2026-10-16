@@ -168,7 +168,7 @@ MYSTERIES = {
         'description': "A steep slope carved into the stone. At its base lies an enormous boulder with a worn handprint.",
         'key_item': {'name': "The Boulder", 'symbol': '*', 'color': (140, 140, 140), 'weight': 20.0},
         'gold_cost': 0,
-        'challenge': {'mode': 'physical', 'tiles': 15},  # walk 15 tiles over carry limit while holding boulder
+        'challenge': {'mode': 'physical', 'tiles': 15},  # walk 15 tiles over the carry limit (worn + pack) holding the boulder; it can always be picked up
         'reward': {'STR': 2, 'INT': 1},
         'reward_text': "The boulder reaches the top and, for once, stays there. One must imagine you happy. (Strength +2, Intelligence +1)",
         'fail_text': "",
@@ -243,6 +243,15 @@ MYSTERIES = {
 # Non-Item classes (sit in ground_items like GoldPile)
 # ---------------------------------------------------------------------------
 
+def _give(game, player, item) -> bool:
+    """A reward into the pack, or at the hero's feet when it is too heavy
+    (Game._give_item). True when it went into the pack."""
+    give = getattr(game, '_give_item', None)
+    if give is not None:
+        return give(item)
+    return player.add_to_inventory(item)
+
+
 class MysteryKeyItem:
     """A key item required to activate a mystery altar. Can be picked up."""
 
@@ -262,6 +271,9 @@ class MysteryKeyItem:
         self.lore         = ''
         self.identified   = True
         self.item_class   = 'mystery_key'
+        # Sisyphus' Boulder is taken up whatever the load: its trial is to
+        # walk with it PAST the carry limit (Player._carries_past_limit).
+        self.carry_past_limit = (mystery_id == 'sisyphus')
 
 
 class MysteryAltar:
@@ -581,8 +593,8 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
                     if getattr(i, 'mystery_id', None) == 'mjolnir'), None)
         if old:
             player.inventory.remove(old)
-        player.add_to_inventory(weapon)
-        game.add_message("Mjolnir, fully forged, appears in your pack!", 'loot')
+        if _give(game, player, weapon):
+            game.add_message("Mjolnir, fully forged, appears in your pack!", 'loot')
 
     elif special == 'ring_of_command':
         # Ring of Command is defined in data/items/accessory.json (no +1 WIS
@@ -591,8 +603,8 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         from items import make_item_by_id
         ring = make_item_by_id('accessory', 'ring_of_command')
         if ring is not None:
-            player.add_to_inventory(ring)
-            game.add_message("A Ring of Command appears in your pack.", 'loot')
+            if _give(game, player, ring):
+                game.add_message("A Ring of Command appears in your pack.", 'loot')
 
     elif special == 'oracle_reveal':
         _oracle_reveal_quirks(player, game)

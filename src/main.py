@@ -785,6 +785,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
+        # Carrying: worn gear has counted since 2026-10-16, so an old save can
+        # load heavier than before (even past the limit). Nothing is taken
+        # away: the hero is told at once and can drop or swap gear as usual.
+        # _burdened is not trusted from the file; it is worked out afresh.
+        self.player._burdened = False
+        self._note_burden()
         self._show_load_summary_popup()
 
     def _load_looks_valid(self, state: dict) -> bool:
@@ -2672,6 +2678,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._notify_stairs(nx, ny)
                 self._notify_ground(nx, ny)
                 self._advance_turn()
+                self._burden_extra_turn()
         elif tile_at_dest == SECRET_DOOR:
             # Bump reveals secret door (chance based on PER)
             per_chance = min(0.85, 0.3 + self.player.PER * 0.04)
@@ -2747,7 +2754,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     getattr(i, 'mystery_id', None) == 'sisyphus'
                     for i in self.player.inventory
                 )
-                if _has_boulder and self.player.get_current_weight() > self.player.get_carry_limit():
+                if _has_boulder and self.player.is_overloaded():     # worn gear counts too
                     self.player.quirk_progress['sisyphus_boulder_tiles'] = (
                         self.player.quirk_progress.get('sisyphus_boulder_tiles', 0) + 1
                     )
@@ -2812,6 +2819,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     pass
                 if not _free_move:
                     self._advance_turn()
+                    self._burden_extra_turn()       # Burdened: some steps cost two turns
                 # Haste no longer auto-fires a second _do_move (that doubled
                 # the player's keystroke). Speed boost is now implemented in
                 # _advance_turn: every other call while hasted, the world
@@ -4110,6 +4118,47 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._maybe_wander_spawn()
         self._death_proximity_warning()
         self._tick_hp_regen()
+        self._note_burden()
+
+    # ------------------------------------------------------------------
+    # Carrying: Burdened (plan: _genart/ui/WEIGHT_PLAN.md)
+    # ------------------------------------------------------------------
+
+    def _note_burden(self):
+        """Say so when the hero becomes, or stops being, Burdened. Checked
+        every turn, so a pickup, a drop, a lost point of Strength or an old
+        save that is suddenly heavy are all caught on the turn they happen."""
+        change = self.player.update_burden()
+        if change == 'on':
+            n = self.player.BURDEN_STEP_EVERY
+            nth = {2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth'}.get(n, f"{n}th")
+            self.add_message(
+                f"You are Burdened. Every {nth} step costs an extra turn "
+                f"until you lighten your load.", 'warning')
+        elif change == 'off':
+            self.add_message("You are no longer Burdened.", 'success')
+
+    def _give_item(self, item) -> bool:
+        """Hand the hero something (a reward, a conjured stack). Into the pack
+        when it fits; otherwise it is set down at the hero's feet, never lost.
+        Returns True when it went into the pack."""
+        if self.player.add_to_inventory(item):
+            return True
+        item.x, item.y = self.player.x, self.player.y
+        self.ground_items.append(item)
+        self.add_message(
+            f"Too heavy to carry: the {self._display_name(item)} is at your feet "
+            f"(your limit is {self.player.get_carry_limit()}).", 'warning')
+        return False
+
+    def _burden_extra_turn(self):
+        """A Burdened hero's step: every Player.BURDEN_STEP_EVERY-th one gives
+        the dungeon one more turn. Walking only; fighting, spells and the quiz
+        clock are untouched."""
+        if self.state == STATE_DEAD or self.player.is_dead():
+            return
+        if self.player.burden_step():
+            self._advance_turn()
 
     def _maybe_wander_spawn(self):  # caps: WANDER_HUNTING_CAP / wander_alive_cap
         """Periodically spawn a wandering monster to keep pressure on the player."""
@@ -5001,7 +5050,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message("Your wisdom senses a dark aura.", 'warning')
             self._advance_turn()
         else:
-            self.add_message("You are carrying too much to pick that up.", 'warning')
+            self.add_message(self.player.too_heavy_message(), 'warning')
 
     # ------------------------------------------------------------------
     # Duck of Doom — Munchkin reference. One per run, on a uniform-random
@@ -5372,7 +5421,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.ground_items.append(ingredient)
                     ingredient.x, ingredient.y = px, py
                     self.add_message(
-                        f"Too heavy -- {ingredient.name} dropped.", 'warning'
+                        f"Too heavy: the {ingredient.name} stays on the floor "
+                        f"(your limit is {self.player.get_carry_limit()}).", 'warning'
                     )
             self._advance_turn()
 

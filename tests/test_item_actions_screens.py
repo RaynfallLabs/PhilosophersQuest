@@ -390,7 +390,8 @@ def test_kit_floor_item_too_heavy_says_why_and_does_nothing():
     g.ground_items.append(armor)
     _kit_select(g, 'armor', armor)
     acts = {a['id']: a for a in g._kit_actions()}
-    assert not acts['equip']['enabled'] and acts['equip']['why'] == "Too heavy to pick up"
+    assert not acts['equip']['enabled'] and acts['equip']['why'] == (
+        f"Too heavy for your limit of {g.player.get_carry_limit()}")
     turn = g.turn_count
     _press(g, pygame.K_e, 'e')
     assert armor in g.ground_items

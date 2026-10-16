@@ -3,8 +3,8 @@ class Player:
     BASE_SP = 200
     BASE_MP = 10
     BASE_TIMER = 10      # seconds for quiz timer (legacy default)
-    CARRY_BASE = 50
-    CARRY_PER_STR = 5
+    CARRY_BASE = 20      # limit = 20 + 8 x STR: 100 at STR 10, 164 at 18 (WEIGHT_PLAN.md)
+    CARRY_PER_STR = 8
 
     # Per-subject quiz timer tuning: (base_seconds, wis_scale_per_point)
     # Math is the ONLY timed subject (quiz_engine.py:191-193 forces
@@ -1207,20 +1207,109 @@ class Player:
             total += int(getattr(acc, 'identify_tier_reduction', 0) or 0)
         return total
 
+    # ----- carrying (2026-10-16 rebalance; plan: _genart/ui/WEIGHT_PLAN.md) -----
+    # DESIGN (confirmed 2026-06-07, numbers re-derived 2026-10-16): carrying is
+    # an INTENTIONAL mechanic. Item weights are deliberately realistic (full
+    # plate 65 lb, a tower shield 30, a maul 8) and STR is the lever: a
+    # high-STR warrior wears the heaviest armour plus a full kit; a low-STR
+    # caster cannot. Do NOT compress armour weights to fit the limit; the
+    # answer is more STR.
+    #
+    # Everything counts: what is WORN and what is in the pack. (Worn gear used
+    # to weigh nothing, so a hero could carry an armory.) Equipping or taking
+    # something off moves its weight between pack and body; the total stays.
+    #
+    # Above BURDENED_SHARE of the limit the hero is Burdened: every
+    # BURDEN_STEP_EVERY-th step costs an extra turn. Nothing else changes
+    # (attacks, spells and quiz clocks are untouched). A pickup that would go
+    # past the limit is refused.
+    BURDENED_SHARE = 0.75
+    BURDEN_STEP_EVERY = 4
+
     def get_carry_limit(self) -> int:
-        # DESIGN (confirmed 2026-06-07): encumbrance is an INTENTIONAL mechanic.
-        # Item weights are deliberately realistic (full plate ~65 lb, maul ~8 lb)
-        # and STR is the lever -- a high-STR build (STR 25-30 -> 175-200 lb) wears
-        # the heaviest armor + a full kit; a low-STR caster (~100 lb) cannot. Do
-        # NOT compress armor weights to fit a tighter cap; the answer is more STR.
         return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
 
+    def worn_items(self) -> list:
+        """Every item on the body: weapons, shield, armour, rings, amulet, belt."""
+        worn = [self.weapon, getattr(self, 'ranged_weapon', None), self.shield,
+                getattr(self, 'amulet_slot', None), getattr(self, 'belt_slot', None)]
+        worn.extend(getattr(self, 'armor_slots', None) or [])
+        worn.extend(getattr(self, 'accessory_slots', None) or [])
+        out, seen = [], set()
+        for it in worn:
+            if it is not None and id(it) not in seen:
+                seen.add(id(it))
+                out.append(it)
+        return out
+
+    @staticmethod
+    def _item_weight(item) -> float:
+        try:
+            return float(getattr(item, 'weight', 0) or 0) * int(getattr(item, 'count', 1) or 1)
+        except (TypeError, ValueError):
+            return 0.0
+
+    def get_worn_weight(self) -> float:
+        return sum(self._item_weight(it) for it in self.worn_items())
+
+    def get_pack_weight(self) -> float:
+        worn = {id(it) for it in self.worn_items()}
+        return sum(self._item_weight(it) for it in self.inventory if id(it) not in worn)
+
     def get_current_weight(self) -> float:
-        total = 0.0
-        for item in self.inventory:
-            count = getattr(item, 'count', 1)
-            total += getattr(item, 'weight', 0) * count
-        return total
+        """Everything carried: worn gear plus the pack."""
+        return self.get_worn_weight() + self.get_pack_weight()
+
+    def burden_threshold(self) -> float:
+        return self.get_carry_limit() * self.BURDENED_SHARE
+
+    def is_burdened(self) -> bool:
+        return self.get_current_weight() > self.burden_threshold()
+
+    def is_overloaded(self) -> bool:
+        """Past the limit itself (an old save, lost Strength, the Boulder)."""
+        return self.get_current_weight() > self.get_carry_limit()
+
+    def can_carry(self, extra: float) -> bool:
+        """Would `extra` pounds more still be within the limit?"""
+        return self.get_current_weight() + float(extra) <= self.get_carry_limit() + 1e-9
+
+    def too_heavy_message(self) -> str:
+        return f"Too heavy: that would put you over your limit of {self.get_carry_limit()}."
+
+    def carry_line(self) -> str:
+        """'Carrying 43 / 100', the readout the sidebar and sheet show."""
+        return f"Carrying {self.get_current_weight():.0f} / {self.get_carry_limit()}"
+
+    def update_burden(self) -> str | None:
+        """Note whether the hero is Burdened now. Returns 'on' or 'off' when
+        that has just changed, else None (the game turns it into a message)."""
+        now = self.is_burdened()
+        was = bool(getattr(self, '_burdened', False))
+        self._burdened = now
+        if now and not was:
+            return 'on'
+        if was and not now:
+            return 'off'
+        return None
+
+    def burden_step(self) -> bool:
+        """Count one step taken. True when this step costs an extra turn."""
+        if not self.is_burdened():
+            self._burden_steps = 0
+            return False
+        self._burden_steps = int(getattr(self, '_burden_steps', 0) or 0) + 1
+        if self._burden_steps >= self.BURDEN_STEP_EVERY:
+            self._burden_steps = 0
+            return True
+        return False
+
+    @staticmethod
+    def _carries_past_limit(item) -> bool:
+        """Items made to be hauled whatever the load: Sisyphus' Boulder, whose
+        trial is to walk with it past the limit."""
+        return bool(getattr(item, 'carry_past_limit', False)
+                    or getattr(item, 'mystery_id', None) == 'sisyphus')
 
     # --- Inventory ---
 
@@ -1256,9 +1345,7 @@ class Player:
 
     def add_to_inventory(self, item) -> bool:
         from items import Item
-        count = getattr(item, 'count', 1)
-        item_weight = getattr(item, 'weight', 0) * count
-        if item_weight + self.get_current_weight() > self.get_carry_limit():
+        if not self.can_carry(self._item_weight(item)) and not self._carries_past_limit(item):
             return False
         # One-cosmetic-per-item: stamp the run's appearance onto a managed
         # ring/amulet entering the pack from ANY source (floor pickup, chest,

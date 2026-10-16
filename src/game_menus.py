@@ -2048,7 +2048,8 @@ class MenuMixin:
         # pet anyway deleted it for good, so stop before touching it.
         if not self.player.add_to_inventory(sphere):
             self.add_message(
-                f"You are carrying too much to hold {pet.name}'s sphere.",
+                f"Too heavy: {pet.name}'s sphere would put you over your "
+                f"limit of {self.player.get_carry_limit()}.",
                 'warning')
             return
         # Remove the pet from the active list
