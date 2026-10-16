@@ -89,7 +89,7 @@ import pytest  # noqa: E402
 _ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_ROOT / 'src'))
 
-from fantasy_ui import FP  # noqa: E402
+from fantasy_ui import FP, KT  # noqa: E402
 
 pygame.init()
 
@@ -112,7 +112,7 @@ capture = _load_capture()
 pytestmark = pytest.mark.usefixtures('ui_theme_isolated')
 
 MIN_SIZE = (1280, 720)
-FRAME_BUDGET_MS = {(1920, 1080): 12.0, (2560, 1440): 15.0, (3440, 1440): 16.0}
+FRAME_BUDGET_MS = {(1280, 720): 10.0, (1920, 1080): 12.0, (2560, 1440): 15.0, (3440, 1440): 16.0}
 # capture.calibration_ms() on Brandon's PC when the budgets were set (2026-10-16:
 # 2.30-2.96 ms over 24 runs, median 2.4).
 CALIBRATION_REF_MS = 2.4
@@ -122,71 +122,30 @@ BODY_CONTRAST = 4.5
 LARGE_CONTRAST = 3.0
 LARGE_LINE_H = 28
 
-# (screen-name prefix, text prefix) -> (why it is low, the contrast it has at
-# 7a8a6854). Pre-existing; re-measured at that commit on 2026-10-16 (the same
-# value today). A drop below the recorded value is a failure.
-KNOWN_LOW_CONTRAST = {
-    ('title_', '[ F2 ]  View All-Time'):
-        ('welcome leaderboard: the F2 hint is drawn over the panel\'s bottom border at 1280x720',
-         2.52),
-    ('title_load_notice', "Your saved journey didn't"):
-        ('welcome: the load-failure notice lands inside the parchment name box '
-         '(FOUNDATION_REVIEW 3.4)', 1.45),
-    ('study_', 'Up/Down to select'):
-        ('study mode: the footer hint is drawn over the panel\'s bottom border at 720 px tall',
-         1.03),
-    ('study_', 'Press 1-4 to answer'):
-        ('study mode: footer hint over the bottom border', 1.03),
-    ('study_', 'Press ENTER or SPACE'):
-        ('study mode: footer hint over the bottom border', 1.03),
-    ('study_result_correct', 'CORRECT!'):
-        ('study mode: verdict drawn over the panel\'s top border at 720 px tall', 1.39),
-    ('study_result_wrong', 'INCORRECT'):
-        ('study mode: verdict in DANGER_TEXT red, over the top border', 2.11),
-    ('menu_throw', 'POTION'):
-        ('fast picker: ARCANE_BRIGHT category tag, 4.0:1 on the selected row', 3.98),
-    ('end_', 'YOU HAVE DIED'):
-        ('death screen: DANGER_TEXT title on the blood-red wash (1.7:1)', 1.74),
-    ('end_', 'YOU HAVE STARVED'):
-        ('death screen: DANGER_TEXT title on the blood-red wash', 1.74),
-    ('end_', 'YOU FLED THE DUNGEON'):
-        ('death screen: DANGER_TEXT title on the blood-red wash', 1.74),
-}
+# (screen-name prefix, text prefix) -> (why it is low, the contrast it had).
+# EMPTY since the Midnight Codex kit pass (2026-10-16): every pre-existing
+# problem listed here (welcome F2 hint and load notice, study-mode hints and
+# verdicts, the throw menu's POTION tag, the death-screen titles) was fixed
+# and its entry deleted. Nothing may be added to make an art step pass.
+KNOWN_LOW_CONTRAST = {}
 CONTRAST_SLACK = 0.02
 # (Deleted 2026-10-16 as never used: ('end_', 'Slain on dungeon level'), 3.05:1 at
 # 7a8a6854 and now. Its line box is 28 px+, so the 3:1 large-text floor applies.)
 
 # (screen-name prefix, text prefix) -> why it crosses its panel's edge.
-KNOWN_OUTSIDE_PANEL = {
-    ('title_', 'QUEST'):
-        'welcome title banner: the tail of the big Q runs ~8 px past the banner\'s bottom border',
-    ('title_load_notice', "Your saved journey didn't"): 'see KNOWN_LOW_CONTRAST',
-    ('study_', 'Up/Down to select'): 'see KNOWN_LOW_CONTRAST',
-    ('study_', 'Press 1-4 to answer'): 'see KNOWN_LOW_CONTRAST',
-    ('study_', 'Press ENTER or SPACE'): 'see KNOWN_LOW_CONTRAST',
-    ('menu_spell', 'Up/Down: move'):
-        'fast picker: the footer hint is not truncated and overruns a 1280 px panel '
-        '(FOUNDATION_REVIEW 3.5)',
-}
+# EMPTY since the kit pass (the title banner's Q tail, the study-mode hints,
+# the fast picker's footer overrun were fixed).
+KNOWN_OUTSIDE_PANEL = {}
 
 # (screen-name prefix, text prefix) -> why it sits in no panel on a modal
-# screen. Found when the no-panel check was added (2026-10-16); identical at
-# 7a8a6854, so pre-existing.
-KNOWN_NO_PANEL = {
-    ('menu_charsheet', 'Arrows: move focus'):
-        'character sheet: the footer key hint is drawn below the panels, over the dimmed '
-        'message log, at 1280x720',
-}
+# screen. EMPTY since the kit pass (the character sheet's key hint now sits
+# inside the sheet's frame, not over the message log).
+KNOWN_NO_PANEL = {}
 
-# Free text on a modal screen BY DESIGN (not a bug): the ending headlines
-# are set on the coloured wash above the grade panel.
-DESIGNED_FREE_TEXT = {
-    ('end_death', 'YOU HAVE DIED'), ('end_death', 'Slain on dungeon level'),
-    ('end_starved', 'YOU HAVE STARVED'), ('end_starved', 'Hunger claimed you'),
-    ('end_fled', 'YOU FLED THE DUNGEON'), ('end_fled', 'Your quest ends in'),
-    ('end_victory', 'VICTORY!'), ('end_victory', "You retrieved the Philosopher"),
-    ('end_victory_abyss', 'DEATH IS DEAD'), ('end_victory_abyss', 'The Abyss has closed'),
-}
+# Free text on a modal screen BY DESIGN (not a bug). EMPTY since the visual
+# review (2026-10-16): the ending headlines used to float on the coloured
+# wash (rune-circle rays crossed them); they sit on their own plaque now.
+DESIGNED_FREE_TEXT = {}
 # The title screen has no modal layer: its glow / vignette are full-window
 # blits, not overlays, and its text floats free by design. Its two modal
 # popups ARE checked.
@@ -215,6 +174,8 @@ class Rec:
     panels: tuple = ()          # top-layer panel rects
     overlays: int = 0
     text_h_min: int = 0         # smallest text line box on the whole screen
+    all_text: tuple = ()        # every text blit: (rect, text, info), all layers
+    glyph_icons: tuple = ()     # menu icons drawn as a letter glyph (no art)
 
 
 def _record(sc, surf, size=MIN_SIZE):
@@ -225,7 +186,9 @@ def _record(sc, surf, size=MIN_SIZE):
                surf.text_outside(), surf.text_outside_panels(),
                surf.text_in_no_panel(), len(panels), size,
                tuple(pygame.Rect(p) for p, _ in panels), surf.overlays,
-               min(heights) if heights else 0)
+               min(heights) if heights else 0,
+               tuple((r, t, i) for (r, t), i in zip(surf.text_blits, surf.text_info)),
+               tuple(capture.GLYPH_ICONS))
 
 
 def _render_all(size):
@@ -259,7 +222,8 @@ def scaled_records():
 
 def _is_quiz_body(scene, info):
     return (scene.startswith('quiz_') and scene != 'quiz_context_modal'
-            and info['color'] in (FP.VELLUM, FP.PARCHMENT_LIGHT))
+            and info['color'] in (FP.VELLUM, FP.PARCHMENT_LIGHT,
+                                  KT.TEXT_QUIZ, KT.OK_TEXT, KT.BAD_TEXT))
 
 
 def _log_pane(size=MIN_SIZE):
@@ -282,15 +246,18 @@ def test_contrast_tracer_sees_low_contrast():
 
 
 def _contrast_failures(min_records, used=None, size=MIN_SIZE):
+    # The message log is judged like every other text (VISUAL_REVIEW must-fix
+    # 1): its age fade is a colour blend floored at 4.5:1, so even its oldest
+    # line passes. ``log_lines`` counts what was measured there.
     log_pane = _log_pane(size)
-    failures, measured_quiz = [], {}
+    failures, measured_quiz = [], {'__log__': 0}
     for name, rec in min_records.items():
         for r, text, info in rec.top:
             c = info['contrast']
             if c is None or info['color'] == FP.INK or not any(ch.isalnum() for ch in text):
                 continue
             if rec.group == 'Play' and log_pane.colliderect(r):
-                continue   # the message log fades old lines by design; see the report
+                measured_quiz['__log__'] += 1
             if _is_quiz_body(name, info):
                 need = QUIZ_CONTRAST
                 measured_quiz.setdefault(name, []).append(c)
@@ -317,7 +284,8 @@ def _contrast_failures(min_records, used=None, size=MIN_SIZE):
 def test_text_contrast_on_every_screen(min_records):
     failures, measured_quiz = _contrast_failures(min_records)
     assert not failures, "Text below its contrast floor:\n" + "\n".join(failures)
-    quiz = [n for n in min_records if n.startswith('quiz_') and n != 'quiz_context_modal']
+    assert measured_quiz.pop('__log__') >= 30, "the message log's lines were not measured"
+    quiz =[n for n in min_records if n.startswith('quiz_') and n != 'quiz_context_modal']
     missing = [n for n in quiz if n not in measured_quiz]
     assert not missing, f"no quiz question/answer text was measured on: {missing}"
 
@@ -325,7 +293,9 @@ def test_text_contrast_on_every_screen(min_records):
 def test_study_score_is_readable_and_clear_of_the_border(min_records):
     """GROUNDWORK_REVIEW 2: the header's frame repaint put both gold border
     lines through the study "Score: N/M" text (8.76:1 -> 1.62:1). It now
-    sits inside the header strip, under the top border."""
+    sits on the header plaque, which the art kit insets inside the frame's
+    16 px band (the panel starts at 24): clear of the frame and the band."""
+    import fantasy_ui
     for name in ('study_question', 'study_result_correct', 'study_result_wrong'):
         rec = min_records[name]
         hits = [(r, i) for r, t, i in rec.top
@@ -333,8 +303,15 @@ def test_study_score_is_readable_and_clear_of_the_border(min_records):
         assert hits, f"{name}: no score drawn"
         for r, info in hits:
             assert info['contrast'] >= BODY_CONTRAST, (name, info['contrast'])
-            # Inside the panel's inner border (24 + 6) and the 44 px header.
-            assert info['ink'].top > 24 + 6 and info['ink'].bottom <= 24 + 44, (name, info['ink'])
+            # The study page is sized to its content and centred (VISUAL_REVIEW
+            # 2026-10-16): the score sits on the plaque of the page it is on.
+            with capture.harness():
+                plaques = [fantasy_ui.header_rect(p, 48) for p in rec.panels
+                           if p.w > 400 and p.h > 200]
+            assert plaques and all(pl.y >= p.y + 16 for pl, p in
+                                   zip(plaques, [p for p in rec.panels
+                                                 if p.w > 400 and p.h > 200]))
+            assert any(pl.contains(info['ink']) for pl in plaques), (name, info['ink'], plaques)
 
 
 # =============================================================================
@@ -500,10 +477,12 @@ def test_layout_at_scaled_sizes(scaled_records, size):
 # (e) UI scale: centring and text size (SCALE_PLAN.md 3 and 7)
 # =============================================================================
 
-# Quick pickers over a lightly dimmed map: bottom-anchored by design,
-# centred horizontally (SCALE_PLAN.md 3, exception 1).
-BOTTOM_ANCHORED = ('menu_wand', 'menu_spell', 'menu_eat', 'menu_quaff', 'menu_throw',
-                   'menu_powers', 'menu_pet_feed', 'menu_pet_heal', 'menu_pet_specials')
+# Bottom-anchored modals: none since the visual review (2026-10-16). The
+# quick pickers (wand, spell, eat, quaff, throw, powers, pet care) used to
+# sit low over a lightly dimmed map (SCALE_PLAN.md 3, exception 1); a half
+# log line peeked under them and the log beside them stayed bright. They
+# centre like every other menu now. Kept as a tuple for the check below.
+BOTTOM_ANCHORED = ()
 # Centred horizontally only: the character sheet is full height with its key
 # hint under it (exception 2); an ending's grade panel sits under the title
 # set on the wash above it.
@@ -528,7 +507,7 @@ def _centring_errors(recs):
         box = rec.panels[0].unionall(list(rec.panels[1:]))
         if abs(box.centerx - W / 2) > 2:
             bad.append(f"{name} @ {W}x{H}: centre x {box.centerx} != {W // 2}  {tuple(box)}")
-        if name.startswith(BOTTOM_ANCHORED):
+        if BOTTOM_ANCHORED and name.startswith(BOTTOM_ANCHORED):
             gap = int(30 * ui_scale.scale_for(W, H) + 0.5)
             if abs(H - box.bottom - gap) > 1:
                 bad.append(f"{name} @ {W}x{H}: bottom gap {H - box.bottom} != {gap}")
@@ -564,3 +543,259 @@ def test_text_is_never_smaller_than_at_the_minimum_window(min_records, scaled_re
     grown = [n for n, rec in scaled_records[(3440, 1440)].items()
              if rec.text_h_min > min_records[n].text_h_min]
     assert len(grown) >= len(min_records) * 0.9, "text did not grow at 3440x1440"
+
+
+# =============================================================================
+# (f) The Midnight Codex visual review (_genart/ui/VISUAL_REVIEW.md, 2026-10-16):
+#     one gate per class of problem a test can see, at 1280x720, 1920x1080
+#     and 3440x1440.
+# =============================================================================
+
+def _all_records(min_records, scaled_records):
+    yield MIN_SIZE, min_records
+    for size in SCALED_SIZES:
+        yield size, scaled_records[size]
+
+
+def _readable(text):
+    return any(ch.isalnum() for ch in text)
+
+
+def _floor_px(size, base=16):
+    import ui_scale
+    return max(1, int(base * ui_scale.scale_for(*size) + 0.5))
+
+
+# Text that is not for reading at a glance, by design: the developer-only
+# debug overlay (PQ_QA_MODE). Every other screen keeps the 16 px floor.
+SMALL_TEXT_SCREENS = ('play_debug_overlay',)
+
+
+def test_no_text_below_the_16px_floor(min_records, scaled_records):
+    """DESIGN_RULES 3: hints, footers and labels are 16 px at UI scale 1 at
+    the least (the review found 11-13 px on the kit table, quirks, the
+    score tables and the character-sheet slot labels). Every text blit on
+    every screen, all layers, at its window's UI scale."""
+    bad = []
+    measured = 0
+    for size, recs in _all_records(min_records, scaled_records):
+        floor = _floor_px(size)
+        for name, rec in recs.items():
+            if name.startswith(SMALL_TEXT_SCREENS):
+                continue
+            for _r, text, info in rec.all_text:
+                pt = info.get('pt')
+                if pt is None or not _readable(text):
+                    continue
+                measured += 1
+                if pt < floor:
+                    bad.append(f"{name} @ {size[0]}x{size[1]}: {pt} px < {floor} px  {text[:40]!r}")
+    assert measured > 5000, f"only {measured} text blits carried a font size"
+    assert not bad, f"{len(bad)} text blits under the floor:\n" + "\n".join(sorted(set(bad))[:120])
+
+
+def test_no_ascii_dashes_or_web_addresses_on_screen(min_records, scaled_records):
+    """Raw strings in a kit world (review minor 8): an ASCII double hyphen
+    is set as a typographic dash ("Prayer -- Lord" becomes "Prayer — Lord"),
+    and no research link ever reaches the screen (study results showed
+    "Source: https://en.wikipedia.org/...")."""
+    import re
+    bad = []
+    for size, recs in _all_records(min_records, scaled_records):
+        for name, rec in recs.items():
+            for _r, text, _info in rec.all_text:
+                if re.search(r'(?<!-)--(?!-)', text) or re.search(
+                        r'https?://|www\.|wikipedia', text, re.I):
+                    bad.append(f"{name} @ {size[0]}x{size[1]}: {text[:70]!r}")
+    assert not bad, "\n".join(sorted(set(bad)))
+
+
+def test_no_text_is_cut_by_its_clip(min_records, scaled_records):
+    """Clipped text hides meaning (review must-fix 3: "5d6 fire damag",
+    "Total answered: 9 (4"). A line drawn into a clip that cuts its glyphs
+    sideways must wrap or be re-laid out instead."""
+    bad = []
+    for size, recs in _all_records(min_records, scaled_records):
+        for name, rec in recs.items():
+            for _r, text, info in rec.all_text:
+                ink, clip = info['ink'], info['clip']
+                vis = ink.clip(clip)
+                if vis.w <= 0 or vis.h <= 0 or not _readable(text):
+                    continue                    # wholly clipped: not drawn at all
+                if vis.w < ink.w - 2:
+                    bad.append(f"{name} @ {size[0]}x{size[1]}: {text[:60]!r} "
+                               f"ink {tuple(ink)} clip {tuple(clip)}")
+    assert not bad, "Text cut by its clip:\n" + "\n".join(sorted(set(bad)))
+
+
+# Ellipses that hide nothing a child needs (each says why). Everything else
+# must wrap or be re-laid out (review must-fix 4, minor 4).
+ALLOWED_ELLIPSIS = {
+    # Narration that trails off on purpose; nothing is cut.
+    ('quiz_recall_lore', 'You close your eyes and search your memory'):
+        'narration: the hero searching memory, not truncated text',
+    ('result_recall_lore', 'You close your eyes and search your memory'):
+        'narration: the same line on the result card',
+    ('result_hack_reality', 'You speak the First Word'):
+        'narration: reality shudders, not truncated text',
+}
+
+
+def test_no_ellipsis_hides_meaning(min_records, scaled_records):
+    bad = []
+    used = set()
+    for size, recs in _all_records(min_records, scaled_records):
+        for name, rec in recs.items():
+            for _r, text, _info in rec.all_text:
+                t = text.rstrip()
+                if not (t.endswith('…') or t.endswith('...')):
+                    continue
+                key = _match(ALLOWED_ELLIPSIS, name, text)
+                if key is not None:
+                    used.add(key)
+                    continue
+                bad.append(f"{name} @ {size[0]}x{size[1]}: {text[:70]!r}")
+    assert not bad, "Ellipsized text:\n" + "\n".join(sorted(set(bad)))
+    stale = [k for k in ALLOWED_ELLIPSIS if k not in used]
+    assert not stale, f"ellipsis allowances that no longer occur (delete them): {stale}"
+
+
+def test_every_menu_icon_is_item_art(min_records, scaled_records):
+    """Item art is the item (Brandon's rule): no menu row may draw a letter
+    glyph because no sprite resolved."""
+    bad = [f"{name} @ {size[0]}x{size[1]}: {sorted(set(rec.glyph_icons))}"
+           for size, recs in _all_records(min_records, scaled_records)
+           for name, rec in recs.items() if rec.glyph_icons]
+    assert not bad, "\n".join(bad)
+
+
+def test_every_item_in_the_data_resolves_to_art():
+    """Every item the data defines (the shop's stock, the pack, loot) has a
+    sprite through the one resolver the map and the menus share."""
+    from items import load_items
+    from renderer import _resolve_item_sprite_path
+    missing = []
+    for cls in ('potion', 'scroll', 'accessory', 'food', 'wand', 'spellbook',
+                'ingredient', 'ammo', 'weapon', 'armor', 'shield', 'artifact'):
+        for it in load_items(cls):
+            if not _resolve_item_sprite_path(it.id):
+                missing.append(f"{cls}: {it.id}")
+    assert not missing, "\n".join(missing)
+
+
+def _pixels(sc_name, size):
+    with capture.harness():
+        sc = next(s for s in capture.SCENES if s.name == sc_name)
+        surf, _ = capture.render_scene(sc, size)
+        return pygame.image.tobytes(surf, 'RGB')
+
+
+@pytest.mark.parametrize('scene,plain', [('play_death_chase', 'play_main'),
+                                         ('title_save_found', 'title_name_typed')])
+def test_capture_reaches_its_screen(scene, plain):
+    """Review minor 12: these two captures were pixel-identical to the plain
+    screen, so the Death vignette and the saved-journey cue went unseen."""
+    assert _pixels(scene, MIN_SIZE) != _pixels(plain, MIN_SIZE)
+
+
+@pytest.mark.parametrize('size', [MIN_SIZE] + SCALED_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+def test_title_wheel_captions_never_collide(size):
+    """Review must-fix 6: at 1280x720 the subject captions collided and the
+    orbit lines ran through them. Every tile and caption plaque is clear of
+    every other, of the title banner, of the name box and of Top Runs."""
+    import ui_scale
+    with capture.harness():
+        screen = capture.make_screen(size)
+        from welcome_screen import WelcomeScreen
+        import layout
+        w = WelcomeScreen(screen, layout.VERSION)
+        _cx, _cy, _r, items = w._wheel()
+        rects = [it[3] for it in items] + [it[5] for it in items]
+        for i, a in enumerate(rects):
+            for b in rects[i + 1:]:
+                assert not a.colliderect(b), (size, tuple(a), tuple(b))
+        box, _sy, _keys = w._bottom_layout()
+        top = int((w._BANNER_Y + w._BANNER_H) * ui_scale.get() + 0.5)
+        assert all(r.top >= top and r.bottom <= box.y for r in rects), size
+        lb_w, _lb_h = w._leaderboard_size()
+        assert lb_w, "the high-score fixture should give a Top Runs panel"
+        lb, *_ = w._leaderboard_rect(len(w._lb_entries))
+        assert lb.left >= 0 and lb.right <= size[0] - 20, (size, tuple(lb))
+        assert not any(lb.colliderect(r) for r in rects), (size, tuple(lb))
+
+
+# =============================================================================
+# (f) no list row under a footer divider (VISUAL_REVIEW_2 must-fix 1)
+# =============================================================================
+
+ALL_SIZES = [MIN_SIZE, (1920, 1080), (2560, 1440), (3440, 1440)]
+
+
+def _rows_and_dividers(names, size):
+    """{scene: (row rects, divider bands)} for ``names`` at ``size``. A row is
+    every ``_ui_row`` the screen draws (list rows of every picker and menu);
+    a divider band is the full box a ``draw_divider`` covers, its centre
+    ornament's reach above and below the line included."""
+    import game_render
+    import fantasy_ui
+    out = {}
+    rows, divs = [], []
+    R = game_render.RenderMixin
+    real_row, real_div = R._ui_row, game_render.draw_divider
+
+    def row(self, rect, *a, **k):
+        rows.append(pygame.Rect(rect))
+        return real_row(self, rect, *a, **k)
+
+    def div(surf, x, y, w, *a, **k):
+        r = fantasy_ui.divider_reach()
+        divs.append(pygame.Rect(x, y - r, w, 2 * r))
+        return real_div(surf, x, y, w, *a, **k)
+
+    R._ui_row, game_render.draw_divider = row, div
+    try:
+        with capture.harness():
+            for sc in capture.SCENES:
+                if sc.name not in names:
+                    continue
+                rows.clear()
+                divs.clear()
+                capture.render_scene(sc, size)
+                out[sc.name] = (list(rows), list(divs))
+    finally:
+        R._ui_row, game_render.draw_divider = real_row, real_div
+    return out
+
+
+PICKER_SCENES = ('menu_quaff', 'menu_throw', 'menu_powers', 'menu_spell', 'menu_wand',
+                 'menu_eat', 'menu_pet_feed', 'menu_pet_heal', 'menu_pet_specials')
+
+
+@pytest.mark.parametrize('size', ALL_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+def test_no_list_row_touches_a_divider(size):
+    """On every menu and picker, no list row overlaps a divider or its centre
+    ornament, and on the quick pickers every last row leaves the same gap
+    (at least the ``md`` step) above the footer divider's ornament. The
+    ornament used to sit on the last row of seven pickers, touching
+    "(2 turns)." on pet specials."""
+    import ui_scale
+    names = {s.name for s in capture.SCENES
+             if s.name.startswith(('menu_', 'shop', 'lore_'))}
+    got = _rows_and_dividers(names, size)
+    bad = []
+    for name, (rows, divs) in sorted(got.items()):
+        for r in rows:
+            for d in divs:
+                if r.colliderect(d):
+                    bad.append(f"{name}: row {tuple(r)} overlaps divider {tuple(d)}")
+    assert not bad, "\n".join(bad)
+    md = int(12 * ui_scale.get() + 0.5)
+    gaps = {}
+    for name in PICKER_SCENES:
+        rows, divs = got[name]
+        assert rows and divs, name
+        footer = max(divs, key=lambda d: d.y)
+        last = max(r.bottom for r in rows)
+        gaps[name] = footer.top - last
+    assert all(g >= md for g in gaps.values()), (size, gaps)
+    assert len(set(gaps.values())) == 1, (size, gaps)

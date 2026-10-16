@@ -1430,7 +1430,7 @@ class InputMixin:
                 pile._dropped_by_player = True       # a gold ring multiplies FOUND gold
                 self.player_gold -= amount
                 self.ground_items.append(pile)
-                self.add_message(f"You drop {amount} gold coins.", 'info')
+                self.add_message(f"You drop {amount:,} gold coins.", 'info')
                 self._advance_turn()
             else:
                 self.add_message("No gold dropped.", 'info')
@@ -1514,7 +1514,7 @@ class InputMixin:
                     self.player_gold -= price
                     iname = getattr(item, 'name', 'item')
                     _snd.play('buy')
-                    self.add_message(f"You buy {iname} for {price} gold.", 'success')
+                    self.add_message(f"You buy {iname} for {price:,} gold.", 'success')
                     m.stock.pop(sel)
                     m.prices.pop(sel)
                     # Shift haggled indices after removal

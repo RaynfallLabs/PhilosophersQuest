@@ -798,7 +798,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         weapon_name = self.player.weapon.name if self.player.weapon else 'unarmed'
         item_count = len(self.player.inventory)
         lines = [
-            f'Floor {self.dungeon_level}   |   Turn {self.turn_count}',
+            # one line: the popup joins consecutive lines into a paragraph,
+            # which ran "Turn 412 26 items" together
+            f'Floor {self.dungeon_level}   |   Turn {self.turn_count}   |   '
             f'{item_count} item{"" if item_count == 1 else "s"}   |   {weapon_name}',
             '',
             'Welcome back, seeker. Your journey continues.',
@@ -4816,7 +4818,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     break
             self.player_gold += _gold_amt
             self.ground_items.remove(item)
-            self.add_message(f"You pick up {_gold_amt} gold coins.", 'loot')
+            self.add_message(f"You pick up {_gold_amt:,} gold coins.", 'loot')
             _snd.play('gold')
             self._advance_turn()
             return
@@ -4865,7 +4867,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self.player.has_effect('identify_sight'):
                 # Full identification of this copy (id_level 5 + BUC), as
                 # the status text promises. It used to stop at 4 ("type
-                # known"), so the item still read "Unidentified <name>".
+                # known"), so the item still read as not identified.
                 if hasattr(item, 'id_level'):
                     self._full_identify(item)
                 else:
@@ -6802,7 +6804,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         True Name model:
           - instance identified (id_level >= 5)  -> "Sword of Michael"
           - type known but THIS copy not yet
-            identified                            -> "Unidentified Sword of Michael"
+            identified                            -> "Sword of Michael (Curse and
+                                                     Enchant Unknown)"
+                                                     (hud_context.unknown_copy_suffix)
           - type unknown                          -> "an ornate golden-hilted blade"
 
         The type_class check is what lets one Ring of Strength
@@ -6819,7 +6823,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if instance_known:
                 base = self._fix_name_case(item.name)
             elif type_known:
-                base = f"Unidentified {self._fix_name_case(item.name)}"
+                from hud_context import unknown_copy_suffix
+                suffix = unknown_copy_suffix(item)
+                base = self._fix_name_case(item.name)
+                if suffix:
+                    base = f"{base} {suffix}"
             else:
                 base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
         # BUC prefix when known
@@ -7613,8 +7621,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif isinstance(item, Food):
             return f"+{item.sp_restore} SP  +{item.hp_restore} HP"
         elif isinstance(item, Ingredient):
-            best = item.recipes.get('5', item.recipes.get('3', {}))
-            return f"ingredient -- best: {best.get('name', '?')}"
+            best = (item.recipes or {}).get('5', (item.recipes or {}).get('3', {})) or {}
+            # Words a player can read (it was "ingredient -- best: ?").
+            from naming import proper_name as _pn
+            if best.get('name'):
+                return f"Ingredient, best dish: {_pn(str(best['name']))}"
+            return "Ingredient for cooking"
         elif isinstance(item, Ammo):
             return f"{item.ammo_type}  x{item.count}"
         elif isinstance(item, Lockpick):
@@ -7678,14 +7690,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             chain = result.score
             if chain == 0:
                 self.add_message(
-                    f"The merchant is unimpressed. Price stays at {original_price} gold.",
+                    f"The merchant is unimpressed. Price stays at {original_price:,} gold.",
                     'warning')
             else:
                 discount = self._haggle_discount_for_chain(chain)
                 new_price = self._apply_haggle_discount(original_price, chain)
                 m.prices[sel] = new_price
                 self.add_message(
-                    f"The merchant relents! {iname}: {original_price} -> {new_price} gold ({discount}% off).",
+                    f"The merchant relents! {iname}: {original_price:,} -> {new_price:,} gold ({discount}% off).",
                     'success')
             haggled = getattr(self, '_shop_haggled', set())
             haggled.add(sel)

@@ -1,9 +1,10 @@
 import pygame
 
+import ui_theme
 from ui_scale import px as S
 
 # FANTASY: Import theme helpers from the central fantasy_ui module
-from fantasy_ui import FP, ITEM_COLOR, ScaledFont
+from fantasy_ui import FP, ITEM_COLOR, KT, ScaledFont, contrast, display_text
 from hud_context import active_power_rows, visible_context_rows
 
 # Rail widths at UI scale 1 (1280x720). On screen they are ``ui_scale.px``
@@ -12,14 +13,38 @@ from hud_context import active_power_rows, visible_context_rows
 LEFT_SIDEBAR_W = 248
 SIDEBAR_W = 330
 
-# FANTASY: Rich fantasy-palette message colors
-_MSG_COLORS = {
-    'info':    FP.BODY_TEXT,
-    'success': FP.SUCCESS_TEXT,
-    'warning': FP.WARNING_TEXT,
-    'danger':  FP.DANGER_TEXT,
-    'loot':    FP.LOOT_TEXT,
-}
+# Message-log tag colours: the design-rule ``log.*`` tokens
+# (DESIGN_RULES.md 2.1 / 2.2, KT.LOG). Each clears 8:1 on the log body.
+_MSG_COLORS = dict(KT.LOG)
+
+# The log body colour, and the contrast floor every line keeps however old
+# it is (DESIGN_RULES 3: "faded" text is a colour blend toward the
+# background, floored at 4.5:1; 4.6 keeps a little slack for rounding).
+LOG_BG = FP.MIDNIGHT
+LOG_FADE_FLOOR = 4.6
+_LOG_FADE_STEP = 0.07          # per line of age, toward the background
+_line_color_cache: dict = {}
+
+
+def log_line_color(msg_type: str, age: int) -> tuple:
+    """Colour of a log line of ``msg_type`` that is ``age`` lines older than
+    the newest. Older lines blend toward ``LOG_BG`` but never below
+    ``LOG_FADE_FLOOR``:1 against it."""
+    key = (msg_type, age)
+    got = _line_color_cache.get(key)
+    if got is not None:
+        return got
+    base = _MSG_COLORS.get(msg_type, _MSG_COLORS['info'])
+    k = max(0.0, 1.0 - age * _LOG_FADE_STEP)
+
+    def mix(t):
+        return tuple(int(round(LOG_BG[j] + (base[j] - LOG_BG[j]) * t)) for j in range(3))
+    col = mix(k)
+    while contrast(col, LOG_BG) < LOG_FADE_FLOOR and k < 1.0:
+        k = min(1.0, k + 0.01)
+        col = mix(k)
+    _line_color_cache[key] = col
+    return col
 
 # FANTASY: Use ITEM_COLOR from fantasy_ui instead of local definition
 _IC_COLOR = ITEM_COLOR
@@ -85,7 +110,7 @@ class MessageLog:
         got = self._wrapped[i]
         if got is not None and (got[0] is text or got[0] == text):
             return got[1]
-        lines = self._wrap(text, font, text_w)
+        lines = self._wrap(display_text(text), font, text_w)
         self._wrapped[i] = (text, lines)
         return lines
 
@@ -114,7 +139,7 @@ class MessageLog:
 
     def draw(self, screen: pygame.Surface, x: int, y: int, w: int, h: int):
         # FANTASY: Midnight background + gold-dark top border
-        pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
+        pygame.draw.rect(screen, LOG_BG, (x, y, w, h))
         pygame.draw.line(screen, FP.GOLD_DARK, (x, y), (x + w, y), 1)
 
         font = self._font
@@ -145,10 +170,7 @@ class MessageLog:
 
         for i, (text, msg_type) in enumerate(visible):
             age = len(visible) - 1 - i
-            base = _MSG_COLORS.get(msg_type, _MSG_COLORS['info'])
-            fade = max(0.35, 1.0 - age * 0.09)
-            color = tuple(int(c * fade) for c in base)
-            surf = font.render(text, True, color)
+            surf = font.render(text, True, log_line_color(msg_type, age))
             screen.blit(surf, (x + pad_x, y + pad_y + i * line_h))
 
 
@@ -245,27 +267,63 @@ class Sidebar:
                         accent=FP.GOLD_DARK, kind='header_small')
         return y + S(26)
 
+    # Kit icons beside the sidebar's stat labels (assets/ui/icons). They
+    # are drawn only when the art kit is loaded; without it the labels sit
+    # where they always did.
+    _STAT_ICONS = {
+        'HP': 'stat_hp', 'MP': 'stat_mp', 'SP': 'stat_sp',
+        'STR': 'stat_str', 'CON': 'stat_con', 'DEX': 'stat_dex',
+        'INT': 'stat_int', 'WIS': 'stat_wis', 'PER': 'stat_per',
+        'AC': 'stat_ac', 'Gold': 'stat_gold', 'Sight': 'stat_sight',
+        'Clock': 'stat_clock', 'Wt': 'stat_weight', 'Spells': 'stat_spells',
+    }
+
+    # Derived stats whose icon stands for the word (coin, hourglass, sack).
+    _ICON_IS_LABEL = frozenset({'Gold', 'Clock', 'Wt'})
+
+    @staticmethod
+    def _icon_size() -> int:
+        return S(18)
+
+    def _icon(self, name: str, x: int, y: int, line_h: int) -> int:
+        """Blit kit icon ``name`` at x, centred on a ``line_h`` text line.
+        Returns the x where the label continues (x when there is no art)."""
+        sz = self._icon_size()
+        if ui_theme.draw_icon(self.screen, name, (x, y + (line_h - sz) // 2, sz, sz)):
+            return x + sz + S(4)
+        return x
+
     def _bar(self, y: int, label: str, val: int, max_val: int,
              bar_color: tuple) -> int:
+        lx = self._icon(self._STAT_ICONS.get(label, ''), self.x + self.PAD, y,
+                        self._fsm.get_height())
         # FANTASY: Faded text label
         self.screen.blit(
             self._fsm.render(label, True, FP.FADED_TEXT),
-            (self.x + self.PAD, y)
+            (lx, y)
         )
         readout_w = S(100)
-        bx = self.x + self.PAD + S(26)
-        bw = self.w - self.PAD * 2 - S(26) - readout_w
+        bx = lx + S(26)
+        bw = self.x + self.w - self.PAD - readout_w - bx
         bh = S(10)
         ratio = max(0.0, min(1.0, val / max(1, max_val)))
         by = y + S(1)
 
-        # FANTASY: Dark bar background
-        pygame.draw.rect(self.screen, (18, 18, 30),
-                         (bx, by, bw, bh), border_radius=3)
-        if ratio > 0:
-            pygame.draw.rect(self.screen, bar_color,
-                             (bx, by, max(2, int(bw * ratio)), bh),
-                             border_radius=3)
+        track = pygame.Rect(bx, by + S(1) - S(2), bw, bh + S(4))
+        if ui_theme.draw_piece(self.screen, 'bar_track', track):
+            inner = track.inflate(-S(4), -S(4))
+            if ratio > 0:
+                self.screen.fill(bar_color, (inner.x, inner.y,
+                                             max(2, int(inner.w * ratio)), inner.h))
+            ui_theme.draw_piece(self.screen, 'bar_frame', track, body=False)
+        else:
+            # FANTASY: Dark bar background
+            pygame.draw.rect(self.screen, (18, 18, 30),
+                             (bx, by, bw, bh), border_radius=3)
+            if ratio > 0:
+                pygame.draw.rect(self.screen, bar_color,
+                                 (bx, by, max(2, int(bw * ratio)), bh),
+                                 border_radius=3)
 
         # FANTASY: Readout right-aligned inside reserved space
         rsurf = self._fsm.render(f"{val}/{max_val}", True, FP.BODY_TEXT)
@@ -319,8 +377,9 @@ class Sidebar:
         for i, (name, val) in enumerate(attrs):
             col = i % 2
             row = i // 2
-            ax = self.x + self.PAD + col * (col_w + gutter)
+            cell_x = self.x + self.PAD + col * (col_w + gutter)
             ay = y + row * row_h
+            ax = self._icon(self._STAT_ICONS[name], cell_x, ay, self._fsm.get_height())
             # FANTASY: FADED_TEXT label color on the left of the cell.
             label_surf = self._fsm.render(f"{name}:", True, FP.FADED_TEXT)
             self.screen.blit(label_surf, (ax, ay))
@@ -330,7 +389,7 @@ class Sidebar:
             # Right-align value inside the cell with a 2 px safety gap, so
             # 3-digit stats never crash into the next column (or the pane
             # midpoint divider between the two columns).
-            vx = ax + col_w - val_surf.get_width() - S(2)
+            vx = cell_x + col_w - val_surf.get_width() - S(2)
             # Guard against negative offsets if a cell ever shrinks below
             # the label width — in that case fall back to a nudge past the
             # label rather than overlapping it.
@@ -369,47 +428,61 @@ class Sidebar:
         ]
         metric_w = (self.w - self.PAD * 2) // 2
         for i, (label, color) in enumerate(metrics):
-            ax = self.x + self.PAD + (i % 2) * metric_w
+            cell_x = self.x + self.PAD + (i % 2) * metric_w
             ay = y + (i // 2) * S(22)
-            self.screen.blit(self._fsm.render(self._fit(self._fsm, label, metric_w - S(8)),
-                                              True, color), (ax, ay))
+            word = label.split(' ')[0]
+            ax = self._icon(self._STAT_ICONS.get(word, ''), cell_x, ay,
+                            self._fsm.get_height())
+            if ax != cell_x and word in self._ICON_IS_LABEL:
+                # the painted icon names the stat; its value says the rest
+                # ("1,234", "12s", "43/100"), so the cell never truncates
+                label = label[len(word) + 1:]
+            self.screen.blit(self._fsm.render(
+                self._fit(self._fsm, label, metric_w - S(8) - (ax - cell_x)),
+                True, color), (ax, ay))
         return y + ((len(metrics) + 1) // 2) * S(22) + self.SECTION_GAP
 
-    def _effect_chip(self, x: int, y: int, w: int, label: str, color: tuple) -> None:
+    _fchip_small = ScaledFont('body', 16, bold=True)
+
+    def _effect_chip(self, x: int, y: int, w: int, label: str, color: tuple,
+                     effect_id: str | None = None) -> None:
         rect = pygame.Rect(x, y, w, S(21))
         pygame.draw.rect(self.screen, (22, 26, 48), rect, border_radius=4)
         pygame.draw.rect(self.screen, color, (rect.x, rect.y, S(3), rect.h), border_radius=2)
-        text = self._fit(self._fbold, label, w - S(10))
-        self.screen.blit(self._fbold.render(text, True, color), (x + S(7), y + S(1)))
+        tx = x + S(7)
+        if effect_id:
+            sz = S(16)
+            if ui_theme.draw_icon(self.screen, f"fx_{effect_id}",
+                                  (x + S(6), y + (rect.h - sz) // 2, sz, sz)):
+                tx = x + S(6) + sz + S(4)
+        # The whole label always shows (a child must see how many turns are
+        # left): one chip per row, and a 16 px step-down before any ellipsis.
+        room = x + w - S(3) - tx
+        font = self._fbold
+        if font.size(label)[0] > room:
+            font = self._fchip_small
+        text = self._fit(font, label, room)
+        self.screen.blit(font.render(text, True, color),
+                         (tx, y + (rect.h - font.get_height()) // 2))
 
-    def _effect_label(self, display_name: str, duration: int) -> str:
+    @staticmethod
+    def _effect_label(display_name: str, duration: int, icon: bool = False) -> str:
+        """The chip text: the effect's full name and its turns left. Never
+        abbreviated ("See I", "Pois" and "Empow" were unreadable)."""
         if duration < 0:
             return display_name
-        full = f"{display_name} {duration}"
-        col_w = (self.w - self.PAD * 2 - S(6)) // 2
-        if self._fbold.size(full)[0] <= col_w - S(10):
-            return full
-        compact_names = {
-            "Poisoned": "Pois",
-            "Paralyzed": "Para",
-            "Confused": "Conf",
-            "Blessed": "Bless",
-            "Cursed": "Curse",
-            "Berserk": "Bersk",
-            "Telepathy": "Tele",
-        }
-        return f"{compact_names.get(display_name, display_name[:5])} {duration}"
+        return f"{display_name} {duration}"
 
     def _effects(self, player, y: int) -> int:
         from status_effects import EFFECT_INFO
         y = self._header("EFFECTS", y)
         rows = []
         if any(getattr(i, 'id', '') == 'charmander_stuffie' for i in player.inventory):
-            rows.append(("Fire Protect", FP.PASSIVE_FIRE))
+            rows.append(("Fire Protect", FP.PASSIVE_FIRE, None))
         if any(getattr(i, 'id', '') == 'dreamspun_sketchbook' for i in player.inventory):
-            rows.append(("Manifest", FP.PASSIVE_MANIFEST))
+            rows.append(("Manifest", FP.PASSIVE_MANIFEST, None))
         if getattr(player, 'amulet_slot', None) and getattr(player.amulet_slot, 'id', '') == 'rands_heart':
-            rows.append(("Death Ward", FP.PASSIVE_WARD))
+            rows.append(("Death Ward", FP.PASSIVE_WARD, None))
         for eid, val in player.status_effects.items():
             if val == 0:
                 continue
@@ -417,28 +490,28 @@ class Sidebar:
             if not info:
                 continue
             display_name, rgb, _ = info
-            label = self._effect_label(display_name, val)
-            rows.append((label, rgb))
+            rows.append((self._effect_label(display_name, val), rgb, eid))
         if not rows:
             self.screen.blit(self._fsm.render("(none)", True, FP.SLOT_EMPTY),
                              (self.x + self.PAD, y))
             return y + S(22) + self.SECTION_GAP
 
-        # Cap the chip grid so a big stack of buffs/debuffs never runs off
-        # the pane; overflow gets a POWERS-style "+N more" hint underneath.
-        max_chips = 8
-        visible = rows[:max_chips]
-        col_w = (self.w - self.PAD * 2 - S(6)) // 2
+        # One full-width chip per row (2026-10-16 visual review: two columns
+        # ellipsised the turn counts at 1920x1080). The grid is capped so a
+        # big stack never runs off the pane; overflow gets a "+N more" line.
         bottom = self.screen.get_height() - self.PAD
-        for i, (label, color) in enumerate(visible):
-            ay = y + (i // 2) * S(24)
+        max_chips = max(1, min(10, (bottom - y - S(22)) // S(24)))
+        visible = rows[:max_chips]
+        col_w = self.w - self.PAD * 2
+        ay = y
+        for label, color, eid in visible:
             if ay + S(21) > bottom:
                 break
-            ax = self.x + self.PAD + (i % 2) * (col_w + S(6))
-            self._effect_chip(ax, ay, col_w, label, color)
-        y_end = y + ((len(visible) + 1) // 2) * S(24)
-        if len(rows) > max_chips:
-            more = f"+{len(rows) - max_chips} more"
+            self._effect_chip(self.x + self.PAD, ay, col_w, label, color, eid)
+            ay += S(24)
+        y_end = ay
+        if len(rows) > len(visible):
+            more = f"+{len(rows) - len(visible)} more"
             self.screen.blit(self._fsm.render(more, True, FP.FADED_TEXT),
                              (self.x + self.PAD, y_end))
             y_end += S(22)

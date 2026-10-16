@@ -259,7 +259,7 @@ def test_b22_hud_needs_id_level_5_for_a_plain_name():
                            unidentified_name='A Plain Ring', id_level=4,
                            identified=True, buc='uncursed', buc_known=False,
                            count=1)
-    assert hud_item_name(player, item).startswith('Unidentified')
+    assert hud_item_name(player, item) == 'Ring of X (Curse Unknown)'
     item.id_level = 5
     assert hud_item_name(player, item) == 'Ring of X'
 

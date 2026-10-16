@@ -817,7 +817,7 @@ class EncountersMixin:
             else:
                 amount = random.randint(reward['min'], reward['max'])
             self.player_gold += amount
-            self.add_message(f"+{amount} gold!", 'loot')
+            self.add_message(f"+{amount:,} gold!", 'loot')
 
         elif rtype in ('random_weapon', 'random_armor', 'random_shield',
                         'random_accessory', 'random_potion', 'random_scroll',

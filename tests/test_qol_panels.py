@@ -334,10 +334,12 @@ def test_discoveries_sections_with_quiz_stats():
     sections = main.Game._discoveries_sections(fake)
     # Find quiz section
     quiz_rows = next(rows for title, rows in sections if title == 'QUIZ PERFORMANCE')
-    # Total line + blank + 2 subjects = 4 rows
-    assert any('Total answered:  14' in r for r in quiz_rows)
-    assert any('math' in r for r in quiz_rows)
-    assert any('theology' in r for r in quiz_rows)
+    # Total line + blank + table header + 2 subjects. Rows are tab-separated
+    # table cells and subjects are Title Case (visual review 2026-10-16).
+    rows = [r for r in quiz_rows if isinstance(r, str)]
+    assert any(r.startswith('Total answered:') and '\t14 (' in r for r in rows)
+    assert any(r.startswith('Math\t') for r in rows)
+    assert any(r.startswith('Theology\t') for r in rows)
 
 
 # ---------------------------------------------------------------------------

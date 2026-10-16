@@ -47,6 +47,7 @@ the ``layout`` globals).
 """
 from __future__ import annotations
 
+import functools
 import json
 import logging
 import os
@@ -75,12 +76,12 @@ OPAQUE_BODY = frozenset({'panel', 'quiz', 'subpanel', 'card', 'input'})
 PIECES = {
     'panel':            'Modal / menu panel frame (draw_dark_panel).',
     'quiz':             'The quiz modal frame (draw_dark_panel kind="quiz").',
-    'header':           'Header plaque strip inside a panel (draw_header_bar).',
+    'header':           'Header plaque inside a panel, inset by its band (draw_header_bar).',
     'header_small':     'Sidebar section header plaque, 24 px tall.',
     'divider':          'Horizontal divider, three-slice (draw_divider).',
     'subpanel':         'Inner box with its own label strip (_ui_subpanel).',
     'subpanel_header':  'The label strip at the top of a subpanel.',
-    'card':             'Reserved: self-measuring message card body.',
+    'card':             'Small flat box inside a panel (picker note, reward code, sheet cells).',
     'choice':           'Quiz answer card, idle.',
     'choice_selected':  'Quiz answer card, selected.',
     'choice_correct':   'Quiz answer card, revealed correct.',
@@ -172,7 +173,7 @@ class Piece:
 
     __slots__ = ('name', 'l', 't', 'r', 'b', 'tl', 'tr', 'bl', 'br',
                  'top', 'bottom', 'left', 'right', 'center', 'body',
-                 'body_color', 'accent', 'ornament', 'src_size')
+                 'body_color', 'accent', 'ornament', 'src_size', 'band')
 
     def __init__(self, name):
         self.name = name
@@ -185,6 +186,7 @@ class Piece:
         self.accent = None          # Piece: greyscale layer tinted at draw time
         self.ornament = None        # Surface centred on the piece (divider gem)
         self.src_size = (0, 0)
+        self.band = 0               # frame band width (screen px): content sits inside it
 
     @property
     def min_w(self) -> int:
@@ -209,15 +211,89 @@ def _repeat(surf: pygame.Surface, min_w: int, min_h: int) -> pygame.Surface:
     for iy in range(ny):
         for ix in range(nx):
             out.blit(surf, (ix * w, iy * h))
-    return _convert(out)
+    return _convert(out, opaque_ok=True)
 
 
-def _convert(surf: pygame.Surface) -> pygame.Surface:
+@functools.lru_cache(maxsize=256)
+def _area_weights(n_in: int, n_out: int):
+    """(n_out, n_in) matrix: each output pixel averages the input pixels it
+    covers, weighted by the covered length (an exact box filter)."""
+    import numpy as np
+    scale = n_in / n_out
+    w = np.zeros((n_out, n_in))
+    for i in range(n_out):
+        a, b = i * scale, (i + 1) * scale
+        j0, j1 = int(a), min(n_in, int(np.ceil(b)))
+        for j in range(j0, j1):
+            w[i, j] = min(b, j + 1) - max(a, j)
+        w[i] /= w[i].sum()
+    return w
+
+
+def _resample(surf: pygame.Surface, size) -> pygame.Surface:
+    """``surf`` scaled to ``size`` for the kit (load time only).
+
+    pygame-ce's ``smoothscale`` DOWNSCALES with a rounding bias: a flat
+    (16, 19, 38, 255) comes out (14, 17, 36, 253) at 0.75. The kit's frame
+    strips then no longer match the panel body filled between them (a seam
+    at UI scale 1.25 / 1.5) and opaque art turns faintly translucent. So a
+    downscale is an exact, alpha-premultiplied box filter (numpy); an
+    upscale (no bias) or a missing numpy uses ``smoothscale``."""
+    nw, nh = int(size[0]), int(size[1])
+    w, h = surf.get_size()
+    if (nw, nh) == (w, h):
+        return surf.copy()
+    if nw > w or nh > h:
+        return pygame.transform.smoothscale(surf, (nw, nh))
+    try:
+        import numpy as np
+    except ImportError:                                  # pragma: no cover
+        return pygame.transform.smoothscale(surf, (nw, nh))
+    src = surf
+    if src.get_bitsize() != 32 or not (src.get_flags() & pygame.SRCALPHA):
+        src = pygame.Surface((w, h), pygame.SRCALPHA, 32)
+        src.blit(surf, (0, 0))
+    rgb = pygame.surfarray.array3d(src).astype(np.float64)        # (w, h, 3)
+    a = pygame.surfarray.array_alpha(src).astype(np.float64)       # (w, h)
+    pre = rgb * (a[..., None] / 255.0)
+    wx, wy = _area_weights(w, nw), _area_weights(h, nh)
+
+    def box(m):
+        t = np.tensordot(wx, m, axes=(1, 0))                       # (nw, h, ...)
+        return np.moveaxis(np.tensordot(t, wy, axes=(1, 1)), -1, 1)  # (nw, nh, ...)
+    a2 = box(a)
+    pre2 = box(pre)
+    with np.errstate(invalid='ignore', divide='ignore'):
+        rgb2 = np.where(a2[..., None] > 0, pre2 * 255.0 / a2[..., None], 0.0)
+    out = pygame.Surface((nw, nh), pygame.SRCALPHA, 32)
+    px = pygame.surfarray.pixels3d(out)
+    px[...] = np.clip(np.rint(rgb2), 0, 255).astype(np.uint8)
+    del px
+    pa = pygame.surfarray.pixels_alpha(out)
+    pa[...] = np.clip(np.rint(a2), 0, 255).astype(np.uint8)
+    del pa
+    return out
+
+
+def _fully_opaque(surf: pygame.Surface) -> bool:
+    if not (surf.get_flags() & pygame.SRCALPHA):
+        return True
+    w, h = surf.get_size()
+    return pygame.mask.from_surface(surf, 254).count() == w * h
+
+
+def _convert(surf: pygame.Surface, opaque_ok: bool = False) -> pygame.Surface:
     """``convert_alpha`` when a display exists. Without one (tests, tools
     that load before ``set_mode``) the image is still made 32-bit, so an
-    8-bit palette PNG can be ``smoothscale``d (GROUNDWORK_REVIEW 8)."""
+    8-bit palette PNG can be ``smoothscale``d (GROUNDWORK_REVIEW 8).
+
+    ``opaque_ok``: a slice with no transparent pixel at all is converted
+    WITHOUT per-pixel alpha (pixel-identical, and a several times cheaper
+    blit: the kit's frame strips are wide and fully opaque)."""
     if pygame.display.get_surface() is not None:
         try:
+            if opaque_ok and _fully_opaque(surf):
+                return surf.convert()
             return surf.convert_alpha()
         except pygame.error:
             pass
@@ -248,8 +324,8 @@ def _cut(img: pygame.Surface, name: str, sl, factor: float,
             if pixel_art and factor >= 1.0 and float(factor).is_integer():
                 sub = pygame.transform.scale(sub, (nw, nh))
             else:
-                sub = pygame.transform.smoothscale(sub, (nw, nh))
-        return _convert(sub)
+                sub = _resample(sub, (nw, nh))
+        return _convert(sub, opaque_ok=True)
 
     p = Piece(name)
     p.src_size = (W, H)
@@ -602,6 +678,13 @@ def _load_piece(k: Kit, name, spec, factor, pixel_art_default, load_img) -> Piec
     if piece is None:
         raise _Bad(f"{name}: slice {list(sl)} does not fit the "
                    f"{img.get_width()}x{img.get_height()} image")
+    if 'band' in spec:
+        band = spec['band']
+        if _is_int(band) and band >= 0 and 2 * band <= min(img.get_size()):
+            piece.band = round(band * factor)
+        else:
+            k.errors.append(f"{name}: band must be a whole number >= 0 that fits the "
+                            f"image (got {band!r})")
     body = spec.get('body', 'tile')
     if body not in ('tile', 'fill', 'none'):
         k.errors.append(f"{name}: body must be tile, fill or none (got {body!r})")
@@ -627,7 +710,7 @@ def _load_piece(k: Kit, name, spec, factor, pixel_art_default, load_img) -> Piec
             o = load_img(orn, f"{name}: ornament")
             if factor != 1.0:
                 ow, oh = o.get_size()
-                o = _convert(pygame.transform.smoothscale(
+                o = _convert(_resample(
                     o, (max(1, round(ow * factor)), max(1, round(oh * factor)))))
             piece.ornament = o
         except _Bad as e:
@@ -685,7 +768,7 @@ def _fit_icon(img: pygame.Surface, size: int, pixel_art: bool) -> pygame.Surface
         k = int(scale)
         img = pygame.transform.scale(img, (w * k, h * k))
     out = pygame.Surface((size, size), pygame.SRCALPHA)
-    scaled = pygame.transform.smoothscale(img, (nw, nh))
+    scaled = _resample(img, (nw, nh))
     out.blit(scaled, ((size - nw) // 2, (size - nh) // 2))
     return _convert(out)
 
@@ -831,6 +914,28 @@ def draw_piece(surf: pygame.Surface, name: str, rect, *, accent=None,
     return True
 
 
+def band(name: str, rect=None) -> int:
+    """Width in screen px of the frame band of art piece ``name`` (its
+    manifest ``band``): the strip a header plaque and all content sit inside.
+    0 when the piece is not loaded, has no band, or would not be drawn as
+    art for ``rect`` (a box smaller than its corners falls back to the
+    procedural frame, which has no band)."""
+    p = _kit.pieces.get(name)
+    if p is None or not p.band:
+        return 0
+    if rect is not None:
+        rect = pygame.Rect(rect)
+        if not p.fits(rect.w, rect.h):
+            return 0
+    return p.band
+
+
+def fits(name: str, w: int, h: int) -> bool:
+    """True if piece ``name`` is loaded and would draw as art at w x h."""
+    p = _kit.pieces.get(name)
+    return p is not None and p.fits(w, h)
+
+
 def draw_hbar(surf: pygame.Surface, name: str, x: int, cy: int, w: int,
               accent=None) -> bool:
     """Draw a horizontal three-slice piece (a divider) of width ``w`` at the
@@ -883,3 +988,16 @@ def draw_icon(surf: pygame.Surface, name: str, rect) -> bool:
 
 
 _ui_scale_mod.add_listener(_on_ui_scale)
+
+
+def hbar_reach(name: str) -> int:
+    """How far (screen px) a three-slice piece drawn by ``draw_hbar`` reaches
+    above and below its centre line: half the taller of the bar and its
+    centre ornament. 0 when the piece is not loaded."""
+    p = _kit.pieces.get(name)
+    if p is None:
+        return 0
+    h = max(1, round(p.src_size[1] * _kit.factor))
+    if p.ornament is not None:
+        h = max(h, p.ornament.get_height())
+    return (h + 1) // 2

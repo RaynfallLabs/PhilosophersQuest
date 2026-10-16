@@ -1687,7 +1687,7 @@ class MenuMixin:
         cost = economy.roll_share(_r, self.dungeon_level, economy.BRIBE_SHARE)
         if _purse < cost:
             self.add_message(
-                f"You need {cost} gold to bribe {the_name(target, lower=True)}. You have {_purse}.",
+                f"You need {cost:,} gold to bribe {the_name(target, lower=True)}. You have {_purse:,}.",
                 'warning')
             return False
         self.player_gold = _purse - cost
@@ -1696,7 +1696,7 @@ class MenuMixin:
             target.status_effects.get('paralyzed', 0), economy.BRIBE_TURNS)
         pl._gold_offering_used_this_floor = True
         self.add_message(
-            f"You toss {cost} gold at {the_name(target, lower=True)}'s feet. "
+            f"You toss {cost:,} gold at {the_name(target, lower=True)}'s feet. "
             f"{the_name(target)} bows and steps aside.",
             'success')
         return False

@@ -114,6 +114,7 @@ def size_tag(size) -> str:
 
 _TEXT = weakref.WeakKeyDictionary()     # text surface -> the string drawn
 _TEXT_COLOR = weakref.WeakKeyDictionary()   # text surface -> (rgb, has_bg)
+_TEXT_PT = weakref.WeakKeyDictionary()      # text surface -> the font's pixel size
 
 
 class TracingFont(pygame.font.Font):
@@ -124,6 +125,10 @@ class TracingFont(pygame.font.Font):
         surf = super().render(text, *args, **kwargs)
         try:
             _TEXT[surf] = str(text)
+            try:
+                _TEXT_PT[surf] = int(self.point_size)
+            except (AttributeError, pygame.error):
+                pass
             color = args[1] if len(args) > 1 else kwargs.get('color')
             bg = args[2] if len(args) > 2 else kwargs.get('bgcolor')
             if color is not None:
@@ -233,6 +238,7 @@ class TracingSurface(pygame.Surface):
         if area is not None:
             ink = ink.clip(pygame.Rect(area)).move(-pygame.Rect(area).x, -pygame.Rect(area).y)
         info = {'color': color, 'has_bg': has_bg, 'contrast': None,
+                'pt': _TEXT_PT.get(source),
                 'clip': pygame.Rect(self.get_clip()),
                 # The glyphs' own pixels (no line-box padding), on screen.
                 'ink': ink.move(x, y)}
@@ -331,6 +337,11 @@ def _rect_spy(real):
         return real(surface, color, rect, width, *a, **k)
     spy.__wrapped__ = real
     return spy
+
+
+# Menu icons drawn as a letter glyph (no sprite resolved) since the last
+# reset: render_scene clears it per screen.
+GLYPH_ICONS: list = []
 
 
 # ---------------------------------------------------------------------------
@@ -480,6 +491,15 @@ def harness(trace: bool = True):
                     if hasattr(mod, fn):
                         patch(mod, fn, _panel_spy(getattr(mod, fn)))
             patch(pygame.draw, 'rect', _rect_spy(pygame.draw.rect))
+            # Item art is the item: count every menu icon drawn as a letter
+            # glyph because no sprite resolved (tests/test_ui_gates.py).
+            real_icon = game_render.RenderMixin._draw_menu_icon
+
+            def icon_spy(self_, item, x, y, _real=real_icon):
+                if self_._get_menu_sprite(getattr(item, 'id', '')) is None:
+                    GLYPH_ICONS.append(getattr(item, 'id', '?'))
+                return _real(self_, item, x, y)
+            patch(game_render.RenderMixin, '_draw_menu_icon', icon_spy)
         fantasy_ui._font_cache.clear()
         # As main() does right after creating the window: load the UI art
         # kit (assets/ui/) once, up front. The caller's kit and window size
@@ -1032,9 +1052,18 @@ def _(g):
 
 
 @scene('play_death_chase', 'Play', 'Ascending with the Stone, Death pursues: red vignette on the map.',
-       expect='player', notes='death_pursues set directly (L100 Stone state is not reachable from floor 1).')
+       expect='player', notes='The real _trigger_death_pursuit(), then Death placed two tiles away '
+                              '(the L100 Stone climb is not reachable from floor 1).')
 def _(g):
-    g.death_pursues = True
+    # The game's own trigger (it used to set only ``death_pursues``: with no
+    # DeathMonster the vignette never drew and the shot equalled play_main).
+    g._trigger_death_pursuit()
+    dm = g.death_monster
+    x, y = _free_tiles_near(g, 2, 2)[0]
+    dm.x, dm.y = x, y
+    dm.alive = True
+    dm._arrive_in = 0
+    g._refresh_fov()
 
 
 @scene('play_debug_overlay', 'Play', 'F2 with PQ_QA_MODE set: developer debug overlay.',
@@ -1669,6 +1698,7 @@ def render_scene(sc: Scene, size, measure_contrast: bool = False) -> tuple[Traci
     screen.measure_contrast = measure_contrast
     reset_sandbox()
     reseed()
+    GLYPH_ICONS.clear()
     state = ''
     if sc.kind == 'game':
         g = build_game(screen, size)
@@ -1824,7 +1854,7 @@ def _parse_size(text):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    ap.add_argument('--sizes', nargs='*', help='e.g. 1600x900 1280x720')
+    ap.add_argument('--sizes', nargs='*', help='e.g. 1600x900 1280x720, or 1280x720,1920x1080')
     ap.add_argument('--only', nargs='*', help='substrings of screen names')
     ap.add_argument('--list', action='store_true')
     ap.add_argument('--out', default=str(OUT_DIR))
@@ -1844,7 +1874,8 @@ def main(argv=None):
         for s in scenes:
             print(f"{s.name:<28} {s.group:<12} {s.reach}")
         return 0
-    sizes = [_parse_size(s) for s in args.sizes] if args.sizes else all_sizes()
+    sizes = ([_parse_size(z) for s in args.sizes for z in s.split(',') if z.strip()]
+             if args.sizes else all_sizes())
     if args.time:
         res = time_scenes(scenes, sizes)
         for z in sizes:

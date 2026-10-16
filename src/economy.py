@@ -93,7 +93,8 @@ def _requote(text: str, changed: list) -> str:
     """Rewrite a quoted price in an option's own words: "(30g)" or "50 gold"."""
     import re
     for old, new in changed:
-        text = re.sub(rf'(?<![\d,]){old}(?=g\b| ?gold\b| ?coins?\b| ?gp\b)', str(new), text)
+        text = re.sub(rf'(?<![\d,]){old}(?=g\b| ?gold\b| ?coins?\b| ?gp\b)',
+                      f'{new:,}' if isinstance(new, int) else str(new), text)
     return text
 
 

@@ -139,7 +139,7 @@ def _assert_combat_slots_clean(slots, bx, bw):
         assert a.right <= b.x, (a, b)
     for key in ('target', 'strike'):
         s = slots[key]
-        rows = [s['cap'], s['main'], s['sub1'], s['sub2']]
+        rows = [s['cap'], s['main'], s['sub1'], s['sub2'], s['sub3']]
         for a, b in zip(rows, rows[1:]):
             assert a.bottom <= b.y, (key, a, b)
         for r in rows:
@@ -148,6 +148,10 @@ def _assert_combat_slots_clean(slots, bx, bw):
     t = slots['target']
     assert t['hp_bar'].right <= t['hp_text'].x
     assert t['sub1'].contains(t['hp_text'])
+    # The player's own HP row: label, bar, numbers, none touching.
+    assert t['you_label'].right <= t['you_bar'].x
+    assert t['you_bar'].right <= t['you_text'].x
+    assert t['sub3'].contains(t['you_text'])
     # Weapon name sits right of the STRIKE NOW caption, inside its row.
     s = slots['strike']
     assert s['cap'].contains(s['weapon'])
@@ -170,7 +174,7 @@ def test_combat_hud_height_matches_slot_rows():
     must end inside it."""
     g = _combat_render_stub()
     slots = g._combat_hud_slots(0, 0, 1000)
-    assert slots['strike']['sub2'].bottom <= g._combat_hud_height()
+    assert slots['target']['sub3'].bottom <= g._combat_hud_height()
 
 
 def test_fit_line_shrinks_before_truncating():
@@ -183,8 +187,10 @@ def test_fit_line_shrinks_before_truncating():
     assert text == "GIANT RAT" and font.get_height() == \
         __import__('fantasy_ui').get_font('body', 26).get_height()
     long_name = "ANCIENT CRYSTALLINE WYRM OF THE SUNLESS DEEP"
-    font, text = g._fit_line(long_name, 420, sizes)
-    assert font.size(text)[0] <= 420
+    # Sizes under the 16 px floor (DESIGN_RULES 3) are skipped: 15 is never
+    # used, so the slot is one an 18 px line fits.
+    font, text = g._fit_line(long_name, 470, sizes)
+    assert font.size(text)[0] <= 470
     assert text == long_name, "should shrink to fit, not truncate"
     assert font.get_height() < g.font_md.get_height(), "must have stepped down"
     font, text = g._fit_line(long_name * 3, 330, sizes)
@@ -316,7 +322,9 @@ def test_quiz_modal_fits_within_panel_bounds_at_1280_720():
     assert L['panel_rect'].x >= 0
     # Width stays inside the play-area budget (left of the right rail, as
     # always); the panel itself is centred on the WINDOW (SCALE_PLAN.md 3).
-    assert L['panel_rect'].width <= layout_mod.GAME_W - 40
+    # DESIGN_RULES 7: the quiz is min(1060 s, W - 80) wide, centred on the
+    # window (the rails under it are hushed; VISUAL_REVIEW minor 11).
+    assert L['panel_rect'].width <= layout_mod.WINDOW_W - 80
     assert L['panel_rect'].right <= layout_mod.WINDOW_W
     assert abs(L['panel_rect'].centerx - layout_mod.WINDOW_W / 2) <= 1
 

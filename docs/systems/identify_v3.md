@@ -277,19 +277,16 @@ three-state tree:
 
 | State | Condition | Display |
 |-------|-----------|---------|
-| Instance identified | `item.id_level >= 4` | full name (`"Rapier +2"`) |
-| Type known + BUC known | type ∈ player known-set AND `buc_known` | full name — `{buc}` tag below carries the per-instance info |
-| Type known + BUC unknown | type ∈ player known-set | **`"Unidentified <true name>"`** — player knows what this is, but this copy's BUC/enchant is still a mystery |
+| Instance identified | `item.id_level >= 5` | full name (`"Rapier +2"`) |
+| Type known, copy not identified | type in player known-set | true name plus what is still unknown about THIS copy (`hud_context.unknown_copy_suffix`): `"Potion of Healing (Curse Unknown)"`, `"Long Sword (Curse and Enchant Unknown)"`, or `"(Enchant Unknown)"` once an altar has shown the blessing |
 | Type unknown | nothing known | `unidentified_name` fallback appearance |
 
 ```python
 if instance_identified:
     raw = item.name
 elif knows_type:
-    if item.buc_known:
-        raw = item.name          # the {buc} tag below carries the delta
-    else:
-        raw = f"Unidentified {item.name}"
+    suffix = unknown_copy_suffix(item)   # "(Curse Unknown)" etc., "" when nothing is hidden
+    raw = f"{item.name} {suffix}" if suffix else item.name
 else:
     raw = item.unidentified_name
 ```
@@ -299,14 +296,21 @@ Then the final string prepends a BUC tag when both `buc_known` *and*
 
 ```
 "{blessed} Rapier +2"
-"{cursed} Unidentified Long Sword"
+"{cursed} Long Sword (Enchant Unknown)"
 ```
 
-**Why "Unidentified <true name>" matters.** With identify v3, learning
-a type is global (`known_item_ids` / `known_class_ids` /
+**Why the suffix names what is unknown (2026-10-16).** With identify v3,
+learning a type is global (`known_item_ids` / `known_class_ids` /
 `known_forms`+`known_materials`) but each copy's BUC/enchant stays
-secret until that *instance* is identified. The display reflects both
-pieces of knowledge at once.
+secret until that *instance* is identified. It used to read
+"Unidentified Potion of Healing" (then "Potion of Healing
+(Unidentified)"), which a child reads as "you don't know what this is"
+while the name says exactly what it is, beside truly unknown potions
+also called Unidentified. The suffix now says what IS hidden: the
+copy's blessing or curse, and its enchantment. `Game._display_name`
+(menus, messages) and `hud_item_name` (sidebar) share the helper, so
+every surface names an item the same way. Type knowledge never shows a
+copy's blessing in menus either (`_copy_buc_known`).
 
 **Capitalisation (v2.23.0).** The prefix is a capital-U
 `Unidentified`, and `item.name` / `item.unidentified_name` always read

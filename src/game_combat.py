@@ -1106,7 +1106,7 @@ class CombatMixin:
             from items import add_gold_to_tile
             add_gold_to_tile(self.ground_items, gold, monster.x, monster.y)
             self.add_message(
-                f"{the_name(monster)} drops {gold} gold coins.", 'loot'
+                f"{the_name(monster)} drops {gold:,} gold coins.", 'loot'
             )
         item_chance = treasure.get('item_chance', 0.0)
         if _rng.random() < item_chance:

@@ -124,7 +124,7 @@ def test_log_rewraps_on_width_or_font_change(monkeypatch):
 
 def _reference_log_draw(log, screen, x, y, w, h):
     """The pre-cache MessageLog.draw (re-wraps everything), for comparison."""
-    from ui import _MSG_COLORS
+    from ui import log_line_color
     pygame.draw.rect(screen, FP.MIDNIGHT, (x, y, w, h))
     pygame.draw.line(screen, FP.GOLD_DARK, (x, y), (x + w, y), 1)
     line_h = log.line_height()
@@ -135,15 +135,12 @@ def _reference_log_draw(log, screen, x, y, w, h):
     text_w = w - log.PAD_X * 2
     all_lines = []
     for text, msg_type in log.entries:
-        for wl in log._wrap(text, log._font, text_w):
+        for wl in log._wrap(fantasy_ui.display_text(text), log._font, text_w):
             all_lines.append((wl, msg_type))
     visible = all_lines[-max_lines:]
     for i, (text, msg_type) in enumerate(visible):
         age = len(visible) - 1 - i
-        base = _MSG_COLORS.get(msg_type, _MSG_COLORS['info'])
-        fade = max(0.35, 1.0 - age * 0.09)
-        color = tuple(int(c * fade) for c in base)
-        screen.blit(log._font.render(text, True, color),
+        screen.blit(log._font.render(text, True, log_line_color(msg_type, age)),
                     (x + log.PAD_X, y + log.PAD_Y + i * line_h))
 
 
@@ -308,11 +305,19 @@ def test_welcome_glow_and_vignette_are_built_once_per_size(monkeypatch):
     for r, alpha in [(300, 12), (240, 18), (180, 22), (130, 28), (90, 20)]:
         pygame.draw.circle(glow, (*FP.ARCANE_DIM, alpha), (w.cx, w.cy), r)
     ref.blit(glow, (0, 0))
+    # The vignette is a smooth elliptical falloff since the visual review
+    # (2026-10-16): 28 rectangle outlines with gaps between them showed as
+    # concentric boxes at 3440x1440.
+    import numpy as np
+    import math
     vig = real_surface((1280, 720), pygame.SRCALPHA)
-    for step in range(28):
-        alpha, margin = int(220 * (step / 28) ** 2.2), int(step * 16)
-        pygame.draw.rect(vig, (0, 0, 0, alpha), (margin, margin, 1280 - 2 * margin,
-                                                 720 - 2 * margin), 10)
+    vig.fill((0, 0, 0, 0))
+    xs = (np.arange(1280) - 640) / 640
+    ys = (np.arange(720) - 360) / 360
+    d = np.sqrt(xs[:, None] ** 2 + ys[None, :] ** 2) / math.sqrt(2)
+    pa = pygame.surfarray.pixels_alpha(vig)
+    pa[...] = (np.clip((d - 0.45) / 0.55, 0.0, 1.0) ** 1.8 * 200).astype(np.uint8)
+    del pa
     ref.blit(vig, (0, 0))
     assert first == _bytes(ref)
     # A resize rebuilds at the new size.
@@ -472,8 +477,11 @@ def _make_kit(tmp_path, pieces, *, scale=1, extra=None):
     return ui_theme.load(asset_dir=str(tmp_path), texture_dir=str(tmp_path / 'none'))
 
 
-def test_empty_assets_folder_loads_nothing():
-    k = ui_theme.load()                     # the real assets/ui (README only)
+def test_empty_assets_folder_loads_nothing(tmp_path):
+    # (The real assets/ui now holds the Midnight Codex kit; it is checked by
+    # tests/test_ui_kit_installed.py.) A folder with only the README:
+    (tmp_path / 'README.md').write_text('art kit', encoding='utf-8')
+    k = ui_theme.load(asset_dir=str(tmp_path))
     assert k.pieces == {} and k.errors == []
 
 

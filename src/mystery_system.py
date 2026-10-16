@@ -394,7 +394,7 @@ def can_activate(mystery_id: str, player, player_gold: int) -> tuple:
     if m.get('gold_cost', 0) > 0:
         _cost = _written_gold(m['gold_cost'])
         if player_gold < _cost:
-            return False, f"You need {_cost} gold as tribute."
+            return False, f"You need {_cost:,} gold as tribute."
 
     # Key item requirement
     if m['key_item'] is not None and mystery_id != 'sisyphus':
@@ -509,7 +509,7 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         if 'gold' in fail_rew:
             _g = _written_gold(fail_rew['gold'])
             game.player_gold = getattr(game, 'player_gold', 0) + _g
-            game.add_message(f"You find {_g} gold inside.", 'loot')
+            game.add_message(f"You find {_g:,} gold inside.", 'loot')
         if m['fail_text']:
             game.add_message(m['fail_text'], 'warning')
         return
@@ -538,7 +538,7 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         _lvl = int(getattr(game, 'dungeon_level', 1) or 1)
         _g = min(_written_gold(reward['gold']), _eco.share(_lvl, MYSTERY_GOLD_CAP_SHARE))
         game.player_gold = getattr(game, 'player_gold', 0) + _g
-        game.add_message(f"+{_g} gold.", 'loot')
+        game.add_message(f"+{_g:,} gold.", 'loot')
 
     # --- All quiz timer bonus (Mimir) ---
     if 'all_timer_bonus' in reward:

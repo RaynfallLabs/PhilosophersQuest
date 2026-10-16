@@ -1212,14 +1212,14 @@ class GoldPile:
     def __init__(self, amount: int, x: int = 0, y: int = 0):
         self.id     = 'gold_pile'
         self.amount = amount
-        self.name   = f"{amount} gold coin{'s' if amount != 1 else ''}"
+        self.name   = f"{amount:,} gold coin{'s' if amount != 1 else ''}"
         self.symbol = '$'
         self.color  = (218, 165, 32)
         self.x      = x
         self.y      = y
 
     def _refresh_name(self):
-        self.name = f"{self.amount} gold coin{'s' if self.amount != 1 else ''}"
+        self.name = f"{self.amount:,} gold coin{'s' if self.amount != 1 else ''}"
 
 
 def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int) -> 'GoldPile':

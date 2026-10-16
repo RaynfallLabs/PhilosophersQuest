@@ -21,11 +21,14 @@ from ui_scale import px as S
 from renderer import TILE_SIZE
 from geom import monster_at_tile, any_tile_in_set
 import ui_theme
-from fantasy_ui import (FP, get_font, draw_dark_panel,
+from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, draw_overlay,
                          draw_rune_circle, draw_filigree_bar, draw_candle_glow,
-                         ITEM_COLOR)
+                         ITEM_COLOR, panel_band, header_rect, readable,
+                         draw_key_hints, draw_key_badge, key_hints_height,
+                         display_title, kit_on, display_text, fit_text,
+                         divider_reach)
 from items import (Weapon, Armor, Shield, Corpse, Accessory,
                    Wand, Scroll, Spellbook, Ammo, Food, Potion)
 from game_helpers import (
@@ -106,7 +109,7 @@ def _identify_status_label(id_level: int) -> str:
     if idl >= 5:
         return "Identified"
     if idl >= 4:
-        return "Type known (BUC / enchant hidden)"
+        return "Type known (this copy's curse and enchant unknown)"
     if idl >= 1:
         return "Partial (legacy save)"
     return "Unknown"
@@ -137,6 +140,80 @@ def _centre_y(h: int) -> int:
     return (layout.WINDOW_H - h) // 2
 
 
+def _kit_option_card(screen, title, options, footer, *, lines=(), border=FP.GOLD,
+                     overlay=200, min_w=700, note='', note_color=None):
+    """A modal of numbered choices in the Midnight Codex kit, centred on the
+    window: plaque title, optional intro ``lines`` (centred), one kit row
+    per option (key badge, name, a line of text under it), an optional
+    ``note``, and the footer as key hints. Used by the prayer, boon and
+    intercession prompts, which used to be hand-drawn "dark parchment"
+    boxes. Module-level (needs only the screen) so it draws for any caller.
+    ``options``: dicts with ``key``, ``name``, ``text`` and ``name_color``."""
+    from fantasy_ui import fit_text
+    if overlay:
+        draw_overlay(screen, overlay)
+    name_f = get_font('body', 19, bold=True)
+    text_f = get_font('body', 16)
+    line_f = get_font('body', 18)
+    key_f = get_font('body', 18, bold=True)
+    band = S(16)
+    row_pad = S(10)
+    key_w = S(34)
+    need = [line_f.size(t)[0] + S(48) for t in lines]
+    for o in options:
+        need.append(max(name_f.size(o['name'])[0], text_f.size(o.get('text', ''))[0])
+                    + key_w + S(40) + 2 * row_pad)
+    if note:
+        need.append(text_f.size(note)[0] + S(48))
+    inner_w = max([S(min_w) - 2 * band - S(56)] + need)
+    bw = min(inner_w + 2 * band + S(56), layout.WINDOW_W - S(48))
+    row_h = name_f.get_height() + text_f.get_height() + S(26)
+    lines_h = len(lines) * (line_f.get_height() + S(6)) + (S(10) if lines else 0)
+    note_h = text_f.get_height() + S(14) if note else 0
+    foot_h = S(8) + key_hints_height() + S(32)
+    bh = (2 * band + S(48) + S(16) + lines_h + len(options) * (row_h + S(8))
+          + note_h + foot_h)
+    bh = min(bh, layout.WINDOW_H - S(48))
+    panel = pygame.Rect(_centre_x(bw), _centre_y(bh), bw, bh)
+    draw_dark_panel(screen, panel, border_color=border)
+    hr = draw_header_bar(screen, (panel.x, panel.y, panel.w, S(48)), text=title,
+                         font=get_font('heading', 30), accent=border,
+                         frame=(panel, border))
+    b = panel_band('panel', panel)
+    x0 = panel.x + b + S(28)
+    w0 = panel.w - 2 * (b + S(28))
+    y = hr.bottom + S(14)
+    for t in lines:
+        ts = line_f.render(fit_text(t, line_f, w0), True, KT.TEXT_BODY)
+        screen.blit(ts, (panel.centerx - ts.get_width() // 2, y))
+        y += line_f.get_height() + S(6)
+    if lines:
+        y += S(10)
+    for o in options:
+        rect = pygame.Rect(x0, y, w0, row_h)
+        ui_theme.draw_piece(screen, 'row', rect, body_color=KT.RAISED)
+        kr = pygame.Rect(rect.x + row_pad, rect.centery - S(17), key_w, S(34))
+        draw_key_badge(screen, kr, o['key'], key_f)
+        tx = kr.right + S(14)
+        tw = rect.right - tx - row_pad
+        ty = rect.y + S(10)
+        ncol = readable(o.get('name_color') or KT.TEXT_HEAD, KT.RAISED)
+        screen.blit(name_f.render(fit_text(o['name'], name_f, tw), True, ncol), (tx, ty))
+        if o.get('text'):
+            screen.blit(text_f.render(fit_text(o['text'], text_f, tw), True, KT.TEXT_BODY),
+                        (tx, ty + name_f.get_height() + S(4)))
+        y += row_h + S(8)
+    if note:
+        ns = text_f.render(fit_text(note, text_f, w0), True,
+                           readable(note_color or KT.TEXT_SUB, KT.INTERIOR))
+        screen.blit(ns, (panel.centerx - ns.get_width() // 2, y + S(4)))
+    keys = pygame.Rect(panel.x + b + S(20), panel.bottom - b - S(8) - key_hints_height(),
+                       panel.w - 2 * (b + S(20)), key_hints_height())
+    draw_divider(screen, panel.x + b + S(28), keys.y - S(16), panel.w - 2 * (b + S(28)))
+    draw_key_hints(screen, keys, footer)
+    return panel
+
+
 class RenderMixin:
     def _draw_mystery_approach(self):
         """Draw the mystery encounter overlay."""
@@ -162,7 +239,7 @@ class RenderMixin:
         if m['key_item']:
             body.append((f"Requires: {m['key_item']['name']}", FP.FADED_TEXT))
         if m.get('gold_cost', 0) > 0:
-            body.append((f"Tribute: {m['gold_cost']} gold", FP.FADED_TEXT))
+            body.append((f"Tribute: {m['gold_cost']:,} gold", FP.FADED_TEXT))
         if m.get('stat_cost'):
             cost_desc = ', '.join(f"{s}{v}" for s, v in m['stat_cost'].items())
             body.append((f"Cost: {cost_desc}", FP.WARNING_TEXT))
@@ -170,13 +247,15 @@ class RenderMixin:
             body.append(("Requires: 3 prepared meals in inventory", FP.FADED_TEXT))
 
         self._ui_message_card(
-            f"{altar.symbol}  {m['name'].upper()}  {altar.symbol}",
+            # The kit's plaque carries the name alone (the altar's map glyph
+            # either side of it read as a stray letter: "W the Sphinx W").
+            m['name'].upper() if kit_on() else f"{altar.symbol}  {m['name'].upper()}  {altar.symbol}",
             body,
             options=[
                 {'key': 'Y', 'label': 'Accept the challenge', 'color': FP.GOLD_BRIGHT},
                 {'key': 'N', 'label': 'Leave the altar untouched', 'color': FP.HINT_TEXT},
             ],
-            footer="Enter / Space also accepts   |   Esc leaves",
+            footer="Enter / Space: accept   |   Esc: leave",
             border_color=altar.color,
             title_color=altar.color,
             max_w=720,
@@ -250,7 +329,7 @@ class RenderMixin:
 
         font_title = get_font('heading', 20)
         font_input = get_font('body', 22)
-        font_hint  = get_font('body', 13)
+        font_hint  = get_font('body', 16)
 
         # Title
         title = "Speak the First Word"
@@ -277,7 +356,7 @@ class RenderMixin:
         from fantasy_ui import get_font
         draw_overlay(self.screen, 220)
 
-        bw, bh = S(580), S(240)
+        bw, bh = S(640), S(240)
         bx = (layout.WINDOW_W - bw) // 2
         by = (layout.WINDOW_H - bh) // 2
 
@@ -321,8 +400,8 @@ class RenderMixin:
                 color = (170, 170, 170)
             surf = font_btn.render(label, True, color)
             self.screen.blit(surf, (bx_btn, btn_y))
-        hint = get_font('body', 13).render(
-            "Left/Right: choose  //  Enter/Y: confirm  //  N/Esc: cancel",
+        hint = get_font('body', 16).render(
+            "Left/Right: choose  //  Enter or Y: yes  //  N or Esc: no",
             True, (220, 160, 0))
         self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2,
                                 by + bh - S(24)))
@@ -349,7 +428,7 @@ class RenderMixin:
 
         font_title = get_font('heading', 22)
         font_body  = get_font('body', 18)
-        font_small = get_font('body', 15)
+        font_small = get_font('body', 16)
 
         # Title with chain rating
         _CHAIN_LABELS = {
@@ -417,7 +496,12 @@ class RenderMixin:
 
         sel = max(0, min(getattr(self, '_quirks_sel', 0), len(data) - 1))
         self._quirks_sel = sel
-        row_h = S(60)
+        # A row is the quirk's name and its status, at 17 / 16 px (they were
+        # 13 px with an 11 px effect line under them). The reward is in the
+        # detail pane, in full.
+        name_f = get_font('body', 17, bold=True)
+        tag_f = get_font('body', 16, bold=True)
+        row_h = max(S(44), name_f.get_height() + S(22))
         visible = max(1, list_body.h // row_h)
         scroll = getattr(self, '_quirks_scroll', 0)
         if sel < scroll:
@@ -432,32 +516,27 @@ class RenderMixin:
                 data[scroll:scroll + visible], start=scroll):
             rect = pygame.Rect(list_body.x, y, list_body.w - S(12), row_h - S(7))
             selected = idx == sel
-            pygame.draw.rect(self.screen,
-                             (35, 43, 82) if selected else FP.MIDNIGHT,
-                             rect, border_radius=6)
-            pygame.draw.rect(self.screen,
-                             FP.ARCANE_BRIGHT if selected else FP.ARCANE_DIM,
-                             rect, 1, border_radius=6)
-            name_col = FP.GOLD_BRIGHT if unlocked else FP.BODY_TEXT
-            name_rect = pygame.Rect(rect.x + S(10), rect.y + S(7), rect.w - S(178), S(38))
-            self._ui_wrap_text(name, get_font('small', 15, bold=True),
-                               name_col, name_rect, line_gap=0, max_lines=2)
+            self._ui_row(rect, selected,
+                        fill=(35, 43, 82) if selected else FP.MIDNIGHT,
+                        border=FP.ARCANE_BRIGHT if selected else FP.ARCANE_DIM, radius=6)
+            bg = KT.SELECTED if selected else KT.RAISED
+            name_col = readable(FP.GOLD_BRIGHT if unlocked else FP.BODY_TEXT, bg)
+            ty = rect.centery - name_f.get_height() // 2
             if unlocked:
-                self._ui_blit_text("UNLOCKED", get_font('small', 12, bold=True),
-                                   FP.SUCCESS_TEXT, rect.right - S(10),
-                                   rect.y + S(9), align='right')
-                if effect:
-                    self._ui_blit_text(effect, get_font('small', 12),
-                                       FP.FADED_TEXT, rect.x + S(10),
-                                       rect.y + S(35), max_width=rect.w - S(20))
+                tag = tag_f.render("Unlocked", True, readable(FP.SUCCESS_TEXT, bg))
+                self.screen.blit(tag, (rect.right - S(12) - tag.get_width(),
+                                       rect.centery - tag.get_height() // 2))
+                room = rect.w - S(36) - tag.get_width()
             else:
-                self._ui_progress_bar(
-                    pygame.Rect(rect.right - S(164), rect.y + S(24), S(112), S(10)),
-                    pct,
-                    color=FP.ARCANE_BRIGHT)
-                self._ui_blit_text(f"{int(pct * 100)}%", get_font('small', 12),
-                                   FP.FADED_TEXT, rect.right - S(10),
-                                   rect.y + S(20), align='right')
+                pct_s = tag_f.render(f"{int(pct * 100)}%", True, readable(FP.FADED_TEXT, bg))
+                self.screen.blit(pct_s, (rect.right - S(12) - pct_s.get_width(),
+                                         rect.centery - pct_s.get_height() // 2))
+                bar = pygame.Rect(rect.right - S(24) - pct_s.get_width() - S(100),
+                                  rect.centery - S(5), S(100), S(10))
+                self._ui_progress_bar(bar, pct, color=FP.ARCANE_BRIGHT)
+                room = bar.x - rect.x - S(22)
+            nf, text = self._fit_line(name, room, (17, 16))
+            self._ui_blit_text(text, nf, name_col, rect.x + S(10), ty)
             y += row_h
 
         if len(data) > visible:
@@ -519,7 +598,6 @@ class RenderMixin:
         self._ui_footer(panel, "Up/Down: select   PgUp/PgDn: jump   ESC/W: close")
 
     def _draw_character_pack_sheet(self):
-        from status_effects import EFFECT_INFO
         try:
             from chain_equip import get_chain_subject
         except Exception:
@@ -529,13 +607,19 @@ class RenderMixin:
         p = self.player
         screen = self.screen
         draw_overlay(screen, 190)
+        # The Midnight Codex kit: the sheet is one framed panel with an inset
+        # plaque, kit sub-panels, rows, key badges and a key-hint footer
+        # inside it (it used to draw its hint over the dimmed message log).
+        kit = kit_on()
 
         font_title = get_font('heading', 25)
         font_head = get_font('body', 15, bold=True)
-        font_body = get_font('body', 13)
-        font_bold = get_font('body', 13, bold=True)
-        font_small = get_font('body', 11)
-        font_tiny = get_font('body', 10)
+        # The kit's sheet keeps DESIGN_RULES 3's 16 px floor everywhere (the
+        # slot labels were 11 px, the item names 12 px).
+        font_body = get_font('body', 16 if kit else 13)
+        font_bold = get_font('body', 16 if kit else 13, bold=True)
+        font_small = get_font('body', 16 if kit else 11)
+        font_tiny = get_font('body', 16 if kit else 10)
         leather = (82, 24, 22)
 
         def text(value, font, color, x, y):
@@ -557,6 +641,16 @@ class RenderMixin:
             return y
 
         def panel(rect, title, accent=FP.GOLD):
+            if kit:
+                head = pygame.Rect(rect.x + 1, rect.y + 1, rect.w - 2, S(30))
+                ui_theme.draw_piece(screen, 'subpanel', rect, body_color=KT.RAISED)
+                ui_theme.draw_piece(screen, 'subpanel_header', head, accent=accent)
+                hf = get_font('heading', 17, bold=True)
+                ts = hf.render(display_title(title.upper()), True, KT.TEXT_HEAD)
+                screen.blit(ts, (head.centerx - ts.get_width() // 2,
+                                 head.y + (head.h - S(2) - ts.get_height()) // 2))
+                return pygame.Rect(rect.x + S(12), head.bottom + S(10), rect.w - 2 * S(12),
+                                   rect.bottom - head.bottom - S(18))
             pygame.draw.rect(screen, FP.MIDNIGHT, rect, border_radius=8)
             pygame.draw.rect(screen, accent, rect, 2, border_radius=8)
             pygame.draw.rect(screen, FP.MIDNIGHT_MID, rect.inflate(-S(8), -S(8)), 1, border_radius=5)
@@ -571,6 +665,14 @@ class RenderMixin:
                                rect.h - (header.bottom - rect.y) - S(20))
 
         def row_rect(rect, selected=False, focus=False):
+            if kit:
+                if selected and focus:
+                    ui_theme.draw_piece(screen, 'row_selected', rect, body_color=KT.SELECTED)
+                else:
+                    ui_theme.draw_piece(screen, 'row', rect, body_color=KT.RAISED)
+                    if selected:
+                        pygame.draw.rect(screen, KT.GOLD, rect, 1)
+                return
             fill = FP.MIDNIGHT_MID if selected else FP.MIDNIGHT
             pygame.draw.rect(screen, fill, rect, border_radius=5)
             pygame.draw.rect(screen, FP.GOLD_BRIGHT if selected and focus else
@@ -578,6 +680,9 @@ class RenderMixin:
                              rect, 1, border_radius=5)
 
         def chip(rect, label, color, fg=FP.BODY_TEXT):
+            if kit and color == leather:
+                draw_key_badge(screen, rect, str(label), font_bold)
+                return
             pygame.draw.rect(screen, color, rect, border_radius=5)
             label_s = font_bold.render(str(label), True, fg)
             screen.blit(label_s, (rect.centerx - label_s.get_width() // 2,
@@ -586,8 +691,17 @@ class RenderMixin:
         def bar(x, y, w, label, value, max_value, color):
             text(label, font_bold, FP.BODY_TEXT, x, y)
             track = pygame.Rect(x + S(36), y + S(6), max(S(20), w - S(102)), S(9))
-            pygame.draw.rect(screen, FP.MIDNIGHT, track, border_radius=4)
             ratio = max(0.0, min(1.0, value / max(1, max_value)))
+            if kit:
+                track = pygame.Rect(x + S(36), y + S(3), max(S(20), w - S(102)), S(14))
+                ui_theme.draw_piece(screen, 'bar_track', track)
+                inner = track.inflate(-S(4), -S(4))
+                if ratio:
+                    screen.fill(color, (inner.x, inner.y, int(inner.w * ratio), inner.h))
+                ui_theme.draw_piece(screen, 'bar_frame', track, body=False)
+                text(f"{value}/{max_value}", font_body, FP.BODY_TEXT, track.right + S(8), y)
+                return y + S(25)
+            pygame.draw.rect(screen, FP.MIDNIGHT, track, border_radius=4)
             if ratio:
                 pygame.draw.rect(screen, color,
                                  (track.x, track.y, int(track.w * ratio), track.h),
@@ -710,20 +824,50 @@ class RenderMixin:
         margin = S(22) if narrow else S(34)
         header_h = S(74)
         gap = S(14)
-        header = pygame.Rect(sheet_x + margin, margin, sheet_w - margin * 2, header_h)
-        pygame.draw.rect(screen, FP.MIDNIGHT, header, border_radius=8)
-        pygame.draw.rect(screen, FP.GOLD, header, 2, border_radius=8)
-        text("CHARACTER / PACK", font_title, FP.GOLD_BRIGHT, header.x + S(18), header.y + S(12))
-        text(f"{getattr(self, 'player_name', 'Adventurer')}   Floor {self.dungeon_level}   Turn {self.turn_count}",
-             font_body, FP.FADED_TEXT, header.x + S(20), header.y + S(44))
-        text(f"Wt {p.get_current_weight():.0f}/{p.get_carry_limit()}",
-             font_bold, FP.SUCCESS_TEXT, header.right - S(198), header.y + S(15))
-        text(f"Gold {self.player_gold:,}", font_bold, FP.GOLD_BRIGHT,
-             header.right - S(198), header.y + S(40))
-
-        top = header.bottom + S(14)
-        footer_h = font_small.get_height()
-        bottom = layout.WINDOW_H - margin - footer_h - S(6)
+        footer = "Arrows: move focus   1-4/Tab: filter pack   Enter: actions/select   E/U/I/X/D: action   ESC: close"
+        if kit:
+            gap = S(10)
+            outer = pygame.Rect(sheet_x + S(8), S(8), sheet_w - S(16), layout.WINDOW_H - S(16))
+            draw_dark_panel(screen, outer, border_color=FP.GOLD)
+            b = panel_band('panel', outer)
+            header = draw_header_bar(screen, (outer.x, outer.y, outer.w, S(52)),
+                                     text="Character / Pack", font=get_font('heading', 28),
+                                     frame=(outer, FP.GOLD))
+            info_f = get_font('body', 16)
+            info = info_f.render(f"{getattr(self, 'player_name', 'Adventurer')}   "
+                                 f"Floor {self.dungeon_level}   Turn {self.turn_count}",
+                                 True, KT.TEXT_DIM)
+            iy = header.y + (header.h - S(4) - info.get_height()) // 2
+            screen.blit(info, (header.x + S(40), iy))
+            wt = get_font('body', 16, bold=True).render(
+                f"Wt {p.get_current_weight():.0f}/{p.get_carry_limit()}", True, FP.SUCCESS_TEXT)
+            gd = get_font('body', 16, bold=True).render(
+                f"Gold {self.player_gold:,}", True, FP.GOLD_BRIGHT)
+            screen.blit(gd, (header.right - S(40) - gd.get_width(), iy))
+            screen.blit(wt, (header.right - S(40) - gd.get_width() - S(24) - wt.get_width(), iy))
+            margin = b + S(10)
+            sheet_x, sheet_w = outer.x, outer.w
+            top = header.bottom + S(10)
+            kh = key_hints_height()
+            keys = pygame.Rect(outer.x + b + S(20), outer.bottom - b - S(6) - kh,
+                               outer.w - 2 * (b + S(20)), kh)
+            bottom = keys.y - S(26)
+            draw_divider(screen, outer.x + b + S(28), keys.y - S(13), outer.w - 2 * (b + S(28)))
+            draw_key_hints(screen, keys, footer)
+        else:
+            header = pygame.Rect(sheet_x + margin, margin, sheet_w - margin * 2, header_h)
+            pygame.draw.rect(screen, FP.MIDNIGHT, header, border_radius=8)
+            pygame.draw.rect(screen, FP.GOLD, header, 2, border_radius=8)
+            text("CHARACTER / PACK", font_title, FP.GOLD_BRIGHT, header.x + S(18), header.y + S(12))
+            text(f"{getattr(self, 'player_name', 'Adventurer')}   Floor {self.dungeon_level}   Turn {self.turn_count}",
+                 font_body, FP.FADED_TEXT, header.x + S(20), header.y + S(44))
+            text(f"Wt {p.get_current_weight():.0f}/{p.get_carry_limit()}",
+                 font_bold, FP.SUCCESS_TEXT, header.right - S(198), header.y + S(15))
+            text(f"Gold {self.player_gold:,}", font_bold, FP.GOLD_BRIGHT,
+                 header.right - S(198), header.y + S(40))
+            top = header.bottom + S(14)
+            footer_h = font_small.get_height()
+            bottom = layout.WINDOW_H - margin - footer_h - S(6)
         content_h = bottom - top
         left_w = S(252) if narrow else S(286)
         loadout_w = S(322) if narrow else S(392)
@@ -738,6 +882,358 @@ class RenderMixin:
         pack_rect = pygame.Rect(loadout_rect.right + gap, top, pack_w, content_h)
         detail_rect = pygame.Rect(pack_rect.right + gap, top, detail_w, content_h)
 
+        if kit:
+            self._charsheet_kit_panels(
+                p, panel, row_rect, chip, bar, text, wrapped, item_color, display_item,
+                ability_lines, tier_lines, leather, focus, detail_item, actions,
+                profile_rect, loadout_rect, pack_rect, detail_rect)
+        else:
+            self._charsheet_plain_panels(
+                p, panel, row_rect, chip, bar, text, wrapped, item_color, display_item,
+                preview_name, ability_lines, tier_lines, leather, focus, detail_item,
+                actions, profile_rect, loadout_rect, pack_rect, detail_rect,
+                font_body, font_bold, font_small, font_tiny, kit)
+
+        if not kit:
+            hint = font_small.render(footer, True, FP.HINT_TEXT)
+            screen.blit(hint, (header.centerx - hint.get_width() // 2,
+                               layout.WINDOW_H - margin - hint.get_height()))
+
+    def _charsheet_kit_panels(self, p, panel, row_rect, chip, bar, text, wrapped,
+                              item_color, display_item, ability_lines, tier_lines,
+                              leather, focus, detail_item, actions,
+                              profile_rect, loadout_rect, pack_rect, detail_rect):
+        """The character sheet's four panels in the Midnight Codex kit.
+
+        VISUAL_REVIEW (2026-10-16): every line is 16 px or more (slot labels
+        were 11 px); the loadout is one labelled list, so a long item name
+        wraps instead of being cut; the Kit Summary card that repeated the
+        header's weight, the AC and the pack count is gone (its Flat DR moved
+        to the stats); effects are one full chip each; Resistances says
+        "None" rather than standing empty; the pack's art sits clear of the
+        names; the Item Card names the item's kind once and reads its lore.
+        """
+        from status_effects import EFFECT_INFO
+        screen = self.screen
+        f16 = get_font('body', 16)
+        f16b = get_font('body', 16, bold=True)
+        lh = f16.get_height()
+
+        # -- Character ---------------------------------------------------
+        body = panel(profile_rect, "Character", FP.GOLD)
+        y = body.y
+        y = bar(body.x, y, body.w, "HP", p.hp, p.max_hp, FP.DANGER_TEXT)
+        y = bar(body.x, y, body.w, "MP", p.mp, p.max_mp, FP.MP_BLUE)
+        y = bar(body.x, y, body.w, "SP", p.sp, p.max_sp, FP.SP_GREEN)
+        y += S(8)
+        cell_gap = S(8)
+        cell_w = (body.w - cell_gap) // 2
+        cell_h = lh + S(8)
+
+        def cell(idx, y0, label, value, col):
+            r = pygame.Rect(body.x + (idx % 2) * (cell_w + cell_gap),
+                            y0 + (idx // 2) * (cell_h + S(4)), cell_w, cell_h)
+            row_rect(r)
+            ls = f16.render(label, True, readable(FP.FADED_TEXT, KT.RAISED))
+            screen.blit(ls, (r.x + S(7), r.centery - ls.get_height() // 2))
+            vs = f16b.render(str(value), True, readable(col, KT.RAISED))
+            screen.blit(vs, (r.right - S(8) - vs.get_width(), r.centery - vs.get_height() // 2))
+
+        stats = [("STR", p.STR), ("CON", p.CON), ("DEX", p.DEX),
+                 ("INT", p.INT), ("WIS", p.WIS), ("PER", p.PER)]
+        for idx, (name, value) in enumerate(stats):
+            col = FP.GOLD_BRIGHT if value >= 13 else FP.DANGER_TEXT_LIGHT if value < 10 else FP.BODY_TEXT
+            cell(idx, y, name, value, col)
+        y += 3 * (cell_h + S(4)) + S(6)
+        metrics = [
+            ("AC", str(p.get_ac()), FP.SUCCESS_TEXT if p.get_ac() <= 5 else FP.GOLD_BRIGHT),
+            ("Sight", str(p.get_sight_radius()), FP.BODY_TEXT),
+            ("Clock", f"{p.combat_clock()}s", FP.GOLD_BRIGHT),
+            ("Spells", str(len(getattr(p, 'known_spells', {}))), FP.MP_BLUE_TEXT),
+            # What Dexterity and Constitution are doing for you right now.
+            ("Dodge", f"{round(100 * p.dodge_chance())}%", FP.BODY_TEXT),
+            ("Tough", f"{round(100 * p.toughness())}%", FP.BODY_TEXT),
+        ]
+        dr = getattr(p, 'damage_resistances', {}) or {}
+        for k, v in dr.items():
+            metrics.append((f"{_cap(k)} DR", str(v), FP.MP_BLUE_TEXT))
+        for idx, (label, value, col) in enumerate(metrics):
+            cell(idx, y, label, value, col)
+        y += ((len(metrics) + 1) // 2) * (cell_h + S(4)) + S(8)
+
+        text("Effects", f16b, FP.GOLD_BRIGHT, body.x, y)
+        y += lh + S(4)
+        active = [(eid, dur) for eid, dur in getattr(p, 'status_effects', {}).items() if dur != 0]
+        chip_h = lh + S(6)
+        room = max(0, (body.bottom - y - 2 * (lh + S(4)) - lh) // (chip_h + S(4)))
+        shown = active[:max(1, room)] if active else []
+        for eid, dur in shown:
+            info = EFFECT_INFO.get(eid)
+            name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
+            label = f"{name} {dur}" if dur > 0 else name
+            r = pygame.Rect(body.x, y, body.w, chip_h)
+            row_rect(r)
+            pygame.draw.rect(screen, col, (r.x, r.y, S(3), r.h))
+            ls = f16b.render(label, True, readable(col, KT.RAISED))
+            screen.blit(ls, (r.x + S(10), r.centery - ls.get_height() // 2))
+            y += chip_h + S(4)
+        if not active:
+            text("None", f16, FP.FADED_TEXT, body.x, y)
+            y += lh + S(4)
+        elif len(active) > len(shown):
+            text(f"+{len(active) - len(shown)} more", f16, FP.FADED_TEXT, body.x, y)
+            y += lh + S(4)
+        y += S(6)
+        text("Resistances", f16b, FP.GOLD_BRIGHT, body.x, y)
+        y += lh + S(4)
+        res = list(getattr(p, 'resistances', {}).items())
+        if not res:
+            text("None", f16, FP.FADED_TEXT, body.x, y)
+        for dtype, mult in res:
+            if y + lh > body.bottom:
+                break                 # a short window: never draw past the panel
+            col = FP.SUCCESS_TEXT if mult < 1 else FP.DANGER_TEXT_LIGHT
+            text(_cap(dtype), f16, FP.BODY_TEXT, body.x, y)
+            ms = f16b.render(f"x{mult:.2f}", True, readable(col, KT.RAISED))
+            screen.blit(ms, (body.right - ms.get_width(), y))
+            y += lh + S(3)
+
+        # -- Loadout: one labelled list ----------------------------------
+        body = panel(loadout_rect, "Loadout", FP.CYAN_ACCENT)
+        loadout = self._charsheet_loadout_entries()
+        label_w = max(f16.size(e['label'])[0] for e in loadout) + S(14)
+        name_w = body.w - label_w - S(16)
+        rows = []
+        for entry in loadout:
+            item = entry.get('item')
+            lines = self._wrap_text(display_item(item), f16, name_w) or ['']
+            rows.append((entry, item, lines))
+        one = lh + S(8)
+        total = sum(one + (len(ls) - 1) * lh for _e, _i, ls in rows) + S(3) * len(rows)
+        if total > body.h:
+            rows = [(e, i, ls[:1]) for e, i, ls in rows]
+        y = body.y
+        sel_idx = getattr(self, '_charsheet_loadout_idx', 0)
+        for idx, (entry, item, lines) in enumerate(rows):
+            h = one + (len(lines) - 1) * lh
+            if y + h > body.bottom:
+                break
+            r = pygame.Rect(body.x, y, body.w, h)
+            selected = idx == sel_idx
+            row_rect(r, selected=selected, focus=(focus == 'loadout'))
+            bg = KT.SELECTED if selected and focus == 'loadout' else KT.RAISED
+            text(entry['label'], f16, readable(FP.FADED_TEXT, bg), r.x + S(8), r.y + S(4))
+            ty = r.y + S(4)
+            for ln in lines:
+                if len(lines) == 1 and f16.size(ln)[0] > name_w:
+                    ln = fit_text(ln, f16, name_w)
+                text(ln, f16, readable(item_color(item), bg), r.x + S(8) + label_w, ty)
+                ty += lh
+            y += h + S(3)
+
+        # -- Pack ----------------------------------------------------------
+        body = panel(pack_rect, "Pack", FP.GOLD)
+        active_filter = self._charsheet_current_pack_filter()
+        tab_labels = [
+            ("1 All", "all", FP.GOLD),
+            ("2 Gear", "gear", FP.CYAN_ACCENT),
+            ("3 Food", "food", FP.SUCCESS_TEXT),
+            ("4 Lore", "lore", FP.MP_BLUE_TEXT),
+        ]
+        tab_w = (body.w - S(18)) // 4
+        y = body.y
+        for idx, (label, key, col) in enumerate(tab_labels):
+            r = pygame.Rect(body.x + idx * (tab_w + S(6)), y, tab_w, S(28))
+            self._ui_chip(r, label, active=(key == active_filter), color=col)
+        y += S(36)
+        pack = self._charsheet_pack_entries()
+        pack_total = len(self._charsheet_pack_entries(filtered=False))
+        count_y = y
+        text(f"{active_filter.title()}: {len(pack)}/{pack_total} shown", f16b,
+             FP.SUCCESS_TEXT, body.x, count_y)
+        y += lh + S(8)
+        isz = self.MENU_ICON_SIZE
+        key_w = S(26)
+        text_x = S(7) + key_w + S(8) + isz + S(8) + S(12)
+        # Clear of the row's right border by the row padding (``sm`` + 4):
+        # "Wt 0.25" used to touch it (VISUAL_REVIEW_2 minor 5).
+        name_w = body.w - text_x - S(12)
+        metas = []
+        for entry in pack:
+            item = entry['item']
+            try:
+                idl = self._kit_visible_level(item)
+            except Exception:
+                idl = 0
+            _kind = str(getattr(item, 'slot', None) or getattr(item, 'item_class', 'item'))
+            parts = [_cap(_kind), f"Wt {getattr(item, 'weight', 0):g}"]
+            if hasattr(item, 'id_level') and idl < 5:
+                parts.append(_identify_status_label(idl).split(' (')[0])
+            meta = "   ".join(parts)
+            if f16.size(meta)[0] > name_w:
+                meta = "  ".join(parts)
+            if f16.size(meta)[0] > name_w and len(parts) > 2:
+                meta = "  ".join(parts[:2])      # the Item Card says the rest
+            metas.append((self._wrap_text(display_item(item), f16b, name_w) or [''], meta))
+        two = any(len(n) > 1 for n, _m in metas)
+        # Text block + 8 px above and below it inside the row, + the 6 px
+        # gap between rows: a wrapped name no longer pushes its sub-line
+        # onto the row border (VISUAL_REVIEW_2 minor 5).
+        pack_row_h = (2 if two else 1) * lh + lh + 2 * S(8) + S(6)
+        visible_rows = max(1, (body.bottom - y) // pack_row_h)
+        pack_idx = getattr(self, '_charsheet_pack_idx', 0)
+        scroll = getattr(self, '_charsheet_pack_scroll', 0)
+        if pack_idx < scroll:
+            scroll = pack_idx
+        if pack_idx >= scroll + visible_rows:
+            scroll = pack_idx - visible_rows + 1
+        scroll = max(0, min(scroll, max(0, len(pack) - visible_rows)))
+        self._charsheet_pack_scroll = scroll
+        if len(pack) > visible_rows:
+            range_label = f"{scroll + 1}-{min(scroll + visible_rows, len(pack))} of {len(pack)}"
+            range_s = f16.render(range_label, True, readable(FP.HINT_TEXT, KT.RAISED))
+            screen.blit(range_s, (body.right - range_s.get_width(), count_y))
+        if not pack:
+            wrapped("No items in this filter.", f16, FP.FADED_TEXT,
+                    pygame.Rect(body.x, y + S(8), body.w, S(50)), line_h=20)
+        for idx, entry in enumerate(pack[scroll:scroll + visible_rows], start=scroll):
+            r = pygame.Rect(body.x, y, body.w, pack_row_h - S(6))
+            selected = idx == pack_idx
+            row_rect(r, selected=selected, focus=(focus == 'pack'))
+            bg = KT.SELECTED if selected and focus == 'pack' else KT.RAISED
+            chip(pygame.Rect(r.x + S(7), r.centery - S(13), key_w, S(26)), entry['letter'], leather)
+            item = entry['item']
+            well = pygame.Rect(r.x + S(7) + key_w + S(8), r.centery - isz // 2 - S(4),
+                               isz + S(8), isz + S(8))
+            self._ui_well(well)
+            self._draw_menu_icon(item, well.x + S(4), well.y + S(4))
+            names, meta = metas[idx]
+            # name line(s) and the meta line, centred together in the row
+            ty = r.y + (r.h - (len(names[:2]) + 1) * lh) // 2
+            for ln in names[:2]:
+                text(ln, f16b, readable(item_color(item), bg), r.x + text_x, ty)
+                ty += lh
+            text(meta, f16, readable(FP.FADED_TEXT, bg), r.x + text_x, ty + S(1))
+            y += pack_row_h
+
+        # -- Item card -------------------------------------------------------
+        body = panel(detail_rect, "Item Card", FP.GOLD)
+        y = body.y
+        if detail_item is None:
+            wrapped("Select an equipped item or pack item to inspect it.",
+                    f16, FP.FADED_TEXT, pygame.Rect(body.x, y, body.w, S(80)), line_h=20)
+            return
+        well = pygame.Rect(body.x, y, isz + S(8), isz + S(8))
+        self._ui_well(well)
+        self._draw_menu_icon(detail_item, well.x + S(4), well.y + S(4))
+        title_x = well.right + S(14)
+        title_font = get_font('heading', 20 if body.w >= S(330) else 18)
+        for line in self._wrap_text(display_item(detail_item), title_font, body.right - title_x)[:3]:
+            text(line, title_font, FP.GOLD_BRIGHT, title_x, y)
+            y += title_font.get_height()
+        cls = str(getattr(detail_item, 'item_class', 'item') or 'item')
+        slot = str(getattr(detail_item, 'slot', '') or '')
+        kind = _cap(cls) if not slot or slot == cls else f"{_cap(cls)}, {_cap(slot)}"
+        text(kind, f16, FP.FADED_TEXT, title_x, y + S(2))
+        y = max(y + lh + S(12), well.bottom + S(12))
+
+        if actions:
+            btn_h = lh + S(10)
+            btn_w = (body.w - S(6)) // 2
+            for idx, action in enumerate(actions):
+                r = pygame.Rect(body.x + (idx % 2) * (btn_w + S(6)),
+                                y + (idx // 2) * (btn_h + S(6)), btn_w, btn_h)
+                selected = focus == 'actions' and idx == getattr(self, '_charsheet_action_idx', 0)
+                row_rect(r, selected=selected, focus=(focus == 'actions'))
+                kr = pygame.Rect(r.x + S(5), r.centery - S(12), S(24), S(24))
+                draw_key_badge(screen, kr, action['key'], f16b)
+                text(action['label'], f16, KT.TEXT_BODY, kr.right + S(8),
+                     r.centery - lh // 2)
+            y += ((len(actions) + 1) // 2) * (btn_h + S(6)) + S(8)
+
+        try:
+            visible = self._kit_visible_level(detail_item)
+        except Exception:
+            visible = int(getattr(detail_item, 'id_level', 5))
+        meta_rows = [
+            ("Weight", f"{getattr(detail_item, 'weight', 0):g}"),
+            ("Identity", _identify_status_label(visible) if hasattr(detail_item, 'id_level') else "-"),
+        ]
+        if hasattr(detail_item, 'buc'):
+            meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed'))
+                              if getattr(detail_item, 'buc_known', False) else "Unknown"))
+        if visible >= 3:
+            if hasattr(detail_item, 'ac_bonus'):
+                meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
+            if isinstance(detail_item, Weapon):
+                meta_rows.append(("Damage", self._kit_damage_str(detail_item)))
+            if getattr(detail_item, 'equip_chain_mode', ''):
+                meta_rows.append(("Attune", _quiz_mode_phrase(
+                    getattr(detail_item, 'equip_chain_mode', '')).capitalize()))
+            res = getattr(detail_item, 'damage_resistances', None) or {}
+            if res:
+                meta_rows.append(("Resists", ", ".join(f"{_cap(k)} x{v}" for k, v in res.items())))
+        lab_w = max(f16.size(lbl)[0] for lbl, _v in meta_rows) + S(14)
+        for label, value in meta_rows:
+            vlines = self._wrap_text(str(value), f16b, body.w - lab_w - S(8)) or ['']
+            if y + lh * len(vlines) > body.bottom:
+                break
+            text(label, f16, FP.FADED_TEXT, body.x, y)
+            for vl in vlines:
+                text(vl, f16b, FP.BODY_TEXT, body.x + lab_w, y)
+                y += lh + S(2)
+        y += S(8)
+
+        def section(title, lines, color=FP.BODY_TEXT):
+            nonlocal y
+            if not lines or y + 2 * lh > body.bottom:
+                return
+            text(title, f16b, FP.GOLD_BRIGHT, body.x, y)
+            y += lh + S(4)
+            for line in lines:
+                for seg in self._wrap_text(line, f16, body.w):
+                    if y + lh > body.bottom:
+                        return
+                    text(seg, f16, color, body.x, y)
+                    y += lh + S(1)
+            y += S(8)
+
+        section("Special Abilities", ability_lines(detail_item))
+        tiers = getattr(detail_item, 'tier_bonuses', None)
+        if tiers:
+            achieved = int(getattr(detail_item, 'achieved_tier', 0) or 0)
+            section("Chain Unlocks", [
+                f"Tier {t}{' (active)' if t <= achieved else ''}: "
+                f"{'; '.join(tier_lines(detail_item, t, 3)) or '?'}" for t in range(1, 6)])
+        lore = getattr(detail_item, 'lore', '') if visible >= 4 else ''
+        if lore and y + 3 * lh < body.bottom:
+            # As many whole sentences as the card holds; X reads the rest.
+            text("Lore", f16b, FP.GOLD_BRIGHT, body.x, y)
+            y += lh + S(4)
+            room = (body.bottom - y - lh - S(4)) // (lh + S(1))
+            import re as _re
+            sentences = _re.split(r'(?<=[.!?])\s+', display_text(str(lore)))
+            shown = []
+            for sent in sentences:
+                n = len(self._wrap_text(' '.join(shown + [sent]), f16, body.w))
+                if n > room:
+                    break
+                shown.append(sent)
+            for seg in self._wrap_text(' '.join(shown), f16, body.w) if shown else []:
+                text(seg, f16, FP.LORE_BLUE_BODY, body.x, y)
+                y += lh + S(1)
+            if len(shown) < len(sentences):
+                text("X: read the full lore", f16, FP.HINT_TEXT, body.x, y + S(2))
+
+    def _charsheet_plain_panels(self, p, panel, row_rect, chip, bar, text, wrapped,
+                                item_color, display_item, preview_name, ability_lines,
+                                tier_lines, leather, focus, detail_item, actions,
+                                profile_rect, loadout_rect, pack_rect, detail_rect,
+                                font_body, font_bold, font_small, font_tiny, kit):
+        """The character sheet's four panels without the art kit (as drawn
+        before the kit existed)."""
+        from status_effects import EFFECT_INFO
+        screen = self.screen
         # Character panel
         body = panel(profile_rect, "Character", FP.GOLD)
         y = body.y
@@ -817,8 +1313,9 @@ class RenderMixin:
                     line_h=13, max_lines=2)
 
         summary = pygame.Rect(body.x, body.bottom - summary_h, body.w, summary_h)
-        pygame.draw.rect(screen, FP.MIDNIGHT, summary, border_radius=6)
-        pygame.draw.rect(screen, FP.ARCANE_DIM, summary, 1, border_radius=6)
+        if not (kit and ui_theme.draw_piece(screen, 'card', summary, body_color=KT.RAISED)):
+            pygame.draw.rect(screen, FP.MIDNIGHT, summary, border_radius=6)
+            pygame.draw.rect(screen, FP.ARCANE_DIM, summary, 1, border_radius=6)
         text("Kit Summary", font_bold, FP.GOLD_BRIGHT, summary.x + S(10), summary.y + S(8))
         for i, (label, value, col) in enumerate([
             ("Armor", f"AC {p.get_ac()}", FP.SUCCESS_TEXT),
@@ -845,6 +1342,9 @@ class RenderMixin:
         for idx, (label, key, col) in enumerate(tab_labels):
             r = pygame.Rect(body.x + idx * (tab_w + S(6)), y, tab_w, S(26))
             active = key == active_filter
+            if kit:
+                self._ui_chip(r, label, active=active, color=col)
+                continue
             pygame.draw.rect(screen, FP.MIDNIGHT_MID if active else FP.MIDNIGHT,
                              r, border_radius=5)
             pygame.draw.rect(screen, col if active else FP.ARCANE_DIM, r, 1, border_radius=5)
@@ -938,7 +1438,7 @@ class RenderMixin:
                 ("ID", _identify_status_label(visible) if hasattr(detail_item, 'id_level') else "-"),
             ]
             if hasattr(detail_item, 'buc'):
-                meta_rows.append(("BUC", _cap(getattr(detail_item, 'buc', 'uncursed')) if getattr(detail_item, 'buc_known', False) else "?"))
+                meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if getattr(detail_item, 'buc_known', False) else "Unknown"))
             if visible >= 3:
                 if hasattr(detail_item, 'ac_bonus'):
                     meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
@@ -947,20 +1447,27 @@ class RenderMixin:
                 if getattr(detail_item, 'equip_chain_mode', ''):
                     meta_rows.append(("Attune", _quiz_mode_phrase(getattr(detail_item, 'equip_chain_mode', '')).capitalize()))
             col_w = (body.w - S(10)) // 2
+
+            def vx_off(label):
+                # the value starts after its label (was a fixed 66 px, which
+                # cut "Identified" short in a narrow card)
+                return S(66) if not kit else max(S(40), font_tiny.size(label)[0] + S(16))
             for idx, (label, value) in enumerate(meta_rows[:6]):
                 r = pygame.Rect(body.x + (idx % 2) * (col_w + S(10)),
                                 y + (idx // 2) * S(28), col_w, S(24))
-                pygame.draw.rect(screen, FP.MIDNIGHT, r, border_radius=5)
+                if not (kit and ui_theme.draw_piece(screen, 'card', r, body_color=KT.RAISED)):
+                    pygame.draw.rect(screen, FP.MIDNIGHT, r, border_radius=5)
                 text(label, font_tiny, FP.FADED_TEXT, r.x + S(7), r.y + S(5))
                 wrapped(str(value), font_small, FP.BODY_TEXT,
-                        pygame.Rect(r.x + S(66), r.y + S(5), r.w - S(72), r.h - S(6)),
+                        pygame.Rect(r.x + vx_off(label), r.y + S(5), r.w - vx_off(label) - S(6), r.h - S(6)),
                         line_h=12, max_lines=1)
             y += ((len(meta_rows[:6]) + 1) // 2) * S(28) + S(10)
 
             res = getattr(detail_item, 'damage_resistances', None) or {}
             if visible >= 3 and res:
                 r = pygame.Rect(body.x, y, body.w, S(42))
-                pygame.draw.rect(screen, FP.MIDNIGHT, r, border_radius=5)
+                if not (kit and ui_theme.draw_piece(screen, 'card', r, body_color=KT.RAISED)):
+                    pygame.draw.rect(screen, FP.MIDNIGHT, r, border_radius=5)
                 text("Resist", font_tiny, FP.FADED_TEXT, r.x + S(7), r.y + S(6))
                 wrapped(", ".join(f"{k.title()} x{v}" for k, v in res.items()),
                         font_small, FP.BODY_TEXT,
@@ -1021,10 +1528,6 @@ class RenderMixin:
                                 line_h=14, max_lines=2)
                         y += r.h + S(5)
 
-        footer = "Arrows: move focus   1-4/Tab: filter pack   Enter: actions/select   E/U/I/X/D: action   ESC: close"
-        hint = font_small.render(footer, True, FP.HINT_TEXT)
-        screen.blit(hint, (header.centerx - hint.get_width() // 2,
-                           layout.WINDOW_H - margin - hint.get_height()))
 
     def _draw_character_sheet(self):
         self._draw_character_pack_sheet()
@@ -1044,15 +1547,17 @@ class RenderMixin:
                      f"time{'s' if self._cow_poke_count != 1 else ''}.",
                      FP.FADED_TEXT),
                 ])
+            # One colour for the three choices: green / lavender / yellow
+            # meant nothing (VISUAL_REVIEW, cow_encounter).
             options = [
                 {'key': '1', 'label': 'Feed the cow (costs an ingredient)',
-                 'color': FP.SUCCESS_TEXT},
+                 'color': FP.PARCHMENT_LIGHT},
                 {'key': '2', 'label': 'Walk away. That was weird.',
-                 'color': FP.HINT_TEXT},
+                 'color': FP.PARCHMENT_LIGHT},
                 {'key': '3', 'label': 'Poke the cow.',
-                 'color': FP.WARNING_TEXT},
+                 'color': FP.PARCHMENT_LIGHT},
             ]
-            footer = "Esc also walks away"
+            footer = "1-3: choose   |   Esc: walk away"
         else:
             body = [desc]
             options = None
@@ -1070,7 +1575,13 @@ class RenderMixin:
         )
 
     def _draw_npc_encounter(self):
-        """Draw the NPC moral encounter overlay — multi-phase."""
+        """Draw the NPC moral encounter overlay — multi-phase.
+
+        The panel is sized to what the phase holds and centred on the window
+        (VISUAL_REVIEW minor 3: the text filled the top fifth of a tall,
+        mostly empty panel). The title is gold on the plaque like every
+        other title (it took the NPC's colour, dim lavender); the body is
+        set at the reading size of the other modals (20 px)."""
         enc = self._npc_encounter_active
         if enc is None:
             return
@@ -1085,27 +1596,58 @@ class RenderMixin:
         }.get(phase, 'ENCOUNTER')
 
         draw_overlay(self.screen, 190)
-        bw = min(S(860), layout.GAME_W - S(48))
-        bh = min(S(560), layout.WINDOW_H - S(48))
+        kit = bool(panel_band('panel', pygame.Rect(0, 0, S(860), S(400))))
+        bw = min(S(860), layout.WINDOW_W - S(48))
+        b = S(16) if kit else 0
+        text_w = bw - 2 * (b + S(28)) if kit else bw - 2 * S(30)
+        font = get_font('body', 20)
+        line_h = font.get_height() + S(4)
+        row_h = S(58)
+        if phase == 'text':
+            content_h = len(self._wrap_text(display_text(enc['text']), font, text_w)) * line_h
+        elif phase == 'options':
+            content_h = S(32) + len(enc['options']) * (row_h + S(10))
+        elif phase == 'select_item':
+            content_h = S(54) + min(9, len(self._npc_item_list)) * (S(36) + S(6))
+        else:
+            content_h = len(self._wrap_text(display_text(self._npc_outcome_text or ''),
+                                            font, text_w)) * line_h
+        head_h = S(48)
+        foot_h = S(8) + key_hints_height() + S(32)
+        bh = 2 * b + head_h + S(18) + content_h + S(10) + foot_h
+        bh = max(S(240), min(bh, layout.WINDOW_H - S(48)))
         bx = _centre_x(bw)
         by = _centre_y(bh)
         panel = pygame.Rect(bx, by, bw, bh)
         draw_dark_panel(self.screen, panel, border_color=border)
-        draw_header_bar(self.screen, (bx, by, bw, S(44)),
-                        text=enc['name'].upper(),
-                        font=get_font('heading', 20),
-                        text_color=border,
-                        accent=border,
-                        frame=(panel, border))
-        self._ui_chip(pygame.Rect(bx + bw - S(136), by + S(10), S(110), S(28)),
-                      phase_label, active=True, color=border)
-        draw_divider(self.screen, bx + S(20), by + S(54), bw - 2 * S(20))
+        b = panel_band('panel', panel)
+        if b:
+            # Plaque with the encounter's name; the phase chip at its right
+            # end, clear of the title (right_reserve).
+            body_top = self._ui_header(panel, enc['name'].upper(), border_color=border,
+                                       h=48, right_reserve=S(160), left_reserve=S(160))
+            hr = header_rect(panel, S(48))
+            self._ui_chip(pygame.Rect(hr.right - S(40) - S(110),
+                                      hr.y + (hr.h - S(4) - S(28)) // 2, S(110), S(28)),
+                          display_title(phase_label), active=True, color=border)
+            _div, _keys, foot_bottom = self._ui_footer_metrics(panel)
+            body_rect = pygame.Rect(bx + b + S(28), body_top + S(4),
+                                    bw - 2 * (b + S(28)), foot_bottom - body_top - S(4))
+        else:
+            draw_header_bar(self.screen, (bx, by, bw, S(44)),
+                            text=enc['name'].upper(),
+                            font=get_font('heading', 20),
+                            text_color=FP.GOLD_BRIGHT,
+                            accent=border,
+                            frame=(panel, border))
+            self._ui_chip(pygame.Rect(bx + bw - S(136), by + S(10), S(110), S(28)),
+                          phase_label, active=True, color=border)
+            draw_divider(self.screen, bx + S(20), by + S(54), bw - 2 * S(20))
 
-        body_rect = pygame.Rect(bx + S(30), by + S(72), bw - 2 * S(30), bh - S(124))
-        font = get_font('body', 17)
+            body_rect = pygame.Rect(bx + S(30), by + S(72), bw - 2 * S(30), bh - S(124))
 
         if phase == 'text':
-            self._ui_wrap_text(enc['text'], font, FP.PARCHMENT_LIGHT,
+            self._ui_wrap_text(display_text(enc['text']), font, FP.PARCHMENT_LIGHT,
                                body_rect, line_gap=4)
             self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
             return
@@ -1113,13 +1655,12 @@ class RenderMixin:
         if phase == 'options':
             y = body_rect.y
             self._ui_blit_text("Choose what you do next.",
-                               get_font('body', 16), FP.FADED_TEXT,
+                               get_font('body', 18), FP.FADED_TEXT,
                                body_rect.x, y)
             y += S(32)
-            row_h = S(58)
             for i, opt in enumerate(enc['options']):
                 row = pygame.Rect(body_rect.x, y, body_rect.w, row_h)
-                self._ui_action_row(row, str(i + 1), opt['label'],
+                self._ui_action_row(row, str(i + 1), display_text(opt['label']),
                                     color=FP.PARCHMENT_LIGHT)
                 y += row_h + S(10)
             self._ui_footer(panel, "1-3: choose   |   Esc: walk away")
@@ -1128,28 +1669,28 @@ class RenderMixin:
         if phase == 'select_item':
             selected = getattr(self, '_npc_selected_option', None) or {}
             y = body_rect.y
-            self._ui_wrap_text(selected.get('label', 'Choose an item to give:'),
-                               get_font('body', 16), FP.PARCHMENT_LIGHT,
+            self._ui_wrap_text(display_text(selected.get('label', 'Choose an item to give:')),
+                               get_font('body', 18), FP.PARCHMENT_LIGHT,
                                pygame.Rect(body_rect.x, y, body_rect.w, S(44)),
                                line_gap=2, max_lines=2)
             y += S(54)
             items = self._npc_item_list
             visible = items[self._npc_item_scroll:self._npc_item_scroll + 9]
-            row_h = S(36)
+            irow_h = S(36)
             list_rect = pygame.Rect(body_rect.x, y, body_rect.w - S(10),
                                     body_rect.bottom - y)
             for i, item in enumerate(visible):
-                row = pygame.Rect(list_rect.x, y, list_rect.w, row_h)
+                row = pygame.Rect(list_rect.x, y, list_rect.w, irow_h)
                 self._ui_action_row(row, chr(97 + i), self._display_name(item),
                                     color=FP.PARCHMENT_LIGHT)
-                y += row_h + S(6)
+                y += irow_h + S(6)
             self._ui_scrollbar(list_rect, self._npc_item_scroll,
                                len(items), 9, color=border)
             self._ui_footer(panel, "a-z: select item   |   Up/Down: scroll   |   Esc: back")
             return
 
         if phase == 'outcome':
-            self._ui_wrap_text(self._npc_outcome_text, font,
+            self._ui_wrap_text(display_text(self._npc_outcome_text), font,
                                FP.PARCHMENT_LIGHT, body_rect, line_gap=4)
             self._ui_footer(panel, "Enter / Space / Esc: continue")
             return
@@ -1295,12 +1836,17 @@ class RenderMixin:
             heavenly_host_active=getattr(self, 'heavenly_host_active', False),
         )
 
+        if self.state not in (STATE_PLAYER, STATE_TARGET) and kit_on():
+            self._hush_hud()
+
         if self.state == STATE_TARGET:
             self._draw_targeting(cam_x, cam_y)
         elif self.state == STATE_QUIZ:
             self._draw_quiz()
         elif self.state == STATE_QUIZ_CONTEXT:
-            self._draw_quiz()
+            # The context reads on its own over the dimmed play view: drawn
+            # over the quiz, the quiz's frame peeked out around it (a double
+            # border at 1280x720, VISUAL_REVIEW must-fix 7).
             self._draw_quiz_context_modal()
         elif self.state == STATE_EQUIP_MENU:
             self._draw_equip_menu()
@@ -1327,13 +1873,12 @@ class RenderMixin:
         elif self.state == STATE_PET_MENU:
             self._draw_pet_menu()
         elif self.state == STATE_PET_FEED:
-            self._draw_pet_menu()
+            # The care pickers stand alone (drawn over the companion menu,
+            # their frame sliced its Detail text in half: VISUAL_REVIEW).
             self._draw_pet_feed_submenu()
         elif self.state == STATE_PET_HEAL:
-            self._draw_pet_menu()
             self._draw_pet_heal_submenu()
         elif self.state == STATE_PET_SPECIALS:
-            self._draw_pet_menu()
             self._draw_pet_specials_submenu()
         elif self.state == STATE_QA_WARP_INPUT:
             self._draw_qa_warp_popup()
@@ -1415,6 +1960,24 @@ class RenderMixin:
 
         pygame.display.flip()
 
+    # How much of the rails and the log stays under a modal (a multiply,
+    # on top of the modal's own dimming overlay).
+    _HUSH = (60, 60, 64)
+
+    def _hush_hud(self):
+        """Under a modal, darken the side rails and the message log well past
+        the modal's own wash: a modal wider than the play area lies over them,
+        and its frame edge used to slice rail words in half in readable,
+        dimmed text ("Phoenix Rising" at 1920x1080, VISUAL_REVIEW minor 1).
+        Now what peeks out beside a frame is a quiet dark field (about 1.1:1),
+        never half a word. A multiply on three rects: no allocation."""
+        H = self.screen.get_height()
+        for r in ((0, 0, layout.MAP_X, H),
+                  (layout.MAP_X + layout.MAP_W, 0, self.screen.get_width() - layout.MAP_X - layout.MAP_W, H),
+                  (layout.MAP_X, layout.GAME_H, layout.MAP_W, H - layout.GAME_H)):
+            if r[2] > 0 and r[3] > 0:
+                self.screen.fill(self._HUSH, r, special_flags=pygame.BLEND_RGB_MULT)
+
     def _camera(self) -> tuple[int, int]:
         return 0, 0
 
@@ -1466,6 +2029,13 @@ class RenderMixin:
         if layout.MAP_X <= scr_cx < layout.MAP_X + layout.MAP_W and 0 <= scr_cy < layout.GAME_H:
             cur_color = (80, 255, 80) if has_target else (255, 220, 60)
             pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
+        if has_target:
+            self._draw_target_prompt(f"Strike {proper_name(target_monster.name)}",
+                                     [("Enter", "Strike"), ("Tab", "Next"), ("Esc", "Cancel")],
+                                     KT.TEXT_HEAD)
+        else:
+            self._draw_target_prompt("Nothing to strike here",
+                                     [("Arrows", "Aim"), ("Esc", "Cancel")], KT.TEXT_BODY)
 
     def _draw_throw_targeting(self, cam_x: int, cam_y: int):
         """Draw trajectory arc and cursor for throw targeting."""
@@ -1525,30 +2095,30 @@ class RenderMixin:
             cur_color = (180, 80, 255) if valid and target_monster else (255, 80, 80)
             pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
 
-        # HUD label
-        item_name = self._throw_potion.name if self._throw_potion else "item"
+        # HUD prompt (the kit's plaque, key badges)
+        item_name = proper_name(self._throw_potion.name) if self._throw_potion else "Item"
+        tname = proper_name(target_monster.name) if target_monster else ''
         if will_hit_blocker:
-            label = f"{blocker.name} blocks the path! {item_name} will hit it instead."
-            label_color = (255, 200, 60)
+            status = f"{proper_name(blocker.name)} blocks the path: the {item_name} will hit it"
+            keys = [("Arrows", "Aim"), ("Esc", "Cancel")]
+            color = FP.WARNING_TEXT
         elif valid and target_monster:
-            label = f"THROW {item_name} at {target_monster.name}  [ENTER=throw  TAB=next  ESC=cancel]"
-            label_color = (180, 80, 255)
+            status = f"Throw the {item_name} at {tname}"
+            keys = [("Enter", "Throw"), ("Tab", "Next"), ("Esc", "Cancel")]
+            color = KT.TEXT_HEAD
         elif valid and not target_monster:
-            label = f"THROW {item_name} at empty tile  [ENTER=throw  ESC=cancel]"
-            label_color = (200, 200, 200)
+            status = f"Throw the {item_name} at an empty tile"
+            keys = [("Enter", "Throw"), ("Esc", "Cancel")]
+            color = KT.TEXT_BODY
         elif not in_range:
-            label = f"Out of throw range ({reach} tiles)  [ESC=cancel]"
-            label_color = (255, 160, 40)
+            status = f"Out of throwing range ({reach} tiles)"
+            keys = [("Arrows", "Aim"), ("Esc", "Cancel")]
+            color = FP.WARNING_TEXT
         else:
-            label = "No line of sight  [ESC=cancel]"
-            label_color = (255, 80, 80)
-
-        label_surf = self.font_sm.render(label, True, label_color)
-        label_bg = pygame.Surface((label_surf.get_width() + S(16), label_surf.get_height() + S(8)),
-                                  pygame.SRCALPHA)
-        label_bg.fill((0, 0, 0, 180))
-        self.screen.blit(label_bg, (layout.MAP_X + S(8), layout.GAME_H - label_surf.get_height() - S(16)))
-        self.screen.blit(label_surf, (layout.MAP_X + S(16), layout.GAME_H - label_surf.get_height() - S(12)))
+            status = "No line of sight"
+            keys = [("Arrows", "Aim"), ("Esc", "Cancel")]
+            color = FP.DANGER_TEXT_LIGHT
+        self._draw_target_prompt(status, keys, color)
 
     def _draw_ranged_targeting(self, cam_x: int, cam_y: int):
         """Draw trajectory line and cursor highlight for ranged targeting."""
@@ -1607,26 +2177,57 @@ class RenderMixin:
             cur_color = (80, 255, 80) if valid_shot else (255, 80, 80)
             pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
 
-        # HUD label at bottom of game area
-        if valid_shot:
-            label = f"FIRE at {target_monster.name}  [ENTER=shoot  TAB=next  ESC=cancel]"
-            label_color = (80, 255, 80)
+        # The prompt at the bottom of the map, in the kit's plaque with key
+        # badges (VISUAL_REVIEW minor 8: raw orange text on the map, and
+        # "Out of range" in Observe mode, where nothing is fired).
+        tname = proper_name(target_monster.name) if target_monster else ''
+        if getattr(self, '_observe_targeting', False):
+            status = f"Observe: {tname}" if target_monster else "Observe: nothing here"
+            keys = [("Arrows", "Look"), ("Tab", "Next"), ("Enter", "Examine"), ("Esc", "Cancel")]
+            color = KT.TEXT_HEAD
+        elif getattr(self, '_wand_targeting', False):
+            status = f"Zap at {tname}" if target_monster else "Aim the wand"
+            keys = [("Arrows", "Aim"), ("Tab", "Next"), ("Enter", "Zap"), ("Esc", "Cancel")]
+            color = KT.TEXT_HEAD
+        elif valid_shot:
+            status = f"Fire at {tname}"
+            keys = [("Enter", "Shoot"), ("Tab", "Next"), ("Esc", "Cancel")]
+            color = FP.SUCCESS_TEXT
         elif target_monster and not has_los:
-            label = f"No line of sight to {target_monster.name}  [ESC=cancel]"
-            label_color = (255, 80, 80)
+            status = f"No line of sight to {tname}"
+            keys = [("Arrows", "Move"), ("Esc", "Cancel")]
+            color = FP.DANGER_TEXT_LIGHT
         elif not in_reach:
-            label = "Out of range  [arrow keys to move cursor  ESC=cancel]"
-            label_color = (255, 160, 40)
+            status = "Out of range"
+            keys = [("Arrows", "Move"), ("Esc", "Cancel")]
+            color = FP.WARNING_TEXT
         else:
-            label = "No target  [arrow keys to move  TAB=cycle targets  ESC=cancel]"
-            label_color = (200, 200, 200)
+            status = "No target"
+            keys = [("Arrows", "Move"), ("Tab", "Next"), ("Esc", "Cancel")]
+            color = KT.TEXT_BODY
+        self._draw_target_prompt(status, keys, color)
 
-        label_surf = self.font_sm.render(label, True, label_color)
-        label_bg = pygame.Surface((label_surf.get_width() + S(16), label_surf.get_height() + S(8)),
-                                  pygame.SRCALPHA)
-        label_bg.fill((0, 0, 0, 180))
-        self.screen.blit(label_bg, (layout.MAP_X + S(8), layout.GAME_H - label_surf.get_height() - S(16)))
-        self.screen.blit(label_surf, (layout.MAP_X + S(16), layout.GAME_H - label_surf.get_height() - S(12)))
+    def _draw_target_prompt(self, status: str, keys, color):
+        """A targeting prompt at the foot of the map: a flat plaque with a
+        gold hairline, the status in words, the keys as badges."""
+        f = get_font('body', 18, bold=True)
+        kh = key_hints_height()
+        pad = S(10)
+        ss = f.render(status, True, readable(color, KT.PLAQUE))
+        from fantasy_ui import key_hint_fonts, _hints_width
+        kf, lf = key_hint_fonts(16)
+        keys_w = _hints_width(keys, kf, lf, S(20), S(7), S(8))
+        w = min(layout.MAP_W - 2 * S(8), ss.get_width() + S(24) + keys_w + 2 * pad)
+        h = max(ss.get_height(), kh) + 2 * pad
+        rect = pygame.Rect(layout.MAP_X + (layout.MAP_W - w) // 2,
+                           layout.GAME_H - h - S(10), w, h)
+        self.screen.fill(KT.PLAQUE, rect)
+        pygame.draw.rect(self.screen, KT.GOLD_DARK, rect, 1)
+        self.screen.blit(ss, (rect.x + pad, rect.centery - ss.get_height() // 2))
+        kx = rect.x + pad + ss.get_width() + S(24)
+        draw_key_hints(self.screen, pygame.Rect(kx, rect.centery - kh // 2,
+                                                rect.right - pad - kx, kh),
+                       keys, align='left')
 
     # Subject palette is sourced from FP.SUBJECT so the welcome screen,
     # quiz panel border, and standalone study mode all show the same color
@@ -1680,20 +2281,31 @@ class RenderMixin:
         of this dict is a private contract between the two.
         """
         is_combat = (self.combat_target is not None and qe.mode == QuizMode.CHAIN)
-        # Width budget: the play area left of the right rail (as it always
-        # was); the panel itself is centred on the whole window (SCALE_PLAN 3).
-        vw = viewport_w if viewport_w is not None else layout.GAME_W
+        # Width budget: the window (DESIGN_RULES 7: min(1060 s, W - 80)); the
+        # panel is centred on it and the rails under it are hushed. Budgeted
+        # on the play area left of the right rail, the quiz was 910 px wide at
+        # 1280x720 and its answer cards wrapped early (VISUAL_REVIEW minor 11).
+        vw = viewport_w if viewport_w is not None else layout.WINDOW_W - S(40)
         vh = viewport_h if viewport_h is not None else layout.WINDOW_H
         win_w = layout.WINDOW_W if viewport_w is None else vw
 
         # -- Horizontal geometry (font-independent) --------------------
-        # Every length is at UI scale 1 and grows with the scale.
+        # Every length is at UI scale 1 and grows with the scale. With the
+        # art kit, everything sits inside the painted frame band
+        # (``band``; 0 without art, i.e. exactly the old geometry).
+        from fantasy_ui import choice_text_insets
+        kit = kit_on('quiz')
+        band = ui_theme.band('quiz') if kit else 0
         bw = min(S(1060), vw - S(40))
-        PAD = S(24)
+        # Body padding inside the frame band: the ``lg`` step (16). It was
+        # the ``xl`` 24, which left each answer card 8 px narrower than it
+        # could be and wrapped "...forged into the steel / itself." with the
+        # card's last stretch empty (VISUAL_REVIEW_2 minor 2).
+        PAD = S(16)
         GAP = S(14)
-        KEY_W = S(68)
-        cw = (bw - PAD * 2 - GAP) // 2
-        c_text_w = cw - KEY_W - S(8)
+        inset = band + PAD
+        cw = (bw - inset * 2 - GAP) // 2
+        c_text_w = cw - sum(choice_text_insets())
 
         # Fixed chrome heights (header + timer + status + combat HUD are
         # measured off ``get_height`` of the fonts they actually use, so
@@ -1705,15 +2317,21 @@ class RenderMixin:
             header_h = max(header_h, self.font_lg.get_height() + S(6))
         timer_h  = max(S(28), self.font_sm.get_height() + S(8))
         status_h = max(S(36), self.font_sm.get_height() + S(14))
+        if kit:
+            # The plaque (its rim below the title), a roomier timer row,
+            # and a footer of divider + key badges (key_hints_height).
+            header_h = max(S(52), self.font_lg.get_height() + S(8))
+            timer_h = max(S(32), self.font_sm.get_height() + S(12))
+            status_h = S(32) + key_hints_height()
         combat_h = self._combat_hud_height() if is_combat else 0
         section_gap = S(10)
         # Pinned tail under the question/choices block: optional combat
         # strip, then the key-hint row, each preceded by one section gap.
         tail_h = ((section_gap + combat_h) if is_combat else 0) \
-            + section_gap + status_h + PAD
+            + section_gap + status_h + (band + S(8) if kit else PAD)
 
-        q_text = qe.current_question.get('question', '')
-        choices = qe.current_question.get('choices', [])
+        q_text = display_text(qe.current_question.get('question', ''))
+        choices = [display_text(c) for c in qe.current_question.get('choices', [])]
         if qe.confused_order and len(qe.confused_order) == len(choices):
             display_choices = [choices[i] for i in qe.confused_order]
         else:
@@ -1748,7 +2366,7 @@ class RenderMixin:
 
         # -- Measure a candidate tier ----------------------------------
         def _measure(q_font, c_font):
-            q_lines = self._wrap_text(q_text, q_font, bw - PAD * 2)
+            q_lines = self._wrap_text(q_text, q_font, bw - inset * 2)
             q_line_h = q_font.get_height() + S(4)
             q_height = len(q_lines) * q_line_h
             if is_combat:
@@ -1762,7 +2380,7 @@ class RenderMixin:
             ch_height = max(S(52), max_c_lines * c_line_h + S(20))
             scrollable_h = (q_height + section_gap * 2
                             + ch_height * n_rows + GAP * (n_rows - 1))
-            total_h = header_h + timer_h + section_gap + scrollable_h + tail_h
+            total_h = band + header_h + timer_h + section_gap + scrollable_h + tail_h
             return {
                 'q_lines': q_lines, 'q_line_h': q_line_h, 'q_height': q_height,
                 'c_wrapped': c_wrapped, 'c_line_h': c_line_h,
@@ -1789,7 +2407,7 @@ class RenderMixin:
             # Panel height becomes viewport cap; derive the visible slice
             # the scrollable region gets.
             bh = max_panel_h
-            fixed_h = header_h + timer_h + section_gap + tail_h
+            fixed_h = band + header_h + timer_h + section_gap + tail_h
             visible_scroll_h = max(S(60), bh - fixed_h)
         else:
             bh = measurement['total_h']
@@ -1799,26 +2417,26 @@ class RenderMixin:
         by = max(S(20), (vh - bh) // 2)
         panel_rect = pygame.Rect(bx, by, bw, bh)
 
-        header_rect = pygame.Rect(bx, by, bw, header_h)
-        timer_rect  = pygame.Rect(bx + PAD, by + header_h + S(6),
-                                  bw - PAD * 2, S(14))
+        header_rect = pygame.Rect(bx + band, by + band, bw - 2 * band, header_h)
+        timer_rect  = pygame.Rect(bx + inset, header_rect.bottom + (S(9) if kit else S(6)),
+                                  bw - inset * 2, S(14))
 
-        q_y = by + header_h + timer_h + section_gap
-        question_rect = pygame.Rect(bx + PAD, q_y, bw - PAD * 2,
+        q_y = header_rect.bottom + timer_h + section_gap
+        question_rect = pygame.Rect(bx + inset, q_y, bw - inset * 2,
                                     measurement['q_height'])
         choices_top = q_y + measurement['q_height'] + section_gap * 2
         choice_rects = []
         for i in range(n_cards):
             col = i % 2
             row = i // 2
-            cx_ = bx + PAD + col * (cw + GAP)
+            cx_ = bx + inset + col * (cw + GAP)
             cy_ = choices_top + row * (measurement['ch_height'] + GAP)
             choice_rects.append(pygame.Rect(cx_, cy_, cw, measurement['ch_height']))
 
         # The scroll region bounds the question + the rows of choices.
-        scroll_rect = pygame.Rect(bx + PAD,
-                                  by + header_h + timer_h + section_gap,
-                                  bw - PAD * 2,
+        scroll_rect = pygame.Rect(bx + inset,
+                                  header_rect.bottom + timer_h + section_gap,
+                                  bw - inset * 2,
                                   visible_scroll_h)
 
         # Pinned tail, stacked under the scroll area: combat strip (combat
@@ -1826,9 +2444,10 @@ class RenderMixin:
         tail_y = scroll_rect.bottom + section_gap
         combat_rect = None
         if is_combat:
-            combat_rect = pygame.Rect(bx, tail_y, bw, combat_h)
+            # (the strip's cells sit PAD inside this rect: _combat_hud_slots)
+            combat_rect = pygame.Rect(bx + band, tail_y, bw - 2 * band, combat_h)
             tail_y = combat_rect.bottom + section_gap
-        status_rect = pygame.Rect(bx + PAD, tail_y, bw - PAD * 2, status_h)
+        status_rect = pygame.Rect(bx + inset, tail_y, bw - inset * 2, status_h)
 
         # Clamp scroll offset to what the content actually allows.
         content_h = measurement['scrollable_h']
@@ -1860,7 +2479,7 @@ class RenderMixin:
             'visible_scroll_h': visible_scroll_h,
             'display_choices': display_choices,
             'bw': bw, 'bx': bx, 'by': by, 'bh': bh,
-            'cw': cw, 'PAD': PAD, 'GAP': GAP,
+            'cw': cw, 'PAD': PAD, 'GAP': GAP, 'band': band, 'inset': inset,
             'header_h': header_h, 'timer_h': timer_h,
             'status_h': status_h, 'combat_h': combat_h,
             'section_gap': section_gap,
@@ -1920,10 +2539,18 @@ class RenderMixin:
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=accent,
                         kind='quiz')
 
+        band = L['band']
+        inset = L['inset']
+        kit = band > 0
+        header_rect = L['header_rect']
+
         # Mode / progress counter (top-right). Built BEFORE the header so the
         # title can reserve room for it and never overrun it (e.g. a long
         # lockpick/cook title sliding under "Chain xN").
         badge = None          # (rect, rank_name, color) for chain modes
+        # Clear of the plaque's scroll-roll end (it nearly touched it at
+        # 1280 and 1920: VISUAL_REVIEW minor 9).
+        c_right = (header_rect.right - S(54)) if kit else (bx + bw - PAD)
         if qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN):
             # Chain combat: "xN" counter in a fixed-width slot at the right
             # edge, rank badge in its own fixed slot just left of it. Both
@@ -1937,64 +2564,75 @@ class RenderMixin:
                           for _t, n, _c in self._CHAIN_RANKS) + S(20)
             badge_h = self.font_sm.get_height() + S(6)
             badge_rect = pygame.Rect(
-                bx + bw - PAD - counter_w - S(10) - badge_w,
-                by + (HEADER_H - badge_h) // 2, badge_w, badge_h)
+                c_right - counter_w - S(10) - badge_w,
+                header_rect.y + (header_rect.h - (S(4) if kit else 0) - badge_h) // 2,
+                badge_w, badge_h)
             if rank_name:
                 badge = (badge_rect, rank_name, rank_color)
-            reserve_w = counter_w + S(10) + badge_w + PAD + S(16)
+            reserve_w = counter_w + S(10) + badge_w + S(54) + S(6)
         elif int(getattr(qe, 'required', 0) or 0) > 1:
             c_text  = f"{qe.correct_count} / {qe.required}"
             c_color = FP.CYAN_ACCENT
             c_surf = self.font_md.render(c_text, True, c_color)
-            reserve_w = c_surf.get_width() + PAD + S(16)
+            reserve_w = c_surf.get_width() + S(54) + S(6)
         else:
             # One-question quizzes (identify, harvest, cook, ...) need no
             # progress counter -- "0 / 1" tells the player nothing.
             c_surf = None
             reserve_w = 0
 
-        draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
-                        text=self.quiz_title, font=self.font_md,
-                        text_color=FP.GOLD_BRIGHT, accent=accent,
-                        right_reserve=reserve_w,
-                        frame=(panel_rect, accent, 'quiz'))
+        if kit:
+            self._draw_quiz_plaque(qe, panel_rect, header_rect, accent, reserve_w)
+        else:
+            draw_header_bar(self.screen, (bx, by, bw, HEADER_H),
+                            text=self.quiz_title, font=self.font_md,
+                            text_color=FP.GOLD_BRIGHT, accent=accent,
+                            right_reserve=reserve_w,
+                            frame=(panel_rect, accent, 'quiz'))
         if c_surf is not None:
-            self.screen.blit(c_surf, (bx + bw - c_surf.get_width() - PAD,
-                                       by + (HEADER_H - c_surf.get_height()) // 2))
+            fh = header_rect.h - (S(4) if kit else 0)
+            self.screen.blit(c_surf, (c_right - c_surf.get_width(),
+                                       header_rect.y + (fh - c_surf.get_height()) // 2))
         if badge is not None:
             b_rect, b_name, b_color = badge
-            pygame.draw.rect(self.screen, FP.MIDNIGHT, b_rect, border_radius=5)
-            pygame.draw.rect(self.screen, b_color, b_rect, 2, border_radius=5)
+            if kit and ui_theme.draw_piece(self.screen, 'chip_active', b_rect):
+                b_color = readable(b_color, KT.SELECTED)
+            else:
+                pygame.draw.rect(self.screen, FP.MIDNIGHT, b_rect, border_radius=5)
+                pygame.draw.rect(self.screen, b_color, b_rect, 2, border_radius=5)
             b_surf = self.font_sm.render(b_name, True, b_color)
             self.screen.blit(b_surf, (b_rect.centerx - b_surf.get_width() // 2,
                                        b_rect.centery - b_surf.get_height() // 2))
 
         # -- Timer bar -------------------------------------------------
-        ty        = by + HEADER_H + S(6)
-        bar_x     = bx + PAD
-        bar_w     = bw - PAD * 2
+        ty        = L['timer_rect'].y
+        bar_x     = bx + inset
+        bar_w     = bw - inset * 2
         bar_h     = S(14)
 
         # Tier pip indicator -- 5 small circles (filled = earned, hollow = not yet)
-        pip_r   = S(5)
-        pip_gap = S(13)
+        pip_r   = S(5) if not kit else S(6)
+        pip_gap = S(13) if not kit else S(17)
         pip_cx0 = bar_x + pip_r
         pip_cy  = ty + bar_h // 2
         for i in range(5):
             px = pip_cx0 + i * pip_gap
             if i < qe.tier:
                 pygame.draw.circle(self.screen, accent, (px, pip_cy), pip_r)
+            elif kit:
+                pygame.draw.circle(self.screen, accent, (px, pip_cy), pip_r, 2)
             else:
                 pygame.draw.circle(self.screen, accent_dim, (px, pip_cy), pip_r, 1)
-        tier_offset = 5 * pip_gap + S(8)
+        tier_offset = 5 * pip_gap + (S(8) if not kit else S(16))
         bar_x += tier_offset
         bar_w -= tier_offset
 
-        # Timer bar — only rendered for timed quizzes (combat math attack).
+        # Timer bar -- only rendered for timed quizzes (combat math attack).
         # Untimed quizzes (identify / lockpick / equip / prayer / cooking /
         # magic / etc.) drop the bar entirely so the kid feels invited to
         # read the substantive content the banks now carry. Tier pips above
         # still show progress in escalator-chain modes.
+        secs_w = 0
         if getattr(qe, 'timed', True):
             # Seconds readout gets its own slot right of the bar (sized for
             # three digits) instead of being painted over the bar's fill.
@@ -2006,14 +2644,27 @@ class RenderMixin:
                 FP.WARNING_TEXT if ratio > 0.28 else
                 FP.DANGER_TEXT
             )
-            pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (bar_x, ty, bar_w, bar_h), border_radius=4)
-            if ratio > 0:
-                pygame.draw.rect(self.screen, t_color,
-                                 (bar_x, ty, max(4, int(bar_w * ratio)), bar_h), border_radius=4)
-            # Tick marks every 20%
-            for tick in range(1, 5):
-                tx = bar_x + int(bar_w * tick / 5)
-                pygame.draw.line(self.screen, FP.SHADOW, (tx, ty), (tx, ty + bar_h), 1)
+            track = pygame.Rect(bar_x, ty, bar_w, bar_h)
+            if kit and ui_theme.draw_piece(self.screen, 'bar_track', track):
+                inner = track.inflate(-S(4), -S(4))
+                if ratio > 0:
+                    self.screen.fill(t_color, (inner.x, inner.y,
+                                               max(S(2), int(inner.w * ratio)), inner.h))
+                for tick in range(1, 5):
+                    tx = inner.x + int(inner.w * tick / 5)
+                    pygame.draw.line(self.screen, KT.VOID, (tx, inner.y),
+                                     (tx, inner.bottom - 1), 1)
+                ui_theme.draw_piece(self.screen, 'bar_frame', track, body=False)
+                t_color = readable(t_color, KT.INTERIOR)
+            else:
+                pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, (bar_x, ty, bar_w, bar_h), border_radius=4)
+                if ratio > 0:
+                    pygame.draw.rect(self.screen, t_color,
+                                     (bar_x, ty, max(4, int(bar_w * ratio)), bar_h), border_radius=4)
+                # Tick marks every 20%
+                for tick in range(1, 5):
+                    tx = bar_x + int(bar_w * tick / 5)
+                    pygame.draw.line(self.screen, FP.SHADOW, (tx, ty), (tx, ty + bar_h), 1)
 
             # Timer seconds label -- right-aligned in its slot past the bar
             secs = int(qe.time_remaining)
@@ -2047,8 +2698,8 @@ class RenderMixin:
                 continue
             if scrollable and qy > scroll_rect.bottom:
                 break
-            surf = q_font.render(line, True, FP.VELLUM)
-            line_x = (bx + (bw - surf.get_width()) // 2) if is_combat else bx + PAD
+            surf = q_font.render(line, True, KT.TEXT_QUIZ if kit else FP.VELLUM)
+            line_x = (bx + (bw - surf.get_width()) // 2) if is_combat else bx + inset
             self.screen.blit(surf, (line_x, qy))
             qy += q_line_h
 
@@ -2062,8 +2713,8 @@ class RenderMixin:
 
         # Thin separator midway between the question and the cards.
         sep_y = q_top + q_height + SECTION_GAP
-        pygame.draw.line(self.screen, accent_dim,
-                         (bx + PAD, sep_y), (bx + bw - PAD, sep_y))
+        pygame.draw.line(self.screen, KT.LINE if kit else accent_dim,
+                         (bx + inset, sep_y), (bx + bw - inset, sep_y))
 
         # -- Choice cards (2 x 2 grid) — grimoire chrome via draw_choice_button --
         from fantasy_ui import draw_choice_button
@@ -2131,7 +2782,27 @@ class RenderMixin:
         # No "CORRECT!" / "WRONG!" banner: the green / red choice cards
         # already carry the result (2026-10-04 playtest).
         has_blurb = bool(qe.current_context_blurb())
-        if is_combat:
+        if kit:
+            # Divider + key badges (the kit's footer), the same keys as below.
+            div_y = status_y + S(15)
+            draw_divider(self.screen, bx + band + S(30), div_y, bw - 2 * (band + S(30)))
+            if is_combat:
+                pairs = [("1-4", "Answer"),
+                         ("Space", "Strike Now" if qe.chain >= 1 else "Cancel",
+                          FP.GOLD_PALE if qe.chain >= 1 else None)]
+                if has_blurb:
+                    pairs.append(("C", "Context"))
+                pairs.append(("Esc", "Abort"))
+            else:
+                pairs = []
+                if qe.state == QuizState.ASKING:
+                    pairs.append(("1-4", "Answer"))
+                if has_blurb:
+                    pairs.append(("C", "Context"))
+            keys = pygame.Rect(status_rect.x, status_rect.bottom - key_hints_height(),
+                               status_rect.w, key_hints_height())
+            draw_key_hints(self.screen, keys, pairs)
+        elif is_combat:
             # Four fixed key-hint slots across the row, so the hints never
             # move and never run into each other.
             hints = [
@@ -2189,6 +2860,61 @@ class RenderMixin:
             )
             rt.draw_foreground(self.screen, protected)
 
+    def _draw_quiz_plaque(self, qe, panel_rect, header_rect, accent, reserve_w):
+        """The quiz header in the kit: the plaque (subject accent rule),
+        the subject's icon and name at the left, the action title centred,
+        and room on the right for the counter / rank badge (drawn by the
+        caller). The "  --  SUBJECT" tail of ``quiz_title`` becomes the
+        icon + name, so it is not repeated in the title."""
+        draw_header_bar(self.screen, header_rect, accent=accent,
+                        frame=(panel_rect, accent, 'quiz'))
+        hr = header_rect
+        field_h = hr.h - S(4)
+        cy = hr.y + field_h // 2
+        x = hr.x + S(40)
+        title = str(self.quiz_title or '')
+        head, sep, tail = title.rpartition('  --  ')
+        subj = str(getattr(qe, 'subject', '') or '')
+        label = subj
+        if sep and tail.strip().lower() == subj.lower():
+            title = head.strip()          # "IDENTIFYING X  --  PHILOSOPHY"
+        isz = S(28)
+        if subj and ui_theme.draw_icon(self.screen, f"subject_{subj}",
+                                       (x, cy - isz // 2, isz, isz)):
+            x += isz + S(8)
+        text = display_text(display_title(title.upper()) if title == title.upper() else title)
+        hi = hr.right - max(S(52), reserve_w) - S(10)
+        lf = get_font('heading', 17)
+        label_s = lf.render(display_title(label.upper()), True, KT.TEXT_HEAD) if label else None
+        # The title takes what it needs: 26 -> 24 -> 22 px; then the subject
+        # word goes (its icon and the accent colour still say it); then the
+        # title wraps onto two 22 px lines. It is never cut with an ellipsis.
+        lo_with = x + (label_s.get_width() if label_s else 0) + S(20)
+        lo_without = x + S(12)
+        choice = None
+        for lo, show_label in ((lo_with, True), (lo_without, False)):
+            for size in (26, 24, 22):
+                tf = get_font('heading', size, bold=True)
+                if tf.size(text)[0] <= hi - lo:
+                    choice = (tf, [text], lo, show_label)
+                    break
+            if choice:
+                break
+        if choice is None:
+            tf = get_font('heading', 22, bold=True)
+            lines = self._wrap_text(text, tf, hi - lo_without)[:2]
+            choice = (tf, lines, lo_without, False)
+        tf, lines, lo, show_label = choice
+        if show_label and label_s is not None:
+            self.screen.blit(label_s, (x, cy - label_s.get_height() // 2))
+        lh = tf.get_height()
+        y0 = cy - (lh * len(lines)) // 2
+        for i, line in enumerate(lines):
+            tw = tf.size(line)[0]
+            tx = max(lo, min(hr.centerx - tw // 2, hi - tw))
+            ts = tf.render(line, True, KT.TEXT_HEAD)
+            self.screen.blit(ts, (tx, y0 + i * lh))
+
     def _quiz_protected_rects(self, qe, panel_rect, header_h: int,
                               timer_rect, question_rect, choices_rect,
                               status_rect, pad: int) -> list:
@@ -2199,8 +2925,9 @@ class RenderMixin:
         """
         rects = []
         # Chain / threshold counter rect in the header's right stack.
+        band = ui_theme.band('quiz', panel_rect) if kit_on('quiz') else 0
         counter_rect = pygame.Rect(
-            panel_rect.x + panel_rect.w - pad - S(220), panel_rect.y,
+            panel_rect.x + panel_rect.w - band - pad - S(220), panel_rect.y + band,
             S(220), header_h,
         )
         rects.append(counter_rect)
@@ -2231,19 +2958,32 @@ class RenderMixin:
             # a neutral message rather than drawing an empty panel.
             blurb = "No context available for this question."
 
+        blurb = display_text(blurb, sources=True)
+        body_font = get_font('body', 20)
+        # Sized to the blurb (it left a large empty area under the text).
+        max_w = 1000
+        bw = min(S(max_w), layout.GAME_W - S(48))
+        probe = self._ui_modal_body(pygame.Rect(0, 0, bw, 1000), side=24, top=72, bottom=56)
+        reader_w = probe.w - 2 * S(12)
+        n = len(self._ui_text_lines(blurb, body_font, reader_w - S(12)))
+        chrome = probe.y + (1000 - probe.bottom) + S(42) + S(12)
+        fit_h = chrome + n * (body_font.get_height() + S(5)) + S(6)
+        # The quiz's subject colour on the accent layer (it was lore blue on
+        # every subject), so the context reads as part of THIS quiz.
+        accent = (self._SUBJECT_COLOR.get(getattr(qe, 'subject', None), FP.LORE_BLUE_BORDER)
+                  if kit_on() else FP.LORE_BLUE_BORDER)
         panel = self._ui_modal_panel(
             "CONTEXT",
-            border_color=FP.LORE_BLUE_BORDER,
-            max_w=1200,
+            border_color=accent,
+            max_w=max_w,
             max_h=600,
+            fit_h=fit_h,
         )
         body = self._ui_modal_body(panel, side=24, top=72, bottom=56)
 
         # Single-pane body — grimoire reading surface for the blurb.
-        reader = self._ui_subpanel(body, "Orientation",
-                                   border_color=FP.LORE_BLUE_BORDER)
+        reader = self._ui_subpanel(body, "Orientation", border_color=accent)
 
-        body_font = get_font('body', 20)
         lines = [(line, FP.LORE_BLUE_BODY, body_font)
                  for line in self._ui_text_lines(blurb, body_font, reader.w - S(12))]
         scroll = self._ui_draw_scroll_lines(
@@ -2276,18 +3016,32 @@ class RenderMixin:
         if alpha < 4:
             return
 
-        # Vignette only over the game viewport (skip sidebar + msg log)
-        gw = layout.MAP_W
-        gh = layout.GAME_H
-        vig = pygame.Surface((gw, gh), pygame.SRCALPHA)
-        # Edge glow — strong on the rim, none in the middle
-        steps = 24
-        for step in range(steps):
-            ratio = step / steps
-            inset = int(ratio * min(gw, gh) * 0.35)
-            edge_alpha = int(alpha * (1 - ratio) ** 1.6)
-            pygame.draw.rect(vig, (*FP.BLOOD, edge_alpha),
-                             (inset, inset, gw - 2 * inset, gh - 2 * inset), 2)
+        # Vignette only over the game viewport (skip sidebar + msg log): a
+        # smooth red edge glow, built once per viewport size (it used to be
+        # 24 rectangle outlines with gaps between them, rebuilt every
+        # frame), faded per frame with the surface alpha.
+        gw, gh = layout.MAP_W, layout.GAME_H
+        if gw <= 0 or gh <= 0:
+            return
+        cached = getattr(self, '_death_vig', None)
+        if cached is None or cached[0] != (gw, gh):
+            vig = pygame.Surface((gw, gh), pygame.SRCALPHA)
+            vig.fill((*FP.BLOOD, 0))
+            try:
+                import numpy as np
+                band = max(1.0, min(gw, gh) * 0.35)
+                xs = np.minimum(np.arange(gw), np.arange(gw)[::-1])
+                ys = np.minimum(np.arange(gh), np.arange(gh)[::-1])
+                d = np.minimum(xs[:, None], ys[None, :]) / band
+                a = (np.clip(1.0 - d, 0.0, 1.0) ** 1.6) * 255
+                pa = pygame.surfarray.pixels_alpha(vig)
+                pa[...] = a.astype(np.uint8)
+                del pa
+            except ImportError:                                  # pragma: no cover
+                pass
+            cached = self._death_vig = ((gw, gh), vig)
+        vig = cached[1]
+        vig.set_alpha(alpha)
         self.screen.blit(vig, (layout.MAP_X, 0))
 
     # NOTE: ``_draw_celebration`` was removed in Phase 1
@@ -2306,20 +3060,23 @@ class RenderMixin:
         """
         from text_layout import truncate_label
         font = None
+        # DESIGN_RULES 3: nothing a player reads is under 16 px at scale 1.
+        sizes = [z for z in sizes if z >= 16] or [16]
         for size in sizes:
             font = get_font(family, size)
             if font.size(text)[0] <= max_w:
                 return font, text
         return font, truncate_label(text, max_w, font)
 
-    _COMBAT_HUD_CAP_SIZE = 15
+    _COMBAT_HUD_CAP_SIZE = 16
 
     def _combat_hud_height(self) -> int:
         """Pixel height of the combat strip: caption row, one main row
-        (sized for the big damage number) and two detail rows."""
+        (sized for the big damage number) and three detail rows (the third
+        is the player's own HP, under the target's)."""
         cap_h = get_font('body', self._COMBAT_HUD_CAP_SIZE).get_height()
         return (S(8) + cap_h + S(2) + self.font_lg.get_height() + S(4)
-                + self.font_sm.get_height() + S(5) + self.font_sm.get_height() + S(8))
+                + 3 * self.font_sm.get_height() + 2 * S(5) + S(8))
 
     def _combat_hud_slots(self, bx: int, strip_y: int, bw: int) -> dict:
         """Return the fixed text slots of the combat strip.
@@ -2333,7 +3090,7 @@ class RenderMixin:
         measured width of a neighbour (the old layout's failure mode).
         Extracted so tests can assert the slots never overlap.
         """
-        PAD, CELL_PAD = S(24), S(14)
+        PAD, CELL_PAD = S(16), S(14)     # PAD matches the quiz body's (_quiz_layout)
         cap_h  = get_font('body', self._COMBAT_HUD_CAP_SIZE).get_height()
         main_h = self.font_lg.get_height()
         sub_h  = self.font_sm.get_height()
@@ -2341,6 +3098,7 @@ class RenderMixin:
         y_main = y_cap + cap_h + S(2)
         y_sub1 = y_main + main_h + S(4)
         y_sub2 = y_sub1 + sub_h + S(5)
+        y_sub3 = y_sub2 + sub_h + S(5)
         height = self._combat_hud_height()
 
         inner_w = bw - PAD * 2
@@ -2357,6 +3115,7 @@ class RenderMixin:
                 'main': pygame.Rect(tx, y_main, tw, main_h),
                 'sub1': pygame.Rect(tx, y_sub1, tw, sub_h),
                 'sub2': pygame.Rect(tx, y_sub2, tw, sub_h),
+                'sub3': pygame.Rect(tx, y_sub3, tw, sub_h),
             }
             x += w
 
@@ -2369,6 +3128,17 @@ class RenderMixin:
                                                  hp_w, sub1.h)
         slots['target']['hp_bar'] = pygame.Rect(
             sub1.x, sub1.y + (sub1.h - bar_h) // 2, sub1.w - hp_w - S(10), bar_h)
+        # The player's own HP (VISUAL_REVIEW_2 4.5): the rails are covered by
+        # the quiz, and a child deciding "Strike Now or keep the chain"
+        # needs it. Same bar + numbers as the target's, under it, with a
+        # "You" label in front, so the two bars compare at a glance.
+        sub3 = slots['target']['sub3']
+        you_w = self.font_sm.size("You")[0] + S(10)
+        slots['target']['you_label'] = pygame.Rect(sub3.x, sub3.y, you_w, sub3.h)
+        slots['target']['you_text'] = pygame.Rect(sub3.right - hp_w, sub3.y, hp_w, sub3.h)
+        slots['target']['you_bar'] = pygame.Rect(
+            sub3.x + you_w, sub3.y + (sub3.h - bar_h) // 2,
+            sub3.w - hp_w - S(10) - you_w, bar_h)
 
         # Strike caption row: fixed-width caption on the left, the weapon
         # in use right-aligned in whatever remains.
@@ -2402,7 +3172,7 @@ class RenderMixin:
             """'fire_resist' -> 'Fire Resist' for status / damage-type tags."""
             return str(raw).replace('_', ' ').title()
 
-        def put(text, slot, color, sizes=(20, 17, 14), family='body',
+        def put(text, slot, color, sizes=(20, 17, 16), family='body',
                 align='left'):
             """Fit ``text`` into ``slot`` and blit it vertically centred."""
             if not text:
@@ -2443,11 +3213,17 @@ class RenderMixin:
         live_col = rank_color if cur_chain >= 3 else FP.WHITE
 
         # -------- Frame: top rule, cell dividers, strike-cell box ------
-        pygame.draw.line(self.screen, accent,
-                         (rect.x + S(18), rect.y), (rect.right - S(18), rect.y))
         cx = slots['strike']['cell'].x
-        pygame.draw.line(self.screen, FP.SHADOW,
-                         (cx, rect.y + S(8)), (cx, rect.bottom - S(8)))
+        box = pygame.Rect(slots['target']['cell'].x, rect.y,
+                          slots['strike']['cell'].right - slots['target']['cell'].x, rect.h)
+        if ui_theme.draw_piece(self.screen, 'subpanel', box, body_color=KT.RAISED):
+            pygame.draw.line(self.screen, KT.LINE,
+                             (cx, rect.y + S(10)), (cx, rect.bottom - S(10)))
+        else:
+            pygame.draw.line(self.screen, accent,
+                             (rect.x + S(18), rect.y), (rect.right - S(18), rect.y))
+            pygame.draw.line(self.screen, FP.SHADOW,
+                             (cx, rect.y + S(8)), (cx, rect.bottom - S(8)))
         if cur_chain >= 3:
             # The live-damage cell takes on the rank colour as a box frame.
             pygame.draw.rect(self.screen, rank_color,
@@ -2485,14 +3261,47 @@ class RenderMixin:
             FP.DANGER_TEXT
         )
         bar = t['hp_bar']
-        pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, bar, border_radius=4)
-        if hp_ratio > 0:
-            pygame.draw.rect(self.screen, hp_color,
-                             (bar.x, bar.y, max(3, int(bar.w * hp_ratio)), bar.h),
-                             border_radius=4)
-        pygame.draw.rect(self.screen, FP.BURGUNDY, bar, 1, border_radius=4)
+        if ui_theme.draw_piece(self.screen, 'bar_track', bar):
+            inner = bar.inflate(-S(4), -S(4))
+            if hp_ratio > 0:
+                self.screen.fill(hp_color, (inner.x, inner.y,
+                                            max(S(2), int(inner.w * hp_ratio)), inner.h))
+            ui_theme.draw_piece(self.screen, 'bar_frame', bar, body=False)
+        else:
+            pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, bar, border_radius=4)
+            if hp_ratio > 0:
+                pygame.draw.rect(self.screen, hp_color,
+                                 (bar.x, bar.y, max(3, int(bar.w * hp_ratio)), bar.h),
+                                 border_radius=4)
+            pygame.draw.rect(self.screen, FP.BURGUNDY, bar, 1, border_radius=4)
         put(f"{monster.hp}/{monster.max_hp} HP", t['hp_text'], hp_color,
             align='right')
+
+        def hp_bar(rect, ratio, color):
+            if ui_theme.draw_piece(self.screen, 'bar_track', rect):
+                inner = rect.inflate(-S(4), -S(4))
+                if ratio > 0:
+                    self.screen.fill(color, (inner.x, inner.y,
+                                             max(S(2), int(inner.w * ratio)), inner.h))
+                ui_theme.draw_piece(self.screen, 'bar_frame', rect, body=False)
+            else:
+                pygame.draw.rect(self.screen, FP.BURGUNDY_DARK, rect, border_radius=4)
+                if ratio > 0:
+                    pygame.draw.rect(self.screen, color,
+                                     (rect.x, rect.y, max(3, int(rect.w * ratio)), rect.h),
+                                     border_radius=4)
+                pygame.draw.rect(self.screen, FP.BURGUNDY, rect, 1, border_radius=4)
+
+        # -------- YOU: the player's own HP --------------------------------
+        p_hp = getattr(self.player, 'hp', None)
+        p_max = getattr(self.player, 'max_hp', None)
+        if p_hp is not None and p_max:
+            p_ratio = max(0.0, min(1.0, p_hp / max(1, p_max)))
+            p_col = (FP.SUCCESS_TEXT if p_ratio > 0.50 else
+                     FP.WARNING_TEXT if p_ratio > 0.25 else FP.DANGER_TEXT)
+            put("You", t['you_label'], KT.TEXT_DIM, sizes=(20, 17, 16))
+            hp_bar(t['you_bar'], p_ratio, p_col)
+            put(f"{p_hp}/{p_max} HP", t['you_text'], p_col, align='right')
 
         # Status effects: all of them when they fit; otherwise as many as
         # fit plus a "+N" count, never a clipped half-word.
@@ -2514,7 +3323,7 @@ class RenderMixin:
         put("STRIKE NOW", s['cap'], FP.FADED_TEXT, sizes=(self._COMBAT_HUD_CAP_SIZE,))
         w_name = proper_name(weapon.name) if weapon else "Bare Hands"
         put(w_name, s['weapon'], FP.FADED_TEXT, align='right',
-            sizes=(self._COMBAT_HUD_CAP_SIZE, 13, 12))
+            sizes=(self._COMBAT_HUD_CAP_SIZE,))
         if cur_chain >= 1:
             put(f"{cur_dmg} Damage", s['main'], live_col,
                 sizes=(32, 26, 22), family='heading')
@@ -2555,7 +3364,7 @@ class RenderMixin:
         are clipped to the rect; the detail pane carries the full text."""
         old_clip = self.screen.get_clip()
         self.screen.set_clip(rect)
-        self.screen.blit(font.render(str(text), True, color), (rect.x, rect.y))
+        self.screen.blit(font.render(display_text(str(text)), True, color), (rect.x, rect.y))
         self.screen.set_clip(old_clip)
         return font.get_height() + S(2)
 
@@ -2563,7 +3372,7 @@ class RenderMixin:
                            max_lines: int | None = None) -> int:
         y = rect.y
         drawn = 0
-        chunks = str(text).splitlines() or ['']
+        chunks = display_text(str(text)).splitlines() or ['']
         for chunk in chunks:
             lines = self._wrap_text(chunk, font, rect.w) or ['']
             for line in lines:
@@ -2579,12 +3388,23 @@ class RenderMixin:
 
     def _menu_draw_text_block(self, lines: list, rect: pygame.Rect,
                               default_color=None, default_font=None) -> int:
+        """Draw a detail pane's lines. When they do not all fit, the last
+        paragraph that would overflow ends on its last WHOLE sentence and a
+        dim cue line says where the rest is (``self._menu_more_cue``, set by
+        the caller for this frame) -- the shop's lore used to stop
+        mid-sentence with no cue (VISUAL_REVIEW, shop)."""
         color = default_color or FP.BODY_TEXT
         font = default_font or self.font_sm
+        cue = getattr(self, '_menu_more_cue', None)
+        self._menu_more_cue = None
+        lines = self._menu_fit_block(lines, rect, color, font, cue)
         y = rect.y
         for entry in lines:
             if entry is None or entry == '':
                 y += S(8)
+                continue
+            if isinstance(entry, tuple) and entry and entry[0] == '__key__':
+                y = self._menu_draw_key_line(entry[1], entry[2], rect, y, font)
                 continue
             if isinstance(entry, tuple):
                 text = entry[0]
@@ -2599,6 +3419,67 @@ class RenderMixin:
                 pygame.Rect(rect.x, y, rect.w, rect.bottom - y))
             y += used + S(4)
         return y
+
+    def _menu_draw_key_line(self, key, label, rect, y, font) -> int:
+        """A detail-pane action line: a key badge, then its label (wrapped
+        beside the badge). Returns the next y."""
+        kf = get_font('body', 16, bold=True)
+        kw = max(S(28), kf.size(key)[0] + S(14))
+        lines = self._wrap_text(display_text(label), font, rect.w - kw - S(10)) or ['']
+        lh = font.get_height() + S(3)
+        if y + lh > rect.bottom:
+            return y
+        draw_key_badge(self.screen, (rect.x, y + (lh - S(26)) // 2, kw, S(26)), key, kf)
+        for ln in lines:
+            if y + lh > rect.bottom:
+                break
+            self.screen.blit(font.render(ln, True, readable(FP.BODY_TEXT, KT.RAISED)),
+                             (rect.x + kw + S(10), y))
+            y += lh
+        return y + S(6)
+
+    def _menu_block_height(self, lines, width, color, font) -> int:
+        h = 0
+        for entry in lines:
+            if entry is None or entry == '':
+                h += S(8)
+                continue
+            if isinstance(entry, tuple) and entry and entry[0] == '__key__':
+                h += font.get_height() + S(9)
+                continue
+            text, fnt = (entry[0], entry[2] if len(entry) > 2 and entry[2] is not None else font) \
+                if isinstance(entry, tuple) else (entry, font)
+            n = sum(len(self._wrap_text(c, fnt, width) or ['']) for c in
+                    display_text(str(text)).splitlines() or [''])
+            h += n * (fnt.get_height() + S(3)) + S(4)
+        return h
+
+    def _menu_fit_block(self, lines, rect, color, font, cue):
+        """``lines`` as they fit in ``rect``: unchanged when they fit; else
+        cut to whole sentences (and whole lines), plus a cue line."""
+        import re
+        if self._menu_block_height(lines, rect.w, color, font) <= rect.h:
+            return lines
+        cue_line = (cue or "More in the item's dossier.", FP.HINT_TEXT, get_font('body', 16))
+        out = []
+        for entry in lines:
+            trial = out + [entry, cue_line]
+            if self._menu_block_height(trial, rect.w, color, font) <= rect.h:
+                out.append(entry)
+                continue
+            if (isinstance(entry, tuple) and entry and isinstance(entry[0], str)
+                    and entry[0] != '__key__'):
+                sentences = re.split(r'(?<=[.!?])\s+', display_text(entry[0]))
+                kept = []
+                for sent in sentences:
+                    cand = tuple([' '.join(kept + [sent])] + list(entry[1:]))
+                    if self._menu_block_height(out + [cand, cue_line], rect.w, color, font) > rect.h:
+                        break
+                    kept.append(sent)
+                if kept:
+                    out.append(tuple([' '.join(kept)] + list(entry[1:])))
+            break
+        return out + [cue_line]
 
     def _menu_tile_label(self) -> str:
         try:
@@ -2663,12 +3544,27 @@ class RenderMixin:
         )
 
     def _menu_buc_label(self, item, id_level: int | None = None) -> str:
-        id_level = self._menu_item_level(item) if id_level is None else id_level
+        """Blessed / Uncursed / Cursed once THIS copy's blessing is known,
+        else "Unknown". Type knowledge never reveals it (True Name model:
+        each copy's blessing waits for its own identify), so the check reads
+        the copy's own stored id_level, not the type-boosted menu level
+        (that leaked "Uncursed" on a "(Curse Unknown)" potion in the shop)."""
         if not hasattr(item, 'buc'):
             return '-'
-        if id_level >= 2 or getattr(item, 'buc_known', False) or self._menu_item_is_equipped(item):
+        if self._copy_buc_known(item):
             return _cap(getattr(item, 'buc', 'uncursed'))
-        return '?'
+        return 'Unknown'
+
+    def _copy_buc_known(self, item) -> bool:
+        """True when this copy's blessing or curse is known to the player:
+        flagged known (altar, identify), the copy identified (id_level 5;
+        2+ on a legacy save), or worn (a curse shows itself on equip)."""
+        try:
+            own = int(getattr(item, 'id_level', 5) or 0)
+        except (TypeError, ValueError):
+            own = 0
+        return (own >= 2 or bool(getattr(item, 'buc_known', False))
+                or self._menu_item_is_equipped(item))
 
     def _menu_bonus_label(self, key, value) -> str:
         if key == 'ac_bonus':
@@ -2691,7 +3587,7 @@ class RenderMixin:
 
     def _menu_item_summary(self, item) -> str:
         if isinstance(item, self._GoldDropEntry):
-            return "opens amount prompt"
+            return "Choose how much to drop"
         idl = self._menu_item_level(item)
         if hasattr(item, 'identified') and idl < 3:
             cls = getattr(item, 'item_class', 'item').replace('_', ' ').title()
@@ -2711,7 +3607,7 @@ class RenderMixin:
         if isinstance(item, self._GoldDropEntry):
             return [
                 ("Gold", FP.GOLD_BRIGHT, self.font_md),
-                (f"You have {getattr(self, 'player_gold', 0)} coins.", FP.BODY_TEXT, self.font_sm),
+                (f"You have {getattr(self, 'player_gold', 0):,} coins.", FP.BODY_TEXT, self.font_sm),
             ]
 
         idl = self._menu_item_level(item)
@@ -2720,10 +3616,10 @@ class RenderMixin:
 
         # One-line equipped marker is useful at a glance (per Phase 1 brief).
         if self._menu_item_is_equipped(item):
-            lines.append(("* Equipped", FP.SUCCESS_TEXT, self.font_sm))
+            lines.append(("Equipped", FP.SUCCESS_TEXT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
-            # ``_display_name`` already shows either "Unidentified <name>" or
+            # ``_display_name`` already shows either "<name> (Curse Unknown)" or
             # the pure appearance string, so a dedicated Appearance row is
             # redundant. Likewise ``Type: {cls}`` repeats the section header
             # icon, and ``Next action`` repeats the footer hint. We keep the
@@ -2731,7 +3627,7 @@ class RenderMixin:
             # cue so the player knows mechanics aren't missing — just gated.
             lines += [
                 (f"Weight: {getattr(item, 'weight', 0):.1f}", FP.FADED_TEXT, self.font_sm),
-                ("Stats, BUC, and lore stay hidden until identified.",
+                ("Stats, blessing or curse, and lore stay hidden until identified.",
                  FP.WARNING_TEXT, self.font_sm),
             ]
             return lines
@@ -2739,7 +3635,10 @@ class RenderMixin:
         lines += [
             ("Known properties", FP.GOLD_BRIGHT, self.font_sm),
             (self._menu_item_summary(item), FP.BODY_TEXT, self.font_sm),
-            (f"BUC: {self._menu_buc_label(item, idl)}    Weight: {getattr(item, 'weight', 0):.1f}",
+            # Label and value bound by no-break spaces, so a narrow pane wraps
+            # between the two facts, never inside one ("Weight: / 0.4").
+            (f"Blessing: {self._menu_buc_label(item, idl)}    "
+             f"Weight: {getattr(item, 'weight', 0):.1f}",
              FP.FADED_TEXT, self.font_sm),
         ]
 
@@ -2895,6 +3794,8 @@ class RenderMixin:
         with many tabs."""
         if not tabs:
             return y
+        if kit_on('chip'):
+            return self._draw_action_tabs_kit(tabs, active_tab, counts, x, y, w)
         from text_layout import tab_strip_window
         tab_font = get_font('small', 14)
         gap = S(6)
@@ -2955,6 +3856,366 @@ class RenderMixin:
         _ = overflow  # unused but documented via win['overflow']
         return y + S(32)
 
+    def _draw_action_tabs_kit(self, tabs, active_tab, counts, x, y, w) -> int:
+        """The tab strip in the kit: ``chip`` / ``chip_active`` pieces,
+        scrolled so the active tab is always visible (``tab_strip_window``)."""
+        from text_layout import tab_strip_window
+        f_on = get_font('body', 16, bold=True)
+        gap = S(8)
+        ARROW_W = S(24)
+        TAB_H = S(30)
+        labels, widths = [], []
+        for i, tab in enumerate(tabs):
+            count = counts[i] if counts and i < len(counts) else None
+            text = f"{tab[0]} ({count})" if count is not None else tab[0]
+            labels.append(text)
+            widths.append(f_on.size(text)[0] + S(26))
+        win = tab_strip_window(widths, active_tab, w, gap=gap, arrow_w=ARROW_W)
+        arrow_f = get_font('symbol', 14)
+
+        def arrow(rect, glyph):
+            ui_theme.draw_piece(self.screen, 'chip', rect)
+            a = arrow_f.render(glyph, True, KT.TEXT_HEAD)
+            self.screen.blit(a, (rect.centerx - a.get_width() // 2,
+                                 rect.centery - a.get_height() // 2))
+
+        tx, max_x = x, x + w
+        if win['show_left_arrow']:
+            arrow(pygame.Rect(tx, y, ARROW_W, TAB_H), '\u25c0')
+            tx += ARROW_W + gap
+        reserved_right = ARROW_W + gap if win['show_right_arrow'] else 0
+        for i in range(win['start'], win['end']):
+            tw = widths[i]
+            if tx + tw > max_x - reserved_right:
+                break
+            self._ui_chip(pygame.Rect(tx, y, tw, TAB_H), labels[i],
+                          active=(i == active_tab), color=FP.GOLD)
+            tx += tw + gap
+        if win['show_right_arrow']:
+            arrow(pygame.Rect(max_x - ARROW_W, y, ARROW_W, TAB_H), '\u25b6')
+        return y + TAB_H + S(12)
+
+    def _menu_name_sizes(self, entries, text_w):
+        """(sizes, name_lines) for a list's rows: ONE name size for every row
+        (the largest of 20 / 18 / 16 px at which every name fits), so rows
+        never mix sizes; names that do not fit even at 16 px wrap onto a
+        second line (name_lines 2) instead of being cut."""
+        names = [display_text(str(e.get('name', ''))) for e in entries]
+        for size in (20, 18, 16):
+            f = get_font('body', size)
+            if all(f.size(n)[0] <= text_w for n in names):
+                return (size,), 1
+        return (16,), 2
+
+    def _menu_row_text_w(self, row_w, entries):
+        """Width left for a row's name and detail (see ``_menu_row_kit``)."""
+        if any(e.get('key') for e in entries):
+            w = row_w - S(9) - S(30) - S(10)
+        else:
+            w = row_w - S(10)            # no key badges (the shop): no badge slot
+        if any(e.get('icon') for e in entries):
+            w -= self.MENU_ICON_SIZE + S(18)
+        bf = get_font('body', 16, bold=True)
+        badges = [bf.size(str(e.get('badge')))[0] + S(28) for e in entries if e.get('badge')]
+        if badges:
+            w -= max(badges) + S(10)
+        return w - S(12)
+
+    def _menu_row_kit(self, rect, entry, *, selected, name_font, detail_font,
+                      key_font, two_line=True, detail_lines=1, name_sizes=(20, 18, 16),
+                      name_lines=1):
+        """One option row of a menu in the kit: row art, key badge, the
+        item's art on a dark well, name + detail, and a tag chip. The
+        detail wraps onto up to ``detail_lines`` lines (word by word, never
+        cut mid-word); the caller sizes the row for them."""
+        self._ui_row(rect, selected)
+        bg = KT.SELECTED if selected else KT.RAISED
+        key = entry.get('key', '')
+        ks = S(30)
+        key_rect = pygame.Rect(rect.x + S(9), rect.centery - ks // 2, ks, ks)
+        if key:
+            draw_key_badge(self.screen, key_rect, key, key_font,
+                           color=entry.get('key_color'))
+            tx = key_rect.right + S(10)
+        else:
+            tx = rect.x + S(10)          # no key (the shop): no empty badge slot
+        icon = entry.get('icon')
+        if icon:
+            isz = self.MENU_ICON_SIZE
+            well = pygame.Rect(tx, rect.centery - isz // 2 - S(4), isz + S(8), isz + S(8))
+            self._ui_well(well)
+            self._draw_menu_icon(icon, well.x + S(4), well.y + S(4))
+            tx = well.right + S(10)
+        badge = entry.get('badge', '')
+        badge_w = 0
+        if badge:
+            bf = get_font('body', 16, bold=True)
+            label = str(badge)
+            badge_w = bf.size(label)[0] + S(18)
+            brect = pygame.Rect(rect.right - badge_w - S(10), rect.centery - S(13),
+                                badge_w, S(26))
+            ui_theme.draw_piece(self.screen, 'chip', brect)
+            col = readable(entry.get('badge_color', FP.FADED_TEXT), KT.RAISED)
+            bs = bf.render(label, True, col)
+            self.screen.blit(bs, (brect.centerx - bs.get_width() // 2,
+                                  brect.centery - bs.get_height() // 2))
+            badge_w += S(10)
+        text_w = rect.right - tx - badge_w - S(12)
+        name_col = readable(entry.get('name_color', FP.BODY_TEXT), bg)
+        # One name size for the whole list (the caller's ``name_sizes``); a
+        # name that still does not fit wraps onto ``name_lines`` lines.
+        name_text = display_text(str(entry.get('name', '')))
+        name_font, _fitted = self._fit_line(name_text, text_w, name_sizes)
+        nlines = [_fitted]
+        if name_font.size(name_text)[0] > text_w and name_lines > 1:
+            nlines = (self._wrap_text(name_text, name_font, text_w) or [''])[:name_lines]
+        detail = display_text(str(entry.get('detail', '') or ''))
+        if two_line and detail:
+            dlines = self._wrap_text(detail, detail_font, text_w) or ['']
+            if len(dlines) > detail_lines:
+                dlines = dlines[:detail_lines]
+                dlines[-1] = fit_text(dlines[-1] + ' \u2026', detail_font, text_w)
+            nh, dh = name_font.get_height(), detail_font.get_height() + S(1)
+            ty = rect.centery - (nh * len(nlines) + S(3) + dh * len(dlines)) // 2
+            for nl in nlines:
+                self._menu_draw_line(nl, name_font, name_col,
+                                     pygame.Rect(tx, ty, text_w, nh + S(2)))
+                ty += nh
+            ty -= nh
+            dcol = readable(entry.get('detail_color', FP.FADED_TEXT), bg)
+            for i, dl in enumerate(dlines):
+                self._menu_draw_line(dl, detail_font, dcol,
+                                     pygame.Rect(tx, ty + nh + S(3) + i * dh, text_w, dh + S(1)))
+        else:
+            nh = name_font.get_height()
+            ty = rect.centery - nh * len(nlines) // 2
+            for nl in nlines:
+                self._menu_draw_line(nl, name_font, name_col,
+                                     pygame.Rect(tx, ty, text_w, nh + S(2)))
+                ty += nh
+
+    def _draw_decision_menu_kit(self, *, title, entries, selected, hint, border,
+                                tabs, active_tab, tab_counts, scroll_attr):
+        """``_draw_decision_menu`` in the Midnight Codex kit."""
+        draw_overlay(self.screen, 190)
+        bw = min(S(1240), layout.GAME_W - S(32))
+        bh = min(S(720), layout.WINDOW_H - S(32))
+        panel = pygame.Rect(_centre_x(bw), _centre_y(bh), bw, bh)
+        draw_dark_panel(self.screen, panel, border_color=border)
+        body_top = self._ui_header(panel, title, border_color=border)
+        b = panel_band('panel', panel)
+        side = b + S(14)
+        content_x = panel.x + side
+        content_w = panel.w - 2 * side
+        content_y = self._draw_action_tabs(tabs, active_tab, tab_counts,
+                                           content_x, body_top, content_w)
+        _div, _keys, body_bottom = self._ui_footer_metrics(panel)
+        body_h = body_bottom - content_y
+
+        gap = S(12)
+        list_w = max(S(500), min(S(700), int(content_w * 0.58)))
+        detail_w = content_w - list_w - gap
+        if detail_w < S(390):
+            detail_w = max(S(340), int(content_w * 0.44))
+            list_w = content_w - detail_w - gap
+        list_rect = pygame.Rect(content_x, content_y, list_w, body_h)
+        detail_rect = pygame.Rect(list_rect.right + gap, content_y, detail_w, body_h)
+        list_body = self._ui_subpanel(list_rect, "Choices", border_color=border)
+        detail_body = self._ui_subpanel(detail_rect, "Detail", border_color=border)
+        list_body = pygame.Rect(list_rect.x + S(8), list_body.y - S(4),
+                                list_rect.w - 2 * S(8), list_rect.bottom - list_body.y - S(4))
+
+        total = len(entries)
+        selected = max(0, min(selected, max(0, total - 1)))
+        if scroll_attr:
+            setattr(self, scroll_attr, selected)
+        name_sizes, name_lines = self._menu_name_sizes(
+            entries, self._menu_row_text_w(list_body.w, entries))
+        row_h = S(62) + (get_font('body', 16).get_height() if name_lines > 1 else 0)
+        tag_h = S(24) if total * row_h > list_body.h else 0
+        visible = max(1, (list_body.h - tag_h) // row_h)
+        scroll = 0
+        if total > visible:
+            scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
+                                max(0, total - visible)))
+        name_font, detail_font = self.font_sm, get_font('body', 16)
+        key_font = get_font('body', 18, bold=True)
+        for row_i, entry in enumerate(entries[scroll:scroll + visible], start=scroll):
+            ry = list_body.y + (row_i - scroll) * row_h
+            self._menu_row_kit(pygame.Rect(list_body.x, ry, list_body.w, row_h - S(6)),
+                               entry, selected=(row_i == selected),
+                               name_font=name_font, detail_font=detail_font,
+                               key_font=key_font, name_sizes=name_sizes,
+                               name_lines=name_lines)
+        if total > visible:
+            tag = f"{scroll + 1}-{min(scroll + visible, total)} of {total}"
+            ts = get_font('body', 16).render(tag, True, KT.TEXT_DIM)
+            self.screen.blit(ts, (list_rect.right - ts.get_width() - S(12),
+                                  list_rect.bottom - ts.get_height() - S(6)))
+
+        detail_body = pygame.Rect(detail_body.x + S(2), detail_body.y,
+                                  detail_body.w - S(4), detail_body.h)
+        if entries:
+            detail_lines = entries[selected].get('details') or []
+            self._menu_draw_text_block(detail_lines, detail_body, default_font=self.font_sm)
+        else:
+            self._menu_draw_text_block(
+                [("Nothing available.", FP.FADED_TEXT, self.font_sm)],
+                detail_body, default_font=self.font_sm)
+        self._ui_footer(panel, hint)
+
+    def _draw_fast_picker_kit(self, *, title, entries, selected, hint, border,
+                              subtitle, tabs, active_tab, tab_counts):
+        """``_draw_fast_picker`` in the Midnight Codex kit.
+
+        Centred on the window over the same full dim as every other menu
+        (VISUAL_REVIEW minor 2: anchored to the bottom over a light dim, a
+        half log line peeked under it and the log beside it stayed bright).
+        Each row shows its whole detail line, wrapped onto a second line
+        when it is long (the Fireball row was cut to "5d6 fire damag"). The
+        note above the rows appears only for what the rows do NOT say (an
+        entry's ``full_detail`` beyond its ``detail``); it is plain text, not
+        a boxed card, so it never looks like a choice (VISUAL_REVIEW_2).
+
+        The panel height is laid out top-down from the SAME numbers the draw
+        uses (header, the subtitle's own line when it cannot sit beside the
+        title, tabs, note, rows), and the footer is added below the rows with
+        the divider ornament's full reach plus the ``md`` step (12 px) clear
+        of the last row. It used to be a sum that missed the subtitle's own
+        line, so on quaff and pet specials the divider ornament sat on the
+        last row (VISUAL_REVIEW_2 must-fix 1). A single-column picker is
+        capped at 760 px (scaled) so a short name does not sit ~1000 px from
+        its tag."""
+        draw_overlay(self.screen, 190)
+        bw = min(S(1180), layout.WINDOW_W - S(48))
+        cols = 2 if bw >= S(900) and len(entries) > 3 else 1
+        if cols == 1:
+            bw = min(bw, S(760))
+        max_rows_visible = 4 if cols == 2 else 6
+        needed_rows = (max(1, len(entries)) + cols - 1) // cols
+        rows_visible = max(1, min(max_rows_visible, needed_rows))
+        selected = max(0, min(selected, max(0, len(entries) - 1)))
+        b = panel_band('panel', pygame.Rect(0, 0, bw, S(400)))
+        side = b + S(14)
+        col_gap = S(12)
+        col_w = (bw - 2 * side - col_gap * (cols - 1)) // cols
+        name_font, detail_font = self.font_sm, get_font('body', 16)
+        key_font = get_font('body', 18, bold=True)
+        text_w = self._menu_row_text_w(col_w, entries)
+        detail_lines = 1
+        for e in entries:
+            d = display_text(str(e.get('detail', '') or ''))
+            if d:
+                detail_lines = max(detail_lines,
+                                   min(3, len(self._wrap_text(d, detail_font, text_w))))
+        name_sizes, name_lines = self._menu_name_sizes(entries, text_w)
+        row_gap = S(6)
+        row_h = max(S(54), get_font('body', name_sizes[0]).get_height() * name_lines + S(3)
+                    + detail_lines * (detail_font.get_height() + S(1)) + S(16))
+
+        # The note: only what the rows do not already say.
+        def _extra(x):
+            full = str(x.get('full_detail') or '')
+            det = str(x.get('detail') or '')
+            if not full or full == det:
+                return ''
+            return full[len(det):].strip() if full.startswith(det) else full
+        note_text = _extra(entries[selected]) if entries else ''
+        note_font = get_font('body', 16)
+        note_w = bw - 2 * side - 2 * S(12)
+        note_line_h = note_font.get_height() + S(3)
+        note_h = 0
+        if note_text:
+            n_lines = max([min(3, len(self._wrap_text(display_text(_extra(x)), note_font, note_w)))
+                           for x in entries if _extra(x)] or [1])
+            note_h = max(1, n_lines) * note_line_h
+
+        # Header: the title plaque, and the subtitle beside it or on its own line.
+        head_h = S(44)
+        hf = get_font('heading', 24, bold=True)
+        title_w = hf.size(display_title(title))[0]
+        sub_s = None
+        sub_beside = False
+        if subtitle:
+            sub_s = get_font('body', 16).render(subtitle, True, KT.TEXT_DIM)
+            sub_beside = (bw - 2 * b) // 2 - title_w // 2 > sub_s.get_width() + S(58)
+        tabs_h = S(42) if tabs else 0       # what ``_draw_action_tabs_kit`` advances
+
+        top_to_rows = b + head_h + S(12) - S(2)
+        if sub_s is not None and not sub_beside:
+            top_to_rows += sub_s.get_height()
+        top_to_rows += tabs_h
+        if note_h:
+            top_to_rows += note_h + S(10)
+        reach = divider_reach()
+        kh = key_hints_height()
+        # Last row's bottom edge -> panel bottom: the md gap, the divider's
+        # reach above its line, then exactly what ``_ui_footer_metrics`` puts
+        # under the line (16 + key row + 8 + frame band).
+        below_rows = S(12) + reach + S(16) + kh + S(8) + b
+        max_h = layout.WINDOW_H - S(40)
+        while True:
+            bh = top_to_rows + rows_visible * row_h - row_gap + below_rows
+            if bh <= max_h or rows_visible <= 1:
+                break
+            rows_visible -= 1
+        visible = max(1, rows_visible * cols)
+        if len(entries) > visible:
+            scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
+                                max(0, len(entries) - visible)))
+        else:
+            scroll = 0
+
+        bx = _centre_x(bw)
+        by = _centre_y(bh)
+        panel = pygame.Rect(bx, by, bw, bh)
+        draw_dark_panel(self.screen, panel, border_color=border)
+        y = self._ui_header(panel, title, border_color=border, h=44, font=hf,
+                            right_reserve=0)
+        hr = header_rect(panel, head_h)
+        if sub_s is not None:
+            if sub_beside:
+                # At the plaque's right end, clear of its scroll-roll.
+                self.screen.blit(sub_s, (hr.right - S(48) - sub_s.get_width(),
+                                         hr.y + (hr.h - S(4) - sub_s.get_height()) // 2))
+            else:
+                # No room beside the title: a line of its own under the plaque.
+                self.screen.blit(sub_s, (panel.centerx - sub_s.get_width() // 2, y - S(4)))
+                y += sub_s.get_height()
+        y -= S(2)
+        if tabs:
+            y = self._draw_action_tabs(tabs, active_tab, tab_counts, bx + side, y,
+                                       bw - 2 * side)
+        if note_text:
+            # Plain dim text on the interior, centred: information, not a choice.
+            col = readable(KT.TEXT_DIM, KT.INTERIOR)
+            ly = y + S(2)
+            for ln in self._wrap_text(display_text(note_text), note_font, note_w)[:3]:
+                ls = note_font.render(ln, True, col)
+                self.screen.blit(ls, (panel.centerx - ls.get_width() // 2, ly))
+                ly += note_line_h
+            y += note_h + S(10)
+
+        div_y, keys, _body_bottom = self._ui_footer_metrics(panel)
+        for vi, entry in enumerate(entries[scroll:scroll + visible]):
+            absolute = scroll + vi
+            col, row = vi // rows_visible, vi % rows_visible
+            rect = pygame.Rect(bx + side + col * (col_w + col_gap), y + row * row_h,
+                               col_w, row_h - row_gap)
+            self._menu_row_kit(rect, entry, selected=(absolute == selected),
+                               name_font=name_font, detail_font=detail_font,
+                               key_font=key_font, detail_lines=detail_lines,
+                               name_sizes=name_sizes, name_lines=name_lines)
+
+        draw_divider(self.screen, bx + b + S(28), div_y, bw - 2 * (b + S(28)))
+        tag_w = 0
+        if len(entries) > visible:
+            tag = f"{scroll + 1}-{min(scroll + visible, len(entries))} of {len(entries)}"
+            ts = get_font('body', 16).render(tag, True, KT.TEXT_DIM)
+            self.screen.blit(ts, (keys.x, keys.centery - ts.get_height() // 2))
+            tag_w = ts.get_width() + S(16)
+        draw_key_hints(self.screen, keys.inflate(-2 * tag_w, 0), hint)
+
     def _draw_decision_menu(self, *, title: str, entries: list,
                                       selected: int, context_lines: list,
                                       hint: str, border_color=None, tabs=None,
@@ -2967,6 +4228,11 @@ class RenderMixin:
         standing run context stays in the HUD instead of consuming menu width.
         """
         border = border_color or FP.GOLD
+        if kit_on():
+            return self._draw_decision_menu_kit(
+                title=title, entries=entries, selected=selected, hint=hint,
+                border=border, tabs=tabs, active_tab=active_tab,
+                tab_counts=tab_counts, scroll_attr=scroll_attr)
         draw_overlay(self.screen, 190)
         # Caps grow with the UI scale; the width budget is the play area
         # left of the right rail; the panel centres on the window.
@@ -3088,6 +4354,11 @@ class RenderMixin:
                                     subtitle: str = '', tabs=None,
                                     active_tab: int = 0, tab_counts=None):
         border = border_color or FP.ARCANE_BRIGHT
+        if kit_on():
+            return self._draw_fast_picker_kit(
+                title=title, entries=entries, selected=selected, hint=hint,
+                border=border, subtitle=subtitle, tabs=tabs,
+                active_tab=active_tab, tab_counts=tab_counts)
         draw_overlay(self.screen, 95)
         bw = min(S(1180), layout.GAME_W - S(80))
         cols = 2 if bw >= S(900) and len(entries) > 3 else 1
@@ -3198,7 +4469,9 @@ class RenderMixin:
             tag = f"{scroll + 1}-{min(scroll + visible, len(entries))} of {len(entries)}"
             ts = get_font('small', 14).render(tag, True, FP.FADED_TEXT)
             self.screen.blit(ts, (bx + S(20), by + bh - footer_h + S(3)))
-        hs = get_font('small', 14).render(hint, True, FP.HINT_TEXT)
+        from fantasy_ui import fit_text
+        hf = get_font('small', 14)
+        hs = hf.render(fit_text(hint, hf, bw - 2 * S(24)), True, FP.HINT_TEXT)
         self.screen.blit(hs, (bx + (bw - hs.get_width()) // 2, by + bh - footer_h + S(3)))
 
     def _draw_equip_menu(self):
@@ -3324,6 +4597,42 @@ class RenderMixin:
                                      self._display_name(r[1]).lower()))
         return rows
 
+    # Long stat names for the kit table's labelled rows ('' = the value
+    # speaks for itself: "Iron", "Uncursed", "Body").
+    _KIT_STAT_NAMES = {'Dmg': 'Damage', 'Avg': 'Average', 'Wt': 'Weight',
+                       'AC': 'AC', 'Material': '', 'BUC': '', 'Slot': '', 'Type': ''}
+    _KIT_BUC_WORDS = {'bless.': 'Blessed', 'unc.': 'Uncursed', 'CURSED': 'Cursed'}
+
+    def _kit_row_labelled(self, slug: str, src: str, item):
+        """(stats, (label, text)) for one kit-table row: every stat with its
+        name, and the special / resists / effect column as a labelled line."""
+        cols = self._kit_column_defs(slug)
+        cells = self._kit_cells_for_item(slug, src, item)
+        labels = [c.label for c in cols]
+        idl = self._kit_visible_level(item)
+        stats = []
+        for label, value in zip(labels[2:-1], cells[2:-1]):
+            value = str(value)
+            if value in ('', 'None'):
+                continue
+            if label == 'BUC':
+                if value in ('?', '-'):
+                    continue
+                value = self._KIT_BUC_WORDS.get(value, value.title())
+            elif label == 'Material':
+                value = _cap(value)
+            elif value == '?':
+                continue
+            name = self._KIT_STAT_NAMES.get(label, label)
+            stats.append(f"{name} {value}" if name else value)
+        if idl < 3:
+            stats.insert(0, "Not identified: stats hidden")
+        extra_label = labels[-1] if labels else ''
+        extra = str(cells[-1]) if cells else ''
+        if extra in ('?', '-', ''):
+            extra = ''
+        return stats, (extra_label, extra)
+
     def _kit_source_label(self, src: str) -> str:
         return {'equip': 'Equipped', 'pack': 'Pack', 'floor': 'Floor'}.get(src, src)
 
@@ -3333,20 +4642,18 @@ class RenderMixin:
             (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
             (f"Source: {self._kit_source_label(src)}", FP.FADED_TEXT, self.font_sm),
             (f"Identity: {_identify_status_label(idl)}", FP.CYAN_ACCENT, self.font_sm),
-            (f"Weight: {getattr(item, 'weight', 0):g}", FP.BODY_TEXT, self.font_sm),
         ]
         delta = self._equip_delta_str(item)
         if delta:
             color = FP.SUCCESS_TEXT if '+' in delta else FP.WARNING_TEXT
             lines.append((delta, color, self.font_sm))
-        col_defs = self._kit_column_defs(slug)
-        cells = self._kit_cells_for_item(slug, src, item)
-        labels = [c.label for c in col_defs] if col_defs else []
         if idl >= 3:
+            stats, (extra_label, extra) = self._kit_row_labelled(slug, src, item)
             lines.append(("Visible stats", FP.GOLD_BRIGHT, self.font_sm))
-            for label, value in zip(labels[2:], cells[2:]):
-                if value not in ('', None):
-                    lines.append((f"{label}: {value}", FP.BODY_TEXT, self.font_sm))
+            for st in stats:
+                lines.append((st, FP.BODY_TEXT, self.font_sm))
+            if extra:
+                lines.append((f"{extra_label}: {extra}", FP.BODY_TEXT, self.font_sm))
         else:
             lines.append(("Stats remain hidden until identification level 3.",
                           FP.FADED_TEXT, self.font_sm))
@@ -3366,7 +4673,7 @@ class RenderMixin:
         if lore:
             lines += [
                 ("Lore", FP.GOLD_BRIGHT, self.font_sm),
-                (lore, FP.LORE_BLUE_BODY, get_font('body', 16)),
+                (lore, FP.LORE_BLUE_BODY, self.font_sm),     # one size in the pane
             ]
         return lines
 
@@ -3377,15 +4684,17 @@ class RenderMixin:
             (f"Tier: {spell.get('quiz_tier', '?')}   MP: {spell.get('mp_cost', '?')}",
              FP.CYAN_ACCENT, self.font_sm),
             ("Description", FP.GOLD_BRIGHT, self.font_sm),
-            (spell.get('desc', ''), FP.BODY_TEXT, get_font('body', 16)),
+            (spell.get('desc', ''), FP.BODY_TEXT, self.font_sm),
         ]
 
     def _draw_kit_detail_lines(self, rect, lines):
         render_lines = []
-        for text, color, fnt in lines:
+        for i, (text, color, fnt) in enumerate(lines):
+            if i and color == FP.GOLD_BRIGHT:
+                render_lines.append(("", color, fnt))      # a gap BEFORE a section
             for line in self._ui_text_lines(text, fnt, rect.w - S(14)):
                 render_lines.append((line, color, fnt))
-            if color in (FP.GOLD_PALE, FP.GOLD_BRIGHT):
+            if i == 0:
                 render_lines.append(("", color, fnt))
         self._ui_draw_scroll_lines(render_lines, self.font_sm, FP.BODY_TEXT,
                                    rect, 0, line_gap=5)
@@ -3434,86 +4743,88 @@ class RenderMixin:
 
         sel = max(0, min(getattr(self, '_kit_sel', 0), total - 1))
         self._kit_sel = sel
-        row_h = S(62)
-        visible = max(1, (table_body.h - S(28)) // row_h)
-        scroll = getattr(self, '_kit_scroll', 0)
-        if sel < scroll:
-            scroll = sel
-        if sel >= scroll + visible:
-            scroll = sel - visible + 1
-        scroll = max(0, min(scroll, max(0, total - visible)))
-        self._kit_scroll = scroll
-
-        header_font = get_font('small', 13, bold=True)
-        headers = ([("Spell", 0.40), ("Cost", 0.16), ("Description", 0.44)]
-                   if slug == 'spells' else
-                   [("Src", 0.08), ("Name", 0.42), ("Stats", 0.24), ("Special", 0.26)])
-        hx = table_body.x
-        for label, frac in headers:
-            hw = int(table_body.w * frac)
-            self._ui_blit_text(label, header_font, FP.GOLD_PALE, hx, table_body.y)
-            hx += hw
-        pygame.draw.line(self.screen, FP.GOLD_DARK,
-                         (table_body.x, table_body.y + S(23)),
-                         (table_body.right - S(10), table_body.y + S(23)), 1)
-
-        y = table_body.y + S(32)
-        for idx, row in enumerate(rows[scroll:scroll + visible], start=scroll):
-            selected = idx == sel
-            rect = pygame.Rect(table_body.x, y, table_body.w - S(12), row_h - S(7))
-            pygame.draw.rect(self.screen,
-                             (35, 43, 82) if selected else FP.MIDNIGHT,
-                             rect, border_radius=6)
-            pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
-                             rect, 1, border_radius=6)
+        # Each row is a small labelled card (VISUAL_REVIEW must-fix 9: the
+        # stats were an unlabelled "3 / 3.0 / iron / unc." in 13 px text):
+        #   line 1  the name, and where it is (Equipped / Pack / Floor);
+        #   line 2  the stats, each with its name ("Damage 3   Average 3.0");
+        #   line 3+ the special / resists / effect, labelled, wrapped.
+        # The cards read at the detail pane's size (they were 18 / 16 px
+        # beside its 20 px at 3440), with leading between the lines (three
+        # lines were packed at a 17 px pitch at 1280; VISUAL_REVIEW_2).
+        name_f = get_font('body', 20, bold=True)
+        stat_f = get_font('body', 18)
+        tag_f = get_font('body', 18, bold=True)
+        lead = S(4)
+        inner_w = table_body.w - S(12) - 2 * S(12)
+        cards = []
+        for row in rows:
             if slug == 'spells':
-                spell = row
-                col1 = pygame.Rect(rect.x + S(10), rect.y + S(7), int(rect.w * 0.40) - S(18),
-                                   rect.h - S(10))
-                col2 = pygame.Rect(col1.right + S(8), rect.y + S(7), int(rect.w * 0.16),
-                                   rect.h - S(10))
-                col3 = pygame.Rect(col2.right + S(8), rect.y + S(7),
-                                   rect.right - col2.right - S(16), rect.h - S(10))
-                self._ui_wrap_text(spell.get('name', '?'), get_font('small', 15, bold=True),
-                                   FP.GOLD_BRIGHT if selected else FP.BODY_TEXT,
-                                   col1, line_gap=0, max_lines=2)
-                self._ui_wrap_text(f"T{spell.get('quiz_tier', '-')}, {spell.get('mp_cost', '?')} MP",
-                                   self.font_sm, FP.CYAN_ACCENT, col2,
-                                   line_gap=0, max_lines=2)
-                self._ui_wrap_text(spell.get('desc', ''), get_font('small', 13),
-                                   FP.FADED_TEXT, col3, line_gap=0, max_lines=2)
+                name = row.get('name', '?')
+                tag = f"{row.get('mp_cost', '?')} MP"
+                stats = [f"Tier {row.get('quiz_tier', '-')}"]
+                extra = ('', row.get('desc', ''))
+                tag_col = FP.CYAN_ACCENT
+                name_col = FP.BODY_TEXT
             else:
                 src, item = row
-                cells = self._kit_cells_for_item(slug, src, item)
-                col_src = pygame.Rect(rect.x + S(10), rect.y + S(8), int(rect.w * 0.08),
-                                      rect.h - S(10))
-                col_name = pygame.Rect(col_src.right + S(8), rect.y + S(7),
-                                       int(rect.w * 0.42) - S(16), rect.h - S(10))
-                col_stats = pygame.Rect(col_name.right + S(8), rect.y + S(7),
-                                        int(rect.w * 0.24) - S(16), rect.h - S(10))
-                col_special = pygame.Rect(col_stats.right + S(8), rect.y + S(7),
-                                          rect.right - col_stats.right - S(16),
-                                          rect.h - S(10))
-                self._ui_blit_text(cells[1] if len(cells) > 1 else src,
-                                   get_font('small', 13, bold=True),
-                                   self._KIT_SRC_COLOR.get(src, FP.BODY_TEXT),
-                                   col_src.x, col_src.y,
-                                   max_width=col_src.w)
-                self._ui_wrap_text(self._display_name(item), get_font('small', 15, bold=True),
-                                   self._KIT_SRC_COLOR.get(src, FP.BODY_TEXT),
-                                   col_name, line_gap=0, max_lines=2)
-                stats = " / ".join(str(c) for c in cells[2:-1] if c not in ('', None))
-                self._ui_wrap_text(stats or "-", get_font('small', 13),
-                                   FP.BODY_TEXT, col_stats,
-                                   line_gap=0, max_lines=2)
-                special = str(cells[-1]) if cells else ''
-                self._ui_wrap_text(special or "-", get_font('small', 13),
-                                   FP.FADED_TEXT, col_special,
-                                   line_gap=0, max_lines=2)
-            y += row_h
+                name = self._display_name(item)
+                tag = self._kit_source_label(src)
+                stats, extra = self._kit_row_labelled(slug, src, item)
+                tag_col = self._KIT_SRC_COLOR.get(src, FP.BODY_TEXT)
+                name_col = tag_col
+            tag_w = tag_f.size(tag)[0] + S(16)
+            name_lines = self._wrap_text(name, name_f, inner_w - tag_w - S(10)) or ['']
+            stat_lines = self._wrap_text("   ".join(stats), stat_f, inner_w) if stats else []
+            label, text = extra
+            extra_lines = []
+            if text:
+                extra_lines = self._wrap_text(f"{label}: {text}" if label else text,
+                                              stat_f, inner_w)[:3]
+            h = (S(10) + len(name_lines) * (name_f.get_height() + lead)
+                 + (len(stat_lines) + len(extra_lines)) * (stat_f.get_height() + lead)
+                 - lead + S(10))
+            cards.append((name_lines, name_col, tag, tag_col, stat_lines, extra_lines, h))
+
+        scroll = getattr(self, '_kit_scroll', 0)
+        scroll = max(0, min(scroll, sel))
+        avail = table_body.h
+
+        def fits(first, last):
+            return sum(cards[i][6] + S(6) for i in range(first, last + 1)) <= avail
+
+        while not fits(scroll, sel) and scroll < sel:
+            scroll += 1
+        self._kit_scroll = scroll
+        y = table_body.y
+        visible = 0
+        for idx in range(scroll, total):
+            name_lines, name_col, tag, tag_col, stat_lines, extra_lines, h = cards[idx]
+            if y + h > table_body.bottom and visible:
+                break
+            visible += 1
+            selected = idx == sel
+            rect = pygame.Rect(table_body.x, y, table_body.w - S(12), h)
+            self._ui_row(rect, selected,
+                         fill=(35, 43, 82) if selected else FP.MIDNIGHT,
+                         border=FP.GOLD if selected else FP.ARCANE_DIM, radius=6)
+            bg = KT.SELECTED if selected else KT.RAISED
+            tx, ty = rect.x + S(12), rect.y + S(10)
+            ts = tag_f.render(tag, True, readable(tag_col, bg))
+            self.screen.blit(ts, (rect.right - S(12) - ts.get_width(), ty + S(1)))
+            for ln in name_lines:
+                self.screen.blit(name_f.render(ln, True, readable(
+                    FP.GOLD_BRIGHT if selected else name_col, bg)), (tx, ty))
+                ty += name_f.get_height() + lead
+            for ln in stat_lines:
+                self.screen.blit(stat_f.render(ln, True, readable(FP.BODY_TEXT, bg)), (tx, ty))
+                ty += stat_f.get_height() + lead
+            for ln in extra_lines:
+                self.screen.blit(stat_f.render(ln, True, readable(FP.FADED_TEXT, bg)), (tx, ty))
+                ty += stat_f.get_height() + lead
+            y += h + S(6)
 
         if total > visible:
-            self._ui_scrollbar(table_body, scroll, total, visible)
+            self._ui_scrollbar(table_body, scroll, total, max(1, visible))
 
         if slug == 'spells':
             detail_lines = self._kit_detail_lines_for_spell(rows[sel])
@@ -3605,8 +4916,8 @@ class RenderMixin:
         wt = str(int(getattr(item, 'weight', 0) or 0))
         mat = getattr(item, 'material', '') or ''
 
-        # BUC visibility: id_level >= 2 reveals; otherwise '?'
-        if idl >= 2:
+        # Blessing visibility: this copy's own knowledge, never the type's.
+        if self._copy_buc_known(item):
             buc_raw = getattr(item, 'buc', None) or ('cursed' if getattr(item, 'cursed', False) else 'uncursed')
             buc = {'blessed': 'bless.', 'uncursed': 'unc.', 'cursed': 'CURSED'}.get(buc_raw, buc_raw)
         else:
@@ -3856,7 +5167,13 @@ class RenderMixin:
     # ------------------------------------------------------------------
 
     def _draw_discoveries_panel(self):
-        """Player-growth record. Pure tally of what's been done. No spoilers."""
+        """Player-growth record. Pure tally of what's been done. No spoilers.
+
+        Rows are tables, not space-padded strings: a row is a ``label\tvalue``
+        string (cells split on tabs) drawn as aligned columns, a
+        ``('head', ...)`` tuple is a table header, '' a gap. The section rail
+        shows each section's first figure in full, wrapping when it is long
+        (it used to be clipped: "Total answered: 9 (4")."""
         panel = self._ui_modal_panel("DISCOVERIES - YOUR RECORD",
                                      border_color=FP.GOLD,
                                      max_w=1320,
@@ -3879,7 +5196,19 @@ class RenderMixin:
 
         sel = max(0, min(getattr(self, '_disc_sel', 0), len(sections) - 1))
         self._disc_sel = sel
-        row_h = S(52)
+        head_f = get_font('body', 17, bold=True)
+        sub_f = get_font('body', 16)
+        row_w = rail_body.w - S(10)
+        summaries = []
+        for _header, rows in sections:
+            first = next((r for r in rows if isinstance(r, str) and r.strip()), "")
+            cells = [c.strip() for c in first.split('\t') if c.strip()]
+            if len(cells) > 1:
+                cells[1] = cells[1].split(' (')[0]      # the figure, not its breakdown
+            summaries.append(' '.join(cells[:2]))
+        sub_lines = [self._wrap_text(t, sub_f, row_w - S(20)) or [''] for t in summaries]
+        n_sub = max(1, min(2, max(len(x) for x in sub_lines)))
+        row_h = S(14) + head_f.get_height() + n_sub * (sub_f.get_height() + S(1)) + S(10)
         visible = max(1, rail_body.h // row_h)
         scroll = max(0, min(sel, max(0, len(sections) - visible)))
         if sel >= scroll + visible:
@@ -3888,43 +5217,70 @@ class RenderMixin:
         y = rail_body.y
         for idx, (header, rows) in enumerate(sections[scroll:scroll + visible],
                                              start=scroll):
-            rect = pygame.Rect(rail_body.x, y, rail_body.w - S(10), row_h - S(7))
+            rect = pygame.Rect(rail_body.x, y, row_w, row_h - S(7))
             selected = idx == sel
-            pygame.draw.rect(self.screen,
-                             (35, 43, 82) if selected else FP.MIDNIGHT,
-                             rect, border_radius=6)
-            pygame.draw.rect(self.screen, FP.GOLD if selected else FP.GOLD_DARK,
-                             rect, 1, border_radius=6)
-            self._ui_blit_text(header.title(), get_font('small', 14, bold=True),
-                               FP.GOLD_BRIGHT if selected else FP.BODY_TEXT,
-                               rect.x + S(10), rect.y + S(7), max_width=rect.w - S(20))
-            first = next((r.strip() for r in rows if str(r).strip()), "")
-            self._ui_blit_text(first, get_font('small', 12), FP.FADED_TEXT,
-                               rect.x + S(10), rect.y + S(27), max_width=rect.w - S(20))
+            self._ui_row(rect, selected,
+                         fill=(35, 43, 82) if selected else FP.MIDNIGHT,
+                         border=FP.GOLD if selected else FP.GOLD_DARK, radius=6)
+            bg = KT.SELECTED if selected else KT.RAISED
+            self._ui_blit_text(header.title(), head_f,
+                               readable(FP.GOLD_BRIGHT if selected else FP.BODY_TEXT, bg),
+                               rect.x + S(10), rect.y + S(6), max_width=rect.w - S(20))
+            ly = rect.y + S(8) + head_f.get_height()
+            for line in sub_lines[idx][:n_sub]:
+                self._ui_blit_text(line, sub_f, readable(FP.FADED_TEXT, bg),
+                                   rect.x + S(10), ly)
+                ly += sub_f.get_height() + S(1)
             y += row_h
 
         header, rows = sections[sel]
-        render_lines = [
-            (header.title(), FP.GOLD_PALE, get_font('heading', 24)),
-            ("", FP.BODY_TEXT, self.font_sm),
-        ]
-        for row in rows:
-            text = str(row).strip()
-            if not text:
-                render_lines.append(("", FP.BODY_TEXT, self.font_sm))
-            else:
-                render_lines.append((text, FP.BODY_TEXT, self.font_sm))
-        flat = []
-        for text, color, fnt in render_lines:
-            if text == "":
-                flat.append(("", color, fnt))
-                continue
-            for line in self._ui_text_lines(text, fnt, detail_body.w - S(14)):
-                flat.append((line, color, fnt))
+        flat = self._disc_table_lines(header, rows, detail_body.w - S(14))
         self._disc_scroll = self._ui_draw_scroll_lines(
             flat, self.font_sm, FP.BODY_TEXT, detail_body,
             getattr(self, '_disc_scroll', 0), line_gap=5)
         self._ui_footer(panel, "Up/Down: section   PgUp/PgDn: scroll record   ESC: close")
+
+    def _disc_table_lines(self, header, rows, width):
+        """The detail pane's lines for one Discoveries section: tab-separated
+        rows set as aligned table columns (each run of table rows shares its
+        column widths); the last column wraps if the row is too wide."""
+        f = self.font_sm
+        hf = get_font('body', 18, bold=True)
+        out = [(header.title(), FP.GOLD_PALE, get_font('heading', 24)),
+               ("", FP.BODY_TEXT, f)]
+        groups, cur = [], []
+        for r in rows:
+            is_head = isinstance(r, tuple)
+            text = r[1] if is_head else str(r)
+            if '\t' in text:
+                cur.append((is_head, [c.strip() for c in text.split('\t')]))
+                continue
+            if cur:
+                groups.append(('table', cur))
+                cur = []
+            groups.append(('text', text.strip()))
+        if cur:
+            groups.append(('table', cur))
+        gap = S(18)
+        for kind, g in groups:
+            if kind == 'text':
+                if not g:
+                    out.append(("", FP.BODY_TEXT, f))
+                else:
+                    for line in self._ui_text_lines(g, f, width):
+                        out.append((line, FP.BODY_TEXT, f))
+                continue
+            n = max(len(c) for _h, c in g)
+            widths = [0] * n
+            for is_head, cells in g:
+                fnt = hf if is_head else f
+                for k, c in enumerate(cells[:-1] if len(cells) == n else cells):
+                    widths[k] = max(widths[k], fnt.size(c)[0])
+            for is_head, cells in g:
+                fnt = hf if is_head else f
+                col = FP.GOLD_BRIGHT if is_head else FP.BODY_TEXT
+                out.append(('__cells__', cells, widths, gap, fnt, col, width))
+        return out
 
     def _discoveries_sections(self):
         """Return list of (section_title, [row_string, ...]) tuples.
@@ -3942,17 +5298,18 @@ class RenderMixin:
         total = right_total + wrong_total
         acc = (right_total / total * 100) if total else 0.0
         quiz_rows = [
-            f"  Total answered:  {total}   ({right_total} right / {wrong_total} wrong, {acc:.0f}%)",
+            f"Total answered:\t{total} ({right_total} right, {wrong_total} wrong, {acc:.0f}%)",
         ]
         # Per-subject + per-tier breakdown if tracking is active
         qstats = getattr(self, 'quiz_stats', {}) or {}
         # Per-run tier-clear: a cleared (subject, tier) auto-succeeds, so mark
         # it CLEARED here instead of a hit ratio -- the badge the player
         # earns for clearing a whole tier.
-        mastered = (self.quiz_engine.mastered_tiers()
-                    if getattr(self, 'quiz_engine', None) else set())
+        quiz_engine = getattr(self, 'quiz_engine', None)
+        mastered = quiz_engine.mastered_tiers() if quiz_engine else set()
         if qstats:
             quiz_rows.append("")
+            quiz_rows.append(('head', "Subject\tRight\tWrong\tScore\tBy tier"))
             for subj in sorted(qstats.keys()):
                 d = qstats[subj] or {}
                 r = int(d.get('correct', 0))
@@ -3962,14 +5319,14 @@ class RenderMixin:
                 tier_bits = []
                 for ti in range(1, 6):
                     if (subj, ti) in mastered:
-                        tier_bits.append(f"T{ti} CLEARED")
+                        tier_bits.append(f"Tier {ti} cleared")
                         continue
                     tr = int(d.get(f't{ti}c', 0))
                     tw = int(d.get(f't{ti}w', 0))
                     if tr + tw > 0:
-                        tier_bits.append(f"T{ti} {tr}/{tr+tw}")
-                tail = f"   {' '.join(tier_bits)}" if tier_bits else ''
-                quiz_rows.append(f"  {subj:11s}  {r} / {w}   ({a:.0f}%){tail}")
+                        tier_bits.append(f"Tier {ti}: {tr}/{tr+tw}")
+                name = 'AI' if subj == 'ai' else proper_name(str(subj).replace('_', ' '))
+                quiz_rows.append(f"{name}\t{r}\t{w}\t{a:.0f}%\t{', '.join(tier_bits) or '-'}")
         sections.append(("QUIZ PERFORMANCE", quiz_rows))
 
         # --- Identification ---
@@ -3977,37 +5334,37 @@ class RenderMixin:
         total_ids = int(getattr(p, 'total_identifies', 0) or 0)
         mantle = bool(getattr(p, 'philosophers_mantle', False))
         id_rows = [
-            f"  Total identifies performed: {total_ids}",
-            f"  Item types learned:          {len(known_ids)}",
+            f"Identified:\t{total_ids}",
+            f"Item types learned:\t{len(known_ids)}",
         ]
         if mantle:
-            id_rows.append("  Mantle of the Philosopher: granted")
+            id_rows.append("Mantle of the Philosopher:\tgranted")
         sections.append(("IDENTIFICATION", id_rows))
 
         # --- Bestiary ---
         seen = getattr(p, 'known_monster_ids', set()) or set()
         studied = getattr(p, 'lore_known_monster_ids', set()) or set()
         sections.append(("BESTIARY", [
-            f"  Monsters encountered:  {len(seen)}",
-            f"  Monsters studied:       {len(studied)}",
+            f"Monsters seen:\t{len(seen)}",
+            f"Monsters studied:\t{len(studied)}",
         ]))
 
         # --- Faith + Karma ---
         boons = int(getattr(p, 'prayer_boon_count', 0) or 0)
         karma = int(getattr(self, 'karma', 0) or 0)
         sections.append(("FAITH & KARMA", [
-            f"  Prayer boons received: {boons}",
-            f"  Karma:                  {karma:+d}",
+            f"Prayer boons:\t{boons}",
+            f"Karma:\t{karma:+d}",
         ]))
 
         # --- Spells & magic ---
         spells = getattr(p, 'known_spells', {}) or {}
         hack_count = int(getattr(p, 'hack_reality_count', 0) or 0)
         magic_rows = [
-            f"  Spells learned: {len(spells)}",
+            f"Spells learned:\t{len(spells)}",
         ]
         if hack_count > 0:
-            magic_rows.append(f"  Reality hacks claimed: {hack_count}")
+            magic_rows.append(f"Reality hacks claimed:\t{hack_count}")
         sections.append(("MAGIC", magic_rows))
 
         # --- Journey ---
@@ -4015,14 +5372,14 @@ class RenderMixin:
                               getattr(self, 'dungeon_level', 1)) or 1)
         current = int(getattr(self, 'dungeon_level', 1) or 1)
         sections.append(("JOURNEY", [
-            f"  Current floor:         {current}",
-            f"  Deepest floor reached: {deepest}",
+            f"Current floor:\t{current}",
+            f"Deepest floor:\t{deepest}",
         ]))
 
         # --- Quirks (counts only — names of unlocked quirks could spoil) ---
         unlocked = getattr(p, 'unlocked_quirks', set()) or set()
         sections.append(("QUIRKS", [
-            f"  Unlocked: {len(unlocked)}",
+            f"Quirks unlocked:\t{len(unlocked)}",
         ]))
 
         return sections
@@ -4035,7 +5392,7 @@ class RenderMixin:
                 else FP.WARNING_TEXT if item.charges > 0
                 else FP.DANGER_TEXT_LIGHT
             )
-            charge_text = f"charges: {item.charges}/{item.max_charges}"
+            charge_text = f"Charges: {item.charges}/{item.max_charges}"
             if item.identified or self.player.knows_item_type(item):
                 charge_text += f" | Effect: {item.effect.replace('_', ' ').title()}"
             entries.append({
@@ -4082,6 +5439,8 @@ class RenderMixin:
             entries.append({
                 'name': spell.get('name', '?'),
                 'detail': f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}",
+                'full_detail': (f"Tier {tier} | {mp_cost} MP | {spell.get('desc', '')}   "
+                                "(Effects last longer and reach further with Intelligence.)"),
                 'key': self._menu_letter(i),
                 'icon': _SpellIcon(spellbook_id, tier_color),
                 'name_color': FP.BODY_TEXT if can_cast else FP.DANGER_TEXT_LIGHT,
@@ -4095,8 +5454,7 @@ class RenderMixin:
             entries=entries,
             selected=selected,
             subtitle=f"MP: {self.player.mp}/{self.player.max_mp}",
-            hint="Up/Down: move   Enter or a-z: cast   ESC: cancel   |   "
-                 "Effects last longer and reach further with Intelligence",
+            hint="Up/Down: move   Enter or a-z: cast   ESC: cancel",
             border_color=FP.ARCANE_BRIGHT,
         )
 
@@ -4113,9 +5471,19 @@ class RenderMixin:
         font_title = get_font('heading', 24)
         font_name  = get_font('body', 20, bold=True)
         font_body  = get_font('body', 15)
-        font_hint  = get_font('body', 13)
+        font_hint  = get_font('body', 16)
         gifts = offer.get('gifts') or []
         quest_line = offer.get('quest_line') if boons.solved_quest(self.player, kind) else ''
+        if kit_on():
+            _kit_option_card(
+                self.screen, str(offer.get('title', 'Three Gifts')),
+                [{'key': str(i + 1),
+                  'name': f"{g['name']}   ({boons.describe(self.player, kind, g)})",
+                  'text': g.get('text', '')} for i, g in enumerate(gifts)],
+                "1-3: take one gift   //   The other two are lost for good",
+                border=FP.GOLD, overlay=0, min_w=780, note=quest_line or '',
+                note_color=FP.GOLD)
+            return
 
         # Wide enough for its widest line (see _draw_prayer_menu).
         need = max([font_name.size(f"{i + 1}.  {g['name']}   "
@@ -4162,10 +5530,18 @@ class RenderMixin:
         draw_overlay(self.screen, 200)
 
         choices = self._prayer_choices()
+        if kit_on():
+            _kit_option_card(
+                self.screen, "You Kneel. What Do You Ask?",
+                [{'key': str(i + 1), 'name': pr['name'], 'text': pr['asks']}
+                 for i, pr in enumerate(choices)],
+                f"1-{max(1, len(choices))}: pray   //   Esc: rise without praying",
+                border=FP.GOLD, overlay=0, min_w=700)
+            return
         font_title = get_font('heading', 24)
         font_name  = get_font('body', 20, bold=True)
         font_body  = get_font('body', 15)
-        font_hint  = get_font('body', 13)
+        font_hint  = get_font('body', 16)
 
         # Wide enough for its widest line: font widths do not grow exactly
         # with the UI scale (Consolas 23 px is a touch wider than 1.5 x 15 px).
@@ -4206,6 +5582,17 @@ class RenderMixin:
         heavy-lidded warning styling — this is the one big ask per run."""
         from fantasy_ui import get_font
         draw_overlay(self.screen, 200)
+        if kit_on():
+            _kit_option_card(
+                self.screen, "Divine Intercession",
+                [{'key': 'Y', 'name': 'Seek intercession from God',
+                  'text': 'One attempt per run. Success asks much. Failure smites all.'},
+                 {'key': 'N', 'name': 'Step back', 'text': 'Rise and keep your one chance.',
+                  'name_color': FP.HINT_TEXT}],
+                "Y / N: choose   Esc: step back",
+                lines=["Do you seek intercession from God?"],
+                border=FP.GOLD, overlay=0, min_w=620)
+            return
 
         bw, bh = S(620), S(260)
         bx = (layout.WINDOW_W - bw) // 2
@@ -4219,7 +5606,7 @@ class RenderMixin:
 
         font_title = get_font('heading', 24)
         font_body  = get_font('body', 18)
-        font_hint  = get_font('body', 13)
+        font_hint  = get_font('body', 16)
 
         title_surf = font_title.render("DIVINE INTERCESSION", True, FP.GOLD_BRIGHT)
         self.screen.blit(title_surf,
@@ -4308,9 +5695,11 @@ class RenderMixin:
             else:
                 type_label = item.item_class.replace('_', ' ').title()
                 detail_text = f"{type_label} | ID tier {tier}"
-            source = "GROUND" if is_g else "PACK"
+            # Only an item NOT in the pack is tagged (a "PACK" tag on every
+            # row was noise: VISUAL_REVIEW, menu_identify).
+            source = "On Ground" if is_g else ""
             if is_c:
-                source = "CORPSE"
+                source = "Corpse"
             entries.append({
                 'name': self._display_name(item),
                 'detail': detail_text,
@@ -4438,9 +5827,9 @@ class RenderMixin:
         entries = []
         for i, item in enumerate(tab_items):
             if isinstance(item, self._GoldDropEntry):
-                dname = f"Gold ({getattr(self, 'player_gold', 0)} coins)"
+                dname = f"Gold ({getattr(self, 'player_gold', 0):,} coins)"
                 name_col = FP.GOLD_BRIGHT
-                detail = "amount prompt"
+                detail = "Choose how much to drop"
                 details = self._menu_item_detail_lines(item, "Type how much gold to drop.")
             else:
                 dname = self._display_name(item)
@@ -4498,7 +5887,7 @@ class RenderMixin:
                 badge = 'FOOD'
                 badge_color = FP.SUCCESS_TEXT
             else:
-                detail_text = "raw ingredient - cook for better results"
+                detail_text = "Raw ingredient: cook it for better results"
                 badge = 'RAW'
                 badge_color = FP.WARNING_TEXT
             entries.append({
@@ -4581,7 +5970,7 @@ class RenderMixin:
                     dur = f" ({item.duration} turns)" if item.duration else ""
                     detail_text = f"{eff}{dur}"
                 else:
-                    detail_text = "Unidentified Potion - effect hidden"
+                    detail_text = "Effect hidden until identified"
                 badge = 'POTION'
                 badge_color = FP.ARCANE_BRIGHT
             else:
@@ -4635,7 +6024,7 @@ class RenderMixin:
             })
         selected = self._menu_clamp_selection('_power_sel', len(entries))
         self._draw_fast_picker(
-            title="ACTIVE POWERS [V]",
+            title="ACTIVE POWERS",
             entries=entries,
             selected=selected,
             subtitle="Only acquired powers are shown",
@@ -4663,7 +6052,7 @@ class RenderMixin:
         entries = []
         from items import Food, Ingredient, Potion
         for idx, pet in enumerate(items):
-            cmd = getattr(pet, 'command', 'return').upper()
+            cmd = str(getattr(pet, 'command', 'return')).title()
             xp_to = pet._xp_to_next() if hasattr(pet, '_xp_to_next') else 0
             specials_avail = pet.available_specials() if hasattr(pet, 'available_specials') else []
             ready = sum(1 for s in specials_avail if pet.special_cooldown(s['id']) == 0)
@@ -4676,23 +6065,22 @@ class RenderMixin:
                 and getattr(i, 'identified', False))
             details = [
                 (pet.name, FP.GOLD_BRIGHT, self.font_md),
-                (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}    XP {pet.xp}/{xp_to}",
-                 FP.BODY_TEXT, self.font_sm),
+                (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}", FP.BODY_TEXT, self.font_sm),
+                (f"XP {pet.xp}/{xp_to}", FP.BODY_TEXT, self.font_sm),
                 (f"Command: {cmd}", FP.CYAN_ACCENT, self.font_sm),
                 '',
                 ("Available actions", FP.GOLD_BRIGHT, self.font_sm),
-                (f"F - Feed ({food_count} food items in pack)", FP.BODY_TEXT, self.font_sm),
-                ("P - Pet (+5 XP; once per floor)", FP.BODY_TEXT, self.font_sm),
-                (f"H - Heal with potion ({potion_count} identified healing potions)",
-                 FP.BODY_TEXT, self.font_sm),
-                ("R - Recall to Soul Sphere (requires adjacent)", FP.BODY_TEXT, self.font_sm),
-                ("C - Cycle command: return, stay, wander", FP.BODY_TEXT, self.font_sm),
-                (f"S - Specials ({ready} ready / {len(specials_avail)} unlocked)",
-                 FP.BODY_TEXT, self.font_sm),
+                # Key badges like every other kit screen (they were "F - Feed").
+                ('__key__', 'F', f"Feed ({food_count} food items in pack)"),
+                ('__key__', 'P', "Pet (+5 XP, once per floor)"),
+                ('__key__', 'H', f"Heal with a potion ({potion_count} identified healing potions)"),
+                ('__key__', 'R', "Recall to the Soul Sphere (when adjacent)"),
+                ('__key__', 'C', "Cycle command: return, stay, wander"),
+                ('__key__', 'S', f"Specials ({ready} ready of {len(specials_avail)} unlocked)"),
             ]
             entries.append({
                 'name': pet.name,
-                'detail': f"HP {pet.hp}/{pet.max_hp} | L{pet.level} | {cmd}",
+                'detail': f"HP {pet.hp}/{pet.max_hp} | Level {pet.level} | {cmd}",
                 'key': self._menu_letter(idx),
                 'badge': f"{ready}/{len(specials_avail)}",
                 'badge_color': FP.SUCCESS_TEXT if ready else FP.FADED_TEXT,
@@ -4762,9 +6150,16 @@ class RenderMixin:
             iname = self._display_name(it) if hasattr(self, '_display_name') else it.name
             if attr == 'sp_restore':
                 sp = getattr(it, 'sp_restore', 0)
-                detail = f"SP {sp}" if sp else "ingredient"
-                badge = 'FOOD'
-                badge_color = FP.SUCCESS_TEXT
+                # The same tags as the Eat menu: a meal is FOOD, an uncooked
+                # ingredient is RAW (it said FOOD here and RAW there).
+                if isinstance(it, Food) or sp:
+                    detail = f"+{sp} SP"
+                    badge = 'FOOD'
+                    badge_color = FP.SUCCESS_TEXT
+                else:
+                    detail = "Raw ingredient"
+                    badge = 'RAW'
+                    badge_color = FP.WARNING_TEXT
             elif attr == 'effect':
                 detail = getattr(it, 'effect', '').replace('_', ' ').title()
                 badge = 'HEAL'
@@ -4819,10 +6214,11 @@ class RenderMixin:
              "Abandon ends this run for good: its save is deleted."],
             options=[
                 {'key': 'Y', 'label': 'Save & Exit', 'color': FP.GOLD_BRIGHT},
-                {'key': 'N', 'label': 'Abandon This Run (Deletes The Save)', 'color': FP.WARNING_TEXT},
+                {'key': 'N', 'label': 'Abandon This Run (Deletes The Save)',
+                 'color': FP.DANGER_TEXT_LIGHT, 'danger': True},
                 {'key': 'C / Esc', 'label': 'Keep playing', 'color': FP.HINT_TEXT},
             ],
-            footer="Enter also saves",
+            footer="Enter: save & exit",
             border_color=FP.GOLD,
             max_w=660,
             max_h=360,
@@ -4836,9 +6232,10 @@ class RenderMixin:
                 {'key': 'Y', 'label': 'Complete quest', 'color': FP.GOLD_BRIGHT},
                 {'key': 'N / Esc', 'label': 'Keep playing', 'color': FP.HINT_TEXT},
             ],
+            footer="Y / N: choose",
             border_color=FP.GOLD,
             max_w=660,
-            max_h=310,
+            max_h=330,
         )
 
     def _draw_abandon_quest(self):
@@ -4846,27 +6243,29 @@ class RenderMixin:
             "ABANDON YOUR QUEST?",
             ["You have not found the Philosopher's Stone."],
             options=[
-                {'key': 'Y', 'label': 'Abandon quest', 'color': FP.WARNING_TEXT},
+                {'key': 'Y', 'label': 'Abandon quest', 'color': FP.DANGER_TEXT_LIGHT,
+                 'danger': True},
                 {'key': 'N / Esc', 'label': 'Keep playing', 'color': FP.HINT_TEXT},
             ],
+            footer="Y / N: choose",
             border_color=FP.WARNING_TEXT,
-            title_color=FP.WARNING_TEXT,
             max_w=660,
-            max_h=310,
+            max_h=330,
         )
 
     def _draw_chicken(self):
         self._ui_message_card(
-            "WHAT'S WRONG, MCFLY? CHICKEN?",
+            "What's Wrong, McFly? Chicken?",
             ["Leaving without the Stone ends the quest."],
             options=[
-                {'key': '1', 'label': 'Yes, I am a coward.', 'color': FP.WARNING_TEXT},
+                {'key': '1', 'label': 'Yes, I am a coward.', 'color': FP.DANGER_TEXT_LIGHT,
+                 'danger': True},
                 {'key': '2', 'label': 'Nobody calls me chicken!', 'color': FP.GOLD_BRIGHT},
             ],
+            footer="1 / 2: choose",
             border_color=FP.AMBER_ACCENT,
-            title_color=FP.GOLD_BRIGHT,
             max_w=700,
-            max_h=340,
+            max_h=360,
         )
 
     def _draw_story_popup(self):
@@ -4892,7 +6291,7 @@ class RenderMixin:
                         buf = ''
                     paragraphs.append(('', True, False))
                 else:
-                    buf = (buf + ' ' + line).strip() if buf else line
+                    buf = (buf + ' ' + display_text(line)).strip() if buf else display_text(line)
             if buf:
                 paragraphs.append((buf, False, buf.startswith('"')))
 
@@ -4905,30 +6304,45 @@ class RenderMixin:
                     out.append((wl, False, is_quoted))
             return out
 
-        font_body = get_font('body', 17)
-        max_txt = bw - 2 * S(36)
-        wrapped_lines = build_lines(font_body, max_txt)
-        row = font_body.get_height() + S(4)
+        kit = kit_on()
         code_h = S(46) if code else 0
-        needed_h = S(122) + len(wrapped_lines) * row + code_h
         max_h = layout.WINDOW_H - S(48)
+        if kit:
+            # Exactly what the panel holds: band, plaque, text, reward code,
+            # divider + key footer (a fixed allowance left a third empty).
+            chrome = (2 * S(16) + S(self._HEADER_H) + S(12) + S(4)
+                      + S(8) + key_hints_height() + S(32) + S(14))
+        else:
+            chrome = S(122)
+        max_txt = bw - 2 * S(36) - (2 * S(16) if kit else 0)
+
+        def measure(size):
+            f = get_font('body', size)
+            lines = build_lines(f, max_txt)
+            r = f.get_height() + S(4)
+            h = sum(r // 2 if blank else r for _t, blank, _q in lines)
+            return f, lines, r, chrome + h + code_h
+
+        font_body, wrapped_lines, row, needed_h = measure(19)
         if needed_h > max_h:
-            font_body = get_font('body', 15)
-            wrapped_lines = build_lines(font_body, max_txt)
-            row = font_body.get_height() + S(3)
-            needed_h = S(122) + len(wrapped_lines) * row + code_h
+            font_body, wrapped_lines, row, needed_h = measure(16)
 
         bh = min(max_h, max(S(250), needed_h))
         by = (layout.WINDOW_H - bh) // 2
         panel = pygame.Rect(bx, by, bw, bh)
         draw_dark_panel(self.screen, panel, border_color=accent)
-        draw_header_bar(self.screen, (bx, by, bw, S(48)), text=d['title'],
-                        font=self.font_lg, text_color=accent, accent=accent,
-                        frame=(panel, accent))
-        draw_divider(self.screen, bx + S(18), by + S(58), bw - 2 * S(18))
-
-        y = by + S(74)
-        body_bottom = by + bh - S(48) - code_h
+        body_top = self._ui_header(panel, d['title'], border_color=accent,
+                                   title_color=accent)
+        b = panel_band('panel', panel)
+        if b:
+            _div, keys, foot_bottom = self._ui_footer_metrics(panel)
+            y = body_top + S(4)
+            body_bottom = foot_bottom - code_h
+            tx = bx + b + S(32)
+        else:
+            y = by + S(74)
+            body_bottom = by + bh - S(48) - code_h
+            tx = bx + S(36)
         for text, is_blank, is_quoted in wrapped_lines:
             if is_blank:
                 y += row // 2
@@ -4936,18 +6350,20 @@ class RenderMixin:
             if y + font_body.get_height() > body_bottom:
                 break
             col = (200, 195, 160) if is_quoted else FP.PARCHMENT_LIGHT
-            self._ui_blit_text(text, font_body, col, bx + S(36), y)
+            self._ui_blit_text(text, font_body, col, tx, y)
             y += row
 
         if code:
-            code_y = by + bh - S(84)
-            code_rect = pygame.Rect(bx + S(34), code_y, bw - 2 * S(34), S(40))
-            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, code_rect,
-                             border_radius=6)
-            pygame.draw.rect(self.screen, accent, code_rect, 1,
-                             border_radius=6)
+            code_y = (body_bottom + S(4)) if b else by + bh - S(84)
+            code_rect = pygame.Rect(bx + S(34) + b, code_y, bw - 2 * (S(34) + b), S(40))
+            if not (b and ui_theme.draw_piece(self.screen, 'card', code_rect,
+                                              body_color=KT.RAISED)):
+                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, code_rect,
+                                 border_radius=6)
+                pygame.draw.rect(self.screen, accent, code_rect, 1,
+                                 border_radius=6)
             label = "Reward Code: "
-            font_label = get_font('small', 15, bold=True)
+            font_label = get_font('small', 16, bold=True)
             font_code = get_font('heading', 22)
             total_w = font_label.size(label)[0] + font_code.size(code)[0]
             lx = code_rect.centerx - total_w // 2
@@ -4957,9 +6373,13 @@ class RenderMixin:
                                lx + font_label.size(label)[0],
                                code_rect.y + S(6))
 
-        self._ui_blit_text("Press any key to continue", get_font('small', 14),
-                           FP.HINT_TEXT, bx + bw // 2, by + bh - S(30),
-                           align='center')
+        if b:
+            draw_divider(self.screen, bx + b + S(28), _div, bw - 2 * (b + S(28)))
+            draw_key_hints(self.screen, keys, "Any key: continue")
+        else:
+            self._ui_blit_text("Press any key to continue", get_font('small', 16),
+                               FP.HINT_TEXT, bx + bw // 2, by + bh - S(30),
+                               align='center')
 
     def _fit_ui_font(self, role: str, start_size: int, text: str, max_w: int,
                      bold: bool = False, min_size: int = 18):
@@ -4976,21 +6396,71 @@ class RenderMixin:
                               fil_strong: tuple, fil_subtle: tuple,
                               sub_glow: tuple | None = None,
                               title_glow: tuple | None = None) -> int:
-        """Draw ceremonial end-screen title/subtitle and return next y."""
-        bar_w = min(S(760), layout.WINDOW_W - S(120))
-        bar_x = cx - bar_w // 2
-        title_font = self._fit_ui_font('title', 42, title_text, bar_w,
-                                       bold=True, min_size=30)
-        sub_font = self._fit_ui_font('heading', 26, sub_text, bar_w - S(32),
+        """Lay out the ending's title and subtitle and return the next y.
+
+        With the art kit the title is the HEADER of the ending's one framed
+        panel: this only measures it and hands the spec to
+        ``_draw_end_summary``, which draws the frame from the title's top
+        and paints the kit's header plaque (scroll-roll ends, gold rim)
+        inset in the frame band with the title on it (VISUAL_REVIEW_2 minor
+        1: a plain rectangle bolted on top of the frame). Without art the
+        title sits on its own flat plaque, as before.
+
+        DESIGN_RULES 1.1 (text sits on flat colour): the rune circles and
+        candle glow are drawn BEFORE this, so the plaque covers them and no
+        ray or arc crosses a letter (VISUAL_REVIEW must-fix 2). The filigree
+        rule sits in the gap between the lines, never through them."""
+        plaque_w = min(S(780), layout.WINDOW_W - S(120))
+        kit = kit_on('header') and panel_band('panel', pygame.Rect(0, 0, plaque_w, S(400)))
+        b = panel_band('panel', pygame.Rect(0, 0, plaque_w, S(400))) if kit else 0
+        # Between the plaque's scroll-roll ends (kit) or its hairlines.
+        inner_w = plaque_w - (2 * b + 2 * S(40) if kit else S(48))
+        title_font = self._fit_ui_font('title', 42, title_text, inner_w,
+                                       bold=True, min_size=28)
+        sub_font = self._fit_ui_font('heading', 26, sub_text, inner_w,
                                      min_size=20)
 
         title_w, title_h = title_font.size(title_text)
         sub_w, sub_h = sub_font.size(sub_text)
-        title_y = max(S(24), cy - S(285))
-        upper_bar_y = title_y + title_h + S(8)
-        sub_y = upper_bar_y + S(10)
-        lower_bar_y = sub_y + sub_h + S(10)
+        pad = S(12)
+        top = max(S(16), cy - S(295))
+        if kit:
+            # The panel's top edge is ``top``; the plaque sits inside the band.
+            # Its painted rim is the bottom 12 px (scale 1): the text keeps
+            # clear of it.
+            title_y = top + b + S(10)
+        else:
+            title_y = top + pad
+        mid_bar_y = title_y + title_h + S(6)
+        sub_y = mid_bar_y + S(8)
+        if kit:
+            plaque_h = sub_y + sub_h + S(10) + S(12) - (top + b)
+            self._end_title_spec = dict(
+                top=top, plaque_h=plaque_h, title=(title_text, title_font, title_col,
+                                                   title_glow, title_y),
+                sub=(sub_text, sub_font, sub_col, sub_glow, sub_y),
+                bar=(mid_bar_y, fil_strong, max(title_w, sub_w)), cx=cx)
+            return top + b + plaque_h + S(12)
+        self._end_title_spec = None
+        plaque_bottom = sub_y + sub_h + pad
+        plaque = pygame.Rect(cx - plaque_w // 2, top, plaque_w, plaque_bottom - top)
+        # A flat field with a gold hairline frame: drawn as an outlined box
+        # so the layout gates see the text as sitting in a panel.
+        self.screen.fill(KT.PLAQUE, plaque)
+        pygame.draw.rect(self.screen, KT.GOLD_DARK, plaque, 1)
+        pygame.draw.rect(self.screen, fil_strong, plaque.inflate(-S(6), -S(6)), 1)
+        self._draw_end_title_text(cx, plaque_w, (title_text, title_font, title_col,
+                                                 title_glow, title_y),
+                                  (sub_text, sub_font, sub_col, sub_glow, sub_y),
+                                  (mid_bar_y, fil_strong, max(title_w, sub_w)))
+        return plaque.bottom + S(4)
 
+    def _draw_end_title_text(self, cx, plaque_w, title, sub, bar):
+        title_text, title_font, title_col, title_glow, title_y = title
+        sub_text, sub_font, sub_col, sub_glow, sub_y = sub
+        mid_bar_y, fil_strong, text_w = bar
+        title_w = title_font.size(title_text)[0]
+        sub_w = sub_font.size(sub_text)[0]
         title_pos = (cx - title_w // 2, title_y)
         if title_glow:
             draw_glow_text(self.screen, title_font, title_text, title_col,
@@ -4998,7 +6468,8 @@ class RenderMixin:
         else:
             draw_shadow_text(self.screen, title_font, title_text, title_col,
                              title_pos)
-        draw_filigree_bar(self.screen, bar_x, upper_bar_y, bar_w, fil_strong)
+        bar_w = min(plaque_w - S(80), text_w + S(40))
+        draw_filigree_bar(self.screen, cx - bar_w // 2, mid_bar_y + S(1), bar_w, fil_strong)
         if sub_glow:
             draw_glow_text(self.screen, sub_font, sub_text, sub_col,
                            (cx - sub_w // 2, sub_y), glow_color=sub_glow,
@@ -5006,8 +6477,6 @@ class RenderMixin:
         else:
             draw_shadow_text(self.screen, sub_font, sub_text, sub_col,
                              (cx - sub_w // 2, sub_y), offset=2)
-        draw_filigree_bar(self.screen, bar_x, lower_bar_y, bar_w, fil_subtle)
-        return lower_bar_y + S(18)
 
     def _draw_end_summary(self, cx: int, start_y: int, grade: str,
                           grade_col: tuple, score: int, stats: list,
@@ -5027,14 +6496,38 @@ class RenderMixin:
 
         y = start_y
         panel_w = min(S(780), layout.WINDOW_W - S(120))
-        panel_y = max(S(70), start_y - S(14))
-        target_panel_h = S(500) if not small_layout else S(470)
+        panel_y = max(S(70), start_y - (S(4) if kit_on() else S(14)))
+        target_panel_h = S(560) if not small_layout else S(470)
         panel_h = max(S(360), min(target_panel_h, layout.WINDOW_H - panel_y - S(30)))
-        draw_dark_panel(
-            self.screen,
-            (cx - panel_w // 2, panel_y, panel_w, panel_h),
-            border_color=accent,
-        )
+        spec = getattr(self, '_end_title_spec', None)
+        if spec:
+            # One frame from the title's top: the title is this panel's header.
+            bottom = panel_y + panel_h
+            panel_y = spec['top']
+            panel_h = bottom - panel_y
+        panel = pygame.Rect(cx - panel_w // 2, panel_y, panel_w, panel_h)
+        draw_dark_panel(self.screen, panel, border_color=accent)
+        # With the kit, everything sits inside the frame band and the keys
+        # are badges in a footer (Esc / R), like every other modal.
+        b = panel_band('panel', panel)
+        keys = None
+        if spec and b:
+            plaque = pygame.Rect(panel.x + b, panel.y + b, panel.w - 2 * b, spec['plaque_h'])
+            if not ui_theme.draw_piece(self.screen, 'header', plaque, accent=accent):
+                self.screen.fill(KT.PLAQUE, plaque)
+            self._draw_end_title_text(spec['cx'], panel_w, spec['title'], spec['sub'],
+                                      spec['bar'])
+            start_y = plaque.bottom + S(12)
+        if b:
+            y = (start_y if spec else panel.y + b + S(12))
+            content_w = min(content_w, panel_w - 2 * (b + S(28)))
+            _div, keys, foot_bottom = self._ui_footer_metrics(panel)
+            draw_divider(self.screen, panel.x + b + S(28), _div, panel_w - 2 * (b + S(28)))
+            pairs = []
+            if review_text:
+                pairs.append(("R", "Review the missed questions"))
+            pairs.append(("Esc", "Close"))
+            draw_key_hints(self.screen, keys, pairs)
 
         grade_s = grade_font.render(grade, True, grade_col)
         score_text = f"Final Score:  {score:,}"
@@ -5062,8 +6555,14 @@ class RenderMixin:
             y += row_gap
 
         y += S(4)
-        draw_filigree_bar(self.screen, cx - content_w // 2, y, content_w, accent)
-        y += S(12)
+        if b:
+            # Clear of the ornament's full reach on both sides.
+            y += divider_reach()
+            draw_divider(self.screen, cx - content_w // 2, y, content_w)
+            y += divider_reach() + S(4)
+        else:
+            draw_filigree_bar(self.screen, cx - content_w // 2, y, content_w, accent)
+            y += S(12)
 
         if breakdown:
             for line in self._wrap_text(breakdown, small_font, content_w):
@@ -5075,6 +6574,10 @@ class RenderMixin:
         top = get_top(5)
         prompt_s = row_font.render("Press ESC to close", True, FP.HINT_TEXT)
         bottom_limit = panel_y + panel_h - S(20)
+        if keys is not None:
+            prompt_s = pygame.Surface((0, 0))
+            bottom_limit = foot_bottom
+            review_text = None
         hs_title_h = small_font.get_height() + S(2)
         hs_row_h = small_font.get_height() + S(1)
         available = bottom_limit - y - prompt_s.get_height() - S(10)
@@ -5082,18 +6585,28 @@ class RenderMixin:
         show_n = min(len(top), 5, rows_fit)
 
         if show_n > 0:
-            hs_title = small_font.render("-- HIGH SCORES --",
-                                         True, high_score_col or accent)
+            hs_title = small_font.render("High Scores", True,
+                                         readable(high_score_col or accent, KT.INTERIOR))
             self.screen.blit(hs_title, (cx - hs_title.get_width() // 2, y))
             y += hs_title_h
-            for i, e in enumerate(top[:show_n]):
-                marker = ">" if e['score'] == score else " "
-                hs_line = (f"{marker}{i+1}. {e.get('name','?'):<10}  "
-                           f"{e['score']:>8,}  {e.get('grade','?'):>2}  "
-                           f"L{e.get('level',0)}")
-                col = (high_score_col or FP.GOLD_BRIGHT) if e['score'] == score else FP.FADED_TEXT
-                hs_s = small_font.render(hs_line, True, col)
-                self.screen.blit(hs_s, (cx - hs_s.get_width() // 2, y))
+            # A real table: rank, name, score, grade and level each in its
+            # own column, so the rows line up (they were centred one by one).
+            rows = [(f"{i + 1}.", str(e.get('name', '?')), f"{e['score']:,}",
+                     str(e.get('grade', '?')), f"Floor {e.get('level', 0)}",
+                     e['score'] == score) for i, e in enumerate(top[:show_n])]
+            cols = [max(small_font.size(r[k])[0] for r in rows) for k in range(5)]
+            cgap = S(18)
+            tw = sum(cols) + cgap * 4
+            x0 = cx - tw // 2
+            for r in rows:
+                col = (high_score_col or FP.GOLD_BRIGHT) if r[5] else FP.FADED_TEXT
+                x = x0
+                for k in range(5):
+                    cs = small_font.render(r[k], True, col)
+                    # numbers right-aligned, words left-aligned
+                    dx = cols[k] - cs.get_width() if k in (0, 2) else 0
+                    self.screen.blit(cs, (x + dx, y))
+                    x += cols[k] + cgap
                 y += hs_row_h
             y += S(4)
 
@@ -5102,8 +6615,9 @@ class RenderMixin:
             self.screen.blit(review_s, (cx - review_s.get_width() // 2, y))
             y += row_font.get_height() + S(4)
 
-        prompt_y = min(y + S(2), bottom_limit - prompt_s.get_height())
-        self.screen.blit(prompt_s, (cx - prompt_s.get_width() // 2, prompt_y))
+        if keys is None:
+            prompt_y = min(y + S(2), bottom_limit - prompt_s.get_height())
+            self.screen.blit(prompt_s, (cx - prompt_s.get_width() // 2, prompt_y))
 
     def _draw_victory_screen(self):
         """Victory screen — branches on `_secret_victory` to render the
@@ -5168,7 +6682,7 @@ class RenderMixin:
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
         ]
         breakdown = (f"({self.turn_count}x10)  +  ({self.level_mgr.max_level_reached}x1000)  +"
-                     f"  ({self.level_mgr.monsters_killed}x100)  +  50 000 stone bonus")
+                     f"  ({self.level_mgr.monsters_killed}x100)  +  50,000 stone bonus")
 
         # High score: save once, then display top 5
         from highscore_system import add_score
@@ -5213,14 +6727,14 @@ class RenderMixin:
         else:
             title_text = "YOU HAVE DIED"
             sub_text   = f"Slain on dungeon level {self.dungeon_level}."
-            tc = FP.DANGER_TEXT
+            tc = FP.DEATH_SUB
 
         grade, grade_col = self._get_grade(score)
 
         start_y = self._draw_end_title_block(
-            cx, cy, title_text, sub_text, FP.BLOOD, tc,
+            cx, cy, title_text, sub_text, FP.DEATH_TITLE, tc,
             FP.BURGUNDY_MID, FP.BURGUNDY_MID,
-            title_glow=FP.BURGUNDY)
+            title_glow=FP.DEATH_GLOW)
 
         total_q  = self.correct_answers + self.wrong_answers
         acc_pct  = int(100 * self.correct_answers / total_q) if total_q else 0
@@ -5291,9 +6805,52 @@ class RenderMixin:
                 drawn += 1
         return y
 
+    # -- Panel chrome shared by every modal (Midnight Codex kit) -----------
+    # With the art kit loaded a panel has a painted frame BAND (16 px at UI
+    # scale 1, ``ui_theme.band``): the header plaque is inset inside it and
+    # every piece of content stays inside it. Without art the band is 0 and
+    # every helper below lays out exactly as it did before the kit.
+
+    _HEADER_H = 48          # modal header height, UI px
+
+    def _ui_header(self, panel, title, *, border_color=FP.GOLD, title_color=None,
+                   h=None, font=None, kind='panel', right_reserve=0,
+                   left_reserve=0):
+        """Header of ``panel`` and, without art, the divider under it.
+        Returns the y where the panel's body may start."""
+        panel = pygame.Rect(panel)
+        h = S(self._HEADER_H if h is None else h)
+        if kit_on('header'):
+            title_color = None          # the kit's titles are all gold
+        hr = draw_header_bar(self.screen, (panel.x, panel.y, panel.w, h), text=display_text(title),
+                             font=font or self.font_lg,
+                             text_color=title_color or FP.GOLD_BRIGHT,
+                             accent=border_color, right_reserve=right_reserve,
+                             left_reserve=left_reserve,
+                             frame=(panel, border_color, kind))
+        if panel_band(kind, panel) and ui_theme.has('header'):
+            return hr.bottom + S(12)
+        draw_divider(self.screen, panel.x + S(18), panel.y + h + S(10),
+                     panel.w - 2 * S(18))
+        return panel.y + h + S(22)
+
+    def _ui_footer_metrics(self, panel, kind='panel'):
+        """(divider_y, key_row_rect, body_bottom) of a panel's footer."""
+        panel = pygame.Rect(panel)
+        b = panel_band(kind, panel)
+        if b:
+            kh = key_hints_height()
+            keys = pygame.Rect(panel.x + b + S(20), panel.bottom - b - S(8) - kh,
+                               panel.w - 2 * (b + S(20)), kh)
+            div_y = keys.y - S(16)
+            return div_y, keys, div_y - S(16)
+        y = panel.bottom - S(36)
+        return y - S(5), pygame.Rect(panel.x + S(22), y + S(4), panel.w - S(44),
+                                     get_font('small', 14).get_height()), panel.bottom - S(52)
+
     def _ui_modal_panel(self, title, *, border_color=FP.GOLD, max_w=1440,
-                        max_h=760, center_window=False):
-        """Overlay + framed panel + header + divider; returns the panel rect.
+                        max_h=760, center_window=False, fit_h=None):
+        """Overlay + framed panel + header (+ divider); returns the panel rect.
 
         ``max_w`` / ``max_h`` are caps at UI scale 1 (they grow with it).
         The panel is centred on the WINDOW (SCALE_PLAN.md 3). Its width
@@ -5303,21 +6860,26 @@ class RenderMixin:
         budget_w = layout.WINDOW_W if center_window else layout.GAME_W
         bw = min(S(max_w), budget_w - S(48))
         bh = min(S(max_h), layout.WINDOW_H - S(48))
+        if fit_h is not None:
+            # As tall as the content needs (``fit_h`` screen px), within the cap.
+            bh = min(bh, max(S(240), int(fit_h)))
         bx = _centre_x(bw)
         by = _centre_y(bh)
         rect = pygame.Rect(bx, by, bw, bh)
         draw_dark_panel(self.screen, rect, border_color=border_color)
-        draw_header_bar(self.screen, (bx, by, bw, S(48)), text=title,
-                        font=self.font_lg, text_color=FP.GOLD_BRIGHT,
-                        accent=border_color, frame=(rect, border_color))
-        draw_divider(self.screen, bx + S(18), by + S(58), bw - S(36))
+        self._ui_header(rect, title, border_color=border_color)
         return rect
 
     @staticmethod
     def _ui_modal_body(panel, side=18, top=70, bottom=52):
         """The body area of a ``_ui_modal_panel``: inset ``side`` each side,
         ``top`` below the panel's top edge (under the header and divider),
-        ``bottom`` above its bottom edge (over the footer). UI-scale-1 px."""
+        ``bottom`` above its bottom edge (over the footer). UI-scale-1 px.
+        With the art kit the body also clears the frame band, the inset
+        plaque and the key-hint footer."""
+        panel = pygame.Rect(panel)
+        if panel_band('panel', panel):
+            side, top, bottom = side + 12, top + 6, bottom + 28
         return pygame.Rect(panel.x + S(side), panel.y + S(top),
                            panel.w - 2 * S(side), panel.h - S(top) - S(bottom))
 
@@ -5326,20 +6888,34 @@ class RenderMixin:
         # procedural rounded box + label strip otherwise.
         head = pygame.Rect(rect.x + 1, rect.y + 1, rect.w - 2, S(29))
         if ui_theme.draw_piece(self.screen, 'subpanel', rect,
-                               accent=border_color, body_color=FP.MIDNIGHT):
+                               accent=border_color, body_color=KT.RAISED):
             ui_theme.draw_piece(self.screen, 'subpanel_header', head,
                                 accent=border_color)
+            f = get_font('heading', 17, bold=True)
+            from fantasy_ui import fit_text
+            text = fit_text(display_title(label.upper()), f, head.w - S(40))
+            ts = f.render(text, True, KT.TEXT_HEAD)
+            self.screen.blit(ts, (head.centerx - ts.get_width() // 2,
+                                  head.y + (head.h - S(2) - ts.get_height()) // 2))
         else:
             pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=6)
             pygame.draw.rect(self.screen, border_color, rect, 1, border_radius=6)
             pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, head, border_radius=6)
-        f = get_font('small', 14, bold=True)
-        self._ui_blit_text(label.upper(), f, FP.GOLD_BRIGHT,
-                           rect.centerx, rect.y + S(7), align='center')
+            f = get_font('small', 14, bold=True)
+            self._ui_blit_text(label.upper(), f, FP.GOLD_BRIGHT,
+                               rect.centerx, rect.y + S(7), align='center')
         return pygame.Rect(rect.x + S(12), rect.y + S(42), rect.w - 2 * S(12),
                            rect.h - S(54))
 
     def _ui_footer(self, panel_rect, hint):
+        panel_rect = pygame.Rect(panel_rect)
+        if panel_band('panel', panel_rect):
+            div_y, keys, _bottom = self._ui_footer_metrics(panel_rect)
+            b = panel_band('panel', panel_rect)
+            draw_divider(self.screen, panel_rect.x + b + S(28), div_y,
+                         panel_rect.w - 2 * (b + S(28)))
+            draw_key_hints(self.screen, keys, hint)
+            return
         y = panel_rect.bottom - S(36)
         draw_divider(self.screen, panel_rect.x + S(18), y - S(5),
                      panel_rect.w - 2 * S(18))
@@ -5349,27 +6925,62 @@ class RenderMixin:
                            max_width=panel_rect.w - S(44))
 
     def _ui_chip(self, rect, label, *, active=False, color=FP.GOLD):
-        if not ui_theme.draw_piece(self.screen, 'chip_active' if active else 'chip',
-                                   rect, accent=color if active else None):
-            pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if active else FP.MIDNIGHT,
-                             rect, border_radius=5)
-            pygame.draw.rect(self.screen, color if active else FP.GOLD_DARK,
-                             rect, 1, border_radius=5)
-        f = get_font('small', 14, bold=True)
+        if ui_theme.draw_piece(self.screen, 'chip_active' if active else 'chip',
+                               rect, accent=color if active else None):
+            f = get_font('body', 16, bold=active)
+            col = KT.TEXT_BODY if active else KT.TEXT_DIM
+            from fantasy_ui import fit_text
+            ts = f.render(fit_text(str(label), f, rect.w - S(10)), True, col)
+            self.screen.blit(ts, (rect.centerx - ts.get_width() // 2,
+                                  rect.centery - ts.get_height() // 2))
+            return
+        pygame.draw.rect(self.screen, FP.MIDNIGHT_MID if active else FP.MIDNIGHT,
+                         rect, border_radius=5)
+        pygame.draw.rect(self.screen, color if active else FP.GOLD_DARK,
+                         rect, 1, border_radius=5)
+        f = get_font('small', 14, bold=True)     # the no-art look, unchanged
         self._ui_blit_text(label, f, FP.GOLD_BRIGHT if active else FP.FADED_TEXT,
                            rect.centerx, rect.y + S(6), align='center',
                            max_width=rect.w - S(10))
+
+    def _ui_row(self, rect, selected=False, *, fill=None, border=None,
+                radius=6) -> bool:
+        """A list row: the kit's ``row`` / ``row_selected`` art, or the
+        caller's procedural fill + 1 px border. True when art was drawn."""
+        if ui_theme.draw_piece(self.screen, 'row_selected' if selected else 'row',
+                               rect, body_color=KT.RAISED):
+            return True
+        if fill is not None:
+            pygame.draw.rect(self.screen, fill, rect, border_radius=radius)
+        if border is not None:
+            pygame.draw.rect(self.screen, border, rect, 1, border_radius=radius)
+        return False
+
+    def _ui_row_text(self, color, selected=False):
+        """A text colour readable on a (selected) row of the kit."""
+        if not kit_on('row'):
+            return color
+        return readable(color, KT.SELECTED if selected else KT.RAISED)
+
+    def _ui_well(self, rect):
+        """The dark well item and creature art sits on (DESIGN_RULES 5.1)."""
+        if kit_on():
+            rect = pygame.Rect(rect)
+            pygame.draw.rect(self.screen, KT.WELL, rect)
+            pygame.draw.rect(self.screen, KT.GOLD_DARK, rect, 1)
 
     def _ui_progress_bar(self, rect, pct, *, color=FP.ARCANE_BRIGHT,
                          label=''):
         if not ui_theme.draw_piece(self.screen, 'bar_track', rect,
                                    body_color=FP.MIDNIGHT):
             pygame.draw.rect(self.screen, FP.MIDNIGHT, rect, border_radius=4)
-        fill_w = int(rect.w * max(0.0, min(1.0, float(pct))))
+        art = ui_theme.has('bar_track') and ui_theme.fits('bar_track', rect.w, rect.h)
+        inner = rect.inflate(-S(4), -S(4)) if art else rect
+        fill_w = int(inner.w * max(0.0, min(1.0, float(pct))))
         if fill_w:
             pygame.draw.rect(self.screen, color,
-                             (rect.x, rect.y, fill_w, rect.h),
-                             border_radius=4)
+                             (inner.x, inner.y, fill_w, inner.h),
+                             border_radius=0 if art else 4)
         if not ui_theme.draw_piece(self.screen, 'bar_frame', rect, body=False):
             pygame.draw.rect(self.screen, FP.ARCANE_DIM, rect, 1, border_radius=4)
         if label:
@@ -5401,15 +7012,36 @@ class RenderMixin:
         return lines
 
     def _ui_action_row(self, rect, key, label, *, color=FP.BODY_TEXT,
-                       selected=False):
-        if not ui_theme.draw_piece(self.screen, 'row_selected' if selected else 'row',
-                                   rect, body_color=FP.MIDNIGHT):
-            fill = FP.MIDNIGHT_MID if selected else FP.MIDNIGHT
-            pygame.draw.rect(self.screen, fill, rect, border_radius=6)
-            pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
-                             rect, 1, border_radius=6)
-
+                       selected=False, danger=False):
         key = str(key)
+        if ui_theme.draw_piece(self.screen, 'row_selected' if selected else 'row',
+                               rect, body_color=KT.RAISED):
+            if danger:
+                # A destructive choice (it deletes something) is told apart
+                # by its edge, not only by colour: a 2 px red frame.
+                pygame.draw.rect(self.screen, (226, 92, 84), rect, 2)
+            key_font = get_font('body', 16, bold=True)
+            label_font = get_font('body', 16, bold=True)
+            key_w = max(S(40), min(rect.w // 3, key_font.size(key)[0] + S(18)))
+            kh = min(rect.h - 2 * S(8), S(32))
+            key_rect = pygame.Rect(rect.x + S(9), rect.centery - kh // 2, key_w, kh)
+            draw_key_badge(self.screen, key_rect, key, key_font)
+            text_rect = pygame.Rect(key_rect.right + S(12), rect.y + S(6),
+                                    rect.right - key_rect.right - S(22),
+                                    rect.h - 2 * S(6))
+            lines = self._wrap_text(label, label_font, text_rect.w)[:2] or ['']
+            lh = label_font.get_height() + S(2)
+            ty = text_rect.y + max(0, (text_rect.h - lh * len(lines)) // 2)
+            col = readable(color, KT.SELECTED if selected else KT.RAISED)
+            for line in lines:
+                self._ui_blit_text(line, label_font, col, text_rect.x, ty)
+                ty += lh
+            return
+        fill = FP.MIDNIGHT_MID if selected else FP.MIDNIGHT
+        pygame.draw.rect(self.screen, fill, rect, border_radius=6)
+        pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
+                         rect, 1, border_radius=6)
+
         key_font = get_font('small', 14, bold=True)
         label_font = get_font('small', 15, bold=True)
         key_w = max(S(42), min(rect.w // 3, key_font.size(key)[0] + S(20)))
@@ -5431,12 +7063,17 @@ class RenderMixin:
                          footer='', border_color=FP.GOLD,
                          title_color=None, body_color=FP.BODY_TEXT,
                          max_w=720, max_h=520):
-        """Shared wrapped modal for confirmations and small result cards."""
+        """Shared wrapped modal for confirmations and small result cards.
+
+        Self-measuring: the panel is as tall as its body + option rows +
+        footer (with the kit, plus the frame band and the inset plaque)."""
         draw_overlay(self.screen, 190)
-        bw = min(S(max_w), layout.GAME_W - S(48))
-        body_font = get_font('body', 17)
-        small_font = get_font('small', 14)
-        text_w = bw - 2 * S(36)
+        bw = min(S(max_w), layout.WINDOW_W - S(48))
+        body_font = get_font('body', 18)
+        small_font = get_font('small', 16)
+        kit = kit_on()
+        band = S(16) if kit else 0          # measured below once the rect exists
+        text_w = bw - 2 * S(36) - 2 * band
 
         wrapped = []
         for entry in body_lines:
@@ -5447,53 +7084,71 @@ class RenderMixin:
                 text, col = entry[0], entry[1]
             else:
                 text, col = entry, body_color
-            for line in self._wrap_text(str(text), body_font, text_w) or ['']:
+            for line in self._wrap_text(display_text(str(text)), body_font, text_w) or ['']:
                 wrapped.append((line, col))
 
         opts = options or []
         option_h = S(48)
         text_h = sum(S(10) if line == '' else body_font.get_height() + S(4)
                      for line, _ in wrapped)
-        bh = S(94) + text_h + (len(opts) * (option_h + S(8))) + S(44)
-        bh = min(S(max_h), layout.WINDOW_H - S(48), max(S(220), bh))
+        if kit:
+            foot_h = key_hints_height() + S(40) if footer else S(18)
+            bh = (2 * band + S(48) + S(16) + text_h + len(opts) * (option_h + S(8))
+                  + (S(10) if opts else 0) + foot_h)
+        else:
+            bh = S(94) + text_h + (len(opts) * (option_h + S(8))) + S(44)
+        bh = min(S(max_h) + 2 * band, layout.WINDOW_H - S(48), max(S(220), bh))
         bx = _centre_x(bw)
         by = _centre_y(bh)
         panel = pygame.Rect(bx, by, bw, bh)
 
         draw_dark_panel(self.screen, panel, border_color=border_color)
-        draw_header_bar(self.screen, (bx, by, bw, S(48)), text=title,
-                        font=self.font_lg, text_color=title_color or FP.GOLD_BRIGHT,
-                        accent=border_color, frame=(panel, border_color))
-        draw_divider(self.screen, bx + S(18), by + S(58), bw - 2 * S(18))
+        body_top = self._ui_header(panel, title, border_color=border_color,
+                                   title_color=title_color)
+        b = panel_band('panel', panel)
 
-        y = by + S(72)
+        y = body_top + (S(4) if b else S(2))
         options_h = len(opts) * (option_h + S(8))
-        footer_h = S(42) if footer else S(22)
-        body_bottom = by + bh - options_h - footer_h - S(8)
+        if b:
+            footer_h = (key_hints_height() + S(40)) if footer else S(18)
+            body_bottom = by + bh - b - options_h - footer_h
+        else:
+            footer_h = S(42) if footer else S(22)
+            body_bottom = by + bh - options_h - footer_h - S(8)
+        tx = bx + b + S(36) if b else bx + S(36)
         for line, col in wrapped:
             if line == '':
                 y += S(10)
                 continue
             if y + body_font.get_height() > body_bottom:
                 break
-            self._ui_blit_text(line, body_font, col or body_color,
-                               bx + S(36), y)
+            col = col or body_color
+            if b:
+                col = readable(col, KT.INTERIOR)
+            self._ui_blit_text(line, body_font, col, tx, y)
             y += body_font.get_height() + S(4)
 
         if opts:
-            y = max(y + S(8), by + bh - options_h - footer_h)
+            y = max(y + (S(18) if b else S(8)), by + bh - b - options_h - footer_h)
             for opt in opts:
-                row = pygame.Rect(bx + S(34), y, bw - 2 * S(34), option_h)
+                row = pygame.Rect(bx + b + S(34) if b else bx + S(34), y,
+                                  bw - 2 * (b + S(34)) if b else bw - 2 * S(34), option_h)
                 self._ui_action_row(row, opt.get('key', ''),
                                     opt.get('label', ''),
                                     color=opt.get('color', FP.BODY_TEXT),
-                                    selected=opt.get('selected', False))
+                                    selected=opt.get('selected', False),
+                                    danger=opt.get('danger', False))
                 y += option_h + S(8)
 
         if footer:
-            self._ui_blit_text(footer, small_font, FP.HINT_TEXT,
-                               bx + bw // 2, by + bh - S(30),
-                               align='center', max_width=bw - S(44))
+            if b:
+                div_y, keys, _bb = self._ui_footer_metrics(panel)
+                draw_divider(self.screen, bx + b + S(28), div_y, bw - 2 * (b + S(28)))
+                draw_key_hints(self.screen, keys, footer)
+            else:
+                self._ui_blit_text(footer, small_font, FP.HINT_TEXT,
+                                   bx + bw // 2, by + bh - S(30),
+                                   align='center', max_width=bw - S(44))
 
     def _ui_input_card(self, title, prompt, value, hint, *,
                        border_color=FP.GOLD, title_color=None,
@@ -5501,26 +7156,38 @@ class RenderMixin:
         from fantasy_ui import draw_input_box
 
         draw_overlay(self.screen, 190)
-        bw, bh = min(S(max_w), layout.GAME_W - S(48)), S(238)
+        kit = kit_on()
+        band = S(16) if kit else 0
+        bw = min(S(max_w), layout.GAME_W - S(48))
+        bh = S(238) + (2 * band + S(30) if kit else 0)
         bx = _centre_x(bw)
         by = _centre_y(bh)
         panel = pygame.Rect(bx, by, bw, bh)
         draw_dark_panel(self.screen, panel, border_color=border_color)
-        draw_header_bar(self.screen, (bx, by, bw, S(48)), text=title,
-                        font=self.font_lg, text_color=title_color or FP.GOLD_BRIGHT,
-                        accent=border_color, frame=(panel, border_color))
-        draw_divider(self.screen, bx + S(18), by + S(58), bw - 2 * S(18))
-
-        prompt_rect = pygame.Rect(bx + S(36), by + S(76), bw - 2 * S(36), S(46))
-        self._ui_wrap_text(prompt, get_font('body', 17), FP.BODY_TEXT,
+        body_top = self._ui_header(panel, title, border_color=border_color,
+                                   title_color=title_color)
+        b = panel_band('panel', panel)
+        if b:
+            prompt_rect = pygame.Rect(bx + b + S(32), body_top + S(2),
+                                      bw - 2 * (b + S(32)), S(46))
+            box = (bx + b + S(56), prompt_rect.bottom + S(10),
+                   bw - 2 * (b + S(56)), S(40))
+        else:
+            prompt_rect = pygame.Rect(bx + S(36), by + S(76), bw - 2 * S(36), S(46))
+            box = (bx + S(70), by + S(132), bw - 2 * S(70), S(38))
+        self._ui_wrap_text(prompt, get_font('body', 18),
+                           KT.TEXT_BODY if b else FP.BODY_TEXT,
                            prompt_rect, line_gap=2, max_lines=2)
-
-        draw_input_box(self.screen, (bx + S(70), by + S(132), bw - 2 * S(70), S(38)),
-                       value, self.font_md, border_color=border_color,
-                       placeholder=placeholder)
-        self._ui_blit_text(hint, get_font('small', 14), FP.HINT_TEXT,
-                           bx + bw // 2, by + bh - S(32), align='center',
-                           max_width=bw - S(44))
+        draw_input_box(self.screen, box, value, self.font_md,
+                       border_color=border_color, placeholder=placeholder)
+        if b:
+            div_y, keys, _bb = self._ui_footer_metrics(panel)
+            draw_divider(self.screen, bx + b + S(28), div_y, bw - 2 * (b + S(28)))
+            draw_key_hints(self.screen, keys, hint)
+        else:
+            self._ui_blit_text(hint, get_font('small', 16), FP.HINT_TEXT,
+                               bx + bw // 2, by + bh - S(32), align='center',
+                               max_width=bw - S(44))
 
     def _ui_draw_scroll_lines(self, lines, font, color, rect, scroll=0,
                               *, line_gap=3):
@@ -5532,6 +7199,11 @@ class RenderMixin:
         y = rect.y
         for i, entry in enumerate(lines[scroll:scroll + visible],
                                   start=scroll):
+            if isinstance(entry, tuple) and entry and entry[0] == '__cells__':
+                y = self._ui_draw_cells(entry, rect, y, line_gap)
+                if y is None:
+                    break
+                continue
             if isinstance(entry, tuple):
                 text, col, fnt = entry
                 fnt = fnt or font
@@ -5544,6 +7216,34 @@ class RenderMixin:
             y += fnt.get_height() + line_gap
         self._ui_scrollbar(rect, scroll, len(lines), visible)
         return scroll
+
+    def _ui_draw_cells(self, entry, rect, y, line_gap):
+        """One table row from ``_disc_table_lines``: cells in their columns
+        (numbers right-aligned), the last cell wrapped into what is left.
+        Returns the next y, or None when the row does not fit."""
+        _tag, cells, widths, gap, fnt, col, _w = entry
+        if y + fnt.get_height() > rect.bottom:
+            return None
+        x = rect.x
+        lines_used = 1
+        for k, cell in enumerate(cells):
+            last = k == len(cells) - 1
+            if last:
+                room = rect.right - S(12) - x
+                lines = self._wrap_text(cell, fnt, room) or ['']
+                for i, ln in enumerate(lines):
+                    if y + i * (fnt.get_height() + line_gap) + fnt.get_height() > rect.bottom:
+                        break
+                    self.screen.blit(fnt.render(ln, True, col),
+                                     (x, y + i * (fnt.get_height() + line_gap)))
+                lines_used = len(lines)
+            else:
+                cs = fnt.render(cell, True, col)
+                numeric = cell[:1].isdigit() or cell[:1] in '+-'
+                dx = widths[k] - cs.get_width() if numeric and k > 0 else 0
+                self.screen.blit(cs, (x + dx, y))
+                x += widths[k] + gap
+        return y + lines_used * (fnt.get_height() + line_gap)
 
     def _lore_equipped_slot(self, item):
         """Return the equipped slot name for item, or None when it is not worn."""
@@ -5599,8 +7299,14 @@ class RenderMixin:
         shown_name = self._display_name(item)
         lines = [(shown_name, FP.GOLD_BRIGHT, get_font('heading', 20))]
         if hasattr(item, 'id_level'):
-            lines.append(("Identified" if id_level >= 5 else "Unidentified",
-                          FP.CYAN_ACCENT, self.font_sm))
+            if id_level >= 5:
+                status = "Identified"
+            elif self.player.knows_item_type(item):
+                from hud_context import unknown_copy_suffix
+                status = ("Type known " + unknown_copy_suffix(item)).strip()
+            else:
+                status = "Unidentified"
+            lines.append((status, FP.CYAN_ACCENT, self.font_sm))
         # The heading already carries the true name once it is known, so the
         # field below shows what the item LOOKS like unidentified -- that is
         # what the player needs to recognise it on a later run. Skipped when
@@ -5634,6 +7340,16 @@ class RenderMixin:
             "Pack" if item in getattr(self.player, 'inventory', []) else "Record")
         lines.append((f"Source: {source}", FP.FADED_TEXT, self.font_sm))
         return lines
+
+    @staticmethod
+    def _food_restores_text(item) -> str:
+        """ "Restores 45 SP" / "Restores 45 SP and 3 HP": only what it does
+        restore, each number bound to its unit by a no-break space so a wrap
+        never strands "HP" on a line of its own (it read "45 SP, 0 / HP")."""
+        parts = [f"{int(v)} {unit}" for v, unit in
+                 ((getattr(item, 'sp_restore', 0) or 0, 'SP'),
+                  (getattr(item, 'hp_restore', 0) or 0, 'HP')) if v]
+        return "Restores " + " and ".join(parts) if parts else "Restores nothing"
 
     def _lore_enchant_text(self, item) -> str:
         """Enchantment is per-copy knowledge: shown only once THIS copy is
@@ -5759,8 +7475,7 @@ class RenderMixin:
         elif isinstance(item, Food):
             lines += [
                 ("Food", FP.GOLD_BRIGHT, self.font_sm),
-                (f"Restores: {getattr(item, 'sp_restore', 0)} SP, {getattr(item, 'hp_restore', 0)} HP",
-                 FP.BODY_TEXT, self.font_sm),
+                (self._food_restores_text(item), FP.BODY_TEXT, self.font_sm),
             ]
             bonus_type = getattr(item, 'bonus_type', 'none')
             if bonus_type and bonus_type != 'none':
@@ -5900,6 +7615,13 @@ class RenderMixin:
         return identity, mechanics, lore or "No lore recorded."
 
     def _draw_lore_dossier_screen(self):
+        """The item / bestiary dossier: Identity, Mechanics and Lore panes.
+
+        VISUAL_REVIEW (2026-10-16): the focused pane (Tab) is plain to see --
+        a 2 px bright-gold frame and a lit plaque, the others dimmed (only a
+        1 px rule changed shade before); the dossier is sized to its content
+        and at most px(1240) wide, so at 3440x1440 it is no longer three
+        nearly empty panes across the window."""
         subject = getattr(self, '_lore_subject', None)
         if not subject:
             return
@@ -5907,27 +7629,6 @@ class RenderMixin:
         is_corpse = isinstance(subject, Corpse)
         id_level = self._lore_direct_id_level(subject)
         border = FP.LORE_GOLD_BORDER if is_corpse else FP.LORE_BLUE_BORDER
-        panel = self._ui_modal_panel(
-            "BESTIARY DOSSIER" if is_corpse else "ITEM DOSSIER",
-            border_color=border,
-            max_w=1440,
-            max_h=760,
-        )
-        body = self._ui_modal_body(panel)
-        gutter = S(14)
-        left_w = max(S(250), min(S(340), int(body.w * 0.26)))
-        mid_w = max(S(330), min(S(460), int(body.w * 0.34)))
-        right_w = body.w - left_w - mid_w - gutter * 2
-        if right_w < S(300):
-            shrink = S(300) - right_w
-            mid_w = max(S(300), mid_w - shrink)
-            right_w = body.w - left_w - mid_w - gutter * 2
-        identity_rect = pygame.Rect(body.x, body.y, left_w, body.h)
-        mechanics_rect = pygame.Rect(identity_rect.right + gutter, body.y,
-                                     mid_w, body.h)
-        lore_rect = pygame.Rect(mechanics_rect.right + gutter, body.y,
-                                right_w, body.h)
-
         if is_corpse:
             identity_lines, mech_lines, lore_text = self._lore_corpse_lines(subject, id_level)
             lore_color = FP.LORE_GOLD_BODY
@@ -5945,29 +7646,64 @@ class RenderMixin:
             lore_text = (getattr(subject, 'lore', '') if visible >= 4 else
                          "The history of this item remains hidden. Identify it to read the full record.")
             lore_color = FP.LORE_BLUE_BODY
+        lore_text = display_text(lore_text)
+
+        max_w = 1240
+        bw = min(S(max_w), layout.GAME_W - S(48))
+        probe = self._ui_modal_body(pygame.Rect(0, 0, bw, 1000))
+        gutter = S(14)
+        # The lore is the longest text: it gets the widest pane.
+        left_w = max(S(240), min(S(320), int(probe.w * 0.27)))
+        mid_w = max(S(250), min(S(360), int(probe.w * 0.29)))
+        right_w = probe.w - left_w - mid_w - gutter * 2
+        lore_font = get_font('body', 18)
+
+        def wrap(lines, w):
+            out = []
+            for text, color, fnt in lines:
+                for wrapped in self._ui_text_lines(text, fnt, w):
+                    out.append((wrapped, color, fnt))
+            return out
+
+        # pane bodies are their rect minus the subpanel chrome (12 px each
+        # side, 42 above, 12 below)
+        id_render_lines = wrap(identity_lines, left_w - 2 * S(12) - S(10))
+        mech_render_lines = wrap(mech_lines, mid_w - 2 * S(12) - S(10))
+        lore_lines = [(line, lore_color, lore_font)
+                      for line in self._ui_text_lines(lore_text, lore_font, right_w - 2 * S(12) - S(12))]
+
+        def height(lines, gap):
+            return sum(f.get_height() + S(gap) for _t, _c, f in lines)
+        need = max(height(id_render_lines, 4), height(mech_render_lines, 4),
+                   height(lore_lines, 5))
+        fit_h = probe.y + (1000 - probe.bottom) + S(54) + need + S(10)
+        panel = self._ui_modal_panel(
+            "BESTIARY DOSSIER" if is_corpse else "ITEM DOSSIER",
+            border_color=border,
+            max_w=max_w,
+            max_h=760,
+            fit_h=max(fit_h, S(330)),
+        )
+        body = self._ui_modal_body(panel)
+        identity_rect = pygame.Rect(body.x, body.y, left_w, body.h)
+        mechanics_rect = pygame.Rect(identity_rect.right + gutter, body.y,
+                                     mid_w, body.h)
+        lore_rect = pygame.Rect(mechanics_rect.right + gutter, body.y,
+                                right_w, body.h)
 
         focus = getattr(self, '_lore_focus', 'mechanics')
-        id_body = self._ui_subpanel(
-            identity_rect, "Identity",
-            border_color=FP.GOLD if focus == 'identity' else FP.GOLD_DARK)
-        mech_body = self._ui_subpanel(
-            mechanics_rect, "Mechanics",
-            border_color=FP.GOLD if focus == 'mechanics' else FP.GOLD_DARK)
-        lore_body = self._ui_subpanel(
-            lore_rect, "Lore Reader",
-            border_color=FP.GOLD if focus == 'lore' else FP.GOLD_DARK)
-
-        id_render_lines = []
-        for text, color, fnt in identity_lines:
-            for wrapped in self._ui_text_lines(text, fnt, id_body.w - S(10)):
-                id_render_lines.append((wrapped, color, fnt))
-        mech_render_lines = []
-        for text, color, fnt in mech_lines:
-            for wrapped in self._ui_text_lines(text, fnt, mech_body.w - S(10)):
-                mech_render_lines.append((wrapped, color, fnt))
-        lore_font = get_font('body', 17)
-        lore_lines = [(line, lore_color, lore_font)
-                      for line in self._ui_text_lines(lore_text, lore_font, lore_body.w - S(12))]
+        panes = (('identity', identity_rect, "Identity"),
+                 ('mechanics', mechanics_rect, "Mechanics"),
+                 ('lore', lore_rect, "Lore Reader"))
+        bodies = {}
+        for key, rect, label in panes:
+            on = focus == key
+            bodies[key] = self._ui_subpanel(
+                rect, label, border_color=FP.GOLD_BRIGHT if on else FP.GOLD_DARK)
+            if on:
+                # The pane Tab has moved to: a bright 2 px frame round it.
+                pygame.draw.rect(self.screen, KT.GOLD_HI, rect.inflate(S(4), S(4)), 2)
+        id_body, mech_body, lore_body = bodies['identity'], bodies['mechanics'], bodies['lore']
 
         self._lore_identity_scroll = self._ui_draw_scroll_lines(
             id_render_lines, self.font_sm, FP.BODY_TEXT, id_body,
@@ -6043,12 +7779,11 @@ class RenderMixin:
                     break
                 active = subject == self._STUDY_SUBJECTS[self._study_subject_idx]
                 rect = pygame.Rect(rail_body.x, y, rail_body.w - S(8), row_h - S(6))
-                pygame.draw.rect(self.screen,
-                                 (35, 43, 82) if active else FP.MIDNIGHT,
-                                 rect, border_radius=5)
-                pygame.draw.rect(self.screen, FP.GOLD if active else FP.GOLD_DARK,
-                                 rect, 1, border_radius=5)
-                self._ui_blit_text(subject.title(), get_font('small', 14, bold=True),
+                self._ui_row(rect, active,
+                            fill=(35, 43, 82) if active else FP.MIDNIGHT,
+                            border=FP.GOLD if active else FP.GOLD_DARK, radius=5)
+                self._ui_blit_text('AI' if subject == 'ai' else subject.title(),
+                                   get_font('body', 17, bold=True),
                                    FP.GOLD_BRIGHT if active else FP.BODY_TEXT,
                                    rect.x + S(10), rect.y + S(8),
                                    max_width=rect.w - S(60))
@@ -6065,13 +7800,16 @@ class RenderMixin:
             return
 
         q = missed[idx]
-        subject = str(q.get('subject', '?')).upper()
+        raw_subject = str(q.get('subject', '?'))
+        subject = 'AI' if raw_subject == 'ai' else proper_name(raw_subject.replace('_', ' '))
         counter = f"{idx + 1} of {len(missed)}"
+        # One reading size for the question and its context (the context
+        # was a size smaller; the subject tag was 12 px cyan capitals).
+        read_f = get_font('body', 20)
         lines = [
-            (subject, FP.CYAN_ACCENT, get_font('small', 14, bold=True)),
-            (counter, FP.FADED_TEXT, self.font_sm),
+            (f"{subject}  \u2022  {counter}", KT.TEXT_SUB, get_font('body', 18, bold=True)),
             ("Question", FP.GOLD_BRIGHT, self.font_sm),
-            (q.get('question', ''), FP.PARCHMENT_LIGHT, get_font('body', 20)),
+            (display_text(q.get('question', '')), FP.PARCHMENT_LIGHT, read_f),
             ("Your answer", FP.DANGER_TEXT_LIGHT, self.font_sm),
             (q.get('chosen', ''), FP.BODY_TEXT, self.font_sm),
             ("Correct answer", FP.SUCCESS_TEXT, self.font_sm),
@@ -6081,7 +7819,7 @@ class RenderMixin:
         if context:
             lines += [
                 ("Context", FP.GOLD_BRIGHT, self.font_sm),
-                (context, FP.BODY_TEXT, get_font('body', 17)),
+                (display_text(context, sources=True), FP.BODY_TEXT, read_f),
             ]
 
         render_lines = []
@@ -6089,10 +7827,12 @@ class RenderMixin:
             if text == "":
                 render_lines.append(("", color, fnt))
                 continue
+            # a section label ("Question", "Your answer"...) opens its block:
+            # the gap goes ABOVE it, so the label sits on its own text
+            if color in (FP.GOLD_BRIGHT, FP.DANGER_TEXT_LIGHT, FP.SUCCESS_TEXT) and render_lines:
+                render_lines.append(("", color, fnt))
             for line in self._ui_text_lines(text, fnt, main_body.w - S(14)):
                 render_lines.append((line, color, fnt))
-            if color in (FP.GOLD_BRIGHT, FP.DANGER_TEXT_LIGHT, FP.SUCCESS_TEXT):
-                render_lines.append(("", color, fnt))
 
         scroll = self._ui_draw_scroll_lines(
             render_lines, self.font_sm, FP.BODY_TEXT, main_body,
@@ -6125,7 +7865,7 @@ class RenderMixin:
         have = getattr(self, 'player_gold', 0)
         self._ui_input_card(
             "DROP GOLD",
-            f"You have {have} gold. Enter the amount to drop on your current tile.",
+            f"You have {have:,} gold. Enter the amount to drop on your current tile.",
             self.drop_gold_input or "0",
             "Digits: amount   |   Enter: confirm   |   Esc: cancel",
             border_color=FP.GOLD,
@@ -6136,10 +7876,12 @@ class RenderMixin:
         """Numeric entry overlay: how many of a stacked item to drop."""
         item = getattr(self, '_drop_qty_item', None)
         have = getattr(item, 'count', 1) if item else 0
-        name = self._display_name(item) if item else 'items'
+        import re as _re
+        # The name without its " x3" (the prompt said "3 Bread Ration x3").
+        name = _re.sub(r' x\d+$', '', self._display_name(item)) if item else 'items'
         self._ui_input_card(
             "DROP HOW MANY?",
-            f"You have {have} {name}. Blank entry drops the whole stack.",
+            f"You carry {have} of {name}. A blank entry drops the whole stack.",
             self.drop_qty_input or str(have),
             "Digits: quantity   |   Enter: confirm   |   Esc: cancel",
             border_color=FP.GOLD,
@@ -6229,42 +7971,42 @@ class RenderMixin:
         for i, item in enumerate(stock):
             price = prices[i] if i < len(prices) else 0
             affordable = getattr(self, 'player_gold', 0) >= price
-            detail = f"{price} gold | wt {getattr(item, 'weight', 0):.1f}"
+            # The price leads the sub-line (no separate price chip: it took
+            # the room the name needed and shrank the shop's names to 15 px,
+            # below every other picker's; VISUAL_REVIEW_2 minor 4).
+            detail = f"{price:,} gold   Weight {getattr(item, 'weight', 0):.1f}"
             if i in haggled:
-                detail += " | haggled"
-            details = [
-                (self._display_name(item), FP.GOLD_BRIGHT, self.font_md),
-                (f"Price: {price} gold", FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT,
-                 self.font_sm),
-                (f"Your gold: {getattr(self, 'player_gold', 0)}", FP.BODY_TEXT, self.font_sm),
-                ("Haggle status", FP.GOLD_BRIGHT, self.font_sm),
+                detail += "   Haggled"
+            # The item's name heads the pane ONCE (it was printed twice: the
+            # shop's own line, then the item block's title), then the price.
+            item_lines = self._menu_item_detail_lines(
+                item, "Press Enter to buy this item if you can afford it.")
+            details = item_lines[:1] + [
+                (f"Price: {price:,} gold (you have {getattr(self, 'player_gold', 0):,})",
+                 FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT, self.font_sm),
                 ("Already haggled for this item." if i in haggled
-                 else "Press H to try to reduce this price before buying.",
-                 FP.BODY_TEXT, self.font_sm),
+                 else "H: try to haggle the price down (once per item).",
+                 FP.FADED_TEXT, self.font_sm),
                 '',
-            ]
-            details += self._menu_item_detail_lines(
-                item,
-                "Press Enter to buy this item if you can afford it.")
+            ] + item_lines[1:]
             entries.append({
                 'name': self._display_name(item),
                 'detail': detail,
                 'icon': item,
                 'name_color': FP.BODY_TEXT if affordable else FP.FADED_TEXT,
                 'detail_color': FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT,
-                'badge': f"{price}g",
-                'badge_color': FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT,
                 'details': details,
             })
 
         selected = self._menu_clamp_selection('_shop_selection', len(entries))
         context = self._menu_base_context([
             ("MERCHANT", FP.GOLD_BRIGHT, self.font_sm),
-            (f"Your gold: {getattr(self, 'player_gold', 0)}", FP.GOLD_PALE, self.font_sm),
+            (f"Your gold: {getattr(self, 'player_gold', 0):,}", FP.GOLD_PALE, self.font_sm),
             (f"Stock remaining: {len(entries)}", FP.BODY_TEXT, self.font_sm),
             ("Use H before buying if you want one chance to haggle that item.",
              FP.FADED_TEXT, self.font_sm),
         ])
+        self._menu_more_cue = "The full lore is yours to read once you buy it."
         self._draw_decision_menu(
             title="TRAVELLING MERCHANT",
             entries=entries,
@@ -6417,23 +8159,31 @@ class RenderMixin:
                 break
             active = (category and slug == category) or (not category and idx == active_idx)
             rect = pygame.Rect(cat_body.x, y, cat_body.w - S(8), row_h - S(6))
-            pygame.draw.rect(self.screen,
-                             (35, 43, 82) if active else FP.MIDNIGHT,
-                             rect, border_radius=5)
-            pygame.draw.rect(self.screen, FP.GOLD if active else FP.GOLD_DARK,
-                             rect, 1, border_radius=5)
-            self._ui_blit_text(key_label, get_font('small', 13, bold=True),
-                               FP.GOLD_BRIGHT, rect.x + S(10), rect.y + S(10))
-            self._ui_blit_text(label, get_font('small', 14, bold=True),
-                               FP.GOLD_BRIGHT if active else FP.BODY_TEXT,
-                               rect.x + S(36), rect.y + S(8),
-                               max_width=rect.w - S(44))
+            if self._ui_row(rect, active,
+                            fill=(35, 43, 82) if active else FP.MIDNIGHT,
+                            border=FP.GOLD if active else FP.GOLD_DARK, radius=5):
+                kr = pygame.Rect(rect.x + S(7), rect.centery - S(12), S(24), S(24))
+                draw_key_badge(self.screen, kr, key_label, get_font('body', 16, bold=True))
+                lf = get_font('body', 17, bold=True)
+                self._ui_blit_text(label, lf, FP.GOLD_BRIGHT if active else FP.BODY_TEXT,
+                                   kr.right + S(10), rect.centery - lf.get_height() // 2,
+                                   max_width=rect.right - kr.right - S(16))
+            else:
+                self._ui_blit_text(key_label, get_font('small', 13, bold=True),
+                                   FP.GOLD_BRIGHT, rect.x + S(10), rect.y + S(10))
+                self._ui_blit_text(label, get_font('small', 14, bold=True),
+                                   FP.GOLD_BRIGHT if active else FP.BODY_TEXT,
+                                   rect.x + S(36), rect.y + S(8),
+                                   max_width=rect.w - S(44))
             y += row_h
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
         if not category:
-            self._ui_wrap_text("No category selected.",
-                               self.font_md, FP.BODY_TEXT, article_body)
+            # The same size and tone as every other empty-pane note; it
+            # said "No category selected." in 24 px while a category was
+            # visibly highlighted.
+            self._ui_wrap_text("Press Enter to open the highlighted category.",
+                               self.font_sm, FP.FADED_TEXT, article_body)
             self._ui_footer(panel, "Up/Down: category   Enter or a-j: open   ESC: close")
             return
 
@@ -6460,23 +8210,24 @@ class RenderMixin:
                 rect = pygame.Rect(list_body.x, y, list_body.w - S(10),
                                    entry_row_h - S(7))
                 selected = idx == sel
-                pygame.draw.rect(self.screen,
-                                 (35, 43, 82) if selected else FP.MIDNIGHT,
-                                 rect, border_radius=6)
-                pygame.draw.rect(self.screen, FP.GOLD if selected else FP.ARCANE_DIM,
-                                 rect, 1, border_radius=6)
+                self._ui_row(rect, selected,
+                            fill=(35, 43, 82) if selected else FP.MIDNIGHT,
+                            border=FP.GOLD if selected else FP.ARCANE_DIM, radius=6)
                 name = self._fix_name_case(entry.get('name',
                                                      entry.get('_id', '?')))
-                self._ui_wrap_text(name, get_font('small', 15, bold=True),
+                kit = kit_on()
+                nf = get_font('body', 18, bold=True) if kit else get_font('small', 15, bold=True)
+                bf = get_font('body', 16) if kit else get_font('small', 12)
+                self._ui_wrap_text(name, nf,
                                    FP.GOLD_BRIGHT if selected else FP.BODY_TEXT,
-                                   pygame.Rect(rect.x + S(10), rect.y + S(7),
-                                               rect.w - S(20), S(30)),
-                                   line_gap=0, max_lines=2)
+                                   pygame.Rect(rect.x + S(10), rect.y + S(5),
+                                               rect.w - S(20), nf.get_height() + S(2)),
+                                   line_gap=0, max_lines=1)
                 brief = self._encyclopedia_entry_brief(category, entry)
                 if brief:
-                    self._ui_blit_text(brief, get_font('small', 12),
+                    self._ui_blit_text(brief, bf,
                                        FP.FADED_TEXT, rect.x + S(10),
-                                       rect.bottom - S(19),
+                                       rect.bottom - bf.get_height() - S(4),
                                        max_width=rect.w - S(20))
                 y += entry_row_h
             if len(entries) > visible:
@@ -6523,36 +8274,39 @@ class RenderMixin:
             5: "Ancient Wisdom",
         }
         label = quality_labels.get(chain, "Lore")
-        panel = self._ui_modal_panel(f"RECALL LORE - {label}",
+        panel = self._ui_modal_panel(f"Recall Lore - {label}",
                                      border_color=FP.LORE_GOLD_BORDER,
                                      max_w=860,
                                      max_h=340)
         body = self._ui_modal_body(panel, side=28, top=78, bottom=54)
-        self._ui_blit_text("Chain quality", get_font('small', 14, bold=True),
+        self._ui_blit_text("Chain quality", get_font('small', 16, bold=True),
                            FP.GOLD_BRIGHT, body.x, body.y)
         star_x = body.x + S(130)
         for idx in range(5):
             rect = pygame.Rect(star_x + idx * S(34), body.y - S(2), S(23), S(23))
             active = idx < chain
-            pygame.draw.rect(self.screen,
-                             FP.GOLD_DARK if active else FP.MIDNIGHT,
-                             rect, border_radius=4)
-            pygame.draw.rect(self.screen, FP.LORE_GOLD_BORDER,
-                             rect, 1, border_radius=4)
+            if not ui_theme.draw_piece(self.screen, 'chip_active' if active else 'chip', rect):
+                pygame.draw.rect(self.screen,
+                                 FP.GOLD_DARK if active else FP.MIDNIGHT,
+                                 rect, border_radius=4)
+                pygame.draw.rect(self.screen, FP.LORE_GOLD_BORDER,
+                                 rect, 1, border_radius=4)
             if active:
-                self._ui_blit_text("*", get_font('small', 15, bold=True),
-                                   FP.GOLD_BRIGHT, rect.centerx, rect.y + S(2),
-                                   align='center')
+                # A drawn gold diamond (a literal "*" read as a placeholder).
+                cx, cy, d = rect.centerx, rect.centery, S(7)
+                pts = [(cx, cy - d), (cx + d, cy), (cx, cy + d), (cx - d, cy)]
+                pygame.draw.polygon(self.screen, KT.GOLD_HI, pts)
+                pygame.draw.polygon(self.screen, KT.GOLD_DARK, pts, 1)
 
         text_rect = pygame.Rect(body.x, body.y + S(44), body.w, body.h - S(58))
         self._ui_wrap_text(hint_text, get_font('body', 18),
                            FP.LORE_GOLD_BODY, text_rect, line_gap=5)
         self._ui_blit_text("Saved to Encyclopedia / Lore Hints",
-                           get_font('small', 14), FP.CYAN_ACCENT,
+                           get_font('small', 16), FP.CYAN_ACCENT,
                            body.x, body.bottom - S(16),
                            max_width=body.w)
         cd = getattr(self.player, 'recall_lore_cooldown', 0)
-        self._ui_footer(panel, f"Next recall in {cd} turns   any key to close")
+        self._ui_footer(panel, f"Next recall in {cd} turns   Any key: close")
 
     def _draw_hint_screen(self):
         self._draw_recall_lore_card()
@@ -6629,7 +8383,7 @@ class RenderMixin:
 
         # -- Kill count --
         kills = getattr(self.level_mgr, 'monsters_killed', 0) if hasattr(self, 'level_mgr') else 0
-        lines.append(f"Kills this run: {kills}  Gold: {getattr(self, 'player_gold', 0)}")
+        lines.append(f"Kills this run: {kills}  Gold: {getattr(self, 'player_gold', 0):,}")
 
         # -- Zoom mode --
         lines.append(f"Zoom: {self.zoom_mode}  State: {self.state}")
@@ -6654,25 +8408,25 @@ class RenderMixin:
             ("Movement", [
                 ("Arrows", "Move / attack", FP.BODY_TEXT),
                 (".", "Wait / meditate", FP.BODY_TEXT),
-                ("< >", "Ascend / descend stairs", FP.BODY_TEXT),
+                ("< >", "Go up / down stairs", FP.BODY_TEXT),
                 ("Tab", "Cycle zoom", FP.BODY_TEXT),
             ]),
             ("Combat", [
                 ("A", "Melee attack", FP.BODY_TEXT),
                 ("F", "Fire ranged weapon", FP.BODY_TEXT),
                 ("T", "Throw item", FP.BODY_TEXT),
-                ("M / Z", "Cast spell / zap wand", FP.ARCANE_ACCENT),
+                ("M / Z", "Cast spell / zap wand", FP.BODY_TEXT),
                 ("V", "Powers menu", FP.BODY_TEXT),
             ]),
             ("Items", [
                 ("E", "Equip menu", FP.BODY_TEXT),
                 ("X", "Examine item", FP.BODY_TEXT),
-                ("I", "Identify item", FP.CYAN_ACCENT),
+                ("I", "Identify item", FP.BODY_TEXT),
                 ("H", "Harvest corpse", FP.BODY_TEXT),
                 ("C", "Cook menu", FP.BODY_TEXT),
                 ("D", "Drop / use tile", FP.BODY_TEXT),
-                ("U / Q", "Eat food / quaff potion", FP.BODY_TEXT),
-                ("R", "Read scroll or spellbook", FP.BODY_TEXT),
+                ("U / Q", "Eat / drink a potion", FP.BODY_TEXT),
+                ("R", "Read scroll or book", FP.BODY_TEXT),
             ]),
             ("Knowledge", [
                 ("@", "Character sheet", FP.BODY_TEXT),
@@ -6680,22 +8434,22 @@ class RenderMixin:
                 ("J", "Discoveries", FP.BODY_TEXT),
                 ("K", "Kit comparison", FP.BODY_TEXT),
                 ("W", "Quirks progress", FP.BODY_TEXT),
-                (";", "Study journal", FP.CYAN_ACCENT),
-                ("N", "Recall lore", FP.CYAN_ACCENT),
+                (";", "Study journal", FP.BODY_TEXT),
+                ("N", "Recall lore", FP.BODY_TEXT),
             ]),
             ("World", [
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
-                ("P", "Pick lock / disarm trap", FP.BODY_TEXT),
+                ("P", "Unlock / disarm", FP.BODY_TEXT),
                 ("Y", "Merchant shop", FP.BODY_TEXT),
-                ("\\", "Pray", FP.ARCANE_ACCENT),
-                ("Shift+\\", "Divine Intercession", FP.ARCANE_ACCENT),
+                ("\\", "Pray", FP.BODY_TEXT),
+                ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Observe cursor", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [
-                ("1-4", "Answer quiz", FP.GOLD_BRIGHT),
-                ("SPACE", "Strike now", FP.GOLD_BRIGHT),
-                ("C", "Quiz context", FP.GOLD_BRIGHT),
+                ("1-4", "Answer quiz", FP.BODY_TEXT),
+                ("SPACE", "Strike now", FP.BODY_TEXT),
+                ("C", "Quiz context", FP.BODY_TEXT),
                 ("PgUp/PgDn", "Scroll long quiz", FP.BODY_TEXT),
                 ("?", "Command help", FP.BODY_TEXT),
                 ("F10", "Sound on / off", FP.BODY_TEXT),
@@ -6717,6 +8471,10 @@ class RenderMixin:
         group_h = (body.h - row_gap * (rows - 1)) // rows
         font_key = get_font('small', 14, bold=True)
         font_cmd = get_font('small', 15)
+        # ONE row pitch for every group, set by the longest list, so the
+        # columns line up (Items, the longest, was ~26 px against ~30).
+        longest = max(len(c) for _t, c in groups)
+        kit_row_h = min(S(34), max(S(24), (group_h - S(34)) // max(1, longest)))
 
         for idx, (title, commands) in enumerate(groups):
             col = idx % cols
@@ -6724,11 +8482,40 @@ class RenderMixin:
             rect = pygame.Rect(body.x + col * (col_w + gutter),
                                body.y + row * (group_h + row_gap),
                                col_w, group_h)
-            self._ui_blit_text(title.upper(), get_font('small', 15, bold=True),
-                               FP.GOLD_PALE, rect.x, rect.y)
-            pygame.draw.line(self.screen, FP.GOLD_DARK,
-                             (rect.x, rect.y + S(24)), (rect.right, rect.y + S(24)), 1)
+            if kit_on():
+                self._ui_blit_text(title, get_font('heading', 18, bold=True),
+                                   KT.TEXT_HEAD, rect.x, rect.y - S(1))
+                pygame.draw.line(self.screen, KT.GOLD_DARK,
+                                 (rect.x, rect.y + S(26)), (rect.right, rect.y + S(26)), 1)
+            else:
+                self._ui_blit_text(title.upper(), get_font('small', 15, bold=True),
+                                   FP.GOLD_PALE, rect.x, rect.y)
+                pygame.draw.line(self.screen, FP.GOLD_DARK,
+                                 (rect.x, rect.y + S(24)), (rect.right, rect.y + S(24)), 1)
             y = rect.y + S(34)
+            if kit_on():
+                # Every row is shown, each key badge as wide as the widest
+                # key and centred with its line; a long line shrinks, then
+                # ellipsizes (it used to be cut to its first wrapped line:
+                # "Read scroll or").
+                from fantasy_ui import key_label as _kl
+                # Each column's badges are as wide as ITS widest key (one
+                # global width left "Ascend / descend st..." no room at
+                # 1280x720), and every line is short enough to show whole.
+                kf = get_font('body', 16, bold=True)
+                key_w = max(kf.size(_kl(k))[0] for k, _d, _c in commands) + S(18)
+                row_h = kit_row_h
+                for key_label, desc, color in commands:
+                    if y + row_h > rect.bottom + S(2):
+                        break
+                    kr = pygame.Rect(rect.x, y + (row_h - S(26)) // 2, key_w, S(26))
+                    draw_key_badge(self.screen, kr, _kl(key_label), kf)
+                    tw = rect.right - kr.right - S(12)
+                    df, text = self._fit_line(desc, tw, (16,))
+                    ds = df.render(text, True, readable(color, KT.INTERIOR))
+                    self.screen.blit(ds, (kr.right + S(12), y + (row_h - ds.get_height()) // 2))
+                    y += row_h
+                continue
             # every row is shown: a small window makes the rows shorter
             # (they used to stop at 28px and drop whatever did not fit, so
             # "R: Read" was never listed)
@@ -6738,13 +8525,18 @@ class RenderMixin:
                 if y + row_h > rect.bottom + S(2):
                     break
                 key_rect = pygame.Rect(rect.x, y + S(2), key_w, S(24))
-                pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, key_rect,
-                                 border_radius=5)
-                pygame.draw.rect(self.screen, FP.GOLD_DARK, key_rect, 1,
-                                 border_radius=5)
-                self._ui_blit_text(key_label, font_key, FP.GOLD_BRIGHT,
-                                   key_rect.centerx, key_rect.y + S(5),
-                                   align='center', max_width=key_rect.w - S(8))
+                if kit_on():
+                    from fantasy_ui import key_label as _kl
+                    draw_key_badge(self.screen, key_rect, _kl(key_label),
+                                   get_font('body', 15, bold=True))
+                else:
+                    pygame.draw.rect(self.screen, FP.MIDNIGHT_MID, key_rect,
+                                     border_radius=5)
+                    pygame.draw.rect(self.screen, FP.GOLD_DARK, key_rect, 1,
+                                     border_radius=5)
+                    self._ui_blit_text(key_label, font_key, FP.GOLD_BRIGHT,
+                                       key_rect.centerx, key_rect.y + S(5),
+                                       align='center', max_width=key_rect.w - S(8))
                 desc_rect = pygame.Rect(key_rect.right + S(10), y,
                                         rect.right - key_rect.right - S(10),
                                         row_h)

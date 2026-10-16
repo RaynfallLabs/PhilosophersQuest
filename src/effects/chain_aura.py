@@ -263,71 +263,28 @@ class ChainAuraPulse:
         if opacity <= 0.01:
             return
 
-        color = self._current_aura_color
-        # Build an aura surface sized to the expanded panel. Reuse the
-        # cached one when dimensions match. Wider pad = more visible
-        # glow bleed around the panel.
-        pad = 72
-        size = (rect.w + pad * 2, rect.h + pad * 2)
-        if self._pulse_surf is None or self._pulse_surf_size != size:
-            self._pulse_surf = pygame.Surface(size, pygame.SRCALPHA)
-            self._pulse_surf_size = size
-        aura = self._pulse_surf
-        aura.fill((0, 0, 0, 0))
-
-        # Soft outer rings -- 10 steps from the expanded rect inward
-        # toward the panel edge, each brighter. More steps + wider pad +
-        # higher alpha coefficient = chunky visible glow.
-        steps = 10
-        for i in range(steps):
-            # i=0: outermost + faintest. i=steps-1: innermost + brightest.
-            inset = int(pad * (1.0 - i / steps))
-            alpha = int(255 * opacity * 0.28 * (i + 1) / steps)
-            if alpha <= 0:
-                continue
-            r = pygame.Rect(inset, inset,
-                            size[0] - 2 * inset,
-                            size[1] - 2 * inset)
-            pygame.draw.rect(aura, (color[0], color[1], color[2], alpha),
-                             r, border_radius=18, width=5)
-
-        # Thick solid inner-edge glow riding at the panel perimeter --
-        # makes the border read as "lit from behind" at every rank, not
-        # just milestones.
-        inner_alpha = int(255 * opacity * 0.75)
-        if inner_alpha > 0:
-            pygame.draw.rect(
-                aura, (color[0], color[1], color[2], inner_alpha),
-                pygame.Rect(pad - 3, pad - 3, rect.w + 6, rect.h + 6),
-                border_radius=12, width=4)
-
-        # Milestone bloom -- adds a BIG bright outline for the first
-        # ~1100ms after a milestone crossing. Two concentric rings for
-        # weight; outer one slightly dimmer.
+        # Milestone bloom rides on the same glow: a brighter, briefly
+        # stronger halo for the first ~650 ms after a crossing.
         if self._burst_timer_ms > 0.0:
             bloom = self._burst_timer_ms / self.burst_duration_ms
-            bloom_alpha = int(255 * opacity * 0.95 * bloom)
-            if bloom_alpha > 0:
-                pygame.draw.rect(
-                    aura, (color[0], color[1], color[2], bloom_alpha),
-                    pygame.Rect(pad - 8, pad - 8, rect.w + 16, rect.h + 16),
-                    border_radius=14, width=8)
-                pygame.draw.rect(
-                    aura, (color[0], color[1], color[2], bloom_alpha // 2),
-                    pygame.Rect(pad - 22, pad - 22, rect.w + 44, rect.h + 44),
-                    border_radius=18, width=6)
+            opacity = min(1.0, opacity + 0.6 * bloom)
+
+        # A SMOOTH glow (VISUAL_REVIEW_2 minor 8: it was ten stepped
+        # concentric rectangles out to the screen edge). The falloff is a
+        # blurred mask built once per panel size and tinted once per
+        # colour; a frame only sets the surface alpha and blits, so the
+        # aura costs one blit whatever the opacity.
+        pad = _GLOW_PAD
+        glow = _tinted_glow(rect.w, rect.h, self._current_aura_color)
+        glow.set_alpha(int(255 * opacity))
+        surface.blit(glow, (rect.x - pad, rect.y - pad))
 
         # Static-highlight replacement for milestones when
-        # reduced_motion is on. 300ms steady border highlight -- see
-        # effects_config.json reduced_motion.replace_milestone.
+        # reduced_motion is on: a 300 ms steady border highlight (see
+        # effects_config.json reduced_motion.replace_milestone).
         if self._static_highlight_ms > 0.0:
             sh = self._static_highlight_color
-            pygame.draw.rect(
-                aura, (sh[0], sh[1], sh[2], 180),
-                pygame.Rect(pad - 2, pad - 2, rect.w + 4, rect.h + 4),
-                border_radius=12, width=3)
-
-        surface.blit(aura, (rect.x - pad, rect.y - pad))
+            pygame.draw.rect(surface, sh, rect.inflate(4, 4), 3, border_radius=12)
 
     def draw_fg(self, surface: pygame.Surface,
                 protected_rects: Iterable, reduced: bool) -> None:
@@ -462,6 +419,54 @@ class ChainAuraPulse:
             self._particles.append(
                 _Particle(px, py, vx, vy, life, color,
                           anchor_x=anchor_x, anchor_y=anchor_y))
+
+
+_GLOW_PAD = 72                       # px the glow reaches outside the panel
+_GLOW_MASKS: dict = {}               # (w, h) -> white glow mask (per-pixel alpha)
+_GLOW_TINTS: "dict" = {}             # (w, h, colour) -> tinted glow, small LRU
+_GLOW_TINTS_MAX = 12
+
+
+def _glow_mask(w: int, h: int) -> pygame.Surface:
+    """White, per-pixel-alpha halo around a ``w`` x ``h`` panel: brightest
+    at the panel edge, fading smoothly to nothing ``_GLOW_PAD`` px out.
+    Built once per panel size: drawn small, blurred, scaled up."""
+    key = (w, h)
+    got = _GLOW_MASKS.get(key)
+    if got is not None:
+        return got
+    pad = _GLOW_PAD
+    q = 4                                        # build at 1/4 size: blur is cheap
+    sw, sh = max(4, (w + 2 * pad) // q), max(4, (h + 2 * pad) // q)
+    small = pygame.Surface((sw, sh), pygame.SRCALPHA)
+    small.fill((255, 255, 255, 0))
+    p = pad // q
+    pygame.draw.rect(small, (255, 255, 255, 255),
+                     pygame.Rect(p, p, sw - 2 * p, sh - 2 * p), border_radius=3)
+    try:
+        small = pygame.transform.gaussian_blur(small, max(2, pad // (q * 2)))
+    except (AttributeError, ValueError, pygame.error):
+        small = pygame.transform.box_blur(small, max(2, pad // (q * 2)))
+    mask = pygame.transform.smoothscale(small, (w + 2 * pad, h + 2 * pad))
+    if len(_GLOW_MASKS) > 4:
+        _GLOW_MASKS.clear()
+    _GLOW_MASKS[key] = mask
+    return mask
+
+
+def _tinted_glow(w: int, h: int, color) -> pygame.Surface:
+    """The glow mask tinted ``color`` (quantised so an easing colour hits
+    only a handful of cached tints)."""
+    c = tuple(min(255, (int(v) // 16) * 16 + 8) for v in color[:3])
+    key = (w, h, c)
+    got = _GLOW_TINTS.pop(key, None)
+    if got is None:
+        got = _glow_mask(w, h).copy()
+        got.fill((*c, 255), special_flags=pygame.BLEND_RGBA_MULT)
+    _GLOW_TINTS[key] = got                       # most recent last
+    while len(_GLOW_TINTS) > _GLOW_TINTS_MAX:
+        _GLOW_TINTS.pop(next(iter(_GLOW_TINTS)))
+    return got
 
 
 class _Particle:

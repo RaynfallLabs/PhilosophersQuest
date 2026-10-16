@@ -182,7 +182,7 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
 
     if ctype == 'gold':
         amt = cost['amount']
-        return (True, '') if player_gold >= amt else (False, f"You need {amt} gold.")
+        return (True, '') if player_gold >= amt else (False, f"You need {amt:,} gold.")
 
     if ctype == 'hp_percent':
         pct = cost['amount']

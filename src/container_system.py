@@ -155,7 +155,7 @@ def _handle_success(player, container, dungeon, on_complete):
 
     messages.insert(0, ('The lock yields! You crack the chest.', 'success'))
     if gold:
-        messages.append((f'You find {gold} gold coins!', 'loot'))
+        messages.append((f'You find {gold:,} gold coins!', 'loot'))
 
     on_complete({'status': 'opened', 'loot': loot, 'gold': gold,
                  'messages': messages})

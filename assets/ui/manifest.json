@@ -1,0 +1,410 @@
+{
+ "version": 1,
+ "scale": 2,
+ "pixel_art": false,
+ "_style": "C Midnight Codex (production kit, 2026-10-16). Built in _genart/ui/kitC/ (sources, checks).",
+ "pieces": {
+  "panel": {
+   "file": "frame.png",
+   "slice": [
+    144,
+    144,
+    144,
+    144
+   ],
+   "body": "fill",
+   "body_color": [
+    16,
+    19,
+    38
+   ],
+   "band": 32
+  },
+  "quiz": {
+   "file": "frame.png",
+   "slice": [
+    144,
+    144,
+    144,
+    144
+   ],
+   "body": "fill",
+   "body_color": [
+    16,
+    19,
+    38
+   ],
+   "accent": "quiz_accent.png",
+   "band": 32
+  },
+  "header": {
+   "file": "header.png",
+   "slice": [
+    56,
+    24,
+    56,
+    24
+   ],
+   "body": "fill",
+   "body_color": [
+    20,
+    26,
+    58
+   ],
+   "accent": "header_accent.png"
+  },
+  "header_small": {
+   "file": "header_small.png",
+   "slice": [
+    24,
+    8,
+    24,
+    8
+   ],
+   "body": "fill",
+   "body_color": [
+    20,
+    26,
+    58
+   ],
+   "accent": "header_small_accent.png"
+  },
+  "divider": {
+   "file": "divider.png",
+   "slice": [
+    24,
+    0,
+    24,
+    0
+   ],
+   "body": "tile",
+   "ornament": "divider_ornament.png"
+  },
+  "subpanel": {
+   "file": "subpanel.png",
+   "slice": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "body": "fill",
+   "body_color": [
+    24,
+    29,
+    56
+   ]
+  },
+  "card": {
+   "file": "subpanel.png",
+   "slice": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "body": "fill",
+   "body_color": [
+    24,
+    29,
+    56
+   ]
+  },
+  "subpanel_header": {
+   "file": "subpanel_header.png",
+   "slice": [
+    32,
+    2,
+    32,
+    4
+   ],
+   "body": "fill",
+   "body_color": [
+    20,
+    26,
+    58
+   ],
+   "accent": "subpanel_header_accent.png"
+  },
+  "choice": {
+   "file": "choice.png",
+   "slice": [
+    2,
+    2,
+    80,
+    2
+   ],
+   "body": "fill",
+   "body_color": [
+    24,
+    29,
+    56
+   ]
+  },
+  "choice_selected": {
+   "file": "choice_selected.png",
+   "slice": [
+    6,
+    6,
+    80,
+    6
+   ],
+   "body": "fill",
+   "body_color": [
+    40,
+    46,
+    86
+   ]
+  },
+  "choice_correct": {
+   "file": "choice_correct.png",
+   "slice": [
+    6,
+    6,
+    80,
+    6
+   ],
+   "body": "fill",
+   "body_color": [
+    22,
+    56,
+    34
+   ]
+  },
+  "choice_incorrect": {
+   "file": "choice_incorrect.png",
+   "slice": [
+    6,
+    6,
+    80,
+    6
+   ],
+   "body": "fill",
+   "body_color": [
+    66,
+    18,
+    26
+   ]
+  },
+  "choice_badge": {
+   "file": "choice_badge.png",
+   "slice": [
+    14,
+    14,
+    14,
+    14
+   ],
+   "body": "fill",
+   "body_color": [
+    36,
+    44,
+    88
+   ]
+  },
+  "row": {
+   "file": "row.png",
+   "slice": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "body": "fill",
+   "body_color": [
+    24,
+    29,
+    56
+   ]
+  },
+  "row_selected": {
+   "file": "row_selected.png",
+   "slice": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "body": "fill",
+   "body_color": [
+    40,
+    46,
+    86
+   ]
+  },
+  "key": {
+   "file": "key.png",
+   "slice": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "body": "fill",
+   "body_color": [
+    36,
+    44,
+    88
+   ]
+  },
+  "chip": {
+   "file": "chip.png",
+   "slice": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "body": "fill",
+   "body_color": [
+    24,
+    29,
+    56
+   ]
+  },
+  "chip_active": {
+   "file": "chip_active.png",
+   "slice": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "body": "fill",
+   "body_color": [
+    40,
+    46,
+    86
+   ]
+  },
+  "input": {
+   "file": "input.png",
+   "slice": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "body": "fill",
+   "body_color": [
+    10,
+    12,
+    26
+   ]
+  },
+  "scroll_track": {
+   "file": "scroll_track.png",
+   "slice": [
+    0,
+    4,
+    0,
+    4
+   ],
+   "body": "tile"
+  },
+  "scroll_thumb": {
+   "file": "scroll_thumb.png",
+   "slice": [
+    0,
+    4,
+    0,
+    4
+   ],
+   "body": "tile"
+  },
+  "bar_track": {
+   "file": "bar_track.png",
+   "slice": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "body": "fill",
+   "body_color": [
+    8,
+    10,
+    22
+   ]
+  },
+  "bar_frame": {
+   "file": "bar_frame.png",
+   "slice": [
+    6,
+    6,
+    6,
+    6
+   ],
+   "body": "none"
+  }
+ },
+ "icons": {
+  "sizes": [
+   16,
+   18,
+   20,
+   24,
+   28,
+   32,
+   48
+  ],
+  "files": {
+   "subject_math": "icons/subject_math.png",
+   "subject_geography": "icons/subject_geography.png",
+   "subject_history": "icons/subject_history.png",
+   "subject_animal": "icons/subject_animal.png",
+   "subject_cooking": "icons/subject_cooking.png",
+   "subject_science": "icons/subject_science.png",
+   "subject_philosophy": "icons/subject_philosophy.png",
+   "subject_grammar": "icons/subject_grammar.png",
+   "subject_economics": "icons/subject_economics.png",
+   "subject_theology": "icons/subject_theology.png",
+   "subject_trivia": "icons/subject_trivia.png",
+   "subject_ai": "icons/subject_ai.png",
+   "stat_hp": "icons/stat_hp.png",
+   "stat_mp": "icons/stat_mp.png",
+   "stat_sp": "icons/stat_sp.png",
+   "stat_str": "icons/stat_str.png",
+   "stat_con": "icons/stat_con.png",
+   "stat_dex": "icons/stat_dex.png",
+   "stat_int": "icons/stat_int.png",
+   "stat_wis": "icons/stat_wis.png",
+   "stat_per": "icons/stat_per.png",
+   "stat_ac": "icons/stat_ac.png",
+   "stat_gold": "icons/stat_gold.png",
+   "stat_sight": "icons/stat_sight.png",
+   "stat_clock": "icons/stat_clock.png",
+   "stat_weight": "icons/stat_weight.png",
+   "stat_spells": "icons/stat_spells.png",
+   "fx_poisoned": "icons/fx_poisoned.png",
+   "fx_paralyzed": "icons/fx_paralyzed.png",
+   "fx_confused": "icons/fx_confused.png",
+   "fx_slowed": "icons/fx_slowed.png",
+   "fx_cursed": "icons/fx_cursed.png",
+   "fx_bleeding": "icons/fx_bleeding.png",
+   "fx_stunned": "icons/fx_stunned.png",
+   "fx_blinded": "icons/fx_blinded.png",
+   "fx_feared": "icons/fx_feared.png",
+   "fx_burning": "icons/fx_burning.png",
+   "fx_weakened": "icons/fx_weakened.png",
+   "fx_sleeping": "icons/fx_sleeping.png",
+   "fx_frozen": "icons/fx_frozen.png",
+   "fx_diseased": "icons/fx_diseased.png",
+   "fx_hallucinating": "icons/fx_hallucinating.png",
+   "fx_charmed": "icons/fx_charmed.png",
+   "fx_blessed": "icons/fx_blessed.png",
+   "fx_hasted": "icons/fx_hasted.png",
+   "fx_regenerating": "icons/fx_regenerating.png",
+   "fx_shielded": "icons/fx_shielded.png",
+   "fx_invisible": "icons/fx_invisible.png",
+   "fx_berserk": "icons/fx_berserk.png",
+   "fx_levitating": "icons/fx_levitating.png",
+   "fx_telepathy": "icons/fx_telepathy.png",
+   "fx_see_invisible": "icons/fx_see_invisible.png",
+   "fx_heroism": "icons/fx_heroism.png",
+   "fx_fire_resist": "icons/fx_fire_resist.png",
+   "fx_cold_resist": "icons/fx_cold_resist.png",
+   "fx_poison_resist": "icons/fx_poison_resist.png",
+   "fx_empowered": "icons/fx_empowered.png"
+  }
+ }
+}

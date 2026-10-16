@@ -3,8 +3,8 @@ fantasy_ui.py -- High-fantasy medieval / arcane grimoire UI theme.
 # FANTASY: Central theme module. All visual helpers live here so main.py
 #          and ui.py stay logic-focused. Import what you need:
 #
-#   from fantasy_ui import (FP, get_font, draw_panel, draw_dark_panel,
-#                            draw_panel_frame, draw_divider,
+#   from fantasy_ui import (FP, KT, get_font, draw_panel, draw_dark_panel,
+#                            draw_panel_frame, draw_divider, draw_key_hints,
 #                            draw_shadow_text, draw_glow_text,
 #                            make_parchment, draw_header_bar,
 #                            draw_overlay, draw_choice_button)
@@ -119,6 +119,12 @@ class FP:
     # incorrect-answer card bg (70,14,14) — contrast 2.67, invisible.
     DANGER_TEXT_LIGHT = (255, 150, 150)
     SUCCESS_TEXT    = (110, 220, 100)
+    # The death-screen headline: a hot blood red that still reads on the
+    # blood-red wash (FP.BLOOD there measured 1.7:1), set on a near-black
+    # glow so it stays dramatic.
+    DEATH_TITLE     = (240,  78,  64)
+    DEATH_GLOW      = ( 34,   0,   4)
+    DEATH_SUB       = (232, 112, 100)
     WARNING_TEXT    = (220, 185,  45)
     LOOT_TEXT       = GOLD_BRIGHT
 
@@ -192,6 +198,118 @@ class FP:
         'trivia':     (255, 200, 100),
         'ai':         (  0, 220, 120),
     }
+
+
+class KT:
+    """Midnight Codex kit tokens (_genart/ui/style/DESIGN_RULES.md 2.1, style C).
+
+    Used by the CHROME the art kit draws (plaque titles, sub-panel labels,
+    key glyphs, footer key hints, tab labels, quiz card text) when the kit
+    is loaded. Content text keeps its ``FP`` colours. Every pair is gated
+    for contrast in DESIGN_RULES 2.2 and measured by tests/test_ui_gates.py.
+    """
+    VOID        = (  6,   7,  14)
+    INTERIOR    = ( 16,  19,  38)   # flat body of every modal (frame.png centre)
+    RAISED      = ( 24,  29,  56)   # cards, rows, sub-panel bodies
+    SELECTED    = ( 40,  46,  86)
+    PLAQUE      = ( 20,  26,  58)   # header plaque field
+    WELL        = ( 12,  14,  28)   # dark well behind item / creature art
+    TEXT_QUIZ   = (248, 238, 212)
+    TEXT_BODY   = (234, 222, 194)
+    TEXT_DIM    = (186, 182, 214)
+    TEXT_HINT   = (186, 182, 214)
+    TEXT_HEAD   = (234, 196, 100)
+    TEXT_SUB    = (222, 184, 100)
+    KEY         = (250, 220, 140)
+    KEY_BG      = ( 36,  44,  88)
+    GOLD        = (198, 156,  62)
+    GOLD_DARK   = (116,  86,  34)
+    GOLD_HI     = (240, 208, 128)
+    LINE        = ( 70,  78, 130)
+    OK_TEXT     = (200, 244, 190)
+    BAD_TEXT    = (255, 190, 180)
+    DIS_TEXT    = (120, 120, 150)
+    GOOD_TEXT   = (140, 216, 124)
+    # Message-log tags (DESIGN_RULES 2.1 ``log.*``): they replace
+    # FP.DANGER_TEXT = BLOOD, which is 2.3:1 on the log.
+    LOG = {
+        'info':    (226, 216, 192),
+        'success': (140, 216, 124),
+        'danger':  (255, 146, 130),
+        'warning': (234, 200, 100),
+        'loot':    (240, 206, 112),
+    }
+
+
+def kit_on(kind: str = 'panel') -> bool:
+    """True when the painted art kit is loaded (the Midnight Codex look)."""
+    return ui_theme.has(kind)
+
+
+def _lum(rgb) -> float:
+    def ch(c):
+        c = c / 255.0
+        return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    r, g, b = (ch(int(v)) for v in rgb[:3])
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b
+
+
+def contrast(a, b) -> float:
+    """WCAG contrast ratio of two RGB colours."""
+    la, lb = _lum(a), _lum(b)
+    hi, lo = max(la, lb), min(la, lb)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+_readable_cache: dict = {}
+
+
+def readable(color, bg, ratio: float = 4.5) -> tuple:
+    """``color`` lightened toward white (hue kept) until it reaches
+    ``ratio``:1 on ``bg``. Signal colours chosen for borders (an altar's
+    colour, an NPC's, ARCANE_BRIGHT) stay recognisable as text on the
+    kit's dark fields instead of failing the contrast gate."""
+    key = (tuple(color[:3]), tuple(bg[:3]), ratio)
+    got = _readable_cache.get(key)
+    if got is not None:
+        return got
+    c = tuple(int(v) for v in color[:3])
+    for i in range(0, 21):
+        t = i / 20
+        cand = tuple(int(v + (255 - v) * t) for v in c)
+        if contrast(cand, bg) >= ratio:
+            c = cand
+            break
+    else:
+        c = (255, 255, 255)
+    _readable_cache[key] = c
+    return c
+
+
+_KEEP_UPPER = frozenset({'AI', 'HP', 'MP', 'SP', 'XP', 'AC', 'BUC', 'QA', 'II', 'III',
+                         'IV', 'VI', 'VII', 'VIII', 'IX', 'XI', 'XII', 'STR', 'CON',
+                         'DEX', 'INT', 'WIS', 'PER', 'NPC', 'DR'})
+
+
+def display_title(text: str) -> str:
+    """An ALL-CAPS title in Title Case for the kit's Cinzel plaques
+    ("EQUIP / UNEQUIP" -> "Equip / Unequip"): Cinzel sets capitals and small
+    capitals by itself (DESIGN_RULES 3). Mixed-case text is left alone;
+    acronyms (AI, HP, roman numerals) stay capitals."""
+    if not text or text != text.upper() or not any(c.isalpha() for c in text):
+        return text
+    from naming import proper_name
+    out = []
+    for word in text.split(' '):
+        core = word.strip("[]():,.!?'\"-")
+        if core in _KEEP_UPPER:
+            out.append(word)
+        else:
+            out.append(word.lower())
+    titled = proper_name(' '.join(out))
+    # proper_name leaves words that hold capitals alone; capitalise a word
+    # that starts with punctuation ("(unnamed)" stays as typed).
+    return titled[:1].upper() + titled[1:]
 
 
 # -----------------------------------------------------------------------------
@@ -466,8 +584,9 @@ def draw_dark_panel(surf: pygame.Surface, rect: tuple,
     ``kind`` names the art piece (``'panel'``, or ``'quiz'`` for the quiz
     modal). With that art loaded the painted frame is drawn instead and
     ``border_color`` tints only its accent layer, never the painted gold.
-    A header strip drawn over the top of the panel must repaint the frame:
-    pass ``frame=(rect, border_color, kind)`` to ``draw_header_bar``.
+    Pass ``frame=(rect, border_color, kind)`` to ``draw_header_bar`` for the
+    panel's header: with art it is inset inside the frame band
+    (``panel_band``); without art the frame is repainted over the strip.
     """
     if border_color is None:
         border_color = FP.GOLD
@@ -586,34 +705,82 @@ def _edge_diamond(surf: pygame.Surface, x: int, y: int,
 # HEADER STRIP
 # -----------------------------------------------------------------------------
 
+def panel_band(kind: str = 'panel', rect=None) -> int:
+    """Width of the painted frame band of a ``kind`` panel drawn at ``rect``
+    (0 without art, or when the art would not fit and the procedural frame
+    is drawn). Headers and content sit inside it."""
+    if kind == 'parchment':
+        return 0
+    return ui_theme.band(kind, rect)
+
+
+def header_rect(panel, h: int, kind: str = 'panel') -> pygame.Rect:
+    """Where ``draw_header_bar(frame=(panel, ...))`` puts an ``h``-tall header:
+    inset inside the frame band with the art kit, flush with the panel's top
+    edge without it."""
+    panel = pygame.Rect(panel)
+    b = panel_band(kind, panel)
+    if b and ui_theme.has('header'):
+        return pygame.Rect(panel.x + b, panel.y + b, panel.w - 2 * b, h)
+    return pygame.Rect(panel.x, panel.y, panel.w, h)
+
+
+# The plaque's painted rim at the bottom (gold rule + accent rule) that a
+# title must not sit on: the flat field is the strip above it (DESIGN_RULES
+# 5.3). In UI px at scale 1.
+_PLAQUE_RIM = 4
+# Room the plaque's scroll-roll ends take at each side.
+_PLAQUE_END = 34
+
+
 def draw_header_bar(surf: pygame.Surface, rect: tuple,
                     text: str = '', font: pygame.font.Font | None = None,
                     text_color: tuple | None = None,
                     accent: tuple | None = None,
                     right_reserve: int = 0, *,
                     frame: tuple | None = None,
-                    kind: str = 'header') -> None:
+                    kind: str = 'header',
+                    left_reserve: int = 0) -> pygame.Rect:
     """
     # FANTASY: Decorative header strip inside a panel.
     rect = (x, y, w, h)  -- usually HEADER_H = 44 tall.
 
     ``frame=(panel_rect, border_color[, panel_kind])`` names the panel this
-    strip sits in. The strip is opaque and starts at the panel's own edge,
-    so on its own it paints over the panel's top and side borders
-    (FOUNDATION_REVIEW 1). With ``frame`` the panel's frame is repainted
-    over the strip, clipped to the strip, before the title is drawn.
+    strip sits in.
+
+    * With the art kit (a painted panel and the ``header`` plaque loaded) the
+      plaque is drawn INSET inside the panel's frame band, clear of the
+      frame, and the frame is NOT repainted (this kit's frame slices carry
+      the panel body: a repaint would cover the plaque). The title is set in
+      Title Case on the plaque's flat field, above its painted rim.
+    * Without art the strip starts at the panel's own edge and the panel's
+      frame is repainted over it, clipped to the strip (FOUNDATION_REVIEW 1).
 
     ``kind`` is the art piece for the strip (``'header'``; the sidebar uses
-    ``'header_small'``). The title text is always drawn here, on top.
+    ``'header_small'``). Returns the rect the strip was drawn in.
     """
     if text_color is None:
         text_color = FP.GOLD_BRIGHT
     if accent is None:
         accent = FP.GOLD
+    rect = pygame.Rect(rect)
+
+    art_frame = False
+    if frame is not None and ui_theme.has(kind):
+        panel_rect = pygame.Rect(frame[0])
+        panel_kind = frame[2] if len(frame) > 2 else 'panel'
+        b = panel_band(panel_kind, panel_rect)
+        if b:
+            art_frame = True
+            left = max(rect.x, panel_rect.x + b)
+            right = min(rect.right, panel_rect.right - b)
+            top = max(rect.y, panel_rect.y + b)
+            rect = pygame.Rect(left, top, right - left, rect.h)
     x, y, w, h = rect
 
-    if ui_theme.draw_piece(surf, kind, rect, accent=accent):
-        if frame is not None:
+    art = ui_theme.draw_piece(surf, kind, rect, accent=accent)
+    if art:
+        if frame is not None and not art_frame:
             _repaint_frame(surf, frame, rect)
     else:
         # Two-tone bg
@@ -630,22 +797,45 @@ def draw_header_bar(surf: pygame.Surface, rect: tuple,
         for ax in [x + S(14), x + w - S(15)]:
             _edge_diamond(surf, ax, y + h//2, accent, vertical=True, size=4)
 
+    if not (text and font):
+        return rect
+    if art:
+        # The kit's plaque: Title Case on the flat field, centred between
+        # the scroll-roll ends (and any reserved slots), no drop shadow.
+        S = ui_scale.px
+        if text_color in (FP.GOLD_BRIGHT, FP.GOLD_PALE, FP.GOLD, FP.HEADER_TEXT):
+            text_color = KT.TEXT_HEAD
+        else:
+            text_color = readable(text_color, KT.PLAQUE)
+        text = display_title(text)
+        end = S(_PLAQUE_END) if kind == 'header' else S(16)
+        lo = x + max(end, left_reserve)
+        hi = x + w - max(end, right_reserve)
+        text = fit_text(text, font, max(20, hi - lo))
+        ts = font.render(text, True, text_color)
+        field_h = h - S(_PLAQUE_RIM) if kind == 'header' else h - S(1)
+        sx = (x + w // 2) - ts.get_width() // 2
+        sx = max(lo, min(sx, hi - ts.get_width()))
+        sy = y + (field_h - ts.get_height()) // 2
+        surf.blit(ts, (sx, sy))
+        return rect
+
     # Title text — truncate with ellipsis if wider than the header so the
     # text never overflows the panel sides. Mid-edge diamonds + side padding
     # = 28px each side, so usable interior is w - 56.
-    if text and font:
-        # Reserve room on the right (e.g. a quiz chain counter) so the centered
-        # title never runs under it; clip + center within the remaining region.
-        reserve = max(0, right_reserve)
-        text = fit_text(text, font, max(20, w - ui_scale.px(56) - reserve))
-        ts = font.render(text, True, text_color)
-        region_w = w - reserve
-        sx = x + region_w//2 - ts.get_width()//2
-        sy = y + h//2 - ts.get_height()//2
-        shadow = font.render(text, True, FP.INK)
-        off = ui_scale.px(2)
-        surf.blit(shadow, (sx + off, sy + off))
-        surf.blit(ts,     (sx,     sy))
+    # Reserve room on the right (e.g. a quiz chain counter) so the centered
+    # title never runs under it; clip + center within the remaining region.
+    reserve = max(0, right_reserve)
+    text = fit_text(text, font, max(20, w - ui_scale.px(56) - reserve))
+    ts = font.render(text, True, text_color)
+    region_w = w - reserve
+    sx = x + region_w//2 - ts.get_width()//2
+    sy = y + h//2 - ts.get_height()//2
+    shadow = font.render(text, True, FP.INK)
+    off = ui_scale.px(2)
+    surf.blit(shadow, (sx + off, sy + off))
+    surf.blit(ts,     (sx,     sy))
+    return rect
 
 
 def _repaint_frame(surf, frame, strip_rect) -> None:
@@ -674,6 +864,14 @@ def draw_divider(surf: pygame.Surface, x: int, y: int, w: int,
     d = 5
     pts = [(cx-d*2, y), (cx, y-d), (cx+d*2, y), (cx, y+d)]
     pygame.draw.polygon(surf, color, pts)
+
+
+def divider_reach() -> int:
+    """How far a ``draw_divider`` line reaches above (and below) its ``y``:
+    the kit's centre ornament rises well above its hairline. Anything drawn
+    above a divider must end at least this far above ``y``."""
+    r = ui_theme.hbar_reach('divider')
+    return r if r else ui_scale.px(5)
 
 
 # -----------------------------------------------------------------------------
@@ -839,11 +1037,42 @@ def draw_input_box(surf: pygame.Surface, rect: tuple, value: str,
     x, y, w, h = rect
     if not ui_theme.draw_piece(surf, 'input', rect, accent=border_color,
                                body_color=FP.MIDNIGHT_LIGHT):
+        # Without the art kit: exactly the box the game drew before it.
         pygame.draw.rect(surf, FP.MIDNIGHT_LIGHT, (x, y, w, h), border_radius=4)
         pygame.draw.rect(surf, border_color, (x, y, w, h), 1, border_radius=4)
-    display = value if value else placeholder
-    val_surf = font.render(display, True, text_color)
-    surf.blit(val_surf, (x + ui_scale.px(10), y + (h - val_surf.get_height()) // 2))
+        display = value if value else placeholder
+        val_surf = font.render(display, True, text_color)
+        surf.blit(val_surf, (x + ui_scale.px(10), y + (h - val_surf.get_height()) // 2))
+        return
+    # A text caret after what is typed, so the box reads as a field the
+    # keyboard is writing into (VISUAL_REVIEW minor 11). Steady, not
+    # blinking: it is there on every frame a player looks.
+    S = ui_scale.px
+    tx = x + S(10)
+    if value:
+        val_surf = font.render(value, True, text_color)
+        surf.blit(val_surf, (tx, y + (h - val_surf.get_height()) // 2))
+        cx = tx + val_surf.get_width() + S(3)
+    else:
+        cx = tx
+    ch = min(h - S(10), font.get_height())
+    pygame.draw.rect(surf, FP.GOLD_BRIGHT, (cx, y + (h - ch) // 2, max(2, S(2)), ch))
+    if not value and placeholder:
+        ps = font.render(placeholder, True, readable(FP.FADED_TEXT, FP.MIDNIGHT_LIGHT))
+        surf.blit(ps, (cx + S(8), y + (h - ps.get_height()) // 2))
+
+
+def choice_text_insets() -> tuple[int, int]:
+    """(left, right) px of a quiz answer card kept clear of the answer text.
+    Left: the key badge plus the ``sm`` step (8) between a badge and its
+    label (DESIGN_RULES 4). Right, with the kit: the 40 px slot where the
+    painted tick / cross of the correct / incorrect card sits (the card
+    art's right slice). Nothing more: the answer wraps only when it does
+    not fit the card's real text area (VISUAL_REVIEW_2 minor 2)."""
+    S = ui_scale.px
+    if ui_theme.has('choice'):
+        return S(44) + S(8), S(40)
+    return S(44) + S(10), S(22)
 
 
 def draw_choice_button(surf: pygame.Surface, rect: tuple,
@@ -857,7 +1086,8 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     # FANTASY: Ornate answer-choice button for the quiz modal.
     rect = (x, y, w, h)
     text: single string or pre-wrapped list[str] of lines (multi-line is
-          vertically centered as a block).
+          vertically centered as a block). Wrap it to the card width minus
+          ``choice_text_insets()``.
     """
     x, y, w, h = rect
 
@@ -878,20 +1108,22 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     if w <= 0 or h <= 0:
         return
     badge_w = ui_scale.px(44)
-    if not _choice_button_art(surf, rect, badge_w, correct, incorrect, selected):
+    art = _choice_button_art(surf, rect, badge_w, correct, incorrect, selected)
+    if not art:
         _choice_button_procedural(surf, rect, badge_w, bg_col, border_col)
 
-    k_surf = key_font.render(key_label, True, FP.GOLD_BRIGHT)
+    k_surf = key_font.render(key_label, True, KT.KEY if art else FP.GOLD_BRIGHT)
     surf.blit(k_surf, (x + badge_w//2 - k_surf.get_width()//2,
                        y + h//2 - k_surf.get_height()//2))
 
-    # Choice text — single string or pre-wrapped list. Always render in
+    # Choice text -- single string or pre-wrapped list. Always render in
     # PARCHMENT_LIGHT regardless of correct/incorrect state. The BORDER does
     # the color signaling (green/red). Using DANGER_TEXT (200,18,18) as the
     # text color on the incorrect-answer red bg (70,14,14) collapses contrast
-    # to 2.67 — invisible. The user reported this as "dark text on blue
-    # background" in the identify quiz.
+    # to 2.67 -- invisible. With the kit: the token for the card's state.
     t_color = FP.PARCHMENT_LIGHT
+    if art:
+        t_color = KT.OK_TEXT if correct else KT.BAD_TEXT if incorrect else KT.TEXT_QUIZ
     if isinstance(text, list):
         lines = text or ['']
     else:
@@ -899,7 +1131,7 @@ def draw_choice_button(surf: pygame.Surface, rect: tuple,
     line_h = text_font.get_height() + ui_scale.px(3)
     block_h = len(lines) * line_h
     ty = y + (h - block_h) // 2
-    tx = x + badge_w + ui_scale.px(10)
+    tx = x + choice_text_insets()[0]
     for line in lines:
         t_surf = text_font.render(line, True, t_color)
         surf.blit(t_surf, (tx, ty))
@@ -941,8 +1173,193 @@ def _choice_button_procedural(surf, rect, badge_w, bg_col, border_col) -> None:
 
 
 # =============================================================================
+# KEY BADGES AND FOOTER KEY HINTS
+# =============================================================================
+
+_KEY_WORDS = {
+    'up/down': '\u2191/\u2193', 'left/right': '\u2190/\u2192', 'arrows': 'Arrows',
+    'esc': 'Esc', 'enter': 'Enter', 'space': 'Space', 'tab': 'Tab',
+    'backspace': 'Backspace', 'any key': 'Any Key',
+}
+
+
+def key_label(key: str) -> str:
+    """Display form of a key name for a key badge: 'Up/Down' -> arrows,
+    'ESC' -> 'Esc', 'Enter or a-z' -> 'Enter / a-z'."""
+    parts = []
+    for part in str(key).replace(' or ', ' / ').split(' / '):
+        part = part.strip()
+        low = part.lower()
+        if low in _KEY_WORDS:
+            part = _KEY_WORDS[low]
+        else:
+            # "ESC/W" -> "Esc/W"; "PgUp/PgDn" is kept as written
+            part = '/'.join(_KEY_WORDS.get(p.lower(), p) for p in part.split('/'))
+        parts.append(part)
+    return ' / '.join(parts)
+
+
+def parse_key_hints(text: str) -> list[tuple[str, str]]:
+    """Split a footer string ("Up/Down: move   Enter or a-z: select   ESC:
+    cancel", with '   ', ' | ' or ' // ' between items) into (key, label)
+    pairs, keys in badge form (``key_label``), labels capitalised. An item
+    without "key: label" comes back as ('', text)."""
+    import re
+    items = re.split(r'\s+\|\s+|\s+//\s+|\s{3,}', str(text).strip())
+    out = []
+    for item in items:
+        item = item.strip()
+        if not item:
+            continue
+        if ': ' in item:
+            k, lab = item.split(': ', 1)
+            lab = lab.strip()
+            out.append((key_label(k.strip()), lab[:1].upper() + lab[1:]))
+        else:
+            out.append(('', item))
+    return out
+
+
+def draw_key_badge(surf: pygame.Surface, rect, key: str, font,
+                   color: tuple | None = None) -> None:
+    """A key-letter badge (the kit's ``key`` piece; a rounded box without
+    art) with the key glyph centred on it."""
+    rect = pygame.Rect(rect)
+    art = ui_theme.draw_piece(surf, 'key', rect)
+    if not art:
+        pygame.draw.rect(surf, FP.MIDNIGHT_MID, rect, border_radius=4)
+        pygame.draw.rect(surf, FP.GOLD_DARK, rect, 1, border_radius=4)
+    col = color or (KT.KEY if art else FP.GOLD_BRIGHT)
+    if art:
+        col = readable(col, KT.KEY_BG)
+    ks = font.render(str(key), True, col)
+    surf.blit(ks, (rect.centerx - ks.get_width() // 2,
+                   rect.centery - ks.get_height() // 2))
+
+
+def key_hint_fonts(size: int = 16):
+    return get_font('body', size, bold=True), get_font('body', size)
+
+
+def _hints_width(pairs, kf, lf, gap, pad, inner):
+    w = 0
+    for item in pairs:
+        k, lab = item[0], item[1]
+        if k:
+            w += kf.size(k)[0] + 2 * pad + (inner if lab else 0)
+        w += lf.size(lab)[0] if lab else 0
+    return w + gap * max(0, len(pairs) - 1)
+
+
+def key_hints_height(size: int = 16) -> int:
+    kf, _lf = key_hint_fonts(size)
+    return max(kf.get_height() + ui_scale.px(8), ui_scale.px(24))
+
+
+def draw_key_hints(surf: pygame.Surface, rect, hints, *, align: str = 'center',
+                   sizes=(16, 15, 14), label_color: tuple | None = None) -> int:
+    """Draw ``hints`` ((key, label[, label colour]) tuples, or a footer string) as
+    ``[Key] Label`` units across ``rect`` (DESIGN_RULES 5.4), vertically
+    centred. Units shrink (gaps, then font) to fit and are never split; a
+    label that still cannot fit is ellipsized. Returns the drawn width."""
+    S = ui_scale.px
+    rect = pygame.Rect(rect)
+    pairs = parse_key_hints(hints) if isinstance(hints, str) else list(hints)
+    if not pairs:
+        return 0
+    pad, inner = S(7), S(8)
+    total = 0
+    for size in sizes:
+        kf, lf = key_hint_fonts(size)
+        for gap in (S(30), S(20), S(12)):
+            total = _hints_width(pairs, kf, lf, gap, pad, inner)
+            if total <= rect.w:
+                break
+        if total <= rect.w:
+            break
+    if total > rect.w:
+        # Last resort: trim the longest labels with an ellipsis.
+        budget = rect.w - _hints_width([(p[0], '') for p in pairs], kf, lf, gap, pad, inner)
+        each = max(S(24), budget // max(1, len(pairs)))
+        pairs = [(p[0], fit_text(p[1], lf, each)) + tuple(p[2:]) for p in pairs]
+        total = _hints_width(pairs, kf, lf, gap, pad, inner)
+    if align == 'left':
+        x = rect.x
+    elif align == 'right':
+        x = rect.right - total
+    else:
+        x = rect.centerx - total // 2
+    key_h = max(kf.get_height() + S(8), S(24))
+    ky = rect.centery - key_h // 2
+    lc = label_color or (KT.TEXT_HINT if kit_on() else FP.HINT_TEXT)
+    for item in pairs:
+        k, lab = item[0], item[1]
+        col = (item[2] if len(item) > 2 and item[2] else None) or lc
+        if k:
+            kw = kf.size(k)[0] + 2 * pad
+            draw_key_badge(surf, (x, ky, kw, key_h), k, kf)
+            x += kw + (inner if lab else 0)
+        if lab:
+            ls = lf.render(lab, True, col)
+            surf.blit(ls, (x, rect.centery - ls.get_height() // 2))
+            x += ls.get_width()
+        x += gap
+    return total
+
+
+def draw_icon(surf: pygame.Surface, name: str, rect) -> bool:
+    """Blit kit icon ``name`` centred in ``rect``; False when not loaded."""
+    return ui_theme.draw_icon(surf, name, rect)
+
+
+def subject_icon(subject: str) -> str:
+    return f"subject_{subject}"
+
+
+# =============================================================================
 # TEXT FITTING
 # =============================================================================
+
+_URL_RE = r'(?:https?://|www\.)[^\s;,)\]]*[^\s;,.)\]]'
+
+
+def strip_citations(text: str) -> str:
+    """``text`` without its research citations: "Source: <url>" tails, URLs
+    in parentheses, and bare URLs with their lead-in dash or semicolon. The
+    question banks keep a source link at the end of most context blurbs
+    (for the authors); a child reading the game never sees a raw URL or a
+    "Source: ..." tail (VISUAL_REVIEW minor 8). Text with neither is
+    returned unchanged."""
+    import re
+    t = str(text)
+    if 'http' not in t and 'www.' not in t and 'Source' not in t:
+        return t
+    t = re.sub(r'\s*\(?\b(?:Sources?|See|Ref(?:erence)?s?)\s*:?\s*' + _URL_RE + r'[^\n]*', '', t)
+    t = re.sub(r'\s*\(?\bSources?\s*:[^\n]*', '', t)
+    t = re.sub(r'\s*\([^()]*' + _URL_RE + r'[^()]*\)', '', t)
+    t = re.sub(r'\s*(?:—|–|--|-|;|,)?\s*' + _URL_RE, '', t)
+    t = re.sub(r'\(\s*\)', '', t)
+    t = re.sub(r'\s*;\s*(?=[.;]|$)', '', t)
+    t = re.sub(r'[ \t]{2,}', ' ', t)
+    t = re.sub(r'[ \t]+([.,;])', r'\1', t)
+    return t.strip()
+
+
+def display_text(text: str, sources: bool = False) -> str:
+    """Typographic form of data text for the screen: an ASCII double hyphen
+    becomes an em dash ("Prayer -- Lord" -> "Prayer — Lord"). With
+    ``sources=True`` research citations are removed too (``strip_citations``;
+    only for context blurbs: a question may quote a web address on purpose)."""
+    import re
+    t = str(text)
+    if sources:
+        t = strip_citations(t)
+    if '--' in t:
+        t = re.sub(r'(?<!-)\s*--\s*(?!-)', ' — ', t)
+        t = re.sub(r'^ — ', '— ', t)
+        t = re.sub(r' — $', ' —', t)
+    return t
+
 
 def fit_text(text: str, font, max_w: int) -> str:
     """Truncate text with ellipsis if it exceeds max_w pixels."""

@@ -3303,7 +3303,7 @@ class MagicMixin:
 
         The copy becomes fully known (BUC + enchant + stats + lore) and its
         TYPE joins the global known set, so future copies show their true
-        name ("Unidentified Sword of Michael") while keeping their own BUC
+        name ("Sword of Michael (Curse and Enchant Unknown)") while keeping their own BUC
         and enchant hidden until identified individually. Fires the career
         hook once per instance crossing into full ID.
         """
@@ -4040,7 +4040,8 @@ class MagicMixin:
         """Record TYPE knowledge for an identified item.
 
         The true name (with stats + lore) becomes visible on every current
-        and future copy — they render as "Unidentified <true name>". The
+        and future copy — they render as "<true name> (Curse Unknown)" (see
+        hud_context.unknown_copy_suffix). The
         per-instance state (BUC, enchant) is deliberately NOT touched:
         under the True Name model each copy must be identified on its own.
         known_class_ids covers material-variant accessories (one Ring of

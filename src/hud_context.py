@@ -64,20 +64,52 @@ def spawn_fit_color(dungeon_level: int, peak_floor: int, spread: int = 10,
     return _mix(NEUTRAL, GREEN, score)
 
 
+def unknown_copy_suffix(item) -> str:
+    """What is still NOT known about one copy of an item whose TYPE is known
+    (identify v3 True Name model), in words a child reads at a glance:
+
+        blessing/curse unknown, has an enchantment -> "(Curse and Enchant Unknown)"
+        blessing/curse unknown                     -> "(Curse Unknown)"
+        blessing/curse known, enchantment unknown  -> "(Enchant Unknown)"
+        everything known                           -> ""
+
+    The name before it is the true name ("Potion of Healing"): the player
+    DOES know what the item is and what it does. It used to say
+    "Unidentified Potion of Healing" / "Potion of Healing (Unidentified)",
+    which a child reads as "you don't know what this is" while the name says
+    the opposite, next to truly unknown potions also tagged Unidentified
+    (VISUAL_REVIEW_2 4.6). Only THIS copy's blessing/curse and enchantment
+    wait for its own identify."""
+    if str(getattr(item, 'item_class', '')) == 'corpse':
+        return ''
+    try:
+        if int(getattr(item, 'id_level', 5) or 0) >= 5:
+            return ''
+    except (TypeError, ValueError):
+        return ''
+    curse_unknown = hasattr(item, 'buc') and not bool(getattr(item, 'buc_known', False))
+    enchant = hasattr(item, 'enchant_bonus')
+    if curse_unknown and enchant:
+        return "(Curse and Enchant Unknown)"
+    if curse_unknown:
+        return "(Curse Unknown)"
+    if enchant:
+        return "(Enchant Unknown)"
+    return ""
+
+
 def hud_item_name(player, item, *, include_count: bool = False) -> str:
     # Identify v3 True-Name model:
     #   INSTANCE identified                  -> full name ("Rapier +2")
-    #   TYPE known + BUC known               -> full name (BUC in braces
-    #                                           carries the instance info)
-    #   TYPE known + BUC unknown             -> "Unidentified <true name>"
-    #                                           (player knows what this is,
-    #                                           but this copy's BUC is a
-    #                                           mystery still)
+    #   TYPE known, copy not identified      -> "<true name> <what is still
+    #                                           unknown>" (unknown_copy_suffix:
+    #                                           "Potion of Healing (Curse
+    #                                           Unknown)"); a known curse shows
+    #                                           as the {cursed} prefix
     #   TYPE unknown                         -> unidentified appearance
     # "This copy is identified" means id_level 5, the same test the menus
-    # use (Game._display_name). `item.identified` is true from level 4
-    # ("type known"), which made the HUD show a plain name where every menu
-    # showed "Unidentified <name>" for the same item.
+    # use (Game._display_name), and the same suffix, so the HUD and every
+    # menu name one item the same way.
     if hasattr(item, "id_level"):
         try:
             instance_identified = int(getattr(item, "id_level", 0) or 0) >= 5
@@ -102,12 +134,8 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
             knows_type = getattr(item, "id", None) in getattr(player, "known_item_ids", set())
         if knows_type:
             true_name = getattr(item, "name", "item")
-            if bool(getattr(item, "buc_known", False)):
-                # BUC is known — the instance is "identified enough" for
-                # HUD purposes; the {buc} tag below carries the delta.
-                raw = true_name
-            else:
-                raw = f"Unidentified {true_name}"
+            suffix = unknown_copy_suffix(item)
+            raw = f"{true_name} {suffix}" if suffix else true_name
         else:
             raw = getattr(item, "unidentified_name", getattr(item, "name", "item"))
 

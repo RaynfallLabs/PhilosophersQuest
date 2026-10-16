@@ -5,11 +5,20 @@ chips and icons. It is loaded **once at startup** by `src/ui_theme.py`
 (`ui_theme.load()`, called from `main()` right after the window opens).
 Draw code never loads or rescales art.
 
-**Everything here is optional.** Any piece that is missing, unreadable, or
-too big for the box it is asked to fill is simply skipped, and that UI
-element draws exactly as it did before the kit existed (procedural midnight
-panels, gold borders). With only this README in the folder the game looks
-exactly like the procedural UI. That is tested (`tests/test_ui_theme.py`).
+**The installed kit is "C Midnight Codex"** (2026-10-16): midnight-blue
+leather tooled in gold, illuminated corners, lapis scroll-roll plaque ends.
+Its sources, build scripts and checks live in `_genart/ui/kitC/`; the
+design tokens are `fantasy_ui.KT` (from `_genart/ui/style/DESIGN_RULES.md`
+2.1, style C). `tests/test_ui_kit_installed.py` checks that it loads with
+zero warnings and that every piece and icon in the manifest is drawn by
+some screen.
+
+**Everything here is still optional.** Any piece that is missing,
+unreadable, or too big for the box it is asked to fill is simply skipped,
+and that UI element draws exactly as it did before the kit existed
+(procedural midnight panels, gold borders). With only this README in the
+folder the game looks like the procedural UI; that fallback is tested
+(`tests/test_ui_theme.py`, FALLBACK GATE).
 
 Only `.png`, `.json` and `.md` files may live here (the folder ships inside
 the exe; `tests/test_packaging.py` enforces it). Sources (`.psd`, `.kra`),
@@ -48,8 +57,9 @@ ComfyUI workflows and drafts belong in `_genart/`.
 | `pieces.<name>.body_color` | RGB for `"fill"`. Panel pieces default to the game's midnight `(14, 18, 48)`. |
 | `pieces.<name>.accent` | Optional greyscale PNG, **same size and slice** as `file`. It is multiplied by the element's accent colour (the quiz subject colour, a lore blue, a border colour passed by the code) and drawn over the frame. |
 | `pieces.<name>.ornament` | Optional PNG centred on the piece (a divider's centre gem). |
+| `pieces.<name>.band` | Panel frames (`panel`, `quiz`): the width of the painted frame band, in **source** px. The header plaque is drawn INSET by it and all content stays inside it (`ui_theme.band`, `fantasy_ui.panel_band` / `header_rect`). 0 or absent: content starts at the panel's edge, as with the procedural frame. |
 | `icons.sizes` | Icon sizes (px) pre-scaled at load. Other sizes are scaled once on first use and kept. |
-| `icons.files` | `name -> PNG`. Sources up to 64 px are treated as pixel art (integer upscale first, like the map sprites). |
+| `icons.files` | `name -> PNG`. Sources up to 64 px are treated as pixel art (integer upscale first, like the map sprites). The game asks for `subject_<subject>` (quiz header, welcome ring, study mode), `stat_<hp/mp/sp/str/.../ac/gold/sight/clock/weight/spells>` (sidebar) and `fx_<status effect id>` (sidebar effect chips). |
 
 ### How a piece is drawn
 
@@ -80,16 +90,16 @@ use (see the table).
 |---|---|---|
 | `panel` | every modal / menu panel (`draw_dark_panel`) | 420 x 150 (the "Dad?" card) |
 | `quiz` | the quiz modal (`draw_dark_panel(kind='quiz')`); its `accent` takes the subject colour | about 640 x 300 |
-| `header` | header strip at the top of a panel (`draw_header_bar`), 32-48 px tall. The panel's frame is repainted over it, so the frame band frames the header | 32 px tall |
+| `header` | header plaque at the top of a panel (`draw_header_bar(frame=...)`), 40-56 px tall. With a framed panel it is drawn INSET inside the frame's `band` and the frame is NOT repainted over it (this kit's frame slices carry the panel body). The title sits on the flat field above the plaque's bottom rim (4 px). Also the welcome-screen title banner | 24 px tall |
 | `header_small` | sidebar section headers | 24 px tall, 228 px wide |
 | `divider` | horizontal divider (`draw_divider`); three-slice (`slice` `[l, 0, r, 0]`), drawn at the art's own height centred on the line | 100 px wide |
 | `subpanel` | inner labelled box (`_ui_subpanel`) | 200 x 120 |
 | `subpanel_header` | the 29 px label strip at the top of a subpanel (optional) | 29 px tall |
-| `card` | reserved | |
-| `choice`, `choice_selected`, `choice_correct`, `choice_incorrect` | quiz answer cards; the state must read from the frame (green / red), never from the text colour | 300 x 52 |
+| `card` | small flat boxes inside a panel: the fast picker's note, the story popup's reward code, the character sheet's stat cells | 60 x 22 |
+| `choice`, `choice_selected`, `choice_correct`, `choice_incorrect` | quiz answer cards; the state must read from the frame (green / red) and the painted tick / cross in the card's right slice. Answer text keeps clear of that slice: `fantasy_ui.choice_text_insets()` (44 + 14 px left, 40 + 6 px right) | 300 x 52 |
 | `choice_badge` | the 44 px key badge on the left of an answer card. The card frame is redrawn over it | 44 x 52 |
 | `row`, `row_selected` | option rows in message cards and NPC encounters (`_ui_action_row`) | 200 x 48 |
-| `key` | key-letter badge on an option row | 42 x 32 |
+| `key` | key-letter badge: option rows, menu rows, and every footer key hint (`fantasy_ui.draw_key_hints`: "Up/Down: move   Esc: cancel" becomes `[↑/↓] Move  [Esc] Cancel`) | 24 x 24 |
 | `chip`, `chip_active` | tab chips (`_ui_chip`) | 60 x 21 |
 | `input` | text entry box (`draw_input_box`) | 200 x 38 |
 | `scroll_track`, `scroll_thumb` | scrollbars (`_ui_scrollbar`), vertical, 5 px wide | 5 x 20 |

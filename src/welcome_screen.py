@@ -15,11 +15,14 @@ import sys
 
 import pygame
 
+import ui_theme
 from ui_scale import px as S
-from fantasy_ui import (FP, ScaledFont, draw_panel, draw_dark_panel,
+from fantasy_ui import (FP, KT, ScaledFont, draw_panel, draw_dark_panel,
                         draw_header_bar, draw_filigree_bar, draw_shadow_text,
                         draw_overlay, draw_rune_circle, draw_candle_glow,
-                        centered_text)
+                        centered_text, kit_on, draw_key_hints, key_hints_height,
+                        draw_divider, get_font, display_title, panel_band,
+                        fit_text, display_text)
 
 
 # ------------------------------------------------------------------
@@ -375,9 +378,11 @@ class WelcomeScreen:
     font_xl   = ScaledFont('title',   52, bold=True)
     font_lg   = ScaledFont('heading', 32)
     font_md   = ScaledFont('body',    20)
-    font_sm   = ScaledFont('body',    15)
+    font_sm   = ScaledFont('body',    16)
     font_icon = ScaledFont('symbol',  26)
-    font_tiny = ScaledFont('body',    12)
+    font_tiny = ScaledFont('body',    16)
+    # The subject captions on the wheel (Cinzel's hairlines need 17 px).
+    font_cap  = ScaledFont('heading', 17, bold=True)
 
     def __init__(self, screen: pygame.Surface, version: str, notice: str | None = None):
         self.screen   = screen
@@ -393,6 +398,7 @@ class WelcomeScreen:
         self._has_save   = False
         self._delete_flash = 0.0
         self._show_alltime = False
+        self._alltime_page = 0
         self._god_prompt   = False   # True when showing "Did you mean Dad?" popup
         # Pre-render stone background into a surface
         self._bg = self._make_stone_bg()
@@ -468,8 +474,15 @@ class WelcomeScreen:
                     continue
                 if event.type == pygame.KEYDOWN:
                     if self._show_alltime:
-                        # Any key closes the all-time overlay
-                        self._show_alltime = False
+                        # Up/Down (PgUp/PgDn) turn the pages of a long list;
+                        # any other key closes the all-time overlay.
+                        pages = getattr(self, '_alltime_pages', 1)
+                        if event.key in (pygame.K_DOWN, pygame.K_PAGEDOWN, pygame.K_RIGHT) and pages > 1:
+                            self._alltime_page = min(pages - 1, self._alltime_page + 1)
+                        elif event.key in (pygame.K_UP, pygame.K_PAGEUP, pygame.K_LEFT) and pages > 1:
+                            self._alltime_page = max(0, self._alltime_page - 1)
+                        else:
+                            self._show_alltime = False
                         continue
                     if self._god_prompt:
                         if event.key == pygame.K_y:
@@ -506,19 +519,136 @@ class WelcomeScreen:
                         sys.exit()
                     elif event.key == pygame.K_F2:
                         self._show_alltime = True
+                        self._alltime_page = 0
                     elif event.key == pygame.K_F3:
                         return '__STUDY_MODE__', None
                     elif len(self.name_buf) < NAME_MAX and event.unicode.isprintable():
                         self.name_buf += event.unicode
 
+            # The saved-journey cue follows the name typed THIS frame (it was
+            # computed before the frame's key events, one frame behind).
+            self._has_save = save_exists(self.name_buf.strip()) if self.name_buf.strip() else False
             self._draw()
             pygame.display.flip()
 
     # ------------------------------------------------------------------ drawing
 
+    def _ring_cy(self) -> int:
+        """Centre of the rune circles / domain ring / Stone. With the kit it
+        sits midway between the title banner and the name box, so the
+        wheel's top and bottom captions clear both at every window size."""
+        if kit_on():
+            return self._wheel()[1]
+        return self.cy
+
+    # Title banner (kit): top and height, UI px at scale 1.
+    _BANNER_Y, _BANNER_H = 14, 112
+
+    def _wheel(self):
+        """The kit's subject wheel, laid out once per window size and UI
+        scale: (cx, cy, (rx, ry), [(label, subject, colour, tile rect,
+        caption, caption rect)]).
+
+        The wheel does not orbit, so a long caption can never drift into a
+        neighbour. Every caption sits just OUTSIDE its tile along the spoke,
+        on its own flat plaque (no line crosses its text). The ring is an
+        ellipse: as tall as the room between the title banner and the name
+        box allows, and only as wide as it must be for no caption to touch
+        another caption or a tile (VISUAL_REVIEW must-fix 6: at 1280x720 a
+        circle that fits vertically crowds the top captions). The wheel and
+        the Top Runs panel are centred on the window together when both do
+        not fit with the wheel alone centred."""
+        import ui_scale
+        key = (self.W, self.H, ui_scale.get())
+        got = getattr(self, '_wheel_cache', None)
+        if got is not None and got[0] == key:
+            return got[1]
+        box_w, box_h = S(68), S(58)
+        pad_x, pad_y, gap = S(6), S(2), S(4)
+        f = self.font_cap
+        top = S(self._BANNER_Y + self._BANNER_H) + S(10)
+        box, _sy, _keys = self._bottom_layout()
+        bottom = box.y - S(10)
+        cy = (top + bottom) // 2
+        caps = []
+        for label, deg, key_, _sym in self._DOMAINS:
+            text = display_title(label)
+            w, h = f.size(text)
+            caps.append((label, deg, key_, text, w + 2 * pad_x, h + 2 * pad_y))
+
+        def place(cx, rx, ry):
+            out = []
+            for label, deg, key_, text, cw, ch in caps:
+                a = math.radians(deg)
+                ux, uy = math.cos(a), math.sin(a)
+                ix, iy = cx + rx * ux, cy + ry * uy
+                tile = pygame.Rect(round(ix - box_w / 2), round(iy - box_h / 2), box_w, box_h)
+                need = []
+                if abs(ux) > 1e-6:
+                    need.append((box_w + cw) / 2 / abs(ux))
+                if abs(uy) > 1e-6:
+                    need.append((box_h + ch) / 2 / abs(uy))
+                d = min(need) + gap
+                cap = pygame.Rect(0, 0, cw, ch)
+                cap.center = (round(ix + ux * d), round(iy + uy * d))
+                out.append((label, key_, FP.SUBJECT.get(key_, FP.GOLD_PALE), tile, text, cap))
+            return out
+
+        def clear(items):
+            # (rect, owner): a caption sits against its own tile by design;
+            # every other pair keeps a few px apart.
+            rects = [(it[3], i) for i, it in enumerate(items)] +                     [(it[5], i) for i, it in enumerate(items)]
+            for j, (r1, o1) in enumerate(rects):
+                if r1.top < top or r1.bottom > bottom:
+                    return False
+                for r2, o2 in rects[j + 1:]:
+                    if o1 == o2:
+                        if r1.colliderect(r2):
+                            return False
+                    elif r1.colliderect(r2.inflate(S(6), S(4))):
+                        return False
+            return True
+
+        found = None
+        ry = (bottom - top) // 2
+        while ry >= S(100) and found is None:
+            rx = ry
+            while rx <= ry * 2:
+                items = place(0, rx, ry)
+                if clear(items):
+                    found = (rx, ry, items)
+                    break
+                rx += S(2)
+            ry -= S(2)
+        if found is None:                                       # pragma: no cover
+            rx = ry = S(150)
+        else:
+            rx, ry, _items = found
+        # Horizontal placement: centred on the window when the Top Runs panel
+        # still fits beside it; otherwise the pair is centred together.
+        probe = place(0, rx, ry)
+        left = min(min(it[3].left, it[5].left) for it in probe)
+        right = max(max(it[3].right, it[5].right) for it in probe)
+        lb_w = self._leaderboard_size()[0]
+        cx = self.cx
+        room = self.W - S(24) - lb_w - S(40)
+        if lb_w and cx + right > room:
+            total = (right - left) + S(40) + lb_w
+            cx = (self.W - total) // 2 - left
+        items = place(cx, rx, ry)
+        layout_ = (cx, cy, (rx, ry), items)
+        self._wheel_cache = (key, layout_)
+        return layout_
+
+    def wheel_right(self) -> int:
+        """Right edge of everything the kit's wheel draws."""
+        _cx, _cy, _r, items = self._wheel()
+        return max(max(it[3].right, it[5].right) for it in items)
+
     def _draw(self):
         t  = self._anim_t
-        cx, cy = self.cx, self.cy
+        cx = self._wheel()[0] if kit_on() else self.cx
+        cy = self._ring_cy()
 
         # Static background (gradient + stars + faint runes), then the layered
         # animated grimoire elements over the top.
@@ -527,18 +657,34 @@ class WelcomeScreen:
         # Counter-rotating rune circles — slow, hypnotic. Pulsing intensity
         # from a sine of the anim time so the candle glow breathes.
         pulse = 0.5 + 0.5 * math.sin(t * 0.9)
-        draw_rune_circle(self.screen, cx, cy, int(min(cx, cy) * 0.78),
-                         (*FP.GOLD_DARK, int(80 + 50 * pulse)), t * 0.4, 16)
-        draw_rune_circle(self.screen, cx, cy, int(min(cx, cy) * 0.36),
-                         (*FP.GOLD, int(60 + 60 * pulse)), -t * 0.7, 12)
+        kit = kit_on()
+        if not kit:
+            # With the kit the wheel is still and these two broken rings read
+            # as ~20 loose gold dashes scattered round it (VISUAL_REVIEW_2
+            # minor 7), so only the procedural look keeps them.
+            draw_rune_circle(self.screen, cx, cy, int(min(cx, cy) * 0.78),
+                             (*FP.GOLD_DARK, int(80 + 50 * pulse)), t * 0.4, 16)
+            draw_rune_circle(self.screen, cx, cy, int(min(cx, cy) * 0.36),
+                             (*FP.GOLD, int(60 + 60 * pulse)), -t * 0.7, 12)
         draw_candle_glow(self.screen, cx, cy, intensity=0.6 + 0.4 * pulse)
-        self._draw_domain_ring(cx, cy, t)
-        self._draw_vortex(cx, cy, t)
+        if kit:
+            # The vignette darkens the background only: its banded frame
+            # used to cut dark lines through the subject tiles' captions.
+            self._draw_vignette()
+        if kit:
+            # The spiral goes UNDER the subject tiles and their captions
+            # (DESIGN_RULES 1.1: no line through any text).
+            self._draw_vortex(cx, cy, t)
+            self._draw_domain_ring(cx, cy, t)
+        else:
+            self._draw_domain_ring(cx, cy, t)
+            self._draw_vortex(cx, cy, t)
         self._draw_stone(cx, cy, t)
-        self._draw_vignette()
-        self._draw_title_banner(cx)
-        self._draw_name_input(cx, cy)
-        self._draw_footer(cx)
+        if not kit:
+            self._draw_vignette()
+        self._draw_title_banner(self.cx)
+        self._draw_name_input(self.cx, self.cy)
+        self._draw_footer(self.cx)
         self._draw_leaderboard()
         if self._show_alltime:
             self._draw_alltime()
@@ -548,6 +694,22 @@ class WelcomeScreen:
     def _draw_god_prompt(self):
         """The 'Did you mean Dad?' easter-egg confirm — now in grimoire chrome."""
         draw_overlay(self.screen, alpha=200)
+        if kit_on():
+            bw, bh = S(460), S(196)
+            bx, by = (self.W - bw) // 2, (self.H - bh) // 2
+            panel = pygame.Rect(bx, by, bw, bh)
+            draw_dark_panel(self.screen, panel, border_color=FP.GOLD)
+            hr = draw_header_bar(self.screen, (bx, by, bw, S(42)),
+                                 text="A Question of Address", font=get_font('heading', 24),
+                                 frame=(panel, FP.GOLD))
+            msg = self.font_lg.render("Did you mean, 'Dad'?", True, KT.TEXT_QUIZ)
+            self.screen.blit(msg, (bx + (bw - msg.get_width()) // 2, hr.bottom + S(8)))
+            b = panel_band('panel', panel)
+            kh = key_hints_height()
+            draw_key_hints(self.screen, (bx + b + S(16), by + bh - b - S(10) - kh,
+                                         bw - 2 * (b + S(16)), kh),
+                           "Y: yes   N: no")
+            return
         bw, bh = S(420), S(150)
         bx = (self.W - bw) // 2
         by = (self.H - bh) // 2
@@ -576,7 +738,12 @@ class WelcomeScreen:
         self.screen.blit(cached[1], (0, 0))
 
     def _draw_domain_ring(self, cx, cy, t):
-        ring_r = min(cx, cy) * 0.52
+        kit = kit_on()
+        if kit and all(ui_theme.icon(f"subject_{k}", S(32)) is not None
+                       for _l, _d, k, _s in self._DOMAINS):
+            self._draw_kit_wheel()
+            return
+        ring_r = min(self.cx, self.cy) * (0.49 if kit else 0.52)
         orbit_speed = 0.018   # radians/sec -- very slow orbit
         base_angle  = t * orbit_speed
 
@@ -587,6 +754,7 @@ class WelcomeScreen:
                 return FP.GOLD_PALE
             return FP.SUBJECT.get(key, FP.GOLD_PALE)
 
+        captions = []
         for i, (label, deg_off, subject_key, symbol) in enumerate(self._DOMAINS):
             color = _domain_color(subject_key)
             angle  = base_angle + math.radians(deg_off)
@@ -604,6 +772,20 @@ class WelcomeScreen:
             # icon scale.
             box_w, box_h = S(68), S(58)
             bx, by = ix - box_w // 2, iy - box_h // 2
+            if kit and ui_theme.icon(f"subject_{subject_key}", S(32)) is not None:
+                # The kit's painted subject icon on a flat raised tile with
+                # the subject's colour as its edge (the identity colour).
+                box = pygame.Rect(bx, by, box_w, box_h)
+                pygame.draw.rect(self.screen, KT.RAISED, box)
+                pygame.draw.rect(self.screen, color, box, 2)
+                pygame.draw.rect(self.screen, KT.GOLD_DARK, box.inflate(-S(8), -S(8)), 1)
+                isz = S(32)
+                ui_theme.draw_icon(self.screen, f"subject_{subject_key}",
+                                   (ix - isz // 2, iy - isz // 2, isz, isz))
+                # Captions go on after every tile (a neighbour's tile must
+                # not cover the start of a long one like "Geography").
+                captions.append((display_title(label), ix, by + box_h + S(2)))
+                continue
             # Translucent midnight fill
             inner = pygame.Surface((box_w, box_h), pygame.SRCALPHA)
             inner.fill((*FP.MIDNIGHT, 220))
@@ -633,6 +815,35 @@ class WelcomeScreen:
             # Label below box — pale gold so it sits as caption, not headline
             lbl = self.font_tiny.render(label, True, FP.GOLD_PALE)
             self.screen.blit(lbl, (ix - lbl.get_width() // 2, by + box_h + S(3)))
+
+        if captions:
+            lf = get_font('heading', 13, bold=True)
+            for text, x, y in captions:
+                draw_shadow_text(self.screen, lf, text, FP.GOLD_PALE,
+                                 (x - lf.size(text)[0] // 2, y), offset=1)
+
+    def _draw_kit_wheel(self):
+        """The kit's subject wheel (see ``_wheel``): spokes, then the tiles,
+        then each caption on a flat plaque, so no line crosses its text."""
+        cx, cy, _r, items = self._wheel()
+        for _label, _key, color, tile, _text, _cap in items:
+            for w, frac in [(3, 0.18), (2, 0.36), (1, 0.62)]:
+                c = tuple(int(v * frac) for v in color)
+                pygame.draw.line(self.screen, c, tile.center, (cx, cy), w)
+        isz = S(32)
+        for _label, key_, color, tile, _text, _cap in items:
+            pygame.draw.rect(self.screen, KT.RAISED, tile)
+            pygame.draw.rect(self.screen, color, tile, 2)
+            pygame.draw.rect(self.screen, KT.GOLD_DARK, tile.inflate(-S(8), -S(8)), 1)
+            ui_theme.draw_icon(self.screen, f"subject_{key_}",
+                               (tile.centerx - isz // 2, tile.centery - isz // 2, isz, isz))
+        f = self.font_cap
+        for _label, _key, _color, _tile, text, cap in items:
+            self.screen.fill(KT.VOID, cap)
+            pygame.draw.rect(self.screen, KT.GOLD_DARK, cap, 1)
+            ts = f.render(text, True, KT.TEXT_HEAD)
+            self.screen.blit(ts, (cap.centerx - ts.get_width() // 2,
+                                  cap.centery - ts.get_height() // 2))
 
     def _draw_domain_detail(self, cx, cy, label, color, t):
         """Draw a small iconic shape for each domain beneath the symbol."""
@@ -793,21 +1004,42 @@ class WelcomeScreen:
     def _draw_vignette(self):
         # Static per window size: built once and kept (was a full-window
         # surface + 28 rect draws every frame, GROUNDWORK_REVIEW 10).
+        # A smooth elliptical falloff. The old one stacked 28 rectangle
+        # outlines with gaps between them: visible concentric boxes at
+        # 3440x1440.
         W, H = self.W, self.H
         cached = getattr(self, '_vignette_cache', None)
         if cached is None or cached[0] != (W, H):
             vig = pygame.Surface((W, H), pygame.SRCALPHA)
-            for step in range(28):
-                ratio  = step / 28
-                alpha  = int(220 * ratio ** 2.2)
-                margin = int(step * 16)
-                pygame.draw.rect(vig, (0, 0, 0, alpha),
-                                 (margin, margin, W - 2*margin, H - 2*margin), 10)
+            vig.fill((0, 0, 0, 0))
+            try:
+                import numpy as np
+                xs = (np.arange(W) - W / 2) / (W / 2)
+                ys = (np.arange(H) - H / 2) / (H / 2)
+                d = np.sqrt(xs[:, None] ** 2 + ys[None, :] ** 2) / math.sqrt(2)
+                a = np.clip((d - 0.45) / 0.55, 0.0, 1.0) ** 1.8 * 200
+                pa = pygame.surfarray.pixels_alpha(vig)
+                pa[...] = a.astype(np.uint8)
+                del pa
+            except ImportError:                                  # pragma: no cover
+                pass
             cached = self._vignette_cache = ((W, H), vig)
         self.screen.blit(cached[1], (0, 0))
 
     def _draw_title_banner(self, cx):
         # FANTASY: Illuminated manuscript title -- gold text on midnight panel
+        if kit_on():
+            # The kit's scroll plaque (rolls at both ends), tall enough that
+            # the tail of the big Q stays on it.
+            bw, bh = S(640), S(self._BANNER_H)
+            bx, by = cx - bw // 2, S(self._BANNER_Y)
+            ui_theme.draw_piece(self.screen, 'header', (bx, by, bw, bh), accent=FP.GOLD)
+            for text, y, font, col in [
+                (self._TITLE_LINE1, by + S(6), self.font_lg, FP.GOLD),
+                (self._TITLE_LINE2, by + S(34), self.font_xl, FP.GOLD_BRIGHT),
+            ]:
+                centered_text(self.screen, font, text, col, y, cx=cx, shadow=True)
+            return
         bw, bh = S(640), S(106)
         bx, by = cx - bw // 2, S(22)
         draw_panel(self.screen, (bx, by, bw, bh), bg=False)
@@ -821,7 +1053,37 @@ class WelcomeScreen:
             col = FP.GOLD if not is_main else FP.GOLD_BRIGHT
             centered_text(self.screen, font, text, col, y, shadow=True)
 
+    def _bottom_layout(self):
+        """(name box, status-line y, key-row rect) of the kit's bottom stack:
+        the name box, one status line under it, the key-hint footer at the
+        bottom edge. Nothing overlaps at 1280x720 (FOUNDATION_REVIEW 3.4)."""
+        kh = key_hints_height()
+        keys = pygame.Rect(S(150), self.H - S(10) - kh, self.W - 2 * S(150), kh)
+        line_h = self.font_sm.get_height()
+        status_y = keys.y - S(8) - line_h
+        box_w, box_h = S(500), S(84)
+        box = pygame.Rect(self.cx - box_w // 2, status_y - S(8) - box_h, box_w, box_h)
+        return box, status_y, keys
+
     def _draw_name_input(self, cx, cy):
+        if kit_on():
+            box, _sy, _keys = self._bottom_layout()
+            secret = self.name_buf.strip().lower() in SECRET_BUILDS
+            ui_theme.draw_piece(self.screen, 'subpanel', box, body_color=KT.RAISED)
+            head = pygame.Rect(box.x + 1, box.y + 1, box.w - 2, S(29))
+            ui_theme.draw_piece(self.screen, 'subpanel_header', head, accent=FP.GOLD)
+            hf = get_font('heading', 17, bold=True)
+            label = "Secret Build Active!" if secret else self._PROMPT
+            hs = hf.render(label, True, FP.GOLD_BRIGHT if secret else KT.TEXT_HEAD)
+            self.screen.blit(hs, (head.centerx - hs.get_width() // 2,
+                                  head.y + (head.h - S(2) - hs.get_height()) // 2))
+            field = pygame.Rect(box.x + S(12), box.y + S(36), box.w - 2 * S(12), S(40))
+            ui_theme.draw_piece(self.screen, 'input', field, body_color=KT.WELL)
+            nf = get_font('heading', 26)
+            display = self.name_buf + ('|' if self.cursor_on else ' ')
+            ns = nf.render(fit_text(display, nf, field.w - S(20)), True, FP.PARCHMENT_LIGHT)
+            self.screen.blit(ns, (field.x + S(10), field.centery - ns.get_height() // 2))
+            return
         # FANTASY: Parchment dialog box for name entry
         box_w, box_h = S(500), S(96)
         bx = cx - box_w // 2
@@ -844,6 +1106,32 @@ class WelcomeScreen:
 
     def _draw_footer(self, cx):
         has_save = getattr(self, '_has_save', False)
+        if kit_on():
+            _box, status_y, keys = self._bottom_layout()
+            notice = getattr(self, '_notice', None)
+            flash = getattr(self, '_delete_flash', 0.0)
+            line = None
+            if notice:
+                line = (display_text(notice), FP.GOLD_BRIGHT)
+            elif flash > 0.0:
+                line = ("Save deleted. Press Enter to start fresh.", FP.DANGER_TEXT_LIGHT)
+            elif has_save:
+                line = ("Saved journey found.", FP.SUCCESS_TEXT)
+            if line:
+                ls = self.font_sm.render(fit_text(line[0], self.font_sm, self.W - S(40)),
+                                         True, line[1])
+                self.screen.blit(ls, (cx - ls.get_width() // 2, status_y))
+            if has_save and flash <= 0.0:
+                hints = ("Enter: continue your journey   Del: erase save   "
+                         "F2: leaderboard   F3: study mode   Esc: quit")
+            else:
+                hints = ("Enter: begin your quest   F2: leaderboard   "
+                         "F3: study mode   Esc: quit")
+            draw_key_hints(self.screen, keys, hints)
+            ver = self.font_tiny.render(f"v{self.version}", True, FP.FADED_TEXT)
+            self.screen.blit(ver, (self.W - ver.get_width() - S(10),
+                                   keys.centery - ver.get_height() // 2))
+            return
         # One-shot notice (e.g. after a failed load) -- sits above the save hint so
         # it reads alongside the reassuring "Saved journey found" line.
         notice = getattr(self, '_notice', None)
@@ -866,6 +1154,74 @@ class WelcomeScreen:
             save_hint = self.font_sm.render("[S] Saved journey found -- ENTER to continue  |  DEL to erase", True, FP.SUCCESS_TEXT)
             self.screen.blit(save_hint, (cx - save_hint.get_width() // 2, self.H - S(52)))
 
+    def _score_table(self, entries, font, rank_from=1, date=False):
+        """Rows of a high-score table: (cells, colour, victory). Columns:
+        rank, name, floor, score, grade (and date). Gold rows won the
+        Stone; the table's footer says so (the old "[V]" was cryptic)."""
+        rows = []
+        for i, e in enumerate(entries):
+            victory = bool(e.get('victory', False))
+            cells = [f"{rank_from + i}.", str(e.get('name', '?'))[:14],
+                     str(e.get('level', 1)), f"{e.get('score', 0):,}",
+                     str(e.get('grade', '?'))]
+            if date:
+                cells.append(str(e.get('date', '')))
+            rows.append((cells, FP.GOLD_BRIGHT if victory else FP.BODY_TEXT, victory))
+        return rows
+
+    # Column alignment of the score tables: rank / floor / score right-aligned.
+    _RIGHT_COLS = (0, 2, 3)
+
+    def _table_widths(self, header, rows, font):
+        n = len(header)
+        return [max([font.size(header[k])[0]] + [font.size(r[0][k])[0] for r in rows])
+                for k in range(n)]
+
+    def _blit_table_row(self, font, cells, widths, x, y, color, gap, colors=None):
+        for k, (cell, w) in enumerate(zip(cells, widths)):
+            col = colors[k] if colors else color
+            cs = font.render(cell, True, col)
+            dx = w - cs.get_width() if k in self._RIGHT_COLS else 0
+            self.screen.blit(cs, (x + dx, y))
+            x += w + gap
+
+    _LB_HEADER = ("#", "Name", "Floor", "Score", "Grade")
+
+    def _leaderboard_size(self):
+        """(width, height) of the kit's Top Runs panel, (0, 0) without runs."""
+        if not hasattr(self, '_lb_entries'):
+            try:
+                from highscore_system import get_top
+                self._lb_entries = get_top(10)
+            except Exception:
+                self._lb_entries = []
+        if not self._lb_entries:
+            return 0, 0
+        r = self._leaderboard_geometry(len(self._lb_entries))
+        return r[0], r[1]
+
+    def _leaderboard_geometry(self, n_rows):
+        f = self.font_sm
+        rows = self._score_table(self._lb_entries, f)
+        widths = self._table_widths(self._LB_HEADER, rows, f)
+        gap = S(14)
+        b = S(16)
+        bw = max(sum(widths) + gap * (len(widths) - 1) + 2 * (b + S(14)), S(300))
+        row_h = f.get_height() + S(3)
+        kh = key_hints_height()
+        bh = (2 * b + S(40) + S(10) + (f.get_height() + S(6))
+              + n_rows * row_h + S(8) + f.get_height() + S(10) + kh + S(10))
+        return bw, bh, widths, gap, row_h
+
+    def _leaderboard_rect(self, n_rows):
+        """The Top Runs panel: sized to its table, just right of the wheel
+        (not pinned to the window edge), vertically centred on the wheel."""
+        bw, bh, widths, gap, row_h = self._leaderboard_geometry(n_rows)
+        bx = min(self.wheel_right() + S(40), self.W - S(24) - bw)
+        cy = self._ring_cy()
+        by = max(S(self._BANNER_Y + self._BANNER_H) + S(8), cy - bh // 2)
+        return pygame.Rect(bx, by, bw, bh), widths, gap, row_h
+
     def _draw_leaderboard(self):
         """Right-side panel showing Top 10 runs."""
         try:
@@ -874,6 +1230,9 @@ class WelcomeScreen:
         except Exception:
             return
         if not entries:
+            return
+        if kit_on():
+            self._draw_leaderboard_kit(entries)
             return
 
         W, H = self.W, self.H
@@ -885,65 +1244,61 @@ class WelcomeScreen:
         n        = len(entries)
         bh       = header_h + S(6) + n * row_h + S(10) + S(26)
         by       = max(S(130), H // 2 - bh // 2)
-
-        # Grimoire panel chrome (matches every other modal in the game)
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
         draw_header_bar(self.screen, (bx, by, bw, header_h),
-                        text="TOP RUNS", font=self.font_sm,
-                        text_color=FP.GOLD_BRIGHT, accent=FP.GOLD,
-                        frame=((bx, by, bw, bh), FP.GOLD))
-
-        # Column header line
+                             text="TOP RUNS", font=self.font_sm,
+                             text_color=FP.GOLD_BRIGHT, accent=FP.GOLD,
+                             frame=((bx, by, bw, bh), FP.GOLD))
         y = by + header_h + S(4)
-        col_hdr = self.font_tiny.render("     NAME             LVL      SCORE   GR", True, FP.GOLD_PALE)
-        self.screen.blit(col_hdr, (bx + S(8), y))
-        y += S(14)
-        pygame.draw.line(self.screen, FP.GOLD_DARK, (bx + S(8), y), (bx + bw - S(8), y))
-        y += S(4)
-
-        # Rows
-        for i, e in enumerate(entries):
-            victory = e.get('victory', False)
-            name    = e.get('name', '?')[:11]
-            score   = e.get('score', 0)
-            grade   = e.get('grade', '?')
-            level   = e.get('level', 1)
-            col     = FP.GOLD_BRIGHT if victory else FP.BODY_TEXT
-
-            # rank
-            rank_s = self.font_tiny.render(f"{i+1:>2}.", True, FP.FADED_TEXT)
-            self.screen.blit(rank_s, (bx + S(8), y))
-            # crown
-            if victory:
-                crown_s = self.font_tiny.render("[V]", True, FP.GOLD_BRIGHT)
-                self.screen.blit(crown_s, (bx + S(30), y))
-            # name
-            name_s = self.font_tiny.render(f"{name:<11}", True, col)
-            self.screen.blit(name_s, (bx + S(54), y))
-            # level
-            level_s = self.font_tiny.render(f"L{level:<3}", True, FP.FADED_TEXT)
-            self.screen.blit(level_s, (bx + S(140), y))
-            # score (right-aligned)
-            score_s = self.font_tiny.render(f"{score:>9,}", True, col)
-            self.screen.blit(score_s, (bx + S(183), y))
-            # grade
-            grade_s = self.font_tiny.render(f"{grade:>2}", True, FP.GOLD_PALE)
-            self.screen.blit(grade_s, (bx + S(285), y))
-
+        f = self.font_sm
+        rows = self._score_table(entries, f)
+        widths = self._table_widths(self._LB_HEADER, rows, f)
+        gap = S(10)
+        self._blit_table_row(f, self._LB_HEADER, widths, bx + S(10), y, FP.GOLD_PALE, gap)
+        y += f.get_height() + S(4)
+        for cells, col, _v in rows:
+            self._blit_table_row(f, cells, widths, bx + S(10), y, col, gap)
             y += row_h
-            # Mid divider after top 5
-            if i == 4:
-                pygame.draw.line(self.screen, FP.MIDNIGHT_MID,
-                                 (bx + S(8), y - row_h // 2), (bx + bw - S(8), y - row_h // 2))
+        hint = self.font_sm.render("[ F2 ]  View All-Time Top 100", True, FP.HINT_TEXT)
+        self.screen.blit(hint, (bx + bw // 2 - hint.get_width() // 2, y + S(4)))
 
-        # Footer hint
-        pygame.draw.line(self.screen, FP.GOLD_DARK,
-                         (bx + S(8), y + S(2)), (bx + bw - S(8), y + S(2)))
-        hint = self.font_tiny.render("[ F2 ]  View All-Time Top 100", True, FP.HINT_TEXT)
-        self.screen.blit(hint, (bx + bw // 2 - hint.get_width() // 2, y + S(6)))
+    def _draw_leaderboard_kit(self, entries):
+        self._lb_entries = entries
+        f = self.font_sm
+        rect, widths, gap, row_h = self._leaderboard_rect(len(entries))
+        draw_dark_panel(self.screen, rect, border_color=FP.GOLD)
+        hr = draw_header_bar(self.screen, (rect.x, rect.y, rect.w, S(40)),
+                             text="TOP RUNS", font=get_font('heading', 22),
+                             text_color=FP.GOLD_BRIGHT, accent=FP.GOLD,
+                             frame=(rect, FP.GOLD))
+        b = panel_band('panel', rect)
+        x = rect.x + b + S(14)
+        inner_w = rect.w - 2 * (b + S(14))
+        y = hr.bottom + S(10)
+        self._blit_table_row(f, self._LB_HEADER, widths, x, y, KT.TEXT_SUB, gap)
+        y += f.get_height() + S(3)
+        pygame.draw.line(self.screen, KT.GOLD_DARK, (x, y), (x + inner_w, y))
+        y += S(3)
+        rows = self._score_table(entries, f)
+        for i, (cells, col, _v) in enumerate(rows):
+            self._blit_table_row(f, cells, widths, x, y, col, gap,
+                                 colors=[KT.TEXT_DIM, col, KT.TEXT_DIM, col, KT.TEXT_SUB])
+            y += row_h
+        y += S(6)
+        if any(v for _c, _col, v in rows):
+            leg = f.render("Gold: brought back the Stone", True, FP.GOLD_BRIGHT)
+            self.screen.blit(leg, (rect.centerx - leg.get_width() // 2, y))
+        kh = key_hints_height()
+        draw_key_hints(self.screen, (x, rect.bottom - b - S(8) - kh, inner_w, kh),
+                       "F2: all-time top 100")
+
+    _AT_HEADER = ("#", "Name", "Floor", "Score", "Grade", "Date")
 
     def _draw_alltime(self):
-        """Full-screen overlay showing all-time top 100 scores."""
+        """The all-time high scores: a table sized to its rows (one to three
+        columns of runs, as many as the window fits), paged with Up/Down
+        when there are more runs than fit (it used to be 12 px text in a
+        full-window panel, mostly empty)."""
         try:
             from highscore_system import get_top
             entries = get_top(100)
@@ -951,81 +1306,70 @@ class WelcomeScreen:
             entries = []
 
         W, H = self.W, self.H
-
-        # Dim overlay + grimoire panel chrome
         draw_overlay(self.screen, alpha=220)
-        bw, bh = min(S(1380), W - S(40)), min(S(830), H - S(40))
-        bx = (W - bw) // 2
-        by = (H - bh) // 2
+        kit = kit_on()
+        f = self.font_sm
+        rows = self._score_table(entries, f, date=True)
+        widths = self._table_widths(self._AT_HEADER, rows, f)
+        gap = S(16)
+        col_w = sum(widths) + gap * (len(widths) - 1)
+        col_gap = S(40)
+        row_h = f.get_height() + S(4)
+        b = S(16) if kit else 0
+        pad = S(28)
+        header_h = S(48)
+        kh = key_hints_height()
+        chrome_h = 2 * b + header_h + S(14) + (f.get_height() + S(8)) + S(16) + S(32) + kh + S(10)
+        max_rows = max(1, (H - S(48) - chrome_h) // row_h)
+        max_cols = max(1, (W - S(48) - 2 * (b + pad) + col_gap) // (col_w + col_gap))
+        n = max(1, len(rows))
+        ncols = max(1, min(max_cols, 3, -(-n // max_rows)))
+        per_col = min(max_rows, -(-n // ncols))
+        per_page = per_col * ncols
+        pages = max(1, -(-len(rows) // per_page))
+        self._alltime_pages = pages
+        page = min(getattr(self, '_alltime_page', 0), pages - 1)
+        bw = max(S(520), ncols * col_w + (ncols - 1) * col_gap + 2 * (b + pad))
+        bh = chrome_h + per_col * row_h
+        bx, by = (W - bw) // 2, (H - bh) // 2
         draw_dark_panel(self.screen, (bx, by, bw, bh), border_color=FP.GOLD)
-        header_h = S(44)
-        draw_header_bar(self.screen, (bx, by, bw, header_h),
-                        text="ALL-TIME HIGH SCORES",
-                        font=self.font_md, text_color=FP.GOLD_BRIGHT,
-                        accent=FP.GOLD, frame=((bx, by, bw, bh), FP.GOLD))
-
-        # Footer
-        footer_h = S(28)
-        footer_y  = by + bh - footer_h
-        pygame.draw.line(self.screen, FP.GOLD_DARK,
-                         (bx + S(16), footer_y - S(4)), (bx + bw - S(16), footer_y - S(4)))
-        close_hint = self.font_tiny.render("[ Any Key ]  Close", True, FP.HINT_TEXT)
-        self.screen.blit(close_hint, (bx + bw // 2 - close_hint.get_width() // 2,
-                                       footer_y + (footer_h - close_hint.get_height()) // 2))
-
-        # Content area -- two columns
-        content_top = by + header_h + S(6)
-        content_bot = footer_y - S(8)
-        content_h   = content_bot - content_top
-        row_h       = S(17)
-        col_w       = bw // 2 - S(16)
-
-        # Column header
-        col_hdr_txt = "  #  NAME              LVL       SCORE  GR  DATE"
-        for col_x in (bx + S(12), bx + bw // 2 + S(8)):
-            hdr_s = self.font_tiny.render(col_hdr_txt, True, FP.GOLD_PALE)
-            self.screen.blit(hdr_s, (col_x, content_top))
-            pygame.draw.line(self.screen, FP.GOLD_DARK,
-                             (col_x, content_top + S(16)),
-                             (col_x + col_w, content_top + S(16)))
-
-        max_rows = (content_h - S(22)) // row_h
-        row_top  = content_top + S(22)
-
-        for i, e in enumerate(entries):
-            col_idx = 0 if i < max_rows else 1
-            row_idx = i if i < max_rows else i - max_rows
-            if row_idx >= max_rows:
+        hr = draw_header_bar(self.screen, (bx, by, bw, header_h),
+                             text="ALL-TIME HIGH SCORES",
+                             font=get_font('heading', 28) if kit else self.font_md,
+                             text_color=FP.GOLD_BRIGHT,
+                             accent=FP.GOLD, frame=((bx, by, bw, bh), FP.GOLD))
+        top = hr.bottom + S(14)
+        x0 = bx + b + pad
+        inner_w = bw - 2 * (b + pad)
+        tw = ncols * col_w + (ncols - 1) * col_gap
+        x0 += (inner_w - tw) // 2
+        chunk = rows[page * per_page:(page + 1) * per_page]
+        for c in range(ncols):
+            part = chunk[c * per_col:(c + 1) * per_col]
+            if not part and c:
                 break
-
-            col_x = bx + S(12) if col_idx == 0 else bx + bw // 2 + S(8)
-            ry    = row_top + row_idx * row_h
-
-            victory = e.get('victory', False)
-            name    = e.get('name', '?')[:13]
-            level   = e.get('level', 1)
-            score   = e.get('score', 0)
-            grade   = e.get('grade', '?')
-            date    = e.get('date', '')
-
-            text_col = FP.GOLD_BRIGHT if victory else (FP.BODY_TEXT if row_idx % 2 == 0 else FP.PARCHMENT_DARK)
-            crown    = 'V' if victory else ' '
-
-            # rank + crown
-            rank_s = self.font_tiny.render(f"{crown}{i+1:>3}.", True, FP.FADED_TEXT if not victory else FP.GOLD_BRIGHT)
-            self.screen.blit(rank_s, (col_x, ry))
-            # name
-            name_s = self.font_tiny.render(f"{name:<13}", True, text_col)
-            self.screen.blit(name_s, (col_x + S(34), ry))
-            # level
-            level_s = self.font_tiny.render(f"L{level:<3}", True, FP.FADED_TEXT)
-            self.screen.blit(level_s, (col_x + S(128), ry))
-            # score
-            score_s = self.font_tiny.render(f"{score:>9,}", True, text_col)
-            self.screen.blit(score_s, (col_x + S(165), ry))
-            # grade
-            grade_s = self.font_tiny.render(f"{grade:>2}", True, FP.GOLD_PALE)
-            self.screen.blit(grade_s, (col_x + S(240), ry))
-            # date
-            date_s = self.font_tiny.render(date[-5:] if len(date) >= 5 else date, True, FP.FADED_TEXT)
-            self.screen.blit(date_s, (col_x + S(262), ry))
+            cx = x0 + c * (col_w + col_gap)
+            self._blit_table_row(f, self._AT_HEADER, widths, cx, top,
+                                 KT.TEXT_SUB if kit else FP.GOLD_PALE, gap)
+            ly = top + f.get_height() + S(3)
+            pygame.draw.line(self.screen, KT.GOLD_DARK if kit else FP.GOLD_DARK,
+                             (cx, ly), (cx + col_w, ly))
+            y = ly + S(5)
+            for cells, col, _v in part:
+                self._blit_table_row(f, cells, widths, cx, y, col, gap,
+                                     colors=[FP.FADED_TEXT, col, FP.FADED_TEXT, col,
+                                             FP.GOLD_PALE, FP.FADED_TEXT])
+                y += row_h
+        if not rows:
+            ns = f.render("No runs recorded yet.", True, FP.FADED_TEXT)
+            self.screen.blit(ns, (bx + (bw - ns.get_width()) // 2, top + S(30)))
+        foot_y = by + bh - b - S(8) - kh
+        note = "Gold: brought back the Stone"
+        if pages > 1:
+            note += f"     Page {page + 1} of {pages}"
+        ns = f.render(note, True, FP.GOLD_BRIGHT)
+        self.screen.blit(ns, (bx + (bw - ns.get_width()) // 2, foot_y - S(26) - ns.get_height()))
+        if kit:
+            draw_divider(self.screen, bx + b + S(28), foot_y - S(14), bw - 2 * (b + S(28)))
+        hints = [("\u2191/\u2193", "Page"), ("Any Key", "Close")] if pages > 1 else [("Any Key", "Close")]
+        draw_key_hints(self.screen, (bx + b + S(16), foot_y, bw - 2 * (b + S(16)), kh), hints)
