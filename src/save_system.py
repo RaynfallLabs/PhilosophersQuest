@@ -71,6 +71,53 @@ def _find_unpicklable(obj, path='state', _seen=None, _out=None, _depth=0):
     return _out
 
 
+def run_is_over(game) -> bool:
+    """True once the hero has died, won or fled: such a run must never be
+    written back to disk (its save was deleted on purpose)."""
+    if getattr(game, '_run_over', False):
+        return True
+    try:
+        from game_states import STATE_DEAD, STATE_VICTORY
+    except Exception:
+        return False
+    return getattr(game, 'state', None) in (STATE_DEAD, STATE_VICTORY)
+
+
+def settle_unfinished_actions(game) -> None:
+    """Resolve what was mid-flight before an exit save (quit or crash).
+
+    None of these is saved, so writing the run without settling them let a
+    player escape a cost or lose one:
+      - a Necronomicon recital left unfinished counts as a failure, exactly
+        as ESC does (quitting used to dodge the Deadites);
+      - a question left unanswered is a wrong answer (the action had already
+        spent its corpse, ingredients or Intercession);
+      - a targeted spell still being aimed is cancelled and refunded as ESC
+        does (the MP or the free cast used to be lost).
+    Each step is guarded on its own: a failure in one never blocks the save.
+    """
+    try:
+        if getattr(game, '_necro_qs', None) is not None:
+            game._necro_complete()
+    except Exception:
+        pass
+    try:
+        from quiz_engine import QuizState
+        qe = getattr(game, 'quiz_engine', None)
+        if (qe is not None and getattr(qe, 'callback', None) is not None
+                and qe.state != QuizState.COMPLETE):
+            qe._end(success=False)
+    except Exception:
+        pass
+    try:
+        if getattr(game, '_pending_spell', None) is not None:
+            game._refund_pending_spell()
+            game._power_targeting = False
+            game._pending_power = None
+    except Exception:
+        pass
+
+
 def save_game(game) -> bool:
     """Serialize the full game state to disk. Returns True on success.
 

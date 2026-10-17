@@ -946,8 +946,9 @@ def _(screen):
 @scene('title_load_notice', 'Title', 'Welcome screen after a save failed to load (one-shot notice).',
        kind='welcome')
 def _(screen):
-    return run_welcome_frame(screen, notice=("Your saved journey didn't load cleanly -- but it "
-                                      "is safe. Please try again."))
+    return run_welcome_frame(screen, notice=("That saved journey could not be restored. It has "
+                                      "been kept as save_hero.pkl.unreadable-20261016-120000 "
+                                      "and was not overwritten."))
 
 
 @scene('title_alltime_scores', 'Title', 'Welcome screen, F2: all-time top 100.', kind='welcome')

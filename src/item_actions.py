@@ -28,16 +28,17 @@ from __future__ import annotations
 
 from game_states import (
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_LORE,
-    STATE_DROP_QTY_INPUT, STATE_KIT, STATE_CHARACTER_SHEET,
+    STATE_DROP_QTY_INPUT, STATE_KIT, STATE_CHARACTER_SHEET, STATE_CONFIRM_EXIT,
 )
 
 
 # States an action may pass through on its way back to the screen. Any other
 # state (death, a story popup, a boon menu) ends the return: the player is
-# left where the game put them.
+# left where the game put them. The exit dialog is a pause, not an ending:
+# cancelling it goes back to the quiz, and the return must survive that.
 _TRANSIT_STATES = frozenset((
     STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_LORE,
-    STATE_DROP_QTY_INPUT, STATE_KIT, STATE_CHARACTER_SHEET,
+    STATE_DROP_QTY_INPUT, STATE_KIT, STATE_CHARACTER_SHEET, STATE_CONFIRM_EXIT,
 ))
 
 # Keys, in the order the screens show them.

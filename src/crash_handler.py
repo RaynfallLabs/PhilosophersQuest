@@ -95,11 +95,21 @@ def write_crash_report(exc_type, exc_value, exc_tb, game=None) -> str:
             lines.append(f"  (error while reading game state: {inner})")
 
     # ---- Emergency save --------------------------------------------------
+    # A finished run (dead, won, fled) is never written back: its save was
+    # deleted on purpose, and an emergency save brought the dead hero back.
+    # Anything mid-flight (an open question, a spell being aimed) is settled
+    # first, exactly as a normal quit does.
     save_ok = False
+    run_over = False
     if game is not None:
         try:
-            from save_system import save_game
-            save_ok = save_game(game)
+            from save_system import save_game, run_is_over, settle_unfinished_actions
+            run_over = run_is_over(game)
+            if not run_over:
+                settle_unfinished_actions(game)
+                run_over = run_is_over(game)
+            if not run_over:
+                save_ok = save_game(game)
         except Exception as save_err:
             lines.append("")
             lines.append(f"  EMERGENCY SAVE FAILED: {save_err}")
