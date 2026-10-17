@@ -25627,7 +25627,8 @@
       {
         "name": "Bone Shard",
         "damage": "1d4+2",
-        "type": "pierce"
+        "type": "pierce",
+        "ranged": true
       }
     ],
     "resistances": [
@@ -25748,7 +25749,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.3,
-        "effect_duration": 3
+        "effect_duration": 3,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -26449,7 +26451,8 @@
         "type": "shadow",
         "effect": "weakened",
         "effect_chance": 0.3,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -26563,7 +26566,8 @@
         "type": "shadow",
         "effect": "silenced",
         "effect_chance": 0.35,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -26914,7 +26918,8 @@
       {
         "name": "Summoner's Gesture",
         "damage": "1d6+7",
-        "type": "shadow"
+        "type": "shadow",
+        "ranged": true
       }
     ],
     "resistances": [
@@ -26977,7 +26982,8 @@
         "type": "magic",
         "effect": "hallucinating",
         "effect_chance": 0.25,
-        "effect_duration": 4
+        "effect_duration": 4,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -27502,7 +27508,8 @@
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.35,
-        "effect_duration": 5
+        "effect_duration": 5,
+        "ranged": true
       }
     ],
     "resistances": [
@@ -27925,7 +27932,8 @@
         "type": "cold",
         "effect": "frozen",
         "effect_chance": 0.25,
-        "effect_duration": 3
+        "effect_duration": 3,
+        "ranged": true
       },
       {
         "name": "Barbed Staff",

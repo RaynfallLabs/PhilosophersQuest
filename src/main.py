@@ -2530,6 +2530,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Attempt a player move/action in direction (dx, dy)."""
         if self.state != STATE_PLAYER:
             return
+        self._step_floor = self.dungeon_level     # for _burden_extra_turn
 
         # Feared: force movement away from nearest visible monster
         if self.player.has_effect('feared'):
@@ -3977,8 +3978,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 from armor_procs import proc_value
                 _chance = float(proc_value(self.player, 'thors_step') or 0.0)
                 if _chance > 0 and random.random() < _chance:
+                    from game_combat import _is_bystander
                     _adj_targets = [_mm for _mm in self.monsters
                                     if getattr(_mm, 'alive', False)
+                                    and not _is_bystander(_mm)
                                     and abs(_mm.x - self.player.x) <= 1
                                     and abs(_mm.y - self.player.y) <= 1
                                     and not (_mm.x == self.player.x and _mm.y == self.player.y)]
@@ -3987,7 +3990,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         from floor_curve import wound as _wound
                         # A share of the creature's own health.
                         _dmg = _wound(ARC_SHARE, _t.max_hp, _t._is_named_foe())
-                        _t.take_damage(_dmg, 'lightning')
+                        _dmg = _t.take_damage(_dmg, 'lightning')     # what it really took
                         self.add_message(
                             f"Boots of Thor — lightning arcs into the {_t.name} for {_dmg}!",
                             'combat')
@@ -4171,6 +4174,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         the dungeon one more turn. Walking only; fighting, spells and the quiz
         clock are untouched."""
         if self.state == STATE_DEAD or self.player.is_dead():
+            return
+        # Not once the step's own turn has opened a popup or menu, or moved
+        # the hero to another floor (the Winged Sandals): the extra turn was
+        # then a free turn for monsters the hero had not walked among.
+        if self.state != STATE_PLAYER:
+            return
+        if self.dungeon_level != getattr(self, '_step_floor', self.dungeon_level):
             return
         if self.player.burden_step():
             self._advance_turn()

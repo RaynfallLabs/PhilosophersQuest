@@ -3346,7 +3346,10 @@ class RenderMixin:
         # fit plus a "+N" count, never a clipped half-word.
         effects = [e for e, v in monster.status_effects.items() if v > 0]
         if effects:
-            eff_sizes = (20, 17, 14)
+            # Measure at the size it will really be drawn at: _fit_line
+            # never goes under 16 px, so a 14 px measure let a row through
+            # that then rendered at 16 and was cut mid-word (C15).
+            eff_sizes = (20, 17, 16)
             eff_text = "  ".join(f"[{_label(e)}]" for e in effects)
             smallest = get_font('body', eff_sizes[-1])
             if smallest.size(eff_text)[0] > t['sub2'].w:

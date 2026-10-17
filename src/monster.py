@@ -496,13 +496,19 @@ class Monster:
         if regen and self.alive and self.hp < self.max_hp:
             # Don't regenerate while burning (fire stops troll regen), or
             # while a heal-blocking wound (deep_wound / ruptured) is active.
-            if (not self.has_effect('burning')
-                    and not self.has_effect('deep_wound')
-                    and not self.has_effect('ruptured')):
+            if not self.has_effect('burning') and self.can_heal():
                 self.hp = min(self.max_hp, self.hp + regen)
         self._unhurt_turns = int(getattr(self, '_unhurt_turns', 0)) + 1
         self._tick_fury()
         self._recover_when_left()
+
+    def can_heal(self) -> bool:
+        """False while a heal-blocking wound is on it: Gae Dearg's
+        heal_blocked, the dagger's ruptured, deep_wound. Every way a monster
+        regains health asks this (C10: only regeneration did, and only for
+        two of the three)."""
+        return not (self.has_effect('heal_blocked') or self.has_effect('deep_wound')
+                    or self.has_effect('ruptured'))
 
     def _tick_fury(self):
         if (getattr(self, 'fury_per_attack', 0.0) and self.alive
@@ -567,6 +573,8 @@ class Monster:
         if not getattr(self, 'recovers_when_left', False) or not self.alive:
             return 0
         if self._unhurt_turns < RECOVER_AFTER_TURNS or self.hp >= self.max_hp:
+            return 0
+        if not self.can_heal():
             return 0
         before = self.hp
         self.hp = min(self.max_hp, self.hp + max(1, int(self.max_hp * RECOVER_SHARE)))
@@ -778,6 +786,10 @@ class Monster:
         elif (self.ai_pattern == 'sessile' and not self._adjacent_to(player)
               and any(a.get('ranged') for a in self.attacks)):
             atk = random.choice([a for a in self.attacks if a.get('ranged')])
+        elif (self.ai_pattern in ('healer', 'summoner') and not self._adjacent_to(player)
+              and self._distance_attacks()):
+            # C09: a caster at range uses its prayer or bolt, never its mace.
+            atk = random.choice(self._distance_attacks())
         elif (self.ai_pattern in ('ranged', 'dragon') and not self._adjacent_to(player)
               and len(self.attacks) > 1):
             ranged_atks = [a for a in self.attacks
@@ -1066,7 +1078,7 @@ class Monster:
         # for ancient_vampire_lord: "drain attack causes CON -1 but doesn't
         # heal the vampire — not a vampire."
         _dhs = float(getattr(self, 'drain_heals_self', 0.0) or 0.0)
-        if atk_type == 'drain' and _dhs > 0 and actual > 0 and self.alive:
+        if atk_type == 'drain' and _dhs > 0 and actual > 0 and self.alive and self.can_heal():
             heal = max(1, int(actual * _dhs))
             self.hp = min(self.max_hp, self.hp + heal)
             msg += f" {the_name(self)}'s wounds close as it feeds ({heal} HP regained)."
@@ -1436,6 +1448,12 @@ class Monster:
                 from dungeon import DOOR
                 if tile == DOOR:
                     dungeon.open_door(nx, ny)   # monsters open doors
+                    # MK-03: the whole body must fit through, not only the
+                    # anchor tile: Fafnir (2x2) stepped half into the wall.
+                    # One that cannot leaves the door shut.
+                    if not self._can_move_to(dungeon, nx, ny):
+                        dungeon.tiles[ny][nx] = DOOR
+                        continue
                     self.x, self.y = nx, ny
                     moved = True
                     break
@@ -2035,6 +2053,12 @@ class Monster:
     # New 2026 AI patterns: healer, summoner, mimic, phase_blink, charge
     # ------------------------------------------------------------------
 
+    def _distance_attacks(self) -> list:
+        """The attacks that reach from a distance: flagged `ranged` or named
+        with a ranged word."""
+        return [a for a in self.attacks
+                if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
+
     def _healer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Heal a wounded adjacent ally instead of attacking.
         Ally = same-kind monster OR any monster sharing a tag with this one.
@@ -2049,6 +2073,8 @@ class Monster:
                 continue
             if m.hp >= m.max_hp:
                 continue
+            if hasattr(m, 'can_heal') and not m.can_heal():
+                continue                    # its wound will not close
             if m.kind != self.kind and not (my_tags & set(getattr(m, 'tags', []))):
                 continue
             if abs(m.x - self.x) <= 1 and abs(m.y - self.y) <= 1:
@@ -2063,8 +2089,10 @@ class Monster:
             self._heal_amount = actual
             return False  # no attack — used the turn to heal
 
-        # No wounded ally to heal — behave as ranged if possible, else aggressive
-        if len(self.attacks) > 1:
+        # No wounded ally to heal — behave as ranged if possible, else aggressive.
+        # C09: "possible" means it HAS a distance attack; a healer whose two
+        # attacks are both melee used to club the player from 2-6 tiles.
+        if len(self.attacks) > 1 and self._distance_attacks():
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
         if self._adjacent_to(player):
             return True
@@ -2088,7 +2116,7 @@ class Monster:
             self._summon_turn_counter = 0
             self._summons_made += 1
         # While not summoning, behave as ranged caster (or melee if no ranged)
-        if len(self.attacks) > 1:
+        if len(self.attacks) > 1 and self._distance_attacks():
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
         if self._adjacent_to(player):
             return True

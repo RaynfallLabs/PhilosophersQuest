@@ -187,8 +187,12 @@ def test_a_boss_that_is_swinging_or_hit_by_magic_has_not_been_left_alone():
         m.tick_effects()
         m.attack(p)
     assert m.hp == hurt and m.fury_mult() > 1.0
-    src = open(os.path.join(ROOT, 'src', 'game_magic.py'), encoding='utf-8').read()
-    assert src.count('target._unhurt_turns = 0') >= 3      # missiles and smite count as hurt
+    # missiles and smite count as hurt: they now deal their damage through
+    # take_damage (bug bash 4, C11), which resets the mending clock itself
+    m2 = _mon('asterion_minotaur')
+    m2._unhurt_turns = 50
+    m2.take_damage(5)
+    assert m2._unhurt_turns == 0              # (C11's own test drives the spells)
     assert _mon('asterion_minotaur').fury_message.startswith("Asterion's breath")
 
 
