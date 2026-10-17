@@ -1448,6 +1448,12 @@ class Monster:
                 from dungeon import DOOR
                 if tile == DOOR:
                     dungeon.open_door(nx, ny)   # monsters open doors
+                    # MK-03: the whole body must fit through, not only the
+                    # anchor tile: Fafnir (2x2) stepped half into the wall.
+                    # One that cannot leaves the door shut.
+                    if not self._can_move_to(dungeon, nx, ny):
+                        dungeon.tiles[ny][nx] = DOOR
+                        continue
                     self.x, self.y = nx, ny
                     moved = True
                     break

@@ -612,6 +612,43 @@ def test_c15_target_status_row_shows_plus_n_instead_of_a_cut_word(monkeypatch):
     assert text.split()[-1].startswith('+')
 
 
+# ---------------------------------------------------------------- MK-03
+def test_mk03_a_two_by_two_monster_does_not_squeeze_through_a_one_tile_door():
+    """A monster opening a door moved onto it at once; only the anchor was
+    checked, so Fafnir (2x2) stood half inside the wall."""
+    import dungeon as D
+    from monster import Monster
+    from player import Player
+    from geom import occupied_tiles
+    W, H = 12, 8
+    tiles = [[D.FLOOR] * W for _ in range(H)]
+    for x in range(W):
+        tiles[3][x] = D.WALL
+    tiles[3][5] = D.DOOR
+    dn = D.Dungeon(tiles, [], W, H, 60)
+    m = Monster(_mdef('fafnir_dragon'), 5, 4)
+    assert tuple(m.footprint) == (2, 2)
+    p = Player()
+    p.x, p.y = 5, 0
+    m._turn_occupied = {(p.x, p.y)}
+    m._standard_move(p, dn, [m], set(), 'aggressive')
+    assert not any(dn.tiles[ty][tx] == D.WALL for tx, ty in occupied_tiles(m))
+    assert dn.tiles[3][5] == D.DOOR            # it could not pass: the door stays shut
+    # a one-tile creature still opens the door and steps through
+    r = Monster(_mdef('giant_rat'), 5, 4)
+    r._standard_move(p, dn, [r], set(), 'aggressive')
+    assert (r.x, r.y) == (5, 3) and dn.tiles[3][5] != D.DOOR
+
+
+# ---------------------------------------------------------------- MK-10
+def test_mk10_self_buff_spell_message_names_the_status_not_its_id():
+    """Casting Counterspell printed 'Counterspell -- magic_resist for 12 turns!'."""
+    g = _game(seed=12)
+    g._apply_spell_effect({'effect': 'counterspell_self', 'tier': 3, 'name': 'Counterspell'})
+    line = next(t for t in _texts(g) if t.startswith('Counterspell --'))
+    assert 'magic_resist' not in line and 'Magic Resist' in line
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat
