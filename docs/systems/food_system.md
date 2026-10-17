@@ -455,7 +455,7 @@ Prior to the v2.18 wiring fix, `_cook_compound` built up `_qs_cook` references b
 
 ### 13.1 Live bugs still open (post-v2.18)
 
-- `mystery_system.py:181` — mystery cooking challenges use `escalator_chain` with threshold 5. This violates the one-Q cook flow. Any cook-quiz triggered by a mystery bypasses the v2 model. Scope-limited to the mystery system; the normal cook path is unaffected.
+- (Fixed since: the mystery cooking challenge in `mystery_system.py` is now one `threshold` question, matching the one-Q cook flow.)
 - Six `_comment_*` string entries live in `cook_outcomes.outcomes`. A recipe mis-authored with `outcome_id: "_comment_t1"` would AttributeError inside `_apply_outcome_body`. Low-risk (no recipe currently references one), but `_load_outcomes()` should filter keys starting with `_`.
 
 ### 13.2 Verified-OK (as of v2.18)

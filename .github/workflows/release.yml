@@ -1,8 +1,19 @@
 name: Release
 
 # Fires when a version tag is pushed (e.g. `git tag v2.8.1 && git push origin v2.8.1`).
-# Builds a Windows installer + a Linux AppImage in parallel, then publishes both
-# as a GitHub Release with auto-generated notes.
+# First checks the tag against the version written in the game and runs the
+# test suite; only then builds a Windows installer + a Linux AppImage in
+# parallel, and publishes both as a GitHub Release with auto-generated notes.
+#
+# Pins, and why (bug bash 2026-10-16, CQ-01..03):
+#   * Python 3.14 everywhere: the game is developed and tested on 3.14.
+#   * requirements.txt / requirements-build.txt use exact == pins, so a new
+#     pygame-ce or PyInstaller release cannot change what ships.
+#   * Every action is on a major whose action.yml says `runs.using: node24`.
+#   * The Linux runner is ubuntu-24.04, not ubuntu-latest (which moves to a
+#     new Ubuntu without warning and takes the apt package names with it).
+#   * appimagetool and the AppImage runtime come from fixed releases and are
+#     checked against their published SHA-256 digests.
 
 on:
   push:
@@ -12,24 +23,61 @@ on:
 permissions:
   contents: write  # needed for creating the release
 
+env:
+  PYTHON_VERSION: '3.14'
+  APPIMAGETOOL_VERSION: '1.9.1'
+  APPIMAGETOOL_SHA256: 'ed4ce84f0d9caff66f50bcca6ff6f35aae54ce8135408b3fa33abfc3cb384eb0'
+  APPIMAGE_RUNTIME_VERSION: '20251108'
+  APPIMAGE_RUNTIME_SHA256: '2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d'
+
 jobs:
-  build-windows:
-    name: Build Windows installer
+  test:
+    name: Version check + test suite
+    # Windows: the platform the suite is written and run on day to day.
     runs-on: windows-latest
+    timeout-minutes: 40
+    env:
+      SDL_VIDEODRIVER: dummy
+      SDL_AUDIODRIVER: dummy
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Tag must match layout.VERSION and setup.iss AppVersion
+        # reads the tag from GITHUB_REF_NAME (no expression interpolated into the shell)
+        run: python tools/release/check_version.py
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pyinstaller
+
+      - name: Run the test suite
+        run: python -m pytest tests/ -q -p no:cacheprovider
+
+  build-windows:
+    name: Build Windows installer
+    needs: test
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-build.txt
 
       - name: Build one-folder bundle with PyInstaller
         run: pyinstaller PhilosophersQuest.spec --noconfirm
@@ -51,7 +99,7 @@ jobs:
         shell: cmd
 
       - name: Upload installer artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: windows-installer
           path: installer/PhilosophersQuest_Setup.exe
@@ -59,28 +107,37 @@ jobs:
 
   build-linux:
     name: Build Linux AppImage
-    runs-on: ubuntu-latest
+    needs: test
+    # Pinned, not ubuntu-latest. 24.04 rather than 22.04: with ubuntu-26.04 GA,
+    # GitHub keeps at most two GA Ubuntu images, so 22.04 is the next one to be
+    # retired and a release pinned to it would stop building. The cost is
+    # reach: PyInstaller links the bundle against the build host's glibc
+    # (2.39 here), so the AppImage runs on Ubuntu 24.04+, Debian 13+,
+    # Fedora 40+ and similar, not on Ubuntu 22.04 / Debian 12.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install system libraries (SDL2 for pygame, imagemagick for icon)
+        # Package names are the Ubuntu 24.04 (noble) ones. FUSE is not
+        # installed: appimagetool runs with APPIMAGE_EXTRACT_AND_RUN=1 below.
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 \
-            libfreetype6 libportmidi0 imagemagick file fuse libfuse2
+            libfreetype6 libportmidi0 imagemagick file
 
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pyinstaller
+          pip install -r requirements-build.txt
 
       - name: Build one-folder bundle with PyInstaller
         run: pyinstaller PhilosophersQuest.spec --noconfirm
@@ -120,18 +177,24 @@ jobs:
           # AppRun entry point
           install -m 0755 linux/AppRun "$APPDIR/AppRun"
 
-      - name: Download appimagetool
+      - name: Download appimagetool + AppImage runtime (pinned, checksummed)
         run: |
-          wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -O appimagetool
+          wget -q "https://github.com/AppImage/appimagetool/releases/download/${APPIMAGETOOL_VERSION}/appimagetool-x86_64.AppImage" -O appimagetool
+          wget -q "https://github.com/AppImage/type2-runtime/releases/download/${APPIMAGE_RUNTIME_VERSION}/runtime-x86_64" -O runtime-x86_64
+          echo "${APPIMAGETOOL_SHA256}  appimagetool" | sha256sum -c -
+          echo "${APPIMAGE_RUNTIME_SHA256}  runtime-x86_64" | sha256sum -c -
           chmod +x appimagetool
 
       - name: Build AppImage
+        env:
+          APPIMAGE_EXTRACT_AND_RUN: '1'
+          ARCH: x86_64
         run: |
-          ARCH=x86_64 ./appimagetool --no-appstream dist/AppDir "PhilosophersQuest-${{ steps.version.outputs.version }}-x86_64.AppImage"
+          ./appimagetool --no-appstream --runtime-file runtime-x86_64 dist/AppDir "PhilosophersQuest-${{ steps.version.outputs.version }}-x86_64.AppImage"
           ls -lh PhilosophersQuest-*.AppImage
 
       - name: Upload AppImage artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: linux-appimage
           path: PhilosophersQuest-*.AppImage
@@ -140,21 +203,21 @@ jobs:
   release:
     name: Publish GitHub Release
     needs: [build-windows, build-linux]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout (for changelog)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Download Windows artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: windows-installer
           path: release/
 
       - name: Download Linux artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: linux-appimage
           path: release/
@@ -163,7 +226,7 @@ jobs:
         run: ls -lh release/
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             release/PhilosophersQuest_Setup.exe

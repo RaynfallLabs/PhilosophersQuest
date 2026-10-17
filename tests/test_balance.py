@@ -125,13 +125,17 @@ def test_all_attack_dice_parseable():
     """Every monster attack damage string must be parseable by the dice roller."""
     from dice import roll
     monsters = load_json('data/monsters.json')
+    checked, bad = 0, []
     for mid, m in monsters.items():
         for atk in m.get('attacks', []):
             dmg = str(atk.get('damage', '1d1'))
+            checked += 1
             try:
                 roll(dmg)
-            except (ValueError, Exception) as e:
-                assert False, f"Monster '{mid}' attack '{atk['name']}' has unparseable damage '{dmg}': {e}"
+            except Exception as e:
+                bad.append(f"Monster '{mid}' attack '{atk['name']}' has unparseable damage '{dmg}': {e}")
+    assert checked > 500, checked          # the schema still has attacks
+    assert not bad, "; ".join(bad)
 
 
 def test_new_monsters_instantiate():

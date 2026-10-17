@@ -13,6 +13,13 @@ save_*.pkl
 save_*.pkl.tmp
 quiz_history.json
 quiz_history.json.tmp
+# the rest of the player's per-machine state, also written to the dev save dir
+# (the project root): high scores, answer-time records, ghosts of dead heroes
+/highscores.json
+/highscores.json.tmp
+/answer_times.json
+/answer_times.json.tmp
+/bones/
 
 # C extensions
 *.so

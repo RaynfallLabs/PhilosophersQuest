@@ -40,13 +40,15 @@ def _midnight():
 
 
 def _midnight_mid():
-    """Alternating row bg in draw_menu — text must survive this too."""
+    """MIDNIGHT_MID: the fill of a selected row and an active tab
+    (e.g. the character sheet in game_render) — text must survive it too."""
     from fantasy_ui import FP
     return FP.MIDNIGHT_MID
 
 
 def _menu_selected_bg():
-    """The (40, 55, 110) bg of a SELECTED row in draw_menu."""
+    """(40, 55, 110): the selected-row bg of the old draw_menu (removed).
+    Kept as a lighter worst case than MIDNIGHT_MID."""
     return (40, 55, 110)
 
 
@@ -110,9 +112,9 @@ def test_all_text_colors_clear_threshold_on_midnight():
 
 
 def test_text_survives_alternating_row_bg():
-    """Body and faded text need to survive the MIDNIGHT_MID alternating bg
-    used by draw_menu's row striping. Selected-row bg (40,55,110) is even
-    lighter; tested separately."""
+    """Body and faded text need to survive MIDNIGHT_MID, the fill of a
+    selected row and an active tab. (40,55,110) is even lighter;
+    tested separately."""
     from fantasy_ui import FP
     floor = 4.5
     bg = _midnight_mid()

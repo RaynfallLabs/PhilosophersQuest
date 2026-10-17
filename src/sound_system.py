@@ -48,7 +48,6 @@ def _make_tone(
 ) -> 'pygame.mixer.Sound | None':
     """Generate a simple waveform as a pygame Sound object."""
     try:
-        import pygame
         n = int(_SAMPLE_RATE * duration)
         buf = _array.array('h')
         peak = int(32767 * min(1.0, volume))
@@ -91,7 +90,6 @@ def _make_sweep(
 ) -> 'pygame.mixer.Sound | None':
     """Frequency sweep (linear chirp)."""
     try:
-        import pygame
         import numpy as np
         n = int(_SAMPLE_RATE * duration)
         buf = np.zeros(n, dtype='float64')
@@ -113,7 +111,6 @@ def _make_sweep(
 def _make_noise_burst(duration: float, volume: float = 0.2) -> 'pygame.mixer.Sound | None':
     """White noise burst."""
     try:
-        import pygame
         import numpy as np
         n = int(_SAMPLE_RATE * duration)
         peak = int(32767 * volume)
@@ -195,10 +192,6 @@ def _load_setting() -> None:
             _USER_ON = data['sound']
     except Exception:
         pass
-
-
-def is_on() -> bool:
-    return bool(_USER_ON)
 
 
 def set_on(on: bool) -> bool:

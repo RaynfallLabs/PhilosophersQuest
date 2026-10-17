@@ -164,8 +164,10 @@ def test_fonts_are_rebuilt_during_the_resize_not_on_a_draw(game_at_1280, monkeyp
         raise AssertionError("a font was created on a draw after the resize")
     monkeypatch.setattr(fantasy_ui, '_make_font', boom)
     g.render()
-    for key in list(fantasy_ui._font_cache):
-        fantasy_ui.get_font(*key)
+    keys = list(fantasy_ui._font_cache)
+    assert keys, "the render used no fonts, so this proves nothing"
+    for key in keys:
+        assert fantasy_ui.get_font(*key) is not None
 
 
 def test_resize_never_costs_quiz_seconds(game_at_1280, monkeypatch):

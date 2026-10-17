@@ -2187,7 +2187,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _mark_starting_item_known(master)
                 self.player.add_to_inventory(master)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('main._give_starting_kit: recovered from an error')
 
         # -- Always: bread ration ------------------------------------------
         try:
@@ -2199,7 +2200,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if not self.player.add_to_inventory(ration):
                     self.player.inventory.append(ration)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('main._give_starting_kit: recovered from an error')
 
         # -- Always: healing potion ----------------------------------------
         try:
@@ -2214,7 +2216,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if not self.player.add_to_inventory(heal_pot):
                     self.player.inventory.append(heal_pot)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('main._give_starting_kit: recovered from an error')
         self.player.sort_pack()
 
         # -- Hero specials, passives, and journal entry --------------------
@@ -2239,7 +2242,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if journal:
                 self._log_chronicle(journal)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('main._give_starting_kit: recovered from an error')
 
     def _refresh_fov(self):
         self.visible = calculate_fov(
@@ -3599,6 +3603,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 try:
                     self._on_monster_killed(m)
                 except Exception:
+                    from game_log import log_error
+                    log_error(f"main._reap_unnoticed_kills: kill handling for "
+                              f"{getattr(m, 'id', m)!r} failed")
                     m._kill_handled = True
 
     def _advance_turn(self):

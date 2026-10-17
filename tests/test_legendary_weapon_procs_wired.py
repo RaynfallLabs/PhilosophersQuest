@@ -183,17 +183,24 @@ def test_every_audited_weapon_in_json():
     assert not missing, f"Audited weapons missing from JSON: {missing}"
 
 
-def test_no_audited_weapon_has_dead_unique_drop_id():
-    """If any of these became mini-boss drops, the drop must resolve."""
+def test_no_monster_has_a_dead_unique_drop_id():
+    """Every `treasure.unique_drop_id` must name a real item in one of the
+    categories Game._spawn_unique_item searches, or the boss drops nothing.
+
+    (Rewritten 2026-10-16: the old version only checked drops that were one
+    of the audited weapons above, and none of them is a drop, so it never
+    asserted anything.)"""
+    from items import load_items
     monsters = json.loads(
         (ROOT / "data" / "monsters.json").read_text(encoding='utf-8'))
-    weapons = json.loads(
-        (ROOT / "data" / "items" / "weapon.json").read_text(encoding='utf-8'))
-    for mid, mon in monsters.items():
-        drop = mon.get('treasure', {})
-        if isinstance(drop, dict):
-            did = drop.get('unique_drop_id')
-            if did in ALL_AUDITED_WEAPONS:
-                # If this weapon is a drop, it must exist in weapon.json
-                assert did in weapons, \
-                    f"Monster {mid} drops {did} but weapon missing from JSON"
+    known = set()
+    for cat in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
+                'artifact', 'potion'):
+        known.update(i.id for i in load_items(cat))
+    drops = {mid: mon['treasure']['unique_drop_id']
+             for mid, mon in monsters.items()
+             if isinstance(mon.get('treasure'), dict)
+             and mon['treasure'].get('unique_drop_id')}
+    assert len(drops) >= 30
+    dead = {mid: did for mid, did in drops.items() if did not in known}
+    assert not dead, f"monsters whose unique drop resolves to nothing: {dead}"

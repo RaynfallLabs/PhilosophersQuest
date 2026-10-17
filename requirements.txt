@@ -1,4 +1,6 @@
-pygame-ce
-numpy
-pytest
-
+# Pinned to the versions the game is developed and tested with (Python 3.14).
+# The release workflow installs exactly these, so a new upstream release can
+# never change what ships without someone bumping a pin here first.
+pygame-ce==2.5.7
+numpy==2.4.6
+pytest==9.0.3

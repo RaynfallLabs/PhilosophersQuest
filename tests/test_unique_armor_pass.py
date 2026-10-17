@@ -74,15 +74,22 @@ def test_every_new_piece_loads_is_named_and_has_art_and_a_story():
 def test_a_new_piece_is_no_weaker_than_plain_armor_of_its_floor():
     """Lore decides what it is; the floor it sits on must still be one where
     that much armor belongs: at least the middle plain piece for the slot."""
+    # Plain armor is no longer listed in armor.json (every entry there is a
+    # unique); it is built from templates x materials for the floor. The old
+    # version of this test looked for plain entries in armor.json, found
+    # none, and so asserted nothing (bug bash 2026-10-16, CQ-19).
+    import random
     import statistics
+    from items import pick_random_armor_for_floor
     armor = _data('items/armor.json')
     for iid in NEW_ARMOR:
         d = armor[iid]
-        near = [v['ac_bonus'] for v in armor.values()
-                if isinstance(v, dict) and not v.get('is_unique') and v.get('slot') == d['slot']
-                and v.get('peak_floor') is not None and abs(v['peak_floor'] - d['peak_floor']) <= 12]
-        if near:
-            assert d['ac_bonus'] >= statistics.median(near) - 1, (iid, d['ac_bonus'], near)
+        rng = random.Random(iid)
+        near = [a.ac_bonus for a in
+                (pick_random_armor_for_floor(d['peak_floor'], rng, slot=d['slot'])
+                 for _ in range(60)) if a is not None]
+        assert near, (iid, d['slot'], d['peak_floor'])
+        assert d['ac_bonus'] >= statistics.median(near) - 1, (iid, d['ac_bonus'], near)
 
 
 def test_every_slot_has_a_named_piece_to_find_early_middle_and_late():

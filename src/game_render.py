@@ -5912,6 +5912,7 @@ class RenderMixin:
         entries = []
         if is_compound:
             from food_system import _raw_ingredients as _ri
+            from food_system import recipe_is_trophy as _is_trophy
             from collections import Counter
             ingredients = _ri()
             for i, recipe in enumerate(tab_items):
@@ -5931,14 +5932,15 @@ class RenderMixin:
                         self2.symbol = '*'
                 icon_obj = _RecipeIcon(recipe_sprite_id, first_ing)
                 name = recipe.get('name', 'recipe')
+                is_trophy = _is_trophy(recipe)
                 entries.append({
                     'name': name[:1].upper() + name[1:],
                     'detail': f"Needs: {ing_list}",
                     'key': self._menu_letter(i),
                     'icon': icon_obj,
-                    'name_color': FP.GOLD_BRIGHT if recipe.get('recipe_class') == 'trophy' else FP.GOLD_PALE,
+                    'name_color': FP.GOLD_BRIGHT if is_trophy else FP.GOLD_PALE,
                     'detail_color': FP.BODY_TEXT,
-                    'badge': 'TROPHY' if recipe.get('recipe_class') == 'trophy' else '',
+                    'badge': 'TROPHY' if is_trophy else '',
                     'badge_color': FP.GOLD_BRIGHT,
                     'details': self._menu_recipe_detail_lines(recipe),
                 })

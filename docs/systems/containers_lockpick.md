@@ -417,10 +417,8 @@ scroll).
 
 ### Known quirks (per SYSTEMS_AUDIT.md)
 
-- `mystery_system.py::_run_cooking_challenge` still runs an
-  `escalator_chain` cooking quiz with threshold=5 for the Cauldron
-  mystery, which violates the v3 one-Q rule everywhere else. Noted
-  but not fixed in v2.18.0.
+- (Fixed since v2.18.0: the mystery cooking challenge is now one
+  `threshold` question, like every other cook.)
 - `main.py:4544` (older line) — success/fail detection historically
   used `bool(result['loot']) or gold > 0`. The current code reads the
   `success` message tag from `result['messages']` instead, which is

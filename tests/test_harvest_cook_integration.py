@@ -269,24 +269,25 @@ def test_cook_v3_uses_threshold_one_question():
     assert 'max_chain' not in kw
 
 
-def test_cook_v3_tier_matches_recipe_class():
-    """Cook v3: Q tier = recipe class band. family=2, prime=3, master_prime=4,
-    trophy=5, dungeon_keyed=5."""
-    from food_system import load_ingredient_for, cook_compound_recipe, _raw_recipes
+def test_cook_v3_tier_matches_the_outcome_tier():
+    """Cook v3 (v2.6.4 schema): the question tier is the tier of the
+    recipe's outcome archetype (`outcome_id` -> cook_outcomes.json).
+    (This replaced a recipe_class version that, once recipe_class left
+    recipes.json, matched no recipe and asserted nothing.)"""
+    from food_system import (load_ingredient_for, cook_compound_recipe,
+                             _raw_recipes, _load_outcomes)
     from player import Player
 
-    raw = _raw_recipes()
-    def _first_of(cls):
-        for rid, r in raw.items():
-            if r.get('recipe_class') == cls:
-                return {'id': rid, **r}
-        return None
+    outcomes = _load_outcomes()
+    first_per_tier = {}
+    for rid, r in _raw_recipes().items():
+        o = outcomes.get(r.get('outcome_id'))
+        if o is not None:
+            first_per_tier.setdefault(int(o.get('tier', 3)), {'id': rid, **r})
+    # the recipe book spans the whole tier ladder
+    assert sorted(first_per_tier) == [1, 2, 3, 4, 5]
 
-    for cls, expected in [('family', 2), ('prime', 3), ('master_prime', 4),
-                          ('trophy', 5), ('dungeon_keyed', 5)]:
-        recipe = _first_of(cls)
-        if recipe is None:
-            continue
+    for expected, recipe in sorted(first_per_tier.items()):
         p = Player()
         for ing_id in recipe['ingredients']:
             ing = load_ingredient_for(ing_id)
@@ -295,7 +296,7 @@ def test_cook_v3_tier_matches_recipe_class():
         quiz = MockQuizEngine(scripted_success=True)
         cook_compound_recipe(p, recipe, p.inventory, quiz, lambda m: None)
         assert quiz.last_quiz_kwargs['tier'] == expected, \
-            f"recipe_class={cls} should produce tier={expected}, got {quiz.last_quiz_kwargs['tier']}"
+            f"{recipe['id']} should ask tier {expected}, got {quiz.last_quiz_kwargs['tier']}"
 
 
 def test_cook_v3_success_gives_peak_reward():

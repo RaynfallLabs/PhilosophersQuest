@@ -221,7 +221,8 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
         try:
             item_pools[cls] = {i.id: i for i in load_items(cls)}
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('bones._place_cursed_gear: recovered from an error')
 
     tiles = list(room.inner_tiles())
     random.shuffle(tiles)

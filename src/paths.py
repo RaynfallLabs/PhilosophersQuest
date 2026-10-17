@@ -24,11 +24,6 @@ def data_path(*parts: str) -> str:
     return os.path.normpath(os.path.join(_root(), *parts))
 
 
-def fmt_id(raw: str) -> str:
-    """Convert a snake_case identifier to a display string: 'wild_swing' -> 'wild swing'."""
-    return raw.replace('_', ' ')
-
-
 def a_or_an(name: str) -> str:
     """Return 'a Name' or 'an Name' based on the first letter. Handles proper nouns."""
     if not name:
@@ -38,13 +33,20 @@ def a_or_an(name: str) -> str:
     return f"{article} {name}"
 
 
+# Tests point this at a temp dir (tests/conftest.py) so a pytest run never
+# writes saves, high scores, settings, bones or answer times into the
+# developer's real dev save dir. Replaces the DEV location only; the frozen
+# paths below are never overridden.
+_DEV_SAVE_DIR_OVERRIDE = None
+
+
 def save_dir() -> str:
     """Writable directory for save files.
 
     Frozen Windows -> %APPDATA%\\PhilosophersQuest\\
     Frozen Linux   -> $XDG_DATA_HOME/PhilosophersQuest/ or ~/.local/share/PhilosophersQuest/
     Frozen macOS   -> ~/Library/Application Support/PhilosophersQuest/
-    Dev            -> project root (unchanged)
+    Dev            -> project root (unchanged), or _DEV_SAVE_DIR_OVERRIDE
     """
     if getattr(sys, 'frozen', False):
         if sys.platform == 'win32':
@@ -63,6 +65,6 @@ def save_dir() -> str:
             )
             base = os.path.join(xdg, 'PhilosophersQuest')
     else:
-        base = _root()
+        base = _DEV_SAVE_DIR_OVERRIDE or _root()
     os.makedirs(base, exist_ok=True)
     return base

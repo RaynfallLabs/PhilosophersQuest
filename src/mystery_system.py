@@ -698,7 +698,8 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
             if pool:
                 stock_items.extend(rng.choices(pool, k=2))
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('mystery_system.spawn_merchant: recovered from an error')
     for _pick in (pick_random_weapon_for_floor, pick_random_armor_for_floor,
                   pick_random_shield_for_floor):
         for _ in range(2):
