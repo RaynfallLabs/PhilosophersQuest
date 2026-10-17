@@ -755,7 +755,8 @@ Dispatch flow:
 4. **Standard path** — one grammar question at effective tier
    (`spellbook_chain_bonus` reduces); on success, the spell is added to
    `player.known_spells[spell_id] = mp_cost`, the book is identified,
-   removed from inventory, and `_log_chronicle` records the learning.
+   removed from inventory, and the Journal records the learning (the
+   first three spells only, `once='spell:<id>'`).
 
 ### Fail payloads
 

@@ -179,7 +179,7 @@ Nothing polls the quirk list. Every `on_*` method bumps the right counter, check
 1. `_award(qid, name, apply_fn)` adds `qid` to `player.unlocked_quirks`.
 2. `apply_fn(player)` fires (stat bump / add_effect / flag write).
 3. `game.add_message("TRAIT UNLOCKED: …", 'loot')` logs the breadcrumb.
-4. `game._log_chronicle(...)` adds the first-person reflection line.
+4. `game._chron('milestone', ..., once=f'quirk:{qid}')` adds the first-person reflection line.
 5. `game._show_quirk_unlock_popup(name, effect, trigger, flavor)` **pauses the game** on a modal popup so the moment lands (SYSTEMS_AUDIT §7 confirmed the popup is wired, including after a bad save restore).
 
 Active-power quirks go through `_award_power` instead, which also seeds `power_uses[id]` and `power_cooldowns[id]=0` from `_ACTIVE_POWER_DEFS` so the V-menu entry becomes usable immediately. `tick_powers()` runs each turn to decrement cooldowns.

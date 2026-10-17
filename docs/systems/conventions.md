@@ -293,7 +293,7 @@ mechanical change.
 
 1. `src/game_render.py` — menus, panels, cards, lore screens
 2. `src/game_menus.py` + `src/fantasy_ui.py` — menu strings
-3. All `add_message(...)` / `_log_chronicle(...)` calls in
+3. All `add_message(...)` / `_chron(...)` (journal) calls in
    `src/main.py` + mixins
 4. `src/game_render.py::_draw_help_screen` — help text + System Rules
    card bullets

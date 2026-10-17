@@ -61,12 +61,11 @@ reward / outcome text.
 ### 1.3 Chronicle hooks on extremes
 
 An NPC or flavor choice that takes karma from below 8 to 8 or more
-(the Sword of Michael's threshold), or that takes it to -10, logs a
-chronicle line (`game_encounters._apply_outcome`). There is no
-once-guard: it fires on **every** such crossing, and only from an
-encounter choice (the Emberpup, Gyges and the Penitent's Blade never
-trigger it). Phase 3a moves these lines into `karma.adjust` with a
-once-guard.
+(the Sword of Michael's threshold), or that takes it to -10, writes a
+`soul` line in the Journal (`game_encounters._apply_outcome`), once a
+run each (`once='soul:clean'` / `'soul:cold'`, Phase 4). Only an
+encounter choice triggers it (the Emberpup, Gyges and the Penitent's
+Blade never do). Phase 3a moves these lines into `karma.adjust`.
 
 - Crossing to 8+: "I feel... clean. Like everything I've done
   down here has mattered. The dungeon feels lighter."
@@ -645,7 +644,7 @@ The "big ask." One attempt per run. Gated by
   "not duplicating a running unique" invariant via `_in_play`.
   Spawned artifact is `buc = 'blessed'` and fully identified
   (`items.grant_identified`: id level 5, blessing known, type known).
-- Chronicle entry: "God set a {name} at my feet."
+- Journal (`soul`): "Begged for intercession and was answered. Every wound closed, and God set a {name} at my feet."
 
 ### 6.3 Failure
 
@@ -655,7 +654,7 @@ The "big ask." One attempt per run. Gated by
   accessory slots, amulet, belt) with a `buc` field is set to
   `'cursed'` and `buc_known = True`.
 - `blinded 100t` effect added.
-- Chronicle: "Sought intercession without the merit. God smote me."
+- Journal (`soul`): "Begged for intercession I had not earned. God answered anyway, just not kindly." 
 
 The intent is "intercession is strictly higher-stakes than prayer":
 success is a run-defining windfall; failure is near-run-ending.
@@ -808,9 +807,8 @@ carry a karma penalty on return**. The system is cosmetic + loot:
 - Encountering a bones-level does **not** apply any `karma` delta.
   There is no karma-on-death bookkeeping.
 
-Chronicle-level consequence only: see `_log_chronicle` entries for
-disturbed graves (geography quiz) and the general
-"I'm not proud of it" line on grave-dig.
+Journal-level consequence only: the first grave dug writes the
+"I am not proud of it" line (`once='first_grave'`).
 
 For the full bones/ghost pipeline see [world.md](world.md).
 
@@ -825,8 +823,11 @@ src/karma.py                 -- adjust (the single entry point),
 src/deeds.py                 -- the deeds register (Game._deeds): deeds,
                                 oaths, people, threads, condition check,
                                 old-save migrate
-src/chronicle.py             -- structured chronicle entries; the
-                                _log_chronicle shim; legacy migrate
+src/chronicle.py             -- structured journal entries (Game._chron
+                                writes them; _log_chronicle is a shim),
+                                the voice lint, the Journal views and
+                                "Your Story" (Roads Not Taken, this run
+                                only); legacy migrate
 src/encounter_schema.py      -- normalise, visible_options, text
                                 variants, quiz_passed
 tools/encounters/validate.py -- the encounter validator CLI
