@@ -190,6 +190,69 @@ def test_c08_reflecting_aura_keeps_the_players_own_new_buffs():
     assert hits >= 10 and lost == 0
 
 
+def _strike(g, n):
+    """Answer n right, then lock in with SPACE (cancel_and_strike)."""
+    from quiz_engine import QuizState
+    qe = g.quiz_engine
+    for _ in range(n):
+        while qe.active and qe.state != QuizState.ASKING:
+            qe.update(5.0)
+        if not qe.active:
+            break
+        qe.answer(_right(g))
+        qe.update(5.0)
+    while qe.active and qe.state != QuizState.ASKING:
+        qe.update(5.0)
+    if qe.active:
+        qe.cancel_and_strike()
+
+
+# ---------------------------------------------------------------- C03
+def test_c03_harpe_cannot_petrify_a_boss_but_still_stones_a_rat():
+    """Harpe's chain-15 petrify wrote the status directly, and petrifying
+    running out kills: any boss died two turns after one chain of 15."""
+    for kind, stoned in (('asterion_minotaur', False), ('giant_rat', True)):
+        g = _game(seed=21)
+        _open_floor(g)
+        p = g.player
+        p.hp = p.max_hp = 1_000_000
+        harpe = _plain(items.make_item_by_id('weapon', 'harpe'))
+        p.inventory.append(harpe)
+        p.weapon = harpe
+        b = _spawn(g, kind)
+        if kind == 'giant_rat':
+            b.max_hp = 50              # an ordinary foe, but alive through the blow
+            b.hp = 10 ** 6
+        g._start_combat(b)
+        _strike(g, 15)
+        assert ('petrifying' in b.status_effects) is stoned, kind
+        if not stoned:
+            for _ in range(4):
+                b.x, b.y = p.x + 1, p.y
+                g._advance_turn()
+            assert b.alive, kind
+
+
+# ---------------------------------------------------------------- C04
+def test_c04_sword_of_damocles_does_not_one_shot_a_gate_boss():
+    """The Damocles auto-kill excluded only monsters TAGGED 'boss'; the gate
+    bosses, seal demons and mini-bosses are flagged, so Abaddon died."""
+    g = _game(seed=81)
+    _open_floor(g, 3)
+    p = g.player
+    p.hp = p.max_hp = 10 ** 7
+    w = _plain(items.make_item_by_id('weapon', 'sword_of_damocles'))
+    p.inventory.append(w)
+    p.weapon = w
+    b = _spawn(g, 'abaddon_destroyer')
+    b.thac0 = 99
+    assert b._is_named_foe() and 'boss' not in b.tags
+    for _ in range(10):
+        g._start_combat(b)
+        _strike(g, 1)
+    assert b.alive and b.hp > b.max_hp // 2
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat
