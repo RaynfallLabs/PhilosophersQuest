@@ -901,7 +901,7 @@ class CombatMixin:
                 _ally._temp_duration = int(_ps.get('duration_turns', 5) or 5)
                 self.pets.append(_ally)
                 self.add_message(
-                    f"From the slain {monster.name} a {_ally.name} springs forth — bound to your side!",
+                    f"From the slain {monster.name} {self._a_or_an(_ally.name)} springs forth — bound to your side!",
                     'success')
             except Exception:
                 pass

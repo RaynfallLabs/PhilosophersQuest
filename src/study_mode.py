@@ -113,7 +113,10 @@ class StudyMode:
 
         if key == pygame.K_F11:
             # Full screen works here too (it did nothing outside the game).
-            pygame.display.toggle_fullscreen()
+            try:
+                pygame.display.toggle_fullscreen()
+            except pygame.error:
+                return False      # this display has no full screen
             surf = pygame.display.get_surface()
             if surf is not None:
                 import layout

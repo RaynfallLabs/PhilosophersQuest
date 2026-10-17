@@ -68,9 +68,13 @@ class InputMixin:
             # "the window just closed" report names itself.
             if getattr(self, '_quit_confirmed', False):
                 return False
-            if self.state in (STATE_DEAD, STATE_VICTORY):
+            if (self.state in (STATE_DEAD, STATE_VICTORY, STATE_REVIEW_MISSED)
+                    or getattr(self, '_run_over', False)):
                 # The window's X closes the game, here as anywhere: main()
-                # sends a finished run back to the title only for Esc.
+                # sends a finished run back to the title only for Esc. A run
+                # that is over (the missed-question review, a popup after
+                # death) has nothing to save: no "Save & Exit" dialog for a
+                # dead hero.
                 self._window_closed = True
                 return False
             if self.state != STATE_CONFIRM_EXIT:
@@ -87,16 +91,20 @@ class InputMixin:
                 self._state_before_exit = self.state
                 self.state = STATE_CONFIRM_EXIT
             return True
-        if event.type == pygame.WINDOWRESIZED:
-            self.on_resize(event.x, event.y)
-            return True
-        if event.type == pygame.WINDOWSIZECHANGED:
-            # Fires for every size change (API calls, maximise, fullscreen),
-            # usually alongside WINDOWRESIZED: act only on a size the layout
-            # does not already have.
+        if event.type in (pygame.WINDOWRESIZED, pygame.WINDOWSIZECHANGED):
+            # WINDOWSIZECHANGED fires for every size change (API calls,
+            # maximise, fullscreen), usually alongside WINDOWRESIZED: act only
+            # on a size the layout does not already have. A drag queues many
+            # sizes; each one across a scale step re-cut the art kit (~300
+            # ms). Only the size the window has NOW is laid out: a queued
+            # older size is skipped (main()'s per-frame check catches up).
             import layout as _layout
-            if (event.x, event.y) != (_layout.WINDOW_W, _layout.WINDOW_H):
-                self.on_resize(event.x, event.y)
+            if (event.x, event.y) == (_layout.WINDOW_W, _layout.WINDOW_H):
+                return True
+            surf = pygame.display.get_surface()
+            if surf is not None and surf.get_size() != (event.x, event.y):
+                return True
+            self.on_resize(event.x, event.y)
             return True
         if event.type != pygame.KEYDOWN:
             return True
@@ -111,7 +119,13 @@ class InputMixin:
             key = pygame.K_RETURN
 
         if key == pygame.K_F11:
-            pygame.display.toggle_fullscreen()
+            # A display that refuses full screen raises pygame.error; left to
+            # the frame's recovery handler it failed the question on screen.
+            try:
+                pygame.display.toggle_fullscreen()
+            except pygame.error:
+                self.add_message("Full screen is not available on this display.", 'warning')
+                return True
             # Whatever events the toggle does or does not send, lay out for
             # the size the window now really has (FOUNDATION_REVIEW 3.3).
             surf = pygame.display.get_surface()

@@ -4222,7 +4222,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if _rng_trap.random() < avoid_chance:
             trap['revealed'] = True
             self.add_message(
-                f"You notice a {trap['type'].replace('_', ' ')} trap just in time and sidestep it!",
+                f"You notice {a_or_an(trap['type'].replace('_', ' '))} trap just in time and sidestep it!",
                 'success')
             return
         # Trap fires -- remove it from the floor
@@ -4345,7 +4345,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             qs.on_trap_triggered(trap_type)
         if not getattr(self, '_chronicle_first_trap', False):
             self._chronicle_first_trap = True
-            self._log_chronicle(f"Stepped on a {trap_type.replace('_', ' ')} trap. Should have watched where I was walking.")
+            self._log_chronicle(f"Stepped on {a_or_an(trap_type.replace('_', ' '))} trap. Should have watched where I was walking.")
         if self.player.is_dead():
             self.add_message("You have died!", 'danger')
             # The whole game-over path, as every other death takes: this set
@@ -4478,7 +4478,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if trap and not trap.get('revealed'):
                         trap['revealed'] = True
                         self.add_message(
-                            f"Searching reveals a {trap['type'].replace('_', ' ')} trap!", 'success')
+                            f"Searching reveals {a_or_an(trap['type'].replace('_', ' '))} trap!", 'success')
         # Also reveal adjacent ambush monsters (radius same as tile-reveal above)
         for m in self.monsters:
             if (m.alive and m.ai_pattern == 'ambush'
@@ -4619,7 +4619,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not getattr(self, '_chronicle_first_rewire', False):
             self._chronicle_first_rewire = True
             self._log_chronicle(
-                f"Rewired a {tname} trap to fire on monsters instead. The dungeon's "
+                f"Rewired {a_or_an(tname)} trap to fire on monsters instead. The dungeon's "
                 "own teeth turned against it."
             )
 
@@ -4726,7 +4726,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if _rng.random() < chance:
                         trap['revealed'] = True
                         self.add_message(
-                            f"You spot a {trap['type'].replace('_', ' ')} trap nearby!", 'warning')
+                            f"You spot {a_or_an(trap['type'].replace('_', ' '))} trap nearby!", 'warning')
 
     def _do_passive_ambush_detection(self):
         """Passive PER-based detection of hidden ambush monsters within sight."""
@@ -4743,7 +4743,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if dist <= 5 and _rng.random() < chance:
                 m._aware = True
                 self.add_message(
-                    f"Your keen senses detect a {m.name} lying in wait!", 'warning')
+                    f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
 
     # ------------------------------------------------------------------
     # SP starvation

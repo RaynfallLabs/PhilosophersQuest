@@ -548,7 +548,10 @@ class WelcomeScreen:
     # ------------------------------------------------------------------ drawing
 
     def _toggle_fullscreen(self):
-        pygame.display.toggle_fullscreen()
+        try:
+            pygame.display.toggle_fullscreen()
+        except pygame.error:
+            return            # this display has no full screen: stay windowed
         surf = pygame.display.get_surface()
         if surf is None:
             return
