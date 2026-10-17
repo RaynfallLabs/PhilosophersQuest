@@ -206,17 +206,30 @@ def test_combat_hud_draws_worst_case_without_error():
     g = _combat_render_stub()
     g.screen = pygame.Surface((1280, 720))
     g.quiz_title = 'ATTACK'
-    weapon = SimpleNamespace(
-        name='adamantine composite longbow of the endless hunt',
-        base_damage=40, enchant_bonus=3, damage_types=['piercing', 'fire'],
-        chain_exponent=1.6, chain_multipliers=[1.0])
-    g.player = SimpleNamespace(weapon=weapon, ranged_weapon=weapon)
-    g.combat_target = SimpleNamespace(
-        name='ancient crystalline wyrm of the sunless deep',
-        hp=1284, max_hp=4500, resistances=[], weaknesses=[], tags=[],
-        status_effects={'poisoned': 3, 'slowed': 2, 'burning': 4,
-                        'blinded': 1, 'stunned': 2, 'weakened': 5,
-                        'confused': 2})
+    # Real player, weapon and monster: since call 13 the strip asks the
+    # blow's own damage calculation (combat.strike_damage), which reads the
+    # whole player.
+    import json
+    import items
+    from monster import Monster
+    from player import Player
+    weapon = items.instantiate_weapon('longbow', 'adamantine')
+    weapon.name = 'adamantine composite longbow of the endless hunt'
+    weapon.base_damage, weapon.enchant_bonus = 40, 3
+    weapon.damage_types = ['piercing', 'fire']
+    weapon.chain_exponent = 1.6
+    g.player = Player()
+    g.player.weapon = g.player.ranged_weapon = weapon
+    with open(_ROOT / 'data' / 'monsters.json', encoding='utf-8') as f:
+        defs = json.load(f)
+    kind = next(iter(defs))
+    target = Monster(dict(defs[kind], id=kind), 1, 1)
+    target.name = 'ancient crystalline wyrm of the sunless deep'
+    target.hp, target.max_hp = 1284, 4500
+    target.status_effects = {'poisoned': 3, 'slowed': 2, 'burning': 4,
+                             'blinded': 1, 'stunned': 2, 'weakened': 5,
+                             'confused': 2}
+    g.combat_target = target
     rect = pygame.Rect(110, 400, 1060, g._combat_hud_height())
     for chain in (0, 7, 23, 40):
         g.quiz_engine = SimpleNamespace(chain=chain)

@@ -235,7 +235,22 @@ def test_the_kill_hook_the_menu_and_the_bundle_are_wired():
     assert 'self._boon_menu_input(key)' in src('src/game_input.py')
     assert 'self._draw_boon_menu()' in src('src/game_render.py')
     assert "'data/boss_boons.json'" in src('PhilosophersQuest.spec')
-    assert 'player.struck_from_the_pit = True' in src('src/combat.py')
+    # A real belly strike from the pit is remembered; the Strike Now
+    # preview (consume=False) asks the same sum and remembers nothing.
+    import combat
+    import items
+    from monster import Monster
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        defs = json.load(f)
+    wyrm = Monster(dict(defs['giant_rat'], id='giant_rat'), 1, 1)
+    wyrm.dragon_scales = 0.8
+    hero = Player()
+    hero.weapon = items.instantiate_weapon('longsword', 'iron')
+    hero.status_effects['in_pit'] = 5
+    combat.strike_damage(hero, wyrm, 3)
+    assert not getattr(hero, 'struck_from_the_pit', False)
+    combat.strike_damage(hero, wyrm, 3, consume=True)
+    assert hero.struck_from_the_pit is True
 
 
 def test_the_gift_menu_draws_headless():

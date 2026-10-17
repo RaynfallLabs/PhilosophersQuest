@@ -125,7 +125,7 @@ def test_combat_wires_cannot_miss():
     """combat.player_attack must promote chain 0 to 1 when weapon has
     cannot_miss flag (same shape as the existing guaranteed_hit handler)."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'cannot_miss' in src
     # Must reference the promotion (chain = 1)
     # Just check the pattern is present near the cannot_miss line
@@ -138,7 +138,7 @@ def test_combat_wires_weapon_effective_against():
     """combat.player_attack must apply weapon-side effective_against array
     as a damage multiplier (not just material-side)."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert "getattr(weapon, 'effective_against'" in src \
         or 'weapon.effective_against' in src
 
@@ -147,7 +147,7 @@ def test_combat_wires_bonus_damage_vs_tag():
     """combat.player_attack must roll bonus_damage_vs_tag dice and add to
     damage when target matches the tag."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'bonus_damage_vs_tag' in src
     # Must use _tag_match
     assert '_tag_match' in src
@@ -157,7 +157,7 @@ def test_combat_wires_first_blood_bonus():
     """combat.player_attack must apply +50% damage on chain 1 vs full-HP
     target when first_blood_bonus is set."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'first_blood_bonus' in src
     # Must check chain == 1 AND monster.hp >= monster.max_hp (Atalanta logic)
     fbb_idx = src.find('first_blood_bonus')
@@ -169,7 +169,7 @@ def test_combat_wires_first_blood_bonus():
 def test_combat_wires_freeze_proc():
     """combat.player_attack must add a freeze proc when weapon.freeze_chance > 0."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert "freeze_chance" in src
     # Must apply 'frozen' status
     assert "'frozen'" in src
@@ -179,7 +179,7 @@ def test_combat_wires_effects_block():
     """combat.player_attack must read weapon.effects and roll effect_chance
     to apply effect_duration of the status."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     # The block uses _wfx variables — check key references
     assert "getattr(weapon, 'effects'" in src
     assert 'effect_chance' in src

@@ -109,45 +109,45 @@ def test_loads_summon_after_kill_with_tag():
 
 def test_combat_wires_chain_lightning():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'chain_lightning_at_chain_n' in src
     assert "'lightning'" in src
 
 
 def test_combat_wires_every_hit_secondary():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'every_hit_secondary_target' in src
 
 
 def test_combat_wires_multi_arrow():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'multi_arrow_at_chain_5' in src
 
 
 def test_combat_wires_chain_tier_status_table():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'chain_tier_status_table' in src
 
 
 def test_combat_wires_boss_doom_dot():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'boss_doom_dot_at_chain_5' in src
     assert 'doom_dot' in src
 
 
 def test_combat_wires_weep_heal():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'weep_heal_on_kill_scaled' in src
 
 
 def test_combat_wires_return_to_hand_ward():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'return_to_hand_ward' in src
     assert '_return_to_hand_active' in src
 
@@ -158,34 +158,34 @@ def test_combat_wires_growth_on_innocent_kill():
     so it now grants a `blade_flow` stack (next hit bypasses damage reduction).
     Same 'blade grows on innocent blood' feel via a chain-combat-v2 mechanic."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'growth_on_innocent_kill' in src
     assert "'blade_flow'" in src
 
 
 def test_combat_wires_damage_bonus_vs_gaze():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'damage_bonus_vs_gaze' in src
     assert 'gaze_paralyze' in src
 
 
 def test_combat_wires_random_status_from_pool():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'random_status_from_pool' in src
 
 
 def test_combat_wires_summon_after_kill():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'summon_after_kill_with_tag' in src
     assert '_pending_summon' in src
 
 
 def test_combat_wires_spare_kill():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'spare_kill_chance' in src
     assert '_spare_kill_floor_hp' in src
 
