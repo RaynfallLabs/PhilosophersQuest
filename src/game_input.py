@@ -45,6 +45,13 @@ from game_states import (
 )
 
 
+_MODIFIER_KEYS = frozenset((
+    pygame.K_LSHIFT, pygame.K_RSHIFT, pygame.K_LCTRL, pygame.K_RCTRL,
+    pygame.K_LALT, pygame.K_RALT, pygame.K_LGUI, pygame.K_RGUI, pygame.K_MODE,
+    pygame.K_CAPSLOCK, pygame.K_NUMLOCK, pygame.K_SCROLLLOCK,
+))
+
+
 class InputMixin:
     # ------------------------------------------------------------------
     # Top-level event router
@@ -62,6 +69,9 @@ class InputMixin:
             if getattr(self, '_quit_confirmed', False):
                 return False
             if self.state in (STATE_DEAD, STATE_VICTORY):
+                # The window's X closes the game, here as anywhere: main()
+                # sends a finished run back to the title only for Esc.
+                self._window_closed = True
                 return False
             if self.state != STATE_CONFIRM_EXIT:
                 try:
@@ -92,6 +102,13 @@ class InputMixin:
             return True
 
         key = event.key
+        # A modifier pressed on its own is not a key press: "any key" story
+        # popups closed on a bare Alt (Alt+Tab lost the story) or Shift.
+        if key in _MODIFIER_KEYS:
+            return True
+        # Keypad Enter is Enter everywhere (most screens only knew K_RETURN).
+        if key == pygame.K_KP_ENTER:
+            key = pygame.K_RETURN
 
         if key == pygame.K_F11:
             pygame.display.toggle_fullscreen()
@@ -246,6 +263,10 @@ class InputMixin:
             if event.unicode == '@':
                 self._open_character_sheet()
                 return True
+            if event.unicode == '|':
+                # Shift+\ on layouts that send '|' without K_BACKSLASH.
+                self._start_divine_intercession()
+                return True
             if event.unicode == 'P':
                 # Shift+P opens the pet menu (lowercase p is pickup/disarm).
                 self._open_pet_menu()
@@ -385,6 +406,11 @@ class InputMixin:
         pygame.K_DOWN:  (0,  1),
         pygame.K_LEFT:  (-1, 0),
         pygame.K_RIGHT: (1,  0),
+        # The keypad arrows (Num Lock off sends these too).
+        pygame.K_KP8:   (0, -1),
+        pygame.K_KP2:   (0,  1),
+        pygame.K_KP4:   (-1, 0),
+        pygame.K_KP6:   (1,  0),
     }
 
     def _player_input(self, key: int):

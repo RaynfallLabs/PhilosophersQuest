@@ -8141,7 +8141,8 @@ def main():
                 print("[Save] quit-save failed; previous save retained on disk")
 
         # If game ended by death or victory, loop back to welcome screen
-        if game.state in (STATE_DEAD, STATE_VICTORY):
+        # (unless the window itself was closed: then the game quits)
+        if game.state in (STATE_DEAD, STATE_VICTORY) and not getattr(game, '_window_closed', False):
             continue
 
         # Otherwise player quit mid-game — exit for real

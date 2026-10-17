@@ -400,6 +400,7 @@ class WelcomeScreen:
         self._show_alltime = False
         self._alltime_page = 0
         self._god_prompt   = False   # True when showing "Did you mean Dad?" popup
+        self._confirm_delete = None  # the name whose save Del asked to erase (Y/N)
         # Pre-render stone background into a surface
         self._bg = self._make_stone_bg()
 
@@ -484,13 +485,29 @@ class WelcomeScreen:
                         else:
                             self._show_alltime = False
                         continue
+                    if event.key == pygame.K_F11:
+                        # Full screen works on the title too, as in the game.
+                        self._toggle_fullscreen()
+                        continue
                     if self._god_prompt:
                         if event.key == pygame.K_y:
                             return 'Dad', SECRET_BUILDS.get('dad')
                         elif event.key in (pygame.K_n, pygame.K_ESCAPE):
                             self._god_prompt = False
                         continue
-                    if event.key == pygame.K_RETURN and self.name_buf.strip():
+                    if self._confirm_delete:
+                        # Del asks first: one stray key press erased a run.
+                        if event.key == pygame.K_y:
+                            from save_system import delete_save
+                            delete_save(self._confirm_delete)
+                            self._has_save = False
+                            self._delete_flash = 2.0   # seconds to show confirmation
+                            self._confirm_delete = None
+                        elif event.key in (pygame.K_n, pygame.K_ESCAPE):
+                            self._confirm_delete = None
+                        continue
+                    if (event.key in (pygame.K_RETURN, pygame.K_KP_ENTER)
+                            and self.name_buf.strip()):
                         name  = self.name_buf.strip()
                         if name.lower() == 'god':
                             self._god_prompt = True
@@ -508,10 +525,7 @@ class WelcomeScreen:
                             build = None
                         return name, build
                     elif event.key == pygame.K_DELETE and self._has_save:
-                        from save_system import delete_save
-                        delete_save(self.name_buf.strip())
-                        self._has_save = False
-                        self._delete_flash = 2.0   # seconds to show confirmation
+                        self._confirm_delete = self.name_buf.strip()
                     elif event.key == pygame.K_BACKSPACE:
                         self.name_buf = self.name_buf[:-1]
                     elif event.key == pygame.K_ESCAPE:
@@ -532,6 +546,20 @@ class WelcomeScreen:
             pygame.display.flip()
 
     # ------------------------------------------------------------------ drawing
+
+    def _toggle_fullscreen(self):
+        pygame.display.toggle_fullscreen()
+        surf = pygame.display.get_surface()
+        if surf is None:
+            return
+        w, h = surf.get_size()
+        if (w, h) != (self.W, self.H):
+            import layout
+            layout.update(w, h)
+            self.W, self.H = w, h
+            self.cx = self.W // 2
+            self.cy = self.H // 2
+            self._bg = self._make_stone_bg()
 
     def _ring_cy(self) -> int:
         """Centre of the rune circles / domain ring / Stone. With the kit it
@@ -1111,7 +1139,11 @@ class WelcomeScreen:
             notice = getattr(self, '_notice', None)
             flash = getattr(self, '_delete_flash', 0.0)
             line = None
-            if notice:
+            confirm = getattr(self, '_confirm_delete', None)
+            if confirm:
+                line = (f"Erase the saved journey of {confirm}? It cannot be undone.",
+                        FP.DANGER_TEXT_LIGHT)
+            elif notice:
                 line = (display_text(notice), FP.GOLD_BRIGHT)
             elif flash > 0.0:
                 line = ("Save deleted. Press Enter to start fresh.", FP.DANGER_TEXT_LIGHT)
@@ -1121,7 +1153,9 @@ class WelcomeScreen:
                 ls = self.font_sm.render(fit_text(line[0], self.font_sm, self.W - S(40)),
                                          True, line[1])
                 self.screen.blit(ls, (cx - ls.get_width() // 2, status_y))
-            if has_save and flash <= 0.0:
+            if confirm:
+                hints = "Y: erase the save   N / Esc: keep it"
+            elif has_save and flash <= 0.0:
                 hints = ("Enter: continue your journey   Del: erase save   "
                          "F2: leaderboard   F3: study mode   Esc: quit")
             else:
@@ -1147,7 +1181,13 @@ class WelcomeScreen:
         self.screen.blit(ver, (self.W - ver.get_width() - S(10), self.H - S(20)))
         # Delete-flash confirmation (shown for 2 seconds after DEL)
         flash = getattr(self, '_delete_flash', 0.0)
-        if flash > 0.0:
+        confirm = getattr(self, '_confirm_delete', None)
+        if confirm:
+            ask = self.font_sm.render(
+                f"Erase the saved journey of {confirm}?  [ Y ] erase  |  [ N ] keep it",
+                True, FP.DANGER_TEXT_LIGHT)
+            self.screen.blit(ask, (cx - ask.get_width() // 2, self.H - S(52)))
+        elif flash > 0.0:
             del_msg = self.font_sm.render("[X] Save deleted -- press ENTER to start fresh", True, FP.DANGER_TEXT_LIGHT)
             self.screen.blit(del_msg, (cx - del_msg.get_width() // 2, self.H - S(52)))
         elif has_save:
