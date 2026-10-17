@@ -7,6 +7,14 @@ from ui_scale import px as S
 from fantasy_ui import FP, ITEM_COLOR, KT, ScaledFont, contrast, display_text
 from hud_context import active_power_rows, visible_context_rows
 
+
+def floor_label(level: int) -> str:
+    """How the run's place is named on screen. The Cow Level is numbered
+    999 inside the game; the player is on the Moo Moo Farm, not floor 999
+    (the death screen already says so)."""
+    from boss_levels import COW_LEVEL
+    return "Moo Moo Farm" if level == COW_LEVEL else f"Floor {level}"
+
 # Rail widths at UI scale 1 (1280x720). On screen they are ``ui_scale.px``
 # of these; layout.LEFT_SIDEBAR_W / layout.SIDEBAR_W hold the live values
 # (_genart/ui/SCALE_PLAN.md).
@@ -382,7 +390,7 @@ class Sidebar:
         name = self._fit(self._fbold, player_name or "Adventurer", self.w - self.PAD * 2)
         self.screen.blit(self._fbold.render(name, True, FP.GOLD_PALE), (self.x + self.PAD, y))
         y += S(23)
-        line = f"Floor {dungeon_level}   Turn {turn_count}"
+        line = f"{floor_label(dungeon_level)}   Turn {turn_count}"
         self.screen.blit(self._fsm.render(self._fit(self._fsm, line, self.w - self.PAD * 2),
                                           True, FP.FADED_TEXT),
                          (self.x + self.PAD, y))

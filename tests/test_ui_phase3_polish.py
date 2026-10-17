@@ -258,7 +258,9 @@ def test_sidebar_identity_still_prints_floor():
     a regression if Floor also disappeared."""
     import ui
     src = inspect.getsource(ui.Sidebar._identity)
-    assert "Floor" in src, (
+    # The readout goes through ui.floor_label ("Floor N"; the Cow Level,
+    # numbered 999 inside, reads "Moo Moo Farm").
+    assert "floor_label(" in src and ui.floor_label(7) == "Floor 7", (
         "Sidebar._identity must retain the Floor N readout as the sole "
         "dungeon-level display after Depth was removed."
     )
