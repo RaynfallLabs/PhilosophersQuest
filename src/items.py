@@ -830,6 +830,16 @@ class Shield(Item):
 
 
 class Accessory(Item):
+    def __copy__(self):
+        """A copy owns its own ``effects``. A shallow copy shared the
+        template's dict, so two same-kind rings on one floor were one dict:
+        a cursed Enchant Ring on one changed both, and taking them off
+        left the stat changed for good."""
+        new = self.__class__.__new__(self.__class__)
+        new.__dict__.update(self.__dict__)
+        new.effects = dict(getattr(self, 'effects', None) or {})
+        return new
+
     def __init__(self, defn: dict):
         super().__init__(defn)
         self.slot             = defn['slot']
