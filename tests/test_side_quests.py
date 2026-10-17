@@ -30,7 +30,7 @@ FLAVOR = _load('flavor_encounters.json')
 NPCS = _load('npc_encounters.json')
 MONSTERS = _load('monsters.json')
 
-# Types with a handler in game_encounters._apply_npc_choice / can_pay_cost.
+# Types with a handler in game_encounters._npc_pay_cost / can_pay_cost.
 COST_TYPES = {'food', 'healing_potion', 'potion', 'scroll', 'weapon', 'gold',
               'hp_percent', 'max_hp', 'sp', 'hp', 'mp', 'random_item',
               'triggered_item', 'accept_item', 'spawn_deadite_ambush'}

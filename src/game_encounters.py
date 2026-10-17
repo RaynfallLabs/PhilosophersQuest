@@ -160,6 +160,14 @@ class EncountersMixin:
     # Karma + flavor NPC spawn
     # ------------------------------------------------------------------
 
+    def _encounter_allowed(self, enc) -> bool:
+        """An encounter's own requires / forbids (deeds, oaths, stats) hold
+        now. Content without either is always allowed."""
+        if not (enc.get('requires') or enc.get('forbids')):
+            return True
+        from encounter_schema import encounter_allowed
+        return encounter_allowed(enc, self._deed_ctx())
+
     def _maybe_spawn_npc(self, level: int):
         """Spawn an NPC on this level if one is assigned and hasn't been encountered."""
         enc = self._npc_encounter_levels.get(level)
@@ -177,6 +185,8 @@ class EncountersMixin:
         if enc.get('trigger_item'):
             if enc['trigger_item'] not in self._npc_triggered_items:
                 return
+        if not self._encounter_allowed(enc):
+            return
 
         from monster import Monster
         # Create a fake "monster" for the NPC so it renders and blocks tiles
@@ -231,6 +241,8 @@ class EncountersMixin:
         for _m in self.monsters:
             if getattr(_m, '_flavor_encounter_tag', None) == enc['tag']:
                 return
+        if not self._encounter_allowed(enc):
+            return
 
         from monster import Monster
         npc_def = {
@@ -642,17 +654,11 @@ class EncountersMixin:
                     break
         if enc is None:
             return False
+        if self._npc_already_spent(enc, monster, flavor=True):
+            return True
 
         # Reuse the NPC encounter UI with a flavor flag
-        self._npc_encounter_active = enc
-        self._npc_encounter_monster = monster
-        self._npc_encounter_phase = 'text'
-        self._npc_selected_option = None
-        self._npc_outcome_text = ''
-        self._npc_item_list = []
-        self._npc_item_scroll = 0
-        self._npc_is_flavor = True  # flag to skip karma processing
-        self.state = STATE_NPC_ENCOUNTER
+        self._npc_open(enc, monster, flavor=True)
         return True
 
     def _start_npc_encounter(self, monster):
@@ -669,16 +675,134 @@ class EncountersMixin:
                 break
         if enc is None:
             return False
+        if self._npc_already_spent(enc, monster, flavor=False):
+            return True
 
+        self._npc_open(enc, monster, flavor=False)
+        return True
+
+    def _npc_already_spent(self, enc, monster, *, flavor: bool) -> bool:
+        """An encounter is spent the moment its choice is made (the cost is
+        paid or its quiz starts). If the NPC is still standing after that, as
+        it is when the game was closed on the outcome page or mid-quiz and
+        reloaded, it has nothing more to say and leaves: a reload is not a
+        second choice."""
+        spent = (getattr(self, '_encountered_flavor_npcs', None) or set()) if flavor \
+            else (getattr(self, '_encountered_npcs', None) or set())
+        if enc.get('tag') not in spent:
+            return False
+        from monster import the_name as _the_name
+        monster.alive = False
+        monster.hp = 0
+        self.add_message(f"{_the_name(monster)} has nothing more to say, and goes.", 'info')
+        return True
+
+    def _npc_open(self, enc, monster, *, flavor: bool):
+        """Open the encounter screen on its text page."""
         self._npc_encounter_active = enc
         self._npc_encounter_monster = monster
         self._npc_encounter_phase = 'text'
         self._npc_selected_option = None
+        self._npc_selected_index = None
         self._npc_outcome_text = ''
+        self._npc_outcome_chronicle = None
         self._npc_item_list = []
         self._npc_item_scroll = 0
+        self._npc_visible = None
+        self._npc_after = 'close'
+        self._npc_pending_option = None
+        if flavor:
+            self._npc_is_flavor = True  # flag to skip karma processing
+        # Deeds-aware scene text (text_variants) and the first meeting.
+        from encounter_schema import resolve_text
+        ctx = self._deed_ctx()
+        self._npc_encounter_text = resolve_text(enc, ctx)
+        person = enc.get('person')
+        if isinstance(person, dict) and person.get('id'):
+            import deeds
+            floor, _deepest, _block, _turn = self._deed_where()
+            deeds.set_person(self._deeds_reg(), person['id'],
+                             name=person.get('name', ''), floor=floor)
+            if enc.get('chronicle_meet'):
+                import chronicle
+                chronicle.chron(self, 'person', enc['chronicle_meet'],
+                                person=person['id'], once=f"meet:{enc['tag']}")
         self.state = STATE_NPC_ENCOUNTER
-        return True
+
+    # ------------------------------------------------------------------
+    # Deeds helpers (thin wrappers over the pure deeds / karma modules)
+    # ------------------------------------------------------------------
+
+    def _deeds_reg(self) -> dict:
+        import deeds
+        return deeds.ensure_register(self)
+
+    def _deed_where(self):
+        """(floor, deepest, block, turn): the block is always the deepest
+        floor's, so walking back upstairs never reopens an old block."""
+        import karma
+        return karma._where(self)
+
+    def _deed_ctx(self) -> dict:
+        """The context a deeds condition is checked against."""
+        floor, deepest, _block, _turn = self._deed_where()
+        p = self.player
+        stats = {}
+        for st in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+            try:
+                stats[st] = int(getattr(p, st, 0) or 0)
+            except (TypeError, ValueError):
+                stats[st] = 0
+        from game_divine import _iter_equipped
+        items = {getattr(i, 'id', None) for i in list(getattr(p, 'inventory', []) or [])
+                 + list(_iter_equipped(p))}
+        items.discard(None)
+        return {'reg': self._deeds_reg(), 'karma': int(getattr(self, 'karma', 0) or 0),
+                'stats': stats, 'floor': floor, 'deepest': deepest, 'items': items}
+
+    def _record_deeds(self, entries, source: str):
+        """Record an outcome's ``deeds`` list (ids, or {id, tags, payload,
+        ttl_floors, unique}). Data may never place a virtue:* tag."""
+        import deeds
+        reg = self._deeds_reg()
+        floor, deepest, block, turn = self._deed_where()
+        for e in entries or ():
+            if isinstance(e, str):
+                deeds.record(reg, e, floor=floor, block=block, turn=turn, source=source,
+                             deepest=deepest)
+            elif isinstance(e, dict) and e.get('id'):
+                deeds.record(reg, e['id'], floor=floor, block=block, turn=turn,
+                             source=source, tags=e.get('tags') or (),
+                             payload=e.get('payload'), ttl_floors=e.get('ttl_floors'),
+                             unique=bool(e.get('unique')), deepest=deepest)
+
+    def _engine_virtue(self, virtue: str, source: str):
+        """Write an engine-only virtue tag (virtue:forgo / judged / steadfast)."""
+        import deeds
+        reg = self._deeds_reg()
+        floor, deepest, block, turn = self._deed_where()
+        deeds.record(reg, f'flag.{virtue}.{deeds.slug(source)}', floor=floor, block=block,
+                     turn=turn, source=source, tags=[f'virtue:{virtue}'], engine=True,
+                     deepest=deepest)
+
+    def _npc_show_options(self):
+        """Open (or reopen) the options page: which options are visible is
+        decided here, once, from requires / forbids / hidden_group and the
+        options already used in a 'then: options' encounter."""
+        from encounter_schema import visible_options
+        enc = self._npc_encounter_active or {}
+        used = self._deeds_reg()['used_options'].get(enc.get('tag'), [])
+        self._npc_visible = visible_options(enc, self._deed_ctx(), used)
+        self._npc_encounter_phase = 'options'
+
+    def _npc_visible_options(self) -> list:
+        """[(raw index, option)] for the options page."""
+        if getattr(self, '_npc_visible', None) is None:
+            enc = self._npc_encounter_active or {}
+            from encounter_schema import visible_options
+            used = self._deeds_reg()['used_options'].get(enc.get('tag'), [])
+            self._npc_visible = visible_options(enc, self._deed_ctx(), used)
+        return self._npc_visible
 
     def _get_filtered_inventory(self, filter_type: str) -> list:
         """Return inventory items matching the cost filter type. Quest and
@@ -713,11 +837,239 @@ class EncountersMixin:
         return []
 
     def _apply_npc_choice(self, opt: dict, selected_item=None):
-        """Apply the cost, reward, and karma for the chosen option."""
-        cost = opt.get('cost')
-        reward = opt.get('reward')
-        karma_delta = opt.get('karma', 0)  # flavor encounters have no karma
+        """Commit the chosen option (DEEDS_KARMA_DESIGN 6.1).
 
+        The commit point: the cost is paid and the encounter is spent before
+        anything else, so quitting on the outcome page or mid-quiz is never a
+        second chance. An option without a quiz is its own outcome; an option
+        with one starts the quiz, and its pass or fail branch is applied when
+        the quiz ends (an exit mid-quiz settles it as a fail)."""
+        from encounter_schema import is_quiz
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        self._npc_pay_cost(opt.get('cost'), selected_item)
+        self._npc_mark_spent()
+        if is_quiz(opt):
+            self._record_deeds(opt.get('deeds'), enc.get('tag', ''))
+            self._npc_start_option_quiz(opt)
+            return
+        self._apply_outcome(opt, is_option=True)
+
+    def _npc_mark_spent(self):
+        # The encounter is spent the moment its choice is made, not when the
+        # outcome page is dismissed: quitting on that page and reloading gave
+        # the reward and the karma again, as often as wanted.
+        _enc = getattr(self, '_npc_encounter_active', None)
+        if _enc and _enc.get('tag'):
+            if getattr(self, '_npc_is_flavor', False):
+                if not hasattr(self, '_encountered_flavor_npcs') or self._encountered_flavor_npcs is None:
+                    self._encountered_flavor_npcs = set()
+                self._encountered_flavor_npcs.add(_enc['tag'])
+            else:
+                self._encountered_npcs.add(_enc['tag'])
+
+    def _npc_start_option_quiz(self, opt: dict):
+        """Run an option's quiz; its branch lands in _npc_quiz_done."""
+        spec = opt['quiz']
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        subject = spec['subject']
+        self._npc_pending_option = (getattr(self, '_npc_selected_index', None), opt)
+        self.quiz_title = spec.get('title') or f"{str(enc.get('name', '')).upper()}  --  {subject.upper()}"
+        self.state = STATE_QUIZ
+        threshold = int(spec.get('threshold', 1))
+        self.quiz_engine.start_quiz(
+            mode=spec.get('mode', 'threshold'), subject=subject, tier=int(spec.get('tier', 1)),
+            callback=self._npc_quiz_done,
+            threshold=threshold,
+            max_chain=spec.get('max_chain'),
+            total_qs=int(spec.get('total_qs', threshold)),
+            timed=bool(spec.get('timed', False)),
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds(subject),
+            base_seconds=self.player.get_quiz_timer(subject),
+        )
+
+    def _npc_quiz_done(self, result):
+        """An encounter quiz ended: apply its pass or fail branch."""
+        from encounter_schema import has_naive_sibling, quiz_passed
+        pending = getattr(self, '_npc_pending_option', None)
+        self._npc_pending_option = None
+        if not pending:
+            return
+        _idx, opt = pending
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        passed = quiz_passed(opt['quiz'], result)
+        branch = opt.get('pass' if passed else 'fail') or {'outcome': ''}
+        if passed:
+            tag = enc.get('tag', 'encounter')
+            # Judgment counts only where the careless road was open, and
+            # only on a pass (Brandon, decision 7).
+            if has_naive_sibling(enc, opt):
+                self._engine_virtue('judged', tag)
+            # Holding firm under a hard test (decision 2): a high-stakes pass.
+            if enc.get('stakes') == 'high':
+                self._engine_virtue('steadfast', tag)
+        self._apply_outcome(branch)
+        if getattr(self, '_npc_encounter_active', None) is not None:
+            self.state = STATE_NPC_ENCOUNTER
+
+    def _apply_outcome(self, o: dict, *, is_option: bool = False):
+        """Apply one outcome object: an option without a quiz, or a quiz
+        option's pass or fail branch. Rewards, karma (through karma.adjust),
+        virtue tags, deeds, oaths, people and threads; then the outcome page.
+
+        With the karma gate off this is exactly the old order: reward, Surya's
+        doubling (on a positive request), bonus reward, karma. With it on,
+        Surya doubles only an award that was actually applied."""
+        import karma
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        tag = enc.get('tag', '')
+        reward = o.get('reward')
+        karma_delta = int(o.get('karma', 0) or 0)  # flavor encounters mostly have none
+        kind = o.get('karma_kind', karma.LEGACY)
+        gate = karma.gate_enabled()
+
+        # An extra loss authored in the outcome itself: a fail branch at high
+        # stakes. (An option that is its own outcome paid its cost at commit.)
+        if o.get('cost') and not is_option:
+            self._npc_pay_cost(o['cost'], None)
+
+        applied = 0
+        old_karma = self.karma
+        if gate and karma_delta:
+            applied = karma.adjust(self, karma_delta, kind=kind, source=tag)
+
+        # ── Apply reward ──────────────────────────────────────────
+        if reward:
+            self._apply_npc_reward(reward)
+            # Chain-equip passive: suryas_gift (Kavacha-Kundala). Good-karma
+            # rewards are doubled — apply the reward a second time when karma
+            # delta was positive.
+            try:
+                from chain_passives import player_has_passive
+                _good = applied > 0 if gate else karma_delta > 0
+                if _good and player_has_passive(self.player, 'suryas_gift'):
+                    self._apply_npc_reward(reward)
+                    self.add_message(
+                        "Surya's gift doubles the bounty of your good deed!", 'success')
+            except ImportError:
+                pass
+        # Bonus reward (e.g., Cowering Goblin gives two items)
+        bonus = o.get('bonus_reward')
+        if bonus:
+            self._apply_npc_reward(bonus)
+
+        # ── Apply karma ───────────────────────────────────────────
+        if not gate and karma_delta:
+            applied = karma.adjust(self, karma_delta, kind=kind, source=tag)
+        # At 8 the Sword of Michael is within reach (see judge_karma); this
+        # line is the player's only sign of where they stand.
+        if self.karma >= 8 and old_karma < 8:
+            self._log_chronicle("I feel... clean. Like everything I've done down here has mattered. The dungeon feels lighter.")
+        elif self.karma == -10 and old_karma > -10:
+            self._log_chronicle("Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.")
+
+        self._apply_outcome_deeds(o, tag)
+
+        # Show outcome
+        from encounter_schema import resolve_outcome
+        self._npc_outcome_text = resolve_outcome(o, self._deed_ctx())
+        self._npc_outcome_chronicle = o.get('chronicle')
+        self._npc_after = o.get('then', 'close')
+        self._npc_encounter_phase = 'outcome'
+
+    def _apply_outcome_deeds(self, o: dict, tag: str):
+        """The deeds side of an outcome: engine virtue tags, the deeds list,
+        oaths, the person's status and chronicle threads. (Callbacks, delayed
+        rewards and escorts arrive with Phase 2.)"""
+        import deeds
+        import karma
+        reg = self._deeds_reg()
+        floor, deepest, block, turn = self._deed_where()
+        if o.get('virtue') == 'forgo' or (o.get('karma_kind') == 'forgo'
+                                          and int(o.get('karma', 0) or 0) > 0):
+            self._engine_virtue('forgo', tag)
+        self._record_deeds(o.get('deeds'), tag)
+        oath = o.get('oath')
+        if isinstance(oath, dict) and oath.get('id'):
+            due = None
+            span = oath.get('due_floors')
+            if isinstance(span, (list, tuple)) and len(span) == 2:
+                due = deepest + random.randint(int(span[0]), int(span[1]))
+            deeds.swear(reg, oath['id'], to=oath.get('to', ''), what=oath.get('what', ''),
+                        item_id=oath.get('item_id'), due_floor=due, floor=floor,
+                        block=block, turn=turn, source=tag)
+        if o.get('oath_keep'):
+            oid = o['oath_keep']
+            made = (reg['oaths'].get(oid) or {}).get('made_block')
+            if deeds.keep_oath(reg, oid, floor=floor, block=block, turn=turn):
+                karma.adjust(self, 1, kind='oath', source=oid, made_block=made)
+        if o.get('oath_break'):
+            oid = o['oath_break']
+            if deeds.break_oath(reg, oid, floor=floor, block=block, turn=turn):
+                karma.adjust(self, -1, kind='betray', source=oid)
+        if o.get('oath_release'):
+            deeds.release_oath(reg, o['oath_release'], floor=floor, block=block, turn=turn)
+        person = (getattr(self, '_npc_encounter_active', None) or {}).get('person')
+        ps = o.get('person_status')
+        if ps and isinstance(person, dict) and person.get('id'):
+            spec = ps if isinstance(ps, dict) else {'status': ps}
+            deeds.set_person(reg, person['id'], name=person.get('name', ''),
+                             status=spec.get('status'), owes=spec.get('owes'),
+                             owed=spec.get('owed'), deserving=spec.get('deserving'),
+                             last_line=o.get('chronicle'), floor=floor)
+        th = o.get('thread')
+        if isinstance(th, dict) and th.get('id'):
+            deeds.open_thread(reg, th['id'], hint=th.get('hint', ''), floor=floor)
+        if o.get('thread_close'):
+            deeds.close_thread(reg, o['thread_close'])
+
+    def _npc_remove_item_by_id(self, item_id: str) -> bool:
+        """Take the item with this id from the pack or a worn slot."""
+        removed = False
+        # Check inventory first
+        for it in self.player.inventory:
+            if getattr(it, 'id', '') == item_id:
+                self.player.remove_from_inventory(it)
+                removed = True
+                break
+        # Check equipment slots if not found in inventory
+        if not removed:
+            p = self.player
+            if p.weapon and getattr(p.weapon, 'id', '') == item_id:
+                p.weapon = None
+                removed = True
+            elif p.shield and getattr(p.shield, 'id', '') == item_id:
+                p.shield = None
+                removed = True
+            elif p.amulet_slot and getattr(p.amulet_slot, 'id', '') == item_id:
+                # Reverse accessory stat bonuses
+                fx = p.amulet_slot.effects
+                if 'stat' in fx:
+                    p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'stat2' in fx:
+                    p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                if 'status' in fx:
+                    p.status_effects.pop(fx['status'], None)
+                p.amulet_slot = None
+                removed = True
+            else:
+                for i, slot in enumerate(p.accessory_slots):
+                    if slot and getattr(slot, 'id', '') == item_id:
+                        fx = slot.effects
+                        if 'stat' in fx:
+                            p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                        if 'stat2' in fx:
+                            p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                        if 'status' in fx:
+                            p.status_effects.pop(fx['status'], None)
+                        p.accessory_slots[i] = None
+                        removed = True
+                        break
+        return removed
+
+    def _npc_pay_cost(self, cost, selected_item=None):
+        """Pay an option's cost (or an outcome's extra loss)."""
         # ── Apply cost ────────────────────────────────────────────
         if cost:
             ctype = cost['type']
@@ -772,47 +1124,10 @@ class EncountersMixin:
             elif ctype == 'triggered_item':
                 # Remove the trigger item from inventory OR equipment slots
                 enc = self._npc_encounter_active
-                item_id = enc.get('trigger_item', '')
-                removed = False
-                # Check inventory first
-                for it in self.player.inventory:
-                    if getattr(it, 'id', '') == item_id:
-                        self.player.remove_from_inventory(it)
-                        removed = True
-                        break
-                # Check equipment slots if not found in inventory
-                if not removed:
-                    p = self.player
-                    if p.weapon and getattr(p.weapon, 'id', '') == item_id:
-                        p.weapon = None
-                        removed = True
-                    elif p.shield and getattr(p.shield, 'id', '') == item_id:
-                        p.shield = None
-                        removed = True
-                    elif p.amulet_slot and getattr(p.amulet_slot, 'id', '') == item_id:
-                        # Reverse accessory stat bonuses
-                        fx = p.amulet_slot.effects
-                        if 'stat' in fx:
-                            p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                        if 'stat2' in fx:
-                            p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
-                        if 'status' in fx:
-                            p.status_effects.pop(fx['status'], None)
-                        p.amulet_slot = None
-                        removed = True
-                    else:
-                        for i, slot in enumerate(p.accessory_slots):
-                            if slot and getattr(slot, 'id', '') == item_id:
-                                fx = slot.effects
-                                if 'stat' in fx:
-                                    p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
-                                if 'stat2' in fx:
-                                    p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
-                                if 'status' in fx:
-                                    p.status_effects.pop(fx['status'], None)
-                                p.accessory_slots[i] = None
-                                removed = True
-                                break
+                self._npc_remove_item_by_id(enc.get('trigger_item', ''))
+            elif ctype == 'triggered_item_id':
+                # The same, for any item named in the cost (DEEDS_KARMA_DESIGN 4.3)
+                self._npc_remove_item_by_id(cost.get('item_id', ''))
             elif ctype == 'accept_item':
                 # Give the player a burden/cursed item
                 self._grant_burden_item(cost['item_id'])
@@ -824,51 +1139,32 @@ class EncountersMixin:
                 self.player.hp -= loss
                 self.add_message(f"The Deadite rakes you for {loss} damage!", 'danger')
                 self._spawn_npc_deadite()
-
-        # ── Apply reward ──────────────────────────────────────────
-        if reward:
-            self._apply_npc_reward(reward)
-            # Chain-equip passive: suryas_gift (Kavacha-Kundala). Good-karma
-            # rewards are doubled — apply the reward a second time when karma
-            # delta was positive.
-            try:
-                from chain_passives import player_has_passive
-                if karma_delta > 0 and player_has_passive(self.player, 'suryas_gift'):
-                    self._apply_npc_reward(reward)
-                    self.add_message(
-                        "Surya's gift doubles the bounty of your good deed!", 'success')
-            except ImportError:
-                pass
-        # Bonus reward (e.g., Cowering Goblin gives two items)
-        bonus = opt.get('bonus_reward')
-        if bonus:
-            self._apply_npc_reward(bonus)
-
-        # ── Apply karma ───────────────────────────────────────────
-        old_karma = self.karma
-        self.karma = max(-10, min(10, self.karma + karma_delta))
-        # At 8 the Sword of Michael is within reach (see judge_karma); this
-        # line is the player's only sign of where they stand.
-        if self.karma >= 8 and old_karma < 8:
-            self._log_chronicle("I feel... clean. Like everything I've done down here has mattered. The dungeon feels lighter.")
-        elif self.karma == -10 and old_karma > -10:
-            self._log_chronicle("Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.")
-
-        # The encounter is spent the moment its effects land, not when the
-        # outcome page is dismissed: quitting on that page and reloading gave
-        # the reward and the karma again, as often as wanted.
-        _enc = getattr(self, '_npc_encounter_active', None)
-        if _enc and _enc.get('tag'):
-            if getattr(self, '_npc_is_flavor', False):
-                if not hasattr(self, '_encountered_flavor_npcs') or self._encountered_flavor_npcs is None:
-                    self._encountered_flavor_npcs = set()
-                self._encountered_flavor_npcs.add(_enc['tag'])
-            else:
-                self._encountered_npcs.add(_enc['tag'])
-
-        # Show outcome
-        self._npc_outcome_text = opt['outcome']
-        self._npc_encounter_phase = 'outcome'
+            # A share of the player's OWN pool (LORE NOT FLOOR: never the floor).
+            elif ctype == 'hp_pct':
+                from npc_encounters import pct_loss
+                loss = pct_loss(self.player.hp, cost['amount'])
+                self.player.hp = max(1, self.player.hp - loss)
+            elif ctype == 'sp_pct':
+                from npc_encounters import pct_loss
+                self.player.sp = max(0, self.player.sp - pct_loss(self.player.sp, cost['amount'], 0))
+            elif ctype == 'mp_pct':
+                from npc_encounters import pct_loss
+                self.player.mp = max(0, self.player.mp - pct_loss(self.player.mp, cost['amount'], 0))
+            elif ctype == 'max_hp_pct':
+                from npc_encounters import pct_loss
+                self.player.max_hp = max(1, self.player.max_hp - pct_loss(self.player.max_hp, cost['amount']))
+                self.player.hp = min(self.player.hp, self.player.max_hp)
+            elif ctype == 'gold_pct':
+                from npc_encounters import pct_loss
+                self.player_gold = max(0, self.player_gold - pct_loss(self.player_gold, cost['amount'], 0))
+            elif ctype == 'stat':
+                # Lost stat points: a real consequence of blind help.
+                stat = cost['stat']
+                have = int(getattr(self.player, stat, 0) or 0)
+                amount = max(0, min(int(cost.get('amount', 1)), have - 3))
+                if amount:
+                    self.player.apply_stat_bonus(stat, -amount)
+                    self.add_message(f"-{amount} {stat}.", 'danger')
 
     def _apply_npc_reward(self, reward: dict):
         """Grant a reward from an NPC encounter choice."""
@@ -939,6 +1235,22 @@ class EncountersMixin:
         elif rtype == 'mp_restore':
             self.player.restore_mp(reward['amount'])
             self.add_message(f"+{reward['amount']} MP!", 'success')
+
+        # A share of the player's own maximum (LORE NOT FLOOR).
+        elif rtype == 'hp_restore_pct':
+            amt = max(1, int(self.player.max_hp * reward['amount'] / 100))
+            self.player.restore_hp(amt)
+            self.add_message(f"+{amt} HP!", 'success')
+
+        elif rtype == 'sp_restore_pct':
+            amt = max(1, int(self.player.max_sp * reward['amount'] / 100))
+            self.player.sp = min(self.player.max_sp, self.player.sp + amt)
+            self.add_message(f"+{amt} SP!", 'success')
+
+        elif rtype == 'mp_restore_pct':
+            amt = max(1, int(self.player.max_mp * reward['amount'] / 100))
+            self.player.restore_mp(amt)
+            self.add_message(f"+{amt} MP!", 'success')
 
         elif rtype == 'enchant_weapon':
             w = self.player.weapon
@@ -1054,6 +1366,37 @@ class EncountersMixin:
             from game_log import log_error
             log_error('game_encounters._grant_burden_item: recovered from an error')
 
+    def _npc_committed(self) -> bool:
+        """Has a choice already been made in the open encounter? (A 'then:
+        options' encounter returns to its list after a choice; Esc there
+        resolves it rather than leaving the NPC to be asked again.)"""
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        return bool(self._deeds_reg()['used_options'].get(enc.get('tag')))
+
+    def _npc_outcome_continue(self):
+        """Enter on the outcome page: back to the option list for a 'then:
+        options' outcome (that option used up), otherwise close resolved."""
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        idx = getattr(self, '_npc_selected_index', None)
+        if getattr(self, '_npc_after', 'close') == 'options' and idx is not None:
+            used = self._deeds_reg()['used_options'].setdefault(enc.get('tag'), [])
+            if idx not in used:
+                used.append(idx)
+            line = getattr(self, '_npc_outcome_chronicle', None)
+            if line:
+                self._log_chronicle(line)
+            self._npc_outcome_chronicle = None
+            self._npc_selected_option = None
+            self._npc_selected_index = None
+            self._npc_after = 'close'
+            self._npc_show_options()
+            if self._npc_visible:
+                return
+            # Nothing left to choose: each step's line is already in the
+            # chronicle, so the close adds no generic one.
+            self._npc_outcome_chronicle = ''
+        self._close_npc_encounter(resolved=True)
+
     def _close_npc_encounter(self, resolved: bool):
         """Close the NPC encounter overlay."""
         if resolved:
@@ -1077,12 +1420,17 @@ class EncountersMixin:
                 name = _the_name(_who, lower=True)
                 Name = _the_name(_who)
                 import random as _chr_rng
-                # An option may carry its own chronicle line; otherwise a
-                # generic one is drawn (which could not tell "gave a child
-                # her mother's pendant" from "kept it").
-                _own = (self._npc_selected_option or {}).get('chronicle')
+                # An option (or the quiz branch taken) may carry its own
+                # chronicle line; otherwise a generic one is drawn (which
+                # could not tell "gave a child her mother's pendant" from
+                # "kept it").
+                _own = getattr(self, '_npc_outcome_chronicle', None)
+                if _own is None:
+                    _own = (self._npc_selected_option or {}).get('chronicle')
                 if _own:
                     self._log_chronicle(_own)
+                elif _own == '':
+                    pass        # a 'then: options' encounter logged each step already
                 elif getattr(self, '_npc_is_flavor', False):
                     _FLAVOR_VERBS = [
                         "Ran into {name}. A brief exchange in the dark.",
@@ -1104,7 +1452,13 @@ class EncountersMixin:
         self._npc_encounter_monster = None
         self._npc_encounter_phase = 'text'
         self._npc_selected_option = None
+        self._npc_selected_index = None
         self._npc_outcome_text = ''
+        self._npc_outcome_chronicle = None
+        self._npc_encounter_text = None
+        self._npc_visible = None
+        self._npc_after = 'close'
+        self._npc_pending_option = None
         self._npc_item_list = []
         self._npc_is_flavor = False
         self.state = STATE_PLAYER

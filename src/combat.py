@@ -1837,9 +1837,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                 # Look up the game via the side-channel ref; fall back if not set.
                 _g = getattr(player, '_combat_game_ref', None)
                 if _g is not None:
-                    cur_karma = int(getattr(_g, 'karma', 0))
-                    if cur_karma < 0:
-                        _g.karma = cur_karma + 1
+                    # kind 'recovery': only below zero, never above it.
+                    import karma as _karma
+                    _karma.adjust(_g, 1, kind='recovery', source='penitents_blade')
 
         # Parashu (engine wave 3): chain_no_reset_on_tag. When killing a
         # matching-tag target, mark the player so the next attack starts at
@@ -2047,8 +2047,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                 if getattr(_acc, 'gyges_invisible_attack_karma', False):
                     _g = getattr(player, '_combat_game_ref', None)
                     if _g is not None:
-                        cur_k = int(getattr(_g, 'karma', 0) or 0)
-                        _g.karma = max(-10, cur_k - 2)
+                        import karma as _karma
+                        _karma.adjust(_g, -2, kind='cruelty', source='ring_of_gyges')
                     break
 
         # Echidna's Fang (engine wave 4): random_status_from_pool. On hit,

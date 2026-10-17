@@ -248,7 +248,9 @@ class EmberpupMixin:
         self._emberpup_acted = True
         if not getattr(pup, '_emberpup_karma_given', False):
             pup._emberpup_karma_given = True
-            self.karma = max(-10, min(10, self.karma + int(d['first_feed_karma'])))
+            import karma
+            karma.adjust(self, int(d['first_feed_karma']), kind='legacy',
+                         source='emberpup_feed')
         self.add_message(f"The Emberpup eats your {name}.", 'success')
         self._emberpup_outcome(d['fed'].format(food=name), 'options')
 
@@ -265,7 +267,8 @@ class EmberpupMixin:
         except ValueError:
             pass
         self._emberpup_state()['outcome'] = 'fled'
-        self.karma = max(-10, min(10, self.karma + int(d['attack_karma'])))
+        import karma
+        karma.adjust(self, int(d['attack_karma']), kind='cruelty', source='emberpup_attack')
         self.add_message("The Emberpup flees into the dark.", 'danger')
         self._log_chronicle(d['attack_chronicle'])
         self._emberpup_acted = True

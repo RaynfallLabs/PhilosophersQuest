@@ -1,8 +1,11 @@
 # Karma & Prayer
 
-> Status: reference. Reflects v2.18.0 (`409e15d`, 2026-10-02).
-> Scope: karma scale (-10..+10), 30 moral NPC encounters,
-> 5 flavor NPC encounters, Ethereal Unicorn state machine, Magic
+> Status: reference. Reflects v2.18.0 (`409e15d`, 2026-10-02), with the
+> drift fixes and the Phase 1 deeds/karma scaffolding of 2026-10-17
+> (`DEEDS_KARMA_DESIGN.md`; the karma gate is still OFF, so every number
+> below still holds).
+> Scope: karma scale (-10..+10), 31 moral NPC encounters (block
+> anchors), 108 flavor NPC encounters, Ethereal Unicorn state machine, Magic
 > Dungeon Carrot, Prayer v2 (`\` key), Divine Intercession
 > (Shift+`\`), Fisher King cooldown mechanics, the Altar of the Last
 > Judgment, and the Seven Seals gate.
@@ -23,21 +26,29 @@
 
 Karma is a single integer stored on `Game.karma`, initialized to `0`
 in `__init__`, saved and loaded through `save_system`. The scale is
-**-10..+10 inclusive**, hard-clamped by every mutation site that
-goes through `_apply_npc_choice`:
+**-10..+10 inclusive**.
 
-```python
-# src/game_encounters.py:758
-self.karma = max(-10, min(10, self.karma + karma_delta))
-```
+**Every change goes through `karma.adjust(game, delta, kind=, source=)`**
+(`src/karma.py`); `tests/test_single_karma_entry_point.py` fails on any
+other write in `src/`. The five sites today:
 
-The clamp is enforced at the NPC-choice assignment and at the
-Judgment outcome lookup (`npc_encounters.judge_karma` begins with
-`karma = max(-10, min(10, karma))`). One off-path mutation exists —
-Penitent's Blade `kill_count_karma_adjust` (combat.py) does
-`_g.karma = cur_karma + 1` without re-clamping, and SYSTEMS_AUDIT §4
-flags this as a latent invariant risk. In current code it only fires
-at karma < 0, so the clamp holds in practice.
+| Site | Call |
+|------|------|
+| NPC / flavor choice (`game_encounters._apply_outcome`) | `kind = karma_kind` or `'legacy'` |
+| Emberpup first feed | `+1`, `'legacy'` |
+| Emberpup attack | `-2`, `'cruelty'` |
+| Ring of Gyges (`combat.py`) | `-2`, `'cruelty'` |
+| Penitent's Blade (`combat.py`) | `+1`, `'recovery'`: only while karma < 0, never above 0 |
+
+With `data/karma_rules.json: gate_enabled = false` (shipped) every kind
+applies exactly as the old inline formulas did: clamp to -10..+10, the
+Penitent's Blade only below zero. `adjust` also records, without
+changing anything, the 10-floor block slot each positive award fills and a
+ledger entry (`Game._deeds['karma']`), so a run that crosses the Phase 3b
+switch arrives with its earned blocks closed. When the gate is turned on
+(Phase 3b, with Wave A content) at most +1 per block comes from choices
+and oaths, and constancy pays up to +2 a run; see `DEEDS_KARMA_DESIGN.md`
+§3 and §11.
 
 ### 1.2 Starting karma
 
@@ -49,13 +60,25 @@ reward / outcome text.
 
 ### 1.3 Chronicle hooks on extremes
 
-Hitting +10 or -10 for the first time logs a chronicle line
-(`game_encounters.py:759-762`):
+An NPC or flavor choice that takes karma from below 8 to 8 or more
+(the Sword of Michael's threshold), or that takes it to -10, logs a
+chronicle line (`game_encounters._apply_outcome`). There is no
+once-guard: it fires on **every** such crossing, and only from an
+encounter choice (the Emberpup, Gyges and the Penitent's Blade never
+trigger it). Phase 3a moves these lines into `karma.adjust` with a
+once-guard.
 
-- First `karma == 10`: "I feel... clean. Like everything I've done
+- Crossing to 8+: "I feel... clean. Like everything I've done
   down here has mattered. The dungeon feels lighter."
-- First `karma == -10`: "Something inside me has gone cold. The
+- Reaching -10: "Something inside me has gone cold. The
   dungeon doesn't frighten me anymore. That frightens me."
+
+### 1.3a Where the number is shown
+
+Only on the Judgment card (L99) and the F2 debug overlay. The Journey
+screen no longer prints it (Brandon, 2026-10-17); Recall Lore
+(`data/hints.json`) carries oblique hints on how the soul is weighed
+instead.
 
 ### 1.4 Who reads karma
 
@@ -77,18 +100,19 @@ Karma is consulted by:
   change when karma < 0 (`karma_disappear_proc`). Returns "to Shiva."
 - `game_encounters._handle_unicorn_bump` → trusting-unicorn bump at
   karma < 0 makes the unicorn "recoil" and flee.
-- `_apply_npc_choice` with `suryas_gift` chain passive → **doubles**
-  reward on positive-karma deeds.
+- `_apply_outcome` with `suryas_gift` chain passive → **doubles**
+  reward on positive-karma deeds (gate off: whenever the option asks for
+  karma; gate on: only when an award was actually applied).
 
 ---
 
-## 2. The 30 moral NPC encounters
+## 2. The 31 moral NPC encounters
 
 ### 2.1 Overview
 
 The dungeon is divided into **10 level blocks** of 9 levels each.
-Each block has **3 candidate encounters** defined in
-`src/npc_encounters.py::ENCOUNTERS`. One encounter is selected per
+Each block has **3 candidate encounters** (block 3 has four) defined in
+`data/npc_encounters.json`, loaded as `src/npc_encounters.py::ENCOUNTERS`. One encounter is selected per
 block (`select_encounter_levels`), placed on a random non-boss level
 inside the block, and the trigger item (if any) is pre-spawned 1-3
 levels earlier so the player can arrive with it in-hand.
@@ -122,8 +146,22 @@ Each `ENCOUNTERS[i]` dict carries:
 | `block` | 1-10, must match a `_BLOCKS` entry |
 | `trigger_item` | optional item id — if present, the item spawns `trigger_level_offset` floors (default 1) **before** the NPC |
 | `text` | Encounter description (shown on screen 1) |
-| `options` | Exactly 3 dicts (see below) |
+| `options` | Today 3 dicts each; the engine shows up to 4 visible (see below) |
 | `sprite_id` | Monster sprite key, auto-populated from `_KARMA_SPRITES` if absent |
+| `role`, `stakes`, `band` | Filled by `encounter_schema.normalise`: anchors are `anchor` / `medium` / the block's floors, flavor `story` / `light` / `[min_level, max_level]`. The renderer never reads `stakes`. |
+
+**Schema extensions (Phase 1 engine, no shipped content uses them yet):**
+quiz options (`quiz` + `pass` / `fail` outcomes, applied when the quiz
+ends; an exit mid-quiz settles as the fail), `requires` / `forbids`
+conditions on deeds, oaths, stats, items and floor, `hidden` and
+`hidden_group`, `text_variants` / `outcome_variants`, `then: "options"`,
+`deeds`, `oath` / `oath_keep` / `oath_break` / `oath_release`,
+`person_status`, `thread` / `thread_close`, `karma_kind`, `virtue`. Keys
+1-4 pick the **visible** options. `tools/encounters/validate.py` checks
+all of it (the legacy breaches of today's content are listed in
+`tests/encounter_legacy_allow.json`, which Phase 3a must empty). The
+footer still reads "1-3: choose" until the first four-option content
+ships.
 
 Each option carries `label`, `karma: {-2, -1, 0, +1}`, `outcome`,
 `cost`, `reward`. By convention option 1 is the moral choice, option
@@ -133,8 +171,11 @@ player is **never framed as cruel**; even -1 options read as
 even selfish options are framed as pragmatic necessity.").
 
 Cost types: `food`, `healing_potion`, `potion`, `scroll`, `weapon`,
-`gold`, `hp_percent`, `max_hp`, `sp`, `triggered_item`, `accept_item`,
-`spawn_deadite_ambush`. See `npc_encounters.can_pay_cost` for the
+`gold`, `hp_percent`, `max_hp`, `sp`, `hp`, `mp`, `random_item`,
+`triggered_item`, `accept_item`, `spawn_deadite_ambush`, and (new, all a
+share of the player's OWN pool) `hp_pct`, `sp_pct`, `mp_pct`,
+`max_hp_pct`, `gold_pct`, plus `triggered_item_id` (take the item with
+this id from the pack or a worn slot) and `stat` (lose stat points). See `npc_encounters.can_pay_cost` for the
 full predicate. The `healing_potion` picker lists only potions, scrolls
 and wands the player KNOWS heal (`npc_encounters.known_healer`: copy
 identified or type known; bug bash 4, call 32), plus the Heal spell.
@@ -145,7 +186,12 @@ Reward items are fully identified when handed over
 
 Reward types: `gold`, `random_weapon` / `_armor` / `_shield` /
 `_accessory` / `_potion` / `_scroll` / `_food` / `_wand`, `stat`,
-`specific_item`, `multi`, `message`, `effect`, `enchant_weapon`.
+`specific_item`, `multi`, `message`, `effect`, `enchant_weapon`,
+`hp_restore` / `sp_restore` / `mp_restore`, and the new
+`hp_restore_pct` / `sp_restore_pct` / `mp_restore_pct` (a share of the
+player's own maximum). `economy.price_encounter` rescales gold in
+`cost`, `reward`, `fail_reward`, and in nested `pass` / `fail`,
+`delayed[*].reward` and escort `on_arrive` / `on_fail`.
 
 ### 2.3 Block × encounter table
 
@@ -176,7 +222,7 @@ triggered encounter per block.
 | `marcus_sword` | Grieving Father | `oathkeeper_sword` (offset 2) | +1 / 0 / -1 | — (keep sword) |
 | `blinded_soldier` | Blinded Soldier | — | +1 / 0 / -1 | random armor + 100-150 gold |
 | `dying_messenger` | Dying Courier | — | +1 (burden: `sealed_dispatch`) / 0 / -1 | 80-120 gold + random potion |
-| `deadite_woman` | Moaning Woman | — | **0 / 0 / +1** (v2.18 — see §2.4) | — |
+| `deadite_woman` | Moaning Woman | — | **+1 / 0 / 0** (live data; see §2.4) | — |
 
 **Block 4 (L31-39):**
 
@@ -238,6 +284,13 @@ triggered encounter per block.
 
 Two encounters had their karma deltas rebalanced in v2.18 after
 dominant-strategy analysis.
+
+**Drift note (2026-10-17):** the live `data/npc_encounters.json` does
+**not** match the v2.18 description below. Today the Deadite is
+**kneel +1 / walk away 0 / ax 0** (kneeling still triggers the ambush).
+Brandon's ruling is that the Deadite gives **0 on every option** (P16);
+that change lands with the Phase 3a encounter migration, and the
+validator lists it as a legacy breach until then.
 
 **`deadite_woman` (Block 3)** — audit finding (SYSTEMS_AUDIT §3):
 "'It's a trick, get an ax' granted karma +1 AND 30-60 gold at no cost.
@@ -301,20 +354,23 @@ floor via `_maybe_spawn_npc` (`game_encounters.py:122`).
 
 ### 2.6 Encounter resolution flow
 
-1. Player bumps the NPC → `_start_npc_encounter` sets
-   `STATE_NPC_ENCOUNTER`, phase `text`.
-2. ENTER → phase `options`. Three buttons appear with `label` only
-   (**no karma or outcome preview** — "Options show action +
-   justification only — no outcomes, no karma labels").
-3. 1/2/3 → `_apply_npc_choice`:
-   - Costs applied (`_get_filtered_inventory` surfaces item-pick for
-     consumable costs).
-   - Rewards applied via `_apply_npc_reward`.
-   - `suryas_gift` chain passive doubles reward on karma_delta > 0.
-   - Karma applied with clamp.
-   - Phase → `outcome` with the chosen `outcome` text.
-4. ENTER → `_close_npc_encounter(resolved=True)` kills the NPC,
-   adds the tag to `_encountered_npcs`, logs a chronicle line.
+1. Player bumps the NPC → `_start_npc_encounter` (via `_npc_open`) sets
+   `STATE_NPC_ENCOUNTER`, phase `text` (scene text after
+   `text_variants`). A spent encounter whose NPC is still standing
+   (the game was closed on the outcome page or mid-quiz) just leaves.
+2. ENTER → `_npc_show_options`, phase `options`. Up to four **visible**
+   options appear with `label` only (**no karma or outcome preview**).
+3. 1-4 → `_apply_npc_choice`, the commit point:
+   - Cost paid (`_npc_pay_cost`; `_get_filtered_inventory` surfaces
+     item-pick for consumable costs).
+   - Encounter marked spent (`_npc_mark_spent`).
+   - A quiz option starts its quiz; its `pass` or `fail` branch is
+     applied by `_npc_quiz_done`. Otherwise `_apply_outcome(option)`:
+     reward, `suryas_gift` doubling, bonus reward, karma via
+     `karma.adjust`, deeds, then phase `outcome`.
+4. ENTER → `_npc_outcome_continue`: back to the list for a
+   `then: "options"` outcome, else `_close_npc_encounter(resolved=True)`
+   kills the NPC and logs a chronicle line.
 
 ### 2.7 Suryas Gift doubling
 
@@ -327,13 +383,16 @@ chain exists.
 
 ---
 
-## 3. The 5 flavor NPC encounters
+## 3. The 108 flavor NPC encounters
 
-Flavor NPCs are **non-karmic** encounters that add world-building and
-trade without touching `self.karma`. They live in
-`src/flavor_encounters.py::FLAVOR_ENCOUNTERS` and share the NPC
-encounter UI (`_start_flavor_encounter` sets `_npc_is_flavor = True`
-to skip karma processing).
+Flavor NPCs are **mostly non-karmic** encounters that add world-building
+and trade. They live in `src/flavor_encounters.py::FLAVOR_ENCOUNTERS`
+(5 hardcoded, 103 more from `data/flavor_encounters.json`) and share the
+NPC encounter UI (`_start_flavor_encounter` sets `_npc_is_flavor = True`).
+Despite the flag, an option's `karma` IS applied: four flavor options
+carry karma today — `flv_baucis_table` +1 (share food),
+`flv_three_purses` +1 (anonymous purse), `flv_cuthbert_chapel` +1
+(deliver the Gospel), `flv_relic_broker` -1 (sell the Gospel).
 
 **Spawn rate**: ~40% per non-boss floor, independent of karma NPCs.
 Each flavor NPC is one-shot per run (tag added to
@@ -348,8 +407,8 @@ Each flavor NPC is one-shot per run (tag added to
 | `flv_blind_oracle` | Blind Oracle | L41-60 | (1) Pay 30 SP → `clairvoyant` 50t. (2) Ask about dungeon — three-line omen (no mechanical effect). (3) Leave quietly — nothing. |
 
 Flavor NPCs can **also** be loaded from `data/flavor_encounters.json`
-if that file exists (`flavor_encounters.py:247-249`); the five above
-are the hardcoded baseline. Additional entries from the JSON extend
+(`flavor_encounters.py:247-249`); the five above are the hardcoded
+baseline, and `encounter_schema.normalise` covers both. Additional entries from the JSON extend
 the pool without changing the schema.
 
 Related non-karmic encounters that live elsewhere:
@@ -672,8 +731,8 @@ to normal Prayer v2.
 | -10..-6 | `abaddon_empowered` | "Michael weighs your soul and recoils. 'You have walked in darkness.' The scales crash to the ground. A terrible power surges toward the Pit below. ABADDON IS EMPOWERED BY YOUR SINS." |
 | -5..-1 | `locusts_strengthened` | "Michael weighs your soul and frowns. 'Your deeds are wanting.' The scales tip toward shadow. A buzzing fills the air. THE LOCUST SWARMS GROW LARGER AND MORE NUMEROUS." |
 | 0 | `silence` | "The scales balance perfectly — and remain cold. 'You have done nothing worthy of praise or condemnation.' The altar falls silent. You receive nothing." |
-| +1..+9 | `scales_granted` | "'You have walked in light.' The scales glow with golden fire. They lift from the altar and float into your hands. YOU RECEIVE THE SCALES OF MICHAEL." |
-| +10 | `sword_and_scales` | "Michael descends in a pillar of white fire. He kneels... 'Rise, Paladin. Chosen of God. The Destroyer will know your name.' YOU RECEIVE THE SWORD AND SCALES OF MICHAEL. YOU ARE ANOINTED PALADIN AND CHOSEN OF GOD." |
+| +1..+7 | `scales_granted` | "'You have walked in light.' The scales glow with golden fire. They lift from the altar and float into your hands. YOU RECEIVE THE SCALES OF MICHAEL." |
+| +8..+10 | `sword_and_scales` | "Michael descends in a pillar of white fire. He kneels... 'Rise, Paladin. Chosen of God. The Destroyer will know your name.' YOU RECEIVE THE SWORD AND SCALES OF MICHAEL. YOU ARE ANOINTED PALADIN AND CHOSEN OF GOD." |
 
 ### 8.4 Mechanical outcomes
 
@@ -697,22 +756,25 @@ The Judgment altar is independent of Prayer v2's cooldown — it does
 not consume `prayer_cooldown` and does not touch `_karma_tier` verses.
 It is its own, final theological object.
 
-### 8.5 Reaching karma +10
+### 8.5 Reaching the Sword (karma +8)
 
-Judgment at +10 requires **ten** `+1` NPC options across the run.
-The maximum achievable count is 10 (one encounter per block, 10
-blocks). SYSTEMS_AUDIT §3 flags this as "reachable but fragile" —
-any `0` or `-1` option in any block means +10 is unreachable, and
-some +1 options cost real resources (`sir_aldric` accepts a cursed
+The Sword of Michael needs **8** (it needed exactly 10 until the
+threshold moved; one missed encounter put it out of reach). Today a run
+offers ten anchor `+1`s, three flavor `+1`s and the Emberpup's first
+feed, so 8 is comfortable for a kind player; the gated economy of
+Phase 3b (`DEEDS_KARMA_DESIGN.md` §3.5) makes it the reward for being
+principled, careful and faithful all run. Some +1 options cost real
+resources (`sir_aldric` accepts a cursed
 lodestone; `ghost_grave` costs max_hp -15; `trapped_seraph` costs a
 scroll; `cursed_scholar` costs 20% HP; `weeping_mother` costs 60
 SP; `fairy_jar` costs a potion; `forgotten_prisoner` costs 150 gold;
 `fallen_paladin` costs 200 gold; `azarael_demon` costs a scroll).
 
-A compounding wrinkle: Penitent's Blade's `kill_count_karma_adjust`
-adds +1 to karma per N kills while equipped, which can push a
-karma-negative player back to 0 (`combat.py` only fires at karma < 0).
-This is the one non-NPC way to budge karma.
+Outside encounters, karma moves through the Penitent's Blade
+(`kill_count_karma_adjust`, +1 per N kills, only while karma < 0, never
+above 0), the Ring of Gyges (-2 for striking an innocent while
+invisible) and the Emberpup (+1 first feed, -2 attack); all go through
+`karma.adjust` (§1.1).
 
 ---
 
@@ -743,19 +805,32 @@ For the full bones/ghost pipeline see [world.md](world.md).
 ## 10. Where things live (file index)
 
 ```
-src/npc_encounters.py        -- ENCOUNTERS (30 moral), _BLOCKS,
+src/karma.py                 -- adjust (the single entry point),
+                                gate_enabled, evaluate_patterns;
+                                rules in data/karma_rules.json
+src/deeds.py                 -- the deeds register (Game._deeds): deeds,
+                                oaths, people, threads, condition check,
+                                old-save migrate
+src/chronicle.py             -- structured chronicle entries; the
+                                _log_chronicle shim; legacy migrate
+src/encounter_schema.py      -- normalise, visible_options, text
+                                variants, quiz_passed
+tools/encounters/validate.py -- the encounter validator CLI
+src/npc_encounters.py        -- ENCOUNTERS (31 moral), _BLOCKS,
                                 select_encounter_levels,
                                 get_trigger_item_levels,
                                 can_pay_cost, get_inventory_filter,
                                 _JUDGMENT_TIERS, judge_karma,
                                 _KARMA_SPRITES
-src/flavor_encounters.py     -- FLAVOR_ENCOUNTERS (5 baseline),
+src/flavor_encounters.py     -- FLAVOR_ENCOUNTERS (5 hardcoded + 103 JSON),
                                 select_flavor_encounters,
                                 data/flavor_encounters.json loader
 src/game_encounters.py       -- _maybe_spawn_npc, _maybe_spawn_flavor_npc,
                                 _start_npc_encounter,
                                 _start_flavor_encounter,
-                                _apply_npc_choice, _apply_npc_reward,
+                                _apply_npc_choice (commit point),
+                                _apply_outcome, _npc_pay_cost,
+                                _npc_quiz_done, _apply_npc_reward,
                                 _generate_npc_reward_item,
                                 _create_specific_npc_item,
                                 _grant_burden_item,

@@ -351,7 +351,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Debug overlay (F2)
         self._debug_overlay     = False
         # Chronicle, Lore Hints, & Discovered Recipes (Encyclopedia tabs)
-        self._chronicle: list[str]       = []   # event log: "Found: Bronze Bull Idol (L8)"
+        self._chronicle: list[dict]      = []   # event log entries (chronicle.py); shown as "text (L8)"
         self._recalled_hints: list[str]  = []   # saved Recall Lore results
         self._cooked_recipes: list[str]  = []   # recipe names successfully cooked
         # Pet companion system (Soul Spheres)
@@ -367,7 +367,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._l100_altars_used: set = set()          # (x,y) of altars already prayed at on L100
         self._l100_altars_tried: set = set()         # (x,y) prayed at, unanswered, this visit to L100
         # Morality / NPC encounter system
-        self.karma: int = 0                # cumulative moral score (-10 to +10)
+        self.karma: int = 0                # cumulative moral score (-10 to +10); changed only through karma.adjust
+        # The deeds register (deeds.py): what the hero has done, oaths, people,
+        # and the karma block slots and ledger. Never shown as a list.
+        import deeds as _deeds_mod
+        self._deeds: dict = _deeds_mod.new_register()
+        self._npc_pending_option = None    # (raw index, option) while an encounter quiz runs
+        self._npc_visible: list | None = None  # [(raw index, option)] shown on the options page
+        self._npc_after: str = 'close'     # an outcome's 'then': 'close' or 'options'
         self._npc_encounter_levels: dict = {}  # {level: encounter_def} for this run
         self._npc_encounter_active = None  # current encounter dict being displayed
         self._npc_encounter_monster = None # monster entity for current NPC
@@ -450,9 +457,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             pass
 
     def _log_chronicle(self, text: str):
-        """Add an entry to the player's chronicle (passive event log)."""
-        entry = f"{text} (L{self.dungeon_level})"
-        self._chronicle.append(entry)
+        """Add an entry to the player's chronicle (passive event log).
+
+        A shim over chronicle.chron (kind 'discovery') for the old call
+        sites; entries are structured dicts and display as "text (L#)"."""
+        import chronicle
+        chronicle.chron(self, 'discovery', text)
 
     # ------------------------------------------------------------------
     # Philosopher career arc — milestone rewards for cumulative identifies
@@ -881,8 +891,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight = dict(_bk) if isinstance(_bk, dict) else {
             'floor': None, 'spawned': False, 'outcome': None, 'sword_dropped': False}
         self._bk_speech = None
-        # Chronicle & Lore Hints
-        self._chronicle = state.get('_chronicle', [])
+        # Chronicle & Lore Hints. An old save holds plain "text (L#)" strings:
+        # they become 'legacy' entries that display exactly as before.
+        import chronicle as _chronicle_mod
+        self._chronicle = _chronicle_mod.migrate(state.get('_chronicle', []))
+        # The deeds register; a save from before it is backfilled (who was
+        # met, and the karma blocks already spent) by deeds.migrate.
+        import deeds as _deeds_mod
+        self._deeds = _deeds_mod.migrate(state.get('_deeds'), legacy=state)
         self._recalled_hints = state.get('_recalled_hints', [])
         self._cooked_recipes = state.get('_cooked_recipes', [])
         # Quiz deck state — restore shuffle positions so questions don't repeat on reload
@@ -8292,8 +8308,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         known_monster_ids = getattr(self.player, 'known_monster_ids', set())
 
         if category == 'chronicle':
+            from chronicle import display_text
             self.encyclopedia_entries = [
-                {'name': entry, 'lore': ''} for entry in self._chronicle
+                {'name': display_text(entry), 'lore': ''} for entry in self._chronicle
             ]
             return
         if category == 'lore_hints':

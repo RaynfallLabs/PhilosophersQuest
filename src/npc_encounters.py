@@ -2,7 +2,10 @@
 NPC moral encounter system: one encounter per 10-level block, chosen from
 the candidates in data/npc_encounters.json.
 
-Flow: bump NPC → encounter text (ENTER) → 3 options (1-3) → outcome (ENTER).
+Flow: bump NPC → encounter text (ENTER) → up to 4 visible options (keys
+1-4; today's content has 3) → outcome (ENTER). A quiz option runs its quiz
+and lands its pass or fail branch (game_encounters._apply_outcome;
+schema in encounter_schema.py, DEEDS_KARMA_DESIGN.md section 4).
 Options show action + justification only, no outcomes, no karma labels.
 The player is never cruel; even selfish options are framed as pragmatic necessity.
 One encounter guaranteed per 10-level block, chosen from 3 candidates.
@@ -56,6 +59,10 @@ _BLOCKS = [
 #   {'type': 'sp', 'amount': N}           - lose N stamina
 #   {'type': 'triggered_item'}            - return the trigger item
 #   {'type': 'accept_item', 'item_id': X} - receive a cursed/burden item
+#   {'type': 'triggered_item_id', 'item_id': X} - give up the item with id X
+#   {'type': 'hp_pct'|'sp_pct'|'mp_pct'|'max_hp_pct'|'gold_pct', 'amount': N}
+#                                         - lose N% of the player's OWN pool
+#   {'type': 'stat', 'stat': 'WIS', 'amount': N} - lose N stat points
 #
 # Reward types:
 #   {'type': 'gold', 'min': A, 'max': B}
@@ -69,6 +76,8 @@ _BLOCKS = [
 #   {'type': 'stat', 'stat': 'CON', 'amount': N}
 #   {'type': 'specific_item', 'item_type': 'weapon', 'item_id': X}
 #   {'type': 'multi', 'rewards': [...]}
+#   {'type': 'hp_restore_pct'|'sp_restore_pct'|'mp_restore_pct', 'amount': N}
+#                                         - restore N% of the player's own maximum
 
 def _load_encounters() -> list:
     """The encounter definitions live in data/npc_encounters.json (they were a
@@ -80,6 +89,10 @@ def _load_encounters() -> list:
 
 
 ENCOUNTERS = _load_encounters()
+# Schema defaults (role 'anchor', stakes 'medium', band = the block's floors).
+# They change nothing about how today's content plays (encounter_schema.py).
+from encounter_schema import normalise_all as _normalise_all  # noqa: E402
+_normalise_all(ENCOUNTERS, source='npc')
 
 
 # ── Spawn level selection ────────────────────────────────────────────
@@ -184,6 +197,18 @@ def known_healer(player, item) -> bool:
     return False
 
 
+def pct_loss(pool, pct, minimum: int = 1) -> int:
+    """``pct`` percent of the player's own ``pool``, at least ``minimum``
+    (and never more than the pool)."""
+    try:
+        pool = int(pool or 0)
+    except (TypeError, ValueError):
+        pool = 0
+    if pool <= 0:
+        return 0
+    return min(pool, max(minimum, int(pool * float(pct) / 100)))
+
+
 def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str]:
     """Check if the player can afford a cost. Returns (can_pay, fail_message)."""
     if cost is None:
@@ -263,6 +288,36 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
     if ctype == 'triggered_item':
         # The trigger item should be in inventory, checked by caller
         return True, ''
+
+    # Shares of the player's OWN pools (DEEDS_KARMA_DESIGN 4.13).
+    if ctype == 'hp_pct':
+        if player.hp > pct_loss(player.hp, cost['amount']) + 5:
+            return True, ''
+        return False, "You are too injured to survive that."
+
+    if ctype == 'max_hp_pct':
+        if player.max_hp > pct_loss(player.max_hp, cost['amount']) + 10:
+            return True, ''
+        return False, "You are too frail to survive that."
+
+    if ctype in ('sp_pct', 'mp_pct', 'gold_pct'):
+        # A share of whatever you have can always be paid.
+        return True, ''
+
+    if ctype == 'triggered_item_id':
+        want = cost.get('item_id', '')
+        worn = [getattr(player, a, None) for a in ('weapon', 'ranged_weapon', 'shield',
+                                                    'amulet_slot', 'belt_slot')]
+        worn += list(getattr(player, 'armor_slots', None) or [])
+        worn += list(getattr(player, 'accessory_slots', None) or [])
+        if any(getattr(it, 'id', '') == want for it in list(player.inventory) + worn if it):
+            return True, ''
+        return False, "You have nothing of the kind to give."
+
+    if ctype == 'stat':
+        if int(getattr(player, cost['stat'], 0) or 0) > int(cost.get('amount', 1)) + 2:
+            return True, ''
+        return False, "You have too little left to give."
 
     if ctype == 'accept_item':
         # Accepting a burden always possible
