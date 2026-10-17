@@ -128,8 +128,10 @@ def test_kit_visible_level_unidentified_returns_id_level():
     # invariant: identified iff id_level >= 4).
     pot = Potion(_defn(id='pot_x', name='fizzy potion', effect='fizz',
                        id_level=1))
-    # known_item_ids empty + id_level 1 -> 1
-    assert g._kit_visible_level(pot) == 1
+    # known_item_ids empty + id_level 1 -> 0: a stored 1-4 is not knowledge
+    # (bug bash 4 I-05: ``identified = True`` writes 4 without identifying,
+    # and the dossier leaked the aura, effect and lore).
+    assert g._kit_visible_level(pot) == 0
 
 
 def test_kit_visible_level_known_type_boosts_to_4():

@@ -1279,7 +1279,9 @@ class Player:
 
     def carry_line(self) -> str:
         """'Carrying 43 / 100', the readout the sidebar and sheet show."""
-        return f"Carrying {self.get_current_weight():.0f} / {self.get_carry_limit()}"
+        from hud_context import load_number
+        lim = self.get_carry_limit()
+        return f"Carrying {load_number(self.get_current_weight(), lim, self.BURDENED_SHARE)} / {lim}"
 
     def update_burden(self) -> str | None:
         """Note whether the hero is Burdened now. Returns 'on' or 'off' when
@@ -1380,8 +1382,8 @@ class Player:
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
                 return True
         self.inventory.append(item)
-        # Keep inventory sorted alphabetically by item name
-        self.inventory.sort(key=lambda i: i.name.lower())
+        # Keep inventory sorted alphabetically by the name the player SEES
+        self.sort_pack()
         # Sync carry bonuses (Charmander Stuffie etc.)
         self.refresh_carry_bonuses()
         return True
@@ -1555,9 +1557,27 @@ class Player:
         slots['belt']   = getattr(self, 'belt_slot', None)
         return slots
 
+    def pack_sort_key(self, item) -> str:
+        """Sort key for the pack: the name as shown (no article, no Blessed /
+        Cursed prefix). Sorting by the TRUE name put six unknown potions in
+        the order of what they really are, which told them apart."""
+        from hud_context import hud_item_name, strip_article
+        name = strip_article(hud_item_name(self, item)).lower()
+        for word in ('blessed ', 'cursed '):
+            if name.startswith(word):
+                name = strip_article(name[len(word):])
+        return name
+
+    def sort_pack(self) -> None:
+        self.inventory.sort(key=self.pack_sort_key)
+
     def get_inventory_display(self) -> list:
-        letters = 'abcdefghijklmnopqrstuvwxyz'
-        return [(letters[i], item) for i, item in enumerate(self.inventory[:26])]
+        # Every item (the pack's only limit is weight): it stopped at 26,
+        # so the 27th item on was missing from the character sheet. The
+        # letter is a row label; a-z then A-Z, blank past 52.
+        letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        return [(letters[i] if i < len(letters) else '', item)
+                for i, item in enumerate(self.inventory)]
 
     def can_equip_shield(self) -> bool:
         """Returns False when a two-handed weapon is equipped."""
@@ -1567,16 +1587,24 @@ class Player:
         """Attempt to remove an equipped item. Returns (success, message).
         Fails if the item is cursed OR has the selects_wielder flag
         (Stormbringer — the runesword has chosen you)."""
+        # Named as the player sees it (an unidentified cursed Duck of Doom is
+        # "Adorable Yellow Duckie" here too, not its true name).
+        from hud_context import item_bare_name
         # Part of the hero (Dad's fist, Ash's chainsaw): there is nothing to
         # take off, whatever a scroll has done to its curse.
         if slot_item and getattr(slot_item, 'bound_to_wielder', False):
-            return False, f"The {slot_item.name} is a part of you. It does not come off."
+            return False, f"The {item_bare_name(self, slot_item)} is a part of you. It does not come off."
         if slot_item and getattr(slot_item, 'cursed', False):
-            return False, f"The {slot_item.name} is welded to you!"
+            # Trying it is how a curse is found: from now on it is known
+            # (the Kit stops offering Unequip / Drop for it).
+            name = item_bare_name(self, slot_item)
+            if hasattr(slot_item, 'buc_known'):
+                slot_item.buc_known = True
+            return False, f"The {name} is welded to you!"
         # Stormbringer: selects_wielder — refuses to be put down. Per audit
         # 2026-05-30 — JSON flag was inert.
         if slot_item and getattr(slot_item, 'selects_wielder', False):
-            return False, f"The {slot_item.name} clings to your hand. It will not be put down."
+            return False, f"The {item_bare_name(self, slot_item)} clings to your hand. It will not be put down."
         return True, ""
 
     # ------------------------------------------------------------------
@@ -1831,4 +1859,4 @@ class Player:
             if 'stat2' in fx:
                 self.apply_stat_bonus(fx['stat2'], fx.get('amount2', 0))
         # Re-sort inventory after any equipment swap that returned items
-        self.inventory.sort(key=lambda i: i.name.lower())
+        self.sort_pack()

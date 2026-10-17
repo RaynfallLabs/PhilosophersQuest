@@ -1073,9 +1073,11 @@ class MagicMixin:
                 cap = effective_enchant_cap(self.player, 'weapon')
                 if w.enchant_bonus < cap:
                     w.enchant_bonus += 1
-                    self.add_message(f"Your {w.name} glows! Enchantment +{w.enchant_bonus}.", 'success')
+                    self.add_message(f"Your {self._bare_name(w)} glows!"
+                                     + (f" Enchantment {w.enchant_bonus:+d}." if self._enchant_shown(w) else ""),
+                                     'success')
                 else:
-                    self.add_message(f"Your {w.name} shudders but can hold no more enchantment.", 'info')
+                    self.add_message(f"Your {self._bare_name(w)} shudders but can hold no more enchantment.", 'info')
             else:
                 self.add_message("You wield no weapon to enchant.", 'warning')
 
@@ -2594,24 +2596,30 @@ class MagicMixin:
                     if eff_delta < 0 and getattr(w, 'weapon_immune_to_enchant_loss', False):
                         eff_delta = 0
                         self.add_message(
-                            f"The {w.name} shrugs off the unenchantment — it does not tarnish.",
+                            f"The {self._bare_name(w)} shrugs off the unenchantment — it does not tarnish.",
                             'info')
                     old_val = w.enchant_bonus
                     w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + eff_delta))
                     actual = w.enchant_bonus - old_val
+                    # Named as known, and the number only once the weapon
+                    # is identified (it told an unknown blade's enchantment).
+                    _wn = self._bare_name(w)
+                    _num = self._enchant_shown(w)
                     if actual > 0:
                         self.add_message(
-                            f"Your {w.name} glows -- enchant +{w.enchant_bonus}!",
+                            f"Your {_wn} glows -- enchant {w.enchant_bonus:+d}!" if _num
+                            else f"Your {_wn} glows!",
                             'success'
                         )
                     elif actual < 0:
                         self.add_message(
-                            f"Your {w.name} dims -- enchant {w.enchant_bonus:+d}!",
+                            f"Your {_wn} dims -- enchant {w.enchant_bonus:+d}!" if _num
+                            else f"Your {_wn} dims!",
                             'warning'
                         )
                     else:
                         self.add_message(
-                            f"Your {w.name} shudders but can hold no more enchantment.",
+                            f"Your {_wn} shudders but can hold no more enchantment.",
                             'info'
                         )
             else:
@@ -2748,17 +2756,16 @@ class MagicMixin:
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
+                    _tn = self._bare_name(target)
+                    _te = (f" -- enchant {target.enchant_bonus:+d}"
+                           if self._enchant_shown(target) else "")
                     if actual > 0:
-                        self.add_message(
-                            f"Your {target.name} shines -- enchant +{target.enchant_bonus}!", 'success'
-                        )
+                        self.add_message(f"Your {_tn} shines{_te}!", 'success')
                     elif actual < 0:
-                        self.add_message(
-                            f"Your {target.name} tarnishes -- enchant {target.enchant_bonus:+d}!", 'warning'
-                        )
+                        self.add_message(f"Your {_tn} tarnishes{_te}!", 'warning')
                     else:
                         self.add_message(
-                            f"Your {target.name} shudders but can hold no more enchantment.", 'info'
+                            f"Your {_tn} shudders but can hold no more enchantment.", 'info'
                         )
             else:
                 self.add_message("You wear no armor to enchant.", 'info')
@@ -2794,19 +2801,16 @@ class MagicMixin:
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
+                    _tn = self._bare_name(target)
+                    _te = (f" -- enchant {target.enchant_bonus:+d}"
+                           if self._enchant_shown(target) else "")
                     if actual > 0:
-                        self.add_message(
-                            f"A golden light infuses your {target.name} -- enchant +{target.enchant_bonus}!",
-                            'success'
-                        )
+                        self.add_message(f"A golden light infuses your {_tn}{_te}!", 'success')
                     elif actual < 0:
-                        self.add_message(
-                            f"A dark energy corrupts your {target.name} -- enchant {target.enchant_bonus:+d}!",
-                            'warning'
-                        )
+                        self.add_message(f"A dark energy corrupts your {_tn}{_te}!", 'warning')
                     else:
                         self.add_message(
-                            f"Your {target.name} shudders but can hold no more enchantment.",
+                            f"Your {_tn} shudders but can hold no more enchantment.",
                             'info'
                         )
             else:
@@ -3050,12 +3054,18 @@ class MagicMixin:
                         # ring's points into permanent ones).
                         if fx.get('stat') and fx['amount'] != _old:
                             self.player.apply_stat_bonus(fx['stat'], fx['amount'] - _old)
-                        self.add_message(
-                            f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} "
-                            f"by {abs(fx['amount'] - _old)}!", 'success' if bonus > 0 else 'warning')
+                        _an = self._bare_name(acc)
+                        if int(getattr(acc, 'id_level', 0) or 0) >= 5 or self._item_is_known(acc):
+                            self.add_message(
+                                f"The {_an} glows! Bonus {'increased' if bonus > 0 else 'decreased'} "
+                                f"by {abs(fx['amount'] - _old)}!", 'success' if bonus > 0 else 'warning')
+                        else:
+                            self.add_message(
+                                f"The {_an} {'glows' if bonus > 0 else 'dims'}!",
+                                'success' if bonus > 0 else 'warning')
                         touched += 1
                     else:
-                        self.add_message(f"The {acc.name} shimmers briefly but nothing happens.", 'info')
+                        self.add_message(f"The {self._bare_name(acc)} shimmers briefly but nothing happens.", 'info')
                 if touched == 0:
                     pass  # messages already emitted
             else:

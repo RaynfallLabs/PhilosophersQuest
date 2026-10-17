@@ -140,8 +140,9 @@ def test_kit_weapon_special_gates_magical_extras():
     w = _w(class_mechanic='backstab', two_handed=True)
     s3 = RenderMixin._kit_weapon_special(None, w, 3)
     s4 = RenderMixin._kit_weapon_special(None, w, 4)
-    assert 'Backstab' in s3 and '2H' not in s3   # extras hidden at idl 3
-    assert 'Backstab' in s4 and '2H' in s4       # extras shown at idl 4
+    # (Labelled "Two-Handed" since bug bash 4 UI-16; it read "2H".)
+    assert 'Backstab' in s3 and 'Two-Handed' not in s3   # extras hidden at idl 3
+    assert 'Backstab' in s4 and 'Two-Handed' in s4       # extras shown at idl 4
 
 
 def test_examine_detail_lines_name_and_description():
