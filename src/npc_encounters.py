@@ -139,6 +139,29 @@ def get_trigger_item_levels(placements: dict) -> dict:
 
 # ── Cost / reward checking ───────────────────────────────────────────
 
+# Quest and story pieces an NPC never takes as payment: the secret ending's
+# scroll, Death's Bane, the carrot, the Duck, the Wrench, the tablet, and the
+# items karma NPCs ask to have returned.
+_WITHHELD_IDS = frozenset({
+    'scroll_lake_of_fire', 'scroll_deaths_bane', 'magic_dungeon_carrot',
+    'duck_of_doom', 'philosophers_wrench', 'philosophers_stone',
+    'philosophers_shard', 'tablet_of_second_death',
+    'complete_tablet_of_second_death', 'silverlight_pendant',
+    'oathkeeper_sword', 'lionheart_shield',
+})
+
+
+def offerable(item) -> bool:
+    """May an NPC take ``item`` as an item cost? Never a quest or story
+    piece, a named unique, or a one-of-a-kind item (bug bash 4 E1: the
+    Spectral Librarian silently took the Scroll of the Lake of Fire)."""
+    if getattr(item, 'id', '') in _WITHHELD_IDS:
+        return False
+    return not (getattr(item, 'plot_locked', False)
+                or getattr(item, 'is_unique', False)
+                or getattr(item, 'single_copy', False))
+
+
 def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str]:
     """Check if the player can afford a cost. Returns (can_pay, fail_message)."""
     if cost is None:
@@ -148,18 +171,18 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
 
     if ctype == 'food':
         from items import Food, Ingredient
-        has = any(isinstance(i, (Food, Ingredient)) for i in player.inventory)
+        has = any(isinstance(i, (Food, Ingredient)) and offerable(i) for i in player.inventory)
         return (True, '') if has else (False, "You have no food to give.")
 
     if ctype == 'healing_potion':
         from items import Potion, Scroll, Wand
         # Accept: healing potions, heal spell (costs MP), healing scrolls, healing wands
-        has_potion = any(isinstance(i, Potion) and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
+        has_potion = any(isinstance(i, Potion) and offerable(i) and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
                          for i in player.inventory)
         has_spell = 'heal_spell' in getattr(player, 'known_spells', {}) and player.mp >= player.known_spells.get('heal_spell', 99)
-        has_scroll = any(isinstance(i, Scroll) and 'heal' in getattr(i, 'effect', '').lower()
+        has_scroll = any(isinstance(i, Scroll) and offerable(i) and 'heal' in getattr(i, 'effect', '').lower()
                          for i in player.inventory)
-        has_wand = any(isinstance(i, Wand) and 'heal' in getattr(i, 'effect', '').lower()
+        has_wand = any(isinstance(i, Wand) and offerable(i) and 'heal' in getattr(i, 'effect', '').lower()
                        and getattr(i, 'charges', 0) > 0
                        for i in player.inventory)
         has = has_potion or has_spell or has_scroll or has_wand
@@ -167,17 +190,17 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
 
     if ctype == 'potion':
         from items import Potion
-        has = any(isinstance(i, Potion) for i in player.inventory)
+        has = any(isinstance(i, Potion) and offerable(i) for i in player.inventory)
         return (True, '') if has else (False, "You have no potions to give.")
 
     if ctype == 'scroll':
         from items import Scroll
-        has = any(isinstance(i, Scroll) for i in player.inventory)
+        has = any(isinstance(i, Scroll) and offerable(i) for i in player.inventory)
         return (True, '') if has else (False, "You have no scrolls to spare.")
 
     if ctype == 'weapon':
         from items import Weapon
-        has = any(isinstance(i, Weapon) for i in player.inventory)
+        has = any(isinstance(i, Weapon) and offerable(i) for i in player.inventory)
         return (True, '') if has else (False, "You have no weapon to give.")
 
     if ctype == 'gold':
@@ -203,11 +226,11 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
 
     if ctype == 'random_item':
         # Used as a cost, check if player has an item of the requested category
-        from items import Scroll, Potion, Food, Weapon
+        from items import Scroll, Potion, Food, Ingredient, Weapon
         cat = cost.get('category', 'scroll')
-        cat_map = {'scroll': Scroll, 'potion': Potion, 'food': Food, 'weapon': Weapon}
+        cat_map = {'scroll': Scroll, 'potion': Potion, 'food': (Food, Ingredient), 'weapon': Weapon}
         cls = cat_map.get(cat)
-        if cls and any(isinstance(i, cls) for i in player.inventory):
+        if cls and any(isinstance(i, cls) and offerable(i) for i in player.inventory):
             return True, ''
         return False, f"You have no {cat} to offer."
 
@@ -246,6 +269,11 @@ def get_inventory_filter(cost: dict | None) -> str | None:
     ctype = cost['type']
     if ctype in ('food', 'healing_potion', 'potion', 'scroll', 'weapon'):
         return ctype
+    if ctype == 'random_item':
+        # "Give a scroll": the player chooses which. It silently took the
+        # first one in the pack, which could be a quest scroll.
+        cat = cost.get('category', 'scroll')
+        return cat if cat in ('food', 'potion', 'scroll', 'weapon') else None
     return None
 
 

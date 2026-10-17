@@ -812,7 +812,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         player can verify at a glance. Reuses the STATE_STORY_POPUP chrome like
         _show_quirk_unlock_popup, so a bad restore (Floor 1 / Turn 0 / 0 items) is
         immediately obvious instead of a one-line message that scrolls past."""
-        weapon_name = self.player.weapon.name if self.player.weapon else 'unarmed'
+        # As the player knows it (S-02), and capitalised like every label.
+        weapon_name = (self._display_name(self.player.weapon)
+                       if self.player.weapon else 'Unarmed')
         item_count = len(self.player.inventory)
         lines = [
             # one line: the popup joins consecutive lines into a paragraph,
@@ -913,14 +915,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.player.ranged_weapon = w
                 self.player.weapon = None
                 self.add_message(
-                    f"Your {w.name} was a ranged weapon all along -- moved to bow slot.",
+                    f"Your {self._bare_name(w)} was a ranged weapon all along -- moved to bow slot.",
                     'info'
                 )
             else:
                 self.player.inventory.append(w)
                 self.player.weapon = None
                 self.add_message(
-                    f"Your {w.name} is a ranged weapon -- returned to inventory (bow slot occupied).",
+                    f"Your {self._bare_name(w)} is a ranged weapon -- returned to inventory (bow slot occupied).",
                     'info'
                 )
 
@@ -2192,7 +2194,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             foods = load_items('food')
             ration = next((f for f in foods if f.id == 'bread_ration'), None)
             if ration:
-                self.player.inventory.append(ration)
+                # Through the pack's own rules, so it stacks with a hero's
+                # own rations (bug bash 4 MK-11).
+                if not self.player.add_to_inventory(ration):
+                    self.player.inventory.append(ration)
         except Exception:
             pass
 
@@ -2204,10 +2209,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _mark_starting_item_known(heal_pot)
                 heal_pot.buc_known = True
                 self.player.known_item_ids.add(heal_pot.id)
-                self.player.inventory.append(heal_pot)
+                # Stacks with a hero's own Potion of Healing (Geralt showed
+                # two separate rows, MK-11).
+                if not self.player.add_to_inventory(heal_pot):
+                    self.player.inventory.append(heal_pot)
         except Exception:
             pass
-        self.player.inventory.sort(key=lambda i: i.name.lower())
+        self.player.sort_pack()
 
         # -- Hero specials, passives, and journal entry --------------------
         # Pull from src/hero_specials.py based on the secret build's name.
@@ -5835,8 +5843,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             p.hack_tiers_claimed.add(4)
             item = self._hack_reality_spawn_legendary()
             if item:
-                result_lines.append((f"Materialized: {item.name}", (255, 180, 255)))
-                msgs.append(f"Reality bends — {item.name} materializes at your feet!")
+                _hn = self._display_name(item)
+                result_lines.append((f"Materialized: {_hn}", (255, 180, 255)))
+                msgs.append(f"Reality bends — {_hn} materializes at your feet!")
             else:
                 # Fallback: extra +3 to all stats
                 for stat in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
@@ -6171,6 +6180,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('Unequip',     None),  # special tab for currently equipped items
     ]
 
+    def _is_worn(self, item) -> bool:
+        """Is ``item`` (this very object) on the hero's body now?"""
+        return any(w is item for w in self.player.worn_items())
+
+    def _note_worn_curse(self, item) -> None:
+        """A cursed item just put on: the curse is felt at once, so it is
+        known from now on (it used to stay "unknown" while welded on, and
+        the Kit kept offering Unequip / Drop)."""
+        if getattr(item, 'cursed', False) and self._is_worn(item):
+            if not getattr(item, 'buc_known', False):
+                item.buc_known = True
+            self.add_message(
+                f"It feels wrong... the {self._bare_name(item)} will not come off.",
+                'warning')
+
     def _equip_item(self, item):
         if isinstance(item, Weapon):
             # Check if switching to 2H while shield is cursed
@@ -6195,6 +6219,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.remove_from_inventory(item)
             suffix = " (two-handed)" if getattr(item, 'two_handed', False) else ""
             self.add_message(f"You equip the {dname}{suffix}.", 'success')
+            self._note_worn_curse(item)
             _qs_eq = getattr(self, 'quirk_system', None)
             if _qs_eq:
                 _qs_eq.on_item_equipped(item.id, 'weapon', 'weapon')
@@ -6346,7 +6371,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._start_chain_equip_quiz(item, item_type='armor')
             return
         item_name = self._bare_name(item)
-        cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
         self.quiz_title = f"EQUIPPING {item_name.upper()}  --  GEOGRAPHY"
         self.state = STATE_QUIZ
 
@@ -6354,12 +6378,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.state = STATE_PLAYER
             if result.success:
                 self.player._apply_equip(item)
+                if not self._is_worn(item):
+                    # Refused (the piece in that slot would not come off):
+                    # the new one stays in the pack, never lost.
+                    self.add_message(
+                        f"You cannot put on the {item_name}.", 'warning')
+                    self._advance_turn()
+                    return
                 self.player.remove_from_inventory(item)
                 ac = self.player.get_ac()
-                msg = f"You equip the {item_name}{cursed_tag}. AC is now {ac}."
-                if getattr(item, 'cursed', False):
-                    msg += " It feels wrong..."
-                self.add_message(msg, 'success')
+                # Its curse, if any, is now known and named once ("the
+                # Cursed X (cursed)" said it twice, and before you knew).
+                self.add_message(f"You equip the {item_name}. AC is now {ac}.", 'success')
+                self._note_worn_curse(item)
                 # Great Helm of Galahad (purity): announce the cleansing
                 # when items were freed of curses by the helm going on.
                 _cleansed = int(getattr(self.player, '_galahad_cleansed_count', 0) or 0)
@@ -6411,7 +6442,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message("You are already wearing an amulet!", 'warning')
                 return
         elif getattr(item, 'slot', '') == 'belt':
-            pass        # the belt has its own slot (four rings used to block it)
+            # The belt has its own slot (four rings used to block it). A worn
+            # belt that will not come off (cursed) refuses the swap: check
+            # before the quiz, or the quiz passed, "You slip on ..." printed,
+            # nothing was equipped and the new belt was gone.
+            _belt = getattr(self.player, 'belt_slot', None)
+            if _belt is not None:
+                ok, msg = self.player.try_unequip_slot(_belt)
+                if not ok:
+                    self.add_message(msg, 'warning')
+                    return
         elif getattr(item, 'slot', '') == 'none':
             # carried, not worn: this ran the quiz, said "You slip on ..." and
             # equipped nothing
@@ -6435,6 +6475,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.state = STATE_PLAYER
             if result.success:
                 self.player._apply_equip(item)
+                if not self._is_worn(item):
+                    # Refused (a slot's item would not come off): keep the
+                    # new one in the pack rather than destroy it.
+                    self.add_message(
+                        f"You cannot put on the {item_name}.", 'warning')
+                    self._advance_turn()
+                    return
                 self.player.remove_from_inventory(item)
                 fx = item.effects
                 if 'status' in fx:
@@ -6450,6 +6497,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     )
                 else:
                     self.add_message(f"You slip on the {item_name}.", 'success')
+                self._note_worn_curse(item)
             else:
                 self.add_message(
                     f"You fumble with the {item_name} and give up.", 'warning'
@@ -6481,7 +6529,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """
         from chain_equip import get_chain_subject, get_chain_mode, apply_tier_bonuses
         item_name = self._bare_name(item)
-        cursed_tag = " (cursed)" if getattr(item, 'cursed', False) else ""
         subject = get_chain_subject(item)
         mode = get_chain_mode(item)
         self.quiz_title = f"ATTUNING TO {item_name.upper()}  --  {subject.upper()}"
@@ -6499,12 +6546,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 apply_tier_bonuses(self.player, item, chain)
                 # Now actually equip
                 self.player._apply_equip(item)
+                if not self._is_worn(item):
+                    # Refused: the item in that slot would not come off.
+                    from chain_equip import revert_tier_bonuses
+                    revert_tier_bonuses(self.player, item)
+                    self.add_message(f"You cannot put on the {item_name}.", 'warning')
+                    self._advance_turn()
+                    return
                 self.player.remove_from_inventory(item)
                 ac = self.player.get_ac()
                 self.add_message(
-                    f"You attune to the {item_name}{cursed_tag} at tier {chain}/5. AC is now {ac}.",
+                    f"You attune to the {item_name} at tier {chain}/5. AC is now {ac}.",
                     'success'
                 )
+                self._note_worn_curse(item)
                 # Chain-equip passive auto-fires at equip time:
                 #   dragon_blood_bath -> permanent elemental resist statuses
                 #   aesir_young -> 5t protected when newly re-equipped
@@ -6576,7 +6631,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _spawn_unique_item(self, x: int, y: int, item_id: str):
         """Place a named unique item at (x, y), searching all item categories."""
-        from items import load_items, copy_at
+        from items import load_items, copy_at, unique_available, claim_unique
         categories = ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
                       'artifact', 'potion')
         for cat in categories:
@@ -6584,7 +6639,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 items = load_items(cat)
                 template = next((i for i in items if i.id == item_id), None)
                 if template:
+                    # Once a run: the Calydonian Boar's spear already found on
+                    # a floor (or dropped by an earlier boar) is not dropped again.
+                    if not unique_available(template):
+                        return
                     item = copy_at(template, x, y)
+                    claim_unique(item)
                     item.identified = False
                     self.ground_items.append(item)
                     self.add_message(">> A remarkable item falls from the defeated foe!", 'loot')
@@ -6865,84 +6925,62 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                                      (hud_context.unknown_copy_suffix)
           - type unknown                          -> "an ornate golden-hilted blade"
 
-        The type_class check is what lets one Ring of Strength
-        identification name ALL ring-of-strength variants in the pack.
+        One path for every place an item is named to the player
+        (hud_context.item_display_name): the log, menus, HUD, combat panel,
+        shop and Player's own messages all name an item the same way.
         """
-        if not hasattr(item, 'identified'):
-            base = self._fix_name_case(item.name)
-        else:
-            instance_known = int(getattr(item, 'id_level', 0)) >= 5
-            # Route type-known through player.knows_item_type: covers
-            # per-id, per-class (accessories), AND the identify v3.1
-            # split form × material knowledge.
-            type_known = self.player.knows_item_type(item)
-            if instance_known:
-                base = self._fix_name_case(item.name)
-            elif type_known:
-                from hud_context import unknown_copy_suffix
-                suffix = unknown_copy_suffix(item)
-                base = self._fix_name_case(item.name)
-                if suffix:
-                    base = f"{base} {suffix}"
-            else:
-                base = self._fix_name_case(getattr(item, 'unidentified_name', item.name))
-        # BUC prefix when known
-        buc = getattr(item, 'buc', 'uncursed')
-        buc_known = getattr(item, 'buc_known', False)
-        if buc_known and buc != 'uncursed':
-            base = f"{buc.title()} {base}"   # "Cursed Rough Hide Armor" (was "{cursed} ...")
-        count = getattr(item, 'count', 1)
-        return f"{base} x{count}" if count > 1 else base
+        from hud_context import item_display_name
+        return item_display_name(self.player, item)
 
     def _bare_name(self, item) -> str:
         """The display name without a leading article, for a sentence that
         supplies its own ("You equip the ..."). An unidentified piece is named
         "a pair of heavy iron boots", which read "the A Pair of Heavy Iron
         Boots"."""
-        name = self._display_name(item)
-        for art in ('a ', 'an ', 'the '):
-            if name.lower().startswith(art):
-                return name[len(art):]
-        return name
+        from hud_context import item_bare_name
+        return item_bare_name(self.player, item)
+
+    def _enchant_shown(self, item) -> bool:
+        """May a message print this item's enchantment number? Only once
+        this copy is identified: "Your X glows -- enchant +3!" told an
+        unknown blade's hidden enchantment."""
+        try:
+            return int(getattr(item, 'id_level', 0) or 0) >= 5
+        except (TypeError, ValueError):
+            return False
 
     def _show_item_comparison(self, item):
-        """Show a brief comparison hint if the ground item is comparable to equipped gear."""
+        """Show a brief comparison hint if the ground item is comparable to equipped gear.
+
+        Only what the player knows: no line unless BOTH items are known
+        (it compared against the worn item's true stats and printed its true
+        name), and an enchantment counts only when both copies are
+        identified (otherwise the hidden +N of either leaked into the sum)."""
         if not self._item_is_known(item):
             return  # Can't compare unidentified items
+        from items import ARMOR_SLOTS
         if isinstance(item, Weapon):
-            equipped = self.player.weapon
-            if equipped:
-                ground_dmg = getattr(item, 'base_damage', 0) + getattr(item, 'enchant_bonus', 0)
-                eq_dmg = getattr(equipped, 'base_damage', 0) + getattr(equipped, 'enchant_bonus', 0)
-                diff = ground_dmg - eq_dmg
-                if diff > 0:
-                    self.add_message(f"  (+{diff} damage vs your {equipped.name})", 'success')
-                elif diff < 0:
-                    self.add_message(f"  ({diff} damage vs your {equipped.name})", 'warning')
+            equipped, stat, unit = self.player.weapon, 'base_damage', 'damage'
         elif isinstance(item, Armor):
             slot = getattr(item, 'slot', 'body')
-            from items import ARMOR_SLOTS
-            slot_idx = ARMOR_SLOTS.index(slot) if slot in ARMOR_SLOTS else None
-            if slot_idx is not None:
-                equipped = self.player.armor_slots[slot_idx]
-                if equipped:
-                    ground_ac = getattr(item, 'ac_bonus', 0) + getattr(item, 'enchant_bonus', 0)
-                    eq_ac = getattr(equipped, 'ac_bonus', 0) + getattr(equipped, 'enchant_bonus', 0)
-                    diff = ground_ac - eq_ac
-                    if diff > 0:
-                        self.add_message(f"  (+{diff} AC vs your {equipped.name})", 'success')
-                    elif diff < 0:
-                        self.add_message(f"  ({diff} AC vs your {equipped.name})", 'warning')
+            equipped = (self.player.armor_slots[ARMOR_SLOTS.index(slot)]
+                        if slot in ARMOR_SLOTS else None)
+            stat, unit = 'ac_bonus', 'AC'
         elif isinstance(item, Shield):
-            equipped = self.player.shield
-            if equipped:
-                ground_ac = getattr(item, 'ac_bonus', 0) + getattr(item, 'enchant_bonus', 0)
-                eq_ac = getattr(equipped, 'ac_bonus', 0) + getattr(equipped, 'enchant_bonus', 0)
-                diff = ground_ac - eq_ac
-                if diff > 0:
-                    self.add_message(f"  (+{diff} AC vs your {equipped.name})", 'success')
-                elif diff < 0:
-                    self.add_message(f"  ({diff} AC vs your {equipped.name})", 'warning')
+            equipped, stat, unit = self.player.shield, 'ac_bonus', 'AC'
+        else:
+            return
+        if not equipped or equipped is item or not self._item_is_known(equipped):
+            return
+        both = self._enchant_shown(item) and self._enchant_shown(equipped)
+
+        def value(it):
+            return getattr(it, stat, 0) + (getattr(it, 'enchant_bonus', 0) if both else 0)
+
+        diff = value(item) - value(equipped)
+        if diff:
+            self.add_message(f"  ({diff:+d} {unit} vs your {self._bare_name(equipped)})",
+                             'success' if diff > 0 else 'warning')
 
     # ------------------------------------------------------------------
     # Update
@@ -7477,7 +7515,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('Other',       lambda i: hasattr(i, 'item_class') and getattr(i, 'item_class', '') not in ('weapon','armor','shield','accessory','ammo','potion','scroll','spellbook','wand','food','ingredient')),
     ]
 
+    def _inside_rock(self) -> bool:
+        """Is the hero standing inside solid rock (phasing through a wall)?
+        Nothing can be set down there: a dropped item or gold pile was left
+        in the wall, out of reach once the phasing ended (bug bash 4 MK-04)."""
+        from dungeon import WALL, SECRET_DOOR
+        px, py = self.player.x, self.player.y
+        try:
+            return self.dungeon.tiles[py][px] in (WALL, SECRET_DOOR)
+        except (IndexError, AttributeError, TypeError):
+            return False
+
+    _ROCK_DROP_MSG = "You are inside solid rock: there is nowhere to set anything down."
+
     def _do_drop_item(self, item):
+        if self._inside_rock():
+            self.add_message(self._ROCK_DROP_MSG, 'warning')
+            return
         # Sir Aldric's Cursed Lodestone. Its lore and the knight both say it
         # cannot be put down, but nothing enforced that: accept the burden,
         # drop it next turn, keep the karma. It now stays until it is laid on
@@ -7629,7 +7683,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         per-class (accessories), and identify-v3.1 split form × material coverage."""
         if not hasattr(item, 'identified'):
             return True  # items without an identified flag are always known
-        return item.identified or self.player.knows_item_type(item)
+        # Exactly what the NAME reveals (hud_context.item_display_name): this
+        # copy identified (5), or its type known. ``item.identified`` is True
+        # at a stored 4, which scripted grants write without identifying.
+        try:
+            if int(getattr(item, 'id_level', 0) or 0) >= 5:
+                return True
+        except (TypeError, ValueError):
+            pass
+        return bool(self.player.knows_item_type(item))
 
     _EXAMINE_TABS = [
         ('Weapons',     lambda i: isinstance(i, Weapon)),
@@ -7740,7 +7802,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Haggle over a shop item via economics escalator chain quiz."""
         m = self._shop_merchant
         item = m.stock[sel]
-        iname = getattr(item, 'name', 'item')
+        iname = self._bare_name(item)            # as the shop shows it
         original_price = m.prices[sel]
         self.add_message(f"You try to haggle over the {iname}...", 'info')
         self.quiz_title = "HAGGLE  --  ECONOMICS"

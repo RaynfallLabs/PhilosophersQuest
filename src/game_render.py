@@ -22,7 +22,7 @@ from renderer import TILE_SIZE
 from geom import monster_at_tile, any_tile_in_set
 import ui_theme
 import lore_art
-from ui import carry_state, carry_color
+from ui import carry_state, carry_color, carry_numbers
 from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, draw_overlay,
@@ -849,7 +849,7 @@ class RenderMixin:
             _cwt, _clim, _cstate = carry_state(p)
             _ccol = carry_color(_cstate)
             wt = get_font('body', 16, bold=True).render(
-                f"Carrying {_cwt:.0f} / {_clim}" + (f"   {_cstate}" if _cstate else ""),
+                f"Carrying {carry_numbers(p)}" + (f"   {_cstate}" if _cstate else ""),
                 True, _ccol)
             gd = get_font('body', 16, bold=True).render(
                 f"Gold {self.player_gold:,}", True, FP.GOLD_BRIGHT)
@@ -872,7 +872,7 @@ class RenderMixin:
             text(f"{getattr(self, 'player_name', 'Adventurer')}   Floor {self.dungeon_level}   Turn {self.turn_count}",
                  font_body, FP.FADED_TEXT, header.x + S(20), header.y + S(44))
             _cwt, _clim, _cstate = carry_state(p)
-            _ctext = f"Carrying {_cwt:.0f} / {_clim}" + (f"  {_cstate}" if _cstate else "")
+            _ctext = f"Carrying {carry_numbers(p)}" + (f"  {_cstate}" if _cstate else "")
             text(_ctext, font_bold, carry_color(_cstate),
                  min(header.right - S(198), header.right - S(18) - font_bold.size(_ctext)[0]),
                  header.y + S(15))
@@ -1349,13 +1349,14 @@ class RenderMixin:
             pygame.draw.rect(screen, FP.ARCANE_DIM, summary, 1, border_radius=6)
         text("Kit Summary", font_bold, FP.GOLD_BRIGHT, summary.x + S(10), summary.y + S(8))
         _load = carry_state(p)
+        _n_pack = len(self._charsheet_pack_entries(filtered=False))   # every item; no 26 cap
         for i, (label, value, col) in enumerate([
             ("Armor", f"AC {p.get_ac()}", FP.SUCCESS_TEXT),
-            ("Carrying", f"{_load[0]:.0f} / {_load[1]}" + (f"  {_load[2]}" if _load[2] else ""),
+            ("Carrying", carry_numbers(p) + (f"  {_load[2]}" if _load[2] else ""),
              carry_color(_load[2])),
             ("Flat DR", " / ".join(f"{k[:3]} {v}" for k, v in getattr(p, 'damage_resistances', {}).items()) or "-",
              FP.MP_BLUE_TEXT),
-            ("Pack", f"{len(self._charsheet_pack_entries(filtered=False))}/26 items", FP.BODY_TEXT),
+            ("Pack", f"{_n_pack} item{'' if _n_pack == 1 else 's'}", FP.BODY_TEXT),
         ]):
             yy = summary.y + S(32) + i * S(19)
             text(label, font_small, FP.FADED_TEXT, summary.x + S(10), yy)
@@ -3359,7 +3360,12 @@ class RenderMixin:
         # -------- STRIKE NOW ------------------------------------------
         s = slots['strike']
         put("STRIKE NOW", s['cap'], FP.FADED_TEXT, sizes=(self._COMBAT_HUD_CAP_SIZE,))
-        w_name = proper_name(weapon.name) if weapon else "Bare Hands"
+        # As the player knows it: an unidentified blade is not named by
+        # its true name on the combat panel.
+        # (The "(Curse and Enchant Unknown)" note is dropped: no room.)
+        from hud_context import item_bare_name
+        w_name = (item_bare_name(self.player, weapon).split(' (')[0]
+                  if weapon else "Bare Hands")
         put(w_name, s['weapon'], FP.FADED_TEXT, align='right',
             sizes=(self._COMBAT_HUD_CAP_SIZE,))
         if cur_chain >= 1:
@@ -3542,7 +3548,7 @@ class RenderMixin:
     def _menu_base_context(self, extra: list | None = None) -> list:
         p = self.player
         _cwt, _clim, _cstate = carry_state(p)
-        weight = f"{_cwt:.0f} / {_clim}" + (f"  ({_cstate})" if _cstate else "")
+        weight = carry_numbers(p) + (f"  ({_cstate})" if _cstate else "")
         effects = getattr(p, 'status_effects', {}) or {}
         active = [k.replace('_', ' ').title() for k, v in effects.items() if v != 0]
         lines = [
@@ -3596,13 +3602,14 @@ class RenderMixin:
 
     def _copy_buc_known(self, item) -> bool:
         """True when this copy's blessing or curse is known to the player:
-        flagged known (altar, identify), the copy identified (id_level 5;
-        2+ on a legacy save), or worn (a curse shows itself on equip)."""
+        flagged known (altar, identify), the copy identified (id_level 5),
+        or worn (a curse shows itself on equip). A stored 1-4 is not enough:
+        ``item.identified = True`` writes 4 without identifying anything."""
         try:
             own = int(getattr(item, 'id_level', 5) or 0)
         except (TypeError, ValueError):
             own = 0
-        return (own >= 2 or bool(getattr(item, 'buc_known', False))
+        return (own >= 5 or bool(getattr(item, 'buc_known', False))
                 or self._menu_item_is_equipped(item))
 
     def _menu_bonus_label(self, key, value) -> str:
@@ -4521,7 +4528,9 @@ class RenderMixin:
         entries = []
         if is_unequip:
             for i, (slot_name, item) in enumerate(display_items):
-                cursed = getattr(item, 'cursed', False)
+                # A curse is marked only once known (the name says so too).
+                cursed = (getattr(item, 'cursed', False)
+                          and getattr(item, 'buc_known', False))
                 slot_label = slot_name.replace('_', ' ').title()
                 detail = f"[{slot_label}]"
                 if cursed:
@@ -4545,14 +4554,21 @@ class RenderMixin:
                 })
         else:
             for i, item in enumerate(display_items):
+                # Stats and material only once known (the same rule as the
+                # Kit): they showed an unidentified blade's true damage.
+                _known = self._kit_visible_level(item) >= 3
                 if isinstance(item, Weapon):
-                    detail = f"{_cap(getattr(item, 'weapon_class', 'weapon'))}  {item.base_damage} dmg"
+                    detail = (f"{_cap(getattr(item, 'weapon_class', 'weapon'))}  {item.base_damage} Damage"
+                              if _known else "Weapon  Unidentified")
                 elif isinstance(item, Shield):
-                    detail = f"+{item.ac_bonus} AC  {_cap(item.material)}"
+                    detail = (f"+{item.ac_bonus} AC  {_cap(item.material)}"
+                              if _known else "Shield  Unidentified")
                 elif isinstance(item, Armor):
-                    detail = f"{getattr(item, 'slot', 'armor')}  +{item.ac_bonus} AC  {_cap(item.material)}"
+                    _slot = _cap(str(getattr(item, 'slot', 'armor')).replace('_', ' '))
+                    detail = (f"{_slot}  +{item.ac_bonus} AC  {_cap(item.material)}"
+                              if _known else f"{_slot}  Unidentified")
                 elif isinstance(item, Accessory):
-                    if item.identified or self.player.knows_item_type(item):
+                    if self._item_is_known(item):
                         fx = item.effects
                         if 'status' in fx:
                             detail = f"Grants {_cap(fx['status'])}"
@@ -4561,11 +4577,11 @@ class RenderMixin:
                         elif getattr(item, 'slot', '') == 'none':
                             detail = "Passive (carry-only)"
                         else:
-                            detail = "accessory"
+                            detail = "Accessory"
                     else:
                         detail = "Unidentified"
                 else:
-                    detail = item.item_class
+                    detail = _cap(str(item.item_class).replace('_', ' '))
                 delta = self._equip_delta_str(item)
                 if delta:
                     detail = f"{detail}   {delta}"
@@ -4659,6 +4675,8 @@ class RenderMixin:
                     continue
                 value = self._KIT_BUC_WORDS.get(value, value.title())
             elif label == 'Material':
+                if value == '?':
+                    continue
                 value = _cap(value)
             elif value == '?':
                 continue
@@ -4694,7 +4712,7 @@ class RenderMixin:
             if extra:
                 lines.append((f"{extra_label}: {extra}", FP.BODY_TEXT, self.font_sm))
         else:
-            lines.append(("Stats remain hidden until identification level 3.",
+            lines.append(("Stats remain hidden until you identify it.",
                           FP.FADED_TEXT, self.font_sm))
 
         tiers = getattr(item, 'tier_bonuses', None) or {}
@@ -5044,8 +5062,11 @@ class RenderMixin:
         idl = self._kit_visible_level(item)
         name = self._display_name(item)
         src_tag = self._KIT_SRC_TAG.get(src, '?')
-        wt = str(int(getattr(item, 'weight', 0) or 0))
-        mat = getattr(item, 'material', '') or ''
+        # One decimal, like the sheet (food read "Weight 0" truncated).
+        wt = f"{float(getattr(item, 'weight', 0) or 0):.1f}"
+        # The material is part of what identifying tells you: an unknown
+        # "plain longsword" showed "Iron" in this column.
+        mat = (getattr(item, 'material', '') or '') if idl >= 3 else '?'
 
         # Blessing visibility: this copy's own knowledge, never the type's.
         if self._copy_buc_known(item):
@@ -5161,12 +5182,22 @@ class RenderMixin:
         if idl >= 4:
             dt = getattr(w, 'damage_types', None) or []
             if dt and dt != ['slash'] and dt != ['pierce'] and dt != ['crush']:
-                bits.append('+'.join(dt))
+                bits.append(' / '.join(_cap(d) for d in dt))     # "Pierce / Slash"
             if getattr(w, 'two_handed', False):
-                bits.append('2H')
-            sb = getattr(w, 'unique_effect', None)
-            if sb:
-                bits.append(str(sb)[:32])
+                bits.append('Two-Handed')
+            # The weapon's own on-hit effects (it read ``unique_effect``,
+            # a field no weapon has, so this never showed anything).
+            for attr, label in (('stun_chance', 'Stun'), ('bleed_chance', 'Bleed'),
+                                ('poison_chance', 'Poison'), ('burn_chance', 'Burn'),
+                                ('confuse_chance', 'Confuse'),
+                                ('lifesteal_percent', 'Lifesteal')):
+                try:
+                    v = float(getattr(w, attr, 0) or 0)
+                except (TypeError, ValueError):
+                    v = 0.0
+                if v > 0:
+                    pct = v * 100 if v <= 1 else v
+                    bits.append(f"{label} {pct:.0f}%")
         return ', '.join(bits) if bits else '-'
 
     def _kit_resist_str(self, a) -> str:
@@ -5524,7 +5555,7 @@ class RenderMixin:
                 else FP.DANGER_TEXT_LIGHT
             )
             charge_text = f"Charges: {item.charges}/{item.max_charges}"
-            if item.identified or self.player.knows_item_type(item):
+            if self._item_is_known(item):
                 charge_text += f" | Effect: {item.effect.replace('_', ' ').title()}"
             entries.append({
                 'name': self._display_name(item),
@@ -5773,12 +5804,12 @@ class RenderMixin:
                 known = item.spell_id in self.player.known_spells
                 if known:
                     detail_text = f"[KNOWN] {item.spell_name}"
-                elif item.identified or self.player.knows_item_type(item):
+                elif self._item_is_known(item):
                     detail_text = f"teaches: {item.spell_name}  {item.mp_cost} MP"
                 else:
                     detail_text = "spellbook"
             else:
-                if item.identified or self.player.knows_item_type(item):
+                if self._item_is_known(item):
                     detail_text = f"Effect: {item.effect.replace('_', ' ').title()}"
                 else:
                     detail_text = "unknown effect"
@@ -6051,7 +6082,7 @@ class RenderMixin:
         items = self.quaff_menu_items
         entries = []
         for i, item in enumerate(items):
-            known = item.identified or self.player.knows_item_type(item)
+            known = self._item_is_known(item)
             if known:
                 eff = item.effect.replace('_', ' ').title()
                 dur = f" ({item.duration} turns)" if item.duration else ""
@@ -6095,7 +6126,7 @@ class RenderMixin:
                 badge = 'WEAPON'
                 badge_color = FP.WARNING_TEXT
             elif isinstance(item, Potion):
-                known = item.identified or self.player.knows_item_type(item)
+                known = self._item_is_known(item)
                 if known:
                     eff = item.effect.replace('_', ' ').title()
                     dur = f" ({item.duration} turns)" if item.duration else ""
@@ -6193,7 +6224,7 @@ class RenderMixin:
                 1 for i in self.player.inventory
                 if isinstance(i, Potion)
                 and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
-                and getattr(i, 'identified', False))
+                and self._item_is_known(i))
             details = [
                 (pet.name, FP.GOLD_BRIGHT, self.font_md),
                 (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}", FP.BODY_TEXT, self.font_sm),
@@ -7461,7 +7492,8 @@ class RenderMixin:
             lines.append((f"Weight: {weight:g}", FP.BODY_TEXT, self.font_sm))
 
         if hasattr(item, 'buc'):
-            if id_level >= 2 or getattr(item, 'buc_known', False):
+            # This copy's own knowledge (the same rule as the Kit and menus).
+            if self._copy_buc_known(item):
                 aura = getattr(item, 'buc', 'uncursed')
             else:
                 aura = "unknown"
@@ -7811,9 +7843,11 @@ class RenderMixin:
             # the raw per-copy level and showed "Mechanics unrevealed").
             # The identity pane keeps the raw level: its Identified badge
             # and aura are about THIS copy.
+            # What the name shows is what the player knows: a stored 1-4
+            # (``identified = True`` from a scripted grant) is not enough.
             visible = id_level
             if hasattr(subject, 'id_level'):
-                visible = max(id_level, self._kit_visible_level(subject))
+                visible = self._kit_visible_level(subject)
             identity_lines = self._lore_item_identity_lines(subject, id_level)
             mech_lines = self._lore_item_mechanic_lines(subject, visible)
             lore_text = (getattr(subject, 'lore', '') if visible >= 4 else

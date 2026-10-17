@@ -142,11 +142,57 @@ def hud_item_name(player, item, *, include_count: bool = False) -> str:
     base = fix_name_case(str(raw))
     buc = getattr(item, "buc", "uncursed")
     if getattr(item, "buc_known", False) and buc != "uncursed":
-        base = f"{buc.title()} {base}"   # "Cursed Rough Hide Armor" (was "{cursed} ...")
+        # "Cursed Rough Amber Pelt": the article of an appearance goes first
+        # (it read "Cursed A Rough Amber Pelt").
+        base = f"{buc.title()} {strip_article(base)}"
     count = int(getattr(item, "count", 1) or 1)
     if include_count and count > 1:
         return f"{base} x{count}"
     return base
+
+
+def load_number(weight: float, limit: float, share: float = 0.75) -> str:
+    """The carried weight as the readout shows it ("43" in "Carrying 43 /
+    100"), never disagreeing with the state beside it. A whole number
+    normally; one decimal when rounding would cross a line: 75.4 of 100 is
+    Burdened (over 75) but rounded to "75"; 100.3 is Over Limit but read
+    "100". Pure, shared by the sidebar, sheet, Kit and menus."""
+    import math
+    wt = float(weight)
+    lines = (float(limit) * float(share), float(limit))
+    over = [wt > t for t in lines]
+
+    def agrees(v: float) -> bool:
+        return [v > t for t in lines] == over
+
+    whole = float(round(wt))
+    if agrees(whole):
+        return f"{whole:.0f}"
+    # Round toward the side of the line the weight is really on.
+    above = next(wt > t for t in lines if (whole > t) != (wt > t))
+    v = math.ceil(wt * 10) / 10 if above else math.floor(wt * 10) / 10
+    return f"{v:.1f}"
+
+
+def strip_article(name: str) -> str:
+    """``name`` without a leading "a " / "an " / "the "."""
+    for art in ("a ", "an ", "the "):
+        if name.lower().startswith(art):
+            return name[len(art):]
+    return name
+
+
+def item_display_name(player, item) -> str:
+    """THE name an item is shown by, everywhere it is named to the player
+    (menus, the log, the HUD, the combat panel, the shop): the True Name
+    model above, with the stack count. Game._display_name is this."""
+    return hud_item_name(player, item, include_count=True)
+
+
+def item_bare_name(player, item) -> str:
+    """The shown name without a leading article, for a sentence that
+    supplies its own ("The {name} is welded to you!")."""
+    return strip_article(item_display_name(player, item))
 
 
 def _distance(player, obj) -> int:
@@ -155,7 +201,10 @@ def _distance(player, obj) -> int:
 
 
 def _distance_label(dist: int) -> str:
-    return "here" if dist <= 0 else f"{dist}t"
+    # Spelled out: "4t" meant tiles here and turns under POWERS.
+    if dist <= 0:
+        return "Here"
+    return f"{dist} Tile" if dist == 1 else f"{dist} Tiles"
 
 
 def _monster_visible(monster, visible: set[tuple[int, int]]) -> bool:
@@ -216,8 +265,9 @@ def visible_context_rows(player, monsters: Iterable, ground_items: Iterable,
 
 def _cooldown_row(label: str, cooldown: int) -> PowerRow:
     cd = int(cooldown or 0)
-    return PowerRow(label, "ready" if cd <= 0 else f"{cd}t",
-                    "ready" if cd <= 0 else "cooldown")
+    if cd <= 0:
+        return PowerRow(label, "Ready", "ready")
+    return PowerRow(label, f"{cd} Turn" if cd == 1 else f"{cd} Turns", "cooldown")
 
 
 def active_power_rows(player, *, secret_build: dict | None = None,
@@ -245,7 +295,7 @@ def active_power_rows(player, *, secret_build: dict | None = None,
         if int(pdef.get("uses", 0) or 0) > 0:
             remaining = int(uses.get(pid, 0) or 0)
             if remaining > 0:
-                rows.append(PowerRow(label, f"{remaining} use" + ("" if remaining == 1 else "s"), "uses"))
+                rows.append(PowerRow(label, f"{remaining} Use" + ("" if remaining == 1 else "s"), "uses"))
         else:
             rows.append(_cooldown_row(label, int(cooldowns.get(pid, 0) or 0)))
 
@@ -259,10 +309,10 @@ def active_power_rows(player, *, secret_build: dict | None = None,
         # always "ready". TODO: if a cooldown is ever added, thread the value
         # through here (e.g. cooldowns.get("bind_odinkiller", 0)) and switch
         # to _cooldown_row("Bind Odinkiller", cd).
-        rows.append(PowerRow("Bind Odinkiller", "ready", "ready"))
+        rows.append(PowerRow("Bind Odinkiller", "Ready", "ready"))
     if (any(getattr(item, "id", "") == "scales_of_michael" for item in inventory)
             and not heavenly_host_active):
-        rows.append(PowerRow("Heavenly Host", "1 use", "uses"))
+        rows.append(PowerRow("Heavenly Host", "1 Use", "uses"))
 
     if (secret_build or {}).get("_elder_blood"):
         for pid, label in [("elder_blink", "Blink"), ("elder_charge", "Charge"), ("elder_scream", "Scream")]:
@@ -277,12 +327,12 @@ def active_power_rows(player, *, secret_build: dict | None = None,
     for armor in getattr(player, "armor_slots", []) or []:
         if armor and getattr(armor, "seven_league_step", False):
             if not getattr(player, "_seven_league_used_this_floor", False):
-                rows.append(PowerRow("Seven-League Step", "1 use", "uses"))
+                rows.append(PowerRow("Seven-League Step", "1 Use", "uses"))
             break
     for armor in getattr(player, "armor_slots", []) or []:
         if armor and getattr(armor, "gold_offering", False):
             if not getattr(player, "_gold_offering_used_this_floor", False):
-                rows.append(PowerRow("Gilgamesh's Bribe", "1 use", "uses"))
+                rows.append(PowerRow("Gilgamesh's Bribe", "1 Use", "uses"))
             break
 
     for acc in getattr(player, "equipped_accessories", []) or []:
@@ -295,6 +345,6 @@ def active_power_rows(player, *, secret_build: dict | None = None,
                 label = "Light the Hand"
             else:
                 label = hud_item_name(player, acc)
-            rows.append(PowerRow(label, f"{charges} charge" + ("" if charges == 1 else "s"), "uses"))
+            rows.append(PowerRow(label, f"{charges} Charge" + ("" if charges == 1 else "s"), "uses"))
 
     return rows

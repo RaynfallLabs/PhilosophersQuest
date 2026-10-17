@@ -40,6 +40,16 @@ def carry_state(player) -> tuple[float, int, str]:
     return wt, lim, ''
 
 
+def carry_numbers(player) -> str:
+    """'43 / 100': the load as every readout prints it. The number never
+    contradicts the state (hud_context.load_number): 75.4 of 100 is
+    Burdened and reads 75.4, not 75."""
+    from hud_context import load_number
+    wt, lim, _state = carry_state(player)
+    share = float(getattr(player, 'BURDENED_SHARE', 0.75))
+    return f"{load_number(wt, lim, share)} / {lim}"
+
+
 def carry_color(state: str) -> tuple:
     return (FP.DANGER_TEXT if state == 'Over Limit'
             else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
@@ -473,7 +483,7 @@ class Sidebar:
         color = (FP.DANGER_TEXT if state == 'Over Limit'
                  else FP.WARNING_TEXT if state else FP.SUCCESS_TEXT)
         room = self.x + self.w - self.PAD - ax
-        label = f"Carrying {wt:.0f} / {lim}"
+        label = f"Carrying {carry_numbers(player)}"
         surf = self._fsm.render(self._fit(self._fsm, label, room), True, color)
         self.screen.blit(surf, (ax, y))
         if state:
@@ -574,7 +584,8 @@ class Sidebar:
         row = pygame.Rect(self.x + self.PAD, y, self.w - self.PAD * 2, S(24))
         pygame.draw.rect(self.screen, (18, 22, 42), row, border_radius=4)
         pygame.draw.rect(self.screen, color, (row.x, row.y, S(4), row.h), border_radius=2)
-        meta_w = min(S(88), max(S(50), self._fsm.size(meta)[0] + S(8)))
+        # Measured in the bold face it is drawn in; room for "209 Turns".
+        meta_w = min(S(110), max(S(50), self._fbold.size(meta)[0] + S(8)))
         self.screen.blit(self._fbold.render(self._fit(self._fbold, label, row.w - meta_w - S(18)),
                                             True, label_color or FP.BODY_TEXT),
                          (row.x + S(10), row.y + S(2)))

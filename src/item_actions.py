@@ -113,6 +113,9 @@ class ItemActionsMixin:
             if slot == 'amulet':
                 return "You already wear an amulet" if p.amulet_slot is not None else ''
             if slot == 'belt':
+                cur = getattr(p, 'belt_slot', None)
+                if cur is not None and self._item_known_unremovable(cur):
+                    return "Your belt will not come off"
                 return ''
             if all(s is not None for s in p.accessory_slots):
                 return "All ring slots are full"
@@ -186,9 +189,13 @@ class ItemActionsMixin:
         """Run ``action_id`` on ``item`` from the screen described by ``ctx``
         (see ``_kit_return_ctx`` / ``_charsheet_return_ctx``). Returns True
         when something was attempted."""
-        if action_id == 'unequip':
-            action_id = 'equip'          # U on the sheet: the same toggle
         where = self._item_where(item)
+        if action_id == 'unequip':
+            # U on the sheet takes a worn item off; on a pack or floor item
+            # it does nothing (it used to equip it, spending a turn).
+            if where != 'equip':
+                return False
+            action_id = 'equip'
         actions = {a['id']: a for a in self._item_actions(item, where)}
         # Start a fresh feedback record for this action.
         self._item_feedback = []

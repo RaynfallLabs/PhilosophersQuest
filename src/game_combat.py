@@ -1253,7 +1253,7 @@ class CombatMixin:
                           if getattr(i, 'ammo_type', None) == ammo_type]
             if not ammo_items:
                 self.add_message(
-                    f"You have no {ammo_type}s! Cannot fire the {weapon.name}.", 'warning'
+                    f"You have no {ammo_type}s! Cannot fire the {self._bare_name(weapon)}.", 'warning'
                 )
                 return
 
@@ -1285,12 +1285,12 @@ class CombatMixin:
         self.state = STATE_TARGET
         if candidates:
             self.add_message(
-                f"Targeting with {weapon.name} -- arrow keys to move, TAB to cycle, ENTER to fire, ESC to cancel.",
+                f"Targeting with the {self._bare_name(weapon)} -- arrow keys to move, TAB to cycle, ENTER to fire, ESC to cancel.",
                 'info'
             )
         else:
             self.add_message(
-                f"No targets in range for {weapon.name}. Move cursor with arrow keys, ENTER to fire, ESC to cancel.",
+                f"No targets in range for the {self._bare_name(weapon)}. Move cursor with arrow keys, ENTER to fire, ESC to cancel.",
                 'info'
             )
 
