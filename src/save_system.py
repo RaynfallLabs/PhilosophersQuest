@@ -277,6 +277,8 @@ def save_game(game) -> bool:
             '_magic_carrot_target_level': getattr(game, '_magic_carrot_target_level', None),
             '_unicorn_spawned': getattr(game, '_unicorn_spawned', False),
             '_unicorn_target_level': getattr(game, '_unicorn_target_level', None),
+            # The abandoned Emberpup: its floor, placed yet, how it ended.
+            '_emberpup': getattr(game, '_emberpup', None),
             # Chronicle & Lore Hints (Encyclopedia tabs)
             '_chronicle': getattr(game, '_chronicle', []),
             '_recalled_hints': getattr(game, '_recalled_hints', []),

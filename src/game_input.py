@@ -37,7 +37,7 @@ from game_states import (
     STATE_STORY_POPUP, STATE_MYSTERY_APPROACH, STATE_SHOP, STATE_POWER_MENU,
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
-    STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
+    STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_EMBERPUP, STATE_JUDGMENT, STATE_STUDY,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
@@ -162,6 +162,10 @@ class InputMixin:
                 # During the result flash ESC does nothing: the answer is
                 # already in, and forcing a failure here turned a correct
                 # answer into a failed quiz.
+                return True
+            if self.state == STATE_EMBERPUP:
+                # Its own screen decides: back from the food list, or leave.
+                self._emberpup_input(key)
                 return True
             if self.state == STATE_QUIZ_CONTEXT:
                 # Close the context modal (back to the quiz); the dedicated
@@ -378,6 +382,8 @@ class InputMixin:
             self._quirks_input(key)
         elif self.state == STATE_COW_ENCOUNTER:
             self._cow_encounter_input(key)
+        elif self.state == STATE_EMBERPUP:
+            self._emberpup_input(key)
         elif self.state == STATE_CHARACTER_SHEET:
             self._character_sheet_input(key)
         elif self.state == STATE_DROP_MENU:
@@ -796,14 +802,22 @@ class InputMixin:
             self.state = STATE_PLAYER
             return
         buf = getattr(self, '_pet_name_input_buffer', '')
+        # A pet that came some other way than a Soul Sphere (the abandoned
+        # Emberpup) brings its own words for the log and the chronicle.
+        story = getattr(self, '_naming_story', None) or {}
         if key == pygame.K_ESCAPE:
             # Skip naming — pet keeps its species name as default.
             pet.nickname = ''
-            self._log_chronicle(
-                f"A soul sphere hatched. {pet.species_name} emerged. "
-                "I'm not alone anymore."
-            )
+            if story:
+                self.add_message(story['unnamed_message'], 'success')
+                self._log_chronicle(story['unnamed_chronicle'])
+            else:
+                self._log_chronicle(
+                    f"A soul sphere hatched. {pet.species_name} emerged. "
+                    "I'm not alone anymore."
+                )
             self._naming_pet = None
+            self._naming_story = None
             self._pet_name_input_buffer = ''
             self.state = STATE_PLAYER
             return
@@ -812,20 +826,29 @@ class InputMixin:
             # Empty or default-species name → no nickname (just show species).
             if name and name.lower() != pet.species_name.lower():
                 pet.nickname = name
-                self.add_message(
-                    f"You name your new companion {name} the {pet.species_name}!",
-                    'success')
-                self._log_chronicle(
-                    f"A soul sphere hatched. I named the {pet.species_name} '{name}'. "
-                    "I'm not alone anymore."
-                )
+                if story:
+                    self.add_message(story['named_message'].format(name=name), 'success')
+                    self._log_chronicle(story['named_chronicle'].format(name=name))
+                else:
+                    self.add_message(
+                        f"You name your new companion {name} the {pet.species_name}!",
+                        'success')
+                    self._log_chronicle(
+                        f"A soul sphere hatched. I named the {pet.species_name} '{name}'. "
+                        "I'm not alone anymore."
+                    )
             else:
                 pet.nickname = ''
-                self._log_chronicle(
-                    f"A soul sphere hatched. {pet.species_name} emerged. "
-                    "I'm not alone anymore."
-                )
+                if story:
+                    self.add_message(story['unnamed_message'], 'success')
+                    self._log_chronicle(story['unnamed_chronicle'])
+                else:
+                    self._log_chronicle(
+                        f"A soul sphere hatched. {pet.species_name} emerged. "
+                        "I'm not alone anymore."
+                    )
             self._naming_pet = None
+            self._naming_story = None
             self._pet_name_input_buffer = ''
             self.state = STATE_PLAYER
             return

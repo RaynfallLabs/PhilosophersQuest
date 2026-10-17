@@ -50,7 +50,7 @@ from game_states import (
     STATE_STORY_POPUP, STATE_MYSTERY_APPROACH, STATE_SHOP, STATE_POWER_MENU,
     STATE_HACK_REALITY, STATE_XYZZY_INPUT, STATE_XYZZY_CONFIRM,
     STATE_THROW_MENU, STATE_QUIRKS, STATE_CHARACTER_SHEET,
-    STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_JUDGMENT, STATE_STUDY,
+    STATE_NPC_ENCOUNTER, STATE_COW_ENCOUNTER, STATE_EMBERPUP, STATE_JUDGMENT, STATE_STUDY,
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
@@ -1661,6 +1661,111 @@ class RenderMixin:
             max_h=390,
         )
 
+    def _draw_emberpup_encounter(self):
+        """The abandoned Emberpup's screen (emberpup_encounter.py): its
+        picture on the left, the phase's words or choices on the right.
+        Sized to what the phase holds and centred, like the NPC encounter."""
+        import emberpup_encounter as ep
+        d = ep.data()
+        pup = getattr(self, '_emberpup_npc', None)
+        phase = getattr(self, '_emberpup_phase', 'options')
+        border = FP.AMBER_ACCENT
+
+        draw_overlay(self.screen, 190)
+        kit = bool(panel_band('panel', pygame.Rect(0, 0, S(860), S(400))))
+        bw = min(S(860), layout.WINDOW_W - S(48))
+        b = S(16) if kit else 0
+        inner_w = bw - 2 * (b + S(28)) if kit else bw - 2 * S(30)
+        pic = lore_art.plate('monster', d['sprite_id'], S(192))
+        pic_w = (pic.get_width() + S(24)) if pic is not None else 0
+        text_w = inner_w - pic_w
+        font = get_font('body', 18)
+        line_h = font.get_height() + S(4)
+        row_h = S(50)
+        irow_h = S(44)          # a 28 px key badge: a shorter one let a tall letter poke out over the row edge
+
+        def text_h(paras):
+            n = sum(len(self._wrap_text(display_text(p), font, text_w)) for p in paras)
+            return n * line_h + max(0, len(paras) - 1) * S(10)
+
+        if phase == 'story':
+            paras = list(d['story'])
+            content_h = text_h(paras)
+        elif phase == 'options':
+            fed = getattr(pup, '_emberpup_fed', False)
+            paras = [d['waiting_fed'] if fed else d['waiting_unfed']]
+            content_h = text_h(paras) + S(14) + 4 * (row_h + S(8))
+        elif phase == 'select_food':
+            paras = [d['pick_food']]
+            content_h = text_h(paras) + S(12) + min(ep.FOOD_PAGE, len(self._emberpup_food)) * (irow_h + S(6))
+        else:
+            paras = [getattr(self, '_emberpup_text', '') or '']
+            content_h = text_h(paras)
+        content_h = max(content_h, pic.get_height() + S(8) if pic is not None else 0)
+        head_h = S(48)
+        foot_h = S(8) + key_hints_height() + S(32)
+        bh = 2 * b + head_h + S(18) + content_h + S(10) + foot_h
+        bh = max(S(240), min(bh, layout.WINDOW_H - S(48)))
+        bx = _centre_x(bw)
+        by = _centre_y(bh)
+        panel = pygame.Rect(bx, by, bw, bh)
+        draw_dark_panel(self.screen, panel, border_color=border)
+        if panel_band('panel', panel):
+            b = panel_band('panel', panel)
+            body_top = self._ui_header(panel, d['title'], border_color=border, h=48)
+            _div, _keys, foot_bottom = self._ui_footer_metrics(panel)
+            body_rect = pygame.Rect(bx + b + S(28), body_top + S(4),
+                                    bw - 2 * (b + S(28)), foot_bottom - body_top - S(4))
+        else:
+            draw_header_bar(self.screen, (bx, by, bw, S(44)),
+                            text=d['title'],
+                            font=get_font('heading', 20),
+                            text_color=FP.GOLD_BRIGHT,
+                            accent=border,
+                            frame=(panel, border))
+            draw_divider(self.screen, bx + S(20), by + S(54), bw - 2 * S(20))
+            body_rect = pygame.Rect(bx + S(30), by + S(72), bw - 2 * S(30), bh - S(124))
+
+        if pic is not None:
+            well = pygame.Rect(body_rect.x, body_rect.y, pic.get_width() + S(8),
+                               pic.get_height() + S(8))
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, well)
+            self.screen.blit(pic, (well.x + S(4), well.y + S(4)))
+            pygame.draw.rect(self.screen, border, well, 1)
+        tx = body_rect.x + pic_w
+        col = pygame.Rect(tx, body_rect.y, body_rect.right - tx, body_rect.h)
+
+        y = col.y
+        for i, p in enumerate(paras):
+            if i:
+                y += S(10)
+            y = self._ui_wrap_text(display_text(p), font, FP.PARCHMENT_LIGHT,
+                                   pygame.Rect(col.x, y, col.w, col.bottom - y), line_gap=4)
+
+        if phase == 'story':
+            self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
+        elif phase == 'options':
+            y += S(14)
+            for key, which in (('1', 'feed'), ('2', 'ignore'), ('3', 'attack'), ('4', 'choose')):
+                self._ui_action_row(pygame.Rect(col.x, y, col.w, row_h), key,
+                                    display_text(d['options'][which]), color=FP.PARCHMENT_LIGHT)
+                y += row_h + S(8)
+            self._ui_footer(panel, "1-4: choose   |   Esc: leave it be")
+        elif phase == 'select_food':
+            y += S(12)
+            food = self._emberpup_food
+            top = self._emberpup_food_scroll
+            list_rect = pygame.Rect(col.x, y, col.w - S(10), col.bottom - y)
+            for i, item in enumerate(food[top:top + ep.FOOD_PAGE]):
+                self._ui_action_row(pygame.Rect(list_rect.x, y, list_rect.w, irow_h),
+                                    chr(97 + i), self._display_name(item),
+                                    color=FP.PARCHMENT_LIGHT)
+                y += irow_h + S(6)
+            self._ui_scrollbar(list_rect, top, len(food), ep.FOOD_PAGE, color=border)
+            self._ui_footer(panel, "a-i: give   |   Up/Down: scroll   |   Esc: back")
+        else:
+            self._ui_footer(panel, "Enter / Space / Esc: continue")
+
     def _draw_npc_encounter(self):
         """Draw the NPC moral encounter overlay — multi-phase.
 
@@ -2033,6 +2138,8 @@ class RenderMixin:
             self._draw_npc_encounter()
         elif self.state == STATE_COW_ENCOUNTER:
             self._draw_cow_encounter()
+        elif self.state == STATE_EMBERPUP:
+            self._draw_emberpup_encounter()
         elif self.state == STATE_JUDGMENT:
             self._draw_judgment()
 
@@ -6500,14 +6607,16 @@ class RenderMixin:
         )
 
     def _draw_pet_name_popup(self):
-        """Overlay shown when a Soul Sphere hatches. Lets the player type a nickname."""
+        """Overlay shown when a new pet joins (a Soul Sphere hatches, or the
+        abandoned Emberpup comes along). Lets the player type a nickname."""
         pet = getattr(self, '_naming_pet', None)
         buf = getattr(self, '_pet_name_input_buffer', '')
         if pet is None:
             return
+        story = getattr(self, '_naming_story', None) or {}
         self._ui_input_card(
-            f"A {pet.species_name.upper()} APPEARS!",
-            "Will you give this companion a name?",
+            story.get('title') or f"A {pet.species_name.upper()} APPEARS!",
+            story.get('prompt') or "Will you give this companion a name?",
             buf,
             "Type: edit   |   Enter: confirm   |   Esc: skip naming",
             border_color=FP.GOLD,

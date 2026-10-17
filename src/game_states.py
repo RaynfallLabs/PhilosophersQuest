@@ -51,6 +51,7 @@ STATE_QUIRKS           = 'quirks'            # Quirks progress browser
 STATE_CHARACTER_SHEET  = 'character_sheet'   # Detailed character info
 STATE_NPC_ENCOUNTER    = 'npc_encounter'     # Moral choice encounter with NPC
 STATE_COW_ENCOUNTER    = 'cow_encounter'     # Secret cow dialog
+STATE_EMBERPUP         = 'emberpup'          # The abandoned Emberpup on its rock (emberpup_encounter.py)
 STATE_JUDGMENT         = 'judgment'          # Altar of Last Judgment result
 STATE_STUDY            = 'study'             # In-game missed question review
 STATE_PET_NAME_INPUT   = 'pet_name_input'    # Naming popup when a new pet hatches from a Soul Sphere
