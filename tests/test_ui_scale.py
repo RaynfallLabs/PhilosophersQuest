@@ -38,11 +38,17 @@ pytestmark = pytest.mark.usefixtures('ui_theme_isolated')
     ((1920, 1080), 1.25),
     ((2560, 1440), 1.5),
     ((3440, 1440), 1.5),          # Brandon's monitor: height-bound, like 2560x1440
-    ((1093, 614), 1.0),           # a small display at 125-150 % scaling
-    ((800, 600), 1.0),
     ((3840, 2160), 2.0),
     ((7680, 4320), 2.0),          # the cap
     ((1280, 1440), 1.0),          # tall and narrow: the width decides
+    # COMPACT, below the 1280x720 floor (bug bash 4, call 15): the scale
+    # follows the window down (rounded down to 1/16) to COMPACT_MIN.
+    ((1093, 614), 0.8125),        # a 1366x768 laptop at 125 % without DPI awareness
+    ((1080, 1920), 0.8125),       # a portrait monitor: its width decides
+    ((1366, 689), 0.9375),        # the same laptop, DPI aware, in its work area
+    ((1279, 720), 0.9375),
+    ((960, 540), 0.75),
+    ((800, 600), 0.75),           # the floor of the compact range
 ])
 def test_scale_for_window(size, expected):
     assert ui_scale.scale_for(*size) == expected
@@ -58,6 +64,31 @@ def test_scale_grows_smoothly_and_never_shrinks():
         assert s * 16 == int(s * 16)
         assert s - prev <= 1 / 16 + 1e-9 or prev == 0.0
         prev = s
+
+
+def test_compact_fonts_never_drop_below_the_text_floor():
+    """Below 1280x720 lengths shrink with the window but no font goes under
+    16 px (DESIGN_RULES 3), so compact text is never smaller than the
+    smallest text at 1280x720."""
+    layout.update(1093, 614)
+    assert ui_scale.get() == 0.8125 and ui_scale.is_compact()
+    assert ui_scale.px(1280) <= 1093 and ui_scale.px(720) <= 614
+    for size in (16, 17, 18, 20):
+        assert ui_scale.font_px(size) == 16
+    assert ui_scale.font_px(26) == 21 and ui_scale.font_px(42) == 34
+    assert ui_scale.font_px(12) == 12          # a size already under the floor is kept
+    assert fantasy_ui.get_font('body', 16).get_height() ==         fantasy_ui._make_font('body', 16, False).get_height()
+    layout.update(1280, 720)
+    assert not ui_scale.is_compact()
+
+
+def test_compact_rails_keep_most_of_their_width():
+    """The rails' text stays at the floor, so they keep RAIL_MIN of their
+    width in compact; the map takes the difference."""
+    layout.update(1093, 614)
+    assert (layout.LEFT_SIDEBAR_W, layout.SIDEBAR_W) == (223, 297)
+    assert layout.MSG_H == 163
+    assert layout.MAP_W == 1093 - 223 - 297
 
 
 def test_px_is_the_identity_at_scale_one():

@@ -54,7 +54,7 @@ from game_states import (
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT,
+    STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG,
 )
 
 
@@ -140,6 +140,16 @@ def _centre_x(w: int) -> int:
 
 def _centre_y(h: int) -> int:
     return (layout.WINDOW_H - h) // 2
+
+
+def _modal_budget_w() -> int:
+    """The width a modal may use: the play area left of the right rail
+    (``GAME_W``), as it always was -- except in a COMPACT window (below
+    1280x720, bug bash 4 call 15), where the text cannot shrink with the
+    window and every modal may use the whole window width (they centre on
+    the window and dim both rails anyway)."""
+    import ui_scale
+    return layout.WINDOW_W if ui_scale.is_compact() else layout.GAME_W
 
 
 def _kit_option_card(screen, title, options, footer, *, lines=(), border=FP.GOLD,
@@ -539,8 +549,13 @@ class RenderMixin:
                                          rect.centery - pct_s.get_height() // 2))
                 bar = pygame.Rect(rect.right - S(24) - pct_s.get_width() - S(100),
                                   rect.centery - S(5), S(100), S(10))
-                self._ui_progress_bar(bar, pct, color=FP.ARCANE_BRIGHT)
                 room = bar.x - rect.x - S(22)
+                if name_f.size(name)[0] > room and get_font('body', 16, bold=True).size(name)[0] > room:
+                    # A narrow list (compact window): the name keeps its
+                    # room and the bar goes; the percentage still shows.
+                    room = rect.w - S(36) - pct_s.get_width()
+                else:
+                    self._ui_progress_bar(bar, pct, color=FP.ARCANE_BRIGHT)
             nf, text = self._fit_line(name, room, (17, 16))
             self._ui_blit_text(text, nf, name_col, rect.x + S(10), ty)
             y += row_h
@@ -699,7 +714,11 @@ class RenderMixin:
             track = pygame.Rect(x + S(36), y + S(6), max(S(20), w - S(102)), S(9))
             ratio = max(0.0, min(1.0, value / max(1, max_value)))
             if kit:
-                track = pygame.Rect(x + S(36), y + S(3), max(S(20), w - S(102)), S(14))
+                # The value's own width is kept clear (a fixed 94 px let
+                # "210/210" run over the panel edge on a wide sheet).
+                val_w = font_body.size(f"{value}/{max_value}")[0] + S(8)
+                track = pygame.Rect(x + S(36), y + S(3),
+                                    max(S(20), min(w - S(102), w - S(36) - val_w)), S(14))
                 ui_theme.draw_piece(screen, 'bar_track', track)
                 inner = track.inflate(-S(4), -S(4))
                 if ratio:
@@ -898,6 +917,24 @@ class RenderMixin:
         loadout_rect = pygame.Rect(profile_rect.right + gap, top, loadout_w, content_h)
         pack_rect = pygame.Rect(loadout_rect.right + gap, top, pack_w, content_h)
         detail_rect = pygame.Rect(pack_rect.right + gap, top, detail_w, content_h)
+        if layout.WINDOW_H > layout.WINDOW_W * 1.2:
+            # PORTRAIT (bug bash 4, call 19): four full-height columns left
+            # each one a narrow strip with most of it empty. Two rows of two:
+            # Character and Loadout over Pack and the Item Card.
+            inner_w = sheet_w - margin * 2
+            col_w = (inner_w - gap) // 2
+            # As tall as the loadout list needs (one row per slot), at most half.
+            _lh = get_font('body', 16).get_height()
+            _need = (S(30) + S(28) + len(self._charsheet_loadout_entries())
+                     * (_lh + S(8) + S(3)))
+            top_h = min((content_h - gap) // 2, _need)
+            low_y = top + top_h + gap
+            low_h = bottom - low_y
+            x0 = sheet_x + margin
+            profile_rect = pygame.Rect(x0, top, col_w, top_h)
+            loadout_rect = pygame.Rect(x0 + col_w + gap, top, inner_w - col_w - gap, top_h)
+            pack_rect = pygame.Rect(x0, low_y, col_w, low_h)
+            detail_rect = pygame.Rect(x0 + col_w + gap, low_y, inner_w - col_w - gap, low_h)
 
         if kit:
             self._charsheet_kit_panels(
@@ -1064,6 +1101,11 @@ class RenderMixin:
             ("4 Lore", "lore", FP.MP_BLUE_TEXT),
         ]
         tab_w = (body.w - S(18)) // 4
+        _tf = get_font('body', 16, bold=True)
+        if any(_tf.size(lab)[0] > tab_w - S(10) for lab, _k, _c in tab_labels):
+            # A narrow pack (compact window): the words alone; the footer's
+            # "1-4/Tab Filter" still names the keys.
+            tab_labels = [(lab.split(' ', 1)[1], k, c) for lab, k, c in tab_labels]
         y = body.y
         for idx, (label, key, col) in enumerate(tab_labels):
             r = pygame.Rect(body.x + idx * (tab_w + S(6)), y, tab_w, S(28))
@@ -1097,6 +1139,8 @@ class RenderMixin:
                 meta = "  ".join(parts)
             if f16.size(meta)[0] > name_w and len(parts) > 2:
                 meta = "  ".join(parts[:2])      # the Item Card says the rest
+            if f16.size(meta)[0] > name_w:
+                meta = parts[0]                  # a narrow pack: the kind; the card has the weight
             metas.append((self._wrap_text(display_item(item), f16b, name_w) or [''], meta))
         two = any(len(n) > 1 for n, _m in metas)
         # Text block + 8 px above and below it inside the row, + the 6 px
@@ -1925,6 +1969,8 @@ class RenderMixin:
             self._draw_pet_specials_submenu()
         elif self.state == STATE_QA_WARP_INPUT:
             self._draw_qa_warp_popup()
+        elif self.state == STATE_MESSAGE_LOG:
+            self._draw_message_log()
         elif self.state == STATE_COOK_MENU:
             self._draw_cook_menu()
         elif self.state == STATE_EAT_MENU:
@@ -2260,7 +2306,21 @@ class RenderMixin:
         from fantasy_ui import key_hint_fonts, _hints_width
         kf, lf = key_hint_fonts(16)
         keys_w = _hints_width(keys, kf, lf, S(20), S(7), S(8))
-        w = min(layout.MAP_W - 2 * S(8), ss.get_width() + S(24) + keys_w + 2 * pad)
+        room = layout.MAP_W - 2 * S(8)
+        if ss.get_width() + S(24) + keys_w + 2 * pad > room:
+            # A narrow map (compact window, portrait monitor): the keys go on
+            # a second line under the status instead of shrinking or being cut.
+            w = min(room, max(ss.get_width(), keys_w) + 2 * pad)
+            h = ss.get_height() + S(6) + kh + 2 * pad
+            rect = pygame.Rect(layout.MAP_X + (layout.MAP_W - w) // 2,
+                               layout.GAME_H - h - S(10), w, h)
+            self.screen.fill(KT.PLAQUE, rect)
+            pygame.draw.rect(self.screen, KT.GOLD_DARK, rect, 1)
+            self.screen.blit(ss, (rect.centerx - ss.get_width() // 2, rect.y + pad))
+            draw_key_hints(self.screen, pygame.Rect(rect.x + pad, rect.bottom - pad - kh,
+                                                    rect.w - 2 * pad, kh), keys)
+            return
+        w = min(room, ss.get_width() + S(24) + keys_w + 2 * pad)
         h = max(ss.get_height(), kh) + 2 * pad
         rect = pygame.Rect(layout.MAP_X + (layout.MAP_W - w) // 2,
                            layout.GAME_H - h - S(10), w, h)
@@ -3049,7 +3109,7 @@ class RenderMixin:
         clock_note = self._quiz_context_clock_note()
         # Sized to the blurb (it left a large empty area under the text).
         max_w = 1000
-        bw = min(S(max_w), layout.GAME_W - S(48))
+        bw = min(S(max_w), _modal_budget_w() - S(48))
         probe = self._ui_modal_body(pygame.Rect(0, 0, bw, 1000), side=24, top=72, bottom=56)
         reader_w = probe.w - 2 * S(12)
         n = len(self._ui_text_lines(blurb, body_font, reader_w - S(12)))
@@ -4102,7 +4162,7 @@ class RenderMixin:
                                 tabs, active_tab, tab_counts, scroll_attr):
         """``_draw_decision_menu`` in the Midnight Codex kit."""
         draw_overlay(self.screen, 190)
-        bw = min(S(1240), layout.GAME_W - S(32))
+        bw = min(S(1240), _modal_budget_w() - S(32))
         bh = min(S(720), layout.WINDOW_H - S(32))
         panel = pygame.Rect(_centre_x(bw), _centre_y(bh), bw, bh)
         draw_dark_panel(self.screen, panel, border_color=border)
@@ -4340,7 +4400,7 @@ class RenderMixin:
         draw_overlay(self.screen, 190)
         # Caps grow with the UI scale; the width budget is the play area
         # left of the right rail; the panel centres on the window.
-        bw = min(S(1240), layout.GAME_W - S(32))
+        bw = min(S(1240), _modal_budget_w() - S(32))
         bh = min(S(720), layout.WINDOW_H - S(32))
         bx = _centre_x(bw)
         by = _centre_y(bh)
@@ -4464,7 +4524,7 @@ class RenderMixin:
                 border=border, subtitle=subtitle, tabs=tabs,
                 active_tab=active_tab, tab_counts=tab_counts)
         draw_overlay(self.screen, 95)
-        bw = min(S(1180), layout.GAME_W - S(80))
+        bw = min(S(1180), _modal_budget_w() - S(80))
         cols = 2 if bw >= S(900) and len(entries) > 3 else 1
         max_rows_visible = 4 if cols == 2 else 6
         needed_rows = (max(1, len(entries)) + cols - 1) // cols
@@ -4898,8 +4958,17 @@ class RenderMixin:
         body = self._ui_modal_body(panel)
         tab_y = body.y
         x = body.x
+        # Each tab is as wide as its label needs (bold, as when active), at
+        # least the old 128 / 154 px while the row has room: a fixed width
+        # cut "Accessories" to "Accesso..." in a compact window.
+        tab_f = get_font('body', 16, bold=True)
+        needs = [tab_f.size(lab)[0] + S(16) for lab, _s in self._KIT_TABS]
+        wants = [max(n, S(154) if lab == 'Consumables' else S(128))
+                 for n, (lab, _s) in zip(needs, self._KIT_TABS)]
+        room = body.w - S(8) * (len(wants) - 1)
+        widths = wants if sum(wants) <= room else needs
         for idx, (label, _slug) in enumerate(self._KIT_TABS):
-            width = S(154) if label == 'Consumables' else S(128)
+            width = widths[idx]
             rect = pygame.Rect(x, tab_y, width, S(28))
             self._ui_chip(rect, label, active=(idx == active), color=FP.GOLD)
             x += width + S(8)
@@ -7071,7 +7140,7 @@ class RenderMixin:
         budget is the play area left of the right rail (``GAME_W``), as it
         always was, or the whole window with ``center_window``."""
         draw_overlay(self.screen, 190)
-        budget_w = layout.WINDOW_W if center_window else layout.GAME_W
+        budget_w = layout.WINDOW_W if center_window else _modal_budget_w()
         bw = min(S(max_w), budget_w - S(48))
         bh = min(S(max_h), layout.WINDOW_H - S(48))
         if fit_h is not None:
@@ -7372,7 +7441,7 @@ class RenderMixin:
         draw_overlay(self.screen, 190)
         kit = kit_on()
         band = S(16) if kit else 0
-        bw = min(S(max_w), layout.GAME_W - S(48))
+        bw = min(S(max_w), _modal_budget_w() - S(48))
         bh = S(238) + (2 * band + S(30) if kit else 0)
         bx = _centre_x(bw)
         by = _centre_y(bh)
@@ -7908,7 +7977,7 @@ class RenderMixin:
         lore_text = display_text(lore_text)
 
         max_w = 1240
-        bw = min(S(max_w), layout.GAME_W - S(48))
+        bw = min(S(max_w), _modal_budget_w() - S(48))
         probe = self._ui_modal_body(pygame.Rect(0, 0, bw, 1000))
         gutter = S(14)
         # The lore is the longest text: it gets the widest pane.
@@ -8697,6 +8766,42 @@ class RenderMixin:
             surf = font.render(line, True, color)
             self.screen.blit(surf, (x0 + pad, y0 + pad + i * lh))
 
+    def _draw_message_log(self):
+        """L: the message history (bug bash 4, call 16). Every line the log
+        still holds (``MessageLog.MAX``), oldest at the top, in the log's
+        own colours, opened at the newest line and scrolled with the keys."""
+        from ui import log_line_color
+        panel = self._ui_modal_panel("MESSAGE HISTORY", border_color=FP.GOLD,
+                                     max_w=1100, max_h=760)
+        body = self._ui_modal_body(panel, side=24, top=72, bottom=56)
+        entries = list(self.msg_log.entries)
+        reader = self._ui_subpanel(body, f"{len(entries)} Messages, Newest Last")
+        font = get_font('body', 18)
+        # Wrapped once per (log contents, font, width): up to 500 entries
+        # must not be re-wrapped every frame.
+        key = (len(entries), entries[-1] if entries else None, entries[0] if entries else None,
+               font, reader.w)
+        cached = getattr(self, '_message_log_cache', None)
+        if cached is not None and cached[0] == key:
+            lines = cached[1]
+        else:
+            lines = []
+            for text, kind in entries:
+                col = log_line_color(kind, 0)
+                for i, ln in enumerate(self._ui_text_lines(display_text(text), font,
+                                                           reader.w - S(24))):
+                    lines.append((ln if i == 0 else "  " + ln, col, font))
+            self._message_log_cache = (key, lines)
+        if not lines:
+            lines = [("Nothing has happened yet.", FP.FADED_TEXT, font)]
+        line_h = font.get_height() + S(4)
+        self._message_log_page = max(1, reader.h // line_h)
+        self._message_log_scroll = self._ui_draw_scroll_lines(
+            lines, font, FP.BODY_TEXT, reader,
+            getattr(self, '_message_log_scroll', 10 ** 6), line_gap=4)
+        self._ui_footer(panel, "Up/Down: scroll   PgUp/PgDn: page   "
+                               "Home/End: oldest/newest   L / ESC: close")
+
     def _draw_help_screen(self):
         # Pure keybind reference. Every listing maps to a real action in
         # game_input.py — do not add prose cards or parenthetical commentary.
@@ -8732,6 +8837,7 @@ class RenderMixin:
                 ("W", "Quirks progress", FP.BODY_TEXT),
                 (";", "Study journal", FP.BODY_TEXT),
                 ("N", "Recall lore", FP.BODY_TEXT),
+                ("L", "Message history", FP.BODY_TEXT),
             ]),
             ("World", [
                 ("G / ,", "Pick up item", FP.BODY_TEXT),

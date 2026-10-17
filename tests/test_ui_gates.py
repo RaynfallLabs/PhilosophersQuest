@@ -211,11 +211,22 @@ def min_records():
 # layout gates also run at 1920x1080 (scale 1.25) and 3440x1440 (Brandon's
 # monitor, scale 1.5), with the centring and text-size checks in (e).
 SCALED_SIZES = [(1920, 1080), (3440, 1440)]
+# Bug bash 4, calls 15 and 19: 1280x720 is the supported floor; below it the
+# COMPACT layout (UI scale under 1.0, text floored at 16 px) must not break a
+# screen at 1093x614 (a 1366x768 laptop at 125 %), and a portrait monitor
+# (1080x1920) gets the stacked title screen. Every layout, contrast, size,
+# clip, ellipsis, centring and title-wheel gate runs at both.
+SMALL_SIZES = [(1093, 614), (1080, 1920)]
 
 
 @pytest.fixture(scope='module')
 def scaled_records():
     return {size: _render_all(size) for size in SCALED_SIZES}
+
+
+@pytest.fixture(scope='module')
+def small_records():
+    return {size: _render_all(size) for size in SMALL_SIZES}
 
 
 # =============================================================================
@@ -451,18 +462,19 @@ def test_every_screen_renders_within_the_frame_budget():
 # (b, c) at the scaled sizes
 # =============================================================================
 
-@pytest.mark.parametrize('size', SCALED_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
-def test_text_contrast_at_scaled_sizes(scaled_records, size):
-    failures, measured_quiz = _contrast_failures(scaled_records[size], size=size)
+@pytest.mark.parametrize('size', SCALED_SIZES + SMALL_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+def test_text_contrast_at_scaled_sizes(scaled_records, small_records, size):
+    recs = {**scaled_records, **small_records}[size]
+    failures, measured_quiz = _contrast_failures(recs, size=size)
     assert not failures, f"Text below its contrast floor at {size}:\n" + "\n".join(failures)
-    quiz = [n for n in scaled_records[size]
+    quiz = [n for n in recs
             if n.startswith('quiz_') and n != 'quiz_context_modal']
     assert not [n for n in quiz if n not in measured_quiz]
 
 
-@pytest.mark.parametrize('size', SCALED_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
-def test_layout_at_scaled_sizes(scaled_records, size):
-    recs = scaled_records[size]
+@pytest.mark.parametrize('size', SCALED_SIZES + SMALL_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+def test_layout_at_scaled_sizes(scaled_records, small_records, size):
+    recs = {**scaled_records, **small_records}[size]
     bad = [f"outside window: {n}: {t[:40]!r} at {tuple(r)}"
            for n, rec in recs.items() for r, t in rec.outside_window]
     bad += [f"over panel edge: {n}: {t[:40]!r} ink {tuple(r)} panel {tuple(p)}"
@@ -519,13 +531,15 @@ def _centring_errors(recs):
     return bad
 
 
-def test_every_modal_is_centred_on_the_window(min_records, scaled_records):
+def test_every_modal_is_centred_on_the_window(min_records, scaled_records, small_records):
     """Every modal and menu centres on the WINDOW (not on the play area left
     of the right rail) at 1280x720, 1920x1080 and 3440x1440; the panel
     rects come from the capture harness's own record of what was drawn."""
     bad = _centring_errors(min_records)
     for size in SCALED_SIZES:
         bad += _centring_errors(scaled_records[size])
+    for size in SMALL_SIZES:
+        bad += _centring_errors(small_records[size])
     assert not bad, "Off-centre modals:\n" + "\n".join(bad)
     checked = sum(1 for _ in _modal_records(min_records))
     assert checked >= 50, f"only {checked} modal screens were checked"
@@ -553,10 +567,12 @@ def test_text_is_never_smaller_than_at_the_minimum_window(min_records, scaled_re
 #     and 3440x1440.
 # =============================================================================
 
-def _all_records(min_records, scaled_records):
+def _all_records(min_records, scaled_records, small_records=None):
     yield MIN_SIZE, min_records
     for size in SCALED_SIZES:
         yield size, scaled_records[size]
+    for size in (SMALL_SIZES if small_records else ()):
+        yield size, small_records[size]
 
 
 def _readable(text):
@@ -564,8 +580,10 @@ def _readable(text):
 
 
 def _floor_px(size, base=16):
+    """The text floor at ``size``: 16 px at UI scale 1, growing with the
+    scale; in COMPACT (scale under 1) it stays 16 px (ui_scale.TEXT_FLOOR)."""
     import ui_scale
-    return max(1, int(base * ui_scale.scale_for(*size) + 0.5))
+    return max(base, int(base * ui_scale.scale_for(*size) + 0.5))
 
 
 # Text that is not for reading at a glance, by design: the developer-only
@@ -573,14 +591,14 @@ def _floor_px(size, base=16):
 SMALL_TEXT_SCREENS = ('play_debug_overlay',)
 
 
-def test_no_text_below_the_16px_floor(min_records, scaled_records):
+def test_no_text_below_the_16px_floor(min_records, scaled_records, small_records):
     """DESIGN_RULES 3: hints, footers and labels are 16 px at UI scale 1 at
     the least (the review found 11-13 px on the kit table, quirks, the
     score tables and the character-sheet slot labels). Every text blit on
     every screen, all layers, at its window's UI scale."""
     bad = []
     measured = 0
-    for size, recs in _all_records(min_records, scaled_records):
+    for size, recs in _all_records(min_records, scaled_records, small_records):
         floor = _floor_px(size)
         for name, rec in recs.items():
             if name.startswith(SMALL_TEXT_SCREENS):
@@ -596,14 +614,14 @@ def test_no_text_below_the_16px_floor(min_records, scaled_records):
     assert not bad, f"{len(bad)} text blits under the floor:\n" + "\n".join(sorted(set(bad))[:120])
 
 
-def test_no_ascii_dashes_or_web_addresses_on_screen(min_records, scaled_records):
+def test_no_ascii_dashes_or_web_addresses_on_screen(min_records, scaled_records, small_records):
     """Raw strings in a kit world (review minor 8): an ASCII double hyphen
     is set as a typographic dash ("Prayer -- Lord" becomes "Prayer — Lord"),
     and no research link ever reaches the screen (study results showed
     "Source: https://en.wikipedia.org/...")."""
     import re
     bad = []
-    for size, recs in _all_records(min_records, scaled_records):
+    for size, recs in _all_records(min_records, scaled_records, small_records):
         for name, rec in recs.items():
             for _r, text, _info in rec.all_text:
                 if re.search(r'(?<!-)--(?!-)', text) or re.search(
@@ -612,12 +630,12 @@ def test_no_ascii_dashes_or_web_addresses_on_screen(min_records, scaled_records)
     assert not bad, "\n".join(sorted(set(bad)))
 
 
-def test_no_text_is_cut_by_its_clip(min_records, scaled_records):
+def test_no_text_is_cut_by_its_clip(min_records, scaled_records, small_records):
     """Clipped text hides meaning (review must-fix 3: "5d6 fire damag",
     "Total answered: 9 (4"). A line drawn into a clip that cuts its glyphs
     sideways must wrap or be re-laid out instead."""
     bad = []
-    for size, recs in _all_records(min_records, scaled_records):
+    for size, recs in _all_records(min_records, scaled_records, small_records):
         for name, rec in recs.items():
             for _r, text, info in rec.all_text:
                 ink, clip = info['ink'], info['clip']
@@ -643,10 +661,10 @@ ALLOWED_ELLIPSIS = {
 }
 
 
-def test_no_ellipsis_hides_meaning(min_records, scaled_records):
+def test_no_ellipsis_hides_meaning(min_records, scaled_records, small_records):
     bad = []
     used = set()
-    for size, recs in _all_records(min_records, scaled_records):
+    for size, recs in _all_records(min_records, scaled_records, small_records):
         for name, rec in recs.items():
             for _r, text, _info in rec.all_text:
                 t = text.rstrip()
@@ -662,11 +680,11 @@ def test_no_ellipsis_hides_meaning(min_records, scaled_records):
     assert not stale, f"ellipsis allowances that no longer occur (delete them): {stale}"
 
 
-def test_every_menu_icon_is_item_art(min_records, scaled_records):
+def test_every_menu_icon_is_item_art(min_records, scaled_records, small_records):
     """Item art is the item (Brandon's rule): no menu row may draw a letter
     glyph because no sprite resolved."""
     bad = [f"{name} @ {size[0]}x{size[1]}: {sorted(set(rec.glyph_icons))}"
-           for size, recs in _all_records(min_records, scaled_records)
+           for size, recs in _all_records(min_records, scaled_records, small_records)
            for name, rec in recs.items() if rec.glyph_icons]
     assert not bad, "\n".join(bad)
 
@@ -700,7 +718,8 @@ def test_capture_reaches_its_screen(scene, plain):
     assert _pixels(scene, MIN_SIZE) != _pixels(plain, MIN_SIZE)
 
 
-@pytest.mark.parametrize('size', [MIN_SIZE] + SCALED_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")
+@pytest.mark.parametrize('size', [MIN_SIZE] + SCALED_SIZES + SMALL_SIZES,
+                         ids=lambda z: f"{z[0]}x{z[1]}")
 def test_title_wheel_captions_never_collide(size):
     """Review must-fix 6: at 1280x720 the subject captions collided and the
     orbit lines ran through them. Every tile and caption plaque is clear of
@@ -730,7 +749,7 @@ def test_title_wheel_captions_never_collide(size):
 # (f) no list row under a footer divider (VISUAL_REVIEW_2 must-fix 1)
 # =============================================================================
 
-ALL_SIZES = [MIN_SIZE, (1920, 1080), (2560, 1440), (3440, 1440)]
+ALL_SIZES = [MIN_SIZE, (1920, 1080), (2560, 1440), (3440, 1440)] + SMALL_SIZES
 
 
 def _rows_and_dividers(names, size):
@@ -791,7 +810,9 @@ def test_no_list_row_touches_a_divider(size):
                 if r.colliderect(d):
                     bad.append(f"{name}: row {tuple(r)} overlaps divider {tuple(d)}")
     assert not bad, "\n".join(bad)
-    md = int(12 * ui_scale.get() + 0.5)
+    # The md step at THIS size's scale (the harness puts the scale back after
+    # drawing, so ui_scale.get() is not the scale the screens were drawn at).
+    md = int(12 * ui_scale.scale_for(*size) + 0.5)
     gaps = {}
     for name in PICKER_SCENES:
         rows, divs = got[name]

@@ -12,6 +12,17 @@ from hud_context import active_power_rows, visible_context_rows
 # (_genart/ui/SCALE_PLAN.md).
 LEFT_SIDEBAR_W = 248
 SIDEBAR_W = 330
+# The rails' smallest share of their width in compact (below 1280x720): their
+# text stays at the 16 px floor, so they cannot shrink as fast as the window.
+RAIL_MIN = 0.9
+
+def _rail_w(base: int) -> int:
+    """A rail's width on screen: ``px(base)``, but in compact (below
+    1280x720) never under ``layout.RAIL_MIN`` of ``base`` -- the same rule
+    as ``layout.LEFT_SIDEBAR_W`` / ``SIDEBAR_W``."""
+    import ui_scale
+    return int(base * max(ui_scale.get(), RAIL_MIN) + 0.5)
+
 
 # Message-log tag colours: the design-rule ``log.*`` tokens
 # (DESIGN_RULES.md 2.1 / 2.2, KT.LOG). Each clears 8:1 on the log body.
@@ -80,7 +91,9 @@ _IC_COLOR = ITEM_COLOR
 
 
 class MessageLog:
-    MAX = 60
+    # Lines kept for the L history (bug bash 4 call 16; it was 60, about
+    # one fight). Only the visible lines are drawn each frame.
+    MAX = 500
     # Phase 3 (UI beautification 2026-10-04): line stride is derived from
     # font metrics so the log keeps up with font-size changes instead of
     # being pinned to a magic 26 px row. Spacing below is at UI scale 1 and
@@ -243,7 +256,7 @@ class Sidebar:
         self.left_x = 0
         self.right_x = x
         self.x = x
-        self.w = S(SIDEBAR_W)
+        self.w = _rail_w(SIDEBAR_W)
 
     def draw(self, player, dungeon_level: int, turn_count: int, gold: int = 0,
              *, player_name: str = "Adventurer", visible_monsters=(),
@@ -252,7 +265,7 @@ class Sidebar:
         h = self.screen.get_height()
         visible_tiles = visible_tiles or set()
 
-        self._set_pane(self.left_x, S(LEFT_SIDEBAR_W))
+        self._set_pane(self.left_x, _rail_w(LEFT_SIDEBAR_W))
         self._pane_bg(h, edge="right")
         y = self.PAD
         y = self._identity(player_name, dungeon_level, turn_count, y)
@@ -261,7 +274,7 @@ class Sidebar:
         y = self._derived(player, dungeon_level, gold, y)
         self._effects(player, y)
 
-        self._set_pane(self.right_x, S(SIDEBAR_W))
+        self._set_pane(self.right_x, _rail_w(SIDEBAR_W))
         self._pane_bg(h, edge="left")
         y = self.PAD
         y = self._powers(player, y, secret_build=secret_build,

@@ -17,7 +17,7 @@ need them.
 """
 import ui_scale
 from renderer import TILE_SIZE
-from ui import LEFT_SIDEBAR_W as LEFT_SIDEBAR_BASE, SIDEBAR_W as SIDEBAR_BASE
+from ui import LEFT_SIDEBAR_W as LEFT_SIDEBAR_BASE, SIDEBAR_W as SIDEBAR_BASE, RAIL_MIN
 
 VERSION    = "3.1.0"
 FPS        = 60
@@ -54,8 +54,12 @@ def _recompute(w: int, h: int) -> None:
     UI_SCALE   = ui_scale.get()
     WINDOW_W   = w
     WINDOW_H   = h
-    LEFT_SIDEBAR_W = ui_scale.px(LEFT_SIDEBAR_BASE)
-    SIDEBAR_W  = ui_scale.px(SIDEBAR_BASE)
+    # In compact (below 1280x720) the rails keep at least RAIL_MIN of their
+    # width: their text stays at the 16 px floor, so they cannot shrink as
+    # fast as the window; the map takes the difference.
+    rail = max(ui_scale.get(), RAIL_MIN)
+    LEFT_SIDEBAR_W = int(LEFT_SIDEBAR_BASE * rail + 0.5)
+    SIDEBAR_W  = int(SIDEBAR_BASE * rail + 0.5)
     MSG_H      = ui_scale.px(MSG_BASE)
     GAME_W     = WINDOW_W - SIDEBAR_W
     MAP_X      = LEFT_SIDEBAR_W

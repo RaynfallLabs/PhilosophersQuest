@@ -1200,6 +1200,7 @@ for _name, _key, _uni, _state, _desc, _iskey in (
     ('menu_encyclopedia', pygame.K_b, 'b', 'encyclopedia', 'B: encyclopedia.', False),
     ('menu_study_journal', pygame.K_SEMICOLON, ';', 'study', '; : study journal of missed questions.', False),
     ('menu_help', pygame.K_SLASH, '?', 'help', '? : help.', True),
+    ('menu_message_log', pygame.K_l, 'l', 'message_log', 'L: message history (scroll-back log).', True),
 ):
     def _mk(key=_key, uni=_uni):
         def _setup(g):

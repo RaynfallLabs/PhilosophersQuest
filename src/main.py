@@ -2855,6 +2855,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.has_effect('levitating') and self.dungeon.in_bounds(nx, ny)
             and self.dungeon.tiles[ny][nx] in (WATER, LAVA)
         ):
+            # Walking into your own pet swaps places with it, as in most
+            # roguelikes (it used to leave hero and pet on one tile). If the
+            # pet could not stand where you are (you are levitating over
+            # water or lava, phasing in a wall, or on a dug pit) you stop.
+            _ox, _oy = self.player.x, self.player.y
+            _swap_pet = next((p for p in self.pets
+                              if p.alive and p.x == nx and p.y == ny), None)
+            if _swap_pet is not None:
+                if (not self.dungeon.is_walkable(_ox, _oy)
+                        or (_ox, _oy) in getattr(self.dungeon, 'pits', set())):
+                    self.add_message(f"You stop. {_swap_pet.name} is in your way.", 'info')
+                    return
+                _swap_pet.x, _swap_pet.y = _ox, _oy
+                self.add_message(f"You swap places with {_swap_pet.name}.", 'info')
             self.player.x, self.player.y = nx, ny
             self._apply_aoo_disengage(_aoo_pre_adjacent)
             # Ice sliding: keep moving in the same direction until hitting non-ice
@@ -2873,6 +2887,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         break
                     if monster_at_tile(self.monsters, sx, sy) is not None:
                         break
+                    if any(p.alive and p.x == sx and p.y == sy for p in self.pets):
+                        break                   # never slide onto your pet
                     self.player.x, self.player.y = sx, sy
                     slide_count += 1
                     # Check traps on each intermediate tile
@@ -8413,17 +8429,32 @@ def _restore_saved_game(screen, player_name: str, state: dict):
 def main():
     from save_system import save_exists, load_game, save_game
 
+    # Windows DPI awareness BEFORE the display starts (bug bash 4, call 15):
+    # the game sees real pixels instead of being bitmap-stretched at 125-150 %.
+    import display_setup
+    display_setup.enable_dpi_awareness()
     pygame.init()
     _di = pygame.display.Info()
-    _start_w = min(layout.WINDOW_W, _di.current_w)
-    _start_h = min(layout.WINDOW_H, _di.current_h)
+    # The window, frame and all, fits the desktop WORK AREA (not over the
+    # taskbar), centred there: 1600x900 when it fits, else as big as fits.
+    (_start_w, _start_h), _pos, _room = display_setup.initial_window(
+        (layout.WINDOW_W, layout.WINDOW_H), (_di.current_w, _di.current_h))
+    if _pos is not None:
+        os.environ['SDL_VIDEO_WINDOW_POS'] = f"{_pos[0]},{_pos[1]}"
     layout.update(_start_w, _start_h)
     screen = pygame.display.set_mode((_start_w, _start_h), pygame.RESIZABLE)
-    # Below about 400x300 every panel computes a negative size and raises;
-    # below 1280x720 several screens run out of room. Hold the window there
-    # (or at the display's own size, on a smaller screen).
+    os.environ.pop('SDL_VIDEO_WINDOW_POS', None)
+    # 1280x720 is the supported floor; the window is held there unless the
+    # work area itself is smaller, where the COMPACT layout (ui_scale below
+    # 1.0) takes over. Below about 400x300 every panel would compute a
+    # negative size and raise.
     try:
-        pygame.display.set_window_minimum_size(min(1280, _di.current_w), min(720, _di.current_h))
+        pygame.display.set_window_minimum_size(min(1280, _room[0]), min(720, _room[1]))
+    except Exception:
+        pass
+    try:
+        from game_log import log_info
+        log_info(f"display: {display_setup.report(screen.get_size())}")
     except Exception:
         pass
     pygame.display.set_caption("Philosopher's Quest")
