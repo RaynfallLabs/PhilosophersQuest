@@ -41,6 +41,15 @@ def normalise(enc: dict, *, source: str) -> dict:
             enc['band'] = [int(enc['min_level']), int(enc['max_level'])]
         elif enc.get('block') in _BLOCK_FLOORS:
             enc['band'] = list(_BLOCK_FLOORS[enc['block']])
+    if enc.get('chain_after'):
+        # The old link ("place me whenever my opener is in the run, whatever
+        # the hero chose there") is gone: the opener's outcome schedules the
+        # follow-up instead. Old content still loads, as a follow-up nothing
+        # rolls; the validator reports it as an error.
+        import warnings
+        warnings.warn(f"{enc.get('tag')}: 'chain_after' is retired; schedule it from "
+                      "the opener's outcome", stacklevel=2)
+        enc['callback_only'] = True
     return enc
 
 

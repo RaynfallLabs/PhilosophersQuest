@@ -39,9 +39,16 @@ def test_normalise_defaults_cover_all_three_sources():
         assert len(e['band']) == 2
     hard = [e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == 'flv_wandering_merchant']
     assert hard, 'the hardcoded list is covered'
+    # Phase 2 re-staked three callback-only follow-ups to medium: each keeps
+    # or breaks an oath (P11). Stakes are never shown (P13).
+    medium = {'flv_relic_broker', 'flv_cuthbert_chapel', 'flv_watch_post'}
     for e in flavor_encounters.FLAVOR_ENCOUNTERS:
-        assert (e['role'], e['stakes']) == ('story', 'light')
+        want = 'medium' if e['tag'] in medium else 'light'
+        assert (e['role'], e['stakes']) == ('story', want), e['tag']
         assert e['band'] == [e['min_level'], e['max_level']]
+    for tag in medium:
+        assert next(e for e in flavor_encounters.FLAVOR_ENCOUNTERS
+                    if e['tag'] == tag)['callback_only']
 
 
 def test_cli_exits_clean():

@@ -5,6 +5,9 @@ encounter system in npc_encounters.py.
 
 Spawn rate: ~40% per floor, independent of karma NPCs.
 One-shot: each encounter can only be triggered once per run.
+Follow-ups (``callback_only``) are never rolled here: the deed that opens
+them schedules them (an outcome's ``schedule``; game_road.py). With the
+Road on (``karma_rules.json: road_enabled``) road.py replaces this roll.
 """
 import json
 import os
@@ -267,8 +270,12 @@ def select_flavor_encounters(level_count: int = 100) -> dict[int, dict]:
     for level in range(1, level_count + 1):
         if level in BOSS_LEVELS:
             continue  # no flavor NPCs on boss floors
+        # A callback-only encounter (a follow-up such as the Great Lion, the
+        # Relic Broker, Brother Sacristan's chapel or the Watch Post) is never
+        # rolled: a deed schedules it (an outcome's 'schedule', game_road.py).
         pool = [e for e in FLAVOR_ENCOUNTERS
-                if e['min_level'] <= level <= e['max_level']]
+                if e['min_level'] <= level <= e['max_level']
+                and not e.get('callback_only')]
         if pool:
             eligible_by_level[level] = pool
 
@@ -286,28 +293,6 @@ def select_flavor_encounters(level_count: int = 100) -> dict[int, dict]:
         enc = random.choice(pool)
         selected[level] = enc
         used_tags.add(enc['tag'])
-
-    # Linked encounters: 'chain_after' names the tag of the encounter that
-    # opens the chain. Place a follow-up if and only if its opener is in the
-    # run, always on a deeper floor. FLAVOR_ENCOUNTERS order = chain order.
-    placed = {e['tag']: lv for lv, e in selected.items()}
-    for enc in FLAVOR_ENCOUNTERS:
-        opener = enc.get('chain_after')
-        if not opener:
-            continue
-        if enc['tag'] in placed:                      # undo the random roll
-            del selected[placed.pop(enc['tag'])]
-        if opener not in placed:
-            continue
-        floors = [lv for lv in range(max(enc['min_level'], placed[opener] + 1),
-                                     enc['max_level'] + 1) if lv not in BOSS_LEVELS]
-        free = [lv for lv in floors if lv not in selected] or floors
-        if free:
-            lv = random.choice(free)
-            if lv in selected:                        # evict a stand-alone
-                placed.pop(selected[lv]['tag'], None)
-            selected[lv] = enc
-            placed[enc['tag']] = lv
 
     # Gold costs and rewards at today's scale (economy.py), once, here.
     import economy

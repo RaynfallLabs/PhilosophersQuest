@@ -64,6 +64,13 @@ REWARD_TYPES = {
 STAT_NAMES = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
 ROAD_BANNED = ('karma', 'quiz', 'option', 'choose', 'press', 'light', 'medium', 'high',
                'stakes')
+CALLBACK_KEYS = {'encounter', 'after_floors', 'requires', 'replace', 'if_missed', 'thread',
+                 'lost_line'}
+DELAYED_KEYS = {'after_floors', 'reward', 'requires', 'text', 'chronicle'}
+ESCORT_KEYS = {'id', 'name', 'sprite_id', 'color', 'hp', 'ac', 'goal', 'leash', 'floors',
+               'perk', 'on_arrive', 'on_fail', 'on_arrive_variants', 'on_fail_variants',
+               'on_fail_trapdoor', '$ref'}
+ESCORT_PERKS = (None, 'reveal_traps', 'light')
 
 
 @dataclass(frozen=True)
@@ -224,6 +231,11 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
     for k in enc:
         if k not in ENC_KEYS and not k.startswith('_'):
             err('unknown_key', f'encounter key {k!r}')
+    if enc.get('chain_after'):
+        err('chain_after', "'chain_after' is retired: schedule the follow-up from the "
+                           "opener's outcome (DEEDS_KARMA_DESIGN 4.7)")
+    for key, spec in (enc.get('escorts') or {}).items():
+        _check_escort(err, f'escorts.{key}', spec)
     if enc.get('role') not in ROLES:
         err('field', f"role {enc.get('role')!r}")
     stakes = enc.get('stakes')
@@ -317,6 +329,16 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                     err('chronicle_lint', f"{where}: {', '.join(bad)}")
             if b.get('then') not in (None, 'close', 'options'):
                 err('field', f"{where}: then {b.get('then')!r}")
+            for cb in b.get('schedule') or ():
+                _check_callback(err, where, cb, cond_ok)
+            for dl in b.get('delayed') or ():
+                _check_delayed(err, where, dl, cond_ok)
+            esc = b.get('escort')
+            if esc is not None and not (isinstance(esc, dict) and '$ref' in esc):
+                _check_escort(err, where, esc)
+            fight = b.get('fight')
+            if fight is not None and not (isinstance(fight, dict) and fight.get('monster_id')):
+                err('field', f'{where}: fight needs a monster_id')
         if o.get('road') is not None:
             bad = _road_lint(o['road'], o.get('label', ''))
             if bad:
@@ -455,6 +477,71 @@ def _has_consequence(o: dict) -> bool:
     return False
 
 
+def _check_callback(err, where, cb, cond_ok):
+    if not isinstance(cb, dict) or not cb.get('encounter'):
+        err('schedule', f'{where}: a callback names its encounter')
+        return
+    for k in cb:
+        if k not in CALLBACK_KEYS:
+            err('unknown_key', f'{where}: schedule key {k!r}')
+    span = cb.get('after_floors')
+    if not (isinstance(span, list) and len(span) == 2 and all(isinstance(x, int) for x in span)
+            and 1 <= span[0] <= span[1]):
+        err('schedule', f'{where}: after_floors must be [min, max] with 1 <= min <= max')
+    if cb.get('replace', 'light') != 'light':
+        err('schedule', f"{where}: a callback only ever replaces a light slot")
+    if cb.get('if_missed', 'carry') not in ('carry', 'drop'):
+        err('schedule', f"{where}: if_missed {cb.get('if_missed')!r}")
+    cond_ok(cb.get('requires'), f'{where} schedule')
+
+
+def _check_delayed(err, where, dl, cond_ok):
+    if not isinstance(dl, dict) or not isinstance(dl.get('reward'), dict):
+        err('delayed', f'{where}: a delayed entry needs a reward')
+        return
+    for k in dl:
+        if k not in DELAYED_KEYS:
+            err('unknown_key', f'{where}: delayed key {k!r}')
+    if 'karma' in dl:
+        err('delayed', f'{where}: delayed rewards never carry karma (P5)')
+    span = dl.get('after_floors')
+    if not (isinstance(span, list) and len(span) == 2 and 1 <= int(span[0]) <= int(span[1])):
+        err('delayed', f'{where}: after_floors must be [min, max]')
+    _check_reward(err, where, dl['reward'])
+    if dl.get('chronicle'):
+        bad = _chron_lint(dl['chronicle'])
+        if bad:
+            err('chronicle_lint', f"{where} delayed: {', '.join(bad)}")
+    cond_ok(dl.get('requires'), f'{where} delayed')
+
+
+def _check_escort(err, where, esc):
+    if not isinstance(esc, dict):
+        err('escort', f'{where}: escort must be an object')
+        return
+    for k in esc:
+        if k not in ESCORT_KEYS:
+            err('unknown_key', f'{where}: escort key {k!r}')
+    if not esc.get('id') or not re.fullmatch(r'[a-z0-9_]+', str(esc.get('id'))):
+        err('escort', f'{where}: escort id must be [a-z0-9_]+')
+    if not isinstance(esc.get('hp'), int) or esc['hp'] < 1:
+        err('escort', f'{where}: escort hp is a fixed number (LORE NOT FLOOR)')
+    goal = esc.get('goal', 'stairs_down')
+    if goal != 'stairs_down' and not str(goal).startswith('tile:'):
+        err('escort', f'{where}: goal {goal!r}')
+    if esc.get('perk') not in ESCORT_PERKS:
+        err('escort', f"{where}: perk {esc.get('perk')!r}")
+    for key in ('on_arrive', 'on_fail'):
+        o = esc.get(key)
+        if o is not None and isinstance(o, dict):
+            if int(o.get('karma', 0) or 0):
+                err('escort', f'{where}: an escort never carries karma by itself')
+            if o.get('chronicle'):
+                bad = _chron_lint(o['chronicle'])
+                if bad:
+                    err('chronicle_lint', f"{where} {key}: {', '.join(bad)}")
+
+
 def _check_forgo(err, where, o, opts, table):
     mine = option_value(o, table)
     if not any(option_value(s, table) > mine for s in opts if s is not o and not s.get('requires')):
@@ -536,9 +623,14 @@ def validate_all(encounters=None) -> list:
                 if b.get('thread_close'):
                     closes.append((enc['tag'], b['thread_close']))
                 for cb in b.get('schedule') or ():
-                    if cb.get('encounter') not in seen:
+                    tgt = seen.get(cb.get('encounter'))
+                    if tgt is None:
                         out.append(Issue(enc['tag'], 'reference',
                                          f"schedule names unknown {cb.get('encounter')!r}"))
+                    elif not tgt.get('callback_only'):
+                        out.append(Issue(enc['tag'], 'reference',
+                                         f"schedule target {cb.get('encounter')!r} is not "
+                                         'callback_only (the Road could also roll it)'))
                 esc = b.get('escort')
                 if isinstance(esc, dict) and '$ref' in esc:
                     if esc['$ref'] not in (enc.get('escorts') or {}):

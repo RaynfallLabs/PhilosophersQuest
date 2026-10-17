@@ -4384,7 +4384,19 @@
           "item_id": "lions_thorn"
         },
         "outcome": "He roars, and a claw opens your forearm before he has finished deciding not to eat you. Then the thorn is out and he is washing the paw with great dignity, as if the whole thing had been his idea. You keep the thorn. It seems like the kind of thing a person should keep.",
-        "chronicle": "Pulled a thorn out of a lion's paw. He let me keep my arm, and I kept the thorn."
+        "chronicle": "Pulled a thorn out of a lion's paw. He let me keep my arm, and I kept the thorn.",
+        "deeds": [
+          "aid.limping_lion"
+        ],
+        "schedule": [
+          {
+            "encounter": "flv_lion_remembers",
+            "after_floors": [
+              4,
+              26
+            ]
+          }
+        ]
       },
       {
         "label": "Toss him some food and edge round",
@@ -4406,6 +4418,7 @@
   },
   {
     "tag": "flv_lion_remembers",
+    "callback_only": true,
     "sprite_id": "npc_creature",
     "name": "Great Lion",
     "symbol": "f",
@@ -4463,8 +4476,7 @@
         "outcome": "He accepts it as his due and lets you go. He looks back once, as if you might have had something else for him."
       }
     ],
-    "trigger_item": "lions_thorn",
-    "chain_after": "flv_limping_lion"
+    "trigger_item": "lions_thorn"
   },
   {
     "tag": "flv_coffin_bearer",
@@ -4489,7 +4501,29 @@
           "item_id": "cuthberts_gospel"
         },
         "outcome": "He puts it in your hands as if it weighed more than the coffin. \"It is John's Gospel. Small enough for a pocket. People will offer you money for it on the way down. They always do.\" He closes his eyes, relieved of the last thing he was carrying.",
-        "chronicle": "A monk of Lindisfarne trusted me with Saint Cuthbert's Gospel. I gave my word."
+        "chronicle": "A monk of Lindisfarne trusted me with Saint Cuthbert's Gospel. I gave my word.",
+        "oath": {
+          "id": "cuthbert_gospel",
+          "to": "the Last Bearer",
+          "what": "Carry Saint Cuthbert's Gospel to the reading desk it was meant for.",
+          "item_id": "cuthberts_gospel"
+        },
+        "schedule": [
+          {
+            "encounter": "flv_relic_broker",
+            "after_floors": [
+              1,
+              12
+            ]
+          },
+          {
+            "encounter": "flv_cuthbert_chapel",
+            "after_floors": [
+              7,
+              18
+            ]
+          }
+        ]
       },
       {
         "label": "Share a meal with him, but refuse the errand",
@@ -4513,6 +4547,8 @@
   },
   {
     "tag": "flv_relic_broker",
+    "callback_only": true,
+    "stakes": "medium",
     "sprite_id": "npc_merchant",
     "name": "Relic Broker",
     "symbol": "@",
@@ -4537,7 +4573,8 @@
         },
         "outcome": "He counts the gold out twice and writes the receipt beautifully. By tomorrow the book will be three books, each with a letter proving it is the real one. The purse is heavy, and it is the wrong kind of heavy.",
         "karma": -1,
-        "chronicle": "Sold Saint Cuthbert's Gospel to a relic broker. I had given my word about that book."
+        "chronicle": "Sold Saint Cuthbert's Gospel to a relic broker. I had given my word about that book.",
+        "oath_break": "cuthbert_gospel"
       },
       {
         "label": "Tell him the book is promised",
@@ -4560,11 +4597,12 @@
         "outcome": "The label says Tears of Saint Swithun. It is a perfectly good potion of something. \"Authentic,\" he says, to nobody in particular."
       }
     ],
-    "trigger_item": "cuthberts_gospel",
-    "chain_after": "flv_coffin_bearer"
+    "trigger_item": "cuthberts_gospel"
   },
   {
     "tag": "flv_cuthbert_chapel",
+    "callback_only": true,
+    "stakes": "medium",
     "sprite_id": "npc_traveler",
     "name": "Brother Sacristan",
     "proper_noun": true,
@@ -4600,7 +4638,8 @@
         },
         "outcome": "He does not touch it at first. Then he opens it to the first line, In the beginning was the Word, and reads it aloud, and the lamp burns steadier. \"You were offered money for this,\" he says. It is not a question. He blesses you slowly and thoroughly, like a man paying a debt in full.",
         "karma": 1,
-        "chronicle": "Laid Saint Cuthbert's Gospel on the desk it was meant for. The promise is kept."
+        "chronicle": "Laid Saint Cuthbert's Gospel on the desk it was meant for. The promise is kept.",
+        "oath_keep": "cuthbert_gospel"
       },
       {
         "label": "Tell him a bearer still lives, on the floors above",
@@ -4621,11 +4660,12 @@
         "outcome": "He gives it gladly and asks nothing. If there is a small red book in your pack, it grows no lighter."
       }
     ],
-    "trigger_item": "cuthberts_gospel",
-    "chain_after": "flv_relic_broker"
+    "trigger_item": "cuthberts_gospel"
   },
   {
     "tag": "flv_watch_post",
+    "callback_only": true,
+    "stakes": "medium",
     "sprite_id": "npc_warrior",
     "name": "Watch Sergeant",
     "symbol": "@",
@@ -4663,7 +4703,8 @@
           ]
         },
         "outcome": "She breaks the seal, reads it once, and starts giving orders before she has finished. Two runners go up the stairs at a sprint. \"He did not make it, then,\" she says. \"You did. The Watch pays its debts.\" Somewhere far overhead a city has a better night than it was going to have.",
-        "chronicle": "Delivered the dying courier's dispatch to a Watch post. His run is finished."
+        "chronicle": "Delivered the dying courier's dispatch to a Watch post. His run is finished.",
+        "oath_keep": "courier_dispatch"
       },
       {
         "label": "Ask how the siege stands",

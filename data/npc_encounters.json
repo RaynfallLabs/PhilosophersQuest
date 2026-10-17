@@ -158,7 +158,21 @@
           "type": "accept_item",
           "item_id": "cursed_lodestone"
         },
-        "reward": null
+        "reward": null,
+        "oath": {
+          "id": "aldric_lodestone",
+          "to": "Sir Aldric",
+          "what": "Carry his lodestone to an altar, where it can break.",
+          "item_id": "cursed_lodestone",
+          "thread": "aldric_candle"
+        },
+        "deeds": [
+          "aid.aldric"
+        ],
+        "thread": {
+          "id": "aldric_candle",
+          "hint": "Somewhere above, a woman is lighting a candle for a knight."
+        }
       },
       {
         "label": "Tell him you cannot carry it",
@@ -398,7 +412,30 @@
           "type": "accept_item",
           "item_id": "sealed_dispatch"
         },
-        "reward": null
+        "reward": null,
+        "oath": {
+          "id": "courier_dispatch",
+          "to": "Edric the courier",
+          "what": "Carry the sealed dispatch up to the Watch.",
+          "item_id": "sealed_dispatch"
+        },
+        "deeds": [
+          "aid.edric"
+        ],
+        "schedule": [
+          {
+            "encounter": "flv_watch_post",
+            "after_floors": [
+              4,
+              14
+            ],
+            "requires": {
+              "oath_status": {
+                "courier_dispatch": "open"
+              }
+            }
+          }
+        ]
       },
       {
         "label": "Tell him you cannot make that promise",
