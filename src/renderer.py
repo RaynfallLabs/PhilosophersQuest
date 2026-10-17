@@ -47,20 +47,20 @@ _INGREDIENT_IDS = None                                # set of ingredient ids (c
 # the fallbacks below.) Only spawnable items belong here -- orphaned/disabled
 # uniques never render, and code must not name them (test_quest_item_lifecycle).
 _UNIQUE_SPRITE_FALLBACK = {
-    'hand_of_glory': 'hamsa_hand',
     'lions_thorn':      'toxic_thorn',
     'cuthberts_gospel': 'book_of_thoth',
     'duck_of_doom':  'adamantine_great_helm',
-    # v2.15.0: boss-drop unique wand that doesn't start with wand_of_, so the
-    # /^wand_of_/ effect-fallback pathway doesn't catch it. Points at the
-    # canonical fire-wand sprite.
-    'ruby_rod':      'wand_of_fire',
 }
+# (hand_of_glory, ruby_rod, amulet_of_hippolyta and ring_of_solomons_authority
+# borrowed pictures here until bug bash 4, call 17 gave each its own.)
 # Generic icon for cooking ingredients (prime cuts, parts, trophies, foraged) --
 # 550+ of them ship no per-id art and rendered as the '~'/'*' glyph. A meat-cut
 # stand-in reads as "a cooking ingredient" far better than a punctuation glyph.
 _INGREDIENT_FALLBACK_SPRITE = 'prime_beef'
 
+# Since bug bash 4 (call 17) every current scroll, wand and spellbook ships its own
+# picture; the three effect/family maps below are only a safety net for a NEW id
+# added without art, and tests/test_item_art_borrowing.py fails if one is used.
 # v2.10.0 scroll rebuild: ~75 tier-graded scroll variants share a small set
 # of EFFECTS (heal / mapping / identify / enchant_weapon / ...). Rather than
 # generate art for every tier variant, we map each new scroll id to a
@@ -128,7 +128,9 @@ _WAND_EFFECT_SPRITE = {
     'poison_monster':         'wand_of_poison',
     'disease_monster':        'wand_of_disease',
     'curse_monster':          'wand_of_curse',
-    'weaken_monster':         'wand_of_empowerment',
+    # The dusty-rose wand with the hourglass of Elli (old age) was painted for
+    # this wand but filed as "wand_of_empowerment", which read as the opposite.
+    'weaken_monster':         'wand_of_weaken_monster',
     'secret_door_detection':  'wand_of_detect_treasure',
     'opening':                'wand_of_locksmithing',
     'probing':                'wand_of_detect_monster',

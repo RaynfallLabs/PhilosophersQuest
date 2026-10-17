@@ -1,6 +1,6 @@
 """Install the reviewed item sprites.
 
-    <ComfyUI python> tools/content/genart/install_items.py [--to <game root>] [--dry]
+    <ComfyUI python> tools/content/genart/install_items.py [--to <game root>] [--dry] [--merge]
 
 Four kinds of item:
   single    one reviewed picture per item id (named weapons and armour, magic items,
@@ -14,6 +14,10 @@ Four kinds of item:
 Sprites go to assets/tiles/items (the trader to assets/tiles/monsters). What was
 written is listed in tools/content/genart/installed_items.json. An item with no
 reviewed picture is left alone and reported.
+
+--merge adds to installed_items.json instead of rewriting it: for a later batch run
+from a _genart/items that holds only that batch's groups (bug bash 4 drew i26-i29
+that way in a worktree, leaving every earlier item untouched).
 """
 import argparse, json, os, sys
 from PIL import Image
@@ -54,6 +58,7 @@ def reviewed():
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--to', default=ROOT); ap.add_argument('--dry', action='store_true')
+    ap.add_argument('--merge', action='store_true')
     a = ap.parse_args()
     picks, mapped = reviewed()
     recs = [r for r in manifest.build() if r['folder'] == 'items']
@@ -102,7 +107,12 @@ def main():
         if iid in picks and iid not in out[folder]:
             put(iid, Image.open(picks[iid]), folder)
     if not a.dry and os.path.abspath(a.to) == os.path.abspath(ROOT):
-        json.dump({k: sorted(v) for k, v in out.items()}, open(os.path.join(HERE, 'installed_items.json'), 'w', encoding='utf-8'), indent=0)
+        listed = os.path.join(HERE, 'installed_items.json')
+        done = {k: set(v) for k, v in out.items()}
+        if a.merge and os.path.exists(listed):
+            for k, v in json.load(open(listed, encoding='utf-8')).items():
+                done.setdefault(k, set()).update(v)
+        json.dump({k: sorted(v) for k, v in done.items()}, open(listed, 'w', encoding='utf-8'), indent=0)
     print(('would install' if a.dry else 'installed'), len(out['items']), 'items,', len(out['monsters']), 'elsewhere;',
           len(tints), 'template tints made;', len(missing), 'left alone')
     why = {}

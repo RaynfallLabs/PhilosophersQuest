@@ -50,11 +50,15 @@ def test_renamed_commons_map_to_their_effect_art():
         assert p and token in os.path.basename(p), f"{item_id} -> {p} (want '{token}')"
 
 
-def test_power_tiers_share_the_base_stat_icon():
-    # greater_/master_ tiers have no art of their own; they reuse the stat sprite
-    for tier in ('ring_of_strength', 'ring_of_greater_strength', 'ring_of_master_strength'):
-        p = _resolve_item_sprite_path(tier)
-        assert p and 'strength' in os.path.basename(p), f"{tier} -> {p}"
+def test_power_tiers_each_have_their_own_stat_icon():
+    # bug bash 4 (call 17): greater_/master_ tiers used to reuse the base ring's
+    # picture; each tier now ships its own same-stat picture, all different.
+    tiers = ('ring_of_strength', 'ring_of_greater_strength', 'ring_of_master_strength')
+    paths = [_resolve_item_sprite_path(t) for t in tiers]
+    for tier, p in zip(tiers, paths):
+        assert p and os.path.basename(p) == f'{tier}.png', f"{tier} -> {p}"
+    blobs = {open(p, 'rb').read() for p in paths}
+    assert len(blobs) == 3, 'the three strength tiers must not share one picture'
 
 
 def test_existing_art_is_not_hijacked_by_the_fallback():
@@ -65,10 +69,11 @@ def test_existing_art_is_not_hijacked_by_the_fallback():
         assert p and os.path.basename(p) == f"{item_id}.png", f"{item_id} -> {p}"
 
 
-def test_artless_unique_ring_falls_back_to_a_band_not_a_glyph():
-    # uniques that never got art (ring_of_solomons_authority, amulet_of_hippolyta)
-    # still get a neutral same-category icon instead of the '=' glyph
-    for item_id in ('ring_of_solomons_authority', 'amulet_of_hippolyta'):
+def test_named_uniques_never_show_an_unrelated_ring_or_amulet():
+    # ring_of_solomons_authority used to fall back to a dexterity ring and
+    # amulet_of_hippolyta to a dexterity charm (bug bash 4, call 17). Each now
+    # shows its own picture, or the same legend's picture, never a glyph.
+    for item_id, ok in (('ring_of_solomons_authority', ('ring_of_solomons_authority', 'seal_of_solomon')),
+                        ('amulet_of_hippolyta', ('amulet_of_hippolyta', 'girdle_of_hippolyta'))):
         p = _resolve_item_sprite_path(item_id)
-        cat = item_id.split('_', 1)[0]
-        assert p and os.path.basename(p).startswith(cat + '_'), f"{item_id} -> {p}"
+        assert p and os.path.exists(p) and os.path.basename(p)[:-4] in ok, f"{item_id} -> {p}"
