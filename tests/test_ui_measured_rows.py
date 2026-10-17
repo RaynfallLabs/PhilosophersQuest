@@ -350,7 +350,7 @@ def test_quiz_layout_shrinks_medium_content():
     """Build content tall enough to exceed base fonts but still fit at
     the shrunk tier. We squeeze the viewport short so the shrink tier
     is triggered without needing scroll."""
-    _reset_layout(1280, 400)
+    _reset_layout(1280, 720)     # scale 1; the quiz gets a 400 px viewport
     g = _StubGameForQuiz()
     long_q = (
         "A moderately long philosophical question that at the base font "
@@ -366,7 +366,7 @@ def test_quiz_layout_shrinks_medium_content():
     ]
     qe = _StubQuizEngine(long_q, choices)
     g.quiz_engine = qe
-    L = g._quiz_layout(qe)
+    L = g._quiz_layout(qe, viewport_h=400)
     # Either tier 1 (one step shrink) or tier 2 (smallest) suffices here;
     # the critical assertion is that we did SHRINK and did NOT scroll.
     assert L['font_tier'] >= 1, "medium content should shrink at least one tier"
@@ -380,13 +380,13 @@ def test_quiz_layout_scrolls_pathologically_long_content():
     """A question with a huge number of long paragraphs forces the
     smallest font tier and still overflows the viewport, enabling
     scrolling with scroll_offset=0 initially."""
-    _reset_layout(1280, 400)
+    _reset_layout(1280, 720)     # scale 1; the quiz gets a 400 px viewport
     g = _StubGameForQuiz()
     long_q = ("Why is wonder considered the beginning of philosophy? " * 60)
     choices = ["x" * 70 for _ in range(4)]
     qe = _StubQuizEngine(long_q, choices)
     g.quiz_engine = qe
-    L = g._quiz_layout(qe)
+    L = g._quiz_layout(qe, viewport_h=400)
     assert L['scrollable'] is True, "long content should enable scrolling"
     assert L['font_tier'] == 2, "scrolling should only kick in at the smallest tier"
     assert L['scroll_offset'] == 0
@@ -396,17 +396,17 @@ def test_quiz_layout_scrolls_pathologically_long_content():
 def test_quiz_scroll_offset_persists_on_quiz_engine():
     """`_quiz_scroll_offset` is stored on the QuizEngine and respected by
     the layout helper on the next call (same quiz session)."""
-    _reset_layout(1280, 400)
+    _reset_layout(1280, 720)     # scale 1; the quiz gets a 400 px viewport
     g = _StubGameForQuiz()
     long_q = ("Why? " * 400)
     choices = ["x" * 50 for _ in range(4)]
     qe = _StubQuizEngine(long_q, choices)
     g.quiz_engine = qe
-    L1 = g._quiz_layout(qe)
+    L1 = g._quiz_layout(qe, viewport_h=400)
     assert L1['scrollable'] is True
     # Simulate a PgDn press.
     qe._quiz_scroll_offset = 48
-    L2 = g._quiz_layout(qe)
+    L2 = g._quiz_layout(qe, viewport_h=400)
     assert L2['scroll_offset'] == min(48, L2['scroll_max'])
 
 

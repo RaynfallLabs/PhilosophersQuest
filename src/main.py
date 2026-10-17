@@ -7969,17 +7969,32 @@ def _recover_in_loop(game, where):
 def main():
     from save_system import save_exists, load_game, save_game
 
+    # Windows DPI awareness BEFORE the display starts (bug bash 4, call 15):
+    # the game sees real pixels instead of being bitmap-stretched at 125-150 %.
+    import display_setup
+    display_setup.enable_dpi_awareness()
     pygame.init()
     _di = pygame.display.Info()
-    _start_w = min(layout.WINDOW_W, _di.current_w)
-    _start_h = min(layout.WINDOW_H, _di.current_h)
+    # The window, frame and all, fits the desktop WORK AREA (not over the
+    # taskbar), centred there: 1600x900 when it fits, else as big as fits.
+    (_start_w, _start_h), _pos, _room = display_setup.initial_window(
+        (layout.WINDOW_W, layout.WINDOW_H), (_di.current_w, _di.current_h))
+    if _pos is not None:
+        os.environ['SDL_VIDEO_WINDOW_POS'] = f"{_pos[0]},{_pos[1]}"
     layout.update(_start_w, _start_h)
     screen = pygame.display.set_mode((_start_w, _start_h), pygame.RESIZABLE)
-    # Below about 400x300 every panel computes a negative size and raises;
-    # below 1280x720 several screens run out of room. Hold the window there
-    # (or at the display's own size, on a smaller screen).
+    os.environ.pop('SDL_VIDEO_WINDOW_POS', None)
+    # 1280x720 is the supported floor; the window is held there unless the
+    # work area itself is smaller, where the COMPACT layout (ui_scale below
+    # 1.0) takes over. Below about 400x300 every panel would compute a
+    # negative size and raise.
     try:
-        pygame.display.set_window_minimum_size(min(1280, _di.current_w), min(720, _di.current_h))
+        pygame.display.set_window_minimum_size(min(1280, _room[0]), min(720, _room[1]))
+    except Exception:
+        pass
+    try:
+        from game_log import log_info
+        log_info(f"display: {display_setup.report(screen.get_size())}")
     except Exception:
         pass
     pygame.display.set_caption("Philosopher's Quest")

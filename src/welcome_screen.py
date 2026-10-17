@@ -569,6 +569,13 @@ class WelcomeScreen:
         top = S(self._BANNER_Y + self._BANNER_H) + S(10)
         box, _sy, _keys = self._bottom_layout()
         bottom = box.y - S(10)
+        # PORTRAIT (a monitor on its side, e.g. 1080x1920; bug bash 4 call
+        # 19): the wheel is sized by the window's WIDTH, centred, and the
+        # Top Runs panel stacks under it instead of beside it.
+        portrait = self.portrait()
+        lb_w, lb_h = self._leaderboard_size()
+        if portrait and lb_w:
+            bottom -= lb_h + S(20)
         cy = (top + bottom) // 2
         caps = []
         for label, deg, key_, _sym in self._DOMAINS:
@@ -601,6 +608,8 @@ class WelcomeScreen:
             for j, (r1, o1) in enumerate(rects):
                 if r1.top < top or r1.bottom > bottom:
                     return False
+                if portrait and (r1.left < S(12) or r1.right > self.W - S(12)):
+                    return False
                 for r2, o2 in rects[j + 1:]:
                     if o1 == o2:
                         if r1.colliderect(r2):
@@ -611,10 +620,13 @@ class WelcomeScreen:
 
         found = None
         ry = (bottom - top) // 2
+        if portrait:
+            ry = min(ry, self.W // 2)        # the shorter side sizes the wheel
+        px0 = self.cx if portrait else 0
         while ry >= S(100) and found is None:
             rx = ry
             while rx <= ry * 2:
-                items = place(0, rx, ry)
+                items = place(px0, rx, ry)
                 if clear(items):
                     found = (rx, ry, items)
                     break
@@ -629,16 +641,33 @@ class WelcomeScreen:
         probe = place(0, rx, ry)
         left = min(min(it[3].left, it[5].left) for it in probe)
         right = max(max(it[3].right, it[5].right) for it in probe)
-        lb_w = self._leaderboard_size()[0]
         cx = self.cx
-        room = self.W - S(24) - lb_w - S(40)
-        if lb_w and cx + right > room:
-            total = (right - left) + S(40) + lb_w
-            cx = (self.W - total) // 2 - left
+        self._lb_portrait_y = None
+        if portrait:
+            # Wheel and Top Runs centred together, as one column, in the room
+            # between the title banner and the name box.
+            wt = min(min(it[3].top, it[5].top) for it in probe)
+            wb = max(max(it[3].bottom, it[5].bottom) for it in probe)
+            region_bottom = box.y - S(10)
+            group_h = (wb - wt) + ((S(20) + lb_h) if lb_w else 0)
+            g_top = top + max(0, (region_bottom - top - group_h) // 2)
+            cy += g_top - wt
+            if lb_w:
+                self._lb_portrait_y = g_top + (wb - wt) + S(20)
+        else:
+            room = self.W - S(24) - lb_w - S(40)
+            if lb_w and cx + right > room:
+                total = (right - left) + S(40) + lb_w
+                cx = (self.W - total) // 2 - left
+        place_cy = cy
         items = place(cx, rx, ry)
-        layout_ = (cx, cy, (rx, ry), items)
+        layout_ = (cx, place_cy, (rx, ry), items)
         self._wheel_cache = (key, layout_)
         return layout_
+
+    def portrait(self) -> bool:
+        """A window taller than it is wide (a portrait monitor)."""
+        return self.H > self.W
 
     def wheel_right(self) -> int:
         """Right edge of everything the kit's wheel draws."""
@@ -1217,6 +1246,11 @@ class WelcomeScreen:
         """The Top Runs panel: sized to its table, just right of the wheel
         (not pinned to the window edge), vertically centred on the wheel."""
         bw, bh, widths, gap, row_h = self._leaderboard_geometry(n_rows)
+        self._wheel()
+        if getattr(self, '_lb_portrait_y', None) is not None:
+            # Portrait: under the wheel, centred.
+            return (pygame.Rect((self.W - bw) // 2, self._lb_portrait_y, bw, bh),
+                    widths, gap, row_h)
         bx = min(self.wheel_right() + S(40), self.W - S(24) - bw)
         cy = self._ring_cy()
         by = max(S(self._BANNER_Y + self._BANNER_H) + S(8), cy - bh // 2)
