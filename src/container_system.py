@@ -189,7 +189,9 @@ def _trigger_trap(player, trap: dict, messages: list):
     if raw_dmg:
         from floor_curve import hazard
         raw_dmg = hazard(raw_dmg, player.max_hp)     # a share of the health bar
-    actual   = player.take_damage(raw_dmg, 'physical') if raw_dmg else 0
+    # Fire, frost, shock and acid traps carry their own damage type, so a
+    # resistance or an immunity counts (they were all 'physical').
+    actual   = player.take_damage(raw_dmg, trap.get('damage_type', 'physical')) if raw_dmg else 0
 
     messages.append((trap.get('message', 'A trap triggers!'), 'danger'))
     if actual:
@@ -206,18 +208,33 @@ def _trigger_trap(player, trap: dict, messages: list):
             messages.append((f"You resist the {effect.replace('_', ' ')} effect!", 'info'))
 
 
+def alert_monsters_near(monsters, x: int, y: int, radius: int) -> int:
+    """A noise at (x, y): every creature within `radius` wakes and knows
+    where the hero is (as a call for help does). Encounter NPCs, the
+    unicorn and allies are not roused. Returns how many were alerted.
+
+    This used to turn only 'sessile' monsters 'aggressive', for good: it
+    woke nobody, and rooted things (floating eyes, molds) walked the floor
+    as hunters from then on."""
+    n = 0
+    for m in monsters:
+        if not getattr(m, 'alive', False):
+            continue
+        if (getattr(m, 'is_allied', False) or getattr(m, '_npc_encounter_tag', None)
+                or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False)):
+            continue
+        if abs(m.x - x) <= radius and abs(m.y - y) <= radius:
+            m._alerted = True
+            m._aware = True
+            m.status_effects.pop('sleeping', None)
+            n += 1
+    return n
+
+
 def _alert_nearby(player, dungeon, monsters) -> bool:
     """Wake up monsters within 8 tiles. Returns True if any were alerted."""
-    alerted = False
-    px, py  = player.x, player.y
-    for m in monsters:
-        if not m.alive:
-            continue
-        if abs(m.x - px) <= 8 and abs(m.y - py) <= 8:
-            if m.ai_pattern in ('sessile',):
-                m.ai_pattern = 'aggressive'
-                alerted = True
-    return alerted
+    return alert_monsters_near(monsters, player.x, player.y, 8) > 0
 
 
 # ---------------------------------------------------------------------------
@@ -590,10 +607,16 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
 # Mimic spawn (unchanged — kept here for module locality)
 # ---------------------------------------------------------------------------
 
-def _spawn_mimic(container, monsters: list, dungeon_level: int = 1):
+def _spawn_mimic(container, monsters: list, dungeon_level: int = 1,
+                 dungeon=None, avoid=None):
     """Replace a mimic container with a level-appropriate mimic monster.
     Spans the whole floor curve — mid/late game uses the new mimic-AI
-    monsters added in the 2026 monster expansion."""
+    monsters added in the 2026 monster expansion.
+
+    `avoid` is the hero's tile: a chest picked from underfoot used to put
+    the mimic on top of the hero, where no blow could reach it, and a chest
+    under a monster made two monsters on one tile. It comes out on the
+    nearest free tile instead (`dungeon` is needed for that)."""
     import json
     from monster import Monster
 
@@ -618,6 +641,20 @@ def _spawn_mimic(container, monsters: list, dungeon_level: int = 1):
     if defn is None:
         return None
 
-    mimic = Monster({**defn, 'id': mid}, container.x, container.y)
+    x, y = container.x, container.y
+    from geom import all_occupied_tiles
+    taken = set(all_occupied_tiles(monsters))
+    if avoid is not None:
+        taken.add(tuple(avoid))
+    if (x, y) in taken and dungeon is not None:
+        for r in range(1, 6):
+            ring = [(x + dx, y + dy) for dy in range(-r, r + 1) for dx in range(-r, r + 1)
+                    if max(abs(dx), abs(dy)) == r]
+            ring = [t for t in ring if dungeon.in_bounds(*t) and dungeon.is_walkable(*t)
+                    and t not in taken]
+            if ring:
+                x, y = min(ring, key=lambda t: abs(t[0] - container.x) + abs(t[1] - container.y))
+                break
+    mimic = Monster({**defn, 'id': mid}, x, y)
     monsters.append(mimic)
     return mimic
