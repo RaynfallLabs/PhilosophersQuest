@@ -6,7 +6,7 @@ from geom import monster_at_tile
 
 # ---------------------------------------------------------------------------
 # Species data: each line has 3 evolution stages (four elemental lines, the
-# Duck of Doom, and the two rare family cats)
+# Duck of Doom, the two rare family cats, and Shep the farm dog)
 # ---------------------------------------------------------------------------
 
 _SPECIES = {
@@ -275,6 +275,98 @@ _SPECIES = {
             },
         ],
     },
+    'shep': {
+        # Shep: Brandon's dad's childhood farm dog, the hero of the bedtime
+        # stories he told Brandon, in which Shep always came to save them.
+        # "Sic 'em, Shep!" An ultra-rare Soul Sphere hatch (1%, rolled before
+        # the cats: see roll_rare_sphere_pet). A big black-and-white shepherd
+        # mongrel. His line is about a tenth stronger than the others through
+        # its special multipliers (1.7x and 2.0x against the cats' 1.5x and
+        # 1.6x/2.0x); the growth table is everyone's. His signature is the
+        # rescue ('rescue' below), which needs no menu and works from hatching.
+        'element': 'earth',
+        'damage_type': 'piercing',
+        'color': (235, 235, 235),          # black and white
+        'family_dog': True,
+        'stages': [
+            {'name': 'Shep',              'symbol': 'd',
+             'msg': 'The sphere cracks open and a big black-and-white farm dog bounds out, '
+                    'ears up, tail going. He sniffs your hand once and falls in at your heel '
+                    'as if he has been with you all along. It is Shep.'},
+            {'name': 'Shep the Farmhound', 'symbol': 'D',
+             'msg': '{old} has run a thousand miles of dungeon at your side and come back from it '
+                    'bigger, faster and all lean muscle: Shep the Farmhound!'},
+            {'name': 'Shep the Legend',    'symbol': 'D',
+             'msg': '{old} has saved you so many times that the dungeon has started telling '
+                    'stories about him. He has become Shep the Legend!'},
+        ],
+        # He Always Comes: once a floor (a floor reached for the first time),
+        # when the hero falls to 25% health or less with a foe beside him,
+        # Shep streaks in from anywhere on the floor and hits the worst of
+        # them. Shep the Legend takes down every foe beside the hero and
+        # stands guard (the hero is Shielded for 3 turns).
+        'rescue': {
+            'name': 'He Always Comes',
+            'hp_share': 0.25,
+            'damage_mult': 1.5,
+            'status': 'stunned', 'status_chance': 0.50, 'status_duration': 2,
+            'all_foes_stage': 2,
+            'shield_turns': 3,
+            'far_message': ("A black-and-white blur comes streaking out of the dark. "
+                            "You never even had to call him."),
+            'near_message': "{pet} is already moving before you can open your mouth.",
+            'hit_message': "{pet} hits {foe} like a runaway hay wagon! ({dmg} damage)",
+            'all_message': ("{pet} goes through them like a farm dog through a flock of crows."),
+            'guard_message': ("{pet} plants himself in front of you, hackles up. "
+                              "Nothing else is getting past him. (Shielded, {turns} turns)"),
+        },
+        'naming_story': {
+            'title': "SHEP IS HERE!",
+            'prompt': "He answers to Shep. Will you call him something else?",
+            'named_message': "Shep doesn't mind. He'll answer to {name}, as long as you're the one calling.",
+            'unnamed_message': "Shep it is. Some names you don't change.",
+            'named_chronicle': ("A soul sphere hatched and out came a black-and-white farm dog, "
+                                "the one from the old bedtime stories. I call him {name}. "
+                                "He came to save us in every story. I think he still will."),
+            'unnamed_chronicle': ("A soul sphere hatched and out came Shep, the farm dog from the "
+                                  "old bedtime stories. He came to save us in every story. "
+                                  "I think he still will."),
+        },
+        'specials': [
+            {
+                'id': 'sic_em', 'name': "Sic 'Em!", 'unlock_stage': 1,
+                'damage_mult': 1.7, 'damage_type': 'piercing',
+                'targeting': 'single', 'range': 7,
+                'status': 'stunned', 'status_chance': 0.50, 'status_duration': 2,
+                'leap': True,
+                'cooldown': 250,
+                'flavor_message': (
+                    "You point and shout, \"Sic 'em, {call}!\" and {pet} is gone, a black-and-white "
+                    "streak across the floor, low and fast, straight for the throat of trouble."
+                ),
+                'miss_message': ("{pet} skids to a stop where you pointed, finds nobody there, "
+                                 "and looks back at you as if to say, \"Well?\""),
+                'desc': "Range 7 single target; dashes beside it; 1.7x damage; "
+                        "50% chance to knock it flat (stunned, 2 turns).",
+            },
+            {
+                'id': 'sic_em_all', 'name': "Sic 'Em All!", 'unlock_stage': 2,
+                'damage_mult': 2.0, 'damage_type': 'piercing',
+                'targeting': 'hero_adjacent', 'range': 0,
+                'status': 'stunned', 'status_chance': 0.50, 'status_duration': 2,
+                'cooldown': 400,
+                'flavor_message': (
+                    "\"Sic 'em, {call}! ALL of 'em!\" {pet} comes from wherever he was, goes through "
+                    "everything around you one after another, and then sits down at your side "
+                    "as if nothing happened."
+                ),
+                'miss_message': ("{pet} trots up, circles you once, finds nothing to bite, and "
+                                 "sits down at your side, tail sweeping the floor."),
+                'desc': "From anywhere: dashes to your side and bites every foe next to you in "
+                        "turn; 2x damage each; 50% knock flat (stunned, 2 turns).",
+            },
+        ],
+    },
 }
 
 # The family cats: rare Soul Sphere hatches (see roll_soul_sphere_species).
@@ -283,6 +375,22 @@ FAMILY_CAT_CHANCE = 0.05          # EACH cat, per hatch (10% for a cat while nei
 # Its own stream, so the rare roll never moves the global random sequence
 # that seeded floors, loot and captures depend on.
 _CAT_RNG = random.Random()
+
+# Shep, the family farm dog: ultra-rare, rolled before the cats on a stream
+# of his own. While he is still to be met the cats' rolls are rescaled so
+# each cat stays at exactly FAMILY_CAT_CHANCE of all hatches and only the
+# four elemental lines give up his 1%; once met, his 1% goes back to them.
+SHEP = 'shep'
+SHEP_CHANCE = 0.01
+_SHEP_RNG = random.Random()
+# Every rare companion a Soul Sphere can hatch: met once a run at most.
+FAMILY_PETS = FAMILY_CATS + (SHEP,)
+
+
+def has_own_name(species: dict) -> bool:
+    """A companion with a name of its own (the family cats, Shep) is not a
+    creature kind: "Bean, Irene the Seraph", "Shep is here!", no "A"."""
+    return bool(species.get('family_cat') or species.get('family_dog'))
 
 # Evolution thresholds — major Pokémon-style milestones.
 # Stage 1 (L25): ~20 floors of dedicated bonding to achieve.
@@ -349,6 +457,8 @@ class Pet:
         self.command: str = 'return'
         # Floor on which this pet last received a "pet" interaction (once-per-floor cooldown).
         self.last_pet_floor: int = -1
+        # Shep's rescue: the hero's deepest floor when it was last spent.
+        self.rescue_spent_at: int = 0
 
         # Stats computed from level
         self.max_hp = self._calc_max_hp()
@@ -406,10 +516,29 @@ class Pet:
         'Nickname the Species'; otherwise just the species name."""
         sp = self.species_name
         if self.nickname:
-            if self.species.get('family_cat'):      # a cat with her own name: "Bean, Irene the Seraph"
+            if has_own_name(self.species):          # a cat with her own name: "Bean, Irene the Seraph"
                 return f"{self.nickname}, {sp}"
             return f"{self.nickname} the {sp}"
         return sp
+
+    @property
+    def call_name(self) -> str:
+        """What the hero shouts across a room: the nickname, else the line's
+        own first name ("Sic 'em, Shep!")."""
+        return self.nickname or self.species['stages'][0]['name']
+
+    # --- Shep's rescue (He Always Comes) -------------------------------------
+
+    def rescue_ready(self, deepest_floor: int) -> bool:
+        """True when this pet has a rescue and has not spent it on this
+        floor. Like every once-a-floor charge it comes back only on a floor
+        reached for the first time: `deepest_floor` is the hero's deepest."""
+        if not self.species.get('rescue') or not self.alive:
+            return False
+        return int(deepest_floor) > int(getattr(self, 'rescue_spent_at', 0) or 0)
+
+    def spend_rescue(self, deepest_floor: int) -> None:
+        self.rescue_spent_at = int(deepest_floor)
 
     @property
     def symbol(self) -> str:
@@ -443,7 +572,7 @@ class Pet:
                 # Evolution! Use species-name placeholder; the message
                 # template has {old} for the prior form.
                 new_species = self.species_name
-                if self.nickname and self.species.get('family_cat'):
+                if self.nickname and has_own_name(self.species):
                     msg = (f"{self.nickname}, {old_species}, grows grander: "
                            f"now {new_species}!")
                 elif self.nickname:
@@ -1122,38 +1251,82 @@ def random_species() -> str:
     Summon Guardian / Gate outcome. It only spawns via `_duck_of_doom_transform`.
     """
     pool = [k for k in _SPECIES.keys()
-            if k != 'duck_of_doom' and not _SPECIES[k].get('family_cat')]
+            if k != 'duck_of_doom' and not has_own_name(_SPECIES[k])]
     return random.choice(pool)
 
 
-def family_cats_present(player=None, pets=None, inventory=None) -> set:
-    """The family cats already met this run: hatched before (remembered on the
-    player), walking beside the player, or waiting in a bound Soul Sphere."""
+def family_pets_present(player=None, pets=None, inventory=None) -> set:
+    """The rare family companions (the cats and Shep) already met this run:
+    hatched before (remembered on the player, in `family_cats_met`, a name
+    kept for older saves), walking beside the player, or waiting in a bound
+    Soul Sphere."""
     met = set(getattr(player, 'family_cats_met', None) or ())
     for p in pets or ():
-        if getattr(p, 'species_key', None) in FAMILY_CATS:
+        if getattr(p, 'species_key', None) in FAMILY_PETS:
             met.add(p.species_key)
     for it in inventory or ():
         bound = getattr(it, 'bound_pet', None)
-        if getattr(bound, 'species_key', None) in FAMILY_CATS:
+        if getattr(bound, 'species_key', None) in FAMILY_PETS:
             met.add(bound.species_key)
     return met
 
 
-def roll_family_cat(present=(), rng=None) -> str | None:
+family_cats_present = family_pets_present        # the name the cats shipped with
+
+
+def roll_shep(present=(), rng=None) -> str | None:
+    """Shep's own 1% check, made first of all. Always draws once from his
+    stream, so whether he is met never shifts the stream's sequence."""
+    r = (rng or _SHEP_RNG).random()
+    return SHEP if r < SHEP_CHANCE and SHEP not in set(present) else None
+
+
+def roll_family_cat(present=(), rng=None, shep_in_play=False) -> str | None:
     """The rare check made before a Soul Sphere's ordinary roll: each family
     cat not yet present has its own FAMILY_CAT_CHANCE. A cat already met
     gives its share back to the ordinary roll, so once both are met this is
-    always None."""
+    always None.
+
+    `shep_in_play`: this roll is made only when Shep's 1% has just missed,
+    so each cat's chance is scaled up by 1/0.99 to stay at exactly 5% of
+    all hatches (Shep's 1% then comes out of the elemental lines alone)."""
     present = set(present)
     r = (rng or _CAT_RNG).random()
+    if shep_in_play:
+        r *= (1.0 - SHEP_CHANCE)
     for i, cat in enumerate(FAMILY_CATS):
         if i * FAMILY_CAT_CHANCE <= r < (i + 1) * FAMILY_CAT_CHANCE:
             return None if cat in present else cat
     return None
 
 
-def roll_soul_sphere_species(present=(), rng=None) -> str:
-    """What a thrown Soul Sphere hatches: rarely a family cat, else an
-    elemental line chosen evenly (random_species)."""
-    return roll_family_cat(present, rng) or random_species()
+def _qa_forced_pet(present) -> str | None:
+    """Play-testing only: with PQ_QA_MODE=1 and PQ_FORCE_SPHERE=shep (or
+    sherlock, irene), the next Soul Sphere hatches that companion."""
+    import os
+    if os.environ.get('PQ_QA_MODE') != '1':
+        return None
+    want = (os.environ.get('PQ_FORCE_SPHERE') or '').strip().lower()
+    return want if want in FAMILY_PETS and want not in set(present) else None
+
+
+def roll_rare_sphere_pet(present=(), rng=None, shep_rng=None) -> str | None:
+    """Shep (1%), then each family cat (5%), each only while not yet met
+    this run. None means the sphere's ordinary outcome (an elemental line;
+    Dad, from the Unusual Soul Sphere)."""
+    present = set(present)
+    forced = _qa_forced_pet(present)
+    if forced:
+        return forced
+    return (roll_shep(present, shep_rng)
+            or roll_family_cat(present, rng, shep_in_play=SHEP not in present))
+
+
+def roll_soul_sphere_species(present=(), rng=None, shep_rng=None) -> str:
+    """What a thrown Soul Sphere hatches: very rarely Shep, rarely a family
+    cat, else an elemental line chosen evenly (random_species).
+
+    While nobody rare is met: Shep 1%, Sherlock 5%, Irene 5%, and each of
+    the four elemental lines 22.25%. Whoever is met gives his share to the
+    elemental lines."""
+    return roll_rare_sphere_pet(present, rng, shep_rng) or random_species()

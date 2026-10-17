@@ -101,14 +101,16 @@ def test_each_cat_is_five_percent_and_the_lines_share_the_rest():
         assert abs(seen[cat] / n - 0.05) < 0.003, (cat, seen[cat] / n)
     assert abs(seen['normal'] / n - 0.90) < 0.004
 
-    # the whole hatch: 5% / 5% / 22.5% x 4
+    # the whole hatch, with Shep (test_shep.py) still to meet:
+    # Shep 1%, each cat still 5%, 22.25% x 4
     random.seed(11)
-    whole = Counter(roll_soul_sphere_species((), rng) for _ in range(n))
+    shep_rng = random.Random(3)
+    whole = Counter(roll_soul_sphere_species((), rng, shep_rng) for _ in range(n))
     for cat in FAMILY_CATS:
         assert abs(whole[cat] / n - 0.05) < 0.003, (cat, whole[cat] / n)
     for line in ELEMENTAL:
-        assert abs(whole[line] / n - 0.225) < 0.006, (line, whole[line] / n)
-    assert set(whole) == set(ELEMENTAL) | set(FAMILY_CATS)
+        assert abs(whole[line] / n - 0.2225) < 0.006, (line, whole[line] / n)
+    assert set(whole) == set(ELEMENTAL) | set(FAMILY_CATS) | {'shep'}
 
 
 def test_a_cat_already_met_gives_its_share_back_to_the_normal_roll():
@@ -118,7 +120,7 @@ def test_a_cat_already_met_gives_its_share_back_to_the_normal_roll():
     assert one['sherlock'] == 0
     assert abs(one['irene'] / n - 0.05) < 0.003
     assert abs(one['normal'] / n - 0.95) < 0.004
-    both = Counter(roll_soul_sphere_species({'sherlock', 'irene'}, rng) for _ in range(20_000))
+    both = Counter(roll_soul_sphere_species({'sherlock', 'irene', 'shep'}, rng) for _ in range(20_000))
     assert set(both) == set(ELEMENTAL)
 
 
@@ -133,6 +135,7 @@ def test_a_soul_sphere_hatches_each_cat_with_its_name_ready(monkeypatch):
     from game_states import STATE_PET_NAME_INPUT, STATE_PLAYER
     g = _game()
     (tx, ty), = _free_tiles_near(g)
+    monkeypatch.setattr(pet_system, '_SHEP_RNG', _FixedRng(0.99))   # not Shep's 1%
     monkeypatch.setattr(pet_system, '_CAT_RNG', _FixedRng(0.01))    # Sherlock's 5%
     g._throw_soul_sphere(_sphere(g), None, tx, ty)
     cat = g.pets[-1]
@@ -163,6 +166,7 @@ def test_the_unusual_soul_sphere_can_hatch_a_cat_instead_of_dad(monkeypatch):
     g = _game()
     g.dungeon_level = 2
     (tx, ty), = _free_tiles_near(g)
+    monkeypatch.setattr(pet_system, '_SHEP_RNG', _FixedRng(0.99))   # not Shep's 1%
     monkeypatch.setattr(pet_system, '_CAT_RNG', _FixedRng(0.06))
     g._throw_unusual_sphere(_sphere(g, 'unusual_soul_sphere'), None, tx, ty)
     assert [p.species_key for p in g.pets] == ['irene']
