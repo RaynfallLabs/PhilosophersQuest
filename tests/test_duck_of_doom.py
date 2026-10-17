@@ -233,6 +233,8 @@ class _StubGame:
     def add_message(self, *a, **k): pass
     def _log_chronicle(self, *a, **k): pass
 
+    def _chron(self, *a, **k): pass
+
 
 def test_duck_quirk_progress_calculates_correctly():
     """Halfway through the 2026 wear-counter, the menu should show ~50%."""

@@ -411,8 +411,7 @@ HERO_JOURNAL: dict[str, str] = {
     "aristotle of stagira":
         "I am Aristotle, student of Plato and tutor of kings. The world is a "
         "catalogue waiting to be sorted; the dungeon is no different. With my "
-        "amethyst ring and the Lantern of Diogenes I will categorise everything "
-        "this place has to offer.",
+        "amethyst ring and the Lantern of Diogenes, I will sort it all.",
     "socrates of athens":
         "Socrates of Athens — corrupter of youth, asker of questions. They poisoned "
         "me for impiety, but the dungeon does not know my name. I will question "
@@ -440,7 +439,7 @@ HERO_JOURNAL: dict[str, str] = {
         "Achilles, son of Peleus, dipped in the river by my mother. My hide "
         "turns steel aside — except, perhaps, at the heel. My spear leads.",
     "leonidas of sparta":
-        "Leonidas of Sparta. I lack the other 299; this hallway will have to "
+        "Leonidas of Sparta. I lack the other two hundred and ninety-nine; this hallway will have to "
         "narrow itself. Shield up, spear forward, stand.",
     "alexander the great":
         "I am Alexander, son of Philip, student of Aristotle. I have conquered "

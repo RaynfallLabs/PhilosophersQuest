@@ -261,6 +261,9 @@ class InputMixin:
                 self.state = STATE_DEAD
                 return True
             if self.state in (STATE_DEAD, STATE_VICTORY):
+                if getattr(self, '_end_story_open', False):
+                    self._end_story_open = False      # back to the score page
+                    return True
                 return False
             if self.state == STATE_PET_NAME_INPUT:
                 # ESC on pet-name popup: skip naming, keep default species name.
@@ -416,8 +419,11 @@ class InputMixin:
             self._judgment_input(key)
         elif self.state == STATE_STUDY:
             self._study_input(key)
-        elif self.state == STATE_DEAD:
-            if key == pygame.K_r and self.missed_questions:
+        elif self.state in (STATE_DEAD, STATE_VICTORY):
+            if self._end_story_input(key):
+                pass
+            elif (self.state == STATE_DEAD and key == pygame.K_r
+                    and self.missed_questions):
                 self._review_idx = 0
                 self.state = STATE_REVIEW_MISSED
         elif self.state == STATE_REVIEW_MISSED:
@@ -797,6 +803,21 @@ class InputMixin:
         if unicode_char and unicode_char.isdigit() and len(buf) < 3:
             self._qa_warp_input = buf + unicode_char
 
+    def _end_story_input(self, key) -> bool:
+        """S on the death or victory screen opens "Your Story" (and S again
+        goes back to the score); Up/Down scroll it. True when used."""
+        if key == pygame.K_s:
+            self._end_story_open = not getattr(self, '_end_story_open', False)
+            self._end_story_scroll = 0
+            return True
+        if not getattr(self, '_end_story_open', False):
+            return False
+        step = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -6,
+                pygame.K_PAGEDOWN: 6}.get(key)
+        if step is not None:
+            self._end_story_scroll = max(0, int(getattr(self, '_end_story_scroll', 0)) + step)
+        return True
+
     def _pet_name_input(self, key, unicode_char):
         """Handle typing in the pet-naming popup that opens when a Soul Sphere hatches."""
         pet = getattr(self, '_naming_pet', None)
@@ -812,9 +833,10 @@ class InputMixin:
             pet.nickname = ''
             if story:
                 self.add_message(story['unnamed_message'], 'success')
-                self._log_chronicle(story['unnamed_chronicle'])
+                self._chron('person', story['unnamed_chronicle'])
             else:
-                self._log_chronicle(
+                self._chron(
+                    'person',
                     f"A soul sphere hatched. {pet.species_name} emerged. "
                     "I'm not alone anymore."
                 )
@@ -830,12 +852,13 @@ class InputMixin:
                 pet.nickname = name
                 if story:
                     self.add_message(story['named_message'].format(name=name), 'success')
-                    self._log_chronicle(story['named_chronicle'].format(name=name))
+                    self._chron('person', story['named_chronicle'].format(name=name))
                 else:
                     self.add_message(
                         f"You name your new companion {pet.name}!",
                         'success')
-                    self._log_chronicle(
+                    self._chron(
+                        'person',
                         f"A soul sphere hatched. I named the {pet.species_name} '{name}'. "
                         "I'm not alone anymore."
                     )
@@ -843,9 +866,10 @@ class InputMixin:
                 pet.nickname = ''
                 if story:
                     self.add_message(story['unnamed_message'], 'success')
-                    self._log_chronicle(story['unnamed_chronicle'])
+                    self._chron('person', story['unnamed_chronicle'])
                 else:
-                    self._log_chronicle(
+                    self._chron(
+                        'person',
                         f"A soul sphere hatched. {pet.species_name} emerged. "
                         "I'm not alone anymore."
                     )
@@ -1681,6 +1705,30 @@ class InputMixin:
                         self.add_message("The merchant has sold everything.", 'info')
                         self.state = STATE_PLAYER
 
+    def _journal_input(self, key: int) -> bool:
+        """The Journal's own keys: Tab / Shift+Tab or 1-4 turn the page,
+        Up/Down and PgUp/PgDn scroll it. True when the key was used."""
+        tabs = len(getattr(self, 'JOURNAL_TABS', ())) or 4
+        cur = int(getattr(self, '_journal_tab', 0) or 0)
+        page_keys = {pygame.K_1: 0, pygame.K_2: 1, pygame.K_3: 2, pygame.K_4: 3,
+                     pygame.K_KP1: 0, pygame.K_KP2: 1, pygame.K_KP3: 2, pygame.K_KP4: 3}
+        if key == pygame.K_TAB:
+            back = bool(pygame.key.get_mods() & pygame.KMOD_SHIFT)
+            self._journal_tab = (cur + (-1 if back else 1)) % tabs
+            self._journal_scroll = 0
+            return True
+        if key in page_keys:
+            self._journal_tab = min(page_keys[key], tabs - 1)
+            self._journal_scroll = 0
+            return True
+        top = int(getattr(self, '_journal_max_scroll', 0) or 0)
+        step = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_PAGEUP: -8,
+                pygame.K_PAGEDOWN: 8}.get(key)
+        if step is not None:
+            self._journal_scroll = max(0, min(top, int(getattr(self, '_journal_scroll', 0)) + step))
+            return True
+        return key in (pygame.K_RETURN, pygame.K_KP_ENTER, pygame.K_SPACE)
+
     def _encyclopedia_input(self, key: int):
         cats = getattr(self, '_ENCYCLOPEDIA_CATS', [
             ('a', 'bestiary', 'Bestiary'),
@@ -1690,7 +1738,7 @@ class InputMixin:
             ('e', 'scroll', 'Scrolls'),
             ('f', 'wand', 'Wands'),
             ('g', 'spellbook', 'Spellbooks'),
-            ('h', 'chronicle', 'Chronicle'),
+            ('h', 'journal', 'Journal'),
             ('i', 'lore_hints', 'Lore Hints'),
             ('j', 'recipes', 'Recipes'),
         ])
@@ -1752,6 +1800,9 @@ class InputMixin:
                 self._encyclopedia_article_scroll = getattr(
                     self, '_encyclopedia_article_scroll', 0) + 1
                 return
+            return
+
+        if self.encyclopedia_category == 'journal' and self._journal_input(key):
             return
 
         # List view

@@ -784,6 +784,9 @@ class _QuestGame:
     def _log_chronicle(self, text):
         self.log.append(text)
 
+    def _chron(self, kind, text, **kw):
+        self.log.append(text)
+
 
 def _bind(method_name):
     import game_divine

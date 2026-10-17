@@ -353,8 +353,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.zoom_mode          = 'full'
         # Debug overlay (F2)
         self._debug_overlay     = False
-        # Chronicle, Lore Hints, & Discovered Recipes (Encyclopedia tabs)
-        self._chronicle: list[dict]      = []   # event log entries (chronicle.py); shown as "text (L8)"
+        # The Journal (chronicle), Lore Hints, & Discovered Recipes (Encyclopedia tabs)
+        self._chronicle: list[dict]      = []   # journal entries (chronicle.py); the Journal tab draws them
         self._recalled_hints: list[str]  = []   # saved Recall Lore results
         self._cooked_recipes: list[str]  = []   # recipe names successfully cooked
         # Pet companion system (Soul Spheres)
@@ -467,13 +467,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except Exception:
             pass
 
-    def _log_chronicle(self, text: str):
-        """Add an entry to the player's chronicle (passive event log).
-
-        A shim over chronicle.chron (kind 'discovery') for the old call
-        sites; entries are structured dicts and display as "text (L#)"."""
+    def _chron(self, kind: str, text: str, **kw):
+        """Write a line in the hero's journal (DEEDS_KARMA_DESIGN 7.2-7.3):
+        first person, past tense, no game terms, no numbers. ``kind`` sorts
+        it into the Journal's tabs; ``once=key`` writes it only the first
+        time this run. ``tests/test_chronicle_voice.py`` lints every line."""
         import chronicle
-        chronicle.chron(self, 'discovery', text)
+        return chronicle.chron(self, kind, text, **kw)
+
+    def _log_chronicle(self, text: str):
+        """The old entry point, kept as a shim (kind 'discovery'). Every call
+        site in src/ now writes through ``_chron`` with a kind."""
+        return self._chron('discovery', text)
 
     # ------------------------------------------------------------------
     # Philosopher career arc — milestone rewards for cumulative identifies
@@ -495,34 +500,34 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             p.max_mp = p.BASE_MP + p.INT
             p.mp = min(p.mp + 1, p.max_mp)
             self.add_message("First Insight! Your study sharpens your mind. (+1 INT)", 'success')
-            self._log_chronicle("Reached the First Insight milestone (25 identifies). INT permanently increased.")
+            self._chron('milestone', "Twenty-five things named so far. My head feels roomier.")
         if n >= 75 and 75 not in claimed:
             claimed.add(75)
             self.add_message(
                 "Pattern Recognition! You now grasp lesser items at a glance.", 'success'
             )
-            self._log_chronicle("Reached Pattern Recognition (75 identifies). Common items auto-identify at depth.")
+            self._chron('milestone', "I have named so many ordinary things that the common stuff just tells me what it is now.")
         if n >= 125 and 125 not in claimed:
             claimed.add(125)
             p.PER += 1
             self.add_message(
                 "Sharper Eye! The world's small details no longer escape you. (+1 PER)", 'success'
             )
-            self._log_chronicle("Reached Sharper Eye (125 identifies). PER permanently increased.")
+            self._chron('milestone', "Named enough of the world that I notice the small things now. Glints, scuffs, a hinge that should not be there.")
         if n >= 200 and 200 not in claimed:
             claimed.add(200)
             p.WIS += 1
             self.add_message(
                 "Sage's Eye! Your patient study deepens your wisdom. (+1 WIS)", 'success'
             )
-            self._log_chronicle("Reached Sage's Eye (200 identifies). WIS permanently increased.")
+            self._chron('milestone', "Two hundred things named. I am starting to understand why the old philosophers were insufferable.")
         if n >= 300 and 300 not in claimed:
             claimed.add(300)
             p.philosophers_mantle = True
             self.add_message(
                 "The Philosopher's Mantle settles upon you. Every aura is plain to your eye.", 'success'
             )
-            self._log_chronicle("Donned the Philosopher's Mantle (300 identifies). All future pickups reveal their aura.")
+            self._chron('milestone', "Put on the Philosopher's Mantle. Everything I pick up whispers a little about itself now.")
 
     # ------------------------------------------------------------------
     # Level setup
@@ -569,7 +574,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Chronicle: secret build
         if self.secret_build:
             bname = self.secret_build.get('_name', self.player_name)
-            self._log_chronicle(f"My name is {bname}. I know things others don't. This changes everything.")
+            self._chron('milestone', f"My name is {bname}. I know things others don't. This changes everything.")
 
         self.player.x, self.player.y = dungeon.rooms[0].center
         self.renderer                = Renderer(self.screen, layout.VIEWPORT_W, layout.VIEWPORT_H)
@@ -623,7 +628,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Chronicle: entering the dungeon
-        self._log_chronicle("Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+        self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
 
     def _apply_save_affinity(self):
         """Set the player's innate save affinity from the build name. Idempotent:
@@ -909,7 +914,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight = dict(_bk) if isinstance(_bk, dict) else {
             'floor': None, 'spawned': False, 'outcome': None, 'sword_dropped': False}
         self._bk_speech = None
-        # Chronicle & Lore Hints. An old save holds plain "text (L#)" strings:
+        # Journal & Lore Hints. An old save holds plain "text (L#)" strings:
         # they become 'legacy' entries that display exactly as before.
         import chronicle as _chronicle_mod
         self._chronicle = _chronicle_mod.migrate(state.get('_chronicle', []))
@@ -1578,19 +1583,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._notified_rooms = set()   # reset per-floor special room notifications
         # Chronicle: level milestones and maze entries
         _MILESTONE_FLAVOR = {
-            10: "Level 10. The tunnels twist into a maze. Someone built this to confuse.",
-            20: "Level 20. The air is heavier down here. I can hear something large breathing.",
-            30: "Level 30. A maze again. The walls feel like they're watching me.",
-            40: "Level 40. The statues on this floor are too lifelike, and not one of them is smiling.",
-            50: "Level 50. Another maze. I'm starting to think these aren't natural.",
-            60: "Level 60. The stone itself is warm. Something ancient lives at these depths.",
-            70: "Level 70. Maze. The walls here are carved with warnings in dead languages.",
-            80: "Level 80. Claw marks on the walls, higher than I can reach. Something down here has been straining at a leash.",
-            90: "Level 90. One last maze. The floor trembles. I'm close to the end, one way or another.",
-            100: "Level 100. The deepest place in the world. Whatever waits here, I'm ready. I have to be.",
+            10: "The tunnels twisted into a maze here. Somebody built this to confuse, and they were good at it.",
+            20: "The air got heavier on the way down. I could hear something large breathing.",
+            30: "Another maze. The walls felt like they were watching me, so I watched them back.",
+            40: "The statues here were too lifelike, and not one of them was smiling.",
+            50: "A third maze. I have stopped believing these are natural.",
+            60: "The stone was warm this deep. Something ancient lives down here.",
+            70: "Maze again. The walls were carved with warnings in dead languages, which is the worst kind.",
+            80: "Claw marks on the walls, higher than I could reach. Something down here has been straining at a leash.",
+            90: "One last maze. The floor trembled under me. I am close to the end, one way or another.",
+            100: "The deepest place in the world. Whatever waits here, I am ready. I have to be.",
         }
         if new_level in _MILESTONE_FLAVOR:
-            self._log_chronicle(_MILESTONE_FLAVOR[new_level])
+            self._chron('milestone', _MILESTONE_FLAVOR[new_level], once=f'depth:{new_level}')
         # Bones ghost notification
         ghost_name = getattr(dungeon, 'bones_ghost_name', None)
         if ghost_name:
@@ -1598,7 +1603,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"Someone died here with your errand unfinished. The {ghost_name} has not left.",
                 'danger')
             _who = ghost_name.replace('Ghost of ', '', 1)
-            self._log_chronicle(
+            self._chron(
+                'notice',
                 f"{_who} came this far before me. What is left of {_who} is "
                 f"still here, and it is not glad to see me.")
             # Announce once: this used to repeat (and re-chronicle) on every
@@ -2036,8 +2042,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         f"The {getattr(_item, 'name', 'blade')} laughs and vanishes — it returns to Shiva.",
                         'warning')
-                    self._log_chronicle(
-                        "Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
+                    self._chron(
+                        'loss', "Chandrahasa is gone. The Laughing Moon does not stay with the wicked.")
                     break  # one disappearance per floor change is enough
 
         # Place deep-lore items on their designated levels (once per run)
@@ -2136,7 +2142,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         "You tie the Thread to the foot of the stair. It runs out "
                         "ahead of you into the dark, as if it knew the way.", 'success')
-                    self._log_chronicle(
+                    self._chron(
+                        'discovery',
                         "Tied Ariadne's Thread at the door of the Labyrinth. "
                         "It ran on ahead of me. I only had to follow.")
         # Omens (a named foe is somewhere on this floor): shown once.
@@ -2458,7 +2465,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.hero_passives = set(passives)
             self.player.hero_special_cooldowns = {}
             if journal:
-                self._log_chronicle(journal)
+                self._chron('milestone', journal)
         except Exception:
             from game_log import log_error
             log_error('main._give_starting_kit: recovered from an error')
@@ -3264,12 +3271,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                             self.add_message(msg, style)
                             _ROOM_CHRONICLE = {
                                 'treasury': "Found a strongroom. Whoever filled it never came back to count it.",
-                                'library': "Found an ancient library. The scrolls are still intact. Knowledge survives down here.",
-                                'graveyard': "Stumbled into an underground graveyard. The dead are restless.",
+                                'library': "Found an old library with the scrolls still whole. Somebody down here cared about reading, once.",
+                                'graveyard': "Walked into a graveyard under the earth. The dead were restless, and so was I.",
                             }
                             if rtype in _ROOM_CHRONICLE and not getattr(self, f'_chronicle_room_{rtype}', False):
                                 setattr(self, f'_chronicle_room_{rtype}', True)
-                                self._log_chronicle(_ROOM_CHRONICLE[rtype])
+                                self._chron('discovery', _ROOM_CHRONICLE[rtype], once=f'room:{rtype}')
                             break
 
         here = [item for item in self.ground_items if item.x == x and item.y == y]
@@ -3413,7 +3420,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(
             "Death has come for the Stone. He does not hurry, and he does not stop.", 'danger'
         )
-        self._log_chronicle("Something is following me. I felt it before I saw it. Death itself. I need to run.")
+        self._chron('boss', "Something is following me. I felt it before I saw it. Death itself. I need to run.")
 
     def _place_death_on_level(self, dungeon):
         """Death follows up the stair the player has just climbed, a few
@@ -3483,17 +3490,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # band edge slows him, and used to print "Death quickens.")
         if dm._speed_pct > old_speed:
             _SPEED_MSGS = {
-                75:  ("Death quickens. The scraping is faster now.", 'danger',
-                      "Death is moving faster. The sound of the scythe is closer between each step."),
-                100: ("Death matches your pace now. Every step you take, it takes one too.", 'danger',
-                      "Death moves as fast as I do now. No more outrunning it. I have to be smarter."),
-                125: ("Death is faster than you now. The scythe is close enough to hear it cut the air.", 'danger',
-                      "It's faster than me. Faster. I can hear it gaining with every step. I need to pray."),
+                75:  ("Death quickens. The scraping is faster now.", 'danger'),
+                100: ("Death matches your pace now. Every step you take, it takes one too.", 'danger'),
+                125: ("Death is faster than you now. The scythe is close enough to hear it cut the air.", 'danger'),
+            }
+            _SPEED_CHRONICLE = {
+                75: "Death is moving faster. The scrape of the scythe comes closer between each step.",
+                100: "Death keeps pace with me now. No more outrunning it. I have to be smarter.",
+                125: "It is faster than me now. I can hear it gaining with every step. Time to pray.",
             }
             msg = _SPEED_MSGS.get(dm._speed_pct)
             if msg:
                 self.add_message(msg[0], msg[1])
-                self._log_chronicle(msg[2])
+                self._chron('boss', _SPEED_CHRONICLE[dm._speed_pct],
+                            once=f'death_speed:{dm._speed_pct}')
 
     def _use_philosophers_wrench(self):
         """Combine the Philosopher's Stone and the Tablet of Second Death if both are held."""
@@ -3517,7 +3527,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 "You hold the Complete Tablet of Second Death.", 'loot'
             )
-            self._log_chronicle("Used the Wrench. The Stone and the Tablet fused into one. The Complete Tablet glows with purpose. I think I know what it's for.")
+            self._chron('discovery', "Used the Wrench. The Stone and the Tablet fused into one, and the Complete Tablet glows with purpose. I think I know what it's for.")
         else:
             self.add_message(
                 "The wrench socket seems to need something to fit in it.", 'info'
@@ -3592,7 +3602,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # renders the Abyss-distinct variant (arcane purple, "DEATH IS DEAD"
         # headline) instead of the standard gold "VICTORY!" screen.
         self._secret_victory = True
-        self._log_chronicle("I killed Death. The lake of fire opened beneath it and swallowed it whole. The silence afterwards was the loudest thing I've ever heard.")
+        self._chron('boss', "I killed Death. The lake of fire opened beneath it and swallowed it whole. The silence afterwards was the loudest thing I've ever heard.")
 
         # Drop the sixth boss reward scroll
         reward = make_death_bane_scroll(dx, dy)
@@ -3655,7 +3665,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # floor-1 bones file with the hero's whole kit for the next run.)
         self._on_game_over(leave_bones=False, victory=has_stone)
         if has_stone:
-            self._log_chronicle("I made it. I climbed back out with the Stone. The sunlight hurt my eyes. I'd forgotten what it looked like.")
+            self._chron('milestone', "I made it. I climbed back out with the Stone. The sunlight hurt my eyes. I'd forgotten what it looked like.")
             self._show_story_popup('exit_with_stone', STATE_VICTORY)
         else:
             self.defeat_reason = 'fled'
@@ -4061,7 +4071,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 "You should have died -- but a distant power pulls you back. "
                 "You stagger to your feet, barely alive.", 'success')
-            self._log_chronicle("Death took me. Then it let me go. Something out there watches, and today it chose to spend a favor.")
+            self._chron('loss', "Death took me. Then it let me go. Something out there watches, and today it chose to spend a favor.")
 
         # Rand's Heart: show dramatic message if death was just prevented
         if getattr(self.player, '_rands_heart_triggered', False):
@@ -4073,7 +4083,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 "Your wounds close, your mind clears, your strength returns!", 'success')
             self.add_message(
                 "The silver locket crumbles to dust, its promise fulfilled.", 'info')
-            self._log_chronicle("I died. I felt it — the cold, the nothing. Then warmth. Rand's Heart pulled me back. The locket is dust now. I don't get a second chance.")
+            self._chron('loss', "I died. I felt it — the cold, the nothing. Then warmth. Rand's Heart pulled me back. The locket is dust now. I don't get a second chance.")
 
         qs = getattr(self, 'quirk_system', None)
         if qs and self.player:
@@ -4790,7 +4800,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             qs.on_trap_triggered(trap_type)
         if not getattr(self, '_chronicle_first_trap', False):
             self._chronicle_first_trap = True
-            self._log_chronicle(f"Stepped on {self._a_or_an(trap_type.replace('_', ' '))} trap. Should have watched where I was walking.")
+            self._chron('milestone',
+                        f"Stepped on {self._a_or_an(trap_type.replace('_', ' '))} trap. The floor "
+                        "clicked first, which was all the warning I got. I watch the floor now.",
+                        once='first_trap')
         if self.player.is_dead():
             self.add_message("You have died!", 'danger')
             # The whole game-over path, as every other death takes: this set
@@ -4874,8 +4887,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         f"A figure from the House of Atreus stalks you: {m.name}.",
                         'warning')
-                    self._log_chronicle(
-                        f"Pelops's curse caught up to me. {m.name} hunts me now.")
+                    self._chron(
+                        'notice', f"Pelops's curse caught up with me. {m.name} hunts me now.")
                     return
 
     def _do_warning(self):
@@ -5121,9 +5134,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"You carefully disarm the {tname} trap.", 'success')
             if not getattr(self, '_chronicle_first_disarm', False):
                 self._chronicle_first_disarm = True
-                self._log_chronicle(
-                    "Disarmed my first trap. Hands were shaking the whole time."
-                )
+                self._chron(
+                    'milestone', "Disarmed my first trap. My hands were shaking the whole time.",
+                    once='first_disarm')
             self._advance_turn()
             return
 
@@ -5155,10 +5168,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'success')
         if not getattr(self, '_chronicle_first_rewire', False):
             self._chronicle_first_rewire = True
-            self._log_chronicle(
+            self._chron(
+                'milestone',
                 f"Rewired {self._a_or_an(tname)} trap to fire on monsters instead. The dungeon's "
-                "own teeth turned against it."
-            )
+                "own teeth, turned against it.", once='first_rewire')
 
         # Chain 5 bonus: pull a random hint from the lore pool.
         if chain >= 5:
@@ -5458,7 +5471,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.add_message(
                 f"The {_seal_display} shatters in your hand! "
                 f"A crack in the world's floor widens.", 'danger')
-            self._log_chronicle(
+            self._chron(
+                'boss',
                 f"Picked up the {_seal_display}. It shattered before I could close my fist. "
                 f"Whatever those seven seals were holding shut is now one crack closer to open."
             )
@@ -5517,9 +5531,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _WORDS = ['', 'one', 'two', 'three', 'four', 'five', 'six',
                           'seven', 'eight', 'nine', 'ten']
                 if _n == 1:
-                    self._log_chronicle(
-                        "Picked up a scrap of shoe leather. No use to anyone. "
-                        "I kept it anyway.")
+                    self._chron(
+                        'discovery', "Picked up a scrap of shoe leather. No use to anyone. "
+                        "I kept it anyway.", once='leather_scrap:first')
                 elif 1 < _n < 10:
                     self.add_message(
                         f"Another scrap. That makes {_WORDS[_n]}.", 'info')
@@ -5527,8 +5541,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         "That makes ten. Laid together they would about make a shoe.",
                         'success')
-                    self._log_chronicle(
-                        "Ten scraps of leather. I do not know why I kept them. "
+                    self._chron(
+                        'discovery', "Ten scraps of leather. I do not know why I kept them. "
                         "Together they would about make a shoe, for a very large foot.")
             # Chronicle notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
@@ -5542,7 +5556,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 'complete_tablet_of_second_death', 'scroll_lake_of_fire',
             }
             if getattr(item, 'id', '') in _CHRONICLE_ITEMS:
-                _cname = self._display_name(item)
                 _CHRONICLE_FLAVOR = {
                     'philosophers_stone': "Found the Philosopher's Stone. My hands are shaking. Time to get out of here.",
                     'ariadnes_thread': "Picked up a strange golden thread. It feels warm, almost alive.",
@@ -5565,7 +5578,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'complete_tablet_of_second_death': "The Stone fit the Tablet perfectly. It's glowing now. The inscription burns with golden light.",
                     'scroll_lake_of_fire': "A worn scroll. The ink is red-brown. It smells like ash. I can't read it yet, but I feel its weight.",
                 }
-                self._log_chronicle(_CHRONICLE_FLAVOR.get(item.id, f"Picked up something interesting: {_cname}."))
+                # (The old "Picked up something interesting" fallback is cut:
+                # every quest piece has its own line.)
+                if item.id in _CHRONICLE_FLAVOR:
+                    self._chron('discovery', _CHRONICLE_FLAVOR[item.id], once=f'pickup:{item.id}')
             # Material discovery chronicle: first time the player sees each
             # material (cold iron, mithril, etc.), log the discovery line.
             _mat_id = getattr(item, 'material', None)
@@ -5575,7 +5591,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if _mat_defn:
                     _chronicle_line = _mat_defn.get('first_pickup_chronicle')
                     if _chronicle_line:
-                        self._log_chronicle(_chronicle_line)
+                        self._chron('discovery', _chronicle_line, once=f'material:{_mat_id}')
                         self.player.chronicle_seen_materials.add(_mat_id)
             if isinstance(item, Artifact) and item.id == 'philosophers_stone':
                 self.add_message(
@@ -5689,8 +5705,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(
             "(You should know better than to pick up a duck in a dungeon.)",
             'warning')
-        self._log_chronicle(
-            "I picked up a duck. It's on my head now. It won't come off.")
+        self._chron(
+            'person', "I picked up a duck. It's on my head now. It won't come off.")
         # Start the quirk timer fresh.
         if not hasattr(self.player, 'quirk_progress') or self.player.quirk_progress is None:
             self.player.quirk_progress = {}
@@ -5739,8 +5755,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message(
             f"Waddlekind has hatched! ({pet.name})",
             'success')
-        self._log_chronicle(
-            "The duck on my head hatched. I have a tiny celestial duckling now. "
+        self._chron(
+            'person', "The duck on my head hatched. I have a tiny celestial duckling now. "
             "It can read minds. I have made a friend.")
         # Award the registered quirk so the unlock ceremony fires and the
         # Quirks menu shows this run's achievement as unlocked. The
@@ -6119,7 +6135,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(msg, 'warning' if (i == 0 and 'ruin' in msg.lower()) else 'success')
             if not getattr(self, '_chronicle_first_compound', False):
                 self._chronicle_first_compound = True
-                self._log_chronicle(f"Cooked my first compound recipe: {recipe['name']}. The dungeon smells like a kitchen for once.")
+                self._chron('milestone', f"Cooked my first proper recipe: {recipe['name']}. The dungeon smelled like a kitchen for once.",
+                            once='first_compound')
             # Track discovered recipes
             rname = recipe.get('name', '')
             if rname and rname not in self._cooked_recipes:
@@ -6237,13 +6254,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self.add_message(
                         f"TIER {mtier} MATH CLEARED -- every sum at this tier "
                         f"answered. They come round again.", 'success')
-                    self._log_chronicle(f"Cleared Tier {mtier} Math.")
                 else:
                     self.add_message(
                         f"TIER {mtier} {name.upper()} CLEARED -- auto-passes for the "
                         f"rest of this run.", 'success')
-                    self._log_chronicle(
-                        f"Cleared Tier {mtier} {name} -- auto-passes this run.")
                 qe.just_mastered = None
         else:
             self.wrong_answers += 1
@@ -6364,7 +6378,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p.hack_reality_cooldown = 150 + chain * 30   # 180 .. 300 turns
         if not getattr(self, '_chronicle_first_xyzzy', False):
             self._chronicle_first_xyzzy = True
-            self._log_chronicle("Spoke an old word of power. XYZZY. Reality flickered. Something changed. I don't think I was supposed to know that word.")
+            self._chron('notice', "Spoke an old word of power. XYZZY. Reality flickered. Something changed. I don't think I was supposed to know that word.")
 
         msgs = []
         result_lines = []
@@ -7265,7 +7279,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 grant_identified(self, pot)
                 self.ground_items.append(pot)
                 self.add_message("The dragon's blood runs out across the stone, still smoking.", 'loot')
-                self._log_chronicle("Fafnir's blood ran out at my feet, hot as forge-fire. Sigurd tasted it and understood the birds. It is said to depend on who is listening.")
+                self._chron('discovery', "Fafnir's blood ran out at my feet, hot as forge-fire. Sigurd tasted it and understood the birds. It is said to depend on who is listening.")
         except Exception:
             pass
 
@@ -8033,9 +8047,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if isinstance(obj, _Corpse) and obj.monster_id == corpse.monster_id:
                         obj.id_level = 5
                 self._on_full_identify(corpse)
-                self._log_chronicle(
-                    f"Studied the {corpse.monster_name}; its nature is known to me."
-                )
+                self._chron(
+                    'milestone',
+                    f"Took {self._a_or_an(corpse.monster_name)} apart to see how it worked. "
+                    "You learn a lot about a thing by how it comes apart.",
+                    once='first_corpse_study')
                 self._lore_subject = corpse
                 self.state = STATE_LORE
                 self.add_message(
@@ -8143,8 +8159,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     "You lay the stone on the altar. It cracks along its length "
                     "and is only a stone. Somewhere a knight sleeps easier.", 'success')
-                self._log_chronicle(
-                    "Carried Sir Aldric's stone to an altar. It broke there. "
+                self._chron(
+                    'oath', "Carried Sir Aldric's stone to an altar. It broke there. "
                     "I had almost stopped noticing the weight.")
                 # The oath sworn when the stone was taken is kept here: deed
                 # kept.aldric_lodestone and an 'oath' award (0 while the
@@ -8221,7 +8237,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message(
                     "The Complete Tablet resonates with the Abyssal Shimmer.", 'info'
                 )
-                self._log_chronicle("Dropped the Complete Tablet on the Shimmer. The ground split open. Something terrible and ancient stirred beneath. I think I've opened a door that was never meant to be opened.")
+                self._chron('boss', "Dropped the Complete Tablet on the Shimmer. The ground split open. Something terrible and ancient stirred beneath. I think I've opened a door that was never meant to be opened.")
 
         # --- Ariadne quest: drop Bronze Bull at a fountain ---
         if getattr(item, 'id', '') == 'bronze_bull':
@@ -8461,7 +8477,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('e', 'scroll', 'Scrolls'),
         ('f', 'wand', 'Wands'),
         ('g', 'spellbook', 'Spellbooks'),
-        ('h', 'chronicle', 'Chronicle'),
+        ('h', 'journal', 'Journal'),
         ('i', 'lore_hints', 'Lore Hints'),
         ('j', 'recipes', 'Recipes'),
     ]
@@ -8485,11 +8501,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         known_ids = getattr(self.player, 'known_item_ids', set())
         known_monster_ids = getattr(self.player, 'known_monster_ids', set())
 
-        if category == 'chronicle':
-            from chronicle import display_text
+        if category == 'journal':
+            # The Journal draws from the register and the entries directly
+            # (game_render._draw_journal); the list stays for old callers.
+            from chronicle import entries_of
             self.encyclopedia_entries = [
-                {'name': display_text(entry), 'lore': ''} for entry in self._chronicle
+                {'name': entry.get('text', ''), 'lore': ''} for entry in entries_of(self)
             ]
+            self._journal_tab = 0
+            self._journal_scroll = 0
             return
         if category == 'lore_hints':
             self.encyclopedia_entries = [

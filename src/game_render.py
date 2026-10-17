@@ -6996,7 +6996,7 @@ class RenderMixin:
             content_w = min(content_w, panel_w - 2 * (b + S(28)))
             _div, keys, foot_bottom = self._ui_footer_metrics(panel)
             draw_divider(self.screen, panel.x + b + S(28), _div, panel_w - 2 * (b + S(28)))
-            pairs = []
+            pairs = [("S", "Your Story")]
             if review_text:
                 pairs.append(("R", "Review the missed questions"))
             pairs.append(("Esc", "Close"))
@@ -7045,7 +7045,7 @@ class RenderMixin:
             y += S(9)
 
         top = get_top(5)
-        prompt_s = row_font.render("Press ESC to close", True, FP.HINT_TEXT)
+        prompt_s = row_font.render("S: Your Story   ESC: close", True, FP.HINT_TEXT)
         bottom_limit = panel_y + panel_h - S(20)
         if keys is not None:
             prompt_s = pygame.Surface((0, 0))
@@ -7138,6 +7138,9 @@ class RenderMixin:
         draw_rune_circle(self.screen, cx, cy, S(280), ring_outer, t, 16)
         draw_rune_circle(self.screen, cx, cy, S(190), ring_inner, -t * 1.3, 10)
         draw_candle_glow(self.screen, cx, cy, candle_int)
+        if getattr(self, '_end_story_open', False):
+            self._draw_your_story(fil_strong)
+            return
 
         start_y = self._draw_end_title_block(
             cx, cy, title_text, sub_text, title_col, sub_col,
@@ -7185,6 +7188,9 @@ class RenderMixin:
         t = pygame.time.get_ticks() / 1000.0
         draw_rune_circle(self.screen, cx, cy, S(260), (*FP.BURGUNDY, 110), t * 0.4, 14)
         draw_rune_circle(self.screen, cx, cy, S(170), (*FP.BLOOD, 70),     -t * 0.6, 8)
+        if getattr(self, '_end_story_open', False):
+            self._draw_your_story(FP.BURGUNDY_MID)
+            return
 
         from boss_levels import COW_LEVEL as _COW
         _on_farm = self.dungeon_level == _COW      # (numbered 999: not a level to name)
@@ -8657,7 +8663,7 @@ class RenderMixin:
             ('e', 'scroll', 'Scrolls'),
             ('f', 'wand', 'Wands'),
             ('g', 'spellbook', 'Spellbooks'),
-            ('h', 'chronicle', 'Chronicle'),
+            ('h', 'journal', 'Journal'),
             ('i', 'lore_hints', 'Lore Hints'),
             ('j', 'recipes', 'Recipes'),
         ])
@@ -8687,8 +8693,10 @@ class RenderMixin:
                                    body.right - (list_rect.right + gutter),
                                    body.h)
         cat_body = self._ui_subpanel(cat_rect, "Categories")
-        list_body = self._ui_subpanel(list_rect, "Known Entries")
-        article_body = self._ui_subpanel(article_rect, "Article")
+        journal = category == 'journal'
+        if not journal:
+            list_body = self._ui_subpanel(list_rect, "Known Entries")
+            article_body = self._ui_subpanel(article_rect, "Article")
 
         row_h = S(45)
         y = cat_body.y
@@ -8714,6 +8722,15 @@ class RenderMixin:
                                    rect.x + S(36), rect.y + S(8),
                                    max_width=rect.w - S(44))
             y += row_h
+
+        if journal:
+            # The Journal is one wide page with its own tabs, not a list
+            # and an article.
+            self._draw_journal(pygame.Rect(list_rect.x, body.y,
+                                           body.right - list_rect.x, body.h))
+            self._ui_footer(panel, "Tab or 1-4: page   Up/Down/PgUp/PgDn: scroll   "
+                                   "Left/Right or a-j: category   ESC: categories")
+            return
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
         if not category:
@@ -8803,6 +8820,245 @@ class RenderMixin:
         else:
             footer = "Left/Right or a-j: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
         self._ui_footer(panel, footer)
+
+    # -- The Journal (Encyclopedia tab h; DEEDS_KARMA_DESIGN 7.5) ----------
+
+    JOURNAL_TABS = (('Oaths', 'oaths'), ('Deeds', 'deeds'), ('People', 'people'),
+                    ('Timeline', 'timeline'))
+
+    def _journal_fonts(self):
+        return {'body': get_font('body', 17), 'head': get_font('heading', 18, bold=True),
+                'hint': get_font('italic', 18), 'side': get_font('body', 16),
+                'name': get_font('body', 17, bold=True)}
+
+    def _journal_col(self, color):
+        """A Journal text colour, readable on the subpanel it sits on."""
+        return readable(color, KT.RAISED) if kit_on() else color
+
+    def _journal_rows(self, tab: str) -> list:
+        """The rows of one Journal page: dicts of ``text``, ``font``,
+        ``color``, ``indent`` (UI px), ``side`` / ``side_color`` (a short
+        label at the right: the floor, a verdict, a status) and ``gap``
+        (space above). Built from the pure views in chronicle.py."""
+        import chronicle
+        import deeds
+        f = self._journal_fonts()
+        reg = deeds.ensure_register(self)
+        entries = chronicle.entries_of(self)
+        rows = []
+
+        def head(text):
+            rows.append({'text': text, 'font': f['head'], 'color': FP.GOLD_BRIGHT,
+                         'gap': S(10) if rows else 0})
+
+        def line(text, *, font=None, color=FP.BODY_TEXT, indent=0, side='',
+                 side_color=FP.FADED_TEXT, gap=S(4)):
+            rows.append({'text': text, 'font': font or f['body'], 'color': color,
+                         'indent': indent, 'side': side, 'side_color': side_color,
+                         'gap': gap})
+
+        def where(floor):
+            return floor_label(floor) if floor is not None else ''
+
+        if tab == 'oaths':
+            sec = chronicle.oath_sections(reg)
+            if sec['open']:
+                head("Open")
+                for o in sec['open']:
+                    line(chronicle.oath_text(o), side=where(o.get('made_floor')))
+            if sec['resolved']:
+                head("Kept, Broken and Let Go")
+                verdict_col = {'Kept': KT.OK_TEXT, 'Broken': FP.WARNING_TEXT}
+                for word, o in sec['resolved']:
+                    line(chronicle.oath_text(o), side=word,
+                         side_color=verdict_col.get(word, FP.FADED_TEXT))
+            if sec['unfinished']:
+                head("Unfinished")
+                for hint in sec['unfinished']:
+                    line(hint, font=f['hint'], color=FP.FADED_TEXT)
+            if not rows:
+                line("I have not sworn anything to anyone yet. Down here that "
+                     "counts as being careful.", color=FP.FADED_TEXT)
+        elif tab == 'deeds':
+            threads = reg.get('threads', {})
+            for e, depth in chronicle.deed_rows(entries):
+                line(e.get('text', ''), indent=S(30) * depth, side=where(e.get('floor')),
+                     color=FP.BODY_TEXT if depth == 0 else FP.PARCHMENT_LIGHT,
+                     gap=S(8) if depth == 0 else S(3))
+                t = threads.get(e.get('thread')) if e.get('thread') else None
+                if t and t.get('status') == 'open' and t.get('hint'):
+                    line(t['hint'], font=f['hint'], color=FP.FADED_TEXT,
+                         indent=S(30) * (depth + 1), gap=S(2))
+            if not rows:
+                line("Nothing I did down here has caught up with me yet.",
+                     color=FP.FADED_TEXT)
+        elif tab == 'people':
+            for p in chronicle.people_rows(reg, floor_label):
+                line(p['name'], font=f['name'], color=FP.GOLD_PALE, side=p['status'],
+                     side_color=FP.BODY_TEXT, gap=S(10) if rows else 0)
+                if p['where']:
+                    line(f"First met: {p['where']}", font=f['side'], color=FP.FADED_TEXT,
+                         indent=S(16), gap=S(2))
+                if p['last']:
+                    line(p['last'], font=f['hint'], color=FP.BODY_TEXT, indent=S(16), gap=S(2))
+            if not rows:
+                line("I have not met anyone worth writing down. Give it time.",
+                     color=FP.FADED_TEXT)
+        else:
+            for label, group in chronicle.timeline_groups(entries, floor_label):
+                head(label)
+                for e in group:
+                    line(e.get('text', ''))
+            if not rows:
+                line("The first page is still blank.", color=FP.FADED_TEXT)
+        return rows
+
+    def _journal_lines(self, rows, width):
+        """Rows wrapped to ``width``: ``(text, font, color, x, side,
+        side_color, gap)`` per line; the side label sits on a row's first
+        line and the text wraps clear of it."""
+        out = []
+        side_f = get_font('body', 16)
+        for r in rows:
+            indent = int(r.get('indent', 0) or 0)
+            side = r.get('side') or ''
+            side_w = side_f.size(side)[0] + S(16) if side else 0
+            room = max(S(80), width - indent - side_w)
+            wrapped = self._wrap_text(str(r['text']), r['font'], room) or ['']
+            for i, txt in enumerate(wrapped):
+                out.append((txt, r['font'], self._journal_col(r['color']), indent,
+                            side if i == 0 else '',
+                            self._journal_col(r.get('side_color', FP.FADED_TEXT)),
+                            r.get('gap', 0) if i == 0 else S(1)))
+        return out
+
+    def _draw_journal(self, rect):
+        """The Journal: a tab strip (Oaths, Deeds, People, Timeline) over one
+        scrolling page. Nothing on it shows the soul's weighing as a number."""
+        tabs = self.JOURNAL_TABS
+        active = max(0, min(int(getattr(self, '_journal_tab', 0) or 0), len(tabs) - 1))
+        self._journal_tab = active
+        body = self._ui_subpanel(rect, "Journal")
+        y = self._draw_action_tabs([(label,) for label, _slug in tabs], active, None,
+                                   body.x, body.y, body.w - S(4))
+        page = pygame.Rect(body.x, y, body.w, body.bottom - y)
+        # Wrapping a long run's journal every frame is wasted work: the lines
+        # are kept until something is written, a person or thread changes,
+        # or the page is resized.
+        import deeds as _deeds
+        reg = _deeds.ensure_register(self)
+        key = (active, page.w, S(100), len(getattr(self, '_chronicle', None) or ()),
+               reg.get('seq'),
+               tuple((p.get('status'), p.get('owes'), p.get('owed'), p.get('last_line'))
+                     for p in reg.get('people', {}).values()),
+               tuple(t.get('status') for t in reg.get('threads', {}).values()),
+               tuple(o.get('status') for o in reg.get('oaths', {}).values()))
+        cached = getattr(self, '_journal_cache', None)
+        if cached and cached[0] == key:
+            lines = cached[1]
+        else:
+            lines = self._journal_lines(self._journal_rows(tabs[active][1]), page.w - S(14))
+            self._journal_cache = (key, lines)
+        heights = [ln[1].get_height() + ln[6] for ln in lines]
+        # The largest scroll that still fills the page from the bottom.
+        max_scroll, acc = len(lines), 0
+        for i in range(len(lines) - 1, -1, -1):
+            acc += heights[i]
+            if acc > page.h:
+                max_scroll = i + 1
+                break
+        else:
+            max_scroll = 0
+        scroll = max(0, min(int(getattr(self, '_journal_scroll', 0) or 0), max_scroll))
+        self._journal_scroll = scroll
+        self._journal_max_scroll = max_scroll
+        side_f = get_font('body', 16)
+        cy = page.y
+        shown = 0
+        for i in range(scroll, len(lines)):
+            text, fnt, col, indent, side, side_col, gap = lines[i]
+            top = cy + (gap if i > scroll else 0)
+            if top + fnt.get_height() > page.bottom:
+                break
+            if indent:
+                pygame.draw.line(self.screen, FP.GOLD_DARK,
+                                 (page.x + indent - S(14), top + S(2)),
+                                 (page.x + indent - S(14), top + fnt.get_height() - S(2)), 1)
+            self.screen.blit(fnt.render(text, True, col), (page.x + indent, top))
+            if side:
+                ss = side_f.render(side, True, side_col)
+                self.screen.blit(ss, (page.right - S(14) - ss.get_width(),
+                                      top + (fnt.get_height() - ss.get_height()) // 2))
+            cy = top + fnt.get_height()
+            shown += 1
+        if len(lines) > shown:
+            self._ui_scrollbar(page, scroll, len(lines), max(1, shown))
+
+    # -- Your Story (the end-of-run page; DEEDS_KARMA_DESIGN 7.5) ----------
+
+    def _your_story_rows(self) -> list:
+        import chronicle
+        import deeds
+        f = self._journal_fonts()
+        story = chronicle.your_story(deeds.ensure_register(self), chronicle.entries_of(self))
+        rows = []
+
+        def head(text):
+            rows.append({'text': text, 'font': f['head'], 'color': FP.GOLD_BRIGHT,
+                         'gap': S(14) if rows else 0})
+
+        head("My Promises")
+        rows.append({'text': story['oaths'], 'font': f['body'], 'color': FP.BODY_TEXT,
+                     'gap': S(4)})
+        head("What I Remember")
+        if story['highlights']:
+            for e in story['highlights']:
+                rows.append({'text': e.get('text', ''), 'font': f['body'],
+                             'color': FP.BODY_TEXT, 'gap': S(6),
+                             'side': floor_label(e['floor']) if e.get('floor') is not None else '',
+                             'side_color': FP.FADED_TEXT})
+        else:
+            rows.append({'text': "Not much worth writing down. That may be a mercy.",
+                         'font': f['body'], 'color': FP.FADED_TEXT, 'gap': S(4)})
+        head("Roads Not Taken")
+        roads = story['roads']
+        if roads:
+            for hint in roads:
+                rows.append({'text': hint, 'font': f['hint'], 'color': FP.PARCHMENT_LIGHT,
+                             'gap': S(6)})
+        else:
+            rows.append({'text': ("I met nobody whose road I could have taken. Next time, "
+                                  "perhaps, I will look harder."),
+                         'font': f['hint'], 'color': FP.FADED_TEXT, 'gap': S(4)})
+        return rows
+
+    def _draw_your_story(self, accent=FP.GOLD):
+        """The "Your Story" page of the death and victory screens (S)."""
+        panel = self._ui_modal_panel("Your Story", border_color=accent, max_w=900,
+                                     max_h=640, center_window=True)
+        body = self._ui_modal_body(panel, side=30)
+        lines = self._journal_lines(self._your_story_rows(), body.w - S(14))
+        side_f = get_font('body', 16)
+        scroll = max(0, min(int(getattr(self, '_end_story_scroll', 0) or 0),
+                            max(0, len(lines) - 1)))
+        self._end_story_scroll = scroll
+        cy = body.y
+        shown = 0
+        for i in range(scroll, len(lines)):
+            text, fnt, col, indent, side, side_col, gap = lines[i]
+            top = cy + (gap if i > scroll else 0)
+            if top + fnt.get_height() > body.bottom:
+                break
+            self.screen.blit(fnt.render(text, True, col), (body.x + indent, top))
+            if side:
+                ss = side_f.render(side, True, side_col)
+                self.screen.blit(ss, (body.right - S(14) - ss.get_width(),
+                                      top + (fnt.get_height() - ss.get_height()) // 2))
+            cy = top + fnt.get_height()
+            shown += 1
+        if len(lines) > shown:
+            self._ui_scrollbar(body, scroll, len(lines), max(1, shown))
+        self._ui_footer(panel, "Up/Down: scroll   S: score   ESC: back")
 
     def _draw_encyclopedia(self):
         self._draw_encyclopedia_browser()

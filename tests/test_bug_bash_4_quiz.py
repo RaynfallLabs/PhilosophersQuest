@@ -140,14 +140,18 @@ def test_a_bad_tier_key_in_quiz_history_does_not_stop_the_game(tmp_path, monkeyp
 
 # ---------------------------------------------------------------- Q11
 def test_clearing_an_ai_tier_says_ai():
-    """The chronicle read "Cleared Tier 1 Ai"."""
+    """The log read "Cleared Tier 1 Ai". (A tier cleared is the message
+    log's news only since the Journal redesign, DEEDS_KARMA_DESIGN 7.7.)"""
     from main import Game
     g = Game(pygame.display.set_mode((64, 64)), player_name='bb4ai')
     g.quiz_engine.subject = 'ai'
     g.quiz_engine.just_mastered = ('ai', 1)
+    said = []
+    g.add_message = lambda text, kind='info': said.append(text)
     g._on_quiz_answer(True)
-    text = ' '.join(str(e) for e in g._chronicle)
-    assert 'Cleared Tier 1 AI' in text and ' Ai ' not in text
+    text = ' '.join(said)
+    assert 'TIER 1 AI CLEARED' in text and ' Ai ' not in text
+    assert not any('Tier' in e['text'] for e in g._chronicle)
 
 
 # ---------------------------------------------------------------- Q14

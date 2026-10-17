@@ -468,8 +468,6 @@ class CombatMixin:
             self.add_message(
                 f"{bound.name} bursts from the sphere — welcome back!", 'success')
             _snd.play('player_healed')
-            self._log_chronicle(
-                f"Recalled {bound.name} from the sphere. The bond holds.")
             return
 
         from pet_system import roll_soul_sphere_species
@@ -898,7 +896,7 @@ class CombatMixin:
                     self.add_message(
                         "The Ankh of Isis shatters! Isis breathes life back into you!",
                         'success')
-                    self._log_chronicle("I died. Then light. Isis pulled me back. The ankh is dust now.")
+                    self._chron('loss', "I died. Then light. Isis pulled me back. The ankh is dust now.")
                     _snd.play('player_healed')
                     break
 
@@ -1057,20 +1055,23 @@ class CombatMixin:
         if story_key:
             self._show_story_popup(story_key, STATE_PLAYER)
             _BOSS_CHRONICLE = {
-                'asterion_minotaur': "Killed the Minotaur. Asterion. He was bigger than I expected. The labyrinth is quiet now.",
-                'medusa_gorgon': "Medusa is dead. I couldn't look at her directly. Even the snakes were afraid at the end.",
-                'fafnir_dragon': "Fafnir fell. The dragon's scales were like iron. I still smell the smoke.",
-                'fenrir_wolf': "Fenrir is bound. Or dead. I'm not sure which. The wolf was... vast. The ground still shakes.",
+                'asterion_minotaur': "Killed the Minotaur. His name was Asterion, and he was bigger than I expected. The Labyrinth is quiet now.",
+                'medusa_gorgon': "Medusa is dead. I never once looked straight at her. Even the snakes were afraid at the end.",
+                'fafnir_dragon': "Fafnir fell. His scales were like iron and I still smell the smoke on my clothes.",
+                'fenrir_wolf': "Fenrir is bound, or dead. I am not sure which. The wolf was vast, and the ground still shakes.",
                 'abaddon_destroyer': "Abaddon is destroyed. The Pit is sealed. I can barely hold the pen.",
             }
-            self._log_chronicle(_BOSS_CHRONICLE.get(monster.kind, f"Slew {monster.name}. It's done."))
+            self._chron('boss', _BOSS_CHRONICLE.get(monster.kind, f"Killed {monster.name}. It is done."),
+                        once=f'boss:{monster.kind}')
         # Mini-bosses and legends: their death is an event in the run's story.
         # (Only the five gate bosses were ever recorded.)
         if (getattr(monster, 'is_mini_boss', False) and not story_key
                 and not getattr(monster, 'is_seal_demon', False)):
-            self._log_chronicle(
+            self._chron(
+                'boss',
                 getattr(monster, 'kill_chronicle', '')
-                or f"{the_name(monster)} is dead. I had not expected to be the one left standing.")
+                or f"{the_name(monster)} is dead. I had not expected to be the one left standing.",
+                once=f'boss:{monster.kind}')
         # A gate boss leaves three gifts; the player takes one (boons.py).
         # Only noted here: main.update opens the choice once the kill, its
         # messages and the story popup are finished.
@@ -1099,15 +1100,18 @@ class CombatMixin:
             self.seals_broken.add(seal_id)
             count = len(self.seals_broken)
             _ORD = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']
+            _SEAL_WORDS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven']
             _short = monster.name.split(',')[0]
             self.add_message(
                 f"{_short} falls. The {_ORD[min(count, 7) - 1]} of seven seals is broken.",
                 'success')
-            self._log_chronicle(f"Broke a seal. {monster.name} is gone. {count} of 7 seals now shattered. The air feels heavier.")
+            self._chron('boss', f"Broke a seal. {monster.name} is gone. That makes "
+                                f"{_SEAL_WORDS[min(count, 7) - 1]} of the seven. The air feels heavier.",
+                        once=f'seal:{seal_id}')
             if count == 7:
                 self.add_message(
                     "ALL SEVEN SEALS ARE BROKEN. The way to the Pit stands open.", 'danger')
-                self._log_chronicle("All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
+                self._chron('boss', "All seven seals are broken. The ground split open. Whatever is down there, it's free now. And I have to face it.")
         self.ground_items.append(self._make_corpse(monster))
 
     def _announce_scale_hit(self, monster, damage: int):
@@ -1149,8 +1153,9 @@ class CombatMixin:
         line = getattr(monster, 'revive_message', '') or (
             f"{the_name(monster)} should be dead, and is getting up.")
         self.add_message(line, 'danger')
-        self._log_chronicle(
-            f"I struck {the_name(monster, lower=True)} down and it stood back up.")
+        self._chron('notice',
+                    f"I struck {the_name(monster, lower=True)} down and it stood back up.",
+                    once=f'revive:{monster.kind}')
 
     def _drop_philosophers_stone(self, x: int, y: int):
         """Place the Stone at (x, y) unless one already exists in this run
@@ -1198,7 +1203,7 @@ class CombatMixin:
         self.add_message(
             f"You take {gift['name']}: {boons.STAT_NAMES.get(gift['stat'], gift['stat'])} "
             f"+{amount}, for good.", 'success')
-        self._log_chronicle(f"I took {gift['name']} and left the other two where they lay.")
+        self._chron('discovery', f"I took {gift['name']} and left the other two where they lay.")
 
     def _drop_treasure(self, monster):
         """Drop gold and possibly an item when a monster dies."""
@@ -1953,7 +1958,9 @@ class CombatMixin:
         _snd.play('trap')
         if not getattr(self, '_chronicle_first_pit', False):
             self._chronicle_first_pit = True
-            self._log_chronicle("Dug a pit with the shovel. Took everything I had. If something walks over this...")
+            self._chron('milestone', "Dug a pit with the shovel. It took everything I had. "
+                                     "Something is going to walk over it, and I want to watch.",
+                        once='first_pit')
         # Costs 3 turns (advancing turn 3 times — monsters get 3 actions)
         for _ in range(3):
             self._advance_turn()
@@ -2201,7 +2208,7 @@ class CombatMixin:
         self._combat_ammo = None
         if monster.kind == 'abaddon_destroyer' and not getattr(self, '_chronicle_abaddon_start', False):
             self._chronicle_abaddon_start = True
-            self._log_chronicle("Abaddon. The Destroyer. He's real. He's here. This is it.")
+            self._chron('boss', "Abaddon. The Destroyer. He's real. He's here. This is it.")
         qs = getattr(self, 'quirk_system', None)
         if qs:
             qs.on_combat_started()
@@ -3226,9 +3233,10 @@ class CombatMixin:
                 self.add_message(rescue['guard_message'].replace('{pet}', pet.name)
                                  .replace('{turns}', str(turns)), 'success')
             _snd.play('player_healed')
-            self._log_chronicle(
+            self._chron(
+                'loss',
                 f"I was down and they were all around me, and then {pet.name} was there. "
-                "He always comes.")
+                "He always comes.", once='rescue')
             return pet
         return None
 

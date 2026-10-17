@@ -105,9 +105,11 @@ def test_old_save_without_deeds_is_migrated():
         assert [e['kind'] for e in g2._chronicle] == ['legacy', 'legacy']
         assert g2._chronicle[0]['floor'] == 8 and g2._chronicle[0]['text'] == 'Found: Bronze Bull Idol'
         assert [display_text(e) for e in g2._chronicle] == state['_chronicle']
-        # The Chronicle tab shows them exactly as before.
-        g2._encyclopedia_load_entries('chronicle')
-        assert [e['name'] for e in g2.encyclopedia_entries] == state['_chronicle']
+        # The Journal shows their words; its Timeline puts the floor in a
+        # header instead of an "(L8)" tail.
+        g2._encyclopedia_load_entries('journal')
+        assert [e['name'] for e in g2.encyclopedia_entries] == [
+            'Found: Bronze Bull Idol', 'A line with no floor']
     finally:
         delete_save(name)
 

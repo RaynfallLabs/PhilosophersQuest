@@ -27,7 +27,7 @@ import pygame
 import renderer
 import ui_scale
 
-# Item-art categories of the encyclopedia (Chronicle, Lore Hints and Recipes
+# Item-art categories of the encyclopedia (the Journal, Lore Hints and Recipes
 # have no subject art).
 ITEM_CATEGORIES = ('weapon', 'armor', 'accessory', 'scroll', 'wand', 'spellbook')
 BASE_MULT = 3                   # 64 px art -> 192 px at UI scale 1

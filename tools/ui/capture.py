@@ -1301,6 +1301,124 @@ def _(g):
     press(g, pygame.K_RETURN)
 
 
+def _story_run(g):
+    """A run with a story to tell, written through the game's own APIs: three
+    promises (one open, one kept, one let go), people in every state, a deed
+    with its consequence filed under it, a trip to the Moo Moo Farm, and two
+    encounters met with roads left untaken. Deterministic: fixed floors and
+    turns, no random draws."""
+    import chronicle
+    import deeds
+    reg = deeds.ensure_register(g)
+    home = (g.dungeon_level, g.turn_count)
+
+    def at(floor, turn):
+        g.dungeon_level = floor
+        g.turn_count = turn
+        return dict(floor=floor, block=deeds.karma_block(min(floor, 100)), turn=turn)
+
+    w = at(3, 120)
+    deeds.set_person(reg, 'marta', name='Marta', floor=3)
+    g._chron('deed', "Stopped a rat-catcher named Marta bleeding out. She asked my name "
+                     "twice, to be sure of it.", person='marta', source='rat_catcher')
+    deeds.set_person(reg, 'marta', status='saved', owes=True,
+                     last_line="She asked my name twice, to be sure of it.")
+    chronicle.record_choice(reg, {'tag': 'rat_catcher', 'options': [
+        {'label': 'Bind her leg', 'road': {'id': 'marta.bind',
+                                           'hint': 'A tourniquet is a promise made with rope.'}},
+        {'label': 'Take her purse', 'road': {'id': 'marta.purse',
+                                             'hint': 'A bleeding woman will pay anything. Some pay later.'}},
+        {'label': 'Walk on', 'road': {'id': 'marta.walk',
+                                      'hint': 'Not every cry in the dark is yours to answer.'}},
+    ]}, 0)
+    w = at(7, 610)
+    deeds.swear(reg, 'aldric_lodestone', to='Sir Aldric',
+                what='Carry his lodestone to an altar, where it can break.', **w)
+    deeds.open_thread(reg, 'aldric_candle', floor=7,
+                      hint='Somewhere above, a woman is lighting a candle for a knight.')
+    deeds.set_person(reg, 'aldric', name='Sir Aldric', floor=7, status='aided', owed=True,
+                     last_line="It weighs more than a stone should.")
+    g._chron('deed', "Took Sir Aldric's lodestone so he could climb home to his wife. It "
+                     "weighs more than a stone should.", person='aldric', source='burdened_knight',
+             thread='aldric_candle')
+    w = at(9, 880)
+    deeds.swear(reg, 'courier_dispatch', to='a dying courier',
+                what='Deliver his dispatch to the Watch post.', **w)
+    g._chron('oath', "Promised a dying courier I would carry his dispatch to the Watch.")
+    w = at(12, 1340)
+    deeds.swear(reg, 'cuthbert_gospel', to='Brother Sacristan',
+                what="Carry Saint Cuthbert's Gospel down to the chapel desk.", **w)
+    g._chron('oath', "A monk of Lindisfarne trusted me with Saint Cuthbert's Gospel. I gave my word.")
+    w = at(14, 1620)
+    deeds.set_person(reg, 'lena', name='Lena', floor=14, status='lost',
+                     last_line="I keep thinking about her mother's squint.")
+    g._chron('loss', "I lost Lena on the stairs. I keep thinking about her mother's squint.",
+             person='lena')
+    g._chron('consequence', "Marta's brother left bread on a ledge for me, with a rat "
+                            "drawn in the flour. Marta must have pulled through.",
+             source='rat_catcher')
+    w = at(999, 1702)
+    g._chron('milestone', "I poked a cow one time too many and the floor opened. Now I am "
+                          "in some kind of cow dimension.")
+    w = at(14, 1830)
+    deeds.set_person(reg, 'old_wanderer', name='The Old Wanderer', floor=14, status='unmasked',
+                     last_line="He had one eye, and both of them saw straight through me.")
+    g._chron('notice', "The old wanderer had one eye and two ravens he pretended not to "
+                       "own. I knew who he was before he left.", person='old_wanderer')
+    chronicle.record_choice(reg, {'tag': 'tam_and_hanne', 'options': [
+        {'label': 'Make Tam give the coins back',
+         'road': {'id': 'tam.return', 'hint': 'Stolen is stolen, but a hungry boy can work.'}},
+        {'label': 'Let Tam keep them',
+         'road': {'id': 'tam.keep', 'hint': "A widow's oven feeds three alleys."}},
+        {'label': 'Set Tam to work it off',
+         'road': {'id': 'tam.work', 'hint': 'Some debts are better worked off than paid.'}},
+    ]}, 0)
+    w = at(18, 2410)
+    deeds.keep_oath(reg, 'cuthbert_gospel', **w)
+    g._chron('oath', "Laid Saint Cuthbert's Gospel on the desk it was meant for. The promise is kept.")
+    w = at(21, 2990)
+    deeds.lapse_oath(reg, 'courier_dispatch', **w)
+    g._chron('oath', "I let my promise to the courier run out. Nobody came to collect it.")
+    g._chron('soul', "Three times now I could have taken the easy thing. I am getting used "
+                     "to not taking it.")
+    g.dungeon_level, g.turn_count = home     # the map is still the scene's own
+
+
+def _open_journal(g, page):
+    _story_run(g)
+    press(g, pygame.K_b)
+    press(g, pygame.K_h, 'h')
+    press(g, (pygame.K_1, pygame.K_2, pygame.K_3, pygame.K_4)[page])
+
+
+for _page, _slug in enumerate(('oaths', 'deeds', 'people', 'timeline')):
+    def _mk_journal(page=_page):
+        def _setup(g):
+            _open_journal(g, page)
+        return _setup
+    SCENES.append(Scene(f'menu_journal_{_slug}', 'Menus',
+                        f'B, h: the Journal, page {_page + 1} ({_slug.title()}), on a run with '
+                        'promises, people, a consequence and a Moo Moo Farm trip.',
+                        _mk_journal(), 'game', 'encyclopedia', '', _page == 0))
+
+
+@scene('menu_journal_timeline_end', 'Menus', 'B, h, 4, PgDn x3: the Timeline scrolled to '
+       'its end (the Moo Moo Farm header, never "Floor 999").', expect='encyclopedia')
+def _(g):
+    _open_journal(g, 3)
+    g.render()                      # the page measures how far it can scroll
+    for _ in range(3):
+        press(g, pygame.K_PAGEDOWN)
+
+
+@scene('menu_journal_empty', 'Menus', 'B, h: the Journal on a run with nothing in it yet.',
+       expect='encyclopedia')
+def _(g):
+    g._chronicle = []
+    press(g, pygame.K_b)
+    press(g, pygame.K_h, 'h')
+
+
 @scene('menu_pet', 'Pets', 'Shift+P: pet roster and actions.', expect='pet_menu')
 def _(g):
     g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
@@ -1743,6 +1861,21 @@ def _(g):
     press(g, pygame.K_r)
 
 
+@scene('end_your_story', 'Endings', 'Death screen, S: Your Story (promises, highlights, '
+       'Roads Not Taken from this run).', expect='dead', key=True)
+def _(g):
+    _story_run(g)
+    _die(g, 'died')
+    press(g, pygame.K_s, 's')
+
+
+@scene('end_your_story_empty', 'Endings', 'Death screen, S: Your Story of a run with no '
+       'promises and nobody met.', expect='dead')
+def _(g):
+    _die(g, 'died')
+    press(g, pygame.K_s, 's')
+
+
 @scene('end_victory', 'Endings', 'Leave with the Philosopher\'s Stone: victory screen.', expect='victory')
 def _(g):
     g._on_game_over(leave_bones=False)
@@ -1754,6 +1887,14 @@ def _(g):
     g._secret_victory = True
     g._on_game_over(leave_bones=False)
     g.state = _S().STATE_VICTORY
+
+
+@scene('end_your_story_victory', 'Endings', 'Victory screen, S: Your Story.', expect='victory')
+def _(g):
+    _story_run(g)
+    g._on_game_over(leave_bones=False)
+    g.state = _S().STATE_VICTORY
+    press(g, pygame.K_s, 's')
 
 
 # ---------------------------------------------------------------------------

@@ -387,7 +387,7 @@ def test_crossing_line_still_fires_at_the_npc_site_only():
     g.karma = 7
     g._npc_encounter_active = {'tag': 'fx'}
     g._apply_npc_choice({'label': 'x', 'karma': 1, 'outcome': 'o'})
-    assert any('I feel... clean' in text_of(e) for e in g._chronicle)
+    assert any('I feel clean' in text_of(e) for e in g._chronicle)
     g._chronicle = []
     g.karma = 7
     karma.adjust(g, 1, kind='legacy', source='emberpup_feed')      # not an NPC choice
