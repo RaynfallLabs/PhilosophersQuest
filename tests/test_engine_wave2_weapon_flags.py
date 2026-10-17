@@ -111,6 +111,7 @@ def test_try_unequip_blocks_selects_wielder():
 
     p = Player()
     w_sticky = _make_weapon(selects_wielder=True, name='Stormbringer')
+    w_sticky.id_level = 5     # the message names it as the player knows it (bug bash 4 E3)
     ok, msg = p.try_unequip_slot(w_sticky)
     assert ok is False
     assert 'Stormbringer' in msg

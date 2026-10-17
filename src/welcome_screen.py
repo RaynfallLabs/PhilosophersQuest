@@ -6,10 +6,6 @@ hands the matching stat/equipment override dict back to main(), which uses it
 to spawn a special Player.
 """
 
-# Longest name the entry box takes. It was 30, and four hero names are longer
-# (Sherlock 40, Joan 33, Musashi 32): those builds could never be typed.
-NAME_MAX = 48
-
 import math
 import sys
 
@@ -23,6 +19,10 @@ from fantasy_ui import (FP, KT, ScaledFont, draw_panel, draw_dark_panel,
                         centered_text, kit_on, draw_key_hints, key_hints_height,
                         draw_divider, get_font, display_title, panel_band,
                         fit_text, display_text)
+
+# Longest name the entry box takes. It was 30, and four hero names are longer
+# (Sherlock 40, Joan 33, Musashi 32): those builds could never be typed.
+NAME_MAX = 48
 
 
 # ------------------------------------------------------------------

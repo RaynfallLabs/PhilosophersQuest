@@ -1,12 +1,12 @@
 import random
 from dice import roll
+from geom import is_at_tile
 
 # Shares, not floor multipliers (floor_curve: LORE, NOT FLOOR).
 RANGED_STAT_SHARE = 0.03      # of a bow's own base, per four points of PER / STR over 10
 LAST_STAND_SHARE = 0.15       # Helm of Leonidas, below a fifth of health
 ENCIRCLED_SHARE = 0.04        # Cuirass of Hannibal, per adjacent enemy when surrounded
 GROWING_SHARE = 0.02          # Caliburn: of its forged base, each time it grows
-from geom import is_at_tile
 
 # Fallback multipliers used when the player has no weapon equipped.
 # Bare-hand chain table. Caps at the universal 5-chain like every common
@@ -1499,7 +1499,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                     try:
                         damage += _tb_roll(_bt_dice)             # real dice, weapon.json
                     except Exception:
-                        pass
+                        from game_log import log_error
+                        log_error('combat._callback: recovered from an error')
 
         # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
         # +25% damage against the floor's highest-level monster.
@@ -1593,9 +1594,17 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Harpe (formerly petrify_on_crit): now fires at chain 15+, applies
         # petrifying 3t. The crit path is gone but the "sickle of the gorgon"
         # identity holds — snake-cutter freezes flesh once the chain matures.
+        # C03: bosses, mini-bosses, seal demons, encounter NPCs and
+        # outsized foes are far too powerful to petrify, the same rule the
+        # wand of stoning follows; petrifying running out KILLS outright, so
+        # the direct write used to end any boss two turns later.
+        _harpe_stones = False
         if weapon and getattr(weapon, 'petrify_on_crit', False) and chain >= 15:
-            _cur_pet = int(monster.status_effects.get('petrifying', 0) or 0)
-            monster.status_effects['petrifying'] = max(_cur_pet, 3)
+            from game_magic import _is_big_foe
+            if not _is_big_foe(monster):
+                _harpe_stones = True
+                _cur_pet = int(monster.status_effects.get('petrifying', 0) or 0)
+                monster.status_effects['petrifying'] = max(_cur_pet, 3)
 
         # Sword of Michael (holy_smite_message): when a holy weapon hits a
         # demon/undead/evil-tagged target, surface a dramatic line. This is
@@ -1766,7 +1775,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         if (weapon and _dc_thresh > 0 and chain == 1 and actual > 0
                 and not monster.is_dead()
                 and getattr(weapon, '_damoclean_consecutive', 0) >= _dc_thresh
-                and 'boss' not in set(getattr(monster, 'tags', []))):
+                and 'boss' not in set(getattr(monster, 'tags', []))
+                # C04: the gate bosses, seal demons and mini-bosses carry
+                # flags, not a 'boss' tag, so the blade one-shot Abaddon.
+                and not monster._is_named_foe()):
             extra = max(1, monster.hp)  # finish the job
             extra = monster.take_damage(extra, 'physical')
             actual += extra
@@ -2006,8 +2018,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # Harpe petrifies at chain 15+ (see above). This flag drives the
         # "is turning to stone!" log line; it used to test the retired
         # `crit`, which is always False, so the line never appeared.
-        petrified = bool(weapon and getattr(weapon, 'petrify_on_crit', False)
-                         and chain >= 15 and actual > 0)
+        petrified = bool(_harpe_stones and actual > 0)
 
         # ---------------------------------------------------------------
         # Class mechanics — fire from template-driven class_mechanic tags

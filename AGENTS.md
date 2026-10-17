@@ -7,7 +7,7 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 - **threshold** — Must answer X correct to succeed (e.g., equipping armor, harvesting)
 - **chain** — Build combo until wrong answer; score = chain length (e.g., combat attacks)
 - **escalator_threshold** — Questions get harder each round; must hit a correct threshold
-- **escalator_chain** — Questions get harder each round; chain until failure (e.g., cooking)
+- **escalator_chain** — Questions get harder each round; chain until failure (e.g., praying)
 
 ## Subject → Action Mapping
 | Subject     | Action                  |
@@ -25,8 +25,8 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 
 ## Player Stats
 - **STR** — Carry capacity
-- **CON** — Max HP and SP
-- **DEX** — Armor class bonus
+- **CON** — Max HP (3 per point) and toughness (1% less damage per point over 10, cap 40%)
+- **DEX** — Armor class (up to 3 points) and dodge (0.75% per point over 10, cap 30%)
 - **INT** — Max MP
 - **WIS** — Quiz timer bonus (+1 second per point)
 - **PER** — Sight radius
@@ -63,7 +63,7 @@ data/
   monsters.json     - Monster definitions
   items/            - Item JSON files by category (weapon/armor/shield/accessory/artifact)
   hints.json        - In-game hint pool
-  (data/ also contains many generator/migration scripts — offline tooling, not loaded at runtime)
+  (data/ holds only runtime JSON; the old generator/migration scripts were moved out)
 
 assets/
   tiles/            - Tile graphics
@@ -73,7 +73,7 @@ assets/
 ## Tech Stack
 - Python 3.14 (Microsoft Store install on Windows)
 - Pygame-ce — rendering, input, sound
-- Tile-based graphics (32×32 pixels)
+- Tile-based graphics (64×64 sprite art, drawn on 40-pixel map tiles)
 - JSON data files for questions, monsters, items
 
 ## Commands

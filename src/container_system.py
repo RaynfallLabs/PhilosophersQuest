@@ -259,8 +259,9 @@ _COMMON_CATEGORIES: dict[str, list[str]] = {
 
 
 def _floor_level_cap(container, dungeon_level: int) -> int:
-    """Chest sees a small amount of floors ahead of the player. Kept modest
-    since CHAIN is the new dial — chest_tier scales the lookahead bonus."""
+    """Chest sees a small amount of floors ahead of the player. Kept modest:
+    the chest's tier is the dial (lockpick v3 is one question, no chain),
+    and chest_tier scales the lookahead bonus."""
     from items import loot_floor
     chest_tier = max(1, min(5, int(getattr(container, 'tier', 1))))
     return loot_floor(dungeon_level, chest_tier * 2)

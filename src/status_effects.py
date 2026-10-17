@@ -98,7 +98,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'identify_sight':     ('Identify Sight',     (220, 200, 150), 'Items auto-identified when picked up'),
     'spell_turning':      ('Spell Turning',      (210, 175, 255), 'Reflects 100% of monster-cast debuffs back at attacker'),
     # ---- Active buffs (wand/accessory-granted) ----
-    'blessed':            ('Blessed',            (200, 240, 160), 'All quiz timers +25%; divine clarity'),
+    'blessed':            ('Blessed',            (200, 240, 160), 'Combat quiz timer +25%; divine clarity'),
     'inspired':           ('Inspired',           (255, 215,  90), 'Wisdom lent from above: the combat clock runs long'),
     'shielded':          ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
     'fire_shield':        ('Fire Shield',        (245, 120,  40), 'Immune to fire; reflects fire attacks'),
@@ -335,11 +335,13 @@ def _scorch_random_gear(player) -> tuple[str, str] | None:
     if random.random() > 0.20:
         return None
     _, item = random.choice(targets)
+    from hud_context import item_bare_name
+    name = item_bare_name(player, item)      # as the player knows it
     eb = getattr(item, 'enchant_bonus', 0)
     if eb > -3:
         item.enchant_bonus = eb - 1
-        return (f'Fire scorches your {item.name}! (-1 enchantment)', 'danger')
-    return (f'Fire licks at your {item.name}, but it holds.', 'warning')
+        return (f'Fire scorches your {name}! (-1 enchantment)', 'danger')
+    return (f'Fire licks at your {name}, but it holds.', 'warning')
 
 
 def _corrode_random_gear(player) -> tuple[str, str] | None:
@@ -360,11 +362,13 @@ def _corrode_random_gear(player) -> tuple[str, str] | None:
     if random.random() > 0.25:
         return None
     _, item = random.choice(targets)
+    from hud_context import item_bare_name
+    name = item_bare_name(player, item)      # as the player knows it
     eb = getattr(item, 'enchant_bonus', 0)
     if eb > -3:
         item.enchant_bonus = eb - 1
-        return (f'Acid eats at your {item.name}! (-1 enchantment)', 'danger')
-    return (f'Acid sizzles on your {item.name}, but it holds.', 'warning')
+        return (f'Acid eats at your {name}! (-1 enchantment)', 'danger')
+    return (f'Acid sizzles on your {name}, but it holds.', 'warning')
 
 # Damage type -> immunity status effect (first match wins; fire_shield overrides fire_resist)
 # Fire is NOT here: fire_resist halves fire damage (DAMAGE_HALVED below). It

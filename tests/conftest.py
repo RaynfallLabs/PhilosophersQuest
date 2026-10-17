@@ -17,6 +17,24 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+# The dev save dir is the project root, so without this every run wrote
+# highscores.json, answer_times.json, settings.json, bones/ and test saves
+# beside the real ones (bug bash 2026-10-16, CQ-21). Set at conftest import,
+# before test modules are collected: main.py opens faulthandler.log in the
+# save dir at import time. Frozen-mode paths are untouched.
+import paths as _paths  # noqa: E402
+
+_TEST_SAVE_DIR = tempfile.mkdtemp(prefix='pq_test_savedir_')
+_paths._DEV_SAVE_DIR_OVERRIDE = _TEST_SAVE_DIR
+
+
+@pytest.fixture(autouse=True, scope='session')
+def _isolate_dev_save_dir():
+    try:
+        yield _TEST_SAVE_DIR
+    finally:
+        shutil.rmtree(_TEST_SAVE_DIR, ignore_errors=True)
+
 
 @pytest.fixture(autouse=True, scope='session')
 def _redirect_game_log_to_temp():

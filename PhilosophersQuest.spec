@@ -1,11 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
-"""
+r"""
 PyInstaller spec for Philosopher's Quest.
 Run from the project root:
     pyinstaller PhilosophersQuest.spec
 Output: dist\PhilosophersQuest\  (portable folder — zip for distribution)
 
-Saves, highscores, and crash reports go to %APPDATA%\PhilosophersQuest\
+Saves, highscores and settings go to paths.save_dir():
+    Windows  %APPDATA%\PhilosophersQuest\
+    Linux    $XDG_DATA_HOME/PhilosophersQuest/ (default ~/.local/share/...)
+ERROR_LOG.txt and crash_*.txt go to game_log.log_dir():
+    <home>/Documents/PhilosophersQuest/ (falls back to the save dir)
 """
 
 import os
@@ -46,6 +50,21 @@ added_files = [
     ('assets/ui',                   'assets/ui'),
 ]
 
+# Paths INSIDE the whole-directory entries above that must not ship: the
+# reversible prune archive of removed questions, and the UI kit's authoring
+# notes. Filtered out of a.datas below; tests/test_packaging.py checks that
+# every other file in those directories is runtime data.
+bundle_excludes = [
+    'data/questions/_pruned',
+    'assets/ui/README.md',
+]
+
+
+def _is_excluded(dest):
+    d = dest.replace(os.sep, '/')
+    return any(d == x or d.startswith(x + '/') for x in bundle_excludes)
+
+
 a = Analysis(
     ['src/main.py'],
     pathex=['src'],          # so all src/ modules are on the path
@@ -80,6 +99,8 @@ a = Analysis(
     cipher=block_cipher,
     noarchive=False,
 )
+
+a.datas = [d for d in a.datas if not _is_excluded(d[0])]
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 

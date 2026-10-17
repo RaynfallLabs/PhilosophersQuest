@@ -1312,10 +1312,6 @@ def draw_icon(surf: pygame.Surface, name: str, rect) -> bool:
     return ui_theme.draw_icon(surf, name, rect)
 
 
-def subject_icon(subject: str) -> str:
-    return f"subject_{subject}"
-
-
 # =============================================================================
 # TEXT FITTING
 # =============================================================================

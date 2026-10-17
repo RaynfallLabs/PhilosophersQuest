@@ -119,19 +119,45 @@ def test_broken_gram_can_be_thrown_and_is_never_cursed():
         assert CombatMixin._is_throwable_weapon(blade)
 
 
+def _settled_floor(level, seed):
+    """A floor as the player meets it: generated, then run through the
+    game's own _bring_within_reach (which moves anything the run needs off
+    a stranded island) with the player on the up stair."""
+    import random
+    import types
+    from dungeon import STAIRS_UP
+    from main import Game
+    random.seed(seed)
+    d, items = _floor(level)
+    sx, sy = next((x, y) for y in range(d.height) for x in range(d.width)
+                  if d.tiles[y][x] == STAIRS_UP)
+    g = types.SimpleNamespace(dungeon=d, ground_items=items, monsters=[],
+                              dungeon_level=level,
+                              player=types.SimpleNamespace(x=sx, y=sy), pets=[],
+                              _needed_to_finish=Game._needed_to_finish)
+    g._reachable_tiles = lambda x, y, through=(): Game._reachable_tiles(g, x, y, through)
+    g._sealed_shrine_doors = lambda: Game._sealed_shrine_doors(g)
+    Game._bring_within_reach(g)
+    return d, items, (sx, sy)
+
+
+# Bug bash 4, C16: the old test sampled the raw generator and asked for a
+# walkable tile in one of the four orthogonal neighbours, and failed about
+# once in 90 runs (seeds 1385 and 1466 at floor 71: the ring's gap led onto
+# wall). The hero walks FOUR ways (game_input._MOVE_KEYS: the arrows), so
+# the test walks four ways from the up stair on the floor as the game
+# settles it (_bring_within_reach), with fixed seeds. The generator now
+# keeps a gap that leads out (WR3), and _bring_within_reach floods four
+# ways too (WR2).
 @pytest.mark.parametrize('level,comp', [(68, 'mountain_root'), (71, 'fish_breath')])
 def test_ringed_gleipnir_ingredient_can_be_reached_on_foot(level, comp):
     """Root of a Mountain sat in a full ring of lava and Breath of a Fish in
     a full ring of water. The player can enter neither, so Gleipnir could not
     be made in about 19 runs out of 20."""
-    ok = 0
-    for _ in range(8):
-        d, items = _floor(level)
+    for seed in (1385, 1466) + tuple(range(1, 41)):
+        d, items, start = _settled_floor(level, seed)
         it = next(i for i in items if getattr(i, 'id', '') == comp)
-        neighbours = [(it.x + dx, it.y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]
-        if any(d.is_walkable(x, y) for x, y in neighbours):
-            ok += 1
-    assert ok == 8
+        assert (it.x, it.y) in _reach(d, start), (level, seed)
 
 
 # ---------------------------------------------------------------- the pit

@@ -15,7 +15,7 @@ for normal monsters and 4 for a 2×2 dragon.
 """
 from __future__ import annotations
 
-from typing import Iterator, Optional
+from typing import Iterator
 
 
 def occupied_tiles(m) -> Iterator[tuple[int, int]]:
@@ -60,16 +60,6 @@ def chebyshev_distance(px: int, py: int, m) -> int:
                for mx, my in occupied_tiles(m))
 
 
-def manhattan_distance(px: int, py: int, m) -> int:
-    """Manhattan distance from (px, py) to the nearest tile of m.
-    Used wherever the existing code wrote `abs(m.x-px) + abs(m.y-py)`."""
-    fw, fh = getattr(m, 'footprint', (1, 1))
-    if fw == 1 and fh == 1:
-        return abs(m.x - px) + abs(m.y - py)
-    return min(abs(mx - px) + abs(my - py)
-               for mx, my in occupied_tiles(m))
-
-
 def is_adjacent(px: int, py: int, m) -> bool:
     """True if (px, py) is Chebyshev-1 adjacent to ANY tile of m
     (and not standing on m itself)."""
@@ -104,23 +94,3 @@ def all_occupied_tiles(monsters, exclude=None) -> set[tuple[int, int]]:
             out.add(t)
     return out
 
-
-def can_footprint_fit(dungeon, x: int, y: int, footprint: tuple[int, int],
-                      occupied: Optional[set] = None,
-                      ignore_monster=None) -> bool:
-    """True if a monster with `footprint` anchored at (x, y) could
-    legally stand there: every footprint tile is in-bounds, walkable,
-    and not occupied by another monster (unless that monster is
-    `ignore_monster` — used when the monster is moving and we ignore
-    its own current tiles)."""
-    fw, fh = footprint
-    for dy in range(fh):
-        for dx in range(fw):
-            tx, ty = x + dx, y + dy
-            if not dungeon.in_bounds(tx, ty):
-                return False
-            if not dungeon.is_walkable(tx, ty):
-                return False
-            if occupied and (tx, ty) in occupied:
-                return False
-    return True

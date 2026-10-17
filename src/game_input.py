@@ -138,6 +138,13 @@ class InputMixin:
                 self.quiz_engine.resume_timer()
                 self.state = STATE_QUIZ
                 return True
+            if (self.state == STATE_IDENTIFY_MENU
+                    and getattr(self, '_scroll_identify_pending', False)):
+                # A read Scroll of Identify: Esc wastes its revelation. The
+                # generic close below kept the flag, so the next identify
+                # was free.
+                self._identify_menu_input(pygame.K_ESCAPE)
+                return True
             if self.state in (STATE_EQUIP_MENU, STATE_KIT, STATE_DISCOVERIES,
                               STATE_WAND_MENU, STATE_SCROLL_MENU,
                               STATE_IDENTIFY_MENU, STATE_COOK_MENU,
@@ -239,6 +246,12 @@ class InputMixin:
             return False
 
         if self.state == STATE_PLAYER:
+            # Asleep or paralysed: the stairs and the character sheet (where
+            # gear can be dropped or swapped) are actions too. They skipped
+            # the check in _player_input, so a paralysed hero could flee
+            # down the stairs. Help (?) only reads, and stays open.
+            if event.unicode in ('>', '<', '@', 'P') and self._helpless_turn():
+                return True
             # Keys checked by unicode to handle shift-modified chars
             if event.unicode == '>':
                 self._descend_stairs()
@@ -393,17 +406,23 @@ class InputMixin:
         pygame.K_RIGHT: (1,  0),
     }
 
-    def _player_input(self, key: int):
-
-        # Sleep / paralysis: no action possible. Turn passes, status ticks down.
-        # Damage still wakes from sleep via Player.take_damage.
+    def _helpless_turn(self) -> bool:
+        """Sleep / paralysis: no action possible. The turn passes and the
+        status ticks down; True when that happened. Damage still wakes from
+        sleep via Player.take_damage."""
         if self.player.has_effect('sleeping'):
             self.add_message("You are fast asleep -- you cannot act.", 'warning')
             self._advance_turn()
-            return
+            return True
         if self.player.has_effect('paralyzed'):
             self.add_message("You are paralyzed -- you cannot act.", 'danger')
             self._advance_turn()
+            return True
+        return False
+
+    def _player_input(self, key: int):
+
+        if self._helpless_turn():
             return
 
         if key == pygame.K_PERIOD:
@@ -1439,7 +1458,9 @@ class InputMixin:
         if key in (pygame.K_RETURN, pygame.K_KP_ENTER):
             amount = int(self.drop_gold_input) if self.drop_gold_input.isdigit() else 0
             amount = max(0, min(amount, getattr(self, 'player_gold', 0)))
-            if amount > 0:
+            if amount > 0 and self._inside_rock():
+                self.add_message(self._ROCK_DROP_MSG, 'warning')
+            elif amount > 0:
                 from items import GoldPile
                 pile = GoldPile(amount, self.player.x, self.player.y)
                 pile._dropped_by_player = True       # a gold ring multiplies FOUND gold
@@ -1530,7 +1551,7 @@ class InputMixin:
                         self.add_message(self.player.too_heavy_message(), 'warning')
                         return
                     self.player_gold -= price
-                    iname = getattr(item, 'name', 'item')
+                    iname = self._display_name(item)     # as it was shown in the shop
                     _snd.play('buy')
                     self.add_message(f"You buy {iname} for {price:,} gold.", 'success')
                     m.stock.pop(sel)

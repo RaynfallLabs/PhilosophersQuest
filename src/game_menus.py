@@ -293,8 +293,10 @@ class MenuMixin:
             messages.remove('_preserve')
             if item in self.player.inventory:
                 item.count = getattr(item, 'count', 1) + 1
-            else:
-                self.player.add_to_inventory(item)
+            elif not self.player.add_to_inventory(item):
+                # It was in the pack a moment ago: the saved dose goes back
+                # whatever the load (it was lost when over the limit).
+                self.player.inventory.append(item)
         _qs_pot = getattr(self, 'quirk_system', None)
         if _qs_pot:
             _qs_pot.on_potion_drunk()
@@ -504,10 +506,20 @@ class MenuMixin:
           - this instance identified -> level 5 (everything visible)
           - the TYPE is known -> level 4 (name + stats + lore; this copy's
             BUC and enchant still hidden)
-          - otherwise the item's stored id_level.
+          - otherwise nothing (0).
         Pure helper; no side effects.
+
+        A stored id_level of 1-4 alone is NOT knowledge: ``item.identified =
+        True`` (about forty scripted grants) writes 4 without identifying
+        the item, and the dossier then showed the aura, effect and lore of
+        a thing still named by its appearance. What the player knows is
+        what the NAME says (hud_context.item_display_name): this copy
+        identified, or its type known.
         """
-        base = int(getattr(item, 'id_level', 0))
+        base = int(getattr(item, 'id_level', 0) or 0)
+        if (hasattr(item, 'id_level') and base < 5
+                and str(getattr(item, 'item_class', '')) != 'corpse'):
+            base = 0
         try:
             if self.player.knows_item_type(item):
                 base = max(base, 4)
@@ -1950,7 +1962,7 @@ class MenuMixin:
         potions = [i for i in self.player.inventory
                    if isinstance(i, Potion)
                    and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
-                   and getattr(i, 'identified', False)]
+                   and self._item_is_known(i)]
         if not potions:
             self.add_message(
                 f"You have no identified healing potions to use on {pet.name}.",

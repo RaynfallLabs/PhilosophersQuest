@@ -76,4 +76,4 @@ def test_visible_context_rows_are_sight_limited_and_sorted():
 
     assert [row.label for row in monsters] == ["Giant Rat"]
     assert items[0].label == "Crooked Ash Wand"
-    assert items[0].meta == "here"
+    assert items[0].meta == "Here"

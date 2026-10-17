@@ -1,14 +1,14 @@
-"""Tests for the C5 + D1..D4 fixes from the 2026-05-29 burndown list.
+"""Tests for the C5 + D1..D4 fixes from the 2026-05-29 burndown list,
+as those systems stand now (several were redesigned since):
 
-C5 — Potion mastery now multiplies BUFF/debuff duration in addition to
-     heal amount (potion_potency_bonus was a heal-only bug before).
-D1 — Confiteor is altar-only; a new Benedictio prayer blesses items at
-     the altar.
-D2 — Scroll of Identify lets you pick the target item and grants mastery
-     (id_level=5 + _claim_mastery) on the chosen item.
+C5 — RETIRED: potion masteries were removed 2026-08-06 (identify v3).
+D1 — RETIRED in v2.13.0: prayer simplification (see the D1 section).
+D2 — Scroll of Identify lets you pick the target item and fully identifies
+     it (id_level=5; there are no masteries to claim since identify v3).
 D3 — Cursed Scroll of Identify is AMNESIA: it forgets one already-
      identified item (id_level back to 0 + drops from known_item_ids).
-D4 — Scroll of Heal uses escalator_chain mode and scales heal by chain.
+D4 — v2.10.0 scroll rebuild: every scroll is a threshold quiz with a tier
+     and a power; escalator_chain scrolls are gone.
 """
 from __future__ import annotations
 
@@ -64,7 +64,7 @@ def test_v2_13_prayer_simplification_landed():
 
 
 # ---------------------------------------------------------------------------
-# D2 — Scroll of Identify pick target + grant mastery
+# D2 — Scroll of Identify pick target + full identify
 # ---------------------------------------------------------------------------
 
 def test_scroll_identify_picker_method_exists():

@@ -20,7 +20,7 @@ Delivers the per-answer response design in
 
 Activation gate: this handler only responds when the snapshot
 describes a math-combat chain quiz. Any other quiz (grammar scroll,
-cooking escalator, mystery AI quiz, etc.) is silently skipped so the
+cooking question, mystery AI quiz, etc.) is silently skipped so the
 pedagogical quizzes keep their minimalist UI.
 
 Rendering budget:

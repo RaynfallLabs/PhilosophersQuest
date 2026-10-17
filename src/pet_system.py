@@ -271,7 +271,8 @@ class Pet:
             try:
                 self._refresh_stats()
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('pet_system.__setstate__: recovered from an error')
 
 
     def _refresh_stats(self):
@@ -769,17 +770,6 @@ class SketchedPet(Pet):
 
         # Duration tracking
         self.turns_remaining = duration
-
-    @staticmethod
-    def _calc_dice_avg(dice_str: str) -> float:
-        """Parse 'NdM+B' and return average roll."""
-        import re
-        m = re.match(r'(\d+)d(\d+)([+-]\d+)?', str(dice_str))
-        if not m:
-            return 5.0
-        n, sides = int(m.group(1)), int(m.group(2))
-        bonus = int(m.group(3)) if m.group(3) else 0
-        return n * (sides + 1) / 2 + bonus
 
     @property
     def name(self) -> str:

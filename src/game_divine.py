@@ -136,10 +136,14 @@ _KARMA_VERSES: dict[str, dict[int, tuple[str, str]]] = {
 
 def _karma_tier(karma: int) -> str:
     """Map the player's karma to a verse-tier key."""
-    if karma >= 6: return 'saintly'
-    if karma >= 1: return 'righteous'
-    if karma == 0: return 'neutral'
-    if karma >= -5: return 'slipping'
+    if karma >= 6:
+        return 'saintly'
+    if karma >= 1:
+        return 'righteous'
+    if karma == 0:
+        return 'neutral'
+    if karma >= -5:
+        return 'slipping'
     return 'fallen'
 
 
@@ -1407,8 +1411,8 @@ class DivineMixin:
         # Only freely-obtainable relics: this used to pick uniformly from
         # ALL of artifact.json, so about 1 prayer in 28 handed over the
         # Philosopher's Stone, Gleipnir or a demon seal.
-        # Nor one this run has already produced somewhere else (the floor and
-        # the pack were all that was checked).
+        # A unique this run already produced (even one sold or lost) is not
+        # given twice, and the gift is claimed like any unique.
         from items import is_random_loot, unique_available, claim_unique
         pool = [t for t in templates
                 if is_random_loot(t) and unique_available(t)
@@ -1431,7 +1435,7 @@ class DivineMixin:
                 fallback_pool.extend(
                     t for t in load_items(cls)
                     if getattr(t, 'is_unique', False)
-                    and is_random_loot(t) and unique_available(t)     # never a quest or hero piece
+                    and is_random_loot(t) and unique_available(t)   # not a quest piece
                     and not _in_play(getattr(t, 'id', ''))
                 )
             except (FileNotFoundError, Exception):

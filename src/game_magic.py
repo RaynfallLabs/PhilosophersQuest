@@ -786,13 +786,14 @@ class MagicMixin:
                 # per-tier scaling actually lands.
                 base = roll(wand.power) if wand.power else 4
                 dmg = self._wand_tier_damage(base, wand.quiz_tier)
-                target.hp = max(0, target.hp - dmg)
-                target._unhurt_turns = 0          # it has been hurt: no mending
-                if target.hp == 0:
-                    target.alive = False
+                # C11: through take_damage (unresisted, as before), so an
+                # encounter NPC is spared, the Green Knight's pact holds and
+                # a sleeper wakes. The direct write skipped all three.
+                dmg = target.take_damage(dmg)
                 self.add_message(
                     f"A magic missile unerringly strikes {the_name(target, lower=True)} "
                     f"for {dmg} damage!", 'success')
+                self._announce_revive(target)
                 if not target.alive:
                     self._on_monster_killed(target)
 
@@ -1083,9 +1084,11 @@ class MagicMixin:
                 cap = effective_enchant_cap(self.player, 'weapon')
                 if w.enchant_bonus < cap:
                     w.enchant_bonus += 1
-                    self.add_message(f"Your {w.name} glows! Enchantment +{w.enchant_bonus}.", 'success')
+                    self.add_message(f"Your {self._bare_name(w)} glows!"
+                                     + (f" Enchantment {w.enchant_bonus:+d}." if self._enchant_shown(w) else ""),
+                                     'success')
                 else:
-                    self.add_message(f"Your {w.name} shudders but can hold no more enchantment.", 'info')
+                    self.add_message(f"Your {self._bare_name(w)} shudders but can hold no more enchantment.", 'info')
             else:
                 self.add_message("You wield no weapon to enchant.", 'warning')
 
@@ -2029,8 +2032,11 @@ class MagicMixin:
             from status_effects import MAX_EFFECT_DURATION as _MAXD
             dur = min(_MAXD, max(2, int(base_dur * chain_scale)))     # what is applied is what is said
             self.player.add_effect(eff_name, dur)
+            # MK-10: the status's display name, not its raw id ("magic_resist")
+            from status_effects import EFFECT_INFO as _EI
+            _shown = (_EI.get(eff_name) or (eff_name.replace('_', ' ').title(),))[0]
             self.add_message(
-                f"{spell['name']} -- {eff_name} for {dur} turns!", 'success')
+                f"{spell['name']} -- {_shown} for {dur} turns!", 'success')
             return
 
         # v2.15.0 fix: teleport_self (blink_spell, elder_blink) had its handler
@@ -2066,15 +2072,12 @@ class MagicMixin:
                     # used to carry the whole of it, so seven missiles were
                     # seven spells (2.2 weapon attacks from Force Storm).
                     per_missile = max(1, self._spell_damage(base_dmg, chain) // missiles)
-                    target.hp = max(0, target.hp - per_missile)
-                    target._unhurt_turns = 0
-                    if target.hp == 0:
-                        target.alive = False
-                    total_dmg += per_missile
+                    total_dmg += target.take_damage(per_missile)     # C11
                 self.add_message(
                     f"{missiles} magic missile{'s' if missiles > 1 else ''} "
                     f"strike{'s' if missiles == 1 else ''} {the_name(target, lower=True)} "
                     f"for {total_dmg} total damage!", 'success')
+                self._announce_revive(target)
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'fire_bolt':
@@ -2162,12 +2165,12 @@ class MagicMixin:
             elif effect == 'smite':
                 base_dmg = _roll(power) if power else 20
                 scaled = self._spell_damage(base_dmg, chain)
-                target.hp = max(0, target.hp - scaled)  # holy — bypasses resistances
-                target._unhurt_turns = 0
-                if target.hp == 0:
-                    target.alive = False
+                # holy -- bypasses resistances (physical = no multiplier);
+                # through take_damage for the NPC / revive / wake rules (C11)
+                scaled = target.take_damage(scaled)
                 self.add_message(
                     f"Holy fire smites {the_name(target, lower=True)} for {scaled} damage!", 'success')
+                self._announce_revive(target)
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster_spell':
@@ -2605,24 +2608,30 @@ class MagicMixin:
                     if eff_delta < 0 and getattr(w, 'weapon_immune_to_enchant_loss', False):
                         eff_delta = 0
                         self.add_message(
-                            f"The {w.name} shrugs off the unenchantment — it does not tarnish.",
+                            f"The {self._bare_name(w)} shrugs off the unenchantment — it does not tarnish.",
                             'info')
                     old_val = w.enchant_bonus
                     w.enchant_bonus = max(-3, min(cap, w.enchant_bonus + eff_delta))
                     actual = w.enchant_bonus - old_val
+                    # Named as known, and the number only once the weapon
+                    # is identified (it told an unknown blade's enchantment).
+                    _wn = self._bare_name(w)
+                    _num = self._enchant_shown(w)
                     if actual > 0:
                         self.add_message(
-                            f"Your {w.name} glows -- enchant +{w.enchant_bonus}!",
+                            f"Your {_wn} glows -- enchant {w.enchant_bonus:+d}!" if _num
+                            else f"Your {_wn} glows!",
                             'success'
                         )
                     elif actual < 0:
                         self.add_message(
-                            f"Your {w.name} dims -- enchant {w.enchant_bonus:+d}!",
+                            f"Your {_wn} dims -- enchant {w.enchant_bonus:+d}!" if _num
+                            else f"Your {_wn} dims!",
                             'warning'
                         )
                     else:
                         self.add_message(
-                            f"Your {w.name} shudders but can hold no more enchantment.",
+                            f"Your {_wn} shudders but can hold no more enchantment.",
                             'info'
                         )
             else:
@@ -2759,17 +2768,16 @@ class MagicMixin:
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
+                    _tn = self._bare_name(target)
+                    _te = (f" -- enchant {target.enchant_bonus:+d}"
+                           if self._enchant_shown(target) else "")
                     if actual > 0:
-                        self.add_message(
-                            f"Your {target.name} shines -- enchant +{target.enchant_bonus}!", 'success'
-                        )
+                        self.add_message(f"Your {_tn} shines{_te}!", 'success')
                     elif actual < 0:
-                        self.add_message(
-                            f"Your {target.name} tarnishes -- enchant {target.enchant_bonus:+d}!", 'warning'
-                        )
+                        self.add_message(f"Your {_tn} tarnishes{_te}!", 'warning')
                     else:
                         self.add_message(
-                            f"Your {target.name} shudders but can hold no more enchantment.", 'info'
+                            f"Your {_tn} shudders but can hold no more enchantment.", 'info'
                         )
             else:
                 self.add_message("You wear no armor to enchant.", 'info')
@@ -2805,19 +2813,16 @@ class MagicMixin:
                     old_val = getattr(target, 'enchant_bonus', 0)
                     target.enchant_bonus = max(-3, min(cap, old_val + delta))
                     actual = target.enchant_bonus - old_val
+                    _tn = self._bare_name(target)
+                    _te = (f" -- enchant {target.enchant_bonus:+d}"
+                           if self._enchant_shown(target) else "")
                     if actual > 0:
-                        self.add_message(
-                            f"A golden light infuses your {target.name} -- enchant +{target.enchant_bonus}!",
-                            'success'
-                        )
+                        self.add_message(f"A golden light infuses your {_tn}{_te}!", 'success')
                     elif actual < 0:
-                        self.add_message(
-                            f"A dark energy corrupts your {target.name} -- enchant {target.enchant_bonus:+d}!",
-                            'warning'
-                        )
+                        self.add_message(f"A dark energy corrupts your {_tn}{_te}!", 'warning')
                     else:
                         self.add_message(
-                            f"Your {target.name} shudders but can hold no more enchantment.",
+                            f"Your {_tn} shudders but can hold no more enchantment.",
                             'info'
                         )
             else:
@@ -3061,12 +3066,18 @@ class MagicMixin:
                         # ring's points into permanent ones).
                         if fx.get('stat') and fx['amount'] != _old:
                             self.player.apply_stat_bonus(fx['stat'], fx['amount'] - _old)
-                        self.add_message(
-                            f"The {acc.name} glows! Bonus {'increased' if bonus > 0 else 'decreased'} "
-                            f"by {abs(fx['amount'] - _old)}!", 'success' if bonus > 0 else 'warning')
+                        _an = self._bare_name(acc)
+                        if int(getattr(acc, 'id_level', 0) or 0) >= 5 or self._item_is_known(acc):
+                            self.add_message(
+                                f"The {_an} glows! Bonus {'increased' if bonus > 0 else 'decreased'} "
+                                f"by {abs(fx['amount'] - _old)}!", 'success' if bonus > 0 else 'warning')
+                        else:
+                            self.add_message(
+                                f"The {_an} {'glows' if bonus > 0 else 'dims'}!",
+                                'success' if bonus > 0 else 'warning')
                         touched += 1
                     else:
-                        self.add_message(f"The {acc.name} shimmers briefly but nothing happens.", 'info')
+                        self.add_message(f"The {self._bare_name(acc)} shimmers briefly but nothing happens.", 'info')
                 if touched == 0:
                     pass  # messages already emitted
             else:

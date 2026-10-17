@@ -51,9 +51,6 @@ class LevelManager:
         """Return (dungeon, monsters, items) for a saved level, or None."""
         return self._saved.get(level_num)
 
-    def has_visited(self, level_num: int) -> bool:
-        return level_num in self._saved
-
     def _bind_uniques(self) -> None:
         import items
         if not hasattr(self, 'seen_unique_ids'):
@@ -149,7 +146,8 @@ class LevelManager:
             try:
                 spawn_ghost(bones, dungeon, monsters, items)
             except Exception:
-                pass        # a damaged bones file costs its ghost, never the floor
+                from game_log import log_error
+                log_error('level_manager._maybe_spawn_bones: recovered from an error')  # a damaged bones file costs its ghost, never the floor
 
 
     def _roll_planned_mini_bosses(self) -> dict:
@@ -345,7 +343,8 @@ class LevelManager:
                     dungeon.omen_messages = []
                 dungeon.omen_messages.append(omen)
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('level_manager._try_spawn_mini_boss: recovered from an error')
 
 
     _SEAL_DEMON_LEVELS = {

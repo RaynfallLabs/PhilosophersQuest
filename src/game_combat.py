@@ -77,6 +77,15 @@ def _monster_level(m) -> int:
     return max(1, min(100, int(lvl)))
 
 
+def _is_bystander(m) -> bool:
+    """A friend standing among the monsters: an encounter NPC, the unicorn,
+    an allied angel. Monster.take_damage leaves them unhurt; area blows
+    (cleave, ricochet, Joyeuse, the Boots of Thor) also pass them by, so
+    they print no damage they did not take."""
+    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_allied', False))
+
+
 # Shares of the creature's own health (floor_curve.wound).
 PIT_FALL_SHARE = 0.10         # a monster that blunders into a pit
 SHIELD_LASH_SHARE = 0.10      # fire / cold shield, each time it is struck
@@ -144,10 +153,23 @@ class CombatMixin:
         'cold_resist':   'cold_resist',
         'shock_resist':  'shock_resist',
     }
+    # The buffs above that a monster actually acts on (a levitating monster
+    # floats over a dug pit). The rest change nothing for a monster.
+    _THROW_BUFFS_MONSTERS_USE = frozenset({'levitating'})
 
     # ------------------------------------------------------------------
     # Targeting -- melee reach (Observe-like cursor for melee attacks)
     # ------------------------------------------------------------------
+
+    def _reach_line_clear(self, tx, ty) -> bool:
+        """True if a melee strike can reach (tx, ty): always for the adjacent
+        ring, and past it only along a clear line (no wall, closed door or
+        diagonal squeeze between two walls)."""
+        px, py = self.player.x, self.player.y
+        if max(abs(tx - px), abs(ty - py)) <= 1:
+            return True
+        from combat import _line_of_sight
+        return _line_of_sight(px, py, tx, ty, self.dungeon)
 
     def _open_melee_targeting(self):
         """Press 'a' to enter melee targeting mode — attack adjacent tiles (or further with reach weapons)."""
@@ -156,12 +178,17 @@ class CombatMixin:
 
         px, py = self.player.x, self.player.y
 
-        # Build candidate list: alive monsters within melee reach
+        # Build candidate list: alive monsters within melee reach. Past the
+        # adjacent ring a reach weapon needs a clear line and a seen target
+        # (C05: spears struck through solid walls at unseen monsters).
+        _vis = getattr(self, 'visible', None) or set()
         candidates = [
             m for m in self.monsters
             if m.alive
             and abs(m.x - px) <= reach and abs(m.y - py) <= reach
             and not (m.x == px and m.y == py)
+            and (max(abs(m.x - px), abs(m.y - py)) <= 1
+                 or ((m.x, m.y) in _vis and self._reach_line_clear(m.x, m.y)))
         ]
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
@@ -561,6 +588,13 @@ class CombatMixin:
 
         # --- Buff effects (heals/buffs the monster -- bad idea!) ---
         buff = self._THROW_BUFF_MAP.get(effect)
+        if buff and buff not in self._THROW_BUFFS_MONSTERS_USE:
+            # Nothing a monster does reads haste, invisibility, regenerating
+            # or the resist statuses: "It looks Hasted!" was untrue.
+            self.add_message(
+                f"The {display} splashes {monster.name} but has no effect.", 'info'
+            )
+            return
         if buff:
             monster.add_effect(buff, duration)
             label = buff.replace('_', ' ').title()
@@ -571,7 +605,9 @@ class CombatMixin:
 
         # --- Healing effects (restore monster HP) ---
         if effect in ('heal', 'extra_heal', 'full_heal'):
-            if effect == 'full_heal':
+            if hasattr(monster, 'can_heal') and not monster.can_heal():
+                healed = 0                      # C10: its wound will not close
+            elif effect == 'full_heal':
                 healed = monster.max_hp - monster.hp
                 monster.hp = monster.max_hp
             else:
@@ -796,6 +832,20 @@ class CombatMixin:
         if self.player.hp <= 0:
             for _acc in self.player.equipped_accessories:
                 if getattr(_acc, 'resurrect_on_death', False):
+                    # C07: what the Ankh lent comes off with it, as a plain
+                    # unequip does (its +2 CON stayed for ever), before the
+                    # new health is measured against the true max.
+                    try:
+                        from chain_equip import is_chain_equip, revert_tier_bonuses
+                        if is_chain_equip(_acc) and int(getattr(_acc, 'achieved_tier', 0) or 0) > 0:
+                            revert_tier_bonuses(self.player, _acc)
+                    except ImportError:
+                        pass
+                    _fx = getattr(_acc, 'effects', None) or {}
+                    if 'stat' in _fx:
+                        self.player.apply_stat_bonus(_fx['stat'], -_fx.get('amount', 0))
+                    if 'stat2' in _fx:
+                        self.player.apply_stat_bonus(_fx['stat2'], -_fx.get('amount2', 0))
                     self.player.hp = max(1, self.player.max_hp // 2)
                     # Clear the slot that held the Ankh
                     if self.player.amulet_slot is _acc:
@@ -805,6 +855,8 @@ class CombatMixin:
                             if _r is _acc:
                                 self.player.accessory_slots[_i] = None
                                 break
+                    if 'status' in _fx:
+                        self._remove_status_if_no_other_grants(_fx['status'])
                     self.add_message(
                         "The Ankh of Isis shatters! Isis breathes life back into you!",
                         'success')
@@ -1259,7 +1311,7 @@ class CombatMixin:
                           if getattr(i, 'ammo_type', None) == ammo_type]
             if not ammo_items:
                 self.add_message(
-                    f"You have no {ammo_type}s! Cannot fire the {weapon.name}.", 'warning'
+                    f"You have no {ammo_type}s! Cannot fire the {self._bare_name(weapon)}.", 'warning'
                 )
                 return
 
@@ -1291,12 +1343,12 @@ class CombatMixin:
         self.state = STATE_TARGET
         if candidates:
             self.add_message(
-                f"Targeting with {weapon.name} -- arrow keys to move, TAB to cycle, ENTER to fire, ESC to cancel.",
+                f"Targeting with the {self._bare_name(weapon)} -- arrow keys to move, TAB to cycle, ENTER to fire, ESC to cancel.",
                 'info'
             )
         else:
             self.add_message(
-                f"No targets in range for {weapon.name}. Move cursor with arrow keys, ENTER to fire, ESC to cancel.",
+                f"No targets in range for the {self._bare_name(weapon)}. Move cursor with arrow keys, ENTER to fire, ESC to cancel.",
                 'info'
             )
 
@@ -1747,6 +1799,11 @@ class CombatMixin:
         # 1. Monster at cursor -- melee combat
         target = monster_at_tile(self.monsters, cx, cy)
         if target:
+            # C05: a reach weapon cannot strike through a wall or door.
+            if not self._reach_line_clear(cx, cy):
+                self.add_message("Something is in the way -- you cannot reach that far.",
+                                 'warning')
+                return
             self._start_combat(target)
             return
 
@@ -1865,6 +1922,27 @@ class CombatMixin:
     # Ranged attack resolution
     # ------------------------------------------------------------------
 
+    def _spend_attack_reroll(self):
+        """Spend the quiz reroll an attack just used (melee and ranged alike).
+
+        Tablet of Destinies: mark the reroll used this floor. Chain-equip
+        passive one_thousand_and_one consumes its per-floor charge instead.
+        """
+        if not getattr(self.quiz_engine, 'reroll_was_used', False):
+            return
+        if self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False):
+            self._quiz_reroll_used = True
+            self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
+        else:
+            try:
+                from chain_passives import consume_passive_charge
+                if consume_passive_charge(self.player, 'one_thousand_and_one'):
+                    self.add_message(
+                        "Scheherazade whispers another tale -- one more chance.",
+                        'info')
+            except ImportError:
+                pass
+
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
         # Health as the shot is loosed, for the traits that count kills made
@@ -1914,6 +1992,9 @@ class CombatMixin:
             self._fire_strike_finisher(monster, chain, damage, killed)
             self._announce_revive(monster)
             self._announce_scale_hit(monster, damage)
+            # C01: a shot spends the Tablet / Scheherazade reroll exactly as
+            # a melee swing does (it never did, so archers rerolled every shot).
+            self._spend_attack_reroll()
             if chain == 0:
                 self.add_message(
                     f"Your shot flies wide -- you miss {the_name(monster, lower=True)}!", 'warning'
@@ -2057,13 +2138,17 @@ class CombatMixin:
         _dz_ch = float(getattr(_w_dazzle, 'combat_start_aoe_confuse_chance', 0.0) or 0.0) if _w_dazzle else 0.0
         if _dz_ch > 0 and random.random() < _dz_ch:
             _px, _py = self.player.x, self.player.y
+            _dazzled = 0
             for _m in self.monsters:
                 if (_m.alive and abs(_m.x - _px) <= 3 and abs(_m.y - _py) <= 3
-                        and not (_m.x == _px and _m.y == _py)):
+                        and not (_m.x == _px and _m.y == _py)
+                        and not _is_bystander(_m)):
                     _m.add_effect('confused', 1)
-            self.add_message(
-                f"{_w_dazzle.name} flashes — nearby foes reel in confusion!",
-                'success')
+                    _dazzled += 1
+            if _dazzled:
+                self.add_message(
+                    f"{_w_dazzle.name} flashes — nearby foes reel in confusion!",
+                    'success')
 
         # Floating eye: paralyzing gaze on melee attack (the eye's signature
         # mechanic). Honor sleep_resist and blindness like monster.attack does.
@@ -2091,21 +2176,7 @@ class CombatMixin:
                 self.add_message(
                     f"You spare {the_name(monster, lower=True)} — Curtana's mercy. (+1 max HP)",
                     'success')
-            # Tablet of Destinies: mark reroll as used this floor.
-            # Chain-equip passive one_thousand_and_one consumes its per-floor charge when reroll fires.
-            if getattr(self.quiz_engine, 'reroll_was_used', False):
-                if self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False):
-                    self._quiz_reroll_used = True
-                    self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
-                else:
-                    try:
-                        from chain_passives import consume_passive_charge
-                        if consume_passive_charge(self.player, 'one_thousand_and_one'):
-                            self.add_message(
-                                "Scheherazade whispers another tale -- one more chance.",
-                                'info')
-                    except ImportError:
-                        pass
+            self._spend_attack_reroll()
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'
@@ -2199,24 +2270,29 @@ class CombatMixin:
                     if cleave_dmg:
                         _w = self.player.weapon
                         _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_at_max_plus_bleed'
+                        _cleaved = 0
                         for _m in self.monsters:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
-                                    and abs(_m.y - monster.y) <= 1:
+                                    and abs(_m.y - monster.y) <= 1 \
+                                    and not _is_bystander(_m):
                                 _actual = _m.take_damage(cleave_dmg)
+                                _cleaved += 1
                                 if _bleed and _actual > 0:
                                     _m.add_effect('bleeding', 3)
                                 if not _m.alive:
                                     self._on_monster_killed(_m, chain_score=chain)
-                        self.add_message(
-                            "Your swing carries through — adjacent foes are cleaved!", 'success')
+                        if _cleaved:
+                            self.add_message(
+                                "Your swing carries through — adjacent foes are cleaved!", 'success')
                     # Sling free_stones ricochet: bounce hit to an adjacent monster
                     ricochet_dmg = kwargs.get('ricochet_dmg', 0)
                     if ricochet_dmg:
                         for _m in self.monsters:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
-                                    and abs(_m.y - monster.y) <= 1:
+                                    and abs(_m.y - monster.y) <= 1 \
+                                    and not _is_bystander(_m):
                                 _m.take_damage(ricochet_dmg)
                                 self.add_message(
                                     f"The stone ricochets into the {_m.name}!", 'success')
@@ -2269,6 +2345,11 @@ class CombatMixin:
         _time_stopped = self.player.has_effect('time_stopped')
         if _time_stopped and not (self.death_pursues and self.death_monster is not None):
             return
+        # C06: a blow can move the player to another floor mid-loop (the
+        # Winged Sandals' psychopomp step). The old floor's monsters then
+        # stop: they used to keep acting on the new map, from their old
+        # coordinates, and could finish the hero the Sandals had just saved.
+        _floor_at_start = self.dungeon_level
 
         # Death acts first -- not part of self.monsters to avoid save/load issues
         if self.death_pursues and self.death_monster is not None:
@@ -2296,6 +2377,8 @@ class CombatMixin:
 
         # (While time is stopped, ordinary monsters stand still: see the
         # loop below. Named foes do not.)
+        if self.dungeon_level != _floor_at_start:
+            return
 
         # --- Ariadne's Thread: neutralize wall-phasing monsters ---
         has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
@@ -2314,6 +2397,8 @@ class CombatMixin:
                         m.ai_pattern = 'aggressive'  # can't hide anymore
 
         for m in self.monsters:
+            if self.dungeon_level != _floor_at_start:
+                break
             if not m.alive:
                 continue
             # Time stop holds ordinary monsters only. Bosses, mini-bosses and
@@ -2486,8 +2571,11 @@ class CombatMixin:
                         chance = float(proc_value(self.player, 'their_own_methods') or 0.0)
                         if chance > 0 and random.random() < chance:
                             from status_effects import DEBUFFS as _DEBUFFS
+                            # Not the crossbow cooldown or the pit the
+                            # player stands in: neither is a tactic.
                             _candidates = [eff for eff in self.player.status_effects.keys()
-                                          if eff in _DEBUFFS]
+                                          if eff in _DEBUFFS
+                                          and eff not in ('reloading', 'in_pit')]
                             if _candidates and hasattr(m, 'add_effect'):
                                 _eff = random.choice(_candidates)
                                 m.add_effect(_eff, 5)
@@ -2644,7 +2732,9 @@ class CombatMixin:
                         try:
                             from chain_passives import player_has_passive
                             if player_has_passive(self.player, 'first_hit_absorb'):
-                                self.player.hp = min(self.player.max_hp, self.player.hp + dmg)
+                                # C02: back to what it was, as the tiger-skin
+                                # above; "+ dmg" healed a lethal blow to full.
+                                self.player.hp = max(self.player.hp, min(self.player.max_hp, _hp_before_blow))
                                 self._first_hit_used = True
                                 self.add_message(
                                     "Your armor turns aside the first blow!", 'success')
@@ -2657,7 +2747,13 @@ class CombatMixin:
                 # Reflecting: negate 50% of newly applied status effects
                 _new_effects = set(self.player.status_effects.keys()) - _effects_before
                 if self.player.has_effect('reflecting') and _new_effects:
+                    from status_effects import DEBUFFS as _REFL_DEBUFFS
                     for _new_eff in list(_new_effects):
+                        # C08: only the blow's debuffs. The diff also holds
+                        # what the player's own gear switched on (life_save,
+                        # berserk, the Elder Blood escape signal).
+                        if _new_eff not in _REFL_DEBUFFS:
+                            continue
                         if random.random() < 0.50:
                             del self.player.status_effects[_new_eff]
                             self.add_message(f"Your reflection aura deflects the {_new_eff.replace('_', ' ')}!", 'info')
@@ -2945,8 +3041,13 @@ class CombatMixin:
                         f"back into the pages of the sketchbook.", 'info')
 
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
+        # C13: while time is stopped, ordinary monsters are held here too (as
+        # in _do_monster_turns); named foes are not.
+        _ts_pets = self.player.has_effect('time_stopped')
         for m in self.monsters:
             if not m.alive:
+                continue
+            if _ts_pets and not m._is_named_foe():
                 continue
             # A sleeping or held monster, a friend, or something with no
             # attack does not bite: the Lost Girl could kill a pet.

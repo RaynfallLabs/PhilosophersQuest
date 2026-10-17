@@ -681,9 +681,11 @@ class EncountersMixin:
         return True
 
     def _get_filtered_inventory(self, filter_type: str) -> list:
-        """Return inventory items matching the cost filter type."""
+        """Return inventory items matching the cost filter type. Quest and
+        story pieces and uniques are never offered (npc_encounters.offerable)."""
         from items import Food, Ingredient, Potion, Scroll, Weapon, Wand
-        inv = self.player.inventory
+        from npc_encounters import offerable
+        inv = [i for i in self.player.inventory if offerable(i)]
         if filter_type == 'food':
             return [i for i in inv if isinstance(i, (Food, Ingredient))]
         if filter_type == 'healing_potion':
@@ -739,7 +741,7 @@ class EncountersMixin:
                         if isinstance(selected_item, Wand):
                             selected_item.charges -= 1
                             self.add_message(
-                                f"You use the {selected_item.name}. ({selected_item.charges} charges left)", 'info')
+                                f"You use the {self._bare_name(selected_item)}. ({selected_item.charges} charges left)", 'info')
                             if selected_item.charges <= 0:
                                 self.player.remove_from_inventory(selected_item)
                         else:
@@ -762,14 +764,16 @@ class EncountersMixin:
                 self.player.mp = max(0, self.player.mp - cost['amount'])
             elif ctype == 'random_item':
                 # Cost is an item from a category (e.g., scroll sacrifice)
-                from items import Scroll, Potion, Food, Weapon
+                from items import Scroll, Potion, Food, Ingredient, Weapon
                 cat = cost.get('category', 'scroll')
-                cat_map = {'scroll': Scroll, 'potion': Potion, 'food': Food, 'weapon': Weapon}
+                cat_map = {'scroll': Scroll, 'potion': Potion, 'food': (Food, Ingredient), 'weapon': Weapon}
                 cls = cat_map.get(cat)
                 if cls and selected_item and isinstance(selected_item, cls):
                     self.player.remove_from_inventory(selected_item)
                 elif cls:
-                    item = next((i for i in self.player.inventory if isinstance(i, cls)), None)
+                    from npc_encounters import offerable
+                    item = next((i for i in self.player.inventory
+                                 if isinstance(i, cls) and offerable(i)), None)
                     if item:
                         self.player.remove_from_inventory(item)
             elif ctype == 'triggered_item':
@@ -892,8 +896,8 @@ class EncountersMixin:
             for _ in range(count):
                 item = self._generate_npc_reward_item(rtype)
                 if item:
-                    self.player.inventory.append(item)
                     self.add_message(f"Received: {self._display_name(item)}", 'loot')
+                    self._give_item(item)
 
         elif rtype == 'stat':
             stat = reward['stat']
@@ -906,8 +910,8 @@ class EncountersMixin:
                 reward['item_type'], reward['item_id'],
                 no_auto_identify=reward.get('no_auto_identify', False))
             if item:
-                self.player.inventory.append(item)
                 self.add_message(f"Received: {self._display_name(item)}", 'loot')
+                self._give_item(item)
 
         elif rtype == 'random_item':
             # Flavor encounter reward: random item by category name
@@ -915,8 +919,8 @@ class EncountersMixin:
             item = self._generate_npc_reward_item(f'random_{cat}')
             if item:
                 item.identified = True
-                self.player.inventory.append(item)
                 self.add_message(f"Received: {self._display_name(item)}", 'loot')
+                self._give_item(item)
 
         elif rtype == 'effect':
             eff = reward['effect']
@@ -941,7 +945,12 @@ class EncountersMixin:
             w = self.player.weapon
             if w:
                 w.enchant_bonus += reward.get('amount', 1)
-                self.add_message(f"{w.name} is now +{w.enchant_bonus}!", 'success')
+                # The number only when the weapon is identified: it named an
+                # unknown blade by its true name and told its enchantment.
+                if self._enchant_shown(w):
+                    self.add_message(f"Your {self._bare_name(w)} is now {w.enchant_bonus:+d}!", 'success')
+                else:
+                    self.add_message(f"Your {self._bare_name(w)} glows!", 'success')
             else:
                 self.add_message("You have no weapon equipped to enchant.", 'warning')
 
@@ -1005,7 +1014,8 @@ class EncountersMixin:
                 claim_unique(result)
                 return result
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('game_encounters._generate_npc_reward_item: recovered from an error')
         return None
 
     def _create_specific_npc_item(self, item_type: str, item_id: str,
@@ -1020,7 +1030,8 @@ class EncountersMixin:
                         result.identified = True
                     return result
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('game_encounters._create_specific_npc_item: recovered from an error')
         return None
 
     def _grant_burden_item(self, item_id: str):
@@ -1031,10 +1042,14 @@ class EncountersMixin:
                 if item.id == item_id:
                     result = copy_at(item, self.player.x, self.player.y)
                     result.identified = True
-                    self.player.inventory.append(result)
+                    # Stacked and stamped like any gift; an accepted burden
+                    # is carried whatever the load (it is the cost).
+                    if not self.player.add_to_inventory(result):
+                        self.player.inventory.append(result)
                     return
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('game_encounters._grant_burden_item: recovered from an error')
 
     def _close_npc_encounter(self, resolved: bool):
         """Close the NPC encounter overlay."""
@@ -1116,20 +1131,22 @@ class EncountersMixin:
                 if sword:
                     sw = copy_at(sword, px, py)
                     sw.identified = True
-                    self.player.inventory.append(sw)
+                    self._give_item(sw)
                     self.add_message("The Sword of Michael materializes in your hands!", 'success')
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('game_encounters._resolve_judgment: recovered from an error')
             try:
                 artifacts = load_items('artifact')
                 scales = next((a for a in artifacts if a.id == 'scales_of_michael'), None)
                 if scales:
                     sc = copy_at(scales, px, py)
                     sc.identified = True
-                    self.player.inventory.append(sc)
+                    self._give_item(sc)
                     self.add_message("The Scales of Michael float into your grasp!", 'success')
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('game_encounters._resolve_judgment: recovered from an error')
             self._log_chronicle("Stood before the altar of judgment. The scales weighed my soul. I was found worthy. A sword of white fire and the scales themselves were given to me. I've never felt so terrified.")
 
         elif outcome == 'scales_granted':
@@ -1141,10 +1158,11 @@ class EncountersMixin:
                 if scales:
                     sc = copy_at(scales, px, py)
                     sc.identified = True
-                    self.player.inventory.append(sc)
+                    self._give_item(sc)
                     self.add_message("The Scales of Michael float into your grasp!", 'success')
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('game_encounters._resolve_judgment: recovered from an error')
             self._log_chronicle("The altar weighed my deeds. Not perfect, but enough. The Scales of Michael settled into my hands. They hum with a quiet judgment.")
 
         elif outcome == 'abaddon_empowered':

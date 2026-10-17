@@ -796,10 +796,6 @@ class QuizEngine:
                 if isinstance(blurb, str) and blurb.strip():
                     self._contexts[(subject, topic)] = blurb.strip()
 
-    def reload_context_blurbs(self):
-        """Force a re-read of all context-blurb files (used by tests)."""
-        self._load_context_blurbs()
-
     def get_context_blurb(self, subject: str, topic: str | None) -> str | None:
         """Return the blurb for a (subject, topic), or None if unknown.
 
@@ -948,7 +944,8 @@ class QuizEngine:
             try:
                 _keep()
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('quiz_engine._end: recovered from an error')
         result = QuizResult(
             success=success,
             score=self.score,
