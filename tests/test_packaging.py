@@ -195,28 +195,80 @@ _BUNDLED_DIR_ALLOWED = {
     "data/templates":          {".json"},
     "assets/fonts":            {".ttf", ".otf"},
     "assets/tiles":            {".png"},
-    # The UI art kit ships runtime art + its manifest only (plus the README
-    # documenting the asset contract). Never .psd/.kra sources, ComfyUI
-    # workflows or drafts: those live in _genart/.
-    "assets/ui":               {".png", ".json", ".md"},
+    # The UI art kit ships runtime art + its manifest only. Its README
+    # (the asset contract) stays in the repo but is in the spec's
+    # bundle_excludes. Never .psd/.kra sources, ComfyUI workflows or
+    # drafts: those live in _genart/.
+    "assets/ui":               {".png", ".json"},
 }
 _ARTIFACT_MARKERS = ("_v2", "_pre_v2", "_tellgate", "_backup", "_staging")
 
 
+def _spec_is_excluded():
+    """Return the spec's `_is_excluded(dest)` function, built from its
+    literal `bundle_excludes` list and its own source, so the test runs the
+    exact filter the spec applies to a.datas."""
+    import os
+    tree = ast.parse(SPEC.read_text(encoding="utf-8"))
+    keep = [n for n in tree.body
+            if (isinstance(n, ast.Assign)
+                and any(isinstance(t, ast.Name) and t.id == "bundle_excludes"
+                        for t in n.targets))
+            or (isinstance(n, ast.FunctionDef) and n.name == "_is_excluded")]
+    assert len(keep) == 2, "spec must define bundle_excludes and _is_excluded"
+    ns = {"os": os}
+    exec(compile(ast.Module(body=keep, type_ignores=[]), str(SPEC), "exec"), ns)
+    return ns["_is_excluded"]
+
+
+def _shipped_files(rel):
+    """Files the bundle ships from the whole-dir entry `rel` (PyInstaller
+    dest names use the OS separator, as the spec's filter sees them)."""
+    import os
+    excluded = _spec_is_excluded()
+    for f in (ROOT / rel).rglob("*"):
+        if f.is_file() and not excluded(
+                os.path.join(*f.relative_to(ROOT).parts)):
+            yield f
+
+
+def test_spec_compiles_without_warnings():
+    """The spec's docstring once held a bare backslash-P escape (a
+    SyntaxWarning on every build, an error in a future Python)."""
+    import warnings
+    with warnings.catch_warnings():
+        warnings.simplefilter("error")
+        compile(SPEC.read_text(encoding="utf-8"), str(SPEC), "exec")
+
+
+def test_spec_excludes_the_prune_archive_and_ui_readme():
+    import os
+    excluded = _spec_is_excluded()
+    j = os.path.join
+    assert excluded(j("data", "questions", "_pruned", "x", "cooking.json"))
+    assert excluded(j("assets", "ui", "README.md"))
+    assert not excluded(j("data", "questions", "cooking.json"))
+    assert not excluded(j("data", "questions_pruned.json"))
+    assert not excluded(j("assets", "ui", "manifest.json"))
+
+
 def test_bundled_dirs_contain_only_runtime_files():
-    """Whole-directory `added_files` entries ship every file inside them,
-    so those dirs must stay pristine — only runtime data/assets, never
-    generator scripts, __pycache__, backups, or *_v2 staging banks."""
+    """Whole-directory `added_files` entries ship every file inside them
+    (minus the spec's bundle_excludes), so those dirs must stay pristine —
+    only runtime data/assets, never generator scripts, __pycache__,
+    backups, *_v2 staging banks, or _underscore archive folders."""
     offenders = []
     for rel, allowed in _BUNDLED_DIR_ALLOWED.items():
         d = ROOT / rel
         if not d.is_dir():
             offenders.append(f"  MISSING bundled dir: {rel}")
             continue
-        for f in d.rglob("*"):
-            if not f.is_file():
-                continue
-            if f.suffix.lower() not in allowed:
+        for f in _shipped_files(rel):
+            if any(p.startswith("_") for p in f.relative_to(d).parts[:-1]):
+                offenders.append(
+                    f"  {f.relative_to(ROOT).as_posix()}  "
+                    f"(archive folder — add it to the spec's bundle_excludes)")
+            elif f.suffix.lower() not in allowed:
                 offenders.append(
                     f"  {f.relative_to(ROOT).as_posix()}  "
                     f"(bundle ships only {sorted(allowed)} here)")
