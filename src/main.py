@@ -4813,6 +4813,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 ns = ''
         return '-'.join(p for p in (ns, ew) if p) or 'at your feet'
 
+    @staticmethod
+    def _hidden_in_plain_sight(m) -> bool:
+        """A monster on a tile the hero can see that he still cannot see:
+        an ambusher that has not sprung (mimics, piercers, lurkers, cloakers;
+        not drawn until aware) or a mimic-AI creature still posing as
+        terrain. Shep's nose does not care what it looks like."""
+        if getattr(m, '_aware', False):
+            return False
+        return m.ai_pattern in ('ambush', 'mimic')
+
     def _do_pet_growl(self):
         """Shep's Hackles Up: when a hostile the hero cannot see comes within
         his range, Shep lowers his head and growls toward it. Each monster
@@ -4834,7 +4844,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 and not getattr(m, '_flavor_encounter_tag', None)
                 and not getattr(m, '_is_unicorn', False)
                 and max(abs(m.x - px), abs(m.y - py)) <= radius
-                and (m.x, m.y) not in self.visible
+                and ((m.x, m.y) not in self.visible or self._hidden_in_plain_sight(m))
             ]
             seen = getattr(pet, '_growled_at', None)
             if seen is None:

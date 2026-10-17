@@ -222,7 +222,7 @@ def test_the_qa_switch_forces_a_shep_hatch(monkeypatch):
     monkeypatch.setenv('PQ_FORCE_SPHERE', 'shep')
     monkeypatch.setattr(pet_system, '_SHEP_RNG', _FixedRng(0.99))
     assert roll_soul_sphere_species(()) == SHEP
-    assert roll_soul_sphere_species({SHEP}) in ELEMENTAL     # still once a run
+    assert roll_soul_sphere_species({SHEP}) != SHEP     # still once a run (a cat can still roll)
     monkeypatch.setenv('PQ_QA_MODE', '0')                    # only in QA mode
     assert roll_rare_sphere_pet((), _FixedRng(0.5)) is None
 
@@ -624,3 +624,30 @@ def test_compass_words():
     assert Game._compass_word(0, -2) == 'north'
     assert Game._compass_word(-3, 3) == 'south-west'
     assert Game._compass_word(1, -5) == 'north'
+
+
+def test_he_growls_at_an_ambusher_or_mimic_hiding_in_plain_sight():
+    g, shep = _growl_scene()
+    lurker = _monster(g.player.x, g.player.y + 3)
+    lurker.ai_pattern = 'ambush'
+    g.visible.add((lurker.x, lurker.y))        # its tile is in view, it is not
+    g.monsters = [lurker]
+    g._do_pet_growl()
+    assert _growls(g) and 'staring south' in _growls(g)[-1]
+    chest = _monster(g.player.x + 4, g.player.y)
+    chest.ai_pattern = 'mimic'
+    g.visible.add((chest.x, chest.y))
+    g.monsters.append(chest)
+    g._do_pet_growl()
+    assert len(_growls(g)) == 2
+
+
+def test_no_growl_at_an_ambusher_once_it_has_sprung_in_view():
+    g, shep = _growl_scene()
+    m = _monster(g.player.x + 2, g.player.y)
+    m.ai_pattern = 'ambush'
+    m._aware = True
+    g.visible.add((m.x, m.y))
+    g.monsters = [m]
+    g._do_pet_growl()
+    assert _growls(g) == []
