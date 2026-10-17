@@ -259,7 +259,8 @@ def test_take_and_equip_counts_what_is_already_worn():
 
 
 def test_the_boulder_is_taken_up_whatever_the_load():
-    """Sisyphus' trial is to walk with it PAST the limit: it must be possible."""
+    """Sisyphus' Boulder can always be taken up, even past the limit (its
+    trial is to carry it, whatever else the hero carries)."""
     from mystery_system import MysteryKeyItem
     p = Player()
     p.inventory.append(_weight(95))

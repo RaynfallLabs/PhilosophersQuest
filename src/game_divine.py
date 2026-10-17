@@ -913,10 +913,14 @@ class DivineMixin:
 
         # The six altars round Abaddon's arena each answer once, whatever the
         # prayer cooldown says. (With a cooldown of 100+ turns only one of
-        # the six could ever be used in the fight.)
+        # the six could ever be used in the fight.) Each takes one prayer a
+        # visit: an unanswered one could be retried at once until it was
+        # answered, one turn a try.
+        _pos = (self.player.x, self.player.y)
         _fresh_l100_altar = (
             self.dungeon_level == 100 and _on_altar(self)
-            and (self.player.x, self.player.y) not in getattr(self, '_l100_altars_used', set()))
+            and _pos not in getattr(self, '_l100_altars_used', set())
+            and _pos not in getattr(self, '_l100_altars_tried', set()))
         if self.player.prayer_cooldown > 0 and not _fresh_l100_altar:
             self.add_message(
                 f"You cannot pray yet. ({self.player.prayer_cooldown} turns remain)",
@@ -1050,6 +1054,13 @@ class DivineMixin:
                 # nothing at all and the longest cooldown, while the same
                 # prayer one tile away gave the full mercy.)
                 self.add_message("This altar's holy power has been spent.", 'info')
+            elif pos in self._l100_altars_tried:
+                # One prayer a visit: this altar heard one already. Its fire
+                # waits for the next time the hero comes down to it.
+                self.add_message("This altar has heard you once already. Its fire "
+                                 "will not answer again until you return.", 'info')
+            elif chain <= 0:
+                self._l100_altars_tried.add(pos)
             elif chain > 0:
                 turns = chain * 2
                 self.abaddon_resist_removed_turns += turns

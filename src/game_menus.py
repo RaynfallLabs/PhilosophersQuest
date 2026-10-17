@@ -1635,7 +1635,8 @@ class MenuMixin:
                 f"({pl.hero_special_cooldowns[pid]} turns).",
                 'warning')
             return False
-        # Set cooldown immediately; the quiz outcome is not relevant to gating reuse.
+        # Set cooldown immediately: a failed quiz spends it. Only a power that
+        # found nothing to act on gives it back (on_complete below).
         pl.hero_special_cooldowns[pid] = int(special.get('cooldown', 250))
         self.quiz_title = f"{special['name'].upper()}  --  AI"
         from game_states import STATE_QUIZ, STATE_PLAYER
@@ -1645,9 +1646,15 @@ class MenuMixin:
             self.state = STATE_PLAYER
             from hero_specials import resolve_active_special
             try:
-                resolve_active_special(self, sp, int(result.score))
+                acted = resolve_active_special(self, sp, int(result.score))
             except Exception as e:
+                acted = True
                 self.add_message(f"(Special error: {e})", 'warning')
+            if acted is False:
+                # Nothing to act on (no pet, no foe in sight, nothing unknown):
+                # the power is not spent. It used to cost the whole cooldown.
+                pl.hero_special_cooldowns[pid] = 0
+                self.add_message(f"{sp['name']} is not spent: it is ready again.", 'info')
             self._advance_turn()
 
         self.quiz_engine.start_quiz(

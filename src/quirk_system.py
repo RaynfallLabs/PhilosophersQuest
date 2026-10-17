@@ -340,11 +340,13 @@ class QuirkSystem:
             if self._p('invisible_moves') >= 500 and not self.is_unlocked('shadow_step'):
                 self._award_power('shadow_step', "Shadow Step", lambda pl: None)
 
-    def on_stair_use(self, new_level: int):
+    def on_stair_use(self, new_level: int, from_level: int | None = None):
         """Called when player uses stairs (any direction)."""
-        # Cerberus (#49): 120 stair uses -> warning permanent
-        self._inc('stair_uses')
-        if self._p('stair_uses') >= 120 and not self.is_unlocked('cerberus'):
+        # Cerberus (#49): 120 different staircases -> warning permanent. Each
+        # way between two floors counts once (down from 4 to 5, up from 5 to
+        # 4): bouncing on one staircase for 120 turns used to earn it.
+        self._set_add('cerberus_stairs', (from_level, new_level))
+        if self._set_len('cerberus_stairs') >= 120 and not self.is_unlocked('cerberus'):
             self._award('cerberus', "Cerberus",
                         lambda pl: pl.add_effect('warning', -1))
 
@@ -731,7 +733,8 @@ class QuirkSystem:
                 self._award_power('war_cry', "War Cry", lambda pl: None)
 
     def on_take_damage(self, amount: int, pct_of_max: float):
-        """Called whenever player takes any damage."""
+        """Called whenever the player takes any damage: a monster's blow
+        (game_combat) or anything else (Player.take_damage)."""
         # Eye of the Storm counts floors cleared WITHOUT taking damage.
         # Nothing ever cleared this flag, so every floor counted as clean
         # and the power unlocked for everyone on the sixth staircase.
@@ -1000,7 +1003,9 @@ class QuirkSystem:
                         lambda pl: pl.apply_stat_bonus('PER', 1))
 
     def on_status_applied(self, effect_id: str, source_monster_kind):
-        """Called when a status effect is applied to the player."""
+        """Called when a status effect is applied to the player: by a
+        monster's blow (with its kind) or by anything else (Player.add_effect,
+        kind None)."""
         # Mithridates: track which monster types have poisoned you
         if effect_id == 'poisoned' and source_monster_kind:
             self._set_add('mithridates_poisoned_by', source_monster_kind)
@@ -1026,9 +1031,9 @@ class QuirkSystem:
                 self._award('darwin', "Survival of the Fittest",
                             lambda pl: pl.apply_stat_bonus('CON', 2))
 
-        # Gorgon Ward and Zeus' Bolt are tracked in on_turn(). This hook only
-        # fires for monster melee effects, and no monster applies haste, so
-        # counting them here made both powers impossible to earn.
+        # Gorgon Ward and Zeus' Bolt are tracked in on_turn(). (This hook
+        # once fired only for monster melee effects, and no monster applies
+        # haste, so counting them here made both powers impossible to earn.)
 
     def on_disease_drain(self, stat: str, amount: int):
         """Called when disease ticks and drains a stat."""
@@ -1349,7 +1354,7 @@ _QUIRK_PROGRESS = {
     'medusa':        ('medusa_episodes_answered', 5, False),
     'green_knight':  ('green_knight_survivals', 10, False),
     'narcissus':     ('narcissus_examines', 75, False),
-    'cerberus':      ('stair_uses', 120, False),
+    'cerberus':      ('cerberus_stairs', 120, True),
     'ragnarok':      ('_special', -1, False),             # conditional: level 100 + <=10 HP
     'spartacus':     ('spartacus_kills', 50, False),
     'ramanujan':     ('math_correct_run', 2500, False),
@@ -1535,7 +1540,7 @@ _QUIRK_TRIGGER = {
     'medusa':        "You answered correctly while blinded in 5 separate blinded episodes.",
     'green_knight':  "You survived 10 single hits dealing 30%+ of your max HP.",
     'narcissus':     "You examined your inventory 75 times.",
-    'cerberus':      "You used the stairs 120 times.",
+    'cerberus':      "You took 120 different staircases.",
     'ragnarok':      "You descended to level 100 with a tenth of your health or less.",
     # --- New passive quirks ---
     'spartacus':     "You killed 50 enemies while at least one debuff was active.",

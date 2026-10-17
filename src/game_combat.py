@@ -2518,7 +2518,13 @@ class CombatMixin:
                     m._on_ice = self.dungeon.tiles[m.y][m.x] == _ICE
                 m._last_attack_type = None      # set by the monster only when a blow lands
                 _hp_before_blow = self.player.hp
-                dmg, msg = m.attack(self.player)
+                # The blow is reported to the traits below, once, after the
+                # wards (Player.take_damage reports every other hurt).
+                self.player._trait_hooks_held = True
+                try:
+                    dmg, msg = m.attack(self.player)
+                finally:
+                    self.player._trait_hooks_held = False
                 self.add_message(msg, 'danger')
                 # Perseus's trait counts every gaze or effect thrown back at its
                 # sender. Only the reflection aura's second chance (below) was

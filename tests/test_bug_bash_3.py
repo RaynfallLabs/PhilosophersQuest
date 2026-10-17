@@ -307,8 +307,19 @@ def test_dads_fist_is_on_his_hand_and_dad_keeps_no_score():
     assert not ok and 'part of you' in msg
     p._apply_equip(make_item_by_id('weapon', 'excalibur'))      # cannot be swapped out either
     assert p.weapon is fist
-    src = _src('game_render.py')
-    assert src.count("get('_joke'):     # a joke build keeps no score") == 2
+    # A joke build keeps no high score (written at game over since bug bash 4).
+    import types
+    import main as _main
+    import highscore_system as _hs
+    written = []
+    _orig = _hs.add_score
+    _hs.add_score = lambda *a, **k: written.append(a)
+    try:
+        _main.Game._record_high_score(
+            types.SimpleNamespace(_score_saved=False, secret_build=dict(dad)))
+    finally:
+        _hs.add_score = _orig
+    assert written == []
     main = _src('main.py')
     at = main.index('def _spawn_boss_scroll')
     assert "get('_joke')" in main[at:at + 400]

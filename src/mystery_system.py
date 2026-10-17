@@ -168,7 +168,7 @@ MYSTERIES = {
         'description': "A steep slope carved into the stone. At its base lies an enormous boulder with a worn handprint.",
         'key_item': {'name': "The Boulder", 'symbol': '*', 'color': (140, 140, 140), 'weight': 20.0},
         'gold_cost': 0,
-        'challenge': {'mode': 'physical', 'tiles': 15},  # walk 15 tiles over the carry limit (worn + pack) holding the boulder; it can always be picked up
+        'challenge': {'mode': 'physical', 'tiles': 15},  # carry the boulder 15 steps (any load; it can always be picked up, even past the limit)
         'reward': {'STR': 2, 'INT': 1},
         'reward_text': "The boulder reaches the top and, for once, stays there. One must imagine you happy. (Strength +2, Intelligence +1)",
         'fail_text': "",
@@ -271,8 +271,8 @@ class MysteryKeyItem:
         self.lore         = ''
         self.identified   = True
         self.item_class   = 'mystery_key'
-        # Sisyphus' Boulder is taken up whatever the load: its trial is to
-        # walk with it PAST the carry limit (Player._carries_past_limit).
+        # Sisyphus' Boulder is taken up whatever the load (Player.
+        # _carries_past_limit): its trial is to carry it, step by step.
         self.carry_past_limit = (mystery_id == 'sisyphus')
 
 
@@ -564,37 +564,31 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
     # --- Special rewards ---
     special = reward.get('special')
     if special == 'forge_mjolnir':
-        from items import Weapon
-        mjolnir_def = {
-            'id': 'mjolnir',
-            'name': 'Mjolnir',
-            'symbol': '^',
-            'color': [255, 140, 0],
-            'weight': 8.0,
-            'min_level': 1,
-            'item_class': 'weapon',
-            'damage': '3d6',
-            'damage_type': 'physical',
-            'enchant_bonus': 4,
-            'two_handed': True,
-            'identified': True,
-            'unidentified_name': 'Mjolnir',
-            # Sized for the floors the forge stands on (33 to 45): it was
-            # base 18 asking tier-5 sums, a third of a common hammer there.
-            'quiz_tier': 3,
-            'container_loot_tier': 'legendary',
-            'baseDamage': 85,
-            'damageTypes': ['blunt'],
-            'chainMultipliers': [0.5, 1.0, 1.5, 2.0, 2.5, 3.0],
-        }
-        weapon = Weapon(mjolnir_def)
+        # The anvil finishes THE Mjolnir: the unique in data/items/weapon.json
+        # (whose lore is this very forge). It used to build a second, weaker
+        # hammer in code under the same id, so a run could hold two.
+        from items import make_item_by_id, unique_available, claim_unique
+        weapon = make_item_by_id('weapon', 'mjolnir')
         # Remove the old key item from inventory
         old = next((i for i in player.inventory
                     if getattr(i, 'mystery_id', None) == 'mjolnir'), None)
         if old:
             player.inventory.remove(old)
-        if _give(game, player, weapon):
-            game.add_message("Mjolnir, fully forged, appears in your pack!", 'loot')
+        if weapon is None or not unique_available(weapon):
+            game.add_message("The hammer is already out in the world. The anvil "
+                             "has nothing left to finish.", 'info')
+        else:
+            claim_unique(weapon)
+            # Forged by the hero's own count: known through and through.
+            weapon.identified = True
+            weapon.id_level = 5
+            weapon.buc_known = True
+            try:
+                player.known_item_ids.add(weapon.id)
+            except Exception:
+                pass
+            if _give(game, player, weapon):
+                game.add_message("Mjolnir, fully forged, appears in your pack!", 'loot')
 
     elif special == 'ring_of_command':
         # Ring of Command is defined in data/items/accessory.json (no +1 WIS

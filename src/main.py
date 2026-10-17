@@ -351,6 +351,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._flux_given: bool = False      # "Nobody calls me chicken!" pays once a run
         self.heavenly_host_active: bool = False      # Scales of Michael activated
         self._l100_altars_used: set = set()          # (x,y) of altars already prayed at on L100
+        self._l100_altars_tried: set = set()         # (x,y) prayed at, unanswered, this visit to L100
         # Morality / NPC encounter system
         self.karma: int = 0                # cumulative moral score (-10 to +10)
         self._npc_encounter_levels: dict = {}  # {level: encounter_def} for this run
@@ -500,6 +501,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters                = monsters
         self.ground_items            = items
         self.player                  = Player()
+        # The player reaches the game (wards, trait counters) from the first
+        # turn: a trap on the first step used to find no game to report to.
+        self.player._combat_game_ref = self
         # One-cosmetic-per-item: give the player the appearance-stamp hook so
         # accessories entering the pack from any source adopt this run's looks.
         self.player._appearance_stamp = self.apply_appearance
@@ -595,6 +599,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def load_state(self, state: dict):
         """Restore all game state from a previously saved dict (pickle)."""
         self.player        = state['player']
+        self.player._combat_game_ref = self     # dropped on save (Player.__getstate__)
         # One-cosmetic-per-item: re-attach the appearance-stamp hook (dropped on
         # pickle). _migrate_buc_all (below) handles deleted-id remap + stamping
         # of already-owned/ground items.
@@ -725,6 +730,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._migrate_legacy_ingredients(state)
         self.player_name   = state['player_name']
         self.secret_build  = state.get('secret_build')
+        # The build's rule flags (Dad's _joke, _lock_weapon, ...) come from
+        # today's SECRET_BUILDS, by name: the copy pickled into an old save
+        # kept old rules (an old Dad save still earned boss scrolls). Only a
+        # run that started as a build is refreshed; a removed build keeps its
+        # saved copy. Starting stats and kit were applied at the start and
+        # are not touched.
+        if self.secret_build:
+            try:
+                from welcome_screen import SECRET_BUILDS
+                _cur = SECRET_BUILDS.get((self.player_name or '').strip().lower())
+                if _cur:
+                    self.secret_build = dict(_cur)
+                    self._apply_locked_weapon_rule()
+            except Exception:
+                pass
+        # Which run this is (kept in the save; a later save of the same run by
+        # another copy of the game is never written over) and, for a save
+        # still at its old-mapping path, that path (retired on the next save).
+        self._run_id = state.get('_run_id') or f"legacy:{state['player_name']}"
+        self._legacy_save_path = state.get('__loaded_from__')
         self.turn_count    = state['turn_count']
         self.dungeon_level = state['dungeon_level']
         self.player_gold   = state['player_gold']
@@ -749,6 +774,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.heavenly_host_active = state.get('heavenly_host_active', False)
         self.abaddon_resist_removed_turns = state.get('abaddon_resist_removed_turns', 0)
         self._l100_altars_used = state.get('_l100_altars_used', set())
+        self._l100_altars_tried = state.get('_l100_altars_tried', set())
         # Morality system
         self.karma = state.get('karma', 0)
         self._npc_encounter_levels = state.get('_npc_encounter_levels', {})
@@ -857,6 +883,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._burdened = False
         self._note_burden()
         self._show_load_summary_popup()
+
+    def _apply_locked_weapon_rule(self):
+        """A build whose starting weapon is part of the hero (_lock_weapon)
+        holds it bound. An old save from before the rule kept it loose in the
+        pack: bind it if it is wielded, or wield it if the hands are empty.
+        Another weapon in hand is left alone."""
+        b = self.secret_build or {}
+        wid = b.get('_start_weapon')
+        if not b.get('_lock_weapon') or not isinstance(wid, str) or self.player is None:
+            return
+        cur = self.player.weapon
+        if cur is not None:
+            if getattr(cur, 'id', None) == wid:
+                cur.bound_to_wielder = True
+            return
+        w = next((i for i in self.player.inventory if getattr(i, 'id', None) == wid), None)
+        if w is not None:
+            self.player.inventory.remove(w)
+            w.bound_to_wielder = True
+            self.player._apply_equip(w)
 
     def _load_looks_valid(self, state: dict) -> bool:
         """Sanity-check that load_state actually restored the run.
@@ -1325,6 +1371,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                                              'complete_tablet_of_second_death')
                         for i in self.player.inventory)):
             self._trigger_death_pursuit()
+        # A floor-100 altar takes one prayer a visit: a new visit is a new try.
+        self._l100_altars_tried = set()
+        _from_level = self.dungeon_level          # (the staircase taken, for Cerberus)
         # Notify quirk system before level change (fast-exit check)
         # New depth: a floor deeper than any reached. The Cow Level (999) is a
         # side trip, not depth: counting it recharged every once-a-floor ward
@@ -1818,7 +1867,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Notify quirk system of stair use and floor entry
         _qs_stair = getattr(self, 'quirk_system', None)
         if _qs_stair:
-            _qs_stair.on_stair_use(new_level)
+            _qs_stair.on_stair_use(new_level, _from_level)
             _qs_stair.on_floor_entered(new_level)
             # Orpheus: slow all monsters on floor entry
             if getattr(self.player, 'quirk_progress', {}).get('orpheus_active'):
@@ -2838,7 +2887,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     getattr(i, 'mystery_id', None) == 'sisyphus'
                     for i in self.player.inventory
                 )
-                if _has_boulder and self.player.is_overloaded():     # worn gear counts too
+                # Every step carried counts. (Only steps taken over the carry
+                # limit used to count: the Boulder weighs 20, so an ordinary
+                # hero walked with it and the trial counted nothing.)
+                if _has_boulder:
                     self.player.quirk_progress['sisyphus_boulder_tiles'] = (
                         self.player.quirk_progress.get('sisyphus_boulder_tiles', 0) + 1
                     )
@@ -3420,7 +3472,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         )
         # Walking out alive leaves no ghost behind. (This used to write a
         # floor-1 bones file with the hero's whole kit for the next run.)
-        self._on_game_over(leave_bones=False)
+        self._on_game_over(leave_bones=False, victory=has_stone)
         if has_stone:
             self._log_chronicle("I made it. I climbed back out with the Stone. The sunlight hurt my eyes. I'd forgotten what it looked like.")
             self._show_story_popup('exit_with_stone', STATE_VICTORY)
@@ -3428,10 +3480,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.defeat_reason = 'fled'
             self._show_story_popup('exit_without_stone', STATE_DEAD)
 
-    def _on_game_over(self, leave_bones: bool = True):
+    def _on_game_over(self, leave_bones: bool = True, victory: bool = False):
         """Delete save file on any game-ending event (permadeath).
         A character who DIED leaves a bones file so a ghost can haunt a
-        future run; one who fled, won, or fell on the Cow Level does not."""
+        future run; one who fled, won, or fell on the Cow Level does not.
+        The high score is written here too, once, the moment the run ends."""
         from save_system import delete_save
         from bones import save_bones
         from boss_levels import COW_LEVEL as _COW_LEVEL
@@ -3447,7 +3500,33 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             save_bones(self.player_name, self.dungeon_level, _reason,
                        self.player, getattr(self, 'player_gold', 0))
         delete_save(self.player_name)
+        self._record_high_score(victory)
         _snd.play('death')
+
+    def _record_high_score(self, victory: bool = False):
+        """Write this run to the high-score table, once. It used to be written
+        by the death and victory screens' drawing code, so a run that ended
+        without that screen being drawn (Save & Exit during a fight's
+        question, the window closed on the ending) kept no score."""
+        if getattr(self, '_score_saved', False):
+            return
+        self._score_saved = True
+        if (getattr(self, 'secret_build', None) or {}).get('_joke'):
+            return                      # a joke build keeps no score
+        try:
+            from highscore_system import add_score
+            score = self._calc_score()
+            grade, _col = self._get_grade(score)
+            add_score(getattr(self, 'player_name', None) or 'Hero', score, grade,
+                      self.level_mgr.max_level_reached,
+                      self.level_mgr.monsters_killed,
+                      self.turn_count, victory=victory)
+        except Exception:
+            try:
+                from game_log import log_error
+                log_error("high score could not be recorded")
+            except Exception:
+                pass
 
     # ------------------------------------------------------------------
     # Scoring

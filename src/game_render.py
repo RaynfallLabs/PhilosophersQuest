@@ -231,7 +231,8 @@ class RenderMixin:
         body = [m['description'], '']
         ch = m['challenge']
         if ch['mode'] == 'physical':
-            body.append(("Challenge: Physical endurance", FP.GOLD_PALE))
+            body.append((f"Challenge: Carry {m['key_item']['name']} {ch.get('tiles', 15)} steps",
+                         FP.GOLD_PALE))
         else:
             body.append(
                 (f"Challenge: {ch['subject'].capitalize()} - "
@@ -6885,16 +6886,10 @@ class RenderMixin:
             # (the score has it: the breakdown was 50,000 short)
             breakdown += "  +  50,000 Death is dead"
 
-        # High score: save once, then display top 5
-        from highscore_system import add_score
-        if not self._score_saved:
-            pname = getattr(self, 'player_name', None) or 'Hero'
-            if not (getattr(self, 'secret_build', None) or {}).get('_joke'):     # a joke build keeps no score
-                add_score(pname, score, grade,
-                          self.level_mgr.max_level_reached,
-                          self.level_mgr.monsters_killed,
-                          self.turn_count, victory=True)
-            self._score_saved = True
+        # (The high score was written when the run ended, in _on_game_over:
+        # drawing code records nothing.)
+        if not getattr(self, '_victory_fanfare_played', False):
+            self._victory_fanfare_played = True
             try:
                 import sound_system as _vs
                 _vs.play('victory')
@@ -6953,16 +6948,7 @@ class RenderMixin:
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
         ]
 
-        # High score: save once, then display top 5
-        from highscore_system import add_score
-        if not self._score_saved:
-            pname = getattr(self, 'player_name', None) or 'Hero'
-            if not (getattr(self, 'secret_build', None) or {}).get('_joke'):     # a joke build keeps no score
-                add_score(pname, score, grade,
-                          self.level_mgr.max_level_reached,
-                          self.level_mgr.monsters_killed,
-                          self.turn_count, victory=False)
-            self._score_saved = True
+        # (The high score was written when the run ended, in _on_game_over.)
 
         review_text = None
         if self.missed_questions:

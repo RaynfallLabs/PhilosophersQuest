@@ -264,11 +264,11 @@ class SketchedPet(Pet):
     def __init__(self, monster, px, py, duration):
 ```
 
-The sketch mimics the targeted monster's `symbol`, `name`, and attack dice (`monster.attacks[0]['damage']`, default `'1d4'`) at 40% HP/damage. **Tier-scaled attacks (v2.18).** Pre-fix the sketch always used `'1d8+2'` damage regardless of tier; the hero-special data now passes a tier-scaled `damage` string (`'1d8+2'` at T1 → `'3d8+6'` at T5), aligned with other pet/spell damage curves.
+The sketch mimics the subject's `symbol` and `name` at 40% of its HP. A Dreamspun Sketchbook drawing bites like a pet of its subject's level (`growth('bite', level)`). Leonardo's helper bites by its table's dice (`bite_dice`: `'1d8+2'` at chain 1 → `'3d8+6'` at chain 5); bug bash 4, ruling 30: the table was never read and a chain-5 helper bit for 254 on floor 1.
 
 Overrides:
 - `name` reports `"Sketched <monster_name>"`.
-- `get_attack_damage` ignores quiz accuracy and rolls the monster's dice at 40% power.
+- `get_attack_damage` ignores quiz accuracy: the helper's `bite_dice` if it has them, else the level bite give or take a fifth.
 - `can_use_special` → False.
 - `gain_xp` → no-op.
 - `tick_duration` decrements `turns_remaining`; returns True when the sketch dissolves (sets `self.alive = False`).

@@ -478,7 +478,8 @@ def test_combat_game_ref_does_not_block_save():
         g.turn_count = 77
         g2, _ = _save_then_load(g)         # must NOT fail (this was the bug)
         assert g2.turn_count == 77
-        assert getattr(g2.player, '_combat_game_ref', None) is None
+        # The reference was not pickled: the loaded game points it at itself.
+        assert getattr(g2.player, '_combat_game_ref', None) in (None, g2)
     finally:
         _cleanup(name)
 

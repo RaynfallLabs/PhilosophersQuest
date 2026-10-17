@@ -927,6 +927,11 @@ class EncountersMixin:
             dur = reward.get('duration', 20)
             self.player.add_effect(eff, dur)
             eff_name = eff.replace('_', ' ').title()
+            # The turns it really lasts: statuses are capped (status_effects.
+            # MAX_EFFECT_DURATION), and "Blessed for 150 turns!" gave 60.
+            _got = self.player.status_effects.get(eff, 0)
+            if isinstance(_got, int) and _got > 0:
+                dur = _got
             self.add_message(f"{eff_name} for {dur} turns!", 'success')
 
         elif rtype == 'hp_restore':

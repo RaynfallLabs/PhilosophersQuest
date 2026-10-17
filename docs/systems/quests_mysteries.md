@@ -337,11 +337,12 @@ up-front cost (net: WIS +1, INT +1, PER -1).
   is the chain length. Success is `result.score >= threshold`
   (`game_divine.py:258` adds this check manually because
   `QuizResult.success` is False for chain mode).
-- **physical** (`sisyphus`): no quiz. The player must walk `tiles`
-  tiles while over the carry limit (worn gear + pack), holding The
-  Boulder (20 lb). The Boulder can always be picked up, whatever the
-  load (`MysteryKeyItem.carry_past_limit`); every other pickup past the
-  limit is refused, so the trial is: load up, then take the Boulder.
+- **physical** (`sisyphus`): no quiz. The player must carry The
+  Boulder (20 lb) `tiles` steps; every step taken with it in the pack
+  counts, whatever the load (bug bash 4, ruling 26: only steps over the
+  carry limit used to count, so an ordinary hero's walk counted nothing).
+  The Boulder can always be picked up, whatever the load
+  (`MysteryKeyItem.carry_past_limit`).
   State is tracked via `quirk_progress['sisyphus_boulder_active']`
   and `quirk_progress['sisyphus_boulder_tiles']`. On success, the
   boulder vanishes and the reward applies.
@@ -396,10 +397,12 @@ Reward: WIS +2, INT +1.
 
 **The Dwarven Forge** (`mjolnir`) — "A dwarven forge, still hot."
 `math T3 escalator_threshold 2/6`. Key: Mjolnir (unfinished), 8.0 lb.
-Reward on success: `special: 'forge_mjolnir'` → a brand-new Mjolnir
-weapon (3d6, +4 enchant, baseDamage 18, blunt, chainMultipliers
-[0.5, 1.0, 1.5, 2.0, 2.5, 3.0]) is created and placed in inventory,
-and STR +2 applies. The unfinished key is removed first to avoid
+Reward on success: `special: 'forge_mjolnir'` → THE Mjolnir, the
+unique in `data/items/weapon.json` (whose lore is this forge), fully
+known, claimed in the run's unique registry so it never spawns again;
+STR +2 applies. If the run has already produced Mjolnir, the anvil says
+so and gives only the STR (bug bash 4, ruling 27: it used to build a
+second, weaker hammer in code under the same id). The unfinished key is removed first to avoid
 dupes.
 
 **The Oracle's Rift** (`oracle`) — "A smoking rift in the stone,
@@ -442,8 +445,8 @@ activation time. `cooking T2 threshold 1/1` — a single one-question
 gate. Reward: permanent searching + warning.
 
 **Sisyphus' Hill** (`sisyphus`) — "A steep slope carved into the
-stone." Physical challenge: walk 15 tiles while over the carry limit,
-holding The Boulder (20 lb; it can be taken up past the limit). No quiz. Reward: STR +3, INT +1. See
+stone." Physical challenge: carry The Boulder 15 steps (20 lb; it can
+be taken up past the limit; every step carried counts). No quiz. Reward: STR +3, INT +1. See
 also [progression.md](progression.md) for the `sisyphus` quirk, which
 is a parallel 100-floor-at-STR-5 achievement, not this mystery.
 
@@ -547,7 +550,7 @@ player as a yellow warning line.
 | `effects: [name, ...]` | Each effect added with duration -1 (permanent) |
 | `gold: N` | `game.player_gold += N` |
 | `all_timer_bonus: N` | (legacy, pre-v2.18 Mimir) populates `player.quiz_timer_bonuses` for all 10 subjects — only math is read in practice. |
-| `special: 'forge_mjolnir'` | Spawns the fully-forged Mjolnir weapon in inventory (plus STR +2 from the parallel `STR` key). |
+| `special: 'forge_mjolnir'` | Gives the unique Mjolnir (weapon.json) fully known and claims it; nothing if the run already has it (plus STR +2 from the parallel `STR` key). |
 | `special: 'ring_of_command'` | Spawns the Ring of Command accessory in inventory. |
 | `special: 'oracle_reveal'` | Runs `_oracle_reveal_quirks` for up to 3 cryptic locked-quirk hints. |
 | `special: 'fisher_cooldown'` | Sets `player.quirk_progress['fisher_king_mystery_active'] = True` for permanent prayer-cd halving. |

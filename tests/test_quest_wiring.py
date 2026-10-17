@@ -312,7 +312,7 @@ def test_floor_curve_matches_the_balance_tool():
 
 def test_walking_out_alive_leaves_no_bones():
     src = open(os.path.join(ROOT, 'src', 'main.py'), encoding='utf-8').read()
-    assert 'self._on_game_over(leave_bones=False)' in src
+    assert 'self._on_game_over(leave_bones=False' in src
     assert "_reason in ('died', 'starved')" in src
 
 

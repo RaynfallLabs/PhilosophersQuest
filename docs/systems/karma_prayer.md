@@ -518,6 +518,11 @@ On `dungeon_level == 100 and at_altar` with `chain > 0`:
   spent."
 - Stacking bonuses **also** apply (holy fire does not short-circuit
   the regular chain restoration).
+- One prayer a visit (bug bash 4, ruling 25): an unanswered prayer
+  (chain 0) at a fresh altar puts it in `self._l100_altars_tried`. That
+  altar then honours the prayer cooldown and gives no holy fire again
+  until the hero leaves floor 100 and comes back (`_change_level` clears
+  the set; it is saved). It used to be retried at once until answered.
 
 Message: "Holy fire surges around the Destroyer! His defenses crumble
 for N turns!" or "Holy fire blazes forth but finds no target."

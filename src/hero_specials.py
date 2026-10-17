@@ -536,20 +536,28 @@ HERO_JOURNAL: dict[str, str] = {
 # Bosses (is_boss_or_huge) are skipped by status effects when boss_immune=True.
 # ---------------------------------------------------------------------------
 
-def resolve_active_special(game, special: dict, chain: int) -> None:
-    """Dispatch a successful chain quiz to the right effect handler."""
+# A handler returns NOTHING when the power found nothing to act on (no pet,
+# no target in sight, nothing unknown in the pack, nowhere to step): the
+# cooldown is then given back (game_menus._activate_hero_special). A failed
+# quiz is not "nothing": that cost stands.
+NOTHING = 'nothing'
+
+
+def resolve_active_special(game, special: dict, chain: int) -> bool:
+    """Dispatch a successful chain quiz to the right effect handler.
+    Returns False when the power had nothing to act on."""
     tier_effects = special.get('tier_effects', {})
     # Clamp chain to 0..5 and pick the tier-effect entry
     chain = max(0, min(5, int(chain)))
     tier = tier_effects.get(chain, tier_effects.get(0))
     if tier is None:
-        return
+        return True
     eff = special.get('effect', '')
     handler = _DISPATCH.get(eff)
     if handler is None:
         game.add_message(f"({eff} effect not yet implemented)", 'warning')
-        return
-    handler(game, special, tier, chain)
+        return True
+    return handler(game, special, tier, chain) is not NOTHING
 
 
 def _eff_identify_n(game, special, tier, chain):
@@ -562,7 +570,7 @@ def _eff_identify_n(game, special, tier, chain):
                if hasattr(i, 'identified') and not i.identified]
     if not unknown:
         game.add_message("Everything in your pack is already known.", 'info')
-        return
+        return NOTHING
     random.shuffle(unknown)
     for it in unknown[:n]:
         it.identified = True
@@ -582,6 +590,9 @@ def _eff_confuse_visible(game, special, tier, chain):
                and (m.x, m.y) in game.visible
                and 'humanoid' in getattr(m, 'tags', [])
                and not is_boss_or_huge(m)]
+    if not targets:
+        game.add_message("No one in sight to question.", 'info')
+        return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
         cur = m.status_effects.get('confused', 0)
@@ -683,6 +694,9 @@ def _eff_fear_visible(game, special, tier, chain):
     targets = [m for m in game.monsters if m.alive
                and (m.x, m.y) in game.visible
                and not is_boss_or_huge(m)]
+    if not targets:
+        game.add_message("No one in sight to cower.", 'info')
+        return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
         cur = m.status_effects.get('feared', 0)
@@ -771,6 +785,7 @@ def _eff_teleport_self(game, special, tier, chain):
             _qs.on_teleport()
     else:
         game.add_message("Nowhere to step.", 'warning')
+        return NOTHING
 
 
 def _eff_charm_visible(game, special, tier, chain):
@@ -782,6 +797,9 @@ def _eff_charm_visible(game, special, tier, chain):
     targets = [m for m in game.monsters if m.alive
                and (m.x, m.y) in game.visible
                and not is_boss_or_huge(m)]
+    if not targets:
+        game.add_message("No one in sight to persuade.", 'info')
+        return NOTHING
     random.shuffle(targets)
     for m in targets[:cnt]:
         cur = m.status_effects.get('charmed', 0)
@@ -803,7 +821,7 @@ def _eff_damage_single(game, special, tier, chain):
                and (not reach or max(abs(m.x - game.player.x), abs(m.y - game.player.y)) <= reach)]
     if not targets:
         game.add_message("No target in sight.", 'warning')
-        return
+        return NOTHING
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
     # A share of the creature's own health (floor_curve.power_share).
@@ -828,7 +846,7 @@ def _eff_drain_attractive(game, special, tier, chain):
            and 'female_attractive' in getattr(m, 'tags', [])]
     if not adj:
         game.add_message("No suitably... persuadable... target nearby.", 'info')
-        return
+        return NOTHING
     target = adj[0]
     # The drain is a share of the target's own health; the heal is the
     # written figure.
@@ -896,7 +914,7 @@ def _eff_heal_pet(game, special, tier, chain):
     pets = [p for p in getattr(game, 'pets', []) if p.alive]
     if not pets:
         game.add_message("No pet to heal.", 'warning')
-        return
+        return NOTHING
     pet = pets[0]   # first alive pet
     hp = int(tier['hp'])
     if hp == 0:
@@ -929,7 +947,7 @@ def _eff_paralyze_target(game, special, tier, chain):
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No tractable target.", 'warning')
-        return
+        return NOTHING
     targets.sort(key=lambda m: max(abs(m.x - game.player.x), abs(m.y - game.player.y)))
     target = targets[0]
     cur = target.status_effects.get('paralyzed', 0)
@@ -957,6 +975,7 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
         min_level = lvl
         max_hp = int(_pet_growth('health', lvl) / 0.4)     # SketchedPet keeps 40% of it
         attacks = [{'damage': dmg}]
+        bite_dice = dmg                                     # bites by the table's dice
     from pet_system import SketchedPet
     px, py = game.player.x, game.player.y
     pet = SketchedPet(_Helper(), px, py, dur)

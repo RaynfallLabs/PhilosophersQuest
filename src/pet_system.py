@@ -762,6 +762,13 @@ class SketchedPet(Pet):
         # level, from monsters.json). The monster's dice are sized against a
         # player's health and mean little against another monster.
         self.base_damage = growth('bite', self.level)
+        # A helper drawn to a plan bites by its plan's own dice (Leonardo's
+        # Codex Sketch: 1d8+2 at chain 1 to 3d8+6 at chain 5). The table was
+        # never read, and a chain-5 helper bit for 254 on floor 1.
+        self._bite_dice = getattr(monster, 'bite_dice', None)
+        if self._bite_dice:
+            from dice import roll as _roll_dice
+            self.base_damage = max(1, _roll_dice(self._bite_dice))
 
         # Monster identity (for sprite rendering and messages)
         self.monster_kind = monster.kind
@@ -776,8 +783,12 @@ class SketchedPet(Pet):
         return f'Sketched {self.monster_name}'
 
     def get_attack_damage(self, quiz_accuracy: float = 0.5) -> int:
-        """The drawing's bite, give or take a fifth."""
+        """The drawing's bite, give or take a fifth (or its plan's dice)."""
         import random
+        _dice = getattr(self, '_bite_dice', None)
+        if _dice:
+            from dice import roll as _roll_dice
+            return max(1, _roll_dice(_dice))
         return max(1, int(self.base_damage * random.uniform(0.8, 1.2)))
 
     def get_special_damage(self, quiz_accuracy: float = 0.5) -> int:

@@ -648,7 +648,23 @@ class InputMixin:
 
     def _confirm_exit_input(self, key: int):
         if key in (pygame.K_y, pygame.K_RETURN):
-            # Save & exit cleanly -- auto-save runs in main() after the loop
+            # Save & exit cleanly -- auto-save runs in main() after the loop.
+            # First settle what was in flight (a question left open is a wrong
+            # answer). If that answer was the hero's last, the run is over:
+            # show the death screen (the score is already recorded) instead
+            # of quitting to the desktop with no word of it.
+            from save_system import settle_unfinished_actions
+            settle_unfinished_actions(self)
+            _pl = getattr(self, 'player', None)
+            _dead = _pl is not None and _pl.is_dead()
+            if _dead or getattr(self, '_run_over', False):
+                self._state_before_exit = None
+                if _dead and self.state != STATE_DEAD:
+                    if not getattr(self, '_run_over', False):
+                        self.defeat_reason = 'died'
+                        self._on_game_over()
+                    self.state = STATE_DEAD
+                return
             self._save_on_quit = True
             self._quit_confirmed = True        # this QUIT is deliberate -> actually exit
             import pygame as _pg
