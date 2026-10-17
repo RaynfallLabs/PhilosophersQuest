@@ -831,7 +831,7 @@ class InputMixin:
                     self._log_chronicle(story['named_chronicle'].format(name=name))
                 else:
                     self.add_message(
-                        f"You name your new companion {name} the {pet.species_name}!",
+                        f"You name your new companion {pet.name}!",
                         'success')
                     self._log_chronicle(
                         f"A soul sphere hatched. I named the {pet.species_name} '{name}'. "
