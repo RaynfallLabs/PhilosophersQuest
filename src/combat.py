@@ -278,8 +278,13 @@ def _dice_mean(notation: str) -> int:
 # ---------------------------------------------------------------------------
 
 def _max_status(monster, effect: str, duration: int):
-    """Apply a status, taking the max of any existing duration."""
+    """Apply a status, taking the max of any existing duration. A stun or
+    other hold on a named foe goes through its cap and post-hold grace
+    (Monster.hold, call 12)."""
     if monster is None or not monster.alive:
+        return
+    if hasattr(monster, 'hold'):
+        monster.hold(effect, duration)
         return
     cur = int(monster.status_effects.get(effect, 0) or 0)
     monster.status_effects[effect] = max(cur, int(duration))
@@ -776,44 +781,51 @@ def _load_material_tags() -> None:
         _MATERIAL_VULNERABILITIES[mid]   = set(m.get('vulnerabilities', []))
 
 
-def _material_effective_multiplier(weapon, monster) -> float:
-    """Return 1.5 if any of weapon's material/damage types target monster tags."""
-    if weapon is None:
-        return 1.0
-    _load_material_tags()
-    monster_tags = set(getattr(monster, 'tags', []))
-    if not monster_tags:
-        return 1.0
-    # Check every damage type that's also a known material
-    for dt in getattr(weapon, 'damage_types', []):
-        eff = _MATERIAL_EFFECTIVE_AGAINST.get(dt)
-        if eff and (eff & monster_tags):
-            return 1.5
-    # Also check explicit weapon.material if not in damage_types
-    mat = getattr(weapon, 'material', None)
-    if mat:
-        eff = _MATERIAL_EFFECTIVE_AGAINST.get(mat)
-        if eff and (eff & monster_tags):
-            return 1.5
-    return 1.0
+# The weapon-material bonus (effective_against: silver vs undead, cold iron
+# vs fey and demons...) is applied in weapon_type_multiplier, through the
+# material id each common weapon carries in damage_types. (A second copy of
+# it here, _material_effective_multiplier, was never called; removed in bug
+# bash 4, call 14.)
+
+# Damage taken through a weapon-material vulnerability (call 14).
+MATERIAL_VULNERABLE_MULT = 1.25
+
+# What the hit message says when it applies, by the tag that matched.
+_VULNERABLE_NOTES = {
+    'demon': "Your {mat} draws its fury!",
+    'fire': "The flames catch your {mat}!",
+    'acid': "The acid eats into your {mat}!",
+    'holy': "Holy light sears your {mat}!",
+}
 
 
-def _material_wielder_vulnerable(player, monster_attack_tags: list) -> float:
-    """Return >1.0 if the player's equipped weapon material is vulnerable to the
-    incoming attack's tags. Used for cold-iron-vs-demon-attacks etc."""
-    weapon = getattr(player, 'weapon', None)
-    if not weapon:
-        return 1.0
+def material_vulnerability(player, attack_tags) -> tuple[float, str]:
+    """(multiplier, note) for a blow on a player whose wielded weapon's
+    material is vulnerable to it. ``attack_tags`` are the attacker's tags
+    plus the attack's damage type.
+
+    The materials say it in data/materials/weapons/*.json `vulnerabilities`:
+    cold iron draws a demon's fury, wood and leather catch fire, rawhide
+    rots in acid, the void-touched metal burns in holy light. Wielding one
+    (melee or the readied ranged weapon) makes such a blow land
+    MATERIAL_VULNERABLE_MULT as hard. The list was loaded and never read
+    until call 14."""
+    tags = {str(t) for t in (attack_tags or ()) if t}
+    if not tags:
+        return 1.0, ''
     _load_material_tags()
-    mat = getattr(weapon, 'material', None)
-    if not mat:
-        return 1.0
-    vuln = _MATERIAL_VULNERABILITIES.get(mat)
-    if not vuln:
-        return 1.0
-    if any(t in vuln for t in monster_attack_tags):
-        return 1.25  # +25% damage taken
-    return 1.0
+    for slot in (getattr(player, 'weapon', None), getattr(player, 'ranged_weapon', None)):
+        if slot is None:
+            continue
+        mat = str(getattr(slot, 'material', '') or '')
+        vuln = set(_MATERIAL_VULNERABILITIES.get(mat, ()))
+        vuln |= set(getattr(slot, 'vulnerabilities', None) or ())
+        hit = sorted(vuln & tags)
+        if hit:
+            mat_name = mat.replace('_', ' ')
+            note = _VULNERABLE_NOTES.get(hit[0], "Your {mat} weapon is a weakness here!")
+            return MATERIAL_VULNERABLE_MULT, note.format(mat=mat_name)
+    return 1.0, ''
 
 
 # Tag/name heuristics used by warhammer's anti_heavy_at_max bonus.

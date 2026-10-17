@@ -74,6 +74,10 @@ _start_combat(monster)                              # game_combat.py
       → quiz_engine.start_quiz(mode='chain', subject='math', tier=weapon.quiz_tier,
                                 base_seconds=player.get_quiz_timer('math'), ...)
       → _callback(result)                           # inside player_attack
+          (the next two steps are module functions, effective_chain() and
+           strike_damage(); with consume=False they spend nothing, and
+           strike_preview() runs them for the Strike Now number, so the
+           preview is the blow -- bug bash 4, call 13)
           chain = result.score + chain_bonus (armor chain_bonus, Parashu carry,
                   Glamdring orc-glow, Fail-not / Gungnir / Hrunting save,
                   Harpe warmup skip, Skofnung low-HP window)
@@ -115,6 +119,7 @@ _start_combat(monster)                              # game_combat.py
           _death_omen_target, Helm of Leonidas +3 @ <20% HP, Cannae Encirclement +N adj,
           Lorica Caesar et_tu +50%, Hippolyta amazon_charge +50%, Dragonslayer Ring tag bonus,
           Bracers of Arjuna gita_focus +50% (first ranged / floor)
+          Backstab (dagger) x2 at max chain on a sleeping / unaware-ambush target
           actual = monster.take_damage(damage)
           _apply_chain_class_post_damage(...)         # see §Class chain-specials
               applies target statuses, AoE damage/statuses, player buffs
@@ -131,7 +136,7 @@ _start_combat(monster)                              # game_combat.py
           Echidna random status, Cadmus / Vel / Shamshir summon ally pet,
           lifesteal_percent, kill_heal_amount, growing_power +1 base per N kills,
           Khopesh of Anubis +max_hp per kill
-          class_mechanic post-hit: bleed/stun/backstab/disarm/concussion/riposte/
+          class_mechanic post-hit: bleed/stun/disarm/concussion/riposte/
                                    returning_blow/parry_armed/rapid_shot
           cleave_at_max / cleave_at_max_plus_bleed → on_complete(..., cleave_dmg=...)
           sling free_stones ricochet 25% → on_complete(..., ricochet_dmg=...)
@@ -219,7 +224,7 @@ A combat quiz is titled `MELEE ATTACK  --  MATH` or `RANGED ATTACK  --  MATH` (`
 | Row | **Target** cell | **Strike Now** cell |
 |---|---|---|
 | `cap` | `TARGET` caption (body 15, faded) | `STRIKE NOW` caption, plus the weapon name right-aligned in the `weapon` slot (`Bare Hands` when unarmed) |
-| `main` | Monster name, `FP.GOLD_PALE` | Live damage, `"{dmg} Damage"` in the heading face (32 → 26 → 22), rank-coloured from chain 3; `0 Damage` faded at chain 0 |
+| `main` | Monster name, `FP.GOLD_PALE` | Live damage, `"{dmg} Damage"` from `combat.strike_preview` (the blow's own calculation: Strength, blessing, ammo, shields, scales, ward, gear; dice at their average) in the heading face (32 → 26 → 22), rank-coloured from chain 3; `0 Damage` faded at chain 0 |
 | `sub1` | `hp_bar` + `hp_text` (`"{hp}/{max} HP"`, right-aligned); bar and numbers colour-coded green > 50%, warning yellow 25–50%, danger red < 25% | `"x{mult:.1f} Multiplier"`, or `Answer to start a chain` at chain 0 |
 | `sub2` | Status effects, `[Title Case]` tags in warning colour | Damage-type tag: `Weakness: <types>` (success green, dm ≥ 1.5), `Resisted: <types>` (danger red, dm ≤ 0.5), else the plain type list in faded text |
 
@@ -387,7 +392,7 @@ The pre-damage hook (`combat._apply_chain_class_pre_damage`) sets `player._chain
 
 ## Interactions
 
-- **[status_effects](status_effects.md)** — the ladder depends on `bleeding`, `poisoned`, `burning`, `stunned`, `paralyzed`, `confused`, `blinded`, `slowed`, `shielded`, `heal_blocked`, `petrifying`, plus the v2.14.0 additions. Any status registered there is a candidate for weapon procs. `combat.py` writes to `monster.status_effects` directly through `_max_status` (ceiling-max, no overwrite shortening).
+- **[status_effects](status_effects.md)** — the ladder depends on `bleeding`, `poisoned`, `burning`, `stunned`, `paralyzed`, `confused`, `blinded`, `slowed`, `shielded`, `heal_blocked`, `petrifying`, plus the v2.14.0 additions. Any status registered there is a candidate for weapon procs. `combat.py` applies them through `_max_status` -> `Monster.hold` (ceiling-max, no overwrite shortening). A hard-control effect (stunned, paralyzed, frozen, sleeping...) on a named foe goes through `Monster.add_effect` instead: at most `NAMED_FOE_CONTROL_CAP` (2) turns, a running hold is not refreshed, and when it ends the foe is `control_immune` to the next hold for `NAMED_FOE_CONTROL_GRACE` (3) turns (bug bash 4, call 12: chain stuns every turn used to hold a boss for the whole fight).
 - **[magic](magic.md)** — spells call `monster.take_damage(dmg, damage_type)` with real types. Resistance / weakness are resolved there (not pre-scaled). `apply_spell_damage_passives` layers chain-equip multipliers / crit / anti-being charges. Reflect-spell chain passives fire on monster.attack (not spell cast).
 - **[items](items.md)** — Weapon class, Ammo class, Panoply of Hephaestus `divine_smithing` cap bump, chain-equip armor `chain_bonus` adding a free chain head-start.
 - **[progression](progression.md)** — WIS seconds per math question is THE combat-skill lever. Enchant caps per slot are enforced in `effective_enchant_cap`.

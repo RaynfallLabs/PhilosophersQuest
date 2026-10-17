@@ -108,7 +108,7 @@ Ammo tiers 1–5 progress `damage_bonus 0, 1, 2, 3, 5` — the T5 skip from +3 t
   "armor_ac_bonus": 0,
   "resistances": [],              // armor only
   "weaknesses": [],               // armor only
-  "vulnerabilities": [],          // wielder takes extra damage from these tags
+  "vulnerabilities": [],          // wielder takes x1.25 from blows with these monster tags / attack types
   "effective_against": [],        // weapon deals 1.5x to monsters with these tags
   "special_properties": ["common", "reliable"],
   "lore_descriptor": "honest gray, with the faint ring of a forge",
@@ -118,6 +118,9 @@ Ammo tiers 1–5 progress `damage_bonus 0, 1, 2, 3, 5` — the T5 skip from +3 t
 ```
 
 Materials are loaded lazily into `_MATERIAL_EFFECTIVE_AGAINST` and `_MATERIAL_VULNERABILITIES` dicts in `combat.py::_load_material_tags`. First call reads every `*.json` in `data/materials/weapons/`.
+
+- **effective_against** is applied in `combat.weapon_type_multiplier` (a common weapon carries its material id in `damage_types`), so cold iron hits fey and demons, silver the undead, tempered bronze constructs, titanforged giants half again as hard.
+- **vulnerabilities** (bug bash 4, call 14; loaded and never read before) are applied in `Monster.attack` through `combat.material_vulnerability(player, attacker tags + attack type)`: while the wielded weapon or the readied ranged weapon is made of such a material, the blow lands `MATERIAL_VULNERABLE_MULT` (1.25x) as hard, and the hit message says why. Cold iron draws a demon's fury; ash, blackthorn, oak, willow, yew, quicksilver, treant heart and the leathers catch fire; rawhide rots in acid; void-touched metal burns in holy light.
 
 ## Material classes (9 classes, 54 materials)
 
@@ -385,9 +388,9 @@ Change the weapon to a **volcanic_iron longsword** (effective_against ice/frost 
 dtype_mult = max(1.5 slash-vuln, 1.5 volcanic_iron-eff) = 1.5
 ```
 
-Same multiplier — a single 1.5× from `_damage_multiplier`. The design doc's "layer up" story in chain_combat_v2.md §Damage-type/material stacking describes a case where material.effective_against and the weapon's damage_type weakness BOTH apply (volcanic iron 2h sword hitting a frost giant that is both fire-vulnerable AND slash-vulnerable → ~254 dmg at chain 10). The `max()` in `_damage_multiplier` means only ONE of the material/damage-type bonuses applies per call; the other layer comes from `_material_effective_multiplier` applied separately (currently inlined into `_damage_multiplier` as a merged list, so in practice this is still a single 1.5×, not a 2.25× stack — the design intent and the current code don't quite line up; see audit note below).
+Same multiplier — a single 1.5× from `_damage_multiplier`. The design doc's "layer up" story in chain_combat_v2.md §Damage-type/material stacking describes a case where material.effective_against and the weapon's damage_type weakness BOTH apply (volcanic iron 2h sword hitting a frost giant that is both fire-vulnerable AND slash-vulnerable → ~254 dmg at chain 10). The `max()` in `_damage_multiplier` means only ONE of the material/damage-type bonuses applies per call; in practice this is a single 1.5×, not a 2.25× stack — the design intent and the code don't quite line up.
 
-**Audit cross-ref:** `combat.py::_material_effective_multiplier` exists but is **not called** by `player_attack` — the material.effective_against is folded into `_damage_multiplier` via the lazy-loaded `_MATERIAL_EFFECTIVE_AGAINST` dict. So the "stacking" is `max()`, not multiplicative. The 2.25× yew-crossbow-vs-fey bug fixed on 2026-06-07 is the symptom of a different double-count path (unique vs compositional); see `combat.py:1068` `if is_unique:` guard.
+**Audit cross-ref:** the material's effective_against is folded into the form multiplier (`weapon_type_multiplier`) via the lazy-loaded `_MATERIAL_EFFECTIVE_AGAINST` dict, so the "stacking" is `max()`, not multiplicative. (A second copy, `_material_effective_multiplier`, was never called and was removed in bug bash 4.) The 2.25× yew-crossbow-vs-fey bug fixed on 2026-06-07 is the symptom of a different double-count path (unique vs compositional); see `combat.py:1068` `if is_unique:` guard.
 
 ## Unique procs (149 fields — representative sample)
 
