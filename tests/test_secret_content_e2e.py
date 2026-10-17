@@ -979,7 +979,11 @@ def test_the_lost_girls_pendant_spawns_before_her_and_can_be_returned():
     assert (pend[0].x, pend[0].y) in g._reachable_tiles(g.player.x, g.player.y)
     assert _own_item_art('silverlight_pendant')
     g.player.x, g.player.y = pend[0].x, pend[0].y
-    g._pickup()
+    # Another item can share the tile; each pickup takes one, as in play.
+    for _ in range(4):
+        if _has(g, 'silverlight_pendant'):
+            break
+        g._pickup()
     assert _has(g, 'silverlight_pendant')
     assert 'silverlight_pendant' in g._npc_triggered_items
     g._change_level(4, enter_from_top=True)
