@@ -785,7 +785,7 @@ class InputMixin:
                 self.state = STATE_PLAYER
                 # Floor change preserves saved levels; use _change_level so pets
                 # follow, level state saves, etc.
-                self._change_level(target, enter_from_top=(target >= self.dungeon_level))
+                self._change_level(target, enter_from_top=(target >= self.dungeon_level), via='warp')
             else:
                 self.add_message("[QA] Floor must be 1-100.", 'warning')
                 self._qa_warp_input = ''

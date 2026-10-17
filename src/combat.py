@@ -2049,6 +2049,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                     if _g is not None:
                         import karma as _karma
                         _karma.adjust(_g, -2, kind='cruelty', source='ring_of_gyges')
+                        import deeds as _deeds
+                        _deeds.note(_g, 'wrong.ring_of_gyges', source='ring_of_gyges',
+                                    tags=['vice:cruelty'])
                     break
 
         # Echidna's Fang (engine wave 4): random_status_from_pool. On hit,

@@ -110,3 +110,62 @@ def test_old_save_without_deeds_is_migrated():
         assert [e['name'] for e in g2.encyclopedia_entries] == state['_chronicle']
     finally:
         delete_save(name)
+
+
+def test_round_trip_keeps_the_road_escorts_and_pending_queue():
+    """Phase 2: _road, escorts and the pending queue survive save and load."""
+    import copy
+    import deeds
+    from save_system import delete_save, load_game, save_game
+    from test_escort import ESCORT_ENC
+    name = '__test_road_escort_roundtrip__'
+    try:
+        g = _new(name)
+        g.monsters = []
+        g._npc_encounter_active = copy.deepcopy(ESCORT_ENC)
+        g._apply_outcome_deeds(g._npc_encounter_active['options'][0], 'fx_lena')
+        g._apply_outcome_deeds({'delayed': [{'after_floors': [2, 4], 'reward': {
+            'type': 'effect', 'effect': 'blessed', 'duration': 20}}]}, 'fx_lena')
+        g._npc_encounter_active = None
+        esc = g.escorts[0]
+        esc.hp -= 7
+        road_before = copy.deepcopy(g._road)
+        pending_before = copy.deepcopy(g._deeds['pending'])
+        assert save_game(g)
+        g2 = _new(name)
+        g2.load_state(load_game(name))
+        assert g2._road == road_before
+        assert g2._deeds['pending'] == pending_before
+        assert len(g2.escorts) == 1 and g2.pets == []
+        e2 = g2.escorts[0]
+        assert (e2.escort_id, e2.name, e2.hp, e2.floors_left, e2.floor) == \
+            ('lena', 'Lena', esc.hp, esc.floors_left, esc.floor)
+        assert (e2.x, e2.y) in g2._occupants()
+        assert deeds.has(g2._deeds, 'flag.escorting.lena')
+        # and it still finishes after the load
+        g2._change_level(g2.dungeon_level + 1, enter_from_top=True)
+        assert g2.escorts == [] and deeds.has(g2._deeds, 'saved.lena')
+    finally:
+        delete_save(name)
+
+
+def test_a_save_from_before_the_road_keeps_its_legacy_encounter_plan():
+    from save_system import delete_save, load_game, save_game
+    name = '__test_road_old_save__'
+    try:
+        g = _new(name)
+        plan = dict(g._npc_encounter_levels)
+        flavor = dict(g._flavor_encounter_levels)
+        assert save_game(g)
+        state = load_game(name)
+        state.pop('_road')
+        state.pop('escorts')
+        g2 = _new(name)
+        g2.load_state(state)
+        assert g2._road['enabled'] is False and g2._road['slots'] == {}
+        assert isinstance(g2._road['seed'], int)
+        assert g2.escorts == []
+        assert set(g2._npc_encounter_levels) == set(plan)
+        assert set(g2._flavor_encounter_levels) == set(flavor)
+    finally:
+        delete_save(name)

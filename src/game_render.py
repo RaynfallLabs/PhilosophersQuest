@@ -1977,6 +1977,12 @@ class RenderMixin:
                     self.renderer.draw_entity(
                         pet.x, pet.y, pet.color, cam_x, cam_y, self.visible,
                         mid=mid, symbol=getattr(pet, 'symbol', ''))
+        # Escorts (escort_system.py): the person's own NPC picture.
+        for esc in self._escorts_here():
+            if (esc.x, esc.y) in self.visible:
+                self.renderer.draw_entity(
+                    esc.x, esc.y, esc.color, cam_x, cam_y, self.visible,
+                    mid=esc.sprite_id, symbol='@')
         # Telepathy: render unseen monsters as dim dots
         if self.player.has_effect('telepathy'):
             for m in self.monsters:

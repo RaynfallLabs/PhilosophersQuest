@@ -228,6 +228,10 @@ def save_game(game) -> bool:
             # the karma block slots and ledger. A plain dict, so it pickles
             # safely across code changes; a save without it is backfilled.
             '_deeds': getattr(game, '_deeds', None),
+            # The Road (road.py: a plain dict) and the people being escorted
+            # (escort_system.Escort; never in 'pets').
+            '_road': getattr(game, '_road', None),
+            'escorts': list(getattr(game, 'escorts', None) or []),
             '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),
             '_encountered_npcs': getattr(game, '_encountered_npcs', set()),
             '_flavor_encounter_levels': getattr(game, '_flavor_encounter_levels', {}),

@@ -339,8 +339,18 @@ class CombatMixin:
             item.identified = True
             self.player.known_item_ids.add(item.id)
             display = item.name
+            _esc = None if hit_monster else self._escort_at(tx, ty)
             if hit_monster:
                 self._apply_thrown_potion(item, hit_monster, display)
+            elif _esc is not None:
+                # An escort never heals on its own; a thrown healing potion
+                # still reaches them (half their own health, LORE NOT FLOOR).
+                if 'heal' in str(getattr(item, 'effect', '') or '').lower():
+                    _gain = min(_esc.max_hp - _esc.hp, max(1, _esc.max_hp // 2))
+                    _esc.hp += _gain
+                    self.add_message(f"The {display} splashes over {_esc.name}. (+{_gain} HP)", 'success')
+                else:
+                    self.add_message(f"The {display} splashes over {_esc.name}. Nothing happens.", 'info')
             else:
                 self.add_message(
                     f"The {display} shatters on the ground. Nothing happens.", 'info'
@@ -424,7 +434,7 @@ class CombatMixin:
         if not self.dungeon.is_walkable(spawn_x, spawn_y) or \
            monster_at_tile(self.monsters, spawn_x, spawn_y) is not None or \
            (spawn_x == self.player.x and spawn_y == self.player.y) or \
-           any(p.alive and p.x == spawn_x and p.y == spawn_y for p in self.pets):
+           (spawn_x, spawn_y) in self._occupants(hero=False):
             # Try adjacent tiles
             found = False
             for dx in range(-1, 2):
@@ -436,7 +446,7 @@ class CombatMixin:
                         continue
                     if monster_at_tile(self.monsters, nx, ny) is not None:
                         continue
-                    if any(p.alive and p.x == nx and p.y == ny for p in self.pets):
+                    if (nx, ny) in self._occupants(hero=False):
                         continue
                     spawn_x, spawn_y = nx, ny
                     found = True
@@ -518,7 +528,7 @@ class CombatMixin:
                 if (self.dungeon.is_walkable(nx, ny)
                         and (nx, ny) != (self.player.x, self.player.y)
                         and not monster_at_tile(self.monsters, nx, ny) is not None
-                        and not any(p.alive and p.x == nx and p.y == ny for p in self.pets)):
+                        and (nx, ny) not in self._occupants(hero=False)):
                     spawn_x, spawn_y = nx, ny
                     placed = True
                     break
@@ -661,7 +671,7 @@ class CombatMixin:
                 for x in range(self.dungeon.width)
                 if self.dungeon.is_walkable(x, y)
                 and not monster_at_tile(self.monsters, x, y) is not None
-                and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+                and (x, y) not in self._occupants(hero=False)
                 and (x, y) != (self.player.x, self.player.y)
             ]
             if walkable:
@@ -850,7 +860,7 @@ class CombatMixin:
                         # 998: back to the floor the cow stood on instead.
                         self._exit_cow_level()
                     else:
-                        self._change_level(self.dungeon_level - 1, enter_from_top=False)
+                        self._change_level(self.dungeon_level - 1, enter_from_top=False, via='warp')
             except ImportError:
                 pass
 
@@ -965,7 +975,7 @@ class CombatMixin:
                 # ImportError and no kill-summon ally ever appeared.)
                 _spawn_x, _spawn_y = _ps.get('spawn_at', (self.player.x, self.player.y))
                 # Adjacent fallback if spawn tile occupied
-                if any(p.alive and p.x == _spawn_x and p.y == _spawn_y for p in self.pets) \
+                if (_spawn_x, _spawn_y) in self._occupants(hero=False) \
                         or not self.dungeon.is_walkable(_spawn_x, _spawn_y):
                     for _dx in (-1, 0, 1):
                         for _dy in (-1, 0, 1):
@@ -973,8 +983,7 @@ class CombatMixin:
                                 continue
                             _nx, _ny = _spawn_x + _dx, _spawn_y + _dy
                             if (self.dungeon.is_walkable(_nx, _ny)
-                                    and not any(p.alive and p.x == _nx and p.y == _ny
-                                                for p in self.pets)):
+                                    and (_nx, _ny) not in self._occupants(hero=False)):
                                 _spawn_x, _spawn_y = _nx, _ny
                                 break
                 _species = random_pet_species()
@@ -1530,7 +1539,7 @@ class CombatMixin:
                     nx, ny = px + dx, py + dy
                     if (self.dungeon.is_walkable(nx, ny)
                             and not monster_at_tile(self.monsters, nx, ny) is not None
-                            and not any(p.alive and p.x == nx and p.y == ny for p in self.pets)):
+                            and (nx, ny) not in self._occupants(hero=False)):
                         pet = SketchedPet(monster, nx, ny, duration)
                         self.pets.append(pet)
                         placed = True
@@ -2400,7 +2409,7 @@ class CombatMixin:
         if self.death_pursues and self.death_monster is not None:
             dm = self.death_monster
             all_m = self.monsters + [dm]
-            _pet_occ_d = {(p.x, p.y) for p in self.pets if p.alive}
+            _pet_occ_d = self._occupants(hero=False)      # pets and escorts
             if not self._death_steps_onto_the_floor():
                 did_attack = False         # still climbing the stair
             elif (dm.x, dm.y) == (self.player.x, self.player.y):
@@ -2454,7 +2463,7 @@ class CombatMixin:
             # Allied monsters (angels): handle separately
             if getattr(m, 'is_allied', False):
                 m.take_turn(self.player, self.dungeon, self.monsters,
-                            extra_occupied={(_p.x, _p.y) for _p in self.pets if _p.alive})
+                            extra_occupied=self._occupants(hero=False))
                 _ann = getattr(m, '_annihilate_target', None)
                 if _ann and _ann.alive:
                     _ann.alive = False
@@ -2469,7 +2478,7 @@ class CombatMixin:
             # Track monsters the player has seen (for encyclopedia bestiary)
             if (m.x, m.y) in self.visible:
                 self.player.known_monster_ids.add(m.kind)
-            _pet_occ = {(p.x, p.y) for p in self.pets if p.alive}
+            _pet_occ = self._occupants(hero=False)        # pets and escorts
             _was_in_pit = m.has_effect('stuck_in_pit')
             _pos_before = (m.x, m.y)
             did_attack = m.take_turn(self.player, self.dungeon, self.monsters,
@@ -3061,7 +3070,7 @@ class CombatMixin:
                 and (x, y) != (self.player.x, self.player.y)
                 and monster_at_tile(self.monsters, x, y) is None
                 and not any(p.alive and p is not pet and p.x == x and p.y == y
-                            for p in self.pets))
+                            for p in list(self.pets) + self._escorts_here()))
 
     def _leap_pet_to(self, pet, tx: int, ty: int):
         """Move the pet onto the free tile beside (tx, ty) nearest to it (or
@@ -3268,6 +3277,16 @@ class CombatMixin:
                         f"back into the pages of the sketchbook.", 'info')
 
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
+        self._monster_swipes(self.pets)
+
+    def _monster_swipes(self, targets, *, escorts: bool = False):
+        """Each monster beside one of ``targets`` swipes at it once, for half
+        its first attack's dice. Pets take this from _do_pet_turns; escorts
+        (escort_system) take it in their own pass, so they are attacked even
+        when the hero has no pet (DEEDS_KARMA_DESIGN 6.2). An escort's armour
+        class is a to-hit roll against the monster's THAC0; a pet is always
+        hit. Returns the targets slain this pass, with their killers."""
+        slain = []
         # C13: while time is stopped, ordinary monsters are held here too (as
         # in _do_monster_turns); named foes are not.
         _ts_pets = self.player.has_effect('time_stopped')
@@ -3285,7 +3304,7 @@ class CombatMixin:
                     or any(m.has_effect(e) for e in ('sleeping', 'paralyzed', 'stunned', 'frozen',
                                                      'feared', 'charmed'))):
                 continue
-            for pet in self.pets:
+            for pet in targets:
                 if not pet.alive:
                     continue
                 # Unicorn pet design contract: enemies do not target her in melee
@@ -3293,6 +3312,10 @@ class CombatMixin:
                 if getattr(pet, 'is_unicorn', False):
                     continue
                 if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= 1:
+                    if escorts:
+                        to_hit = int(getattr(m, 'thac0', 20)) - int(getattr(pet, 'ac', 0) or 0)
+                        if random.randint(1, 20) < to_hit:
+                            break         # a miss is still this monster's swipe
                     # Monster swipes at pet — use a fraction of its normal damage
                     from dice import roll as _dice_roll
                     pet_dmg = max(1, _dice_roll(m.attacks[0]['damage']) // 2) if m.attacks else 1
@@ -3302,16 +3325,22 @@ class CombatMixin:
                     try:
                         from armor_procs import proc_value
                         _wf = float(proc_value(self.player, 'wild_friend') or 0.0)
-                        if _wf > 0:
+                        if _wf > 0 and not escorts:
                             pet_dmg = max(1, int(pet_dmg * (1.0 - _wf)))
                     except ImportError:
                         pass
                     pet.take_damage(pet_dmg)
+                    if escorts and pet.alive and (pet.x, pet.y) in getattr(self, 'visible', ()):
+                        self.add_message(f"{the_name(m)} strikes {pet.name}. ({pet_dmg} damage)", 'danger')
                     if not pet.alive:
-                        if getattr(pet, 'is_sketch', False):
+                        slain.append((pet, m))
+                        if escorts:
+                            pass          # the escort's own ending says it
+                        elif getattr(pet, 'is_sketch', False):
                             self.add_message(
                                 f"The Sketched {pet.monster_name} shatters into "
                                 f"fragments of ink and vanishes!", 'danger')
                         else:
                             self.add_message(f"{pet.name} has been slain by {m.name}!", 'danger')
                     break  # one pet swipe per monster per turn
+        return slain

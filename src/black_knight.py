@@ -412,7 +412,7 @@ class BlackKnightMixin:
             return
         from geom import all_occupied_tiles
         taken = set(all_occupied_tiles(self.monsters))
-        taken.add((self.player.x, self.player.y))
+        taken |= self._occupants()        # the hero, pets and escorts
         site = find_site(self.dungeon, (self.player.x, self.player.y), random,
                          taken=taken, length=int(data()['bridge_length']))
         if site is not None:
@@ -473,6 +473,8 @@ class BlackKnightMixin:
                 self._black_knight_drop_sword(k)
             if s == TORSO:
                 self._black_knight_state()['outcome'] = 'draw'
+                import deeds
+                deeds.note(self, 'flag.black_knight_draw', source='black_knight', unique=True)
                 self._log_chronicle(d['draw_chronicle'])
         if stages:
             self._black_knight_say(k, d['stage_lines'][str(stages[-1])])
@@ -500,6 +502,8 @@ class BlackKnightMixin:
                 except AttributeError:
                     pass
                 self._black_knight_say(k, d['greet'])
+                import deeds
+                deeds.note(self, 'met.black_knight', source='black_knight', unique=True)
                 self._log_chronicle(d['greet_chronicle'])
             return
         if dist <= 2:
