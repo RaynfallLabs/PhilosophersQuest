@@ -361,6 +361,8 @@ class _FakeEngine:
 
 
 def test_combat_with_save_bonus_family_mastery_does_not_crash():
+    """Masteries are gone (2026-08-06), but an old save can still carry the
+    dict-valued attribute; an attack must not trip over it."""
     import combat
     from player import Player
     from monster import Monster
