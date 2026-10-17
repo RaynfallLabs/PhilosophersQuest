@@ -106,6 +106,8 @@ Shep's line is the one deliberately stronger family line (about a tenth: 1.7× a
 
 **He Always Comes (Shep, passive, from hatching).** `species['rescue']`, run by `_shep_rescue()` at the top of `_do_pet_turns` (straight after the monsters' turn). When the hero is at 25% health or less with a foe beside him, Shep comes from anywhere on the floor to the hero's side (`_dash_pet_to_hero`) and hits the toughest adjacent foe for 1.5× with a 50% stun (2t); that is his turn. Shep the Legend (stage 2) hits every adjacent foe and then the hero is Shielded for 3 turns. Once a floor: `rescue_spent_at` holds the hero's deepest floor when it was used, so it comes back only on a floor reached for the first time, like every other once-a-floor charge.
 
+**Hackles Up (Shep, passive, from hatching).** `species['growl']`, run by `_do_pet_growl()` each turn straight after `_do_warning()`. The real Shep lowered his head and growled at danger. When a hostile the hero cannot see comes within 5 / 6 / 7 tiles of the hero (by stage), and Shep is alive and within 10 tiles, the log says he growls low, staring toward the nearest one (compass word). Each monster sets him off once while it stays in range (`_growled_at`), so a lurking threat is one growl, not one a turn; allies, encounter NPCs and the unicorn never set him off.
+
 ### 2.2 Duck of Doom specials (unique shape)
 
 Unique among species: Waddlekind has a **Stage 0** special, because the player already paid 2026 cursed-turns to be here.

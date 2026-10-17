@@ -4106,6 +4106,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Warning: alert for nearby monsters
         self._do_warning()
+        # Shep's Hackles Up: he growls at a new unseen threat near the hero
+        self._do_pet_growl()
         # Searching: auto-reveal adjacent tiles
         self._do_searching()
         # Passive PER-based secret door detection
@@ -4797,6 +4799,57 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"Your danger sense tingles! ({len(nearby)} unseen threat{'s' if len(nearby) > 1 else ''} near)",
                 'warning'
             )
+
+    @staticmethod
+    def _compass_word(dx: int, dy: int) -> str:
+        """'north', 'south-east' ... for a step from the hero (y grows south)."""
+        ns = 'north' if dy < 0 else 'south' if dy > 0 else ''
+        ew = 'west' if dx < 0 else 'east' if dx > 0 else ''
+        # Only name the minor axis when it is at least half the major one.
+        if ns and ew:
+            if abs(dx) * 2 < abs(dy):
+                ew = ''
+            elif abs(dy) * 2 < abs(dx):
+                ns = ''
+        return '-'.join(p for p in (ns, ew) if p) or 'at your feet'
+
+    def _do_pet_growl(self):
+        """Shep's Hackles Up: when a hostile the hero cannot see comes within
+        his range, Shep lowers his head and growls toward it. Each monster
+        sets him off once while it stays in range, so a lurking wolf is one
+        growl, not one a turn. He has to be near enough to hear it."""
+        px, py = self.player.x, self.player.y
+        for pet in getattr(self, 'pets', []) or []:
+            growl = (getattr(pet, 'species', None) or {}).get('growl')
+            if not growl or not getattr(pet, 'alive', False):
+                continue
+            if max(abs(pet.x - px), abs(pet.y - py)) > int(growl.get('hear_range', 10)):
+                continue
+            radii = growl.get('radius', (5,))
+            radius = int(radii[min(getattr(pet, 'stage', 0), len(radii) - 1)])
+            threats = [
+                m for m in self.monsters
+                if m.alive and not m.is_allied
+                and not getattr(m, '_npc_encounter_tag', None)
+                and not getattr(m, '_flavor_encounter_tag', None)
+                and not getattr(m, '_is_unicorn', False)
+                and max(abs(m.x - px), abs(m.y - py)) <= radius
+                and (m.x, m.y) not in self.visible
+            ]
+            seen = getattr(pet, '_growled_at', None)
+            if seen is None:
+                seen = set()
+            in_range = {id(m) for m in threats}
+            fresh = [m for m in threats if id(m) not in seen]
+            pet._growled_at = in_range        # forget what has left his range
+            if not fresh:
+                continue
+            near = min(fresh, key=lambda m: max(abs(m.x - px), abs(m.y - py)))
+            key = 'many_message' if len(threats) > 1 else 'message'
+            self.add_message(
+                growl[key].format(pet=pet.name,
+                                  dir=self._compass_word(near.x - px, near.y - py)),
+                'warning')
 
     def _do_searching(self):
         """Auto-reveal adjacent tiles, secret doors, and traps when player is searching.

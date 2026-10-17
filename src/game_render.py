@@ -6542,9 +6542,17 @@ class RenderMixin:
         else:
             state, colour = "Spent Until A New Floor", FP.FADED_TEXT
         share = int(round(float(rescue.get('hp_share', 0.25)) * 100))
-        return [(f"{rescue['name']}: {state}", colour, self.font_sm),
-                (f"Once a floor he runs to you when you fall to {share}% health "
-                 f"with a foe beside you.", FP.FADED_TEXT, self.font_sm)]
+        lines = [(f"{rescue['name']}: {state}", colour, self.font_sm),
+                 (f"Once a floor he runs to you when you fall to {share}% health "
+                  f"with a foe beside you.", FP.FADED_TEXT, self.font_sm)]
+        growl = species.get('growl')
+        if growl:
+            radii = growl.get('radius', (5,))
+            radius = int(radii[min(getattr(pet, 'stage', 0), len(radii) - 1)])
+            lines += [(f"{growl['name']}", FP.SUCCESS_TEXT, self.font_sm),
+                      (f"He growls when something you cannot see comes within "
+                       f"{radius} tiles of you.", FP.FADED_TEXT, self.font_sm)]
+        return lines
 
     def _draw_pet_feed_submenu(self):
         items = getattr(self, 'pet_feed_items', [])

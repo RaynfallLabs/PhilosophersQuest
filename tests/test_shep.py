@@ -524,3 +524,103 @@ def test_every_stage_has_its_sprite(stage):
     path = os.path.join(renderer._SPRITE_DIR, mid + '.png')
     assert os.path.exists(path), mid
     assert _png_size(path) == (64, 64), mid
+
+
+# ---------------------------------------------------------------- Hackles Up
+
+def _growl_scene():
+    """Hero in an open room, Shep beside him, nothing visible but the hero's
+    own tile, so anything placed nearby is unseen."""
+    g = _game()
+    x, y = _open_room(g, half=4)
+    g.player.x, g.player.y = x, y
+    shep = _shep(x - 1, y)
+    g.pets = [shep]
+    g.visible = {(x, y)}
+    return g, shep
+
+
+def _growls(g):
+    return [s for s in _messages(g, 12) if 'growls low' in s]
+
+
+def test_shep_growls_toward_an_unseen_threat_like_the_ring():
+    g, shep = _growl_scene()
+    wolf = _monster(g.player.x + 3, g.player.y)
+    g.monsters = [wolf]
+    g._do_pet_growl()
+    said = _growls(g)
+    assert said and 'Shep lowers his head and growls low, staring east.' in said[-1]
+
+
+def test_the_same_threat_is_one_growl_not_one_a_turn():
+    g, shep = _growl_scene()
+    g.monsters = [_monster(g.player.x, g.player.y - 4)]
+    for _ in range(5):
+        g._do_pet_growl()
+    assert len(_growls(g)) == 1
+
+
+def test_a_new_threat_sets_him_off_again_and_more_than_one_is_said():
+    g, shep = _growl_scene()
+    g.monsters = [_monster(g.player.x, g.player.y - 4)]
+    g._do_pet_growl()
+    g.monsters.append(_monster(g.player.x - 3, g.player.y + 3))
+    g._do_pet_growl()
+    said = _growls(g)
+    assert len(said) == 2 and said[-1].endswith('More than one.')
+
+
+def test_no_growl_at_what_the_hero_can_see_or_at_friends_or_out_of_range():
+    g, shep = _growl_scene()
+    seen = _monster(g.player.x + 2, g.player.y)
+    g.visible.add((seen.x, seen.y))
+    friend = _monster(g.player.x - 2, g.player.y + 1)
+    friend.is_allied = True
+    far = _monster(g.player.x + 6, g.player.y)        # Shep's range is 5 at stage 0
+    g.monsters = [seen, friend, far]
+    g._do_pet_growl()
+    assert _growls(g) == []
+
+
+def test_his_range_grows_with_each_stage():
+    g, shep = _growl_scene()
+    radii = _SPECIES[SHEP]['growl']['radius']
+    assert tuple(radii) == (5, 6, 7)
+    m = _monster(g.player.x, g.player.y)
+    for stage, r in enumerate(radii):
+        shep.level = (1, _EVOLVE_1, _EVOLVE_2)[stage]
+        assert shep.stage == stage
+        shep._growled_at = set()
+        m.x, m.y = g.player.x + r, g.player.y        # Chebyshev distance r: inside
+        g.monsters = [m]
+        before = len(_growls(g))
+        g._do_pet_growl()
+        assert len(_growls(g)) == before + 1
+
+
+def test_a_far_or_dead_shep_cannot_warn_you():
+    g, shep = _growl_scene()
+    g.monsters = [_monster(g.player.x + 2, g.player.y)]
+    shep.alive = False
+    g._do_pet_growl()
+    assert _growls(g) == []
+    shep.alive = True
+    shep.x, shep.y = g.player.x + 11, g.player.y
+    g._do_pet_growl()
+    assert _growls(g) == []
+
+
+def test_the_pet_card_names_hackles_up():
+    g, shep = _growl_scene()
+    texts = [t[0] for t in g._pet_rescue_lines(shep)]
+    assert 'Hackles Up' in texts
+    assert any('within 5 tiles' in t for t in texts)
+
+
+def test_compass_words():
+    from main import Game
+    assert Game._compass_word(3, 0) == 'east'
+    assert Game._compass_word(0, -2) == 'north'
+    assert Game._compass_word(-3, 3) == 'south-west'
+    assert Game._compass_word(1, -5) == 'north'

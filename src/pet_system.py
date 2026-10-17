@@ -320,6 +320,18 @@ _SPECIES = {
             'guard_message': ("{pet} plants himself in front of you, hackles up. "
                               "Nothing else is getting past him. (Shielded, {turns} turns)"),
         },
+        # Hackles Up: the real Shep lowered his head and growled when there
+        # was danger. A passive danger sense like the ring of warning, but
+        # only when something new and unseen comes within his range of the
+        # hero (no growl every turn for the same wolf), and he must be close
+        # enough to hear. Range grows with the stage.
+        'growl': {
+            'name': 'Hackles Up',
+            'radius': (5, 6, 7),
+            'hear_range': 10,
+            'message': "{pet} lowers his head and growls low, staring {dir}.",
+            'many_message': "{pet} lowers his head and growls low, staring {dir}. More than one.",
+        },
         'naming_story': {
             'title': "SHEP IS HERE!",
             'prompt': "He answers to Shep. Will you call him something else?",
