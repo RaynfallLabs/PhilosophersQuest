@@ -162,6 +162,28 @@ def offerable(item) -> bool:
                 or getattr(item, 'single_copy', False))
 
 
+def known_healer(player, item) -> bool:
+    """Does the player KNOW ``item`` heals? Only identified items count: the
+    copy identified, or its type known (call 32: the picker listed exactly
+    the unidentified healers, which told the player which unknowns heal)."""
+    from items import Potion, Scroll, Wand
+    try:
+        known = (int(getattr(item, 'id_level', 0) or 0) >= 4
+                 or bool(getattr(player, 'knows_item_type', lambda _i: False)(item)))
+    except (TypeError, ValueError):
+        known = False
+    if not known:
+        return False
+    effect = str(getattr(item, 'effect', '') or '').lower()
+    if isinstance(item, Potion):
+        return effect in ('heal', 'extra_heal', 'full_heal')
+    if isinstance(item, Scroll):
+        return 'heal' in effect
+    if isinstance(item, Wand):
+        return 'heal' in effect and getattr(item, 'charges', 0) > 0
+    return False
+
+
 def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str]:
     """Check if the player can afford a cost. Returns (can_pay, fail_message)."""
     if cost is None:
@@ -175,18 +197,12 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
         return (True, '') if has else (False, "You have no food to give.")
 
     if ctype == 'healing_potion':
-        from items import Potion, Scroll, Wand
-        # Accept: healing potions, heal spell (costs MP), healing scrolls, healing wands
-        has_potion = any(isinstance(i, Potion) and offerable(i) and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
-                         for i in player.inventory)
+        # Accept: healing potions, scrolls and wands the player KNOWS heal,
+        # or the heal spell (costs MP).
         has_spell = 'heal_spell' in getattr(player, 'known_spells', {}) and player.mp >= player.known_spells.get('heal_spell', 99)
-        has_scroll = any(isinstance(i, Scroll) and offerable(i) and 'heal' in getattr(i, 'effect', '').lower()
-                         for i in player.inventory)
-        has_wand = any(isinstance(i, Wand) and offerable(i) and 'heal' in getattr(i, 'effect', '').lower()
-                       and getattr(i, 'charges', 0) > 0
-                       for i in player.inventory)
-        has = has_potion or has_spell or has_scroll or has_wand
-        return (True, '') if has else (False, "You have no way to heal them.")
+        has_item = any(offerable(i) and known_healer(player, i) for i in player.inventory)
+        has = has_item or has_spell
+        return (True, '') if has else (False, "You know of no way to heal them.")
 
     if ctype == 'potion':
         from items import Potion

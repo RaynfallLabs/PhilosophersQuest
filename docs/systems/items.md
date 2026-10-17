@@ -496,10 +496,23 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
   is allowed: the hero is Burdened, sees "Over Limit", and can drop.
 
 Stacking: `Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll,
-Ammo)`. `add_to_inventory` merges same-id items only when `buc`
-*values* match (whether or not the player has identified them yet) —
-previously the merge silently dropped incoming BUC on a known stack
-(bug-bash A7-5, `src/player.py:1000`).
+Ammo)`. `add_to_inventory` merges same-id items only when the
+blessing/curse is KNOWN on both copies (`buc_known`, or the copy at id
+level 5) and the `buc` values match (bug bash 4, call 8). Unknown copies
+never merge: merging them when the hidden BUC matched, and refusing when
+it differed, told the player the blessing. Different BUCs never merge
+(bug-bash A7-5: the incoming BUC was lost inside the stack). Chests
+(`Container`) are never taken into the pack (call 9): they are opened
+where they stand, and an old save's carried chest is set down at the
+hero's feet on load (`Game._migrate_carried_containers`).
+
+Quest and divine gifts arrive FULLY identified (call 7):
+`items.make_fully_known` (id level 5 + `buc_known`) for items built
+outside the game object, `items.grant_identified` (the same plus the
+type joining the known set) for gifts the game hands over. Writing
+`item.identified = True` alone only reaches id level 4, which leaves the
+blessing and enchantment hidden; it remains only where an item
+identifies its own TYPE by use (quaffing, reading, zapping).
 
 Equipment slots:
 - `weapon` (melee), `ranged_weapon` (any weapon with `requires_ammo`),

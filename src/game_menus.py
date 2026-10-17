@@ -2052,7 +2052,8 @@ class MenuMixin:
             return
         sphere.name = f"Bound Soul Sphere ({pet.name})"
         sphere.color = (80, 200, 255)
-        sphere.identified = True
+        from items import grant_identified
+        grant_identified(self, sphere)
         sphere.lore = (f"A Soul Sphere humming with the bound spirit of "
                        f"{pet.name}. Hurl it to summon them back to your side.")
         sphere.bound_pet = pet

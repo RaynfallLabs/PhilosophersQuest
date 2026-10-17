@@ -569,7 +569,8 @@ class MagicMixin:
                 'success' if found else 'info')
 
         elif effect == 'opening':
-            # v2.11.0 T2: open every DOOR + unlock every Container in sight.
+            # v2.11.0 T2: open every DOOR + every locked chest in sight (each
+            # chest opens where it stands, as a picked lock would; call 11).
             from dungeon import DOOR, FLOOR
             opened = 0
             unlocked = 0
@@ -579,10 +580,10 @@ class MagicMixin:
                 if self.dungeon.tiles[y][x] == DOOR:
                     self.dungeon.tiles[y][x] = FLOOR
                     opened += 1
-            for item in self.ground_items:
-                if isinstance(item, Container) and getattr(item, 'locked', False) \
-                        and (item.x, item.y) in self.visible:
-                    item.locked = False
+            for item in list(self.ground_items):
+                if isinstance(item, Container) and getattr(item, 'locked', True) \
+                        and not item.opened and (item.x, item.y) in self.visible:
+                    self._open_unlocked_chest(item)
                     unlocked += 1
             self._refresh_fov()
             self.add_message(
@@ -1235,13 +1236,14 @@ class MagicMixin:
             px, py = self.player.x, self.player.y
             best, best_d = None, 999
             for item in self.ground_items:
-                if isinstance(item, Container) and getattr(item, 'locked', False):
+                if isinstance(item, Container) and getattr(item, 'locked', True) \
+                        and not item.opened:
                     d = abs(item.x - px) + abs(item.y - py)
                     if d <= 5 and d < best_d:
                         best, best_d = item, d
             if best:
-                best.locked = False
-                self.add_message(f"Click! The {best.name} unlocks!", 'success')
+                self.add_message(f"Click! The {self._bare_name(best)} unlocks!", 'success')
+                self._open_unlocked_chest(best)
             else:
                 self.add_message("The wand hums but finds nothing locked nearby.", 'info')
 
@@ -1506,13 +1508,15 @@ class MagicMixin:
             px, py = self.player.x, self.player.y
             best, best_d = None, 999
             for item in self.ground_items:
-                if isinstance(item, Container) and getattr(item, 'locked', False):
+                if isinstance(item, Container) and getattr(item, 'locked', True) \
+                        and not item.opened:
                     d = abs(item.x - px) + abs(item.y - py)
                     if d <= 3 and d < best_d:
                         best, best_d = item, d
             if best:
-                best.locked = False
-                self.add_message(f"Click! The {best.name} unlocks magically!", 'success')
+                self.add_message(
+                    f"Click! The {self._bare_name(best)} unlocks magically!", 'success')
+                self._open_unlocked_chest(best)
             else:
                 self.add_message("No locked containers nearby to open.", 'info')
             return

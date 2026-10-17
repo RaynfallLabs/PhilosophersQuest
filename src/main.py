@@ -847,6 +847,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # had empty `lore` fields. Recompose from template + material so the
         # examine panel shows lore.
         self._migrate_common_item_lore()
+        # Chests can no longer be carried (call 9): one already in the pack
+        # of an old save is set down at the hero's feet, unopened.
+        self._migrate_carried_containers()
         self.renderer.set_view_origin(layout.MAP_X, 0)
         self.renderer.set_dungeon(self.dungeon.width, self.dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
@@ -857,6 +860,22 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._burdened = False
         self._note_burden()
         self._show_load_summary_popup()
+
+    def _migrate_carried_containers(self):
+        """Old saves could carry a chest in the pack. Chests are opened in
+        place now, so any carried one is put down on the hero's tile (a mimic
+        stays a mimic and wakes when opened, as on the floor)."""
+        carried = [i for i in list(getattr(self.player, 'inventory', []) or [])
+                   if isinstance(i, Container)]
+        for chest in carried:
+            self.player.inventory.remove(chest)
+            chest.x, chest.y = self.player.x, self.player.y
+            self.ground_items.append(chest)
+            self.add_message(
+                f"You set the {self._bare_name(chest)} down at your feet: "
+                f"chests are opened where they stand (P).", 'info')
+        if carried:
+            self.player.refresh_carry_bonuses()
 
     def _load_looks_valid(self, state: dict) -> bool:
         """Sanity-check that load_state actually restored the run.
@@ -3406,7 +3425,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'lore': "A device of impossible origin. Its single charge can freeze "
                     "time itself for 10 turns. Use it wisely -- there are no second chances.",
         })
-        flux.identified = True
+        from items import grant_identified
+        grant_identified(self, flux)
         flux.x = self.player.x
         flux.y = self.player.y
         self.ground_items.append(flux)
@@ -5042,10 +5062,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
              if i.x == px and i.y == py
              and (target is None or i is target)
              and i.id != 'abyssal_shimmer'
-             and not getattr(i, 'not_pickable', False)),
+             and not getattr(i, 'not_pickable', False)
+             # Chests (mimics too) are opened where they stand, never carried
+             # (call 9: a carried floor-1 chest paid deep-floor loot, and a
+             # mimic in the pack never woke).
+             and not isinstance(i, Container)),
             None
         )
         if item is None:
+            chest_here = next(
+                (i for i in self.ground_items
+                 if i.x == px and i.y == py and isinstance(i, Container)
+                 and (target is None or i is target)),
+                None
+            )
+            if chest_here is not None:
+                self.add_message(
+                    f"You cannot carry the {self._bare_name(chest_here)}. "
+                    f"Press P to open it where it stands.", 'info')
+                return
             # Check if there's a non-pickable item here (altar) and tell the player
             altar_here = next(
                 (i for i in self.ground_items
@@ -5502,6 +5537,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except ImportError:
             pass
 
+        # Already unlocked (Knock / Wand of Opening): it opens at a touch.
+        if not getattr(container, 'locked', True):
+            self._open_unlocked_chest(container)
+            self._advance_turn()
+            return
+
         # Master Lockpick is permanent; no charge check.
         # Post-2026-05-19: escalator-chain quiz. Chain reached drives loot
         # quality (chain 0 = empty open; chain 5 = master thief, bonus item).
@@ -5564,6 +5605,38 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.quiz_engine, self.dungeon, self.monsters,
             on_complete
         )
+
+    def _open_unlocked_chest(self, container) -> None:
+        """Knock and the Wand of Opening (call 11): the lock gives way by
+        magic, so the chest opens where it stands as a picked lock would
+        (the full haul, no trap). A mimic is no chest: the magic wakes it.
+        Does not spend the turn; the caller does."""
+        container.locked = False
+        if container in self.ground_items:
+            self.ground_items.remove(container)
+        if getattr(container, 'is_mimic', False):
+            from container_system import _spawn_mimic
+            mimic = _spawn_mimic(container, self.monsters, self.dungeon_level,
+                                 dungeon=self.dungeon,
+                                 avoid=(self.player.x, self.player.y))
+            mname = mimic.name if mimic else 'mimic'
+            self.add_message(
+                f"The {self._bare_name(container)} springs to life -- it's "
+                f"{self._a_or_an(mname)}!", 'danger')
+            return
+        from container_system import _handle_success
+        cx, cy = container.x, container.y
+        result = {'loot': [], 'gold': 0, 'messages': []}
+        _handle_success(self.player, container, self.dungeon, result.update)
+        self.add_message(f"The {self._bare_name(container)} swings open.", 'success')
+        for loot_item in result['loot']:
+            loot_item.x, loot_item.y = cx, cy
+            self.ground_items.append(loot_item)
+            self.add_message(f"You find {self._display_name(loot_item)}!", 'loot')
+        if result['gold'] > 0:
+            from items import add_gold_to_tile
+            add_gold_to_tile(self.ground_items, result['gold'], cx, cy)
+            self.add_message(f"You find {result['gold']:,} gold coins!", 'loot')
 
     # ------------------------------------------------------------------
     # Harvest
@@ -6849,7 +6922,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             template = next((s for s in scrolls if s.id == scroll_id), None)
             if template:
                 sc = copy_at(template, x, y)
-                sc.identified = True
+                from items import grant_identified
+                grant_identified(self, sc)
                 self.ground_items.append(sc)
                 self.add_message("[LOOT] The boss drops a REWARD SCROLL!", 'loot')
         except Exception:
@@ -6863,7 +6937,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             template = next((p for p in potions if p.id == 'fafnirs_blood'), None)
             if template:
                 pot = copy_at(template, x, y)
-                pot.identified = True
+                from items import grant_identified
+                grant_identified(self, pot)
                 self.ground_items.append(pot)
                 self.add_message("The dragon's blood runs out across the stone, still smoking.", 'loot')
                 self._log_chronicle("Fafnir's blood ran out at my feet, hot as forge-fire. Sigurd tasted it and understood the birds. It is said to depend on who is listening.")

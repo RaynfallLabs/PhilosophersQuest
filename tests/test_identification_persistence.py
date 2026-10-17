@@ -43,15 +43,21 @@ def test_known_type_does_not_stamp_a_fresh_instance():
 
 
 def test_known_same_buc_potions_merge():
-    """Stacking keys on the UNDERLYING BUC value, so an unidentified copy
-    still merges with an identified stack of the same actual BUC."""
+    """Bug bash 4 call 8: copies merge only when the blessing is KNOWN on
+    both. An unidentified copy stays apart even when its hidden BUC matches
+    (merging it, and refusing a different one, leaked the blessing); a copy
+    whose blessing is known (altar, identify) joins the stack."""
     pl = Player()
     pl.known_item_ids.add(_PID)
     pl.add_to_inventory(_fresh(buc='uncursed', id_level=5))
     pl.add_to_inventory(_fresh(buc='uncursed', id_level=0))   # fresh, unidentified
     held = [i for i in pl.inventory if i.id == _PID]
-    assert len(held) == 1 and held[0].count == 2
-    assert held[0].id_level == 5
+    assert len(held) == 2 and all(i.count == 1 for i in held)
+    known = _fresh(buc='uncursed', id_level=0)
+    known.buc_known = True
+    pl.add_to_inventory(known)
+    stack = next(i for i in held if i.id_level == 5)
+    assert stack.count == 2 and known not in pl.inventory
 
 
 def test_different_buc_stays_separate():

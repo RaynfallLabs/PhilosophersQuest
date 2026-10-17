@@ -479,7 +479,7 @@ passable = (FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
 3. Carve the 3×3 interior as FLOOR. The shared wall tile stays WALL (as the "sealed door") and is tracked on the dungeon via a quest-specific attribute (`ariadne_shrine_door`, `athena_shrine_door`, `odin_shrine_door`).
 4. Place the quest item on the interior center.
 
-Quest items are typically `Artifact` instances with `identified = True` so they display their true name. The shared-wall sealed door becomes a real `DOOR` when the quest trigger fires (e.g., Bronze Bull dropped at the fountain for Ariadne, Eye of the Graeae at an altar for Athena, Broken Gram at Odin's Altar for Odin).
+Quest items are typically `Artifact` instances made fully identified (`items.make_fully_known`: id level 5, blessing known) so they display their true name. The shared-wall sealed door becomes a real `DOOR` when the quest trigger fires (e.g., Bronze Bull dropped at the fountain for Ariadne, Eye of the Graeae at an altar for Athena, Broken Gram at Odin's Altar for Odin).
 
 If the spiral can't find a candidate region within radius 7, the shrine silently fails and the quest item is force-placed on a walkable tile via `_force_place_quest_item`. Quest items guarantee placement — the fallback walks the whole dungeon left-to-right, top-to-bottom.
 

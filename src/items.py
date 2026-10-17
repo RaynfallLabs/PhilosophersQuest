@@ -325,6 +325,30 @@ class Item:
             self.id_level = 0
 
 
+def make_fully_known(item) -> None:
+    """Fully identify ONE copy, as the identify quiz does: name, blessing or
+    curse and enchantment all known (id_level 5 + buc_known). For quest and
+    divine gifts, which arrive known. ``item.identified = True`` alone writes
+    id level 4, which still hides the blessing and the enchantment (call 7).
+    ``grant_identified`` also records the type."""
+    if item is None:
+        return
+    item.id_level = 5
+    if hasattr(item, 'buc'):
+        item.buc_known = True
+
+
+def grant_identified(game, item) -> None:
+    """A quest or divine gift arrives fully known (call 7): this copy's name,
+    blessing and enchantment, and its type joins the known set, as the
+    identify quiz leaves it (Game._full_identify). It is not the hero's own
+    identification, so the philosopher career count is left alone."""
+    make_fully_known(item)
+    propagate = getattr(game, '_propagate_identification', None)
+    if propagate is not None and getattr(item, 'id', ''):
+        propagate(item.id, seed_item=item)
+
+
 class Weapon(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
@@ -1063,6 +1087,12 @@ class Container(Item):
         self.trap_triggered = False
         self.opened         = False
         self.is_mimic       = False
+        # Every chest is locked until picked (lockpick v3) or opened by
+        # Knock / the Wand of Opening (call 11). Also a class default below,
+        # so chests in saves from before the field are locked too.
+        self.locked         = True
+
+    locked = True
 
 
 class Ingredient(Item):
@@ -1091,6 +1121,36 @@ class Ingredient(Item):
         self.raw_sp                 = defn.get('raw_sp', None)
 
 
+_MONSTER_SIZES: dict | None = None
+
+
+def _monster_sizes() -> dict:
+    global _MONSTER_SIZES
+    if _MONSTER_SIZES is None:
+        try:
+            with open(data_path('data', 'monster_sizes.json'), encoding='utf-8') as f:
+                _MONSTER_SIZES = json.load(f)
+        except (OSError, ValueError):
+            _MONSTER_SIZES = {}
+    return _MONSTER_SIZES
+
+
+def monster_size(monster_id: str) -> str:
+    """The creature's body size from its lore (data/monster_sizes.json):
+    tiny, small, medium, large or huge."""
+    data = _monster_sizes()
+    return (data.get('sizes', {}).get(monster_id)
+            or data.get('default_size', 'medium'))
+
+
+def corpse_weight(monster_id: str) -> float:
+    """A corpse weighs what its body weighs: a rat 2 lb, a man 40, a troll
+    150, a giant or a dragon 400 (cannot be carried). Corpses used to weigh
+    5 lb each, rat or dragon."""
+    table = _monster_sizes().get('corpse_weight_lb') or {}
+    return float(table.get(monster_size(monster_id), table.get('medium', 40)))
+
+
 class Corpse(Item):
     monster_name = ProperNameAttr('monster_name')
 
@@ -1104,7 +1164,7 @@ class Corpse(Item):
             'name':       f'{monster_name} corpse',
             'symbol':     '%',
             'color':      [160, 60, 60],
-            'weight':     5.0,
+            'weight':     corpse_weight(monster_id),
             'item_class': 'corpse',
             'min_level':  1,
         }
@@ -2441,7 +2501,7 @@ def make_complete_tablet(x: int, y: int) -> Item:
     })
     item.x = x
     item.y = y
-    item.identified = True
+    make_fully_known(item)
     item.examine_text = (
         "The Philosopher's Stone sits perfectly in the slot, glowing with deep energy."
     )

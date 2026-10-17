@@ -553,7 +553,8 @@ class DivineMixin:
             if gram_t:
                 ax, ay = odin_pos
                 gram = copy_at(gram_t, ax, ay)
-                gram.identified = True
+                from items import grant_identified
+                grant_identified(self, gram)
                 self.ground_items.append(gram)
         else:
             # Normal path: blade dissolves, Odin speaks
@@ -630,7 +631,8 @@ class DivineMixin:
                     'symbol': '&', 'color': [220, 220, 255],
                     'item_class': 'artifact', 'weight': 0.1, 'min_level': 60,
                 })
-                gleipnir.identified = True
+            from items import grant_identified
+            grant_identified(self, gleipnir)
             gleipnir.x, gleipnir.y = fx, fy
             self.ground_items.append(gleipnir)
             self.add_message(
@@ -674,7 +676,8 @@ class DivineMixin:
                 for scrap in on_altar[:10]:
                     self.ground_items.remove(scrap)
                 sandal = copy_at(sandal_t, vx, vy)
-                sandal.identified = True
+                from items import grant_identified
+                grant_identified(self, sandal)
                 self.ground_items.append(sandal)
                 self.add_message(
                     "The scraps draw together on the altar and close into one thick shoe.", 'info')
@@ -845,7 +848,8 @@ class DivineMixin:
                     if hasattr(self, '_full_identify'):
                         self._full_identify(item)
                     else:
-                        item.identified = True
+                        from items import make_fully_known
+                        make_fully_known(item)
                     self.player.known_item_ids.add(item.id)
                     count += 1
             if count:
@@ -1421,10 +1425,10 @@ class DivineMixin:
             tpl = random.choice(pool)
             inst = copy_at(tpl, px, py)
             claim_unique(inst)
-            inst.identified = True
             if hasattr(inst, 'buc'):
                 inst.buc = 'blessed'
-                inst.buc_known = True
+            from items import grant_identified
+            grant_identified(self, inst)
             self.ground_items.append(inst)
             return getattr(inst, 'name', 'divine artifact')
 
@@ -1444,10 +1448,10 @@ class DivineMixin:
             tpl = random.choice(fallback_pool)
             inst = copy_at(tpl, px, py)
             claim_unique(inst)
-            inst.identified = True
             if hasattr(inst, 'buc'):
                 inst.buc = 'blessed'
-                inst.buc_known = True
+            from items import grant_identified
+            grant_identified(self, inst)
             self.ground_items.append(inst)
             return getattr(inst, 'name', 'divine relic')
         return ''

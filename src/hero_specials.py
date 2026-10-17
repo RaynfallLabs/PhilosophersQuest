@@ -715,9 +715,10 @@ def _eff_reveal_floor(game, special, tier, chain):
         for (tx, ty), trap in game.dungeon.traps.items():
             trap['revealed'] = True
     if tier.get('items'):
+        from items import make_fully_known
         for it in game.ground_items:
             if hasattr(it, 'identified'):
-                it.identified = True
+                make_fully_known(it)
                 game.player.known_item_ids.add(getattr(it, 'id', ''))
     if tier.get('stairs'):
         from dungeon import STAIRS_DOWN, STAIRS_UP
@@ -998,12 +999,12 @@ def _eff_reveal_radius(game, special, tier, chain):
             trap['revealed'] = True
             revealed_traps += 1
     if id_items:
+        from items import make_fully_known
         for it in game.ground_items:
             if not hasattr(it, 'identified'):
                 continue
             if max(abs(it.x - px), abs(it.y - py)) <= radius and not it.identified:
-                it.identified = True
-                it.id_level = 5
+                make_fully_known(it)
                 game.player.known_item_ids.add(getattr(it, 'id', ''))
     game.add_message(
         f"Sherlock deduces. ({revealed_traps} {'trap' if revealed_traps == 1 else 'traps'} "

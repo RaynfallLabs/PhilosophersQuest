@@ -32,6 +32,23 @@ Player bumps/adjacent chest + presses lockpick key
 **Zero-tolerance applies.** One wrong answer = fail. There is no
 retry — the chest itself is the cost.
 
+**Chests are opened where they stand (bug bash 4, call 9).** No
+container can be picked up: `_pickup` refuses it ("You cannot carry the
+Wooden Chest. Press P to open it where it stands."), and
+`Player.add_to_inventory` refuses one from any other path. (A carried
+floor-1 chest used to pay the loot of the floor it was opened on, and a
+mimic in the pack never woke.) A chest in the pack of an old save is set
+down at the hero's feet on load (`Game._migrate_carried_containers`).
+
+**Locked state, Knock and the Wand of Opening (call 11).** Every chest
+is `locked` until opened (class default `True`, so old saves' chests are
+locked too). Knock (spell, nearest chest within 3 tiles; the knock wand
+effect, within 5) and the Wand of Opening (every chest in sight) open a
+locked chest in place through `Game._open_unlocked_chest`: the full
+haul, as a successful pick (`_handle_success`), with no quiz and no
+trap. A mimic is no chest: the magic wakes it (no surprise strike). A
+chest that is somehow unlocked but unopened opens on P without a quiz.
+
 **No durability.** Lockpicks (`src/items.py:968`) still carry historical
 `durability_loss_success` / `durability_loss_failure` fields for loader
 compatibility, but nothing in the live code reads them. Picks are a

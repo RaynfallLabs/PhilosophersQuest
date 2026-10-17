@@ -1346,7 +1346,9 @@ class Player:
         return is_split_type_known(self, item)
 
     def add_to_inventory(self, item) -> bool:
-        from items import Item
+        from items import Item, Container
+        if isinstance(item, Container):
+            return False    # chests are opened where they stand (call 9)
         if not self.can_carry(self._item_weight(item)) and not self._carries_past_limit(item):
             return False
         # One-cosmetic-per-item: stamp the run's appearance onto a managed
@@ -1361,24 +1363,22 @@ class Player:
             except Exception:
                 pass
         # Stack identical items for stackable types (same id).
-        # BUC rule: only merge stacks whose UNDERLYING buc value matches —
-        # whether or not the player has identified it yet. Previously the
-        # code allowed hidden-buc stacks to merge across underlying values,
-        # silently dropping the incoming item's BUC effect when the kid
-        # later drank/read/threw from the stack. See bug-bash A7-5.
+        # BUC rule: merge only when the blessing/curse is KNOWN on both copies
+        # and the same (call 8). Merging unknowns whose hidden BUC matched
+        # (and refusing when it differed) told the player the blessing: a
+        # new potion that would not join its stack was not the same BUC.
+        # Different underlying BUCs never merge either (bug-bash A7-5: the
+        # incoming item's BUC effect was lost inside the stack).
         if isinstance(item, Item._STACKABLE_CLASSES):
             for existing in self.inventory:
                 if existing is item:
                     continue  # never merge a stack into itself (guards stray aliasing)
                 if existing.id != item.id:
                     continue
+                if not (_buc_known_to_player(existing) and _buc_known_to_player(item)):
+                    continue  # a blessing not known on both: no merge, no leak
                 if getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
-                    continue  # different underlying BUC: keep stacks separate
-                # Merge buc_known monotonically — if EITHER known, the stack
-                # is known (because we just confirmed the underlying values
-                # are identical).
-                if getattr(item, 'buc_known', False):
-                    existing.buc_known = True
+                    continue  # different BUC: keep stacks separate
                 existing.count = getattr(existing, 'count', 1) + getattr(item, 'count', 1)
                 return True
         self.inventory.append(item)
@@ -1860,3 +1860,16 @@ class Player:
                 self.apply_stat_bonus(fx['stat2'], fx.get('amount2', 0))
         # Re-sort inventory after any equipment swap that returned items
         self.sort_pack()
+
+
+def _buc_known_to_player(item) -> bool:
+    """Is this copy's blessing or curse known? Flagged known (altar, identify,
+    a curse shown on equip) or the copy fully identified (id level 5). Items
+    with no blessing to hide (food, ingredients, ammo spawn at id level 5)
+    count as known, so they still stack."""
+    if getattr(item, 'buc_known', False):
+        return True
+    try:
+        return int(getattr(item, 'id_level', 5) or 0) >= 5
+    except (TypeError, ValueError):
+        return False
