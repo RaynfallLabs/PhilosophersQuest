@@ -541,6 +541,28 @@ def test_c11_missiles_and_smite_go_through_take_damage():
     assert rat.hp < 500 and not rat.has_effect('sleeping')
 
 
+# ---------------------------------------------------------------- C13
+def test_c13_time_stopped_monsters_do_not_bite_pets():
+    """Ordinary monsters stand still under time stop, but the 'monsters
+    attack adjacent pets' pass ignored it and frozen rats killed pets."""
+    from pet_system import Pet, random_species
+    g = _game(seed=71)
+    p = g.player
+    _open_floor(g)
+    random.seed(71)
+    pet = Pet(random_species(), p.x + 1, p.y)
+    pet.command = 'stay'
+    g.pets.append(pet)
+    m = _spawn(g, 'giant_rat', dx=2, hp=10 ** 6, max_hp=10 ** 6)
+    m.attacks = [{'name': 'Bite', 'damage': '1d2+20', 'type': 'physical'}]
+    m.thac0 = -99
+    p.status_effects['time_stopped'] = 10
+    hp0 = pet.hp
+    for _ in range(3):
+        g._advance_turn()
+    assert pet.alive and pet.hp >= hp0
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

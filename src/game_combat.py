@@ -3006,8 +3006,13 @@ class CombatMixin:
                         f"back into the pages of the sketchbook.", 'info')
 
         # Monsters attack adjacent pets (each monster can swipe at one pet per turn)
+        # C13: while time is stopped, ordinary monsters are held here too (as
+        # in _do_monster_turns); named foes are not.
+        _ts_pets = self.player.has_effect('time_stopped')
         for m in self.monsters:
             if not m.alive:
+                continue
+            if _ts_pets and not m._is_named_foe():
                 continue
             # A sleeping or held monster, a friend, or something with no
             # attack does not bite: the Lost Girl could kill a pet.
