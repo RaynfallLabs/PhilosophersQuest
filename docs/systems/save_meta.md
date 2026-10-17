@@ -93,29 +93,43 @@ A string helper that happens to live here:
 
 ### 3.1 Save path
 
-```python
-def _save_path(name: str) -> str:
-    safe = re.sub(r'[^\w\-]', '_', name.lower())
-    return os.path.join(save_dir(), f'save_{safe}.pkl')
-```
+`_save_path(name)` -> `save_<encoded name>.pkl`. The encoding
+(`_encode_name`) is one-to-one and safe on a case-blind disk (bug bash 4,
+ruling 22): `a-z`, `0-9` and `-` stand for themselves, a capital is `+`
+and its lower-case letter, anything else is `_<hex code>_`. So "Bob" is
+`save_+bob.pkl`, "bob" is `save_bob.pkl`, "Bob!" is `save_+bob_21_.pkl`.
+A name whose encoding passes 120 characters is cut and given a hash.
 
-Sanitizes the player name to `[A-Za-z0-9_-]`, lowercased.
-
-**Collision note (SYSTEMS_AUDIT §10 P2):** `"Alice!"` and `"Alice?"`
-both reduce to `save_alice_.pkl`. Permadeath + name collision = silent
-overwrite. Not yet mitigated — adding a counter suffix on collision is
-the recommended fix.
+**Old mapping.** Before this, names were lower-cased and every other
+character became `_` ("Bob!", "bob " and "BOB_" shared one file).
+`_find_save(name)` looks at the new path, then at the old path
+(`_legacy_save_path`) when the file there has no header (it is an old
+save). The state then carries `__loaded_from__`; the next save writes the
+new path and removes the old file. Death before that deletes the old file.
 
 ### 3.2 Save existence
 
-```python
-def save_exists(name: str) -> bool:
-    path = _save_path(name)
-    return os.path.exists(path) and os.path.getsize(path) > 0
-```
+`save_exists(name)` is `_find_save(name) is not None`. A 0-byte file
+(from a pre-atomic-write failed dump) is treated as no save.
 
-A 0-byte file (from a pre-atomic-write failed dump) is treated as no
-save — doesn't masquerade as loadable. Fail-safe.
+### 3.2a File layout and two copies of the game
+
+A save is `MAGIC` (`PQSAVE2\n`), one JSON line `{"name", "run", "turn"}`,
+then the pickle. `read_save_header(path)` reads only the header. A bare
+pickle (a save from before the header) still loads.
+
+Two copies of the game playing one hero (ruling 21, "use highest
+version"): every run has an id (`_run_id`, made on first save, kept in
+the state; an old save gets `legacy:<name>`). Before writing, `save_game`
+reads the header on disk: if it is the same run at a later turn, the
+write is skipped and the hero is told once ("Another copy of the game has
+saved ... further on"). A different run under the name, or a save from
+before headers, is written over as before. Each copy writes its own temp
+file (`<path>.<pid>.tmp`).
+
+Nothing checks where a save file came from: a save copied in by hand
+loads like any other. Backing up and restoring saves to get round
+permadeath is a discoverable trick and stays (Brandon, 2026-10-17).
 
 ### 3.3 `save_game(game)` — atomic write
 
@@ -206,13 +220,11 @@ state = {
 }
 ```
 
-**Write sequence:**
-
-```python
-with open(tmp, 'wb') as f:
-    pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)
-os.replace(tmp, path)   # atomic; never touches `path` unless dump succeeded
-```
+**Write sequence:** skip if the disk holds a later save of this run
+(§3.2a); write MAGIC, the header line and the pickle to
+`<path>.<pid>.tmp`; `os.replace(tmp, path)` (atomic; never touches
+`path` unless the dump succeeded); retire an old-mapping file this run
+was loaded from.
 
 **Why atomic:** before this change (CLAUDE.md save-lifecycle rule), a
 Pickle error mid-dump could leave `save_<name>.pkl` as a truncated
@@ -244,30 +256,16 @@ default so old pickles don't `AttributeError` on save.
 
 ### 3.4 `load_game(name)`
 
-```python
-try:
-    with open(_save_path(name), 'rb') as f:
-        return pickle.load(f)
-except Exception as e:
-    log_error(f"load_game failed for {name!r}: {e}")
-    return None
-```
-
-Returns the state dict (not a Game instance). `main.Game` reads keys
+Opens `_find_save(name)`, skips the header if there is one, and
+unpickles. Returns the state dict (not a Game instance). `main.Game` reads keys
 from it in `_load_run`. No automatic migration — attributes added
 after a save was written are populated via `getattr` defaults in
 `main.Game.__init__` or via `Player.__setstate__` (see §6).
 
 ### 3.5 `delete_save(name)`
 
-```python
-try:
-    path = _save_path(name)
-    if os.path.exists(path):
-        os.remove(path)
-except Exception:
-    pass
-```
+Removes the file `_find_save(name)` finds (the old-mapping file when
+the run has not been saved since it was loaded).
 
 Called on **permadeath** (`_on_game_over` on death branch). Also
 called from the welcome screen's Delete-key shortcut (user wipes a
@@ -591,7 +589,8 @@ logging), `main` (startup banner), and any `log_error` call site.
 
 1. `main.Game.save_game()` → `save_system.save_game(self)`
 2. State dict built from Game + Player (via `Player.__getstate__`)
-3. Pickle to `<name>.pkl.tmp` with `HIGHEST_PROTOCOL`
+3. Header + pickle to `<path>.<pid>.tmp` with `HIGHEST_PROTOCOL`
+   (skipped when the disk holds a later save of the same run)
 4. `os.replace(tmp, final_path)` — atomic
 5. On failure: `_find_unpicklable` walks the state tree, logs the
    culprit paths to `ERROR_LOG.txt`, keeps the old save
@@ -606,10 +605,14 @@ logging), `main` (startup banner), and any `log_error` call site.
 
 ### 9.3 Permadeath
 
-1. HP ≤ 0 → `_on_game_over(reason='died')`
+1. HP ≤ 0 → `_on_game_over()` (victory and fleeing call it too)
 2. Bones file written (`bones.py::save_bones`)
-3. `delete_save(name)` wipes `save_<name>.pkl`
-4. Highscore added via `add_score(..., victory=False)`
+3. `delete_save(name)` wipes the save
+4. `_record_high_score(victory)` adds the score, once (`_score_saved`).
+   It used to be written by the death and victory screens' drawing code,
+   so a run that ended without that screen (Save & Exit whose open
+   question killed the hero) kept no score. Save & Exit now settles the
+   open question first; if that kills the hero, the death screen shows.
 5. Welcome screen shows the save as gone
 
 ### 9.4 Crash
@@ -659,8 +662,6 @@ crash file (tester-shareable), then log (archival).
 Documented so future work has one place to find them.
 
 - **Schema version + migration hook** in save state (deferred #5).
-- **Dedupe `_save_path` collisions** — add counter suffix for
-  reduced names.
 - **`_on_game_over` refactor** — explicit `reason` + `is_victory`,
   skip bones on victory, played-sound honest about the outcome.
 - **Bones schema stability test** — round-trip assertion so field

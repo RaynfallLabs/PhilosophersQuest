@@ -522,7 +522,9 @@ def test_scenario_28_save_path_safe():
     from save_system import _save_path
     path1 = _save_path('Brandon')
     path2 = _save_path('../etc/passwd')
-    assert path1.endswith('save_brandon.pkl')
+    # One file per name: a capital is kept ('+b'), so 'Brandon' and 'brandon'
+    # no longer share a save (bug bash 4, ruling 22).
+    assert path1.endswith('save_+brandon.pkl')
     # Path traversal characters become underscores
     assert '..' not in os.path.basename(path2)
 

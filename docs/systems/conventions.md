@@ -424,6 +424,25 @@ data files comes out capitalised.
 
 ---
 
+## 20. Running the tests: slow tests are opt-in locally (bug bash 4)
+
+The UI gates (`tests/test_ui_gates.py`, every screen captured at five
+window sizes plus the frame-time budget) and the kit-coverage test in
+`tests/test_ui_kit_installed.py` take about seven of the suite's ten
+minutes. They carry `@pytest.mark.slow` and `tests/conftest.py` leaves
+them out of a plain run:
+
+- `python -m pytest tests/ -q` — everything except the slow tests.
+- `python -m pytest tests/ -q --run-slow` — everything (what CI runs:
+  `.github/workflows/release.yml`). `PQ_RUN_SLOW=1` does the same.
+- `python -m pytest tests/ -m slow --run-slow` — only the slow tests.
+
+Run the full suite with `--run-slow` before a release or after touching
+any screen. Mark a new test `slow` only if it is a UI gate or a timing
+test that takes many seconds.
+
+---
+
 ## File-location cheat sheet (where each rule is enforced)
 
 | Rule | File | Function / constant |

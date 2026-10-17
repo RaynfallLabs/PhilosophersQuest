@@ -28,6 +28,35 @@ _TEST_SAVE_DIR = tempfile.mkdtemp(prefix='pq_test_savedir_')
 _paths._DEV_SAVE_DIR_OVERRIDE = _TEST_SAVE_DIR
 
 
+# ---- slow tests (bug bash 4, ruling 35) ------------------------------------
+# The UI gates and frame-time tests take about seven of the suite's ten
+# minutes. They are marked `slow` and left out of a plain local run; CI runs
+# everything. To run them yourself:
+#   python -m pytest tests/ --run-slow          everything
+#   python -m pytest tests/ -m slow --run-slow   only the slow ones
+# (PQ_RUN_SLOW=1 in the environment does the same as --run-slow.)
+def pytest_addoption(parser):
+    parser.addoption('--run-slow', action='store_true', default=False,
+                     help='also run tests marked slow (the UI gates and frame '
+                          'timing); CI always does')
+
+
+def pytest_configure(config):
+    config.addinivalue_line(
+        'markers', 'slow: slow UI gates and frame-time tests; run with --run-slow (CI does)')
+
+
+def pytest_collection_modifyitems(config, items):
+    if config.getoption('--run-slow') or os.environ.get('PQ_RUN_SLOW') == '1':
+        return
+    keep, slow = [], []
+    for item in items:
+        (slow if item.get_closest_marker('slow') else keep).append(item)
+    if slow:
+        config.hook.pytest_deselected(items=slow)
+        items[:] = keep
+
+
 @pytest.fixture(autouse=True, scope='session')
 def _isolate_dev_save_dir():
     try:

@@ -79,6 +79,7 @@ def test_status_effect_icons_name_real_effects():
     assert [n for n in fx if n[3:] not in EFFECT_INFO] == []
 
 
+@pytest.mark.slow          # ~30 s: draws every screen; runs in CI and with --run-slow
 def test_every_manifest_piece_and_icon_is_drawn_by_the_game(monkeypatch):
     cap = _capture()
     used_pieces, used_icons = set(), set()

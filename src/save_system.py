@@ -2,24 +2,95 @@
 Per-name save/load system using pickle.
 Each player name gets its own save file (save_<name>.pkl).
 Permadeath: death deletes the save file.
+
+File layout: a short text header (MAGIC, then one JSON line naming the hero,
+the run and the turn it was written on), then the pickled state. Saves from
+before the header (a bare pickle) still load. Nothing here checks where a save
+file came from: a save copied in by hand loads like any other (bug bash 4,
+ruling 21).
 """
+import hashlib
+import json
 import os
 import re
 import pickle
 from paths import save_dir
 
+MAGIC = b'PQSAVE2\n'
+_MAX_STEM = 120       # characters of encoded name kept before a hash stands in
+
+
+def _encode_name(name: str) -> str:
+    """Name -> file-name part, one-to-one, and safe on a case-blind disk.
+
+    Lower-case letters, digits and '-' stand for themselves; a capital is '+'
+    and its lower-case letter; anything else is '_<hex code>_'. "Bob", "bob",
+    "Bob!" and "bob " used to share one file (case and punctuation were all
+    folded away): one hero's save overwrote the other's."""
+    out = []
+    for ch in name:
+        if ('a' <= ch <= 'z') or ('0' <= ch <= '9') or ch == '-':
+            out.append(ch)
+        elif 'A' <= ch <= 'Z':
+            out.append('+' + ch.lower())
+        else:
+            out.append(f'_{ord(ch):x}_')
+    stem = ''.join(out)
+    if len(stem) > _MAX_STEM:
+        # Long non-Latin names would pass the file-name length limit.
+        digest = hashlib.sha1(name.encode('utf-8')).hexdigest()[:16]
+        stem = f'{stem[:_MAX_STEM - 17]}~{digest}'
+    return stem
+
 
 def _save_path(name: str) -> str:
     """Return the save file path for the given player name."""
+    return os.path.join(save_dir(), f'save_{_encode_name(name)}.pkl')
+
+
+def _legacy_save_path(name: str) -> str:
+    """Where a save for this name lived before names were kept apart
+    (case and punctuation folded to '_')."""
     safe = re.sub(r'[^\w\-]', '_', name.lower())
     return os.path.join(save_dir(), f'save_{safe}.pkl')
 
 
-def save_exists(name: str) -> bool:
+def _nonempty(path: str) -> bool:
     # A 0-byte file is a truncated/corrupt save (e.g. from a pre-atomic-write
     # failed dump); treat it as no save so it doesn't masquerade as loadable.
+    try:
+        return os.path.isfile(path) and os.path.getsize(path) > 0
+    except OSError:
+        return False
+
+
+def read_save_header(path: str) -> dict | None:
+    """The header of a save file, or None for a save from before headers
+    (or a file that is not a save). Reads a few bytes, never the state."""
+    try:
+        with open(path, 'rb') as f:
+            if f.read(len(MAGIC)) != MAGIC:
+                return None
+            head = json.loads(f.readline(4096).decode('utf-8'))
+        return head if isinstance(head, dict) else None
+    except (OSError, ValueError):
+        return None
+
+
+def _find_save(name: str) -> str | None:
+    """The file holding this name's save, or None. A save written under the
+    old name mapping (no header) is still found at its old path."""
     path = _save_path(name)
-    return os.path.exists(path) and os.path.getsize(path) > 0
+    if _nonempty(path):
+        return path
+    old = _legacy_save_path(name)
+    if old != path and _nonempty(old) and read_save_header(old) is None:
+        return old
+    return None
+
+
+def save_exists(name: str) -> bool:
+    return _find_save(name) is not None
 
 
 def _find_unpicklable(obj, path='state', _seen=None, _out=None, _depth=0):
@@ -125,7 +196,11 @@ def save_game(game) -> bool:
     partial dump (e.g. an unpicklable object sneaking into state) can never
     corrupt or destroy an existing good save."""
     path = _save_path(game.player_name)
-    tmp = path + '.tmp'
+    # One temp file per running copy of the game: two copies used to share
+    # one temp name, and about a third of their saves failed.
+    tmp = f'{path}.{os.getpid()}.tmp'
+    if _disk_save_is_newer(game, path):
+        return True                      # the newer save stays; said in-game
     try:
         state = {
             'player':           game.player,
@@ -147,6 +222,7 @@ def save_game(game) -> bool:
             'heavenly_host_active': getattr(game, 'heavenly_host_active', False),
             'abaddon_resist_removed_turns': getattr(game, 'abaddon_resist_removed_turns', 0),
             '_l100_altars_used': getattr(game, '_l100_altars_used', set()),
+            '_l100_altars_tried': getattr(game, '_l100_altars_tried', set()),
             'karma': getattr(game, 'karma', 0),
             '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),
             '_encountered_npcs': getattr(game, '_encountered_npcs', set()),
@@ -207,10 +283,25 @@ def save_game(game) -> bool:
             '_cooked_recipes': getattr(game, '_cooked_recipes', []),
             # Quiz deck state — preserves shuffle position so questions don't repeat on reload
             'quiz_deck_state': game.quiz_engine.get_deck_state(),
+            '_run_id': run_id_of(game),
         }
+        header = json.dumps({'name': game.player_name, 'run': run_id_of(game),
+                             'turn': int(game.turn_count)}, ensure_ascii=True)
         with open(tmp, 'wb') as f:
+            f.write(MAGIC)
+            f.write(header.encode('ascii') + b'\n')
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)
         os.replace(tmp, path)   # atomic; never touches `path` unless dump succeeded
+        # A save loaded from its old-mapping file now lives at the new path:
+        # retire the old file, or it would be found again (by another name).
+        old = getattr(game, '_legacy_save_path', None)
+        if old and os.path.normcase(os.path.abspath(old)) != os.path.normcase(os.path.abspath(path)):
+            try:
+                if read_save_header(old) is None and os.path.exists(old):
+                    os.remove(old)
+            except OSError:
+                pass
+        game._legacy_save_path = None
         return True
     except Exception as e:
         print(f"[Save] Failed: {e}")
@@ -239,11 +330,65 @@ def save_game(game) -> bool:
         return False
 
 
-def load_game(name: str):
-    """Load saved state dict for the given name, or None on failure."""
+def run_id_of(game) -> str:
+    """This run's identity, made on first use and kept in the save."""
+    rid = getattr(game, '_run_id', None)
+    if not rid:
+        import uuid
+        rid = uuid.uuid4().hex
+        game._run_id = rid
+    return rid
+
+
+def _disk_save_is_newer(game, path: str) -> bool:
+    """True when the file at `path` is a later save of this same run (another
+    copy of the game, playing the same hero, wrote it further on). Writing
+    now would clobber that progress with older play: the higher version wins.
+    A save of a different run, or one from before headers, is not compared.
+    Saves copied in by hand are not checked or refused anywhere."""
+    head = read_save_header(path)
+    if not head or head.get('run') != run_id_of(game):
+        return False
     try:
-        with open(_save_path(name), 'rb') as f:
-            return pickle.load(f)
+        disk_turn = int(head.get('turn', -1))
+    except (TypeError, ValueError):
+        return False
+    if disk_turn <= int(getattr(game, 'turn_count', 0)):
+        return False
+    try:
+        from game_log import log_info
+        log_info(f"save skipped: disk turn {disk_turn} > this copy's turn "
+                 f"{getattr(game, 'turn_count', '?')} for {game.player_name!r}")
+    except Exception:
+        pass
+    if not getattr(game, '_newer_save_warned', False):
+        game._newer_save_warned = True
+        try:
+            game.add_message(
+                f"Another copy of the game has saved {game.player_name} further on "
+                f"(turn {disk_turn:,}). That save is kept: this copy will not "
+                "write over it.", 'warning')
+        except Exception:
+            pass
+    return True
+
+
+def load_game(name: str):
+    """Load saved state dict for the given name, or None on failure.
+    Reads both layouts: header + pickle, and a bare pickle (older saves).
+    A save found at its old-mapping path says so in '__loaded_from__'."""
+    try:
+        path = _find_save(name) or _save_path(name)
+        with open(path, 'rb') as f:
+            if f.read(len(MAGIC)) == MAGIC:
+                f.readline()
+            else:
+                f.seek(0)
+            state = pickle.load(f)
+        if isinstance(state, dict) and path != _save_path(
+                str(state.get('player_name') or name)):
+            state['__loaded_from__'] = path
+        return state
     except Exception as e:
         print(f"[Load] Failed: {e}")
         try:
@@ -262,7 +407,7 @@ def set_aside_save(name: str) -> str | None:
     the game started a new hero under the name and its first autosave
     overwrote the unreadable file, which might have been recoverable."""
     import time
-    src = _save_path(name)
+    src = _find_save(name) or _save_path(name)
     dst = f"{src}.unreadable-{time.strftime('%Y%m%d-%H%M%S')}"
     try:
         os.replace(src, dst)
@@ -272,9 +417,10 @@ def set_aside_save(name: str) -> str | None:
 
 
 def delete_save(name: str):
-    """Delete save file (called on death for permadeath)."""
+    """Delete save file (called on death for permadeath). A save still at its
+    old-mapping path (loaded, not yet re-saved) is the one deleted then."""
     try:
-        path = _save_path(name)
+        path = _find_save(name) or _save_path(name)
         if os.path.exists(path):
             os.remove(path)
     except Exception:

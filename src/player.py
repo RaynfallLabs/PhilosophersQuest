@@ -356,7 +356,29 @@ class Player:
         if actual > 0 and 'sleeping' in self.status_effects:
             del self.status_effects['sleeping']
 
+        # Every hurt reaches the traits (Eye of the Storm, Temporal Shield,
+        # Rasputin, Phoenix Rising, Green Knight, Iron Will): traps, poison
+        # and bleed ticks, falls, spells. Only a monster's melee blow used to,
+        # and that one is still reported by the combat code, after the wards
+        # have had their say, with the attacker's kind.
+        if actual > 0:
+            _qs = self._trait_hooks()
+            if _qs is not None:
+                try:
+                    _qs.on_take_damage(actual, actual / max(1, self.max_hp))
+                except Exception:
+                    pass
+
         return actual
+
+    def _trait_hooks(self):
+        """The run's trait tracker, or None outside a game (or while a
+        monster's melee blow is being resolved: the combat code reports that
+        one itself)."""
+        if getattr(self, '_trait_hooks_held', False):
+            return None
+        _g = getattr(self, '_combat_game_ref', None)
+        return getattr(_g, 'quirk_system', None) if _g is not None else None
 
     def is_dead(self) -> bool:
         if self.immortal and self.hp <= 0:
@@ -874,7 +896,19 @@ class Player:
             return False
         # (Fey/aberration family masteries formerly halved charm/confuse durations
         # here; masteries have been removed from the game entirely.)
-        return apply_effect(self, name, duration)
+        was_on = self.has_effect(name)
+        applied = apply_effect(self, name, duration)
+        # A new status from any source reaches the traits (Medusa's episodes,
+        # Darwin): a blinding from a potion, wand or trap used to count for
+        # nothing. A monster's melee blow is reported by the combat code.
+        if applied and not was_on and self.has_effect(name):
+            _qs = self._trait_hooks()
+            if _qs is not None:
+                try:
+                    _qs.on_status_applied(name, None)
+                except Exception:
+                    pass
+        return applied
 
     def tick_effects(self) -> list:
         """Process one turn for all active effects. Returns list of (msg, type) pairs."""
@@ -1314,7 +1348,7 @@ class Player:
     @staticmethod
     def _carries_past_limit(item) -> bool:
         """Items made to be hauled whatever the load: Sisyphus' Boulder, whose
-        trial is to walk with it past the limit."""
+        trial is to carry it, however full the pack."""
         return bool(getattr(item, 'carry_past_limit', False)
                     or getattr(item, 'mystery_id', None) == 'sisyphus')
 

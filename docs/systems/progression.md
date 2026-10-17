@@ -58,7 +58,7 @@ The `QuirkSystem` class owns the full trigger surface. Every game event funnels 
 | `on_quiz_answer(...)`    | per-individual-question hook from quiz_engine                 |
 | `on_quiz_complete(...)`  | per-session hook from quiz_engine                             |
 | `on_kill(...)`           | monster death (combat.py)                                     |
-| `on_take_damage(...)`    | `player.take_damage` consumer                                 |
+| `on_take_damage(...)`    | every hurt: `Player.take_damage` (traps, ticks, falls, spells) and a monster's melee blow (game_combat, once, after the wards) |
 | `on_trap_triggered(t)`   | container trap fired                                          |
 | `on_lockpick_fail(c,l)`  | lockpick-quiz fail on trapped chest                           |
 | `on_lockpick_success()`  | lockpick-quiz pass                                            |
@@ -73,7 +73,7 @@ The `QuirkSystem` class owns the full trigger surface. Every game event funnels 
 | `on_recall_lore()`       | recall-lore use                                               |
 | `on_spell_cast(hp_pct)`  | spell cast success                                            |
 | `on_examine_used()`      | examine-menu open                                             |
-| `on_status_applied(...)` | status effect gain                                            |
+| `on_status_applied(...)` | new status from any source (`Player.add_effect`, kind None) and a monster's blow (with its kind) |
 | `on_disease_drain(s,a)`  | disease tick that drains a stat                               |
 | `on_turn()`              | every `advance_turn` — the per-turn tracker                   |
 | `on_item_identified(id)` | post-identify (quiz-pass path)                                |
@@ -189,7 +189,7 @@ Active-power quirks go through `_award_power` instead, which also seeds `power_u
 1. Player opens the V-menu (`game_menus.py::open_power_menu`).
 2. The menu enumerates: quirk-granted actives, hero specials from `player.hero_specials`, Elder Blood powers (Ciri), armor-granted actives (Seven-League Boots, Gilgamesh's Bribe), charged accessories (Lyre of Orpheus, Hand of Glory), the Scales of Michael one-shot.
 3. On select, if `pid.startswith('hero_')`, dispatch goes to `_activate_hero_special(pid)`.
-4. Cooldown is set **immediately** (`pl.hero_special_cooldowns[pid] = special['cooldown']`) regardless of the quiz outcome. Burning the ability is paid upfront.
+4. Cooldown is set **immediately** (`pl.hero_special_cooldowns[pid] = special['cooldown']`); a failed quiz spends it. A handler that finds nothing to act on (no pet, no foe in sight, nothing unknown in the pack, nowhere to step) returns `hero_specials.NOTHING`, and the cooldown is given back (bug bash 4, ruling 31).
 5. The quiz engine starts: `mode='escalator_chain', subject='ai', tier=1, max_chain=5`.
 6. On quiz complete, callback dispatches `resolve_active_special(game, special, chain=result.score)` which looks up `special['effect']` in `_DISPATCH` and calls the handler with `(game, special, tier_effects[chain], chain)`.
 
@@ -294,7 +294,7 @@ Awarded on `on_kill` / `on_stair_use` / `on_floor_entered` / `on_floor_explored`
 | `atalanta`    | Winged Feet                | Escape 10 floors within 25 turns of arriving         | DEX +2                                            |
 | `theseus`     | Theseus in the Labyrinth   | Fully explore 5 dungeon floors                       | PER +1                                            |
 | `ibn_battuta` | Ibn Battuta's Road         | Fully explore 30 distinct floors                     | PER +1 (timer_bonus geography 4)                  |
-| `cerberus`    | Cerberus                   | 300 total stair uses                                 | Permanent warning                                 |
+| `cerberus`    | Cerberus                   | 120 different staircases (each way between two floors counts once) | Permanent warning                                 |
 | `ragnarok`    | Ragnarok's Survivor        | Descend to level 100 at ≤10 HP                       | CON +5                                            |
 | `ahasverus`   | Ahasverus                  | 15,000 tile moves                                    | Permanent searching                               |
 | `wanderlust_q`| The Endless Wanderer       | 20,000 tile moves                                    | Writes `wanderlust_active=True` → SP drain from movement halved |
@@ -472,7 +472,7 @@ _DISPATCH = {
 | ash williams (3 of 3)          | `hero_this_is_my_boomstick`    | This... Is My BOOMSTICK! | `gain_ammo`     | 400     | 30 shotgun_shell shells + next shot is AoE                      |
 | ash ketchum                    | `hero_i_choose_you`            | I Choose You!     | `heal_pet`             | 250      | Full heal pet + cleanse all pet debuffs                         |
 | ada augusta byron lovelace     | `hero_difference_engine`       | Difference Engine | `paralyze_target`      | 300      | Paralyze 6t + slow 8t on nearest non-boss                       |
-| leonardo di ser piero da vinci | `hero_codex_sketch`            | Codex Sketch      | `summon_sketch_helper` | 400      | Summon a 40-level 3d8+6-damage SketchedPet for 40 turns         |
+| leonardo di ser piero da vinci | `hero_codex_sketch`            | Codex Sketch      | `summon_sketch_helper` | 400      | Summon a level-80 helper (HP) that bites 3d8+6, for 40 turns     |
 | saint joan of arc              | `hero_standard_of_the_maid`    | Standard of the Maid | `heal_and_crit_buff`| 350     | +50 HP + next 5 hits crit                                       |
 | sir arthur conan doyle's sherlock holmes | `hero_deduction`     | Deduction         | `reveal_radius`        | 400      | r=99 reveal + identify all items                                |
 | saint hildegard von bingen     | `hero_viriditas`               | Viriditas         | `aoe_heal_self`        | 350      | +50 HP + cleanse all debuffs                                    |
