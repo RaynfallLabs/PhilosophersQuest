@@ -48,6 +48,7 @@ from quiz_engine import QuizEngine, QuizState
 from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile
+import unseen
 from ui import Sidebar, MessageLog, floor_label
 from game_helpers import (
     migrate_buc_item, cycle_tab,
@@ -2462,6 +2463,56 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from game_log import log_error
             log_error('main._give_starting_kit: recovered from an error')
 
+    # ------------------------------------------------------------------
+    # What the hero can see of the monsters (rules in src/unseen.py)
+    # ------------------------------------------------------------------
+
+    def _sync_unseen(self):
+        """Mark every invisible creature the hero cannot see, so its name in
+        any message is "something unseen". Runs with every field-of-view
+        refresh and before each monster's turn (the hero's senses change)."""
+        player = getattr(self, 'player', None)
+        for m in getattr(self, 'monsters', None) or ():
+            if getattr(m, 'invisible', False):
+                m._unseen = unseen.unseen(m, player)
+            elif getattr(m, '_unseen', False):
+                m._unseen = False
+
+    def _sees_monster(self, m) -> bool:
+        """The hero can see this monster: alive, its tile in sight, and not an
+        un-sprung ambusher, a disguised mimic or an invisible creature."""
+        return unseen.seen(m, getattr(self, 'visible', None), self.player)
+
+    def _seen_monster_at(self, x: int, y: int):
+        """The monster on (x, y) if the hero can see it there, else None."""
+        return unseen.seen_monster_at(self.monsters, x, y, self.player)
+
+    # Target lists (melee, ranged, throw, wand, spell, power, observe) never
+    # offer a creature the hero cannot see: whatever builds the list, it is
+    # filtered here as it is set. Aiming at the tile by hand still works.
+    @property
+    def _target_candidates(self) -> list:
+        return self.__dict__.setdefault('_target_candidates_list', [])
+
+    @_target_candidates.setter
+    def _target_candidates(self, value):
+        player = getattr(self, 'player', None)
+        self.__dict__['_target_candidates_list'] = [
+            m for m in (value or []) if not unseen.concealed(m, player)]
+
+    def _feel_something_there(self, m) -> bool:
+        """Walking into an invisible creature the hero cannot see: he feels
+        something there instead of attacking. True when that used the move
+        (the first bump); the next bump on that tile is a real attack."""
+        if not unseen.unseen(m, self.player):
+            return False
+        if getattr(m, '_felt_at', None) == (m.x, m.y):
+            return False
+        m._felt_at = (m.x, m.y)
+        self.add_message("You feel something there! Something unseen stands in your way.",
+                         'warning')
+        return True
+
     def _refresh_fov(self):
         _sight = self.player.get_sight_radius()
         if _sight > 1:                        # (never through a blindfold or blindness)
@@ -2469,6 +2520,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.visible = calculate_fov(
             self.dungeon, self.player.x, self.player.y, _sight
         )
+        self._sync_unseen()
         # Chain-equip passive: four_faces_360_fov (Crown of Brahma T4).
         # Add all tiles within radius PER*1.5 (ignoring wall occlusion) to FOV.
         try:
@@ -2753,7 +2805,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Feared: force movement away from nearest visible monster
         if self.player.has_effect('feared'):
-            visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            visible_monsters = [m for m in self.monsters if self._sees_monster(m)]
             if visible_monsters:
                 nearest = min(visible_monsters, key=lambda m: abs(m.x - self.player.x) + abs(m.y - self.player.y))
                 flee_dx = 0 if nearest.x == self.player.x else (-1 if nearest.x > self.player.x else 1)
@@ -2899,6 +2951,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Flavor encounter: non-karmic NPC interaction
             if getattr(target, '_flavor_encounter_tag', None):
                 self._start_flavor_encounter(target)
+                return
+            # Something invisible: the first bump finds it, the next one strikes.
+            if self._feel_something_there(target):
+                self._advance_turn()
                 return
             self._start_combat(target)
         elif tile_at_dest == DOOR:
@@ -4853,15 +4909,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 ns = ''
         return '-'.join(p for p in (ns, ew) if p) or 'at your feet'
 
-    @staticmethod
-    def _hidden_in_plain_sight(m) -> bool:
+    def _hidden_in_plain_sight(self, m) -> bool:
         """A monster on a tile the hero can see that he still cannot see:
         an ambusher that has not sprung (mimics, piercers, lurkers, cloakers;
-        not drawn until aware) or a mimic-AI creature still posing as
-        terrain. Shep's nose does not care what it looks like."""
-        if getattr(m, '_aware', False):
-            return False
-        return m.ai_pattern in ('ambush', 'mimic')
+        not drawn until aware), a mimic-AI creature still posing as a chest
+        or a hoard, or an invisible creature the hero has no way to see.
+        Shep's nose does not care what it looks like (src/unseen.py)."""
+        return unseen.concealed(m, self.player)
 
     def _do_pet_growl(self):
         """Shep's Hackles Up: when a hostile the hero cannot see comes within
@@ -4937,7 +4991,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     and not getattr(m, '_aware', False)
                     and abs(m.x - px) <= radius and abs(m.y - py) <= radius):
                 m._aware = True
-                self.add_message(f"Searching reveals a hidden {m.name}!", 'warning')
+                if unseen.unseen(m, self.player):
+                    # Searching hands find what eyes cannot (src/unseen.py).
+                    m._felt_at = (m.x, m.y)
+                    self.add_message("Searching, you feel something unseen beside you!", 'warning')
+                else:
+                    self.add_message(f"Searching reveals a hidden {m.name}!", 'warning')
 
     def _do_passive_search(self):
         """Passive PER-based detection of adjacent secret doors each turn."""
@@ -5215,6 +5274,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 continue
             if (m.x, m.y) not in self.visible:
                 continue
+            if unseen.unseen(m, self.player):
+                continue        # no eye spots what cannot be seen (src/unseen.py)
             dist = abs(m.x - px) + abs(m.y - py)
             if dist <= 5 and _rng.random() < chance:
                 m._aware = True

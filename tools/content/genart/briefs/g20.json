@@ -1,0 +1,121 @@
+[
+ {
+  "id": "huldufolk_raider",
+  "family": "invisible",
+  "rank": 1,
+  "key": "magenta",
+  "what": "a huldufolk raider: one of the hidden folk of Icelandic folk belief, who live inside rocks and hills and are seen only when they choose to be, painted seriously as an eerie, dangerous, lean figure, never cute and never a child. He is a tall, slender grown man with realistic adult proportions, a small skull, long limbs, about eight heads tall. He is alive, not dead: a living face, full and smooth. His skin is a cold pale stone-grey, the grey of a lichen-free boulder, on his face, neck and hands alike, plainly a colour no living person has. He has a long handsome narrow face with smooth unlined cheeks, a straight nose, full unsmiling lips, eyelids and dark brows, and calm eyes of bright pale silver with small dark pupils. His long straight hair is ash-white and hangs past his shoulders. His ears are long and pointed and stick out through the hair.",
+  "colours": "cold pale stone-grey skin, bright pale silver eyes, ash-white hair, a dark slate-grey wool coat, a dark charcoal knitted shawl, dull pewter buttons, dark brown boots, a short knife of dark iron with a bone handle.",
+  "wears": "He wears an old-fashioned Icelandic farmer's long dark slate-grey wool coat buttoned to the throat with a row of dull pewter buttons, a dark charcoal knitted shawl round his shoulders, dark grey wool breeches and dark brown leather boots. No armour, no helmet.",
+  "holds": "He holds exactly one short knife no longer than his hand, of dark iron with a pale bone handle, in his right hand, held low and forward. His left hand is a bare open palm turned to the viewer, nothing in it or near it, the long grey fingers spread.",
+  "pose": "On two legs, seen a little from the front, facing left, he steps forward out of nowhere with his weight on his front foot, body leaning forward, the knife held low and forward in his right hand, his left hand raised beside his face with its fingers spread, his pale pupilless eyes staring straight at the viewer.",
+  "must_show": [
+   "a tall slender man with cold stone-grey skin and long ash-white hair",
+   "a living, smooth, handsome grey face with pale silver eyes and long pointed ears",
+   "an old-fashioned dark slate-grey wool coat with pewter buttons and a knitted shawl",
+   "one short dark knife in the right hand, the left hand open and empty"
+  ],
+  "must_not_show": [
+   "pink or tan living skin",
+   "armour",
+   "helmet",
+   "sword",
+   "bow",
+   "staff",
+   "wings",
+   "a child",
+   "a skull face, a corpse, hollow cheeks, sunken eyes",
+   "cute fairy",
+   "green clothes",
+   "a cloud of mist round him"
+  ]
+ },
+ {
+  "id": "darkhelm_shade",
+  "family": "invisible",
+  "rank": 2,
+  "key": "green",
+  "what": "a darkhelm shade: a dead warrior of the house of Hades, the Greek god of the dead, who wears a copy of the god's helm of darkness, the cap that hid whoever wore it, painted seriously as a grim, gaunt undead hoplite. He is very tall, gaunt and long-limbed, never stout. His bare arms and legs are dead flesh, cold chalk-grey with blue-grey shadows like a drowned man, never living pink, the skin shrunk on the bone. On his head is a tall closed helmet of blackened bronze, very dark, nearly black, shaped like an ancient Greek Corinthian helmet with long cheek-pieces that cover the whole face, a narrow T-shaped opening down the middle, and a tall stiff crest of black horsehair along the top; through the eye-holes of the helmet two small cold eyes glow pale ice-white, each filled to the brim with solid light.",
+  "colours": "cold chalk-grey dead skin with blue-grey shadows, a blackened bronze helmet with a black horsehair crest, two small pale ice-white glowing eyes in the helmet, a dark charcoal-grey tunic, a breastplate of blackened bronze with dull bronze edges, a long spear with a dark bronze point, dark brown leather sandals.",
+  "wears": "He wears a short dark charcoal-grey tunic to the knee, a breastplate of blackened bronze moulded like a chest with dull worn bronze edges, and dark brown leather sandals laced up the shins. His arms and legs are bare, showing the dead grey skin.",
+  "holds": "He holds exactly one long spear in both hands, one unbroken straight shaft of dark wood running through both fists, flat and horizontal across the picture, its head at the left one broad flat dark bronze spear-point, perfectly straight, as straight as a ruler, ending in a single sharp point; the back end at the right a small plain round knob. Nothing else is in his hands.",
+  "pose": "On two legs, seen from the side and a little from the front, facing left, he lunges forward to the left, front knee bent, back leg straight, driving the long spear forward at the level of his waist, his helmeted head thrust forward, the two pale eyes glaring out of the dark helmet.",
+  "must_show": [
+   "a gaunt undead warrior with chalk-grey dead skin on bare arms and legs",
+   "a closed blackened bronze Greek helmet covering the whole face, with a black crest",
+   "two small pale glowing eyes inside the helmet",
+   "one long straight spear with a single bronze point, held in both hands",
+   "a blackened bronze breastplate over a dark tunic"
+  ],
+  "must_not_show": [
+   "pink or tan living skin",
+   "a visible face or skull",
+   "a trident, a fork, prongs, a pitchfork, an axe blade",
+   "round shield",
+   "sword",
+   "cape",
+   "red crest",
+   "gold armour",
+   "wings",
+   "muscles, bodybuilder body"
+  ]
+ },
+ {
+  "id": "whirlwind_jinni",
+  "family": "invisible",
+  "rank": 3,
+  "key": "magenta",
+  "body": "shapeless",
+  "what": "a whirlwind jinni: one of the jinn of Arabian lore, made from smokeless fire, who see men from where men cannot see them, and who were said to travel inside the dust-devils that spin across the desert, painted seriously as a fierce, proud desert spirit. It is a tall spinning column of desert sand and dust with the upper body of a lean, long-armed man at its top. The upper body is sinewy and lean, the skin a very pale ash-white like cold ashes, with a faint warm glow under it, on the face, chest and arms alike. It has a hawk-nosed, hollow-cheeked face with a pointed black beard and narrow slanted eyes of solid bright yellow-white light, no pupils. The sash is the bottom edge of its body; directly under it the body becomes one tight twisting column of dusty sand-brown whirlwind that narrows as it goes down to a point, with bands of spinning sand wrapped round it, joined to the sash.",
+  "colours": "very pale ash-white skin with a faint warm glow, solid bright yellow-white eyes, a pointed black beard, a black cloth wrapped round the head, a broad sash of dark indigo-black cloth, a whirlwind of dull dun sand-brown dust, small bright yellow and white flames wrapped round the right hand.",
+  "wears": "It wears a black cloth wound round its head, a broad sash of very dark indigo-black cloth round its waist, and heavy plain dark iron bands on both wrists. Its chest and arms are bare.",
+  "holds": "Its right hand is wrapped in fire like the head of a burning torch, small bright yellow and white flames, the dark knuckles showing in the middle; it holds no candle, no torch, no stick. Its left hand is a bare open palm turned to the viewer, nothing in it or near it. It holds exactly nothing else.",
+  "pose": "The column of sand leans to the left as it spins; the upper body bends forward out of it to the left, the burning right fist drawn back by its shoulder ready to strike, the empty left hand thrust forward with the fingers spread, the face turned toward the viewer, mouth open in a shout.",
+  "must_show": [
+   "the upper body of a lean man rising from a tight spinning column of sand-brown dust",
+   "pale ash-white skin, a pointed black beard and glowing yellow-white slanted eyes",
+   "the right fist wrapped in small bright flames, the left hand open and empty",
+   "a dark sash where the body meets the whirlwind"
+  ],
+  "must_not_show": [
+   "legs",
+   "feet",
+   "a column of flame below the sash",
+   "brass or gold skin",
+   "shackles with chains",
+   "sword",
+   "lamp",
+   "staff",
+   "blue skin",
+   "a cloud of mist round it"
+  ]
+ },
+ {
+  "id": "nibelung_hoardwarden",
+  "family": "invisible",
+  "rank": 4,
+  "key": "magenta",
+  "what": "a Nibelung hoard-warden: one of the dwarves sworn to Alberich, who guarded the Nibelung treasure in the Nibelungenlied wearing the Tarnkappe, the hooded cloak that made its wearer unseen and gave him the strength of twelve men, painted seriously as a grim, immensely strong old dwarf. He is short and very broad, nearly as wide as he is tall, with a deep barrel chest, thick arms, and short powerful legs. His face is weather-beaten light tan, with a big hooked nose, deep-set fierce dark eyes under thick grey brows, and a long iron-grey beard in two thick braids bound with gold rings, reaching his belt.",
+  "colours": "weather-beaten light tan skin, an iron-grey beard in two braids with gold rings, a long hooded cloak of dark grey wool that shimmers faintly silver at its edges, dark brown leather jerkin, blackened iron mail, thick gold arm rings, a war pick with a dark iron head and a dark oak haft.",
+  "wears": "He wears a long hooded cloak of dark grey wool over his shoulders, the hood up over his head and his face showing under it, its edges catching a faint silver shimmer, a dark brown leather jerkin over a shirt of blackened iron mail that covers his arms to the wrists, two thick plain gold rings round each upper arm, and heavy dark boots.",
+  "holds": "He holds exactly one war pick in both hands: one unbroken straight haft of dark oak running through both fists, and at its top end a heavy dark iron head that sticks out on one side only as one long curved spike like a miner's pick, the other side a flat square hammer face. Nothing else is in his hands.",
+  "pose": "On two short legs, seen from the side and a little from the front, facing left, he strides forward to the left with his front knee bent, the war pick swung back high over his right shoulder ready to come down, his braided beard swinging, his fierce face turned to the viewer under the grey hood.",
+  "must_show": [
+   "a short, very broad, strong old dwarf with an iron-grey braided beard bound in gold rings",
+   "a long dark grey hooded cloak with the hood up and the face showing",
+   "a heavy war pick with a dark iron head swung back in both hands",
+   "gold arm rings and dark mail"
+  ],
+  "must_not_show": [
+   "a tall man",
+   "a double axe",
+   "a hammer with two flat faces",
+   "a helmet",
+   "a crown",
+   "red cloak",
+   "a pile of gold under him",
+   "a visible shadow",
+   "a second weapon"
+  ]
+ }
+]

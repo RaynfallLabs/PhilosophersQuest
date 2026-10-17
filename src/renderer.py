@@ -874,6 +874,29 @@ class Renderer:
             gy = sy + (full_h - surf.get_height()) // 2
             self.screen.blit(surf, (gx, gy))
 
+    def draw_disguise(self, x: int, y: int, item_id: str, visible: set = None):
+        """A mimic still in disguise, drawn as the item it poses as (a chest,
+        a hoard): exactly the picture the real thing has."""
+        if visible is not None and (x, y) not in visible:
+            return
+        sprite = self._get_item_sprite(item_id)
+        if sprite:
+            self.screen.blit(sprite, self.world_to_screen(x, y))
+
+    def draw_shimmer(self, x: int, y: int, color: tuple, turn: int = 0,
+                     visible: set = None):
+        """The faint shimmer of something unseen the hero has felt on a tile:
+        a soft pale ring that breathes a little from turn to turn."""
+        if visible is not None and (x, y) not in visible:
+            return
+        T = self.map_tile_size
+        sx, sy = self.world_to_screen(x, y)
+        alpha = 40 + 25 * (abs((turn % 8) - 4) / 4.0)
+        surf = pygame.Surface((T, T), pygame.SRCALPHA)
+        pygame.draw.ellipse(surf, (*color, int(alpha)),
+                            (T // 6, T // 10, T - T // 3, T - T // 5), max(1, T // 12))
+        self.screen.blit(surf, (sx, sy))
+
     def draw_item(self, item, cam_x: int = 0, cam_y: int = 0, visible: set = None):
         """Draw an item sprite (or glyph fallback) only when visible."""
         if visible is not None and (item.x, item.y) not in visible:

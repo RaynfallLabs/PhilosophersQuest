@@ -62,6 +62,7 @@ from game_states import (
     STATE_TARGET, STATE_DEAD,
 )
 from geom import monster_at_tile, is_at_tile
+import unseen
 from items import Artifact, Weapon
 from pet_system import Pet, random_species as random_pet_species
 
@@ -705,11 +706,12 @@ class CombatMixin:
     # ------------------------------------------------------------------
 
     def _nearest_visible_monster(self):
-        """Return the closest alive monster currently in FOV, or None."""
+        """Return the closest alive monster the hero can see, or None (an
+        invisible or hidden one is not offered: src/unseen.py)."""
         px, py = self.player.x, self.player.y
         best, best_dist = None, float('inf')
         for m in self.monsters:
-            if m.alive and (m.x, m.y) in self.visible:
+            if self._sees_monster(m):
                 d = abs(m.x - px) + abs(m.y - py)
                 if d < best_dist:
                     best, best_dist = m, d
@@ -941,6 +943,10 @@ class CombatMixin:
         # and for a boss two drops and two gifts.
         if getattr(monster, '_kill_handled', False):
             return
+        # An invisible creature shows what it was as it falls: the kill and
+        # its corpse are named.
+        if getattr(monster, '_unseen', False):
+            monster._unseen = False
         # The Black Knight is never killed: a killing blow is one more limb
         # (black_knight.BlackKnight), and at the end he is a torso calling it
         # a draw. A path that set him dead and came here finds him alive.
@@ -1648,8 +1654,24 @@ class CombatMixin:
 
         found = False
 
-        # Monster at cursor
-        monster = monster_at_tile(self.monsters, cx, cy)
+        # Monster at cursor: only one the hero can see. A mimic still in its
+        # disguise looks like the thing it imitates; an invisible creature
+        # looks like nothing at all, unless he has felt it there.
+        _hidden = monster_at_tile(self.monsters, cx, cy)
+        monster = self._seen_monster_at(cx, cy)
+        if _hidden is not None and monster is None:
+            _disg = unseen.disguise(_hidden)
+            if _disg:
+                self.add_message(f"You see {self._a_or_an(_disg.get('name') or 'chest')} on the ground.",
+                                 'info')
+                # The same sharp-eyed check a mimic chest gets (below).
+                if random.random() < min(0.85, 0.15 + self.player.PER * 0.04):
+                    self.add_message("Something seems off... you could swear it just moved.",
+                                     'warning')
+                found = True
+            elif getattr(_hidden, '_felt_at', None) == (cx, cy) and unseen.unseen(_hidden, self.player):
+                self.add_message("You see nothing there, but you felt something.", 'info')
+                found = True
         if monster:
             hp_pct = monster.hp / max(1, monster.max_hp)
             condition = (
@@ -2476,8 +2498,11 @@ class CombatMixin:
                             'success')
                 continue
             # Track monsters the player has seen (for encyclopedia bestiary)
-            if (m.x, m.y) in self.visible:
+            if self._sees_monster(m):
                 self.player.known_monster_ids.add(m.kind)
+            # "Something unseen" in its messages while the hero cannot see it.
+            if getattr(m, 'invisible', False):
+                m._unseen = unseen.unseen(m, self.player)
             _pet_occ = self._occupants(hero=False)        # pets and escorts
             _was_in_pit = m.has_effect('stuck_in_pit')
             _pos_before = (m.x, m.y)
@@ -2567,6 +2592,11 @@ class CombatMixin:
                     dmg, msg = m.attack(self.player)
                 finally:
                     self.player._trait_hooks_held = False
+                if (getattr(m, '_unseen', False) is True
+                        and max(abs(m.x - self.player.x), abs(m.y - self.player.y)) > 1):
+                    # Unseen and not beside you: the only clue is where it came from.
+                    msg += (" It came from the "
+                            f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
                 self.add_message(msg, 'danger')
                 # Perseus's trait counts every gaze or effect thrown back at its
                 # sender. Only the reflection aura's second chance (below) was
@@ -2891,9 +2921,7 @@ class CombatMixin:
         self._target_idx = 0
         rng = int(special.get('range', 5))
         for m in self.monsters:
-            if not m.alive:
-                continue
-            if (m.x, m.y) not in self.visible:
+            if not self._sees_monster(m):
                 continue
             if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= rng:
                 self._target_candidates.append(m)

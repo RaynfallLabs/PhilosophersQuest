@@ -657,5 +657,9 @@ def _spawn_mimic(container, monsters: list, dungeon_level: int = 1,
                 x, y = min(ring, key=lambda t: abs(t[0] - container.x) + abs(t[1] - container.y))
                 break
     mimic = Monster({**defn, 'id': mid}, x, y)
+    # It has just given itself away ("it's a mimic!"): it is no longer
+    # hiding, so the map shows the creature, not a chest (src/unseen.py).
+    mimic._aware = True
+    mimic._given_away = True        # a mimic-AI one hunts instead of waiting
     monsters.append(mimic)
     return mimic
