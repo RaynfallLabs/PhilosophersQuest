@@ -415,12 +415,18 @@ def _rescale_fonts(_scale: float) -> None:
     on the same pixel size share one font."""
     keys = list(_font_cache)
     _font_cache.clear()
-    made = {}
     for role, size, bold in keys:
         k = (role, ui_scale.font_px(size), bold)
-        if k not in made:
-            made[k] = _make_font(*k)
-        _font_cache[(role, size, bold)] = made[k]
+        font = _fonts_by_px.get(k)
+        if font is None:
+            font = _fonts_by_px[k] = _make_font(*k)
+        _font_cache[(role, size, bold)] = font
+
+
+# Every font built by the rescale, by pixel size: a window dragged back and
+# forth across a scale step built them all again at each crossing (UI-18).
+# Bounded by the few roles x sizes x scale steps there are.
+_fonts_by_px: dict = {}
 
 
 ui_scale.add_listener(_rescale_fonts)

@@ -274,7 +274,7 @@ class ChainAuraPulse:
         # blurred mask built once per panel size and tinted once per
         # colour; a frame only sets the surface alpha and blits, so the
         # aura costs one blit whatever the opacity.
-        pad = _GLOW_PAD
+        pad = _glow_pad()
         glow = _tinted_glow(rect.w, rect.h, self._current_aura_color)
         glow.set_alpha(int(255 * opacity))
         surface.blit(glow, (rect.x - pad, rect.y - pad))
@@ -399,8 +399,9 @@ class ChainAuraPulse:
         # roughly where _draw_quiz paints the chain counter.
         if self._last_panel_rect is not None:
             r = self._last_panel_rect
-            anchor_x = float(r.right - 160)
-            anchor_y = float(r.top + 110)
+            from ui_scale import px as _px
+            anchor_x = float(r.right - _px(160))
+            anchor_y = float(r.top + _px(110))
         else:
             anchor_x = float(_Particle._ANCHOR_X)
             anchor_y = float(_Particle._ANCHOR_Y)
@@ -421,8 +422,15 @@ class ChainAuraPulse:
                           anchor_x=anchor_x, anchor_y=anchor_y))
 
 
-_GLOW_PAD = 72                       # px the glow reaches outside the panel
-_GLOW_MASKS: dict = {}               # (w, h) -> white glow mask (per-pixel alpha)
+_GLOW_PAD = 72                       # px (at UI scale 1) the glow reaches outside the panel
+_GLOW_MASKS: dict = {}               # (w, h, pad) -> white glow mask (per-pixel alpha)
+
+
+def _glow_pad() -> int:
+    """The glow's reach at the current UI scale (fixed pixels made it a thin
+    rim around a panel that grows with the window)."""
+    from ui_scale import px
+    return px(_GLOW_PAD)
 _GLOW_TINTS: "dict" = {}             # (w, h, colour) -> tinted glow, small LRU
 _GLOW_TINTS_MAX = 12
 
@@ -431,11 +439,11 @@ def _glow_mask(w: int, h: int) -> pygame.Surface:
     """White, per-pixel-alpha halo around a ``w`` x ``h`` panel: brightest
     at the panel edge, fading smoothly to nothing ``_GLOW_PAD`` px out.
     Built once per panel size: drawn small, blurred, scaled up."""
-    key = (w, h)
+    pad = _glow_pad()
+    key = (w, h, pad)
     got = _GLOW_MASKS.get(key)
     if got is not None:
         return got
-    pad = _GLOW_PAD
     q = 4                                        # build at 1/4 size: blur is cheap
     sw, sh = max(4, (w + 2 * pad) // q), max(4, (h + 2 * pad) // q)
     small = pygame.Surface((sw, sh), pygame.SRCALPHA)
@@ -458,7 +466,7 @@ def _tinted_glow(w: int, h: int, color) -> pygame.Surface:
     """The glow mask tinted ``color`` (quantised so an easing colour hits
     only a handful of cached tints)."""
     c = tuple(min(255, (int(v) // 16) * 16 + 8) for v in color[:3])
-    key = (w, h, c)
+    key = (w, h, _glow_pad(), c)
     got = _GLOW_TINTS.pop(key, None)
     if got is None:
         got = _glow_mask(w, h).copy()

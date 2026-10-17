@@ -4,7 +4,7 @@ The item / bestiary dossier and the encyclopedia article show the art of the
 thing they describe: the item's own sprite (through the map's central
 resolver, ``renderer._resolve_item_sprite_path``, so material art, uniques
 and every fallback apply) or the LIVING creature's sprite
-(``assets/tiles/monsters/<id>.png``, else ``renderer._resolve_monster_sprite_fallback``),
+(``assets/tiles/monsters/<id>.png``),
 never the corpse. An item looks the same identified or not: the art is keyed
 on the item's real id, never on its unidentified appearance.
 
@@ -20,6 +20,7 @@ A subject with no art resolves to None, and the page simply has no picture
 from __future__ import annotations
 
 import os
+from collections import OrderedDict
 
 import pygame
 
@@ -32,8 +33,21 @@ ITEM_CATEGORIES = ('weapon', 'armor', 'accessory', 'scroll', 'wand', 'spellbook'
 BASE_MULT = 3                   # 64 px art -> 192 px at UI scale 1
 FLOOR_DIM = (140, 140, 150)     # the floor behind a creature, multiplied down: calm
 
-_raw: dict = {}                 # path -> Surface | None (the source file)
-_plates: dict = {}              # (kind, id, max_px) -> Surface | None
+# Both caches are bounded (least recently used goes first): every window
+# size made new plates and every subject kept its full-size source, so a long
+# session grew them by 80-230 MiB.
+RAW_MAX = 8                     # source images kept (the floor tile among them)
+PLATES_MAX = 48                 # finished plates kept
+_raw: OrderedDict = OrderedDict()       # path -> Surface | None (the source file)
+_plates: OrderedDict = OrderedDict()    # (kind, id, max_px) -> Surface | None
+
+
+def _remember(cache: OrderedDict, key, value, cap: int):
+    cache[key] = value
+    cache.move_to_end(key)
+    while len(cache) > cap:
+        cache.popitem(last=False)
+    return value
 
 
 def subject_ref(subject):
@@ -73,21 +87,18 @@ def art_path(kind, sid):
         path = os.path.join(renderer._SPRITE_DIR, f"{sid}.png")
         if os.path.exists(path):
             return path
-        fb = renderer._resolve_monster_sprite_fallback(sid)
-        if fb:
-            path = os.path.join(renderer._SPRITE_DIR, f"{fb}.png")
-            if os.path.exists(path):
-                return path
     return None
 
 
 def _load(path):
-    if path not in _raw:
-        try:
-            _raw[path] = pygame.image.load(path).convert_alpha() if path else None
-        except (pygame.error, FileNotFoundError, OSError):
-            _raw[path] = None
-    return _raw[path]
+    if path in _raw:
+        _raw.move_to_end(path)
+        return _raw[path]
+    try:
+        surf = pygame.image.load(path).convert_alpha() if path else None
+    except (pygame.error, FileNotFoundError, OSError):
+        surf = None
+    return _remember(_raw, path, surf, RAW_MAX)
 
 
 def plate_px(src_w, src_h, max_px, scale=None):
@@ -130,6 +141,7 @@ def plate(kind, sid, max_px):
     its backdrop; None when it has no art (or ``max_px`` is too small)."""
     key = (kind, sid, int(max_px))
     if key in _plates:
+        _plates.move_to_end(key)
         return _plates[key]
     out = None
     raw = _load(art_path(kind, sid)) if max_px >= 16 else None
@@ -138,8 +150,7 @@ def plate(kind, sid, max_px):
         sprite = renderer.fit_sprite(raw, w, h)
         out = _backdrop(kind, w, h)
         out.blit(sprite, (0, 0))
-    _plates[key] = out
-    return out
+    return _remember(_plates, key, out, PLATES_MAX)
 
 
 def cached(kind, sid):
