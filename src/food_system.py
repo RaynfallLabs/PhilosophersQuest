@@ -20,7 +20,7 @@ _COMBAT_STATS = ['STR', 'CON']
 # Harvest + Cook — cadence rewritten 2026-09-01 (v2.6.1 harvest, v2.6.2 cook)
 #
 # Both actions now use ONE animal/cooking question, tiered to the target's
-# power (corpse.harvest_tier for harvest, recipe_class for cook). Right
+# power (corpse.harvest_tier for harvest, the outcome tier for cook). Right
 # answer = full tier-appropriate outcome. Wrong = ruined; the resource
 # (corpse or ingredients) is consumed either way. No chain, no partial
 # credit, no stun on failure. See [[feedback-flow-over-gradient]] and
@@ -333,8 +333,10 @@ def _apply_recipe_outcome(player, recipe: dict, ruined: bool = False) -> list[st
                 player.restore_hp(hp)
             if sp > 0 or hp > 0:
                 bits = []
-                if sp > 0: bits.append(f"+{sp} SP")
-                if hp > 0: bits.append(f"+{hp} HP")
+                if sp > 0:
+                    bits.append(f"+{sp} SP")
+                if hp > 0:
+                    bits.append(f"+{hp} HP")
                 msg.append("You salvage what you can: " + ", ".join(bits) + ".")
             return msg
         return [f"You ruin the preparation. The {meal_name} is wasted."]
@@ -364,8 +366,10 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
         player.restore_hp(hp)
     if sp > 0 or hp > 0:
         bits = []
-        if sp > 0: bits.append(f"+{sp} SP")
-        if hp > 0: bits.append(f"+{hp} HP")
+        if sp > 0:
+            bits.append(f"+{sp} SP")
+        if hp > 0:
+            bits.append(f"+{hp} HP")
         messages.append("You eat it: " + ", ".join(bits) + ".")
 
     # +max HP (per-floor softcap unless bypassed)
@@ -442,7 +446,8 @@ def _apply_outcome_body(player, recipe: dict, outcome: dict) -> list[str]:
                     player._save_guard = {}
                 player._save_guard[cat] = amount
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('food_system._apply_outcome_body: recovered from an error')
         messages.append(
             f"{temp_power_label(tp)} lingers for "
             f"{int(outcome.get('temp_duration', 60))} turns.")
@@ -482,28 +487,43 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
     elif power_id == 'plus_2_con_petrify_immune':
         player.apply_stat_bonus('CON', 2)
         # Petrify immunity as a permanent status effect
-        try: player.add_effect('petrify_immune', -1)
-        except Exception: pass
+        try:
+            player.add_effect('petrify_immune', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent +2 CON, immunity to petrification. " + (desc or "")
     elif power_id == 'plus_2_wis_auto_reveal_secret_doors':
         player.apply_stat_bonus('WIS', 2)
         # 'searching' is the live effect that reveals hidden things nearby.
-        try: player.add_effect('searching', -1)
-        except Exception: pass
+        try:
+            player.add_effect('searching', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent +2 WIS, and hidden doors near you reveal themselves. " + (desc or "")
     elif power_id == 'fire_immunity':
         # fire_resist halves fire damage and stops the wearer being set
         # alight (it was a full immunity until 2026-10).
-        try: player.add_effect('fire_resist', -1)
-        except Exception: pass
+        try:
+            player.add_effect('fire_resist', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent fire resistance: fire does half damage. " + (desc or "")
     elif power_id == 'cold_immunity':
-        try: player.add_effect('cold_resist', -1)
-        except Exception: pass
+        try:
+            player.add_effect('cold_resist', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent cold resistance. " + (desc or "")
     elif power_id == 'petrify_immunity':
-        try: player.add_effect('petrify_immune', -1)
-        except Exception: pass
+        try:
+            player.add_effect('petrify_immune', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent petrification immunity. " + (desc or "")
     elif power_id == 'chromatic_resist_all':
         # A dragon's hide, not five full immunities: each chromatic
@@ -526,19 +546,38 @@ def _apply_permanent_power(player, power_id: str, recipe: dict) -> str:
         return "+2 max HP each new floor you descend. " + (desc or "")
     elif power_id == 'max_mp_per_floor_descent_and_poison_immunity':
         player._nidhogg_per_descent_mp = 2
-        try: player.add_effect('poison_resist', -1)
-        except Exception: pass
-        return "+2 max MP per descent + permanent poison immunity. " + (desc or "")
+        try:
+            player.add_effect('poison_resist', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
+        return ("+2 max MP per descent + permanent poison resistance: "
+                "poison cannot take hold, and does half damage. " + (desc or ""))
     elif power_id == 'lifesteal_5pct_on_melee':
         player._blood_archon_lifesteal = 0.05
         return "+5% lifesteal on all melee attacks. " + (desc or "")
     elif power_id == 'plus_2_str_confuse_immune':
         # Asterion (v2.6.4 cook redesign): the Minotaur's cunning + navigation
         player.apply_stat_bonus('STR', 2)
-        try: player.add_effect('confuse_immune', -1)
-        except Exception: pass
+        try:
+            player.add_effect('confuse_immune', -1)
+        except Exception:
+            from game_log import log_error
+            log_error('food_system._apply_permanent_power: recovered from an error')
         return "Permanent +2 STR, immunity to confusion. " + (desc or "")
     return desc or f"You feel a permanent change ({power_id})."
+
+
+def recipe_is_trophy(recipe: dict) -> bool:
+    """True for a trophy recipe: its outcome grants a permanent power.
+
+    Recipes reference an outcome archetype (`outcome_id`, v2.6.4); the
+    trophy is the outcome's `permanent_power`. The old `recipe_class` field
+    is gone from recipes.json, but an old-schema dict still answers."""
+    outcome = _load_outcomes().get(recipe.get('outcome_id')) or {}
+    if outcome.get('permanent_power'):
+        return True
+    return recipe.get('recipe_class') == 'trophy'
 
 
 def _recipe_quiz_tier(recipe: dict) -> int:

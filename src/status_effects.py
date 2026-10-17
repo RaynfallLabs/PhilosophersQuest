@@ -98,7 +98,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'identify_sight':     ('Identify Sight',     (220, 200, 150), 'Items auto-identified when picked up'),
     'spell_turning':      ('Spell Turning',      (210, 175, 255), 'Reflects 100% of monster-cast debuffs back at attacker'),
     # ---- Active buffs (wand/accessory-granted) ----
-    'blessed':            ('Blessed',            (200, 240, 160), 'All quiz timers +25%; divine clarity'),
+    'blessed':            ('Blessed',            (200, 240, 160), 'Combat quiz timer +25%; divine clarity'),
     'inspired':           ('Inspired',           (255, 215,  90), 'Wisdom lent from above: the combat clock runs long'),
     'shielded':          ('Shielded',           (120, 180, 245), '+2 AC; physical damage halved'),
     'fire_shield':        ('Fire Shield',        (245, 120,  40), 'Immune to fire; reflects fire attacks'),
