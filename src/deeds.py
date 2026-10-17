@@ -115,6 +115,42 @@ def next_seq(reg: dict) -> int:
     return reg['seq']
 
 
+def where(game):
+    """(floor, deepest, block, turn) for ``game`` (duck-typed). ``deepest`` is
+    ``player.deepest_floor_reached``, which never counts the Cow Level; the
+    block is always the deepest floor's."""
+    try:
+        floor = int(getattr(game, 'dungeon_level', 1) or 1)
+    except (TypeError, ValueError):
+        floor = 1
+    player = getattr(game, 'player', None)
+    try:
+        deepest = int(getattr(player, 'deepest_floor_reached', 0) or 0)
+    except (TypeError, ValueError):
+        deepest = 0
+    if not deepest:
+        deepest = floor if 1 <= floor <= 100 else 1
+    try:
+        turn = int(getattr(game, 'turn_count', 0) or 0)
+    except (TypeError, ValueError):
+        turn = 0
+    return floor, deepest, karma_block(deepest), turn
+
+
+def note(game, deed_id: str, *, source: str, tags=(), payload=None,
+         unique: bool = False):
+    """Record a deed on ``game``'s register from engine code (the Emberpup,
+    the Black Knight, the Ring of Gyges). Never raises: a deed is a record,
+    not a reason to crash a turn."""
+    try:
+        reg = ensure_register(game)
+        floor, deepest, block, turn = where(game)
+        return record(reg, deed_id, floor=floor, block=block, turn=turn, source=source,
+                      tags=tags, payload=payload, unique=unique, deepest=deepest)
+    except Exception:
+        return None
+
+
 # ---------------------------------------------------------------- recording
 
 def record(reg: dict, deed_id: str, *, floor: int, block: int, turn: int = 0,
