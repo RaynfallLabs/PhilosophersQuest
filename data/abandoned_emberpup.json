@@ -1,5 +1,5 @@
 {
-  "_about": "The abandoned Emberpup (src/emberpup_encounter.py). A random event: about one run in five, on one floor from 3 to 8, a small ember wyrm sits alone on a rock under a rain cloud, waiting for a trainer who said they would come back. Feed it to win a little trust; then 'I choose you' asks an animal quiz (tier 2, two right answers). Pass and it joins you as your Emberpup.",
+  "_about": "The abandoned Emberpup (src/emberpup_encounter.py). A random event: about one run in five, on one floor from 3 to 8, a small fire lizard sits alone on a rock under a rain cloud, waiting for a trainer who said they would come back. Feed it to win a little trust; then 'I choose you' asks an animal quiz (tier 2, two right answers). Pass and it joins you as your Emberpup.",
   "chance_per_run": 0.2,
   "first_floor": 3,
   "last_floor": 8,
@@ -11,12 +11,12 @@
   "pet_species": "fire",
   "title": "A LONELY EMBERPUP",
   "story": [
-    "On a rock in the middle of the room sits a small red ember wyrm, all alone. A little grey cloud hangs under the ceiling above it, and the rain falls on the rock and on nothing else. Its scales are soaked. The coals along its back have burned down to a dull, guttering glow.",
+    "On a rock in the middle of the room sits a small orange fire lizard, all alone. A little grey cloud hangs under the ceiling above it, and the rain falls on the rock and on nothing else. Its scales are soaked. The little flame on the tip of its tail has shrunk to a guttering flicker.",
     "You crouch and speak to it softly. It lifts its head, looks past you at the doorway, and lowers it again. Knotted round the rock is a frayed red ribbon with a little tag, and on the tag, in a child's careful letters: WAIT HERE. I'LL COME BACK FOR YOU.",
     "Scratched into the stone beside it are rows and rows of marks, one for every day it has waited. Nobody has come back. It has sat here in the rain all this time, keeping its little fire alive, and the fire is nearly out."
   ],
   "waiting_unfed": "The Emberpup sits on its rock in the rain, watching the doorway. It flinches when you come close.",
-  "waiting_fed": "The Emberpup's coals glow warm orange again. It is watching you now, not the doorway.",
+  "waiting_fed": "The flame on the Emberpup's tail burns a little brighter again. It is watching you now, not the doorway.",
   "options": {
     "feed": "Give it something to eat",
     "ignore": "Leave it be",
@@ -25,19 +25,19 @@
   },
   "pick_food": "What will you give it?",
   "no_food": "You search your pack, but you have nothing it could eat. The Emberpup watches you warily from its rock.",
-  "already_fed": "It has eaten, and its coals are glowing. It is not hungry now: it is watching you, waiting to see what you will do.",
-  "fed": "You hold out the {food}. The Emberpup sniffs it, then eats it all in a few hungry bites. Warmth creeps back into it: the coals along its back flicker and glow orange again, and for the first time it looks up at you instead of at the doorway.",
+  "already_fed": "It has eaten, and its tail flame is burning steadily. It is not hungry now: it is watching you, waiting to see what you will do.",
+  "fed": "You hold out the {food}. The Emberpup sniffs it, then eats it all in a few hungry bites. Warmth creeps back into it: the little flame on its tail flickers and grows, and for the first time it looks up at you instead of at the doorway.",
   "refused": "You hold out your hand and say it. The Emberpup shrinks back against the rain and will not come near you. It is cold and hungry, and it does not trust you yet.",
   "ignore": "You leave the Emberpup on its rock. It goes back to watching the doorway.",
   "attack": "You raise your weapon. The Emberpup gives one small, frightened cry, scrambles off the rock and flees into the dark, the little rain cloud chasing after it. You never see it again.",
-  "attack_chronicle": "A little fire wyrm was waiting on a rock for someone who never came back. I drove it off into the rain. I keep hearing that cry.",
+  "attack_chronicle": "A little fire lizard was waiting on a rock for someone who never came back. I drove it off into the rain. I keep hearing that cry.",
   "quiz_title": "\"I CHOOSE YOU!\"  --  ANIMAL",
-  "pass": "The Emberpup looks at you for a long moment. Then it climbs down off the rock, walks out from under the rain, and presses its warm side against your leg. Behind it the little cloud thins and is gone. The coals along its back blaze up bright orange. It has stopped waiting.",
+  "pass": "The Emberpup looks at you for a long moment. Then it climbs down off the rock, walks out from under the rain, and presses its warm side against your leg. Behind it the little cloud thins and is gone. The flame on its tail blazes up bright and strong. It has stopped waiting.",
   "fail": "You try, but the words do not come out right. The Emberpup shies away and creeps back to the middle of its rock, under the rain. It is still there, still watching the doorway. Warm and fed again, it might listen.",
   "name_title": "IT CHOSE YOU TOO",
   "name_prompt": "Will you give your Emberpup a name?",
   "named_message": "{name} the Emberpup will not be left behind again.",
   "unnamed_message": "Your Emberpup will not be left behind again.",
-  "named_chronicle": "Found a little fire wyrm waiting on a rock in the rain for a trainer who never came back. I named it {name}. It walks right at my heel, and I am never leaving it anywhere.",
-  "unnamed_chronicle": "Found a little fire wyrm waiting on a rock in the rain for a trainer who never came back. It walks right at my heel now, and I am never leaving it anywhere."
+  "named_chronicle": "Found a little fire lizard waiting on a rock in the rain for a trainer who never came back. I named it {name}. It walks right at my heel, and I am never leaving it anywhere.",
+  "unnamed_chronicle": "Found a little fire lizard waiting on a rock in the rain for a trainer who never came back. It walks right at my heel now, and I am never leaving it anywhere."
 }

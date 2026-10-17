@@ -1,5 +1,5 @@
 """The abandoned Emberpup (src/emberpup_encounter.py): about one run in five, on
-one floor from 3 to 8, a small ember wyrm waits alone on a rock under a rain
+one floor from 3 to 8, a small fire lizard waits alone on a rock under a rain
 cloud. Feed it, leave it, attack it, or (once fed) say "I choose you!" and pass
 an animal quiz (tier 2, two right answers) to make it your pet.
 

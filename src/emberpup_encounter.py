@@ -1,6 +1,6 @@
 """The abandoned Emberpup: a random event, about one run in five.
 
-On one floor from 3 to 8 a small ember wyrm sits alone on a rock under a little
+On one floor from 3 to 8 a small fire lizard sits alone on a rock under a little
 rain cloud, waiting for a trainer who said they would come back. Bumping it
 opens its screen (``STATE_EMBERPUP``): the first time, its story; then four
 choices.
