@@ -274,7 +274,7 @@ class EmberpupMixin:
         import deeds
         deeds.note(self, 'wrong.emberpup', source='emberpup', tags=['vice:cruelty'])
         self.add_message("The Emberpup flees into the dark.", 'danger')
-        self._log_chronicle(d['attack_chronicle'])
+        self._chron('deed', d['attack_chronicle'], source='emberpup')
         self._emberpup_acted = True
         self._emberpup_outcome(d['attack'], 'player')
 

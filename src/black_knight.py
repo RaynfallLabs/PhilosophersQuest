@@ -475,7 +475,8 @@ class BlackKnightMixin:
                 self._black_knight_state()['outcome'] = 'draw'
                 import deeds
                 deeds.note(self, 'flag.black_knight_draw', source='black_knight', unique=True)
-                self._log_chronicle(d['draw_chronicle'])
+                self._chron('deed', d['draw_chronicle'], person='black_knight',
+                            source='black_knight', once='black_knight:draw')
         if stages:
             self._black_knight_say(k, d['stage_lines'][str(stages[-1])])
             return
@@ -504,7 +505,12 @@ class BlackKnightMixin:
                 self._black_knight_say(k, d['greet'])
                 import deeds
                 deeds.note(self, 'met.black_knight', source='black_knight', unique=True)
-                self._log_chronicle(d['greet_chronicle'])
+                import deeds as _deeds
+                floor, _dp, _bl, _tn = self._deed_where()
+                _deeds.set_person(self._deeds_reg(), 'black_knight', name='The Black Knight',
+                                  floor=floor, last_line=d['greet_chronicle'])
+                self._chron('person', d['greet_chronicle'], person='black_knight',
+                            once='black_knight:greet')
             return
         if dist <= 2:
             k._bk_engaged = True

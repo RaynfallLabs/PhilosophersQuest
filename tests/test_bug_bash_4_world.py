@@ -803,8 +803,6 @@ def test_encounter_chronicle_lines_carry_their_article():
     """E14: "Met Lost Girl.", "Met The Penitent."."""
     from monster import Monster
     g = _game()
-    lines = []
-    g._log_chronicle = lambda t: lines.append(t)
     npc = Monster({'id': 'npc_traveler', 'name': 'Lost Girl', 'hp': 1, 'attacks': [],
                    'ai_pattern': 'sessile', 'symbol': 'p', 'color': [1, 1, 1]}, 3, 3)
     g._npc_encounter_monster = npc
@@ -812,6 +810,9 @@ def test_encounter_chronicle_lines_carry_their_article():
     g._npc_is_flavor = False
     g._npc_selected_option = {}
     g._close_npc_encounter(resolved=True)
-    assert lines and ('the Lost Girl' in lines[-1] or lines[-1].startswith('The Lost Girl'))
+    # With no line of its own an encounter is only "Met the Lost Girl."
+    # (the generic random verbs are gone, DEEDS_KARMA_DESIGN 7.7).
+    lines = [e['text'] for e in g._chronicle]
+    assert lines and lines[-1] == 'Met the Lost Girl.'
     src = open(os.path.join(ROOT, 'src', 'game_encounters.py'), encoding='utf-8').read()
     assert '(Regenerating, 30 turns)' in src                              # E15

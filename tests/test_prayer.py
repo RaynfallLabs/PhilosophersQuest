@@ -298,6 +298,7 @@ def _make_prayer_game(*, karma=0, at_altar=False):
 
     g.add_message = _add
     g._log_chronicle = _log
+    g._chron = lambda kind, text, **kw: _log(text)
     g._apply_prayer_cooldown_quirks = _apply_cooldown_quirks
     g._show_prayer_verse = _show_verse
     return g
@@ -472,6 +473,7 @@ def _make_intercession_game(*, at_altar=False, karma=0):
 
     g.add_message = _add
     g._log_chronicle = _log
+    g._chron = lambda kind, text, **kw: _log(text)
     g._advance_turn = _advance_turn
 
     class _StubQuiz:

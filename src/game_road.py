@@ -220,7 +220,8 @@ class RoadMixin:
                 self.add_message(spec['text'], 'loot')
             self._apply_npc_reward(spec['reward'])
             if spec.get('chronicle'):
-                chronicle.chron(self, 'consequence', spec['chronicle'], cause=p.get('cause'))
+                chronicle.chron(self, 'consequence', spec['chronicle'], cause=p.get('cause'),
+                                source=p.get('source') or None)
 
     def _resolve_callbacks(self, new_level: int, d: int) -> bool:
         """Place this floor's callbacks; carry or drop the missed ones.
@@ -256,6 +257,10 @@ class RoadMixin:
                 continue
             if self._place_callback(new_level, tag):
                 placed = True
+                # The Journal files the callback's line under the deed
+                # that caused it (chronicle.deed_rows).
+                if p.get('source'):
+                    reg.setdefault('causes', {})[tag] = p['source']
             else:
                 self._callback_lost(tag, spec, p.get('source', ''))
         return placed

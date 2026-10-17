@@ -252,6 +252,9 @@ class _CareerHarness:
     def _log_chronicle(self, t):
         self._chronicle.append(t)
 
+    def _chron(self, kind, text, **kw):
+        self._chronicle.append(text)
+
     # Import the real method off the Game class so we test the same code.
     @staticmethod
     def _check_method():

@@ -210,6 +210,8 @@ def test_disarm_resolver_chain_ladder():
             self._adv_count = 0
         def add_message(self, *a, **kw): pass
         def _log_chronicle(self, *a, **kw): pass
+
+        def _chron(self, *a, **kw): pass
         def _check_floor_trap(self, x, y, forced=False):
             # Damage-only stub: pretend the trap fired and consume the dict entry.
             self.dungeon.traps.pop((x, y), None)

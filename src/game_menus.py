@@ -230,20 +230,20 @@ class MenuMixin:
             for msg in apply_fafnirs_blood(self.player, chain):
                 self.add_message(msg, 'success' if chain else 'danger')
             if chain >= 5:
-                self._log_chronicle(
-                    "Drank the dragon's blood and understood every word the birds "
+                self._chron(
+                    'discovery', "Drank the dragon's blood and understood every word the birds "
                     "said. I wish I had not understood all of it.")
             elif chain >= 2:
-                self._log_chronicle(
-                    "Drank the dragon's blood. The birds spoke of a broken sword, "
+                self._chron(
+                    'discovery', "Drank the dragon's blood. The birds spoke of a broken sword, "
                     "a one-eyed god's stone, and a throw. I wrote it down.")
             elif chain == 1:
-                self._log_chronicle(
-                    "Drank the dragon's blood. It mended me. The birds said "
+                self._chron(
+                    'discovery', "Drank the dragon's blood. It mended me. The birds said "
                     "something I could not quite follow.")
             else:
-                self._log_chronicle(
-                    "Drank the dragon's blood and burned my mouth for nothing.")
+                self._chron(
+                    'discovery', "Drank the dragon's blood and burned my mouth for nothing.")
             self.state = STATE_PLAYER
             self._advance_turn()
 

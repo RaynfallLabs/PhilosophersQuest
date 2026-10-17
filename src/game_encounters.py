@@ -125,7 +125,8 @@ class EncountersMixin:
             "The cow's eyes glow red. The ground splits open beneath you!", 'danger'
         )
         self.add_message("MOO MOO MOO MOO MOO!", 'danger')
-        self._log_chronicle("I poked a cow too many times. The floor opened up. Now I'm in some kind of... cow dimension. This is not in any lore I've read.")
+        self._chron('milestone', "I poked a cow one time too many and the floor opened. Now I am in some kind of cow dimension. None of my books covered this.",
+                    once='cow_level')
         self._cow_return_level = self.dungeon_level
         # Remove the cow from the current level
         if self._cow_npc and self._cow_npc in self.monsters:
@@ -600,14 +601,14 @@ class EncountersMixin:
             self.add_message(
                 "She will heal you, cleanse afflictions, and sense hidden traps.",
                 'info')
-            self._log_chronicle("She stayed. The unicorn bowed her head and something passed between us. I can feel her presence at the edge of my thoughts. We're connected now.")
+            self._chron('notice', "She stayed. The unicorn bowed her head and something passed between us. I can feel her at the edge of my thoughts now.")
             return
 
         # If chain < 5, unicorn departs after granting boons
         unicorn.alive = False
         unicorn._unicorn_state = 'fled'
         self.add_message("The unicorn dips her head in farewell and vanishes in a shimmer of light.", 'info')
-        self._log_chronicle("The unicorn touched her horn to my hand. Warmth flooded through me. Then she was gone, vanished like morning fog. I feel... different.")
+        self._chron('notice', "The unicorn touched her horn to my hand and warmth flooded through me. Then she was gone like morning fog. I feel different.")
 
     # ------------------------------------------------------------------
     # NPC encounter open / resolve / close
@@ -822,6 +823,8 @@ class EncountersMixin:
         enc = getattr(self, '_npc_encounter_active', None) or {}
         self._npc_pay_cost(opt.get('cost'), selected_item)
         self._npc_mark_spent()
+        import chronicle
+        chronicle.record_choice(self._deeds_reg(), enc, getattr(self, '_npc_selected_index', None))
         if is_quiz(opt):
             self._record_deeds(opt.get('deeds'), enc.get('tag', ''))
             self._npc_start_option_quiz(opt)
@@ -939,9 +942,11 @@ class EncountersMixin:
         # At 8 the Sword of Michael is within reach (see judge_karma); this
         # line is the player's only sign of where they stand.
         if self.karma >= 8 and old_karma < 8:
-            self._log_chronicle("I feel... clean. Like everything I've done down here has mattered. The dungeon feels lighter.")
+            self._chron('soul', "I feel clean, as if everything I have done down here has counted. The dungeon feels lighter.",
+                        once='soul:clean')
         elif self.karma == -10 and old_karma > -10:
-            self._log_chronicle("Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.")
+            self._chron('soul', "Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.",
+                        once='soul:cold')
 
         self._apply_outcome_deeds(o, tag)
 
@@ -949,6 +954,10 @@ class EncountersMixin:
         from encounter_schema import resolve_outcome
         self._npc_outcome_text = resolve_outcome(o, self._deed_ctx())
         self._npc_outcome_chronicle = o.get('chronicle')
+        # The thread this outcome opened: its hint sits faint under the
+        # deed's line in the Journal (section 7.4).
+        th = o.get('thread')
+        self._npc_outcome_thread = th.get('id') if isinstance(th, dict) else None
         self._npc_after = o.get('then', 'close')
         self._npc_encounter_phase = 'outcome'
 
@@ -1442,7 +1451,7 @@ class EncountersMixin:
                 used.append(idx)
             line = getattr(self, '_npc_outcome_chronicle', None)
             if line:
-                self._log_chronicle(line)
+                self._npc_log_deed(enc, line)
             self._npc_outcome_chronicle = None
             self._npc_selected_option = None
             self._npc_selected_index = None
@@ -1454,6 +1463,35 @@ class EncountersMixin:
             # chronicle, so the close adds no generic one.
             self._npc_outcome_chronicle = ''
         self._close_npc_encounter(resolved=True)
+
+    def _npc_log_deed(self, enc: dict, line: str, *, own: bool = True):
+        """The journal line of an encounter choice: a ``deed`` entry tied to
+        the person (the encounter's ``person``, or the NPC itself), or a
+        ``consequence`` filed under its cause when the encounter is a
+        callback. The People tab keeps the person's last line."""
+        import deeds
+        from naming import proper_name
+        enc = enc or {}
+        tag = str(enc.get('tag') or '')
+        reg = self._deeds_reg()
+        floor, _d, _b, _t = self._deed_where()
+        person = enc.get('person') if isinstance(enc.get('person'), dict) else None
+        if person and person.get('id'):
+            pid, pname = person['id'], person.get('name', '')
+        else:
+            pid = f"npc_{deeds.slug(tag)}" if tag else None
+            npc = getattr(self, '_npc_encounter_monster', None)
+            pname = getattr(npc, 'name', '') or enc.get('name', '')
+        if pid:
+            deeds.set_person(reg, pid, name=proper_name(str(pname or pid)), floor=floor,
+                             last_line=line if own else None)
+        cause = (reg.get('causes') or {}).get(tag)
+        thread = getattr(self, '_npc_outcome_thread', None) if own else None
+        if enc.get('callback_only') or cause:
+            self._chron('consequence', line, person=pid, source=cause or tag, thread=thread)
+        else:
+            self._chron('deed', line, person=pid, source=tag, thread=thread)
+        self._npc_outcome_thread = None
 
     def _close_npc_encounter(self, resolved: bool):
         """Close the NPC encounter overlay."""
@@ -1470,41 +1508,24 @@ class EncountersMixin:
                     encountered.add(enc['tag'])
                 else:
                     self._encountered_npcs.add(enc['tag'])
-                # Log to chronicle
-                # With its article: "Met the Lost Girl.", not "Met Lost
-                # Girl." (and "Met the Penitent.", not "Met The Penitent.")
-                from monster import the_name as _the_name
-                _who = npc if npc is not None else type('N', (), {'name': enc.get('name', 'someone')})()
-                name = _the_name(_who, lower=True)
-                Name = _the_name(_who)
-                import random as _chr_rng
-                # An option (or the quiz branch taken) may carry its own
-                # chronicle line; otherwise a generic one is drawn (which
-                # could not tell "gave a child her mother's pendant" from
-                # "kept it").
+                # The journal line is the option's own (or the quiz branch
+                # taken). The old random verbs ("Met the Rat-Catcher. Had to
+                # make a hard choice.") could not tell "gave a child her
+                # mother's pendant" from "kept it", so they are gone: with no
+                # line of its own the encounter is only "Met the Lost Girl."
                 _own = getattr(self, '_npc_outcome_chronicle', None)
                 if _own is None:
                     _own = (self._npc_selected_option or {}).get('chronicle')
                 if _own:
-                    self._log_chronicle(_own)
+                    self._npc_log_deed(enc, _own)
                 elif _own == '':
                     pass        # a 'then: options' encounter logged each step already
-                elif getattr(self, '_npc_is_flavor', False):
-                    _FLAVOR_VERBS = [
-                        "Ran into {name}. A brief exchange in the dark.",
-                        "Met {name}. Even down here, people find a way.",
-                        "Crossed paths with {name}. The dungeon is stranger than I thought.",
-                    ]
-                    self._log_chronicle(_chr_rng.choice(_FLAVOR_VERBS).format(name=name, Name=Name))
                 else:
-                    _NPC_VERBS = [
-                        "Met {name}. Had to make a hard choice.",
-                        "Encountered {name}. Did what I thought was right.",
-                        "Came across {name}. This dungeon tests more than combat skill.",
-                        "Found {name}. Every choice down here has weight.",
-                        "{Name} needed something from me. I gave my answer.",
-                    ]
-                    self._log_chronicle(_chr_rng.choice(_NPC_VERBS).format(name=name, Name=Name))
+                    # With its article: "Met the Lost Girl.", not "Met Lost
+                    # Girl." (and "Met the Penitent.", not "Met The Penitent.")
+                    from monster import the_name as _the_name
+                    _who = npc if npc is not None else type('N', (), {'name': enc.get('name', 'someone')})()
+                    self._npc_log_deed(enc, f"Met {_the_name(_who, lower=True)}.", own=False)
 
         self._npc_encounter_active = None
         self._npc_encounter_monster = None
@@ -1564,7 +1585,7 @@ class EncountersMixin:
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
-            self._log_chronicle("Stood before the altar of judgment. The scales weighed my soul. I was found worthy. A sword of white fire and the scales themselves were given to me. I've never felt so terrified.")
+            self._chron('soul', "Stood before the altar of judgment. The scales weighed my soul. I was found worthy. A sword of white fire and the scales themselves were given to me. I've never felt so terrified.")
 
         elif outcome == 'scales_granted':
             from items import load_items, copy_at
@@ -1581,17 +1602,17 @@ class EncountersMixin:
             except Exception:
                 from game_log import log_error
                 log_error('game_encounters._resolve_judgment: recovered from an error')
-            self._log_chronicle("The altar weighed my deeds. Not perfect, but enough. The Scales of Michael settled into my hands. They hum with a quiet judgment.")
+            self._chron('soul', "The altar weighed my deeds. Not perfect, but enough. The Scales of Michael settled into my hands. They hum with a quiet judgment.")
 
         elif outcome == 'abaddon_empowered':
             # Abaddon gets 50% more HP and extra attack
             self.add_message("A dark power surges into the depths below...", 'danger')
             # Store flag for when L100 is generated
             self._abaddon_empowered = True
-            self._log_chronicle("The altar judged me. I was found wanting. Something below grew stronger. I can feel it.")
+            self._chron('soul', "The altar judged me. I was found wanting. Something below grew stronger. I can feel it.")
 
         elif outcome == 'locusts_strengthened':
             # Larger locust swarms
             self.add_message("The buzzing of locusts grows louder in the deep...", 'danger')
             self._locusts_strengthened = True
-            self._log_chronicle("The judgment went poorly. The buzzing from below is louder now. I made things worse.")
+            self._chron('soul', "The judgment went poorly. The buzzing from below is louder now. I made things worse.")

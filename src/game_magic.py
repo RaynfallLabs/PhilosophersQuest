@@ -3359,8 +3359,12 @@ class MagicMixin:
             if _qs_id:
                 _qs_id.on_item_identified(item.id)
             self._on_full_identify(item)
-            self._log_chronicle(
-                f"Identified the {_the_less(item.name)}. Its nature is known to me.")
+            # Every identification used to write a line; only the first
+            # truly old thing is a story beat (section 7.7, once).
+            if getattr(item, 'is_unique', False):
+                self._chron('milestone',
+                            f"Named my first truly old thing today: the {_the_less(item.name)}. "
+                            "It named me back, a bit.", once='first_unique_identified')
 
     def _on_full_identify(self, item) -> None:
         """Hook called once per item when it crosses into full-ID state.
@@ -3618,8 +3622,12 @@ class MagicMixin:
             self.add_message(
                 f"You master the arcane text! {book.spell_name} learned! (costs {mp_cost} MP)",
                 'success')
-            self._log_chronicle(
-                f"Learned a new spell: {book.spell_name}. The words burned into my memory.")
+            # The first three spells are worth a line; after that it is study.
+            import chronicle as _chr
+            if _chr.once_count(self, 'spell:') < 3:
+                self._chron('milestone',
+                            f"Learned {book.spell_name}. The words burned themselves in on the way down.",
+                            once=f'spell:{spell_id}')
             self._advance_turn()
 
         # v2.12.0: spellbook_chain_bonus (Ring of Scheherazade) now LOWERS the
@@ -3768,8 +3776,8 @@ class MagicMixin:
             self.add_message(
                 "The book's revelation finds nothing left to reveal.",
                 'info')
-        self._log_chronicle(
-            "I read the Book of Thoth and the world named itself back to me.")
+        self._chron(
+            'discovery', "I read the Book of Thoth and the world named itself back to me.")
 
     def _book_of_thoth_curse(self):
         """Failure payload: 3d6 psychic damage, 3 random unidentified items
@@ -3821,8 +3829,8 @@ class MagicMixin:
         self.add_message(
             "You are Stunned (20 turns).",
             'danger')
-        self._log_chronicle(
-            "I read the Book of Thoth wrong. The dead were displeased.")
+        self._chron(
+            'loss', "I read the Book of Thoth wrong. The dead were displeased.")
 
     def _necronomicon_quiz(self, book: 'Spellbook'):
         """The Necronomicon: recite The Words (Klaatu Barada Nikto).

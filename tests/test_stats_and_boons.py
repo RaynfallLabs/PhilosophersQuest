@@ -203,6 +203,7 @@ def _game(player):
     g = types.SimpleNamespace(player=player, state=STATE_PLAYER, msgs=[], chron=[])
     g.add_message = lambda text, kind='info': g.msgs.append(text)
     g._log_chronicle = lambda text: g.chron.append(text)
+    g._chron = lambda kind, text, **kw: g.chron.append(text)
     for name in ('_open_boon_menu', '_boon_pick'):
         setattr(g, name, types.MethodType(getattr(game_combat.CombatMixin, name), g))
     return g
