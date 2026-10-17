@@ -2703,6 +2703,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.has_effect('levitating') and self.dungeon.in_bounds(nx, ny)
             and self.dungeon.tiles[ny][nx] in (WATER, LAVA)
         ):
+            # Walking into your own pet swaps places with it, as in most
+            # roguelikes (it used to leave hero and pet on one tile). If the
+            # pet could not stand where you are (you are levitating over
+            # water or lava, phasing in a wall, or on a dug pit) you stop.
+            _ox, _oy = self.player.x, self.player.y
+            _swap_pet = next((p for p in self.pets
+                              if p.alive and p.x == nx and p.y == ny), None)
+            if _swap_pet is not None:
+                if (not self.dungeon.is_walkable(_ox, _oy)
+                        or (_ox, _oy) in getattr(self.dungeon, 'pits', set())):
+                    self.add_message(f"You stop. {_swap_pet.name} is in your way.", 'info')
+                    return
+                _swap_pet.x, _swap_pet.y = _ox, _oy
+                self.add_message(f"You swap places with {_swap_pet.name}.", 'info')
             self.player.x, self.player.y = nx, ny
             self._apply_aoo_disengage(_aoo_pre_adjacent)
             # Ice sliding: keep moving in the same direction until hitting non-ice
@@ -2721,6 +2735,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         break
                     if monster_at_tile(self.monsters, sx, sy) is not None:
                         break
+                    if any(p.alive and p.x == sx and p.y == sy for p in self.pets):
+                        break                   # never slide onto your pet
                     self.player.x, self.player.y = sx, sy
                     slide_count += 1
                     # Check traps on each intermediate tile
