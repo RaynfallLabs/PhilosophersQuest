@@ -916,7 +916,7 @@ def test_deaths_bonus_step_is_never_a_second_attack():
     death = DeathMonster()
     death._speed_pct = 125
     p = Player()
-    room = d.rooms[1]
+    room = d.rooms[1] if len(d.rooms) > 1 else d.rooms[0]   # about 1 maze in 100 has one room
     p.x, p.y = room.center
     death.x, death.y = p.x + 1, p.y
     death.alive = True

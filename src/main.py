@@ -72,6 +72,7 @@ from game_render import RenderMixin
 from game_menus import MenuMixin
 from game_input import InputMixin
 from game_encounters import EncountersMixin
+from emberpup_encounter import EmberpupMixin, new_run_state as _emberpup_new_run
 from game_magic import MagicMixin
 from game_combat import CombatMixin
 from game_divine import DivineMixin
@@ -176,7 +177,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           ItemActionsMixin):
+           EmberpupMixin, ItemActionsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -282,6 +283,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cow_return_level: int = 0       # level to return to from cow level
         self._cow_npc = None                  # reference to the cow monster entity
         self._cow_level: int = _lore_rng.randint(30, 39)  # which floor gets the cow
+        # The abandoned Emberpup (about one run in five, one floor of 3-8):
+        # {'floor', 'spawned', 'outcome'}. Rolled without drawing on the
+        # shared random stream, so seeded floors are the same as before.
+        self._emberpup: dict = _emberpup_new_run()
+        self._emberpup_npc = None             # the creature whose screen is open
+        self._emberpup_phase: str = 'story'
+        self._naming_story = None             # a non-sphere pet's words for the naming popup
         self._notified_rooms: set = set()  # (cx, cy) of special rooms already notified
         # Drop-item state
         self.drop_menu_items: list = []
@@ -855,6 +863,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._unicorn_spawned = state['_unicorn_spawned']
         if state.get('_unicorn_target_level') is not None:
             self._unicorn_target_level = state['_unicorn_target_level']
+        # The abandoned Emberpup: a save from before it existed keeps a run
+        # without it (the floors it could wait on may be behind the hero).
+        _ep = state.get('_emberpup')
+        self._emberpup = dict(_ep) if isinstance(_ep, dict) else {
+            'floor': None, 'spawned': False, 'outcome': None}
+        self._emberpup_npc = None
+        self._naming_story = None
         # Chronicle & Lore Hints
         self._chronicle = state.get('_chronicle', [])
         self._recalled_hints = state.get('_recalled_hints', [])
@@ -1556,6 +1571,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_magic_carrot(new_level)
             self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
+            self._maybe_spawn_emberpup(new_level)
             self._maybe_place_duck_of_doom(new_level)
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
@@ -2803,6 +2819,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(target, '_npc_encounter_tag', None):
                 self._start_npc_encounter(target)
                 return
+            # The abandoned Emberpup on its rock: its own screen
+            if getattr(target, '_is_abandoned_emberpup', False):
+                self._start_emberpup_encounter(target)
+                return
             # Unicorn encounter: multi-step interaction
             if getattr(target, '_is_unicorn', False):
                 self._handle_unicorn_bump(target)
@@ -3740,6 +3760,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             or kind == 'merchant_npc'
             or getattr(thing, '_npc_encounter_tag', None) or getattr(thing, '_flavor_encounter_tag', None)
             or getattr(thing, '_is_unicorn', False)
+            or getattr(thing, '_is_abandoned_emberpup', False)
             or getattr(thing, 'plot_locked', False)
             or getattr(thing, 'id', None) in Game._QUEST_PIECE_IDS
             or getattr(thing, 'item_class', '') in ('artifact', 'merchant')

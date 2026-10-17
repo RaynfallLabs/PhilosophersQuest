@@ -1432,6 +1432,82 @@ def _(g):
     g._start_cow_encounter(cow)
 
 
+def _emberpup(g, fed=False, food=2):
+    """The abandoned Emberpup, placed by the game's own spawner beside the
+    hero, with some food in the pack."""
+    import emberpup_encounter as ep
+    from items import load_items, Food
+    g._emberpup = {'floor': g.dungeon_level, 'spawned': False, 'outcome': None}
+    g._maybe_spawn_emberpup(g.dungeon_level)
+    pup = next(m for m in g.monsters if ep.is_emberpup(m))
+    pup.x, pup.y = _free_tiles_near(g, 1, 1)[0]
+    pup._emberpup_fed = fed
+    foods = [f for f in load_items('food') if isinstance(f, Food)]
+    for f in foods[:food]:
+        g.player.inventory.append(copy.copy(f))
+    return pup
+
+
+@scene('emberpup_story', 'Encounters', 'Bump the abandoned Emberpup (rare event, floors 3-8): its story.',
+       expect='emberpup')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g))
+
+
+@scene('emberpup_options', 'Encounters', 'Emberpup, Enter: the four choices.', expect='emberpup')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g))
+    press(g, pygame.K_RETURN)
+
+
+@scene('emberpup_food', 'Encounters', 'Emberpup choices, 1: pick a food to give it.', expect='emberpup')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g))
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+
+
+@scene('emberpup_fed', 'Encounters', 'Emberpup food list, a: it eats and warms up.', expect='emberpup')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g))
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+    press(g, pygame.K_a)
+
+
+@scene('emberpup_quiz', 'Encounters', 'Fed Emberpup, 4 ("I choose you!"): the animal quiz.',
+       expect='quiz')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g, fed=True))
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_4)
+
+
+@scene('emberpup_joins', 'Encounters', 'Emberpup quiz passed: it comes down off its rock.',
+       expect='emberpup', notes='The quiz is ended as passed through QuizEngine._end.')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g, fed=True))
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_4)
+    g.quiz_engine._end(success=True)
+
+
+@scene('emberpup_name', 'Popups', 'Emberpup joined, Enter: name your Emberpup.',
+       expect='pet_name_input', notes='The quiz is ended as passed through QuizEngine._end.')
+def _(g):
+    g._start_emberpup_encounter(_emberpup(g, fed=True))
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_4)
+    g.quiz_engine._end(success=True)
+    press(g, pygame.K_RETURN)
+
+
+@scene('emberpup_on_map', 'Encounters', 'The abandoned Emberpup on its rock, on the map.',
+       expect='player')
+def _(g):
+    _emberpup(g)
+
+
 @scene('mystery_approach', 'Encounters', 'Step onto a mystery altar (the Sphinx).', expect='mystery_approach')
 def _(g):
     from mystery_system import MysteryAltar
