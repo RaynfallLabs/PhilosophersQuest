@@ -3963,8 +3963,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 from armor_procs import proc_value
                 _chance = float(proc_value(self.player, 'thors_step') or 0.0)
                 if _chance > 0 and random.random() < _chance:
+                    from game_combat import _is_bystander
                     _adj_targets = [_mm for _mm in self.monsters
                                     if getattr(_mm, 'alive', False)
+                                    and not _is_bystander(_mm)
                                     and abs(_mm.x - self.player.x) <= 1
                                     and abs(_mm.y - self.player.y) <= 1
                                     and not (_mm.x == self.player.x and _mm.y == self.player.y)]
@@ -3973,7 +3975,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         from floor_curve import wound as _wound
                         # A share of the creature's own health.
                         _dmg = _wound(ARC_SHARE, _t.max_hp, _t._is_named_foe())
-                        _t.take_damage(_dmg, 'lightning')
+                        _dmg = _t.take_damage(_dmg, 'lightning')     # what it really took
                         self.add_message(
                             f"Boots of Thor — lightning arcs into the {_t.name} for {_dmg}!",
                             'combat')

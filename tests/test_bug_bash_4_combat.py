@@ -666,6 +666,71 @@ def test_a_thrown_buff_potion_does_not_claim_an_effect_monsters_ignore():
     assert 'It looks Levitating!' in _texts(g, 1)[0]
 
 
+def _angel(g, dx, dy=0):
+    """A friend among the monsters (the Heavenly Host: is_allied)."""
+    a = _spawn(g, 'giant_rat', dx=dx, dy=dy)
+    a.is_allied = True
+    a.name = 'Angel'
+    return a
+
+
+def test_cleave_does_not_report_cleaving_a_friend(monkeypatch):
+    """A max-chain cleave said 'adjacent foes are cleaved!' when the only
+    creature beside the kill was an allied NPC, who takes no damage."""
+    import game_combat
+    g = _game(seed=14)
+    _open_floor(g)
+    target = _spawn(g, 'giant_rat', dx=1)
+    _angel(g, 2)
+
+    def fake_attack(player, monster, qe, on_complete, *a, **kw):
+        monster.hp = 0
+        monster.alive = False
+        on_complete(100, True, 10, cleave_dmg=50)
+
+    monkeypatch.setattr(game_combat, 'player_attack', fake_attack)
+    g._start_combat(target)
+    assert not any('cleaved' in t for t in _texts(g))
+    # with a real foe beside the kill the line still shows
+    g2 = _game(seed=14)
+    _open_floor(g2)
+    t2 = _spawn(g2, 'giant_rat', dx=1)
+    _spawn(g2, 'giant_rat', dx=2, hp=500, max_hp=500)
+    g2._start_combat(t2)
+    assert any('cleaved' in t for t in _texts(g2))
+
+
+def test_boots_of_thor_do_not_arc_into_a_friend(monkeypatch):
+    """The Boots of Thor picked any adjacent creature and printed the rolled
+    damage: 'lightning arcs into the Angel for 6!' for an ally that took 0."""
+    import armor_procs
+    monkeypatch.setattr(armor_procs, 'player_has_armor_proc',
+                        lambda p, k: k == 'thors_step')
+    monkeypatch.setattr(armor_procs, 'proc_value',
+                        lambda p, k: 1.0 if k == 'thors_step' else 0)
+    g = _game(seed=15)
+    _open_floor(g)
+    _angel(g, 1)
+    for _ in range(3):
+        g._advance_turn()
+    assert not any('Boots of Thor' in t for t in _texts(g, 40))
+
+
+def test_joyeuse_does_not_dazzle_a_friend(monkeypatch):
+    """Joyeuse's combat-start dazzle confused allied NPCs too."""
+    g = _game(seed=16)
+    _open_floor(g)
+    w = _plain(items.make_item_by_id('weapon', 'joyeuse'))
+    w.combat_start_aoe_confuse_chance = 1.0
+    g.player.inventory.append(w)
+    g.player.weapon = w
+    friend = _angel(g, 2)
+    foe = _spawn(g, 'giant_rat', dx=1, hp=500, max_hp=500)
+    g._start_combat(foe)
+    assert foe.has_effect('confused')
+    assert not friend.has_effect('confused')
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

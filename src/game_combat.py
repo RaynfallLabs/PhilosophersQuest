@@ -77,6 +77,15 @@ def _monster_level(m) -> int:
     return max(1, min(100, int(lvl)))
 
 
+def _is_bystander(m) -> bool:
+    """A friend standing among the monsters: an encounter NPC, the unicorn,
+    an allied angel. Monster.take_damage leaves them unhurt; area blows
+    (cleave, ricochet, Joyeuse, the Boots of Thor) also pass them by, so
+    they print no damage they did not take."""
+    return bool(getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
+                or getattr(m, '_is_unicorn', False) or getattr(m, 'is_allied', False))
+
+
 # Shares of the creature's own health (floor_curve.wound).
 PIT_FALL_SHARE = 0.10         # a monster that blunders into a pit
 SHIELD_LASH_SHARE = 0.10      # fire / cold shield, each time it is struck
@@ -2122,13 +2131,17 @@ class CombatMixin:
         _dz_ch = float(getattr(_w_dazzle, 'combat_start_aoe_confuse_chance', 0.0) or 0.0) if _w_dazzle else 0.0
         if _dz_ch > 0 and random.random() < _dz_ch:
             _px, _py = self.player.x, self.player.y
+            _dazzled = 0
             for _m in self.monsters:
                 if (_m.alive and abs(_m.x - _px) <= 3 and abs(_m.y - _py) <= 3
-                        and not (_m.x == _px and _m.y == _py)):
+                        and not (_m.x == _px and _m.y == _py)
+                        and not _is_bystander(_m)):
                     _m.add_effect('confused', 1)
-            self.add_message(
-                f"{_w_dazzle.name} flashes — nearby foes reel in confusion!",
-                'success')
+                    _dazzled += 1
+            if _dazzled:
+                self.add_message(
+                    f"{_w_dazzle.name} flashes — nearby foes reel in confusion!",
+                    'success')
 
         # Floating eye: paralyzing gaze on melee attack (the eye's signature
         # mechanic). Honor sleep_resist and blindness like monster.attack does.
@@ -2250,24 +2263,29 @@ class CombatMixin:
                     if cleave_dmg:
                         _w = self.player.weapon
                         _bleed = _w and getattr(_w, 'class_mechanic', '') == 'cleave_at_max_plus_bleed'
+                        _cleaved = 0
                         for _m in self.monsters:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
-                                    and abs(_m.y - monster.y) <= 1:
+                                    and abs(_m.y - monster.y) <= 1 \
+                                    and not _is_bystander(_m):
                                 _actual = _m.take_damage(cleave_dmg)
+                                _cleaved += 1
                                 if _bleed and _actual > 0:
                                     _m.add_effect('bleeding', 3)
                                 if not _m.alive:
                                     self._on_monster_killed(_m, chain_score=chain)
-                        self.add_message(
-                            "Your swing carries through — adjacent foes are cleaved!", 'success')
+                        if _cleaved:
+                            self.add_message(
+                                "Your swing carries through — adjacent foes are cleaved!", 'success')
                     # Sling free_stones ricochet: bounce hit to an adjacent monster
                     ricochet_dmg = kwargs.get('ricochet_dmg', 0)
                     if ricochet_dmg:
                         for _m in self.monsters:
                             if _m.alive and _m is not monster \
                                     and abs(_m.x - monster.x) <= 1 \
-                                    and abs(_m.y - monster.y) <= 1:
+                                    and abs(_m.y - monster.y) <= 1 \
+                                    and not _is_bystander(_m):
                                 _m.take_damage(ricochet_dmg)
                                 self.add_message(
                                     f"The stone ricochets into the {_m.name}!", 'success')
