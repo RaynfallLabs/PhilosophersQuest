@@ -563,6 +563,55 @@ def test_c13_time_stopped_monsters_do_not_bite_pets():
     assert pet.alive and pet.hp >= hp0
 
 
+# ---------------------------------------------------------------- C15
+def test_c15_target_status_row_shows_plus_n_instead_of_a_cut_word(monkeypatch):
+    """The status row was measured at 14 px but _fit_line draws at 16 px at
+    least, so a row that 'fit' was cut mid-word and '+N' never showed."""
+    from types import SimpleNamespace
+    from test_ui_measured_rows import _combat_render_stub, _reset_layout
+    _reset_layout(1280, 720)
+    g = _combat_render_stub()
+    g.screen = pygame.Surface((1280, 720))
+    g.quiz_title = 'ATTACK'
+    weapon = SimpleNamespace(name='Iron Longsword', base_damage=10, enchant_bonus=0,
+                             damage_types=['slash'], chain_exponent=1.15,
+                             chain_multipliers=[1.0])
+    g.player = SimpleNamespace(weapon=weapon, ranged_weapon=weapon, hp=20, max_hp=30)
+    from fantasy_ui import get_font
+    rect = pygame.Rect(110, 400, 1060, g._combat_hud_height())
+    slot_w = g._combat_hud_slots(rect.x, rect.y, rect.w)['target']['sub2'].w
+    pool = ['poisoned', 'slowed', 'burning', 'blinded', 'stunned', 'weakened',
+            'confused', 'bleeding', 'armor_crack', 'sundered', 'deep_wound',
+            'heal_blocked', 'feared', 'silenced', 'immobilized', 'diseased']
+
+    def row(effs):
+        return "  ".join(f"[{e.replace('_', ' ').title()}]" for e in effs)
+
+    # the worst case: a row that fits at 14 px but not at the 16 px it is drawn at
+    effects = next(pool[:n] for n in range(1, len(pool) + 1)
+                   if get_font('body', 16).size(row(pool[:n]))[0] > slot_w)
+    assert get_font('body', 14).size(row(effects))[0] <= slot_w
+    g.combat_target = SimpleNamespace(
+        name='Giant Rat', hp=10, max_hp=20, resistances=[], weaknesses=[], tags=[],
+        status_effects={e: 3 for e in effects})
+    g.quiz_engine = SimpleNamespace(chain=3)
+    seen = []
+    real = type(g)._fit_line
+
+    def spy(self, text, max_w, sizes, family='body'):
+        font, fitted = real(self, text, max_w, sizes, family)
+        if text.startswith('[Poisoned]'):
+            seen.append((text, fitted))
+        return font, fitted
+
+    monkeypatch.setattr(type(g), '_fit_line', spy)
+    g._draw_combat_hud(rect)
+    assert seen
+    text, fitted = seen[-1]
+    assert fitted == text, 'status row was truncated mid-word'
+    assert text.split()[-1].startswith('+')
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat
