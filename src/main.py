@@ -189,6 +189,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # this many updates: a window drag (Windows blocks the loop while an edge
     # is dragged) or a scale change must never cost the player quiz seconds.
     RESIZE_GRACE_FRAMES = 2
+    # And any one frame, however long (a title-bar drag, a stall, a slow
+    # disk), advances the quiz clock by at most this much.
+    MAX_QUIZ_DT = 0.25
 
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -5635,7 +5638,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             jm = getattr(qe, 'just_mastered', None)
             if jm:
                 msubj, mtier = jm
-                name = str(msubj).title()
+                # "AI", not "Ai" (str.title); other subjects are one word.
+                name = 'AI' if str(msubj).lower() == 'ai' else str(msubj).title()
                 if msubj == 'math':
                     # Combat is never answered for you: the deck comes
                     # round again.
@@ -6957,7 +6961,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def update(self, dt: float):
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
-        quiz_dt = dt
+        quiz_dt = min(dt, self.MAX_QUIZ_DT)
         grace = getattr(self, '_resize_grace', 0)
         if grace > 0:
             self._resize_grace = grace - 1

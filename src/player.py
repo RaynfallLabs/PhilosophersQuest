@@ -7,7 +7,7 @@ class Player:
     CARRY_PER_STR = 8
 
     # Per-subject quiz timer tuning: (base_seconds, wis_scale_per_point)
-    # Math is the ONLY timed subject (quiz_engine.py:191-193 forces
+    # Math is the ONLY timed subject (QuizEngine.start_quiz forces
     # timed=False for every other subject). All other entries used to live
     # here when the pre-v2.11 engine timed every subject; removed 2026-10-03.
     # If timing is ever restored for any subject, re-add its row here as
@@ -997,7 +997,7 @@ class Player:
         """Base quiz timer in seconds (before status modifiers).
 
         Only ``'math'`` is timed in the current engine
-        (``quiz_engine.py:191-193`` forces ``timed=False`` for every other
+        (``QuizEngine.start_quiz`` forces ``timed=False`` for every other
         subject). For ``'math'`` the formula is a flat WIS seconds:
         WIS 10 -> 10s, WIS 20 -> 20s. Floor of 5s prevents an
         unwinnable combat under drain-WIS curses.
@@ -1167,7 +1167,7 @@ class Player:
         """Extra quiz seconds for magic subjects (science/grammar/philosophy).
 
         DEAD under the current engine — magic subjects are all untimed
-        (quiz_engine.py:191-193). The method is kept because callers in
+        (QuizEngine.start_quiz). The method is kept because callers in
         game_combat/game_magic still pass its return value to
         ``start_quiz(extra_seconds=...)``, where the engine discards it.
         Formula preserved for the eventual restoration of per-magic-subject
@@ -1179,7 +1179,7 @@ class Player:
         """Extra quiz seconds from earned quirks and equipment.
 
         Only ``'math'`` is actually timed in the current engine
-        (quiz_engine.py:191-193). For any other subject the engine
+        (QuizEngine.start_quiz). For any other subject the engine
         receives this value but discards it. Callers can still request
         it generically; the math path uses it, the rest ignore it.
         """

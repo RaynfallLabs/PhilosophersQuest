@@ -231,7 +231,7 @@ def test_kit_return_survives_a_cancelled_exit_dialog(save_dir):
     _key(g, pygame.K_ESCAPE)
     g.update(0.1)
     qe = g.quiz_engine
-    for _ in range(10):
+    for _ in range(80):
         if g.state == STATE_QUIZ and qe.state == QuizState.ASKING:
             qe.answer(str(qe.current_question['answer']))
         g.update(1.0)
