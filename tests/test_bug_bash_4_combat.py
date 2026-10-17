@@ -355,6 +355,56 @@ def test_c06_old_floor_monsters_stop_when_the_sandals_lift_the_hero(monkeypatch)
     assert not [m for m, lvl in acted if lvl == 1], 'an old-floor monster acted on the new floor'
 
 
+def test_burdened_extra_turn_is_not_spent_on_a_new_floor_or_under_a_popup(monkeypatch):
+    """A Burdened step's extra dungeon turn fired after the step's own turn
+    had moved the hero to another floor (the Winged Sandals) or opened a
+    popup, so the new floor's monsters got a free turn."""
+    from game_states import STATE_PLAYER, STATE_STORY_POPUP
+    from player import Player
+    monkeypatch.setattr(Player, 'is_burdened', lambda self: True)
+    monkeypatch.setattr(Player, 'burden_step', lambda self: True)
+    g = _game(seed=31)
+    g._change_level(2, enter_from_top=True)
+    g.state = STATE_PLAYER
+    g.monsters = []
+    g.pets = []
+    g.dungeon.traps = {}
+    _open_floor(g, 3)
+    levels = []
+    real = type(g)._advance_turn
+
+    def spy(self, *a, **kw):
+        levels.append(self.dungeon_level)
+        return real(self, *a, **kw)
+
+    monkeypatch.setattr(type(g), '_advance_turn', spy)
+    # The step's own turn moves the hero up a floor; the extra one must not run.
+    real_tick = type(g)._do_monster_turns
+
+    def lift(self):
+        if self.dungeon_level == 2:
+            self._change_level(1, enter_from_top=False)
+            self.state = STATE_PLAYER
+            return
+        return real_tick(self)
+
+    monkeypatch.setattr(type(g), '_do_monster_turns', lift)
+    g._do_move(1, 0)
+    assert g.dungeon_level == 1
+    assert levels == [2], levels
+    # A popup opened by the step's turn: no extra turn behind it either.
+    levels.clear()
+    _open_floor(g, 3)
+    g.monsters = []
+
+    def popup(self):
+        self.state = STATE_STORY_POPUP
+
+    monkeypatch.setattr(type(g), '_do_monster_turns', popup)
+    g._do_move(1, 0)
+    assert levels == [1], levels
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

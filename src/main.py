@@ -2518,6 +2518,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Attempt a player move/action in direction (dx, dy)."""
         if self.state != STATE_PLAYER:
             return
+        self._step_floor = self.dungeon_level     # for _burden_extra_turn
 
         # Feared: force movement away from nearest visible monster
         if self.player.has_effect('feared'):
@@ -4156,6 +4157,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         the dungeon one more turn. Walking only; fighting, spells and the quiz
         clock are untouched."""
         if self.state == STATE_DEAD or self.player.is_dead():
+            return
+        # Not once the step's own turn has opened a popup or menu, or moved
+        # the hero to another floor (the Winged Sandals): the extra turn was
+        # then a free turn for monsters the hero had not walked among.
+        if self.state != STATE_PLAYER:
+            return
+        if self.dungeon_level != getattr(self, '_step_floor', self.dungeon_level):
             return
         if self.player.burden_step():
             self._advance_turn()
