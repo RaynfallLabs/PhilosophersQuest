@@ -926,6 +926,11 @@ class CombatMixin:
         # and for a boss two drops and two gifts.
         if getattr(monster, '_kill_handled', False):
             return
+        # The Black Knight is never killed: a killing blow is one more limb
+        # (black_knight.BlackKnight), and at the end he is a torso calling it
+        # a draw. A path that set him dead and came here finds him alive.
+        if getattr(monster, 'is_black_knight', False):
+            return
         _snd.play('boss_kill' if (getattr(monster, 'is_boss', False)
                                   or 'legendary' in (getattr(monster, 'tags', None) or ())
                                   or (getattr(monster, 'treasure', None) or {}).get('boss_scroll_id'))

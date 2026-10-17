@@ -41,7 +41,7 @@ def _fewer_samples():
     'excalibur', 'mjolnir', 'gungnir', 'anduril', 'durendal', 'caliburn',
     'gram', 'sword_of_michael',                      # quest payoffs
     'echidna_fang', 'vulcans_brand', 'wendigo_fang', 'hunt_captains_sword',  # mini-boss drops
-    'oathkeeper_sword', 'penitents_blade', 'meleager_spear',                 # encounter rewards
+    'oathkeeper_sword', 'penitents_blade', 'meleager_spear', 'flesh_wound',  # encounter rewards
 ])
 def test_unique_is_at_least_as_good_as_a_common_weapon_of_its_floor(weapons, wid):
     d = weapons[wid]

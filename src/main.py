@@ -73,6 +73,7 @@ from game_menus import MenuMixin
 from game_input import InputMixin
 from game_encounters import EncountersMixin
 from emberpup_encounter import EmberpupMixin, new_run_state as _emberpup_new_run
+from black_knight import BlackKnightMixin, new_run_state as _black_knight_new_run
 from game_magic import MagicMixin
 from game_combat import CombatMixin
 from game_divine import DivineMixin
@@ -177,7 +178,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           EmberpupMixin, ItemActionsMixin):
+           EmberpupMixin, BlackKnightMixin, ItemActionsMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -290,6 +291,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._emberpup_npc = None             # the creature whose screen is open
         self._emberpup_phase: str = 'story'
         self._naming_story = None             # a non-sphere pet's words for the naming popup
+        # The Black Knight (about one run in four, one floor of 15-19), on
+        # his bridge: {'floor', 'spawned', 'outcome', 'sword_dropped'}. Rolled
+        # off the shared random stream, like the Emberpup.
+        self._black_knight: dict = _black_knight_new_run()
+        self._bk_speech = None                # his floating line, while it shows
         self._notified_rooms: set = set()  # (cx, cy) of special rooms already notified
         # Drop-item state
         self.drop_menu_items: list = []
@@ -870,6 +876,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             'floor': None, 'spawned': False, 'outcome': None}
         self._emberpup_npc = None
         self._naming_story = None
+        # The Black Knight: a save from before him keeps a run without him.
+        _bk = state.get('_black_knight')
+        self._black_knight = dict(_bk) if isinstance(_bk, dict) else {
+            'floor': None, 'spawned': False, 'outcome': None, 'sword_dropped': False}
+        self._bk_speech = None
         # Chronicle & Lore Hints
         self._chronicle = state.get('_chronicle', [])
         self._recalled_hints = state.get('_recalled_hints', [])
@@ -1572,6 +1583,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_unicorn(new_level)
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
+            self._maybe_spawn_black_knight(new_level)
             self._maybe_place_duck_of_doom(new_level)
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
@@ -2819,6 +2831,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(target, '_npc_encounter_tag', None):
                 self._start_npc_encounter(target)
                 return
+            # The Black Knight's torso: step round him (he never blocks)
+            if getattr(target, 'is_black_knight', False) and target.defeated:
+                self._black_knight_step_past(target)
+                return
             # The abandoned Emberpup on its rock: its own screen
             if getattr(target, '_is_abandoned_emberpup', False):
                 self._start_emberpup_encounter(target)
@@ -3894,6 +3910,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _advance_turn(self):
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._reap_unnoticed_kills()
+        self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
         if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0:
             self.player._huginn_muninn_remaining -= 1
@@ -4418,6 +4435,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._death_proximity_warning()
         self._tick_hp_regen()
         self._note_burden()
+        self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
 
     # ------------------------------------------------------------------
     # Carrying: Burdened (plan: _genart/ui/WEIGHT_PLAN.md)

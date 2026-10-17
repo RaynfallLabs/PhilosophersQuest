@@ -36,6 +36,7 @@ added_files = [
     ('data/flavor_encounters.json', 'data'),
     ('data/npc_encounters.json',    'data'),
     ('data/abandoned_emberpup.json', 'data'),
+    ('data/black_knight.json',      'data'),
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

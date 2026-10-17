@@ -739,6 +739,18 @@ class Renderer:
                 else:
                     pygame.draw.rect(self.screen, _UNEXPLORED, (sx, sy, T, T))
 
+        # Stone bridges over water (the Black Knight's): floor tiles drawn
+        # as a bridge deck, along the way the corridor runs.
+        for (bx, by), axis in (getattr(dungeon, 'bridge_tiles', None) or {}).items():
+            if (bx, by) not in visible and (bx, by) not in dungeon.explored:
+                continue
+            sprite = self._get_env_sprite('bridge_v' if axis == 'v' else 'bridge_h')
+            if sprite:
+                sx, sy = self.world_to_screen(bx, by)
+                self.screen.blit(sprite, (sx, sy))
+                if (bx, by) not in visible:
+                    self.screen.blit(dim, (sx, sy))
+
         # Draw revealed traps with per-type sprites
         for (tx, ty), trap in getattr(dungeon, 'traps', {}).items():
             if trap.get('revealed') and (tx, ty) in visible:

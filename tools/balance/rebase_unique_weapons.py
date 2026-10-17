@@ -56,6 +56,7 @@ SCRIPTED_FLOOR = {
     "oathkeeper_sword": 25,     # Grieving Father, floors 21-29
     "penitents_blade": 75,      # The Penitent, floors 71-79
     "caliburn": 32,
+    "flesh_wound": 17,          # the Black Knight's bridge, floors 15-19
     # Hero weapons locked to their builds. LORE, not floor: each is placed
     # where its legend puts its power, and a hero simply starts with it.
     "witcher_silver_blade": 30,   # a master-forged silver sword for monsters

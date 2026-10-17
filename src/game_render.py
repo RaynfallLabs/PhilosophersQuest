@@ -1950,7 +1950,10 @@ class RenderMixin:
                     continue
                 self.renderer.draw_entity(
                     m.x, m.y, m.color, cam_x, cam_y, self.visible,
-                    mid=m.kind, footprint=getattr(m, 'footprint', (1, 1)),
+                    # a creature whose picture follows its state (the Black
+                    # Knight's limb stages) names it in sprite_id
+                    mid=getattr(m, 'sprite_id', None) or m.kind,
+                    footprint=getattr(m, 'footprint', (1, 1)),
                     symbol=getattr(m, 'symbol', ''))
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
@@ -2004,6 +2007,7 @@ class RenderMixin:
                 self.renderer.draw_entity(dm.x, dm.y, (r, g, b), cam_x, cam_y, self.visible, mid='death')
         _pspr = (self.secret_build or {}).get('_sprite', 'player')
         self.renderer.draw_player(self.player, cam_x, cam_y, sprite_name=_pspr)
+        self._draw_black_knight_speech()
         self.screen.set_clip(None)
 
         # Death-chase atmosphere — soft red vignette + pulsing edge glow

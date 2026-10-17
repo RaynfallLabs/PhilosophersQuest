@@ -29144,5 +29144,51 @@
       "item_tier": 1
     },
     "lore": "In Army of Darkness, Ash is told to say three words before he lifts the Necronomicon. He mumbles the last one, and the graveyard answers: the old dead claw their way up out of the earth and march as an army. These are what a botched reading raises here. They have lain too long to be quick or strong, and their bones break like dry sticks, but they come up all at once."
+  },
+  "black_knight": {
+    "name": "The Black Knight",
+    "symbol": "K",
+    "color": [
+      30,
+      30,
+      36
+    ],
+    "hp": "60",
+    "speed": 10,
+    "ai_pattern": "sessile",
+    "stationary": true,
+    "thac0": 15,
+    "peak_floor": 17,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 15,
+    "attacks": [
+      {
+        "name": "Broadsword",
+        "damage": "1d8+1",
+        "type": "slash"
+      },
+      {
+        "name": "Shield Rim",
+        "damage": "1d4",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    },
+    "lore": "A knight in black armour who has taken it upon himself to guard one small stone bridge, for no reason anyone has ever got out of him. He does not move from it and he does not admit to losing. Travellers who simply walk round by the other passage report that he shouts after them for some time. Those who fight him report that he shouts rather more.",
+    "frequency": 0
   }
 }
