@@ -41,16 +41,6 @@ def player_has_armor_proc(player, attr: str) -> bool:
     return False
 
 
-def find_armor_with_proc(player, attr: str):
-    """Return the first equipped armor piece with ``attr`` truthy, or None."""
-    if player is None:
-        return None
-    for piece in iter_armor_pieces(player):
-        if getattr(piece, attr, False):
-            return piece
-    return None
-
-
 def proc_value(player, attr: str, default=None):
     """Return ``getattr(piece, attr)`` from the first piece that has it."""
     if player is None:
