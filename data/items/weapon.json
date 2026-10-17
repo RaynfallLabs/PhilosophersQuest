@@ -7075,5 +7075,74 @@
     "identified": false,
     "id_level": 0,
     "chain_exponent": 1.15
+  },
+  "flesh_wound": {
+    "name": "Flesh Wound",
+    "class": "sword",
+    "variant": "1h",
+    "tier": 2,
+    "material": "steel",
+    "mathTier": 2,
+    "baseDamage": 20,
+    "chainMultipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "slash"
+    ],
+    "symbol": ")",
+    "color": [
+      60,
+      60,
+      70
+    ],
+    "weight": 2.5,
+    "twoHanded": false,
+    "reach": 1,
+    "stunChance": 0.0,
+    "bleedChance": 0.1,
+    "knockback": false,
+    "ignoreShield": false,
+    "requiresAmmo": null,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "value": 600,
+    "min_level": 9999,
+    "quiz_tier": 2,
+    "unidentified_name": "a notched sword",
+    "lore": "The Black Knight's own sword, a plain, honest, heavy longsword with a black hilt and a round black pommel. He let go of it only when he ran out of arms to hold it with, and he would like it noted that he dropped it on purpose. The edge carries a few fresh nicks. He calls every one of them a scratch.",
+    "damage_types": [
+      "slash"
+    ],
+    "template_basis": "longsword",
+    "spread": 0,
+    "peak_floor": 17,
+    "chain_multipliers": [
+      0.5,
+      0.85,
+      1.0,
+      1.45,
+      2.0
+    ],
+    "peak_weight": 0.0,
+    "base_damage": 20,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 3,
+    "weapon_class_chain": "normal",
+    "identified": false,
+    "id_level": 0,
+    "chain_exponent": 1.15,
+    "design_notes": "Black Knight easter egg (data/black_knight.json): dropped on his bridge when he loses his sword arm, floors 15-19. A modest unique: base 20 against a floor-17 common sword median of 13 (the Sword of Damocles is 26). LORE, not floor: fixed."
   }
 }

@@ -1,0 +1,111 @@
+{
+ "_doc": "The Black Knight easter egg (src/black_knight.py). About one run in four he guards a little stone bridge on one floor from 15 to 19. His fighting numbers are in data/monsters.json (black_knight); his sword is flesh_wound in data/items/weapon.json. Every line he says is here.",
+ "chance_per_run": 0.25,
+ "first_floor": 15,
+ "last_floor": 19,
+ "monster_id": "black_knight",
+ "sword_id": "flesh_wound",
+ "bridge_length": 3,
+ "stage_sprites": [
+  "black_knight",
+  "black_knight_one_arm",
+  "black_knight_no_arms",
+  "black_knight_one_leg",
+  "black_knight_torso"
+ ],
+ "stage_attacks": {
+  "one_arm": [
+   {
+    "name": "Broadsword",
+    "damage": "1d8+1",
+    "type": "slash"
+   }
+  ],
+  "no_arms": [
+   {
+    "name": "Armoured Kick",
+    "damage": "1d4+1",
+    "type": "blunt"
+   }
+  ],
+  "one_leg": [
+   {
+    "name": "Hopping Shoulder-Barge",
+    "damage": "1d3",
+    "type": "blunt"
+   }
+  ]
+ },
+ "line_chance_on_hit": 0.7,
+ "greet": "None shall pass.",
+ "greet_chronicle": "Met a knight on a little stone bridge. He said none shall pass. There was a perfectly good way round.",
+ "stage_lines": {
+  "1": "'Tis but a scratch.",
+  "2": "It's just a flesh wound.",
+  "3": "I'm invincible!",
+  "4": "All right, we'll call it a draw."
+ },
+ "stage_messages": {
+  "1": "Your blow takes off the Black Knight's left arm, shield and all.",
+  "2": "Off comes the Black Knight's sword arm. He looks at it, then at you.",
+  "3": "You take the Black Knight's leg off at the hip. He is still hopping mad.",
+  "4": "The Black Knight's last leg goes. He lands on the bridge, a torso in a helmet."
+ },
+ "teeter": "The Black Knight teeters on his one leg, still swinging his shoulders at you.",
+ "teeter_lines": [
+  "Ha! Missed my leg!",
+  "I've still got one good leg, which is all I need!"
+ ],
+ "sword_drop": "The Black Knight's sword clatters onto the bridge beside him.",
+ "draw_chronicle": "Fought the Black Knight to what he insists was a draw. I have his sword. He has opinions.",
+ "hit_lines": {
+  "0": [
+   "Is that all you've got?",
+   "Is that a sword or a butter knife?",
+   "You'll have to do better than that.",
+   "Ha! You missed everything important.",
+   "I've had worse from my barber.",
+   "Merely a dent."
+  ],
+  "1": [
+   "I've got another one, you know.",
+   "Who needs a shield anyway?",
+   "Come on, then!",
+   "Pfft. A light breeze.",
+   "Is that the best you can do?"
+  ],
+  "2": [
+   "I'll kick your shins in!",
+   "Arms are overrated.",
+   "Just you wait till I get my boot in.",
+   "Stand still and let me kick you!"
+  ],
+  "3": [
+   "I'll hop all over you!",
+   "Stand still so I can barge you!",
+   "One leg is plenty!",
+   "You're only making me angrier!"
+  ]
+ },
+ "walk_away_lines": [
+  "Leaving already? We were just getting started!",
+  "Coward! I've barely warmed up!",
+  "That's right, run! None shall pass!",
+  "Oi! We're not finished!"
+ ],
+ "torso_pass_lines": [
+  "Oi! I said none shall pass!",
+  "That doesn't count. I wasn't ready.",
+  "Mind where you put your feet!",
+  "You've got a nerve, stepping over a knight!"
+ ],
+ "torso_leave_lines": [
+  "Come back here, I'll bite your legs off!",
+  "Coward! Come back and finish what you started!",
+  "I've still got my teeth, you know!",
+  "Fine! Run away! I'll be right here!"
+ ],
+ "torso_bite": "The Black Knight bites at your ankle. Your boot does not notice.",
+ "torso_bite_chance": 0.5,
+ "stand_firm": "The Black Knight will not budge from his bridge."
+}

@@ -168,6 +168,10 @@ def _is_big_foe(m) -> bool:
     if (getattr(m, '_npc_encounter_tag', None) or getattr(m, '_flavor_encounter_tag', None)
             or getattr(m, '_is_unicorn', False)):
         return True
+    # The Black Knight: no polymorph, charm or fear moves him off his bridge,
+    # and an instant kill is a heavy blow, which takes one limb (his own rule).
+    if getattr(m, 'is_black_knight', False):
+        return True
     from floor_curve import target_hp
     floor = int(getattr(m, 'peak_floor', 0) or getattr(m, 'min_level', 1) or 1)
     return m.max_hp > max(60, 2.0 * target_hp(floor))

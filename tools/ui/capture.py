@@ -1508,6 +1508,58 @@ def _(g):
     _emberpup(g)
 
 
+def _black_knight(g, hits=0):
+    """Down to floor 17 with the Black Knight on it (the game's own spawner
+    builds his bridge), the hero beside him, close zoom, `hits` blows struck
+    (one an action)."""
+    import black_knight as bk
+    g._black_knight = {'floor': 17, 'spawned': False, 'outcome': None, 'sword_dropped': False}
+    g._change_level(17, enter_from_top=True)
+    k = next(m for m in g.monsters if bk.is_black_knight(m))
+    bt = getattr(g.dungeon, 'bridge_tiles', {}) or {}
+    near = [(k.x + dx, k.y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]
+    near = [t for t in near if g.dungeon.is_walkable(*t)]
+    near.sort(key=lambda t: t not in bt)
+    g.monsters[:] = [m for m in g.monsters if m is k or max(abs(m.x - k.x), abs(m.y - k.y)) > 8]
+    g.player.x, g.player.y = near[0]
+    g.zoom_mode = 'close'
+    g._refresh_fov()
+    g._advance_turn()                      # he sees you: "None shall pass."
+    for _ in range(hits):
+        k.take_damage(10 ** 6)
+        g._advance_turn()
+    return k
+
+
+@scene('black_knight_bridge', 'Encounters',
+       'The Black Knight on his bridge (rare event, floors 15-19): "None shall pass."', expect='player')
+def _(g):
+    _black_knight(g)
+
+
+@scene('black_knight_one_arm', 'Encounters', 'Black Knight, one big hit: the left arm and shield are gone.',
+       expect='player')
+def _(g):
+    _black_knight(g, 1)
+
+
+@scene('black_knight_no_arms', 'Encounters', 'Black Knight, two hits: no arms, his sword on the bridge.',
+       expect='player')
+def _(g):
+    _black_knight(g, 2)
+
+
+@scene('black_knight_one_leg', 'Encounters', 'Black Knight, three hits: one leg, hopping.', expect='player')
+def _(g):
+    _black_knight(g, 3)
+
+
+@scene('black_knight_torso', 'Encounters', 'Black Knight, five hits: a torso calling it a draw.',
+       expect='player')
+def _(g):
+    _black_knight(g, 5)
+
+
 @scene('mystery_approach', 'Encounters', 'Step onto a mystery altar (the Sphinx).', expect='mystery_approach')
 def _(g):
     from mystery_system import MysteryAltar

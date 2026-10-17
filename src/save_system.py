@@ -279,6 +279,8 @@ def save_game(game) -> bool:
             '_unicorn_target_level': getattr(game, '_unicorn_target_level', None),
             # The abandoned Emberpup: its floor, placed yet, how it ended.
             '_emberpup': getattr(game, '_emberpup', None),
+            # The Black Knight: his floor, placed yet, the draw, his sword.
+            '_black_knight': getattr(game, '_black_knight', None),
             # Chronicle & Lore Hints (Encyclopedia tabs)
             '_chronicle': getattr(game, '_chronicle', []),
             '_recalled_hints': getattr(game, '_recalled_hints', []),

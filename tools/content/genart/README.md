@@ -299,7 +299,11 @@ and look for the same kind of slip when reviewing.
 - **A thing held near a flame catches fire too.** Say it is "cold, with no flame
   and no glow on it", and hold it low, away from the flame.
 - **A missing limb is not drawn; both arms come back.** Do not design around a
-  stump. **A two-handed sword is drawn one-handed, and a short sceptre as a tall
+  stump. Giving klein the creature's own picked painting as a reference does not
+  fix it either (the Black Knight, r06). When stages of one creature must lose
+  limbs, cut them from the picked painting by hand and paint the stumps on
+  (`black_knight_cuts.py`), and cut every stage at the whole creature's scale
+  (`black_knight_stages.scaled_sprite`) so a torso is not blown up to fill its tile. **A two-handed sword is drawn one-handed, and a short sceptre as a tall
   rod:** accept it or describe the grip in the picture.
 - **The backdrop check reads denials too.** "Never living pink" trips the magenta
   rule. Move the creature to another key rather than fight it.
@@ -776,8 +780,9 @@ and look for the same kind of slip when reviewing.
   leg or wing (flipped, scaled, rotated, dimmed for the far side) behind the figure, then
   re-cut with `--sheets-only`. It fixed Buer's legs, the locust's blades, the displacer's
   middle legs and the four- and six-winged creatures in one sitting.
-- **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
-  stitches and fangs are fine. Female creatures are clothed like anyone else.
+- **This is a game for teenagers** (Brandon, 2026-10-17). A little blood where a
+  wound or a cut demands it is fine (the Black Knight's stumps); no gore, no
+  nudity, no torture. Rot, bones, stitches and fangs are fine. Female creatures are clothed like anyone else.
 
 - **Wand, scroll and book variants (bug bash 4, items i26-i29).** Give each variant the
   look its unidentified name gives (shaft, roll or cover) and its effect family's sign,
