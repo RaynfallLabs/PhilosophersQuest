@@ -42,7 +42,8 @@ WizardSmallImageFile=compiler:WizClassicSmallImage.bmp
 
 ; Silent upgrade behaviour:
 ;   - Detect the running exe and offer to close it automatically
-;   - Uninstall previous version silently before installing new files
+;   - Clear the previous version's bundle (see [InstallDelete]) before
+;     installing new files
 ;   - Never require a manual uninstall step
 CloseApplications=yes
 CloseApplicationsFilter=*.exe
@@ -63,6 +64,15 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+
+[InstallDelete]
+; An upgrade copies the new bundle over the old one, so files a newer version
+; no longer ships (e.g. retired recipe_*.png sprites) would stay
+; behind, and the renderer's directory-listing fallbacks would still find
+; them. Wipe the old bundle's _internal folder first. Nothing of the
+; player's lives there: saves and settings are in %APPDATA%\PhilosophersQuest,
+; the error log and crash reports in Documents\PhilosophersQuest.
+Type: filesandordirs; Name: "{app}\_internal"
 
 [Files]
 ; Copy everything from the PyInstaller one-folder bundle.
