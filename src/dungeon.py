@@ -2088,7 +2088,8 @@ def _quest_artifact(item_id: str, **overrides):
     if template is None:
         return None
     item = _copy.copy(template)
-    item.identified = True
+    from items import make_fully_known
+    make_fully_known(item)
     item.x = item.y = 0
     for k, v in overrides.items():
         setattr(item, k, v)
@@ -2205,7 +2206,8 @@ def _make_ariadnes_thread():
                  "Whatever walks those passages has never been able to step "
                  "across it, or to hide from whoever holds the other end."),
     })
-    thread.identified = True
+    from items import make_fully_known
+    make_fully_known(thread)
     return thread
 
 
@@ -2612,7 +2614,8 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
             'symbol': '~', 'color': comp_color,
             'item_class': 'artifact', 'weight': 0.2, 'min_level': 60,
         })
-        component.identified = True
+        from items import make_fully_known
+        make_fully_known(component)
 
     # Pick a non-start, non-stairs room and anchor on a plain FLOOR tile.
     room = rng.choice(_structure_rooms(rooms, dungeon))

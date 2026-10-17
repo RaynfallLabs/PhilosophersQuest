@@ -27,6 +27,7 @@ block_cipher = None
 added_files = [
     # Game data — top-level JSONs
     ('data/monsters.json',          'data'),
+    ('data/monster_sizes.json',     'data'),
     ('data/hints.json',             'data'),
     ('data/boss_boons.json',        'data'),
     ('data/pet_growth.json',        'data'),

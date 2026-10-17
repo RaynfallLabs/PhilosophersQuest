@@ -683,23 +683,16 @@ class EncountersMixin:
     def _get_filtered_inventory(self, filter_type: str) -> list:
         """Return inventory items matching the cost filter type. Quest and
         story pieces and uniques are never offered (npc_encounters.offerable)."""
-        from items import Food, Ingredient, Potion, Scroll, Weapon, Wand
+        from items import Food, Ingredient, Potion, Scroll, Weapon
         from npc_encounters import offerable
         inv = [i for i in self.player.inventory if offerable(i)]
         if filter_type == 'food':
             return [i for i in inv if isinstance(i, (Food, Ingredient))]
         if filter_type == 'healing_potion':
-            items = []
-            # Healing potions
-            items.extend(i for i in inv if isinstance(i, Potion)
-                         and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal'))
-            # Healing scrolls
-            items.extend(i for i in inv if isinstance(i, Scroll)
-                         and 'heal' in getattr(i, 'effect', '').lower())
-            # Healing wands with charges
-            items.extend(i for i in inv if isinstance(i, Wand)
-                         and 'heal' in getattr(i, 'effect', '').lower()
-                         and getattr(i, 'charges', 0) > 0)
+            # Only items the player KNOWS heal (identified copy or known
+            # type): listing the true healers among unknowns leaked them.
+            from npc_encounters import known_healer
+            items = [i for i in inv if known_healer(self.player, i)]
             # Heal spell (virtual entry — show as a selectable option)
             if 'heal_spell' in getattr(self.player, 'known_spells', {}):
                 mp_cost = self.player.known_spells.get('heal_spell', 99)
@@ -918,7 +911,8 @@ class EncountersMixin:
             cat = reward.get('category', 'potion')
             item = self._generate_npc_reward_item(f'random_{cat}')
             if item:
-                item.identified = True
+                from items import grant_identified
+                grant_identified(self, item)
                 self.add_message(f"Received: {self._display_name(item)}", 'loot')
                 self._give_item(item)
 
@@ -996,7 +990,8 @@ class EncountersMixin:
                 result = _gear(lvl, random)
                 if result is not None:
                     result.x, result.y = self.player.x, self.player.y
-                    result.identified = True
+                    from items import grant_identified
+                    grant_identified(self, result)
                     return result
             candidates = []
             for item in load_items(cls_name):
@@ -1014,7 +1009,8 @@ class EncountersMixin:
                 from container_system import _weighted_common_pick
                 template = _weighted_common_pick(candidates, lvl, random)
                 result = copy_at(template, self.player.x, self.player.y)
-                result.identified = True
+                from items import grant_identified
+                grant_identified(self, result)
                 from items import claim_unique
                 claim_unique(result)
                 return result
@@ -1032,7 +1028,8 @@ class EncountersMixin:
                 if item.id == item_id:
                     result = copy_at(item, self.player.x, self.player.y)
                     if not no_auto_identify:
-                        result.identified = True
+                        from items import grant_identified
+                        grant_identified(self, result)
                     return result
         except Exception:
             from game_log import log_error
@@ -1046,7 +1043,8 @@ class EncountersMixin:
             for item in load_items('artifact'):
                 if item.id == item_id:
                     result = copy_at(item, self.player.x, self.player.y)
-                    result.identified = True
+                    from items import grant_identified
+                    grant_identified(self, result)
                     # Stacked and stamped like any gift; an accepted burden
                     # is carried whatever the load (it is the cost).
                     if not self.player.add_to_inventory(result):
@@ -1135,7 +1133,8 @@ class EncountersMixin:
                 sword = next((w for w in weapons if w.id == 'sword_of_michael'), None)
                 if sword:
                     sw = copy_at(sword, px, py)
-                    sw.identified = True
+                    from items import grant_identified
+                    grant_identified(self, sw)
                     self._give_item(sw)
                     self.add_message("The Sword of Michael materializes in your hands!", 'success')
             except Exception:
@@ -1146,7 +1145,8 @@ class EncountersMixin:
                 scales = next((a for a in artifacts if a.id == 'scales_of_michael'), None)
                 if scales:
                     sc = copy_at(scales, px, py)
-                    sc.identified = True
+                    from items import grant_identified
+                    grant_identified(self, sc)
                     self._give_item(sc)
                     self.add_message("The Scales of Michael float into your grasp!", 'success')
             except Exception:
@@ -1162,7 +1162,8 @@ class EncountersMixin:
                 scales = next((a for a in artifacts if a.id == 'scales_of_michael'), None)
                 if scales:
                     sc = copy_at(scales, px, py)
-                    sc.identified = True
+                    from items import grant_identified
+                    grant_identified(self, sc)
                     self._give_item(sc)
                     self.add_message("The Scales of Michael float into your grasp!", 'success')
             except Exception:

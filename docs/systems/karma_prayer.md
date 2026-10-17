@@ -135,7 +135,13 @@ even selfish options are framed as pragmatic necessity.").
 Cost types: `food`, `healing_potion`, `potion`, `scroll`, `weapon`,
 `gold`, `hp_percent`, `max_hp`, `sp`, `triggered_item`, `accept_item`,
 `spawn_deadite_ambush`. See `npc_encounters.can_pay_cost` for the
-full predicate.
+full predicate. The `healing_potion` picker lists only potions, scrolls
+and wands the player KNOWS heal (`npc_encounters.known_healer`: copy
+identified or type known; bug bash 4, call 32), plus the Heal spell.
+Listing true healers among unidentified items leaked what they were.
+
+Reward items are fully identified when handed over
+(`items.grant_identified`, call 7).
 
 Reward types: `gold`, `random_weapon` / `_armor` / `_shield` /
 `_accessory` / `_potion` / `_scroll` / `_food` / `_wand`, `stat`,
@@ -562,7 +568,8 @@ The "big ask." One attempt per run. Gated by
   play. Fallback pool: `is_unique` items across weapon / armor /
   shield / accessory not in play. Both pools preserve the
   "not duplicating a running unique" invariant via `_in_play`.
-  Spawned artifact is `identified = True` and `buc = 'blessed'`.
+  Spawned artifact is `buc = 'blessed'` and fully identified
+  (`items.grant_identified`: id level 5, blessing known, type known).
 - Chronicle entry: "God set a {name} at my feet."
 
 ### 6.3 Failure

@@ -63,6 +63,27 @@ Set at creation (`make_corpse` in `food_system.py:1043`):
 | `monster_def` | `{peak_floor, id_tier, tags}` | Feeds the identify path + the quirk hook's `attacks` lookup. |
 | `id_level` | 0 (unstudied), 5 (fully identified) | Written only by the identify system; `>=4` sets the `lore_identified` back-compat property. |
 | `id_tier` | derived | explicit `id_tier` kwarg > monster `id_tier` > `_floor_band_tier(peak_floor)` > `harvest_tier` > 1. Identify quiz difficulty. |
+| `weight` | `items.corpse_weight(monster_id)` | The body's weight from its lore size (below). |
+
+#### Corpse weight by body size (bug bash 4, call 10)
+
+Corpses are unwieldy and heavy. Each monster's body size is set from its lore
+in `data/monster_sizes.json` (never from its floor or HP, which are depth-scaled),
+and the corpse weighs:
+
+| Size | Corpse weight | Examples |
+|------|---------------|----------|
+| tiny | 2 lb | rat, bat, imp, fire beetle; incorporeal things (wraith, shade, wisp) leave almost nothing |
+| small | 10 lb | goblin, kobold, giant frog, a swarm's leavings |
+| medium | 40 lb | a person, orc, skeleton, wolf, vampire (default for an unlisted monster) |
+| large | 150 lb | troll, ogre, bear, minotaur, young dragon, golem |
+| huge | 400 lb | giants, adult and older dragons, hydra, titans |
+
+The carry limit is 20 + 8 x STR (100 lb at STR 10), Burdened above 75%. So a
+medium corpse is a real choice to carry, a large one needs a very strong hero
+with an empty pack, and a huge one cannot be carried. Harvest works on a corpse
+on the ground (the hero's tile), so a carried corpse is dropped to harvest it.
+Corpses from saves made before this change keep their old 5 lb.
 
 ### 2.2 `Ingredient` fields
 
