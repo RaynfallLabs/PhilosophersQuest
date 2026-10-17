@@ -101,7 +101,8 @@ def test_aladdins_lamp_disabled():
 
 
 def test_wand_of_wonder_legendary_disabled():
-    wand = _load('data/items/wand.json')
-    if 'wand_of_wonder_legendary' in wand:
-        assert wand['wand_of_wonder_legendary'].get('min_level', 0) >= 9999
-        assert '_disabled_reason' in wand['wand_of_wonder_legendary']
+    # The wand has since left wand.json entirely; either way it must not be
+    # something the dungeon can hand out. (The old body only asserted when the
+    # entry existed, so it asserted nothing.)
+    w = _load('data/items/wand.json').get('wand_of_wonder_legendary')
+    assert w is None or (w.get('min_level', 0) >= 9999 and '_disabled_reason' in w)

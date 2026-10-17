@@ -106,12 +106,12 @@ def test_no_camel_first_twin_get_in_items_py(items_source):
                 lineno = i2
                 break
         violations.append((lineno, key, window))
-    if violations:
-        msg = "camelCase-first .get() on twin field(s):\n" + "\n".join(
-            f"  items.py:{ln}  key={k!r}  |  {w}"
-            for ln, k, w in violations
-        )
-        pytest.fail(msg)
+    # the scan must actually see the twin .get() chains it guards
+    assert any(m.group(1) in CAMEL_KEYS for m in pattern.finditer(flat))
+    assert not violations, "camelCase-first .get() on twin field(s):\n" + "\n".join(
+        f"  items.py:{ln}  key={k!r}  |  {w}"
+        for ln, k, w in violations
+    )
 
 
 def _iter_item_entries():
@@ -151,13 +151,23 @@ def test_twin_field_values_agree(camel, snake):
             divergences.append(
                 f"  {fname} :: {name}  {camel}={entry[camel]!r}  {snake}={entry[snake]!r}"
             )
-    if divergences:
-        pytest.fail(
-            f"{camel}/{snake} divergence in {len(divergences)} entries "
-            f"(snake is authoritative — set camel to match):\n"
-            + "\n".join(divergences[:20])
-            + ("\n  ... (truncated)" if len(divergences) > 20 else "")
-        )
+    assert not divergences, (
+        f"{camel}/{snake} divergence in {len(divergences)} entries "
+        f"(snake is authoritative — set camel to match):\n"
+        + "\n".join(divergences[:20])
+        + ("\n  ... (truncated)" if len(divergences) > 20 else "")
+    )
+
+
+def test_the_twin_scan_sees_real_twin_entries():
+    """The per-pair guard above passes trivially for a pair no entry
+    carries; this proves the scan reads the item data and that twins are
+    still there to guard (bug bash 2026-10-16, CQ-19)."""
+    entries = list(_iter_item_entries())
+    assert len(entries) > 1000
+    pairs_present = {c for c, s in KNOWN_TWINS
+                     for _f, _k, e in entries if c in e and s in e}
+    assert {'baseDamage', 'mathTier'} <= pairs_present
 
 
 def test_items_module_loads():
