@@ -4846,6 +4846,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 and max(abs(m.x - px), abs(m.y - py)) <= radius
                 and ((m.x, m.y) not in self.visible or self._hidden_in_plain_sight(m))
             ]
+            # A chest that is really a mimic is still a container on the
+            # floor until it is opened: he smells it all the same.
+            from items import Container
+            threats += [
+                it for it in self.ground_items
+                if isinstance(it, Container) and getattr(it, 'is_mimic', False)
+                and max(abs(it.x - px), abs(it.y - py)) <= radius
+            ]
             seen = getattr(pet, '_growled_at', None)
             if seen is None:
                 seen = set()

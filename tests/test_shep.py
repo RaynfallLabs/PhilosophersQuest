@@ -651,3 +651,22 @@ def test_no_growl_at_an_ambusher_once_it_has_sprung_in_view():
     g.monsters = [m]
     g._do_pet_growl()
     assert _growls(g) == []
+
+
+def test_he_growls_at_a_chest_that_is_really_a_mimic_and_not_at_a_real_one():
+    from items import Container
+    g, shep = _growl_scene()
+    g.monsters = []
+    real = Container({'id': 'wooden_chest', 'name': 'wooden chest', 'symbol': '=', 'color': [150, 100, 50]})
+    real.x, real.y = g.player.x + 2, g.player.y
+    fake = Container({'id': 'wooden_chest', 'name': 'wooden chest', 'symbol': '=', 'color': [150, 100, 50]})
+    fake.x, fake.y = g.player.x - 3, g.player.y
+    g.ground_items = [real]
+    g._do_pet_growl()
+    assert _growls(g) == []
+    fake.is_mimic = True
+    g.ground_items.append(fake)
+    g._do_pet_growl()
+    assert _growls(g) and 'staring west' in _growls(g)[-1]
+    g._do_pet_growl()
+    assert len(_growls(g)) == 1          # one growl, not one a turn
