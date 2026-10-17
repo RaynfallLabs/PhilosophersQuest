@@ -1795,10 +1795,14 @@ class RenderMixin:
         font = get_font('body', 20)
         line_h = font.get_height() + S(4)
         row_h = S(58)
+        # The scene text after text_variants, and only the options the hero
+        # can see (requires / hidden_group), up to four (encounter_schema).
+        scene = getattr(self, '_npc_encounter_text', None) or enc['text']
+        visible = self._npc_visible_options() if phase == 'options' else []
         if phase == 'text':
-            content_h = len(self._wrap_text(display_text(enc['text']), font, text_w)) * line_h
+            content_h = len(self._wrap_text(display_text(scene), font, text_w)) * line_h
         elif phase == 'options':
-            content_h = S(32) + len(enc['options']) * (row_h + S(10))
+            content_h = S(32) + len(visible) * (row_h + S(10))
         elif phase == 'select_item':
             content_h = S(54) + min(9, len(self._npc_item_list)) * (S(36) + S(6))
         else:
@@ -1839,7 +1843,7 @@ class RenderMixin:
             body_rect = pygame.Rect(bx + S(30), by + S(72), bw - 2 * S(30), bh - S(124))
 
         if phase == 'text':
-            self._ui_wrap_text(display_text(enc['text']), font, FP.PARCHMENT_LIGHT,
+            self._ui_wrap_text(display_text(scene), font, FP.PARCHMENT_LIGHT,
                                body_rect, line_gap=4)
             self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
             return
@@ -1850,7 +1854,7 @@ class RenderMixin:
                                get_font('body', 18), FP.FADED_TEXT,
                                body_rect.x, y)
             y += S(32)
-            for i, opt in enumerate(enc['options']):
+            for i, (_raw, opt) in enumerate(visible):
                 row = pygame.Rect(body_rect.x, y, body_rect.w, row_h)
                 self._ui_action_row(row, str(i + 1), display_text(opt['label']),
                                     color=FP.PARCHMENT_LIGHT)
@@ -5705,7 +5709,8 @@ class RenderMixin:
 
         Reads only data the game is actually tracking; pulls from the player
         for per-run sets (known_*, masteries, quirks) and from Game-level
-        counters (correct_answers, missed_questions, karma) for journey state.
+        counters (correct_answers, missed_questions) for journey state. Karma
+        is deliberately not shown.
         """
         p = self.player
         sections = []
@@ -5767,12 +5772,12 @@ class RenderMixin:
             f"Monsters studied:\t{len(studied)}",
         ]))
 
-        # --- Faith + Karma ---
+        # --- Faith --- (no karma number: how the soul stands is a discovery,
+        # hinted at in Recall Lore; only the Judgment card shows it. Brandon,
+        # DEEDS_KARMA_DESIGN decision 1.)
         boons = int(getattr(p, 'prayer_boon_count', 0) or 0)
-        karma = int(getattr(self, 'karma', 0) or 0)
-        sections.append(("FAITH & KARMA", [
+        sections.append(("FAITH", [
             f"Prayer boons:\t{boons}",
-            f"Karma:\t{karma:+d}",
         ]))
 
         # --- Spells & magic ---

@@ -309,8 +309,12 @@ def test_discoveries_sections_with_empty_player():
     assert 'QUIZ PERFORMANCE' in titles
     assert 'IDENTIFICATION' in titles
     assert 'BESTIARY' in titles
-    assert 'FAITH & KARMA' in titles
+    assert 'FAITH' in titles
     assert 'JOURNEY' in titles
+    # The karma number is hidden on the Journey screen (DEEDS_KARMA_DESIGN
+    # decision 1): no row anywhere names it.
+    assert not any('karma' in str(r).lower() for _t, rows in sections for r in rows)
+    assert not any('karma' in t.lower() for t in titles)
 
 
 def test_discoveries_sections_with_quiz_stats():

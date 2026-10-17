@@ -1148,7 +1148,7 @@ f-string, not `.format` — the audit was explicit about this pattern.
 | QUIZ PERFORMANCE | total answered, right/wrong, acc%; per-subject grid with per-tier `T{N} CLEARED` or `T{N} r/t` |
 | IDENTIFICATION | total identifies performed, item types learned, Mantle of the Philosopher |
 | BESTIARY | monsters encountered, monsters studied |
-| FAITH & KARMA | prayer boons, karma (clamped −10..+10) |
+| FAITH | prayer boons. The karma number is deliberately NOT shown (Brandon, 2026-10-17; only the Judgment card and F2 show it; Recall Lore hints at how the soul is weighed) |
 | MAGIC | spells learned, reality hacks claimed |
 | JOURNEY | current floor, deepest floor reached |
 | QUIRKS | unlocked count (NAMES hidden to avoid spoilers) |
