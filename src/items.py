@@ -1037,8 +1037,9 @@ class Container(Item):
         super().__init__(defn)
         self.tier           = int(defn.get('tier', 1))
         self.quiz_tier      = int(defn.get('quiz_tier', defn.get('tier', 1)))
-        # Legacy threshold field kept for back-compat; new chests use chain mode
-        # and gate on `chain` (0-5). quiz_threshold is unused by the new flow.
+        # Legacy threshold field kept for back-compat. Lockpick v3 asks one
+        # question at quiz_tier (container_system.attempt_lockpick);
+        # quiz_threshold is unused by that flow.
         self.quiz_threshold = int(defn.get('quiz_threshold', 2))
         self.trapped        = bool(defn.get('trapped', False))
         self.trap           = defn.get('trap', None)   # dict or None

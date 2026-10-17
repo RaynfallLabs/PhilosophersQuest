@@ -328,6 +328,6 @@ From SYSTEMS_AUDIT.md:
 - **§8 P3** — `_draw_help_screen` has zero mention of zero-tolerance, chain v2 milestone ranks, math-only timing, identify v3 / cook v2 / lockpick v3 / harvest v4. New players can't learn these from `?`.
 - **§8 P5** — `start_quiz` still computes `total_qs = ceil(threshold * 1.5)`; UI reads it and shows ratios like "0/5" that mean nothing under zero-tolerance. (The quiz-modal header is not affected: it shows `correct_count / required`, and hides the counter when `required` is 1.)
 - **§3 P2** — 5 mystery thresholds (solomon 6/8, grail 4/6, oracle 4/6, mjolnir, sphinx) were tuned pre-zero-tolerance; now harder than designed. Retune pending.
-- **§5 P2** — `mystery_system.py:181` cooking challenge uses `escalator_chain` threshold=5, which violates the v3 one-Q cook rule. Any cook-quiz in a mystery bypasses the current model.
+- **§5 P2** — (fixed since) the mystery cooking challenge is now one `threshold` question, matching the v3 one-Q cook rule.
 - **§3 P1** — `mystery_system.py::mimir_reward` populates `player.quiz_timer_bonuses[<subject>]` for all 10 subjects, but only math is timed → 9/10 reward branches dead.
 - **§3 P3** — 16 non-math timer quirks still carry parenthetical "+Ns if the subject ever becomes timed" copy. Retarget already granted stat bumps; copy sweep pending.

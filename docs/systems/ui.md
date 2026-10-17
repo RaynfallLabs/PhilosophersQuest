@@ -26,9 +26,9 @@ and the welcome / name-entry flow.
   `_player_input` key routing
 - `src/fantasy_ui.py` — `FP` palette, font loader, chrome primitives
   (`draw_panel`, `draw_header_bar`, `draw_choice_button`,
-  `draw_filigree_bar`, `draw_menu`)
-- `src/panel.py` — `PanelBuilder`, the modal frame contract, incl.
-  `footer_regions` (Phase 2) for LEFT/CENTER/RIGHT split
+  `draw_filigree_bar`)
+- `src/game_render.py` — `_ui_modal_panel` / `_ui_modal_body` / `_ui_header`,
+  the modal frame (`src/panel.py` and `PanelBuilder` were removed 2026-10-04)
 - `src/text_layout.py` — `wrap_lines`, `truncate_label`, `fit_columns`,
   plus `tab_strip_window` (Phase 2) for tab-strip overflow
 - `src/welcome_screen.py` — title vortex, name entry, leaderboard,
@@ -47,7 +47,7 @@ Three sublayers sit between the Game loop and pygame:
           ↓
    render() (main.Game) → RenderMixin._draw_<state>()
           ↓
-   PanelBuilder / fantasy_ui chrome / text_layout helpers
+   _ui_modal_panel / fantasy_ui chrome / text_layout helpers
           ↓
    pygame surface blits
 ```
@@ -90,7 +90,7 @@ The composite screen has three regions:
 
 Overlays (quiz, menus, help, lore) draw a 185-alpha black
 `draw_overlay` first, then a midnight-blue gold-bordered panel via
-`PanelBuilder` or `draw_dark_panel`.
+`_ui_modal_panel` (which paints it with `draw_dark_panel`).
 
 ---
 
@@ -187,7 +187,14 @@ directly, so the cache and fallback chain stay consistent.
 
 ## 5. Panel + text helpers
 
-### 5.1 `panel.PanelBuilder` — the modal frame contract
+### 5.1 The modal frame: `_ui_modal_panel`
+
+`src/panel.py` (`PanelBuilder`) was deleted on 2026-10-04 (commit
+2314e250); live modals call `RenderMixin._ui_modal_panel(title, ...)`,
+which draws the overlay, the panel (`draw_dark_panel`) and the header,
+and returns the panel rect; `_ui_modal_body(panel)` gives the inner
+draw area. The rest of this section is the historical PanelBuilder
+contract, kept for the design record.
 
 Every modal that follows the grimoire identity (header / tabs / body /
 footer hint inside a midnight-blue gold-bordered panel) is built
@@ -247,11 +254,9 @@ Rule: `wrap_lines` for content, `truncate_label` for chrome. Using
   turns red.
 - `draw_filigree_bar`, `draw_rune_circle`, `draw_candle_glow` —
   welcome screen flourishes.
-- `draw_menu` — legacy menu renderer still used by `_draw_cook_menu`
-  fallback path; most new menus go through
-  `_draw_decision_menu_variant_a` or `_draw_fast_picker_variant_b` on
-  `RenderMixin`.
-- `draw_tab_bar` — tab strip used inside overlays (cook, equip, drop).
+- (`draw_menu` and `draw_tab_bar` were removed 2026-10-04.) Menus go
+  through `_draw_decision_menu` or `_draw_fast_picker` on `RenderMixin`,
+  and tab strips through `_draw_action_tabs`.
 
 ---
 
@@ -768,7 +773,7 @@ When `overflow` is False, `start=0` / `end=len(widths)` and both
 arrows are hidden. Used by `game_render._draw_action_tabs` (L3212)
 and the two decision/picker menu variants.
 
-### 12b.4 `PanelBuilder.footer_regions(right_status_w=0)`
+### 12b.4 `PanelBuilder.footer_regions(right_status_w=0)` (removed with `src/panel.py`, 2026-10-04)
 
 Splits the modal footer into **LEFT** (scroll indicator count, sized
 to the current `_scroll_pos` label), **CENTER** (hint, truncated with
@@ -1208,9 +1213,9 @@ messages the action wrote (the quiz result too) are shown under
 
 ## 23. Rendering invariants (what to not break)
 
-1. **Every modal paints bg BEFORE body.** `PanelBuilder.__init__`
-   does this; hand-rolled modals that call `draw_dark_panel` at the
-   end create the "ghost text" bug. Use PanelBuilder for new modals.
+1. **Every modal paints bg BEFORE body.** `_ui_modal_panel` does
+   this; hand-rolled modals that call `draw_dark_panel` at the
+   end create the "ghost text" bug. Use `_ui_modal_panel` for new modals.
 2. **Every `_draw_*` method handles the empty / zero case.** Example:
    `_draw_identify_menu` guards zero candidates upstream in
    `_open_identify_menu`; `_draw_cook_menu` renders an empty list
@@ -1288,8 +1293,8 @@ Documented for traceability. Fixes land in follow-up commits.
    STATE_<NAME>: self._<name>_input(key)`).
 4. Add `_<name>_input` handler on `InputMixin` (free input) or
    `MenuMixin` (menu-style).
-5. Add `_draw_<name>` method on `RenderMixin`. Use `PanelBuilder` or
-   `_draw_decision_menu_variant_a`.
+5. Add `_draw_<name>` method on `RenderMixin`. Use `_ui_modal_panel` or
+   `_draw_decision_menu`.
 6. Add an `_open_<name>` method on `MenuMixin` that sets state,
    builds the entry list, resets `_<name>_sel` / `_<name>_scroll`.
 7. Wire the trigger key in `_player_input` (or in an existing menu's

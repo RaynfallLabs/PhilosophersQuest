@@ -41,9 +41,9 @@ Below the loop sit three parallel sublayers:
    outcomes, chest traps, and hints all live in JSON. The schema
    conventions are documented in [data_schemas.md](data_schemas.md).
 
-Rendering is tile-based (32×32 PNGs in `assets/tiles/`) composited by
+Rendering is tile-based (64×64 PNGs in `assets/tiles/`, drawn on 40-px map tiles) composited by
 `renderer.py` on a 1600×900 window (`layout.py`). All chrome goes through
-`fantasy_ui.FP` (the single palette), `panel.PanelBuilder` (the single
+`fantasy_ui.FP` (the single palette), `RenderMixin._ui_modal_panel` (the
 modal frame), and `text_layout` (the single word-wrap / column-fit
 helper). Overlay menus are drawn by `RenderMixin._draw_*` methods and
 driven by `MenuMixin._*_input` + `MenuMixin._open_*` handlers.
@@ -148,8 +148,8 @@ Fixes from these audits ship in the version bump that mentions them in
   `_*_input` methods on `MenuMixin` / `InputMixin`.
 - **Rendering:** `src/game_render.RenderMixin._draw_*` methods, one
   per `STATE_*`.
-- **UI theme:** `src/fantasy_ui.FP` (palette), `src/panel.PanelBuilder`
-  (modal frame), `src/text_layout` (wrap / truncate / column-fit).
+- **UI theme:** `src/fantasy_ui.FP` (palette), `RenderMixin._ui_modal_panel`
+  in `src/game_render.py` (modal frame), `src/text_layout` (wrap / truncate / column-fit).
 - **Data:** `data/` (all read-only JSON), `assets/tiles/` (PNGs).
 - **Entry point:** `python src/main.py` (not the bundled exe — "run it"
   means source, per the user's memory rule).
