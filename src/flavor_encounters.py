@@ -248,6 +248,11 @@ if os.path.exists(_GEN_PATH):
     with open(_GEN_PATH, encoding='utf-8') as _f:
         FLAVOR_ENCOUNTERS.extend(json.load(_f))
 
+# Schema defaults for the hardcoded list and the JSON alike (role 'story',
+# stakes 'light', band = [min_level, max_level]); see encounter_schema.py.
+from encounter_schema import normalise_all as _normalise_all  # noqa: E402
+_normalise_all(FLAVOR_ENCOUNTERS, source='flavor')
+
 
 # ---------------------------------------------------------------------------
 # Spawn logic

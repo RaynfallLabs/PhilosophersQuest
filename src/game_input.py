@@ -246,6 +246,8 @@ class InputMixin:
                 # outcome screen used to close as "unresolved", leaving the
                 # NPC in place to be milked again (free karma, +2 INT a loop).
                 _done = getattr(self, '_npc_encounter_phase', '') == 'outcome'
+                if not _done and hasattr(self, '_npc_committed'):
+                    _done = self._npc_committed()     # a 'then: options' list after a choice
                 if hasattr(self, '_close_npc_encounter'):
                     self._close_npc_encounter(resolved=_done)
                 else:
@@ -1081,27 +1083,32 @@ class InputMixin:
         # ── Phase: TEXT (encounter description) ───────────────────
         if phase == 'text':
             if key in (pygame.K_RETURN, pygame.K_SPACE):
-                self._npc_encounter_phase = 'options'
+                self._npc_show_options()
             elif key == pygame.K_ESCAPE:
                 self._close_npc_encounter(resolved=False)
             return
 
-        # ── Phase: OPTIONS (choose 1-3) ──────────────────────────
+        # ── Phase: OPTIONS (choose 1-4 of the visible options) ───
         if phase == 'options':
             if key == pygame.K_ESCAPE:
-                self._close_npc_encounter(resolved=False)
+                # Before any choice the NPC stays; after one (a 'then:
+                # options' encounter back at its list) it is resolved.
+                self._close_npc_encounter(resolved=self._npc_committed())
                 return
 
             key_to_idx = {
                 pygame.K_1: 0, pygame.K_KP1: 0,
                 pygame.K_2: 1, pygame.K_KP2: 1,
                 pygame.K_3: 2, pygame.K_KP3: 2,
+                pygame.K_4: 3, pygame.K_KP4: 3,
             }
             idx = key_to_idx.get(key)
-            if idx is None or idx >= len(enc['options']):
+            # Keys map to the VISIBLE options (hidden ones never take a key).
+            visible = self._npc_visible_options()
+            if idx is None or idx >= len(visible):
                 return
 
-            opt = enc['options'][idx]
+            raw_idx, opt = visible[idx]
             cost = opt.get('cost')
 
             # Check if player can pay the cost
@@ -1126,6 +1133,7 @@ class InputMixin:
                 return
 
             self._npc_selected_option = opt
+            self._npc_selected_index = raw_idx
 
             # If cost requires inventory selection, show item picker
             inv_filter = get_inventory_filter(cost)
@@ -1169,7 +1177,9 @@ class InputMixin:
 
         # ── Phase: OUTCOME (show result) ─────────────────────────
         if phase == 'outcome':
-            if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+            if key in (pygame.K_RETURN, pygame.K_SPACE):
+                self._npc_outcome_continue()
+            elif key == pygame.K_ESCAPE:
                 self._close_npc_encounter(resolved=True)
             return
 

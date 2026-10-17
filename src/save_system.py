@@ -224,6 +224,10 @@ def save_game(game) -> bool:
             '_l100_altars_used': getattr(game, '_l100_altars_used', set()),
             '_l100_altars_tried': getattr(game, '_l100_altars_tried', set()),
             'karma': getattr(game, 'karma', 0),
+            # The deeds register (deeds.py): deeds, oaths, people, threads and
+            # the karma block slots and ledger. A plain dict, so it pickles
+            # safely across code changes; a save without it is backfilled.
+            '_deeds': getattr(game, '_deeds', None),
             '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),
             '_encountered_npcs': getattr(game, '_encountered_npcs', set()),
             '_flavor_encounter_levels': getattr(game, '_flavor_encounter_levels', {}),

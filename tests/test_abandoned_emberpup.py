@@ -334,8 +334,9 @@ def test_passing_makes_it_your_emberpup_with_the_naming_popup():
     assert g.state == STATE_PLAYER
     assert pet.name == 'Ember the Emberpup'
     assert any('will not be left behind again' in t for t in _texts(g))
-    assert any('rock in the rain' in c for c in g._chronicle)
-    assert not any('soul sphere' in c.lower() for c in g._chronicle)
+    from chronicle import text_of
+    assert any('rock in the rain' in text_of(c) for c in g._chronicle)
+    assert not any('soul sphere' in text_of(c).lower() for c in g._chronicle)
 
 
 def test_failing_it_shies_away_stays_and_can_be_fed_and_asked_again():

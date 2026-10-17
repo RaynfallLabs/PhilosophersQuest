@@ -107,14 +107,7 @@ def price_encounter(encounter: dict) -> dict:
         return encounter
     enc = copy.deepcopy(encounter)
     for opt in enc.get('options') or []:
-        changed: list = []
-        for key in ('cost', 'reward', 'fail_reward'):
-            if isinstance(opt.get(key), dict):
-                _scale_gold_dict(opt[key], changed)
-        if changed:
-            for key in ('label', 'outcome'):
-                if isinstance(opt.get(key), str):
-                    opt[key] = _requote(opt[key], changed)
+        _price_outcome(opt)
         # A choice that costs gold says so. Several did not ("Ask about
         # treasure", 350 gold, shown only as a missing purse afterwards).
         cost = opt.get('cost')
@@ -124,8 +117,40 @@ def price_encounter(encounter: dict) -> dict:
             if (isinstance(amount, (int, float)) and amount > 0 and isinstance(label, str)
                     and str(int(amount)) not in label and f'{int(amount):,}' not in label):
                 opt['label'] = f"{label.rstrip()} ({int(amount):,} Gold)"
+    # Escort specs shared through '$ref' (DEEDS_KARMA_DESIGN 4.9).
+    for spec in (enc.get('escorts') or {}).values():
+        if isinstance(spec, dict):
+            _price_escort(spec)
     enc['_gold_priced'] = True
     return enc
+
+
+def _price_outcome(o: dict) -> None:
+    """Scale the gold in one option or outcome object, its quoted prices, and
+    every outcome nested in it: a quiz option's ``pass`` / ``fail``, its
+    ``delayed`` rewards, and an inline ``escort``'s arrival and failure."""
+    changed: list = []
+    for key in ('cost', 'reward', 'fail_reward'):
+        if isinstance(o.get(key), dict):
+            _scale_gold_dict(o[key], changed)
+    for d in o.get('delayed') or []:
+        if isinstance(d, dict) and isinstance(d.get('reward'), dict):
+            _scale_gold_dict(d['reward'], changed)
+    if changed:
+        for key in ('label', 'outcome'):
+            if isinstance(o.get(key), str):
+                o[key] = _requote(o[key], changed)
+    for key in ('pass', 'fail'):
+        if isinstance(o.get(key), dict):
+            _price_outcome(o[key])
+    if isinstance(o.get('escort'), dict):
+        _price_escort(o['escort'])
+
+
+def _price_escort(spec: dict) -> None:
+    for key in ('on_arrive', 'on_fail'):
+        if isinstance(spec.get(key), dict):
+            _price_outcome(spec[key])
 
 
 # ------------------------------------------------------------- smaller amounts
