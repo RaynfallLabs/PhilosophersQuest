@@ -405,6 +405,55 @@ def test_burdened_extra_turn_is_not_spent_on_a_new_floor_or_under_a_popup(monkey
     assert levels == [1], levels
 
 
+# ---------------------------------------------------------------- C09
+def _reaching(attacks):
+    from monster import _RANGED_WORDS
+    return [a for a in attacks
+            if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
+
+
+def test_c09_healer_and_summoner_casters_do_not_swing_melee_from_range():
+    """Healers and summoners with two attacks stood off at 2-6 tiles and
+    then picked ANY attack, so the orc priest clubbed from across the room."""
+    import collections
+    for kind in ('orc_priest', 'cult_priest', 'imp_lord'):
+        g = _game(seed=11)
+        _open_floor(g, 6)
+        p = g.player
+        p.hp = p.max_hp = 100000
+        m = _spawn(g, kind, dx=4)
+        m.summon_kind = ''
+        m.thac0 = -99
+        c = collections.Counter()
+        for _ in range(60):
+            m.x, m.y = p.x + 4, p.y
+            m.status_effects.clear()
+            before = len(g.msg_log.entries)
+            g._do_monster_turns()
+            for e in g.msg_log.entries[before:]:
+                for a in m.attacks:
+                    if a['name'].lower() in str(e[0]).lower():
+                        c[a['name']] += 1
+            p.hp = p.max_hp
+        distance = {a['name'] for a in _reaching(m.attacks)}
+        assert distance and c, kind
+        assert set(c) <= distance, (kind, dict(c))
+
+
+def test_c09_every_two_attack_caster_has_an_attack_that_reaches():
+    """Eight such casters had no ranged attack at all; their spells are now
+    flagged ranged in monsters.json, so they cast from where they stand."""
+    from monster import Monster
+    bad = []
+    for kind in _DEFS or json.load(open(os.path.join(ROOT, 'data', 'monsters.json'),
+                                        encoding='utf-8')):
+        d = _mdef(kind)
+        if d.get('ai_pattern') in ('healer', 'summoner') and len(d.get('attacks') or []) > 1:
+            if not _reaching(Monster(d, 0, 0).attacks):
+                bad.append(kind)
+    assert not bad
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

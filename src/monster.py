@@ -778,6 +778,10 @@ class Monster:
         elif (self.ai_pattern == 'sessile' and not self._adjacent_to(player)
               and any(a.get('ranged') for a in self.attacks)):
             atk = random.choice([a for a in self.attacks if a.get('ranged')])
+        elif (self.ai_pattern in ('healer', 'summoner') and not self._adjacent_to(player)
+              and self._distance_attacks()):
+            # C09: a caster at range uses its prayer or bolt, never its mace.
+            atk = random.choice(self._distance_attacks())
         elif (self.ai_pattern in ('ranged', 'dragon') and not self._adjacent_to(player)
               and len(self.attacks) > 1):
             ranged_atks = [a for a in self.attacks
@@ -2035,6 +2039,12 @@ class Monster:
     # New 2026 AI patterns: healer, summoner, mimic, phase_blink, charge
     # ------------------------------------------------------------------
 
+    def _distance_attacks(self) -> list:
+        """The attacks that reach from a distance: flagged `ranged` or named
+        with a ranged word."""
+        return [a for a in self.attacks
+                if a.get('ranged') or any(w in a.get('name', '').lower() for w in _RANGED_WORDS)]
+
     def _healer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Heal a wounded adjacent ally instead of attacking.
         Ally = same-kind monster OR any monster sharing a tag with this one.
@@ -2063,8 +2073,10 @@ class Monster:
             self._heal_amount = actual
             return False  # no attack — used the turn to heal
 
-        # No wounded ally to heal — behave as ranged if possible, else aggressive
-        if len(self.attacks) > 1:
+        # No wounded ally to heal — behave as ranged if possible, else aggressive.
+        # C09: "possible" means it HAS a distance attack; a healer whose two
+        # attacks are both melee used to club the player from 2-6 tiles.
+        if len(self.attacks) > 1 and self._distance_attacks():
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
         if self._adjacent_to(player):
             return True
@@ -2088,7 +2100,7 @@ class Monster:
             self._summon_turn_counter = 0
             self._summons_made += 1
         # While not summoning, behave as ranged caster (or melee if no ranged)
-        if len(self.attacks) > 1:
+        if len(self.attacks) > 1 and self._distance_attacks():
             return self._ranged_turn(player, dungeon, all_monsters, extra_occupied)
         if self._adjacent_to(player):
             return True
