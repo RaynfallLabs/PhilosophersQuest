@@ -40,6 +40,6 @@
   ],
   "lore_descriptor": "black as pitch, edges absorbing torchlight",
   "unidentified_descriptor": "shadow-dark",
-  "first_pickup_chronicle": "Shadowiron. Drains me a little every turn. Worth it for what it does to the dead. I am told the smiths who worked this metal did not live past forty. I am told they did good work.",
+  "first_pickup_chronicle": "Picked up shadowiron. It sips at me constantly. The dead hate it more than I do. The smiths who made it died young, but they did good work.",
   "design_notes": "Chain combat v2 tuning: damage_mult 1.35, weight_mult 0.90, effective_against celestial+aberration (T4 specialty). The catch: drains 1 HP per turn equipped. cannot_be_blessed — necrotic alignment. Damages the player's angel allies. Tactical risk material. void_aligned flag enables Abaddon-side karma interactions."
 }

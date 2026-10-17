@@ -39,6 +39,6 @@
   ],
   "lore_descriptor": "ivory-white shading to amber, faintly warm",
   "unidentified_descriptor": "a yellowed blade like polished bone",
-  "first_pickup_chronicle": "Dragonbone. Whoever harvested this lived to drag it out. Fire glances off it. Cold ignores it. It remembers what it used to be — and I think the dragons remember too.",
+  "first_pickup_chronicle": "Dragonbone. Whoever harvested this lived to drag it home. Fire glances off and cold ignores it. I swear it still remembers being a dragon.",
   "design_notes": "Peak F60 spread 14 — straddles Fafnir gate. damage_mult 1.30, weight_mult 0.80 (lighter than steel). max_enchant 4 — high. fire/cold resistance is a HUGE late-game value (Fafnir, fire-breathing monsters). effective_against dragons themselves — dramatic justice. NO armor (only shields) because mythologically dragonbone is the wing-spar — bladed/braced, not articulating. fafnir_quest_relevant flag enables special interactions in the Reforged Gram quest line."
 }
