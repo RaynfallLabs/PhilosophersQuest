@@ -454,6 +454,48 @@ def test_c09_every_two_attack_caster_has_an_attack_that_reaches():
     assert not bad
 
 
+# ---------------------------------------------------------------- C10
+def test_c10_heal_blocked_and_ruptured_monsters_do_not_heal():
+    """Gae Dearg's heal_blocked was read by no monster healing path, and the
+    dagger's ruptured only by regeneration: trolls regenerated, priests mended
+    ruptured allies, vampires fed through both."""
+    g = _game(seed=3)
+    _open_floor(g, 5)
+    p = g.player
+    p.hp = p.max_hp = 10_000
+    t = _spawn(g, 'troll', dx=3)
+    assert t.regeneration > 0
+    t.hp = t.max_hp // 2
+    t.status_effects['heal_blocked'] = 10
+    h0 = t.hp
+    t.tick_effects()
+    assert t.hp <= h0
+
+    g.monsters.clear()
+    pr = _spawn(g, 'orc_priest', dx=4)
+    ally = _spawn(g, 'orc_priest', dx=4, dy=1)
+    ally.hp = ally.max_hp // 3
+    ally.status_effects['ruptured'] = 5
+    a0 = ally.hp
+    pr._healer_turn(p, g.dungeon, g.monsters, set())
+    assert ally.hp == a0
+
+    g.monsters.clear()
+    v = _spawn(g, 'vampire')
+    assert v.drain_heals_self > 0
+    v.hp = v.max_hp // 2
+    v.status_effects['heal_blocked'] = 50
+    v.thac0 = -99
+    v.min_hit_chance = 1.0
+    v.attacks = [a for a in v.attacks if a.get('type') == 'drain']
+    assert v.attacks
+    v0 = v.hp
+    random.seed(4)
+    for _ in range(5):
+        v.attack(p)
+    assert v.hp <= v0
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

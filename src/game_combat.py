@@ -586,7 +586,9 @@ class CombatMixin:
 
         # --- Healing effects (restore monster HP) ---
         if effect in ('heal', 'extra_heal', 'full_heal'):
-            if effect == 'full_heal':
+            if hasattr(monster, 'can_heal') and not monster.can_heal():
+                healed = 0                      # C10: its wound will not close
+            elif effect == 'full_heal':
                 healed = monster.max_hp - monster.hp
                 monster.hp = monster.max_hp
             else:
