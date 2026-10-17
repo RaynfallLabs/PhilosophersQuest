@@ -287,6 +287,27 @@ def test_c05_a_reach_weapon_does_not_strike_through_a_wall():
     assert g.state == STATE_QUIZ
 
 
+# ---------------------------------------------------------------- C07
+def test_c07_the_shattered_ankh_takes_its_constitution_with_it():
+    """The Ankh of Isis (+2 CON while worn) shattered to save a life and the
+    slot was simply emptied: the +2 CON and its health stayed for good."""
+    g = _game(seed=41)
+    p = g.player
+    ankh = _plain(items.make_item_by_id('accessory', 'ankh_of_isis'))
+    assert ankh.effects.get('stat') == 'CON'
+    con0, mhp0 = p.CON, p.max_hp
+    p.inventory.append(ankh)
+    p._apply_equip(ankh)
+    p.remove_from_inventory(ankh)
+    assert p.CON == con0 + ankh.effects['amount']
+    p.hp = 0
+    g._answer_a_killing_blow()
+    assert p.hp > 0 and p.amulet_slot is None
+    assert any('Ankh of Isis shatters' in t for t in _texts(g))
+    assert (p.CON, p.max_hp) == (con0, mhp0)
+    assert p.hp == max(1, mhp0 // 2)
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

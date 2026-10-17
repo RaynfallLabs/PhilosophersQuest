@@ -805,6 +805,20 @@ class CombatMixin:
         if self.player.hp <= 0:
             for _acc in self.player.equipped_accessories:
                 if getattr(_acc, 'resurrect_on_death', False):
+                    # C07: what the Ankh lent comes off with it, as a plain
+                    # unequip does (its +2 CON stayed for ever), before the
+                    # new health is measured against the true max.
+                    try:
+                        from chain_equip import is_chain_equip, revert_tier_bonuses
+                        if is_chain_equip(_acc) and int(getattr(_acc, 'achieved_tier', 0) or 0) > 0:
+                            revert_tier_bonuses(self.player, _acc)
+                    except ImportError:
+                        pass
+                    _fx = getattr(_acc, 'effects', None) or {}
+                    if 'stat' in _fx:
+                        self.player.apply_stat_bonus(_fx['stat'], -_fx.get('amount', 0))
+                    if 'stat2' in _fx:
+                        self.player.apply_stat_bonus(_fx['stat2'], -_fx.get('amount2', 0))
                     self.player.hp = max(1, self.player.max_hp // 2)
                     # Clear the slot that held the Ankh
                     if self.player.amulet_slot is _acc:
@@ -814,6 +828,8 @@ class CombatMixin:
                             if _r is _acc:
                                 self.player.accessory_slots[_i] = None
                                 break
+                    if 'status' in _fx:
+                        self._remove_status_if_no_other_grants(_fx['status'])
                     self.add_message(
                         "The Ankh of Isis shatters! Isis breathes life back into you!",
                         'success')
