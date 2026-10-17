@@ -81,10 +81,9 @@ install writes a clean folder.
   save dir differs. Loading a run under the exe can't surface changes
   made against the dev save.
 
-### 2.4 `fmt_id`, `a_or_an`
+### 2.4 `a_or_an`
 
-Two string helpers that happen to live here:
-- `fmt_id('wild_swing')` → `'wild swing'` — snake_case → display.
+A string helper that happens to live here:
 - `a_or_an('acorn')` → `'an acorn'`; handles `{blessed}` BUC tags by
   stripping leading `{` before picking the article.
 

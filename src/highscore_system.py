@@ -13,14 +13,10 @@ from datetime import datetime
 MAX_ENTRIES = 100
 
 def _score_file_path() -> str:
-    import sys
-    if getattr(sys, 'frozen', False):
-        from paths import save_dir
-        return os.path.join(save_dir(), 'highscores.json')
-    return os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        'highscores.json'
-    )
+    # save_dir() is the project root in dev (where this file always lived)
+    # and the per-user data dir when frozen.
+    from paths import save_dir
+    return os.path.join(save_dir(), 'highscores.json')
 
 _SCORE_FILE = _score_file_path()
 
