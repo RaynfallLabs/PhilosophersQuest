@@ -144,6 +144,9 @@ class CombatMixin:
         'cold_resist':   'cold_resist',
         'shock_resist':  'shock_resist',
     }
+    # The buffs above that a monster actually acts on (a levitating monster
+    # floats over a dug pit). The rest change nothing for a monster.
+    _THROW_BUFFS_MONSTERS_USE = frozenset({'levitating'})
 
     # ------------------------------------------------------------------
     # Targeting -- melee reach (Observe-like cursor for melee attacks)
@@ -576,6 +579,13 @@ class CombatMixin:
 
         # --- Buff effects (heals/buffs the monster -- bad idea!) ---
         buff = self._THROW_BUFF_MAP.get(effect)
+        if buff and buff not in self._THROW_BUFFS_MONSTERS_USE:
+            # Nothing a monster does reads haste, invisibility, regenerating
+            # or the resist statuses: "It looks Hasted!" was untrue.
+            self.add_message(
+                f"The {display} splashes {monster.name} but has no effect.", 'info'
+            )
+            return
         if buff:
             monster.add_effect(buff, duration)
             label = buff.replace('_', ' ').title()

@@ -649,6 +649,23 @@ def test_mk10_self_buff_spell_message_names_the_status_not_its_id():
     assert 'magic_resist' not in line and 'Magic Resist' in line
 
 
+def test_a_thrown_buff_potion_does_not_claim_an_effect_monsters_ignore():
+    """A thrown potion of haste said 'It looks Hasted!', but no monster code
+    reads hasted (or invisible, regenerating, the resists)."""
+    from types import SimpleNamespace
+    g = _game(seed=13)
+    _open_floor(g)
+    m = _spawn(g, 'giant_rat', dx=2)
+    g._apply_thrown_potion(SimpleNamespace(effect='haste', duration=5, power=''), m, 'Potion')
+    assert 'hasted' not in m.status_effects
+    assert not any('It looks' in t for t in _texts(g))
+    assert any('no effect' in t for t in _texts(g, 1))
+    # the one a monster does use still lands, and says so
+    g._apply_thrown_potion(SimpleNamespace(effect='levitation', duration=5, power=''), m, 'Potion')
+    assert m.has_effect('levitating')
+    assert 'It looks Levitating!' in _texts(g, 1)[0]
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat
