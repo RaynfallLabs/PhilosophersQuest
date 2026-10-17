@@ -466,19 +466,20 @@ class CombatMixin:
                                spawn_x, spawn_y)
 
     def _family_cats_present(self) -> set:
-        from pet_system import family_cats_present
-        return family_cats_present(self.player, self.pets,
+        """The rare family companions (the cats and Shep) met this run."""
+        from pet_system import family_pets_present
+        return family_pets_present(self.player, self.pets,
                                    getattr(self.player, 'inventory', None))
 
     def _hatch_sphere_pet(self, species: str, spawn_x: int, spawn_y: int):
         """A new companion out of a Soul Sphere, then the naming popup."""
-        from pet_system import FAMILY_CATS
+        from pet_system import FAMILY_PETS
         pet = Pet(species, spawn_x, spawn_y)
         # Late-pickup catch-up: pets hatched deeper get an initial XP grant
         # so they're not uselessly underleveled relative to the floor's enemies.
         pet.apply_late_pickup_bonus(self.dungeon_level)
         self.pets.append(pet)
-        if species in FAMILY_CATS:
+        if species in FAMILY_PETS:
             met = getattr(self.player, 'family_cats_met', None)
             if not isinstance(met, set):
                 met = set()
@@ -489,6 +490,10 @@ class CombatMixin:
         # Open the naming popup so the player can give this companion a nickname.
         self._naming_pet = pet
         self._pet_name_input_buffer = pet.species_name   # default: species name
+        # A companion with a story of its own (Shep) brings its own words
+        # for the naming popup, the log and the chronicle.
+        story = pet.species.get('naming_story')
+        self._naming_story = dict(story) if story else None
         from game_states import STATE_PET_NAME_INPUT
         self.state = STATE_PET_NAME_INPUT
 
@@ -524,10 +529,10 @@ class CombatMixin:
                 "The sphere shatters in a flash of silver light, but there is no room!", 'warning')
             return
 
-        from pet_system import DadPet, roll_family_cat
-        cat = roll_family_cat(self._family_cats_present())
-        if cat:
-            self._hatch_sphere_pet(cat, spawn_x, spawn_y)
+        from pet_system import DadPet, roll_rare_sphere_pet
+        rare = roll_rare_sphere_pet(self._family_cats_present())   # Shep 1%, each cat 5%
+        if rare:
+            self._hatch_sphere_pet(rare, spawn_x, spawn_y)
             return
         dad = DadPet(spawn_x, spawn_y, duration=5)
         self.pets.append(dad)
@@ -2847,11 +2852,12 @@ class CombatMixin:
         Targeting envelope is enforced at resolution time, not movement time
         (cursor can roam, but invalid confirms produce a warning).
 
-        Specials with `targeting: 'self'` or `'visible_all'` have no
-        tile to pick — they resolve instantly here, no cursor.
+        Specials with `targeting: 'self'`, `'visible_all'` or
+        `'hero_adjacent'` (Shep's Sic 'Em All!) have no tile to pick:
+        they resolve instantly here, no cursor.
         """
         from game_states import STATE_TARGET, STATE_PLAYER
-        if special.get('targeting') in ('self', 'visible_all'):
+        if special.get('targeting') in ('self', 'visible_all', 'hero_adjacent'):
             # No-target specials: resolve immediately at pet's tile and
             # spend the turn.
             self._resolve_pet_special(pet, special, pet.x, pet.y)
@@ -2970,18 +2976,30 @@ class CombatMixin:
             return
 
         def _apply_to(m):
-            if not m.alive:
+            self._pet_hit(pet, m, dmg_mult, status, status_chance, status_duration)
+
+        def _say(key):
+            text = special.get(key)
+            if text:
+                self.add_message(text.replace('{pet}', pet.name)
+                                 .replace('{call}', getattr(pet, 'call_name', pet.name)),
+                                 'success')
+            return bool(text)
+
+        # ── Shep's Sic 'Em All!: to the hero's side, then every foe there ──
+        if targeting == 'hero_adjacent':
+            foes = self._foes_beside_hero()
+            if not foes:
+                self._dash_pet_to_hero(pet)
+                if not _say('miss_message'):
+                    self.add_message(f"The {special['name']} finds nothing to hit.", 'info')
                 return
-            dmg = max(1, int(base_dmg * dmg_mult))
-            pre_max = m.max_hp
-            m.take_damage(dmg)
-            if m.alive and status and _rng.random() < status_chance:
-                cur = m.status_effects.get(status, 0)
-                m.status_effects[status] = max(cur, status_duration)
-            if not m.alive:
-                for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(m)):
-                    self.add_message(k_msg, 'success')
-                self._on_monster_killed(m)
+            if not _say('flavor_message'):
+                self.add_message(f"{pet.name} unleashes {special['name']}!", 'success')
+            self._dash_pet_to_hero(pet, foes[0])
+            for m in foes:
+                _apply_to(m)
+            return
 
         # Draw foes in first (Sherlock's Midnight Aria: everything within
         # earshot comes over to make it stop), so the blast then catches them.
@@ -3018,19 +3036,18 @@ class CombatMixin:
                     if m.alive and is_at_tile(m, lx, ly) and m not in affected:
                         affected.append(m)
 
-        flavor = special.get('flavor_message')
-        if flavor:
-            self.add_message(flavor.replace('{pet}', pet.name), 'success')
-        else:
-            self.add_message(
-                f"{pet.name} unleashes {special['name']}!", 'success')
+        # (a special with its own miss line says only that when it hits nothing)
+        if affected or not special.get('miss_message'):
+            if not _say('flavor_message'):
+                self.add_message(
+                    f"{pet.name} unleashes {special['name']}!", 'success')
         # A leaping special (Irene's Pounce and Seraph Dive) carries the pet
         # to the target: she lands on the free tile beside it nearest to her.
         if special.get('leap'):
             self._leap_pet_to(pet, tx, ty)
         for m in affected:
             _apply_to(m)
-        if not affected:
+        if not affected and not _say('miss_message'):
             self.add_message(
                 f"The {special['name']} dissipates harmlessly.", 'info')
         heal_share = float(special.get('self_heal', 0) or 0)
@@ -3078,6 +3095,106 @@ class CombatMixin:
                 break
             m.x, m.y = min(free, key=lambda s: max(abs(s[0] - m.x), abs(s[1] - m.y)))
 
+    def _pet_hit(self, pet, m, mult: float, status=None, chance: float = 0.0,
+                 duration: int = 0) -> int:
+        """One special-strength blow from a pet: its bite times `mult`, then
+        the status at `chance`, kill experience and the kill itself. Returns
+        the damage dealt."""
+        import random as _rng
+        if not m.alive:
+            return 0
+        pre_max = m.max_hp
+        dealt = m.take_damage(max(1, int(pet.base_damage * mult)))
+        if m.alive and status and _rng.random() < chance:
+            cur = m.status_effects.get(status, 0)
+            m.status_effects[status] = max(cur, duration)
+        if not m.alive:
+            for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(m)):
+                self.add_message(k_msg, 'success')
+            self._on_monster_killed(m)
+        return dealt or 0
+
+    def _foes_beside_hero(self) -> list:
+        """Every living foe touching the hero, the toughest first. Friends,
+        the unicorn and the people of the encounters are not foes."""
+        from geom import chebyshev_distance
+        px, py = self.player.x, self.player.y
+        foes = [m for m in self.monsters
+                if m.alive and not getattr(m, 'is_allied', False)
+                and not getattr(m, '_npc_encounter_tag', None)
+                and not getattr(m, '_flavor_encounter_tag', None)
+                and not getattr(m, '_is_unicorn', False)
+                and chebyshev_distance(px, py, m) <= 1]
+        foes.sort(key=lambda m: -m.hp)
+        return foes
+
+    def _dash_pet_to_hero(self, pet, foe=None) -> None:
+        """Carry the pet to the hero's side from wherever it is on the floor,
+        onto the free tile beside the hero that also touches `foe` when there
+        is one. A pet already there stays put; with no free tile beside the
+        hero it leaps in beside the foe instead."""
+        from geom import chebyshev_distance
+        px, py = self.player.x, self.player.y
+
+        def touches_foe(x, y):
+            return foe is None or chebyshev_distance(x, y, foe) <= 1
+
+        if max(abs(pet.x - px), abs(pet.y - py)) <= 1 and touches_foe(pet.x, pet.y):
+            return
+        spots = [(px + dx, py + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+                 if (dx or dy) and self._pet_tile_free(px + dx, py + dy, pet)]
+        if spots:
+            pet.x, pet.y = min(spots, key=lambda s: (
+                not touches_foe(*s), max(abs(s[0] - pet.x), abs(s[1] - pet.y))))
+        elif foe is not None:
+            self._leap_pet_to(pet, foe.x, foe.y)
+
+    def _shep_rescue(self):
+        """He Always Comes: when the hero has fallen to a quarter of his
+        health with a foe beside him, Shep streaks in from anywhere on the
+        floor and takes the toughest one down (Shep the Legend: all of them,
+        then stands guard). Once a floor, reached for the first time.
+        Returns the pet that came, which has spent its turn, or None."""
+        p = self.player
+        if p.is_dead() or p.max_hp <= 0:
+            return None
+        deepest = int(getattr(p, 'deepest_floor_reached', 1) or 1)
+        for pet in self.pets:
+            rescue = pet.species.get('rescue') if pet.alive else None
+            if not rescue or not pet.rescue_ready(deepest):
+                continue
+            if p.hp > p.max_hp * float(rescue.get('hp_share', 0.25)):
+                return None
+            foes = self._foes_beside_hero()
+            if not foes:
+                return None
+            far = ((pet.x, pet.y) not in self.visible
+                   or max(abs(pet.x - p.x), abs(pet.y - p.y)) > 3)
+            msg = rescue['far_message'] if far else rescue['near_message']
+            self.add_message(msg.replace('{pet}', pet.name), 'success')
+            self._dash_pet_to_hero(pet, foes[0])
+            pet.spend_rescue(deepest)
+            every = pet.stage >= int(rescue.get('all_foes_stage', 99))
+            if every and len(foes) > 1:
+                self.add_message(rescue['all_message'].replace('{pet}', pet.name), 'success')
+            for m in (foes if every else foes[:1]):
+                dmg = self._pet_hit(pet, m, float(rescue.get('damage_mult', 1.5)),
+                                    rescue.get('status'), float(rescue.get('status_chance', 0)),
+                                    int(rescue.get('status_duration', 0)))
+                self.add_message(rescue['hit_message'].replace('{pet}', pet.name)
+                                 .replace('{foe}', the_name(m, lower=True)).replace('{dmg}', str(dmg)), 'combat')
+            turns = int(rescue.get('shield_turns', 0) or 0)
+            if every and turns > 0:
+                p.add_effect('shielded', turns)
+                self.add_message(rescue['guard_message'].replace('{pet}', pet.name)
+                                 .replace('{turns}', str(turns)), 'success')
+            _snd.play('player_healed')
+            self._log_chronicle(
+                f"I was down and they were all around me, and then {pet.name} was there. "
+                "He always comes.")
+            return pet
+        return None
+
     def _do_pet_turns(self):
         """Process pet AI, XP, regen, cooldowns, and monster attacks on pets."""
         if not self.pets:
@@ -3087,12 +3204,18 @@ class CombatMixin:
         total_q = self.correct_answers + self.wrong_answers
         quiz_acc = self.correct_answers / max(1, total_q)
 
+        # Shep's rescue comes first: the monsters have just had their turn,
+        # so a hero they have knocked to a quarter of his health is saved
+        # before they swing again. The rescue is that pet's turn.
+        rescuer = self._shep_rescue()
+
         for pet in self.pets:
             if not pet.alive:
                 continue
 
             # Pet AI turn
-            result = pet.take_turn(self.player, self.dungeon, self.monsters, self.pets, self.ground_items)
+            result = (None if pet is rescuer else
+                      pet.take_turn(self.player, self.dungeon, self.monsters, self.pets, self.ground_items))
             if result:
                 action = result[0] if isinstance(result, tuple) else None
                 # Unicorn pet returns ('unicorn_actions', [...]) instead of combat

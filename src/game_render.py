@@ -6488,6 +6488,7 @@ class RenderMixin:
                 (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}", FP.BODY_TEXT, self.font_sm),
                 (f"XP {pet.xp}/{xp_to}", FP.BODY_TEXT, self.font_sm),
                 (f"Command: {cmd}", FP.CYAN_ACCENT, self.font_sm),
+                *self._pet_rescue_lines(pet),
                 '',
                 ("Available actions", FP.GOLD_BRIGHT, self.font_sm),
                 # Key badges like every other kit screen (they were "F - Feed").
@@ -6523,6 +6524,22 @@ class RenderMixin:
             border_color=FP.GOLD_BRIGHT,
             scroll_attr='_pet_menu_scroll',
         )
+
+    def _pet_rescue_lines(self, pet) -> list:
+        """Shep's rescue on his card: ready, or spent until a new floor."""
+        species = getattr(pet, 'species', None) or {}
+        rescue = species.get('rescue') if hasattr(pet, 'rescue_ready') else None
+        if not rescue:
+            return []
+        deepest = int(getattr(self.player, 'deepest_floor_reached', 1) or 1)
+        if pet.rescue_ready(deepest):
+            state, colour = "Ready", FP.SUCCESS_TEXT
+        else:
+            state, colour = "Spent Until A New Floor", FP.FADED_TEXT
+        share = int(round(float(rescue.get('hp_share', 0.25)) * 100))
+        return [(f"{rescue['name']}: {state}", colour, self.font_sm),
+                (f"Once a floor he runs to you when you fall to {share}% health "
+                 f"with a foe beside you.", FP.FADED_TEXT, self.font_sm)]
 
     def _draw_pet_feed_submenu(self):
         items = getattr(self, 'pet_feed_items', [])
@@ -6619,7 +6636,8 @@ class RenderMixin:
             return
         story = getattr(self, '_naming_story', None) or {}
         # a creature kind takes "A"; a companion with its own name does not
-        article = '' if pet.species.get('family_cat') else 'A '
+        from pet_system import has_own_name
+        article = '' if has_own_name(pet.species) else 'A '
         self._ui_input_card(
             story.get('title') or f"{article}{pet.species_name.upper()} APPEARS!",
             story.get('prompt') or "Will you give this companion a name?",

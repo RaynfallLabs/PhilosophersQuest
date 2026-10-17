@@ -39,9 +39,14 @@ The four elemental species (`electric`, `water`, `plant`, `fire`) are the standa
 | plant       | Seedling → Thornback → Bloomsaur                    | plant     | poison      |
 | fire        | Emberpup → Flamescale → Infernodrake                | fire      | fire        |
 | duck_of_doom | Waddlekind → Drake of the Covenant → Seraphimallard | psychic   | psychic     |
+| sherlock    | Sherlock → Sherlock the Stout → Sherlock the Immovable | earth  | crushing    |
+| irene       | Irene → Irene the Skyleaper → Irene the Seraph      | air       | slashing    |
+| shep        | Shep → Shep the Farmhound → Shep the Legend         | earth     | piercing    |
+
+`sherlock` and `irene` (the family cats, `family_cat: True`) and `shep` (the family farm dog, `family_dog: True`) are rare Soul Sphere hatches, met at most once a run; see §11.
 
 ### 1.2 Random pool
-`pet_system.random_species()` returns a random key with equal probability from `_SPECIES`, **excluding `duck_of_doom`** (v2.18). Waddlekind is the endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere / Summon Guardian / Gate outcome; the exclusion closes a leak where throwing a Soul Sphere could pop a free Waddlekind without the quirk commitment. Call sites that need a random species import this helper as `random_pet_species`.
+`pet_system.random_species()` returns a random key with equal probability from `_SPECIES`, **excluding `duck_of_doom`** (v2.18) **and every companion with its own name** (`has_own_name`: the family cats and Shep). Waddlekind is the endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere / Summon Guardian / Gate outcome; the exclusion closes a leak where throwing a Soul Sphere could pop a free Waddlekind without the quirk commitment. Call sites that need a random species import this helper as `random_pet_species`.
 
 ### 1.3 Evolution thresholds
 ```python
@@ -88,6 +93,18 @@ The player triggers specials from the pet menu (Shift+P → specials). The `Pet.
 | water      | **Water Jet** — single, range 4, 1.5× cold, kb1, 60% slow 3t (cd 250) | **Tidal Crash** — line 4, 1.8× cold, kb1, 50% slow 4t (cd 400) |
 | plant      | **Vine Lash** — single, range 3, 1.5× poison, 70% root 2t (cd 250) | **Bloomburst** — pet-centered AoE r2, 0.4×, 100% poison 5t (cd 400) |
 | fire       | **Flame Breath** — cone r3, 1.5× fire, 50% burn 3t (cd 250) | **Inferno Pillar** — AoE 3×3 at range 5, 2.5× fire, 75% burn 4t (cd 400) |
+
+### 2.1a Family companions (rare Soul Sphere hatches)
+
+| Species  | Stage 1 (unlock L25) | Stage 2 (unlock L55) |
+|----------|----------------------|----------------------|
+| sherlock | **Belly Flop** — adjacent AoE, 1.5× crushing, 50% stun 2t, then heals himself 20% (cd 250) | **Midnight Aria** — pulls foes within 4, then AoE r2, 1.6× sonic, 50% confuse 3t (cd 400) |
+| irene    | **Pounce** — single, range 4, leaps beside it, 1.5× slashing, 50% bleed 3t (cd 250) | **Seraph Dive** — AoE 3×3 at range 5, flies there, 2.0× holy, 40% blind 3t (cd 400) |
+| shep     | **Sic 'Em!** — single, range 7, dashes beside it, 1.7× piercing, 50% stun 2t (cd 250) | **Sic 'Em All!** — `targeting='hero_adjacent'`: from anywhere, dashes to the hero and bites every foe beside the hero, 2.0× each, 50% stun 2t (cd 400) |
+
+Shep's line is the one deliberately stronger family line (about a tenth: 1.7× against the others' 1.5× at stage 1; 2.0× against the cats' 1.6×/2.0× at stage 2). His growth table is everyone's.
+
+**He Always Comes (Shep, passive, from hatching).** `species['rescue']`, run by `_shep_rescue()` at the top of `_do_pet_turns` (straight after the monsters' turn). When the hero is at 25% health or less with a foe beside him, Shep comes from anywhere on the floor to the hero's side (`_dash_pet_to_hero`) and hits the toughest adjacent foe for 1.5× with a 50% stun (2t); that is his turn. Shep the Legend (stage 2) hits every adjacent foe and then the hero is Shielded for 3 turns. Once a floor: `rescue_spent_at` holds the hero's deepest floor when it was used, so it comes back only on a floor reached for the first time, like every other once-a-floor charge.
 
 ### 2.2 Duck of Doom specials (unique shape)
 
@@ -218,7 +235,7 @@ Dad overrides to return 0 (invincible). Unicorn's `base_damage = 0` means the pe
 The 5%-per-floor artifact drop (`spawn_items` in dungeon.py; see [world.md](world.md) §4.2). When the player throws it:
 
 1. If it's a **bound** sphere (recalled from a prior pet via Shift+P → Recall), the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command). The sphere is consumed.
-2. Otherwise, `random_pet_species()` picks a species, `Pet(species, spawn_x, spawn_y)` is constructed, `pet.apply_late_pickup_bonus(self.dungeon_level)` runs, and the naming popup opens.
+2. Otherwise, `roll_soul_sphere_species(present)` picks a species (rarely Shep or a family cat, see §11; else `random_species()`), `Pet(species, spawn_x, spawn_y)` is constructed, `pet.apply_late_pickup_bonus(self.dungeon_level)` runs, and the naming popup opens (defaulting to the species name: "Shep", "Sherlock", "Irene"; Shep brings his own popup words, `naming_story`).
 
 The sphere lands at the thrown target tile; if the tile is occupied the pet falls to an adjacent walkable tile.
 
@@ -281,6 +298,8 @@ Spawned by `game_combat.py` on the Dad Sphere throw. Dad is comically overtuned:
 - `duration = 5` turns, decremented by `tick_duration`.
 - Symbol `'@'`, color `(255, 220, 100)`.
 - Specials disabled; no leveling.
+
+The Unusual Soul Sphere first makes the same rare roll as a Soul Sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); only when that misses does Dad come.
 
 ### 4.6 UnicornPet — unicorn-encounter chain
 
@@ -428,11 +447,22 @@ Dead pets are left in the list but skipped by `take_turn` (they return None imme
 
 ```python
 def random_species() -> str:
-    pool = [k for k in _SPECIES.keys() if k != 'duck_of_doom']
+    pool = [k for k in _SPECIES.keys()
+            if k != 'duck_of_doom' and not has_own_name(_SPECIES[k])]
     return random.choice(pool)
 ```
 
-4 standard species → each has 25% probability on a random Soul Sphere hatch. There's no weighting by element or floor — fire pets appear on F1 as readily as water pets. The `duck_of_doom` exclusion is enforced here (don't push the exclusion to call sites).
+A Soul Sphere hatch (`roll_soul_sphere_species`) first makes the rare roll, `roll_rare_sphere_pet`: Shep's 1% on his own random stream (`_SHEP_RNG`), then each family cat's 5% on theirs (`_CAT_RNG`). Neither touches the global stream that seeded floors depend on. Only when both miss does `random_species()` pick one of the four elemental lines evenly. While Shep is still to be met the cats' roll is rescaled (`shep_in_play`) so each cat stays at exactly 5% of all hatches.
+
+| Already met this run | Shep | Sherlock | Irene | Each elemental line |
+|----------------------|------|----------|-------|---------------------|
+| nobody               | 1%   | 5%       | 5%    | 22.25%              |
+| Shep                 | —    | 5%       | 5%    | 22.5%               |
+| one cat              | 1%   | 5% / —   | — / 5% | 23.5%              |
+| both cats            | 1%   | —        | —     | 24.75%              |
+| all three            | —    | —        | —     | 25%                 |
+
+"Met" (`family_pets_present`) means hatched before this run (`player.family_cats_met`, which holds Shep too; the name is kept for older saves), walking with the hero, or waiting in a bound Soul Sphere. The rare companions never come from Summon Guardian, a Gate or a kill-summon: those call `random_species()` directly. For play-testing, `PQ_QA_MODE=1` with `PQ_FORCE_SPHERE=shep` (or `sherlock`, `irene`) makes the next sphere hatch that companion. There's no weighting by element or floor — fire pets appear on F1 as readily as water pets. The `duck_of_doom` and family exclusions are enforced here (don't push them to call sites).
 
 If a design future adds a sixth species, it defaults in to the random pool unless explicitly excluded. Common pattern: new "reward" species (hatched from a quirk / mystery / scripted event) should be excluded from `random_species` the same way Waddlekind is.
 
