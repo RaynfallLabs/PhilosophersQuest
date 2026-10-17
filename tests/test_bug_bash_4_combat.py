@@ -308,6 +308,53 @@ def test_c07_the_shattered_ankh_takes_its_constitution_with_it():
     assert p.hp == max(1, mhp0 // 2)
 
 
+# ---------------------------------------------------------------- C06
+def test_c06_old_floor_monsters_stop_when_the_sandals_lift_the_hero(monkeypatch):
+    """The Winged Sandals' psychopomp step changed floor inside the monster
+    loop; the old floor's rats kept acting on the new map, against the
+    hero's new position."""
+    from game_states import STATE_PLAYER
+    g = _game(seed=31)
+    p = g.player
+    g._change_level(2, enter_from_top=True)
+    g.state = STATE_PLAYER
+    g.monsters = []
+    g.pets = []
+    _open_floor(g, 3)
+    boots = _plain(items.instantiate_armor('leather_boots', 'cured_leather_armor'))
+    boots._chain_passives = {'psychopomp_step': True}
+    p.armor_slots[5] = boots
+    p.hp = 3
+    p.max_hp = max(p.max_hp, 30)
+    killer = _spawn(g, 'giant_rat')
+    killer.thac0 = -99
+    killer.min_hit_chance = 1.0
+    killer.attacks = [{'name': 'Bite', 'damage': '1d2+40', 'type': 'physical'}]
+    others = []
+    for dx, dy in ((-1, 0), (0, 1), (0, -1)):
+        o = _spawn(g, 'giant_rat', dx=dx, dy=dy)
+        o.thac0 = -99
+        o.min_hit_chance = 1.0
+        o.attacks = [{'name': 'Claw', 'damage': '1d2+2', 'type': 'physical'}]
+        others.append(o)
+    from monster import Monster
+    acted = []
+    real_turn = Monster.take_turn
+
+    def spy(self, *a, **kw):
+        acted.append((self, g.dungeon_level))
+        return real_turn(self, *a, **kw)
+
+    monkeypatch.setattr(Monster, 'take_turn', spy)
+    random.seed(2)
+    g._do_monster_turns()
+    assert g.dungeon_level == 1
+    assert any('psychopomp' in t for t in _texts(g))
+    assert p.hp == 1
+    assert acted and acted[0][0] is killer
+    assert not [m for m, lvl in acted if lvl == 1], 'an old-floor monster acted on the new floor'
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

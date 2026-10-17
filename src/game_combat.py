@@ -2308,6 +2308,11 @@ class CombatMixin:
         _time_stopped = self.player.has_effect('time_stopped')
         if _time_stopped and not (self.death_pursues and self.death_monster is not None):
             return
+        # C06: a blow can move the player to another floor mid-loop (the
+        # Winged Sandals' psychopomp step). The old floor's monsters then
+        # stop: they used to keep acting on the new map, from their old
+        # coordinates, and could finish the hero the Sandals had just saved.
+        _floor_at_start = self.dungeon_level
 
         # Death acts first -- not part of self.monsters to avoid save/load issues
         if self.death_pursues and self.death_monster is not None:
@@ -2335,6 +2340,8 @@ class CombatMixin:
 
         # (While time is stopped, ordinary monsters stand still: see the
         # loop below. Named foes do not.)
+        if self.dungeon_level != _floor_at_start:
+            return
 
         # --- Ariadne's Thread: neutralize wall-phasing monsters ---
         has_thread = any(getattr(i, 'id', '') == 'ariadnes_thread'
@@ -2353,6 +2360,8 @@ class CombatMixin:
                         m.ai_pattern = 'aggressive'  # can't hide anymore
 
         for m in self.monsters:
+            if self.dungeon_level != _floor_at_start:
+                break
             if not m.alive:
                 continue
             # Time stop holds ordinary monsters only. Bosses, mini-bosses and
