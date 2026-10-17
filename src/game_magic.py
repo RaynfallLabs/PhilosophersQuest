@@ -2019,8 +2019,11 @@ class MagicMixin:
             from status_effects import MAX_EFFECT_DURATION as _MAXD
             dur = min(_MAXD, max(2, int(base_dur * chain_scale)))     # what is applied is what is said
             self.player.add_effect(eff_name, dur)
+            # MK-10: the status's display name, not its raw id ("magic_resist")
+            from status_effects import EFFECT_INFO as _EI
+            _shown = (_EI.get(eff_name) or (eff_name.replace('_', ' ').title(),))[0]
             self.add_message(
-                f"{spell['name']} -- {eff_name} for {dur} turns!", 'success')
+                f"{spell['name']} -- {_shown} for {dur} turns!", 'success')
             return
 
         # v2.15.0 fix: teleport_self (blink_spell, elder_blink) had its handler
