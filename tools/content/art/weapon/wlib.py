@@ -66,7 +66,7 @@ class W(Sprite):
             cc = lambda u, v, x, y: c(u, v - cv - bf(u), x, y)
         self.fn(lambda u, v: u0 - EPS <= u <= u1 + EPS and abs(v - cv - bf(u)) <= wf(u) + EPS, cc)
 
-    def ell(self, cu, cv, ru, rv, c):  # noqa: uv ellipse (shadows Sprite.ell on purpose)
+    def ell(self, cu, cv, ru, rv, c):  # uv ellipse (shadows Sprite.ell on purpose)
         self.fn(lambda u, v: ((u - cu) / ru) ** 2 + ((v - cv) / rv) ** 2 <= 1 + EPS, c)
 
     def disc(self, cu, cv, r, c):

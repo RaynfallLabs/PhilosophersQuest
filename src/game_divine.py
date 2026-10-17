@@ -136,10 +136,14 @@ _KARMA_VERSES: dict[str, dict[int, tuple[str, str]]] = {
 
 def _karma_tier(karma: int) -> str:
     """Map the player's karma to a verse-tier key."""
-    if karma >= 6: return 'saintly'
-    if karma >= 1: return 'righteous'
-    if karma == 0: return 'neutral'
-    if karma >= -5: return 'slipping'
+    if karma >= 6:
+        return 'saintly'
+    if karma >= 1:
+        return 'righteous'
+    if karma == 0:
+        return 'neutral'
+    if karma >= -5:
+        return 'slipping'
     return 'fallen'
 
 
