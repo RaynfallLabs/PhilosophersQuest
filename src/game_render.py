@@ -241,7 +241,10 @@ class RenderMixin:
         if m['key_item']:
             body.append((f"Requires: {m['key_item']['name']}", FP.FADED_TEXT))
         if m.get('gold_cost', 0) > 0:
-            body.append((f"Tribute: {m['gold_cost']:,} gold", FP.FADED_TEXT))
+            # The price as the altar takes it (written_gold): the card said
+            # 50 where 300 was taken.
+            import economy as _eco
+            body.append((f"Tribute: {_eco.written_gold(m['gold_cost']):,} gold", FP.FADED_TEXT))
         if m.get('stat_cost'):
             cost_desc = ', '.join(f"{s}{v}" for s, v in m['stat_cost'].items())
             body.append((f"Cost: {cost_desc}", FP.WARNING_TEXT))
@@ -6850,6 +6853,9 @@ class RenderMixin:
         ]
         breakdown = (f"({self.turn_count}x10)  +  ({self.level_mgr.max_level_reached}x1000)  +"
                      f"  ({self.level_mgr.monsters_killed}x100)  +  50,000 stone bonus")
+        if getattr(self, '_secret_victory', False):
+            # (the score has it: the breakdown was 50,000 short)
+            breakdown += "  +  50,000 Death is dead"
 
         # High score: save once, then display top 5
         from highscore_system import add_score
@@ -6883,17 +6889,21 @@ class RenderMixin:
         draw_rune_circle(self.screen, cx, cy, S(260), (*FP.BURGUNDY, 110), t * 0.4, 14)
         draw_rune_circle(self.screen, cx, cy, S(170), (*FP.BLOOD, 70),     -t * 0.6, 8)
 
+        from boss_levels import COW_LEVEL as _COW
+        _on_farm = self.dungeon_level == _COW      # (numbered 999: not a level to name)
         if self.defeat_reason == 'fled':
             title_text = "YOU FLED THE DUNGEON"
             sub_text   = "Your quest ends in cowardice."
             tc = FP.WARNING_TEXT
         elif self.defeat_reason == 'starved':
             title_text = "YOU HAVE STARVED"
-            sub_text   = f"Hunger claimed you on level {self.dungeon_level}."
+            sub_text   = ("Hunger claimed you on the Moo Moo Farm." if _on_farm
+                          else f"Hunger claimed you on level {self.dungeon_level}.")
             tc = FP.WARNING_TEXT
         else:
             title_text = "YOU HAVE DIED"
-            sub_text   = f"Slain on dungeon level {self.dungeon_level}."
+            sub_text   = ("Slain on the Moo Moo Farm." if _on_farm
+                          else f"Slain on dungeon level {self.dungeon_level}.")
             tc = FP.DEATH_SUB
 
         grade, grade_col = self._get_grade(score)

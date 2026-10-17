@@ -484,7 +484,7 @@ HERO_JOURNAL: dict[str, str] = {
         "Cain the Hunter. My twin's bow is oak; mine is yew, and I say it sings. "
         "I carry the same Stuffie because some traditions are worth keeping.",
     "fianna":
-        "Fianna the Wizard, age Thirteen. I have a wand, a sketchbook, and a "
+        "Fianna the Wizard, age thirteen. I have a wand, a sketchbook, and a "
         "questionable plan. Magic missiles are the basis of a girl's education.",
     "fluffs":
         "Fluffs the Magnificent. Like Fianna but with a real spellbook. "
@@ -632,8 +632,8 @@ def _eff_self_aoe_fire(game, special, tier, chain):
     px, py = game.player.x, game.player.y
     hits = 0
     for m in list(game.monsters):
-        if not m.alive:
-            continue
+        if not m.alive or not _is_foe(m):
+            continue          # (encounter NPCs, the unicorn and allies are not caught)
         if max(abs(m.x - px), abs(m.y - py)) <= radius:
             # A share of the creature's own health (floor_curve.power_share).
             dmg = _wound(_power_share(roll(dice)), m.max_hp, _named_or_huge(m))
@@ -645,7 +645,8 @@ def _eff_self_aoe_fire(game, special, tier, chain):
             if not m.alive:
                 game._on_monster_killed(m)
     game.add_message(
-        f"Stolen flame erupts! {hits} foe(s) caught.", 'success' if hits else 'info')
+        f"Stolen flame erupts! {hits} {'foe' if hits == 1 else 'foes'} caught.",
+        'success' if hits else 'info')
 
 
 def _eff_self_buff_stand(game, special, tier, chain):
@@ -744,8 +745,19 @@ def _eff_teleport_self(game, special, tier, chain):
                 continue
             d = max(abs(x - game.player.x), abs(y - game.player.y))
             if d <= rng and (x, y) != (game.player.x, game.player.y):
-                if not monster_at_tile(game.monsters, x, y) is not None:
+                if (monster_at_tile(game.monsters, x, y) is None
+                        and not any(getattr(p, 'alive', False) and (p.x, p.y) == (x, y)
+                                    for p in getattr(game, 'pets', []))):
                     candidates.append((x, y))
+    # Only where the stairs can be walked to, as every other teleport: a
+    # long step used to land Hermes on an island with no way off it.
+    from dungeon import STAIRS_DOWN, STAIRS_UP
+    _d = game.dungeon
+    _stair = next(((sx, sy) for sy in range(_d.height) for sx in range(_d.width)
+                   if _d.tiles[sy][sx] in (STAIRS_DOWN, STAIRS_UP)), None)
+    if _stair is not None and hasattr(game, '_reachable_tiles'):
+        _reach = game._reachable_tiles(*_stair)
+        candidates = [t for t in candidates if t in _reach] or candidates
     if candidates:
         x, y = random.choice(candidates)
         game.player.x, game.player.y = x, y
@@ -754,6 +766,9 @@ def _eff_teleport_self(game, special, tier, chain):
         if haste:
             cur = game.player.status_effects.get('hasted', 0)
             game.player.status_effects['hasted'] = max(cur, haste)
+        _qs = getattr(game, 'quirk_system', None)
+        if _qs:
+            _qs.on_teleport()
     else:
         game.add_message("Nowhere to step.", 'warning')
 
@@ -952,6 +967,10 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
 
 def _eff_heal_and_crit_buff(game, special, tier, chain):
     from floor_curve import mend
+    if int(chain) <= 0:
+        # A failed quiz heals nothing (mend's floor used to give 6% here).
+        game.add_message("The Voices are silent.", 'warning')
+        return
     heal = mend(int(tier['heal']), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
     crit_turns = int(tier['crit_turns'])
     if heal == 0 and crit_turns == 0:
@@ -987,13 +1006,17 @@ def _eff_reveal_radius(game, special, tier, chain):
                 it.id_level = 5
                 game.player.known_item_ids.add(getattr(it, 'id', ''))
     game.add_message(
-        f"Sherlock deduces. ({revealed_traps} traps revealed in radius {radius}).",
+        f"Sherlock deduces. ({revealed_traps} {'trap' if revealed_traps == 1 else 'traps'} "
+        f"revealed in radius {radius}).",
         'success')
 
 
 def _eff_aoe_heal_self(game, special, tier, chain):
     """Hildegard Viriditas: self-heal + cleanse N debuffs."""
     from floor_curve import mend
+    if int(chain) <= 0:
+        game.add_message("The green light does not bloom.", 'warning')
+        return
     heal = mend(int(tier['self_heal']), game.player.max_hp, HERO_HEAL_SHARE * max(1, int(chain)))
     cleanse_n = int(tier['cleanse'])
     if heal == 0 and cleanse_n == 0:

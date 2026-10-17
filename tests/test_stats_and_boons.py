@@ -222,7 +222,7 @@ def test_the_menu_opens_when_control_returns_and_closes_on_a_pick():
     dex = p.DEX
     g._boon_pick(1)
     assert g.state == STATE_PLAYER and p.DEX == dex + 7 and p.pending_boon is None
-    assert any('For Good' in m for m in g.msgs) and g.chron
+    assert any('for good' in m for m in g.msgs) and g.chron
     p.pending_boon = 'fenrir_wolf'                     # a stale flag clears itself
     assert not g._open_boon_menu() and p.pending_boon is None
 

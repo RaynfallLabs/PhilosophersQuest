@@ -27,20 +27,19 @@ from dungeon import (generate_dungeon, spawn_items, WALL, SECRET_DOOR,  # noqa: 
 
 
 def _reach(d, start, opened=()):
-    """Tiles the player can walk to from `start` (8-way), treating `opened`
-    tiles as doors that have been opened."""
+    """Tiles the player can walk to from `start` (4-way, as the hero walks:
+    the arrow keys), treating `opened` tiles as doors that have been opened."""
     seen = {start}
     q = collections.deque([start])
     while q:
         x, y = q.popleft()
-        for dx in (-1, 0, 1):
-            for dy in (-1, 0, 1):
-                nx, ny = x + dx, y + dy
-                if (nx, ny) in seen or not d.in_bounds(nx, ny):
-                    continue
-                if (nx, ny) in opened or d.tiles[ny][nx] not in (WALL, SECRET_DOOR, WATER, LAVA):
-                    seen.add((nx, ny))
-                    q.append((nx, ny))
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if (nx, ny) in seen or not d.in_bounds(nx, ny):
+                continue
+            if (nx, ny) in opened or d.tiles[ny][nx] not in (WALL, SECRET_DOOR, WATER, LAVA):
+                seen.add((nx, ny))
+                q.append((nx, ny))
     return seen
 
 
@@ -134,26 +133,28 @@ def _settled_floor(level, seed):
                   if d.tiles[y][x] == STAIRS_UP)
     g = types.SimpleNamespace(dungeon=d, ground_items=items, monsters=[],
                               dungeon_level=level,
-                              player=types.SimpleNamespace(x=sx, y=sy),
+                              player=types.SimpleNamespace(x=sx, y=sy), pets=[],
                               _needed_to_finish=Game._needed_to_finish)
-    g._reachable_tiles = lambda x, y: Game._reachable_tiles(g, x, y)
+    g._reachable_tiles = lambda x, y, through=(): Game._reachable_tiles(g, x, y, through)
+    g._sealed_shrine_doors = lambda: Game._sealed_shrine_doors(g)
     Game._bring_within_reach(g)
     return d, items, (sx, sy)
 
 
 # Bug bash 4, C16: the old test sampled the raw generator and asked for a
-# walkable tile in one of the four ORTHOGONAL neighbours. The player walks
-# eight ways (no corner rule), and on about 1 floor in 700 the Breath of a
-# Fish is reachable only diagonally (seeds 1385 and 1466 at floor 71), so
-# the test failed about once in 90 runs with nothing wrong. It now walks
-# from the up stair, eight ways, on the floor as the game settles it
-# (_bring_within_reach), with fixed seeds.
+# walkable tile in one of the four orthogonal neighbours, and failed about
+# once in 90 runs (seeds 1385 and 1466 at floor 71: the ring's gap led onto
+# wall). The hero walks FOUR ways (game_input._MOVE_KEYS: the arrows), so
+# the test walks four ways from the up stair on the floor as the game
+# settles it (_bring_within_reach), with fixed seeds. The generator now
+# keeps a gap that leads out (WR3), and _bring_within_reach floods four
+# ways too (WR2).
 @pytest.mark.parametrize('level,comp', [(68, 'mountain_root'), (71, 'fish_breath')])
 def test_ringed_gleipnir_ingredient_can_be_reached_on_foot(level, comp):
     """Root of a Mountain sat in a full ring of lava and Breath of a Fish in
     a full ring of water. The player can enter neither, so Gleipnir could not
     be made in about 19 runs out of 20."""
-    for seed in (1385, 1466, 1, 2, 3, 4, 5, 6):
+    for seed in (1385, 1466) + tuple(range(1, 41)):
         d, items, start = _settled_floor(level, seed)
         it = next(i for i in items if getattr(i, 'id', '') == comp)
         assert (it.x, it.y) in _reach(d, start), (level, seed)

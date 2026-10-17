@@ -714,8 +714,8 @@ def _level_100_abyss():
     The bottommost pit of creation. A void ringed by crumbling stone arches,
     converging on the throne of Abaddon, the Destroyer.
 
-    Level 100 has no STAIRS_DOWN -- the Philosopher's Stone is placed here
-    by the level manager. The player must defeat Abaddon and ascend to victory.
+    Level 100 has no STAIRS_DOWN. The Philosopher's Stone drops from Abaddon
+    when he dies; the player must defeat him and ascend to victory.
     """
     tiles = _blank()
     rooms = []

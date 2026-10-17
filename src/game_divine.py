@@ -993,15 +993,15 @@ class DivineMixin:
         p.grant_insight(bonus, turns + 1)
         after = p.get_quiz_timer('math')
         self.add_message(
-            f"A Hand Closes Over Yours. Wisdom +{bonus} For {turns} Turns. "
-            f"(Combat Clock {before} -> {after} Seconds.)", 'success')
+            f"A hand closes over yours. Wisdom +{bonus} for {turns} turns. "
+            f"(Combat clock {before} -> {after} seconds.)", 'success')
         if desperate:
             # Out of the depths: the prayer made at death's door also
             # shelters the one who made it, long enough to strike.
             p.add_effect('shielded', prayers.DESPERATE_SHIELD_TURNS)
             self.add_message(
                 "Out of the depths you cried, and were heard. "
-                "A Shield Stands Over You.", 'success')
+                "A shield stands over you.", 'success')
         if chain >= 5:
             self._log_chronicle(
                 "I asked Michael to guide my hand, and for a little while "
@@ -1045,13 +1045,12 @@ class DivineMixin:
         if self.dungeon_level == 100 and at_altar:
             pos = (p.x, p.y)
             if pos in self._l100_altars_used:
+                # The holy fire is gone, but the prayer is still heard: fall
+                # through to the ordinary altar mercy. (This returned with
+                # nothing at all and the longest cooldown, while the same
+                # prayer one tile away gave the full mercy.)
                 self.add_message("This altar's holy power has been spent.", 'info')
-                # Still show a verse + set cooldown so the turn doesn't feel wasted.
-                self._show_prayer_verse(karma_tier, min(chain, 5))
-                p.prayer_cooldown = max(100, 100 + 25 * effective)
-                self._apply_prayer_cooldown_quirks()
-                return
-            if chain > 0:
+            elif chain > 0:
                 turns = chain * 2
                 self.abaddon_resist_removed_turns += turns
                 abaddon = next((m for m in self.monsters

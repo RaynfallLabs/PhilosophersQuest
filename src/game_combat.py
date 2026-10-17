@@ -818,7 +818,13 @@ class CombatMixin:
                     self.player.hp = 1
                     self.add_message(
                         "WINGED SANDALS OF HERMES: a psychopomp's step pulls you back!", 'success')
-                    self._change_level(self.dungeon_level - 1, enter_from_top=False)
+                    from boss_levels import COW_LEVEL as _COW
+                    if self.dungeon_level == _COW:
+                        # One floor up from the Cow Level (999) was floor
+                        # 998: back to the floor the cow stood on instead.
+                        self._exit_cow_level()
+                    else:
+                        self._change_level(self.dungeon_level - 1, enter_from_top=False)
             except ImportError:
                 pass
 
@@ -1144,8 +1150,8 @@ class CombatMixin:
         self.state = STATE_PLAYER
         self.add_message(gift['text'], 'success')
         self.add_message(
-            f"You Take {gift['name']}: {boons.STAT_NAMES.get(gift['stat'], gift['stat'])} "
-            f"+{amount}, For Good.", 'success')
+            f"You take {gift['name']}: {boons.STAT_NAMES.get(gift['stat'], gift['stat'])} "
+            f"+{amount}, for good.", 'success')
         self._log_chronicle(f"I took {gift['name']} and left the other two where they lay.")
 
     def _drop_treasure(self, monster):
@@ -1825,7 +1831,8 @@ class CombatMixin:
         if container is not None:
             if container.is_mimic:
                 # Bash hits the mimic — player gets a free 10% HP strike
-                mimic = _spawn_mimic(container, self.monsters, self.dungeon_level)
+                mimic = _spawn_mimic(container, self.monsters, self.dungeon_level,
+                                     dungeon=self.dungeon, avoid=(self.player.x, self.player.y))
                 self.ground_items.remove(container)
                 mname = mimic.name if mimic else 'mimic'
                 bash_dmg = max(1, int(mimic.max_hp * 0.10))

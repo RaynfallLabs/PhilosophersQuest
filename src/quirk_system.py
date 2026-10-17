@@ -1,5 +1,5 @@
 """
-quirk_system.py -- 50 Bofuri-style traits earned through counterintuitive play.
+quirk_system.py -- 112 Bofuri-style traits earned through counterintuitive play.
 Progress stored in player.quirk_progress (dict).
 Unlocked quirks in player.unlocked_quirks (set).
 """
@@ -383,7 +383,10 @@ class QuirkSystem:
             self._inc('eye_storm_clean_floors')
             if self._p('eye_storm_clean_floors') >= 5 and not self.is_unlocked('eye_storm'):
                 self._award_power('eye_storm', "Eye of the Storm", lambda pl: None)
-        self._sp('eye_storm_no_damage_prev', True)  # assume clean until damage taken
+        # Assume clean until damage taken, but only for a floor begun fresh:
+        # a step up and back down used to wipe the floor's damage.
+        if getattr(self, 'fresh_descent', True):
+            self._sp('eye_storm_no_damage_prev', True)
 
         # Mystic Eye (#94 power): use telepathy on 10 distinct floors
         if self._pl.has_effect('telepathy'):
@@ -627,7 +630,7 @@ class QuirkSystem:
                 self._award('beowulf', "Beowulf's Vow",
                             lambda pl: pl.quirk_progress.update({'beowulf_unarmed_bonus': 5}))
 
-        # Gawain (#40): 6 wins starting at <=40% HP
+        # Gawain (#40): 15 wins starting at <=40% HP
         if hp_pct_before <= 0.40:
             self._inc('gawain_wins')
             if self._p('gawain_wins') >= 15 and not self.is_unlocked('gawain'):
@@ -927,9 +930,8 @@ class QuirkSystem:
                 self._award('penelope', "Penelope's Mastery",
                             self._timer_bonus('geography', 3))
 
-        # Hephaestus count (unequip also counts)
-        if item_type == 'armor':
-            self._dict_inc('hephaestus_counts', item_id)
+        # (Hephaestus counts equips only: "equipped the same armor piece 15
+        # times". Counting the unequips too unlocked it on the 8th.)
 
         # Jormungandr count (unequip also counts)
         if item_type == 'weapon':
@@ -1165,10 +1167,11 @@ class QuirkSystem:
             if self._p('atlas_burden_turns') >= 100 and not self.is_unlocked('atlas_burden'):
                 self._award_power('atlas_burden', "Atlas' Burden", lambda pl2: None)
 
-        # Sibyl (#36): 500 correct answers before level 20
+        # Sibyl (#36): 2,000 correct answers before level 20 (the deepest
+        # floor reached: climbing back to 19 from 30 used to count)
         if (not self.is_unlocked('sibyl') and
                 getattr(self.game, 'correct_answers', 0) >= 2000 and
-                self.game.dungeon_level < 20):
+                int(getattr(pl, 'deepest_floor_reached', 1) or 1) < 20):
             def _apply_sibyl(pl2):
                 b = getattr(pl2, 'quiz_timer_bonuses', None)
                 if b is None:
@@ -1364,10 +1367,10 @@ _QUIRK_PROGRESS = {
     'shakespeare':   ('shakespeare_scrolls', 50, False),
     'wanderlust_q':  ('tile_moves', 14000, False),
     'nostradamus':   ('nostradamus_lore', 10, False),
-    'archimedes':    ('_special', -1, False),             # needs sci>=50 AND eco>=50
+    'archimedes':    ('_special', -1, False),             # needs sci>=80 AND eco>=80
     'machiavelli':   ('machiavelli_run_correct', 3000, False),
     'darwin':        ('darwin_debuff_types', 8, True),
-    'hypatia':       ('_special', -1, False),             # needs math>=50 AND sci>=50
+    'hypatia':       ('_special', -1, False),             # needs math>=250 AND sci>=60
     # Power quirks
     'philosophers_stone': ('items_identified', 200, False),
     'atlas_burden':  ('atlas_burden_turns', 100, False),
@@ -1690,7 +1693,7 @@ _QUIRK_FLAVOR = {
     'arcane_surge':  "Magic does not tire the soul -- it feeds it.",
     'death_wish':    "The greatest victories taste best at the edge of defeat.",
     'wandering_star': "Even stars do not stay fixed -- they travel across the night unmoored.",
-    'time_dilation': "Twenty-five correct in a row. Not luck. Architecture.",
+    'time_dilation': "Fifty correct in a row. Not luck. Architecture.",
     'mirror_mind':   "A mind that reflects does not absorb lies.",
     'metabolic':     "The body is a furnace -- learn to stoke it at will.",
     'venom_lore':    "To name the poison is to begin its cure. -- Mithridates",

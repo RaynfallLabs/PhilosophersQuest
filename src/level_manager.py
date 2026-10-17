@@ -308,6 +308,24 @@ class LevelManager:
             if spawn_pos is not None:
                 break
         if spawn_pos is None:
+            # A maze floor has two rooms and the far one is often full: the
+            # planned mini-boss (Surtur on 90 one run in three) was lost for
+            # the run. Anywhere it fits that the hero can walk to will do,
+            # away from the arrival room.
+            from dungeon import _reach_from_stairs, FLOOR
+            reach = _reach_from_stairs(dungeon)
+            start = dungeon.rooms[0] if dungeon.rooms else None
+
+            def _in_start(x, y):
+                return (start is not None and start.x <= x < start.x + start.width
+                        and start.y <= y < start.y + start.height)
+            spots = [(x, y) for y in range(dungeon.height) for x in range(dungeon.width)
+                     if dungeon.tiles[y][x] == FLOOR and (not reach or (x, y) in reach)
+                     and not _in_start(x, y) and (x, y) not in occupied
+                     and _footprint_fits(mdata, x, y, dungeon, monsters)]
+            if spots:
+                spawn_pos = _rng.choice(spots)
+        if spawn_pos is None:
             return
 
         try:
@@ -429,7 +447,7 @@ def _spawn_monster_den_extras(dungeon, monsters: list, level_num: int):
 
         # spawn_monsters skips rooms[0], so pass [dummy, den_room]
         extras = spawn_monsters([den_room, den_room], level_num, dungeon,
-                                min_count=3, max_count=5)
+                                min_count=3, max_count=5, existing=monsters)
         monsters.extend(extras)
 
 
@@ -489,7 +507,8 @@ def _populate_hidden_chambers(dungeon, monsters: list, items: list, level: int):
             # spawn_monsters skips rooms[0], so pass [dummy, chamber_room]
             lair_monsters = spawn_monsters([room, room], level, dungeon,
                                            min_count=count_target,
-                                           max_count=count_target + 1)
+                                           max_count=count_target + 1,
+                                           existing=monsters)
 
             if keywords:
                 # Re-roll monsters that don't match the theme until we get a match

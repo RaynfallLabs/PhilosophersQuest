@@ -583,6 +583,36 @@ def _bfs_reaches(tiles, width, height, start, goal) -> bool:
     return False
 
 
+def _reach_from_stairs(dungeon) -> set:
+    """Every tile the hero can walk to (four ways, through doors) from the
+    up stair, or from the down stair if there is no up stair. Empty when
+    the floor has no stair at all (nothing to measure from).
+
+    Quest structures are built on tiles from this set: a pool or a lava
+    river laid down earlier could leave a room's middle an island, and an
+    altar or a forge built there could never be reached."""
+    tiles = dungeon.tiles
+    width, height = dungeon.width, dungeon.height
+    up, down = _find_stair_tiles(tiles, width, height)
+    start = up or down
+    if start is None:
+        return set()
+    from collections import deque
+    passable = (FLOOR, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
+                ALTAR, FOUNTAIN, GRAVE, THRONE, ICE)
+    seen = {start}
+    q = deque([start])
+    while q:
+        x, y = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if (0 <= nx < width and 0 <= ny < height and (nx, ny) not in seen
+                    and tiles[ny][nx] in passable):
+                seen.add((nx, ny))
+                q.append((nx, ny))
+    return seen
+
+
 def _snapshot_tiles(tiles):
     return [row[:] for row in tiles]
 
@@ -1335,13 +1365,18 @@ def _spawn_one_in_room(room, eligible, dungeon, monsters, rng) -> bool:
 
 
 def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
-                   min_count: int = None, max_count: int = None) -> list:
+                   min_count: int = None, max_count: int = None,
+                   existing: list = None) -> list:
     """Place a fixed COUNT of monsters, each in a randomly-chosen room.
 
     This intentionally LUMPS — it is the right tool for targeted clusters
     (zoo / graveyard / barracks / den / lair extras) and one-off wandering
     spawns. For whole-floor population use populate_floor() instead, which
     spreads a baseline across every room. Skips the first room.
+
+    `existing`: monsters already on the floor, whose tiles are taken (the
+    extras of a den or a zoo were set down blind and could stand on them).
+    Only the new monsters are returned.
     """
     eligible = _build_spawn_pool(level)
     if not eligible:
@@ -1352,13 +1387,21 @@ def spawn_monsters(rooms: List[Room], level: int, dungeon: Dungeon,
     if max_count is None:
         max_count = min(6 + level // 5, 14)
     count = rng.randint(min_count, max_count)
-    monsters = []
+    # Placeholders for every tile already taken, so the new ones avoid them.
+    from types import SimpleNamespace as _Taken
+    _held = []
+    for _m in (existing or ()):
+        if getattr(_m, 'alive', True):
+            _fw, _fh = getattr(_m, 'footprint', (1, 1))
+            _held += [_Taken(x=_m.x + _dx, y=_m.y + _dy)
+                      for _dx in range(_fw) for _dy in range(_fh)]
+    monsters = list(_held)
     spawn_rooms = rooms[1:]
     for _ in range(count):
         if not spawn_rooms:
             break
         _spawn_one_in_room(rng.choice(spawn_rooms), eligible, dungeon, monsters, rng)
-    return monsters
+    return monsters[len(_held):]
 
 
 # Fewest monsters a generated floor starts with (plus one per eight floors).
@@ -2070,6 +2113,9 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
     about 98% of floors and the key item was never needed.
     """
     nx0, ny0 = near
+    # The door must open onto floor the hero can walk to (a pool or a lava
+    # river laid down earlier could cut the door's side of the wall off).
+    reach = _reach_from_stairs(dungeon)
     for radius in range(1, max_radius + 1):
         for dx in range(-radius, radius + 1):
             for dy in range(-radius, radius + 1):
@@ -2081,6 +2127,8 @@ def _carve_sealed_shrine(dungeon: Dungeon, near: tuple, max_radius: int = 12):
                 for ddx, ddy in ((0, -1), (0, 1), (-1, 0), (1, 0)):
                     fx, fy = wx - ddx, wy - ddy            # room side of the door
                     if not dungeon.in_bounds(fx, fy) or dungeon.tiles[fy][fx] != FLOOR:
+                        continue
+                    if reach and (fx, fy) not in reach:
                         continue
                     sx, sy = wx + 2 * ddx, wy + 2 * ddy    # chamber centre
                     solid = True
@@ -2115,20 +2163,29 @@ def _open_tile_beside(dungeon: Dungeon, pos: tuple):
 
 def _find_or_place_feature(dungeon: Dungeon, rooms, rng, tile):
     """Position of an existing `tile` (FOUNTAIN / ALTAR), placing one if the
-    floor has none. Returns None only if no room has a free centre."""
+    floor has none. Returns None only if no room has a free centre.
+
+    Only where the hero can walk from the stairs, when the floor allows it:
+    a fountain or an altar on a pool's island was a quest step lost."""
+    reach = _reach_from_stairs(dungeon)
+    _ok = (lambda x, y: (x, y) in reach) if reach else (lambda x, y: True)
     for y in range(dungeon.height):
         for x in range(dungeon.width):
-            if dungeon.tiles[y][x] == tile:
+            if dungeon.tiles[y][x] == tile and _ok(x, y):
                 return (x, y)
     candidates = list(rooms[1:]) if len(rooms) > 1 else list(rooms)
     rng.shuffle(candidates)
-    for room in candidates:
-        cx, cy = room.center
-        for dx, dy in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)):
-            x, y = cx + dx, cy + dy
-            if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR:
-                dungeon.tiles[y][x] = tile
-                return (x, y)
+    for strict in (True, False):
+        for room in candidates:
+            cx, cy = room.center
+            spots = [(cx + dx, cy + dy) for dx, dy in ((0, 0), (1, 0), (-1, 0), (0, 1), (0, -1))]
+            if strict:
+                spots += list(room.inner_tiles())
+            for x, y in spots:
+                if (dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR
+                        and (not strict or _ok(x, y))):
+                    dungeon.tiles[y][x] = tile
+                    return (x, y)
     return None
 
 
@@ -2212,7 +2269,7 @@ def _create_odin_shrine(dungeon: Dungeon, rooms, ground_items, rng):
     """
     # Try every candidate room: the altar is the quest, so never give up
     # because one room's centre is water, a fountain or stairs.
-    candidates = list(_structure_rooms(rooms))
+    candidates = list(_structure_rooms(rooms, dungeon))
     rng.shuffle(candidates)
     placed = False
     for altar_room in candidates:
@@ -2445,7 +2502,9 @@ def _place_one(templates: list, room: 'Room', dungeon: 'Dungeon',
     tiles = list(room.inner_tiles())
     rng.shuffle(tiles)
     for tx, ty in tiles:
-        if not dungeon.is_walkable(tx, ty):
+        # Plain floor only: loot on the down stair, an altar, a grave, a
+        # fountain or a throne was drawn over the tile and hid it.
+        if dungeon.tiles[ty][tx] not in (FLOOR, ICE):
             continue
         if any(i.x == tx and i.y == ty for i in ground_items):
             continue
@@ -2476,27 +2535,48 @@ def _weighted_choice(pool: dict, rng: random.Random) -> str:
 # Fenrir quest room generators
 # ---------------------------------------------------------------------------
 
-def _structure_rooms(rooms):
+def _structure_rooms(rooms, dungeon=None):
     """Rooms a quest structure may go in: not the start room and not the
-    stairs-down room (rooms[-1]), falling back gracefully on tiny maps."""
+    stairs-down room (rooms[-1]), falling back gracefully on tiny maps.
+
+    With `dungeon`, only rooms with a floor tile the hero can walk to from
+    the stairs (a pool can flood a room's ring and leave its middle an
+    island), unless no room has one."""
     pool = [r for r in rooms[1:] if r is not rooms[-1]]
-    return pool or rooms[1:] or list(rooms)
+    pool = pool or rooms[1:] or list(rooms)
+    if dungeon is not None:
+        reach = _reach_from_stairs(dungeon)
+        if reach:
+            ok = [r for r in pool
+                  if any(t in reach and dungeon.tiles[t[1]][t[0]] == FLOOR
+                         for t in r.inner_tiles())]
+            pool = ok or pool
+    return pool
 
 
 def _structure_anchor(dungeon, room):
     """The tile a quest structure is built on: the room centre if it is
     plain FLOOR, else the nearest FLOOR tile inside the room. Structures
-    used to stamp the centre blindly and could overwrite the down stairs."""
+    used to stamp the centre blindly and could overwrite the down stairs.
+
+    Only a tile the hero can walk to from the stairs, when the room has one:
+    an altar or a forge on a pool's island could never be used."""
+    reach = _reach_from_stairs(dungeon)
     cx, cy = room.center
-    if dungeon.in_bounds(cx, cy) and dungeon.tiles[cy][cx] == FLOOR:
+    if (dungeon.in_bounds(cx, cy) and dungeon.tiles[cy][cx] == FLOOR
+            and (not reach or (cx, cy) in reach)):
         return cx, cy
-    best = None
-    for x, y in room.inner_tiles():
-        if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR:
-            d = abs(x - cx) + abs(y - cy)
-            if best is None or d < best[0]:
-                best = (d, x, y)
-    return (best[1], best[2]) if best else (cx, cy)
+    for need_reach in ((True, False) if reach else (False,)):
+        best = None
+        for x, y in room.inner_tiles():
+            if (dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == FLOOR
+                    and (not need_reach or (x, y) in reach)):
+                d = abs(x - cx) + abs(y - cy)
+                if best is None or d < best[0]:
+                    best = (d, x, y)
+        if best:
+            return best[1], best[2]
+    return (cx, cy)
 
 
 # What the player notices on arriving at each Gleipnir ingredient's floor.
@@ -2535,7 +2615,7 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
         component.identified = True
 
     # Pick a non-start, non-stairs room and anchor on a plain FLOOR tile.
-    room = rng.choice(_structure_rooms(rooms))
+    room = rng.choice(_structure_rooms(rooms, dungeon))
     cx, cy = _structure_anchor(dungeon, room)
     # Lava / water rings can wall off the stairs; snapshot so a ring that
     # breaks the route down can be undone (the component still spawns).
@@ -2556,24 +2636,37 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
                         'color': (150, 150, 180), 'revealed': False
                     }
     elif comp_id == 'womans_beard':
-        # Hidden behind a secret door in the room wall
+        # Hidden behind a secret door in the room wall. The door must face a
+        # floor tile of the room straight on (never a corner: a corner meets
+        # the room only diagonally, and the hero walks four ways, so the
+        # beard was out of reach on foot in four runs in five), and the
+        # alcove lies straight beyond it.
+        _reach = _reach_from_stairs(dungeon)
         for wx, wy in room.wall_tiles():
-            if dungeon.in_bounds(wx, wy) and dungeon.tiles[wy][wx] == WALL:
-                # Check if we can carve a small alcove
-                for ddx, ddy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-                    ax, ay = wx + ddx, wy + ddy
-                    if (dungeon.in_bounds(ax, ay) and dungeon.tiles[ay][ax] == WALL
-                            and not any(dungeon.tiles[ay + d][ax + e] == FLOOR
-                                        for d in [-1, 0, 1] for e in [-1, 0, 1]
-                                        if dungeon.in_bounds(ax + e, ay + d)
-                                        and (d, e) != (0, 0)
-                                        and (ax + e, ay + d) != (wx, wy))):
-                        dungeon.tiles[wy][wx] = SECRET_DOOR
-                        dungeon.tiles[ay][ax] = FLOOR
-                        component.x, component.y = ax, ay
-                        ground_items.append(component)
-                        return
-                break  # only try one wall tile
+            if not (dungeon.in_bounds(wx, wy) and dungeon.tiles[wy][wx] == WALL):
+                continue
+            _done = False
+            for ddx, ddy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                fx, fy = wx - ddx, wy - ddy                # room side of the door
+                ax, ay = wx + ddx, wy + ddy                # the alcove
+                if not (dungeon.in_bounds(fx, fy) and dungeon.tiles[fy][fx] == FLOOR
+                        and (not _reach or (fx, fy) in _reach)):
+                    continue
+                if (dungeon.in_bounds(ax, ay) and dungeon.tiles[ay][ax] == WALL
+                        and 0 < ax < dungeon.width - 1 and 0 < ay < dungeon.height - 1
+                        and not any(dungeon.tiles[ay + d][ax + e] == FLOOR
+                                    for d in [-1, 0, 1] for e in [-1, 0, 1]
+                                    if dungeon.in_bounds(ax + e, ay + d)
+                                    and (d, e) != (0, 0)
+                                    and (ax + e, ay + d) != (wx, wy))):
+                    dungeon.tiles[wy][wx] = SECRET_DOOR
+                    dungeon.tiles[ay][ax] = FLOOR
+                    component.x, component.y = ax, ay
+                    ground_items.append(component)
+                    _done = True
+                    break
+            if _done:
+                return
     elif comp_id in ('mountain_root', 'fish_breath'):
         # Ringed by lava (the root) or water (the breath), with ONE stepping
         # stone left in the ring. The player can never enter lava or water on
@@ -2581,10 +2674,22 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
         # Gleipnir impossible in nearly every run. Levitation also crosses.
         _hazard = LAVA if comp_id == 'mountain_root' else WATER
         _gap = None
-        for ox, oy in rng.sample([(0, -1), (0, 1), (-1, 0), (1, 0)], 4):
-            gx, gy = cx + ox, cy + oy
-            if dungeon.in_bounds(gx, gy) and dungeon.tiles[gy][gx] == FLOOR:
+        # The stepping stone must lead out: a gap whose far side was wall
+        # left the ingredient sealed in about one run in twenty-five.
+        _dirs = rng.sample([(0, -1), (0, 1), (-1, 0), (1, 0)], 4)
+        for _need_out in (True, False):
+            for ox, oy in _dirs:
+                gx, gy = cx + ox, cy + oy
+                if not (dungeon.in_bounds(gx, gy) and dungeon.tiles[gy][gx] == FLOOR):
+                    continue
+                ox2, oy2 = cx + 2 * ox, cy + 2 * oy
+                if _need_out and not (dungeon.in_bounds(ox2, oy2)
+                                      and dungeon.tiles[oy2][ox2] in (FLOOR, DOOR, SECRET_DOOR,
+                                                                      STAIRS_UP, STAIRS_DOWN)):
+                    continue
                 _gap = (gx, gy)
+                break
+            if _gap is not None:
                 break
         for dx in [-1, 0, 1]:
             for dy in [-1, 0, 1]:
@@ -2614,6 +2719,9 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
         _up, _down = _find_stair_tiles(dungeon.tiles, _w, _h)
         if _up and _down and not _bfs_reaches(dungeon.tiles, _w, _h, _up, _down):
             _restore_tiles(dungeon.tiles, _ring_snapshot)
+        elif (_up or _down) and (cx, cy) not in _reach_from_stairs(dungeon):
+            # The ring cut the ingredient itself off: no ring, still there.
+            _restore_tiles(dungeon.tiles, _ring_snapshot)
 
     # Default placement at room center (used for all except womans_beard secret door)
     if comp_id != 'womans_beard':
@@ -2629,7 +2737,7 @@ def _create_gleipnir_room(dungeon, rooms, ground_items, rng, level,
 def _create_dwarven_forge(dungeon, rooms, ground_items, rng):
     """Create a Dwarven Forge room on L78 where Gleipnir can be assembled."""
     # Pick a room away from start (and never the stairs-down room)
-    candidates = _structure_rooms(rooms[1:] if len(rooms) > 2 else rooms)
+    candidates = _structure_rooms(rooms[1:] if len(rooms) > 2 else rooms, dungeon)
     room = rng.choice(candidates)
     cx, cy = _structure_anchor(dungeon, room)
 
@@ -2640,7 +2748,7 @@ def _create_dwarven_forge(dungeon, rooms, ground_items, rng):
 
 def _create_vidar_altar(dungeon, rooms, rng):
     """Create Vidar's Altar on L79 where leather scraps can be assembled."""
-    room = rng.choice(_structure_rooms(rooms))
+    room = rng.choice(_structure_rooms(rooms, dungeon))
     cx, cy = _structure_anchor(dungeon, room)
 
     # Place altar tile and store position
@@ -2654,7 +2762,7 @@ def _create_judgment_altar(dungeon, rooms, rng):
     """Create the Altar of the Last Judgment on L99 — a massive set of scales.
     Mechanic implementation comes later; for now, just place the tile and store metadata."""
     # Pick a large room (prefer largest non-start room)
-    candidates = sorted(_structure_rooms(rooms),
+    candidates = sorted(_structure_rooms(rooms, dungeon),
                         key=lambda r: r.width * r.height, reverse=True)
     room = candidates[0] if candidates else rooms[0]
     cx, cy = _structure_anchor(dungeon, room)

@@ -210,11 +210,12 @@ def test_disarm_resolver_chain_ladder():
             self._adv_count = 0
         def add_message(self, *a, **kw): pass
         def _log_chronicle(self, *a, **kw): pass
-        def _check_floor_trap(self, x, y):
+        def _check_floor_trap(self, x, y, forced=False):
             # Damage-only stub: pretend the trap fired and consume the dict entry.
             self.dungeon.traps.pop((x, y), None)
         def _advance_turn(self): self._adv_count += 1
         def _random_hint_for_disarm(self): return "test hint"
+        _a_or_an = staticmethod(main.Game._a_or_an)
 
     def _make_trap():
         return {'type': 'bear_trap', 'damage': '1d4', 'damage_type': 'physical',
