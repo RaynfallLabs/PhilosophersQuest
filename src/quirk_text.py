@@ -100,7 +100,7 @@ QUIRK_HINT = {
     'philosophers_stone': "The Great Work is the naming of every thing. Know what you carry, over and over.",
     'atlas_burden':  "The Titan never set the sky down. Carry very nearly all you can bear.",
     'zeus_bolt':     "Lightning is only speed made visible. Be quickened, many times.",
-    'gorgon_ward':   "Feel your flesh turn toward stone, and live. More than once.",
+    'gorgon_ward':   "Feel your flesh turn toward stone, and live.",
     'phoenix_rising': "The bird must burn almost to nothing before it rises. Many times over.",
     'eye_storm':     "At the centre of the storm nothing touches you. Cross whole floors unscathed.",
     'iron_will':     "The body is frozen and the blows still fall. Bear them.",

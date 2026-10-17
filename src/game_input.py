@@ -477,8 +477,10 @@ class InputMixin:
             self._open_cook_menu()
             return
         if key == pygame.K_p:
-            # Try disarm trap first, then lockpick container
-            if self._try_disarm_trap():
+            # A chest beside you (or underfoot) is picked; otherwise P
+            # disarms an adjacent revealed trap. (Disarming always won, so
+            # a chest beside a trap could not be opened from that side.)
+            if self._find_adjacent_container() is None and self._try_disarm_trap():
                 return
             self._lockpick()
             return
@@ -638,9 +640,15 @@ class InputMixin:
             self._on_game_over()
             self._show_story_popup('exit_without_stone', STATE_DEAD)
         elif key == pygame.K_2:
-            # "Nobody calls me chicken!"
+            # "Nobody calls me chicken!" The Flux Capacitor comes once a
+            # run ("there are no second chances"); after that the choice
+            # just turns you back to the dungeon.
             self.state = STATE_PLAYER
-            self._spawn_flux_capacitor()
+            if not getattr(self, '_flux_given', False):
+                self._flux_given = True
+                self._spawn_flux_capacitor()
+            else:
+                self.add_message("You turn your back on the daylight again.", 'info')
 
     # ------------------------------------------------------------------
     # Mystery altar approach overlay

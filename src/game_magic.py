@@ -420,6 +420,16 @@ class MagicMixin:
 
     _wand_tier_duration = staticmethod(wand_tier_duration)
 
+    def _teleport_monster_landings(self, target, tiles: list) -> list:
+        """Where a teleported monster may land. A creature the run needs (a
+        seal keeper, the trader, an encounter NPC) lands only where the hero
+        can walk to: about one zap in a hundred left a keeper in a cut-off
+        pocket and its stair sealed for good."""
+        if not self._needed_to_finish(target):
+            return tiles
+        reach = self._reachable_tiles(self.player.x, self.player.y)
+        return [t for t in tiles if t in reach] or tiles
+
     def _wand_effect_duration(self, wand, default_base: int) -> int:
         """v2.11.0: prefer the wand's authored duration in wand.power (plain
         integer string, e.g. "5" / "30"), else fall back to the legacy
@@ -576,8 +586,8 @@ class MagicMixin:
                     unlocked += 1
             self._refresh_fov()
             self.add_message(
-                f"Click! {opened} door{'s' if opened != 1 else ''} swing open"
-                f" and {unlocked} chest{'s' if unlocked != 1 else ''} unlock.",
+                f"Click! {opened} door{'s swing' if opened != 1 else ' swings'} open"
+                f" and {unlocked} chest{'s unlock' if unlocked != 1 else ' unlocks'}.",
                 'success' if (opened or unlocked) else 'info')
 
         elif effect == 'probing':
@@ -924,11 +934,11 @@ class MagicMixin:
                               and not monster_at_tile(self.monsters, x, y) is not None
                               and not any(p.alive and p.x == x and p.y == y for p in self.pets)
                               and (x, y) != (self.player.x, self.player.y)]
+                open_tiles = self._teleport_monster_landings(target, open_tiles)
                 if open_tiles:
                     tx, ty = _rng.choice(open_tiles)
-                    old_name = target.name
                     target.x, target.y = tx, ty
-                    self.add_message(f"The {old_name} vanishes in a flash of light!", 'success')
+                    self.add_message(f"{the_name(target)} vanishes in a flash of light!", 'success')
 
             elif effect == 'drain_life':
                 from dice import roll
@@ -1518,11 +1528,12 @@ class MagicMixin:
                           if self.dungeon.is_walkable(x, y)
                           and (x, y) != (self.player.x, self.player.y)
                           and not monster_at_tile(self.monsters, x, y) is not None]
+                floors = self._teleport_monster_landings(target_m, floors)
                 if floors:
                     nx, ny = random.choice(floors)
                     target_m.x, target_m.y = nx, ny
                     self.add_message(
-                        f"The {target_m.name} vanishes in a flash of light!", 'success')
+                        f"{the_name(target_m)} vanishes in a flash of light!", 'success')
                 else:
                     self.add_message("The spell fizzles -- no safe destination found.", 'warning')
             else:

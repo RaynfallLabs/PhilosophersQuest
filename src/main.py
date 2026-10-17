@@ -163,11 +163,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                  player_name: str = 'Adventurer',
                  secret_build: dict | None = None):
         self.screen        = screen
-        # A hero's name is shown as a name ("Achilles Son Of Peleus"), however
-        # it was typed; every lookup lowercases it again.
+        # A hero's name is shown as a name ("Achilles Son of Peleus", "Leonardo
+        # di Ser Piero da Vinci"), however it was typed; every lookup
+        # lowercases it again. Small words and name particles stay lower case.
         if secret_build:
-            import string
-            player_name = string.capwords(player_name)
+            from naming import proper_name
+            _words = proper_name(' '.join(player_name.lower().split())).split(' ')
+            player_name = ' '.join(
+                w.lower() if i > 0 and w.lower() in ('di', 'da', 'de', 'von', 'van', 'der') else w
+                for i, w in enumerate(_words))
         self.player_name   = player_name
         self.secret_build  = secret_build   # dict of stat overrides, or None
         self._resize_grace = 0
@@ -309,6 +313,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Abaddon quest state
         self.seals_broken: set = set()     # set of seal artifact IDs collected
         self.abaddon_resist_removed_turns: int = 0  # turns Abaddon's resistances are stripped
+        self._abaddon_empowered_applied: bool = False  # the Judgment's +50% given to Abaddon
+        self._flux_given: bool = False      # "Nobody calls me chicken!" pays once a run
         self.heavenly_host_active: bool = False      # Scales of Michael activated
         self._l100_altars_used: set = set()          # (x,y) of altars already prayed at on L100
         # Morality / NPC encounter system
@@ -514,6 +520,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         # Give the player their Philosopher's Shard and build-specific starting kit
         self._give_starting_kit()
+        # The kit can raise a maximum (the Charmander Stuffie's CON, the
+        # Dreamspun Sketchbook's INT): every hero starts full.
+        self.player.hp = self.player.max_hp
+        self.player.mp = self.player.max_mp
+        self.player.sp = self.player.max_sp
+        # Floor 1 is settled like every other floor: no stacked monsters, and
+        # quest pieces within reach (only _change_level used to do this).
+        self._settle_monsters()
         # A named unique in the starting kit is this run's only copy.
         from items import claim_unique as _claim_unique
         for _it in list(self.player.inventory) + [
@@ -613,6 +627,20 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.hero_specials = []
         if not hasattr(self.player, 'hero_special_cooldowns'):
             self.player.hero_special_cooldowns = {}
+        # The save holds copies of the hero's special dicts: refresh them from
+        # hero_specials.py so a later fix to a tier, cooldown or text reaches
+        # a run in progress (the cooldowns already running are kept).
+        if self.player.hero_specials or self.player.hero_passives:
+            try:
+                from hero_specials import get_specials_for_build, get_passives_for_build
+                _key = (self.player_name or '').lower().strip()
+                _acts = get_specials_for_build(_key)
+                _pas = get_passives_for_build(_key)
+                if _acts or _pas:
+                    self.player.hero_specials = list(_acts)
+                    self.player.hero_passives = set(_pas)
+            except Exception:
+                pass
         if not hasattr(self.player, 'qa_tools'):
             self.player.qa_tools = False
         if not hasattr(self.player, '_stand_ac_bonus'):
@@ -695,6 +723,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                                    getattr(self, '_flavor_encounter_levels', {}))
         self._encountered_flavor_npcs = state.get('_encountered_flavor_npcs', set())
         self._abaddon_empowered = state.get('_abaddon_empowered', False)
+        # None = a save from before the flag existed (decided on arrival).
+        self._abaddon_empowered_applied = state.get('_abaddon_empowered_applied', None)
+        self._flux_given = state.get('_flux_given', False)
         self._locusts_strengthened = state.get('_locusts_strengthened', False)
         if state.get('_judgment_resolved', False):
             self._judgment_resolved = True
@@ -1282,13 +1313,29 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
+        # Death comes for the Stone the moment it leaves floor 100, by any
+        # route: the stair, a potion of gain level, the Elixir, Hermes'
+        # psychopomp step. Only the stair used to set him loose, so a potion
+        # drunk on 100 carried the Stone out to a full victory unpursued.
+        if (self.dungeon_level == 100 and new_level != 100
+                and not getattr(self, 'death_pursues', False)
+                and any(isinstance(i, Artifact) and i.id in ('philosophers_stone',
+                                                             'complete_tablet_of_second_death')
+                        for i in self.player.inventory)):
+            self._trigger_death_pursuit()
         # Notify quirk system before level change (fast-exit check)
+        # New depth: a floor deeper than any reached. The Cow Level (999) is a
+        # side trip, not depth: counting it recharged every once-a-floor ward
+        # and charge, and kept them recharged on the way back.
+        from boss_levels import COW_LEVEL as _COW_LEVEL_D
+        _new_depth = (new_level != _COW_LEVEL_D
+                      and new_level > self.player.deepest_floor_reached)
         qs = getattr(self, 'quirk_system', None)
         if qs:
             # Traits that count floors left quickly, cleanly or without the
             # Shard count only a first descent: ten bounces on one staircase
             # used to earn four of them.
-            qs.fresh_descent = new_level > self.player.deepest_floor_reached
+            qs.fresh_descent = _new_depth
             qs.on_stairs_taken_fast()
 
         # A monster on a floor the player has left is not simulated. Note the
@@ -1309,7 +1356,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # lives on the weapon and was never reset, making it a lifetime cap.
         for _w in (self.player.weapon, self.player.ranged_weapon,
                    *self.player.inventory):
-            if new_level <= self.player.deepest_floor_reached:
+            if not _new_depth:
                 break                    # a floor already walked gives no fresh allowance
             if _w is not None and getattr(_w, '_spare_kill_floor_hp', 0):
                 _w._spare_kill_floor_hp = 0
@@ -1335,6 +1382,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for _x in range(dungeon.width):
                     dungeon.explored.add((_x, _y))
         self.dungeon_level = new_level
+        # The hero stands on the new floor before anything reads where he is:
+        # the floor-entry passives (the Morrigan's ravens, Atalanta's choice)
+        # and the encounter spawners used to read the old floor's position.
+        self.player.x, self.player.y = self._arrival_tile(dungeon, enter_from_top)
         # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
         self._stamp_ground_appearances()
@@ -1347,7 +1398,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # a floor reached for the first time. Going down and up one stair
         # used to recharge every death ward, absorb, free cast and escape:
         # six lethal blows in a row survived on one charge each.
-        _held_charges = None if new_level > _was_deepest else self._once_a_floor_state()
+        _held_charges = None if _new_depth else self._once_a_floor_state()
         from boss_levels import COW_LEVEL as _COW_LEVEL
         if new_level != _COW_LEVEL:
             self.player.deepest_floor_reached = max(
@@ -1517,7 +1568,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Achilles' helm (ringing_intimidation) is rolled when a monster first
         # sees the wearer (_refresh_fov): on arrival nothing is within reach.
         # Haramaki of Yoshitsune (descent_haste): on descent, gain hasted for N turns.
-        if enter_from_top and new_level > _was_deepest:      # a descent into new depth
+        if enter_from_top and _new_depth:      # a descent into new depth
             try:
                 from armor_procs import proc_value as _pv_desc
                 _dh = int(_pv_desc(self.player, 'descent_haste') or 0)
@@ -1648,8 +1699,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if (player_has_passive(self.player, 'atalantas_choice')
                     and self.player.hp <= self.player.max_hp * 0.30
                     and consume_passive_charge(self.player, 'atalantas_choice')):
+                # What the hero sees from the arrival stair (self.visible
+                # still holds the floor just left at this point).
+                _arrival_fov = calculate_fov(self.dungeon, self.player.x, self.player.y,
+                                             self.player.get_sight_radius())
                 for m in self.monsters:
-                    if m.alive and (m.x, m.y) in self.visible:
+                    if m.alive and (m.x, m.y) in _arrival_fov:
                         m.add_effect('paralyzed', 10)
                 self.add_message(
                     "Atalanta's choice! Time itself pauses for you to breathe.",
@@ -1676,7 +1731,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Refresh the life_save status effect each floor entry.
         try:
             if (player_has_passive(self.player, 'life_save_resets_per_floor')
-                    and new_level > _was_deepest):         # a new floor, not any stair
+                    and _new_depth):         # a new floor, not any stair
                 self.player.add_effect('life_save', -1)
         except (ImportError, NameError):
             pass
@@ -1717,16 +1772,30 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         except (ImportError, NameError):
             pass
 
-        # Abaddon empowered by negative karma: boost HP on first entry to L100
-        if new_level == 100 and not saved and getattr(self, '_abaddon_empowered', False):
+        # Abaddon empowered by negative karma: boost HP once, the first time
+        # the hero stands on L100 after the verdict. It used to need floor 100
+        # to be generated after the judgment, so going down first and kneeling
+        # on the way back up dodged it.
+        if new_level == 100 and getattr(self, '_abaddon_empowered', False):
+            _applied = getattr(self, '_abaddon_empowered_applied', None)
+            if _applied is None:          # a save from before this was recorded
+                _applied = bool(saved)
+            if not _applied:
+                for m in self.monsters:
+                    if m.kind == 'abaddon_destroyer' and m.alive:
+                        bonus = int(m.max_hp * 0.5)
+                        m.max_hp += bonus
+                        m.hp += bonus
+                        self.add_message(
+                            "Your sins have given the Destroyer terrible strength!", 'danger')
+                        break
+            self._abaddon_empowered_applied = True
+        # Holy fire that ran out while the hero was off floor 100 never gave
+        # the Destroyer his guard back: he stayed stripped for good.
+        if new_level == 100 and int(getattr(self, 'abaddon_resist_removed_turns', 0) or 0) <= 0:
             for m in self.monsters:
                 if m.kind == 'abaddon_destroyer' and m.alive:
-                    bonus = int(m.max_hp * 0.5)
-                    m.max_hp += bonus
-                    m.hp += bonus
-                    self.add_message(
-                        "Your sins have given the Destroyer terrible strength!", 'danger')
-                    break
+                    self._restore_abaddon_guard(m)
 
         # Track levels without Philosopher's Shard (Diogenes quirk)
         has_shard = any(getattr(i, 'id', '') == 'philosophers_shard'
@@ -1735,7 +1804,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # raised above, so "deeper than the deepest" was never true and the
         # Lantern could not be earned)
         if (not has_shard and self.player.quirk_progress.get('shard_dropped')
-                and new_level > _was_deepest):
+                and _new_depth):
             self.player.quirk_progress['levels_without_shard'] = (
                 self.player.quirk_progress.get('levels_without_shard', 0) + 1
             )
@@ -1769,11 +1838,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _snd.play('level_change')
         # No longer crouched in the last floor's pit.
         self.player.status_effects.pop('in_pit', None)
+        # (the hero was set on the stair above, before the arrival passives)
         if enter_from_top:
-            self.player.x, self.player.y = dungeon.rooms[0].center
             self.add_message(f"You descend to level {new_level}.", 'info')
         else:
-            self.player.x, self.player.y = dungeon.rooms[-1].center
             self.add_message(f"You ascend to level {new_level}.", 'info')
 
         # Pelops Sword: cursed_lineage descent event. 5% chance per
@@ -1871,7 +1939,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         if room.center == (rcx, rcy):
                             # [room, room]: spawn_monsters skips rooms[0], so a one-room list
                             # spawned nothing and the zoo was free gold.
-                            zoo_extra = spawn_monsters([room, room], new_level, dungeon, min_count=4, max_count=8)
+                            zoo_extra = spawn_monsters([room, room], new_level, dungeon, min_count=4, max_count=8,
+                                                       existing=monsters)
                             for zm in zoo_extra:
                                 zm.status_effects['sleeping'] = DEEP_SLEEP
                             monsters.extend(zoo_extra)
@@ -1879,7 +1948,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 elif rtype == 'graveyard':
                     for room in dungeon.rooms:
                         if room.center == (rcx, rcy):
-                            grave_extra = spawn_monsters([room, room], new_level, dungeon, min_count=2, max_count=4)
+                            grave_extra = spawn_monsters([room, room], new_level, dungeon, min_count=2, max_count=4,
+                                                       existing=monsters)
                             for gm in grave_extra:
                                 gm.status_effects['sleeping'] = DEEP_SLEEP
                             monsters.extend(grave_extra)
@@ -1887,7 +1957,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 elif rtype == 'barracks':
                     for room in dungeon.rooms:
                         if room.center == (rcx, rcy):
-                            bar_extra = spawn_monsters([room, room], new_level, dungeon, min_count=3, max_count=5)
+                            bar_extra = spawn_monsters([room, room], new_level, dungeon, min_count=3, max_count=5,
+                                                       existing=monsters)
                             for bm in bar_extra:
                                 bm.status_effects['sleeping'] = DEEP_SLEEP
                             monsters.extend(bar_extra)
@@ -3071,22 +3142,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             )
             self.state = STATE_EXIT_QUEST if has_stone else STATE_ABANDON_QUEST
         else:
-            # Trigger Death the moment the player leaves L100 carrying the Stone
-            # (either the raw stone or the stone embedded in the complete tablet)
-            if self.dungeon_level == 100 and not self.death_pursues:
-                has_stone = any(
-                    isinstance(i, Artifact) and i.id in ('philosophers_stone',
-                                                          'complete_tablet_of_second_death')
-                    for i in self.player.inventory
-                )
-                if has_stone:
-                    self._trigger_death_pursuit()
+            # (Death is set loose in _change_level, by whatever route the
+            # Stone leaves floor 100.)
             try:
                 self._change_level(self.dungeon_level - 1, enter_from_top=False)
             except Exception as e:
                 self.add_message(f"Error ascending: {e}", 'danger')
                 import traceback
                 traceback.print_exc()
+
+    @staticmethod
+    def _restore_abaddon_guard(abaddon) -> None:
+        """Give the Destroyer back the resistances and the ward holy fire
+        burned away."""
+        abaddon.resistances = list(getattr(abaddon, 'base_resistances', []))
+        abaddon.damage_ward = float(getattr(abaddon, 'base_damage_ward', 0.0) or 0.0)
 
     def _trigger_death_pursuit(self):
         from monster import DeathMonster
@@ -3142,7 +3212,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 break
         else:
             d.x, d.y = tx, ty
-        self.add_message("Death Climbs The Stair Behind You.", 'danger')
+        self.add_message("Death climbs the stair behind you.", 'danger')
         return False                   # arriving is his whole turn
 
     def _maybe_escalate_death(self):
@@ -3164,8 +3234,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         else:
             dm._speed_pct = 50
 
-        # Announce speed changes
-        if dm._speed_pct != old_speed:
+        # Announce speed changes (only a quickening: going back down past a
+        # band edge slows him, and used to print "Death quickens.")
+        if dm._speed_pct > old_speed:
             _SPEED_MSGS = {
                 75:  ("Death quickens. The scraping is faster now.", 'danger',
                       "Death is moving faster. The sound of the scythe is closer between each step."),
@@ -3356,8 +3427,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # back, so a fled or victorious hero could be resumed.
         self._run_over = True
         _reason = getattr(self, 'defeat_reason', 'died')
+        # (Floor 100 never loads bones: a file written there only held one
+        # of the three bones slots until newer deaths pushed it out.)
         if leave_bones and _reason in ('died', 'starved') \
-                and self.dungeon_level != _COW_LEVEL:
+                and self.dungeon_level not in (_COW_LEVEL, 100):
             save_bones(self.player_name, self.dungeon_level, _reason,
                        self.player, getattr(self, 'player_gold', 0))
         delete_save(self.player_name)
@@ -3461,23 +3534,69 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         p._armor_proc_charges = dict(held['armor'])
         p._chain_passive_charges = dict(held['chain'])
 
-    def _reachable_tiles(self, sx: int, sy: int) -> set:
+    def _reachable_tiles(self, sx: int, sy: int, through=()) -> set:
         """Every tile that can be walked to from (sx, sy), going through
-        doors (secret ones too: they can be found)."""
+        doors (secret ones too: they can be found) and through any tile in
+        `through` (a sealed shrine door the quest will open).
+
+        Four ways only, as the hero walks (the arrow keys): the flood used
+        to step diagonally, so a quest piece behind a corner, or a teleport
+        landing, counted as reachable when no walk led there."""
         from dungeon import DOOR, SECRET_DOOR
         d = self.dungeon
+        through = set(through or ())
         seen = {(sx, sy)}
         stack = [(sx, sy)]
         while stack:
             x, y = stack.pop()
-            for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1),
-                           (x + 1, y + 1), (x - 1, y - 1), (x + 1, y - 1), (x - 1, y + 1)):
+            for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
                 if (nx, ny) in seen or not d.in_bounds(nx, ny):
                     continue
-                if d.is_walkable(nx, ny) or d.tiles[ny][nx] in (DOOR, SECRET_DOOR):
+                if (d.is_walkable(nx, ny) or d.tiles[ny][nx] in (DOOR, SECRET_DOOR)
+                        or (nx, ny) in through):
                     seen.add((nx, ny))
                     stack.append((nx, ny))
         return seen
+
+    @staticmethod
+    def _arrival_tile(dungeon, enter_from_top: bool) -> tuple:
+        """Where the hero stands on arriving: on the stair he came through.
+
+        The first room's centre is the up stair on an ordinary floor, but a
+        hand-built boss floor (40, 60, 80) keeps its stair at the hall's
+        edge, and the hero arrived two tiles away from it."""
+        x, y = dungeon.rooms[0].center if enter_from_top else dungeon.rooms[-1].center
+        want = STAIRS_UP if enter_from_top else STAIRS_DOWN
+        if dungeon.in_bounds(x, y) and dungeon.tiles[y][x] == want:
+            return x, y
+        stairs = [(sx, sy) for sy in range(dungeon.height) for sx in range(dungeon.width)
+                  if dungeon.tiles[sy][sx] == want]
+        if stairs:
+            return min(stairs, key=lambda t: abs(t[0] - x) + abs(t[1] - y))
+        return x, y
+
+    def _sealed_shrine_doors(self) -> set:
+        """The doors of the sealed quest shrines (Ariadne, Athena, Odin) that
+        are still shut. They open by quest, so what lies behind them is in
+        reach as far as the run is concerned and must stay where it is."""
+        from dungeon import WALL
+        d = self.dungeon
+        out = set()
+        for attr in ('ariadne_shrine_door', 'athena_shrine_door', 'odin_shrine_door'):
+            pos = getattr(d, attr, None)
+            if pos and d.in_bounds(*pos) and d.tiles[pos[1]][pos[0]] == WALL:
+                out.add(tuple(pos))
+        return out
+
+    # Quest and secret-ending pieces that are not artifacts by class: the
+    # Broken Gram (a weapon), the encounter trigger items, the carrot, the
+    # duck, and the deep-lore pieces of the secret ending.
+    _QUEST_PIECE_IDS = frozenset((
+        'broken_gram', 'sigurds_shovel', 'silverlight_pendant', 'oathkeeper_sword', 'lionheart_shield',
+        'magic_dungeon_carrot', 'duck_of_doom',
+        'abyssal_shimmer', 'philosophers_wrench', 'scroll_lake_of_fire',
+        'tablet_of_second_death', 'complete_tablet_of_second_death', 'death_bane',
+    ))
 
     @staticmethod
     def _needed_to_finish(thing) -> bool:
@@ -3492,6 +3611,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             or kind.startswith(('seal_demon', 'mystery_altar_', 'mystery_key_'))
             or kind == 'merchant_npc'
             or getattr(thing, '_npc_encounter_tag', None) or getattr(thing, '_flavor_encounter_tag', None)
+            or getattr(thing, '_is_unicorn', False)
+            or getattr(thing, 'plot_locked', False)
+            or getattr(thing, 'id', None) in Game._QUEST_PIECE_IDS
             or getattr(thing, 'item_class', '') in ('artifact', 'merchant')
             or type(thing).__name__ in ('Artifact', 'MysteryAltar', 'MysteryKeyItem', 'MerchantNPC'))
 
@@ -3503,10 +3625,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         had such a pocket, and a seal keeper stood in one about once in nine
         runs: its stair then stayed sealed for good. Mystery shrines, their
         keys, the trader and quest pieces were stranded the same way."""
-        reach = self._reachable_tiles(self.player.x, self.player.y)
-        taken = {(m.x, m.y) for m in self.monsters if getattr(m, 'alive', False)}
+        walk = self._reachable_tiles(self.player.x, self.player.y)
+        # A sealed quest shrine opens by quest: its prize is not stranded
+        # (Ariadne's Thread used to be lifted out of its shrine every run).
+        _doors = self._sealed_shrine_doors()
+        reach = (self._reachable_tiles(self.player.x, self.player.y, through=_doors)
+                 if _doors else walk)
+        from geom import all_occupied_tiles, occupied_tiles
+        taken = set(all_occupied_tiles(self.monsters))
         taken.add((self.player.x, self.player.y))
-        free = [t for t in reach if self.dungeon.is_walkable(*t) and t not in taken]
+        taken |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
+        free = [t for t in walk if self.dungeon.is_walkable(*t) and t not in taken]
         if not free:
             return
         import random as _r
@@ -3518,10 +3647,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return best
 
         for m in self.monsters:
-            if (getattr(m, 'alive', False) and (m.x, m.y) not in reach
-                    and tuple(getattr(m, 'footprint', (1, 1))) == (1, 1)
-                    and self._needed_to_finish(m) and free):
-                m.x, m.y = nearest(m.x, m.y)
+            if not (getattr(m, 'alive', False) and self._needed_to_finish(m) and free):
+                continue
+            fw, fh = tuple(getattr(m, 'footprint', (1, 1)))
+            if (fw, fh) == (1, 1):
+                if (m.x, m.y) not in reach:
+                    m.x, m.y = nearest(m.x, m.y)
+                continue
+            # A 2x2 legendary in a pocket: the nearest anchor whose whole
+            # body fits on free tiles the hero can walk to.
+            if any(t in reach for t in occupied_tiles(m)):
+                continue
+            _free = set(free)
+            fits = [t for t in free
+                    if all((t[0] + dx, t[1] + dy) in _free
+                           for dx in range(fw) for dy in range(fh))]
+            if fits:
+                ax, ay = min(fits, key=lambda t: (abs(t[0] - m.x) + abs(t[1] - m.y), rng.random()))
+                m.x, m.y = ax, ay
+                for dx in range(fw):
+                    for dy in range(fh):
+                        free.remove((ax + dx, ay + dy))
         for it in self.ground_items:
             if (it.x, it.y) not in reach and self._needed_to_finish(it) and free:
                 it.x, it.y = nearest(it.x, it.y)
@@ -3668,8 +3814,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 abaddon = next((m for m in self.monsters
                                 if m.alive and m.kind == 'abaddon_destroyer'), None)
                 if abaddon:
-                    abaddon.resistances = list(getattr(abaddon, 'base_resistances', []))
-                    abaddon.damage_ward = float(getattr(abaddon, 'base_damage_ward', 0.0) or 0.0)
+                    self._restore_abaddon_guard(abaddon)
                     self.add_message(
                         "The holy fire gutters out. The dark closes round the "
                         "Destroyer again.", 'danger')
@@ -4202,8 +4347,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             m.x, m.y = x, y
             self.monsters.append(m)
 
-    def _check_floor_trap(self, x: int, y: int):
-        """Trigger a floor trap at (x, y) if one exists."""
+    def _check_floor_trap(self, x: int, y: int, forced: bool = False):
+        """Trigger a floor trap at (x, y) if one exists.
+
+        `forced`: the trap goes off in the hero's hands (a fumbled disarm),
+        so there is no floating over it and no sidestep, and a pit opens
+        beside him rather than under him."""
         from dice import roll as _dice_roll
         trap = self.dungeon.traps.get((x, y))
         if trap is None:
@@ -4212,18 +4361,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if trap.get('safe_for_player'):
             return
         # Levitating players float over traps (reveals them)
-        if self.player.has_effect('levitating'):
+        if not forced and self.player.has_effect('levitating'):
             trap['revealed'] = True
             self.add_message("You float safely over a trap!", 'info')
             return
         # PER-based avoidance: chance to notice and sidestep at the last moment
         import random as _rng_trap
         avoid_chance = 0.05 + self.player.PER * 0.02  # PER 10 = 25%, PER 16 = 37%
-        if _rng_trap.random() < avoid_chance:
+        if not forced and _rng_trap.random() < avoid_chance:
             trap['revealed'] = True
             self.add_message(
-                f"You notice a {trap['type'].replace('_', ' ')} trap just in time and sidestep it!",
-                'success')
+                f"You notice {self._a_or_an(trap['type'].replace('_', ' '))} trap just in time "
+                f"and sidestep it!", 'success')
             return
         # Trap fires -- remove it from the floor
         del self.dungeon.traps[(x, y)]
@@ -4243,13 +4392,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if not hasattr(self.dungeon, 'pits'):
                 self.dungeon.pits = set()
             self.dungeon.pits.add((x, y))
-            self.player.add_effect('in_pit', -1)
-            self.add_message("A pit opens beneath you! You must climb out.", 'danger')
+            if (x, y) == (self.player.x, self.player.y):
+                self.player.add_effect('in_pit', -1)
+                self.add_message("A pit opens beneath you! You must climb out.", 'danger')
+            else:
+                self.add_message("The ground gives way beside you and leaves a pit.", 'danger')
         elif trap_type == 'alarm':
-            for m in self.monsters:
-                if m.alive and abs(m.x - x) <= 10 and abs(m.y - y) <= 10:
-                    if m.ai_pattern == 'sessile':
-                        m.ai_pattern = 'aggressive'
+            from container_system import alert_monsters_near
+            alert_monsters_near(self.monsters, x, y, 10)
             self.add_message("Monsters nearby are alerted!", 'danger')
         elif trap_type == 'acid':
             self.player.add_effect('corroding', 5)
@@ -4345,7 +4495,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             qs.on_trap_triggered(trap_type)
         if not getattr(self, '_chronicle_first_trap', False):
             self._chronicle_first_trap = True
-            self._log_chronicle(f"Stepped on a {trap_type.replace('_', ' ')} trap. Should have watched where I was walking.")
+            self._log_chronicle(f"Stepped on {self._a_or_an(trap_type.replace('_', ' '))} trap. Should have watched where I was walking.")
         if self.player.is_dead():
             self.add_message("You have died!", 'danger')
             # The whole game-over path, as every other death takes: this set
@@ -4387,11 +4537,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                       self.dungeon, min_count=1, max_count=1)
         if new_monsters:
             m = new_monsters[0]
+            # Never on the hero (the callers pass his own tile) or a pet.
+            _busy = {(self.player.x, self.player.y)}
+            _busy |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
             for dx2 in range(-2, 3):
                 for dy2 in range(-2, 3):
                     nx2, ny2 = x + dx2, y + dy2
-                    if self.dungeon.is_walkable(nx2, ny2) and \
-                       not any(om.alive and om.x == nx2 and om.y == ny2 for om in self.monsters):
+                    if self.dungeon.is_walkable(nx2, ny2) and (nx2, ny2) not in _busy and \
+                       monster_at_tile(self.monsters, nx2, ny2) is None:
                         m.x, m.y = nx2, ny2
                         self.monsters.append(m)
                         return
@@ -4408,8 +4561,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not new_monsters:
             return
         m = new_monsters[0]
-        # Rename the doomed scion
+        # Rename the doomed scion: a person's name ("Agamemnon hits you",
+        # not "The Agamemnon hits you")
         m.name = _ha_rng.choice(names)
+        m.proper_noun = True
         # Place near the player (search a 4-tile radius)
         px, py = self.player.x, self.player.y
         for dx in range(-4, 5):
@@ -4430,12 +4585,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _do_warning(self):
         """Warn if monsters are within 5 tiles when player has the warning effect.
-
-        class_acc_passive_radius (ring/amulet_of_warning): the active passive
-        extends the warning radius by +N tiles. (Pre identify-v3 this was
-        gated by class-mastery unlock; masteries were removed 2026-08-06
-        and the passive now fires whenever the ring/amulet is equipped.)
-        """
+        The radius is fixed at 5."""
         if not self.player.has_effect('warning'):
             return
         px, py = self.player.x, self.player.y
@@ -4453,13 +4603,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _do_searching(self):
         """Auto-reveal adjacent tiles, secret doors, and traps when player is searching.
-
-        class_acc_passive_radius (ring/amulet_of_searching): the active
-        passive extends the searching radius by +N tiles around the player.
-        (Pre identify-v3 this was gated by class-mastery unlock; masteries
-        were removed 2026-08-06 and the passive now fires whenever the
-        ring/amulet is equipped.)
-        """
+        The radius is fixed at 1 (the eight tiles round the hero)."""
         if not self.player.has_effect('searching'):
             return
         px, py = self.player.x, self.player.y
@@ -4478,7 +4622,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if trap and not trap.get('revealed'):
                         trap['revealed'] = True
                         self.add_message(
-                            f"Searching reveals a {trap['type'].replace('_', ' ')} trap!", 'success')
+                            f"Searching reveals {self._a_or_an(trap['type'].replace('_', ' '))} trap!", 'success')
         # Also reveal adjacent ambush monsters (radius same as tile-reveal above)
         for m in self.monsters:
             if (m.alive and m.ai_pattern == 'ambush'
@@ -4525,7 +4669,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
           2 - no change: trap stays put but does not fire. You burned a turn.
           3 - trap removed cleanly
           4 - trap REWIRED: re-armed, only monsters trigger it; you walk over freely
+              (a teleport, rust or polymorph trap is taken apart instead: it
+              does nothing to a monster)
           5 - same as 4, plus a free random hint (you learned something about the world)
+        A trap already rewired is skipped: it is safe for the hero.
         Returns True if a quiz was started (consumed the input), False otherwise.
         """
         px, py = self.player.x, self.player.y
@@ -4535,7 +4682,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 nx, ny = px + dx, py + dy
                 trap = self.dungeon.traps.get((nx, ny))
-                if not trap or not trap.get('revealed'):
+                # (a rewired trap is already safe for the hero: P used to
+                # "disarm" it again, delete it on a chain of 3, or rewire it
+                # once more for another free hint)
+                if not trap or not trap.get('revealed') or trap.get('safe_for_player'):
                     continue
                 trap_name = trap['type'].replace('_', ' ')
                 self.quiz_title = f"DISARMING {trap_name.upper()}  --  AI"
@@ -4577,7 +4727,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Catastrophic fumble: trap fires on you and you burn an extra turn.
             self.add_message(
                 f"You panic with the {tname} trap! It snaps as you flinch back.", 'warning')
-            self._check_floor_trap(px, py)
+            self._check_floor_trap(px, py, forced=True)
             self._advance_turn()   # extra turn cost (the fumble)
             self._advance_turn()   # normal turn for the action
             return
@@ -4586,7 +4736,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Botched but contained: trap fires, but no extra turn lost.
             self.add_message(
                 f"You fumble the {tname} trap — it triggers on you.", 'warning')
-            self._check_floor_trap(px, py)
+            self._check_floor_trap(px, py, forced=True)
             self._advance_turn()
             return
 
@@ -4610,6 +4760,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._advance_turn()
             return
 
+        # A teleport, rust or polymorph trap does nothing to a monster (its
+        # effect works on the hero and his gear), so it cannot be turned on
+        # them: a chain of 4 or 5 takes it apart cleanly instead. (It used to
+        # be "rewired", then snapped on a monster and did nothing at all.)
+        if trap.get('type') in ('teleport', 'rust', 'polymorph'):
+            del self.dungeon.traps[pos]
+            self.add_message(
+                f"You take the {tname} trap apart. Its magic would only ever work on you.",
+                'success')
+            if chain >= 5:
+                hint = self._random_hint_for_disarm()
+                if hint:
+                    self.add_message(
+                        "As you finish, the trap's geometry reveals something true:", 'success')
+                    self.add_message(f'"{hint}"', 'info')
+                    if hasattr(self, '_recalled_hints'):
+                        self._recalled_hints.append(hint)
+            self._advance_turn()
+            return
+
         # Chain 4+: REWIRE the trap toward monsters.
         trap['rewired'] = True
         trap['safe_for_player'] = True
@@ -4619,7 +4789,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not getattr(self, '_chronicle_first_rewire', False):
             self._chronicle_first_rewire = True
             self._log_chronicle(
-                f"Rewired a {tname} trap to fire on monsters instead. The dungeon's "
+                f"Rewired {self._a_or_an(tname)} trap to fire on monsters instead. The dungeon's "
                 "own teeth turned against it."
             )
 
@@ -4642,7 +4812,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         import random as _trng
         trap_type = trap['type']
         _snd.play('trap')
-        if (pos in self.visible) or monster in self.monsters:
+        if pos in self.visible:
             self.add_message(
                 f"The rewired {trap_type.replace('_', ' ')} trap snaps on {the_name(monster, lower=True)}!",
                 'success')
@@ -4672,10 +4842,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         elif trap_type == 'bear_trap':
             monster.add_effect('immobilized', _trng.randint(2, 4))
         elif trap_type == 'alarm':
-            for m in self.monsters:
-                if m.alive and abs(m.x - pos[0]) <= 10 and abs(m.y - pos[1]) <= 10:
-                    if m.ai_pattern == 'sessile':
-                        m.ai_pattern = 'aggressive'
+            from container_system import alert_monsters_near
+            alert_monsters_near(self.monsters, pos[0], pos[1], 10)
         elif trap_type == 'squeaky_board':
             for m in self.monsters:
                 if m.alive:
@@ -4726,7 +4894,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if _rng.random() < chance:
                         trap['revealed'] = True
                         self.add_message(
-                            f"You spot a {trap['type'].replace('_', ' ')} trap nearby!", 'warning')
+                            f"You spot {self._a_or_an(trap['type'].replace('_', ' '))} trap nearby!", 'warning')
 
     def _do_passive_ambush_detection(self):
         """Passive PER-based detection of hidden ambush monsters within sight."""
@@ -5260,7 +5428,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Mimic springs out on first interaction — surprise attack!
         if container.is_mimic:
             from container_system import _spawn_mimic
-            mimic = _spawn_mimic(container, self.monsters, self.dungeon_level)
+            mimic = _spawn_mimic(container, self.monsters, self.dungeon_level,
+                                     dungeon=self.dungeon, avoid=(self.player.x, self.player.y))
             self.ground_items.remove(container)
             # Surprise attack: 10-20% of player's max HP
             import random as _rng
@@ -6803,6 +6972,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         break
                 if item_id in placed:
                     break
+            if item_id not in placed:
+                spot = self._free_spawn_tile(set())
+                if spot is not None:
+                    self.ground_items.append(copy_at(template, *spot))
+                    placed.add(item_id)
         self._npc_trigger_items_placed = placed
 
     # ------------------------------------------------------------------

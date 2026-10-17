@@ -149,7 +149,7 @@ def test_every_ring_owns_its_effects():
 
 def test_once_a_floor_charges_are_kept_across_a_staircase():
     src = _src('main.py')
-    assert '_held_charges = None if new_level > _was_deepest else self._once_a_floor_state()' in src
+    assert '_held_charges = None if _new_depth else self._once_a_floor_state()' in src
     assert 'self._restore_once_a_floor_state(_held_charges)' in src
     for name in ('_first_hit_used', '_death_save_used', '_tarnhelm_used', '_death_save_used_this_floor',
                  '_seven_league_used_this_floor', '_gold_offering_used_this_floor'):

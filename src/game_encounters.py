@@ -32,6 +32,25 @@ from geom import monster_at_tile
 
 
 class EncountersMixin:
+    def _free_spawn_tile(self, occupied):
+        """A free floor tile the hero can walk to, outside the arrival room:
+        the fallback for every encounter spawner when the rooms it sampled
+        are full. On a maze floor the only other room is often packed with
+        monsters, and the cow, the unicorn, the carrot or an NPC was lost
+        for the run."""
+        import random as _rng
+        from dungeon import FLOOR
+        d = self.dungeon
+        start = d.rooms[0] if d.rooms else None
+        reach = self._reachable_tiles(self.player.x, self.player.y)
+        spots = [t for t in reach
+                 if d.in_bounds(*t) and d.tiles[t[1]][t[0]] == FLOOR
+                 and t not in occupied
+                 and t != (self.player.x, self.player.y)
+                 and not (start is not None and start.x <= t[0] < start.x + start.width
+                          and start.y <= t[1] < start.y + start.height)]
+        return _rng.choice(sorted(spots)) if spots else None
+
     # ------------------------------------------------------------------
     # Secret cow encounter
     # ------------------------------------------------------------------
@@ -75,6 +94,13 @@ class EncountersMixin:
                     self._cow_npc = cow
                     self._cow_spawned = True
                     return
+        spot = self._free_spawn_tile(occupied)
+        if spot is not None:
+            cow = Monster(cow_def, *spot)
+            cow._npc_encounter_tag = '_cow_dialog'
+            self.monsters.append(cow)
+            self._cow_npc = cow
+            self._cow_spawned = True
 
     def _start_cow_encounter(self, cow_monster):
         """Open the cow dialog when player bumps the cow NPC."""
@@ -187,6 +213,11 @@ class EncountersMixin:
                     npc._npc_encounter_tag = enc['tag']
                     self.monsters.append(npc)
                     return
+        spot = self._free_spawn_tile(occupied)
+        if spot is not None:
+            npc = Monster(npc_def, *spot)
+            npc._npc_encounter_tag = enc['tag']
+            self.monsters.append(npc)
 
     def _maybe_spawn_flavor_npc(self, level: int):
         """Spawn a flavor (non-karmic) NPC on this level if one is assigned."""
@@ -232,8 +263,15 @@ class EncountersMixin:
                 if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
                     npc = Monster(npc_def, tx, ty)
                     npc._flavor_encounter_tag = enc['tag']
+                    npc.proper_noun = bool(enc.get('proper_noun'))   # a person's name
                     self.monsters.append(npc)
                     return
+        spot = self._free_spawn_tile(occupied)
+        if spot is not None:
+            npc = Monster(npc_def, *spot)
+            npc._flavor_encounter_tag = enc['tag']
+            npc.proper_noun = bool(enc.get('proper_noun'))
+            self.monsters.append(npc)
 
     # ------------------------------------------------------------------
     # Magic Dungeon Carrot  (guaranteed spawn L1-19, once per run)
@@ -273,6 +311,11 @@ class EncountersMixin:
                     self.ground_items.append(carrot)
                     self._magic_carrot_spawned = True
                     return
+        spot = self._free_spawn_tile(occupied)
+        if spot is not None:
+            carrot.x, carrot.y = spot
+            self.ground_items.append(carrot)
+            self._magic_carrot_spawned = True
 
     # ------------------------------------------------------------------
     # Unicorn encounter  (L21-39, spawns once per run)
@@ -328,6 +371,15 @@ class EncountersMixin:
                     self.monsters.append(npc)
                     self._unicorn_spawned = True
                     return
+        spot = self._free_spawn_tile(occupied)
+        if spot is not None:
+            npc = Monster(npc_def, *spot)
+            npc._is_unicorn = True
+            npc._unicorn_state = 'wary'
+            npc._unicorn_wait = 0
+            npc._unicorn_eat_turns = 0
+            self.monsters.append(npc)
+            self._unicorn_spawned = True
 
     def _handle_unicorn_bump(self, unicorn):
         """Handle player bumping the unicorn at various states."""
@@ -435,8 +487,21 @@ class EncountersMixin:
                 if carrot:
                     m._unicorn_state = 'eating'
                     m._unicorn_eat_turns = 0
-                    # Move unicorn to the carrot
-                    m.x, m.y = carrot.x, carrot.y
+                    # Move unicorn to the carrot, or beside it: a carrot
+                    # dropped at the hero's feet put her on his tile.
+                    m._unicorn_carrot_pos = (carrot.x, carrot.y)
+                    if (carrot.x, carrot.y) != (self.player.x, self.player.y):
+                        m.x, m.y = carrot.x, carrot.y
+                    elif max(abs(m.x - carrot.x), abs(m.y - carrot.y)) > 1:
+                        from geom import all_occupied_tiles
+                        _busy = set(all_occupied_tiles(self.monsters, exclude=m))
+                        _busy.add((self.player.x, self.player.y))
+                        _near = [(carrot.x + ax, carrot.y + ay)
+                                 for ax in (-1, 0, 1) for ay in (-1, 0, 1)
+                                 if (ax, ay) != (0, 0)]
+                        _near = [t for t in _near if self.dungeon.is_walkable(*t) and t not in _busy]
+                        if _near:
+                            m.x, m.y = min(_near, key=lambda t: max(abs(t[0] - m.x), abs(t[1] - m.y)))
                     self.add_message(
                         "The unicorn's ears perk up! She approaches the Magic Dungeon "
                         "Carrot and begins to eat.", 'success')
@@ -445,10 +510,11 @@ class EncountersMixin:
                 m._unicorn_eat_turns += 1
                 if m._unicorn_eat_turns >= 2:
                     # Remove the carrot from ground
+                    _cpos = getattr(m, '_unicorn_carrot_pos', None) or (m.x, m.y)
                     self.ground_items = [
                         gi for gi in self.ground_items
                         if not (getattr(gi, 'id', '') == 'magic_dungeon_carrot'
-                                and gi.x == m.x and gi.y == m.y)]
+                                and (gi.x, gi.y) == tuple(_cpos))]
                     m._unicorn_state = 'trusting'
                     self.add_message(
                         "The unicorn finishes the carrot and looks at you with gentle "
@@ -500,7 +566,7 @@ class EncountersMixin:
 
         # Chain 1+: Regenerating status
         self.player.add_effect('regenerating', 30)
-        self.add_message("The unicorn's horn glows — warm healing energy fills you! (regenerating 30 turns)", 'success')
+        self.add_message("The unicorn's horn glows — warm healing energy fills you! (Regenerating, 30 turns)", 'success')
 
         if chain >= 2:
             # Full HP/SP/MP restore
@@ -986,7 +1052,12 @@ class EncountersMixin:
                 else:
                     self._encountered_npcs.add(enc['tag'])
                 # Log to chronicle
-                name = enc.get('name', 'someone')
+                # With its article: "Met the Lost Girl.", not "Met Lost
+                # Girl." (and "Met the Penitent.", not "Met The Penitent.")
+                from monster import the_name as _the_name
+                _who = npc if npc is not None else type('N', (), {'name': enc.get('name', 'someone')})()
+                name = _the_name(_who, lower=True)
+                Name = _the_name(_who)
                 import random as _chr_rng
                 # An option may carry its own chronicle line; otherwise a
                 # generic one is drawn (which could not tell "gave a child
@@ -1000,16 +1071,16 @@ class EncountersMixin:
                         "Met {name}. Even down here, people find a way.",
                         "Crossed paths with {name}. The dungeon is stranger than I thought.",
                     ]
-                    self._log_chronicle(_chr_rng.choice(_FLAVOR_VERBS).format(name=name))
+                    self._log_chronicle(_chr_rng.choice(_FLAVOR_VERBS).format(name=name, Name=Name))
                 else:
                     _NPC_VERBS = [
                         "Met {name}. Had to make a hard choice.",
                         "Encountered {name}. Did what I thought was right.",
                         "Came across {name}. This dungeon tests more than combat skill.",
                         "Found {name}. Every choice down here has weight.",
-                        "{name} needed something from me. I gave my answer.",
+                        "{Name} needed something from me. I gave my answer.",
                     ]
-                    self._log_chronicle(_chr_rng.choice(_NPC_VERBS).format(name=name))
+                    self._log_chronicle(_chr_rng.choice(_NPC_VERBS).format(name=name, Name=Name))
 
         self._npc_encounter_active = None
         self._npc_encounter_monster = None

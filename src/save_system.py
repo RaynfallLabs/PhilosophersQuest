@@ -106,6 +106,8 @@ def save_game(game) -> bool:
             '_flavor_encounter_levels': getattr(game, '_flavor_encounter_levels', {}),
             '_encountered_flavor_npcs': getattr(game, '_encountered_flavor_npcs', set()),
             '_abaddon_empowered': getattr(game, '_abaddon_empowered', False),
+            '_abaddon_empowered_applied': getattr(game, '_abaddon_empowered_applied', False),
+            '_flux_given': getattr(game, '_flux_given', False),
             '_locusts_strengthened': getattr(game, '_locusts_strengthened', False),
             '_judgment_resolved': getattr(game, '_judgment_resolved', False),
             '_npc_triggered_items': getattr(game, '_npc_triggered_items', set()),

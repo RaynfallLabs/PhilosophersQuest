@@ -194,7 +194,7 @@ MYSTERIES = {
           'reward_text': "You set your finger on the chart and the island's eye winks. Brendan of "
                          'Clonfert said Mass on that island one Easter, until it swam away. It was a '
                          'whale. You will look twice at solid ground from now on, and there are '
-                         'coins under the thwart.',
+                         'coins under the thwart. (Perception +1)',
           'fail_text': 'The chart rolls itself up. Wherever you are, it is not where you pointed.',
           'invert_result': False,
           },
@@ -218,7 +218,7 @@ MYSTERIES = {
           'reward_text': 'The sentence holds. The lion opens one eye, approves, and goes back to '
                          'sleep. Jerome spent half a lifetime in Bethlehem turning Hebrew and Greek '
                          'into plain Latin, and would not let a hard word go by. Some of his '
-                         'stubbornness stays with you.',
+                         'stubbornness stays with you. (Wisdom +2, Intelligence +1)',
           'fail_text': 'The lion sighs. The page is exactly as unfinished as you found it.',
           'invert_result': False,
           },

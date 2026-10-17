@@ -801,6 +801,7 @@
   {
     "tag": "flv_dwarven_smith_marta",
     "name": "Marta Irontemper",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       180,
@@ -878,6 +879,7 @@
   {
     "tag": "flv_ink_stained_scholar",
     "name": "Scholar Evaine",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       100,
@@ -962,6 +964,7 @@
   {
     "tag": "flv_traveling_alchemist",
     "name": "Alchemist Perrin",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       140,
@@ -1054,6 +1057,7 @@
   {
     "tag": "flv_goblin_mapmaker",
     "name": "Grix the Mapmaker",
+    "proper_noun": true,
     "symbol": "g",
     "color": [
       120,
@@ -1098,6 +1102,7 @@
   {
     "tag": "flv_battle_weary_veteran",
     "name": "Calla Vane",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       170,
@@ -1236,6 +1241,7 @@
   {
     "tag": "flv_mnemonic_monk",
     "name": "Brother Osias",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       180,
@@ -1372,6 +1378,7 @@
   {
     "tag": "flv_plague_doctor",
     "name": "Doctor Finch",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       80,
@@ -1461,6 +1468,7 @@
   {
     "tag": "flv_lost_caravan_guard",
     "name": "Tarek the Guard",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       160,
@@ -1504,6 +1512,7 @@
   {
     "tag": "flv_rust_collector",
     "name": "Old Veska",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       140,
@@ -1589,6 +1598,7 @@
   {
     "tag": "flv_food_vendor_dungeon",
     "name": "Bramble the Vendor",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       200,
@@ -2618,6 +2628,7 @@
   {
     "tag": "flv_ghost_soldier_post",
     "name": "Ghost of Sergeant Vael",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       160,
@@ -2658,6 +2669,7 @@
   {
     "tag": "flv_discount_demigod_merchant",
     "name": "Hermes (Probably)",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       220,
@@ -2750,6 +2762,7 @@
   {
     "tag": "flv_abyss_cartographer",
     "name": "Cartographer Issek",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       160,
@@ -2927,6 +2940,7 @@
   {
     "tag": "flv_abyssal_alchemist",
     "name": "Alchemist Mourne",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       140,
@@ -3022,6 +3036,7 @@
   {
     "tag": "flv_mad_knight_riddle",
     "name": "Sir Lorvaine the Certain",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       180,
@@ -3108,6 +3123,7 @@
   {
     "tag": "flv_abyssal_wine_merchant",
     "name": "Pellok the Very Lost",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       160,
@@ -3371,6 +3387,7 @@
   {
     "tag": "flv_final_merchant_ortolan",
     "name": "Ortolan the Last Merchant",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       220,
@@ -4550,6 +4567,7 @@
     "tag": "flv_cuthbert_chapel",
     "sprite_id": "npc_traveler",
     "name": "Brother Sacristan",
+    "proper_noun": true,
     "symbol": "@",
     "color": [
       160,
