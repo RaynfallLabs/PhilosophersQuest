@@ -576,7 +576,11 @@ def test_c15_target_status_row_shows_plus_n_instead_of_a_cut_word(monkeypatch):
     weapon = SimpleNamespace(name='Iron Longsword', base_damage=10, enchant_bonus=0,
                              damage_types=['slash'], chain_exponent=1.15,
                              chain_multipliers=[1.0])
-    g.player = SimpleNamespace(weapon=weapon, ranged_weapon=weapon, hp=20, max_hp=30)
+    # A real hero: the strike preview now runs the shared damage calculation
+    # (ruling 13), which asks the player about strength and status effects.
+    from player import Player
+    g.player = Player()
+    g.player.hp, g.player.max_hp = 20, 30
     from fantasy_ui import get_font
     rect = pygame.Rect(110, 400, 1060, g._combat_hud_height())
     slot_w = g._combat_hud_slots(rect.x, rect.y, rect.w)['target']['sub2'].w
@@ -591,9 +595,11 @@ def test_c15_target_status_row_shows_plus_n_instead_of_a_cut_word(monkeypatch):
     effects = next(pool[:n] for n in range(1, len(pool) + 1)
                    if get_font('body', 16).size(row(pool[:n]))[0] > slot_w)
     assert get_font('body', 14).size(row(effects))[0] <= slot_w
-    g.combat_target = SimpleNamespace(
-        name='Giant Rat', hp=10, max_hp=20, resistances=[], weaknesses=[], tags=[],
-        status_effects={e: 3 for e in effects})
+    # A real Giant Rat: the shared damage preview reads the target too.
+    from monster import Monster
+    g.combat_target = Monster(_mdef('giant_rat'), 0, 0)
+    g.combat_target.hp, g.combat_target.max_hp = 10, 20
+    g.combat_target.status_effects = {e: 3 for e in effects}
     g.quiz_engine = SimpleNamespace(chain=3)
     seen = []
     real = type(g)._fit_line
