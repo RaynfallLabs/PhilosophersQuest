@@ -1337,7 +1337,6 @@ _CONTENT_DOMAINS = frozenset((
     'match.com', 'change.org', 'toad.com', 'mises.org', 'bitcointalk.org',
     'freeross.org', 'metzdowd.com', 'saifhouse.com', 'bitcoin.org',
     'opensecrets.org', 'federalreserve.gov', 'coinop.org',
-    'wtfhappenedin1971.com',
 ))
 _WIKI = r"(?:Wikipedia|Grokipedia)"
 

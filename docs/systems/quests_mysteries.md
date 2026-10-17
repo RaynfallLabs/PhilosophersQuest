@@ -395,7 +395,7 @@ ancient eyes." `philosophy T3 escalator_threshold 2/6`. No key item.
 Reward: WIS +2, INT +1.
 
 **The Dwarven Forge** (`mjolnir`) — "A dwarven forge, still hot."
-`math T3 escalator_threshold 2/6`. Key: Mjolnir (unfinished), 8.0 lb.
+`math T3 escalator_threshold 2/6`, untimed like every mystery (`_begin_mystery_challenge` passes `timed=False`; bug bash 4 call 5). Key: Mjolnir (unfinished), 8.0 lb.
 Reward on success: `special: 'forge_mjolnir'` → a brand-new Mjolnir
 weapon (3d6, +4 enchant, baseDamage 18, blunt, chainMultipliers
 [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]) is created and placed in inventory,

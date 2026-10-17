@@ -547,6 +547,9 @@ class QuizModel:
             timer = round(base_seconds * timer_modifier) + extra_seconds
         else:
             timer = round((10 + wisdom) * timer_modifier) + extra_seconds
+        # quiz_engine.MIN_TIMED_SECONDS: the 5 s floor, after the status
+        # multiplier (bug bash 4, call 3).
+        timer = max(5, timer)
         timer *= self.knobs['timer']
         self.n_attacks += 1
         if self.knobs['mastery'] == 2 and tier in self.mastered:

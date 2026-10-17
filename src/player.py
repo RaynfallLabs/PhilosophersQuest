@@ -1000,7 +1000,10 @@ class Player:
         (``QuizEngine.start_quiz`` forces ``timed=False`` for every other
         subject). For ``'math'`` the formula is a flat WIS seconds:
         WIS 10 -> 10s, WIS 20 -> 20s. Floor of 5s prevents an
-        unwinnable combat under drain-WIS curses.
+        unwinnable combat under drain-WIS curses; ``QuizEngine.start_quiz``
+        applies the same 5 s floor again AFTER the status multiplier
+        (``get_quiz_timer_modifier``), so confusion or blindness can never
+        take the clock below it.
 
         Callers for non-math subjects still request this and pass the
         value to ``start_quiz(base_seconds=...)``; the engine discards
@@ -1147,7 +1150,9 @@ class Player:
 
     def get_quiz_timer_modifier(self) -> float:
         """Multiplier applied to quiz timer based on active effects.
-        Floor of 0.40x prevents stacked debuffs from making quizzes unsolvable."""
+        Floor of 0.40x prevents stacked debuffs from making quizzes
+        unsolvable, and the engine never lets the result fall below 5 s
+        (``quiz_engine.MIN_TIMED_SECONDS``, applied after this multiplier)."""
         mod = 1.0
         if self.has_effect('confused'):
             mod *= 0.55

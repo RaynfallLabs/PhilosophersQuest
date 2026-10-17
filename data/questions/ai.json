@@ -5131,7 +5131,7 @@
       "It deletes all the closed models from every server worldwide",
       "It guarantees that all AI uses are safe and ethical for everyone"
     ],
-    "context": "Open-weight models — Llama (Meta), Mistral, DeepSeek, Falcon, Qwen — let anyone with hardware run powerful AI locally. That breaks the monopoly that closed-API companies would otherwise have. You can use the technology without sending every query to OpenAI or Google. The trade-off is that open weights also lower the barrier for misuse. The bank's stance: open source is a major countervailing force to concentration, on balance worth defending.",
+    "context": "Open-weight models — Llama (Meta), Mistral, DeepSeek, Falcon, Qwen — let anyone with hardware run powerful AI locally. That breaks the monopoly that closed-API companies would otherwise have. You can use the technology without sending every query to OpenAI or Google. The trade-off is that open weights also lower the barrier for misuse. On balance, open source is a major countervailing force to concentration, worth defending.",
     "topic": "open-weight-vs-closed-api"
   },
   {
@@ -5456,7 +5456,7 @@
       "Meta hopes to be sued by the largest open-source projects on earth",
       "Meta gives away its models to drive its only product, which is bicycles"
     ],
-    "context": "Meta's open-weight strategy with the Llama family has several rationales: wider adoption means more people building on Meta's stack; outside researchers improve the models for free; an open ecosystem checks the market power of closed competitors like OpenAI. Mark Zuckerberg has framed it as similar to Meta's earlier open-source contributions (React, PyTorch). The bank's stance: open weights are a major counterweight to concentration, and worth defending.",
+    "context": "Meta's open-weight strategy with the Llama family has several rationales: wider adoption means more people building on Meta's stack; outside researchers improve the models for free; an open ecosystem checks the market power of closed competitors like OpenAI. Mark Zuckerberg has framed it as similar to Meta's earlier open-source contributions (React, PyTorch). Taken together, open weights are a major counterweight to concentration, and worth defending.",
     "topic": "llama-and-meta-open-weight"
   },
   {
@@ -6093,7 +6093,7 @@
       "Generative models are not allowed to be used on government computers in any country at any level.",
       "Generative models cannot misclassify medical images, so their safety story is much simpler overall."
     ],
-    "context": "A classifier that flags cancer in X-rays might make wrong calls. That's bad, and it's a real safety problem — but the failure mode is well-understood. Generative models open a new failure mode: producing content that didn't exist, in volumes humans can't review, that other people may believe. Voice clones, deepfake video, fake news articles, fake legal citations. The defensive recognition skills the bank teaches — verify, watch for tells, demand a safe word — are responses to this new failure mode.",
+    "context": "A classifier that flags cancer in X-rays might make wrong calls. That's bad, and it's a real safety problem — but the failure mode is well-understood. Generative models open a new failure mode: producing content that didn't exist, in volumes humans can't review, that other people may believe. Voice clones, deepfake video, fake news articles, fake legal citations. The defensive recognition skills worth learning — verify, watch for tells, demand a safe word — are responses to this new failure mode.",
     "topic": "deepfake-video-audio"
   },
   {
@@ -6314,7 +6314,7 @@
       "Words used in AI have official ISO definitions that are radically different from ordinary usage in any context.",
       "Words used in AI must be approved by the United Nations before each new model is allowed to be released."
     ],
-    "context": "'The model wants to be helpful' is convenient shorthand but it imports baggage: wanting implies a wanter, which implies an inner perspective. Anthropomorphic vocabulary is fine as a shortcut — but it shapes how the public thinks about what AI is. Critics push for terms that don't smuggle in mental states: 'the model produces outputs that...' instead of 'the model wants to....' The bank avoids attributing mental states to AI for exactly this reason.",
+    "context": "'The model wants to be helpful' is convenient shorthand but it imports baggage: wanting implies a wanter, which implies an inner perspective. Anthropomorphic vocabulary is fine as a shortcut — but it shapes how the public thinks about what AI is. Critics push for terms that don't smuggle in mental states: 'the model produces outputs that...' instead of 'the model wants to....' These questions avoid attributing mental states to AI for exactly this reason.",
     "topic": "ai-consciousness-debate"
   },
   {
@@ -7211,7 +7211,7 @@
       "Safe Superintelligence Inc. (SSI), which he co-founded with Ilya Sutskever in spring 2024.",
       "Hugging Face, where he serves as the lead engineer of the open-source model-hosting platform."
     ],
-    "context": "Dario Amodei left OpenAI in 2021 along with several other senior researchers — including his sister Daniela Amodei — to found Anthropic. The stated motivation was a different emphasis on AI safety research as a central concern. Anthropic produces the Claude family of language models, which compete with OpenAI's GPT line and Google's Gemini at the frontier. As of the bank's training horizon, Anthropic is one of the small handful of labs producing leading-edge language models.",
+    "context": "Dario Amodei left OpenAI in 2021 along with several other senior researchers — including his sister Daniela Amodei — to found Anthropic. The stated motivation was a different emphasis on AI safety research as a central concern. Anthropic produces the Claude family of language models, which compete with OpenAI's GPT line and Google's Gemini at the frontier. As of this writing, Anthropic is one of the small handful of labs producing leading-edge language models.",
     "topic": "claude-and-anthropic"
   },
   {
@@ -7224,7 +7224,7 @@
       "Anthropic refuses to take any commercial customers and operates exclusively as a charity foundation.",
       "Anthropic requires every Claude user to attend a one-week safety training at the company headquarters."
     ],
-    "context": "Anthropic published 'Constitutional AI' in late 2022 — an approach where the model is given a written 'constitution' of principles, and a process where the model critiques and revises its own outputs against those principles. Constitutional AI is part of how Claude is trained. The approach is one institutional answer to 'how do we make a useful chatbot that behaves well' — alongside OpenAI's RLHF approach and other labs' methods. The bank doesn't take a position on which approach is right; the recognition skill is knowing that different labs make different choices.",
+    "context": "Anthropic published 'Constitutional AI' in late 2022 — an approach where the model is given a written 'constitution' of principles, and a process where the model critiques and revises its own outputs against those principles. Constitutional AI is part of how Claude is trained. The approach is one institutional answer to 'how do we make a useful chatbot that behaves well' — alongside OpenAI's RLHF approach and other labs' methods. This question doesn't take a position on which approach is right; the recognition skill is knowing that different labs make different choices.",
     "topic": "claude-and-anthropic"
   },
   {
@@ -7835,7 +7835,7 @@
       "A panel of professional curators picks the best content each day for everyone to see",
       "The system shows you exactly what the algorithm's developers personally enjoyed last week"
     ],
-    "context": "Collaborative filtering: find users whose past behavior is similar to yours, then surface what they liked that you haven't seen. Combined with content features (what's IN a video, song, show), the model predicts your engagement. The strength: it works without anyone explicitly telling the system what's good. The weakness: it optimizes for what holds your attention, not for what's good for you — which is the recommendation-system problem the bank flags repeatedly.",
+    "context": "Collaborative filtering: find users whose past behavior is similar to yours, then surface what they liked that you haven't seen. Combined with content features (what's IN a video, song, show), the model predicts your engagement. The strength: it works without anyone explicitly telling the system what's good. The weakness: it optimizes for what holds your attention, not for what's good for you — which is the recommendation-system problem that comes up again and again.",
     "topic": "recommendation-systems"
   },
   {
@@ -9174,7 +9174,7 @@
       "Alignment as a hardware feature — the model's politics are physically built into the silicon chips that run it.",
       "Alignment as an antivirus scan — the model checks every answer against a known list of computer viruses."
     ],
-    "context": "Researchers including David Rozado have measured systematic political leanings in major chatbots — typically toward views shared by the highly-educated coastal-US population that mostly trains them. This isn't conspiracy; it's a predictable consequence of who writes the rules and who labels the data. The recognition skill: when you notice an AI handle similar questions asymmetrically across topics, you're seeing alignment as a value vector. The bank treats this as a fact to be named, not a side to be taken in a partisan argument.",
+    "context": "Researchers including David Rozado have measured systematic political leanings in major chatbots — typically toward views shared by the highly-educated coastal-US population that mostly trains them. This isn't conspiracy; it's a predictable consequence of who writes the rules and who labels the data. The recognition skill: when you notice an AI handle similar questions asymmetrically across topics, you're seeing alignment as a value vector. This is a fact to be named, not a side to be taken in a partisan argument.",
     "topic": "gemini-image-generator"
   },
   {
@@ -10227,7 +10227,7 @@
       "Capability is the same thing as consciousness, so any capable system must also be conscious by definition.",
       "Capability is fake and only consciousness is real, so chatbots that work are actually all conscious people."
     ],
-    "context": "The bank holds capability and consciousness as separate questions. A chess engine 'destroys' a grandmaster without 'wanting' to win. An LLM can write a moving essay without feeling moved. AlphaFold solves problems without having solved anything for itself. Capability is performance on tasks, observable and measurable. Consciousness, if it exists in machines at all, would be the subjective experience of being one. The two are different questions. Conflating them (as Lemoine did with LaMDA in 2022) is a category error. The bank's stance: take capability seriously as a measurable thing, and stay skeptical of claims that capable systems must also be conscious.",
+    "context": "Capability and consciousness are separate questions. A chess engine 'destroys' a grandmaster without 'wanting' to win. An LLM can write a moving essay without feeling moved. AlphaFold solves problems without having solved anything for itself. Capability is performance on tasks, observable and measurable. Consciousness, if it exists in machines at all, would be the subjective experience of being one. The two are different questions. Conflating them (as Lemoine did with LaMDA in 2022) is a category error. The sensible stance: take capability seriously as a measurable thing, and stay skeptical of claims that capable systems must also be conscious.",
     "topic": "ai-consciousness-debate"
   },
   {
@@ -14933,7 +14933,7 @@
       "Export controls have no effect — chip flows have continued unchanged since 2022",
       "Export controls eliminated all Chinese AI — DeepSeek and similar Chinese labs ceased operations by 2023"
     ],
-    "context": "Chip-export controls are a real national-security policy with significant geopolitical effects. They also have a power-distribution effect that's often underdiscussed: by restricting who can buy the most advanced chips, they concentrate frontier-AI capability in a small number of cloud providers in allied countries. The recognition skill: national-security justifications can be entirely legitimate AND produce a corporate-concentration side-effect. Both can be true; the bank's job is to help kids see both.",
+    "context": "Chip-export controls are a real national-security policy with significant geopolitical effects. They also have a power-distribution effect that's often underdiscussed: by restricting who can buy the most advanced chips, they concentrate frontier-AI capability in a small number of cloud providers in allied countries. The recognition skill: national-security justifications can be entirely legitimate AND produce a corporate-concentration side-effect. Both can be true; the skill is to see both.",
     "topic": "ai-chips-arms-race"
   },
   {
@@ -15024,7 +15024,7 @@
       "Voluntary peer pressure only — no enforcement mechanism beyond friendly conversation between researchers at academic conferences",
       "Mandatory journalist embeds — assigned reporters at every data center with no power to halt operations and no other enforcement consequences anywhere"
     ],
-    "context": "Yudkowsky's MIRI (Machine Intelligence Research Institute) has argued for decades that misaligned superintelligence is the dominant existential risk of this century. The 2023 essay is the most explicit version of the policy implication: stop training, by force if necessary, including airstrikes on data centers. This is a real philosophical position with real proponents and a long history. The bank's stance: name positions honestly, engage their arguments seriously, and let the reader weigh the case. A position can be sincere AND wrong AND influential AND worth knowing about — all at once.",
+    "context": "Yudkowsky's MIRI (Machine Intelligence Research Institute) has argued for decades that misaligned superintelligence is the dominant existential risk of this century. The 2023 essay is the most explicit version of the policy implication: stop training, by force if necessary, including airstrikes on data centers. This is a real philosophical position with real proponents and a long history. The fair approach: name positions honestly, engage their arguments seriously, and let the reader weigh the case. A position can be sincere AND wrong AND influential AND worth knowing about — all at once.",
     "topic": "ai-doomerism-and-pause-letter"
   },
   {

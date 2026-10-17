@@ -23,8 +23,11 @@ of every rung in the ladder.
   2026-10-03). The quiz_engine still sets `pending_context_auto_open` on a
   fresh (subject, topic), but `Game.update()` reads the flag only to clear
   it — the auto-open transition has been removed.
-- Blurb is **math-safe**: the math quiz timer pauses while the modal is open;
-  all other subjects are already untimed.
+- Blurb is **math-safe, once per question**: a timed (math) clock stops
+  while the modal is open, but only on the first open for each question.
+  A second open on the same question lets the clock run, and the card says
+  so plainly (bug bash 4, call 1: "once per question is fair"). Untimed
+  quizzes are unaffected.
 - Blurb is **discoverable but not loud**: a small `[C] context` hint appears on
   the quiz panel ONLY when a blurb exists for the current question. No hint
   means "nothing to show" rather than teasing a dead key.
@@ -108,7 +111,9 @@ STATE_QUIZ --[C]-------> STATE_QUIZ_CONTEXT --[C | ESC | SPACE | RET]-> STATE_QU
 
 1. **Entry (manual).** In STATE_QUIZ, `K_c` is intercepted by
    `_quiz_input`. If a blurb exists for the current `(subject, topic)`:
-   - `quiz_engine.pause_timer()` freezes the math countdown.
+   - `quiz_engine.pause_timer()` freezes a timed countdown if this
+     question's one pause is unspent (returns False and leaves the clock
+     running otherwise).
    - `quiz_engine.mark_context_seen(...)` records the topic so the one-shot
      auto-open never re-fires for the rest of the session.
    - `pending_context_auto_open` is cleared (so if a manual press and a
@@ -144,7 +149,9 @@ STATE_QUIZ --[C]-------> STATE_QUIZ_CONTEXT --[C | ESC | SPACE | RET]-> STATE_QU
    the top-level `K_ESCAPE` handler also catches STATE_QUIZ_CONTEXT. All
    paths call `quiz_engine.resume_timer()` and set state back to
    `STATE_QUIZ`. The quiz question + choices are untouched; the player
-   returns to the exact same question with the clock unpaused.
+   returns to the exact same question with the clock unpaused. While the
+   card is open with the clock running, `Game.update()` keeps ticking the
+   quiz; if time runs out it closes the card so the result shows.
 
 ### The hint on the quiz panel
 
@@ -167,7 +174,8 @@ Only math is timed (combat chain mode). The system treats pause/resume as a
 boolean flag on the engine:
 
 ```python
-qe.pause_timer()        # idempotent; also safe on untimed quizzes
+qe.pause_timer()        # once per question when timed; True if the clock is stopped
+qe.context_pause_available()  # would the next open stop the clock?
 qe.resume_timer()       # idempotent
 qe._timer_paused        # bool; update() skips time_remaining decrement when True
 qe._timer_paused_at     # informational snapshot of time_remaining at pause
@@ -185,7 +193,9 @@ not add elapsed-while-paused back on; it simply freezes the clock. (The
 `_timer_paused_at` snapshot is kept for tests / debugging; it is not
 consulted by any gameplay code.)
 
+Each new question clears `_context_pause_spent`, earning a fresh pause.
 `start_quiz` clears `_timer_paused` + `_timer_paused_at` +
+`_context_pause_spent` +
 `pending_context_auto_open`, so a fresh quiz always starts un-paused and
 with no stale auto-open from the previous session.
 

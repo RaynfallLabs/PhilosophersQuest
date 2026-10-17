@@ -311,6 +311,11 @@ class DivineMixin:
             'timer_modifier': self.player.get_quiz_timer_modifier(),
             'extra_seconds':  self.player.get_quiz_extra_seconds(ch['subject']),
             'base_seconds':   self.player.get_quiz_timer(ch['subject']),
+            # Every mystery is untimed, the maths one at Brokkr's Anvil
+            # included (call 5, bug bash 4). Only a combat attack runs on
+            # the clock; without this the engine's default timed the
+            # Anvil's maths quiz like a fight.
+            'timed':          False,
         }
         if 'total' in ch:
             quiz_kwargs['total_qs'] = ch['total']

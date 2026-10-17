@@ -44,7 +44,7 @@ from items import Weapon, Armor, Shield, Corpse, Ingredient, Artifact, Container
 from level_manager import LevelManager
 from player import Player
 import sound_system as _snd
-from quiz_engine import QuizEngine
+from quiz_engine import QuizEngine, QuizState
 from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile
@@ -54,7 +54,7 @@ from game_helpers import (
     fix_name_case, a_or_an,
 )
 from game_states import (
-    STATE_PLAYER, STATE_QUIZ, STATE_EXIT_QUEST, STATE_ABANDON_QUEST,
+    STATE_PLAYER, STATE_QUIZ, STATE_QUIZ_CONTEXT, STATE_EXIT_QUEST, STATE_ABANDON_QUEST,
     STATE_VICTORY, STATE_DEAD,
     STATE_LORE,
     STATE_ENCYCLOPEDIA,
@@ -7202,12 +7202,21 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # ended (quiz, quantity prompt, lore page): back to that screen.
         if getattr(self, '_item_screen_return', None):
             self._item_screen_resume()
-        if self.state == STATE_QUIZ:
-            if hasattr(self, '_necro_qs') and self._necro_qs is not None:
+        if self.state in (STATE_QUIZ, STATE_QUIZ_CONTEXT):
+            if (self.state == STATE_QUIZ and hasattr(self, '_necro_qs')
+                    and self._necro_qs is not None):
                 self._necro_update(quiz_dt)
             else:
                 _left_before = getattr(self.quiz_engine, 'time_remaining', 0) or 0
+                # With the context card open the clock only moves when this
+                # question's one pause is already spent (call 1, bug bash 4).
                 self.quiz_engine.update(quiz_dt)
+                if (self.state == STATE_QUIZ_CONTEXT
+                        and self.quiz_engine.state != QuizState.ASKING):
+                    # Time ran out while reading: close the card so the
+                    # result shows.
+                    self.quiz_engine.resume_timer()
+                    self.state = STATE_QUIZ
                 # The last three seconds of the clock tick; running out sounds.
                 try:
                     _qe = self.quiz_engine
