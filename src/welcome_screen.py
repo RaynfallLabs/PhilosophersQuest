@@ -1182,9 +1182,24 @@ class WelcomeScreen:
             elif has_save:
                 line = ("Saved journey found.", FP.SUCCESS_TEXT)
             if line:
-                ls = self.font_sm.render(fit_text(line[0], self.font_sm, self.W - S(40)),
-                                         True, line[1])
-                self.screen.blit(ls, (cx - ls.get_width() // 2, status_y))
+                # Wrap rather than cut: the set-aside notice names the file it
+                # kept, and an ellipsis hid that name on compact windows. The
+                # last line sits on the status row; earlier lines stack above.
+                words, rows, cur = line[0].split(), [], ''
+                for w in words:
+                    trial = f"{cur} {w}".strip()
+                    if cur and self.font_sm.size(trial)[0] > self.W - S(40):
+                        rows.append(cur)
+                        cur = w
+                    else:
+                        cur = trial
+                rows.append(cur)
+                lh = self.font_sm.get_linesize()
+                for i, row in enumerate(rows):
+                    ls = self.font_sm.render(fit_text(row, self.font_sm, self.W - S(40)),
+                                             True, line[1])
+                    self.screen.blit(ls, (cx - ls.get_width() // 2,
+                                          status_y - (len(rows) - 1 - i) * lh))
             if confirm:
                 hints = "Y: erase the save   N / Esc: keep it"
             elif has_save and flash <= 0.0:
