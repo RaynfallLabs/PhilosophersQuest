@@ -29028,5 +29028,113 @@
     "is_mini_boss": true,
     "omen": "The corridors here are ploughed up as if by a harrow, stone and all.",
     "multi_attack_count": 2
+  },
+  "deadite": {
+    "name": "deadite",
+    "symbol": "z",
+    "color": [
+      160,
+      160,
+      210
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "45d8+55",
+    "speed": 12,
+    "thac0": 7,
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "2d6+4",
+        "type": "slash"
+      },
+      {
+        "name": "Bite",
+        "damage": "1d8+4",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead",
+      "demon",
+      "humanoid"
+    ],
+    "min_level": 21,
+    "peak_floor": 25,
+    "spread": 4,
+    "peak_weight": 0.0,
+    "frequency": 0,
+    "quest_only": true,
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    },
+    "lore": "In Sam Raimi's Evil Dead films, words read aloud from the Book of the Dead wake a Kandarian demon in the woods, and it climbs into whoever is nearest, living or dead. The possessed are called Deadites. They wear a friend's face and beg for help, then laugh and lunge with a strength and speed no body should have. Ash learned the hard way that nothing short of taking one apart will stop it. This one waited in the corridor for someone kind."
+  },
+  "risen_deadite": {
+    "name": "risen deadite",
+    "symbol": "z",
+    "color": [
+      140,
+      150,
+      170
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "14d8+20",
+    "speed": 8,
+    "thac0": 11,
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "1d6+3",
+        "type": "slash"
+      },
+      {
+        "name": "Bite",
+        "damage": "1d4+2",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy",
+      "blunt"
+    ],
+    "tags": [
+      "undead",
+      "demon"
+    ],
+    "min_level": 16,
+    "peak_floor": 26,
+    "spread": 10,
+    "peak_weight": 0.0,
+    "frequency": 0,
+    "quest_only": true,
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    },
+    "lore": "In Army of Darkness, Ash is told to say three words before he lifts the Necronomicon. He mumbles the last one, and the graveyard answers: the old dead claw their way up out of the earth and march as an army. These are what a botched reading raises here. They have lain too long to be quick or strong, and their bones break like dry sticks, but they come up all at once."
   }
 }

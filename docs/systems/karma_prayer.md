@@ -241,7 +241,9 @@ inverted." v2.18 fix:
 
 - Option 1 "Kneel down and try to help her" — karma **0** (was +1).
   Triggers the Deadite ambush (10% HP + spawns hostile). Naive-help
-  no longer rewarded.
+  no longer rewarded. The Deadite is the `deadite` entry in
+  `data/monsters.json` (fixed numbers from its lore, a floor-25 fighter;
+  bug bash 4 removed the floor-number formula it was built from).
 - Option 2 "Walk away" — karma 0 unchanged.
 - Option 3 "'It's a trick. Get an ax.'" — karma **+1**, cost: none,
   **reward: none** (gold stripped, was 30-60). The player gets the

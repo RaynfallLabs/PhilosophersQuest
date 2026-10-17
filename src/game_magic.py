@@ -62,6 +62,14 @@ SUMMON_GUARDIAN_LEVEL = 45    # Summon Guardian (a tier-3 spell)
 GATE_ALLY_LEVEL = 85          # Gate (tier 5)
 DEADITE_LEVEL = 30            # each thrall of the Army of Darkness
 
+
+def _monster_defn(kind: str) -> dict:
+    """A monster's definition from data/monsters.json, with its id."""
+    import json
+    from paths import data_path
+    with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+        return {**json.load(f)[kind], 'id': kind}
+
 # Least a healing wand, spell or scroll restores, as a share of max HP (the
 # written dice still apply when they are more). By spell tier / scroll tier.
 WAND_HEAL_SHARE = 0.15
@@ -3920,7 +3928,9 @@ class MagicMixin:
         px, py = self.player.x, self.player.y
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        lvl = max(1, self.dungeon_level)
+        # The risen dead are real numbers in monsters.json (LORE, NOT FLOOR:
+        # they used to be built from the floor number here).
+        defn = _monster_defn('risen_deadite')
         spawned = 0
         for _ in range(count):
             for _attempt in range(20):
@@ -3933,23 +3943,6 @@ class MagicMixin:
                     continue
                 if self.dungeon.tiles[ny][nx] not in (1, 4):  # FLOOR or DOOR
                     continue
-                defn = {
-                    'id': 'deadite',
-                    'name': 'Deadite',
-                    'symbol': 'z',
-                    'color': [160, 160, 210],
-                    'ai_pattern': 'aggressive',
-                    'hp': str(10 + lvl * 2),
-                    'min_level': lvl,
-                    'thac0': max(0, 18 - lvl // 5),
-                    'attacks': [
-                        {'name': 'claw', 'damage': f'1d4+{lvl // 10}', 'type': 'slash'},
-                        {'name': 'bite', 'damage': f'1d3+{lvl // 15}', 'type': 'pierce'},
-                    ],
-                    'resistances': ['drain'],
-                    'weaknesses': ['fire', 'holy'],
-                    'lore': 'A shambling corpse raised by the Necronomicon. It knows only hunger.',
-                }
                 m = Monster(defn, nx, ny)
                 self.monsters.append(m)
                 occupied.add((nx, ny))
@@ -3966,25 +3959,10 @@ class MagicMixin:
         if npc_m is None:
             return
         nx, ny = npc_m.x, npc_m.y
-        lvl = max(1, self.dungeon_level)
-        defn = {
-            'id': 'deadite',
-            'name': 'Deadite',
-            'symbol': 'z',
-            'color': [160, 160, 210],
-            'ai_pattern': 'aggressive',
-            'hp': str(20 + lvl * 3),
-            'min_level': lvl,
-            'thac0': max(0, 16 - lvl // 4),
-            'attacks': [
-                {'name': 'claw', 'damage': f'1d6+{lvl // 8}', 'type': 'slash'},
-                {'name': 'bite', 'damage': f'1d4+{lvl // 10}', 'type': 'pierce'},
-            ],
-            'resistances': ['drain'],
-            'weaknesses': ['fire', 'holy'],
-            'lore': 'A shambling corpse raised by dark forces. It knows only hunger.',
-        }
-        m = Monster(defn, nx, ny)
+        # Fixed numbers from its lore in monsters.json (LORE, NOT FLOOR). It
+        # was built here from the floor number: 83-107 health on floors
+        # 21-29 against a floor median of 202-432 (bug bash 4, E6).
+        m = Monster(_monster_defn('deadite'), nx, ny)
         self.monsters.append(m)
         # Remove the NPC monster so it doesn't remain
         if npc_m in self.monsters:
