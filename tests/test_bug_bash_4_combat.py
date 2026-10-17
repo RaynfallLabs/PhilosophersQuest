@@ -496,6 +496,51 @@ def test_c10_heal_blocked_and_ruptured_monsters_do_not_heal():
     assert v.hp <= v0
 
 
+# ---------------------------------------------------------------- C11
+def test_c11_missiles_and_smite_go_through_take_damage():
+    """Magic-missile wands, the force missiles spell and Smite cut hp
+    directly: they killed encounter NPCs, the Green Knight's beheading-game
+    revive never fired, and a sleeper stayed asleep."""
+    from monster import Monster
+
+    def zap(g, target):
+        w = items.make_item_by_id('wand', 'wand_of_magic_missile')
+        w.charges = 5
+        g._wand_override_target = target
+        g._apply_wand_effect(w)
+        g._wand_override_target = None
+
+    g = _game(seed=93)
+    p = g.player
+    _open_floor(g)
+    npc = Monster({'id': 'npc_traveler', 'name': 'Lost Girl', 'symbol': '@',
+                   'color': [200, 200, 200], 'hp': 1, 'thac0': 20, 'speed': 0,
+                   'attacks': [], 'ai_pattern': 'sessile', 'resistances': [],
+                   'weaknesses': [], 'min_level': 1, 'harvest_tier': 0,
+                   'harvest_threshold': 99, 'ingredient_id': None}, p.x + 2, p.y)
+    npc._npc_encounter_tag = 'lost_girl'
+    g.monsters.append(npc)
+    zap(g, npc)
+    assert npc.alive and npc.hp == 1
+
+    g = _game(seed=94)
+    _open_floor(g)
+    gk = _spawn(g, 'green_knight', dx=2)
+    assert gk.revive_once_on_death
+    gk.hp = 3
+    g._apply_spell_effect({'effect': 'smite', 'power': '6d6', 'tier': 3, 'name': 'Smite'}, gk)
+    assert gk.alive and gk.hp > 3
+    assert any('getting up' in t or t == getattr(gk, 'revive_message', None) for t in _texts(g))
+
+    g = _game(seed=95)
+    _open_floor(g)
+    rat = _spawn(g, 'giant_rat', dx=2, hp=500, max_hp=500)
+    rat.status_effects['sleeping'] = 50
+    g._apply_spell_effect({'effect': 'magic_missile', 'power': '2d4', 'tier': 2,
+                           'name': 'Force Missiles'}, rat)
+    assert rat.hp < 500 and not rat.has_effect('sleeping')
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

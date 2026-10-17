@@ -776,13 +776,14 @@ class MagicMixin:
                 # per-tier scaling actually lands.
                 base = roll(wand.power) if wand.power else 4
                 dmg = self._wand_tier_damage(base, wand.quiz_tier)
-                target.hp = max(0, target.hp - dmg)
-                target._unhurt_turns = 0          # it has been hurt: no mending
-                if target.hp == 0:
-                    target.alive = False
+                # C11: through take_damage (unresisted, as before), so an
+                # encounter NPC is spared, the Green Knight's pact holds and
+                # a sleeper wakes. The direct write skipped all three.
+                dmg = target.take_damage(dmg)
                 self.add_message(
                     f"A magic missile unerringly strikes {the_name(target, lower=True)} "
                     f"for {dmg} damage!", 'success')
+                self._announce_revive(target)
                 if not target.alive:
                     self._on_monster_killed(target)
 
@@ -2055,15 +2056,12 @@ class MagicMixin:
                     # used to carry the whole of it, so seven missiles were
                     # seven spells (2.2 weapon attacks from Force Storm).
                     per_missile = max(1, self._spell_damage(base_dmg, chain) // missiles)
-                    target.hp = max(0, target.hp - per_missile)
-                    target._unhurt_turns = 0
-                    if target.hp == 0:
-                        target.alive = False
-                    total_dmg += per_missile
+                    total_dmg += target.take_damage(per_missile)     # C11
                 self.add_message(
                     f"{missiles} magic missile{'s' if missiles > 1 else ''} "
                     f"strike{'s' if missiles == 1 else ''} {the_name(target, lower=True)} "
                     f"for {total_dmg} total damage!", 'success')
+                self._announce_revive(target)
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'fire_bolt':
@@ -2151,12 +2149,12 @@ class MagicMixin:
             elif effect == 'smite':
                 base_dmg = _roll(power) if power else 20
                 scaled = self._spell_damage(base_dmg, chain)
-                target.hp = max(0, target.hp - scaled)  # holy — bypasses resistances
-                target._unhurt_turns = 0
-                if target.hp == 0:
-                    target.alive = False
+                # holy -- bypasses resistances (physical = no multiplier);
+                # through take_damage for the NPC / revive / wake rules (C11)
+                scaled = target.take_damage(scaled)
                 self.add_message(
                     f"Holy fire smites {the_name(target, lower=True)} for {scaled} damage!", 'success')
+                self._announce_revive(target)
                 if not target.alive:
                     self._on_monster_killed(target)
             elif effect == 'slow_monster_spell':
