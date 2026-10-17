@@ -48,7 +48,7 @@ from quiz_engine import QuizEngine, QuizState
 from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile
-from ui import Sidebar, MessageLog
+from ui import Sidebar, MessageLog, floor_label
 from game_helpers import (
     migrate_buc_item, cycle_tab,
     fix_name_case, a_or_an,
@@ -975,7 +975,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         lines = [
             # one line: the popup joins consecutive lines into a paragraph,
             # which ran "Turn 412 26 items" together
-            f'Floor {self.dungeon_level}   |   Turn {self.turn_count}   |   '
+            f'{floor_label(self.dungeon_level)}   |   Turn {self.turn_count}   |   '
             f'{item_count} item{"" if item_count == 1 else "s"}   |   {weapon_name}',
             '',
             'Welcome back, seeker. Your journey continues.',
@@ -1937,7 +1937,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # No longer crouched in the last floor's pit.
         self.player.status_effects.pop('in_pit', None)
         # (the hero was set on the stair above, before the arrival passives)
-        if enter_from_top:
+        if new_level == _COW_LEVEL:
+            pass        # the opening floor is the announcement, never "level 999"
+        elif enter_from_top:
             self.add_message(f"You descend to level {new_level}.", 'info')
         else:
             self.add_message(f"You ascend to level {new_level}.", 'info')

@@ -22,7 +22,7 @@ from renderer import TILE_SIZE
 from geom import monster_at_tile, any_tile_in_set
 import ui_theme
 import lore_art
-from ui import carry_state, carry_color, carry_numbers
+from ui import carry_state, carry_color, carry_numbers, floor_label
 from fantasy_ui import (FP, KT, get_font, draw_dark_panel,
                          draw_header_bar, draw_divider, draw_shadow_text,
                          draw_glow_text, draw_overlay,
@@ -865,7 +865,7 @@ class RenderMixin:
                                      frame=(outer, FP.GOLD))
             info_f = get_font('body', 16)
             info = info_f.render(f"{getattr(self, 'player_name', 'Adventurer')}   "
-                                 f"Floor {self.dungeon_level}   Turn {self.turn_count}",
+                                 f"{floor_label(self.dungeon_level)}   Turn {self.turn_count}",
                                  True, KT.TEXT_DIM)
             iy = header.y + (header.h - S(4) - info.get_height()) // 2
             screen.blit(info, (header.x + S(40), iy))
@@ -892,7 +892,7 @@ class RenderMixin:
             pygame.draw.rect(screen, FP.MIDNIGHT, header, border_radius=8)
             pygame.draw.rect(screen, FP.GOLD, header, 2, border_radius=8)
             text("CHARACTER / PACK", font_title, FP.GOLD_BRIGHT, header.x + S(18), header.y + S(12))
-            text(f"{getattr(self, 'player_name', 'Adventurer')}   Floor {self.dungeon_level}   Turn {self.turn_count}",
+            text(f"{getattr(self, 'player_name', 'Adventurer')}   {floor_label(self.dungeon_level)}   Turn {self.turn_count}",
                  font_body, FP.FADED_TEXT, header.x + S(20), header.y + S(44))
             _cwt, _clim, _cstate = carry_state(p)
             _ctext = f"Carrying {carry_numbers(p)}" + (f"  {_cstate}" if _cstate else "")
@@ -3800,7 +3800,7 @@ class RenderMixin:
         active = [k.replace('_', ' ').title() for k, v in effects.items() if v != 0]
         lines = [
             ("CURRENT RUN", FP.GOLD_BRIGHT, self.font_sm),
-            (f"Floor {self.dungeon_level}    Turn {self.turn_count}", FP.BODY_TEXT, self.font_sm),
+            (f"{floor_label(self.dungeon_level)}    Turn {self.turn_count}", FP.BODY_TEXT, self.font_sm),
             (f"Tile: {self._menu_tile_label()}", FP.FADED_TEXT, self.font_sm),
             (f"Carrying {weight}", FP.WARNING_TEXT if _cstate else FP.BODY_TEXT, self.font_sm),
             '',
