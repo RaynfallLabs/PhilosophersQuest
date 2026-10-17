@@ -45,6 +45,10 @@ _CONTEXT_SUBJECTS = (
     'math',
 )
 
+# The shortest a timed quiz clock can be, applied after status penalties
+# (bug bash 4, call 3). Matches Player.get_quiz_timer's own 5 s floor.
+MIN_TIMED_SECONDS = 5
+
 _CROSS_GAME_RECENT_CAP = 30          # questions remembered per (subject, tier)
 _HISTORY_DIR_OVERRIDE = None         # tests point this at a temp dir
 _CONTEXTS_DIR_OVERRIDE = None        # tests point this at a temp dir to override _CONTEXTS_DIR
@@ -169,7 +173,8 @@ class QuizEngine:
         self._load_cross_game_history()
 
         # Per-topic context blurbs (opt-in orientation shown via a C-key modal
-        # during a quiz; math timer pauses while the modal is open). Keyed by
+        # during a quiz; a timed clock pauses while the modal is open, once per
+        # question). Keyed by
         # (subject, topic). Missing bank file -> that subject contributes no
         # entries; a question without a `topic` field never has a blurb.
         self._contexts: dict[tuple[str, str], str] = {}
@@ -178,6 +183,10 @@ class QuizEngine:
         # countdown resumes from whatever `time_remaining` already holds).
         self._timer_paused: bool = False
         self._timer_paused_at: float = 0.0
+        # The context card may stop a TIMED clock once per question (call 1,
+        # bug bash 4). A second open of the card on the same question lets
+        # the clock run. Reset whenever a new question goes up.
+        self._context_pause_spent: bool = False
 
         self._load_context_blurbs()
 
@@ -209,11 +218,14 @@ class QuizEngine:
           timer_modifier -- multiplier on the base timer (e.g. 0.55 when confused).
           base_seconds  -- pre-computed base timer from Player.get_quiz_timer(subject).
                           If provided, replaces the legacy (10 + wisdom) calculation.
-          timed         -- True/False forces, None auto-detects from subject.
-                          Combat math attack is the ONE timed action (chain pressure
-                          + game-design speed). Every other quiz (identify, lockpick,
-                          equip, prayer, cooking, magic, etc.) is untimed so the kid
-                          can actually READ the substantive content the banks teach.
+          timed         -- True/False forces, None auto-detects from subject
+                          (math -> timed). Combat math attack is the ONE timed
+                          action (chain pressure + game-design speed); the one
+                          other maths quiz, Brokkr's Anvil mystery, passes
+                          timed=False. Every other quiz (identify, lockpick,
+                          equip, prayer, cooking, magic, mysteries, etc.) is
+                          untimed so the kid can actually READ the substantive
+                          content the banks teach.
                           See `proposals/v2_audit/10_quiz_engine.md` §timer policy.
           celebrate_on_max -- opt-in to the full-screen "MAX CHAIN!" takeover
                           when `max_chain` is reached. Default False — the ~12
@@ -293,6 +305,10 @@ class QuizEngine:
                 self.timer_seconds = round(base_seconds * timer_modifier) + extra_seconds
             else:
                 self.timer_seconds = round((10 + wisdom) * timer_modifier) + extra_seconds
+            # The 5 s minimum comes AFTER the status multiplier (call 3, bug
+            # bash 4): applied before it, a confused and blinded WIS 6 hero
+            # got 2 s, which no child can answer in.
+            self.timer_seconds = max(MIN_TIMED_SECONDS, self.timer_seconds)
             # (Nothing is added for the tier asked. The clock is the
             # player's wisdom and what the player has earned on top of it.)
             self.time_remaining = float(self.timer_seconds)
@@ -315,6 +331,7 @@ class QuizEngine:
         # on close within one quiz lifetime.
         self._timer_paused = False
         self._timer_paused_at = 0.0
+        self._context_pause_spent = False
         # Tablet of Destinies: allow one reroll of a wrong answer
         # Set externally by main.py before starting quiz
         # The flag is one-shot: it applies to THIS quiz only. Left sticky, a
@@ -470,6 +487,8 @@ class QuizEngine:
         # When this question went up, for the answer-time record.
         self._q_shown_at = time.monotonic()
         self._q_timing_ok = not getattr(self, '_timer_paused', False)
+        # A new question earns a fresh context-card pause.
+        self._context_pause_spent = False
 
         # Track this question as seen.
         if deck_key not in self._seen:
@@ -681,9 +700,10 @@ class QuizEngine:
             if self.tier == prev:
                 # Top tier, no higher to climb. If THIS tier is also mastered we
                 # auto-passed the whole reachable ladder -> success even if the
-                # threshold count wasn't reached. (Sphinx/Mjolnir are
-                # escalator_threshold T3 thr=4: three auto-passes give count=3 <
-                # 4, which used to AUTO-FAIL a fully-mastered player.)
+                # threshold count wasn't reached. (The Sphinx and Brokkr's
+                # Anvil mysteries are escalator_threshold quizzes from T3:
+                # auto-passes on mastered tiers add nothing to the count, so
+                # a fully-mastered player used to AUTO-FAIL them.)
                 self._end(success=(self.correct_count >= self.required)
                           or self.is_mastered(self.subject, self.tier))
                 return
@@ -815,19 +835,35 @@ class QuizEngine:
 
     # --- Timer pause / resume (context modal) ---
 
-    def pause_timer(self):
-        """Freeze the quiz countdown. Idempotent; safe for untimed quizzes.
+    def context_pause_available(self) -> bool:
+        """True when opening the context card now would stop the clock.
 
-        The implementation simply flips a flag; ``update()`` reads the flag
-        and skips the ``time_remaining`` decrement. We also snapshot the
-        current value for diagnostics / tests, but the countdown resumes
-        from whatever ``time_remaining`` already holds.
+        Untimed quizzes always "pause" (there is no clock to run). A timed
+        quiz gets one pause per question: a second open of the card on the
+        same question lets the clock keep running.
         """
-        if self._timer_paused:
-            return
+        return (not self.timed) or not getattr(self, '_context_pause_spent', False)
+
+    def pause_timer(self) -> bool:
+        """Freeze the quiz countdown for the context card. Safe for untimed
+        quizzes. Returns True when the clock is (now) stopped.
+
+        A timed quiz may be paused once per question (call 1, bug bash 4:
+        "once per question is fair"). Once that pause is spent, further
+        calls leave the clock running and return False. ``update()`` reads
+        the flag and skips the ``time_remaining`` decrement; the countdown
+        resumes from whatever ``time_remaining`` already holds.
+        """
         self._q_timing_ok = False        # time spent reading a card is not answer time
+        if self._timer_paused:
+            return True
+        if not self.context_pause_available():
+            return False
         self._timer_paused = True
         self._timer_paused_at = float(self.time_remaining)
+        if self.timed:
+            self._context_pause_spent = True
+        return True
 
     def resume_timer(self):
         """Unfreeze the quiz countdown. Idempotent."""

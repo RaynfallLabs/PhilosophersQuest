@@ -1302,6 +1302,9 @@ class InputMixin:
         if key == pygame.K_c:
             blurb = self.quiz_engine.current_context_blurb()
             if blurb:
+                # A timed clock stops once per question; a second open on
+                # the same question lets it run (call 1, bug bash 4). The
+                # card says which (see _draw_quiz_context_modal).
                 self.quiz_engine.pause_timer()
                 self._quiz_context_scroll = 0
                 self.state = STATE_QUIZ_CONTEXT
@@ -1329,10 +1332,11 @@ class InputMixin:
     def _quiz_context_input(self, key: int):
         """Input handler for the opt-in context modal.
 
-        No answer keys accepted here — the timer is paused and the quiz is
-        frozen behind the modal. C or ESC closes the modal and returns to
-        STATE_QUIZ; the main.py update loop auto-resumes the timer there via
-        quiz_engine.resume_timer() being called below.
+        No answer keys accepted here. The first open on a question stops a
+        timed clock; a second open on the same question leaves it running
+        (main.py's update ticks the quiz in this state too, and drops back
+        to STATE_QUIZ if the clock runs out). C or ESC closes the modal and
+        returns to STATE_QUIZ via quiz_engine.resume_timer() below.
         """
         if key in (pygame.K_c, pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_SPACE):
             self.quiz_engine.resume_timer()

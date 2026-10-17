@@ -3011,6 +3011,19 @@ class RenderMixin:
             rects.append(timer_rect)
         return rects
 
+    def _quiz_context_clock_note(self):
+        """The context card's one-line clock notice, or None for an
+        untimed quiz. A timed clock stops on the first open of the card for
+        each question; a second open leaves it running (call 1)."""
+        qe = self.quiz_engine
+        if not getattr(qe, 'timed', False):
+            return None
+        if getattr(qe, '_timer_paused', False):
+            return ("The clock is stopped while you read. "
+                    "You get one stop per question.")
+        return ("The clock is running. You already stopped it once "
+                "on this question.")
+
     def _draw_quiz_context_modal(self):
         """Opt-in orientation modal shown over the active quiz.
 
@@ -3030,12 +3043,17 @@ class RenderMixin:
 
         blurb = display_text(blurb, sources=True)
         body_font = get_font('body', 20)
+        # Call 1 (bug bash 4): a timed clock stops once per question. Say
+        # plainly on the card whether it is stopped or running.
+        clock_note = self._quiz_context_clock_note()
         # Sized to the blurb (it left a large empty area under the text).
         max_w = 1000
         bw = min(S(max_w), layout.GAME_W - S(48))
         probe = self._ui_modal_body(pygame.Rect(0, 0, bw, 1000), side=24, top=72, bottom=56)
         reader_w = probe.w - 2 * S(12)
         n = len(self._ui_text_lines(blurb, body_font, reader_w - S(12)))
+        if clock_note:
+            n += len(self._ui_text_lines(clock_note, body_font, reader_w - S(12))) + 1
         chrome = probe.y + (1000 - probe.bottom) + S(42) + S(12)
         fit_h = chrome + n * (body_font.get_height() + S(5)) + S(6)
         # The quiz's subject colour on the accent layer (it was lore blue on
@@ -3054,8 +3072,13 @@ class RenderMixin:
         # Single-pane body — grimoire reading surface for the blurb.
         reader = self._ui_subpanel(body, "Orientation", border_color=accent)
 
-        lines = [(line, FP.LORE_BLUE_BODY, body_font)
-                 for line in self._ui_text_lines(blurb, body_font, reader.w - S(12))]
+        lines = []
+        if clock_note:
+            lines += [(line, FP.GOLD_PALE, body_font)
+                      for line in self._ui_text_lines(clock_note, body_font, reader.w - S(12))]
+            lines.append(("", FP.LORE_BLUE_BODY, body_font))
+        lines += [(line, FP.LORE_BLUE_BODY, body_font)
+                  for line in self._ui_text_lines(blurb, body_font, reader.w - S(12))]
         scroll = self._ui_draw_scroll_lines(
             lines, body_font, FP.LORE_BLUE_BODY, reader,
             getattr(self, '_quiz_context_scroll', 0), line_gap=5)

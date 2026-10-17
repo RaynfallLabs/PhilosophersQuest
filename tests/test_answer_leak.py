@@ -158,3 +158,101 @@ def test_answer_leak_detector_catches_obvious_leak():
     }
     leaked = _leaked_bigrams(q)
     assert ('suetonius', 'paulinus') in leaked, f'expected leak, got {leaked}'
+
+
+# ---------------------------------------------------------------------------
+# Whole-answer check (bug bash 4, call 2, 2026-10-17).
+#
+# The bigram gate above cannot see a ONE-word answer printed in its own stem
+# ("...a movie called My Neighbor Totoro... What is this creature's name?"
+# -> Totoro), nor a phrase whose words are split by stopwords ("Toward the
+# Tree on That Hill"). This check looks for the whole keyed answer, with a
+# leading "the/a/an" dropped, as a whole word in the stem, and skips the
+# question when a distractor is printed in the stem too (then the stem names
+# the candidates, which is a fair "which of these" question).
+#
+# Math (numbers) and grammar (the stem quotes the sentence under test) are
+# out of scope. Pre-existing cases are held in a ratchet baseline keyed by
+# the stem text, so index shifts do not matter: the baseline may only
+# shrink, and an entry must be removed once its question is fixed
+# (`python tests/test_answer_leak.py --rebaseline-whole` rewrites it).
+# ---------------------------------------------------------------------------
+WHOLE_ANSWER_BANKS = [b for b in BANKS if b != 'grammar']
+WHOLE_ANSWER_BASELINE = ROOT / 'tests' / 'data' / 'answer_whole_word_leak_baseline.json'
+_ARTICLE = re.compile(r'^(the|a|an)\s+', re.I)
+
+
+def _whole(text: str) -> str:
+    return r'(?<![\w-])' + re.escape(text.lower()) + r'(?![\w-])'
+
+
+def _answer_in_stem(q: dict) -> bool:
+    answer = str(q.get('answer', '')).strip()
+    core = _ARTICLE.sub('', answer)
+    stem = str(q.get('question', '')).lower()
+    if len(core) < 3 or not re.search(_whole(core), stem):
+        return False
+    for c in q.get('choices') or []:
+        other = _ARTICLE.sub('', str(c).strip())
+        if c != answer and other and re.search(_whole(other), stem):
+            return False
+    return True
+
+
+def _whole_answer_leaks() -> dict:
+    """{bank: sorted [[answer, stem], ...]} for every question whose stem
+    prints its own answer."""
+    out: dict = {}
+    for bank in WHOLE_ANSWER_BANKS:
+        p = ROOT / 'data' / 'questions' / f'{bank}.json'
+        if not p.exists():
+            continue
+        hits = sorted([str(q.get('answer', '')), q.get('question', '')]
+                      for q in json.loads(p.read_text(encoding='utf-8'))
+                      if _answer_in_stem(q))
+        if hits:
+            out[bank] = hits
+    return out
+
+
+def _whole_answer_baseline() -> dict:
+    return json.loads(WHOLE_ANSWER_BASELINE.read_text(encoding='utf-8'))
+
+
+def test_no_new_stem_prints_its_own_answer():
+    base = _whole_answer_baseline()
+    new = []
+    for bank, hits in _whole_answer_leaks().items():
+        known = {tuple(h) for h in base.get(bank, [])}
+        new += [(bank, a, s[:90]) for a, s in hits if (a, s) not in known]
+    assert not new, (
+        f'{len(new)} stem(s) print their own answer; rewrite the stem so it no '
+        'longer gives the answer away:\n' + '\n'.join(
+            f'  {b}: {a!r} in "{s}..."' for b, a, s in new))
+
+
+def test_whole_answer_baseline_only_shrinks():
+    """A fixed question must leave the baseline, so the ratchet stays tight."""
+    current = {(b, a, s) for b, hits in _whole_answer_leaks().items() for a, s in hits}
+    stale = [(b, a) for b, hits in _whole_answer_baseline().items() for a, s in hits
+             if (b, a, s) not in current]
+    assert not stale, f'remove fixed entries from {WHOLE_ANSWER_BASELINE.name}: {stale}'
+
+
+def test_whole_answer_check_catches_a_one_word_leak():
+    q = {'question': 'In 1988 Miyazaki made My Neighbor Totoro. What is the spirit called?',
+         'answer': 'Totoro', 'choices': ['Totoro', 'Kodama', 'Calcifer', 'Jiji']}
+    assert _answer_in_stem(q)
+    q2 = dict(q, question='Which spirit, Totoro or Kodama, lives in the camphor tree?')
+    assert not _answer_in_stem(q2)
+    q3 = {'question': 'Copernicus put the Sun at the center. What did he move there?',
+          'answer': 'The Sun', 'choices': ['The Sun', 'The Moon', 'Jupiter', 'Mars']}
+    assert _answer_in_stem(q3)
+
+
+if __name__ == '__main__' and '--rebaseline-whole' in sys.argv:
+    _found = _whole_answer_leaks()
+    WHOLE_ANSWER_BASELINE.write_text(
+        json.dumps(_found, indent=2, ensure_ascii=False, sort_keys=True) + '\n',
+        encoding='utf-8')
+    print(f'{sum(len(v) for v in _found.values())} entries -> {WHOLE_ANSWER_BASELINE}')

@@ -630,8 +630,10 @@ and [combat.md §UI — combat HUD](combat.md#ui--combat-hud-inside-the-quiz-mod
   `_combat_is_ranged` flag.
 
 **Context modal** (`_draw_quiz_context_modal` L2286,
-`STATE_QUIZ_CONTEXT`): opened with `C`; the math timer pauses while it
-is open. Long cards scroll — Up/Down one step, PgUp/PgDn eight,
+`STATE_QUIZ_CONTEXT`): opened with `C`; a timed (math) clock stops
+while it is open, once per question. A second open on the same question
+leaves the clock running, and the card says so in its first line
+(`_quiz_context_clock_note`). Long cards scroll — Up/Down one step, PgUp/PgDn eight,
 Home/End to either end — through `self._quiz_context_scroll`, which
 resets to 0 on open and is clamped in the draw pass. Footer:
 `Up/Down: scroll   PgUp/PgDn: jump   C / ESC: close`. Math has cards

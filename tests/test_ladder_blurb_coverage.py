@@ -114,3 +114,63 @@ def test_blurbs_carry_no_author_notes(subject):
         text = _blurb_text(entry).lower()
         hits += [(topic, phrase) for phrase in AUTHOR_VOICE if phrase in text]
     assert not hits, f"{subject}: author-facing text in player blurbs: {hits[:8]}"
+
+
+# The per-question `context` (the explanation shown after an answer, in the
+# review and study screens) obeys the same rule, and also may not use the
+# question builder's own jargon: "distractors", "the keyed answer", "this
+# rung", "the ladder", "the stem", "the bank keys ...". About 450 contexts
+# carried such notes until bug bash 4 (call 4) reworded them.
+CONTEXT_JARGON = (
+    r'\bdistractors?\b', r'\bkeyed\b', r'\bkeys (both|only)\b', r'\brungs?\b',
+    r'\bladders?\b', r'\bthe stem\b', r'\bout of the stem\b', r'\blegend-foils?\b',
+    r'\bare foils\b', r'\blegend-flagged\b', r'\btopic spec\b', r'\bframing[_ ]note\b',
+    r"\bthe bank (keys|keeps|takes|presents|tells|treats|reports|states|refuses|says|"
+    r"marks|flags|teaches|avoids|asks|counts|holds)\b",
+    r"\bbank's (stance|rule|own)\b",
+)
+# Real-world uses of those words (a story's ladder, a plant's stem, a bell
+# that was rung). Stripped before the check. A new story use goes here.
+CONTEXT_REAL_USES = (
+    r"jacob's ladder", r'ladder of (love|nature|marking|law)', r'distance ladder',
+    r'(rope|wire|wooden|extension|bladed|roots|homemade wire)[- ]ladders?',
+    r'up the ladder', r'climbing the ladder', r'throw away the ladder',
+    r'career ladder', r"industry's ladder", r'memorize the ladder', r'bells? (was )?rung',
+    r'was rung', r'rung bell', r'rung the bell', r'rung in celebration', r'rungs joining',
+    r'connecting rungs', r'[ag]-[tc] rung', r'ladder of one width', r'down the ladder',
+    r"pliny's ladder", r"aquinas's (three-tier )?ladder", r"michelin's official ladder",
+    r'same ladder a bell', r'severity ladder', r"'ladder' never", r'lowest rung',
+    r'each lower rung', r'bottom rung of the cosmic', r'rung by rung', r'next rung up',
+    r'the stem out of which', r'the stem dies', r'rear of the stem', r'base of the stem',
+    r'off the stem', r'keyed .regulators', r'keyed to their masters', r'the ladder leading',
+    r'a ladder down', r'immovable ladder', r'the ladder\b(?=[^.]*jacob)', r"the ladder;",
+    r'scala naturae', r"dreamed of the ladder", r"the ladder's stone",
+    r'ladder leading down', r'cuts the stem', r'stem fibers', r"world bank's own",
+    r'the ladder image', r's_ladder', r'ladder-staircase', r'ladder of what we are',
+)
+
+
+def _context_jargon(text):
+    low = text.lower()
+    for real in CONTEXT_REAL_USES:
+        low = re.sub(real, ' ', low)
+    hits = [p for p in AUTHOR_VOICE if p in low]
+    hits += [m.group(0) for p in CONTEXT_JARGON for m in [re.search(p, low)] if m]
+    return hits
+
+
+def test_context_jargon_check_sees_builder_notes():
+    assert _context_jargon("The three distractors are real Hayek works.")
+    assert _context_jargon("See the next rung for the language.")
+    assert _context_jargon("The bank keys BOTH; a ladder that hides it argues.")
+    assert not _context_jargon("Jacob dreamed of angels on Jacob's ladder at Bethel.")
+    assert not _context_jargon("Ginger is a rhizome, an underground stem.")
+
+
+@pytest.mark.parametrize('subject', sorted(p.stem for p in _Q.glob('*.json')))
+def test_contexts_carry_no_author_notes(subject):
+    questions = json.loads((_Q / f'{subject}.json').read_text(encoding='utf-8'))
+    hits = [(i, _context_jargon(q.get('context', ''))) for i, q in enumerate(questions)]
+    hits = [h for h in hits if h[1]]
+    assert not hits, (f"{subject}: {len(hits)} contexts talk to the question author: "
+                      f"{hits[:8]} (a real-world use belongs in CONTEXT_REAL_USES)")
