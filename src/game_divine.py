@@ -1408,12 +1408,16 @@ class DivineMixin:
         # Only freely-obtainable relics: this used to pick uniformly from
         # ALL of artifact.json, so about 1 prayer in 28 handed over the
         # Philosopher's Stone, Gleipnir or a demon seal.
-        from items import is_random_loot
+        # A unique this run already produced (even one sold or lost) is not
+        # given twice, and the gift is claimed like any unique.
+        from items import is_random_loot, unique_available, claim_unique
         pool = [t for t in templates
-                if is_random_loot(t) and not _in_play(getattr(t, 'id', ''))]
+                if is_random_loot(t) and unique_available(t)
+                and not _in_play(getattr(t, 'id', ''))]
         if pool:
             tpl = random.choice(pool)
             inst = copy_at(tpl, px, py)
+            claim_unique(inst)
             inst.identified = True
             if hasattr(inst, 'buc'):
                 inst.buc = 'blessed'
@@ -1428,6 +1432,7 @@ class DivineMixin:
                 fallback_pool.extend(
                     t for t in load_items(cls)
                     if getattr(t, 'is_unique', False)
+                    and is_random_loot(t) and unique_available(t)   # not a quest piece
                     and not _in_play(getattr(t, 'id', ''))
                 )
             except (FileNotFoundError, Exception):
@@ -1435,6 +1440,7 @@ class DivineMixin:
         if fallback_pool:
             tpl = random.choice(fallback_pool)
             inst = copy_at(tpl, px, py)
+            claim_unique(inst)
             inst.identified = True
             if hasattr(inst, 'buc'):
                 inst.buc = 'blessed'
