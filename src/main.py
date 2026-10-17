@@ -78,6 +78,8 @@ from game_magic import MagicMixin
 from game_combat import CombatMixin
 from game_divine import DivineMixin
 from item_actions import ItemActionsMixin
+from game_road import RoadMixin
+from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
 
@@ -178,7 +180,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           EmberpupMixin, BlackKnightMixin, ItemActionsMixin):
+           EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -356,6 +358,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._cooked_recipes: list[str]  = []   # recipe names successfully cooked
         # Pet companion system (Soul Spheres)
         self.pets: list[Pet]    = []       # active pet companions, persist across floors
+        # People the hero is walking somewhere (escort_system.py): never pets.
+        self.escorts: list      = []
         # Mystery system state
         self._active_mystery_altar = None  # MysteryAltar being interacted with
         # Abaddon quest state
@@ -402,6 +406,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # it on first entry to that floor.
         self._duck_of_doom_floor: int = random.randint(1, 10)
         self._duck_of_doom_placed: bool = False
+
+        # The Road (road.py, game_road.py): the run's seed for callbacks and
+        # delayed rewards, and, with road_enabled, the encounter slots that
+        # replace the two legacy schedulers above. Rolled off the shared
+        # stream, like the Emberpup and the Black Knight.
+        self._init_road()
 
         self._new_level(1)
         # Per-run trackers for chain-equip passives. Per-floor charges are
@@ -566,6 +576,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.renderer.set_dungeon(dungeon.width, dungeon.height, layout.MAP_W, layout.GAME_H)
         self._refresh_fov()
 
+        # Oaths, pending rewards and callbacks, the Road's slot (game_road.py)
+        self._road_arrive(level)
         # Spawn trigger items and NPC for moral encounters on L1 (if assigned)
         self._maybe_spawn_trigger_item(level)
         self._maybe_spawn_npc(level)
@@ -793,6 +805,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.missed_questions = state.get('missed_questions', [])
         self.quiz_stats      = state.get('quiz_stats', {})
         self.pets            = state.get('pets', [])
+        self.escorts         = list(state.get('escorts') or [])
+        # The Road: a save from before it keeps its legacy encounter dicts
+        # for the rest of the run (a disabled Road with a fresh seed).
+        import road as _road_mod
+        self._road = _road_mod.ensure_state(state.get('_road'))
         # Abaddon quest state
         self.seals_broken   = state.get('seals_broken', set())
         self.heavenly_host_active = state.get('heavenly_host_active', False)
@@ -1420,8 +1437,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if total > 0:
             print(f'[Migration] Dropped {total} legacy ingredient(s) that no longer exist')
 
-    def _change_level(self, new_level: int, enter_from_top: bool):
-        """Transition between levels, preserving the player."""
+    def _change_level(self, new_level: int, enter_from_top: bool, via: str = 'stairs'):
+        """Transition between levels, preserving the player.
+
+        ``via`` is how the hero left: 'stairs' (the default), 'warp' (a level
+        warp or the psychopomp step), 'potion' (gain level), 'trapdoor' or
+        'cow' (into or out of the Cow Level). Only a stair carries an escort;
+        only a stair descent counts down its floors (escort_system.py)."""
         # Death comes for the Stone the moment it leaves floor 100, by any
         # route: the stair, a potion of gain level, the Elixir, Hermes'
         # psychopomp step. Only the stair used to set him loose, so a potion
@@ -1459,6 +1481,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # from the list (107 entries on one floor after a long stay, all saved).
         self.monsters = [m for m in self.monsters
                          if getattr(m, 'alive', False) or not getattr(m, '_kill_handled', False)]
+        # Escorts decide before the old floor is torn down: carried along,
+        # arrived (their last stair), suspended (the Cow Level) or lost.
+        _esc_carried, _esc_arrived = self._escorts_leaving(self.dungeon_level, new_level, via)
         # Save current level state
         self.level_mgr.save(
             self.dungeon_level, self.dungeon, self.monsters, self.ground_items
@@ -1498,6 +1523,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # the floor-entry passives (the Morrigan's ravens, Atalanta's choice)
         # and the encounter spawners used to read the old floor's position.
         self.player.x, self.player.y = self._arrival_tile(dungeon, enter_from_top)
+        self._escorts_place(_esc_carried + _esc_arrived)
         # One-cosmetic-per-item: stamp this run's appearance on freshly-spawned
         # (and any unstamped) floor accessories. Idempotent for loaded floors.
         self._stamp_ground_appearances()
@@ -1592,6 +1618,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     g for g in ground_items
                     if not (isinstance(g, (MysteryAltar, MysteryKeyItem))
                             and getattr(g, 'mystery_id', None) in _faced)]
+            # Oaths, pending rewards and callbacks, the Road's slot. Never
+            # on the Cow Level: it is a side trip, not depth (game_road.py).
+            if new_level != _COW_LEVEL:
+                self._road_arrive(new_level)
             self._maybe_spawn_trigger_item(new_level)
             self._maybe_spawn_npc(new_level)
             self._maybe_spawn_flavor_npc(new_level)
@@ -2084,6 +2114,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._restore_once_a_floor_state(_held_charges)
         self._settle_monsters()
         self._refresh_fov()
+        # An escort whose last stair this was says goodbye on the new floor.
+        self._escorts_finish(_esc_arrived)
 
         # Display atmospheric messages for this level
         for atmo_msg in getattr(self.dungeon, 'atmosphere_messages', []):
@@ -2431,9 +2463,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             log_error('main._give_starting_kit: recovered from an error')
 
     def _refresh_fov(self):
+        _sight = self.player.get_sight_radius()
+        if _sight > 1:                        # (never through a blindfold or blindness)
+            _sight += self._escort_sight_bonus()
         self.visible = calculate_fov(
-            self.dungeon, self.player.x, self.player.y,
-            self.player.get_sight_radius()
+            self.dungeon, self.player.x, self.player.y, _sight
         )
         # Chain-equip passive: four_faces_360_fov (Crown of Brahma T4).
         # Add all tiles within radius PER*1.5 (ignoring wall occlusion) to FOV.
@@ -2914,7 +2948,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # pet could not stand where you are (you are levitating over
             # water or lava, phasing in a wall, or on a dug pit) you stop.
             _ox, _oy = self.player.x, self.player.y
-            _swap_pet = next((p for p in self.pets
+            # (An escort steps aside the same way.)
+            _swap_pet = next((p for p in list(self.pets) + self._escorts_here()
                               if p.alive and p.x == nx and p.y == ny), None)
             if _swap_pet is not None:
                 if (not self.dungeon.is_walkable(_ox, _oy)
@@ -2941,7 +2976,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         break
                     if monster_at_tile(self.monsters, sx, sy) is not None:
                         break
-                    if any(p.alive and p.x == sx and p.y == sy for p in self.pets):
+                    if (sx, sy) in self._occupants(hero=False):
                         break                   # never slide onto your pet
                     self.player.x, self.player.y = sx, sy
                     slide_count += 1
@@ -3276,7 +3311,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 f"live{'s' if remaining == 1 else ''} on the floors above.", 'warning')
             return
         try:
-            self._change_level(self.dungeon_level + 1, enter_from_top=True)
+            self._change_level(self.dungeon_level + 1, enter_from_top=True, via='stairs')
             self._autosave('descend')      # checkpoint each new floor reached
         except Exception as e:
             self.add_message(f"Error descending: {e}", 'danger')
@@ -3299,7 +3334,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # (Death is set loose in _change_level, by whatever route the
             # Stone leaves floor 100.)
             try:
-                self._change_level(self.dungeon_level - 1, enter_from_top=False)
+                self._change_level(self.dungeon_level - 1, enter_from_top=False, via='stairs')
             except Exception as e:
                 self.add_message(f"Error ascending: {e}", 'danger')
                 import traceback
@@ -3778,6 +3813,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'magic_dungeon_carrot', 'duck_of_doom',
         'abyssal_shimmer', 'philosophers_wrench', 'scroll_lake_of_fire',
         'tablet_of_second_death', 'complete_tablet_of_second_death', 'death_bane',
+        # the side-quest pieces a later encounter asks for (trigger items)
+        'lions_thorn', 'cuthberts_gospel', 'sealed_dispatch',
     ))
 
     @staticmethod
@@ -3795,6 +3832,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             or getattr(thing, '_npc_encounter_tag', None) or getattr(thing, '_flavor_encounter_tag', None)
             or getattr(thing, '_is_unicorn', False)
             or getattr(thing, '_is_abandoned_emberpup', False)
+            or getattr(thing, 'is_escort', False)
             or getattr(thing, 'plot_locked', False)
             or getattr(thing, 'id', None) in Game._QUEST_PIECE_IDS
             or getattr(thing, 'item_class', '') in ('artifact', 'merchant')
@@ -3816,8 +3854,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                  if _doors else walk)
         from geom import all_occupied_tiles, occupied_tiles
         taken = set(all_occupied_tiles(self.monsters))
-        taken.add((self.player.x, self.player.y))
-        taken |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
+        from escort_system import occupants as _occupants
+        taken |= _occupants(self)             # the hero, pets and escorts
         free = [t for t in walk if self.dungeon.is_walkable(*t) and t not in taken]
         if not free:
             return
@@ -3862,8 +3900,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         monsters already there, and pools are carved after monsters are set
         down (about one floor in twenty had a stacked pair)."""
         from geom import occupied_tiles
-        taken = {(self.player.x, self.player.y)}
-        taken |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
+        from escort_system import occupants as _occupants
+        taken = _occupants(self)              # the hero, pets and escorts
         for m in self.monsters:
             if not getattr(m, 'alive', False):
                 continue
@@ -4451,6 +4489,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._do_monster_turns()
             if not self.player.is_dead():
                 self._do_pet_turns()
+                # Escorts move and are attacked in their own pass, pet or no pet.
+                self._do_escort_turns()
                 self._maybe_wander_spawn()
         self._death_proximity_warning()
         self._tick_hp_regen()
@@ -4527,7 +4567,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         px, py = self.player.x, self.player.y
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied |= {(p.x, p.y) for p in self.pets if p.alive}
+        occupied |= self._occupants()
         candidates = [
             (x, y) for (x, y) in self.dungeon.explored
             if self.dungeon.is_walkable(x, y)
@@ -4712,7 +4752,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for x in range(self.dungeon.width)
             if self.dungeon.is_walkable(x, y)
             and not monster_at_tile(self.monsters, x, y) is not None
-            and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+            and (x, y) not in self._occupants(hero=False)
         ]
         # ... and only where the stairs can be walked to from: a two-tile
         # island in a pool was a landing place, and there was no way off it.
@@ -5539,7 +5579,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Find a candidate tile: floor, not on player, not already occupied
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()     # the hero, pets and escorts
         occupied |= {(i.x, i.y) for i in self.ground_items}
         candidates = []
         for room in self.dungeon.rooms:
@@ -6397,7 +6437,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     continue
                 if monster_at_tile(self.monsters, nx, ny) is not None:
                     continue
-                if any(p.alive and p.x == nx and p.y == ny for p in self.pets):
+                if (nx, ny) in self._occupants(hero=False):
                     continue
                 fenrir = FenrirPet(nx, ny)
                 self.pets.append(fenrir)
@@ -7196,7 +7236,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()     # the hero, pets and escorts
 
         # Find walkable tiles near Abaddon for locusts
         def _nearby_tiles(cx, cy, radius=4):
@@ -7276,7 +7316,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()     # the hero, pets and escorts
         candidates = []
         for dy in range(-3, 4):
             for dx in range(-3, 4):
@@ -8045,6 +8085,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._log_chronicle(
                     "Carried Sir Aldric's stone to an altar. It broke there. "
                     "I had almost stopped noticing the weight.")
+                # The oath sworn when the stone was taken is kept here: deed
+                # kept.aldric_lodestone and an 'oath' award (0 while the
+                # take still pays today's point; Phase 3a moves it here).
+                self._keep_oath('aldric_lodestone')
+                import deeds as _deeds_mod
+                _deeds_mod.close_thread(self._deeds_reg(), 'aldric_candle')
                 self._advance_turn()
             else:
                 self.add_message(

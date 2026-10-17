@@ -109,26 +109,35 @@ def test_trigger_items_exist():
             assert tid in items, (enc['tag'], tid)
 
 
-def test_chain_follow_ups_only_appear_after_their_opener():
-    """Androcles' lion and Saint Cuthbert's Gospel are multi-floor chains. A
-    follow-up must never be placed without its opener, and always deeper."""
+FOLLOW_UPS = {
+    # follow-up: (opener, the opener's option that schedules it)
+    'flv_lion_remembers': ('flv_limping_lion', 0),
+    'flv_relic_broker': ('flv_coffin_bearer', 0),
+    'flv_cuthbert_chapel': ('flv_coffin_bearer', 0),
+    'flv_watch_post': ('dying_messenger', 0),
+}
+
+
+def test_chain_follow_ups_are_never_rolled_only_scheduled():
+    """Androcles' lion, Saint Cuthbert's Gospel and the courier's dispatch
+    are multi-floor chains. A follow-up is callback-only: the random roll
+    never places it, and only the opener's own choice schedules it (Phase 2
+    of the deeds redesign: it used to be placed whatever the hero chose,
+    and the Watch Post was rolled whether or not a courier was ever met)."""
     from flavor_encounters import select_flavor_encounters, FLAVOR_ENCOUNTERS
-    chained = [e for e in FLAVOR_ENCOUNTERS if e.get('chain_after')]
-    assert {e['tag'] for e in chained} >= {'flv_lion_remembers', 'flv_relic_broker',
-                                           'flv_cuthbert_chapel'}
-    seen_chain = 0
-    for _ in range(1500):
+    from npc_encounters import ENCOUNTERS
+    by = {e['tag']: e for e in list(FLAVOR_ENCOUNTERS) + list(ENCOUNTERS)}
+    assert not [e['tag'] for e in FLAVOR_ENCOUNTERS if e.get('chain_after')]
+    for tag, (opener, idx) in FOLLOW_UPS.items():
+        assert by[tag]['callback_only'], tag
+        sched = by[opener]['options'][idx].get('schedule') or []
+        assert tag in [c['encounter'] for c in sched], (opener, tag)
+        for j, o in enumerate(by[opener]['options']):
+            if j != idx:
+                assert tag not in [c['encounter'] for c in o.get('schedule') or []]
+    for _ in range(300):
         sel = select_flavor_encounters()
-        floor_of = {e['tag']: lvl for lvl, e in sel.items()}
-        assert len(floor_of) == len(sel), 'a tag was placed twice'
-        for e in chained:
-            if e['tag'] in floor_of:
-                seen_chain += 1
-                assert e['chain_after'] in floor_of, e['tag']
-                assert floor_of[e['tag']] > floor_of[e['chain_after']], e['tag']
-                assert e['min_level'] <= floor_of[e['tag']] <= e['max_level']
-                assert floor_of[e['tag']] not in (20, 40, 60, 80, 100)
-    assert seen_chain > 100, 'the chains should actually occur'
+        assert not set(FOLLOW_UPS) & {e['tag'] for e in sel.values()}
 
 
 def test_new_mysteries_use_real_quiz_subjects_and_empty_floor_bands():

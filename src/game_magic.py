@@ -946,7 +946,7 @@ class MagicMixin:
                               for x in range(len(self.dungeon.tiles[y]))
                               if self.dungeon.is_walkable(x, y)
                               and not monster_at_tile(self.monsters, x, y) is not None
-                              and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+                              and (x, y) not in self._occupants(hero=False)
                               and (x, y) != (self.player.x, self.player.y)]
                 open_tiles = self._teleport_monster_landings(target, open_tiles)
                 if open_tiles:
@@ -2890,7 +2890,7 @@ class MagicMixin:
                     if self.dungeon.is_walkable(x, y)
                     and _is_explored(x, y)
                     and monster_at_tile(self.monsters, x, y) is None
-                    and not any(p.alive and p.x == x and p.y == y for p in self.pets)
+                    and (x, y) not in self._occupants(hero=False)
                 ]
                 if floors:
                     self.player.x, self.player.y = _rng.choice(floors)
@@ -3962,6 +3962,7 @@ class MagicMixin:
         px, py = self.player.x, self.player.y
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
+        occupied |= self._occupants(hero=False)   # pets and escorts
         # The risen dead are real numbers in monsters.json (LORE, NOT FLOOR:
         # they used to be built from the floor number here).
         defn = _monster_defn('risen_deadite')
@@ -4008,10 +4009,9 @@ class MagicMixin:
         px, py = self.player.x, self.player.y
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        if hasattr(self, 'pets'):
-            occupied |= {(p.x, p.y) for p in self.pets if p.alive}
-        else:
+        if not hasattr(self, 'pets'):
             self.pets = []
+        occupied |= self._occupants()
         import random
         spawned = 0
         for _ in range(count):

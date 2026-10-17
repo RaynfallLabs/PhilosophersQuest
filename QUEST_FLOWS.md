@@ -41,8 +41,8 @@ code but nothing executes it automatically. Nothing has been played.
 |---|---|---|---|
 | Karma encounters | One NPC in each ten-floor block (ten per run), chosen from three or four candidates. Bump, read, pick one of three options. The kind option costs something and gives +1; the selfish one pays and gives -1 (the Bound Demon, -2). Karma runs -10 to +10 and feeds the Judgment. Reaching 8 writes a chronicle line. | test (data, block coverage), read (flow) | Kind options give no reward except karma and, for seven NPCs, a rumour. |
 | Elara's pendant / Marcus's sword / Roderic's shield | The item appears one or two floors above the NPC. The NPC only appears if you picked it up. Return it (+1), return it for coin (0), or keep it (-1). | read | If you sold the item, only "keep it" or walking away remain. |
-| Cursed Lodestone | Accept Sir Aldric's 20 lb stone (+1). It cannot be dropped. Lay it on any altar and it breaks. | read | |
-| Sealed Dispatch | Accept the courier's dispatch (+1). If the Watch Post appears (floors 31 to 45, about four runs in ten), hand it over for gold, a potion and a blessing. | test (data) | No payoff if the Watch Post does not appear. Lore still says "the surface". |
+| Cursed Lodestone | Accept Sir Aldric's 20 lb stone (+1). That is a promise (an open oath). It cannot be dropped. Lay it on any altar and it breaks, which keeps the oath (no second point while the take still pays it). | test (`test_callbacks_delayed`) | |
+| Sealed Dispatch | Accept the courier's dispatch (+1) and swear to carry it. That schedules the Watch Post 4 to 14 floors on, inside floors 31 to 45; it appears only if the oath is still open when you arrive. Hand it over for gold, a potion and a blessing; that keeps the oath. | test (`test_callbacks_delayed`, e2e) | Lore still says "the surface". |
 
 ## Roaming named foes
 
@@ -73,6 +73,6 @@ code but nothing executes it automatically. Nothing has been played.
 | The Old Couple's Table | Floors 2 to 9. Eat their supper (a little stamina), or put your own food on the table (more stamina, a blessing, +1 karma). | test |
 | The Three Purses | Floors 11 to 19. 90 gold through the gap in secret (+1 karma), or 90 gold into his hand (a gift back). | test |
 | Three Small Contests | Floors 28 to 39. Drink from the horn (+1 CON, costs stamina), lift the cat (+1 STR, more stamina), or wrestle the nurse (+1 WIS, a quarter of your HP). One only. | test |
-| The Lion's Thorn | Floors 8 to 18: draw a thorn from a lion's paw (costs 10 HP) and keep the thorn. Floors 22 to 34: if you did, the lion is there. Hold out the thorn: +1 CON, gold, and a warning sense for a while. | test (always in order) |
-| Saint Cuthbert's Gospel | Floors 41 to 47: accept the red book from a coffin bearer. Floors 48 to 53: a relic broker offers 350 to 450 gold for it (-1 karma). Floors 54 to 59: lay it on the reading desk for +2 WIS, a blessing, +1 karma. | test (always in order) |
-| The Watch Post | Floors 31 to 45. See Sealed Dispatch above. | test |
+| The Lion's Thorn | Floors 8 to 18: draw a thorn from a lion's paw (costs 10 HP) and keep the thorn. Drawing it schedules the lion on a deeper floor of 22 to 34; backing away or feeding him schedules nothing. Hold out the thorn: +1 CON, gold, and a warning sense for a while. | test (only after the thorn, always deeper) |
+| Saint Cuthbert's Gospel | Floors 41 to 47: accept the red book from a coffin bearer and give your word (an oath). That schedules the relic broker (floors 48 to 53) and the chapel (54 to 59); refusing the book schedules neither. The broker offers 350 to 450 gold for it (-1 karma, the oath broken). Lay it on the reading desk for +2 WIS, a blessing, +1 karma (the oath kept). | test (always in order, karma as before) |
+| The Watch Post | Floors 31 to 45, only after swearing to the courier. See Sealed Dispatch above. | test |

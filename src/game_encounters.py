@@ -84,7 +84,7 @@ class EncountersMixin:
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()
         for room in _rng.sample(rooms, min(len(rooms), 5)):
             for tx, ty in room.inner_tiles():
                 if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
@@ -138,7 +138,7 @@ class EncountersMixin:
                             if getattr(m, '_npc_encounter_tag', None) != '_cow_dialog']
         self.state = STATE_PLAYER
         try:
-            self._change_level(COW_LEVEL, enter_from_top=True)
+            self._change_level(COW_LEVEL, enter_from_top=True, via='cow')
         except Exception as e:
             self.add_message(f"Error entering cow level: {e}", 'danger')
             import traceback
@@ -150,7 +150,7 @@ class EncountersMixin:
         self.add_message("You step through the portal. The pasture fades behind you.", 'info')
         self.add_message("The cow is gone. The portal closes. Moo.", 'info')
         try:
-            self._change_level(self._cow_return_level, enter_from_top=False)
+            self._change_level(self._cow_return_level, enter_from_top=False, via='cow')
         except Exception as e:
             self.add_message(f"Error exiting cow level: {e}", 'danger')
             import traceback
@@ -187,47 +187,7 @@ class EncountersMixin:
                 return
         if not self._encounter_allowed(enc):
             return
-
-        from monster import Monster
-        # Create a fake "monster" for the NPC so it renders and blocks tiles
-        npc_def = {
-            'id': enc.get('sprite_id', 'npc_traveler'),
-            'name': enc['name'],
-            'symbol': enc['symbol'],
-            'color': list(enc['color']),
-            'hp': 1,
-            'thac0': 20,
-            'speed': 0,
-            'attacks': [],
-            'ai_pattern': 'sessile',
-            'resistances': [],
-            'weaknesses': [],
-            'min_level': level,
-            'is_allied': True,
-            'harvest_tier': 0,
-            'harvest_threshold': 99,
-            'ingredient_id': None,
-        }
-        # Place in a non-start room
-        from geom import all_occupied_tiles
-        occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
-        rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
-        import random as _rng
-        for room in _rng.sample(rooms, min(len(rooms), 5)):
-            tiles = list(room.inner_tiles())
-            _rng.shuffle(tiles)
-            for tx, ty in tiles:
-                if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
-                    npc = Monster(npc_def, tx, ty)
-                    npc._npc_encounter_tag = enc['tag']
-                    self.monsters.append(npc)
-                    return
-        spot = self._free_spawn_tile(occupied)
-        if spot is not None:
-            npc = Monster(npc_def, *spot)
-            npc._npc_encounter_tag = enc['tag']
-            self.monsters.append(npc)
+        self._spawn_encounter_npc(enc, '_npc_encounter_tag', level)
 
     def _maybe_spawn_flavor_npc(self, level: int):
         """Spawn a flavor (non-karmic) NPC on this level if one is assigned."""
@@ -243,8 +203,19 @@ class EncountersMixin:
                 return
         if not self._encounter_allowed(enc):
             return
+        self._spawn_encounter_npc(enc, '_flavor_encounter_tag', level)
 
+    def _spawn_encounter_npc(self, enc: dict, tag_attr: str, level: int):
+        """Place an encounter NPC: anchors, flavor encounters, callbacks and
+        Road slots all come through here (DEEDS_KARMA_DESIGN 6.4). It stands
+        in a room other than the arrival room, or on any free tile the hero
+        can walk to; ``_settle_monsters`` (which runs after the spawners)
+        brings it within four-way reach if a pool or lava cut it off, since
+        ``_needed_to_finish`` counts encounter NPCs. ``tag_attr`` is
+        ``_npc_encounter_tag`` or ``_flavor_encounter_tag``, which the bump
+        dispatch reads. Returns the NPC or None."""
         from monster import Monster
+        # A fake "monster" for the NPC so it renders and blocks tiles
         npc_def = {
             'id': enc.get('sprite_id', 'npc_traveler'),
             'name': enc['name'],
@@ -265,25 +236,28 @@ class EncountersMixin:
         }
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         import random as _rng
+
+        def _make(x, y):
+            npc = Monster(npc_def, x, y)
+            setattr(npc, tag_attr, enc['tag'])
+            if tag_attr == '_flavor_encounter_tag':
+                npc.proper_noun = bool(enc.get('proper_noun'))   # a person's name
+            self.monsters.append(npc)
+            return npc
+
         for room in _rng.sample(rooms, min(len(rooms), 5)):
             tiles = list(room.inner_tiles())
             _rng.shuffle(tiles)
             for tx, ty in tiles:
                 if self.dungeon.is_walkable(tx, ty) and (tx, ty) not in occupied:
-                    npc = Monster(npc_def, tx, ty)
-                    npc._flavor_encounter_tag = enc['tag']
-                    npc.proper_noun = bool(enc.get('proper_noun'))   # a person's name
-                    self.monsters.append(npc)
-                    return
+                    return _make(tx, ty)
         spot = self._free_spawn_tile(occupied)
         if spot is not None:
-            npc = Monster(npc_def, *spot)
-            npc._flavor_encounter_tag = enc['tag']
-            npc.proper_noun = bool(enc.get('proper_noun'))
-            self.monsters.append(npc)
+            return _make(*spot)
+        return None
 
     # ------------------------------------------------------------------
     # Magic Dungeon Carrot  (guaranteed spawn L1-19, once per run)
@@ -313,7 +287,7 @@ class EncountersMixin:
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()
         for room in _rng.sample(rooms, min(len(rooms), 5)):
             tiles = list(room.inner_tiles())
             _rng.shuffle(tiles)
@@ -367,7 +341,7 @@ class EncountersMixin:
         }
         from geom import all_occupied_tiles
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         import random as _rng
         for room in _rng.sample(rooms, min(len(rooms), 5)):
@@ -978,43 +952,57 @@ class EncountersMixin:
         self._npc_after = o.get('then', 'close')
         self._npc_encounter_phase = 'outcome'
 
-    def _apply_outcome_deeds(self, o: dict, tag: str):
+    def _apply_outcome_deeds(self, o: dict, tag: str, *, person=None, chron_kind=None):
         """The deeds side of an outcome: engine virtue tags, the deeds list,
-        oaths, the person's status and chronicle threads. (Callbacks, delayed
-        rewards and escorts arrive with Phase 2.)"""
+        oaths, the person's status, chronicle threads, callbacks
+        (``schedule``), delayed rewards, an escort and a fight.
+
+        ``person`` defaults to the open encounter's; ``chron_kind`` writes the
+        outcome's ``chronicle`` line here as a structured entry (escort
+        endings). An encounter's own line is written when its screen closes."""
         import deeds
-        import karma
         reg = self._deeds_reg()
         floor, deepest, block, turn = self._deed_where()
         if o.get('virtue') == 'forgo' or (o.get('karma_kind') == 'forgo'
                                           and int(o.get('karma', 0) or 0) > 0):
             self._engine_virtue('forgo', tag)
         self._record_deeds(o.get('deeds'), tag)
+        # Today's content carries its karma on the option itself (untyped,
+        # 'legacy'). An outcome pays its karma once: while it does, swearing,
+        # keeping or breaking an oath in that outcome moves no more karma
+        # (Phase 3a moves those points onto the oath and removes the rule).
+        legacy_karma = (int(o.get('karma', 0) or 0)
+                        and o.get('karma_kind', 'legacy') == 'legacy')
         oath = o.get('oath')
         if isinstance(oath, dict) and oath.get('id'):
             due = None
             span = oath.get('due_floors')
             if isinstance(span, (list, tuple)) and len(span) == 2:
-                due = deepest + random.randint(int(span[0]), int(span[1]))
-            deeds.swear(reg, oath['id'], to=oath.get('to', ''), what=oath.get('what', ''),
-                        item_id=oath.get('item_id'), due_floor=due, floor=floor,
-                        block=block, turn=turn, source=tag)
+                import road
+                rng = road.rng_for(self._road_state()['seed'], f"oath:{oath['id']}")
+                due = deepest + rng.randint(int(span[0]), int(span[1]))
+            made = deeds.swear(reg, oath['id'], to=oath.get('to', ''), what=oath.get('what', ''),
+                               item_id=oath.get('item_id'), due_floor=due, floor=floor,
+                               block=block, turn=turn, source=tag)
+            if legacy_karma and int(o.get('karma', 0) or 0) > 0:
+                made['prepaid'] = True          # its point was paid when it was sworn
+            for k in ('thread', 'lapse_chronicle'):
+                if oath.get(k):
+                    made[k] = oath[k] if k != 'thread' else (
+                        oath[k].get('id') if isinstance(oath[k], dict) else oath[k])
         if o.get('oath_keep'):
-            oid = o['oath_keep']
-            made = (reg['oaths'].get(oid) or {}).get('made_block')
-            if deeds.keep_oath(reg, oid, floor=floor, block=block, turn=turn):
-                karma.adjust(self, 1, kind='oath', source=oid, made_block=made)
+            self._keep_oath(o['oath_keep'], paid_here=bool(legacy_karma))
         if o.get('oath_break'):
-            oid = o['oath_break']
-            if deeds.break_oath(reg, oid, floor=floor, block=block, turn=turn):
-                karma.adjust(self, -1, kind='betray', source=oid)
+            self._break_oath(o['oath_break'], paid_here=bool(legacy_karma))
         if o.get('oath_release'):
             deeds.release_oath(reg, o['oath_release'], floor=floor, block=block, turn=turn)
-        person = (getattr(self, '_npc_encounter_active', None) or {}).get('person')
+        if person is None:
+            person = (getattr(self, '_npc_encounter_active', None) or {}).get('person')
+        pid = person.get('id') if isinstance(person, dict) else None
         ps = o.get('person_status')
-        if ps and isinstance(person, dict) and person.get('id'):
+        if ps and pid:
             spec = ps if isinstance(ps, dict) else {'status': ps}
-            deeds.set_person(reg, person['id'], name=person.get('name', ''),
+            deeds.set_person(reg, pid, name=person.get('name', ''),
                              status=spec.get('status'), owes=spec.get('owes'),
                              owed=spec.get('owed'), deserving=spec.get('deserving'),
                              last_line=o.get('chronicle'), floor=floor)
@@ -1023,6 +1011,76 @@ class EncountersMixin:
             deeds.open_thread(reg, th['id'], hint=th.get('hint', ''), floor=floor)
         if o.get('thread_close'):
             deeds.close_thread(reg, o['thread_close'])
+        if o.get('schedule'):
+            self._schedule_callbacks(o['schedule'], tag)
+        if o.get('delayed'):
+            self._schedule_delayed(o['delayed'], tag)
+        if o.get('escort'):
+            from escort_system import resolve_spec
+            enc = getattr(self, '_npc_encounter_active', None) or {}
+            spec = resolve_spec(o['escort'], enc)
+            if spec is not None:
+                self._spawn_escort(spec, source=tag, person=person if pid else None)
+        if isinstance(o.get('fight'), dict) and o['fight'].get('monster_id'):
+            self._spawn_outcome_fight(o['fight']['monster_id'])
+        if chron_kind and o.get('chronicle'):
+            import chronicle
+            chronicle.chron(self, chron_kind, o['chronicle'], person=pid)
+
+    def _keep_oath(self, oath_id: str, *, paid_here: bool = False) -> bool:
+        """Keep an open oath: deed ``kept.<id>`` (tag virtue:kept) and an
+        'oath' karma award into the earliest open block slot since it was
+        sworn. While today's content still carries the oath's point on an
+        option (paid when sworn, or on the keeping option itself) the award
+        is 0, so karma totals stay as they were (gate off, Phase 2)."""
+        import deeds
+        import karma
+        reg = self._deeds_reg()
+        floor, _deepest, block, turn = self._deed_where()
+        o = reg['oaths'].get(oath_id) or {}
+        if not deeds.keep_oath(reg, oath_id, floor=floor, block=block, turn=turn):
+            return False
+        delta = 0 if (paid_here or o.get('prepaid')) else 1
+        karma.adjust(self, delta, kind='oath', source=oath_id, made_block=o.get('made_block'))
+        if o.get('thread'):
+            deeds.close_thread(reg, o['thread'])
+        return True
+
+    def _break_oath(self, oath_id: str, *, paid_here: bool = False) -> bool:
+        import deeds
+        import karma
+        reg = self._deeds_reg()
+        floor, _deepest, block, turn = self._deed_where()
+        o = reg['oaths'].get(oath_id) or {}
+        if not deeds.break_oath(reg, oath_id, floor=floor, block=block, turn=turn):
+            return False
+        karma.adjust(self, 0 if paid_here else -1, kind='betray', source=oath_id)
+        if o.get('thread'):
+            deeds.close_thread(reg, o['thread'])
+        return True
+
+    def _spawn_outcome_fight(self, monster_id: str):
+        """An outcome's ``fight``: a hostile beside the hero."""
+        from monster import Monster
+        try:
+            from game_magic import _monster_defn
+            defn = _monster_defn(monster_id)
+        except Exception:
+            return None
+        from geom import all_occupied_tiles
+        busy = set(all_occupied_tiles(self.monsters)) | self._occupants()
+        px, py = self.player.x, self.player.y
+        for r in (1, 2, 3):
+            for dx in range(-r, r + 1):
+                for dy in range(-r, r + 1):
+                    t = (px + dx, py + dy)
+                    if max(abs(dx), abs(dy)) == r and self.dungeon.in_bounds(*t) \
+                            and self.dungeon.is_walkable(*t) and t not in busy:
+                        m = Monster(defn, *t)
+                        m._aware = True
+                        self.monsters.append(m)
+                        return m
+        return None
 
     def _npc_remove_item_by_id(self, item_id: str) -> bool:
         """Take the item with this id from the pack or a worn slot."""

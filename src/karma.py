@@ -58,22 +58,7 @@ def _clamp(v: int) -> int:
 
 def _where(game):
     """(floor, deepest, block, turn) for ``game`` (duck-typed)."""
-    try:
-        floor = int(getattr(game, 'dungeon_level', 1) or 1)
-    except (TypeError, ValueError):
-        floor = 1
-    player = getattr(game, 'player', None)
-    try:
-        deepest = int(getattr(player, 'deepest_floor_reached', 0) or 0)
-    except (TypeError, ValueError):
-        deepest = 0
-    if not deepest:
-        deepest = floor if 1 <= floor <= 100 else 1
-    try:
-        turn = int(getattr(game, 'turn_count', 0) or 0)
-    except (TypeError, ValueError):
-        turn = 0
-    return floor, deepest, deeds.karma_block(deepest), turn
+    return deeds.where(game)
 
 
 def current_block(game) -> int:

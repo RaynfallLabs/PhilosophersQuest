@@ -1047,6 +1047,14 @@ recalled hints.
 - `min_level` / `max_level` gate spawning.
 - `options` is the branching dialog — see `game_encounters` for the
   cost / reward dispatch and the full type inventory.
+- `callback_only: true` — never rolled; only an opener's outcome
+  `schedule` places it (`{"encounter", "after_floors": [min, max],
+  "requires", "if_missed": "carry"|"drop", "thread"}`). An outcome may
+  also carry `delayed` (a reward N floors on), `oath` / `oath_keep` /
+  `oath_break` / `oath_release`, `escort` (inline or `{"$ref"}` into the
+  encounter's `escorts` map) and `fight` ({monster_id}). The full schema
+  is DEEDS_KARMA_DESIGN.md section 4; `tools/encounters/validate.py`
+  checks it. The old `chain_after` key is retired.
 
 ---
 

@@ -398,6 +398,20 @@ carry karma today — `flv_baucis_table` +1 (share food),
 Each flavor NPC is one-shot per run (tag added to
 `_encountered_flavor_npcs`).
 
+**Follow-ups are callbacks, not rolls** (deeds redesign Phase 2). The
+Great Lion (`flv_lion_remembers`), the Relic Broker, Brother Sacristan's
+chapel and the Watch Post are `callback_only`: the random roll never
+places them. The opener's own option schedules them through its
+`schedule` list (`game_road.py`): drawing the lion's thorn, taking
+Cuthbert's Gospel, swearing to carry the courier's dispatch. The target
+floor is picked at that moment from the run's road seed, inside the
+follow-up's own floor band, never on a boss floor or a floor holding an
+anchor. The old `chain_after` link (placed whenever the opener was in the
+run, whatever the hero chose there; the Watch Post was rolled on its own)
+is retired; the loader still reads it as `callback_only` and the
+validator reports it. The Watch Post also needs the courier's oath still
+open when the hero arrives.
+
 | Tag | Name | Level range | Options |
 |-----|------|-------------|---------|
 | `flv_wandering_merchant` | Wandering Merchant | L2-18 | (1) Trade food → random potion. (2) Trade 50 gold → random scroll. (3) Browse — nothing. |
@@ -823,8 +837,15 @@ src/npc_encounters.py        -- ENCOUNTERS (31 moral), _BLOCKS,
                                 _JUDGMENT_TIERS, judge_karma,
                                 _KARMA_SPRITES
 src/flavor_encounters.py     -- FLAVOR_ENCOUNTERS (5 hardcoded + 103 JSON),
-                                select_flavor_encounters,
+                                select_flavor_encounters (never rolls a
+                                callback_only follow-up),
                                 data/flavor_encounters.json loader
+src/road.py                  -- the Road (behind road_enabled): slots,
+                                roles, binding, callback targets, seed
+src/game_road.py             -- RoadMixin: _road_arrive (oath lapse,
+                                delayed rewards, callbacks, slot
+                                binding, anchor fallback), schedule
+src/escort_system.py         -- Escort, EscortMixin, occupants()
 src/game_encounters.py       -- _maybe_spawn_npc, _maybe_spawn_flavor_npc,
                                 _start_npc_encounter,
                                 _start_flavor_encounter,

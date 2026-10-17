@@ -113,7 +113,7 @@ class EmberpupMixin:
             'harvest_tier': 0, 'harvest_threshold': 99, 'ingredient_id': None,
         }
         occupied = all_occupied_tiles(self.monsters)
-        occupied.add((self.player.x, self.player.y))
+        occupied |= self._occupants()     # the hero, pets and escorts
         rooms = self.dungeon.rooms[1:] if len(self.dungeon.rooms) > 1 else self.dungeon.rooms
         spot = None
         for room in random.sample(rooms, min(len(rooms), 5)):
@@ -251,6 +251,8 @@ class EmberpupMixin:
             import karma
             karma.adjust(self, int(d['first_feed_karma']), kind='legacy',
                          source='emberpup_feed')
+            import deeds
+            deeds.note(self, 'aid.emberpup', source='emberpup', unique=True)
         self.add_message(f"The Emberpup eats your {name}.", 'success')
         self._emberpup_outcome(d['fed'].format(food=name), 'options')
 
@@ -269,6 +271,8 @@ class EmberpupMixin:
         self._emberpup_state()['outcome'] = 'fled'
         import karma
         karma.adjust(self, int(d['attack_karma']), kind='cruelty', source='emberpup_attack')
+        import deeds
+        deeds.note(self, 'wrong.emberpup', source='emberpup', tags=['vice:cruelty'])
         self.add_message("The Emberpup flees into the dark.", 'danger')
         self._log_chronicle(d['attack_chronicle'])
         self._emberpup_acted = True
@@ -316,6 +320,8 @@ class EmberpupMixin:
         except ValueError:
             pass
         self._emberpup_state()['outcome'] = 'adopted'
+        import deeds
+        deeds.note(self, 'saved.emberpup', source='emberpup', unique=True)
         pet = Pet(d['pet_species'], x, y)
         pet.apply_late_pickup_bonus(self.dungeon_level)
         self.pets.append(pet)
