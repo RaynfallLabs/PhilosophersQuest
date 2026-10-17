@@ -253,6 +253,40 @@ def test_c04_sword_of_damocles_does_not_one_shot_a_gate_boss():
     assert b.alive and b.hp > b.max_hp // 2
 
 
+# ---------------------------------------------------------------- C05
+def test_c05_a_reach_weapon_does_not_strike_through_a_wall():
+    """Reach was checked by distance alone: Gungnir struck a rat on the far
+    side of a solid wall the player could not see through."""
+    from dungeon import WALL, FLOOR
+    from game_states import STATE_QUIZ
+    g = _game(seed=61)
+    _open_floor(g)
+    p = g.player
+    spear = _plain(items.make_item_by_id('weapon', 'gungnir'))
+    p.inventory.append(spear)
+    p.weapon = spear
+    assert spear.reach >= 2
+    for dy in (-1, 0, 1):
+        g.dungeon.tiles[p.y + dy][p.x + 1] = WALL
+    rat = _spawn(g, 'giant_rat', dx=2, hp=500, max_hp=500)
+    g.dungeon.tiles[rat.y][rat.x] = FLOOR
+    g._refresh_fov()
+    g._open_melee_targeting()
+    assert rat not in g._target_candidates
+    g.target_cursor_x, g.target_cursor_y = rat.x, rat.y
+    g._confirm_melee_target()
+    assert g.state != STATE_QUIZ and rat.hp == 500
+    # with the wall gone the same strike is offered and starts
+    for dy in (-1, 0, 1):
+        g.dungeon.tiles[p.y + dy][p.x + 1] = FLOOR
+    g._refresh_fov()
+    g._open_melee_targeting()
+    assert rat in g._target_candidates
+    g.target_cursor_x, g.target_cursor_y = rat.x, rat.y
+    g._confirm_melee_target()
+    assert g.state == STATE_QUIZ
+
+
 def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
     """The Sandals of Theseus mirror one of the wearer's debuffs onto the
     attacker; the crossbow cooldown and standing in a pit counted, so a rat

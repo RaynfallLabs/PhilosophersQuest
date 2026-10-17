@@ -149,6 +149,16 @@ class CombatMixin:
     # Targeting -- melee reach (Observe-like cursor for melee attacks)
     # ------------------------------------------------------------------
 
+    def _reach_line_clear(self, tx, ty) -> bool:
+        """True if a melee strike can reach (tx, ty): always for the adjacent
+        ring, and past it only along a clear line (no wall, closed door or
+        diagonal squeeze between two walls)."""
+        px, py = self.player.x, self.player.y
+        if max(abs(tx - px), abs(ty - py)) <= 1:
+            return True
+        from combat import _line_of_sight
+        return _line_of_sight(px, py, tx, ty, self.dungeon)
+
     def _open_melee_targeting(self):
         """Press 'a' to enter melee targeting mode — attack adjacent tiles (or further with reach weapons)."""
         weapon = self.player.weapon
@@ -156,12 +166,17 @@ class CombatMixin:
 
         px, py = self.player.x, self.player.y
 
-        # Build candidate list: alive monsters within melee reach
+        # Build candidate list: alive monsters within melee reach. Past the
+        # adjacent ring a reach weapon needs a clear line and a seen target
+        # (C05: spears struck through solid walls at unseen monsters).
+        _vis = getattr(self, 'visible', None) or set()
         candidates = [
             m for m in self.monsters
             if m.alive
             and abs(m.x - px) <= reach and abs(m.y - py) <= reach
             and not (m.x == px and m.y == py)
+            and (max(abs(m.x - px), abs(m.y - py)) <= 1
+                 or ((m.x, m.y) in _vis and self._reach_line_clear(m.x, m.y)))
         ]
         candidates.sort(key=lambda m: abs(m.x - px) + abs(m.y - py))
 
@@ -1741,6 +1756,11 @@ class CombatMixin:
         # 1. Monster at cursor -- melee combat
         target = monster_at_tile(self.monsters, cx, cy)
         if target:
+            # C05: a reach weapon cannot strike through a wall or door.
+            if not self._reach_line_clear(cx, cy):
+                self.add_message("Something is in the way -- you cannot reach that far.",
+                                 'warning')
+                return
             self._start_combat(target)
             return
 
