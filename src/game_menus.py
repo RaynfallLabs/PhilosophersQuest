@@ -1789,8 +1789,7 @@ class MenuMixin:
             self.add_message("That charge is gone.", 'warning')
             return False
         # Pick a visible target
-        targets = [m for m in self.monsters
-                   if m.alive and (m.x, m.y) in self.visible]
+        targets = [m for m in self.monsters if self._sees_monster(m)]
         if not targets:
             self.add_message(
                 "Nothing in sight to use the charge on.", 'warning')

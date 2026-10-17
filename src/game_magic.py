@@ -552,6 +552,13 @@ class MagicMixin:
                     # Strip invisibility if it was hiding this monster.
                     if m.status_effects.pop('invisible', None) is not None:
                         revealed += 1
+                    elif getattr(m, 'invisible', False) and getattr(m, '_unseen', False):
+                        revealed += 1      # invisible by nature: shown below
+            # The light lingers in the hero's eyes: creatures invisible by
+            # nature (src/unseen.py) can be seen for a stretch.
+            self.player.add_effect('see_invisible',
+                                   self._wand_tier_duration(20, wand.quiz_tier))
+            self._sync_unseen()
             self.add_message(
                 f"Blinding sunlight floods the floor! "
                 f"({revealed} hidden creature{'s' if revealed != 1 else ''} revealed)",

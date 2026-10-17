@@ -68,6 +68,9 @@ def the_name(monster, lower: bool = False) -> str:
     four of them already begin with "The". Blindly prefixing "The " produced
     "The The Sphinx is slain!" and "The Baba Yaga misses!".
     """
+    # An invisible creature the hero cannot see (src/unseen.py) is never named.
+    if getattr(monster, '_unseen', False) is True:
+        return 'something unseen' if lower else 'Something unseen'
     name = getattr(monster, 'name', '') or 'something'
     low = name.lower()
     if low.startswith('the '):
@@ -287,6 +290,17 @@ class Monster:
 
         # --- Mimic surprise flag (set when mimic springs from disguise) ---
         self._mimic_surprise: bool = False
+        # What an un-sprung mimic-AI creature is drawn as ({'item', 'name'}).
+        self.disguise = defn.get('disguise') or None
+
+        # --- Invisible by nature (src/unseen.py holds every rule) ---
+        # Not seen without see invisible / true sight / telepathy. `_unseen`
+        # is kept by the Game (it depends on the hero's senses) and turns
+        # this creature's name into "something unseen" in every message;
+        # `_felt_at` is the tile where the hero bumped into it.
+        self.invisible: bool = bool(defn.get('invisible', False))
+        self._unseen: bool = False
+        self._felt_at = None
 
         # --- Boss multi-attack: fires all attacks per turn like Fenrir at
         # rage 3+. Currently used by Abaddon. Wired in act().
@@ -350,6 +364,7 @@ class Monster:
         'prefers_flank': False,
         'can_phase_blink': False, 'phase_blink_chance': 0.30,
         '_mimic_surprise': False,
+        'disguise': None, 'invisible': False, '_unseen': False, '_felt_at': None,
         # Footprint default — every saved Monster from before the
         # multi-tile feature gets (1, 1) automatically. Live Monster
         # instances set this in __init__; pickled instances inherit it
@@ -1039,7 +1054,11 @@ class Monster:
         dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
         actual = player.take_damage(dmg, atk_type)
 
-        msg = f"{the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+        if getattr(self, '_unseen', False) is True:
+            # Nothing to name and nothing seen swinging (src/unseen.py).
+            msg = f"Something unseen strikes you for {actual} damage!"
+        else:
+            msg = f"{the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
         if _vuln_note and actual > 0:
             msg += f" {_vuln_note}"
         if charged:
@@ -2182,6 +2201,11 @@ class Monster:
             self._aware = True
             self.ai_pattern = 'aggressive'
             return True  # attack now
+        if self.__dict__.get('_given_away', False):
+            # Already given away (a chest that turned out to be it): no
+            # disguise left to keep, so it hunts like anything else.
+            self.ai_pattern = 'aggressive'
+            return self._standard_move(player, dungeon, all_monsters, extra_occupied, 'aggressive')
         # Still hidden — completely inert until player walks into range
         return False
 

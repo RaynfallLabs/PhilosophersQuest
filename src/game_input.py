@@ -472,7 +472,7 @@ class InputMixin:
         if key == pygame.K_PERIOD:
             qs = getattr(self, 'quirk_system', None)
             # "Near" means in sight, not anywhere on the floor.
-            near = any(m.alive and (m.x, m.y) in self.visible for m in self.monsters)
+            near = any(self._sees_monster(m) for m in self.monsters)
             if qs:
                 qs.on_wait(near_monsters=near)
             # Meditation: restore 1 MP when waiting if no monsters are adjacent

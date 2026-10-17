@@ -19,7 +19,8 @@ import pygame
 import layout
 from ui_scale import px as S
 from renderer import TILE_SIZE
-from geom import monster_at_tile, any_tile_in_set
+from geom import any_tile_in_set
+import unseen
 import ui_theme
 import lore_art
 from ui import carry_state, carry_color, carry_numbers, floor_label
@@ -1949,8 +1950,19 @@ class RenderMixin:
             self.renderer.draw_item(item, cam_x, cam_y, self.visible)
         for m in self.monsters:
             if m.alive:
-                # Ambush monsters are invisible until aware
-                if m.ai_pattern == 'ambush' and not getattr(m, '_aware', False):
+                # What the hero cannot see is not drawn (src/unseen.py): an
+                # ambusher waits unseen until aware, a mimic is drawn as the
+                # chest or hoard it poses as, and an invisible creature shows
+                # at most a faint shimmer where the hero has felt it.
+                if unseen.lurking(m):
+                    _disg = unseen.disguise(m)
+                    if _disg:
+                        self.renderer.draw_disguise(m.x, m.y, _disg['item'], self.visible)
+                    continue
+                if unseen.unseen(m, self.player):
+                    if getattr(m, '_felt_at', None) == (m.x, m.y):
+                        self.renderer.draw_shimmer(m.x, m.y, unseen.FELT_SHIMMER,
+                                                   self.turn_count, self.visible)
                     continue
                 self.renderer.draw_entity(
                     m.x, m.y, m.color, cam_x, cam_y, self.visible,
@@ -1958,7 +1970,9 @@ class RenderMixin:
                     # Knight's limb stages) names it in sprite_id
                     mid=getattr(m, 'sprite_id', None) or m.kind,
                     footprint=getattr(m, 'footprint', (1, 1)),
-                    symbol=getattr(m, 'symbol', ''))
+                    symbol=getattr(m, 'symbol', ''),
+                    # seen through see invisible: its art, cold and see-through
+                    tint=unseen.SEE_INVISIBLE_TINT if unseen.is_invisible(m) else None)
         # Pet companions: draw with species sprite or color fallback
         for pet in self.pets:
             if pet.alive and (pet.x, pet.y) in self.visible:
@@ -2022,10 +2036,8 @@ class RenderMixin:
             self._draw_death_chase_atmosphere()
 
         self.msg_log.draw(self.screen, layout.MAP_X, layout.GAME_H, layout.MAP_W, layout.MSG_H)
-        hud_monsters = [
-            m for m in self.monsters
-            if not (getattr(m, 'ai_pattern', '') == 'ambush' and not getattr(m, '_aware', False))
-        ]
+        # The In Sight panel lists only what the hero can see (src/unseen.py).
+        hud_monsters = [m for m in self.monsters if not unseen.concealed(m, self.player)]
         self.sidebar.draw(
             self.player, self.dungeon_level, self.turn_count, self.player_gold,
             player_name=getattr(self, 'player_name', 'Adventurer'),
@@ -2225,7 +2237,7 @@ class RenderMixin:
                 pygame.draw.rect(self.screen, (255, 100, 60), (scr_x, scr_y, T, T), 1)
 
         # Check if there's a valid target at cursor
-        target_monster = monster_at_tile(self.monsters, cx, cy)
+        target_monster = self._seen_monster_at(cx, cy)     # never names the unseen
         has_target = target_monster is not None
 
         # Cursor highlight
@@ -2252,7 +2264,7 @@ class RenderMixin:
         reach = self._throw_reach
         has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
         in_range = max(abs(cx - px), abs(cy - py)) <= reach
-        target_monster = monster_at_tile(self.monsters, cx, cy)
+        target_monster = self._seen_monster_at(cx, cy)     # never names the unseen
         # Check if a monster blocks the path before the cursor
         blocker = self._find_first_monster_in_path(px, py, cx, cy)
         will_hit_blocker = blocker is not None and (blocker.x != cx or blocker.y != cy)
@@ -2334,7 +2346,7 @@ class RenderMixin:
 
         # Check LoS and whether there's a target at cursor
         has_los = _line_of_sight(px, py, cx, cy, self.dungeon)
-        target_monster = monster_at_tile(self.monsters, cx, cy)
+        target_monster = self._seen_monster_at(cx, cy)     # never names the unseen
         weapon = self.player.ranged_weapon
         in_reach = weapon and (max(abs(cx - px), abs(cy - py)) <= weapon.reach)
         valid_shot = has_los and in_reach and target_monster is not None
