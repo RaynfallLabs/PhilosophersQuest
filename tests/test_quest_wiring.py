@@ -27,20 +27,19 @@ from dungeon import (generate_dungeon, spawn_items, WALL, SECRET_DOOR,  # noqa: 
 
 
 def _reach(d, start, opened=()):
-    """Tiles the player can walk to from `start` (8-way), treating `opened`
-    tiles as doors that have been opened."""
+    """Tiles the player can walk to from `start` (4-way, as the hero walks:
+    the arrow keys), treating `opened` tiles as doors that have been opened."""
     seen = {start}
     q = collections.deque([start])
     while q:
         x, y = q.popleft()
-        for dx in (-1, 0, 1):
-            for dy in (-1, 0, 1):
-                nx, ny = x + dx, y + dy
-                if (nx, ny) in seen or not d.in_bounds(nx, ny):
-                    continue
-                if (nx, ny) in opened or d.tiles[ny][nx] not in (WALL, SECRET_DOOR, WATER, LAVA):
-                    seen.add((nx, ny))
-                    q.append((nx, ny))
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if (nx, ny) in seen or not d.in_bounds(nx, ny):
+                continue
+            if (nx, ny) in opened or d.tiles[ny][nx] not in (WALL, SECRET_DOOR, WATER, LAVA):
+                seen.add((nx, ny))
+                q.append((nx, ny))
     return seen
 
 
