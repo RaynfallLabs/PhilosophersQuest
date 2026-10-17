@@ -939,7 +939,8 @@ class EncountersMixin:
                 claim_unique(result)
                 return result
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('game_encounters._generate_npc_reward_item: recovered from an error')
         return None
 
     def _create_specific_npc_item(self, item_type: str, item_id: str,
@@ -954,7 +955,8 @@ class EncountersMixin:
                         result.identified = True
                     return result
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('game_encounters._create_specific_npc_item: recovered from an error')
         return None
 
     def _grant_burden_item(self, item_id: str):
@@ -968,7 +970,8 @@ class EncountersMixin:
                     self.player.inventory.append(result)
                     return
         except Exception:
-            pass
+            from game_log import log_error
+            log_error('game_encounters._grant_burden_item: recovered from an error')
 
     def _close_npc_encounter(self, resolved: bool):
         """Close the NPC encounter overlay."""
@@ -1048,7 +1051,8 @@ class EncountersMixin:
                     self.player.inventory.append(sw)
                     self.add_message("The Sword of Michael materializes in your hands!", 'success')
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('game_encounters._resolve_judgment: recovered from an error')
             try:
                 artifacts = load_items('artifact')
                 scales = next((a for a in artifacts if a.id == 'scales_of_michael'), None)
@@ -1058,7 +1062,8 @@ class EncountersMixin:
                     self.player.inventory.append(sc)
                     self.add_message("The Scales of Michael float into your grasp!", 'success')
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('game_encounters._resolve_judgment: recovered from an error')
             self._log_chronicle("Stood before the altar of judgment. The scales weighed my soul. I was found worthy. A sword of white fire and the scales themselves were given to me. I've never felt so terrified.")
 
         elif outcome == 'scales_granted':
@@ -1073,7 +1078,8 @@ class EncountersMixin:
                     self.player.inventory.append(sc)
                     self.add_message("The Scales of Michael float into your grasp!", 'success')
             except Exception:
-                pass
+                from game_log import log_error
+                log_error('game_encounters._resolve_judgment: recovered from an error')
             self._log_chronicle("The altar weighed my deeds. Not perfect, but enough. The Scales of Michael settled into my hands. They hum with a quiet judgment.")
 
         elif outcome == 'abaddon_empowered':

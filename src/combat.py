@@ -1,12 +1,12 @@
 import random
 from dice import roll
+from geom import is_at_tile
 
 # Shares, not floor multipliers (floor_curve: LORE, NOT FLOOR).
 RANGED_STAT_SHARE = 0.03      # of a bow's own base, per four points of PER / STR over 10
 LAST_STAND_SHARE = 0.15       # Helm of Leonidas, below a fifth of health
 ENCIRCLED_SHARE = 0.04        # Cuirass of Hannibal, per adjacent enemy when surrounded
 GROWING_SHARE = 0.02          # Caliburn: of its forged base, each time it grows
-from geom import is_at_tile
 
 # Fallback multipliers used when the player has no weapon equipped.
 # Bare-hand chain table. Caps at the universal 5-chain like every common
@@ -1499,7 +1499,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                     try:
                         damage += _tb_roll(_bt_dice)             # real dice, weapon.json
                     except Exception:
-                        pass
+                        from game_log import log_error
+                        log_error('combat._callback: recovered from an error')
 
         # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
         # +25% damage against the floor's highest-level monster.

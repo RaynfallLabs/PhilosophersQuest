@@ -227,7 +227,6 @@ current_context_blurb() -> str | None
 mark_context_seen(subject: str, topic: str | None) -> None
 pause_timer() -> None
 resume_timer() -> None
-reload_context_blurbs() -> None   # test hook
 # Public attributes:
 pending_context_auto_open: tuple[str, str] | None
 ```
