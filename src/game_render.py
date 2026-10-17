@@ -6327,8 +6327,10 @@ class RenderMixin:
         buf = getattr(self, '_pet_name_input_buffer', '')
         if pet is None:
             return
+        # a creature kind takes "A"; a companion with its own name does not
+        article = '' if pet.species.get('family_cat') else 'A '
         self._ui_input_card(
-            f"A {pet.species_name.upper()} APPEARS!",
+            f"{article}{pet.species_name.upper()} APPEARS!",
             "Will you give this companion a name?",
             buf,
             "Type: edit   |   Enter: confirm   |   Esc: skip naming",

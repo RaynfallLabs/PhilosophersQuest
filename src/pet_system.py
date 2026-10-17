@@ -5,7 +5,8 @@ import random
 from geom import monster_at_tile
 
 # ---------------------------------------------------------------------------
-# Species data: 4 creature types × 3 evolution stages
+# Species data: each line has 3 evolution stages (four elemental lines, the
+# Duck of Doom, and the two rare family cats)
 # ---------------------------------------------------------------------------
 
 _SPECIES = {
@@ -179,7 +180,109 @@ _SPECIES = {
             },
         ],
     },
+    'sherlock': {
+        # One of two family cats (with Irene) that a Soul Sphere very rarely
+        # hatches instead of an elemental line: see roll_soul_sphere_species.
+        # Big, heavy, clumsy and lazy; sings at 3 a.m. Grows bigger and tankier.
+        'element': 'earth',
+        'damage_type': 'crushing',
+        'color': (240, 190, 160),          # peachy-pink skin
+        'family_cat': True,
+        'stages': [
+            {'name': 'Sherlock',                'symbol': 'c',
+             'msg': 'The sphere cracks open and out flops Sherlock: a large, wrinkly, hairless cat. '
+                    'He looks at you, yawns, and decides you will do.'},
+            {'name': 'Sherlock the Stout',      'symbol': 'C',
+             'msg': '{old} eats something he should not have and grows even bigger: Sherlock the Stout!'},
+            {'name': 'Sherlock the Immovable',  'symbol': 'C',
+             'msg': '{old} lies down in the doorway of destiny and refuses to move. '
+                    'He has become Sherlock the Immovable!'},
+        ],
+        'specials': [
+            {
+                'id': 'belly_flop', 'name': 'Belly Flop', 'unlock_stage': 1,
+                'damage_mult': 1.5, 'damage_type': 'crushing',
+                'targeting': 'aoe', 'range': 0, 'aoe_radius': 1,
+                'status': 'stunned', 'status_chance': 0.50, 'status_duration': 2,
+                'self_heal': 0.20,
+                'cooldown': 250,
+                'flavor_message': (
+                    "{pet} trips over his own paws and lands on everything nearby "
+                    "with the full weight of a dropped turkey. Then he naps where he fell."
+                ),
+                'desc': "Squashes all adjacent foes; 1.5x damage; 50% stun (2 turns); "
+                        "then a nap heals him 20%.",
+            },
+            {
+                'id': 'midnight_aria', 'name': 'Midnight Aria', 'unlock_stage': 2,
+                'damage_mult': 1.6, 'damage_type': 'sonic',
+                'targeting': 'aoe', 'range': 0, 'aoe_radius': 2,
+                'status': 'confused', 'status_chance': 0.50, 'status_duration': 3,
+                'pull_radius': 4,
+                'cooldown': 400,
+                'flavor_message': (
+                    "{pet} sings the song of his people, as he does every night at 3 a.m. "
+                    "Every foe within earshot rushes over to make it stop."
+                ),
+                'desc': "Draws foes within 4 tiles to him, then an ear-splitting yowl hits "
+                        "all within 2: 1.6x damage; 50% confuse (3 turns).",
+            },
+        ],
+    },
+    'irene': {
+        # The other family cat: small, athletic tortie who leaps and flies.
+        # Grows more angelic; holy at stage 3.
+        'element': 'air',
+        'damage_type': 'slashing',
+        'color': (215, 150, 110),          # tortie peach
+        'family_cat': True,
+        'stages': [
+            {'name': 'Irene',                'symbol': 'c',
+             'msg': 'The sphere has barely cracked when Irene shoots out of it, bounces off a wall, '
+                    'lands perfectly, and acts like she meant to do that.'},
+            {'name': 'Irene the Skyleaper',  'symbol': 'C',
+             'msg': '{old} leaps so high she forgets to come down. She has become Irene the Skyleaper!'},
+            {'name': 'Irene the Seraph',     'symbol': 'C',
+             'msg': '{old} unfolds wings of pure light, a halo settling between her ears. '
+                    'She has become Irene the Seraph, and she knows it.'},
+        ],
+        'specials': [
+            {
+                'id': 'pounce', 'name': 'Pounce', 'unlock_stage': 1,
+                'damage_mult': 1.5, 'damage_type': 'slashing',
+                'targeting': 'single', 'range': 4,
+                'status': 'bleeding', 'status_chance': 0.50, 'status_duration': 3,
+                'leap': True,
+                'cooldown': 250,
+                'flavor_message': (
+                    "{pet} wiggles her rear end, then launches across the room claws first "
+                    "and lands beside her prey."
+                ),
+                'desc': "Range 4 single target; leaps beside it; 1.5x damage; 50% bleed (3 turns).",
+            },
+            {
+                'id': 'seraph_dive', 'name': 'Seraph Dive', 'unlock_stage': 2,
+                'damage_mult': 2.0, 'damage_type': 'holy',
+                'targeting': 'aoe', 'range': 5, 'aoe_radius': 1,
+                'status': 'blinded', 'status_chance': 0.40, 'status_duration': 3,
+                'leap': True,
+                'cooldown': 400,
+                'flavor_message': (
+                    "{pet} soars up on wings of light and dives like a falling star. "
+                    "Holy radiance bursts where she lands."
+                ),
+                'desc': "Range 5; flies there; AoE 3x3; 2x holy damage; 40% blind (3 turns).",
+            },
+        ],
+    },
 }
+
+# The family cats: rare Soul Sphere hatches (see roll_soul_sphere_species).
+FAMILY_CATS = ('sherlock', 'irene')
+FAMILY_CAT_CHANCE = 0.05          # EACH cat, per hatch (10% for a cat while neither is met)
+# Its own stream, so the rare roll never moves the global random sequence
+# that seeded floors, loot and captures depend on.
+_CAT_RNG = random.Random()
 
 # Evolution thresholds — major Pokémon-style milestones.
 # Stage 1 (L25): ~20 floors of dedicated bonding to achieve.
@@ -302,6 +405,8 @@ class Pet:
         'Nickname the Species'; otherwise just the species name."""
         sp = self.species_name
         if self.nickname:
+            if self.species.get('family_cat'):      # a cat with her own name: "Bean, Irene the Seraph"
+                return f"{self.nickname}, {sp}"
             return f"{self.nickname} the {sp}"
         return sp
 
@@ -337,7 +442,10 @@ class Pet:
                 # Evolution! Use species-name placeholder; the message
                 # template has {old} for the prior form.
                 new_species = self.species_name
-                if self.nickname:
+                if self.nickname and self.species.get('family_cat'):
+                    msg = (f"{self.nickname}, {old_species}, grows grander: "
+                           f"now {new_species}!")
+                elif self.nickname:
                     msg = (f"{self.nickname} the {old_species} grows brighter — "
                            f"it has evolved into {new_species}!")
                 else:
@@ -1012,5 +1120,39 @@ def random_species() -> str:
     endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere /
     Summon Guardian / Gate outcome. It only spawns via `_duck_of_doom_transform`.
     """
-    pool = [k for k in _SPECIES.keys() if k != 'duck_of_doom']
+    pool = [k for k in _SPECIES.keys()
+            if k != 'duck_of_doom' and not _SPECIES[k].get('family_cat')]
     return random.choice(pool)
+
+
+def family_cats_present(player=None, pets=None, inventory=None) -> set:
+    """The family cats already met this run: hatched before (remembered on the
+    player), walking beside the player, or waiting in a bound Soul Sphere."""
+    met = set(getattr(player, 'family_cats_met', None) or ())
+    for p in pets or ():
+        if getattr(p, 'species_key', None) in FAMILY_CATS:
+            met.add(p.species_key)
+    for it in inventory or ():
+        bound = getattr(it, 'bound_pet', None)
+        if getattr(bound, 'species_key', None) in FAMILY_CATS:
+            met.add(bound.species_key)
+    return met
+
+
+def roll_family_cat(present=(), rng=None) -> str | None:
+    """The rare check made before a Soul Sphere's ordinary roll: each family
+    cat not yet present has its own FAMILY_CAT_CHANCE. A cat already met
+    gives its share back to the ordinary roll, so once both are met this is
+    always None."""
+    present = set(present)
+    r = (rng or _CAT_RNG).random()
+    for i, cat in enumerate(FAMILY_CATS):
+        if i * FAMILY_CAT_CHANCE <= r < (i + 1) * FAMILY_CAT_CHANCE:
+            return None if cat in present else cat
+    return None
+
+
+def roll_soul_sphere_species(present=(), rng=None) -> str:
+    """What a thrown Soul Sphere hatches: rarely a family cat, else an
+    elemental line chosen evenly (random_species)."""
+    return roll_family_cat(present, rng) or random_species()

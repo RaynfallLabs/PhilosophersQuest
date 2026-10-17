@@ -731,7 +731,7 @@ class InputMixin:
             if name and name.lower() != pet.species_name.lower():
                 pet.nickname = name
                 self.add_message(
-                    f"You name your new companion {name} the {pet.species_name}!",
+                    f"You name your new companion {pet.name}!",
                     'success')
                 self._log_chronicle(
                     f"A soul sphere hatched. I named the {pet.species_name} '{name}'. "

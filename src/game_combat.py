@@ -434,12 +434,29 @@ class CombatMixin:
                 f"Recalled {bound.name} from the sphere. The bond holds.")
             return
 
-        species = random_pet_species()
+        from pet_system import roll_soul_sphere_species
+        self._hatch_sphere_pet(roll_soul_sphere_species(self._family_cats_present()),
+                               spawn_x, spawn_y)
+
+    def _family_cats_present(self) -> set:
+        from pet_system import family_cats_present
+        return family_cats_present(self.player, self.pets,
+                                   getattr(self.player, 'inventory', None))
+
+    def _hatch_sphere_pet(self, species: str, spawn_x: int, spawn_y: int):
+        """A new companion out of a Soul Sphere, then the naming popup."""
+        from pet_system import FAMILY_CATS
         pet = Pet(species, spawn_x, spawn_y)
         # Late-pickup catch-up: pets hatched deeper get an initial XP grant
         # so they're not uselessly underleveled relative to the floor's enemies.
         pet.apply_late_pickup_bonus(self.dungeon_level)
         self.pets.append(pet)
+        if species in FAMILY_CATS:
+            met = getattr(self.player, 'family_cats_met', None)
+            if not isinstance(met, set):
+                met = set()
+                self.player.family_cats_met = met
+            met.add(species)
         self.add_message(pet.species['stages'][0]['msg'], 'success')
         _snd.play('player_healed')
         # Open the naming popup so the player can give this companion a nickname.
@@ -480,7 +497,11 @@ class CombatMixin:
                 "The sphere shatters in a flash of silver light, but there is no room!", 'warning')
             return
 
-        from pet_system import DadPet
+        from pet_system import DadPet, roll_family_cat
+        cat = roll_family_cat(self._family_cats_present())
+        if cat:
+            self._hatch_sphere_pet(cat, spawn_x, spawn_y)
+            return
         dad = DadPet(spawn_x, spawn_y, duration=5)
         self.pets.append(dad)
         self.add_message("Dad is here! Everything will be fine now!", 'success')
@@ -2834,6 +2855,12 @@ class CombatMixin:
                     self.add_message(k_msg, 'success')
                 self._on_monster_killed(m)
 
+        # Draw foes in first (Sherlock's Midnight Aria: everything within
+        # earshot comes over to make it stop), so the blast then catches them.
+        pull = int(special.get('pull_radius', 0) or 0)
+        if pull:
+            self._pull_foes_to_pet(pet, pull)
+
         affected = []
         if targeting == 'single':
             for m in self.monsters:
@@ -2863,13 +2890,65 @@ class CombatMixin:
                     if m.alive and is_at_tile(m, lx, ly) and m not in affected:
                         affected.append(m)
 
-        self.add_message(
-            f"{pet.name} unleashes {special['name']}!", 'success')
+        flavor = special.get('flavor_message')
+        if flavor:
+            self.add_message(flavor.replace('{pet}', pet.name), 'success')
+        else:
+            self.add_message(
+                f"{pet.name} unleashes {special['name']}!", 'success')
+        # A leaping special (Irene's Pounce and Seraph Dive) carries the pet
+        # to the target: she lands on the free tile beside it nearest to her.
+        if special.get('leap'):
+            self._leap_pet_to(pet, tx, ty)
         for m in affected:
             _apply_to(m)
         if not affected:
             self.add_message(
                 f"The {special['name']} dissipates harmlessly.", 'info')
+        heal_share = float(special.get('self_heal', 0) or 0)
+        if heal_share > 0 and pet.alive and pet.hp < pet.max_hp:
+            healed = min(pet.max_hp - pet.hp, max(1, int(pet.max_hp * heal_share)))
+            pet.hp += healed
+            self.add_message(f"{pet.name} naps it off. (+{healed} HP)", 'success')
+
+    def _pet_tile_free(self, x: int, y: int, pet=None) -> bool:
+        return (self.dungeon.is_walkable(x, y)
+                and (x, y) != (self.player.x, self.player.y)
+                and monster_at_tile(self.monsters, x, y) is None
+                and not any(p.alive and p is not pet and p.x == x and p.y == y
+                            for p in self.pets))
+
+    def _leap_pet_to(self, pet, tx: int, ty: int):
+        """Move the pet onto the free tile beside (tx, ty) nearest to it (or
+        onto (tx, ty) itself when that is free). Stays put if none is free."""
+        best = None
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                nx, ny = tx + dx, ty + dy
+                if (nx, ny) == (pet.x, pet.y) or self._pet_tile_free(nx, ny, pet):
+                    d = max(abs(nx - pet.x), abs(ny - pet.y))
+                    if best is None or d < best[0]:
+                        best = (d, nx, ny)
+        if best:
+            pet.x, pet.y = best[1], best[2]
+
+    def _pull_foes_to_pet(self, pet, radius: int):
+        """Every visible one-tile foe within `radius` of the pet is drawn to a
+        free tile beside it. Bosses and multi-tile monsters hold their ground."""
+        spots = [(pet.x + dx, pet.y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+                 if (dx or dy)]
+        foes = [m for m in self.monsters
+                if m.alive and not getattr(m, 'is_allied', False)
+                and not getattr(m, 'is_boss', False)
+                and tuple(getattr(m, 'footprint', (1, 1))) == (1, 1)
+                and (m.x, m.y) in self.visible
+                and 1 < max(abs(m.x - pet.x), abs(m.y - pet.y)) <= radius]
+        foes.sort(key=lambda m: max(abs(m.x - pet.x), abs(m.y - pet.y)))
+        for m in foes:
+            free = [s for s in spots if self._pet_tile_free(*s, pet)]
+            if not free:
+                break
+            m.x, m.y = min(free, key=lambda s: max(abs(s[0] - m.x), abs(s[1] - m.y)))
 
     def _do_pet_turns(self):
         """Process pet AI, XP, regen, cooldowns, and monster attacks on pets."""
