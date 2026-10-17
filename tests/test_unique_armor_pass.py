@@ -179,9 +179,11 @@ def test_waylands_gloves_add_a_second_to_the_combat_clock():
 def test_jarngreipr_lengthens_a_chain_that_lands_and_only_that():
     piece = make_item_by_id('armor', 'jarngreipr_gauntlets')
     assert piece.chain_bonus == 1
-    src = open(os.path.join(ROOT, 'src', 'combat.py'), encoding='utf-8').read()
-    at = src.index("getattr(slot, 'chain_bonus', 0)")
-    assert 'if result.score >= 1:' in src[at - 400:at]
+    import combat
+    p = Player()
+    p.armor_slots[SLOT_INDEX['hands']] = piece
+    assert combat.effective_chain(p, None, None, 0) == 0       # a miss stays a miss
+    assert combat.effective_chain(p, None, None, 3) == 4       # a hit lands one longer
 
 
 def test_the_three_cloak_rules_that_no_item_carried_are_carried_again():

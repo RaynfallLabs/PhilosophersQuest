@@ -1986,6 +1986,7 @@ class CombatMixin:
         # the weapon, so repeating them here only overflowed the header.
         self.quiz_title = "RANGED ATTACK  --  MATH"
         self._combat_is_ranged = True
+        self._combat_ammo = ammo_item      # for the Strike Now preview
 
         def on_complete(damage: int, killed: bool, chain: int, stunned: bool = False,
                         knocked: bool = False, crit: bool = False, **kwargs):
@@ -2135,6 +2136,7 @@ class CombatMixin:
         # the weapon, so repeating them here only overflowed the header.
         self.quiz_title = "MELEE ATTACK  --  MATH"
         self._combat_is_ranged = False
+        self._combat_ammo = None
         if monster.kind == 'abaddon_destroyer' and not getattr(self, '_chronicle_abaddon_start', False):
             self._chronicle_abaddon_start = True
             self._log_chronicle("Abaddon. The Destroyer. He's real. He's here. This is it.")

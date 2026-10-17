@@ -272,31 +272,31 @@ def test_monster_attack_wires_monkey_king_dodge():
 
 def test_combat_wires_last_stand_bonus():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'last_stand_bonus' in src
 
 
 def test_combat_wires_cannae_encirclement_damage():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'cannae_encirclement' in src
 
 
 def test_combat_wires_et_tu_charge_damage():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert '_et_tu_target' in src
 
 
 def test_combat_wires_gita_focus():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'gita_focus' in src
 
 
 def test_combat_wires_riastrad_echo():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'riastrad_echo' in src
 
 

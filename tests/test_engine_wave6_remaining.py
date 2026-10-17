@@ -124,20 +124,20 @@ def test_main_wires_amazon_charge_counter():
 
 def test_combat_wires_amazon_charge_damage():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'amazon_charge' in src
     assert '_amazon_charge_armed' in src
 
 
 def test_combat_wires_dragonslayer_tag_bonus():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'monster_tag_chain_bonus' in src
 
 
 def test_combat_wires_gyges_karma():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'gyges_invisible_attack_karma' in src
 
 

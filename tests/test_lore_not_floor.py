@@ -203,3 +203,56 @@ def test_the_fire_bearer_cannot_burn_himself_to_death():
     g = types.SimpleNamespace(player=p, monsters=[], add_message=lambda *a, **k: None)
     hero_specials._eff_self_aoe_fire(g, {'self_cost_hp': 5}, {'radius': 0}, 0)
     assert p.hp == 1
+
+
+# A monster's health, to-hit and damage built from the floor number in game
+# code: the Deadite was (20 + 3 x floor health, 1d6 + floor/8 claws) until
+# bug bash 4, and the Necronomicon's risen dead the same way.
+_FLOOR_NAMES = r'(?:lvl|_lvl|dlvl|level|dungeon_level|depth|deepest_floor_reached|floor_num)'
+_STAT_FROM_FLOOR = re.compile(
+    r"""['"](?:hp|max_hp|thac0|damage|to_hit)['"]\s*:\s*[^\n#]*?\b""" + _FLOOR_NAMES + r'\b')
+_ATTR_FROM_FLOOR = re.compile(
+    r'\b\w+\.(?:hp|max_hp|thac0)\s*=\s*[^=\n#]*\b(?:self\.)?(?:dungeon_level|deepest_floor_reached)\b')
+
+
+def test_no_game_code_builds_a_monster_from_the_floor_number():
+    hits = []
+    for name, text in _sources():
+        for pat in (_STAT_FROM_FLOOR, _ATTR_FROM_FLOOR):
+            for m in pat.finditer(text):
+                hits.append((name, m.group(0)[:90]))
+    assert not hits, hits
+
+
+def test_the_floor_number_check_would_catch_the_old_deadite():
+    old = ("            'hp': str(20 + lvl * 3),\n"
+           "            'thac0': max(0, 16 - lvl // 4),\n"
+           "                {'name': 'claw', 'damage': f'1d6+{lvl // 8}', 'type': 'slash'},\n"
+           "        m.max_hp = 40 + self.dungeon_level * 5\n")
+    assert len(_STAT_FROM_FLOOR.findall(old)) == 3
+    assert len(_ATTR_FROM_FLOOR.findall(old)) == 1
+
+
+def test_the_deadites_are_the_same_on_every_floor_and_come_from_their_data():
+    """The Moaning Woman's Deadite and the Necronomicon's risen dead have
+    fixed numbers in monsters.json and never spawn at random."""
+    import types
+    import dungeon as dungeon_mod
+    from game_magic import MagicMixin
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        defs = json.load(f)
+    for kind in ('deadite', 'risen_deadite'):
+        d = defs[kind]
+        assert d['frequency'] == 0 and d['peak_weight'] == 0 and d['quest_only'], kind
+    seen = []
+    for floor in (21, 25, 29):
+        g = types.SimpleNamespace(dungeon_level=floor, monsters=[],
+                                  _npc_encounter_monster=types.SimpleNamespace(x=3, y=3))
+        MagicMixin._spawn_npc_deadite(g)
+        (m,) = g.monsters
+        seen.append((m.kind, m.max_hp > 0, m.thac0, [a['damage'] for a in m.attacks]))
+        assert m.kind == 'deadite' and m.thac0 == defs['deadite']['thac0']
+        assert [a['damage'] for a in m.attacks] == [a['damage'] for a in defs['deadite']['attacks']]
+        pool = dungeon_mod._build_spawn_pool(floor)
+        assert 'deadite' not in pool and 'risen_deadite' not in pool
+    assert seen[0] == seen[1] == seen[2]

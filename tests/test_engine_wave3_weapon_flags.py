@@ -122,40 +122,40 @@ def test_loads_chain_bonus_on_low_hp_window():
 
 def test_combat_wires_cannot_miss_before_hurt():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'cannot_miss_before_hurt' in src
     assert '_combat_player_taken_damage' in src
 
 
 def test_combat_wires_one_shot_chain_save():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'one_shot_chain_save_per_floor' in src
     assert '_hrunting_save_used' in src
 
 
 def test_combat_wires_skofnung_low_hp_window():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'chain_bonus_on_low_hp_window' in src
     assert '_skofnung_low_hp_pending' in src
 
 
 def test_combat_wires_skip_chain_warmup_vs_tag():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'skip_chain_warmup_vs_tag' in src
 
 
 def test_combat_wires_damage_double_vs_resistant_at_max():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'damage_double_vs_resistant_at_max' in src
 
 
 def test_combat_wires_stealth_damage_bonus():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'stealth_damage_bonus' in src
     assert "'invisible'" in src
 
@@ -166,7 +166,7 @@ def test_combat_wires_surrounded_proc_bonus():
     so the mechanic now applies a flat +25% damage multiplier when 3+ enemies
     are adjacent. Same feel, no crit path required."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'surrounded_proc_bonus' in src
     # Rewired to a flat mult instead of a crit trigger.
     assert 'mult *= 1.25' in src
@@ -174,41 +174,41 @@ def test_combat_wires_surrounded_proc_bonus():
 
 def test_combat_wires_adjacent_pet_damage_bonus():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'adjacent_pet_damage_bonus' in src
 
 
 def test_combat_wires_apply_heal_block():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'apply_heal_block_chance' in src
     assert "'heal_blocked'" in src
 
 
 def test_combat_wires_damoclean_counter():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'damoclean_counter_threshold' in src
     assert '_damoclean_consecutive' in src
 
 
 def test_combat_wires_kill_count_karma():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'kill_count_karma_adjust' in src
     assert '_karma_kill_tally' in src
 
 
 def test_combat_wires_chain_no_reset_on_tag():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'chain_no_reset_on_tag' in src
     assert '_chain_carry' in src
 
 
 def test_combat_wires_reveal_tag_on_chain_5_kill():
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'reveal_tag_on_chain_5_kill' in src
     assert '_revealed_tag_ids' in src
 
@@ -216,7 +216,7 @@ def test_combat_wires_reveal_tag_on_chain_5_kill():
 def test_combat_wires_chain_carry_consumption():
     """Chain start in player_attack must consume _chain_carry."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert '_chain_carry = 0' in src or 'player._chain_carry = 0' in src
 
 

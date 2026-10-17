@@ -80,7 +80,7 @@ def test_loads_prophecy_blade():
 def test_combat_wires_glows_near_orcs():
     """+1 chain rung when target has goblin or orc tag."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'glows_near_orcs' in src
     # Must check both goblin and orc
     idx = src.find('glows_near_orcs')
@@ -94,7 +94,7 @@ def test_combat_wires_prophecy_blade():
     """prophecy_blade boost reads player._prophecy_target_tag and applies
     +50% damage multiplier vs the prophesied tag."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'prophecy_blade' in src
     assert '_prophecy_target_tag' in src
 

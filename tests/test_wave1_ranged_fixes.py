@@ -26,7 +26,7 @@ def test_str_bonus_range_7_wired_in_player_attack():
     Previously the composite_bow template declared this mechanic but no
     code referenced it — composite bows behaved identically to longbows."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert 'str_bonus_range_7' in src, (
         "composite_bow's str_bonus_range_7 mechanic must be wired in "
         "combat.player_attack (Wave 1 A, 2026-05-30)"
@@ -147,7 +147,7 @@ def test_per_scales_ranged_damage():
     retuned the divisor from /3 to /4 to make room for an added STR bonus
     on bow/sling/thrown weapons; crossbow still gets PER only."""
     import combat
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     # The signature line should mention PER somewhere in the ammo branch.
     # Look for `player.PER` and `ammo` co-located within the function.
     assert 'player.PER' in src, "player.PER must be referenced for the scaling"

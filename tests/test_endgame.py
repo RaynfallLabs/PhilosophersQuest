@@ -116,9 +116,12 @@ def test_dead_mechanics_found_by_the_audit_are_wired():
         m = Monster(dict(d[mid], id=mid), 1, 1)
         assert m.min_hit_chance == d[mid]['min_hit_chance']
         assert m._min_hit() == d[mid]['min_hit_chance']
-    src = open(os.path.join(ROOT, 'src', 'combat.py'), encoding='utf-8').read()
-    i = src.index("Cow King's Horns")
-    assert 'if result.score >= 1:' in src[i:i + 600]              # never turns a miss into a hit
+    import combat
+    import types
+    horns = types.SimpleNamespace(chain_bonus=2)
+    wearer = types.SimpleNamespace(armor_slots=[horns])
+    assert combat.effective_chain(wearer, None, None, 0) == 0     # never turns a miss into a hit
+    assert combat.effective_chain(wearer, None, None, 1) == 3
     import items
     assert items._material_resists({'resistances': ['fire', 'bludgeon']}) == {
         'fire': items.MATERIAL_RESIST, 'blunt': items.MATERIAL_RESIST}

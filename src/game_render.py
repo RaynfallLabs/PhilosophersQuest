@@ -3302,6 +3302,24 @@ class RenderMixin:
             cap.x + cap_w + S(16), cap.y, max(0, cap.w - cap_w - S(16)), cap.h)
         return slots
 
+    def _strike_preview_damage(self) -> int:
+        """What pressing Strike Now would deal at the current chain.
+
+        combat.strike_preview runs the same two functions the real blow
+        does (combat.effective_chain + combat.strike_damage) without spending
+        anything, so the number shown is the number dealt (call 13). Dice
+        (rare legacy weapons, a few named weapons' bonus dice) count as
+        their average."""
+        from combat import strike_preview
+        monster = self.combat_target
+        if monster is None:
+            return 0
+        ranged = bool(getattr(self, '_combat_is_ranged', False))
+        ammo = getattr(self, '_combat_ammo', None) if ranged else None
+        return max(0, int(strike_preview(self.player, monster,
+                                         int(self.quiz_engine.chain or 0),
+                                         ranged=ranged, ammo=ammo)))
+
     def _draw_combat_hud(self, rect: pygame.Rect, accent=(80, 80, 180)):
         """Draw the combat strip inside the quiz modal.
 
@@ -3336,9 +3354,7 @@ class RenderMixin:
             x = slot.right - surf.get_width() if align == 'right' else slot.x
             self.screen.blit(surf, (x, slot.y + (slot.h - surf.get_height()) // 2))
 
-        # -------- Damage maths (unchanged) ----------------------------
-        base    = weapon.base_damage  if weapon else 2
-        enchant = weapon.enchant_bonus if weapon else 0
+        # -------- Damage maths ------------------------------------------
         dtypes  = weapon.damage_types if weapon else ['blunt']      # bare hands crush
         # the same reckoning the blow itself uses (form x substance)
         from combat import weapon_type_multiplier as _wtm
@@ -3362,7 +3378,9 @@ class RenderMixin:
                 return _mults_arr[min(n - 1, len(_mults_arr) - 1)]
 
         cur_mult = _mult(cur_chain)
-        cur_dmg  = max(0, int((base + enchant) * cur_mult * dm)) if cur_chain >= 1 else 0
+        # The big number is the blow's own calculation (call 13), not a
+        # sum of its own: Strength, blessing, ammo, shields, scales...
+        cur_dmg  = self._strike_preview_damage()
         _rank_name, rank_color = self._chain_rank(cur_chain)
         live_col = rank_color if cur_chain >= 3 else FP.WHITE
 
@@ -3486,7 +3504,7 @@ class RenderMixin:
                   if weapon else "Bare Hands")
         put(w_name, s['weapon'], FP.FADED_TEXT, align='right',
             sizes=(self._COMBAT_HUD_CAP_SIZE,))
-        if cur_chain >= 1:
+        if cur_chain >= 1 or cur_dmg > 0:
             put(f"{cur_dmg} Damage", s['main'], live_col,
                 sizes=(32, 26, 22), family='heading')
             put(f"x{cur_mult:.1f} Multiplier", s['sub1'], FP.BODY_TEXT)

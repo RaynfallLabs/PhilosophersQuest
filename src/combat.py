@@ -1,12 +1,12 @@
 import random
 from dice import roll
-from geom import is_at_tile
 
 # Shares, not floor multipliers (floor_curve: LORE, NOT FLOOR).
 RANGED_STAT_SHARE = 0.03      # of a bow's own base, per four points of PER / STR over 10
 LAST_STAND_SHARE = 0.15       # Helm of Leonidas, below a fifth of health
 ENCIRCLED_SHARE = 0.04        # Cuirass of Hannibal, per adjacent enemy when surrounded
 GROWING_SHARE = 0.02          # Caliburn: of its forged base, each time it grows
+from geom import is_at_tile
 
 # Fallback multipliers used when the player has no weapon equipped.
 # Bare-hand chain table. Caps at the universal 5-chain like every common
@@ -245,29 +245,29 @@ _BYPASS_DR_TIERS = {
 }
 
 
-def _apply_chain_class_pre_damage(player, weapon, chain: int) -> float:
-    """Pre-damage hook. Runs after the chain multiplier is computed but before
-    dtype_mult finalizes. Sets `player._chain_bypass_dr` when the class + tier
-    calls for it, and returns any per-hit damage multiplier to layer on top
-    of `mult` (currently only Bow C20's vitals-shot ×2).
-
-    Kept small and stateless so it can be called on every hit without
-    touching the surrounding damage pipeline.
-    """
+def _chain_pre_damage(weapon, chain: int) -> tuple[float, bool]:
+    """Pre-damage class chain special: (damage multiplier, bypasses damage
+    reduction?). Bow C20 hits the vitals for x2; the tiers in
+    _BYPASS_DR_TIERS punch through shields, scales and resistances.
+    Changes nothing: strike_damage sets the one-shot _chain_bypass_dr flag
+    itself on a real blow, and the Strike Now preview asks the same."""
     tier = _chain_special_tier(chain)
     if tier == 0:
-        return 1.0
+        return 1.0, False
     key = _weapon_key(weapon)
+    bypass = tier in _BYPASS_DR_TIERS.get(key, ())
+    return (2.0 if key == 'bow' and tier == 20 else 1.0), bypass
 
-    # Bypass-DR one-shot flag consumed later in the damage block.
-    if tier in _BYPASS_DR_TIERS.get(key, ()):
-        player._chain_bypass_dr = True
 
-    # Bow C20 "hits vitals" -> ×2 damage on top of the polynomial mult.
-    if key == 'bow' and tier == 20:
-        return 2.0
-
-    return 1.0
+def _dice_mean(notation: str) -> int:
+    """Average of a dice string ('2d6+3' -> 10), for the preview."""
+    import re as _re
+    m = _re.fullmatch(r'(\d*)d(\d+)([+-]\d+)?', str(notation).strip().lower().replace(' ', ''))
+    if not m:
+        return roll(notation)
+    n = int(m.group(1) or 1)
+    sides = int(m.group(2))
+    return int(round(n * (sides + 1) / 2.0)) + int(m.group(3) or 0)
 
 
 # --- Post-damage class-chain-special applications ---------------------------
@@ -278,8 +278,13 @@ def _apply_chain_class_pre_damage(player, weapon, chain: int) -> float:
 # ---------------------------------------------------------------------------
 
 def _max_status(monster, effect: str, duration: int):
-    """Apply a status, taking the max of any existing duration."""
+    """Apply a status, taking the max of any existing duration. A stun or
+    other hold on a named foe goes through its cap and post-hold grace
+    (Monster.hold, call 12)."""
     if monster is None or not monster.alive:
+        return
+    if hasattr(monster, 'hold'):
+        monster.hold(effect, duration)
         return
     cur = int(monster.status_effects.get(effect, 0) or 0)
     monster.status_effects[effect] = max(cur, int(duration))
@@ -776,44 +781,51 @@ def _load_material_tags() -> None:
         _MATERIAL_VULNERABILITIES[mid]   = set(m.get('vulnerabilities', []))
 
 
-def _material_effective_multiplier(weapon, monster) -> float:
-    """Return 1.5 if any of weapon's material/damage types target monster tags."""
-    if weapon is None:
-        return 1.0
-    _load_material_tags()
-    monster_tags = set(getattr(monster, 'tags', []))
-    if not monster_tags:
-        return 1.0
-    # Check every damage type that's also a known material
-    for dt in getattr(weapon, 'damage_types', []):
-        eff = _MATERIAL_EFFECTIVE_AGAINST.get(dt)
-        if eff and (eff & monster_tags):
-            return 1.5
-    # Also check explicit weapon.material if not in damage_types
-    mat = getattr(weapon, 'material', None)
-    if mat:
-        eff = _MATERIAL_EFFECTIVE_AGAINST.get(mat)
-        if eff and (eff & monster_tags):
-            return 1.5
-    return 1.0
+# The weapon-material bonus (effective_against: silver vs undead, cold iron
+# vs fey and demons...) is applied in weapon_type_multiplier, through the
+# material id each common weapon carries in damage_types. (A second copy of
+# it here, _material_effective_multiplier, was never called; removed in bug
+# bash 4, call 14.)
+
+# Damage taken through a weapon-material vulnerability (call 14).
+MATERIAL_VULNERABLE_MULT = 1.25
+
+# What the hit message says when it applies, by the tag that matched.
+_VULNERABLE_NOTES = {
+    'demon': "Your {mat} draws its fury!",
+    'fire': "The flames catch your {mat}!",
+    'acid': "The acid eats into your {mat}!",
+    'holy': "Holy light sears your {mat}!",
+}
 
 
-def _material_wielder_vulnerable(player, monster_attack_tags: list) -> float:
-    """Return >1.0 if the player's equipped weapon material is vulnerable to the
-    incoming attack's tags. Used for cold-iron-vs-demon-attacks etc."""
-    weapon = getattr(player, 'weapon', None)
-    if not weapon:
-        return 1.0
+def material_vulnerability(player, attack_tags) -> tuple[float, str]:
+    """(multiplier, note) for a blow on a player whose wielded weapon's
+    material is vulnerable to it. ``attack_tags`` are the attacker's tags
+    plus the attack's damage type.
+
+    The materials say it in data/materials/weapons/*.json `vulnerabilities`:
+    cold iron draws a demon's fury, wood and leather catch fire, rawhide
+    rots in acid, the void-touched metal burns in holy light. Wielding one
+    (melee or the readied ranged weapon) makes such a blow land
+    MATERIAL_VULNERABLE_MULT as hard. The list was loaded and never read
+    until call 14."""
+    tags = {str(t) for t in (attack_tags or ()) if t}
+    if not tags:
+        return 1.0, ''
     _load_material_tags()
-    mat = getattr(weapon, 'material', None)
-    if not mat:
-        return 1.0
-    vuln = _MATERIAL_VULNERABILITIES.get(mat)
-    if not vuln:
-        return 1.0
-    if any(t in vuln for t in monster_attack_tags):
-        return 1.25  # +25% damage taken
-    return 1.0
+    for slot in (getattr(player, 'weapon', None), getattr(player, 'ranged_weapon', None)):
+        if slot is None:
+            continue
+        mat = str(getattr(slot, 'material', '') or '')
+        vuln = set(_MATERIAL_VULNERABILITIES.get(mat, ()))
+        vuln |= set(getattr(slot, 'vulnerabilities', None) or ())
+        hit = sorted(vuln & tags)
+        if hit:
+            mat_name = mat.replace('_', ' ')
+            note = _VULNERABLE_NOTES.get(hit[0], "Your {mat} weapon is a weakness here!")
+            return MATERIAL_VULNERABLE_MULT, note.format(mat=mat_name)
+    return 1.0, ''
 
 
 # Tag/name heuristics used by warhammer's anti_heavy_at_max bonus.
@@ -945,6 +957,687 @@ def weapon_type_multiplier(weapon, monster, blessed: bool | None = None) -> tupl
     return form, substance
 
 
+def effective_chain(player, monster, weapon, score: int, consume: bool = True) -> int:
+    """The chain a blow lands at: the quiz score plus every head start the
+    gear, quirks and passives give. 0 is a miss.
+
+    One function for the real blow (consume=True: one-shot carries and
+    saves are spent) and the combat strip's "Strike Now" preview
+    (consume=False: nothing is spent), so the two always agree (call 13)."""
+    chain = score
+
+    # Cow King's Horns (or any armor with chain_bonus): free chain head start
+    # Only on an attack that lands: added to a chain of 0 it turned every
+    # wrong first answer into a hit, and combat never does a sum for you.
+    if score >= 1:
+        for slot in getattr(player, 'armor_slots', []):
+            if slot and getattr(slot, 'chain_bonus', 0):
+                chain += slot.chain_bonus
+        # Chain-equip passive attack_chain_cap_bonus (Ring of Gawain,
+        # Torque of Lugh). It raised a chain cap no weapon has any more.
+        try:
+            from chain_passives import get_attack_chain_cap_bonus
+            chain += int(get_attack_chain_cap_bonus(player) or 0)
+        except ImportError:
+            pass
+
+    # Parashu (engine wave 3): chain_no_reset_on_tag carry. After a kill
+    # of a matching-tag target, the next attack starts at the same
+    # chain rung instead of restarting. Consumed immediately so a
+    # second attack restarts normally.
+    _carry = int(getattr(player, '_chain_carry', 0) or 0)
+    if _carry > 0:
+        chain += _carry
+        if consume:
+            player._chain_carry = 0
+
+    # Jormungandr quirk: with the weapon the quirk was earned on, any
+    # attack that lands at all counts as one link longer. (The old
+    # reward raised a chain CAP that common weapons no longer have.)
+    if (score >= 1 and weapon is not None
+            and getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id')
+            == getattr(weapon, 'id', None)):
+        chain += 1
+
+    # Glamdring: Foe-Hammer's signature glow. Against any goblin/orc-
+    # tagged enemy, +1 chain rung head start while equipped. Per audit
+    # 2026-05-30 — the `glows_near_orcs` JSON flag was previously inert.
+    # Lore: "the sword preempts — the wielder gets +2 initiative."
+    if weapon and getattr(weapon, 'glows_near_orcs', False):
+        if _tag_match(monster, 'goblin') or _tag_match(monster, 'orc'):
+            chain += 1
+
+    # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
+    # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
+    if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
+        chain = 1
+    # Gungnir: "the spear has never missed." Per audit 2026-05-30 — the
+    # `cannot_miss` data flag previously had no consumer. Same chain 0 -> 1
+    # promotion as guaranteed_hit but driven from the weapon's JSON.
+    if chain == 0 and weapon and getattr(weapon, 'cannot_miss', False):
+        chain = 1
+
+    # Fail-not (engine wave 3): cannot_miss_before_player_takes_damage.
+    # The Tristan-knot vow holds until the player takes a hit this combat.
+    # Once the combat tracker says the player has been hurt, the spell
+    # falters and misses can land normally. See _combat_player_taken_damage
+    # marker (set by player.take_damage hook below).
+    if (chain == 0 and weapon and getattr(weapon, 'cannot_miss_before_hurt', False)
+            and not getattr(player, '_combat_player_taken_damage', False)):
+        chain = 1
+
+    # Hrunting (engine wave 3): one_shot_chain_save_per_floor. The poem's
+    # promise: "never failed any man who grasped it." Once per floor,
+    # demote a chain-0 (miss) into chain-1 (light hit). After the save
+    # is spent, normal misses resume. Player-level marker
+    # `_hrunting_save_used` is reset on every floor in main._change_level.
+    if (chain == 0 and weapon and getattr(weapon, 'one_shot_chain_save_per_floor', False)
+            and not getattr(player, '_hrunting_save_used', False)):
+        if consume:
+            player._hrunting_save_used = True
+        chain = 1
+
+    # Harpe (engine wave 3): skip_chain_warmup_vs_tag. Against matching-
+    # tag enemies, the chain auto-completes the warm-up — start at rung 2
+    # instead of rung 1. The blade that knows the monster.
+    _skip_warmup = getattr(weapon, 'skip_chain_warmup_vs_tag', None) or []
+    if _skip_warmup and chain >= 1:
+        for _tg in _skip_warmup:
+            if _tag_match(monster, _tg):
+                chain += 1
+                break
+
+    # Skofnung (engine wave 3): chain_bonus_on_low_hp_window. When the
+    # player has just dropped below 50% HP, the next attack adds N chain
+    # rungs (one of the twelve berserkers takes over). Tracker
+    # `_skofnung_low_hp_pending` is set by player.take_damage when the
+    # threshold is crossed, and consumed here.
+    _skofnung_bonus = int(getattr(weapon, 'chain_bonus_on_low_hp_window', 0) or 0)
+    if (_skofnung_bonus > 0 and chain >= 1
+            and getattr(player, '_skofnung_low_hp_pending', False)):
+        chain += _skofnung_bonus
+        if consume:
+            player._skofnung_low_hp_pending = False
+    return chain
+
+
+_WIELDED = object()     # strike_damage: "the weapon in the slot that attacks"
+
+
+def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=None,
+                  consume: bool = False, dice=None, weapon=_WIELDED) -> int:
+    """The damage one blow at ``chain`` does to ``monster`` before
+    Monster.take_damage: base, Strength, blessing, ammo, chain, form and
+    substance, class mechanics, hero passives, shields, scales, wards and
+    every gear bonus.
+
+    This is the ONE damage calculation. player_attack calls it for the real
+    blow (consume=True: one-shot buffs such as Empower, blade flow and the
+    once-a-floor charges are spent, and dice are rolled). The combat strip
+    calls it for its "Strike Now N Damage" preview (consume=False: nothing
+    is spent; dice count as their average). Before call 13 the strip did
+    its own sum and left out Strength, blessings, shields and scales."""
+    if weapon is _WIELDED:
+        weapon = player.ranged_weapon if ranged else player.weapon
+    is_ranged = bool(ranged)
+    if dice is None:
+        dice = roll if consume else _dice_mean
+    if chain < 1:
+        return 0
+    # Base damage: new integer field preferred over legacy dice string.
+    # Unarmed (fist) uses the chain combat v2 STR-scaled base: 2 × (1 + STR/10)
+    # above 10 STR. STR 10 = 2, STR 15 = 3, STR 20 = 4. Intentionally weak —
+    # this is the "you dropped your weapon" fallback, not an alternative build.
+    # (A real, small number: fists are fists on any floor.)
+    if weapon and weapon.base_damage:
+        base = weapon.base_damage
+    elif weapon and weapon.damage:
+        base = dice(weapon.damage)
+    else:
+        base = max(1, round(2 * (1 + max(0, player.STR - 10) / 10.0)))
+
+    # Ranged stat bonuses (chain combat v2). Per-hit additive on the base
+    # BEFORE material/chain scaling. Bow/sling get STR + PER at /4;
+    # crossbow gets PER only (it fires like a machine, arm strength doesn't
+    # help). Applies only to actual ranged shots so melee
+    # attacks are unaffected.
+    if is_ranged:
+        _wc = getattr(weapon, 'weapon_class', '') if weapon else ''
+        # A share of the weapon's own base: RANGED_STAT_SHARE for every
+        # four points of the stat above 10.
+        _own = int(base)
+        # At least one point a step, so the bonus exists on a small bow too.
+        for _step in ((max(0, (player.PER - 10) // 4),)
+                      + ((max(0, (player.STR - 10) // 4),) if _wc != 'crossbow' else ())):
+            if _step:
+                base += max(_step, int(round(_own * RANGED_STAT_SHARE * _step)))
+
+    # Weakened / frozen: halve player attack damage. Both effects
+    # describe "attack damage halved" / "encased in ice." Previously
+    # NEITHER was wired for the player — applied by 30+ monsters but
+    # did nothing.
+    if player.has_effect('weakened') or player.has_effect('frozen'):
+        base = max(1, base // 2)
+
+    # Ammo damage bonus (ranged shots only)
+    ammo_bonus  = int(ammo.damage_bonus) if ammo else 0      # real numbers, data/items/ammo.json
+    enchant     = weapon.enchant_bonus if weapon else 0
+    # Chain combat v2: polynomial `mult = chain ** chain_exponent` when the
+    # weapon opts in; otherwise fall back to the legacy per-rung array.
+    # Uniques keep their handcrafted `chain_multipliers`; new common templates
+    # ship `chain_exponent` (default 1.15). Unarmed (fist) also uses the
+    # polynomial at 1.15 — the base damage is already floored low.
+    _chain_exp = getattr(weapon, 'chain_exponent', None) if weapon else 1.15
+    if _chain_exp and _chain_exp > 0:
+        mult = float(chain) ** float(_chain_exp)
+        multipliers = None  # signals "polynomial path" to blocks below
+    else:
+        multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
+        mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
+
+    # Musashi quirk: an attack that ends on a chain of exactly 1 deals
+    # double damage ("one cut is enough"). It used to swap in the 2nd
+    # entry of the legacy multiplier array, which did nothing at all on
+    # the polynomial-chain weapons every common weapon now is.
+    if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
+        mult *= 2.0
+
+    # Chain combat v2 (v2.14.0): pre-damage per-class chain-special hooks.
+    # Sets `player._chain_bypass_dr` when the special calls for it (only
+    # on the real blow; the preview keeps it local), and returns any
+    # per-hit damage multiplier (Bow C20 vitals x2). Runs before shielded /
+    # dragon_scales checks so the bypass takes effect.
+    _pre_mult, _pre_bypass = _chain_pre_damage(weapon, chain)
+    mult *= _pre_mult
+    if _pre_bypass and consume:
+        player._chain_bypass_dr = True
+
+    # Atalanta's Bow: first_blood_bonus — at chain 1 against a target
+    # that has not yet taken damage this combat (HP at max), +50%
+    # damage. The Calydonian-Boar opener — first arrow rewarded.
+    # Per audit 2026-05-30 (data flag was previously inert).
+    if (chain == 1 and weapon and getattr(weapon, 'first_blood_bonus', False)
+            and monster.hp >= monster.max_hp):
+        mult *= 1.5
+
+    # Damage type advantage vs monster resistances/weaknesses
+    # Gram (reforged) ignores all resistances
+    _ignores_res = bool(weapon and getattr(weapon, 'ignore_resistances', False))
+    # The weapon's form (cut, thrust, crush) and its substance (silver,
+    # iron, blessed) each meet the monster: see weapon_type_multiplier.
+    # Bare hands crush.
+    _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster)
+    # Gram and the Sword of Michael ignore RESISTANCES; a weakness
+    # still counts.
+    if _ignores_res:
+        _form_mult = max(1.0, _form_mult)
+    dtype_mult = _form_mult * _subst_mult
+
+    # Weapon-side effective_against array. Per audit 2026-05-30 — many
+    # uniques (Zulfiqar, Vel of Murugan, Spear of Longinus, Mjolnir,
+    # Dawnbreaker, Gungnir, Fragarach, Skofnung, Gilgamesh's Axe,
+    # Shamshir) declared per-weapon anti-tag arrays that the engine
+    # ignored (only material.effective_against was read). Boost
+    # damage 1.5x when the target matches any declared tag.
+    # Per-weapon effective_against: ONLY for UNIQUE weapons' explicit anti-tag
+    # arrays (Zulfiqar, Mjolnir, Dawnbreaker...). A COMPOSITIONAL weapon
+    # inherits effective_against from its MATERIAL (instantiate_weapon copies
+    # it), but the material is already added to damage_types above, so
+    # _damage_multiplier ALREADY applied that bonus -- counting it again here
+    # double-dipped it. A yew crossbow vs a fey Satyr did 1.5 x 1.5 = 2.25x:
+    # a 7-base chain-5 shot hit for 41 instead of ~28. (2026-06-07 ranged fix;
+    # gated at the use-site so it also corrects weapons already in saves.)
+    if weapon and getattr(weapon, 'is_unique', False):
+        _weapon_anti = getattr(weapon, 'effective_against', None) or []
+        if _weapon_anti and (set(getattr(monster, 'tags', [])) & set(_weapon_anti)):
+            dtype_mult *= 1.5
+    if weapon:
+        # Anduril-style numeric undead_multiplier (legacy `undead_bonus`
+        # JSON field): applies as a flat 1.5x against undead when set > 1.
+        _und_mult = float(getattr(weapon, 'undead_multiplier', 1.0) or 1.0)
+        if _und_mult > 1.0 and _tag_match(monster, 'undead'):
+            dtype_mult *= 1.5
+
+    # Akinakes of Acrisius: prophecy_blade. At first equip the blade
+    # declared a random tag (stored on player._prophecy_target_tag).
+    # That tag's monsters take +50% damage from the Akinakes for the
+    # rest of the run. Per audit 2026-05-30 — the JSON flag was inert.
+    if weapon and getattr(weapon, 'prophecy_blade', False):
+        _proph = getattr(player, '_prophecy_target_tag', None)
+        if _proph and _tag_match(monster, _proph):
+            dtype_mult *= 1.5
+
+    # Mistilteinn (engine wave 3): damage_double_vs_resistant_at_max.
+    # At max chain, against ANY target with resistances, double damage.
+    # Baldur's flaw: protected against everything except the small thing.
+    if weapon and getattr(weapon, 'damage_double_vs_resistant_at_max', False):
+        _maxc = weapon.max_chain_length or len(weapon.chain_multipliers)
+        if chain >= _maxc and getattr(monster, 'resistances', None):
+            dtype_mult *= 2.0
+
+    # Robin Hood's Longbow (engine wave 3): stealth_damage_bonus.
+    # Striking from invisibility/stealth: +X% damage. Stored as
+    # fractional multiplier (0.5 = +50%).
+    _sb = float(getattr(weapon, 'stealth_damage_bonus', 0.0) or 0.0) if weapon else 0.0
+    if _sb > 0 and player.has_effect('invisible'):
+        dtype_mult *= 1.0 + _sb
+
+    # Kusanagi (engine wave 3): surrounded_proc_bonus. When 3+ enemies
+    # are adjacent to the player, +25% damage. Chain combat v2 (v2.14.0):
+    # rewired from "force crit" to flat multiplier since crit was retired
+    # (chain IS the crit). Feel is the same — surround-the-warrior payoff.
+    if weapon and getattr(weapon, 'surrounded_proc_bonus', False):
+        _adj = 0
+        try:
+            _mons = getattr(player, '_combat_monsters_ref', None) or []
+            for _m in _mons:
+                if _m.alive and abs(_m.x - player.x) <= 1 and abs(_m.y - player.y) <= 1 \
+                        and not (_m.x == player.x and _m.y == player.y):
+                    _adj += 1
+        except Exception:
+            _adj = 0
+        if _adj >= 3:
+            mult *= 1.25
+
+    # Oathkeeper (engine wave 3): adjacent_pet_damage_bonus.
+    # When ANY pet is within 1 tile of the player, multiply damage.
+    # Lore: care for what walks beside you.
+    _ap_bonus = float(getattr(weapon, 'adjacent_pet_damage_bonus', 0.0) or 0.0) \
+        if weapon else 0.0
+    if _ap_bonus > 0:
+        _pets = getattr(player, '_combat_pets_ref', None) or []
+        for _p in _pets:
+            if (getattr(_p, 'alive', False)
+                    and abs(_p.x - player.x) <= 1 and abs(_p.y - player.y) <= 1):
+                dtype_mult *= 1.0 + _ap_bonus
+                break
+
+    # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect.
+    # Chain combat v2 (v2.14.0): also bypassed when the player has a `blade_flow`
+    # stack or a `_chain_bypass_dr` flag set by the class-chain-special pre-damage
+    # dispatch (spear/1h_sword/bow/crossbow/mace at threshold). Those consumers are
+    # decremented below; the "already going to bypass" check just probes here.
+    _bf_probe = int(player.status_effects.get('blade_flow', 0) or 0) > 0
+    _cb_probe = bool(getattr(player, '_chain_bypass_dr', False)) or _pre_bypass
+    _shield_bypass = (weapon and weapon.ignore_shield) or _bf_probe or _cb_probe
+    if not _shield_bypass:
+        if monster.has_effect('shielded'):
+            dtype_mult *= 0.5
+
+    # Chain combat v2 (v2.14.0): crit is retired. Chain IS the crit —
+    # the polynomial ladder handles the "big number" reward directly.
+    # The `crit` boolean is kept for on_complete kwargs so callers that
+    # branch on it still compile; it now stays False everywhere. Harpe's
+    # petrify moved to the class-chain-special dispatch below (petrifies
+    # at chain 15 via a per-weapon flag). Soul Reaver's next-hit-auto-crit
+    # rewired to a `blade_flow` player stack down at growth_on_innocent_kill.
+    # (player_attack's callback keeps crit = False for on_complete.)
+
+    # Pre-damage class-mechanic multipliers. Apply to mult before damage
+    # is rolled. Several mechanics fire ONLY at max chain (the chain-5
+    # payoff identity); some fire on every hit (versatile, master_strike).
+    _pre_mech = getattr(weapon, 'class_mechanic', None) if weapon else None
+    if _pre_mech and weapon:
+        _max_c = weapon.max_chain_length or len(weapon.chain_multipliers)
+        _at_max = chain >= _max_c
+
+        # versatile (bastard_sword) — +20% damage when wielded 2H (no shield).
+        # Fires on EVERY hit, not just max chain.
+        if _pre_mech == 'versatile' and player.shield is None:
+            mult *= 1.20
+
+        # master_strike (longsword) — the Meisterhau. At chain 3+, +15%
+        # damage representing the diagonal cut that defeats defensive guards.
+        if _pre_mech == 'master_strike' and chain >= 3:
+            mult *= 1.15
+
+        # str_bonus_range_7 (composite_bow) — the laminated horn+sinew+wood
+        # stack requires real bow-arm strength to fully draw. Each STR
+        # point above 10 adds 5% to damage. Ranged shots only (ammo present).
+        # Per user 2026-05-30: this mechanic was declared in the template
+        # but never wired — composite bows behaved identically to longbows.
+        if _pre_mech == 'str_bonus_range_7' and is_ranged:
+            mult *= 1.0 + max(0, (player.STR - 10) * 0.05)
+
+        # AT-MAX-CHAIN damage multipliers
+        if _at_max:
+            if _pre_mech == 'anti_heavy_at_max' and _is_heavy_armored(monster):
+                mult *= 1.5
+            elif _pre_mech == 'armor_pierce_at_max':
+                mult *= 1.35
+            elif _pre_mech == 'ignores_all_armor':
+                # heavy_crossbow signature — the bolt goes through as if
+                # the creature did not resist a thrust at all. (This also
+                # multiplied the blow by the same factor again, which
+                # would have doubled it; no blow was ever resisted, so it
+                # never showed.)
+                if _form_mult < 1.0:
+                    dtype_mult /= _form_mult
+                    _form_mult = 1.0
+            elif _pre_mech == 'ignores_half_armor':
+                # light_crossbow — halve the resistance penalty
+                if _form_mult < 1.0:
+                    _half = (_form_mult + 1.0) / 2.0
+                    dtype_mult *= _half / _form_mult
+                    _form_mult = _half
+
+    # Beowulf quirk: unarmed attacks deal +5 base damage
+    if weapon is None:
+        unarmed_bonus = getattr(player, 'quirk_progress', {}).get('beowulf_unarmed_bonus', 0)
+        base += int(unarmed_bonus)
+
+    # (Weakened is applied once, with frozen, near the top of this
+    # function. A second halving here used to quarter the damage.)
+
+    # Hero passive: Will to Power — +30% damage when below 30% HP.
+    hero_passives = getattr(player, 'hero_passives', set())
+    if 'will_to_power' in hero_passives and player.max_hp > 0 and \
+            player.hp <= player.max_hp * 0.3:
+        mult *= 1.3
+    # Hero passive: Witcher Mutations — +20% damage vs monsters (all).
+    if 'witcher_mutations' in hero_passives:
+        mult *= 1.2
+    # Hero passive: Niten Ichi-Ryū (Musashi) — +15% damage when a melee
+    # weapon is equipped. Musashi ships longsword + shortsword (both melee);
+    # Player has no distinct `melee_weapon` slot, and the `ranged_weapon`
+    # slot only accepts ammo-requiring weapons, so the old
+    # weapon+ranged_weapon gate never fired for his kit. Gate now on
+    # "a non-ammo weapon in the primary slot" — preserves the two-swords
+    # fantasy for any melee loadout.
+    _mw = getattr(player, 'weapon', None)
+    if 'niten_ichi_ryu' in hero_passives and _mw is not None and \
+            not getattr(_mw, 'requires_ammo', False):
+        mult *= 1.15
+    # Hero buff: crit_buff (Joan of Arc's Standard / Ash's She-Bitch) — next attack crits
+    if getattr(player, 'status_effects', {}).get('crit_buff', 0) > 0:
+        mult *= 1.5
+        # consume one charge by reducing duration; if it reaches 0, status fades naturally
+        if consume:
+            player.status_effects['crit_buff'] = max(0, player.status_effects['crit_buff'] - 1)
+    # Hero buff: berserk — flat +30% damage while active
+    if getattr(player, 'status_effects', {}).get('berserk', 0) > 0:
+        mult *= 1.3
+
+    # BUC weapon bonus: blessed +1, cursed -1
+    buc_bonus = 0
+    if weapon:
+        wbuc = getattr(weapon, 'buc', 'uncursed')
+        if wbuc == 'blessed':
+            buc_bonus = 1
+        elif wbuc == 'cursed':
+            # Hero passive: Diogenes' Cynic Detachment — cursed items don't penalize.
+            if 'cynic_detachment' not in getattr(player, 'hero_passives', set()):
+                buc_bonus = -1
+
+    # Chandrahasa: bonus damage when player HP is low
+    low_hp_mult = 1.0
+    if weapon and getattr(weapon, 'low_hp_damage_bonus', False) and player.max_hp > 0:
+        hp_pct = player.hp / player.max_hp
+        if hp_pct < 0.5:
+            low_hp_mult = 1.0 + (0.5 - hp_pct) * 2.0  # up to 2x at 0% HP
+
+    # Decision D4 (2026-10-06): ranged is a specialist's tool. Measured:
+    # a bow's base equals a blade's of the same material, a floor yields
+    # about 15 shots against the 30 or so attacks it takes to clear, and
+    # a shot gets no Strength multiplier, so a Strength build's blade
+    # out-hits its bow by up to two thirds. That is the intended shape
+    # (first strike and safety, paid for in ammunition and damage); do
+    # not add a stat multiplier here.
+    # STR scales MELEE damage only. RANGED shots scale on PER (the base
+    # bonus added above) -- applying str_factor to ranged too made bows and
+    # crossbows double-dip on STR *and* PER, the persistent "ranged hits way
+    # too hard" bug. (The composite_bow keeps its own intentional draw-weight
+    # STR mechanic, str_bonus_range_7, applied separately to `mult`.)
+    str_factor = 1.0 if is_ranged else 1.0 + max(0, player.STR - 10) * 0.03
+
+    # Chain combat v2 (v2.14.0): when the player is in "bypass DR" mode
+    # (blade_flow buff or chain-special one-shot flag), clamp dtype_mult
+    # up to at least 1.0 so resistances stop cutting damage. Weaknesses
+    # (dtype_mult > 1.0) survive untouched — you still hit fire-vulnerable
+    # things extra hard with a fire-tagged weapon.
+    if (_bf_probe or _cb_probe) and _form_mult < 1.0:
+        dtype_mult /= _form_mult             # the resistance alone is undone
+        _form_mult = 1.0
+
+    # round (not int-truncate): chain damage gradient must survive at
+    # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
+    # across chain levels — invisible progression. round() preserves
+    # the half-step damage differences that the chain ladder is designed
+    # to deliver.
+    damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
+
+    # Empower spell: 3x damage on next hit, then clears
+    if player.has_effect('empowered'):
+        damage *= 3
+        if consume:
+            player.status_effects.pop('empowered', None)
+
+    # Chain combat v2 (v2.14.0): mace / warhammer `armor_crack` and the
+    # dagger-hemorrhage `deep_wound` both amp incoming damage by +25%.
+    # They can stack additively (a mace strike into an axe target etc.);
+    # cap the combined boost at +50% so a lucky stack isn't runaway.
+    _amp = 0.0
+    if monster.has_effect('armor_crack'):
+        _amp += 0.25
+    if monster.has_effect('deep_wound'):
+        _amp += 0.25
+    if _amp > 0:
+        damage = int(damage * (1.0 + min(0.50, _amp)))
+
+    # Chain combat v2: `blade_flow` player buff — the next N attacks bypass
+    # damage reduction (dragon_scales, shielded, resistances). Consumes one
+    # stack per attack. Set by 1h Sword C15/C20, 2h Sword C20, and Soul
+    # Reaver's growth_on_innocent_kill.
+    _bf_stacks = int(player.status_effects.get('blade_flow', 0) or 0)
+    _blade_flow_bypass = _bf_stacks > 0
+    if _blade_flow_bypass and consume:
+        player.status_effects['blade_flow'] = _bf_stacks - 1
+        if player.status_effects['blade_flow'] <= 0:
+            player.status_effects.pop('blade_flow', None)
+
+    # Chain combat v2: per-hit chain-special "bypass DR" flag set by
+    # pre-damage class specials (e.g. crossbow chain 5, 1h sword chain 10,
+    # spear chain 10+, mace chain 20, bow chain 15+). One-shot side channel.
+    _chain_bypass = bool(getattr(player, '_chain_bypass_dr', False)) or _pre_bypass
+    if _chain_bypass and consume:
+        player._chain_bypass_dr = False  # consume immediately
+
+    _skip_dr = (
+        getattr(weapon, 'ignore_resistances', False)
+        or _blade_flow_bypass
+        or _chain_bypass
+    )
+
+    # Dragon scales: massive damage reduction (bypassed by ignore_resistances,
+    # blade_flow, chain-special bypass flag, or player in pit)
+    # From a pit the player strikes the unarmoured belly: the scales do
+    # not apply at all and the blow lands half again as hard. This holds
+    # for scale-ignoring weapons too (reforged Gram in the pit is the
+    # best case, as in the saga). The old rule was x4 against x0.2, a
+    # twenty-fold swing that would have ended Fafnir in one or two hits
+    # had the pit status ever lasted long enough to use.
+    # The belly strike is a blade driven upward at arm's length: MELEE
+    # only. An archer in a pit is still shooting at scales (and would
+    # otherwise be completely safe while doing full damage).
+    dragon_scales = getattr(monster, 'dragon_scales', 0)
+    # The _belly_strike / _ward_blocked / struck_from_the_pit notes are for
+    # the messages after a REAL blow: the preview leaves them alone.
+    _notes = {}
+    # A damage ward (Abaddon): the same fraction-absorbed rule as scales,
+    # with no pit to get under it. Holy fire from the floor-100 altars
+    # strips it for a while; a weapon that ignores resistances ignores it.
+    damage_ward = float(getattr(monster, 'damage_ward', 0.0) or 0.0)
+    _notes['_ward_blocked'] = False
+    _notes['_belly_strike'] = False
+    if damage_ward > 0 and not _skip_dr:
+        damage = max(1, int(damage * (1.0 - damage_ward)))
+        _notes['_ward_blocked'] = True
+    if dragon_scales > 0:
+        if player.has_effect('in_pit') and not is_ranged:
+            damage = int(damage * PIT_BELLY_MULT)
+            _notes['_belly_strike'] = True
+            _notes['struck_from_the_pit'] = True     # remembered: boons.solved_quest
+        elif not _skip_dr:
+            damage = max(1, int(damage * (1.0 - dragon_scales)))
+    if consume:
+        for _k, _v in _notes.items():
+            setattr(player, _k, _v)
+
+    # Sword of Michael vs Abaddon: bonus holy damage
+    if weapon and getattr(weapon, 'abaddon_bonus_damage', '') and monster.kind == 'abaddon_destroyer':
+        bonus = dice(weapon.abaddon_bonus_damage)       # real dice, weapon.json
+        damage += bonus
+
+    # Spear of Lugh (engine wave 4): damage_bonus_vs_gaze. Multiplies
+    # damage against any monster with a gaze attack mechanic — Balor's
+    # eye, the basilisk's stare, Medusa's petrifaction. Detection via
+    # gaze_paralyze attr (Medusa-style) OR any attack with 'gaze' in
+    # its type/name string.
+    _lugh_mult = float(getattr(weapon, 'damage_bonus_vs_gaze', 0.0) or 0.0) if weapon else 0.0
+    if _lugh_mult > 0:
+        _has_gaze = False
+        if int(getattr(monster, 'gaze_paralyze', 0) or 0) > 0:
+            _has_gaze = True
+        else:
+            for _atk in getattr(monster, 'attacks', []) or []:
+                _atk_str = str(_atk.get('type', '') or '') + ' ' + str(_atk.get('name', '') or '')
+                if 'gaze' in _atk_str.lower():
+                    _has_gaze = True
+                    break
+        if _has_gaze:
+            damage = max(1, int(damage * (1.0 + _lugh_mult)))
+
+    # Per-tag bonus damage dice (Anduril +1d8 vs undead, Glamdring vs
+    # goblin, Cadmus vs dragon, Meleager vs beast, etc.). Each entry
+    # in weapon.bonus_damage_vs_tag is rolled and added when the target
+    # carries the matching tag. Generalizes abaddon_bonus_damage above.
+    # Per audit 2026-05-30 — the *_bonus_damage JSON keys had no
+    # consumer; this revives ~10 weapons' anti-tag dice.
+    _tag_bonuses = getattr(weapon, 'bonus_damage_vs_tag', None) if weapon else None
+    if _tag_bonuses:
+        for _bt_tag, _bt_dice in _tag_bonuses.items():
+            if _tag_match(monster, _bt_tag):
+                try:
+                    damage += dice(_bt_dice)             # real dice, weapon.json
+                except Exception:
+                    from game_log import log_error
+                    log_error('combat._callback: recovered from an error')
+
+    # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
+    # +25% damage against the floor's highest-level monster.
+    if getattr(player, '_death_omen_target', None) is monster:
+        damage = int(damage * 1.25)
+
+    # Helm of Leonidas (last_stand_bonus): LAST_STAND_SHARE more damage
+    # while at <20% HP.
+    try:
+        from armor_procs import player_has_armor_proc
+        if player.hp > 0 and player.max_hp > 0 and \
+                player.hp / player.max_hp < 0.20 and \
+                player_has_armor_proc(player, 'last_stand_bonus'):
+            damage += max(1, int(round(damage * LAST_STAND_SHARE)))
+    except ImportError:
+        pass
+
+    # Cuirass of Hannibal (cannae_encirclement): ENCIRCLED_SHARE more damage per adjacent
+    # *other* enemy when surrounded by 3 or more. Bug-bash fix aac:
+    # gate to melee only (no `ammo`) and exclude the target monster
+    # itself from the adjacency count.
+    if not is_ranged:
+        try:
+            from armor_procs import player_has_armor_proc as _pap
+            if _pap(player, 'cannae_encirclement'):
+                _mons_cc = getattr(player, '_combat_monsters_ref', None) or []
+                _adj = 0
+                for _mm in _mons_cc:
+                    if not getattr(_mm, 'alive', False):
+                        continue
+                    if _mm is monster:
+                        continue
+                    if abs(_mm.x - player.x) <= 1 and abs(_mm.y - player.y) <= 1 \
+                            and not (_mm.x == player.x and _mm.y == player.y):
+                        _adj += 1
+                if _adj >= 3:
+                    damage += max(1, int(round(damage * ENCIRCLED_SHARE * _adj)))
+        except ImportError:
+            pass
+
+    # Lorica Hamata of Caesar (et_tu_charge): +50% damage against the
+    # marked first-attacker.
+    if getattr(player, '_et_tu_target', None) is monster:
+        damage = int(damage * 1.50)
+
+    # Hippolyta girdle (amazon_charge): if armed (3+ straight-line moves),
+    # next melee +50%. Consumed on hit.
+    if getattr(player, '_amazon_charge_armed', False) and not is_ranged:
+        damage = int(damage * 1.50)
+        if consume:
+            player._amazon_charge_armed = False
+            player._straight_line_steps = 0
+
+    # Dragonslayer Ring (monster_tag_chain_bonus): a per-tag damage bonus
+    # against monsters carrying the matching tag.
+    try:
+        mtags = set(getattr(monster, 'tags', []) or [])
+        for _acc in getattr(player, 'equipped_accessories', ()) or ():
+            _tag_table = getattr(_acc, 'monster_tag_chain_bonus', {}) or {}
+            for _tag, _bonus in _tag_table.items():
+                if _tag in mtags:
+                    damage = int(damage * (1.0 + float(_bonus) * 0.10))
+    except AttributeError:
+        pass
+
+    # Bracers of Arjuna (gita_focus): first ranged attack per floor gets a
+    # flat +50% damage. Chain combat v2 (v2.14.0): was "crits" via
+    # crit_multiplier; retired to a straight 1.5x since crit is gone.
+    if is_ranged:
+        try:
+            from armor_procs import consume_floor_charge, is_charge_available
+            if (consume_floor_charge(player, 'gita_focus') if consume
+                    else is_charge_available(player, 'gita_focus')):
+                damage = int(damage * 1.5)
+        except ImportError:
+            pass
+
+    # Backstab (dagger): at max chain against a target that does not know
+    # you are there, the same blow lands twice. It used to be a second
+    # take_damage after the first, and the first had already woken a
+    # sleeping target, so a sleeper was never backstabbed.
+    if _pre_mech == 'backstab' and weapon and             chain >= (weapon.max_chain_length or len(weapon.chain_multipliers)):
+        if (monster.has_effect('sleeping')
+                or (getattr(monster, 'ai_pattern', '') == 'ambush'
+                    and not getattr(monster, '_aware', False))):
+            damage *= 2
+    return damage
+
+
+def _rapid_shot_followup(weapon, chain: int, first: int) -> int:
+    """Shortbow Rapid Shot: at max chain a second arrow follows the first
+    into the same target for half its damage (0 when it does not fire)."""
+    if (weapon is None or getattr(weapon, 'class_mechanic', None) != 'rapid_shot_at_max'
+            or chain < (weapon.max_chain_length or len(weapon.chain_multipliers))):
+        return 0
+    return max(1, first // 2)
+
+
+def strike_preview(player, monster, score: int, *, ranged: bool = False, ammo=None,
+                   weapon=_WIELDED) -> int:
+    """What pressing Strike Now at quiz chain ``score`` deals to the target:
+    the same effective_chain + strike_damage the blow runs (nothing spent,
+    dice at their average), plus a Rapid Shot follow-up arrow when the
+    first does not kill. The combat strip shows this number (call 13)."""
+    if weapon is _WIELDED:
+        weapon = player.ranged_weapon if ranged else player.weapon
+    chain = effective_chain(player, monster, weapon, score, consume=False)
+    if chain < 1:
+        return 0
+    dmg = strike_damage(player, monster, chain, ranged=ranged, ammo=ammo,
+                        consume=False, weapon=weapon)
+    if monster.hp > dmg:
+        dmg += _rapid_shot_followup(weapon, chain, dmg)
+    return dmg
+
+
 def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                   ranged=None):
     """
@@ -963,97 +1656,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
     weapon = player.ranged_weapon if is_ranged else player.weapon
 
     def _callback(result):
-        chain = result.score
-
-        # Cow King's Horns (or any armor with chain_bonus): free chain head start
-        # Only on an attack that lands: added to a chain of 0 it turned every
-        # wrong first answer into a hit, and combat never does a sum for you.
-        if result.score >= 1:
-            for slot in getattr(player, 'armor_slots', []):
-                if slot and getattr(slot, 'chain_bonus', 0):
-                    chain += slot.chain_bonus
-            # Chain-equip passive attack_chain_cap_bonus (Ring of Gawain,
-            # Torque of Lugh). It raised a chain cap no weapon has any more.
-            try:
-                from chain_passives import get_attack_chain_cap_bonus
-                chain += int(get_attack_chain_cap_bonus(player) or 0)
-            except ImportError:
-                pass
-
-        # Parashu (engine wave 3): chain_no_reset_on_tag carry. After a kill
-        # of a matching-tag target, the next attack starts at the same
-        # chain rung instead of restarting. Consumed immediately so a
-        # second attack restarts normally.
-        _carry = int(getattr(player, '_chain_carry', 0) or 0)
-        if _carry > 0:
-            chain += _carry
-            player._chain_carry = 0
-
-        # Jormungandr quirk: with the weapon the quirk was earned on, any
-        # attack that lands at all counts as one link longer. (The old
-        # reward raised a chain CAP that common weapons no longer have.)
-        if (result.score >= 1 and weapon is not None
-                and getattr(player, 'quirk_progress', {}).get('jormungandr_weapon_id')
-                == getattr(weapon, 'id', None)):
-            chain += 1
-
-        # Glamdring: Foe-Hammer's signature glow. Against any goblin/orc-
-        # tagged enemy, +1 chain rung head start while equipped. Per audit
-        # 2026-05-30 — the `glows_near_orcs` JSON flag was previously inert.
-        # Lore: "the sword preempts — the wielder gets +2 initiative."
-        if weapon and getattr(weapon, 'glows_near_orcs', False):
-            if _tag_match(monster, 'goblin') or _tag_match(monster, 'orc'):
-                chain += 1
-
-        # Fail-not: Tristan's bow given by Morgan le Fay — never misses.
-        # Chain 0 is promoted to chain 1 (minimum hit) so a missed quiz still lands.
-        if chain == 0 and weapon and getattr(weapon, 'class_mechanic', '') == 'guaranteed_hit':
-            chain = 1
-        # Gungnir: "the spear has never missed." Per audit 2026-05-30 — the
-        # `cannot_miss` data flag previously had no consumer. Same chain 0 -> 1
-        # promotion as guaranteed_hit but driven from the weapon's JSON.
-        if chain == 0 and weapon and getattr(weapon, 'cannot_miss', False):
-            chain = 1
-
-        # Fail-not (engine wave 3): cannot_miss_before_player_takes_damage.
-        # The Tristan-knot vow holds until the player takes a hit this combat.
-        # Once the combat tracker says the player has been hurt, the spell
-        # falters and misses can land normally. See _combat_player_taken_damage
-        # marker (set by player.take_damage hook below).
-        if (chain == 0 and weapon and getattr(weapon, 'cannot_miss_before_hurt', False)
-                and not getattr(player, '_combat_player_taken_damage', False)):
-            chain = 1
-
-        # Hrunting (engine wave 3): one_shot_chain_save_per_floor. The poem's
-        # promise: "never failed any man who grasped it." Once per floor,
-        # demote a chain-0 (miss) into chain-1 (light hit). After the save
-        # is spent, normal misses resume. Player-level marker
-        # `_hrunting_save_used` is reset on every floor in main._change_level.
-        if (chain == 0 and weapon and getattr(weapon, 'one_shot_chain_save_per_floor', False)
-                and not getattr(player, '_hrunting_save_used', False)):
-            player._hrunting_save_used = True
-            chain = 1
-
-        # Harpe (engine wave 3): skip_chain_warmup_vs_tag. Against matching-
-        # tag enemies, the chain auto-completes the warm-up — start at rung 2
-        # instead of rung 1. The blade that knows the monster.
-        _skip_warmup = getattr(weapon, 'skip_chain_warmup_vs_tag', None) or []
-        if _skip_warmup and chain >= 1:
-            for _tg in _skip_warmup:
-                if _tag_match(monster, _tg):
-                    chain += 1
-                    break
-
-        # Skofnung (engine wave 3): chain_bonus_on_low_hp_window. When the
-        # player has just dropped below 50% HP, the next attack adds N chain
-        # rungs (one of the twelve berserkers takes over). Tracker
-        # `_skofnung_low_hp_pending` is set by player.take_damage when the
-        # threshold is crossed, and consumed here.
-        _skofnung_bonus = int(getattr(weapon, 'chain_bonus_on_low_hp_window', 0) or 0)
-        if (_skofnung_bonus > 0 and chain >= 1
-                and getattr(player, '_skofnung_low_hp_pending', False)):
-            chain += _skofnung_bonus
-            player._skofnung_low_hp_pending = False
+        chain = effective_chain(player, monster, weapon, result.score, consume=True)
 
         # Cursed weapon backlash on miss (Tyrfing).
         # Floor at 0 so the player.hp value stays non-negative — downstream
@@ -1073,508 +1676,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             return
 
 
-        # Base damage: new integer field preferred over legacy dice string.
-        # Unarmed (fist) uses the chain combat v2 STR-scaled base: 2 × (1 + STR/10)
-        # above 10 STR. STR 10 = 2, STR 15 = 3, STR 20 = 4. Intentionally weak —
-        # this is the "you dropped your weapon" fallback, not an alternative build.
-        # (A real, small number: fists are fists on any floor.)
-        if weapon and weapon.base_damage:
-            base = weapon.base_damage
-        elif weapon and weapon.damage:
-            base = roll(weapon.damage)
-        else:
-            base = max(1, round(2 * (1 + max(0, player.STR - 10) / 10.0)))
-
-        # Ranged stat bonuses (chain combat v2). Per-hit additive on the base
-        # BEFORE material/chain scaling. Bow/sling get STR + PER at /4;
-        # crossbow gets PER only (it fires like a machine, arm strength doesn't
-        # help). Applies only to actual ranged shots so melee
-        # attacks are unaffected.
-        if is_ranged:
-            _wc = getattr(weapon, 'weapon_class', '') if weapon else ''
-            # A share of the weapon's own base: RANGED_STAT_SHARE for every
-            # four points of the stat above 10.
-            _own = int(base)
-            # At least one point a step, so the bonus exists on a small bow too.
-            for _step in ((max(0, (player.PER - 10) // 4),)
-                          + ((max(0, (player.STR - 10) // 4),) if _wc != 'crossbow' else ())):
-                if _step:
-                    base += max(_step, int(round(_own * RANGED_STAT_SHARE * _step)))
-
-        # Weakened / frozen: halve player attack damage. Both effects
-        # describe "attack damage halved" / "encased in ice." Previously
-        # NEITHER was wired for the player — applied by 30+ monsters but
-        # did nothing.
-        if player.has_effect('weakened') or player.has_effect('frozen'):
-            base = max(1, base // 2)
-
-        # Ammo damage bonus (ranged shots only)
-        ammo_bonus  = int(ammo.damage_bonus) if ammo else 0      # real numbers, data/items/ammo.json
-        enchant     = weapon.enchant_bonus if weapon else 0
-        # Chain combat v2: polynomial `mult = chain ** chain_exponent` when the
-        # weapon opts in; otherwise fall back to the legacy per-rung array.
-        # Uniques keep their handcrafted `chain_multipliers`; new common templates
-        # ship `chain_exponent` (default 1.15). Unarmed (fist) also uses the
-        # polynomial at 1.15 — the base damage is already floored low.
-        _chain_exp = getattr(weapon, 'chain_exponent', None) if weapon else 1.15
-        if _chain_exp and _chain_exp > 0:
-            mult = float(chain) ** float(_chain_exp)
-            multipliers = None  # signals "polynomial path" to blocks below
-        else:
-            multipliers = weapon.chain_multipliers if weapon else _DEFAULT_MULTIPLIERS
-            mult        = multipliers[min(chain - 1, len(multipliers) - 1)]
-
-        # Musashi quirk: an attack that ends on a chain of exactly 1 deals
-        # double damage ("one cut is enough"). It used to swap in the 2nd
-        # entry of the legacy multiplier array, which did nothing at all on
-        # the polynomial-chain weapons every common weapon now is.
-        if chain == 1 and getattr(player, 'quirk_progress', {}).get('musashi_active'):
-            mult *= 2.0
-
-        # Chain combat v2 (v2.14.0): pre-damage per-class chain-special hooks.
-        # Sets `player._chain_bypass_dr` when the special calls for it, and
-        # returns any per-hit damage multiplier (Bow C20 vitals x2). Runs
-        # before shielded / dragon_scales checks so the bypass takes effect.
-        mult *= _apply_chain_class_pre_damage(player, weapon, chain)
-
-        # Atalanta's Bow: first_blood_bonus — at chain 1 against a target
-        # that has not yet taken damage this combat (HP at max), +50%
-        # damage. The Calydonian-Boar opener — first arrow rewarded.
-        # Per audit 2026-05-30 (data flag was previously inert).
-        if (chain == 1 and weapon and getattr(weapon, 'first_blood_bonus', False)
-                and monster.hp >= monster.max_hp):
-            mult *= 1.5
-
-        # Damage type advantage vs monster resistances/weaknesses
-        # Gram (reforged) ignores all resistances
-        _ignores_res = bool(weapon and getattr(weapon, 'ignore_resistances', False))
-        # The weapon's form (cut, thrust, crush) and its substance (silver,
-        # iron, blessed) each meet the monster: see weapon_type_multiplier.
-        # Bare hands crush.
-        _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster)
-        # Gram and the Sword of Michael ignore RESISTANCES; a weakness
-        # still counts.
-        if _ignores_res:
-            _form_mult = max(1.0, _form_mult)
-        dtype_mult = _form_mult * _subst_mult
-
-        # Weapon-side effective_against array. Per audit 2026-05-30 — many
-        # uniques (Zulfiqar, Vel of Murugan, Spear of Longinus, Mjolnir,
-        # Dawnbreaker, Gungnir, Fragarach, Skofnung, Gilgamesh's Axe,
-        # Shamshir) declared per-weapon anti-tag arrays that the engine
-        # ignored (only material.effective_against was read). Boost
-        # damage 1.5x when the target matches any declared tag.
-        # Per-weapon effective_against: ONLY for UNIQUE weapons' explicit anti-tag
-        # arrays (Zulfiqar, Mjolnir, Dawnbreaker...). A COMPOSITIONAL weapon
-        # inherits effective_against from its MATERIAL (instantiate_weapon copies
-        # it), but the material is already added to damage_types above, so
-        # _damage_multiplier ALREADY applied that bonus -- counting it again here
-        # double-dipped it. A yew crossbow vs a fey Satyr did 1.5 x 1.5 = 2.25x:
-        # a 7-base chain-5 shot hit for 41 instead of ~28. (2026-06-07 ranged fix;
-        # gated at the use-site so it also corrects weapons already in saves.)
-        if weapon and getattr(weapon, 'is_unique', False):
-            _weapon_anti = getattr(weapon, 'effective_against', None) or []
-            if _weapon_anti and (set(getattr(monster, 'tags', [])) & set(_weapon_anti)):
-                dtype_mult *= 1.5
-        if weapon:
-            # Anduril-style numeric undead_multiplier (legacy `undead_bonus`
-            # JSON field): applies as a flat 1.5x against undead when set > 1.
-            _und_mult = float(getattr(weapon, 'undead_multiplier', 1.0) or 1.0)
-            if _und_mult > 1.0 and _tag_match(monster, 'undead'):
-                dtype_mult *= 1.5
-
-        # Akinakes of Acrisius: prophecy_blade. At first equip the blade
-        # declared a random tag (stored on player._prophecy_target_tag).
-        # That tag's monsters take +50% damage from the Akinakes for the
-        # rest of the run. Per audit 2026-05-30 — the JSON flag was inert.
-        if weapon and getattr(weapon, 'prophecy_blade', False):
-            _proph = getattr(player, '_prophecy_target_tag', None)
-            if _proph and _tag_match(monster, _proph):
-                dtype_mult *= 1.5
-
-        # Mistilteinn (engine wave 3): damage_double_vs_resistant_at_max.
-        # At max chain, against ANY target with resistances, double damage.
-        # Baldur's flaw: protected against everything except the small thing.
-        if weapon and getattr(weapon, 'damage_double_vs_resistant_at_max', False):
-            _maxc = weapon.max_chain_length or len(weapon.chain_multipliers)
-            if chain >= _maxc and getattr(monster, 'resistances', None):
-                dtype_mult *= 2.0
-
-        # Robin Hood's Longbow (engine wave 3): stealth_damage_bonus.
-        # Striking from invisibility/stealth: +X% damage. Stored as
-        # fractional multiplier (0.5 = +50%).
-        _sb = float(getattr(weapon, 'stealth_damage_bonus', 0.0) or 0.0) if weapon else 0.0
-        if _sb > 0 and player.has_effect('invisible'):
-            dtype_mult *= 1.0 + _sb
-
-        # Kusanagi (engine wave 3): surrounded_proc_bonus. When 3+ enemies
-        # are adjacent to the player, +25% damage. Chain combat v2 (v2.14.0):
-        # rewired from "force crit" to flat multiplier since crit was retired
-        # (chain IS the crit). Feel is the same — surround-the-warrior payoff.
-        if weapon and getattr(weapon, 'surrounded_proc_bonus', False):
-            _adj = 0
-            try:
-                _mons = getattr(player, '_combat_monsters_ref', None) or []
-                for _m in _mons:
-                    if _m.alive and abs(_m.x - player.x) <= 1 and abs(_m.y - player.y) <= 1 \
-                            and not (_m.x == player.x and _m.y == player.y):
-                        _adj += 1
-            except Exception:
-                _adj = 0
-            if _adj >= 3:
-                mult *= 1.25
-
-        # Oathkeeper (engine wave 3): adjacent_pet_damage_bonus.
-        # When ANY pet is within 1 tile of the player, multiply damage.
-        # Lore: care for what walks beside you.
-        _ap_bonus = float(getattr(weapon, 'adjacent_pet_damage_bonus', 0.0) or 0.0) \
-            if weapon else 0.0
-        if _ap_bonus > 0:
-            _pets = getattr(player, '_combat_pets_ref', None) or []
-            for _p in _pets:
-                if (getattr(_p, 'alive', False)
-                        and abs(_p.x - player.x) <= 1 and abs(_p.y - player.y) <= 1):
-                    dtype_mult *= 1.0 + _ap_bonus
-                    break
-
-        # Shield bypass: ignore_shield weapons deal full damage through monster's shielded effect.
-        # Chain combat v2 (v2.14.0): also bypassed when the player has a `blade_flow`
-        # stack or a `_chain_bypass_dr` flag set by the class-chain-special pre-damage
-        # dispatch (spear/1h_sword/bow/crossbow/mace at threshold). Those consumers are
-        # decremented below; the "already going to bypass" check just probes here.
-        _bf_probe = int(player.status_effects.get('blade_flow', 0) or 0) > 0
-        _cb_probe = bool(getattr(player, '_chain_bypass_dr', False))
-        _shield_bypass = (weapon and weapon.ignore_shield) or _bf_probe or _cb_probe
-        if not _shield_bypass:
-            if monster.has_effect('shielded'):
-                dtype_mult *= 0.5
-
-        # Chain combat v2 (v2.14.0): crit is retired. Chain IS the crit —
-        # the polynomial ladder handles the "big number" reward directly.
-        # The `crit` boolean is kept for on_complete kwargs so callers that
-        # branch on it still compile; it now stays False everywhere. Harpe's
-        # petrify moved to the class-chain-special dispatch below (petrifies
-        # at chain 15 via a per-weapon flag). Soul Reaver's next-hit-auto-crit
-        # rewired to a `blade_flow` player stack down at growth_on_innocent_kill.
-        crit = False
-
-        # Pre-damage class-mechanic multipliers. Apply to mult before damage
-        # is rolled. Several mechanics fire ONLY at max chain (the chain-5
-        # payoff identity); some fire on every hit (versatile, master_strike).
-        _pre_mech = getattr(weapon, 'class_mechanic', None) if weapon else None
-        if _pre_mech and weapon:
-            _max_c = weapon.max_chain_length or len(weapon.chain_multipliers)
-            _at_max = chain >= _max_c
-
-            # versatile (bastard_sword) — +20% damage when wielded 2H (no shield).
-            # Fires on EVERY hit, not just max chain.
-            if _pre_mech == 'versatile' and player.shield is None:
-                mult *= 1.20
-
-            # master_strike (longsword) — the Meisterhau. At chain 3+, +15%
-            # damage representing the diagonal cut that defeats defensive guards.
-            if _pre_mech == 'master_strike' and chain >= 3:
-                mult *= 1.15
-
-            # str_bonus_range_7 (composite_bow) — the laminated horn+sinew+wood
-            # stack requires real bow-arm strength to fully draw. Each STR
-            # point above 10 adds 5% to damage. Ranged shots only (ammo present).
-            # Per user 2026-05-30: this mechanic was declared in the template
-            # but never wired — composite bows behaved identically to longbows.
-            if _pre_mech == 'str_bonus_range_7' and is_ranged:
-                mult *= 1.0 + max(0, (player.STR - 10) * 0.05)
-
-            # AT-MAX-CHAIN damage multipliers
-            if _at_max:
-                if _pre_mech == 'anti_heavy_at_max' and _is_heavy_armored(monster):
-                    mult *= 1.5
-                elif _pre_mech == 'armor_pierce_at_max':
-                    mult *= 1.35
-                elif _pre_mech == 'ignores_all_armor':
-                    # heavy_crossbow signature — the bolt goes through as if
-                    # the creature did not resist a thrust at all. (This also
-                    # multiplied the blow by the same factor again, which
-                    # would have doubled it; no blow was ever resisted, so it
-                    # never showed.)
-                    if _form_mult < 1.0:
-                        dtype_mult /= _form_mult
-                        _form_mult = 1.0
-                elif _pre_mech == 'ignores_half_armor':
-                    # light_crossbow — halve the resistance penalty
-                    if _form_mult < 1.0:
-                        _half = (_form_mult + 1.0) / 2.0
-                        dtype_mult *= _half / _form_mult
-                        _form_mult = _half
-
-        # Beowulf quirk: unarmed attacks deal +5 base damage
-        if weapon is None:
-            unarmed_bonus = getattr(player, 'quirk_progress', {}).get('beowulf_unarmed_bonus', 0)
-            base += int(unarmed_bonus)
-
-        # (Weakened is applied once, with frozen, near the top of this
-        # function. A second halving here used to quarter the damage.)
-
-        # Hero passive: Will to Power — +30% damage when below 30% HP.
-        hero_passives = getattr(player, 'hero_passives', set())
-        if 'will_to_power' in hero_passives and player.max_hp > 0 and \
-                player.hp <= player.max_hp * 0.3:
-            mult *= 1.3
-        # Hero passive: Witcher Mutations — +20% damage vs monsters (all).
-        if 'witcher_mutations' in hero_passives:
-            mult *= 1.2
-        # Hero passive: Niten Ichi-Ryū (Musashi) — +15% damage when a melee
-        # weapon is equipped. Musashi ships longsword + shortsword (both melee);
-        # Player has no distinct `melee_weapon` slot, and the `ranged_weapon`
-        # slot only accepts ammo-requiring weapons, so the old
-        # weapon+ranged_weapon gate never fired for his kit. Gate now on
-        # "a non-ammo weapon in the primary slot" — preserves the two-swords
-        # fantasy for any melee loadout.
-        _mw = getattr(player, 'weapon', None)
-        if 'niten_ichi_ryu' in hero_passives and _mw is not None and \
-                not getattr(_mw, 'requires_ammo', False):
-            mult *= 1.15
-        # Hero buff: crit_buff (Joan of Arc's Standard / Ash's She-Bitch) — next attack crits
-        if getattr(player, 'status_effects', {}).get('crit_buff', 0) > 0:
-            mult *= 1.5
-            # consume one charge by reducing duration; if it reaches 0, status fades naturally
-            player.status_effects['crit_buff'] = max(0, player.status_effects['crit_buff'] - 1)
-        # Hero buff: berserk — flat +30% damage while active
-        if getattr(player, 'status_effects', {}).get('berserk', 0) > 0:
-            mult *= 1.3
-
-        # BUC weapon bonus: blessed +1, cursed -1
-        buc_bonus = 0
-        if weapon:
-            wbuc = getattr(weapon, 'buc', 'uncursed')
-            if wbuc == 'blessed':
-                buc_bonus = 1
-            elif wbuc == 'cursed':
-                # Hero passive: Diogenes' Cynic Detachment — cursed items don't penalize.
-                if 'cynic_detachment' not in getattr(player, 'hero_passives', set()):
-                    buc_bonus = -1
-
-        # Chandrahasa: bonus damage when player HP is low
-        low_hp_mult = 1.0
-        if weapon and getattr(weapon, 'low_hp_damage_bonus', False) and player.max_hp > 0:
-            hp_pct = player.hp / player.max_hp
-            if hp_pct < 0.5:
-                low_hp_mult = 1.0 + (0.5 - hp_pct) * 2.0  # up to 2x at 0% HP
-
-        # Decision D4 (2026-10-06): ranged is a specialist's tool. Measured:
-        # a bow's base equals a blade's of the same material, a floor yields
-        # about 15 shots against the 30 or so attacks it takes to clear, and
-        # a shot gets no Strength multiplier, so a Strength build's blade
-        # out-hits its bow by up to two thirds. That is the intended shape
-        # (first strike and safety, paid for in ammunition and damage); do
-        # not add a stat multiplier here.
-        # STR scales MELEE damage only. RANGED shots scale on PER (the base
-        # bonus added above) -- applying str_factor to ranged too made bows and
-        # crossbows double-dip on STR *and* PER, the persistent "ranged hits way
-        # too hard" bug. (The composite_bow keeps its own intentional draw-weight
-        # STR mechanic, str_bonus_range_7, applied separately to `mult`.)
-        str_factor = 1.0 if is_ranged else 1.0 + max(0, player.STR - 10) * 0.03
-
-        # Chain combat v2 (v2.14.0): when the player is in "bypass DR" mode
-        # (blade_flow buff or chain-special one-shot flag), clamp dtype_mult
-        # up to at least 1.0 so resistances stop cutting damage. Weaknesses
-        # (dtype_mult > 1.0) survive untouched — you still hit fire-vulnerable
-        # things extra hard with a fire-tagged weapon.
-        if (_bf_probe or _cb_probe) and _form_mult < 1.0:
-            dtype_mult /= _form_mult             # the resistance alone is undone
-            _form_mult = 1.0
-
-        # round (not int-truncate): chain damage gradient must survive at
-        # low base values. With int(), iron sword base=1 gave 1,1,1,1,2
-        # across chain levels — invisible progression. round() preserves
-        # the half-step damage differences that the chain ladder is designed
-        # to deliver.
-        damage = max(1, round((base + enchant + ammo_bonus + buc_bonus) * mult * dtype_mult * str_factor * low_hp_mult))
-
-        # Empower spell: 3x damage on next hit, then clears
-        if player.has_effect('empowered'):
-            damage *= 3
-            player.status_effects.pop('empowered', None)
-
-        # Chain combat v2 (v2.14.0): mace / warhammer `armor_crack` and the
-        # dagger-hemorrhage `deep_wound` both amp incoming damage by +25%.
-        # They can stack additively (a mace strike into an axe target etc.);
-        # cap the combined boost at +50% so a lucky stack isn't runaway.
-        _amp = 0.0
-        if monster.has_effect('armor_crack'):
-            _amp += 0.25
-        if monster.has_effect('deep_wound'):
-            _amp += 0.25
-        if _amp > 0:
-            damage = int(damage * (1.0 + min(0.50, _amp)))
-
-        # Chain combat v2: `blade_flow` player buff — the next N attacks bypass
-        # damage reduction (dragon_scales, shielded, resistances). Consumes one
-        # stack per attack. Set by 1h Sword C15/C20, 2h Sword C20, and Soul
-        # Reaver's growth_on_innocent_kill.
-        _bf_stacks = int(player.status_effects.get('blade_flow', 0) or 0)
-        _blade_flow_bypass = _bf_stacks > 0
-        if _blade_flow_bypass:
-            player.status_effects['blade_flow'] = _bf_stacks - 1
-            if player.status_effects['blade_flow'] <= 0:
-                player.status_effects.pop('blade_flow', None)
-
-        # Chain combat v2: per-hit chain-special "bypass DR" flag set by
-        # pre-damage class specials (e.g. crossbow chain 5, 1h sword chain 10,
-        # spear chain 10+, mace chain 20, bow chain 15+). One-shot side channel.
-        _chain_bypass = bool(getattr(player, '_chain_bypass_dr', False))
-        if _chain_bypass:
-            player._chain_bypass_dr = False  # consume immediately
-
-        _skip_dr = (
-            getattr(weapon, 'ignore_resistances', False)
-            or _blade_flow_bypass
-            or _chain_bypass
-        )
-
-        # Dragon scales: massive damage reduction (bypassed by ignore_resistances,
-        # blade_flow, chain-special bypass flag, or player in pit)
-        # From a pit the player strikes the unarmoured belly: the scales do
-        # not apply at all and the blow lands half again as hard. This holds
-        # for scale-ignoring weapons too (reforged Gram in the pit is the
-        # best case, as in the saga). The old rule was x4 against x0.2, a
-        # twenty-fold swing that would have ended Fafnir in one or two hits
-        # had the pit status ever lasted long enough to use.
-        # The belly strike is a blade driven upward at arm's length: MELEE
-        # only. An archer in a pit is still shooting at scales (and would
-        # otherwise be completely safe while doing full damage).
-        dragon_scales = getattr(monster, 'dragon_scales', 0)
-        player._belly_strike = False
-        # A damage ward (Abaddon): the same fraction-absorbed rule as scales,
-        # with no pit to get under it. Holy fire from the floor-100 altars
-        # strips it for a while; a weapon that ignores resistances ignores it.
-        damage_ward = float(getattr(monster, 'damage_ward', 0.0) or 0.0)
-        player._ward_blocked = False
-        if damage_ward > 0 and not _skip_dr:
-            damage = max(1, int(damage * (1.0 - damage_ward)))
-            player._ward_blocked = True
-        if dragon_scales > 0:
-            if player.has_effect('in_pit') and not is_ranged:
-                damage = int(damage * PIT_BELLY_MULT)
-                player._belly_strike = True
-                player.struck_from_the_pit = True     # remembered: boons.solved_quest
-            elif not _skip_dr:
-                damage = max(1, int(damage * (1.0 - dragon_scales)))
-
-        # Sword of Michael vs Abaddon: bonus holy damage
-        if weapon and getattr(weapon, 'abaddon_bonus_damage', '') and monster.kind == 'abaddon_destroyer':
-            from dice import roll as _ab_roll
-            bonus = _ab_roll(weapon.abaddon_bonus_damage)       # real dice, weapon.json
-            damage += bonus
-
-        # Spear of Lugh (engine wave 4): damage_bonus_vs_gaze. Multiplies
-        # damage against any monster with a gaze attack mechanic — Balor's
-        # eye, the basilisk's stare, Medusa's petrifaction. Detection via
-        # gaze_paralyze attr (Medusa-style) OR any attack with 'gaze' in
-        # its type/name string.
-        _lugh_mult = float(getattr(weapon, 'damage_bonus_vs_gaze', 0.0) or 0.0) if weapon else 0.0
-        if _lugh_mult > 0:
-            _has_gaze = False
-            if int(getattr(monster, 'gaze_paralyze', 0) or 0) > 0:
-                _has_gaze = True
-            else:
-                for _atk in getattr(monster, 'attacks', []) or []:
-                    _atk_str = str(_atk.get('type', '') or '') + ' ' + str(_atk.get('name', '') or '')
-                    if 'gaze' in _atk_str.lower():
-                        _has_gaze = True
-                        break
-            if _has_gaze:
-                damage = max(1, int(damage * (1.0 + _lugh_mult)))
-
-        # Per-tag bonus damage dice (Anduril +1d8 vs undead, Glamdring vs
-        # goblin, Cadmus vs dragon, Meleager vs beast, etc.). Each entry
-        # in weapon.bonus_damage_vs_tag is rolled and added when the target
-        # carries the matching tag. Generalizes abaddon_bonus_damage above.
-        # Per audit 2026-05-30 — the *_bonus_damage JSON keys had no
-        # consumer; this revives ~10 weapons' anti-tag dice.
-        _tag_bonuses = getattr(weapon, 'bonus_damage_vs_tag', None) if weapon else None
-        if _tag_bonuses:
-            from dice import roll as _tb_roll
-            for _bt_tag, _bt_dice in _tag_bonuses.items():
-                if _tag_match(monster, _bt_tag):
-                    try:
-                        damage += _tb_roll(_bt_dice)             # real dice, weapon.json
-                    except Exception:
-                        from game_log import log_error
-                        log_error('combat._callback: recovered from an error')
-
-        # Chain-equip passive: death_omen_mark (Cloak of the Morrigan T5).
-        # +25% damage against the floor's highest-level monster.
-        if getattr(player, '_death_omen_target', None) is monster:
-            damage = int(damage * 1.25)
-
-        # Helm of Leonidas (last_stand_bonus): LAST_STAND_SHARE more damage
-        # while at <20% HP.
-        try:
-            from armor_procs import player_has_armor_proc
-            if player.hp > 0 and player.max_hp > 0 and \
-                    player.hp / player.max_hp < 0.20 and \
-                    player_has_armor_proc(player, 'last_stand_bonus'):
-                damage += max(1, int(round(damage * LAST_STAND_SHARE)))
-        except ImportError:
-            pass
-
-        # Cuirass of Hannibal (cannae_encirclement): ENCIRCLED_SHARE more damage per adjacent
-        # *other* enemy when surrounded by 3 or more. Bug-bash fix aac:
-        # gate to melee only (no `ammo`) and exclude the target monster
-        # itself from the adjacency count.
-        if not is_ranged:
-            try:
-                from armor_procs import player_has_armor_proc as _pap
-                if _pap(player, 'cannae_encirclement'):
-                    _mons_cc = getattr(player, '_combat_monsters_ref', None) or []
-                    _adj = 0
-                    for _mm in _mons_cc:
-                        if not getattr(_mm, 'alive', False):
-                            continue
-                        if _mm is monster:
-                            continue
-                        if abs(_mm.x - player.x) <= 1 and abs(_mm.y - player.y) <= 1 \
-                                and not (_mm.x == player.x and _mm.y == player.y):
-                            _adj += 1
-                    if _adj >= 3:
-                        damage += max(1, int(round(damage * ENCIRCLED_SHARE * _adj)))
-            except ImportError:
-                pass
-
-        # Lorica Hamata of Caesar (et_tu_charge): +50% damage against the
-        # marked first-attacker.
-        if getattr(player, '_et_tu_target', None) is monster:
-            damage = int(damage * 1.50)
-
-        # Hippolyta girdle (amazon_charge): if armed (3+ straight-line moves),
-        # next melee +50%. Consumed on hit.
-        if getattr(player, '_amazon_charge_armed', False) and not is_ranged:
-            damage = int(damage * 1.50)
-            player._amazon_charge_armed = False
-            player._straight_line_steps = 0
-
-        # Dragonslayer Ring (monster_tag_chain_bonus): a per-tag damage bonus
-        # against monsters carrying the matching tag.
-        try:
-            mtags = set(getattr(monster, 'tags', []) or [])
-            for _acc in getattr(player, 'equipped_accessories', ()) or ():
-                _tag_table = getattr(_acc, 'monster_tag_chain_bonus', {}) or {}
-                for _tag, _bonus in _tag_table.items():
-                    if _tag in mtags:
-                        damage = int(damage * (1.0 + float(_bonus) * 0.10))
-        except AttributeError:
-            pass
-
-        # Bracers of Arjuna (gita_focus): first ranged attack per floor gets a
-        # flat +50% damage. Chain combat v2 (v2.14.0): was "crits" via
-        # crit_multiplier; retired to a straight 1.5x since crit is gone.
-        if is_ranged:
-            try:
-                from armor_procs import consume_floor_charge
-                if consume_floor_charge(player, 'gita_focus'):
-                    damage = int(damage * 1.5)
-            except ImportError:
-                pass
+        # The one damage calculation (shared with the combat strip preview).
+        damage = strike_damage(player, monster, chain, ranged=is_ranged, ammo=ammo,
+                               consume=True, weapon=weapon)
+        crit = False      # retired: chain IS the crit (kept for on_complete)
 
         actual = monster.take_damage(damage)
 
@@ -2053,14 +2158,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                         monster.add_effect('paralyzed', 2)
                         stunned = True
 
-            # Backstab (dagger) — now requires max chain AND unaware monster
-            if class_mech == 'backstab' and at_max:
-                _unaware = (monster.has_effect('sleeping')
-                            or (getattr(monster, 'ai_pattern', '') == 'ambush'
-                                and not getattr(monster, '_aware', False)))
-                if _unaware:
-                    extra = monster.take_damage(actual)  # apply the same damage AGAIN
-                    actual += extra
+            # Backstab (dagger, x2 at max chain on an unaware target) is part
+            # of strike_damage, so the Strike Now preview shows it too.
 
             # Disarm at max (scimitar, quarterstaff's reach_disarm)
             if class_mech in ('disarm_at_max', 'reach_disarm') and at_max:
@@ -2094,7 +2193,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             # Rapid shot (shortbow) — at max chain, fire a second arrow at the
             # same target for half damage. Mongol horse-archer signature speed.
             if class_mech == 'rapid_shot_at_max' and at_max and not monster.is_dead():
-                followup = max(1, actual // 2)
+                followup = _rapid_shot_followup(weapon, chain, actual)
                 extra = monster.take_damage(followup)
                 actual += extra
 

@@ -243,7 +243,7 @@ def test_blade_flow_source_wired_in_combat_module():
     import inspect
     import combat
 
-    src = inspect.getsource(combat.player_attack)
+    src = (inspect.getsource(combat.player_attack) + inspect.getsource(combat.effective_chain) + inspect.getsource(combat.strike_damage))
     assert "blade_flow" in src, "combat.player_attack must handle blade_flow bypass"
     assert "_chain_bypass_dr" in src, "chain-special bypass flag must be handled"
 

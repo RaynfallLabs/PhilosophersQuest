@@ -1386,7 +1386,11 @@ class Run:
         Monster.take_turn (monster.py:900-1010) for an adjacent monster."""
         if not m.alive:
             return False
-        if m.has_effect('sleeping') or m.has_effect('paralyzed'):
+        # Held: asleep, paralysed, stunned or frozen (monster.py take_turn).
+        # Stunned and frozen were missing here, so the sim never saw a chain
+        # stun land (bug bash 4, call 12).
+        if (m.has_effect('sleeping') or m.has_effect('paralyzed')
+                or m.has_effect('stunned') or m.has_effect('frozen')):
             return False
         if 0 < m.speed < 8 and random.random() < (8 - m.speed) / 10.0:
             return False

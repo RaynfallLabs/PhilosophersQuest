@@ -43,6 +43,11 @@ POISON_DIVISOR = 40
 NAMED_DOT_DIVISOR = 100
 # Longest a hard control effect can hold a named foe, and what counts as one.
 NAMED_FOE_CONTROL_CAP = 2
+# After a hold on a named foe ends, it cannot be held again for this many
+# turns (the player's own post-lock grace, status_effects.GRACE_TURNS, is the
+# same idea). Without it a chain stun every turn held a boss for the whole
+# fight (bug bash 4, call 12).
+NAMED_FOE_CONTROL_GRACE = 3
 _HARD_CONTROL = frozenset({'paralyzed', 'sleeping', 'stunned', 'frozen',
                            'confused', 'feared', 'charmed', 'petrifying',
                            'immobilized', 'time_stopped'})
@@ -368,13 +373,35 @@ class Monster:
         # the level, and imprisonment was 30 to 60 turns of free hits.
         # (Quest effects that set the status directly, such as Gleipnir and
         # the Aegis, are deliberate and do not pass through here.)
+        # A hold already running is not refreshed (a fresh stun every turn
+        # kept the old one from ever running out), and once a hold ends a
+        # named foe shakes off the next for NAMED_FOE_CONTROL_GRACE turns
+        # ('control_immune', set in tick_effects).
         if name in _HARD_CONTROL and self._is_named_foe():
+            if (self.status_effects.get('control_immune', 0) > 0
+                    or self.status_effects.get(name, 0) > 0):
+                return
             self.status_effects[name] = max(
                 self.status_effects.get(name, 0),
                 min(int(duration), NAMED_FOE_CONTROL_CAP))
             return
         current = self.status_effects.get(name, 0)
         self.status_effects[name] = min(current + duration, MAX_EFFECT_DURATION)
+
+    def hold(self, name: str, duration: int):
+        """Apply an effect keeping the longer of the old and new duration
+        (the chain specials' rule: a second stun does not stack). A hard
+        control effect on a named foe goes through add_effect's cap and
+        grace instead; the chain specials used to write the status straight
+        in and skip both, so a maul at chain 10 every turn stunned Asterion
+        for the whole fight."""
+        if not self.alive:
+            return
+        if name in _HARD_CONTROL and self._is_named_foe():
+            self.add_effect(name, duration)
+            return
+        cur = int(self.status_effects.get(name, 0) or 0)
+        self.status_effects[name] = max(cur, int(duration))
 
     # Which creatures shrug off which control effects. Lore, not balance:
     #   constructs and plants have no mind to frighten, charm or confuse;
@@ -477,6 +504,13 @@ class Monster:
                 if name == 'petrifying':
                     self.hp = 0
                     self.alive = False
+                # A named foe that comes out of a hold is briefly steady on
+                # its feet (see add_effect). Set after the loop's snapshot,
+                # so it is not ticked this turn: it lasts the full grace.
+                elif (name in _HARD_CONTROL and self._is_named_foe()
+                      and not any(self.status_effects.get(e, 0) > 0
+                                  for e in _HARD_CONTROL)):
+                    self.status_effects['control_immune'] = NAMED_FOE_CONTROL_GRACE
         if bleeding_dmg > 0:
             self.take_damage(bleeding_dmg)
         if poison_dmg > 0:
@@ -633,6 +667,17 @@ class Monster:
     def is_dead(self) -> bool:
         return not self.alive
 
+    def _through_material_weakness(self, player, dmg: int, atk_type: str):
+        """(damage, note): a blow lands harder on a player whose weapon's
+        material cannot bear it (cold iron and demons, wood and fire...);
+        see combat.material_vulnerability (call 14)."""
+        from combat import material_vulnerability
+        mult, note = material_vulnerability(
+            player, set(self.tags or ()) | {atk_type or 'physical'})
+        if mult == 1.0:
+            return dmg, ''
+        return max(1, int(round(dmg * mult))), note
+
     def attack(self, player) -> tuple[int, str]:
         """Monster attacks player using THAC0 vs player AC. Returns (damage_dealt, message)."""
         # A monster that is swinging has not been left alone: it neither
@@ -742,8 +787,10 @@ class Monster:
                         dmg = max(1, dmg // 2)
             except ImportError:
                 pass
+            dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
             actual = player.take_damage(dmg, atk_type)
-            return actual, gaze_msg + f" {the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+            return actual, (gaze_msg + f" {the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+                            + (f" {_vuln_note}" if _vuln_note and actual > 0 else ''))
 
         # Attacking from ice: half the lunges go wide, and there is no
         # flurry. (The game loop sets _on_ice before calling attack. The ice
@@ -989,9 +1036,12 @@ class Monster:
         except ImportError:
             pass
 
+        dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
         actual = player.take_damage(dmg, atk_type)
 
         msg = f"{the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
+        if _vuln_note and actual > 0:
+            msg += f" {_vuln_note}"
         if charged:
             msg = f"{the_name(self)} CHARGES! " + msg
         if mimic_strike:
@@ -2246,6 +2296,12 @@ class DeathMonster(Monster):
         pass
 
     def add_effect(self, name: str, duration: int):
+        pass
+
+    def hold(self, name: str, duration: int):
+        # The chain specials apply through here. (They used to write the
+        # status straight in, and with tick_effects a no-op a chain stun
+        # would have held Death for good.)
         pass
 
     def take_turn(self, player, dungeon, all_monsters, extra_occupied=None) -> bool:
