@@ -1,0 +1,49 @@
+{
+  "_doc": "How the soul is weighed (DEEDS_KARMA_DESIGN.md section 3, with Brandon's decisions in section 11). Read by src/karma.py and tools/encounters/validate.py. gate_enabled stays false until Wave A content ships (Phase 3b): while it is off every karma change applies exactly as it did before the redesign, and block slots and the ledger are only recorded.",
+  "gate_enabled": false,
+  "road_enabled": false,
+  "block_cap": 1,
+  "constancy_cap": 2,
+  "reward_value": {
+    "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts.",
+    "gold":             {"amount": 0.1},
+    "gold_pct":         {"amount": 1},
+    "specific_item":    {"flat": 6},
+    "random_weapon":    {"count": 5},
+    "random_armor":     {"count": 5},
+    "random_shield":    {"count": 5},
+    "random_accessory": {"count": 5},
+    "random_wand":      {"count": 4},
+    "random_potion":    {"count": 3},
+    "random_scroll":    {"count": 3},
+    "random_food":      {"count": 1},
+    "random_item":      {"flat": 3},
+    "stat":             {"amount": 15},
+    "effect":           {"duration": 0.05},
+    "hp_restore":       {"amount": 0.1},
+    "sp_restore":       {"amount": 0.1},
+    "mp_restore":       {"amount": 0.1},
+    "hp_restore_pct":   {"amount": 0.1},
+    "sp_restore_pct":   {"amount": 0.1},
+    "mp_restore_pct":   {"amount": 0.1},
+    "enchant_weapon":   {"amount": 8},
+    "accept_item":      {"flat": 0},
+    "message":          {"flat": 0}
+  },
+  "constancy": [
+    {"id": "temperance", "tag": "virtue:forgo", "min": 3, "min_blocks": 2,
+     "chronicle": "Three times now I could have taken the easy thing. I am getting used to not taking it."},
+    {"id": "faithful", "tag": "virtue:kept", "min": 2, "min_blocks": 2, "none_tags": ["vice:betray", "vice:lapsed"],
+     "chronicle": "Two promises carried all the way down. My word is starting to mean something, even to me."},
+    {"id": "discerning", "tag": "virtue:judged", "min": 4, "min_blocks": 3, "none_tags": ["vice:reckless"],
+     "chronicle": "I have stopped helping first and asking later. It feels less kind and works better."},
+    {"id": "steadfast", "tag": "virtue:steadfast", "min": 3, "min_blocks": 2,
+     "chronicle": "Another hard test, and I did not fold. I used to think nerve was something you were born with."}
+  ],
+  "patterns_neg": [
+    {"id": "turncoat", "tag": "vice:betray", "min": 2, "karma": -1,
+     "chronicle": "Twice now I have sold a promise. I should stop making them."},
+    {"id": "callous", "tag": "vice:cruelty", "min": 3, "karma": -1,
+     "chronicle": "I notice I no longer flinch."}
+  ]
+}
