@@ -1858,6 +1858,27 @@ class CombatMixin:
     # Ranged attack resolution
     # ------------------------------------------------------------------
 
+    def _spend_attack_reroll(self):
+        """Spend the quiz reroll an attack just used (melee and ranged alike).
+
+        Tablet of Destinies: mark the reroll used this floor. Chain-equip
+        passive one_thousand_and_one consumes its per-floor charge instead.
+        """
+        if not getattr(self.quiz_engine, 'reroll_was_used', False):
+            return
+        if self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False):
+            self._quiz_reroll_used = True
+            self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
+        else:
+            try:
+                from chain_passives import consume_passive_charge
+                if consume_passive_charge(self.player, 'one_thousand_and_one'):
+                    self.add_message(
+                        "Scheherazade whispers another tale -- one more chance.",
+                        'info')
+            except ImportError:
+                pass
+
     def _fire_ranged(self, monster):
         """Consume one ammo and launch the math chain quiz for a ranged shot."""
         # Health as the shot is loosed, for the traits that count kills made
@@ -1907,6 +1928,9 @@ class CombatMixin:
             self._fire_strike_finisher(monster, chain, damage, killed)
             self._announce_revive(monster)
             self._announce_scale_hit(monster, damage)
+            # C01: a shot spends the Tablet / Scheherazade reroll exactly as
+            # a melee swing does (it never did, so archers rerolled every shot).
+            self._spend_attack_reroll()
             if chain == 0:
                 self.add_message(
                     f"Your shot flies wide -- you miss {the_name(monster, lower=True)}!", 'warning'
@@ -2084,21 +2108,7 @@ class CombatMixin:
                 self.add_message(
                     f"You spare {the_name(monster, lower=True)} — Curtana's mercy. (+1 max HP)",
                     'success')
-            # Tablet of Destinies: mark reroll as used this floor.
-            # Chain-equip passive one_thousand_and_one consumes its per-floor charge when reroll fires.
-            if getattr(self.quiz_engine, 'reroll_was_used', False):
-                if self._has_tablet_of_destinies() and not getattr(self, '_quiz_reroll_used', False):
-                    self._quiz_reroll_used = True
-                    self.add_message("The Tablet of Destinies cracks — fate rewritten!", 'info')
-                else:
-                    try:
-                        from chain_passives import consume_passive_charge
-                        if consume_passive_charge(self.player, 'one_thousand_and_one'):
-                            self.add_message(
-                                "Scheherazade whispers another tale -- one more chance.",
-                                'info')
-                    except ImportError:
-                        pass
+            self._spend_attack_reroll()
             if chain == 0:
                 self.add_message(
                     f"You swing wildly at {the_name(monster, lower=True)} and miss!", 'warning'
