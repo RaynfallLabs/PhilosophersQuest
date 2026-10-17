@@ -41,7 +41,7 @@ from game_states import (
     STATE_INTERCESSION_PROMPT, STATE_PET_NAME_INPUT, STATE_PRAYER_MENU,
     STATE_BOON_MENU,
     STATE_PET_MENU, STATE_PET_FEED, STATE_PET_HEAL, STATE_PET_SPECIALS,
-    STATE_QA_WARP_INPUT,
+    STATE_QA_WARP_INPUT, STATE_MESSAGE_LOG,
 )
 
 
@@ -153,7 +153,7 @@ class InputMixin:
                               STATE_DROP_MENU, STATE_DROP_GOLD_INPUT, STATE_DROP_QTY_INPUT,
                               STATE_MYSTERY_APPROACH, STATE_SHOP,
                               STATE_POWER_MENU, STATE_STUDY,
-                              STATE_PET_MENU,
+                              STATE_PET_MENU, STATE_MESSAGE_LOG,
                               STATE_INTERCESSION_PROMPT, STATE_PRAYER_MENU,
                               STATE_JUDGMENT):
                 if self.state == STATE_MYSTERY_APPROACH:
@@ -328,6 +328,8 @@ class InputMixin:
             self._pet_specials_input(key)
         elif self.state == STATE_QA_WARP_INPUT:
             self._qa_warp_input_handler(key, event.unicode)
+        elif self.state == STATE_MESSAGE_LOG:
+            self._message_log_input(key)
         elif self.state == STATE_XYZZY_CONFIRM:
             self._xyzzy_confirm_input(key)
         elif self.state == STATE_QUIRKS:
@@ -569,6 +571,9 @@ class InputMixin:
             return
         if key == pygame.K_SEMICOLON:
             self._open_study_journal()
+            return
+        if key == pygame.K_l:
+            self._open_message_log()
             return
         if key == pygame.K_TAB:
             if self.zoom_mode == 'full':
@@ -1335,6 +1340,30 @@ class InputMixin:
     # ------------------------------------------------------------------
     # Help / lore overlays
     # ------------------------------------------------------------------
+
+    # ------------------------------------------------------------------
+    # Message history (L)
+    # ------------------------------------------------------------------
+
+    def _open_message_log(self):
+        """L: the message history, opened at the newest line."""
+        self._message_log_scroll = 10 ** 6        # clamped to the end on draw
+        self.state = STATE_MESSAGE_LOG
+
+    def _message_log_input(self, key: int):
+        if key in (pygame.K_l, pygame.K_ESCAPE, pygame.K_RETURN, pygame.K_KP_ENTER):
+            self.state = STATE_PLAYER
+            return
+        page = max(1, getattr(self, '_message_log_page', 8) - 1)
+        moves = {pygame.K_UP: -1, pygame.K_DOWN: 1, pygame.K_KP8: -1, pygame.K_KP2: 1,
+                 pygame.K_PAGEUP: -page, pygame.K_PAGEDOWN: page}
+        if key == pygame.K_HOME:
+            self._message_log_scroll = 0
+        elif key == pygame.K_END:
+            self._message_log_scroll = 10 ** 6
+        elif key in moves:
+            self._message_log_scroll = max(
+                0, getattr(self, '_message_log_scroll', 0) + moves[key])
 
     def _help_input(self, key: int):
         if key in (pygame.K_ESCAPE, pygame.K_SLASH, pygame.K_RETURN, pygame.K_SPACE):
