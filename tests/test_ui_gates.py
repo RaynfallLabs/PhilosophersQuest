@@ -109,7 +109,9 @@ capture = _load_capture()
 
 # Every test starts with an empty UI art kit and restores the previous one
 # (the capture harness loads assets/ui/; GROUNDWORK_REVIEW 9).
-pytestmark = pytest.mark.usefixtures('ui_theme_isolated')
+# The whole module is slow (every screen captured at five sizes, the frame
+# budget timed): it runs in CI and on request (`pytest --run-slow`).
+pytestmark = [pytest.mark.usefixtures('ui_theme_isolated'), pytest.mark.slow]
 
 MIN_SIZE = (1280, 720)
 FRAME_BUDGET_MS = {(1280, 720): 10.0, (1920, 1080): 12.0, (2560, 1440): 15.0, (3440, 1440): 16.0}

@@ -58,7 +58,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run the test suite
-        run: python -m pytest tests/ -q -p no:cacheprovider
+        # --run-slow: the UI gates and frame-time tests, left out of a plain
+        # local run (tests/conftest.py), always run here.
+        run: python -m pytest tests/ -q -p no:cacheprovider --run-slow
 
   build-windows:
     name: Build Windows installer
