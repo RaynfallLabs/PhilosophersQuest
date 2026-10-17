@@ -2489,8 +2489,11 @@ class CombatMixin:
                         chance = float(proc_value(self.player, 'their_own_methods') or 0.0)
                         if chance > 0 and random.random() < chance:
                             from status_effects import DEBUFFS as _DEBUFFS
+                            # Not the crossbow cooldown or the pit the
+                            # player stands in: neither is a tactic.
                             _candidates = [eff for eff in self.player.status_effects.keys()
-                                          if eff in _DEBUFFS]
+                                          if eff in _DEBUFFS
+                                          and eff not in ('reloading', 'in_pit')]
                             if _candidates and hasattr(m, 'add_effect'):
                                 _eff = random.choice(_candidates)
                                 m.add_effect(_eff, 5)
@@ -2647,7 +2650,9 @@ class CombatMixin:
                         try:
                             from chain_passives import player_has_passive
                             if player_has_passive(self.player, 'first_hit_absorb'):
-                                self.player.hp = min(self.player.max_hp, self.player.hp + dmg)
+                                # C02: back to what it was, as the tiger-skin
+                                # above; "+ dmg" healed a lethal blow to full.
+                                self.player.hp = max(self.player.hp, min(self.player.max_hp, _hp_before_blow))
                                 self._first_hit_used = True
                                 self.add_message(
                                     "Your armor turns aside the first blow!", 'success')
@@ -2660,7 +2665,13 @@ class CombatMixin:
                 # Reflecting: negate 50% of newly applied status effects
                 _new_effects = set(self.player.status_effects.keys()) - _effects_before
                 if self.player.has_effect('reflecting') and _new_effects:
+                    from status_effects import DEBUFFS as _REFL_DEBUFFS
                     for _new_eff in list(_new_effects):
+                        # C08: only the blow's debuffs. The diff also holds
+                        # what the player's own gear switched on (life_save,
+                        # berserk, the Elder Blood escape signal).
+                        if _new_eff not in _REFL_DEBUFFS:
+                            continue
                         if random.random() < 0.50:
                             del self.player.status_effects[_new_eff]
                             self.add_message(f"Your reflection aura deflects the {_new_eff.replace('_', ' ')}!", 'info')

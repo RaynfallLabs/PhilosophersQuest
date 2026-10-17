@@ -138,3 +138,78 @@ def test_c01_a_ranged_shot_spends_the_tablet_reroll():
         g.monsters.remove(m)
     assert used == 1
     assert g._quiz_reroll_used is True
+
+
+# ---------------------------------------------------------------- C02
+def test_c02_first_hit_absorb_does_not_heal_a_lethal_blow():
+    """The chain passive first_hit_absorb set hp = hp + dmg with the blow's
+    full size, so a 60-point bite on a 5-health wearer healed them to full."""
+    g = _game(seed=7)
+    p = g.player
+    _open_floor(g, 3)
+    armor = _plain(items.instantiate_armor('leather', 'cured_leather_armor'))
+    armor._chain_passives = {'first_hit_absorb': True}
+    p.armor_slots[1] = armor
+    p.hp = 5
+    m = _spawn(g, 'giant_rat')
+    m.thac0 = -99
+    m.min_hit_chance = 1.0
+    m.attacks = [{'name': 'Bite', 'damage': '1d2+58', 'type': 'physical'}]
+    random.seed(1)
+    g._do_monster_turns()
+    assert any('turns aside the first blow' in t for t in _texts(g))
+    assert p.hp == 5
+
+
+# ---------------------------------------------------------------- C08
+def test_c08_reflecting_aura_keeps_the_players_own_new_buffs():
+    """The reflecting aura deleted half of EVERY status new after a blow,
+    including Excalibur's life_save that the blow itself had just granted."""
+    lost = hits = 0
+    for i in range(30):
+        g = _game(seed=100 + i)
+        _open_floor(g, 3)
+        p = g.player
+        p.status_effects['reflecting'] = -1
+        w = _plain(items.make_item_by_id('weapon', 'excalibur'))
+        p.inventory.append(w)
+        p.weapon = w
+        p.hp = p.max_hp = 100
+        m = _spawn(g, 'giant_rat')
+        m.thac0 = -99
+        m.min_hit_chance = 1.0
+        m.attacks = [{'name': 'Bite', 'damage': '1d2+79', 'type': 'physical'}]
+        random.seed(i)
+        g._do_monster_turns()
+        assert p.hp > 0
+        if p.hp == 100:
+            continue                # the bite missed (dodge)
+        hits += 1
+        if 'life_save' not in p.status_effects:
+            lost += 1
+    assert hits >= 10 and lost == 0
+
+
+def test_sandals_of_theseus_do_not_mirror_reloading_or_the_pit(monkeypatch):
+    """The Sandals of Theseus mirror one of the wearer's debuffs onto the
+    attacker; the crossbow cooldown and standing in a pit counted, so a rat
+    was told it was 'reloading'."""
+    import armor_procs
+    monkeypatch.setattr(armor_procs, 'proc_value',
+                        lambda p, k: 1.0 if k == 'their_own_methods' else 0)
+    g = _game(seed=9)
+    _open_floor(g, 3)
+    p = g.player
+    p.hp = p.max_hp = 500
+    m = _spawn(g, 'giant_rat')
+    m.thac0 = -99
+    m.min_hit_chance = 1.0
+    m.attacks = [{'name': 'Bite', 'damage': '1d2+5', 'type': 'physical'}]
+    for s in range(8):
+        p.status_effects['reloading'] = 50
+        p.status_effects['in_pit'] = 50
+        random.seed(s)
+        g._do_monster_turns()
+    assert p.hp < 500
+    assert 'reloading' not in m.status_effects and 'in_pit' not in m.status_effects
+    assert not any("Theseus's sandals" in t for t in _texts(g, 60))
