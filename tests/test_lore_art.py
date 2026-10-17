@@ -67,8 +67,8 @@ def test_encyclopedia_categories_map_to_their_art():
     for cat in ('weapon', 'armor', 'accessory', 'scroll', 'wand', 'spellbook'):
         assert lore_art.encyclopedia_ref(cat, {'_id': 'x_id'}) == ('item', 'x_id')
     assert lore_art.encyclopedia_ref('scroll', {'id': 'scroll_of_light'}) == ('item', 'scroll_of_light')
-    # No subject art: the chronicle, recalled hints and recipes.
-    for cat in ('chronicle', 'lore_hints', 'recipes'):
+    # No subject art: the Journal, recalled hints and recipes.
+    for cat in ('journal', 'lore_hints', 'recipes'):
         assert lore_art.encyclopedia_ref(cat, {'name': 'Something', 'lore': ''}) is None
     assert lore_art.encyclopedia_ref('bestiary', None) is None
 
@@ -194,13 +194,12 @@ def test_encyclopedia_weapon_article_draws_the_weapon():
     _assert_plate_on_screen(screen, drawn, 'item', g._encyclopedia_entry['_id'])
 
 
-def test_encyclopedia_chronicle_has_no_picture():
-    def chronicle(g):
-        g._encyclopedia_load_entries('chronicle')
-        g.encyclopedia_category = 'chronicle'
-        g.encyclopedia_entries = [{'name': 'Entered the dungeon.', 'lore': ''}]
-        g._encyclopedia_entry = g.encyclopedia_entries[0]
-    _g, _screen, drawn, _ = _render('menu_encyclopedia_entry', before=chronicle)
+def test_encyclopedia_journal_has_no_picture():
+    def journal(g):
+        g._chron('milestone', 'Entered the dungeon.')
+        g._encyclopedia_load_entries('journal')
+        g.encyclopedia_category = 'journal'
+    _g, _screen, drawn, _ = _render('menu_encyclopedia_entry', before=journal)
     assert all(d[0] is None for d in drawn)
 
 
