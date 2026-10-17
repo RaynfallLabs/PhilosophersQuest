@@ -50,11 +50,15 @@ def test_renamed_commons_map_to_their_effect_art():
         assert p and token in os.path.basename(p), f"{item_id} -> {p} (want '{token}')"
 
 
-def test_power_tiers_share_the_base_stat_icon():
-    # greater_/master_ tiers have no art of their own; they reuse the stat sprite
-    for tier in ('ring_of_strength', 'ring_of_greater_strength', 'ring_of_master_strength'):
-        p = _resolve_item_sprite_path(tier)
-        assert p and 'strength' in os.path.basename(p), f"{tier} -> {p}"
+def test_power_tiers_each_have_their_own_stat_icon():
+    # bug bash 4 (call 17): greater_/master_ tiers used to reuse the base ring's
+    # picture; each tier now ships its own same-stat picture, all different.
+    tiers = ('ring_of_strength', 'ring_of_greater_strength', 'ring_of_master_strength')
+    paths = [_resolve_item_sprite_path(t) for t in tiers]
+    for tier, p in zip(tiers, paths):
+        assert p and os.path.basename(p) == f'{tier}.png', f"{tier} -> {p}"
+    blobs = {open(p, 'rb').read() for p in paths}
+    assert len(blobs) == 3, 'the three strength tiers must not share one picture'
 
 
 def test_existing_art_is_not_hijacked_by_the_fallback():

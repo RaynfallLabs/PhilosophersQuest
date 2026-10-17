@@ -159,10 +159,11 @@ def build() -> list[dict]:
     # ---- anything the data files define that has no picture yet gets one
     have = {(r['folder'], r['id']) for r in recs}
     for cat, d in data.items():
-        # Not rings, amulets, wands, scrolls or books: an unidentified one is
-        # shown by a stand-in picture on purpose, and a picture of its own
-        # would give away what it is.
-        if cat not in ('ingredient', 'armor', 'shield', 'weapon', 'ammo', 'artifact', 'food', 'container'):
+        # Rings, amulets, wands, scrolls and books too: an item looks the same
+        # identified or not (Brandon, 2026-10-09), so each needs its own picture.
+        # Leaving them out here is why 193 of them borrowed a family picture
+        # until bug bash 4 (call 17).
+        if cat in ('accessory_appearances', 'cook_outcomes', 'recipes', 'prime_cuts'):
             continue
         for iid, v in d.items():
             if ('items', iid) not in have:

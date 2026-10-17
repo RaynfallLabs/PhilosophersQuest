@@ -779,6 +779,23 @@ and look for the same kind of slip when reviewing.
 - **This is a game for children.** No gore, no nudity, no torture. Rot, bones,
   stitches and fangs are fine. Female creatures are clothed like anyone else.
 
+- **Wand, scroll and book variants (bug bash 4, items i26-i29).** Give each variant the
+  look its unidentified name gives (shaft, roll or cover) and its effect family's sign,
+  varied by tier. What failed at 64 px: a round disc on a rod (gold mirror, eclipse)
+  reads as a magnifying glass, so give the disc a crown of flames or set a ball in
+  petals; a scythe blade on a rod is a pickaxe; a door on a forked twig is a shovel (put
+  the door straight on the rod); a glossy yellow-green ball is a tennis ball (say glass
+  full of liquid with bubbles); a lightning bolt in a circle is a comic-book emblem
+  (fork the bolt instead); "ram's-horn trumpet" draws a modern valved trumpet (say "a
+  natural horn, no metal"); a silver ribbon knot is a charity awareness ribbon; black
+  and yellow bands on a shaft read as hazard stripes; an eagle's claw gripping bolts is
+  a golden hand. A tip under three shafts wide (a chalice, a cage, a candle) vanishes:
+  say "as wide as four shafts".
+- **Look for pictures already painted for an item before drawing it.** The family
+  pass had drawn several "canonical" wands and scrolls from the very unidentified names
+  of live variants (the soapstone wand, the dusty-rose wand, the crumpled scroll) and
+  filed them under ids the game no longer has; i29 hands those to their items.
+
 ## Review
 
 `_genart/<run>/REVIEW_<family>.png` shows each creature's candidates with its lists
