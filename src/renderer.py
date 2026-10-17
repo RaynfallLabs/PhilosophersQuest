@@ -55,6 +55,10 @@ _UNIQUE_SPRITE_FALLBACK = {
     # /^wand_of_/ effect-fallback pathway doesn't catch it. Points at the
     # canonical fire-wand sprite.
     'ruby_rod':      'wand_of_fire',
+    # Named accessories whose picture is the same legend drawn for a sister item
+    # (2026-10-17, bug bash 4 call 17: they borrowed unrelated rings/amulets).
+    'amulet_of_hippolyta':        'girdle_of_hippolyta',
+    'ring_of_solomons_authority': 'seal_of_solomon',
 }
 # Generic icon for cooking ingredients (prime cuts, parts, trophies, foraged) --
 # 550+ of them ship no per-id art and rendered as the '~'/'*' glyph. A meat-cut
@@ -128,7 +132,9 @@ _WAND_EFFECT_SPRITE = {
     'poison_monster':         'wand_of_poison',
     'disease_monster':        'wand_of_disease',
     'curse_monster':          'wand_of_curse',
-    'weaken_monster':         'wand_of_empowerment',
+    # The dusty-rose wand with the hourglass of Elli (old age) was painted for
+    # this wand but filed as "wand_of_empowerment", which read as the opposite.
+    'weaken_monster':         'wand_of_weaken_monster',
     'secret_door_detection':  'wand_of_detect_treasure',
     'opening':                'wand_of_locksmithing',
     'probing':                'wand_of_detect_monster',

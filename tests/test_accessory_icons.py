@@ -65,10 +65,11 @@ def test_existing_art_is_not_hijacked_by_the_fallback():
         assert p and os.path.basename(p) == f"{item_id}.png", f"{item_id} -> {p}"
 
 
-def test_artless_unique_ring_falls_back_to_a_band_not_a_glyph():
-    # uniques that never got art (ring_of_solomons_authority, amulet_of_hippolyta)
-    # still get a neutral same-category icon instead of the '=' glyph
-    for item_id in ('ring_of_solomons_authority', 'amulet_of_hippolyta'):
+def test_named_uniques_never_show_an_unrelated_ring_or_amulet():
+    # ring_of_solomons_authority used to fall back to a dexterity ring and
+    # amulet_of_hippolyta to a dexterity charm (bug bash 4, call 17). Each now
+    # shows its own picture, or the same legend's picture, never a glyph.
+    for item_id, ok in (('ring_of_solomons_authority', ('ring_of_solomons_authority', 'seal_of_solomon')),
+                        ('amulet_of_hippolyta', ('amulet_of_hippolyta', 'girdle_of_hippolyta'))):
         p = _resolve_item_sprite_path(item_id)
-        cat = item_id.split('_', 1)[0]
-        assert p and os.path.basename(p).startswith(cat + '_'), f"{item_id} -> {p}"
+        assert p and os.path.exists(p) and os.path.basename(p)[:-4] in ok, f"{item_id} -> {p}"
