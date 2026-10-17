@@ -415,12 +415,18 @@ def _rescale_fonts(_scale: float) -> None:
     on the same pixel size share one font."""
     keys = list(_font_cache)
     _font_cache.clear()
-    made = {}
     for role, size, bold in keys:
         k = (role, ui_scale.font_px(size), bold)
-        if k not in made:
-            made[k] = _make_font(*k)
-        _font_cache[(role, size, bold)] = made[k]
+        font = _fonts_by_px.get(k)
+        if font is None:
+            font = _fonts_by_px[k] = _make_font(*k)
+        _font_cache[(role, size, bold)] = font
+
+
+# Every font built by the rescale, by pixel size: a window dragged back and
+# forth across a scale step built them all again at each crossing (UI-18).
+# Bounded by the few roles x sizes x scale steps there are.
+_fonts_by_px: dict = {}
 
 
 ui_scale.add_listener(_rescale_fonts)
@@ -1319,6 +1325,110 @@ def draw_icon(surf: pygame.Surface, name: str, rect) -> bool:
 _URL_RE = r'(?:https?://|www\.)[^\s;,)\]]*[^\s;,.)\]]'
 
 
+# A bare web address ("britannica.com", "nps.gov/brca") with no http/www.
+_BARE_DOMAIN = (r"\b[A-Za-z0-9][\w-]*(?:\.[\w-]+)*\."
+                r"(?:com|org|edu|gov|net|int|io|info|uk|ch|fr|de|hu|br|au|ca|nz|ie"
+                r"|it|es|nl|jp|us|in|za|mx|be)\b"
+                r"(?:/[^\s;()]*[^\s;().,:])?")
+# Addresses that ARE the content (a phishing look-alike to spot, a site a
+# story is about), never a source line: these stay wherever they appear.
+_CONTENT_DOMAINS = frozenset((
+    'example.com', 'archive.org', 'paypa1.com', 'paypal.com', 'a16z.com',
+    'match.com', 'change.org', 'toad.com', 'mises.org', 'bitcointalk.org',
+    'freeross.org', 'metzdowd.com', 'saifhouse.com', 'bitcoin.org',
+    'opensecrets.org', 'federalreserve.gov', 'coinop.org',
+    'wtfhappenedin1971.com',
+))
+_WIKI = r"(?:Wikipedia|Grokipedia)"
+
+
+def _is_content_domain(s: str) -> bool:
+    import re
+    s = s.strip().lower()
+    if '/' in s:
+        return False          # a page on the site is a source line
+    m = re.match(r"[\w.-]+", s)
+    host = m.group(0).rstrip('.') if m else ''
+    return any(host == d or host.endswith('.' + d) for d in _CONTENT_DOMAINS)
+
+
+def _strip_bare_citations(t: str) -> str:
+    """Remove research citations written without http/www: a parenthesis or
+    bracket that holds a bare address or a Wikipedia/Grokipedia reference,
+    "; site.org" source tails, "via site.org", a lone "Wikipedia" source,
+    and authoring notes such as "(Grokipedia checked first, returned HTTP
+    403.)". Prose that mentions a site as part of the story ("Polybius first
+    appeared on coinop.org", "from the EU, the UN, Wikipedia, and the web")
+    is left alone."""
+    import re
+    if not re.search(_BARE_DOMAIN + '|' + _WIKI, t):
+        return t
+    orig = t
+    # Authoring notes: "(Grokipedia checked first, returned HTTP 403.)".
+    t = re.sub(r"\s*\(?\s*" + _WIKI + r"[^.()]*\bchecked first\b[^()]*?(?:\.\s*\)|\)|\.|$)", '', t)
+    # A parenthesis or bracket (one level of nesting allowed) that cites.
+    group = r"\((?:[^()]|\([^()]*\))*\)|\[(?:[^\[\]]|\[[^\[\]]*\])*\]"
+
+    def _group(m):
+        g = m.group(0)
+        doms = re.findall(_BARE_DOMAIN, g)
+        if any(_is_content_domain(d) for d in doms):
+            return m.group(0)
+        if doms or re.search(r"\b" + _WIKI + r"\b", g):
+            return ''
+        return m.group(0)
+    t = re.sub(r"\s*(?:" + group + ")", _group, t)
+
+    def _bare(m):
+        return m.group(0) if _is_content_domain(m.group('d')) else m.group('lead')
+    # "via site.org"
+    t = re.sub(r"(?P<lead>)\s*\bvia\s+(?P<d>" + _BARE_DOMAIN + r")", _bare, t)
+    # The rest of a source segment: words and further addresses, up to the
+    # next ";" or the end of the sentence.
+    tail = r"(?:" + _BARE_DOMAIN + r"|[^;.])*"
+    # "; site.org Some Title"
+    t = re.sub(r"(?P<lead>)\s*;\s*(?P<d>" + _BARE_DOMAIN + r")" + tail, _bare, t)
+    # A source list opening a sentence: "rupress.org/jgp/...; UCSF news 2021."
+    # (an address with a page, or one followed by more sources; a sentence
+    # that merely starts with a site's name is prose and stays).
+    def _opening(m):
+        if '/' in m.group('d') or m.group(0).rstrip().endswith(';') \
+                or re.fullmatch(r"(?:\s*(?:/|and)\s*" + _BARE_DOMAIN + r")*\s*", m.group('rest')):
+            return _bare(m)
+        return m.group(0)
+    t = re.sub(r"(?P<lead>(?:^\s*|(?<=[.!?])\s+|(?<=[.!?]['\"’”)])\s+))(?P<d>"
+               + _BARE_DOMAIN + r")(?P<rest>" + tail + r");?", _opening, t)
+    # An address with a path is a source wherever it stands ("... and
+    # en.wikipedia.org/wiki/X"); so is a host closing a source list
+    # ("Ch. 6; and lawliberty.org.").
+    t = re.sub(r"(?P<lead>)\s*(?:(?:and|or|&|/|,)\s+)?(?P<d>" + _BARE_DOMAIN + r")",
+               lambda m: m.group(0) if ('/' not in m.group('d') or _is_content_domain(m.group('d')))
+               else '', t)
+    t = re.sub(r"(?P<lead>)\s*(?:;\s*)?\b(?:and|or|/)\s+(?P<d>" + _BARE_DOMAIN + r")(?=\s*(?:[.;)]|$))",
+               _bare, t)
+    # A citation sentence: "Wikipedia: Camelot; Wikipedia: Lancelot." or
+    # "Wikipedia, Manannan mac Lir." just before a "(Legend.)" tag / the end.
+    t = re.sub(r"(?:^|(?<=[.;!?])|(?<=[.!?]['\"’”)]))\s*" + _WIKI
+               + r":\s[^.]*\.", '', t)
+    t = re.sub(r"(?:(?<=[.;!?])|(?<=[.!?]['\"’”)]))\s*" + _WIKI
+               + r",\s[^.,;:'\"]{1,60}\.(?=\s*(?:\(Legend\.\)|$))", '', t)
+    # A dash-led source tail: "... years old. -- Wikipedia, 'Ambulocetus'."
+    t = re.sub(r"\s*(?:—|–|--)\s*" + _WIKI + r"(?:\s*[:,]\s*'[^']*')?\s*(?:;[^.]*)?\.?\s*$", '', t)
+    # A lone "Wikipedia" / "Grokipedia, 'Title'" source between separators.
+    t = re.sub(r"(?:(?<=[.;:])|^)\s*" + _WIKI + r"(?:\s*[:,]\s*'[^']*')?\s*(?=[.;]|$)[.;]?", '', t)
+    t = re.sub(r";\s*" + _WIKI + r"(?:\s*[:,]\s*'[^']*')?\s*(?=[.;)]|$)", '', t)
+    if t == orig:
+        return t
+    # Tidy what the removals left behind.
+    t = re.sub(r"\(\s*\)|\[\s*\]", '', t)
+    t = re.sub(r"([.!?])\s*[;,]\s*", r"\1 ", t)
+    t = re.sub(r"\s*;\s*(?=[.;)]|$)", '', t)
+    t = re.sub(r"(?<!\.)\.\s+\.(?!\.)", '.', t)
+    t = re.sub(r"[ \t]{2,}", ' ', t)
+    t = re.sub(r"[ \t]+([.,;:)])", r"\1", t)
+    return t.strip()
+
+
 def strip_citations(text: str) -> str:
     """``text`` without its research citations: "Source: <url>" tails, URLs
     in parentheses, and bare URLs with their lead-in dash or semicolon. The
@@ -1329,7 +1439,7 @@ def strip_citations(text: str) -> str:
     import re
     t = str(text)
     if 'http' not in t and 'www.' not in t and 'Source' not in t:
-        return t
+        return _strip_bare_citations(t)
     t = re.sub(r'\s*\(?\b(?:Sources?|See|Ref(?:erence)?s?)\s*:?\s*' + _URL_RE + r'[^\n]*', '', t)
     t = re.sub(r'\s*\(?\bSources?\s*:[^\n]*', '', t)
     t = re.sub(r'\s*\([^()]*' + _URL_RE + r'[^()]*\)', '', t)
@@ -1338,7 +1448,7 @@ def strip_citations(text: str) -> str:
     t = re.sub(r'\s*;\s*(?=[.;]|$)', '', t)
     t = re.sub(r'[ \t]{2,}', ' ', t)
     t = re.sub(r'[ \t]+([.,;])', r'\1', t)
-    return t.strip()
+    return _strip_bare_citations(t.strip())
 
 
 def display_text(text: str, sources: bool = False) -> str:

@@ -7464,11 +7464,11 @@
   {
     "tier": 3,
     "question": "Modern machine translation runs on a 'parallel corpus.' That is a huge pile of sentences a human already translated into a second language. EU debates, Canadian Hansards, UN records, and dubbed movie subtitles all count. Why does the model need human-made translations first?",
-    "answer": "It learns by matching patterns between paired sentences, without pairs",
+    "answer": "It learns by matching patterns between paired sentences; it has nothing else to copy",
     "choices": [
-      "It learns by matching patterns between paired sentences, without pairs",
+      "It learns by matching patterns between paired sentences; it has nothing else to copy",
       "It needs human approval, every output sentence is checked by a translator before release",
-      "It uses the human translations directly, it looks up a near-match instead of generat",
+      "It uses the human translations directly, looking up a near-match instead of generating",
       "Human translators added secret marks to the parallel text that the AI is trained to decode"
     ],
     "context": "Modern translation is supervised learning: the model is shown millions of (source, target) sentence pairs and adjusts its weights to map source to target accurately. The EU parliament publishes proceedings in 24 languages — a massive pre-existing parallel corpus. Hansards (Canadian parliament) gave English-French. Subtitles gave many pairs. Without these human-made pairs, the model has nothing to imitate. This is supervised learning at scale.",
@@ -7698,11 +7698,11 @@
   {
     "tier": 3,
     "question": "Self-driving cars were promised to be 'just around the corner' for over a decade. Waymo, spun off from Google's self-driving car program in 2016, is the first company running truly driverless robotaxis on public streets. Their empty-seat cars pick up paying passengers in Phoenix, San Francisco, Los Angeles, and Austin, with no safety driver behind the wheel. But they don't drive just anywhere. What is the key constraint that lets Waymo operate this way today?",
-    "answer": "Operations are geofenced, limited to mapped areas where the car's behavio",
+    "answer": "Operations are geofenced, limited to mapped areas where the car's behavior is proven",
     "choices": [
-      "Operations are geofenced, limited to mapped areas where the car's behavio",
+      "Operations are geofenced, limited to mapped areas where the car's behavior is proven",
       "Waymo cars contain a tiny human pilot crouched in a hidden compartment behind the seats",
-      "Federal law now permits any self-driving car to operate in any US state ",
+      "Federal law now permits any self-driving car to operate in any US state",
       "Waymo cars only operate at speeds below 10 miles per hour to avoid all serious accidents"
     ],
     "context": "Waymo's driverless service runs only in pre-mapped, geofenced cities — Phoenix, SF, LA, Austin as of 2025. The map is high-definition, with every lane and traffic signal annotated. Within the geofence, the car operates without a safety driver. Outside the geofence, no service. This 'narrow autonomy' has been Waymo's strategy since spinning out of Google's self-driving project. It's more cautious than competitors, slower to expand, and so far the safest with the longest deployment record.",

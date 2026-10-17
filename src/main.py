@@ -140,6 +140,37 @@ def _stored_floors(lm):
     return out
 
 
+def _all_items_in_save(player, state: dict) -> list:
+    """Every item a save holds, once each: the hero's worn slots (belt
+    included), the pack, the floor underfoot, every stored floor, and the
+    contents of any container among them (nested ones too). The ranged,
+    lore and BUC migrations each walked their own partial list and so
+    missed stored floors, sacks and the belt slot."""
+    out, seen = [], set()
+
+    def add(item):
+        if item is None or id(item) in seen:
+            return
+        seen.add(id(item))
+        out.append(item)
+        for c in getattr(item, 'contents', None) or []:
+            add(c)
+
+    for slot in ('weapon', 'ranged_weapon', 'shield', 'amulet_slot', 'belt_slot'):
+        add(getattr(player, slot, None))
+    for attr in ('armor_slots', 'accessory_slots', 'inventory'):
+        for it in getattr(player, attr, None) or []:
+            add(it)
+    for it in state.get('ground_items', None) or []:
+        add(it)
+    lm = state.get('level_mgr')
+    if lm:
+        for lvl_data in _stored_floors(lm):
+            for it in lvl_data.get('ground_items', None) or []:
+                add(it)
+    return out
+
+
 RING_FEAR_CHANCE = 0.40        # Helm of Achilles: a monster's chance to flee on first sight
 DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until woken (the status cap of 60 woke them all on a timer)
 
@@ -158,6 +189,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # this many updates: a window drag (Windows blocks the loop while an edge
     # is dragged) or a scale change must never cost the player quiz seconds.
     RESIZE_GRACE_FRAMES = 2
+    # And any one frame, however long (a title-bar drag, a stall, a slow
+    # disk), advances the quiz clock by at most this much.
+    MAX_QUIZ_DT = 0.25
 
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -685,9 +719,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._migrate_buc_all(state)
         # Harvest+Cook redesign migration (2026-05-31): old saves have
         # Ingredient objects with pre-redesign ids (orc_meat, dragon_essence,
-        # void_essence, etc.) that no longer exist in the new bank. Replace
-        # them with assorted_monster_parts so the inventory stays usable
-        # rather than holding dead items.
+        # void_essence, etc.) that no longer exist in the new bank. They are
+        # dropped (nothing equivalent survives) so the inventory does not
+        # hold dead items; ingredients that still exist are refreshed.
         self._migrate_legacy_ingredients(state)
         self.player_name   = state['player_name']
         self.secret_build  = state.get('secret_build')
@@ -883,12 +917,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if wcls == 'sling':
                     w.infinite_ammo = True
 
-        # Walk every weapon-bearing slot
-        for slot in (self.player.weapon, self.player.ranged_weapon):
-            _patch(slot)
-        for it in self.player.inventory:
-            _patch(it)
-        for it in self.ground_items:
+        # Walk every item the save holds (stored floors and sacks included)
+        for it in _all_items_in_save(self.player, {'ground_items': self.ground_items,
+                                                   'level_mgr': self.level_mgr}):
             _patch(it)
 
     def _migrate_common_item_lore(self):
@@ -930,13 +961,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 pass
 
-        for slot in (self.player.weapon, self.player.ranged_weapon, self.player.shield):
-            _patch(slot)
-        for s in self.player.armor_slots or []:
-            _patch(s)
-        for it in self.player.inventory:
-            _patch(it)
-        for it in self.ground_items:
+        for it in _all_items_in_save(self.player, {'ground_items': self.ground_items,
+                                                   'level_mgr': self.level_mgr}):
             _patch(it)
 
         # If a ranged weapon ended up in the melee slot, relocate it
@@ -1226,35 +1252,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         identification — each instance keeps its own BUC/enchant secret —
         so this only patches the BUC fields themselves."""
         migrate = self._migrate_buc_item
-
-        def owned(item):
+        # Worn (belt included), pack, ground, stored floors, and sack contents.
+        for item in _all_items_in_save(self.player, state):
             migrate(item)
-
-        # Player inventory
-        for item in getattr(self.player, 'inventory', []):
-            owned(item)
-        # Equipped slots
-        for slot_item in [self.player.weapon, self.player.ranged_weapon, self.player.shield]:
-            if slot_item:
-                owned(slot_item)
-        for s in getattr(self.player, 'armor_slots', []):
-            if s:
-                owned(s)
-        for s in getattr(self.player, 'accessory_slots', []):
-            if s:
-                owned(s)
-        amulet = getattr(self.player, 'amulet_slot', None)
-        if amulet:
-            owned(amulet)
-        # Ground items
-        for item in state.get('ground_items', []):
-            migrate(item)
-        # Stored levels in level_mgr
-        lm = state.get('level_mgr')
-        if lm:
-            for lvl_data in _stored_floors(lm):
-                for item in lvl_data.get('ground_items', []):
-                    migrate(item)
 
     def _migrate_legacy_ingredients(self, state: dict):
         """Walk every Ingredient item in inventory + ground + stored levels.
@@ -1262,9 +1262,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         Per the 2026-05-31 harvest+cook redesign, the ingredient bank was
         rebuilt from scratch. Old saves carry Ingredient objects pickled
         with pre-redesign ids (orc_meat, dragon_essence, etc.) that no
-        longer exist. Replace each with an Assorted Monster Parts so the
-        inventory stays usable (rather than holding dead items that won't
-        cook).
+        longer exist. Each is dropped (v2.6.5 deleted the Assorted Monster
+        Parts it used to become, and nothing equivalent survives) rather than
+        left as a dead item that won't cook.
         """
         from items import Ingredient
         from food_system import _raw_ingredients
@@ -1311,7 +1311,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for lvl_data in _stored_floors(lm):
                 total += _migrate_list(lvl_data.get('ground_items'))
         if total > 0:
-            print(f'[Migration] Translated {total} legacy ingredients to Assorted Monster Parts')
+            print(f'[Migration] Dropped {total} legacy ingredient(s) that no longer exist')
 
     def _change_level(self, new_level: int, enter_from_top: bool):
         """Transition between levels, preserving the player."""
@@ -4936,7 +4936,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if dist <= 5 and _rng.random() < chance:
                 m._aware = True
                 self.add_message(
-                    f"Your keen senses detect a {m.name} lying in wait!", 'warning')
+                    f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
 
     # ------------------------------------------------------------------
     # SP starvation
@@ -5832,7 +5832,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             jm = getattr(qe, 'just_mastered', None)
             if jm:
                 msubj, mtier = jm
-                name = str(msubj).title()
+                # "AI", not "Ai" (str.title); other subjects are one word.
+                name = 'AI' if str(msubj).lower() == 'ai' else str(msubj).title()
                 if msubj == 'math':
                     # Combat is never answered for you: the deck comes
                     # round again.
@@ -7189,7 +7190,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def update(self, dt: float):
         # A resize in this frame or the one before: the quiz clock advances
         # one nominal frame at most (RESIZE_GRACE_FRAMES; on_resize arms it).
-        quiz_dt = dt
+        quiz_dt = min(dt, self.MAX_QUIZ_DT)
         grace = getattr(self, '_resize_grace', 0)
         if grace > 0:
             self._resize_grace = grace - 1
@@ -8203,6 +8204,49 @@ def _recover_in_loop(game, where):
         pass
 
 
+def _restore_saved_game(screen, player_name: str, state: dict):
+    """Rebuild a Game from a save that unpickled. Returns (game, None), or
+    (None, notice) when the restore failed.
+
+    A save that unpickles but will not restore used to be left in place with
+    "Please try again": the same failure came back on every attempt, so the
+    name was locked forever. It is now moved aside (kept, never deleted) so
+    the name is free and the file can still be sent in."""
+    game = None
+    try:
+        # The throwaway Game below builds a real floor 1, which rolled
+        # for (and half the time consumed) a floor-1 bones file.
+        _had_nb = os.environ.get('PQ_NO_BONES')
+        os.environ['PQ_NO_BONES'] = '1'
+        try:
+            game = Game(screen,
+                        player_name=state.get('player_name', player_name),
+                        secret_build=state.get('secret_build'))
+        finally:
+            if _had_nb is None:
+                os.environ.pop('PQ_NO_BONES', None)
+        game.load_state(state)
+        ok = game._load_looks_valid(state)
+    except Exception:
+        try:
+            from game_log import log_error
+            log_error(f"load_state failed for {player_name!r}")
+        except Exception:
+            pass
+        ok = False
+    if ok:
+        return game, None
+    # Do NOT enter the game loop: a broken game would overwrite the save on
+    # quit. Keep the file, out of the way, and say where it went.
+    from save_system import set_aside_save
+    _kept = set_aside_save(player_name)
+    notice = ("That saved journey could not be restored. It has been kept as "
+              f"{os.path.basename(_kept)} and was not overwritten."
+              if _kept else
+              "That saved journey could not be restored. It was left untouched.")
+    return None, notice
+
+
 def main():
     from save_system import save_exists, load_game, save_game
 
@@ -8239,6 +8283,9 @@ def main():
     _load_notice = None
 
     while True:
+        # The last run is over (or there was none): a crash from here on must
+        # not emergency-save it back to life.
+        _crash_game_ref = None
         # ---------- welcome / study screen ----------
         welcome = WelcomeScreen(screen, VERSION, notice=_load_notice)
         _load_notice = None
@@ -8273,37 +8320,8 @@ def main():
                                 "That saved journey could not be read. It was left untouched.")
                 continue
         if state:
-            try:
-                # The throwaway Game below builds a real floor 1, which rolled
-                # for (and half the time consumed) a floor-1 bones file.
-                _had_nb = os.environ.get('PQ_NO_BONES')
-                os.environ['PQ_NO_BONES'] = '1'
-                try:
-                    game = Game(screen,
-                                player_name=state.get('player_name', player_name),
-                                secret_build=state.get('secret_build'))
-                finally:
-                    if _had_nb is None:
-                        os.environ.pop('PQ_NO_BONES', None)
-                game.load_state(state)
-            except Exception:
-                # A save that unpickles but lacks something crashed here at
-                # every launch under that name.
-                try:
-                    from game_log import log_error
-                    log_error(f"load_state failed for {player_name!r}")
-                except Exception:
-                    pass
-                _load_notice = ("Your saved journey didn't load cleanly -- but it "
-                                "is safe. Please try again.")
-                continue
-            if not game._load_looks_valid(state):
-                # The restore did not take. Do NOT enter the game loop — a broken
-                # game would overwrite the still-intact save on quit. Bounce back
-                # to the welcome screen; the save on disk is untouched and the run
-                # is recoverable on the next launch.
-                _load_notice = ("Your saved journey didn't load cleanly -- but it "
-                                "is safe. Please try again.")
+            game, _load_notice = _restore_saved_game(screen, player_name, state)
+            if game is None:
                 continue
         else:
             game = Game(screen, player_name=player_name, secret_build=secret_build)
@@ -8365,18 +8383,13 @@ def main():
         # Save on clean exit if the game is still in progress and player chose to save
         if (game.state not in (STATE_DEAD, STATE_VICTORY) and game._save_on_quit
                 and not getattr(game, '_run_over', False)):
-            # A question left unanswered is a wrong answer. The quiz is not
-            # saved, so quitting in the middle of one lost what the action had
-            # already spent (the corpse, the ingredients, the one Intercession
-            # of the run) or gave a free second try.
-            try:
-                from quiz_engine import QuizState as _QS
-                _qe = getattr(game, 'quiz_engine', None)
-                if _qe is not None and getattr(_qe, 'callback', None) is not None \
-                        and _qe.state != _QS.COMPLETE:
-                    _qe._end(success=False)
-            except Exception:
-                pass
+            # A question left unanswered is a wrong answer, an unfinished
+            # Necronomicon recital fails, and a spell still being aimed is
+            # cancelled and refunded. None of these is saved, so quitting in
+            # the middle of one lost what the action had already spent (the
+            # corpse, the ingredients, the MP) or dodged its cost.
+            from save_system import settle_unfinished_actions
+            settle_unfinished_actions(game)
             if (game.state not in (STATE_DEAD, STATE_VICTORY)
                     and not getattr(game, '_run_over', False)) and not save_game(game):
                 # The on-disk save is no longer deleted on load, so the previous
@@ -8385,7 +8398,8 @@ def main():
                 print("[Save] quit-save failed; previous save retained on disk")
 
         # If game ended by death or victory, loop back to welcome screen
-        if game.state in (STATE_DEAD, STATE_VICTORY):
+        # (unless the window itself was closed: then the game quits)
+        if game.state in (STATE_DEAD, STATE_VICTORY) and not getattr(game, '_window_closed', False):
             continue
 
         # Otherwise player quit mid-game — exit for real

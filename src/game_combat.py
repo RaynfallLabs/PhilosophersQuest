@@ -959,7 +959,7 @@ class CombatMixin:
                 _ally._temp_duration = int(_ps.get('duration_turns', 5) or 5)
                 self.pets.append(_ally)
                 self.add_message(
-                    f"From the slain {monster.name} a {_ally.name} springs forth — bound to your side!",
+                    f"From the slain {monster.name} {self._a_or_an(_ally.name)} springs forth — bound to your side!",
                     'success')
             except Exception:
                 pass
@@ -1465,6 +1465,8 @@ class CombatMixin:
             spell_id = getattr(self, '_pending_spell_id', None)
             self._pending_spell = None
             self._pending_spell_id = None
+            self._pending_spell_paid = None
+            self._pending_spell_free = False
             if spell:
                 self._start_spell_quiz(spell, spell_id, target)
             return  # quiz handles state + advance_turn
@@ -2050,24 +2052,34 @@ class CombatMixin:
         player_attack(self.player, monster, self.quiz_engine, on_complete,
                       ammo=ammo_item, ranged=True)
 
-    def _refund_pending_spell(self) -> None:
-        """Give back the MP of a targeted spell that was never cast.
+    def _refund_pending_spell(self) -> bool:
+        """Give back what a targeted spell that was never cast had cost.
 
-        _cast_spell deducts MP before entering STATE_TARGET. ESC refunds it
-        (game_input); confirming on an invalid tile used to keep the MP and
-        leave _pending_spell set.
+        _invoke_spell deducts MP before entering STATE_TARGET. ESC refunds it
+        (game_input), as do an invalid target and quitting while aiming.
+        Exactly what was paid comes back: a free cast (robe charge) paid no
+        MP, so it gets the floor's free charge back instead of MP it never
+        spent. Returns True if a pending spell was cancelled.
         """
         spell = getattr(self, '_pending_spell', None)
         if spell is None:
-            return
-        try:
-            cost = int(spell.get('mp_cost', 0))
-        except (AttributeError, TypeError, ValueError):
-            cost = 0
-        if cost > 0:
-            self.player.mp = min(self.player.max_mp, self.player.mp + cost)
+            return False
+        paid = getattr(self, '_pending_spell_paid', None)
+        if paid is None:
+            try:
+                paid = int(spell.get('mp_cost', 0))
+            except (AttributeError, TypeError, ValueError):
+                paid = 0
+        if paid > 0:
+            self.player.mp = min(self.player.max_mp, self.player.mp + paid)
+        if getattr(self, '_pending_spell_free', False):
+            from chain_passives import refund_passive_charge
+            refund_passive_charge(self.player, 'free_cast_once_per_floor')
         self._pending_spell = None
         self._pending_spell_id = None
+        self._pending_spell_paid = None
+        self._pending_spell_free = False
+        return True
 
     def _process_collateral_kills(self, primary, alive_before: set,
                                   chain: int = 0) -> None:

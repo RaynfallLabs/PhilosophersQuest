@@ -38,12 +38,23 @@ _SCALAR_STRING_FIELDS = ("question", "answer", "context")
 # has a plausible legitimate use of 3+ consecutive identical words.
 EXEMPT_SUBJECTS = frozenset({"grammar"})
 
+# Real repetitions outside grammar: a codon string ("UUU UUU UUU", the
+# poly-U of Nirenberg and Matthaei), a counted-out large number ("a
+# million million million million"), a laugh or a call ("Ho Ho Ho").
+_LEGIT_REPEATS = frozenset({"million", "billion", "trillion", "ho", "ha"})
+_CODON_RE = re.compile(r"[ACGTU]{3}")
+
+
+def _is_legit_repeat(token: str) -> bool:
+    return token.lower() in _LEGIT_REPEATS or bool(_CODON_RE.fullmatch(token))
+
 
 def _find_repeats(text: object) -> list[str]:
     """Return all repeated-token matches in `text`. Non-strings return []."""
     if not isinstance(text, str):
         return []
-    return [m.group(0) for m in TRAILING_TOKEN_PATTERN.finditer(text)]
+    return [m.group(0) for m in TRAILING_TOKEN_PATTERN.finditer(text)
+            if not _is_legit_repeat(m.group(1))]
 
 
 def validate_trailing_tokens(q: Question, subject: str | None = None) -> GateResult:

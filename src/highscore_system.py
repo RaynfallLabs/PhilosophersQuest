@@ -43,7 +43,10 @@ def _load() -> list[dict]:
                     e['name'] = str(e['name'])
                     good.append(e)
             return good
-    except (FileNotFoundError, json.JSONDecodeError, OSError):
+    except (OSError, ValueError):
+        # ValueError covers a malformed table AND bytes that are not UTF-8
+        # (UnicodeDecodeError): either used to escape and break the end
+        # screen on every frame.
         pass
     return []
 

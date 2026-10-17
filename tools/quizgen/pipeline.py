@@ -164,7 +164,7 @@ def run_deterministic(
 
     # duplicate index built over the sample's questions (so dup-detection
     # is intra-sample for calibration runs, and intra-bank for full runs).
-    dup_index = build_duplicate_index([q for _, q in targets])
+    dup_index = build_duplicate_index([q for _, q in targets], exact_only=(subject == "math"))
     # Answer-collision index — separate from stem dedup. Catches same-answer
     # questions even when stems differ. Discovered 2026-05-25 after the
     # history rebuild surfaced 64 cross-tier same-answer collisions.
@@ -188,9 +188,9 @@ def run_deterministic(
             question_preview=preview,
         )
         # Math's templated questions ("Is 7 prime?" vs "Is 17 prime?") are
-        # pedagogically valuable AS patterned exposure — relax the default
-        # 0.85 dup threshold to 0.97 for math so only exact/near-exact
-        # paraphrases are flagged.
+        # pedagogically valuable AS patterned exposure: the math index is
+        # exact-only (built above), so only a true repeat is flagged. The
+        # 0.97 threshold is kept for callers that pass a fuzzy index.
         dup_threshold = 0.97 if subject == "math" else 0.85
         qr.gates["schema"] = validate_schema(q)
         qr.gates["length_parity"] = validate_length_parity(q, subject=subject)

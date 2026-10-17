@@ -1344,6 +1344,10 @@ class MagicMixin:
                 self.state = STATE_PLAYER
                 return
             self.player.mp -= mp_cost
+            # What this aim actually cost, so a cancel gives back exactly that:
+            # a free cast paid no MP and gets its free charge back instead.
+            self._pending_spell_paid = mp_cost
+            self._pending_spell_free = bool(_free_cast)
             self._power_targeting = True
             self._pending_power = f'spell_{spell_id}'
             self._target_candidates = candidates

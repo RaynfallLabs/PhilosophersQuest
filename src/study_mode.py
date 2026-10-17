@@ -55,10 +55,6 @@ class StudyMode:
 
     def run(self, clock):
         """Main study mode loop. Returns when user presses ESC."""
-        import json
-        import random
-        from paths import data_path
-
         while True:
             clock.tick(60)
             W, H = self.screen.get_size()
@@ -77,78 +73,8 @@ class StudyMode:
                 if event.type != pygame.KEYDOWN:
                     continue
 
-                key = event.key
-
-                if self._phase == 'subject':
-                    if key == pygame.K_ESCAPE:
-                        return  # back to welcome
-                    if key == pygame.K_UP:
-                        self._selected = (self._selected - 1) % len(self._SUBJECTS)
-                    elif key == pygame.K_DOWN:
-                        self._selected = (self._selected + 1) % len(self._SUBJECTS)
-                    elif key == pygame.K_RETURN:
-                        self._subject = self._SUBJECTS[self._selected][0]
-                        self._selected = 0
-                        self._phase = 'tier'
-
-                elif self._phase == 'tier':
-                    if key == pygame.K_ESCAPE:
-                        self._phase = 'subject'
-                    elif key == pygame.K_UP:
-                        self._selected = (self._selected - 1) % 5
-                    elif key == pygame.K_DOWN:
-                        self._selected = (self._selected + 1) % 5
-                    elif key == pygame.K_RETURN:
-                        self._tier = self._selected + 1
-                        # Load questions
-                        try:
-                            with open(data_path('data', 'questions', f'{self._subject}.json'), encoding='utf-8') as f:
-                                all_qs = json.load(f)
-                            self._questions = [q for q in all_qs if q.get('tier', 1) == self._tier]
-                            if not self._questions:
-                                self._questions = all_qs[:]
-                            random.shuffle(self._questions)
-                            # ... and each question's choices. The banks store
-                            # the answer first for nearly every question and
-                            # only the order of QUESTIONS was shuffled, so in
-                            # Study Mode the right answer was always choice [1].
-                            self._questions = [
-                                dict(_q, choices=random.sample(list(_q['choices']), len(_q['choices'])))
-                                for _q in self._questions]
-                        except Exception:
-                            self._questions = []
-                        self._idx = 0
-                        self._correct_count = 0
-                        self._asked_count = 0
-                        self._last_correct = None
-                        self._phase = 'quiz'
-
-                elif self._phase == 'quiz':
-                    if key == pygame.K_ESCAPE:
-                        self._phase = 'subject'
-                    elif self._questions:
-                        q = self._questions[self._idx % len(self._questions)]
-                        choice_map = {pygame.K_1: 0, pygame.K_2: 1, pygame.K_3: 2, pygame.K_4: 3}
-                        ci = choice_map.get(key)
-                        if ci is not None and ci < len(q['choices']):
-                            chosen = q['choices'][ci]
-                            correct_ans = str(q['answer']).strip().lower()
-                            is_correct = chosen.strip().lower() == correct_ans
-                            self._asked_count += 1
-                            if is_correct:
-                                self._correct_count += 1
-                            self._last_correct = is_correct
-                            self._last_q = q
-                            self._last_chosen = chosen
-                            self._phase = 'result'
-
-                elif self._phase == 'result':
-                    if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
-                        self._idx += 1
-                        if self._idx >= len(self._questions):
-                            random.shuffle(self._questions)
-                            self._idx = 0
-                        self._phase = 'quiz'
+                if self._handle_key(event.key):
+                    return  # back to welcome
 
             # Draw — paint the grimoire frame first so all phase drawers
             # land their content inside the panel body.
@@ -170,6 +96,112 @@ class StudyMode:
             elif self._phase == 'result':
                 self._draw_result(W, H)
             pygame.display.flip()
+
+    # Keypad keys do what their main-keyboard twins do (Enter, 1-4).
+    _KEY_ALIASES = {
+        pygame.K_KP_ENTER: pygame.K_RETURN,
+        pygame.K_KP1: pygame.K_1, pygame.K_KP2: pygame.K_2,
+        pygame.K_KP3: pygame.K_3, pygame.K_KP4: pygame.K_4,
+        pygame.K_KP8: pygame.K_UP,
+    }
+
+    def _handle_key(self, key) -> bool:
+        """One key press. Returns True when Study Mode should close."""
+        import json
+        import random
+        from paths import data_path
+
+        if key == pygame.K_F11:
+            # Full screen works here too (it did nothing outside the game).
+            try:
+                pygame.display.toggle_fullscreen()
+            except pygame.error:
+                return False      # this display has no full screen
+            surf = pygame.display.get_surface()
+            if surf is not None:
+                import layout
+                layout.update(*surf.get_size())
+            return False
+        # Keypad 2 is "down" in the pickers but "answer 2" in the quiz.
+        if key == pygame.K_KP2 and self._phase in ('subject', 'tier'):
+            key = pygame.K_DOWN
+        key = self._KEY_ALIASES.get(key, key)
+
+        if self._phase == 'subject':
+            if key == pygame.K_ESCAPE:
+                return True  # back to welcome
+            if key == pygame.K_UP:
+                self._selected = (self._selected - 1) % len(self._SUBJECTS)
+            elif key == pygame.K_DOWN:
+                self._selected = (self._selected + 1) % len(self._SUBJECTS)
+            elif key == pygame.K_RETURN:
+                self._subject = self._SUBJECTS[self._selected][0]
+                self._selected = 0
+                self._phase = 'tier'
+
+        elif self._phase == 'tier':
+            if key == pygame.K_ESCAPE:
+                self._phase = 'subject'
+            elif key == pygame.K_UP:
+                self._selected = (self._selected - 1) % 5
+            elif key == pygame.K_DOWN:
+                self._selected = (self._selected + 1) % 5
+            elif key == pygame.K_RETURN:
+                self._tier = self._selected + 1
+                # Load questions
+                try:
+                    with open(data_path('data', 'questions', f'{self._subject}.json'), encoding='utf-8') as f:
+                        all_qs = json.load(f)
+                    self._questions = [q for q in all_qs if q.get('tier', 1) == self._tier]
+                    if not self._questions:
+                        self._questions = all_qs[:]
+                    random.shuffle(self._questions)
+                    # ... and each question's choices. The banks store
+                    # the answer first for nearly every question and
+                    # only the order of QUESTIONS was shuffled, so in
+                    # Study Mode the right answer was always choice [1].
+                    self._questions = [
+                        dict(_q, choices=random.sample(list(_q['choices']), len(_q['choices'])))
+                        for _q in self._questions]
+                except Exception:
+                    self._questions = []
+                self._idx = 0
+                self._correct_count = 0
+                self._asked_count = 0
+                self._last_correct = None
+                self._phase = 'quiz'
+
+        elif self._phase == 'quiz':
+            if key == pygame.K_ESCAPE:
+                self._phase = 'subject'
+            elif self._questions:
+                q = self._questions[self._idx % len(self._questions)]
+                choice_map = {pygame.K_1: 0, pygame.K_2: 1, pygame.K_3: 2, pygame.K_4: 3}
+                ci = choice_map.get(key)
+                if ci is not None and ci < len(q['choices']):
+                    chosen = q['choices'][ci]
+                    # Exactly as the game's QuizEngine.answer: a grammar
+                    # question can turn on capitals alone, and case-folding
+                    # marked all four case variants correct.
+                    is_correct = str(chosen).strip() == str(q['answer']).strip()
+                    self._asked_count += 1
+                    if is_correct:
+                        self._correct_count += 1
+                    self._last_correct = is_correct
+                    self._last_q = q
+                    self._last_chosen = chosen
+                    self._phase = 'result'
+
+        elif self._phase == 'result':
+            if key in (pygame.K_RETURN, pygame.K_SPACE, pygame.K_ESCAPE):
+                self._idx += 1
+                if self._idx >= len(self._questions):
+                    random.shuffle(self._questions)
+                    self._idx = 0
+                # Esc quits the quiz, as the footer says (it used to go on
+                # to the next question like Enter).
+                self._phase = 'subject' if key == pygame.K_ESCAPE else 'quiz'
+        return False
 
     def _draw_frame(self, W, H):
         """Paint the full-viewport grimoire panel that frames every phase."""
@@ -508,18 +540,19 @@ class StudyMode:
         wrapped = [self._wrap(display_text(str(c)), cf, tw) for c in choices]
         clh = cf.get_height() + S(3)
         ch = max(S(54), max((len(w) for w in wrapped), default=1) * clh + S(20))
-        answer = str(q['answer']).strip().lower()
-        chosen = str(getattr(self, '_last_chosen', '')).strip().lower() if result else ''
+        # Exact comparison, as the answer check (case can be the point).
+        answer = str(q['answer']).strip()
+        chosen = str(getattr(self, '_last_chosen', '')).strip() if result else ''
         for i, (c, lines) in enumerate(zip(choices, wrapped)):
             if not draw:
                 break
             rect = (body.x + (i % 2) * (cw + gap), y + (i // 2) * (ch + gap), cw, ch)
-            is_ans = str(c).strip().lower() == answer
+            is_ans = str(c).strip() == answer
             draw_choice_button(self.screen, rect, str(i + 1), lines,
                                get_font('body', 24, bold=True), cf,
                                correct=(result and is_ans) or None,
                                incorrect=(result and not is_ans
-                                          and str(c).strip().lower() == chosen) or None)
+                                          and str(c).strip() == chosen) or None)
         rows = (len(choices) + 1) // 2
         y += rows * ch + (rows - 1) * gap
         if not result:

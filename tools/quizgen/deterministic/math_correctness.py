@@ -181,9 +181,10 @@ _COMPARE_RE = re.compile(
 )
 _ARITHMETIC_EQ_RE = re.compile(r"^(.+?)\s*=\s*\??\s*$")
 _FRACTION_OF_RE = re.compile(
-    r"(?:what\s+is\s+)?(\d+)\s*/\s*(\d+)\s+of\s+(\d+(?:\.\d+)?)",
+    r"(?:what\s+is\s+)?((?:\d+\s*/\s*\d+\s+of\s+)+)(\d+(?:\.\d+)?)(?!\s*/|\d)",
     re.IGNORECASE,
 )
+_ONE_FRACTION_RE = re.compile(r"(\d+)\s*/\s*(\d+)")
 
 
 def _try_percent_of(text: str):
@@ -261,13 +262,16 @@ def _try_compare(text: str):
 
 
 def _try_fraction_of(text: str):
-    """'1/2 of 48 = ?' / 'What is 3/4 of 40?' / '1/3 of 60 = ?'."""
+    """'1/2 of 48 = ?' / 'What is 3/4 of 40?' / '1/3 of 60 = ?', and chains
+    ('1/2 of 1/3 of 60 = ?' is 10: the chain used to be read as 1/2 of 1)."""
     m = _FRACTION_OF_RE.search(text)
     if not m:
         return None
-    num, den, base = m.group(1), m.group(2), m.group(3)
     try:
-        return (Rational(int(num), int(den)) * sympify(base), "fraction_of")
+        value = sympify(m.group(2))
+        for num, den in _ONE_FRACTION_RE.findall(m.group(1)):
+            value = Rational(int(num), int(den)) * value
+        return (value, "fraction_of")
     except (ValueError, ZeroDivisionError):
         return None
 

@@ -47,8 +47,14 @@ _PUNCT_RE = re.compile(r"[^\w\s]")
 _SPACE_RE = re.compile(r"\s+")
 
 
-def _normalize(text: str) -> str:
-    """Lowercase, strip diacritics, drop punctuation, collapse whitespace."""
+def _normalize(text: str, keep_symbols: bool = False) -> str:
+    """Lowercase, strip diacritics, drop punctuation, collapse whitespace.
+
+    ``keep_symbols`` keeps every character but folds case and spacing: for
+    maths, where the operator IS the question ("7 + 8" and "7 x 8" both
+    normalised to "7 8" and were reported as duplicates)."""
+    if keep_symbols:
+        return _SPACE_RE.sub(" ", text.lower()).strip()
     text = unicodedata.normalize("NFKD", text)
     text = "".join(c for c in text if not unicodedata.combining(c))
     text = text.lower()
@@ -75,10 +81,13 @@ class DuplicateIndex:
     shingles: list[frozenset[str]] = field(default_factory=list)
     exact_to_idx: dict[str, list[int]] = field(default_factory=dict)
     _postings: dict[str, list[int]] = field(default_factory=dict)
+    # Maths: compare the text as written and report only exact repeats
+    # (templated drills differ by one number and are meant to).
+    exact_only: bool = False
 
     def add(self, question_text: str) -> int:
         idx = len(self.normalized)
-        norm = _normalize(question_text)
+        norm = _normalize(question_text, self.exact_only)
         shings = _shingles(norm)
         self.normalized.append(norm)
         self.originals.append(question_text)
@@ -122,7 +131,7 @@ class DuplicateIndex:
 
         Always includes exact-match (post-normalization) hits.
         """
-        norm = _normalize(question_text)
+        norm = _normalize(question_text, self.exact_only)
         hits: list[tuple[int, float]] = []
 
         # exact-match shortcut
@@ -131,7 +140,7 @@ class DuplicateIndex:
                 continue
             hits.append((idx, 1.0))
 
-        if hits:
+        if hits or self.exact_only:
             return sorted(hits, key=lambda t: -t[1])
 
         # candidate generation via inverted bigram index
@@ -156,9 +165,11 @@ class DuplicateIndex:
         return sorted(hits, key=lambda t: -t[1])
 
 
-def build_duplicate_index(questions: list[Question]) -> DuplicateIndex:
-    """Build a DuplicateIndex from a list of question dicts."""
-    idx = DuplicateIndex()
+def build_duplicate_index(questions: list[Question],
+                          exact_only: bool = False) -> DuplicateIndex:
+    """Build a DuplicateIndex from a list of question dicts. ``exact_only``
+    (maths) skips the fuzzy stage and keeps operators in the comparison."""
+    idx = DuplicateIndex(exact_only=exact_only)
     for q in questions:
         idx.add(str(q.get("question", "")))
     return idx

@@ -128,7 +128,9 @@ def load_bones(dungeon_level: int):
             bones['gold'] = 0
         bones['player_name'] = str(bones.get('player_name', 'Unknown'))[:48]
         return bones
-    except (OSError, json.JSONDecodeError):
+    except (OSError, ValueError):
+        # ValueError: bad JSON or bytes that are not UTF-8 (UnicodeDecodeError
+        # used to escape and fail every descent onto this floor).
         # Corrupt bones file -- remove so it doesn't permanently occupy a slot
         # under the _MAX_BONES cap.
         try:

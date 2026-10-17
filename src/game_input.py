@@ -45,6 +45,13 @@ from game_states import (
 )
 
 
+_MODIFIER_KEYS = frozenset((
+    pygame.K_LSHIFT, pygame.K_RSHIFT, pygame.K_LCTRL, pygame.K_RCTRL,
+    pygame.K_LALT, pygame.K_RALT, pygame.K_LGUI, pygame.K_RGUI, pygame.K_MODE,
+    pygame.K_CAPSLOCK, pygame.K_NUMLOCK, pygame.K_SCROLLLOCK,
+))
+
+
 class InputMixin:
     # ------------------------------------------------------------------
     # Top-level event router
@@ -61,7 +68,14 @@ class InputMixin:
             # "the window just closed" report names itself.
             if getattr(self, '_quit_confirmed', False):
                 return False
-            if self.state in (STATE_DEAD, STATE_VICTORY):
+            if (self.state in (STATE_DEAD, STATE_VICTORY, STATE_REVIEW_MISSED)
+                    or getattr(self, '_run_over', False)):
+                # The window's X closes the game, here as anywhere: main()
+                # sends a finished run back to the title only for Esc. A run
+                # that is over (the missed-question review, a popup after
+                # death) has nothing to save: no "Save & Exit" dialog for a
+                # dead hero.
+                self._window_closed = True
                 return False
             if self.state != STATE_CONFIRM_EXIT:
                 try:
@@ -77,24 +91,41 @@ class InputMixin:
                 self._state_before_exit = self.state
                 self.state = STATE_CONFIRM_EXIT
             return True
-        if event.type == pygame.WINDOWRESIZED:
-            self.on_resize(event.x, event.y)
-            return True
-        if event.type == pygame.WINDOWSIZECHANGED:
-            # Fires for every size change (API calls, maximise, fullscreen),
-            # usually alongside WINDOWRESIZED: act only on a size the layout
-            # does not already have.
+        if event.type in (pygame.WINDOWRESIZED, pygame.WINDOWSIZECHANGED):
+            # WINDOWSIZECHANGED fires for every size change (API calls,
+            # maximise, fullscreen), usually alongside WINDOWRESIZED: act only
+            # on a size the layout does not already have. A drag queues many
+            # sizes; each one across a scale step re-cut the art kit (~300
+            # ms). Only the size the window has NOW is laid out: a queued
+            # older size is skipped (main()'s per-frame check catches up).
             import layout as _layout
-            if (event.x, event.y) != (_layout.WINDOW_W, _layout.WINDOW_H):
-                self.on_resize(event.x, event.y)
+            if (event.x, event.y) == (_layout.WINDOW_W, _layout.WINDOW_H):
+                return True
+            surf = pygame.display.get_surface()
+            if surf is not None and surf.get_size() != (event.x, event.y):
+                return True
+            self.on_resize(event.x, event.y)
             return True
         if event.type != pygame.KEYDOWN:
             return True
 
         key = event.key
+        # A modifier pressed on its own is not a key press: "any key" story
+        # popups closed on a bare Alt (Alt+Tab lost the story) or Shift.
+        if key in _MODIFIER_KEYS:
+            return True
+        # Keypad Enter is Enter everywhere (most screens only knew K_RETURN).
+        if key == pygame.K_KP_ENTER:
+            key = pygame.K_RETURN
 
         if key == pygame.K_F11:
-            pygame.display.toggle_fullscreen()
+            # A display that refuses full screen raises pygame.error; left to
+            # the frame's recovery handler it failed the question on screen.
+            try:
+                pygame.display.toggle_fullscreen()
+            except pygame.error:
+                self.add_message("Full screen is not available on this display.", 'warning')
+                return True
             # Whatever events the toggle does or does not send, lay out for
             # the size the window now really has (FOUNDATION_REVIEW 3.3).
             surf = pygame.display.get_surface()
@@ -176,22 +207,16 @@ class InputMixin:
                     self._pet_special_targeting = False
                     self._pending_pet_special = None
                     self._pending_pet_special_pet = None
-                    # Refund MP if cancelling mid-targeted-spell (A2-3 fix).
-                    # _cast_spell deducts MP before STATE_TARGET; ESC must give it back.
+                    # Cancelling mid-targeted-spell gives back what the aim
+                    # cost: the MP paid, or the free cast if it was free.
                     _pending_spell = getattr(self, '_pending_spell', None)
-                    if _pending_spell is not None:
+                    if _pending_spell is not None and self._refund_pending_spell():
                         try:
-                            _mp_cost = int(_pending_spell.get('mp_cost', 0))
-                            if _mp_cost > 0:
-                                self.player.mp = min(self.player.max_mp,
-                                                      self.player.mp + _mp_cost)
-                                self.add_message(
-                                    f"You hold the {_pending_spell.get('name', 'spell')} unspoken — your magic returns.",
-                                    'info')
-                        except (AttributeError, TypeError, ValueError):
+                            self.add_message(
+                                f"You hold the {_pending_spell.get('name', 'spell')} unspoken — your magic returns.",
+                                'info')
+                        except (AttributeError, TypeError):
                             pass
-                        self._pending_spell = None
-                        self._pending_spell_id = None
                 if self.state == STATE_CONFIRM_EXIT:
                     self._leave_confirm_exit()
                     return True
@@ -264,6 +289,10 @@ class InputMixin:
                 return True
             if event.unicode == '@':
                 self._open_character_sheet()
+                return True
+            if event.unicode == '|':
+                # Shift+\ on layouts that send '|' without K_BACKSLASH.
+                self._start_divine_intercession()
                 return True
             if event.unicode == 'P':
                 # Shift+P opens the pet menu (lowercase p is pickup/disarm).
@@ -404,6 +433,11 @@ class InputMixin:
         pygame.K_DOWN:  (0,  1),
         pygame.K_LEFT:  (-1, 0),
         pygame.K_RIGHT: (1,  0),
+        # The keypad arrows (Num Lock off sends these too).
+        pygame.K_KP8:   (0, -1),
+        pygame.K_KP2:   (0,  1),
+        pygame.K_KP4:   (-1, 0),
+        pygame.K_KP6:   (1,  0),
     }
 
     def _helpless_turn(self) -> bool:

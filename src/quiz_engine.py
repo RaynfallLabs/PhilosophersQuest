@@ -742,7 +742,7 @@ class QuizEngine:
             if not isinstance(texts, list):
                 continue
             subject, _, tier_s = skey.rpartition('|')
-            if not subject or not tier_s.isdigit():
+            if not subject or not (tier_s.isascii() and tier_s.isdecimal()):
                 continue
             recent = [t for t in texts if isinstance(t, str)][-_CROSS_GAME_RECENT_CAP:]
             if not recent:

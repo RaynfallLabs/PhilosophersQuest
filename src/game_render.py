@@ -2529,6 +2529,43 @@ class RenderMixin:
             'font_tier': used_tier,
         }
 
+    @staticmethod
+    def _end_accuracy_text(correct: int, wrong: int) -> str:
+        """"4 of 9 (44%)": the end screen said "Correct / Wrong : 4 / 5
+        (44%)", which read as four out of five."""
+        total = correct + wrong
+        pct = int(100 * correct / total) if total else 0
+        return f"{correct:,} of {total:,}   ({pct}%)"
+
+    @staticmethod
+    def _quiz_footer_pairs(qe, is_combat: bool, has_blurb: bool) -> list:
+        """The quiz footer's key hints: every key that does something, and
+        only those. Combat at chain 0 has no Space hint (it would waste the
+        swing exactly like Esc, so it is not a harmless "Cancel"). Other
+        quizzes list Esc (gives up: the question counts wrong) and, in a
+        chain quiz with a chain built, Space (ends the chain there)."""
+        chain_mode = qe.mode in (QuizMode.CHAIN, QuizMode.ESCALATOR_CHAIN)
+        chain = int(getattr(qe, 'chain', 0) or 0)
+        if is_combat:
+            pairs = [("1-4", "Answer")]
+            if chain >= 1:
+                pairs.append(("Space", "Strike Now", FP.GOLD_PALE))
+            if has_blurb:
+                pairs.append(("C", "Context"))
+            pairs.append(("Esc", "Abort"))
+            return pairs
+        pairs = []
+        asking = qe.state == QuizState.ASKING
+        if asking:
+            pairs.append(("1-4", "Answer"))
+            if chain_mode and chain >= 1:
+                pairs.append(("Space", "Stop Here"))
+        if has_blurb:
+            pairs.append(("C", "Context"))
+        if asking:
+            pairs.append(("Esc", "Give Up"))
+        return pairs
+
     def _draw_quiz(self):
         qe = self.quiz_engine
         if not qe.current_question:
@@ -2828,19 +2865,7 @@ class RenderMixin:
             # Divider + key badges (the kit's footer), the same keys as below.
             div_y = status_y + S(15)
             draw_divider(self.screen, bx + band + S(30), div_y, bw - 2 * (band + S(30)))
-            if is_combat:
-                pairs = [("1-4", "Answer"),
-                         ("Space", "Strike Now" if qe.chain >= 1 else "Cancel",
-                          FP.GOLD_PALE if qe.chain >= 1 else None)]
-                if has_blurb:
-                    pairs.append(("C", "Context"))
-                pairs.append(("Esc", "Abort"))
-            else:
-                pairs = []
-                if qe.state == QuizState.ASKING:
-                    pairs.append(("1-4", "Answer"))
-                if has_blurb:
-                    pairs.append(("C", "Context"))
+            pairs = self._quiz_footer_pairs(qe, is_combat, has_blurb)
             keys = pygame.Rect(status_rect.x, status_rect.bottom - key_hints_height(),
                                status_rect.w, key_hints_height())
             draw_key_hints(self.screen, keys, pairs)
@@ -2849,8 +2874,9 @@ class RenderMixin:
             # move and never run into each other.
             hints = [
                 ("1-4  Answer", FP.HINT_TEXT),
-                ("SPACE  Strike Now" if qe.chain >= 1 else "SPACE  Cancel",
-                 FP.GOLD_PALE if qe.chain >= 1 else FP.FADED_TEXT),
+                # At chain 0 Space only throws the swing away, as Esc does:
+                # it is not offered as a harmless "Cancel".
+                ("SPACE  Strike Now" if qe.chain >= 1 else "", FP.GOLD_PALE),
                 ("C  Context" if has_blurb else "", FP.FADED_TEXT),
                 ("ESC  Abort", FP.FADED_TEXT),
             ]
@@ -2871,7 +2897,9 @@ class RenderMixin:
                     h_surf, (hx, status_y + (STATUS_H - h_surf.get_height()) // 2))
         else:
             if qe.state == QuizState.ASKING:
-                hint = self.font_sm.render("1-4  Answer", True, FP.HINT_TEXT)
+                _txt = "   ".join(f"{k}  {v}" for k, v, *_ in
+                                  self._quiz_footer_pairs(qe, False, False))
+                hint = self.font_sm.render(_txt, True, FP.HINT_TEXT)
                 self.screen.blit(hint, (bx + (bw - hint.get_width()) // 2, status_y + S(10)))
             # Context-blurb discoverability hint: only shown when the current
             # (subject, topic) HAS a blurb — hidden otherwise so a bank
@@ -6848,7 +6876,7 @@ class RenderMixin:
             ("Monsters Slain",        f"{self.level_mgr.monsters_killed:,}",  FP.BODY_TEXT),
             ("Gold Collected",        f"{self.player_gold:,}",               FP.GOLD_PALE),
             ("Questions Answered",    f"{total_q:,}",                         FP.BODY_TEXT),
-            ("Correct  /  Wrong",     f"{self.correct_answers} / {self.wrong_answers}   ({acc_pct}%)",
+            ("Correct Answers",    self._end_accuracy_text(self.correct_answers, self.wrong_answers),
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
         ]
         breakdown = (f"({self.turn_count}x10)  +  ({self.level_mgr.max_level_reached}x1000)  +"
@@ -6921,7 +6949,7 @@ class RenderMixin:
             ("Monsters Slain",     f"{self.level_mgr.monsters_killed:,}",     FP.BODY_TEXT),
             ("Gold Collected",     f"{self.player_gold:,}",                   FP.GOLD_PALE),
             ("Questions Answered", f"{total_q:,}",                            FP.BODY_TEXT),
-            ("Correct  /  Wrong",  f"{self.correct_answers} / {self.wrong_answers}   ({acc_pct}%)",
+            ("Correct Answers",    self._end_accuracy_text(self.correct_answers, self.wrong_answers),
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
         ]
 
@@ -8712,6 +8740,7 @@ class RenderMixin:
                 ("PgUp/PgDn", "Scroll long quiz", FP.BODY_TEXT),
                 ("?", "Command help", FP.BODY_TEXT),
                 ("F10", "Sound on / off", FP.BODY_TEXT),
+                ("F11", "Full screen", FP.BODY_TEXT),
                 ("ESC", "Cancel / close", FP.BODY_TEXT),
             ]),
         ]

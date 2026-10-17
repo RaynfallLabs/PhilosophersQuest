@@ -28,6 +28,7 @@ import pygame
 
 import layout
 from fantasy_ui import FP, get_font
+from ui_scale import px as S
 
 _DEFAULT_DURATIONS = {'miss': 350, 'light': 500, 'ranked': 750, 'big': 900}
 
@@ -168,8 +169,13 @@ class StrikeFinisher:
         alpha = int(255 * fade)
 
         # Everything is drawn on a map-sized scratch layer, so nothing can
-        # spill onto the sidebar or the message log.
-        layer = pygame.Surface(area.size, pygame.SRCALPHA)
+        # spill onto the sidebar or the message log. The layer is kept and
+        # cleared, not made anew every frame (a 4K map is 30 MB of pixels).
+        layer = getattr(self, '_layer', None)
+        if layer is None or layer.get_size() != area.size:
+            layer = self._layer = pygame.Surface(area.size, pygame.SRCALPHA)
+        else:
+            layer.fill((0, 0, 0, 0))
         cx = area.w // 2
         cy = area.h // 2
         color = self._color
@@ -178,34 +184,36 @@ class StrikeFinisher:
         motion = not reduced
         if motion and self.tier in ('ranked', 'big'):
             # Expanding ring(s) in the rank colour.
-            self._ring(layer, cx, cy, 36 + int(150 * ease), color, alpha)
+            # Sizes follow the UI scale like the banner font does: fixed
+            # pixels left the ring cutting through the text at 4K.
+            self._ring(layer, cx, cy, S(36) + int(S(150) * ease), color, alpha)
             if self.tier == 'big':
                 p2 = max(0.0, (p - 0.18) / 0.82)
                 ease2 = 1.0 - (1.0 - p2) ** 3
-                self._ring(layer, cx, cy, 24 + int(210 * ease2), color,
+                self._ring(layer, cx, cy, S(24) + int(S(210) * ease2), color,
                            int(alpha * 0.7))
                 # Brief rank-coloured glow hugging the map edge.
                 glow_a = int(110 * fade * (1.0 - p))
                 if glow_a > 0:
-                    for inset, mult in ((0, 1.0), (3, 0.6), (6, 0.3)):
+                    for inset, mult in ((0, 1.0), (S(3), 0.6), (S(6), 0.3)):
                         pygame.draw.rect(
                             layer, (*color, int(glow_a * mult)),
                             (inset, inset, area.w - inset * 2,
-                             area.h - inset * 2), 3)
+                             area.h - inset * 2), max(1, S(3)))
             # Slash streak sweeping in UNDER the banner text during the
             # first 40% -- an underline flourish, so it never cuts through
             # the letters.
             sweep = min(1.0, p / 0.4)
-            half = 190
-            x0, y0 = cx - half, cy + 38
+            half = S(190)
+            x0, y0 = cx - half, cy + S(38)
             x1 = x0 + int(half * 2 * sweep)
-            y1 = y0 - int(12 * sweep)
+            y1 = y0 - int(S(12) * sweep)
             pygame.draw.line(layer, (*color, int(alpha * 0.85)),
-                             (x0, y0), (x1, y1), 4)
+                             (x0, y0), (x1, y1), max(1, S(4)))
             pygame.draw.line(layer, (255, 255, 255, int(alpha * 0.9)),
-                             (x0, y0), (x1, y1), 1)
+                             (x0, y0), (x1, y1), max(1, S(1)))
 
-        drift = int(-14 * ease) if motion else 0
+        drift = int(-S(14) * ease) if motion else 0
         main_font = get_font('heading', 22 if self.tier == 'miss' else 36)
         self._text(layer, self._main_line, main_font, color, cx,
                    cy + drift, alpha, area.w - 24)
@@ -223,7 +231,7 @@ class StrikeFinisher:
         if alpha <= 0 or radius <= 0:
             return
         pygame.draw.circle(layer, (*color, max(0, min(255, alpha))),
-                           (cx, cy), radius, 3)
+                           (cx, cy), radius, max(1, S(3)))
 
     @staticmethod
     def _text(layer, text: str, font, color, cx: int, cy: int, alpha: int,

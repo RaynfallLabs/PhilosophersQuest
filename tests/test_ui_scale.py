@@ -180,12 +180,12 @@ def test_resize_never_costs_quiz_seconds(game_at_1280, monkeypatch):
     g._necro_qs = None
     g.state = STATE_QUIZ
     _resize(g, 3440, 1440)
-    for dt in (4.0, 2.5, 0.5):
+    for dt in (4.0, 2.5, 0.2):
         g.state = STATE_QUIZ
         g.update(dt)
     assert seen[0] <= 1.0 / layout.FPS + 1e-9
     assert seen[1] <= 1.0 / layout.FPS + 1e-9
-    assert seen[2] == 0.5                       # the grace ends; normal time again
+    assert seen[2] == 0.2   # the grace ends; normal time again (any frame is capped at MAX_QUIZ_DT)
 
 
 def test_art_kit_follows_the_scale_from_memory(tmp_path):

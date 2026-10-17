@@ -408,6 +408,7 @@ def unload() -> None:
     """Forget every piece (the game then draws procedurally)."""
     global _kit
     _kit = Kit()
+    _cut_kits.clear()
     _tinted.clear()
     _scaled_textures.clear()
     _icon_extra.clear()
@@ -496,6 +497,8 @@ def load(asset_dir: str | None = None, ui_scale: float | None = None,
                     "procedurally:\n  %s", len(k.errors), k.source,
                     "\n  ".join(k.errors))
     _kit = k
+    _cut_kits.clear()          # a fresh load: kits cut from older images go
+    _remember_kit(k)
     return k
 
 
@@ -508,6 +511,18 @@ def rescale(ui_scale: float) -> Kit:
     old = _kit
     if not old.follows_scale or not old.source or ui_scale == old.ui_scale:
         return old
+    # A kit already cut at this scale (from these same source images) is
+    # reused: dragging a window back and forth across a scale step re-cut
+    # the whole kit, ~300 ms, at every crossing.
+    _remember_kit(old)
+    cached = _cut_kits.get(ui_scale)
+    if cached is not None and cached.images is old.images and cached.source == old.source:
+        _cut_kits.move_to_end(ui_scale)
+        _tinted.clear()
+        _scaled_textures.clear()
+        _icon_extra.clear()
+        _kit = cached
+        return cached
     k = Kit()
     k.follows_scale = True
     k.textures = old.textures
@@ -525,7 +540,22 @@ def rescale(ui_scale: float) -> Kit:
         log.warning("ui_theme: %d problem(s) rescaling %s:\n  %s",
                     len(k.errors), k.source, "\n  ".join(k.errors))
     _kit = k
+    _remember_kit(k)
     return k
+
+
+# Kits cut for recent scales (least recently used dropped first).
+_cut_kits: "OrderedDict[float, Kit]" = OrderedDict()
+_CUT_KITS_MAX = 3
+
+
+def _remember_kit(k: Kit) -> None:
+    if not k.follows_scale or not k.source or k.errors:
+        return
+    _cut_kits[k.ui_scale] = k
+    _cut_kits.move_to_end(k.ui_scale)
+    while len(_cut_kits) > _CUT_KITS_MAX:
+        _cut_kits.popitem(last=False)
 
 
 def _on_ui_scale(new_scale: float) -> None:
