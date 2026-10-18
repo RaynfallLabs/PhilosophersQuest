@@ -57,7 +57,8 @@ Rules learned the hard way:
   four legs. State the body plan in the pose as well ("on two legs, leaning forward").
 - **No shadows.** The prompt asks for none and the key colour removes what remains.
 - **Never redraw Brandon's own portraits** (`player_ranger`, `player_wizard_f`,
-  `player_robyn`).
+  `player_robyn`) unless he asks, and then never install one before he has seen a
+  before/after sheet and said yes (see "Redrawing a hero" at the end).
 
 ## What goes wrong, and the wording that stops it
 
@@ -883,3 +884,45 @@ Brandon: the pup was "too lizard like, almost like a troglodyte", with "a second
 - Rain painted on top of a scene runs across a head that has grown. Re-plan the streaks so each stops just above the figure, slanted and of different lengths.
 - The cut picks one set of 32 colours for the whole sprite, so a pale wet chest can come out in the painted rain's grey: put it back to cream with `recolour`.
 - In a three-quarter front view the far eye shows as a dark notch on the edge of the head at 64 px; paint it out when the brief asks for one eye.
+
+## Redrawing a hero for Brandon's approval (`hero_options.py`, `set_pick.py`)
+
+A hero sprite is never installed over until Brandon has seen a before/after and said yes. The
+options are drawn into `_genart/heroes/<name>_<date>/`, and a sheet is made at the project root:
+
+    <ComfyUI python> tools/content/genart/hero_options.py tools/content/genart/corwin_options.json
+
+It shows the sprite in the game now, the old painting, and each option at 6x, 64 px and 40 px
+on the floor tile and beside other heroes (Robyn, Dad, one more) at the same size. When he picks
+one, it goes in as a new candidate of the hero's own run and is installed alone:
+
+    <ComfyUI python> tools/content/genart/set_pick.py r01 player_ranger 4 --from <the option's png> --note "..." --install
+
+`set_pick.py` refuses to overwrite a different candidate, keeps the old note after the new one,
+and installs with `install_rest.py --only`, so `installed_rest.json` keeps every other id.
+
+### Lessons from the Corwin redraw (2026-10-18)
+
+Brandon: "a lithe young man with a bow and his stuffie (hard to see in current version)".
+
+- A toy held against the chest is lost at 64 px. A toy riding in a pack on his back, its head
+  and arms over his shoulder against the backdrop, reads at 64 px and at 40 px.
+- To make a toy look like a game creature, give klein that creature's painting as the second
+  reference in an edit of the picked draft ("it becomes a soft plush toy of the little fire
+  lizard in the second painting, sewn from felt ... its head seen from the side, its snout
+  pointing the way he faces"). It changed only the toy and kept the hero.
+- The pixel pass turns a felt plush back into a live lizard (teeth, a frog's grin, scales).
+  Weaker passes (0.25, 0.32, or cutting the draft itself) blurred the toy into an orange blob at
+  64 px. Keep 0.42 and set the toy's button eye by hand (`touch`: three outline-black pixels and
+  one warm-white glint), and paint a small felt flame on the tail tip if the pass ate it.
+- "Like a ripe pumpkin" for the toy's colour drew pumpkin ridges on its head; "bright, warm,
+  saturated orange" did not.
+- "A warm mid-brown bow, lighter than his leathers" came out golden orange, clashing with the
+  orange toy. "Dark chestnut-brown, never orange and never gold" still reads by its D shape.
+- "Hood lying down on his shoulders" drew the hood up in half the candidates; "with no hood:
+  his head is bare" did not.
+- A later edit step adding arrows to the toy's pack lost the toy's tail and flame and left dark
+  spikes behind it. One change per edit, and check the rest survived.
+- The pixel pass gave one hero red glowing eyes. Eyes are below a pixel at 64 px anyway: set
+  them by hand, and map the painting's eye position to the sprite with `convert.to_sprite`'s
+  geometry rather than guessing (a one-pixel slip puts an eye on the hair).

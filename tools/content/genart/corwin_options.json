@@ -1,0 +1,24 @@
+{
+ "title": "Corwin / Cain redraw: three options (nothing installed yet; pick one or none)",
+ "out": "CORWIN_REDRAW_OPTIONS.png",
+ "current": "assets/tiles/env/player_ranger.png",
+ "current_says": "Stiff pose, the bow reads as a stick, a pale fan of arrow feathers behind his shoulder, the toy an orange blob on his chest.",
+ "original": "_genart/heroes/corwin_2026_10_18/original_painting_d9dae06d.png",
+ "original_label": "first painting, d9dae06d:",
+ "finalists": [
+  {"label": "A. FULL DRAW, TOY RIDING ON HIS BACK",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin_A_draw_toy_on_back.png",
+   "says": "Lunging at full draw, arrow nocked. The plush Emberpup peeks over his shoulder from a pack; felt flame on its tail."},
+  {"label": "B. STRIDING, BOW READY, TOY RIDING ON HIS BACK",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin_B_stride_toy_on_back.png",
+   "says": "Walking fast, bow held out upright; the same plush peeking over his shoulder. No quiver shows in this one."},
+  {"label": "C. FULL DRAW, TOY HANGING AT HIS HIP",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin_C_draw_toy_at_hip.png",
+   "says": "Wide stance at full draw; the plush hangs from his belt, facing out with two button eyes and a cream belly."}
+ ],
+ "beside": [
+  "assets/tiles/env/player_robyn.png",
+  "assets/tiles/env/player_dad.png",
+  "assets/tiles/env/player_odysseus.png"
+ ]
+}
