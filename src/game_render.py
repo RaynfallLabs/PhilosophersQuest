@@ -8790,7 +8790,9 @@ class RenderMixin:
             list_body = self._ui_subpanel(list_rect, "Known Entries")
             article_body = self._ui_subpanel(article_rect, "Article")
 
-        row_h = S(45)
+        # Every category in view (eleven since the Treasure pages): the rows
+        # close up a little rather than drop the last one off the panel.
+        row_h = min(S(45), max(S(32), cat_body.h // max(1, len(cats))))
         y = cat_body.y
         for idx, (key_label, slug, label) in enumerate(cats):
             if y + row_h > cat_body.bottom:
@@ -8821,7 +8823,7 @@ class RenderMixin:
             self._draw_journal(pygame.Rect(list_rect.x, body.y,
                                            body.right - list_rect.x, body.h))
             self._ui_footer(panel, "Tab or 1-4: page   Up/Down/PgUp/PgDn: scroll   "
-                                   "Left/Right or a-j: category   ESC: categories")
+                                   "Left/Right or a-k: category   ESC: categories")
             return
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
@@ -8831,7 +8833,7 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-j: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-k: open   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),
@@ -8910,7 +8912,7 @@ class RenderMixin:
         if getattr(self, '_encyclopedia_entry', None) is not None:
             footer = "Up/Down/PgUp/PgDn: scroll article   ESC: list"
         else:
-            footer = "Left/Right or a-j: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
+            footer = "Left/Right or a-k: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
         self._ui_footer(panel, footer)
 
     # -- The Journal (Encyclopedia tab h; DEEDS_KARMA_DESIGN 7.5) ----------
