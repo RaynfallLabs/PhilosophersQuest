@@ -1,9 +1,12 @@
 """
 NPC moral encounter system: one encounter per 10-level block, chosen from
-the candidates in data/npc_encounters.json.
+the candidates in data/npc_encounters.json. With the Road on
+(karma_rules.json: road_enabled, shipped) road.bind_anchors places them;
+select_encounter_levels below is the legacy placement for the Road off.
+Karma from them is gated by karma.adjust (+1 per block at most).
 
 Flow: bump NPC → encounter text (ENTER) → up to 4 visible options (keys
-1-4; today's content has 3) → outcome (ENTER). A quiz option runs its quiz
+1-4) → outcome (ENTER). A quiz option runs its quiz
 and lands its pass or fail branch (game_encounters._apply_outcome;
 schema in encounter_schema.py, DEEDS_KARMA_DESIGN.md section 4).
 Options show action + justification only, no outcomes, no karma labels.
@@ -209,12 +212,62 @@ def pct_loss(pool, pct, minimum: int = 1) -> int:
     return min(pool, max(minimum, int(pool * float(pct) / 100)))
 
 
+def _item_cost_classes():
+    from items import Food, Ingredient, Potion, Scroll, Weapon
+    return {'food': (Food, Ingredient), 'potion': Potion, 'scroll': Scroll, 'weapon': Weapon}
+
+
+def cost_items(player, ctype: str) -> list:
+    """The pack items an item cost of ``ctype`` may take, in pack order."""
+    if ctype == 'healing_potion':
+        return [i for i in player.inventory if offerable(i) and known_healer(player, i)]
+    cls = _item_cost_classes().get(ctype)
+    if cls is None:
+        return []
+    return [i for i in player.inventory if isinstance(i, cls) and offerable(i)]
+
+
+def armor_enchant_target(player):
+    """The worn armour an ``armor_enchant`` cost or reward works on: the
+    cloak (Saint Martin's half), else the body armour, else the first piece
+    worn. None when nothing is worn."""
+    from items import ARMOR_SLOTS
+    slots = list(getattr(player, 'armor_slots', None) or [])
+    for want in ('cloak', 'body'):
+        if want in ARMOR_SLOTS:
+            i = ARMOR_SLOTS.index(want)
+            if i < len(slots) and slots[i] is not None:
+                return slots[i]
+    return next((s for s in slots if s is not None), None)
+
+
 def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str]:
     """Check if the player can afford a cost. Returns (can_pay, fail_message)."""
     if cost is None:
         return True, ''
 
     ctype = cost['type']
+
+    if ctype == 'multi':
+        # Several costs at once (help lift the gate AND hand back the pendant).
+        for sub in cost.get('costs') or ():
+            ok, msg = can_pay_cost(player, sub, player_gold)
+            if not ok:
+                return ok, msg
+        return True, ''
+
+    if ctype == 'armor_enchant':
+        if armor_enchant_target(player) is None:
+            return False, "You wear nothing you could cut."
+        return True, ''
+
+    # "count": an item cost of several (give back two potions).
+    n = int(cost.get('count', 1) or 1)
+    if n > 1 and ctype in ('food', 'potion', 'scroll', 'weapon', 'healing_potion'):
+        if sum(max(1, int(getattr(i, 'count', 1) or 1)) for i in cost_items(player, ctype)) < n:
+            what = {'food': 'food', 'potion': 'potions', 'scroll': 'scrolls',
+                    'weapon': 'weapons', 'healing_potion': 'healing'}[ctype]
+            return False, f"You need {n} {what} to give."
 
     if ctype == 'food':
         from items import Food, Ingredient
@@ -338,6 +391,13 @@ def get_inventory_filter(cost: dict | None) -> str | None:
     if cost is None:
         return None
     ctype = cost['type']
+    if ctype == 'multi':
+        # The first part that needs a pick; the others are paid as they are.
+        for sub in cost.get('costs') or ():
+            f = get_inventory_filter(sub)
+            if f:
+                return f
+        return None
     if ctype in ('food', 'healing_potion', 'potion', 'scroll', 'weapon'):
         return ctype
     if ctype == 'random_item':
@@ -412,24 +472,24 @@ def judge_karma(karma: int) -> tuple[str, str]:
     return _JUDGMENT_TIERS[2][2], _JUDGMENT_TIERS[2][3]
 
 
-# Assign NPC sprites for map rendering
+# Assign NPC sprites for map rendering (a fallback: every anchor in the JSON
+# names its own sprite_id).
 _KARMA_SPRITES = {
-    'elara_amulet': 'npc_lost_girl', 'brother_aldous': 'npc_dying_monk',
+    'elara_amulet': 'npc_lost_girl', 'grumwald_toll': 'npc_creature',
     'marta_ratchatcher': 'npc_rat_catcher', 'sir_aldric': 'npc_burdened_knight',
     'tam_thief': 'npc_young_thief', 'helena_cartographer': 'npc_injured_scholar',
-    'marcus_sword': 'npc_grieving_father', 'blinded_soldier': 'npc_blinded_soldier',
-    'dying_messenger': 'npc_dying_courier', 'deadite_woman': 'npc_deadite_woman',
-    'sister_marguerite': 'npc_starving_nun', 'chained_priest': 'npc_chained_priest',
-    'old_konstantin': 'npc_old_warrior', 'apprentice_healer': 'npc_poisoned_herbalist',
+    'marcus_sword': 'npc_grieving_father', 'last_potion': 'npc_blinded_soldier',
+    'dying_messenger': 'npc_dying_courier', 'reliquary': 'npc_starving_nun',
+    'chained_priest': 'npc_chained_priest', 'old_konstantin': 'npc_old_warrior',
     'ghost_grave': 'npc_ghost_edwin', 'deserter': 'npc_deserter',
-    'blind_seer': 'npc_blind_seer', 'trapped_seraph': 'npc_caged_angel',
-    'weeping_mother': 'npc_weeping_ghost', 'ser_brennan': 'npc_dying_knight',
-    'cursed_scholar': 'npc_cursed_scholar', 'fairy_jar': 'npc_trapped_fairy',
-    'penitent': 'npc_penitent', 'roderic_shield': 'npc_young_knight',
-    'forgotten_prisoner': 'npc_forgotten_prisoner', 'fallen_paladin': 'npc_fallen_paladin',
-    'azarael_demon': 'npc_bound_demon', 'child_shrine': 'npc_small_shrine',
-    'dying_prophet': 'npc_dying_prophet', 'petrified_adventurer': 'npc_stone_statue',
-    'last_merchant': 'npc_lost_merchant',
+    'grain_committee': 'npc_traveler', 'blind_seer': 'npc_blind_seer',
+    'trapped_seraph': 'npc_caged_angel', 'slavers_wagon': 'npc_merchant',
+    'ser_brennan': 'npc_dying_knight', 'cursed_scholar': 'npc_cursed_scholar',
+    'fairy_jar': 'npc_trapped_fairy', 'penitent': 'npc_penitent',
+    'roderic_shield': 'npc_young_knight', 'forgotten_prisoner': 'npc_forgotten_prisoner',
+    'fallen_paladin': 'npc_fallen_paladin', 'azarael_demon': 'npc_bound_demon',
+    'live_not_by_lies': 'npc_warrior', 'dying_prophet': 'npc_dying_prophet',
+    'petrified_adventurer': 'npc_stone_statue', 'last_merchant': 'npc_lost_merchant',
 }
 for _enc in ENCOUNTERS:
     if 'sprite_id' not in _enc:

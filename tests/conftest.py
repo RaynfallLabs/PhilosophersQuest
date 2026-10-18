@@ -190,3 +190,17 @@ def ui_theme_isolated():
         yield
     finally:
         ui_theme.restore_state(saved)
+
+
+@pytest.fixture
+def gate_off(monkeypatch):
+    """The karma gate and the Road switched OFF for one test (they ship ON
+    since Phase 3): for the tests that prove the old, pre-redesign behaviour
+    still holds when the flag is off (DEEDS_KARMA_DESIGN 3.6)."""
+    import copy
+    import karma
+    r = copy.deepcopy(karma.rules())
+    r['gate_enabled'] = False
+    r['road_enabled'] = False
+    monkeypatch.setattr(karma, '_RULES', r)
+    return r

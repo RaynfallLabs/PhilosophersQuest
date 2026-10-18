@@ -358,7 +358,7 @@ Up to 5 random non-start rooms are tried for a free `is_walkable` tile not in `o
 For each gear entry: the item id is looked up in the appropriate class pool (weapon/armor/shield/accessory/wand/scroll/potion), `copy.copy`'d, and placed on a free tile inside the ghost's room. All entries are marked `buc='cursed'` with `buc_known=False`, **except** preserved items (Kilt of the Pharaoh), which stay uncursed. A used-tiles set tracks ground_items overlap so a bones drop doesn't stack on a pre-placed floor item. If the bones carried gold, a `GoldPile` lands on the next free tile.
 
 ### 8.6 Karma hook
-See [karma_prayer](karma_prayer.md) — slaying a bones ghost pays a small karma price in current wiring; the design treats the ghost as "already dead", not as a hostile stranger. The exact penalty value and whether victory should skip bones at all are open follow-ups from the audit.
+See [karma_prayer §9](karma_prayer.md) — bones carry no karma: slaying a bones ghost or entering a bones floor applies no karma change (every karma change goes through `karma.adjust`, and bones has no call). The design treats the ghost as "already dead", not as a hostile stranger. Whether victory should skip bones at all is an open follow-up from the audit.
 
 ---
 
@@ -366,7 +366,7 @@ See [karma_prayer](karma_prayer.md) — slaying a bones ghost pays a small karma
 
 - **Monsters.** Spawn pools, bell-curve weighting (`peak_floor`/`spread`/`peak_weight`), pack mechanics, boss definitions → [monsters](monsters.md).
 - **Quests & mysteries.** Mystery altars (via `mystery_system.spawn_mystery_for_level`), Ariadne / Athena / Odin / Fenrir shrine wiring, the seven seals Abaddon gate, the Dwarven Forge, Vidar's Altar, the Altar of the Last Judgment → [quests_mysteries](quests_mysteries.md).
-- **Karma + prayer.** How altars interact with prayer, bones-ghost karma penalty, prayer cooldown → [karma_prayer](karma_prayer.md).
+- **Karma + prayer.** How altars interact with prayer, bones and karma (none), prayer cooldown → [karma_prayer](karma_prayer.md).
 - **Pets.** Soul Sphere throw/hatch, bones-ghost does not affect pets, Ethereal Unicorn trap-detect → [pets](pets.md).
 
 ---

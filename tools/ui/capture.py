@@ -1532,7 +1532,14 @@ def _(g):
 
 @scene('npc_flavor', 'Encounters', 'Bump a flavour (non-karmic) NPC.', expect='npc_encounter')
 def _(g):
-    enc = next(iter(sorted(g._flavor_encounter_levels.items())))[1]
+    if g._flavor_encounter_levels:
+        enc = next(iter(sorted(g._flavor_encounter_levels.items())))[1]
+    else:
+        # With the Road on, story slots bind on arrival: nothing is planned
+        # at run start, so show the first story the Road could place.
+        import flavor_encounters
+        enc = next(e for e in flavor_encounters.FLAVOR_ENCOUNTERS
+                   if not e.get('callback_only') and not e.get('requires'))
     m = _npc_monster(g, enc)
     m._flavor_encounter_tag = enc['tag']
     g._start_flavor_encounter(m)

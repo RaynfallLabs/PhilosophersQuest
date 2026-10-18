@@ -263,7 +263,7 @@ class Monster:
         self.enraged_pattern:  str   = defn.get('enraged_pattern', '')
         # Optional per-monster lines (data-driven; all fall back to a generic
         # line when absent): the enrage switch, each rage stack, standing back
-        # up after a fatal blow, and the chronicle entry for its death.
+        # up after a fatal blow, and the Journal entry for its death.
         self.enrage_message: str   = defn.get('enrage_message', '') or ''
         self.rage_messages:  list  = list(defn.get('rage_messages', []) or [])
         self.revive_message: str   = defn.get('revive_message', '') or ''
@@ -346,6 +346,8 @@ class Monster:
         # Pull-on-hit: chance the strike drags the player 2 tiles toward
         # the monster (charybdis / kraken / grappler family).
         self.pull_chance: float = float(defn.get('pull_chance', 0.0) or 0.0)
+        # A named story foe (Neferkaptah, Azarael, Morrow): no article.
+        self.proper_noun: bool = bool(defn.get('proper_noun', False))
 
         # --- 2026-10 late-game mechanics (all data-driven) ---
         # Thieves (src/theft.py): an attack with `steal` takes gold or an
@@ -713,6 +715,7 @@ class Monster:
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
+            self._struck = True              # a calmed locust remembers (Locust Charm)
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)

@@ -3569,8 +3569,9 @@ class MagicMixin:
         contract. Spellbooks are one-read even on success (you internalize the
         spell, the physical text is consumed).
         """
-        # v2.10.0: consumable-artifact spellbooks (Book of Thoth) fire an
-        # EFFECT on read, not learn-a-spell. Route through the dedicated
+        # v2.10.0: artifact spellbooks (Book of Thoth) fire an EFFECT on
+        # read, not learn-a-spell (and the Book of Thoth is not consumed:
+        # see _read_book_of_thoth). Route through the dedicated
         # handler before the learn-a-spell early-out (which would incorrectly
         # skip the read if the "spell_id" happened to match a known spell).
         if getattr(book, 'is_consumable_artifact', False):
@@ -3674,24 +3675,36 @@ class MagicMixin:
         )
 
     def _read_book_of_thoth(self, book: 'Spellbook'):
-        """v2.10.0 Book of Thoth: T5 grammar, threshold 3. Success = omniscience
-        (identify EVERY item in inventory / tile / equipped, reveal lore of
-        every corpse species KILLED this run, recharge every wand to max).
-        Failure = Setne's curse (3d6 psychic damage, three random unidentified
-        items in inventory lose their known type, 20 turns Stunned). Book is
-        consumed either way -- see the flavor lore for the Setna cycle.
+        """The Book of Thoth: T5 grammar. Success = omniscience (identify
+        EVERY item in inventory / tile / equipped, reveal lore of every
+        corpse species KILLED this run, recharge every wand to max). Failure
+        = Setne's curse (3d6 psychic damage, three items in the pack lose
+        their known type, 20 turns Stunned).
+
+        Reading does NOT consume the book (DEEDS_KARMA_DESIGN 11.12): its
+        power is spent after one read, pass or fail, and the book stays in
+        the pack, as "Book of Thoth (Read)", until it is laid on an altar to
+        keep the oath sworn to Neferkaptah (setne_tomb.py). A second read
+        does nothing. A failed read still owes the return: the oath does not
+        care whether you understood the book, only that you opened it.
         """
+        if getattr(book, 'spent', False):
+            from setne_tomb import data as _setne_data
+            self.add_message(_setne_data().get(
+                'read_spent_message', "The words are still there. They will not do it twice."),
+                'info')
+            return
         display = self._bare_name(book)
         self.state = STATE_QUIZ
         self.quiz_title = f"READING {display.upper()}  --  GRAMMAR"
 
         def on_complete(result):
             self.state = STATE_PLAYER
-            # Book of Thoth is ALWAYS consumed -- the box-of-boxes serpent
-            # doesn't let you put it back. No single_copy / Scheherazade save.
+            # The power goes out of it after one reading, whatever the
+            # reading was worth. The book itself stays: it is owed back.
             book.identified = True
             self.player.known_item_ids.add(book.id)
-            self.player.remove_from_inventory(book)
+            self._thoth_mark_spent(book)
 
             if result.success:
                 self._book_of_thoth_omniscience()

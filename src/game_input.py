@@ -308,7 +308,7 @@ class InputMixin:
                 self._open_pet_menu()
                 return True
             if event.unicode == 'I' and getattr(self.player, 'qa_tools', False):
-                # Titivillus QA build: toggle immortality. No quiz, no chronicle.
+                # Titivillus QA build: toggle immortality. No quiz, no Journal entry.
                 self.player.immortal = not getattr(self.player, 'immortal', False)
                 state_str = "ON" if self.player.immortal else "OFF"
                 self.add_message(f"[QA] Immortal mode {state_str}.", 'info')
@@ -777,7 +777,7 @@ class InputMixin:
     def _qa_warp_input_handler(self, key, unicode_char):
         """Titivillus QA tool: type a floor number, ENTER to warp.
 
-        No quiz, no chronicle entry — straight debug warp.
+        No quiz, no Journal entry — straight debug warp.
         """
         buf = getattr(self, '_qa_warp_input', '')
         if key == pygame.K_RETURN:
@@ -826,7 +826,7 @@ class InputMixin:
             return
         buf = getattr(self, '_pet_name_input_buffer', '')
         # A pet that came some other way than a Soul Sphere (the abandoned
-        # Emberpup) brings its own words for the log and the chronicle.
+        # Emberpup) brings its own words for the log and the Journal.
         story = getattr(self, '_naming_story', None) or {}
         if key == pygame.K_ESCAPE:
             # Skip naming — pet keeps its species name as default.
@@ -1108,12 +1108,19 @@ class InputMixin:
         if phase == 'text':
             if key in (pygame.K_RETURN, pygame.K_SPACE):
                 self._npc_show_options()
+            elif key == pygame.K_ESCAPE and enc.get('hostile'):
+                self.add_message("There is no walking away from this.", 'warning')
             elif key == pygame.K_ESCAPE:
                 self._close_npc_encounter(resolved=False)
             return
 
         # ── Phase: OPTIONS (choose 1-4 of the visible options) ───
         if phase == 'options':
+            if key == pygame.K_ESCAPE and enc.get('hostile') and not self._npc_committed():
+                # A hostile scene (the dead come for what is owed) has no
+                # walk-away: one of its choices must be made.
+                self.add_message("There is no walking away from this.", 'warning')
+                return
             if key == pygame.K_ESCAPE:
                 # Before any choice the NPC stays; after one (a 'then:
                 # options' encounter back at its list) it is resolved.

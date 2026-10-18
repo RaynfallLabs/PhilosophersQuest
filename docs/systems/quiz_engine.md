@@ -155,7 +155,7 @@ Chain-combat-v2 SPACE handler. Freezes the current chain into `score` and ends t
 Save-system hooks. Persists ONLY `_seen`, `_retired`, `_mastered`. Decks rebuild from current JSON on next `start_quiz` — ensures bank updates always propagate to loaded games.
 
 ### `is_mastered(subject, tier) -> bool` / `mastered_tiers() -> set`
-Public reads for UI (bestiary, character sheet, chronicle).
+Public reads for UI (bestiary, character sheet, Journal).
 
 ## Internal flow
 
@@ -293,7 +293,7 @@ In chain modes, consuming the reroll also restores `chain = max(chain, 1)` so th
 - **[magic](magic.md)** — spells + wands: threshold-1 science quizzes at the spell's/wand's tier. Spellbook chain bonus can reduce effective tier.
 - **[karma_prayer](karma_prayer.md)** — pray/divine intercession: theology chain or escalator_threshold T5 depending on branch. Full liturgy at `game_divine.py:289/369/609/680/805/1064/1076`.
 - **[quests_mysteries](quests_mysteries.md)** — mystery challenges use varied modes; Solomon/Grail/Sphinx/Mjolnir use threshold modes whose tuning predates zero-tolerance (SYSTEMS_AUDIT.md §3 P2).
-- **[progression](progression.md)** — `just_mastered` and `auto_passed` surface in the chronicle and bestiary; `_mastered` is read by UI to tag tiers "T{n} CLEARED" (formerly "MASTERED" — vocabulary pending sweep per SYSTEMS_AUDIT.md §8 P4).
+- **[progression](progression.md)** — `just_mastered` and `auto_passed` surface in the Journal and bestiary; `_mastered` is read by UI to tag tiers "T{n} CLEARED" (formerly "MASTERED" — vocabulary pending sweep per SYSTEMS_AUDIT.md §8 P4).
 
 ## History of major decisions
 

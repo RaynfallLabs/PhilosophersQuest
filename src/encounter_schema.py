@@ -2,8 +2,7 @@
 encounter screen shares (DEEDS_KARMA_DESIGN.md section 4).
 
 Pure module. ``normalise`` is called by both loaders (``npc_encounters`` and
-``flavor_encounters``, which covers the hardcoded ``FLAVOR_ENCOUNTERS`` list
-as well as ``data/flavor_encounters.json``). Its defaults leave existing
+``flavor_encounters``, which loads ``data/flavor_encounters.json``). Its defaults leave existing
 content behaving exactly as before: every new field is absent, meaning off.
 
 One option is one outcome. An option without ``quiz`` is its own outcome
@@ -125,6 +124,16 @@ def resolve_outcome(o: dict, ctx: dict) -> str:
     return o.get('outcome', '')
 
 
+def resolve_chronicle(o: dict, ctx: dict):
+    """The journal line for an outcome: the first matching
+    ``outcome_variants`` entry that carries its own ``chronicle`` (I wore it
+    / I carried it), else the outcome's own."""
+    for v in o.get('outcome_variants') or ():
+        if deeds.check(v.get('when'), ctx):
+            return v.get('chronicle', o.get('chronicle'))
+    return o.get('chronicle')
+
+
 def quiz_passed(spec: dict, result) -> bool:
     """Threshold modes pass on ``result.success``; chain modes pass when the
     chain reached ``pass_at`` (default: the engine's own success)."""
@@ -137,8 +146,92 @@ def quiz_passed(spec: dict, result) -> bool:
 def option_branches(opt: dict) -> list:
     """The outcome objects an option can lead to: itself, or pass and fail."""
     if is_quiz(opt):
-        return [b for b in (opt.get('pass'), opt.get('fail')) if isinstance(b, dict)]
+        out = [b for b in (opt.get('pass'), opt.get('fail')) if isinstance(b, dict)]
+        # A fail that reads by how many rounds were won (senet): each is an
+        # outcome too.
+        out += [b for _k, b in sorted((opt.get('fail_by_correct') or {}).items())
+                if isinstance(b, dict)]
+        return out
     return [opt]
+
+
+MAX_FIGHT_COUNT = 8      # one entry's count; a crowd bigger than this is a level
+
+
+def fight_entries(spec) -> list:
+    """An outcome's ``fight`` as ``[(monster_id, count), ...]``.
+
+    Accepts a monster id string, ``{"monster_id": id, "count": n}`` (count
+    defaults to 1) or a list of either, so a group fight is data:
+    ``[{"monster_id": "neferkaptah_risen"}, {"monster_id": "mummy", "count": 6}]``.
+    Malformed entries are skipped (the validator reports them)."""
+    items = spec if isinstance(spec, list) else [spec]
+    out = []
+    for e in items:
+        if isinstance(e, str) and e:
+            out.append((e, 1))
+        elif isinstance(e, dict) and isinstance(e.get('monster_id'), str) and e['monster_id']:
+            try:
+                n = int(e.get('count', 1))
+            except (TypeError, ValueError):
+                n = 1
+            out.append((e['monster_id'], max(1, min(MAX_FIGHT_COUNT, n))))
+    return out
+
+
+_FATES = ('lost', 'spared', 'saved')
+
+
+def _line_holds(line: dict, person, ctx: dict) -> bool:
+    if 'status' in line:
+        want = line['status'] if isinstance(line['status'], (list, tuple)) else [line['status']]
+        if person is None or person.get('status') not in want:
+            return False
+    if 'deserving' in line:
+        if person is None or person.get('deserving') is not line['deserving']:
+            return False
+    if line.get('when') is not None:
+        return deeds.check(line['when'], ctx)
+    return person is not None
+
+
+def _line_is_fate(line: dict) -> bool:
+    st = line.get('status')
+    sts = st if isinstance(st, (list, tuple)) else [st]
+    if any(s in _FATES for s in sts if s):
+        return True
+    when = line.get('when') or {}
+    pats = list(when.get('deeds_any') or ()) + list(when.get('deeds_all') or ())
+    return any(str(p).split('.', 1)[0] in _FATES for p in pats)
+
+
+def people_lines(table: dict, ctx: dict, max_lines=None) -> list:
+    """The lines told about the people the hero met (The Gate, C18): for
+    each person, the first line of ``table['lines']`` that holds; fates
+    (lost, spared, saved) first, then the most recent; at most ``max``.
+    Pure: reads ``ctx['reg']`` (deeds['people'] and the log) and nothing
+    else, and changes nothing."""
+    reg = ctx.get('reg') or deeds.new_register()
+    people = reg.get('people') or {}
+    order = {pid: i for i, pid in enumerate(people)}
+    last_seq = {}
+    for d in reg.get('log', ()):
+        parts = str(d.get('id', '')).split('.')
+        if len(parts) >= 2:
+            last_seq[parts[1]] = max(last_seq.get(parts[1], 0), int(d.get('seq') or 0))
+    chosen = {}
+    for line in (table or {}).get('lines') or ():
+        pid = line.get('person')
+        if not pid or pid in chosen or not line.get('line'):
+            continue
+        if _line_holds(line, people.get(pid), ctx):
+            chosen[pid] = line
+    def recency(pid):
+        return (last_seq.get(pid, 0), order.get(pid, -1))
+    ranked = sorted(chosen, key=lambda pid: (0 if _line_is_fate(chosen[pid]) else 1,
+                                              tuple(-x for x in recency(pid))))
+    n = int(max_lines if max_lines is not None else (table or {}).get('max', 6))
+    return [chosen[pid]['line'] for pid in ranked[:max(0, n)]]
 
 
 def max_karma(opt: dict) -> int:

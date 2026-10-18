@@ -38,6 +38,8 @@ added_files = [
     ('data/abandoned_emberpup.json', 'data'),
     ('data/black_knight.json',      'data'),
     ('data/karma_rules.json',       'data'),
+    ('data/setne_tomb.json',        'data'),
+    ('data/gate_lines.json',        'data'),
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

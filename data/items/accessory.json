@@ -5403,5 +5403,131 @@
     "floorSpawnWeight": {},
     "is_unique": false,
     "pacify_chance": 0.15
+  },
+  "azaraels_brand": {
+    "name": "Azarael's Brand",
+    "symbol": "=",
+    "color": [
+      220,
+      120,
+      50
+    ],
+    "weight": 0.0,
+    "min_level": 81,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {
+      "stat": "STR",
+      "amount": 4
+    },
+    "bound_to_wielder": true,
+    "can_be_cursed": false,
+    "unidentified_name": "a brand on the wrist that is always warm",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "peak_weight": 0.0,
+    "peak_floor": 86,
+    "spread": 6,
+    "is_unique": true,
+    "identified": false,
+    "lore": "The mark a fallen Power leaves on whoever breaks his chains: a ring of raised bronze skin round the wrist, warm as a hearthstone. The strength in it is real. Azarael was one of the Powers before he fell, and he pays his debts in the coin he has. It does not come off, because it was never put on. The warmth does not fade either."
+  },
+  "locust_charm": {
+    "name": "Locust Charm",
+    "symbol": "\"",
+    "color": [
+      150,
+      130,
+      70
+    ],
+    "weight": 0.1,
+    "min_level": 81,
+    "slot": "amulet",
+    "equip_threshold": 4,
+    "quiz_tier": 5,
+    "effects": {},
+    "calms_locusts": true,
+    "unidentified_name": "a dried locust in a cage of black wire",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "peak_weight": 0.0,
+    "peak_floor": 86,
+    "spread": 6,
+    "is_unique": true,
+    "identified": false,
+    "lore": "The Cult of the Locust hangs one round the neck of everyone who says the words at its checkpoints: a dried locust in a little cage of black wire. It works. While it is worn, the Destroyer's swarms take the wearer for one of their own, and leave them alone until they are struck. The charm costs one sentence. The cult counts on that sentence being the first of many."
+  },
+  "brass_wardens_cog": {
+    "name": "The Brass Warden's Cog",
+    "symbol": "\"",
+    "color": [
+      200,
+      160,
+      70
+    ],
+    "weight": 0.5,
+    "min_level": 35,
+    "slot": "amulet",
+    "equip_threshold": 3,
+    "quiz_tier": 3,
+    "effects": {},
+    "quiz_timer_bonus": 2,
+    "unidentified_name": "a heavy brass cog on a chain",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "peak_weight": 0.0,
+    "peak_floor": 52,
+    "spread": 12,
+    "is_unique": true,
+    "identified": false,
+    "lore": "The Clockwrights' Guild paid its best counters in cogs cut so true that they never slipped a tooth, and wore them on a chain as a mark of the trade. This one came out of the belly of the Brass Warden, still warm from its furnace. Hold it while you reckon and your count keeps time with it, a steady tick that buys a breath or two before the sum is due. The Guild has not existed for four hundred years. The cog does not know that."
+  },
+  "black_string_bracelet": {
+    "name": "Black String Bracelet",
+    "symbol": "=",
+    "color": [
+      40,
+      40,
+      50
+    ],
+    "weight": 0.0,
+    "min_level": 66,
+    "slot": "ring",
+    "equip_threshold": 4,
+    "quiz_tier": 4,
+    "effects": {},
+    "quiz_timer_bonus": 3,
+    "bound_to_wielder": true,
+    "can_be_cursed": false,
+    "unidentified_name": "a loop of black fiddle string tied round the wrist",
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "peak_weight": 0.0,
+    "peak_floor": 73,
+    "spread": 7,
+    "is_unique": true,
+    "identified": false,
+    "lore": "Giuseppe Tartini said the Devil played him a sonata in a dream, and that he spent his life failing to write it down. The gentleman at the crossroads ties a length of the same string round the wrist of everyone who signs his paper. Answers arrive a moment before the questions do, which feels exactly as wrong as it sounds. The knot has no ends. The payment is due later, much later."
   }
 }

@@ -510,7 +510,7 @@ class CombatMixin:
         self._naming_pet = pet
         self._pet_name_input_buffer = pet.species_name   # default: species name
         # A companion with a story of its own (Shep) brings its own words
-        # for the naming popup, the log and the chronicle.
+        # for the naming popup, the log and the Journal.
         story = pet.species.get('naming_story')
         self._naming_story = dict(story) if story else None
         from game_states import STATE_PET_NAME_INPUT
@@ -1155,6 +1155,69 @@ class CombatMixin:
                     f"Your blow skates off {the_name(monster, lower=True)}'s scales. "
                     f"Only a little of it gets through.", 'warning')
         self.player._belly_strike = False
+
+    # The Destroyer's swarms (not the cult's soldiers, who are only men).
+    _LOCUST_KINDS = frozenset({'abyssal_locust', 'locust_swarmlord'})
+
+    def _locust_calmed(self, m) -> bool:
+        """A locust leaves the wearer of the Locust Charm alone until it is
+        struck (``_struck``, set by Monster.take_damage)."""
+        if m.kind not in self._LOCUST_KINDS and 'locust' not in (m.tags or ()):
+            return False
+        if getattr(m, '_struck', False):
+            return False
+        p = self.player
+        if not (hasattr(p, 'amulet_slot') and hasattr(p, 'accessory_slots')):
+            return False
+        return any(getattr(a, 'calms_locusts', False) for a in p.equipped_accessories)
+
+    def _green_girdle_spares(self, monster) -> bool:
+        """The Green Girdle (Gawain's, from Lady Bertilak): the Green Knight's
+        return blow, the one he strikes after his head is back on, cannot
+        kill its wearer. Called when such a blow has just brought the hero
+        to 0: the hero is left at 1, and told why."""
+        if getattr(monster, 'kind', '') != 'green_knight' or not getattr(monster, '_has_revived', False):
+            return False
+        p = self.player
+        worn = list(getattr(p, 'armor_slots', None) or ()) + [getattr(p, 'belt_slot', None)]
+        if not any(getattr(w, 'id', '') == 'green_girdle' for w in worn if w is not None):
+            return False
+        if p.hp > 0:
+            return False
+        p.hp = 1
+        self.add_message(
+            'The axe stops a hair from your neck, and the Green Knight laughs. '
+            '"You lacked a little loyalty," he says. "But only a little, and for love of your life."',
+            'warning')
+        if not getattr(self, '_green_girdle_chronicled', False):
+            self._green_girdle_chronicled = True
+            self._chron(
+                'deed',
+                "The Green Knight's axe should have taken my head. The green girdle turned it. "
+                "He laughed and called it a little disloyalty. I think he was being kind.")
+        return True
+
+    def _death_gives_back_a_breath(self, hp_before: int) -> bool:
+        """Death's Chessboard (H07): a hero who beat Death at chess for their
+        own life holds the deed ``flag.deaths_lost_turn``. Once, on the ascent,
+        the blow from Death's pursuit that would have killed them misses: the
+        hero's health is put back as it was before the blow. The deed
+        ``flag.deaths_lost_turn_spent`` records that the breath is used."""
+        import deeds
+        reg = self._deeds_reg()
+        if not deeds.has(reg, 'flag.deaths_lost_turn') or deeds.has(reg, 'flag.deaths_lost_turn_spent'):
+            return False
+        deeds.note(self, 'flag.deaths_lost_turn_spent', source='engine:death_pursuit', unique=True)
+        self.player.hp = max(1, int(hp_before))
+        self.add_message(
+            "The scythe comes down through the place where you were a breath ago. "
+            "Death looks at the blade, and then at you, and nods. One breath, as promised.",
+            'warning')
+        self._chron(
+            'deed',
+            "Death swung, and missed on purpose. He had promised me one breath back at the "
+            "chessboard. He is very exact about promises.")
+        return True
 
     def _announce_revive(self, monster):
         """The Green Knight's beheading game: say so when a foe that should
@@ -2463,8 +2526,12 @@ class CombatMixin:
                 did_attack = dm.take_turn(self.player, self.dungeon, all_m,
                                           extra_occupied=_pet_occ_d)
             if did_attack:
+                _hp_before_death = self.player.hp
                 dmg, msg = dm.attack(self.player)
-                self.add_message(msg, 'danger')
+                if self.player.hp <= 0 and self._death_gives_back_a_breath(_hp_before_death):
+                    msg = None
+                if msg:
+                    self.add_message(msg, 'danger')
                 if self.player.is_dead():
                     self.defeat_reason = 'died'
                     self._on_game_over()
@@ -2524,6 +2591,10 @@ class CombatMixin:
             # "Something unseen" in its messages while the hero cannot see it.
             if getattr(m, 'invisible', False):
                 m._unseen = unseen.unseen(m, self.player)
+            # The Locust cult's charm: the swarms take the wearer for one of
+            # their own and leave them alone until struck.
+            if self._locust_calmed(m):
+                continue
             _pet_occ = self._occupants(hero=False)        # pets and escorts
             _was_in_pit = m.has_effect('stuck_in_pit')
             _pos_before = (m.x, m.y)
@@ -2619,6 +2690,8 @@ class CombatMixin:
                     msg += (" It came from the "
                             f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
                 self.add_message(msg, 'danger')
+                if self.player.hp <= 0:
+                    self._green_girdle_spares(m)
                 # A thief's blow landed: it takes the gold or the item now
                 # (src/theft.py), and runs with it.
                 _steal = getattr(m, '_wants_steal', None)

@@ -45,7 +45,7 @@ Bosses, seal demons, forced quest spawns, and the four orphan legendaries carry 
 On run start, `LevelManager.__init__` calls `_roll_planned_mini_bosses()`, which iterates five 20-floor bands (`1-20`, `21-40`, `41-60`, `61-80`, `81-100`) and in each band fills a primary slot (90% chance) and a secondary slot (30% chance). Each slot picks weighted by `spawn_chance`. Expected total per 100-floor run: 5 × 1.2 = **6 mini-bosses**, range 4-8. The placement floor is the chosen mini-boss's `peak_floor` (shifted ±1 if it collides with a boss floor or a planned slot). This replaces first-eligible-wins greedy placement — now every band member has weighted odds every run.
 
 ### Seal demons are FORCED, not rolled
-`_SEAL_DEMON_LEVELS = {83, 85, 87, 89, 91, 93, 97}` → 7 fixed seal-demon ids. `_try_spawn_seal_demon` runs after mini-boss pre-rolling, is-mini-boss aware (the pre-roller ignores `seal_demon_*` ids), and guarantees placement. Each seal-demon kill is tracked in `game.seals_broken`; at 7/7 the game logs the "way to the Pit stands open" chronicle entry.
+`_SEAL_DEMON_LEVELS = {83, 85, 87, 89, 91, 93, 97}` → 7 fixed seal-demon ids. `_try_spawn_seal_demon` runs after mini-boss pre-rolling, is-mini-boss aware (the pre-roller ignores `seal_demon_*` ids), and guarantees placement. Each seal-demon kill is tracked in `game.seals_broken`; at 7/7 the game logs the "way to the Pit stands open" Journal entry.
 
 ### Boss immunity: a two-step check, now with a JSON wire
 `hero_specials.is_boss_or_huge(monster)` is the one function status-application code calls. Through v2.17 it was effectively `max_hp > 500`, since `Monster.__init__` silently dropped the JSON `is_boss` field. v2.18.0 added `self.is_boss = bool(defn.get('is_boss', False))` to `__init__` — the fallback stays as a safety net, but 10 mini-bosses (`iron_patriarch`, `whispering_crone`, `blood_archon`, 7 `seal_demon_*`) now get boss-immunity properly instead of relying on their HP dice happening to exceed 500. `boss_immune: True` on a hero special says "this status skips bosses"; the check is monster-side (`is_boss_or_huge`) and the special-side flag just gates whether to apply the check.
@@ -88,7 +88,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 |---|---|---|
 | `is_boss` | bool | **Read from JSON since v2.18.0.** Grants boss-immunity to charm/paralyze/sleep/confuse via `hero_specials.is_boss_or_huge`. Also lifts `min_hit_chance` from 5% to 25%. Carried by: `abaddon_destroyer`, the 7 `seal_demon_*`, `iron_patriarch`, `whispering_crone`, `blood_archon`. **Fallback:** `max_hp > 500` also counts as boss, regardless of this flag — the hand-crafted boss-level `_spawn_boss` additionally forces `boss.is_boss = True` after construction. |
 | `is_mini_boss` | bool | Candidate for the pre-rolled mini-boss slot system. 36 monsters carry this flag; `_roll_planned_mini_bosses` filters out `seal_demon_*` (forced path) and `spawn_chance <= 0`. **Known overlap:** `blood_archon` + the 7 seal demons carry BOTH `is_boss` and `is_mini_boss` — audited as a conflict P4, kept as-is. |
-| `is_seal_demon` | bool | 7 monsters. On death, `game_combat._drop_treasure` adds the corresponding seal to `game.seals_broken` and logs chronicle text. 7/7 opens the Abyss narrative. |
+| `is_seal_demon` | bool | 7 monsters. On death, `game_combat._drop_treasure` adds the corresponding seal to `game.seals_broken` and writes a Journal line. 7/7 opens the Abyss narrative. |
 | `is_allied` | bool | Allied monster (currently only `heavenly_angel`). Does not attack the player; dispatched to `seek_locust` AI. |
 | `boss_immune` | — | NOT a Monster field; this is a flag on `hero_specials` entries declaring "my effect should skip bosses." The monster side is `is_boss` / `is_boss_or_huge`. |
 
@@ -337,7 +337,7 @@ Per band:
 
 Note: there is NO seal-demon on floor 95. The levels are prime-ish by narrative convention.
 
-`_try_spawn_seal_demon` runs AFTER `_try_spawn_mini_boss` on every procedural floor. Idempotent via `self._placed_mini_bosses`. Each kill calls `game_combat._handle_death` → adds the matching seal id to `game.seals_broken`, logs chronicle, at 7/7 triggers the "ALL SEVEN SEALS ARE BROKEN" narrative pulse.
+`_try_spawn_seal_demon` runs AFTER `_try_spawn_mini_boss` on every procedural floor. Idempotent via `self._placed_mini_bosses`. Each kill calls `game_combat._handle_death` → adds the matching seal id to `game.seals_broken`, writes a Journal line, at 7/7 triggers the "ALL SEVEN SEALS ARE BROKEN" narrative pulse.
 
 ## Multi-tile monster placement
 

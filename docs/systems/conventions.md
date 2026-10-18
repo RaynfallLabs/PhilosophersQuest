@@ -197,18 +197,20 @@ the whole point.
 
 ## 8. Karma clamp −10..+10
 
-**Rule:** karma lives in `Game.karma`. Clamped to −10..+10 everywhere
-except two edge cases that are flagged in the audit.
+**Rule:** karma lives in `Game.karma`, clamped to −10..+10, and every
+change goes through `karma.adjust(game, delta, kind=, source=)`
+(`src/karma.py`); `tests/test_single_karma_entry_point.py` fails on any
+other write.
 
-- Primary setter: `_award_encounter_outcome` applies the clamp.
-- Judgment tiers (`_JUDGMENT_TIERS` in `game_divine.py`) map the clamped
-  value to a tier at the L99 altar.
-- Penitent weapon's `kill_count_karma_adjust` bypasses the clamp
-  (safe today because it only triggers when karma < 0 — see
-  SYSTEMS_AUDIT §4 P2).
-- If you add a new karma-grant path, use the helper, not raw
-  `self.karma += n`. (A `_adjust_karma(delta)` helper is a recommended
-  consolidation point.)
+- With `data/karma_rules.json: gate_enabled` (on) positive karma is
+  capped at +1 per 10-floor block (forgo / judgment / stance / kept
+  oath), plus up to +2 constancy a run; negatives are not capped. See
+  [karma_prayer §1.1](karma_prayer.md).
+- Judgment tiers (`_JUDGMENT_TIERS` in `npc_encounters.py`) map the
+  clamped value to a tier at the L99 altar.
+- Penitent weapon's `kill_count_karma_adjust` uses kind `'recovery'`:
+  it lifts karma only while below 0 and never above 0.
+- A new karma path picks an existing kind; never raw `self.karma += n`.
 
 ---
 
@@ -456,7 +458,7 @@ test that takes many seconds.
 | One-Q flow | `src/food_system.py`, `src/main.py` | cook / harvest / identify all pass `threshold=1` |
 | No masteries | `src/player.py::__setstate__` | pops dead attrs |
 | Save-bonus cap | `src/player.py` | `save_bonus_for(cat)` — hard cap 5 |
-| Karma clamp | `src/main.py` + mixins | `_award_encounter_outcome` |
+| Karma clamp | `src/karma.py` | `karma.adjust` (single entry point; block cap) |
 | SP failsafe | `src/player.py` | starvation damage loop |
 | Secret builds | `src/welcome_screen.py` | `SECRET_BUILDS`, `_qa_tools` gate |
 | System-sweep rule | this doc | §13 — manual discipline, not enforced |

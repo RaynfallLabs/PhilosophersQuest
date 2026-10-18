@@ -120,7 +120,16 @@ EFFECT_INFO: dict[str, tuple] = {
     'petrify_immune':     ('Stoneproof',         (205, 205, 130), 'Cannot be turned to stone'),
     'confuse_immune':     ('Clear-Headed',       (160, 220, 240), 'Cannot be confused'),
     'acid_resist':        ('Acid Resist',        (170, 220,  90), 'Gear and flesh shrug off corrosion'),
+    # ---- Story-encounter effects (ENCOUNTER_STORIES_DRAFT J3). Each lasts
+    # whole floors or turns as its reward says; none changes a stat. ----
+    'porter':             ('Porter',             (190, 160, 110), 'Someone carries part of your load: carry limit +50'),
+    'light':              ('Bright Lantern',     (255, 230, 140), 'Your lantern burns bright: sight radius +2'),
+    'sickly':             ('Sickly',             (160, 170,  90), 'A low fever: stamina drains twice as fast'),
 }
+
+# What each story effect does, read by the systems named (no stat changes).
+PORTER_CARRY_BONUS = 50      # Player.get_carry_limit
+LIGHT_SIGHT_BONUS = 2        # Player.get_sight_radius
 
 DEBUFFS: frozenset = frozenset({
     'paralyzed', 'sleeping', 'stunned', 'confused', 'blinded', 'hallucinating',
@@ -136,6 +145,8 @@ DEBUFFS: frozenset = frozenset({
     # Engine wave 3 (2026-05-30): heal_blocked debuff (Gae Dearg's wound).
     # Blocks restore_hp from working on target while active.
     'heal_blocked',
+    # Story-encounter debuff (the plague bar lifted at the boundary stone).
+    'sickly',
     # v2.15+ audit sync: Laevateinn's doom_dot was in EFFECT_INFO but missing
     # from DEBUFFS. Add so status HUD + strip-debuffs paths see it.
     'doom_dot',
@@ -163,6 +174,8 @@ BUFFS: frozenset = frozenset({
     'control_immune',
     # Cooked / power "ward" buffs that grant a timed saving-throw bonus.
     'save_guard_CON', 'save_guard_WIS', 'save_guard_DEX', 'save_guard_all',
+    # Story-encounter buffs that last whole floors (porter, a bright lantern).
+    'porter', 'light',
 })
 
 # --- Control / disable effects + D&D-style saving-throw support ---------------
@@ -454,6 +467,9 @@ _EXPIRE_MSGS: dict[str, tuple] = {
     'silenced':       ('You find your voice again.',            'success'),
     'hallucinating_pot': ('Reality snaps back into focus.',     'info'),
     'berserk':        ('The fury fades. You feel drained.',     'warning'),
+    'porter':         ('Nobody is carrying your load any more.', 'info'),
+    'light':          ('Your lantern burns down to its usual glow.', 'info'),
+    'sickly':         ('The fever breaks.',                     'success'),
     # v2.15+ audit sync: fill in expire messages that had been missing.
     'doom_dot':          ('The doom-tick releases you.',              'success'),
     'petrifying':        ('You feel your flesh soften back to life.', 'success'),
@@ -487,6 +503,28 @@ _EXPIRE_MSGS: dict[str, tuple] = {
 # API
 # --------------------------------------------------------------------------
 
+def _gall_saves_sight(player) -> bool:
+    """Raphael's Gall (Book of Tobit): the first time the eyes would go
+    dark, the gall in the pack is used up instead, and they do not."""
+    inv = list(getattr(player, 'inventory', None) or ())
+    gall = next((i for i in inv if getattr(i, 'cures_blindness_once', False)
+                 or getattr(i, 'id', '') == 'raphaels_gall'), None)
+    if gall is None:
+        return False
+    try:
+        player.remove_from_inventory(gall)
+    except Exception:
+        try:
+            player.inventory.remove(gall)
+        except ValueError:
+            return False
+    game = getattr(player, '_combat_game_ref', None)
+    if game is not None and hasattr(game, 'add_message'):
+        game.add_message("The dark comes over your eyes, and the fish's gall in your pack "
+                         "goes cold and is gone. The dark goes with it.", 'success')
+    return True
+
+
 def apply_effect(player, effect: str, duration: int) -> bool:
     """
     Try to apply *effect* for *duration* turns (-1 = permanent) to *player*.
@@ -495,6 +533,8 @@ def apply_effect(player, effect: str, duration: int) -> bool:
     for resist, blocked in _RESIST_BLOCKS.items():
         if effect in blocked and player.has_effect(resist):
             return False
+    if effect == 'blinded' and duration != 0 and _gall_saves_sight(player):
+        return False
 
     sync_timed_grants(player)
     current = player.status_effects.get(effect, 0)

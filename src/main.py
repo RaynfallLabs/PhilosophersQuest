@@ -76,6 +76,7 @@ from game_input import InputMixin
 from game_encounters import EncountersMixin
 from emberpup_encounter import EmberpupMixin, new_run_state as _emberpup_new_run
 from black_knight import BlackKnightMixin, new_run_state as _black_knight_new_run
+from setne_tomb import SetneMixin, new_run_state as _setne_new_run
 from game_magic import MagicMixin
 from game_combat import CombatMixin
 from game_divine import DivineMixin
@@ -182,7 +183,8 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
-           EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin):
+           EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
+           SetneMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -300,6 +302,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # off the shared random stream, like the Emberpup.
         self._black_knight: dict = _black_knight_new_run()
         self._bk_speech = None                # his floating line, while it shows
+        # Setne's Tomb (one floor of 45-65, every run): {'floor', 'spawned',
+        # 'sealed', 'room'}. The Book of Thoth's only source (setne_tomb.py).
+        self._setne: dict = _setne_new_run()
+        self._npc_after_close: list = []      # 'seal_door' / 'expel_up' after an outcome page
         self._notified_rooms: set = set()  # (cx, cy) of special rooms already notified
         # Drop-item state
         self.drop_menu_items: list = []
@@ -398,7 +404,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._npc_encounter_levels = select_encounter_levels()
         self._npc_trigger_item_levels: dict = get_trigger_item_levels(self._npc_encounter_levels)
         self._npc_trigger_items_placed: set = set()  # item IDs already spawned as floor loot
-        # Flavor (non-karmic) encounters
+        # Story and flavor encounters (the legacy roll; the Road replaces
+        # it below while road_enabled is on)
         from flavor_encounters import select_flavor_encounters
         self._flavor_encounter_levels: dict = select_flavor_encounters()
         self._encountered_flavor_npcs: set = set()
@@ -572,7 +579,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # QA tools flag (Titivillus debug build): unlocks Shift+I immortal toggle
         # and Shift+W floor warp from the player turn.
         self.player.qa_tools = bool(b.get('_qa_tools', False))
-        # Chronicle: secret build
+        # Journal: secret build
         if self.secret_build:
             bname = self.secret_build.get('_name', self.player_name)
             self._chron('milestone', f"My name is {bname}. I know things others don't. This changes everything.")
@@ -628,7 +635,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         else:
             self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
-        # Chronicle: entering the dungeon
+        # Journal: entering the dungeon
         self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
 
     def _apply_save_affinity(self):
@@ -889,7 +896,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._death_save_used  = state.get('_death_save_used', False)
         self._tarnhelm_used    = state.get('_tarnhelm_used', False)
         self._quiz_reroll_used = state.get('_quiz_reroll_used', False)
-        # Chronicle dedup guards
+        # Journal dedup guards
         self._chronicle_abaddon_start = state.get('_chronicle_abaddon_start', False)
         # Magic carrot + ethereal unicorn one-shot spawn state (added 2026-05-19
         # save-lifecycle audit). Without these, reload re-rolls the spawn
@@ -915,6 +922,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._black_knight = dict(_bk) if isinstance(_bk, dict) else {
             'floor': None, 'spawned': False, 'outcome': None, 'sword_dropped': False}
         self._bk_speech = None
+        # Setne's Tomb: a save from before it keeps a run without it.
+        _st = state.get('_setne')
+        self._setne = dict(_st) if isinstance(_st, dict) else {
+            'floor': None, 'spawned': False, 'sealed': False, 'room': None}
+        self._npc_after_close = []
         # Journal & Lore Hints. An old save holds plain "text (L#)" strings:
         # they become 'legacy' entries that display exactly as before.
         import chronicle as _chronicle_mod
@@ -1582,7 +1594,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"Níðhöggr's Scale stirs — your mana deepens. (+{_per_desc_mp} max MP)",
                     'success')
         self._notified_rooms = set()   # reset per-floor special room notifications
-        # Chronicle: level milestones and maze entries
+        # Journal: level milestones and maze entries
         _MILESTONE_FLAVOR = {
             10: "The tunnels twisted into a maze here. Somebody built this to confuse, and they were good at it.",
             20: "The air got heavier on the way down. I could hear something large breathing.",
@@ -1638,6 +1650,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_cow(new_level)
             self._maybe_spawn_emberpup(new_level)
             self._maybe_spawn_black_knight(new_level)
+            self._maybe_spawn_setne_tomb(new_level)
             self._maybe_place_duck_of_doom(new_level)
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
@@ -1719,6 +1732,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._rotating_chain_subject = None
         # Achilles' helm (ringing_intimidation) is rolled when a monster first
         # sees the wearer (_refresh_fov): on arrival nothing is within reach.
+        # Effects that last whole floors (a porter, a bright lantern) count
+        # down on each new depth, never on a revisit or the Cow Level.
+        if _new_depth:
+            for _msg, _kind in self.player.tick_floor_effects():
+                self.add_message(_msg, _kind)
         # Haramaki of Yoshitsune (descent_haste): on descent, gain hasted for N turns.
         if enter_from_top and _new_depth:      # a descent into new depth
             try:
@@ -2153,6 +2171,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for _omen in _omens:
                 self.add_message(_omen, 'warning')
             self.dungeon.omen_messages = []
+        # A hostile scene (the dead come for the Book of Thoth) does not wait
+        # to be bumped into: it finds the hero on arrival.
+        self._hostile_encounter_arrives()
 
     def _give_starting_kit(self):
         """Give the player their starting kit, adjusted for their secret build."""
@@ -2956,7 +2977,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._handle_unicorn_bump(target)
                 self._advance_turn()
                 return
-            # Flavor encounter: non-karmic NPC interaction
+            # Story or flavor encounter (light ones never touch karma)
             if getattr(target, '_flavor_encounter_tag', None):
                 self._start_flavor_encounter(target)
                 return
@@ -2977,6 +2998,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._refresh_fov()
             _snd.play('door')
             self.add_message("You open the door.", 'info')
+            self._setne_door_opened(nx, ny)
             self._tick_sp()
             if self.state != STATE_DEAD:
                 self._notify_stairs(nx, ny)
@@ -3882,6 +3904,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'tablet_of_second_death', 'complete_tablet_of_second_death', 'death_bane',
         # the side-quest pieces a later encounter asks for (trigger items)
         'lions_thorn', 'cuthberts_gospel', 'sealed_dispatch',
+        # promises carried from the story encounters (an oath keeps on them)
+        'book_of_thoth', 'brennans_sword', 'wats_oil_flask', 'olifant',
     ))
 
     @staticmethod
@@ -4765,8 +4789,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             else:
                 self.add_message("The water washes over you harmlessly.", 'info')
         elif trap_type == 'polymorph':
-            import copy as _copy
-            from items import load_items as _load
             # Ordinary gear only, into ordinary gear. The pools for weapons,
             # armor and shields hold nothing but named pieces now, so a tin
             # flail became a legend and a wooden shield became the Aegis the
@@ -5312,6 +5334,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Ring of Sustenance halves again (1 per 4 moves)
         self._sp_drain_tick = getattr(self, '_sp_drain_tick', 0) + 1
         drain_interval = 4 if self.player.has_effect('sustained') else 2
+        # Sickly (a fever caught at a plague village's bar): twice as fast.
+        if self.player.has_effect('sickly'):
+            drain_interval = max(1, drain_interval // 2)
         # The Endless Wanderer quirk: walking drains SP at half the rate.
         # (The quirk set this flag but nothing read it.)
         if self.player.quirk_progress.get('wanderlust_active'):
@@ -5552,7 +5577,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._chron(
                         'discovery', "Ten scraps of leather. I do not know why I kept them. "
                         "Together they would about make a shoe, for a very large foot.")
-            # Chronicle notable pickups (quest artifacts)
+            # Journal: notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
                 'philosophers_stone', 'ariadnes_thread', 'bronze_bull',
                 'eye_of_graeae', 'broken_gram', 'gleipnir',
@@ -5590,7 +5615,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # every quest piece has its own line.)
                 if item.id in _CHRONICLE_FLAVOR:
                     self._chron('discovery', _CHRONICLE_FLAVOR[item.id], once=f'pickup:{item.id}')
-            # Material discovery chronicle: first time the player sees each
+            # Material discovery Journal line: first time the player sees each
             # material (cold iron, mithril, etc.), log the discovery line.
             _mat_id = getattr(item, 'material', None)
             if _mat_id and _mat_id not in self.player.chronicle_seen_materials:
@@ -8171,8 +8196,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'oath', "Carried Sir Aldric's stone to an altar. It broke there. "
                     "I had almost stopped noticing the weight.")
                 # The oath sworn when the stone was taken is kept here: deed
-                # kept.aldric_lodestone and an 'oath' award (0 while the
-                # take still pays today's point; Phase 3a moves it here).
+                # kept.aldric_lodestone and the 'oath' point (taking the
+                # stone is a promise and pays nothing; keeping it pays).
                 self._keep_oath('aldric_lodestone')
                 import deeds as _deeds_mod
                 _deeds_mod.close_thread(self._deeds_reg(), 'aldric_candle')
@@ -8183,6 +8208,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     "This is a thing to be laid before God, not left in a corridor.",
                     'warning')
             return
+        # The Book of Thoth, laid on an altar while its return is owed:
+        # refused unread, kept on time, or kept late (setne_tomb.py).
+        if getattr(item, 'id', '') == 'book_of_thoth' and \
+                self.dungeon.is_altar(self.player.x, self.player.y):
+            if self._thoth_on_altar(item):
+                return
         # Cursed EQUIPPED items cannot be dropped — but cursed items in inventory CAN be
         is_equipped = (item is self.player.weapon or item is self.player.ranged_weapon
                        or item is self.player.shield

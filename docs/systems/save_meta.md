@@ -156,9 +156,15 @@ state = {
     'heavenly_host_active':   bool,
     'abaddon_resist_removed_turns': int,
     '_l100_altars_used':      set,
-    'karma':                  int,          # clamped -10..+10 by setters
+    'karma':                  int,          # clamped -10..+10; only karma.adjust writes it
+    '_deeds':                 dict,         # deeds register: deeds, oaths, people, threads,
+                                            # pending callbacks, karma block slots + ledger
+    '_road':                  dict,         # the Road (road.py): seed, slots, used tags
+    'escorts':                list,         # escort_system.Escort (never in 'pets')
+    '_setne':                 dict,         # Setne's Tomb: floor, placed, sealed, room
 
-    # NPC / flavor encounter tracking
+    # NPC / flavor encounter tracking (the views the spawners read;
+    # filled by the Road)
     '_npc_encounter_levels':  dict,
     '_encountered_npcs':      set,
     '_flavor_encounter_levels': dict,
@@ -201,7 +207,7 @@ state = {
     '_tarnhelm_used':         bool,
     '_quiz_reroll_used':      bool,
 
-    # Chronicle guards
+    # Journal guards (attribute names keep the old "chronicle" spelling)
     '_chronicle_abaddon_start': bool,
 
     # Magic carrot + ethereal unicorn one-shot spawns
@@ -211,7 +217,7 @@ state = {
     '_unicorn_target_level':  int | None,
 
     # Encyclopedia tab state
-    '_chronicle':             list,
+    '_chronicle':             list,         # the Journal's entries (chronicle.py)
     '_recalled_hints':        list,
     '_cooked_recipes':        list,
 
@@ -642,10 +648,9 @@ crash file (tester-shareable), then log (archival).
 3. **No `_combat_game_ref` in pickle.** Enforced in
    `Player.__getstate__`. Pygame Surfaces are not picklable; this
    was the "cannot pickle Surface" save-loss bug of record.
-4. **No raw `self.karma += n`.** Use the clamp helper
-   (`_award_encounter_outcome`); the Penitent weapon's bypass is the
-   one documented exception and is safe only because of its triggering
-   condition.
+4. **No raw `self.karma += n`.** Every change goes through
+   `karma.adjust` (`src/karma.py`), including the Penitent weapon (kind
+   `'recovery'`); `tests/test_single_karma_entry_point.py` enforces it.
 5. **Delete only on death.** `delete_save` is not called from
    victory, exit-quest, or quit-to-menu paths.
 6. **Load defaults all new fields.** `getattr(game, 'xxx', default)`

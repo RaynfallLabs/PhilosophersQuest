@@ -40,7 +40,9 @@ def test_roles_per_band():
             assert len(by['anchor']) == 1, (band, mine)
             lo, hi = road.ANCHOR_RANGE[band]
             assert lo <= by['anchor'][0] <= hi
-            assert len(by['medium']) == 1
+            # Odd bands carry a second medium slot instead of a high one
+            # (Brandon: every block offers two or three real chances).
+            assert len(by['medium']) == (2 if band % 2 else 1), (band, mine)
             if band in (2, 4, 6, 8, 10):
                 assert len(by['high']) == 1
                 if band == 2:
@@ -48,8 +50,8 @@ def test_roles_per_band():
             else:
                 assert not by['high']
         counts = [r['role'] for r in roles.values()]
-        assert counts.count('anchor') == 10 and counts.count('medium') == 10
-        assert counts.count('high') == 5 and counts.count('light') == 20
+        assert counts.count('anchor') == 10 and counts.count('medium') == 15
+        assert counts.count('high') == 5 and counts.count('light') == 15
 
 
 def test_emberpup_and_black_knight_floors_hold_no_medium_or_high_slot():
@@ -63,6 +65,13 @@ def test_emberpup_and_black_knight_floors_hold_no_medium_or_high_slot():
             slot = st['slots'].get(f)
             if slot is not None:
                 assert slot['role'] in ('anchor', 'light'), (f, slot)
+        # the odd bands keep their second medium slot whenever a free floor exists
+        for band in (1, 3, 5, 7, 9):
+            mine = [f for f in st['slots'] if road.band_of(f) == band]
+            meds = [f for f in mine if st['slots'][f]['role'] == 'medium']
+            spare = [f for f in mine if f not in (ember, knight)
+                     and st['slots'][f]['role'] != 'anchor']
+            assert len(meds) == min(2, len(spare)), (band, mine, meds)
         # band 2 still has its high slot whenever another floor >= 15 exists
         b2 = [f for f in st['slots'] if road.band_of(f) == 2 and f >= 15 and f != knight]
         highs = [f for f, v in st['slots'].items() if road.band_of(f) == 2 and v['role'] == 'high']

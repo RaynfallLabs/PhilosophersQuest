@@ -32,8 +32,10 @@ def gate_on(monkeypatch):
     return r
 
 
-def test_shipped_gate_is_off():
-    assert karma.gate_enabled() is False
+def test_shipped_gate_is_on():
+    # Switched on with the story content (Phase 3, 2026-10-17).
+    assert karma.gate_enabled() is True
+    assert karma.rules().get('road_enabled') is True
     assert 'reckless' not in karma.KINDS            # Brandon, decision 9
     assert {c['id'] for c in karma.rules()['constancy']} >= {'temperance', 'faithful',
                                                              'discerning', 'steadfast'}
@@ -55,7 +57,7 @@ def _old_penitent(k):          # combat.py, Penitent's Blade, before
 
 
 @pytest.mark.parametrize('k', range(-10, 11))
-def test_gate_off_parity_every_site(k):
+def test_gate_off_parity_every_site(k, gate_off):
     for d in (-2, -1, 1, 2):
         g = _game(k, deepest=35)
         karma.adjust(g, d, kind='legacy', source='npc')
@@ -74,7 +76,7 @@ def test_gate_off_parity_every_site(k):
     assert g.karma == _old_penitent(k)
 
 
-def test_gate_off_never_absorbs_but_records_slots_and_ledger():
+def test_gate_off_never_absorbs_but_records_slots_and_ledger(gate_off):
     g = _game(0, deepest=5)
     for _ in range(4):                               # four +1s in one block
         assert karma.adjust(g, 1, kind='legacy', source='a') == 1

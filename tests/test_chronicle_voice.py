@@ -56,6 +56,8 @@ DYNAMIC_SOURCES = {
     "text": 'karma_rules.json chronicle / the shim',
     "line": 'encounter outcome chronicle (data) or a literal set in the function',
     "_own": 'encounter option chronicle (data)',
+    "al['on_time_chronicle']": 'data/setne_tomb.json altar',
+    "al['late_chronicle']": 'data/setne_tomb.json altar',
     "_BOSS_CHRONICLE.get(monster.kind, f'Killed {monster.name}. It is done.')": 'inline table',
 }
 

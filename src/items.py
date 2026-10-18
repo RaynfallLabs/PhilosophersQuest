@@ -914,6 +914,17 @@ class Accessory(Item):
         # Lugh). Distinct from `passive_attack_chain_cap_bonus` on chain-equip
         # items (Ring of Gawain); both flow through `chain_passives.get_attack_chain_cap_bonus`.
         self.attack_chain_cap_bonus: int = int(defn.get('attack_chain_cap_bonus', 0) or 0)
+        # Story-encounter accessories (ENCOUNTER_STORIES_DRAFT J3):
+        # quiz_timer_bonus -- seconds on every timed quiz while worn
+        #   (Player.get_quiz_extra_seconds): the Brass Warden's Cog, the
+        #   black string bracelet.
+        # bound_to_wielder -- never comes off once worn (Player.try_unequip_slot),
+        #   whatever a scroll does to its curse: Azarael's Brand, the bracelet.
+        # calms_locusts -- the Locust cult's charm: locusts leave the wearer
+        #   alone until struck (game_combat._locust_calmed).
+        self.quiz_timer_bonus: int = int(defn.get('quiz_timer_bonus', 0) or 0)
+        self.bound_to_wielder: bool = bool(defn.get('bound_to_wielder', False))
+        self.calms_locusts: bool = bool(defn.get('calms_locusts', False))
         # Chain-equip fields (legendary uniques only). When equip_chain_mode is set
         # to 'escalator' or 'chain', equipping triggers that quiz mode. Default
         # subject for accessories is 'history' if equip_chain_subject is empty.
@@ -1045,7 +1056,8 @@ class Spellbook(Item):
         # v2.10.0: unique-artifact flag (kept out of regular spawn pool via
         # min_level: 9999) + consumable-artifact flag (routes through the
         # Book-of-Thoth omniscience handler instead of the normal learn-a-spell
-        # path). See game_magic._learn_from_spellbook.
+        # path; despite the name the book is not consumed, only spent after
+        # one read). See game_magic._read_book_of_thoth.
         self.is_unique: bool               = bool(defn.get('is_unique', False))
         self.is_consumable_artifact: bool  = bool(defn.get('is_consumable_artifact', False))
 
@@ -1053,6 +1065,9 @@ class Spellbook(Item):
 class Artifact(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
+        # Raphael's Gall: used up the first time the eyes would go dark
+        # (status_effects._gall_saves_sight).
+        self.cures_blindness_once: bool = bool(defn.get('cures_blindness_once', False))
 
 
 class Lockpick(Item):

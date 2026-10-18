@@ -1044,7 +1044,7 @@ class DivineMixin:
         karma_tier = _karma_tier(karma)
         effective = chain + (1 if at_altar else 0)
 
-        # Prayer holds Death back. The chronicle tells the fleeing player
+        # Prayer holds Death back. The Journal tells the fleeing player
         # "I need to pray" and DeathMonster has always honoured
         # _frozen_turns, but nothing ever set it.
         _death = getattr(self, 'death_monster', None)

@@ -1,8 +1,8 @@
 """Encounter validator (DEEDS_KARMA_DESIGN.md section 8.3, with Brandon's
 decisions in section 11).
 
-Checks every encounter in data/npc_encounters.json, data/flavor_encounters.json
-and the hardcoded FLAVOR_ENCOUNTERS list, after encounter_schema.normalise:
+Checks every encounter in data/npc_encounters.json and data/flavor_encounters.json,
+after encounter_schema.normalise:
 fields and types, the option rules (at most four visible, a free way out, no
 reward beside a quiz), the karma rules P5-P12, virtue tags, the stakes table,
 quizzes, references, disguises, and the road / chronicle lint.
@@ -14,6 +14,7 @@ empty by the end of Phase 3a; the test also fails on a stale entry.
     py -m tools.encounters.validate            # errors not on the allowlist
     py -m tools.encounters.validate --all      # every finding, allowlisted too
     py -m tools.encounters.validate --report   # +1 karma chances per block
+    py -m tools.encounters.validate --budget   # expected +1 chances per block (Road slots)
 """
 from __future__ import annotations
 
@@ -29,6 +30,7 @@ if SRC not in sys.path:
     sys.path.insert(0, SRC)
 
 ALLOWLIST_PATH = os.path.join(ROOT, 'tests', 'encounter_legacy_allow.json')
+PENDING_KEY = 'pending_engine'
 
 ENC_KEYS = {
     'tag', 'name', 'symbol', 'color', 'sprite_id', 'text', 'options', 'proper_noun',
@@ -36,37 +38,55 @@ ENC_KEYS = {
     'chain_after', 'role', 'stakes', 'band', 'person', 'requires', 'forbids',
     'text_variants', 'contested', 'stance', 'stance_note', 'tragedy', 'disguise',
     'callback_only', 'fallback_anchor', 'chronicle_meet', 'escorts', 'road_ok',
+    # J3: a scene that finds the hero on arrival and has no walk-away (C19).
+    'hostile',
 }
 OUTCOME_KEYS = {
     'outcome', 'outcome_variants', 'karma', 'karma_kind', 'virtue', 'reward',
     'bonus_reward', 'cost', 'deeds', 'oath', 'oath_keep', 'oath_break',
     'oath_release', 'schedule', 'delayed', 'escort', 'person_status', 'thread',
     'thread_close', 'chronicle', 'fight', 'then',
+    # J3 (ENCOUNTER_STORIES_DRAFT): a lapse settled in a scene, other people
+    # the scene changes, the encounter person's last line, the encounter
+    # room's door turning to wall, the floor giving the hero up, and the
+    # per-person lines table (The Gate).
+    'oath_lapse', 'people', 'last_line', 'seal_door', 'expel_up', 'people_lines',
 }
 OPTION_ONLY_KEYS = {
     'label', 'quiz', 'pass', 'fail', 'requires', 'forbids', 'hidden', 'hidden_group',
     'villain', 'side', 'naive', 'warning', 'road', 'fail_reward',
+    # J3: consequences as each round is lost; a fail that reads by rounds won.
+    'per_miss', 'fail_by_correct',
 }
+QUIZ_KEYS = {'subject', 'tier', 'mode', 'threshold', 'total_qs', 'timed', 'title',
+             'max_chain', 'pass_at', 'play_all'}
+OATH_KEYS = {'id', 'to', 'what', 'item_id', 'due_floors', 'thread', 'lapse_chronicle',
+             'lapse_mode'}
+PER_MISS_KEYS = {'text', 'cost', 'effect', 'deeds'}
+PEOPLE_KEYS = {'id', 'name', 'status', 'deserving', 'owes', 'owed', 'last_line'}
+PEOPLE_LINES_KEYS = {'table', 'max', 'after', 'none'}
 COST_TYPES = {
     'food', 'healing_potion', 'potion', 'scroll', 'weapon', 'gold', 'hp_percent',
     'max_hp', 'sp', 'hp', 'mp', 'random_item', 'triggered_item', 'accept_item',
     'spawn_deadite_ambush', 'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct',
-    'triggered_item_id', 'stat',
+    'triggered_item_id', 'stat', 'armor_enchant', 'multi',
 }
+ITEM_COSTS = {'food', 'healing_potion', 'potion', 'scroll', 'weapon'}
 PCT_COSTS = {'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct', 'hp_percent'}
 REWARD_TYPES = {
     'gold', 'random_weapon', 'random_armor', 'random_shield', 'random_accessory',
     'random_potion', 'random_scroll', 'random_food', 'random_wand', 'stat',
     'specific_item', 'random_item', 'effect', 'hp_restore', 'sp_restore', 'mp_restore',
     'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct', 'enchant_weapon', 'message',
-    'multi',
+    'multi', 'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact',
 }
+THREAD_KEYS = {'id', 'hint', 'closed_line'}
 STAT_NAMES = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
 ROAD_BANNED = ('karma', 'quiz', 'option', 'choose', 'press', 'light', 'medium', 'high',
                'stakes')
 CALLBACK_KEYS = {'encounter', 'after_floors', 'requires', 'replace', 'if_missed', 'thread',
-                 'lost_line'}
-DELAYED_KEYS = {'after_floors', 'reward', 'requires', 'text', 'chronicle'}
+                 'lost_line', 'after_oath_due'}
+DELAYED_KEYS = {'after_floors', 'reward', 'cost', 'requires', 'text', 'chronicle'}
 ESCORT_KEYS = {'id', 'name', 'sprite_id', 'color', 'hp', 'ac', 'goal', 'leash', 'floors',
                'perk', 'on_arrive', 'on_fail', 'on_arrive_variants', 'on_fail_variants',
                'on_fail_trapdoor', '$ref'}
@@ -95,9 +115,26 @@ def load_all():
 
 
 def load_allowlist(path: str = ALLOWLIST_PATH) -> dict:
+    """tag -> codes. The ``pending_engine`` section (tag -> codes) lists the
+    breaches that exist only because a field's engine support is being built
+    in parallel (ENCOUNTER_STORIES_DRAFT.md J3). It is merged in here, and it
+    is emptied once that work is merged."""
     with open(path, encoding='utf-8') as f:
         data = json.load(f)
-    return {k: set(v) for k, v in data.items() if not k.startswith('_')}
+    out = {k: set(v) for k, v in data.items()
+           if not k.startswith('_') and k != PENDING_KEY}
+    for tag, codes in (data.get(PENDING_KEY) or {}).items():
+        if not tag.startswith('_'):
+            out.setdefault(tag, set()).update(codes)
+    return out
+
+
+def load_pending(path: str = ALLOWLIST_PATH) -> dict:
+    """Only the ``pending_engine`` section: tag -> codes."""
+    with open(path, encoding='utf-8') as f:
+        data = json.load(f)
+    return {k: set(v) for k, v in (data.get(PENDING_KEY) or {}).items()
+            if not k.startswith('_')}
 
 
 def _subjects() -> set:
@@ -132,6 +169,24 @@ def _rules() -> dict:
         return json.load(f)
 
 
+def _monster_ids() -> set:
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        return set(json.load(f))
+
+
+def _people_tables() -> set:
+    try:
+        with open(os.path.join(ROOT, 'data', 'gate_lines.json'), encoding='utf-8') as f:
+            return {k for k in json.load(f) if not k.startswith('_')}
+    except (OSError, ValueError):
+        return set()
+
+
+def _effect_ids() -> set:
+    from status_effects import EFFECT_INFO
+    return set(EFFECT_INFO)
+
+
 # ------------------------------------------------------------------ scoring
 
 def reward_value(reward, table: dict) -> float:
@@ -143,8 +198,13 @@ def reward_value(reward, table: dict) -> float:
         return sum(reward_value(r, table) for r in reward.get('rewards') or ())
     spec = table.get(rtype) or {}
     v = float(spec.get('flat', 0))
+    # A named item can be worth more than the flat price (the Book of Thoth
+    # is the greatest prize in the game): "items": {id: value} replaces it.
+    items = spec.get('items') if isinstance(spec.get('items'), dict) else {}
+    if reward.get('item_id') in items:
+        v = float(items[reward['item_id']])
     for field, coef in spec.items():
-        if field == 'flat':
+        if field in ('flat', 'items'):
             continue
         if field == 'amount' and 'amount' not in reward and 'min' in reward:
             val = (float(reward['min']) + float(reward.get('max', reward['min']))) / 2
@@ -154,11 +214,59 @@ def reward_value(reward, table: dict) -> float:
     return v
 
 
-def option_value(opt: dict, table: dict) -> float:
-    """An option's material reward: the best branch it can lead to."""
+# A cost scored as the reward it gives up. P7 compares a forgo option with
+# its temptation net of what each costs: keeping the sword you would
+# otherwise hand over IS the greater benefit.
+COST_AS_REWARD = {
+    'food': 'random_food', 'healing_potion': 'random_potion', 'potion': 'random_potion',
+    'scroll': 'random_scroll', 'weapon': 'random_weapon', 'random_item': 'random_item',
+    'triggered_item': 'specific_item', 'triggered_item_id': 'specific_item',
+}
+_PCT_COST_AS = {'hp_pct': 'hp_restore_pct', 'sp_pct': 'sp_restore_pct',
+                'mp_pct': 'mp_restore_pct', 'max_hp_pct': 'hp_restore_pct',
+                'hp_percent': 'hp_restore_pct', 'gold_pct': 'gold_pct'}
+
+
+def cost_value(cost, table: dict) -> float:
+    """What paying ``cost`` gives up, on the reward_value scale."""
+    if not isinstance(cost, dict):
+        return 0.0
+    ctype = cost.get('type')
+    if ctype == 'multi':
+        return sum(cost_value(c, table) for c in cost.get('costs') or ())
+    if ctype in COST_AS_REWARD:
+        rw = {'type': COST_AS_REWARD[ctype]}
+        if 'count' in cost:
+            rw['count'] = cost['count']
+        return reward_value(rw, table)
+    if ctype in _PCT_COST_AS:
+        return reward_value({'type': _PCT_COST_AS[ctype], 'amount': cost.get('amount', 0)}, table)
+    if ctype == 'gold':
+        return reward_value({'type': 'gold', 'amount': cost.get('amount', 0)}, table)
+    if ctype == 'stat':
+        return reward_value({'type': 'stat', 'amount': cost.get('amount', 1)}, table)
+    return 0.0
+
+
+def option_value(opt: dict, table: dict, enc: dict | None = None) -> float:
+    """An option's material worth: the best branch it can lead to (an
+    escort's arrival reward included), net of what the option costs."""
     from encounter_schema import option_branches
-    return max((reward_value(b.get('reward'), table) + reward_value(b.get('bonus_reward'), table)
-                for b in option_branches(opt)), default=0.0)
+    vals = []
+    deed_prices = table.get('deeds') if isinstance(table.get('deeds'), dict) else {}
+    for b in option_branches(opt):
+        v = reward_value(b.get('reward'), table) + reward_value(b.get('bonus_reward'), table)
+        for d in b.get('deeds') or ():
+            v += float(deed_prices.get(d if isinstance(d, str) else (d or {}).get('id'), 0))
+        esc = b.get('escort')
+        if isinstance(esc, dict):
+            spec = (((enc or {}).get('escorts') or {}).get(esc['$ref'])
+                    if '$ref' in esc else esc)
+            v += reward_value(((spec or {}).get('on_arrive') or {}).get('reward'), table)
+        if b is not opt and b.get('cost'):
+            v -= cost_value(b['cost'], table)
+        vals.append(v)
+    return max(vals, default=0.0) - cost_value(opt.get('cost'), table)
 
 
 def _norm(s: str) -> str:
@@ -193,7 +301,8 @@ def _road_lint(road: dict, label: str) -> list:
         bad.append('banned word')
     if len(hint) > 90:
         bad.append('too long')
-    if label and _norm(label) and _norm(label) in _norm(hint):
+    # A label of a word or two ("Refuse") may share a word with its hint.
+    if label and len(_norm(label).split()) >= 3 and _norm(label) in _norm(hint):
         bad.append('quotes the label')
     return bad
 
@@ -288,7 +397,7 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
             ungrouped_cond += 1
         else:
             unconditional += 1
-        if not conditional and not o.get('cost') and not is_quiz(o) \
+        if not conditional and not o.get('cost') and not is_quiz(o) and not o.get('fight') \
                 and o.get('hidden_group') is None:
             free_exit = True
         if o.get('hidden') and not conditional:
@@ -301,18 +410,43 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                 if not isinstance(o.get(b), dict) or not isinstance(o[b].get('outcome'), str):
                     err('quiz_shape', f'{where}: {b} needs an outcome')
             _check_quiz(err, where, o['quiz'], stakes, source, ctx, QUIZ_MODES)
+            _check_per_miss(err, where, o, stakes, ctx)
         elif not isinstance(o.get('outcome'), str):
             err('field', f'{where}: no outcome')
+        if not is_quiz(o):
+            for k in ('per_miss', 'fail_by_correct'):
+                if k in o:
+                    err('quiz_shape', f'{where}: {k!r} needs a quiz')
         if o.get('cost') is not None:
             _check_cost(err, where, o['cost'], stakes)
         for b in option_branches(o):
+            if b is not o:
+                for k in b:
+                    if k not in OUTCOME_KEYS:
+                        err('unknown_key', f'{where}: outcome key {k!r}')
+            th = b.get('thread')
+            if th is not None:
+                if not (isinstance(th, dict) and re.fullmatch(r'[a-z0-9_]+', str(th.get('id', '')))):
+                    err('thread', f'{where}: a thread needs an id [a-z0-9_]+')
+                else:
+                    for k in th:
+                        if k not in THREAD_KEYS:
+                            err('unknown_key', f'{where}: thread key {k!r}')
             for rk in ('reward', 'bonus_reward'):
                 if b.get(rk) is not None:
                     _check_reward(err, where, b[rk])
             if b is not o and b.get('cost') is not None:
-                if not (b is o.get('fail') and stakes == 'high') and not o.get('naive'):
-                    err('stakes', f'{where}: an outcome cost only in a high-stakes fail '
-                                  'or a naive option')
+                # A fail branch (or a fail read by rounds won) may carry a loss
+                # at high stakes, or where it lands the very trap a naive
+                # sibling walks into (a failed look at the crying girl ends
+                # where following her does).
+                _fails = [o.get('fail')] + list((o.get('fail_by_correct') or {}).values())
+                fail_ok = any(b is f for f in _fails) and (stakes == 'high'
+                                                           or has_naive_sibling(enc, o))
+                # A price paid only on success ("half fare, if he agrees").
+                if not fail_ok and b is not o.get('pass') and not o.get('naive'):
+                    err('stakes', f'{where}: an outcome cost only in a pass, a high-stakes '
+                                  'fail, a fail beside a naive sibling, or a naive option')
                 _check_cost(err, where, b['cost'], stakes)
             for d in b.get('deeds') or ():
                 did = d if isinstance(d, str) else (d or {}).get('id')
@@ -323,12 +457,20 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                     err('virtue', f'{where}: virtue tags are engine-only')
             for v in b.get('outcome_variants') or ():
                 cond_ok(v.get('when'), where)
+                for vk in v:
+                    if vk not in ('when', 'outcome', 'chronicle'):
+                        err('unknown_key', f'{where}: outcome_variants key {vk!r}')
+                if v.get('chronicle'):
+                    bad = _chron_lint(v['chronicle'])
+                    if bad:
+                        err('chronicle_lint', f"{where} variant: {', '.join(bad)}")
             if b.get('chronicle'):
                 bad = _chron_lint(b['chronicle'])
                 if bad:
                     err('chronicle_lint', f"{where}: {', '.join(bad)}")
             if b.get('then') not in (None, 'close', 'options'):
                 err('field', f"{where}: then {b.get('then')!r}")
+            _check_j3_outcome(err, where, b, stakes, ctx, cond_ok)
             for cb in b.get('schedule') or ():
                 _check_callback(err, where, cb, cond_ok)
             for dl in b.get('delayed') or ():
@@ -336,9 +478,8 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
             esc = b.get('escort')
             if esc is not None and not (isinstance(esc, dict) and '$ref' in esc):
                 _check_escort(err, where, esc)
-            fight = b.get('fight')
-            if fight is not None and not (isinstance(fight, dict) and fight.get('monster_id')):
-                err('field', f'{where}: fight needs a monster_id')
+            if b.get('fight') is not None:
+                _check_fight(err, where, b['fight'], ctx)
         if o.get('road') is not None:
             bad = _road_lint(o['road'], o.get('label', ''))
             if bad:
@@ -350,7 +491,15 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
     bound = unconditional + len(groups) + ungrouped_cond
     if bound > MAX_VISIBLE:
         err('visible', f'up to {bound} options visible at once (max {MAX_VISIBLE})')
-    if not free_exit:
+    if enc.get('hostile') is not None and not isinstance(enc.get('hostile'), bool):
+        err('field', 'hostile is true or false')
+    if enc.get('hostile'):
+        # The dead do not let you walk away, but they must come to fight.
+        if not enc.get('callback_only'):
+            err('hostile', 'a hostile scene is callback_only (it comes for the hero)')
+        if not any(b.get('fight') for o in opts for b in option_branches(o)):
+            err('hostile', 'a hostile scene needs at least one option that starts a fight')
+    elif not free_exit and not _free_in_every_state(opts):
         err('free_exit', 'no unconditional option without a cost (a way to walk away)')
 
     # ---- karma rules
@@ -367,8 +516,11 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                 err('karma_kind', f'{where}: unknown kind {kind!r}')
             if k and kind is None:
                 err('karma_kind_missing', f'{where}: karma {k:+d} without karma_kind')
-            if abs(k) > 1:
-                err('karma_size', f'{where}: karma {k:+d} (at most one point a choice)')
+            # At most +1 a choice. A choice may cost two only for the gravest
+            # wrongs (handing someone to their death, freeing a fallen Power).
+            if k > 1 or k < -2 or (k == -2 and kind not in ('cruelty', 'sacrilege', 'betray')):
+                err('karma_size', f'{where}: karma {k:+d} (at most +1; -2 only for '
+                                  'cruelty, sacrilege or betray)')
             if k > 0 and kind in ('constancy', 'recovery'):
                 err('karma_kind', f'{where}: {kind} is engine-only')
             if k > 0 and kind == 'oath':
@@ -376,21 +528,23 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
             if k < 0 and kind in karma.POSITIVE_GATED | karma.POSITIVE_UNGATED:
                 err('karma_kind', f'{where}: negative karma with positive kind {kind!r}')
             if k > 0 and kind == 'forgo':
-                _check_forgo(err, where, o, opts, table)
+                _check_forgo(err, where, o, opts, table, enc)
             if k > 0 and kind == 'judgment':
-                if b is not o.get('pass') or not has_naive_sibling(enc, o):
+                in_pass = b is o.get('pass') and has_naive_sibling(enc, o)
+                if not in_pass and not _after_a_pass(enc, o)                         and not _unlocked_by_judged_pass(enc, o):
                     err('judgment', f'{where}: judgment +1 only in a quiz pass with a '
-                                    'naive sibling')
+                                    'naive sibling, or on a follow-up only that pass reveals')
             if k > 0 and kind == 'stance':
                 if not enc.get('stance') or o.get('side') != 'right':
                     err('stance', f'{where}: stance +1 needs an encounter stance and '
                                   "side 'right'")
-                elif not (o.get('cost') or is_quiz(o)):
+                elif not (o.get('cost') or is_quiz(o)
+                          or any(br.get('fight') for br in option_branches(o))):
                     err('stance', f'{where}: the right side must carry a visible cost')
             v = b.get('virtue')
             if v is not None:
                 if v == 'forgo':
-                    _check_forgo(err, where, o, opts, table)
+                    _check_forgo(err, where, o, opts, table, enc)
                 elif v == 'judged':
                     if b is not o.get('pass') or not has_naive_sibling(enc, o):
                         err('virtue', f'{where}: judged only in a quiz pass with a naive sibling')
@@ -451,6 +605,331 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
     return out
 
 
+def _pass_only_deeds(enc: dict) -> set:
+    """Deed ids that only a quiz PASS writes in this encounter, from a quiz
+    option with a naive sibling on screen (nothing else in the encounter
+    writes them)."""
+    from encounter_schema import has_naive_sibling, is_quiz, option_branches
+
+    def ids(b):
+        out = set()
+        for d in b.get('deeds') or ():
+            did = d if isinstance(d, str) else (d or {}).get('id')
+            if did:
+                out.add(did)
+        return out
+    from_pass, elsewhere = set(), set()
+    for o in enc.get('options') or ():
+        if is_quiz(o):
+            elsewhere |= ids(o)
+            for b in option_branches(o):
+                if b is o.get('pass') and has_naive_sibling(enc, o):
+                    from_pass |= ids(b)
+                elif b is not o.get('pass'):
+                    elsewhere |= ids(b)
+        else:
+            elsewhere |= ids(o)
+        for pm in o.get('per_miss') or ():
+            elsewhere |= ids(pm or {})
+    return from_pass - elsewhere
+
+
+def _after_a_pass(enc: dict, o: dict) -> bool:
+    """Silas (A24): a judgment +1 may sit on a follow-up option that appears
+    only after a passed examination: the option itself has no quiz and its
+    ``requires`` names a deed that only such a pass writes."""
+    from encounter_schema import is_quiz
+    if is_quiz(o):
+        return False
+    req = o.get('requires') or {}
+    named = set(req.get('deeds_all') or ())
+    any_ = list(req.get('deeds_any') or ())
+    gated = _pass_only_deeds(enc)
+    if named & gated:
+        return True
+    return bool(any_) and all(d in gated for d in any_)
+
+
+def _check_fight(err, where, spec, ctx):
+    from encounter_schema import MAX_FIGHT_COUNT
+    items = spec if isinstance(spec, list) else [spec]
+    if not items:
+        err('fight', f'{where}: an empty fight')
+    for e in items:
+        if isinstance(e, str):
+            mid, n = e, 1
+        elif isinstance(e, dict):
+            mid, n = e.get('monster_id'), e.get('count', 1)
+            for k in e:
+                if k not in ('monster_id', 'count'):
+                    err('unknown_key', f'{where}: fight key {k!r}')
+        else:
+            err('fight', f'{where}: fight entry must be an id or {{monster_id, count}}')
+            continue
+        if not isinstance(mid, str) or not mid:
+            err('fight', f'{where}: fight needs a monster_id')
+        elif mid not in ctx['monsters']:
+            err('fight', f'{where}: monster {mid!r} is not in monsters.json')
+        if not isinstance(n, int) or not 1 <= n <= MAX_FIGHT_COUNT:
+            err('fight', f'{where}: count {n!r} (1-{MAX_FIGHT_COUNT})')
+
+
+def _check_per_miss(err, where, o, stakes, ctx):
+    q = o.get('quiz') or {}
+    pm = o.get('per_miss')
+    if pm is not None:
+        if not isinstance(pm, list) or not pm:
+            err('per_miss', f'{where}: per_miss is a list, one entry a lost round')
+        else:
+            total = int(q.get('total_qs', q.get('threshold', 1)) or 1)
+            if len(pm) > total:
+                err('per_miss', f'{where}: {len(pm)} per_miss entries for {total} rounds')
+            if len(pm) > 1 and not q.get('play_all'):
+                err('per_miss', f'{where}: a second lost round needs play_all (a miss '
+                                'otherwise ends the quiz)')
+            for i, e in enumerate(pm):
+                if not isinstance(e, dict):
+                    err('per_miss', f'{where}: per_miss {i + 1} must be an object')
+                    continue
+                for k in e:
+                    if k not in PER_MISS_KEYS:
+                        err('unknown_key', f'{where}: per_miss key {k!r}')
+                if e.get('cost') is not None:
+                    _check_cost(err, f'{where} per_miss {i + 1}', e['cost'], stakes)
+                eff = e.get('effect')
+                if eff is not None:
+                    if not (isinstance(eff, dict) and eff.get('effect') in ctx['effects']):
+                        err('per_miss', f'{where}: per_miss {i + 1} effect {eff!r}')
+                for d in e.get('deeds') or ():
+                    did = d if isinstance(d, str) else (d or {}).get('id')
+                    if not __import__('deeds').valid_id(did):
+                        err('deed', f'{where}: bad deed id {did!r}')
+    fbc = o.get('fail_by_correct')
+    if fbc is not None:
+        total = int(q.get('total_qs', q.get('threshold', 1)) or 1)
+        thr = int(q.get('threshold', 1) or 1)
+        if not isinstance(fbc, dict) or not fbc:
+            err('quiz_shape', f'{where}: fail_by_correct maps rounds won to an outcome')
+        else:
+            for k, b in fbc.items():
+                if not (str(k).isdigit() and int(k) < min(thr, total + 1)):
+                    err('quiz_shape', f'{where}: fail_by_correct key {k!r} (a fail wins '
+                                      f'0 to {thr - 1})')
+                if not isinstance(b, dict) or not isinstance(b.get('outcome'), str):
+                    err('quiz_shape', f'{where}: fail_by_correct {k!r} needs an outcome')
+
+
+def _check_j3_outcome(err, where, b, stakes, ctx, cond_ok):
+    import deeds
+    oath = b.get('oath')
+    if oath is not None:
+        if not (isinstance(oath, dict) and oath.get('id')):
+            err('oath', f'{where}: an oath needs an id')
+        else:
+            for k in oath:
+                if k not in OATH_KEYS:
+                    err('unknown_key', f'{where}: oath key {k!r}')
+            mode = oath.get('lapse_mode', 'silent')
+            if mode not in deeds.LAPSE_MODES:
+                err('oath', f'{where}: lapse_mode {mode!r}')
+            if mode == 'callback':
+                linked = [cb for cb in b.get('schedule') or ()
+                          if isinstance(cb, dict) and cb.get('after_oath_due') == oath['id']]
+                if not oath.get('due_floors') or not linked:
+                    err('oath', f"{where}: lapse_mode 'callback' needs due_floors and a "
+                                'schedule entry with after_oath_due naming the oath')
+    for cb in b.get('schedule') or ():
+        if isinstance(cb, dict) and cb.get('after_oath_due'):
+            if not (isinstance(oath, dict) and oath.get('id') == cb['after_oath_due']):
+                err('schedule', f"{where}: after_oath_due {cb['after_oath_due']!r} must name "
+                                'the oath sworn in this same outcome')
+    for pe in b.get('people') or ():
+        if not isinstance(pe, dict) or not re.fullmatch(r'[a-z0-9_]+', str(pe.get('id', ''))):
+            err('people', f'{where}: a people entry needs an id [a-z0-9_]+')
+            continue
+        for k in pe:
+            if k not in PEOPLE_KEYS:
+                err('unknown_key', f'{where}: people key {k!r}')
+        _ll = pe.get('last_line')
+        if _ll is not None and (not isinstance(_ll, str) or not _ll or len(_ll) > 220):
+            err('field', f'{where}: last_line is a line of at most 220 characters')
+        if pe.get('status') is not None and pe['status'] not in deeds.PERSON_STATUSES:
+            err('people', f"{where}: person status {pe['status']!r}")
+        if pe.get('deserving') not in (None, True, False):
+            err('people', f'{where}: deserving is true, false or absent')
+    if b.get('people') is not None and not isinstance(b['people'], list):
+        err('people', f'{where}: people is a list')
+    ps = b.get('person_status')
+    if isinstance(ps, dict):
+        if ps.get('status') is not None and ps['status'] not in deeds.PERSON_STATUSES:
+            err('people', f"{where}: person status {ps['status']!r}")
+    elif ps is not None and ps not in deeds.PERSON_STATUSES:
+        err('people', f'{where}: person status {ps!r}')
+    for key in ('last_line',):
+        v = b.get(key)
+        if v is not None and (not isinstance(v, str) or not v or len(v) > 220):
+            err('field', f'{where}: {key} is a line of at most 220 characters')
+    for key in ('seal_door', 'expel_up'):
+        if key in b and b[key] is not True:
+            err('field', f'{where}: {key} is true or absent')
+    pl = b.get('people_lines')
+    if pl is not None:
+        if not isinstance(pl, dict):
+            err('people_lines', f'{where}: people_lines is an object')
+        else:
+            for k in pl:
+                if k not in PEOPLE_LINES_KEYS:
+                    err('unknown_key', f'{where}: people_lines key {k!r}')
+            if pl.get('table', 'gate') not in ctx['people_tables']:
+                err('people_lines', f"{where}: no table {pl.get('table')!r} in gate_lines.json")
+            if pl.get('max') is not None and not (isinstance(pl['max'], int) and 1 <= pl['max'] <= 10):
+                err('people_lines', f'{where}: max 1-10')
+            if stakes != 'light' and int(b.get('karma', 0) or 0):
+                err('people_lines', f'{where}: the people lines never carry karma')
+    for rk in ('reward', 'bonus_reward'):
+        _check_effect_reward(err, where, b.get(rk), ctx)
+
+
+def _check_effect_reward(err, where, rw, ctx):
+    if not isinstance(rw, dict):
+        return
+    if rw.get('type') == 'multi':
+        for sub in rw.get('rewards') or ():
+            _check_effect_reward(err, where, sub, ctx)
+        return
+    if rw.get('type') == 'effect':
+        if rw.get('effect') not in ctx['effects']:
+            err('reward', f"{where}: effect {rw.get('effect')!r} is not in status_effects")
+        fl = rw.get('floors')
+        if fl is not None and not (isinstance(fl, int) and 1 <= fl <= 10):
+            err('reward', f'{where}: effect floors 1-10')
+    if rw.get('type') in ('gold_pct', 'gold_pct_loss'):
+        amt = rw.get('amount')
+        if not (isinstance(amt, (int, float)) and 0 < amt <= 50):
+            err('reward', f"{where}: {rw['type']} amount 1-50 (a share of the hero's own purse)")
+
+
+def _is_free(o: dict) -> bool:
+    """A way to walk away: no cost, no quiz, and no fight it starts."""
+    from encounter_schema import is_quiz
+    return not o.get('cost') and not is_quiz(o) and not o.get('fight')
+
+
+def _cond_atoms(cond, out):
+    """The deed patterns, items, oath states and stats a condition reads."""
+    if not isinstance(cond, dict):
+        return
+    for k, v in cond.items():
+        if k in ('deeds_all', 'deeds_any', 'deeds_none'):
+            out['deeds'].update(v or ())
+        elif k in ('items_any', 'items_none'):
+            out['items'].update(v or ())
+        elif k in ('worn_any', 'worn_none'):
+            out['items'].update(v or ())
+            out['worn'].update(v or ())
+        elif k == 'oath_status':
+            for oid, want in (v or {}).items():
+                out['oaths'].setdefault(oid, set()).update(
+                    want if isinstance(want, (list, tuple)) else [want])
+        elif k == 'stat_min':
+            out['stats'].update(v or {})
+        elif k == 'any':
+            for sub in v or ():
+                _cond_atoms(sub, out)
+        else:
+            out['other'] = True
+
+
+def _deed_for(pattern: str) -> str:
+    """A concrete deed id matching ``pattern`` (an id, or a prefix)."""
+    p = pattern[:-1] if pattern.endswith('*') else pattern
+    return p + 'validator_x' if p.endswith('.') else p
+
+
+def _free_in_every_state(opts) -> bool:
+    """Is a free option (no cost, no quiz) visible whatever the hero has
+    done, holds and has sworn? A follow-up whose options split by what
+    happened earlier covers every case between them. Every combination of
+    the facts its conditions read is tried."""
+    import itertools
+
+    import deeds
+    from encounter_schema import visible_options
+    atoms = {'deeds': set(), 'items': set(), 'worn': set(), 'oaths': {}, 'stats': {},
+             'other': False}
+    for o in opts:
+        _cond_atoms(o.get('requires'), atoms)
+        _cond_atoms(o.get('forbids'), atoms)
+    if atoms['other']:
+        return False
+    # Only the first opening needs a way out: once a choice is made, Esc
+    # resolves the encounter. Deeds this encounter records itself (a
+    # 'then: options' step) are therefore absent when it opens.
+    from encounter_schema import option_branches
+    own = set()
+    for o in opts:
+        for b in option_branches(o) + [o]:
+            own |= _deed_ids(b)
+    flags = sorted(atoms['deeds'] - own) + [f'item:{i}' for i in sorted(atoms['items'])] \
+        + [f'worn:{i}' for i in sorted(atoms['worn'])]
+    oath_axes = [[(oid, st) for st in [None] + sorted(states)]
+                 for oid, states in sorted(atoms['oaths'].items())]
+    stat_axes = [[(st, 0), (st, int(n))] for st, n in sorted(atoms['stats'].items())]
+    if len(flags) + len(oath_axes) + len(stat_axes) > 14:
+        return False
+    enc = {'options': opts}
+    for bits in itertools.product((False, True), repeat=len(flags)):
+        for oath_pick in itertools.product(*oath_axes):
+            for stat_pick in itertools.product(*stat_axes):
+                reg = deeds.new_register()
+                held, worn = set(), set()
+                for on, f in zip(bits, flags):
+                    if on and f.startswith('item:'):
+                        held.add(f[5:])
+                    elif on and f.startswith('worn:'):
+                        worn.add(f[5:])
+                        held.add(f[5:])
+                    elif on:
+                        deeds.record(reg, _deed_for(f), floor=1, block=1, turn=0,
+                                     source='validator')
+                for oid, st in oath_pick:
+                    if st is not None:
+                        reg['oaths'][oid] = {'id': oid, 'status': st}
+                ctx = {'reg': reg, 'karma': 0, 'stats': dict(stat_pick), 'floor': 1,
+                       'deepest': 1, 'items': held, 'worn': worn}
+                if not any(_is_free(o) for _i, o in visible_options(enc, ctx)):
+                    return False
+    return True
+
+
+def _deed_ids(branch) -> set:
+    return {d if isinstance(d, str) else (d or {}).get('id')
+            for d in (branch or {}).get('deeds') or ()}
+
+
+def _unlocked_by_judged_pass(enc: dict, opt: dict) -> bool:
+    """A judgment +1 on an option reachable only after a passed examination:
+    its ``requires`` names deeds that only a quiz pass in this encounter
+    records, on an option with a naive sibling (A24: leave the poisoner to
+    his sentence once his wall has been read)."""
+    from encounter_schema import has_naive_sibling, is_quiz, option_branches
+    req = opt.get('requires') or {}
+    wanted = set(req.get('deeds_all') or ()) | set(req.get('deeds_any') or ())
+    if not wanted:
+        return False
+    for o in enc.get('options') or ():
+        if not (is_quiz(o) and has_naive_sibling(enc, o) and wanted <= _deed_ids(o.get('pass'))):
+            continue
+        elsewhere = set()
+        for x in enc.get('options') or ():
+            for b in option_branches(x) + ([x] if is_quiz(x) else []):
+                if b is not o.get('pass'):
+                    elsewhere |= _deed_ids(b)
+        if not wanted & elsewhere:
+            return True
+    return False
+
+
 def _gives_stat(rw: dict) -> bool:
     if rw.get('type') == 'stat':
         return True
@@ -465,7 +944,11 @@ def _has_consequence(o: dict) -> bool:
     if o.get('cost'):
         return True
     for b in option_branches(o):
-        if b.get('cost') or b.get('fight') or b.get('schedule'):
+        if b.get('cost') or b.get('fight') or b.get('schedule') or b.get('expel_up'):
+            return True
+        if _harmful_reward(b.get('reward')):
+            return True
+        if any(_harmful_reward((dl or {}).get('reward')) for dl in b.get('delayed') or ()):
             return True
         for d in b.get('deeds') or ():
             did = d if isinstance(d, str) else (d or {}).get('id', '')
@@ -474,6 +957,20 @@ def _has_consequence(o: dict) -> bool:
         ps = b.get('person_status')
         if (ps if isinstance(ps, str) else (ps or {}).get('status')) in ('lost', 'wronged'):
             return True
+    return False
+
+
+def _harmful_reward(rw) -> bool:
+    """A 'reward' that is really a loss: a lifted purse, a fever."""
+    if not isinstance(rw, dict):
+        return False
+    if rw.get('type') == 'multi':
+        return any(_harmful_reward(r) for r in rw.get('rewards') or ())
+    if rw.get('type') == 'gold_pct_loss':
+        return True
+    if rw.get('type') == 'effect':
+        from status_effects import DEBUFFS
+        return rw.get('effect') in DEBUFFS
     return False
 
 
@@ -496,8 +993,9 @@ def _check_callback(err, where, cb, cond_ok):
 
 
 def _check_delayed(err, where, dl, cond_ok):
-    if not isinstance(dl, dict) or not isinstance(dl.get('reward'), dict):
-        err('delayed', f'{where}: a delayed entry needs a reward')
+    if not isinstance(dl, dict) or not (isinstance(dl.get('reward'), dict)
+                                        or isinstance(dl.get('cost'), dict)):
+        err('delayed', f'{where}: a delayed entry needs a reward or a cost')
         return
     for k in dl:
         if k not in DELAYED_KEYS:
@@ -505,9 +1003,14 @@ def _check_delayed(err, where, dl, cond_ok):
     if 'karma' in dl:
         err('delayed', f'{where}: delayed rewards never carry karma (P5)')
     span = dl.get('after_floors')
-    if not (isinstance(span, list) and len(span) == 2 and 1 <= int(span[0]) <= int(span[1])):
+    # [0, n] is allowed: "by the next new floor" (a purse lifted overnight).
+    if not (isinstance(span, list) and len(span) == 2 and 0 <= int(span[0]) <= int(span[1])
+            and int(span[1]) >= 1):
         err('delayed', f'{where}: after_floors must be [min, max]')
-    _check_reward(err, where, dl['reward'])
+    if dl.get('reward') is not None:
+        _check_reward(err, where, dl['reward'])
+    if dl.get('cost') is not None:
+        _check_cost(err, f'{where} delayed', dl['cost'], 'medium')
     if dl.get('chronicle'):
         bad = _chron_lint(dl['chronicle'])
         if bad:
@@ -527,7 +1030,7 @@ def _check_escort(err, where, esc):
     if not isinstance(esc.get('hp'), int) or esc['hp'] < 1:
         err('escort', f'{where}: escort hp is a fixed number (LORE NOT FLOOR)')
     goal = esc.get('goal', 'stairs_down')
-    if goal != 'stairs_down' and not str(goal).startswith('tile:'):
+    if goal not in ('stairs_down', 'stairs_up') and not str(goal).startswith('tile:'):
         err('escort', f'{where}: goal {goal!r}')
     if esc.get('perk') not in ESCORT_PERKS:
         err('escort', f"{where}: perk {esc.get('perk')!r}")
@@ -536,15 +1039,18 @@ def _check_escort(err, where, esc):
         if o is not None and isinstance(o, dict):
             if int(o.get('karma', 0) or 0):
                 err('escort', f'{where}: an escort never carries karma by itself')
+            if o.get('reward') is not None:
+                _check_reward(err, f'{where} {key}', o['reward'])
             if o.get('chronicle'):
                 bad = _chron_lint(o['chronicle'])
                 if bad:
                     err('chronicle_lint', f"{where} {key}: {', '.join(bad)}")
 
 
-def _check_forgo(err, where, o, opts, table):
-    mine = option_value(o, table)
-    if not any(option_value(s, table) > mine for s in opts if s is not o and not s.get('requires')):
+def _check_forgo(err, where, o, opts, table, enc=None):
+    mine = option_value(o, table, enc)
+    if not any(option_value(s, table, enc) > mine for s in opts
+               if s is not o and not s.get('requires')):
         err('forgo', f'{where}: forgo needs a visible sibling with a greater reward (P7)')
 
 
@@ -552,6 +1058,23 @@ def _check_cost(err, where, cost, stakes):
     if not isinstance(cost, dict) or cost.get('type') not in COST_TYPES:
         err('cost', f'{where}: unknown cost {cost!r}')
         return
+    if cost['type'] == 'multi':
+        subs = cost.get('costs')
+        if not isinstance(subs, list) or not subs:
+            err('cost', f'{where}: a multi cost lists its costs')
+            return
+        for sub in subs:
+            if isinstance(sub, dict) and sub.get('type') == 'multi':
+                err('cost', f'{where}: a multi cost inside a multi cost')
+            else:
+                _check_cost(err, where, sub, stakes)
+        if sum(1 for sub in subs if isinstance(sub, dict) and sub.get('type') in ITEM_COSTS) > 1:
+            err('cost', f'{where}: at most one part of a multi cost asks for a pick')
+        return
+    if 'count' in cost:
+        n = cost['count']
+        if cost['type'] not in ITEM_COSTS or not (isinstance(n, int) and 1 <= n <= 5):
+            err('cost', f"{where}: count 1-5, and only on an item cost ({cost['type']!r})")
     if cost['type'] in PCT_COSTS:
         cap = {'light': 15, 'medium': 30}.get(stakes)
         if cap is not None and float(cost.get('amount', 0)) > cap:
@@ -563,11 +1086,39 @@ def _check_reward(err, where, rw):
     if not isinstance(rw, dict) or rw.get('type') not in REWARD_TYPES:
         err('reward', f'{where}: unknown reward {rw!r}')
         return
+    if rw['type'] == 'specific_item' and rw.get('item_id') not in _items_of(rw.get('item_type')):
+        # The engine looks the item up in data/items/<item_type>.json only.
+        err('reference', f"{where}: no {rw.get('item_id')!r} in data/items/{rw.get('item_type')}.json")
     for sub in rw.get('rewards') or ():
         _check_reward(err, where, sub)
 
 
+_ITEMS_BY_FILE: dict = {}
+
+
+def _items_of(item_type) -> set:
+    if item_type not in _ITEMS_BY_FILE:
+        p = os.path.join(ROOT, 'data', 'items', f'{item_type}.json')
+        try:
+            with open(p, encoding='utf-8') as f:
+                data = json.load(f)
+            _ITEMS_BY_FILE[item_type] = set(data) if isinstance(data, dict) else set()
+        except (OSError, ValueError, TypeError):
+            _ITEMS_BY_FILE[item_type] = set()
+    return _ITEMS_BY_FILE[item_type]
+
+
 def _check_quiz(err, where, q, stakes, source, ctx, modes):
+    for k in q:
+        if k not in QUIZ_KEYS:
+            err('unknown_key', f'{where}: quiz key {k!r}')
+    if 'play_all' in q:
+        if not isinstance(q['play_all'], bool):
+            err('quiz', f'{where}: play_all is true or false')
+        elif q['play_all'] and q.get('mode', 'threshold') not in ('threshold', 'escalator_threshold'):
+            err('quiz', f'{where}: play_all is for threshold modes')
+        elif q['play_all'] and stakes != 'high':
+            err('stakes', f'{where}: every round played is for high stakes')
     if q.get('subject') not in ctx['subjects']:
         err('quiz', f"{where}: subject {q.get('subject')!r} has no bank")
     if q.get('tier') not in range(1, 6):
@@ -584,9 +1135,9 @@ def _check_quiz(err, where, q, stakes, source, ctx, modes):
     if stakes == 'light' and (thr != 1 or total != 1):
         err('stakes', f'{where}: a light quiz is exactly one question')
     if stakes == 'medium':
-        ok = total <= 1 or (source == 'npc' and thr <= 2 and total <= 3)
+        ok = total <= 1 or (thr <= 2 and total <= 3)
         if not ok:
-            err('stakes', f'{where}: a medium quiz is one question (anchors: 2 of 3)')
+            err('stakes', f'{where}: a medium quiz is one question, or two of three')
         if mode.startswith('escalator') or mode == 'chain':
             err('stakes', f'{where}: chains and escalators are for high stakes')
     if stakes == 'high' and q.get('max_chain') is not None and int(q['max_chain']) > 5:
@@ -596,7 +1147,8 @@ def _check_quiz(err, where, q, stakes, source, ctx, modes):
 def validate_all(encounters=None) -> list:
     encs = encounters if encounters is not None else load_all()
     ctx = {'subjects': _subjects(), 'quest_pieces': _quest_piece_ids(),
-           'items': _item_ids(), 'rules': _rules()}
+           'items': _item_ids(), 'rules': _rules(), 'monsters': _monster_ids(),
+           'effects': _effect_ids(), 'people_tables': _people_tables()}
     out = []
     seen = {}
     for source, enc in encs:
@@ -612,10 +1164,11 @@ def validate_all(encounters=None) -> list:
     closes = []
     for _src, enc in encs:
         for o in enc.get('options') or ():
-            for b in [o, o.get('pass') or {}, o.get('fail') or {}]:
+            for b in [o, o.get('pass') or {}, o.get('fail') or {}] + \
+                    [x for x in (o.get('fail_by_correct') or {}).values() if isinstance(x, dict)]:
                 if isinstance(b.get('oath'), dict):
                     made.add(b['oath'].get('id'))
-                for k in ('oath_keep', 'oath_break', 'oath_release'):
+                for k in ('oath_keep', 'oath_break', 'oath_release', 'oath_lapse'):
                     if b.get(k):
                         kept.append((enc['tag'], b[k]))
                 if isinstance(b.get('thread'), dict):
@@ -675,12 +1228,81 @@ def opportunities_report(encounters=None) -> dict:
     return rep
 
 
+def has_plus_one_path(enc: dict) -> bool:
+    """A genuine +1 chance (ENCOUNTER_STORIES_DRAFT Part I): some option can
+    pay +1 karma of a gated kind, or swears an oath whose keep pays later."""
+    from encounter_schema import option_branches
+    for o in enc.get('options') or ():
+        for b in option_branches(o):
+            if int(b.get('karma', 0) or 0) > 0:
+                return True
+            if isinstance(b.get('oath'), dict) and b['oath'].get('id'):
+                return True
+    return False
+
+
+def _overlaps(band, lo, hi) -> bool:
+    return bool(band) and int(band[0]) <= hi and int(band[1]) >= lo
+
+
+def opportunity_budget(encounters=None, *, setne_floors=None, setne_tag=None) -> dict:
+    """Expected genuine +1 karma chances per 10-floor block, by the Road's
+    slots (Brandon, decision 5: roughly two or three a block, never one a
+    floor). Per block: the share of its anchor candidates with a +1 path
+    (one anchor binds), plus medium slots (two in odd bands, one in even)
+    times the share of the medium pool overlapping the block with a +1 path,
+    plus (even bands) the high pool's share, plus the chance the showcase
+    tomb (its own roll) lands in the block. Callback-only and light content
+    never takes a random slot and is not counted."""
+    encs = encounters if encounters is not None else load_all()
+    if setne_floors is None or setne_tag is None:
+        try:
+            with open(os.path.join(ROOT, 'data', 'setne_tomb.json'), encoding='utf-8') as f:
+                st = json.load(f)
+            lo, hi = st.get('floors', [45, 65])
+            setne_floors = [x for x in range(int(lo), int(hi) + 1) if x not in (20, 40, 60, 80)]
+            setne_tag = st.get('encounter')
+        except (OSError, ValueError):
+            setne_floors, setne_tag = [], None
+    showcase = next((e for _s, e in encs if e.get('tag') == setne_tag), None)
+    out = {}
+    for b in range(1, 11):
+        lo, hi = 10 * b - 9, 10 * b
+        anchors = [e for s, e in encs if s == 'npc' and e.get('block') == b]
+        story = [e for s, e in encs if s != 'npc' and not e.get('callback_only')
+                 and _overlaps(e.get('band'), lo, hi)]
+        med = [e for e in story if e.get('stakes') == 'medium']
+        high = [e for e in story if e.get('stakes') == 'high']
+
+        def share(pool):
+            return (sum(1 for e in pool if has_plus_one_path(e)) / len(pool)) if pool else 0.0
+        med_slots = 2 if b % 2 else 1
+        p_show = 0.0
+        if showcase is not None and has_plus_one_path(showcase) and setne_floors:
+            p_show = sum(1 for f in setne_floors if lo <= f <= hi) / len(setne_floors)
+        exp = share(anchors) + med_slots * share(med) + (share(high) if b % 2 == 0 else 0.0) + p_show
+        out[b] = {
+            'anchors': (sum(1 for e in anchors if has_plus_one_path(e)), len(anchors)),
+            'medium': (sum(1 for e in med if has_plus_one_path(e)), len(med), med_slots),
+            'high': (sum(1 for e in high if has_plus_one_path(e)), len(high)) if b % 2 == 0 else (0, 0),
+            'showcase': round(p_show, 2),
+            'expected': round(exp, 2),
+        }
+    return out
+
+
 def main(argv=None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     issues = validate_all()
-    if '--report' in argv:
-        for b, n in opportunities_report().items():
-            print(f'block {b:2d}: {n} option(s) with a +1 path')
+    if '--report' in argv or '--budget' in argv:
+        if '--report' in argv:
+            for b, n in opportunities_report().items():
+                print(f'block {b:2d}: {n} option(s) with a +1 path')
+        for b, r in opportunity_budget().items():
+            a, m, h = r['anchors'], r['medium'], r['high']
+            print(f'block {b:2d}: anchors {a[0]}/{a[1]}, medium {m[0]}/{m[1]} x{m[2]} slot(s), '
+                  f'high {h[0]}/{h[1]}, showcase {r["showcase"]:.2f} '
+                  f'-> about {r["expected"]:.1f} genuine +1 chances (target 2-3)')
         return 0
     allow = load_allowlist()
     errors, allowed, stale = split_by_allowlist(issues, allow)

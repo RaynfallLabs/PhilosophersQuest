@@ -276,7 +276,7 @@ def save_game(game) -> bool:
             '_death_save_used':  getattr(game, '_death_save_used', False),
             '_tarnhelm_used':    getattr(game, '_tarnhelm_used', False),
             '_quiz_reroll_used': getattr(game, '_quiz_reroll_used', False),
-            # Chronicle dedup guards
+            # Journal dedup guards
             '_chronicle_abaddon_start': getattr(game, '_chronicle_abaddon_start', False),
             # Magic carrot (L1-19) + ethereal unicorn (L21-39) one-shot spawns.
             # Without these, reload re-randomizes the target floor and can
@@ -289,7 +289,9 @@ def save_game(game) -> bool:
             '_emberpup': getattr(game, '_emberpup', None),
             # The Black Knight: his floor, placed yet, the draw, his sword.
             '_black_knight': getattr(game, '_black_knight', None),
-            # Chronicle & Lore Hints (Encyclopedia tabs)
+            # Setne's Tomb: its floor, placed yet, sealed for good, the room.
+            '_setne': getattr(game, '_setne', None),
+            # Journal & Lore Hints (Encyclopedia tabs)
             '_chronicle': getattr(game, '_chronicle', []),
             '_recalled_hints': getattr(game, '_recalled_hints', []),
             '_cooked_recipes': getattr(game, '_cooked_recipes', []),

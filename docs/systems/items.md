@@ -395,10 +395,12 @@ read (secret-victory path can't brick on one bad grammar quiz). See
 ```
 
 On successful read the spell is learned permanently
-(`Player.known_spells[spell_id] = mp_cost`). Unique artifact books
-(Necronomicon, Sefer Yetzirah, Book of Thoth) set
-`is_consumable_artifact: true` and route through
-`_learn_from_spellbook`'s omniscience branch.
+(`Player.known_spells[spell_id] = mp_cost`). The Book of Thoth is the
+only book with `is_consumable_artifact: true`; it routes through
+`_read_book_of_thoth`'s omniscience branch. Despite the field name it is
+not consumed on reading: its power is spent after one read and it must
+be laid on an altar (its only source is Setne's Tomb; see
+[magic.md](magic.md) and [karma_prayer §3](karma_prayer.md)).
 
 ### Wand (`data/items/wand.json`, class `Wand` at `src/items.py:844`)
 

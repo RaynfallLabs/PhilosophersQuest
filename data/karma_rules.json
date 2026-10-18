@@ -1,14 +1,19 @@
 {
-  "_doc": "How the soul is weighed (DEEDS_KARMA_DESIGN.md section 3, with Brandon's decisions in section 11). Read by src/karma.py and tools/encounters/validate.py. gate_enabled stays false until Wave A content ships (Phase 3b): while it is off every karma change applies exactly as it did before the redesign, and block slots and the ledger are only recorded.",
-  "gate_enabled": false,
-  "road_enabled": false,
+  "_doc": "How the soul is weighed (DEEDS_KARMA_DESIGN.md section 3, with Brandon's decisions in section 11). Read by src/karma.py and tools/encounters/validate.py. gate_enabled and road_enabled are on since the story content shipped (Phase 3, 2026-10-17): one gated +1 a 10-floor block, kept oaths fill the earliest open block, constancy capped, and the Road places the encounters. Off, every karma change applies as it did before the redesign (the ledger is still written) and the old per-floor rolls place encounters.",
+  "gate_enabled": true,
+  "road_enabled": true,
   "block_cap": 1,
   "constancy_cap": 2,
+  "run_start_schedule_doc": "Callbacks placed when a run begins, whatever the hero does (game_road._schedule_run_start). Skipped while the encounter is not in the data. The Gate (C18) reads the people met on the way down; it never touches the floor 99 Judgment.",
+  "run_start_schedule": [
+    {"encounter": "flv_the_gate", "floors": [94, 98]}
+  ],
   "reward_value": {
-    "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts.",
+    "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts. 'deeds' prices the engine flags an outcome records that pay off later (a breath back from Death), so a pass that wins one counts as a reward.",
     "gold":             {"amount": 0.1},
     "gold_pct":         {"amount": 1},
-    "specific_item":    {"flat": 6},
+    "gold_pct_loss":    {"amount": -1},
+    "specific_item":    {"flat": 6, "items": {"book_of_thoth": 50, "green_girdle": 12, "azaraels_brand": 12, "locust_charm": 10, "black_string_bracelet": 10, "brass_wardens_cog": 8, "brennans_sword": 8}},
     "random_weapon":    {"count": 5},
     "random_armor":     {"count": 5},
     "random_shield":    {"count": 5},
@@ -19,7 +24,7 @@
     "random_food":      {"count": 1},
     "random_item":      {"flat": 3},
     "stat":             {"amount": 15},
-    "effect":           {"duration": 0.05},
+    "effect":           {"duration": 0.05, "floors": 1},
     "hp_restore":       {"amount": 0.1},
     "sp_restore":       {"amount": 0.1},
     "mp_restore":       {"amount": 0.1},
@@ -27,7 +32,10 @@
     "sp_restore_pct":   {"amount": 0.1},
     "mp_restore_pct":   {"amount": 0.1},
     "enchant_weapon":   {"amount": 8},
+    "armor_enchant":    {"amount": 8},
+    "random_artifact":  {"flat": 12},
     "accept_item":      {"flat": 0},
+    "deeds":            {"flag.deaths_lost_turn": 10},
     "message":          {"flat": 0}
   },
   "constancy": [

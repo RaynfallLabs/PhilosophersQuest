@@ -33,13 +33,17 @@ MONSTERS = _load('monsters.json')
 # Types with a handler in game_encounters._npc_pay_cost / can_pay_cost.
 COST_TYPES = {'food', 'healing_potion', 'potion', 'scroll', 'weapon', 'gold',
               'hp_percent', 'max_hp', 'sp', 'hp', 'mp', 'random_item',
-              'triggered_item', 'accept_item', 'spawn_deadite_ambush'}
+              'triggered_item', 'accept_item', 'spawn_deadite_ambush',
+              'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct', 'triggered_item_id', 'stat',
+              'multi', 'armor_enchant'}
 # Types with a handler in game_encounters._apply_npc_reward.
 REWARD_TYPES = {'gold', 'random_weapon', 'random_armor', 'random_shield',
                 'random_accessory', 'random_potion', 'random_scroll',
                 'random_food', 'random_wand', 'stat', 'specific_item',
                 'random_item', 'effect', 'hp_restore', 'sp_restore',
-                'mp_restore', 'enchant_weapon', 'message', 'multi'}
+                'mp_restore', 'enchant_weapon', 'message', 'multi',
+                'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct',
+                'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact'}
 
 NEW_FLAVOR_TAGS = ['flv_baucis_table', 'flv_three_purses', 'flv_utgard_contests',
                    'flv_singed_squire', 'flv_old_spearman', 'flv_limping_lion',
@@ -68,25 +72,29 @@ def _rewards(reward):
 @pytest.mark.parametrize('source,encounters', [('flavor', FLAVOR), ('npc', NPCS)])
 def test_every_option_uses_only_handled_costs_and_rewards(source, encounters):
     from status_effects import EFFECT_INFO
+    from encounter_schema import option_branches
     items = _all_item_ids()
+    effects = set(EFFECT_INFO)
     bad = []
     for enc in encounters:
-        assert 1 <= len(enc['options']) <= 3, enc['tag']      # keys 1 to 3
+        assert 1 <= len(enc['options']) <= 8, enc['tag']   # at most 4 visible (validator)
         for opt in enc['options']:
-            cost = opt.get('cost')
-            if cost and cost['type'] not in COST_TYPES:
-                bad.append((enc['tag'], 'cost', cost['type']))
-            if cost and cost['type'] == 'accept_item' and cost['item_id'] not in items:
-                bad.append((enc['tag'], 'accept_item', cost['item_id']))
-            for rew in list(_rewards(opt.get('reward'))) + list(_rewards(opt.get('bonus_reward'))):
-                if rew['type'] not in REWARD_TYPES:
-                    bad.append((enc['tag'], 'reward', rew['type']))
-                if rew['type'] == 'specific_item' and rew['item_id'] not in items:
-                    bad.append((enc['tag'], 'item', rew['item_id']))
-                if rew['type'] == 'effect' and rew['effect'] not in EFFECT_INFO:
-                    bad.append((enc['tag'], 'effect', rew['effect']))
-                if rew['type'] == 'stat' and rew['stat'] not in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
-                    bad.append((enc['tag'], 'stat', rew['stat']))
+            for b in option_branches(opt) + ([opt] if 'quiz' in opt else []):
+                top = b.get('cost')
+                for cost in ([top] + list(top.get('costs') or ())) if top else ():
+                    if cost['type'] not in COST_TYPES:
+                        bad.append((enc['tag'], 'cost', cost['type']))
+                    if cost['type'] == 'accept_item' and cost['item_id'] not in items:
+                        bad.append((enc['tag'], 'accept_item', cost['item_id']))
+                for rew in list(_rewards(b.get('reward'))) + list(_rewards(b.get('bonus_reward'))):
+                    if rew['type'] not in REWARD_TYPES:
+                        bad.append((enc['tag'], 'reward', rew['type']))
+                    if rew['type'] == 'specific_item' and rew['item_id'] not in items:
+                        bad.append((enc['tag'], 'item', rew['item_id']))
+                    if rew['type'] == 'effect' and rew['effect'] not in effects:
+                        bad.append((enc['tag'], 'effect', rew['effect']))
+                    if rew['type'] == 'stat' and rew['stat'] not in ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER'):
+                        bad.append((enc['tag'], 'stat', rew['stat']))
     assert not bad, bad
 
 
@@ -98,7 +106,9 @@ def test_new_flavor_quests_are_present_and_well_formed():
         assert enc['min_level'] <= enc['max_level']
         assert len(enc['text'].split()) >= 25
         for opt in enc['options']:
-            assert opt['label'] and opt['outcome']
+            assert opt['label']
+            for b in ([opt['pass'], opt['fail']] if 'quiz' in opt else [opt]):
+                assert isinstance(b['outcome'], str)
 
 
 def test_trigger_items_exist():
@@ -200,15 +210,17 @@ def test_encounter_and_hint_text_has_no_dashes_or_lowercase_names():
 
 def test_karma_encounters_cover_every_block_and_load_from_data():
     from npc_encounters import ENCOUNTERS, _BLOCKS, select_encounter_levels
-    assert len(ENCOUNTERS) == len(NPCS) >= 31
+    assert len(ENCOUNTERS) == len(NPCS) == 30
     for block, _lo, _hi in _BLOCKS:
-        assert sum(1 for e in ENCOUNTERS if e['block'] == block) >= 3
+        assert sum(1 for e in ENCOUNTERS if e['block'] == block) == 3
     placed = select_encounter_levels(seed=7)
     assert len(placed) == 10
 
 
 def test_kneeling_to_help_is_not_scored_below_suspicion():
-    dw = next(e for e in NPCS if e['tag'] == 'deadite_woman')
+    # The Moaning Woman is a light story now: 0 karma on every option (P16),
+    # so kneeling to help is never scored below reaching for the axe.
+    dw = next(e for e in FLAVOR if e['tag'] == 'deadite_woman')
     kneel = next(o for o in dw['options'] if 'kneel' in o['label'].lower())
-    ax = next(o for o in dw['options'] if 'ax' in o['label'].lower())
-    assert kneel.get('karma', 0) > ax.get('karma', 0)
+    ax = next(o for o in dw['options'] if 'axe' in o['label'].lower())
+    assert kneel.get('karma', 0) == ax.get('karma', 0) == 0
