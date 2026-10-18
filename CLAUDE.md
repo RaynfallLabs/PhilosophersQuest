@@ -86,6 +86,8 @@ src/
   economy.py          - The gold economy: what a floor earns and what things cost
   traders.py          - Named traders: who, where, their stock, prices, selling, services
   game_traders.py     - TradersMixin: placing traders and the Buy / Sell / Services screens
+  treasure.py         - Coin weight (1 gp = 0.1 oz) and treasure: gems, jewellery, art; values, payment plans
+  game_purse.py       - PurseMixin: receiving gold (weight-limited), paying with coin then treasure, gold piles
   pet_system.py       - Soul Sphere pets: AI, bonding, levels
   escort_system.py    - Escorts: people the hero walks somewhere
 

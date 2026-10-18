@@ -29,7 +29,7 @@ import ui_scale
 
 # Item-art categories of the encyclopedia (the Journal, Lore Hints and Recipes
 # have no subject art).
-ITEM_CATEGORIES = ('weapon', 'armor', 'accessory', 'scroll', 'wand', 'spellbook')
+ITEM_CATEGORIES = ('weapon', 'armor', 'accessory', 'scroll', 'wand', 'spellbook', 'treasure')
 BASE_MULT = 3                   # 64 px art -> 192 px at UI scale 1
 FLOOR_DIM = (140, 140, 150)     # the floor behind a creature, multiplied down: calm
 

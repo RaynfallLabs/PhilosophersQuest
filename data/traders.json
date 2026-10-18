@@ -16,6 +16,24 @@
     "generalist_chance": 0.17
   },
 
+  "stock_bias": {
+    "_doc": "2026-10-18, Brandon: \"merchants should be an excellent way for kids to find or CHOOSE items they haven't yet encountered, helps to BUILD the character.\" Each random pick of a trader's stock is weighted toward kinds the hero has not held yet this run (Player.seen_item_ids): a kind he has held weighs seen_weight against 1. A gear pick draws gear_candidates pieces for the floor and keeps one by the same weights. Each trader's 'spread' lists groups of item classes; his stall always holds at least one ware from each group, so a kid can pick what suits the build. The lean picks KINDS only: wares are still sold unidentified, and their power is their own (weighted to the floor like any loot).",
+    "seen_weight": 0.3,
+    "gear_candidates": 3
+  },
+
+  "treasure": {
+    "_doc": "Coin weight and treasure (Brandon's D2, 2026-10-18; src/treasure.py). Every trader buys treasure at buy_rate of its value (capped by his purse) and takes it as payment at the same rate when coin runs short, giving change from his purse. gem_stock: how many gems each kind of trader has for sale, at value x sell_markup: the coin-to-gem exchange. Gems are never haggled and never take a friend's or charity discount (a rise for a wronged guild still applies), so buying and selling them always loses.",
+    "buy_rate": 0.9,
+    "sell_markup": 1.1,
+    "gem_stock": {"generalist": 2, "abyssal": 3, "sutler": 2, "bookseller": 1, "armourer": 1, "apothecary": 1}
+  },
+
+  "rare_stock": [
+    {"_doc": "D8, Brandon: \"No WIS purchase, possible rare shop appearance?\" The Draught of Mimir's Well: +1 WIS for good, but drinking it asks a quiz (data/items/potion.json 'quiz'); a wrong answer wastes it. About 1 trader stock in 30, floor 40 and down; 'share' is its price in floors of income (economy.merchant_price).",
+     "id": "draught_of_mimir", "cat": "potion", "chance": 0.034, "min_floor": 40, "share": 5.0}
+  ],
+
   "services": {
     "repair":    {"name": "Mend Rust and Acid", "desc": "Restores the enchantment rust, acid or fire ate off one worn piece. Never above what it had."},
     "sharpen":   {"name": "Sharpen Your Weapon", "desc": "+1 to the weapon in your hand. A smith will do this twice for any one blade, no more."},
@@ -64,6 +82,7 @@
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [67, 100]}
       ],
       "stock_size": [[1, 20, 4], [21, 50, 5], [51, 100, 6]],
+      "spread": [["accessory"], ["weapon", "armor", "shield"], ["scroll", "spellbook"], ["potion", "wand", "ammo"]],
       "markup": 1.0,
       "purse": 1.0,
       "buys": "all",
@@ -100,6 +119,7 @@
         {"class": "food", "picks": 2}
       ],
       "stock_size": [[1, 100, 5]],
+      "spread": [["potion"], ["food", "ingredient"]],
       "markup": 1.0,
       "purse": 0.6,
       "buys": ["potion", "food", "ingredient"],
@@ -133,6 +153,7 @@
         {"class": "ammo", "picks": 1}
       ],
       "stock_size": [[1, 100, 5]],
+      "spread": [["weapon"], ["armor"], ["shield", "ammo"]],
       "markup": 1.0,
       "purse": 1.0,
       "buys": ["weapon", "armor", "shield", "ammo"],
@@ -162,6 +183,7 @@
         {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
       ],
       "stock_size": [[1, 100, 4]],
+      "spread": [["scroll"], ["spellbook"]],
       "markup": 1.1,
       "purse": 0.6,
       "buys": ["scroll", "spellbook"],
@@ -195,6 +217,7 @@
         {"id": "master_hearth_sphere", "cat": "artifact", "chance": 0.03, "floors": [67, 100]}
       ],
       "stock_size": [[1, 100, 6]],
+      "spread": [["accessory"], ["wand"], ["potion"], ["scroll", "spellbook"]],
       "markup": 1.5,
       "purse": 1.5,
       "buys": "all",
@@ -231,6 +254,7 @@
         {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [34, 100]}
       ],
       "stock_size": [[1, 100, 7]],
+      "spread": [["potion"], ["food"], ["armor", "weapon", "shield"], ["scroll", "spellbook"]],
       "markup": 1.0,
       "purse": 1.2,
       "buys": "all",

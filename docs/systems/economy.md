@@ -208,9 +208,204 @@ conditions in `data/traders.json`. No karma: it is the market, not God.
 
 | Tool | What |
 |---|---|
-| `tools/balance/gold_sim.py` | The measured gold curve, floor by floor and source by source (wraps `difficulty_sim`). |
-| `tools/balance/purse_model.py` | The purse under hoarder / sensible / whale spending, with the real trader plan, stock, services and selling. |
-| `tools/balance/gold_by_lore.py` | Writes every creature's purse into `data/monsters.json` (`--report` to preview). Re-run after adding monsters. |
+| `tools/balance/gold_sim.py` | The measured gold curve, floor by floor and source by source (wraps `difficulty_sim`); since 2026-10-18 also the treasure a floor pays (`t_value`, `t_weight`, by kind) and `wealth` (coin + treasure). |
+| `tools/balance/purse_model.py` | The purse under hoarder / sensible / whale spending, with the real trader plan, stock, services and selling. It ignores weight: read it as "what was found", and weight_model.py as "what could be carried". |
+| `tools/balance/weight_model.py` | What a careful hero CAN CARRY at each depth: coin under the Burdened line, gems and jewellery, art; the coin left behind; how often the dearest ware on a trader's table was within reach of coin plus treasure. |
+| `tools/balance/gold_by_lore.py` | Writes every creature's purse into `data/monsters.json` (`--report` to preview), and its treasure chance and kinds. Re-run after adding monsters. |
 | `py -m tools.encounters.validate --all --budget` | Checks `share` / `service` gold costs, `purse_pct`, `service` rewards, and the karma budget. |
 
-Tests: `tests/test_economy.py`, `tests/test_traders.py`.
+Tests: `tests/test_economy.py`, `tests/test_traders.py`, `tests/test_treasure.py`.
+
+## 11. Coin weight and treasure (Brandon's D2, 2026-10-18)
+
+> "I think that's a very real lesson about cash and metals; they have value
+> but are hard to move. Make sure player can DROP gold. ... make sure it's a
+> realistic weight for coins. Let's say 1 gp is 1/10th an oz? ... Gems or
+> TREASURE ... could be great way to capture wealth."
+
+Rules in `src/treasure.py` (pure) and `src/game_purse.py` (the Game side).
+
+- **A gold piece weighs a tenth of an ounce**: 160 to the pound
+  (`treasure.COINS_PER_LB`). `Game.player_gold` mirrors the count onto
+  `Player.purse_coins`, so the purse counts in `get_current_weight` with
+  Burdened and the limit exactly as for any item. 16,000 gold is a full
+  pack at STR 10; a fresh hero has room for about 13,900 coins, 10,000
+  before he is Burdened.
+- **Receiving gold** (`_gain_gold`): he keeps what he can carry. Found gold
+  (a grave, a throne, a cache) that will not fit is set down at his feet as
+  his own pile, booked once in Gold Earned. A PERSON paying him (a trader
+  buying, an encounter's reward, change) makes up what will not fit in gems
+  (`treasure.gems_for`, the dearest gem kinds found by that floor), valued.
+  Brisingamen's tears stop when the purse is full.
+- **Piles** (`_pickup_gold`): picked up only as far as he can carry: "You
+  can only carry 340 of the 1,200 gold. The rest stays on the floor." A full
+  pack takes nothing and spends no turn. Draupnir (and every
+  `gold_multiplier` ring) doubles a FOUND pile once, where it lies, the first
+  time it is touched; the hero's own pile never.
+- **Dropping gold**: `D` lists **Drop Gold** first, with an amount prompt
+  that shows the weight. The pile is the hero's own (`found=False`) and joins
+  his own pile on the tile, never a find.
+- **Thieves** cut the coin purse (the hero is lighter by it) and snatch a
+  piece of treasure most of all (`theft.BRIGHT_KINDS`). What a dead thief
+  drops is the hero's own, picked up by weight as any pile.
+- **The bribe** (Gilgamesh's helm) is tossed coin, never gems.
+
+### Treasure
+
+17 kinds in `data/items/treasure.json` (class `items.Treasure`), each with
+a real weight and a lore-fixed value. LORE NOT FLOOR: a kind is worth the
+same on every floor; deep floors hold the dear kinds by spawn bell.
+
+| Kind | Name | Weight (lb) | Value | Floors (min, peak) |
+|---|---|---|---|---|
+| gem | Bohemian Garnet Cluster | 0.02 | 60 | 1, 6 |
+| gem | Lump of Baltic Amber | 0.03 | 150 | 3, 14 |
+| gem | Badakhshan Lapis Stone | 0.05 | 450 | 10, 26 |
+| gem | Burmese Ruby | 0.01 | 2,500 | 30, 50 |
+| gem | Kashmir Sapphire | 0.01 | 4,000 | 42, 66 |
+| gem | Golconda Diamond | 0.01 | 8,000 | 60, 84 |
+| gem | Eye of a Temple Idol | 0.05 | 15,000 | 75, 95 |
+| jewellery | Viking Silver Arm-Ring | 0.5 | 90 | 1, 8 |
+| jewellery | Saxon Garnet Brooch | 0.2 | 350 | 6, 20 |
+| coins | Byzantine Solidus Purse | 0.5 | 700 | 12, 30 |
+| jewellery | Celtic Gold Torc | 1.0 | 1,800 | 20, 40 |
+| jewellery | String of Gulf Pearls | 0.1 | 3,000 | 36, 58 |
+| art | Silver Candelabra | 6 | 600 | 8, 24 |
+| art | Liangzhu Jade Disc | 2 | 2,000 | 26, 46 |
+| art | Arras Tapestry | 20 | 3,500 | 24, 48 |
+| art | Gold Idol | 10 | 5,000 | 38, 64 |
+| art | Persian Gold Rhyton | 4 | 12,000 | 68, 88 |
+
+- **Known by sight, valued by a trader**: no identify question; the art and
+  the name are the same before and after. The exact worth of a KIND is known
+  once a trader has valued it (`Player.appraised_treasure`; every trader
+  values the pack when his shop opens, and the gems on his table carry their
+  price). Before that the hero sees its band (`treasure.VALUE_BANDS`: "tens /
+  hundreds / thousands of gold", "a fortune"), and what he can count on for
+  paying is the band's low end, so an unvalued piece never says more than he
+  knows.
+- **Score**: the true value of the treasure carried when the run ends, a
+  point a gold (`treasure.SCORE_PER_GOLD`). Coin does not score. The ending
+  screens show "Treasure" beside Gold Earned and Gold Carried; the
+  high-score row keeps `treasure` (0 for older rows).
+- **Where it lies** (`treasure.py` constants; what is found is weighted to
+  the floor like any loot):
+
+  | Place | Rule |
+  |---|---|
+  | Chests | a `treasure` loot weight in `data/chest_templates.json`: jewel box 8, dragon hoard 4, merchant's strongbox and crypt chest 2, gilded chest, ornate chest and iron lockbox 1 |
+  | Treasury room | a piece half the time (`TREASURY_PIECES`) |
+  | Vault | one piece (`VAULT_PIECES`) |
+  | Den, barracks | one piece one time in ten (`LAIR_CHANCE`) |
+  | Gate bosses | Asterion 1, Medusa 1, Fafnir 3, Fenrir 2 (`BOSS_HOARD_PIECES`) |
+  | Rich grave | grave goods: jewellery or old coin (`GRAVE_KINDS`) |
+  | Throne | a loose stone half the time (`THRONE_GEM_CHANCE`) |
+  | Creatures | `treasure.treasure_chance` / `treasure_kinds` in monsters.json, written by `gold_by_lore.py`: dragons 0.03-0.09 by age, vampires and liches 0.025, thieves 0.02 (leaders x2); grave goods are in the graves, dug |
+  | Traders | a few gems for sale (below) |
+  | Bones | a dead hero's dearest pieces, at most a floor's income all told |
+
+  A hoard's coin shrinks by the worth of the treasure laid beside it, never
+  below a quarter (`treasure.coin_after_treasure`): deep, a hoard is gems and
+  plate more than heavy coin. Treasure is placed from a generator of its own
+  (`treasure.private_rng`), so no other floor roll moves.
+
+### Trading in treasure (data/traders.json `treasure`)
+
+- **Every trader buys treasure** at `buy_rate` (0.9) of its value, capped by
+  his purse, whatever he otherwise deals in. No resale cap: he sells a gem at
+  `sell_markup` (1.1) and buys it at 0.9, so no loop is possible.
+- **The exchange**: each trader has a few gems for sale (`gem_stock`: Vesper
+  3, Grindle and Mags 2, the others 1), priced at value x 1.1, never haggled,
+  never given a friend's or a charity discount (a wronged guild's rise still
+  applies). Heavy coin becomes light gems at a tenth's cost.
+- **Paying with treasure** (`game_purse._pay_gold`, the design choice that
+  keeps deep prices payable): coin first; if it falls short, the
+  fewest-gold set of pieces that covers the rest (`treasure.plan_payment`),
+  taken at `buy_rate`, change in coin from his purse (and gems for change
+  that will not fit). The Buy tab says so before Enter: "Pays with a Gold
+  Idol; 1,890 gold back." Services are paid the same way, after they are
+  done. Buying pays first, so the coin paid lightens the pack before the ware
+  goes in; a ware still too heavy is set down at the hero's feet.
+- **Encounters** take treasure too: a gold cost is coin first, then treasure
+  at the same rate, change in coin (`EncountersMixin._npc_pay_gold`). An
+  altar's tribute gives no change. "Can you afford it" counts treasure at
+  what the hero can count on (`_purse_wealth`).
+- **"Your purse"** for every share of it (a chosen "N% of your purse" cost,
+  a temptation of "a quarter of what you carry", restore and cut-curse
+  prices, the forgo-karma test) is coin plus treasure at the trader's rate
+  (`_purse_wealth`). A loss that lands on the hero (a quick hand in the
+  night) is a share of the coin.
+
+### Stock that builds a character (2026-10-18)
+
+Brandon: "merchants should be an excellent way for kids to find or CHOOSE
+items they haven't yet encountered, helps to BUILD the character."
+
+- **The lean** (`stock_bias`): every random pick of a trader's stock weighs
+  a kind the hero has already held (`Player.seen_item_ids`, filled by
+  `add_to_inventory`, plus the known types) at `seen_weight` (0.3) against 1
+  for one he has not. A gear pick draws `gear_candidates` (3) pieces for the
+  floor and keeps one by the same weights. The lean picks KINDS only: wares
+  are still sold unidentified, and their power is their own.
+- **The spread** (`spread` per trader): his stall always holds at least one
+  ware from each group, by role. Grindle: an accessory; a weapon, armour or
+  shield; a scroll or book; a potion, wand or ammo. Mother Wort: a potion;
+  food. Brannoc: a weapon; armour; a shield or ammo. Ambrose: a scroll; a
+  spellbook. Vesper: an accessory; a wand; a potion; a scroll or book. Mags:
+  a potion; food; armour or a weapon; a scroll or book.
+
+### The Draught of Mimir's Well (D8)
+
+Brandon: "No WIS purchase, possible rare shop appearance?" There is no
+regular WIS purchase. One `rare_stock` ware: `draught_of_mimir`, about 1
+trader stock in 30 (`chance` 0.034), floor 40 and down, priced at 5 floors of
+income x 0.8 (4 floors: about 12,700 gold on floor 40, 21,800 on floor 70).
+Gold buys the flask, never the wisdom: drinking it asks one philosophy or
+theology question at tier 4 (the potion's `quiz` block); right, +1 WIS for
+good; wrong, the water runs through and the draught is wasted. It is never
+random loot (min_level 9999, no spawn weight) and arrives known.
+
+### Measured (2026-10-18)
+
+`gold_sim.py` (40 runs, 'prepared' at 90%), per floor in each band:
+
+| Floors | Income line | Coin | Treasure | Treasure / income |
+|---|---|---|---|---|
+| 1-5 | 358 | 310 | 24 | 0.07 |
+| 6-10 | 738 | 728 | 48 | 0.07 |
+| 11-19 | 1,270 | 1,344 | 203 | 0.16 |
+| 21-29 | 2,030 | 1,804 | 424 | 0.21 |
+| 31-39 | 2,790 | 2,318 | 1,104 | 0.40 |
+| 41-49 | 3,550 | 3,184 | 1,910 | 0.54 |
+| 51-59 | 4,310 | 4,022 | 2,274 | 0.53 |
+| 61-69 | 5,070 | 5,185 | 2,872 | 0.57 |
+| 71-79 | 5,830 | 5,393 | 3,769 | 0.65 |
+| 81-89 | 6,590 | 5,913 | 4,416 | 0.67 |
+| 90-99 | 7,312 | 6,857 | 5,559 | 0.76 |
+
+`weight_model.py` (120 runs; a careful hero, STR 10 rising to 18, a 40-60
+lb kit, never Burdened), medians:
+
+| Floor | Room for wealth | Coin carried | Gems and jewellery | Wealth (floors of income) | Coin left behind (all run) | Dearest ware within reach |
+|---|---|---|---|---|---|---|
+| 5 | 34 lb | 1,382 (9 lb) | 120 | 2.9 | 0 | 92% |
+| 10 | 39 lb | 4,464 (28 lb) | 493 | 5.6 | 0 | 99% |
+| 19 | 37 lb | 3,393 (21 lb) | 3,393 | 4.3 | 8,354 | 100% |
+| 30 | 47 lb | 6,631 (41 lb) | 7,660 | 6.0 | 18,387 | 100% |
+| 50 | 55 lb | 6,273 (39 lb) | 35,468 | 10.6 | 52,274 | 100% |
+| 70 | 63 lb | 4,823 (30 lb) | 76,345 | 14.9 | 119,569 | 100% |
+| 99 | 63 lb | 0 | 141,715 | 18.5 | 278,749 | 100% |
+
+From floor 15 on he cannot carry what a floor pays in coin, leaves about
+half of all coin behind by the end, and carries his wealth as gems (most of
+it bought at a trader at a tenth's cost). Every trader's dearest ware stays
+within reach of coin plus treasure. (purse_model.py, which ignores weight,
+still shows what was FOUND: a sensible buyer 26x a floor's income at 99.)
+Two dials set how hard coin weighs: `treasure.gem_stock` and
+`sell_markup` (how easily coin becomes gems), and the treasure counts above.
+
+### QA
+
+The Titivillus QA build's `$` key (`_qa_treasure_sampler`) lays a found pile
+of 20,000 gold under the hero, one of every treasure kind round him, and a
+trader with gems and the draught beside him.

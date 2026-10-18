@@ -520,8 +520,8 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         fail_rew = m.get('fail_reward', {})
         if 'gold' in fail_rew:
             _g = _written_gold(fail_rew['gold'])
-            game.player_gold = getattr(game, 'player_gold', 0) + _g
             game.add_message(f"You find {_g:,} gold inside.", 'loot')
+            game._gain_gold(_g)          # coins weigh: what will not fit stays here
         if m['fail_text']:
             game.add_message(m['fail_text'], 'warning')
         return
@@ -549,8 +549,8 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
         import economy as _eco
         _lvl = int(getattr(game, 'dungeon_level', 1) or 1)
         _g = min(_written_gold(reward['gold']), _eco.share(_lvl, MYSTERY_GOLD_CAP_SHARE))
-        game.player_gold = getattr(game, 'player_gold', 0) + _g
         game.add_message(f"+{_g:,} gold.", 'loot')
+        game._gain_gold(_g)
 
     # --- All quiz timer bonus (Mimir) ---
     if 'all_timer_bonus' in reward:
@@ -705,13 +705,15 @@ class MerchantNPC:
         return v or default
 
 
-def build_trader(kind: str, level: int, rng: random.Random, x: int = 0, y: int = 0) -> 'MerchantNPC':
+def build_trader(kind: str, level: int, rng: random.Random, x: int = 0, y: int = 0,
+                 seen=()) -> 'MerchantNPC':
     """A trader of ``kind`` for floor ``level`` with his stock and prices
     (traders.py builds the stock; prices are economy.merchant_price with the
-    trader's markup)."""
+    trader's markup). ``seen``: item ids the hero has held, which the stock
+    leans away from (traders.build_stock)."""
     import traders
-    defn = traders.kind_def(kind)
-    stock = traders.build_stock(defn, level, rng)
+    defn = {**traders.kind_def(kind), 'kind': kind}
+    stock = traders.build_stock(defn, level, rng, seen=seen)
     mk = float(defn.get('markup', 1.0))
     prices = [_merchant_price(it, level, mk) for it in stock]
     return MerchantNPC(x, y, stock, prices, kind=kind, level=level, defn=defn)

@@ -312,7 +312,32 @@ def _level_20_labyrinth(rng=None):
     except Exception:
         items = [it for it in items if it is not None]
 
+    # What earlier heroes dropped running from him (treasure.py).
+    _boss_treasure(dungeon, items, 20, [boss_room])
     return dungeon, _spawn_boss(dungeon, 'asterion_minotaur', boss_room), items
+
+
+
+def _boss_treasure(dungeon, items: list, level: int, rooms) -> int:
+    """Lay a gate boss's treasure (treasure.BOSS_HOARD_PIECES: Fafnir's hoard
+    is the greatest) on free floor in ``rooms``, from a generator of its own
+    so the floor's other rolls do not move. Returns the value laid."""
+    try:
+        import random as _random
+        import treasure as _tr
+        n = int(_tr.BOSS_HOARD_PIECES.get(int(level), 0))
+        if n <= 0:
+            return 0
+        tiles = []
+        for room in rooms or ():
+            for x, y in room.inner_tiles():
+                if dungeon.tiles[y][x] == FLOOR:
+                    tiles.append((x, y))
+        if not tiles:
+            return 0
+        return _tr.place(items, tiles, level, _tr.private_rng(_random, level, 0xB055), n)
+    except Exception:
+        return 0
 
 
 def labyrinth_thread_route(dungeon) -> list:
@@ -478,6 +503,8 @@ def _level_40_temple():
     except Exception:
         items = [it for it in items if it is not None]
 
+    # Offerings left by those who came to kill her (treasure.py).
+    _boss_treasure(dungeon, items, 40, [l_chapel, r_chapel])
     return dungeon, _spawn_boss(dungeon, 'medusa_gorgon', boss_room), items
 
 
@@ -601,6 +628,8 @@ def _level_60_lair():
     except Exception:
         items = [it for it in items if it is not None]
 
+    # Fafnir's hoard: the Rhinegold was more than coin (treasure.py).
+    _boss_treasure(dungeon, items, 60, [hoard])
     return dungeon, _spawn_boss(dungeon, 'fafnir_dragon', boss_room), items
 
 
@@ -711,6 +740,8 @@ def _level_80_hall():
     except Exception:
         items = [it for it in items if it is not None]
 
+    # The ruined hall's old plate and stones (treasure.py).
+    _boss_treasure(dungeon, items, 80, locals().get('sides') or [boss_room])
     return dungeon, _spawn_boss(dungeon, 'fenrir_wolf', boss_room), items
 
 

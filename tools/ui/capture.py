@@ -1607,6 +1607,88 @@ def _(g):
     press(g, pygame.K_RIGHT)
 
 
+def _treasure_pack(g, ids=('treasure_burmese_ruby', 'treasure_saxon_brooch', 'treasure_gold_idol')):
+    """Treasure in the hero's pack (treasure.py): a gem, a brooch, an idol."""
+    import treasure
+    for tid in ids:
+        it = treasure.make(tid)
+        if it is not None:
+            g.player.inventory.append(it)
+    return g
+
+
+@scene('shop_gems', 'Encounters',
+       'Y beside Grindle deep down, the cursor on a ware dearer than your coin: the '
+       'gems for sale and "Pays with ... gold back" (coin, then treasure).',
+       expect='shop', key=True)
+def _(g):
+    import treasure
+    from economy import merchant_price
+    m = _merchant(g)
+    for gid in ('treasure_kashmir_sapphire', 'treasure_badakhshan_lapis'):
+        gem = treasure.make(gid)
+        m.stock.append(gem)
+        m.prices.append(merchant_price(gem, 5, 1.0))
+    m.purse = 6000
+    _treasure_pack(g)
+    g.player_gold = 400
+    press(g, pygame.K_y)
+    g._shop_selection = len(m.stock) - 2          # the sapphire: coin short, treasure covers it
+
+
+@scene('shop_sell_treasure', 'Encounters',
+       'Y, Right: the Sell tab on a piece of treasure (valued now: near its worth).',
+       expect='shop', key=True)
+def _(g):
+    _merchant(g)
+    _treasure_pack(g)
+    press(g, pygame.K_y)
+    press(g, pygame.K_RIGHT)
+    g._shop_selection = next(i for i, it in enumerate(g.player.inventory)
+                             if getattr(it, 'item_class', '') == 'treasure')
+
+
+@scene('pickup_gold_partial', 'Popups',
+       'G on a pile bigger than you can carry: "You can only carry N of the M gold."',
+       key=True)
+def _(g):
+    from items import add_gold_to_tile
+    g.player_gold = 0
+    room = g.player.coin_room()
+    add_gold_to_tile(g.ground_items, room + 9000, g.player.x, g.player.y)
+    press(g, pygame.K_g, 'g')
+
+
+@scene('lore_treasure', 'Lore', 'X / lore on a piece of treasure: its dossier and worth.',
+       expect='lore', key=True)
+def _(g):
+    _treasure_pack(g)
+    g._lore_subject = next(i for i in g.player.inventory if getattr(i, 'item_class', '') == 'treasure')
+    g.state = _S().STATE_LORE
+
+
+@scene('menu_encyclopedia_treasure', 'Menus',
+       'B, k: the Treasure pages, Enter on one (kinds the hero has held; worth once valued).',
+       expect='encyclopedia', key=True)
+def _(g):
+    g.player.seen_item_ids.update(('treasure_burmese_ruby', 'treasure_arras_tapestry',
+                                   'treasure_viking_arm_ring'))
+    g.player.appraised_treasure.add('treasure_arras_tapestry')
+    press(g, pygame.K_b)
+    press(g, pygame.K_k, 'k')
+    press(g, pygame.K_RETURN)
+
+
+@scene('lore_draught', 'Lore', "X / lore on the Draught of Mimir's Well (bought from a deep trader).",
+       expect='lore')
+def _(g):
+    from items import make_item_by_id
+    d = make_item_by_id('potion', 'draught_of_mimir')
+    g.player.inventory.append(d)
+    g._lore_subject = d
+    g.state = _S().STATE_LORE
+
+
 def _npc_monster(g, enc):
     from monster import Monster
     defs = _monster_defs()

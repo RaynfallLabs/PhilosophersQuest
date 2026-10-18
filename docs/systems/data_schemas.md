@@ -591,6 +591,30 @@ scroll. See ITEM_QUIZ_AUDIT.md for the 25 scrolls affected.
   for `gain_level` (number of levels gained); unused for binary
   effects (`cure_*`).
 - `duration` — turns for timed effects (0 for instant).
+- `quiz` — optional (2026-10-18): `{"subjects": ["philosophy", "theology"],
+  "tier": 4, "threshold": 1, "stat": "WIS", "amount": 1}`. Drinking asks the
+  question first; right, the stat rises for good; wrong, the potion is
+  wasted (`MenuMixin._drink_quiz_draught`). Only `draught_of_mimir` has one.
+
+### 8.1 `data/items/treasure.json` (2026-10-18)
+
+```json
+"treasure_burmese_ruby": {
+  "name": "Burmese Ruby",
+  "kind": "gem",                     // gem | jewellery | coins | art
+  "symbol": "*", "color": [220, 20, 40],
+  "weight": 0.01,                    // real pounds: gems 0.01-0.05, jewellery 0.1-1, art 2-20
+  "value": 2500,                     // gold, fixed by lore on every floor
+  "min_level": 30, "peak_floor": 50, "spread": 14, "peak_weight": 1.0,
+  "lore": "..."
+}
+```
+
+Class `items.Treasure` (always id level 5, never cursed, stackable). Rules,
+spawns and the trade in `src/treasure.py`; see [economy.md §11](economy.md).
+`data/traders.json` carries `treasure` (buy rate, sell markup, gems per
+trader), `stock_bias` (the lean toward kinds the hero has not held),
+`rare_stock` (the draught) and each trader's `spread`.
 
 ---
 
@@ -666,7 +690,7 @@ The current migration is **gradual** — SYSTEMS_AUDIT §10 P4 lists
 | `weaknesses` | list[str] | damage type names |
 | `tags` | list[str] | `["beast", "undead", …]` for family lookup |
 | `harvest_tier` | int 1-5 | tier for animal-quiz harvest |
-| `treasure` | dict | `gold` [min, max] + item drop. `purse` names what the creature carries by lore (`none` / `purse` / `thief` / `scholar` / `sack` / `grave_goods` / `noble_dead` / `trinkets` / `pot` / `hoard` / `tempter` / `kept`); `gold` is written by `tools/balance/gold_by_lore.py` (economy refactor 2026-10-17, [economy.md](economy.md)). Re-run that tool after adding monsters. |
+| `treasure` | dict | `gold` [min, max] + item drop. `purse` names what the creature carries by lore (`none` / `purse` / `thief` / `scholar` / `sack` / `grave_goods` / `noble_dead` / `trinkets` / `pot` / `hoard` / `tempter` / `kept`); `gold` is written by `tools/balance/gold_by_lore.py` (economy refactor 2026-10-17, [economy.md](economy.md)), and so are `treasure_chance` / `treasure_kinds` (one piece of treasure by lore, 2026-10-18, [economy.md §11](economy.md)). Re-run that tool after adding monsters. |
 | `lore` | str | bestiary lore |
 | `frequency` | int | tie-breaker weight in band pool |
 | `pack` | bool | spawns in packs |

@@ -23,7 +23,7 @@ all items regardless of class:
 | `symbol` | str | required | One-char glyph for terrain rendering. |
 | `color` | `[r,g,b]` | required | RGB triple. |
 | `weight` | float | 1.0 | Pounds. STR gates carry; see §9. |
-| `item_class` | str | "unknown" | `weapon|armor|shield|accessory|wand|scroll|spellbook|ingredient|artifact|ammo|food|potion|lockpick|container`. Loader stamps this from the JSON filename. |
+| `item_class` | str | "unknown" | `weapon|armor|shield|accessory|wand|scroll|spellbook|ingredient|artifact|ammo|food|potion|lockpick|container|treasure`. Loader stamps this from the JSON filename. |
 | `min_level` | int | 1 | Earliest floor the item is eligible to spawn. |
 | `lore` | str | "" | Shown on the lore screen after full ID. |
 | `set_id`, `set_name` | str | "" | Set-membership tags. |
@@ -483,9 +483,20 @@ weights are deliberately realistic (full plate 65 lb, tower shield 30,
 maul 8) and STR is the lever (`Player.get_carry_limit`).
 
 - **Everything counts:** `get_current_weight()` = `get_worn_weight()`
-  (weapons, shield, armour, rings, amulet, belt) + `get_pack_weight()`.
-  Equipping or unequipping moves weight between body and pack; the total
-  never changes. (Before 2026-10-16 worn gear weighed nothing.)
+  (weapons, shield, armour, rings, amulet, belt) + `get_pack_weight()`
+  + `purse_weight()`. Equipping or unequipping moves weight between body
+  and pack; the total never changes. (Before 2026-10-16 worn gear weighed
+  nothing.)
+- **Coins weigh** (Brandon's D2, 2026-10-18; `src/treasure.py`): one gold
+  piece is a tenth of an ounce, 160 to the pound (`treasure.COINS_PER_LB`),
+  so 16,000 gold is a full pack at STR 10. The gold lives on the Game
+  (`Game.player_gold`), which mirrors the count onto `Player.purse_coins`
+  on every change; `Player.coin_room()` is how many more coins fit. A pile
+  is picked up only as far as the hero can carry ("You can only carry 340
+  of the 1,200 gold. The rest stays on the floor."), gold he is given that
+  will not fit is set down at his feet (or, from a person paying him, made
+  up in gems): `game_purse._gain_gold`. `D` lists **Drop Gold** first. The
+  sidebar, the Kit and the character sheet show the purse with its weight.
 - **Burdened** above `BURDENED_SHARE` (75%) of the limit: every
   `BURDEN_STEP_EVERY`-th (4th) step costs an extra turn
   (`Game._burden_extra_turn`). Nothing else: attacks, spells, AC, dodge
@@ -502,7 +513,7 @@ maul 8) and STR is the lever (`Player.get_carry_limit`).
   is allowed: the hero is Burdened, sees "Over Limit", and can drop.
 
 Stacking: `Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll,
-Ammo)`. `add_to_inventory` merges same-id items only when the
+Ammo, Treasure)`. `add_to_inventory` merges same-id items only when the
 blessing/curse is KNOWN on both copies (`buc_known`, or the copy at id
 level 5) and the `buc` values match (bug bash 4, call 8). Unknown copies
 never merge: merging them when the hidden BUC matched, and refusing when
@@ -703,6 +714,48 @@ Drink; no quiz; identified-by-use (not identified by default).
   }
 }
 ```
+
+**A potion that asks a question.** A potion with a `quiz` block
+(`{"subjects": [...], "tier": 4, "threshold": 1, "stat": "WIS", "amount": 1}`)
+asks one question when drunk (`MenuMixin._drink_quiz_draught`): right, the
+stat rises for good; wrong, the draught is wasted either way. The one such
+potion is the **Draught of Mimir's Well** (`draught_of_mimir`, D8: "No WIS
+purchase, possible rare shop appearance?"): min_level 9999 and no spawn
+weight, so it is never random loot; it comes only from a deep trader's
+`rare_stock` (data/traders.json: about 1 trader stock in 30, floor 40 and
+down, priced at 5 floors of income x 0.8). It arrives known (id level 5).
+
+### Treasure (`data/items/treasure.json`, class `Treasure`; rules in `src/treasure.py`)
+
+Gems, jewellery, old coin and art objects (17 kinds), with real weights and
+lore-fixed values: a Burmese Ruby is 0.01 lb and 2,500 gold on any floor;
+a Gold Idol 10 lb and 5,000; a Silver Candelabra 6 lb and 600 (less than
+its weight in gold coin, on purpose). Deep floors hold the dearer kinds by
+each kind's own spawn bell (`peak_floor`, `spread`, `peak_weight`,
+`min_level`), never by a floor multiplier.
+
+```json
+"treasure_burmese_ruby": {
+  "name": "Burmese Ruby", "kind": "gem", "symbol": "*", "color": [220, 20, 40],
+  "weight": 0.01, "value": 2500,
+  "min_level": 30, "peak_floor": 50, "spread": 14, "peak_weight": 1.0,
+  "lore": "A ruby from the Mogok valley in Burma, ..."
+}
+```
+
+- **Known by sight**: id level 5, never cursed, looks the same before and
+  after; no identify question. Stacks by kind.
+- **Worth**: until a trader values a kind (`Player.appraised_treasure`;
+  every trader values the pack when his shop opens) the hero sees only its
+  band ("Worth thousands of gold (not yet valued)"); after, "Valued at
+  2,500 gold". What he can count on for paying is the band's low end.
+- **Score**: the true value of the treasure carried when the run ends is
+  added to the score (`treasure.SCORE_PER_GOLD`); the ending screens show
+  it ("Treasure") and the high-score row keeps it (`treasure`).
+- **Where it lies**: chests with a `treasure` loot weight, treasuries,
+  vaults, lairs, gate-boss hoards, rich graves (grave goods), thrones (a
+  loose stone), creatures by purse kind (`treasure.treasure_chance`), and
+  gems on a trader's table. See [economy §11](economy.md).
 
 ### Ammo (`data/items/ammo.json`, class `Ammo` at `src/items.py:1099`)
 

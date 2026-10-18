@@ -5,7 +5,9 @@
     "after_theft": "flee" | "teleport"          (on the monster; default flee)
 
 * `steal`: "gold" takes a share of the hero's purse (economy.THEFT_PURSE_SHARE),
-  "item" takes one unworn thing from the pack, "any" takes gold or an item.
+  "item" takes one unworn thing from the pack (a piece of treasure catches a
+  thief's eye most of all), "any" takes gold or an item. What is taken leaves
+  the hero lighter (coins weigh, treasure.py); a monster has no carry limit.
 * A blow with `steal` that lands rolls `steal_chance` (default 1.0); the
   monster notes the wish (`_wants_steal`) and the game carries it out here
   right after the blow, because gold belongs to the Game, not the Player.
@@ -29,7 +31,9 @@ import random
 
 TELEPORT_MIN_DISTANCE = 12      # a teleporting thief lands at least this far away
 # Magical and bright things draw a thief's eye three times as often.
-BRIGHT_KINDS = ('Wand', 'Ring', 'Amulet', 'Accessory', 'Scroll', 'Potion', 'Artifact', 'Spellbook')
+# Treasure most of all: a gem is the perfect thing to steal, small and dear.
+BRIGHT_KINDS = ('Wand', 'Ring', 'Amulet', 'Accessory', 'Scroll', 'Potion', 'Artifact', 'Spellbook',
+                'Treasure')
 BRIGHT_WEIGHT = 3.0
 
 

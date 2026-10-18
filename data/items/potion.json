@@ -944,6 +944,33 @@
     "lore": "Sigurd roasted the dragon Fafnir's heart for Regin, burned his thumb on it, and put the thumb in his mouth. At the taste of the blood he understood the birds in the branches above him, and the birds were discussing Regin's plan to murder him. The blood still scalds. What it gives depends on the drinker: the birds will say a great deal to anyone who can follow them, and nothing at all to anyone who cannot.",
     "peak_weight": 0
   },
+  "draught_of_mimir": {
+    "name": "Draught of Mimir's Well",
+    "unidentified_name": "Draught of Mimir's Well",
+    "id_level": 5,
+    "buc_known": true,
+    "symbol": "!",
+    "color": [
+      140,
+      190,
+      230
+    ],
+    "weight": 0.5,
+    "min_level": 9999,
+    "effect": "mimir_wisdom",
+    "power": "1",
+    "duration": 0,
+    "floorSpawnWeight": {},
+    "quiz": {
+      "subjects": ["philosophy", "theology"],
+      "tier": 4,
+      "threshold": 1,
+      "stat": "WIS",
+      "amount": 1
+    },
+    "lore": "Mimir's well lies under a root of the world-tree, and its water is wisdom. Odin gave one of his eyes for a single drink. This flask holds a mouthful of it, brought up by a trader who will not say what it cost him. The water will not stay in a fool: drink it and you must think, there and then, or it runs straight through you and is gone.",
+    "peak_weight": 0
+  },
   "potion_of_see_invisible": {
     "name": "potion of see invisible",
     "unidentified_name": "pale mirror-bright potion",

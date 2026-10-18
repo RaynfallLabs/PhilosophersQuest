@@ -52,6 +52,7 @@
     ],
     "trap_chance": 0.15,
     "loot_table": {
+      "treasure": 1,
       "weapon_common": 20,
       "armor_common": 20,
       "shield_common": 10,
@@ -86,6 +87,7 @@
     ],
     "trap_chance": 0.1,
     "loot_table": {
+      "treasure": 8,
       "accessory": 70,
       "gold_bonus": 30
     },
@@ -213,6 +215,7 @@
     ],
     "trap_chance": 0.1,
     "loot_table": {
+      "treasure": 2,
       "weapon_common": 15,
       "armor_common": 15,
       "shield_common": 10,
@@ -250,6 +253,7 @@
     ],
     "trap_chance": 0.3,
     "loot_table": {
+      "treasure": 2,
       "scroll": 30,
       "potion": 30,
       "accessory": 20,
@@ -283,6 +287,7 @@
     ],
     "trap_chance": 0.2,
     "loot_table": {
+      "treasure": 1,
       "wand": 20,
       "scroll": 20,
       "accessory": 30,
@@ -318,6 +323,7 @@
     ],
     "trap_chance": 0.25,
     "loot_table": {
+      "treasure": 1,
       "magic": 40,
       "weapon_common": 15,
       "armor_common": 10,
@@ -385,6 +391,7 @@
     ],
     "trap_chance": 0.25,
     "loot_table": {
+      "treasure": 4,
       "gold_bonus": 30,
       "weapon_common": 20,
       "armor_common": 10,

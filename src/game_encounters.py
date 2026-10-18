@@ -1116,7 +1116,7 @@ class EncountersMixin:
             _fg = self._forgone_gold(enc)
             if _fg is not None:
                 import economy
-                if not economy.forgo_is_real(_fg, self.player_gold):
+                if not economy.forgo_is_real(_fg, self._purse_wealth()):
                     karma_delta = 0
 
         applied = 0
@@ -1237,7 +1237,7 @@ class EncountersMixin:
             for p in parts:
                 if isinstance(p, dict) and p.get('type') == 'gold':
                     amt = p.get('amount', (p.get('min', 0) + p.get('max', 0)) / 2.0)
-                    gold += economy.purse_scaled(amt, self.player_gold, p.get('purse_pct'))
+                    gold += economy.purse_scaled(amt, self._purse_wealth(), p.get('purse_pct'))
             if gold > 0:
                 best = gold if best is None else max(best, gold)
         return best
@@ -1577,7 +1577,9 @@ class EncountersMixin:
             elif ctype == 'gold':
                 # A branch or per-miss cost is not checked against the purse
                 # first (ENG-10): it takes what there is, never below zero.
-                self.player_gold = max(0, self.player_gold - int(cost['amount']))
+                # Coin first, then treasure at a trader's rate, change in
+                # coin (game_purse._pay_gold); short of that, all the coin.
+                self._npc_pay_gold(int(cost['amount']))
             elif ctype == 'hp_percent':
                 loss = max(5, int(self.player.hp * cost['amount'] / 100))
                 self.player.hp = max(1, self.player.hp - loss)
@@ -1640,11 +1642,15 @@ class EncountersMixin:
             elif ctype == 'gold_pct':
                 from npc_encounters import pct_loss
                 if chosen:
+                    # A share of the hero's whole purse, treasure included
+                    # (what it would fetch): paid in coin, then treasure.
                     import economy
-                    take = economy.pct_cost(self.player_gold, cost['amount'], self.dungeon_level)
+                    take = economy.pct_cost(self._purse_wealth(), cost['amount'], self.dungeon_level)
+                    self._npc_pay_gold(take)
                 else:
+                    # A loss that lands (a quick hand): a share of the coin.
                     take = pct_loss(self.player_gold, cost['amount'], 0)
-                self.player_gold = max(0, self.player_gold - take)
+                    self.player_gold = max(0, self.player_gold - take)
             elif ctype == 'stat':
                 # Lost stat points: a real consequence of blind help.
                 stat = cost['stat']
@@ -1653,6 +1659,27 @@ class EncountersMixin:
                 if amount:
                     self.player.apply_stat_bonus(stat, -amount)
                     self.add_message(f"-{amount} {stat}.", 'danger')
+
+    def _npc_payer_name(self) -> str:
+        """The person in the open encounter who is paying, if there is one
+        (a reward from a person comes in gems when the coin will not fit)."""
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        person = enc.get('person') if isinstance(enc.get('person'), dict) else {}
+        name = (person or {}).get('name') or enc.get('name') or ''
+        if not name:
+            return ''
+        from naming import proper_name
+        return proper_name(str(name))
+
+    def _npc_pay_gold(self, amount: int) -> None:
+        """A gold cost paid to someone in an encounter: coin first, then
+        treasure at a trader's rate with change in coin. When even that is
+        short (a cost that lands without a check), all the coin goes."""
+        amount = max(0, int(amount or 0))
+        if amount <= 0:
+            return
+        if self._pay_gold(amount) is None:
+            self.player_gold = max(0, int(self.player_gold) - amount)
 
     def _apply_npc_reward(self, reward: dict):
         """Grant a reward from an NPC encounter choice."""
@@ -1665,11 +1692,14 @@ class EncountersMixin:
                 amount = random.randint(reward['min'], reward['max'])
             if reward.get('purse_pct'):
                 # A deep temptation bites at every depth (D6): the written
-                # sum, or that share of what the hero carries if more.
+                # sum, or that share of what the hero carries if more
+                # (coin and treasure: game_purse._purse_wealth).
                 import economy
-                amount = economy.purse_scaled(amount, self.player_gold, reward['purse_pct'])
-            self.player_gold += amount
+                amount = economy.purse_scaled(amount, self._purse_wealth(), reward['purse_pct'])
             self.add_message(f"+{amount:,} gold!", 'loot')
+            # Coins weigh: a person paying more than he can carry makes up the
+            # rest in gems; gold merely found stays at his feet.
+            self._gain_gold(amount, paid=bool(self._npc_payer_name()))
 
         elif rtype in ('random_weapon', 'random_armor', 'random_shield',
                         'random_accessory', 'random_potion', 'random_scroll',
@@ -1718,8 +1748,8 @@ class EncountersMixin:
             from npc_encounters import pct_loss
             amount = pct_loss(self.player_gold, reward['amount'], 0)
             if amount:
-                self.player_gold += amount
                 self.add_message(f"+{amount:,} gold!", 'loot')
+                self._gain_gold(amount, paid=bool(self._npc_payer_name()))
 
         elif rtype == 'gold_pct_loss':
             # A share of the hero's own purse, gone (a quick hand in the

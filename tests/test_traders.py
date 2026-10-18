@@ -367,7 +367,7 @@ def test_a_bought_potion_marks_the_stack_it_joins():
     new = _potion('potion_of_healing')
     new.id_level, new.buc_known = 5, True
     _trader(g, stock=[new])
-    g.player_gold = 10 ** 6
+    g.player_gold = 3000                     # (coins weigh: a purse a hero can carry)
     _press(g, pygame.K_RETURN)
     stack = next(i for i in g.player.inventory if i.id == 'potion_of_healing')
     assert stack.count == 2 and stack._bought_for > 0

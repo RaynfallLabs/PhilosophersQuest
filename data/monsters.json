@@ -2092,7 +2092,8 @@
       ],
       "item_chance": 0.25,
       "item_tier": 3,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "A vampire makes spawn the way a lord makes servants: quickly, and with no thought for their future. The spawn is strong, hungry and bound to obey the one who drained it. It cannot yet turn to mist or call the wolves. It can only hunt where it is sent and hope its master is destroyed before it is.",
     "frequency": 2
@@ -2297,7 +2298,8 @@
       ],
       "item_chance": 0.4,
       "item_tier": 3,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "This mage has started down the road to lichdom and cannot turn back. He has given up sleep, warmth and most of his pulse, but has not yet hidden his soul away. He serves an older lich in exchange for the last secret of the ritual. The older lich has no intention of creating a rival.",
     "frequency": 2
@@ -2409,7 +2411,8 @@
       ],
       "item_chance": 0.6,
       "item_tier": 4,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "In the 1720s and 1730s Austrian army surgeons posted to Serbian villages filed sober reports of peasants digging up the dead and staking them, and the word vampire entered English soon after. The thing itself is older and patient. It drinks life, bends weak minds with a look, and fears the stake, the flame and the sign of the Cross.",
     "frequency": 2,
@@ -2640,7 +2643,8 @@
       ],
       "item_chance": 0.55,
       "item_tier": 3,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.054
     },
     "lore": "The Golden Legend tells of a dragon that poisoned the country around Silene in Libya until the townsfolk fed it their sheep, then their children. Saint George rode against it and brought it down with his lance. A young dragon is that story at the beginning: a small hoard, a large appetite, and fire it has only just learned to aim.",
     "frequency": 2
@@ -2778,7 +2782,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.05
     },
     "lore": "Bram Stoker gave his Count the name of a real prince, Vlad Dracula of Wallachia, and a castle full of servants who feared him. A vampire lord is that kind of ruler. A thousand years of feeding have made it rich, courteous and very hard to kill. It holds a whole level of the dungeon as its estate and treats visitors as guests until supper.",
     "frequency": 1
@@ -2841,7 +2846,8 @@
       ],
       "item_chance": 0.7,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "Lich is the Old English word for a corpse. A churchyard still has its lychgate, where the coffin rests before burial. This corpse buried itself on purpose. A wizard who fears death can cut out his own soul and lock it in a vessel, and while the vessel lasts the body cannot be ended. What remains is all intellect and no pity.",
     "frequency": 1
@@ -2901,7 +2907,8 @@
       ],
       "item_chance": 0.75,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.084
     },
     "lore": "The dragon in Beowulf slept on its gold for three hundred years until a runaway slave crept into the barrow and stole a single cup. The dragon woke, counted, and knew. It burned the king's hall that same night. An adult dragon knows every coin in its hoard and exactly how each one was taken.",
     "frequency": 1
@@ -3016,7 +3023,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "Russian tales tell of Koschei the Deathless, who hid his death inside a needle, the needle in an egg, the egg in a duck, the duck in a hare, and the hare in an iron chest buried under an oak on a distant island. A greater lich has had centuries to do better. It no longer bothers to guard its body at all.",
     "frequency": 1
@@ -3149,7 +3157,8 @@
       ],
       "item_chance": 0.9,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.09
     },
     "lore": "An Old English proverb says it in one line: the dragon belongs in the barrow, old and wise, proud of its treasures. This one has outlived the kingdoms whose crowns it sleeps on. Its fire went out ages ago and something colder took its place. The breath of an ancient wyrm is the frost of a grave that has never been opened.",
     "frequency": 1
@@ -3649,7 +3658,13 @@
       ],
       "item_chance": 0.25,
       "item_tier": 2,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "Brigands are former soldiers, escaped criminals, or simply desperate people who have turned to dungeon raiding and banditry. Unlike monsters, they have actual combat training and equipment. Some brigand bands have claimed entire dungeon sections as territory, extorting passing adventurers or simply killing them.",
     "frequency": 5
@@ -5121,7 +5136,8 @@
       ],
       "item_chance": 0.4,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.036
     },
     "lore": "Níðhöggr is the great corpse-gnawing dragon who dwells at the root of Yggdrasil, gnawing the World Tree from below. Its brood are smaller wyrms that carry their parent's essence, infected with the same cosmic rot. They are found in the deepest passages, continuing their parent's slow work of destroying the foundations of the world.",
     "frequency": 2
@@ -5225,7 +5241,8 @@
       ],
       "item_chance": 0.4,
       "item_tier": 3,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.036
     },
     "lore": "In the Danish tale of King Lindworm, a queen bears a wingless dragon who devours his brides. One clever girl comes to the wedding wearing ten shifts and tells him to shed a skin for each one she takes off. When the last skin falls, a prince is underneath. The lindworms in the flooded tunnels have no prince inside them.",
     "frequency": 3
@@ -10293,7 +10310,8 @@
       ],
       "item_chance": 0.5,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.033
     },
     "lore": "English heralds drew a careful line: a dragon has four legs, a wyvern only two, with wings for forelimbs and a barbed, knotted tail. The living animal lacks a dragon's mind and breath, and makes up the difference with temper. It swoops, pins its prey with its talons, and drives the tail sting in from above. The poison works fast.",
     "frequency": 3
@@ -11414,7 +11432,8 @@
       ],
       "item_chance": 0.15,
       "item_tier": 2,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "In Bram Stoker's novel, the madman Renfield serves Count Dracula from an asylum cell, eating flies and begging for his master's notice. Every vampire keeps such servants: mortals fed a few drops of the master's blood, stronger than they should be and incapable of disloyalty. A thrall still has a pulse of sorts. It would spend it gladly to buy its master one more night.",
     "frequency": 6
@@ -11474,7 +11493,8 @@
       ],
       "item_chance": 0.4,
       "item_tier": 4,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "Emily Gerard, a Scottish writer living in Transylvania, set the word down in 1885 as the local name for a vampire, and Bram Stoker carried it into Dracula. Nothing courtly survives in this breed. It is bald, rat-toothed and long-fingered, a thing of plague cellars that hunts alone. It hates the dawn above all, and the dungeon has no dawn.",
     "frequency": 3
@@ -11712,7 +11732,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "A lich so ancient that its body has crumbled away, leaving only the skull which houses its immortal consciousness. The demi-lich has transcended physical existence almost entirely, its soul focused into the gems embedded in its eye sockets. Its very wail can trap the souls of the living, and it commands magic beyond mortal comprehension.",
     "frequency": 1
@@ -11771,7 +11792,8 @@
       ],
       "item_chance": 0.22,
       "item_tier": 3,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "Lich is the Old English word for a corpse, and the lych-gate of a churchyard is where the coffin once rested before burial. A lich's thrall is a lesser sorcerer raised to serve the greater one: steward, doorkeeper, and spare pair of hands. It remembers its spells and its oath, and nothing else. Its cold fingers lock the joints of anyone it touches.",
     "frequency": 4
@@ -13219,7 +13241,8 @@
       ],
       "item_chance": 0.9,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "A dragon lives for a thousand years and still fears the end. The oldest and proudest let a lich bind their souls into a hoarded gem, and rise again as bone and cold sorcery. This is the get of such a creature, hatched dead from a clutch laid before the rite. It never drew a living breath. It has a dragon's cunning and none of a dragon's warmth, and its bite stops the heart.",
     "frequency": 1
@@ -17273,7 +17296,8 @@
       ],
       "item_chance": 0.6,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.039
     },
     "lore": "When Olaus Magnus drew his great map of the northern seas in 1539, he filled the water off Norway with serpents coiling around ships. Sailors had told him what they saw. A sea dragon's young are hatched in the black trenches and come up flooded rivers into the deep halls. Even half grown, one can crack a hull, and its spat water strikes cold as sleet.",
     "frequency": 2
@@ -17716,7 +17740,13 @@
       ],
       "item_chance": 0.45,
       "item_tier": 2,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.04,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "A bandit captain was a soldier once, and decided the pay was better on the other side of the law. He has claimed a stretch of corridor as a toll road and collects in coin or in blood. There is nothing showy in how he fights: he picks out the most dangerous opponent, puts a thrown dagger into him first, and closes with the sword.",
     "frequency": 3
@@ -18530,7 +18560,8 @@
       ],
       "item_chance": 0.65,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.054
     },
     "lore": "Black dragons lair in swamps and drowned cellars, and they spit acid where their cousins breathe fire. Even a young one has the full measure of the family's spite. It likes to hold prey under water until the struggling stops, then leave the meal to soften. Already it is counting coins: a hoard has to start somewhere, and an adventurer's purse will do.",
     "frequency": 2
@@ -18601,7 +18632,8 @@
       ],
       "item_chance": 0.7,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.054
     },
     "lore": "Red dragons believe that everything under the sky is theirs and merely on loan to others. A young one has all of that pride and only some of the size. The lair runs hot enough to feel from two rooms away, and the stone near its bed has melted and set again like wax. It expects tribute. Failing that, it takes it.",
     "frequency": 2
@@ -18675,7 +18707,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.084
     },
     "lore": "Blue dragons love order, though not justice. An adult keeps a web of servants, spies, and tributaries, each in an assigned place, and it treats a disturbance in that arrangement as a personal insult. Its breath is lightning, a single white stroke that leaps from one armored body to the next. It plans its battles, and it has already planned this one.",
     "frequency": 1
@@ -18751,7 +18784,8 @@
       ],
       "item_chance": 0.9,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.084
     },
     "lore": "Greed, pride, and cruelty, grown to full size. An adult red dragon has spent centuries stripping the lands around it, and it sleeps on the result: a bed of coin and plate deep enough to drown in. It knows every piece. The dragon in Beowulf burned a kingdom over one stolen cup, and this one would do the same without a second thought.",
     "frequency": 1
@@ -18805,7 +18839,8 @@
       ],
       "item_chance": 0.3,
       "item_tier": 3,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.033
     },
     "lore": "A fire drake is a dragon's poor relation: four legs, a furnace in the belly, and no more wit than a mastiff. It hunts, eats, and sleeps on whatever glitters. Its spit is a gobbet of burning pitch, far short of a true dragon's breath, but it will set a cloak or a rope bridge alight. Stronger monsters keep drakes as watchdogs and feed them the trespassers.",
     "frequency": 3
@@ -18860,7 +18895,8 @@
       ],
       "item_chance": 0.3,
       "item_tier": 3,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.033
     },
     "lore": "Frost drakes keep to the deep levels where the glaciers press in, and the rime never melts off their scales. They cling to the ceiling above a passage and breathe down a freezing fog, then drop on whatever has stopped moving. The lair is easy to find. The walls are glazed with ice, and last month's meals stand in it like flies in amber.",
     "frequency": 3
@@ -18965,7 +19001,8 @@
       ],
       "item_chance": 0.45,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.033
     },
     "lore": "Heralds know the wyvern well: two legs, two wings, and a barbed tail, where a true dragon has four legs. It has no breath weapon and does not miss one. A greater wyvern's wings can fill a corridor from wall to wall, and the sting at the end of its tail swings over its back like a scorpion's, carrying venom enough to stop a horse's heart.",
     "frequency": 2
@@ -19588,7 +19625,8 @@
       ],
       "item_chance": 0.6,
       "item_tier": 4,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.06
     },
     "lore": "Wyrm is the oldest English word for a dragon: the Beowulf poet used it for the hoard-guarder that killed his hero. The name fits the old, heavy kind found here, a serpent grown too vast to fly, dragging its belly along tunnels it has worn smooth. It has been breathing fire since before these halls had doors, and it has only grown better at it.",
     "frequency": 1
@@ -19851,7 +19889,8 @@
       ],
       "item_chance": 0.7,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.06
     },
     "lore": "Something poisoned this dragon while it was still growing. Its body kept the bulk of a great wyrm and its mind kept the temper of a hatchling, and neither ever finished. It knows what it should have been, and the knowledge has soured into a rage that burns hotter than a healthy dragon's fire. It cannot be bargained with. Nobody has found anything it wants more than revenge.",
     "frequency": 1
@@ -19993,7 +20032,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.09
     },
     "lore": "Five hundred years is middle age for a dragon. An elder has outgrown the rashness of youth and has not yet settled into the long sleep of the truly ancient, which makes this the most dangerous season of its life. It can level a town in an afternoon and has the sense to pick the afternoon. Its hoard is old enough to hold the coins of forgotten kings.",
     "frequency": 1
@@ -20059,7 +20099,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.05
     },
     "lore": "A king who would not die, and found a way. The lich sovereign hid its soul in a phylactery buried under the ruins of its old capital, and it rules the dead here exactly as it once ruled the living: with ledgers. Every intruder is recorded, assessed, and assigned a manner of disposal. The crown is still on the skull. The court still bows.",
     "frequency": 1
@@ -20187,7 +20228,8 @@
       ],
       "item_chance": 0.8,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.06
     },
     "lore": "The Norse told of a serpent that Odin threw into the sea, which grew until it circled the whole world and bit its own tail. The coils that fill these halls are of that kind, lying where the foundations of the earth are laid bare. They are older than any kingdom above. Scales turn a sword as a cliff turns rain, and when one shifts in its sleep, the ground shakes.",
     "frequency": 1
@@ -23459,7 +23501,8 @@
       ],
       "item_chance": 0.36,
       "item_tier": 3,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "The word vampire reached English in the 1730s, carried by Austrian army reports from Serbian villages where officers dug up the dead and found them ruddy and unspoiled. This one is far older than those reports. It keeps the manners of a court that no longer exists, and it feeds with the patience of a creature that has outlasted every hunter sent after it.",
     "frequency": 3,
@@ -23731,7 +23774,8 @@
       ],
       "item_chance": 0.38,
       "item_tier": 3,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.05
     },
     "lore": "Russian tales tell of Koschei the Deathless, who hid his death inside a needle, inside an egg, inside a duck, inside a hare, locked in a chest beneath an oak. A lich lord has done the same with his soul and has had centuries to improve the hiding place. What walks the halls is a robed skeleton with a scholar's patience and a touch that stops the limbs.",
     "frequency": 2
@@ -24053,7 +24097,8 @@
       ],
       "item_chance": 0.43000000000000005,
       "item_tier": 4,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.05
     },
     "lore": "The Greeks feared the lamia and the Romans the strix, night creatures that drank the blood of the sleeping, long before anyone used the word vampire. This lord claims to remember both names being coined. It has ruled its hunting ground since before the first chronicle, and it regards crusaders the way a landowner regards poachers: a nuisance to be dealt with personally.",
     "frequency": 3,
@@ -24372,7 +24417,8 @@
       ],
       "item_chance": 0.44000000000000006,
       "item_tier": 4,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "A dragon lives a thousand years and still fears the end of them. This one bargained with necromancers, drank what they brewed, and bound its soul into a hidden vessel while the flesh fell away. The bones kept the cunning and the hoard. Its breath is no longer flame but a grey killing mist, and it has all the time in the world to use it.",
     "frequency": 2
@@ -24595,7 +24641,13 @@
       ],
       "item_chance": 0.43000000000000005,
       "item_tier": 4,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "The Old Man of the Mountain sent his killers out from Alamut with a dagger each, and princes slept badly for two centuries. This order learned the same trade and then went further, bargaining its own shadows away for the right to walk inside them. Nothing is seen until the blade arrives. Bright flame and holy light leave them nowhere to stand.",
     "frequency": 4,
@@ -24764,7 +24816,8 @@
       ],
       "item_chance": 0.52,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "Few sorcerers manage the rite that makes a lich. Fewer last long enough afterward to grow bored with it. The arch-lich has spent uncounted centuries refining a single art, and has scattered the vessels of its soul so widely that it no longer remembers them all. Spells break against it. Its gaze unmakes, its touch stops the limbs, and it considers visitors an interruption.",
     "frequency": 3
@@ -24827,7 +24880,8 @@
       ],
       "item_chance": 0.53,
       "item_tier": 5,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "The oldest of the dead dragons, a cathedral of black bone with witchlight in the sockets. It was ancient when it gave up its flesh and has been dead far longer than it lived. Lesser undead gather to it as courtiers to a king. Its breath is a darkness that leaves a curse on whatever survives it, and its tail can bring down a vaulted roof.",
     "frequency": 2
@@ -24939,7 +24993,8 @@
       ],
       "item_chance": 0.53,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.06
     },
     "lore": "A dragon that flew too far into the dark between the stars and came back with some of it. Its scales show no color, only an absence the eye slides off. What it breathes is not fire but a tearing wrongness that leaves men seeing things that are not there. Its bite takes strength rather than flesh. Lightning and holy light still find it solid.",
     "frequency": 2
@@ -25222,7 +25277,8 @@
       ],
       "item_chance": 0.54,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.06
     },
     "lore": "Hatched in the pit from a stolen clutch and reared on brimstone. It has a dragon's size and greed and a demon's delight in suffering, and its hide is the color of cooled slag. The fire it breathes is hellfire, its claws are long as scythes, and its bite festers. Saint George would know the shape. He would not like the smell.",
     "frequency": 2
@@ -26299,7 +26355,8 @@
       ],
       "item_chance": 0.6,
       "item_tier": 4,
-      "purse": "noble_dead"
+      "purse": "noble_dead",
+      "treasure_chance": 0.025
     },
     "lore": "Not a true lich. A true lich keeps its soul in a hidden vessel, and this one's vessel cracked centuries ago. What remains is the habit of necromancy, performed by a skeleton that no longer remembers why. The summoning still works. The cold still bites.",
     "summon_kind": [
@@ -26740,7 +26797,13 @@
       ],
       "item_chance": 0.14,
       "item_tier": 1,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "The muscle of the gang: usually a farmhand whose lord rode to war and never came back, or a town drunk who learned that travelers cannot call the watch. Alone he is a coward. With a kinsman at his shoulder he will fight to the last shilling.",
     "pack_dependent": true,
@@ -26797,7 +26860,13 @@
         ],
         "chance": 0.65
       },
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "Former poachers, and often the most useful members of a roadside gang: quiet, patient, and willing to spend a whole afternoon up a tree. They will not shoot a child or a priest. This is not conscience. Their grandmothers warned them how those debts get collected.",
     "pack_dependent": true,
@@ -26851,7 +26920,13 @@
       ],
       "item_chance": 0.3,
       "item_tier": 2,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "Thieves drift in and out of bandit work as the seasons demand: winter in a warm gang, spring picking pockets in a market town. They prefer a quiet boot and a turned back to a duel, and a purse cut in passing to either. They have a saying: the man who shows his sword has already decided he would rather not use it. One who has your gold runs. Catch him and it is yours again.",
     "after_theft": "flee"
@@ -26902,7 +26977,13 @@
       ],
       "item_chance": 0.55,
       "item_tier": 4,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.04,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "A kingpin holds his stretch of road the way a baron holds a fief: protection paid, debts collected, rivals removed quietly. Some were officers cashiered for treason, some were roadside preachers whose sermons soured. All of them can read, write and count, and that alone is why they lead.",
     "alert_all_tag": true,
@@ -27969,7 +28050,13 @@
       ],
       "item_chance": 0.4,
       "item_tier": 4,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "An order raised inside the wizards' towers to hunt renegades, then turned against the towers themselves. Each slayer wears wards sewn into the lining of the coat, so spells slide off. The first cut goes for the casting hand and the second for the throat, to stop the voice. The rest of the work, they say, is bookkeeping.",
     "prefers_flank": true
@@ -29885,7 +29972,13 @@
       ],
       "item_chance": 0.32,
       "item_tier": 3,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "Icelanders tell of the huldufolk, the hidden people who live inside rocks and hills, keep farms and churches of their own, and are seen only when they wish to be. One story says Eve hid her unwashed children from God, and God decreed that what was hidden from Him would be hidden from men. Road crews in Iceland still bend a road round an elf rock rather than blast it. The raiders down here have stopped waiting to be wronged. They walk beside a traveller unseen, lead him in circles, and use the knife once he is lost.",
     "frequency": 2,
@@ -30758,7 +30851,13 @@
       ],
       "item_chance": 0.6,
       "item_tier": 4,
-      "purse": "thief"
+      "purse": "thief",
+      "treasure_chance": 0.02,
+      "treasure_kinds": [
+        "gem",
+        "jewellery",
+        "coins"
+      ]
     },
     "lore": "Odysseus's grandfather Autolycus outdid all men in thieving and in oaths that meant nothing, and Hermes himself gave him the gift. He stole a famous boar-tusk helmet out of a locked house and the cattle of Sisyphus out of a guarded field, and he changed their colour so the owner could not know them. Sisyphus beat him only by carving his name under the hooves. His heirs keep the family trade: a brush against you, a purse or a pack lighter, and they are gone. Run them down and it is yours again.",
     "frequency": 2,
@@ -31429,7 +31528,8 @@
       ],
       "item_chance": 0.55,
       "item_tier": 5,
-      "purse": "hoard"
+      "purse": "hoard",
+      "treasure_chance": 0.06
     },
     "lore": "Azhi Dahaka was the three-headed, six-eyed dragon of the Avesta, made by the evil spirit to empty the world of good things. When the hero Thraetaona struck it with his blade, snakes, scorpions, toads and lizards poured out of the wound, and he saw that if he cut it to pieces the world would be filled with vermin. So he chained it under Mount Damavand instead. Its brood carries the same curse. Every cut or stab lets out a swarm. Club it, burn it, or blast it.",
     "frequency": 2,

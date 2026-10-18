@@ -280,9 +280,11 @@ PER). Values are right-aligned inside each cell so 3-digit stats stay
 on their own side of the midpoint. Value color: `GOLD_BRIGHT` > 12,
 `BODY_TEXT` 10-12, `DANGER_TEXT` below 10.
 
-**DERIVED** (`_derived`): 2-column grid of 5 metrics —
-`AC`, `Gold`, `Sight`, `Clock`, `Spells` — then one full-width line
-`Carrying 43 / 100` (`_carrying`; worn gear + pack, `ui.carry_state`):
+**DERIVED** (`_derived`): 2-column grid of 4 metrics —
+`AC`, `Sight`, `Clock`, `Spells` — then one full-width purse line
+`1,234 gold, 7.7 lb` (`_purse`; coins weigh 160 to the pound, 2026-10-18,
+[economy §11](economy.md)), then one full-width line
+`Carrying 43 / 100` (`_carrying`; worn gear + pack + purse, `ui.carry_state`):
 green, `WARNING_TEXT` with "Burdened" beside it above 75% of the limit,
 `DANGER_TEXT` with "Over Limit" past it. Burdened / Over Limit is also
 the first chip under EFFECTS (2026-10-16 carry rebalance,

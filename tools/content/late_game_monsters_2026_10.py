@@ -836,10 +836,11 @@ def apply(data: dict) -> list[str]:
         want = dict(d)
         cur = data.get(mid)
         # What a creature carries is decided by tools/balance/gold_by_lore.py
-        # (economy refactor 2026-10-17, gold by lore): keep its gold and purse.
+        # (economy refactor 2026-10-17, gold by lore): keep its gold and purse,
+        # and its treasure chance and kinds (2026-10-18).
         if isinstance(cur, dict) and isinstance(want.get('treasure'), dict):
             tr = dict(want['treasure'])
-            for k in ('gold', 'purse'):
+            for k in ('gold', 'purse', 'treasure_chance', 'treasure_kinds'):
                 if k in (cur.get('treasure') or {}):
                     tr[k] = cur['treasure'][k]
             want['treasure'] = tr

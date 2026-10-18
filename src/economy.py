@@ -117,6 +117,11 @@ def _item_tier(item) -> int:
 def class_share(item) -> float:
     """The class's share of a floor's income for this item (before worth)."""
     iid = getattr(item, 'id', '') or ''
+    # A rare ware priced by its own stock entry (data/traders.json
+    # rare_stock "share": the Draught of Mimir's Well).
+    own = getattr(item, '_trade_share', None)
+    if own:
+        return float(own)
     by_share = worth_table().get('share_by_id') or {}
     if iid in by_share:
         return float(by_share[iid])
@@ -134,6 +139,12 @@ def merchant_price(item, level: int = 1, markup: float = 1.0) -> int:
     """Gold cost of one trader's item on floor `level`: its class share of
     the floor's income, by tier, times what it is worth (data/item_worth.json),
     times the trader's own markup (an abyssal dealer's 1.5)."""
+    if getattr(item, 'item_class', '') == 'treasure':
+        # Treasure keeps its own worth on every floor (LORE NOT FLOOR): a
+        # trader sells a gem at its value x the exchange spread
+        # (treasure.shop_price), whatever his markup.
+        import treasure
+        return treasure.shop_price(item)
     frac = class_share(item) * (0.6 + 0.2 * _item_tier(item)) * item_worth(item)
     return max(5, nice(floor_income(level) * frac * float(markup or 1.0)))
 
@@ -143,6 +154,8 @@ def unknown_price(item, level: int = 1, markup: float = 1.0) -> int:
     offer for it when the hero cannot say what it is. It never depends on
     what the thing really is (its worth, its tier, whether it is unique)."""
     ic = getattr(item, 'item_class', 'misc')
+    if ic == 'treasure':
+        return merchant_price(item, level, markup)     # treasure is always known
     frac = MERCHANT_SHARE.get(ic, 0.5) * (0.6 + 0.2 * UNKNOWN_TIER)
     return max(5, nice(floor_income(level) * frac * float(markup or 1.0)))
 
@@ -171,6 +184,15 @@ def sell_offer(item, level: int, *, known: bool, identified: bool,
     priced as its unidentified class, so the offer never tells the hero what
     it is. identified: this copy is identified to the last detail.
     """
+    if getattr(item, 'item_class', '') == 'treasure':
+        # Treasure sells near its full value (treasure.buy_rate), every
+        # trader takes it, and there is no resale cap: he sells a gem at
+        # value x 1.1 and buys at x 0.9, so no loop is possible.
+        import treasure
+        offer = treasure.credit(item)
+        if purse is not None:
+            offer = min(offer, max(0, int(purse)))
+        return max(0, int(offer))
     his = merchant_price(item, level, markup) if known else unknown_price(item, level, markup)
     rate = SELL_RATE_IDENTIFIED if (known and identified) else SELL_RATE_UNKNOWN
     offer = his * rate

@@ -169,6 +169,12 @@ def _handle_success(player, container, dungeon, on_complete):
 
     loot = _generate_loot_from_template(container, dungeon.level)
     gold += int(getattr(container, '_gold_bonus_accum', 0))
+    # A chest that holds treasure holds less coin: deep, a hoard's worth is
+    # gems and plate more than heavy coin (treasure.coin_after_treasure).
+    import treasure as _tr
+    _tval = sum(_tr.total_value(i) for i in loot if _tr.is_treasure(i))
+    if _tval and gold:
+        gold = _tr.coin_after_treasure(gold, _tval)
 
     messages.insert(0, ('The lock yields! You crack the chest.', 'success'))
     if gold:
@@ -270,6 +276,8 @@ _COMMON_CATEGORIES: dict[str, list[str]] = {
     'ingredient':     ['ingredient'],
     'artifact':       ['artifact'],
     'magic':          ['wand', 'scroll', 'spellbook'],
+    # Gems, jewellery and art (treasure.py): a jewel box, a strongbox, a hoard.
+    'treasure':       ['treasure'],
     # Gear bucket: weapon + armor + shield (all common, instantiated below)
     'gear':           ['weapon_common', 'armor_common', 'shield_common'],
 }

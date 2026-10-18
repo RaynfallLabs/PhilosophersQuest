@@ -259,6 +259,63 @@ class MenuMixin:
             base_seconds=self.player.get_quiz_timer('animal'),
         )
 
+    def _drink_quiz_draught(self, item):
+        """The Draught of Mimir's Well (D8; data/items/potion.json 'quiz').
+
+        Brandon: "No WIS purchase, possible rare shop appearance?" Gold can
+        buy the flask, never the wisdom: a permanent stat costs a quiz. One
+        question at the draught's tier (philosophy or theology); right, the
+        stat rises for good; wrong, the water runs through and is wasted.
+        The flask is already out of the pack (drunk either way)."""
+        import random as _r
+        from game_states import STATE_QUIZ
+        q = dict(getattr(item, 'quiz', None) or {})
+        subjects = [s for s in (q.get('subjects') or ['philosophy']) if s]
+        subject = _r.choice(subjects)
+        tier = max(1, min(5, int(q.get('tier', 4) or 4)))
+        threshold = max(1, int(q.get('threshold', 1) or 1))
+        stat = str(q.get('stat', 'WIS'))
+        amount = int(q.get('amount', 1) or 1)
+        name = self._bare_name(item)
+        self.player.known_item_ids.add(item.id)
+        self.add_message(
+            f"You drink the {name}. It is cold as a mountain spring, and it waits for you to think.",
+            'info')
+        self.quiz_title = f"MIMIR'S WELL  --  {subject.upper()}"
+        self.state = STATE_QUIZ
+
+        def on_complete(result):
+            passed = bool(getattr(result, 'success', False)) or \
+                int(getattr(result, 'score', 0) or 0) >= threshold
+            if passed:
+                self.player.apply_stat_bonus(stat, amount)
+                self.add_message(
+                    f"The water stays. Something in you deepens, for good. "
+                    f"(+{amount} {stat})", 'success')
+                self._chron('discovery', "Drank from Mimir's well, and understood. "
+                                         "Odin paid an eye for that. I paid a fortune and a hard question.")
+            else:
+                self.add_message(
+                    "The water runs straight through you and is gone. "
+                    "The draught is wasted.", 'danger')
+                self._chron('discovery', "Drank from Mimir's well and could not hold the water. "
+                                         "A fortune, gone in a mouthful.")
+            self.state = STATE_PLAYER
+            self._advance_turn()
+
+        self.quiz_engine.start_quiz(
+            mode='threshold',
+            subject=subject,
+            tier=tier,
+            callback=on_complete,
+            threshold=threshold,
+            total_qs=threshold,
+            wisdom=self.player.WIS,
+            timer_modifier=self.player.get_quiz_timer_modifier(),
+            extra_seconds=self.player.get_quiz_extra_seconds(subject),
+            base_seconds=self.player.get_quiz_timer(subject),
+        )
+
     def _quaff_menu_input(self, key: int):
         if key in self._MENU_CURSOR_KEYS:
             self._quaff_sel = self._move_menu_cursor(
@@ -273,6 +330,12 @@ class MenuMixin:
         self.state = STATE_PLAYER
         item = self.quaff_menu_items[idx]
         self.player.remove_from_inventory(item)
+
+        # A draught that asks a question before it works (the Draught of
+        # Mimir's Well): the quiz decides, the draught is gone either way.
+        if getattr(item, 'quiz', None):
+            self._drink_quiz_draught(item)
+            return
 
         # Fafnir's Blood asks its own question before it does anything.
         if getattr(item, 'effect', '') == 'fafnirs_blood':

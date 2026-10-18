@@ -2,7 +2,9 @@
 highscore_system.py -- Persistent high score table for Philosopher's Quest.
 
 Stores up to MAX_ENTRIES runs in a JSON file next to the src/ directory.
-Each entry: {name, score, grade, level, kills, turns, date, victory}
+Each entry: {name, score, grade, level, kills, turns, date, victory, treasure}
+(``treasure``: gold value of the treasure carried at the end, already in the
+score; 0 for rows written before treasure existed).
 """
 from __future__ import annotations
 
@@ -34,9 +36,9 @@ def _load() -> list[dict]:
                 if isinstance(e, dict) and isinstance(e.get('score'), (int, float)) \
                         and not isinstance(e.get('score'), bool):
                     e.setdefault('name', '?')
-                    for k in ('level', 'kills', 'turns'):
+                    for k in ('level', 'kills', 'turns', 'treasure'):
                         if not isinstance(e.get(k), (int, float)):
-                            e[k] = 0
+                            e[k] = 0                   # (rows from before treasure have none)
                     e.setdefault('grade', '')
                     e.setdefault('victory', False)
                     e.setdefault('date', '')
@@ -71,10 +73,14 @@ def add_score(
     kills: int,
     turns: int,
     victory: bool,
+    treasure: int = 0,
 ) -> int:
     """
     Insert a new score entry, keep top MAX_ENTRIES by score.
     Returns the rank (1-based) of the new entry, or 0 if it didn't make the table.
+
+    ``treasure``: the gold value of the treasure carried when the run ended
+    (it is already part of ``score``; kept so the table can say so).
     """
     entries = _load()
     entry = {
@@ -85,6 +91,7 @@ def add_score(
         'kills':   kills,
         'turns':   turns,
         'victory': victory,
+        'treasure': int(treasure or 0),
         'date':    datetime.now().strftime('%Y-%m-%d'),
     }
     entries.append(entry)

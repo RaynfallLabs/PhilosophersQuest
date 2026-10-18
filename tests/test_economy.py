@@ -463,9 +463,11 @@ def test_d6_late_temptations_offer_a_share_of_the_purse():
                    for p in ([o.get('reward') or {}] + list((o.get('reward') or {}).get('rewards') or [])))]
     assert len(deep) >= 12
     g = _game()
-    g.player_gold = 100000
+    # Coins weigh (2026-10-18): a strong hero, so the whole share fits.
+    g.player.STR = 40
+    g.player_gold = 20000
     g._apply_npc_reward({'type': 'gold', 'min': 300, 'max': 400, 'purse_pct': 25})
-    assert g.player_gold == 125000
+    assert g.player_gold == 25000
 
 
 def test_d6_forgoing_pocket_change_is_no_sacrifice():

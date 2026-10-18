@@ -1283,6 +1283,12 @@ class Potion(Item):
         self.identified: bool       = False
         self.id_level: int          = int(defn.get('id_level', 0))
         self.unidentified_name: str = defn.get('unidentified_name', self.name)
+        # A potion that asks a question before it works (the Draught of
+        # Mimir's Well: permanent stats cost a quiz). {subjects, tier,
+        # threshold, stat, amount}; None for every ordinary potion.
+        self.quiz: dict | None      = defn.get('quiz') or None
+
+    quiz = None                      # potions pickled before the field
 
     @property
     def cursed(self) -> bool:
@@ -1293,8 +1299,40 @@ class Potion(Item):
         self.buc = 'cursed' if value else 'uncursed'
 
 
+class Treasure(Item):
+    """A gem, a piece of jewellery or an art object (data/items/treasure.json;
+    the rules are in treasure.py). Wealth you can carry: light for what it is
+    worth, where coin is heavy (1 gold piece weighs a tenth of an ounce).
+
+    Anyone can see a ruby is a ruby, so treasure needs no identify question:
+    it is known by sight and looks the same before and after. What it is
+    WORTH is another matter: until a trader values a kind, the hero knows
+    only roughly (``treasure.value_text``). Its value counts toward the
+    run's score. It cannot be cursed, worn or used; it can be sold, paid
+    with, or carried out."""
+
+    def __init__(self, defn: dict):
+        defn = {**defn, 'id_level': 5, 'buc': 'uncursed', 'buc_known': True}
+        super().__init__(defn)
+        self.kind: str = defn.get('kind', 'gem')
+        self.value: int = int(defn.get('value', 0) or 0)
+        self.unidentified_name = self.name
+
+    @property
+    def cursed(self) -> bool:
+        return False
+
+    @cursed.setter
+    def cursed(self, value: bool):
+        pass                       # treasure is never cursed
+
+
 class GoldPile:
-    """Gold coins lying on the ground. Picked up to credit player_gold directly."""
+    """Gold coins lying on the ground. Picked up to credit player_gold directly.
+
+    Coins have weight (treasure.COINS_PER_LB: 1 gold piece is a tenth of an
+    ounce, so 160 to the pound). A pile is picked up only as far as the hero
+    can carry; the rest stays where it lies."""
     def __init__(self, amount: int, x: int = 0, y: int = 0):
         self.id     = 'gold_pile'
         self.amount = amount
@@ -1353,7 +1391,7 @@ def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
 
 
 # Stackable item types: identical instances (same id) merge into one stack entry.
-Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo)
+Item._STACKABLE_CLASSES = (Ingredient, Food, Potion, Scroll, Ammo, Treasure)
 
 # ------------------------------------------------------------------
 # Loading
@@ -1374,6 +1412,7 @@ _CLASS_MAP: dict[str, type] = {
     'potion':     Potion,
     'lockpick':   Lockpick,
     'container':  Container,
+    'treasure':   Treasure,
 }
 
 
