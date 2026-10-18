@@ -5744,8 +5744,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"You pick up {item.count} {re.sub(r' x[0-9]+$', '', self._display_name(item))}s.", 'loot')
             elif getattr(item, 'item_class', '') == 'treasure':
                 import treasure as _tr
+                # "Worth thousands of gold (not yet valued)." as a sentence of
+                # its own: inside brackets it read "(Worth ... (not yet valued).)".
                 self.add_message(f"You pick up the {self._bare_name(item)}. "
-                                 f"({_tr.value_text(self.player, item)}.)", 'loot')
+                                 f"{_tr.value_text(self.player, item)}.", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
             # Leather scraps: keep count for the player. Nothing else in the

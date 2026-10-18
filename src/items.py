@@ -1326,6 +1326,37 @@ class Treasure(Item):
     def cursed(self, value: bool):
         pass                       # treasure is never cursed
 
+    # Known by sight and never cursed or blessed, whatever touches it: a
+    # prayer's blessing, a curse, a cursed Scroll of Identify's forgetting
+    # (wiring audit 2026-10-18: each of those reached treasure and printed
+    # "Blessed Burmese Ruby" or offered to identify a gem). The fields stay
+    # readable for every system that asks; writes are ignored.
+    can_be_cursed = False
+
+    @property
+    def buc(self) -> str:
+        return 'uncursed'
+
+    @buc.setter
+    def buc(self, value):
+        pass
+
+    @property
+    def buc_known(self) -> bool:
+        return True
+
+    @buc_known.setter
+    def buc_known(self, value):
+        pass
+
+    @property
+    def id_level(self) -> int:
+        return 5
+
+    @id_level.setter
+    def id_level(self, value):
+        pass
+
 
 class GoldPile:
     """Gold coins lying on the ground. Picked up to credit player_gold directly.

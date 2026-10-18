@@ -1878,6 +1878,20 @@ def _(g):
     g._start_mystery(altar)
 
 
+@scene('mystery_approach_tribute', 'Encounters',
+       "Step onto the Oracle's Rift with too little coin and a gem: the card says what treasure "
+       "the tribute would take (an altar gives no change).", expect='mystery_approach')
+def _(g):
+    import treasure
+    from mystery_system import MysteryAltar
+    x, y = _free_tiles_near(g, 1, 1)[0]
+    altar = MysteryAltar('oracle', x, y)
+    g.ground_items.append(altar)
+    g.player_gold = 20
+    g.player.inventory.append(treasure.make('treasure_burmese_ruby'))
+    g._start_mystery(altar)
+
+
 @scene('judgment', 'Encounters', 'L99: pray on the Altar of the Last Judgment.', expect='judgment')
 def _(g):
     g.karma = 6
@@ -1953,6 +1967,18 @@ def _(g):
 @scene('quiz_recall_lore', 'Quiz', 'N: Recall Lore, trivia escalator chain.', expect='quiz')
 def _(g):
     press(g, pygame.K_n)
+
+
+@scene('quiz_mimir_draught', 'Quiz',
+       "Q, drink the Draught of Mimir's Well: one philosophy or theology question at tier 4 "
+       "(right, +1 WIS for good; wrong, the draught is wasted).", expect='quiz')
+def _(g):
+    from items import make_item_by_id
+    d = make_item_by_id('potion', 'draught_of_mimir')
+    g.player.inventory.append(d)
+    g._open_quaff_menu()
+    g._quaff_sel = g.quaff_menu_items.index(d)
+    press(g, pygame.K_RETURN)
 
 
 @scene('quiz_identify', 'Quiz', 'I, pick an item: philosophy identify question.', expect='quiz')

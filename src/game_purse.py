@@ -255,22 +255,22 @@ class PurseMixin:
         p = self.player
         add_gold_to_tile(self.ground_items, 20000, p.x, p.y, found=True)
         taken = {(g.x, g.y) for g in self.ground_items} | {(m.x, m.y) for m in self.monsters}
+        taken |= {(q.x, q.y) for q in getattr(self, 'pets', ()) or ()}
         spots = []
-        for r in range(1, 6):
+        # Out to ten tiles: a start in a corridor has fewer than eighteen free
+        # tiles within five, and the trader (placed last) was left out, so
+        # the sampler had no draught about one start in five (wiring audit
+        # 2026-10-18). The trader now takes the nearest spot, first.
+        for r in range(1, 11):
             for dy in range(-r, r + 1):
                 for dx in range(-r, r + 1):
                     x, y = p.x + dx, p.y + dy
                     if (max(abs(dx), abs(dy)) == r and self.dungeon.is_walkable(x, y)
                             and (x, y) not in taken):
                         spots.append((x, y))
-        for kind in sorted(treasure.kinds()):
-            if not spots:
-                break
-            x, y = spots.pop(0)
-            piece = treasure.make(kind, x, y)
-            if piece is not None:
-                self.ground_items.append(piece)
-        if spots and not any(isinstance(g, MerchantNPC) for g in self.ground_items):
+        near = any(isinstance(g, MerchantNPC) and max(abs(g.x - p.x), abs(g.y - p.y)) <= 2
+                   for g in self.ground_items)
+        if spots and not near:
             m = build_trader('generalist', max(40, int(self.dungeon_level)), _random.Random(4))
             d = make_item_by_id('potion', 'draught_of_mimir')
             if d is not None:
@@ -280,6 +280,13 @@ class PurseMixin:
                 m.prices.append(economy.merchant_price(d, max(40, int(self.dungeon_level)), m.markup))
             m.x, m.y = spots.pop(0)
             self.ground_items.append(m)
+        for kind in sorted(treasure.kinds()):
+            if not spots:
+                break
+            x, y = spots.pop(0)
+            piece = treasure.make(kind, x, y)
+            if piece is not None:
+                self.ground_items.append(piece)
         self.add_message("[QA] 20,000 gold at your feet, one of every treasure nearby, "
                          "and a trader with gems and the Draught of Mimir's Well.", 'info')
 

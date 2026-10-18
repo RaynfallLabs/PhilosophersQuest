@@ -744,7 +744,10 @@ each kind's own spawn bell (`peak_floor`, `spread`, `peak_weight`,
 ```
 
 - **Known by sight**: id level 5, never cursed, looks the same before and
-  after; no identify question. Stacks by kind.
+  after; no identify question. Stacks by kind. `items.Treasure` holds
+  `buc`, `buc_known`, `id_level` and `can_be_cursed` fixed (writes are
+  ignored), so a prayer's blessing, a curse or a cursed Scroll of Identify's
+  forgetting never reaches it.
 - **Worth**: until a trader values a kind (`Player.appraised_treasure`;
   every trader values the pack when his shop opens) the hero sees only its
   band ("Worth thousands of gold (not yet valued)"); after, "Valued at

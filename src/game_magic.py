@@ -3577,6 +3577,10 @@ class MagicMixin:
                 # Skip the philosopher's shard — bricking the ID system is too brutal.
                 if getattr(it, 'id', '') == 'philosophers_shard':
                     continue
+                # Treasure is known by sight (treasure.py): there is nothing
+                # to forget, and the scroll's teeth must bite something real.
+                if getattr(it, 'item_class', '') == 'treasure':
+                    continue
                 candidates.append(it)
         if not candidates:
             self.add_message(
