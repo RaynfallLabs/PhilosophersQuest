@@ -245,11 +245,12 @@ class InputMixin:
                 # karma are applied when the option is picked; Esc on the
                 # outcome screen used to close as "unresolved", leaving the
                 # NPC in place to be milked again (free karma, +2 INT a loop).
-                _done = getattr(self, '_npc_encounter_phase', '') == 'outcome'
-                if not _done and hasattr(self, '_npc_committed'):
-                    _done = self._npc_committed()     # a 'then: options' list after a choice
-                if hasattr(self, '_close_npc_encounter'):
-                    self._close_npc_encounter(resolved=_done)
+                # The encounter's own handler decides (ENG-07, SAV-04): it
+                # refuses Esc in a hostile scene before a choice, and Esc on
+                # the item picker goes back to the options. Handling it here
+                # used to close the scene whatever its phase.
+                if hasattr(self, '_npc_encounter_input'):
+                    self._npc_encounter_input(pygame.K_ESCAPE)
                 else:
                     self.state = STATE_PLAYER
                 return True
@@ -1108,10 +1109,12 @@ class InputMixin:
         if phase == 'text':
             if key in (pygame.K_RETURN, pygame.K_SPACE):
                 self._npc_show_options()
-            elif key == pygame.K_ESCAPE and enc.get('hostile'):
+            elif key == pygame.K_ESCAPE and enc.get('hostile') and not self._npc_committed():
                 self.add_message("There is no walking away from this.", 'warning')
             elif key == pygame.K_ESCAPE:
-                self._close_npc_encounter(resolved=False)
+                # Before any choice the NPC stays; after a step of a 'then:
+                # options' encounter, leaving resolves it.
+                self._close_npc_encounter(resolved=self._npc_committed())
             return
 
         # ── Phase: OPTIONS (choose 1-4 of the visible options) ───

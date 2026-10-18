@@ -342,7 +342,12 @@ def open_oaths(reg) -> list:
 # ---------------------------------------------------------------- people
 
 def set_person(reg: dict, person_id: str, *, name: str = '', status=None, owes=None,
-               owed=None, last_line=None, deserving=None, floor: int = 0):
+               owed=None, last_line=None, deserving=None, floor: int = 0,
+               title=None, known=None):
+    """Create or update a person. ``title`` is what the scene calls them
+    before they give a name ("Courteous Giant"); ``known`` says the hero has
+    heard the name: False only while it has not (JNL-04), and once True it
+    stays. A person made without either is known (old saves, engine code)."""
     p = reg['people'].get(person_id)
     if p is None:
         p = reg['people'][person_id] = {
@@ -350,6 +355,12 @@ def set_person(reg: dict, person_id: str, *, name: str = '', status=None, owes=N
             'status': 'met', 'owes': False, 'owed': False, 'last_line': '',
             'deserving': None,
         }
+        if known is False:
+            p['known'] = False
+    if known:
+        p['known'] = True
+    if title and not p.get('title'):
+        p['title'] = title
     if name:
         p['name'] = name
     if status is not None:

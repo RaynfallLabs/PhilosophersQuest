@@ -354,6 +354,7 @@ class QuizEngine:
         self.reroll_available = bool(getattr(self, '_reroll_flag', False))
         self._reroll_flag = False
         self.reroll_was_used = False
+        self._erased_misses = 0       # misses the reroll took back (ENG-15)
 
         # Resume from where the persistent deck left off.
         self._pool     = self._decks[deck_key]
@@ -556,6 +557,7 @@ class QuizEngine:
                 if self.reroll_available:
                     self.reroll_available = False
                     self.reroll_was_used = True
+                    self._erased_misses = getattr(self, '_erased_misses', 0) + 1
                     self._next_question()
                     return
                 self._end(success=True)   # chain mode: always "succeeds"; score = chain length
@@ -590,6 +592,7 @@ class QuizEngine:
                 if self.reroll_available:
                     self.reroll_available = False
                     self.reroll_was_used = True
+                    self._erased_misses = getattr(self, '_erased_misses', 0) + 1
                     self._next_question()
                     return
                 if getattr(self, 'play_all', False) and self.asked_count < self.total_qs:
@@ -995,12 +998,47 @@ class QuizEngine:
         hook = getattr(self, '_on_each', None)
         if hook is None:
             return
+        if (not is_correct and self.reroll_available
+                and not (self.timed and self.time_remaining <= 0)):
+            # The Tablet of Destinies will take this miss back (_advance
+            # rerolls the first wrong answer): it costs nothing (ENG-15).
+            return
+        wrong = self.asked_count - self.correct_count - getattr(self, '_erased_misses', 0)
         try:
-            hook(bool(is_correct), int(self.correct_count),
-                 int(self.asked_count - self.correct_count))
+            hook(bool(is_correct), int(self.correct_count), int(max(0, wrong)))
         except Exception:
             from game_log import log_error
             log_error('quiz_engine.on_each: recovered from an error')
+
+    def forfeit(self):
+        """End an unfinished quiz the way an exit save must (save_system.
+        settle_unfinished_actions). An answer already given counts: a quiz
+        showing its feedback is advanced first, so a right answer that met
+        the threshold is a pass (SAV-05). What is left unanswered is lost;
+        in a play-all quiz every round still to come is a lost round, and
+        its per-round cost (on_each) is paid (ENG-04: quitting at senet's
+        first question used to be cheaper than losing)."""
+        if self.callback is None or self.state in (QuizState.COMPLETE, QuizState.IDLE):
+            return
+        guard = 0
+        while self.state == QuizState.RESULT and guard < 50:
+            guard += 1
+            self._advance()
+        if self.state == QuizState.COMPLETE:
+            return
+        if self.celebrating:
+            self.celebrating = False
+            self._end(success=True)
+            return
+        self.reroll_available = False         # no reroll on a forfeit
+        if (getattr(self, 'play_all', False) and self._on_each is not None
+                and self.mode in (QuizMode.THRESHOLD, QuizMode.ESCALATOR_THRESHOLD)):
+            while self.asked_count < self.total_qs:
+                self.asked_count += 1
+                self._fire_on_each(False)
+            self._end(success=self.correct_count >= self.required)
+            return
+        self._end(success=False)
 
     def _end(self, success: bool):
         # A finished quiz must not finish twice: a second _end used to re-fire
