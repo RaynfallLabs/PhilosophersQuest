@@ -198,6 +198,20 @@ _SPECIES = {
              'msg': '{old} lies down in the doorway of destiny and refuses to move. '
                     'He has become Sherlock the Immovable!'},
         ],
+        # His own words for the naming popup, the log and the Journal, as
+        # Shep has (PET-08: he is Sherlock, not "the Sherlock").
+        'naming_story': {
+            'title': "SHERLOCK IS HERE!",
+            'prompt': "He answers to Sherlock, when he answers at all. Will you call him something else?",
+            'named_message': "Sherlock yawns. He'll answer to {name}, whenever he feels like it.",
+            'unnamed_message': "Sherlock it is. He was never going to learn a new one anyway.",
+            'named_chronicle': ("A soul sphere hatched and out flopped a big, wrinkly, hairless cat, "
+                                "the one who sings at three in the morning. I call him {name}. "
+                                "He looked at me and decided I would do."),
+            'unnamed_chronicle': ("A soul sphere hatched and out flopped Sherlock, the big hairless "
+                                  "cat who sings at three in the morning. He looked at me and "
+                                  "decided I would do."),
+        },
         'specials': [
             {
                 'id': 'belly_flop', 'name': 'Belly Flop', 'unlock_stage': 1,
@@ -246,6 +260,17 @@ _SPECIES = {
              'msg': '{old} unfolds wings of pure light, a halo settling between her ears. '
                     'She has become Irene the Seraph, and she knows it.'},
         ],
+        'naming_story': {
+            'title': "IRENE IS HERE!",
+            'prompt': "She answers to Irene, if she feels like it. Will you call her something else?",
+            'named_message': "Irene flicks an ear. She'll answer to {name}, once you have earned it.",
+            'unnamed_message': "Irene it is. She would have ignored anything else.",
+            'named_chronicle': ("A soul sphere hatched and out shot a little tortie cat, off the wall "
+                                "and down on her feet as if she meant to do that. I call her {name}. "
+                                "I'm not alone anymore."),
+            'unnamed_chronicle': ("A soul sphere hatched and out shot Irene, off the wall and down on "
+                                  "her feet as if she meant to do that. I'm not alone anymore."),
+        },
         'specials': [
             {
                 'id': 'pounce', 'name': 'Pounce', 'unlock_stage': 1,
