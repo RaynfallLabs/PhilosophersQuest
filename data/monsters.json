@@ -37,7 +37,7 @@
       "item_tier": 1,
       "purse": "none"
     },
-    "lore": "A rat's incisors never stop growing, and their enamel is harder than iron, so a rat must gnaw or die. Scale the animal up to the size of a terrier and no door, barrel or boot is safe. They follow the smell of rations down the upper corridors in packs, and a bite left unwashed turns to fever within days.",
+    "lore": "A rat's incisors never stop growing, and their enamel is harder than iron, so a rat must gnaw or die. Scale the animal up to the size of a terrier and no door, barrel or boot is safe. Giant rats follow the smell of rations down the upper corridors in packs, and a bite left unwashed turns to fever within days.",
     "frequency": 10,
     "pack": true
   },
@@ -7027,7 +7027,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "A naked brain the size of a hound, trotting on four clawed legs. Mind flayers breed them as hunters. It finds a sleeper, feeds on the mind, then climbs inside the empty skull and walks the body back among its friends. Old delvers test a companion who has gone quiet with a question only he would know.",
+    "lore": "A naked brain the size of a hound, trotting on four clawed legs. Mind flayers breed the things as hunters. It finds a sleeper, feeds on the mind, then climbs inside the empty skull and walks the body back among its friends. Old delvers test a companion who has gone quiet with a question only he would know.",
     "frequency": 3
   },
   "nothic": {
@@ -7180,7 +7180,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "Indistinguishable from a black cloak until it strikes, the cloaker is a manta-like creature that drapes itself over its victim to suffocate and blind. It emits a haunting moan that causes unease in all who hear it. More than one adventurer has reached for their cloak only to find it had teeth.",
+    "lore": "Indistinguishable from a black cloak until it strikes, the cloaker is a manta-like creature that drapes itself over its victim to suffocate and blind. It emits a haunting moan that causes unease in all who hear it. More than one adventurer has reached for a cloak only to find it had teeth.",
     "frequency": 3
   },
   "star_spawn": {
@@ -7938,7 +7938,7 @@
       "item_tier": 1,
       "purse": "none"
     },
-    "lore": "One rung above the dretch and furious about it. A rutterkin is a lopsided demon, one arm too long, the jaw hung crooked, the skin a patchwork of sores. It bullies anything weaker and grovels to anything stronger, sometimes in the same breath. They prowl in small packs, and a pack will pause in the middle of a hunt to fight over who walks in front.",
+    "lore": "One rung above the dretch and furious about it. A rutterkin is a lopsided demon, one arm too long, the jaw hung crooked, the skin a patchwork of sores. It bullies anything weaker and grovels to anything stronger, sometimes in the same breath. Rutterkins prowl in small packs, and a pack will pause in the middle of a hunt to fight over who walks in front.",
     "frequency": 8
   },
   "mane_demon": {
@@ -8167,7 +8167,7 @@
       "item_tier": 4,
       "purse": "none"
     },
-    "lore": "Covered from scalp to tail tip in spines as long as daggers, a barbed devil cannot be grappled, shoved, or stood beside in comfort. Hell posts them as sentries over its vaults and its most valuable prisoners, because they never grow bored. Flame gathers in its palms when it is roused, and the air around it turns hot enough to curl parchment.",
+    "lore": "Covered from scalp to tail tip in spines as long as daggers, a barbed devil cannot be grappled, shoved, or stood beside in comfort. Hell posts barbed devils as sentries over its vaults and its most valuable prisoners, because they never grow bored. Flame gathers in its palms when it is roused, and the air around it turns hot enough to curl parchment.",
     "frequency": 4
   },
   "bone_devil": {
@@ -9258,7 +9258,7 @@
       "item_tier": 4,
       "purse": "none"
     },
-    "lore": "A stalagmite-like ambush predator with six sticky strands it can extend up to fifty feet. When a strand attaches it drains vitality from the victim while drawing them inexorably toward the roper's enormous toothy maw. They are disturbingly intelligent and seem to take pleasure in their prey's struggles.",
+    "lore": "A stalagmite-like ambush predator with six sticky strands it can extend up to fifty feet. When a strand attaches it drains vitality from its victim while hauling the prey inexorably toward the roper's enormous toothy maw. Ropers are disturbingly intelligent and seem to take pleasure in their prey's struggles.",
     "frequency": 3
   },
   "carrion_crawler": {
@@ -9555,7 +9555,7 @@
       "item_tier": 1,
       "purse": "purse"
     },
-    "lore": "Scaled marsh dwellers, tall as men, who have lived in the same wet caves since before the dungeon had walls. A lizardfolk hunter feels no hatred for an intruder and no pity either. It sees meat, tools, and a threat to the nest, in that order. They waste nothing they kill. Cold makes them sluggish, and they avoid the icy levels.",
+    "lore": "Scaled marsh dwellers, tall as men, who have lived in the same wet caves since before the dungeon had walls. A lizardfolk hunter feels no hatred for an intruder and no pity either. It sees meat, tools, and a threat to the nest, in that order. Lizardfolk waste nothing they kill. Cold makes them sluggish, and they avoid the icy levels.",
     "frequency": 7
   },
   "lizardfolk_shaman": {
@@ -9663,7 +9663,7 @@
       "item_tier": 1,
       "purse": "purse"
     },
-    "lore": "The Greeks used 'troglodyte', cave-goer, for the cave-dwelling tribes they heard of along the Red Sea. The dungeon's troglodytes earn the word more grimly: squat grey lizard-men who have never seen the sun. Frightened or angry, a troglodyte sweats an oil so rank that grown warriors double over. They raid for meat and steel, and the tribe eats its own weak.",
+    "lore": "The Greeks used 'troglodyte', cave-goer, for the cave-dwelling tribes they heard of along the Red Sea. The dungeon's troglodytes earn the word more grimly: squat grey lizard-men who have never seen the sun. Frightened or angry, a troglodyte sweats an oil so rank that grown warriors double over. Troglodytes raid for meat and steel, and the tribe eats its own weak.",
     "frequency": 10,
     "pack": true
   },
@@ -11147,7 +11147,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "In Irish folklore a fetch is the exact double of a living person. Seen in the morning, it promises long life. Seen at dusk, it means that person's death is near. The dungeon's fetches have turned the omen into a trade. One wears the face of whoever looks at it, walks toward them smiling, and drinks their life at a touch.",
+    "lore": "In Irish folklore a fetch is the exact double of a living person. Seen in the morning, it promises long life. Seen at dusk, it means that person's death is near. The dungeon's fetches have turned the omen into a trade. One wears your face when you look at it, walks toward you smiling, and drinks your life at a touch.",
     "frequency": 5
   },
   "shade": {
@@ -11358,7 +11358,7 @@
       "item_tier": 2,
       "purse": "none"
     },
-    "lore": "No ghost stands behind a death echo. The place itself remembers. A murder or a last stand struck so hard that the moment was stamped into the stone, and it plays again and again: the same scream, the same fall. Whoever walks into the scene is given a part in it, and the echo strikes at them as it struck then.",
+    "lore": "No ghost stands behind a death echo. The place itself remembers. A murder or a last stand struck so hard that the moment was stamped into the stone, and it plays again and again: the same scream, the same fall. Those who walk into the scene are given a part in it, and the echo strikes at them as it struck then.",
     "frequency": 5
   },
   "vampire_thrall": {
@@ -12777,7 +12777,7 @@
       "item_tier": 2,
       "purse": "grave_goods"
     },
-    "lore": "An animated body from which the soul has been violently ripped, leaving a hollow vessel that moves on pure necromantic energy alone. The forsaken shell retains no memories or personality of its former occupant. They are sometimes created deliberately by necromancers who need the soul for other purposes but want to keep the body useful.",
+    "lore": "An animated body from which the soul has been violently ripped, leaving a hollow vessel that moves on pure necromantic energy alone. The forsaken shell retains no memories or personality of its former occupant. Such shells are sometimes created deliberately by necromancers who need the soul for other purposes but want to keep the body useful.",
     "frequency": 6
   },
   "hollow_one": {
@@ -12835,7 +12835,7 @@
       "item_tier": 2,
       "purse": "grave_goods"
     },
-    "lore": "A person who traded away their soul through dark bargains, died, and now walks as an undead creature of perpetual hunger. The hollow one seeks souls to fill the void where their own used to be, but no soul can permanently fill the absence. They are pitiable creatures, driven mad by an emptiness that cannot be sated.",
+    "lore": "A person who traded the soul away through dark bargains, died, and now walks as an undead creature of perpetual hunger. The hollow one seeks souls to fill the void where its own used to be, but no soul can permanently fill the absence. Hollow ones are pitiable creatures, driven mad by an emptiness that cannot be sated.",
     "frequency": 5
   },
   "charnel_hound": {
@@ -13522,7 +13522,7 @@
       "item_tier": 5,
       "purse": "grave_goods"
     },
-    "lore": "The greatest of the nightshade creatures, a nightwing appears as a vast bat-like shadow of impossible size that blots out stars as it passes overhead. They are engines of pure negative energy that desecrate the land they fly over, killing plant life and corrupting water sources. Ancient texts warn that a nightwing's arrival heralds a period of mass death and catastrophe.",
+    "lore": "The greatest of the nightshade creatures, a nightwing appears as a vast bat-like shadow of impossible size that blots out stars as it passes overhead. Nightwings are engines of pure negative energy that desecrate the land they fly over, killing plant life and corrupting water sources. Ancient texts warn that a nightwing's arrival heralds a period of mass death and catastrophe.",
     "frequency": 1
   },
   "crystal_ooze": {
@@ -15416,7 +15416,7 @@
       "item_tier": 1,
       "purse": "none"
     },
-    "lore": "The Romans feared the strix, a night bird that slipped into nurseries to drink the blood of infants, and Ovid tells how one was driven from the cradle of the infant prince Proca with a branch of whitethorn. The stirge borrows its name and habits: a bat-winged thing the size of a fist with a beak like an awl. One is a nuisance. They never come as one.",
+    "lore": "The Romans feared the strix, a night bird that slipped into nurseries to drink the blood of infants, and Ovid tells how one was driven from the cradle of the infant prince Proca with a branch of whitethorn. The stirge borrows its name and habits: a bat-winged thing the size of a fist with a beak like an awl. One is a nuisance. Stirges never come as one.",
     "frequency": 9,
     "pack": true
   },
@@ -17163,7 +17163,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "Jorge Luis Borges set down the legend: winged stags with the plumage of birds, exiles from drowned Atlantis, each casting the shadow of a man. A peryton gets its own shadow back only by killing a human being, and it can do so once. A sibyl is said to have foretold that they would bring down Rome. This one's shadow still walks on two legs.",
+    "lore": "Jorge Luis Borges set down the legend: winged stags with the plumage of birds, exiles from drowned Atlantis, each casting the shadow of a man. A peryton gets its own shadow back only by killing a human being, and it can do so once. A sibyl is said to have foretold that perytons would bring down Rome. This one's shadow still walks on two legs.",
     "frequency": 4
   },
   "carbuncle": {
@@ -23098,7 +23098,7 @@
       "item_tier": 3,
       "purse": "none"
     },
-    "lore": "He was a paladin once. He knelt in the wrong chapel on the worst night of his life and rose with hellfire running down his blade. All the training is still there: the footwork, the guard, the patience behind the shield. Only the faith is gone, and he has replaced it with hatred of anyone who kept theirs. Holy water blisters his armor.",
+    "lore": "He was a paladin once. He knelt in the wrong chapel on the worst night of his life and rose with hellfire running down his blade. All the training is still there: the footwork, the guard, the patience behind the shield. Only the faith is gone, and he has replaced it with hatred of all who kept theirs. Holy water blisters his armor.",
     "frequency": 3
   },
   "gelatinous_titan": {
@@ -30069,7 +30069,7 @@
       "item_tier": 5,
       "purse": "purse"
     },
-    "lore": "In the Nibelungenlied the dwarf Alberich guarded the Nibelung hoard wearing the Tarnkappe, a cloak that hid its wearer from sight and gave him the strength of twelve men. Siegfried wrestled it off him and took the treasure, and later stood unseen beside King Gunther to win Brunhild's games for him. Alberich's sworn wardens still keep what is left of the hoard, deep down, in cloaks cut from the same cloth. Nobody sees a hoard-warden. They see a coin lift off the pile, and then the pick.",
+    "lore": "In the Nibelungenlied the dwarf Alberich guarded the Nibelung hoard wearing the Tarnkappe, a cloak that hid its wearer from sight and gave him the strength of twelve men. Siegfried wrestled it off him and took the treasure, and later stood unseen beside King Gunther to win Brunhild's games for him. Alberich's sworn wardens still keep what is left of the hoard, deep down, in cloaks cut from the same cloth. Nobody sees a hoard-warden. You see a coin lift off the pile, and then the pick.",
     "frequency": 2,
     "invisible": true
   },
@@ -30807,7 +30807,7 @@
       "item_tier": 2,
       "purse": "none"
     },
-    "lore": "Ovid describes the strix in the Fasti: a big-headed night bird with staring eyes, a beak made for snatching, grey feathers and hooked claws, that flies by night and drinks blood. Whether they are born birds or are old women changed by a spell, he says, nobody knows. They came for the infant Proca in his cradle, and the nymph Cranae kept them out with a branch of whitethorn at the window. Down here they hunt in threes: one sings you to sleep and the others drink.",
+    "lore": "Ovid describes the strix in the Fasti: a big-headed night bird with staring eyes, a beak made for snatching, grey feathers and hooked claws, that flies by night and drinks blood. Whether striges are born birds or are old women changed by a spell, he says, nobody knows. They came for the infant Proca in his cradle, and the nymph Cranae kept them out with a branch of whitethorn at the window. Down here they hunt in threes: one sings you to sleep and the others drink.",
     "frequency": 4,
     "pack": true,
     "pack_size": [
