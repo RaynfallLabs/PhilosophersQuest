@@ -454,7 +454,7 @@ def regenerate_monster(mid: str, mon: dict) -> dict:
     # Preserve optional fields verbatim
     for key in ('frequency', 'pack', 'spawn_chance',
                 'can_phase_walls', 'dragon_scales',
-                'gaze_paralyze', 'gaze_cooldown',
+                'gaze_paralyze', 'gaze_cooldown', 'gaze_group',
                 'regen', 'regeneration',
                 'rage_interval', 'rage_damage_bonus',
                 'sp_drain', 'locust_interval', 'locust_count',
