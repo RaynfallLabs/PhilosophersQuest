@@ -487,7 +487,7 @@ def _oracle_reveal_quirks(player, game):
         'hermes':      "Speed is earned through many small steps.",
         'atalanta':    "Swiftness and precision over brute force.",
         'musashi':     "One precise strike, not many hurried ones.",
-        'scheherazade':"She read and told stories before anyone knew their name.",
+        'scheherazade':"She read and told stories before anyone knew her name.",
         'merlin':      "Wands were used before they were understood.",
         'prometheus':  "Suffering repeated and survived becomes strength.",
         'ragnarok':    "Descend so deep, with so little -- and survive.",

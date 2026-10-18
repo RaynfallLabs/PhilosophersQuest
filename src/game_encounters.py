@@ -1709,7 +1709,7 @@ class EncountersMixin:
             # A person's trade (D3: a smith, a physician): game_traders.
             sid = reward.get('service', '')
             who = ((getattr(self, '_npc_encounter_active', None) or {}).get('person') or {}).get('name') \
-                or 'They'
+                or 'The trader'
             targets = self._service_targets(sid)
             self._render_service(sid, targets[0] if targets else None, who=who)
 

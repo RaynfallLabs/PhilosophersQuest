@@ -279,7 +279,7 @@ def deed_rows(entries) -> list:
 
 
 _PERSON_WORDS = {
-    'saved': 'Saved', 'lost': 'Lost', 'unmasked': 'Not What They Seemed',
+    'saved': 'Saved', 'lost': 'Lost', 'unmasked': 'Unmasked',
     'aided': 'Helped', 'wronged': 'Wronged', 'spared': 'Spared', 'gone': 'Gone',
     'met': 'Met',
 }
@@ -293,7 +293,7 @@ def person_status_words(p: dict) -> str:
     if p.get('owes'):
         return 'Owes You'
     if p.get('owed'):
-        return 'You Owe Them'
+        return 'You Owe a Debt'
     return _PERSON_WORDS.get(status, str(status).replace('_', ' ').title())
 
 

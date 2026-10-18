@@ -74,8 +74,8 @@ def test_people_rows_say_status_in_words():
     deeds.set_person(reg, 'odin', name='Old Wanderer', status='unmasked', floor=9)
     deeds.set_person(reg, 'cow', name='Farmer', floor=999)
     rows = chronicle.people_rows(reg, floor_label)
-    assert [r['status'] for r in rows] == ['Saved', 'You Owe Them', 'Owes You',
-                                           'Not What They Seemed', 'Met']
+    assert [r['status'] for r in rows] == ['Saved', 'You Owe a Debt', 'Owes You',
+                                           'Unmasked', 'Met']
     assert rows[0]['name'] == 'Marta'                     # proper capitalisation
     assert rows[0]['where'] == 'Floor 3' and rows[0]['last'] == 'She asked twice.'
     assert rows[-1]['where'] == 'Moo Moo Farm'            # never "Floor 999"
@@ -385,7 +385,7 @@ def test_journal_pages_show_what_they_should(rendered):
     assert 'Let Go' in t['menu_journal_oaths'] and 'Unfinished' in t['menu_journal_oaths']
     assert 'Somewhere above, a woman is lighting a candle' in t['menu_journal_oaths']
     assert 'Marta' in t['menu_journal_deeds']
-    assert 'Not What They Seemed' in t['menu_journal_people'] and 'Saved' in t['menu_journal_people']
+    assert 'Unmasked' in t['menu_journal_people'] and 'Saved' in t['menu_journal_people']
     assert 'Floor 3' in t['menu_journal_timeline']
     assert 'Your Story' in t['end_your_story'] and 'Roads Not Taken' in t['end_your_story']
     assert 'I swore three promises' in t['end_your_story']
