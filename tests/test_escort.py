@@ -333,13 +333,17 @@ def _hit_rate(spec, swipes=2000):
         def _is_named_foe(self):
             return False
 
+        def spring(self):            # not a lurker: nothing to spring
+            return False
+
     random.seed(5)
     esc = Escort(dict(spec, hp=10 ** 6), 1, 0)
     g = types.SimpleNamespace(monsters=[_Rat()], visible=set(),
                               player=types.SimpleNamespace(has_effect=lambda e: False),
-                              add_message=lambda *a, **k: None)
+                              add_message=lambda *a, **k: None, turn_count=0)
     hits = 0
     for _ in range(swipes):
+        g.turn_count += 1            # one swipe per monster per turn (PET-06)
         hp0 = esc.hp
         CombatMixin._monster_swipes(g, [esc], escorts=True)
         hits += esc.hp < hp0

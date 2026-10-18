@@ -68,7 +68,9 @@ SCOPED_DYNAMIC = {
              'src/main.py:_log_chronicle': 'the old shim (no callers remain)'},
     'line': {'src/game_encounters.py:_npc_log_deed': 'encounter outcome chronicle (data)',
              'src/game_road.py:_callback_lost': 'callback lost_line (data)',
-             'src/game_road.py:_lapse_due_oaths': 'oath lapse chronicle (data)'},
+             'src/game_road.py:_lapse_due_oaths': 'oath lapse chronicle (data)',
+             'src/game_road.py:_lapse_oath_now': 'oath lapse chronicle (data) or the linted fallback',
+             'src/black_knight.py:_black_knight_events': 'black_knight.json draw chronicles (data)'},
 }
 
 # Data keys that hold a Journal line without "chronicle" in their name.
