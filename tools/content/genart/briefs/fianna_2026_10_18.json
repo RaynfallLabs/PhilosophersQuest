@@ -347,5 +347,572 @@
    ]
   },
   "note": "Source painting: run1 c1 (round-1 wording, seed 41800). Wording above is round 3, used for the pixel pass."
+ },
+ {
+  "id": "fianna_uniform_long",
+  "family": "fianna",
+  "rank": 11,
+  "key": "green",
+  "what": "Fianna the sketch-mage: a slim young woman of about eighteen, painted seriously with realistic proportions, a small head, about seven and a half heads tall, long legs. Her head is bare. Her hair is long, slightly wavy and flowing, very dark brown, almost black, falling past her shoulders and lifting and streaming out to one side in the wind of her magic. Her face is turned toward the viewer, light-skinned and brightly lit from the front, the palest and clearest thing on her, framed by the dark hair: two dark eyes and two dark eyebrows plainly marked, a small nose, closed lips, an intent, delighted look.",
+  "colours": "a crisp white blouse, a narrow black necktie, a straight black skirt, tall black leather boots, a big sketchbook with a dark brown leather cover and cream-white pages, a long white feather quill, a creature of glowing pale lilac-lavender light, plainly light purple, outlined in bold black ink lines, a ribbon of the same lilac-lavender light, light skin, very dark brown hair that is almost black.",
+  "wears": "She wears a crisp white long-sleeved blouse with a small collar, buttoned to the neck, a narrow black necktie, a plain straight black skirt to the middle of her calves and tall black leather boots to just below her knees. Her head is bare, with nothing on it but her flowing dark hair.",
+  "holds": "She holds exactly two things. In her left hand, held out to the left of her body at chest height, at arm's length and clear of her body, is one big open sketchbook, the size of a large book, its cream pages facing up and toward the viewer. In her right hand she holds exactly one long white feather quill, as long as her forearm, its tip touching the page, drawing. Leaping out of the open pages toward the left is a phantom wolf she has just sketched, as big as her upper body, seen from the side: a wolf's long narrow muzzle with open jaws, two tall pointed ears standing straight up, a deep chest and two front legs stretched out ahead of it in a running leap. Every edge of it is outlined in a thick, bold black ink line, like a bold pen drawing, and a few thick black ink strokes mark its eye, its mouth and the lie of its fur; between the lines it is filled with glowing pale lilac-lavender light, plainly light purple, the colour of lavender flowers mixed with white. Its back half is not drawn yet: there it dissolves into three or four broad swirling wisps of the same lilac-lavender light, each curved like a sabre blade, that billow up out of the book and curl round behind her, all joined to the book. It is plainly a drawing coming to life.",
+  "pose": "On two legs, she steps forward to the left, turned three-quarters, weight on her bent front leg, the open sketchbook held out to the left at arm's length in her left hand, her right hand sweeping the quill across the page, her head up, her robe and her dark hair billowing in the wind of the magic.",
+  "must_show": [
+   "a slim young woman with real proportions, not a chibi",
+   "a lit, light-skinned face with dark eyes and brows, framed by flowing, slightly wavy, nearly black hair, that reads at 64 px",
+   "bare head",
+   "an open sketchbook held out, a quill drawing in it",
+   "a phantom wolf of pale lavender light and bold black ink lines leaping out of the pages, joined to the book, that reads as a wolf at 64 px",
+   "lavender wisps billowing from the creature round her, joined to the book, that do not mush her outline at 40 px",
+   "an action pose: mid-sketch",
+   "white long-sleeved blouse, black necktie, black skirt below the knee, black boots: modest",
+   "her outline still reads against the lilac wolf at 64 px and 40 px"
+  ],
+  "must_not_show": [
+   "big head",
+   "chibi",
+   "anime eyes",
+   "hat",
+   "wizard hat",
+   "pointed hat",
+   "hood",
+   "staff",
+   "wand",
+   "second book",
+   "armour",
+   "bare shoulders",
+   "low neckline",
+   "short skirt",
+   "tight dress",
+   "old woman",
+   "little girl",
+   "real wolf",
+   "grey wolf on the ground",
+   "dog",
+   "green magic",
+   "lavender skin",
+   "purple skin",
+   "halo",
+   "cloud of mist",
+   "face hidden in shadow",
+   "blonde hair",
+   "red hair",
+   "white creature",
+   "pure white wolf",
+   "magenta robe",
+   "pink robe",
+   "tentacles",
+   "ribbons",
+   "purple robe",
+   "short skirt",
+   "bare thighs",
+   "low neckline",
+   "waistcoat",
+   "jacket",
+   "sailor collar"
+  ],
+  "despill": true,
+  "edit": {
+   "cand": 5,
+   "pixel_seed": 43150,
+   "steps": [
+    {
+     "from": "_genart/heroes/fianna_2026_10_18/edit1/fianna_wolf/c5_draft.png",
+     "seed": 5601,
+     "prompt": "Edit this painting. Keep exactly the same: the young woman's face, her flowing dark hair, her pose, her hands, the white quill in her right hand, the open book in her left hand, the leaping lilac wolf with every one of its black ink lines, the lilac ribbon of light sweeping behind her, and the flat green backdrop. Change only her clothes. Instead of the purple robe she now wears a crisp white long-sleeved blouse with a small collar, buttoned to the neck, its sleeves reaching her wrists; a narrow black necktie knotted at the collar and hanging straight down the middle of her chest; a plain straight black skirt from her waist to the middle of her calves, swinging a little as she steps; and tall black leather boots that reach to just below her knees, so no bare leg shows. The book keeps its dark brown cover.",
+     "neg": "purple robe, purple dress, long robe, short skirt, miniskirt, bare thighs, bare knees, low neckline, cleavage, tight top, sailor collar, anime school uniform, waistcoat, jacket, cardigan, changed face, changed pose, white wolf, hat, extra quill, background scenery"
+    }
+   ],
+   "touch": [
+    [
+     30,
+     13,
+     "#f7f7f8"
+    ],
+    [
+     31,
+     13,
+     "#1a161c"
+    ],
+    [
+     32,
+     13,
+     "#1a161c"
+    ],
+    [
+     31,
+     14,
+     "#1a161c"
+    ],
+    [
+     32,
+     14,
+     "#f7f7f8"
+    ],
+    [
+     31,
+     15,
+     "#1a161c"
+    ],
+    [
+     32,
+     15,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     16,
+     "#f7f7f8"
+    ],
+    [
+     31,
+     16,
+     "#1a161c"
+    ],
+    [
+     30,
+     17,
+     "#1a161c"
+    ],
+    [
+     31,
+     17,
+     "#1a161c"
+    ],
+    [
+     30,
+     18,
+     "#1a161c"
+    ],
+    [
+     31,
+     18,
+     "#f7f7f8"
+    ],
+    [
+     29,
+     19,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     19,
+     "#1a161c"
+    ],
+    [
+     31,
+     19,
+     "#f7f7f8"
+    ],
+    [
+     29,
+     20,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     20,
+     "#1a161c"
+    ],
+    [
+     31,
+     20,
+     "#f7f7f8"
+    ],
+    [
+     29,
+     21,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     21,
+     "#1a161c"
+    ],
+    [
+     31,
+     21,
+     "#f7f7f8"
+    ],
+    [
+     29,
+     22,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     22,
+     "#1a161c"
+    ],
+    [
+     31,
+     22,
+     "#f7f7f8"
+    ],
+    [
+     29,
+     23,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     23,
+     "#1a161c"
+    ],
+    [
+     31,
+     23,
+     "#f7f7f8"
+    ],
+    [
+     30,
+     6,
+     "#2a0703"
+    ],
+    [
+     32,
+     6,
+     "#2a0703"
+    ],
+    [
+     31,
+     6,
+     "#e49371"
+    ],
+    [
+     14,
+     20,
+     "#141018"
+    ],
+    [
+     13,
+     19,
+     "#141018"
+    ],
+    [
+     12,
+     18,
+     "#141018"
+    ],
+    [
+     22,
+     48,
+     "#000000"
+    ],
+    [
+     23,
+     48,
+     "#000000"
+    ],
+    [
+     24,
+     48,
+     "#000000"
+    ],
+    [
+     25,
+     48,
+     "#000000"
+    ],
+    [
+     22,
+     49,
+     "#000000"
+    ],
+    [
+     23,
+     49,
+     "#000000"
+    ],
+    [
+     24,
+     49,
+     "#000000"
+    ],
+    [
+     36,
+     47,
+     "#000000"
+    ],
+    [
+     37,
+     47,
+     "#000000"
+    ],
+    [
+     38,
+     47,
+     "#000000"
+    ],
+    [
+     39,
+     47,
+     "#000000"
+    ],
+    [
+     37,
+     48,
+     "#000000"
+    ],
+    [
+     38,
+     48,
+     "#000000"
+    ],
+    [
+     39,
+     48,
+     "#000000"
+    ]
+   ]
+  },
+  "note": "Option A in Brandon's outfit, variant 1: long-sleeved white blouse, black tie, straight black skirt (asked for mid-calf; drew just below the knee, bare knees painted black), tall black boots. Edited from option A's painting (fianna_wolf c5); same pixel seed."
+ },
+ {
+  "id": "fianna_uniform_pleat",
+  "family": "fianna",
+  "rank": 12,
+  "key": "green",
+  "what": "Fianna the sketch-mage: a slim young woman of about eighteen, painted seriously with realistic proportions, a small head, about seven and a half heads tall, long legs. Her head is bare. Her hair is long, slightly wavy and flowing, very dark brown, almost black, falling past her shoulders and lifting and streaming out to one side in the wind of her magic. Her face is turned toward the viewer, light-skinned and brightly lit from the front, the palest and clearest thing on her, framed by the dark hair: two dark eyes and two dark eyebrows plainly marked, a small nose, closed lips, an intent, delighted look.",
+  "colours": "a crisp white blouse, a narrow black necktie, a black pleated skirt, tall black leather boots, a big sketchbook with a deep purple leather cover and cream-white pages, a long white feather quill, a creature of glowing pale lilac-lavender light, plainly light purple, outlined in bold black ink lines, a ribbon of the same lilac-lavender light, light skin, very dark brown hair that is almost black.",
+  "wears": "She wears a crisp white long-sleeved blouse with a small collar, buttoned to the neck, a narrow black necktie, a black pleated skirt to just below her knees and tall black leather boots to just below her knees. Her head is bare, with nothing on it but her flowing dark hair.",
+  "holds": "She holds exactly two things. In her left hand, held out to the left of her body at chest height, at arm's length and clear of her body, is one big open sketchbook, the size of a large book, its cream pages facing up and toward the viewer. In her right hand she holds exactly one long white feather quill, as long as her forearm, its tip touching the page, drawing. Leaping out of the open pages toward the left is a phantom wolf she has just sketched, as big as her upper body, seen from the side: a wolf's long narrow muzzle with open jaws, two tall pointed ears standing straight up, a deep chest and two front legs stretched out ahead of it in a running leap. Every edge of it is outlined in a thick, bold black ink line, like a bold pen drawing, and a few thick black ink strokes mark its eye, its mouth and the lie of its fur; between the lines it is filled with glowing pale lilac-lavender light, plainly light purple, the colour of lavender flowers mixed with white. Its back half is not drawn yet: there it dissolves into three or four broad swirling wisps of the same lilac-lavender light, each curved like a sabre blade, that billow up out of the book and curl round behind her, all joined to the book. It is plainly a drawing coming to life.",
+  "pose": "On two legs, she steps forward to the left, turned three-quarters, weight on her bent front leg, the open sketchbook held out to the left at arm's length in her left hand, her right hand sweeping the quill across the page, her head up, her robe and her dark hair billowing in the wind of the magic.",
+  "must_show": [
+   "a slim young woman with real proportions, not a chibi",
+   "a lit, light-skinned face with dark eyes and brows, framed by flowing, slightly wavy, nearly black hair, that reads at 64 px",
+   "bare head",
+   "an open sketchbook held out, a quill drawing in it",
+   "a phantom wolf of pale lavender light and bold black ink lines leaping out of the pages, joined to the book, that reads as a wolf at 64 px",
+   "lavender wisps billowing from the creature round her, joined to the book, that do not mush her outline at 40 px",
+   "an action pose: mid-sketch",
+   "white long-sleeved blouse, black necktie, black skirt below the knee, black boots: modest",
+   "her outline still reads against the lilac wolf at 64 px and 40 px"
+  ],
+  "must_not_show": [
+   "big head",
+   "chibi",
+   "anime eyes",
+   "hat",
+   "wizard hat",
+   "pointed hat",
+   "hood",
+   "staff",
+   "wand",
+   "second book",
+   "armour",
+   "bare shoulders",
+   "low neckline",
+   "short skirt",
+   "tight dress",
+   "old woman",
+   "little girl",
+   "real wolf",
+   "grey wolf on the ground",
+   "dog",
+   "green magic",
+   "lavender skin",
+   "purple skin",
+   "halo",
+   "cloud of mist",
+   "face hidden in shadow",
+   "blonde hair",
+   "red hair",
+   "white creature",
+   "pure white wolf",
+   "magenta robe",
+   "pink robe",
+   "tentacles",
+   "ribbons",
+   "purple robe",
+   "short skirt",
+   "bare thighs",
+   "low neckline",
+   "waistcoat",
+   "jacket",
+   "sailor collar"
+  ],
+  "despill": true,
+  "edit": {
+   "cand": 5,
+   "pixel_seed": 43150,
+   "steps": [
+    {
+     "from": "_genart/heroes/fianna_2026_10_18/edit1/fianna_wolf/c5_draft.png",
+     "seed": 5602,
+     "prompt": "Edit this painting. Keep exactly the same: the young woman's face, her flowing dark hair, her pose, her hands, the white quill in her right hand, the open book in her left hand, the leaping lilac wolf with every one of its black ink lines, the lilac ribbon of light sweeping behind her, and the flat green backdrop. Change only her clothes and the colour of the book's cover. Instead of the purple robe she now wears a crisp white long-sleeved blouse with a small collar, buttoned to the neck, its sleeves rolled once at the wrists; a narrow black necktie knotted at the collar and hanging straight down the middle of her chest; a black pleated skirt from her waist to just below her knees, its pleats swinging out as she steps; and tall black leather boots that reach to just below her knees, so no bare leg shows. The book's cover is now deep purple leather.",
+     "neg": "purple robe, purple dress, long robe, short skirt, miniskirt, bare thighs, bare knees, low neckline, cleavage, tight top, sailor collar, anime school uniform, waistcoat, jacket, cardigan, changed face, changed pose, white wolf, hat, extra quill, background scenery"
+    }
+   ],
+   "touch": [
+    [
+     31,
+     12,
+     "#1a161c"
+    ],
+    [
+     32,
+     12,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     13,
+     "#1a161c"
+    ],
+    [
+     31,
+     13,
+     "#1a161c"
+    ],
+    [
+     30,
+     14,
+     "#f5f4f4"
+    ],
+    [
+     31,
+     14,
+     "#1a161c"
+    ],
+    [
+     30,
+     15,
+     "#f5f4f4"
+    ],
+    [
+     31,
+     15,
+     "#1a161c"
+    ],
+    [
+     29,
+     16,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     16,
+     "#1a161c"
+    ],
+    [
+     31,
+     16,
+     "#1a161c"
+    ],
+    [
+     29,
+     17,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     17,
+     "#1a161c"
+    ],
+    [
+     31,
+     17,
+     "#f5f4f4"
+    ],
+    [
+     29,
+     18,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     18,
+     "#1a161c"
+    ],
+    [
+     31,
+     18,
+     "#f5f4f4"
+    ],
+    [
+     29,
+     19,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     19,
+     "#1a161c"
+    ],
+    [
+     31,
+     19,
+     "#f5f4f4"
+    ],
+    [
+     29,
+     20,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     20,
+     "#1a161c"
+    ],
+    [
+     31,
+     20,
+     "#f5f4f4"
+    ],
+    [
+     29,
+     21,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     21,
+     "#1a161c"
+    ],
+    [
+     29,
+     22,
+     "#f5f4f4"
+    ],
+    [
+     30,
+     22,
+     "#1a161c"
+    ],
+    [
+     30,
+     6,
+     "#2a0703"
+    ],
+    [
+     32,
+     6,
+     "#2a0703"
+    ],
+    [
+     31,
+     6,
+     "#e5947f"
+    ],
+    [
+     14,
+     20,
+     "#141018"
+    ],
+    [
+     13,
+     19,
+     "#141018"
+    ],
+    [
+     12,
+     18,
+     "#141018"
+    ]
+   ]
+  },
+  "note": "Option A in Brandon's outfit, variant 2: white blouse, black tie, pleated black skirt (asked for just below the knee; drew to mid-calf), tall black boots, deep purple book cover. Edited from option A's painting (fianna_wolf c5); same pixel seed."
  }
 ]
