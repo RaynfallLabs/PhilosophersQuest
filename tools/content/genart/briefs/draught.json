@@ -1,0 +1,48 @@
+[
+ {
+  "id": "draught_of_mimir",
+  "family": "draught",
+  "rank": 1,
+  "body": "item",
+  "scale": "small",
+  "key": "magenta",
+  "what": "a draught from Mimir's well, the spring of wisdom under the root of the world-tree: a squat round flask carved from one piece of clear rock crystal, as wide as it is tall, with a short thick neck, standing on a small foot-ring of dull silver, and closed with a domed silver cap. It is filled to the neck with still, deep water of a cold pale silvery blue that glows softly from inside, brightest at its middle. Round the neck, wound twice like a vine and tied off, is one thin twisting dark brown tree root, its loose end hanging down the side of the flask. The crystal is thick, so the whole flask shows the strong colour of the water inside and the backdrop does not show through it.",
+  "colours": "Cold pale silvery blue water glowing softly, brightest at the middle; clear rock crystal with white glints; dull silver foot-ring and domed cap; one thin dark brown root wound round the neck.",
+  "pose": "Standing upright, seen from the front and a little from above.",
+  "must_show": [
+   "squat round crystal flask with a silver foot and silver cap",
+   "glowing pale silvery blue water",
+   "a dark brown root wound round the neck"
+  ],
+  "must_not_show": [
+   "cork",
+   "eye",
+   "eyeball",
+   "face",
+   "tree",
+   "leaves",
+   "green",
+   "bubbles",
+   "fizz",
+   "skull",
+   "label",
+   "label with writing",
+   "paper tag",
+   "writing",
+   "second bottle",
+   "several bottles",
+   "hand",
+   "arm",
+   "person",
+   "table",
+   "shelf",
+   "stand",
+   "tray",
+   "spilled puddle",
+   "glow outside the bottle",
+   "second object",
+   "empty bottle",
+   "see-through empty glass"
+  ]
+ }
+]
