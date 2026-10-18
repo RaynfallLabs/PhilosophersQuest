@@ -316,9 +316,9 @@ def test_i08_shop_purchase_names_the_item_as_the_shop_showed_it():
     m = None
     for s in range(30):
         m = spawn_merchant(10, g.dungeon.rooms, g.dungeon, [], random.Random(s))
-        if m and any(g._display_name(i) != i.name for i in m.stock):
+        if m and any(i.name not in g._display_name(i) for i in m.stock):
             break
-    idx = next(i for i, it in enumerate(m.stock) if g._display_name(it) != it.name)
+    idx = next(i for i, it in enumerate(m.stock) if it.name not in g._display_name(it))
     item = m.stock[idx]
     shown = g._display_name(item)
     g.player_gold = 10 ** 6
@@ -326,7 +326,8 @@ def test_i08_shop_purchase_names_the_item_as_the_shop_showed_it():
     g._shop_selection = idx
     g.state = STATE_SHOP
     _press(g, pygame.K_RETURN)
-    assert shown in _texts(g, 1)[0] and item.name not in _texts(g, 1)[0]
+    bought = next(t for t in _texts(g, 3) if t.startswith('You buy'))   # then the trader's line
+    assert shown in bought and item.name not in bought
 
 
 # ---------------------------------------------------------------- I-09

@@ -1144,7 +1144,8 @@ class InputMixin:
 
             # Check if player can pay the cost
             from npc_encounters import can_pay_cost, get_inventory_filter
-            can_pay, fail_msg = can_pay_cost(self.player, cost, self.player_gold)
+            can_pay, fail_msg = can_pay_cost(self.player, cost, self.player_gold,
+                                             self.dungeon_level)
             # "Return the item" options: can_pay_cost defers this check to the
             # caller, and nobody made it, so the reward was paid even if the
             # item had been dropped or sold. Require it in the pack or worn.
@@ -1159,6 +1160,11 @@ class InputMixin:
             # Don't take payment for a service that cannot be rendered.
             if can_pay and (opt.get('reward') or {}).get('type') == 'enchant_weapon'                     and self.player.weapon is None:
                 can_pay, fail_msg = False, "You have no weapon equipped to enchant."
+            # ...nor for a trade with nothing to work on (a smith with no rust
+            # to mend).
+            _rw = opt.get('reward') or {}
+            if can_pay and _rw.get('type') == 'service' and not self._service_targets(_rw.get('service', '')):
+                can_pay, fail_msg = False, "There is nothing for them to do for you."
             if not can_pay:
                 self.add_message(fail_msg, 'warning')
                 return
@@ -1659,58 +1665,8 @@ class InputMixin:
     # ------------------------------------------------------------------
 
     def _shop_input(self, key: int):
-        m = getattr(self, '_shop_merchant', None)
-        if m is None or key == pygame.K_ESCAPE:
-            self.state = STATE_PLAYER
-            return
-        stock = m.stock
-        if not stock:
-            self.add_message("The merchant has nothing left to sell.", 'info')
-            self.state = STATE_PLAYER
-            return
-        sel = getattr(self, '_shop_selection', 0)
-        if key in getattr(self, '_MENU_CURSOR_KEYS', (pygame.K_UP, pygame.K_DOWN)):
-            if hasattr(self, '_move_menu_cursor'):
-                self._shop_selection = self._move_menu_cursor(sel, key, len(stock))
-            elif key == pygame.K_UP:
-                self._shop_selection = (sel - 1) % len(stock)
-            elif key == pygame.K_DOWN:
-                self._shop_selection = (sel + 1) % len(stock)
-        elif key == pygame.K_h:
-            sel = self._shop_selection
-            if sel < len(stock):
-                haggled = getattr(self, '_shop_haggled', set())
-                if sel in haggled:
-                    self.add_message("You've already haggled over that item.", 'info')
-                else:
-                    self._haggle_item(sel)
-        elif key in (pygame.K_RETURN, pygame.K_SPACE):
-            sel = self._shop_selection
-            if sel < len(stock):
-                item  = stock[sel]
-                price = m.prices[sel]
-                if self.player_gold < price:
-                    self.add_message(f"You can't afford that ({price} gold needed).", 'warning')
-                else:
-                    # Check the pack first: a full pack used to take the
-                    # gold AND the item.
-                    if self.player.add_to_inventory(item) is False:
-                        self.add_message(self.player.too_heavy_message(), 'warning')
-                        return
-                    self.player_gold -= price
-                    iname = self._display_name(item)     # as it was shown in the shop
-                    _snd.play('buy')
-                    self.add_message(f"You buy {iname} for {price:,} gold.", 'success')
-                    m.stock.pop(sel)
-                    m.prices.pop(sel)
-                    # Shift haggled indices after removal
-                    haggled = getattr(self, '_shop_haggled', set())
-                    self._shop_haggled = {i - 1 if i > sel else i for i in haggled if i != sel}
-                    self._shop_selection = min(sel, len(m.stock) - 1)
-                    if not m.stock:
-                        m.sold_out = True
-                        self.add_message("The merchant has sold everything.", 'info')
-                        self.state = STATE_PLAYER
+        """The shop's keys: game_traders._trader_input (Buy / Sell / Services)."""
+        self._trader_input(key)
 
     def _journal_input(self, key: int) -> bool:
         """The Journal's own keys: Tab / Shift+Tab or 1-4 turn the page,

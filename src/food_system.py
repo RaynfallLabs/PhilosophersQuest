@@ -1207,6 +1207,8 @@ def drink_potion(player, potion) -> list[str]:
         else:
             amt = 2 if buc == 'cursed' else 1
             player.apply_stat_bonus('CON', -amt)
+            from status_effects import note_stat_drain
+            note_stat_drain(player, 'CON', amt)      # a physician can restore it
             messages.append(f"Your vitality ebbs. CON -{amt}!")
 
     elif effect == 'drain_wis':
@@ -1215,6 +1217,8 @@ def drink_potion(player, potion) -> list[str]:
         else:
             amt = 2 if buc == 'cursed' else 1
             player.apply_stat_bonus('WIS', -amt)
+            from status_effects import note_stat_drain
+            note_stat_drain(player, 'WIS', amt)      # a physician can restore it
             messages.append(f"Your clarity clouds. WIS -{amt}!")
 
     elif effect == 'drain_int':
@@ -1223,6 +1227,8 @@ def drink_potion(player, potion) -> list[str]:
         else:
             amt = 2 if buc == 'cursed' else 1
             player.apply_stat_bonus('INT', -amt)
+            from status_effects import note_stat_drain
+            note_stat_drain(player, 'INT', amt)      # a physician can restore it
             messages.append(f"Thoughts slip away. INT -{amt}!")
 
     elif effect == 'sickness':

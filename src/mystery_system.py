@@ -614,12 +614,7 @@ def apply_mystery_reward(mystery_id: str, player, game, success: bool):
 # Merchant NPC
 # ---------------------------------------------------------------------------
 
-# How many items the merchant stocks at different level brackets
-_MERCHANT_STOCK_COUNTS = [
-    (1,  20,  4),
-    (21, 50,  5),
-    (51, 99,  6),
-]
+# How many items a trader stocks: data/traders.json ('stock_size').
 
 MYSTERY_GOLD_CAP_SHARE = 0.6
 
@@ -634,15 +629,37 @@ from economy import (MERCHANT_SHARE as _PRICE_SHARE,            # noqa: E402,F40
 
 class MerchantNPC:
     """
-    A travelling merchant placed on a dungeon floor.
-    Not pickable; player presses T nearby to open the shop.
+    A trader standing on a dungeon floor (data/traders.json; traders.py and
+    game_traders.py). Not pickable; the player presses Y beside him to open
+    the shop: Buy, Sell and (when he offers any) Services.
+
+    The class keeps its old name so saves from before the named traders
+    load: their merchant is a generalist (the class defaults below).
     """
 
-    def __init__(self, x: int, y: int, stock: list, prices: list[int]):
+    # Defaults for a merchant pickled before the economy refactor.
+    kind = 'generalist'
+    person = 'Grindle'
+    title = 'Deep Gnome Trader'
+    sprite_id = 'merchant_npc'
+    markup = 1.0
+    purse = 0
+    buys = 'all'
+    buys_cursed = False
+    services = ()
+    lines: dict = {}
+    friend = None
+    greeted = False
+    told: tuple = ()
+    level = 1
+    sprite_fallback = 'merchant_npc'
+    name = 'Deep Gnome Trader'
+
+    def __init__(self, x: int, y: int, stock: list, prices: list[int], kind: str = 'generalist',
+                 level: int = 1, defn: dict | None = None):
         self.x            = x
         self.y            = y
         self.id           = 'merchant_npc'
-        self.name         = "Deep Gnome Trader"
         self.symbol       = '@'
         self.color        = (180, 180, 220)   # pale grey-blue (deep gnome skin)
         self.weight       = 0
@@ -651,94 +668,72 @@ class MerchantNPC:
         self.not_pickable = True
         self.identified   = True
         self.item_class   = 'merchant'
-        self.lore         = "A small grey trader with a pack twice his size and a lantern he never seems to need. "\
-                            "He will not say where his stock comes from, only that the previous owners are past caring."
         self.stock        = stock     # list of Item objects for sale
-        self.prices       = prices    # parallel list of int prices
-        self.sold_out     = False
+        self.prices       = prices    # parallel list of int prices (before deeds)
+        self.sold_out     = not stock
+        self.kind         = kind
+        self.level        = int(level or 1)
+        self.set_person(defn)
+
+    def set_person(self, defn: dict | None, friend: dict | None = None):
+        """Who this trader is: from his data entry, or from the friend who
+        has come back in his place."""
+        import economy
+        d = defn or {}
+        self.person = (friend or d).get('name', 'Grindle')
+        self.title = (friend or d).get('title', 'Deep Gnome Trader')
+        self.name = self.person          # short: the In Sight rail lists him by name
+        self.sprite_id = (friend or d).get('sprite', 'merchant_npc')
+        self.sprite_fallback = d.get('sprite_fallback', 'merchant_npc')
+        self.lore = d.get('lore', "A small grey trader with a pack twice his size and a lantern "
+                                  "he never seems to need. He will not say where his stock comes "
+                                  "from, only that the previous owners are past caring.")
+        self.markup = float(d.get('markup', 1.0))
+        self.purse = economy.share(self.level, float(d.get('purse', economy.TRADER_PURSE_SHARE)))
+        self.buys = d.get('buys', 'all')
+        self.buys_cursed = bool(d.get('buys_cursed', False))
+        self.services = tuple(d.get('services') or ())
+        self.lines = dict(d.get('lines') or {})
+        self.friend = friend.get('person') if friend else None
+        if friend and friend.get('line'):
+            self.lines['greet'] = [friend['line']]
+
+    def line(self, key: str, default: str = '') -> str:
+        v = (getattr(self, 'lines', None) or {}).get(key, default)
+        if isinstance(v, list):
+            return v[0] if v else default
+        return v or default
+
+
+def build_trader(kind: str, level: int, rng: random.Random, x: int = 0, y: int = 0) -> 'MerchantNPC':
+    """A trader of ``kind`` for floor ``level`` with his stock and prices
+    (traders.py builds the stock; prices are economy.merchant_price with the
+    trader's markup)."""
+    import traders
+    defn = traders.kind_def(kind)
+    stock = traders.build_stock(defn, level, rng)
+    mk = float(defn.get('markup', 1.0))
+    prices = [_merchant_price(it, level, mk) for it in stock]
+    return MerchantNPC(x, y, stock, prices, kind=kind, level=level, defn=defn)
 
 
 def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
-                   rng: random.Random) -> 'MerchantNPC | None':
+                   rng: random.Random, kind: str = 'generalist') -> 'MerchantNPC | None':
     """
-    20% chance per floor to place a merchant in a non-starting room.
-    Returns the MerchantNPC if placed, otherwise None.
-    (Caller should append the result to ground_items.)
+    A trader of ``kind`` in a non-starting room of a generated floor, or None.
+
+    No longer called by floor generation: traders are planned once a run and
+    placed on arrival (game_traders.py), so this draws nothing from the
+    floor's random stream. Kept for tools and tests that want a trader on a
+    given floor. (Caller appends the result to ground_items.)
     """
-    # About one floor in three (was one in five): with prices that mean
-    # something, the choice should come up often enough to plan for.
-    if rng.random() > 0.35:
-        return None
     if len(rooms) < 3:
         return None
-
-    from items import load_items, is_random_loot
-    import copy as _copy
-
-    # Build item pool from multiple categories (never quest / scripted items)
-    # Stock follows the floor like every other source. It was two flat picks
-    # per class from everything with min_level <= floor: tier-3 wands on
-    # floor 20, and, since the gear files hold only named uniques, nothing
-    # but uniques for gear (a base-8 spear for 26,800 gold on floor 81).
-    from items import (pick_random_armor_for_floor, pick_random_shield_for_floor,
-                       pick_random_weapon_for_floor, unique_available)
-    from dungeon import _item_eligible_weighted
-    stock_items = []
-    for cat in ('potion', 'scroll', 'accessory', 'wand', 'food', 'ammo'):
-        try:
-            pool = _item_eligible_weighted(
-                [i for i in load_items(cat)
-                 if is_random_loot(i) and unique_available(i)], level, rng)
-            if pool:
-                stock_items.extend(rng.choices(pool, k=2))
-        except Exception:
-            from game_log import log_error
-            log_error('mystery_system.spawn_merchant: recovered from an error')
-    for _pick in (pick_random_weapon_for_floor, pick_random_armor_for_floor,
-                  pick_random_shield_for_floor):
-        for _ in range(2):
-            try:
-                gear = _pick(level, rng)
-            except Exception:
-                gear = None
-            if gear is not None:
-                stock_items.append(gear)
-
-    # 15% chance merchant has a Soul Sphere (loaded from artifact.json).
-    if rng.random() < 0.15:
-        from items import make_item_by_id
-        sphere = make_item_by_id('artifact', 'soul_sphere')
-        if sphere is not None:
-            stock_items.append(sphere)
-
-    if not stock_items:
+    merchant = build_trader(kind, level, rng)
+    if not merchant.stock:
         return None
-
-    # Deduplicate by id and cap count
-    seen_ids: set = set()
-    unique_stock = []
-    for it in stock_items:
-        iid = getattr(it, 'id', None)
-        if iid and iid not in seen_ids:
-            seen_ids.add(iid)
-            unique_stock.append(_copy.copy(it))
-
-    # Determine stock size for this level bracket
-    n_stock = 4
-    for lo, hi, n in _MERCHANT_STOCK_COUNTS:
-        if lo <= level <= hi:
-            n_stock = n
-            break
-    rng.shuffle(unique_stock)
-    stock = unique_stock[:n_stock]
-    prices = [_merchant_price(it, level) for it in stock]
-
-    # Place in a non-starting room. (This used to compare against a
-    # hard-coded 3, which is STAIRS_DOWN, so the merchant could only ever
-    # stand on the stairs: ~1.7% of floors instead of the intended 20%.)
     from dungeon import FLOOR as _FLOOR_TILE
-    candidate_rooms = rooms[1:]
-    room = rng.choice(candidate_rooms)
+    room = rng.choice(rooms[1:])
     tiles = [
         (rx, ry)
         for rx, ry in room.inner_tiles()
@@ -747,7 +742,5 @@ def spawn_merchant(level: int, rooms, dungeon, ground_items: list,
     ]
     if not tiles:
         return None
-
-    mx, my = rng.choice(tiles)
-    merchant = MerchantNPC(mx, my, stock, prices)
+    merchant.x, merchant.y = rng.choice(tiles)
     return merchant

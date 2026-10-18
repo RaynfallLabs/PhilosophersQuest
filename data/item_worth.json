@@ -1,0 +1,50 @@
+{
+  "_doc": "What a thing is WORTH, as a multiplier on its class price (economy.merchant_price; ECONOMY_REFACTOR_PROPOSAL D4). A trader's price follows the item's real worth, not only its class: a Potion of Sickness is junk and Full Healing is dear. Stock stays unidentified, so a sharp player can price-identify (a NetHack-style discovery). The hero SELLS an item as what he knows it as: a thing whose type is unknown is priced as its unidentified class (worth 1, tier 2), so selling never leaks a name. Lookup order: 'by_id', then 'by_effect' for the item's class, then 1.0. 'share_by_id' replaces the class share outright for a thing no class fits (a pet egg). Uniques also take economy.UNIQUE_GEAR_SHARE / UNIQUE_ACCESSORY_SHARE.",
+  "junk": 0.1,
+  "by_effect": {
+    "potion": {
+      "heal": 1.0, "extra_heal": 1.8, "full_heal": 3.0,
+      "restore_sp": 0.8, "restore_mp": 1.0, "brilliance_mp": 1.4,
+      "cure_poison": 0.7, "cure_disease": 0.8, "cure_all": 1.8,
+      "haste": 1.4, "invisibility": 1.3, "regeneration": 1.5, "heroism": 1.4,
+      "levitation": 0.9, "restore_str": 1.0, "gain_level": 4.0,
+      "fire_resist": 1.0, "cold_resist": 1.0, "shock_resist": 1.0, "see_invisible": 1.0,
+      "teleport": 0.6, "fafnirs_blood": 6.0,
+      "confusion": "junk", "blindness": "junk", "poison": "junk", "paralysis": "junk",
+      "hallucination": "junk", "sleep": "junk", "weakness": "junk", "slow": "junk",
+      "drain_str": "junk", "drain_con": "junk", "drain_wis": "junk", "drain_int": "junk",
+      "sickness": "junk", "fumbling": "junk", "fear": "junk"
+    },
+    "scroll": {
+      "identify": 0.6, "mapping": 0.7, "remove_curse": 1.0, "protection": 1.0, "heal": 0.8,
+      "enchant_weapon": 1.6, "enchant_armor": 1.6, "enchant_accessory": 1.4, "enchant_item": 1.4,
+      "annihilate": 1.5, "confuse_monsters": 0.8, "sleep_monsters": 1.0, "haste_self": 1.0,
+      "teleport_self": 0.8, "charging": 1.5, "full_light": 0.5, "earth": 0.9,
+      "genocide": 2.5, "time_stop_scroll": 2.0, "great_power": 2.5
+    },
+    "wand": {
+      "death_ray": 2.5, "disintegrate": 2.5, "wonder": 0.8, "light": 0.4, "sunlight": 0.6,
+      "secret_door_detection": 0.4, "opening": 0.4, "probing": 0.5, "digging": 0.9,
+      "cancellation": 1.2, "charm_monster": 1.4, "paralyze_monster": 1.3, "heal": 1.3,
+      "drain_life": 1.4, "teleport_monster": 1.0, "polymorph_monster": 1.0
+    }
+  },
+  "by_id": {
+    "soma": 4.0, "elixir_of_gilgamesh": 5.0, "water_of_lethe": 2.0,
+    "bread_ration": 0.6, "dried_meat": 0.7, "hard_cheese": 0.7, "wild_mushroom": 0.5,
+    "apple": 0.5, "trail_rations": 0.8, "healing_herb": 0.8, "elvish_bread": 1.2,
+    "hearty_stew": 1.2, "tantalus_plum": 1.5,
+    "deep_fungi": 4.0, "void_ration": 4.0, "philosopher_tea": 5.0,
+    "golden_apple": 7.0, "peach_of_immortality": 7.0, "ambrosia": 12.0,
+    "ring_curse_teleport": "junk", "ring_curse_aggravate": "junk", "ring_curse_fumble": "junk",
+    "ring_curse_slow": "junk", "ring_curse_drain": "junk",
+    "amulet_curse_teleport": "junk", "amulet_curse_slow": "junk", "amulet_curse_drain": "junk"
+  },
+  "by_spell": {
+    "heal_spell": 2.0, "greater_heal_spell": 2.5, "cure_wounds_spell": 1.6, "cure_light_spell": 1.3,
+    "resurrection_spell": 3.0, "wish_spell": 3.0, "identify_spell": 1.4
+  },
+  "share_by_id": {
+    "soul_sphere": 2.0
+  }
+}

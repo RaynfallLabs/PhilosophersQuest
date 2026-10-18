@@ -43,7 +43,8 @@ REWARD_TYPES = {'gold', 'random_weapon', 'random_armor', 'random_shield',
                 'random_item', 'effect', 'hp_restore', 'sp_restore',
                 'mp_restore', 'enchant_weapon', 'message', 'multi',
                 'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct',
-                'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact'}
+                'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact',
+                'service'}        # a person's trade: game_traders._render_service (D3)
 
 NEW_FLAVOR_TAGS = ['flv_baucis_table', 'flv_three_purses', 'flv_utgard_contests',
                    'flv_singed_squire', 'flv_old_spearman', 'flv_limping_lion',

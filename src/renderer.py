@@ -909,6 +909,16 @@ class Renderer:
         # An item is drawn as what it is, identified or not: a player who has
         # seen enough of them learns to know a thing by sight.
         item_id = getattr(item, 'id', None)
+        # A trader is a person: drawn with his own painted figure from the
+        # creature art (data/traders.json 'sprite', with a stand-in until a
+        # new one is painted).
+        person = getattr(item, 'sprite_id', None) if getattr(item, 'item_class', '') == 'merchant' else None
+        if person:
+            sprite = (self._get_sprite(person)
+                      or self._get_sprite(getattr(item, 'sprite_fallback', '') or 'merchant_npc'))
+            if sprite:
+                self.screen.blit(sprite, (sx, sy))
+                return
         if item_id:
             sprite = self._get_item_sprite(item_id)
             if sprite:

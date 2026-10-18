@@ -1892,7 +1892,10 @@ class RenderMixin:
             y += S(32)
             for i, (_raw, opt) in enumerate(visible):
                 row = pygame.Rect(body_rect.x, y, body_rect.w, row_h)
-                self._ui_action_row(row, str(i + 1), display_text(opt['label']),
+                from npc_encounters import gold_pct_label
+                _lbl = opt['label'] + gold_pct_label(opt.get('cost'), self.player_gold,
+                                                     self.dungeon_level)
+                self._ui_action_row(row, str(i + 1), display_text(_lbl),
                                     color=FP.PARCHMENT_LIGHT)
                 y += row_h + S(10)
             self._ui_footer(panel, "1-3: choose   |   Esc: walk away")
@@ -7188,7 +7191,8 @@ class RenderMixin:
             ("Turns Survived",        f"{self.turn_count:,}",                FP.BODY_TEXT),
             ("Deepest Level",         f"{self.level_mgr.max_level_reached}",  FP.BODY_TEXT),
             ("Monsters Slain",        f"{self.level_mgr.monsters_killed:,}",  FP.BODY_TEXT),
-            ("Gold Collected",        f"{self.player_gold:,}",               FP.GOLD_PALE),
+            ("Gold Earned",           f"{getattr(self, 'gold_earned', 0):,}", FP.GOLD_PALE),
+            ("Gold Carried",          f"{self.player_gold:,}",               FP.GOLD_PALE),
             ("Questions Answered",    f"{total_q:,}",                         FP.BODY_TEXT),
             ("Correct Answers",    self._end_accuracy_text(self.correct_answers, self.wrong_answers),
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
@@ -7258,7 +7262,8 @@ class RenderMixin:
             ("Turns Survived",     f"{self.turn_count:,}",                   FP.BODY_TEXT),
             ("Deepest Level",      f"{self.level_mgr.max_level_reached}",     FP.BODY_TEXT),
             ("Monsters Slain",     f"{self.level_mgr.monsters_killed:,}",     FP.BODY_TEXT),
-            ("Gold Collected",     f"{self.player_gold:,}",                   FP.GOLD_PALE),
+            ("Gold Earned",        f"{getattr(self, 'gold_earned', 0):,}",    FP.GOLD_PALE),
+            ("Gold Carried",       f"{self.player_gold:,}",                   FP.GOLD_PALE),
             ("Questions Answered", f"{total_q:,}",                            FP.BODY_TEXT),
             ("Correct Answers",    self._end_accuracy_text(self.correct_answers, self.wrong_answers),
              (120, 210, 120) if acc_pct >= 70 else FP.WARNING_TEXT),
@@ -8519,66 +8524,15 @@ class RenderMixin:
         )
 
     def _draw_shop(self):
-        """Draw the merchant shop overlay through the shared decision menu (_draw_decision_menu).
-
-        Frame: standard dark-panel chrome with filigree bars under the title
-        (keeps the "merchant tent" flourish flavor from the prior layout).
+        """Draw a trader's shop through the shared decision menu
+        (_draw_decision_menu): the Buy / Sell / Services tab strip
+        (tab_strip_window keeps the active tab in view), the wares, pack or
+        services on the left, the detail pane on the right, the kit's key-hint
+        footer. The model (rows, prices, offers) is game_traders._trader_menu.
         """
-        m = getattr(self, '_shop_merchant', None)
-        if m is None:
+        if getattr(self, '_shop_merchant', None) is None:
             return
-        stock = getattr(m, 'stock', []) or []
-        prices = getattr(m, 'prices', []) or []
-        haggled = getattr(self, '_shop_haggled', set())
-        entries = []
-        for i, item in enumerate(stock):
-            price = prices[i] if i < len(prices) else 0
-            affordable = getattr(self, 'player_gold', 0) >= price
-            # The price leads the sub-line (no separate price chip: it took
-            # the room the name needed and shrank the shop's names to 15 px,
-            # below every other picker's; VISUAL_REVIEW_2 minor 4).
-            detail = f"{price:,} gold   Weight {getattr(item, 'weight', 0):.1f}"
-            if i in haggled:
-                detail += "   Haggled"
-            # The item's name heads the pane ONCE (it was printed twice: the
-            # shop's own line, then the item block's title), then the price.
-            item_lines = self._menu_item_detail_lines(
-                item, "Press Enter to buy this item if you can afford it.")
-            details = item_lines[:1] + [
-                (f"Price: {price:,} gold (you have {getattr(self, 'player_gold', 0):,})",
-                 FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT, self.font_sm),
-                ("Already haggled for this item." if i in haggled
-                 else "H: try to haggle the price down (once per item).",
-                 FP.FADED_TEXT, self.font_sm),
-                '',
-            ] + item_lines[1:]
-            entries.append({
-                'name': self._display_name(item),
-                'detail': detail,
-                'icon': item,
-                'name_color': FP.BODY_TEXT if affordable else FP.FADED_TEXT,
-                'detail_color': FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT,
-                'details': details,
-            })
-
-        selected = self._menu_clamp_selection('_shop_selection', len(entries))
-        context = self._menu_base_context([
-            ("MERCHANT", FP.GOLD_BRIGHT, self.font_sm),
-            (f"Your gold: {getattr(self, 'player_gold', 0):,}", FP.GOLD_PALE, self.font_sm),
-            (f"Stock remaining: {len(entries)}", FP.BODY_TEXT, self.font_sm),
-            ("Use H before buying if you want one chance to haggle that item.",
-             FP.FADED_TEXT, self.font_sm),
-        ])
-        self._menu_more_cue = "The full lore is yours to read once you buy it."
-        self._draw_decision_menu(
-            title="TRAVELLING MERCHANT",
-            entries=entries,
-            selected=selected,
-            context_lines=context,
-            hint="Up/Down: inspect   Enter: buy   H: haggle   ESC: close",
-            border_color=FP.GOLD,
-            scroll_attr='_shop_scroll',
-        )
+        self._draw_decision_menu(**self._trader_menu())
 
     def _charsheet_count_label(self, active_filter: str, shown: int, total: int) -> str:
         """The pack count line: how many things you carry, not a limit.
@@ -9324,7 +9278,7 @@ class RenderMixin:
             ("World", [
                 ("G / ,", "Pick up item", FP.BODY_TEXT),
                 ("P", "Unlock / disarm", FP.BODY_TEXT),
-                ("Y", "Merchant shop", FP.BODY_TEXT),
+                ("Y", "Trade", FP.BODY_TEXT),
                 ("\\", "Pray", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Observe cursor", FP.BODY_TEXT),
