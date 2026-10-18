@@ -210,6 +210,14 @@ def busy_floors(st: dict) -> set:
 
 # ---------------------------------------------------------------- binding
 
+def anchor_fits(enc: dict, floor: int) -> bool:
+    """May this anchor sit on ``floor``? An anchor's ``band`` is its block's
+    floors unless the data narrows it: the dying prophet stops at 97, so his
+    callback to Ruth Gale always has a floor below him (bug bash 5, CON-17)."""
+    b = enc.get('band')
+    return not b or int(b[0]) <= int(floor) <= int(b[1])
+
+
 def bind_anchors(st: dict, encounters, *, blocks=None) -> dict:
     """Bind every anchor slot at run start. Returns {floor: encounter} for
     the anchors (the ``_npc_encounter_levels`` view) and records each tag and
@@ -223,9 +231,9 @@ def bind_anchors(st: dict, encounters, *, blocks=None) -> dict:
         band = band_of(f)
         rng = rng_for(st['seed'], f'anchor:{f}')
         cands = [e for e in encounters if e.get('block') == band and not e.get('trigger_item')
-                 and e['tag'] not in st['used_tags']]
+                 and e['tag'] not in st['used_tags'] and anchor_fits(e, f)]
         trig = [e for e in encounters if e.get('block') == band and e.get('trigger_item')
-                and e['tag'] not in st['used_tags']]
+                and e['tag'] not in st['used_tags'] and anchor_fits(e, f)]
         pool = list(cands)
         if trig:
             pool.append(rng.choice(trig))           # up to one triggered, as before

@@ -126,7 +126,8 @@ def select_encounter_levels(seed: int | None = None) -> dict:
         enc = pool[0]
 
         # Pick a level within the block, excluding boss levels
-        valid_levels = [lv for lv in range(block_lo, block_hi + 1)
+        lo, hi = enc.get('band') or (block_lo, block_hi)    # CON-17: a narrowed band
+        valid_levels = [lv for lv in range(max(block_lo, int(lo)), min(block_hi, int(hi)) + 1)
                         if lv not in _BOSS_LEVELS]
         if not valid_levels:
             continue

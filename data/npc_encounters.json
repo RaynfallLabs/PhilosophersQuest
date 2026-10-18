@@ -299,7 +299,7 @@
       "id": "grumwald",
       "name": "Grumwald"
     },
-    "text": "A rope bridge spans a black gulf, and at its near end a troll the size of a hay cart sleeps sitting up, chin on chest, one eye not quite shut, snoring like a millrace. Beside him stands a box with a slot and a sign in careful capitals: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. The box is half full. Nobody would ever know.",
+    "text": "A rope bridge spans a black gulf, and at its near end a troll the size of a hay cart sleeps sitting up, chin on chest, one eye not quite shut, snoring like a millrace. Beside him stands a box with a slot and a sign in careful capitals: TOLL A COIN. TROLL ASLEEP. PAY ANYWAY. The box is half full. Nobody would ever know.",
     "options": [
       {
         "label": "Drop a coin in the box",
@@ -1591,7 +1591,7 @@
     "stakes": "medium",
     "person": {
       "id": "pell",
-      "name": "Corporal Pell"
+      "name": "Jory Pell"
     },
     "text": "A young soldier sits in the dark with his knees drawn up, still wearing a torn Legion tabard. His hands won't stop shaking. A captain's heavy signet hangs on a cord at his neck, far too big for any finger of his. \"A hundred of us. Something came out of the dark. I ran.\" He stares at his hands. \"Sergeant Ormond got some of them into the old granary, below. I heard the bar go across as I ran. I just need food to reach the surface. I'll disappear.\" His sword is clean, and so is his tabard. Whatever happened down there, he never drew.",
     "options": [
@@ -2020,16 +2020,16 @@
       "id": "sariel",
       "name": "Sariel"
     },
-    "text": "A winged figure kneels in a cage of black iron, six wings folded against bars too narrow for them. The air smells of ozone and wildflowers. Beside the cage a neat man in grey sits on a folding stool with a ledger. \"Ambrose Vell, acquisitions. She's lawfully bought and paid for.\" He taps a deed with a red seal. \"I'll pay you a finder's fee to keep walking.\" Two ogres in Vell's grey livery lean on the far wall, picking their teeth with arrows. The angel says only: \"A scroll would break it.\"",
+    "text": "A winged figure kneels in a cage of black iron, six wings folded against bars too narrow for them. The air smells of ozone and wildflowers. Beside the cage a neat man in grey sits on a folding stool with a ledger. \"Ambrose Vell, acquisitions. She's lawfully bought and paid for.\" He taps a deed with a red seal. \"I'll pay you a finder's fee to keep walking.\" Two trolls in Vell's grey livery lean on the far wall, picking their teeth with arrows. The angel says only: \"A scroll would break it.\"",
     "options": [
       {
         "label": "Break the cage with a scroll, here and now",
         "naive": true,
-        "warning": "Two ogres in Vell's grey livery lean on the far wall, picking their teeth with arrows.",
+        "warning": "Two trolls in Vell's grey livery lean on the far wall, picking their teeth with arrows.",
         "cost": {
           "type": "scroll"
         },
-        "outcome": "The bars burst in white light and Sariel rises, nine feet of wings, and is gone. The ogres were paid to guard the stock. The stock just left, so they guard you instead.",
+        "outcome": "The bars burst in white light and Sariel rises, nine feet of wings, and is gone. The trolls were paid to guard the stock. The stock just left, so they guard you instead.",
         "deeds": [
           "aid.sariel",
           "saved.sariel",
@@ -2040,7 +2040,7 @@
           "monster_id": "war_troll",
           "count": 2
         },
-        "chronicle": "Broke an angel out of a cage in front of her keeper's ogres. The angel left. The ogres stayed for a long and personal conversation.",
+        "chronicle": "Broke an angel out of a cage in front of her keeper's trolls. The angel left. The trolls stayed for a long and personal conversation.",
         "road": {
           "id": "trapped_seraph.break",
           "hint": "See who is leaning on the wall before you break the lock."
@@ -2057,7 +2057,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "The deed is grand, sealed, and signed \"Mammon, Prince of This World\", and the Latin is schoolboy Latin with every other case wrong. You read it aloud, slowly, mistakes and all. The ogres look at each other; they were promised lawful work. They leave. Vell does not argue with an empty room. He hands you the key with two fingers. Sariel: \"Seven seals hold shut what lies below, and a keeper stands on each. I will not forget.\"",
+          "outcome": "The deed is grand, sealed, and signed \"Mammon, Prince of This World\", and the Latin is schoolboy Latin with every other case wrong. You read it aloud, slowly, mistakes and all. The trolls look at each other; they were promised lawful work. They leave. Vell does not argue with an empty room. He hands you the key with two fingers. Sariel: \"Seven seals hold shut what lies below, and a keeper stands on each. I will not forget.\"",
           "karma": 1,
           "karma_kind": "judgment",
           "deeds": [
@@ -3464,6 +3464,10 @@
     ],
     "sprite_id": "npc_dying_prophet",
     "block": 10,
+    "band": [
+      91,
+      97
+    ],
     "role": "anchor",
     "stakes": "medium",
     "person": {
@@ -3734,7 +3738,7 @@
         "floors": 1,
         "perk": null,
         "on_arrive": {
-          "outcome": "",
+          "outcome": "At the stair Quill throws the trunk open. \"Your pick, as agreed. Not the bell.\" He goes up the steps with the bell in both arms, and does not look back.",
           "reward": {
             "type": "multi",
             "rewards": [
