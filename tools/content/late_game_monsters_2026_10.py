@@ -218,7 +218,7 @@ NEW = {
                  "and chased him over the sea until the helm of Hades hid him. They have been "
                  "looking for him ever since. Their gaze turns the living rigid as stone, and a "
                  "killing blow only puts them down for a moment."),
-        'frequency': 0, 'gaze_paralyze': 2, 'gaze_cooldown': 6,
+        'frequency': 0, 'gaze_paralyze': 2, 'gaze_cooldown': 6, 'gaze_group': 'gorgon_sisters',
         'revive_once_on_death': True, 'revive_hp_pct': 0.3,
         'revive_message': "Stheno rises again. An immortal does not stay dead.",
         'is_mini_boss': True, 'spawn_chance': 0.4, 'escort': ['euryale_gorgon'],
@@ -242,7 +242,9 @@ NEW = {
                  "She goes nowhere without Stheno. Her wail drives men back, her gaze holds them "
                  "where they stand, and like her sister she is immortal: she can be put down, but "
                  "not for long. A polished shield or a blindfold is worth more here than a sword."),
-        'frequency': 0, 'gaze_paralyze': 2, 'gaze_cooldown': 6,
+        'frequency': 0, 'gaze_paralyze': 1, 'gaze_cooldown': 6, 'gaze_group': 'gorgon_sisters',
+        # One shared gaze between the sisters (gaze_group), and Euryale's holds
+        # a turn: her weapon is the wail. Stheno's still holds two.
         'revive_once_on_death': True, 'revive_hp_pct': 0.3,
         'revive_message': "Euryale rises again, wailing. An immortal does not stay dead.",
         'is_mini_boss': True, 'spawn_chance': 0.0,

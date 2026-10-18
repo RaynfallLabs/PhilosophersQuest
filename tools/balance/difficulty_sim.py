@@ -1727,6 +1727,7 @@ class Run:
         (main._advance_turn -> game_combat._do_monster_turns)."""
         p = self.p
         for m in active:
+            m._cached_all_monsters = active      # as take_turn does: a shared gaze sees its group
             if m.alive:
                 self._tick_monster(m)
         p._incoming_scale = self.kv('mon_dmg')

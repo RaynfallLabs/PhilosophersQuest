@@ -202,6 +202,10 @@ class Monster:
         self.gaze_paralyze: int = defn.get('gaze_paralyze', 0)      # paralyze duration (0 = no gaze)
         self.gaze_cooldown_max: int = defn.get('gaze_cooldown', 4)   # turns between gazes
         self._gaze_cooldown: int = 0                                  # current cooldown remaining
+        # Gazers that share one gaze (Stheno and Euryale): when any of the
+        # group looks, every living gazer of the group waits out the cooldown,
+        # so the player is never paralysed twice by the pair in one turn.
+        self.gaze_group: str = defn.get('gaze_group', '') or ''
 
         # --- Dragon scales (Fafnir): fraction of damage absorbed (0.0-1.0) ---
         self.dragon_scales: float = float(defn.get('dragon_scales', 0))
@@ -380,7 +384,7 @@ class Monster:
         'min_level': 1, 'max_level': None,
         'can_phase_walls': False,
         '_hit_run_state': 'hunting', '_hit_run_timer': 0, '_hit_run_attacks': 0,
-        'gaze_paralyze': 0, 'gaze_cooldown_max': 4, '_gaze_cooldown': 0,
+        'gaze_paralyze': 0, 'gaze_cooldown_max': 4, '_gaze_cooldown': 0, 'gaze_group': '',
         'is_boss': False, 'dragon_scales': 0.0,
         'rage_interval': 0, 'rage_damage_bonus': '', 'rage_stacks': 0,
         '_rage_turn_counter': 0, '_rage_message': '',
@@ -783,6 +787,7 @@ class Monster:
         # --- Gaze attack (Medusa): petrifying gaze before normal attack ---
         if self.gaze_paralyze > 0 and self._gaze_cooldown <= 0:
             self._gaze_cooldown = self.gaze_cooldown_max
+            self._share_gaze_cooldown()
             # The gaze reaches across a room (see _dancer_turn): she may be
             # several tiles away. At range the gaze is her whole turn; next
             # to the player a gaze that fails still leaves her fangs.
@@ -2348,6 +2353,18 @@ class Monster:
                 self.x, self.y = nx, ny
                 return True
         return False
+
+    def _share_gaze_cooldown(self) -> None:
+        """This monster has just used its gaze: put every other living gazer of
+        its `gaze_group` on the cooldown too. One shared gaze between them, so
+        two of them never paralyse the player in the same turn."""
+        if not self.gaze_group:
+            return
+        for m in getattr(self, '_cached_all_monsters', None) or ():
+            if (m is not self and getattr(m, 'alive', False)
+                    and getattr(m, 'gaze_group', '') == self.gaze_group):
+                m._gaze_cooldown = max(int(getattr(m, '_gaze_cooldown', 0) or 0),
+                                       self.gaze_cooldown_max)
 
     def _dancer_turn(self, player, dungeon, all_monsters, extra_occupied) -> bool:
         """Dancer AI (Medusa): sidestep to a new position adjacent to player, then attack.

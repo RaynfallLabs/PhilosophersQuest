@@ -839,3 +839,15 @@ The reviewer also asks, of every pick, the questions that have no line in the br
 - A sun disc: "solid disc of polished red copper, no glow" avoids a halo and a green fringe.
 - A rock creature: "no face at all, only two glowing slits" stops the orc face.
 - A three-headed dragon still grows a fourth head now and then; check the count.
+
+### Lessons from the late-game redraw (g33; 2026-10-17)
+
+Judge every sprite at 40 px (the map's medium zoom) as well as at 64 px: each sprite below passed at 64 px and failed at 40.
+
+- Black snakes on a dark shawl read as dark curls. Snakes "striped all along in broad bold rings of pale ivory-white and jet black, fanning out like the rays of a crown, each head clear against the backdrop" read as snakes even at 40 px. The model still ignores the count (five became ten), and a hand raised to the hair hides the snakes.
+- A woman-monster with arms "flung wide" stands square and symmetrical, like a monk. "Rushes forward in a long stalking stride, one arm thrust forward, the other swept back" gave the action pose.
+- "Heavy and big-boned like a she-bear" draws a male troll. "A woman's shape but a troll's size, a long ragged dress flaring to the ankles, very long wet hair past the waist" gives a female figure. The face must then carry the monster (a hooked nose, pointed ears through the hair, tusks over the upper lip), or she becomes a blue zombie woman.
+- A nude "polished bronze" giant reads as red-brown skin. "A bronze statue of a hoplite: crested Corinthian helmet, cuirass, greaves, brassy gold like a polished temple bell with hard white glints", on a blue backdrop, reads as metal.
+- A pale fleece kilt is a ballet tutu at 64 px. Say "dark brown goat-hair fleece".
+- Bright turquoise faience is one cyan blob at 40 px. "Deep Egyptian faience blue" (with `lift` 0.85) gives a royal blue; the black wig and a gold kilt stand out against it. "Teal-blue, between turquoise and royal blue" came out green-teal. A figure bent at the waist always gets two legs, however the mummy-case sheath is worded.
+- A stooped dead maid with her ladle hanging looks limp. "The ladle raised high like a club, glaring up from under her brows, teeth bared" makes her menacing while she stays bent and slow. A white apron is the whole sprite at 40 px: use a dull rust-brown apron-dress.

@@ -429,12 +429,19 @@ def test_one_hellmouth_per_floor_at_most():
 def test_a_hellmouth_in_a_corridor_bottleneck_is_moved_off_it():
     import false_stairs
     from dungeon import WALL, FLOOR
-    d, up, down = _hellmouth_floor(90, 9)
-    # Find a tile whose blocking cuts the up stair off from the down stair.
-    reach = false_stairs._walk(d, up)
-    choke = next(t for t in sorted(reach)
-                 if d.tiles[t[1]][t[0]] == FLOOR and t not in (up, down)
-                 and down not in false_stairs._walk(d, up, blocked={t}))
+    # Find a floor with a tile whose blocking cuts the up stair off from the
+    # down stair. (The layout for one seed varies with Python's hash order, and
+    # some layouts have no such tile, so look through a few seeds.)
+    choke = None
+    for seed in range(9, 40):
+        d, up, down = _hellmouth_floor(90, seed)
+        reach = false_stairs._walk(d, up)
+        choke = next((t for t in sorted(reach)
+                      if d.tiles[t[1]][t[0]] == FLOOR and t not in (up, down)
+                      and down not in false_stairs._walk(d, up, blocked={t})), None)
+        if choke:
+            break
+    assert choke, 'no floor with a chokepoint between the stairs'
     hm = _monster('hellmouth', *choke)
     mons = [hm]
     false_stairs.seat(d, mons)
@@ -547,12 +554,59 @@ def test_stheno_arrives_with_euryale_beside_her_once_per_run():
     assert len(mons) == 2
 
 
-def test_the_gorgon_sisters_are_immortal_once():
-    m = _monster('stheno_gorgon')
+@pytest.mark.parametrize('mid', NAMED)
+def test_the_gorgon_sisters_are_immortal_once(mid):
+    m = _monster(mid)
     m.take_damage(m.hp)
     assert m.alive and m.hp > 0
     m.take_damage(m.hp)
     assert not m.alive
+
+
+def _gazes_per_turn(monkeypatch, group=True, turns=40):
+    """Run the real monster phase with both sisters in sight and count the
+    paralysing gazes that land each turn. The hero is freed before every turn
+    and every gaze is let through, so only the shared cooldown can stop a
+    second one."""
+    import status_effects
+    g, st = _scene('stheno_gorgon', dx=3)
+    eu = _monster('euryale_gorgon', g.player.x - 3, g.player.y)
+    g.monsters = [st, eu]
+    for m in g.monsters:
+        m.hp = m.max_hp = 10 ** 7
+        if not group:
+            m.gaze_group = ''
+    g.player.hp = g.player.max_hp = 10 ** 7
+    landed = []
+    monkeypatch.setattr(status_effects, 'apply_debuff_with_save',
+                        lambda p, eff, dur, dc: (landed.append(eff) or True, ''))
+    counts = []
+    for _ in range(turns):
+        for k in ('paralyzed', 'control_immune', 'feared'):
+            g.player.status_effects.pop(k, None)
+        for m in g.monsters:
+            m.status_effects.pop('paralyzed', None)
+        landed.clear()
+        g._do_monster_turns()
+        counts.append(landed.count('paralyzed'))
+    return counts
+
+
+def test_the_gorgon_sisters_share_one_gaze(monkeypatch):
+    assert MONS['stheno_gorgon']['gaze_group'] == MONS['euryale_gorgon']['gaze_group'] == 'gorgon_sisters'
+    # Toned down (2026-10-17): Euryale's gaze holds one turn, Stheno's two.
+    assert 1 <= MONS['euryale_gorgon']['gaze_paralyze'] < MONS['stheno_gorgon']['gaze_paralyze'] <= 2
+    counts = _gazes_per_turn(monkeypatch)
+    assert max(counts) == 1, counts                 # never two in one turn
+    assert sum(counts) >= 4, counts                 # but the gaze still comes
+    # One shared cooldown: after a gaze, neither sister looks again for several turns.
+    hits = [i for i, c in enumerate(counts) if c]
+    assert min(b - a for a, b in zip(hits, hits[1:])) >= MONS['stheno_gorgon']['gaze_cooldown'] - 1
+
+
+def test_without_the_shared_gaze_both_sisters_would_look_at_once(monkeypatch):
+    # The control: the counter above can see a double gaze when there is one.
+    assert max(_gazes_per_turn(monkeypatch, group=False)) == 2
 
 
 def test_a_heart_weigher_bites_harder_on_a_heavy_heart():
