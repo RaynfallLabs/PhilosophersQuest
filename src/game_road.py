@@ -413,6 +413,8 @@ class RoadMixin:
         if new_level == COW_LEVEL:
             return
         d = int(getattr(self.player, 'deepest_floor_reached', new_level) or new_level)
+        import karma as _karma
+        _karma.settle_due_patterns(self)       # a pattern's -1 lands a floor later
         self._lapse_due_oaths(d)
         self._lapse_hostile_left_behind(new_level)
         self._deliver_due_rewards(d)

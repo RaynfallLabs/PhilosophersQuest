@@ -207,8 +207,28 @@ def test_negative_pattern_pays_once(gate_on):
     reg = deeds.ensure_register(g)
     for i in range(2):
         deeds.record(reg, f'broke.o{i}', floor=3, block=1, tags=['vice:betray'], engine=True)
-    assert karma.evaluate_patterns(g) == ['turncoat'] and g.karma == -1
-    assert karma.evaluate_patterns(g) == [] and g.karma == -1
+    # Claimed now, paid on the next new floor: the act that completed the
+    # pattern already cost its -1, and no single act may cost more.
+    assert karma.evaluate_patterns(g) == ['turncoat'] and g.karma == 0
+    assert karma.evaluate_patterns(g) == [] and g.karma == 0
+    assert karma.settle_due_patterns(g) == ['turncoat'] and g.karma == -1
+    assert karma.settle_due_patterns(g) == [] and g.karma == -1
+
+
+def test_one_act_never_costs_more_than_one_point(gate_on):
+    """The second broken oath costs -1 now; the turncoat pattern it
+    completes costs its -1 only on the next new floor."""
+    g = _game(0, deepest=10)
+    g._chronicle = []
+    reg = deeds.ensure_register(g)
+    deeds.record(reg, 'broke.o0', floor=3, block=1, tags=['vice:betray'], engine=True)
+    karma.adjust(g, -1, kind='betray', source='o0')
+    before = g.karma
+    deeds.record(reg, 'broke.o1', floor=3, block=1, tags=['vice:betray'], engine=True)
+    karma.adjust(g, -1, kind='betray', source='o1')       # runs evaluate_patterns
+    assert before - g.karma == 1
+    karma.settle_due_patterns(g)
+    assert before - g.karma == 2
 
 
 def test_property_random_streams(gate_on):

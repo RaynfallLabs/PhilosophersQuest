@@ -181,12 +181,35 @@ def evaluate_patterns(game) -> list:
             if rid in kreg['patterns_neg']:
                 continue
             if _rule_met(reg, rule):
+                # Claimed now, paid on the next new floor: the act that
+                # completed the pattern has already cost its -1, and no
+                # single act may cost more than -1 (Brandon, 2026-10-18).
                 kreg['patterns_neg'].append(rid)
-                adjust(game, int(rule.get('karma', -1)), kind='pattern', source=f'pattern:{rid}')
+                kreg.setdefault('patterns_due', []).append(rid)
                 paid.append(rid)
-                _soul_line(game, rule)
     finally:
         _EVALUATING = False
+    return paid
+
+
+def settle_due_patterns(game) -> list:
+    """Pay the negative patterns claimed since the last new floor (one -1
+    each, with their journal line). Called on arrival at a new floor."""
+    if not gate_enabled():
+        return []
+    reg = deeds.ensure_register(game)
+    kreg = reg['karma']
+    due = list(kreg.get('patterns_due') or ())
+    kreg['patterns_due'] = []
+    by_id = {r['id']: r for r in rules().get('patterns_neg', ())}
+    paid = []
+    for rid in due:
+        rule = by_id.get(rid)
+        if rule is None:
+            continue
+        adjust(game, int(rule.get('karma', -1)), kind='pattern', source=f'pattern:{rid}')
+        _soul_line(game, rule)
+        paid.append(rid)
     return paid
 
 

@@ -179,3 +179,11 @@ def test_the_ring_of_gyges_takes_one_for_striking_an_innocent_unseen():
     led = g._deeds['karma']['ledger']
     assert [(e['source'], e['requested'], e['applied']) for e in led] == \
         [('ring_of_gyges', -1, -1)]
+
+
+def test_the_ring_of_gyges_costs_once_per_victim_not_per_blow():
+    import re
+    src = open(os.path.join(os.path.dirname(__file__), '..', 'src', 'combat.py'), encoding='utf-8').read()
+    block = src[src.index('Ring of Gyges (gyges_invisible_attack_karma)'):]
+    block = block[:block.index('Echidna')]
+    assert "_gyges_struck" in block and re.search(r"karma\.adjust\(_g, -1", block)

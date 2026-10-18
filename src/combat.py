@@ -2067,7 +2067,10 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             for _acc in getattr(player, 'equipped_accessories', ()) or ():
                 if getattr(_acc, 'gyges_invisible_attack_karma', False):
                     _g = getattr(player, '_combat_game_ref', None)
-                    if _g is not None:
+                    # Once per victim, not once per blow: the act is
+                    # striking an innocent unseen, however many hits it takes.
+                    if _g is not None and not monster.__dict__.get('_gyges_struck'):
+                        monster._gyges_struck = True
                         import karma as _karma
                         _karma.adjust(_g, -1, kind='cruelty', source='ring_of_gyges')
                         import deeds as _deeds

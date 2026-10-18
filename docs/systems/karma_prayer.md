@@ -36,7 +36,7 @@ other write in `src/`. The five sites today:
 |------|------|
 | NPC / flavor choice (`game_encounters._apply_outcome`) | `kind = karma_kind` (untyped karma is logged and ignored with the gate on) |
 | Oath kept / broken (`game_encounters._keep_oath` / `_break_oath`, `setne_tomb`) | `+1` `'oath'` into the earliest open block since it was sworn / `-1` `'betray'` |
-| Constancy and negative patterns (`karma.evaluate_patterns`) | `+1` `'constancy'` (at most +2 a run) / `-1` `'pattern'` |
+| Constancy and negative patterns (`karma.evaluate_patterns`; a negative pattern is paid on the next new floor by `karma.settle_due_patterns`, so one act never costs more than -1) | `+1` `'constancy'` (at most +2 a run) / `-1` `'pattern'` |
 | Emberpup first feed | nothing with the gate on (kindness, not a weighed deed); `+1` `'legacy'` only if the gate is switched off |
 | Emberpup attack | `-1`, `'cruelty'` |
 | Ring of Gyges (`combat.py`) | `-1`, `'cruelty'` (each blow that lands on an innocent while invisible) |
