@@ -162,7 +162,11 @@ def test_a_cow_level_trip_suspends_and_leaves_floors_left_alone():
     assert esc.suspended and esc.floors_left == 2 and esc in g.escorts
     assert g._escorts_here() == [] and (esc.x, esc.y) not in g._occupants()
     g._change_level(6, enter_from_top=False, via='cow')
-    assert not esc.suspended and esc.floors_left == 2 and (esc.x, esc.y) == here
+    assert not esc.suspended and esc.floors_left == 2
+    # Back from the farm she is seated beside the hero at the stair, not
+    # left where she stood (SAV-06).
+    assert max(abs(esc.x - g.player.x), abs(esc.y - g.player.y)) == 1
+    assert here is not None
     assert esc in g._escorts_here()
 
 

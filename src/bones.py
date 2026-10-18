@@ -71,10 +71,21 @@ def save_bones(player_name: str, dungeon_level: int, defeat_reason: str,
 
     bd = _bones_dir()
     path = os.path.join(bd, f'bones_L{dungeon_level}.json')
+    # A temp file renamed into place, as the save is (SAV-07): a crash or a
+    # power cut mid-write never leaves a half-written bones file.
+    tmp = f'{path}.{os.getpid()}.tmp'
     try:
-        with open(path, 'w', encoding='utf-8') as f:
+        with open(tmp, 'w', encoding='utf-8') as f:
             json.dump(bones, f, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
     except OSError:
+        try:
+            if os.path.exists(tmp):
+                os.remove(tmp)
+        except OSError:
+            pass
         return  # silently fail if can't write
 
     # Evict oldest if over cap
