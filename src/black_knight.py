@@ -456,16 +456,20 @@ class BlackKnightMixin:
         After: what the world did, his parting shouts, the torso's bite, and
         the end of the one-limb-per-action lock."""
         for k in self._black_knights():
-            self._black_knight_events(k)
+            # before the world moves, what happened to him was the hero's
+            # own action; after it, it was the world's (his pets, PET-13)
+            self._black_knight_events(k, by_hero=not end)
             if end:
                 self._black_knight_presence(k)
                 k._bk_locked = False
 
-    def _black_knight_events(self, k):
+    def _black_knight_events(self, k, by_hero: bool = True):
         d = data()
         events, k._bk_events = list(k._bk_events), []
         if not events:
             return
+        if by_hero:
+            k.__dict__['_bk_hero_fought'] = True
         stages = [s for kind, s in events if kind == 'stage']
         for s in stages:
             self.add_message(d['stage_messages'][str(s)], 'combat')
@@ -475,7 +479,13 @@ class BlackKnightMixin:
                 self._black_knight_state()['outcome'] = 'draw'
                 import deeds
                 deeds.note(self, 'flag.black_knight_draw', source='black_knight', unique=True)
-                self._chron('deed', d['draw_chronicle'], person='black_knight',
+                who = None if k.__dict__.get('_bk_hero_fought') else self._black_knight_pet_name(k)
+                if who is None:
+                    line = d['draw_chronicle']
+                else:
+                    # his pets did it all, the hero never laid a blade on him
+                    line = d['draw_by_pet_chronicle'].format(pet=who)
+                self._chron('deed', line, person='black_knight',
                             source='black_knight', once='black_knight:draw')
         if stages:
             self._black_knight_say(k, d['stage_lines'][str(stages[-1])])
@@ -522,6 +532,26 @@ class BlackKnightMixin:
             k._bk_engaged = False
             pool = 'torso_leave_lines' if k.defeated else 'walk_away_lines'
             self._black_knight_say(k, self._black_knight_next(k, pool))
+
+    def _black_knight_pet_name(self, k):
+        """The companion nearest him, for the Journal, by name (None with no
+        companion on the floor)."""
+        pets = [p for p in getattr(self, 'pets', []) or [] if getattr(p, 'alive', False)]
+        if not pets:
+            return None
+        p = min(pets, key=lambda p: max(abs(p.x - k.x), abs(p.y - k.y)))
+        return p.name
+
+    def _black_knight_sword_taken(self, item) -> None:
+        """The hero picks up the sword he dropped: only now is it his
+        (PET-13: the Journal said "I have his sword" while it lay on the
+        bridge)."""
+        if getattr(item, 'id', None) != data()['sword_id']:
+            return
+        if not self._black_knight_state().get('sword_dropped'):
+            return
+        self._chron('discovery', data()['sword_chronicle'], person='black_knight',
+                    source='black_knight', once='black_knight:sword')
 
     # ---- the sword ------------------------------------------------------------
 

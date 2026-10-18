@@ -33,7 +33,7 @@ import pygame
 # every other UI helper is used exclusively from game_render.RenderMixin.
 from fantasy_ui import ScaledFont
 
-from pet_system import Pet, FenrirPet
+from pet_system import Pet, FenrirPet, growl_tag
 from quirk_system import QuirkSystem
 from container_system import attempt_lockpick
 from dungeon import (spawn_monsters, WALL, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
@@ -2068,8 +2068,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Place deep-lore items on their designated levels (once per run)
         self._maybe_place_lore_items(dungeon, new_level)
 
-        # Reposition pets near player on floor change (spread to adjacent tiles)
-        _pet_placed = set()
+        # Reposition pets near player on floor change (spread to adjacent tiles;
+        # never onto an escort, who is already set beside him: PET-05)
+        _pet_placed = {(e.x, e.y) for e in self._escorts_here()}
         for pet in self.pets:
             if not pet.alive:
                 continue
@@ -4876,8 +4877,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if new_monsters:
             m = new_monsters[0]
             # Never on the hero (the callers pass his own tile) or a pet.
-            _busy = {(self.player.x, self.player.y)}
-            _busy |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
+            _busy = self._occupants()           # the hero, pets and escorts (PET-05)
             for dx2 in range(-2, 3):
                 for dy2 in range(-2, 3):
                     nx2, ny2 = x + dx2, y + dy2
@@ -4903,14 +4903,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # not "The Agamemnon hits you")
         m.name = _ha_rng.choice(names)
         m.proper_noun = True
-        # Place near the player (search a 4-tile radius)
+        # Place near the player (search a 4-tile radius), never on him, a pet
+        # or an escort (INT-11)
         px, py = self.player.x, self.player.y
+        _busy = self._occupants()
         for dx in range(-4, 5):
             for dy in range(-4, 5):
                 if abs(dx) + abs(dy) > 5:
                     continue
                 nx, ny = px + dx, py + dy
-                if self.dungeon.is_walkable(nx, ny) and \
+                if self.dungeon.is_walkable(nx, ny) and (nx, ny) not in _busy and \
                         not any(om.alive and om.x == nx and om.y == ny for om in self.monsters):
                     m.x, m.y = nx, ny
                     self.monsters.append(m)
@@ -4963,8 +4965,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _do_pet_growl(self):
         """Shep's Hackles Up: when a hostile the hero cannot see comes within
         his range, Shep lowers his head and growls toward it. Each monster
-        sets him off once while it stays in range, so a lurking wolf is one
-        growl, not one a turn. He has to be near enough to hear it."""
+        sets him off once until it dies, goes well out of his range or the
+        floor changes, so a lurking wolf is one growl, not one a turn. He has
+        to be near enough to hear it."""
         px, py = self.player.x, self.player.y
         for pet in getattr(self, 'pets', []) or []:
             growl = (getattr(pet, 'species', None) or {}).get('growl')
@@ -4991,12 +4994,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if isinstance(it, Container) and getattr(it, 'is_mimic', False)
                 and max(abs(it.x - px), abs(it.y - py)) <= radius
             ]
+            # He remembers what he has growled at (by a tag that lasts
+            # through a save, CODE-13) until it is dead, gone well out of his
+            # range (radius + 2, so a creature pacing on the edge is one
+            # growl: PET-02) or the floor changes. The hero catching sight
+            # of it does not make him forget it.
             seen = getattr(pet, '_growled_at', None)
-            if seen is None:
+            if not isinstance(seen, set) or getattr(pet, '_growl_floor', None) != self.dungeon_level:
                 seen = set()
-            in_range = {id(m) for m in threats}
-            fresh = [m for m in threats if id(m) not in seen]
-            pet._growled_at = in_range        # forget what has left his range
+            pet._growl_floor = self.dungeon_level
+            keep = radius + 2
+            near = {growl_tag(m) for m in self.monsters
+                    if m.alive and max(abs(m.x - px), abs(m.y - py)) <= keep}
+            near |= {growl_tag(it) for it in self.ground_items
+                     if getattr(it, 'is_mimic', False)
+                     and max(abs(it.x - px), abs(it.y - py)) <= keep}
+            fresh = [m for m in threats if growl_tag(m) not in seen]
+            pet._growled_at = (seen & near) | {growl_tag(m) for m in threats}
             if not fresh:
                 continue
             near = min(fresh, key=lambda m: max(abs(m.x - px), abs(m.y - py)))
@@ -5615,6 +5629,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # every quest piece has its own line.)
                 if item.id in _CHRONICLE_FLAVOR:
                     self._chron('discovery', _CHRONICLE_FLAVOR[item.id], once=f'pickup:{item.id}')
+            self._black_knight_sword_taken(item)      # the Black Knight's sword, now his
             # Material discovery Journal line: first time the player sees each
             # material (cold iron, mithril, etc.), log the discovery line.
             _mat_id = getattr(item, 'material', None)
@@ -5772,8 +5787,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Clear the quirk counter so a second Duck (impossible in
         # normal play, but defensive) starts at 0.
         self.player.quirk_progress.pop('duck_of_doom_turns', None)
-        # Pet spawns on player's tile (player can step away next turn).
-        pet = Pet('duck_of_doom', self.player.x, self.player.y)
+        # It hops down onto a free tile beside him, never his own (PET-12).
+        _spot = self._escort_tile_near_hero() or (self.player.x, self.player.y)
+        pet = Pet('duck_of_doom', *_spot)
         # Late-pickup XP grant so a duck hatched on deep floors (typical:
         # F20+, given the 2026-turn incubation) isn't combat-useless at L1.
         # Mirrors normal-pet late-pickup scaling in pet_system.

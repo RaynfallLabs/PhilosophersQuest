@@ -65,13 +65,18 @@ from geom import monster_at_tile, is_at_tile
 import unseen
 import theft
 from items import Artifact, Weapon
-from pet_system import Pet, random_species as random_pet_species
+from pet_system import Pet, pet_damage_type, random_species as random_pet_species
 
 
 # Chance an attack passes through a displaced image. It was 0.30, and a
 # permanent one is available from a quirk and a mystery: nearly a third of
 # every attack in the game, for the whole run.
 DISPLACEMENT_MISS = 0.15
+
+# A monster under one of these cannot swing this turn: it does not swipe at
+# pets or escorts (_monster_swipes) and does not call Shep's rescue.
+_HELD_FOE_EFFECTS = ('sleeping', 'paralyzed', 'stunned', 'frozen', 'feared', 'charmed')
+
 
 def _monster_level(m) -> int:
     """A monster's own level: where monsters.json places it (1 to 100)."""
@@ -325,7 +330,7 @@ class CombatMixin:
         self.state = STATE_PLAYER
 
         px, py = self.player.x, self.player.y
-        tx, ty = self.target_cursor_x, self.target_cursor_y
+        tx, ty = self._clamp_throw_target(px, py, self.target_cursor_x, self.target_cursor_y)
 
         hit_monster = self._find_first_monster_in_path(px, py, tx, ty)
 
@@ -368,6 +373,23 @@ class CombatMixin:
                                  'success')
 
         self._advance_turn()
+
+    def _clamp_throw_target(self, px: int, py: int, tx: int, ty: int) -> tuple:
+        """Where a throw aimed at (tx, ty) can come down: the last tile of
+        its flight that is within throwing range and open floor. A throw
+        aimed into rock, or past a wall, or further than the hero can throw,
+        stops at the last open tile before it (PET-11). With no open tile
+        before it the thing lands at the hero's feet."""
+        from combat import get_line_tiles
+        reach = int(getattr(self, '_throw_reach', 0) or 0)
+        land = (px, py)
+        for lx, ly in get_line_tiles(px, py, tx, ty):
+            if reach and max(abs(lx - px), abs(ly - py)) > reach:
+                break
+            if not self.dungeon.is_walkable(lx, ly):
+                break
+            land = (lx, ly)
+        return land
 
     def _throw_weapon(self, weapon, monster, tx: int, ty: int):
         """Throw a weapon at a target. Deals damage, may break."""
@@ -465,6 +487,20 @@ class CombatMixin:
                 if found:
                     break
             if not found:
+                if getattr(sphere, 'bound_pet', None) is not None:
+                    # A bound sphere holds a companion already met (Shep,
+                    # a nicknamed cat): it must never be lost. It comes down
+                    # whole on the open tile it reached, to be picked up and
+                    # thrown again somewhere with room (PET-01).
+                    if self.dungeon.is_walkable(land_x, land_y):
+                        sphere.x, sphere.y = land_x, land_y
+                    else:
+                        sphere.x, sphere.y = self.player.x, self.player.y
+                    self.ground_items.append(sphere)
+                    self.add_message(
+                        f"The sphere bounces and rolls to a stop, unbroken: there is no room "
+                        f"for {sphere.bound_pet.name} to come out.", 'warning')
+                    return
                 # No room — sphere is wasted
                 self.add_message("The sphere shatters but there is no room for a creature!", 'warning')
                 return
@@ -2402,8 +2438,11 @@ class CombatMixin:
                     msg += f" {the_name(monster)} is bleeding!"
                 if knocked and not killed:
                     from combat import apply_knockback
-                    apply_knockback(self.player, monster, self.dungeon, self.monsters)
-                    msg += f" {the_name(monster)} is knocked back!"
+                    _was = (monster.x, monster.y)
+                    apply_knockback(self.player, monster, self.dungeon, self.monsters,
+                                    occupied=self._occupants())
+                    if (monster.x, monster.y) != _was:
+                        msg += f" {the_name(monster)} is knocked back!"
                 if kwargs.get('poisoned'):
                     msg += f" {the_name(monster)} is poisoned!"
                 if kwargs.get('burned'):
@@ -3057,6 +3096,15 @@ class CombatMixin:
                 'warning')
             self.state = STATE_PLAYER
             return
+        # A leap (Sic 'Em!, Pounce, Seraph Dive) goes where the hero points:
+        # a tile he can see, with no rock between the pet and it (PET-10).
+        if special.get('leap'):
+            from combat import _line_of_sight
+            if ((tx, ty) not in self.visible
+                    or not _line_of_sight(pet.x, pet.y, tx, ty, self.dungeon)):
+                self.add_message(f"{pet.name} has no clear way to that spot.", 'warning')
+                self.state = STATE_PLAYER
+                return
         self._resolve_pet_special(pet, special, tx, ty)
         pet.use_special(special['id'])
         self.state = STATE_PLAYER
@@ -3100,7 +3148,8 @@ class CombatMixin:
                     continue
                 dmg = max(1, int(base_dmg * dmg_mult))
                 pre_max = m.max_hp
-                m.take_damage(dmg)
+                m.take_damage(dmg, pet_damage_type(special.get('damage_type')
+                                                   or pet.species.get('damage_type')))
                 if m.alive and status and _rng.random() < status_chance:
                     cur = m.status_effects.get(status, 0)
                     m.status_effects[status] = max(cur, status_duration)
@@ -3114,8 +3163,12 @@ class CombatMixin:
                     f"The {special['name']} dissipates harmlessly.", 'info')
             return
 
+        dtype = special.get('damage_type') or pet.species.get('damage_type')
+        knock = int(special.get('knockback', 0) or 0)
+
         def _apply_to(m):
-            self._pet_hit(pet, m, dmg_mult, status, status_chance, status_duration)
+            self._pet_hit(pet, m, dmg_mult, status, status_chance, status_duration,
+                          damage_type=dtype, knockback=knock)
 
         def _say(key):
             text = special.get(key)
@@ -3149,6 +3202,12 @@ class CombatMixin:
         affected = []
         if targeting == 'single':
             for m in self.monsters:
+                # a leap goes for what the hero pointed at: a creature he
+                # cannot see is not his target (PET-10; the miss line then
+                # tells him nothing about the tile)
+                if (special.get('leap') and hasattr(self, '_sees_monster')
+                        and not self._sees_monster(m)):
+                    continue
                 if m.alive and is_at_tile(m, tx, ty):
                     affected.append(m)
                     break
@@ -3184,6 +3243,9 @@ class CombatMixin:
         # to the target: she lands on the free tile beside it nearest to her.
         if special.get('leap'):
             self._leap_pet_to(pet, tx, ty)
+        if special.get('knockback'):
+            # the farthest first, so the ones in front have room to go back
+            affected.sort(key=lambda m: -max(abs(m.x - pet.x), abs(m.y - pet.y)))
         for m in affected:
             _apply_to(m)
         if not affected and not _say('miss_message'):
@@ -3235,15 +3297,20 @@ class CombatMixin:
             m.x, m.y = min(free, key=lambda s: max(abs(s[0] - m.x), abs(s[1] - m.y)))
 
     def _pet_hit(self, pet, m, mult: float, status=None, chance: float = 0.0,
-                 duration: int = 0) -> int:
-        """One special-strength blow from a pet: its bite times `mult`, then
-        the status at `chance`, kill experience and the kill itself. Returns
-        the damage dealt."""
+                 duration: int = 0, *, damage_type=None, knockback: int = 0) -> int:
+        """One special-strength blow from a pet: its bite times `mult` of its
+        `damage_type` (the special's: fire, cold, holy... meet resistances
+        and weaknesses, a bite can split what a bite splits), a push of
+        `knockback` tiles away from the pet, then the status at `chance`,
+        kill experience and the kill itself. Returns the damage dealt."""
         import random as _rng
         if not m.alive:
             return 0
         pre_max = m.max_hp
-        dealt = m.take_damage(max(1, int(pet.base_damage * mult)))
+        dealt = m.take_damage(max(1, int(pet.base_damage * mult)),
+                              pet_damage_type(damage_type or pet.species.get('damage_type')))
+        if m.alive and dealt and knockback:
+            self._pet_knockback(pet, m, knockback)
         if m.alive and status and _rng.random() < chance:
             cur = m.status_effects.get(status, 0)
             m.status_effects[status] = max(cur, duration)
@@ -3253,9 +3320,31 @@ class CombatMixin:
             self._on_monster_killed(m)
         return dealt or 0
 
-    def _foes_beside_hero(self) -> list:
+    def _pet_knockback(self, pet, m, tiles: int = 1) -> None:
+        """Push `m` straight away from the pet, a tile at a time, while the
+        next tile is open floor with nobody on it. Bosses, big creatures and
+        things that do not move (the sessile, mimics, the Black Knight on
+        his bridge) hold their ground."""
+        if (getattr(m, 'is_boss', False) or getattr(m, 'stationary', False)
+                or getattr(m, 'ai_pattern', '') in ('sessile', 'mimic')
+                or tuple(getattr(m, 'footprint', (1, 1)) or (1, 1)) != (1, 1)):
+            return
+        sx = (m.x > pet.x) - (m.x < pet.x)
+        sy = (m.y > pet.y) - (m.y < pet.y)
+        if not (sx or sy):
+            return
+        for _ in range(max(0, int(tiles))):
+            nx, ny = m.x + sx, m.y + sy
+            if not self._pet_tile_free(nx, ny, pet) or (nx, ny) == (pet.x, pet.y):
+                return
+            m.x, m.y = nx, ny
+
+    def _foes_beside_hero(self, *, threats_only: bool = False) -> list:
         """Every living foe touching the hero, the toughest first. Friends,
-        the unicorn and the people of the encounters are not foes."""
+        the unicorn and the people of the encounters are not foes. With
+        `threats_only`, a foe that cannot swing at him this turn (asleep,
+        held, frozen, feared, charmed: the ones that do not swipe at pets
+        either) is not counted (PET-07: Shep's rescue is for a fight)."""
         from geom import chebyshev_distance
         px, py = self.player.x, self.player.y
         foes = [m for m in self.monsters
@@ -3263,7 +3352,8 @@ class CombatMixin:
                 and not getattr(m, '_npc_encounter_tag', None)
                 and not getattr(m, '_flavor_encounter_tag', None)
                 and not getattr(m, '_is_unicorn', False)
-                and chebyshev_distance(px, py, m) <= 1]
+                and chebyshev_distance(px, py, m) <= 1
+                and not (threats_only and any(m.has_effect(e) for e in _HELD_FOE_EFFECTS))]
         foes.sort(key=lambda m: -m.hp)
         return foes
 
@@ -3304,7 +3394,7 @@ class CombatMixin:
                 continue
             if p.hp > p.max_hp * float(rescue.get('hp_share', 0.25)):
                 return None
-            foes = self._foes_beside_hero()
+            foes = self._foes_beside_hero(threats_only=True)
             if not foes:
                 return None
             far = ((pet.x, pet.y) not in self.visible
@@ -3354,8 +3444,10 @@ class CombatMixin:
                 continue
 
             # Pet AI turn
+            # (escorts are bodies too: a pet never steps onto one, PET-05)
             result = (None if pet is rescuer else
-                      pet.take_turn(self.player, self.dungeon, self.monsters, self.pets, self.ground_items))
+                      pet.take_turn(self.player, self.dungeon, self.monsters,
+                                    list(self.pets) + self._escorts_here(), self.ground_items))
             if result:
                 action = result[0] if isinstance(result, tuple) else None
                 # Unicorn pet returns ('unicorn_actions', [...]) instead of combat
@@ -3418,11 +3510,18 @@ class CombatMixin:
         class is a to-hit roll against the monster's THAC0; a pet is always
         hit. Returns the targets slain this pass, with their killers."""
         slain = []
+        # One swipe per monster per turn, shared by the pet pass and the
+        # escort pass: a monster beside a pet and an escort picks one (PET-06).
+        _turn = getattr(self, 'turn_count', 0)
+        _done = getattr(self, '_swiped_this_turn', None)
+        if not _done or _done[0] != _turn:
+            _done = self._swiped_this_turn = (_turn, set())
+        swiped = _done[1]
         # C13: while time is stopped, ordinary monsters are held here too (as
         # in _do_monster_turns); named foes are not.
         _ts_pets = self.player.has_effect('time_stopped')
         for m in self.monsters:
-            if not m.alive:
+            if not m.alive or id(m) in swiped:
                 continue
             if _ts_pets and not m._is_named_foe():
                 continue
@@ -3443,6 +3542,7 @@ class CombatMixin:
                 if getattr(pet, 'is_unicorn', False):
                     continue
                 if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= 1:
+                    swiped.add(id(m))
                     if escorts:
                         to_hit = int(getattr(m, 'thac0', 20)) - int(getattr(pet, 'ac', 0) or 0)
                         if random.randint(1, 20) < to_hit:

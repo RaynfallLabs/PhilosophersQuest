@@ -753,6 +753,9 @@ def _eff_teleport_self(game, special, tier, chain):
         game.add_message("Your step falters; you go nowhere.", 'warning')
         return
     candidates = []
+    # pets and escorts are bodies: never land on one (PET-05)
+    from escort_system import occupants
+    _bodies = occupants(game, hero=False)
     for y in range(game.dungeon.height):
         for x in range(game.dungeon.width):
             if not game.dungeon.is_walkable(x, y):
@@ -760,8 +763,7 @@ def _eff_teleport_self(game, special, tier, chain):
             d = max(abs(x - game.player.x), abs(y - game.player.y))
             if d <= rng and (x, y) != (game.player.x, game.player.y):
                 if (monster_at_tile(game.monsters, x, y) is None
-                        and not any(getattr(p, 'alive', False) and (p.x, p.y) == (x, y)
-                                    for p in getattr(game, 'pets', []))):
+                        and (x, y) not in _bodies):
                     candidates.append((x, y))
     # Only where the stairs can be walked to, as every other teleport: a
     # long step used to land Hermes on an island with no way off it.

@@ -40,6 +40,7 @@ TABLES = {'_BOSS_CHRONICLE', '_MILESTONE_FLAVOR', '_ROOM_CHRONICLE', '_CHRONICLE
 # Call-site text that is not a literal, and where its words are linted instead.
 DYNAMIC_SOURCES = {
     "d['draw_chronicle']": 'data/black_knight.json',
+    "data()['sword_chronicle']": 'data/black_knight.json',
     "d['greet_chronicle']": 'data/black_knight.json',
     "d['attack_chronicle']": 'data/abandoned_emberpup.json',
     "story['unnamed_chronicle']": 'pet_system naming_story / data/abandoned_emberpup.json',
