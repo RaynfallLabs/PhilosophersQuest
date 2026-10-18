@@ -4,4 +4,5 @@
 pygame-ce==2.5.7
 numpy==2.4.6
 pytest==9.0.3
-pytest-xdist==3.8.0   # parallel test runs: pytest -n auto
+# parallel test runs: pytest -n auto
+pytest-xdist==3.8.0
