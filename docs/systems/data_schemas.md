@@ -1085,8 +1085,11 @@ recalled hints.
   hero-style, lower is better and 10 is unarmoured, default 10), `fight` (one
   `{monster_id, count}` or a list), `people` / `people_lines`,
   `seal_door`, `expel_up` and `hostile`. Karma rides on `karma` +
-  `karma_kind` (forgo / judgment / stance / oath, or a negative kind);
-  light encounters carry none. The full schema is DEEDS_KARMA_DESIGN.md
+  `karma_kind` (forgo / judgment / owning / stance / oath, or a negative
+  kind); light encounters carry none. An encounter may name its
+  `authority` (`{"who", "just", "why"}`) and an option may be marked
+  `submit` (it hands someone over to that authority or does what it
+  demands): before `just: false` a `submit` never pays. The full schema is DEEDS_KARMA_DESIGN.md
   section 4; `tools/encounters/validate.py` (`--all`, `--budget`)
   checks it. The old `chain_after` key is retired.
 

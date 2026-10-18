@@ -1736,6 +1736,11 @@
     },
     "stance": "3.1,3.2",
     "stance_note": "Steel-man: Varsk is right that the city is starving, and he is not a sadist. The lean (the calculation problem; the requisition record) is carried by the pass text, not by a lecture.",
+    "authority": {
+      "who": "Commissar Varsk and the Grain Committee",
+      "just": false,
+      "why": "Takes a village's seed by list and pays informers."
+    },
     "text": "Barley under a sun-stone, mushroom beds, and a cart half full of sacks. A thin man in a grey coat reads from a list while two soldiers carry seed out of a cellar. A woman holds one sack to her chest. \"That's next spring,\" she says. The commissar does not raise his voice. \"Every sack in a farmer's cellar is a child in the city who does not eat. I am not a cruel man. I can count.\" A sack lies forgotten behind the cellar door.",
     "options": [
       {
@@ -1794,7 +1799,8 @@
         "road": {
           "id": "grain_committee.inform",
           "hint": "Every list has a second list behind it."
-        }
+        },
+        "submit": true
       },
       {
         "label": "Ask him who will decide next spring's needs",
@@ -2715,6 +2721,11 @@
       "id": "lucan",
       "name": "Lucan Dray"
     },
+    "authority": {
+      "who": "Aurel Dunmore and the assize",
+      "just": true,
+      "why": "A murderer answers to his victim's son and a lawful court."
+    },
     "text": "A man kneels on the stone with a gash in his leg from a fall on the stair, and in front of him, laid down the way a soldier surrenders, is a dagger with its hilt toward whoever comes. A board hangs round his neck on a cord, with MURDERER burned into it in his own hand, and a heavy purse sits at his belt, untouched. \"I killed a man twenty years ago, over money. I've stopped running.\" Behind you a younger man steps out of the dark with a crossbow. \"Tomas Dunmore was my father.\" He doesn't lower it. \"He's run from three assizes already. Every time, someone felt sorry for him. Now you want to give him a potion?\"",
     "options": [
       {
@@ -2792,7 +2803,8 @@
         "road": {
           "id": "penitent.weigh",
           "hint": "Mercy that skips justice is only a head start."
-        }
+        },
+        "submit": true
       },
       {
         "label": "\"He was your father. You decide.\"",
@@ -3146,11 +3158,16 @@
       "name": "Sir Oswin of Harrow"
     },
     "contested": true,
+    "authority": {
+      "who": "the families of Thale and the king's court",
+      "just": true,
+      "why": "Oswin goes back to tell the truth about himself and Bishop Ranulf."
+    },
     "text": "He is enormous, and on his knees in the dirt, weeping without a sound. His armour is blackened and cracked. \"Forty-six at Thale. Bishop Ranulf said they were heretics. I believed him, because believing him was easier.\" His hands shake. \"I came here to be lost, and my armour is still blessed, and I can't bear the weight of it. Take it, someone.\" He looks up. \"Tell me what to do. I've stopped trusting my own answers.\"",
     "options": [
       {
         "label": "\"Go back up and face the families of Thale.\"",
-        "outcome": "\"Go back? To face them?\" Yes. He hangs the cracked holy symbol round his neck again and walks to the stairs like a man going to his own trial, which he is.",
+        "outcome": "\"Go back? To face them?\" Yes. He hangs the cracked holy symbol round his neck again. \"And Ranulf,\" he says slowly. \"If I tell all of it, he answers for his share.\" He walks to the stairs like a man going to his own trial, which he is.",
         "deeds": [
           "told.oswin_go_back"
         ],
@@ -3167,7 +3184,8 @@
         "road": {
           "id": "fallen_paladin.go_back",
           "hint": "Some debts can only be paid to the people they are owed to."
-        }
+        },
+        "submit": true
       },
       {
         "label": "\"Fight on down here. Spend it against what lies below.\"",
@@ -3378,6 +3396,11 @@
     },
     "stance": "1",
     "stance_note": "Steel-man: Mirela's \"words are air\" is the greengrocer's own reasoning, given at full strength. The rooster is for the sharp-eyed (Peter's third denial). No moral is spoken.",
+    "authority": {
+      "who": "the Locust captain at the checkpoint",
+      "just": false,
+      "why": "Beats a man bloody for refusing to say a lie."
+    },
     "text": "A barricade of black shields, a brazier, and a sign: ALL WHO PASS SAY THE WORDS. A cobbler lies in the ash with his face beaten bloody, still shaking his head. The captain is tired, not cruel. \"Say 'The Destroyer is merciful' and walk on. Words are air. Nobody believes them, not even me. You'd bleed for a sentence?\" She holds out a locust charm on a cord. \"Say it, and this keeps the swarms off you.\" Somewhere a rooster crows.",
     "options": [
       {
@@ -3398,7 +3421,8 @@
         "road": {
           "id": "live_not_by_lies.say",
           "hint": "A lie everyone repeats holds up the wall everyone hates."
-        }
+        },
+        "submit": true
       },
       {
         "label": "Refuse",
@@ -3457,7 +3481,8 @@
         "road": {
           "id": "live_not_by_lies.say_then_free",
           "hint": "A clever lie can save a man and still cost you something you will miss."
-        }
+        },
+        "submit": true
       }
     ]
   },

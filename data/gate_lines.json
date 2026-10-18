@@ -7,10 +7,14 @@
        "line": "Marta Venn. Walked out on that leg. Ratted till she was seventy and never stopped talking about you."},
       {"person": "marta", "name": "Marta Venn", "when": {"deeds_all": ["flag.marta_uncertain"]},
        "line": "Marta Venn. The leg held, as it happens, mostly. Her girl does the climbing now."},
+      {"person": "marta", "name": "Marta Venn", "when": {"deeds_all": ["told.owned_up_to_lena"]},
+       "line": "Marta Venn. Three children on the ward went without while you had her satchel. Then Lena brought the potions home, and your apology. She took a week to believe the second part."},
       {"person": "marta", "name": "Marta Venn", "when": {"deeds_all": ["wrong.robbed_marta"]},
        "line": "Marta Venn. Got home without her satchel. Three children on the ward didn't. She never said your name. Lena did."},
-      {"person": "ysolde", "name": "Ysolde", "when": {"deeds_all": ["saved.ysolde"], "deeds_any": ["told.ysolde_saw_pendant", "told.ysolde_pendant_gone"]},
-       "line": "Ysolde and her girl. Benno's fever broke on the eighth night. They did not name the goat after you."},
+      {"person": "ysolde", "name": "Ysolde", "when": {"deeds_all": ["told.ysolde_owned_pendant"]},
+       "line": "Ysolde and her girl. Benno's fever broke on the eighth night. Ysolde wanted nothing named after you. Elara won the argument about the goat."},
+      {"person": "ysolde", "name": "Ysolde", "when": {"deeds_all": ["saved.ysolde"], "deeds_any": ["told.ysolde_pendant_hidden", "told.ysolde_pendant_gone"]},
+       "line": "Ysolde and her girl. Benno's fever broke on the eighth night. Elara told her mother who had the pendant. They did not name the goat after you."},
       {"person": "ysolde", "name": "Ysolde", "when": {"deeds_all": ["saved.ysolde"]},
        "line": "Ysolde and her girl. Benno's fever broke on the eighth night. They named the goat after you. It's a nice goat."},
       {"person": "dafydd", "name": "Dafydd", "when": {"deeds_all": ["saved.dafydd", "saved.ilse"]},
@@ -50,7 +54,7 @@
       {"person": "ostrander", "name": "Ostrander", "when": {"deeds_all": ["spared.ostrander"], "deeds_none": ["saved.ostrander"]},
        "line": "Ostrander. Went back to his old trade. The sea's got him now, and the sea is not a forgiving employer."},
       {"person": "oswin", "name": "Oswin of Harrow", "when": {"deeds_all": ["told.oswin_trial"]},
-       "line": "Oswin of Harrow. Took his sentence without a word. Thale's children put flowers on his grave. I'd call that settled."},
+       "line": "Oswin of Harrow. Told all of it, Ranulf's part too, and took his sentence without a word. Thale's children put flowers on his grave. I'd call that settled."},
       {"person": "oswin", "name": "Oswin of Harrow", "when": {"deeds_all": ["told.oswin_fell"]},
        "line": "Oswin of Harrow. Seven hundred and some, by my count, before they stopped him. He came through still apologising."},
       {"person": "tobyn", "name": "Tobyn", "when": {"deeds_all": ["saved.tobyn"]},
@@ -78,7 +82,13 @@
       {"person": "roland", "name": "Roland", "when": {"deeds_all": ["told.horn_blown"]},
        "line": "Roland. Came through still arguing with Oliver. Oliver let him, this once."},
       {"person": "neferkaptah", "name": "Neferkaptah", "when": {"deeds_all": ["wrong.kept_thoth"]},
-       "line": "Neferkaptah. Still waiting for his book. He'll wait. He's good at it."}
+       "line": "Neferkaptah. Still waiting for his book. He'll wait. He's good at it."},
+      {"person": "aldric", "name": "Sir Aldric", "when": {"deeds_all": ["told.owned_up_to_aldric"]},
+       "line": "Sir Aldric. Went home without the stone and buried Elspeth under the apple tree. Says the truth at her cairn was the first thing that helped."},
+      {"person": "grumwald", "name": "Grumwald", "when": {"deeds_all": ["told.owned_up_to_grumwald"]},
+       "line": "Grumwald. Still minding bridges. The sign says PAY ANYWAY, and under it, in fresh paint, SOMETIMES THEY COME BACK."},
+      {"person": "ruth", "name": "Ruth Gale", "when": {"deeds_all": ["told.owned_up_to_ruth"]},
+       "line": "Ruth Gale. Wears her father's amulet. Carved his stone herself in the end, and never said whether she forgave you. She did."}
     ]
   }
 }

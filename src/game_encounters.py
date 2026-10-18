@@ -894,13 +894,18 @@ class EncountersMixin:
                              unique=bool(e.get('unique')), deepest=deepest)
 
     def _engine_virtue(self, virtue: str, source: str):
-        """Write an engine-only virtue tag (virtue:forgo / judged / steadfast)."""
+        """Write an engine-only virtue tag (virtue:forgo / judged / steadfast /
+        owned). A constancy rule the tag completes pays now, not on the next
+        karma change (the tag is often written after the outcome's karma)."""
         import deeds
         reg = self._deeds_reg()
         floor, deepest, block, turn = self._deed_where()
         deeds.record(reg, f'flag.{virtue}.{deeds.slug(source)}', floor=floor, block=block,
                      turn=turn, source=source, tags=[f'virtue:{virtue}'], engine=True,
                      deepest=deepest)
+        import karma
+        if karma.gate_enabled():
+            karma.evaluate_patterns(self)
 
     def _engine_vice(self, vice: str, source: str):
         """Write an engine-only vice tag (vice:reckless / vice:cruelty)."""
@@ -1277,6 +1282,11 @@ class EncountersMixin:
         if o.get('virtue') == 'forgo' or (o.get('karma_kind') == 'forgo'
                                           and int(o.get('karma', 0) or 0) > 0):
             self._engine_virtue('forgo', tag)
+        # Owning up to his own wrong at a cost (Brandon, 2026-10-18): tagged
+        # even when the block's point was already taken, so the 'honest'
+        # constancy rule counts the act, not the payout.
+        if o.get('karma_kind') == 'owning' and int(o.get('karma', 0) or 0) > 0:
+            self._engine_virtue('owned', tag)
         self._record_deeds(o.get('deeds'), tag)
         # Old content carried its karma on the option itself (untyped,
         # 'legacy'). An outcome pays its karma once: while it does, swearing,

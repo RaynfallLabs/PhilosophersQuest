@@ -48,9 +48,15 @@ encounter choices and oaths, first come first served
 (`Game._deeds['karma']['slots']`; the block is that of the deepest floor
 reached). The positive kinds are `forgo` (refusing a greater temptation),
 `judgment` (only in a passed quiz beside a naive sibling), `stance` (the
-right side at a visible cost) and `oath` (a kept promise fills the earliest
-open block since it was sworn). Constancy (`temperance`, `faithful`,
-`discerning`, `steadfast`: persistence across blocks) pays up to +2 a run.
+right side at a visible cost), `owning` (telling the person you wronged the
+truth about it, at a visible cost, only where the deeds say you did it;
+Brandon, 2026-10-18) and `oath` (a kept promise fills the earliest open
+block since it was sworn). Constancy (`temperance`, `faithful`,
+`discerning`, `steadfast`, `honest`: persistence across blocks) pays up to
++2 a run. **Submitting to an unjust "justice" is surrender, not courage:**
+before an encounter `authority` with `just: false`, a `submit` choice never
+pays and walking away or resisting never costs (the validator's `unjust`
+rule; ENCOUNTER_STORIES_DRAFT Part J10).
 Negatives (`cruelty`, `betray`, `sacrilege`, `stance_wrong`, `pattern`) are
 not block-capped, but **no single loss is bigger than one** (Brandon,
 2026-10-18: "Max karma drop is -1"): `karma.adjust` clamps any bigger ask to
@@ -180,8 +186,10 @@ Also `fail_by_correct`, `per_miss`, `play_all`, `oath_lapse`, `people` / `people
 all of it.
 
 Each option carries `label`, an outcome (or a quiz with `pass` and `fail`), and optionally
-`cost`, `reward`, `karma` with its `karma_kind` (+1 only as forgo, judgment or stance, or
-through a kept oath; -1, and -2 only for handing a person to their death or freeing Azarael).
+`cost`, `reward`, `karma` with its `karma_kind` (+1 only as forgo, judgment, owning or stance,
+or through a kept oath; a loss is never more than -1, whatever the wrong), and `submit` (the
+choice hands someone to the encounter's `authority`, `{"who", "just", "why"}`, or does what
+it demands).
 Naive kindness carries 0 and a real consequence; light encounters carry 0 throughout.
 
 Cost types: `food`, `healing_potion`, `potion`, `scroll`, `weapon`,
@@ -836,8 +844,8 @@ It is its own, final theological object.
 
 The Sword of Michael needs **8** (it needed exactly 10 until the
 threshold moved). Under the block cap a run can earn at most +10 from
-the ten blocks (one gated +1 each, from a forgo, judgment, stance or
-kept oath) plus up to +2 constancy, so 8 is the reward for being
+the ten blocks (one gated +1 each, from a forgo, judgment, owning, stance
+or kept oath) plus up to +2 constancy, so 8 is the reward for being
 principled, careful and faithful all run, not for being kind
 (`DEEDS_KARMA_DESIGN.md` §3.5). Naive kindness pays nothing; most gated
 +1s cost something real, and a block already filled pays nothing more.

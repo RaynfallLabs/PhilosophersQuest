@@ -203,8 +203,8 @@ change goes through `karma.adjust(game, delta, kind=, source=)`
 other write.
 
 - With `data/karma_rules.json: gate_enabled` (on) positive karma is
-  capped at +1 per 10-floor block (forgo / judgment / stance / kept
-  oath), plus up to +2 constancy a run; negatives are not capped. See
+  capped at +1 per 10-floor block (forgo / judgment / owning / stance /
+  kept oath), plus up to +2 constancy a run; negatives are not capped. See
   [karma_prayer §1.1](karma_prayer.md).
 - Judgment tiers (`_JUDGMENT_TIERS` in `npc_encounters.py`) map the
   clamped value to a tier at the L99 altar.
