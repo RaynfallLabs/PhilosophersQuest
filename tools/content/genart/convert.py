@@ -77,15 +77,36 @@ def figure_mask(im, key='magenta'):
     return a, fig, facts
 
 
-def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True, lift=1.0):
+def despill(a, fig, key):
+    """Green-screen despill, for a figure with no green of its own on the green key.
+
+    A pale or soft edge (lavender light, mist, flowing hair) is painted half over the
+    backdrop, so it keeps a mint or grey-green cast that the cut does not remove. Every
+    figure pixel where green outweighs both red and blue takes the colour of the nearest
+    figure pixel that does not. Changes `a` in place; returns how many pixels it changed."""
+    if key != 'green':
+        raise ValueError('despill is written for the green key only')
+    r, g, b = a[..., 0], a[..., 1], a[..., 2]
+    spill = fig & (g > np.maximum(r, b) + 6)
+    good = fig & ~spill
+    if spill.any() and good.any():
+        iy, ix = ndi.distance_transform_edt(~good, return_distances=False, return_indices=True)
+        a[spill] = a[iy[spill], ix[spill]]
+    return int(spill.sum())
+
+
+def to_sprite(im, key='magenta', tile=TILE, colours=COLOURS, scale=1.0, stand=True, lift=1.0, spill=False):
     """(RGBA sprite Image of tile x tile, facts).
 
     `scale` is how much of the tile the thing's longest side fills (an item's size
     class: a ring is small in its square, a halberd fills it). `stand` sets it on
-    the bottom edge like a creature; otherwise it sits in the middle like an item."""
+    the bottom edge like a creature; otherwise it sits in the middle like an item.
+    `spill` runs despill() first (green key, figure with no green)."""
     a, fig, facts = figure_mask(im, key)
     if not fig.any():
         return Image.new('RGBA', (tile, tile)), dict(facts, empty=True)
+    if spill:
+        facts['despilled'] = despill(a, fig, key)
     ys, xs = np.where(fig)
     y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
     side = max(y1 - y0, x1 - x0)

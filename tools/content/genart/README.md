@@ -40,6 +40,7 @@ Output goes to `_genart/` (not committed).
 | `body` | Optional. `"shapeless"` for anything with no head, feet or legs (a flame, slime, cloud, whirlwind, eyeball, pillar, swarm, serpent, floating orb). It swaps the fixed prompt wording, which otherwise says "head to the soles of its feet" and "weight on one leg" and so grows legs or a small man under such creatures. |
 | `lift` | Optional number, default 1.0. Above 1 (try 1.3 to 1.6) brightens the midtones when the sprite is cut, for a dark thing that vanishes on the dark floor. It needs no redraw: change it and rerun with `--sheets-only`. |
 | `key` | The backdrop colour: `magenta`, `green` or `blue`. It must be a colour the creature does not have, or the cut-out eats part of it. `pipeline.py` refuses a brief whose `colours` name the key. |
+| `despill` | Optional, `true`, green key only. Before the cut, every figure pixel where green outweighs red and blue takes the colour of the nearest clean figure pixel, which removes the mint fringe that pale magic, mist or hair keeps on the green backdrop. Only for a figure with no green of its own. Like `lift`, it needs no redraw: rerun with `--sheets-only` (or `edit.py --cut-only`). |
 
 The style is the one Brandon chose from a board of six on 2026-10-11: painted
 high fantasy, not a bright game sprite, at 64 px.
@@ -57,7 +58,8 @@ Rules learned the hard way:
   four legs. State the body plan in the pose as well ("on two legs, leaning forward").
 - **No shadows.** The prompt asks for none and the key colour removes what remains.
 - **Never redraw Brandon's own portraits** (`player_ranger`, `player_wizard_f`,
-  `player_robyn`).
+  `player_robyn`) unless he asks, and even then never install one before he has seen a
+  before/after and said yes.
 
 ## What goes wrong, and the wording that stops it
 
@@ -883,3 +885,21 @@ Brandon: the pup was "too lizard like, almost like a troglodyte", with "a second
 - Rain painted on top of a scene runs across a head that has grown. Re-plan the streaks so each stops just above the figure, slanted and of different lengths.
 - The cut picks one set of 32 colours for the whole sprite, so a pale wet chest can come out in the painted rain's grey: put it back to cream with `recolour`.
 - In a three-quarter front view the far eye shows as a dark notch on the edge of the head at 64 px; paint it out when the brief asks for one eye.
+
+### Lessons from the Fianna sketch-mage redraw (2026-10-18)
+
+Brandon: purple robes, no hat, wavy nearly black hair, "a phantom creature popping out of the book, the magic billowing around her". Brief `briefs/fianna_2026_10_18.json`; options on `FIANNA_REDRAW_OPTIONS.png`.
+
+- "Her head is bare, with nothing on it but her flowing dark hair", with `hat`, `wizard hat`, `hood` in `must_not_show`, gave no hat in all 24 candidates.
+- A creature "outlined in bold black ink lines, filled with glowing pale lavender light, its back half still loose ink strokes running back into the page, joined to the book" drew a real pen-and-ink sketch coming to life in the painting. At 64 px it is a pale phantom with a readable outline; the ink lines do not survive the shrink.
+- Pale magic on the green backdrop leaves a mint fringe; `despill` removes it. It cannot fix grey: soft mist mixed with the backdrop goes neutral grey.
+- "Wisps billowing round her" cut out as grey and mint mush that swallowed the creature at 40 px. One broad ribbon that is the creature's own unfinished tail reads as the billowing magic and keeps the silhouette.
+- A hawk bursting from a book drew crystal shards, or wings spread across her as if they grew on her back. An owl facing the viewer ("a flat round face disc with two big round black eyes side by side") reads at 64 px; so does a little dragon rearing on the book beside her shoulder.
+- Hold the book out to one side at arm's length so the creature sits beside her, not over her face.
+- "Deep royal-purple" robes on green came out plum-magenta at 64 px (hue about 310); "deep cool violet-purple, the purple of wild violets" gave a true violet.
+- To recolour one part of a good painting (a white creature to lilac) or remove a stray prop (a second quill in the book), one `edit.py` step, "Keep ... exactly the same. Change only the colour of the wolf's glowing fill", kept the pose, face and everything else.
+- A quill held over a pale creature vanishes at 64 px. Three outline-black pixels from the hand, set with `touch`, read as a pen.
+- An outfit change on a picked painting is one `edit.py` step ("Keep exactly the same: her face, hair, pose, hands ... Change only her clothes. Instead of the purple robe she now wears ..."): the pose, creature and ribbon held on the first seed. "Straight skirt to the middle of her calves" came out just below the knee, with a gap of bare knee above the boots; paint it with the boot colour. A pleated skirt came out longer than asked.
+- A wide-legged stance hidden under a long robe shows once the skirt is short. One edit step fixed it with the skirt and boots together: "she stands in a natural, balanced stance, her feet a little narrower apart than her shoulders, her left foot a small step forward, both feet flat on the ground with the toes pointing forward, her ankles straight", with "wide stance, legs far apart, straddle, twisted ankle" in `neg`. A second seed drew a flared skater skirt and kept the stride: run two seeds. "Ends just above her knees" drew a skirt a hand above the knee.
+- A dark quill held over a pale creature still vanishes at 64 px when only its feather shows. Paint it as one continuous dark diagonal from above the fist, through the grip, into the creature, then a gold nib pixel and a pale-gold glint (a centre pixel and three neighbours) where it touches.
+- A thin black tie on a white blouse cuts out grey or lilac when the sprite's 32 colours are shared with lilac magic. Repaint it with `touch` (a two-pixel knot, then one or two pixels wide) and turn its grey fringe back to the blouse's white.
