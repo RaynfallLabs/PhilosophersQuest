@@ -943,5 +943,29 @@
     "floorSpawnWeight": {},
     "lore": "Sigurd roasted the dragon Fafnir's heart for Regin, burned his thumb on it, and put the thumb in his mouth. At the taste of the blood he understood the birds in the branches above him, and the birds were discussing Regin's plan to murder him. The blood still scalds. What it gives depends on the drinker: the birds will say a great deal to anyone who can follow them, and nothing at all to anyone who cannot.",
     "peak_weight": 0
+  },
+  "potion_of_see_invisible": {
+    "name": "potion of see invisible",
+    "unidentified_name": "pale mirror-bright potion",
+    "symbol": "!",
+    "color": [
+      225,
+      230,
+      245
+    ],
+    "weight": 0.4,
+    "min_level": 28,
+    "effect": "see_invisible",
+    "power": "",
+    "duration": 150,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 15,
+      "41-60": 30,
+      "61-80": 40,
+      "81-100": 45
+    },
+    "lore": "The king of Aram sent an army by night to take the prophet Elisha at Dothan, and in the morning his servant saw the city ringed with horses and chariots and cried out. Elisha prayed that the young man's eyes be opened, and he looked again and saw the hills full of horses and chariots of fire. This potion opens the eyes a little way in the same direction: for a while the drinker sees what walks unseen.",
+    "peak_weight": 0.5
   }
 }

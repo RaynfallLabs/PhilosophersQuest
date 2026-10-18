@@ -56,6 +56,7 @@ def test_known_multi_tile_monsters_are_in_allowlist():
         "surtur",             # f87 fire giant lord
         "ymir_last_spawn",    # f82 frost giant primordial
         "hrungnirs_ghost",    # f80 stone giant ghost
+        "gashadokuro",        # f78 starving giant skeleton (2026-10 late-game pass)
     }
     multi_set = set(multi)
     unexpected = multi_set - EXPECTED

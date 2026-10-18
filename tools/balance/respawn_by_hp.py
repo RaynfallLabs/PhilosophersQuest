@@ -154,6 +154,21 @@ SCRIPTED_UNIQUES = (
     "tiamat", "asmodeus", "surtur", "ymir_last_spawn", "hrungnirs_ghost",
 )
 
+# Creatures that come in numbers (a pack of three to six) each carry a share
+# of a solo monster's health: the floor's threat is the whole flock, so each
+# is seated as if its HP were this multiple of its own. Without it a swarm
+# built for floor 90 would be seated on floor 50 by the HP of one body.
+# (2026-10 late-game pass; see tools/content/late_game_monsters_2026_10.py.)
+SWARM_SEAT_MULT: dict[str, float] = {
+    "ker": 3.0,                # Keres: three to five, floors 85-100
+    "erinyes_greater": 1.75,   # the three Furies
+    "strix": 2.0,              # night birds in threes, floors 21-30
+    "sown_warrior": 3.0,       # the Spartoi, four or five at a time
+    "galla_demon": 3.0,        # the galla come in gangs of four to six
+    "girtablilu": 1.5,         # the scorpion-man and his wife
+    "totentanz_dancer": 2.4,   # a ring of three or four dancers
+}
+
 # A monster whose hardest attack is more than SPIKE_MULT times the floor's
 # anchor damage is pushed deeper (at most MAX_PUSH floors) until it is not.
 SPIKE_MULT = 3.5
@@ -369,7 +384,7 @@ def plan(monsters: dict) -> dict[str, tuple[int, int, int]]:
     for mid, d in monsters.items():
         if not is_random_spawn(d):
             continue
-        peak = fit_floor(dice_avg(d["hp"]))
+        peak = fit_floor(dice_avg(d["hp"]) * SWARM_SEAT_MULT.get(mid, 1.0))
         spike = max_attack(d)
         pushed = 0
         while pushed < MAX_PUSH and peak < 99 and spike > SPIKE_MULT * target_dmg(peak):

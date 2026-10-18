@@ -306,9 +306,11 @@ def test_shep_does_not_growl_at_one_the_hero_can_see():
 # ---------------------------------------------------------------- the data
 
 def test_six_invisible_monsters_across_the_whole_depth_weighted_deep():
+    # (+2 by lore in the 2026-10 late-game pass, audit proposal 13: the
+    # poltergeist and the air elemental, whose lore already said it.)
     inv = sorted((k for k, v in MONS.items() if isinstance(v, dict) and v.get('invisible')),
                  key=lambda k: MONS[k]['peak_floor'])
-    assert set(inv) == set(INVISIBLE)
+    assert set(inv) == set(INVISIBLE) | {'poltergeist', 'air_elemental'}
     peaks = [MONS[k]['peak_floor'] for k in inv]
     assert min(peaks) <= 10 and max(peaks) >= 85
     assert sum(p >= 40 for p in peaks) >= 4
@@ -353,8 +355,11 @@ def test_every_mimic_ai_monster_names_a_disguise_with_a_picture():
     assert set(mimics) >= {'lurking_horror', 'gilded_mimic'}
     for mid in mimics:
         disg = MONS[mid].get('disguise') or {}
-        assert disg.get('item') and disg.get('name'), mid
-        assert renderer._resolve_item_sprite_path(disg['item']), mid
+        assert (disg.get('item') or disg.get('tile')) and disg.get('name'), mid
+        if disg.get('tile'):            # posing as part of the map (the Hellmouth)
+            assert os.path.exists(os.path.join(ROOT, 'assets', 'tiles', 'env', disg['tile'] + '.png')), mid
+        else:
+            assert renderer._resolve_item_sprite_path(disg['item']), mid
 
 
 def test_an_unsprung_mimic_is_drawn_as_what_it_poses_as_not_as_a_monster():

@@ -104,9 +104,11 @@ def test_asterion_hits_harder_the_longer_the_fight_lasts():
     assert m.fury_mult() == 1.0
 
 
-def test_fury_is_asterions_alone_for_now():
+def test_fury_belongs_to_asterion_and_the_lioness_of_sekhmet():
     with_fury = [k for k, d in _defs().items() if isinstance(d, dict) and d.get('fury_per_attack')]
-    assert with_fury == ['asterion_minotaur']
+    # (+ the Lioness of Sekhmet, 2026-10 late-game pass: her lore is a
+    # slaughter that would not stop until Ra made her drunk.)
+    assert sorted(with_fury) == ['asterion_minotaur', 'sekhmet_lioness']
     assert _mon('giant_rat').fury_mult() == 1.0
 
 
