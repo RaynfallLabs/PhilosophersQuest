@@ -29,7 +29,7 @@ import copy
 
 from pet_system import Pet
 
-COW_LEVEL = 999
+from boss_levels import COW_LEVEL
 STRAGGLE_EXTRA = 6         # beyond the leash
 STRAGGLE_TURNS = 10        # this long, and they stop and wait
 

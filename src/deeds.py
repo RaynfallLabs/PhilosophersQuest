@@ -35,7 +35,6 @@ DOMAINS = frozenset({
 
 _ID_RE = re.compile(r'^[a-z]+(\.[a-z0-9_]+){1,3}$')
 
-OATH_STATUSES = ('open', 'kept', 'kept_late', 'broken', 'lapsed', 'released')
 # How an open oath ends when its due floor passes: 'silent' lapses it on
 # arrival (0 karma, vice:lapsed); 'callback' leaves it open, because a
 # scheduled callback (the dead coming for the Book of Thoth) or a late
@@ -153,6 +152,10 @@ def note(game, deed_id: str, *, source: str, tags=(), payload=None,
         return record(reg, deed_id, floor=floor, block=block, turn=turn, source=source,
                       tags=tags, payload=payload, unique=unique, deepest=deepest)
     except Exception:
+        # Still never raises, but a bad id (a typo in engine code) is logged
+        # instead of silently dropping the deed (CODE-09).
+        from game_log import log_error
+        log_error(f'deeds.note: could not record {deed_id!r} from {source!r}')
         return None
 
 

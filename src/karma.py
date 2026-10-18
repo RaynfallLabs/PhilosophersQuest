@@ -62,10 +62,6 @@ def _where(game):
     return deeds.where(game)
 
 
-def current_block(game) -> int:
-    return _where(game)[2]
-
-
 def _earliest_open(slots: dict, lo: int, hi: int):
     for b in range(max(1, lo), hi + 1):
         if b not in slots:
@@ -116,16 +112,22 @@ def adjust(game, delta: int, *, kind: str, source: str,
     else:
         new = _clamp(cur + delta)
 
-    applied = new - cur
-    # With the gate off the slot is recorded for every positive award, even
-    # one the +10 ceiling swallowed: the block was earned all the same.
-    if slot_block is not None and (applied > 0 or not gate):
-        slots[slot_block] = source
+    write_failed = False
     if new != cur:
         try:
             game.karma = new
         except Exception:
-            pass
+            # The write failed: nothing was applied, so neither the ledger
+            # nor the slot may say it was (CODE-09).
+            from game_log import log_error
+            log_error(f'karma.adjust: could not write karma for {source!r}')
+            new = cur
+            write_failed = True
+    applied = new - cur
+    # With the gate off the slot is recorded for every positive award, even
+    # one the +10 ceiling swallowed: the block was earned all the same.
+    if slot_block is not None and not write_failed and (applied > 0 or not gate):
+        slots[slot_block] = source
     kreg['ledger'].append({
         'seq': deeds.next_seq(reg), 'floor': floor, 'block': block, 'kind': kind,
         'source': source, 'requested': delta, 'applied': applied,
@@ -189,4 +191,5 @@ def _soul_line(game, rule: dict) -> None:
         import chronicle
         chronicle.chron(game, 'soul', text, once=f"rule:{rule['id']}")
     except Exception:
-        pass
+        from game_log import log_error
+        log_error(f"karma._soul_line: could not write the line for rule {rule.get('id')!r}")

@@ -760,8 +760,8 @@ class EncountersMixin:
     def _deed_where(self):
         """(floor, deepest, block, turn): the block is always the deepest
         floor's, so walking back upstairs never reopens an old block."""
-        import karma
-        return karma._where(self)
+        import deeds
+        return deeds.where(self)
 
     def _deed_ctx(self) -> dict:
         """The context a deeds condition is checked against."""
