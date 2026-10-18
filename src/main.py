@@ -5866,8 +5866,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(item, 'id', '') in trigger_levels:
                 self._npc_triggered_items.add(item.id)
             # Auto-reveal BUC at dungeon level 30+ with WIS >= 14
+            from items import buc_known_to
             if (self.dungeon_level >= 30 and self.player.WIS >= 14
-                    and hasattr(item, 'buc') and not getattr(item, 'buc_known', False)):
+                    and hasattr(item, 'buc') and not buc_known_to(item, self.player)):
                 item.buc_known = True
                 _buc = item.buc
                 if _buc == 'blessed':

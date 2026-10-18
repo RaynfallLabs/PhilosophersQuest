@@ -184,4 +184,4 @@ def test_the_help_line_for_o_mentions_the_bestiary():
     import inspect
     import game_render
     src = inspect.getsource(game_render.RenderMixin._draw_help_screen)
-    assert '("O", "Look; known foe: Bestiary"' in src
+    assert '("O", "Look / Bestiary"' in src

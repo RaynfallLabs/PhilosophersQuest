@@ -4480,21 +4480,27 @@ class RenderMixin:
         selected = max(0, min(selected, max(0, total - 1)))
         if scroll_attr:
             setattr(self, scroll_attr, selected)
-        name_sizes, name_lines = self._menu_name_sizes(
-            entries, self._menu_row_text_w(list_body.w, entries))
-        row_h = S(62) + (get_font('body', 16).get_height() if name_lines > 1 else 0)
-        tag_h = S(24) if total * row_h > list_body.h else 0
-        visible = max(1, (list_body.h - tag_h) // row_h)
+        def _measure(width):
+            sizes, lines = self._menu_name_sizes(entries, self._menu_row_text_w(width, entries))
+            rh = S(62) + (get_font('body', 16).get_height() if lines > 1 else 0)
+            th = S(24) if total * rh > list_body.h else 0
+            return sizes, lines, rh, max(1, (list_body.h - th) // rh)
+
+        row_w = list_body.w
+        name_sizes, name_lines, row_h, visible = _measure(row_w)
+        if total > visible:
+            # A long list gives up a strip at the right for a scroll bar, so
+            # it shows there is more above or below (the feed list seemed to
+            # stop at its eighth item, 2026-10-18); names are fitted to the
+            # narrower rows.
+            row_w = list_body.w - S(12)
+            name_sizes, name_lines, row_h, visible = _measure(row_w)
         scroll = 0
         if total > visible:
             scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
                                 max(0, total - visible)))
         name_font, detail_font = self.font_sm, get_font('body', 16)
         key_font = get_font('body', 18, bold=True)
-        # A long list gives up a strip at the right for a scroll bar, so it
-        # shows there is more above or below (the feed list seemed to stop
-        # at its eighth item, 2026-10-18).
-        row_w = list_body.w - (S(12) if total > visible else 0)
         for row_i, entry in enumerate(entries[scroll:scroll + visible], start=scroll):
             ry = list_body.y + (row_i - scroll) * row_h
             self._menu_row_kit(pygame.Rect(list_body.x, ry, row_w, row_h - S(6)),
@@ -6357,9 +6363,10 @@ class RenderMixin:
                 'badge_color': FP.WARNING_TEXT if is_g else FP.GOLD_BRIGHT,
                 'details': self._menu_item_detail_lines(
                     item,
-                    "Reveal this item directly."
+                    "Reveal this item, and every other of its kind."
                     if getattr(self, '_scroll_identify_pending', False)
-                    else "Answer ONE philosophy question at the item's tier."),
+                    else "Answer ONE philosophy question at the item's tier. "
+                         "Every other of its kind is known with it."),
             })
 
         selected = self._menu_clamp_selection('_identify_sel', len(entries))
@@ -6378,7 +6385,8 @@ class RenderMixin:
             ("IDENTIFICATION", FP.GOLD_BRIGHT, self.font_sm),
             (shard_line, FP.BODY_TEXT, self.font_sm),
             (f"Targets: {len(entries)}", FP.BODY_TEXT, self.font_sm),
-            ("One question. Right: fully identified. Wrong: the Shard stuns you.",
+            ("One question. Right: it and every other of its kind fully identified. "
+             "Wrong: the Shard stuns you.",
              FP.FADED_TEXT, self.font_sm),
         ])
         self._draw_decision_menu(
@@ -8045,7 +8053,7 @@ class RenderMixin:
             lines.append((f"Weight: {weight:g}", FP.BODY_TEXT, self.font_sm))
 
         if hasattr(item, 'buc'):
-            # This copy's own knowledge (the same rule as the Kit and menus).
+            # This copy identified or its kind known (the same rule as the Kit and menus).
             if self._copy_buc_known(item):
                 aura = getattr(item, 'buc', 'uncursed')
             else:
@@ -9571,7 +9579,7 @@ class RenderMixin:
                 ("Y", "Trade", FP.BODY_TEXT),
                 ("\\", "Pray", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
-                ("O", "Look; known foe: Bestiary", FP.BODY_TEXT),
+                ("O", "Look / Bestiary", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [

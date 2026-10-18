@@ -3446,7 +3446,10 @@ class MagicMixin:
         whenever it turns up, is fully identified too (items.is_fully_known).
         Fires the career hook once per instance crossing into full ID.
         """
-        was_full = int(getattr(item, 'id_level', 0)) >= 5
+        # Already known (this copy, or its kind): no new identification, so
+        # no career tick (the Philosopher's Stone names every pickup).
+        from items import is_fully_known
+        was_full = is_fully_known(item, self.player)
         item.id_level = 5
         if hasattr(item, 'buc_known'):
             item.buc_known = True
