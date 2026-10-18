@@ -101,95 +101,113 @@ def test_the_lion_comes_back_only_after_the_thorn_was_drawn():
     g.player.hp = g.player.max_hp = 200
     lion = _meet(g, 10, 'flv_limping_lion')
     _choose(g, lion, pygame.K_1)                         # draw the thorn
+    assert _has(g, 'lions_thorn')
     (cb,) = _pending(g)
     assert cb['spec']['encounter'] == 'flv_lion_remembers'
-    assert 22 <= cb['target'] <= 34 and cb['target'] not in (20, 40)
+    assert 20 < cb['target'] <= 30 and cb['target'] not in (20, 40)
     _go(g, cb['target'])
     great = _npc(g, 'flv_lion_remembers')
     assert great is not None and _pending(g) == []
-    _choose(g, great, pygame.K_1)                        # hold out the thorn
-    assert not _has(g, 'lions_thorn')
+    _choose(g, great, pygame.K_2)                        # stand very still
+    assert _has(g, 'lions_thorn')
     # Backing away instead schedules nothing (the chain used to be placed
     # whatever the hero chose).
     g2 = _game(seed=22)
     lion2 = _meet(g2, 10, 'flv_limping_lion')
     _choose(g2, lion2, pygame.K_3)
     assert _pending(g2) == []
-    for f in range(22, 35):
+    for f in range(20, 35):
         assert (g2._flavor_encounter_levels.get(f) or {}).get('tag') != 'flv_lion_remembers'
 
 
 def test_the_watch_post_spawns_only_with_the_couriers_oath_open():
     import deeds
     g = _game()
-    courier = _meet(g, 25, 'dying_messenger', flavor=False)
+    courier = _meet(g, 33, 'dying_messenger', flavor=False)
     karma = g.karma
     _choose(g, courier, pygame.K_1)                      # swear to carry it
-    assert g.karma == karma + 1                          # today's point, at the take
-    assert deeds.oath_status(g._deeds, 'courier_dispatch') == 'open'
+    assert g.karma == karma                              # a promise pays only when kept
+    assert deeds.oath_status(g._deeds, 'edric_dispatch') == 'open'
     (cb,) = _pending(g)
-    assert 31 <= cb['target'] <= 45
+    assert 37 <= cb['target'] <= 47 and cb['target'] != 40
     _go(g, cb['target'])
     post = _npc(g, 'flv_watch_post')
     assert post is not None
     k = g.karma
     _choose(g, post, pygame.K_1)                         # hand it over
-    assert deeds.oath_status(g._deeds, 'courier_dispatch') == 'kept'
+    assert deeds.oath_status(g._deeds, 'edric_dispatch') == 'kept'
     assert deeds.count(g._deeds, tag='virtue:kept') == 1
-    assert g.karma == k                                  # the point was paid at the take
+    assert g.karma == k + 1                              # the point, at the keep
     # An oath no longer open at arrival: no Watch Post, and the thread is lost.
     g2 = _game(seed=23)
-    c2 = _meet(g2, 25, 'dying_messenger', flavor=False)
+    c2 = _meet(g2, 33, 'dying_messenger', flavor=False)
     _choose(g2, c2, pygame.K_1)
     (cb2,) = _pending(g2)
     floor, _d, block, _t = g2._deed_where()
-    deeds.release_oath(g2._deeds, 'courier_dispatch', floor=floor, block=block)
+    deeds.release_oath(g2._deeds, 'edric_dispatch', floor=floor, block=block)
     _go(g2, cb2['target'])
     assert _npc(g2, 'flv_watch_post') is None
     assert deeds.has(g2._deeds, 'flag.thread_lost.flv_watch_post')
     # Refusing the courier schedules no Watch Post at all.
     g3 = _game(seed=24)
-    c3 = _meet(g3, 25, 'dying_messenger', flavor=False)
-    _choose(g3, c3, pygame.K_2)
+    c3 = _meet(g3, 33, 'dying_messenger', flavor=False)
+    _choose(g3, c3, pygame.K_3)
     assert _pending(g3) == []
 
 
-def test_the_gospel_chain_keeps_or_breaks_the_oath_with_todays_karma():
+def _choose_then_leave(g, npc, key):
+    """An option that returns to the list ('then: options'): pick it, read
+    the outcome, then leave with Esc (the choice already resolved it)."""
+    from game_states import STATE_PLAYER
+    assert g._start_flavor_encounter(npc)
+    g._npc_encounter_input(pygame.K_RETURN)
+    g._npc_encounter_input(key)
+    assert g._npc_encounter_phase == 'outcome', g._npc_encounter_phase
+    g._npc_encounter_input(pygame.K_RETURN)
+    assert g._npc_encounter_phase == 'options'
+    g._npc_encounter_input(pygame.K_ESCAPE)
+    assert g.state == STATE_PLAYER
+
+
+def test_the_gospel_chain_keeps_or_breaks_the_oath():
     import deeds
     g = _game()
     bearer = _meet(g, 42, 'flv_coffin_bearer')
     _choose(g, bearer, pygame.K_1)
     assert deeds.oath_status(g._deeds, 'cuthbert_gospel') == 'open'
-    cbs = sorted(_pending(g), key=lambda p: p['target'])
-    assert [p['spec']['encounter'] for p in cbs] == ['flv_relic_broker', 'flv_cuthbert_chapel']
-    assert 48 <= cbs[0]['target'] <= 53 and 54 <= cbs[1]['target'] <= 59
+    cbs = {p['spec']['encounter']: p['target'] for p in _pending(g)}
+    assert set(cbs) == {'flv_relic_broker', 'flv_cuthbert_chapel'}
+    assert 44 <= cbs['flv_relic_broker'] <= 50 and 49 <= cbs['flv_cuthbert_chapel'] <= 56
     karma = g.karma
-    _go(g, cbs[0]['target'])
-    _choose(g, _npc(g, 'flv_relic_broker'), pygame.K_2)  # "the book is promised"
-    _go(g, cbs[1]['target'])
-    _choose(g, _npc(g, 'flv_cuthbert_chapel'), pygame.K_1)
+    for tag, f in sorted(cbs.items(), key=lambda kv: kv[1]):
+        _go(g, f)
+        if tag == 'flv_relic_broker':
+            _choose(g, _npc(g, tag), pygame.K_2)         # "the book is promised"
+        else:
+            _choose_then_leave(g, _npc(g, tag), pygame.K_1)   # lay it on the desk
     assert deeds.oath_status(g._deeds, 'cuthbert_gospel') == 'kept'
-    assert g.karma == karma + 1                          # exactly today's +1, not two
+    assert g.karma == karma + 1                          # exactly one point, at the keep
     g2 = _game(seed=25)
     b2 = _meet(g2, 42, 'flv_coffin_bearer')
     _choose(g2, b2, pygame.K_1)
-    broker_at = min(p['target'] for p in _pending(g2))
+    broker_at = next(p['target'] for p in _pending(g2)
+                     if p['spec']['encounter'] == 'flv_relic_broker')
     k2 = g2.karma
     _go(g2, broker_at)
     _choose(g2, _npc(g2, 'flv_relic_broker'), pygame.K_1)   # sell it
     assert deeds.oath_status(g2._deeds, 'cuthbert_gospel') == 'broken'
     assert deeds.count(g2._deeds, tag='vice:betray') == 1
-    assert g2.karma == k2 - 1                            # exactly today's -1
+    assert g2.karma == k2 - 1                            # exactly one point lost
 
 
-def test_aldrics_altar_keeps_the_oath_and_pays_no_second_point():
+def test_aldrics_altar_keeps_the_oath_and_pays_its_point_there():
     import deeds
     from dungeon import ALTAR
     g = _game()
     knight = _meet(g, 12, 'sir_aldric', flavor=False)
     k0 = g.karma
     _choose(g, knight, pygame.K_1)
-    assert g.karma == k0 + 1
+    assert g.karma == k0                                 # taking the stone is a promise, 0
     oath = g._deeds['oaths']['aldric_lodestone']
     assert oath['status'] == 'open' and oath['made_block'] == 2
     assert g._deeds['threads']['aldric_candle']['status'] == 'open'
@@ -200,9 +218,9 @@ def test_aldrics_altar_keeps_the_oath_and_pays_no_second_point():
     stone = next(i for i in g.player.inventory if i.id == 'cursed_lodestone')
     g._do_drop_item(stone)
     assert deeds.oath_status(g._deeds, 'aldric_lodestone') == 'kept'
-    assert g.karma == k0 + 1                             # Phase 2: no second point
+    assert g.karma == k0 + 1                             # the keep pays the point
     led = [e for e in g._deeds['karma']['ledger'] if e['kind'] == 'oath']
-    assert led and led[-1]['block'] == 3 and led[-1]['applied'] == 0
+    assert led and led[-1]['block'] == 3 and led[-1]['applied'] == 1
     assert g._deeds['threads']['aldric_candle']['status'] == 'closed'
 
 

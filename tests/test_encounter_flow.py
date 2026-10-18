@@ -336,6 +336,8 @@ def test_shipped_anchor_options_apply_exactly_as_before():
             if get_inventory_filter(opt.get('cost')) or (opt.get('cost') or {}).get('type') in (
                     'spawn_deadite_ambush', 'accept_item', 'triggered_item'):
                 continue
+            if 'quiz' in opt or opt.get('fight') or opt.get('escort'):
+                continue                     # quiz branches are covered by their own tests
             for k in (-10, -1, 0, 7, 10):
                 g = _GAME
                 g.karma = k

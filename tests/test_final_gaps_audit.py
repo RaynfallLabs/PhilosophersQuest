@@ -113,6 +113,8 @@ def test_npc_cost_types_are_recognized():
         'gold', 'hp_percent', 'max_hp', 'sp', 'hp', 'mp',
         'random_item', 'triggered_item', 'accept_item',
         'spawn_deadite_ambush',
+        # a share of the hero's own pool (LORE NOT FLOOR), a named item, lost stat points
+        'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct', 'triggered_item_id', 'stat',
     }
     bad = []
     for e in ENCOUNTERS:

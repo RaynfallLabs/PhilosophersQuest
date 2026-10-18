@@ -335,14 +335,20 @@ def test_npc_specific_item_rewards_resolve():
     for path in glob.glob(str(ROOT / "data" / "items" / "*.json")):
         all_items.update(json.loads(
             Path(path).read_text(encoding='utf-8')).keys())
+    # New items the parallel engine work adds (ENCOUNTER_STORIES_DRAFT J3).
+    sys.path.insert(0, str(ROOT / 'tests'))
+    from test_story_content import PENDING_IDS
+    from encounter_schema import option_branches
     bad = []
     for e in ENCOUNTERS:
         for opt in e.get('options', []):
-            reward = opt.get('reward', {})
-            if isinstance(reward, dict) and reward.get('type') == 'specific_item':
-                iid = reward.get('item_id', '')
-                if iid and iid not in all_items:
-                    bad.append((e['tag'], iid))
+            for b in option_branches(opt):
+                reward = b.get('reward') or {}
+                for r in [reward] + list(reward.get('rewards') or ()):
+                    if isinstance(r, dict) and r.get('type') == 'specific_item':
+                        iid = r.get('item_id', '')
+                        if iid and iid not in all_items and iid not in PENDING_IDS['item']:
+                            bad.append((e['tag'], iid))
     assert not bad, f"NPC reward item ids not in JSON: {bad}"
 
 
