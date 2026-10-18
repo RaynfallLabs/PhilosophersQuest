@@ -85,7 +85,7 @@ EFFECT_INFO: dict[str, tuple] = {
     'telepathy':          ('Telepathy',          (205, 145, 245), 'All monsters visible on level'),
     'warning':            ('Warning',            (240, 210, 100), 'Sense monsters within 5 tiles'),
     'searching':          ('Searching',          (160, 200, 160), 'Auto-reveal adjacent tiles'),
-    'clairvoyant':        ('Clairvoyant',        (245, 205, 105), 'Large area revealed around you'),
+    'clairvoyant':        ('Clairvoyant',        (245, 205, 105), 'Large area revealed around you; invisible creatures seen'),
     'displacement':       ('Displaced',          (200, 200, 200), 'Monsters may miss your true position'),
     'heroism':            ('Heroic',             (255, 200,  40), 'STR +2; surging with battle-strength'),
     'brilliance':         ('Brilliant',          (140, 180, 255), 'INT +1, WIS +1; mind razor-sharp'),
