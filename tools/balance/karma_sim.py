@@ -224,6 +224,11 @@ class _Sim:
                          tags=['virtue:forgo'], engine=True, deepest=deepest)
         if k:
             karma.adjust(self.g, k, kind=kind, source=tag)
+        if k < 0 and kind == 'cruelty':
+            # The engine tags an applied cruelty (ENG-09): 'callous' counts it.
+            deeds.record(reg, f'flag.cruelty.{deeds.slug(tag)}', floor=floor, block=block,
+                         tags=['vice:cruelty'], engine=True, deepest=deepest)
+            karma.evaluate_patterns(self.g)
         for d in b.get('deeds') or ():
             did = d if isinstance(d, str) else (d or {}).get('id')
             if deeds.valid_id(did):
@@ -260,6 +265,13 @@ class _Sim:
                 return
             idx, o, _cls = choice
             used.append(idx)
+            if o.get('naive'):
+                # The engine tags a naive choice (ENG-09): it blocks 'discerning'.
+                import deeds
+                floor, deepest, block, _turn = deeds.where(self.g)
+                deeds.record(self.g._deeds, f"flag.reckless.{deeds.slug(enc.get('tag', 'enc'))}",
+                             floor=floor, block=block, tags=['vice:reckless'], engine=True,
+                             deepest=deepest)
             if is_quiz(o):
                 passed = self.quiz_passes(o['quiz'])
                 b = o.get('pass' if passed else 'fail') or {}

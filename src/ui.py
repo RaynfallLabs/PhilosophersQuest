@@ -390,8 +390,19 @@ class Sidebar:
         name = self._fit(self._fbold, player_name or "Adventurer", self.w - self.PAD * 2)
         self.screen.blit(self._fbold.render(name, True, FP.GOLD_PALE), (self.x + self.PAD, y))
         y += S(23)
-        line = f"{floor_label(dungeon_level)}   Turn {turn_count}"
-        self.screen.blit(self._fsm.render(self._fit(self._fsm, line, self.w - self.PAD * 2),
+        room = self.w - self.PAD * 2
+        place, turn = floor_label(dungeon_level), f"Turn {turn_count}"
+        line = f"{place}   {turn}"
+        if self._fsm.size(line)[0] > room:
+            line = f"{place}  {turn}"        # a narrower gap first (JNL-08)
+        if self._fsm.size(line)[0] > room:
+            # Still too long ("Moo Moo Farm" at a big turn count): the turn
+            # goes on its own line rather than being cut to "Turn 4...".
+            self.screen.blit(self._fsm.render(self._fit(self._fsm, place, room), True,
+                                              FP.FADED_TEXT), (self.x + self.PAD, y))
+            y += S(20)
+            line = turn
+        self.screen.blit(self._fsm.render(self._fit(self._fsm, line, room),
                                           True, FP.FADED_TEXT),
                          (self.x + self.PAD, y))
         return y + S(24) + self.SECTION_GAP

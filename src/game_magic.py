@@ -3768,6 +3768,10 @@ class MagicMixin:
             book.identified = True
             self.player.known_item_ids.add(book.id)
             self._thoth_mark_spent(book)
+            # What the dead read when they come (ENG-06, CON-02): their
+            # "you never even opened it" scene keys on this deed's absence.
+            import deeds
+            deeds.note(self, 'told.read_thoth', source='book_of_thoth', unique=True)
 
             if result.success:
                 self._book_of_thoth_omniscience()

@@ -937,6 +937,16 @@ def test_the_watch_post_only_stands_while_a_dispatch_is_owed():
                 == 'flv_watch_post' and m.alive]
 
 
+def _keep_chapel_pending(g, floor):
+    """Drop every pending callback but the chapel's, and pin that one to
+    ``floor``."""
+    keep = [p for p in g._deeds['pending']
+            if (p.get('spec') or {}).get('encounter') == 'flv_cuthbert_chapel']
+    for p in keep:
+        p['target'] = p['earliest'] = p['latest'] = floor
+    g._deeds['pending'] = keep
+
+
 def test_saint_cuthberts_gospel_from_bearer_past_broker_to_the_chapel():
     g = _game('__test_gospel__')
     bearer = _meet(g, 42, _flavor_def('flv_coffin_bearer'), flavor=True)
@@ -948,7 +958,9 @@ def test_saint_cuthberts_gospel_from_bearer_past_broker_to_the_chapel():
     # callback (floors 94-98) is pending in every run.
     assert len([p for p in g._deeds['pending']
                 if p.get('source') != 'engine:run_start']) == 2
-    g._deeds['pending'] = []
+    # The chapel stays pending, on the floor this test meets it (an oath
+    # with no keeper left to come lapses: ENG-08).
+    _keep_chapel_pending(g, 55)
     karma = g.karma
     broker = _meet(g, 49, _flavor_def('flv_relic_broker'), flavor=True)
     _choose(g, broker, pygame.K_2)                        # "the book is promised"
@@ -972,7 +984,7 @@ def test_selling_the_gospel_to_the_broker_costs_karma_and_pays_gold():
     g = _game('__test_gospel_sold__')
     bearer = _meet(g, 42, _flavor_def('flv_coffin_bearer'), flavor=True)
     _choose(g, bearer, pygame.K_1)
-    g._deeds['pending'] = []                 # placed by hand below
+    _keep_chapel_pending(g, 60)              # the broker is placed by hand below
     karma, gold = g.karma, g.player_gold
     broker = _meet(g, 49, _flavor_def('flv_relic_broker'), flavor=True)
     _choose(g, broker, pygame.K_1)

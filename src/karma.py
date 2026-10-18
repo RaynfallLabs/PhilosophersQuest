@@ -126,6 +126,7 @@ def adjust(game, delta: int, *, kind: str, source: str,
             game.karma = new
         except Exception:
             pass
+        _crossing_line(game, cur, new)
     kreg['ledger'].append({
         'seq': deeds.next_seq(reg), 'floor': floor, 'block': block, 'kind': kind,
         'source': source, 'requested': delta, 'applied': applied,
@@ -179,6 +180,25 @@ def _rule_met(reg: dict, rule: dict) -> bool:
     if len(deeds.blocks_with(reg, tag=tag)) < int(rule.get('min_blocks', 1)):
         return False
     return not any(deeds.count(reg, tag=t) for t in rule.get('none_tags', ()))
+
+
+CLEAN_AT = 8      # the Sword of Michael is within reach (judge_karma)
+
+
+def _crossing_line(game, old: int, new: int) -> None:
+    """The player's only sign of where they stand: one line the first time
+    karma reaches 8, one the first time it hits -10, whatever moved it (an
+    encounter, an oath kept, constancy, a pattern, Gyges: ENG-12)."""
+    try:
+        import chronicle
+        if new >= CLEAN_AT > old:
+            chronicle.chron(game, 'soul', "I feel clean, as if everything I have done down here has counted. The dungeon feels lighter.",
+                            once='soul:clean')
+        elif new == KARMA_MIN < old:
+            chronicle.chron(game, 'soul', "Something inside me has gone cold. The dungeon doesn't frighten me anymore. That frightens me.",
+                            once='soul:cold')
+    except Exception:
+        pass
 
 
 def _soul_line(game, rule: dict) -> None:

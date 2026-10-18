@@ -41,6 +41,60 @@ def _encounter_by_tag(tag: str):
     return None, None
 
 
+_KEEPERS: dict | None = None
+
+
+def _oath_refs(enc) -> dict:
+    """{key: set(oath ids)} for each oath_* key in an encounter's options
+    and their quiz branches."""
+    out = {}
+
+    def walk(o):
+        if isinstance(o, dict):
+            for k in ('oath_keep', 'oath_lapse', 'oath_break', 'oath_release'):
+                if isinstance(o.get(k), str):
+                    out.setdefault(k, set()).add(o[k])
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    walk((enc or {}).get('options') or [])
+    return out
+
+
+def _oaths_kept_by(enc) -> set:
+    return set(_oath_refs(enc).get('oath_keep', ()))
+
+
+def _keepers_index() -> dict:
+    """{oath id: {'keep': tags, 'settle': tags}} over the encounter data."""
+    global _KEEPERS
+    if _KEEPERS is None:
+        import flavor_encounters
+        import npc_encounters
+        idx = {}
+        for e in list(flavor_encounters.FLAVOR_ENCOUNTERS) + list(npc_encounters.ENCOUNTERS):
+            for k, ids in _oath_refs(e).items():
+                for oid in ids:
+                    row = idx.setdefault(oid, {'keep': set(), 'settle': set()})
+                    row['settle'].add(e['tag'])
+                    if k == 'oath_keep':
+                        row['keep'].add(e['tag'])
+        _KEEPERS = idx
+    return _KEEPERS
+
+
+def _keepers_of(oath_id: str) -> set:
+    """The encounters that can keep this oath."""
+    return set((_keepers_index().get(oath_id) or {}).get('keep', ()))
+
+
+def _settlers_of(oath_id: str) -> set:
+    """The encounters that keep, lapse or break this oath."""
+    return set((_keepers_index().get(oath_id) or {}).get('settle', ()))
+
+
 class RoadMixin:
     # ------------------------------------------------------------------
     # State
@@ -61,9 +115,10 @@ class RoadMixin:
         import karma
         import road
         enabled = bool(karma.rules().get('road_enabled', False))
-        secrets = [(getattr(self, '_emberpup', None) or {}).get('floor'),
-                   (getattr(self, '_black_knight', None) or {}).get('floor')]
-        self._road = road.new_state(road.roll_seed(), enabled=enabled, secret_floors=secrets)
+        self._road = road.new_state(road.roll_seed(), enabled=enabled,
+                                    secret_floors=self._secret_floors())
+        if enabled:
+            self._setne_off_anchor()
         self._schedule_run_start()
         if not enabled:
             return
@@ -106,6 +161,43 @@ class RoadMixin:
                 'requires': spec.get('requires'), 'cause': seq,
             })
 
+    def _secret_floors(self) -> list:
+        """The floors a system scene owns (the Emberpup, the Black Knight,
+        Setne's Tomb): no medium or high Road slot and no callback lands
+        there, so a floor never holds two big scenes (CON-04, INT-12)."""
+        out = []
+        for attr in ('_emberpup', '_black_knight', '_setne'):
+            f = (getattr(self, attr, None) or {}).get('floor')
+            if f:
+                out.append(int(f))
+        return out
+
+    def _setne_off_anchor(self):
+        """The Road never refuses an anchor a floor, so the anchor of the
+        tomb's band can fall on the tomb's floor. Then the tomb moves: to
+        another of its candidate floors that holds no anchor, medium or high
+        slot and no other secret, picked from the road seed. The tomb is
+        rolled before the Road and placed only on arrival, so nothing is
+        lost by moving it. (Were no such floor free it would stay put; with
+        its 17 candidate floors and at most six busy ones in its bands, one
+        always is.)"""
+        import road
+        st = getattr(self, '_setne', None)
+        if not isinstance(st, dict) or not st.get('floor') or st.get('spawned'):
+            return
+        slot = self._road['slots'].get(int(st['floor']))
+        if not slot or slot.get('role') != 'anchor':
+            return
+        try:
+            import setne_tomb
+            cands = setne_tomb.candidate_floors()
+        except Exception:
+            return
+        busy = road.busy_floors(self._road) | set(self._secret_floors())
+        free = [c for c in cands if c not in busy]
+        if free:
+            st['floor'] = road.rng_for(self._road['seed'], 'setne:move').choice(free)
+
     def _road_enabled(self) -> bool:
         return bool(self._road_state().get('enabled'))
 
@@ -115,6 +207,7 @@ class RoadMixin:
         import road
         blocked = set(getattr(self, '_npc_encounter_levels', {}) or {})
         blocked |= road.busy_floors(self._road_state())
+        blocked |= set(self._secret_floors())
         for p in self._deeds_reg().get('pending', ()):
             if p.get('kind') == 'encounter' and p.get('target') is not None:
                 blocked.add(int(p['target']))
@@ -124,10 +217,18 @@ class RoadMixin:
     # Scheduling (called from an outcome)
     # ------------------------------------------------------------------
 
-    def _schedule_callbacks(self, specs, source: str):
+    def _schedule_callbacks(self, specs, source: str, *, thread=None):
         """An outcome's ``schedule`` list: place each encounter N floors on
         (4.7). The target is chosen now, from the road seed; if no floor
-        qualifies the thread is lost and the callback dropped."""
+        qualifies the thread is lost and the callback dropped.
+
+        ``thread`` is the thread the outcome opened: it rides with each
+        callback (unless the spec names its own), so a callback that is lost
+        closes it with its wistful line (JNL-02).
+
+        A callback that keeps an oath with a due floor lands on or before
+        that floor (ENG-01): the two used to be rolled apart, and in a third
+        of runs Wat's oath ran out before the Seventh Lamp could come."""
         import deeds
         import road
         reg = self._deeds_reg()
@@ -138,6 +239,8 @@ class RoadMixin:
                 continue
             tag = spec['encounter']
             _src, enc = _encounter_by_tag(tag)
+            if thread and not spec.get('thread'):
+                spec = dict(spec, thread=thread)
             span = spec.get('after_floors') or [1, 10]
             base = d
             # 'after_oath_due': counted from an oath's due floor, not from
@@ -149,14 +252,34 @@ class RoadMixin:
                 if due is not None:
                     base = max(d, int(due))
             earliest, latest = base + int(span[0]), base + int(span[1])
+            full_latest = latest
+            kept = [reg['oaths'][k] for k in sorted(_oaths_kept_by(enc))
+                    if (reg['oaths'].get(k) or {}).get('status') == 'open'
+                    and reg['oaths'][k].get('due_floor') is not None
+                    and reg['oaths'][k].get('lapse_mode') != 'callback']
+            for o in kept:
+                if earliest <= int(o['due_floor']):
+                    latest = min(latest, int(o['due_floor']))
             seq = deeds.next_seq(reg)
             target = road.pick_target(
                 st['seed'], f'cb:{tag}:{seq}', earliest, latest, deepest=d,
                 blocked=self._callback_blocked_floors(),
                 band=(enc or {}).get('band'))
+            if target is None and kept and latest < full_latest:
+                # Every floor up to the due floor is taken: the whole span,
+                # and the oath's due floor moves with it (below).
+                target = road.pick_target(
+                    st['seed'], f'cb:{tag}:{seq}:late', earliest, full_latest, deepest=d,
+                    blocked=self._callback_blocked_floors(),
+                    band=(enc or {}).get('band'))
             if target is None or enc is None:
                 self._callback_lost(tag, spec, source)
                 continue
+            for o in kept:
+                # No free floor at or before the due floor: the oath waits
+                # for its callback rather than running out first.
+                if int(o['due_floor']) < target:
+                    o['due_floor'] = target
             deeds.schedule(reg, {
                 'kind': 'encounter', 'id': f'cb:{tag}:{seq}', 'source': source,
                 'made_floor': floor, 'earliest': earliest, 'latest': latest,
@@ -206,6 +329,10 @@ class RoadMixin:
                 floor, _d, block, turn = self._deed_where()
                 deeds.lapse_oath(self._deeds_reg(), linked, floor=floor, block=block, turn=turn)
         tid = (spec or {}).get('thread')
+        if tid and any((p.get('spec') or {}).get('thread') == tid
+                       for p in self._deeds_reg().get('pending', ())
+                       if p.get('kind') == 'encounter'):
+            tid = None          # another callback of the same thread is still to come
         if tid and deeds.close_thread(self._deeds_reg(), tid, line=spec.get('lost_line')):
             line = spec.get('lost_line')
             if not line:
@@ -216,6 +343,65 @@ class RoadMixin:
                     line = f"I never did find out what became of {proper_name(who)}."
             if line:
                 chronicle.chron(self, 'consequence', line, thread=tid)
+        self._lapse_orphan_oaths()
+
+    def _lapse_orphan_oaths(self):
+        """ENG-08 (owner call, 2026-10-17): an open oath with no due floor
+        lapses (0 karma, tag vice:lapsed) once every callback that could
+        keep it is gone: met and closed without a keep, lost, or left
+        behind (the hero more than three floors deeper than its floor
+        without meeting it, the carry window missed callbacks get). An oath
+        no encounter keeps (Sir Aldric's lodestone: any altar keeps it)
+        never lapses this way."""
+        import deeds
+        reg = self._deeds_reg()
+        for o in list(deeds.open_oaths(reg)):
+            if o.get('due_floor') is not None or o.get('lapse_mode') == 'callback':
+                continue
+            keepers = _keepers_of(o['id'])
+            if not keepers:
+                continue
+            if any((p.get('spec') or {}).get('encounter') in keepers
+                   for p in reg.get('pending', ()) if p.get('kind') == 'encounter'):
+                continue
+            if self._keeper_waiting(keepers):
+                continue
+            self._lapse_oath_now(o)
+
+    def _keeper_waiting(self, keepers) -> bool:
+        """Is one of these encounters on a floor, not met yet, and not left
+        behind? (The one open on screen right now counts as waiting.)"""
+        active = (getattr(self, '_npc_encounter_active', None) or {}).get('tag')
+        if active in keepers:
+            return True
+        d = int(getattr(self.player, 'deepest_floor_reached', 1) or 1)
+        spent = set(getattr(self, '_encountered_flavor_npcs', None) or ()) | \
+            set(getattr(self, '_encountered_npcs', None) or ())
+        for view in (getattr(self, '_flavor_encounter_levels', None) or {},
+                     getattr(self, '_npc_encounter_levels', None) or {}):
+            for f, e in view.items():
+                tag = (e or {}).get('tag')
+                if tag in keepers and tag not in spent and int(f) + 3 >= d:
+                    return True
+        return False
+
+    def _lapse_oath_now(self, o: dict):
+        """Lapse one open oath, with its Journal line (as at a due floor)."""
+        import chronicle
+        import deeds
+        reg = self._deeds_reg()
+        floor, _d, block, turn = self._deed_where()
+        if not deeds.lapse_oath(reg, o['id'], floor=floor, block=block, turn=turn):
+            return
+        line = o.get('lapse_chronicle')
+        if not line and o.get('to'):
+            from naming import proper_name
+            line = f"I let my promise to {proper_name(o['to'])} run out. Nobody came to collect it."
+        if line:
+            chronicle.chron(self, 'oath', line, deed=f"lapsed.{o['id']}",
+                            thread=o.get('thread'))
+        if o.get('thread'):
+            deeds.close_thread(reg, o['thread'], line=line)
 
     # ------------------------------------------------------------------
     # Arrival (6.3)
@@ -228,11 +414,34 @@ class RoadMixin:
             return
         d = int(getattr(self.player, 'deepest_floor_reached', new_level) or new_level)
         self._lapse_due_oaths(d)
+        self._lapse_hostile_left_behind(new_level)
         self._deliver_due_rewards(d)
         placed = self._resolve_callbacks(new_level, d)
         if not placed:
             self._bind_road_slot(new_level)
         self._anchor_fallback(new_level)
+        self._lapse_orphan_oaths()
+
+    def _lapse_hostile_left_behind(self, new_level: int):
+        """ENG-07: a 'callback'-mode oath (the Book of Thoth) is settled by
+        its hostile scene. If the hero reaches a new, deeper floor while that
+        scene still waits unmet on a floor above, the oath lapses: walking
+        away is not a way to keep the book with a clean slate."""
+        spent = set(getattr(self, '_encountered_flavor_npcs', None) or ()) | \
+            set(getattr(self, '_encountered_npcs', None) or ())
+        waiting = set()
+        for view in (getattr(self, '_flavor_encounter_levels', None) or {},
+                     getattr(self, '_npc_encounter_levels', None) or {}):
+            for f, e in view.items():
+                if ((e or {}).get('hostile') and e.get('tag') not in spent
+                        and int(f) < int(new_level)):
+                    waiting.add(e['tag'])
+        if not waiting:
+            return
+        import deeds
+        for o in list(deeds.open_oaths(self._deeds_reg())):
+            if o.get('lapse_mode') == 'callback' and _settlers_of(o['id']) & waiting:
+                self._lapse_oath_now(o)
 
     def _lapse_due_oaths(self, d: int):
         """An open oath whose due floor is behind the deepest floor lapses:
@@ -308,11 +517,25 @@ class RoadMixin:
                     deeds.pop(reg, p['id'])
                     self._callback_lost(tag, spec, p.get('source', ''))
                     continue
-            if placed:
-                p['target'] = d + 1
+            if placed or not self._floor_free_for_callback(new_level):
+                # Another callback took the floor, or a carried callback
+                # reached a busy one (an anchor, a medium or high slot, a
+                # secret floor): it waits for the next new floor, within its
+                # carry window.
+                if placed or (spec.get('if_missed', 'carry') == 'carry'
+                              and d <= int(p.get('latest') or 0) + 3):
+                    p['target'] = d + 1
+                    continue
+                deeds.pop(reg, p['id'])
+                self._callback_lost(tag, spec, p.get('source', ''))
                 continue
             deeds.pop(reg, p['id'])
-            if p.get('requires') and not deeds.check(p['requires'], self._deed_ctx()):
+            _src, _cb = _encounter_by_tag(tag)
+            # The encounter's own requires / forbids too (ENG-02): one that
+            # cannot appear is lost, not placed to bind the floor and never
+            # spawn.
+            if ((p.get('requires') and not deeds.check(p['requires'], self._deed_ctx()))
+                    or (_cb is not None and not self._encounter_allowed(_cb))):
                 self._callback_lost(tag, spec, p.get('source', ''))
                 continue
             if self._place_callback(new_level, tag):
@@ -328,6 +551,8 @@ class RoadMixin:
     def _floor_free_for_callback(self, level: int) -> bool:
         import road
         if level in (getattr(self, '_npc_encounter_levels', {}) or {}):
+            return False
+        if level in self._secret_floors():
             return False
         return level not in road.busy_floors(self._road_state())
 

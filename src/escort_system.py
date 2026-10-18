@@ -360,6 +360,10 @@ class EscortMixin:
             for e in self._escort_list():
                 if e.alive and e.suspended and e.floor == new_level:
                     e.suspended = False
+                    # Seated beside the hero at the stair (SAV-06): left
+                    # where she stood, she was far behind the first step
+                    # and lost as "left behind".
+                    carried.append(e)
             return carried, arrived
         stairs = via == 'stairs' and abs(new_level - old_level) == 1
         for e in list(self._escort_list()):

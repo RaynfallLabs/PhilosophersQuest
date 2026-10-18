@@ -53,7 +53,11 @@ def data() -> dict:
 
 def candidate_floors() -> list:
     lo, hi = data().get('floors', [45, 65])[:2]
-    return [f for f in range(int(lo), int(hi) + 1) if f not in BOSS_FLOORS]
+    # Never a maze floor (every tenth non-boss floor: 50 here). No room can
+    # be carved in a maze, so the tomb had no door, no seal and no Ahwere
+    # while its text described all three (CON-03).
+    return [f for f in range(int(lo), int(hi) + 1)
+            if f not in BOSS_FLOORS and f % 10 != 0]
 
 
 def roll_floor(rng: random.Random) -> int:

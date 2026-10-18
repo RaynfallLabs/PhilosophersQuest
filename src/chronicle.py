@@ -42,6 +42,22 @@ def make_entry(*, seq: int, floor, turn: int, kind: str, text: str, person=None,
     return e
 
 
+def in_sentence(name) -> str:
+    """A named thing as it reads mid-sentence in a Journal line (JNL-13):
+    "The Bull's Horn" -> "the Bull's Horn", "A Cat's Footfall" -> "a Cat's
+    Footfall", "Chapel of the Grail" -> "the Chapel of the Grail". A name
+    that opens with a possessive ("Pandora's Coffer") is left as it is."""
+    name = str(name or '').strip()
+    if not name:
+        return name
+    first, _sp, rest = name.partition(' ')
+    if first in ('The', 'A', 'An') and rest:
+        return f"{first.lower()} {rest}"
+    if first.lower() in ('the', 'a', 'an') or first.endswith(("'s", "s'")):
+        return name
+    return f"the {name}"
+
+
 def chron(game, kind: str, text: str, *, person=None, deed=None, cause=None,
           thread=None, once=None, source=None):
     """Append an entry to ``game._chronicle`` and return it. With ``once``,
@@ -281,12 +297,20 @@ def person_status_words(p: dict) -> str:
     return _PERSON_WORDS.get(status, str(status).replace('_', ' ').title())
 
 
+def _shown_name(p: dict) -> str:
+    """The person's name once the hero has heard it, else the scene's title
+    for them ("Courteous Giant", not "Utgarda-Loki": JNL-04)."""
+    if p.get('known', True) is False and p.get('title'):
+        return p['title']
+    return p.get('name') or p.get('id') or ''
+
+
 def people_rows(reg: dict, label_fn=None) -> list:
     """The People tab: one dict per person met, in the order first met:
     ``{"name", "where", "status", "last"}``."""
     from naming import proper_name
     people = list((reg or {}).get('people', {}).values())     # dicts keep insertion order
-    return [{'name': proper_name(str(p.get('name') or p.get('id') or '')),
+    return [{'name': proper_name(str(_shown_name(p))),
              'where': _label(p.get('first_floor'), label_fn) if p.get('first_floor') else '',
              'status': person_status_words(p),
              'last': str(p.get('last_line') or '')}
@@ -398,7 +422,8 @@ def oath_summary(reg: dict) -> str:
 
 
 HIGHLIGHT_KINDS = ('soul', 'notice', 'consequence')
-_FALLBACK_KINDS = ('boss', 'loss', 'deed', 'oath', 'person', 'discovery', 'milestone')
+_FALLBACK_KINDS = ('boss', 'loss', 'deed', 'oath', 'person', 'discovery', 'milestone',
+                   'legacy')   # a pre-Journal save's lines, last (JNL-10)
 
 
 def highlights(entries, limit: int = 3) -> list:

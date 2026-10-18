@@ -164,7 +164,15 @@ def settle_unfinished_actions(game) -> None:
       - a question left unanswered is a wrong answer (the action had already
         spent its corpse, ingredients or Intercession);
       - a targeted spell still being aimed is cancelled and refunded as ESC
-        does (the MP or the free cast used to be lost).
+        does (the MP or the free cast used to be lost);
+      - an answer already given counts (a quit during the feedback after a
+        right answer used to settle a won quiz as a fail, SAV-05), and every
+        round of a play-all quiz still to come is a lost round with its cost
+        (ENG-04);
+      - an encounter on its outcome page closes as Enter would close it:
+        the Journal line, the person's last line, a sealed door, a floor
+        that gives the hero up (SAV-02). A 'then: options' step goes back
+        to its list, which a reload reopens (ENG-03).
     Each step is guarded on its own: a failure in one never blocks the save.
     """
     try:
@@ -177,7 +185,17 @@ def settle_unfinished_actions(game) -> None:
         qe = getattr(game, 'quiz_engine', None)
         if (qe is not None and getattr(qe, 'callback', None) is not None
                 and qe.state != QuizState.COMPLETE):
-            qe._end(success=False)
+            if hasattr(qe, 'forfeit'):
+                qe.forfeit()
+            else:
+                qe._end(success=False)
+    except Exception:
+        pass
+    try:
+        if (getattr(game, '_npc_encounter_active', None) is not None
+                and getattr(game, '_npc_encounter_phase', '') == 'outcome'
+                and hasattr(game, '_npc_outcome_continue')):
+            game._npc_outcome_continue()
     except Exception:
         pass
     try:
@@ -305,6 +323,10 @@ def save_game(game) -> bool:
             f.write(MAGIC)
             f.write(header.encode('ascii') + b'\n')
             pickle.dump(state, f, protocol=pickle.HIGHEST_PROTOCOL)
+            # On the disk before the rename (SAV-07): os.replace is atomic
+            # against a crash of the game, not of the machine.
+            f.flush()
+            os.fsync(f.fileno())
         os.replace(tmp, path)   # atomic; never touches `path` unless dump succeeded
         # A save loaded from its old-mapping file now lives at the new path:
         # retire the old file, or it would be found again (by another name).

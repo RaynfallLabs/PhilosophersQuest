@@ -90,6 +90,13 @@ from spells import LEARNABLE_SPELLS
 # Module-level helpers
 # ------------------------------------------------------------------
 
+def _trap_noun(trap_type: str) -> str:
+    """A trap's kind as it is said before the word "trap": 'bear_trap' is a
+    "bear" trap, not a "bear trap" trap (JNL-11)."""
+    name = str(trap_type or '').replace('_', ' ').strip()
+    return name[:-5].strip() if name.endswith(' trap') else name
+
+
 # Innate saving-throw affinity by build archetype — the gradient-defense identity
 # layer (read by Player.save_bonus_for, capped there, so it only biases the odds).
 # Stalwart bodies -> CON, strong wills -> WIS, quick scouts -> DEX; frail
@@ -399,16 +406,25 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._npc_item_scroll: int = 0             # scroll offset for item list
         self._npc_triggered_items: set = set()     # item IDs of trigger items player has picked up
         self.player_title: str = ''                # 'Paladin' etc. from judgment
-        # Pre-select NPC encounter levels for this run
-        from npc_encounters import select_encounter_levels, get_trigger_item_levels
-        self._npc_encounter_levels = select_encounter_levels()
-        self._npc_trigger_item_levels: dict = get_trigger_item_levels(self._npc_encounter_levels)
+        # Pre-select NPC encounter levels for this run: the legacy
+        # schedulers, only while the Road is off. With road_enabled on,
+        # _init_road (below) binds every slot itself; running them anyway
+        # drew from the shared random stream for results it threw away
+        # (bug bash 5, INT-13).
+        import karma as _karma_mod
         self._npc_trigger_items_placed: set = set()  # item IDs already spawned as floor loot
-        # Story and flavor encounters (the legacy roll; the Road replaces
-        # it below while road_enabled is on)
-        from flavor_encounters import select_flavor_encounters
-        self._flavor_encounter_levels: dict = select_flavor_encounters()
         self._encountered_flavor_npcs: set = set()
+        if _karma_mod.rules().get('road_enabled', False):
+            self._npc_encounter_levels = {}
+            self._npc_trigger_item_levels: dict = {}
+            self._flavor_encounter_levels: dict = {}
+        else:
+            from npc_encounters import select_encounter_levels, get_trigger_item_levels
+            self._npc_encounter_levels = select_encounter_levels()
+            self._npc_trigger_item_levels = get_trigger_item_levels(self._npc_encounter_levels)
+            # Story and flavor encounters (the legacy roll)
+            from flavor_encounters import select_flavor_encounters
+            self._flavor_encounter_levels = select_flavor_encounters()
 
         # Duck of Doom: one Duck per run, on a uniform-random floor in
         # {1..10}. Tracked so spawn placement (level_manager) can drop
@@ -837,6 +853,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._flavor_encounter_levels = state.get('_flavor_encounter_levels',
                                                    getattr(self, '_flavor_encounter_levels', {}))
         self._encountered_flavor_npcs = state.get('_encountered_flavor_npcs', set())
+        if not isinstance(state.get('_road'), dict):
+            self._refresh_legacy_encounters()
         self._abaddon_empowered = state.get('_abaddon_empowered', False)
         # None = a save from before the flag existed (decided on arrival).
         self._abaddon_empowered_applied = state.get('_abaddon_empowered_applied', None)
@@ -964,6 +982,44 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.player._burdened = False
         self._note_burden()
         self._show_load_summary_popup()
+
+    def _refresh_legacy_encounters(self):
+        """A save from before the Road (v3.1.0 and older) carries its own
+        pickled copies of the encounters still ahead. Their karma has no
+        kind, so with the karma gate on it moved nothing for the rest of the
+        run (SAV-01, INT-01). Each is replaced by today's definition for the
+        same tag, priced again; its floor and its trigger item are kept. A
+        tag no longer in the data (three v3.1.0 anchors were retired) keeps
+        its old dict, with each untyped karma given a kind so it still
+        counts: a good choice is a 'stance' (gated, one per block like any
+        other), a bad one 'cruelty'."""
+        import economy
+        from game_road import _encounter_by_tag
+        for attr in ('_npc_encounter_levels', '_flavor_encounter_levels'):
+            view = getattr(self, attr, None)
+            if not isinstance(view, dict):
+                continue
+            for floor, old in list(view.items()):
+                if not isinstance(old, dict) or not old.get('tag'):
+                    continue
+                _src, cur = _encounter_by_tag(old['tag'])
+                if cur is None:
+                    for o in old.get('options') or ():
+                        for b in (o, o.get('pass'), o.get('fail')):
+                            if isinstance(b, dict) and int(b.get('karma', 0) or 0) \
+                                    and not b.get('karma_kind'):
+                                b['karma_kind'] = 'stance' if int(b['karma']) > 0 else 'cruelty'
+                    continue
+                try:
+                    fresh = economy.price_encounter(cur)
+                except Exception:
+                    continue
+                if fresh is cur:
+                    import copy as _copy
+                    fresh = _copy.deepcopy(cur)
+                if 'trigger_item' in old:
+                    fresh['trigger_item'] = old['trigger_item']
+                view[floor] = fresh
 
     def _apply_locked_weapon_rule(self):
         """A build whose starting weapon is part of the hero (_lock_weapon)
@@ -4729,7 +4785,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not forced and _rng_trap.random() < avoid_chance:
             trap['revealed'] = True
             self.add_message(
-                f"You notice {self._a_or_an(trap['type'].replace('_', ' '))} trap just in time "
+                f"You notice {self._a_or_an(_trap_noun(trap['type']))} trap just in time "
                 f"and sidestep it!", 'success')
             return
         # Trap fires -- remove it from the floor
@@ -4852,7 +4908,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if not getattr(self, '_chronicle_first_trap', False):
             self._chronicle_first_trap = True
             self._chron('milestone',
-                        f"Stepped on {self._a_or_an(trap_type.replace('_', ' '))} trap. The floor "
+                        f"Stepped on {self._a_or_an(_trap_noun(trap_type))} trap. The floor "
                         "clicked first, which was all the warning I got. I watch the floor now.",
                         once='first_trap')
         if self.player.is_dead():
@@ -5065,7 +5121,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if trap and not trap.get('revealed'):
                         trap['revealed'] = True
                         self.add_message(
-                            f"Searching reveals {self._a_or_an(trap['type'].replace('_', ' '))} trap!", 'success')
+                            f"Searching reveals {self._a_or_an(_trap_noun(trap['type']))} trap!", 'success')
         # Also reveal adjacent ambush monsters (radius same as tile-reveal above)
         for m in self.monsters:
             if (m.alive and m.ai_pattern == 'ambush'
@@ -5135,8 +5191,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # once more for another free hint)
                 if not trap or not trap.get('revealed') or trap.get('safe_for_player'):
                     continue
-                trap_name = trap['type'].replace('_', ' ')
-                self.quiz_title = f"DISARMING {trap_name.upper()}  --  AI"
+                trap_name = _trap_noun(trap['type'])
+                self.quiz_title = f"DISARMING {trap_name.upper()} TRAP  --  AI"
                 self.state = STATE_QUIZ
                 _trap_pos = (nx, ny)
 
@@ -5262,7 +5318,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         _snd.play('trap')
         if pos in self.visible:
             self.add_message(
-                f"The rewired {trap_type.replace('_', ' ')} trap snaps on {the_name(monster, lower=True)}!",
+                f"The rewired {_trap_noun(trap_type)} trap snaps on {the_name(monster, lower=True)}!",
                 'success')
 
         # Apply damage (some traps have damage 0; those are status-only).
@@ -5342,7 +5398,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     if _rng.random() < chance:
                         trap['revealed'] = True
                         self.add_message(
-                            f"You spot {self._a_or_an(trap['type'].replace('_', ' '))} trap nearby!", 'warning')
+                            f"You spot {self._a_or_an(_trap_noun(trap['type']))} trap nearby!", 'warning')
 
     def _do_passive_ambush_detection(self):
         """Passive PER-based detection of hidden ambush monsters within sight."""
@@ -7686,6 +7742,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if (self.state == STATE_PLAYER and getattr(self.player, 'pending_boon', None)
                 and not self.player.is_dead()):
             self._open_boon_menu()
+        # A hostile scene (the dead come for the Book of Thoth) waits for no
+        # bump: whenever plain play resumes with its figure unmet on this
+        # floor (after a load, a popup on arrival), it opens again (ENG-07).
+        if self.state == STATE_PLAYER and not self.player.is_dead() \
+                and self._hostile_figure_here() is not None:
+            self._hostile_encounter_arrives()
         # An action taken from the Kit / character sheet whose flow just
         # ended (quiz, quantity prompt, lore page): back to that screen.
         if getattr(self, '_item_screen_return', None):

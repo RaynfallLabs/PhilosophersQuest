@@ -147,8 +147,12 @@ def test_exit_mid_quiz_settles_as_the_fail_branch():
     _key(g, pygame.K_1)
     settle_unfinished_actions(g)
     assert deeds.has(g._deeds, 'lost.anselm')
-    assert g._npc_outcome_text == 'You cannot tell them apart.'
     assert g.quiz_engine.callback is None
+    # The fail branch's outcome page is then closed as Enter closes it
+    # (SAV-02): the encounter is resolved before the save.
+    assert g._npc_encounter_active is None
+    assert QUIZ_ENC['tag'] in g._encountered_flavor_npcs
+    assert g._deeds['people']['anselm']['status'] == 'lost'
 
 
 def test_high_stakes_pass_writes_steadfast():
@@ -357,7 +361,14 @@ def test_shipped_anchor_options_apply_exactly_as_before(gate_off):
                 assert g.karma == want, (enc['tag'], i, k)
                 assert g._npc_outcome_text == said
                 assert g._npc_encounter_phase == 'outcome'
-                assert enc['tag'] in g._encountered_npcs
+                if opt.get('then') == 'options':
+                    # A 'then: options' step does not spend the encounter
+                    # (ENG-03); the option is used up instead.
+                    assert enc['tag'] not in g._encountered_npcs
+                    assert i in g._deeds['used_options'][enc['tag']]
+                    g._deeds['used_options'].pop(enc['tag'], None)
+                else:
+                    assert enc['tag'] in g._encountered_npcs
                 checked += 1
     assert checked > 50
 

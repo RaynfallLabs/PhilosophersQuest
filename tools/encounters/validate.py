@@ -1195,7 +1195,118 @@ def validate_all(encounters=None) -> list:
     for tag, tid in closes:
         if tid not in threads:
             out.append(Issue(tag, 'reference', f'thread {tid!r} is never opened'))
+    out.extend(_oath_due_vs_callback(encs, seen))
+    if encounters is None:
+        # The whole game's data and code: every deed a condition reads is
+        # written somewhere (ENG-06: told.read_thoth was read, never written).
+        out.extend(_deed_refs(encs))
     return out
+
+
+def _branches(o: dict) -> list:
+    return [o, o.get('pass') or {}, o.get('fail') or {}] + \
+        [x for x in (o.get('fail_by_correct') or {}).values() if isinstance(x, dict)]
+
+
+def _oath_due_vs_callback(encs, seen) -> list:
+    """An outcome that swears an oath with a due floor and schedules the
+    callback that keeps it: the callback's earliest floor must not come after
+    the earliest due floor, or the oath can run out first (ENG-01; the engine
+    also lands the callback on or before the rolled due floor)."""
+    out = []
+    for _src, enc in encs:
+        for o in enc.get('options') or ():
+            for b in _branches(o):
+                oath = b.get('oath')
+                if not isinstance(oath, dict) or not oath.get('due_floors'):
+                    continue
+                if oath.get('lapse_mode') == 'callback':
+                    continue
+                due_lo = int(oath['due_floors'][0])
+                for cb in b.get('schedule') or ():
+                    tgt = seen.get(cb.get('encounter')) or {}
+                    keeps = any(x.get('oath_keep') == oath.get('id')
+                                for to in tgt.get('options') or () for x in _branches(to))
+                    span = cb.get('after_floors') or [1, 10]
+                    if keeps and int(span[0]) > due_lo:
+                        out.append(Issue(enc['tag'], 'oath_due',
+                                         f"callback {cb.get('encounter')!r} that keeps oath "
+                                         f"{oath.get('id')!r} can come after its due floor "
+                                         f"(after_floors {span} vs due_floors {oath['due_floors']})"))
+    return out
+
+
+_DEED_PREFIXES = ('met', 'aid', 'forgo', 'wrong', 'oath', 'kept', 'broke', 'lapsed', 'released',
+                  'noticed', 'saved', 'lost', 'spared', 'slew', 'told', 'owe', 'flag')
+
+
+def _deed_refs(encs) -> list:
+    """Every deed pattern read by a requires / forbids / variant ``when``,
+    against every deed id the data and the engine write (the bug bash's
+    d11 cross-reference, made a gate)."""
+    import glob
+    import json as _json
+    reads, writes = {}, set()
+
+    def walk_cond(c, where):
+        if not isinstance(c, dict):
+            return
+        for k, v in c.items():
+            if k in ('deeds_all', 'deeds_any', 'deeds_none'):
+                for p in v or ():
+                    reads.setdefault(p, set()).add(where)
+            elif k == 'any':
+                for s in v or ():
+                    walk_cond(s, where)
+
+    def walk(o, where):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k in ('requires', 'forbids', 'when'):
+                    walk_cond(v, where)
+                elif k == 'deeds':
+                    for d in v or ():
+                        did = d if isinstance(d, str) else (d or {}).get('id')
+                        if did:
+                            writes.add(did)
+                else:
+                    walk(v, where)
+        elif isinstance(o, list):
+            for x in o:
+                walk(x, where)
+
+    for _src, e in encs:
+        walk(e, e.get('tag', '?'))
+        for oid in re.findall(r'"oath": \{"id": "([a-z0-9_]+)"', _json.dumps(e)):
+            for p in ('oath', 'kept', 'broke', 'lapsed', 'released'):
+                writes.add(f'{p}.{oid}')
+    for fn in glob.glob(os.path.join(ROOT, 'data', '*.json')):
+        if 'encounters' in os.path.basename(fn):
+            continue
+        try:
+            with open(fn, encoding='utf-8') as f:
+                walk(_json.load(f), os.path.basename(fn))
+        except (OSError, ValueError):
+            pass
+    src = ''
+    for fn in glob.glob(os.path.join(ROOT, 'src', '*.py')):
+        with open(fn, encoding='utf-8') as f:
+            src += f.read()
+    alt = '|'.join(_DEED_PREFIXES)
+    writes |= set(re.findall(r"""['"]((?:%s)\.[a-z0-9_.]+)['"]""" % alt, src))
+    pref = set(re.findall(r"""f['"]((?:%s)\.[a-z0-9_.]*)\{""" % alt, src))
+
+    def satisfiable(p):
+        if p.endswith('*') or p.endswith('.'):
+            pre = p.rstrip('*')
+            return any(w.startswith(pre) for w in writes) or \
+                any(pre.startswith(x) or x.startswith(pre) for x in pref)
+        return p in writes or any(p.startswith(x) for x in pref)
+
+    return [Issue(sorted(w)[0], 'deed_ref',
+                  f'reads deed {p!r}, which nothing writes (also read by {sorted(w)[1:]})'
+                  if len(w) > 1 else f'reads deed {p!r}, which nothing writes')
+            for p, w in sorted(reads.items()) if not satisfiable(p)]
 
 
 def split_by_allowlist(issues, allow: dict):
