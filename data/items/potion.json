@@ -852,6 +852,7 @@
   },
   "soma": {
     "name": "Soma",
+    "rare": true,
     "effect": "full_heal",
     "power": 999,
     "duration": 30,
@@ -878,6 +879,7 @@
   },
   "water_of_lethe": {
     "name": "Water of Lethe",
+    "rare": true,
     "effect": "cure_all",
     "power": 0,
     "duration": 0,
@@ -903,6 +905,7 @@
   },
   "elixir_of_gilgamesh": {
     "name": "Elixir of Gilgamesh",
+    "rare": true,
     "effect": "gain_level",
     "power": 2,
     "duration": 0,
@@ -928,6 +931,7 @@
   },
   "fafnirs_blood": {
     "name": "Fafnir's Blood",
+    "rare": true,
     "unidentified_name": "Fafnir's Blood",
     "symbol": "!",
     "color": [
@@ -946,6 +950,8 @@
   },
   "draught_of_mimir": {
     "name": "Draught of Mimir's Well",
+    "rare": true,
+    "throwable": false,
     "unidentified_name": "Draught of Mimir's Well",
     "id_level": 5,
     "buc_known": true,

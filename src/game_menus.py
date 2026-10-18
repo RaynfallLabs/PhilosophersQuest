@@ -394,8 +394,12 @@ class MenuMixin:
 
     def _open_throw_menu(self):
         """Open menu to select a potion, throwable weapon, or one of the Soul
-        Spheres (any of the six, bound or not)."""
-        potions = [i for i in self.player.inventory if isinstance(i, Potion)]
+        Spheres (any of the six, bound or not). A potion that may not be
+        thrown (the Draught of Mimir's Well: items.can_be_thrown) is not
+        offered."""
+        from items import can_be_thrown
+        potions = [i for i in self.player.inventory
+                   if isinstance(i, Potion) and can_be_thrown(i)]
         weapons = [
             i for i in self.player.inventory
             if isinstance(i, Weapon) and self._is_throwable_weapon(i)
@@ -562,6 +566,7 @@ class MenuMixin:
         ('Shields',     'shields'),
         ('Accessories', 'accessories'),
         ('Consumables', 'consumables'),
+        ('Valuables',   'valuables'),
         ('Spells',      'spells'),
     ]
 
@@ -642,6 +647,10 @@ class MenuMixin:
             'accessories': Accessory,
             'consumables': (Potion, Scroll, Spellbook, Food, Ingredient, Corpse),
         }
+        if slug == 'valuables':
+            # Gems, jewellery, old coins and art: treasure (treasure.py).
+            from treasure import is_treasure
+            return [(src, it) for src, it in all_rows if is_treasure(it)]
         cls = type_for_slug.get(slug)
         if cls is None:
             return []

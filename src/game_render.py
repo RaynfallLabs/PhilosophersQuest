@@ -270,10 +270,12 @@ def _kit_option_card(screen, title, options, footer, *, lines=(), border=FP.GOLD
 class RenderMixin:
     def _tribute_plan_line(self, cost: int) -> str:
         """When the coin falls short of an altar's tribute, what treasure it
-        would take, said BEFORE the hero accepts: an altar gives no change
-        (game_divine._begin_mystery_challenge), so a gem worth far more than
-        the tribute is simply gone (wiring audit 2026-10-18). '' when the
-        coin covers it."""
+        would take, said BEFORE the hero accepts, and that the altar gives
+        the rest back in coin (game_divine._begin_mystery_challenge; the
+        lead's ruling, 2026-10-18). The change is named in gold only when
+        every piece taken is a kind a trader has valued: naming it for an
+        unvalued gem would tell its worth (treasure.py). '' when the coin
+        covers it."""
         if int(getattr(self, 'player_gold', 0) or 0) >= int(cost):
             return ''
         try:
@@ -282,8 +284,16 @@ class RenderMixin:
             return ''
         if not plan or not plan.get('take'):
             return ''
-        return (f"Your coin is short: you would pay {self._payment_words(plan)}. "
-                f"An altar gives no change.")
+        line = f"Your coin is short: you would pay {self._payment_words(plan)}."
+        change = int(plan.get('change', 0) or 0)
+        if change > 0:
+            import treasure as _tr
+            if all(_tr.is_valued(self.player, it) for it, _n in plan['take']):
+                line += f" The altar gives back {change:,} gold in change."
+            else:
+                line += " The altar gives back the rest in coin."
+            line += " Coin you cannot carry is left at your feet."
+        return line
 
     def _draw_mystery_approach(self):
         """Draw the mystery encounter overlay."""
@@ -5046,6 +5056,13 @@ class RenderMixin:
         elif slug in ('armor', 'shields'):
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      -int(getattr(r[1], 'ac_bonus', 0) or 0)))
+        elif slug == 'valuables':
+            # Dearest first, by what the hero can count on (a valued kind's
+            # worth, else the low end of its band: nothing finer leaks).
+            from treasure import known_unit_value
+            rows.sort(key=lambda r: (order.get(r[0], 9),
+                                     -known_unit_value(self.player, r[1]),
+                                     self._display_name(r[1]).lower()))
         else:
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      self._display_name(r[1]).lower()))
@@ -5054,7 +5071,8 @@ class RenderMixin:
     # Long stat names for the kit table's labelled rows ('' = the value
     # speaks for itself: "Iron", "Uncursed", "Body").
     _KIT_STAT_NAMES = {'Dmg': 'Damage', 'Avg': 'Average', 'Wt': 'Weight',
-                       'AC': 'AC', 'Material': '', 'BUC': '', 'Slot': '', 'Type': ''}
+                       'AC': 'AC', 'Material': '', 'BUC': '', 'Slot': '', 'Type': '',
+                       'Kind': '', 'Count': 'Carried'}
     _KIT_BUC_WORDS = {'bless.': 'Blessed', 'unc.': 'Uncursed', 'CURSED': 'Cursed'}
 
     def _kit_row_labelled(self, slug: str, src: str, item):
@@ -5092,7 +5110,47 @@ class RenderMixin:
     def _kit_source_label(self, src: str) -> str:
         return {'equip': 'Equipped', 'pack': 'Pack', 'floor': 'Floor'}.get(src, src)
 
+    def _kit_detail_lines_for_treasure(self, src: str, item):
+        """A piece of treasure in the Kit's Valuables tab: what the shop says
+        of it (kind, worth, weight), the whole stack, and all the treasure
+        carried. Worth honours appraisal: exact once a trader has valued the
+        kind, else only its order of magnitude (treasure.py)."""
+        import treasure as _tr
+        n = max(1, int(getattr(item, 'count', 1) or 1))
+        wt = float(getattr(item, 'weight', 0) or 0)
+        lines = [
+            (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
+            (f"Source: {self._kit_source_label(src)}", FP.FADED_TEXT, self.font_sm),
+            (_tr.kind_label(item), FP.GOLD_BRIGHT, self.font_sm),
+            (_tr.value_text(self.player, item), FP.GOLD_PALE, self.font_sm),
+            (f"Weight: {wt:g}" + (f" each, {wt * n:g} for all {n}" if n > 1 else ""),
+             FP.BODY_TEXT, self.font_sm),
+        ]
+        if n > 1 and _tr.is_valued(self.player, item):
+            lines.append((f"All {n} together: {_tr.total_value(item):,} gold",
+                          FP.GOLD_PALE, self.font_sm))
+        carried = _tr.carried(self.player)
+        total = sum(_tr.total_value(i) for i in carried if _tr.is_valued(self.player, i))
+        unvalued = sum(max(1, int(getattr(i, 'count', 1) or 1))
+                       for i in carried if not _tr.is_valued(self.player, i))
+        if carried:
+            tail = ""
+            if unvalued:
+                tail = f", and {unvalued} piece{'s' if unvalued != 1 else ''} not yet valued"
+            lines += [("All your treasure", FP.GOLD_BRIGHT, self.font_sm),
+                      (f"Valued pieces: {total:,} gold{tail}.", FP.BODY_TEXT, self.font_sm),
+                      ("A trader values every piece you carry when his shop opens. "
+                       "Treasure you carry out counts toward your score.",
+                       FP.FADED_TEXT, self.font_sm)]
+        lore = getattr(item, 'lore', '')
+        if lore:
+            lines += [("Lore", FP.GOLD_BRIGHT, self.font_sm),
+                      (lore, FP.LORE_BLUE_BODY, self.font_sm)]
+        return lines
+
     def _kit_detail_lines_for_item(self, slug: str, src: str, item):
+        if slug == 'valuables':
+            return self._kit_detail_lines_for_treasure(src, item)
         idl = self._kit_visible_level(item)
         lines = [
             (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
@@ -5463,6 +5521,15 @@ class RenderMixin:
                 Column('Wt',         0, flex=0, align='right'),
                 Column('Effect',   200, flex=3, align='left'),
             ]
+        if slug == 'valuables':
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('Kind',       0, flex=0, align='left'),
+                Column('Count',      0, flex=0, align='right'),
+                Column('Wt',         0, flex=0, align='right'),
+                Column('Worth',    160, flex=3, align='left'),
+            ]
         return []
 
     def _kit_cells_for_item(self, slug: str, src: str, item) -> list[str]:
@@ -5476,7 +5543,7 @@ class RenderMixin:
         # "plain longsword" showed "Iron" in this column.
         mat = (getattr(item, 'material', '') or '') if idl >= 3 else '?'
 
-        # Blessing visibility: this copy's own knowledge, never the type's.
+        # Blessing visibility: this copy identified, or its kind known.
         if self._copy_buc_known(item):
             buc_raw = getattr(item, 'buc', None) or ('cursed' if getattr(item, 'cursed', False) else 'uncursed')
             buc = {'blessed': 'bless.', 'uncursed': 'unc.', 'cursed': 'CURSED'}.get(buc_raw, buc_raw)
@@ -5530,6 +5597,14 @@ class RenderMixin:
             # Most consumables don't carry BUC; show '-' when not applicable
             buc_show = buc if hasattr(item, 'buc') or hasattr(item, 'cursed') else '-'
             return [name, src_tag, kind, buc_show, wt, effect]
+
+        if slug == 'valuables':
+            import treasure as _tr
+            n = max(1, int(getattr(item, 'count', 1) or 1))
+            # Weight as the shop gives it (a gem weighs 0.01: "0.0" said nothing).
+            return [name, src_tag, _tr.kind_label(item), str(n) if n > 1 else '',
+                    f"{float(getattr(item, 'weight', 0) or 0):g}",
+                    _tr.worth_short(self.player, item)]
 
         return [name, src_tag] + ['' for _ in range(6)]
 
@@ -8723,6 +8798,12 @@ class RenderMixin:
             return entry.get('lore', '')
         if category == 'treasure':
             return self._encyclopedia_treasure_value(entry)
+        if category == 'wonders':
+            if entry.get('_kind') == 'sphere':
+                lvl = int((entry.get('sphere') or {}).get('hatch_level', 1) or 1)
+                return f"Wakes at level {lvl}"
+            q = entry.get('quiz') or {}
+            return f"+{int(q.get('amount', 1) or 1)} {q.get('stat', 'WIS')} for good"
         return ''
 
     def _encyclopedia_treasure_value(self, entry) -> str:
@@ -8733,6 +8814,36 @@ class RenderMixin:
         if entry.get('_id') in treasure.appraised(self.player):
             return f"Valued at {v:,} gold"
         return f"Worth {treasure.band(v)[1]}"
+
+    def _encyclopedia_wonder_lines(self, entry) -> list:
+        """A Wonders page: what a Soul Sphere wakes, or what the Draught of
+        Mimir's Well asks and gives. No secret of who hatches is told."""
+        if entry.get('_kind') == 'sphere':
+            sp = entry.get('sphere') or {}
+            lvl = int(sp.get('hatch_level', 1) or 1)
+            tier = {1: 'a young companion', 2: 'a grown companion',
+                    3: 'a companion at the height of its strength'}.get(int(sp.get('tier', 1) or 1),
+                                                                       'a companion')
+            return [
+                ("Kind: Soul Sphere", FP.BODY_TEXT, self.font_sm),
+                (f"Throw it to wake {tier}. It wakes at level {lvl}.",
+                 FP.BODY_TEXT, self.font_sm),
+                (f"Weight: {float(entry.get('weight', 0) or 0):g}", FP.BODY_TEXT, self.font_sm),
+            ]
+        q = entry.get('quiz') or {}
+        subjects = ' or '.join(str(s).title() for s in (q.get('subjects') or ['philosophy']))
+        amount = int(q.get('amount', 1) or 1)
+        stat = str(q.get('stat', 'WIS'))
+        lines = [
+            ("Kind: Draught", FP.BODY_TEXT, self.font_sm),
+            (f"Drink it and answer one {subjects} question (tier {int(q.get('tier', 4) or 4)}). "
+             f"Right: +{amount} {stat} for good. Wrong: it runs straight through you, wasted.",
+             FP.BODY_TEXT, self.font_sm),
+            (f"Weight: {float(entry.get('weight', 0) or 0):g}", FP.BODY_TEXT, self.font_sm),
+        ]
+        if entry.get('throwable') is False:
+            lines.append(("It is not for throwing.", FP.FADED_TEXT, self.font_sm))
+        return lines
 
     def _encyclopedia_article_lines(self, category, entry):
         if not entry:
@@ -8798,6 +8909,8 @@ class RenderMixin:
         elif category == 'spellbook':
             lines.append((f"Teaches: {entry.get('spell_name', '?')}   MP cost: {entry.get('mp_cost', '?')}",
                           FP.BODY_TEXT, self.font_sm))
+        elif category == 'wonders':
+            lines += self._encyclopedia_wonder_lines(entry)
         elif category == 'treasure':
             kind = {'gem': 'Gem', 'jewellery': 'Jewellery', 'coins': 'Old Coins',
                     'art': 'Art Object'}.get(entry.get('kind', ''), 'Treasure')
@@ -8893,7 +9006,7 @@ class RenderMixin:
             self._draw_journal(pygame.Rect(list_rect.x, body.y,
                                            body.right - list_rect.x, body.h))
             self._ui_footer(panel, "Tab or 1-4: page   Up/Down/PgUp/PgDn: scroll   "
-                                   "Left/Right or a-k: category   ESC: categories")
+                                   "Left/Right or a-l: category   ESC: categories")
             return
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
@@ -8903,7 +9016,7 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-k: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-l: open   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),
@@ -8984,7 +9097,7 @@ class RenderMixin:
                     else "list")
             footer = f"Up/Down/PgUp/PgDn: scroll article   ESC: {back}"
         else:
-            footer = "Left/Right or a-k: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
+            footer = "Left/Right or a-l: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
         self._ui_footer(panel, footer)
 
     # -- The Journal (Encyclopedia tab h; DEEDS_KARMA_DESIGN 7.5) ----------

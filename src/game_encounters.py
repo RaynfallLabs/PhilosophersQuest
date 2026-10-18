@@ -1646,9 +1646,10 @@ class EncountersMixin:
                 if cls and selected_item and isinstance(selected_item, cls):
                     self.player.remove_from_inventory(selected_item)
                 elif cls:
-                    from npc_encounters import offerable
-                    item = next((i for i in self.player.inventory
-                                 if isinstance(i, cls) and offerable(i)), None)
+                    # No picker: never a rare potion, the cheapest ordinary
+                    # one (npc_encounters.cost_items).
+                    from npc_encounters import cost_items
+                    item = next(iter(cost_items(self.player, cat)), None)
                     if item:
                         self.player.remove_from_inventory(item)
             elif ctype == 'triggered_item':

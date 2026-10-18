@@ -433,7 +433,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_QUIZ` | quiz starts | `_quiz_input` | `game_render._draw_quiz` |
 | `STATE_QUIZ_CONTEXT` | `C` during a quiz whose question has a context card | `_quiz_context_input` | `_draw_quiz` then `_draw_quiz_context_modal` |
 | `STATE_EQUIP_MENU` | `E` | `_equip_menu_input` | `_draw_equip_menu` |
-| `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser` |
+| `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser`; tabs Weapons / Armor / Shields / Accessories / Consumables / Valuables (treasure: kind, count, weight as the shop gives it, worth exact once a trader has valued the kind, else its order of magnitude; `treasure.worth_short`, `_kit_detail_lines_for_treasure`) / Spells |
 | `STATE_DISCOVERIES` | `J` | `_discoveries_input` | `_draw_discoveries_panel` |
 | `STATE_WAND_MENU` | `Z` | `_wand_menu_input` | `_draw_wand_menu` |
 | `STATE_SCROLL_MENU` | `R` | `_scroll_menu_input` | `_draw_scroll_menu` |
@@ -451,7 +451,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_LORE` | lore trigger | `_lore_input` | `_draw_lore_dossier_screen` |
 | `STATE_HINT` | Recall Lore | any-key dismiss | `_draw_hint_screen` |
 | `STATE_EXAMINE` | `X` | `_examine_menu_input` | `_draw_examine_menu` |
-| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser` |
+| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser`; categories a-l (Bestiary ... Treasure, and **Wonders**: the six Soul Spheres once their kind is known and the Draught of Mimir's Well once held, with art and lore, `Game._wonder_entries` / `_encyclopedia_wonder_lines`). Esc steps back: article, list, categories, play (an O-opened Bestiary page goes straight back to play) |
 | `STATE_HACK_REALITY` | hack unlock | any-key | `_draw_hack_reality_screen` |
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |

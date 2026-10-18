@@ -728,6 +728,17 @@ weight, so it is never random loot; it comes only from a deep trader's
 `rare_stock` (data/traders.json: about 1 trader stock in 30, floor 40 and
 down, priced at 5 floors of income x 0.8). It arrives known (id level 5).
 
+**Rare and unthrowable potions (2026-10-18).** `"rare": true` in potion.json
+(the Draught, Fafnir's Blood, Soma, the Water of Lethe, the Elixir of
+Gilgamesh; `items.is_rare_potion`, which also counts any quiz potion and
+anything `withheld`) means an encounter outcome that takes "a potion" with
+no picker never takes it: `npc_encounters.cost_items` takes the cheapest
+ordinary potion (`items.ordinary_potions_cheapest_first`). With a picker the
+hero may still choose to give it. `"throwable": false` (the Draught alone;
+`items.can_be_thrown`) keeps it out of the Throw menu and refuses a throw;
+thieves may still steal it and give it back when they die. The Draught and
+the six Soul Spheres have Encyclopedia pages under **Wonders** (B, l).
+
 ### Treasure (`data/items/treasure.json`, class `Treasure`; rules in `src/treasure.py`)
 
 Gems, jewellery, old coin and art objects (17 kinds), with real weights and

@@ -284,7 +284,14 @@ class CombatMixin:
         """Enter targeting mode for throwing an item (potion, weapon, artifact).
         The arg name is legacy — the item is generic. Weapon items get their
         class-specific throw range; potions/artifacts use the dagger-tier
-        fallback via `_get_throw_range(None)`."""
+        fallback via `_get_throw_range(None)`. A potion that may not be
+        thrown (the Draught of Mimir's Well) is refused here too."""
+        from items import can_be_thrown
+        if not can_be_thrown(potion):
+            self.add_message(f"You will not throw the {self._bare_name(potion)}: "
+                             "it is a fortune to drink, not to break.", 'warning')
+            self.state = STATE_PLAYER
+            return
         self._throw_targeting = True
         self._melee_targeting = False
         self._throw_potion = potion

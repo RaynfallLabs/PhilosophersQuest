@@ -1355,6 +1355,11 @@ class Potion(Item):
         # Mimir's Well: permanent stats cost a quiz). {subjects, tier,
         # threshold, stat, amount}; None for every ordinary potion.
         self.quiz: dict | None      = defn.get('quiz') or None
+        # Rare (never taken by an encounter outcome on its own) and
+        # throwable (the Draught of Mimir's Well is not). Read through
+        # is_rare_potion / can_be_thrown, which also ask today's data by id.
+        self.rare: bool             = bool(defn.get('rare', False))
+        self.throwable: bool        = bool(defn.get('throwable', True))
 
     quiz = None                      # potions pickled before the field
 
@@ -1598,6 +1603,57 @@ WITHHELD_IDS = frozenset({
     'complete_tablet_of_second_death', 'silverlight_pendant',
     'oathkeeper_sword', 'lionheart_shield', 'master_lockpick',
 })
+
+
+_POTION_DEFS: dict | None = None
+
+
+def _potion_def(pid: str) -> dict:
+    """Today's data/items/potion.json entry for ``pid`` (read once). Flags
+    are read from the data by id, so a potion pickled in an older save gets
+    them too."""
+    global _POTION_DEFS
+    if _POTION_DEFS is None:
+        try:
+            with open(os.path.join(_DATA_DIR, 'potion.json'), encoding='utf-8') as f:
+                _POTION_DEFS = json.load(f)
+        except (OSError, ValueError):
+            _POTION_DEFS = {}
+    return _POTION_DEFS.get(pid or '', {}) or {}
+
+
+def is_rare_potion(item) -> bool:
+    """A potion no outcome may take on its own (2026-10-18): one marked
+    ``rare`` in potion.json (the Draught of Mimir's Well, Fafnir's Blood,
+    Soma, the Water of Lethe, the Elixir of Gilgamesh), one that asks a
+    question before it works, or anything an NPC may never take (withheld)."""
+    if not isinstance(item, Potion):
+        return False
+    if _potion_def(getattr(item, 'id', '')).get('rare') or getattr(item, 'rare', False):
+        return True
+    return bool(getattr(item, 'quiz', None)) or withheld(item)
+
+
+def ordinary_potions_cheapest_first(items_) -> list:
+    """The ordinary potions among ``items_`` (never a rare one), cheapest
+    first: what an encounter outcome that takes "a potion" with no picker
+    takes (economy.merchant_price; ties by worth, then pack order)."""
+    import economy
+    pots = [it for it in items_ if isinstance(it, Potion) and not is_rare_potion(it)]
+    return sorted(pots, key=lambda it: (economy.merchant_price(it, 1),
+                                        economy.item_worth(it)))
+
+
+def can_be_thrown(item) -> bool:
+    """Whether a potion may be thrown. The Draught of Mimir's Well may not
+    (``"throwable": false`` in potion.json): a fortune of a drink, made to be
+    drunk. Thieves may still steal it, and give it back when they die."""
+    if not isinstance(item, Potion):
+        return True
+    d = _potion_def(getattr(item, 'id', ''))
+    if 'throwable' in d:
+        return bool(d['throwable'])
+    return bool(getattr(item, 'throwable', True))
 
 
 def withheld(item) -> bool:

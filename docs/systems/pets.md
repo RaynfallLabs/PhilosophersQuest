@@ -230,6 +230,8 @@ Found on the floor by band, or bought from a trader (§12). When the player thro
 1. If it's a **bound** sphere (recalled from a prior pet via Shift+P → Recall), the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command, `hatch_sphere`). The sphere is consumed. No naming popup.
 2. Otherwise `roll_sphere_species(sphere, present)` picks the species (an ordinary sphere: rarely Shep or a family cat, else `random_species()`; a Hearth Sphere: one of the family not yet met, else `random_species()`; see §11), the sphere's kind becomes known (as a thrown potion's does), and `_hatch_sphere_pet(species, x, y, level=hatch_level(sphere), sphere_id=sphere.id)` builds the pet at its sphere's level, logs `hatch_message(pet)` (a grown pet has its own stage words: "out steps Shep the Legend..."), and opens the naming popup (defaulting to the species name at that stage: "Shep the Farmhound"; Shep and the family cats bring their own popup words, `naming_story`).
 
+Once a sphere's kind is known (thrown, identified, or bought known), it has an Encyclopedia page under **Wonders** (B, l): its art, its lore and the level it wakes at, never who hatches from it (`Game._wonder_entries`, 2026-10-18).
+
 The sphere lands at the thrown target tile; if the tile is occupied the pet falls to an adjacent walkable tile. With no room at all, any sphere (bound or not) rolls to a stop unbroken on the open tile it reached, to be thrown again somewhere with room (it used to shatter, wasting an unbound one).
 
 ### 4.2 Duck of Doom transform — `main.py::_duck_of_doom_transform`

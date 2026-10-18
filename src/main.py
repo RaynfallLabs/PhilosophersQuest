@@ -8745,6 +8745,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('i', 'lore_hints', 'Lore Hints'),
         ('j', 'recipes', 'Recipes'),
         ('k', 'treasure', 'Treasure'),
+        ('l', 'wonders', 'Wonders'),     # the Soul Spheres and the Draught
     ]
 
     def _open_encyclopedia(self):
@@ -8757,6 +8758,33 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._encyclopedia_entry = None
         self._encyclopedia_from_observe = False
         self.state = STATE_ENCYCLOPEDIA
+
+    def _wonder_entries(self) -> list:
+        """The Wonders pages the hero has earned: a Soul Sphere once its kind
+        is known (it is found as a caged sphere of unknown worth; thrown, it
+        is known), the Draught of Mimir's Well once held (it is known on
+        sight). Each entry carries ``_kind`` ('sphere' / 'draught')."""
+        import json
+        from paths import data_path
+        p = self.player
+        known = set(getattr(p, 'known_item_ids', ()) or ())
+        seen = set(getattr(p, 'seen_item_ids', ()) or ())
+        entries = []
+        try:
+            with open(data_path('data', 'items', 'artifact.json'), encoding='utf-8') as f:
+                arts = json.load(f)
+            with open(data_path('data', 'items', 'potion.json'), encoding='utf-8') as f:
+                pots = json.load(f)
+        except (OSError, ValueError):
+            return []
+        for iid, d in arts.items():
+            if isinstance(d, dict) and isinstance(d.get('sphere'), dict) and iid in known:
+                entries.append({'_id': iid, '_kind': 'sphere', **d})
+        d = pots.get('draught_of_mimir')
+        if isinstance(d, dict) and ('draught_of_mimir' in known or 'draught_of_mimir' in seen):
+            entries.append({'_id': 'draught_of_mimir', '_kind': 'draught', **d})
+        entries.sort(key=lambda e: e.get('name', e['_id']))
+        return entries
 
     def _bestiary_known_kinds(self) -> set:
         """The monster kinds with a Bestiary page: every kind the hero has
@@ -8807,6 +8835,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             known_ids = (set(getattr(self.player, 'seen_item_ids', ()) or ())
                          | set(getattr(self.player, 'appraised_treasure', ()) or ()))
 
+        if category == 'wonders':
+            self.encyclopedia_entries = self._wonder_entries()
+            return
         if category == 'journal':
             # The Journal draws from the register and the entries directly
             # (game_render._draw_journal); the list stays for old callers.

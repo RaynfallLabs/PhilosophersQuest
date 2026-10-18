@@ -1692,6 +1692,19 @@ def _(g):
     press(g, pygame.K_g, 'g')
 
 
+@scene('menu_kit_valuables', 'Menus',
+       'K, the Valuables tab: treasure with weight and worth (one kind valued by a '
+       'trader, the others only by order of magnitude).', expect='kit')
+def _(g):
+    _treasure_pack(g)
+    ruby = next(i for i in g.player.inventory if getattr(i, 'id', '') == 'treasure_burmese_ruby')
+    ruby.count = 3
+    g.player.appraised_treasure.add('treasure_saxon_brooch')
+    press(g, pygame.K_k, 'k')
+    g._kit_tab = [t[1] for t in g._KIT_TABS].index('valuables')
+    g._kit_sel = 0
+
+
 @scene('lore_treasure', 'Lore', 'X / lore on a piece of treasure: its dossier and worth.',
        expect='lore', key=True)
 def _(g):
@@ -1709,6 +1722,31 @@ def _(g):
     g.player.appraised_treasure.add('treasure_arras_tapestry')
     press(g, pygame.K_b)
     press(g, pygame.K_k, 'k')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_encyclopedia_wonders', 'Menus',
+       "B, l: the Wonders pages (the Soul Spheres the hero knows and the Draught of "
+       "Mimir's Well), Enter on the Draught.", expect='encyclopedia')
+def _(g):
+    from pet_system import spheres
+    g.player.known_item_ids.update(list(spheres())[:3])
+    g.player.seen_item_ids.add('draught_of_mimir')
+    press(g, pygame.K_b)
+    press(g, pygame.K_l, 'l')
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e['_id'] == 'draught_of_mimir')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_encyclopedia_wonders_sphere', 'Menus',
+       "B, l, Enter on a Soul Sphere the hero has thrown: its page, art and lore.",
+       expect='encyclopedia')
+def _(g):
+    from pet_system import spheres
+    g.player.known_item_ids.update(spheres())
+    press(g, pygame.K_b)
+    press(g, pygame.K_l, 'l')
     press(g, pygame.K_RETURN)
 
 

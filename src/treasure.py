@@ -212,6 +212,18 @@ def value_text(player, item) -> str:
     return f"Worth {band(v)[1]} (not yet valued)"
 
 
+def worth_short(player, item) -> str:
+    """The worth for a table cell, as the shop prices it once valued:
+    '2,500 gold', '2,500 gold each', or only the order of magnitude for a
+    kind no trader has valued ('Thousands of gold, unvalued')."""
+    v = unit_value(item)
+    n = max(1, int(getattr(item, 'count', 1) or 1))
+    if is_valued(player, item):
+        return f"{v:,} gold" + (" each" if n > 1 else "")
+    words = band(v)[1]
+    return f"{words[:1].upper()}{words[1:]}, unvalued"
+
+
 def kind_label(item) -> str:
     return {'gem': 'Gem', 'jewellery': 'Jewellery', 'coins': 'Old Coins',
             'art': 'Art Object'}.get(getattr(item, 'kind', ''), 'Treasure')
