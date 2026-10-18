@@ -13,7 +13,11 @@ an "edit" entry is instead redrawn from its own earlier painting:
            "rain": [[x0, y0, x1, y1], ...],  optional: bold rain painted on the pixel pass (scene.py)
            "recolour": [[x0, y0, x1, y1, "#from", "#to"], ...]  optional: inside the box (x1, y1
                                              not included) one sprite colour becomes another
+           "shift": [[x0, y0, x1, y1, dx], ...]  optional: every pixel inside the box moves dx to the
+                                             right (negative: left) and the pixels it leaves become empty;
+                                             a few row bands with growing dx shear a limb (feet closer)
            "touch": [[x, y, "#rrggbb"], ...]} optional: sprite pixels set by hand after the cut
+                                             (and after any shift, so give the shifted positions)
 
 The cut picks 32 colours for the whole sprite, so a pale belly can end up sharing the
 painted rain's grey: "recolour" gives it its own colour back.
@@ -87,6 +91,10 @@ def run(b, out, cut_only=False):
             for x in range(x0, x1):
                 if spr.getpixel((x, y)) == _rgba(old):
                     spr.putpixel((x, y), _rgba(new))
+    for x0, y0, x1, y1, dx in e.get('shift', []):
+        box = spr.crop((x0, y0, x1, y1))
+        spr.paste((0, 0, 0, 0), (x0, y0, x1, y1))
+        spr.alpha_composite(box, (x0 + dx, y0))
     for x, y, col in e.get('touch', []):
         spr.putpixel((x, y), _rgba(col))
     spr.save(os.path.join(folder, f'c{c}_sprite.png'))
