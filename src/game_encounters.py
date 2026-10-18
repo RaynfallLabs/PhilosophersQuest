@@ -627,6 +627,10 @@ class EncountersMixin:
                 if lvl_enc['tag'] == tag:
                     enc = lvl_enc
                     break
+        if enc is not None and enc.get('tag') != tag:
+            # The floor's own encounter belongs to another figure (the Road
+            # bound a slot on the tomb's floor): never open the wrong scene.
+            enc = None
         if enc is None:
             # A figure a system placed itself (Setne's tomb): its scene is in
             # the encounter data by tag, not in this run's floor views.
@@ -991,6 +995,14 @@ class EncountersMixin:
 
         applied = 0
         old_karma = self.karma
+        if gate and karma_delta and kind == karma.LEGACY:
+            # Untyped karma has no place once the gate is on; the validator
+            # keeps it out of the data. Never a crash in play: log it, move
+            # nothing.
+            from game_log import log_error
+            log_error(f'untyped karma {karma_delta:+d} on {tag!r} with the gate on: ignored',
+                      exc_info=False)
+            karma_delta = 0
         if gate and karma_delta:
             applied = karma.adjust(self, karma_delta, kind=kind, source=tag)
 

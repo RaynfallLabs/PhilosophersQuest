@@ -249,8 +249,12 @@ class EmberpupMixin:
         if not getattr(pup, '_emberpup_karma_given', False):
             pup._emberpup_karma_given = True
             import karma
-            karma.adjust(self, int(d['first_feed_karma']), kind='legacy',
-                         source='emberpup_feed')
+            # Feeding a starving pup is kindness, not a weighed deed: with
+            # the karma gate on it moves nothing (DEEDS_KARMA_DESIGN 3.1;
+            # Brandon, decision 9). Off, it pays as it always did.
+            if not karma.gate_enabled():
+                karma.adjust(self, int(d['first_feed_karma']), kind='legacy',
+                             source='emberpup_feed')
             import deeds
             deeds.note(self, 'aid.emberpup', source='emberpup', unique=True)
         self.add_message(f"The Emberpup eats your {name}.", 'success')

@@ -26,7 +26,7 @@ def _new(name):
     return Game(_screen(), player_name=name)
 
 
-def test_round_trip_keeps_register_and_chronicle():
+def test_round_trip_keeps_register_and_chronicle(gate_off):
     import deeds
     import karma
     from chronicle import display_text

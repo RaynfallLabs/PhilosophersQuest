@@ -37,9 +37,11 @@ MODELLED (named constants below):
     py tools/balance/karma_sim.py                 # 4000 runs per style
     py tools/balance/karma_sim.py --n 500 --seed 3 --json
 
-The test (tests/test_karma_budget_sim.py) runs it small and asserts only that
-it runs and reports; the section 8.2 bands are asserted from Phase 3b, once
-the converted content ships.
+tests/test_karma_budget_sim.py (slow) runs it at N = 4,000 per style, seed 1,
+on the shipped data and asserts the section 8.2 bands; the saint's band is a
+strict xfail until Brandon chooses how to reconcile it with decision 5
+(ENCOUNTER_STORIES_DRAFT.md Part J6). tests/test_story_schema_fields.py runs
+it small on every plain test run.
 """
 from __future__ import annotations
 

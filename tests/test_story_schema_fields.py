@@ -227,9 +227,9 @@ def test_karma_sim_runs_on_fixtures_and_shipped_data():
         assert -10 <= r['p10'] <= r['p50'] <= r['p90'] <= 10
         # Each share is rounded to four places, so the four can miss 1 by 2e-4.
         assert abs(r['sword'] + r['scales'] + r['silence'] + r['below_zero'] - 1) < 5e-4
-    # The gate is switched on only inside the simulation.
+    # The simulation sets the gate itself and puts the shipped rules back.
     import karma
-    assert karma.gate_enabled() is False
+    assert karma.rules() is karma._RULES and karma.gate_enabled() is True
     encs = [('npc', copy.deepcopy(SILAS))] + _all_three()
     small = karma_sim.run(n=40, seed=3, encounters=encs)
     assert small['untyped_karma_options'] == 0

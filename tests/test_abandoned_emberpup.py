@@ -201,7 +201,9 @@ def test_give_food_eats_one_food_and_unlocks_i_choose_you():
     _key(g, pygame.K_a)
     assert food[0] not in g.player.inventory and food[1] in g.player.inventory
     assert pup._emberpup_fed is True
-    assert g.karma == karma + 1
+    # Kindness, not a weighed deed: with the karma gate on (as shipped) the
+    # first feed moves nothing (DEEDS_KARMA_DESIGN 3.1); off, it was +1.
+    assert g.karma == karma
     assert g._emberpup_phase == 'outcome'
     _key(g, pygame.K_RETURN)
     assert g._emberpup_phase == 'options'
@@ -429,3 +431,16 @@ def test_the_data_ships_with_the_game():
         assert "'data/abandoned_emberpup.json'" in f.read()
     assert os.path.exists(os.path.join(ROOT, 'assets', 'tiles', 'monsters',
                                        'npc_abandoned_emberpup.png'))
+
+
+def test_first_feed_paid_its_old_point_only_with_the_gate_off(gate_off):
+    g = _game()
+    pup, _ = _place_pup(g, 5)
+    _clear_food(g)
+    _food(g, 1)
+    karma = g.karma
+    g._start_emberpup_encounter(pup)
+    _key(g, pygame.K_RETURN)
+    _key(g, pygame.K_1)
+    _key(g, pygame.K_a)
+    assert pup._emberpup_fed is True and g.karma == karma + 1

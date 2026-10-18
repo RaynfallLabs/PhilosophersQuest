@@ -324,7 +324,7 @@ def _old_apply(g, opt):
     return max(-10, min(10, g.karma + opt.get('karma', 0)))
 
 
-def test_shipped_anchor_options_apply_exactly_as_before():
+def test_shipped_anchor_options_apply_exactly_as_before(gate_off):
     """Every shipped anchor option whose cost needs no item picker, run
     through the new engine: karma, outcome text, spent mark and phase are
     exactly what the old _apply_npc_choice produced."""
@@ -366,7 +366,7 @@ def setup_module(_m):
     _GAME = _game(3)
 
 
-def test_surya_doubles_on_a_positive_request_with_gate_off(monkeypatch):
+def test_surya_doubles_on_a_positive_request_with_gate_off(monkeypatch, gate_off):
     """Gate off: Surya's Gift doubles whenever the option asked for karma,
     even at +10 where nothing could be applied (the old rule)."""
     import chain_passives
@@ -381,7 +381,7 @@ def test_surya_doubles_on_a_positive_request_with_gate_off(monkeypatch):
     assert len(calls) == 2 and g.karma == 10
 
 
-def test_crossing_line_still_fires_at_the_npc_site_only():
+def test_crossing_line_still_fires_at_the_npc_site_only(gate_off):
     from chronicle import text_of
     import karma
     g = _game()

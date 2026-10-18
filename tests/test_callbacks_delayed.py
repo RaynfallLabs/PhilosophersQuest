@@ -268,8 +268,12 @@ def test_a_delayed_reward_arrives_on_its_floor_once():
     assert not g.player.has_effect('blessed')            # once
 
 
-def test_a_missed_callback_is_carried_or_dropped():
+def test_a_missed_callback_is_carried_or_dropped(monkeypatch):
     import deeds
+    import karma
+    # Exact targets on floors 3-12: with the Road on, its slots would take
+    # some of those floors (a callback never lands on one).
+    monkeypatch.setattr(karma, '_RULES', dict(karma.rules(), road_enabled=False))
     undo = []
     _with_fixture(undo)
     try:

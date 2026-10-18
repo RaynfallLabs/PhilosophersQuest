@@ -1,7 +1,7 @@
 {
-  "_doc": "How the soul is weighed (DEEDS_KARMA_DESIGN.md section 3, with Brandon's decisions in section 11). Read by src/karma.py and tools/encounters/validate.py. gate_enabled stays false until Wave A content ships (Phase 3b): while it is off every karma change applies exactly as it did before the redesign, and block slots and the ledger are only recorded.",
-  "gate_enabled": false,
-  "road_enabled": false,
+  "_doc": "How the soul is weighed (DEEDS_KARMA_DESIGN.md section 3, with Brandon's decisions in section 11). Read by src/karma.py and tools/encounters/validate.py. gate_enabled and road_enabled are on since the story content shipped (Phase 3, 2026-10-17): one gated +1 a 10-floor block, kept oaths fill the earliest open block, constancy capped, and the Road places the encounters. Off, every karma change applies as it did before the redesign (the ledger is still written) and the old per-floor rolls place encounters.",
+  "gate_enabled": true,
+  "road_enabled": true,
   "block_cap": 1,
   "constancy_cap": 2,
   "run_start_schedule_doc": "Callbacks placed when a run begins, whatever the hero does (game_road._schedule_run_start). Skipped while the encounter is not in the data. The Gate (C18) reads the people met on the way down; it never touches the floor 99 Judgment.",

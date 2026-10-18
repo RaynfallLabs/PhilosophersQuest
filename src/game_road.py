@@ -353,6 +353,8 @@ class RoadMixin:
         """Late binding of a light, medium or high slot (5.3)."""
         if not self._road_enabled():
             return
+        if (getattr(self, '_flavor_encounter_levels', None) or {}).get(level):
+            return      # the floor already holds an encounter: one a floor
         import economy
         import flavor_encounters
         import npc_encounters
