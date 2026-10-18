@@ -4777,7 +4777,25 @@
             "saved.exposed_child",
             "told.reformers_dilemma"
           ],
-          "chronicle": "Asked a hall-chief whether the first of his people to make the law kinder had been wrong. He had no answer. His wife picked up the baby."
+          "chronicle": "Asked a hall-chief whether the first of his people to make the law kinder had been wrong. He had no answer. His wife picked up the baby.",
+          "delayed": [
+            {
+              "after_floors": [
+                3,
+                6
+              ],
+              "requires": {
+                "deeds_all": [
+                  "saved.exposed_child"
+                ]
+              },
+              "reward": {
+                "type": "message"
+              },
+              "text": "A Brother in a patched brown habit from the house on the side stair catches you up. \"Hrolf's wife brought the little one to us for the winter, where the hall can't change its mind. She feeds like a wolf cub. We named her Astrid.\"",
+              "chronicle": "A Brother from the side stair found me. Hrolf's wife brought the girl from the stone to them for the winter. She is feeding. They named her Astrid."
+            }
+          ]
         },
         "fail": {
           "outcome": "He has an answer for everything you say. So you pick the baby up yourself, fleece and all, and carry her to the Brothers' house on the side stair, and he lets you, because by his law she is nobody's now.",
@@ -4786,7 +4804,25 @@
           "deeds": [
             "saved.exposed_child"
           ],
-          "chronicle": "Lost an argument with a hall-chief about leaving babies on stones, so I took the baby. By his law she belonged to nobody. By mine she did."
+          "chronicle": "Lost an argument with a hall-chief about leaving babies on stones, so I took the baby. By his law she belonged to nobody. By mine she did.",
+          "delayed": [
+            {
+              "after_floors": [
+                3,
+                6
+              ],
+              "requires": {
+                "deeds_all": [
+                  "saved.exposed_child"
+                ]
+              },
+              "reward": {
+                "type": "message"
+              },
+              "text": "A Brother in a patched brown habit from the house on the side stair catches you up. \"The girl you carried in is feeding. Her mother comes at night, when the hall is asleep. We named her Astrid.\"",
+              "chronicle": "A Brother from the side stair found me. The girl I carried in from the stone is feeding, and her mother comes at night. They named her Astrid."
+            }
+          ]
         },
         "road": {
           "id": "flv_exposed_child.argue",
@@ -4799,16 +4835,34 @@
           "type": "gold_pct",
           "amount": 15
         },
-        "outcome": "He takes the money and does not argue. The baby stops crying in your arms, which is the only good thing in the deal. The custom stands. The next one will be on the stone too.",
+        "outcome": "He takes the money and does not argue. Then his wife comes out of the longhouse and lifts the baby off the stone, because the coin is her winter's bread now, and she goes back in without a word to either of you. The custom stands. The next one will be on the stone too.",
         "deeds": [
           "saved.exposed_child",
           "aid.exposed_child"
         ],
-        "chronicle": "Paid a hall-chief the price of a winter's bread for a baby he was leaving on a stone. He took it. The next baby will be on the stone too.",
+        "chronicle": "Paid a hall-chief the price of a winter's bread for a baby he was leaving on a stone. His wife took her back inside. The next baby will be on the stone too.",
         "road": {
           "id": "flv_exposed_child.buy",
           "hint": "Buying one child off a custom keeps the custom open for business."
-        }
+        },
+        "delayed": [
+          {
+            "after_floors": [
+              3,
+              6
+            ],
+            "requires": {
+              "deeds_all": [
+                "saved.exposed_child"
+              ]
+            },
+            "reward": {
+              "type": "message"
+            },
+            "text": "A Brother in a patched brown habit from the house on the side stair catches you up. \"Hrolf's wife brought her girl to us to be blessed, the one your gold bought back. She is feeding. They named her Astrid.\"",
+            "chronicle": "A Brother from the side stair found me. The girl my gold bought off the stone is feeding. Her mother named her Astrid."
+          }
+        ]
       },
       {
         "label": "Walk on. His hall, his law",

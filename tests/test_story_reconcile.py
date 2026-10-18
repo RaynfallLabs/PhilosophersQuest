@@ -251,3 +251,28 @@ def test_rans_net_is_a_real_unique_net_from_andvaris_pool_only():
         spec = json.load(f)['rans_net']
     assert not any(spec['floorSpawnWeight'].values())               # never random loot
     assert os.path.exists(os.path.join(ROOT, 'assets', 'tiles', 'items', 'rans_net.png'))
+
+
+def test_the_exposed_child_is_named_on_every_path_that_saves_her():
+    """S08 (Brandon's note): option 2 no longer leaves the hero holding a
+    newborn, and every saving path brings a Brother from the side stair a
+    few floors on, with her name. Walking on brings nobody."""
+    e = _enc('flv_exposed_child')
+    argue, buy, walk = e['options']
+    assert 'in your arms' not in buy['outcome'] and 'his wife comes out' in buy['outcome']
+    assert buy['outcome'].endswith('The custom stands. The next one will be on the stone too.')
+    for branch in (argue['pass'], argue['fail'], buy):
+        (dl,) = branch['delayed']
+        assert dl['after_floors'] == [3, 6]
+        assert dl['requires'] == {'deeds_all': ['saved.exposed_child']}
+        assert 'karma' not in dl and dl['reward'] == {'type': 'message'}
+        assert 'Astrid' in dl['text'] and 'Astrid' in dl['chronicle']
+        g = _game()
+        g._apply_outcome_deeds(branch, 'flv_exposed_child')
+        (p,) = [x for x in g._deeds_reg()['pending'] if x['kind'] == 'reward']
+        k = g.karma
+        g._deliver_due_rewards(p['target'])
+        assert g.karma == k
+        lines = [x for x in g._chronicle if isinstance(x, dict) and 'Astrid' in x.get('text', '')]
+        assert len(lines) == 1 and lines[0]['kind'] == 'consequence' and lines[0]['cause']
+    assert not walk.get('delayed') and walk['karma'] == -1           # left as it is
