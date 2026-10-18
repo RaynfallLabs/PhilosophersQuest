@@ -8006,7 +8006,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     # ------------------------------------------------------------------
-    # Study Journal  (; key — in-game missed question review)
+    # Missed Questions  (; key — in-game missed question review)
     # ------------------------------------------------------------------
 
     _STUDY_SUBJECTS = [
@@ -8015,7 +8015,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     ]
 
     def _open_study_journal(self):
-        """Open the study journal to review missed questions by category."""
+        """Open the Missed Questions screen to review them by category."""
         if not self.missed_questions:
             self.add_message("No missed questions to review yet.", 'info')
             return

@@ -527,7 +527,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `n` | recall lore |
 | `?` / `/` | help |
 | `x` | examine known items |
-| `b` | encyclopedia |
+| `b` | encyclopedia (`h` there opens the Journal) |
 | `d` | drop menu (altar / fountain / grave interact special-case) |
 | `y` | merchant shop |
 | `v` | active powers menu |
@@ -536,7 +536,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `o` | observe cursor |
 | `k` | kit: compare, then act on the selected item (E/D/I/X, see §22) |
 | `j` | discoveries |
-| `;` | study journal (missed questions in-run) |
+| `;` | Missed Questions (review this run's missed questions) |
 | `TAB` | cycle zoom |
 | Arrows | move / attack |
 
