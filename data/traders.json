@@ -114,7 +114,7 @@
       "reactions": [
         {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Kindness gets a kinder price here."}
       ],
-      "friend": {"person": "marta", "when": {"deeds_all": ["saved.marta"], "deeds_none": ["lost.marta"]},
+      "friend": {"person": "marta", "when": {"deeds_all": ["saved.marta"]},
                  "name": "Marta Venn", "title": "Rat-Catcher and Apothecary", "sprite": "npc_rat_catcher",
                  "line": "Leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price. Don't argue."}
     },
@@ -145,12 +145,12 @@
         "sold_out": "Racks are empty. Go and kill something with a sword and bring it here."
       },
       "friend": {"person": "pell", "when": {"deeds_all": ["saved.ormond_company"]},
-                 "name": "Corporal Pell", "title": "Armourer", "sprite": "npc_deserter",
+                 "name": "Jory Pell", "title": "Armourer", "sprite": "npc_deserter",
                  "line": "Pell. Ex-Legion. I sell what my company doesn't need now. Friend's price for the one who sent me back."}
     },
 
     "bookseller": {
-      "name": "Aldous Vellum",
+      "name": "Ambrose Vellum",
       "title": "Bookseller",
       "sprite": "trader_bookseller", "sprite_fallback": "npc_scholar",
       "lore": "A scribe who copies the writing off the dungeon walls and sells it to anyone who will pay for words. He has been sneezing since the third floor and refuses to discuss it.",

@@ -66,8 +66,8 @@ encounters offer them too.
 | Cure | Mother Wort, Old Mags, Doctor Finch | 0.25 floors | Poison, disease, blindness, confusion, petrification and the rest. |
 | Restore drained stats | Mother Wort, Vesper, the Medical Construct | 0.8 floors, or 10% of the purse | Every stat point a drain, a drain potion or a disease took. These are now tracked. |
 | Bind your wounds | Mother Wort, Old Mags | 0.3 floors | Full health. |
-| Study an item together | Aldous Vellum | 0.3 floors | You still answer the same identify question, but a wrong answer costs only the fee: no 10-turn stun. |
-| Map of this floor | Grindle, Aldous Vellum | 0.3 floors | The whole layout. |
+| Study an item together | Ambrose Vellum | 0.3 floors | You still answer the same identify question, but a wrong answer costs only the fee: no 10-turn stun. |
+| Map of this floor | Grindle, Ambrose Vellum | 0.3 floors | The whole layout. |
 | Hire a porter | Old Mags | 0.5 floors | `porter` for 3 floors. |
 
 Nothing is charged when there is nothing to do.
@@ -256,7 +256,7 @@ Grindle's, which is the existing trader art.
 | Generalist | **Grindle**, Deep Gnome Trader | Scavenges from the dead and doesn't say where his stock comes from. Talks about himself in the third person ("which he says is a gnome thing. It is not a gnome thing."). | "Grindle sells. Grindle buys. Grindle does not ask where you got it." / "Everything is real. Mostly. Some of it." |
 | Apothecary | **Mother Wort** (Agnes Wort) | Came down eleven years ago for cave-moss that has never seen the sun. | "Wipe your feet. You're bleeding on my moss." / "I don't do credit. Credit is how apothecaries end up as moss." |
 | Armourer | **Brannoc** (Ulf Brannoc) | Was a king's armourer twenty years ago; the army never came back up. | "Twenty years I've waited for that army to come back up. You'll do instead." / "Who sharpened this? A goat?" |
-| Bookseller | **Aldous Vellum** | Copies the writing off the walls and sells it. Has been sneezing since floor three. | "Quietly, please. The books are sleeping." / "Oh, that's a good one. ACHOO. Sorry. A good one." |
+| Bookseller | **Ambrose Vellum** | Copies the writing off the walls and sells it. Has been sneezing since floor three. | "Quietly, please. The books are sleeping." / "Oh, that's a good one. ACHOO. Sorry. A good one." |
 | Abyssal dealer | **Vesper**, Dealer in the Deep | Nobody knows what Vesper is. Polite, which is worse. Marks prices up ×1.5; buys curses. | "How lovely. A customer with a pulse." / "I buy curses, darling. Especially the ones that bite." |
 | Gate camp | **Old Mags Thorn**, Sutler | Follows heroes to the gates, because heroes pay best the night before a fight. | Floor 39: "Medusa's down there. Don't look at her. I mean it. The last lad who looked is my coat rack now." Floor 79: "Fenrir's chained down there. Mostly. 'Mostly' is why I'm still in business." |
 

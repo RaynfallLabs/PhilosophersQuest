@@ -62,7 +62,7 @@ services and their lines.
 | generalist | Grindle, Deep Gnome Trader | 2-98, about 1 floor in 6 | potions, scrolls, rings, wands, ammo, common gear, sometimes a Soul Sphere | everything (a fence) | map |
 | apothecary | Mother Wort | 2-35, 3 a run | a cure or healing for sure, potions, food | potions, food, ingredients | cure, restore, heal |
 | armourer | Brannoc | 10-70, 3 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
-| bookseller | Aldous Vellum | 15-90, 2 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
+| bookseller | Ambrose Vellum | 15-90, 2 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
 | abyssal | Vesper, Dealer in the Deep | 61-98, 2 a run | named rings first, wands, potions (x1.5) | everything, curses too | cut a curse off, restore |
 | sutler (gate camp) | Old Mags Thorn | 19, 39, 59, 79, always | healing for sure, potions, food, a scroll, ammo, armour | everything | repair, cure, heal, porter |
 

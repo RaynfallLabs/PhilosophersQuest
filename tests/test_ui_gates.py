@@ -658,15 +658,6 @@ ALLOWED_ELLIPSIS = {
         'narration: the same line on the result card',
     ('result_hack_reality', 'You speak the First Word'):
         'narration: reality shudders, not truncated text',
-    # The economy refactor (2026-10-17) took the trader out of floor
-    # generation, so the Black Knight scenes' floor 17 changed: it now has water (its
-    # atmosphere line trails off on purpose) and a crossbow in sight whose
-    # long unidentified name the In Sight rail cuts. The rail cut is a real
-    # UI issue left for the UI fixers (ECONOMY_REFACTOR_REPORT.md section 8).
-    ('black_knight', 'You hear the drip of water echoing'):
-        'narration: the floor-atmosphere line trails off on purpose',
-    ('black_knight', 'Heavy Dark Light Cr'):
-        'the In Sight rail cuts a long item name; open UI issue',
 }
 
 

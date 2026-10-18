@@ -84,6 +84,8 @@ src/
   food_system.py      - Harvest and cooking mechanics
   container_system.py - Chests, sacks, lockable containers (lockpicking)
   economy.py          - The gold economy: what a floor earns and what things cost
+  traders.py          - Named traders: who, where, their stock, prices, selling, services
+  game_traders.py     - TradersMixin: placing traders and the Buy / Sell / Services screens
   pet_system.py       - Soul Sphere pets: AI, bonding, levels
   escort_system.py    - Escorts: people the hero walks somewhere
 
