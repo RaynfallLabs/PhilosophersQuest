@@ -135,6 +135,21 @@ def _quiz_mode_phrase(mode, threshold=None) -> str:
     return mode.replace('_', ' ')
 
 
+def _picker_scroll(selected: int, total: int, visible: int, cols: int) -> int:
+    """First entry shown by a quick picker. One column scrolls a row at a
+    time, keeping the cursor in view. Two columns turn a whole page: rows
+    are laid down the left column then the right, so scrolling by one row
+    shuffled every item across the columns and a pack with more than eight
+    foods looked as if it stopped at the eighth (Brandon, 2026-10-18). Now
+    Down from the last item of a page shows the next eight, "9-16 of 20"."""
+    if total <= visible or visible <= 0:
+        return 0
+    if cols > 1:
+        return (max(0, selected) // visible) * visible
+    return max(0, min(selected - visible + 1 if selected >= visible else 0,
+                      max(0, total - visible)))
+
+
 def _identify_status_label(id_level: int) -> str:
     """Map an item's visible id level (``_kit_visible_level``: 5 once this
     copy is identified or its kind known, else 0) to a status word. One
@@ -4466,9 +4481,13 @@ class RenderMixin:
                                 max(0, total - visible)))
         name_font, detail_font = self.font_sm, get_font('body', 16)
         key_font = get_font('body', 18, bold=True)
+        # A long list gives up a strip at the right for a scroll bar, so it
+        # shows there is more above or below (the feed list seemed to stop
+        # at its eighth item, 2026-10-18).
+        row_w = list_body.w - (S(12) if total > visible else 0)
         for row_i, entry in enumerate(entries[scroll:scroll + visible], start=scroll):
             ry = list_body.y + (row_i - scroll) * row_h
-            self._menu_row_kit(pygame.Rect(list_body.x, ry, list_body.w, row_h - S(6)),
+            self._menu_row_kit(pygame.Rect(list_body.x, ry, row_w, row_h - S(6)),
                                entry, selected=(row_i == selected),
                                name_font=name_font, detail_font=detail_font,
                                key_font=key_font, name_sizes=name_sizes,
@@ -4478,6 +4497,9 @@ class RenderMixin:
             ts = get_font('body', 16).render(tag, True, KT.TEXT_DIM)
             self.screen.blit(ts, (list_rect.right - ts.get_width() - S(12),
                                   list_rect.bottom - ts.get_height() - S(6)))
+            bar = pygame.Rect(list_body.x + row_w, list_body.y,
+                              S(12), visible * row_h - S(6))
+            self._ui_scrollbar(bar, scroll, total, visible, color=border)
 
         detail_body = pygame.Rect(detail_body.x + S(2), detail_body.y,
                                   detail_body.w - S(4), detail_body.h)
@@ -4586,11 +4608,7 @@ class RenderMixin:
                 break
             rows_visible -= 1
         visible = max(1, rows_visible * cols)
-        if len(entries) > visible:
-            scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
-                                max(0, len(entries) - visible)))
-        else:
-            scroll = 0
+        scroll = _picker_scroll(selected, len(entries), visible, cols)
 
         bx = _centre_x(bw)
         by = _centre_y(bh)
@@ -4710,9 +4728,11 @@ class RenderMixin:
         if total > visible:
             scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
                                 max(0, total - visible)))
+        # A long list gives up a strip at the right for a scroll bar.
+        row_w = list_body.w - (S(12) if total > visible else 0)
         for row_i, entry in enumerate(entries[scroll:scroll + visible], start=scroll):
             ry = list_body.y + (row_i - scroll) * row_h
-            row_rect = pygame.Rect(list_body.x, ry, list_body.w, row_h - S(6))
+            row_rect = pygame.Rect(list_body.x, ry, row_w, row_h - S(6))
             is_sel = row_i == selected
             pygame.draw.rect(self.screen, (34, 43, 84) if is_sel else
                              (18, 22, 40) if row_i % 2 == 0 else (12, 15, 28),
@@ -4760,6 +4780,9 @@ class RenderMixin:
             ts = get_font('small', 14).render(tag, True, FP.FADED_TEXT)
             self.screen.blit(ts, (list_rect.right - ts.get_width() - S(12),
                                   list_rect.bottom - S(22)))
+            self._ui_scrollbar(pygame.Rect(list_body.x + row_w, list_body.y, S(12),
+                                           visible * row_h - S(6)),
+                               scroll, total, visible, color=border)
 
         detail_body = pygame.Rect(detail_rect.x + S(14), detail_rect.y + S(42),
                                   detail_rect.w - 2 * S(14), detail_rect.h - S(58))
@@ -4798,11 +4821,7 @@ class RenderMixin:
             selected_note = str(entries[selected].get('full_detail')
                                 or entries[selected].get('detail') or '')
         selected_note_h = S(58) if selected_note else 0
-        if len(entries) > visible:
-            scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
-                                max(0, len(entries) - visible)))
-        else:
-            scroll = 0
+        scroll = _picker_scroll(selected, len(entries), visible, cols)
         header_h = S(42) + (S(30) if tabs else 0)
         row_h = S(52)
         footer_h = S(28)
@@ -6729,12 +6748,21 @@ class RenderMixin:
         )
 
     def _draw_pet_sub_picker(self, title: str, items: list, pet, attr: str):
-        """Generic sub-menu renderer for feed/heal item pickers."""
+        """The feed / heal item pickers: a scrolling list beside a detail
+        pane, the Kit and shop's decision menu. It used the quick two-column
+        picker, which showed eight at a time and, scrolling, shuffled the
+        rows between its columns: with a pack full of food only the first
+        eight seemed reachable (Brandon, 2026-10-18). Up/Down, PgUp/PgDn,
+        Home/End and a-z reach every item; "9-16 of 20" says where you are."""
         entries = []
+        heal_share = 25           # _apply_pet_feed: a quarter of its health
+        who = pet.name if pet is not None else "your companion"
         for idx, it in enumerate(items):
             iname = self._display_name(it) if hasattr(self, '_display_name') else it.name
+            details = [(iname, FP.GOLD_BRIGHT, self.font_md)]
+            n = int(getattr(it, 'count', 1) or 1)
             if attr == 'sp_restore':
-                sp = getattr(it, 'sp_restore', 0)
+                sp = int(getattr(it, 'sp_restore', 0) or 0)
                 # The same tags as the Eat menu: a meal is FOOD, an uncooked
                 # ingredient is RAW (it said FOOD here and RAW there).
                 if isinstance(it, Food) or sp:
@@ -6745,10 +6773,27 @@ class RenderMixin:
                     detail = "Raw ingredient"
                     badge = 'RAW'
                     badge_color = FP.WARNING_TEXT
+                xp = max(20, min(80, int(getattr(it, 'sp_restore', 20) or 20) // 2))
+                details += [
+                    (f"Heals {who} by a quarter of its health ({heal_share}%) "
+                     f"and gives {xp} XP.", FP.BODY_TEXT, self.font_sm),
+                    (f"You carry {n}. Feeding uses one.", FP.FADED_TEXT, self.font_sm),
+                ]
             elif attr == 'effect':
                 detail = getattr(it, 'effect', '').replace('_', ' ').title()
                 badge = 'HEAL'
                 badge_color = FP.SUCCESS_TEXT
+                # What _apply_pet_heal does with it.
+                eff = getattr(it, 'effect', 'heal')
+                if eff == 'full_heal':
+                    does = f"Poured over {who}, it restores all of its health."
+                else:
+                    dice = getattr(it, 'power', '') or ('4d8+10' if eff == 'extra_heal' else '2d8+4')
+                    does = f"Poured over {who}, it heals {dice} health."
+                details += [
+                    (does, FP.BODY_TEXT, self.font_sm),
+                    (f"You carry {n}. This uses one.", FP.FADED_TEXT, self.font_sm),
+                ]
             else:
                 detail = ''
                 badge = ''
@@ -6760,18 +6805,19 @@ class RenderMixin:
                 'icon': it,
                 'badge': badge,
                 'badge_color': badge_color,
+                'details': details,
             })
         selected_attr = '_pet_feed_sel' if attr == 'sp_restore' else '_pet_heal_sel'
         selected = self._menu_clamp_selection(selected_attr, len(entries))
         full_title = title
         if pet is not None:
             full_title = f"{title} - {pet.name.upper()}"
-        self._draw_fast_picker(
+        self._draw_decision_menu(
             title=full_title,
             entries=entries,
             selected=selected,
-            subtitle="Companion care",
-            hint="Up/Down: move   Enter or a-z: select   ESC: back",
+            context_lines=[],
+            hint="Up/Down: move   PgUp/PgDn: page   Enter or a-z: select   ESC: back",
             border_color=FP.GOLD_BRIGHT,
         )
 

@@ -324,7 +324,7 @@ Return value from `take_turn` is `('unicorn_actions', [messages])` where message
 `game_menus.py` opens the pet menu with Shift+P. Items eligible for the menu exclude sketch pets and Dad (both temporary). Per-pet actions:
 
 ### 5.1 Feed — STATE_PET_FEED
-Opens a sub-menu listing `Food` and `Ingredient` items in the player's inventory. On select:
+Opens a sub-menu listing `Food` and `Ingredient` items in the player's inventory: a scrolling list beside a detail pane (`_draw_pet_sub_picker` → `_draw_decision_menu`), so every food is reachable with Up/Down, PgUp/PgDn, Home/End or its letter, with a scroll bar and "x-y of N" when the list is long (the old two-column picker seemed to stop at eight; 2026-10-18). The heal picker below is the same list. On select:
 - Heal: 25% of pet max HP, rounded up.
 - XP: half of food's `sp_restore`, clamped 20-80.
 - Consume one unit (handles stackables).

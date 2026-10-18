@@ -1090,14 +1090,22 @@ badge, badge_color, details), `selected` index, `context_lines`
 
 Layout: tabs (if given) → entries list with sprite + 1-line detail
 → selected-entry "details" subpanel on the right (3-4 lines) →
-footer hint.
+footer hint. A list longer than the pane scrolls a row at a time with
+the cursor; it shows "x-y of N" under the list and a scroll bar in a
+strip beside the rows (2026-10-18). The pet feed and heal pickers use
+this menu since 2026-10-18 (they were quick two-column pickers, where a
+pack of more than eight foods seemed to stop at the eighth).
 
 ### 19.2 `_draw_fast_picker_variant_b(...)` L3008-3122
 
 Used by: power menu, discoveries, hero-special pickers.
 
 Simpler — no sprite, no detail subpanel. Compact badge + description.
-Good for terse `[READY | CD 5t | x3 USES]` lists.
+Good for terse `[READY | CD 5t | x3 USES]` lists. In two columns
+(wand, spell, eat, quaff, throw, powers, pet specials) a long list
+turns a whole page (`game_render._picker_scroll`): rows run down the
+left column then the right, so scrolling one row at a time shuffled
+every item across the columns. "9-16 of 20" in the footer.
 
 ### 19.3 Helpers
 

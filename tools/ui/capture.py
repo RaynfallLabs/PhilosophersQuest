@@ -1442,6 +1442,27 @@ def _(g):
     g._pet_open_feed(g._pet_menu_selected_pet())
 
 
+@scene('menu_pet_feed_long', 'Pets', 'Shift+P, feed, with twenty foods in the pack, '
+       'Down x15: the list scrolls (scroll bar, "x-y of 20") and every food is reachable.',
+       expect='pet_feed')
+def _(g):
+    import copy
+    from items import Food, Ingredient, load_items
+    foods = []
+    for d in list(load_items('food')) + list(load_items('ingredient')):
+        if len(foods) == 20:
+            break
+        f = copy.copy(d)
+        f.count = 1
+        foods.append(f)
+    g.player.inventory = [i for i in g.player.inventory
+                          if not isinstance(i, (Food, Ingredient))] + foods
+    g._open_pet_menu()
+    g._pet_open_feed(g._pet_menu_selected_pet())
+    for _ in range(15):
+        press(g, pygame.K_DOWN)
+
+
 @scene('menu_pet_heal', 'Pets', 'Shift+P, heal: pick a potion.', expect='pet_heal')
 def _(g):
     g._open_pet_menu()
