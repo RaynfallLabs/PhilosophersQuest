@@ -349,9 +349,13 @@ def test_shipped_anchor_options_apply_exactly_as_before(gate_off):
                 g.player.hp = g.player.max_hp = 500
                 g.player_gold = 10 ** 6
                 want = _old_apply(g, opt)
+                # The words shown: the option's own, or the variant its state
+                # picks (Edric dead after a failed draught, continuity audit M1).
+                from encounter_schema import resolve_outcome
+                said = resolve_outcome(opt, g._deed_ctx())
                 g._apply_npc_choice(opt)
                 assert g.karma == want, (enc['tag'], i, k)
-                assert g._npc_outcome_text == opt['outcome']
+                assert g._npc_outcome_text == said
                 assert g._npc_encounter_phase == 'outcome'
                 assert enc['tag'] in g._encountered_npcs
                 checked += 1

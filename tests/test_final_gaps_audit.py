@@ -137,6 +137,10 @@ def test_npc_reward_types_are_recognized():
         'random_food', 'specific_item', 'multi', 'random_item',
         'identify', 'gold_pile', 'restore_hp', 'restore_sp',
         'restore_mp',
+        # Phase 3 (shares of the hero's own purse, armour mended, relics).
+        'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact',
+        'hp_restore', 'sp_restore', 'mp_restore', 'hp_restore_pct', 'sp_restore_pct',
+        'mp_restore_pct', 'enchant_weapon', 'random_wand',
     }
     bad = []
     for e in ENCOUNTERS:

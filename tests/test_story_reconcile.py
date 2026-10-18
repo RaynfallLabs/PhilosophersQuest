@@ -275,4 +275,74 @@ def test_the_exposed_child_is_named_on_every_path_that_saves_her():
         assert g.karma == k
         lines = [x for x in g._chronicle if isinstance(x, dict) and 'Astrid' in x.get('text', '')]
         assert len(lines) == 1 and lines[0]['kind'] == 'consequence' and lines[0]['cause']
-    assert not walk.get('delayed') and walk['karma'] == -1           # left as it is
+    # Brandon: inaction in the face of tragedy without a solution is not evil.
+    assert not walk.get('delayed') and not walk.get('karma') and not walk.get('karma_kind')
+    assert walk['side'] == 'wrong' and 'lost.exposed_child' in walk['deeds']
+
+
+# ------------------------------------------------------------------ continuity audit mechanics (J7)
+
+def test_worn_conditions_read_what_is_worn_not_carried():
+    import deeds
+    from items import make_item_by_id
+    g = _game()
+    amulet = make_item_by_id('accessory', 'silverlight_pendant')
+    g.player.inventory.append(amulet)
+    ctx = g._deed_ctx()
+    assert 'silverlight_pendant' in ctx['items'] and 'silverlight_pendant' not in ctx['worn']
+    assert not deeds.check({'worn_any': ['silverlight_pendant']}, ctx)
+    assert deeds.check({'worn_none': ['silverlight_pendant']}, ctx)
+    g.player.inventory.remove(amulet)
+    g.player.amulet_slot = amulet
+    ctx = g._deed_ctx()
+    assert deeds.check({'worn_any': ['silverlight_pendant']}, ctx)
+    assert deeds.check({'items_any': ['silverlight_pendant']}, ctx)
+
+
+def test_an_outcome_variant_can_carry_its_own_journal_line():
+    import deeds
+    from encounter_schema import resolve_chronicle, resolve_outcome
+    o = {'outcome': 'You lay it on the altar.', 'chronicle': 'I carried it all the way down.',
+         'outcome_variants': [{'when': {'worn_any': ['reliquary']},
+                               'outcome': 'You lift it from your neck.',
+                               'chronicle': 'I wore it all the way down.'}]}
+    reg = deeds.new_register()
+    worn = {'reg': reg, 'items': {'reliquary'}, 'worn': {'reliquary'}}
+    carried = {'reg': reg, 'items': {'reliquary'}, 'worn': set()}
+    assert resolve_chronicle(o, worn) == 'I wore it all the way down.'
+    assert resolve_outcome(o, worn) == 'You lift it from your neck.'
+    assert resolve_chronicle(o, carried) == 'I carried it all the way down.'
+    # A variant without its own line keeps the outcome's.
+    o['outcome_variants'][0].pop('chronicle')
+    assert resolve_chronicle(o, worn) == 'I carried it all the way down.'
+
+
+def test_an_escort_can_be_walked_up_the_stairs():
+    g = _game()
+    g._change_level(5, enter_from_top=True)
+    esc = g._spawn_escort({'id': 'quill', 'name': 'Pomfrey Quill', 'hp': 30, 'goal': 'stairs_up',
+                           'floors': 1, 'on_arrive': {'outcome': 'Up he goes.'}}, source='fx')
+    esc.x, esc.y = g.player.x, g.player.y
+    carried, arrived = g._escorts_leaving(5, 6, 'stairs')     # down is the wrong way
+    assert esc in carried and not arrived
+    esc.floor = 5
+    carried, arrived = g._escorts_leaving(5, 4, 'stairs')
+    assert arrived == [esc]
+
+
+def test_a_delayed_cost_takes_from_the_pack_later():
+    from items import Weapon, make_item_by_id
+    g = _game()
+    g.player.inventory[:] = [i for i in g.player.inventory if not isinstance(i, Weapon)]
+    knife = make_item_by_id('weapon', 'rans_net')
+    knife.is_unique = False                     # an ordinary blade for this test
+    g.player.inventory.append(knife)
+    g._schedule_delayed([{'after_floors': [1, 1], 'cost': {'type': 'weapon'},
+                          'text': 'Your second-best knife is gone.'}], 'fx')
+    (p,) = [x for x in g._deeds_reg()['pending'] if x['kind'] == 'reward']
+    g._deliver_due_rewards(p['target'])
+    assert knife not in g.player.inventory
+    # Nothing left to take: nothing happens, and no error.
+    g._schedule_delayed([{'after_floors': [1, 1], 'cost': {'type': 'weapon'}}], 'fx')
+    (p,) = [x for x in g._deeds_reg()['pending'] if x['kind'] == 'reward']
+    g._deliver_due_rewards(p['target'])

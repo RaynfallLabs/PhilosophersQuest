@@ -169,7 +169,7 @@
       "id": "wat",
       "name": "Wat Rowe"
     },
-    "text": "An old man sits on a step with a lamp-pole across his knees and a flask of oil in his lap, getting his breath back for the third time. Six lamps burn on the stair above him. Below, it is dark. \"Six,\" he says. \"I've done six. The seventh's at the bottom, and my knees have stopped speaking to me.\" He holds up the flask. \"Would you? It's on your way. It's on everybody's way. That's the point of it.\"",
+    "text": "An old man sits on a step with a lamp-pole across his knees and a flask of oil in his lap, getting his breath back for the third time. Six lamps burn on the stair above him, one to a landing. Below, the Long Stair goes on down through floor after floor, and it is dark. \"Six,\" he says. \"I've done six. The seventh's at the very bottom, a few floors down yet, and my knees have stopped speaking to me.\" He holds up the flask. \"Would you? It's on your way. It's on everybody's way. That's the point of it.\"",
     "options": [
       {
         "label": "Take his oil and swear to light the seventh lamp",
@@ -211,17 +211,17 @@
         }
       },
       {
-        "label": "Carry him down so he can light it himself",
+        "label": "Carry him down a flight to wake his knees",
         "cost": {
           "type": "sp_pct",
           "amount": 25
         },
-        "outcome": "He weighs nothing and complains the whole way. At the bottom he lights the lamp with great ceremony, and then makes you carry him back up, which you had not budgeted for.",
+        "outcome": "He weighs nothing and complains the whole way. You carry him down one flight to the next lamp-post and back up, and by the top his knees have started speaking to him again. \"That's the worst of it done,\" he says. \"I'll take the rest slow. A floor at a time.\"",
         "deeds": [
           "aid.wat",
           "saved.wat"
         ],
-        "chronicle": "Carried an old lamplighter down his own stair so he could light his own seventh lamp. Then I carried him back up. I had not planned for the back up.",
+        "chronicle": "Carried an old lamplighter down a flight of his own stair and back up, to wake his knees. He means to take the rest of the way down himself, slowly.",
         "road": {
           "id": "flv_wat_lamplighter.carry",
           "hint": "Some old men would rather be carried than replaced."
@@ -858,7 +858,7 @@
       "id": "martin",
       "name": "Saint Martin"
     },
-    "text": "That night, at the foot of the stair, you dream of a man in half a cloak, standing among a crowd of angels. He is wearing your half. He turns it so they can see the cut edge. \"Look,\" he says to them. \"This is how I was clothed today.\"",
+    "text": "When you next rest, at the foot of the stair, you dream of a man in half a cloak, standing among a crowd of angels. He is wearing your half. He turns it so they can see the cut edge. \"Look,\" he says to them. \"This is how I was clothed today.\"",
     "options": [
       {
         "label": "Wake",
@@ -930,11 +930,22 @@
           "duration": 25
         },
         "outcome": "You trade her a ration for ten minutes of the most thorough dungeon briefing you have ever received, complete with hand gestures. She describes three shortcuts, two trapped passages, and a very large rat she has named Gerald. You feel oddly well-oriented.",
-        "chronicle": "A miner's girl named Tilly showed me the paths on her floor. She asked if I'd seen her brother.",
+        "chronicle": "A miner's girl named Tilly showed me the paths on her floor, with hand gestures. She has named a rat Gerald.",
         "road": {
           "id": "flv_child_with_lantern.layout",
           "hint": "A child who knows the paths knows who walked them."
-        }
+        },
+        "outcome_variants": [
+          {
+            "when": {
+              "deeds_any": [
+                "lost.davy"
+              ]
+            },
+            "outcome": "You trade her a ration for ten minutes of the most thorough dungeon briefing you have ever received, complete with hand gestures. She describes three shortcuts, two trapped passages, and a very large rat she has named Gerald. You feel oddly well-oriented.",
+            "chronicle": "A miner's girl named Tilly showed me the paths on her floor. She asked if I'd seen her brother."
+          }
+        ]
       },
       {
         "label": "Just share food, she should eat",
@@ -1032,7 +1043,7 @@
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "Hob winks at you again as you go. The widow goes on counting her coppers."
       }
     ]
   },
@@ -1116,7 +1127,7 @@
         "wat_lamp": "open"
       }
     },
-    "text": "At the foot of a long stair stands an iron post with an empty lamp-cup on top, and six lamps lit on the steps above it, each one of Wat's, each one still burning. The seventh cup is cold. Below it, scratched in the iron: FOR THEM AS COME DOWN AFTER. The stair below is very dark, and so is this whole floor: your own lantern is guttering, and Wat's flask is the only good oil you have.",
+    "text": "At the foot of a long stair stands an iron post with an empty lamp-cup on top, and six lamps lit on the steps above it, each one of Wat's, each one still burning. The seventh cup is cold. Below it, scratched in the iron: FOR THEM AS COME DOWN AFTER. The stair below is very dark, and so is this whole floor: your own light is guttering, and Wat's flask is the only good oil you have.",
     "options": [
       {
         "label": "Fill the cup with Wat's oil and light it",
@@ -1134,10 +1145,36 @@
         "road": {
           "id": "flv_seventh_lamp.light",
           "hint": "A lamp lit for strangers lights your own feet first."
+        },
+        "requires": {
+          "items_any": [
+            "wats_oil_flask"
+          ]
+        },
+        "hidden_group": "light"
+      },
+      {
+        "label": "\"I lost Wat's oil.\"",
+        "requires": {
+          "items_none": [
+            "wats_oil_flask"
+          ]
+        },
+        "hidden_group": "light",
+        "oath_lapse": "wat_lamp",
+        "outcome": "You say it out loud to the cold cup, because there is no one else to say it to. The stair below stays dark. Somewhere above, an old man is still listening for a bell.",
+        "deeds": [
+          "told.wats_oil_lost"
+        ],
+        "thread_close": "wats_lamps",
+        "chronicle": "Reached the seventh lamp without Wat's oil. I had lost it on the way down. The cup is still cold, and I said so to it.",
+        "road": {
+          "id": "flv_seventh_lamp.lost",
+          "hint": "Oil promised to a lamp is owed even after the flask is gone."
         }
       },
       {
-        "label": "Keep the oil for your own lantern",
+        "label": "Keep the oil for your own light",
         "oath_break": "wat_lamp",
         "reward": {
           "type": "effect",
@@ -1145,19 +1182,34 @@
           "duration": 0,
           "floors": 4
         },
-        "outcome": "Your lantern burns brighter and warmer for days. The seventh cup stays cold behind you, and the stair below it stays dark for whoever comes next.",
+        "outcome": "Your own light burns brighter and warmer for floors. The seventh cup stays cold behind you, and the stair below it stays dark for whoever comes next.",
         "deeds": [
           "wrong.kept_wats_oil"
         ],
-        "chronicle": "Burned old Wat's lamp oil in my own lantern. The seventh cup is still cold. My lantern has never been so bright.",
+        "chronicle": "Burned old Wat's lamp oil to light my own way. The seventh cup is still cold. My own way has never been so bright.",
         "road": {
           "id": "flv_seventh_lamp.keep",
           "hint": "Oil promised to a public lamp burns oddly in a private one."
+        },
+        "requires": {
+          "items_any": [
+            "wats_oil_flask"
+          ]
         }
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "The seventh cup stays cold behind you."
+      }
+    ],
+    "text_variants": [
+      {
+        "when": {
+          "items_none": [
+            "wats_oil_flask"
+          ]
+        },
+        "text": "At the foot of a long stair stands an iron post with an empty lamp-cup on top, and six lamps lit on the steps above it, each one of Wat's, each one still burning. The seventh cup is cold. Below it, scratched in the iron: FOR THEM AS COME DOWN AFTER. The stair below is very dark, and so is this whole floor: your own light is guttering, and Wat's flask is no longer in your pack."
       }
     ]
   },
@@ -1249,7 +1301,7 @@
           "met.wren",
           "lost.wren"
         ],
-        "chronicle": "Followed a crying girl into a side passage to help her father. Her father was three men with clubs. They called her a good girl.",
+        "chronicle": "Followed a crying girl into a side passage to help her father. Her father was two men with clubs, and a third who laughed. They called her a good girl.",
         "road": {
           "id": "flv_crying_bait.follow",
           "hint": "Tears that leave no tracks were never cried."
@@ -1607,7 +1659,7 @@
       },
       {
         "label": "Leave the purse where it fell",
-        "outcome": "You walk on. Behind you, the widow gets to it first.",
+        "outcome": "You walk on. Behind you, while Fisk's back is turned, the widow gets to it first.",
         "deeds": [
           "met.fisk"
         ],
@@ -1657,7 +1709,7 @@
         }
       },
       {
-        "label": "\"It's a trick. Get an axe.\"",
+        "label": "\"It's a trick. Axe out, or whatever you've got.\"",
         "quiz": {
           "subject": "math",
           "tier": 1,
@@ -1667,11 +1719,11 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You draw your weapon and come in sideways. The \"woman\" springs up with inhuman speed, grey flesh splitting into a horrible grin, but you were ready. One clean strike and it's over. You wipe the blade. \"Groovy.\"",
+          "outcome": "You draw your weapon and come in sideways. The \"woman\" springs up with inhuman speed, grey flesh splitting into a horrible grin, but you were ready. One clean strike and it's over. You wipe your weapon clean. \"Groovy.\"",
           "deeds": [
             "slew.deadite"
           ],
-          "chronicle": "Smelled a trick in a moaning woman and had the axe out before she turned. Groovy."
+          "chronicle": "Smelled a trick in a moaning woman and had my weapon out before she turned. Groovy."
         },
         "fail": {
           "outcome": "You're nearly ready. Nearly. She rakes you once on the way down.",
@@ -1730,15 +1782,15 @@
       "id": "beggar_at_the_gate",
       "name": "The Beggar at the Gate"
     },
-    "text": "A wind comes up the stair out of nowhere, colder than any wind should be underground, and at a stone gate a beggar sits curled against it, nearly naked and blue with cold. Everyone coming through the gate steps round him. Nobody looks. You have a cloak, and a sword.",
+    "text": "A wind comes up the stair out of nowhere, colder than any wind should be underground, and at a stone gate a beggar sits curled against it, nearly naked and blue with cold. Everyone coming through the gate steps round him. Nobody looks. You have a cloak, and something with an edge.",
     "options": [
       {
-        "label": "Cut your cloak in half with your sword and give him half",
+        "label": "Cut your cloak in half with whatever blade you carry, and give him half",
         "cost": {
           "type": "armor_enchant",
           "amount": 1
         },
-        "outcome": "The sword goes through the cloth cleanly. He wraps your half round his shoulders and looks up at you once, and you have the odd feeling he knows your name.",
+        "outcome": "The blade goes through the cloth cleanly. He wraps your half round his shoulders and looks up at you once, and you have the odd feeling he knows your name.",
         "deeds": [
           "aid.beggar_at_the_gate"
         ],
@@ -1915,7 +1967,7 @@
         }
       },
       {
-        "label": "Set it by the brazier at arm's length",
+        "label": "Set it on the warm rock by your light, at arm's length",
         "quiz": {
           "subject": "animal",
           "tier": 1,
@@ -2247,6 +2299,9 @@
         "requires": {
           "deeds_any": [
             "wrong.kept_pendant"
+          ],
+          "items_any": [
+            "silverlight_pendant"
           ]
         },
         "hidden_group": "tell",
@@ -2263,12 +2318,12 @@
             }
           ]
         },
-        "outcome": "Together you get it up a foot and she slides under. Then she sees the pendant at your belt. She looks at it for a long time. \"Where is she?\" You tell her. She takes the pendant out of your hand, and you let her, and she goes without another word.",
+        "outcome": "Together you get it up a foot and she slides under. Then she sees the pendant you carry. She looks at it for a long time. \"Where is she?\" You tell her. She takes the pendant out of your hand, and you let her, and she goes without another word.",
         "deeds": [
           "saved.ysolde",
           "told.ysolde_saw_pendant"
         ],
-        "chronicle": "Helped a woman out from under a gate, and she saw her daughter's pendant on my belt. She took it back. I let her.",
+        "chronicle": "Helped a woman out from under a gate, and she saw her daughter's pendant on me. She took it back. I let her.",
         "road": {
           "id": "flv_ysolde_gate.lift_pendant",
           "hint": "What you kept from the child, the mother takes back."
@@ -2276,10 +2331,12 @@
       },
       {
         "label": "Help her lift the gate",
-        "forbids": {
+        "requires": {
           "deeds_any": [
-            "aid.elara",
             "wrong.kept_pendant"
+          ],
+          "items_none": [
+            "silverlight_pendant"
           ]
         },
         "hidden_group": "tell",
@@ -2287,14 +2344,15 @@
           "type": "sp_pct",
           "amount": 10
         },
-        "outcome": "The portcullis comes up a foot and she slides under. \"If you see a little girl with a silver pendant,\" she says, already running, \"tell her Mama's coming.\"",
+        "outcome": "Together you get it up a foot and she slides under. \"Where is she?\" You tell her where you left Elara. You do not tell her about the pendant. She looks at your empty hands a long time, and then she goes.",
         "deeds": [
-          "saved.ysolde"
+          "saved.ysolde",
+          "told.ysolde_pendant_gone"
         ],
-        "chronicle": "Lifted a gate off a mother on her way home with fever medicine. If I see a girl with a silver pendant, I am to say Mama is coming.",
+        "chronicle": "Helped Elara's mother out from under a gate and told her where I left her girl. I did not tell her about the pendant. She looked at my empty hands a long time.",
         "road": {
-          "id": "flv_ysolde_gate.lift",
-          "hint": "A mother running home needs only the gate lifted."
+          "id": "flv_ysolde_gate.lift_no_pendant",
+          "hint": "What you kept from the child, the mother reads in your empty hands."
         }
       },
       {
@@ -2415,7 +2473,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You lay him flat, cover him with your cloak, raise nothing and press on the cut where the beam bit, and you talk to him so he stays with you. When the crew comes he is cold and frightened and alive.",
+          "outcome": "You lay him flat, cover him with what you can spare from your pack, raise nothing and press on the cut where the beam bit, and you talk to him so he stays with you. When the crew comes he is cold and frightened and alive.",
           "deeds": [
             "saved.davy"
           ],
@@ -2564,8 +2622,8 @@
           "type": "sp_restore_pct",
           "amount": 20
         },
-        "outcome": "He laughs until he coughs. \"Closer than most,\" he says, and shares a heel of bread with you, which is all he has.",
-        "chronicle": "Admitted to Diogenes I was not always honest. He laughed and gave me half his bread. It was most of his bread."
+        "outcome": "He laughs until he coughs. \"Closer than most,\" he says, and shares a heel of bread with you, which is most of what he has.",
+        "chronicle": "Admitted to Diogenes I was not always honest. He laughed and gave me a heel of bread. It was most of his bread."
       },
       {
         "label": "\"Is there anything I can do for you?\"",
@@ -2613,6 +2671,14 @@
           ]
         },
         "text": "A girl of about fourteen with her mother's squint blocks the corridor, a ratting pole held like a spear. \"Mam described you. Down to the boots.\" Her voice shakes, but the pole doesn't. \"She got home. No thanks to you. I've come for her satchel.\""
+      },
+      {
+        "when": {
+          "deeds_all": [
+            "flag.marta_splinted"
+          ]
+        },
+        "text": "A girl of about fourteen with her mother's satchel and her mother's squint stops square in front of you. \"Mam said a stranger who knew a tourniquet. Said you swore at her leg till it listened, and didn't ask anything for it.\" She holds the satchel out. \"You don't owe me anything. I'm here to pay.\""
       }
     ],
     "escorts": {
@@ -2728,11 +2794,11 @@
           "type": "potion",
           "count": 2
         },
-        "outcome": "She takes them and checks every stopper. \"Two short,\" she says. \"Mam counted.\" She goes, and does not look back.",
+        "outcome": "She takes them and checks every stopper. \"The jars are two short,\" she says. \"Mam counted.\" She goes, and does not look back.",
         "deeds": [
           "told.lena_repaid"
         ],
-        "chronicle": "Marta's daughter came for her mother's satchel. I gave back what I still had. She said I was two short. She was right.",
+        "chronicle": "Marta's daughter came for her mother's satchel. I gave back what I still had. She said the jars were two short. She was right.",
         "road": {
           "id": "flv_lena_returns.give_back",
           "hint": "What you take from a mother, her daughter comes to collect."
@@ -2876,7 +2942,7 @@
       "id": "grumwald",
       "name": "Grumwald"
     },
-    "text": "Another chasm, another rope bridge, and the same troll asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: YES, YOU.",
+    "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: YES, YOU.",
     "text_variants": [
       {
         "when": {
@@ -2884,7 +2950,7 @@
             "forgo.troll_toll"
           ]
         },
-        "text": "Another chasm, another rope bridge, and the same troll asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: NUMBER NINE CROSSES FREE."
+        "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: NUMBER NINE CROSSES FREE."
       },
       {
         "when": {
@@ -2892,7 +2958,7 @@
             "wrong.robbed_grumwald"
           ]
         },
-        "text": "Another chasm, another rope bridge, and the same troll asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: ESPECIALLY YOU. The box is chained to his ankle."
+        "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: ESPECIALLY YOU. The box is chained to his ankle."
       }
     ],
     "options": [
@@ -3014,7 +3080,7 @@
             "aldric_lodestone": "kept"
           }
         },
-        "text": "A woman with a candle in a jar stops in front of you. \"You're the one. The altar broke it. Aldric felt it go, all the way up in our kitchen. He sent me to say so, since he can't manage stairs.\""
+        "text": "A woman with a candle in a jar stops in front of you. \"You're the one. The altar broke it. Aldric felt it go, all the way up in our kitchen. He sent me to say so, since he has a farm to mend.\""
       }
     ],
     "options": [
@@ -3035,11 +3101,11 @@
           "duration": 60
         },
         "oath_release": "aldric_lodestone",
-        "outcome": "She takes it in both arms and staggers, and does not complain. The candle goes out. She does not relight it.",
+        "outcome": "She takes it in both arms and staggers, and does not complain. \"There's an altar two stairs down,\" she says. \"I'll take it there and break it, then go home light.\" The candle goes out. She does not relight it.",
         "deeds": [
           "told.elspeth_took_stone"
         ],
-        "chronicle": "Elspeth carried Aldric's stone the rest of the way. I let her. She did not relight her candle.",
+        "chronicle": "Elspeth took Aldric's stone down to an altar to break it, and then home. I let her. She did not relight her candle.",
         "road": {
           "id": "flv_elspeth_comes.hand_back",
           "hint": "A carried burden can be handed back without being dropped."
@@ -3070,16 +3136,27 @@
           }
         },
         "reward": {
-          "type": "effect",
-          "effect": "blessed",
-          "duration": 100
+          "type": "multi",
+          "rewards": [
+            {
+              "type": "effect",
+              "effect": "blessed",
+              "duration": 100
+            },
+            {
+              "type": "effect",
+              "effect": "light",
+              "duration": 0,
+              "floors": 3
+            }
+          ]
         },
-        "outcome": "She presses the candle on you. It burns without wax, the way some candles do in old stories.",
+        "outcome": "She presses the candle on you, jar and all. It burns without wax, the way some candles do in old stories.",
         "deeds": [
           "met.elspeth"
         ],
         "thread_close": "aldric_candle",
-        "chronicle": "Aldric's wife found me to say thank you. She left me her candle. It does not burn down.",
+        "chronicle": "Aldric's wife found me to say thank you. She left me her candle. It burns without wax.",
         "road": {
           "id": "flv_elspeth_comes.thank",
           "hint": "A candle lit for someone else's knight can show your own road too."
@@ -3087,7 +3164,7 @@
       },
       {
         "label": "Keep walking",
-        "outcome": "She watches you go, and keeps climbing.",
+        "outcome": "She watches you go, and goes on her way.",
         "deeds": [
           "met.elspeth"
         ]
@@ -3114,7 +3191,7 @@
     },
     "stance": "3.9",
     "stance_note": "Steel-man: Pike is sincere and selfless, and Basil the Great's sermon is the strongest Christian case for his claim, quoted accurately. The pass answers it (§3.9: a duty on the giver, not a right in the receiver) by showing the harm of the principle to a third party, not by mocking the man.",
-    "text": "A gaunt man in a patched apron steps into your path with a basket. Behind him a thin girl stands silent, watching your pack. \"Gerrold Pike. You carry two rations; she has none. Saint Basil said it, and he meant it: the bread you hold back belongs to the hungry. It isn't yours to give. It's hers, and I'm here to collect it.\" He is not asking. He has the calm of a man who has never once kept back a crumb for himself.",
+    "text": "A gaunt man in a patched apron steps into your path with a basket. Behind him a thin girl stands silent, watching your pack. \"Gerrold Pike. You carry rations; she has none. Saint Basil said it, and he meant it: the bread you hold back belongs to the hungry. It isn't yours to give. It's hers, and I'm here to collect it.\" He is not asking. He has the calm of a man who has never once kept back a crumb for himself.",
     "options": [
       {
         "label": "Put a ration in his basket",
@@ -3234,7 +3311,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "\"A lion,\" you say, \"and the honey the bees made in its carcass.\" Samson roars and slaps the table hard enough to crack it. \"Honestly come by. Not like these.\" He looks at the thirty. They look at their plates.",
+          "outcome": "\"A lion,\" you say, \"and the honey the bees made in its carcass.\" Samson roars and slaps the table hard enough to crack it. \"Honestly come by. Not like these will try to.\" He looks at the thirty. They look at their plates.",
           "reward": {
             "type": "multi",
             "rewards": [
@@ -3398,7 +3475,7 @@
           "chronicle": "Held the mayor of Hamelin to his own contract in front of the Piper. He paid in full from a purse he swore was empty. The children went home."
         },
         "fail": {
-          "outcome": "The mayor argues that the contract was for rats, not sorcery, and while you argue the music gets into your feet. You dance until you fall. When you get up, the corridor is empty except for the boy on the crutch, who was too slow to follow, crying in the dust.",
+          "outcome": "The mayor argues that the contract was for rats, not sorcery, and while you argue the music gets into your feet. You dance until you fall. When you get up, the corridor is empty except for the mayor, alone now and grey, and the boy on the crutch, who was too slow to follow, crying in the dust. The mayor takes Hans by the hand. \"I'll get this one home, at least.\"",
           "cost": {
             "type": "hp_pct",
             "amount": 15
@@ -3407,7 +3484,7 @@
             "lost.hamelin_children",
             "saved.hans"
           ],
-          "chronicle": "Argued contracts with the mayor of Hamelin while the Piper took the children into the hill. Only the lame boy was left. In the story, he always is."
+          "chronicle": "Argued contracts with the mayor of Hamelin while the Piper took the children into the hill. Only the lame boy was left. In the story, he always is. The mayor took him home."
         },
         "road": {
           "id": "flv_pied_piper.contract",
@@ -3416,12 +3493,12 @@
       },
       {
         "label": "Carry the lame boy out of the line",
-        "outcome": "You scoop up the boy on the crutch. He fights you, crying, because he wants to go where the music is. The others go into the hill, and the hill closes. He stops fighting then. His name is Hans.",
+        "outcome": "You scoop up the boy on the crutch. He fights you, crying, because he wants to go where the music is. The others go into the hill, and the hill closes. He stops fighting then. His name is Hans. The mayor, alone now and grey, takes him by the hand. \"I'll get this one home, at least.\"",
         "deeds": [
           "saved.hans",
           "lost.hamelin_children"
         ],
-        "chronicle": "Carried the lame boy out of the Piper's line. The others went into the hill. He fought me the whole way and then he stopped.",
+        "chronicle": "Carried the lame boy out of the Piper's line. The others went into the hill. He fought me the whole way and then he stopped. The mayor took him home.",
         "road": {
           "id": "flv_pied_piper.carry_hans",
           "hint": "Saving the one you can reach is still saving one."
@@ -3462,7 +3539,7 @@
       ]
     },
     "tragedy": "unsavable",
-    "text": "A knight kneels at a fresh cairn with a black stone still lashed to his back. A crystal vial lies empty beside him, the one you drank from. He does not look up, and he does not speak. Somebody has scratched one word on the top stone: ELSPETH.",
+    "text": "A knight kneels at a fresh cairn with a black stone still lashed to his back. A crystal vial lies empty beside him, the one you drank from. He does not look up, and he does not speak. A pilgrim's staff leans on the cairn; whoever brought the news down from the surface did not stay. Somebody has scratched one word on the top stone: ELSPETH.",
     "options": [
       {
         "label": "Kneel beside him a while",
@@ -3596,7 +3673,7 @@
       90
     ],
     "sprite_id": "npc_penitent",
-    "min_level": 19,
+    "min_level": 18,
     "max_level": 41,
     "role": "story",
     "stakes": "light",
@@ -3613,7 +3690,7 @@
             "told.ostrander_swore"
           ]
         },
-        "text": "At the lip of a chasm a lamp burns on an iron pole, on the right side, where the path is. A man in a wrecker's coat sits under it, trimming the wick. Ostrander. \"Never another false light,\" he says, before you can ask. \"I swore on your rope. Lamp's been lit every night since.\""
+        "text": "At the lip of a chasm a lamp burns on an iron pole, on the right side, where the path is. A man in a wrecker's coat sits under it, trimming the wick. Ostrander. \"Never another false light,\" he says, before you can ask. \"I swore on your rope. Lamp's been lit every watch since.\""
       }
     ],
     "options": [
@@ -3641,7 +3718,7 @@
         "chronicle": "Found Ostrander keeping a true lamp at a chasm. He swore on my rope never to light a false one, and he hasn't. Some people mend.",
         "road": {
           "id": "flv_ostrander_lantern.sit",
-          "hint": "A lamp kept true is a promise lit again every night."
+          "hint": "A lamp kept true is a promise lit again every watch."
         }
       },
       {
@@ -3728,7 +3805,7 @@
       "id": "hallbjorn",
       "name": "Hallbjorn"
     },
-    "text": "Two families face each other across a flat rock under a crack of daylight, axes held low. A big man sets a bag of silver on the rock. \"Hallbjorn. I killed Kol over a beached whale, and I'm sorry for it, and there's his price.\" Kol's brother Steinar doesn't look at the silver. \"Silver doesn't eat at my table.\" Every face turns to you. \"You're a stranger,\" says Hallbjorn. \"Strangers have no side. Speak the law.\"",
+    "text": "Two families face each other across a flat rock under a lamp-stone, axes held low. A big man sets a bag of silver on the rock. \"Hallbjorn. I killed Kol over a whale stranded on the shore of the under-sea, and I'm sorry for it, and there's his price.\" Kol's brother Steinar doesn't look at the silver. \"Silver doesn't eat at my table.\" Every face turns to you. \"You're a stranger,\" says Hallbjorn. \"Strangers have no side. Speak the law.\"",
     "options": [
       {
         "label": "Speak the law: the price, the oath, the outlawry",
@@ -4867,8 +4944,6 @@
       {
         "label": "Walk on. His hall, his law",
         "side": "wrong",
-        "karma": -1,
-        "karma_kind": "stance_wrong",
         "outcome": "The crying follows you a long way down the corridor. Then it doesn't.",
         "deeds": [
           "lost.exposed_child"
@@ -4998,11 +5073,11 @@
           "type": "gold_pct",
           "amount": 15
         },
-        "outcome": "He thanks you and settles down to sleep by your fire. In the night, nobody sees anything at all. In the morning the ring is gone, and so is a share of your purse, and so is he.",
+        "outcome": "He thanks you and sits beside you while you check your pack. Nobody sees anything at all. When you look up, the ring is gone, and so is a share of your purse, and so is he.",
         "deeds": [
           "told.gyges_took_it_back"
         ],
-        "chronicle": "Offered to keep a magic ring safe for a shepherd until he was ready to give it up. In the night nobody saw anything. My purse is lighter.",
+        "chronicle": "Offered to keep a magic ring safe for a shepherd until he was ready to give it up. I looked away for a moment and nobody saw anything. My purse is lighter.",
         "road": {
           "id": "flv_gyges_ring.hold",
           "hint": "A man cannot lend you the thing he cannot let go of."
@@ -5032,18 +5107,18 @@
       "id": "hawksworth",
       "name": "Abel Hawksworth"
     },
-    "text": "A boundary stone on a moor of grey moss, with six holes bored in it and filled with vinegar. Coins lie in the vinegar. Beyond it a village has shut itself in against the plague, on its rector's word. A man in the doorway of the nearest cottage calls to you. \"I'm well. I swear before God I'm well. My children are in Stoney Middleton. Lift the bar.\" He keeps his collar buttoned to the chin, though the evening is warm, and his face shines with sweat while he shivers.",
+    "text": "A boundary stone on a moor of grey moss, with six holes bored in it and filled with vinegar. Coins lie in the vinegar. Beyond it a village has shut itself in against the plague, on its rector's word. A man in the doorway of the nearest cottage calls to you. \"I'm well. I swear before God I'm well. My children are at Low Middleton, a few stairs down. Lift the bar.\" He keeps his collar buttoned to the chin, though the cave is close and warm, and his face shines with sweat while he shivers.",
     "options": [
       {
         "label": "Lift the bar and let him go",
         "naive": true,
-        "warning": "He keeps his collar buttoned to the chin, though the evening is warm",
+        "warning": "He keeps his collar buttoned to the chin, though the cave is close and warm",
         "reward": {
           "type": "effect",
           "effect": "sickly",
           "duration": 120
         },
-        "outcome": "He shakes your hand hard, both of his around yours, and goes up the road at a run.",
+        "outcome": "He shakes your hand hard, both of his around yours, and goes for the stair at a run.",
         "delayed": [
           {
             "after_floors": [
@@ -5053,7 +5128,7 @@
             "reward": {
               "type": "message"
             },
-            "text": "Far off, a bell is tolling in Stoney Middleton. It tolls every hour you can hear it."
+            "text": "At the foot of the stair a bell is tolling in Low Middleton. It tolls every hour you are on this floor."
           }
         ],
         "deeds": [
@@ -5063,7 +5138,7 @@
         "chronicle": "Let a man out of a plague village because he swore he was well. He shook my hand with both of his. A bell has been tolling ever since.",
         "road": {
           "id": "flv_boundary_stone.lift",
-          "hint": "A buttoned collar on a warm night is hiding something."
+          "hint": "A buttoned collar in a warm cave is hiding something."
         }
       },
       {
@@ -5077,14 +5152,14 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You ask him to open his collar, and he knows why, and he does it anyway. A swelling the size of a pigeon's egg under his jaw, hot to the touch, and his skin is burning with fever though he shivers. He sits down on his side of the stone and cries. You sit down on yours. You stay until dark and promise to leave word at the stone for his children. In the morning there is a letter in the vinegar for Stoney Middleton, and you take it.",
+          "outcome": "You ask him to open his collar, and he knows why, and he does it anyway. A swelling the size of a pigeon's egg under his jaw, hot to the touch, and his skin is burning with fever though he shivers. He sits down on his side of the stone and cries. You sit down on yours. You stay until his lamp burns low, and promise to leave word at the stone for his children. He writes a letter for Low Middleton and drops it in the vinegar, and you fish it out and leave it under the stone where the carriers look.",
           "karma": 1,
           "karma_kind": "judgment",
           "deeds": [
             "saved.stoney_middleton",
             "told.hawksworth_letter"
           ],
-          "chronicle": "Saw the plague swelling under a man's jaw before I let him out. We sat either side of the boundary stone till dark. I have his letter for his children."
+          "chronicle": "Saw the plague swelling under a man's jaw before I let him out. We sat either side of the boundary stone a long while. I left his letter under it for the carriers."
         },
         "fail": {
           "outcome": "You look, and see a frightened man with his collar done up.",
@@ -5109,7 +5184,7 @@
           "type": "gold_pct",
           "amount": 10
         },
-        "outcome": "The coins sink into the vinegar. In the morning, the village will find them and buy bread with them, and the baker will wash them twice. Hawksworth watches you from the doorway, and does not ask again.",
+        "outcome": "The coins sink into the vinegar. When the watch changes, the village will find them and buy bread with them, and the baker will wash them twice. Hawksworth watches you from the doorway, and does not ask again.",
         "deeds": [
           "aid.eyam"
         ],
@@ -5406,7 +5481,7 @@
           "effect": "clairvoyant",
           "duration": 150
         },
-        "outcome": "The water is so cold it hurts your teeth, and then your head, and then it doesn't hurt at all, and for a moment you understand something very large. It goes. Some of it stays.",
+        "outcome": "The water is so cold it hurts your teeth, and then your head, and then it doesn't hurt at all, and for a moment you understand something very large, and know a question no giant can answer. It goes. Some of it stays.",
         "deeds": [
           "met.mimir_well"
         ],
@@ -5447,7 +5522,7 @@
       "id": "kay",
       "name": "Sir Kay"
     },
-    "text": "A churchyard under the rock, a great stone with an anvil on it, and gold letters: WHOSO PULLETH OUT THIS SWORD OF THIS STONE AND ANVIL IS RIGHTWISE KING BORN. The anvil is empty. A big young knight holds the sword aloft. \"Sir Kay. I drew it.\" Behind him a skinny squire stares at his own hands. You saw the squire pull it out like a carrot, minutes ago. Kay leans close. \"You saw me draw it. Tell my father so, and you'll eat at my table all your days.\"",
+    "text": "A churchyard under the rock, a great stone with an anvil on it, and gold letters: WHOSO PULLETH OUT THIS SWORD OF THIS STONE AND ANVIL IS RIGHTWISE KING BORN. The anvil is empty. A big young knight holds the sword aloft. \"Sir Kay. I drew it.\" Behind him a skinny squire stares at his own hands. The squire's hands are red from the hilt; Kay's are clean. Kay leans close. \"Say you saw me draw it. Tell my father so, and you'll eat at my table all your days.\"",
     "options": [
       {
         "label": "Back Kay's claim",
@@ -5495,10 +5570,6 @@
       },
       {
         "label": "Put it back in the anvil and let them both try",
-        "cost": {
-          "type": "hp_pct",
-          "amount": 10
-        },
         "quiz": {
           "subject": "theology",
           "tier": 2,
@@ -5508,12 +5579,16 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You remember how the old test went. Kay strains until his face is purple. The squire draws it like a knife from butter, twice, looking more frightened each time. Sir Ector kneels.",
+          "outcome": "You remember how the old test went. Kay strains until his face is purple, and when he gives up he takes it out on your ribs. The squire draws it like a knife from butter, twice, looking more frightened each time. Sir Ector kneels.",
           "deeds": [
             "forgo.kays_table",
             "told.arthur_drew"
           ],
-          "chronicle": "Made Sir Kay put the sword back in the anvil and try again. He could not. His little brother could, twice. The old man knelt."
+          "chronicle": "Made Sir Kay put the sword back in the anvil and try again. He could not. His little brother could, twice. The old man knelt.",
+          "cost": {
+            "type": "hp_pct",
+            "amount": 10
+          }
         },
         "fail": {
           "outcome": "Kay snatches it back before you can explain the test. \"We're done here,\" he says, and you are.",
@@ -5529,7 +5604,7 @@
       },
       {
         "label": "Walk on",
-        "outcome": "\"Good man,\" says Kay. Behind you, an old man's voice: \"Kay? Who drew it?\"",
+        "outcome": "\"Good,\" says Kay. \"Friend.\" Behind you, an old man's voice: \"Kay? Who drew it?\"",
         "deeds": [
           "met.kay"
         ]
@@ -5719,7 +5794,7 @@
           "monster_id": "villager_mob",
           "count": 4
         },
-        "outcome": "You get her free and three steps up the bank before the crowd closes. You come out of it bloody, with Alys over your shoulder, and the whole village now sure of two witches instead of one.",
+        "outcome": "You get her free and three steps up the bank before the crowd closes. You come out of it bloody, with Alys over your shoulder, and the whole village now sure of two witches instead of one. At the stair she slides down and runs. \"I know the back ways. You'd only slow me.\"",
         "deeds": [
           "saved.alys",
           "told.named_witch"
@@ -6130,14 +6205,40 @@
           "told.columba_laid"
         ],
         "thread_close": "columba_chapel",
-        "chronicle": "Laid Saint Columba's relic in the chapel it was meant for. I wore it all the way down. Taking it off was harder than I expected.",
+        "chronicle": "Laid Saint Columba's relic in the chapel it was meant for. I carried it all the way down. Letting it go was harder than I expected.",
         "road": {
           "id": "flv_reliquary_chapel.lay",
           "hint": "A thing carried to the end weighs nothing once it is set down."
+        },
+        "requires": {
+          "items_any": [
+            "saints_reliquary"
+          ]
+        },
+        "hidden_group": "lay"
+      },
+      {
+        "label": "\"I lost him on the way.\"",
+        "requires": {
+          "items_none": [
+            "saints_reliquary"
+          ]
+        },
+        "hidden_group": "lay",
+        "oath_lapse": "columba_relic",
+        "outcome": "The eldest closes his eyes. \"Then he is somewhere on the stair,\" he says, \"and the stair is ours to search.\" He gives you no blessing and no reproach, and goes back to his watch.",
+        "deeds": [
+          "told.columba_lost"
+        ],
+        "thread_close": "columba_chapel",
+        "chronicle": "Reached the chapel of the Deep Watch without Saint Columba. I had lost him on the way down. The brothers did not reproach me. The niche is still empty.",
+        "road": {
+          "id": "flv_reliquary_chapel.lost",
+          "hint": "A thing carried for others is still owed when it is lost."
         }
       },
       {
-        "label": "Keep wearing it",
+        "label": "Keep the reliquary",
         "requires": {
           "items_any": [
             "saints_reliquary"
@@ -6148,7 +6249,7 @@
         "deeds": [
           "wrong.kept_columba"
         ],
-        "chronicle": "Reached the chapel with Saint Columba round my neck and kept him there. The brothers did not argue. That was worse.",
+        "chronicle": "Reached the chapel with Saint Columba on me and kept him there. The brothers did not argue. That was worse.",
         "road": {
           "id": "flv_reliquary_chapel.keep",
           "hint": "A promise broken at the very door is the most expensive kind."
@@ -6161,11 +6262,11 @@
           "effect": "blessed",
           "duration": 40
         },
-        "outcome": "He gives it, and asks nothing. If there is a saint round your neck, he is too polite to mention it.",
+        "outcome": "He gives it, and asks nothing. If there is a saint in your keeping, he is too polite to mention it.",
         "deeds": [
           "met.deep_watch"
         ],
-        "chronicle": "Asked the brothers of the Deep Watch for a blessing and did not mention what I was wearing. They were too polite to.",
+        "chronicle": "Asked the brothers of the Deep Watch for a blessing and did not mention what I was carrying. They were too polite to.",
         "road": {
           "id": "flv_reliquary_chapel.blessing",
           "hint": "A blessing asked for under false pretences still has to be lived up to."
@@ -6173,7 +6274,25 @@
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "The brothers watch you to the stair. The eldest is still looking at the empty niche."
+      }
+    ],
+    "text_variants": [
+      {
+        "when": {
+          "items_none": [
+            "saints_reliquary"
+          ]
+        },
+        "text": "Three brothers in mail under their habits keep a chapel at the head of a black stair, spears leaning by the door. Over the altar is an empty niche the size of a hand. The eldest looks at your empty hands before he looks at your face. \"Brother Cormac?\" he asks. Then he sees the answer. \"Did Saint Columba come down?\" You have nothing to lay in it."
+      },
+      {
+        "when": {
+          "worn_none": [
+            "saints_reliquary"
+          ]
+        },
+        "text": "Three brothers in mail under their habits keep a chapel at the head of a black stair, spears leaning by the door. Over the altar is an empty niche the size of a hand. The eldest looks at your pack before he looks at your face. \"Brother Cormac?\" he asks. Then he sees the answer. \"Did Saint Columba come down?\" The reliquary is warm through your pack."
       }
     ]
   },
@@ -6493,7 +6612,7 @@
     "max_level": 90,
     "role": "story",
     "stakes": "medium",
-    "text": "Two women stand in the mud of a mining camp, each with a hand on the same baby. \"He's mine,\" says one, and cries. \"He's mine,\" says the other, and cries louder. The camp's men stand back with their arms folded, looking at you, because you have a sword and they don't want this. One of the women never once looks at the baby. She looks at you.",
+    "text": "Two women stand in the mud of a mining camp, each with a hand on the same baby. \"He's mine,\" says one, and cries. \"He's mine,\" says the other, and cries louder. The camp's men stand back with their arms folded, looking at you, because you carry a weapon and they don't want this. One of the women never once looks at the baby. She looks at you.",
     "options": [
       {
         "label": "Give him to the one who weeps loudest",
@@ -6850,7 +6969,7 @@
       "id": "pell",
       "name": "Jory Pell"
     },
-    "text": "A stone granary with a barred door, scratched deep on the inside. Nobody answers when you knock. Nobody has answered for a while.",
+    "text": "A stone granary with a barred door, scratched deep on the inside. Nobody answers when you knock. Nobody has answered for a while. The bar inside has rotted through; the door would give to a shoulder.",
     "text_variants": [
       {
         "when": {
@@ -6858,7 +6977,7 @@
             "told.pell_aristodemus"
           ]
         },
-        "text": "A stone granary with a barred door, and on the step Corporal Pell, his tabard filthy now and his sword nicked, grinning like an idiot. Behind him the door is open and a grey sergeant is counting men: ten, and Pell. \"He came back,\" says Sergeant Ormond, as if he still can't believe it. \"Ran three floors through the dark to tell us where the way out was.\""
+        "text": "A stone granary with a barred door, and on the step Corporal Pell, his tabard filthy now and his sword nicked, grinning like an idiot. Behind him the door is open and a grey sergeant is counting men: eleven, and Pell. \"He came back,\" says Sergeant Ormond, as if he still can't believe it. \"Ran a few floors through the dark to tell us where the way out was.\""
       }
     ],
     "options": [
@@ -6885,7 +7004,7 @@
         "deeds": [
           "saved.ormond_company"
         ],
-        "chronicle": "Found Pell at the granary with ten living men behind him. He went back. They are calling him something better than Trembler now.",
+        "chronicle": "Found Pell at the granary with eleven living men behind him. He went back. They are calling him something better than Trembler now.",
         "road": {
           "id": "flv_ormonds_granary.shake",
           "hint": "A man who came back is more use than a man who never ran."
@@ -6898,7 +7017,7 @@
             "told.pell_aristodemus"
           ]
         },
-        "outcome": ""
+        "outcome": "Pell waves you on with his nicked sword, still grinning."
       },
       {
         "label": "Open the door",
@@ -6907,11 +7026,11 @@
             "told.pell_aristodemus"
           ]
         },
-        "outcome": "Inside, a journal on a sack of grain, in a sergeant's square hand. The last line: \"Day nine. No runner. I hope Pell got out.\" Under it, in a different hand: \"He did.\"",
+        "outcome": "It gives to your shoulder, and the rotten bar with it. Inside, a journal on a sack of grain, in a sergeant's square hand. The last line: \"Day nine. No runner. I hope Pell got out.\" You find the pencil beside it and write under it: He did.",
         "deeds": [
           "lost.ormond_company"
         ],
-        "chronicle": "Opened a granary that had waited nine days for a runner. The sergeant's last line hoped Pell got out. He did. I helped.",
+        "chronicle": "Opened a granary that had waited nine days for a runner. The sergeant's last line hoped Pell got out. I wrote under it that he did.",
         "road": {
           "id": "flv_ormonds_granary.open",
           "hint": "The runner you send away is the runner someone else was waiting for."
@@ -6924,7 +7043,7 @@
             "told.pell_aristodemus"
           ]
         },
-        "outcome": "",
+        "outcome": "You leave the door as it is, rotten bar and all.",
         "chronicle": "Did not open the granary door. Some doors answer questions I did not want to ask."
       }
     ]
@@ -7159,7 +7278,7 @@
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "Behind you she goes on scraping at the dirt with her bare hands."
       }
     ]
   },
@@ -7230,7 +7349,7 @@
       "name": "Ahwere"
     },
     "tragedy": "unsavable",
-    "text": "A door of black stone that was never meant to open, and opens. Inside, the air smells of river mud and myrrh. A book lies open on a bier, and where its light falls, things name themselves: the unknown potion at your belt whispers what it is, a spent wand in your pack crackles as if it were full, and the bones of something you killed three floors up tell you, quite clearly, what they were. Two ghosts sit at a senet board beside it: a prince in a gold collar, and a woman whose hair is still wet. A small wet footprint leads from the bier to the wall and stops. \"You've come for the Book of Thoth,\" says the prince, and sets out the pieces. \"Setne came for it too, and he was a prince.\" The woman does not look at the board. She looks at you.",
+    "text": "A door of black stone that was never meant to open, and opens. Inside, the air smells of river mud and myrrh. A book lies open on a bier, and where its light falls, things name themselves: your own pack murmurs the true names of the things in it, and the bones of something you killed on the way down tell you, quite clearly, what they were. Two ghosts sit at a senet board beside it: a prince in a gold collar, and a woman whose hair is still wet. A small wet footprint leads from the bier to the wall and stops. \"You've come for the Book of Thoth,\" says the prince, and sets out the pieces. \"Setne came for it too, and he was a prince.\" The woman does not look at the board. She looks at you.",
     "options": [
       {
         "label": "Listen to Ahwere",
@@ -7426,7 +7545,7 @@
           "type": "hp_pct",
           "amount": 20
         },
-        "outcome": "Halfway to the arch the dragon's tail twitches and lays you flat. When you get up, Snerk has gone out the other way with the sack marked ME, and you are holding the one marked VILLAGES, and an enormous eye is opening.",
+        "outcome": "Halfway to the arch the dragon's tail twitches and lays you flat. When you get up, Snerk has gone out the other way with the sack marked ME, and you are holding the one marked VILLAGES, and an enormous eye is opening. You drop it and run.",
         "reward": {
           "type": "effect",
           "effect": "feared",
@@ -7467,7 +7586,7 @@
           "chronicle": "Audited a dragon's accountant. He was robbing the dragon for the villages, and robbing the villages for himself. Now he is only doing the first one."
         },
         "fail": {
-          "outcome": "The columns swim. \"All in order,\" says Snerk, closing the books a little fast. You help him carry. Halfway to the arch the dragon's tail twitches and lays you flat. When you get up, Snerk has gone out the other way with the sack marked ME, and you are holding the one marked VILLAGES, and an enormous eye is opening.",
+          "outcome": "The columns swim. \"All in order,\" says Snerk, closing the books a little fast. You help him carry. Halfway to the arch the dragon's tail twitches and lays you flat. When you get up, Snerk has gone out the other way with the sack marked ME, and you are holding the one marked VILLAGES, and an enormous eye is opening. You drop it and run.",
           "chronicle": "Tried to audit a kobold's books and could not find the trick. Found the dragon's tail instead.",
           "cost": {
             "type": "hp_pct",
@@ -7851,7 +7970,7 @@
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "Behind you the Pardoner starts his sermon. The love of money is the root of all evil. It never fails."
       }
     ]
   },
@@ -7982,7 +8101,16 @@
         "road": {
           "id": "flv_andvaris_pool.throw",
           "hint": "The net is how. Without the net, there is no how."
-        }
+        },
+        "outcome_variants": [
+          {
+            "when": {
+              "floor_min": 61
+            },
+            "outcome": "The grey silk goes down the falls and is gone. The pike comes up as a dwarf, slowly, and sits on the rock and looks at you for a long time. \"Loki didn't do that,\" he says. Then he sniffs, and smells the dragon on you. \"And Fafnir's dead, isn't he? Then there's nobody left on my gold but me.\" He laughs, a little, for the first time in a long time.",
+            "chronicle": "Threw Ran's net into the waterfall so nobody could rob Andvari again. He came up as a dwarf, smelled Fafnir's blood on me, and laughed."
+          }
+        ]
       },
       {
         "label": "Walk on",
@@ -8025,7 +8153,7 @@
             "noticed.hermes"
           ]
         },
-        "text": "A young man leans against the wall with his arms crossed, grinning like he knows a joke that hasn't been told yet. His traveller's hat has two small pinions tucked in the band. He carries a staff with two snakes carved round it, and one of them blinks. A tortoise shell with strings hangs on his back. \"I left something for you at a crossroads,\" he says. \"Probably. Or I will have. Want to make a trade?\" 'We've met. You fed my father. He's still talking about the onion.'"
+        "text": "A young man leans against the wall with his arms crossed, grinning like he knows a joke that hasn't been told yet. His traveller's hat has two small pinions tucked in the band. He carries a staff with two snakes carved round it, and one of them blinks. A tortoise shell with strings hangs on his back. \"I left something for you at a crossroads,\" he says. \"Probably. Or I will have. Want to make a trade?\" 'We've met. You watched my father's pitcher. He's still talking about it.'"
       }
     ],
     "options": [
@@ -8085,7 +8213,7 @@
           "chronicle": "Asked a grinning stranger about some stolen cattle. He laughed so hard he had to hold the wall. Then he left me a present at a crossroads."
         },
         "fail": {
-          "outcome": "\"Cattle?\" He looks innocent, which on him is a warning. When he's gone, so is one of your coins."
+          "outcome": "\"Cattle?\" He looks innocent, which on him is a warning. When he's gone, you count your purse twice. It is all there, which is somehow worse."
         },
         "road": {
           "id": "flv_disguised_hermes.cattle",
@@ -8157,7 +8285,7 @@
         "a fish's gall"
       ]
     },
-    "text": "A young man with a travelling staff and a dog at his heels falls into step beside you as if you had arranged it. \"Azarias, son of the great Ananias, one of your own kin.\" The dog wags at you as if you were an old friend. He has a fish wrapped in leaves under his arm and talks about it a great deal. You give him bread. He holds it while he talks, and later it is gone, though you never see him eat.",
+    "text": "A young man with a travelling staff and a dog at his heels falls into step beside you as if you had arranged it. \"Azarias, son of the great Ananias, one of your own kin.\" The dog wags at you as if you were an old friend. He has a fish wrapped in leaves under his arm and talks about it a great deal. He breaks a loaf of his own and offers you half. He holds his half while he talks, and later it is gone, though you never see him eat.",
     "escorts": {
       "escort_azarias": {
         "id": "azarias",
@@ -8279,7 +8407,7 @@
             }
           ]
         },
-        "outcome": "He laughs, and for a moment there is more light in the corridor than there are torches. \"I am Raphael, one of the seven who stand before the Lord. All these days you only thought you saw me eat.\" He blesses you with two fingers, the way a priest does, and the dog wags.",
+        "outcome": "He laughs, and for a moment there is more light in the corridor than there are torches. \"I am Raphael, one of the seven who stand before the Lord. All this way you only thought you saw me eat.\" He blesses you with two fingers, the way a priest does, and the dog wags.",
         "deeds": [
           "noticed.raphael"
         ],
@@ -8311,7 +8439,7 @@
       "name": "Talos Meniades"
     },
     "contested": true,
-    "text": "A ship's mast rises from black water, and a man is lashed to it hand and foot. Somewhere across the lake voices are singing, and it is the most beautiful thing you have ever heard. His crew row past with wax in their ears. The man strains at the ropes, weeping. \"Cut me loose. I'm the captain. I order it. I'll die if I don't hear the end.\" Scratched into the mast in his own hand: WHATEVER I SAY, DON'T.",
+    "text": "A ship has run its bow onto the shingle at your feet, black water all round its stern, and a man is lashed to its mast hand and foot. You could climb aboard. Somewhere across the lake voices are singing, and it is the most beautiful thing you have ever heard. His crew sit at the oars with wax in their ears. The man strains at the ropes, weeping. \"Cut me loose. I'm the captain. I order it. I'll die if I don't hear the end.\" Scratched into the mast in his own hand: WHATEVER I SAY, DON'T.",
     "options": [
       {
         "label": "Cut him loose",
@@ -8376,8 +8504,8 @@
         }
       },
       {
-        "label": "Stop your ears and row on",
-        "outcome": ""
+        "label": "Stop your ears and walk on",
+        "outcome": "You walk on with your fingers in your ears. The song follows you a long way, and then it doesn't."
       }
     ]
   },
@@ -8520,7 +8648,7 @@
       "name": "Socrates"
     },
     "contested": true,
-    "text": "A cell with the door open and a jailer asleep, and inside a snub-nosed old man in a worn cloak, cheerfully barefoot. A cup sits on the sill, waiting for sunset. A worried friend wrings his hands. \"Crito has a ship waiting,\" Socrates says. \"He thinks I should run. I think I shouldn't. Show me I'm wrong and I'll go.\" He pats the bench. \"But you'll have to show me. I'm very annoying about that.\"",
+    "text": "A cell with the door open and a jailer asleep, and inside a snub-nosed old man in a worn cloak, cheerfully barefoot. A cup sits on the sill, waiting for the watch to change. A worried friend wrings his hands. \"Crito has a boat waiting,\" Socrates says. \"He thinks I should run. I think I shouldn't. Show me I'm wrong and I'll go.\" He pats the bench. \"But you'll have to show me. I'm very annoying about that.\"",
     "options": [
       {
         "label": "Argue with him, staking your strength",
@@ -8533,7 +8661,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You argue all afternoon, and twice he has to stop and think, and once he laughs out loud and says, \"Oh, that's good.\" At sunset he still drinks the cup. \"You nearly had me,\" he says. \"Nearly is the most anyone has ever got. Thank you for the best afternoon I've had in a month.\"",
+          "outcome": "You argue until the torches burn low, and twice he has to stop and think, and once he laughs out loud and says, \"Oh, that's good.\" When the watch changes he still drinks the cup. \"You nearly had me,\" he says. \"Nearly is the most anyone has ever got. Thank you for the best argument I've had in a month.\"",
           "reward": {
             "type": "multi",
             "rewards": [
@@ -8552,7 +8680,7 @@
           "deeds": [
             "told.argued_socrates"
           ],
-          "chronicle": "Argued with Socrates all afternoon about whether he should run. I nearly had him. He drank the cup anyway and said it was his best afternoon in a month."
+          "chronicle": "Argued with Socrates for hours about whether he should run. I nearly had him. He drank the cup anyway and said it was his best argument in a month."
         },
         "fail": {
           "outcome": "He takes your argument apart so gently you hardly notice until you have nothing left to stand on. \"Don't be sad,\" he says. \"That's the useful part.\" You are wrung out.",
@@ -8569,11 +8697,11 @@
       },
       {
         "label": "Carry him out by force",
-        "outcome": "He doesn't fight. He just keeps talking, all the way to the ship, about whether a man carried away against his will has escaped at all. Crito weeps with relief. Socrates looks back at Athens the whole way out of the harbour.",
+        "outcome": "He doesn't fight. He just keeps talking, all the way to Crito's boat on the black water, about whether a man carried away against his will has escaped at all. Crito weeps with relief. You watch the boat pull away. Socrates looks back at his cell until the dark takes it.",
         "deeds": [
           "saved.socrates"
         ],
-        "chronicle": "Carried Socrates out of his cell to Crito's ship. He talked the whole way about whether it counted. He looked back at Athens until it was gone.",
+        "chronicle": "Carried Socrates out of his cell to Crito's boat. He talked the whole way about whether it counted. He looked back at his cell until the dark took it.",
         "road": {
           "id": "flv_socrates_cell.carry",
           "hint": "You can carry a man out of a cell and not out of his reasons."
@@ -8586,7 +8714,7 @@
           "effect": "blessed",
           "duration": 100
         },
-        "outcome": "You stay. He talks about the soul and asks you questions you will be answering for years. At sunset he drinks, and walks about until his legs are heavy, and lies down. \"Crito,\" he says at the very end, \"we owe a cock to Asclepius. Don't forget.\"",
+        "outcome": "You stay. He talks about the soul and asks you questions you will be answering for years. When the watch changes he drinks, and walks about until his legs are heavy, and lies down. \"Crito,\" he says at the very end, \"we owe a cock to Asclepius. Don't forget.\"",
         "deeds": [
           "lost.socrates",
           "told.socrates_last"
@@ -8951,6 +9079,32 @@
         "road": {
           "id": "flv_squire_tobyn.give",
           "hint": "A message from the dead is the one delivery that cannot wait."
+        },
+        "requires": {
+          "items_any": [
+            "brennans_sword"
+          ]
+        },
+        "hidden_group": "give"
+      },
+      {
+        "label": "Give him Ser Brennan's message, without the sword",
+        "requires": {
+          "items_none": [
+            "brennans_sword"
+          ]
+        },
+        "hidden_group": "give",
+        "oath_lapse": "brennan_sword",
+        "outcome": "You tell him what Brennan said, and then you have to tell him the rest: the sword is gone, lost on the way down. He listens to all of it. \"Ready,\" he says. \"He said ready.\" He picks up the wooden sword, and holds it differently.",
+        "deeds": [
+          "told.tobyn_no_sword"
+        ],
+        "thread_close": "tobyn_waits",
+        "chronicle": "Gave Squire Tobyn his knight's last words but not his sword. I had lost it on the way down. He took the words anyway.",
+        "road": {
+          "id": "flv_squire_tobyn.message_only",
+          "hint": "A dead man's words can be delivered even when his steel cannot."
         }
       },
       {
@@ -8964,6 +9118,11 @@
         "road": {
           "id": "flv_squire_tobyn.keep",
           "hint": "A promise to the dead is broken in front of the living."
+        },
+        "requires": {
+          "items_any": [
+            "brennans_sword"
+          ]
         }
       },
       {
@@ -9113,7 +9272,7 @@
       "id": "lady_bertilak",
       "name": "Lady Bertilak"
     },
-    "text": "In a warm hall cut into the rock, a lady in green sits by a fire, winding a sash of green silk round her fingers. \"My lord said whatever you win in his house today, you give to him tonight. Those are the terms.\" She holds out the sash. \"This is a girdle no blade can cut through. You go to meet the Green Knight soon. He will swing at your neck.\" She smiles. \"My lord need never know.\"",
+    "text": "In a warm hall cut into the rock, a lady in green sits by a fire, winding a sash of green silk round her fingers. \"My lord said whatever you win in his house, you give to him before you leave. Those are the terms.\" She holds out the sash. \"This is a girdle no blade can cut through. You go to meet the Green Knight soon. He will swing at your neck.\" She smiles. \"My lord need never know.\"",
     "options": [
       {
         "label": "Take it and keep it secret",
@@ -9122,7 +9281,7 @@
           "item_type": "armor",
           "item_id": "green_girdle"
         },
-        "outcome": "She ties it round your waist herself. That night her husband asks what you won today. You tell him: nothing.",
+        "outcome": "She ties it round your waist herself. At the door her husband asks what you won in his house. You tell him: nothing.",
         "deeds": [
           "wrong.kept_girdle"
         ],
@@ -9133,7 +9292,7 @@
         }
       },
       {
-        "label": "Take it, and give it to your host that night, as agreed",
+        "label": "Take it, and give it to your host at the door, as agreed",
         "karma": 1,
         "karma_kind": "forgo",
         "outcome": "Her husband turns the sash over in his hands, laughing, and does not give it back. \"Honest,\" he says. \"We'll see how honest the Knight finds your neck.\"",
@@ -9276,7 +9435,18 @@
           "deeds": [
             "noticed.vafthrudnir_loses"
           ],
-          "chronicle": "Asked Vafthrudnir the one question nobody can answer. He went grey and gave me his seat. I had it from a one-eyed man at a well."
+          "chronicle": "Asked Vafthrudnir the one question nobody can answer. He went grey and gave me his seat. I had it from a one-eyed man at a well.",
+          "outcome_variants": [
+            {
+              "when": {
+                "deeds_none": [
+                  "noticed.odin"
+                ]
+              },
+              "outcome": "The giant's face goes grey. Nobody has ever asked him that. Nobody alive knows the answer, and he has just realised where you learned to ask. \"You've been drinking at Mimir's well,\" he says, and gets up from his seat, and gives it to you.",
+              "chronicle": "Asked Vafthrudnir the one question nobody can answer. He went grey and gave me his seat. I had it from the water of Mimir's well."
+            }
+          ]
         },
         "fail": {
           "outcome": "You fumble the question you came to ask. He laughs, and lets you go anyway, and the laugh follows you out."
@@ -9319,7 +9489,7 @@
         "the small print"
       ]
     },
-    "text": "A gentleman in a black coat sits on a milestone where four corridors meet, tuning a fiddle. He smells of good cologne and, under it, of struck matches. \"Tired of being asked questions? Everyone down here is quizzing you. Sign, and you'll know every answer from here to the bottom, the moment it's asked.\" He holds out a paper covered in very small print, and a pen. One of his boots is the wrong shape, as if there were no toes in it. \"Payment later. Much later.\"",
+    "text": "A gentleman in a black coat sits on a milestone where four corridors meet, tuning a fiddle. He smells of good cologne and, under it, of struck matches. \"Tired of being asked questions? Everyone down here is quizzing you. Sign, and the answers will come to you sooner, from here to the bottom.\" He holds out a paper covered in very small print, and a pen. One of his boots is the wrong shape, as if there were no toes in it. \"Payment later. Much later.\"",
     "options": [
       {
         "label": "Sign",
@@ -9334,7 +9504,7 @@
         "deeds": [
           "wrong.signed_crossroads"
         ],
-        "chronicle": "Signed a gentleman's paper at a crossroads so I would always know the answer. Now the answers come early. So, I suspect, will the bill.",
+        "chronicle": "Signed a gentleman's paper at a crossroads so the answers would come to me sooner. Now they come early. So, I suspect, will the bill.",
         "road": {
           "id": "flv_crossroads_fiddler.sign",
           "hint": "A shortcut through every test is still a test."
@@ -10290,7 +10460,7 @@
     ],
     "sprite_id": "npc_dying_knight",
     "min_level": 86,
-    "max_level": 96,
+    "max_level": 92,
     "role": "story",
     "stakes": "medium",
     "person": {
@@ -10398,7 +10568,7 @@
       "name": "Boethius"
     },
     "tragedy": "unsavable",
-    "text": "A cell with the door open, and inside, an old man in a senator's toga gone grey writes by a single lamp. He does not leave. \"Theodoric's men come at dawn,\" he says, without looking up. \"The door? I could walk out. But I'd be running from a lie, and I'd rather finish the book.\" He sets down the pen. \"Tell me. A man who loses everything Fortune gave him: is he poorer?\"",
+    "text": "A cell with the door open, and inside, an old man in a senator's toga gone grey writes by a single lamp. He does not leave. \"Theodoric's men come when the watch changes,\" he says, without looking up. \"The door? I could walk out. But I'd be running from a lie, and I'd rather finish the book.\" He sets down the pen. \"Tell me. A man who loses everything Fortune gave him: is he poorer?\"",
     "options": [
       {
         "label": "Answer his question",
@@ -10420,7 +10590,7 @@
           "deeds": [
             "met.boethius"
           ],
-          "chronicle": "Answered Boethius's question in his cell. He laughed and said I had saved him a chapter. They come for him at dawn."
+          "chronicle": "Answered Boethius's question in his cell. He laughed and said I had saved him a chapter. They come for him when the watch changes."
         },
         "fail": {
           "outcome": "He nods, kindly. \"That is where I was, a month ago. It gets better.\""
@@ -10480,7 +10650,7 @@
       "id": "oswin",
       "name": "Sir Oswin"
     },
-    "text": "A pilgrim on the stair has a broadsheet from Harrow and is reading it aloud to nobody: SIR OSWIN TESTIFIES. BISHOP RANULF DEFROCKED. THALE'S LAND RETURNED TO THE KIN. At the bottom, smaller: The knight heard the court's sentence and asked for no mercy.",
+    "text": "A pilgrim sits on the stair with his boots off, rubbing his feet. \"The knight from Thale? Big man, cracked holy symbol?\" He points up the way you came. \"He passed me going up, singing. Badly. Said he was going home to testify against his bishop.\"",
     "text_variants": [
       {
         "when": {
@@ -10493,17 +10663,17 @@
     ],
     "options": [
       {
-        "label": "Ask the pilgrim for the broadsheet",
+        "label": "Ask the pilgrim about the knight",
         "requires": {
           "deeds_any": [
             "told.oswin_go_back"
           ]
         },
-        "outcome": "\"Keep it,\" says the pilgrim. \"I've read it to every stone on this stair.\"",
+        "outcome": "\"Singing,\" says the pilgrim again, as if that were the strange part. \"All the way up. I'd not have thought a man that size could climb that fast.\"",
         "deeds": [
           "told.oswin_trial"
         ],
-        "chronicle": "Read that Sir Oswin testified against his bishop and gave Thale back to its people. He took the court's sentence and asked for no mercy.",
+        "chronicle": "A pilgrim on the stair passed Sir Oswin going up to testify against his bishop and give Thale back. He said the knight was singing.",
         "road": {
           "id": "flv_paladin_end.broadsheet",
           "hint": "Some debts are paid where everyone can see."
@@ -10533,7 +10703,7 @@
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "The pilgrim goes back to rubbing his feet."
       }
     ]
   },
@@ -10704,7 +10874,7 @@
         "roland_horn": "open"
       }
     },
-    "text": "The Black Gate: a gate of black iron, the last before the bottom, with a hornstand of carved bone beside it and nothing in it. The wind comes up through the bars from the deep, and it is cold, and there are no sounds in it at all. Roland's horn is heavy in your pack.",
+    "text": "The Black Gate: a gate of black iron set deep in the wall, with a hornstand of carved bone beside it and nothing in it. The wind comes up through the bars from the deep, and it is cold, and there are no sounds in it at all. Roland's horn is heavy in your pack.",
     "options": [
       {
         "label": "Set Roland's horn to your lips and blow it",
@@ -10727,6 +10897,32 @@
         "road": {
           "id": "flv_rolands_horn_gate.blow",
           "hint": "A horn blown late is still a horn blown."
+        },
+        "requires": {
+          "items_any": [
+            "olifant"
+          ]
+        },
+        "hidden_group": "blow"
+      },
+      {
+        "label": "\"I lost Roland's horn.\"",
+        "requires": {
+          "items_none": [
+            "olifant"
+          ]
+        },
+        "hidden_group": "blow",
+        "oath_lapse": "roland_horn",
+        "outcome": "The hornstand stays empty. The wind comes up through the bars with no sounds in it, and nothing answers from above, because nothing was asked.",
+        "deeds": [
+          "told.olifant_lost"
+        ],
+        "thread_close": "rolands_horn",
+        "chronicle": "Reached the Black Gate without Roland's horn. I had lost it on the way down. The hornstand is still empty.",
+        "road": {
+          "id": "flv_rolands_horn_gate.lost",
+          "hint": "A horn lost on the road leaves the rear guard unremembered."
         }
       },
       {
@@ -10740,11 +10936,26 @@
         "road": {
           "id": "flv_rolands_horn_gate.keep",
           "hint": "The silence at a gate can be the sound of a promise not kept."
+        },
+        "requires": {
+          "items_any": [
+            "olifant"
+          ]
         }
       },
       {
         "label": "Walk on",
-        "outcome": ""
+        "outcome": "You leave the hornstand as you found it."
+      }
+    ],
+    "text_variants": [
+      {
+        "when": {
+          "items_none": [
+            "olifant"
+          ]
+        },
+        "text": "The Black Gate: a gate of black iron set deep in the wall, with a hornstand of carved bone beside it and nothing in it. The wind comes up through the bars from the deep, and it is cold, and there are no sounds in it at all. Roland's horn should be heavy in your pack. It is not there."
       }
     ]
   },
@@ -10768,18 +10979,18 @@
       "id": "ruth",
       "name": "Ruth Gale"
     },
-    "text": "A sharp-faced woman in good boots comes down the stair two at a time with a lantern and a bag of bread. \"Have you seen an old man in white? Carves things. Talks about locusts. My father.\" She sees your face before you answer.",
+    "text": "A sharp-faced woman in good boots comes down the stair after you two at a time, a lantern in one hand and an old man's chisel in the other. \"I found him,\" she says. \"Old man in white, beside a blank stone. My father. You were the last one with him.\" It isn't a question.",
     "options": [
       {
-        "label": "Take her to the finished tablet",
+        "label": "Ask her if he finished it",
         "requires": {
           "deeds_any": [
             "aid.amos"
           ]
         },
         "hidden_group": "by_deed",
-        "outcome": "She reads it standing, then sitting. THE KING OF THE LOCUSTS IS ABADDON, AND HE CAN BE ANSWERED. \"He was right,\" she says. \"All those years. He was right, and I laughed.\" She sits with him. You leave them.",
-        "chronicle": "Took Ruth Gale to her father's finished tablet. She read it twice. She said he was right and she had laughed. She stayed with him.",
+        "outcome": "\"He finished it.\" She says the words the way he must have carved them: THE KING OF THE LOCUSTS IS ABADDON, AND HE CAN BE ANSWERED. \"He was right. All those years. He was right, and I laughed.\" She turns back up the stair to sit with him.",
+        "chronicle": "Ruth Gale came down after me to say her father finished his tablet. She said he was right and she had laughed. She went back up to sit with him.",
         "road": {
           "id": "flv_ruth_gale.tablet",
           "hint": "A warning finished in time is read by the one who most needed it."
@@ -10798,8 +11009,8 @@
           "effect": "blessed",
           "duration": 60
         },
-        "outcome": "She listens to every word, then takes the chisel from beside him and carves it on the blank stone herself, badly, with her tongue between her teeth. \"There,\" she says. \"Now it's both of ours.\"",
-        "chronicle": "Told Ruth Gale the last warning her father whispered to me. She carved it on his blank stone herself, badly. Now it is both of theirs.",
+        "outcome": "She listens to every word with her eyes shut, saying it over after you. Then she turns back up the stair with his chisel in her fist. \"I'll carve it,\" she says. \"Badly. But it'll be both of ours.\"",
+        "chronicle": "Told Ruth Gale the last warning her father whispered to me. She went back up to carve it on his blank stone herself. Now it will be both of theirs.",
         "road": {
           "id": "flv_ruth_gale.tell",
           "hint": "A message told instead of carved can still be carved by someone else."
@@ -10810,16 +11021,38 @@
         "requires": {
           "deeds_any": [
             "wrong.robbed_amos"
+          ],
+          "items_any": [
+            "prophets_amulet"
           ]
         },
         "cost": {
           "type": "triggered_item_id",
           "item_id": "prophets_amulet"
         },
-        "outcome": "\"That's his.\" It isn't a question. She puts it round her own neck and does not thank you.",
+        "outcome": "\"That's his.\" It isn't a question. She puts it round her own neck and goes back up to him, and does not thank you.",
         "chronicle": "Ruth Gale saw her father's amulet on me and I gave it back. She did not thank me. I would not have.",
         "road": {
           "id": "flv_ruth_gale.give_back",
+          "hint": "What you take from the dying, the living come to ask for."
+        },
+        "hidden_group": "amulet"
+      },
+      {
+        "label": "Tell her it's gone",
+        "requires": {
+          "deeds_any": [
+            "wrong.robbed_amos"
+          ],
+          "items_none": [
+            "prophets_amulet"
+          ]
+        },
+        "hidden_group": "amulet",
+        "outcome": "\"Gone,\" she says. \"Like him.\" She looks at you a long time, then turns and goes back up the stair without another word.",
+        "chronicle": "Ruth Gale asked after her father's amulet. I had taken it and lost it since. She went back up to him without another word.",
+        "road": {
+          "id": "flv_ruth_gale.gone",
           "hint": "What you take from the dying, the living come to ask for."
         }
       },
@@ -10828,17 +11061,20 @@
         "requires": {
           "deeds_any": [
             "wrong.robbed_amos"
+          ],
+          "items_any": [
+            "prophets_amulet"
           ]
         },
-        "outcome": "\"That's his.\" It isn't a question. She looks at you a long time, then goes to find him without it.",
-        "chronicle": "Kept a prophet's amulet in front of his daughter. She went to find him without it.",
+        "outcome": "\"That's his.\" It isn't a question. She looks at you a long time, then goes back up to him without it.",
+        "chronicle": "Kept a prophet's amulet in front of his daughter. She went back up to him without it.",
         "road": {
           "id": "flv_ruth_gale.keep",
           "hint": "What you take from the dying, the living come to ask for."
         }
       },
       {
-        "label": "Show her where he is",
+        "label": "Tell her what you saw",
         "forbids": {
           "deeds_any": [
             "aid.amos",
@@ -10847,8 +11083,34 @@
           ]
         },
         "hidden_group": "by_deed",
-        "outcome": "She finds him beside a blank stone. She doesn't cry. She picks up his chisel and turns it over in her hands, and you leave her deciding what to carve.",
-        "chronicle": "Showed Ruth Gale where her father died beside a blank stone. She picked up his chisel. I left her deciding what to carve."
+        "outcome": "You tell her about the clear eyes and the blank stone, and that he told you to go quickly. She turns his chisel over in her hands. \"Then I'll decide what goes on it,\" she says, and goes back up.",
+        "chronicle": "Ruth Gale came after me from her father's blank stone. I told her he sent me on. She went back up with his chisel, deciding what to carve."
+      }
+    ],
+    "text_variants": [
+      {
+        "when": {
+          "deeds_any": [
+            "aid.amos"
+          ]
+        },
+        "text": "A sharp-faced woman in good boots comes down the stair after you two at a time with a lantern. \"I found him,\" she says. \"Old man in white, carving. My father. He said a stranger gave him the hour.\" She is out of breath, and not only from the stair."
+      },
+      {
+        "when": {
+          "deeds_any": [
+            "told.amos_last_tablet"
+          ]
+        },
+        "text": "A sharp-faced woman in good boots comes down the stair after you two at a time, a lantern in one hand and an old man's chisel in the other. \"I found him beside a blank stone,\" she says. \"My father. He'd been whispering to someone at the end. You?\""
+      },
+      {
+        "when": {
+          "deeds_any": [
+            "wrong.robbed_amos"
+          ]
+        },
+        "text": "A sharp-faced woman in good boots comes down the stair after you two at a time, a lantern in one hand and an old man's chisel in the other. \"I found him,\" she says. \"Old man in white, beside a blank stone. My father. His amulet's gone.\" She looks at you, and at what you carry."
       }
     ]
   },
