@@ -480,7 +480,7 @@ THE SPHERE DECIDES WHAT IS INSIDE, NEVER THE FLOOR. What each holds is data (`da
 | Greater Hearth Sphere | `greater_hearth_sphere` | always one of the family, level 25 | 0 / 0.4% / 0.2% | Vesper (61+) |
 | Master Hearth Sphere | `master_hearth_sphere` | always one of the family, level 55 | 0 / 0 / 0.2% | Vesper (67+) |
 
-- **Floor roll** (`dungeon.spawn_items` → `pet_system.sphere_for_floor`): ONE draw from the floor's stream against the six chances in turn, so at most one sphere a floor. A hidden treasure chamber re-runs the loot pass and can hold one at the same chance. Spheres carry no `peak_weight` / `floorSpawnWeight`, so they stay out of every random pool (chests, gifts, rewards) and thieves never take one.
+- **Floor roll** (`dungeon.spawn_items` → `pet_system.sphere_for_floor`): ONE draw from the floor's stream against the six chances in turn, so at most one sphere a floor. When the room it rolls is already full (a small maze cell), it goes to the next room with a free floor tile, never lost. A hidden treasure chamber re-runs the loot pass and can hold one at the same chance. Spheres carry no `peak_weight` / `floorSpawnWeight`, so they stay out of every random pool (chests, gifts, rewards) and thieves never take one.
 - **Traders** (`data/traders.json`, `id` entries with `floors`): a sphere he has rolled is always on the shelf. Prices: `data/item_worth.json` `share_by_id` (Soul 2.0, Greater 3.5, Master 5.0, Hearth 3.0, Greater Hearth 5.0, Master Hearth 7.0 floors' share), so the price follows the tier. A trader buys an unbound sphere back like anything else; a bound one is never sold or given as payment (`items.withheld`).
 - **Identity**: each looks the same identified or not (its art is the item; the unidentified name describes that look: "Iron-Caged Sphere", "Silver-Caged Sphere", "Crowned Silver Sphere", "Gold-Trimmed Iron Sphere", "Gold-Trimmed Silver Sphere", "Gold-Crowned Sphere"). Its kind is learned by identifying it or by throwing one. Never cursed (`can_be_cursed: false`, `buc_known: true`).
 - **Art**: `assets/tiles/items/<id>.png`, 64 px, drawn by `tools/content/genart/briefs/spheres.json` (review sheet `SPHERES_ART.png`). Plain tiers go pale wisp → bright core → radiant crowned globe; the Hearth versions match their tier, gold-touched, with warm light.
@@ -517,7 +517,7 @@ sphere in inventory, pet removed from active list
 (repeat throw cycle)
 ```
 
-A bound sphere is always made from a plain `soul_sphere` whatever the pet hatched from (its art is the Soul Sphere's), **cyan-tinted** (`color=[80, 200, 255]`) on the map's old glyph colour. Its name reads `"Bound Soul Sphere (<pet_name>)"`. Lore reads: "A Soul Sphere humming with the bound spirit of <name>. Hurl it to summon them back to your side."
+A bound sphere is always made from a plain `soul_sphere` whatever the pet hatched from (its art is the Soul Sphere's), **cyan-tinted** (`color=[80, 200, 255]`) on the map's old glyph colour. Its name reads `"Bound Soul Sphere (<pet_name>)"`. Lore reads: "A Soul Sphere humming with the bound spirit of <name>. Hurl it to summon it back to your side."
 
 Recall requires adjacency to the pet (Chebyshev ≤ 1). This prevents long-range recall shenanigans and makes recalling a wandering pet require you to catch it first.
 

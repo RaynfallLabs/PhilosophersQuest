@@ -606,7 +606,7 @@ modified by karma (see §5.3). Baseline amounts:
 | ≥ 1 | Restore SP: `max(15, max_sp // 4) + karma_bonus_sp` |
 | ≥ 2 | Restore HP: `max(15, max_hp // 4) + karma_bonus_hp` (plus message "Warmth washes over your wounds") |
 | ≥ 3 | Restore MP: `max(5, max_mp // 4) + karma_bonus_mp` |
-| ≥ 4 | **Uncurse** first worn cursed item **OR**, if nothing cursed, **bless** `1 + max(0, karma // 3)` random inventory items. At karma ≤ -5 the gift is refused outright. |
+| ≥ 4 | **Uncurse** first worn cursed item **OR**, if nothing cursed, **bless** `1 + max(0, karma // 3)` random inventory items (never treasure or a Soul Sphere, which take no blessing; named as the hero knows them). At karma ≤ -5 the gift is refused outright. |
 | ≥ 5 | Grant `shielded` for `max(1, 20 + karma_bonus_buff)` turns (`shielded` adds +3 AC per [combat.md](combat.md)). |
 
 ### 5.3 Karma magnitude scaling

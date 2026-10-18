@@ -175,7 +175,7 @@ Monster-den special rooms (`special_rooms[(cx, cy)] == 'monster_den'`) get 3-5 e
 | beehive      | 8         | Food on ~30% of tiles                                    |
 | graveyard    | 10        | `GRAVE` on ~20% of tiles + 1-2 skeleton corpses          |
 | barracks     | 12        | 2-3 weapon/armor items                                   |
-| swamp        | 15        | `WATER` on ~40% of inner tiles + scattered food          |
+| swamp        | 15        | `WATER` on ~40% of inner tiles (never one loot lies on: `_flood_swamp`) + scattered food |
 | throne_room  | 18        | 1 `THRONE` tile + 1 chest                                |
 
 ### 4.5 Hidden chambers (populate)

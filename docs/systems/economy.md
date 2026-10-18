@@ -328,7 +328,9 @@ same on every floor; deep floors hold the dear kinds by spawn bell.
   goes in; a ware still too heavy is set down at the hero's feet.
 - **Encounters** take treasure too: a gold cost is coin first, then treasure
   at the same rate, change in coin (`EncountersMixin._npc_pay_gold`). An
-  altar's tribute gives no change. "Can you afford it" counts treasure at
+  altar's tribute gives no change; when the coin falls short, the altar's
+  card says which treasure it would take before the hero accepts
+  (`RenderMixin._tribute_plan_line`). "Can you afford it" counts treasure at
   what the hero can count on (`_purse_wealth`).
 - **"Your purse"** for every share of it (a chosen "N% of your purse" cost,
   a temptation of "a quarter of what you carry", restore and cut-curse

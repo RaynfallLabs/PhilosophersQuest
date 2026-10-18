@@ -1185,6 +1185,7 @@ class DivineMixin:
                 msgs.append(("You offer a gift, but God turns away from it.", 'warning'))
             else:
                 bless_count = 1 + max(0, karma // 3)
+                from hud_context import item_bare_name    # Game._bare_name's own path
                 first_cursed = next(
                     (it for it in _iter_equipped(p)
                      if getattr(it, 'buc', '') == 'cursed'),
@@ -1193,28 +1194,41 @@ class DivineMixin:
                 if first_cursed is not None:
                     first_cursed.buc = 'uncursed'
                     first_cursed.buc_known = True
+                    # Named as the hero knows it: the true name of a thing
+                    # not yet identified must not leak (wiring audit
+                    # 2026-10-18).
                     msgs.append(
-                        (f"The curse on your {getattr(first_cursed, 'name', 'gear')} is broken.",
+                        (f"The curse on your {item_bare_name(p, first_cursed)} is broken.",
                          'success'))
                 else:
+                    # Never treasure or a Soul Sphere: neither can be cursed,
+                    # so a blessing on one would be a gift wasted.
+                    from pet_system import is_soul_sphere
                     candidates = [it for it in (p.inventory or [])
-                                  if hasattr(it, 'buc') and getattr(it, 'buc', '') != 'blessed']
+                                  if hasattr(it, 'buc') and getattr(it, 'buc', '') != 'blessed'
+                                  and getattr(it, 'item_class', '') != 'treasure'
+                                  and not is_soul_sphere(it)]
                     if candidates:
                         chosen = random.sample(
                             candidates, k=min(bless_count, len(candidates)))
+                        # Named before the blessing shows on it ("the Blessed
+                        # Thick Red Syrup" read twice over).
+                        first_name = item_bare_name(p, chosen[0])
                         for it in chosen:
                             it.buc = 'blessed'
                             it.buc_known = True
                         if len(chosen) == 1:
                             msgs.append(
-                                (f"A holy light suffuses the {getattr(chosen[0], 'name', 'item')} in your pack.",
+                                (f"A holy light suffuses the {first_name} in your pack.",
                                  'success'))
                         else:
                             msgs.append(
                                 (f"A holy light suffuses {len(chosen)} items in your pack.",
                                  'success'))
                     else:
-                        msgs.append(("Every item you carry already bears a blessing.", 'info'))
+                        # (True whether all is blessed already or the pack
+                        # holds only treasure and spheres, which take none.)
+                        msgs.append(("Nothing you carry can take another blessing.", 'info'))
 
         # ---- chain >= 5: shielded buff ----
         if chain >= 5:

@@ -623,6 +623,27 @@ def _restore_tiles(tiles, snapshot):
         tiles[y][:] = snapshot[y]
 
 
+def _flood_swamp(dungeon: 'Dungeon', room: 'Room', ground_items: list, rng) -> None:
+    """A swamp room: about 40% of its plain floor turns to WATER. Water
+    blocks movement, so the flood is undone if it severs the route from the
+    up stairs to the down stairs.
+
+    A tile something already lies on stays dry: flooding it left the loot
+    (a Soul Sphere, a chest) out of reach in the water, about one floor in
+    fifty (wiring audit 2026-10-18). The roll is drawn for every floor tile
+    either way, so the floor's random stream does not move."""
+    snapshot = _snapshot_tiles(dungeon.tiles)
+    lying = {(getattr(i, 'x', None), getattr(i, 'y', None)) for i in ground_items}
+    for tx, ty in room.inner_tiles():
+        if (dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.40
+                and (tx, ty) not in lying):
+            dungeon.tiles[ty][tx] = WATER
+    h, w = len(dungeon.tiles), len(dungeon.tiles[0])
+    up, down = _find_stair_tiles(dungeon.tiles, w, h)
+    if up and down and not _bfs_reaches(dungeon.tiles, w, h, up, down):
+        _restore_tiles(dungeon.tiles, snapshot)
+
+
 def _apply_terrain(dungeon: 'Dungeon', level: int, rng: random.Random):
     """Apply terrain features: fountains, water pools, lava rivers, ice rooms.
 
@@ -1748,7 +1769,16 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
             # (A one-room maze floor has no rooms[1:]: this raised IndexError
             # and took the whole floor's generation with it.)
             sphere_room = rng.choice(rooms[1:] or rooms)
-            _place_one([sphere], sphere_room, dungeon, ground_items, rng)
+            if not _place_one([sphere], sphere_room, dungeon, ground_items, rng):
+                # The room it rolled is already full (a small maze room
+                # after the loot pass): the sphere goes to the next room
+                # with a free floor tile, never silently lost (wiring
+                # audit 2026-10-18: about one rolled sphere in forty on a
+                # maze floor vanished).
+                for other in rooms[1:] + rooms[:1]:
+                    if other is not sphere_room and _place_one(
+                            [sphere], other, dungeon, ground_items, rng):
+                        break
 
     # Everything below builds floor-level STRUCTURES (mystery altars,
     # special rooms, coin and lairs, vault gold, traps, quest shrines and altars).
@@ -1930,17 +1960,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
 
         elif room_type == 'swamp':
             # Replace ~40% of inner tiles with WATER; spawn food on remaining
-            # floor. Water blocks movement, so undo the flood if it severs
-            # the route from the up stairs to the down stairs.
-            _swamp_snapshot = _snapshot_tiles(dungeon.tiles)
-            for tx, ty in special_room.inner_tiles():
-                if dungeon.tiles[ty][tx] == FLOOR and rng.random() < 0.40:
-                    dungeon.tiles[ty][tx] = WATER
-            _sh, _sw = len(dungeon.tiles), len(dungeon.tiles[0])
-            _s_up, _s_down = _find_stair_tiles(dungeon.tiles, _sw, _sh)
-            if _s_up and _s_down and not _bfs_reaches(
-                    dungeon.tiles, _sw, _sh, _s_up, _s_down):
-                _restore_tiles(dungeon.tiles, _swamp_snapshot)
+            # floor (_flood_swamp).
+            _flood_swamp(dungeon, special_room, ground_items, rng)
             # Food on remaining floor tiles
             if eligible_food:
                 for tx, ty in special_room.inner_tiles():

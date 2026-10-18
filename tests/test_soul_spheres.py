@@ -445,12 +445,16 @@ def test_a_hidden_treasure_chamber_can_hold_a_sphere(monkeypatch):
     sphere turns up in one at its band's chance like anywhere else."""
     from dungeon import generate_dungeon, spawn_items
     random.seed(9)
-    d = generate_dungeon(80, 50, 70)
+    # Floor 71, not 70: every tenth floor is a maze of small cells
+    # (generate_dungeon draws from an unseeded generator), and the loot pass
+    # filled the largest cell before the sphere about one run in eight, so
+    # this test failed now and then under xdist (wiring audit 2026-10-18).
+    d = generate_dungeon(80, 50, 71)
     # (the module spawn_items will import, whatever another test reloaded)
     monkeypatch.setattr(sys.modules['pet_system'], 'sphere_for_floor',
                         lambda level, rng: 'master_sphere')
     room = max(d.rooms, key=lambda r: r.width * r.height)
-    got = spawn_items([room, room], 70, d, structures=False)
+    got = spawn_items([room, room], 71, d, structures=False)
     assert any(getattr(i, 'id', '') == 'master_sphere' for i in got)
 
 

@@ -263,6 +263,23 @@ def _kit_option_card(screen, title, options, footer, *, lines=(), border=FP.GOLD
 
 
 class RenderMixin:
+    def _tribute_plan_line(self, cost: int) -> str:
+        """When the coin falls short of an altar's tribute, what treasure it
+        would take, said BEFORE the hero accepts: an altar gives no change
+        (game_divine._begin_mystery_challenge), so a gem worth far more than
+        the tribute is simply gone (wiring audit 2026-10-18). '' when the
+        coin covers it."""
+        if int(getattr(self, 'player_gold', 0) or 0) >= int(cost):
+            return ''
+        try:
+            plan = self._payment_plan(int(cost))
+        except Exception:
+            return ''
+        if not plan or not plan.get('take'):
+            return ''
+        return (f"Your coin is short: you would pay {self._payment_words(plan)}. "
+                f"An altar gives no change.")
+
     def _draw_mystery_approach(self):
         """Draw the mystery encounter overlay."""
         altar = self._active_mystery_altar
@@ -291,7 +308,11 @@ class RenderMixin:
             # The price as the altar takes it (written_gold): the card said
             # 50 where 300 was taken.
             import economy as _eco
-            body.append((f"Tribute: {_eco.written_gold(m['gold_cost']):,} gold", FP.FADED_TEXT))
+            _tribute = _eco.written_gold(m['gold_cost'])
+            body.append((f"Tribute: {_tribute:,} gold", FP.FADED_TEXT))
+            _plan = self._tribute_plan_line(_tribute)
+            if _plan:
+                body.append((_plan, FP.WARNING_TEXT))
         if m.get('stat_cost'):
             cost_desc = ', '.join(f"{s}{v}" for s, v in m['stat_cost'].items())
             body.append((f"Cost: {cost_desc}", FP.WARNING_TEXT))
