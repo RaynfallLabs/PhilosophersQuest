@@ -747,7 +747,13 @@ Dispatch flow:
    shipped. Grammar quiz with its own tier/threshold; success grants
    omniscience (full identify + corpse lore + wand recharge), failure
    lands Setne's curse (3d6 psychic + 20t stunned + 3 random items
-   forget their type). The book is **always consumed**.
+   forget their type). The book is **not consumed** (DEEDS_KARMA_DESIGN
+   §11.12): its power is spent after one read, pass or fail
+   (`book.spent`, shown as "Book of Thoth (Read)"), a second read does
+   nothing, and the book stays until it is laid on an altar to keep the
+   oath sworn to Neferkaptah at Setne's Tomb (`src/setne_tomb.py`, its
+   only source). Unread, the altar refuses it; late, the oath closes as
+   `kept_late`.
 2. **Already-known early-out** — if `spell_id in player.known_spells`,
    emit a message and return without burning the book.
 3. **Necronomicon** — stateful multi-question "Say The Words" quiz

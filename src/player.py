@@ -1012,6 +1012,9 @@ class Player:
             radius += 4
         if self.has_effect('truesight'):
             radius += 2
+        if self.has_effect('light'):
+            from status_effects import LIGHT_SIGHT_BONUS
+            radius += LIGHT_SIGHT_BONUS
         # Hand of Glory (passive_dark_vision): a flat accessory passive that
         # mirrors the dark_vision status. Lore: the corpse-fat candle reveals
         # what hides in deep shadow. +4 radius while worn.
@@ -1231,6 +1234,11 @@ class Player:
         for piece in getattr(self, 'armor_slots', ()) or ():
             if piece is not None:
                 base += int(getattr(piece, 'quiz_timer_bonus', 0) or 0)
+        # Worn accessories that keep time (the Brass Warden's Cog, the
+        # crossroads gentleman's black string).
+        if hasattr(self, 'amulet_slot') and hasattr(self, 'accessory_slots'):
+            for acc in self.equipped_accessories:
+                base += int(getattr(acc, 'quiz_timer_bonus', 0) or 0)
         return base
 
     def get_identify_tier_reduction(self) -> int:
@@ -1266,7 +1274,39 @@ class Player:
     BURDEN_STEP_EVERY = 4
 
     def get_carry_limit(self) -> int:
-        return self.CARRY_BASE + self.STR * self.CARRY_PER_STR
+        limit = self.CARRY_BASE + self.STR * self.CARRY_PER_STR
+        if self.has_effect('porter'):
+            # Someone else carries part of the load (a bought porter).
+            from status_effects import PORTER_CARRY_BONUS
+            limit += PORTER_CARRY_BONUS
+        return limit
+
+    # ----- effects that last whole floors (story rewards) -----
+    def add_floor_effect(self, name: str, floors: int) -> None:
+        """Hold ``name`` for ``floors`` new depths (a porter for five floors,
+        a brighter lantern for two). An effect the hero already has for good
+        (an item's) is left alone and not counted."""
+        fe = self.__dict__.setdefault('floor_effects', {})
+        if self.status_effects.get(name, 0) == -1 and name not in fe:
+            return
+        fe[name] = max(int(fe.get(name, 0) or 0), int(floors))
+        self.status_effects[name] = -1
+
+    def tick_floor_effects(self) -> list:
+        """One new depth reached: count every floor effect down. Returns the
+        [(message, kind)] for the ones that ended."""
+        fe = self.__dict__.get('floor_effects') or {}
+        ended = []
+        for name in list(fe):
+            fe[name] = int(fe[name]) - 1
+            if fe[name] <= 0:
+                del fe[name]
+                if self.status_effects.get(name) == -1:
+                    self.status_effects.pop(name, None)
+                from status_effects import _EXPIRE_MSGS
+                ended.append(_EXPIRE_MSGS.get(
+                    name, (f"{name.replace('_', ' ').title()} wears off.", 'info')))
+        return ended
 
     def worn_items(self) -> list:
         """Every item on the body: weapons, shield, armour, rings, amulet, belt."""

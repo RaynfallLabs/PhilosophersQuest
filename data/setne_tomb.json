@@ -1,0 +1,27 @@
+{
+  "_doc": "Setne's Tomb (DEEDS_KARMA_DESIGN 11.12; ENCOUNTER_STORIES_DRAFT H00 and C19). Engine settings and engine lines for src/setne_tomb.py. The encounter itself (the scene, the senet quiz with per_miss, the oath thoth_return, the forgo, the schedule of the dead) is ordinary encounter data under the tag in 'encounter', marked callback_only so nothing else rolls it: this system places it in a sealed tomb room on one run-rolled floor. The Book of Thoth has no other source.",
+  "floors": [45, 65],
+  "encounter": "flv_setne_tomb",
+  "callback": "flv_dead_come_for_the_book",
+  "prize_item": "book_of_thoth",
+  "oath": "thoth_return",
+  "thread": "thoth_home",
+  "companion": {
+    "name": "Ahwere",
+    "sprite_id": "npc_ahwere",
+    "symbol": "@",
+    "color": [170, 200, 220]
+  },
+  "atmosphere": "The air on this floor smells of river mud and myrrh.",
+  "door_message": "A door of black stone that was never meant to open swings inward at your touch.",
+  "read_spent_message": "The words are still there. They will not do it twice.",
+  "spent_name": "Book of Thoth (Read)",
+  "altar": {
+    "unread_message": "\"Not yet,\" says a voice like water. \"You swore to read it first.\"",
+    "on_time_message": "The book is wet when you lay it down, though it was dry in your pack. When you look again, it is gone, and the altar smells of river.",
+    "on_time_chronicle": "Laid the Book of Thoth on an altar, as I swore to a dead prince. It was wet when I set it down. Then it was gone home.",
+    "late_message": "The book is wet when you lay it down. For a moment you hear a woman say a child's name, and then the book is gone.",
+    "late_thread_line": "I took the book back late. On the altar it was wet, and for a moment I heard a woman say a child's name.",
+    "late_chronicle": "Laid the Book of Thoth on an altar, later than I swore. It went home anyway. I think someone was waiting up."
+  }
+}

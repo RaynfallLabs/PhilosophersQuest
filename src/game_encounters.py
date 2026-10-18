@@ -627,6 +627,14 @@ class EncountersMixin:
                     enc = lvl_enc
                     break
         if enc is None:
+            # A figure a system placed itself (Setne's tomb): its scene is in
+            # the encounter data by tag, not in this run's floor views.
+            from game_road import _encounter_by_tag
+            _src, found = _encounter_by_tag(tag)
+            if found is not None:
+                import economy
+                enc = economy.price_encounter(found)
+        if enc is None:
             return False
         if self._npc_already_spent(enc, monster, flavor=True):
             return True
@@ -654,6 +662,37 @@ class EncountersMixin:
 
         self._npc_open(enc, monster, flavor=False)
         return True
+
+    def _hostile_encounter_arrives(self):
+        """An encounter marked ``hostile`` (C19: the dead come for a book
+        owed) opens as the hero arrives on its floor: its figure steps up to
+        the nearest free tile the hero can walk to, and the scene begins.
+        It has no walk-away option; Esc does not end it before a choice."""
+        if self.state != STATE_PLAYER:
+            return
+        for m in list(self.monsters):
+            tag = getattr(m, '_flavor_encounter_tag', None) or getattr(m, '_npc_encounter_tag', None)
+            if not tag or not m.alive:
+                continue
+            levels = (getattr(self, '_flavor_encounter_levels', {}) if getattr(m, '_flavor_encounter_tag', None)
+                      else getattr(self, '_npc_encounter_levels', {})) or {}
+            enc = next((e for e in levels.values() if (e or {}).get('tag') == tag), None)
+            if not enc or not enc.get('hostile'):
+                continue
+            px, py = self.player.x, self.player.y
+            from geom import all_occupied_tiles
+            busy = set(all_occupied_tiles(self.monsters)) | self._occupants()
+            near = sorted((t for t in self._reachable_tiles(px, py)
+                           if t not in busy and t != (px, py) and self.dungeon.is_walkable(*t)),
+                          key=lambda t: (max(abs(t[0] - px), abs(t[1] - py)),
+                                         abs(t[0] - px) + abs(t[1] - py), t))
+            if near:
+                m.x, m.y = near[0]
+            if getattr(m, '_flavor_encounter_tag', None):
+                self._start_flavor_encounter(m)
+            else:
+                self._start_npc_encounter(m)
+            return
 
     def _npc_already_spent(self, enc, monster, *, flavor: bool) -> bool:
         """An encounter is spent the moment its choice is made (the cost is
@@ -850,6 +889,15 @@ class EncountersMixin:
         self.quiz_title = spec.get('title') or f"{str(enc.get('name', '')).upper()}  --  {subject.upper()}"
         self.state = STATE_QUIZ
         threshold = int(spec.get('threshold', 1))
+        # Per-miss consequences (Setne's senet: ankles, then waist, then
+        # neck): applied the moment each round is lost, not at the end.
+        self._npc_per_miss_lines = []
+        per_miss = opt.get('per_miss')
+        on_each = None
+        if isinstance(per_miss, list) and per_miss:
+            def on_each(ok, _correct, wrong, _pm=per_miss):
+                if not ok:
+                    self._apply_per_miss(_pm, wrong)
         self.quiz_engine.start_quiz(
             mode=spec.get('mode', 'threshold'), subject=subject, tier=int(spec.get('tier', 1)),
             callback=self._npc_quiz_done,
@@ -861,7 +909,30 @@ class EncountersMixin:
             timer_modifier=self.player.get_quiz_timer_modifier(),
             extra_seconds=self.player.get_quiz_extra_seconds(subject),
             base_seconds=self.player.get_quiz_timer(subject),
+            play_all=bool(spec.get('play_all', False)),
+            on_each=on_each,
         )
+
+    def _apply_per_miss(self, entries, misses: int):
+        """The consequence of the ``misses``-th lost round: its text, a cost
+        (any option cost type), an effect, deeds. A miss past the end of the
+        list costs nothing more."""
+        if misses < 1 or misses > len(entries):
+            return
+        e = entries[misses - 1] or {}
+        enc = getattr(self, '_npc_encounter_active', None) or {}
+        if e.get('text'):
+            self.add_message(e['text'], 'danger')
+            lines = getattr(self, '_npc_per_miss_lines', None)
+            if lines is not None:
+                lines.append(e['text'])
+        if e.get('cost'):
+            self._npc_pay_cost(e['cost'], None)
+        eff = e.get('effect')
+        if isinstance(eff, dict) and eff.get('effect'):
+            self.player.add_effect(eff['effect'], int(eff.get('duration', 5)))
+        if e.get('deeds'):
+            self._record_deeds(e['deeds'], enc.get('tag', ''))
 
     def _npc_quiz_done(self, result):
         """An encounter quiz ended: apply its pass or fail branch."""
@@ -874,6 +945,13 @@ class EncountersMixin:
         enc = getattr(self, '_npc_encounter_active', None) or {}
         passed = quiz_passed(opt['quiz'], result)
         branch = opt.get('pass' if passed else 'fail') or {'outcome': ''}
+        if not passed:
+            # A fail can read differently by how many rounds were won
+            # (senet: one round won, or none and the floor takes you).
+            by = opt.get('fail_by_correct') or {}
+            alt = by.get(str(int(getattr(result, 'correct', 0) or 0)))
+            if isinstance(alt, dict):
+                branch = alt
         if passed:
             tag = enc.get('tag', 'encounter')
             # Judgment counts only where the careless road was open, and
@@ -948,9 +1026,37 @@ class EncountersMixin:
         # Show outcome
         from encounter_schema import resolve_outcome
         self._npc_outcome_text = resolve_outcome(o, self._deed_ctx())
+        _miss = getattr(self, '_npc_per_miss_lines', None)
+        if _miss:
+            self._npc_outcome_text = ' '.join(list(_miss) + [self._npc_outcome_text]).strip()
+            self._npc_per_miss_lines = []
+        if o.get('people_lines'):
+            _extra = self._people_lines_text(o['people_lines'])
+            if _extra:
+                self._npc_outcome_text = (self._npc_outcome_text + '\n\n' + _extra).strip()
         self._npc_outcome_chronicle = o.get('chronicle')
         self._npc_after = o.get('then', 'close')
         self._npc_encounter_phase = 'outcome'
+
+    def _people_lines_text(self, spec) -> str:
+        """An outcome's ``people_lines``: ``{"table": "gate", "max": 6,
+        "after": "closing line", "none": "line when nobody qualifies"}``.
+        The table lives in data/gate_lines.json (encounter_schema.people_lines)."""
+        import json
+        from encounter_schema import people_lines
+        from paths import data_path
+        spec = spec if isinstance(spec, dict) else {'table': str(spec)}
+        try:
+            with open(data_path('data', 'gate_lines.json'), encoding='utf-8') as f:
+                table = json.load(f).get(spec.get('table', 'gate')) or {}
+        except (OSError, ValueError):
+            return ''
+        lines = people_lines(table, self._deed_ctx(), spec.get('max'))
+        if not lines and spec.get('none'):
+            lines = [spec['none']]
+        if lines and spec.get('after'):
+            lines = lines + [spec['after']]
+        return '\n'.join(lines)
 
     def _apply_outcome_deeds(self, o: dict, tag: str, *, person=None, chron_kind=None):
         """The deeds side of an outcome: engine virtue tags, the deeds list,
@@ -983,7 +1089,8 @@ class EncountersMixin:
                 due = deepest + rng.randint(int(span[0]), int(span[1]))
             made = deeds.swear(reg, oath['id'], to=oath.get('to', ''), what=oath.get('what', ''),
                                item_id=oath.get('item_id'), due_floor=due, floor=floor,
-                               block=block, turn=turn, source=tag)
+                               block=block, turn=turn, source=tag,
+                               lapse_mode=oath.get('lapse_mode', 'silent'))
             if legacy_karma and int(o.get('karma', 0) or 0) > 0:
                 made['prepaid'] = True          # its point was paid when it was sworn
             for k in ('thread', 'lapse_chronicle'):
@@ -993,9 +1100,17 @@ class EncountersMixin:
         if o.get('oath_keep'):
             self._keep_oath(o['oath_keep'], paid_here=bool(legacy_karma))
         if o.get('oath_break'):
-            self._break_oath(o['oath_break'], paid_here=bool(legacy_karma))
+            # The break costs -1 betray once: an outcome that writes that
+            # point itself ("oath_break" with karma -1, kind betray) has paid.
+            _paid = bool(legacy_karma) or (int(o.get('karma', 0) or 0) < 0
+                                           and o.get('karma_kind') == 'betray')
+            self._break_oath(o['oath_break'], paid_here=_paid)
         if o.get('oath_release'):
             deeds.release_oath(reg, o['oath_release'], floor=floor, block=block, turn=turn)
+        if o.get('oath_lapse'):
+            # A lapse resolved in a scene (the dead come for a late book):
+            # 0 karma, tag vice:lapsed, blocks 'faithful' (decision 3).
+            deeds.lapse_oath(reg, o['oath_lapse'], floor=floor, block=block, turn=turn)
         if person is None:
             person = (getattr(self, '_npc_encounter_active', None) or {}).get('person')
         pid = person.get('id') if isinstance(person, dict) else None
@@ -1005,7 +1120,19 @@ class EncountersMixin:
             deeds.set_person(reg, pid, name=person.get('name', ''),
                              status=spec.get('status'), owes=spec.get('owes'),
                              owed=spec.get('owed'), deserving=spec.get('deserving'),
-                             last_line=o.get('chronicle'), floor=floor)
+                             last_line=spec.get('last_line', o.get('last_line', o.get('chronicle'))),
+                             floor=floor)
+        elif o.get('last_line') and pid:
+            deeds.set_person(reg, pid, name=person.get('name', ''),
+                             last_line=o['last_line'], floor=floor)
+        # Other people the scene changes (Ahwere and Merib, long lost):
+        # [{id, name, status, deserving, owes, owed, last_line}].
+        for pe in o.get('people') or ():
+            if isinstance(pe, dict) and pe.get('id'):
+                deeds.set_person(reg, pe['id'], name=pe.get('name', ''),
+                                 status=pe.get('status'), owes=pe.get('owes'),
+                                 owed=pe.get('owed'), deserving=pe.get('deserving'),
+                                 last_line=pe.get('last_line'), floor=floor)
         th = o.get('thread')
         if isinstance(th, dict) and th.get('id'):
             deeds.open_thread(reg, th['id'], hint=th.get('hint', ''), floor=floor)
@@ -1021,8 +1148,15 @@ class EncountersMixin:
             spec = resolve_spec(o['escort'], enc)
             if spec is not None:
                 self._spawn_escort(spec, source=tag, person=person if pid else None)
-        if isinstance(o.get('fight'), dict) and o['fight'].get('monster_id'):
-            self._spawn_outcome_fight(o['fight']['monster_id'])
+        if o.get('fight'):
+            self._spawn_outcome_fight(o['fight'])
+        # Things that happen once the outcome page is closed, so the page the
+        # player is reading does not change under them: the tomb door turns
+        # to wall, the floor gives the hero up to the floor above.
+        for key in ('seal_door', 'expel_up'):
+            if o.get(key):
+                self._npc_after_close = list(getattr(self, '_npc_after_close', None) or [])
+                self._npc_after_close.append(key)
         if chron_kind and o.get('chronicle'):
             import chronicle
             chronicle.chron(self, chron_kind, o['chronicle'], person=pid)
@@ -1059,28 +1193,55 @@ class EncountersMixin:
             deeds.close_thread(reg, o['thread'])
         return True
 
-    def _spawn_outcome_fight(self, monster_id: str):
-        """An outcome's ``fight``: a hostile beside the hero."""
+    def _spawn_outcome_fight(self, spec):
+        """An outcome's ``fight``: hostiles around the hero. Returns the
+        list spawned.
+
+        ``spec`` is a monster id, ``{monster_id, count}``, or a list of
+        those (two ogres; Neferkaptah and six mummies). Each lands on the
+        nearest free tile the hero can walk to by four-way steps (the
+        reachability rule every encounter spawn follows, DEEDS 6.4), never
+        on the hero, a monster, a pet or an escort."""
+        from encounter_schema import fight_entries
         from monster import Monster
-        try:
-            from game_magic import _monster_defn
-            defn = _monster_defn(monster_id)
-        except Exception:
-            return None
+        from game_magic import _monster_defn
         from geom import all_occupied_tiles
         busy = set(all_occupied_tiles(self.monsters)) | self._occupants()
         px, py = self.player.x, self.player.y
-        for r in (1, 2, 3):
-            for dx in range(-r, r + 1):
-                for dy in range(-r, r + 1):
-                    t = (px + dx, py + dy)
-                    if max(abs(dx), abs(dy)) == r and self.dungeon.in_bounds(*t) \
-                            and self.dungeon.is_walkable(*t) and t not in busy:
-                        m = Monster(defn, *t)
-                        m._aware = True
-                        self.monsters.append(m)
-                        return m
-        return None
+        try:
+            reach = self._reachable_tiles(px, py)
+        except Exception:
+            reach = None
+        d = self.dungeon
+        spots = [t for t in (reach or ())
+                 if t != (px, py) and t not in busy and d.in_bounds(*t) and d.is_walkable(*t)]
+        if not spots:
+            # No flood (a test map, a pocket): the old ring search.
+            spots = [(px + dx, py + dy) for r in (1, 2, 3)
+                     for dx in range(-r, r + 1) for dy in range(-r, r + 1)
+                     if max(abs(dx), abs(dy)) == r
+                     and d.in_bounds(px + dx, py + dy) and d.is_walkable(px + dx, py + dy)
+                     and (px + dx, py + dy) not in busy]
+        # Nearest first: four-way neighbours, then the diagonals, then out.
+        spots.sort(key=lambda t: (max(abs(t[0] - px), abs(t[1] - py)),
+                                  abs(t[0] - px) + abs(t[1] - py), t))
+        out = []
+        for mid, n in fight_entries(spec):
+            try:
+                defn = _monster_defn(mid)
+            except Exception:
+                defn = None
+            if not defn:
+                continue
+            for _ in range(n):
+                if not spots:
+                    return out
+                t = spots.pop(0)
+                m = Monster(defn, *t)
+                m._aware = True
+                self.monsters.append(m)
+                out.append(m)
+        return out
 
     def _npc_remove_item_by_id(self, item_id: str) -> bool:
         """Take the item with this id from the pack or a worn slot."""
@@ -1270,6 +1431,34 @@ class EncountersMixin:
                 self.add_message(f"Received: {self._display_name(item)}", 'loot')
                 self._give_item(item)
 
+        elif rtype == 'gold_pct':
+            # A share of the hero's own purse back (a slaver's change).
+            from npc_encounters import pct_loss
+            amount = pct_loss(self.player_gold, reward['amount'], 0)
+            if amount:
+                self.player_gold += amount
+                self.add_message(f"+{amount:,} gold!", 'loot')
+
+        elif rtype == 'gold_pct_loss':
+            # A share of the hero's own purse, gone (a quick hand in the
+            # night): LORE NOT FLOOR, a percentage of the player's own pool.
+            from npc_encounters import pct_loss
+            loss = pct_loss(self.player_gold, reward['amount'], 0)
+            self.player_gold = max(0, self.player_gold - loss)
+            if loss:
+                self.add_message(f"Your purse is {loss:,} gold lighter.", 'danger')
+
+        elif rtype == 'effect' and reward.get('floors'):
+            # An effect that lasts whole floors (a porter for five, a
+            # brighter lantern for two): held while the count runs, then
+            # gone. Counted down on each new depth (Player.tick_floor_effects).
+            eff = reward['effect']
+            floors = max(1, int(reward['floors']))
+            self.player.add_floor_effect(eff, floors)
+            eff_name = eff.replace('_', ' ').title()
+            self.add_message(
+                f"{eff_name} for {floors} floor{'s' if floors != 1 else ''}!", 'success')
+
         elif rtype == 'effect':
             eff = reward['effect']
             dur = reward.get('duration', 20)
@@ -1457,6 +1646,7 @@ class EncountersMixin:
 
     def _close_npc_encounter(self, resolved: bool):
         """Close the NPC encounter overlay."""
+        _closing_npc = getattr(self, '_npc_encounter_monster', None)
         if resolved:
             # Remove the NPC
             npc = self._npc_encounter_monster
@@ -1520,8 +1710,71 @@ class EncountersMixin:
         self._npc_item_list = []
         self._npc_is_flavor = False
         self.state = STATE_PLAYER
+        _after = list(getattr(self, '_npc_after_close', None) or []) if resolved else []
+        self._npc_after_close = []
         if resolved:
             self._advance_turn()
+        if 'seal_door' in _after or 'expel_up' in _after:
+            self._encounter_seal_room(_closing_npc)
+        if 'expel_up' in _after:
+            self._encounter_expel_up()
+
+    # ------------------------------------------------------------------
+    # Encounter rooms (Setne's tomb): sealing and expulsion
+    # ------------------------------------------------------------------
+
+    def _encounter_room_of(self, npc):
+        room = getattr(npc, '_encounter_room', None) if npc is not None else None
+        if room is None:
+            room = (getattr(self, '_setne', None) or {}).get('room') \
+                if getattr(self, 'dungeon_level', None) == (getattr(self, '_setne', None) or {}).get('floor') \
+                else None
+        return room if isinstance(room, dict) else None
+
+    def _encounter_seal_room(self, npc):
+        """The room's door becomes wall, for good. A hero standing inside is
+        put outside it first, and whoever else waits in the room goes."""
+        from dungeon import WALL
+        room = self._encounter_room_of(npc)
+        if not room or not room.get('door'):
+            return
+        dx, dy = room['door']
+        chamber = {tuple(t) for t in room.get('chamber') or ()}
+        out = tuple(room.get('outside') or ())
+        if ((self.player.x, self.player.y) in chamber
+                or (self.player.x, self.player.y) == (dx, dy)) and out:
+            self.player.x, self.player.y = out
+        for m in list(self.monsters):
+            if (m.x, m.y) in chamber and getattr(m, '_encounter_room', None) is not None:
+                m.alive = False
+                m.hp = 0
+        self.monsters[:] = [m for m in self.monsters if m.alive or (m.x, m.y) not in chamber]
+        if self.dungeon.in_bounds(dx, dy):
+            self.dungeon.tiles[dy][dx] = WALL
+        room['sealed'] = True
+        if room.get('system') == 'setne':
+            st = getattr(self, '_setne', None)
+            if isinstance(st, dict):
+                st['sealed'] = True
+        try:
+            self._refresh_fov()
+        except Exception:
+            pass
+
+    def _encounter_expel_up(self):
+        """The floor gives the hero up to the floor above: a floor already
+        visited, never the Cow Level. From floor 1 there is nowhere up, so
+        nothing happens."""
+        from boss_levels import COW_LEVEL
+        cur = int(getattr(self, 'dungeon_level', 1) or 1)
+        if cur <= 1 or cur == COW_LEVEL:
+            return
+        target = cur - 1
+        try:
+            self._change_level(target, enter_from_top=False, via='warp')
+        except Exception:
+            from game_log import log_error
+            log_error('game_encounters._encounter_expel_up: recovered from an error')
 
     # ------------------------------------------------------------------
     # Altar of the Last Judgment  (L99)

@@ -313,6 +313,8 @@ class Monster:
         # Pull-on-hit: chance the strike drags the player 2 tiles toward
         # the monster (charybdis / kraken / grappler family).
         self.pull_chance: float = float(defn.get('pull_chance', 0.0) or 0.0)
+        # A named story foe (Neferkaptah, Azarael, Morrow): no article.
+        self.proper_noun: bool = bool(defn.get('proper_noun', False))
 
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
@@ -641,6 +643,7 @@ class Monster:
             return 0
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
+            self._struck = True              # a calmed locust remembers (Locust Charm)
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)

@@ -1083,7 +1083,9 @@ def test_the_book_of_thoth_read_well_names_the_world():
     assert g.state == STATE_QUIZ and g.quiz_engine.subject == 'grammar'
     g.quiz_engine._end(success=True)
     assert g.state == STATE_PLAYER
-    assert book not in g.player.inventory              # always consumed
+    # Not consumed (DEEDS_KARMA_DESIGN 11.12): its power is spent after one
+    # read, and it stays until it is laid on an altar to keep the oath.
+    assert book in g.player.inventory and book.spent
     assert unknown.identified or int(getattr(unknown, 'id_level', 0)) >= 4
     assert 'the world named itself back to me' in _chron(g)
     assert _own_item_art('book_of_thoth')
@@ -1096,17 +1098,25 @@ def test_the_book_of_thoth_read_badly_brings_the_curse():
     book = _thoth(g)
     g.quiz_engine._end(success=False)
     assert g.state == STATE_PLAYER
-    assert book not in g.player.inventory
+    assert book in g.player.inventory and book.spent    # a failed read still owes the return
     assert g.player.hp < hp or g.player.has_effect('stunned')
     assert 'The dead were displeased' in _chron(g)
 
 
-@pytest.mark.xfail(strict=True, reason=(
-    "Open design gap, not a regression: the Book of Thoth has had no way into "
-    "a run since v2.10.0 (min_level 9999, scripted-only, and no drop, reward, "
-    "kit or shrine names it). Reading it works (tests above). Flips to a pass "
-    "once Brandon gives it a source."))
 def test_the_book_of_thoth_can_be_found_in_a_run():
+    """Its source is Setne's Tomb (setne_tomb.py, data/setne_tomb.json): a
+    sealed room on one floor of 45-65 rolled for every run, where winning at
+    senet hands over the book (tests/test_story_engine_hooks.py plays it)."""
+    import setne_tomb
+    assert setne_tomb.data()['prize_item'] == 'book_of_thoth'
+    assert setne_tomb.candidate_floors() and all(45 <= f <= 65 for f in setne_tomb.candidate_floors())
+    from game_road import _encounter_by_tag
+    _src, enc = _encounter_by_tag(setne_tomb.data()['encounter'])
+    if enc is not None:            # the converted story is shipped: its prize is the book
+        prizes = [((o.get('pass') or {}).get('reward') or {}).get('item_id')
+                  for o in enc.get('options') or ()]
+        assert 'book_of_thoth' in prizes
+        assert enc.get('callback_only'), 'nothing but the tomb places it'
     import glob
     import json
     with open(os.path.join(ROOT, 'data', 'items', 'spellbook.json'), encoding='utf-8') as f:

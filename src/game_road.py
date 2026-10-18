@@ -64,6 +64,7 @@ class RoadMixin:
         secrets = [(getattr(self, '_emberpup', None) or {}).get('floor'),
                    (getattr(self, '_black_knight', None) or {}).get('floor')]
         self._road = road.new_state(road.roll_seed(), enabled=enabled, secret_floors=secrets)
+        self._schedule_run_start()
         if not enabled:
             return
         import economy
@@ -73,6 +74,37 @@ class RoadMixin:
         self._npc_trigger_item_levels = npc_encounters.get_trigger_item_levels(
             self._npc_encounter_levels)
         self._flavor_encounter_levels = {}
+
+    def _schedule_run_start(self):
+        """Callbacks placed when the run begins, whatever the hero does
+        (``karma_rules.json: run_start_schedule``): The Gate on one floor in
+        94-98, which reads the people met on the way down. An entry whose
+        encounter is not in the data yet is skipped silently."""
+        import deeds
+        import karma
+        import road
+        reg = self._deeds_reg()
+        st = self._road_state()
+        for spec in karma.rules().get('run_start_schedule') or ():
+            if not isinstance(spec, dict) or not spec.get('encounter'):
+                continue
+            tag = spec['encounter']
+            _src, enc = _encounter_by_tag(tag)
+            if enc is None:
+                continue
+            lo, hi = (spec.get('floors') or [94, 98])[:2]
+            seq = deeds.next_seq(reg)
+            target = road.pick_target(st['seed'], f'start:{tag}', int(lo), int(hi), deepest=1,
+                                      blocked=self._callback_blocked_floors(),
+                                      band=enc.get('band'))
+            if target is None:
+                continue
+            deeds.schedule(reg, {
+                'kind': 'encounter', 'id': f'start:{tag}:{seq}', 'source': 'engine:run_start',
+                'made_floor': 1, 'earliest': int(lo), 'latest': int(hi), 'target': target,
+                'spec': {'encounter': tag, 'if_missed': spec.get('if_missed', 'carry')},
+                'requires': spec.get('requires'), 'cause': seq,
+            })
 
     def _road_enabled(self) -> bool:
         return bool(self._road_state().get('enabled'))
@@ -107,7 +139,16 @@ class RoadMixin:
             tag = spec['encounter']
             _src, enc = _encounter_by_tag(tag)
             span = spec.get('after_floors') or [1, 10]
-            earliest, latest = d + int(span[0]), d + int(span[1])
+            base = d
+            # 'after_oath_due': counted from an oath's due floor, not from
+            # here (the dead come 1-3 floors after the Book of Thoth was due).
+            # The oath must be sworn in this same outcome, before 'schedule'.
+            linked = spec.get('after_oath_due')
+            if linked:
+                due = (reg['oaths'].get(linked) or {}).get('due_floor')
+                if due is not None:
+                    base = max(d, int(due))
+            earliest, latest = base + int(span[0]), base + int(span[1])
             seq = deeds.next_seq(reg)
             target = road.pick_target(
                 st['seed'], f'cb:{tag}:{seq}', earliest, latest, deepest=d,
@@ -121,6 +162,7 @@ class RoadMixin:
                 'made_floor': floor, 'earliest': earliest, 'latest': latest,
                 'target': target, 'spec': copy.deepcopy(spec),
                 'requires': spec.get('requires'), 'cause': seq,
+                'oath': linked or None,
             })
 
     def _schedule_delayed(self, specs, source: str):
@@ -154,6 +196,15 @@ class RoadMixin:
         import chronicle
         import deeds
         deeds.note(self, f'flag.thread_lost.{deeds.slug(tag)}', source=source)
+        # An oath left open for this callback to settle (lapse_mode
+        # 'callback') lapses now: the callback that would have come for it
+        # never can.
+        linked = (spec or {}).get('after_oath_due')
+        if linked:
+            o = self._deeds_reg()['oaths'].get(linked) or {}
+            if o.get('status') == 'open' and o.get('lapse_mode') == 'callback':
+                floor, _d, block, turn = self._deed_where()
+                deeds.lapse_oath(self._deeds_reg(), linked, floor=floor, block=block, turn=turn)
         tid = (spec or {}).get('thread')
         if tid and deeds.close_thread(self._deeds_reg(), tid, line=spec.get('lost_line')):
             line = spec.get('lost_line')
@@ -194,6 +245,8 @@ class RoadMixin:
             due = o.get('due_floor')
             if due is None or int(due) >= d:
                 continue
+            if o.get('lapse_mode') == 'callback':
+                continue        # its callback, or a late keep, settles it
             if deeds.lapse_oath(reg, o['id'], floor=floor, block=block, turn=turn):
                 line = o.get('lapse_chronicle')
                 if not line and o.get('to'):
