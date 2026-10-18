@@ -2,8 +2,7 @@
 encounter screen shares (DEEDS_KARMA_DESIGN.md section 4).
 
 Pure module. ``normalise`` is called by both loaders (``npc_encounters`` and
-``flavor_encounters``, which covers the hardcoded ``FLAVOR_ENCOUNTERS`` list
-as well as ``data/flavor_encounters.json``). Its defaults leave existing
+``flavor_encounters``, which loads ``data/flavor_encounters.json``). Its defaults leave existing
 content behaving exactly as before: every new field is absent, meaning off.
 
 One option is one outcome. An option without ``quiz`` is its own outcome

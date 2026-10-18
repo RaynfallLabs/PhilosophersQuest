@@ -105,12 +105,12 @@ Karma is consulted by:
 
 ---
 
-## 2. The 31 moral NPC encounters
+## 2. The 30 block anchors
 
 ### 2.1 Overview
 
 The dungeon is divided into **10 level blocks** of 9 levels each.
-Each block has **3 candidate encounters** (block 3 has four) defined in
+Each block has **3 candidate encounters** defined in
 `data/npc_encounters.json`, loaded as `src/npc_encounters.py::ENCOUNTERS`. One encounter is selected per
 block (`select_encounter_levels`), placed on a random non-boss level
 inside the block, and the trigger item (if any) is pre-spawned 1-3
@@ -149,25 +149,22 @@ Each `ENCOUNTERS[i]` dict carries:
 | `sprite_id` | Monster sprite key, auto-populated from `_KARMA_SPRITES` if absent |
 | `role`, `stakes`, `band` | Filled by `encounter_schema.normalise`: anchors are `anchor` / `medium` / the block's floors, flavor `story` / `light` / `[min_level, max_level]`. The renderer never reads `stakes`. |
 
-**Schema extensions (Phase 1 engine, no shipped content uses them yet):**
-quiz options (`quiz` + `pass` / `fail` outcomes, applied when the quiz
-ends; an exit mid-quiz settles as the fail), `requires` / `forbids`
-conditions on deeds, oaths, stats, items and floor, `hidden` and
-`hidden_group`, `text_variants` / `outcome_variants`, `then: "options"`,
-`deeds`, `oath` / `oath_keep` / `oath_break` / `oath_release`,
-`person_status`, `thread` / `thread_close`, `karma_kind`, `virtue`. Keys
-1-4 pick the **visible** options. `tools/encounters/validate.py` checks
-all of it (the legacy breaches of today's content are listed in
-`tests/encounter_legacy_allow.json`, which Phase 3a must empty). The
-footer still reads "1-3: choose" until the first four-option content
-ships.
+**Schema extensions (DEEDS_KARMA_DESIGN section 4; all shipped content uses them since the
+2026-10 story rewrite, ENCOUNTER_STORIES_DRAFT.md):** quiz options (`quiz` + `pass` / `fail`
+outcomes, applied when the quiz ends; an exit mid-quiz settles as the fail), `requires` /
+`forbids` conditions on deeds, oaths, stats, items and floor, `hidden` and `hidden_group`,
+`text_variants` / `outcome_variants`, `then: "options"`, `deeds`, `oath` / `oath_keep` /
+`oath_break` / `oath_release`, `person_status`, `thread` / `thread_close`, `schedule`,
+`delayed`, `escort`, `fight`, `karma_kind`. Keys 1-4 pick the **visible** options.
+`tools/encounters/validate.py` checks all of it; `tests/encounter_legacy_allow.json` keeps only
+a `pending_engine` section for the fields whose engine support is being built (Part J3 of the
+draft: per-round losses, list fights, the Gate's lines, Setne's Tomb's own roll, and the new
+cost and reward types), to be emptied once that work is merged.
 
-Each option carries `label`, `karma: {-2, -1, 0, +1}`, `outcome`,
-`cost`, `reward`. By convention option 1 is the moral choice, option
-2 is the "cannot help" neutral, option 3 is the selfish exploit. The
-player is **never framed as cruel**; even -1 options read as
-"pragmatic necessity" (SYSTEMS_AUDIT §3: "The player is never cruel;
-even selfish options are framed as pragmatic necessity.").
+Each option carries `label`, an outcome (or a quiz with `pass` and `fail`), and optionally
+`cost`, `reward`, `karma` with its `karma_kind` (+1 only as forgo, judgment or stance, or
+through a kept oath; -1, and -2 only for handing a person to their death or freeing Azarael).
+Naive kindness carries 0 and a real consequence; light encounters carry 0 throughout.
 
 Cost types: `food`, `healing_potion`, `potion`, `scroll`, `weapon`,
 `gold`, `hp_percent`, `max_hp`, `sp`, `hp`, `mp`, `random_item`,
@@ -194,143 +191,48 @@ player's own maximum). `economy.price_encounter` rescales gold in
 
 ### 2.3 Block × encounter table
 
-The three candidates per block are listed below. One is chosen; the
-pool prioritizes non-triggered encounters and samples at most one
-triggered encounter per block.
+Generated from `data/npc_encounters.json` (2026-10 story rewrite). One candidate per block
+binds per run; a triggered anchor binds a non-triggered fallback with it.
 
-**Block 1 (L3-9):**
+| Block | Tag | Name | Stakes | Karma paths | Notes |
+|---|---|---|---|---|---|
+| 1 | `marta_ratchatcher` | Rat-Catcher | medium | cruelty (-1) |  |
+| 1 | `elara_amulet` | Lost Girl | medium | forgo, cruelty (-1) | trigger `silverlight_pendant`, fallback `marta_ratchatcher` |
+| 1 | `grumwald_toll` | Grumwald | medium | forgo, cruelty (-1) |  |
+| 2 | `sir_aldric` | Burdened Knight | medium | oath sworn, cruelty (-1) |  |
+| 2 | `tam_thief` | Young Thief | medium | judgment |  |
+| 2 | `helena_cartographer` | Injured Cartographer | medium | cruelty (-1) |  |
+| 3 | `marcus_sword` | Grieving Father | medium | forgo, cruelty (-1) | trigger `oathkeeper_sword`, fallback `chained_priest` |
+| 3 | `last_potion` | Last Potion | medium | none | contested; tragedy: costly |
+| 3 | `chained_priest` | Two Prisoners | medium | judgment |  |
+| 4 | `dying_messenger` | Dying Courier | medium | oath sworn, cruelty (-1) |  |
+| 4 | `old_konstantin` | Old Warrior | medium | judgment | tragedy: unsavable |
+| 4 | `reliquary` | Sister Marguerite | medium | oath sworn, sacrilege (-1) |  |
+| 5 | `ghost_grave` | Ghost of Hal | medium | sacrilege (-1) |  |
+| 5 | `deserter` | Legion Deserter | medium | judgment, cruelty (-1) |  |
+| 5 | `grain_committee` | Grain Committee | medium | stance, stance_wrong (-1) | stance: 3.1,3.2 |
+| 6 | `blind_seer` | Blind Seer | medium | none | tragedy: unsavable |
+| 6 | `trapped_seraph` | Caged Angel | medium | judgment, cruelty (-1) |  |
+| 6 | `slavers_wagon` | Slaver's Wagon | medium | stance, stance_wrong (-1) | stance: 1,9 |
+| 7 | `ser_brennan` | Dying Knight | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
+| 7 | `cursed_scholar` | Cursed Scholar | high | judgment, cruelty (-1) |  |
+| 7 | `fairy_jar` | Trapped Fairy | medium | cruelty (-1), forgo |  |
+| 8 | `penitent` | The Penitent | medium | judgment, cruelty (-1) |  |
+| 8 | `roderic_shield` | Young Knight | medium | none | contested; trigger `lionheart_shield`, fallback `penitent` |
+| 8 | `forgotten_prisoner` | Forgotten Prisoner | medium | judgment, cruelty (-1) |  |
+| 9 | `fallen_paladin` | Fallen Paladin | medium | cruelty (-1) | contested |
+| 9 | `azarael_demon` | Bound Demon | high | forgo, sacrilege (-2) |  |
+| 9 | `live_not_by_lies` | Locust Checkpoint | medium | stance_wrong (-1), stance | stance: 1 |
+| 10 | `dying_prophet` | Dying Prophet | medium | cruelty (-1) |  |
+| 10 | `petrified_adventurer` | Stone Statue | medium | cruelty (-1) | escort |
+| 10 | `last_merchant` | Pomfrey Quill | medium | forgo, cruelty (-1) | escort |
 
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1 branch) |
-|-----|------|---------|---------------|------------------------------------|
-| `elara_amulet` | Lost Girl | `silverlight_pendant` (offset 1) | +1 / 0 / -1 | — (keep triggered item) |
-| `brother_aldous` | Dying Monk | — | +1 / 0 / -1 | `saints_reliquary` accessory |
-| `marta_ratchatcher` | Rat-Catcher | — | +1 / 0 / -1 | 2 potions + 1 food |
+### 2.4 Karma deltas
 
-**Block 2 (L11-19):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `sir_aldric` | Burdened Knight | — | +1 (burden: `cursed_lodestone`) / 0 / -1 | CON +1 |
-| `tam_thief` | Young Thief | — | +1 / 0 / -1 | 60-100 gold + random weapon |
-| `helena_cartographer` | Injured Scholar | — | +1 / 0 / -1 | random scroll + 150-200 gold |
-
-**Block 3 (L21-29):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `marcus_sword` | Grieving Father | `oathkeeper_sword` (offset 2) | +1 / 0 / -1 | — (keep sword) |
-| `blinded_soldier` | Blinded Soldier | — | +1 / 0 / -1 | random armor + 100-150 gold |
-| `dying_messenger` | Dying Courier | — | +1 (burden: `sealed_dispatch`) / 0 / -1 | 80-120 gold + random potion |
-| `deadite_woman` | Moaning Woman | — | **+1 / 0 / 0** (live data; see §2.4) | — |
-
-**Block 4 (L31-39):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `sister_marguerite` | Starving Nun | — | +1 / 0 / -1 | random accessory + 80-120 gold |
-| `chained_priest` | Chained Priest | — | +1 / 0 / -1 | random scroll + potion + 100-150 gold |
-| `old_konstantin` | Old Warrior | — | +1 / 0 / -1 | 150-200 gold + random accessory |
-
-**Block 5 (L41-49):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `apprentice_healer` | Poisoned Herbalist | — | +1 / 0 / -1 | 2 potions + 1 food |
-| `ghost_grave` | Ghost of Edwin | — | +1 (cost: max_hp -15) / 0 / -1 | 150-200 gold + random accessory |
-| `deserter` | Legion Deserter | — | +1 / 0 / -1 | `officers_signet` accessory |
-
-**Block 6 (L51-59):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `blind_seer` | Blind Seer | — | +1 / 0 / -1 | 2 scrolls + 1 potion |
-| `trapped_seraph` | Caged Angel | — | +1 (cost: scroll) / 0 / -1 | WIS +1 |
-| `weeping_mother` | Weeping Ghost | — | +1 (cost: sp 60) / 0 / -1 | random accessory |
-
-**Block 7 (L61-69):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `ser_brennan` | Dying Knight | — | +1 / 0 / -1 | random weapon + random shield |
-| `cursed_scholar` | Cursed Scholar | — | +1 (cost: hp -20%) / 0 / -1 | INT +2 |
-| `fairy_jar` | Trapped Fairy | — | +1 (cost: potion) / 0 / -1 | DEX +1 |
-
-**Block 8 (L71-79):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `penitent` | The Penitent | — | +1 / 0 / -1 | 200-300 gold + `penitents_blade` weapon |
-| `roderic_shield` | Young Knight | `lionheart_shield` (offset 2) | +1 / 0 / -1 | — (keep shield) |
-| `forgotten_prisoner` | Forgotten Prisoner | — | +1 (cost: gold 150) / 0 / -1 | 200-300 gold + random accessory |
-
-**Block 9 (L81-89):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1 / -2) |
-|-----|------|---------|---------------|----------------------------------|
-| `fallen_paladin` | Fallen Paladin | — | +1 (cost: gold 200) / 0 / -1 | 200-300 gold + random armor |
-| `azarael_demon` | Bound Demon | — | +1 (cost: scroll) / 0 / **-2** (v2.18) | STR +2, 200 gold |
-| `child_shrine` | Small Shrine | — | +1 / 0 / -1 | random accessory + 150-200 gold |
-
-**Block 10 (L91-98):**
-
-| Tag | Name | Trigger | Karma options | Headline reward (karma -1) |
-|-----|------|---------|---------------|-----------------------------|
-| `dying_prophet` | Dying Prophet | — | +1 / 0 / -1 | `prophets_amulet` accessory |
-| `petrified_adventurer` | Stone Statue | — | +1 (cost: scroll) / 0 / -1 | random weapon + random armor |
-| `last_merchant` | Lost Merchant | — | +1 / 0 / -1 | random weapon + accessory + 200-300 gold |
-
-### 2.4 v2.18 karma re-tunes
-
-Two encounters had their karma deltas rebalanced in v2.18 after
-dominant-strategy analysis.
-
-**Drift note (2026-10-17):** the live `data/npc_encounters.json` does
-**not** match the v2.18 description below. Today the Deadite is
-**kneel +1 / walk away 0 / ax 0** (kneeling still triggers the ambush).
-Brandon's ruling is that the Deadite gives **0 on every option** (P16);
-that change lands with the Phase 3a encounter migration, and the
-validator lists it as a legacy breach until then.
-
-**`deadite_woman` (Block 3)** — audit finding (SYSTEMS_AUDIT §3):
-"'It's a trick, get an ax' granted karma +1 AND 30-60 gold at no cost.
-Option 1 granted karma +1 despite triggering an ambush + 10% HP
-damage. Naive-help punished, cynical trickery rewarded. Karma logic
-inverted." v2.18 fix:
-
-- Option 1 "Kneel down and try to help her" — karma **0** (was +1).
-  Triggers the Deadite ambush (10% HP + spawns hostile). Naive-help
-  no longer rewarded. The Deadite is the `deadite` entry in
-  `data/monsters.json` (fixed numbers from its lore, a floor-25 fighter;
-  bug bash 4 removed the floor-number formula it was built from).
-- Option 2 "Walk away" — karma 0 unchanged.
-- Option 3 "'It's a trick. Get an ax.'" — karma **+1**, cost: none,
-  **reward: none** (gold stripped, was 30-60). The player gets the
-  pattern-recognition karma for correctly identifying the ambush,
-  but no loot.
-
-Current code (`npc_encounters.py:590-631`):
-
-```python
-'options': [
-    {'label': "Kneel down and try to help her",
-     'karma': 0,
-     'cost': {'type': 'spawn_deadite_ambush'},
-     'reward': None, ...},
-    {'label': "Walk away — you can't help this woman",
-     'karma': 0, 'cost': None, 'reward': None, ...},
-    {'label': '"It\'s a trick. Get an ax."',
-     'karma': +1, 'cost': None, 'reward': None, ...},
-],
-```
-
-**`azarael_demon` (Block 9)** — audit finding: "'Shatter the chains'
-pays STR+2 + 200 gold at karma -1. One -1 rarely tips a tier;
-cost:reward mispriced." v2.18 fix: karma delta changed to **-2** so
-freeing a bound demon actually costs a tier (two -2 events = -4 =
-`slipping` tier → `fallen` tier if deep enough).
-
-Current code: `'karma': -2` for the "Shatter the chains" option
-(`npc_encounters.py:1580`).
+The Deadite (`deadite_woman`, now a light story encounter) gives 0 on every option (P16).
+The only -2s are freeing Azarael (`azarael_demon`) and giving the family to Death
+(`flv_deaths_chessboard`). Oath keeps pay +1 at the keep (the altar hook for Aldric and the
+Book of Thoth, or an `oath_keep` option); swearing pays nothing; a break costs -1 betray.
 
 ### 2.5 Trigger item flow
 
@@ -382,47 +284,161 @@ chain exists.
 
 ---
 
-## 3. The 108 flavor NPC encounters
+## 3. The 141 story and flavor encounters
 
-Flavor NPCs are **mostly non-karmic** encounters that add world-building
-and trade. They live in `src/flavor_encounters.py::FLAVOR_ENCOUNTERS`
-(5 hardcoded, 103 more from `data/flavor_encounters.json`) and share the
-NPC encounter UI (`_start_flavor_encounter` sets `_npc_is_flavor = True`).
-Despite the flag, an option's `karma` IS applied: four flavor options
-carry karma today — `flv_baucis_table` +1 (share food),
-`flv_three_purses` +1 (anonymous purse), `flv_cuthbert_chapel` +1
-(deliver the Gospel), `flv_relic_broker` -1 (sell the Gospel).
+They live in `data/flavor_encounters.json` (no hardcoded list), loaded as
+`src/flavor_encounters.py::FLAVOR_ENCOUNTERS`, and share the NPC encounter UI
+(`_start_flavor_encounter` sets `_npc_is_flavor = True`). Light encounters (vendors,
+moments) carry 0 karma; medium and high story encounters may offer one gated point;
+`callback_only` follow-ups are placed only by an earlier choice's `schedule`.
 
-**Spawn rate**: ~40% per non-boss floor, independent of karma NPCs.
-Each flavor NPC is one-shot per run (tag added to
-`_encountered_flavor_npcs`).
+**Spawn rate** (legacy roll while the Road is off): ~40% per non-boss floor. With the
+Road on, story encounters bind to the run's light, medium (two in odd bands) and high
+slots instead (`road.py`). Each is one-shot per run.
 
-**Follow-ups are callbacks, not rolls** (deeds redesign Phase 2). The
-Great Lion (`flv_lion_remembers`), the Relic Broker, Brother Sacristan's
-chapel and the Watch Post are `callback_only`: the random roll never
-places them. The opener's own option schedules them through its
-`schedule` list (`game_road.py`): drawing the lion's thorn, taking
-Cuthbert's Gospel, swearing to carry the courier's dispatch. The target
-floor is picked at that moment from the run's road seed, inside the
-follow-up's own floor band, never on a boss floor or a floor holding an
-anchor. The old `chain_after` link (placed whenever the opener was in the
-run, whatever the hero chose there; the Watch Post was rolled on its own)
-is retired; the loader still reads it as `callback_only` and the
-validator reports it. The Watch Post also needs the courier's oath still
-open when the hero arrives.
-
-| Tag | Name | Level range | Options |
-|-----|------|-------------|---------|
-| `flv_wandering_merchant` | Wandering Merchant | L2-18 | (1) Trade food → random potion. (2) Trade 50 gold → random scroll. (3) Browse — nothing. |
-| `flv_old_traveler` | Old Traveler | L1-15 | (1) Share food → WIS +1 (and silent-footed Odin hint). (2) Keep food — nothing. |
-| `flv_frightened_goblin` | Cowering Goblin | L1-12 | (1) Accept trinket → random accessory. (2) Give food → random accessory **+ bonus random potion**. (3) Shoo — nothing. |
-| `flv_dwarven_smith` | Dwarven Smith | L21-40 | (1) Pay 80 gold → `enchant_weapon +1` on equipped weapon. (2) Decline — nothing. |
-| `flv_blind_oracle` | Blind Oracle | L41-60 | (1) Pay 30 SP → `clairvoyant` 50t. (2) Ask about dungeon — three-line omen (no mechanical effect). (3) Leave quietly — nothing. |
-
-Flavor NPCs can **also** be loaded from `data/flavor_encounters.json`
-(`flavor_encounters.py:247-249`); the five above are the hardcoded
-baseline, and `encounter_schema.normalise` covers both. Additional entries from the JSON extend
-the pool without changing the schema.
+| Tag | Name | Floors | Stakes | Karma paths | Notes |
+|---|---|---|---|---|---|
+| `flv_singed_squire` | Singed Squire | 1-5 | light | none |  |
+| `flv_frightened_goblin` | Gikk | 1-12 | light | none |  |
+| `flv_rat_king_tiny` | Very Small Rat King | 1-12 | light | none |  |
+| `flv_wat_lamplighter` | Wat Rowe | 1-12 | medium | oath sworn |  |
+| `flv_young_scribe` | Young Scribe | 1-14 | light | none |  |
+| `flv_old_traveler` | Old Traveler | 1-15 | medium | none | disguise: odin |
+| `flv_wandering_herbalist` | Wandering Herbalist | 1-16 | light | none |  |
+| `flv_goblin_salesman` | Brix | 1-18 | light | none |  |
+| `flv_lost_merchant` | Barnaby Thrupp, Lost Merchant | 1-18 | light | none |  |
+| `flv_baucis_table` | Baucis and Philemon | 2-9 | light | none | disguise: zeus |
+| `flv_frightened_pilgrim` | Wynn the Pilgrim | 2-14 | light | none | escort |
+| `flv_mapmaker` | Osric the Mapmaker | 2-33 | light | none |  |
+| `flv_martin_dream` | Saint Martin | 2-98 | light | none | callback |
+| `flv_child_with_lantern` | Tilly Hollins | 3-15 | light | none |  |
+| `flv_millers_thumb` | Hob Tanner | 3-16 | medium | forgo |  |
+| `flv_apprentice_alchemist` | Tibbet, Apprentice Alchemist | 3-17 | light | none |  |
+| `flv_seventh_lamp` | The Seventh Lamp | 3-17 | medium | oath keep, oath break (-1) | callback |
+| `flv_three_mushrooms` | Luminous Mushrooms | 3-18 | light | none |  |
+| `flv_crying_bait` | Crying Girl | 4-14 | medium | judgment |  |
+| `flv_charons_obol` | Drowned Girl | 4-15 | light | none |  |
+| `flv_treasure_hunter_desperate` | Desperate Treasure-Hunter | 4-35 | light | none |  |
+| `flv_singing_bones` | The Singing Bones | 4-40 | light | none |  |
+| `flv_moneylender_purse` | Moneylender's Purse | 5-15 | medium | none | contested |
+| `deadite_woman` | Moaning Woman | 5-18 | light | none |  |
+| `flv_saint_martin` | Freezing Beggar | 5-18 | light | none |  |
+| `flv_broken_automaton` | Broken Automaton | 5-20 | light | none |  |
+| `flv_weeping_ghost` | Old Nan and the Cat | 5-20 | light | none |  |
+| `flv_frozen_viper` | Frozen Viper | 6-16 | light | none |  |
+| `flv_three_purses` | Father of Three | 6-19 | medium | forgo |  |
+| `flv_cursed_mirror` | Ornate Mirror | 6-20 | light | none |  |
+| `flv_stone_fox` | Stone Fox | 6-20 | light | none |  |
+| `flv_limping_lion` | Limping Lion | 8-18 | light | none |  |
+| `flv_ysolde_gate` | Ysolde | 8-21 | light | none | callback |
+| `flv_davy_under_beam` | Davy Hollins | 8-22 | light | none | tragedy: costly |
+| `flv_echo_voice` | The Voice in the Wall | 8-79 | light | none |  |
+| `flv_diogenes_lantern` | Diogenes | 10-30 | light | none |  |
+| `flv_lena_returns` | Lena | 11-45 | medium | none | callback; escort |
+| `flv_ostrander_pit` | Ostrander | 12-20 | medium | none |  |
+| `flv_grumwald_second_bridge` | Grumwald | 13-29 | light | none | callback |
+| `flv_elspeth_comes` | Elspeth | 13-35 | medium | none | callback |
+| `flv_man_who_is_owed` | Man Who Is Owed | 14-30 | medium | stance | stance: 3.9 |
+| `flv_samsons_riddle` | Samson | 15-19 | high | cruelty (-1), forgo |  |
+| `flv_pied_piper` | The Piper | 15-34 | high | judgment | tragedy: costly |
+| `flv_aldric_cairn` | Sir Aldric | 17-35 | light | none | callback; tragedy: unsavable |
+| `flv_lion_remembers` | Great Lion | 18-38 | medium | none | callback; trigger `lions_thorn`, fallback `None` |
+| `flv_ostrander_lantern` | Ostrander | 19-41 | light | none | callback |
+| `flv_lawspeaker_rock` | Lawspeaker's Rock | 20-38 | medium | judgment, cruelty (-1) |  |
+| `flv_old_spearman` | Talkative Old Spearman | 21-26 | light | none |  |
+| `flv_lost_caravan_guard` | Tarek the Guard | 21-32 | light | none |  |
+| `flv_brendans_whale` | Saint Brendan | 21-34 | medium | none |  |
+| `flv_wounded_scout` | Wounded Scout | 21-34 | light | none |  |
+| `flv_food_vendor_dungeon` | Bramble the Vendor | 21-36 | light | none |  |
+| `flv_dwarven_smith_marta` | Brunhild Irontemper | 21-38 | light | none |  |
+| `flv_rust_collector` | Old Veska | 22-35 | light | none |  |
+| `flv_apprentice_runescribe` | Apprentice Runescribe | 22-36 | light | none |  |
+| `flv_thokk` | Thökk | 22-42 | medium | forgo | tragedy: unsavable; disguise: loki |
+| `flv_trembler` | Aristodemus | 22-44 | medium | cruelty (-1) | contested; escort |
+| `flv_plague_doctor` | Doctor Finch | 23-38 | light | none |  |
+| `flv_robes_ambush` | Morrow | 24-34 | light | none | callback |
+| `flv_battle_weary_veteran` | Calla Strand | 24-38 | light | none |  |
+| `flv_exposed_child` | Exposed Child | 24-44 | medium | stance, stance_wrong (-1) | stance: 9,3.10 |
+| `flv_ink_stained_scholar` | Scholar Evaine | 25-40 | light | none |  |
+| `flv_gyges_ring` | Gyges | 25-46 | medium | forgo |  |
+| `flv_boundary_stone` | Boundary Stone | 26-50 | medium | judgment |  |
+| `flv_mnemonic_monk` | Brother Osias | 27-40 | light | none |  |
+| `flv_utgard_contests` | Courteous Giant | 28-39 | medium | none |  |
+| `flv_whispering_hermit` | The Hermit | 30-40 | light | none |  |
+| `flv_mimirs_well` | Mimir's Well | 30-62 | light | none |  |
+| `flv_sword_in_anvil` | Sword in the Anvil | 31-39 | medium | betray (-1) |  |
+| `flv_damocles_feast` | Damocles | 31-56 | high | judgment |  |
+| `flv_witch_finder` | The Witch-Finder | 31-65 | high | judgment |  |
+| `flv_moth_woman` | The Moth Woman | 32-40 | light | none |  |
+| `flv_shade_bargainer` | The Shade | 33-40 | light | none |  |
+| `flv_watch_post` | Watch Sergeant | 35-53 | medium | oath keep | callback; trigger `sealed_dispatch`, fallback `None` |
+| `flv_ancient_guardian_chess` | The Brass Warden | 35-70 | high | none |  |
+| `flv_reliquary_chapel` | Brothers of the Deep Watch | 37-53 | medium | oath keep, oath break (-1) | callback |
+| `flv_coffin_bearer` | Last Bearer | 41-47 | medium | oath sworn |  |
+| `flv_false_merchant_goblin` | "Legitimate" Merchant | 41-54 | light | none |  |
+| `flv_crying_giant` | Grieving Giant | 41-55 | light | none |  |
+| `flv_echo_child` | Echo Child | 41-55 | light | none |  |
+| `flv_philosophical_fungus` | The Thinking Mushroom | 41-56 | medium | none |  |
+| `flv_two_mothers` | Two Mothers | 41-90 | medium | judgment |  |
+| `flv_trapped_spirit_mason` | Weeping Mason | 42-58 | light | none |  |
+| `flv_relic_broker` | Relic Broker | 43-55 | medium | oath break (-1) | callback; trigger `cuthberts_gospel`, fallback `None` |
+| `flv_wandering_oracle_bone` | Oracle Bones Merchant | 43-57 | light | none |  |
+| `flv_time_lost_soldier` | The Lost Soldier | 43-74 | light | none |  |
+| `flv_abyss_cartographer` | Cartographer Issek | 43-75 | light | none |  |
+| `flv_ormonds_granary` | Ormond's Granary | 44-55 | light | none | callback |
+| `flv_bottled_constellation` | Star Merchant | 44-60 | light | none |  |
+| `flv_charons_return` | Charon | 44-95 | light | none | callback |
+| `flv_ghost_librarian_junior` | The Cataloguing Spirit | 44-97 | light | none |  |
+| `flv_antigone` | Antigone | 45-58 | medium | none | contested |
+| `flv_sorrow_lantern` | Lantern of Regret | 45-58 | light | none |  |
+| `flv_setne_tomb` | Setne's Tomb | 45-65 | high | oath sworn, forgo | callback; tragedy: unsavable |
+| `flv_dragons_accountant` | Snerk Ledgerscale | 45-88 | medium | judgment, cruelty (-1) |  |
+| `flv_disguised_dionysus` | The Merry Wanderer | 46-60 | light | none | disguise: dionysus |
+| `flv_stone_singer` | Stone Singer | 46-60 | light | none |  |
+| `flv_dream_weaver` | Dream Weaver | 47-60 | light | none |  |
+| `flv_cuthbert_chapel` | Brother Sacristan | 48-61 | medium | oath keep | callback; trigger `cuthberts_gospel`, fallback `None` |
+| `flv_pardoner` | The Pardoner | 48-80 | medium | cruelty (-1), forgo |  |
+| `weeping_mother` | Weeping Mother | 50-60 | light | none |  |
+| `flv_andvaris_pool` | Andvari | 50-64 | medium | cruelty (-1), forgo |  |
+| `flv_disguised_hermes` | Swift Stranger | 50-64 | medium | none | disguise: hermes |
+| `flv_azarias` | Azarias | 50-70 | medium | none | disguise: raphael; escort |
+| `flv_the_mast` | The Mast | 52-66 | medium | none | contested |
+| `flv_dead_come_for_the_book` | Neferkaptah | 54-98 | high | oath break (-1) | callback |
+| `flv_socrates_cell` | Socrates | 55-70 | high | none | contested |
+| `flv_thorleif_skald` | Thorleif Grimsson | 60-74 | medium | oath sworn | tragedy: unsavable |
+| `flv_abyssal_wine_merchant` | Pellok the Very Lost | 61-74 | light | none |  |
+| `flv_abyssal_alchemist` | Alchemist Mourne | 61-76 | light | none |  |
+| `flv_mad_knight_riddle` | Sir Lorvaine the Certain | 62-77 | light | none |  |
+| `flv_melancholy_old_champion` | The Last Champion | 63-98 | light | none |  |
+| `flv_squire_tobyn` | Squire Tobyn | 64-78 | medium | oath keep, oath break (-1) | callback |
+| `flv_echo_of_dead_wizard` | The Lingering Echo | 64-79 | light | none |  |
+| `flv_skalds_stone` | Rune-Stone | 64-84 | medium | oath keep, oath break (-1) | callback |
+| `flv_green_girdle` | Lady Bertilak | 65-71 | medium | forgo |  |
+| `flv_vafthrudnir` | Vafthrudnir | 65-85 | high | none |  |
+| `flv_crossroads_fiddler` | Crossroads Fiddler | 66-80 | medium | sacrilege (-1), forgo | disguise: devil |
+| `flv_djinn_in_a_bottle` | Something in a Bottle | 66-80 | light | none |  |
+| `flv_avatar_athena` | Grey-Eyed Woman | 66-90 | medium | none | disguise: athena |
+| `flv_invisible_archivist` | The Unseen Archivist | 68-80 | light | none |  |
+| `flv_mirror_of_past_self` | The Mirror Shade | 70-80 | light | none |  |
+| `flv_deaths_chessboard` | Death | 71-98 | high | forgo, cruelty (-2) |  |
+| `flv_trapped_god_fragment` | Dim Light in the Stone | 72-100 | light | none |  |
+| `flv_defector` | Kneeling Herald | 80-98 | medium | judgment |  |
+| `flv_humorous_imp_salesman` | Disreputable Imp | 81-92 | light | none |  |
+| `flv_practical_golem_medic` | Medical Construct | 81-93 | light | none |  |
+| `flv_dying_hero_berengar` | Berengar the Gold | 81-95 | light | none |  |
+| `flv_final_merchant_ortolan` | Ortolan the Last Merchant | 81-98 | light | none |  |
+| `flv_time_lost_general` | The General Out of Time | 83-96 | light | none |  |
+| `flv_dying_oracle_cassandra` | Weeping Prophet | 84-99 | light | none |  |
+| `flv_wondrous_memory_keeper` | Keeper of Last Memories | 85-100 | light | none |  |
+| `flv_rolands_horn` | Roland | 86-96 | medium | oath sworn, cruelty (-1) | tragedy: unsavable |
+| `flv_last_philosopher` | Boethius | 86-98 | medium | none | tragedy: unsavable |
+| `flv_paladin_end` | Sir Oswin | 86-98 | light | none | callback |
+| `flv_wondrous_star_being` | Fallen Constellation | 87-100 | light | none |  |
+| `flv_eerie_mirror_walker` | The One Behind You | 88-100 | light | none |  |
+| `flv_philosophical_entity_void` | The Enumerated Self | 88-100 | light | none |  |
+| `flv_rolands_horn_gate` | The Black Gate | 91-98 | medium | oath keep, oath break (-1) | callback |
+| `flv_ruth_gale` | Ruth Gale | 92-98 | light | none | callback |
+| `flv_the_gate` | Old Fisherman | 94-98 | light | none | callback |
 
 Related non-karmic encounters that live elsewhere:
 

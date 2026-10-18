@@ -33,6 +33,7 @@
     "mp_restore_pct":   {"amount": 0.1},
     "enchant_weapon":   {"amount": 8},
     "accept_item":      {"flat": 0},
+    "flag":             {"flat": 10},
     "message":          {"flat": 0}
   },
   "constancy": [

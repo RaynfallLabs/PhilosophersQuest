@@ -1,153 +1,18 @@
 {
- "_doc": "Legacy exemptions for tools/encounters/validate.py (DEEDS_KARMA_DESIGN 8.3). Today's content predates the schema; each tag lists the rule codes it still breaks. Phase 3a re-authors these encounters and must empty this file. tests/test_encounter_schema.py fails on any new breach and on any stale entry here.",
- "elara_amulet": [
-  "karma_kind_missing"
- ],
- "brother_aldous": [
-  "karma_kind_missing"
- ],
- "marta_ratchatcher": [
-  "karma_kind_missing"
- ],
- "sir_aldric": [
-  "karma_kind_missing",
-  "stat_reward"
- ],
- "tam_thief": [
-  "karma_kind_missing"
- ],
- "helena_cartographer": [
-  "karma_kind_missing"
- ],
- "marcus_sword": [
-  "karma_kind_missing"
- ],
- "blinded_soldier": [
-  "karma_kind_missing"
- ],
- "dying_messenger": [
-  "karma_kind_missing"
- ],
- "deadite_woman": [
-  "deadite",
-  "karma_kind_missing"
- ],
- "sister_marguerite": [
-  "karma_kind_missing"
- ],
- "chained_priest": [
-  "karma_kind_missing"
- ],
- "old_konstantin": [
-  "karma_kind_missing"
- ],
- "apprentice_healer": [
-  "karma_kind_missing"
- ],
- "ghost_grave": [
-  "karma_kind_missing"
- ],
- "deserter": [
-  "karma_kind_missing"
- ],
- "blind_seer": [
-  "karma_kind_missing"
- ],
- "trapped_seraph": [
-  "karma_kind_missing",
-  "stat_reward"
- ],
- "weeping_mother": [
-  "karma_kind_missing"
- ],
- "ser_brennan": [
-  "karma_kind_missing"
- ],
- "cursed_scholar": [
-  "karma_kind_missing",
-  "stat_reward"
- ],
- "fairy_jar": [
-  "karma_kind_missing",
-  "stat_reward"
- ],
- "penitent": [
-  "karma_kind_missing"
- ],
- "roderic_shield": [
-  "karma_kind_missing"
- ],
- "forgotten_prisoner": [
-  "karma_kind_missing"
- ],
- "fallen_paladin": [
-  "karma_kind_missing"
- ],
- "azarael_demon": [
-  "karma_kind_missing",
-  "karma_size",
-  "stat_reward"
- ],
- "child_shrine": [
-  "karma_kind_missing"
- ],
- "dying_prophet": [
-  "karma_kind_missing"
- ],
- "petrified_adventurer": [
-  "karma_kind_missing"
- ],
- "last_merchant": [
-  "karma_kind_missing"
- ],
- "flv_old_traveler": [
-  "stat_reward"
- ],
- "flv_battle_weary_veteran": [
-  "stat_reward"
- ],
- "flv_moth_woman": [
-  "stat_reward"
- ],
- "flv_philosophical_fungus": [
-  "stat_reward"
- ],
- "flv_mirror_walker": [
-  "stat_reward"
- ],
- "flv_demigod_beggar": [
-  "stat_reward"
- ],
- "flv_oracle_of_endings": [
-  "stat_reward"
- ],
- "flv_avatar_athena": [
-  "stat_reward"
- ],
- "flv_last_philosopher": [
-  "stat_reward"
- ],
- "flv_baucis_table": [
-  "karma_kind_missing",
-  "light_karma"
- ],
- "flv_three_purses": [
-  "karma_kind_missing",
-  "light_karma"
- ],
- "flv_utgard_contests": [
-  "free_exit",
-  "stakes",
-  "stat_reward"
- ],
- "flv_lion_remembers": [
-  "stat_reward"
- ],
- "flv_relic_broker": [
-  "karma_kind_missing"
- ],
- "flv_cuthbert_chapel": [
-  "karma_kind_missing",
-  "stat_reward"
- ]
+ "_doc": "Exemptions for tools/encounters/validate.py (DEEDS_KARMA_DESIGN 8.3). The legacy entries are gone: every encounter was re-authored from ENCOUNTER_STORIES_DRAFT.md (2026-10-17). What remains is the pending_engine section. tests/test_encounter_schema.py fails on any new breach and on any stale entry here.",
+ "pending_engine": {
+  "_doc": "Breaches that exist only because the field's engine support (ENCOUNTER_STORIES_DRAFT.md Part J3) is being built in parallel. Empty this section after that work is merged: each entry then goes stale and the test says so. reward/cost = the new types gold_pct, gold_pct_loss, armor_enchant, flag and the multi cost; field = a fight list; unknown_key = own_roll, people, per_miss, fail_total, seal_room, the schedule's 'after', oath_lapse, run_start, gate_lines, gate_reading.",
+  "tam_thief": ["reward"],
+  "slavers_wagon": ["reward"],
+  "flv_martin_dream": ["reward"],
+  "flv_saint_martin": ["cost"],
+  "flv_ysolde_gate": ["cost"],
+  "flv_robes_ambush": ["field"],
+  "flv_setne_tomb": ["unknown_key"],
+  "flv_dead_come_for_the_book": ["unknown_key", "field"],
+  "flv_vafthrudnir": ["reward"],
+  "flv_invisible_archivist": ["reward"],
+  "flv_deaths_chessboard": ["reward"],
+  "flv_the_gate": ["unknown_key"]
+ }
 }

@@ -8187,8 +8187,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'oath', "Carried Sir Aldric's stone to an altar. It broke there. "
                     "I had almost stopped noticing the weight.")
                 # The oath sworn when the stone was taken is kept here: deed
-                # kept.aldric_lodestone and an 'oath' award (0 while the
-                # take still pays today's point; Phase 3a moves it here).
+                # kept.aldric_lodestone and the 'oath' point (taking the
+                # stone is a promise and pays nothing; keeping it pays).
                 self._keep_oath('aldric_lodestone')
                 import deeds as _deeds_mod
                 _deeds_mod.close_thread(self._deeds_reg(), 'aldric_candle')

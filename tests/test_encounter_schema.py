@@ -1,9 +1,10 @@
 """Encounter schema validation (DEEDS_KARMA_DESIGN 8.3; tools/encounters/validate.py).
 
-Every encounter in data/npc_encounters.json, data/flavor_encounters.json and
-the hardcoded FLAVOR_ENCOUNTERS list must pass the validator, except the
-known legacy breaches in tests/encounter_legacy_allow.json, which Phase 3a
-must empty. A new breach fails; so does an allowlist entry that no longer
+Every encounter in data/npc_encounters.json and data/flavor_encounters.json
+must pass the validator, except the known breaches in
+tests/encounter_legacy_allow.json: its "pending_engine" section lists fields
+whose engine support is being built in parallel and is emptied when that
+work is merged. A new breach fails; so does an allowlist entry that no longer
 occurs (the list may only shrink). Fixture encounters prove each rule fires.
 """
 import copy
@@ -31,24 +32,23 @@ def test_allowlist_only_names_real_encounters():
     assert set(V.load_allowlist()) <= tags
 
 
-def test_normalise_defaults_cover_all_three_sources():
+def test_normalise_defaults_cover_both_files():
     import flavor_encounters
     import npc_encounters
     for e in npc_encounters.ENCOUNTERS:
-        assert (e['role'], e['stakes']) == ('anchor', 'medium')
+        assert e['role'] == 'anchor' and e['stakes'] in ('medium', 'high')
         assert len(e['band']) == 2
-    hard = [e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == 'flv_wandering_merchant']
-    assert hard, 'the hardcoded list is covered'
-    # Phase 2 re-staked three callback-only follow-ups to medium: each keeps
-    # or breaks an oath (P11). Stakes are never shown (P13).
-    medium = {'flv_relic_broker', 'flv_cuthbert_chapel', 'flv_watch_post'}
+    # Every flavor encounter is JSON now (no hardcoded list), a story
+    # encounter, with band = [min_level, max_level]. Stakes are never shown (P13).
+    src = open(os.path.join(ROOT, 'src', 'flavor_encounters.py'), encoding='utf-8').read()
+    assert "'tag':" not in src, 'encounter data belongs in data/flavor_encounters.json'
     for e in flavor_encounters.FLAVOR_ENCOUNTERS:
-        want = 'medium' if e['tag'] in medium else 'light'
-        assert (e['role'], e['stakes']) == ('story', want), e['tag']
+        assert e['role'] == 'story' and e['stakes'] in ('light', 'medium', 'high'), e['tag']
         assert e['band'] == [e['min_level'], e['max_level']]
-    for tag in medium:
-        assert next(e for e in flavor_encounters.FLAVOR_ENCOUNTERS
-                    if e['tag'] == tag)['callback_only']
+    # The follow-ups that keep or break an oath are medium or higher (P11).
+    for tag in ('flv_relic_broker', 'flv_cuthbert_chapel', 'flv_watch_post'):
+        e = next(e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == tag)
+        assert e['callback_only'] and e['stakes'] == 'medium'
 
 
 def test_cli_exits_clean():
@@ -110,7 +110,7 @@ def test_fixture_is_clean():
      'stat_reward'),
     (lambda e: e['options'][0]['quiz'].update(subject='astrology'), 'quiz'),
     (lambda e: e['options'][0]['quiz'].update(timed=True), 'quiz'),
-    (lambda e: e['options'][0]['quiz'].update(total_qs=3, threshold=2), 'stakes'),
+    (lambda e: e['options'][0]['quiz'].update(total_qs=4, threshold=3), 'stakes'),
     (lambda e: e['options'][1].update(warning='A sentence nowhere in the scene.'), 'naive'),
     (lambda e: e['options'][2].update(chronicle='Reached L12! +2 WIS.'), 'chronicle_lint'),
     (lambda e: e['options'][2].update(road={'id': 'x.y', 'hint': 'Press 2 for karma.'}),
@@ -162,3 +162,88 @@ def test_reward_value_table():
 def test_opportunities_report_covers_every_block():
     rep = V.opportunities_report()
     assert set(rep) == set(range(1, 11))
+
+
+# ------------------------------------------------- rules the story draft needs
+
+def test_minus_two_is_allowed_but_no_further():
+    assert 'karma_size' not in _codes(_mut(lambda e: e['options'][2].update(
+        karma=-2, karma_kind='cruelty')))
+    assert 'karma_size' in _codes(_mut(lambda e: e['options'][2].update(
+        karma=-3, karma_kind='cruelty')))
+    assert 'karma_size' in _codes(_mut(lambda e: e['options'][0]['pass'].update(karma=2)))
+
+
+def test_a_story_medium_quiz_may_ask_two_of_three():
+    assert 'stakes' not in _codes(_mut(lambda e: e['options'][0]['quiz'].update(
+        total_qs=3, threshold=2)))
+
+
+def test_a_failed_examination_may_land_the_trap_it_was_checking_for():
+    # A fail branch beside a naive sibling may carry the trap's loss.
+    assert 'stakes' not in _codes(_mut(lambda e: e['options'][0]['fail'].update(
+        cost={'type': 'hp_pct', 'amount': 10})))
+
+    def no_trap(e):
+        e['options'][1].pop('naive')
+        e['options'][1].pop('warning')
+        e['options'][0]['pass'].update(karma=0)
+        e['options'][0]['pass'].pop('karma_kind')
+        e['options'][0]['fail'].update(cost={'type': 'hp_pct', 'amount': 10})
+    assert 'stakes' in _codes(_mut(no_trap))
+
+
+def test_options_split_by_deed_can_cover_the_walk_away_between_them():
+    def split(e):
+        e['options'][2].update(requires={'deeds_all': ['met.x']})
+        e['options'].append({'label': 'Walk on', 'outcome': 'You go.',
+                             'forbids': {'deeds_all': ['met.x']}})
+    assert 'free_exit' not in _codes(_mut(split))
+
+    def gap(e):
+        e['options'][2].update(requires={'deeds_all': ['met.x']})
+    assert 'free_exit' in _codes(_mut(gap))
+
+
+def test_judgment_after_a_passed_examination():
+    def after(e):
+        e['options'][0]['pass'].update(karma=0, deeds=['noticed.anselm_true'],
+                                       then='options')
+        e['options'][0]['pass'].pop('karma_kind')
+        e['options'].insert(2, {'label': 'Free the true priest',
+                                'requires': {'deeds_all': ['noticed.anselm_true']},
+                                'outcome': 'He walks free.', 'karma': 1,
+                                'karma_kind': 'judgment'})
+    assert 'judgment' not in _codes(_mut(after))
+
+    def free(e):
+        e['options'].insert(2, {'label': 'Free the true priest', 'outcome': 'x',
+                                'karma': 1, 'karma_kind': 'judgment'})
+    assert 'judgment' in _codes(_mut(free))
+
+
+def test_forgo_counts_what_each_side_costs():
+    def sword(e):
+        e['options'][2].update(label='Hand over the sword', karma=1, karma_kind='forgo',
+                               cost={'type': 'triggered_item_id', 'item_id': 'x'})
+        e['options'][1] = {'label': 'Keep it', 'outcome': 'You keep it.'}
+    assert 'forgo' not in _codes(_mut(sword))
+
+
+def test_a_fight_is_a_visible_cost_on_the_right_side():
+    def stance(e):
+        e.update(stance='1', stance_note='x')
+        e['options'][2].update(side='right', karma=1, karma_kind='stance',
+                               fight={'monster_id': 'ogre'})
+        e['options'].append({'label': 'Say it', 'side': 'wrong', 'outcome': 'x',
+                             'karma': -1, 'karma_kind': 'stance_wrong'})
+        e['options'].pop(1)
+    assert 'stance' not in _codes(_mut(stance))
+
+
+def test_pending_engine_section_is_merged_into_the_allowlist(tmp_path):
+    p = tmp_path / 'allow.json'
+    p.write_text('{"_doc": "x", "a": ["c1"], "pending_engine": {"_doc": "y", '
+                 '"a": ["c2"], "b": ["c3"]}}', encoding='utf-8')
+    assert V.load_allowlist(str(p)) == {'a': {'c1', 'c2'}, 'b': {'c3'}}
+    assert V.load_pending(str(p)) == {'a': {'c2'}, 'b': {'c3'}}

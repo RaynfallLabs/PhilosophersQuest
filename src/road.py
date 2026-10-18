@@ -12,6 +12,8 @@ Pure module: no pygame and no Game import. Everything here is decided by
 * **Roles** (5.2): each 10-floor band gets one anchor slot (inside the old
   anchor block range, so anchor placement is unchanged), one medium slot,
   one high slot in bands 2, 4, 6, 8 and 10 (on floor 15 or deeper in band 2),
+  a second medium slot in the odd bands 1, 3, 5, 7 and 9 (Brandon: every
+  block offers two or three real chances; ENCOUNTER_STORIES_DRAFT Part I),
   and the rest light. The Emberpup's floor and the Black Knight's floor never
   hold a medium or high slot (5.5).
 * **Binding** (5.3): anchors bind at run start (their trigger items are laid
@@ -50,6 +52,8 @@ ROLE_XOR = 0x7E1E
 ANCHOR_RANGE = {1: (3, 9), 2: (11, 19), 3: (21, 29), 4: (31, 39), 5: (41, 49),
                 6: (51, 59), 7: (61, 69), 8: (71, 79), 9: (81, 89), 10: (91, 98)}
 HIGH_BANDS = frozenset({2, 4, 6, 8, 10})
+# Bands with no high slot get a second medium slot instead.
+SECOND_MEDIUM_BANDS = frozenset({1, 3, 5, 7, 9})
 STAKES_ORDER = ('light', 'medium', 'high')
 
 
@@ -158,9 +162,10 @@ def assign_roles(seed: int, slots, *, secret_floors=()) -> dict:
             f = rng.choice(pool)
             free.remove(f)
             out[f] = {'role': 'anchor', 'stakes': 'medium'}
-        f = take(list(free))
-        if f is not None:
-            out[f] = {'role': 'medium', 'stakes': 'medium'}
+        for _n in range(2 if band in SECOND_MEDIUM_BANDS else 1):
+            f = take(list(free))
+            if f is not None:
+                out[f] = {'role': 'medium', 'stakes': 'medium'}
     # Demote whatever could not move off a secret floor.
     for f in secret:
         if f in out and out[f]['role'] in ('medium', 'high'):

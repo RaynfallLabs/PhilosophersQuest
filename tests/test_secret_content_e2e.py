@@ -893,7 +893,8 @@ def test_sir_aldrics_lodestone_is_carried_until_an_altar_breaks_it():
     npc = _meet(g, 4, _npc_def('sir_aldric'))
     karma = g.karma
     _choose(g, npc, pygame.K_1)
-    assert _has(g, 'cursed_lodestone') and g.karma == karma + 1
+    # Taking the stone is a promise (0); keeping it at the altar pays.
+    assert _has(g, 'cursed_lodestone') and g.karma == karma
     assert 'sir_aldric' in g._encountered_npcs
     stone = next(i for i in g.player.inventory if i.id == 'cursed_lodestone')
     assert _own_item_art('cursed_lodestone')
@@ -905,6 +906,7 @@ def test_sir_aldrics_lodestone_is_carried_until_an_altar_breaks_it():
     assert not _has(g, 'cursed_lodestone')
     assert not any(getattr(i, 'id', '') == 'cursed_lodestone' for i in g.ground_items)
     assert "Carried Sir Aldric's stone to an altar" in _chron(g)
+    assert g.karma == karma + 1
     # He does not come back for a second helping.
     g._change_level(5, enter_from_top=True)
     g._change_level(4, enter_from_top=False)
@@ -917,26 +919,22 @@ def test_the_couriers_dispatch_is_delivered_at_the_watch_post():
     _choose(g, npc, pygame.K_1)
     assert _has(g, 'sealed_dispatch')
     assert _own_item_art('sealed_dispatch')
-    gold = g.player_gold
-    post = _meet(g, 33, _flavor_def('flv_watch_post'), flavor=True)
+    gold, karma = g.player_gold, g.karma
+    # Before the oath falls due (12 to 18 floors on), or it lapses.
+    post = _meet(g, 15, _flavor_def('flv_watch_post'), flavor=True)
     _choose(g, post, pygame.K_1)
     assert not _has(g, 'sealed_dispatch')
-    assert g.player_gold > gold
-    assert g.player.has_effect('blessed')
-    assert "Delivered the dying courier's dispatch" in _chron(g)
+    assert g.player_gold > gold and g.karma == karma + 1
+    assert "Delivered Edric's dispatch to Sergeant Holt" in _chron(g)
 
 
-def test_the_watch_post_will_not_pay_for_a_dispatch_you_do_not_carry():
+def test_the_watch_post_only_stands_while_a_dispatch_is_owed():
+    # Bug 5: the post spawns only while the courier's oath is open.
     g = _game('__test_courier_none__')
-    post = _meet(g, 33, _flavor_def('flv_watch_post'), flavor=True)
-    from game_states import STATE_NPC_ENCOUNTER
-    gold = g.player_gold
-    g._do_move(*_beside(g, post))
-    assert g.state == STATE_NPC_ENCOUNTER
-    g._npc_encounter_input(pygame.K_RETURN)
-    g._npc_encounter_input(pygame.K_1)
-    assert g._npc_encounter_phase == 'options'            # refused
-    assert g.player_gold == gold
+    g._flavor_encounter_levels = {33: _flavor_def('flv_watch_post')}
+    g._change_level(33, enter_from_top=True)
+    assert not [m for m in g.monsters if getattr(m, '_flavor_encounter_tag', None)
+                == 'flv_watch_post' and m.alive]
 
 
 def test_saint_cuthberts_gospel_from_bearer_past_broker_to_the_chapel():
@@ -945,22 +943,34 @@ def test_saint_cuthberts_gospel_from_bearer_past_broker_to_the_chapel():
     _choose(g, bearer, pygame.K_1)
     assert _has(g, 'cuthberts_gospel')
     assert _own_item_art('cuthberts_gospel')
+    # This test places the follow-ups itself (the scheduled ones would be
+    # carried onto the same floors at random targets).
+    assert len(g._deeds['pending']) == 2
+    g._deeds['pending'] = []
     karma = g.karma
     broker = _meet(g, 49, _flavor_def('flv_relic_broker'), flavor=True)
     _choose(g, broker, pygame.K_2)                        # "the book is promised"
     assert _has(g, 'cuthberts_gospel') and g.karma == karma
     chapel = _meet(g, 55, _flavor_def('flv_cuthbert_chapel'), flavor=True)
-    wis = g.player.WIS                   # (new depth teaches Wisdom on the way down)
-    _choose(g, chapel, pygame.K_1)
+    from game_states import STATE_PLAYER
+    g._do_move(*_beside(g, chapel))
+    g._npc_encounter_input(pygame.K_RETURN)
+    g._npc_encounter_input(pygame.K_1)                    # lay it on the desk
+    assert g._npc_encounter_phase == 'outcome'
+    g._npc_encounter_input(pygame.K_RETURN)
+    assert g._npc_encounter_phase == 'options'            # the reading may follow
+    g._npc_encounter_input(pygame.K_ESCAPE)
+    assert g.state == STATE_PLAYER
     assert not _has(g, 'cuthberts_gospel')
-    assert g.player.WIS == wis + 2 and g.karma == karma + 1
-    assert 'The promise is kept' in _chron(g)
+    assert g.karma == karma + 1                           # the kept oath's point
+    assert "Laid Saint Cuthbert's Gospel on the desk it was meant for" in _chron(g)
 
 
 def test_selling_the_gospel_to_the_broker_costs_karma_and_pays_gold():
     g = _game('__test_gospel_sold__')
     bearer = _meet(g, 42, _flavor_def('flv_coffin_bearer'), flavor=True)
     _choose(g, bearer, pygame.K_1)
+    g._deeds['pending'] = []                 # placed by hand below
     karma, gold = g.karma, g.player_gold
     broker = _meet(g, 49, _flavor_def('flv_relic_broker'), flavor=True)
     _choose(g, broker, pygame.K_1)
