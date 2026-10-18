@@ -181,7 +181,8 @@ Cost types: `food`, `healing_potion`, `potion`, `scroll`, `weapon`,
 `gold`, `hp_percent`, `max_hp`, `sp`, `hp`, `mp`, `random_item`,
 `triggered_item`, `accept_item`, `spawn_deadite_ambush`, and (new, all a
 share of the player's OWN pool) `hp_pct`, `sp_pct`, `mp_pct`,
-`max_hp_pct`, `gold_pct`, plus `triggered_item_id` (take the item with
+`max_hp_pct`, `gold_pct` (a CHOSEN share has a floor, `economy.pct_cost`:
+an empty purse cannot pay it), plus `triggered_item_id` (take the item with
 this id from the pack or a worn slot), `stat` (lose stat points),
 `armor_enchant` (the worn armour loses a point), `multi` (several costs
 at once) and a `count` on item costs (give back two potions). See `npc_encounters.can_pay_cost` for the
@@ -200,6 +201,16 @@ Reward types: `gold`, `random_weapon` / `_armor` / `_shield` /
 `hp_restore_pct` / `sp_restore_pct` / `mp_restore_pct` (a share of the
 player's own maximum), `gold_pct` / `gold_pct_loss`, `armor_enchant`,
 `random_artifact`, and `effect` with `floors` (lasts N floors).
+Economy refactor (2026-10-17, [economy.md](economy.md)): `service`
+(`{"service": "repair"}`: a person's trade, `game_traders._render_service`;
+the option cannot be paid for when there is nothing to do); a `gold`
+reward may carry `purse_pct` (the written sum or that share of the purse,
+whichever is more: a deep temptation that bites at every depth); a `gold`
+cost may be `{"share": "potion", "markup": 1.5}` (a vendor at the trader's
+price on its floor) or `{"service": "repair", "points": 2}`. A `forgo`
+option's karma counts only when the gold turned down was at least 10% of
+the purse at the time (`economy.forgo_is_real`,
+`EncountersMixin._forgone_gold`).
 `economy.price_encounter` rescales gold in
 `cost`, `reward`, `fail_reward`, and in nested `pass` / `fail`,
 `delayed[*].reward` and escort `on_arrive` / `on_fail`.
@@ -469,11 +480,13 @@ it (`flv_dead_come_for_the_book`, hostile).
 
 Related non-karmic encounters that live elsewhere:
 
-- **Svirfneblin Trader** (`MerchantNPC`, `mystery_system.py:582`) —
-  a general dungeon merchant with class-weighted stock (4-6 items by
-  level bracket). 20% spawn per floor. 15% chance to carry a Soul
-  Sphere. Price formula: `int(_BASE_PRICE * mult * tier * weight)`,
-  min 5 gold. See [items.md](items.md) for the full price table.
+- **The traders** (`MerchantNPC` in `mystery_system.py`; `traders.py`,
+  `game_traders.py`, `data/traders.json`): Grindle the Deep Gnome Trader
+  and five named specialists, planned once a run and placed on arrival;
+  a gate camp (Old Mags Thorn, the sutler) on floors 19, 39, 59 and 79.
+  They sell, buy and sell services. Deeds move their prices (a wronged
+  merchant, a friend come back, a kept oath's credit, rumours of charity),
+  never karma. See [economy.md](economy.md).
 - **Secret Cow** (`game_encounters._maybe_spawn_cow`) — see
   [quests_mysteries §2.9](quests_mysteries.md).
 

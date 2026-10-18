@@ -666,7 +666,7 @@ The current migration is **gradual** — SYSTEMS_AUDIT §10 P4 lists
 | `weaknesses` | list[str] | damage type names |
 | `tags` | list[str] | `["beast", "undead", …]` for family lookup |
 | `harvest_tier` | int 1-5 | tier for animal-quiz harvest |
-| `treasure` | dict | gold + item drop |
+| `treasure` | dict | `gold` [min, max] + item drop. `purse` names what the creature carries by lore (`none` / `purse` / `thief` / `scholar` / `sack` / `grave_goods` / `noble_dead` / `trinkets` / `pot` / `hoard` / `tempter` / `kept`); `gold` is written by `tools/balance/gold_by_lore.py` (economy refactor 2026-10-17, [economy.md](economy.md)). Re-run that tool after adding monsters. |
 | `lore` | str | bestiary lore |
 | `frequency` | int | tie-breaker weight in band pool |
 | `pack` | bool | spawns in packs |
@@ -913,7 +913,7 @@ convention; the inconsistency is historical.
 
 - `tier` — chest tier (also the trap tier on failed pick).
 - `frequency` — spawn weight within the chest pool for the band.
-- `gold: [min, max]` — gold roll on open.
+- `gold: [min, max]` — gold roll on open, for a chest with no template. A templated chest takes `gold_share` from `data/chest_templates.json` instead (a share of one floor's income, `container_system.chest_gold`).
 
 **Dead fields (SYSTEMS_AUDIT §5 P3):**
 - `trapped` + `trap: {...}` block — every "trapped" chest carries a

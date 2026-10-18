@@ -104,8 +104,11 @@ quiz_engine.start_quiz(
 ### Success (`_handle_success`, `src/container_system.py:122`)
 
 - `container.opened = True`
-- Gold: rolls at the **top of the range** (0.70 lo .. gmax inclusive)
-  because you did it right.
+- Gold: `container_system.chest_gold(container, level, rng)`. A templated
+  chest pays a share of one floor's income from its template's
+  `gold_share` (economy refactor 2026-10-17; see [economy.md](economy.md)),
+  rolled in the **top 30% of the range** because you did it right. A chest
+  with no template keeps its written `gold` `[min, max]`.
 - Loot: `_generate_loot_from_template(container, dungeon.level)` returns
   3–4 real slots + 1 bonus common + rare_chance × 2 (unique roll).
 - Messages: "The lock yields! You crack the chest." + per-item + gold.
@@ -237,7 +240,7 @@ Example:
     "lore": "A simple traveler's box. Iron hasp, water-stained planks.",
     "tier": 1,
     "quiz_tier": 1,
-    "gold_range": [5, 25],
+    "gold_share": [0.07, 0.14],
     "trap_chance": 0.10,
     "loot_table": {
       "weapon_common": 25,
@@ -261,7 +264,7 @@ Example:
 | Field | Purpose |
 |-------|---------|
 | `tier`, `quiz_tier` | Mirror the Container fields. |
-| `gold_range` | `[min, max]`. |
+| `gold_share` | `[lo, hi]`: the chest's gold as a share of one floor's income (`economy.floor_income`). Replaced `gold_range` (a written 5-800 the 2026-10-05 pricing pass never scaled, so a chest paid 2-10% of a floor). |
 | `loot_table` | Category → weight dict. Categories map to item pools (`_COMMON_CATEGORIES`, `src/container_system.py:211`): `potion`, `scroll`, `wand`, `spellbook`, `accessory`, `ammo`, `ingredient`, `artifact`, `magic` (= wand+scroll+spellbook), `gear` (= weapon+armor+shield), or the explicit `weapon_common` / `armor_common` / `shield_common`. The pseudo-category `gold_bonus` adds extra gold instead of pulling an item. |
 | `rare_chance_chain3` | Baseline chance that the chest contains a unique. The success handler multiplies this by `FULL_RARE_MULT = 2.0` (`src/container_system.py:42`) to match the pre-v2.6.6 chain-5 "Master Thief" tier. |
 | `spawn_weight_by_band` | Per 15-floor band weights for `dungeon.pick_container`. |
