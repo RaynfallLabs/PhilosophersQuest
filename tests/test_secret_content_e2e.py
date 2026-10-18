@@ -27,7 +27,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'src'))
 
 import pygame  # noqa: E402
-import pytest  # noqa: E402
 
 pygame.init()
 _SCREEN = None
@@ -1143,31 +1142,14 @@ def test_the_book_of_thoth_can_be_found_in_a_run():
     assert setne_tomb.candidate_floors() and all(45 <= f <= 65 for f in setne_tomb.candidate_floors())
     from game_road import _encounter_by_tag
     _src, enc = _encounter_by_tag(setne_tomb.data()['encounter'])
-    if enc is not None:            # the converted story is shipped: its prize is the book
-        prizes = [((o.get('pass') or {}).get('reward') or {}).get('item_id')
-                  for o in enc.get('options') or ()]
-        assert 'book_of_thoth' in prizes
-        assert enc.get('callback_only'), 'nothing but the tomb places it'
-    import glob
-    import json
-    with open(os.path.join(ROOT, 'data', 'items', 'spellbook.json'), encoding='utf-8') as f:
-        book = json.load(f)['book_of_thoth']
-    floor_spawn = book.get('min_level', 9999) < 9999 and book.get('peak_weight', 0)
-    named = False
-    for path in glob.glob(os.path.join(ROOT, 'data', '*.json')) + \
-            glob.glob(os.path.join(ROOT, 'data', 'items', '*.json')):
-        if path.endswith('spellbook.json'):
-            continue
-        with open(path, encoding='utf-8') as f:
-            if 'book_of_thoth' in f.read():
-                named = True
-    for path in glob.glob(os.path.join(ROOT, 'src', '*.py')):
-        if os.path.basename(path) in ('game_magic.py', 'items.py', 'renderer.py'):
-            continue                       # the reader, the class and the art table
-        with open(path, encoding='utf-8') as f:
-            if 'book_of_thoth' in f.read():
-                named = True
-    assert floor_spawn or named
+    # The tomb's own story must be shipped and its prize must be the book
+    # (CODE-11: a fallback that only looked for the string anywhere passed
+    # with the encounter deleted).
+    assert enc is not None, setne_tomb.data()['encounter']
+    prizes = [((o.get('pass') or {}).get('reward') or {}).get('item_id')
+              for o in enc.get('options') or ()]
+    assert 'book_of_thoth' in prizes
+    assert enc.get('callback_only'), 'nothing but the tomb places it'
 
 
 def _potion_ids():

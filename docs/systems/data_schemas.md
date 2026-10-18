@@ -1057,7 +1057,8 @@ recalled hints.
   "requires", "if_missed": "carry"|"drop", "thread"}`). An outcome may
   also carry `delayed` (a reward N floors on), `oath` / `oath_keep` /
   `oath_break` / `oath_lapse` / `oath_release`, `escort` (inline or
-  `{"$ref"}` into the encounter's `escorts` map), `fight` (one
+  `{"$ref"}` into the encounter's `escorts` map; an escort's `ac` is
+  hero-style, lower is better and 10 is unarmoured, default 10), `fight` (one
   `{monster_id, count}` or a list), `people` / `people_lines`,
   `seal_door`, `expel_up` and `hostile`. Karma rides on `karma` +
   `karma_kind` (forgo / judgment / stance / oath, or a negative kind);

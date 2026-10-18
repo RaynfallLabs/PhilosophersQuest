@@ -101,7 +101,7 @@ def monster_trait_lines(mdef: dict) -> list:
     if mdef.get('invisible'):
         out.append("Invisible: unseen without see invisible, true sight, telepathy or clairvoyance.")
     if mdef.get('weighs_heart'):
-        out.append("Weighs the heart: bites harder on low karma, softer on high.")
+        out.append("Weighs the heart of whoever it fights, and a heavy heart feeds it.")
     if mdef.get('fearless'):
         out.append("Fearless: never flees and cannot be frightened.")
     if mdef.get('quarrelsome'):
@@ -8307,7 +8307,7 @@ class RenderMixin:
             scroll_attr = '_review_scroll'
         else:
             subj = self._STUDY_SUBJECTS[self._study_subject_idx]
-            title = f"STUDY JOURNAL - {subj.upper()} ({len(missed)}/{len(self.missed_questions)})"
+            title = f"MISSED QUESTIONS - {subj.upper()} ({len(missed)}/{len(self.missed_questions)})"
             scroll_attr = '_study_scroll'
             if missed:
                 idx = max(0, min(getattr(self, '_study_question_idx', 0), len(missed) - 1))
@@ -9328,11 +9328,12 @@ class RenderMixin:
             ]),
             ("Knowledge", [
                 ("@", "Character: equip, drop", FP.BODY_TEXT),
-                ("B", "Encyclopedia", FP.BODY_TEXT),
+                ("B", "Encyclopedia, Journal (h)", FP.BODY_TEXT),
                 ("J", "Discoveries", FP.BODY_TEXT),
                 ("K", "Kit: compare, equip, drop", FP.BODY_TEXT),
                 ("W", "Quirks progress", FP.BODY_TEXT),
-                (";", "Study journal", FP.BODY_TEXT),
+                (";", "Missed Questions", FP.BODY_TEXT),
+                ("S", "Your Story (end of run)", FP.BODY_TEXT),
                 ("N", "Recall lore", FP.BODY_TEXT),
                 ("L", "Message history", FP.BODY_TEXT),
             ]),

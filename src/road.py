@@ -35,11 +35,13 @@ from __future__ import annotations
 import random
 import zlib
 
+import deeds
+from boss_levels import COW_LEVEL
+
 CURRENT_VERSION = 1
 
 BOSS_FLOORS = frozenset({20, 40, 60, 80})
 NEVER_SLOTS = frozenset({1, 99, 100, 999}) | BOSS_FLOORS
-COW_LEVEL = 999
 MAX_GAP = 3
 
 # Seed constants (the Emberpup uses 0x0E3BE6 and the Black Knight 0xB1AC4 on
@@ -57,8 +59,8 @@ SECOND_MEDIUM_BANDS = frozenset({1, 3, 5, 7, 9})
 STAKES_ORDER = ('light', 'medium', 'high')
 
 
-def band_of(floor: int) -> int:
-    return min(10, max(1, (int(floor) - 1) // 10 + 1))
+# A band is a karma block: one 10-floor stretch (CODE-08: one definition).
+band_of = deeds.karma_block
 
 
 def rng_for(seed: int, key: str) -> random.Random:

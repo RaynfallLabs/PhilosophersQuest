@@ -120,6 +120,22 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `gaze_group` | str | default "" | Gazers in one group share one gaze: when any of them uses it, every living member waits out the cooldown, so the group never paralyses twice in one turn. `stheno_gorgon` and `euryale_gorgon` ("gorgon_sisters"; Stheno 2 turns, Euryale 1). |
 | `dragon_scales` | float | default 0 | Fraction of damage absorbed in `combat.py`'s melee pipeline. `fafnir_dragon` 0.8. |
 
+### Lore-driven behaviour keys (late-game monsters, 2026-10)
+
+| field | type | notes |
+|---|---|---|
+| `after_theft` | str | default `"flee"` | What a thief does once it holds a haul: `"flee"` runs from the hero, `"teleport"` first vanishes to a far part of the floor (the leprechauns). See `theft.py`. |
+| `disguise` | dict | default none | What an un-sprung `mimic`-AI creature is drawn as: `{"item": <item sprite id>, "name": ...}` (a chest) or `{"tile": "stairs_down", "name": ...}` (the Hellmouth, seated by `false_stairs.py`). Read by `unseen.disguise`; shown in the bestiary as "Poses as". |
+| `fearless` | bool | default False | Never flees and cannot be frightened (`feared` is stripped each turn). The galla. |
+| `kill_chronicle` | str | default "" | The Journal line written when this mini-boss dies, instead of the generic one (`game_combat` kill handler). |
+| `pack_size` | [min, max] | default none | Fixes a lore pack's number, leader included (the three Furies, Keres three to five). Overrides the depth-scaled pack roll in `dungeon._spawn_one_in_room`. |
+| `proper_noun` | bool | default False | The name is a person's name, so `the_name` never adds "the". |
+| `quarrelsome` | bool | default False | While confused it strikes a neighbour of its own kind instead of stumbling (the Sown Men). |
+| `quarrels_when_struck_by_thrown` | int | default 0 | Turns of confusion a thrown object inflicts on it (Cadmus's stone); pairs with `quarrelsome`. |
+| `splits` | dict | default none | `{"by": "weak_blow" \| [damage forms], "share", "into", "max"}`: struck the wrong way it divides or lets out another creature. See `splitting.py`. |
+| `stationary` | bool | default False | Documents a creature that never moves (the Black Knight). Not read from JSON: the `BlackKnight` class sets it, and `ai_pattern: sessile` does the work. |
+| `weighs_heart` | bool | default False | Its blows are scaled by the hero's karma: `monster.heart_weight` = `1 - 0.04 × karma` (harder on a low karma). The bestiary line stays oblique and never names karma. |
+
 ### Enrage / phase-change
 
 | field | type | notes |
@@ -159,6 +175,9 @@ An `attacks[]` is a list of attack dicts. One is picked each turn (`random.choic
 | `effect_duration` | str or int | default 5 | Dice or int, parsed by `dice.roll_duration`. |
 | `effect_save_dc` | int | default `min(18, 12 + min_level // 7)` | DC vs the player's saving-throw stat. |
 | `subtype` | str | Occasionally present — informational, not read by combat. |
+| `bonus_vs` | {effect: float} | Damage multiplier when the hero is under that status (the mara's trample: `{"sleeping": 1.5}`). First matching effect wins; the hit message says so. Read in `Monster._resolve_blow`. |
+| `steal` | str | `"gold"`, `"item"` or `"any"`: a landed blow may rob the hero (see `theft.py` below). |
+| `steal_chance` | float | default 1.0 | Chance a landed `steal` blow actually steals. |
 
 **Multi-attack vs multi-type.** A monster has ONE `attacks[]` list; `multi_attack_count` chooses how many to fire per turn in sequence, with their own THAC0 rolls and damage dice. `_fenrir_multi_attack(player, attack_limit=N)` is the central multi-attack path — it skips attack selection and fires the first N (or all when limit = 0).
 
@@ -380,6 +399,16 @@ All four are now candidates for the band-5 (81-100) mini-boss slots. `surtur`, `
 ### `item_tier` cap (v2.18.0 clamp)
 
 The design cap is 1-5 and `_spawn_treasure_item` scales as `effective_floor = tier * 5`. Pre-v2.18.0, 7 dragon-tier monsters carried `item_tier` 6-10 (would have produced `effective_floor` 30-50 — plausible numerically but outside the documented 1-5 schema). The v2.18.0 catalog is strictly within 1-5 (verified: current counts 1=61, 2=99, 3=151, 4=116, 5=100).
+
+## Special monster modules (2026-10)
+
+**Theft (`src/theft.py`).** An attack with `steal` that lands rolls `steal_chance`; the monster notes the wish (`_wants_steal`) and the game carries it out right after the blow (`theft.steal`), because gold belongs to the Game, not the Player. `"gold"` takes a share of the purse (`economy.THEFT_PURSE_SHARE`), `"item"` one unworn pack item (bright magical kinds three times as likely), `"any"` either. Worn or wielded gear, containers and scripted quest pieces are never stolen. A thief takes one haul and then runs (`after_theft: flee`) or vanishes at least `TELEPORT_MIN_DISTANCE` tiles away first (`teleport`); it never leaves the floor. Whatever it carries falls on its tile when it dies (`theft.give_back`, called from the kill handler).
+
+**Splitting (`src/splitting.py`).** `Monster.take_damage` asks `blow_splits`: with `by: "weak_blow"` a blow under `share` of the original health splits it (Blood of Tiamat); with a list of damage forms, only a blow made wholly of those forms does (a black pudding cut by an axe, not a thrusting sword; spells count by element). Without `into` the creature divides and the new body takes half the remaining health; with `into` the blow lets out that creature instead (Azhi Dahaka's vermin). `max` caps the splits of a whole lineage. The split is counted on the monster (`_pending_splits`) and `spawn_pending(game)` places the bodies on free adjacent tiles at the end of every action, whatever caused the wound.
+
+**False stairs, the Hellmouth (`src/false_stairs.py`).** A `mimic`-AI monster with `disguise: {"tile": "stairs_down"}` is drawn as a down stair until it springs (`unseen.disguise`, `renderer.draw_disguise`). `seat` decides where it may lie so it never costs the hero the way down: plain floor only, the real down stair kept and still reachable from the up stair with the false tile blocked, reachable ground outside the arrival room, at least `MIN_STAIR_DISTANCE` from the real stair, at most `MAX_PER_FLOOR` per floor, and none on a floor without a real down stair. It runs at floor generation (`level_manager`) and again on every floor entry (`Game._settle_monsters`).
+
+**The Black Knight (`src/black_knight.py`).** An easter egg, about one run in four: on one floor from 15 to 19 the `black_knight` stands on a short bridge over a strip of water across a corridor that always has another way round. `BlackKnight(Monster)` never moves; any single action takes him down to the next of the 75 / 50 / 25 per cent marks and no further (one limb per action, ticked by `Game._advance_turn` before and after the world moves), the last leg needs a blow that leaves him on 1 and another to take it, and his attack changes with each stage. When his sword arm goes, his sword (`flesh_wound` in `data/items/weapon.json`) falls on the bridge. At 0 he is not killed: a torso that calls it a draw and swaps places with the hero. Run state is `game._black_knight` (`floor`, `spawned`, `outcome`, `sword_dropped`); text lives in `data/black_knight.json`.
 
 ## Invariants
 

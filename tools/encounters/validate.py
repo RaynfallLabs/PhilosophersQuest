@@ -1029,6 +1029,12 @@ def _check_escort(err, where, esc):
         err('escort', f'{where}: escort id must be [a-z0-9_]+')
     if not isinstance(esc.get('hp'), int) or esc['hp'] < 1:
         err('escort', f'{where}: escort hp is a fixed number (LORE NOT FLOOR)')
+    # Escort AC is hero-style: lower is better, 10 is unarmoured, so a civilian
+    # sits near 10 and a hoplite or an angel well below it (CODE-01).
+    ac = esc.get('ac', 10)
+    if not isinstance(ac, int) or isinstance(ac, bool) or not -10 <= ac <= 10:
+        err('escort', f'{where}: ac {ac!r} must be a whole number from -10 to 10 '
+                      '(hero-style: lower is better, 10 is unarmoured)')
     goal = esc.get('goal', 'stairs_down')
     if goal not in ('stairs_down', 'stairs_up') and not str(goal).startswith('tile:'):
         err('escort', f'{where}: goal {goal!r}')

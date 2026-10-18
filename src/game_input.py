@@ -1453,11 +1453,11 @@ class InputMixin:
             return
 
     # ------------------------------------------------------------------
-    # Study journal
+    # Missed Questions (; key)
     # ------------------------------------------------------------------
 
     def _study_input(self, key):
-        """Handle input in the study journal.
+        """Handle input on the Missed Questions screen.
         Left/Right: cycle subject tabs.
         Up/Down: scroll through questions in current category."""
         # Left/Right: cycle subject category

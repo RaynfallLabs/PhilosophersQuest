@@ -205,26 +205,13 @@ def test_chain_equip_regen_bonus_round_trip():
         from items import load_items
         from chain_equip import apply_tier_bonuses, is_chain_equip
 
-        # Find any chain-equip item with regen_bonus in any tier
-        regen_item = None
-        regen_tier = 0
-        for category in ('armor', 'accessory', 'shield'):
-            for it in load_items(category):
-                if not is_chain_equip(it):
-                    continue
-                for t_key, bonuses in it.tier_bonuses.items():
-                    if 'regen_bonus' in bonuses:
-                        regen_item = it
-                        regen_tier = int(t_key)
-                        break
-                if regen_item:
-                    break
-            if regen_item:
-                break
-
-        if regen_item is None:
-            import pytest
-            pytest.skip("no chain-equip item with regen_bonus tier_bonus in JSON")
+        # No shipped item carries regen_bonus today, so this used to skip on
+        # every run (CODE-12). Use a real chain-equip item from the data and
+        # give it a regen_bonus tier bonus, the key chain_equip supports.
+        regen_item = next(it for category in ('armor', 'accessory', 'shield')
+                          for it in load_items(category) if is_chain_equip(it))
+        regen_tier = 1
+        regen_item.tier_bonuses = {'1': {'regen_bonus': 2}}
 
         g = _new_game(name)
         if isinstance(regen_item, type(load_items('armor')[0])) and \

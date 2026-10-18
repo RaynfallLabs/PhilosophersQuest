@@ -9,7 +9,10 @@ c<N>_sprite.png. Refuses to overwrite a file that already exists unless its id i
 of these runs' own (a re-install). Merges the ids into installed.json (monsters),
 installed_rest.json (npc_*) and installed_items.json (items).
 """
-import json, os, shutil, sys
+import json
+import os
+import shutil
+import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
@@ -27,7 +30,8 @@ def main():
         rv = os.path.join(GEN, run, 'review.json')
         for sid, v in json.load(open(rv, encoding='utf-8')).items():
             if not v.get('pick'):
-                print('no pick:', sid); continue
+                print('no pick:', sid)
+                continue
             base = os.path.join(GEN, run, sid, f"c{v['pick']}_sprite")
             src = base + '_edit.png' if os.path.exists(base + '_edit.png') else base + '.png'
             dst = os.path.join(ROOT, 'assets', 'tiles', folder, sid + '.png')
@@ -44,10 +48,14 @@ def main():
     npcs = [m for m in done['monsters'] if m.startswith('npc_')]
     p = os.path.join(HERE, 'installed.json')
     json.dump(sorted(set(json.load(open(p, encoding='utf-8'))) | set(mons)), open(p, 'w', encoding='utf-8'), indent=0)
-    p = os.path.join(HERE, 'installed_rest.json'); d = json.load(open(p, encoding='utf-8'))
-    d['monsters'] = sorted(set(d['monsters']) | set(npcs)); json.dump(d, open(p, 'w', encoding='utf-8'), indent=0)
-    p = os.path.join(HERE, 'installed_items.json'); d = json.load(open(p, encoding='utf-8'))
-    d['items'] = sorted(set(d['items']) | set(done['items'])); json.dump(d, open(p, 'w', encoding='utf-8'), indent=0)
+    p = os.path.join(HERE, 'installed_rest.json')
+    d = json.load(open(p, encoding='utf-8'))
+    d['monsters'] = sorted(set(d['monsters']) | set(npcs))
+    json.dump(d, open(p, 'w', encoding='utf-8'), indent=0)
+    p = os.path.join(HERE, 'installed_items.json')
+    d = json.load(open(p, encoding='utf-8'))
+    d['items'] = sorted(set(d['items']) | set(done['items']))
+    json.dump(d, open(p, 'w', encoding='utf-8'), indent=0)
 
 
 if __name__ == '__main__':

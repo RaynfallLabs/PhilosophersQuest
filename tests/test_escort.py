@@ -26,7 +26,7 @@ def _screen():
 
 
 LENA = {
-    'id': 'lena', 'name': 'Lena', 'sprite_id': 'npc_lost_girl', 'hp': 40, 'ac': 4,
+    'id': 'lena', 'name': 'Lena', 'sprite_id': 'npc_lost_girl', 'hp': 40, 'ac': 9,
     'goal': 'stairs_down', 'leash': 2, 'floors': 1, 'perk': 'reveal_traps',
     'on_arrive': {'outcome': 'Lena hands you the last of her mother\'s tonic and is gone.',
                   'reward': {'type': 'effect', 'effect': 'blessed', 'duration': 30},
@@ -290,3 +290,87 @@ def test_walking_into_an_escort_swaps_places():
     ex, ey = esc.x, esc.y
     g._do_move(ex - ox, ey - oy)
     assert (g.player.x, g.player.y) == (ex, ey) and (esc.x, esc.y) == (ox, oy)
+
+
+# --- CODE-01: escort AC is hero-style (lower is better, 10 is unarmoured) ---
+
+def _shipped_escorts():
+    import json
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    out = {}
+
+    def walk(o):
+        if isinstance(o, dict):
+            if 'leash' in o and 'hp' in o and 'id' in o:
+                out[o['id']] = o
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+    for f in ('npc_encounters.json', 'flavor_encounters.json'):
+        with open(os.path.join(root, 'data', f), encoding='utf-8') as fh:
+            walk(json.load(fh))
+    return out
+
+
+def _hit_rate(spec, swipes=2000):
+    import types
+    from game_combat import CombatMixin
+    from escort_system import Escort
+
+    class _Rat:
+        alive = True
+        thac0 = 12
+        is_allied = False
+        x = y = 0
+        name = 'rat'
+        attacks = [{'damage': '1d2'}]
+
+        def has_effect(self, e):
+            return False
+
+        def _is_named_foe(self):
+            return False
+
+    random.seed(5)
+    esc = Escort(dict(spec, hp=10 ** 6), 1, 0)
+    g = types.SimpleNamespace(monsters=[_Rat()], visible=set(),
+                              player=types.SimpleNamespace(has_effect=lambda e: False),
+                              add_message=lambda *a, **k: None)
+    hits = 0
+    for _ in range(swipes):
+        hp0 = esc.hp
+        CombatMixin._monster_swipes(g, [esc], escorts=True)
+        hits += esc.hp < hp0
+    return hits / swipes
+
+
+def test_an_escort_without_an_ac_is_unarmoured():
+    from escort_system import Escort
+    spec = dict(LENA)
+    spec.pop('ac')
+    assert Escort(spec, 1, 0).ac == 10
+    assert Escort(dict(LENA, ac=0), 1, 0).ac == 0
+
+
+def test_shipped_escort_armour_reads_like_the_lore():
+    esc = _shipped_escorts()
+    for civilian in ('wynn', 'lena', 'quill'):
+        assert esc[civilian]['ac'] >= 9, civilian
+    assert esc['aristodemus']['ac'] <= 5
+    assert esc['azarias']['ac'] < esc['aristodemus']['ac'] < esc['wynn']['ac']
+    # Through the real swipe: the angel is the hardest to hit, the pilgrim the easiest.
+    assert _hit_rate(esc['azarias']) < _hit_rate(esc['aristodemus']) < _hit_rate(esc['wynn'])
+
+
+def test_the_validator_rejects_an_escort_ac_off_the_hero_scale():
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from tools.encounters import validate as V
+    errs = []
+    for bad in (15, -11, 'plate', 2.5):
+        V._check_escort(lambda code, msg: errs.append((code, msg)), 'x', dict(LENA, ac=bad))
+    assert len([e for e in errs if 'ac ' in e[1]]) == 4
+    errs.clear()
+    V._check_escort(lambda code, msg: errs.append((code, msg)), 'x', LENA)
+    assert errs == []

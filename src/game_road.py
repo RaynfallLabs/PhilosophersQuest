@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import copy
 
-COW_LEVEL = 999
+from boss_levels import COW_LEVEL
 
 
 def _encounter_by_tag(tag: str):
