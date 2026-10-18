@@ -147,7 +147,7 @@ assets/
 
 ## Commands
 - Run game: `python src/main.py`
-- Run tests: `pytest tests/ -v`
+- Run tests: `pytest tests/ -v` (parallel: `pytest tests/ -q -n auto`, about 1 minute; add `--run-slow` for the UI gates, about 6 minutes)
 - Install dependencies: `pip install -r requirements.txt`
 
 ## Rebuilding a Quiz Bank
