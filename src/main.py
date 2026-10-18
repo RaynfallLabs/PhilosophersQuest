@@ -33,7 +33,7 @@ import pygame
 # every other UI helper is used exclusively from game_render.RenderMixin.
 from fantasy_ui import ScaledFont
 
-from pet_system import Pet, FenrirPet
+from pet_system import Pet, FenrirPet, growl_tag
 from quirk_system import QuirkSystem
 from container_system import attempt_lockpick
 from dungeon import (spawn_monsters, WALL, STAIRS_UP, STAIRS_DOWN, DOOR, SECRET_DOOR,
@@ -4993,12 +4993,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if isinstance(it, Container) and getattr(it, 'is_mimic', False)
                 and max(abs(it.x - px), abs(it.y - py)) <= radius
             ]
+            # He remembers what he has growled at (by a tag that lasts
+            # through a save, CODE-13) until it is dead, gone well out of his
+            # range (radius + 2, so a creature pacing on the edge is one
+            # growl: PET-02) or the floor changes. The hero catching sight
+            # of it does not make him forget it.
             seen = getattr(pet, '_growled_at', None)
-            if seen is None:
+            if not isinstance(seen, set) or getattr(pet, '_growl_floor', None) != self.dungeon_level:
                 seen = set()
-            in_range = {id(m) for m in threats}
-            fresh = [m for m in threats if id(m) not in seen]
-            pet._growled_at = in_range        # forget what has left his range
+            pet._growl_floor = self.dungeon_level
+            keep = radius + 2
+            near = {growl_tag(m) for m in self.monsters
+                    if m.alive and max(abs(m.x - px), abs(m.y - py)) <= keep}
+            near |= {growl_tag(it) for it in self.ground_items
+                     if getattr(it, 'is_mimic', False)
+                     and max(abs(it.x - px), abs(it.y - py)) <= keep}
+            fresh = [m for m in threats if growl_tag(m) not in seen]
+            pet._growled_at = (seen & near) | {growl_tag(m) for m in threats}
             if not fresh:
                 continue
             near = min(fresh, key=lambda m: max(abs(m.x - px), abs(m.y - py)))
