@@ -12,7 +12,8 @@ headless Game (or the real generator), not the source text:
 * treasure (known by sight, never cursed) could be blessed, cursed, or
   "forgotten" by a cursed Scroll of Identify and then offered for identifying;
 * an altar took a gem worth far more than its tribute, with no change, and
-  the card never said so;
+  the card never said so (it now gives change in coin, 2026-10-18:
+  tests/test_altar_change_and_draught.py);
 * the pets doc quoted the bound sphere's lore with a singular "them".
 """
 import os
@@ -195,7 +196,9 @@ def test_the_altar_card_says_what_treasure_the_tribute_would_take():
     g.player_gold = 20
     p.inventory.append(treasure.make('treasure_burmese_ruby'))
     line = g._tribute_plan_line(cost)
-    assert 'Burmese Ruby' in line and 'no change' in line
+    # An unvalued ruby: the change is promised, its sum is not told.
+    assert 'Burmese Ruby' in line and 'gives back the rest in coin' in line
+    assert 'gold in change' not in line
     # Nothing to pay with at all: the altar refuses before the card (no line).
     p.inventory = [i for i in p.inventory if not treasure.is_treasure(i)]
     assert g._tribute_plan_line(cost) == ''
@@ -216,9 +219,12 @@ def test_the_altar_takes_exactly_what_its_card_said():
     g._start_mystery(altar)
     assert g.state == STATE_MYSTERY_APPROACH
     said = g._tribute_plan_line(cost)
+    plan = g._payment_plan(cost)
     g._begin_mystery_challenge()
-    assert ruby not in p.inventory and g.player_gold == 20
+    assert ruby not in p.inventory
+    assert g.player_gold == 20 + plan['change']             # change in coin
     assert any('You offer a Burmese Ruby as tribute.' in t for t in _texts(g, 6)), said
+    assert any(f"gives back {plan['change']:,} gold in change" in t for t in _texts(g, 6))
 
 
 # ---------------------------------------------------------------- QA paths

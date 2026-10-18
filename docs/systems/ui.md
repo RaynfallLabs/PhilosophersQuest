@@ -19,7 +19,7 @@ and the welcome / name-entry flow.
 - `src/ui.py` — `Sidebar`, `MessageLog`, left-rail / right-rail
   composition, effect chips, powers rows, in-sight rows
 - `src/hud_context.py` — pure data helpers (`active_power_rows`,
-  `visible_context_rows`, `hud_item_name`); True-Name identify-v3 rule
+  `visible_context_rows`, `hud_item_name`); the known-kind identify rule
 - `src/game_menus.py` — `MenuMixin`, menu input handlers, `_COOK_TABS`,
   `_open_identify_menu`, `_open_power_menu`, `_activate_gold_offering`
 - `src/game_input.py` — `InputMixin.handle_event` state dispatch and
@@ -337,32 +337,31 @@ monster count on a floor becomes routinely high.)
 Pure functions, no pygame. Drawing stays boring; filtering stays
 testable.
 
-### 7.1 `hud_item_name(player, item, include_count=False)` — True Name rule
+### 7.1 `hud_item_name(player, item, include_count=False)` — one identification knows every copy
 
-This is the identify-v3 fix (2026-08-06). The HUD + sidebar + menu
-rows all go through this helper.
+The HUD + sidebar + menu rows all go through this helper. Since
+2026-10-18 knowing an item's KIND fully identifies every copy, blessing
+and enchantment included (`hud_context.copy_fully_known` →
+`items.is_fully_known`):
 
 ```
-INSTANCE identified       → full name ("Rapier +2")
-TYPE known + BUC known    → full name (BUC "Blessed"/"Cursed" prefix)
-TYPE known + BUC unknown  → "Unidentified <true name>"
-TYPE unknown              → item.unidentified_name (appearance)
+copy identified OR kind known → true name, "Blessed"/"Cursed" prefix
+neither                       → item.unidentified_name (appearance),
+                                "Cursed" only once an altar or a worn
+                                curse has shown it
 ```
 
 Names are always title case (v2.23.0): `item.name` and
 `item.unidentified_name` are `naming.ProperNameAttr` descriptors, so
 `"ring of magic resist"` reads back as `"Ring of Magic Resist"` on
 every screen and log line, including items loaded from older saves.
-The `Unidentified` prefix is capitalised to match.
+The old `TYPE known + BUC unknown` branch ("Potion of Healing (Curse
+Unknown)") was removed on 2026-10-18: Brandon found identifying every
+copy of a kind he already knew too annoying in play.
 
-The `TYPE known + BUC unknown` branch is the key one — the player
-knows what the item CLASS is, but THIS copy's BUC is still a mystery.
-The HUD surfaces that explicitly so the player doesn't quaff a cursed
-healing potion thinking it's identified.
-
-BUC prefix is a capitalised word (`Blessed` / `Cursed`; braces until 2026-10-16); only
-rendered when `buc_known`. Count suffix (`x3`) added if
-`include_count` and count > 1.
+BUC prefix is a capitalised word (`Blessed` / `Cursed`; braces until
+2026-10-16); only rendered when the blessing is known. Count suffix
+(`x3`) added if `include_count` and count > 1.
 
 ### 7.2 `active_power_rows(player, secret_build, heavenly_host_active)`
 
@@ -392,7 +391,7 @@ cooldown, uses}`. The sidebar renders color by state (`SUCCESS_TEXT`,
 
 Filters to things in the player's visible-tile set, sorts by Manhattan
 distance, caps at `max_monsters` / `max_items`. Items use
-`hud_item_name` so the appearance / True-Name rule applies.
+`hud_item_name` so the appearance / known-kind rule applies.
 
 ### 7.4 `spawn_fit_score / spawn_fit_color`
 
@@ -434,7 +433,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_QUIZ` | quiz starts | `_quiz_input` | `game_render._draw_quiz` |
 | `STATE_QUIZ_CONTEXT` | `C` during a quiz whose question has a context card | `_quiz_context_input` | `_draw_quiz` then `_draw_quiz_context_modal` |
 | `STATE_EQUIP_MENU` | `E` | `_equip_menu_input` | `_draw_equip_menu` |
-| `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser` |
+| `STATE_KIT` | `K` | `_kit_input` | `_draw_kit_panel` → `_draw_kit_browser`; tabs Weapons / Armor / Shields / Accessories / Consumables / Valuables (treasure: kind, count, weight as the shop gives it, worth exact once a trader has valued the kind, else its order of magnitude; `treasure.worth_short`, `_kit_detail_lines_for_treasure`) / Spells |
 | `STATE_DISCOVERIES` | `J` | `_discoveries_input` | `_draw_discoveries_panel` |
 | `STATE_WAND_MENU` | `Z` | `_wand_menu_input` | `_draw_wand_menu` |
 | `STATE_SCROLL_MENU` | `R` | `_scroll_menu_input` | `_draw_scroll_menu` |
@@ -452,7 +451,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_LORE` | lore trigger | `_lore_input` | `_draw_lore_dossier_screen` |
 | `STATE_HINT` | Recall Lore | any-key dismiss | `_draw_hint_screen` |
 | `STATE_EXAMINE` | `X` | `_examine_menu_input` | `_draw_examine_menu` |
-| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser` |
+| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser`; categories a-l (Bestiary ... Treasure, and **Wonders**: the six Soul Spheres once their kind is known and the Draught of Mimir's Well once held, with art and lore, `Game._wonder_entries` / `_encyclopedia_wonder_lines`). Esc steps back: article, list, categories, play (an O-opened Bestiary page goes straight back to play) |
 | `STATE_HACK_REALITY` | hack unlock | any-key | `_draw_hack_reality_screen` |
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |
@@ -535,7 +534,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `v` | active powers menu |
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |
-| `o` | observe cursor |
+| `o` | observe cursor; Enter on a creature the hero knows (it has a Bestiary page) opens that page in the Encyclopedia (`Game._open_bestiary_page`), Esc returns to play; an unknown, unseen invisible or disguised creature gets the plain look |
 | `k` | kit: compare, then act on the selected item (E/D/I/X, see §22) |
 | `j` | discoveries |
 | `;` | Missed Questions (review this run's missed questions) |
@@ -1091,14 +1090,22 @@ badge, badge_color, details), `selected` index, `context_lines`
 
 Layout: tabs (if given) → entries list with sprite + 1-line detail
 → selected-entry "details" subpanel on the right (3-4 lines) →
-footer hint.
+footer hint. A list longer than the pane scrolls a row at a time with
+the cursor; it shows "x-y of N" under the list and a scroll bar in a
+strip beside the rows (2026-10-18). The pet feed and heal pickers use
+this menu since 2026-10-18 (they were quick two-column pickers, where a
+pack of more than eight foods seemed to stop at the eighth).
 
 ### 19.2 `_draw_fast_picker_variant_b(...)` L3008-3122
 
 Used by: power menu, discoveries, hero-special pickers.
 
 Simpler — no sprite, no detail subpanel. Compact badge + description.
-Good for terse `[READY | CD 5t | x3 USES]` lists.
+Good for terse `[READY | CD 5t | x3 USES]` lists. In two columns
+(wand, spell, eat, quaff, throw, powers, pet specials) a long list
+turns a whole page (`game_render._picker_scroll`): rows run down the
+left column then the right, so scrolling one row at a time shuffled
+every item across the columns. "9-16 of 20" in the footer.
 
 ### 19.3 Helpers
 
@@ -1308,7 +1315,8 @@ Documented for traceability. Fixes land in follow-up commits.
    action handler if it chains from another menu).
 8. If the menu renders a quiz threshold, use `_threshold_line`.
 9. If the menu displays item names, use `hud_item_name` so the
-   True-Name identify-v3 rule is honored.
+   known-kind identify rule (one identification knows every copy) is
+   honored.
 10. Add context lines explaining the mechanic in one line (follow the
     cook / identify menu pattern: `COOKING / SP x/y / Recipes
     available / Cooking uses one cooking question...`).

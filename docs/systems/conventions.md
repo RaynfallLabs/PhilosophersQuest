@@ -415,8 +415,9 @@ source so no call site has to remember.
 - `game_render._cap(raw)` (L66) title-cases a raw data value for a
   panel — material, slot, damage type, aura, weapon class
   (`'two_handed sword'` → `'Two Handed Sword'`).
-- The type-known prefix is `"Unidentified <true name>"`, capital U
-  (`hud_context.hud_item_name`, `main._display_name`).
+- A copy of a known kind is named by its true name with a `Blessed` /
+  `Cursed` prefix (one identification knows every copy, 2026-10-18:
+  `hud_context.hud_item_name`, `main._display_name`).
 
 **If you forget this rule:** a new panel that prints `item.material`
 or `atk['type']` raw shows `iron` / `fire_resist` next to title-cased

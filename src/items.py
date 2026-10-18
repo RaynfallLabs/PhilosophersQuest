@@ -349,6 +349,74 @@ def grant_identified(game, item) -> None:
         propagate(item.id, seed_item=item)
 
 
+# ---------------------------------------------------------------------------
+# Kind knowledge: one identification knows every copy (2026-10-18)
+# ---------------------------------------------------------------------------
+#
+# Brandon, 2026-10-18: "once you've identified something, all further
+# instances need to be fully identified, including BUC status. This is just
+# too annoying right now."
+#
+# Once the hero knows an item's KIND (Player.knows_item_type: the id, the
+# accessory family, or its form and material), every copy of it is fully
+# identified: its name, its blessing or curse and its enchantment. That holds
+# wherever the copy is (pack, floor, a chest, a trader's stock) and for every
+# copy that turns up later, because it is decided here, when the game asks,
+# not stamped onto items when the kind is learnt. Forgetting the kind (a
+# cursed Scroll of Identify, the Book of Thoth's curse) un-knows every copy
+# the same way. Treasure keeps its own rules (known by sight, valued by a
+# trader: treasure.py) and a corpse its own (Player.lore_known_monster_ids).
+
+def kind_is_known(player, item) -> bool:
+    """True when the hero knows this item's kind, so every copy of it is
+    fully identified. Corpses and treasure are never decided here."""
+    if player is None or item is None:
+        return False
+    if str(getattr(item, 'item_class', '')) in ('corpse', 'treasure'):
+        return False
+    knows = getattr(player, 'knows_item_type', None)
+    if knows is None:
+        return getattr(item, 'id', None) in getattr(player, 'known_item_ids', ())
+    try:
+        return bool(knows(item))
+    except Exception:
+        return False
+
+
+def is_fully_known(item, player) -> bool:
+    """THE test for "this copy is identified": its name, blessing or curse
+    and enchantment are all known to the hero. True when the copy was itself
+    identified (id level 5) or the hero knows its kind. Every place that
+    decides what to show or offer asks this: names, the blessing label, the
+    enchantment, sell prices, the identify menu and its quiz."""
+    if item is None:
+        return False
+    if not hasattr(item, 'id_level'):
+        return True            # nothing on it to identify
+    try:
+        if int(getattr(item, 'id_level', 0) or 0) >= 5:
+            return True
+    except (TypeError, ValueError):
+        pass
+    return kind_is_known(player, item)
+
+
+def buc_known_to(item, player=None) -> bool:
+    """Is this copy's blessing or curse known? Flagged known (an altar, a
+    curse that showed itself when worn), the copy identified, or its kind
+    known. Items with no blessing to hide (food, ammo) count as known."""
+    if item is None:
+        return False
+    if getattr(item, 'buc_known', False):
+        return True
+    try:
+        if int(getattr(item, 'id_level', 5) or 0) >= 5:
+            return True
+    except (TypeError, ValueError):
+        return False
+    return kind_is_known(player, item)
+
+
 class Weapon(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)
@@ -1287,6 +1355,11 @@ class Potion(Item):
         # Mimir's Well: permanent stats cost a quiz). {subjects, tier,
         # threshold, stat, amount}; None for every ordinary potion.
         self.quiz: dict | None      = defn.get('quiz') or None
+        # Rare (never taken by an encounter outcome on its own) and
+        # throwable (the Draught of Mimir's Well is not). Read through
+        # is_rare_potion / can_be_thrown, which also ask today's data by id.
+        self.rare: bool             = bool(defn.get('rare', False))
+        self.throwable: bool        = bool(defn.get('throwable', True))
 
     quiz = None                      # potions pickled before the field
 
@@ -1530,6 +1603,57 @@ WITHHELD_IDS = frozenset({
     'complete_tablet_of_second_death', 'silverlight_pendant',
     'oathkeeper_sword', 'lionheart_shield', 'master_lockpick',
 })
+
+
+_POTION_DEFS: dict | None = None
+
+
+def _potion_def(pid: str) -> dict:
+    """Today's data/items/potion.json entry for ``pid`` (read once). Flags
+    are read from the data by id, so a potion pickled in an older save gets
+    them too."""
+    global _POTION_DEFS
+    if _POTION_DEFS is None:
+        try:
+            with open(os.path.join(_DATA_DIR, 'potion.json'), encoding='utf-8') as f:
+                _POTION_DEFS = json.load(f)
+        except (OSError, ValueError):
+            _POTION_DEFS = {}
+    return _POTION_DEFS.get(pid or '', {}) or {}
+
+
+def is_rare_potion(item) -> bool:
+    """A potion no outcome may take on its own (2026-10-18): one marked
+    ``rare`` in potion.json (the Draught of Mimir's Well, Fafnir's Blood,
+    Soma, the Water of Lethe, the Elixir of Gilgamesh), one that asks a
+    question before it works, or anything an NPC may never take (withheld)."""
+    if not isinstance(item, Potion):
+        return False
+    if _potion_def(getattr(item, 'id', '')).get('rare') or getattr(item, 'rare', False):
+        return True
+    return bool(getattr(item, 'quiz', None)) or withheld(item)
+
+
+def ordinary_potions_cheapest_first(items_) -> list:
+    """The ordinary potions among ``items_`` (never a rare one), cheapest
+    first: what an encounter outcome that takes "a potion" with no picker
+    takes (economy.merchant_price; ties by worth, then pack order)."""
+    import economy
+    pots = [it for it in items_ if isinstance(it, Potion) and not is_rare_potion(it)]
+    return sorted(pots, key=lambda it: (economy.merchant_price(it, 1),
+                                        economy.item_worth(it)))
+
+
+def can_be_thrown(item) -> bool:
+    """Whether a potion may be thrown. The Draught of Mimir's Well may not
+    (``"throwable": false`` in potion.json): a fortune of a drink, made to be
+    drunk. Thieves may still steal it, and give it back when they die."""
+    if not isinstance(item, Potion):
+        return True
+    d = _potion_def(getattr(item, 'id', ''))
+    if 'throwable' in d:
+        return bool(d['throwable'])
+    return bool(getattr(item, 'throwable', True))
 
 
 def withheld(item) -> bool:

@@ -1052,6 +1052,18 @@ def _(g):
     press(g, pygame.K_o)
 
 
+@scene('menu_bestiary_from_observe', 'Menus',
+       'O, Enter on a creature the hero knows: its Bestiary page opens in the Encyclopedia.',
+       expect='encyclopedia')
+def _(g):
+    m = g._capture_monster
+    g.player.known_monster_ids.add(m.kind)
+    g.visible.add((m.x, m.y))
+    press(g, pygame.K_o)
+    g.target_cursor_x, g.target_cursor_y = m.x, m.y
+    press(g, pygame.K_RETURN)
+
+
 @scene('play_death_chase', 'Play', 'Ascending with the Stone, Death pursues: red vignette on the map.',
        expect='player', notes='The real _trigger_death_pursuit(), then Death placed two tiles away '
                               '(the L100 Stone climb is not reachable from floor 1).')
@@ -1430,6 +1442,27 @@ def _(g):
     g._pet_open_feed(g._pet_menu_selected_pet())
 
 
+@scene('menu_pet_feed_long', 'Pets', 'Shift+P, feed, with twenty foods in the pack, '
+       'Down x15: the list scrolls (scroll bar, "x-y of 20") and every food is reachable.',
+       expect='pet_feed')
+def _(g):
+    import copy
+    from items import Food, Ingredient, load_items
+    foods = []
+    for d in list(load_items('food')) + list(load_items('ingredient')):
+        if len(foods) == 20:
+            break
+        f = copy.copy(d)
+        f.count = 1
+        foods.append(f)
+    g.player.inventory = [i for i in g.player.inventory
+                          if not isinstance(i, (Food, Ingredient))] + foods
+    g._open_pet_menu()
+    g._pet_open_feed(g._pet_menu_selected_pet())
+    for _ in range(15):
+        press(g, pygame.K_DOWN)
+
+
 @scene('menu_pet_heal', 'Pets', 'Shift+P, heal: pick a potion.', expect='pet_heal')
 def _(g):
     g._open_pet_menu()
@@ -1659,6 +1692,19 @@ def _(g):
     press(g, pygame.K_g, 'g')
 
 
+@scene('menu_kit_valuables', 'Menus',
+       'K, the Valuables tab: treasure with weight and worth (one kind valued by a '
+       'trader, the others only by order of magnitude).', expect='kit')
+def _(g):
+    _treasure_pack(g)
+    ruby = next(i for i in g.player.inventory if getattr(i, 'id', '') == 'treasure_burmese_ruby')
+    ruby.count = 3
+    g.player.appraised_treasure.add('treasure_saxon_brooch')
+    press(g, pygame.K_k, 'k')
+    g._kit_tab = [t[1] for t in g._KIT_TABS].index('valuables')
+    g._kit_sel = 0
+
+
 @scene('lore_treasure', 'Lore', 'X / lore on a piece of treasure: its dossier and worth.',
        expect='lore', key=True)
 def _(g):
@@ -1676,6 +1722,31 @@ def _(g):
     g.player.appraised_treasure.add('treasure_arras_tapestry')
     press(g, pygame.K_b)
     press(g, pygame.K_k, 'k')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_encyclopedia_wonders', 'Menus',
+       "B, l: the Wonders pages (the Soul Spheres the hero knows and the Draught of "
+       "Mimir's Well), Enter on the Draught.", expect='encyclopedia')
+def _(g):
+    from pet_system import spheres
+    g.player.known_item_ids.update(list(spheres())[:3])
+    g.player.seen_item_ids.add('draught_of_mimir')
+    press(g, pygame.K_b)
+    press(g, pygame.K_l, 'l')
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e['_id'] == 'draught_of_mimir')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_encyclopedia_wonders_sphere', 'Menus',
+       "B, l, Enter on a Soul Sphere the hero has thrown: its page, art and lore.",
+       expect='encyclopedia')
+def _(g):
+    from pet_system import spheres
+    g.player.known_item_ids.update(spheres())
+    press(g, pygame.K_b)
+    press(g, pygame.K_l, 'l')
     press(g, pygame.K_RETURN)
 
 

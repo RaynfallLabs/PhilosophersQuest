@@ -144,8 +144,9 @@ Enforcement is partial:
 - **Audit sweep:** `grep '"identified": false' data/items/*.json`
   then confirm `"unidentified_name"` is present for each hit.
 
-The HUD + sidebar + menu rows all honor the True-Name identify-v3
-model via `hud_context.hud_item_name` — see [ui.md](ui.md) §7.1.
+The HUD + sidebar + menu rows all honor the identify rule (a known
+kind fully identifies every copy) via `hud_context.hud_item_name` — see
+[ui.md](ui.md) §7.1.
 
 ---
 

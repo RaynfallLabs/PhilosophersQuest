@@ -134,7 +134,7 @@ def test_kit_visible_level_unidentified_returns_id_level():
     assert g._kit_visible_level(pot) == 0
 
 
-def test_kit_visible_level_known_type_boosts_to_4():
+def test_kit_visible_level_known_type_is_fully_identified():
     p = _make_player_with_items()
     g = _ResolvedFake(p, [])
     from items import Potion
@@ -143,9 +143,9 @@ def test_kit_visible_level_known_type_boosts_to_4():
     # Same caveat: don't reset identified=False here. id_level=0 from
     # the defn is enough to represent unidentified.
     p.known_item_ids.add('pot_y')
-    # True Name model: a known TYPE reveals name+stats+lore (level 4);
-    # this copy's BUC/enchant (level 5) still needs its own identify.
-    assert g._kit_visible_level(pot) == 4
+    # One identification knows every copy (2026-10-18): a known KIND shows
+    # everything on this copy, blessing and enchantment included.
+    assert g._kit_visible_level(pot) == 5
 
 
 # ---------------------------------------------------------------------------
@@ -259,7 +259,7 @@ def test_kit_filter_for_tab_spells_returns_empty():
     p = _make_player_with_items()
     g = _ResolvedFake(p, [])
     rows = g._kit_collect_items()
-    spells = g._kit_filter_for_tab(rows, 5)
+    spells = g._kit_filter_for_tab(rows, [s for _l, s in g._KIT_TABS].index('spells'))
     assert spells == []
 
 

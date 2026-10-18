@@ -754,7 +754,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.philosopher_tier_claimed = set()
         if not hasattr(self.player, 'philosophers_mantle'):
             self.player.philosophers_mantle = False
-        if not hasattr(self.player, 'known_class_ids'):
+        _had_class_ids = hasattr(self.player, 'known_class_ids')
+        if not _had_class_ids:
             self.player.known_class_ids = set()
         # Chain-equip tier_bonuses targets: flat damage reduction + HP regen.
         # Added 2026-05-18 with the legendary-uniques chain-equip mechanic.
@@ -837,6 +838,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # dropped (nothing equivalent survives) so the inventory does not
         # hold dead items; ingredients that still exist are refreshed.
         self._migrate_legacy_ingredients(state)
+        # One identification knows every copy (2026-10-18): kind knowledge is
+        # the known sets themselves, read whenever the game asks
+        # (items.is_fully_known), so a loaded copy of a known kind is fully
+        # identified with no stamping. Rebuild what an old save lacks.
+        self._rebuild_kind_knowledge(state, rebuild_classes=not _had_class_ids)
         self.player_name   = state['player_name']
         self.secret_build  = state.get('secret_build')
         # The build's rule flags (Dad's _joke, _lock_weapon, ...) come from
@@ -1490,12 +1496,39 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for item in lvl_data.get('ground_items', []) or []:
                     walk(item)
 
+    def _rebuild_kind_knowledge(self, state: dict, *, rebuild_classes: bool = False):
+        """The known-kind state on load, from ``known_item_ids``: the known
+        sets are made real sets (a save may hold them as lists or not at
+        all), and a save from before accessory families were recorded gets
+        the family of every known ring or amulet it holds, as its identify
+        would have recorded. Then same-blessing stacks of a known kind join
+        up. Nothing is stamped on items: is_fully_known reads the sets."""
+        p = self.player
+        for attr in ('known_item_ids', 'known_class_ids', 'known_forms', 'known_materials'):
+            cur = getattr(p, attr, None)
+            if not isinstance(cur, set):
+                setattr(p, attr, set(cur or ()))
+        if rebuild_classes and p.known_item_ids:
+            from items import type_class
+            for it in _all_items_in_save(p, state):
+                if getattr(it, 'id', None) in p.known_item_ids:
+                    try:
+                        cls = type_class(it)
+                    except Exception:
+                        cls = None
+                    if cls:
+                        p.known_class_ids.add(cls)
+        try:
+            p.merge_known_stacks()
+        except Exception:
+            from game_log import log_error
+            log_error("merge_known_stacks failed on load")
+
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels.
 
-        Under the True Name model a known TYPE no longer stamps per-copy
-        identification — each instance keeps its own BUC/enchant secret —
-        so this only patches the BUC fields themselves."""
+        Kind knowledge needs no stamping (items.is_fully_known reads the
+        known sets), so this only patches the BUC fields themselves."""
         migrate = self._migrate_buc_item
         # Worn (belt included), pack, ground, stored floors, and sack contents.
         for item in _all_items_in_save(self.player, state):
@@ -2288,10 +2321,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Mark a build-kit starting item as fully-known: id_level=5. Post
         # identify-v3 (2026-08-06, commit 2778305) the intermediate levels
         # 1-4 are dead for new saves -- id_level is binary (0 unknown / 5
-        # identified) and the True Name view handles "type known but this
-        # copy's BUC hidden" at kit_visible_level=4 without needing a
-        # written id_level. Build-kit items belong to the player from turn
-        # one, so both type-knowledge and this copy's BUC start known.
+        # identified). Build-kit items belong to the player from turn one,
+        # so both kind knowledge and this copy's BUC start known.
         def _mark_starting_item_known(it):
             """Build-kit items arrive FULLY identified — the kid owns them,
             so type knowledge + this copy's BUC are both known from turn
@@ -4227,6 +4258,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         splitting.spawn_pending(self)
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
+        # A kind learnt by use (drunk, read, zapped, thrown) fully identifies
+        # every copy: same-blessing stacks of it in the pack join up.
+        self._merge_newly_known_stacks()
         if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0:
             self.player._huginn_muninn_remaining -= 1
         # Periodic in-play autosave (every 50 turns) so an abrupt close costs at
@@ -4979,7 +5013,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                              and not getattr(i, 'id', '').startswith('philosopher')]
             if transformable:
                 victim = random.choice(transformable)
-                old_name = victim.name
+                old_name = self._bare_name(victim)      # as the hero knows it
                 cls_name = type(victim).__name__.lower()
                 try:
                     from items import (pick_random_weapon_for_floor, pick_random_armor_for_floor,
@@ -4998,7 +5032,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         # player.inventory. This read `player.equipment`, which
                         # does not exist, and crashed every time.)
                         self.player.inventory[idx] = replacement
-                        self.add_message(f"Your {old_name} transforms into {self._a_or_an(replacement.name)}!", 'warning')
+                        self.add_message(f"Your {old_name} transforms into "
+                                         f"{self._a_or_an(self._bare_name(replacement))}!", 'warning')
                     else:
                         self.add_message("The energy dissipates harmlessly.", 'info')
                 except FileNotFoundError:
@@ -5723,19 +5758,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 else:
                     self.player.known_item_ids.add(item.id)
             # Pattern Recognition (75 IDs): lesser COMMON items reveal their
-            # TYPE at a glance (true name + stats + lore). Each copy's BUC
-            # and enchant stay hidden — the True Name model applies to
-            # career rewards too. Uniques keep their full dramatic reveal.
+            # KIND at a glance, which fully identifies every copy of it (one
+            # identification knows every copy). Uniques keep their full
+            # dramatic reveal.
             if 75 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
-                from items import item_id_tier, type_class
+                from items import item_id_tier
                 tier_gate = 1 + (self.dungeon_level // 30)
-                if hasattr(item, 'id_level') and item_id_tier(item) <= tier_gate:
-                    self.player.known_item_ids.add(item.id)
-                    cls = type_class(item)
-                    if cls:
-                        self.player.known_class_ids.add(cls)
-                    item.buc_known = True
-                    self.player.known_item_ids.add(item.id)
+                if (hasattr(item, 'id_level') and item_id_tier(item) <= tier_gate
+                        and self._needs_identify(item)):
+                    self._propagate_identification(item.id, seed_item=item)
             # Philosopher's Mantle (300 IDs): auto BUC-sense on every pickup, including uniques.
             if self.player.philosophers_mantle and hasattr(item, 'buc_known'):
                 item.buc_known = True
@@ -5836,8 +5867,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(item, 'id', '') in trigger_levels:
                 self._npc_triggered_items.add(item.id)
             # Auto-reveal BUC at dungeon level 30+ with WIS >= 14
+            from items import buc_known_to
             if (self.dungeon_level >= 30 and self.player.WIS >= 14
-                    and hasattr(item, 'buc') and not getattr(item, 'buc_known', False)):
+                    and hasattr(item, 'buc') and not buc_known_to(item, self.player)):
                 item.buc_known = True
                 _buc = item.buc
                 if _buc == 'blessed':
@@ -6090,6 +6122,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.ground_items.remove(container)
                 for text, mtype in _result['messages']:
                     self.add_message(text, mtype)
+                self._learn_loot_kinds(_result['loot'])
                 for loot_item in _result['loot']:
                     loot_item.x, loot_item.y = cx, cy
                     self.ground_items.append(loot_item)
@@ -6135,6 +6168,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 cx, cy = container.x, container.y
                 self.ground_items.remove(container)
                 _FRAGILE = ('potion', 'scroll')
+                self._learn_loot_kinds(result['loot'])
                 for loot_item in result['loot']:
                     if getattr(container, 'bash_damaged', False) \
                             and getattr(loot_item, 'item_class', '') in _FRAGILE:
@@ -6196,6 +6230,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         result = {'loot': [], 'gold': 0, 'messages': []}
         _handle_success(self.player, container, self.dungeon, result.update)
         self.add_message(f"The {self._bare_name(container)} swings open.", 'success')
+        self._learn_loot_kinds(result['loot'])
         for loot_item in result['loot']:
             loot_item.x, loot_item.y = cx, cy
             self.ground_items.append(loot_item)
@@ -7757,13 +7792,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _display_name(self, item) -> str:
         """Return the name to show for an item, including stack count when > 1.
 
-        True Name model:
-          - instance identified (id_level >= 5)  -> "Sword of Michael"
-          - type known but THIS copy not yet
-            identified                            -> "Sword of Michael (Curse and
-                                                     Enchant Unknown)"
-                                                     (hud_context.unknown_copy_suffix)
-          - type unknown                          -> "an ornate golden-hilted blade"
+          - this copy identified, or its kind
+            known (one identification knows
+            every copy, blessing included)        -> "Sword of Michael" (with a
+                                                     "Blessed"/"Cursed" prefix)
+          - kind unknown                          -> "an ornate golden-hilted blade"
 
         One path for every place an item is named to the player
         (hud_context.item_display_name): the log, menus, HUD, combat panel,
@@ -7782,12 +7815,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _enchant_shown(self, item) -> bool:
         """May a message print this item's enchantment number? Only once
-        this copy is identified: "Your X glows -- enchant +3!" told an
-        unknown blade's hidden enchantment."""
-        try:
-            return int(getattr(item, 'id_level', 0) or 0) >= 5
-        except (TypeError, ValueError):
-            return False
+        this copy is identified or its kind known (items.is_fully_known):
+        "Your X glows -- enchant +3!" told an unknown blade's hidden
+        enchantment."""
+        from items import is_fully_known
+        return is_fully_known(item, self.player)
 
     def _show_item_comparison(self, item):
         """Show a brief comparison hint if the ground item is comparable to equipped gear.
@@ -8547,20 +8579,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _item_is_known(self, item) -> bool:
-        """Return True if the item type is known (identified instance OR recognised
-        by type). Routes through player.knows_item_type so it picks up per-id,
-        per-class (accessories), and identify-v3.1 split form × material coverage."""
+        """Return True if the item is known: this copy identified, or its kind
+        known (player.knows_item_type: per-id, per-class for accessories, and
+        identify-v3.1 split form × material). A known kind fully identifies
+        every copy (items.is_fully_known)."""
         if not hasattr(item, 'identified'):
             return True  # items without an identified flag are always known
-        # Exactly what the NAME reveals (hud_context.item_display_name): this
-        # copy identified (5), or its type known. ``item.identified`` is True
-        # at a stored 4, which scripted grants write without identifying.
-        try:
-            if int(getattr(item, 'id_level', 0) or 0) >= 5:
-                return True
-        except (TypeError, ValueError):
-            pass
-        return bool(self.player.knows_item_type(item))
+        # Exactly what the NAME reveals (hud_context.item_display_name).
+        # ``item.identified`` is True at a stored 4, which scripted grants
+        # write without identifying.
+        from items import is_fully_known
+        return is_fully_known(item, self.player)
 
     _EXAMINE_TABS = [
         ('Weapons',     lambda i: isinstance(i, Weapon)),
@@ -8721,6 +8750,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('i', 'lore_hints', 'Lore Hints'),
         ('j', 'recipes', 'Recipes'),
         ('k', 'treasure', 'Treasure'),
+        ('l', 'wonders', 'Wonders'),     # the Soul Spheres and the Draught
     ]
 
     def _open_encyclopedia(self):
@@ -8731,7 +8761,71 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._encyclopedia_cat_idx = 0
         self._encyclopedia_article_scroll = 0
         self._encyclopedia_entry = None
+        self._encyclopedia_from_observe = False
         self.state = STATE_ENCYCLOPEDIA
+
+    def _wonder_entries(self) -> list:
+        """The Wonders pages the hero has earned: a Soul Sphere once its kind
+        is known (it is found as a caged sphere of unknown worth; thrown, it
+        is known), the Draught of Mimir's Well once held (it is known on
+        sight). Each entry carries ``_kind`` ('sphere' / 'draught')."""
+        import json
+        from paths import data_path
+        p = self.player
+        known = set(getattr(p, 'known_item_ids', ()) or ())
+        seen = set(getattr(p, 'seen_item_ids', ()) or ())
+        entries = []
+        try:
+            with open(data_path('data', 'items', 'artifact.json'), encoding='utf-8') as f:
+                arts = json.load(f)
+            with open(data_path('data', 'items', 'potion.json'), encoding='utf-8') as f:
+                pots = json.load(f)
+        except (OSError, ValueError):
+            return []
+        for iid, d in arts.items():
+            if isinstance(d, dict) and isinstance(d.get('sphere'), dict) and iid in known:
+                entries.append({'_id': iid, '_kind': 'sphere', **d})
+        d = pots.get('draught_of_mimir')
+        if isinstance(d, dict) and ('draught_of_mimir' in known or 'draught_of_mimir' in seen):
+            entries.append({'_id': 'draught_of_mimir', '_kind': 'draught', **d})
+        entries.sort(key=lambda e: e.get('name', e['_id']))
+        return entries
+
+    def _bestiary_known_kinds(self) -> set:
+        """The monster kinds with a Bestiary page: every kind the hero has
+        seen (known_monster_ids), plus any carried corpse studied for lore."""
+        known = set(getattr(self.player, 'known_monster_ids', set()) or ())
+        for item in getattr(self.player, 'inventory', []) or []:
+            mid = getattr(item, 'monster_id', None) or getattr(item, 'kind', None)
+            if mid and getattr(item, 'lore_identified', False):
+                known.add(mid)
+        return known
+
+    def _open_bestiary_page(self, kind) -> bool:
+        """Open the Encyclopedia straight onto ``kind``'s Bestiary page, the
+        page B -> Bestiary -> Enter shows (O on a creature the hero knows,
+        2026-10-18). Esc returns to play. False, with the state untouched,
+        when the kind has no page."""
+        if not kind or kind not in self._bestiary_known_kinds():
+            return False
+        prev_state = self.state
+        self._open_encyclopedia()
+        self.encyclopedia_category = 'bestiary'
+        self._encyclopedia_cat_idx = next(
+            (i for i, c in enumerate(self._ENCYCLOPEDIA_CATS) if c[1] == 'bestiary'), 0)
+        self._encyclopedia_load_entries('bestiary')
+        idx = next((i for i, e in enumerate(self.encyclopedia_entries or [])
+                    if e.get('_id') == kind), None)
+        if idx is None:
+            self.encyclopedia_category = ''
+            self.encyclopedia_entries = []
+            self.state = prev_state
+            return False
+        self.encyclopedia_selection = idx
+        self._encyclopedia_entry = self.encyclopedia_entries[idx]
+        self._encyclopedia_article_scroll = 0
+        self._encyclopedia_from_observe = True     # Esc goes back to play
+        return True
 
     def _encyclopedia_load_entries(self, category: str):
         """Load known entries for the given category from JSON data files."""
@@ -8740,13 +8834,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         base = data_path('data')
 
         known_ids = getattr(self.player, 'known_item_ids', set())
-        known_monster_ids = getattr(self.player, 'known_monster_ids', set())
         if category == 'treasure':
             # Treasure is known by sight (treasure.py): every kind the hero
             # has held or had valued has a page; its worth shows once valued.
             known_ids = (set(getattr(self.player, 'seen_item_ids', ()) or ())
                          | set(getattr(self.player, 'appraised_treasure', ()) or ()))
 
+        if category == 'wonders':
+            self.encyclopedia_entries = self._wonder_entries()
+            return
         if category == 'journal':
             # The Journal draws from the register and the entries directly
             # (game_render._draw_journal); the list stays for old callers.
@@ -8796,14 +8892,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 self.encyclopedia_entries = []
                 return
-            # Include any monster from a corpse lore-identified + any explicitly known
-            # Plus any whose kind appears in known_monster_ids
-            known_kinds = set(known_monster_ids)
-            # Also add monsters we've seen corpses for (lore_identified)
-            for item in self.player.inventory:
-                mid = getattr(item, 'monster_id', None) or getattr(item, 'kind', None)
-                if mid and getattr(item, 'lore_identified', False):
-                    known_kinds.add(mid)
+            # Every kind seen (known_monster_ids), plus carried corpses
+            # studied for lore (_bestiary_known_kinds).
+            known_kinds = self._bestiary_known_kinds()
             entries = []
             for k, v in all_defs.items():
                 if k in known_kinds:

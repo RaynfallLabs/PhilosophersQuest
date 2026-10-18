@@ -135,22 +135,27 @@ def _quiz_mode_phrase(mode, threshold=None) -> str:
     return mode.replace('_', ' ')
 
 
-def _identify_status_label(id_level: int) -> str:
-    """Map an item's id_level to a human status string.
+def _picker_scroll(selected: int, total: int, visible: int, cols: int) -> int:
+    """First entry shown by a quick picker. One column scrolls a row at a
+    time, keeping the cursor in view. Two columns turn a whole page: rows
+    are laid down the left column then the right, so scrolling by one row
+    shuffled every item across the columns and a pack with more than eight
+    foods looked as if it stopped at the eighth (Brandon, 2026-10-18). Now
+    Down from the last item of a page shows the next eight, "9-16 of 20"."""
+    if total <= visible or visible <= 0:
+        return 0
+    if cols > 1:
+        return (max(0, selected) // visible) * visible
+    return max(0, min(selected - visible + 1 if selected >= visible else 0,
+                      max(0, total - visible)))
 
-    Post-2026-08-06 identify-v3 model: only 0 and 5 are actually written for
-    new saves (the old id_level 1-4 progression was deleted; True Name view
-    uses the kit_visible_level helper to render a "type known" view at 4).
-    Old saves that predate the redesign may carry legacy intermediate values.
-    """
-    idl = int(id_level or 0)
-    if idl >= 5:
-        return "Identified"
-    if idl >= 4:
-        return "Type known (this copy's curse and enchant unknown)"
-    if idl >= 1:
-        return "Partial (legacy save)"
-    return "Unknown"
+
+def _identify_status_label(id_level: int) -> str:
+    """Map an item's visible id level (``_kit_visible_level``: 5 once this
+    copy is identified or its kind known, else 0) to a status word. One
+    identification knows every copy, blessing and enchantment included
+    (2026-10-18), so there is no in-between "type known" state any more."""
+    return "Identified" if int(id_level or 0) >= 5 else "Unknown"
 
 
 class _ScaledPx:
@@ -265,10 +270,12 @@ def _kit_option_card(screen, title, options, footer, *, lines=(), border=FP.GOLD
 class RenderMixin:
     def _tribute_plan_line(self, cost: int) -> str:
         """When the coin falls short of an altar's tribute, what treasure it
-        would take, said BEFORE the hero accepts: an altar gives no change
-        (game_divine._begin_mystery_challenge), so a gem worth far more than
-        the tribute is simply gone (wiring audit 2026-10-18). '' when the
-        coin covers it."""
+        would take, said BEFORE the hero accepts, and that the altar gives
+        the rest back in coin (game_divine._begin_mystery_challenge; the
+        lead's ruling, 2026-10-18). The change is named in gold only when
+        every piece taken is a kind a trader has valued: naming it for an
+        unvalued gem would tell its worth (treasure.py). '' when the coin
+        covers it."""
         if int(getattr(self, 'player_gold', 0) or 0) >= int(cost):
             return ''
         try:
@@ -277,8 +284,16 @@ class RenderMixin:
             return ''
         if not plan or not plan.get('take'):
             return ''
-        return (f"Your coin is short: you would pay {self._payment_words(plan)}. "
-                f"An altar gives no change.")
+        line = f"Your coin is short: you would pay {self._payment_words(plan)}."
+        change = int(plan.get('change', 0) or 0)
+        if change > 0:
+            import treasure as _tr
+            if all(_tr.is_valued(self.player, it) for it, _n in plan['take']):
+                line += f" The altar gives back {change:,} gold in change."
+            else:
+                line += " The altar gives back the rest in coin."
+            line += " Coin you cannot carry is left at your feet."
+        return line
 
     def _draw_mystery_approach(self):
         """Draw the mystery encounter overlay."""
@@ -1299,7 +1314,7 @@ class RenderMixin:
         ]
         if hasattr(detail_item, 'buc'):
             meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed'))
-                              if getattr(detail_item, 'buc_known', False) else "Unknown"))
+                              if self._copy_buc_known(detail_item) else "Unknown"))
         if visible >= 3:
             if hasattr(detail_item, 'ac_bonus'):
                 meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
@@ -1590,7 +1605,7 @@ class RenderMixin:
                 ("ID", _identify_status_label(visible) if hasattr(detail_item, 'id_level') else "-"),
             ]
             if hasattr(detail_item, 'buc'):
-                meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if getattr(detail_item, 'buc_known', False) else "Unknown"))
+                meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if self._copy_buc_known(detail_item) else "Unknown"))
             if visible >= 3:
                 if hasattr(detail_item, 'ac_bonus'):
                     meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
@@ -1973,7 +1988,7 @@ class RenderMixin:
                 y += irow_h + S(6)
             self._ui_scrollbar(list_rect, self._npc_item_scroll,
                                len(items), 9, color=border)
-            self._ui_footer(panel, "a-z: select item   |   Up/Down: scroll   |   Esc: back")
+            self._ui_footer(panel, "a-i: select item   |   Up/Down: scroll   |   Esc: back")
             return
 
         if phase == 'outcome':
@@ -2410,7 +2425,8 @@ class RenderMixin:
             pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
 
         # HUD prompt (the kit's plaque, key badges)
-        item_name = proper_name(self._throw_potion.name) if self._throw_potion else "Item"
+        # As the hero knows it: an unknown potion is not named by its true name.
+        item_name = self._bare_name(self._throw_potion) if self._throw_potion else "Item"
         tname = proper_name(target_monster.name) if target_monster else ''
         if will_hit_blocker:
             status = f"{proper_name(blocker.name)} blocks the path: the {item_name} will hit it"
@@ -3733,10 +3749,8 @@ class RenderMixin:
         put("STRIKE NOW", s['cap'], FP.FADED_TEXT, sizes=(self._COMBAT_HUD_CAP_SIZE,))
         # As the player knows it: an unidentified blade is not named by
         # its true name on the combat panel.
-        # (The "(Curse and Enchant Unknown)" note is dropped: no room.)
         from hud_context import item_bare_name
-        w_name = (item_bare_name(self.player, weapon).split(' (')[0]
-                  if weapon else "Bare Hands")
+        w_name = (item_bare_name(self.player, weapon) if weapon else "Bare Hands")
         put(w_name, s['weapon'], FP.FADED_TEXT, align='right',
             sizes=(self._COMBAT_HUD_CAP_SIZE,))
         if cur_chain >= 1 or cur_dmg > 0:
@@ -3960,11 +3974,9 @@ class RenderMixin:
         )
 
     def _menu_buc_label(self, item, id_level: int | None = None) -> str:
-        """Blessed / Uncursed / Cursed once THIS copy's blessing is known,
-        else "Unknown". Type knowledge never reveals it (True Name model:
-        each copy's blessing waits for its own identify), so the check reads
-        the copy's own stored id_level, not the type-boosted menu level
-        (that leaked "Uncursed" on a "(Curse Unknown)" potion in the shop)."""
+        """Blessed / Uncursed / Cursed once this copy's blessing is known,
+        else "Unknown". Knowing the kind knows every copy's blessing too
+        (one identification knows every copy: items.buc_known_to)."""
         if not hasattr(item, 'buc'):
             return '-'
         if self._copy_buc_known(item):
@@ -3974,13 +3986,11 @@ class RenderMixin:
     def _copy_buc_known(self, item) -> bool:
         """True when this copy's blessing or curse is known to the player:
         flagged known (altar, identify), the copy identified (id_level 5),
-        or worn (a curse shows itself on equip). A stored 1-4 is not enough:
-        ``item.identified = True`` writes 4 without identifying anything."""
-        try:
-            own = int(getattr(item, 'id_level', 5) or 0)
-        except (TypeError, ValueError):
-            own = 0
-        return (own >= 5 or bool(getattr(item, 'buc_known', False))
+        its kind known (items.buc_known_to), or worn (a curse shows itself
+        on equip). A stored 1-4 is not enough: ``item.identified = True``
+        writes 4 without identifying anything."""
+        from items import buc_known_to
+        return (buc_known_to(item, getattr(self, 'player', None))
                 or self._menu_item_is_equipped(item))
 
     def _menu_bonus_label(self, key, value) -> str:
@@ -4061,8 +4071,8 @@ class RenderMixin:
             lines.append(("Equipped", FP.SUCCESS_TEXT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
-            # ``_display_name`` already shows either "<name> (Curse Unknown)" or
-            # the pure appearance string, so a dedicated Appearance row is
+            # ``_display_name`` already shows either the true name or the
+            # pure appearance string, so a dedicated Appearance row is
             # redundant. Likewise ``Type: {cls}`` repeats the section header
             # icon, and ``Next action`` repeats the footer hint. We keep the
             # Weight line (real mechanical info) and ONE "hidden until ID"
@@ -4471,11 +4481,21 @@ class RenderMixin:
         selected = max(0, min(selected, max(0, total - 1)))
         if scroll_attr:
             setattr(self, scroll_attr, selected)
-        name_sizes, name_lines = self._menu_name_sizes(
-            entries, self._menu_row_text_w(list_body.w, entries))
-        row_h = S(62) + (get_font('body', 16).get_height() if name_lines > 1 else 0)
-        tag_h = S(24) if total * row_h > list_body.h else 0
-        visible = max(1, (list_body.h - tag_h) // row_h)
+        def _measure(width):
+            sizes, lines = self._menu_name_sizes(entries, self._menu_row_text_w(width, entries))
+            rh = S(62) + (get_font('body', 16).get_height() if lines > 1 else 0)
+            th = S(24) if total * rh > list_body.h else 0
+            return sizes, lines, rh, max(1, (list_body.h - th) // rh)
+
+        row_w = list_body.w
+        name_sizes, name_lines, row_h, visible = _measure(row_w)
+        if total > visible:
+            # A long list gives up a strip at the right for a scroll bar, so
+            # it shows there is more above or below (the feed list seemed to
+            # stop at its eighth item, 2026-10-18); names are fitted to the
+            # narrower rows.
+            row_w = list_body.w - S(12)
+            name_sizes, name_lines, row_h, visible = _measure(row_w)
         scroll = 0
         if total > visible:
             scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
@@ -4484,7 +4504,7 @@ class RenderMixin:
         key_font = get_font('body', 18, bold=True)
         for row_i, entry in enumerate(entries[scroll:scroll + visible], start=scroll):
             ry = list_body.y + (row_i - scroll) * row_h
-            self._menu_row_kit(pygame.Rect(list_body.x, ry, list_body.w, row_h - S(6)),
+            self._menu_row_kit(pygame.Rect(list_body.x, ry, row_w, row_h - S(6)),
                                entry, selected=(row_i == selected),
                                name_font=name_font, detail_font=detail_font,
                                key_font=key_font, name_sizes=name_sizes,
@@ -4494,6 +4514,9 @@ class RenderMixin:
             ts = get_font('body', 16).render(tag, True, KT.TEXT_DIM)
             self.screen.blit(ts, (list_rect.right - ts.get_width() - S(12),
                                   list_rect.bottom - ts.get_height() - S(6)))
+            bar = pygame.Rect(list_body.x + row_w, list_body.y,
+                              S(12), visible * row_h - S(6))
+            self._ui_scrollbar(bar, scroll, total, visible, color=border)
 
         detail_body = pygame.Rect(detail_body.x + S(2), detail_body.y,
                                   detail_body.w - S(4), detail_body.h)
@@ -4602,11 +4625,7 @@ class RenderMixin:
                 break
             rows_visible -= 1
         visible = max(1, rows_visible * cols)
-        if len(entries) > visible:
-            scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
-                                max(0, len(entries) - visible)))
-        else:
-            scroll = 0
+        scroll = _picker_scroll(selected, len(entries), visible, cols)
 
         bx = _centre_x(bw)
         by = _centre_y(bh)
@@ -4726,9 +4745,11 @@ class RenderMixin:
         if total > visible:
             scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
                                 max(0, total - visible)))
+        # A long list gives up a strip at the right for a scroll bar.
+        row_w = list_body.w - (S(12) if total > visible else 0)
         for row_i, entry in enumerate(entries[scroll:scroll + visible], start=scroll):
             ry = list_body.y + (row_i - scroll) * row_h
-            row_rect = pygame.Rect(list_body.x, ry, list_body.w, row_h - S(6))
+            row_rect = pygame.Rect(list_body.x, ry, row_w, row_h - S(6))
             is_sel = row_i == selected
             pygame.draw.rect(self.screen, (34, 43, 84) if is_sel else
                              (18, 22, 40) if row_i % 2 == 0 else (12, 15, 28),
@@ -4776,6 +4797,9 @@ class RenderMixin:
             ts = get_font('small', 14).render(tag, True, FP.FADED_TEXT)
             self.screen.blit(ts, (list_rect.right - ts.get_width() - S(12),
                                   list_rect.bottom - S(22)))
+            self._ui_scrollbar(pygame.Rect(list_body.x + row_w, list_body.y, S(12),
+                                           visible * row_h - S(6)),
+                               scroll, total, visible, color=border)
 
         detail_body = pygame.Rect(detail_rect.x + S(14), detail_rect.y + S(42),
                                   detail_rect.w - 2 * S(14), detail_rect.h - S(58))
@@ -4814,11 +4838,7 @@ class RenderMixin:
             selected_note = str(entries[selected].get('full_detail')
                                 or entries[selected].get('detail') or '')
         selected_note_h = S(58) if selected_note else 0
-        if len(entries) > visible:
-            scroll = max(0, min(selected - visible + 1 if selected >= visible else 0,
-                                max(0, len(entries) - visible)))
-        else:
-            scroll = 0
+        scroll = _picker_scroll(selected, len(entries), visible, cols)
         header_h = S(42) + (S(30) if tabs else 0)
         row_h = S(52)
         footer_h = S(28)
@@ -4926,7 +4946,7 @@ class RenderMixin:
             for i, (slot_name, item) in enumerate(display_items):
                 # A curse is marked only once known (the name says so too).
                 cursed = (getattr(item, 'cursed', False)
-                          and getattr(item, 'buc_known', False))
+                          and self._copy_buc_known(item))
                 slot_label = slot_name.replace('_', ' ').title()
                 detail = f"[{slot_label}]"
                 if cursed:
@@ -5043,6 +5063,13 @@ class RenderMixin:
         elif slug in ('armor', 'shields'):
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      -int(getattr(r[1], 'ac_bonus', 0) or 0)))
+        elif slug == 'valuables':
+            # Dearest first, by what the hero can count on (a valued kind's
+            # worth, else the low end of its band: nothing finer leaks).
+            from treasure import known_unit_value
+            rows.sort(key=lambda r: (order.get(r[0], 9),
+                                     -known_unit_value(self.player, r[1]),
+                                     self._display_name(r[1]).lower()))
         else:
             rows.sort(key=lambda r: (order.get(r[0], 9),
                                      self._display_name(r[1]).lower()))
@@ -5051,7 +5078,8 @@ class RenderMixin:
     # Long stat names for the kit table's labelled rows ('' = the value
     # speaks for itself: "Iron", "Uncursed", "Body").
     _KIT_STAT_NAMES = {'Dmg': 'Damage', 'Avg': 'Average', 'Wt': 'Weight',
-                       'AC': 'AC', 'Material': '', 'BUC': '', 'Slot': '', 'Type': ''}
+                       'AC': 'AC', 'Material': '', 'BUC': '', 'Slot': '', 'Type': '',
+                       'Kind': '', 'Count': 'Carried'}
     _KIT_BUC_WORDS = {'bless.': 'Blessed', 'unc.': 'Uncursed', 'CURSED': 'Cursed'}
 
     def _kit_row_labelled(self, slug: str, src: str, item):
@@ -5089,7 +5117,47 @@ class RenderMixin:
     def _kit_source_label(self, src: str) -> str:
         return {'equip': 'Equipped', 'pack': 'Pack', 'floor': 'Floor'}.get(src, src)
 
+    def _kit_detail_lines_for_treasure(self, src: str, item):
+        """A piece of treasure in the Kit's Valuables tab: what the shop says
+        of it (kind, worth, weight), the whole stack, and all the treasure
+        carried. Worth honours appraisal: exact once a trader has valued the
+        kind, else only its order of magnitude (treasure.py)."""
+        import treasure as _tr
+        n = max(1, int(getattr(item, 'count', 1) or 1))
+        wt = float(getattr(item, 'weight', 0) or 0)
+        lines = [
+            (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
+            (f"Source: {self._kit_source_label(src)}", FP.FADED_TEXT, self.font_sm),
+            (_tr.kind_label(item), FP.GOLD_BRIGHT, self.font_sm),
+            (_tr.value_text(self.player, item), FP.GOLD_PALE, self.font_sm),
+            (f"Weight: {wt:g}" + (f" each, {wt * n:g} for all {n}" if n > 1 else ""),
+             FP.BODY_TEXT, self.font_sm),
+        ]
+        if n > 1 and _tr.is_valued(self.player, item):
+            lines.append((f"All {n} together: {_tr.total_value(item):,} gold",
+                          FP.GOLD_PALE, self.font_sm))
+        carried = _tr.carried(self.player)
+        total = sum(_tr.total_value(i) for i in carried if _tr.is_valued(self.player, i))
+        unvalued = sum(max(1, int(getattr(i, 'count', 1) or 1))
+                       for i in carried if not _tr.is_valued(self.player, i))
+        if carried:
+            tail = ""
+            if unvalued:
+                tail = f", and {unvalued} piece{'s' if unvalued != 1 else ''} not yet valued"
+            lines += [("All your treasure", FP.GOLD_BRIGHT, self.font_sm),
+                      (f"Valued pieces: {total:,} gold{tail}.", FP.BODY_TEXT, self.font_sm),
+                      ("A trader values every piece you carry when his shop opens. "
+                       "Treasure you carry out counts toward your score.",
+                       FP.FADED_TEXT, self.font_sm)]
+        lore = getattr(item, 'lore', '')
+        if lore:
+            lines += [("Lore", FP.GOLD_BRIGHT, self.font_sm),
+                      (lore, FP.LORE_BLUE_BODY, self.font_sm)]
+        return lines
+
     def _kit_detail_lines_for_item(self, slug: str, src: str, item):
+        if slug == 'valuables':
+            return self._kit_detail_lines_for_treasure(src, item)
         idl = self._kit_visible_level(item)
         lines = [
             (self._display_name(item), FP.GOLD_PALE, get_font('heading', 22)),
@@ -5460,6 +5528,15 @@ class RenderMixin:
                 Column('Wt',         0, flex=0, align='right'),
                 Column('Effect',   200, flex=3, align='left'),
             ]
+        if slug == 'valuables':
+            return [
+                Column('Name',     180, flex=2, align='left'),
+                Column('Src',        0, flex=0, align='left'),
+                Column('Kind',       0, flex=0, align='left'),
+                Column('Count',      0, flex=0, align='right'),
+                Column('Wt',         0, flex=0, align='right'),
+                Column('Worth',    160, flex=3, align='left'),
+            ]
         return []
 
     def _kit_cells_for_item(self, slug: str, src: str, item) -> list[str]:
@@ -5473,7 +5550,7 @@ class RenderMixin:
         # "plain longsword" showed "Iron" in this column.
         mat = (getattr(item, 'material', '') or '') if idl >= 3 else '?'
 
-        # Blessing visibility: this copy's own knowledge, never the type's.
+        # Blessing visibility: this copy identified, or its kind known.
         if self._copy_buc_known(item):
             buc_raw = getattr(item, 'buc', None) or ('cursed' if getattr(item, 'cursed', False) else 'uncursed')
             buc = {'blessed': 'bless.', 'uncursed': 'unc.', 'cursed': 'CURSED'}.get(buc_raw, buc_raw)
@@ -5527,6 +5604,14 @@ class RenderMixin:
             # Most consumables don't carry BUC; show '-' when not applicable
             buc_show = buc if hasattr(item, 'buc') or hasattr(item, 'cursed') else '-'
             return [name, src_tag, kind, buc_show, wt, effect]
+
+        if slug == 'valuables':
+            import treasure as _tr
+            n = max(1, int(getattr(item, 'count', 1) or 1))
+            # Weight as the shop gives it (a gem weighs 0.01: "0.0" said nothing).
+            return [name, src_tag, _tr.kind_label(item), str(n) if n > 1 else '',
+                    f"{float(getattr(item, 'weight', 0) or 0):g}",
+                    _tr.worth_short(self.player, item)]
 
         return [name, src_tag] + ['' for _ in range(6)]
 
@@ -6279,9 +6364,10 @@ class RenderMixin:
                 'badge_color': FP.WARNING_TEXT if is_g else FP.GOLD_BRIGHT,
                 'details': self._menu_item_detail_lines(
                     item,
-                    "Reveal this item directly."
+                    "Reveal this item, and every other of its kind."
                     if getattr(self, '_scroll_identify_pending', False)
-                    else "Answer ONE philosophy question at the item's tier."),
+                    else "Answer ONE philosophy question at the item's tier. "
+                         "Every other of its kind is known with it."),
             })
 
         selected = self._menu_clamp_selection('_identify_sel', len(entries))
@@ -6300,7 +6386,8 @@ class RenderMixin:
             ("IDENTIFICATION", FP.GOLD_BRIGHT, self.font_sm),
             (shard_line, FP.BODY_TEXT, self.font_sm),
             (f"Targets: {len(entries)}", FP.BODY_TEXT, self.font_sm),
-            ("One question. Right: fully identified. Wrong: the Shard stuns you.",
+            ("One question. Right: it and every other of its kind fully identified. "
+             "Wrong: the Shard stuns you.",
              FP.FADED_TEXT, self.font_sm),
         ])
         self._draw_decision_menu(
@@ -6745,12 +6832,21 @@ class RenderMixin:
         )
 
     def _draw_pet_sub_picker(self, title: str, items: list, pet, attr: str):
-        """Generic sub-menu renderer for feed/heal item pickers."""
+        """The feed / heal item pickers: a scrolling list beside a detail
+        pane, the Kit and shop's decision menu. It used the quick two-column
+        picker, which showed eight at a time and, scrolling, shuffled the
+        rows between its columns: with a pack full of food only the first
+        eight seemed reachable (Brandon, 2026-10-18). Up/Down, PgUp/PgDn,
+        Home/End and a-z reach every item; "9-16 of 20" says where you are."""
         entries = []
+        heal_share = 25           # _apply_pet_feed: a quarter of its health
+        who = pet.name if pet is not None else "your companion"
         for idx, it in enumerate(items):
             iname = self._display_name(it) if hasattr(self, '_display_name') else it.name
+            details = [(iname, FP.GOLD_BRIGHT, self.font_md)]
+            n = int(getattr(it, 'count', 1) or 1)
             if attr == 'sp_restore':
-                sp = getattr(it, 'sp_restore', 0)
+                sp = int(getattr(it, 'sp_restore', 0) or 0)
                 # The same tags as the Eat menu: a meal is FOOD, an uncooked
                 # ingredient is RAW (it said FOOD here and RAW there).
                 if isinstance(it, Food) or sp:
@@ -6761,10 +6857,27 @@ class RenderMixin:
                     detail = "Raw ingredient"
                     badge = 'RAW'
                     badge_color = FP.WARNING_TEXT
+                xp = max(20, min(80, int(getattr(it, 'sp_restore', 20) or 20) // 2))
+                details += [
+                    (f"Heals {who} by a quarter of its health ({heal_share}%) "
+                     f"and gives {xp} XP.", FP.BODY_TEXT, self.font_sm),
+                    (f"You carry {n}. Feeding uses one.", FP.FADED_TEXT, self.font_sm),
+                ]
             elif attr == 'effect':
                 detail = getattr(it, 'effect', '').replace('_', ' ').title()
                 badge = 'HEAL'
                 badge_color = FP.SUCCESS_TEXT
+                # What _apply_pet_heal does with it.
+                eff = getattr(it, 'effect', 'heal')
+                if eff == 'full_heal':
+                    does = f"Poured over {who}, it restores all of its health."
+                else:
+                    dice = getattr(it, 'power', '') or ('4d8+10' if eff == 'extra_heal' else '2d8+4')
+                    does = f"Poured over {who}, it heals {dice} health."
+                details += [
+                    (does, FP.BODY_TEXT, self.font_sm),
+                    (f"You carry {n}. This uses one.", FP.FADED_TEXT, self.font_sm),
+                ]
             else:
                 detail = ''
                 badge = ''
@@ -6776,18 +6889,19 @@ class RenderMixin:
                 'icon': it,
                 'badge': badge,
                 'badge_color': badge_color,
+                'details': details,
             })
         selected_attr = '_pet_feed_sel' if attr == 'sp_restore' else '_pet_heal_sel'
         selected = self._menu_clamp_selection(selected_attr, len(entries))
         full_title = title
         if pet is not None:
             full_title = f"{title} - {pet.name.upper()}"
-        self._draw_fast_picker(
+        self._draw_decision_menu(
             title=full_title,
             entries=entries,
             selected=selected,
-            subtitle="Companion care",
-            hint="Up/Down: move   Enter or a-z: select   ESC: back",
+            context_lines=[],
+            hint="Up/Down: move   PgUp/PgDn: page   Enter or a-z: select   ESC: back",
             border_color=FP.GOLD_BRIGHT,
         )
 
@@ -7883,7 +7997,13 @@ class RenderMixin:
     def _lore_direct_id_level(self, item):
         if isinstance(item, Corpse):
             return int(getattr(item, 'id_level', 0) or 0)
-        return int(getattr(item, 'id_level', 5) if hasattr(item, 'id_level') else 5)
+        if not hasattr(item, 'id_level'):
+            return 5
+        # One identification knows every copy (items.is_fully_known).
+        from items import is_fully_known
+        if is_fully_known(item, self.player):
+            return 5
+        return int(getattr(item, 'id_level', 0) or 0)
 
     def _lore_bonus_label(self, key, value):
         if key == 'ac_bonus':
@@ -7909,18 +8029,12 @@ class RenderMixin:
         shown_name = self._display_name(item)
         lines = [(shown_name, FP.GOLD_BRIGHT, get_font('heading', 20))]
         if hasattr(item, 'id_level'):
-            if id_level >= 5:
-                status = "Identified"
-            elif self.player.knows_item_type(item):
-                from hud_context import unknown_copy_suffix
-                status = ("Type known " + unknown_copy_suffix(item)).strip()
-            else:
-                status = "Unidentified"
+            status = "Identified" if id_level >= 5 else "Unidentified"
             lines.append((status, FP.CYAN_ACCENT, self.font_sm))
         # The heading already carries the true name once it is known, so the
         # field below shows what the item LOOKS like unidentified -- that is
         # what the player needs to recognise it on a later run. Skipped when
-        # the heading is itself the appearance (type still unknown).
+        # the heading is itself the appearance (kind still unknown).
         unidentified = getattr(item, 'unidentified_name', '')
         if unidentified:
             appearance = self._fix_name_case(unidentified)
@@ -7940,7 +8054,7 @@ class RenderMixin:
             lines.append((f"Weight: {weight:g}", FP.BODY_TEXT, self.font_sm))
 
         if hasattr(item, 'buc'):
-            # This copy's own knowledge (the same rule as the Kit and menus).
+            # This copy identified or its kind known (the same rule as the Kit and menus).
             if self._copy_buc_known(item):
                 aura = getattr(item, 'buc', 'uncursed')
             else:
@@ -7963,9 +8077,10 @@ class RenderMixin:
         return "Restores " + " and ".join(parts) if parts else "Restores nothing"
 
     def _lore_enchant_text(self, item) -> str:
-        """Enchantment is per-copy knowledge: shown only once THIS copy is
-        identified, even when the type is known."""
-        if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 0) or 0) < 5:
+        """The enchantment, once this copy is identified or its kind known
+        (one identification knows every copy: items.is_fully_known)."""
+        from items import is_fully_known
+        if hasattr(item, 'id_level') and not is_fully_known(item, self.player):
             return '?'
         return f"+{getattr(item, 'enchant_bonus', 0)}"
 
@@ -8307,13 +8422,10 @@ class RenderMixin:
             identity_lines, mech_lines, lore_text = self._lore_corpse_lines(subject, id_level)
             lore_color = FP.LORE_GOLD_BODY
         else:
-            # True Name model: knowing the TYPE reveals stats and lore for
-            # every copy (the Kit panel already did this; the dossier read
-            # the raw per-copy level and showed "Mechanics unrevealed").
-            # The identity pane keeps the raw level: its Identified badge
-            # and aura are about THIS copy.
-            # What the name shows is what the player knows: a stored 1-4
-            # (``identified = True`` from a scripted grant) is not enough.
+            # Knowing the KIND reveals everything on every copy (one
+            # identification knows every copy). What the name shows is what
+            # the player knows: a stored 1-4 (``identified = True`` from a
+            # scripted grant) is not enough.
             visible = id_level
             if hasattr(subject, 'id_level'):
                 visible = self._kit_visible_level(subject)
@@ -8695,6 +8807,12 @@ class RenderMixin:
             return entry.get('lore', '')
         if category == 'treasure':
             return self._encyclopedia_treasure_value(entry)
+        if category == 'wonders':
+            if entry.get('_kind') == 'sphere':
+                lvl = int((entry.get('sphere') or {}).get('hatch_level', 1) or 1)
+                return f"Wakes at level {lvl}"
+            q = entry.get('quiz') or {}
+            return f"+{int(q.get('amount', 1) or 1)} {q.get('stat', 'WIS')} for good"
         return ''
 
     def _encyclopedia_treasure_value(self, entry) -> str:
@@ -8705,6 +8823,36 @@ class RenderMixin:
         if entry.get('_id') in treasure.appraised(self.player):
             return f"Valued at {v:,} gold"
         return f"Worth {treasure.band(v)[1]}"
+
+    def _encyclopedia_wonder_lines(self, entry) -> list:
+        """A Wonders page: what a Soul Sphere wakes, or what the Draught of
+        Mimir's Well asks and gives. No secret of who hatches is told."""
+        if entry.get('_kind') == 'sphere':
+            sp = entry.get('sphere') or {}
+            lvl = int(sp.get('hatch_level', 1) or 1)
+            tier = {1: 'a young companion', 2: 'a grown companion',
+                    3: 'a companion at the height of its strength'}.get(int(sp.get('tier', 1) or 1),
+                                                                       'a companion')
+            return [
+                ("Kind: Soul Sphere", FP.BODY_TEXT, self.font_sm),
+                (f"Throw it to wake {tier}. It wakes at level {lvl}.",
+                 FP.BODY_TEXT, self.font_sm),
+                (f"Weight: {float(entry.get('weight', 0) or 0):g}", FP.BODY_TEXT, self.font_sm),
+            ]
+        q = entry.get('quiz') or {}
+        subjects = ' or '.join(str(s).title() for s in (q.get('subjects') or ['philosophy']))
+        amount = int(q.get('amount', 1) or 1)
+        stat = str(q.get('stat', 'WIS'))
+        lines = [
+            ("Kind: Draught", FP.BODY_TEXT, self.font_sm),
+            (f"Drink it and answer one {subjects} question (tier {int(q.get('tier', 4) or 4)}). "
+             f"Right: +{amount} {stat} for good. Wrong: it runs straight through you, wasted.",
+             FP.BODY_TEXT, self.font_sm),
+            (f"Weight: {float(entry.get('weight', 0) or 0):g}", FP.BODY_TEXT, self.font_sm),
+        ]
+        if entry.get('throwable') is False:
+            lines.append(("It is not for throwing.", FP.FADED_TEXT, self.font_sm))
+        return lines
 
     def _encyclopedia_article_lines(self, category, entry):
         if not entry:
@@ -8770,6 +8918,8 @@ class RenderMixin:
         elif category == 'spellbook':
             lines.append((f"Teaches: {entry.get('spell_name', '?')}   MP cost: {entry.get('mp_cost', '?')}",
                           FP.BODY_TEXT, self.font_sm))
+        elif category == 'wonders':
+            lines += self._encyclopedia_wonder_lines(entry)
         elif category == 'treasure':
             kind = {'gem': 'Gem', 'jewellery': 'Jewellery', 'coins': 'Old Coins',
                     'art': 'Art Object'}.get(entry.get('kind', ''), 'Treasure')
@@ -8832,7 +8982,7 @@ class RenderMixin:
             list_body = self._ui_subpanel(list_rect, "Known Entries")
             article_body = self._ui_subpanel(article_rect, "Article")
 
-        # Every category in view (eleven since the Treasure pages): the rows
+        # Every category in view (twelve since the Wonders pages): the rows
         # close up a little rather than drop the last one off the panel.
         row_h = min(S(45), max(S(32), cat_body.h // max(1, len(cats))))
         y = cat_body.y
@@ -8865,7 +9015,7 @@ class RenderMixin:
             self._draw_journal(pygame.Rect(list_rect.x, body.y,
                                            body.right - list_rect.x, body.h))
             self._ui_footer(panel, "Tab or 1-4: page   Up/Down/PgUp/PgDn: scroll   "
-                                   "Left/Right or a-k: category   ESC: categories")
+                                   "Left/Right or a-l: category   ESC: categories")
             return
 
         entries = getattr(self, 'encyclopedia_entries', []) or []
@@ -8875,7 +9025,7 @@ class RenderMixin:
             # visibly highlighted.
             self._ui_wrap_text("Press Enter to open the highlighted category.",
                                self.font_sm, FP.FADED_TEXT, article_body)
-            self._ui_footer(panel, "Up/Down: category   Enter or a-k: open   ESC: close")
+            self._ui_footer(panel, "Up/Down: category   Enter or a-l: open   ESC: close")
             return
 
         sel = max(0, min(getattr(self, 'encyclopedia_selection', 0),
@@ -8952,9 +9102,11 @@ class RenderMixin:
                               len(spacers), self.font_sm.get_height() + S(5))
 
         if getattr(self, '_encyclopedia_entry', None) is not None:
-            footer = "Up/Down/PgUp/PgDn: scroll article   ESC: list"
+            back = ("back to play" if getattr(self, '_encyclopedia_from_observe', False)
+                    else "list")
+            footer = f"Up/Down/PgUp/PgDn: scroll article   ESC: {back}"
         else:
-            footer = "Left/Right or a-k: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
+            footer = "Left/Right or a-l: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
         self._ui_footer(panel, footer)
 
     # -- The Journal (Encyclopedia tab h; DEEDS_KARMA_DESIGN 7.5) ----------
@@ -9428,7 +9580,7 @@ class RenderMixin:
                 ("Y", "Trade", FP.BODY_TEXT),
                 ("\\", "Pray", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
-                ("O", "Observe cursor", FP.BODY_TEXT),
+                ("O", "Look / Bestiary", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [

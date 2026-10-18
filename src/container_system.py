@@ -625,6 +625,9 @@ def _generate_loot_from_template(container, dungeon_level: int) -> list:
                 it.id_level = 5
             if hasattr(it, 'buc_known'):
                 it.buc_known = True
+            # The merchant's tag names the kind too: the game records it when
+            # the chest opens (Game._learn_loot_kinds), so every copy is known.
+            it.__dict__['_learn_kind'] = True
 
     return loot
 

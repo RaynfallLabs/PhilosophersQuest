@@ -1136,8 +1136,7 @@ class MagicMixin:
             self.add_message("Your mind expands -- you perceive the entire level!", 'success')
 
         elif effect == 'identify_item':
-            unknown = [i for i in self.player.inventory
-                       if getattr(i, 'id_level', 5) < 5]
+            unknown = [i for i in self.player.inventory if self._needs_identify(i)]
             if unknown:
                 item = unknown[0]
                 self._full_identify(item)
@@ -2010,11 +2009,12 @@ class MagicMixin:
                         it.buc_known = True
                     revealed += 1
             inv_reveals = 0
+            from items import buc_known_to
             if _stier >= 3:
                 for it in self.player.inventory:
                     if (isinstance(it, (Wand, Scroll, Spellbook))
                             and hasattr(it, 'buc_known')
-                            and not it.buc_known):
+                            and not buc_known_to(it, self.player)):
                         it.buc_known = True
                         inv_reveals += 1
             eq_reveals = 0
@@ -2032,7 +2032,7 @@ class MagicMixin:
                 if am:
                     equipped.append(am)
                 for it in equipped:
-                    if hasattr(it, 'buc_known') and not it.buc_known:
+                    if hasattr(it, 'buc_known') and not buc_known_to(it, self.player):
                         it.buc_known = True
                         eq_reveals += 1
             bits = []
@@ -2786,7 +2786,7 @@ class MagicMixin:
                     if getattr(eq, 'buc', 'uncursed') == 'cursed' and getattr(eq, 'id', '') != 'duck_of_doom':
                         eq.buc = 'uncursed'
                         eq.buc_known = True
-                        cursed_items.append(eq.name)
+                        cursed_items.append(self._bare_name(eq))
                 # T5: also bless one uncursed equipped item
                 if _scope >= 4 and equipped:
                     candidate = next((eq for eq in equipped
@@ -2794,7 +2794,7 @@ class MagicMixin:
                     if candidate:
                         candidate.buc = 'blessed'
                         candidate.buc_known = True
-                        blessed_extra = candidate.name
+                        blessed_extra = self._bare_name(candidate)
                 if removed or cursed_items or blessed_extra:
                     parts = []
                     if removed:
@@ -3346,7 +3346,7 @@ class MagicMixin:
         # T2+). Skip the quiz entirely and grant a full identify, 1/floor.
         try:
             from chain_passives import consume_passive_charge
-            if int(getattr(item, 'id_level', 0)) < 5 and \
+            if self._needs_identify(item) and \
                     consume_passive_charge(self.player, 'identify_one_per_floor_free'):
                 self._full_identify(item)
                 self.add_message(
@@ -3424,16 +3424,33 @@ class MagicMixin:
             base_seconds=self.player.get_quiz_timer('philosophy'),
         )
 
+    def _needs_identify(self, item) -> bool:
+        """Is there anything left to learn about this copy? False for a corpse
+        (its own lore path), a thing with nothing to identify, a copy already
+        identified, and every copy of a kind the hero knows: one
+        identification knows every copy, blessing and enchantment included
+        (Brandon 2026-10-18; items.is_fully_known). The identify menu, the
+        Kit's I action, scrolls, wands and every other identify path offer
+        only what this says."""
+        from items import Corpse, is_fully_known
+        if item is None or isinstance(item, Corpse) or not hasattr(item, 'id_level'):
+            return False
+        if str(getattr(item, 'item_class', '')) == 'treasure':
+            return False                   # known by sight (treasure.py)
+        return not is_fully_known(item, self.player)
+
     def _full_identify(self, item) -> None:
         """Set every knowledge flag for one identified instance.
 
         The copy becomes fully known (BUC + enchant + stats + lore) and its
-        TYPE joins the global known set, so future copies show their true
-        name ("Sword of Michael (Curse and Enchant Unknown)") while keeping their own BUC
-        and enchant hidden until identified individually. Fires the career
-        hook once per instance crossing into full ID.
+        KIND joins the known set, so every other copy, wherever it lies and
+        whenever it turns up, is fully identified too (items.is_fully_known).
+        Fires the career hook once per instance crossing into full ID.
         """
-        was_full = int(getattr(item, 'id_level', 0)) >= 5
+        # Already known (this copy, or its kind): no new identification, so
+        # no career tick (the Philosopher's Stone names every pickup).
+        from items import is_fully_known
+        was_full = is_fully_known(item, self.player)
         item.id_level = 5
         if hasattr(item, 'buc_known'):
             item.buc_known = True
@@ -3472,8 +3489,7 @@ class MagicMixin:
         # Build the same target list `_open_identify_menu` uses, so the
         # menu UI is shared.
         from items import Corpse
-        def _needs_identify(i):
-            return getattr(i, 'id_level', 5) < 5
+        _needs_identify = self._needs_identify
         inv_items = [i for i in self.player.inventory if _needs_identify(i)]
         ground_items = [
             i for i in self.ground_items
@@ -3526,7 +3542,7 @@ class MagicMixin:
         for it in pool:
             if isinstance(it, Corpse):
                 continue
-            if getattr(it, 'id_level', 5) < 5:
+            if self._needs_identify(it):
                 self._full_identify(it)
                 count += 1
                 if limit is not None and count >= limit:
@@ -3562,26 +3578,35 @@ class MagicMixin:
                     'success')
                 return
 
+    def _forgettable(self, it) -> bool:
+        """A thing the hero knows and could forget: a copy fully identified
+        (its own identify or its kind known), never a corpse, never treasure
+        (known by sight, treasure.py: the teeth must bite something real),
+        never the Philosopher's Shard (bricking the ID system is too brutal)."""
+        from items import Corpse, is_fully_known
+        from naming import proper_name
+        if it is None or isinstance(it, Corpse) or not hasattr(it, 'id_level'):
+            return False
+        if getattr(it, 'item_class', '') == 'treasure':
+            return False
+        if getattr(it, 'id', '') == 'philosophers_shard':
+            return False
+        # Only a thing with a look of its own to go back to: bread, raw meat,
+        # ammo and lockpicks are known by sight and cannot be "forgotten".
+        if proper_name(str(getattr(it, 'unidentified_name', '') or '')) == \
+                proper_name(str(getattr(it, 'name', '') or '')):
+            return False
+        return is_fully_known(it, self.player)
+
     def _scroll_identify_amnesia(self) -> None:
-        """Cursed Scroll of Identify: the kid forgets one item they had
-        identified. Picks a random item with id_level >= 1 (or in
-        known_item_ids), drops id_level to 0, removes from
-        known_item_ids, and clears identified+buc_known. Per user
-        2026-05-29 (D3) — the cursed scroll now has TEETH.
+        """Cursed Scroll of Identify: the kid forgets one kind he had
+        identified. Picks a random known thing in the pack and forgets its
+        KIND (``_forget_kind``): every copy, here or anywhere, is unknown
+        again, blessing included. Per user 2026-05-29 (D3) — the cursed
+        scroll has TEETH.
         """
         import random as _rng
-        candidates = []
-        for it in self.player.inventory:
-            if getattr(it, 'id_level', 0) >= 1 \
-               or it.id in self.player.known_item_ids:
-                # Skip the philosopher's shard — bricking the ID system is too brutal.
-                if getattr(it, 'id', '') == 'philosophers_shard':
-                    continue
-                # Treasure is known by sight (treasure.py): there is nothing
-                # to forget, and the scroll's teeth must bite something real.
-                if getattr(it, 'item_class', '') == 'treasure':
-                    continue
-                candidates.append(it)
+        candidates = [it for it in self.player.inventory if self._forgettable(it)]
         if not candidates:
             self.add_message(
                 "The scroll's words dissolve into nonsense. You feel a chill.",
@@ -3589,22 +3614,7 @@ class MagicMixin:
             return
         target = _rng.choice(candidates)
         old_name = getattr(target, 'name', 'item')
-        target.id_level = 0
-        target.identified = False
-        target.buc_known = False
-        # Forget the TYPE too — the kid has to relearn it on any other copy.
-        self.player.known_item_ids.discard(target.id)
-        # Walk inventory + ground and de-identify every same-id copy to
-        # match (otherwise propagation gets stuck: the type is gone but
-        # individual copies stay 'known').
-        for it in self.player.inventory:
-            if getattr(it, 'id', '') == target.id and it is not target:
-                it.identified = False
-                it.id_level = max(0, min(int(getattr(it, 'id_level', 0)), 0))
-        for it in self.ground_items:
-            if getattr(it, 'id', '') == target.id:
-                it.identified = False
-                it.id_level = max(0, min(int(getattr(it, 'id_level', 0)), 0))
+        self._forget_kind(target)
         self.add_message(
             f"The scroll's words burn cold. The {old_name} — you no longer recognize it.",
             'danger')
@@ -3840,7 +3850,7 @@ class MagicMixin:
             if id(it) in seen_ids:
                 continue
             seen_ids.add(id(it))
-            if getattr(it, 'id_level', 5) < 5:
+            if self._needs_identify(it):
                 self._full_identify(it)
                 id_count += 1
         # 2) Reveal lore for every corpse species KILLED this run. The
@@ -3885,8 +3895,9 @@ class MagicMixin:
             'discovery', "I read the Book of Thoth and the world named itself back to me.")
 
     def _book_of_thoth_curse(self):
-        """Failure payload: 3d6 psychic damage, 3 random unidentified items
-        in inventory lose their known type, 20 turns Stunned.
+        """Failure payload: 3d6 psychic damage, three kinds known from things
+        in the pack are forgotten (every copy of each, ``_forget_kind``),
+        20 turns Stunned.
         """
         from dice import roll
         import random as _rng
@@ -3900,29 +3911,17 @@ class MagicMixin:
         self.add_message(
             f"You take {actual} psychic damage.",
             'danger')
-        # 3 random unidentified items in inventory lose their known type.
-        from items import Corpse, type_class as _tc
-        candidates = [
-            it for it in self.player.inventory
-            if not isinstance(it, Corpse)
-            and (getattr(it, 'id_level', 0) >= 1
-                 or it.id in self.player.known_item_ids)
-            and getattr(it, 'id', '') != 'philosophers_shard'
-        ]
+        # Three kinds the hero knew, from things in the pack, are forgotten:
+        # every copy of each is unknown again (_forget_kind).
+        candidates = [it for it in self.player.inventory if self._forgettable(it)]
         _rng.shuffle(candidates)
         forgot_count = 0
-        for target in candidates[:3]:
-            target.id_level = 0
-            target.identified = False
-            if hasattr(target, 'buc_known'):
-                target.buc_known = False
-            self.player.known_item_ids.discard(target.id)
-            try:
-                cls = _tc(target)
-                if cls:
-                    self.player.known_class_ids.discard(cls)
-            except Exception:
-                pass
+        for target in candidates:
+            if forgot_count >= 3:
+                break
+            if not self._forgettable(target):
+                continue           # its kind went with an earlier one
+            self._forget_kind(target)
             forgot_count += 1
         if forgot_count:
             self.add_message(
@@ -4162,20 +4161,23 @@ class MagicMixin:
                 break
 
     def _propagate_identification(self, item_id: str, seed_item=None):
-        """Record TYPE knowledge for an identified item.
+        """Record KIND knowledge for an identified item.
 
-        The true name (with stats + lore) becomes visible on every current
-        and future copy — they render as "<true name> (Curse Unknown)" (see
-        hud_context.unknown_copy_suffix). The
-        per-instance state (BUC, enchant) is deliberately NOT touched:
-        under the True Name model each copy must be identified on its own.
-        known_class_ids covers material-variant accessories (one Ring of
-        Strength names them all) — see items.type_class.
+        Every current and future copy of the kind is now fully identified:
+        true name, stats, lore, blessing or curse and enchantment (Brandon
+        2026-10-18: "once you've identified something, all further instances
+        need to be fully identified, including BUC status"). Nothing is
+        stamped onto the copies: items.is_fully_known decides it whenever
+        the game asks, so a copy in a chest, a trader's stock or a floor not
+        yet generated is covered, and forgetting the kind (``_forget_kind``)
+        un-knows them all. known_class_ids covers material-variant
+        accessories (one Ring of Strength names them all) — see
+        items.type_class.
 
         Identify v3.1 (2026-09-01) additionally learns the item's FORM
         and MATERIAL independently. Once both are in known_forms /
-        known_materials, any future item matching that form × material
-        combo auto-shows its true name without a per-id-slug identify.
+        known_materials, any item matching that form × material combo
+        counts as a known kind without a per-id-slug identify.
         """
         from items import type_class, form_id, material_id
         self.player.known_item_ids.add(item_id)
@@ -4200,6 +4202,99 @@ class MagicMixin:
                 if not hasattr(self.player, 'known_materials'):
                     self.player.known_materials = set()
                 self.player.known_materials.add(mid)
+        _merge = getattr(self, '_merge_newly_known_stacks', None)
+        if _merge is not None:
+            _merge(force=True)
+
+    def _learn_loot_kinds(self, loot) -> None:
+        """Loot that arrived already named (a merchant's strongbox) teaches
+        its kind, as any identification does."""
+        for it in loot or ():
+            if it.__dict__.pop('_learn_kind', False) and getattr(it, 'id', ''):
+                self._propagate_identification(it.id, seed_item=it)
+
+    def _kind_knowledge_signature(self) -> tuple:
+        p = self.player
+        return (len(getattr(p, 'known_item_ids', ()) or ()),
+                len(getattr(p, 'known_class_ids', ()) or ()),
+                len(getattr(p, 'known_forms', ()) or ()),
+                len(getattr(p, 'known_materials', ()) or ()))
+
+    def _merge_newly_known_stacks(self, force: bool = False) -> None:
+        """Once a kind is known, copies of it in the pack with the same
+        blessing are plainly the same thing: join their stacks (two
+        "Potion of Healing" rows become one). Cheap: runs only when the
+        known sets have grown (every turn checks; identify paths force it)."""
+        p = getattr(self, 'player', None)
+        if p is None or not hasattr(p, 'merge_known_stacks'):
+            return
+        sig = self._kind_knowledge_signature()
+        last = getattr(self, '_kind_sig_merged', None)
+        self._kind_sig_merged = sig
+        if not force and (last is None or sig == last):
+            return                 # first look sets the baseline; nothing new learnt
+        try:
+            p.merge_known_stacks()
+        except Exception:
+            from game_log import log_error
+            log_error("merge_known_stacks failed")
+
+    def _forget_kind(self, item) -> None:
+        """The hero forgets what this kind of thing is (a cursed Scroll of
+        Identify, the Book of Thoth's curse). The reverse of
+        ``_propagate_identification``: the id, its accessory family and its
+        form leave the known sets, and every copy the game can reach (worn,
+        pack, floor, stored floors, chests and sacks among them, trader
+        stock here) loses its own identification, so no copy stays known.
+        Its blessing is forgotten too. Treasure and the Philosopher's Shard
+        are never chosen by the callers."""
+        from items import type_class, form_id
+        p = self.player
+        iid = getattr(item, 'id', '')
+        try:
+            cls = type_class(item)
+        except Exception:
+            cls = None
+        fid = form_id(item)
+        p.known_item_ids.discard(iid)
+        if cls:
+            getattr(p, 'known_class_ids', set()).discard(cls)
+        if fid:
+            getattr(p, 'known_forms', set()).discard(fid)
+
+        def same_kind(it) -> bool:
+            if getattr(it, 'id', None) == iid:
+                return True
+            try:
+                return bool(cls) and type_class(it) == cls
+            except Exception:
+                return False
+
+        from main import _all_items_in_save, _stored_floors
+        lm = getattr(self, 'level_mgr', None)
+        pool = _all_items_in_save(p, {'ground_items': list(getattr(self, 'ground_items', []) or []),
+                                      'level_mgr': lm})
+        from mystery_system import MerchantNPC
+        floors = _stored_floors(lm) if lm else []
+        grounds = [list(getattr(self, 'ground_items', []) or [])]
+        grounds += [list(f.get('ground_items') or []) for f in floors]
+        for ground in grounds:
+            for g in ground:
+                if isinstance(g, MerchantNPC):
+                    pool.extend(getattr(g, 'stock', []) or [])
+        # What thieves carry, here and on stored floors (theft.py).
+        herds = [list(getattr(self, 'monsters', []) or [])]
+        herds += [list(f.get('monsters') or []) for f in floors]
+        for herd in herds:
+            for m in herd:
+                pool.extend(getattr(m, '__dict__', {}).get('stolen_items') or [])
+        for it in pool:
+            if it is item or same_kind(it):
+                if str(getattr(it, 'item_class', '')) == 'treasure':
+                    continue
+                it.id_level = 0
+                if hasattr(it, 'buc_known'):
+                    it.buc_known = False
 
     def _auto_identify_all(self):
         """Identify every item in inventory and on the ground (Philosopher's Stone).

@@ -173,12 +173,10 @@ def known_healer(player, item) -> bool:
     """Does the player KNOW ``item`` heals? Only identified items count: the
     copy identified, or its type known (call 32: the picker listed exactly
     the unidentified healers, which told the player which unknowns heal)."""
-    from items import Potion, Scroll, Wand
-    try:
-        known = (int(getattr(item, 'id_level', 0) or 0) >= 4
-                 or bool(getattr(player, 'knows_item_type', lambda _i: False)(item)))
-    except (TypeError, ValueError):
-        known = False
+    from items import Potion, Scroll, Wand, is_fully_known
+    # Known as the name says (items.is_fully_known): this copy identified or
+    # its kind known. A stored 4 is not an identification.
+    known = is_fully_known(item, player)
     if not known:
         return False
     effect = str(getattr(item, 'effect', '') or '').lower()
@@ -209,13 +207,24 @@ def _item_cost_classes():
 
 
 def cost_items(player, ctype: str) -> list:
-    """The pack items an item cost of ``ctype`` may take, in pack order."""
+    """The pack items an item cost of ``ctype`` may take with no picker (an
+    outcome's loss, the rest of a "count"), in the order they are taken.
+    A potion is never a rare one (the Draught of Mimir's Well, Fafnir's
+    Blood, Soma...: items.is_rare_potion) and the cheapest ordinary one goes
+    first (2026-10-18); everything else in pack order."""
+    from items import Potion, is_rare_potion, ordinary_potions_cheapest_first
     if ctype == 'healing_potion':
-        return [i for i in player.inventory if offerable(i) and known_healer(player, i)]
+        pool = [i for i in player.inventory if offerable(i) and known_healer(player, i)
+                and not is_rare_potion(i)]
+        pots = ordinary_potions_cheapest_first(pool)
+        return pots + [i for i in pool if not isinstance(i, Potion)]
     cls = _item_cost_classes().get(ctype)
     if cls is None:
         return []
-    return [i for i in player.inventory if isinstance(i, cls) and offerable(i)]
+    pool = [i for i in player.inventory if isinstance(i, cls) and offerable(i)]
+    if ctype == 'potion':
+        return ordinary_potions_cheapest_first(pool)
+    return pool
 
 
 def armor_enchant_target(player):

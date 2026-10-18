@@ -579,12 +579,15 @@ scrolls can push to the per-slot cap.
 - Cursed weapons/armor welded on (`try_unequip_slot`).
 - Cursed status applies penalties through `Player.get_ac` (±1 per piece).
 - Blessed wands get +1 charge at spawn; cursed −1.
-- `buc_known` is a per-instance flag. The HUD prints a `Blessed` /
-  `Cursed` prefix only when `buc_known` is true; see
+- `buc_known` is a per-instance flag (an altar, a curse felt when
+  worn). A copy's blessing is also known once the copy is identified or
+  its KIND is known: one identification knows every copy, blessing
+  included (`items.buc_known_to`, 2026-10-18). The HUD prints a
+  `Blessed` / `Cursed` prefix only when the blessing is known; see
   `hud_item_name` in [ui](ui.md).
 
-Instance BUC is revealed by the one-question identify quiz; see
-[identify_v3](identify_v3.md).
+BUC is revealed by the one-question identify quiz (for the copy and its
+whole kind); see [identify_v3](identify_v3.md).
 
 ---
 
@@ -725,6 +728,17 @@ weight, so it is never random loot; it comes only from a deep trader's
 `rare_stock` (data/traders.json: about 1 trader stock in 30, floor 40 and
 down, priced at 5 floors of income x 0.8). It arrives known (id level 5).
 
+**Rare and unthrowable potions (2026-10-18).** `"rare": true` in potion.json
+(the Draught, Fafnir's Blood, Soma, the Water of Lethe, the Elixir of
+Gilgamesh; `items.is_rare_potion`, which also counts any quiz potion and
+anything `withheld`) means an encounter outcome that takes "a potion" with
+no picker never takes it: `npc_encounters.cost_items` takes the cheapest
+ordinary potion (`items.ordinary_potions_cheapest_first`). With a picker the
+hero may still choose to give it. `"throwable": false` (the Draught alone;
+`items.can_be_thrown`) keeps it out of the Throw menu and refuses a throw;
+thieves may still steal it and give it back when they die. The Draught and
+the six Soul Spheres have Encyclopedia pages under **Wonders** (B, l).
+
 ### Treasure (`data/items/treasure.json`, class `Treasure`; rules in `src/treasure.py`)
 
 Gems, jewellery, old coin and art objects (17 kinds), with real weights and
@@ -834,13 +848,15 @@ read at runtime; everything else comes from the chest template
 ## 15. HUD + display rules
 
 Name resolution: `hud_context.hud_item_name(player, item,
-include_count=False)` (`src/hud_context.py:84`). Three-state tree
-(True Name model from identify v3):
-1. **Instance identified** (`id_level >= 4`) → full name + enchant +
-   BUC tag.
-2. **Type known, BUC unknown** → `"Unidentified <true name>"` — player
-   knows what it is but doesn't know *this* copy's BUC/enchant.
-3. **Type unknown** → `unidentified_name` (the fallback appearance).
+include_count=False)`. Two states (one identification knows every copy,
+2026-10-18; `items.is_fully_known`):
+1. **Known**: this copy identified (`id_level >= 5`) or its kind known
+   → true name with the `Blessed` / `Cursed` tag; enchantment shown in
+   the Kit and dossier.
+2. **Unknown** → `unidentified_name` (the appearance).
+
+The old in-between "type known, this copy's curse unknown" state of the
+True Name model (2026-08-06 to 2026-10-18) is gone.
 
 **Capitalisation (v2.23.0).** `Item.name` and `Item.unidentified_name`
 (and `Corpse.monster_name`) are `naming.ProperNameAttr` descriptors, so

@@ -204,9 +204,10 @@ def test_i05_a_scripted_identified_flag_does_not_open_the_dossier():
     assert not any('Confusion' in m for m in mech)
     # The menus agree: no effect line for it in the quaff list.
     assert g._item_is_known(pot) is False
-    # Once its type IS known, everything shows (unchanged).
+    # Once its kind IS known, everything shows, blessing included (one
+    # identification knows every copy, 2026-10-18).
     p.known_item_ids.add(pot.id)
-    assert g._kit_visible_level(pot) == 4 and g._item_is_known(pot)
+    assert g._kit_visible_level(pot) == 5 and g._item_is_known(pot)
 
 
 # ---------------------------------------------------------------- I-06
@@ -340,12 +341,22 @@ def test_i09_floor_comparison_hides_enchants_and_unknown_worn_items():
     p._apply_equip(worn)
     floor = _known(_weapon())
     floor.enchant_bonus = 0
-    p.known_item_ids.add(floor.id)
+    for s in ('known_item_ids', 'known_class_ids', 'known_forms', 'known_materials'):
+        getattr(p, s).clear()
+    if p.knows_item_type(worn):
+        pytest.skip('longsword kind known')
     n = len(g.msg_log.entries)
     g._show_item_comparison(floor)
     new = [str(e[0]) for e in g.msg_log.entries[n:]]
-    # Same base sword, worn copy's -2 unknown: nothing to tell.
+    # The worn copy is unknown (its kind too): its -2 is never told.
     assert new == []
+    # Once the kind is known every copy is fully identified, enchantment
+    # included (2026-10-18), so the comparison may count the -2.
+    p.known_item_ids.add(floor.id)
+    g._show_item_comparison(floor)
+    assert any('+2' in str(e[0]) for e in g.msg_log.entries[n:])
+    n = len(g.msg_log.entries)
+    p.known_item_ids.discard(floor.id)
     # A worn item whose TYPE is unknown is never compared or named.
     axe = _weapon('steel', 'battleaxe')
     axe.id_level = 0

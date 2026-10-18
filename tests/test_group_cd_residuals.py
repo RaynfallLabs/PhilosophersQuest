@@ -107,14 +107,16 @@ def test_cursed_identify_triggers_amnesia():
 
 
 def test_amnesia_helper_resets_id_level():
-    """_scroll_identify_amnesia must drop id_level and discard from
-    known_item_ids."""
+    """_scroll_identify_amnesia forgets a KIND (_forget_kind): it must drop
+    id_level and discard from known_item_ids."""
     from game_magic import MagicMixin
     src = inspect.getsource(MagicMixin._scroll_identify_amnesia)
-    assert 'id_level = 0' in src
-    assert 'known_item_ids.discard' in src
+    assert '_forget_kind' in src
+    forget = inspect.getsource(MagicMixin._forget_kind)
+    assert 'id_level = 0' in forget
+    assert 'known_item_ids.discard' in forget
     # Never brick the Shard — that would lock the player out of ID.
-    assert 'philosophers_shard' in src
+    assert 'philosophers_shard' in inspect.getsource(MagicMixin._forgettable)
 
 
 # ---------------------------------------------------------------------------

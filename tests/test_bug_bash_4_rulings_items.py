@@ -127,10 +127,14 @@ def test_call7_divine_gift_does_not_count_as_the_heros_own_identify():
 # ===================================================================== call 8
 def test_call8_unknown_copies_never_merge_so_the_stack_hides_the_blessing():
     """A new unknown potion joined its stack only when the hidden BUC matched,
-    so 'would not stack' meant 'different blessing'."""
+    so 'would not stack' meant 'different blessing'. (A copy of a KIND the
+    hero knows is fully identified, blessing included, so the rule is about
+    kinds he does not know: the starting kit's are forgotten here.)"""
     g = _game()
     p = g.player
     p.inventory = []
+    for s in ('known_item_ids', 'known_class_ids', 'known_forms', 'known_materials'):
+        getattr(p, s).clear()
     a, b = _potion('heal'), _potion('heal')
     for it in (a, b):
         it.id_level, it.buc_known, it.buc = 0, False, 'uncursed'

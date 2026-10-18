@@ -64,8 +64,8 @@ reporter are small, independent JSON/text siblings. See
 | [combat.md](combat.md) | Chain v2 peak-chain formula, hit resolution, _damage_multiplier, DR bypass tiers | Any combat change |
 | [weapons_and_materials.md](weapons_and_materials.md) | 96 weapons, 11 materials, 149 uniques, chain-passive hooks | Weapon tuning |
 | [monsters.md](monsters.md) | 527 monsters, AI patterns, boss / mini-boss flags, families | Monster add/edit |
-| [items.md](items.md) | Item classes, slots, equip, True Name model, BUC per-instance | Item schema change |
-| [identify_v3.md](identify_v3.md) | One philosophy Q, derived id_tier, True Name, NO masteries (2026-08-06) | Identify flow change |
+| [items.md](items.md) | Item classes, slots, equip, BUC, one identification knows every copy | Item schema change |
+| [identify_v3.md](identify_v3.md) | One philosophy Q, derived id_tier, a known kind fully identifies every copy (2026-10-18), NO masteries | Identify flow change |
 | [containers_lockpick.md](containers_lockpick.md) | Chest tiers, chest_traps.json, Lockpick v3 (1 Q, master pick, traps on fail) | Loot-gate change |
 | [magic.md](magic.md) | Spells, wands, spellbooks, MP, MAGIC_TIER_MULT, dispatch | Spell add/edit |
 | [food_system.md](food_system.md) | Cook v2 (1 Q binary), harvest v4 (1 Q binary), outcome_id, prime_cuts.json, SP soft-boundary | Food flow change |
@@ -112,7 +112,7 @@ the doc wins (and the row is a bug — please update it).
 | "What is the system-change-sweep rule?" | [conventions.md](conventions.md); grep OLD terms across all `src/` in same commit as mechanical change |
 | "Where does help text live?" | [ui.md](ui.md); `game_render._draw_help_screen`, including the new System Rules card |
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |
-| "Why does an item say '(Curse Unknown)'?" | [ui.md](ui.md); `hud_context.hud_item_name` True-Name rule (v2.18 identify-v3 fix) |
+| "Why is a potion I never identified showing its true name and blessing?" | [identify_v3.md](identify_v3.md) §1 top: a known kind fully identifies every copy (`items.is_fully_known`) |
 | "How do mystery altars gate challenges?" | [quests_mysteries.md](quests_mysteries.md); `MYSTERIES` dict in `mystery_system.py` |
 | "Where is karma clamped?" | [karma_prayer.md](karma_prayer.md); `karma.adjust` (`src/karma.py`), −10..+10, +1 per 10-floor block |
 | "What does `plot_locked` do in item JSON?" | [data_schemas.md](data_schemas.md); documentary only — real gate is `min_level: 9999` + custom spawn code |

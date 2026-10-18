@@ -397,7 +397,7 @@ The pre-damage hook (`combat._apply_chain_class_pre_damage`) sets `player._chain
 - **[items](items.md)** — Weapon class, Ammo class, Panoply of Hephaestus `divine_smithing` cap bump, chain-equip armor `chain_bonus` adding a free chain head-start.
 - **[progression](progression.md)** — WIS seconds per math question is THE combat-skill lever. Enchant caps per slot are enforced in `effective_enchant_cap`.
 - **[monsters](monsters.md)** — resistances / weaknesses lists, tags for material.effective_against, `is_boss` for immunities, `dragon_scales` for the DR layer, `drain_heals_self` for vampire family. Multi-tile boss footprint uses `geom.monster_at_tile` so AoE radius checks remain correct against Fafnir's (2,2).
-- **[identify_v3](identify_v3.md)** — identification does NOT gate combat. Unidentified weapons work; the player just sees "Unidentified <true name>" and doesn't know the BUC/enchant. Blessed weapons gain the `holy` damage type at use-site (`combat.py:1050`).
+- **[identify_v3](identify_v3.md)** — identification does NOT gate combat. Unidentified weapons work; the player just sees the weapon's appearance and doesn't know the BUC/enchant until he knows its kind. Blessed weapons gain the `holy` damage type at use-site (`combat.py:1050`).
 
 ## History of major decisions
 

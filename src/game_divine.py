@@ -194,7 +194,8 @@ class DivineMixin:
 
         self.state = STATE_TARGET
         self.add_message(
-            "Observe -- arrow keys to look, TAB to cycle targets, ENTER to examine, ESC to cancel.",
+            "Observe -- arrow keys to look, TAB to cycle targets, ENTER to examine "
+            "(a creature you know opens its Bestiary page), ESC to cancel.",
             'info'
         )
 
@@ -246,13 +247,21 @@ class DivineMixin:
         if m.get('gold_cost', 0) > 0:
             import economy
             _cost = economy.written_gold(m['gold_cost'])
-            # Coin first, then treasure; an altar gives no change.
+            # Coin first, then treasure. Treasure worth more than the tribute
+            # gets change in coin (the lead's ruling, 2026-10-18), as much as
+            # the hero can carry; the rest lies at his feet (_gain_gold).
             _plan = self._pay_gold(_cost, change_purse=0, quiet=True)
             if _plan is None:
                 self.player_gold = max(0, int(self.player_gold) - _cost)
                 self.add_message(f"You offer {_cost:,} gold as tribute.", 'info')
             else:
                 self.add_message(f"You offer {self._payment_words(_plan)} as tribute.", 'info')
+                _change = int(_plan.get('change', 0) or 0)
+                if _change > 0:
+                    self.add_message(f"The altar gives back {_change:,} gold in change.", 'loot')
+                    # His own wealth coming back: not earned. Coin he cannot
+                    # carry spills at his feet (an altar pays no gems).
+                    self._gain_gold(_change, paid=False, earned=False)
 
         # Consume key item (if any; not cauldron food, not sisyphus boulder)
         if m['key_item'] is not None and altar.mystery_id not in ('cauldron', 'sisyphus'):
@@ -867,9 +876,8 @@ class DivineMixin:
             self.add_message("The throne's enchantment heals your wounds!", 'success')
         elif chain == 3:
             count = 0
-            for item in self.player.inventory:
-                if not getattr(item, 'identified', True) \
-                        or int(getattr(item, 'id_level', 5) or 0) < 5:
+            for item in list(self.player.inventory):
+                if self._needs_identify(item):
                     # A real identification. Setting `identified` alone gives
                     # id level 4, and names need 5: "N items identified!"
                     # left every one still reading "Unidentified".

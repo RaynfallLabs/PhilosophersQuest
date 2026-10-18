@@ -214,7 +214,7 @@ class CombatMixin:
             self.target_cursor_y = py
 
         self.state = STATE_TARGET
-        weapon_name = weapon.name if weapon else "fists"
+        weapon_name = self._bare_name(weapon) if weapon else "fists"
         if candidates:
             self.add_message(
                 f"Melee targeting with {weapon_name} -- arrow keys to aim, TAB to cycle, ENTER to strike, ESC to cancel.",
@@ -284,7 +284,14 @@ class CombatMixin:
         """Enter targeting mode for throwing an item (potion, weapon, artifact).
         The arg name is legacy — the item is generic. Weapon items get their
         class-specific throw range; potions/artifacts use the dagger-tier
-        fallback via `_get_throw_range(None)`."""
+        fallback via `_get_throw_range(None)`. A potion that may not be
+        thrown (the Draught of Mimir's Well) is refused here too."""
+        from items import can_be_thrown
+        if not can_be_thrown(potion):
+            self.add_message(f"You will not throw the {self._bare_name(potion)}: "
+                             "it is a fortune to drink, not to break.", 'warning')
+            self.state = STATE_PLAYER
+            return
         self._throw_targeting = True
         self._melee_targeting = False
         self._throw_potion = potion
@@ -416,8 +423,8 @@ class CombatMixin:
                     "Thunder mutters a long way off, and stops. "
                     "The altar wanted something else.", 'info')
 
+        display = self._bare_name(weapon)          # as the hero knows it
         self.player.remove_from_inventory(weapon)
-        display = weapon.name
         dmg = self._get_weapon_throw_damage(weapon)
         break_chance = self._get_weapon_break_chance(weapon)
 
@@ -1931,6 +1938,13 @@ class CombatMixin:
                 f"You see {monster.name} ({condition}).", 'info'
             )
             found = True
+        # A creature the hero can see AND already knows (it has a Bestiary
+        # page) opens that page; an unknown one keeps the plain look. An
+        # invisible creature he cannot see, or a mimic still in disguise, is
+        # never ``monster`` here (unseen.py), so its page is never opened.
+        page_kind = None
+        if monster is not None and getattr(monster, 'kind', None) in self._bestiary_known_kinds():
+            page_kind = monster.kind
 
         # Items at cursor
         from items import Container
@@ -1985,6 +1999,8 @@ class CombatMixin:
         # Return to player state — no turn cost
         self.state = STATE_PLAYER
         self._observe_targeting = False
+        if page_kind is not None:
+            self._open_bestiary_page(page_kind)    # Esc returns to play
 
     def _confirm_ranged_target(self):
         """Confirm a ranged shot at the cursor position.

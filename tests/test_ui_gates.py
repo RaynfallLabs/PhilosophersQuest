@@ -788,8 +788,12 @@ def _rows_and_dividers(names, size):
     return out
 
 
+# The quick two-column pickers. Pet feed and heal left them on 2026-10-18 for
+# the Kit / shop's scrolling list beside a detail pane (a pack of more than
+# eight foods seemed to stop at the eighth); the overlap check above still
+# covers them with every other menu.
 PICKER_SCENES = ('menu_quaff', 'menu_throw', 'menu_powers', 'menu_spell', 'menu_wand',
-                 'menu_eat', 'menu_pet_feed', 'menu_pet_heal', 'menu_pet_specials')
+                 'menu_eat', 'menu_pet_specials')
 
 
 @pytest.mark.parametrize('size', ALL_SIZES, ids=lambda z: f"{z[0]}x{z[1]}")

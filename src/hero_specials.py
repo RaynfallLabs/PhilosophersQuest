@@ -566,18 +566,21 @@ def _eff_identify_n(game, special, tier, chain):
     if n <= 0:
         game.add_message("Your mind is empty; nothing comes into focus.", 'info')
         return
-    unknown = [i for i in game.player.inventory
-               if hasattr(i, 'identified') and not i.identified]
+    unknown = [i for i in game.player.inventory if game._needs_identify(i)]
     if not unknown:
         game.add_message("Everything in your pack is already known.", 'info')
         return NOTHING
     random.shuffle(unknown)
-    for it in unknown[:n]:
-        it.identified = True
-        it.id_level = 5
-        it.buc_known = True
-        game.player.known_item_ids.add(it.id)
+    from items import grant_identified
+    done = 0
+    for it in unknown:
+        if done >= n:
+            break
+        if not game._needs_identify(it):
+            continue           # a kind catalogued a moment ago knows this copy too
+        grant_identified(game, it)
         game.add_message(f"Catalogued: {it.name}.", 'success')
+        done += 1
 
 
 def _eff_confuse_visible(game, special, tier, chain):
@@ -727,11 +730,12 @@ def _eff_reveal_floor(game, special, tier, chain):
         for (tx, ty), trap in game.dungeon.traps.items():
             trap['revealed'] = True
     if tier.get('items'):
-        from items import make_fully_known
-        for it in game.ground_items:
-            if hasattr(it, 'identified'):
-                make_fully_known(it)
-                game.player.known_item_ids.add(getattr(it, 'id', ''))
+        # Each unknown thing on the floor is named, and so is its kind
+        # (one identification knows every copy). Corpses keep their own lore.
+        from items import grant_identified
+        for it in list(game.ground_items):
+            if game._needs_identify(it):
+                grant_identified(game, it)
     if tier.get('stairs'):
         from dungeon import STAIRS_DOWN, STAIRS_UP
         tiles = game.dungeon.tiles
@@ -1020,13 +1024,11 @@ def _eff_reveal_radius(game, special, tier, chain):
             trap['revealed'] = True
             revealed_traps += 1
     if id_items:
-        from items import make_fully_known
-        for it in game.ground_items:
-            if not hasattr(it, 'identified'):
-                continue
-            if max(abs(it.x - px), abs(it.y - py)) <= radius and not it.identified:
-                make_fully_known(it)
-                game.player.known_item_ids.add(getattr(it, 'id', ''))
+        from items import grant_identified
+        for it in list(game.ground_items):
+            if (max(abs(it.x - px), abs(it.y - py)) <= radius
+                    and game._needs_identify(it)):
+                grant_identified(game, it)
     game.add_message(
         f"Sherlock deduces. ({revealed_traps} {'trap' if revealed_traps == 1 else 'traps'} "
         f"revealed in radius {radius}).",
