@@ -1108,12 +1108,19 @@ class InputMixin:
         if phase == 'text':
             if key in (pygame.K_RETURN, pygame.K_SPACE):
                 self._npc_show_options()
+            elif key == pygame.K_ESCAPE and enc.get('hostile'):
+                self.add_message("There is no walking away from this.", 'warning')
             elif key == pygame.K_ESCAPE:
                 self._close_npc_encounter(resolved=False)
             return
 
         # ── Phase: OPTIONS (choose 1-4 of the visible options) ───
         if phase == 'options':
+            if key == pygame.K_ESCAPE and enc.get('hostile') and not self._npc_committed():
+                # A hostile scene (the dead come for what is owed) has no
+                # walk-away: one of its choices must be made.
+                self.add_message("There is no walking away from this.", 'warning')
+                return
             if key == pygame.K_ESCAPE:
                 # Before any choice the NPC stays; after one (a 'then:
                 # options' encounter back at its list) it is resolved.

@@ -35,7 +35,12 @@ DOMAINS = frozenset({
 
 _ID_RE = re.compile(r'^[a-z]+(\.[a-z0-9_]+){1,3}$')
 
-OATH_STATUSES = ('open', 'kept', 'broken', 'lapsed', 'released')
+OATH_STATUSES = ('open', 'kept', 'kept_late', 'broken', 'lapsed', 'released')
+# How an open oath ends when its due floor passes: 'silent' lapses it on
+# arrival (0 karma, vice:lapsed); 'callback' leaves it open, because a
+# scheduled callback (the dead coming for the Book of Thoth) or a late
+# keep resolves it instead.
+LAPSE_MODES = ('silent', 'callback')
 PERSON_STATUSES = ('met', 'aided', 'saved', 'lost', 'wronged', 'unmasked', 'spared')
 
 # Condition keys check() understands (section 4.3). The validator rejects any
@@ -256,7 +261,8 @@ def blocks_with(reg: dict, *, tag: str) -> set:
 # ---------------------------------------------------------------- oaths
 
 def swear(reg: dict, oath_id: str, *, to: str, what: str, item_id=None,
-          due_floor=None, floor: int, block: int, turn: int = 0, source: str = ''):
+          due_floor=None, floor: int, block: int, turn: int = 0, source: str = '',
+          lapse_mode: str = 'silent'):
     """Create an open oath and record ``oath.<id>``. A second swear of the
     same id while it is open does nothing and returns the open oath."""
     cur = reg['oaths'].get(oath_id)
@@ -267,7 +273,7 @@ def swear(reg: dict, oath_id: str, *, to: str, what: str, item_id=None,
         'id': oath_id, 'to': to, 'what': what, 'item_id': item_id,
         'made_floor': floor, 'made_block': block, 'made_seq': deed['seq'],
         'due_floor': due_floor, 'status': 'open', 'resolved_floor': None,
-        'source': source,
+        'source': source, 'lapse_mode': lapse_mode if lapse_mode in LAPSE_MODES else 'silent',
     }
     reg['oaths'][oath_id] = oath
     return oath
@@ -292,6 +298,26 @@ def _resolve_oath(reg, oath_id, status, deed_prefix, tags, *, floor, block, turn
 def keep_oath(reg, oath_id, *, floor, block, turn=0) -> bool:
     return _resolve_oath(reg, oath_id, 'kept', 'kept', ['virtue:kept'],
                          floor=floor, block=block, turn=turn)
+
+
+def keep_oath_late(reg, oath_id, *, floor, block, turn=0) -> bool:
+    """Kept, but after the due floor: status ``kept_late``, deed
+    ``kept.<id>`` with payload ``{"late": True}`` and NO virtue tag, so it
+    is 0 karma and counts toward neither 'faithful' nor against it."""
+    o = reg.get('oaths', {}).get(oath_id)
+    if not o or o.get('status') != 'open':
+        return False
+    o['status'] = 'kept_late'
+    o['resolved_floor'] = floor
+    record(reg, f'kept.{oath_id}', floor=floor, block=block, turn=turn,
+           source=o.get('source', ''), payload={'late': True}, engine=True)
+    return True
+
+
+def is_overdue(oath: dict, deepest: int) -> bool:
+    """Past its due floor (the deepest floor reached is beyond it)."""
+    due = (oath or {}).get('due_floor')
+    return due is not None and int(deepest) > int(due)
 
 
 def break_oath(reg, oath_id, *, floor, block, turn=0) -> bool:

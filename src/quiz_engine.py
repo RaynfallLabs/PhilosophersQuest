@@ -156,6 +156,8 @@ class QuizEngine:
         self._timer_modifier: float = 1.0
         self.on_answer = None   # optional callable(is_correct: bool) fired after each answer
         self.on_complete = None  # optional callable(result, mode, subject, correct, wrong) fired once at quiz end
+        self.play_all: bool = False   # see start_quiz
+        self._on_each = None          # per-quiz callable(is_correct, correct, wrong)
 
         self.celebrating: bool = False
         self.celebration_text: str = ''
@@ -209,7 +211,8 @@ class QuizEngine:
                    wisdom: int = 10, timer_modifier: float = 1.0,
                    extra_seconds: int = 0, base_seconds: int | None = None,
                    total_qs: int | None = None, timed: bool | None = None,
-                   celebrate_on_max: bool = False):
+                   celebrate_on_max: bool = False, play_all: bool = False,
+                   on_each=None):
         """
         Start a quiz session.
           threshold     -- for threshold modes: number of correct answers needed.
@@ -235,6 +238,15 @@ class QuizEngine:
                           Divine Intercession (`game_divine.py::_confirm_divine_intercession`)
                           and the Unicorn boon (`game_encounters.py::_start_unicorn_quiz`).
                           See CHAIN_EFFECTS_PLAN Phase 0 (2026-10-03).
+          play_all      -- threshold modes only: a wrong answer does not end the
+                          quiz. Every round up to ``total_qs`` is played
+                          (it still ends the moment the threshold is met),
+                          and an escalator climbs a tier after every round,
+                          won or lost. Senet with a dead prince: three
+                          rounds, win two (ENCOUNTER_STORIES_DRAFT H00).
+          on_each       -- optional callable(is_correct, correct, wrong) fired
+                          after each answer of THIS quiz only (an encounter's
+                          per-miss consequences). Cleared when the quiz ends.
           callback(QuizResult) is called when the quiz ends.
         """
         # Monotonic session id — bumped BEFORE any early return so even an
@@ -293,6 +305,8 @@ class QuizEngine:
         self.total_qs = total_qs if total_qs is not None else math.ceil(threshold * 1.5)
         self.max_chain = max_chain
         self.callback = callback
+        self.play_all = bool(play_all)
+        self._on_each = on_each
         self._timer_modifier = timer_modifier
         self.timed = timed
         if not timed:
@@ -391,6 +405,7 @@ class QuizEngine:
         self.result_timer = self.RESULT_DISPLAY_TIME if is_correct else self.WRONG_DISPLAY_TIME
         if self.on_answer:
             self.on_answer(is_correct)
+        self._fire_on_each(is_correct)
         return is_correct
 
     def update(self, dt: float):
@@ -420,6 +435,7 @@ class QuizEngine:
                         self.score = self.chain
                     if self.on_answer:
                         self.on_answer(False)
+                    self._fire_on_each(False)
 
         elif self.state == QuizState.RESULT:
             self.result_timer -= dt
@@ -574,6 +590,13 @@ class QuizEngine:
                 if self.reroll_available:
                     self.reroll_available = False
                     self.reroll_was_used = True
+                    self._next_question()
+                    return
+                if getattr(self, 'play_all', False) and self.asked_count < self.total_qs:
+                    # Every round is played: a lost round costs what it costs
+                    # (the caller's on_each) and the next one comes.
+                    if mode == QuizMode.ESCALATOR_THRESHOLD:
+                        self._escalate()
                     self._next_question()
                     return
                 self._end(success=self.correct_count >= self.required)
@@ -968,6 +991,17 @@ class QuizEngine:
         self._end(success=True)
         return True
 
+    def _fire_on_each(self, is_correct: bool):
+        hook = getattr(self, '_on_each', None)
+        if hook is None:
+            return
+        try:
+            hook(bool(is_correct), int(self.correct_count),
+                 int(self.asked_count - self.correct_count))
+        except Exception:
+            from game_log import log_error
+            log_error('quiz_engine.on_each: recovered from an error')
+
     def _end(self, success: bool):
         # A finished quiz must not finish twice: a second _end used to re-fire
         # the previous quiz's callback (e.g. a stray ESC re-running a combat
@@ -989,6 +1023,8 @@ class QuizEngine:
             asked=self.asked_count,
         )
         callback, self.callback = self.callback, None
+        self._on_each = None
+        self.play_all = False
         try:
             if self.on_complete:
                 mode_name = self.mode.value if isinstance(self.mode, QuizMode) else str(self.mode)

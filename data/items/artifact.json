@@ -1055,5 +1055,87 @@
     "_meta": {
       "plot_locked": true
     }
+  },
+  "wats_oil_flask": {
+    "name": "Wat's Oil Flask",
+    "symbol": "!",
+    "color": [
+      190,
+      150,
+      70
+    ],
+    "weight": 1.0,
+    "min_level": 0,
+    "identified": false,
+    "id_level": 0,
+    "is_unique": true,
+    "unidentified_name": "a dented flask of lamp oil",
+    "lore": "A dented tin flask of lamp oil, warm from an old man's lap. For sixty years Wat Rowe has lit the seven lamps on the Long Stair so that pilgrims can see their feet. His knees will do six. The seventh lamp is at the bottom, and last winter two pilgrims fell in the dark beneath it. Nobody remembers who lit a lamp. Everybody remembers falling.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "lamplighter_promise",
+      "effects": [
+        "light_the_seventh_lamp"
+      ],
+      "spawn_method": "flavor_encounter_wat_lamplighter"
+    },
+    "_meta": {
+      "plot_locked": true
+    }
+  },
+  "olifant": {
+    "name": "The Olifant",
+    "symbol": "(",
+    "color": [
+      235,
+      225,
+      200
+    ],
+    "weight": 3.0,
+    "min_level": 0,
+    "identified": false,
+    "id_level": 0,
+    "is_unique": true,
+    "unidentified_name": "a great ivory horn bound in gold",
+    "lore": "Roland's horn, carved from one elephant's tusk and bound in gold. At Roncevaux his friend Oliver begged him three times to blow it and call Charlemagne back to save the rear guard, and three times Roland was too proud. When at last he blew it, he blew so hard that his temples burst, and the army came too late. There is a crack along the mouthpiece. It still sounds. He asked for it to be blown at the last gate, so the rear guard is remembered.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "roland_promise",
+      "effects": [
+        "blow_it_at_the_last_gate"
+      ],
+      "spawn_method": "flavor_encounter_rolands_horn"
+    },
+    "_meta": {
+      "plot_locked": true
+    }
+  },
+  "raphaels_gall": {
+    "name": "Raphael's Gall",
+    "symbol": "*",
+    "color": [
+      120,
+      160,
+      90
+    ],
+    "weight": 0.1,
+    "min_level": 0,
+    "identified": false,
+    "id_level": 0,
+    "is_unique": true,
+    "cures_blindness_once": true,
+    "unidentified_name": "a fish's gall wrapped in a leaf",
+    "lore": "In the Book of Tobit, the archangel Raphael walked with young Tobias to Media and back under the name Azarias, and taught him what to do with the fish that jumped at him from the Tigris. Its heart and liver, burned, drove off a demon. Its gall, put on old Tobit's eyes, gave him back his sight. This is the gall, still in its leaf. The first time your eyes go dark, it is used up, and they do not.",
+    "special_properties": {
+      "identified": true,
+      "plot_role": "tobit_gift",
+      "effects": [
+        "cures_blindness_once"
+      ],
+      "spawn_method": "flavor_encounter_azarias"
+    },
+    "_meta": {
+      "plot_locked": true
+    }
   }
 }

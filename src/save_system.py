@@ -289,6 +289,8 @@ def save_game(game) -> bool:
             '_emberpup': getattr(game, '_emberpup', None),
             # The Black Knight: his floor, placed yet, the draw, his sword.
             '_black_knight': getattr(game, '_black_knight', None),
+            # Setne's Tomb: its floor, placed yet, sealed for good, the room.
+            '_setne': getattr(game, '_setne', None),
             # Chronicle & Lore Hints (Encyclopedia tabs)
             '_chronicle': getattr(game, '_chronicle', []),
             '_recalled_hints': getattr(game, '_recalled_hints', []),

@@ -4,11 +4,16 @@
   "road_enabled": false,
   "block_cap": 1,
   "constancy_cap": 2,
+  "run_start_schedule_doc": "Callbacks placed when a run begins, whatever the hero does (game_road._schedule_run_start). Skipped while the encounter is not in the data. The Gate (C18) reads the people met on the way down; it never touches the floor 99 Judgment.",
+  "run_start_schedule": [
+    {"encounter": "flv_the_gate", "floors": [94, 98]}
+  ],
   "reward_value": {
     "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts.",
     "gold":             {"amount": 0.1},
     "gold_pct":         {"amount": 1},
-    "specific_item":    {"flat": 6},
+    "gold_pct_loss":    {"amount": -1},
+    "specific_item":    {"flat": 6, "items": {"book_of_thoth": 50, "green_girdle": 12, "azaraels_brand": 12, "locust_charm": 10, "black_string_bracelet": 10, "brass_wardens_cog": 8, "brennans_sword": 8}},
     "random_weapon":    {"count": 5},
     "random_armor":     {"count": 5},
     "random_shield":    {"count": 5},
@@ -19,7 +24,7 @@
     "random_food":      {"count": 1},
     "random_item":      {"flat": 3},
     "stat":             {"amount": 15},
-    "effect":           {"duration": 0.05},
+    "effect":           {"duration": 0.05, "floors": 1},
     "hp_restore":       {"amount": 0.1},
     "sp_restore":       {"amount": 0.1},
     "mp_restore":       {"amount": 0.1},
