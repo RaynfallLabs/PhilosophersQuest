@@ -480,7 +480,10 @@ def _stocked(kind, floor, n=600):
     got = Counter()
     for s in range(n):
         for it in traders.build_stock(defn, floor, random.Random(s)):
-            got[it.id] += 1
+            # only the spheres: the rare deep ware (the Draught of Mimir's
+            # Well) can also land on the sure shelf
+            if 'sphere' in it.id:
+                got[it.id] += 1
     return got
 
 
