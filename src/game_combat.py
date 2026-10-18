@@ -2433,8 +2433,11 @@ class CombatMixin:
                     msg += f" {the_name(monster)} is bleeding!"
                 if knocked and not killed:
                     from combat import apply_knockback
-                    apply_knockback(self.player, monster, self.dungeon, self.monsters)
-                    msg += f" {the_name(monster)} is knocked back!"
+                    _was = (monster.x, monster.y)
+                    apply_knockback(self.player, monster, self.dungeon, self.monsters,
+                                    occupied=self._occupants())
+                    if (monster.x, monster.y) != _was:
+                        msg += f" {the_name(monster)} is knocked back!"
                 if kwargs.get('poisoned'):
                     msg += f" {the_name(monster)} is poisoned!"
                 if kwargs.get('burned'):
@@ -3385,8 +3388,10 @@ class CombatMixin:
                 continue
 
             # Pet AI turn
+            # (escorts are bodies too: a pet never steps onto one, PET-05)
             result = (None if pet is rescuer else
-                      pet.take_turn(self.player, self.dungeon, self.monsters, self.pets, self.ground_items))
+                      pet.take_turn(self.player, self.dungeon, self.monsters,
+                                    list(self.pets) + self._escorts_here(), self.ground_items))
             if result:
                 action = result[0] if isinstance(result, tuple) else None
                 # Unicorn pet returns ('unicorn_actions', [...]) instead of combat

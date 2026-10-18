@@ -2068,8 +2068,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Place deep-lore items on their designated levels (once per run)
         self._maybe_place_lore_items(dungeon, new_level)
 
-        # Reposition pets near player on floor change (spread to adjacent tiles)
-        _pet_placed = set()
+        # Reposition pets near player on floor change (spread to adjacent tiles;
+        # never onto an escort, who is already set beside him: PET-05)
+        _pet_placed = {(e.x, e.y) for e in self._escorts_here()}
         for pet in self.pets:
             if not pet.alive:
                 continue
@@ -4876,8 +4877,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if new_monsters:
             m = new_monsters[0]
             # Never on the hero (the callers pass his own tile) or a pet.
-            _busy = {(self.player.x, self.player.y)}
-            _busy |= {(p.x, p.y) for p in getattr(self, 'pets', []) if getattr(p, 'alive', False)}
+            _busy = self._occupants()           # the hero, pets and escorts (PET-05)
             for dx2 in range(-2, 3):
                 for dy2 in range(-2, 3):
                     nx2, ny2 = x + dx2, y + dy2
@@ -4903,14 +4903,16 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # not "The Agamemnon hits you")
         m.name = _ha_rng.choice(names)
         m.proper_noun = True
-        # Place near the player (search a 4-tile radius)
+        # Place near the player (search a 4-tile radius), never on him, a pet
+        # or an escort (INT-11)
         px, py = self.player.x, self.player.y
+        _busy = self._occupants()
         for dx in range(-4, 5):
             for dy in range(-4, 5):
                 if abs(dx) + abs(dy) > 5:
                     continue
                 nx, ny = px + dx, py + dy
-                if self.dungeon.is_walkable(nx, ny) and \
+                if self.dungeon.is_walkable(nx, ny) and (nx, ny) not in _busy and \
                         not any(om.alive and om.x == nx and om.y == ny for om in self.monsters):
                     m.x, m.y = nx, ny
                     self.monsters.append(m)
@@ -5772,8 +5774,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Clear the quirk counter so a second Duck (impossible in
         # normal play, but defensive) starts at 0.
         self.player.quirk_progress.pop('duck_of_doom_turns', None)
-        # Pet spawns on player's tile (player can step away next turn).
-        pet = Pet('duck_of_doom', self.player.x, self.player.y)
+        # It hops down onto a free tile beside him, never his own (PET-12).
+        _spot = self._escort_tile_near_hero() or (self.player.x, self.player.y)
+        pet = Pet('duck_of_doom', *_spot)
         # Late-pickup XP grant so a duck hatched on deep floors (typical:
         # F20+, given the 2026-turn incubation) isn't combat-useless at L1.
         # Mirrors normal-pet late-pickup scaling in pet_system.

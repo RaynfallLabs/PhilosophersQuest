@@ -1558,10 +1558,11 @@ class MagicMixin:
             # Bosses CAN be teleported — they stay aggro'd and come back
             target_m = self._nearest_visible_monster()
             if target_m:
+                _bodies = self._occupants()
                 floors = [(x, y) for y in range(self.dungeon.height)
                           for x in range(self.dungeon.width)
                           if self.dungeon.is_walkable(x, y)
-                          and (x, y) != (self.player.x, self.player.y)
+                          and (x, y) not in _bodies          # hero, pets, escorts (INT-11)
                           and not monster_at_tile(self.monsters, x, y) is not None]
                 floors = self._teleport_monster_landings(target_m, floors)
                 if floors:
@@ -1622,7 +1623,7 @@ class MagicMixin:
             for dx in range(-2, 3):
                 for dy in range(-2, 3):
                     nx, ny = px + dx, py + dy
-                    if (nx, ny) == (px, py):
+                    if (nx, ny) in self._occupants():      # hero, pets, escorts (PET-05)
                         continue
                     if not self.dungeon.is_walkable(nx, ny):
                         continue
@@ -1779,7 +1780,7 @@ class MagicMixin:
             for dx in range(-2, 3):
                 for dy in range(-2, 3):
                     nx, ny = px + dx, py + dy
-                    if (nx, ny) == (px, py): continue
+                    if (nx, ny) in self._occupants(): continue   # hero, pets, escorts
                     if not self.dungeon.is_walkable(nx, ny): continue
                     if monster_at_tile(self.monsters, nx, ny) is not None: continue
                     species = random_species()

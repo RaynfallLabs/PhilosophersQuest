@@ -2297,8 +2297,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
     )
 
 
-def apply_knockback(player, monster, dungeon, monsters=None):
-    """Push monster one tile away from the player. No-ops if tile is blocked or occupied."""
+def apply_knockback(player, monster, dungeon, monsters=None, occupied=None):
+    """Push monster one tile away from the player. No-ops if tile is blocked or occupied.
+    ``occupied``: other bodies' tiles (pets, escorts: Game._occupants()), INT-11."""
     dx = monster.x - player.x
     dy = monster.y - player.y
     # Normalize to direction
@@ -2309,6 +2310,8 @@ def apply_knockback(player, monster, dungeon, monsters=None):
         return
     if monsters and any(m is not monster and m.alive and is_at_tile(m, tx, ty)
                         for m in monsters):
+        return
+    if occupied and (tx, ty) in occupied:
         return
     monster.x, monster.y = tx, ty
 
