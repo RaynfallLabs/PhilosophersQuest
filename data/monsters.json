@@ -29190,5 +29190,372 @@
     },
     "lore": "A knight in black armour who has taken it upon himself to guard one small stone bridge, for no reason anyone has ever got out of him. He does not move from it and he does not admit to losing. Travellers who simply walk round by the other passage report that he shouts after them for some time. Those who fight him report that he shouts rather more.",
     "frequency": 0
+  },
+  "neferkaptah_risen": {
+    "name": "Neferkaptah",
+    "proper_noun": true,
+    "symbol": "M",
+    "color": [
+      200,
+      170,
+      90
+    ],
+    "hp": "520d10+1450",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": -11,
+    "peak_floor": 68,
+    "spread": 9,
+    "peak_weight": 0.0,
+    "min_level": 54,
+    "attacks": [
+      {
+        "name": "River-Cold Grip",
+        "damage": "4d10+20",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "Words of Thoth",
+        "damage": "3d8+18",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.25,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead",
+      "humanoid",
+      "caster"
+    ],
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        600,
+        1200
+      ],
+      "item_chance": 1.0,
+      "item_tier": 4
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "Neferkaptah was a prince of Egypt who wanted to read the language of the gods. He dug the Book of Thoth out of the river at Coptos, from inside six boxes and a serpent that would not die, and the gods took his son and his wife for it on the way home. Then he tied the book to his chest and walked into the Nile after them. Pharaoh buried him at Memphis with the book still on him. He has been dead a very long time, and he still keeps his bargains, and he expects you to keep yours."
+  },
+  "azarael": {
+    "name": "Azarael",
+    "proper_noun": true,
+    "symbol": "&",
+    "color": [
+      200,
+      130,
+      60
+    ],
+    "hp": "640d12+3600",
+    "speed": 11,
+    "ai_pattern": "aggressive",
+    "thac0": -16,
+    "peak_floor": 86,
+    "spread": 6,
+    "peak_weight": 0.0,
+    "min_level": 81,
+    "multi_attack_count": 2,
+    "attacks": [
+      {
+        "name": "Bronze Fist",
+        "damage": "5d10+30",
+        "type": "blunt"
+      },
+      {
+        "name": "Furnace Breath",
+        "damage": "4d8+20",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon",
+      "evil"
+    ],
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        900,
+        1800
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "Azarael was one of the Powers, the third rank of angels, and he fell with Lucifer. Saint Michael chained him on a floor of the deep to guard nothing, which was the punishment. He has had centuries to practise sounding reasonable, and he is very good at it. Out of his chains he stops being reasonable. His skin is bronze from the inside, like a furnace door."
+  },
+  "locust_cultist": {
+    "name": "Locust cultist",
+    "symbol": "p",
+    "color": [
+      90,
+      80,
+      60
+    ],
+    "hp": "360d10+1900",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": -14,
+    "peak_floor": 86,
+    "spread": 9,
+    "peak_weight": 0.0,
+    "min_level": 80,
+    "attacks": [
+      {
+        "name": "Locust Spear",
+        "damage": "5d8+24",
+        "type": "pierce"
+      },
+      {
+        "name": "Black Shield Bash",
+        "damage": "4d8+20",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        120,
+        340
+      ],
+      "item_chance": 0.5,
+      "item_tier": 5
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "The Cult of the Locust holds the last roads down to the Pit for the Destroyer, whose name is Abaddon in Hebrew and Apollyon in Greek. Its soldiers carry black shields and say the words at every checkpoint: 'The Destroyer is merciful.' Most of them stopped believing it years ago. They say it anyway, and they make everyone else say it, because a lie everyone repeats is a wall nobody has to build."
+  },
+  "locust_herald": {
+    "name": "Locust herald",
+    "symbol": "p",
+    "color": [
+      130,
+      110,
+      70
+    ],
+    "hp": "120d10+600",
+    "speed": 11,
+    "ai_pattern": "aggressive",
+    "thac0": -12,
+    "peak_floor": 88,
+    "spread": 9,
+    "peak_weight": 0.0,
+    "min_level": 80,
+    "attacks": [
+      {
+        "name": "Herald's Knife",
+        "damage": "3d8+15",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        60,
+        160
+      ],
+      "item_chance": 0.4,
+      "item_tier": 4
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "Heralds carry the Locust cult's orders between its checkpoints, and its lies to everyone else. They travel light, talk well and fight badly, which is the right way round for a herald. A herald who tells you he has deserted may even mean it, this week."
+  },
+  "villager_mob": {
+    "name": "angry villager",
+    "symbol": "p",
+    "color": [
+      150,
+      120,
+      90
+    ],
+    "hp": "40d10+120",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 4,
+    "peak_floor": 45,
+    "spread": 12,
+    "peak_weight": 0.0,
+    "min_level": 31,
+    "pack": true,
+    "attacks": [
+      {
+        "name": "Pitchfork",
+        "damage": "2d6+8",
+        "type": "pierce"
+      },
+      {
+        "name": "Thrown Stone",
+        "damage": "1d8+6",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        2,
+        20
+      ],
+      "item_chance": 0.05,
+      "item_tier": 1
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "In 1645 and 1646 Matthew Hopkins called himself Witchfinder General and toured the villages of eastern England. Around a hundred people were hanged on his word. He could not have done it alone: every hanging had a crowd, and the crowd was made of ordinary people who were frightened, tired and sure. One villager with a pitchfork is a farmer. Twenty is something else."
+  },
+  "palace_guard": {
+    "name": "palace guard",
+    "symbol": "p",
+    "color": [
+      170,
+      150,
+      110
+    ],
+    "hp": "95d10+260",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": 1,
+    "peak_floor": 42,
+    "spread": 9,
+    "peak_weight": 0.0,
+    "min_level": 31,
+    "attacks": [
+      {
+        "name": "Spear Thrust",
+        "damage": "2d8+14",
+        "type": "pierce"
+      },
+      {
+        "name": "Shield Push",
+        "damage": "2d4+9",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.15,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        30,
+        90
+      ],
+      "item_chance": 0.2,
+      "item_tier": 3
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "Dionysius, tyrant of Syracuse, was so afraid of being murdered that he had his own daughters shave him, and later took the razors away from them too. Cicero says he kept a bodyguard of foreign soldiers around the palace night and day. They were well paid, well armed and trusted with nothing. A tyrant's guard comes when a bell rings and does not ask who rang it."
+  },
+  "morrow": {
+    "name": "Morrow",
+    "proper_noun": true,
+    "symbol": "p",
+    "color": [
+      110,
+      90,
+      120
+    ],
+    "hp": "70d8+80",
+    "speed": 11,
+    "ai_pattern": "aggressive",
+    "thac0": 5,
+    "peak_floor": 29,
+    "spread": 6,
+    "peak_weight": 0.0,
+    "min_level": 24,
+    "attacks": [
+      {
+        "name": "Hidden Knife",
+        "damage": "2d6+7",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "Stolen Prayer",
+        "damage": "1d8+6",
+        "type": "magic"
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid",
+      "cultist"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        40,
+        120
+      ],
+      "item_chance": 0.4,
+      "item_tier": 3
+    },
+    "frequency": 0,
+    "quest_only": true,
+    "lore": "Morrow is an acolyte of the Cult of the Locust who was caught in a captured priest's robe and chained beside the priest. He knows the prayers well enough to fool a stranger who does not know them better. He has been free for a while now, and he has been saving one of those prayers for whoever let him out."
   }
 }
