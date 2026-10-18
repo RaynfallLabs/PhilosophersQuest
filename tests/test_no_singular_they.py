@@ -151,31 +151,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'trivia.json', 'every magazine cover called their'): 'their = fans and magazine covers',
 }
 
-# Grammar-bank questions whose SUBJECT is singular they: they teach it as
-# accepted usage, so rewriting them changes what the question teaches and
-# which answer is keyed. They wait on Brandon's decision. Pinned to the
-# grammar bank; this list may only shrink.
-_ST = 'teaches singular they as accepted usage'
-PENDING_GRAMMAR_DECISION: dict[str, str] = {
-    'singular THEY has been standard English since Shakespeare': _ST,
-    "'singular they is ungrammatical'": 'zombie-rule question about singular they',
-    'Someone left theirs umbrella': 'distractor in the singular-they umbrella question',
-    'Someone left their umbrella by the door.': _ST,
-    "'singular they is wrong' rule": 'zombie-rule question about singular they',
-    'Singular THEY was standard in respectable English literature': _ST,
-    'every body began to feel their own consequence': "Austen quotation in the singular-they question",
-    'SINGULAR THEY is accepted by AP Stylebook': _ST,
-    'Singular THEY has been the natural gender-neutral English pronoun': _ST,
-    'Singular THEIR/THEY was used by Chaucer': _ST,
-    'singular THEY is accepted for indefinite pronouns': _ST,
-    "'Everyone raised their hand.'": _ST,
-    'Everyone must bring their notebook, so they can take notes.': 'pronoun-agreement example sentence',
-    'to bring their own materials.': "'every student ... their' agreement question",
-    "a singular pronoun like 'everyone' with 'their'": _ST,
-    'their own lunch.': "'everyone ... their' verb-agreement question",
-}
-
-
 def _json_strings():
     for fp in sorted(DATA.rglob('*.json')):
         if '_pruned' in fp.parts:
@@ -217,9 +192,7 @@ def _all_strings():
 
 
 def _allowed(rel: str, text: str) -> bool:
-    if any(rel == f and sub in text for (f, sub) in ALLOW):
-        return True
-    return rel == 'data/questions/grammar.json' and any(sub in text for sub in PENDING_GRAMMAR_DECISION)
+    return any(rel == f and sub in text for (f, sub) in ALLOW)
 
 
 def test_no_mechanical_singular_they():
@@ -241,14 +214,11 @@ def test_allow_lists_have_no_stale_entries():
         if find_singular_they(text):
             flagged.setdefault(rel, []).append(text)
     stale = [k for k in ALLOW if not any(k[1] in t for t in flagged.get(k[0], []))]
-    stale += [k for k in PENDING_GRAMMAR_DECISION
-              if not any(k in t for t in flagged.get('data/questions/grammar.json', []))]
     assert not stale, f"stale allow-list entries: {stale}"
 
 
 def test_every_allow_entry_has_a_reason():
     assert all(r.strip() for r in ALLOW.values())
-    assert all(r.strip() for r in PENDING_GRAMMAR_DECISION.values())
 
 
 @pytest.mark.parametrize('sentence', [

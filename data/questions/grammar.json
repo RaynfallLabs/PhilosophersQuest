@@ -4993,27 +4993,27 @@
   },
   {
     "tier": 2,
-    "question": "Which of these sentences follows the rule for words like 'everyone' or 'anyone'?",
-    "answer": "Everyone has to bring their own lunch.",
+    "question": "'Everyone ___ to bring ___ own lunch.' Which pair follows the rule for words like 'everyone' and 'anyone'?",
+    "answer": "has ... his",
     "choices": [
-      "Everyone has to bring their own lunch.",
-      "Everyone have to bring their own lunch.",
-      "Everyone were bringing their own lunch.",
-      "Everyone are bringing their own lunch."
+      "has ... his",
+      "have ... his",
+      "has ... their",
+      "have ... their"
     ],
-    "context": "Everyone HAS (singular verb). Modern usage accepts singular THEIR for the pronoun (see singular they topic) but the verb agreement stays singular."
+    "context": "EVERYONE is grammatically singular, even though it means a whole crowd. So the verb is singular (HAS) and so is the pronoun (HIS): 'Everyone has to bring his own lunch.' A singular HAS with a plural THEIR breaks agreement halfway through the sentence. To talk about the crowd as a crowd, go plural all the way: 'All the students have to bring their own lunches.'"
   },
   {
     "tier": 3,
-    "question": "'Someone left ___ umbrella by the door.' Which possessive is now standard?",
-    "answer": "their (singular they, widely accepted)",
+    "question": "'Someone left ___ umbrella by the door.' Which choice fills the blank and gives the right reason?",
+    "answer": "his -- SOMEONE names one person, so the pronoun is singular",
     "choices": [
-      "their (singular they, widely accepted)",
-      "his or her (formal but wordy)",
-      "its",
-      "them"
+      "his -- SOMEONE names one person, so the pronoun is singular",
+      "their -- SOMEONE could be anybody, so the pronoun is plural",
+      "its -- a person whose name is unknown is called IT",
+      "them -- the object form belongs before a noun"
     ],
-    "context": "Singular THEIR is accepted by AP (2017), Chicago 5.48, Merriam-Webster (2019 Word of the Year). The verb stays singular (someone LEFT); only the pronoun goes plural. Both forms are correct."
+    "context": "SOMEONE, SOMEBODY, ANYONE and NOBODY all point to a single person, so careful writing gives them a singular pronoun: 'Someone left his umbrella by the door.' Not knowing WHO left it does not turn one person into several. A person is never IT, and THEM is an object form that cannot stand before a noun. For a mixed crowd, 'his or her' is also correct, but use it sparingly."
   },
   {
     "tier": 3,
@@ -5029,27 +5029,27 @@
   },
   {
     "tier": 4,
-    "question": "'Each of the runners ___ their best.' Which verb?",
-    "answer": "does (each is singular subject; 'of the runners' is prepositional)",
+    "question": "'Each of the hundred runners in the race ___ his best.' Which verb form agrees with the subject?",
+    "answer": "does",
     "choices": [
-      "does (each is singular subject; 'of the runners' is prepositional)",
+      "does",
       "do",
-      "did",
-      "were"
+      "have done",
+      "were doing"
     ],
-    "context": "EACH is grammatically singular. The prepositional phrase 'of the runners' does NOT govern the verb. 'Each does'; 'each has'; 'each is'. The plural pronoun 'their' is a separate (accepted) choice."
+    "context": "The subject is EACH, and EACH is singular, so the verb is singular: 'Each of the hundred runners in the race does his best.' The phrase 'of the hundred runners in the race' sits between subject and verb, but it never changes the subject; EACH picks out one runner at a time. The pronoun follows the same rule, which is why it is HIS."
   },
   {
     "tier": 5,
-    "question": "Which sentence correctly pairs a singular pronoun like 'everyone' with 'their'?",
-    "answer": "Every student needs to bring their own materials.",
+    "question": "'All of the campers packed ___ sleeping bags, but each of them forgot ___ flashlight.' Which pair fills the blanks?",
+    "answer": "their ... his",
     "choices": [
-      "Every student needs to bring their own materials.",
-      "Every student need to bring their own materials.",
-      "Every students needs to bring their own materials.",
-      "Every student needs to bring his own materials only."
+      "their ... his",
+      "his ... their",
+      "their ... their",
+      "his ... his"
     ],
-    "context": "'Every student' takes singular verb NEEDS. Singular THEIR is now accepted for gender-neutral reference. Both agreement rules honoured. The 'his own' option excludes half the classroom."
+    "context": "ALL OF THE CAMPERS is plural, so THEIR (and plural sleeping BAGS). EACH OF THEM picks out the campers one at a time, so it is singular: HIS flashlight. Same campers, two different numbers -- the pronoun follows the word that leads the subject, ALL or EACH, not the crowd you picture."
   },
   {
     "tier": 1,
@@ -7837,51 +7837,51 @@
   },
   {
     "tier": 1,
-    "question": "'Each student must bring ___ own materials.' Which possessive is now widely accepted?",
-    "answer": "their (singular THEY, accepted by AP, Chicago, Merriam-Webster)",
+    "question": "'Every dog in the shelter wagged ___ tail.' Which word belongs in the blank?",
+    "answer": "its",
     "choices": [
-      "their (singular THEY, accepted by AP, Chicago, Merriam-Webster)",
       "its",
-      "his (excludes half the class)",
-      "hers (excludes half the class)"
+      "it's",
+      "their",
+      "theirs"
     ],
-    "context": "Singular THEIR after singular indefinite pronouns is accepted in modern edited English. The verb ('must bring') stays singular; only the possessive goes plural."
+    "context": "EVERY DOG means one dog at a time, so the pronoun is singular, and an animal is IT: 'Every dog in the shelter wagged its tail.' With THEIR, the sentence would hand the whole shelter one shared tail. IT'S means 'it is,' so it cannot show ownership. To talk about the pack all at once, go plural: 'All the dogs wagged their tails.'"
   },
   {
     "tier": 2,
-    "question": "'Neither of the girls remembered ___ book.' Which possessive?",
-    "answer": "both her and their are widely accepted",
+    "question": "'Neither of the girls remembered ___ book.' Which possessive fits?",
+    "answer": "her",
     "choices": [
-      "her (neither is singular, referring to girls)",
-      "their (accepted alternative for gender-neutral)",
-      "either -- 'her' is more traditional",
-      "both her and their are widely accepted"
+      "her",
+      "their",
+      "hers",
+      "them"
     ],
-    "context": "'Her' matches the singular NEITHER and the gender of 'girls'. 'Their' as singular is also standard. Modern editing accepts both; older editing insists on 'her'."
+    "context": "NEITHER means 'not this one and not that one' -- one girl at a time -- so it is singular, and so is the pronoun: 'Neither of the girls remembered her book.' The plural GIRLS sits inside the phrase 'of the girls' and does not change the subject. With THEIR, the two girls would seem to share a single book. HERS stands alone ('the book is hers') and cannot come before a noun."
   },
   {
     "tier": 2,
     "question": "A pronoun must match its antecedent -- the noun it refers back to. Which sentence has a pronoun-antecedent mismatch?",
     "answer": "The company gave their employees a bonus.",
     "choices": [
-      "Everyone must bring their notebook, so they can take notes.",
+      "Everyone must bring his own notebook to class.",
       "The company gave their employees a bonus.",
       "Neither answer is correct because it is missing detail.",
-      "Each of the runners set their pace."
+      "Each of the runners set his own pace."
     ],
-    "context": "'The company' (singular) → 'its employees', not 'their employees'. This is a common error. 'The company gave its employees a bonus' is the fix in American English."
+    "context": "'The company' is ONE company, so the pronoun is singular: 'The company gave its employees a bonus.' This is a common error, and the fix in American English is ITS. The other three all match: EVERYONE takes HIS, NEITHER ANSWER takes IT, and EACH takes HIS."
   },
   {
     "tier": 3,
-    "question": "'Everyone raised their hand.' Why is this now grammatically accepted?",
-    "answer": "singular THEY is accepted for indefinite pronouns; 'their' is gender-neutral and older than 'his' as the default",
+    "question": "'Everyone raised ___ hand.' In a class of boys and girls, a careful writer may use a paired pronoun here, sparingly. Which pair is correct?",
+    "answer": "his or her",
     "choices": [
-      "singular THEY is accepted for indefinite pronouns; 'their' is gender-neutral and older than 'his' as the default",
-      "grammar rules changed in 2010",
-      "'everyone' has become plural",
-      "the sentence is not accepted"
+      "his or her",
+      "he or she",
+      "him or her",
+      "hers or his"
     ],
-    "context": "Singular THEIR/THEY was used by Chaucer, Shakespeare, and Austen. The 1745 'use HIS as generic' rule was a prescriptive invention. Modern style guides (Chicago 5.48) accept singular THEY."
+    "context": "The blank sits before a noun (HAND), so it needs the possessive form: 'Everyone raised his or her hand.' HE OR SHE is the subject form, HIM OR HER is the object form, and HERS cannot come before a noun. EVERYONE is singular, so plain HIS is the traditional choice; the paired form suits a mixed group but turns clumsy if you repeat it. A plural rewrite also works: 'All the students raised their hands.' What does not work is THEIR on its own, which gives the whole class one giant shared hand."
   },
   {
     "tier": 3,
@@ -7897,15 +7897,15 @@
   },
   {
     "tier": 4,
-    "question": "'Anybody can improve if ___ practises.' Which pronoun matches modern gender-neutral style?",
-    "answer": "they (singular THEY, accepted for indefinite pronouns)",
+    "question": "'Each guest thanked the cooks before ___ left.' The writer means it was the guest who left. Which pronoun says so without confusion?",
+    "answer": "he",
     "choices": [
-      "they (singular THEY, accepted for indefinite pronouns)",
       "he",
-      "she",
-      "one"
+      "they",
+      "him",
+      "them"
     ],
-    "context": "Singular THEY has been the natural gender-neutral English pronoun for centuries. 'Anybody... they' matches modern practice and predates the 18th-century 'generic he' prescription."
+    "context": "EACH GUEST is singular, so the pronoun is HE: 'Each guest thanked the cooks before he left.' A plural pronoun would latch onto the nearest plural noun, THE COOKS, and the sentence would seem to say the kitchen staff walked out. HIM is an object form and cannot be the subject of LEFT. Agreement is not fussiness here; it decides who goes home."
   },
   {
     "tier": 5,
@@ -9781,99 +9781,99 @@
   },
   {
     "tier": 1,
-    "question": "'Each student took ___ seat.' Which pronoun is now standard in most style guides?",
-    "answer": "their (singular THEY, gender-neutral)",
+    "question": "A sign at King Arthur's Round Table reads: 'Each knight sits in ___ seat.' Which word keeps all the knights from piling into one chair?",
+    "answer": "his",
     "choices": [
-      "their (singular THEY, gender-neutral)",
-      "his (traditional but exclusive)",
-      "her (only for female-only groups)",
-      "its"
+      "his",
+      "their",
+      "its",
+      "theirs"
     ],
-    "context": "SINGULAR THEY is accepted by AP Stylebook (2017), Chicago Manual of Style 5.48 (2017), and Merriam-Webster (2019 Word of the Year). The 19th-century ban on singular 'they' was a prescriptive invention."
+    "context": "EACH KNIGHT means one knight at a time, so the pronoun is singular: 'Each knight sits in his seat.' THEIR would give the whole fellowship one seat to share. ITS is for things and animals, and THEIRS stands alone ('the seats are theirs'), never before a noun."
   },
   {
     "tier": 2,
-    "question": "Singular they shows up in the 1390s writing of which author, proving it isn't modern?",
-    "answer": "Geoffrey Chaucer ('The Pardoner's Prologue')",
+    "question": "'___ forgot his own lunch on the bus.' Only one of these words can start that sentence, because only one is grammatically singular. Which one?",
+    "answer": "Everybody",
     "choices": [
-      "Geoffrey Chaucer ('The Pardoner's Prologue')",
-      "William Shakespeare only",
-      "Jane Austen only",
-      "modern writers only"
+      "Everybody",
+      "Both",
+      "Several",
+      "Many"
     ],
-    "context": "Chaucer used singular THEY in 'The Pardoner's Prologue' (c. 1390). Shakespeare used it in Comedy of Errors and Hamlet. Jane Austen used it in Pride and Prejudice (1813). Older than Modern English."
+    "context": "EVERYBODY -- like everyone, anyone and nobody -- is grammatically SINGULAR, so it takes HIS: 'Everybody forgot his own lunch on the bus.' BOTH, SEVERAL and MANY are always plural and would need THEIR: 'Many forgot their own lunches.' A handy check: you say 'everybody IS,' but 'many ARE.'"
   },
   {
     "tier": 2,
-    "question": "In this 1813 novel, 'every body began to feel their own consequence' uses singular they. Which novel is it?",
-    "answer": "Pride and Prejudice by Jane Austen",
+    "question": "A note by the phone: 'If anyone calls, tell ___ I'll be back at noon.' Which word belongs in the blank?",
+    "answer": "him",
     "choices": [
-      "Pride and Prejudice by Jane Austen",
-      "Emma by Jane Austen",
-      "Bleak House by Charles Dickens",
-      "Frankenstein by Mary Shelley"
+      "him",
+      "them",
+      "he",
+      "his"
     ],
-    "context": "The famous Austen citation. Singular THEY was standard in respectable English literature for centuries -- it did not need Merriam-Webster's 2019 announcement to be legitimate."
+    "context": "ANYONE points to one caller, so the pronoun is singular. After the verb TELL, the pronoun is an object, so it takes the object form HIM: 'If anyone calls, tell him I'll be back at noon.' HE is the subject form, and HIS shows ownership. THEM is plural and would turn one caller into a crowd."
   },
   {
     "tier": 3,
-    "question": "Who INVENTED the 'singular they is wrong' rule in the 1700s?",
-    "answer": "Anne Fisher, in her 1745 grammar book",
+    "question": "'Each student should check his or her answers before he or she hands in his or her test.' Which revision keeps the agreement and loses the clutter?",
+    "answer": "Students should check their answers before they hand in their tests.",
     "choices": [
-      "Anne Fisher, in her 1745 grammar book",
-      "William Strunk",
-      "H.W. Fowler",
-      "no single person -- it was traditional"
+      "Students should check their answers before they hand in their tests.",
+      "Students should check his answers before he hands in his tests.",
+      "Students should check their answers before they hands in their tests.",
+      "Students should check his or her answers before they hand in their tests."
     ],
-    "context": "Anne Fisher's 'A New Grammar' (1745) was among the first to insist HE should be the default generic pronoun. This prescriptive rule became the schoolroom standard for two centuries -- and is now widely rejected."
+    "context": "Three HIS OR HERs and a HE OR SHE in one sentence are correct but clumsy. The cleanest fix makes the subject plural, so every pronoun can be plural too: 'Students should check their answers before they hand in their tests.' Plain HIS also works with a singular subject: 'Each student should check his answers before he hands in his test.' Use HIS OR HER sparingly -- once, not three times."
   },
   {
     "tier": 3,
-    "question": "Merriam-Webster named which word its 2019 'Word of the Year' to formalise its acceptance?",
-    "answer": "'they' (specifically the singular use)",
+    "question": "'After the big game, everyone on the team was proud of ___.' Which word belongs in the blank?",
+    "answer": "himself",
     "choices": [
-      "'they' (specifically the singular use)",
-      "'literally'",
-      "'ironic'",
-      "'irregardless'"
+      "himself",
+      "themselves",
+      "hisself",
+      "itself"
     ],
-    "context": "Merriam-Webster's 2019 selection cited the surge in searches for the singular they, following its widespread acceptance in style guides and its use as a personal pronoun by nonbinary people."
+    "context": "A REFLEXIVE pronoun (one ending in -SELF) points back to the subject. The subject here is EVERYONE, which is singular, so the reflexive is singular too: 'Everyone on the team was proud of himself.' HISSELF is a dialect form that standard English does not use, and ITSELF is for things and animals. To praise the whole squad at once, go plural: 'The players were proud of themselves.'"
   },
   {
     "tier": 4,
-    "question": "Which sentence uses singular they in a way editors accept?",
-    "answer": "Someone left their umbrella by the door.",
+    "question": "'Neither the sailors nor the captain could find ___ compass.' Which pronoun belongs in the blank?",
+    "answer": "his",
     "choices": [
-      "Someone left their umbrella by the door.",
-      "Someone left theirs umbrella by the door.",
-      "Someone left they umbrella by the door.",
-      "Someone left theirselves umbrella by the door."
+      "his",
+      "their",
+      "its",
+      "theirs"
     ],
-    "context": "SINGULAR THEIR after an indefinite pronoun (someone). Standard in all modern style guides. Note the verb 'left' stays singular; only the pronoun goes plural."
+    "context": "When two subjects are joined by OR or NOR, the pronoun agrees with the NEARER one. The captain stands next to the blank and is one man, so HIS: 'Neither the sailors nor the captain could find his compass.' Flip the order and the plural wins: 'Neither the captain nor the sailors could find their compass.' Many writers put the plural last for exactly that reason -- it sounds smoother."
   },
   {
     "tier": 4,
-    "question": "'A student should bring their book.' vs 'A student should bring his book.' Why is the first the modern default?",
-    "answer": "'his' excludes half the students; 'their' is gender-neutral and historically well-established",
+    "question": "'A student should bring ___ book to class.' Traditional grammar puts HIS in the blank. Why is HIS right?",
+    "answer": "A STUDENT is one person, and a pronoun matches the noun it points back to",
     "choices": [
-      "'his' excludes half the students; 'their' is gender-neutral and historically well-established",
-      "'his' is grammatically wrong",
-      "the sentence should be plural",
-      "there is no meaningful difference"
+      "A STUDENT is one person, and a pronoun matches the noun it points back to",
+      "BOOK is singular, and a pronoun matches the noun that comes after it",
+      "HIS is the only pronoun short enough to sit in front of a noun",
+      "CLASS is singular, so every pronoun in the sentence must be singular"
     ],
-    "context": "Chicago 5.48: 'A revived generic he ... is now sometimes disparaged as sexist.' Singular THEIR handles gender-neutral cases without the exclusion. Both are grammatical; the choice is stylistic and social."
+    "context": "A pronoun agrees with its ANTECEDENT -- the noun it refers back to -- not with whatever noun comes next. Here the antecedent is A STUDENT: one person, so one singular pronoun. By long tradition HIS covers a student of either sex; William Strunk's 1918 guide 'The Elements of Style' told writers to use HE after words like 'each' and 'everybody' unless the person is or must be female. To skip the question entirely, go plural: 'Students should bring their books to class.'"
   },
   {
     "tier": 5,
-    "question": "The zombie rule that 'singular they is ungrammatical' was invented in what century?",
-    "answer": "the 1700s (Anne Fisher 1745)",
+    "question": "Three of these 'rules' are schoolroom superstitions that good writers break all the time. Which one is a REAL rule of standard English?",
+    "answer": "A pronoun must agree in number with the word it refers to",
     "choices": [
-      "the 1700s (Anne Fisher 1745)",
-      "the 1500s (Shakespeare era)",
-      "the 1900s (Strunk era)",
-      "the 2000s (Truss era)"
+      "A pronoun must agree in number with the word it refers to",
+      "Never split an infinitive, as in 'to boldly go'",
+      "Never end a sentence with a preposition",
+      "Never begin a sentence with 'And' or 'But'"
     ],
-    "context": "18th-century prescriptivists wanted English to mimic Latin. The ban on singular THEY dates from Anne Fisher's grammar (1745) and later Lindley Murray. It was a departure FROM Chaucer/Shakespeare/Austen usage."
+    "context": "Pronoun agreement is the real rule: a singular word like EVERYONE or EACH STUDENT takes a singular pronoun ('Everyone did his part'), and a plural word takes a plural one ('All the students did their parts'). The other three were never rules of English grammar at all. They were borrowed from Latin or invented as classroom habits, and good writers from Shakespeare to the makers of Star Trek have broken them freely."
   },
   {
     "tier": 1,
@@ -11233,15 +11233,15 @@
   },
   {
     "tier": 5,
-    "question": "'Somebody left ___ coat in the classroom.' In modern English (accepted by Chicago Manual of Style 17e and Merriam-Webster), which word fills the blank correctly, even though only ONE person left the coat?",
-    "answer": "their -- singular THEY has been standard English since Shakespeare",
+    "question": "'Each player grabbed ___ helmet and ran out ___ onto the field.' Which pair fills the blanks?",
+    "answer": "his ... there",
     "choices": [
-      "their -- singular THEY has been standard English since Shakespeare",
-      "there -- points to the classroom",
-      "they're -- means 'they are'",
-      "his -- always required for a single person"
+      "his ... there",
+      "their ... there",
+      "his ... their",
+      "they're ... their"
     ],
-    "context": "Singular THEIR / THEY / THEM is accepted for a single person of unknown or unspecified gender. The Chicago Manual of Style 17e section 5.48 endorses it; Merriam-Webster's usage note traces the usage back to Shakespeare. Source: Chicago Manual of Style 17e section 5.48."
+    "context": "Blank one shows ownership, and EACH PLAYER means one player at a time, so it takes the singular HIS. Blank two points to a place, so it is THERE, the spelling with HERE inside it. THEIR is the plural possessive; it would fit only a plural subject: 'All the players grabbed their helmets and ran out there.' THEY'RE means 'they are.'"
   },
   {
     "tier": 5,
