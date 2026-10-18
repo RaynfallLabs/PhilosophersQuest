@@ -26,6 +26,7 @@ os.environ.setdefault('SDL_AUDIODRIVER', 'dummy')
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'src'))
 
+import deeds  # noqa: E402
 import pygame  # noqa: E402
 
 pygame.init()
@@ -1015,15 +1016,21 @@ def test_the_lost_girls_pendant_spawns_before_her_and_can_be_returned():
         if _has(g, 'silverlight_pendant'):
             break
         g._pickup()
-    assert _has(g, 'silverlight_pendant')
+    assert _has(g, 'silverlight_pendant'), (
+        'pendant not picked up; on its tile: ',
+        [getattr(i, 'id', i) for i in g.ground_items if (i.x, i.y) == (g.player.x, g.player.y)],
+        _log(g)[-300:])
     assert 'silverlight_pendant' in g._npc_triggered_items
     g._change_level(4, enter_from_top=True)
     girl = [m for m in g.monsters if getattr(m, '_npc_encounter_tag', None) == 'elara_amulet']
-    assert len(girl) == 1
+    assert len(girl) == 1, ('girl count', len(girl), g._npc_encounter_levels.get(4, {}).get('tag'),
+                            sorted(getattr(g, '_encountered_npcs', ()) or ()))
     _clear_floor(g, keep=girl)
     karma = g.karma
     _choose(g, girl[0], pygame.K_1)
-    assert not _has(g, 'silverlight_pendant') and g.karma == karma + 1
+    assert not _has(g, 'silverlight_pendant'), _log(g)[-300:]
+    assert g.karma == karma + 1, ('karma', karma, '->', g.karma,
+                                  deeds.ensure_register(g)['karma']['ledger'][-3:])
 
 
 def test_without_the_pendant_the_lost_girl_never_appears():
