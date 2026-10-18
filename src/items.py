@@ -1467,6 +1467,10 @@ def withheld(item) -> bool:
     item: the hero keeps it whoever asks (bug bash 4 E1, bug bash 5 MON-01)."""
     if getattr(item, 'id', '') in WITHHELD_IDS:
         return True
+    # A bound Soul Sphere holds a companion (Shep, a nicknamed cat): it is
+    # never handed over as payment.
+    if getattr(item, 'bound_pet', None) is not None:
+        return True
     return bool(getattr(item, 'plot_locked', False)
                 or getattr(item, 'is_unique', False)
                 or getattr(item, 'single_copy', False))

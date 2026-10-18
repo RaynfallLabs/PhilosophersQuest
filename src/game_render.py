@@ -6552,10 +6552,13 @@ class RenderMixin:
                 if isinstance(i, Potion)
                 and getattr(i, 'effect', '') in ('heal', 'extra_heal', 'full_heal')
                 and self._item_is_known(i))
+            from pet_system import hatch_source
+            _from = hatch_source(pet)
             details = [
                 (pet.name, FP.GOLD_BRIGHT, self.font_md),
                 (f"HP {pet.hp}/{pet.max_hp}    Level {pet.level}", FP.BODY_TEXT, self.font_sm),
                 (f"XP {pet.xp}/{xp_to}", FP.BODY_TEXT, self.font_sm),
+                *([(f"Hatched From: {_from}", FP.BODY_TEXT, self.font_sm)] if _from else []),
                 (f"Command: {cmd}", FP.CYAN_ACCENT, self.font_sm),
                 *self._pet_rescue_lines(pet),
                 '',

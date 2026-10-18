@@ -5,7 +5,8 @@
 - XP curve: level * 20
 - Passive XP gain: 1 XP every 3 turns
 - Kill XP: scaled by monster max_hp
-- Late-pickup catch-up: pets hatched on deeper floors start with bonus XP
+- Starting level: a pet starts at the level it is given (its sphere's, 1, 25
+  or 55); the floor-based late-pickup grant was removed on 2026-10-18
 - Unicorn trap detection sets the right field (revealed, not detected)
 """
 import os
@@ -153,33 +154,24 @@ def test_kill_xp_levels_pet_with_repeated_kills():
 
 
 # ---------------------------------------------------------------------------
-# Late-pickup catch-up
+# Starting level: from the sphere, never the floor (2026-10-18). The old
+# late-pickup grant (floor x 50 XP) broke LORE NOT FLOOR and is gone.
 # ---------------------------------------------------------------------------
 
-def test_late_pickup_bonus_zero_at_floor_zero():
+def test_the_late_pickup_grant_is_gone():
     from pet_system import Pet
-    p = Pet('fire')
-    p.apply_late_pickup_bonus(0)
-    assert p.xp == 0
-    assert p.level == 1
+    assert not hasattr(Pet, 'apply_late_pickup_bonus')
 
 
-def test_late_pickup_bonus_scales_with_floor():
-    from pet_system import Pet
-    p = Pet('fire')
-    p.apply_late_pickup_bonus(30)   # 30 * 50 = 1500 XP
-    # 1500 XP at level*20 curve: L1→2 (20), L2→3 (40), L3→4 (60), ...
-    # Sum 20+40+...+200 = 20*sum(1..10) = 1100. So L11 with 400 leftover.
-    assert p.level >= 10, f"pet at floor 30 should reach at least L10; got L{p.level}"
-
-
-def test_late_pickup_bonus_capped_below_stage_1():
-    """A pet hatched in the deepest possible spot still has to EARN evolution."""
-    from pet_system import Pet
-    p = Pet('water')
-    p.apply_late_pickup_bonus(99)   # capped at floor * 50 = 4950, but min(4950, 4000) = 4000
-    assert p.stage == 0, "catch-up alone must not push past stage 1"
-    assert p.level < 25, f"catch-up must keep pet below L25 (stage 1); got L{p.level}"
+def test_a_pet_starts_at_the_level_it_is_given_with_that_levels_stats():
+    from pet_system import Pet, growth
+    for level, stage in ((1, 0), (25, 1), (55, 2)):
+        p = Pet('water', level=level)
+        assert (p.level, p.stage, p.xp) == (level, stage, 0)
+        assert p.max_hp == p.hp == growth('health', level)
+        assert p.base_damage == growth('bite', level)
+    assert Pet('fire').level == 1                    # a newborn by default
+    assert Pet('fire', level=500).level == 100       # clamped to the table
 
 
 # ---------------------------------------------------------------------------

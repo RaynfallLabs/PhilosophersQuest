@@ -540,6 +540,8 @@ The full list (~80 quirks) is in `src/quirk_system.py:1097-1199`. Most appear in
 **Trigger:** Throw a Soul Sphere (`t` key, select sphere, target a monster or empty tile).
 **Mechanic:** A random species (electric/water/plant/fire) Pet is released at the landing tile. The pet starts at L1 (Zappik/Shellkit/Seedling/Emberpup), gains XP from monster kills, evolves at L33 and L66.
 
+*Superseded 2026-10-18: there are now six spheres (Soul, Greater Soul, Master, and three Hearth Spheres that always hold a family pet); the sphere sets the starting level (1, 25 or 55), never the floor; evolution is at L25 and L55. See `docs/systems/pets.md` §12.*
+
 **Hinted by:** T5 *"A young trainer in a red-and-white cap has been seen descending into the dungeon, carrying not weapons but soul spheres."* (hints.json:206)
 
 ## 10.2 Ethereal Unicorn (L21-39 one-time encounter)

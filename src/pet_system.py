@@ -16,8 +16,12 @@ _SPECIES = {
         'color': (255, 230, 50),
         'stages': [
             {'name': 'Zappik',       'symbol': 'z', 'msg': 'A tiny yellow rodent crackles to life!'},
-            {'name': 'Voltpaw',      'symbol': 'Z', 'msg': '{old} surges with energy and evolves into Voltpaw!'},
-            {'name': 'Thundertail',  'symbol': 'Z', 'msg': '{old} roars with lightning — it has become Thundertail!'},
+            {'name': 'Voltpaw',      'symbol': 'Z', 'msg': '{old} surges with energy and evolves into Voltpaw!',
+             'hatch_msg': 'The sphere bursts in a crackle of sparks and out leaps Voltpaw, already grown, '
+                          'its fur standing on end with lightning!'},
+            {'name': 'Thundertail',  'symbol': 'Z', 'msg': '{old} roars with lightning — it has become Thundertail!',
+             'hatch_msg': 'Thunder booms inside the sphere and Thundertail strides out of the flash, '
+                          'full-grown and roaring with lightning!'},
         ],
         'specials': [
             {
@@ -44,8 +48,12 @@ _SPECIES = {
         'color': (80, 160, 255),
         'stages': [
             {'name': 'Shellkit',     'symbol': 's', 'msg': 'A small blue turtle blinks into existence!'},
-            {'name': 'Tideshell',    'symbol': 'S', 'msg': '{old} hardens its shell and evolves into Tideshell!'},
-            {'name': 'Torrentoise',  'symbol': 'S', 'msg': '{old} unleashes a tidal surge — it has become Torrentoise!'},
+            {'name': 'Tideshell',    'symbol': 'S', 'msg': '{old} hardens its shell and evolves into Tideshell!',
+             'hatch_msg': 'A wave spills out of the sphere and Tideshell rises from it, '
+                          'its shell already as hard as stone!'},
+            {'name': 'Torrentoise',  'symbol': 'S', 'msg': '{old} unleashes a tidal surge — it has become Torrentoise!',
+             'hatch_msg': 'A tidal surge pours out of the sphere and Torrentoise stands in the middle of it, '
+                          'vast and ancient!'},
         ],
         'specials': [
             {
@@ -74,8 +82,12 @@ _SPECIES = {
         'color': (80, 200, 80),
         'stages': [
             {'name': 'Seedling',     'symbol': 'b', 'msg': 'A squat green creature with a bulb on its back appears!'},
-            {'name': 'Thornback',    'symbol': 'B', 'msg': '{old} blooms with thorns and evolves into Thornback!'},
-            {'name': 'Bloomsaur',    'symbol': 'B', 'msg': '{old} erupts in brilliant flowers — it has become Bloomsaur!'},
+            {'name': 'Thornback',    'symbol': 'B', 'msg': '{old} blooms with thorns and evolves into Thornback!',
+             'hatch_msg': 'Vines burst out of the sphere and Thornback pushes its way out of them, '
+                          'bristling with thorns!'},
+            {'name': 'Bloomsaur',    'symbol': 'B', 'msg': '{old} erupts in brilliant flowers — it has become Bloomsaur!',
+             'hatch_msg': 'The sphere splits like a seed pod and Bloomsaur unfolds out of it '
+                          'in a storm of brilliant flowers!'},
         ],
         'specials': [
             {
@@ -102,8 +114,12 @@ _SPECIES = {
         'color': (255, 80, 40),
         'stages': [
             {'name': 'Emberpup',     'symbol': 'e', 'msg': 'A small red dragon-like creature bursts from the sphere!'},
-            {'name': 'Flamescale',   'symbol': 'E', 'msg': '{old} spreads fiery wings and evolves into Flamescale!'},
-            {'name': 'Infernodrake', 'symbol': 'E', 'msg': '{old} roars with infernal power — it has become Infernodrake!'},
+            {'name': 'Flamescale',   'symbol': 'E', 'msg': '{old} spreads fiery wings and evolves into Flamescale!',
+             'hatch_msg': 'Fire rolls out of the sphere and Flamescale steps from the flames, '
+                          'wings spread, the flame on its tail burning bright!'},
+            {'name': 'Infernodrake', 'symbol': 'E', 'msg': '{old} roars with infernal power — it has become Infernodrake!',
+             'hatch_msg': 'The sphere erupts in a pillar of flame and Infernodrake rises out of it, '
+                          'roaring, its tail a blazing torch!'},
         ],
         'specials': [
             {
@@ -181,8 +197,9 @@ _SPECIES = {
         ],
     },
     'sherlock': {
-        # One of two family cats (with Irene) that a Soul Sphere very rarely
-        # hatches instead of an elemental line: see roll_soul_sphere_species.
+        # One of two family cats (with Irene) that an ordinary sphere rarely
+        # hatches instead of an elemental line (roll_soul_sphere_species) and
+        # a Hearth Sphere hatches 40% of the time (roll_family_sphere_pet).
         # Big, heavy, clumsy and lazy; sings at 3 a.m. Grows bigger and tankier.
         'element': 'earth',
         'damage_type': 'crushing',
@@ -193,10 +210,14 @@ _SPECIES = {
              'msg': 'The sphere cracks open and out flops Sherlock: a large, wrinkly, hairless cat. '
                     'He looks at you, yawns, and decides you will do.'},
             {'name': 'Sherlock the Stout',      'symbol': 'C',
-             'msg': '{old} eats something he should not have and grows even bigger: Sherlock the Stout!'},
+             'msg': '{old} eats something he should not have and grows even bigger: Sherlock the Stout!',
+             'hatch_msg': 'The sphere cracks open and out rolls Sherlock the Stout, bigger than you remember '
+                          'and twice as wrinkly. He sits on your foot. He has decided you will do.'},
             {'name': 'Sherlock the Immovable',  'symbol': 'C',
              'msg': '{old} lies down in the doorway of destiny and refuses to move. '
-                    'He has become Sherlock the Immovable!'},
+                    'He has become Sherlock the Immovable!',
+             'hatch_msg': 'The sphere splits in two and Sherlock the Immovable settles out of it like a '
+                          'landslide, lies down across the passage, and will not move for anyone but you.'},
         ],
         # His own words for the naming popup, the log and the Journal, as
         # Shep has (PET-08: he is Sherlock, not "the Sherlock").
@@ -255,10 +276,14 @@ _SPECIES = {
              'msg': 'The sphere has barely cracked when Irene shoots out of it, bounces off a wall, '
                     'lands perfectly, and acts like she meant to do that.'},
             {'name': 'Irene the Skyleaper',  'symbol': 'C',
-             'msg': '{old} leaps so high she forgets to come down. She has become Irene the Skyleaper!'},
+             'msg': '{old} leaps so high she forgets to come down. She has become Irene the Skyleaper!',
+             'hatch_msg': 'The sphere has barely cracked when Irene the Skyleaper shoots out of it, sails '
+                          'clean over your head, and lands as if she had meant to do that all along.'},
             {'name': 'Irene the Seraph',     'symbol': 'C',
              'msg': '{old} unfolds wings of pure light, a halo settling between her ears. '
-                    'She has become Irene the Seraph, and she knows it.'},
+                    'She has become Irene the Seraph, and she knows it.',
+             'hatch_msg': 'Light pours out of the sphere and Irene the Seraph glides down from it on wings of '
+                          'pure light, a halo settling between her ears. She knows exactly how magnificent she is.'},
         ],
         'naming_story': {
             'title': "IRENE IS HERE!",
@@ -303,8 +328,9 @@ _SPECIES = {
     'shep': {
         # Shep: Brandon's dad's childhood farm dog, the hero of the bedtime
         # stories he told Brandon, in which Shep always came to save them.
-        # "Sic 'em, Shep!" An ultra-rare Soul Sphere hatch (1%, rolled before
-        # the cats: see roll_rare_sphere_pet). A big black-and-white shepherd
+        # "Sic 'em, Shep!" An ultra-rare hatch from an ordinary sphere (1%,
+        # rolled before the cats: see roll_rare_sphere_pet), 20% from a Hearth
+        # Sphere (roll_family_sphere_pet). A big black-and-white shepherd
         # mongrel. His line is about a tenth stronger than the others through
         # its special multipliers (1.7x and 2.0x against the cats' 1.5x and
         # 1.6x/2.0x); the growth table is everyone's. His signature is the
@@ -320,10 +346,16 @@ _SPECIES = {
                     'as if he has been with you all along. It is Shep.'},
             {'name': 'Shep the Farmhound', 'symbol': 'D',
              'msg': '{old} has run a thousand miles of dungeon at your side and come back from it '
-                    'bigger, faster and all lean muscle: Shep the Farmhound!'},
+                    'bigger, faster and all lean muscle: Shep the Farmhound!',
+             'hatch_msg': 'The sphere cracks open and Shep the Farmhound bounds out, big and lean and fast, '
+                          'ears up, tail going. He sniffs your hand once and falls in at your heel '
+                          'as if he has been with you all along.'},
             {'name': 'Shep the Legend',    'symbol': 'D',
              'msg': '{old} has saved you so many times that the dungeon has started telling '
-                    'stories about him. He has become Shep the Legend!'},
+                    'stories about him. He has become Shep the Legend!',
+             'hatch_msg': 'The sphere cracks open and out steps Shep the Legend, the dog the old stories '
+                          'were told about. He looks up at you once, the way he always did, and falls in '
+                          'at your heel. It is Shep.'},
         ],
         # He Always Comes: once a floor (a floor reached for the first time),
         # when the hero falls to 25% health or less with a foe beside him,
@@ -406,7 +438,7 @@ _SPECIES = {
     },
 }
 
-# The family cats: rare Soul Sphere hatches (see roll_soul_sphere_species).
+# The family cats: rare hatches from an ordinary sphere (see roll_soul_sphere_species).
 FAMILY_CATS = ('sherlock', 'irene')
 FAMILY_CAT_CHANCE = 0.05          # EACH cat, per hatch (10% for a cat while neither is met)
 # Its own stream, so the rare roll never moves the global random sequence
@@ -422,6 +454,13 @@ SHEP_CHANCE = 0.01
 _SHEP_RNG = random.Random()
 # Every rare companion a Soul Sphere can hatch: met once a run at most.
 FAMILY_PETS = FAMILY_CATS + (SHEP,)
+
+# A Hearth Sphere (any tier) always holds one of the family's own: these
+# shares, among those not yet met this run (a met one's share goes to the
+# others in proportion). With all three met it hatches an elemental line at
+# its tier. Its own stream, like the cats' and Shep's.
+FAMILY_SPHERE_ODDS = (('sherlock', 0.40), ('irene', 0.40), (SHEP, 0.20))
+_FAMILY_SPHERE_RNG = random.Random()
 
 
 # A pet's damage words, in the monsters' own words for resistances and
@@ -493,15 +532,30 @@ def growth(what: str, level: int) -> int:
 # gate in main.py and any hero-special / summon path that needs to
 # reference the threshold.
 DUCK_OF_DOOM_TURNS_REQUIRED = 2026
+# The duckling rode on the hero's head for all of those turns and learned
+# what any companion at his side would have: the passive 1 XP every 3 turns
+# (gain_xp_passive). A fixed amount from its own story, never the floor.
+DUCK_OF_DOOM_HATCH_XP = DUCK_OF_DOOM_TURNS_REQUIRED // 3
+
+
+def hatch_message(pet) -> str:
+    """What the log says when `pet` comes out of a sphere: its stage's own
+    hatch words (a pet that hatches already grown), else the newborn line."""
+    stage = pet.species['stages'][pet.stage]
+    if pet.stage > 0 and stage.get('hatch_msg'):
+        return stage['hatch_msg']
+    return pet.species['stages'][0]['msg']
 
 
 class Pet:
     """A companion creature that follows the player and fights enemies."""
 
-    def __init__(self, species_key: str, x: int = 0, y: int = 0):
+    def __init__(self, species_key: str, x: int = 0, y: int = 0, level: int = 1):
         self.species_key = species_key
         self.species = _SPECIES[species_key]
-        self.level = 1
+        # The level it starts at is decided by where it came from (its
+        # sphere: 1, 25 or 55; see hatch_level), never by the floor.
+        self.level = max(1, min(100, int(level or 1)))
         self.xp = 0
         self.x = x
         self.y = y
@@ -664,8 +718,8 @@ class Pet:
         """Award XP for a kill, scaled by monster strength.
 
         Formula: 3 + max_hp // 10 (so a 10-HP F1 monster grants 4 XP; a
-        200-HP F90 monster grants 23 XP). Combined with passive ticks and
-        late-pickup catch-up, pets level steadily through normal play.
+        200-HP F90 monster grants 23 XP). Combined with passive ticks, pets
+        level steadily through normal play.
 
         Since 2026-10-07 the second argument is the slain MONSTER's own
         level (its peak floor in monsters.json), and the experience is
@@ -679,16 +733,6 @@ class Pet:
         else:
             xp = 3 + max(0, int(monster_max_hp)) // 10
         return self.gain_xp(xp)
-
-    def apply_late_pickup_bonus(self, floor: int) -> None:
-        """One-time XP grant for pets hatched on deeper floors so they
-        don't start uselessly underpowered. Capped just below stage 1
-        evolution (level 25) so the late pet still has to EARN its first
-        big milestone — but it won't take 20 floors of catch-up to do so.
-        """
-        bonus = min(max(0, int(floor)) * 50, 4000)
-        if bonus > 0:
-            self.gain_xp(bonus)
 
     def _xp_to_next(self) -> int:
         return self.level * _XP_PER_LEVEL
@@ -1393,10 +1437,173 @@ def roll_rare_sphere_pet(present=(), rng=None, shep_rng=None) -> str | None:
 
 
 def roll_soul_sphere_species(present=(), rng=None, shep_rng=None) -> str:
-    """What a thrown Soul Sphere hatches: very rarely Shep, rarely a family
-    cat, else an elemental line chosen evenly (random_species).
+    """What an ordinary sphere (Soul, Greater Soul or Master) hatches: very
+    rarely Shep, rarely a family cat, else an elemental line chosen evenly
+    (random_species).
 
     While nobody rare is met: Shep 1%, Sherlock 5%, Irene 5%, and each of
     the four elemental lines 22.25%. Whoever is met gives his share to the
     elemental lines."""
     return roll_rare_sphere_pet(present, rng, shep_rng) or random_species()
+
+
+# ---------------------------------------------------------------------------
+# The six Soul Spheres (2026-10-18). THE SPHERE DECIDES WHAT IS INSIDE, never
+# the floor: a Soul Sphere hatches a newborn (level 1), a Greater Soul Sphere
+# a pet at its first evolution (level 25), a Master Sphere one in its final
+# form (level 55). The three Hearth Spheres hatch at the same levels and
+# always hold one of the family's own (Sherlock 40%, Irene 40%, Shep 20%).
+# What each sphere is lives in data/items/artifact.json ('sphere' and
+# 'floor_spawn_chance'); the Unusual Soul Sphere is not one of them.
+# ---------------------------------------------------------------------------
+
+_SPHERES: dict | None = None
+_ARTIFACT_NAMES: dict = {}
+
+
+def spheres() -> dict:
+    """{item id: {'tier', 'hatch_level', 'family', 'floor_spawn_chance'}}
+    for every Soul Sphere in data/items/artifact.json, in file order."""
+    global _SPHERES
+    if _SPHERES is None:
+        import json
+        from paths import data_path
+        try:
+            with open(data_path('data', 'items', 'artifact.json'), encoding='utf-8') as f:
+                raw = json.load(f)
+        except (OSError, ValueError):
+            raw = {}
+        out = {}
+        for iid, d in raw.items():
+            if isinstance(d, dict) and d.get('name'):
+                _ARTIFACT_NAMES[iid] = str(d['name'])
+            sp = d.get('sphere') if isinstance(d, dict) else None
+            if isinstance(sp, dict):
+                out[iid] = {'tier': int(sp.get('tier', 1)),
+                            'hatch_level': int(sp.get('hatch_level', 1)),
+                            'family': bool(sp.get('family', False)),
+                            'floor_spawn_chance': dict(d.get('floor_spawn_chance') or {})}
+        _SPHERES = out
+    return _SPHERES
+
+
+def hatch_source(pet) -> str | None:
+    """The name of the sphere `pet` hatched from ("Greater Soul Sphere"),
+    for its card; None for a companion that came another way (the Emberpup,
+    the duck, a summons, or one from a save made before 2026-10-18)."""
+    sid = getattr(pet, 'hatch_sphere', None)
+    if not sid:
+        return None
+    spheres()
+    name = _ARTIFACT_NAMES.get(sid)
+    if not name:
+        return None
+    from naming import proper_name
+    return proper_name(name)
+
+
+def sphere_spec(item) -> dict | None:
+    """What a sphere (an item, or its id) holds, or None if it is not one of
+    the six. Read by id, so an old save's pickled 'soul_sphere' works."""
+    iid = item if isinstance(item, str) else getattr(item, 'id', None)
+    return spheres().get(iid) if iid else None
+
+
+def is_soul_sphere(item) -> bool:
+    """One of the six throwable Soul Spheres (bound or not)."""
+    return sphere_spec(item) is not None
+
+
+def _qa_forced_tier() -> int | None:
+    """Play-testing only: with PQ_QA_MODE=1 and PQ_FORCE_SPHERE_TIER=1, 2 or
+    3, every sphere hatches at that tier's level."""
+    import os
+    if os.environ.get('PQ_QA_MODE') != '1':
+        return None
+    want = (os.environ.get('PQ_FORCE_SPHERE_TIER') or '').strip()
+    return int(want) if want in ('1', '2', '3') else None
+
+
+def tier_level(tier: int) -> int:
+    """The level an ordinary sphere of `tier` hatches at (from the data)."""
+    for spec in spheres().values():
+        if spec['tier'] == int(tier) and not spec['family']:
+            return spec['hatch_level']
+    return (1, _EVOLVE_1, _EVOLVE_2)[max(1, min(3, int(tier))) - 1]
+
+
+def hatch_level(sphere) -> int:
+    """The level a pet out of `sphere` starts at: its sphere's own hatch
+    level (a Soul Sphere 1, a Greater 25, a Master 55). Nothing else."""
+    forced = _qa_forced_tier()
+    if forced:
+        return tier_level(forced)
+    spec = sphere_spec(sphere)
+    return spec['hatch_level'] if spec else 1
+
+
+def roll_family_sphere_pet(present=(), rng=None) -> str | None:
+    """A Hearth Sphere's companion: Sherlock 40%, Irene 40%, Shep 20%, among
+    those not yet met this run (a met one's share is spread over the rest
+    in proportion). None once all three are met. Always one draw from its
+    own stream, so the shared random sequence never moves."""
+    present = set(present)
+    forced = _qa_forced_pet(present)
+    if forced:
+        return forced
+    r = (rng or _FAMILY_SPHERE_RNG).random()
+    unmet = [(k, w) for k, w in FAMILY_SPHERE_ODDS if k not in present]
+    total = sum(w for _, w in unmet)
+    if total <= 0:
+        return None
+    r *= total
+    acc = 0.0
+    for key, w in unmet:
+        acc += w
+        if r < acc:
+            return key
+    return unmet[-1][0]
+
+
+def roll_sphere_species(sphere, present=(), rng=None, shep_rng=None, family_rng=None) -> str:
+    """What `sphere` hatches. A Hearth Sphere: one of the family not yet met,
+    else an elemental line. An ordinary sphere: the ordinary roll (Shep 1%,
+    each cat 5%, else an elemental line). Never reads the floor."""
+    spec = sphere_spec(sphere)
+    if spec and spec['family']:
+        return roll_family_sphere_pet(present, family_rng) or random_species()
+    return roll_soul_sphere_species(present, rng, shep_rng)
+
+
+def _band_value(bands: dict, level: int) -> float:
+    for key, value in (bands or {}).items():
+        parts = str(key).split('-')
+        try:
+            lo = int(parts[0])
+            hi = int(parts[1]) if len(parts) > 1 else lo
+        except ValueError:
+            continue
+        if lo <= level <= hi:
+            return float(value)
+    return 0.0
+
+
+def sphere_chances(level: int) -> list:
+    """[(sphere id, chance)] on floor `level`: each sphere's own chance per
+    floor in its band (data/items/artifact.json 'floor_spawn_chance').
+    Like any loot, which sphere turns up depends on the band; what is inside
+    it never does."""
+    return [(iid, _band_value(spec['floor_spawn_chance'], int(level)))
+            for iid, spec in spheres().items()]
+
+
+def sphere_for_floor(level: int, rng) -> str | None:
+    """The sphere a floor holds, if any: ONE draw from the floor's stream for
+    all six (at most one sphere a floor; the old 5% roll drew once too)."""
+    r = rng.random()
+    acc = 0.0
+    for iid, chance in sphere_chances(level):
+        acc += chance
+        if r < acc:
+            return iid
+    return None

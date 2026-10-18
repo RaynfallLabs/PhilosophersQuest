@@ -156,7 +156,8 @@ Dict/set states are picklable; the engine does not care if `_setstate_` restores
     "_start_ammo":      "iron_arrow",
     "_start_spells":    ["sign_aard", "sign_igni"],  # pre-known spells
     "_start_potions":   ["potion_of_healing"],
-    "_start_soul_spheres": 4,                        # count of starting spheres
+    "_start_soul_spheres": 4,                        # count of starting (plain) Soul Spheres
+    "_start_spheres":   ["soul_sphere", "master_sphere"],  # sphere ids (QA hero: all six)
     "_start_unusual_sphere": True,                   # one wildcard sphere
     "_no_dagger":       True,                        # skip default iron_dagger
     "_equip_armor":     True,                        # auto-equip _start_armor
@@ -569,7 +570,8 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 | `_start_ammo`              | Starting ammo id                                                                   |
 | `_start_spells`            | Pre-known spell list                                                               |
 | `_start_potions`           | Pre-granted potions                                                                |
-| `_start_soul_spheres`      | Count of starting Soul Spheres (Ash Ketchum: 4)                                    |
+| `_start_soul_spheres`      | Count of starting Soul Spheres (Ash Ketchum: 4; plain Soul Spheres, newborns)      |
+| `_start_spheres`           | List of sphere ids to start with (Titivillus, the QA hero: one of each of the six) |
 | `_start_unusual_sphere`    | Grant one wildcard Soul Sphere                                                     |
 | `_no_dagger`               | Skip the default `iron_dagger` kit grant                                           |
 | `_lock_melee`              | Melee slot welded (Ash's chainsaw cannot be unequipped)                            |

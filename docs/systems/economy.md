@@ -44,7 +44,8 @@ share (`MERCHANT_SHARE`: potion 0.15, food 0.10, ammo 0.10, scroll and wand
 amulets included, S4) x tier (0.6 + 0.2 x tier) x **worth**
 (`economy.item_worth`, from `data/item_worth.json`: Full Healing 3, Healing
 1, Sickness and every harmful potion or cursed ring "junk" 0.1, Ambrosia 12,
-a Soul Sphere its own share of 2 floors) x the trader's markup.
+the six Soul Spheres their own shares by tier: Soul 2, Greater 3.5,
+Master 5, Hearth 3, Greater Hearth 5, Master Hearth 7 floors) x the trader's markup.
 
 Stock is sold unidentified, so a price that follows worth lets a sharp eye
 price-identify (a NetHack-style discovery). `economy.unknown_price` is the
@@ -59,12 +60,12 @@ services and their lines.
 
 | Kind | Who | Floors | Stocks | Buys | Services |
 |---|---|---|---|---|---|
-| generalist | Grindle, Deep Gnome Trader | 2-98, about 1 floor in 6 | potions, scrolls, rings, wands, ammo, common gear, sometimes a Soul Sphere | everything (a fence) | map |
+| generalist | Grindle, Deep Gnome Trader | 2-98, about 1 floor in 6 | potions, scrolls, rings, wands, ammo, common gear, sometimes a Soul Sphere (25% on 1-33) or a Greater Soul Sphere (from 34) | everything (a fence) | map |
 | apothecary | Mother Wort | 2-35, 3 a run | a cure or healing for sure, potions, food | potions, food, ingredients | cure, restore, heal |
 | armourer | Brannoc | 10-70, 3 a run | common gear, ammo | weapons, armour, shields, ammo | repair, sharpen, reinforce, cut a curse off |
 | bookseller | Ambrose Vellum | 15-90, 2 a run | scrolls, one spellbook | scrolls, spellbooks | identify with the scribe, map |
-| abyssal | Vesper, Dealer in the Deep | 61-98, 2 a run | named rings first, wands, potions (x1.5) | everything, curses too | cut a curse off, restore |
-| sutler (gate camp) | Old Mags Thorn | 19, 39, 59, 79, always | healing for sure, potions, food, a scroll, ammo, armour | everything | repair, cure, heal, porter |
+| abyssal | Vesper, Dealer in the Deep | 61-98, 2 a run | named rings first, wands, potions (x1.5); rarely a Master Sphere (10%), a Greater Hearth Sphere (4%) or, from 67, a Master Hearth Sphere (3%) | everything, curses too | cut a curse off, restore |
+| sutler (gate camp) | Old Mags Thorn | 19, 39, 59, 79, always | healing for sure, potions, food, a scroll, ammo, armour; sometimes a Soul Sphere (19, 39, 59) or a Greater Soul Sphere (39 on) | everything | repair, cure, heal, porter |
 
 **The plan** (`traders.roll_plan`): rolled once a run from the Road's seed
 (`road.rng_for(seed, 'traders')`), never from the shared random stream.
@@ -108,7 +109,8 @@ haggles (Buy tab), Esc closes (or backs out of choosing a target).
   unidentified class; capped by what is left in his purse
   (`purse` floors of income, spent as he buys, never refilled). Refused:
   quest pieces (`Game._QUEST_PIECE_IDS`, scripted-only ids, plot-locked
-  things, every artifact but a Soul Sphere), tools and keys, things outside
+  things, every artifact but the six Soul Spheres, and a sphere that holds a
+  bound companion), tools and keys, things outside
   a specialist's line, and a curse the hero knows of (except to Vesper). A
   sold thing is gone: it never reappears in his stock (that would price-
   identify it).

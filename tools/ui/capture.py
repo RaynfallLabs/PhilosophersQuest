@@ -1442,6 +1442,57 @@ def _(g):
     g._pet_open_specials(g._pet_menu_selected_pet())
 
 
+@scene('menu_pet_hatched', 'Pets', 'Shift+P after a Greater Soul Sphere hatched: the card says where it came from.',
+       expect='pet_menu')
+def _(g):
+    g.pets[0].hatch_sphere = 'greater_soul_sphere'
+    g.handle_event(key_event(pygame.K_p, 'P', pygame.KMOD_SHIFT))
+
+
+def _all_spheres(g):
+    from items import make_item_by_id
+    from pet_system import spheres
+    for sid in spheres():
+        s = make_item_by_id('artifact', sid)
+        if s is not None:
+            g.player.inventory.append(s)
+            g.player.known_item_ids.add(sid)
+
+
+@scene('menu_throw_spheres', 'Pets', 'T with the six Soul Spheres in the pack: the Other tab.',
+       expect='throw_menu')
+def _(g):
+    _all_spheres(g)
+    press(g, pygame.K_t, 't')
+    for _ in range(3):
+        if g._THROW_TABS[g._throw_tab][0] == 'Other':
+            break
+        press(g, pygame.K_RIGHT)
+
+
+@scene('menu_kit_spheres', 'Pets', 'K, Consumables tab, with the six Soul Spheres in the pack.',
+       expect='kit')
+def _(g):
+    _all_spheres(g)
+    press(g, pygame.K_k, 'k')
+    for _ in range(len(g._KIT_TABS)):
+        if g._KIT_TABS[g._kit_tab][1] == 'consumables':
+            break
+        press(g, pygame.K_RIGHT)
+    rows = g._kit_rows_for_slug('consumables')
+    from pet_system import is_soul_sphere
+    g._kit_sel = next((i for i, (_s, it) in enumerate(rows) if is_soul_sphere(it)), 0)
+
+
+@scene('popup_pet_name_legend', 'Pets', 'A Master Hearth Sphere hatches Shep the Legend: name him.',
+       expect='pet_name_input', notes='Through the real hatch, _hatch_sphere_pet, at level 55.')
+def _(g):
+    from pet_system import hatch_level
+    x, y = _free_tiles_near(g, 1, 3)[-1]
+    g._hatch_sphere_pet('shep', x, y, level=hatch_level('master_hearth_sphere'),
+                        sphere_id='master_hearth_sphere')
+
+
 @scene('menu_prayer', 'Prayer', '\\ : choose a prayer.', expect='prayer_menu', key=True)
 def _(g):
     g._start_pray()
@@ -1527,6 +1578,24 @@ def _(g):
     _merchant(g)
     press(g, pygame.K_y)
     press(g, pygame.K_RIGHT)
+
+
+@scene('shop_spheres', 'Encounters', 'Y beside Vesper on floor 70 with Soul Spheres on the shelf.',
+       expect='shop')
+def _(g):
+    from mystery_system import MerchantNPC
+    import traders
+    from items import make_item_by_id
+    from economy import merchant_price
+    defn = traders.kind_def('abyssal')
+    stock = [make_item_by_id('artifact', sid) for sid in
+             ('master_sphere', 'greater_hearth_sphere', 'master_hearth_sphere', 'greater_soul_sphere')]
+    x, y = _free_tiles_near(g, 1, 1)[0]
+    m = MerchantNPC(x, y, stock, [merchant_price(it, 70, defn.get('markup', 1.0)) for it in stock],
+                    kind='abyssal', level=70, defn=defn)
+    g.ground_items.append(m)
+    g.player_gold = max(getattr(g, 'player_gold', 0), 900)
+    press(g, pygame.K_y)
 
 
 @scene('shop_services', 'Encounters', "Y beside the armourer, Right twice: his Services tab.",

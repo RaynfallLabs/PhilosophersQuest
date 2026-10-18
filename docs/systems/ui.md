@@ -1053,7 +1053,8 @@ build dict carries stat overrides (STR/CON/DEX/INT/WIS/PER) and
 | `_start_accessory` | start accessory id |
 | `_start_shield` | start shield id |
 | `_start_armor` | start armor id |
-| `_start_soul_spheres` | number of Soul Spheres |
+| `_start_soul_spheres` | number of plain Soul Spheres |
+| `_start_spheres` | list of sphere ids (the QA hero: all six) |
 | `_start_spells` | list of spell ids learned at start |
 | `_no_dagger` | skip the default iron dagger |
 | `_immortal` | player cannot die (dad build) |

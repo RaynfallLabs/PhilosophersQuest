@@ -331,8 +331,8 @@ class EmberpupMixin:
         self._emberpup_state()['outcome'] = 'adopted'
         import deeds
         deeds.note(self, 'saved.emberpup', source='emberpup', unique=True)
+        # A pup: it starts as a newborn does (level 1), whatever the floor.
         pet = Pet(d['pet_species'], x, y)
-        pet.apply_late_pickup_bonus(self.dungeon_level)
         self.pets.append(pet)
         self._emberpup_new_pet = pet
         self.add_message("The Emberpup comes down off its rock to you.", 'success')

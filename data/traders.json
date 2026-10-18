@@ -57,7 +57,11 @@
         {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
         {"class": "ammo", "picks": 2},
         {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 2},
-        {"id": "soul_sphere", "cat": "artifact", "chance": 0.15}
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [1, 33]},
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [34, 66]},
+        {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.15, "floors": [34, 66]},
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.06, "floors": [67, 100]},
+        {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.12, "floors": [67, 100]}
       ],
       "stock_size": [[1, 20, 4], [21, 50, 5], [51, 100, 6]],
       "markup": 1.0,
@@ -185,7 +189,10 @@
       "lore": "Nobody knows what Vesper is. Nobody has seen Vesper blink. Vesper takes gold, buys curses, and is very polite about all of it, which is somehow worse.",
       "stock": [
         {"class": "accessory", "picks": 2, "unique_first": true}, {"class": "wand", "picks": 2},
-        {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 1}
+        {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 1},
+        {"id": "master_sphere", "cat": "artifact", "chance": 0.10, "floors": [61, 100]},
+        {"id": "greater_hearth_sphere", "cat": "artifact", "chance": 0.04, "floors": [61, 100]},
+        {"id": "master_hearth_sphere", "cat": "artifact", "chance": 0.03, "floors": [67, 100]}
       ],
       "stock_size": [[1, 100, 6]],
       "markup": 1.5,
@@ -218,7 +225,10 @@
         {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
         {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
         {"class": "scroll", "picks": 1}, {"class": "ammo", "picks": 1},
-        {"gear": "armor", "picks": 1}
+        {"gear": "armor", "picks": 1},
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.30, "floors": [1, 33]},
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.10, "floors": [34, 66]},
+        {"id": "greater_soul_sphere", "cat": "artifact", "chance": 0.25, "floors": [34, 100]}
       ],
       "stock_size": [[1, 100, 7]],
       "markup": 1.0,

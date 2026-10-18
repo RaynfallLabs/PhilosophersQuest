@@ -803,7 +803,7 @@ def test_a_soul_sphere_spawns_on_some_floors_and_hatches_a_pet_with_art():
         if spheres:
             found += 1
             assert all(d.is_walkable(sp.x, sp.y) for sp in spheres)
-    assert 1 <= found <= 30                     # about one floor in twenty
+    assert 1 <= found <= 30                     # about one floor in twelve (8% on floors 1-33)
     assert _own_item_art('soul_sphere')
     # Throw one: a pet hatches beside the hero, the naming card opens, and
     # its picture resolves the way the map draw asks for it.

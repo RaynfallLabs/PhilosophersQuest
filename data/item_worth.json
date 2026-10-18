@@ -45,6 +45,12 @@
     "resurrection_spell": 3.0, "wish_spell": 3.0, "identify_spell": 1.4
   },
   "share_by_id": {
-    "soul_sphere": 2.0
+    "_doc": "Soul Spheres, priced by what hatches: a newborn, a pet at its first evolution, one in its final form; a Hearth Sphere (always one of the family's own companions) costs about half again its plain tier.",
+    "soul_sphere": 2.0,
+    "greater_soul_sphere": 3.5,
+    "master_sphere": 5.0,
+    "hearth_sphere": 3.0,
+    "greater_hearth_sphere": 5.0,
+    "master_hearth_sphere": 7.0
   }
 }

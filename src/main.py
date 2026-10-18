@@ -2460,15 +2460,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 pass
 
         # -- Soul Spheres (loaded from artifact.json) -----------------------
-        soul_sphere_count = b.get('_start_soul_spheres', 0)
-        if soul_sphere_count > 0:
+        # '_start_soul_spheres': that many plain Soul Spheres (Ash Ketchum's
+        # four hatch newborns); '_start_spheres': a list of sphere ids (the
+        # QA hero carries one of each of the six).
+        sphere_ids = ['soul_sphere'] * int(b.get('_start_soul_spheres', 0) or 0)
+        sphere_ids += list(b.get('_start_spheres', ()) or ())
+        if sphere_ids:
             from items import make_item_by_id
-            for _ in range(soul_sphere_count):
-                sphere = make_item_by_id('artifact', 'soul_sphere')
+            for sid in sphere_ids:
+                sphere = make_item_by_id('artifact', sid)
                 if sphere is None:
                     continue
                 _mark_starting_item_known(sphere)
-                self.player.known_item_ids.add('soul_sphere')
+                self.player.known_item_ids.add(sid)
                 self.player.inventory.append(sphere)
 
         # -- Unusual Soul Sphere (family builds only, loaded from JSON) -----
@@ -5938,13 +5942,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # It hops down onto a free tile beside him, never his own (PET-12).
         _spot = self._escort_tile_near_hero() or (self.player.x, self.player.y)
         pet = Pet('duck_of_doom', *_spot)
-        # Late-pickup XP grant so a duck hatched on deep floors (typical:
-        # F20+, given the 2026-turn incubation) isn't combat-useless at L1.
-        # Mirrors normal-pet late-pickup scaling in pet_system.
-        try:
-            pet.apply_late_pickup_bonus(int(self.dungeon_level) or 1)
-        except Exception:
-            pass
+        # It rode on his head for all 2026 turns and learned what any
+        # companion at his side would have (LORE NOT FLOOR: a fixed amount
+        # from its own story, the same on any floor).
+        from pet_system import DUCK_OF_DOOM_HATCH_XP
+        pet.gain_xp(DUCK_OF_DOOM_HATCH_XP)
         self.pets.append(pet)
         self.add_message(
             "The duckie's eyes glow. It hops off your head, suddenly weightless.",

@@ -330,15 +330,18 @@ class MenuMixin:
     # ------------------------------------------------------------------
 
     def _open_throw_menu(self):
-        """Open menu to select a potion, throwable weapon, or Soul Sphere."""
+        """Open menu to select a potion, throwable weapon, or one of the Soul
+        Spheres (any of the six, bound or not)."""
         potions = [i for i in self.player.inventory if isinstance(i, Potion)]
         weapons = [
             i for i in self.player.inventory
             if isinstance(i, Weapon) and self._is_throwable_weapon(i)
             and i is not self.player.weapon and i is not self.player.ranged_weapon
         ]
+        from pet_system import is_soul_sphere
         spheres = [i for i in self.player.inventory
-                   if isinstance(i, Artifact) and i.id in ('soul_sphere', 'unusual_soul_sphere')]
+                   if isinstance(i, Artifact)
+                   and (is_soul_sphere(i) or i.id == 'unusual_soul_sphere')]
         self.throw_menu_items = potions + weapons + spheres
         if not self.throw_menu_items:
             self.add_message("You have nothing to throw.", 'info')
@@ -584,6 +587,12 @@ class MenuMixin:
         cls = type_for_slug.get(slug)
         if cls is None:
             return []
+        if slug == 'consumables':
+            # A Soul Sphere is used up when thrown: it sits with the other
+            # things that are spent (any of the six, bound or not).
+            from pet_system import is_soul_sphere
+            return [(src, it) for src, it in all_rows
+                    if isinstance(it, cls) or is_soul_sphere(it)]
         return [(src, it) for src, it in all_rows if isinstance(it, cls)]
 
     def _kit_collect_spells(self):

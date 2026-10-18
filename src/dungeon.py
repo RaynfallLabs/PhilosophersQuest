@@ -1733,10 +1733,17 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     for room in potion_rooms:
         _place_one(eligible_potions, room, dungeon, ground_items, rng)
 
-    # -- Soul Spheres -- ~5% per floor (loaded from artifact.json) --------------
-    if rng.random() < 0.05:
+    # -- Soul Spheres -- by floor band, from artifact.json ---------------------
+    # Each of the six has its own chance per floor in its band
+    # ('floor_spawn_chance': a Soul Sphere about 8% on floors 1-33, a Master
+    # Sphere none before 67; each Hearth Sphere a tenth of its tier). ONE draw
+    # picks at most one. Which sphere turns up depends on the band, like any
+    # loot; what hatches from it never does (pet_system.hatch_level).
+    from pet_system import sphere_for_floor
+    sphere_id = sphere_for_floor(level, rng)
+    if sphere_id:
         from items import make_item_by_id
-        sphere = make_item_by_id('artifact', 'soul_sphere')
+        sphere = make_item_by_id('artifact', sphere_id)
         if sphere is not None:
             # (A one-room maze floor has no rooms[1:]: this raised IndexError
             # and took the whole floor's generation with it.)

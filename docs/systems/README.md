@@ -72,7 +72,7 @@ reporter are small, independent JSON/text siblings. See
 | [status_effects.md](status_effects.md) | BUFFS / DEBUFFS / HARD_CONTROL, _RESIST_BLOCKS, SAVE_STAT, apply_debuff_with_save | Status effect add/edit |
 | [save_bonus.md](save_bonus.md) | Gradient defense on CON/WIS/DEX/all, +5 cap, timed +3 cap | Save add/edit |
 | [world.md](world.md) | Dungeon gen, mazes, terrain (water/ice/lava), bones, boss floors, cow level | Floor layout change |
-| [pets.md](pets.md) | Species, specials, Duck transform, Soul Sphere, apply_late_pickup_bonus | Pet add/edit |
+| [pets.md](pets.md) | Species, specials, Duck transform, the six Soul Spheres (what each hatches, spawn bands, traders) | Pet add/edit |
 | [progression.md](progression.md) | Quirks, hero specials, elder blood, secret builds, karma judgments | Progression add/edit |
 | [quests_mysteries.md](quests_mysteries.md) | 9 quest chains + 12 mysteries + the Judgment altar | Quest add/edit |
 | [economy.md](economy.md) | The income line, gold by lore (no coin in beasts), chests and coin piles, the named traders (plan, stock, worth-based prices, Buy / Sell / Services), services, purse-relative temptations, deeds pricing | Any gold, price, trader or shop change |
@@ -98,7 +98,7 @@ the doc wins (and the row is a bug — please update it).
 | "Where does damage math live?" | [combat.md](combat.md); `combat.player_attack`, `_damage_multiplier` |
 | "What statuses exist and how do resists apply?" | [status_effects.md](status_effects.md); `EFFECT_INFO`, `_RESIST_BLOCKS`, `apply_debuff_with_save` |
 | "How do I add a save bonus from an accessory?" | [save_bonus.md](save_bonus.md); `_gear_save_bonus` + `Player.save_bonus_for` |
-| "How do pets gain levels?" | [pets.md](pets.md); `Pet.gain_xp`, `apply_late_pickup_bonus` |
+| "How do pets gain levels?" | [pets.md](pets.md); `Pet.gain_xp`; a pet's starting level comes from its sphere (`pet_system.hatch_level`) |
 | "What is Duck of Doom?" | [pets.md](pets.md); 2026-turn transform in `main._duck_of_doom_transform` |
 | "How does cook v2 work?" | [food_system.md](food_system.md); 1 Q binary, outcome_id → `cook_outcomes.json` |
 | "What is harvest v4?" | [food_system.md](food_system.md); 1 Q, `prime_cuts.json` keyed by `monster.kind` |
