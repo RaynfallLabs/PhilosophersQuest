@@ -182,6 +182,7 @@ def test_monsters_swipe_at_escorts_for_half_damage_with_no_pet():
     g._monster_swipes(g._escorts_here(), escorts=True)
     assert esc.hp == hp - 5
     esc.hp = 3
+    g.turn_count += 1          # a new turn: one swipe per monster per turn (PET-06)
     g._do_escort_turns()
     assert not esc.alive and g.escorts == []
     import deeds

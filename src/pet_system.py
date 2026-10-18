@@ -399,6 +399,34 @@ _SHEP_RNG = random.Random()
 FAMILY_PETS = FAMILY_CATS + (SHEP,)
 
 
+# A pet's damage words, in the monsters' own words for resistances and
+# weaknesses ('pierce', not 'piercing'; 'lightning', not 'shock').
+_PET_DAMAGE_WORDS = {'piercing': 'pierce', 'slashing': 'slash', 'crushing': 'blunt',
+                     'shock': 'lightning'}
+
+
+def pet_damage_type(dtype) -> str:
+    """The damage type a pet's blow lands as (PET-09)."""
+    if not dtype:
+        return 'physical'
+    return _PET_DAMAGE_WORDS.get(str(dtype), str(dtype))
+
+
+def growl_tag(thing) -> str:
+    """A tag for Shep's growl memory that stays the same through a save
+    and is never reused for another creature (an ``id()`` can be, CODE-13).
+    Set on the thing itself the first time it is asked for."""
+    tag = getattr(thing, '_growl_tag', None)
+    if not tag:
+        import uuid
+        tag = uuid.uuid4().hex
+        try:
+            thing._growl_tag = tag
+        except AttributeError:
+            return f'id:{id(thing)}'
+    return tag
+
+
 def has_own_name(species: dict) -> bool:
     """A companion with a name of its own (the family cats, Shep) is not a
     creature kind: "Bean, Irene the Seraph", "Shep is here!", no "A"."""
