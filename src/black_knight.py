@@ -3,7 +3,8 @@
 On one floor from 15 to 19 a knight in black armour stands on a short stone
 bridge over a strip of water across a corridor, and says that none shall
 pass. There is always another way round (the bridge is only ever built where
-the floor stays joined up with him standing on it), so he never blocks the run.
+the floor stays joined up with him standing on it; where no corridor allows
+that he stands in a doorway or a room that does), so he never blocks the run.
 
 He never moves. He loses a limb at 75, 50 and 25 per cent of his health, and
 any single hit (melee, ranged, spell, wand, special or instant kill) takes him
@@ -318,7 +319,7 @@ def _bridge_candidates(dungeon, rooms: set, length: int):
 
 def find_site(dungeon, start, rng, taken=(), length: int = 3) -> dict | None:
     """Where the knight goes on this floor:
-    {'kind': 'bridge'|'doorway'|'corridor', 'knight': (x, y), 'bridge': [...], 'axis': 'h'|'v'|None}.
+    {'kind': 'bridge'|'doorway'|'room', 'knight': (x, y), 'bridge': [...], 'axis': 'h'|'v'|None}.
     Every answer leaves a way round (has_way_round). None when nothing fits."""
     rooms = _room_cells(dungeon)
     taken = set(taken)
@@ -344,6 +345,28 @@ def find_site(dungeon, start, rng, taken=(), length: int = 3) -> dict | None:
             continue
         if has_way_round(dungeon, start, spot):
             return {'kind': 'doorway', 'knight': spot, 'bridge': [], 'axis': None}
+    # No doorway either: the rooms join up as a tree, with no loop to go
+    # round by (the extra corridors all ran over old ones, about one floor
+    # in 9,000), so every corridor and doorway is the only way on. He stands
+    # in a room instead, on a tile the hero can walk round, not in the room
+    # the hero stands in and not beside a stair.
+    from dungeon import STAIRS_UP, STAIRS_DOWN
+    stairs = {(x, y) for y in range(dungeon.height) for x in range(dungeon.width)
+              if dungeon.tiles[y][x] in (STAIRS_UP, STAIRS_DOWN)}
+    spots = []
+    for r in dungeon.rooms:
+        inner = list(r.inner_tiles())
+        if start in inner:
+            continue
+        spots += [(x, y) for x, y in inner
+                  if dungeon.tiles[y][x] == FLOOR
+                  and not any((x + dx, y + dy) in stairs for dx in (-1, 0, 1) for dy in (-1, 0, 1))]
+    rng.shuffle(spots)
+    for spot in spots:
+        if spot in taken or spot in traps:
+            continue
+        if has_way_round(dungeon, start, spot):
+            return {'kind': 'room', 'knight': spot, 'bridge': [], 'axis': None}
     return None
 
 
@@ -352,7 +375,7 @@ def build_bridge(dungeon, site: dict) -> None:
     Only solid wall beside the corridor turns to water, so nothing that
     could be walked on before is lost and nothing new can be walked on."""
     from dungeon import WALL, WATER, DOOR, FLOOR
-    if site['kind'] == 'doorway':
+    if site['kind'] != 'bridge':
         x, y = site['knight']
         if dungeon.tiles[y][x] == DOOR:
             dungeon.tiles[y][x] = FLOOR          # he stands in the open door

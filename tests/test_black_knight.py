@@ -161,6 +161,8 @@ def test_every_site_leaves_a_way_round_on_many_floors():
     from dungeon import generate_dungeon
     kinds = {}
     for i in range(120):
+        # (generate_dungeon draws from its own unseeded generator: each run
+        # walks 120 new floors, which is how the loopless floor turned up)
         random.seed(1000 + i)
         d = generate_dungeon(80, 50, 15 + i % 5)
         start = d.rooms[0].center
@@ -172,6 +174,63 @@ def test_every_site_leaves_a_way_round_on_many_floors():
         _check_site(d, start, site)
         kinds[site['kind']] = kinds.get(site['kind'], 0) + 1
     assert kinds.get('bridge', 0) > 60                     # most floors get the bridge
+
+
+def _tree_floor(level=17):
+    """Three 7x7 rooms in a row, each joined to the next by one straight
+    corridor walled on both sides, the up stair in the first and the down
+    stair in the last. No loop anywhere: every corridor tile and doorway is
+    the only way on (a generated floor whose extra corridors all ran over old
+    ones is like this, about one in 9,000)."""
+    from dungeon import FLOOR, STAIRS_DOWN, STAIRS_UP, WALL, Dungeon, Room
+    w, h = 50, 13
+    tiles = [[WALL] * w for _ in range(h)]
+    rooms = [Room(1 + 17 * i, 2, 9, 9) for i in range(3)]
+    for r in rooms:
+        for x, y in r.inner_tiles():
+            tiles[y][x] = FLOOR
+    cy = rooms[0].center[1]
+    for x in range(rooms[0].center[0], rooms[-1].center[0] + 1):
+        tiles[cy][x] = FLOOR
+    (ux, uy), (dx, dy) = rooms[0].center, rooms[-1].center
+    tiles[uy][ux], tiles[dy][dx] = STAIRS_UP, STAIRS_DOWN
+    return Dungeon(tiles, rooms, w, h, level)
+
+
+def test_on_a_floor_with_no_loop_he_stands_in_a_room_with_a_way_round():
+    """With no loop, no bridge and no doorway leaves a way round. find_site
+    used to give up (None) and the game set him on any free tile, often a
+    corridor that was the only way on to the stairs. Now he stands in a room,
+    on a tile the hero can walk round, away from the stairs."""
+    import black_knight as bk
+    from dungeon import STAIRS_DOWN, STAIRS_UP
+    d = _tree_floor()
+    start = d.rooms[0].center
+    cands = bk._bridge_candidates(d, bk._room_cells(d), 3)
+    assert cands and not any(bk.has_way_round(d, start, t[len(t) // 2]) for _a, t in cands)
+    doorways = [p for r in d.rooms for p in r.wall_tiles() if d.is_walkable(*p)]
+    assert doorways and not any(bk.has_way_round(d, start, p) for p in doorways)
+    for i in range(30):
+        site = bk.find_site(d, start, random.Random(i))
+        assert site is not None and site['kind'] == 'room'
+        kx, ky = site['knight']
+        assert (kx, ky) not in set(d.rooms[0].inner_tiles())          # not where the hero stands
+        assert all(d.tiles[ky + oy][kx + ox] not in (STAIRS_UP, STAIRS_DOWN)
+                   for ox in (-1, 0, 1) for oy in (-1, 0, 1))
+        bk.build_bridge(d, site)
+        _check_site(d, start, site)
+
+
+def test_on_a_real_floor_with_no_loop_the_stairs_stay_reachable(monkeypatch):
+    import black_knight as bk
+    from dungeon import STAIRS_DOWN
+    g = _game('__test_bk_tree__')
+    monkeypatch.setattr(g.level_mgr, 'generate', lambda n: (_tree_floor(n), [], []))
+    k = _on_his_floor(g, 17)
+    start = (g.player.x, g.player.y)
+    assert bk.has_way_round(g.dungeon, start, (k.x, k.y))
+    cut = bk.flood(g.dungeon, start, blocked=(k.x, k.y))
+    assert any(g.dungeon.tiles[y][x] == STAIRS_DOWN for x, y in cut)
 
 
 def test_on_a_real_floor_he_stands_on_his_bridge_and_the_stairs_stay_reachable():

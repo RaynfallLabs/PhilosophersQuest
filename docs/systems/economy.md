@@ -75,8 +75,10 @@ side; then a generalist on some of the floors left (half as often on a busy
 Road floor). Never on floor 1, 99, 100, a boss floor, the Cow Level, or the
 Emberpup's or the Black Knight's floor. Saved as `Game._traders`.
 
-**Placing** (`TraderMixin._maybe_spawn_trader`, called last in the arrival
-spawns of `_change_level`): once per floor, on first arrival. Stock and spot
+**Placing** (`TraderMixin._maybe_spawn_trader`, called last of everything
+`_change_level` sets down on a first arrival: after the encounter spawns, the
+lore items, a zoo's or barracks' extra sleepers and `_settle_monsters`): once
+per floor, on first arrival. Stock and spot
 come from `road.rng_for(seed, 'trader:<floor>')`. The spot is a floor tile in
 a room, reachable from the hero (`_reachable_tiles`), clear of the stairs,
 every item and creature, the tiles around any encounter NPC, escort or ally,

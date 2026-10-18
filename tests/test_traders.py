@@ -157,6 +157,79 @@ def test_the_gate_camp_stands_reachable_on_19_39_59_79_clear_of_everything():
         assert g.renderer._get_sprite(t.sprite_id) is not None, t.sprite_id
 
 
+def _small_gate_floor(g, monkeypatch, level=19, zoo=False):
+    """Arrive on a hand-built gate floor of five 3x3 rooms in a row joined by
+    one corridor: the trader's room is all centre, so every tile he could
+    take is one a lore item (set down near a room's centre) could take too.
+    ``zoo`` makes his room a zoo whose extra sleepers fill every free tile
+    of it (they are set down blind, like the real ones)."""
+    from dungeon import FLOOR, STAIRS_DOWN, STAIRS_UP, WALL, Dungeon, Room
+    from monster import Monster
+    import main
+    w, h = 40, 11
+    tiles = [[WALL] * w for _ in range(h)]
+    rooms = [Room(1 + 8 * i, 3, 5, 5) for i in range(5)]
+    for r in rooms:
+        for x, y in r.inner_tiles():
+            tiles[y][x] = FLOOR
+    for x in range(rooms[0].center[0], rooms[-1].center[0] + 1):
+        tiles[5][x] = FLOOR
+    (ux, uy), (dx, dy) = rooms[0].center, rooms[-1].center
+    tiles[uy][ux], tiles[dy][dx] = STAIRS_UP, STAIRS_DOWN
+    d = Dungeon(tiles, rooms, w, h, level)
+    if zoo:
+        d.special_rooms = {rooms[1].center: 'zoo'}
+        rat = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))['giant_rat']
+
+        def blind_zoo(rms, lvl, dun, min_count=None, max_count=None, existing=None):
+            held = {(m.x, m.y) for m in existing or ()}
+            return [Monster({**rat, 'id': 'giant_rat'}, x, y)
+                    for x, y in rms[1].inner_tiles() if (x, y) not in held]
+        monkeypatch.setattr(main, 'spawn_monsters', blind_zoo)
+    monkeypatch.setattr(g.level_mgr, 'generate', lambda n: (d, [], []))
+    g._black_knight = {'floor': None, 'spawned': False, 'outcome': None, 'sword_dropped': False}
+    g._change_level(level, enter_from_top=True)
+
+
+def test_nothing_set_down_after_arrival_lands_on_the_trader(monkeypatch):
+    """He is placed last of all on a first arrival. The lore items and a
+    zoo's extra sleepers used to be set down after him without looking at
+    his tile: on floor 79 a gate camp's sutler shared his tile with the
+    Scroll of the Lake of Fire about one full suite run in ten. Here every
+    lore item is due on the gate floor and its tile is chosen as badly as
+    it can be: the trader's own, if he is already standing."""
+    from mystery_system import MerchantNPC
+    g = _game('__test_trader_last__')
+    g._lore_levels = {k: 19 for k in g._lore_levels}
+    g._lore_placed = set()
+    real_choice = random.choice
+
+    def worst_choice(seq):
+        his = {(i.x, i.y) for i in g.ground_items if isinstance(i, MerchantNPC)}
+        hit = next((c for c in seq if isinstance(c, tuple) and c in his), None)
+        return hit if hit is not None else real_choice(seq)
+    monkeypatch.setattr(random, 'choice', worst_choice)
+    _small_gate_floor(g, monkeypatch)
+    t = next(i for i in g.ground_items if isinstance(i, MerchantNPC))
+    lore = [i for i in g.ground_items if i is not t and (i.x, i.y) in
+            {(x, y) for r in g.dungeon.rooms[1:-1] for x, y in r.inner_tiles()}]
+    assert len(g._lore_placed) == 4 and lore           # the lore items did come
+    assert not any((i.x, i.y) == (t.x, t.y) for i in g.ground_items if i is not t)
+
+
+def test_a_zoos_sleepers_never_land_on_the_trader(monkeypatch):
+    """A zoo's extra sleepers fill his room: he stands somewhere else, not
+    under one of them (they used to be set down after him, blind)."""
+    from geom import all_occupied_tiles
+    from mystery_system import MerchantNPC
+    g = _game('__test_trader_zoo__')
+    _small_gate_floor(g, monkeypatch, zoo=True)
+    t = next(i for i in g.ground_items if isinstance(i, MerchantNPC))
+    assert sum(1 for m in g.monsters if (m.x, m.y) in set(g.dungeon.rooms[1].inner_tiles())) >= 8
+    assert (t.x, t.y) not in set(all_occupied_tiles(g.monsters))
+    assert (t.x, t.y) in g._reachable_tiles(g.player.x, g.player.y)
+
+
 def test_a_trader_keeps_clear_of_the_roads_people_and_the_hero():
     """He never stands on or beside an encounter NPC, an escort or an ally,
     nor within 2 tiles of the hero."""

@@ -1787,7 +1787,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_black_knight(new_level)
             self._maybe_spawn_setne_tomb(new_level)
             self._maybe_place_duck_of_doom(new_level)
-            self._maybe_spawn_trader(new_level)      # last: it keeps clear of the rest
+            # (The trader comes last of all, below: he keeps clear of the rest.)
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
@@ -2276,6 +2276,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if _held_charges is not None:
             self._restore_once_a_floor_state(_held_charges)
         self._settle_monsters()
+        # The run's trader is placed last of all, so he keeps clear of
+        # everything set down before him. He used to come before the lore
+        # items and a zoo's or barracks' sleepers, which were set down blind
+        # and could land on his tile (a gate camp's sutler on floor 79 shared
+        # it with the Scroll of the Lake of Fire).
+        if not saved:
+            self._maybe_spawn_trader(new_level)
         self._refresh_fov()
         # An escort whose last stair this was says goodbye on the new floor.
         self._escorts_finish(_esc_arrived)
