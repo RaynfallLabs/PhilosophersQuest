@@ -1079,7 +1079,7 @@
           "category": "potion"
         },
         "outcome": "The potion tastes like burnt copper and optimism. You experience a brief, intense sensation of being a slightly different shape, and then it passes. The apprentice scribbles in his notebook furiously. \"Fascinating! Here, take the good one as payment.\"",
-        "chronicle": "Tested a teenage alchemist's potion for her. I still have both my eyebrows, which is more than she has.",
+        "chronicle": "Tested a teenage alchemist's potion for him. I still have both my eyebrows, which is more than he has.",
         "road": {
           "id": "flv_apprentice_alchemist.test",
           "hint": "The second batch is always the dangerous one."
@@ -1558,7 +1558,7 @@
         "reward": {
           "type": "message"
         },
-        "outcome": "\"Overconfidence,\" the bones say without hesitation. \"Same as most of you. I had a enchanted sword and a plan and absolutely no idea what was waiting on level twelve.\" A pause. \"Don't make my mistake.\""
+        "outcome": "\"Overconfidence,\" the bones say without hesitation. \"Same as most of you. I had an enchanted sword and a plan and absolutely no idea what was waiting on level twelve.\" A pause. \"Don't make my mistake.\""
       },
       {
         "label": "Walk away from the talking bones",
@@ -1589,12 +1589,12 @@
     "options": [
       {
         "label": "Give Fisk his purse, markers and all",
-        "outcome": "He counts it in front of you, which is rude, and then gives you a single coin, which is ruder. The widow watches the markers go back into his coat.",
+        "outcome": "He counts it in front of you, which is rude, and does not thank you, which is ruder. The widow watches the markers go back into his coat.",
         "deeds": [
           "forgo.fisk_purse",
           "met.fisk"
         ],
-        "chronicle": "Gave a moneylender back his purse, debts and all. He tipped me one coin. The widow behind him did not tip me anything.",
+        "chronicle": "Gave a moneylender back his purse, debts and all. He never said thank you. The widow behind him did not say anything at all.",
         "road": {
           "id": "flv_moneylender_purse.return",
           "hint": "A lost purse belongs to its owner, even an owner you dislike."
@@ -1697,7 +1697,7 @@
         },
         "outcome": "You reach out to move her hair aside, and her head snaps up. The face underneath is grey and rotting, the eyes pure white. \"I'LL SWALLOW YOUR SOUL!\" she shrieks, and rakes you across the chest before you can react. She was dead the whole time.",
         "fight": {
-          "monster_id": "deadite"
+          "monster_id": "fresh_deadite"
         },
         "deeds": [
           "met.deadite"
@@ -1728,7 +1728,7 @@
         "fail": {
           "outcome": "You're nearly ready. Nearly. She rakes you once on the way down.",
           "fight": {
-            "monster_id": "deadite"
+            "monster_id": "fresh_deadite"
           },
           "chronicle": "Saw the Deadite coming and still let her get a claw in. Paranoia is only useful if it is quick.",
           "cost": {
@@ -1745,7 +1745,7 @@
         "label": "Say the words, to be sure. \"Klaatu, Barada, N... Necktie.\"",
         "outcome": "You definitely said all of the words. Mostly. The floor cracks in two places and two more of them climb out to join her. You may have said a word wrong.",
         "fight": {
-          "monster_id": "deadite",
+          "monster_id": "fresh_deadite",
           "count": 2
         },
         "deeds": [
@@ -2794,11 +2794,11 @@
           "type": "potion",
           "count": 2
         },
-        "outcome": "She takes them and checks every stopper. \"The jars are two short,\" she says. \"Mam counted.\" She goes, and does not look back.",
+        "outcome": "She takes them and checks every stopper. \"That's the potions,\" she says. \"Mam counted the bread too.\" She goes, and does not look back.",
         "deeds": [
           "told.lena_repaid"
         ],
-        "chronicle": "Marta's daughter came for her mother's satchel. I gave back what I still had. She said the jars were two short. She was right.",
+        "chronicle": "Marta's daughter came for her mother's satchel. I gave back the potions. She said her mother had counted the bread too. She was right.",
         "road": {
           "id": "flv_lena_returns.give_back",
           "hint": "What you take from a mother, her daughter comes to collect."
@@ -2942,7 +2942,7 @@
       "id": "grumwald",
       "name": "Grumwald"
     },
-    "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: YES, YOU.",
+    "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL A COIN. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: YES, YOU.",
     "text_variants": [
       {
         "when": {
@@ -2950,7 +2950,7 @@
             "forgo.troll_toll"
           ]
         },
-        "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: NUMBER NINE CROSSES FREE."
+        "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL A COIN. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: NUMBER NINE CROSSES FREE."
       },
       {
         "when": {
@@ -2958,7 +2958,7 @@
             "wrong.robbed_grumwald"
           ]
         },
-        "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL ONE COPPER. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: ESPECIALLY YOU. The box is chained to his ankle."
+        "text": "Another chasm, another rope bridge, and Grumwald, minding his cousin's bridge now, asleep beside a new box. The sign reads: TOLL A COIN. TROLL ASLEEP. PAY ANYWAY. Underneath, in newer paint: ESPECIALLY YOU. The box is chained to his ankle."
       }
     ],
     "options": [
@@ -3298,10 +3298,6 @@
     "options": [
       {
         "label": "Answer it yourself, staking a fifth of your purse",
-        "cost": {
-          "type": "gold_pct",
-          "amount": 20
-        },
         "quiz": {
           "subject": "theology",
           "tier": 3,
@@ -3332,6 +3328,10 @@
         },
         "fail": {
           "outcome": "You guess wrong. Samson takes your stake and shrugs, almost sorry. \"Seven days, they had,\" he says. \"You had a minute.\"",
+          "cost": {
+            "type": "gold_pct",
+            "amount": 20
+          },
           "deeds": [
             "told.lost_to_samson"
           ],
@@ -4649,7 +4649,7 @@
           "amount": 20
         },
         "outcome": "They prod and poke with cool efficiency, muttering notes. \"Minor lacerations, dehydration, one infected bite you clearly hadn't noticed. Hold still.\" The treatment is brisk and uncomfortable, but the results are undeniable. You feel substantially better than you did walking in.",
-        "chronicle": "Let a beaked doctor examine me. He seemed disappointed I was so healthy.",
+        "chronicle": "Let a beaked doctor examine me. The doctor seemed disappointed I was so healthy.",
         "road": {
           "id": "flv_plague_doctor.exam",
           "hint": "A doctor who catalogues the dead wants a living one for once."
@@ -4936,8 +4936,8 @@
             "reward": {
               "type": "message"
             },
-            "text": "A Brother in a patched brown habit from the house on the side stair catches you up. \"Hrolf's wife brought her girl to us to be blessed, the one your gold bought back. She is feeding. They named her Astrid.\"",
-            "chronicle": "A Brother from the side stair found me. The girl my gold bought off the stone is feeding. Her mother named her Astrid."
+            "text": "A Brother in a patched brown habit from the house on the side stair catches you up. \"Hrolf's wife brought her girl to us to be blessed, the one your gold bought back. She is feeding. We named her Astrid.\"",
+            "chronicle": "A Brother from the side stair found me. The girl my gold bought off the stone is feeding. The Brothers named her Astrid."
           }
         ]
       },
@@ -6111,10 +6111,6 @@
     "options": [
       {
         "label": "Answer the Warden's sums, staking a quarter of your purse",
-        "cost": {
-          "type": "gold_pct",
-          "amount": 25
-        },
         "quiz": {
           "subject": "math",
           "tier": 3,
@@ -6137,6 +6133,10 @@
         },
         "fail": {
           "outcome": "It counts your coins into its chest without comment, one by one, and steps aside anyway. \"THE GUILD THANKS YOU FOR YOUR CUSTOM.\"",
+          "cost": {
+            "type": "gold_pct",
+            "amount": 25
+          },
           "chronicle": "Lost a quarter of my purse to a brass guard counting for a guild that died four hundred years ago. It thanked me for my custom."
         },
         "road": {
@@ -6200,7 +6200,7 @@
           "effect": "blessed",
           "duration": 150
         },
-        "outcome": "The brothers kneel. The niche takes the reliquary as if it had been cut for it, which it was. \"Iona to here,\" the eldest says. \"Two brothers, and then one stranger.\" He blesses you slowly and thoroughly, like a man paying a debt in full.",
+        "outcome": "The brothers kneel. The niche takes the reliquary as if it had been cut for it, which it was. \"Iona to here,\" the eldest says. \"A brother and a sister, and then one stranger.\" He blesses you slowly and thoroughly, like a man paying a debt in full.",
         "deeds": [
           "told.columba_laid"
         ],
@@ -6745,7 +6745,7 @@
         "cuthbert_gospel": "open"
       }
     },
-    "text": "A neat little man has set up a folding table of bones, each labelled in a confident hand. He looks you over once, and his eyes stop at your pack. \"If you should happen to be carrying something old and small and red,\" he says, \"the brothers below would give you a blessing for it. I will give you four hundred crowns. Blessings don't buy bread.\"",
+    "text": "A neat little man has set up a folding table of bones, each labelled in a confident hand. He looks you over once, and his eyes stop at your pack. \"If you should happen to be carrying something old and small and red,\" he says, \"the brothers below would give you a blessing for it. I will give you a heavy purse for it. Blessings don't buy bread.\"",
     "options": [
       {
         "label": "Sell him the red book",
@@ -6763,7 +6763,7 @@
         "deeds": [
           "wrong.sold_gospel"
         ],
-        "chronicle": "Sold Saint Cuthbert's Gospel to a relic broker for four hundred crowns. The monk who gave it to me said people would offer. He was right.",
+        "chronicle": "Sold Saint Cuthbert's Gospel to a relic broker for a heavy purse. The monk who gave it to me said people would offer. He was right.",
         "road": {
           "id": "flv_relic_broker.sell",
           "hint": "Every relic carried down will be priced by someone on the way."
@@ -6782,7 +6782,7 @@
         }
       },
       {
-        "label": "Buy one of his vials instead, for sixty gold",
+        "label": "Buy one of his vials instead",
         "cost": {
           "type": "gold",
           "amount": 60
@@ -6811,7 +6811,7 @@
     "text": "An elderly woman with ink-stained fingers sits behind a low table bearing dozens of small bones, each carved with symbols. She doesn't look up when you approach. \"Shang oracle bones,\" she says. \"The real thing, not copies. I ask a question, I heat the bone, the crack gives the answer. You want to know something? The bones charge their own price.\"",
     "options": [
       {
-        "label": "Ask about treasure (pay gold)",
+        "label": "Ask about treasure",
         "cost": {
           "type": "gold",
           "amount": 130
@@ -6875,7 +6875,7 @@
         }
       },
       {
-        "label": "Pay him the soldier's tribute (gold)",
+        "label": "Pay him the soldier's tribute",
         "cost": {
           "type": "gold",
           "amount": 130
@@ -7175,7 +7175,7 @@
         }
       },
       {
-        "label": "Bribe it for information (gold)",
+        "label": "Bribe it for information",
         "cost": {
           "type": "gold",
           "amount": 120
@@ -7244,14 +7244,14 @@
             "saved.antigone",
             "told.creon_relented"
           ],
-          "chronicle": "Talked Captain Creon round about burying a traitor. He went back in time. In the old story he was too late. I am glad of the difference."
+          "chronicle": "Talked King Creon round about burying a traitor. He went back in time. In the old story he was too late. I am glad of the difference."
         },
         "fail": {
           "outcome": "Creon hears you out, and is unmoved, and courteous about it. \"The law is the city,\" he says, and walks on to the gate.",
           "deeds": [
             "lost.antigone"
           ],
-          "chronicle": "Argued with Captain Creon about the law of the dead. He was courteous and unmoved, and he walked on to the gate."
+          "chronicle": "Argued with King Creon about the law of the dead. He was courteous and unmoved, and he walked on to the gate."
         },
         "road": {
           "id": "flv_antigone.speak",
@@ -7400,11 +7400,11 @@
             "text": "You are in to the waist. Your legs are a long way away, in very cold water.",
             "effect": {
               "effect": "paralyzed",
-              "duration": 6
+              "duration": 4
             }
           },
           {
-            "text": "The stone closes round your throat. Ahwere is the one who pulls you out."
+            "text": "The stone closes round your throat."
           }
         ],
         "pass": {
@@ -7467,7 +7467,7 @@
               "told.lost_senet",
               "flag.thoth_lost"
             ],
-            "chronicle": "Lost every round of senet for the Book of Thoth and went into the floor up to my mouth. Ahwere pulled me out. I woke a floor higher.",
+            "chronicle": "Lost every round of senet for the Book of Thoth and went into the floor up to my mouth. Ahwere pulled me out. I woke higher up.",
             "expel_up": true,
             "thread": {
               "id": "thoth_tomb",
@@ -7764,7 +7764,7 @@
         }
       },
       {
-        "label": "Commission a dream of strength (pay gold)",
+        "label": "Commission a dream of strength",
         "cost": {
           "type": "gold",
           "amount": 175
@@ -7862,6 +7862,11 @@
       },
       {
         "label": "Tell him a bearer still lives, on the floors above",
+        "forbids": {
+          "deeds_all": [
+            "told.gospel_laid"
+          ]
+        },
         "outcome": "He is out of the door before you finish, with the lamp in one hand and a blanket in the other. The chapel is dark without him, and the desk is still empty.",
         "deeds": [
           "told.sacristan_bearer"
@@ -7870,6 +7875,11 @@
       },
       {
         "label": "Ask for a blessing and say nothing about any book",
+        "forbids": {
+          "deeds_all": [
+            "told.gospel_laid"
+          ]
+        },
         "reward": {
           "type": "effect",
           "effect": "blessed",
@@ -8317,15 +8327,25 @@
             "saved.azarias"
           ],
           "person_status": "saved",
-          "chronicle": "Walked two floors with a young man called Azarias and his dog. He never stepped on a trap and never ate a thing. He left me a fish's gall for someone's eyes."
+          "chronicle": "Walked a long way down with a young man called Azarias and his dog. He never stepped on a trap and never ate a thing. He left me a fish's gall for someone's eyes."
         },
         "on_fail": {
-          "outcome": "Azarias is simply not there any more, and nor is the dog.",
+          "outcome": "Azarias goes down under the blows. When you reach him he is simply not there any more, and nor is the dog.",
           "deeds": [
             "met.azarias"
           ],
           "chronicle": "Lost track of Azarias and his dog on the stairs. I do not think he was lost. I think I was."
-        }
+        },
+        "on_fail_variants": [
+          {
+            "when": {
+              "deeds_all": [
+                "flag.escort_left_behind.azarias"
+              ]
+            },
+            "outcome": "Azarias is simply not there any more, and nor is the dog."
+          }
+        ]
       }
     },
     "options": [
@@ -8857,7 +8877,7 @@
       {
         "label": "Point him vaguely upward",
         "outcome": "\"Up,\" he repeats, as though this had not occurred to him. \"Yes. That, that tracks. Thank you. Tremendous. Right.\" He hoists his crate, takes two steps in the wrong direction, corrects himself, and begins a very long journey home.",
-        "chronicle": "Pointed a lost wine merchant upward. He is sixty floors off. I hope he has a lot of wine.",
+        "chronicle": "Pointed a lost wine merchant upward. He is far below daylight. I hope he has a lot of wine.",
         "road": {
           "id": "flv_abyssal_wine_merchant.upward",
           "hint": "Some merchants are lost on purpose by their maps."
@@ -8898,7 +8918,7 @@
           "duration": 45
         },
         "outcome": "The compound tastes of copper and overripe plums. There is a moment of alarming internal heat, then it passes. \"Excellent. Tissue response nominal. Better than nominal, actually.\" She scribbles notes while your body begins to quietly repair itself, wounds knitting at a rate you find both reassuring and slightly uncanny.",
-        "chronicle": "Volunteered for a deep alchemist's experiment. I regenerate now, briefly. She took notes.",
+        "chronicle": "Volunteered for a deep alchemist's experiment. My cuts close on their own now, for a while. She took notes.",
         "road": {
           "id": "flv_abyssal_alchemist.test",
           "hint": "A test subject is paid in results."
@@ -9550,15 +9570,15 @@
         }
       },
       {
-        "label": "Refuse without reading",
+        "label": "Refuse to sign",
         "outcome": "\"No.\" He folds the paper into his coat without argument. \"There's always a next crossroads,\" he says, and goes back to tuning.",
         "deeds": [
           "met.crossroads_fiddler"
         ],
-        "chronicle": "Told a gentleman at a crossroads I would not sign his paper. I never did find out what was in it.",
+        "chronicle": "Told a gentleman at a crossroads I would not sign his paper. I never did find out what was really in it.",
         "road": {
           "id": "flv_crossroads_fiddler.refuse",
-          "hint": "A no without reading is still a no, but you never learn what you refused."
+          "hint": "A no is still a no, even when you never learn what you refused."
         }
       },
       {
@@ -10225,7 +10245,7 @@
       "id": "berengar",
       "name": "Berengar the Gold"
     },
-    "text": "A towering warrior slumps against the wall, his golden armor shattered, a dozen wounds weeping light rather than blood. \"I made it to the ninety-second floor once,\" he rasps, \"before the thing with a thousand mouths found me. I won't make it further. But you, you still have breath in you.\"",
+    "text": "A towering warrior slumps against the wall, his golden armor shattered, a dozen wounds weeping light rather than blood. \"I made it nearly to the bottom once,\" he rasps, \"before the thing with a thousand mouths found me. I won't make it further. But you, you still have breath in you.\"",
     "options": [
       {
         "label": "Give him 200 gold for funeral rites",
@@ -10247,7 +10267,7 @@
           "duration": 40
         },
         "outcome": "You say nothing. He says nothing. The silence between you is the companionship of people who understand what this place costs. When he finally stills, you feel something settle over you, a dying man's final wish for another's survival. You feel blessed.",
-        "chronicle": "Sat with a dying hero who once reached the ninety-second floor. He told me what found him there.",
+        "chronicle": "Sat with a dying hero who once got near the bottom. He told me what found him there.",
         "road": {
           "id": "flv_dying_hero_berengar.sit",
           "hint": "The last hero to come this far left a warning, if you sit long enough."
@@ -10648,7 +10668,7 @@
     "callback_only": true,
     "person": {
       "id": "oswin",
-      "name": "Sir Oswin"
+      "name": "Sir Oswin of Harrow"
     },
     "text": "A pilgrim sits on the stair with his boots off, rubbing his feet. \"The knight from Thale? Big man, cracked holy symbol?\" He points up the way you came. \"He passed me going up, singing. Badly. Said he was going home to testify against his bishop.\"",
     "text_variants": [

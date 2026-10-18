@@ -116,9 +116,19 @@ STAT_NAMES = ('STR', 'DEX', 'CON', 'INT', 'WIS', 'PER')
 # statistic). Kept tiny on purpose.
 DIGIT_NAMES = ('221B',)
 
+# A floor count written out in words is still a floor number ("sixty floors
+# off", "the ninety-second floor"); "a few floors down" is not (CON-20).
+_NUM_WORD = (r'(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|'
+             r'thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|'
+             r'thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred)')
+_ORD_WORD = (r'(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|'
+             r'eleventh|twelfth|\w+teenth|\w+ieth|hundredth)')
+_FLOOR_COUNT = (rf'{_NUM_WORD}(?:[- ]{_NUM_WORD})*\s+floors?|'
+                rf'(?:{_NUM_WORD}-)?{_ORD_WORD}\s+floor')
+
 _GAME_TERMS = re.compile(
     r'\b(karma|quiz|quizzes|tier|tiers|HP|MP|SP|XP|AC|per turn|every turn|'
-    r'auto-?pass(es)?|milestone|unlocked|identifies)\b', re.I)
+    r'auto-?pass(es)?|milestone|unlocked|identifies|' + _FLOOR_COUNT + r')\b', re.I)
 
 
 def lint(text) -> list:

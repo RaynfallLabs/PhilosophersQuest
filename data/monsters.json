@@ -29146,6 +29146,60 @@
     },
     "lore": "In Sam Raimi's Evil Dead films, words read aloud from the Book of the Dead wake a Kandarian demon in the woods, and it climbs into whoever is nearest, living or dead. The possessed are called Deadites. They wear a friend's face and beg for help, then laugh and lunge with a strength and speed no body should have. Ash learned the hard way that nothing short of taking one apart will stop it. This one waited in the corridor for someone kind."
   },
+  "fresh_deadite": {
+    "name": "fresh deadite",
+    "symbol": "z",
+    "color": [
+      160,
+      160,
+      210
+    ],
+    "ai_pattern": "aggressive",
+    "hp": "11d8+10",
+    "speed": 12,
+    "thac0": 15,
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "1d6+1",
+        "type": "slash"
+      },
+      {
+        "name": "Bite",
+        "damage": "1d4+1",
+        "type": "pierce"
+      }
+    ],
+    "resistances": [
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead",
+      "demon",
+      "humanoid"
+    ],
+    "min_level": 6,
+    "peak_floor": 8,
+    "spread": 4,
+    "peak_weight": 0.0,
+    "frequency": 0,
+    "quest_only": true,
+    "harvest_tier": 0,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    },
+    "lore": "In Sam Raimi's Evil Dead, the Kandarian demon does not wait for a body to cool. It climbs into whoever is nearest, and for the first hours the possessed still have a friend's voice and a friend's face, and only the white eyes and the laughter give it away. A fresh Deadite has not yet learned what the body it wears can do. It is still quicker than it should be, it still means to swallow your soul, and nothing short of taking it apart will stop it. Left long enough in the dark, it becomes the other kind."
+  },
   "risen_deadite": {
     "name": "risen deadite",
     "symbol": "z",
