@@ -53,13 +53,24 @@ OWNING = {
         'wrong.took_cordial',
     ('flv_ruth_gale', 'Tell her you took it from his neck, and give it back'):
         'wrong.robbed_amos',
+    # The Green Chapel (Part J11): before the Knight swings, or after his nick.
+    ('flv_green_chapel', 'Tell him about the girdle before he swings'):
+        'wrong.kept_girdle',
+    ('flv_green_chapel', 'Tell him the truth about the girdle, and give it back'):
+        'wrong.kept_girdle',
 }
 # The item a confession hands back needs to be in the hero's hands.
-HOLDS = {'flv_ysolde_gate': 'silverlight_pendant', 'flv_ruth_gale': 'prophets_amulet'}
+HOLDS = {'flv_ysolde_gate': 'silverlight_pendant', 'flv_ruth_gale': 'prophets_amulet',
+         'flv_green_chapel': 'green_girdle'}
+# A confession that comes after a step of its scene (the nick at the chapel).
+STAGE = {('flv_green_chapel', 'Tell him the truth about the girdle, and give it back'):
+         ['told.green_chapel_blow']}
+# The showpiece is high stakes (an axe at the neck); the rest are medium.
+HIGH = {'flv_green_chapel'}
 
 UNJUST = {'grain_committee', 'live_not_by_lies', 'flv_witch_finder', 'flv_socrates_cell',
-          'flv_last_philosopher', 'flv_exposed_child'}
-JUST = {'fallen_paladin', 'penitent'}
+          'flv_last_philosopher', 'flv_exposed_child', 'flv_antigone'}
+JUST = {'fallen_paladin', 'penitent', 'flv_green_chapel'}
 
 
 def _opt(tag, label):
@@ -93,7 +104,8 @@ def test_a_confession_costs_something_and_answers_the_heros_own_wrong():
         assert o.get('cost'), tag                                  # a real, visible price
         req = (o.get('requires') or {}).get('deeds_any') or (e.get('requires') or {}).get('deeds_any')
         assert req == [wrong], tag
-        assert e['callback_only'] and e['stakes'] == 'medium', tag  # a light scene pays nothing
+        assert e['callback_only'], tag
+        assert e['stakes'] == ('high' if tag in HIGH else 'medium'), tag  # a light scene pays nothing
         assert o.get('chronicle') and o.get('road', {}).get('hint'), tag
         assert 'tell' in label.lower(), label                      # the words are the act
 
@@ -102,17 +114,18 @@ def test_a_confession_shows_only_after_the_wrong_and_beside_a_quieter_way():
     for (tag, label), wrong in OWNING.items():
         e = BY_TAG[tag]
         held = [HOLDS[tag]] if tag in HOLDS else []
-        vis = [o['label'] for _i, o in ES.visible_options(e, _ctx([wrong], held))]
+        step = STAGE.get((tag, label), [])
+        vis = [o['label'] for _i, o in ES.visible_options(e, _ctx([wrong] + step, held))]
         assert label in vis, (tag, vis)
         # Never the only thing to do: a silent repayment, hiding it, keeping
         # it, or just walking on are all there too, and each pays nothing.
-        others = [o for _i, o in ES.visible_options(e, _ctx([wrong], held))
+        others = [o for _i, o in ES.visible_options(e, _ctx([wrong] + step, held))
                   if o['label'] != label]
         assert len(others) >= 2, (tag, vis)
         assert all(ES.max_karma(o) == 0 for o in others), tag
         # A hero who did no wrong never sees it (the scene itself may be
         # what never comes: its requires gates the spawn).
-        c = _ctx(['met.x'], held)
+        c = _ctx(['met.x'] + step, held)
         clean = [o['label'] for _i, o in ES.visible_options(e, c)]
         assert label not in clean or not deeds.check(e.get('requires') or {}, c), tag
 
@@ -127,7 +140,8 @@ def test_each_confession_has_its_payoff_at_the_gate():
     with open(os.path.join(ROOT, 'data', 'gate_lines.json'), encoding='utf-8') as f:
         rows = json.load(f)['gate']['lines']
     owned = {'told.owned_up_to_lena', 'told.ysolde_owned_pendant', 'told.owned_up_to_aldric',
-             'told.owned_up_to_grumwald', 'told.owned_up_to_ruth'}
+             'told.owned_up_to_grumwald', 'told.owned_up_to_ruth',
+             'told.owned_up_to_green_knight'}
     seen = set()
     for (tag, label), wrong in OWNING.items():
         o = _opt(tag, label)
@@ -172,10 +186,17 @@ def test_handing_an_innocent_to_an_unjust_authority_is_still_betrayal():
     assert o['submit'] and (o['karma'], o['karma_kind']) == (-1, 'betray')
 
 
+OSWIN_BACK = '"Go back up. Face the families of Thale, and tell the king\'s court about Ranulf."'
+
+
 def test_npc_owning_up_faces_an_honest_authority_and_reads_as_courage():
-    oswin = _opt('fallen_paladin', '"Go back up and face the families of Thale."')
-    assert oswin['submit'] and 'Ranulf' in oswin['outcome']       # the truth reaches the bishop
-    assert BY_TAG['fallen_paladin']['contested']                   # still Brandon's open question
+    oswin = _opt('fallen_paladin', OSWIN_BACK)
+    # The truth reaches the bishop whichever way the urging goes.
+    assert oswin['submit'] and all('Ranulf' in oswin[b]['outcome'] for b in ('pass', 'fail'))
+    # Brandon, 2026-10-18 (J11): urging him back is courage and pays, as a
+    # stance; it is no longer contested. See test_green_chapel.py too.
+    assert not BY_TAG['fallen_paladin'].get('contested')
+    assert (oswin['pass']['karma'], oswin['pass']['karma_kind']) == (1, 'stance')
     lucan = _opt('penitent', 'Weigh mercy and justice with them both')
     assert lucan['submit'] and lucan['pass']['karma_kind'] == 'judgment'
     pell = next(v['text'] for v in BY_TAG['flv_ormonds_granary']['text_variants']
@@ -210,8 +231,11 @@ def test_antigone_refuses_to_hide_rather_than_surrenders():
     o = _opt('flv_antigone', 'Help her finish the burial')
     assert 'does not hide' in o['outcome'] and 'agreeing with him' in o['outcome']
     assert 'does not run' not in o['outcome'] and "This part's mine" not in o['outcome']
-    # The scene stays contested and carries no verdict on Creon (J9).
-    assert BY_TAG['flv_antigone']['contested'] and 'authority' not in BY_TAG['flv_antigone']
+    # Brandon, 2026-10-18 (J11): Creon's edict is an unjust authority. The
+    # defensible answers stay equal (contested), informing is the one submit.
+    e = BY_TAG['flv_antigone']
+    assert e['contested'] and e['authority']['just'] is False
+    assert [o['label'] for o in e['options'] if o.get('submit')] == ["Tell Creon's men where she is"]
 
 
 def test_the_validator_and_the_report_agree():

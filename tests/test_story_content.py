@@ -56,7 +56,11 @@ JUSTICE = {
     ('penitent', 'Weigh mercy and justice with them both'): 1,
     ('penitent', '"He was your father. You decide."'): 0,
     ('forgotten_prisoner', 'Leave him to his sentence'): 1,
-    ('fallen_paladin', '"Go back up and face the families of Thale."'): 0,
+    # Oswin goes to his own trial before an honest court. Urging him there
+    # is courage (Brandon, 2026-10-18, J11): +1 stance when the hero can say
+    # why; he goes either way.
+    ('fallen_paladin',
+     '"Go back up. Face the families of Thale, and tell the king\'s court about Ranulf."'): 1,
     ('flv_paladin_end', 'Ask the pilgrim about the knight'): 0,
     ('flv_sword_in_anvil', 'Tell Sir Ector what you saw'): 0,
     ('flv_lawspeaker_rock', 'Speak the law: the price, the oath, the outlawry'): 1,
@@ -199,7 +203,9 @@ def test_contested_encounters_give_every_side_the_same():
         n += 1
         ks = {(_max_karma(o), _min_karma(o)) for o in e['options'] if not o.get('villain')}
         assert len(ks) == 1, (e['tag'], ks)
-    assert n >= 8
+    # Seven since Oswin's urging became a stance (Brandon, 2026-10-18, J11).
+    assert n >= 7
+    assert not BY_TAG['fallen_paladin'].get('contested')
 
 
 def test_stance_encounters_lean_the_right_way():
@@ -263,6 +269,17 @@ def test_antigone_informing_is_betrayal_and_the_rest_stay_contested():
     rest = [o for o in e['options'] if o is not inform]
     assert len(rest) == 3
     assert {(_max_karma(o), _min_karma(o)) for o in rest} == {(0, 0)}
+    # Brandon, 2026-10-18 (J11): Creon's edict is an unjust authority.
+    # Nothing rewards submitting to it (the only submit is informing, -1),
+    # and resisting it (burying him, arguing, walking on) never costs.
+    assert e['authority']['just'] is False and e['authority']['who']
+    assert inform['submit'] is True
+    assert all(not o.get('submit') for o in rest)
+    for o in e['options']:
+        if o.get('submit'):
+            assert _max_karma(o) <= 0
+        else:
+            assert _min_karma(o) >= 0, o['label']
 
 
 def test_no_hand_over_option_is_left_unclassified():

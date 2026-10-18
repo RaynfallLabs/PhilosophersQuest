@@ -1135,6 +1135,8 @@ class CombatMixin:
             }
             self._chron('boss', _BOSS_CHRONICLE.get(monster.kind, f"Killed {monster.name}. It is done."),
                         once=f'boss:{monster.kind}')
+        # The Green Knight dead keeps no appointment at his chapel (C24).
+        self._green_knight_slain(monster)
         # Mini-bosses and legends: their death is an event in the run's story.
         # (Only the five gate bosses were ever recorded.)
         if (getattr(monster, 'is_mini_boss', False) and not story_key
@@ -1259,10 +1261,21 @@ class CombatMixin:
             return False
         p.hp = 1
         monster.__dict__['_girdle_spent'] = True
-        self.add_message(
-            'The axe stops a hair from your neck, and the Green Knight laughs. '
-            '"You lacked a little loyalty," he says. "But only a little, and for love of your life."',
-            'warning')
+        import deeds
+        reg = self._deeds_reg()
+        if deeds.has(reg, 'told.green_chapel_left') or deeds.has(reg, 'told.green_chapel_fought'):
+            # He waited at his chapel and the hero would not kneel (C24).
+            line = ('The axe stops a hair from your neck, and the Green Knight laughs. '
+                    '"You would not kneel at my chapel," he says, "and you lacked a little '
+                    'loyalty. But only a little, and for love of your life."')
+        else:
+            line = ('The axe stops a hair from your neck, and the Green Knight laughs. '
+                    '"You lacked a little loyalty," he says. "But only a little, and for '
+                    'love of your life."')
+        self.add_message(line, 'warning')
+        # He has had his return blow and named the girdle: the Green Chapel
+        # (C24) has nothing left to ask, so it never comes after this.
+        deeds.note(self, 'flag.green_girdle_turned', source='engine:green_girdle', unique=True)
         # once=: the Journal remembers it was written, across a reload.
         self._chron(
             'deed',
@@ -1270,6 +1283,52 @@ class CombatMixin:
             "He laughed and called it a little disloyalty. I think he was being kind.",
             once='green_girdle')
         return True
+
+    # The Green Chapel (C24, ENCOUNTER_STORIES_DRAFT Part J11): the Knight's
+    # appointment with a hero who took the Green Girdle and lied to his host.
+    # The scene is data (flv_green_chapel); these hooks keep the Green Knight
+    # himself, the planned mini-boss, in step with it.
+    GREEN_CHAPEL_TAG = 'flv_green_chapel'
+
+    def _green_knight_slain(self, monster):
+        """The Green Knight's head came off and stayed off: deed
+        ``slew.green_knight``. A dead knight keeps no appointment, so the
+        Green Chapel never comes after this."""
+        if getattr(monster, 'kind', '') != 'green_knight':
+            return
+        import deeds
+        deeds.note(self, 'slew.green_knight', source='engine:green_knight', unique=True)
+
+    def _green_knight_retires(self):
+        """The Green Knight has had his blow at his chapel (the hero knelt) or
+        been told the truth before he swung: the bargain is paid, and he never
+        comes again this run as a mini-boss. Called after an outcome's deeds
+        are recorded."""
+        import deeds
+        reg = self._deeds_reg()
+        if not (deeds.has(reg, 'told.green_chapel_blow')
+                or deeds.has(reg, 'told.owned_up_to_green_knight')):
+            return
+        lm = getattr(self, 'level_mgr', None)
+        placed = getattr(lm, '_placed_mini_bosses', None)
+        if isinstance(placed, set):
+            placed.add('green_knight')
+
+    def _green_knight_keeps_his_chapel(self):
+        """The Green Chapel was just placed on this floor. If the floor was
+        also rolled for the Green Knight as a mini-boss (his peak is floor
+        74, the chapel's band 67-73, and a carried callback can slip), he is
+        at his chapel instead: the wandering copy goes before it is ever
+        seen (the level manager has already counted him placed, so he is
+        not rolled again). On any other floor nothing changes here: kneeling
+        or owning up retires him (_green_knight_retires), and walking away
+        leaves him free to come for his blow later."""
+        self.monsters[:] = [
+            m for m in self.monsters
+            if not (getattr(m, 'kind', '') == 'green_knight'
+                    and getattr(m, 'is_mini_boss', False)
+                    and not getattr(m, '_flavor_encounter_tag', None)
+                    and not getattr(m, '_npc_encounter_tag', None))]
 
     def _death_gives_back_a_breath(self, hp_before: int) -> bool:
         """Death's Chessboard (H07): a hero who beat Death at chess for their

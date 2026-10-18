@@ -581,6 +581,9 @@ class RoadMixin:
         s = st['slots'].get(level)
         if s is not None and s.get('role') == 'light':
             s['bound'] = tag
+        if tag == getattr(self, 'GREEN_CHAPEL_TAG', None) and level == getattr(self, 'dungeon_level', None):
+            # The Green Knight waits at his chapel, not wandering the same floor.
+            self._green_knight_keeps_his_chapel()
         return True
 
     def _bind_road_slot(self, level: int):

@@ -1729,6 +1729,84 @@ def _(g):
     g._start_flavor_encounter(m)
 
 
+def _green_chapel(g):
+    """The Green Chapel (C24): a hero who kept Lady Bertilak's girdle secret,
+    wearing it, meets the Green Knight at his chapel (its own art)."""
+    import deeds
+    import economy
+    import flavor_encounters
+    from items import make_item_by_id
+    deeds.record(deeds.ensure_register(g), 'wrong.kept_girdle', floor=66, block=7,
+                 source='flv_green_girdle')
+    g.player.armor_slots[4] = make_item_by_id('armor', 'green_girdle')
+    enc = economy.price_encounter(copy.deepcopy(next(
+        e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == 'flv_green_chapel')))
+    g._flavor_encounter_levels[g.dungeon_level] = enc
+    m = _npc_monster(g, {'tag': enc['tag'], 'monster_id': enc['sprite_id']})
+    m._npc_encounter_tag = None
+    m._flavor_encounter_tag = enc['tag']
+    g._start_flavor_encounter(m)
+
+
+@scene('green_chapel_on_map', 'Encounters',
+       'The Green Knight at his chapel on floor 70, on the map (close zoom).', expect='player')
+def _(g):
+    import deeds
+    import economy
+    import flavor_encounters
+    from items import make_item_by_id
+    deeds.record(deeds.ensure_register(g), 'wrong.kept_girdle', floor=66, block=7,
+                 source='flv_green_girdle')
+    g.player.armor_slots[4] = make_item_by_id('armor', 'green_girdle')
+    enc = economy.price_encounter(copy.deepcopy(next(
+        e for e in flavor_encounters.FLAVOR_ENCOUNTERS if e['tag'] == 'flv_green_chapel')))
+    g._flavor_encounter_levels[70] = enc
+    g._change_level(70, enter_from_top=True)
+    k = next(m for m in g.monsters if getattr(m, '_flavor_encounter_tag', None) == enc['tag'])
+    near = [(k.x + dx, k.y + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]
+    near = [t for t in near if g.dungeon.is_walkable(*t)]
+    g.monsters[:] = [m for m in g.monsters if m is k or max(abs(m.x - k.x), abs(m.y - k.y)) > 8]
+    # The chapel's hollow, not the floor's loot: the In Sight list stays on him.
+    g.ground_items[:] = [i for i in g.ground_items
+                         if max(abs(i.x - k.x), abs(i.y - k.y)) > 8]
+    g.player.x, g.player.y = near[0]
+    g.zoom_mode = 'close'
+    g._refresh_fov()
+
+
+@scene('green_chapel', 'Encounters', 'The Green Chapel (C24): the Green Knight waits.',
+       expect='npc_encounter')
+def _(g):
+    _green_chapel(g)
+
+
+@scene('green_chapel_nick', 'Encounters', 'Green Chapel: kneel, the three swings and the nick.',
+       expect='npc_encounter')
+def _(g):
+    _green_chapel(g)
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+
+
+@scene('green_chapel_choice', 'Encounters', 'Green Chapel: after the nick, confess or bluster.',
+       expect='npc_encounter')
+def _(g):
+    _green_chapel(g)
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+    press(g, pygame.K_RETURN)
+
+
+@scene('green_chapel_forgiven', 'Encounters', 'Green Chapel: the truth told, the Knight laughs.',
+       expect='npc_encounter')
+def _(g):
+    _green_chapel(g)
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_1)
+
+
 @scene('cow_encounter', 'Encounters', 'Bump the secret cow.', expect='cow_encounter')
 def _(g):
     from monster import Monster

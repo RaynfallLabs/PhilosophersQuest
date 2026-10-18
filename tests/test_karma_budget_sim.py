@@ -77,10 +77,17 @@ def test_owning_up_is_met_only_after_a_wrong(report):
     to the Sword (the wrong costs its point first; the confession shares the
     block's one slot)."""
     s = report['styles']
-    assert s['saint']['owning_offered'] == 0 and s['naive_helper']['owning_offered'] == 0
-    assert s['pragmatist']['owning_offered'] > 0 and s['villain']['owning_offered'] > 0
+    # The rule itself: no style is ever offered a confession before it has
+    # done a recorded wrong (wrong.* / broke.*).
     for r in s.values():
+        assert r['owning_offered_clean'] == 0
         assert r['owning_taken'] <= r['owning_offered']
+    # The saint does no wrong, so meets none. The naive helper robs no one,
+    # but may keep the Green Girdle secret from its host (a wrong that costs
+    # no karma: J11), and so meets the Green Chapel now and then.
+    assert s['saint']['owning_offered'] == 0
+    assert s['naive_helper']['owning_offered'] < 0.3
+    assert s['pragmatist']['owning_offered'] > 0 and s['villain']['owning_offered'] > 0
 
 
 def test_a_saint_reliably_earns_the_sword(report):

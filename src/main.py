@@ -7468,6 +7468,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     # a floor (or dropped by an earlier boar) is not dropped again.
                     if not unique_available(template):
                         return
+                    # Nor a named unique the hero already carries or wears:
+                    # the Green Knight drawn on at his chapel, by a hero
+                    # wearing his own girdle, dropped a second one.
+                    if getattr(template, 'is_unique', False) and \
+                            item_id in self._deed_ctx()['items']:
+                        return
                     item = copy_at(template, x, y)
                     claim_unique(item)
                     item.identified = False

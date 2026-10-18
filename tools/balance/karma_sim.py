@@ -38,6 +38,13 @@ MODELLED (named constants below):
     applied outcome schedules it (after_floors from the data, its requires
     re-checked on arrival), and met like any other encounter. Only these
     callbacks are placed; the oath callbacks stay modelled by KEEP / BREAK.
+    The Green Chapel (Part J11) is one of them, with two confessions: before
+    the Knight swings, and after his nick.
+  * The saint does no wrong even where it costs no karma: a choice that
+    records a hero's wrong (``wrong.*`` / ``broke.*``, such as keeping the
+    Green Girdle secret from its host) counts as a bad choice for that style
+    only. The report counts confessions offered to a hero with no recorded
+    wrong (``owning_offered_clean``), which the rule says is never.
     The items the hero holds are tracked (a trigger item, a specific_item
     reward, an accepted burden; a handed-over item leaves), so a confession
     that needs the thing in hand appears only when it is.
@@ -68,6 +75,8 @@ for _p in (SRC, ROOT):
 
 SWORD_AT = 8
 MEDIUM_SLOTS = {True: 2, False: 1}      # odd band -> 2, even -> 1
+_HERO_WRONG = ('wrong.', 'broke.')      # deeds that record the hero's own wrong
+PRINCIPLED_STYLES = frozenset({'saint'})
 DEFAULT_OATH_SPAN = (3, 12)
 STEPS_PER_ENCOUNTER = 3                 # 'then: options' follow-ups
 STATS = {'STR': 12, 'CON': 12, 'DEX': 12, 'INT': 12, 'WIS': 12, 'PER': 12}
@@ -133,6 +142,17 @@ def _branches(o):
     return option_branches(o)
 
 
+def _records_hero_wrong(branches) -> bool:
+    """Does any of these outcomes record a wrong the hero did?"""
+    return any(str(d if isinstance(d, str) else (d or {}).get('id', '')).startswith(_HERO_WRONG)
+               for b in branches for d in b.get('deeds') or ())
+
+
+def _has_hero_wrong(reg) -> bool:
+    import deeds
+    return any(deeds.has(reg, p + '*') for p in _HERO_WRONG)
+
+
 # ------------------------------------------------------------------ one run
 
 class _Sim:
@@ -149,6 +169,7 @@ class _Sim:
         self.callbacks = []        # (floor, seq, tag, schedule entry): confessions only
         self.items = set()         # what the hero holds that a requires may read
         self.owning_offered = 0
+        self.owning_offered_clean = 0      # offered with no wrong recorded: must stay 0
         self.owning_taken = 0
         self.karma_at_30 = None
 
@@ -175,12 +196,17 @@ class _Sim:
         return all(self.rng.random() < acc for _ in range(thr))
 
     # -- choosing
-    def classify(self, o):
+    def classify(self, o, name: str = ''):
         from encounter_schema import is_quiz, max_karma
         brs = _branches(o)
         good = max_karma(o) > 0 or any(isinstance(b.get('oath'), dict) for b in brs)
         bad = o.get('villain') or o.get('side') == 'wrong' or \
             any(int(b.get('karma', 0) or 0) < 0 for b in brs)
+        if name in PRINCIPLED_STYLES and _records_hero_wrong(brs):
+            # The saint does not do a wrong that costs no karma either (lying
+            # to the Green Knight's host about his girdle: J11). The other
+            # styles weigh a choice by its karma alone, as before.
+            bad = True
         from tools.encounters.validate import option_value
         return {'good': good, 'bad': bool(bad), 'naive': bool(o.get('naive')),
                 'quiz': is_quiz(o), 'value': option_value(o, self.table),
@@ -188,7 +214,7 @@ class _Sim:
 
     def choose(self, visible, name: str):
         rng = self.rng
-        opts = [(i, o, self.classify(o)) for i, o in visible]
+        opts = [(i, o, self.classify(o, name)) for i, o in visible]
         def pick(cands):
             return rng.choice(cands) if cands else None
         if name == 'saint':
@@ -314,6 +340,8 @@ class _Sim:
                 return
             if any(_is_owning(o) for _i, o in vis):
                 self.owning_offered += 1
+                if not _has_hero_wrong(self.g._deeds):
+                    self.owning_offered_clean += 1
             choice = self.choose(vis, name)
             if choice is None:
                 return
@@ -445,7 +473,7 @@ def run(n: int = 4000, seed: int = 1, encounters=None, styles=None) -> dict:
         for i, name in enumerate(styles or STYLES):
             rng = random.Random((seed * 1000003) ^ (i * 7919))
             finals, at30 = [], []
-            offered = taken = 0
+            offered = taken = clean = 0
             for _ in range(n):
                 sim = _Sim(content, STYLES[name], rng, table)
                 k, k30 = sim.run(name)
@@ -453,9 +481,13 @@ def run(n: int = 4000, seed: int = 1, encounters=None, styles=None) -> dict:
                 at30.append(k30)
                 offered += sim.owning_offered
                 taken += sim.owning_taken
+                clean += sim.owning_offered_clean
             report['styles'][name] = {
                 # Owning up (J10): confessions met and made, per run.
                 'owning_offered': round(offered / n, 3),
+                # Confessions offered to a hero with no recorded wrong: the
+                # rule says never (J10, J11).
+                'owning_offered_clean': clean,
                 'owning_taken': round(taken / n, 3),
                 'mean': round(sum(finals) / n, 2),
                 'p10': _pct(finals, 0.1), 'p50': _pct(finals, 0.5), 'p90': _pct(finals, 0.9),
@@ -492,6 +524,8 @@ def main(argv=None) -> int:
               f"{r['sword']:>8.1%}{r['scales']:>8.1%}{r['below_zero']:>7.1%}"
               f"{r['below_zero_at_30']:>7.1%}"
               f"{r['owning_offered']:>10.2f}/{r['owning_taken']:.2f}")
+    clean = sum(r['owning_offered_clean'] for r in rep['styles'].values())
+    print(f"confessions offered to a hero with no recorded wrong: {clean} (must be 0)")
     return 0
 
 
