@@ -20,8 +20,8 @@ def test_the_cow_level_is_defined_once():
     import escort_system
     import game_road
     import road
-    import setne_tomb
-    for mod in (escort_system, game_road, road, setne_tomb):
+
+    for mod in (escort_system, game_road, road):
         assert mod.COW_LEVEL is boss_levels.COW_LEVEL
     defs = [n for n in os.listdir(os.path.join(ROOT, 'src')) if n.endswith('.py')
             and re.search(r'^COW_LEVEL\s*=', _src(n), re.M)]

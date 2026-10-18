@@ -35,7 +35,6 @@ from __future__ import annotations
 import json
 import random
 
-from boss_levels import COW_LEVEL
 BOSS_FLOORS = frozenset({20, 40, 60, 80})
 SEED_XOR = 0x5E7E
 
