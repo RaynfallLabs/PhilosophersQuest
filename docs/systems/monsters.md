@@ -220,6 +220,8 @@ A free-form list. Primary purpose: `monster_classes.get_monster_family` returns 
 | `unique_drop_id` | str | Mini-boss fixed drop — looked up by id in the unique-item pools. 20 monsters have one (Talos → `bronze_aegis`, Echidna → `echidna_fang`, Camazotz → `obsidian_talisman`, Cacus → `vulcans_brand`, The Sphinx → `sphinx_crown`, Baba Yaga → `iron_mortar_wand`, Set's Jackal → `anubis_scales`, Charybdis → `sailor's_amulet`, Ravana's Arm → `ring_of_iron_grip`, Wendigo → `wendigo_fang`, Wild Hunt Captain → `hunt_captains_sword`, each of the 7 seal demons → `seal_of_*`, …). |
 | `boss_scroll_id` | str | Fafnir / Abaddon style — a one-shot scroll of the hoard / abyss. |
 | `ammo_drop` | dict | Archer monsters carry quivers. 8 archers use this: `skeletal_archer`, `bone_archer`, `drow_warrior`, `orc_archer`, `goblin_sniper`, `gnoll_archer`, `bandit_archer`, `shadow_archer`. |
+| `treasure_chance` | float | 0..1 chance to drop one piece of treasure (gem, jewellery, old coin, art; `src/treasure.py`), weighted to the floor like any loot. Written by `tools/balance/gold_by_lore.py` from `purse` (2026-10-18): dragons 0.03-0.09 by age, vampires and liches 0.025, thieves 0.02, leaders x2 (measured with gold_sim.py so treasure is about a tenth of a shallow floor's worth and three quarters of a deep one's). |
+| `treasure_kinds` | [str] | Which kinds it may drop (`gem`, `jewellery`, `coins`, `art`); absent means any. Thieves: small and dear; the buried dead: grave goods. |
 
 ### Harvest
 
@@ -379,6 +381,7 @@ Sequence on `Monster` death:
 2. `_drop_treasure(monster)`:
    - Roll `gold` in `treasure.gold` range → `add_gold_to_tile` → "drops N gold" message.
    - Roll `item_chance` → `_spawn_treasure_item(x, y, item_tier)` (common pool, excludes uniques; `effective_floor = max(1, tier * 5)`).
+   - Roll `treasure_chance` → one piece of treasure (`treasure.roll`, of `treasure_kinds`) → "drops a Burmese Ruby".
    - If `ammo_drop` → `_spawn_archer_ammo` (archer monsters drop a stack of their declared ammo id).
    - If `boss_scroll_id` → `_spawn_boss_scroll` (fixed drop from Fafnir / Abaddon).
    - If `unique_drop_id` → `_spawn_unique_item` (mini-boss fixed drop, looked up by id across unique pools).

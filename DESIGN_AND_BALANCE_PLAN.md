@@ -58,8 +58,38 @@ ECONOMY_REFACTOR_REPORT.md, and the system reference is
 - **Services from people:** mend rust and acid, sharpen, cut a curse off, cure, restore drained stats, heal, identify with a scribe (no backlash), maps, porters.
 - **Purse shares:** a chosen `gold_pct` cost has a floor (no more free choices with an empty purse); late temptations offer a share of the purse; forgoing pocket change scores no karma.
 - **Deeds:** wronged merchants raise every price, saved friends come back as traders, kept oaths earn a free thing, charity has consequences but no karma.
-- **Not built (Brandon's call):** coin weight (D2), insight draughts (D8), shoplifting.
+- **Not built (Brandon's call):** shoplifting. (Coin weight, D2, and the rare draught, D8, are built: 0aa below.)
 - **Ten SAFE-NOW fixes** (S1-S10) and the rust trap's name leak. Not play-tested.
+
+## 0aa. Coin weight, treasure and the rare draught (2026-10-18)
+
+Brandon's rulings D2 ("a very real lesson about cash and metals; they have
+value but are hard to move ... 1 gp is 1/10th an oz ... Gems or TREASURE")
+and D8 ("No WIS purchase, possible rare shop appearance?"), plus "merchants
+should be an excellent way for kids to find or CHOOSE items". The system
+reference is `docs/systems/economy.md` §11; the treasure art review sheet
+is TREASURE_ART.png at the project root. In short:
+
+- **Coins weigh a tenth of an ounce**, 160 to the pound, and count toward
+  carrying, Burdened and the limit. A pile is taken only as far as it fits;
+  `D` has Drop Gold. 16,000 gold fills a pack at STR 10.
+- **Treasure**: 17 gems, jewellery and art objects with real weights and
+  fixed lore values (a ruby 0.01 lb and 2,500; a gold idol 10 lb and 5,000),
+  found in hoards, chests, lairs, boss hoards, rich graves, thrones and on
+  dragons, vampires and thieves, weighted to the floor like any loot.
+  Known by sight; its exact worth once a trader values it. It is the score.
+- **Traders** buy treasure at 90%, sell a few gems at 110% (the exchange),
+  and take treasure as payment with change from their purse; encounters
+  take it too. "Your purse" for every share is coin plus treasure.
+- **Stock leans** toward kinds the hero has not held, and every trader's
+  stall spreads across kinds by his role.
+- **The Draught of Mimir's Well**: about 1 trader stock in 30, floor 40 and
+  down, 4 floors of income; drinking asks a tier-4 philosophy or theology
+  question: right, +1 WIS for good; wrong, wasted.
+- **Rebalance**: coin sources are unchanged (weight now caps what can be
+  carried and spent); hoards hold treasure, and the coin beside it shrinks by
+  its worth. Measured with `gold_sim.py` and the new `weight_model.py`.
+  Not play-tested.
 
 ## 0b. The gold economy (2026-10-05)
 
