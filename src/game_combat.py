@@ -1686,8 +1686,17 @@ class CombatMixin:
                         placed = True
                         break
                 if not placed:
-                    # Fallback: place on player tile
-                    pet = SketchedPet(monster, px, py, duration)
+                    # A little further out, never on the hero's own tile
+                    # (MNK-07); with no room at all the sketch fades.
+                    spot = self._escort_tile_near_hero()
+                    if spot is None:
+                        self.add_message(
+                            "There is no room for the sketch to stand. It fades from the page.",
+                            'warning')
+                        self.state = STATE_PLAYER
+                        self._advance_turn()
+                        return
+                    pet = SketchedPet(monster, *spot, duration)
                     self.pets.append(pet)
                 self.add_message(
                     f"The sketch shimmers and peels off the page! "

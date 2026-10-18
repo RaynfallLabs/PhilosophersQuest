@@ -210,6 +210,23 @@ class EscortMixin:
                     return t
         return None
 
+    def _escort_tile_reachable(self):
+        """The nearest free tile the hero can walk to, or None."""
+        from geom import all_occupied_tiles
+        px, py = self.player.x, self.player.y
+        busy = set(all_occupied_tiles(self.monsters)) | self._occupants()
+        pits = getattr(self.dungeon, 'pits', None) or set()
+        try:
+            reach = self._reachable_tiles(px, py)
+        except Exception:
+            return None
+        near = [t for t in reach if t not in busy and t not in pits
+                and self.dungeon.is_walkable(*t)]
+        if not near:
+            return None
+        return min(near, key=lambda t: (max(abs(t[0] - px), abs(t[1] - py)),
+                                        abs(t[0] - px) + abs(t[1] - py), t))
+
     # ------------------------------------------------------------------
     # Starting and ending
     # ------------------------------------------------------------------
@@ -220,7 +237,11 @@ class EscortMixin:
             return None
         spot = self._escort_tile_near_hero()
         if spot is None:
-            spot = (self.player.x, self.player.y)
+            # Nothing free within 3: the nearest free tile the hero can walk
+            # to, never the hero's own tile (MNK-09).
+            spot = self._escort_tile_reachable()
+        if spot is None:
+            return None
         esc = Escort(spec, *spot, source=source, floor=self.dungeon_level, person=person)
         self._escort_list().append(esc)
         import deeds
