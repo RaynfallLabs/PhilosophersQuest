@@ -80,7 +80,8 @@ def run(b, out, cut_only=False):
     if e.get('rain'):
         import scene
         scene.add_rain(keep, pixel, e['rain'])
-    spr, facts = convert.to_sprite(Image.open(pixel), b.get('key', 'magenta'), lift=float(b.get('lift', 1.0)))
+    spr, facts = convert.to_sprite(Image.open(pixel), b.get('key', 'magenta'), lift=float(b.get('lift', 1.0)),
+                                   spill=bool(b.get('despill')))
     for x0, y0, x1, y1, old, new in e.get('recolour', []):
         for y in range(y0, y1):
             for x in range(x0, x1):

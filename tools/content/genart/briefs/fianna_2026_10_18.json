@@ -1,0 +1,351 @@
+[
+ {
+  "id": "fianna_wolf",
+  "family": "fianna",
+  "rank": 1,
+  "key": "green",
+  "what": "Fianna the sketch-mage: a slim young woman of about eighteen, painted seriously with realistic proportions, a small head, about seven and a half heads tall, long legs. Her head is bare. Her hair is long, slightly wavy and flowing, very dark brown, almost black, falling past her shoulders and lifting and streaming out to one side in the wind of her magic. Her face is turned toward the viewer, light-skinned and brightly lit from the front, the palest and clearest thing on her, framed by the dark hair: two dark eyes and two dark eyebrows plainly marked, a small nose, closed lips, an intent, delighted look.",
+  "colours": "a deep cool violet-purple robe, the purple of wild violets, with a thin gold border, a dark brown leather belt and boots, a big sketchbook with a dark brown leather cover and cream-white pages, a long white feather quill, a creature of glowing pale lilac-lavender light, plainly light purple, outlined in bold black ink lines, wisps of the same lilac-lavender light, light skin, very dark brown hair that is almost black.",
+  "wears": "She wears a long, loose, deep cool violet-purple robe, the purple of wild violets, with long wide sleeves and a high round neck, reaching to her ankles, trimmed with a thin gold border at the hem and cuffs, closed at the waist with a dark brown leather belt; dark brown boots show beneath. Her head is bare, with nothing on it but her flowing dark hair.",
+  "holds": "She holds exactly two things. In her left hand, held out to the left of her body at chest height, at arm's length and clear of her body, is one big open sketchbook, the size of a large book, its cream pages facing up and toward the viewer. In her right hand she holds exactly one long white feather quill, as long as her forearm, its tip touching the page, drawing. Leaping out of the open pages toward the left is a phantom wolf she has just sketched, as big as her upper body, seen from the side: a wolf's long narrow muzzle with open jaws, two tall pointed ears standing straight up, a deep chest and two front legs stretched out ahead of it in a running leap. Every edge of it is outlined in a thick, bold black ink line, like a bold pen drawing, and a few thick black ink strokes mark its eye, its mouth and the lie of its fur; between the lines it is filled with glowing pale lilac-lavender light, plainly light purple, the colour of lavender flowers mixed with white. Its back half is not drawn yet: there it dissolves into three or four broad swirling wisps of the same lilac-lavender light, each curved like a sabre blade, that billow up out of the book and curl round behind her, all joined to the book. It is plainly a drawing coming to life.",
+  "pose": "On two legs, she steps forward to the left, turned three-quarters, weight on her bent front leg, the open sketchbook held out to the left at arm's length in her left hand, her right hand sweeping the quill across the page, her head up, her robe and her dark hair billowing in the wind of the magic.",
+  "must_show": [
+   "a slim young woman with real proportions, not a chibi",
+   "a lit, light-skinned face with dark eyes and brows, framed by flowing, slightly wavy, nearly black hair, that reads at 64 px",
+   "bare head",
+   "long violet-purple robe, modest, long sleeves",
+   "an open sketchbook held out, a quill drawing in it",
+   "a phantom wolf of pale lavender light and bold black ink lines leaping out of the pages, joined to the book, that reads as a wolf at 64 px",
+   "lavender wisps billowing from the creature round her, joined to the book, that do not mush her outline at 40 px",
+   "an action pose: mid-sketch"
+  ],
+  "must_not_show": [
+   "big head",
+   "chibi",
+   "anime eyes",
+   "hat",
+   "wizard hat",
+   "pointed hat",
+   "hood",
+   "staff",
+   "wand",
+   "second book",
+   "armour",
+   "bare shoulders",
+   "low neckline",
+   "short skirt",
+   "tight dress",
+   "old woman",
+   "little girl",
+   "real wolf",
+   "grey wolf on the ground",
+   "dog",
+   "green robe",
+   "green magic",
+   "lavender skin",
+   "purple skin",
+   "halo",
+   "cloud of mist",
+   "face hidden in shadow",
+   "blonde hair",
+   "red hair",
+   "white creature",
+   "pure white wolf",
+   "magenta robe",
+   "pink robe",
+   "tentacles",
+   "ribbons"
+  ],
+  "despill": true,
+  "edit": {
+   "cand": 5,
+   "pixel_seed": 43150,
+   "steps": [
+    {
+     "from": "_genart/heroes/fianna_2026_10_18/run2/fianna_wolf/c2_draft.png",
+     "seed": 5501,
+     "prompt": "Edit this painting. Keep the young woman exactly the same: her face, her flowing dark hair, her purple robe with its gold border, her belt, her boots, her hands and her pose. Keep the open book exactly the same. Keep the wolf's shape, its pose and every one of its black ink lines exactly the same, and keep the flat green backdrop. Keep the quill in her right hand exactly the same. Change only the colour of the wolf's glowing fill and of its trailing ribbon of light: instead of white they are pale lilac-lavender, plainly light purple, the colour of lavender flowers mixed with white. Also remove the white feather that sticks up out of the top of the book, so the top edge of the book is plain cream pages and brown leather.",
+     "neg": "white creature, purple skin, lavender skin, changed face, changed pose, hat, extra quill, background scenery"
+    }
+   ],
+   "recolour": [
+    [
+     0,
+     0,
+     64,
+     64,
+     "#92d1e4",
+     "#c4b4fa"
+    ]
+   ],
+   "touch": [
+    [
+     30,
+     5,
+     "#e3a99a"
+    ],
+    [
+     30,
+     6,
+     "#2a0703"
+    ],
+    [
+     32,
+     6,
+     "#2a0703"
+    ],
+    [
+     31,
+     6,
+     "#b9705c"
+    ],
+    [
+     14,
+     20,
+     "#141018"
+    ],
+    [
+     13,
+     19,
+     "#141018"
+    ],
+    [
+     12,
+     18,
+     "#141018"
+    ]
+   ]
+  },
+  "note": "Source painting: run2 c2 (round-2 wording, seed 42800): she draws the wolf into the air with the quill. The wording above is round 3 (lilac, billowing wisps), which drew mushier sprites; it is kept as the pixel-pass text for the edit."
+ },
+ {
+  "id": "fianna_hawk",
+  "family": "fianna",
+  "rank": 2,
+  "key": "green",
+  "what": "Fianna the sketch-mage: a slim young woman of about eighteen, painted seriously with realistic proportions, a small head, about seven and a half heads tall, long legs. Her head is bare. Her hair is long, slightly wavy and flowing, very dark brown, almost black, falling past her shoulders and blown back behind her in the wind of her magic. Her face is turned toward the viewer, light-skinned and brightly lit from the front, the palest and clearest thing on her, framed by the dark hair: two dark eyes and two dark eyebrows plainly marked, a small nose, closed lips, a bright, fierce, delighted look.",
+  "colours": "a deep royal-purple robe with a thin gold border, a dark brown leather belt and boots, a big sketchbook with a dark brown leather cover and cream-white pages, a creature drawn in pale glowing lavender-white light outlined in bold black ink lines, streamers of pale lavender light, light skin, very dark brown hair that is almost black.",
+  "wears": "She wears a long, loose, deep royal-purple robe with long wide sleeves and a high round neck, reaching to her ankles, trimmed with a thin gold border at the hem and cuffs, closed at the waist with a dark brown leather belt; dark brown boots show beneath. Her head is bare, with nothing on it but her flowing dark hair.",
+  "holds": "She holds exactly one thing: one big open sketchbook, the size of a large book, held up and out in front of her in both hands at the height of her chin, a hand's width below her chin so her whole face shows, its cream pages open toward the left. Both her hands grip the book's cover; nothing else is in them. Bursting up out of the open pages is a phantom hawk she has sketched, as big as her upper body: its two wings spread wide and bent sharply at the wrist like two tall arches, tips pointing down, its head with a hooked beak turned to the left, drawn in bold dark violet-black ink lines as thick as her finger, its body and wings filled with pale glowing lavender-white light. Its head and both wings are fully drawn; its tail is still only a few loose bold ink strokes that run back down into the page, joined to the book. It is plainly a drawing coming to life.",
+  "pose": "On two legs, she leans forward to the left in a casting stance, turned three-quarters, feet apart, weight on her bent front leg, the open book thrust up and out in both hands, her head up watching the hawk, her robe and hair blown back by the magic. Two broad streamers of pale lavender light, each curved like a sabre blade, sweep back from the book past her, one above her shoulder and one along her robe, both joined to the book.",
+  "must_show": [
+   "a slim young woman with real proportions, not a chibi",
+   "a lit, light-skinned face with dark eyes and brows, framed by flowing, slightly wavy, nearly black hair, that reads at 64 px",
+   "bare head",
+   "long deep-purple robe, modest, long sleeves",
+   "an open sketchbook thrust out in both hands",
+   "a phantom hawk of pale lavender light and bold ink lines bursting up out of the pages, wings spread, joined to the book, that reads as a bird at 64 px",
+   "lavender streamers joined to the book that do not mush her outline at 40 px",
+   "an action pose: casting"
+  ],
+  "must_not_show": [
+   "big head",
+   "chibi",
+   "anime eyes",
+   "hat",
+   "wizard hat",
+   "pointed hat",
+   "hood",
+   "staff",
+   "wand",
+   "quill",
+   "second book",
+   "armour",
+   "bare shoulders",
+   "low neckline",
+   "short skirt",
+   "tight dress",
+   "old woman",
+   "little girl",
+   "real bird",
+   "brown hawk",
+   "white dove",
+   "angel wings on her back",
+   "green robe",
+   "green magic",
+   "lavender skin",
+   "purple skin",
+   "halo",
+   "cloud of mist",
+   "face hidden behind the book",
+   "blonde hair",
+   "red hair"
+  ],
+  "note": "Dropped after run1: the hawk drew as crystal shards or as wings on her own back; the owl replaced it."
+ },
+ {
+  "id": "fianna_owl",
+  "family": "fianna",
+  "rank": 3,
+  "key": "green",
+  "what": "Fianna the sketch-mage: a slim young woman of about eighteen, painted seriously with realistic proportions, a small head, about seven and a half heads tall, long legs. Her head is bare. Her hair is long, slightly wavy and flowing, very dark brown, almost black, falling past her shoulders and blown back behind her in the wind of her magic. Her face is turned toward the viewer, light-skinned and brightly lit from the front, the palest and clearest thing on her, framed by the dark hair: two dark eyes and two dark eyebrows plainly marked, a small nose, closed lips, a bright, fierce, delighted look.",
+  "colours": "a deep cool violet-purple robe, the purple of wild violets, with a thin gold border, a dark brown leather belt and boots, a big sketchbook with a dark brown leather cover and cream-white pages, a creature of glowing pale lilac-lavender light, plainly light purple, outlined in bold black ink lines, wisps of the same lilac-lavender light, light skin, very dark brown hair that is almost black.",
+  "wears": "She wears a long, loose, deep cool violet-purple robe, the purple of wild violets, with long wide sleeves and a high round neck, reaching to her ankles, trimmed with a thin gold border at the hem and cuffs, closed at the waist with a dark brown leather belt; dark brown boots show beneath. Her head is bare, with nothing on it but her flowing dark hair.",
+  "holds": "She holds exactly one thing: one big open sketchbook, the size of a large book, held out to the left of her body at arm's length in both hands, at the height of her shoulder, clear of her body and clear of her face, its cream pages open toward the left. Both her hands grip the book's cover; nothing else is in them. Bursting up out of the open pages, to the left of her head, is a phantom owl she has sketched, as big as her upper body, facing the viewer: a flat round face disc with two big round black eyes side by side, both looking forward, a small hooked beak between them and two short ear tufts; its two wings are raised high on either side of its body in a V, like an eagle on a banner. Every edge of it is outlined in a thick, bold black ink line, like a bold pen drawing, and a few thick black ink strokes mark its eye, its mouth and the lie of its feathers; between the lines it is filled with glowing pale lilac-lavender light, plainly light purple, the colour of lavender flowers mixed with white. Its face, body and both wings are fully drawn. Its tail is not drawn yet: there it dissolves into three or four broad swirling wisps of the same lilac-lavender light, each curved like a sabre blade, that billow up out of the book and curl round behind her, all joined to the book. It is plainly a drawing coming to life.",
+  "pose": "On two legs, she leans forward to the left in a casting stance, turned three-quarters, feet apart, weight on her bent front leg, the open book thrust out to the left at arm's length in both hands, her head turned to watch the owl, her robe and dark hair billowing back in the wind of the magic.",
+  "must_show": [
+   "a slim young woman with real proportions, not a chibi",
+   "a lit, light-skinned face with dark eyes and brows, framed by flowing, slightly wavy, nearly black hair, that reads at 64 px",
+   "bare head",
+   "long violet-purple robe, modest, long sleeves",
+   "an open sketchbook thrust out to one side in both hands",
+   "a phantom owl of pale lavender light and bold black ink lines bursting up out of the pages beside her, two big dark eyes, wings raised, joined to the book, that reads as an owl at 64 px",
+   "lavender wisps billowing from the creature round her, joined to the book, that do not mush her outline at 40 px",
+   "an action pose: casting"
+  ],
+  "must_not_show": [
+   "big head",
+   "chibi",
+   "anime eyes",
+   "hat",
+   "wizard hat",
+   "pointed hat",
+   "hood",
+   "staff",
+   "wand",
+   "quill",
+   "second book",
+   "armour",
+   "bare shoulders",
+   "low neckline",
+   "short skirt",
+   "tight dress",
+   "old woman",
+   "little girl",
+   "real bird",
+   "angel wings on her back",
+   "green robe",
+   "green magic",
+   "lavender skin",
+   "purple skin",
+   "halo",
+   "cloud of mist",
+   "face hidden behind the book",
+   "blonde hair",
+   "red hair",
+   "brown owl",
+   "white snowy owl",
+   "creature in front of her face",
+   "wings on her own back",
+   "white creature",
+   "pure white wolf",
+   "magenta robe",
+   "pink robe",
+   "tentacles",
+   "ribbons"
+  ],
+  "despill": true,
+  "edit": {
+   "cand": 5,
+   "pixel_seed": 43145,
+   "steps": [
+    {
+     "from": "_genart/heroes/fianna_2026_10_18/run2/fianna_owl/c3_draft.png",
+     "seed": 5502,
+     "prompt": "Edit this painting. Keep the young woman exactly the same: her face, her flowing dark hair, her purple robe with its gold border, her belt, her boots, her hands and her pose. Keep the open book exactly the same. Keep the owl's shape, its pose and every one of its black ink lines exactly the same, and keep the flat green backdrop. Change only the colour of the owl's glowing fill and of its trailing ribbon of light: instead of white they are pale lilac-lavender, plainly light purple, the colour of lavender flowers mixed with white.",
+     "neg": "white creature, purple skin, lavender skin, changed face, changed pose, hat, extra quill, background scenery"
+    }
+   ],
+   "touch": [
+    [
+     39,
+     11,
+     "#1c0c0e"
+    ],
+    [
+     41,
+     11,
+     "#1c0c0e"
+    ]
+   ]
+  },
+  "note": "Source painting: run2 c3 (round-2 wording, seed 42800). Wording above is round 3, used for the pixel pass."
+ },
+ {
+  "id": "fianna_dragon",
+  "family": "fianna",
+  "rank": 4,
+  "key": "green",
+  "what": "Fianna the sketch-mage: a slim young woman of about eighteen, painted seriously with realistic proportions, a small head, about seven and a half heads tall, long legs. Her head is bare. Her hair is long, slightly wavy and flowing, very dark brown, almost black, falling past her shoulders and lifting and streaming out to one side in the wind of her magic. Her face is turned toward the viewer, light-skinned and brightly lit from the front, the palest and clearest thing on her, framed by the dark hair: two dark eyes and two dark eyebrows plainly marked, a small nose, closed lips, a warm, wondering smile.",
+  "colours": "a deep cool violet-purple robe, the purple of wild violets, with a thin gold border, a dark brown leather belt and boots, a big sketchbook with a dark brown leather cover and cream-white pages, a long white feather quill, a creature of glowing pale lilac-lavender light, plainly light purple, outlined in bold black ink lines, wisps of the same lilac-lavender light, light skin, very dark brown hair that is almost black.",
+  "wears": "She wears a long, loose, deep cool violet-purple robe, the purple of wild violets, with long wide sleeves and a high round neck, reaching to her ankles, trimmed with a thin gold border at the hem and cuffs, closed at the waist with a dark brown leather belt; dark brown boots show beneath. Her head is bare, with nothing on it but her flowing dark hair.",
+  "holds": "She holds exactly two things. In her left hand, held out to the right of her body at waist height, is one big open sketchbook, the size of a large book, its cream pages open toward the viewer. In her right hand, raised high above the book, she holds exactly one long white feather quill, as long as her forearm, just lifted from the page at the end of a stroke. Climbing up out of the open pages is a phantom little dragon she has sketched, as big as her upper body: a slender young dragon with one small horned head, a long arched neck and two bat wings half raised. Every edge of it is outlined in a thick, bold black ink line, like a bold pen drawing, and a few thick black ink strokes mark its eye, its mouth and the lie of its scales; between the lines it is filled with glowing pale lilac-lavender light, plainly light purple, the colour of lavender flowers mixed with white. Its head, neck, wings and two front claws are fully drawn and it rears up beside her shoulder, looking at her. Its tail is not drawn yet: there it dissolves into three or four broad swirling wisps of the same lilac-lavender light, each curved like a sabre blade, that billow up out of the book and curl round behind her, all joined to the book. It is plainly a drawing coming to life.",
+  "pose": "On two legs, she turns three-quarters to the right in the middle of a flourish, weight on her bent front leg, the open book held out to the right at waist height, the quill raised high in her other hand, her head turned to watch the little dragon, her robe and dark hair billowing in the wind of the magic.",
+  "must_show": [
+   "a slim young woman with real proportions, not a chibi",
+   "a lit, light-skinned face with dark eyes and brows, framed by flowing, slightly wavy, nearly black hair, that reads at 64 px",
+   "bare head",
+   "long violet-purple robe, modest, long sleeves",
+   "an open sketchbook held out, a quill raised mid-stroke",
+   "a phantom little dragon of pale lavender light and bold black ink lines climbing out of the pages, one head, joined to the book, that reads as a dragon at 64 px",
+   "lavender wisps billowing from the creature round her, joined to the book, that do not mush her outline at 40 px",
+   "an action pose: mid-flourish"
+  ],
+  "must_not_show": [
+   "big head",
+   "chibi",
+   "anime eyes",
+   "hat",
+   "wizard hat",
+   "pointed hat",
+   "hood",
+   "staff",
+   "wand",
+   "second book",
+   "armour",
+   "bare shoulders",
+   "low neckline",
+   "short skirt",
+   "tight dress",
+   "old woman",
+   "little girl",
+   "real dragon",
+   "second dragon head",
+   "fire",
+   "flame",
+   "orange dragon",
+   "green dragon",
+   "green robe",
+   "green magic",
+   "lavender skin",
+   "purple skin",
+   "halo",
+   "cloud of mist",
+   "face hidden in shadow",
+   "blonde hair",
+   "red hair",
+   "white creature",
+   "pure white wolf",
+   "magenta robe",
+   "pink robe",
+   "tentacles",
+   "ribbons"
+  ],
+  "despill": true,
+  "edit": {
+   "cand": 5,
+   "pixel_seed": 42248,
+   "steps": [
+    {
+     "from": "_genart/heroes/fianna_2026_10_18/run1/fianna_dragon/c1_draft.png",
+     "seed": 5503,
+     "prompt": "Edit this painting. Keep the young woman exactly the same: her face, her flowing dark hair, her purple robe with its gold border, her belt, her boots, her hands and her pose. Keep the open book exactly the same. Keep the little dragon's shape, its pose and every one of its black ink lines exactly the same, and keep the flat green backdrop. Keep the quill raised in her right hand exactly the same. Change only the colour of the little dragon's glowing fill and of its trailing ribbon of light: instead of white they are pale lilac-lavender, plainly light purple, the colour of lavender flowers mixed with white.",
+     "neg": "white creature, purple skin, lavender skin, changed face, changed pose, hat, extra quill, background scenery"
+    }
+   ],
+   "touch": [
+    [
+     25,
+     10,
+     "#200f15"
+    ],
+    [
+     27,
+     10,
+     "#200f15"
+    ]
+   ]
+  },
+  "note": "Source painting: run1 c1 (round-1 wording, seed 41800). Wording above is round 3, used for the pixel pass."
+ }
+]
