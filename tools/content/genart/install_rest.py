@@ -1,12 +1,16 @@
 """Install the last reviewed sprites: heroes, NPCs, pet companions and oddments.
 
-    <ComfyUI python> tools/content/genart/install_rest.py [--dry]
+    <ComfyUI python> tools/content/genart/install_rest.py [--dry] [--only id,id]
 
 Reads every _genart/rNN/review.json. Each id goes to the folder its sprite already lives in
 (heroes in assets/tiles/env, the rest in assets/tiles/monsters); Dad's picture also becomes the monster/pet `dad`.
 Brandon's painted heroes that are replaced are first copied to
 _genart/heroes/originals (never overwritten there), and Robyn is never installed over.
 What was written is listed in tools/content/genart/installed_rest.json.
+
+A full run rewrites that list from the rNN runs found, so ids other installers added to it
+(the family cats, Shep, traders, story NPCs) would drop out. To redo one or two sprites,
+use --only: it installs just those ids and adds them to the list, keeping everything else.
 """
 import json, os, re, shutil, sys
 
@@ -31,9 +35,13 @@ def picks():
 
 def main():
     dry = '--dry' in sys.argv
+    only = set(sys.argv[sys.argv.index('--only') + 1].split(',')) if '--only' in sys.argv else set()
+    found = picks()
+    if only - set(found):
+        raise SystemExit('no reviewed pick for: ' + ', '.join(sorted(only - set(found))))
     out = {'env': [], 'monsters': []}
-    for sid, src in sorted(picks().items()):
-        if sid in KEEP:
+    for sid, src in sorted(found.items()):
+        if sid in KEEP or (only and sid not in only):
             continue
         if not os.path.exists(src):
             raise SystemExit('missing ' + src)
@@ -49,9 +57,15 @@ def main():
                     shutil.copyfile(dst, orig)
                 shutil.copyfile(src, dst)
             out[folder].append(name)
-    if not dry:
-        json.dump(out, open(os.path.join(HERE, 'installed_rest.json'), 'w', encoding='utf-8'), indent=0)
     print(('would install' if dry else 'installed'), len(out['env']), 'heroes,', len(out['monsters']), 'others')
+    if not dry:
+        listed = os.path.join(HERE, 'installed_rest.json')
+        if only:
+            old = json.load(open(listed, encoding='utf-8'))
+            for k, ids in out.items():
+                old[k] = sorted(set(old.get(k, [])) | set(ids))
+            out = old
+        json.dump(out, open(listed, 'w', encoding='utf-8'), indent=0)
 
 
 if __name__ == '__main__':

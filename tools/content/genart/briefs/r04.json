@@ -260,17 +260,18 @@
   "family": "ember_wyrm",
   "rank": 1,
   "key": "blue",
-  "what": "Emberpup, a young fire lizard: a small upright lizard that stands on its two short hind legs, painted as a real reptile in a serious old fantasy painting, young but never a baby, with a short round head, nearly as wide as its chest and set on a short neck, a very short rounded muzzle with no long snout, a small closed mouth, and two large round dark eyes set at the front of its face, each eye a third of its head wide with a bright gold glint, looking gentle and alert, two small arms each ending in three little pale claws, two short sturdy legs with three pale claws on each foot, and a long thick tail. Its hide is small weathered scales of deep warm orange, the orange of a pumpkin rind, never yellow, on its head, back, arms, legs and tail, each scale finely edged with darker orange-brown, and from its throat down its chest and belly to the underside of its tail runs a band of pale cream belly scales. It has no horns, no spines and no wings. At the very tip of its tail burns a fierce flame, a little taller than its own head, rising straight up from the tail tip and joined to it, deep orange at its edges with a yellow heart; the rest of its body has no fire on it. The flame is painted as one solid shape with a hard, crisp edge, outlined in dark red like every other part of the creature; it gives off no glow, no haze, no sparks and no smoke, and the backdrop right next to it stays the same flat colour.",
-  "colours": "deep warm orange scales with darker orange-brown edges, a pale cream throat and belly, pale cream claws, two large round dark eyes with a gold glint, a deep orange flame with a yellow heart on the tail tip.",
+  "what": "Emberpup, a baby fire lizard: a small, plump young lizard that stands upright on its two short hind legs, painted as a real young creature in a serious old fantasy painting, with a big, round, chunky head, as wide as its chest, the back of its skull one smooth round dome, full round cheeks and a short, blunt, rounded snout with one small nostril near its tip; its mouth is closed, one calm level line from the tip of the snout back to below the eye. One large round dark eye, wide open, bright and friendly, with a gold glint, a quarter as wide as its head, sits high on the side of its head just behind the snout; the cheek, jaw and neck behind and below the eye are smooth plain skin. Two short plump arms each end in three little pale claws, two short sturdy legs have three pale claws on each foot, its belly is round and full, and it has a long thick tail. Its skin is smooth and soft, with only very fine faint scales, deep warm orange, the orange of a pumpkin rind, never yellow, on its head, back, arms, legs and tail, and from its throat down its chest and belly to the underside of its tail runs a band of smooth pale cream. It has no horns, no spines and no wings. At the very tip of its tail burns a fierce flame, a little taller than its own head, rising straight up from the tail tip and joined to it, deep orange at its edges with a yellow heart; the rest of its body has no fire on it. The flame is painted as one solid shape with a hard, crisp edge, outlined in dark red like every other part of the creature; it gives off no glow, no haze, no sparks and no smoke, and the backdrop right next to it stays the same flat colour.",
+  "colours": "smooth deep warm orange skin with very fine faint scales, a pale cream throat and belly, pale cream claws, one large round dark eye with a gold glint, a deep orange flame with a yellow heart on the tail tip.",
   "wears": "It is an animal and wears nothing.",
   "holds": "It is an animal and holds nothing; its two small hands are empty.",
   "pose": "Seen from the side in three-quarter view, facing left, standing upright on its two hind legs and stepping forward, body leaning a little forward, both small arms held up in front of its chest with the claws open, head raised and looking ahead, mouth closed; its long tail sweeps out behind it at the right and curls upward so that the flame on its tip burns high at the right of the picture, clear of the body with backdrop all round it.",
   "must_show": [
-   "a small upright orange lizard on two legs, two small arms",
+   "a small, plump upright orange lizard on two legs, two short arms",
    "a pale cream throat and belly",
-   "a short round head with two large round gentle dark eyes, no long snout",
+   "a big round chunky head with a short rounded snout; one large friendly eye plainly on the head, no other dark spot on the head, neck or body",
+   "smooth skin, not pebbly scales; reads as a baby creature at 64 px and at 40 px",
    "a bright flame burning on the very tip of its tail, clear of the body, readable at 64 px",
-   "painted as a real young reptile, weathered scales, not a flat cartoon"
+   "painted as a real young creature, not a flat cartoon"
   ],
   "must_not_show": [
    "fire on the body",
@@ -286,7 +287,9 @@
    "mascot",
    "plush toy",
    "chibi",
-   "smiling",
+   "grin",
+   "teeth",
+   "open mouth",
    "tongue out",
    "humanoid body",
    "muscle-man",
@@ -305,7 +308,16 @@
    "candle",
    "yellow body",
    "gecko",
+   "troglodyte",
    "frog",
+   "frowning",
+   "heavy eyelids",
+   "ear hole",
+   "second eye",
+   "dark spot on the neck",
+   "pebbly scales",
+   "warts",
+   "flat head",
    "tall plume of fire",
    "long snout",
    "monitor lizard",
@@ -314,7 +326,46 @@
    "haze",
    "sparks",
    "smoke"
-  ]
+  ],
+  "edit": {
+   "cand": 5,
+   "steps": [
+    {
+     "from": "_genart/r04/emberpup/c2_draft.png",
+     "seed": 303,
+     "prompt": "Edit this painting. Keep everything exactly the same except the head and the skin: the same young orange fire lizard in the same pose and the same place, the same pale cream throat, chest and belly, the same two small arms with pale claws, the same legs and feet, the same long tail, the same flame on the tip of its tail, the same flat blue background. Redraw its head as the head of a baby reptile: half as big again as it is now, round and chunky, with the back of the skull one smooth round dome, full round cheeks, and a short, blunt, rounded snout with one small nostril near its tip. Its mouth is closed: one calm level line from the tip of the snout back to below the eye, turning very slightly upward at its back end, a calm, contented look. One large round dark eye, wide open, bright and friendly, with a gold glint, about a quarter as wide as the head and with no heavy lid over it, sits high on the side of the head just behind the snout, looking ahead. The cheek, jaw and neck behind and below the eye are smooth plain orange skin with nothing on them. The skin of the head and body is smooth and soft, with only very fine faint scales. Its belly is a little rounder and fuller. It is still a serious classic fantasy oil painting.",
+     "neg": "ear hole, second eye, hole behind the eye, dark spot on the neck, dark spot on the cheek, extra eye, cyclops, long snout, flat head, small head, gecko, troglodyte, frog, toad, frowning, grumpy, scowling, heavy eyelids, sleepy eyes, angry, pebbly scales, warts, bumpy skin, blob, featureless head, no mouth, cartoon, chibi, plush toy, anime, grin, tongue out, open mouth, teeth, wings, horns, spines, fire on the body, glow, smoke"
+    },
+    {
+     "seed": 502,
+     "prompt": "Edit this painting only very slightly. Keep the same baby orange fire lizard with the same big round head, the same face and eye, the same pale cream throat and belly, the same pose and the same place in the picture, the same long tail with the same flame on its tip, and the same flat blue background. Make only these small changes: its body is a little chubbier, its belly slightly rounder, its neck a little shorter and thicker, and its two arms a little shorter, still held up in front of its chest with three small pale claws on each hand. The skin of its arms, legs and tail is smooth like the skin of its head, with only very fine faint scales. It is still a serious classic fantasy oil painting.",
+     "neg": "fat, obese, huge belly, egg-shaped body, pot belly, ear hole, second eye, dark spot on the neck, long neck, long arms, pebbly scales, warts, bumpy skin, gecko, troglodyte, frog, cartoon, chibi, plush toy, anime, grin, tongue out, open mouth, teeth, wings, horns, spines, fire on the body, glow, smoke, extra arms, extra legs"
+    }
+   ],
+   "pixel_seed": 5291,
+   "touch": [
+    [
+     23,
+     10,
+     "#fff4dc"
+    ],
+    [
+     24,
+     10,
+     "#141018"
+    ],
+    [
+     23,
+     11,
+     "#141018"
+    ],
+    [
+     24,
+     11,
+     "#141018"
+    ]
+   ]
+  }
  },
  {
   "id": "flamescale",
