@@ -188,7 +188,11 @@ def test_the_carrot_spawns_exactly_once_on_its_floor_reachable_and_can_be_picked
             assert (c.x, c.y) in walk                  # the hero can walk to it
             stair = (g.player.x, g.player.y)
             g.player.x, g.player.y = c.x, c.y
-            g._pickup()
+            # Another item can share the tile; each pickup takes one, as in play.
+            for _ in range(4):
+                if any(getattr(i, 'id', '') == 'magic_dungeon_carrot' for i in g.player.inventory):
+                    break
+                g._pickup()
             assert any(getattr(i, 'id', '') == 'magic_dungeon_carrot' for i in g.player.inventory)
             assert not _carrots(g)
             g.player.x, g.player.y = stair
