@@ -1680,7 +1680,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._notified_rooms = set()   # reset per-floor special room notifications
         # Journal: level milestones and maze entries
         _MILESTONE_FLAVOR = {
-            10: "The tunnels twisted into a maze here. Somebody built this to confuse, and they were good at it.",
+            10: "The tunnels twisted into a maze here. Somebody built this to confuse, and was good at it.",
             20: "The air got heavier on the way down. I could hear something large breathing.",
             30: "Another maze. The walls felt like they were watching me, so I watched them back.",
             40: "The statues here were too lifelike, and not one of them was smiling.",

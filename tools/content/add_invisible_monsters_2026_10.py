@@ -126,7 +126,7 @@ NEW = {
                  "twelve men. Siegfried wrestled it off him and took the treasure, and later stood "
                  "unseen beside King Gunther to win Brunhild's games for him. Alberich's sworn "
                  "wardens still keep what is left of the hoard, deep down, in cloaks cut from the "
-                 "same cloth. Nobody sees a hoard-warden. They see a coin lift off the pile, and "
+                 "same cloth. Nobody sees a hoard-warden. You see a coin lift off the pile, and "
                  "then the pick."),
         'frequency': 2, 'invisible': True,
     },

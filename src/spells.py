@@ -564,7 +564,7 @@ LEARNABLE_SPELLS: dict[str, dict] = {
         'name': 'Dispel Magic', 'effect': 'dispel_magic', 'power': '',
         'mp_cost': 10, 'tier': 3, 'quiz_tier': 3, 'needs_target': True,
         'spell_family': 'dispel_magic',
-        'desc': 'Remove every magical buff from a target -- their protections fall.',
+        'desc': 'Remove every magical buff from a target -- its protections fall.',
     },
     'counterspell_spell': {
         # v2.15+ audit sync: desc "15 turns" -> matches applied 12 turns.

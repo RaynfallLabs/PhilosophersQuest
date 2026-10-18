@@ -2075,7 +2075,7 @@ class MenuMixin:
         from items import grant_identified
         grant_identified(self, sphere)
         sphere.lore = (f"A Soul Sphere humming with the bound spirit of "
-                       f"{pet.name}. Hurl it to summon them back to your side.")
+                       f"{pet.name}. Hurl it to summon it back to your side.")
         sphere.bound_pet = pet
         # The pack can refuse the sphere (over carry capacity). Removing the
         # pet anyway deleted it for good, so stop before touching it.

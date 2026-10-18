@@ -416,7 +416,7 @@ HERO_JOURNAL: dict[str, str] = {
     "socrates of athens":
         "Socrates of Athens — corrupter of youth, asker of questions. They poisoned "
         "me for impiety, but the dungeon does not know my name. I will question "
-        "every guard until they confuse themselves to death.",
+        "every guard until each one confuses himself to death.",
     "plato of athens":
         "Plato of Athens, philosopher-king-in-waiting. The forms are real; this "
         "dungeon is merely their shadow. I need no Shard to see the truth of "

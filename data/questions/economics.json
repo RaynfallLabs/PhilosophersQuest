@@ -14,7 +14,7 @@
   },
   {
     "tier": 1,
-    "question": "A government tells its citizens that any jobless person can come get a guaranteed wage, and the government will pick the job for them. It sounds generous, but the money has to come from somewhere. What is usually the biggest hidden cost of a program like this?",
+    "question": "A government tells its citizens that all jobless people can come get a guaranteed wage, and the government will pick the jobs for them. It sounds generous, but the money has to come from somewhere. What is usually the biggest hidden cost of a program like this?",
     "answer": "The government has to tax everyone else a lot to pay them all",
     "choices": [
       "The government has to tax everyone else a lot to pay them all",
@@ -31,7 +31,7 @@
     "answer": "There is not enough real work, so most enrolled people are paid to do very little",
     "choices": [
       "There is not enough real work, so most enrolled people are paid to do very little",
-      "Everyone finds a real job matched to their skills",
+      "All find real jobs matched to their skills",
       "The program pays for itself right away",
       "Fewer people sign up than expected"
     ],
@@ -148,7 +148,7 @@
     "answer": "Long lines form and pumps run empty faster",
     "choices": [
       "Long lines form and pumps run empty faster",
-      "Everyone drives less on their own",
+      "All drivers drive less on their own",
       "New oil wells suddenly open near town",
       "The gas stations start giving fuel away"
     ],
@@ -321,7 +321,7 @@
       "The knowledge problem — no central planner can know what everyone actually wants",
       "The tragedy of the commons — shared resources tend to be overused"
     ],
-    "context": "The unconstrained vision runs through Godwin, the French Revolutionaries, John Kenneth Galbraith, and Rawls. Politics in this vision is about identifying who has the correct vision and empowering them to act. Source: Sowell (1987), Chapter 2.",
+    "context": "The unconstrained vision runs through Godwin, the French Revolutionaries, John Kenneth Galbraith, and Rawls. Politics in this vision is about identifying those who have the correct vision and empowering them to act. Source: Sowell (1987), Chapter 2.",
     "topic": "a-conflict-of-visions-1987-constrained-vs-unconstrained"
   },
   {
@@ -535,9 +535,9 @@
   {
     "tier": 1,
     "question": "In 1971 the American economist William Niskanen built a mathematical model of how federal government offices grow over time. He argued they end up bigger and better-funded than the public they serve actually needs. His trick was to ask a simple question: what does each government office act like it is trying to make as large as possible, year after year? What did Niskanen say every bureau tries to maximize?",
-    "answer": "Their bureau's budget",
+    "answer": "Its own budget",
     "choices": [
-      "Their bureau's budget",
+      "Its own budget",
       "Voter approval",
       "Judicial rulings",
       "Congressional testimony"
@@ -1184,7 +1184,7 @@
   },
   {
     "tier": 1,
-    "question": "Two rival companies both want the same government license — say, the only permit to import a certain good into the country. Each hires a million dollars' worth of lawyers and lobbyists to try to talk officials into handing them the license. In the end one company wins, the other loses, and no new goods have been produced. Did the country as a whole get any richer from all that spending?",
+    "question": "Two rival companies both want the same government license — say, the only permit to import a certain good into the country. Each hires a million dollars' worth of lawyers and lobbyists to try to talk officials into handing it the license. In the end one company wins, the other loses, and no new goods have been produced. Did the country as a whole get any richer from all that spending?",
     "answer": "No -- they made nothing new; they only fought over a government favor",
     "choices": [
       "No -- they made nothing new; they only fought over a government favor",
@@ -1444,7 +1444,7 @@
   },
   {
     "tier": 3,
-    "question": "The American economist Anthony Downs, writing in 1957, worked out the math of a single vote in a large election. With millions of ballots being counted, the chance that yours alone flips the winner is vanishingly small. So each hour a citizen spends studying bills, candidates, and budgets pays them almost nothing in personal benefit. In Downs's model, what are the private returns to becoming an informed voter?",
+    "question": "The American economist Anthony Downs, writing in 1957, worked out the math of a single vote in a large election. With millions of ballots being counted, the chance that yours alone flips the winner is vanishingly small. So each hour a citizen spends studying bills, candidates, and budgets pays almost nothing in personal benefit. In Downs's model, what are the private returns to becoming an informed voter?",
     "answer": "Near zero",
     "choices": [
       "Near zero",
@@ -1699,7 +1699,7 @@
       "They are barred by antitrust law from lobbying",
       "They earn too little to fund political action"
     ],
-    "context": "The would-be barber, hair braider, or interior designer is not yet in the profession; they have no association to fund the counter-lobby. Olson's classic mechanism: concentrated present interests always outweigh dispersed future ones. Source: Kleiner + Krueger 2013.",
+    "context": "Would-be barbers, hair braiders, and interior designers are not yet in the profession; they have no association to fund the counter-lobby. Olson's classic mechanism: concentrated present interests always outweigh dispersed future ones. Source: Kleiner + Krueger 2013.",
     "topic": "applied-olson-farm-subsidies-sugar-tariffs-occupational-lice"
   },
   {
@@ -2549,7 +2549,7 @@
   },
   {
     "tier": 1,
-    "question": "The Austrian School of economics — founded in 1871 by the Vienna professor Carl Menger — says value is subjective. Only people, each with their own tastes, can decide what one thing is worth to them. A hungry kid values a candy bar more than a kid who just finished lunch. So what does subjective value mean about the 'true' price of a candy bar?",
+    "question": "The Austrian School of economics — founded in 1871 by the Vienna professor Carl Menger — says value is subjective. Only people, with their own tastes, can decide what one thing is worth to them. A hungry kid values a candy bar more than a kid who just finished lunch. So what does subjective value mean about the 'true' price of a candy bar?",
     "answer": "There is no single true price -- it is worth different amounts to different kids",
     "choices": [
       "There is no single true price -- it is worth different amounts to different kids",
@@ -3316,7 +3316,7 @@
   },
   {
     "tier": 3,
-    "question": "The Fifth Amendment to the US Constitution says nobody can be forced to give testimony against themselves. American courts have split on whether that protection covers a phone or laptop password. Some judges refuse to force someone to unlock a device. Other judges order it anyway, using a rule that says the state already knows the answer is on the device, so making the person unlock it reveals nothing new. What is that rule called?",
+    "question": "The Fifth Amendment to the US Constitution says people cannot be forced to give testimony against themselves. American courts have split on whether that protection covers a phone or laptop password. Some judges refuse to force someone to unlock a device. Other judges order it anyway, using a rule that says the state already knows the answer is on the device, so making the person unlock it reveals nothing new. What is that rule called?",
     "answer": "the foregone-conclusion doctrine",
     "choices": [
       "the foregone-conclusion doctrine",
@@ -3342,7 +3342,7 @@
   },
   {
     "tier": 4,
-    "question": "A person owns a hardware Bitcoin wallet -- a small device that stores their secret key offline. It follows the open seed-phrase standard set in Bitcoin Improvement Proposal 39 (BIP-39), meaning its backup is 12 or 24 plain English words. One morning the company that made the device announces it is closing forever: no more updates, no more support. The person feels a moment of panic, then realizes their coins are still safe. What can they do?",
+    "question": "You own a hardware Bitcoin wallet -- a small device that stores your secret key offline. It follows the open seed-phrase standard set in Bitcoin Improvement Proposal 39 (BIP-39), meaning its backup is 12 or 24 plain English words. One morning the company that made the device announces it is closing forever: no more updates, no more support. You feel a moment of panic, then realize your coins are still safe. What can you do?",
     "answer": "Restore the phrase into any other wallet that follows the same open standard",
     "choices": [
       "Restore the phrase into any other wallet that follows the same open standard",
@@ -3355,7 +3355,7 @@
   },
   {
     "tier": 5,
-    "question": "Every other form of money in history sits in a physical place: coins in a pocket, gold in a vault, dollars in a bank ledger. A person who memorizes their Bitcoin recovery phrase can hold their savings somewhere no earlier money has ever lived. Where?",
+    "question": "Every other form of money in history sits in a physical place: coins in a pocket, gold in a vault, dollars in a bank ledger. People who memorize their Bitcoin recovery phrase can hold their savings somewhere no earlier money has ever lived. Where?",
     "answer": "Inside their own memory, with no physical or digital trace outside their head",
     "choices": [
       "Inside their own memory, with no physical or digital trace outside their head",
@@ -3368,7 +3368,7 @@
   },
   {
     "tier": 5,
-    "question": "A Bitcoin user can memorize a 12-word seed phrase — the master key that controls their coins — and carry nothing physical at all when crossing a border. A person holding gold sets off scanners. A person carrying cash gets flagged by currency-detection dogs. A person with bank balances can have their accounts frozen from a distant office. The memorized phrase blocks one specific kind of state action that the others do not. Which action does the memorized phrase block?",
+    "question": "Bitcoin users can memorize a 12-word seed phrase — the master key that controls their coins — and carry nothing physical at all when crossing a border. A person holding gold sets off scanners. A person carrying cash gets flagged by currency-detection dogs. A person with bank balances can have those accounts frozen from a distant office. The memorized phrase blocks one specific kind of state action that the others do not. Which action does the memorized phrase block?",
     "answer": "seizure through physical search, currency detection, or remote account freeze",
     "choices": [
       "seizure through physical search, currency detection, or remote account freeze",
@@ -3381,7 +3381,7 @@
   },
   {
     "tier": 1,
-    "question": "A slick new website promises 1% interest every single day if you deposit your crypto with them. That grows $100 into more than $3,700 in a year -- thirty-seven times your money -- with no work and no risk. Even the safest US Treasury bond pays only about 4% for a whole year. When a crypto site promises 1% a day, what is that almost always a sign of?",
+    "question": "A slick new website promises 1% interest every single day if you deposit your crypto with it. That grows $100 into more than $3,700 in a year -- thirty-seven times your money -- with no work and no risk. Even the safest US Treasury bond pays only about 4% for a whole year. When a crypto site promises 1% a day, what is that almost always a sign of?",
     "answer": "A scam -- no real business can pay that much",
     "choices": [
       "A scam -- no real business can pay that much",
@@ -3426,7 +3426,7 @@
       "Old investors were paid with new investors' money, not real earnings",
       "The scheme mined real Bitcoin with special hardware",
       "The scheme was audited by real accountants",
-      "Everyone got their money back at the end"
+      "Every investor got paid back at the end"
     ],
     "context": "Ruja Ignatova launched OneCoin in 2014 and marketed it worldwide as the Cryptoqueen. Elizabeth Holmes ran Theranos (unrelated blood-testing fraud); Cheung and Wojcicki are unrelated executives. Source: https://en.wikipedia.org/wiki/OneCoin.",
     "topic": "bitconnect-and-onecoin-the-pure-ponzi-altcoin-foils"
@@ -3771,7 +3771,7 @@
   },
   {
     "tier": 1,
-    "question": "Under the 1944 Bretton Woods plan, every Allied currency was tied to the US dollar at a fixed exchange rate. In turn, the dollar itself was tied to gold at one specific fixed price set by law. Any foreign government could bring their dollars to the US Treasury and swap them for gold at that rate. What was the dollar-to-gold price per ounce?",
+    "question": "Under the 1944 Bretton Woods plan, every Allied currency was tied to the US dollar at a fixed exchange rate. In turn, the dollar itself was tied to gold at one specific fixed price set by law. Any foreign government could bring its dollars to the US Treasury and swap them for gold at that rate. What was the dollar-to-gold price per ounce?",
     "answer": "$35 per ounce of gold",
     "choices": [
       "$35 per ounce of gold",
@@ -4240,9 +4240,9 @@
   {
     "tier": 4,
     "question": "Imagine a wheat farmer in a poor country who grows about $500 worth of crops each year using an ox and hand tools. That exact same worker, moved to a rich country with tractors, paved roads, and reliable electricity, could earn about $40,000 doing similar work. What economic idea does this huge productivity gap between the two places show?",
-    "answer": "That where a person works, not just effort, sets what they can produce",
+    "answer": "That where people work, not just effort, sets what they can produce",
     "choices": [
-      "That where a person works, not just effort, sets what they can produce",
+      "That where people work, not just effort, sets what they can produce",
       "That workers everywhere produce roughly the same value",
       "That richer countries owe poorer ones direct payments",
       "That trade always hurts the poorer country"
@@ -4382,7 +4382,7 @@
   },
   {
     "tier": 4,
-    "question": "The George Mason economist Bryan Caplan uses the phrase 'rational irrationality' to explain why voters keep believing wrong things about the economy — that trade destroys jobs on net, that immigrants shrink the pie, that market prices are arbitrary — even after those beliefs are corrected. A single vote in a national US election almost never decides the outcome. So one simple calculation makes it rational for a voter to cling to a comforting mistaken idea. Why does it make sense for them to do that?",
+    "question": "The George Mason economist Bryan Caplan uses the phrase 'rational irrationality' to explain why voters keep believing wrong things about the economy — that trade destroys jobs on net, that immigrants shrink the pie, that market prices are arbitrary — even after those beliefs are corrected. A single vote in a national US election almost never decides the outcome. So one simple calculation makes it rational for a voter to cling to a comforting mistaken idea. Why does it make sense to do that?",
     "answer": "The private cost of one wrong belief is essentially zero",
     "choices": [
       "The private cost of one wrong belief is essentially zero",
@@ -4395,7 +4395,7 @@
   },
   {
     "tier": 4,
-    "question": "In The Myth of the Rational Voter, the American economist Bryan Caplan draws a sharp contrast between two arenas in which people hold economic beliefs. In one arena, a wrong belief costs the believer real money out of their own pocket — so they think carefully before acting. In the other arena, one wrong choice affects the individual almost not at all — so they can afford to be lazy or biased. What is that contrast?",
+    "question": "In The Myth of the Rational Voter, the American economist Bryan Caplan draws a sharp contrast between two arenas in which people hold economic beliefs. In one arena, a wrong belief costs believers real money out of their own pockets — so they think carefully before acting. In the other arena, one wrong choice affects individuals almost not at all — so they can afford to be lazy or biased. What is that contrast?",
     "answer": "Consumers pay for wrong beliefs about products; voters do not pay for wrong beliefs about policy",
     "choices": [
       "Consumers pay for wrong beliefs about products; voters do not pay for wrong beliefs about policy",
@@ -4642,7 +4642,7 @@
   },
   {
     "tier": 5,
-    "question": "Before a coach picks teams for kickball, everyone agrees on how score will be kept. Once teams are picked, each side knows how the rules will help or hurt them. A public-choice thinker asks: judge each rule from before-you-know-your-team, not after. What does this move do to the argument?",
+    "question": "Before a coach picks teams for kickball, everyone agrees on how score will be kept. Once teams are picked, each side knows how the rules will help or hurt it. A public-choice thinker asks: judge each rule from before-you-know-your-team, not after. What does this move do to the argument?",
     "answer": "It moves the debate from picking winners to picking fair rules",
     "choices": [
       "It moves the debate from picking winners to picking fair rules",
@@ -4681,7 +4681,7 @@
   },
   {
     "tier": 2,
-    "question": "In the 1800s Karl Marx claimed that interest and profit were stolen from workers by capitalists. Later, in Vienna, the Austrian economist Eugen von Boehm-Bawerk pushed back hard. He said interest is real payment for something the saver actually gives up. When a person hands over money today so someone else can use it, they postpone all the things they could have enjoyed with that money right now. What is the saver being paid to do?",
+    "question": "In the 1800s Karl Marx claimed that interest and profit were stolen from workers by capitalists. Later, in Vienna, the Austrian economist Eugen von Boehm-Bawerk pushed back hard. He said interest is real payment for something the saver actually gives up. When people hand over money today so someone else can use it, they postpone all the things they could have enjoyed with that money right now. What is the saver being paid to do?",
     "answer": "To wait",
     "choices": [
       "To wait",
@@ -4837,7 +4837,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine a shopper walks into a large supermarket and picks her own items freely from thousands of choices — bread, milk, apples, whatever her family actually wants — spending her weekly grocery budget however she likes. Now imagine that instead, a small committee of nutrition experts in an office chose everyone's groceries for them, with the same budget at the same store. What would most likely happen?",
+    "question": "Imagine a shopper walks into a large supermarket and picks her own items freely from thousands of choices — bread, milk, apples, whatever her family actually wants — spending her weekly grocery budget however she likes. Now imagine that instead, a small committee of nutrition experts in an office chose everyone's groceries, with the same budget at the same store. What would most likely happen?",
     "answer": "Many shoppers would get food they did not want, and shelves would be full of things no one bought",
     "choices": [
       "Many shoppers would get food they did not want, and shelves would be full of things no one bought",
@@ -4942,9 +4942,9 @@
   {
     "tier": 2,
     "question": "In 1876 the Austrian emperor Franz Joseph hired the top economist at the University of Vienna to serve as private tutor to his teenage son, Crown Prince Rudolf, on a long educational tour through Europe. That same professor had just published a book five years earlier that founded what would become the Austrian school of economics. What did he say makes a good valuable?",
-    "answer": "What each buyer personally wants and how much of it they already have",
+    "answer": "What buyers personally want and how much of it they already have",
     "choices": [
-      "What each buyer personally wants and how much of it they already have",
+      "What buyers personally want and how much of it they already have",
       "The amount of labor used to make it",
       "The cost of the raw materials",
       "A price set by government experts"
@@ -5387,7 +5387,7 @@
     "answer": "One small group decides how everyone should live, ignoring what people actually want",
     "choices": [
       "One small group decides how everyone should live, ignoring what people actually want",
-      "The plan carefully asks each family which house they prefer",
+      "The plan carefully asks families which house they prefer",
       "Prices in a free market always cause the same result",
       "The plan lets villages vote on whether to be demolished"
     ],
@@ -6584,7 +6584,7 @@
     "choices": [
       "Telling suppliers from far away that trucks and generators are worth rushing in",
       "Making sure only rich buyers can get any goods",
-      "Forcing every competitor to lower their prices",
+      "Forcing all competitors to lower their prices",
       "Locking prices at their pre-storm level"
     ],
     "context": "Prices signal both scarcity (to buyers, to conserve) and profit opportunity (to sellers, to bring more supply). Ceilings that suppress the signal degrade both responses. This is the operating mechanism behind every emergency-supply anti-gouging analysis. Source: mercatus.org, mises.org.",
@@ -7558,9 +7558,9 @@
     "answer": "Unmasking someone as a kulak",
     "choices": [
       "Unmasking someone as a kulak",
-      "Registering them as a class enemy",
-      "Naming them as a saboteur",
-      "Marking them for rectification"
+      "Registering someone as a class enemy",
+      "Naming someone as a saboteur",
+      "Marking someone for rectification"
     ],
     "context": "'Unmasking' (razoblachenie) redefined kulak-status as anyone who resisted collectivization. The label became a catch-all administrative tool for eliminating opposition. Source: Fitzpatrick, Stalin's Peasants (1994).",
     "topic": "dekulakization-stalins-1929-liquidation-order"
@@ -10063,7 +10063,7 @@
   },
   {
     "tier": 1,
-    "question": "In 1933, US President Franklin D. Roosevelt signed an executive order telling every American to hand in their gold coins and gold bars to the government. In exchange, people got paper dollars. It became illegal for a normal citizen to keep the gold. Why would a government want to sweep every citizen's gold into its own vaults?",
+    "question": "In 1933, US President Franklin D. Roosevelt signed an executive order telling Americans to hand in their gold coins and gold bars to the government. In exchange, people got paper dollars. It became illegal for a normal citizen to keep the gold. Why would a government want to sweep every citizen's gold into its own vaults?",
     "answer": "With gold locked up, the government could print more paper money without limit",
     "choices": [
       "With gold locked up, the government could print more paper money without limit",
@@ -10076,7 +10076,7 @@
   },
   {
     "tier": 1,
-    "question": "In April 1933 President Franklin Roosevelt signed Executive Order 6102, which forced every American to hand in their gold coins, gold bars, and gold certificates to the federal government. The order was meant to stop 'hoarding' during the Great Depression. Anyone who refused and kept large gold holdings faced a serious punishment. What did they face?",
+    "question": "In April 1933 President Franklin Roosevelt signed Executive Order 6102, which forced all Americans to hand in their gold coins, gold bars, and gold certificates to the federal government. The order was meant to stop 'hoarding' during the Great Depression. Those who refused and kept large gold holdings faced a serious punishment. What did they face?",
     "answer": "A fine of up to $10,000 and up to 10 years in prison",
     "choices": [
       "A fine of up to $10,000 and up to 10 years in prison",
@@ -10440,7 +10440,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1980 the leader of a poor communist country briefly opened a harbor and told anyone who wanted to leave that they could sail to a nearby free country. Boats packed with families crossed the sea. What does this kind of mass escape tell you about that country's system?",
+    "question": "In 1980 the leader of a poor communist country briefly opened a harbor and told all who wanted to leave that they could sail to a nearby free country. Boats packed with families crossed the sea. What does this kind of mass escape tell you about that country's system?",
     "answer": "People were fleeing a system that had failed them",
     "choices": [
       "People were fleeing a system that had failed them",
@@ -10453,7 +10453,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1980 the Cuban dictator Fidel Castro briefly opened the port of Mariel and told anyone unhappy with communist Cuba they could leave. From April to October that year, ordinary Cubans crowded onto boats and sailed north to Florida in what became known as the Mariel boatlift. About how many Cubans made it across?",
+    "question": "In 1980 the Cuban dictator Fidel Castro briefly opened the port of Mariel and told those unhappy with communist Cuba they could leave. From April to October that year, ordinary Cubans crowded onto boats and sailed north to Florida in what became known as the Mariel boatlift. About how many Cubans made it across?",
     "answer": "About 125,000",
     "choices": [
       "About 125,000",
@@ -10466,7 +10466,7 @@
   },
   {
     "tier": 3,
-    "question": "After the Soviet Union collapsed in 1991, its huge subsidies of oil, food, and money to Cuba dried up almost overnight. Cuban dictator Fidel Castro's centrally-planned economy was left with almost no fuel, spare parts, or fertilizer. Cubans lost weight, blackouts became routine, and children were pulled from school to work fields with oxen. The Cuban government gave this long crisis a strangely soft-sounding official name. What did they call it?",
+    "question": "After the Soviet Union collapsed in 1991, its huge subsidies of oil, food, and money to Cuba dried up almost overnight. Cuban dictator Fidel Castro's centrally-planned economy was left with almost no fuel, spare parts, or fertilizer. Cubans lost weight, blackouts became routine, and children were pulled from school to work fields with oxen. The Cuban government gave this long crisis a strangely soft-sounding official name. What was that name?",
     "answer": "The Special Period",
     "choices": [
       "The Special Period",
@@ -10739,7 +10739,7 @@
   },
   {
     "tier": 3,
-    "question": "Nine years after his 1973 book For a New Liberty, the American economist Murray Rothbard published a longer and more philosophical work. It grounded libertarianism in the 17th-century English thinker John Locke's natural-rights tradition — the idea that every person owns their own body, labor, and property before any government exists. What is that 1982 book titled?",
+    "question": "Nine years after his 1973 book For a New Liberty, the American economist Murray Rothbard published a longer and more philosophical work. It grounded libertarianism in the 17th-century English thinker John Locke's natural-rights tradition — the idea that people own their own bodies, labor, and property before any government exists. What is that 1982 book titled?",
     "answer": "The Ethics of Liberty",
     "choices": [
       "The Ethics of Liberty",
@@ -11688,7 +11688,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1889 the Austrian economist Friedrich von Wieser, working in Vienna, published a book called Natural Value. Older thinkers had said the price of a thing came from the labor hours or the raw material inside it. Wieser and his teacher Carl Menger argued something new: value is not baked into the object at all — each person judges a thing by how much they personally want it in the moment. What does this idea, called subjective value, say decides what a thing is worth?",
+    "question": "In 1889 the Austrian economist Friedrich von Wieser, working in Vienna, published a book called Natural Value. Older thinkers had said the price of a thing came from the labor hours or the raw material inside it. Wieser and his teacher Carl Menger argued something new: value is not baked into the object at all — people judge a thing by how much they personally want it in the moment. What does this idea, called subjective value, say decides what a thing is worth?",
     "answer": "How much any one person values it right now",
     "choices": [
       "How much any one person values it right now",
@@ -12039,7 +12039,7 @@
   },
   {
     "tier": 3,
-    "question": "Imagine a US state is debating a new law that says nobody may work as an interior designer until they first pass a difficult exam and pay a yearly fee for an official state license. This blocks would-be newcomers from just hanging out their own shingle. Which group will show up most eagerly at the state capitol to support the new licensing law?",
+    "question": "Imagine a US state is debating a new law that says nobody may work as an interior designer without first passing a difficult exam and paying a yearly fee for an official state license. This blocks would-be newcomers from just hanging out their own shingle. Which group will show up most eagerly at the state capitol to support the new licensing law?",
     "answer": "Established interior designers already in the field",
     "choices": [
       "Established interior designers already in the field",
@@ -13083,7 +13083,7 @@
     "answer": "People can change their political views over time",
     "choices": [
       "People can change their political views over time",
-      "No one ever changes their political views",
+      "People never change their political views",
       "Only elections change what people believe",
       "Teachers always convince students of their own views"
     ],
@@ -13144,10 +13144,10 @@
   },
   {
     "tier": 4,
-    "question": "The German libertarian philosopher Hans-Hermann Hoppe developed a famous line of reasoning in the 1980s that he called 'argumentation ethics.' It goes like this: the very moment two people begin to argue with each other at all, each is already using their own voice, their own flesh-and-blood self, and their own time to make the case. Nobody can consistently argue that they do not own the very things they must use to argue with. So arguing itself, Hoppe said, quietly assumes each person owns something. What does the argument say each person must own?",
-    "answer": "Their own body",
+    "question": "The German libertarian philosopher Hans-Hermann Hoppe developed a famous line of reasoning in the 1980s that he called 'argumentation ethics.' It goes like this: the very moment two people begin to argue with each other at all, both are already using their own voices, flesh-and-blood selves, and time to make the case. Nobody can consistently deny owning the very things needed to argue with. So arguing itself, Hoppe said, quietly assumes each person owns something. What does the argument say each person must own?",
+    "answer": "One's own body",
     "choices": [
-      "Their own body",
+      "One's own body",
       "A share of the state",
       "A patch of common land",
       "The other person's attention"
@@ -13911,11 +13911,11 @@
   },
   {
     "tier": 2,
-    "question": "In a school debate club, before you argue against a classmate's idea, you first repeat their idea out loud in the strongest and fairest way you can -- the way they themselves would say it. Debate coaches call this move 'steelmanning' your opponent. Why is it a good habit to build?",
-    "answer": "It stops you from beating up a weaker version of their argument",
+    "question": "In a school debate club, before you argue against a classmate's idea, you first repeat that idea out loud in the strongest and fairest way you can -- the way the classmate would say it. Debate coaches call this move 'steelmanning' your opponent. Why is it a good habit to build?",
+    "answer": "It stops you from beating up a weaker version of the argument",
     "choices": [
-      "It stops you from beating up a weaker version of their argument",
-      "It gives you time to think of a joke about them",
+      "It stops you from beating up a weaker version of the argument",
+      "It gives you time to think of a joke about it",
       "It makes the other person agree with you faster",
       "It hides your own weakest points"
     ],
@@ -14696,7 +14696,7 @@
     "choices": [
       "successor emperors printed at will to fund crises, and by the 1350s the chao was worthless",
       "the chao was formally backed by silver and stabilized for another two centuries",
-      "the Ming dynasty adopted it as their own currency in 1368",
+      "the Ming dynasty adopted it as its own currency in 1368",
       "Marco Polo returned to enforce its acceptance"
     ],
     "context": "After Kublai, later Yuan emperors printed chao at will; by the 1350s it was worthless and the Yuan dynasty was collapsing. The Ming (founded 1368) inherited the ruin, not the currency; silver backing did not stabilize it; Polo had died in 1324. Source: https://en.wikipedia.org/wiki/Yuan_dynasty.",
@@ -15250,7 +15250,7 @@
   },
   {
     "tier": 3,
-    "question": "In the late 1990s the Australian programmer Julian Assange, later famous for founding WikiLeaks, wrote an encryption tool he called Rubberhose. The name came from 'rubber-hose cryptanalysis' — a slang term for beating a suspect until they hand over the password. Rubberhose was designed for human-rights workers who might be tortured. Its key idea let a captive safely give up one password while still hiding other data. What was the key idea?",
+    "question": "In the late 1990s the Australian programmer Julian Assange, later famous for founding WikiLeaks, wrote an encryption tool he called Rubberhose. The name came from 'rubber-hose cryptanalysis' — a slang term for beating suspects until they hand over the password. Rubberhose was designed for human-rights workers who might be tortured. Its key idea let a captive safely give up one password while still hiding other data. What was the key idea?",
     "answer": "Multiple hidden encrypted volumes on one disk, so revealing one password does not prove other volumes do not exist",
     "choices": [
       "Multiple hidden encrypted volumes on one disk, so revealing one password does not prove other volumes do not exist",
@@ -17187,7 +17187,7 @@
   },
   {
     "tier": 3,
-    "question": "Murray Rothbard, the young American Austrian-school economist, finished writing his two-volume treatise Man, Economy, and State in the late 1950s. When the publisher, D. Van Nostrand, prepared the 1962 first edition for printing, they made one big change to the manuscript: they thought a specific stretch of it was way too controversial for a scholarly economics book. What did the publisher ask Rothbard to do?",
+    "question": "Murray Rothbard, the young American Austrian-school economist, finished writing his two-volume treatise Man, Economy, and State in the late 1950s. When the publisher, D. Van Nostrand, prepared the 1962 first edition for printing, it made one big change to the manuscript: it thought a specific stretch of it was way too controversial for a scholarly economics book. What did the publisher ask Rothbard to do?",
     "answer": "That the final eight chapters -- the systematic analysis of government intervention -- be cut before printing, as too politically radical",
     "choices": [
       "That the final eight chapters -- the systematic analysis of government intervention -- be cut before printing, as too politically radical",
@@ -17213,7 +17213,7 @@
   },
   {
     "tier": 4,
-    "question": "In his 1970 book Power and Market, the Austrian economist Murray Rothbard tried to sort every possible way the state uses force in an economy into a clean taxonomy. He ended up with three groups. He grouped each act of state force by who was being forced and what they were being made to do or forbidden to do. Which three groups did Rothbard name?",
+    "question": "In his 1970 book Power and Market, the Austrian economist Murray Rothbard tried to sort every possible way the state uses force in an economy into a clean taxonomy. He ended up with three groups. He grouped each act of state force by who was being forced and what the victim was made to do or forbidden to do. Which three groups did Rothbard name?",
     "answer": "Autistic, binary, and triangular intervention",
     "choices": [
       "Autistic, binary, and triangular intervention",
@@ -17928,7 +17928,7 @@
   },
   {
     "tier": 3,
-    "question": "MicroStrategy is a US software company whose CEO Michael Saylor turned the firm's corporate treasury into a huge Bitcoin stockpile starting in 2020. Through the 2022 crypto crash, when the stash was down billions on paper, Saylor kept buying more coins. To fund those buys, MicroStrategy issued one specific type of corporate debt again and again. Which kind of debt did they use?",
+    "question": "MicroStrategy is a US software company whose CEO Michael Saylor turned the firm's corporate treasury into a huge Bitcoin stockpile starting in 2020. Through the 2022 crypto crash, when the stash was down billions on paper, Saylor kept buying more coins. To fund those buys, MicroStrategy issued one specific type of corporate debt again and again. Which kind of debt did it use?",
     "answer": "Convertible bonds",
     "choices": [
       "Convertible bonds",
@@ -18136,7 +18136,7 @@
   },
   {
     "tier": 1,
-    "question": "A US Senator wants to raise the federal minimum wage to $15 an hour to help low-wage workers. The Chicago economist Milton Friedman, following the French thinker Frederic Bastiat, taught readers to look for the person you don't see — the worker priced out when a wage floor jumps above their skill. Whose job gets priced out by the new $15 floor?",
+    "question": "A US Senator wants to raise the federal minimum wage to $15 an hour to help low-wage workers. The Chicago economist Milton Friedman, following the French thinker Frederic Bastiat, taught readers to look for the person you don't see — the worker whose skill is worth less than a new wage floor. Whose job gets priced out by the new $15 floor?",
     "answer": "A 16-year-old with no experience whose value to a small-restaurant employer is around $8 per hour",
     "choices": [
       "A 16-year-old with no experience whose value to a small-restaurant employer is around $8 per hour",
@@ -18279,7 +18279,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin miners run computers that race to find a special number that unlocks a new block and its reward. Most miners team up in 'pools' so they can smooth out their income. Inside a pool, a miner gets paid for each valid partial hash they turn in — not just for finding the rare winning full hash. What is one of those partial-hash entries called?",
+    "question": "Bitcoin miners run computers that race to find a special number that unlocks a new block and its reward. Most miners team up in 'pools' so they can smooth out their income. Inside a pool, miners get paid for each valid partial hash they turn in — not just for finding the rare winning full hash. What is one of those partial-hash entries called?",
     "answer": "A share",
     "choices": [
       "A share",
@@ -18305,7 +18305,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin's security depends on no single player controlling most of the mining power. If any one miner or mining pool ever gained more than half of the whole network's hashing power, that player could rewrite very recent blocks, undo their own past payments, or block transactions they didn't like. Bitcoin developers give this exact concentration danger a specific name. What is this danger called?",
+    "question": "Bitcoin's security depends on no single player controlling most of the mining power. If any one miner or mining pool ever gained more than half of the whole network's hashing power, that player could rewrite very recent blocks, undo its own past payments, or block transactions it didn't like. Bitcoin developers give this exact concentration danger a specific name. What is this danger called?",
     "answer": "A 51-percent attack",
     "choices": [
       "A 51-percent attack",
@@ -18436,9 +18436,9 @@
   {
     "tier": 5,
     "question": "A think tank that teaches Austrian economics puts its entire founding library online for free. Every book and every essay by its major thinkers is there for anyone with internet. Why does making the primary sources free do more for the school than any advertising ever could?",
-    "answer": "A student anywhere can read the original arguments and decide for themselves",
+    "answer": "Students anywhere can read the original arguments and decide for themselves",
     "choices": [
-      "A student anywhere can read the original arguments and decide for themselves",
+      "Students anywhere can read the original arguments and decide for themselves",
       "Free websites are cheaper than magazine ads",
       "It forces every teacher to assign those books in class",
       "Governments have to endorse whichever school offers free texts"
@@ -18760,7 +18760,7 @@
   },
   {
     "tier": 4,
-    "question": "Ludwig von Mises founded the modern Austrian school of economics. He said the whole subject starts from a single fact anyone can check about themselves: people choose things on purpose to reach goals they care about. Mises gave this starting point a Greek-rooted name -- praxeology -- and built all of economics on top of it. What is this starting point called, in plain English?",
+    "question": "Ludwig von Mises founded the modern Austrian school of economics. He said the whole subject starts from a single fact we can all check about ourselves: people choose things on purpose to reach goals they care about. Mises gave this starting point a Greek-rooted name -- praxeology -- and built all of economics on top of it. What is this starting point called, in plain English?",
     "answer": "The study of purposeful human action",
     "choices": [
       "The study of purposeful human action",
@@ -18929,7 +18929,7 @@
   },
   {
     "tier": 2,
-    "question": "A person buys Bitcoin on a big trading website and leaves the coins sitting in the website's account instead of moving them to their own private wallet. Then the website is hacked and all the coins are stolen -- this is what happened to thousands of users of Mt. Gox in 2014. What is the well-known Bitcoin saying that warns against this exact mistake?",
+    "question": "A person buys Bitcoin on a big trading website and leaves the coins sitting in the website's account instead of moving them to a private wallet. Then the website is hacked and all the coins are stolen -- this is what happened to thousands of users of Mt. Gox in 2014. What is the well-known Bitcoin saying that warns against this exact mistake?",
     "answer": "Not your keys, not your coins",
     "choices": [
       "Not your keys, not your coins",
@@ -19268,9 +19268,9 @@
   {
     "tier": 2,
     "question": "In the mid-2000s a former University of California, Los Angeles (UCLA) basketball star named Ed O'Bannon walked into a friend's living room and saw his own face, name, and jersey number on the screen in a college basketball video game. The game had sold millions of copies. O'Bannon had been paid nothing. He decided to sue the game company for a share of the money it had made off him. Why is it fair for him to sue?",
-    "answer": "A person owns their own name and likeness, so a company that sells them owes payment",
+    "answer": "People own their own name and likeness, so a company that sells them owes payment",
     "choices": [
-      "A person owns their own name and likeness, so a company that sells them owes payment",
+      "People own their own name and likeness, so a company that sells them owes payment",
       "The company should have used a made-up player instead of a real one",
       "Video game money always belongs half to the athletes",
       "College sports rules ban all video games about players"
@@ -20567,7 +20567,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1938 the Austrian economist Oskar Morgenstern, a rising figure who would later co-write the founding book of game theory with John von Neumann, was away in the United States on a lecture tour. That year a huge political event handed control of Austria to a new regime in Berlin, and they promptly fired Morgenstern from his Vienna university post as politically unreliable. What was the 1938 event?",
+    "question": "In 1938 the Austrian economist Oskar Morgenstern, a rising figure who would later co-write the founding book of game theory with John von Neumann, was away in the United States on a lecture tour. That year a huge political event handed control of Austria to a new regime in Berlin, and it promptly fired Morgenstern from his Vienna university post as politically unreliable. What was the 1938 event?",
     "answer": "The Anschluss with Nazi Germany",
     "choices": [
       "The Anschluss with Nazi Germany",
@@ -20866,7 +20866,7 @@
   },
   {
     "tier": 1,
-    "question": "Say an American refuses to pay federal income tax. They tell the judge the tax law is unfair or against the Constitution. What usually happens next?",
+    "question": "Say some Americans refuse to pay federal income tax. They tell the judge the tax law is unfair or against the Constitution. What usually happens next?",
     "answer": "They lose in court and can be sent to federal prison",
     "choices": [
       "They lose in court and can be sent to federal prison",
@@ -21816,9 +21816,9 @@
   {
     "tier": 1,
     "question": "On any ordinary morning, a shopper walks into a bakery holding a dollar bill and walks out holding a warm loaf of bread. The baker walks in holding bread and walks out holding the dollar. Both people smile. Neither one was forced to trade. Austrian economists starting with Carl Menger in the 1870s used little scenes like this to teach one lesson about how ordinary trade works. What does the smile on both faces tell you about the two people?",
-    "answer": "Each one values what they got MORE than what they gave up",
+    "answer": "Both value what they got MORE than what they gave up",
     "choices": [
-      "Each one values what they got MORE than what they gave up",
+      "Both value what they got MORE than what they gave up",
       "One of them made a mistake",
       "Prices are always fair",
       "Trading always makes everyone equally rich"
@@ -21910,8 +21910,8 @@
     "answer": "As real-world confirmation of a point already proven back in 1920",
     "choices": [
       "As real-world confirmation of a point already proven back in 1920",
-      "As the very first honest test their argument had ever received",
-      "As a total surprise their theory could not explain",
+      "As the very first honest test its argument had ever received",
+      "As a total surprise its theory could not explain",
       "As proof that the 1920 argument had been wrong all along"
     ],
     "context": "The distinction is methodological, not rhetorical. If the calculation problem is a deduced law of action under conditions of no market prices, then the USSR could no more disprove it than a falling apple could disprove gravity; the Soviet experience showed the law working, it did not test whether the law is true. Source: Mises Institute, 'Economic Science and the Austrian Method'.",
@@ -21932,7 +21932,7 @@
   },
   {
     "tier": 1,
-    "question": "A king in a hungry kingdom announces a new law: 'From now on, no shop in my realm may sell a loaf of bread for more than one gold coin.' But every baker cries out that flour, yeast, and firewood cost them two gold coins for each loaf they make. What will most likely happen on the town's bread shelves in the weeks that follow?",
+    "question": "A king in a hungry kingdom announces a new law: 'From now on, no shop in my realm may sell a loaf of bread for more than one gold coin.' But the bakers all cry out that flour, yeast, and firewood cost them two gold coins for each loaf they make. What will most likely happen on the town's bread shelves in the weeks that follow?",
     "answer": "Bread will disappear from the shelves",
     "choices": [
       "Bread will disappear from the shelves",
@@ -22322,7 +22322,7 @@
   },
   {
     "tier": 2,
-    "question": "In 1945 the Austrian economist Friedrich Hayek wrote a short essay called 'The Use of Knowledge in Society.' Most economists, he said, made the same slip. They pictured a single wise planner who somehow knew every fact about every worker and every shop. Hayek said no planner in the world can know all that. Each person only ever knows their own tiny slice — the mechanic knows his lathe, the shopkeeper knows her buyers. What word did Hayek use to describe how the facts are spread out?",
+    "question": "In 1945 the Austrian economist Friedrich Hayek wrote a short essay called 'The Use of Knowledge in Society.' Most economists, he said, made the same slip. They pictured a single wise planner who somehow knew every fact about every worker and every shop. Hayek said no planner in the world can know all that. People only ever know their own tiny slice — the mechanic knows his lathe, the shopkeeper knows her buyers. What word did Hayek use to describe how the facts are spread out?",
     "answer": "Dispersed",
     "choices": [
       "Dispersed",
@@ -22660,7 +22660,7 @@
   },
   {
     "tier": 4,
-    "question": "Bitcoin was invented in 2008 by a person or group writing under the pseudonym Satoshi Nakamoto — nobody knows who they really were. The key design idea combined two rules: computers must burn real work to add a block (proof-of-work), and if two competing chains appear, everyone follows whichever chain has the most total work stacked up behind it. This combined design was later named after Nakamoto. What is it called?",
+    "question": "Bitcoin was invented in 2008 by a person or group writing under the pseudonym Satoshi Nakamoto — nobody knows who it really was. The key design idea combined two rules: computers must burn real work to add a block (proof-of-work), and if two competing chains appear, everyone follows whichever chain has the most total work stacked up behind it. This combined design was later named after Nakamoto. What is it called?",
     "answer": "Nakamoto Consensus",
     "choices": [
       "Nakamoto Consensus",
@@ -22712,7 +22712,7 @@
   },
   {
     "tier": 1,
-    "question": "In one kind of digital money, users do not burn any electricity to add new blocks. Instead each block-maker locks up a large deposit of that money as a promise of good behavior. If the network catches them cheating, they lose the deposit forever. Ethereum switched to this system in 2022. What is it called?",
+    "question": "In one kind of digital money, users do not burn any electricity to add new blocks. Instead block-makers each lock up a large deposit of that money as a promise of good behavior. If the network catches them cheating, they lose the deposit forever. Ethereum switched to this system in 2022. What is it called?",
     "answer": "Proof-of-stake",
     "choices": [
       "Proof-of-stake",
@@ -22738,7 +22738,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin secures its network by making miners burn electricity solving cryptographic puzzles — a system called proof-of-work. In September 2022 the Ethereum blockchain switched to a completely different rule. Anyone who wants to help validate new blocks locks up a large deposit of coins as a bond with the network. If they try to cheat, the software takes their deposit away. What is Ethereum's alternative method called?",
+    "question": "Bitcoin secures its network by making miners burn electricity solving cryptographic puzzles — a system called proof-of-work. In September 2022 the Ethereum blockchain switched to a completely different rule. Those who want to help validate new blocks lock up a large deposit of coins as a bond with the network. If they try to cheat, the software takes their deposit away. What is Ethereum's alternative method called?",
     "answer": "Proof-of-stake",
     "choices": [
       "Proof-of-stake",
@@ -22759,7 +22759,7 @@
       "Dependence on trusted third-party settlement rails",
       "Delegation of block production to a small licensed authority"
     ],
-    "context": "The Bitcoin-community argument: whoever starts with the most tokens has the most power to add blocks, entrench their position, and shape network rules, without an external check equivalent to the electricity a PoW miner must burn. Source: mises.org/library/proof-of-work-vs-proof-of-stake.",
+    "context": "The Bitcoin-community argument: those who start with the most tokens have the most power to add blocks, entrench their position, and shape network rules, without an external check equivalent to the electricity a PoW miner must burn. Source: mises.org/library/proof-of-work-vs-proof-of-stake.",
     "topic": "proof-of-work-vs-proof-of-stake-the-ethereum-merge"
   },
   {
@@ -23388,7 +23388,7 @@
   },
   {
     "tier": 4,
-    "question": "On the Pacific island of Yap, everyone in a village remembered in their own head which rai stone belonged to whom. That shared memory WAS the money system. In Bitcoin, the same job -- knowing who owns which coin -- is done not by human memory but by a shared record book, enforced by math and copied onto thousands of computers around the world. What is that shared record book called?",
+    "question": "On the Pacific island of Yap, all the villagers remembered in their own heads which rai stone belonged to whom. That shared memory WAS the money system. In Bitcoin, the same job -- knowing who owns which coin -- is done not by human memory but by a shared record book, enforced by math and copied onto thousands of computers around the world. What is that shared record book called?",
     "answer": "The blockchain",
     "choices": [
       "The blockchain",
@@ -23882,7 +23882,7 @@
   },
   {
     "tier": 2,
-    "question": "The Irish-French banker Richard Cantillon wrote in the 1730s that new money helps whoever receives it first -- they get to spend it while prices are still low -- and hurts savers and wage-earners who receive the money last, after prices have risen. Modern Austrian-school economists like Murray Rothbard and Jesus Huerta de Soto revived this idea and gave it a name honoring Cantillon. What do they call this pattern?",
+    "question": "The Irish-French banker Richard Cantillon wrote in the 1730s that new money helps those who receive it first -- they get to spend it while prices are still low -- and hurts savers and wage-earners who receive the money last, after prices have risen. Modern Austrian-school economists like Murray Rothbard and Jesus Huerta de Soto revived this idea and gave it a name honoring Cantillon. What do they call this pattern?",
     "answer": "The Cantillon effect",
     "choices": [
       "The Cantillon effect",
@@ -24013,9 +24013,9 @@
   {
     "tier": 2,
     "question": "A person with a terminal illness wants to try an experimental drug that has passed early safety tests but is still waiting on full government approval, which can take years. A 2018 federal law finally lets such patients try the drug. What is the moral argument for the law?",
-    "answer": "A dying patient has little to lose and should get to decide the risk for themselves",
+    "answer": "Dying patients have little to lose and should get to decide the risk for themselves",
     "choices": [
-      "A dying patient has little to lose and should get to decide the risk for themselves",
+      "Dying patients have little to lose and should get to decide the risk for themselves",
       "Only the government should ever decide what any patient may try",
       "Drug companies should be forced to give the drug away for free",
       "Approving drugs faster is always dangerous"
@@ -24033,7 +24033,7 @@
       "Legal protection",
       "Insurance coverage"
     ],
-    "context": "The right-to-try move: absent right-to-try, a terminally-ill patient with no approved option is not being 'protected' by delay -- they are dying while decisions are made elsewhere. The default is death, not safety. Source: Tabarrok, 'Assessing the FDA via the Anomaly of Off-Label Drug Prescribing' (Independent Review 2000).",
+    "context": "The right-to-try move: absent right-to-try, terminally-ill patients with no approved option are not being 'protected' by delay -- they are dying while decisions are made elsewhere. The default is death, not safety. Source: Tabarrok, 'Assessing the FDA via the Anomaly of Off-Label Drug Prescribing' (Independent Review 2000).",
     "topic": "right-to-try-and-the-fda-from-peltzman-to-vinay-prasad-and-a"
   },
   {
@@ -24338,9 +24338,9 @@
   {
     "tier": 1,
     "question": "In 1960 the American economist Ronald Coase argued that pollution problems can often be solved by clear property rights. Picture a big factory that keeps dumping black smoke onto a nearby farmer's field and ruining his crops each summer. Suppose the farmer legally owns the right to clean air over his own land. Under Coase's reasoning, what can he do about the factory?",
-    "answer": "Sue the factory, or charge them a fee to keep polluting",
+    "answer": "Sue the factory, or charge it a fee to keep polluting",
     "choices": [
-      "Sue the factory, or charge them a fee to keep polluting",
+      "Sue the factory, or charge it a fee to keep polluting",
       "Nothing -- smoke is free",
       "Only the government can act",
       "Move his farm to another country"
@@ -24832,9 +24832,9 @@
   {
     "tier": 2,
     "question": "In 2001 and 2002, giant American companies like Enron and WorldCom collapsed after top executives were caught faking their profits for years. Congress responded with a 2002 law called Sarbanes-Oxley. It forces the CEO (chief executive officer) and CFO (chief financial officer) of every big public company to personally sign a statement every quarter saying the financial numbers are true. Lying can send them to prison. What is the idea behind this rule?",
-    "answer": "Making a real person legally responsible so they cannot hide behind the company",
+    "answer": "Making real people legally responsible so they cannot hide behind the company",
     "choices": [
-      "Making a real person legally responsible so they cannot hide behind the company",
+      "Making real people legally responsible so they cannot hide behind the company",
       "Letting companies write whatever numbers they want",
       "Forcing companies to publish reports only once every five years",
       "Removing all penalties for false accounting"
@@ -25065,7 +25065,7 @@
   },
   {
     "tier": 2,
-    "question": "Bitcoin's software is open source: the full code sits on the internet where anyone in the world can read it, copy it, run their own tests, or suggest fixes. A private bank's code, by contrast, is locked inside the company and only its own employees can look at it. Bitcoin supporters say this openness makes their money system safer than one run by a single private company. Why do they say that?",
+    "question": "Bitcoin's software is open source: the full code sits on the internet where anyone in the world can read it, copy it, test it, or suggest fixes. A private bank's code, by contrast, is locked inside the company and only its own employees can look at it. Bitcoin supporters say this openness makes their money system safer than one run by a single private company. Why do they say that?",
     "answer": "Thousands of eyes can spot problems, and no boss can secretly change the rules",
     "choices": [
       "Thousands of eyes can spot problems, and no boss can secretly change the rules",
@@ -25338,7 +25338,7 @@
   },
   {
     "tier": 1,
-    "question": "In Bitcoin, every wallet has a secret number that only its owner should know. That number lets the owner sign a message proving the coins are theirs, so the rest of the network will accept a move. Anyone without the number cannot move those coins, no matter how much money or power they have. Anyone who steals the number can move them all, right away. What is this secret number called?",
+    "question": "In Bitcoin, every wallet has a secret number that only its owner should know. That number lets the owner sign a message proving ownership of the coins, so the rest of the network will accept a move. Without the number, nobody can move those coins, no matter how rich or powerful. Anyone who steals the number can move them all, right away. What is this secret number called?",
     "answer": "the private key",
     "choices": [
       "the private key",
@@ -25364,7 +25364,7 @@
   },
   {
     "tier": 2,
-    "question": "Andreas Antonopoulos was a Greek-British Bitcoin teacher who wrote the textbook Mastering Bitcoin. For years he traveled the conference circuit repeating one short line to teach the self-custody rule: if someone else holds your private keys, they, not you, actually control your Bitcoin. Which seven-word line did he make famous?",
+    "question": "Andreas Antonopoulos was a Greek-British Bitcoin teacher who wrote the textbook Mastering Bitcoin. For years he traveled the conference circuit repeating one short line to teach the self-custody rule: if someone else holds your private keys, the holder, not you, controls your Bitcoin. Which seven-word line did he make famous?",
     "answer": "Not your keys, not your coins.",
     "choices": [
       "Not your keys, not your coins.",
@@ -25858,7 +25858,7 @@
   },
   {
     "tier": 2,
-    "question": "In June 1930, the US Congress passed the Smoot-Hawley Tariff Act, one of the most sweeping trade laws in American history. Instead of setting one rate for all imports, lawmakers went item by item, adding a special tax on foreign goods from cheese to pocket watches to industrial chemicals. Each congressman fought to protect the industries in their own district. About how many separate goods were hit with new higher tariff rates?",
+    "question": "In June 1930, the US Congress passed the Smoot-Hawley Tariff Act, one of the most sweeping trade laws in American history. Instead of setting one rate for all imports, lawmakers went item by item, adding a special tax on foreign goods from cheese to pocket watches to industrial chemicals. Each congressman fought to protect the industries in his own district. About how many separate goods were hit with new higher tariff rates?",
     "answer": "More than twenty thousand",
     "choices": [
       "More than twenty thousand",
@@ -25910,7 +25910,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1930 the US passed the Smoot-Hawley Tariff, and world trade collapsed as country after country raised their own tariffs to strike back. Congress had built the mess piece by piece, with each congressman fighting to protect the industries in their own district. In 1934, Congress passed the Reciprocal Trade Agreements Act, handing the president the power to lower tariffs by negotiating whole trade deals with foreign governments. Why is it usually easier for a president to lower tariffs than for Congress?",
+    "question": "In 1930 the US passed the Smoot-Hawley Tariff, and world trade collapsed as country after country raised its own tariffs to strike back. Congress had built the mess piece by piece, with each congressman fighting to protect the industries in his own district. In 1934, Congress passed the Reciprocal Trade Agreements Act, handing the president the power to lower tariffs by negotiating whole trade deals with foreign governments. Why is it usually easier for a president to lower tariffs than for Congress?",
     "answer": "A president can negotiate the whole deal at once, so no single local industry can block a line item",
     "choices": [
       "A president can negotiate the whole deal at once, so no single local industry can block a line item",
@@ -26040,7 +26040,7 @@
   },
   {
     "tier": 5,
-    "question": "A member of Congress defends the payroll tax by pointing to the check that goes out each month to 67 million Americans, many with no other retirement income. A critic in Frederic Bastiat's tradition agrees on the facts. But the defense is incomplete, they say, because it counts only what the program did with the money and never what the money would have done otherwise. What comparison does the critic demand?",
+    "question": "A member of Congress defends the payroll tax by pointing to the check that goes out each month to 67 million Americans, many with no other retirement income. Critics in Frederic Bastiat's tradition agree on the facts. But the defense is incomplete, they say, because it counts only what the program did with the money and never what the money would have done otherwise. What comparison do the critics demand?",
     "answer": "What forty-five years of those same payroll taxes would have compounded to in the worker's own account",
     "choices": [
       "What forty-five years of those same payroll taxes would have compounded to in the worker's own account",
@@ -26574,9 +26574,9 @@
   {
     "tier": 3,
     "question": "In cities like New York, a growing network of charter schools -- free public schools run outside the traditional school district -- uses one simple rule for who gets in. Any family can apply, and when there are more applicants than seats, the seats are picked by a public lottery drawn from a barrel. No admissions tests, no interviews, no political favors, no connections. What is the main fairness argument for these lottery schools?",
-    "answer": "The lottery gives every family the same shot, no matter who they know",
+    "answer": "The lottery gives all families the same shot, no matter who they know",
     "choices": [
-      "The lottery gives every family the same shot, no matter who they know",
+      "The lottery gives all families the same shot, no matter who they know",
       "The lottery guarantees every child a top test score",
       "The lottery is required by a federal law from the 1990s",
       "The lottery replaces the need for teachers or classrooms"
@@ -26833,7 +26833,7 @@
   },
   {
     "tier": 3,
-    "question": "American cities that host pro football, baseball, or basketball teams face a nasty bind. When a team's owner demands a big public payment to fix up the stadium -- or threatens to move -- any city that says no risks losing its team to a city that says yes. Every city would be better off if they all refused together. But no single city trusts the others to hold the line, so they all end up paying. Game theorists have a name for a setup where each player is pushed to defect even though cooperation would help them all. Which classic setup best fits this pattern across US cities?",
+    "question": "American cities that host pro football, baseball, or basketball teams face a nasty bind. When a team's owner demands a big public payment to fix up the stadium -- or threatens to move -- any city that says no risks losing its team to a city that says yes. The cities would all be better off if they refused together. But no single city trusts the others to hold the line, so they all end up paying. Game theorists have a name for a setup where each player is pushed to defect even though cooperation would help them all. Which classic setup best fits this pattern across US cities?",
     "answer": "A prisoner's dilemma",
     "choices": [
       "A prisoner's dilemma",
@@ -26924,7 +26924,7 @@
   },
   {
     "tier": 1,
-    "question": "For years, getting hold of Bitcoin meant signing up with a crypto exchange and safeguarding your own secret password. In January 2024, US regulators finally approved a spot Bitcoin exchange-traded fund (ETF) -- a regular stock-market fund that holds real bitcoin on behalf of its investors. Suddenly, anyone with an ordinary brokerage account could buy Bitcoin the same way they buy a share of Apple stock. Why did fans of Bitcoin see this approval as a big deal?",
+    "question": "For years, getting hold of Bitcoin meant signing up with a crypto exchange and safeguarding your own secret password. In January 2024, US regulators finally approved a spot Bitcoin exchange-traded fund (ETF) -- a regular stock-market fund that holds real bitcoin on behalf of its investors. Suddenly, anyone with an ordinary brokerage account could buy Bitcoin the same way as a share of Apple stock. Why did fans of Bitcoin see this approval as a big deal?",
     "answer": "It made buying Bitcoin as easy as buying a stock",
     "choices": [
       "It made buying Bitcoin as easy as buying a stock",
@@ -26976,7 +26976,7 @@
   },
   {
     "tier": 3,
-    "question": "In January 2024, the US Securities and Exchange Commission approved the first spot Bitcoin exchange-traded funds (ETFs) -- stock-market funds that let big institutions buy Bitcoin without setting up their own crypto wallets. A general rule of financial markets is that whoever gets new access first benefits most, because they can buy in before prices are bid up. Small home savers with cold-storage wallets were already in. Who profits earliest from this brand-new Wall Street product?",
+    "question": "In January 2024, the US Securities and Exchange Commission approved the first spot Bitcoin exchange-traded funds (ETFs) -- stock-market funds that let big institutions buy Bitcoin without setting up their own crypto wallets. A general rule of financial markets is that those who get new access first benefit most, because they can buy in before prices are bid up. Small home savers with cold-storage wallets were already in. Who profits earliest from this brand-new Wall Street product?",
     "answer": "The big pension and endowment funds that can pile in on day one",
     "choices": [
       "The big pension and endowment funds that can pile in on day one",
@@ -27179,7 +27179,7 @@
       "Register the newborn for compulsory military service",
       "Reserve a place in a Nobel-affiliated preschool"
     ],
-    "context": "The queue is strictly first-come-first-served. By the time a child turns 18-20 and needs their own place, roughly two decades of queue time have accumulated. Source: grokipedia.com/page/Rent_control_in_Sweden.",
+    "context": "The queue is strictly first-come-first-served. By the time children turn 18-20 and need their own place, roughly two decades of queue time have accumulated. Source: grokipedia.com/page/Rent_control_in_Sweden.",
     "topic": "stockholms-twenty-year-apartment-queue"
   },
   {
@@ -27626,7 +27626,7 @@
   },
   {
     "tier": 2,
-    "question": "A US city sets up a new program: every low-income family gets a certificate worth about $10,000 per year that they may spend only on tuition at any state-approved private school they choose for their child. If they pick a Catholic school, the certificate pays. If they pick a Montessori school, the certificate pays. If they never use it, they lose it. What is this kind of school-choice payment called?",
+    "question": "A US city sets up a new program: low-income families get a certificate worth about $10,000 per year that they may spend only on tuition at any state-approved private school they choose for their child. If they pick a Catholic school, the certificate pays. If they pick a Montessori school, the certificate pays. If they never use it, they lose it. What is this kind of school-choice payment called?",
     "answer": "A school voucher",
     "choices": [
       "A school voucher",
@@ -28224,7 +28224,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1979 Britain's top income tax rate was a punishing 83 percent, so a high earner kept only 17 pence of the last pound they made. Over the next decade, Prime Minister Margaret Thatcher's chancellors slashed that top rate all the way down to 40 percent by 1988. What do supporters of these big rate cuts, following the American economist Arthur Laffer, argue happens when the tax rate on high earners drops that sharply?",
+    "question": "In 1979 Britain's top income tax rate was a punishing 83 percent, so high earners kept only 17 pence of the last pound they made. Over the next decade, Prime Minister Margaret Thatcher's chancellors slashed that top rate all the way down to 40 percent by 1988. What do supporters of these big rate cuts, following the American economist Arthur Laffer, argue happens when the tax rate on high earners drops that sharply?",
     "answer": "People work and invest more, so the government can still collect a lot of tax",
     "choices": [
       "People work and invest more, so the government can still collect a lot of tax",
@@ -29329,7 +29329,7 @@
   },
   {
     "tier": 5,
-    "question": "During the French Revolution, the government printed huge amounts of paper money. When it lost value, they tried price controls, made refusing the paper illegal, and even executed 'hoarders.' Prices kept climbing. Which later inflation episode used the same playbook and failed the same way?",
+    "question": "During the French Revolution, the government printed huge amounts of paper money. When it lost value, the state tried price controls, made refusing the paper illegal, and even executed 'hoarders.' Prices kept climbing. Which later inflation episode used the same playbook and failed the same way?",
     "answer": "Weimar Germany 1921-1923",
     "choices": [
       "Weimar Germany 1921-1923",
@@ -29862,7 +29862,7 @@
   },
   {
     "tier": 4,
-    "question": "After East Germany's communist government fell in 1990, its secret police, the Stasi, left behind millions of pages of files spying on ordinary citizens. Germany passed a law called the Stasi Records Act, giving every East German the right to read the file the state had kept about them personally — and to see which friends, coworkers, and family members had informed. Why does opening these kinds of files matter after a police state falls?",
+    "question": "After East Germany's communist government fell in 1990, its secret police, the Stasi, left behind millions of pages of files spying on ordinary citizens. Germany passed a law called the Stasi Records Act, giving all East Germans the right to read the file the state had kept about them personally — and to see which friends, coworkers, and family members had informed. Why does opening these kinds of files matter after a police state falls?",
     "answer": "It lets people see who spied on them and makes the informers publicly known",
     "choices": [
       "It lets people see who spied on them and makes the informers publicly known",
@@ -31266,7 +31266,7 @@
   },
   {
     "tier": 5,
-    "question": "In the 19th-century American money debate, the Austrian-school tradition — later championed by the economist Murray Rothbard — rejected silverite inflation. But they also rejected any permanent forced deflation imposed by decree. They wanted something different from either. What did they actually favor?",
+    "question": "In the 19th-century American money debate, the Austrian-school tradition — later championed by the economist Murray Rothbard — rejected silverite inflation. But it also rejected any permanent forced deflation imposed by decree. It wanted something different from either. What did it actually favor?",
     "answer": "A market-determined money supply that neither government nor lobby can inflate to redistribute wealth by decree",
     "choices": [
       "A market-determined money supply that neither government nor lobby can inflate to redistribute wealth by decree",
@@ -31448,7 +31448,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 1998, on a cypherpunk mailing list where coders swapped ideas about privacy technology, a Chinese-American programmer named Wei Dai posted a short two-page proposal. It described a form of digital cash with no bank in the middle -- every user would keep their own copy of a shared ledger that recorded every transaction ever made. What did Wei Dai call the plan?",
+    "question": "In November 1998, on a cypherpunk mailing list where coders swapped ideas about privacy technology, a Chinese-American programmer named Wei Dai posted a short two-page proposal. It described a form of digital cash with no bank in the middle -- all users would keep their own copy of a shared ledger that recorded every transaction ever made. What did Wei Dai call the plan?",
     "answer": "b-money",
     "choices": [
       "b-money",
@@ -31474,7 +31474,7 @@
   },
   {
     "tier": 3,
-    "question": "In 1997 the British cryptographer Adam Back built a program called Hashcash to fight email spam. Hashcash forced anyone sending an email to make their computer solve a small math puzzle first — cheap for one message, but painfully expensive for a spammer sending millions. The puzzle had one property that Bitcoin's designer would later borrow in 2008 for a very different job: proving that real computer work had been done. Which property was that?",
+    "question": "In 1997 the British cryptographer Adam Back built a program called Hashcash to fight email spam. Hashcash forced email senders to make their computers solve a small math puzzle first — cheap for one message, but painfully expensive for a spammer sending millions. The puzzle had one property that Bitcoin's designer would later borrow in 2008 for a very different job: proving that real computer work had been done. Which property was that?",
     "answer": "solving one puzzle is expensive but verifying a solution is instant",
     "choices": [
       "solving one puzzle is expensive but verifying a solution is instant",
@@ -31787,9 +31787,9 @@
   {
     "tier": 5,
     "question": "One U.S. law forbids harming certain rare animals and lets the government freeze what a private landowner can do with land where one is found -- with no payment. In real cases, owners quietly cleared their trees before a survey could find the animal. What is the public-choice lesson?",
-    "answer": "If you put the whole cost of a rule on one person, they will act to avoid the rule before it hits",
+    "answer": "If you put the whole cost of a rule on one person, that person acts to avoid the rule before it hits",
     "choices": [
-      "If you put the whole cost of a rule on one person, they will act to avoid the rule before it hits",
+      "If you put the whole cost of a rule on one person, that person acts to avoid the rule before it hits",
       "The government should ban all private ownership of land near listed species",
       "Wildlife rules never need to consider what landowners might do next",
       "Only the federal government should own any land where wildlife lives"
@@ -32735,7 +32735,7 @@
   },
   {
     "tier": 3,
-    "question": "The Federal Reserve — America's central bank — is run by a seven-member Board of Governors that sits in Washington DC. The President of the United States picks each Governor and the Senate approves them. To keep the Board out of daily politics and party swings, Congress in 1935 gave each Governor a single very long term — much longer than the President's own four-year term. How long is one Governor's term?",
+    "question": "The Federal Reserve — America's central bank — is run by a seven-member Board of Governors that sits in Washington DC. The President of the United States picks the Governors and the Senate approves them. To keep the Board out of daily politics and party swings, Congress in 1935 gave each Governor a single very long term — much longer than the President's own four-year term. How long is one Governor's term?",
     "answer": "Fourteen years",
     "choices": [
       "Fourteen years",
@@ -33359,7 +33359,7 @@
   },
   {
     "tier": 1,
-    "question": "In the Soviet Union in the 1930s, dictator Joseph Stalin ran a special police force called the NKVD (the People's Commissariat for Internal Affairs). Its agents could pound on a family's door in the middle of the night, drag someone away, and hold them for months with no trial. Then they shipped the prisoner to a work camp in freezing Siberia. What do we call a police force like this -- one that answers only to the ruler, not to any court?",
+    "question": "In the Soviet Union in the 1930s, dictator Joseph Stalin ran a special police force called the NKVD (the People's Commissariat for Internal Affairs). Its agents could pound on a family's door in the middle of the night, drag people away, and hold them for months with no trial. Then they shipped the prisoners to a work camp in freezing Siberia. What do we call a police force like this -- one that answers only to the ruler, not to any court?",
     "answer": "Secret police",
     "choices": [
       "Secret police",
@@ -34009,7 +34009,7 @@
   },
   {
     "tier": 1,
-    "question": "In August 1982 Mexico, one of the biggest countries in Latin America, told the world's banks something scary: it could not pay back the huge loans it had taken from them during the 1970s oil boom. Banking has a specific word for when a country or person cannot pay back what they owe. What is that word?",
+    "question": "In August 1982 Mexico, one of the biggest countries in Latin America, told the world's banks something scary: it could not pay back the huge loans it had taken from them during the 1970s oil boom. Banking has a specific word for when a country or person cannot pay back a debt. What is that word?",
     "answer": "A default",
     "choices": [
       "A default",
@@ -34139,7 +34139,7 @@
   },
   {
     "tier": 1,
-    "question": "In the 1840s the French economist Frederic Bastiat wrote a short book called The Law. He argued that the proper job of law was to protect three things: a person's life, their freedom, and the property they had earned. Then he warned about what happens when law is used instead to take from some people and hand what they earned to others. What did he say the law turns into?",
+    "question": "In the 1840s the French economist Frederic Bastiat wrote a short book called The Law. He argued that the proper job of law was to protect three things: people's lives, their freedom, and the property they had earned. Then he warned about what happens when law is used instead to take from some people and hand what they earned to others. What did he say the law turns into?",
     "answer": "The law becomes a tool for legal robbery",
     "choices": [
       "The law becomes a tool for legal robbery",
@@ -34399,7 +34399,7 @@
   },
   {
     "tier": 3,
-    "question": "In Washington DC there is a well-known pattern called the 'revolving door.' A member of Congress or a top congressional staffer works in government for years on a modest federal salary that is capped by law. Then they leave and take a job at a K Street lobbying firm, cashing in on their inside contacts and knowledge of the rules. Which range best fits the pay bump they usually get when they walk through that door?",
+    "question": "In Washington DC there is a well-known pattern called the 'revolving door.' Members of Congress and top congressional staffers work in government for years on a modest federal salary that is capped by law. Then they leave and take a job at a K Street lobbying firm, cashing in on their inside contacts and knowledge of the rules. Which range best fits the pay bump they usually get when they walk through that door?",
     "answer": "500 to 1000 percent",
     "choices": [
       "500 to 1000 percent",
@@ -34464,7 +34464,7 @@
   },
   {
     "tier": 1,
-    "question": "You are dying of thirst in a desert. Someone offers you a glass of water and you would trade almost anything for it. But if they offer you a fifth glass after four, you barely care. Why does the fifth glass feel less valuable than the first?",
+    "question": "You are dying of thirst in a desert. Someone offers you a glass of water and you would trade almost anything for it. But if you're offered a fifth glass after four, you barely care. Why does the fifth glass feel less valuable than the first?",
     "answer": "You need it much less than the first one",
     "choices": [
       "You need it much less than the first one",
@@ -34914,7 +34914,7 @@
       "Moral hazard -- workers take on more risk",
       "Rent-seeking -- lobbyists capture the state"
     ],
-    "context": "Bastiat's method: the visible beneficiary is the worker whose wage rises; the invisible cost is the worker priced out of the labor market entirely. The critic named would be Milton Friedman. The kid names the MOVE; the verdict is theirs. Source: bastiat.org.",
+    "context": "Bastiat's method: the visible beneficiary is the worker whose wage rises; the invisible cost is the worker priced out of the labor market entirely. The critic named would be Milton Friedman. The kid names the MOVE; the verdict is the kid's own. Source: bastiat.org.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
@@ -34979,7 +34979,7 @@
       "The Phillips curve applied to drug prices",
       "The natural rate applied to prescriptions"
     ],
-    "context": "The critic's move: without price signals, planners cannot know which future drug lines to invest in; below-market negotiated prices reduce the incentive for marginal innovation. The kid names the move; the verdict is theirs. Source: mises.org/library/pharma-pricing.",
+    "context": "The critic's move: without price signals, planners cannot know which future drug lines to invest in; below-market negotiated prices reduce the incentive for marginal innovation. The kid names the move; the verdict is the kid's own. Source: mises.org/library/pharma-pricing.",
     "topic": "the-modern-democratic-socialist-revival-and-the-reasoning-mo"
   },
   {
@@ -35976,7 +35976,7 @@
     "answer": "Reductio ad absurdum -- pushing the other side's logic until it looks silly",
     "choices": [
       "Reductio ad absurdum -- pushing the other side's logic until it looks silly",
-      "Straw man -- pretending the other side said something they never did",
+      "Straw man -- pretending opponents said something they never did",
       "Ad hominem -- attacking the other side's character",
       "Appeal to authority -- quoting a famous name instead of arguing"
     ],
@@ -37311,7 +37311,7 @@
   },
   {
     "tier": 2,
-    "question": "Aleksandr Solzhenitsyn was a Soviet writer who had survived Stalin's labor camps and secretly documented their horrors. In December 1973, the first book of his masterpiece The Gulag Archipelago was smuggled out and published in Paris. Two months later, in February 1974, the furious Soviet state hit back at him. What did they do?",
+    "question": "Aleksandr Solzhenitsyn was a Soviet writer who had survived Stalin's labor camps and secretly documented their horrors. In December 1973, the first book of his masterpiece The Gulag Archipelago was smuggled out and published in Paris. Two months later, in February 1974, the furious Soviet state hit back at him. What did it do?",
     "answer": "Stripped him of citizenship and flew him to Frankfurt",
     "choices": [
       "Stripped him of citizenship and flew him to Frankfurt",
@@ -37454,7 +37454,7 @@
   },
   {
     "tier": 3,
-    "question": "Suppose a political campaign wants the government to pay back every group for wrongs done to their ancestors, so that outcomes finally come out even. In his 1999 book The Quest for Cosmic Justice, the American economist Thomas Sowell says the wish behind such a plan is decent. Still, he objects. Which objection does he press hardest?",
+    "question": "Suppose a political campaign wants the government to pay back all groups for wrongs done to their ancestors, so that outcomes finally come out even. In his 1999 book The Quest for Cosmic Justice, the American economist Thomas Sowell says the wish behind such a plan is decent. Still, he objects. Which objection does he press hardest?",
     "answer": "That nobody has the knowledge to weigh each group's past without new injustice",
     "choices": [
       "That nobody has the knowledge to weigh each group's past without new injustice",
@@ -37584,7 +37584,7 @@
   },
   {
     "tier": 2,
-    "question": "Frédéric Bastiat's 1848 essay 'The State' opened with a joke prize. Not five hundred francs — a whole million, plus crowns, crosses, and ribbons of honor. It was offered to anyone who could give a clear, honest definition of one single word. Then Bastiat gave his own famous one-line entry, which mocked how everyone expects the government to feed them at everyone else's expense. Which word was the prize for?",
+    "question": "Frédéric Bastiat's 1848 essay 'The State' opened with a joke prize. Not five hundred francs — a whole million, plus crowns, crosses, and ribbons of honor. It was offered to anyone who could give a clear, honest definition of one single word. Then Bastiat gave his own famous one-line entry, which mocked how people all expect the government to feed them at everyone else's expense. Which word was the prize for?",
     "answer": "The word 'the State'",
     "choices": [
       "The word 'the State'",
@@ -37727,7 +37727,7 @@
   },
   {
     "tier": 3,
-    "question": "How can water, which we need to live, be nearly free while diamonds cost a fortune? An economist named Menger said the puzzle disappears once you stop comparing all the water in the world with all the diamonds. What is a person actually ranking when they choose?",
+    "question": "How can water, which we need to live, be nearly free while diamonds cost a fortune? An economist named Menger said the puzzle disappears once you stop comparing all the water in the world with all the diamonds. What are people actually ranking when they choose?",
     "answer": "The next unit added to what they already have",
     "choices": [
       "The next unit added to what they already have",
@@ -38793,7 +38793,7 @@
   },
   {
     "tier": 3,
-    "question": "To add a new block of transactions to the Bitcoin blockchain, a computer called a miner must first solve a very hard math puzzle that eats real electricity. This design, laid out in Satoshi Nakamoto's 2008 Bitcoin white paper, makes cheating extremely expensive -- any attacker would have to redo all the puzzle work for every block they wanted to change. What is the name of this security method?",
+    "question": "To add a new block of transactions to the Bitcoin blockchain, a computer called a miner must first solve a very hard math puzzle that eats real electricity. This design, laid out in Satoshi Nakamoto's 2008 Bitcoin white paper, makes cheating extremely expensive -- any attacker would have to redo all the puzzle work for every block to be changed. What is the name of this security method?",
     "answer": "Proof-of-Work",
     "choices": [
       "Proof-of-Work",
@@ -39070,7 +39070,7 @@
     "answer": "'Computer technology is on the verge of providing the ability for individuals and groups to communicate and interact with each other in a totally anonymous manner.'",
     "choices": [
       "'Computer technology is on the verge of providing the ability for individuals and groups to communicate and interact with each other in a totally anonymous manner.'",
-      "'The internet will soon make all of human knowledge free of charge and instantly available to every person on the planet regardless of their nation.'",
+      "'The internet will soon make all of human knowledge free of charge and instantly available to every person on the planet regardless of nation.'",
       "'Computers will one day think and feel as humans do, and will eventually claim rights of their own from the human governments that built them.'",
       "'Every citizen of every industrial nation will one day own a personal computer more powerful than anything a national laboratory possesses today.'"
     ],
@@ -39187,7 +39187,7 @@
     "answer": "Some positive preference for a good sooner over the same good later",
     "choices": [
       "Some positive preference for a good sooner over the same good later",
-      "A precise numerical discount rate they can state on request",
+      "A precise numerical discount rate to recite on request",
       "A moral obligation to prefer later over sooner",
       "A market-determined interest rate identical to everyone else's"
     ],
@@ -40093,7 +40093,7 @@
   },
   {
     "tier": 3,
-    "question": "By 2014, Venezuela's black market -- called 'bachaqueo' by Venezuelans -- had swallowed most everyday shopping. People bought capped items at state stores and immediately resold them outside at their real prices. The Maduro government's answer was not to raise the caps but to install a biometric machine at every state-store checkout, so a shopper could only buy their monthly quota once. What kind of body-scan system did Venezuela install?",
+    "question": "By 2014, Venezuela's black market -- called 'bachaqueo' by Venezuelans -- had swallowed most everyday shopping. People bought capped items at state stores and immediately resold them outside at their real prices. The Maduro government's answer was not to raise the caps but to install a biometric machine at every state-store checkout, so shoppers could only buy their monthly quota once. What kind of body-scan system did Venezuela install?",
     "answer": "A fingerprint-indexed rationing system",
     "choices": [
       "A fingerprint-indexed rationing system",
@@ -40275,7 +40275,7 @@
   },
   {
     "tier": 4,
-    "question": "In 1985 communist Vietnam suffered a brutal hyperinflation: store prices climbed roughly five-fold in a single year, so a loaf of bread that cost 100 dong in January cost 500 by December. The Communist Party in Hanoi finally had to admit that their Soviet-style central-planning system had failed to feed the country. In 1986 they launched a package of market reforms that let farmers keep and sell their own crops. What did the Party name these reforms?",
+    "question": "In 1985 communist Vietnam suffered a brutal hyperinflation: store prices climbed roughly five-fold in a single year, so a loaf of bread that cost 100 dong in January cost 500 by December. The Communist Party in Hanoi finally had to admit that its Soviet-style central-planning system had failed to feed the country. In 1986 it launched a package of market reforms that let farmers keep and sell their own crops. What did the Party name these reforms?",
     "answer": "Doi Moi",
     "choices": [
       "Doi Moi",
@@ -40561,7 +40561,7 @@
   },
   {
     "tier": 2,
-    "question": "In November 1998, one month before the American cryptographer Nick Szabo published his famous 'bit gold' proposal, another cryptographer named Wei Dai posted a short technical plan on his personal website. It described a form of digital cash in which every user kept their own copy of the ledger, so no bank and no government sat in the middle. What did Wei Dai name his system?",
+    "question": "In November 1998, one month before the American cryptographer Nick Szabo published his famous 'bit gold' proposal, another cryptographer named Wei Dai posted a short technical plan on his personal website. It described a form of digital cash in which all users kept their own copy of the ledger, so no bank and no government sat in the middle. What did Wei Dai name his system?",
     "answer": "b-money",
     "choices": [
       "b-money",
@@ -40575,9 +40575,9 @@
   {
     "tier": 2,
     "question": "In 1998 the cypherpunk cryptographer Wei Dai published a design he called b-money -- a proposal for a form of digital cash that would run with no bank and no central issuer. In Dai's design there was no master ledger sitting on one server somewhere. Instead, every user on the network had one specific job to do about the record of who owned what. What did each b-money user have to do?",
-    "answer": "maintain their own separate copy of every user's balances",
+    "answer": "maintain a separate private copy of every user's balances",
     "choices": [
-      "maintain their own separate copy of every user's balances",
+      "maintain a separate private copy of every user's balances",
       "delegate all record-keeping to a trusted central server",
       "wait for a monthly ledger snapshot from a coordinator",
       "run a physical vault storing paper receipts"
@@ -40847,10 +40847,10 @@
   },
   {
     "tier": 3,
-    "question": "A working family gets $400 a month in help from the government. The rule says that help ends the very moment anyone in the family earns more than $2,000 a month. A parent in the family is offered a promotion that would raise their pay from $1,900 to $2,100 a month. Economists call this kind of trap the welfare cliff. Why might the parent turn the raise down?",
-    "answer": "The extra $200 in pay would cost them $400 in help -- they would lose money",
+    "question": "A working family gets $400 a month in help from the government. The rule says that help ends the very moment anyone in the family earns more than $2,000 a month. A parent in the family is offered a promotion that would raise pay from $1,900 to $2,100 a month. Economists call this kind of trap the welfare cliff. Why might the parent turn the raise down?",
+    "answer": "The extra $200 in pay would cost the family $400 in help -- a net loss",
     "choices": [
-      "The extra $200 in pay would cost them $400 in help -- they would lose money",
+      "The extra $200 in pay would cost the family $400 in help -- a net loss",
       "Raises are usually smaller than the workers were promised",
       "Government help is always paid in cash they cannot spend",
       "Working more hours would count as a second job by law"
@@ -40925,7 +40925,7 @@
   },
   {
     "tier": 5,
-    "question": "When a working parent earns a small raise, they can lose more in welfare benefits -- food stamps, Medicaid, housing aid, child-care subsidies -- than they gained in wages. This 'welfare cliff' is not because federal officials are cruel or corrupt. Austrian and public-choice economists insist it is a structural problem, one that would happen no matter which political party ran the agencies. What is the correct structural characterization of why it happens?",
+    "question": "When working parents earn a small raise, they can lose more in welfare benefits -- food stamps, Medicaid, housing aid, child-care subsidies -- than they gained in wages. This 'welfare cliff' is not because federal officials are cruel or corrupt. Austrian and public-choice economists insist it is a structural problem, one that would happen no matter which political party ran the agencies. What is the correct structural characterization of why it happens?",
     "answer": "It is a mechanical consequence of stacking multiple means-tested benefits without coordinating their phase-outs",
     "choices": [
       "It is a mechanical consequence of stacking multiple means-tested benefits without coordinating their phase-outs",
@@ -41596,7 +41596,7 @@
       "His own mother was denounced as a class enemy",
       "His own house was seized by the local commune"
     ],
-    "context": "The party had denied there was a famine; the young Yang, then a high-schooler and Communist Youth League member, believed them. Discovering later that his father had been one of tens of millions became his life's work. Source: grokipedia.com/page/Yang_Jisheng_(journalist).",
+    "context": "The party had denied there was a famine; the young Yang, then a high-schooler and Communist Youth League member, believed it. Discovering later that his father had been one of tens of millions became his life's work. Source: grokipedia.com/page/Yang_Jisheng_(journalist).",
     "topic": "yang-jishengs-tombstone-2008-the-archival-reckoning"
   },
   {

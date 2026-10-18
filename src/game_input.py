@@ -1167,7 +1167,7 @@ class InputMixin:
             # to mend).
             _rw = opt.get('reward') or {}
             if can_pay and _rw.get('type') == 'service' and not self._service_targets(_rw.get('service', '')):
-                can_pay, fail_msg = False, "There is nothing for them to do for you."
+                can_pay, fail_msg = False, "There is no work here for that trade."
             if not can_pay:
                 self.add_message(fail_msg, 'warning')
                 return

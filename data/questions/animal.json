@@ -1054,7 +1054,7 @@
   },
   {
     "tier": 3,
-    "question": "When winter hits a Canadian forest, the little brown wood frog lets its body freeze solid -- no heartbeat, no breathing -- and comes back to life in spring. But freezing is dangerous: sharp ice crystals inside a living cell will burst the cell open like a water balloon. Before the frog freezes, its liver pumps huge amounts of one special substance into every cell so ice can only form in the gaps around them, never inside. What does its liver flood the cells with?",
+    "question": "When winter hits a Canadian forest, the little brown wood frog lets its body freeze solid -- no heartbeat, no breathing -- and comes back to life in spring. But freezing is dangerous: sharp ice crystals inside a living cell will burst the cell open like a water balloon. Before the frog freezes, its liver pumps huge amounts of one special substance into its cells so ice can only form in the gaps around them, never inside. What does its liver flood the cells with?",
     "answer": "Glucose",
     "choices": [
       "Glucose",
@@ -2588,13 +2588,13 @@
   },
   {
     "tier": 4,
-    "question": "Scientists calculated whether a person could ever run across a lake the way a basilisk lizard sprints across a pond. The answer comes down to leg power alone. To slap the water fast enough to hold up an average person's body weight, how much more muscle would that person need than they actually have?",
+    "question": "Scientists calculated whether a person could ever run across a lake the way a basilisk lizard sprints across a pond. The answer comes down to leg power alone. To slap the water fast enough to hold up an average person's body weight, how much more muscle would it take than a person actually has?",
     "answer": "about 15 times as much",
     "choices": [
       "about 15 times as much",
       "about twice as much",
       "about a tenth more",
-      "no more than they already have"
+      "no more than we already have"
     ],
     "context": "Glasheen and McMahon calculated that to hold up our weight a human would have to slap the water faster than 30 m/s, needing roughly 15 times the muscle power a person actually has — so no human can do it. Source: Glasheen & McMahon 1996, Nature 380:340-342, as summarized in water-running scaling literature.  (Legend.)",
     "topic": "basilisk-the-lizard-that-runs-on-water"
@@ -3264,7 +3264,7 @@
   },
   {
     "tier": 4,
-    "question": "The blue dragon (Glaucus atlanticus) is a tiny sea slug that eats the venomous Portuguese man o' war and stores the man o' war's stinging cells in the tips of its own fingerlike body. One washes up dead and drying on a warm beach, only a few centimetres long and a beautiful electric blue. A curious child spots the pretty little shape and reaches for it. Why should they keep their hands off?",
+    "question": "The blue dragon (Glaucus atlanticus) is a tiny sea slug that eats the venomous Portuguese man o' war and stores the man o' war's stinging cells in the tips of its own fingerlike body. One washes up dead and drying on a warm beach, only a few centimetres long and a beautiful electric blue. A curious child spots the pretty little shape and reaches for it. Why should the child not touch it?",
     "answer": "Its stingers still fire on contact days after death",
     "choices": [
       "Its stingers still fire on contact days after death",
@@ -3291,12 +3291,12 @@
   {
     "tier": 5,
     "question": "For decades marine biologists cast the blue dragon (Glaucus atlanticus) — a coin-sized, wing-armed sea slug that drifts on ocean currents — as a Portuguese man o' war specialist that killed prey with borrowed stinging cells. Then in 2025 an aquarium study filmed the little slug hunting live small fish in a tank and overturned the old story: the borrowed stings weren't its main weapon at all. How did the blue dragon actually catch a live fish in that study?",
-    "answer": "It grabbed and pinned them with its long front cerata, then bit down near the gills",
+    "answer": "It grabbed and pinned it with its long front cerata, then bit down near the gills",
     "choices": [
-      "It grabbed and pinned them with its long front cerata, then bit down near the gills",
+      "It grabbed and pinned it with its long front cerata, then bit down near the gills",
       "It stunned the passing fish with a sudden burst of its stored stinging cells",
       "It lured small fish in under its belly using its bright glowing blue underside",
-      "It snared them in sticky mucus threads it spun out from its muscular foot"
+      "It snared it in sticky mucus threads it spun out from its muscular foot"
     ],
     "context": "Reared in aquaria, Glaucus atlanticus used its enlarged front cerata like ARMS, pinning live whitebait (Japanese anchovy) between them and biting near the gills. Histology found a well-developed muscle-fiber layer at the base of these front cerata, which are built longer than the rest 'like an arm,' giving the grip needed to seize fast prey. It fed as a generalist on several cnidarians plus fish, not as a man o' war specialist, and the stolen stingers were NOT observed doing the killing: capture was by physical grip and biting. The frilly cerata, long thought to be purely a defensive sting-battery, turned out to be grasping limbs too. Source: Yamamoto et al. 2025, Ecology, 'Blue angels have devil hands: Predatory behavior using cerata in Glaucus atlanticus' (PMC11912302 / doi:10.1002/ecy.70062).  (Legend.)",
     "topic": "blue-dragon-nudibranch-glaucus-atlanticus"
@@ -3369,11 +3369,11 @@
   {
     "tier": 3,
     "question": "The blue-ringed octopus is a small golf-ball-sized octopus of Australian tide pools. Its saliva carries tetrodotoxin, one of the deadliest natural poisons on Earth. A tiny painless bite injects the venom straight into the bloodstream. The good news is that the human body can slowly break tetrodotoxin down over about a day — a person bitten today can walk home tomorrow. But the venom instantly paralyzes one thing that cannot wait even a few minutes. What must a rescuer do for the victim in the meantime? (LEGEND)",
-    "answer": "Breathe for them with a ventilator",
+    "answer": "Put the victim on a ventilator",
     "choices": [
-      "Breathe for them with a ventilator",
-      "Warm them with heated blankets",
-      "Feed them fluids and sugar",
+      "Put the victim on a ventilator",
+      "Warm the victim with blankets",
+      "Feed the victim sugar water",
       "Keep the wound above the heart"
     ],
     "context": "The venom paralyzes the breathing muscles; a victim is kept alive by artificial respiration / a ventilator until the body clears the toxin on its own. Survive the first 24 hours on breathing support and recovery is usually complete. Source: Wikipedia, 'Blue-ringed octopus'; Snopes citing Aquarium of the Pacific.  (Legend.)",
@@ -10583,7 +10583,7 @@
   },
   {
     "tier": 4,
-    "question": "An eye the size of a basketball seems like overkill — for spotting prey up close in seawater, an eye bigger than an orange is wasted effort. So a 2012 study by Dan-Eric Nilsson asked what such a giant eye is actually FOR. Their answer: it is tuned to catch one specific, faint thing in the dark.",
+    "question": "An eye the size of a basketball seems like overkill — for spotting prey up close in seawater, an eye bigger than an orange is wasted effort. So a 2012 study by Dan-Eric Nilsson asked what such a giant eye is actually FOR. The answer: it is tuned to catch one specific, faint thing in the dark.",
     "answer": "The glow of plankton stirred up by an approaching sperm whale",
     "choices": [
       "The glow of plankton stirred up by an approaching sperm whale",
@@ -13685,7 +13685,7 @@
       "It sprouts a hard armored shell to guard the nest entrance",
       "It turns bright red to warn birds that it tastes bitter"
     ],
-    "context": "These gorged workers are called repletes. Fed liquid nectar until their crop stretches, a replete becomes a living storage jar for the whole colony. Source: https://en.wikipedia.org/wiki/Honeypot_ant",
+    "context": "These gorged workers are called repletes. Fed liquid nectar until its crop stretches, a replete becomes a living storage jar for the whole colony. Source: https://en.wikipedia.org/wiki/Honeypot_ant",
     "topic": "honeypot-ant-living-storage-jars-for-the-colony"
   },
   {
@@ -14483,7 +14483,7 @@
   },
   {
     "tier": 4,
-    "question": "When Mary Anning's dolphin-shaped sea-reptile skeleton first came out of the Dorset cliff in November 1811, no one had a name for such a creature. Reporting the strange find, the local newspaper called it something familiar but wrong. What did they call it?",
+    "question": "When Mary Anning's dolphin-shaped sea-reptile skeleton first came out of the Dorset cliff in November 1811, no one had a name for such a creature. Reporting the strange find, the local paper called it something familiar but wrong. What did the paper call it?",
     "answer": "A crocodile",
     "choices": [
       "A crocodile",
@@ -15943,7 +15943,7 @@
     "answer": "Shooing off flies that try to lay eggs on the carrier",
     "choices": [
       "Shooing off flies that try to lay eggs on the carrier",
-      "Resting because they are too small to walk far",
+      "Resting because it is too small to walk far",
       "Adding weight so the leaf will not blow away",
       "Tasting each leaf to check it is safe to bring home"
     ],
@@ -19397,7 +19397,7 @@
   },
   {
     "tier": 4,
-    "question": "Until 2010 nobody knew how a living oarfish actually swam — they were only ever seen dead or dying. Then Mark Benfield's team filmed one alive with a deep submersible and saw a posture that shocked them. How does the oarfish hold itself in the water?",
+    "question": "Until 2010 nobody knew how a living oarfish actually swam — it was only ever seen dead or dying. Then Mark Benfield's team filmed one alive with a deep submersible and saw a posture that shocked them. How does the oarfish hold itself in the water?",
     "answer": "Vertically, head-up and tail-down",
     "choices": [
       "Vertically, head-up and tail-down",
@@ -19974,8 +19974,8 @@
     "choices": [
       "An older female of the pod teaches it, passed down the generations",
       "Every orca is born knowing it by instinct",
-      "They copy it from watching seals",
-      "They invent it fresh each hunting season"
+      "It copies the trick from seals",
+      "It works it out fresh each season"
     ],
     "context": "Wave-washing is a learned tradition held by roughly 100 Antarctic orcas, taught down the generations from the pod's matriarch. Source: https://www.discoverwildlife.com/animal-facts/marine-animals/orcas-wave-washing-seals",
     "topic": "orca-killer-whale"
@@ -20224,7 +20224,7 @@
       "The chin",
       "The forehead"
     ],
-    "context": "A Neanderthal's big wide nose is thought to have warmed and moistened the frigid ice-age air they breathed, part of a body built for the cold. Source: Natural History Museum, 'Who were the Neanderthals?', nhm.ac.uk/discover/who-were-the-neanderthals.html.",
+    "context": "Neanderthals' big wide noses are thought to have warmed and moistened the frigid ice-age air they breathed, part of a body built for the cold. Source: Natural History Museum, 'Who were the Neanderthals?', nhm.ac.uk/discover/who-were-the-neanderthals.html.",
     "topic": "our-hominin-cousins-neanderthal-and-denisovan"
   },
   {
@@ -21074,7 +21074,7 @@
   },
   {
     "tier": 3,
-    "question": "The platypus is one of very few venomous mammals in the world. Handle one the wrong way and only half of them can hurt you — the males alone carry the weapon. Female platypuses are harmless. A male's venom is sharpest during mating season, when rival males wrestle each other over females. Where on a male platypus's body is this venomous weapon mounted?",
+    "question": "The platypus is one of very few venomous mammals in the world. Handle one the wrong way and only one sex can hurt you — the males alone carry the weapon. Female platypuses are harmless. A male's venom is sharpest during mating season, when rival males wrestle each other over females. Where on a male platypus's body is this venomous weapon mounted?",
     "answer": "A hollow venom spur on each hind ankle",
     "choices": [
       "A hollow venom spur on each hind ankle",
@@ -28263,7 +28263,7 @@
   },
   {
     "tier": 2,
-    "question": "Look closely at a goldfish drifting in a tank and you will spot a faint dotted line running along each flank, from behind its gills all the way to its tail. It is easy to mistake for a color stripe, but every dot is a tiny pore opening in the skin. Together they form a working sense organ, called the lateral line, that no land animal has. What does that line of pores let the fish do?",
+    "question": "Look closely at a goldfish drifting in a tank and you will spot a faint dotted line running along each flank, from behind its gills all the way to its tail. It is easy to mistake for a color stripe, but the dots are tiny pores opening in the skin. Together they form a working sense organ, called the lateral line, that no land animal has. What does that line of pores let the fish do?",
     "answer": "Feel the water moving against its body",
     "choices": [
       "Feel the water moving against its body",

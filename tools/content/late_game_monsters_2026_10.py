@@ -303,7 +303,7 @@ NEW = {
         'treasure': {'gold': [10, 40], 'item_chance': 0.1, 'item_tier': 2},
         'lore': ("Ovid describes the strix in the Fasti: a big-headed night bird with staring eyes, "
                  "a beak made for snatching, grey feathers and hooked claws, that flies by night "
-                 "and drinks blood. Whether they are born birds or are old women changed by a "
+                 "and drinks blood. Whether striges are born birds or are old women changed by a "
                  "spell, he says, nobody knows. They came for the infant Proca in his cradle, and "
                  "the nymph Cranae kept them out with a branch of whitethorn at the window. Down "
                  "here they hunt in threes: one sings you to sleep and the others drink."),
