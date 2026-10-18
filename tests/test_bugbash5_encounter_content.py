@@ -301,7 +301,9 @@ def test_con21_prose_contradictions():
     tib = ' '.join(_strings(_enc('flv_apprentice_alchemist')))
     assert not re.search(r'\b(she|her)\b', tib)
     finch = ' '.join(_strings(_enc('flv_plague_doctor')))
-    assert not re.search(r'\b(he|him|his)\b', finch, re.I)
+    # Doctor Finch is a man: "he", never singular they (Brandon, 2026-10-18).
+    assert re.search(r'\b(he|him|his)\b', finch, re.I)
+    assert not re.search(r'\b(they|their|she|her)\b', finch, re.I)
     quill = _enc('last_merchant')['escorts']['escort_quill']
     assert quill['on_arrive']['outcome'].strip()
     az = _enc('flv_azarias')['escorts']['escort_azarias']
