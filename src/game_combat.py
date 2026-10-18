@@ -325,7 +325,7 @@ class CombatMixin:
         self.state = STATE_PLAYER
 
         px, py = self.player.x, self.player.y
-        tx, ty = self.target_cursor_x, self.target_cursor_y
+        tx, ty = self._clamp_throw_target(px, py, self.target_cursor_x, self.target_cursor_y)
 
         hit_monster = self._find_first_monster_in_path(px, py, tx, ty)
 
@@ -368,6 +368,23 @@ class CombatMixin:
                                  'success')
 
         self._advance_turn()
+
+    def _clamp_throw_target(self, px: int, py: int, tx: int, ty: int) -> tuple:
+        """Where a throw aimed at (tx, ty) can come down: the last tile of
+        its flight that is within throwing range and open floor. A throw
+        aimed into rock, or past a wall, or further than the hero can throw,
+        stops at the last open tile before it (PET-11). With no open tile
+        before it the thing lands at the hero's feet."""
+        from combat import get_line_tiles
+        reach = int(getattr(self, '_throw_reach', 0) or 0)
+        land = (px, py)
+        for lx, ly in get_line_tiles(px, py, tx, ty):
+            if reach and max(abs(lx - px), abs(ly - py)) > reach:
+                break
+            if not self.dungeon.is_walkable(lx, ly):
+                break
+            land = (lx, ly)
+        return land
 
     def _throw_weapon(self, weapon, monster, tx: int, ty: int):
         """Throw a weapon at a target. Deals damage, may break."""
@@ -465,6 +482,20 @@ class CombatMixin:
                 if found:
                     break
             if not found:
+                if getattr(sphere, 'bound_pet', None) is not None:
+                    # A bound sphere holds a companion already met (Shep,
+                    # a nicknamed cat): it must never be lost. It comes down
+                    # whole on the open tile it reached, to be picked up and
+                    # thrown again somewhere with room (PET-01).
+                    if self.dungeon.is_walkable(land_x, land_y):
+                        sphere.x, sphere.y = land_x, land_y
+                    else:
+                        sphere.x, sphere.y = self.player.x, self.player.y
+                    self.ground_items.append(sphere)
+                    self.add_message(
+                        f"The sphere bounces and rolls to a stop, unbroken: there is no room "
+                        f"for {sphere.bound_pet.name} to come out.", 'warning')
+                    return
                 # No room — sphere is wasted
                 self.add_message("The sphere shatters but there is no room for a creature!", 'warning')
                 return
