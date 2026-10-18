@@ -868,6 +868,11 @@ class MagicMixin:
                             kind = _rng.choice(eligible)
                             defn = {**all_defs[kind], 'id': kind}
                             new_m = Monster(defn, target.x, target.y)
+                            # It saw the wand: no new shape hides or poses
+                            # as a chest or a stair; and a thief keeps its haul.
+                            new_m._aware = True
+                            new_m.stolen_gold = int(getattr(target, 'stolen_gold', 0) or 0)
+                            new_m.stolen_items = list(target.__dict__.get('stolen_items') or ())
                             idx = self.monsters.index(target)
                             self.monsters[idx] = new_m
                             self.add_message(

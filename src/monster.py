@@ -27,6 +27,21 @@ RECOVER_AFTER_TURNS = 25
 # a third or a half of the MONSTER's damage: a point or two against thousands.
 RESONANCE_SHARE = 0.04
 SPARTAN_COUNTER_SHARE = 0.10
+
+# A creature that weighs the heart (`weighs_heart`, Ammit's get) changes each
+# blow by this much per point of the hero's karma: x1.4 at karma -10, x0.6 at
+# +10. Karma is tight (karma.py), so a high score is earned.
+HEART_WEIGHT_PER_KARMA = 0.04
+
+
+def heart_weight(player) -> float:
+    """The multiplier a heart-weighing blow carries against this hero."""
+    game = getattr(player, '_combat_game_ref', None)
+    try:
+        karma = int(getattr(game, 'karma', 0) or 0)
+    except (TypeError, ValueError):
+        karma = 0
+    return 1.0 - HEART_WEIGHT_PER_KARMA * max(-10, min(10, karma))
 RECOVER_SHARE = 0.03
 
 MIN_HIT_ORDINARY = 0.30
@@ -328,6 +343,32 @@ class Monster:
         # the monster (charybdis / kraken / grappler family).
         self.pull_chance: float = float(defn.get('pull_chance', 0.0) or 0.0)
 
+        # --- 2026-10 late-game mechanics (all data-driven) ---
+        # Thieves (src/theft.py): an attack with `steal` takes gold or an
+        # item; `after_theft` says what the thief does then ('flee', or
+        # 'teleport' somewhere else on the floor). What it carries falls out
+        # when it dies. `_wants_steal` is polled by the game after the blow.
+        self.after_theft: str = str(defn.get('after_theft', 'flee') or 'flee')
+        self.stolen_gold: int = 0
+        self.stolen_items: list = []
+        self._wants_steal = None
+        # Splitting (src/splitting.py): {'by': 'weak_blow' | [forms],
+        # 'share', 'max', 'into'}. take_damage counts the splits a blow
+        # earned in `_pending_splits`; the game spawns them.
+        self.splits = defn.get('splits') or None
+        self._pending_splits: int = 0
+        self._incoming_forms = None
+        # Weighs the hero's heart: its blows land harder on a low karma and
+        # softer on a high one (Ammit's get).
+        self.weighs_heart: bool = bool(defn.get('weighs_heart', False))
+        # Never flees when hurt and cannot be frightened (the galla).
+        self.fearless: bool = bool(defn.get('fearless', False))
+        # Confused, it strikes the creature beside it instead (the Sown Men);
+        # a thing thrown into the middle of them confuses the one it hits.
+        self.quarrelsome: bool = bool(defn.get('quarrelsome', False))
+        self.quarrels_when_struck_by_thrown: int = int(
+            defn.get('quarrels_when_struck_by_thrown', 0) or 0)
+
     # Backward compat: old pickled monsters may lack newer attributes
     _DEFAULTS = {
         '_flee_timer': 0, '_alerted': False, '_aware': False, '_slow_skip': False,
@@ -365,6 +406,12 @@ class Monster:
         'can_phase_blink': False, 'phase_blink_chance': 0.30,
         '_mimic_surprise': False,
         'disguise': None, 'invisible': False, '_unseen': False, '_felt_at': None,
+        # 2026-10 late-game mechanics. (stolen_items is read through
+        # theft.carried(), which copes with this shared None.)
+        'after_theft': 'flee', 'stolen_gold': 0, 'stolen_items': None, '_wants_steal': None,
+        'splits': None, '_pending_splits': 0, '_incoming_forms': None,
+        'weighs_heart': False, 'fearless': False,
+        'quarrelsome': False, 'quarrels_when_struck_by_thrown': 0,
         # Footprint default — every saved Monster from before the
         # multi-tile feature gets (1, 1) automatically. Live Monster
         # instances set this in __init__; pickled instances inherit it
@@ -526,18 +573,24 @@ class Monster:
                       and not any(self.status_effects.get(e, 0) > 0
                                   for e in _HARD_CONTROL)):
                     self.status_effects['control_immune'] = NAMED_FOE_CONTROL_GRACE
-        if bleeding_dmg > 0:
-            self.take_damage(bleeding_dmg)
-        if poison_dmg > 0:
-            self.take_damage(poison_dmg)
-        if burning_dmg > 0:
-            self.take_damage(burning_dmg)
-        if doom_dmg > 0:
-            self.take_damage(doom_dmg, 'fire')
-        if rupture_dmg > 0:
-            self.take_damage(rupture_dmg)
-        if disease_tick and random.random() < 0.08:
-            self.take_damage(max(1, self.max_hp // 20))
+        # A wound that keeps bleeding is not a new blow: it never splits a
+        # creature that splits (src/splitting.py).
+        self._dot_tick = True
+        try:
+            if bleeding_dmg > 0:
+                self.take_damage(bleeding_dmg)
+            if poison_dmg > 0:
+                self.take_damage(poison_dmg)
+            if burning_dmg > 0:
+                self.take_damage(burning_dmg)
+            if doom_dmg > 0:
+                self.take_damage(doom_dmg, 'fire')
+            if rupture_dmg > 0:
+                self.take_damage(rupture_dmg)
+            if disease_tick and random.random() < 0.08:
+                self.take_damage(max(1, self.max_hp // 20))
+        finally:
+            self._dot_tick = False
 
         # Regeneration: heal HP each turn (trolls, hydras).
         # Chain combat v2: `deep_wound` and `ruptured` block regen (heal-lock).
@@ -664,6 +717,14 @@ class Monster:
             amount = int(amount * mult)
         actual = max(0, amount)
         self.hp = max(0, self.hp - actual)
+        # A creature that splits (src/splitting.py) notes the split this blow
+        # earned; the game sets the new body down at the end of the action.
+        if (actual > 0 and self.hp > 0 and getattr(self, 'splits', None)
+                and not self.__dict__.get('_dot_tick')):
+            from splitting import blow_splits
+            if blow_splits(self, actual, damage_type):
+                self._pending_splits = int(getattr(self, '_pending_splits', 0) or 0) + 1
+        self._incoming_forms = None
         if self.hp == 0:
             # Green Knight (revive_once_on_death): the beheading-game pact.
             # First death pops back up at revive_hp_pct (default 0.5). Only
@@ -1051,6 +1112,20 @@ class Monster:
         except ImportError:
             pass
 
+        # A blow that is worse on a held hero (the mara's trample on a
+        # sleeper): {"bonus_vs": {"sleeping": 1.5}} on the attack.
+        _held_note = ''
+        for _eff, _mult in (atk.get('bonus_vs') or {}).items():
+            if player.has_effect(_eff):
+                dmg = max(1, int(round(dmg * float(_mult))))
+                _held_note = f" It comes down on you while you are {_eff.replace('_', ' ')}!"
+                break
+
+        # Ammit's get weigh the heart: a blow lands harder on a low karma and
+        # softer on a high one (Game.karma, -10..+10).
+        if getattr(self, 'weighs_heart', False):
+            dmg = max(1, int(round(dmg * heart_weight(player))))
+
         dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
         actual = player.take_damage(dmg, atk_type)
 
@@ -1061,6 +1136,12 @@ class Monster:
             msg = f"{the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
         if _vuln_note and actual > 0:
             msg += f" {_vuln_note}"
+        if _held_note and actual > 0:
+            msg += _held_note
+        # A thief's blow (src/theft.py): the game takes the gold or the item
+        # right after this blow, because the purse belongs to the Game.
+        if atk.get('steal') and random.random() < float(atk.get('steal_chance', 1.0)):
+            self._wants_steal = atk['steal']
         if charged:
             msg = f"{the_name(self)} CHARGES! " + msg
         if mimic_strike:
@@ -1299,7 +1380,11 @@ class Monster:
         # Named bosses, mini-bosses and seal demons stand their ground. This
         # used to be `max_hp > 500`, which let five seal demons turn tail.
         is_boss = self._is_named_foe() or self.max_hp > 500
-        if not is_boss and self.ai_pattern == 'aggressive':
+        if self.fearless:
+            # The galla never give up the chase, and nothing frightens them.
+            self._flee_timer = 0
+            self.status_effects.pop('feared', None)
+        elif not is_boss and self.ai_pattern == 'aggressive':
             if self._flee_timer > 0:
                 self._flee_timer -= 1
                 # Regain courage if healed above 50%
@@ -1322,12 +1407,25 @@ class Monster:
                 # A charmed creature will not raise a hand against the player.
                 self._wander(dungeon, all_monsters, extra_occupied, player)
                 return False
+            if self.quarrelsome and self._under('confused'):
+                # The Sown Men: confused, each blames the man beside him.
+                if self._strike_a_brother(all_monsters):
+                    return False
             if self._under('confused') and random.random() < 0.40:
                 self._stumble_random(dungeon, all_monsters, extra_occupied, player)
                 return False
             if self._under('blinded') and random.random() < 0.30:
                 self._stumble_random(dungeon, all_monsters, extra_occupied, player)
                 return False
+
+        # --- A thief with a haul runs (src/theft.py); cornered, it fights ---
+        if self.__dict__.get('stolen_gold') or self.__dict__.get('stolen_items'):
+            self._aware = True
+            before = (self.x, self.y)
+            self._flee_from(player, dungeon, all_monsters, extra_occupied)
+            if (self.x, self.y) == before and self._adjacent_to(player):
+                return True
+            return False
 
         # --- Healer AI: heal a damaged adjacent ally; fall back to ranged/aggressive ---
         if self.ai_pattern == 'healer':
@@ -1678,6 +1776,27 @@ class Monster:
                             and (tx, ty) in phasing):
                         continue
                 return False
+        return True
+
+    def _strike_a_brother(self, all_monsters) -> bool:
+        """Quarrelsome and confused: strike a creature beside this one, its
+        own kind first (Cadmus's stone among the Sown Men). True if it did.
+        The game reports it through `_confused_hit`."""
+        from geom import occupied_tiles as _ot
+        near = []
+        for m in all_monsters:
+            if m is self or not getattr(m, 'alive', False) or getattr(m, 'is_allied', False):
+                continue
+            if any(max(abs(tx - self.x), abs(ty - self.y)) == 1 for tx, ty in _ot(m)):
+                near.append(m)
+        if not near or not self.attacks:
+            return False
+        kin = [m for m in near if m.kind == self.kind]
+        victim = random.choice(kin or near)
+        atk = random.choice(self.attacks)
+        dmg = roll(atk.get('damage', '1d4'))
+        victim.take_damage(dmg)
+        self._confused_hit = (victim, dmg)
         return True
 
     def _stumble_random(self, dungeon, all_monsters, extra_occupied, player):
