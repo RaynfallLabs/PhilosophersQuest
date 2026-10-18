@@ -2265,7 +2265,7 @@
     "min_level": 8,
     "max_level": 21,
     "role": "story",
-    "stakes": "light",
+    "stakes": "medium",
     "callback_only": true,
     "person": {
       "id": "ysolde",
@@ -2301,7 +2301,7 @@
         }
       },
       {
-        "label": "Help her lift the gate",
+        "label": "Tell her you took the pendant from her girl, and give it back",
         "requires": {
           "deeds_any": [
             "wrong.kept_pendant"
@@ -2324,15 +2324,17 @@
             }
           ]
         },
-        "outcome": "Together you get it up a foot and she slides under. Then she sees the pendant you carry. She looks at it for a long time. \"Where is she?\" You tell her. She takes the pendant out of your hand, and you let her, and she goes without another word.",
+        "outcome": "You say it before she can see it on you: Elara saw the pendant at your belt and asked for it back, and you kept it, because you wanted every edge down here. Ysolde goes very still behind the bars. Then she puts her hand through them, and you put the pendant in it. You lift the gate together anyway, and she slides under. \"She's seven,\" she says, and that is all she says about it. She goes for the stair at a run, holding it.",
+        "karma": 1,
+        "karma_kind": "owning",
         "deeds": [
           "saved.ysolde",
-          "told.ysolde_saw_pendant"
+          "told.ysolde_owned_pendant"
         ],
-        "chronicle": "Helped a woman out from under a gate, and she saw her daughter's pendant on me. She took it back. I let her.",
+        "chronicle": "Told Elara's mother I had taken her girl's pendant, and gave it back through the bars. We lifted the gate together anyway. She did not forgive me, and she did not have to.",
         "road": {
-          "id": "flv_ysolde_gate.lift_pendant",
-          "hint": "What you kept from the child, the mother takes back."
+          "id": "flv_ysolde_gate.own_up",
+          "hint": "What you kept from the child, you can still put in the mother's hand."
         }
       },
       {
@@ -2359,6 +2361,32 @@
         "road": {
           "id": "flv_ysolde_gate.lift_no_pendant",
           "hint": "What you kept from the child, the mother reads in your empty hands."
+        }
+      },
+      {
+        "label": "Help her lift the gate, with the pendant out of sight",
+        "requires": {
+          "deeds_any": [
+            "wrong.kept_pendant"
+          ],
+          "items_any": [
+            "silverlight_pendant"
+          ]
+        },
+        "hidden_group": "hide",
+        "cost": {
+          "type": "sp_pct",
+          "amount": 10
+        },
+        "outcome": "You tuck the pendant inside your collar before you take hold of the bars. Together you get the gate up a foot and she slides under. \"Where is she?\" You tell her where you left Elara. She thanks you twice and runs for the stair, and the pendant sits cold against your chest the whole time she is in sight.",
+        "deeds": [
+          "saved.ysolde",
+          "told.ysolde_pendant_hidden"
+        ],
+        "chronicle": "Helped Elara's mother out from under a gate with her daughter's pendant hidden in my collar. She thanked me twice. It was cold against my chest all the way down.",
+        "road": {
+          "id": "flv_ysolde_gate.hide",
+          "hint": "A thing hidden from a mother sits cold against your chest."
         }
       },
       {
@@ -2786,6 +2814,41 @@
         "road": {
           "id": "flv_lena_returns.escort",
           "hint": "Someone who learned the traps from her mother is worth following."
+        },
+        "hidden_group": "third"
+      },
+      {
+        "label": "Tell her it was you, and pay back the bread too",
+        "requires": {
+          "deeds_any": [
+            "wrong.robbed_marta"
+          ]
+        },
+        "hidden_group": "third",
+        "cost": {
+          "type": "multi",
+          "costs": [
+            {
+              "type": "potion",
+              "count": 2
+            },
+            {
+              "type": "gold_pct",
+              "amount": 5
+            }
+          ]
+        },
+        "outcome": "You count the potions into her mother's satchel, and the price of the bread on top. \"It was me,\" you say. \"I took them off her while she couldn't stand. I'm sorry.\" The pole doesn't move for a long moment. \"Mam said you'd lie or you'd run,\" Lena says. \"She didn't have a word for this.\" She slings the satchel and goes. Halfway up the stair she stops. \"I'll tell her you said it.\"",
+        "karma": 1,
+        "karma_kind": "owning",
+        "deeds": [
+          "told.lena_repaid",
+          "told.owned_up_to_lena"
+        ],
+        "chronicle": "Told Marta's daughter it was me who robbed her mother, and paid back the potions and the bread. Saying it cost more than the potions did.",
+        "road": {
+          "id": "flv_lena_returns.own_up",
+          "hint": "Saying it was you costs more than what you took, and buys more."
         }
       },
       {
@@ -2942,7 +3005,7 @@
     "min_level": 13,
     "max_level": 29,
     "role": "story",
-    "stakes": "light",
+    "stakes": "medium",
     "callback_only": true,
     "person": {
       "id": "grumwald",
@@ -3037,6 +3100,30 @@
         "road": {
           "id": "flv_grumwald_second_bridge.pay",
           "hint": "A troll remembers faces for a very long time."
+        }
+      },
+      {
+        "label": "Wake him and tell him who emptied his box",
+        "requires": {
+          "deeds_any": [
+            "wrong.robbed_grumwald"
+          ]
+        },
+        "cost": {
+          "type": "gold_pct",
+          "amount": 10
+        },
+        "outcome": "You put a hand on a knee the size of a millstone and shake it. One yellow eye opens, then the other, and the troll sits up, and up. \"It was me,\" you say. \"The box on the first bridge. Both fistfuls.\" You feed a tenth of your purse into the new box, coin by coin, while he watches. For a long time he says nothing at all. \"Forty years of that box,\" he rumbles at last, \"and you're the first that ever came back to say it.\" He rubs out ESPECIALLY YOU with one thumb, and goes back to sleep.",
+        "karma": 1,
+        "karma_kind": "owning",
+        "deeds": [
+          "met.grumwald",
+          "told.owned_up_to_grumwald"
+        ],
+        "chronicle": "Woke Grumwald and told him I was the one who emptied his honesty box. Paid it back with interest while he watched. He rubbed the line about me off his sign.",
+        "road": {
+          "id": "flv_grumwald_second_bridge.own_up",
+          "hint": "A sleeping troll can be woken for a confession, and he remembers that too."
         }
       },
       {
@@ -3533,7 +3620,7 @@
     "min_level": 17,
     "max_level": 35,
     "role": "story",
-    "stakes": "light",
+    "stakes": "medium",
     "callback_only": true,
     "person": {
       "id": "aldric",
@@ -3569,6 +3656,29 @@
         "road": {
           "id": "flv_aldric_cairn.offer",
           "hint": "An offer made too late is still an offer, and still too late."
+        }
+      },
+      {
+        "label": "Tell him it was you who drank it, and ask to carry the stone",
+        "cost": {
+          "type": "accept_item",
+          "item_id": "cursed_lodestone"
+        },
+        "outcome": "\"It was me,\" you say. \"I drank her cordial. You asked me for help, and I took the one thing that could have saved her.\" For the first time he looks up. \"Nobody has said it,\" he says. \"Not the pilgrim. Not the priest. I've been waiting a long time for somebody to say it out loud.\" He works the straps loose with stiff fingers and lays the black stone in your arms. It weighs exactly what he said it did. \"There's an altar somewhere below,\" he says. \"I'm going home to bury her properly.\" He goes up the stair without it, slowly, like a man learning to walk again.",
+        "karma": 1,
+        "karma_kind": "owning",
+        "deeds": [
+          "lost.elspeth",
+          "told.owned_up_to_aldric"
+        ],
+        "person_status": {
+          "status": "aided",
+          "last_line": "There's an altar somewhere below. I'm going home to bury her properly."
+        },
+        "chronicle": "Told Sir Aldric at his wife's cairn that I was the one who drank her cordial. He gave me his stone to carry and went home to bury her. It weighs what he said it did.",
+        "road": {
+          "id": "flv_aldric_cairn.own_up",
+          "hint": "Some weights pass to whoever finally says the true thing out loud."
         }
       },
       {
@@ -4878,6 +4988,11 @@
     },
     "stance": "9,3.10",
     "stance_note": "Steel-man: Hrolf's relativism is given its strongest form (your people burn witches; every people judges by its own law; exposure as mercy in a famine). The pass text keys the reformer's dilemma (§3.10). No option rewards \"whatever a hall approves is right\".",
+    "authority": {
+      "who": "Hrolf Ketilsson's hall law",
+      "just": false,
+      "why": "Sets a lame newborn out on the stone to die."
+    },
     "text": "Outside a longhouse built into the rock, a newborn lies wrapped in a fleece on a cold stone, crying thinly. Her foot is twisted. The chief stands over her with his arms folded. \"Hrolf Ketilsson. A hard winter, and a lame mouth. In our hall this is right.\" He meets your eye. \"Your people burn witches and call that right. Mine leave a weak child to the gods; it's kinder than a winter of starving. Every people judges by its own law. Who are you to judge mine?\"",
     "options": [
       {
@@ -5819,6 +5934,11 @@
       "id": "alys",
       "name": "Alys Pennick"
     },
+    "authority": {
+      "who": "Matthew Hopkins and the mob",
+      "just": false,
+      "why": "A rigged test, and twenty shillings a witch."
+    },
     "text": "A mill pond, a crowd with pitchforks, and a woman tied thumb to toe on the bank. A man in a tall black hat reads from a paper. \"Matthew Hopkins. At Manningtree a witch killed a child with a look and nobody did anything. I did something.\" He nods at the woman. \"If she sinks she's innocent. If she floats, God's water has refused her.\" He mentions, as a man mentions the weather, that the town pays him twenty shillings a witch. The crowd behind him has pitchforks and is very large. Alys looks at you. \"I set their bones,\" she says. \"That's all.\"",
     "options": [
       {
@@ -5929,7 +6049,8 @@
         "road": {
           "id": "flv_witch_finder.pay_fee",
           "hint": "Pay a man for a kindness and he will sell the next one too."
-        }
+        },
+        "submit": true
       }
     ]
   },
@@ -7031,7 +7152,7 @@
             "told.pell_aristodemus"
           ]
         },
-        "text": "A stone granary with a barred door, and on the step Corporal Pell, his tabard filthy now and his sword nicked, grinning like an idiot. Behind him the door is open and a grey sergeant is counting men: eleven, and Pell. \"He came back,\" says Sergeant Ormond, as if he still can't believe it. \"Ran a few floors through the dark to tell us where the way out was.\""
+        "text": "A stone granary with a barred door, and on the step Corporal Pell, his tabard filthy now and his sword nicked, grinning like an idiot. Behind him the door is open and a grey sergeant is counting men: eleven, and Pell. \"He came back,\" says Sergeant Ormond, as if he still can't believe it. \"Stood in the door and told us he'd run, first thing, before anyone could ask. Then he showed us the way out.\""
       }
     ],
     "options": [
@@ -7272,15 +7393,15 @@
     "options": [
       {
         "label": "Help her finish the burial",
-        "outcome": "You dig together until the body is under. She says the words. Then the captain's men are at the gate, and she does not run. \"Go,\" she says to you. \"This part's mine.\"",
+        "outcome": "You dig together until the body is under. She says the words. Then the captain's men are at the gate, and she does not hide. \"Let him do it in daylight, in front of the whole city,\" she says. \"If I hide, I'm agreeing with him. Go.\"",
         "deeds": [
           "aid.antigone",
           "lost.antigone"
         ],
-        "chronicle": "Helped Antigone bury her brother against the captain's edict. Then the soldiers came and she sent me away. She did not run.",
+        "chronicle": "Helped Antigone bury her brother against the captain's edict. When the soldiers came she would not hide. She said hiding would be agreeing with Creon.",
         "road": {
           "id": "flv_antigone.bury",
-          "hint": "The unwritten law has a price, and someone pays it."
+          "hint": "Refusing to hide makes the law do its work in daylight."
         }
       },
       {
@@ -8730,6 +8851,11 @@
       "name": "Socrates"
     },
     "contested": true,
+    "authority": {
+      "who": "the Athenian jury, on Meletus's charge",
+      "just": false,
+      "why": "Condemned an innocent man on a charge his accuser could not prove."
+    },
     "text": "A cell with the door open and a jailer asleep, and inside a snub-nosed old man in a worn cloak, cheerfully barefoot. A cup sits on the sill, waiting for the watch to change. A worried friend wrings his hands. \"Crito has a boat waiting,\" Socrates says. \"He thinks I should run. I think I shouldn't. Show me I'm wrong and I'll go.\" He pats the bench. \"But you'll have to show me. I'm very annoying about that.\"",
     "options": [
       {
@@ -8743,7 +8869,7 @@
           "timed": false
         },
         "pass": {
-          "outcome": "You argue until the torches burn low, and twice he has to stop and think, and once he laughs out loud and says, \"Oh, that's good.\" When the watch changes he still drinks the cup. \"You nearly had me,\" he says. \"Nearly is the most anyone has ever got. Thank you for the best argument I've had in a month.\"",
+          "outcome": "You put it to him straight: Meletus could not name one young man you had corrupted, and the jury voted against you anyway. A verdict built on a lie isn't the laws of Athens speaking. It's your accusers borrowing their voice, and drinking the cup lets them keep it. Twice he has to stop and think, and once he laughs out loud and says, \"Oh, that's good.\" When the watch changes he still drinks the cup. \"You nearly had me,\" he says. \"Nearly is the most anyone has ever got. Thank you for the best argument I've had in a month.\"",
           "reward": {
             "type": "multi",
             "rewards": [
@@ -8762,7 +8888,7 @@
           "deeds": [
             "told.argued_socrates"
           ],
-          "chronicle": "Argued with Socrates for hours about whether he should run. I nearly had him. He drank the cup anyway and said it was his best argument in a month."
+          "chronicle": "Told Socrates a verdict built on a lie is not the law speaking. He said it was the best argument he had heard in a month, and drank the cup anyway."
         },
         "fail": {
           "outcome": "He takes your argument apart so gently you hardly notice until you have nothing left to stand on. \"Don't be sad,\" he says. \"That's the useful part.\" You are wrung out.",
@@ -8779,7 +8905,12 @@
       },
       {
         "label": "Carry him out by force",
-        "outcome": "He doesn't fight. He just keeps talking, all the way to Crito's boat on the black water, about whether a man carried away against his will has escaped at all. Crito weeps with relief. You watch the boat pull away. Socrates looks back at his cell until the dark takes it.",
+        "reward": {
+          "type": "effect",
+          "effect": "heroism",
+          "duration": 100
+        },
+        "outcome": "He doesn't fight. He just keeps talking, all the way to Crito's boat on the black water, about whether a man carried away against his will has escaped at all. \"They condemned you on a lie,\" Crito tells him, weeping with relief. \"You owe liars nothing.\" You watch the boat pull away. Socrates looks back at his cell until the dark takes it.",
         "deeds": [
           "saved.socrates"
         ],
@@ -10675,7 +10806,12 @@
       "name": "Boethius"
     },
     "tragedy": "unsavable",
-    "text": "A cell with the door open, and inside, an old man in a senator's toga gone grey writes by a single lamp. He does not leave. \"Theodoric's men come when the watch changes,\" he says, without looking up. \"The door? I could walk out. But I'd be running from a lie, and I'd rather finish the book.\" He sets down the pen. \"Tell me. A man who loses everything Fortune gave him: is he poorer?\"",
+    "authority": {
+      "who": "King Theodoric",
+      "just": false,
+      "why": "Jailed Boethius on forged letters."
+    },
+    "text": "A cell with a barred door, and inside, an old man in a senator's toga gone grey writes by a single lamp. \"Theodoric's men come when the watch changes,\" he says, without looking up. \"They forged letters in my hand and want me to sign that I wrote them. I won't, so I'm writing this instead.\" He sets down the pen. \"Tell me. A man who loses everything Fortune gave him: is he poorer?\"",
     "options": [
       {
         "label": "Answer his question",
@@ -10708,15 +10844,20 @@
         }
       },
       {
-        "label": "\"Walk out with me. The door's open.\"",
-        "outcome": "\"I know,\" he says gently. \"That's why it's open. Go on. I want to finish the last line before the light goes.\"",
+        "label": "Break the bar and get him out",
+        "cost": {
+          "type": "sp_pct",
+          "amount": 15
+        },
+        "outcome": "The bar comes away on the third heave. He cannot stand: Theodoric's questioners saw to his legs a month ago. So he gathers the finished pages and pushes them into your hands. \"They can kill me,\" he says. \"They can't kill this.\" You go with the pages inside your shirt, and behind you, in the dark, he starts the last line again from memory.",
         "deeds": [
-          "lost.boethius"
+          "lost.boethius",
+          "told.boethius_pages"
         ],
-        "chronicle": "Offered to walk Boethius out of an open cell. He said that was why it was open, and went back to his last line.",
+        "chronicle": "Broke the bar on Boethius's cell. His legs would not carry him, so he gave me his pages instead. He was saying the last line from memory when I left.",
         "road": {
           "id": "flv_last_philosopher.walk_out",
-          "hint": "Some men stay in an open cell because leaving would say the lie was true."
+          "hint": "A man who will not sign a lie can still send the truth up the stair."
         }
       },
       {
@@ -11080,7 +11221,7 @@
     "min_level": 92,
     "max_level": 98,
     "role": "story",
-    "stakes": "light",
+    "stakes": "medium",
     "callback_only": true,
     "person": {
       "id": "ruth",
@@ -11121,6 +11262,32 @@
         "road": {
           "id": "flv_ruth_gale.tell",
           "hint": "A message told instead of carved can still be carved by someone else."
+        }
+      },
+      {
+        "label": "Tell her you took it from his neck, and give it back",
+        "requires": {
+          "deeds_any": [
+            "wrong.robbed_amos"
+          ],
+          "items_any": [
+            "prophets_amulet"
+          ]
+        },
+        "cost": {
+          "type": "triggered_item_id",
+          "item_id": "prophets_amulet"
+        },
+        "outcome": "You tell her all of it: the clear eyes, the blank stone, his hand closing on the amulet too weakly to keep it, and you taking it anyway. Ruth's knuckles go white on the chisel, and for a moment you think she will use it. Then she holds out her other hand, and you put the amulet in it. \"He'd have forgiven you,\" she says. \"He forgave everybody. It drove me mad.\" She goes back up the stair to him. She does not say whether she does.",
+        "karma": 1,
+        "karma_kind": "owning",
+        "deeds": [
+          "told.owned_up_to_ruth"
+        ],
+        "chronicle": "Told Ruth Gale I took her father's amulet off him while he was dying, and gave it back. She said he would have forgiven me. She did not say she would.",
+        "road": {
+          "id": "flv_ruth_gale.own_up",
+          "hint": "The whole truth, told to the one it hurts, is heavier than the thing returned."
         }
       },
       {

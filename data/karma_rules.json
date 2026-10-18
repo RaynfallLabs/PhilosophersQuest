@@ -46,7 +46,9 @@
     {"id": "discerning", "tag": "virtue:judged", "min": 4, "min_blocks": 3, "none_tags": ["vice:reckless"],
      "chronicle": "I have stopped helping first and asking later. It feels less kind and works better."},
     {"id": "steadfast", "tag": "virtue:steadfast", "min": 3, "min_blocks": 2,
-     "chronicle": "Another hard test, and I did not fold. I used to think nerve was something you were born with."}
+     "chronicle": "Another hard test, and I did not fold. I used to think nerve was something you were born with."},
+    {"id": "honest", "tag": "virtue:owned", "min": 2, "min_blocks": 2,
+     "chronicle": "Twice now I have looked someone in the face and told them what I did to them. It does not get easier. I think that is the point."}
   ],
   "patterns_neg": [
     {"id": "turncoat", "tag": "vice:betray", "min": 2, "karma": -1,

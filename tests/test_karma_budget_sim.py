@@ -71,6 +71,18 @@ def test_the_villain_never_earns_the_sword(report):
     assert report['styles']['villain']['below_zero'] >= 0.95
 
 
+def test_owning_up_is_met_only_after_a_wrong(report):
+    """Brandon, 2026-10-18: a confession answers the hero's own wrong, so the
+    players who never rob anyone never meet one, and it cannot lift a wrongdoer
+    to the Sword (the wrong costs its point first; the confession shares the
+    block's one slot)."""
+    s = report['styles']
+    assert s['saint']['owning_offered'] == 0 and s['naive_helper']['owning_offered'] == 0
+    assert s['pragmatist']['owning_offered'] > 0 and s['villain']['owning_offered'] > 0
+    for r in s.values():
+        assert r['owning_taken'] <= r['owning_offered']
+
+
 def test_a_saint_reliably_earns_the_sword(report):
     """Brandon, 2026-10-17: accepted that a principled-all-run player nearly
     always earns the Sword; guard that principle keeps paying."""

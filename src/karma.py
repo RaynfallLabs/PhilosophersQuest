@@ -23,6 +23,12 @@ walking back upstairs still lands in the deepest block reached.
 **No single loss is bigger than one** (Brandon, 2026-10-18: "Max karma drop
 is -1"), with the gate on or off and whatever the kind. A caller that asks
 for more is clamped to -1 and logged; the ledger keeps what was asked.
+
+**Owning up** (Brandon, 2026-10-18: "owning up and taking responsibility is a
+HUGE lesson for kids"): ``owning`` is the hero telling the truth about his own
+wrong to the person he wronged, at a real cost. It is a gated positive like
+the others, so it shares the one point a block. Submitting to an unjust
+"justice" is surrender, not courage, and never pays (the validator's rule).
 """
 from __future__ import annotations
 
@@ -30,7 +36,7 @@ import json
 
 import deeds
 
-POSITIVE_GATED = frozenset({'forgo', 'judgment', 'oath', 'stance'})
+POSITIVE_GATED = frozenset({'forgo', 'judgment', 'oath', 'owning', 'stance'})
 POSITIVE_UNGATED = frozenset({'constancy', 'recovery'})
 # No 'reckless': naive kindness is never negative karma (Brandon, decision 9).
 # It carries material consequences authored in the outcome instead.
@@ -104,6 +110,8 @@ def adjust(game, delta: int, *, kind: str, source: str,
         # The Penitent's Blade balances the ledger but cannot redeem you.
         new = min(0, cur + delta) if (cur < 0 and delta > 0) else cur
     elif delta > 0 and kind in POSITIVE_GATED | {LEGACY}:
+        # forgo, judgment, owning and stance take this block's slot; an
+        # oath fills the earliest open one since it was sworn.
         if kind == 'oath':
             lo = int(made_block) if made_block is not None else block
             slot_block = _earliest_open(slots, lo, block)

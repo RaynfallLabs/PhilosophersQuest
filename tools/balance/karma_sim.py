@@ -33,6 +33,14 @@ MODELLED (named constants below):
   * Untyped (legacy) karma, which only today's pre-schema content carries,
     is mapped: a positive point in a quiz pass to 'judgment', any other
     positive to 'forgo', a negative to 'cruelty'. The report counts them.
+  * Confession callbacks (owning up, ENCOUNTER_STORIES_DRAFT Part J10): a
+    callback-only encounter with an 'owning' option is placed when an
+    applied outcome schedules it (after_floors from the data, its requires
+    re-checked on arrival), and met like any other encounter. Only these
+    callbacks are placed; the oath callbacks stay modelled by KEEP / BREAK.
+    The items the hero holds are tracked (a trigger item, a specific_item
+    reward, an accepted burden; a handed-over item leaves), so a confession
+    that needs the thing in hand appears only when it is.
 
     py tools/balance/karma_sim.py                 # 4000 runs per style
     py tools/balance/karma_sim.py --n 500 --seed 3 --json
@@ -109,7 +117,15 @@ def load_content(encounters=None) -> dict:
     untyped = sum(1 for _s, e in encs for o in e.get('options') or ()
                   for br in _branches(o)
                   if int(br.get('karma', 0) or 0) and not br.get('karma_kind'))
-    return {'blocks': blocks, 'by_tag': by_tag, 'setne': setne, 'untyped': untyped}
+    confessions = {e.get('tag') for _s, e in encs if e.get('callback_only')
+                   and any(_is_owning(o) for o in e.get('options') or ())}
+    return {'blocks': blocks, 'by_tag': by_tag, 'setne': setne, 'untyped': untyped,
+            'confessions': confessions}
+
+
+def _is_owning(o) -> bool:
+    return any(b.get('karma_kind') == 'owning' and int(b.get('karma', 0) or 0) > 0
+               for b in _branches(o))
 
 
 def _branches(o):
@@ -130,6 +146,10 @@ class _Sim:
                                  player=SimpleNamespace(deepest_floor_reached=1),
                                  _deeds=deeds.new_register())
         self.pending = []          # (floor, oath_id)
+        self.callbacks = []        # (floor, seq, tag, schedule entry): confessions only
+        self.items = set()         # what the hero holds that a requires may read
+        self.owning_offered = 0
+        self.owning_taken = 0
         self.karma_at_30 = None
 
     # -- helpers
@@ -140,7 +160,7 @@ class _Sim:
     def ctx(self):
         f = self.g.dungeon_level
         return {'reg': self.g._deeds, 'karma': self.g.karma, 'stats': STATS, 'floor': f,
-                'deepest': self.g.player.deepest_floor_reached, 'items': set()}
+                'deepest': self.g.player.deepest_floor_reached, 'items': set(self.items)}
 
     def quiz_passes(self, q: dict) -> bool:
         acc = self.s['accuracy']
@@ -202,6 +222,25 @@ class _Sim:
         return pick(opts)
 
     # -- applying
+    def _hold(self, enc, o, b):
+        """Track the items a later requires may read: a reward's named item
+        and an accepted burden come in; a handed-over item goes."""
+        def parts(x, key):
+            if not isinstance(x, dict):
+                return []
+            return list(x.get(key) or []) if x.get('type') == 'multi' else [x]
+        costs = parts(o.get('cost'), 'costs') + (parts(b.get('cost'), 'costs') if b is not o else [])
+        for c in costs:
+            if c.get('type') == 'triggered_item' and enc.get('trigger_item'):
+                self.items.discard(enc['trigger_item'])
+            elif c.get('type') == 'triggered_item_id':
+                self.items.discard(c.get('item_id'))
+            elif c.get('type') == 'accept_item' and c.get('item_id'):
+                self.items.add(c['item_id'])
+        for rw in parts(b.get('reward'), 'rewards') + parts(b.get('bonus_reward'), 'rewards'):
+            if rw.get('type') == 'specific_item' and rw.get('item_id'):
+                self.items.add(rw['item_id'])
+
     def apply_branch(self, enc, o, b, *, passed: bool):
         import deeds
         import karma
@@ -222,6 +261,11 @@ class _Sim:
         if b.get('virtue') == 'forgo' or (kind == 'forgo' and k > 0):
             deeds.record(reg, f'flag.forgo.{deeds.slug(tag)}', floor=floor, block=block,
                          tags=['virtue:forgo'], engine=True, deepest=deepest)
+        if kind == 'owning' and k > 0:
+            deeds.record(reg, f'flag.owned.{deeds.slug(tag)}', floor=floor, block=block,
+                         tags=['virtue:owned'], engine=True, deepest=deepest)
+            self.owning_taken += 1
+        self._hold(enc, o, b)
         if k:
             karma.adjust(self.g, k, kind=kind, source=tag)
         if k < 0 and kind == 'cruelty':
@@ -236,6 +280,11 @@ class _Sim:
                     deeds.record(reg, did, floor=floor, block=block, source=tag, deepest=deepest)
                 except ValueError:
                     pass
+        for cb in b.get('schedule') or ():
+            if isinstance(cb, dict) and cb.get('encounter') in self.c['confessions']:
+                lo_hi = cb.get('after_floors') or [1, 10]
+                at = min(98, deepest + self.rng.randint(int(lo_hi[0]), int(lo_hi[1])))
+                self.callbacks.append((at, len(self.callbacks), cb['encounter'], cb))
         oath = b.get('oath')
         if isinstance(oath, dict) and oath.get('id'):
             deeds.swear(reg, oath['id'], to=oath.get('to', ''), what='', floor=floor,
@@ -255,11 +304,16 @@ class _Sim:
 
     def meet(self, enc, name: str):
         from encounter_schema import is_quiz, visible_options
+        if enc.get('trigger_item'):
+            # A trigger-item scene happens because the hero carries the thing.
+            self.items.add(enc['trigger_item'])
         used = []
         for _step in range(STEPS_PER_ENCOUNTER):
             vis = visible_options(enc, self.ctx(), used)
             if not vis:
                 return
+            if any(_is_owning(o) for _i, o in vis):
+                self.owning_offered += 1
             choice = self.choose(vis, name)
             if choice is None:
                 return
@@ -297,6 +351,28 @@ class _Sim:
             else:
                 deeds.lapse_oath(reg, oid, floor=f, block=block)
 
+    def settle_callbacks(self, upto: int, name: str):
+        """Meet the confession callbacks due by ``upto`` (their requires, and
+        the schedule entry's, re-checked on arrival; each once)."""
+        import deeds
+        while True:
+            due = sorted(c for c in self.callbacks if c[0] <= upto)
+            if not due:
+                return
+            floor, seq, tag, cb = due[0]
+            self.callbacks.remove(due[0])
+            enc = self.c['by_tag'].get(tag)
+            if enc is None:
+                continue
+            self.settle_oaths(floor)
+            self.at(max(floor, self.g.player.deepest_floor_reached))
+            ctx = self.ctx()
+            if cb.get('requires') and not deeds.check(cb['requires'], ctx):
+                continue
+            if enc.get('requires') and not deeds.check(enc['requires'], ctx):
+                continue
+            self.meet(enc, name)
+
     def run(self, name: str):
         rng = self.rng
         used = set()
@@ -319,15 +395,18 @@ class _Sim:
             placed = sorted(((rng.randint(lo, hi), i, e) for i, e in enumerate(events)),
                             key=lambda t: (t[0], t[1]))
             for floor, _i, enc in placed:
+                self.settle_callbacks(floor - 1, name)
                 self.settle_oaths(floor)
                 if floor > 30 and self.karma_at_30 is None:
                     self.karma_at_30 = self.g.karma
                 self.at(floor)
                 used.add(enc.get('tag'))
                 self.meet(enc, name)
+            self.settle_callbacks(hi, name)
             self.settle_oaths(hi)
             if hi >= 30 and self.karma_at_30 is None:
                 self.karma_at_30 = self.g.karma
+        self.settle_callbacks(98, name)
         self.settle_oaths(99)
         return self.g.karma, self.karma_at_30 if self.karma_at_30 is not None else self.g.karma
 
@@ -366,11 +445,18 @@ def run(n: int = 4000, seed: int = 1, encounters=None, styles=None) -> dict:
         for i, name in enumerate(styles or STYLES):
             rng = random.Random((seed * 1000003) ^ (i * 7919))
             finals, at30 = [], []
+            offered = taken = 0
             for _ in range(n):
-                k, k30 = _Sim(content, STYLES[name], rng, table).run(name)
+                sim = _Sim(content, STYLES[name], rng, table)
+                k, k30 = sim.run(name)
                 finals.append(k)
                 at30.append(k30)
+                offered += sim.owning_offered
+                taken += sim.owning_taken
             report['styles'][name] = {
+                # Owning up (J10): confessions met and made, per run.
+                'owning_offered': round(offered / n, 3),
+                'owning_taken': round(taken / n, 3),
                 'mean': round(sum(finals) / n, 2),
                 'p10': _pct(finals, 0.1), 'p50': _pct(finals, 0.5), 'p90': _pct(finals, 0.9),
                 'sword': round(sum(k >= SWORD_AT for k in finals) / n, 4),
@@ -400,11 +486,12 @@ def main(argv=None) -> int:
         print(f"note: {rep['untyped_karma_options']} option branches carry untyped (legacy) karma; "
               'mapped to judgment / forgo / cruelty')
     print(f"{'style':<14}{'mean':>6}{'p10':>5}{'p50':>5}{'p90':>5}{'Sword':>8}{'Scales':>8}"
-          f"{'<0':>7}{'<0@30':>7}")
+          f"{'<0':>7}{'<0@30':>7}{'owning met/made':>17}")
     for name, r in rep['styles'].items():
         print(f"{name:<14}{r['mean']:>6.1f}{r['p10']:>5}{r['p50']:>5}{r['p90']:>5}"
               f"{r['sword']:>8.1%}{r['scales']:>8.1%}{r['below_zero']:>7.1%}"
-              f"{r['below_zero_at_30']:>7.1%}")
+              f"{r['below_zero_at_30']:>7.1%}"
+              f"{r['owning_offered']:>10.2f}/{r['owning_taken']:.2f}")
     return 0
 
 

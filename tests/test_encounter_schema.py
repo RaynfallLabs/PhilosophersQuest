@@ -260,6 +260,105 @@ def test_a_fight_is_a_visible_cost_on_the_right_side():
     assert 'stance' not in _codes(_mut(stance))
 
 
+# ------------------------------------------- owning up vs surrender (J10)
+
+def _confession(**over):
+    """A callback where the hero meets someone he wronged: the fixture's walk
+    on, a quiet way out, and the confession."""
+    e = copy.deepcopy(BASE)
+    e['options'] = [
+        {'label': 'Pay it back quietly', 'requires': {'deeds_any': ['wrong.robbed_fx']},
+         'cost': {'type': 'gold_pct', 'amount': 2}, 'outcome': 'You pay.'},
+        dict({'label': 'Tell him it was you, and pay it back',
+              'requires': {'deeds_any': ['wrong.robbed_fx']},
+              'cost': {'type': 'gold_pct', 'amount': 10}, 'outcome': 'You say it.',
+              'karma': 1, 'karma_kind': 'owning'}, **over),
+        {'label': 'Walk on', 'outcome': 'You walk on.'},
+    ]
+    return e
+
+
+def test_owning_up_with_a_cost_and_the_heros_own_wrong_is_clean():
+    codes = _codes(_confession())
+    assert 'owning' not in codes and 'karma_kind' not in codes
+    # The wrong may be the whole encounter's requires instead of the option's.
+    e = _confession(requires=None)
+    e['options'][1].pop('requires')
+    e['requires'] = {'deeds_any': ['wrong.robbed_fx']}
+    assert 'owning' not in _codes(e)
+    # A fight is a visible price too.
+    e = _confession(cost=None, fight={'monster_id': 'ogre'})
+    e['options'][1].pop('cost')
+    assert 'owning' not in _codes(e)
+
+
+@pytest.mark.parametrize('over', [
+    {'cost': None},                                              # owning up for free is talk
+    {'requires': {'deeds_any': ['met.fx']}},                    # not the hero's wrong
+    {'requires': {'deeds_any': ['wrong.robbed_fx', 'met.fx']}},  # not always the hero's wrong
+    {'requires': {'deeds_any': ['wrong.']}},                     # a wrong, but which?
+    {'cost': {'type': 'accept_item', 'item_id': 'elaras_silver_ring'}},  # not a burden
+])
+def test_owning_up_needs_a_real_cost_and_the_heros_own_wrong(over):
+    e = _confession(**over)
+    if over.get('cost', 1) is None:
+        e['options'][1].pop('cost')
+    assert 'owning' in _codes(e)
+
+
+def test_taking_up_a_cursed_burden_is_a_real_cost():
+    e = _confession(cost={'type': 'accept_item', 'item_id': 'cursed_lodestone'})
+    assert 'owning' not in _codes(e)
+
+
+def test_owning_up_is_never_paid_before_a_crooked_court():
+    e = _confession()
+    e['authority'] = {'who': 'a bought magistrate', 'just': False}
+    assert 'owning' in _codes(e)
+
+
+def _tribunal(just, **over):
+    e = copy.deepcopy(BASE)
+    e['authority'] = {'who': 'the witch-finder and the mob', 'just': just}
+    e['options'].append(dict({'label': 'Hand yourself over to them', 'submit': True,
+                              'outcome': 'You go with them.'}, **over))
+    return e
+
+
+def test_submitting_to_an_unjust_authority_never_pays():
+    assert 'unjust' not in _codes(_tribunal(False))
+    assert 'unjust' in _codes(_tribunal(False, karma=1, karma_kind='forgo'))
+    # Before an honest court, owning your guilt may be rewarded where the
+    # design already allows it (Lucan to the assize, +1 judgment on a pass).
+    assert 'unjust' not in _codes(_tribunal(True, karma=1, karma_kind='forgo'))
+
+
+def test_walking_away_or_resisting_an_unjust_authority_is_never_penalised():
+    e = _tribunal(False)
+    e['options'][2].update(karma=-1, karma_kind='cruelty')       # walking on, penalised
+    assert 'unjust' in _codes(e)
+    # Only handing someone over, a villain's choice or the wrong side may cost.
+    e = _tribunal(False, karma=-1, karma_kind='betray')
+    assert 'unjust' not in _codes(e)
+
+
+def test_authority_shape_and_submit_need_each_other():
+    e = copy.deepcopy(BASE)
+    e['options'][2]['submit'] = True
+    assert 'authority' in _codes(e)
+    e['authority'] = {'who': 'x'}
+    assert 'authority' in _codes(e)
+    e['authority'] = {'who': 'the assize', 'just': True, 'why': 'A lawful court.'}
+    assert 'authority' not in _codes(e)
+    e['authority']['mood'] = 'grim'
+    assert 'unknown_key' in _codes(e)
+
+
+def test_owning_report_lists_every_confession():
+    rows = V.owning_report()
+    assert rows and all(cb and wrongs for _t, _l, wrongs, _b, cb in rows)
+
+
 def test_pending_engine_section_is_merged_into_the_allowlist(tmp_path):
     p = tmp_path / 'allow.json'
     p.write_text('{"_doc": "x", "a": ["c1"], "pending_engine": {"_doc": "y", '

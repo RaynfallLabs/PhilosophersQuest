@@ -38,7 +38,8 @@ def test_shipped_gate_is_on():
     assert karma.rules().get('road_enabled') is True
     assert 'reckless' not in karma.KINDS            # Brandon, decision 9
     assert {c['id'] for c in karma.rules()['constancy']} >= {'temperance', 'faithful',
-                                                             'discerning', 'steadfast'}
+                                                             'discerning', 'steadfast',
+                                                             'honest'}
     assert karma.rules()['constancy_cap'] == 2
 
 
@@ -112,6 +113,36 @@ def test_gate_on_one_slot_per_block(gate_on):
     assert karma.adjust(g, 3, kind='stance', source='seed') == 0          # clamp to +1, absorbed
     g.player.deepest_floor_reached = 21
     assert karma.adjust(g, 5, kind='stance', source='seed') == 1          # clamped to +1
+
+
+def test_owning_up_is_a_gated_positive_sharing_the_block(gate_on):
+    """Brandon, 2026-10-18: owning up can earn a point, but it takes the same
+    one slot a block as forgo, judgment and stance; it never stacks."""
+    assert 'owning' in karma.POSITIVE_GATED and 'owning' in karma.KINDS
+    g = _game(0, deepest=15)
+    assert karma.adjust(g, 1, kind='owning', source='flv_lena_returns') == 1
+    assert karma.adjust(g, 1, kind='forgo', source='purses') == 0          # same block: absorbed
+    g.player.deepest_floor_reached = 25
+    assert karma.adjust(g, 1, kind='forgo', source='purses') == 1
+    assert karma.adjust(g, 2, kind='owning', source='flv_aldric_cairn') == 0  # absorbed, clamped
+    assert g.karma == 2
+    led = [e for e in g._deeds['karma']['ledger'] if e['kind'] == 'owning']
+    assert [e['applied'] for e in led] == [1, 0] and led[1]['requested'] == 2
+    with pytest.raises(ValueError):
+        karma.adjust(_game(), -1, kind='owning_wrong', source='x')
+
+
+def test_honest_needs_two_confessions_in_two_blocks(gate_on):
+    rule = next(r for r in karma.rules()['constancy'] if r['id'] == 'honest')
+    assert rule['tag'] == 'virtue:owned' and rule['min'] == 2 and rule['min_blocks'] == 2
+    g = _game(0, deepest=40)
+    g._chronicle = []
+    _virtue(g, 'owned', 12)
+    _virtue(g, 'owned', 14)                         # two, but one block
+    assert karma.evaluate_patterns(g) == []
+    _virtue(g, 'owned', 27)
+    assert karma.evaluate_patterns(g) == ['honest'] and g.karma == 1
+    assert 'looked someone in the face' in rule['chronicle']
 
 
 def test_gate_on_award_upstairs_lands_in_deepest_block(gate_on):
@@ -236,7 +267,7 @@ def test_property_random_streams(gate_on):
     applied, constancy at most +2, karma always inside -10..10, including
     walks back upstairs and Cow Level visits (floor 999)."""
     rng = random.Random(1234)
-    kinds = ['forgo', 'judgment', 'oath', 'stance', 'betray', 'cruelty', 'recovery']
+    kinds = ['forgo', 'judgment', 'oath', 'owning', 'stance', 'betray', 'cruelty', 'recovery']
     for _ in range(2000):
         g = _game(0, deepest=1)
         g._chronicle = []
@@ -256,7 +287,8 @@ def test_property_random_streams(gate_on):
                 f = g.dungeon_level if g.dungeon_level <= 100 else deepest
                 deeds.record(reg, f'flag.t.e{_step}', floor=f, block=deeds.karma_block(deepest),
                              tags=[rng.choice(['virtue:forgo', 'virtue:kept', 'virtue:judged',
-                                               'virtue:steadfast', 'vice:betray'])],
+                                               'virtue:steadfast', 'virtue:owned',
+                                               'vice:betray'])],
                              engine=True)
                 karma.evaluate_patterns(g)
             else:
@@ -296,6 +328,9 @@ def test_recall_lore_hints_on_how_the_soul_is_weighed():
         'firm': 'Hold firm when the hard questions come',
         'blind': 'A kindness given blind',
         'stretch': 'Each long stretch of the descent is weighed once',
+        # Owning up vs surrender (Brandon, 2026-10-18).
+        'owning': 'Owning up costs something, or it is only talk',
+        'court': 'A court that lies is owed nothing',
     }
     found = {}
     for tier, lines in hints.items():

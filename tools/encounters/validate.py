@@ -7,6 +7,12 @@ fields and types, the option rules (at most four visible, a free way out, no
 reward beside a quiz), the karma rules P5-P12, virtue tags, the stakes table,
 quizzes, references, disguises, and the road / chronicle lint.
 
+Owning up (Brandon, 2026-10-18; ENCOUNTER_STORIES_DRAFT Part J10): an
+``owning`` +1 needs a visible cost on the same option and must answer the
+hero's own recorded wrong (a ``wrong.*`` or ``broke.*`` deed in requires).
+An encounter may name its ``authority`` ({"who", "just"}); before an unjust
+one, a ``submit`` choice never pays and walking away or resisting never costs.
+
 Today's content predates the schema, so its known breaches are listed in
 tests/encounter_legacy_allow.json (tag -> codes). That list must shrink to
 empty by the end of Phase 3a; the test also fails on a stale entry.
@@ -40,6 +46,9 @@ ENC_KEYS = {
     'callback_only', 'fallback_anchor', 'chronicle_meet', 'escorts', 'road_ok',
     # J3: a scene that finds the hero on arrival and has no walk-away (C19).
     'hostile',
+    # J10: who sits in judgement in this scene, and whether that judgement is
+    # honest: {"who": "...", "just": true|false} (Brandon, 2026-10-18).
+    'authority',
 }
 OUTCOME_KEYS = {
     'outcome', 'outcome_variants', 'karma', 'karma_kind', 'virtue', 'reward',
@@ -57,6 +66,9 @@ OPTION_ONLY_KEYS = {
     'villain', 'side', 'naive', 'warning', 'road', 'fail_reward',
     # J3: consequences as each round is lost; a fail that reads by rounds won.
     'per_miss', 'fail_by_correct',
+    # J10: this choice hands the hero, or someone, over to the scene's
+    # authority, or does what it demands.
+    'submit',
 }
 QUIZ_KEYS = {'subject', 'tier', 'mode', 'threshold', 'total_qs', 'timed', 'title',
              'max_chain', 'pass_at', 'play_all'}
@@ -161,6 +173,20 @@ def _item_ids() -> set:
             ids.update(data.keys())
         elif isinstance(data, list):
             ids.update(d.get('id') for d in data if isinstance(d, dict))
+    return ids
+
+
+def _cursed_item_ids() -> set:
+    """Items flagged cursed in data/items: taking one up is a real burden."""
+    ids = set()
+    idir = os.path.join(ROOT, 'data', 'items')
+    for n in os.listdir(idir):
+        if not n.endswith('.json'):
+            continue
+        with open(os.path.join(idir, n), encoding='utf-8') as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            ids.update(k for k, v in data.items() if isinstance(v, dict) and v.get('cursed'))
     return ids
 
 
@@ -548,6 +574,20 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                 elif not (o.get('cost') or is_quiz(o)
                           or any(br.get('fight') for br in option_branches(o))):
                     err('stance', f'{where}: the right side must carry a visible cost')
+            if k > 0 and kind == 'owning':
+                # Brandon, 2026-10-18: owning up is the hero telling the truth
+                # about his own wrong, knowing it will cost him.
+                if not _owning_cost(o, ctx):
+                    err('owning', f'{where}: owning +1 needs a visible cost on the same '
+                                  'option (a material cost or a fight)')
+                if not _owns_hero_wrong(enc, o):
+                    err('owning', f'{where}: owning +1 only where the deeds say the hero did '
+                                  'the wrong (requires a wrong.* or broke.* deed)')
+                if _unjust(enc):
+                    err('owning', f'{where}: owning +1 never before an unjust authority '
+                                  '(confessing to a crooked court is surrender)')
+                if is_quiz(o):
+                    err('owning', f'{where}: owning +1 is a choice, not a quiz pass')
             v = b.get('virtue')
             if v is not None:
                 if v == 'forgo':
@@ -582,6 +622,7 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
         wrong = [max_karma(o) for o in opts if o.get('side') == 'wrong']
         if not right or not wrong or not min(right) > max(wrong):
             err('stance', "stance: every 'right' option must outscore every 'wrong' one (P10)")
+    _check_authority(err, enc, opts)
     if tag == 'deadite_woman':
         if any(max_karma(o) or min(int(b.get('karma', 0) or 0) for b in option_branches(o))
                for o in opts):
@@ -610,6 +651,99 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                     if pid and did == f'saved.{pid}':
                         err('tragedy', 'an unsavable tragedy saves its person')
     return out
+
+
+# ------------------------------------------------------------------ owning up
+# (Brandon, 2026-10-18; ENCOUNTER_STORIES_DRAFT Part J10, DEEDS_KARMA_DESIGN 11.15)
+
+# Deeds that record a wrong the HERO did: robbing, keeping, selling, lying,
+# breaking a sworn word. A confession must answer one of these.
+HERO_WRONG_PREFIXES = ('wrong.', 'broke.')
+
+
+def _unjust(enc: dict) -> bool:
+    auth = enc.get('authority')
+    return isinstance(auth, dict) and auth.get('just') is False
+
+
+def _owning_cost(o: dict, ctx: dict) -> bool:
+    """A real, visible price on the confessing option itself: something
+    material paid (gold, an item, health, stamina, a stat), a cursed burden
+    taken up, or a fight. A quiz is not a price."""
+    from encounter_schema import option_branches
+    if any(b.get('fight') for b in option_branches(o)):
+        return True
+    cost = o.get('cost')
+    if not isinstance(cost, dict):
+        return False
+    parts = cost.get('costs') if cost.get('type') == 'multi' else [cost]
+    for c in parts or ():
+        if not isinstance(c, dict):
+            continue
+        if c.get('type') == 'accept_item':
+            # Taking up a burden counts only when it is a cursed one.
+            if c.get('item_id') in ctx.get('cursed_items', set()):
+                return True
+            continue
+        if c.get('type') in COST_TYPES and c.get('type') not in ('spawn_deadite_ambush',):
+            return True
+    return False
+
+
+def _is_hero_wrong(pattern) -> bool:
+    return isinstance(pattern, str) and pattern.startswith(HERO_WRONG_PREFIXES) \
+        and len(pattern.rstrip('*')) > len(pattern.split('.')[0]) + 1
+
+
+def _guarantees_hero_wrong(cond) -> bool:
+    """Does this ``requires`` hold only when the hero did a recorded wrong?
+    deeds_all naming one, or deeds_any whose every entry is one."""
+    if not isinstance(cond, dict):
+        return False
+    if any(_is_hero_wrong(d) for d in cond.get('deeds_all') or ()):
+        return True
+    any_ = list(cond.get('deeds_any') or ())
+    return bool(any_) and all(_is_hero_wrong(d) for d in any_)
+
+
+def _owns_hero_wrong(enc: dict, o: dict) -> bool:
+    """The confession is about the hero's own wrong: the option (or the
+    whole encounter) is reachable only after a wrong.* or broke.* deed."""
+    return _guarantees_hero_wrong(o.get('requires')) or _guarantees_hero_wrong(enc.get('requires'))
+
+
+def _check_authority(err, enc: dict, opts: list):
+    """Submitting to an unjust 'justice' is surrender, not courage (Brandon,
+    2026-10-18): a choice marked ``submit`` before an authority with
+    ``just: false`` never pays, and walking away from or resisting such an
+    authority is never penalised (only a betrayal, a villain's choice or the
+    wrong side of a stance may cost there)."""
+    from encounter_schema import max_karma, option_branches
+    auth = enc.get('authority')
+    if auth is not None:
+        if not (isinstance(auth, dict) and isinstance(auth.get('who'), str) and auth.get('who')
+                and isinstance(auth.get('just'), bool)):
+            err('authority', 'authority is {"who": "<name>", "just": true|false}')
+            return
+        for k in auth:
+            if k not in ('who', 'just', 'why'):
+                err('unknown_key', f'authority key {k!r}')
+    for i, o in enumerate(opts):
+        where = f'option {i + 1}'
+        if 'submit' in o and o['submit'] is not True:
+            err('authority', f'{where}: submit is true or absent')
+        if o.get('submit') and auth is None:
+            err('authority', f'{where}: submit needs an encounter authority')
+        if not _unjust(enc):
+            continue
+        low = min(int(b.get('karma', 0) or 0) for b in option_branches(o))
+        if o.get('submit') and max_karma(o) > 0:
+            err('unjust', f'{where}: submitting to an unjust authority never pays')
+        if o.get('submit') and any(b.get('karma_kind') == 'owning' for b in option_branches(o)):
+            err('unjust', f'{where}: handing yourself to a crooked court is not owning up')
+        if low < 0 and not (o.get('submit') or o.get('villain') or o.get('side') == 'wrong'):
+            err('unjust', f'{where}: walking away from or resisting an unjust authority is '
+                          'never penalised')
 
 
 def _pass_only_deeds(enc: dict) -> set:
@@ -1186,7 +1320,8 @@ def validate_all(encounters=None) -> list:
     encs = encounters if encounters is not None else load_all()
     ctx = {'subjects': _subjects(), 'quest_pieces': _quest_piece_ids(),
            'items': _item_ids(), 'rules': _rules(), 'monsters': _monster_ids(),
-           'effects': _effect_ids(), 'people_tables': _people_tables()}
+           'effects': _effect_ids(), 'people_tables': _people_tables(),
+           'cursed_items': _cursed_item_ids()}
     out = []
     seen = {}
     for source, enc in encs:
@@ -1464,6 +1599,28 @@ def opportunity_budget(encounters=None, *, setne_floors=None, setne_tag=None) ->
     return out
 
 
+def owning_report(encounters=None) -> list:
+    """Every owning-up moment: (tag, label, the hero's wrong it answers,
+    band, callback_only). They sit in callbacks that come only after the
+    hero's own recorded wrong, so a hero who did no wrong never meets one and
+    they are outside the Road's two-to-three-a-block budget (J10)."""
+    from encounter_schema import option_branches
+    encs = encounters if encounters is not None else load_all()
+    out = []
+    for _src, enc in encs:
+        for o in enc.get('options') or ():
+            if not any(b.get('karma_kind') == 'owning' and int(b.get('karma', 0) or 0) > 0
+                       for b in option_branches(o)):
+                continue
+            wrongs = []
+            for cond in (o.get('requires') or {}, enc.get('requires') or {}):
+                wrongs += [d for k in ('deeds_all', 'deeds_any') for d in cond.get(k) or ()
+                           if _is_hero_wrong(d)]
+            out.append((enc.get('tag'), o.get('label'), sorted(set(wrongs)),
+                        enc.get('band'), bool(enc.get('callback_only'))))
+    return out
+
+
 def main(argv=None) -> int:
     argv = list(sys.argv[1:] if argv is None else argv)
     issues = validate_all()
@@ -1476,6 +1633,12 @@ def main(argv=None) -> int:
             print(f'block {b:2d}: anchors {a[0]}/{a[1]}, medium {m[0]}/{m[1]} x{m[2]} slot(s), '
                   f'high {h[0]}/{h[1]}, showcase {r["showcase"]:.2f} '
                   f'-> about {r["expected"]:.1f} genuine +1 chances (target 2-3)')
+        own = owning_report()
+        print(f'owning up: {len(own)} moment(s), each only after the hero\'s own wrong '
+              '(callbacks, outside the budget above):')
+        for tag, label, wrongs, band, cb in own:
+            print(f'  {tag}: "{label}" answers {", ".join(wrongs)} '
+                  f'(floors {band[0]}-{band[1]}{", callback" if cb else ""})')
         return 0
     allow = load_allowlist()
     errors, allowed, stale = split_by_allowlist(issues, allow)
