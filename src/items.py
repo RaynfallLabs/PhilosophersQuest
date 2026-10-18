@@ -1308,18 +1308,46 @@ class GoldPile:
         self.name = f"{self.amount:,} gold coin{'s' if self.amount != 1 else ''}"
 
 
-def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int) -> 'GoldPile':
+def wear_down(item) -> bool:
+    """Rust, acid or fire takes one point of enchantment off worn gear (never
+    below -3). The loss is remembered as ``wear_loss`` so a smith can
+    restore it (traders.py, the repair service), never above what the item
+    had. True when a point was lost."""
+    eb = int(getattr(item, 'enchant_bonus', 0) or 0)
+    if eb <= -3:
+        return False
+    item.enchant_bonus = eb - 1
+    item.wear_loss = int(getattr(item, 'wear_loss', 0) or 0) + 1
+    return True
+
+
+def is_found_gold(pile) -> bool:
+    """Is this pile gold the hero FOUND (a gold ring may multiply it)? Gold
+    the hero put down, or the hero's own gold a thief dropped, is not."""
+    return not getattr(pile, '_dropped_by_player', False)
+
+
+def add_gold_to_tile(ground_items: list, amount: int, x: int, y: int,
+                     found: bool = True) -> 'GoldPile':
     """Pool gold on a single tile instead of creating overlapping piles.
-    If a GoldPile already exists at (x, y), add to it; otherwise create new.
-    Returns the resulting GoldPile."""
+    If a GoldPile of the same kind (found, or the hero's own) already exists
+    at (x, y), add to it; otherwise create new. Returns the resulting pile.
+
+    The two kinds never merge: found gold poured onto a pile the hero
+    dropped lost its "found" mark, and the hero's own gold returned by a
+    thief onto a found pile gained one (a gold ring doubled it,
+    ECONOMY_REFACTOR_PROPOSAL S2)."""
     if amount <= 0:
         return None
     for it in ground_items:
-        if isinstance(it, GoldPile) and it.x == x and it.y == y:
+        if (isinstance(it, GoldPile) and it.x == x and it.y == y
+                and is_found_gold(it) == bool(found)):
             it.amount += amount
             it._refresh_name()
             return it
     pile = GoldPile(amount, x, y)
+    if not found:
+        pile._dropped_by_player = True
     ground_items.append(pile)
     return pile
 

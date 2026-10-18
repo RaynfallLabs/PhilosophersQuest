@@ -227,6 +227,7 @@ def save_game(game) -> bool:
             'turn_count':       game.turn_count,
             'dungeon_level':    game.dungeon_level,
             'player_gold':      game.player_gold,
+            'gold_earned':      getattr(game, 'gold_earned', 0),
             'level_mgr':        game.level_mgr,
             'dungeon':          game.dungeon,
             'monsters':         game.monsters,
@@ -249,6 +250,7 @@ def save_game(game) -> bool:
             # The Road (road.py: a plain dict) and the people being escorted
             # (escort_system.Escort; never in 'pets').
             '_road': getattr(game, '_road', None),
+            '_traders': getattr(game, '_traders', None),
             'escorts': list(getattr(game, 'escorts', None) or []),
             '_npc_encounter_levels': getattr(game, '_npc_encounter_levels', {}),
             '_encountered_npcs': getattr(game, '_encountered_npcs', set()),

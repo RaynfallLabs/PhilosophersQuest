@@ -75,6 +75,7 @@ reporter are small, independent JSON/text siblings. See
 | [pets.md](pets.md) | Species, specials, Duck transform, Soul Sphere, apply_late_pickup_bonus | Pet add/edit |
 | [progression.md](progression.md) | Quirks, hero specials, elder blood, secret builds, karma judgments | Progression add/edit |
 | [quests_mysteries.md](quests_mysteries.md) | 9 quest chains + 12 mysteries + the Judgment altar | Quest add/edit |
+| [economy.md](economy.md) | The income line, gold by lore (no coin in beasts), chests and coin piles, the named traders (plan, stock, worth-based prices, Buy / Sell / Services), services, purse-relative temptations, deeds pricing | Any gold, price, trader or shop change |
 | [karma_prayer.md](karma_prayer.md) | Karma −10..+10 and the block cap (`karma.adjust`), 30 block anchors + 141 story/flavor encounters, the Road, Setne's Tomb, prayer chain, divine intercession, judgment tiers | Karma / encounter / prayer change |
 | [ui.md](ui.md) | Menus, HUD, help, bestiary, kit, discoveries, threshold copy helper | UI change |
 | [save_meta.md](save_meta.md) | save_system (atomic pickle), highscore_system, crash_handler, paths.py, player.`__setstate__` migration | Save format change |

@@ -1,0 +1,249 @@
+{
+  "_doc": "The traders (economy refactor 2026-10-17, ECONOMY_REFACTOR_PROPOSAL D3-D7). Read by src/traders.py (pure: the plan, the stock, the offers, the deeds prices) and src/game_traders.py (the Game side: placing them, the shop's Buy / Sell / Services tabs). Each trader is a person with a name, a reason to be down here and a few short lines; none of them is a vending machine. Their goods are a one-time chance: no restock. Stock stays unidentified and is priced by what it is WORTH (data/item_worth.json), so a sharp eye can price-identify. They BUY at 20-25% of their own price, up to what is in their purse, never quest pieces, never anything worn, and a thing bought from any trader never sells back for more than half of what was paid (no buy/sell loop). Services sell a second chance, never the answer.",
+
+  "plan": {
+    "_doc": "Which floors get a trader, rolled once a run from the Road's seed (road.rng_for), never from the shared random stream. Gate camps stand on the floor before each gate boss, always. Specialists take 'count' floors inside their range; then each floor left takes a generalist with 'generalist_chance'. A trader avoids the Emberpup's and the Black Knight's floors and prefers floors with no anchor, medium or high Road slot; he never stands on a boss floor, floor 1, 99 or 100, or the Cow Level.",
+    "never": [1, 20, 40, 60, 80, 99, 100, 999],
+    "gate_camps": {"19": "sutler", "39": "sutler", "59": "sutler", "79": "sutler"},
+    "specialists": [
+      {"kind": "apothecary", "floors": [2, 35], "count": 3},
+      {"kind": "armourer", "floors": [10, 70], "count": 3},
+      {"kind": "bookseller", "floors": [15, 90], "count": 2},
+      {"kind": "abyssal", "floors": [61, 98], "count": 2}
+    ],
+    "generalist": "generalist",
+    "generalist_floors": [2, 98],
+    "generalist_chance": 0.17
+  },
+
+  "services": {
+    "repair":    {"name": "Mend Rust and Acid", "desc": "Restores the enchantment rust, acid or fire ate off one worn piece. Never above what it had."},
+    "sharpen":   {"name": "Sharpen Your Weapon", "desc": "+1 to the weapon in your hand. A smith will do this twice for any one blade, no more."},
+    "reinforce": {"name": "Reinforce Your Armour", "desc": "+1 to the armour on your body. Twice per piece, no more."},
+    "cut_curse": {"name": "Cut Off a Cursed Thing", "desc": "Cuts away one cursed piece you cannot take off. The piece is destroyed; you keep the slot and your skin."},
+    "cure":      {"name": "Cure What Ails You", "desc": "Poison, disease, sickness, blindness, confusion and the shakes: treated and gone."},
+    "restore":   {"name": "Restore Drained Strength", "desc": "Every stat point a drain, a poison or a disease took off you, put back."},
+    "heal":      {"name": "Bind Your Wounds", "desc": "Your wounds cleaned and bound: back to full health."},
+    "id_retry":  {"name": "Study an Item Together", "desc": "Identify one item with a scribe at your elbow. You still answer the question; a wrong answer costs you nothing but the fee."},
+    "map":       {"name": "Buy a Map of This Floor", "desc": "The whole layout of this floor, inked."},
+    "porter":    {"name": "Hire a Porter", "desc": "Someone carries part of your load for the next three floors."}
+  },
+
+  "guild": {
+    "_doc": "D7. 'wronged': a merchant-type person the hero robbed or sold. The traders talk: their prices rise for the rest of the run, and the next one says why (once). No karma: it is the market, not God. 'credit': each oath the hero kept earns one thing free (up to a floor's income) at the next trader; word gets round. 'reactions': charity carries no karma but has consequences; each trader reacts by his own nature (data per trader).",
+    "wronged": {"deeds_any": ["wrong.robbed_quill", "wrong.robbed_helena", "wrong.robbed_edric",
+                              "wrong.sold_tansy", "wrong.sold_sariel", "wrong.burned_markers"]},
+    "wronged_mult": 1.25,
+    "credit_deed": "kept.",
+    "credit_share": 1.0,
+    "friend_discount": 0.20
+  },
+
+  "rumours": {
+    "_doc": "Conditions a trader's 'reactions' refer to by name (deeds.check conditions).",
+    "open_hand": {"deeds_any": ["aid.gleaner", "aid.hanne", "aid.melitta", "aid.exposed_child", "aid.eyam",
+                                "aid.berengar", "aid.hopkins_fee", "aid.hardekopf"]},
+    "wrens_mark": {"deeds_all": ["lost.wren"]}
+  },
+
+  "traders": {
+    "generalist": {
+      "name": "Grindle",
+      "title": "Deep Gnome Trader",
+      "sprite": "merchant_npc",
+      "lore": "A small grey trader with a pack twice his size and a lantern he never seems to need. He will not say where his stock comes from, only that the previous owners are past caring. He buys anything, cheaply, and talks about himself in the third person, which he says is a gnome thing. It is not a gnome thing.",
+      "stock": [
+        {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 2},
+        {"class": "accessory", "picks": 2}, {"class": "wand", "picks": 2},
+        {"class": "ammo", "picks": 2},
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 2},
+        {"id": "soul_sphere", "cat": "artifact", "chance": 0.15}
+      ],
+      "stock_size": [[1, 20, 4], [21, 50, 5], [51, 100, 6]],
+      "markup": 1.0,
+      "purse": 1.0,
+      "buys": "all",
+      "services": ["map"],
+      "lines": {
+        "greet": ["Grindle sells. Grindle buys. Grindle does not ask where you got it.",
+                  "Previous owners? Very past caring. Have a look.",
+                  "Everything is real. Mostly. Some of it.",
+                  "You smell like a fight. Fights mean customers. Welcome!"],
+        "bought": "Pleasure. Grindle never saw you.",
+        "sold": "Done. Don't tell Grindle its story. Grindle doesn't want to know.",
+        "broke": "No coin, no deal. Grindle likes you, but not that much.",
+        "refuse": "Grindle doesn't buy that. Grindle has standards. Low ones, but standards.",
+        "purse_empty": "Grindle's purse is empty. Grindle is also sad about it.",
+        "sold_out": "That's the lot. Grindle's pack is light and Grindle's heart is glad."
+      },
+      "reactions": [
+        {"when": "open_hand", "mult": 1.10, "line": "Heard you pay other people's debts. Grindle has debts. Prices reflect that."},
+        {"when": "wrens_mark", "mult": 1.15, "line": "You're the soft touch Wren's lot talk about? Ha! Prices just went up."}
+      ],
+      "friend": {"person": "quill", "when": {"deeds_all": ["saved.quill"]},
+                 "name": "Pomfrey Quill", "title": "Alderman and Trader", "sprite": "npc_lost_merchant",
+                 "line": "Pomfrey Quill, alderman, trader, and ALIVE, thanks to you. Friend's price on everything. I mean it this time."}
+    },
+
+    "apothecary": {
+      "name": "Mother Wort",
+      "title": "Apothecary",
+      "sprite": "trader_apothecary", "sprite_fallback": "npc_poisoned_herbalist",
+      "lore": "Agnes Wort came down for the cave-moss that has never seen the sun, because it cures things the sun-moss can't. She has been down here eleven years. She says she will go back up when the moss runs out, and the moss will not run out.",
+      "stock": [
+        {"ids": ["potion_of_healing", "potion_of_cure_poison", "potion_of_cure_disease"], "cat": "potion", "picks": 1},
+        {"class": "potion", "picks": 3},
+        {"class": "food", "picks": 2}
+      ],
+      "stock_size": [[1, 100, 5]],
+      "markup": 1.0,
+      "purse": 0.6,
+      "buys": ["potion", "food", "ingredient"],
+      "services": ["cure", "restore", "heal"],
+      "lines": {
+        "greet": ["Wipe your feet. You're bleeding on my moss.",
+                  "Moss that's never seen the sun cures what the sun-moss can't. Don't touch that jar.",
+                  "Sit. Tongue out. ...Ugh. Right. Let's see what we can do."],
+        "bought": "Drink it slowly. Or don't, and find out why I said that.",
+        "sold": "I'll take it. Somebody down here always needs one.",
+        "broke": "I don't do credit. Credit is how apothecaries end up as moss.",
+        "refuse": "That's not medicine, dear. That's a thing.",
+        "purse_empty": "I'm spent out. Come back when someone's paid me.",
+        "sold_out": "Shelves are bare. Go and get hurt somewhere else for a while."
+      },
+      "reactions": [
+        {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Kindness gets a kinder price here."}
+      ],
+      "friend": {"person": "marta", "when": {"deeds_all": ["saved.marta"], "deeds_none": ["lost.marta"]},
+                 "name": "Marta Venn", "title": "Rat-Catcher and Apothecary", "sprite": "npc_rat_catcher",
+                 "line": "Leg's mended, and forty kids at Saint Agatha's got their fever cure. You get a friend's price. Don't argue."}
+    },
+
+    "armourer": {
+      "name": "Brannoc",
+      "title": "Armourer",
+      "sprite": "trader_armourer", "sprite_fallback": "npc_dwarf",
+      "lore": "Ulf Brannoc followed a king's army down twenty years ago as its armourer. The army never came back up. Brannoc stayed, to mend whatever does, and he is very good at it. He is less good at small talk.",
+      "stock": [
+        {"gear": "weapon", "picks": 2}, {"gear": "armor", "picks": 2}, {"gear": "shield", "picks": 1},
+        {"class": "ammo", "picks": 1}
+      ],
+      "stock_size": [[1, 100, 5]],
+      "markup": 1.0,
+      "purse": 1.0,
+      "buys": ["weapon", "armor", "shield", "ammo"],
+      "services": ["repair", "sharpen", "reinforce", "cut_curse"],
+      "lines": {
+        "greet": ["Twenty years I've waited for that army to come back up. You'll do instead.",
+                  "Show me the blade. ...Who sharpened this? A goat?",
+                  "Rust is just metal giving up. I don't let it."],
+        "bought": "Keep it oiled. I'll know if you don't.",
+        "sold": "Decent steel. Someone died holding it, I expect.",
+        "broke": "Steel costs. Come back richer or bleed on someone else's anvil.",
+        "refuse": "I work metal. That isn't metal.",
+        "purse_empty": "I've no coin left for buying. Plenty of hammer, though.",
+        "sold_out": "Racks are empty. Go and kill something with a sword and bring it here."
+      },
+      "friend": {"person": "pell", "when": {"deeds_all": ["saved.ormond_company"]},
+                 "name": "Corporal Pell", "title": "Armourer", "sprite": "npc_deserter",
+                 "line": "Pell. Ex-Legion. I sell what my company doesn't need now. Friend's price for the one who sent me back."}
+    },
+
+    "bookseller": {
+      "name": "Aldous Vellum",
+      "title": "Bookseller",
+      "sprite": "trader_bookseller", "sprite_fallback": "npc_scholar",
+      "lore": "A scribe who copies the writing off the dungeon walls and sells it to anyone who will pay for words. He has been sneezing since the third floor and refuses to discuss it.",
+      "stock": [
+        {"class": "scroll", "picks": 3}, {"class": "spellbook", "picks": 1}
+      ],
+      "stock_size": [[1, 100, 4]],
+      "markup": 1.1,
+      "purse": 0.6,
+      "buys": ["scroll", "spellbook"],
+      "services": ["id_retry", "map"],
+      "lines": {
+        "greet": ["Quietly, please. The books are sleeping.",
+                  "Every wall down here is a page, if you can read it. I can. For a fee.",
+                  "That spellbook bit a man. Fair price, though."],
+        "bought": "Read it twice. Then read it again.",
+        "sold": "Oh, that's a good one. ACHOO. Sorry. A good one.",
+        "broke": "Words are cheap. Mine are not.",
+        "refuse": "I deal in words. That has none in it.",
+        "purse_empty": "My purse is as empty as a blank page.",
+        "sold_out": "I've nothing left to sell you but advice: read more."
+      },
+      "friend": {"person": "helena", "when": {"deeds_all": ["saved.helena"]},
+                 "name": "Helena Marsh", "title": "Cartographer and Bookseller", "sprite": "npc_injured_scholar",
+                 "line": "Twelve years and never a bad line, and you're the reason I can still hold the pen. Friend's price."}
+    },
+
+    "abyssal": {
+      "name": "Vesper",
+      "title": "Dealer in the Deep",
+      "sprite": "trader_abyssal", "sprite_fallback": "npc_mystic",
+      "lore": "Nobody knows what Vesper is. Nobody has seen Vesper blink. Vesper takes gold, buys curses, and is very polite about all of it, which is somehow worse.",
+      "stock": [
+        {"class": "accessory", "picks": 2, "unique_first": true}, {"class": "wand", "picks": 2},
+        {"class": "potion", "picks": 2}, {"class": "scroll", "picks": 1}
+      ],
+      "stock_size": [[1, 100, 6]],
+      "markup": 1.5,
+      "purse": 1.5,
+      "buys": "all",
+      "buys_cursed": true,
+      "services": ["cut_curse", "restore"],
+      "lines": {
+        "greet": ["How lovely. A customer with a pulse.",
+                  "Everything here belonged to someone braver than you. Prices reflect that.",
+                  "I buy curses, darling. Especially the ones that bite."],
+        "bought": "It suits you. Most things do, briefly.",
+        "sold": "Mm. It remembers its last owner. I like that in a thing.",
+        "broke": "Oh dear. Poverty. I've heard of it.",
+        "refuse": "No, I don't think so. I have taste.",
+        "purse_empty": "I've spent all I care to on you today.",
+        "sold_out": "All gone. I do love a customer who commits."
+      },
+      "reactions": [
+        {"when": "open_hand", "mult": 1.10, "line": "Generous, aren't you? So am I. I'll generously charge you more."}
+      ]
+    },
+
+    "sutler": {
+      "name": "Old Mags Thorn",
+      "title": "Sutler",
+      "sprite": "trader_sutler", "sprite_fallback": "npc_traveler",
+      "lore": "A sutler follows an army and sells it what it needs. Mags follows heroes down to the gates instead, because heroes pay best the night before a fight. She has buried a lot of customers. She keeps their deposits.",
+      "stock": [
+        {"ids": ["potion_of_healing", "potion_of_extra_healing"], "cat": "potion", "picks": 2},
+        {"class": "potion", "picks": 2}, {"class": "food", "picks": 2},
+        {"class": "scroll", "picks": 1}, {"class": "ammo", "picks": 1},
+        {"gear": "armor", "picks": 1}
+      ],
+      "stock_size": [[1, 100, 7]],
+      "markup": 1.0,
+      "purse": 1.2,
+      "buys": "all",
+      "services": ["repair", "cure", "heal", "porter"],
+      "gate_lines": {
+        "19": "Asterion's below. Bull's head, man's temper, and a maze he knows by heart. Buy healing. Buy string if you can find it.",
+        "39": "Medusa's down there. Don't look at her. I mean it. The last lad who looked is my coat rack now.",
+        "59": "Fafnir. Sleeps on gold he killed his own father for. He won't share. Neither will I, so pay up.",
+        "79": "Fenrir's chained down there. Mostly. 'Mostly' is why I'm still in business."
+      },
+      "lines": {
+        "greet": ["Last stall before the gate. Prices are fair. Heroes are not, generally.",
+                  "Buy now. The dead don't haggle, and you might be dead by teatime."],
+        "bought": "Good. Now you're slightly less likely to die.",
+        "sold": "I'll take it. If you don't come back up, I'll take the rest too.",
+        "broke": "No money? Then you'd better be very good at sums.",
+        "refuse": "I can't sell that on to anyone with sense.",
+        "purse_empty": "Purse is empty. Somebody's deposit will come in, give it a day.",
+        "sold_out": "Cleaned me out. Go on, then. Go and be a legend."
+      },
+      "reactions": [
+        {"when": "open_hand", "mult": 0.90, "line": "I heard what you did for those folk. Mags remembers."}
+      ]
+    }
+  }
+}

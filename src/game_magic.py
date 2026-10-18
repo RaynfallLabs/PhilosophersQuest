@@ -3331,11 +3331,15 @@ class MagicMixin:
     # Identify menu  (i key -- philosophy quiz)
     # ------------------------------------------------------------------
 
-    def _identify_item(self, item):
+    def _identify_item(self, item, backlash: bool = True):
         """ONE philosophy question at the item's id_tier. Right = the item
         is FULLY identified (name, BUC, enchant, stats, lore). Wrong = the
         Shard's backlash stuns the kid. No partial levels, no resume math,
         no mastery — see items.item_id_tier for where the tier comes from.
+
+        ``backlash=False``: a scribe sits at the hero's elbow (the bookseller's
+        paid service, game_traders.py). The question is the same; a wrong
+        answer costs only the fee, no stun.
         """
         display = self._bare_name(item)
         # Chain-equip passive: identify_one_per_floor_free (Cloak of Odin
@@ -3389,17 +3393,22 @@ class MagicMixin:
                 self.add_message(
                     f"You ponder the {display} but its nature eludes you.",
                     'warning')
-                # Backlash from the Shard: a wrong answer stuns the kid.
-                # Standard status rules apply. Successor to the old
-                # zero-chain confusion backlash — a blind attempt must
-                # carry a cost (per user 2026-05-29).
-                from status_effects import apply_penalty
-                # +1: this turn's own tick. (add_effect capped this at 3.)
-                apply_penalty(self.player, 'stunned', 10 + 1)
-                self.add_message(
-                    "The Shard turns cold in your palm. Backlash floods "
-                    "your mind — you are Stunned (10 turns).",
-                    'danger')
+                if not backlash:
+                    self.add_message(
+                        "The scribe catches your elbow before the Shard can bite. "
+                        "No backlash, this time.", 'info')
+                else:
+                    # Backlash from the Shard: a wrong answer stuns the kid.
+                    # Standard status rules apply. Successor to the old
+                    # zero-chain confusion backlash — a blind attempt must
+                    # carry a cost (per user 2026-05-29).
+                    from status_effects import apply_penalty
+                    # +1: this turn's own tick. (add_effect capped this at 3.)
+                    apply_penalty(self.player, 'stunned', 10 + 1)
+                    self.add_message(
+                        "The Shard turns cold in your palm. Backlash floods "
+                        "your mind — you are Stunned (10 turns).",
+                        'danger')
             self._advance_turn()
 
         self.quiz_engine.start_quiz(

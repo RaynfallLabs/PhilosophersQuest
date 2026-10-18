@@ -825,9 +825,19 @@ POTION = {
 def apply(data: dict) -> list[str]:
     log = []
     for mid, d in NEW.items():
-        if data.get(mid) != d:
+        want = dict(d)
+        cur = data.get(mid)
+        # What a creature carries is decided by tools/balance/gold_by_lore.py
+        # (economy refactor 2026-10-17, gold by lore): keep its gold and purse.
+        if isinstance(cur, dict) and isinstance(want.get('treasure'), dict):
+            tr = dict(want['treasure'])
+            for k in ('gold', 'purse'):
+                if k in (cur.get('treasure') or {}):
+                    tr[k] = cur['treasure'][k]
+            want['treasure'] = tr
+        if cur != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
-            data[mid] = dict(d)
+            data[mid] = want
     for mid, fields in RETUNE.items():
         cur = data[mid]
         for k, v in fields.items():

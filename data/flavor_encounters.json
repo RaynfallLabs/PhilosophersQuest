@@ -439,10 +439,11 @@
         }
       },
       {
-        "label": "Buy a restorative potion (45g)",
+        "label": "Buy a restorative potion",
         "cost": {
           "type": "gold",
-          "amount": 45
+          "share": "potion",
+          "markup": 0.75
         },
         "reward": {
           "type": "hp_restore_pct",
@@ -478,10 +479,11 @@
     "text": "A goblin wearing a vest with far too many pockets materializes from behind a stalagmite, arms spread wide. \"HELLO CUSTOMER! Brix has very good items! Definitely not cursed! Most of them! Best prices in dungeon, guaranteed by Brix personally!\"",
     "options": [
       {
-        "label": "Buy his \"special item\" (20g)",
+        "label": "Buy his \"special item\"",
         "cost": {
           "type": "gold",
-          "amount": 20
+          "share": "accessory",
+          "markup": 0.6
         },
         "reward": {
           "type": "random_item",
@@ -495,10 +497,11 @@
         }
       },
       {
-        "label": "Buy a wand from him (40g)",
+        "label": "Buy a wand from him",
         "cost": {
           "type": "gold",
-          "amount": 40
+          "share": "wand",
+          "markup": 1.2
         },
         "reward": {
           "type": "random_item",
@@ -534,10 +537,11 @@
     "text": "A portly man with a tipped-over handcart blocks the corridor, muttering furiously as he tries to restack a pile of rolled-up maps. \"Thirty years in the trade and I still can't read these wretched things! You there, maybe we can help each other out?\"",
     "options": [
       {
-        "label": "Buy a potion from him (30g)",
+        "label": "Buy a potion from him",
         "cost": {
           "type": "gold",
-          "amount": 30
+          "share": "potion",
+          "markup": 0.9
         },
         "reward": {
           "type": "random_item",
@@ -551,10 +555,11 @@
         }
       },
       {
-        "label": "Buy a scroll from him (25g)",
+        "label": "Buy a scroll from him",
         "cost": {
           "type": "gold",
-          "amount": 25
+          "share": "scroll",
+          "markup": 0.9
         },
         "reward": {
           "type": "random_item",
@@ -1086,10 +1091,11 @@
         }
       },
       {
-        "label": "Buy a tested potion (35g)",
+        "label": "Buy a tested potion",
         "cost": {
           "type": "gold",
-          "amount": 35
+          "share": "potion",
+          "markup": 0.9
         },
         "reward": {
           "type": "random_item",
@@ -4181,7 +4187,8 @@
         "label": "Buy a bowl (fills you up)",
         "cost": {
           "type": "gold",
-          "amount": 40
+          "share": "food",
+          "markup": 1.0
         },
         "reward": {
           "type": "sp_restore_pct",
@@ -4198,7 +4205,8 @@
         "label": "Buy extra provisions",
         "cost": {
           "type": "gold",
-          "amount": 60
+          "share": "food",
+          "markup": 1.2
         },
         "reward": {
           "type": "random_item",
@@ -4237,17 +4245,37 @@
         "label": "Pay her to sharpen your weapon",
         "cost": {
           "type": "gold",
-          "amount": 80
+          "service": "sharpen",
+          "markup": 0.9
         },
         "reward": {
-          "type": "enchant_weapon",
-          "amount": 1
+          "type": "service",
+          "service": "sharpen"
         },
         "outcome": "Brunhild works with practiced efficiency, her hammer ringing in short, precise strokes. When she hands the weapon back, it catches the torchlight differently, sharper, hungrier. \"Now that's a proper tool,\" she mutters approvingly.",
         "chronicle": "Paid a dwarven smith named Brunhild to fix my weapon. She called it sad. It is less sad now.",
         "road": {
           "id": "flv_dwarven_smith_marta.sharpen",
           "hint": "A smith who insults your blade is about to improve it."
+        }
+      },
+      {
+        "label": "Have her beat out the rust and the acid pits",
+        "cost": {
+          "type": "gold",
+          "service": "repair",
+          "points": 2,
+          "markup": 0.9
+        },
+        "reward": {
+          "type": "service",
+          "service": "repair"
+        },
+        "outcome": "Brunhild clicks her tongue at every pit and freckle of rust, then takes them out one by one with a file, a burnisher and a lot of opinions. \"Rust is just metal that's stopped caring,\" she says. \"I care for it.\"",
+        "chronicle": "Brunhild the smith took the rust out of my gear and lectured me the whole time. Worth it.",
+        "road": {
+          "id": "flv_dwarven_smith_marta.repair",
+          "hint": "What rust takes, a good smith can give back."
         }
       },
       {
@@ -4281,7 +4309,8 @@
         "label": "Trade gold for her oddments",
         "cost": {
           "type": "gold",
-          "amount": 55
+          "share": "accessory",
+          "markup": 0.5
         },
         "reward": {
           "type": "random_item",
@@ -4341,10 +4370,11 @@
         }
       },
       {
-        "label": "Buy one of her scrolls (55 gold)",
+        "label": "Buy one of her scrolls",
         "cost": {
           "type": "gold",
-          "amount": 55
+          "share": "scroll",
+          "markup": 1.0
         },
         "reward": {
           "type": "random_item",
@@ -4659,13 +4689,32 @@
         "label": "Buy a curative compound",
         "cost": {
           "type": "gold",
-          "amount": 75
+          "share": "potion",
+          "markup": 1.2
         },
         "reward": {
           "type": "random_item",
           "category": "potion"
         },
         "outcome": "They produce a small vial from a rack of identical vials and label it in tiny, precise handwriting. \"Take with water. Do not take with alcohol. Do not take with other potions unless you understand what you're doing, which you probably don't.\" Charming bedside manner."
+      },
+      {
+        "label": "Have the Doctor treat what ails you",
+        "cost": {
+          "type": "gold",
+          "service": "cure",
+          "markup": 1.2
+        },
+        "reward": {
+          "type": "service",
+          "service": "cure"
+        },
+        "outcome": "\"Fascinating. Disgusting, but fascinating.\" The Doctor works through you symptom by symptom with tongs, tinctures and a running commentary. Whatever you had, you no longer have it. You suspect it is now in a jar.",
+        "chronicle": "Paid the beaked Doctor to cure me. He kept a sample. I did not ask of what.",
+        "road": {
+          "id": "flv_plague_doctor.cure",
+          "hint": "A doctor of plagues knows a cure for most of them."
+        }
       },
       {
         "label": "\"I'm fine. Good day, Doctor.\"",
@@ -4995,7 +5044,8 @@
         "label": "Buy a scroll from her notes",
         "cost": {
           "type": "gold",
-          "amount": 90
+          "share": "scroll",
+          "markup": 1.0
         },
         "reward": {
           "type": "random_item",
@@ -6408,7 +6458,8 @@
         "label": "Buy the \"Definitely Not Cursed\" item",
         "cost": {
           "type": "gold",
-          "amount": 110
+          "share": "accessory",
+          "markup": 0.5
         },
         "reward": {
           "type": "random_item",
@@ -6425,7 +6476,8 @@
         "label": "Buy the Probably Good Potion",
         "cost": {
           "type": "gold",
-          "amount": 80
+          "share": "potion",
+          "markup": 1.3
         },
         "reward": {
           "type": "random_item",
@@ -6757,7 +6809,8 @@
         "reward": {
           "type": "gold",
           "min": 350,
-          "max": 450
+          "max": 450,
+          "purse_pct": 25
         },
         "outcome": "He wraps it in silk with genuine love. \"A wise choice,\" he says. \"Saints don't eat.\"",
         "deeds": [
@@ -6785,7 +6838,8 @@
         "label": "Buy one of his vials instead",
         "cost": {
           "type": "gold",
-          "amount": 60
+          "share": "potion",
+          "markup": 1.2
         },
         "reward": {
           "type": "random_potion"
@@ -7068,7 +7122,8 @@
         "label": "Buy the unknown constellation",
         "cost": {
           "type": "gold",
-          "amount": 180
+          "share": "wand",
+          "markup": 1.2
         },
         "reward": {
           "type": "random_item",
@@ -7263,7 +7318,8 @@
         "reward": {
           "type": "gold",
           "min": 80,
-          "max": 120
+          "max": 120,
+          "purse_pct": 10
         },
         "outcome": "The soldiers thank you. They do not look at you while they do it. They find her at the grave, finished, waiting.",
         "deeds": [
@@ -7605,7 +7661,8 @@
         "reward": {
           "type": "gold",
           "min": 100,
-          "max": 150
+          "max": 150,
+          "purse_pct": 10
         },
         "outcome": "Snerk opens a fourth column, labelled YOU. \"Pleasure doing business.\"",
         "deeds": [
@@ -7916,7 +7973,8 @@
         "reward": {
           "type": "gold",
           "min": 120,
-          "max": 180
+          "max": 180,
+          "purse_pct": 10
         },
         "outcome": "The pilgrims empty their purses into his cap, weeping with joy. He splits it with you very fairly, which is the only honest thing he does all day.",
         "deeds": [
@@ -8062,7 +8120,8 @@
             {
               "type": "gold",
               "min": 200,
-              "max": 300
+              "max": 300,
+              "purse_pct": 25
             },
             {
               "type": "specific_item",
@@ -8852,10 +8911,11 @@
     "text": "A merchant in a wine merchant's apron is sitting on a crate labeled FINE VINTAGES, looking at a map upside-down with tremendous concentration. He does not hear you until you are quite close. \"GAH. Oh. Sorry. Sorry. Do you, is this the 40th floor? I was told there was a marketplace on the 40th floor. I am very much getting the sense it was not on the 40th floor.\"",
     "options": [
       {
-        "label": "Buy a bottle from him (100 gold)",
+        "label": "Buy a bottle from him",
         "cost": {
           "type": "gold",
-          "amount": 100
+          "share": "potion",
+          "markup": 0.75
         },
         "reward": {
           "type": "hp_restore_pct",
@@ -8925,10 +8985,11 @@
         }
       },
       {
-        "label": "Buy her regeneration salve (200 gold)",
+        "label": "Buy her regeneration salve",
         "cost": {
           "type": "gold",
-          "amount": 200
+          "share": "potion",
+          "markup": 1.5
         },
         "reward": {
           "type": "hp_restore_pct",
@@ -10149,7 +10210,8 @@
         "label": "Buy something from his definitely-fine crate",
         "cost": {
           "type": "gold",
-          "amount": 200
+          "share": "potion",
+          "markup": 1.5
         },
         "reward": {
           "type": "random_item",
@@ -10221,6 +10283,23 @@
         "outcome": "It administers something it calls a \"musculoskeletal optimization procedure,\" which involves exactly three minutes of targeted pressure to specific points that you didn't know you had. You feel the deep exhaustion of eighty-some floors drain out of you like water from a wrung cloth."
       },
       {
+        "label": "Request a restoration of drained strength",
+        "cost": {
+          "type": "gold_pct",
+          "amount": 15
+        },
+        "reward": {
+          "type": "service",
+          "service": "restore"
+        },
+        "outcome": "\"DEFICIT DETECTED. RESTORING.\" The golem lays two cold stone palms on you and holds very still. Something that the dark took from you, piece by piece, floods back all at once.",
+        "chronicle": "A stone golem gave me back what the drainers took. It did not say how. I did not ask.",
+        "road": {
+          "id": "flv_practical_golem_medic.restore",
+          "hint": "What a drain takes is not always gone for good."
+        }
+      },
+      {
         "label": "\"I am fine. Thank you.\"",
         "outcome": "It processes this for a moment. \"ASSESSMENT INDICATES STATEMENT INACCURATE. HOWEVER: PATIENT AUTONOMY PROTOCOLS APPLY.\" It steps back into its alcove. \"SAFE TRAVELS, SUBJECT.\" It says this with something that sounds, against all probability, like it means it."
       }
@@ -10257,7 +10336,10 @@
           "type": "enchant_weapon",
           "amount": 1
         },
-        "outcome": "He shakes his head when you offer coin, but you press it into his hands anyway. He looks at it for a long moment, then presses his sword hilt to yours. \"Take the edge from Berengar's blade. Let it taste whatever lies below.\" Your weapon gleams with new purpose."
+        "outcome": "He shakes his head when you offer coin, but you press it into his hands anyway. He looks at it for a long moment, then presses his sword hilt to yours. \"Take the edge from Berengar's blade. Let it taste whatever lies below.\" Your weapon gleams with new purpose.",
+        "deeds": [
+          "aid.berengar"
+        ]
       },
       {
         "label": "Sit with him a while",
@@ -10304,7 +10386,8 @@
         "label": "Buy something from his stock",
         "cost": {
           "type": "gold",
-          "amount": 350
+          "share": "potion",
+          "markup": 1.5
         },
         "reward": {
           "type": "random_item",
@@ -10321,7 +10404,8 @@
         "label": "Buy a scroll from him",
         "cost": {
           "type": "gold",
-          "amount": 300
+          "share": "scroll",
+          "markup": 1.5
         },
         "reward": {
           "type": "random_item",

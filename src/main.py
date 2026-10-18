@@ -82,6 +82,7 @@ from game_combat import CombatMixin
 from game_divine import DivineMixin
 from item_actions import ItemActionsMixin
 from game_road import RoadMixin
+from game_traders import TraderMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -191,7 +192,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin):
+           SetneMixin, TraderMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -207,6 +208,26 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # And any one frame, however long (a title-bar drag, a stall, a slow
     # disk), advances the quiz clock by at most this much.
     MAX_QUIZ_DT = 0.25
+
+    # The purse. Every rise is booked in ``gold_earned`` (found, rewarded,
+    # sold), shown on the ending screen as "Gold Earned" beside the purse
+    # still carried (it read "Gold Collected" and showed the purse,
+    # ECONOMY_REFACTOR_PROPOSAL S7). The hero's own gold coming back (a pile
+    # they dropped, what a thief gave back, a loaded save) is set with
+    # _set_gold_quietly and is not counted.
+    @property
+    def player_gold(self) -> int:
+        return self.__dict__.get('_player_gold', 0)
+
+    @player_gold.setter
+    def player_gold(self, value) -> None:
+        old = self.__dict__.get('_player_gold', 0)
+        if value > old:
+            self.__dict__['gold_earned'] = self.__dict__.get('gold_earned', 0) + (value - old)
+        self.__dict__['_player_gold'] = value
+
+    def _set_gold_quietly(self, value) -> None:
+        self.__dict__['_player_gold'] = value
 
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -270,6 +291,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.encyclopedia_entries: list  = []   # current entry list
         self._encyclopedia_entry: object = None # currently viewed entry detail
         self.player_gold        = 0
+        self.gold_earned        = 0
         self.turn_count         = 0
         self.dungeon_level      = 1
         self.death_pursues      = False   # True once player ascends L100 with Stone
@@ -437,6 +459,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # replace the two legacy schedulers above. Rolled off the shared
         # stream, like the Emberpup and the Black Knight.
         self._init_road()
+        # The run's traders (traders.py): planned from the Road's seed on
+        # first use, placed on first arrival (game_traders.py).
+        self._traders = None
 
         self._new_level(1)
         # Per-run trackers for chain-equip passives. Per-floor charges are
@@ -818,7 +843,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._legacy_save_path = state.get('__loaded_from__')
         self.turn_count    = state['turn_count']
         self.dungeon_level = state['dungeon_level']
-        self.player_gold   = state['player_gold']
+        self._set_gold_quietly(state['player_gold'])
+        self.gold_earned   = state.get('gold_earned', state['player_gold'])
         self.level_mgr     = state['level_mgr']
         # The registry of named items already seen this run belongs to THIS
         # manager. main() builds a throwaway Game before load_state, whose own
@@ -840,6 +866,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # for the rest of the run (a disabled Road with a fresh seed).
         import road as _road_mod
         self._road = _road_mod.ensure_state(state.get('_road'))
+        import traders as _traders_mod
+        self._traders = _traders_mod.ensure_plan(state.get('_traders'))   # None: rolled on first use
         # Abaddon quest state
         self.seals_broken   = state.get('seals_broken', set())
         self.heavenly_host_active = state.get('heavenly_host_active', False)
@@ -1708,6 +1736,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._maybe_spawn_black_knight(new_level)
             self._maybe_spawn_setne_tomb(new_level)
             self._maybe_place_duck_of_doom(new_level)
+            self._maybe_spawn_trader(new_level)      # last: it keeps clear of the rest
         else:
             # Revisit: spawn triggered NPCs if player now has the trigger item
             # (handles the case where player missed the item on first pass)
@@ -4858,11 +4887,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     rust_targets.append(slot)
             if rust_targets:
                 victim = random.choice(rust_targets)
-                if getattr(victim, 'enchant_bonus', 0) > -3:
-                    victim.enchant_bonus = getattr(victim, 'enchant_bonus', 0) - 1
-                    self.add_message(f"Your {victim.name} rusts! (-1 enchantment)", 'danger')
+                # As the player knows it: victim.name printed an unidentified
+                # item's true name.
+                from items import wear_down
+                if wear_down(victim):
+                    self.add_message(f"Your {self._bare_name(victim)} rusts! (-1 enchantment)", 'danger')
                 else:
-                    self.add_message(f"Your {victim.name} is corroded but holds together.", 'warning')
+                    self.add_message(f"Your {self._bare_name(victim)} is corroded but holds together.", 'warning')
             else:
                 self.add_message("The water washes over you harmlessly.", 'info')
         elif trap_type == 'polymorph':
@@ -5565,13 +5596,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # Draupnir: double gold pickups. Found gold only: a pile the
             # player put down doubled each time it was picked up again
             # (100 gold became 102,400 in ten drops).
-            for _acc in (() if getattr(item, '_dropped_by_player', False)
+            from items import is_found_gold as _found
+            for _acc in (() if not _found(item)
                          else self.player.equipped_accessories):
                 _gm = getattr(_acc, 'gold_multiplier', 0)
                 if _gm > 0:
                     _gold_amt = int(_gold_amt * _gm)
                     break
-            self.player_gold += _gold_amt
+            if _found(item):
+                self.player_gold += _gold_amt
+            else:
+                self._set_gold_quietly(self.player_gold + _gold_amt)   # the hero's own
             self.ground_items.remove(item)
             self.add_message(f"You pick up {_gold_amt:,} gold coins.", 'loot')
             _snd.play('gold')
@@ -8522,31 +8557,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
 
     # ------------------------------------------------------------------
-    # Merchant shop  (t key)
+    # Merchant shop  (Y key)
     # ------------------------------------------------------------------
 
     def _open_shop(self):
-        """Open the merchant shop if a MerchantNPC is adjacent."""
-        from mystery_system import MerchantNPC
-        px, py = self.player.x, self.player.y
-        merchant = next(
-            (gi for gi in self.ground_items
-             if isinstance(gi, MerchantNPC)
-             and abs(gi.x - px) <= 1 and abs(gi.y - py) <= 1
-             and not gi.sold_out),
-            None
-        )
-        if merchant is None:
-            self.add_message("No merchant nearby. (Y opens the shop when one stands beside you.)", 'info')
-            return
-        self._shop_merchant = merchant
-        self._shop_selection = 0
-        # Haggling is remembered on the goods themselves. It used to reset
-        # every time the shop was opened: close, reopen, haggle again, and
-        # any item could be walked down to 1 gold.
-        self._shop_haggled = {i for i, it in enumerate(merchant.stock)
-                              if getattr(it, '_haggled', False)}
-        self.state = STATE_SHOP
+        """Open the shop of a trader standing beside the hero (game_traders.py:
+        Buy, Sell and Services). A trader who has sold everything still buys.
+        Haggling is remembered on the goods themselves (it used to reset each
+        time the shop opened, so any item could be walked down to 1 gold)."""
+        self._trader_open_adjacent()
 
     @staticmethod
     def _haggle_discount_for_chain(chain: int) -> int:
@@ -8568,7 +8587,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         m = self._shop_merchant
         item = m.stock[sel]
         iname = self._bare_name(item)            # as the shop shows it
-        original_price = m.prices[sel]
+        # As the shop quotes it (with what the hero's deeds did to his prices).
+        original_price = self._trader_price(sel)
+        _base = m.prices[sel]
         self.add_message(f"You try to haggle over the {iname}...", 'info')
         self.quiz_title = "HAGGLE  --  ECONOMICS"
         self.state = STATE_QUIZ
@@ -8577,14 +8598,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             chain = result.score
             if chain == 0:
                 self.add_message(
-                    f"The merchant is unimpressed. Price stays at {original_price:,} gold.",
+                    f"{getattr(m, 'person', 'The trader')} is unimpressed. Price stays at {original_price:,} gold.",
                     'warning')
             else:
                 discount = self._haggle_discount_for_chain(chain)
-                new_price = self._apply_haggle_discount(original_price, chain)
-                m.prices[sel] = new_price
+                m.prices[sel] = self._apply_haggle_discount(_base, chain)
+                new_price = self._trader_price(sel)
                 self.add_message(
-                    f"The merchant relents! {iname}: {original_price:,} -> {new_price:,} gold ({discount}% off).",
+                    f"{getattr(m, 'person', 'The trader')} relents! {iname}: {original_price:,} -> {new_price:,} gold ({discount}% off).",
                     'success')
             haggled = getattr(self, '_shop_haggled', set())
             haggled.add(sel)

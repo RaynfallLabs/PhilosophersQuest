@@ -1496,7 +1496,7 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     """Spawn items, containers, and lockpicks in dungeon rooms.
 
     ``structures=False`` spawns loot only and skips every floor-level
-    structure (mystery altars, merchant, special rooms, traps, quest
+    structure (mystery altars, special rooms, traps, quest
     shrines / altars) -- used by the hidden-chamber loot pass.
     """
     from items import (load_items, Container, pick_random_weapon_for_floor, pick_random_armor_for_floor,
@@ -1630,6 +1630,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         # v2.6.6: trapped/trap_chance retired. Every failed pick fires a trap
         # keyed to CHEST tier via container_system.pick_trap_for_chest, so the
         # per-chest trap-roll at spawn is no longer needed.
+        # Templated chests carry gold_share (container_system.chest_gold);
+        # gold_range is kept only for a template that still writes one.
         gold_range = tdef.get('gold_range', [0, 0])
         defn = {
             'id':           tid,
@@ -1736,8 +1738,8 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
             sphere_room = rng.choice(rooms[1:] or rooms)
             _place_one([sphere], sphere_room, dungeon, ground_items, rng)
 
-    # Everything below builds floor-level STRUCTURES (mystery altars, the
-    # merchant, special rooms, vault gold, traps, quest shrines and altars).
+    # Everything below builds floor-level STRUCTURES (mystery altars,
+    # special rooms, coin and lairs, vault gold, traps, quest shrines and altars).
     # They must be built exactly once per floor. The hidden-chamber loot
     # pass calls spawn_items a second time for one room and passes
     # structures=False to stop here.
@@ -1756,14 +1758,10 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
     except Exception:
         pass  # mystery system is optional; don't crash dungeon gen on error
 
-    # -- Travelling merchant ---------------------------------------------------
-    try:
-        from mystery_system import spawn_merchant
-        merchant = spawn_merchant(level, rooms, dungeon, ground_items, rng)
-        if merchant:
-            ground_items.append(merchant)
-    except Exception:
-        pass  # merchant is optional; don't crash dungeon gen on error
+    # -- Traders ----------------------------------------------------------------
+    # Not placed here any more: the run plans its traders once (traders.py,
+    # from the Road's seed) and game_traders.py places one on first arrival,
+    # so a trader draws nothing from this floor's random stream.
 
     # -- Special rooms (up to 2 per floor) -------------------------------------
     # First-roll: 40% chance. Second-roll: 25% chance (after first succeeded).
@@ -1942,6 +1940,41 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
             c = pick_container()
             if c:
                 _place_one([c], special_room, dungeon, ground_items, rng)
+
+    # -- Coins on the floor, and lairs ------------------------------------------
+    # Gold by lore (ECONOMY_REFACTOR_PROPOSAL D1): beasts carry no coin, so
+    # the coin lies where people lost it. A few rooms hold a small pile
+    # (a dropped purse, a dead man's pay), and a monster den or a barracks
+    # holds a lair's heap. Drawn from a private generator keyed on the
+    # floor generator's state, so the shared stream and every layout and
+    # item roll after this are exactly as before.
+    import economy
+    from items import add_gold_to_tile
+    _coin_rng = random.Random(hash((tuple(rng.getstate()[1][:8]), level, 0xC015)))
+    _special_centres = set(dungeon.special_rooms)
+    for _room in rooms[1:]:
+        if _room.center in _special_centres or _coin_rng.random() >= economy.COIN_PILE_CHANCE:
+            continue
+        _free = [(tx, ty) for tx, ty in _room.inner_tiles()
+                 if dungeon.tiles[ty][tx] == FLOOR
+                 and not any(i.x == tx and i.y == ty for i in ground_items)]
+        if _free:
+            gx, gy = _coin_rng.choice(_free)
+            add_gold_to_tile(ground_items, economy.roll_share(_coin_rng, level,
+                                                              economy.COIN_PILE_SHARE), gx, gy)
+    for (cx, cy), _kind in list(dungeon.special_rooms.items()):
+        if _kind not in ('monster_den', 'barracks'):
+            continue
+        _room = next((r for r in rooms if r.center == (cx, cy)), None)
+        if _room is None:
+            continue
+        _free = [(tx, ty) for tx, ty in _room.inner_tiles()
+                 if dungeon.tiles[ty][tx] == FLOOR
+                 and not any(i.x == tx and i.y == ty for i in ground_items)]
+        if _free:
+            gx, gy = _coin_rng.choice(_free)
+            add_gold_to_tile(ground_items, economy.roll_share(_coin_rng, level,
+                                                              economy.LAIR_GOLD_SHARE), gx, gy)
 
     # -- Vault items (gold piles) -----------------------------------------------
     # Total vault gold is capped at 2000 — the raw rng.randint(level*5, level*15)

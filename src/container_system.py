@@ -134,6 +134,30 @@ def attempt_lockpick(player, container, quiz_engine, dungeon, monsters, on_compl
 # Outcome handlers
 # ---------------------------------------------------------------------------
 
+def chest_gold(container, level: int, rng) -> int:
+    """The gold in a chest opened on floor ``level``.
+
+    A chest from a template carries ``gold_share`` in chest_templates.json:
+    a share of one floor's income (economy.floor_income), like every other
+    written gold source. Its gold was the one written amount the 2026-10-05
+    pricing pass left unscaled, so a chest paid 2-10% of a floor
+    (ECONOMY_REFACTOR_PROPOSAL D1). A full success rolls in the top
+    of the range (70% to 100% of the way up). A chest without a template
+    (an old save, a scripted box) keeps its written [min, max]."""
+    import economy
+    from items import get_chest_template
+    tpl = get_chest_template(getattr(container, 'template_id', '') or '') or {}
+    share = tpl.get('gold_share')
+    if isinstance(share, (list, tuple)) and len(share) == 2 and share[1] > 0:
+        lo, hi = float(share[0]), float(share[1])
+        frac = lo + (hi - lo) * rng.uniform(0.7, 1.0)
+        return economy.nice(economy.floor_income(level) * frac)
+    gmin, gmax = (container.gold[0], container.gold[1]) if getattr(container, 'gold', None) else (0, 0)
+    if gmax > 0:
+        return rng.randint(int(gmin + (gmax - gmin) * 0.7), int(gmax))
+    return 0
+
+
 def _handle_success(player, container, dungeon, on_complete):
     """v2.6.6: success = the chest's full authored haul.
     Gold rolls at the TOP of the range (you did it right)."""
@@ -141,14 +165,7 @@ def _handle_success(player, container, dungeon, on_complete):
     container.opened = True
     container._gold_bonus_accum = 0
 
-    gmin, gmax = (container.gold[0], container.gold[1]) if container.gold else (0, 0)
-    if gmax > 0:
-        # Full success gets the top of the range (with a small floor at
-        # 70% for variance). Bias upward, unlike the old chain-scaled bias.
-        lo = int(gmin + (gmax - gmin) * 0.7)
-        gold = random.randint(lo, gmax)
-    else:
-        gold = 0
+    gold = chest_gold(container, dungeon.level, random)
 
     loot = _generate_loot_from_template(container, dungeon.level)
     gold += int(getattr(container, '_gold_bonus_accum', 0))

@@ -975,7 +975,7 @@ class EncountersMixin:
         the quiz ends (an exit mid-quiz settles it as a fail)."""
         from encounter_schema import is_quiz
         enc = getattr(self, '_npc_encounter_active', None) or {}
-        self._npc_pay_cost(opt.get('cost'), selected_item)
+        self._npc_pay_cost(opt.get('cost'), selected_item, chosen=True)
         self._npc_mark_spent()
         import chronicle
         chronicle.record_choice(self._deeds_reg(), enc, getattr(self, '_npc_selected_index', None))
@@ -1109,6 +1109,16 @@ class EncountersMixin:
         if o.get('cost') and not is_option:
             self._npc_pay_cost(o['cost'], None)
 
+        # Forgoing gold is a sacrifice only when the gold was real against
+        # the purse the hero carries (D6, economy.forgo_is_real): turning
+        # down pocket change is not virtue.
+        if kind == 'forgo' and karma_delta > 0:
+            _fg = self._forgone_gold(enc)
+            if _fg is not None:
+                import economy
+                if not economy.forgo_is_real(_fg, self.player_gold):
+                    karma_delta = 0
+
         applied = 0
         if gate and karma_delta and kind == karma.LEGACY:
             # Untyped karma has no place once the gate is on; the validator
@@ -1198,6 +1208,39 @@ class EncountersMixin:
                      else getattr(self, '_encountered_npcs', None))
             if spent is not None:
                 spent.discard(enc['tag'])
+
+    # Rewards that are more than gold: forgoing one of these is never
+    # pocket change, whatever the purse.
+    _MATERIAL_NOT_GOLD = frozenset({
+        'random_weapon', 'random_armor', 'random_shield', 'random_accessory', 'random_potion',
+        'random_scroll', 'random_food', 'random_wand', 'random_item', 'random_artifact',
+        'specific_item', 'stat', 'enchant_weapon', 'armor_enchant', 'effect'})
+
+    def _forgone_gold(self, enc: dict):
+        """The most gold another option of this encounter would have paid
+        (at the hero's purse now), or None when what was forgone is more
+        than gold (an item, a stat) or no other option pays gold."""
+        import economy
+        chosen = getattr(self, '_npc_selected_index', None)
+        best = None
+        for i, opt in enumerate((enc or {}).get('options') or ()):
+            if i == chosen:
+                continue
+            parts = []
+            branch = opt.get('pass') if isinstance(opt.get('pass'), dict) else {}
+            for rw in (opt.get('reward'), opt.get('bonus_reward'), branch.get('reward')):
+                if isinstance(rw, dict):
+                    parts.extend((rw.get('rewards') or []) if rw.get('type') == 'multi' else [rw])
+            if any(isinstance(p, dict) and p.get('type') in self._MATERIAL_NOT_GOLD for p in parts):
+                return None
+            gold = 0.0
+            for p in parts:
+                if isinstance(p, dict) and p.get('type') == 'gold':
+                    amt = p.get('amount', (p.get('min', 0) + p.get('max', 0)) / 2.0)
+                    gold += economy.purse_scaled(amt, self.player_gold, p.get('purse_pct'))
+            if gold > 0:
+                best = gold if best is None else max(best, gold)
+        return best
 
     def _people_lines_text(self, spec) -> str:
         """An outcome's ``people_lines``: ``{"table": "gate", "max": 6,
@@ -1467,8 +1510,12 @@ class EncountersMixin:
                         break
         return removed
 
-    def _npc_pay_cost(self, cost, selected_item=None):
-        """Pay an option's cost (or an outcome's extra loss)."""
+    def _npc_pay_cost(self, cost, selected_item=None, *, chosen: bool = False):
+        """Pay an option's cost (or an outcome's extra loss).
+
+        ``chosen``: the hero picked this cost (the option's own). A
+        ``gold_pct`` cost then takes economy.pct_cost, which has a floor; a
+        loss that lands on the hero takes a plain share of what is there."""
         # ── Apply cost ────────────────────────────────────────────
         if cost:
             ctype = cost['type']
@@ -1479,7 +1526,8 @@ class EncountersMixin:
                 _given = False
                 for sub in cost.get('costs') or ():
                     _mine = (not _given) and bool(get_inventory_filter(sub))
-                    self._npc_pay_cost(sub, selected_item if _mine else None)
+                    self._npc_pay_cost(sub, selected_item if _mine else None,
+                                       chosen=chosen)
                     _given = _given or _mine
                 return
             if ctype == 'armor_enchant':
@@ -1591,7 +1639,12 @@ class EncountersMixin:
                 self.player.hp = min(self.player.hp, self.player.max_hp)
             elif ctype == 'gold_pct':
                 from npc_encounters import pct_loss
-                self.player_gold = max(0, self.player_gold - pct_loss(self.player_gold, cost['amount'], 0))
+                if chosen:
+                    import economy
+                    take = economy.pct_cost(self.player_gold, cost['amount'], self.dungeon_level)
+                else:
+                    take = pct_loss(self.player_gold, cost['amount'], 0)
+                self.player_gold = max(0, self.player_gold - take)
             elif ctype == 'stat':
                 # Lost stat points: a real consequence of blind help.
                 stat = cost['stat']
@@ -1610,6 +1663,11 @@ class EncountersMixin:
                 amount = reward['amount']
             else:
                 amount = random.randint(reward['min'], reward['max'])
+            if reward.get('purse_pct'):
+                # A deep temptation bites at every depth (D6): the written
+                # sum, or that share of what the hero carries if more.
+                import economy
+                amount = economy.purse_scaled(amount, self.player_gold, reward['purse_pct'])
             self.player_gold += amount
             self.add_message(f"+{amount:,} gold!", 'loot')
 
@@ -1646,6 +1704,14 @@ class EncountersMixin:
                 grant_identified(self, item)
                 self.add_message(f"Received: {self._display_name(item)}", 'loot')
                 self._give_item(item)
+
+        elif rtype == 'service':
+            # A person's trade (D3: a smith, a physician): game_traders.
+            sid = reward.get('service', '')
+            who = ((getattr(self, '_npc_encounter_active', None) or {}).get('person') or {}).get('name') \
+                or 'They'
+            targets = self._service_targets(sid)
+            self._render_service(sid, targets[0] if targets else None, who=who)
 
         elif rtype == 'gold_pct':
             # A share of the hero's own purse back (a slaver's change).

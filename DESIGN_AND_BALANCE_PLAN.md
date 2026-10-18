@@ -45,7 +45,26 @@ Built, tuned and committed locally. Not pushed. Not play-tested: the outcome fig
 - **How long a deep attack feels.** The clock is 30 to 43 seconds from floor 60, and a deep floor asks about 380 sums. Space strikes early.
 - **Real answer speed.** If your kids are faster or slower than my guesses on tier 3 to 5 sums, the deep floors move with them. `tools/balance/scale_monsters.py` re-scales in one command once we know.
 
+## 0a. The economy refactor (2026-10-17)
+
+Built overnight from ECONOMY_REFACTOR_PROPOSAL.md; the full account, the
+before/after curves and every call for Brandon to review are in
+ECONOMY_REFACTOR_REPORT.md, and the system reference is
+`docs/systems/economy.md`. In short:
+
+- **Gold by lore, not per kill.** Beasts, oozes, constructs and spirits carry no coin; people, thieves, the buried dead and dragons do (`tools/balance/gold_by_lore.py` writes it into `monsters.json`). The coin moved into room coin piles, lairs, chests priced from the income line, and boss hoards. Floors 1-10 pay what they did; floors 20-99 pay about 60%.
+- **The income line is refit:** 130 + 76 x floor (it was 150 + 90 x floor, and the generator had drifted to 1.35-1.55 times that deep).
+- **Named traders** (Grindle, Mother Wort, Brannoc, Aldous Vellum, Vesper; Old Mags Thorn's gate camp on 19, 39, 59 and 79), planned once a run from the Road's seed. Prices follow an item's worth. They buy at 20-25% of their own price, up to their purse; a buy/sell loop cannot make gold.
+- **Services from people:** mend rust and acid, sharpen, cut a curse off, cure, restore drained stats, heal, identify with a scribe (no backlash), maps, porters.
+- **Purse shares:** a chosen `gold_pct` cost has a floor (no more free choices with an empty purse); late temptations offer a share of the purse; forgoing pocket change scores no karma.
+- **Deeds:** wronged merchants raise every price, saved friends come back as traders, kept oaths earn a free thing, charity has consequences but no karma.
+- **Not built (Brandon's call):** coin weight (D2), insight draughts (D8), shoplifting.
+- **Ten SAFE-NOW fixes** (S1-S10) and the rust trap's name leak. Not play-tested.
+
 ## 0b. The gold economy (2026-10-05)
+
+*Superseded in part by 0a: the income line, chest gold and the single
+merchant below are the 2026-10-05 state.*
 
 One module, `src/economy.py`, now holds every gold rule.
 

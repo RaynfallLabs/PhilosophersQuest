@@ -350,11 +350,24 @@ def _scorch_random_gear(player) -> tuple[str, str] | None:
     _, item = random.choice(targets)
     from hud_context import item_bare_name
     name = item_bare_name(player, item)      # as the player knows it
-    eb = getattr(item, 'enchant_bonus', 0)
-    if eb > -3:
-        item.enchant_bonus = eb - 1
+    from items import wear_down
+    if wear_down(item):
         return (f'Fire scorches your {name}! (-1 enchantment)', 'danger')
     return (f'Fire licks at your {name}, but it holds.', 'warning')
+
+
+def note_stat_drain(player, stat: str, amount: int = 1) -> None:
+    """Remember a stat point a drain, a poison or a disease took, so a
+    physician can give it back (the 'restore' service, game_traders.py).
+    Strength lost this way is kept in ``_str_lost_to_disease``, which the
+    Potion of Restore Strength reads; everything else in ``drained``."""
+    if amount <= 0:
+        return
+    if stat == 'STR':
+        player._str_lost_to_disease = int(getattr(player, '_str_lost_to_disease', 0) or 0) + amount
+        return
+    d = player.__dict__.setdefault('drained', {})
+    d[stat] = int(d.get(stat, 0) or 0) + amount
 
 
 def _corrode_random_gear(player) -> tuple[str, str] | None:
@@ -377,9 +390,8 @@ def _corrode_random_gear(player) -> tuple[str, str] | None:
     _, item = random.choice(targets)
     from hud_context import item_bare_name
     name = item_bare_name(player, item)      # as the player knows it
-    eb = getattr(item, 'enchant_bonus', 0)
-    if eb > -3:
-        item.enchant_bonus = eb - 1
+    from items import wear_down
+    if wear_down(item):
         return (f'Acid eats at your {name}! (-1 enchantment)', 'danger')
     return (f'Acid sizzles on your {name}, but it holds.', 'warning')
 
@@ -692,8 +704,9 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
                     player.apply_stat_bonus(stat, -1)
                     # Signal for main.py to dispatch the Paracelsus quirk hook.
                     messages.append((f'_disease_drain:{stat}:1', 'info'))
-                    if stat == 'STR':        # what a potion of restore strength gives back
-                        player._str_lost_to_disease = int(getattr(player, '_str_lost_to_disease', 0) or 0) + 1
+                    # what a potion of restore strength (STR) or a physician
+                    # (any stat) gives back
+                    note_stat_drain(player, stat, 1)
                     messages.append((f'The disease saps your strength! {stat} -1.', 'danger'))
 
         elif effect == 'strangulation':

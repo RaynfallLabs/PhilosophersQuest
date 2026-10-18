@@ -11,9 +11,9 @@
     "lore": "A simple traveler's box. Iron hasp, water-stained planks.",
     "tier": 1,
     "quiz_tier": 1,
-    "gold_range": [
-      5,
-      25
+    "gold_share": [
+      0.07,
+      0.14
     ],
     "trap_chance": 0.1,
     "loot_table": {
@@ -46,9 +46,9 @@
     "lore": "A strongbox of bolted iron strapping with a heavy ward-key plate. Somebody wanted it to stay shut.",
     "tier": 2,
     "quiz_tier": 2,
-    "gold_range": [
-      20,
-      60
+    "gold_share": [
+      0.06,
+      0.12
     ],
     "trap_chance": 0.15,
     "loot_table": {
@@ -80,9 +80,9 @@
     "lore": "Small and ornate. Rings, amulets, the kind of trinket noble houses hide.",
     "tier": 2,
     "quiz_tier": 2,
-    "gold_range": [
-      30,
-      90
+    "gold_share": [
+      0.08,
+      0.16
     ],
     "trap_chance": 0.1,
     "loot_table": {
@@ -111,9 +111,9 @@
     "lore": "Wax-sealed bottles in oiled wood. The smell of camphor and willow-bark.",
     "tier": 1,
     "quiz_tier": 1,
-    "gold_range": [
-      10,
-      40
+    "gold_share": [
+      0.03,
+      0.07
     ],
     "trap_chance": 0.08,
     "loot_table": {
@@ -143,9 +143,9 @@
     "lore": "Leather and brass clasps. Ink-stains, blotted pages, dog-eared spellbooks.",
     "tier": 3,
     "quiz_tier": 2,
-    "gold_range": [
-      15,
-      50
+    "gold_share": [
+      0.025,
+      0.055
     ],
     "trap_chance": 0.05,
     "loot_table": {
@@ -175,9 +175,9 @@
     "lore": "Iron-bound campaigner's chest. Dented on every corner. Smells of oil and old blood.",
     "tier": 3,
     "quiz_tier": 3,
-    "gold_range": [
-      40,
-      120
+    "gold_share": [
+      0.055,
+      0.11
     ],
     "trap_chance": 0.2,
     "loot_table": {
@@ -207,9 +207,9 @@
     "lore": "A trader's lockbox. Everything inside has been weighed, labelled, and priced, so none of it is a mystery.",
     "tier": 2,
     "quiz_tier": 2,
-    "gold_range": [
-      40,
-      100
+    "gold_share": [
+      0.09,
+      0.18
     ],
     "trap_chance": 0.1,
     "loot_table": {
@@ -244,9 +244,9 @@
     "lore": "Bone-clasped, decaying iron. Cold to the touch. Something inside expects to be disturbed.",
     "tier": 3,
     "quiz_tier": 3,
-    "gold_range": [
-      25,
-      80
+    "gold_share": [
+      0.04,
+      0.08
     ],
     "trap_chance": 0.3,
     "loot_table": {
@@ -277,9 +277,9 @@
     "lore": "Engraved with filigree and gilded inlay. Whoever owned this had more taste than caution.",
     "tier": 4,
     "quiz_tier": 4,
-    "gold_range": [
-      80,
-      200
+    "gold_share": [
+      0.045,
+      0.09
     ],
     "trap_chance": 0.2,
     "loot_table": {
@@ -312,9 +312,9 @@
     "lore": "Gold-leafed, heavy beyond what its frame should allow. The hinges are silent.",
     "tier": 4,
     "quiz_tier": 4,
-    "gold_range": [
-      150,
-      350
+    "gold_share": [
+      0.07,
+      0.14
     ],
     "trap_chance": 0.25,
     "loot_table": {
@@ -347,9 +347,9 @@
     "lore": "Bone, iron, and sealing wax: a cask made to carry a saint's relics. The seal hums under a careful hand.",
     "tier": 5,
     "quiz_tier": 5,
-    "gold_range": [
-      50,
-      200
+    "gold_share": [
+      0.03,
+      0.06
     ],
     "trap_chance": 0.15,
     "loot_table": {
@@ -379,9 +379,9 @@
     "lore": "A coin-piled cask the size of a small wagon. The lid is dented from inside.",
     "tier": 5,
     "quiz_tier": 5,
-    "gold_range": [
-      300,
-      800
+    "gold_share": [
+      0.19,
+      0.38
     ],
     "trap_chance": 0.25,
     "loot_table": {

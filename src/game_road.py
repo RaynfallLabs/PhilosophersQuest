@@ -125,7 +125,7 @@ class RoadMixin:
         import economy
         import npc_encounters
         anchors = road.bind_anchors(self._road, npc_encounters.ENCOUNTERS)
-        self._npc_encounter_levels = {f: economy.price_encounter(e) for f, e in anchors.items()}
+        self._npc_encounter_levels = {f: economy.price_encounter(e, f) for f, e in anchors.items()}
         self._npc_trigger_item_levels = npc_encounters.get_trigger_item_levels(
             self._npc_encounter_levels)
         self._flavor_encounter_levels = {}
@@ -568,7 +568,7 @@ class RoadMixin:
             else (getattr(self, '_encountered_npcs', None) or set())
         if tag in spent:
             return False
-        priced = economy.price_encounter(enc)
+        priced = economy.price_encounter(enc, level)
         if src == 'flavor':
             self._flavor_encounter_levels[level] = priced
         else:
@@ -598,7 +598,7 @@ class RoadMixin:
         enc = road.bind_slot(st, level, pool,
                              allowed=lambda e: e['tag'] not in spent and self._encounter_allowed(e))
         if enc is not None:
-            self._flavor_encounter_levels[level] = economy.price_encounter(enc)
+            self._flavor_encounter_levels[level] = economy.price_encounter(enc, level)
 
     def _anchor_fallback(self, level: int):
         """A triggered anchor whose item the hero does not hold gives way to
@@ -615,5 +615,5 @@ class RoadMixin:
         _src, fb = _encounter_by_tag(s['fallback'])
         if fb is not None:
             import economy
-            self._npc_encounter_levels[level] = economy.price_encounter(fb)
+            self._npc_encounter_levels[level] = economy.price_encounter(fb, level)
             s['bound'], s['fallback'] = s['fallback'], None

@@ -351,7 +351,9 @@ def test_shipped_anchor_options_apply_exactly_as_before(gate_off):
                 g._npc_selected_option = opt
                 g._npc_selected_index = i
                 g.player.hp = g.player.max_hp = 500
-                g.player_gold = 10 ** 6
+                # A modest purse: forgoing gold is judged against it (D6,
+                # economy.forgo_is_real; test_economy covers the rich hero).
+                g.player_gold = 500
                 want = _old_apply(g, opt)
                 # The words shown: the option's own, or the variant its state
                 # picks (Edric dead after a failed draught, continuity audit M1).

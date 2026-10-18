@@ -146,14 +146,11 @@ def give_back(game, m) -> list[str]:
     items = list(m.__dict__.get('stolen_items') or ())
     if not gold and not items:
         return msgs
-    from items import GoldPile
+    from items import add_gold_to_tile
     if gold:
-        # The hero's own coins, in their own pile and marked as his: a gold
-        # ring (Draupnir) multiplies FOUND gold only, or being robbed and
-        # winning it back turned a profit (bug bash 5 INT-06, economy S2).
-        pile = GoldPile(gold, m.x, m.y)
-        pile._dropped_by_player = True
-        game.ground_items.append(pile)
+        # The hero's own gold coming back, not a find: a gold ring
+        # (Draupnir) must not double it (ECONOMY_REFACTOR_PROPOSAL S2).
+        add_gold_to_tile(game.ground_items, gold, m.x, m.y, found=False)
         m.stolen_gold = 0
         msgs.append(f"Your stolen {gold:,} gold spills out where it fell.")
     for it in items:

@@ -40,6 +40,8 @@ added_files = [
     ('data/karma_rules.json',       'data'),
     ('data/setne_tomb.json',        'data'),
     ('data/gate_lines.json',        'data'),
+    ('data/traders.json',           'data'),
+    ('data/item_worth.json',        'data'),
     # Game data — directories
     ('data/items',                  'data/items'),
     ('data/materials',              'data/materials'),

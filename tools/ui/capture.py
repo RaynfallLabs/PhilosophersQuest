@@ -1484,8 +1484,11 @@ def _(g):
 
 # -- Encounters ------------------------------------------------------------------
 
-def _merchant(g):
+def _merchant(g, kind='generalist'):
+    """A named trader (data/traders.json) beside the hero with a fixed stock,
+    and a pack with something to sell (an unknown potion among it)."""
     from mystery_system import MerchantNPC
+    import traders
     from items import load_items, pick_random_weapon_for_floor
     from economy import merchant_price
     rng = random.Random(SEED + 1)
@@ -1494,15 +1497,45 @@ def _merchant(g):
              copy.copy(load_items('food')[0])]
     stock = [s for s in stock if s is not None]
     x, y = _free_tiles_near(g, 1, 1)[0]
-    m = MerchantNPC(x, y, stock, [merchant_price(it, 5) for it in stock])
+    defn = traders.kind_def(kind)
+    m = MerchantNPC(x, y, stock, [merchant_price(it, 5, defn.get('markup', 1.0)) for it in stock],
+                    kind=kind, level=5, defn=defn)
     g.ground_items.append(m)
+    spare = pick_random_weapon_for_floor(5, random.Random(SEED + 2))
+    if spare is not None:
+        g.player.inventory.append(spare)
+    unknown = copy.copy(next(p for p in load_items('potion') if p.id == 'potion_of_extra_healing'))
+    unknown.id_level = 0
+    g.player.known_item_ids.discard(unknown.id)
+    g.player.inventory.append(unknown)
+    w = getattr(g.player, 'weapon', None)
+    if w is not None:
+        w.wear_loss = 1          # something for the smith to mend
+    g.player_gold = max(getattr(g, 'player_gold', 0), 900)
     return m
 
 
-@scene('shop', 'Encounters', 'Y beside a Deep Gnome Trader: shop.', expect='shop', key=True)
+@scene('shop', 'Encounters', 'Y beside a trader: the shop, Buy tab.', expect='shop', key=True)
 def _(g):
     _merchant(g)
     press(g, pygame.K_y)
+
+
+@scene('shop_sell', 'Encounters', 'Y beside a trader, Right: the Sell tab (offers, refusals).',
+       expect='shop', key=True)
+def _(g):
+    _merchant(g)
+    press(g, pygame.K_y)
+    press(g, pygame.K_RIGHT)
+
+
+@scene('shop_services', 'Encounters', "Y beside the armourer, Right twice: his Services tab.",
+       expect='shop', key=True)
+def _(g):
+    _merchant(g, 'armourer')
+    press(g, pygame.K_y)
+    press(g, pygame.K_RIGHT)
+    press(g, pygame.K_RIGHT)
 
 
 def _npc_monster(g, enc):

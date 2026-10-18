@@ -759,6 +759,9 @@ class Monster:
             self._unhurt_turns = 0           # see _recover_when_left
             self._struck = True              # a calmed locust remembers (Locust Charm)
             self.spring()                    # a struck lurker gives itself away
+            if self.__dict__.pop('_bribed', False):
+                # A bribed monster struck: the deal is off (Gilgamesh's Bribe).
+                self.status_effects.pop('charmed', None)
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)
@@ -1271,6 +1274,8 @@ class Monster:
             player._con_drained_this_floor = int(
                 getattr(player, '_con_drained_this_floor', 0)) + 1
             if player.CON < old_con:
+                from status_effects import note_stat_drain
+                note_stat_drain(player, 'CON', old_con - player.CON)   # a physician can restore it
                 msg = f"{the_name(self)} drains your life force! ({actual} dmg, CON -1)"
 
         # Drain heals self (vampire lord, life-drainer family): when a

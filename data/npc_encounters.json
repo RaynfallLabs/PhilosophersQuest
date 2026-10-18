@@ -1557,7 +1557,8 @@
             {
               "type": "gold",
               "min": 150,
-              "max": 200
+              "max": 200,
+              "purse_pct": 15
             },
             {
               "type": "random_accessory"
@@ -2103,7 +2104,8 @@
         "reward": {
           "type": "gold",
           "min": 200,
-          "max": 300
+          "max": 300,
+          "purse_pct": 20
         },
         "outcome": "Vell counts it out coin by coin and enters you in his ledger under Associates. The angel does not look at you. You would rather she had.",
         "deeds": [
@@ -2617,7 +2619,8 @@
         "reward": {
           "type": "gold",
           "min": 300,
-          "max": 400
+          "max": 400,
+          "purse_pct": 25
         },
         "outcome": "Vell tucks the jar under his arm like a loaf. Tansy has stopped hammering on the glass. She watches you count the coins, and she does not look away until he has turned the corner.",
         "deeds": [
@@ -2635,7 +2638,8 @@
         "reward": {
           "type": "gold",
           "min": 150,
-          "max": 200
+          "max": 200,
+          "purse_pct": 10
         },
         "outcome": "You break the wax and she tumbles out, gasping. Vell scrapes the glass into a silk bag with a little silver spoon, pinch by pinch, while she watches from the floor. Her wings are still bent. \"That was my flying,\" she says, and limps off into the dark on foot.",
         "deeds": [
@@ -2814,7 +2818,8 @@
             {
               "type": "gold",
               "min": 200,
-              "max": 300
+              "max": 300,
+              "purse_pct": 15
             },
             {
               "type": "specific_item",
@@ -3098,7 +3103,8 @@
             {
               "type": "gold",
               "min": 200,
-              "max": 300
+              "max": 300,
+              "purse_pct": 15
             },
             {
               "type": "random_accessory"
@@ -3222,7 +3228,8 @@
             {
               "type": "gold",
               "min": 200,
-              "max": 300
+              "max": 300,
+              "purse_pct": 15
             },
             {
               "type": "random_armor"
@@ -3330,7 +3337,8 @@
           "rewards": [
             {
               "type": "gold",
-              "amount": 200
+              "amount": 200,
+              "purse_pct": 20
             },
             {
               "type": "specific_item",
@@ -3827,7 +3835,8 @@
             {
               "type": "gold",
               "min": 200,
-              "max": 300
+              "max": 300,
+              "purse_pct": 20
             }
           ]
         },

@@ -461,7 +461,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_STUDY` | `;` | `_study_input` | `_draw_study_journal` |
 | `STATE_MYSTERY_APPROACH` | mystery altar | `_mystery_approach_input` | `_draw_mystery_approach` |
 | `STATE_INTERCESSION_PROMPT` | `Shift+\` | `_intercession_prompt_input` | `_draw_intercession_prompt` |
-| `STATE_SHOP` | `Y` | `_shop_input` | `_draw_shop` |
+| `STATE_SHOP` | `Y` | `_shop_input` -> `_trader_input` | `_draw_shop` (model: `_trader_menu`) |
 | `STATE_PET_MENU` | `Shift+P` | `_pet_menu_input` | `_draw_pet_menu` |
 | `STATE_PET_FEED` / `_HEAL` / `_SPECIALS` | pet sub-menu | `_pet_*_input` | `_draw_pet_feed_submenu` etc. |
 | `STATE_PET_NAME_INPUT` | hatch | `_pet_name_input` | `_draw_pet_name_popup` |
@@ -529,7 +529,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `x` | examine known items |
 | `b` | encyclopedia (`h` there opens the Journal) |
 | `d` | drop menu (altar / fountain / grave interact special-case) |
-| `y` | merchant shop |
+| `y` | trader's shop: Buy, Sell, Services (game_traders.py) |
 | `v` | active powers menu |
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |

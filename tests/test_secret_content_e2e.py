@@ -765,8 +765,9 @@ def test_every_mystery_altar_and_key_spawns_with_its_art():
 
 
 def test_the_deep_gnome_trader_turns_up_reachable_with_his_art():
-    """The Svirfneblin trader is mystery_system.MerchantNPC ('Deep Gnome
-    Trader', about one floor in five)."""
+    """The Svirfneblin trader is mystery_system.MerchantNPC: Grindle, the
+    generalist of data/traders.json, planned for about one floor in six
+    (traders.py) and placed on arrival (game_traders.py)."""
     from mystery_system import MerchantNPC
     assert _own_item_art('merchant_npc')
     g = _game('__test_trader__')
@@ -776,15 +777,18 @@ def test_the_deep_gnome_trader_turns_up_reachable_with_his_art():
             continue
         g._change_level(lvl, enter_from_top=True)
         traders = [i for i in g.ground_items if isinstance(i, MerchantNPC)]
+        assert len(traders) <= 1
         if traders:
             met += 1
             t = traders[0]
-            assert t.name == 'Deep Gnome Trader' and t.stock
+            assert t.stock and t.person and t.title
+            if t.kind == 'generalist' and not t.friend:
+                assert t.name == 'Grindle' and t.title == 'Deep Gnome Trader'
             walk = g._reachable_tiles(g.player.x, g.player.y)
             assert any((t.x + dx, t.y + dy) in walk
                        for dx in (-1, 0, 1) for dy in (-1, 0, 1)), lvl
-            assert g.renderer._get_item_sprite(t.id) is not None
-    assert met >= 1
+            assert g.renderer._get_sprite(t.sprite_id) is not None
+    assert met >= 3
 
 
 def test_a_soul_sphere_spawns_on_some_floors_and_hatches_a_pet_with_art():

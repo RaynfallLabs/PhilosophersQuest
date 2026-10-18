@@ -74,6 +74,10 @@ class LevelManager:
                 it.stock = [stock[i] for i in keep]
                 for s in it.stock:
                     claim_unique(s)
+                if not it.stock:
+                    # Every ware was a unique this run already has: no empty
+                    # shop (ECONOMY_REFACTOR_PROPOSAL S10).
+                    it.sold_out = True
             if not unique_available(it):
                 continue
             claim_unique(it)
