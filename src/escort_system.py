@@ -66,7 +66,9 @@ class Escort(Pet):
         self.display_name = name
         self.sprite_id = spec.get('sprite_id', 'npc_traveler')
         self.max_hp = self.hp = max(1, int(spec.get('hp', 20)))
-        self.ac = int(spec.get('ac', 0) or 0)
+        # Hero-style armour class: lower is better, 10 is unarmoured (CODE-01).
+        ac = spec.get('ac')
+        self.ac = 10 if ac is None else int(ac)
         self.base_damage = 0
         self.goal = str(spec.get('goal', 'stairs_down'))
         self.leash = max(1, int(spec.get('leash', 2)))
