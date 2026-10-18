@@ -2494,7 +2494,7 @@
         },
         "road": {
           "id": "flv_davy_under_beam.shock",
-          "hint": "Freeing someone is the first half of saving them."
+          "hint": "Freeing someone is the first half of a rescue."
         },
         "hidden_group": "davy_b"
       }
@@ -4384,7 +4384,7 @@
       },
       {
         "label": "\"I don't know runes. Good luck.\"",
-        "outcome": "\"Right. Okay. I'll figure it out.\" She turns back to her work with the particular determination of someone who has been underestimated their whole life and has stopped minding."
+        "outcome": "\"Right. Okay. I'll figure it out.\" She turns back to her work with the particular determination of a woman who has been underestimated her whole life and has stopped minding."
       }
     ]
   },
@@ -4666,7 +4666,7 @@
       "id": "doctor_finch",
       "name": "Doctor Finch"
     },
-    "text": "A figure in a long black coat and a beaked mask stands in a doorway, clipboard in hand. \"Ah. A living one.\" Their voice is nasal and clinical through the mask. \"I've been cataloguing the afflictions down here. You look relatively intact, remarkable, given the level. Any symptoms I should note? Bleeding, visions, involuntary cursing?\"",
+    "text": "A figure in a long black coat and a beaked mask stands in a doorway, clipboard in hand. \"Ah. A living one.\" His voice is nasal and clinical through the mask. \"I've been cataloguing the afflictions down here. You look relatively intact, remarkable, given the level. Any symptoms I should note? Bleeding, visions, involuntary cursing?\"",
     "options": [
       {
         "label": "Submit to a quick examination",
@@ -4678,7 +4678,7 @@
           "type": "hp_restore_pct",
           "amount": 20
         },
-        "outcome": "They prod and poke with cool efficiency, muttering notes. \"Minor lacerations, dehydration, one infected bite you clearly hadn't noticed. Hold still.\" The treatment is brisk and uncomfortable, but the results are undeniable. You feel substantially better than you did walking in.",
+        "outcome": "He prods and pokes with cool efficiency, muttering notes. \"Minor lacerations, dehydration, one infected bite you clearly hadn't noticed. Hold still.\" The treatment is brisk and uncomfortable, but the results are undeniable. You feel substantially better than you did walking in.",
         "chronicle": "Let a beaked doctor examine me. The doctor seemed disappointed I was so healthy.",
         "road": {
           "id": "flv_plague_doctor.exam",
@@ -4696,7 +4696,7 @@
           "type": "random_item",
           "category": "potion"
         },
-        "outcome": "They produce a small vial from a rack of identical vials and label it in tiny, precise handwriting. \"Take with water. Do not take with alcohol. Do not take with other potions unless you understand what you're doing, which you probably don't.\" Charming bedside manner."
+        "outcome": "He produces a small vial from a rack of identical vials and label it in tiny, precise handwriting. \"Take with water. Do not take with alcohol. Do not take with other potions unless you understand what you're doing, which you probably don't.\" Charming bedside manner."
       },
       {
         "label": "Have the Doctor treat what ails you",
@@ -4710,7 +4710,7 @@
           "service": "cure"
         },
         "outcome": "\"Fascinating. Disgusting, but fascinating.\" The Doctor works through you symptom by symptom with tongs, tinctures and a running commentary. Whatever you had, you no longer have it. You suspect it is now in a jar.",
-        "chronicle": "Paid the beaked Doctor to cure me. They kept a sample. I did not ask of what.",
+        "chronicle": "Paid the beaked Doctor to cure me. He kept a sample. I did not ask of what.",
         "road": {
           "id": "flv_plague_doctor.cure",
           "hint": "A doctor of plagues knows a cure for most of them."
@@ -4718,7 +4718,7 @@
       },
       {
         "label": "\"I'm fine. Good day, Doctor.\"",
-        "outcome": "\"You are demonstrably not fine,\" they say, and make a note on their clipboard anyway. You find this oddly comforting."
+        "outcome": "\"You are demonstrably not fine,\" he says, and makes a note on his clipboard anyway. You find this oddly comforting."
       }
     ]
   },
@@ -5452,10 +5452,10 @@
     "max_level": 40,
     "role": "story",
     "stakes": "light",
-    "text": "Huddled against a wall in a chamber that smells of old smoke and dried herbs, a figure wrapped in layers of mismatched cloth watches you with sharp, intelligent eyes. \"I've lived down here twelve years,\" they say softly. \"I know its moods. Its secrets. You look like someone who could use a secret.\"",
+    "text": "Huddled against a wall in a chamber that smells of old smoke and dried herbs, a figure wrapped in layers of mismatched cloth watches you with sharp, intelligent eyes. \"I've lived down here twelve years,\" he says softly. \"I know its moods. Its secrets. You look like someone who could use a secret.\"",
     "options": [
       {
-        "label": "Trade stamina for their knowledge",
+        "label": "Trade stamina for his knowledge",
         "cost": {
           "type": "sp_pct",
           "amount": 14
@@ -5465,7 +5465,7 @@
           "effect": "clairvoyant",
           "duration": 40
         },
-        "outcome": "They take your hands and press them flat against the stone wall. \"Listen,\" they whisper. \"Really listen.\" You stand there until your legs ache, and then you hear it: the subtle grammar of the dungeon, the spaces between its walls. Your awareness of the surrounding area expands like a held breath released."
+        "outcome": "He takes your hands and presses them flat against the stone wall. \"Listen,\" he whispers. \"Really listen.\" You stand there until your legs ache, and then you hear it: the subtle grammar of the dungeon, the spaces between its walls. Your awareness of the surrounding area expands like a held breath released."
       },
       {
         "label": "Share a meal together",
@@ -5477,7 +5477,7 @@
           "amount": 20
         },
         "outcome": "You sit together in comfortable silence, sharing food like two people who have long since run out of small talk. When you rise to leave, you feel more settled than you have in days. Sometimes stillness is its own kind of strength.",
-        "chronicle": "Shared a meal with a hermit who has lived down here twelve years. They knew the floor's moods.",
+        "chronicle": "Shared a meal with a hermit who has lived down here twelve years. He knew the floor's moods.",
         "road": {
           "id": "flv_whispering_hermit.meal",
           "hint": "Twelve years in the dark teaches the dark's moods."
@@ -5485,7 +5485,7 @@
       },
       {
         "label": "\"I prefer my own counsel.\"",
-        "outcome": "They nod slowly, with no offense taken. \"That's how I started too,\" they say. You're not entirely sure what they mean by that."
+        "outcome": "He nods slowly, with no offense taken. \"That's how I started too,\" he says. You're not entirely sure what he means by that."
       }
     ]
   },
@@ -7377,7 +7377,7 @@
         "reward": {
           "type": "message"
         },
-        "outcome": "It sits down again and thinks. \"I was a wish,\" it finally says. \"Someone made me wrong, wished for something too greedy, too large, and I came out sideways. What they wanted was love. What they got was everything except it.\" It pauses. \"Don't wish for everything. Wish for the one thing.\""
+        "outcome": "It sits down again and thinks. \"I was a wish,\" it finally says. \"Someone made me wrong, wished for something too greedy, too large, and I came out sideways. What the wisher wanted was love. What the wisher got was everything except it.\" It pauses. \"Don't wish for everything. Wish for the one thing.\""
       },
       {
         "label": "Leave the lantern where it hangs",
@@ -8932,7 +8932,7 @@
           "type": "random_item",
           "category": "potion"
         },
-        "outcome": "He accepts the food with enormous gratitude. \"You are a saint. A genuine saint. Here, take this, I've been using it as a paperweight. The previous owner said it was powerful. They were very confident about it.\" He presses a potion into your hands and begins the long walk upward, muttering."
+        "outcome": "He accepts the food with enormous gratitude. \"You are a saint. A genuine saint. Here, take this, I've been using it as a paperweight. The previous owner said it was powerful. Very confident about it, too.\" He presses a potion into your hands and begins the long walk upward, muttering."
       },
       {
         "label": "Point him vaguely upward",
@@ -9108,7 +9108,7 @@
       },
       {
         "label": "\"What are you still guarding?\"",
-        "outcome": "He looks down at the armor in his hands. The question takes a long time to reach an answer. \"The idea,\" he finally says, \"that someone should still be here when the next one comes through. So they know the road has been walked before.\" He gestures you onward. \"It has been walked before.\""
+        "outcome": "He looks down at the armor in his hands. The question takes a long time to reach an answer. \"The idea,\" he finally says, \"that someone should still be here when the next one comes through. So the next one knows the road has been walked before.\" He gestures you onward. \"It has been walked before.\""
       }
     ]
   },
@@ -9290,7 +9290,7 @@
         "thorleif_verse": "open"
       }
     },
-    "text": "A standing stone at the edge of a great dark drop, carved with runes in a ribbon that ends in a serpent's head. Most of the ribbon is full: names, and who raised the stone for whom. The last loop is empty. Somebody has left a chisel in a crack, as if they knew someone would need it.",
+    "text": "A standing stone at the edge of a great dark drop, carved with runes in a ribbon that ends in a serpent's head. Most of the ribbon is full: names, and who raised the stone for whom. The last loop is empty. Somebody has left a chisel in a crack, as if knowing someone would need it.",
     "options": [
       {
         "label": "Carve Thorleif's verse for his brother",
@@ -10527,7 +10527,7 @@
           "effect": "clairvoyant",
           "duration": 35
         },
-        "outcome": "The mote settles on your palm and dissolves. For a moment you are someone else, someone who died on level ninety-four, who knew exactly where the shadow-thing waited, who almost made it. The knowledge they died for is yours now. You feel the weight and the gift of it equally.",
+        "outcome": "The mote settles on your palm and dissolves. For a moment you are someone else, someone who died on level ninety-four, who knew exactly where the shadow-thing waited, who almost made it. The knowledge that stranger died for is yours now. You feel the weight and the gift of it equally.",
         "chronicle": "Accepted the last memory of someone who did not make it back. It was of a kitchen, and somebody laughing.",
         "road": {
           "id": "flv_wondrous_memory_keeper.accept",
