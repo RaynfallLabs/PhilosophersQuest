@@ -699,15 +699,18 @@ def tick_all(player, dungeon=None) -> list[tuple[str, str]]:
 
         elif effect == 'diseased':
             if not player.has_effect('poison_resist') and not player.has_effect('drain_resist'):
-                if random.random() < 0.08:
-                    stat = random.choice(['STR', 'CON'])
+                stat = random.choice(['STR', 'CON']) if random.random() < 0.08 else None
+                # The disease never drains a stat below 1 (MNK-08: STR reached
+                # 0 and went on down), the floor player.py keeps for STR.
+                if stat and getattr(player, stat, 0) > 1:
                     player.apply_stat_bonus(stat, -1)
                     # Signal for main.py to dispatch the Paracelsus quirk hook.
                     messages.append((f'_disease_drain:{stat}:1', 'info'))
                     # what a potion of restore strength (STR) or a physician
                     # (any stat) gives back
                     note_stat_drain(player, stat, 1)
-                    messages.append((f'The disease saps your strength! {stat} -1.', 'danger'))
+                    _what = 'strength' if stat == 'STR' else 'health'
+                    messages.append((f'The disease saps your {_what}! {stat} -1.', 'danger'))
 
         elif effect == 'strangulation':
             dmg = player.take_damage(dot_tick(player) * 2, 'physical')
