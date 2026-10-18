@@ -2507,6 +2507,23 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             elif getattr(m, '_unseen', False):
                 m._unseen = False
 
+    def _say_springs(self):
+        """Print the reveal line of every lurker a blow has just sprung
+        (Monster.spring), when the hero can see where it lies."""
+        for m in getattr(self, 'monsters', None) or ():
+            note = m.__dict__.pop('_spring_note', None)
+            if note and (m.x, m.y) in (getattr(self, 'visible', None) or ()):
+                self.add_message(note, 'danger')
+
+    def _spring_lurker(self, m) -> bool:
+        """A wand, a spell or a pull reaches `m`: an unaware lurker springs
+        and says so now. Returns True when it was lurking."""
+        spring = getattr(m, 'spring', None)
+        if spring is None or not spring():
+            return False
+        self._say_springs()
+        return True
+
     def _sees_monster(self, m) -> bool:
         """The hero can see this monster: alive, its tile in sight, and not an
         un-sprung ambusher, a disguised mimic or an invisible creature."""
@@ -2667,7 +2684,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             try:
                 from chain_passives import consume_run_passive as _crp, player_has_passive as _php
                 _cands = [m for m in self.monsters
-                          if m.alive and (m.x, m.y) in self.visible
+                          if self._sees_monster(m)
                           and not getattr(m, 'is_boss', False)]
                 if not _php(self.player, 'paths_of_the_dead'):
                     self.player._paths_armed = False
@@ -2676,7 +2693,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     _ally = max(_cands, key=lambda m: m.max_hp)
                     _ally.add_effect('charmed', 30)
                     self.add_message(
-                        f"The Paths of the Dead open: {_ally.name} bends to your service for 30 turns!",
+                        f"The Paths of the Dead open: {the_name(_ally, lower=True)} bends to your service for 30 turns!",
                         'success')
             except ImportError:
                 pass
@@ -2985,6 +3002,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if self._feel_something_there(target):
                 self._advance_turn()
                 return
+            self._spring_lurker(target)       # walking into a disguise gives it away
             self._start_combat(target)
         elif tile_at_dest == DOOR:
             # Bump-to-open: open the door and step through in one action
@@ -4060,6 +4078,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _advance_turn(self):
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
+        self._say_springs()                # lurkers the action's blows gave away
         self._reap_unnoticed_kills()
         # Creatures struck the wrong way split (src/splitting.py): the new
         # bodies are set down here, whatever dealt the blow.
@@ -4590,6 +4609,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # Escorts move and are attacked in their own pass, pet or no pet.
                 self._do_escort_turns()
                 self._maybe_wander_spawn()
+        self._say_springs()                # lurkers the pets' and escorts' blows gave away
         self._death_proximity_warning()
         self._tick_hp_regen()
         self._note_burden()
@@ -4903,6 +4923,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # not "The Agamemnon hits you")
         m.name = _ha_rng.choice(names)
         m.proper_noun = True
+        # It is announced and it hunts: never a lurker posing or hiding.
+        m._aware = True
+        if m.ai_pattern in ('ambush', 'mimic'):
+            m.ai_pattern = 'aggressive'
         # Place near the player (search a 4-tile radius)
         px, py = self.player.x, self.player.y
         for dx in range(-4, 5):
@@ -4931,7 +4955,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         nearby = [
             m for m in self.monsters
             if m.alive and abs(m.x - px) <= radius and abs(m.y - py) <= radius
-            and (m.x, m.y) not in self.visible
+            and ((m.x, m.y) not in self.visible or unseen.concealed(m, self.player))
         ]
         if nearby:
             self.add_message(
@@ -7451,7 +7475,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters.append(minion)
         if (summoner.x, summoner.y) in self.visible or (sx, sy) in self.visible:
             self.add_message(
-                f"{the_name(summoner)} summons {self._a_or_an(minion.name)}!", 'danger')
+                f"{the_name(summoner)} summons "
+                f"{'something unseen' if unseen.unseen(minion, self.player) else self._a_or_an(minion.name)}!",
+                'danger')
 
     # ------------------------------------------------------------------
     # NPC moral encounter system

@@ -875,15 +875,23 @@ class Renderer:
             self.screen.blit(surf, (gx, gy))
 
     def draw_disguise(self, x: int, y: int, item_id: str = None, visible: set = None,
-                      tile: str = None):
+                      tile: str = None, explored: set = None):
         """A mimic still in disguise, drawn as the item it poses as (a chest,
         a hoard) or the map feature (the Hellmouth's down stair): exactly the
-        picture the real thing has."""
+        picture the real thing has. A map feature is remembered like the real
+        one, dimmed on an explored tile out of sight, or looking away would
+        tell the false stair from the true one (bug bash 5 INT-10)."""
+        remembered = False
         if visible is not None and (x, y) not in visible:
-            return
+            if not (tile and explored is not None and (x, y) in explored):
+                return
+            remembered = True
         sprite = self._get_env_sprite(tile) if tile else self._get_item_sprite(item_id)
         if sprite:
-            self.screen.blit(sprite, self.world_to_screen(x, y))
+            pos = self.world_to_screen(x, y)
+            self.screen.blit(sprite, pos)
+            if remembered:
+                self.screen.blit(self._get_dim_overlay(self.map_tile_size), pos)
 
     def draw_shimmer(self, x: int, y: int, color: tuple, turn: int = 0,
                      visible: set = None):

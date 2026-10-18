@@ -16,6 +16,7 @@ import random
 from floor_curve import power_share as _power_share, target_hp as _target_hp, wound as _wound
 from pet_system import growth as _pet_growth
 from geom import monster_at_tile
+from monster import the_name
 
 
 # A hero's healing power restores at least this share of their own health per
@@ -585,8 +586,7 @@ def _eff_confuse_visible(game, special, tier, chain):
     if cnt == 0:
         game.add_message("Your question rings hollow.", 'warning')
         return
-    targets = [m for m in game.monsters if m.alive
-               and (m.x, m.y) in game.visible
+    targets = [m for m in game.monsters if game._sees_monster(m)
                and 'humanoid' in getattr(m, 'tags', [])
                and not is_boss_or_huge(m)]
     if not targets:
@@ -599,7 +599,7 @@ def _eff_confuse_visible(game, special, tier, chain):
         if tier.get('slow_too'):
             cur = m.status_effects.get('slowed', 0)
             m.status_effects['slowed'] = max(cur, dur)
-        game.add_message(f"{m.name} questions everything it knows.", 'success')
+        game.add_message(f"{the_name(m)} questions everything it knows.", 'success')
 
 
 def _eff_self_heal(game, special, tier, chain):
@@ -690,8 +690,7 @@ def _eff_fear_visible(game, special, tier, chain):
     if cnt == 0:
         game.add_message("No one cowers.", 'warning')
         return
-    targets = [m for m in game.monsters if m.alive
-               and (m.x, m.y) in game.visible
+    targets = [m for m in game.monsters if game._sees_monster(m)
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No one in sight to cower.", 'info')
@@ -703,7 +702,7 @@ def _eff_fear_visible(game, special, tier, chain):
         if immob:
             cur = m.status_effects.get('immobilized', 0)
             m.status_effects['immobilized'] = max(cur, immob)
-        game.add_message(f"{m.name} breaks before you.", 'success')
+        game.add_message(f"{the_name(m)} breaks before you.", 'success')
 
 
 def _eff_reveal_floor(game, special, tier, chain):
@@ -794,8 +793,7 @@ def _eff_charm_visible(game, special, tier, chain):
     if cnt == 0:
         game.add_message("None are persuaded.", 'warning')
         return
-    targets = [m for m in game.monsters if m.alive
-               and (m.x, m.y) in game.visible
+    targets = [m for m in game.monsters if game._sees_monster(m)
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No one in sight to persuade.", 'info')
@@ -804,7 +802,7 @@ def _eff_charm_visible(game, special, tier, chain):
     for m in targets[:cnt]:
         cur = m.status_effects.get('charmed', 0)
         m.status_effects['charmed'] = max(cur, dur)
-        game.add_message(f"{m.name} turns to your side.", 'success')
+        game.add_message(f"{the_name(m)} turns to your side.", 'success')
 
 
 def _eff_damage_single(game, special, tier, chain):
@@ -817,7 +815,7 @@ def _eff_damage_single(game, special, tier, chain):
     # otherwise nearest visible enemy. For simplicity in v1, pick nearest visible.
     reach = int(tier.get('range', 0) or 0)
     targets = [m for m in game.monsters
-               if m.alive and (m.x, m.y) in game.visible and _is_foe(m)
+               if game._sees_monster(m) and _is_foe(m)
                and (not reach or max(abs(m.x - game.player.x), abs(m.y - game.player.y)) <= reach)]
     if not targets:
         game.add_message("No target in sight.", 'warning')
@@ -827,7 +825,7 @@ def _eff_damage_single(game, special, tier, chain):
     # A share of the creature's own health (floor_curve.power_share).
     dmg = _wound(_power_share(roll(dice)), target.max_hp, _named_or_huge(target))
     target.take_damage(dmg)
-    game.add_message(f"A star falls on {target.name} for {dmg} damage.", 'success')
+    game.add_message(f"A star falls on {the_name(target, lower=True)} for {dmg} damage.", 'success')
     if not target.alive:
         game._on_monster_killed(target)
 
@@ -841,7 +839,7 @@ def _eff_drain_attractive(game, special, tier, chain):
         game.add_message("She isn't having it.", 'warning')
         return
     px, py = game.player.x, game.player.y
-    adj = [m for m in game.monsters if m.alive
+    adj = [m for m in game.monsters if game._sees_monster(m)
            and max(abs(m.x - px), abs(m.y - py)) <= 1
            and 'female_attractive' in getattr(m, 'tags', [])]
     if not adj:
@@ -855,7 +853,7 @@ def _eff_drain_attractive(game, special, tier, chain):
     target.take_damage(drained)
     game.player.hp = min(game.player.max_hp, game.player.hp + min(hp_drain, drained))
     game.add_message(
-        f"Ash drains {drained} HP from {target.name}. \"Groovy.\"", 'success')
+        f"Ash drains {drained} HP from {the_name(target, lower=True)}. \"Groovy.\"", 'success')
     if charm_dur and target.alive and not is_boss_or_huge(target):
         cur = target.status_effects.get('charmed', 0)
         target.status_effects['charmed'] = max(cur, charm_dur)
@@ -942,8 +940,7 @@ def _eff_paralyze_target(game, special, tier, chain):
     if par == 0:
         game.add_message("The calculation diverges.", 'warning')
         return
-    targets = [m for m in game.monsters if m.alive
-               and (m.x, m.y) in game.visible
+    targets = [m for m in game.monsters if game._sees_monster(m)
                and not is_boss_or_huge(m)]
     if not targets:
         game.add_message("No tractable target.", 'warning')
@@ -955,7 +952,7 @@ def _eff_paralyze_target(game, special, tier, chain):
     if slow:
         cur = target.status_effects.get('slowed', 0)
         target.status_effects['slowed'] = max(cur, slow)
-    game.add_message(f"{target.name} freezes in its loop.", 'success')
+    game.add_message(f"{the_name(target)} freezes in its loop.", 'success')
 
 
 def _eff_summon_sketch_helper(game, special, tier, chain):

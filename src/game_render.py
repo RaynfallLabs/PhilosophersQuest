@@ -99,7 +99,7 @@ def monster_trait_lines(mdef: dict) -> list:
     if isinstance(disg, dict) and disg.get('name'):
         out.append(f"Poses as: {_cap(disg['name'])}")
     if mdef.get('invisible'):
-        out.append("Invisible: unseen without see invisible, true sight or telepathy.")
+        out.append("Invisible: unseen without see invisible, true sight, telepathy or clairvoyance.")
     if mdef.get('weighs_heart'):
         out.append("Weighs the heart: bites harder on low karma, softer on high.")
     if mdef.get('fearless'):
@@ -1993,7 +1993,8 @@ class RenderMixin:
                     _disg = unseen.disguise(m)
                     if _disg:
                         self.renderer.draw_disguise(m.x, m.y, _disg.get('item'), self.visible,
-                                                    tile=_disg.get('tile'))
+                                                    tile=_disg.get('tile'),
+                                                    explored=self.dungeon.explored)
                     continue
                 if unseen.unseen(m, self.player):
                     if getattr(m, '_felt_at', None) == (m.x, m.y):

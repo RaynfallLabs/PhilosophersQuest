@@ -490,9 +490,9 @@ def test_hellmouth_is_drawn_as_the_down_stair_and_looks_like_one():
     calls = []
     real = g.renderer.draw_disguise
 
-    def spy(x, y, item_id=None, visible=None, tile=None):
+    def spy(x, y, item_id=None, visible=None, tile=None, explored=None):
         calls.append((x, y, item_id, tile))
-        return real(x, y, item_id, visible, tile=tile)
+        return real(x, y, item_id, visible, tile=tile, explored=explored)
     g.renderer.draw_disguise = spy
     try:
         g.render()
@@ -504,7 +504,8 @@ def test_hellmouth_is_drawn_as_the_down_stair_and_looks_like_one():
     g._observe_targeting = True
     g._confirm_observe()
     said = ' '.join(_messages(g))
-    assert 'staircase leading down' in said and 'Hellmouth' not in said
+    # The same line the real stair gets (bug bash 5 MON-08).
+    assert 'Stairs leading down.' in said and 'Hellmouth' not in said
 
 
 def test_hellmouth_springs_when_the_hero_steps_beside_it():
