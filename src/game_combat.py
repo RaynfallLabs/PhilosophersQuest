@@ -1279,7 +1279,8 @@ class CombatMixin:
         self.add_message(
             f"You take {gift['name']}: {boons.STAT_NAMES.get(gift['stat'], gift['stat'])} "
             f"+{amount}, for good.", 'success')
-        self._chron('discovery', f"I took {gift['name']} and left the other two where they lay.")
+        from chronicle import in_sentence
+        self._chron('discovery', f"I took {in_sentence(gift['name'])} and left the other two where they lay.")
 
     def _drop_treasure(self, monster):
         """Drop gold and possibly an item when a monster dies."""

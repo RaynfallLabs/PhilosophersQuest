@@ -222,7 +222,8 @@ class DivineMixin:
         self._active_mystery_altar = altar
         if not getattr(self, '_chronicle_first_mystery', False):
             self._chronicle_first_mystery = True
-            self._chron('discovery', f"Came upon {m['name']}. Not every altar down here is for praying at.",
+            from chronicle import in_sentence
+            self._chron('discovery', f"Came upon {in_sentence(m['name'])}. Not every altar down here is for praying at.",
                         once='first_mystery')
         self.state = STATE_MYSTERY_APPROACH
 

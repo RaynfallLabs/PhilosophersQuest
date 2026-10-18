@@ -1878,10 +1878,13 @@ class RenderMixin:
 
             body_rect = pygame.Rect(bx + S(30), by + S(72), bw - 2 * S(30), bh - S(124))
 
+        # A hostile scene refuses Esc before a choice (JNL-06): no "walk away".
+        _held = bool(enc.get('hostile')) and not self._npc_committed()
         if phase == 'text':
             self._ui_wrap_text(display_text(scene), font, FP.PARCHMENT_LIGHT,
                                body_rect, line_gap=4)
-            self._ui_footer(panel, "Enter / Space: continue   |   Esc: walk away")
+            self._ui_footer(panel, "Enter / Space: continue" if _held
+                            else "Enter / Space: continue   |   Esc: walk away")
             return
 
         if phase == 'options':
@@ -1895,7 +1898,9 @@ class RenderMixin:
                 self._ui_action_row(row, str(i + 1), display_text(opt['label']),
                                     color=FP.PARCHMENT_LIGHT)
                 y += row_h + S(10)
-            self._ui_footer(panel, "1-3: choose   |   Esc: walk away")
+            # The keys go as far as the options shown (JNL-05: "1-3" over 4).
+            _keys = f"1-{len(visible)}: choose" if len(visible) > 1 else "1: choose"
+            self._ui_footer(panel, _keys if _held else f"{_keys}   |   Esc: walk away")
             return
 
         if phase == 'select_item':
@@ -5849,7 +5854,8 @@ class RenderMixin:
                               getattr(self, 'dungeon_level', 1)) or 1)
         current = int(getattr(self, 'dungeon_level', 1) or 1)
         sections.append(("JOURNEY", [
-            f"Current floor:\t{current}",
+            # On the farm the place, not "999" (JNL-07).
+            f"Current floor:\t{floor_label(current) if current == 999 else current}",
             f"Deepest floor:\t{deepest}",
         ]))
 
@@ -9083,8 +9089,16 @@ class RenderMixin:
         body = self._ui_modal_body(panel, side=30)
         lines = self._journal_lines(self._your_story_rows(), body.w - S(14))
         side_f = get_font('body', 16)
-        scroll = max(0, min(int(getattr(self, '_end_story_scroll', 0) or 0),
-                            max(0, len(lines) - 1)))
+        # The Journal's rule (JNL-09): the largest scroll that still fills
+        # the page from the bottom, 0 when it already fits. It used to go to
+        # the last line, scrolling everything off into an empty panel.
+        max_scroll, acc = 0, 0
+        for i in range(len(lines) - 1, -1, -1):
+            acc += lines[i][1].get_height() + lines[i][6]
+            if acc > body.h:
+                max_scroll = i + 1
+                break
+        scroll = max(0, min(int(getattr(self, '_end_story_scroll', 0) or 0), max_scroll))
         self._end_story_scroll = scroll
         cy = body.y
         shown = 0
