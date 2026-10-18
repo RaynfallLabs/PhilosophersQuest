@@ -32,31 +32,98 @@ A graphical roguelike where knowledge is power. Every action requires answering 
 - **PER** — Sight radius
 
 ## Project Structure
+Fuller per-system docs live in `docs/systems/` (start at `docs/systems/README.md`).
 ```
 src/
-  main.py             - Entry point, game loop, state management (large; split planned)
-  player.py           - Player class: stats, inventory, equipment
+  # Entry point and the Game class (main.py + its game_* mixins)
+  main.py             - Entry point, game loop, Game class and state (large; split planned)
+  game_states.py      - Game.state string constants
+  game_input.py       - InputMixin: key handling outside menus
+  game_menus.py       - MenuMixin: menu open logic and per-tab item lists
+  game_render.py      - RenderMixin: render() and every _draw_* screen (help screen included)
+  game_combat.py      - CombatMixin: attacks, monster turns, pet and escort swipes, kills
+  game_magic.py       - MagicMixin: spells, wands, scrolls, spellbooks
+  game_divine.py      - DivineMixin: prayer, intercession, Judgment
+  game_encounters.py  - EncountersMixin: NPC, flavor and special-level encounters
+  game_road.py        - RoadMixin: the Road, pending queue and oath lifecycle
+  game_helpers.py     - Stateless helpers once static methods on Game
+  layout.py           - Live window / viewport globals (and the version string)
+  display_setup.py    - First window size and Windows DPI awareness
+
+  # Hero, monsters, world
+  player.py           - Player class: stats, inventory, equipment, quiz timers
   monster.py          - Monster class with AI patterns
-  dungeon.py          - Procedural dungeon generation
-  combat.py           - Combat resolution
-  quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)
-  fov.py              - Shadowcasting field of view
-  renderer.py         - Pygame tile rendering
-  ui.py / fantasy_ui  - Sidebar, message log, menus, fantasy-themed screens
-  items.py            - Item classes and equipment system
-  food_system.py      - Harvest and cooking mechanics
-  dice.py             - Dice notation parser ("2d6+3")
-  boss_levels.py      - Hand-crafted boss floor layouts
-  bones.py            - Persistent ghost/bones across runs
-  container_system.py - Chests, sacks, lockable containers
-  flavor_encounters.py, npc_encounters.py - Scripted encounters and NPC dialog
-  mystery_system.py   - Random mystery / event system
-  quirk_system.py     - Per-character unlockable quirks
-  pet_system.py       - Pet AI and bonding
-  status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
+  monster_classes.py  - Monster family tags (bestiary line, family-targeted gear)
+  dungeon.py          - Procedural BSP dungeon generation
   level_manager.py    - Floor transitions
-  save_system.py, highscore_system.py, sound_system.py, crash_handler.py
-  paths.py            - Path resolution helpers
+  boss_levels.py      - Hand-crafted boss floor layouts (and COW_LEVEL)
+  floor_curve.py      - Median monster HP / damage by floor (balance anchors)
+  geom.py             - Multi-tile footprint geometry
+  fov.py              - Shadowcasting field of view
+  unseen.py           - What the hero cannot see on a visible tile (invisible, ambush, disguise)
+  false_stairs.py     - Hellmouth mimics that pose as the down stair
+  splitting.py        - Creatures that split when struck the wrong way
+  theft.py            - Thieves that really steal, and give it back on death
+  black_knight.py     - The Black Knight bridge easter egg (floors 15-19)
+  emberpup_encounter.py - The abandoned Emberpup random event (floors 3-8)
+  setne_tomb.py       - Setne's Tomb and the Book of Thoth (floors 45-65)
+
+  # Combat, items, magic
+  combat.py           - Combat resolution
+  dice.py             - Dice notation parser ("2d6+3")
+  items.py            - Item classes and equipment system
+  item_actions.py     - Item actions shared by the Kit (K) and the character sheet (@)
+  chain_equip.py      - Chain-equip for lore-rich legendary uniques
+  chain_passives.py   - Chain-equip passive flag lookups and wiring
+  armor_procs.py      - Flat-armour proc registry and per-floor charges
+  hero_specials.py    - One special ability per Secret Build
+  spells.py           - Spellbook spell definitions (tiered families)
+  prayers.py          - The prayer list and what each grants
+  boons.py            - Gate-boss gifts (pick one of three)
+  status_effects.py   - Buffs/debuffs (paralysis, poison, berserk, etc.)
+  food_system.py      - Harvest and cooking mechanics
+  container_system.py - Chests, sacks, lockable containers (lockpicking)
+  economy.py          - The gold economy: what a floor earns and what things cost
+  pet_system.py       - Soul Sphere pets: AI, bonding, levels
+  escort_system.py    - Escorts: people the hero walks somewhere
+
+  # Quiz
+  quiz_engine.py      - All quiz logic (threshold, chain, escalator modes)
+  study_mode.py       - Standalone untimed Study Mode (title screen F3)
+
+  # Story, deeds and karma
+  deeds.py            - The deeds register: what the hero has done this run
+  karma.py            - The single karma entry point (adjust)
+  chronicle.py        - The hero's chronicle (Journal and Your Story entries)
+  road.py             - The Road: where the run's encounters stand
+  encounter_schema.py - Encounter loader normalisation and shared runtime rules
+  npc_encounters.py   - NPC moral encounters (one anchor per 10-floor block)
+  flavor_encounters.py - Story and flavor encounters
+  mystery_system.py   - Mystery altars, key items, encounter logic
+  quirk_system.py     - Per-character unlockable quirks
+  quirk_text.py       - Player-facing quirk and power text
+
+  # UI and presentation
+  renderer.py         - Pygame tile rendering
+  ui.py / fantasy_ui.py - Sidebar, message log, menus, fantasy-themed helpers
+  ui_theme.py         - The UI art kit (painted panels and pieces)
+  ui_scale.py         - The one UI scale factor
+  text_layout.py      - Text fitting and containment helpers
+  hud_context.py      - Pure HUD row builders
+  lore_art.py         - The subject's art on lore pages
+  welcome_screen.py   - Title screen and Secret Build definitions
+  naming.py           - Display-name capitalisation (proper_name)
+  effects_runtime.py  - Pluggable visual-effects controller (effects/ holds the handlers)
+  sound_system.py     - Procedural sound effects
+
+  # Persistence and plumbing
+  save_system.py      - Per-name pickle saves
+  bones.py            - Persistent ghost/bones across runs
+  highscore_system.py - High score table
+  game_log.py         - ERROR_LOG.txt logging (log_error)
+  crash_handler.py    - Crash report writer
+  paths.py            - Path resolution helpers (dev and frozen)
+  dev_tools/          - Developer-only previews
 
 data/
   questions/        - Quiz question JSON files organized by subject
