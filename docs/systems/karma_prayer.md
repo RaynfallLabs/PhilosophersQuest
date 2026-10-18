@@ -56,7 +56,14 @@ block since it was sworn). Constancy (`temperance`, `faithful`,
 +2 a run. **Submitting to an unjust "justice" is surrender, not courage:**
 before an encounter `authority` with `just: false`, a `submit` choice never
 pays and walking away or resisting never costs (the validator's `unjust`
-rule; ENCOUNTER_STORIES_DRAFT Part J10).
+rule; ENCOUNTER_STORIES_DRAFT Part J10). Creon's edict (Antigone) is such an
+authority. Urging Sir Oswin home to his honest court is a `stance` (+1 when
+the hero can say why), not `owning`: an NPC's confession pays no owning karma.
+The showpiece for owning up is the Green Chapel (`flv_green_chapel`, Part
+J11): only for a hero who kept Lady Bertilak's girdle secret, the Green
+Knight's three swings and his nick, then the truth told and the girdle given
+back (+1 owning), or bluster or silence (0). Kneeling or owning up retires
+the Green Knight as a mini-boss for the run.
 Negatives (`cruelty`, `betray`, `sacrilege`, `stance_wrong`, `pattern`) are
 not block-capped, but **no single loss is bigger than one** (Brandon,
 2026-10-18: "Max karma drop is -1"): `karma.adjust` clamps any bigger ask to
@@ -261,7 +268,7 @@ binds per run; a triggered anchor binds a non-triggered fallback with it.
 | 8 | `penitent` | The Penitent | medium | judgment, cruelty (-1) |  |
 | 8 | `roderic_shield` | Young Knight | medium | none | contested; trigger `lionheart_shield`, fallback `penitent` |
 | 8 | `forgotten_prisoner` | Forgotten Prisoner | medium | judgment, cruelty (-1) |  |
-| 9 | `fallen_paladin` | Fallen Paladin | medium | cruelty (-1) | contested |
+| 9 | `fallen_paladin` | Fallen Paladin | medium | stance (+1 on a pass), cruelty (-1) | stance: 1; authority just |
 | 9 | `azarael_demon` | Bound Demon | high | forgo, sacrilege (-1) |  |
 | 9 | `live_not_by_lies` | Locust Checkpoint | medium | stance_wrong (-1), stance | stance: 1 |
 | 10 | `dying_prophet` | Dying Prophet | medium | cruelty (-1) |  |
@@ -271,8 +278,8 @@ binds per run; a triggered anchor binds a non-triggered fallback with it.
 ### 2.4 Karma deltas
 
 The Deadite (`deadite_woman`, now a light story encounter) gives 0 on every option (P16).
-The only -2s are freeing Azarael (`azarael_demon`) and giving the family to Death
-(`flv_deaths_chessboard`). Oath keeps pay +1 at the keep (the altar hook for Aldric and the
+No choice costs more than -1 (the old -2s, freeing Azarael and giving the family to
+Death, are -1 since Brandon's 2026-10-18 ruling). Oath keeps pay +1 at the keep (the altar hook for Aldric and the
 Book of Thoth, or an `oath_keep` option); swearing pays nothing; a break costs -1 betray.
 
 ### 2.5 Trigger item flow
@@ -442,7 +449,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_bottled_constellation` | Star Merchant | 44-60 | light | none |  |
 | `flv_charons_return` | Charon | 44-95 | light | none | callback |
 | `flv_ghost_librarian_junior` | The Cataloguing Spirit | 44-97 | light | none |  |
-| `flv_antigone` | Antigone | 45-58 | medium | betray (-1: informing on her, marked villain) | contested |
+| `flv_antigone` | Antigone | 45-58 | medium | betray (-1: informing on her, marked villain) | contested; authority unjust (Creon's edict) |
 | `flv_sorrow_lantern` | Lantern of Regret | 45-58 | light | none |  |
 | `flv_setne_tomb` | Setne's Tomb | 45-65 | high | oath sworn, forgo | callback; tragedy: unsavable |
 | `flv_dragons_accountant` | Snerk Ledgerscale | 45-88 | medium | judgment, cruelty (-1) |  |
@@ -466,7 +473,8 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_squire_tobyn` | Squire Tobyn | 64-78 | medium | oath keep, oath break (-1) | callback |
 | `flv_echo_of_dead_wizard` | The Lingering Echo | 64-79 | light | none |  |
 | `flv_skalds_stone` | Rune-Stone | 64-84 | medium | oath keep, oath break (-1) | callback |
-| `flv_green_girdle` | Lady Bertilak | 65-71 | medium | forgo |  |
+| `flv_green_girdle` | Lady Bertilak | 65-71 | medium | forgo | the kept secret schedules the Green Chapel |
+| `flv_green_chapel` | The Green Knight | 67-73 | high | owning (+1: the girdle given back, before the swings or after the nick) | callback; authority just |
 | `flv_vafthrudnir` | Vafthrudnir | 65-85 | high | none |  |
 | `flv_crossroads_fiddler` | Crossroads Fiddler | 66-80 | medium | sacrilege (-1), forgo | disguise: devil |
 | `flv_djinn_in_a_bottle` | Something in a Bottle | 66-80 | light | none |  |

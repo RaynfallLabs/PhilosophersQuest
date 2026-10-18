@@ -1288,6 +1288,9 @@ class EncountersMixin:
         if o.get('karma_kind') == 'owning' and int(o.get('karma', 0) or 0) > 0:
             self._engine_virtue('owned', tag)
         self._record_deeds(o.get('deeds'), tag)
+        if tag == getattr(self, 'GREEN_CHAPEL_TAG', None):
+            # The Green Knight has had his blow, or the truth: he retires (C24).
+            self._green_knight_retires()
         # Old content carried its karma on the option itself (untyped,
         # 'legacy'). An outcome pays its karma once: while it does, swearing,
         # keeping or breaking an oath in that outcome moves no more karma.
@@ -1474,6 +1477,13 @@ class EncountersMixin:
                 m._aware = True
                 self.monsters.append(m)
                 out.append(m)
+                if getattr(m, 'is_mini_boss', False):
+                    # A named foe a scene calls up (the Green Knight drawn on
+                    # at his chapel) is the run's one: the mini-boss plan
+                    # never places a second copy of him later.
+                    placed = getattr(getattr(self, 'level_mgr', None), '_placed_mini_bosses', None)
+                    if isinstance(placed, set):
+                        placed.add(mid)
         return out
 
     def _npc_remove_item_by_id(self, item_id: str) -> bool:
@@ -1492,7 +1502,9 @@ class EncountersMixin:
                 p.weapon = None
                 removed = True
             elif p.shield and getattr(p.shield, 'id', '') == item_id:
+                old = p.shield
                 p.shield = None
+                p.shed_worn_grants(old)
                 removed = True
             elif p.amulet_slot and getattr(p.amulet_slot, 'id', '') == item_id:
                 # Reverse accessory stat bonuses
@@ -1518,6 +1530,29 @@ class EncountersMixin:
                         p.accessory_slots[i] = None
                         removed = True
                         break
+        if not removed:
+            # Worn armour (the Green Girdle sits in the legs slot): it was
+            # never looked for, so handing a worn piece over took nothing.
+            p = self.player
+            for i, slot in enumerate(getattr(p, 'armor_slots', None) or ()):
+                if slot is not None and getattr(slot, 'id', '') == item_id:
+                    p.armor_slots[i] = None
+                    p.shed_worn_grants(slot)
+                    removed = True
+                    break
+        if not removed:
+            p = self.player
+            belt = getattr(p, 'belt_slot', None)
+            if belt is not None and getattr(belt, 'id', '') == item_id:
+                fx = getattr(belt, 'effects', None) or {}
+                if 'stat' in fx:
+                    p.apply_stat_bonus(fx['stat'], -fx.get('amount', 0))
+                if 'stat2' in fx:
+                    p.apply_stat_bonus(fx['stat2'], -fx.get('amount2', 0))
+                if 'status' in fx:
+                    p.status_effects.pop(fx['status'], None)
+                p.belt_slot = None
+                removed = True
         return removed
 
     def _npc_pay_cost(self, cost, selected_item=None, *, chosen: bool = False):

@@ -1843,6 +1843,14 @@ class RenderMixin:
         # can see (requires / hidden_group), up to four (encounter_schema).
         scene = getattr(self, '_npc_encounter_text', None) or enc['text']
         visible = self._npc_visible_options() if phase == 'options' else []
+        # The figure's picture beside the words on the story pages (the scene
+        # and the result): its map art, on the plate the lore pages and the
+        # Emberpup's screen use. The choice pages keep the full width.
+        pic = None
+        if phase in ('text', 'outcome'):
+            pic = lore_art.plate('monster', enc.get('sprite_id') or 'npc_traveler', S(144))
+        pic_w = (pic.get_width() + S(24)) if pic is not None else 0
+        text_w -= pic_w
         if phase == 'text':
             content_h = len(self._wrap_text(display_text(scene), font, text_w)) * line_h
         elif phase == 'options':
@@ -1852,6 +1860,8 @@ class RenderMixin:
         else:
             content_h = len(self._wrap_text(display_text(self._npc_outcome_text or ''),
                                             font, text_w)) * line_h
+        if pic is not None:
+            content_h = max(content_h, pic.get_height() + S(8))
         head_h = S(48)
         foot_h = S(8) + key_hints_height() + S(32)
         bh = 2 * b + head_h + S(18) + content_h + S(10) + foot_h
@@ -1888,6 +1898,14 @@ class RenderMixin:
 
         # A hostile scene refuses Esc before a choice (JNL-06): no "walk away".
         _held = bool(enc.get('hostile')) and not self._npc_committed()
+        if pic is not None:
+            well = pygame.Rect(body_rect.x, body_rect.y, pic.get_width() + S(8),
+                               pic.get_height() + S(8))
+            pygame.draw.rect(self.screen, FP.MIDNIGHT, well)
+            self.screen.blit(pic, (well.x + S(4), well.y + S(4)))
+            pygame.draw.rect(self.screen, border, well, 1)
+            body_rect = pygame.Rect(body_rect.x + pic_w, body_rect.y,
+                                    body_rect.w - pic_w, body_rect.h)
         if phase == 'text':
             self._ui_wrap_text(display_text(scene), font, FP.PARCHMENT_LIGHT,
                                body_rect, line_gap=4)

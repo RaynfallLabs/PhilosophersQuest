@@ -457,7 +457,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |
 | `STATE_CHARACTER_SHEET` | `@` | `_character_sheet_input` | `_draw_character_sheet` → `_draw_character_pack_sheet` |
-| `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` |
+| `STATE_NPC_ENCOUNTER` | NPC trigger | `_npc_encounter_input` | `_draw_npc_encounter` (the figure's map art beside the scene and result pages, `lore_art.plate`; choices keep the full width) |
 | `STATE_COW_ENCOUNTER` | cow spawn | `_cow_encounter_input` | `_draw_cow_encounter` |
 | `STATE_JUDGMENT` | L99 altar | `_judgment_input` | `_draw_judgment` |
 | `STATE_STUDY` | `;` | `_study_input` | `_draw_study_journal` |

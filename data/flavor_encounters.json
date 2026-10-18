@@ -7389,6 +7389,11 @@
       "name": "Antigone"
     },
     "contested": true,
+    "authority": {
+      "who": "King Creon and his edict",
+      "just": false,
+      "why": "Creon forbids the burial of Antigone's brother on pain of death. An edict against the unwritten law of the dead binds no one: informing on her is betrayal, and burying him or walking on is never penalised."
+    },
     "text": "A young woman is scraping dirt over a dead man with her bare hands, beside a broken gate. Her nails are torn. \"My brother. Creon says the dogs can have him.\" She doesn't stop. \"Creon's edict isn't older than the unwritten laws. Nothing he writes can make it right to leave my brother to the dogs.\" Down the road a captain's voice carries: \"A city where every sister chooses which laws to keep is no city at all. He burned our houses. Leave him.\"",
     "options": [
       {
@@ -7437,6 +7442,7 @@
       {
         "label": "Tell Creon's men where she is",
         "villain": true,
+        "submit": true,
         "karma": -1,
         "karma_kind": "betray",
         "reward": {
@@ -9500,6 +9506,20 @@
         "deeds": [
           "wrong.kept_girdle"
         ],
+        "thread": {
+          "id": "green_chapel",
+          "hint": "Somewhere below, a green knight is sharpening an axe for my neck."
+        },
+        "schedule": [
+          {
+            "encounter": "flv_green_chapel",
+            "after_floors": [
+              2,
+              6
+            ],
+            "lost_line": "I never did find the Green Chapel. The girdle and I went on down without it."
+          }
+        ],
         "chronicle": "Took a lady's green girdle against the Green Knight's axe and did not tell her husband. The terms were plain. I wanted to live.",
         "road": {
           "id": "flv_green_girdle.keep",
@@ -9530,6 +9550,244 @@
         "road": {
           "id": "flv_green_girdle.refuse",
           "hint": "The gift that saves your life can cost you something you meant to keep."
+        }
+      }
+    ]
+  },
+  {
+    "tag": "flv_green_chapel",
+    "name": "The Green Knight",
+    "proper_noun": true,
+    "symbol": "K",
+    "color": [
+      80,
+      180,
+      80
+    ],
+    "sprite_id": "green_knight",
+    "min_level": 67,
+    "max_level": 73,
+    "role": "story",
+    "stakes": "high",
+    "callback_only": true,
+    "person": {
+      "id": "bertilak",
+      "name": "Sir Bertilak"
+    },
+    "authority": {
+      "who": "the Green Knight, keeper of the Green Chapel",
+      "just": true,
+      "why": "He keeps his bargains exactly, and his judgement of the girdle is honest: a nick for a small lie, and forgiveness for the truth."
+    },
+    "requires": {
+      "deeds_any": [
+        "wrong.kept_girdle"
+      ],
+      "items_any": [
+        "green_girdle"
+      ],
+      "deeds_none": [
+        "slew.green_knight",
+        "flag.green_girdle_turned"
+      ]
+    },
+    "chronicle_meet": "Found the Green Chapel: a hill of turf with holly growing on it, and somebody inside sharpening an axe for my neck.",
+    "text": "A green mound stands in a hollow of the rock, grown over with turf and holly in full berry, like a barrow that never closed. From inside comes the shriek of an axe on a grindstone. The Green Knight ducks out, head on his shoulders and a great axe on one of them. \"You came. Most don't.\" He looks you over slowly, the way a host looks over a guest at his door. \"You owe me one blow. Kneel, and bare your neck.\"",
+    "text_variants": [
+      {
+        "when": {
+          "worn_any": [
+            "green_girdle"
+          ]
+        },
+        "text": "A green mound stands in a hollow of the rock, grown over with turf and holly in full berry, like a barrow that never closed. From inside comes the shriek of an axe on a grindstone. The Green Knight ducks out, head on his shoulders and a great axe on one of them. \"You came. Most don't.\" He looks you over slowly, the way a host looks over a guest at his door, and his eyes stop at your waist. \"You owe me one blow. Kneel, and bare your neck.\""
+      }
+    ],
+    "options": [
+      {
+        "label": "Kneel, and bare your neck",
+        "submit": true,
+        "cost": {
+          "type": "hp_pct",
+          "amount": 15
+        },
+        "outcome": "You kneel on the cold turf. The axe goes up, and you flinch. He stops it in the air. \"Gawain never flinched,\" he says, almost kindly. The second time you hold still, and the blade halts a hair from your skin. The third comes down for real and bites the side of your neck: a nick, hot and running. He leans on the haft, and for a moment he is the lord of the warm hall, Bertilak, laughing by his own fire. \"One swing for the bargain. One for your nerve. And a nick for what you won in my house and called nothing.\" He waits.",
+        "deeds": [
+          "told.green_chapel_blow"
+        ],
+        "thread_close": "green_chapel",
+        "chronicle": "Knelt at the Green Chapel and let the Green Knight swing at my neck. He stopped twice. The third time he nicked me, and named my lie without saying the word.",
+        "then": "options",
+        "road": {
+          "id": "flv_green_chapel.kneel",
+          "hint": "A bargain kept at the block is still a bargain kept."
+        }
+      },
+      {
+        "label": "Tell him about the girdle before he swings",
+        "requires": {
+          "items_any": [
+            "green_girdle"
+          ]
+        },
+        "forbids": {
+          "deeds_any": [
+            "told.green_chapel_blow"
+          ]
+        },
+        "hidden_group": "truth",
+        "submit": true,
+        "cost": {
+          "type": "triggered_item_id",
+          "item_id": "green_girdle"
+        },
+        "karma": 1,
+        "karma_kind": "owning",
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 60
+        },
+        "outcome": "Before you kneel, you untie the green sash and hold it up between you. \"Your lady gave me this. At your door you asked what I'd won in your house, and I said nothing. I lied, because I wanted to live.\" The Green Knight looks at the girdle a long moment. Then he laughs, a great green bark that knocks the snow off the holly, and takes it. He swings three times anyway, because a bargain is a bargain, and all three stop a hair from your skin. \"Gawain needed the axe before he could say it,\" says Bertilak. \"You said it first. I hold you as clean as the day you were born.\"",
+        "deeds": [
+          "told.owned_up_to_green_knight",
+          "flag.green_chapel_first"
+        ],
+        "thread_close": "green_chapel",
+        "chronicle": "Told the Green Knight about his lady's girdle before he raised the axe, and gave it back. He swung three times and never touched me. Then he laughed and said I was clean.",
+        "road": {
+          "id": "flv_green_chapel.truth",
+          "hint": "Say it before the axe falls, and the axe has less to say."
+        }
+      },
+      {
+        "label": "Refuse his game, and draw on him",
+        "forbids": {
+          "deeds_any": [
+            "told.green_chapel_blow"
+          ]
+        },
+        "hidden_group": "other",
+        "outcome": "\"No.\" You draw. The Green Knight sighs like a teacher with a slow pupil, and lifts the axe off his shoulder. \"Then we play it the old way. Strike first, if you like. I'll have my turn after.\"",
+        "fight": {
+          "monster_id": "green_knight"
+        },
+        "deeds": [
+          "told.green_chapel_fought"
+        ],
+        "thread_close": "green_chapel",
+        "chronicle": "Would not kneel at the Green Chapel. I drew on the Green Knight instead. He seemed to think that was fair, which worried me more than the axe.",
+        "road": {
+          "id": "flv_green_chapel.fight",
+          "hint": "A man who has lost his head once is not afraid to lose it again."
+        }
+      },
+      {
+        "label": "Walk away from the chapel",
+        "forbids": {
+          "deeds_any": [
+            "told.green_chapel_blow"
+          ]
+        },
+        "hidden_group": "leave",
+        "outcome": "You turn your back on the mound. Behind you the grindstone starts up again. \"The girdle goes with you,\" he calls after you, not unkindly, \"and so does the reason you carry it.\"",
+        "deeds": [
+          "told.green_chapel_left"
+        ],
+        "thread_close": "green_chapel",
+        "chronicle": "Walked away from the Green Chapel with the Green Knight's girdle still on me. He called after me that the reason I carried it was coming too.",
+        "road": {
+          "id": "flv_green_chapel.leave",
+          "hint": "An appointment you walk away from keeps its own calendar."
+        }
+      },
+      {
+        "label": "Tell him the truth about the girdle, and give it back",
+        "requires": {
+          "deeds_all": [
+            "told.green_chapel_blow"
+          ],
+          "items_any": [
+            "green_girdle"
+          ]
+        },
+        "hidden_group": "truth",
+        "cost": {
+          "type": "triggered_item_id",
+          "item_id": "green_girdle"
+        },
+        "karma": 1,
+        "karma_kind": "owning",
+        "reward": {
+          "type": "effect",
+          "effect": "blessed",
+          "duration": 60
+        },
+        "outcome": "Your neck is bleeding into your collar. You untie the green sash anyway and hold it out. \"Your lady gave me this. You asked what I'd won in your house, and I said nothing. I lied, because I wanted to live.\" Bertilak takes it, turns it over in his huge hands, and laughs until the holly shakes. \"You lacked a little loyalty,\" he says, \"and only for love of your life. That is the whole of your fault, and you have owned it.\" He presses a fistful of snow to your neck. \"I hold you as clean as the day you were born.\"",
+        "deeds": [
+          "told.owned_up_to_green_knight"
+        ],
+        "chronicle": "Told the Green Knight the truth about his lady's girdle with my own blood running into my collar, and gave it back. He laughed until the holly shook and said I was clean.",
+        "road": {
+          "id": "flv_green_chapel.truth",
+          "hint": "A cut heals cleaner once you stop hiding what it was for."
+        }
+      },
+      {
+        "label": "Call it a fair blow, and say you're quits",
+        "requires": {
+          "deeds_all": [
+            "told.green_chapel_blow"
+          ]
+        },
+        "hidden_group": "other",
+        "outcome": "\"A fair blow,\" you say. \"We're quits.\" Bertilak looks at you for as long as it takes the snow to settle. \"Quits,\" he agrees, and does not laugh. \"Keep it, then. Every time you buckle it on, you'll know what it is.\" He shoulders the axe and goes back into his hill, and the grindstone starts again.",
+        "outcome_variants": [
+          {
+            "when": {
+              "items_none": [
+                "green_girdle"
+              ]
+            },
+            "outcome": "\"A fair blow,\" you say. \"We're quits.\" Bertilak looks at you, and at your empty belt, for as long as it takes the snow to settle. \"Quits,\" he agrees, and does not laugh. \"Wherever it is now, you'll know what it was.\" He shoulders the axe and goes back into his hill, and the grindstone starts again.",
+            "chronicle": "Told the Green Knight it was a fair blow and we were quits. He agreed, and did not laugh. I had not known how much I wanted him to laugh."
+          }
+        ],
+        "deeds": [
+          "told.green_chapel_blustered"
+        ],
+        "chronicle": "Told the Green Knight it was a fair blow and we were quits. He agreed, let me keep the girdle, and did not laugh. I had not known how much I wanted him to laugh.",
+        "road": {
+          "id": "flv_green_chapel.bluster",
+          "hint": "A lie told twice to the same host weighs twice as much."
+        }
+      },
+      {
+        "label": "Say nothing, and go",
+        "requires": {
+          "deeds_all": [
+            "told.green_chapel_blow"
+          ]
+        },
+        "hidden_group": "leave",
+        "outcome": "You press a hand to your neck and say nothing at all. Bertilak nods slowly, as if that were an answer of a kind. \"Go on, then. It's yours. So is the knowing.\" When you look back from the end of the hollow, he is still watching you go.",
+        "outcome_variants": [
+          {
+            "when": {
+              "items_none": [
+                "green_girdle"
+              ]
+            },
+            "outcome": "You press a hand to your neck and say nothing at all. Bertilak nods slowly, as if that were an answer of a kind. \"Go on, then. Wherever it is now, the knowing is yours.\" When you look back from the end of the hollow, he is still watching you go."
+          }
+        ],
+        "deeds": [
+          "told.green_chapel_silent"
+        ],
+        "chronicle": "Said nothing to the Green Knight about his lady's girdle, though we both knew. He let me go. He was still watching when I looked back.",
+        "road": {
+          "id": "flv_green_chapel.silent",
+          "hint": "Silence is an answer too, though not the one he waited for."
         }
       }
     ]

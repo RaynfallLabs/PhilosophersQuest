@@ -3157,7 +3157,8 @@
       "id": "oswin",
       "name": "Sir Oswin of Harrow"
     },
-    "contested": true,
+    "stance": "1",
+    "stance_note": "Steel-man: atonement by service is real too. Oswin's sword below could save lives the court never will, and a court may simply hang him. The lean (moral_vision §1: virtues are real, and an order is no defence for a crime) is that justice is owed to the living families of Thale, and only a court that hears all of it makes Ranulf answer for his share. The point asks the hero to say why (one passed question); Oswin goes back either way. Fighting on stays at 0, never wrong; only robbing him is.",
     "authority": {
       "who": "the families of Thale and the king's court",
       "just": true,
@@ -3166,26 +3167,55 @@
     "text": "He is enormous, and on his knees in the dirt, weeping without a sound. His armour is blackened and cracked. \"Forty-six at Thale. Bishop Ranulf said they were heretics. I believed him, because believing him was easier.\" His hands shake. \"I came here to be lost, and my armour is still blessed, and I can't bear the weight of it. Take it, someone.\" He looks up. \"Tell me what to do. I've stopped trusting my own answers.\"",
     "options": [
       {
-        "label": "\"Go back up and face the families of Thale.\"",
-        "outcome": "\"Go back? To face them?\" Yes. He hangs the cracked holy symbol round his neck again. \"And Ranulf,\" he says slowly. \"If I tell all of it, he answers for his share.\" He walks to the stairs like a man going to his own trial, which he is.",
-        "deeds": [
-          "told.oswin_go_back"
-        ],
-        "schedule": [
-          {
-            "encounter": "flv_paladin_end",
-            "after_floors": [
-              5,
-              9
-            ]
-          }
-        ],
-        "chronicle": "Told Sir Oswin to go back up and face the families of Thale. He went. He walked like a man who had been waiting to be told.",
+        "label": "\"Go back up. Face the families of Thale, and tell the king's court about Ranulf.\"",
+        "quiz": {
+          "subject": "philosophy",
+          "tier": 2,
+          "mode": "threshold",
+          "threshold": 1,
+          "total_qs": 1,
+          "timed": false
+        },
+        "pass": {
+          "outcome": "\"Go back? To face them?\" Yes, you tell him, and why: the families of Thale are owed the truth by the man who carried the torch, and only a court that hears all of it can make the man who lit it answer. He hangs the cracked holy symbol round his neck again. \"And Ranulf,\" he says slowly. \"If I tell all of it, he answers for his share.\" He walks to the stairs like a man going to his own trial, which he is.",
+          "karma": 1,
+          "karma_kind": "stance",
+          "deeds": [
+            "told.oswin_go_back"
+          ],
+          "schedule": [
+            {
+              "encounter": "flv_paladin_end",
+              "after_floors": [
+                5,
+                9
+              ]
+            }
+          ],
+          "chronicle": "Told Sir Oswin to go back up and face the families of Thale, and why. He said Ranulf would answer for his share too. He walked like a man who had been waiting to be told."
+        },
+        "fail": {
+          "outcome": "\"Go back? To face them?\" Yes, you say, but when he asks what good it does Thale now, you have no answer for him. He goes anyway, slowly, the cracked holy symbol in his fist. \"Ranulf too,\" he says at the stair, mostly to himself. \"All of it.\" He walks like a man going to his own trial, which he is.",
+          "deeds": [
+            "told.oswin_go_back"
+          ],
+          "schedule": [
+            {
+              "encounter": "flv_paladin_end",
+              "after_floors": [
+                5,
+                9
+              ]
+            }
+          ],
+          "chronicle": "Told Sir Oswin to go back up and face the families of Thale. I could not tell him why it mattered. He went anyway, like a man who had been waiting to be told."
+        },
         "road": {
           "id": "fallen_paladin.go_back",
           "hint": "Some debts can only be paid to the people they are owed to."
         },
-        "submit": true
+        "submit": true,
+        "side": "right"
       },
       {
         "label": "\"Fight on down here. Spend it against what lies below.\"",
@@ -3263,7 +3293,8 @@
         "road": {
           "id": "fallen_paladin.rob",
           "hint": "Blessed steel worn by a thief is just steel."
-        }
+        },
+        "side": "wrong"
       }
     ]
   },

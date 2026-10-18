@@ -88,7 +88,19 @@
       {"person": "grumwald", "name": "Grumwald", "when": {"deeds_all": ["told.owned_up_to_grumwald"]},
        "line": "Grumwald. Still minding bridges. The sign says PAY ANYWAY, and under it, in fresh paint, SOMETIMES THEY COME BACK."},
       {"person": "ruth", "name": "Ruth Gale", "when": {"deeds_all": ["told.owned_up_to_ruth"]},
-       "line": "Ruth Gale. Wears her father's amulet. Carved his stone herself in the end, and never said whether she forgave you. She did."}
+       "line": "Ruth Gale. Wears her father's amulet. Carved his stone herself in the end, and never said whether she forgave you. She did."},
+      {"person": "bertilak", "name": "Sir Bertilak", "when": {"deeds_all": ["told.owned_up_to_green_knight", "flag.green_chapel_first"]},
+       "line": "Sir Bertilak, the Green Knight. Hung his girdle on the chapel door. Tells everyone a stranger owned up before he had even lifted the axe, which Gawain never managed, and laughs every time."},
+      {"person": "bertilak", "name": "Sir Bertilak", "when": {"deeds_all": ["told.owned_up_to_green_knight"], "deeds_none": ["flag.green_chapel_first"]},
+       "line": "Sir Bertilak, the Green Knight. Still laughing about the girdle. Says you owned up with your own blood running into your collar, and that is how most people do it, if they do it at all."},
+      {"person": "bertilak", "name": "Sir Bertilak", "when": {"deeds_all": ["told.green_chapel_blustered"]},
+       "line": "Sir Bertilak, the Green Knight. Says you called it a fair blow and quits, and he let you keep his girdle. He asked me to ask you whether it still fits."},
+      {"person": "bertilak", "name": "Sir Bertilak", "when": {"deeds_all": ["told.green_chapel_silent"]},
+       "line": "Sir Bertilak, the Green Knight. Says you said nothing at all at his chapel, and he let you go. He is still deciding what your silence meant."},
+      {"person": "bertilak", "name": "Sir Bertilak", "when": {"deeds_all": ["told.green_chapel_fought"]},
+       "line": "Sir Bertilak, the Green Knight. Says you drew on him at his own chapel rather than kneel. He has lost his head over less, and he says it was the most honest fight he has had in a hundred years."},
+      {"person": "bertilak", "name": "Sir Bertilak", "when": {"deeds_all": ["told.green_chapel_left"]},
+       "line": "Sir Bertilak, the Green Knight. Waited at his chapel with the axe until the holly dropped its berries. He says the girdle went with you, and he hopes it kept you warm."}
     ]
   }
 }
