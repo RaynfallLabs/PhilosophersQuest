@@ -93,6 +93,7 @@ def test_every_prime_cut_names_the_stat_it_raises():
 
 
 def test_two_floors_of_a_cut_make_one_point():
+    food_system.cut_stat('')     # loads the cache: under -n auto this test can run first
     cut = next(k for k in food_system._cut_stat_cache if food_system.cut_stat(k) == 'DEX')
     p = Player()
     p.deepest_floor_reached = 12
