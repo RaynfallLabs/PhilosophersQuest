@@ -428,7 +428,7 @@ def test_one_hellmouth_per_floor_at_most():
 
 def test_a_hellmouth_in_a_corridor_bottleneck_is_moved_off_it():
     import false_stairs
-    from dungeon import WALL, FLOOR
+    from dungeon import FLOOR
     # Find a floor with a tile whose blocking cuts the up stair off from the
     # down stair. (The layout for one seed varies with Python's hash order, and
     # some layouts have no such tile, so look through a few seeds.)

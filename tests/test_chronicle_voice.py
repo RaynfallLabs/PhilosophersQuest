@@ -24,7 +24,6 @@ source of journal lines must be added to the lint, not slip past it.
 """
 import ast
 import json
-import os
 import sys
 from pathlib import Path
 
