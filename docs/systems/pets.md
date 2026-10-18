@@ -1,13 +1,14 @@
 # Pets
 
-**Scope.** Companion creatures that follow the player, fight alongside them, and (for most species) level up and evolve. The entire system is in `src/pet_system.py` — species dictionary, Pet base class, four subclassed one-off pets, and the `random_species()` picker. Call sites that spawn or transform pets live in `src/game_combat.py` (Soul Sphere throw, Dad Sphere, summon-at-adjacent), `src/main.py` (`_duck_of_doom_transform`), `src/hero_specials.py` (Leonardo's Codex Sketch), `src/game_encounters.py` (Unicorn), and `src/game_menus.py` (Shift+P pet menu — feed, heal, pet-interaction, recall, command cycle, specials).
+**Scope.** Companion creatures that follow the player, fight alongside them, and (for most species) level up and evolve. The entire system is in `src/pet_system.py` — species dictionary, Pet base class, four subclassed one-off pets, and the `random_species()` picker. Call sites that spawn or transform pets live in `src/game_combat.py` (the six Soul Spheres, the Unusual Soul Sphere (Dad), summon-at-adjacent), `src/main.py` (`_duck_of_doom_transform`), `src/hero_specials.py` (Leonardo's Codex Sketch), `src/game_encounters.py` (Unicorn), and `src/game_menus.py` (Shift+P pet menu — feed, heal, pet-interaction, recall, command cycle, specials).
 
 Out of scope here: pet damage resolution inside combat (see [combat](combat.md)), quirks that change pet behavior (see [progression](progression.md)), and the specific items that spawn or heal pets (Soul Sphere, pet-food, healing potions on pets — see [items](items.md)).
 
 **File map.**
 ```
-src/pet_system.py       # Species, Pet, FenrirPet, SketchedPet, DadPet, UnicornPet, random_species
-src/game_combat.py      # Soul Sphere throw hatch, Dad Sphere, bound-sphere resummon, _dig_pit
+src/pet_system.py       # Species, Pet, FenrirPet, SketchedPet, DadPet, UnicornPet, random_species;
+                        # the six spheres: spheres, sphere_spec, hatch_level, roll_sphere_species, sphere_for_floor
+src/game_combat.py      # the six Soul Spheres, the Unusual Soul Sphere (Dad), bound-sphere resummon, _dig_pit
 src/game_menus.py       # Shift+P pet menu + sub-menus (feed/heal/pet/recall/command/specials)
 src/game_encounters.py  # UnicornPet spawn via unicorn-encounter chain
 src/hero_specials.py    # SketchedPet via Leonardo's Codex (summon_sketch_helper)
@@ -43,7 +44,7 @@ The four elemental species (`electric`, `water`, `plant`, `fire`) are the standa
 | irene       | Irene → Irene the Skyleaper → Irene the Seraph      | air       | slashing    |
 | shep        | Shep → Shep the Farmhound → Shep the Legend         | earth     | piercing    |
 
-`sherlock` and `irene` (the family cats, `family_cat: True`) and `shep` (the family farm dog, `family_dog: True`) are rare Soul Sphere hatches, met at most once a run; see §11.
+`sherlock` and `irene` (the family cats, `family_cat: True`) and `shep` (the family farm dog, `family_dog: True`) are rare hatches from an ordinary sphere and the sure hatch of a Hearth Sphere, met at most once a run; see §11 and §12.
 
 ### 1.2 Random pool
 `pet_system.random_species()` returns a random key with equal probability from `_SPECIES`, **excluding `duck_of_doom`** (v2.18) **and every companion with its own name** (`has_own_name`: the family cats and Shep). Waddlekind is the endpoint of the 2026-turn Duck-of-Doom quirk, not a Soul Sphere / Summon Guardian / Gate outcome; the exclusion closes a leak where throwing a Soul Sphere could pop a free Waddlekind without the quirk commitment. Call sites that need a random species import this helper as `random_pet_species`.
@@ -55,7 +56,7 @@ _EVOLVE_2 = 55
 _XP_PER_LEVEL = 20   # xp_to_next = level * _XP_PER_LEVEL
 ```
 
-Totals: ~6,000 XP to L25, ~30,000 XP to L55. Combined with passive XP (one grain every 3 pet turns) + per-kill XP scaling with monster `max_hp` + late-pickup bonus, stage 1 lands around 20-25 pet-floors, stage 2 only in deep late-game play. The L100 cap is terminal — further XP is silently dropped.
+Totals: ~6,000 XP to L25, ~30,000 XP to L55. Combined with passive XP (one grain every 3 pet turns) + per-kill XP, a newborn reaches stage 1 around 20-25 pet-floors and stage 2 only in deep late-game play. A Greater or Master sphere skips the climb: its pet hatches AT 25 or 55 (§12). The L100 cap is terminal — further XP is silently dropped.
 
 ---
 
@@ -153,19 +154,8 @@ def get_attack_damage(self, quiz_accuracy=0.5):
 | Passive              | `gain_xp_passive()`                 | 1 XP every 3rd call                      |
 | Pet-interaction      | menu action, `gain_xp(5)`           | +5 XP once per floor                     |
 | Feed food            | menu action                         | half of food's `sp_restore`, clamped 20-80 |
-| Late-pickup bonus    | `apply_late_pickup_bonus(floor)`    | `min(floor * 50, 4000)`                  |
 
-`apply_late_pickup_bonus(floor)` is the one-time XP grant that keeps a pet hatched deep in the dungeon from being combat-useless at L1. The 4000-XP cap sits just below stage 1 evolution (6000 XP to L25) so a late pet still earns its first big milestone but doesn't need 20 floors of catch-up to be useful.
-
-**Call sites that CALL `apply_late_pickup_bonus`:**
-- `game_combat.py` Soul Sphere throw (`_sphere_throw` path) — the primary case.
-- `main.py::_duck_of_doom_transform` — the Waddlekind hatch (v2.18 wiring; before this the hatched duck was L1 regardless of floor).
-
-**Call sites that DO NOT call it (open ticket in the audit):**
-- Hero-special summon paths (`_eff_summon_sketch_helper`, Summon Guardian pending).
-- Spell-summon paths that spawn via `game_combat.py`'s `_pending_summon` block.
-
-The policy pattern should be: anything that spawns a new standard pet via `Pet(species_key, x, y)` should follow with `pet.apply_late_pickup_bonus(dungeon_level)` — subclassed pets that start at max level (Fenrir, Dad, Unicorn) do not need the bonus.
+**Starting level (LORE NOT FLOOR, 2026-10-18).** A pet starts at the level its ORIGIN gives it, never the floor's: `Pet(species, x, y, level=...)`. A sphere's pet starts at `pet_system.hatch_level(sphere)` (1, 25 or 55, from the sphere's data; §12); the Emberpup is a pup (level 1); Waddlekind starts with `DUCK_OF_DOOM_HATCH_XP` (2026 // 3 = 675 XP: what any companion riding along for 2026 turns would have learned, about level 8); summons take their spell's level (`SUMMON_GUARDIAN_LEVEL`, `GATE_ALLY_LEVEL`) or the slain creature's own. The old late-pickup grant (`apply_late_pickup_bonus`, floor x 50 XP up to 4,000) was a floor multiplier and is gone; `tests/test_lore_not_floor.py` fails if any hatch reads the floor again.
 
 ### 3.3 Nickname + identity
 
@@ -173,7 +163,7 @@ The policy pattern should be: anything that spawns a new standard pet via `Pet(s
 self.nickname = ''
 ```
 
-Set via the naming popup after Soul-Sphere hatch. If empty, display name is the species name; if set, display name becomes `"<Nickname> the <SpeciesName>"`. The nickname persists through evolution — "Sparky the Zappik" becomes "Sparky the Voltpaw" at L25.
+Set via the naming popup after a sphere hatch. If empty, display name is the species name; if set, display name becomes `"<Nickname> the <SpeciesName>"`. The nickname persists through evolution — "Sparky the Zappik" becomes "Sparky the Voltpaw" at L25.
 
 The `name` / `symbol` / `color` properties resolve against the current `stage` so UI code reads the right stage without the pet caching it.
 
@@ -233,14 +223,14 @@ Dad overrides to return 0 (invincible). Unicorn's `base_damage = 0` means the pe
 
 ## 4. Spawn paths
 
-### 4.1 Soul Sphere — thrown by the player
+### 4.1 The six Soul Spheres — thrown by the player
 
-The 5%-per-floor artifact drop (`spawn_items` in dungeon.py; see [world.md](world.md) §4.2). When the player throws it:
+Found on the floor by band, or bought from a trader (§12). When the player throws one (`game_combat._throw_soul_sphere`):
 
-1. If it's a **bound** sphere (recalled from a prior pet via Shift+P → Recall), the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command). The sphere is consumed.
-2. Otherwise, `roll_soul_sphere_species(present)` picks a species (rarely Shep or a family cat, see §11; else `random_species()`), `Pet(species, spawn_x, spawn_y)` is constructed, `pet.apply_late_pickup_bonus(self.dungeon_level)` runs, and the naming popup opens (defaulting to the species name: "Shep", "Sherlock", "Irene"; Shep and the family cats bring their own popup words, `naming_story`).
+1. If it's a **bound** sphere (recalled from a prior pet via Shift+P → Recall), the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command, `hatch_sphere`). The sphere is consumed. No naming popup.
+2. Otherwise `roll_sphere_species(sphere, present)` picks the species (an ordinary sphere: rarely Shep or a family cat, else `random_species()`; a Hearth Sphere: one of the family not yet met, else `random_species()`; see §11), the sphere's kind becomes known (as a thrown potion's does), and `_hatch_sphere_pet(species, x, y, level=hatch_level(sphere), sphere_id=sphere.id)` builds the pet at its sphere's level, logs `hatch_message(pet)` (a grown pet has its own stage words: "out steps Shep the Legend..."), and opens the naming popup (defaulting to the species name at that stage: "Shep the Farmhound"; Shep and the family cats bring their own popup words, `naming_story`).
 
-The sphere lands at the thrown target tile; if the tile is occupied the pet falls to an adjacent walkable tile.
+The sphere lands at the thrown target tile; if the tile is occupied the pet falls to an adjacent walkable tile. With no room at all, any sphere (bound or not) rolls to a stop unbroken on the open tile it reached, to be thrown again somewhere with room (it used to shatter, wasting an unbound one).
 
 ### 4.2 Duck of Doom transform — `main.py::_duck_of_doom_transform`
 
@@ -249,8 +239,8 @@ The Duck of Doom is a cursed head-slot item. Each turn the player wears it, `_du
 ```python
 head = self.player.armor_slots[0]
 # ...consume the duck, clear the counter...
-pet = Pet('duck_of_doom', self.player.x, self.player.y)
-pet.apply_late_pickup_bonus(int(self.dungeon_level) or 1)
+pet = Pet('duck_of_doom', *spot)
+pet.gain_xp(DUCK_OF_DOOM_HATCH_XP)    # 675 XP: what it learned riding along, not the floor
 self.pets.append(pet)
 ```
 
@@ -293,16 +283,16 @@ Overrides:
 - `gain_xp` → no-op.
 - `tick_duration` decrements `turns_remaining`; returns True when the sketch dissolves (sets `self.alive = False`).
 
-### 4.5 DadPet — Dad Sphere
+### 4.5 DadPet — the Unusual Soul Sphere
 
-Spawned by `game_combat.py` on the Dad Sphere throw. Dad is comically overtuned:
+Spawned by `game_combat.py` when the Unusual Soul Sphere is thrown (`_throw_unusual_sphere`). The Unusual Soul Sphere is NOT one of the six (it has no `sphere` block): only the family secret builds start with it, it is never spawned, sold or hinted at, and nothing in the 2026-10-18 sphere change touched it. Dad is comically overtuned:
 - `max_hp = 99999`, `base_damage = 9999`.
 - `take_damage` returns 0 (invincible).
 - `duration = 5` turns, decremented by `tick_duration`.
 - Symbol `'@'`, color `(255, 220, 100)`.
 - Specials disabled; no leveling.
 
-The Unusual Soul Sphere first makes the same rare roll as a Soul Sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); only when that misses does Dad come.
+The Unusual Soul Sphere first makes the same rare roll as an ordinary sphere (`roll_rare_sphere_pet`: Shep 1%, each cat 5%, each only while not yet met); a companion it hatches is a newborn (level 1). Only when that misses does Dad come, for 5 turns. On a boss floor it is not used up.
 
 ### 4.6 UnicornPet — unicorn-encounter chain
 
@@ -325,7 +315,7 @@ Return value from `take_turn` is `('unicorn_actions', [messages])` where message
 
 ### 4.7 Hero-special + spell summon paths
 
-`game_combat.py` has a `_pending_summon` block that spawns a time-limited standard pet via `Pet(random_pet_species(), spawn_x, spawn_y)` with scaled `max_hp` and a duration flag. These paths currently **do not** call `apply_late_pickup_bonus` (open follow-up — the policy should be: every `Pet(...)` constructor site other than Fenrir/Dad/Unicorn/Sketch calls it).
+`game_combat.py` has a `_pending_summon` block that spawns a time-limited standard pet via `Pet(random_pet_species(), spawn_x, spawn_y)` at the slain creature's own level (from `monsters.json`) with scaled `max_hp` and a duration flag. Summon Guardian and Gate use their spell's level. None of them reads the floor.
 
 ---
 
@@ -360,26 +350,22 @@ Lists identified `Potion` items with `effect in ('heal', 'extra_heal', 'full_hea
 
 ## 6. Leveling flow — worked example
 
-A fresh Zappik hatched at F1 from an unmodified Soul Sphere:
+A fresh Zappik hatched at F1 from a Soul Sphere:
 
 | Floor | Pet level approx | Notes                                                          |
 |-------|------------------|-----------------------------------------------------------------|
-| F1    | L1 (20 HP, 3 dmg) | Hatched. Late-pickup bonus = `min(1*50, 4000) = 50` XP → still L1. |
+| F1    | L1 (20 HP, 3 dmg) | Hatched as a newborn.                                          |
 | F10   | ~L8-12           | Kills + passive XP accumulate; still Stage 0 Zappik.           |
 | F20   | ~L18-23          | Approaching the Stage 1 threshold.                              |
 | F25   | **L25 → Stage 1** | Evolves to Voltpaw. Unlocks **Spark Bolt**. HP ~65, dmg ~9.    |
 | F55   | **L55 → Stage 2** | Evolves to Thundertail. Unlocks **Thunder Strike**. HP ~119, dmg ~17. |
 | F100  | L100 cap         | HP ~200, dmg ~30. Further XP is dropped.                        |
 
-A Soul Sphere thrown at F40 with no bound pet:
-- Random species → L1 at construction.
-- Late-pickup bonus = `min(40*50, 4000) = 2000` XP → levels up repeatedly until it runs out, lands around L15-18.
-- Reaches Stage 1 (L25) within ~5-7 floors of play.
+A Soul Sphere thrown at F40 hatches the same newborn as one thrown at F1: the floor does not matter. A Greater Soul Sphere (found from floor 34, or bought) hatches a Voltpaw at L25 with Spark Bolt; a Master Sphere (from floor 67, or from Vesper from 61) hatches a Thundertail at L55 with both specials.
 
-A Waddlekind hatched at F30 from the Duck of Doom quirk:
-- Spawns at L1 at the player's tile.
-- Late-pickup bonus `min(30*50, 4000) = 1500` XP → ~L12-14.
-- **Already has Stage 0 special Detect Monsters** at level 1 — the duck's Stage 0 unlock is the design reward for 2026 cursed turns.
+A Waddlekind hatched from the Duck of Doom quirk:
+- Spawns beside the hero with 675 XP (about L8) on any floor.
+- **Already has Stage 0 special Detect Monsters** — the duck's Stage 0 unlock is the design reward for 2026 cursed turns.
 
 ---
 
@@ -388,7 +374,7 @@ A Waddlekind hatched at F30 from the Duck of Doom quirk:
 Pets live in `game.pets: list[Pet]`. The save system pickles the whole list via `Game.__getstate__`/`__setstate__` paths (see [save_meta](save_meta.md)). Fields that must round-trip:
 
 - `species_key`, `level`, `xp`, `x`, `y`, `alive`, `hp`.
-- `nickname`, `kills_count`, `command`, `last_pet_floor`.
+- `nickname`, `kills_count`, `command`, `last_pet_floor`, `hatch_sphere` (the sphere id it hatched from, for the card's "Hatched From" line; absent on pets from older saves and on non-sphere pets, which simply show no line).
 - `_special_cooldowns` dict.
 - `_regen_timer`, `_passive_xp_timer`.
 - For subclassed pets: `turns_remaining` (Sketch, Dad), `_heal_timer` + `_cleanse_timer` (Unicorn), `monster_kind` + `monster_name` + `_attack_dice` + `is_sketch` (Sketch), `is_dad` / `is_unicorn` flags.
@@ -400,7 +386,7 @@ The `_special_cooldown` **singular** attribute set alongside `_special_cooldowns
 ## 8. Cross-reference
 
 - **Progression / quirks.** Pet-affecting quirks, Trainer's Cap (`bond_check` → +1 pet level on floor entry), the Duck of Doom quirk itself → [progression](progression.md).
-- **Items.** Soul Sphere spawn and throw mechanics, pet-food inventory types (`Food`, `Ingredient`), healing potions, the Duck of Doom head item → [items](items.md).
+- **Items.** The six Soul Spheres (data, identity, prices), pet-food inventory types (`Food`, `Ingredient`), healing potions, the Duck of Doom head item → [items](items.md), [economy](economy.md).
 - **Combat.** Pet attack resolution, damage application to monsters, status-effect application → [combat](combat.md).
 - **World.** Floor-generation hook that places Soul Spheres, pit tracking (`dungeon.pits`), trap tracking (`dungeon.traps`) that pet AI reads → [world](world.md).
 
@@ -426,7 +412,7 @@ With `_XP_PER_LEVEL = 20`, `xp_to_next(L) = L * 20`. Cumulative XP to reach leve
 | 1 → 85       |                  | 71,400        |                               |
 | 1 → 100      |                  | 99,000        | L100 cap — further XP dropped |
 
-With the kill-XP formula `3 + max_hp // 10` and typical monster HPs scaling 10 → 300 across floors, a pet averaging ~1 kill per 3 turns in a 200-turn floor gets roughly 400-1500 XP per floor from kills plus 60-70 XP from passive. The late-pickup bonus (`min(floor * 50, 4000)`) covers the first 10-25 floors of catch-up for a hatched-late pet.
+With the kill-XP formula `3 + max_hp // 10` and typical monster HPs scaling 10 → 300 across floors, a pet averaging ~1 kill per 3 turns in a 200-turn floor gets roughly 400-1500 XP per floor from kills plus 60-70 XP from passive. There is no catch-up grant for a pet hatched deep: a stronger start comes from a stronger sphere.
 
 ---
 
@@ -455,7 +441,7 @@ def random_species() -> str:
     return random.choice(pool)
 ```
 
-A Soul Sphere hatch (`roll_soul_sphere_species`) first makes the rare roll, `roll_rare_sphere_pet`: Shep's 1% on his own random stream (`_SHEP_RNG`), then each family cat's 5% on theirs (`_CAT_RNG`). Neither touches the global stream that seeded floors depend on. Only when both miss does `random_species()` pick one of the four elemental lines evenly. While Shep is still to be met the cats' roll is rescaled (`shep_in_play`) so each cat stays at exactly 5% of all hatches.
+An ORDINARY sphere's hatch (Soul, Greater Soul or Master; `roll_soul_sphere_species`) first makes the rare roll, `roll_rare_sphere_pet`: Shep's 1% on his own random stream (`_SHEP_RNG`), then each family cat's 5% on theirs (`_CAT_RNG`). Neither touches the global stream that seeded floors depend on. Only when both miss does `random_species()` pick one of the four elemental lines evenly. While Shep is still to be met the cats' roll is rescaled (`shep_in_play`) so each cat stays at exactly 5% of all hatches.
 
 | Already met this run | Shep | Sherlock | Irene | Each elemental line |
 |----------------------|------|----------|-------|---------------------|
@@ -465,18 +451,45 @@ A Soul Sphere hatch (`roll_soul_sphere_species`) first makes the rare roll, `rol
 | both cats            | 1%   | —        | —     | 24.75%              |
 | all three            | —    | —        | —     | 25%                 |
 
-"Met" (`family_pets_present`) means hatched before this run (`player.family_cats_met`, which holds Shep too; the name is kept for older saves), walking with the hero, or waiting in a bound Soul Sphere. The rare companions never come from Summon Guardian, a Gate or a kill-summon: those call `random_species()` directly. For play-testing, `PQ_QA_MODE=1` with `PQ_FORCE_SPHERE=shep` (or `sherlock`, `irene`) makes the next sphere hatch that companion. There's no weighting by element or floor — fire pets appear on F1 as readily as water pets. The `duck_of_doom` and family exclusions are enforced here (don't push them to call sites).
+A HEARTH sphere (any tier; `roll_family_sphere_pet`, its own stream `_FAMILY_SPHERE_RNG`) always holds one of the family not yet met: `FAMILY_SPHERE_ODDS` Sherlock 40%, Irene 40%, Shep 20%, a met one's share spread over the rest in proportion.
+
+| Already met this run | Sherlock | Irene | Shep | Elemental at the sphere's tier |
+|----------------------|----------|-------|------|--------------------------------|
+| nobody               | 40%      | 40%   | 20%  | —                              |
+| Shep                 | 50%      | 50%   | —    | —                              |
+| Sherlock             | —        | 67%   | 33%  | —                              |
+| both cats            | —        | —     | 100% | —                              |
+| all three            | —        | —     | —    | 100% (evenly, `random_species`) |
+
+"Met" (`family_pets_present`) means hatched before this run (`player.family_cats_met`, which holds Shep too; the name is kept for older saves), walking with the hero, or waiting in a bound Soul Sphere. The rare companions never come from Summon Guardian, a Gate or a kill-summon: those call `random_species()` directly. For play-testing, `PQ_QA_MODE=1` with `PQ_FORCE_SPHERE=shep` (or `sherlock`, `irene`) makes the next sphere hatch that companion, and `PQ_FORCE_SPHERE_TIER=1`, `2` or `3` makes every sphere hatch at that tier's level (1, 25, 55). The QA hero (Titivillus) starts with one of each of the six. There's no weighting by element or floor — fire pets appear on F1 as readily as water pets. The `duck_of_doom` and family exclusions are enforced here (don't push them to call sites).
 
 If a design future adds a sixth species, it defaults in to the random pool unless explicitly excluded. Common pattern: new "reward" species (hatched from a quirk / mystery / scripted event) should be excluded from `random_species` the same way Waddlekind is.
 
 ---
 
-## 12. Soul Sphere lifecycle
+## 12. The six Soul Spheres (2026-10-18)
+
+THE SPHERE DECIDES WHAT IS INSIDE, NEVER THE FLOOR. What each holds is data (`data/items/artifact.json`, the `sphere` block; read by `pet_system.spheres()` / `sphere_spec()`, by id, so an old save's pickled `soul_sphere` works):
+
+| Sphere | id | Hatches | Floor chance by band (1-33 / 34-66 / 67-100) | Traders |
+|---|---|---|---|---|
+| Soul Sphere | `soul_sphere` | a newborn, level 1, stage 0 | 8% / 3% / 1% | Grindle, Mags |
+| Greater Soul Sphere | `greater_soul_sphere` | at its first evolution, level 25, stage 1 | 0 / 4% / 2% | Grindle, Mags |
+| Master Sphere | `master_sphere` | at its final evolution, level 55, stage 2 | 0 / 0 / 2% | Vesper (61+) |
+| Hearth Sphere | `hearth_sphere` | always one of the family, level 1 | 0.8% / 0.3% / 0.1% | none |
+| Greater Hearth Sphere | `greater_hearth_sphere` | always one of the family, level 25 | 0 / 0.4% / 0.2% | Vesper (61+) |
+| Master Hearth Sphere | `master_hearth_sphere` | always one of the family, level 55 | 0 / 0 / 0.2% | Vesper (67+) |
+
+- **Floor roll** (`dungeon.spawn_items` → `pet_system.sphere_for_floor`): ONE draw from the floor's stream against the six chances in turn, so at most one sphere a floor. A hidden treasure chamber re-runs the loot pass and can hold one at the same chance. Spheres carry no `peak_weight` / `floorSpawnWeight`, so they stay out of every random pool (chests, gifts, rewards) and thieves never take one.
+- **Traders** (`data/traders.json`, `id` entries with `floors`): a sphere he has rolled is always on the shelf. Prices: `data/item_worth.json` `share_by_id` (Soul 2.0, Greater 3.5, Master 5.0, Hearth 3.0, Greater Hearth 5.0, Master Hearth 7.0 floors' share), so the price follows the tier. A trader buys an unbound sphere back like anything else; a bound one is never sold or given as payment (`items.withheld`).
+- **Identity**: each looks the same identified or not (its art is the item; the unidentified name describes that look: "Iron-Caged Sphere", "Silver-Caged Sphere", "Crowned Silver Sphere", "Gold-Trimmed Iron Sphere", "Gold-Trimmed Silver Sphere", "Gold-Crowned Sphere"). Its kind is learned by identifying it or by throwing one. Never cursed (`can_be_cursed: false`, `buc_known: true`).
+- **Art**: `assets/tiles/items/<id>.png`, 64 px, drawn by `tools/content/genart/briefs/spheres.json` (review sheet `SPHERES_ART.png`). Plain tiers go pale wisp → bright core → radiant crowned globe; the Hearth versions match their tier, gold-touched, with warm light.
+- **Starting kits**: Ash Ketchum's four are plain Soul Spheres (`_start_soul_spheres`); the QA hero has one of each (`_start_spheres`).
 
 ```
-spawn_items (5%/floor)
+spawn_items (by band) / a trader
     ↓
-Soul Sphere Artifact on the floor
+one of the six on the floor or in the pack
     ↓
 player picks up → inventory
     ↓
@@ -484,9 +497,9 @@ player throws (press 't' + aim)
     ↓ (lands on target tile or an adjacent walkable tile)
 ┌───────────────────────────────┐
 │ sphere.bound_pet is None?     │
-├── YES → random_pet_species()   │
-│         Pet(species, x, y)     │
-│         apply_late_pickup_bonus │
+├── YES → roll_sphere_species() │
+│         Pet(species, x, y,     │
+│             level=hatch_level) │
 │         open naming popup      │
 ├── NO  → bound_pet re-added     │
 │         to self.pets with ALL  │
@@ -504,7 +517,7 @@ sphere in inventory, pet removed from active list
 (repeat throw cycle)
 ```
 
-The bound sphere is **cyan-tinted** (`color=[80, 200, 255]`) to visually distinguish it from a fresh sphere (`color=[255, 80, 80]`). Its name reads `"Bound Soul Sphere (<pet_name>)"`. Lore reads: "A Soul Sphere humming with the bound spirit of <name>. Hurl it to summon them back to your side."
+A bound sphere is always made from a plain `soul_sphere` whatever the pet hatched from (its art is the Soul Sphere's), **cyan-tinted** (`color=[80, 200, 255]`) on the map's old glyph colour. Its name reads `"Bound Soul Sphere (<pet_name>)"`. Lore reads: "A Soul Sphere humming with the bound spirit of <name>. Hurl it to summon them back to your side."
 
 Recall requires adjacency to the pet (Chebyshev ≤ 1). This prevents long-range recall shenanigans and makes recalling a wandering pet require you to catch it first.
 
@@ -542,10 +555,10 @@ Dead pets are not rendered. Sketch/Dad pets with `turns_remaining <= 0` set `ali
 ## 15. Design notes
 
 - **Pokémon pattern.** The 3-stage evolution + per-species single-target + AoE specials deliberately echoes a Pokémon starter. The 4 elemental species (electric/water/plant/fire) include the three classic Gen-1 starter types; Zappik is the Pikachu equivalent and the only standard species with a stage 0 lowercase glyph.
-- **Reward asymmetry.** Fenrir, Dad, and Unicorn are **reward pets** acquired through specific gates (XYZZY T5 hero-special, Dad Sphere, Unicorn-encounter chain 5). None of them level — they come at full power. Waddlekind is the fifth reward pet, costing 2026 cursed-turns.
+- **Reward asymmetry.** Fenrir, Dad, and Unicorn are **reward pets** acquired through specific gates (XYZZY T5 hero-special, the Unusual Soul Sphere, Unicorn-encounter chain 5). None of them level — they come at full power. Waddlekind is the fifth reward pet, costing 2026 cursed-turns.
 - **Why L100 cap?** Pet stats scale to roughly match a mid-tier F100 monster. Beyond L100 the pet would overshoot even boss stat budgets, breaking the pet-as-helper design (pets are a *support* line, not a replacement for the player).
 - **Why command cycle, not toggles?** Each pet gets ONE menu action (vs. per-command checkboxes). Cycle is one keypress to iterate `return → stay → wander`, matching the one-keypress feel of the rest of the pet menu.
-- **Soul-sphere late-pickup bonus curve.** `min(floor * 50, 4000)` caps at F80 (`80 * 50 = 4000`). The curve is deliberately below the Stage 1 evolution threshold (6000 XP) so a late pet still has to earn its first big milestone through play. Design intent: the bonus closes the "useless-at-spawn" gap but preserves the growth arc.
+- **Stronger starts come from stronger spheres (2026-10-18).** The late-pickup grant (floor x 50 XP) is gone: it was a floor multiplier. A player deep in the dungeon finds Greater and Master spheres there, or buys one, and those hatch grown. Brandon: "pets are a fun part of the game, want to make sure they do show up", so the floor chances run about 8% early and the traders carry spheres too.
 
 ---
 
@@ -553,7 +566,7 @@ Dead pets are not rendered. Sketch/Dad pets with `turns_remaining <= 0` set `ali
 
 1. **`DUCK_OF_DOOM_TURNS_REQUIRED = 2026` lives in `pet_system.py`.** Both the quirk timer in `main.py` and any future hero-special that references the threshold must import it from here.
 2. **`random_species()` excludes `duck_of_doom`.** Waddlekind is the Duck quirk endpoint, not a random Soul Sphere outcome. If a new random spawner is written, use `random_pet_species` (the `game_combat.py` alias) and inherit the exclusion.
-3. **`apply_late_pickup_bonus` is called on every `Pet(species, x, y)` construction unless the pet starts at max level.** Soul Sphere ✓, Duck transform ✓ (v2.18). The hero-special + spell-summon paths still need to be wired — don't ship a new summon site without it.
+3. **No pet's starting level reads the floor.** A sphere's pet starts at `hatch_level(sphere)`; every other source names its own level. `tests/test_lore_not_floor.py::test_no_pet_hatch_reads_the_floor` holds this.
 4. **Pet `_move_toward` consults `dungeon.pits` + `dungeon.traps`.** Pits are hard refuse (always); traps are soft avoid (pass 1 skip, pass 2 tolerate). Never collapse the two-pass structure — forgetting the goal because every direction is trapped is worse than stepping on an alarm.
 5. **The "SketchedPet is temporary" invariant depends on `tick_duration` being called every pet turn.** The audit flagged this call site as the risk area — a lost tick means a permanent sketch pet.
 6. **Dad is invincible.** `take_damage` returning 0 is load-bearing — Dad has to survive to the duration timeout.

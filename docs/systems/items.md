@@ -443,6 +443,10 @@ Weight at floor F is `peak_weight * exp(-((F - peak_floor)² / 2σ²))`.
 of `"<lo>-<hi>": weight`). Used by potions/scrolls/wands/accessories
 and by chest templates for level bands.
 
+**(c) Per-floor chance** (`floor_spawn_chance`, the Soul Spheres only): a
+chance per floor by band, rolled once a floor across the six in
+`dungeon.spawn_items` (`pet_system.sphere_for_floor`).
+
 Both coexist on the base `Item`:
 
 ```python
@@ -589,6 +593,23 @@ pickup/identify doesn't leak the true name. Examples:
 - Philosopher's Stone → `"smooth red stone"`
 - Pithos of Pandora → `"a sealed pithos"`
 - Lamp of Diogenes / Aladdin's Lamp → `"a tarnished brass lamp"`
+
+### The six Soul Spheres (2026-10-18)
+
+`soul_sphere`, `greater_soul_sphere`, `master_sphere`, `hearth_sphere`,
+`greater_hearth_sphere`, `master_hearth_sphere`: each entry carries a `sphere`
+block (`tier`, `hatch_level` 1 / 25 / 55, `family`) and a `floor_spawn_chance`
+band dict (its own chance per floor; deliberately NOT `floorSpawnWeight`, so
+spheres stay out of every random pool). The sphere decides what hatches and at
+what level, never the floor (see [pets](pets.md) §12 for the whole table).
+Weight 0.5 each; they do not stack. A sphere looks the same identified or not
+(its unidentified name describes its art: "Iron-Caged Sphere" and so on); its
+kind is learned by identifying it or throwing one. Never cursed
+(`can_be_cursed: false`, `buc_known: true`). Prices by tier in
+`data/item_worth.json` `share_by_id`. Thieves never take one; a trader buys an
+unbound one back; a bound one (holding a recalled companion) is withheld from
+every sale and payment. The Unusual Soul Sphere (`unusual_soul_sphere`) is not
+one of the six: it has no `sphere` block and keeps its own throw.
 
 ### Deep-lore factories
 

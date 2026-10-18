@@ -188,7 +188,7 @@ and locks on because the Duck is itself cursed.
 | 1 | L1-10 (one chosen at game start, `_duck_of_doom_floor`) | One Duck of Doom placed, guaranteed. |
 | 2 | pickup | `_duck_of_doom_pickup` force-equips to head slot, kicks the old head to inventory (or ground), starts `quirk_progress['duck_of_doom_turns'] = 0`. |
 | 3 | +2026 turns | `_duck_of_doom_tick` ticks the counter every player turn. At 2026 → `_duck_of_doom_transform`. |
-| 4 | transform | Duck leaves head slot (consumed), spawns a `Pet('duck_of_doom', px, py)` — the **Waddlekind** celestial duckling — at the player's tile. Late-pickup XP applies so a duck hatched at F40 isn't L1-weak (`pet.apply_late_pickup_bonus(dungeon_level)`). The `duck_of_doom` quirk is awarded. |
+| 4 | transform | Duck leaves head slot (consumed), spawns a `Pet('duck_of_doom', px, py)` — the **Waddlekind** celestial duckling — beside the player, with the 675 XP it learned riding along for 2026 turns (`DUCK_OF_DOOM_HATCH_XP`, about level 8, the same on any floor; the old floor-based late-pickup grant is gone). The `duck_of_doom` quirk is awarded. |
 
 Constant: `Game.DUCK_OF_DOOM_TURNS_REQUIRED = 2026` (release-year
 joke). Transform code: `main.py:4455-4493`.
