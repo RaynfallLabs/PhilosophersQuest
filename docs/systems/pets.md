@@ -69,14 +69,15 @@ Each entry in `_SPECIES[species_key]['specials']` is one activated attack:
 | `name`             | str    | Display name                                                           |
 | `unlock_stage`     | int    | 0, 1, or 2. Available iff `pet.stage >= unlock_stage`                 |
 | `damage_mult`      | float  | Multiplier on `pet.base_damage` (scaled by quiz accuracy)             |
-| `damage_type`      | str    | shock / cold / poison / fire / psychic / holy                         |
+| `damage_type`      | str    | shock / cold / poison / fire / psychic / holy; lands through `_pet_hit` as the monsters' word (`pet_damage_type`: piercing→pierce, slashing→slash, crushing→blunt, shock→lightning), so resistances, weaknesses and split-by-form apply |
 | `targeting`        | str    | `single`, `aoe`, `cone`, `line`, `self`, `visible_all`                 |
 | `range`            | int    | Tiles. 0 = pet-centered for `aoe`/`self`                              |
 | `aoe_radius`       | int    | Tiles (for `aoe` + `cone`)                                            |
 | `status`           | str    | Status effect applied on hit (`paralyzed`, `slowed`, `immobilized`, `poisoned`, `burning`, `confused`, `feared`, `bleeding`) |
 | `status_chance`    | float  | 0.0-1.0                                                                |
 | `status_duration`  | int    | Turns                                                                  |
-| `knockback`        | int    | Tiles (water specials)                                                |
+| `leap`             | bool   | The pet moves beside the target (Pounce, Seraph Dive, Sic 'Em!). The target tile must be in the hero's sight with no rock between pet and tile; a single-target leap only goes for a creature the hero can see |
+| `knockback`        | int    | Tiles pushed straight away from the pet (water specials; `_pet_knockback`: walls, bodies, bosses, big and stationary creatures stop it) |
 | `cooldown`         | int    | Turns before this id is usable again                                  |
 | `effect`           | str    | Non-damage effect id (`player_telepathy` for duck Stage 0)            |
 | `effect_duration`  | int    | Turns, for `effect`-driven specials                                   |
@@ -104,9 +105,9 @@ The player triggers specials from the pet menu (Shift+P → specials). The `Pet.
 
 Shep's line is the one deliberately stronger family line (about a tenth: 1.7× against the others' 1.5× at stage 1; 2.0× against the cats' 1.6×/2.0× at stage 2). His growth table is everyone's.
 
-**He Always Comes (Shep, passive, from hatching).** `species['rescue']`, run by `_shep_rescue()` at the top of `_do_pet_turns` (straight after the monsters' turn). When the hero is at 25% health or less with a foe beside him, Shep comes from anywhere on the floor to the hero's side (`_dash_pet_to_hero`) and hits the toughest adjacent foe for 1.5× with a 50% stun (2t); that is his turn. Shep the Legend (stage 2) hits every adjacent foe and then the hero is Shielded for 3 turns. Once a floor: `rescue_spent_at` holds the hero's deepest floor when it was used, so it comes back only on a floor reached for the first time, like every other once-a-floor charge.
+**He Always Comes (Shep, passive, from hatching).** `species['rescue']`, run by `_shep_rescue()` at the top of `_do_pet_turns` (straight after the monsters' turn). When the hero is at 25% health or less with a foe beside him that can fight (not asleep, paralysed, stunned, frozen, feared or charmed), Shep comes from anywhere on the floor to the hero's side (`_dash_pet_to_hero`) and hits the toughest adjacent foe for 1.5× with a 50% stun (2t); that is his turn. Shep the Legend (stage 2) hits every adjacent foe and then the hero is Shielded for 3 turns. Once a floor: `rescue_spent_at` holds the hero's deepest floor when it was used, so it comes back only on a floor reached for the first time, like every other once-a-floor charge.
 
-**Hackles Up (Shep, passive, from hatching).** `species['growl']`, run by `_do_pet_growl()` each turn straight after `_do_warning()`. The real Shep lowered his head and growled at danger. When a hostile the hero cannot see comes within 5 / 6 / 7 tiles of the hero (by stage), and Shep is alive and within 10 tiles, the log says he growls low, staring toward the nearest one (compass word). Each monster sets him off once while it stays in range (`_growled_at`), so a lurking threat is one growl, not one a turn; allies, encounter NPCs and the unicorn never set him off.
+**Hackles Up (Shep, passive, from hatching).** `species['growl']`, run by `_do_pet_growl()` each turn straight after `_do_warning()`. The real Shep lowered his head and growled at danger. When a hostile the hero cannot see comes within 5 / 6 / 7 tiles of the hero (by stage), and Shep is alive and within 10 tiles, the log says he growls low, staring toward the nearest one (compass word). Each monster sets him off once (`_growled_at`, keyed on `pet_system.growl_tag`, which lasts through a save) until it dies, goes more than two tiles past his range, or the floor changes; the hero glimpsing it does not reset it. So a lurking threat is one growl, not one a turn; allies, encounter NPCs and the unicorn never set him off.
 
 ### 2.2 Duck of Doom specials (unique shape)
 
@@ -237,7 +238,7 @@ Dad overrides to return 0 (invincible). Unicorn's `base_damage = 0` means the pe
 The 5%-per-floor artifact drop (`spawn_items` in dungeon.py; see [world.md](world.md) §4.2). When the player throws it:
 
 1. If it's a **bound** sphere (recalled from a prior pet via Shift+P → Recall), the stored pet is resummoned with ALL state preserved (level, XP, nickname, kills, command). The sphere is consumed.
-2. Otherwise, `roll_soul_sphere_species(present)` picks a species (rarely Shep or a family cat, see §11; else `random_species()`), `Pet(species, spawn_x, spawn_y)` is constructed, `pet.apply_late_pickup_bonus(self.dungeon_level)` runs, and the naming popup opens (defaulting to the species name: "Shep", "Sherlock", "Irene"; Shep brings his own popup words, `naming_story`).
+2. Otherwise, `roll_soul_sphere_species(present)` picks a species (rarely Shep or a family cat, see §11; else `random_species()`), `Pet(species, spawn_x, spawn_y)` is constructed, `pet.apply_late_pickup_bonus(self.dungeon_level)` runs, and the naming popup opens (defaulting to the species name: "Shep", "Sherlock", "Irene"; Shep and the family cats bring their own popup words, `naming_story`).
 
 The sphere lands at the thrown target tile; if the tile is occupied the pet falls to an adjacent walkable tile.
 

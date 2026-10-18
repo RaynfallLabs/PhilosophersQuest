@@ -4965,8 +4965,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _do_pet_growl(self):
         """Shep's Hackles Up: when a hostile the hero cannot see comes within
         his range, Shep lowers his head and growls toward it. Each monster
-        sets him off once while it stays in range, so a lurking wolf is one
-        growl, not one a turn. He has to be near enough to hear it."""
+        sets him off once until it dies, goes well out of his range or the
+        floor changes, so a lurking wolf is one growl, not one a turn. He has
+        to be near enough to hear it."""
         px, py = self.player.x, self.player.y
         for pet in getattr(self, 'pets', []) or []:
             growl = (getattr(pet, 'species', None) or {}).get('growl')
