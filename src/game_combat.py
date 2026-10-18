@@ -1352,6 +1352,20 @@ class CombatMixin:
             item_tier = int(treasure.get('item_tier', 1))
             self._spawn_treasure_item(monster.x, monster.y, item_tier)
 
+        # Gems, jewellery, plate (treasure.py): a dragon's hoard, a vampire's
+        # old money, a thief's takings. ``treasure_chance`` and the kinds are
+        # written by lore into monsters.json (tools/balance/gold_by_lore.py);
+        # what drops is weighted to the floor like any loot.
+        t_chance = float(treasure.get('treasure_chance', 0) or 0)
+        if t_chance > 0 and _rng.random() < t_chance:
+            import treasure as _tr
+            piece = _tr.roll(self.dungeon_level, _rng, treasure.get('treasure_kinds'),
+                             monster.x, monster.y)
+            if piece is not None:
+                self.ground_items.append(piece)
+                self.add_message(f"{the_name(monster)} drops {self._a_or_an(self._display_name(piece))}.",
+                                 'loot')
+
         # Archer ammo drop: monsters with bows/crossbows in their attack
         # profile carry their own ammo. Per-profile chance + count_range
         # tuned in data/monsters.json under treasure.ammo_drop.

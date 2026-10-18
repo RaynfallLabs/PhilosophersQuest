@@ -29,6 +29,11 @@ What a creature carries (``treasure.purse`` records which rule applied):
               (peak_weight 0 or frequency 0): left exactly as written. A
               named beast's gold is its lair: the bones of those it ate.
 
+Treasure (2026-10-18): some kinds also carry one piece of treasure
+(``treasure.treasure_chance`` and ``treasure_kinds``; TREASURE_CHANCE below):
+dragons most of all, vampires and liches, fey, thieves, tempters, giants and
+the buried dead.
+
 Amounts are a share of one floor's income (economy.floor_income) at the
 creature's peak floor, rolled between half and one and a half of the share.
 Run from the repo root:
@@ -64,6 +69,41 @@ SHARE = {
     'tempter': 0.06,
 }
 LEADER_MULT = 2.0
+# Treasure (Brandon's D2, 2026-10-18; src/treasure.py): the chance a creature
+# carries one piece of treasure, and which kinds, by what it IS. A dragon
+# sleeps on gems and plate; a vampire or a lich has old jewels; a thief has
+# lifted something small and dear; the buried dead wear their grave goods.
+# Written into monsters.json as treasure.treasure_chance / treasure_kinds;
+# what drops is weighted to the floor like any loot. Leaders double it.
+# Measured with tools/balance/gold_sim.py (2026-10-18): deep floors hold many
+# more creatures and every deep piece is dear, so these are small. Only the
+# kinds whose lore is treasure carry it: a dragon's hoard, a vampire's or a
+# lich's old jewels, a thief's takings. (The buried dead's grave goods are in
+# the graves, dug: game_divine; a giant's sack and a fey's trinkets are coin.)
+TREASURE_CHANCE = {
+    'hoard': 0.06,
+    'noble_dead': 0.025,
+    'thief': 0.02,
+}
+TREASURE_KINDS = {
+    'hoard': None,                                   # any kind
+    'noble_dead': None,
+    'thief': ['gem', 'jewellery', 'coins'],
+}
+TREASURE_CHANCE_CAP = 0.5
+
+
+def treasure_for(mid: str, m: dict, kind: str) -> tuple:
+    """(chance, kinds) of one piece of treasure on this creature."""
+    chance = TREASURE_CHANCE.get(kind, 0.0)
+    if chance <= 0:
+        return 0.0, None
+    name = f"{mid} {m.get('name', '')}".lower()
+    if kind != 'hoard' and any(w in name for w in LEADER_WORDS):
+        chance *= LEADER_MULT
+    if kind == 'hoard':
+        chance *= min(1.5, next((mult for word, mult in DRAGON_AGE if word in name), 0.6) + 0.4)
+    return round(min(TREASURE_CHANCE_CAP, chance), 3), TREASURE_KINDS.get(kind)
 # A dragon's bed and a leprechaun's pot: rare paydays, weighted more than one
 # purse in a crowd at any depth (measured: full weight made dragons a quarter
 # of all deep gold).
@@ -185,10 +225,20 @@ def main(argv):
             tr['purse'] = 'kept'
             continue
         new = gold_for(mid, m, kind)
+        t_chance, t_kinds = treasure_for(mid, m, kind)
         if report:
-            print(f"{mid:32} {kind:12} {tr.get('gold')} -> {new}")
+            print(f"{mid:32} {kind:12} {tr.get('gold')} -> {new}   treasure {t_chance}")
         tr['gold'] = new
         tr['purse'] = kind
+        if t_chance > 0:
+            tr['treasure_chance'] = t_chance
+            if t_kinds:
+                tr['treasure_kinds'] = list(t_kinds)
+            else:
+                tr.pop('treasure_kinds', None)
+        else:
+            tr.pop('treasure_chance', None)
+            tr.pop('treasure_kinds', None)
     print(counts)
     if not report:
         with open(PATH, 'w', encoding='utf-8') as f:

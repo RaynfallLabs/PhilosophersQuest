@@ -1820,7 +1820,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
             if tiles_in_room:
                 from items import add_gold_to_tile
                 gx, gy = rng.choice(tiles_in_room)
-                add_gold_to_tile(ground_items, gold_amount, gx, gy)
+                # A treasury's plate and gems (treasure.py), from a generator
+                # of its own so no later roll moves; the coin beside them is
+                # the rest of the hoard's worth.
+                import treasure as _tr
+                _trng = _tr.private_rng(rng, level, 0x7EA5)
+                _tval = _tr.place(ground_items, [t for t in tiles_in_room if t != (gx, gy)], level,
+                                  _trng, _trng.randint(*_tr.TREASURY_PIECES))
+                add_gold_to_tile(ground_items, _tr.coin_after_treasure(gold_amount, _tval), gx, gy)
 
         elif room_type == 'library':
             try:
@@ -1978,8 +1985,14 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
                  and not any(i.x == tx and i.y == ty for i in ground_items)]
         if _free:
             gx, gy = _coin_rng.choice(_free)
-            add_gold_to_tile(ground_items, economy.roll_share(_coin_rng, level,
-                                                              economy.LAIR_GOLD_SHARE), gx, gy)
+            _lair_coin = economy.roll_share(_coin_rng, level, economy.LAIR_GOLD_SHARE)
+            # What the den's dead victims carried: sometimes a piece of
+            # treasure among the coin (treasure.py LAIR_CHANCE).
+            import treasure as _tr
+            _tval = 0
+            if _coin_rng.random() < _tr.LAIR_CHANCE:
+                _tval = _tr.place(ground_items, [t for t in _free if t != (gx, gy)], level, _coin_rng, 1)
+            add_gold_to_tile(ground_items, _tr.coin_after_treasure(_lair_coin, _tval), gx, gy)
 
     # -- Vault items (gold piles) -----------------------------------------------
     # Total vault gold is capped at 2000 — the raw rng.randint(level*5, level*15)
@@ -2001,6 +2014,24 @@ def spawn_items(rooms: List[Room], level: int, dungeon: Dungeon,
         if total > _VAULT_GOLD_CAP and total > 0:
             scale = _VAULT_GOLD_CAP / total
             raw_amounts = [max(1, int(a * scale)) for a in raw_amounts]
+        # A closed vault keeps gems and plate too (treasure.py VAULT_PIECES,
+        # its own generator); the coin shrinks by what they are worth.
+        import treasure as _tr
+        _vrng = _tr.private_rng(rng, level, 0x7A17)
+        _vtiles = list(candidate_tiles)
+        _vval = 0
+        for _ in range(_vrng.randint(*_tr.VAULT_PIECES)):
+            if not _vtiles:
+                break
+            _t = _vtiles[_vrng.randrange(len(_vtiles))]
+            _piece = _tr.roll(level, _vrng, None, *_t)
+            if _piece is not None:
+                ground_items.append(_piece)
+                _vval += _tr.total_value(_piece)
+        _total = sum(raw_amounts)
+        if _total > 0 and _vval:
+            _keep = _tr.coin_after_treasure(_total, _vval) / _total
+            raw_amounts = [max(1, int(a * _keep)) for a in raw_amounts]
         for (tx, ty), amount in zip(candidate_tiles, raw_amounts):
             add_gold_to_tile(ground_items, amount, tx, ty)
 
