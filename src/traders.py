@@ -150,6 +150,11 @@ def build_stock(defn: dict, level: int, rng) -> list:
     sure, rolled = [], []
     for entry in defn.get('stock') or ():
         n = int(entry.get('picks', 1))
+        # 'floors': [lo, hi] -- an entry for one floor band only (the Soul
+        # Spheres: a Greater sphere from floor 34, a Master from 61).
+        lo, hi = entry.get('floors', (1, 100))
+        if not int(lo) <= level <= int(hi):
+            continue
         try:
             if 'ids' in entry:
                 pool = [i for i in load_items(entry['cat']) if i.id in entry['ids']
@@ -157,10 +162,12 @@ def build_stock(defn: dict, level: int, rng) -> list:
                 if pool:
                     sure.extend(rng.choice(pool) for _ in range(n))
             elif 'id' in entry:
+                # One named thing at its 'chance'. When he has it, it is on
+                # the shelf: the random picks never crowd it out.
                 if rng.random() < float(entry.get('chance', 1.0)):
                     it = make_item_by_id(entry.get('cat', 'artifact'), entry['id'])
                     if it is not None and unique_available(it):
-                        rolled.append(it)
+                        sure.append(it)
             elif 'gear' in entry:
                 for _ in range(n):
                     try:
@@ -252,8 +259,10 @@ def credits_owed(reg: dict, used: int) -> int:
 # chest, the master lockpick) is never bought.
 SELLABLE_CLASSES = frozenset({'weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll',
                               'spellbook', 'potion', 'food', 'ammo', 'ingredient', 'artifact'})
-# The one kind of artifact a trader deals in.
-SELLABLE_ARTIFACTS = frozenset({'soul_sphere'})
+# The one kind of artifact a trader deals in: the six Soul Spheres
+# (data/items/artifact.json 'sphere'; never the Unusual Soul Sphere).
+SELLABLE_ARTIFACTS = frozenset({'soul_sphere', 'greater_soul_sphere', 'master_sphere',
+                                'hearth_sphere', 'greater_hearth_sphere', 'master_hearth_sphere'})
 
 
 def is_quest_piece(item, quest_ids=()) -> bool:
@@ -265,7 +274,12 @@ def is_quest_piece(item, quest_ids=()) -> bool:
     if getattr(item, 'plot_locked', False) or getattr(item, 'not_pickable', False):
         return True
     ic = getattr(item, 'item_class', '')
-    if ic == 'artifact' and iid not in SELLABLE_ARTIFACTS:
+    if ic == 'artifact' and iid in SELLABLE_ARTIFACTS:
+        # A sphere is placed by the floor roll, not random loot, so it sits
+        # in scripted_only_ids; that never made it a quest piece. A bound
+        # one holds a companion and is never sold.
+        return getattr(item, 'bound_pet', None) is not None
+    if ic == 'artifact':
         return True
     try:
         if iid in scripted_only_ids() and ic != 'ingredient':

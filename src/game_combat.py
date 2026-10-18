@@ -334,9 +334,10 @@ class CombatMixin:
 
         hit_monster = self._find_first_monster_in_path(px, py, tx, ty)
 
+        from pet_system import is_soul_sphere
         if isinstance(item, Artifact) and item.id == 'unusual_soul_sphere':
             self._throw_unusual_sphere(item, hit_monster, tx, ty)
-        elif isinstance(item, Artifact) and item.id == 'soul_sphere':
+        elif isinstance(item, Artifact) and is_soul_sphere(item):
             self._throw_soul_sphere(item, hit_monster, tx, ty)
         elif isinstance(item, Weapon):
             self._throw_weapon(item, hit_monster, tx, ty)
@@ -453,7 +454,10 @@ class CombatMixin:
             self.ground_items.append(weapon)
 
     def _throw_soul_sphere(self, sphere, hit_monster, tx: int, ty: int):
-        """Throw a Soul Sphere — releases a random pet creature at the landing spot."""
+        """Throw one of the six Soul Spheres: a companion comes out where it
+        lands. A bound sphere gives back the companion it holds, exactly as
+        it was; any other hatches what its sphere holds, at its sphere's
+        level (pet_system.hatch_level: 1, 25 or 55). Never the floor's."""
         self.player.remove_from_inventory(sphere)
 
         # Landing tile: if a monster was hit, land one tile before; else target tile
@@ -488,22 +492,22 @@ class CombatMixin:
                 if found:
                     break
             if not found:
-                if getattr(sphere, 'bound_pet', None) is not None:
-                    # A bound sphere holds a companion already met (Shep,
-                    # a nicknamed cat): it must never be lost. It comes down
-                    # whole on the open tile it reached, to be picked up and
-                    # thrown again somewhere with room (PET-01).
-                    if self.dungeon.is_walkable(land_x, land_y):
-                        sphere.x, sphere.y = land_x, land_y
-                    else:
-                        sphere.x, sphere.y = self.player.x, self.player.y
-                    self.ground_items.append(sphere)
-                    self.add_message(
-                        f"The sphere bounces and rolls to a stop, unbroken: there is no room "
-                        f"for {sphere.bound_pet.name} to come out.", 'warning')
-                    return
-                # No room — sphere is wasted
-                self.add_message("The sphere shatters but there is no room for a creature!", 'warning')
+                # No room for anything to come out. A bound sphere holds a
+                # companion already met (Shep, a nicknamed cat) and must never
+                # be lost (PET-01); an unopened one (a Master Sphere bought
+                # for a fortune) is not wasted either. It comes down whole on
+                # the open tile it reached, to be picked up and thrown again
+                # somewhere with room.
+                if self.dungeon.is_walkable(land_x, land_y):
+                    sphere.x, sphere.y = land_x, land_y
+                else:
+                    sphere.x, sphere.y = self.player.x, self.player.y
+                self.ground_items.append(sphere)
+                bound = getattr(sphere, 'bound_pet', None)
+                who = bound.name if bound is not None else 'anything'
+                self.add_message(
+                    f"The sphere bounces and rolls to a stop, unbroken: there is no room "
+                    f"for {who} to come out.", 'warning')
                 return
 
         # Bound sphere: spawn the previously-recalled pet with state intact.
@@ -517,9 +521,15 @@ class CombatMixin:
             _snd.play('player_healed')
             return
 
-        from pet_system import roll_soul_sphere_species
-        self._hatch_sphere_pet(roll_soul_sphere_species(self._family_cats_present()),
-                               spawn_x, spawn_y)
+        from pet_system import hatch_level, roll_sphere_species
+        species = roll_sphere_species(sphere, self._family_cats_present())
+        # Throwing one teaches what it was, as a thrown potion does.
+        try:
+            self.player.known_item_ids.add(sphere.id)
+        except AttributeError:
+            pass
+        self._hatch_sphere_pet(species, spawn_x, spawn_y,
+                               level=hatch_level(sphere), sphere_id=sphere.id)
 
     def _family_cats_present(self) -> set:
         """The rare family companions (the cats and Shep) met this run."""
@@ -527,13 +537,15 @@ class CombatMixin:
         return family_pets_present(self.player, self.pets,
                                    getattr(self.player, 'inventory', None))
 
-    def _hatch_sphere_pet(self, species: str, spawn_x: int, spawn_y: int):
-        """A new companion out of a Soul Sphere, then the naming popup."""
-        from pet_system import FAMILY_PETS
-        pet = Pet(species, spawn_x, spawn_y)
-        # Late-pickup catch-up: pets hatched deeper get an initial XP grant
-        # so they're not uselessly underleveled relative to the floor's enemies.
-        pet.apply_late_pickup_bonus(self.dungeon_level)
+    def _hatch_sphere_pet(self, species: str, spawn_x: int, spawn_y: int,
+                          level: int = 1, sphere_id: str | None = None):
+        """A new companion out of a sphere, at the level its sphere gives
+        (LORE NOT FLOOR: nothing here reads the dungeon floor), then the
+        naming popup. A Greater sphere's Shep comes out as Shep the
+        Farmhound, with Sic 'Em! already learned."""
+        from pet_system import FAMILY_PETS, hatch_message
+        pet = Pet(species, spawn_x, spawn_y, level=level)
+        pet.hatch_sphere = sphere_id          # the pet card's "Hatched From"
         self.pets.append(pet)
         if species in FAMILY_PETS:
             met = getattr(self.player, 'family_cats_met', None)
@@ -541,7 +553,7 @@ class CombatMixin:
                 met = set()
                 self.player.family_cats_met = met
             met.add(species)
-        self.add_message(pet.species['stages'][0]['msg'], 'success')
+        self.add_message(hatch_message(pet), 'success')
         _snd.play('player_healed')
         # Open the naming popup so the player can give this companion a nickname.
         self._naming_pet = pet
@@ -588,7 +600,8 @@ class CombatMixin:
         from pet_system import DadPet, roll_rare_sphere_pet
         rare = roll_rare_sphere_pet(self._family_cats_present())   # Shep 1%, each cat 5%
         if rare:
-            self._hatch_sphere_pet(rare, spawn_x, spawn_y)
+            self._hatch_sphere_pet(rare, spawn_x, spawn_y, level=1,
+                                   sphere_id='unusual_soul_sphere')
             return
         dad = DadPet(spawn_x, spawn_y, duration=5)
         self.pets.append(dad)

@@ -975,16 +975,122 @@
     "name": "Soul Sphere",
     "symbol": "O",
     "color": [
-      255,
-      80,
-      80
+      120,
+      170,
+      220
     ],
     "weight": 0.5,
     "min_level": 1,
     "identified": false,
     "id_level": 0,
-    "unidentified_name": "crimson sphere",
-    "lore": "A sphere of crimson and ivory that hums with trapped souls. Ancient texts say these vessels were used to bind creature spirits. One wonders what might happen if it were hurled with force..."
+    "id_tier": 1,
+    "unidentified_name": "iron-caged sphere",
+    "sphere": {"tier": 1, "hatch_level": 1, "family": false},
+    "can_be_cursed": false,
+    "buc_known": true,
+    "floor_spawn_chance": {"1-33": 0.08, "34-66": 0.03, "67-100": 0.01},
+    "_doc_sphere": "The six Soul Spheres (pet_system.sphere_spec). 'sphere': what hatches: tier 1/2/3 hatches at hatch_level 1, 25 or 55 (a newborn, its first evolution, its final form); 'family' guarantees one of the family's own companions. The SPHERE decides, never the floor. 'floor_spawn_chance': its chance per floor, by floor band (dungeon.spawn_items rolls ONE number for all six). Trader stock and prices: data/traders.json, data/item_worth.json share_by_id. A sphere is never cursed (can_be_cursed false, buc_known true); its KIND is learned by identifying it or by throwing one (as a thrown potion teaches), and it looks the same either way (its art is the item; the unidentified name describes that look).",
+    "lore": "A globe of smoky glass in a cage of dark iron, with a pale wisp of soul-light curled up asleep inside. Throw it, and the sleeper wakes at your side as a newborn companion: most often a creature of one of the four elements, and once in a long while someone you know from home."
+  },
+  "greater_soul_sphere": {
+    "name": "Greater Soul Sphere",
+    "symbol": "O",
+    "color": [
+      190,
+      220,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 34,
+    "identified": false,
+    "id_level": 0,
+    "id_tier": 3,
+    "unidentified_name": "silver-caged sphere",
+    "sphere": {"tier": 2, "hatch_level": 25, "family": false},
+    "can_be_cursed": false,
+    "buc_known": true,
+    "floor_spawn_chance": {"34-66": 0.04, "67-100": 0.02},
+    "lore": "A globe of smoky glass caged in bright silver, its soul-light burning like a small blue star. The spirit asleep in this one has already grown into its first true form: thrown, it wakes ready to fight, with its first special skill already learned. Most often it is a creature of the elements; once in a long while it is someone you know from home."
+  },
+  "master_sphere": {
+    "name": "Master Sphere",
+    "symbol": "O",
+    "color": [
+      240,
+      250,
+      255
+    ],
+    "weight": 0.5,
+    "min_level": 60,
+    "identified": false,
+    "id_level": 0,
+    "id_tier": 5,
+    "unidentified_name": "crowned silver sphere",
+    "sphere": {"tier": 3, "hatch_level": 55, "family": false},
+    "can_be_cursed": false,
+    "buc_known": true,
+    "floor_spawn_chance": {"67-100": 0.02},
+    "lore": "Crystal caged in four silver hoops under a little crown, so full of soul-light that it is hard to look at. The spirit inside is fully grown, in its final form, with every skill its kind can learn. The masters of the old binding art made only a handful of these, and most of them are still down here somewhere."
+  },
+  "hearth_sphere": {
+    "name": "Hearth Sphere",
+    "symbol": "O",
+    "color": [
+      235,
+      200,
+      120
+    ],
+    "weight": 0.5,
+    "min_level": 1,
+    "identified": false,
+    "id_level": 0,
+    "id_tier": 2,
+    "unidentified_name": "gold-trimmed iron sphere",
+    "sphere": {"tier": 1, "hatch_level": 1, "family": true},
+    "can_be_cursed": false,
+    "buc_known": true,
+    "floor_spawn_chance": {"1-33": 0.008, "34-66": 0.003, "67-100": 0.001},
+    "lore": "Smoky glass in an iron cage trimmed with gold, warm to the touch like a stone from beside the fire at home. The wisp inside is no stranger: it is always one of the family's own companions, come down into the dark to find you. If every one of them is already at your side, a newborn creature of the elements answers instead."
+  },
+  "greater_hearth_sphere": {
+    "name": "Greater Hearth Sphere",
+    "symbol": "O",
+    "color": [
+      245,
+      215,
+      140
+    ],
+    "weight": 0.5,
+    "min_level": 34,
+    "identified": false,
+    "id_level": 0,
+    "id_tier": 4,
+    "unidentified_name": "gold-trimmed silver sphere",
+    "sphere": {"tier": 2, "hatch_level": 25, "family": true},
+    "can_be_cursed": false,
+    "buc_known": true,
+    "floor_spawn_chance": {"34-66": 0.004, "67-100": 0.002},
+    "lore": "Smoky glass caged in silver trimmed with gold, and the warm light inside burns steady and bright, like a lamp left in the window for someone coming home late. One of the family's own companions sleeps here, already grown into its first true form. If every one of them is already at your side, a grown creature of the elements answers instead."
+  },
+  "master_hearth_sphere": {
+    "name": "Master Hearth Sphere",
+    "symbol": "O",
+    "color": [
+      255,
+      230,
+      160
+    ],
+    "weight": 0.5,
+    "min_level": 60,
+    "identified": false,
+    "id_level": 0,
+    "id_tier": 5,
+    "unidentified_name": "gold-crowned sphere",
+    "sphere": {"tier": 3, "hatch_level": 55, "family": true},
+    "can_be_cursed": false,
+    "buc_known": true,
+    "floor_spawn_chance": {"67-100": 0.002},
+    "lore": "Crystal in four gold-trimmed silver hoops under a little golden crown, blazing with warm light. One of the family's own companions waits inside at the height of its strength, in its final form, and it has come a very long way to stand beside you. If every one of them is already there, a creature of the elements in its final form answers instead."
   },
   "unusual_soul_sphere": {
     "name": "Unusual Soul Sphere",

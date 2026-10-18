@@ -36,8 +36,9 @@ NAME_MAX = 48
 #   _start_accessory -> accessory item ID given at start
 #   _start_shield    -> shield item ID given at start
 #   _start_armor     -> armor item ID given at start
-#   _start_soul_spheres -> int: number of Soul Spheres given at start
-#   _no_dagger       -> True: skip the default iron_dagger
+#   _start_soul_spheres -> int: number of plain Soul Spheres given at start
+#   _start_spheres   -> list of sphere item IDs given at start (QA: all six)
+#   _no_dagger      -> True: skip the default iron_dagger
 #   _immortal        -> True: player cannot die
 #   _greeting        -> custom welcome message line (None = default)
 # ------------------------------------------------------------------
@@ -341,6 +342,9 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_book": "spellbook_magic_dart",
         "_start_ammo": "iron_arrow",
         "_start_accessory": "ring_protection_iron",
+        # One of each of the six Soul Spheres, to throw and check each tier.
+        "_start_spheres": ["soul_sphere", "greater_soul_sphere", "master_sphere",
+                           "hearth_sphere", "greater_hearth_sphere", "master_hearth_sphere"],
         "_qa_tools": True,        # Shift+I immortal toggle, Shift+W floor warp
         "_greeting": "The Scribe of Errors descends, quill in hand, to document every flaw.",
     },

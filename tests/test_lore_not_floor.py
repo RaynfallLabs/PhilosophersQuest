@@ -256,3 +256,64 @@ def test_the_deadites_are_the_same_on_every_floor_and_come_from_their_data():
         pool = dungeon_mod._build_spawn_pool(floor)
         assert 'deadite' not in pool and 'risen_deadite' not in pool
     assert seen[0] == seen[1] == seen[2]
+
+
+# A pet's starting level comes from where it came from (its sphere: 1, 25 or
+# 55), never from the floor it hatched on. The late-pickup grant (floor x 50
+# XP, capped at 4,000) broke this rule and was removed on 2026-10-18. The
+# behaviour (the same sphere hatches the same pet on floors 1, 40 and 90) is
+# pinned in test_soul_spheres.py; this pins the code.
+_FLOOR_WORDS = re.compile(r'\b(?:dungeon_level|deepest_floor_reached|floor_num|depth)\b')
+
+
+def _def_source(text, name):
+    """The source of `def name` in `text`, up to the next def at its indent."""
+    m = re.search(r'^([ \t]*)def ' + re.escape(name) + r'\b', text, flags=re.M)
+    assert m, name
+    indent = m.group(1)
+    rest = text[m.end():]
+    nxt = re.search(r'^' + indent + r'(?:def |class |@)', rest, flags=re.M)
+    return text[m.start():m.end() + (nxt.start() if nxt else len(rest))]
+
+
+def _floor_reads_in_hatching(src: dict) -> list:
+    hits = [(n, 'late_pickup') for n, t in src.items() if 'late_pickup' in t]
+    hatch = [('game_combat.py', '_throw_soul_sphere'), ('game_combat.py', '_hatch_sphere_pet'),
+             ('pet_system.py', 'hatch_level'), ('pet_system.py', 'tier_level'),
+             ('pet_system.py', 'roll_sphere_species'), ('pet_system.py', 'roll_family_sphere_pet'),
+             ('pet_system.py', 'roll_soul_sphere_species'), ('pet_system.py', 'roll_rare_sphere_pet'),
+             ('pet_system.py', '__init__'), ('main.py', '_duck_of_doom_transform'),
+             ('emberpup_encounter.py', '_emberpup_adopt')]
+    for name, fn in hatch:
+        if name not in src or f'def {fn}' not in src[name]:
+            assert name not in src or len(src) < 5, (name, fn)     # the real sources have every one
+            continue
+        m = _FLOOR_WORDS.search(_def_source(src[name], fn))
+        if m:
+            hits.append((name, fn, m.group(0)))
+    # Any pet made, hatched or grown with the floor number in its arguments.
+    for name, text in src.items():
+        for m in re.finditer(r'\b(?:Pet|_hatch_sphere_pet|gain_xp)\(([^)\n]*)\)', text):
+            if _FLOOR_WORDS.search(m.group(1)):
+                hits.append((name, m.group(0)[:80]))
+    return hits
+
+
+def test_no_pet_hatch_reads_the_floor():
+    hits = _floor_reads_in_hatching(dict(_sources()))
+    assert not hits, hits
+
+
+def test_the_hatch_floor_check_would_catch_the_old_late_pickup_grant():
+    old = {'game_combat.py': (
+        "    def _hatch_sphere_pet(self, species, x, y):\n"
+        "        pet = Pet(species, x, y)\n"
+        "        pet.apply_late_pickup_bonus(self.dungeon_level)\n"),
+           'emberpup_encounter.py': (
+        "    def _emberpup_adopt(self, pup):\n"
+        "        pet = Pet(d['pet_species'], x, y)\n"
+        "        pet.gain_xp(min(self.dungeon_level * 50, 4000))\n")}
+    hits = _floor_reads_in_hatching(old)
+    assert ('game_combat.py', 'late_pickup') in hits
+    assert ('game_combat.py', '_hatch_sphere_pet', 'dungeon_level') in hits
+    assert ('emberpup_encounter.py', '_emberpup_adopt', 'dungeon_level') in hits
