@@ -58,6 +58,7 @@ DYNAMIC_SOURCES = {
     "al['on_time_chronicle']": 'data/setne_tomb.json altar',
     "al['late_chronicle']": 'data/setne_tomb.json altar',
     "_BOSS_CHRONICLE.get(monster.kind, f'Killed {monster.name}. It is done.')": 'inline table',
+    "monster.kill_pair_chronicle": 'data/monsters.json kill_pair_chronicle (MON-10)',
 }
 
 # Bare variable names are only waved through in the functions known to fill

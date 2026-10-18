@@ -38,8 +38,8 @@ other write in `src/`. The five sites today:
 | Oath kept / broken (`game_encounters._keep_oath` / `_break_oath`, `setne_tomb`) | `+1` `'oath'` into the earliest open block since it was sworn / `-1` `'betray'` |
 | Constancy and negative patterns (`karma.evaluate_patterns`) | `+1` `'constancy'` (at most +2 a run) / `-1` `'pattern'` |
 | Emberpup first feed | nothing with the gate on (kindness, not a weighed deed); `+1` `'legacy'` only if the gate is switched off |
-| Emberpup attack | `-2`, `'cruelty'` |
-| Ring of Gyges (`combat.py`) | `-2`, `'cruelty'` |
+| Emberpup attack | `-1`, `'cruelty'` |
+| Ring of Gyges (`combat.py`) | `-1`, `'cruelty'` (each blow that lands on an innocent while invisible) |
 | Penitent's Blade (`combat.py`) | `+1`, `'recovery'`: only while karma < 0, never above 0 |
 
 With `data/karma_rules.json: gate_enabled = true` (shipped) the soul is
@@ -52,8 +52,15 @@ right side at a visible cost) and `oath` (a kept promise fills the earliest
 open block since it was sworn). Constancy (`temperance`, `faithful`,
 `discerning`, `steadfast`: persistence across blocks) pays up to +2 a run.
 Negatives (`cruelty`, `betray`, `sacrilege`, `stance_wrong`, `pattern`) are
-not capped; -2 only for cruelty, sacrilege or betrayal. A broken oath costs
--1 betray; a lapsed oath costs 0 but blocks `faithful`. Naive kindness never
+not block-capped, but **no single loss is bigger than one** (Brandon,
+2026-10-18: "Max karma drop is -1"): `karma.adjust` clamps any bigger ask to
+-1 and logs it (`karma.MAX_LOSS`), with the gate on or off, and the validator
+rejects karma below -1. **Betrayal is not justice:** handing over an innocent,
+someone who trusted you or a person of conscience costs -1 (`betray`, or
+`cruelty` for selling a captive); handing a guilty person to lawful judgement
+costs nothing, and where judgment is rewarded it still pays (Silas, Lucan).
+See `DEEDS_KARMA_DESIGN.md` §11.14. A broken oath costs -1 betray; a lapsed
+oath costs 0 but blocks `faithful`. Naive kindness never
 gives karma and always carries a material cost; light encounters never give
 karma. There is no `reckless` karma kind. Every call writes a ledger entry.
 With the gate off (kept only as a switch) every kind would apply as the old
@@ -236,7 +243,7 @@ binds per run; a triggered anchor binds a non-triggered fallback with it.
 | 4 | `reliquary` | Sister Marguerite | medium | oath sworn, sacrilege (-1) |  |
 | 5 | `ghost_grave` | Ghost of Hal | medium | sacrilege (-1) |  |
 | 5 | `deserter` | Legion Deserter | medium | judgment, cruelty (-1) |  |
-| 5 | `grain_committee` | Grain Committee | medium | stance, stance_wrong (-1) | stance: 3.1,3.2 |
+| 5 | `grain_committee` | Grain Committee | medium | stance, betray (-1: informing on the village) | stance: 3.1,3.2 |
 | 6 | `blind_seer` | Blind Seer | medium | none | tragedy: unsavable |
 | 6 | `trapped_seraph` | Caged Angel | medium | judgment, cruelty (-1) |  |
 | 6 | `slavers_wagon` | Slaver's Wagon | medium | stance, stance_wrong (-1) | stance: 1,9 |
@@ -247,7 +254,7 @@ binds per run; a triggered anchor binds a non-triggered fallback with it.
 | 8 | `roderic_shield` | Young Knight | medium | none | contested; trigger `lionheart_shield`, fallback `penitent` |
 | 8 | `forgotten_prisoner` | Forgotten Prisoner | medium | judgment, cruelty (-1) |  |
 | 9 | `fallen_paladin` | Fallen Paladin | medium | cruelty (-1) | contested |
-| 9 | `azarael_demon` | Bound Demon | high | forgo, sacrilege (-2) |  |
+| 9 | `azarael_demon` | Bound Demon | high | forgo, sacrilege (-1) |  |
 | 9 | `live_not_by_lies` | Locust Checkpoint | medium | stance_wrong (-1), stance | stance: 1 |
 | 10 | `dying_prophet` | Dying Prophet | medium | cruelty (-1) |  |
 | 10 | `petrified_adventurer` | Stone Statue | medium | cruelty (-1) | escort |
@@ -427,7 +434,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_bottled_constellation` | Star Merchant | 44-60 | light | none |  |
 | `flv_charons_return` | Charon | 44-95 | light | none | callback |
 | `flv_ghost_librarian_junior` | The Cataloguing Spirit | 44-97 | light | none |  |
-| `flv_antigone` | Antigone | 45-58 | medium | none | contested |
+| `flv_antigone` | Antigone | 45-58 | medium | betray (-1: informing on her, marked villain) | contested |
 | `flv_sorrow_lantern` | Lantern of Regret | 45-58 | light | none |  |
 | `flv_setne_tomb` | Setne's Tomb | 45-65 | high | oath sworn, forgo | callback; tragedy: unsavable |
 | `flv_dragons_accountant` | Snerk Ledgerscale | 45-88 | medium | judgment, cruelty (-1) |  |
@@ -458,7 +465,7 @@ it (`flv_dead_come_for_the_book`, hostile).
 | `flv_avatar_athena` | Grey-Eyed Woman | 66-90 | medium | none | disguise: athena |
 | `flv_invisible_archivist` | The Unseen Archivist | 68-80 | light | none |  |
 | `flv_mirror_of_past_self` | The Mirror Shade | 70-80 | light | none |  |
-| `flv_deaths_chessboard` | Death | 71-98 | high | forgo, cruelty (-2) |  |
+| `flv_deaths_chessboard` | Death | 71-98 | high | forgo, cruelty (-1) |  |
 | `flv_trapped_god_fragment` | Dim Light in the Stone | 72-100 | light | none |  |
 | `flv_defector` | Kneeling Herald | 80-98 | medium | judgment |  |
 | `flv_humorous_imp_salesman` | Disreputable Imp | 81-92 | light | none |  |

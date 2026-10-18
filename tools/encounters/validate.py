@@ -516,11 +516,18 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                 err('karma_kind', f'{where}: unknown kind {kind!r}')
             if k and kind is None:
                 err('karma_kind_missing', f'{where}: karma {k:+d} without karma_kind')
-            # At most +1 a choice. A choice may cost two only for the gravest
-            # wrongs (handing someone to their death, freeing a fallen Power).
-            if k > 1 or k < -2 or (k == -2 and kind not in ('cruelty', 'sacrilege', 'betray')):
-                err('karma_size', f'{where}: karma {k:+d} (at most +1; -2 only for '
-                                  'cruelty, sacrilege or betray)')
+            # At most +1 a choice, and no choice costs more than one (Brandon,
+            # 2026-10-18: "Max karma drop is -1"; karma.MAX_LOSS). Betrayal
+            # costs one; handing a guilty man to lawful judgement costs none.
+            if k > 1 or k < -karma.MAX_LOSS:
+                err('karma_size', f'{where}: karma {k:+d} (at most +1, and a loss '
+                                  f'is at most -{karma.MAX_LOSS})')
+            # An oath broken here costs its own -1 betray unless this outcome
+            # already pays it as betray; any other negative beside it would
+            # take two in one choice.
+            if b.get('oath_break') and k < 0 and kind != 'betray':
+                err('karma_size', f'{where}: karma {k:+d} {kind} beside an oath_break '
+                                  'would cost two; the break is the -1')
             if k > 0 and kind in ('constancy', 'recovery'):
                 err('karma_kind', f'{where}: {kind} is engine-only')
             if k > 0 and kind == 'oath':
@@ -1231,6 +1238,30 @@ def validate_all(encounters=None) -> list:
         # The whole game's data and code: every deed a condition reads is
         # written somewhere (ENG-06: told.read_thoth was read, never written).
         out.extend(_deed_refs(encs))
+        out.extend(_other_karma_sources(ctx['rules']))
+    return out
+
+
+def _other_karma_sources(rules: dict) -> list:
+    """The karma written outside the encounters (the negative patterns, the
+    Emberpup) keeps the same ceiling on a loss: one (karma.MAX_LOSS)."""
+    import karma
+    out = []
+    for rule in rules.get('patterns_neg', ()):
+        k = int(rule.get('karma', -1))
+        if k < -karma.MAX_LOSS:
+            out.append(Issue('karma_rules', 'karma_size',
+                             f"pattern {rule.get('id')!r}: karma {k:+d} (a loss is at most "
+                             f'-{karma.MAX_LOSS})'))
+    try:
+        with open(os.path.join(ROOT, 'data', 'abandoned_emberpup.json'), encoding='utf-8') as f:
+            pup = json.load(f)
+    except (OSError, ValueError):
+        pup = {}
+    k = int(pup.get('attack_karma', 0) or 0)
+    if k < -karma.MAX_LOSS:
+        out.append(Issue('abandoned_emberpup', 'karma_size',
+                         f'attack_karma {k:+d} (a loss is at most -{karma.MAX_LOSS})'))
     return out
 
 

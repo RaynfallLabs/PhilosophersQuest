@@ -1780,7 +1780,7 @@
         "label": "Tell the commissar where the sack is",
         "side": "wrong",
         "karma": -1,
-        "karma_kind": "stance_wrong",
+        "karma_kind": "betray",
         "reward": {
           "type": "gold",
           "min": 150,
@@ -3330,7 +3330,7 @@
       },
       {
         "label": "Shatter the chains and take his bargain",
-        "karma": -2,
+        "karma": -1,
         "karma_kind": "sacrilege",
         "reward": {
           "type": "multi",

@@ -1131,6 +1131,14 @@ class CombatMixin:
                 getattr(monster, 'kill_chronicle', '')
                 or f"{the_name(monster)} is dead. I had not expected to be the one left standing.",
                 once=f'boss:{monster.kind}')
+            # A named pair (Stheno and Euryale, MON-10): each has her own line
+            # above, and the pair's line is written only when the second falls.
+            _partner = getattr(monster, 'kill_pair', '')
+            if _partner and getattr(monster, 'kill_pair_chronicle', ''):
+                import chronicle as _chronicle
+                if _chronicle.logged(self, f'boss:{_partner}'):
+                    self._chron('boss', monster.kill_pair_chronicle,
+                                once='boss_pair:' + '+'.join(sorted((monster.kind, _partner))))
         # A gate boss leaves three gifts; the player takes one (boons.py).
         # Only noted here: main.update opens the choice once the kill, its
         # messages and the story popup are finished.

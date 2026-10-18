@@ -555,6 +555,41 @@ def test_stheno_arrives_with_euryale_beside_her_once_per_run():
     assert len(mons) == 2
 
 
+def test_each_gorgon_sister_has_her_own_kill_line_and_they_share_the_pair_line():
+    st, eu = MONS['stheno_gorgon'], MONS['euryale_gorgon']
+    assert st['kill_chronicle'] != eu['kill_chronicle']
+    assert 'Stheno' in st['kill_chronicle'] and 'Euryale' in eu['kill_chronicle']
+    assert st['kill_pair'] == 'euryale_gorgon' and eu['kill_pair'] == 'stheno_gorgon'
+    assert st['kill_pair_chronicle'] == eu['kill_pair_chronicle']
+    assert "sisters" in st['kill_pair_chronicle']
+
+
+@pytest.mark.parametrize('first,second', [('stheno_gorgon', 'euryale_gorgon'),
+                                          ('euryale_gorgon', 'stheno_gorgon')])
+def test_the_pair_line_is_written_only_when_the_second_sister_falls(first, second):
+    # MON-10: "Put down Medusa's sisters. Twice each." used to be written when
+    # Stheno died, even with Euryale still alive.
+    from chronicle import text_of
+    g, a = _scene(first)
+    b = _monster(second, a.x, a.y + 1)
+    g.monsters = [a, b]
+    pair = MONS[first]['kill_pair_chronicle']
+
+    def texts():
+        return [text_of(e) for e in g._chronicle]
+
+    a.hp, a.alive = 0, False
+    g._on_monster_killed(a)
+    assert MONS[first]['kill_chronicle'] in texts()
+    assert pair not in texts()                        # her sister still stands
+    b.hp, b.alive = 0, False
+    g._on_monster_killed(b)
+    t = texts()
+    assert MONS[second]['kill_chronicle'] in t
+    assert t.count(pair) == 1
+    assert t.index(pair) > t.index(MONS[second]['kill_chronicle'])
+
+
 @pytest.mark.parametrize('mid', NAMED)
 def test_the_gorgon_sisters_are_immortal_once(mid):
     m = _monster(mid)

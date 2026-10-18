@@ -138,15 +138,16 @@ def test_new_field_rules_fire(name, mutate, code):
     assert code in _codes(e, extra=others)
 
 
-def test_karma_size_allows_minus_two_only_for_the_gravest_wrongs():
+def test_karma_size_allows_no_loss_beyond_one():
+    # Brandon, 2026-10-18: "Max karma drop is -1", the gravest wrongs too.
     def with_karma(k, kind):
         e = _story('GATE')
         e['stakes'] = 'medium'
         e['options'][1].update(karma=k, karma_kind=kind)
         return e
-    assert 'karma_size' not in _codes(with_karma(-2, 'cruelty'))
-    assert 'karma_size' not in _codes(with_karma(-2, 'sacrilege'))
-    assert 'karma_size' in _codes(with_karma(-2, 'stance_wrong'))
+    for kind in ('cruelty', 'sacrilege', 'betray', 'stance_wrong'):
+        assert 'karma_size' not in _codes(with_karma(-1, kind)), kind
+        assert 'karma_size' in _codes(with_karma(-2, kind)), kind
     assert 'karma_size' in _codes(with_karma(-3, 'cruelty'))
     assert 'karma_size' in _codes(with_karma(2, 'forgo'))
 

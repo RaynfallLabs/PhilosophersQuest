@@ -223,7 +223,11 @@ NEW = {
         'revive_message': "Stheno rises again. An immortal does not stay dead.",
         'is_mini_boss': True, 'spawn_chance': 0.4, 'escort': ['euryale_gorgon'],
         'omen': "Somewhere on this floor two women are hissing at each other, and then both fall silent.",
-        'kill_chronicle': "Put down Medusa's sisters. Twice each. I am not sure it will last.",
+        # Each sister has her own line; the pair's line waits for the second (MON-10).
+        'kill_chronicle': ("Put Stheno down twice. The old stories call her the mighty one, and the "
+                           "first time she got up as if I had only tripped her."),
+        'kill_pair': 'euryale_gorgon',
+        'kill_pair_chronicle': "Put down Medusa's sisters. Twice each. I am not sure it will last.",
     },
     'euryale_gorgon': {
         'name': 'Euryale the Gorgon', 'symbol': 'G', 'color': [110, 140, 70],
@@ -248,6 +252,10 @@ NEW = {
         'revive_once_on_death': True, 'revive_hp_pct': 0.3,
         'revive_message': "Euryale rises again, wailing. An immortal does not stay dead.",
         'is_mini_boss': True, 'spawn_chance': 0.0,
+        'kill_chronicle': ("Put Euryale down twice. She was wailing for Medusa when she fell, and "
+                           "wailing when she rose, and the second time she went quiet."),
+        'kill_pair': 'stheno_gorgon',
+        'kill_pair_chronicle': "Put down Medusa's sisters. Twice each. I am not sure it will last.",
     },
     # --- 10. Gashadokuro: a huge deep ambusher -----------------------------------
     'gashadokuro': {

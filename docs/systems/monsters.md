@@ -128,6 +128,7 @@ A single key in `data/monsters.json`. The id is the JSON key; the id is also wri
 | `disguise` | dict | default none | What an un-sprung `mimic`-AI creature is drawn as: `{"item": <item sprite id>, "name": ...}` (a chest) or `{"tile": "stairs_down", "name": ...}` (the Hellmouth, seated by `false_stairs.py`). Read by `unseen.disguise`; shown in the bestiary as "Poses as". |
 | `fearless` | bool | default False | Never flees and cannot be frightened (`feared` is stripped each turn). The galla. |
 | `kill_chronicle` | str | default "" | The Journal line written when this mini-boss dies, instead of the generic one (`game_combat` kill handler). |
+| `kill_pair` / `kill_pair_chronicle` | str / str | default "" | A named pair: the partner's monster id, and a second Journal line written only when the second of the two dies (after her own `kill_chronicle`). Stheno and Euryale (MON-10). |
 | `pack_size` | [min, max] | default none | Fixes a lore pack's number, leader included (the three Furies, Keres three to five). Overrides the depth-scaled pack roll in `dungeon._spawn_one_in_room`. |
 | `proper_noun` | bool | default False | The name is a person's name, so `the_name` never adds "the". |
 | `quarrelsome` | bool | default False | While confused it strikes a neighbour of its own kind instead of stumbling (the Sown Men). |
