@@ -6,8 +6,13 @@ opens its screen (``STATE_EMBERPUP``): the first time, its story; then four
 choices.
 
   Give it something to eat   one identified food from the pack is eaten; it
-                             warms up and trusts you a little (first feed only:
-                             +1 karma). Nothing to give: it stays wary.
+                             warms up and trusts you a little. With the karma
+                             gate on (the game's default) this moves no karma:
+                             feeding a starving pup is kindness, not a weighed
+                             deed (Brandon, decision 9); the deeds register
+                             still notes it. With the gate off,
+                             the first feed pays first_feed_karma. Nothing to
+                             give: it stays wary.
   Leave it be                it stays on its rock; come back any time.
   Attack it                  it flees into the dark, gone for the run; karma
                              drops. No fight, no loot.

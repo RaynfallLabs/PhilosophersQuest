@@ -7,6 +7,7 @@
   "name": "Emberpup",
   "attack_karma": -2,
   "first_feed_karma": 1,
+  "_first_feed_karma_note": "Paid only while the karma gate is OFF. With the gate on (the default) feeding moves no karma (Brandon, decision 9; src/emberpup_encounter.py).",
   "quiz": {"subject": "animal", "tier": 2, "threshold": 2},
   "pet_species": "fire",
   "title": "A LONELY EMBERPUP",
