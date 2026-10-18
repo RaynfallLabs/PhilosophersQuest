@@ -473,7 +473,6 @@ class Sidebar:
         # future metric wants it.
         metrics = [
             (f"AC {ac}", ac_color),
-            (f"Gold {gold:,}", FP.GOLD_PALE),
             (f"Sight {player.get_sight_radius()}", FP.BODY_TEXT),
             # The clock the next fight will really get. Gold when something
             # is lengthening it (haste, a blessing, the Guiding Hand), red
@@ -499,8 +498,24 @@ class Sidebar:
                 self._fit(self._fsm, label, metric_w - S(8) - (ax - cell_x)),
                 True, color), (ax, ay))
         y += ((len(metrics) + 1) // 2) * S(22)
+        y = self._purse(gold, y)
         y = self._carrying(player, y)
         return y + self.SECTION_GAP
+
+    def _purse(self, gold: int, y: int) -> int:
+        """One full-width line: the purse and what it weighs ('1,234 gold,
+        7.7 lb'). Coins are heavy (160 to the pound, treasure.py) and count
+        in the Carrying line below."""
+        from treasure import weight_text
+        cell_x = self.x + self.PAD
+        ax = self._icon(self._STAT_ICONS['Gold'], cell_x, y, self._fsm.get_height())
+        if ax != cell_x:
+            label = f"{gold:,} gold, {weight_text(gold)}"      # the coin icon names it
+        else:
+            label = f"Gold {gold:,}, {weight_text(gold)}"
+        room = self.x + self.w - self.PAD - ax
+        self.screen.blit(self._fsm.render(self._fit(self._fsm, label, room), True, FP.GOLD_PALE), (ax, y))
+        return y + S(22)
 
     @staticmethod
     def carry_state(player) -> tuple[float, int, str]:

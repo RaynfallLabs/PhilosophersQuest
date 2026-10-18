@@ -64,7 +64,11 @@ class TraderMixin:
             return None
         import road
         rng = road.rng_for(plan['seed'], f'trader:{level}')
-        m = build_trader(kind, level, rng)
+        # His stock leans toward kinds the hero has not held yet (data/
+        # traders.json stock_bias): ids only, nothing about them is shown.
+        p = self.player
+        seen = set(getattr(p, 'seen_item_ids', ()) or ()) | set(getattr(p, 'known_item_ids', ()) or ())
+        m = build_trader(kind, level, rng, seen=seen)
         from items import claim_unique
         for it in m.stock:
             claim_unique(it)
@@ -153,8 +157,24 @@ class TraderMixin:
             self.add_message(
                 f'{merchant.person}: "Word is you keep your promises. Down here that\'s '
                 f'rarer than gold. One thing, on the house."', 'success')
+        self._trader_appraise(merchant)
         self._shop_tab = TAB_SELL if not merchant.stock else TAB_BUY
         self.state = STATE_SHOP
+
+    def _trader_appraise(self, merchant):
+        """A trader values every piece of treasure in the pack, and the gems
+        on his own table carry their price: from now on the hero knows what
+        each of those KINDS is worth (treasure.py)."""
+        import treasure
+        p = self.player
+        new = [it for it in treasure.carried(p) if treasure.appraise(p, it)]
+        for it in merchant.stock:
+            if treasure.is_treasure(it):
+                treasure.appraise(p, it)
+        if new:
+            names = ', '.join(self._bare_name(i) for i in new[:3]) + (', ...' if len(new) > 3 else '')
+            self.add_message(f"{merchant.person} weighs your treasure in his palm and names a price "
+                             f"for each: {names}.", 'info')
 
     def _trader_open_adjacent(self):
         from mystery_system import MerchantNPC
@@ -171,7 +191,22 @@ class TraderMixin:
     def _trader_price(self, i: int) -> int:
         m = self._shop_merchant
         base = m.prices[i] if i < len(m.prices) else 0
-        return max(1, economy.nice(base * float(getattr(self, '_shop_mult', 1.0) or 1.0)))
+        mult = float(getattr(self, '_shop_mult', 1.0) or 1.0)
+        if i < len(m.stock) and getattr(m.stock[i], 'item_class', '') == 'treasure':
+            # The exchange: never below its own price (a friend's or a
+            # charity discount on a gem he buys back at 90% would be a loop).
+            return max(1, int(round(base * max(1.0, mult))))
+        return max(1, economy.nice(base * mult))
+
+    def _trader_pay_words(self, plan) -> str:
+        """The detail-pane line for a purchase paid partly in treasure."""
+        bits = self._payment_words(plan)
+        ch = int(plan.get('change', 0) or 0)
+        m = self._shop_merchant
+        if ch:
+            give = min(ch, int(getattr(m, 'purse', 0) or 0))
+            bits += f"; {give:,} gold back" + ("" if give >= ch else f" (his purse is short {ch - give:,})")
+        return f"Pays with {bits}."
 
     def _trader_credit_value(self) -> int:
         if not getattr(self, '_shop_credit', False):
@@ -229,7 +264,12 @@ class TraderMixin:
         tab = getattr(self, '_shop_tab', TAB_BUY)
         if key == pygame.K_h and tab == TAB_BUY:
             if sel < len(m.stock):
-                if sel in getattr(self, '_shop_haggled', set()):
+                if getattr(m.stock[sel], 'item_class', '') == 'treasure':
+                    # The exchange is the exchange: a gem bought cheap and sold
+                    # back at 90% would be a loop.
+                    self.add_message(f'{m.person}: "A stone is worth what it is worth. '
+                                     f'No haggling over gems."', 'info')
+                elif sel in getattr(self, '_shop_haggled', set()):
                     self.add_message("You've already haggled over that item.", 'info')
                 else:
                     self._haggle_item(sel)
@@ -274,17 +314,30 @@ class TraderMixin:
         price = self._trader_price(sel)
         credit = min(price, self._trader_credit_value())
         pay = price - credit
-        if self.player_gold < pay:
+        # Coin first, then treasure at his rate, change from his purse
+        # (game_purse._pay_gold): gems are how a hero carries wealth.
+        plan = self._payment_plan(pay)
+        if plan is None:
             self.add_message(f'{m.person}: "{m.line("broke", "No coin, no deal.")}" '
                              f'({pay:,} gold needed.)', 'warning')
             return
         iname = self._display_name(item)              # as the shop showed it
+        # Pay first: the coin and treasure paid lighten the pack before the
+        # ware goes into it. A ware still too heavy is the hero's, at his feet.
+        done = self._pay_gold(pay, change_purse=int(m.purse), who=m.person)
+        if done:
+            m.purse = max(0, int(m.purse) - int(done.get('change_given', 0) or 0))
         before = {id(i): int(getattr(i, 'count', 1) or 1) for i in self.player.inventory}
         if self.player.add_to_inventory(item) is False:
-            self.add_message(self.player.too_heavy_message(), 'warning')
-            return
-        self._trader_mark_bought(item, before, price)
-        self.player_gold -= pay
+            item.x, item.y = self.player.x, self.player.y
+            self.ground_items.append(item)
+            self.add_message(f"It is too heavy to carry with everything else, so {m.person} "
+                             f"sets it down at your feet.", 'warning')
+        elif getattr(item, 'item_class', '') != 'treasure':
+            self._trader_mark_bought(item, before, price)
+        if getattr(item, 'item_class', '') == 'treasure':
+            import treasure
+            treasure.appraise(self.player, item)
         import sound_system as _snd
         try:
             _snd.play('buy')
@@ -331,8 +384,13 @@ class TraderMixin:
             self.add_message(f'{m.person}: "{m.line(key, "No.")}" ({why}.)', 'warning')
             return
         from items import Ammo
-        name = self._display_name(item) if isinstance(item, Ammo) or int(getattr(item, 'count', 1) or 1) <= 1 \
-            else self._bare_name_one(item)
+        if isinstance(item, Ammo):
+            name = self._display_name(item)
+        elif int(getattr(item, 'count', 1) or 1) <= 1:
+            name = f"the {self._bare_name(item)}"        # "You sell the Gold Idol to Grindle"
+        else:
+            from paths import a_or_an
+            name = a_or_an(self._bare_name_one(item))
         if isinstance(item, Ammo) or int(getattr(item, 'count', 1) or 1) <= 1:
             self.player.inventory.remove(item)
             try:
@@ -341,9 +399,10 @@ class TraderMixin:
                 pass
         else:
             self.player.remove_from_inventory(item)
-        self.player_gold += offer
         m.purse = max(0, int(m.purse) - offer)
         self.add_message(f"You sell {name} to {m.person} for {offer:,} gold.", 'success')
+        # Coins weigh: what will not fit he pays in gems (game_purse).
+        self._gain_gold(offer, paid=True, who=m.person)
         line = m.line('sold')
         if line:
             self.add_message(f'{m.person}: "{line}"', 'info')
@@ -413,7 +472,8 @@ class TraderMixin:
         points = 1
         if sid == 'repair':
             points = sum(int(getattr(i, 'wear_loss', 0) or 0) for i in self._service_targets('repair')) or 1
-        base = economy.service_price(sid, self.dungeon_level, purse=self.player_gold,
+        # (A share of the whole purse, treasure included: game_purse.)
+        base = economy.service_price(sid, self.dungeon_level, purse=self._purse_wealth(),
                                      points=points, markup=m.markup)
         return max(5, economy.nice(base * float(getattr(self, '_shop_mult', 1.0) or 1.0)))
 
@@ -425,7 +485,7 @@ class TraderMixin:
             self.add_message(f"{name}: there is nothing for {m.person} to do.", 'info')
             return
         price = self._service_price(sid)
-        if self.player_gold < price:
+        if self._payment_plan(price) is None:
             self.add_message(f'{m.person}: "{m.line("broke", "No coin, no deal.")}" '
                              f'({price:,} gold needed.)', 'warning')
             return
@@ -439,17 +499,25 @@ class TraderMixin:
         """Pay for and render one service."""
         m = self._shop_merchant
         price = self._service_price(sid)
-        if self.player_gold < price:
+        if self._payment_plan(price) is None:
             self.add_message(f'{m.person}: "{m.line("broke", "No coin, no deal.")}"', 'warning')
             return
         self._shop_pick = None
         self._shop_selection = 0
-        self.player_gold -= price
+        # Priced before (a restore's share is of the purse as it stands),
+        # paid after: nothing done, nothing owed.
         done = self._render_service(sid, target, who=m.person)
         if not done:
-            self.player_gold += price          # nothing was done: nothing is owed
             return
-        self.add_message(f"({price:,} gold.)", 'info')
+        paid = self._pay_gold(price, change_purse=int(m.purse), who=m.person, quiet=True)
+        if paid:
+            m.purse = max(0, int(m.purse) - int(paid.get('change_given', 0) or 0))
+            if paid.get('take'):
+                self.add_message(f"(You pay {self._payment_words(paid)}"
+                                 + (f"; {int(paid['change_given']):,} gold back.)"
+                                    if paid.get('change_given') else ".)"), 'info')
+            else:
+                self.add_message(f"({price:,} gold.)", 'info')
 
     def _render_service(self, sid: str, target, who: str = 'The smith') -> bool:
         """Do the service (shared with encounter vendors: a 'service' reward).
@@ -574,19 +642,28 @@ class TraderMixin:
             credit = self._trader_credit_value()
             for i, item in enumerate(m.stock):
                 price = self._trader_price(i)
-                affordable = gold >= max(0, price - credit)
-                detail = f"{price:,} gold   Weight {getattr(item, 'weight', 0):.1f}"
+                pay = max(0, price - credit)
+                plan = self._payment_plan(pay)
+                affordable = plan is not None
+                is_gem = getattr(item, 'item_class', '') == 'treasure'
+                detail = f"{price:,} gold   Weight {getattr(item, 'weight', 0):g}"
                 if i in haggled:
                     detail += "   Haggled"
                 item_lines = self._menu_item_detail_lines(
                     item, "Press Enter to buy this item if you can afford it.")
                 details = item_lines[:1] + [
-                    (f"Price: {price:,} gold (you have {gold:,})",
+                    (f"Price: {price:,} gold (you have {gold:,} in coin)",
                      FP.GOLD_PALE if affordable else FP.DANGER_TEXT_LIGHT, self.font_sm)]
+                if plan is not None and plan.get('take'):
+                    details.append((self._trader_pay_words(plan), FP.GOLD_PALE, self.font_sm))
+                elif plan is None and gold < pay:
+                    details.append(("Not enough in coin and treasure together.",
+                                    FP.DANGER_TEXT_LIGHT, self.font_sm))
                 if credit:
                     details.append((f"On the house: up to {credit:,} gold of it.",
                                     FP.GOLD_BRIGHT, self.font_sm))
-                details += [("Already haggled for this item." if i in haggled
+                details += [("Gems are sold at their worth plus a tenth: no haggling." if is_gem
+                             else "Already haggled for this item." if i in haggled
                              else "H: try to haggle the price down (once per item).",
                              FP.FADED_TEXT, self.font_sm), ''] + item_lines[1:]
                 entries.append({'name': self._display_name(item), 'detail': detail, 'icon': item,
@@ -608,6 +685,17 @@ class TraderMixin:
                      FP.GOLD_PALE if not why else FP.FADED_TEXT, self.font_sm),
                     (f"His purse: {int(m.purse):,} gold.", FP.FADED_TEXT, self.font_sm),
                     ''] + item_lines[1:]
+                if not why and getattr(item, 'item_class', '') == 'treasure':
+                    import treasure as _tr
+                    full = _tr.credit(item)
+                    if offer < full:
+                        details.insert(3, (f"Worth {full:,} to him, but his purse is short. "
+                                           f"Paying with it instead loses nothing.",
+                                           FP.WARNING_TEXT, self.font_sm))
+                    elif _tr.coin_weight(offer) >= 1:
+                        details.insert(3, (f"{offer:,} gold weighs {_tr.weight_text(offer)}. "
+                                           f"Coin you cannot carry he pays in gems.",
+                                           FP.FADED_TEXT, self.font_sm))
                 entries.append({'name': self._display_name(item), 'detail': detail, 'icon': item,
                                 'name_color': FP.BODY_TEXT if not why else FP.FADED_TEXT,
                                 'detail_color': FP.GOLD_PALE if not why else FP.FADED_TEXT,
@@ -618,7 +706,8 @@ class TraderMixin:
             for sid in getattr(m, 'services', ()):
                 targets = self._service_targets(sid)
                 price = self._service_price(sid)
-                ready = bool(targets) and gold >= price
+                can_pay = self._payment_plan(price) is not None      # coin, then treasure
+                ready = bool(targets) and can_pay
                 entries.append({
                     'name': self._service_name(sid),
                     'detail': f"{price:,} gold" + ('' if targets else "   Nothing to do"),
@@ -627,7 +716,7 @@ class TraderMixin:
                     'detail_color': FP.GOLD_PALE if ready else FP.FADED_TEXT,
                     'details': [(self._service_name(sid), FP.GOLD_BRIGHT, self.font_md),
                                 (f"Price: {price:,} gold (you have {gold:,})",
-                                 FP.GOLD_PALE if gold >= price else FP.DANGER_TEXT_LIGHT, self.font_sm),
+                                 FP.GOLD_PALE if can_pay else FP.DANGER_TEXT_LIGHT, self.font_sm),
                                 '',
                                 ((sdata.get(sid) or {}).get('desc', ''), FP.BODY_TEXT, self.font_sm),
                                 '',
@@ -638,11 +727,18 @@ class TraderMixin:
         counts = [len(m.stock), len(self.player.inventory),
                   len(getattr(m, 'services', ()))][:len(tabs)]
         selected = self._menu_clamp_selection('_shop_selection', len(entries))
-        context = self._menu_base_context([
+        import treasure
+        from treasure import weight_text
+        tre = sum(treasure.known_unit_value(self.player, t) * max(1, int(getattr(t, 'count', 1) or 1))
+                  for t in treasure.carried(self.player))
+        ctx = [
             (m.title.upper(), FP.GOLD_BRIGHT, self.font_sm),
-            (f"Your gold: {gold:,}", FP.GOLD_PALE, self.font_sm),
-            (f"His purse: {int(m.purse):,}", FP.BODY_TEXT, self.font_sm),
-        ])
+            (f"Your gold: {gold:,} ({weight_text(gold)})", FP.GOLD_PALE, self.font_sm),
+        ]
+        if tre:
+            ctx.append((f"Your treasure: {tre:,}", FP.GOLD_PALE, self.font_sm))
+        ctx.append((f"His purse: {int(m.purse):,}", FP.BODY_TEXT, self.font_sm))
+        context = self._menu_base_context(ctx)
         self._menu_more_cue = "The full lore is yours to read once you buy it."
         title = (f"{m.person}, {m.title}" if getattr(m, 'person', '') else m.name).upper()
         return dict(title=title, entries=entries, selected=selected, context_lines=context,

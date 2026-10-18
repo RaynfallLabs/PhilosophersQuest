@@ -214,8 +214,8 @@ class DivineMixin:
                 f"{m['name']} has nothing more to say to you. "
                 "The altar is silent.", 'info')
             return
-        can, reason = can_activate(altar.mystery_id, self.player,
-                                   getattr(self, 'player_gold', 0))
+        # Tribute can be paid in coin or treasure (game_purse._purse_wealth).
+        can, reason = can_activate(altar.mystery_id, self.player, self._purse_wealth())
         if not can:
             self.add_message(f"{m['name']}: {reason}", 'warning')
             return
@@ -246,8 +246,13 @@ class DivineMixin:
         if m.get('gold_cost', 0) > 0:
             import economy
             _cost = economy.written_gold(m['gold_cost'])
-            self.player_gold = getattr(self, 'player_gold', 0) - _cost
-            self.add_message(f"You offer {_cost:,} gold as tribute.", 'info')
+            # Coin first, then treasure; an altar gives no change.
+            _plan = self._pay_gold(_cost, change_purse=0, quiet=True)
+            if _plan is None:
+                self.player_gold = max(0, int(self.player_gold) - _cost)
+                self.add_message(f"You offer {_cost:,} gold as tribute.", 'info')
+            else:
+                self.add_message(f"You offer {self._payment_words(_plan)} as tribute.", 'info')
 
         # Consume key item (if any; not cauldron food, not sisyphus boulder)
         if m['key_item'] is not None and altar.mystery_id not in ('cauldron', 'sisyphus'):
@@ -736,17 +741,24 @@ class DivineMixin:
         elif chain == 1:
             import economy
             gold = economy.roll_share(_rng, self.dungeon_level, economy.GRAVE_SMALL_SHARE)
-            self.player_gold += gold
             self.add_message(f"You find {gold:,} gold coins buried with the dead.", 'success')
+            self._gain_gold(gold)                # coins weigh: what will not fit stays here
         elif chain == 2:
             self.add_message("You unearth a buried item!", 'success')
             self._spawn_grave_item(px, py)
         elif chain >= 3:
             import economy
             gold = economy.roll_share(_rng, self.dungeon_level, economy.GRAVE_RICH_SHARE)
-            self.player_gold += gold
             self._spawn_grave_item(px, py)
             self.add_message(f"A rich burial! You find {gold:,} gold and a buried treasure!", 'success')
+            self._gain_gold(gold)
+            # Grave goods: the dead went into the ground wearing their gold
+            # (a torc, a brooch, an arm-ring, a purse of old coin).
+            import treasure
+            goods = treasure.roll(self.dungeon_level, _rng, treasure.GRAVE_KINDS, px, py)
+            if goods is not None:
+                self.ground_items.append(goods)
+                self.add_message(f"Grave goods lie with the bones: {self._display_name(goods)}.", 'loot')
 
         # Grave is consumed
         self.dungeon.tiles[py][px] = FLOOR
@@ -840,8 +852,16 @@ class DivineMixin:
         elif chain == 1:
             import economy
             gold = economy.roll_share(_rng, self.dungeon_level, economy.THRONE_SHARE)
-            self.player_gold += gold
             self.add_message(f"You find {gold:,} gold wedged in the cushions.", 'success')
+            self._gain_gold(gold)
+            # A throne is studded with stones, and one is loose.
+            import treasure
+            if _rng.random() < treasure.THRONE_GEM_CHANCE:
+                gem = treasure.roll(self.dungeon_level, _rng, ('gem',), px, py)
+                if gem is not None:
+                    self.ground_items.append(gem)
+                    self.add_message(f"A stone comes loose from the armrest: {self._display_name(gem)}.",
+                                     'loot')
         elif chain == 2:
             self.player.restore_hp(max(20, self.player.max_hp // 5))
             self.add_message("The throne's enchantment heals your wounds!", 'success')

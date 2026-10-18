@@ -319,6 +319,11 @@ class InputMixin:
                 self._qa_warp_input = ''
                 self.state = STATE_QA_WARP_INPUT
                 return True
+            if event.unicode == '$' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: a heap of gold, one of every treasure
+                # and a trader with gems and the draught, to test coin weight.
+                self._qa_treasure_sampler()
+                return True
             self._player_input(key)
         elif self.state == STATE_TARGET:
             self._target_input(key)
@@ -1147,7 +1152,9 @@ class InputMixin:
 
             # Check if player can pay the cost
             from npc_encounters import can_pay_cost, get_inventory_filter
-            can_pay, fail_msg = can_pay_cost(self.player, cost, self.player_gold,
+            # "Gold" means the whole purse: coin, and treasure at what a
+            # trader would give for it (game_purse._purse_wealth).
+            can_pay, fail_msg = can_pay_cost(self.player, cost, self._purse_wealth(),
                                              self.dungeon_level)
             # "Return the item" options: can_pay_cost defers this check to the
             # caller, and nobody made it, so the reward was paid even if the
@@ -1617,12 +1624,12 @@ class InputMixin:
             if amount > 0 and self._inside_rock():
                 self.add_message(self._ROCK_DROP_MSG, 'warning')
             elif amount > 0:
-                from items import GoldPile
-                pile = GoldPile(amount, self.player.x, self.player.y)
-                pile._dropped_by_player = True       # a gold ring multiplies FOUND gold
-                self.player_gold -= amount
-                self.ground_items.append(pile)
-                self.add_message(f"You drop {amount:,} gold coins.", 'info')
+                # The hero's own pile (a gold ring multiplies FOUND gold
+                # only); it joins his own pile on this tile, never a find.
+                from treasure import weight_text
+                self._drop_gold(amount)
+                self.add_message(f"You drop {amount:,} gold coins ({weight_text(amount)} lighter).",
+                                 'info')
                 self._advance_turn()
             else:
                 self.add_message("No gold dropped.", 'info')

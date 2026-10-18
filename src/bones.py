@@ -56,6 +56,20 @@ def save_bones(player_name: str, dungeon_level: int, defeat_reason: str,
         gear.append(entry)
         if len(gear) >= 5:
             break
+    # Treasure lies with the bones (2026-10-18, treasure.py): the dead hero's
+    # dearest pieces, one of each kind, worth no more than one floor's income
+    # all told (like the gold, a find for the next hero, not a fortune).
+    try:
+        import treasure as _tr
+        budget = _economy.floor_income(dungeon_level)
+        pieces = sorted(_tr.carried(player), key=lambda t: -_tr.unit_value(t))
+        for t in pieces:
+            v = _tr.unit_value(t)
+            if v <= budget and len([g for g in gear if g.get('item_class') == 'treasure']) < 3:
+                gear.append({'id': t.id, 'name': t.name, 'item_class': 'treasure', 'slot': 'pack'})
+                budget -= v
+    except Exception:
+        pass
 
     bones = {
         'player_name': player_name,
@@ -230,7 +244,7 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
 
     # Load all item pools once
     item_pools = {}
-    for cls in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'potion'):
+    for cls in ('weapon', 'armor', 'shield', 'accessory', 'wand', 'scroll', 'potion', 'treasure'):
         try:
             item_pools[cls] = {i.id: i for i in load_items(cls)}
         except Exception:
@@ -267,7 +281,9 @@ def _place_cursed_gear(gear_list: list, gold: int, room, dungeon, ground_items: 
 
         item = copy.copy(template)
         # Royal Burial (Kilt of the Pharaoh): preserved items stay uncursed.
-        if gear_entry.get('preserved'):
+        if item_class == 'treasure':
+            pass                       # treasure is never cursed (treasure.py)
+        elif gear_entry.get('preserved'):
             item.buc = 'uncursed'
             item.buc_known = True  # the inscription is visible — "preserved by the Pharaoh"
         elif not getattr(item, 'can_be_cursed', True):

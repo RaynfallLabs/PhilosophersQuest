@@ -83,6 +83,7 @@ from game_divine import DivineMixin
 from item_actions import ItemActionsMixin
 from game_road import RoadMixin
 from game_traders import TraderMixin
+from game_purse import PurseMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -192,7 +193,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin, TraderMixin):
+           SetneMixin, TraderMixin, PurseMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -215,6 +216,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ECONOMY_REFACTOR_PROPOSAL S7). The hero's own gold coming back (a pile
     # they dropped, what a thief gave back, a loaded save) is set with
     # _set_gold_quietly and is not counted.
+    #
+    # Coins weigh (Brandon's D2, 2026-10-18; treasure.py): the count is
+    # mirrored onto the Player (``purse_coins``) on every change, so the purse
+    # counts toward the carry limit and Burdened like any item. Raising the
+    # purse directly never checks the weight: gold a person or the floor
+    # gives goes through _gain_gold, which takes only what fits.
     @property
     def player_gold(self) -> int:
         return self.__dict__.get('_player_gold', 0)
@@ -225,9 +232,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         if value > old:
             self.__dict__['gold_earned'] = self.__dict__.get('gold_earned', 0) + (value - old)
         self.__dict__['_player_gold'] = value
+        self._mirror_purse()
 
     def _set_gold_quietly(self, value) -> None:
         self.__dict__['_player_gold'] = value
+        self._mirror_purse()
+
+    def _mirror_purse(self) -> None:
+        p = self.__dict__.get('player')
+        if p is not None:
+            try:
+                p.purse_coins = max(0, int(self.__dict__.get('_player_gold', 0) or 0))
+            except (TypeError, ValueError):
+                p.purse_coins = 0
 
     def __init__(self, screen: pygame.Surface,
                  player_name: str = 'Adventurer',
@@ -590,6 +607,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.monsters                = monsters
         self.ground_items            = items
         self.player                  = Player()
+        self._mirror_purse()                    # the purse's weight (treasure.py)
         # The player reaches the game (wards, trait counters) from the first
         # turn: a trap on the first step used to find no game to report to.
         self.player._combat_game_ref = self
@@ -3835,10 +3853,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             from highscore_system import add_score
             score = self._calc_score()
             grade, _col = self._get_grade(score)
+            import treasure as _tr
             add_score(getattr(self, 'player_name', None) or 'Hero', score, grade,
                       self.level_mgr.max_level_reached,
                       self.level_mgr.monsters_killed,
-                      self.turn_count, victory=victory)
+                      self.turn_count, victory=victory,
+                      treasure=_tr.carried_value(self.player))
         except Exception:
             try:
                 from game_log import log_error
@@ -3863,7 +3883,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             + (50000 if has_stone else 0)
             # Killing Death is the hardest thing in the game and scored nothing.
             + (50000 if getattr(self, '_secret_victory', False) else 0)
+            # The treasure carried out (or on the body): its true value, a
+            # point a gold (treasure.SCORE_PER_GOLD). Coin does not score: it
+            # is for spending, and too heavy to hoard (Brandon's D2).
+            + self._treasure_score()
         )
+
+    def _treasure_score(self) -> int:
+        try:
+            import treasure
+            return treasure.score_points(self.player)
+        except Exception:
+            return 0
 
     def _get_grade(self, score: int) -> tuple[str, tuple]:
         """Return (letter_grade, color) based on final score."""
@@ -4420,8 +4451,12 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     # (This wrote `player.gold`, which does not exist, and
                     # raised an error while the amulet was worn.) The tears
                     # are worth a little more the deeper they fall.
-                    self.player_gold = (int(getattr(self, 'player_gold', 0) or 0)
-                                        + _tg * max(1, self.dungeon_level // 20))
+                    # Coins weigh (treasure.py): a tear that will not fit in
+                    # the purse is lost in the dust, not left as a trail of
+                    # one-coin piles behind a fully laden hero.
+                    _tear = min(_tg * max(1, self.dungeon_level // 20), self.player.coin_room())
+                    if _tear > 0:
+                        self._gain_gold(_tear, quiet=True)
                 break  # only first tears_of_freya amulet ticks (no stacking)
 
         # Coat of Cú Chulainn: berserk trigger at low HP, HP cost while active.
@@ -5623,27 +5658,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.add_message("There is nothing here to pick up.", 'info')
             return
         if isinstance(item, GoldPile):
-            if not hasattr(self, 'player_gold'):
-                self.player_gold = 0
-            _gold_amt = item.amount
-            # Draupnir: double gold pickups. Found gold only: a pile the
+            # Coins weigh a tenth of an ounce each: the hero takes only what
+            # he can carry and the rest stays where it lies (game_purse).
+            # Draupnir doubles FOUND gold only, once per pile: a pile the
             # player put down doubled each time it was picked up again
             # (100 gold became 102,400 in ten drops).
-            from items import is_found_gold as _found
-            for _acc in (() if not _found(item)
-                         else self.player.equipped_accessories):
-                _gm = getattr(_acc, 'gold_multiplier', 0)
-                if _gm > 0:
-                    _gold_amt = int(_gold_amt * _gm)
-                    break
-            if _found(item):
-                self.player_gold += _gold_amt
-            else:
-                self._set_gold_quietly(self.player_gold + _gold_amt)   # the hero's own
-            self.ground_items.remove(item)
-            self.add_message(f"You pick up {_gold_amt:,} gold coins.", 'loot')
-            _snd.play('gold')
-            self._advance_turn()
+            if self._pickup_gold(item):
+                _snd.play('gold')
+                self._advance_turn()
             return
         if isinstance(item, Lockpick):
             # Lockpicks are no longer needed — player already has the Master
@@ -5651,9 +5673,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             # find so the item isn't a dead drop if old saves still have it.
             import economy
             _scrap = max(5, economy.share(self.dungeon_level, economy.SCRAP_SHARE))
-            self.player_gold += _scrap
             self.ground_items.remove(item)
             self.add_message(f"You don't need this — your master kit is sufficient. (+{_scrap} gold scrap value)", 'info')
+            self._gain_gold(_scrap)
             self._advance_turn()
             return
         # v2.15.1: seal-of-* artifacts (shatter_on_pickup_with_chronicle).
@@ -5716,6 +5738,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if isinstance(item, Ammo):
                 self.add_message(
                     f"You pick up {item.count} {re.sub(r' x[0-9]+$', '', self._display_name(item))}s.", 'loot')
+            elif getattr(item, 'item_class', '') == 'treasure':
+                import treasure as _tr
+                self.add_message(f"You pick up the {self._bare_name(item)}. "
+                                 f"({_tr.value_text(self.player, item)}.)", 'loot')
             else:
                 self.add_message(f"You pick up the {self._bare_name(item)}.", 'loot')
             # Leather scraps: keep count for the player. Nothing else in the
@@ -8584,6 +8610,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return "Ingredient for cooking"
         elif isinstance(item, Ammo):
             return f"{item.ammo_type}  x{item.count}"
+        elif getattr(item, 'item_class', '') == 'treasure':
+            import treasure as _tr
+            return f"{_tr.kind_label(item)}: {_tr.value_text(self.player, item)}"
+        elif getattr(item, 'quiz', None):
+            q = item.quiz
+            return (f"Asks a question when drunk: +{q.get('amount', 1)} {q.get('stat', 'WIS')} "
+                    f"for good, or wasted")
         elif isinstance(item, Lockpick):
             return "lockpick"
         return item.item_class.replace('_', ' ').title()
@@ -8677,6 +8710,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         ('h', 'journal', 'Journal'),
         ('i', 'lore_hints', 'Lore Hints'),
         ('j', 'recipes', 'Recipes'),
+        ('k', 'treasure', 'Treasure'),
     ]
 
     def _open_encyclopedia(self):
@@ -8697,6 +8731,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         known_ids = getattr(self.player, 'known_item_ids', set())
         known_monster_ids = getattr(self.player, 'known_monster_ids', set())
+        if category == 'treasure':
+            # Treasure is known by sight (treasure.py): every kind the hero
+            # has held or had valued has a page; its worth shows once valued.
+            known_ids = (set(getattr(self.player, 'seen_item_ids', ()) or ())
+                         | set(getattr(self.player, 'appraised_treasure', ()) or ()))
 
         if category == 'journal':
             # The Journal draws from the register and the entries directly

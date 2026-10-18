@@ -134,6 +134,13 @@ class Player:
         self._armor_proc_run_spent: set = set()
         # Item IDs the player has identified this run
         self.known_item_ids: set[str] = set()
+        # Every item kind the hero has held this run (picked up, bought,
+        # given): traders lean their stock toward what is still new to him
+        # (data/traders.json stock_bias). Ids only; nothing shown.
+        self.seen_item_ids: set[str] = set()
+        # Treasure kinds a trader has valued (treasure.py): their exact
+        # worth is known, as an identified type's name is.
+        self.appraised_treasure: set[str] = set()
         # Monster kinds the player has encountered (seen in FOV)
         self.known_monster_ids: set[str] = set()   # monsters seen (encyclopedia)
         # Monster types whose corpse has been identified. One success knows
@@ -818,6 +825,12 @@ class Player:
             self.known_forms = set()
         if not hasattr(self, 'known_materials'):
             self.known_materials = set()
+        # Saves from before coin weight and treasure (2026-10-18): nothing
+        # held yet, nothing valued; the purse mirror is set by the Game.
+        if not hasattr(self, 'seen_item_ids'):
+            self.seen_item_ids = set(getattr(self, 'known_item_ids', ()) or ())
+        if not hasattr(self, 'appraised_treasure'):
+            self.appraised_treasure = set()
 
     def save_bonus_for(self, cat: str) -> int:
         """Total saving-throw bonus for a category ('CON'/'WIS'/'DEX'), read by
@@ -1273,6 +1286,23 @@ class Player:
     BURDENED_SHARE = 0.75
     BURDEN_STEP_EVERY = 4
 
+    # The purse (Brandon's D2, 2026-10-18): coins weigh what coins weigh, a
+    # tenth of an ounce each (treasure.COINS_PER_LB, 160 to the pound). The
+    # gold lives on the Game (Game.player_gold); the Game mirrors the count
+    # here so the purse counts toward every weight the hero carries, with
+    # Burdened and the limit exactly as for any item. An old save has no
+    # mirror until the Game sets it on load (0 before that).
+    purse_coins = 0
+
+    def purse_weight(self) -> float:
+        from treasure import coin_weight
+        return coin_weight(getattr(self, 'purse_coins', 0))
+
+    def coin_room(self) -> int:
+        """How many more gold pieces the hero can carry before the limit."""
+        from treasure import coins_in
+        return coins_in(self.get_carry_limit() - self.get_current_weight())
+
     def get_carry_limit(self) -> int:
         limit = self.CARRY_BASE + self.STR * self.CARRY_PER_STR
         if self.has_effect('porter'):
@@ -1336,8 +1366,8 @@ class Player:
         return sum(self._item_weight(it) for it in self.inventory if id(it) not in worn)
 
     def get_current_weight(self) -> float:
-        """Everything carried: worn gear plus the pack."""
-        return self.get_worn_weight() + self.get_pack_weight()
+        """Everything carried: worn gear, the pack, and the purse."""
+        return self.get_worn_weight() + self.get_pack_weight() + self.purse_weight()
 
     def burden_threshold(self) -> float:
         return self.get_carry_limit() * self.BURDENED_SHARE
@@ -1354,7 +1384,12 @@ class Player:
         return self.get_current_weight() + float(extra) <= self.get_carry_limit() + 1e-9
 
     def too_heavy_message(self) -> str:
-        return f"Too heavy: that would put you over your limit of {self.get_carry_limit()}."
+        msg = f"Too heavy: that would put you over your limit of {self.get_carry_limit()}."
+        coins = int(getattr(self, 'purse_coins', 0) or 0)
+        if self.purse_weight() >= 1.0:
+            from treasure import weight_text
+            msg += f" (Your {coins:,} gold weighs {weight_text(coins)}.)"
+        return msg
 
     def carry_line(self) -> str:
         """'Carrying 43 / 100', the readout the sidebar and sheet show."""
@@ -1430,6 +1465,12 @@ class Player:
             return False    # chests are opened where they stand (call 9)
         if not self.can_carry(self._item_weight(item)) and not self._carries_past_limit(item):
             return False
+        # A kind the hero has now held: traders lean their stock away from it.
+        if getattr(item, 'id', None):
+            seen = self.__dict__.get('seen_item_ids')
+            if seen is None:
+                seen = self.__dict__['seen_item_ids'] = set()
+            seen.add(item.id)
         # One-cosmetic-per-item: stamp the run's appearance onto a managed
         # ring/amulet entering the pack from ANY source (floor pickup, chest,
         # NPC gift, hero special). Floor items are already stamped at spawn, so
