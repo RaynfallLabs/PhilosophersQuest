@@ -4,6 +4,20 @@
 one philosophy question at a derived tier, right = full ID, wrong =
 Stunned 10 turns. No masteries, no partial id_levels, no resume math.
 
+**One identification knows every copy (2026-10-18).** Brandon: "once
+you've identified something, all further instances need to be fully
+identified, including BUC status." Knowing a KIND (by the question, a
+scroll, use, a trader, the Book of Thoth, a gift, Pattern Recognition)
+fully identifies every copy of it: name, blessing or curse, enchantment.
+That covers copies in the pack, on the floor, in chests, in trader stock
+and every copy that turns up later. It is decided when the game asks
+(`items.is_fully_known(item, player)`, `items.buc_known_to`), never
+stamped on the copies, so forgetting a kind (cursed Scroll of Identify,
+Book of Thoth's curse: `Game._forget_kind`) un-knows them all. A copy of a
+known kind is never offered for identifying (`Game._needs_identify`).
+The in-between "true name, curse unknown" state of the old True Name model
+is gone (§6).
+
 Source of truth: `src/game_magic.py::_identify_item`,
 `src/game_menus.py::_open_identify_menu`,
 `src/main.py::_start_corpse_identify`, `src/items.py::derive_id_tier`,
@@ -116,9 +130,10 @@ Mode: `threshold`. Subject: `philosophy`. Tier: derived (§5). Threshold:
 Right answer → `_full_identify(item)`:
 1. `item.id_level = 5`
 2. `item.buc_known = True` (if the field exists)
-3. `_propagate_identification(item.id, seed_item=item)` — the TYPE
-   joins the global known set so future copies show their true name
-   with BUC/enchant still hidden until identified individually.
+3. `_propagate_identification(item.id, seed_item=item)` — the KIND
+   joins the known sets, so every other copy, now and later, is fully
+   identified too (blessing and enchantment included), and same-blessing
+   stacks of it in the pack join up (`Player.merge_known_stacks`).
 4. `quirk_system.on_item_identified(item.id)` fires once per instance
    crossing into full ID.
 5. `player.total_identifies += 1`, `_check_philosopher_thresholds()`.
@@ -163,14 +178,17 @@ and sibling helpers:
   `_scroll_full_identify(item)` reveals one item with no further
   quiz. ESC wastes the scroll's revelation.
 - **Mass** (`_scroll_identify_mass(limit=N)`) — T2/T3 blessed scrolls
-  reveal the first N unidentified items in inventory + current tile.
-  Omnisight (T5) passes `limit=None` and reveals *every* unidentified
-  item.
+  reveal the first N unidentified items in inventory + current tile
+  (a second copy of a kind just learnt is already known, so N counts
+  kinds). Omnisight (T5) passes `limit=None` and reveals *every*
+  unidentified item.
 - **Cursed amnesia** (`_scroll_identify_amnesia`) — picks a random
-  identified item (never the Shard), drops its `id_level` to 0, clears
-  `identified` and `buc_known`, removes the id from
-  `known_item_ids`, and de-identifies every same-id copy on the floor /
-  in inventory so propagation doesn't get stuck.
+  known thing in the pack (never the Shard, never treasure) and forgets
+  its KIND (`_forget_kind`): the id, its accessory family and its form
+  leave the known sets, and every copy the game can reach (worn, pack,
+  floor, stored floors, chests, trader stock) drops to `id_level` 0 with
+  its blessing unknown. The Book of Thoth's curse forgets three kinds the
+  same way.
 
 Omnisight also calls `_omnisight_corpse_reveal` so one carried corpse's
 species joins `lore_known_monster_ids` (drives pre-identified corpse
@@ -269,56 +287,35 @@ field was dead. Repurposed 2026-09-24.)
 
 ---
 
-## 6. HUD rules (True Name model)
+## 6. HUD rules (one identification knows every copy)
 
-`hud_context.hud_item_name(player, item, include_count=False)`
-(`src/hud_context.py:84`) resolves the display name through a
-three-state tree:
+`hud_context.hud_item_name(player, item, include_count=False)` resolves
+the display name through a two-state tree:
 
 | State | Condition | Display |
 |-------|-----------|---------|
-| Instance identified | `item.id_level >= 5` | full name (`"Rapier +2"`) |
-| Type known, copy not identified | type in player known-set | true name plus what is still unknown about THIS copy (`hud_context.unknown_copy_suffix`): `"Potion of Healing (Curse Unknown)"`, `"Long Sword (Curse and Enchant Unknown)"`, or `"(Enchant Unknown)"` once an altar has shown the blessing |
-| Type unknown | nothing known | `unidentified_name` fallback appearance |
+| Known | this copy identified (`id_level >= 5`) **or** its kind known (`player.knows_item_type`) | true name, with a `Blessed` / `Cursed` prefix (`"Blessed Potion of Healing"`) |
+| Unknown | neither | `unidentified_name` appearance, with `Cursed` only once an altar or a worn curse has shown it |
 
-```python
-if instance_identified:
-    raw = item.name
-elif knows_type:
-    suffix = unknown_copy_suffix(item)   # "(Curse Unknown)" etc., "" when nothing is hidden
-    raw = f"{item.name} {suffix}" if suffix else item.name
-else:
-    raw = item.unidentified_name
-```
+`hud_context.copy_fully_known` / `items.is_fully_known` is the one test;
+`Game._display_name` (menus, messages), the Kit's BUC column, the lore
+dossier, the shop, sell prices (`economy.sell_offer(identified=...)`)
+and the identify menu all ask it, so every surface names an item the
+same way.
 
-Then the final string prepends a BUC tag when both `buc_known` *and*
-`buc != "uncursed"`:
+**History.** From 2026-08-06 to 2026-10-18 a known type showed its true
+name while each copy kept its own blessing and enchantment secret
+("Potion of Healing (Curse Unknown)", `hud_context.unknown_copy_suffix`,
+now deleted). Brandon found the per-copy identify too annoying in play,
+so a known kind now knows every copy.
 
-```
-"Blessed Rapier +2"
-"Cursed Long Sword (Enchant Unknown)"
-```
-
-**Why the suffix names what is unknown (2026-10-16).** With identify v3,
-learning a type is global (`known_item_ids` / `known_class_ids` /
-`known_forms`+`known_materials`) but each copy's BUC/enchant stays
-secret until that *instance* is identified. It used to read
-"Unidentified Potion of Healing" (then "Potion of Healing
-(Unidentified)"), which a child reads as "you don't know what this is"
-while the name says exactly what it is, beside truly unknown potions
-also called Unidentified. The suffix now says what IS hidden: the
-copy's blessing or curse, and its enchantment. `Game._display_name`
-(menus, messages) and `hud_item_name` (sidebar) share the helper, so
-every surface names an item the same way. Type knowledge never shows a
-copy's blessing in menus either (`_copy_buc_known`).
-
-**Capitalisation (v2.23.0).** The prefix is a capital-U
-`Unidentified`, and `item.name` / `item.unidentified_name` always read
-back in title case through `naming.ProperNameAttr`. The item dossier's
-identity panel shows a plain `Identified` / `Unidentified` line and an
-`Appearance` field (the unidentified look, for recognising the item on
-a later run) in place of the old `True name` row — see
-[ui §16](ui.md).
+**Capitalisation (v2.23.0).** `item.name` / `item.unidentified_name`
+always read back in title case through `naming.ProperNameAttr`. The item
+dossier's identity panel shows a plain `Identified` / `Unidentified`
+line and an `Appearance` field (the unidentified look, for recognising
+the item on a later run) in place of the old `True name` row — see
+[ui §16](ui.md). The art never changes with identification
+(`feedback_item_art_is_the_item`).
 
 ### Type-knowledge keys
 
@@ -328,11 +325,18 @@ a later run) in place of the old `True name` row — see
   material).
 - `Player.known_forms: set[str]`, `Player.known_materials: set[str]`
   — identify v3.1 split-knowledge (2026-09-01). Learn `long_sword` +
-  `iron` independently; every future iron long sword auto-shows its
-  true name without a per-id-slug event.
-- `knows_item_type(item)` (`src/player.py:945`) is the predicate the
-  resolver uses: hits on any of the three stores above (via
-  `type_class`, `is_split_type_known`).
+  `iron` independently; every iron long sword then counts as a known
+  kind (fully identified) without a per-id-slug event.
+- `knows_item_type(item)` (`src/player.py`) is the kind predicate:
+  hits on any of the three stores above (via `type_class`,
+  `is_split_type_known`). `items.kind_is_known` wraps it and leaves out
+  corpses (their own `lore_known_monster_ids`) and treasure (known by
+  sight, valued by a trader: `treasure.py`).
+- **Save/load.** The sets are pickled on the Player and read on demand,
+  so nothing is stamped on items. `Game._rebuild_kind_knowledge` (called
+  from `load_state`) makes them real sets, rebuilds accessory families
+  from `known_item_ids` for a save that predates `known_class_ids`, and
+  merges same-blessing stacks of known kinds.
 
 ### Weapons with `identified: false` default
 

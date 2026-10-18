@@ -251,17 +251,25 @@ def test_b20_id_keyed_marks_are_dropped_on_save():
 # ---- B22: HUD and menus agree on what "identified" means -------------------
 
 def test_b22_hud_needs_id_level_5_for_a_plain_name():
+    """A stored 4 (``identified = True`` from a scripted grant) is not
+    knowledge: without the kind known the copy keeps its appearance. Once
+    the kind is known every copy is fully identified (2026-10-18), blessing
+    included, so the name is plain and a curse shows."""
     from types import SimpleNamespace
     from hud_context import hud_item_name
-    player = SimpleNamespace(knows_item_type=lambda item: True,
+    knows = {'yes': False}
+    player = SimpleNamespace(knows_item_type=lambda item: knows['yes'],
                              known_item_ids=set())
     item = SimpleNamespace(id='ring_x', name='Ring of X',
                            unidentified_name='A Plain Ring', id_level=4,
-                           identified=True, buc='uncursed', buc_known=False,
+                           identified=True, buc='cursed', buc_known=False,
                            count=1)
-    assert hud_item_name(player, item) == 'Ring of X (Curse Unknown)'
+    assert hud_item_name(player, item) == 'A Plain Ring'
+    knows['yes'] = True
+    assert hud_item_name(player, item) == 'Cursed Ring of X'
+    knows['yes'] = False
     item.id_level = 5
-    assert hud_item_name(player, item) == 'Ring of X'
+    assert hud_item_name(player, item) == 'Cursed Ring of X'
 
 
 # ---- W20: Cu Chulainn's permanent fear immunity (-1) actually applies ------

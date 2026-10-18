@@ -64,84 +64,39 @@ def spawn_fit_color(dungeon_level: int, peak_floor: int, spread: int = 10,
     return _mix(NEUTRAL, GREEN, score)
 
 
-def unknown_copy_suffix(item) -> str:
-    """What is still NOT known about one copy of an item whose TYPE is known
-    (identify v3 True Name model), in words a child reads at a glance:
-
-        blessing/curse unknown, has an enchantment -> "(Curse and Enchant Unknown)"
-        blessing/curse unknown                     -> "(Curse Unknown)"
-        blessing/curse known, enchantment unknown  -> "(Enchant Unknown)"
-        everything known                           -> ""
-
-    The name before it is the true name ("Potion of Healing"): the player
-    DOES know what the item is and what it does. It used to say
-    "Unidentified Potion of Healing" / "Potion of Healing (Unidentified)",
-    which a child reads as "you don't know what this is" while the name says
-    the opposite, next to truly unknown potions also tagged Unidentified
-    (VISUAL_REVIEW_2 4.6). Only THIS copy's blessing/curse and enchantment
-    wait for its own identify."""
-    if str(getattr(item, 'item_class', '')) == 'corpse':
-        return ''
-    try:
-        if int(getattr(item, 'id_level', 5) or 0) >= 5:
-            return ''
-    except (TypeError, ValueError):
-        return ''
-    curse_unknown = hasattr(item, 'buc') and not bool(getattr(item, 'buc_known', False))
-    enchant = hasattr(item, 'enchant_bonus')
-    if curse_unknown and enchant:
-        return "(Curse and Enchant Unknown)"
-    if curse_unknown:
-        return "(Curse Unknown)"
-    if enchant:
-        return "(Enchant Unknown)"
-    return ""
+def copy_fully_known(player, item) -> bool:
+    """Is this copy fully identified to the player (name, blessing or curse,
+    enchantment)? Its own identify, or its KIND known: once the hero has
+    identified a kind, every copy of it is fully identified, blessing
+    included (Brandon 2026-10-18; items.is_fully_known). Things with no
+    identification state at all count as known."""
+    from items import is_fully_known, kind_is_known
+    if hasattr(item, "id_level"):
+        return is_fully_known(item, player)
+    if hasattr(item, "identified") and not getattr(item, "identified", False):
+        return kind_is_known(player, item)
+    return True
 
 
 def hud_item_name(player, item, *, include_count: bool = False) -> str:
-    # Identify v3 True-Name model:
-    #   INSTANCE identified                  -> full name ("Rapier +2")
-    #   TYPE known, copy not identified      -> "<true name> <what is still
-    #                                           unknown>" (unknown_copy_suffix:
-    #                                           "Potion of Healing (Curse
-    #                                           Unknown)"); a known curse shows
-    #                                           as a "Cursed" prefix
-    #   TYPE unknown                         -> unidentified appearance
-    # "This copy is identified" means id_level 5, the same test the menus
-    # use (Game._display_name), and the same suffix, so the HUD and every
+    # One identification knows every copy (2026-10-18):
+    #   copy identified, or its KIND known -> the true name ("Rapier"), with
+    #                                         a "Blessed" / "Cursed" prefix
+    #   kind unknown                       -> the unidentified appearance,
+    #                                         with "Cursed" only when an altar
+    #                                         or a worn curse has shown it
+    # The same test the menus use (Game._display_name), so the HUD and every
     # menu name one item the same way.
-    if hasattr(item, "id_level"):
-        try:
-            instance_identified = int(getattr(item, "id_level", 0) or 0) >= 5
-        except (TypeError, ValueError):
-            instance_identified = False
-    elif hasattr(item, "identified"):
-        instance_identified = bool(getattr(item, "identified", False))
-    else:
-        instance_identified = True
-
-    if instance_identified:
+    known = copy_fully_known(player, item)
+    if known:
         raw = getattr(item, "name", "item")
     else:
-        knows_fn = getattr(player, "knows_item_type", None)
-        knows_type = False
-        if callable(knows_fn):
-            try:
-                knows_type = bool(knows_fn(item))
-            except Exception:
-                knows_type = False
-        else:
-            knows_type = getattr(item, "id", None) in getattr(player, "known_item_ids", set())
-        if knows_type:
-            true_name = getattr(item, "name", "item")
-            suffix = unknown_copy_suffix(item)
-            raw = f"{true_name} {suffix}" if suffix else true_name
-        else:
-            raw = getattr(item, "unidentified_name", getattr(item, "name", "item"))
+        raw = getattr(item, "unidentified_name", getattr(item, "name", "item"))
 
     base = fix_name_case(str(raw))
     buc = getattr(item, "buc", "uncursed")
-    if getattr(item, "buc_known", False) and buc != "uncursed":
+    buc_shown = known or bool(getattr(item, "buc_known", False))
+    if hasattr(item, "buc") and buc_shown and buc != "uncursed":
         # "Cursed Rough Amber Pelt": the article of an appearance goes first
         # (it read "Cursed A Rough Amber Pelt").
         base = f"{buc.title()} {strip_article(base)}"

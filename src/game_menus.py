@@ -568,10 +568,9 @@ class MenuMixin:
     def _kit_visible_level(self, item) -> int:
         """Return the highest id_level the player has 'earned' for this item.
 
-        True Name model:
-          - this instance identified -> level 5 (everything visible)
-          - the TYPE is known -> level 4 (name + stats + lore; this copy's
-            BUC and enchant still hidden)
+          - this copy identified, or its KIND known -> level 5: everything
+            visible, blessing and enchantment included (one identification
+            knows every copy, Brandon 2026-10-18: items.is_fully_known)
           - otherwise nothing (0).
         Pure helper; no side effects.
 
@@ -579,19 +578,15 @@ class MenuMixin:
         True`` (about forty scripted grants) writes 4 without identifying
         the item, and the dossier then showed the aura, effect and lore of
         a thing still named by its appearance. What the player knows is
-        what the NAME says (hud_context.item_display_name): this copy
-        identified, or its type known.
+        what the NAME says (hud_context.item_display_name).
         """
         base = int(getattr(item, 'id_level', 0) or 0)
-        if (hasattr(item, 'id_level') and base < 5
-                and str(getattr(item, 'item_class', '')) != 'corpse'):
-            base = 0
-        try:
-            if self.player.knows_item_type(item):
-                base = max(base, 4)
-        except AttributeError:
-            pass
-        return base
+        if str(getattr(item, 'item_class', '')) == 'corpse':
+            return base
+        if not hasattr(item, 'id_level'):
+            return base
+        from items import is_fully_known
+        return 5 if is_fully_known(item, getattr(self, 'player', None)) else 0
 
     def _kit_collect_items(self):
         """Return list of (source_label, item) for everything the panel might show.
@@ -955,11 +950,10 @@ class MenuMixin:
             if not has_shard:
                 self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
                 return
-        def _needs_identify(i):
-            # Visible while this INSTANCE isn't identified — a known TYPE
-            # still leaves each copy's BUC/enchant to be earned (True Name
-            # model). Items without id_level default to 5 (always-known).
-            return getattr(i, 'id_level', 5) < 5
+        # Listed while there is something left to learn about the copy: a
+        # known KIND fully identifies every copy, blessing included, so it
+        # is never offered (MagicMixin._needs_identify).
+        _needs_identify = self._needs_identify
 
         inv_items = [i for i in self.player.inventory if _needs_identify(i)]
         # Ground items at player's tile — EXCLUDE corpses so they don't get

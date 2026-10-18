@@ -1433,9 +1433,9 @@ class Player:
         """True if the player has already identified this item's TYPE. Once you
         know a 'Potion of Healing', you know EVERY Potion of Healing — the same
         predicate the name-resolver uses (id in known_item_ids, or the type
-        class in known_class_ids for material-variant families). Type knowledge
-        reveals name/stats/lore; each copy's BUC and enchant stay hidden until
-        that instance is identified (the True Name model).
+        class in known_class_ids for material-variant families). Knowing the
+        kind fully identifies every copy: name, stats, lore, blessing or curse
+        and enchantment (Brandon 2026-10-18; items.is_fully_known).
 
         Identify v3.1 (2026-09-01) extends this: if you know the item's FORM
         AND MATERIAL independently (from other identifies of the same form or
@@ -1495,7 +1495,8 @@ class Player:
                     continue  # never merge a stack into itself (guards stray aliasing)
                 if existing.id != item.id:
                     continue
-                if not (_buc_known_to_player(existing) and _buc_known_to_player(item)):
+                if not (_buc_known_to_player(existing, self)
+                        and _buc_known_to_player(item, self)):
                     continue  # a blessing not known on both: no merge, no leak
                 if getattr(existing, 'buc', 'uncursed') != getattr(item, 'buc', 'uncursed'):
                     continue  # different BUC: keep stacks separate
@@ -1690,6 +1691,40 @@ class Player:
 
     def sort_pack(self) -> None:
         self.inventory.sort(key=self.pack_sort_key)
+
+    def merge_known_stacks(self) -> int:
+        """Merge pack stacks that are now known to be the same: same id, a
+        stackable type, blessing or curse known on both and the same. Run when
+        a kind becomes known (one identification knows every copy), so two
+        "Potion of Healing" rows become one. Returns how many merged."""
+        from items import Item
+        merged = 0
+        kept: list = []
+        for it in list(self.inventory):
+            target = None
+            if isinstance(it, Item._STACKABLE_CLASSES) and _buc_known_to_player(it, self):
+                for k in kept:
+                    if (k is not it and getattr(k, 'id', None) == getattr(it, 'id', None)
+                            and isinstance(k, Item._STACKABLE_CLASSES)
+                            and _buc_known_to_player(k, self)
+                            and getattr(k, 'buc', 'uncursed') == getattr(it, 'buc', 'uncursed')):
+                        target = k
+                        break
+            if target is None:
+                kept.append(it)
+                continue
+            # Keep the copy that was itself identified (the one an identify
+            # screen or the lore page is showing), folding the other into it.
+            if int(getattr(it, 'id_level', 0) or 0) > int(getattr(target, 'id_level', 0) or 0):
+                kept[kept.index(target)] = it
+                it.count = getattr(it, 'count', 1) + getattr(target, 'count', 1)
+            else:
+                target.count = getattr(target, 'count', 1) + getattr(it, 'count', 1)
+            merged += 1
+        if merged:
+            self.inventory[:] = kept
+            self.sort_pack()
+        return merged
 
     def get_inventory_display(self) -> list:
         # Every item (the pack's only limit is weight): it stopped at 26,
@@ -1982,14 +2017,12 @@ class Player:
         self.sort_pack()
 
 
-def _buc_known_to_player(item) -> bool:
+def _buc_known_to_player(item, player=None) -> bool:
     """Is this copy's blessing or curse known? Flagged known (altar, identify,
-    a curse shown on equip) or the copy fully identified (id level 5). Items
-    with no blessing to hide (food, ingredients, ammo spawn at id level 5)
-    count as known, so they still stack."""
-    if getattr(item, 'buc_known', False):
-        return True
-    try:
-        return int(getattr(item, 'id_level', 5) or 0) >= 5
-    except (TypeError, ValueError):
-        return False
+    a curse shown on equip), the copy fully identified (id level 5), or its
+    KIND known to ``player`` (one identification knows every copy, BUC
+    included: items.buc_known_to). Items with no blessing to hide (food,
+    ingredients, ammo spawn at id level 5) count as known, so they still
+    stack."""
+    from items import buc_known_to
+    return buc_known_to(item, player)

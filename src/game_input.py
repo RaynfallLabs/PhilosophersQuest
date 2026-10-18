@@ -1586,7 +1586,7 @@ class InputMixin:
             if isinstance(subject, Corpse) or not hasattr(subject, 'id_level'):
                 self.add_message("There is nothing more to identify here.", 'info')
                 return
-            if int(getattr(subject, 'id_level', 5)) >= 5:
+            if not self._needs_identify(subject):
                 self.add_message("You already understand that item completely.", 'info')
                 return
             self.state = STATE_PLAYER

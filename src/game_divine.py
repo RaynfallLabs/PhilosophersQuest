@@ -867,9 +867,8 @@ class DivineMixin:
             self.add_message("The throne's enchantment heals your wounds!", 'success')
         elif chain == 3:
             count = 0
-            for item in self.player.inventory:
-                if not getattr(item, 'identified', True) \
-                        or int(getattr(item, 'id_level', 5) or 0) < 5:
+            for item in list(self.player.inventory):
+                if self._needs_identify(item):
                     # A real identification. Setting `identified` alone gives
                     # id level 4, and names need 5: "N items identified!"
                     # left every one still reading "Unidentified".

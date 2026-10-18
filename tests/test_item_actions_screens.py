@@ -468,6 +468,11 @@ def test_identify_from_the_sheet_needs_the_shard_and_returns():
     g = _game()
     pot = _stack(1)
     pot.id_level = 0
+    pot.buc_known = False
+    # A kind the hero knows needs no identifying (every copy is known), so
+    # the starting kit's knowledge is set aside here.
+    for s in ('known_item_ids', 'known_class_ids', 'known_forms', 'known_materials'):
+        getattr(g.player, s).clear()
     g.player.inventory.append(pot)
     assert g._item_can_identify_now(), "a new hero carries the Shard"
     _sheet_select_pack(g, pot)

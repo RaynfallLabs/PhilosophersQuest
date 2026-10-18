@@ -1127,7 +1127,10 @@ def test_the_book_of_thoth_read_well_names_the_world():
     # Not consumed (DEEDS_KARMA_DESIGN 11.12): its power is spent after one
     # read, and it stays until it is laid on an altar to keep the oath.
     assert book in g.player.inventory and book.spent
-    assert unknown.identified or int(getattr(unknown, 'id_level', 0)) >= 4
+    # Named: identified itself, or its kind already known (one
+    # identification knows every copy, 2026-10-18).
+    from items import is_fully_known
+    assert is_fully_known(unknown, g.player)
     assert 'the world named itself back to me' in _chron(g)
     assert _own_item_art('book_of_thoth')
 

@@ -349,6 +349,74 @@ def grant_identified(game, item) -> None:
         propagate(item.id, seed_item=item)
 
 
+# ---------------------------------------------------------------------------
+# Kind knowledge: one identification knows every copy (2026-10-18)
+# ---------------------------------------------------------------------------
+#
+# Brandon, 2026-10-18: "once you've identified something, all further
+# instances need to be fully identified, including BUC status. This is just
+# too annoying right now."
+#
+# Once the hero knows an item's KIND (Player.knows_item_type: the id, the
+# accessory family, or its form and material), every copy of it is fully
+# identified: its name, its blessing or curse and its enchantment. That holds
+# wherever the copy is (pack, floor, a chest, a trader's stock) and for every
+# copy that turns up later, because it is decided here, when the game asks,
+# not stamped onto items when the kind is learnt. Forgetting the kind (a
+# cursed Scroll of Identify, the Book of Thoth's curse) un-knows every copy
+# the same way. Treasure keeps its own rules (known by sight, valued by a
+# trader: treasure.py) and a corpse its own (Player.lore_known_monster_ids).
+
+def kind_is_known(player, item) -> bool:
+    """True when the hero knows this item's kind, so every copy of it is
+    fully identified. Corpses and treasure are never decided here."""
+    if player is None or item is None:
+        return False
+    if str(getattr(item, 'item_class', '')) in ('corpse', 'treasure'):
+        return False
+    knows = getattr(player, 'knows_item_type', None)
+    if knows is None:
+        return getattr(item, 'id', None) in getattr(player, 'known_item_ids', ())
+    try:
+        return bool(knows(item))
+    except Exception:
+        return False
+
+
+def is_fully_known(item, player) -> bool:
+    """THE test for "this copy is identified": its name, blessing or curse
+    and enchantment are all known to the hero. True when the copy was itself
+    identified (id level 5) or the hero knows its kind. Every place that
+    decides what to show or offer asks this: names, the blessing label, the
+    enchantment, sell prices, the identify menu and its quiz."""
+    if item is None:
+        return False
+    if not hasattr(item, 'id_level'):
+        return True            # nothing on it to identify
+    try:
+        if int(getattr(item, 'id_level', 0) or 0) >= 5:
+            return True
+    except (TypeError, ValueError):
+        pass
+    return kind_is_known(player, item)
+
+
+def buc_known_to(item, player=None) -> bool:
+    """Is this copy's blessing or curse known? Flagged known (an altar, a
+    curse that showed itself when worn), the copy identified, or its kind
+    known. Items with no blessing to hide (food, ammo) count as known."""
+    if item is None:
+        return False
+    if getattr(item, 'buc_known', False):
+        return True
+    try:
+        if int(getattr(item, 'id_level', 5) or 0) >= 5:
+            return True
+    except (TypeError, ValueError):
+        return False
+    return kind_is_known(player, item)
+
+
 class Weapon(Item):
     def __init__(self, defn: dict):
         super().__init__(defn)

@@ -537,8 +537,10 @@ def test_propagate_records_type_knowledge():
 
 
 def test_propagate_does_not_touch_other_copies():
-    """The heart of the True Name model: a second copy keeps its own
-    instance state (id_level 0, BUC hidden) even once the type is known."""
+    """Kind knowledge is read, not stamped (2026-10-18): a second copy's own
+    stored state is left alone (so forgetting the kind un-knows it), yet it
+    reads as fully identified, blessing included, while the kind is known."""
+    from items import is_fully_known, buc_known_to
     w1 = _make_weapon(id_level=5)
     w2 = _make_weapon(id_level=0)
     w2.buc_known = False
@@ -546,6 +548,7 @@ def test_propagate_does_not_touch_other_copies():
     g._propagate_identification('test_sword', seed_item=w1)
     assert w2.id_level == 0
     assert w2.buc_known is False
+    assert is_fully_known(w2, g.player) and buc_known_to(w2, g.player)
 
 
 def test_propagate_finds_seed_from_ground_when_not_given():

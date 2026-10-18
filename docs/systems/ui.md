@@ -19,7 +19,7 @@ and the welcome / name-entry flow.
 - `src/ui.py` — `Sidebar`, `MessageLog`, left-rail / right-rail
   composition, effect chips, powers rows, in-sight rows
 - `src/hud_context.py` — pure data helpers (`active_power_rows`,
-  `visible_context_rows`, `hud_item_name`); True-Name identify-v3 rule
+  `visible_context_rows`, `hud_item_name`); the known-kind identify rule
 - `src/game_menus.py` — `MenuMixin`, menu input handlers, `_COOK_TABS`,
   `_open_identify_menu`, `_open_power_menu`, `_activate_gold_offering`
 - `src/game_input.py` — `InputMixin.handle_event` state dispatch and
@@ -337,32 +337,31 @@ monster count on a floor becomes routinely high.)
 Pure functions, no pygame. Drawing stays boring; filtering stays
 testable.
 
-### 7.1 `hud_item_name(player, item, include_count=False)` — True Name rule
+### 7.1 `hud_item_name(player, item, include_count=False)` — one identification knows every copy
 
-This is the identify-v3 fix (2026-08-06). The HUD + sidebar + menu
-rows all go through this helper.
+The HUD + sidebar + menu rows all go through this helper. Since
+2026-10-18 knowing an item's KIND fully identifies every copy, blessing
+and enchantment included (`hud_context.copy_fully_known` →
+`items.is_fully_known`):
 
 ```
-INSTANCE identified       → full name ("Rapier +2")
-TYPE known + BUC known    → full name (BUC "Blessed"/"Cursed" prefix)
-TYPE known + BUC unknown  → "Unidentified <true name>"
-TYPE unknown              → item.unidentified_name (appearance)
+copy identified OR kind known → true name, "Blessed"/"Cursed" prefix
+neither                       → item.unidentified_name (appearance),
+                                "Cursed" only once an altar or a worn
+                                curse has shown it
 ```
 
 Names are always title case (v2.23.0): `item.name` and
 `item.unidentified_name` are `naming.ProperNameAttr` descriptors, so
 `"ring of magic resist"` reads back as `"Ring of Magic Resist"` on
 every screen and log line, including items loaded from older saves.
-The `Unidentified` prefix is capitalised to match.
+The old `TYPE known + BUC unknown` branch ("Potion of Healing (Curse
+Unknown)") was removed on 2026-10-18: Brandon found identifying every
+copy of a kind he already knew too annoying in play.
 
-The `TYPE known + BUC unknown` branch is the key one — the player
-knows what the item CLASS is, but THIS copy's BUC is still a mystery.
-The HUD surfaces that explicitly so the player doesn't quaff a cursed
-healing potion thinking it's identified.
-
-BUC prefix is a capitalised word (`Blessed` / `Cursed`; braces until 2026-10-16); only
-rendered when `buc_known`. Count suffix (`x3`) added if
-`include_count` and count > 1.
+BUC prefix is a capitalised word (`Blessed` / `Cursed`; braces until
+2026-10-16); only rendered when the blessing is known. Count suffix
+(`x3`) added if `include_count` and count > 1.
 
 ### 7.2 `active_power_rows(player, secret_build, heavenly_host_active)`
 
@@ -392,7 +391,7 @@ cooldown, uses}`. The sidebar renders color by state (`SUCCESS_TEXT`,
 
 Filters to things in the player's visible-tile set, sorts by Manhattan
 distance, caps at `max_monsters` / `max_items`. Items use
-`hud_item_name` so the appearance / True-Name rule applies.
+`hud_item_name` so the appearance / known-kind rule applies.
 
 ### 7.4 `spawn_fit_score / spawn_fit_color`
 
@@ -1308,7 +1307,8 @@ Documented for traceability. Fixes land in follow-up commits.
    action handler if it chains from another menu).
 8. If the menu renders a quiz threshold, use `_threshold_line`.
 9. If the menu displays item names, use `hud_item_name` so the
-   True-Name identify-v3 rule is honored.
+   known-kind identify rule (one identification knows every copy) is
+   honored.
 10. Add context lines explaining the mechanic in one line (follow the
     cook / identify menu pattern: `COOKING / SP x/y / Recipes
     available / Cooking uses one cooking question...`).

@@ -217,18 +217,19 @@ class TraderMixin:
     def _trader_offer(self, item) -> tuple:
         """(offer, refusal) for selling ``item`` to the open trader."""
         from player import _buc_known_to_player
+        from items import is_fully_known
         m = self._shop_merchant
         known = self._item_is_known(item)
-        cursed_known = getattr(item, 'buc', '') == 'cursed' and _buc_known_to_player(item)
+        cursed_known = (getattr(item, 'buc', '') == 'cursed'
+                        and _buc_known_to_player(item, self.player))
         why = traders.refusal({'buys': m.buys, 'buys_cursed': m.buys_cursed}, item,
                               known=known, cursed_known=cursed_known,
                               quest_ids=self._QUEST_PIECE_IDS)
         if why:
             return 0, why
-        try:
-            ident = int(getattr(item, 'id_level', 0) or 0) >= 5
-        except (TypeError, ValueError):
-            ident = False
+        # Fully identified: this copy, or its kind known (one identification
+        # knows every copy, blessing included).
+        ident = is_fully_known(item, self.player)
         offer = economy.sell_offer(item, self.dungeon_level, known=known, identified=ident,
                                    markup=m.markup, purse=m.purse)
         if offer <= 0:
@@ -441,7 +442,7 @@ class TraderMixin:
         if sid == 'cut_curse':
             from player import _buc_known_to_player
             return [i for i in p.worn_items()
-                    if getattr(i, 'buc', '') == 'cursed' and _buc_known_to_player(i)
+                    if getattr(i, 'buc', '') == 'cursed' and _buc_known_to_player(i, p)
                     and not getattr(i, 'bound_to_wielder', False)
                     and getattr(i, 'id', None) not in self._QUEST_PIECE_IDS]
         if sid == 'cure':
@@ -451,8 +452,9 @@ class TraderMixin:
         if sid == 'heal':
             return ['heal'] if p.hp < p.max_hp else []
         if sid == 'id_retry':
+            from items import is_fully_known
             return [i for i in p.inventory if hasattr(i, 'id_level')
-                    and int(getattr(i, 'id_level', 0) or 0) < 5
+                    and not is_fully_known(i, p)
                     and getattr(i, 'item_class', '') not in ('ingredient', 'corpse', 'food')]
         if sid == 'map':
             d = self.dungeon

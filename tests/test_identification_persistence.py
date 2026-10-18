@@ -44,13 +44,14 @@ def test_known_type_does_not_stamp_a_fresh_instance():
 
 def test_known_same_buc_potions_merge():
     """Bug bash 4 call 8: copies merge only when the blessing is KNOWN on
-    both. An unidentified copy stays apart even when its hidden BUC matches
-    (merging it, and refusing a different one, leaked the blessing); a copy
-    whose blessing is known (altar, identify) joins the stack."""
+    both. A copy of an UNKNOWN kind stays apart even when its hidden BUC
+    matches (merging it, and refusing a different one, leaked the blessing);
+    a copy whose blessing is known (altar, identify) joins the stack. A copy
+    of a KNOWN kind is fully identified, blessing included (2026-10-18), so
+    it joins too."""
     pl = Player()
-    pl.known_item_ids.add(_PID)
     pl.add_to_inventory(_fresh(buc='uncursed', id_level=5))
-    pl.add_to_inventory(_fresh(buc='uncursed', id_level=0))   # fresh, unidentified
+    pl.add_to_inventory(_fresh(buc='uncursed', id_level=0))   # kind unknown
     held = [i for i in pl.inventory if i.id == _PID]
     assert len(held) == 2 and all(i.count == 1 for i in held)
     known = _fresh(buc='uncursed', id_level=0)
@@ -58,12 +59,19 @@ def test_known_same_buc_potions_merge():
     pl.add_to_inventory(known)
     stack = next(i for i in held if i.id_level == 5)
     assert stack.count == 2 and known not in pl.inventory
+    # The kind becomes known: the stray unknown copy is the same thing.
+    pl.known_item_ids.add(_PID)
+    assert pl.merge_known_stacks() == 1
+    held = [i for i in pl.inventory if i.id == _PID]
+    assert len(held) == 1 and held[0].count == 3 and held[0].id_level == 5
+    pl.add_to_inventory(_fresh(buc='uncursed', id_level=0))
+    assert held[0].count == 4
 
 
 def test_different_buc_stays_separate():
     """Merging mismatched BUC would silently drop the blessed effect
-    (bug A7-5) — and under the True Name model the blessed copy stays
-    a mystery until identified."""
+    (bug A7-5). The copy's own stored state is untouched; with the kind
+    known it reads as blessed (one identification knows every copy)."""
     pl = Player()
     pl.known_item_ids.add(_PID)
     pl.add_to_inventory(_fresh(buc='uncursed', id_level=5))

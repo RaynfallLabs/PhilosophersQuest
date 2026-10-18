@@ -754,7 +754,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self.player.philosopher_tier_claimed = set()
         if not hasattr(self.player, 'philosophers_mantle'):
             self.player.philosophers_mantle = False
-        if not hasattr(self.player, 'known_class_ids'):
+        _had_class_ids = hasattr(self.player, 'known_class_ids')
+        if not _had_class_ids:
             self.player.known_class_ids = set()
         # Chain-equip tier_bonuses targets: flat damage reduction + HP regen.
         # Added 2026-05-18 with the legendary-uniques chain-equip mechanic.
@@ -837,6 +838,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # dropped (nothing equivalent survives) so the inventory does not
         # hold dead items; ingredients that still exist are refreshed.
         self._migrate_legacy_ingredients(state)
+        # One identification knows every copy (2026-10-18): kind knowledge is
+        # the known sets themselves, read whenever the game asks
+        # (items.is_fully_known), so a loaded copy of a known kind is fully
+        # identified with no stamping. Rebuild what an old save lacks.
+        self._rebuild_kind_knowledge(state, rebuild_classes=not _had_class_ids)
         self.player_name   = state['player_name']
         self.secret_build  = state.get('secret_build')
         # The build's rule flags (Dad's _joke, _lock_weapon, ...) come from
@@ -1490,12 +1496,39 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 for item in lvl_data.get('ground_items', []) or []:
                     walk(item)
 
+    def _rebuild_kind_knowledge(self, state: dict, *, rebuild_classes: bool = False):
+        """The known-kind state on load, from ``known_item_ids``: the known
+        sets are made real sets (a save may hold them as lists or not at
+        all), and a save from before accessory families were recorded gets
+        the family of every known ring or amulet it holds, as its identify
+        would have recorded. Then same-blessing stacks of a known kind join
+        up. Nothing is stamped on items: is_fully_known reads the sets."""
+        p = self.player
+        for attr in ('known_item_ids', 'known_class_ids', 'known_forms', 'known_materials'):
+            cur = getattr(p, attr, None)
+            if not isinstance(cur, set):
+                setattr(p, attr, set(cur or ()))
+        if rebuild_classes and p.known_item_ids:
+            from items import type_class
+            for it in _all_items_in_save(p, state):
+                if getattr(it, 'id', None) in p.known_item_ids:
+                    try:
+                        cls = type_class(it)
+                    except Exception:
+                        cls = None
+                    if cls:
+                        p.known_class_ids.add(cls)
+        try:
+            p.merge_known_stacks()
+        except Exception:
+            from game_log import log_error
+            log_error("merge_known_stacks failed on load")
+
     def _migrate_buc_all(self, state: dict):
         """Walk every item in inventory, equipment, ground, and stored levels.
 
-        Under the True Name model a known TYPE no longer stamps per-copy
-        identification — each instance keeps its own BUC/enchant secret —
-        so this only patches the BUC fields themselves."""
+        Kind knowledge needs no stamping (items.is_fully_known reads the
+        known sets), so this only patches the BUC fields themselves."""
         migrate = self._migrate_buc_item
         # Worn (belt included), pack, ground, stored floors, and sack contents.
         for item in _all_items_in_save(self.player, state):
@@ -2288,10 +2321,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Mark a build-kit starting item as fully-known: id_level=5. Post
         # identify-v3 (2026-08-06, commit 2778305) the intermediate levels
         # 1-4 are dead for new saves -- id_level is binary (0 unknown / 5
-        # identified) and the True Name view handles "type known but this
-        # copy's BUC hidden" at kit_visible_level=4 without needing a
-        # written id_level. Build-kit items belong to the player from turn
-        # one, so both type-knowledge and this copy's BUC start known.
+        # identified). Build-kit items belong to the player from turn one,
+        # so both kind knowledge and this copy's BUC start known.
         def _mark_starting_item_known(it):
             """Build-kit items arrive FULLY identified — the kid owns them,
             so type knowledge + this copy's BUC are both known from turn
@@ -4227,6 +4258,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         splitting.spawn_pending(self)
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
+        # A kind learnt by use (drunk, read, zapped, thrown) fully identifies
+        # every copy: same-blessing stacks of it in the pack join up.
+        self._merge_newly_known_stacks()
         if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0:
             self.player._huginn_muninn_remaining -= 1
         # Periodic in-play autosave (every 50 turns) so an abrupt close costs at
@@ -5723,19 +5757,15 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 else:
                     self.player.known_item_ids.add(item.id)
             # Pattern Recognition (75 IDs): lesser COMMON items reveal their
-            # TYPE at a glance (true name + stats + lore). Each copy's BUC
-            # and enchant stay hidden — the True Name model applies to
-            # career rewards too. Uniques keep their full dramatic reveal.
+            # KIND at a glance, which fully identifies every copy of it (one
+            # identification knows every copy). Uniques keep their full
+            # dramatic reveal.
             if 75 in self.player.philosopher_tier_claimed and not getattr(item, 'is_unique', False):
-                from items import item_id_tier, type_class
+                from items import item_id_tier
                 tier_gate = 1 + (self.dungeon_level // 30)
-                if hasattr(item, 'id_level') and item_id_tier(item) <= tier_gate:
-                    self.player.known_item_ids.add(item.id)
-                    cls = type_class(item)
-                    if cls:
-                        self.player.known_class_ids.add(cls)
-                    item.buc_known = True
-                    self.player.known_item_ids.add(item.id)
+                if (hasattr(item, 'id_level') and item_id_tier(item) <= tier_gate
+                        and self._needs_identify(item)):
+                    self._propagate_identification(item.id, seed_item=item)
             # Philosopher's Mantle (300 IDs): auto BUC-sense on every pickup, including uniques.
             if self.player.philosophers_mantle and hasattr(item, 'buc_known'):
                 item.buc_known = True
@@ -7757,13 +7787,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _display_name(self, item) -> str:
         """Return the name to show for an item, including stack count when > 1.
 
-        True Name model:
-          - instance identified (id_level >= 5)  -> "Sword of Michael"
-          - type known but THIS copy not yet
-            identified                            -> "Sword of Michael (Curse and
-                                                     Enchant Unknown)"
-                                                     (hud_context.unknown_copy_suffix)
-          - type unknown                          -> "an ornate golden-hilted blade"
+          - this copy identified, or its kind
+            known (one identification knows
+            every copy, blessing included)        -> "Sword of Michael" (with a
+                                                     "Blessed"/"Cursed" prefix)
+          - kind unknown                          -> "an ornate golden-hilted blade"
 
         One path for every place an item is named to the player
         (hud_context.item_display_name): the log, menus, HUD, combat panel,
@@ -7782,12 +7810,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
     def _enchant_shown(self, item) -> bool:
         """May a message print this item's enchantment number? Only once
-        this copy is identified: "Your X glows -- enchant +3!" told an
-        unknown blade's hidden enchantment."""
-        try:
-            return int(getattr(item, 'id_level', 0) or 0) >= 5
-        except (TypeError, ValueError):
-            return False
+        this copy is identified or its kind known (items.is_fully_known):
+        "Your X glows -- enchant +3!" told an unknown blade's hidden
+        enchantment."""
+        from items import is_fully_known
+        return is_fully_known(item, self.player)
 
     def _show_item_comparison(self, item):
         """Show a brief comparison hint if the ground item is comparable to equipped gear.
@@ -8547,20 +8574,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # ------------------------------------------------------------------
 
     def _item_is_known(self, item) -> bool:
-        """Return True if the item type is known (identified instance OR recognised
-        by type). Routes through player.knows_item_type so it picks up per-id,
-        per-class (accessories), and identify-v3.1 split form × material coverage."""
+        """Return True if the item is known: this copy identified, or its kind
+        known (player.knows_item_type: per-id, per-class for accessories, and
+        identify-v3.1 split form × material). A known kind fully identifies
+        every copy (items.is_fully_known)."""
         if not hasattr(item, 'identified'):
             return True  # items without an identified flag are always known
-        # Exactly what the NAME reveals (hud_context.item_display_name): this
-        # copy identified (5), or its type known. ``item.identified`` is True
-        # at a stored 4, which scripted grants write without identifying.
-        try:
-            if int(getattr(item, 'id_level', 0) or 0) >= 5:
-                return True
-        except (TypeError, ValueError):
-            pass
-        return bool(self.player.knows_item_type(item))
+        # Exactly what the NAME reveals (hud_context.item_display_name).
+        # ``item.identified`` is True at a stored 4, which scripted grants
+        # write without identifying.
+        from items import is_fully_known
+        return is_fully_known(item, self.player)
 
     _EXAMINE_TABS = [
         ('Weapons',     lambda i: isinstance(i, Weapon)),

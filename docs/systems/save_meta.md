@@ -522,9 +522,17 @@ that iterates attrs (sidebar passives, discoveries, debug overlay),
 and (c) break the invariant "no mastery references anywhere".
 
 **v2.6.3** also added the split-identity sets `known_forms` /
-`known_materials` for the True-Name identify-v3 model. The two
-`hasattr` guards fill them in as empty sets on load, so an older
-save picks up True-Name discovery from the next identify.
+`known_materials` for identify v3.1. The two `hasattr` guards fill
+them in as empty sets on load, so an older save picks up split
+discovery from the next identify.
+
+**2026-10-18** (one identification knows every copy):
+`Game._rebuild_kind_knowledge`, called near the end of `load_state`,
+makes the four known sets real sets, rebuilds accessory families into
+`known_class_ids` from `known_item_ids` for a save that predates that
+set, and merges same-blessing stacks of known kinds. Nothing is
+stamped on items: a copy of a known kind is fully identified because
+`items.is_fully_known` reads the sets.
 
 ### 6.4 Adding a new migration
 

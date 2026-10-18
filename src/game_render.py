@@ -136,21 +136,11 @@ def _quiz_mode_phrase(mode, threshold=None) -> str:
 
 
 def _identify_status_label(id_level: int) -> str:
-    """Map an item's id_level to a human status string.
-
-    Post-2026-08-06 identify-v3 model: only 0 and 5 are actually written for
-    new saves (the old id_level 1-4 progression was deleted; True Name view
-    uses the kit_visible_level helper to render a "type known" view at 4).
-    Old saves that predate the redesign may carry legacy intermediate values.
-    """
-    idl = int(id_level or 0)
-    if idl >= 5:
-        return "Identified"
-    if idl >= 4:
-        return "Type known (this copy's curse and enchant unknown)"
-    if idl >= 1:
-        return "Partial (legacy save)"
-    return "Unknown"
+    """Map an item's visible id level (``_kit_visible_level``: 5 once this
+    copy is identified or its kind known, else 0) to a status word. One
+    identification knows every copy, blessing and enchantment included
+    (2026-10-18), so there is no in-between "type known" state any more."""
+    return "Identified" if int(id_level or 0) >= 5 else "Unknown"
 
 
 class _ScaledPx:
@@ -1299,7 +1289,7 @@ class RenderMixin:
         ]
         if hasattr(detail_item, 'buc'):
             meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed'))
-                              if getattr(detail_item, 'buc_known', False) else "Unknown"))
+                              if self._copy_buc_known(detail_item) else "Unknown"))
         if visible >= 3:
             if hasattr(detail_item, 'ac_bonus'):
                 meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
@@ -1590,7 +1580,7 @@ class RenderMixin:
                 ("ID", _identify_status_label(visible) if hasattr(detail_item, 'id_level') else "-"),
             ]
             if hasattr(detail_item, 'buc'):
-                meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if getattr(detail_item, 'buc_known', False) else "Unknown"))
+                meta_rows.append(("Blessing", _cap(getattr(detail_item, 'buc', 'uncursed')) if self._copy_buc_known(detail_item) else "Unknown"))
             if visible >= 3:
                 if hasattr(detail_item, 'ac_bonus'):
                     meta_rows.append(("AC", f"+{getattr(detail_item, 'ac_bonus', 0)}"))
@@ -3733,10 +3723,8 @@ class RenderMixin:
         put("STRIKE NOW", s['cap'], FP.FADED_TEXT, sizes=(self._COMBAT_HUD_CAP_SIZE,))
         # As the player knows it: an unidentified blade is not named by
         # its true name on the combat panel.
-        # (The "(Curse and Enchant Unknown)" note is dropped: no room.)
         from hud_context import item_bare_name
-        w_name = (item_bare_name(self.player, weapon).split(' (')[0]
-                  if weapon else "Bare Hands")
+        w_name = (item_bare_name(self.player, weapon) if weapon else "Bare Hands")
         put(w_name, s['weapon'], FP.FADED_TEXT, align='right',
             sizes=(self._COMBAT_HUD_CAP_SIZE,))
         if cur_chain >= 1 or cur_dmg > 0:
@@ -3960,11 +3948,9 @@ class RenderMixin:
         )
 
     def _menu_buc_label(self, item, id_level: int | None = None) -> str:
-        """Blessed / Uncursed / Cursed once THIS copy's blessing is known,
-        else "Unknown". Type knowledge never reveals it (True Name model:
-        each copy's blessing waits for its own identify), so the check reads
-        the copy's own stored id_level, not the type-boosted menu level
-        (that leaked "Uncursed" on a "(Curse Unknown)" potion in the shop)."""
+        """Blessed / Uncursed / Cursed once this copy's blessing is known,
+        else "Unknown". Knowing the kind knows every copy's blessing too
+        (one identification knows every copy: items.buc_known_to)."""
         if not hasattr(item, 'buc'):
             return '-'
         if self._copy_buc_known(item):
@@ -3974,13 +3960,11 @@ class RenderMixin:
     def _copy_buc_known(self, item) -> bool:
         """True when this copy's blessing or curse is known to the player:
         flagged known (altar, identify), the copy identified (id_level 5),
-        or worn (a curse shows itself on equip). A stored 1-4 is not enough:
-        ``item.identified = True`` writes 4 without identifying anything."""
-        try:
-            own = int(getattr(item, 'id_level', 5) or 0)
-        except (TypeError, ValueError):
-            own = 0
-        return (own >= 5 or bool(getattr(item, 'buc_known', False))
+        its kind known (items.buc_known_to), or worn (a curse shows itself
+        on equip). A stored 1-4 is not enough: ``item.identified = True``
+        writes 4 without identifying anything."""
+        from items import buc_known_to
+        return (buc_known_to(item, getattr(self, 'player', None))
                 or self._menu_item_is_equipped(item))
 
     def _menu_bonus_label(self, key, value) -> str:
@@ -4061,8 +4045,8 @@ class RenderMixin:
             lines.append(("Equipped", FP.SUCCESS_TEXT, self.font_sm))
 
         if hasattr(item, 'identified') and idl < 3:
-            # ``_display_name`` already shows either "<name> (Curse Unknown)" or
-            # the pure appearance string, so a dedicated Appearance row is
+            # ``_display_name`` already shows either the true name or the
+            # pure appearance string, so a dedicated Appearance row is
             # redundant. Likewise ``Type: {cls}`` repeats the section header
             # icon, and ``Next action`` repeats the footer hint. We keep the
             # Weight line (real mechanical info) and ONE "hidden until ID"
@@ -4926,7 +4910,7 @@ class RenderMixin:
             for i, (slot_name, item) in enumerate(display_items):
                 # A curse is marked only once known (the name says so too).
                 cursed = (getattr(item, 'cursed', False)
-                          and getattr(item, 'buc_known', False))
+                          and self._copy_buc_known(item))
                 slot_label = slot_name.replace('_', ' ').title()
                 detail = f"[{slot_label}]"
                 if cursed:
@@ -7883,7 +7867,13 @@ class RenderMixin:
     def _lore_direct_id_level(self, item):
         if isinstance(item, Corpse):
             return int(getattr(item, 'id_level', 0) or 0)
-        return int(getattr(item, 'id_level', 5) if hasattr(item, 'id_level') else 5)
+        if not hasattr(item, 'id_level'):
+            return 5
+        # One identification knows every copy (items.is_fully_known).
+        from items import is_fully_known
+        if is_fully_known(item, self.player):
+            return 5
+        return int(getattr(item, 'id_level', 0) or 0)
 
     def _lore_bonus_label(self, key, value):
         if key == 'ac_bonus':
@@ -7909,18 +7899,12 @@ class RenderMixin:
         shown_name = self._display_name(item)
         lines = [(shown_name, FP.GOLD_BRIGHT, get_font('heading', 20))]
         if hasattr(item, 'id_level'):
-            if id_level >= 5:
-                status = "Identified"
-            elif self.player.knows_item_type(item):
-                from hud_context import unknown_copy_suffix
-                status = ("Type known " + unknown_copy_suffix(item)).strip()
-            else:
-                status = "Unidentified"
+            status = "Identified" if id_level >= 5 else "Unidentified"
             lines.append((status, FP.CYAN_ACCENT, self.font_sm))
         # The heading already carries the true name once it is known, so the
         # field below shows what the item LOOKS like unidentified -- that is
         # what the player needs to recognise it on a later run. Skipped when
-        # the heading is itself the appearance (type still unknown).
+        # the heading is itself the appearance (kind still unknown).
         unidentified = getattr(item, 'unidentified_name', '')
         if unidentified:
             appearance = self._fix_name_case(unidentified)
@@ -7963,9 +7947,10 @@ class RenderMixin:
         return "Restores " + " and ".join(parts) if parts else "Restores nothing"
 
     def _lore_enchant_text(self, item) -> str:
-        """Enchantment is per-copy knowledge: shown only once THIS copy is
-        identified, even when the type is known."""
-        if hasattr(item, 'id_level') and int(getattr(item, 'id_level', 0) or 0) < 5:
+        """The enchantment, once this copy is identified or its kind known
+        (one identification knows every copy: items.is_fully_known)."""
+        from items import is_fully_known
+        if hasattr(item, 'id_level') and not is_fully_known(item, self.player):
             return '?'
         return f"+{getattr(item, 'enchant_bonus', 0)}"
 
@@ -8307,13 +8292,10 @@ class RenderMixin:
             identity_lines, mech_lines, lore_text = self._lore_corpse_lines(subject, id_level)
             lore_color = FP.LORE_GOLD_BODY
         else:
-            # True Name model: knowing the TYPE reveals stats and lore for
-            # every copy (the Kit panel already did this; the dossier read
-            # the raw per-copy level and showed "Mechanics unrevealed").
-            # The identity pane keeps the raw level: its Identified badge
-            # and aura are about THIS copy.
-            # What the name shows is what the player knows: a stored 1-4
-            # (``identified = True`` from a scripted grant) is not enough.
+            # Knowing the KIND reveals everything on every copy (one
+            # identification knows every copy). What the name shows is what
+            # the player knows: a stored 1-4 (``identified = True`` from a
+            # scripted grant) is not enough.
             visible = id_level
             if hasattr(subject, 'id_level'):
                 visible = self._kit_visible_level(subject)

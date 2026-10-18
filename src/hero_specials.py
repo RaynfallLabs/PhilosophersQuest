@@ -566,18 +566,21 @@ def _eff_identify_n(game, special, tier, chain):
     if n <= 0:
         game.add_message("Your mind is empty; nothing comes into focus.", 'info')
         return
-    unknown = [i for i in game.player.inventory
-               if hasattr(i, 'identified') and not i.identified]
+    unknown = [i for i in game.player.inventory if game._needs_identify(i)]
     if not unknown:
         game.add_message("Everything in your pack is already known.", 'info')
         return NOTHING
     random.shuffle(unknown)
-    for it in unknown[:n]:
-        it.identified = True
-        it.id_level = 5
-        it.buc_known = True
-        game.player.known_item_ids.add(it.id)
+    from items import grant_identified
+    done = 0
+    for it in unknown:
+        if done >= n:
+            break
+        if not game._needs_identify(it):
+            continue           # a kind catalogued a moment ago knows this copy too
+        grant_identified(game, it)
         game.add_message(f"Catalogued: {it.name}.", 'success')
+        done += 1
 
 
 def _eff_confuse_visible(game, special, tier, chain):

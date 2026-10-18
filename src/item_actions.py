@@ -67,16 +67,17 @@ class ItemActionsMixin:
                 return 'floor'
         return ''
 
-    @staticmethod
-    def _item_known_unremovable(item) -> str:
+    def _item_known_unremovable(self, item) -> str:
         """Why a worn item visibly cannot come off, or ''. Only what the
-        player can already see: an unknown curse is found by trying, exactly
-        as on the map."""
+        player can already see (a curse flagged known, or a copy of a kind
+        he knows, which is fully identified): an unknown curse is found by
+        trying, exactly as on the map."""
         if item is None:
             return ''
         if getattr(item, 'bound_to_wielder', False):
             return "It is a part of you"
-        if getattr(item, 'cursed', False) and getattr(item, 'buc_known', False):
+        from items import buc_known_to
+        if getattr(item, 'cursed', False) and buc_known_to(item, getattr(self, 'player', None)):
             return "Cursed, it will not come off"
         return ''
 
@@ -174,8 +175,9 @@ class ItemActionsMixin:
         elif where == 'equip':
             add('drop', 'Drop', self._item_known_unremovable(item))
         # I -- Identify
-        if (hasattr(item, 'id_level') and int(getattr(item, 'id_level', 5)) < 5
-                and not isinstance(item, Corpse)):
+        # Only while there is something left to learn: a known kind fully
+        # identifies every copy (MagicMixin._needs_identify).
+        if self._needs_identify(item):
             add('identify', 'Identify',
                 '' if self._item_can_identify_now() else "Needs the Philosopher's Shard")
         # X -- Lore
