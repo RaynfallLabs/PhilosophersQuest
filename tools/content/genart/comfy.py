@@ -52,6 +52,36 @@ def draft_workflow(prompt, negative, seed, size=1024, steps=20, cfg=5.0):
     }
 
 
+def edit_workflow(input_names, prompt, negative, seed, size=1024, steps=20, cfg=5.0):
+    """klein redraws the first picture as the prompt says, seeing every picture in
+    `input_names` as a reference (the first is the one being edited; any others are
+    things it may copy from). Everything the prompt does not change stays close."""
+    wf = {
+        'm': {'class_type': 'UNETLoader', 'inputs': {'unet_name': KLEIN, 'weight_dtype': 'default'}},
+        'c': {'class_type': 'CLIPLoader', 'inputs': {'clip_name': 'qwen_3_4b.safetensors', 'type': 'flux2', 'device': 'default'}},
+        'v': {'class_type': 'VAELoader', 'inputs': {'vae_name': 'flux2-vae.safetensors'}},
+        'p': {'class_type': 'CLIPTextEncode', 'inputs': {'text': prompt, 'clip': ['c', 0]}},
+        'n': {'class_type': 'CLIPTextEncode', 'inputs': {'text': negative, 'clip': ['c', 0]}},
+        'l': {'class_type': 'EmptyFlux2LatentImage', 'inputs': {'width': size, 'height': size, 'batch_size': 1}},
+        's': {'class_type': 'KSamplerSelect', 'inputs': {'sampler_name': 'euler'}},
+        'sg': {'class_type': 'Flux2Scheduler', 'inputs': {'steps': steps, 'width': size, 'height': size}},
+        'r': {'class_type': 'RandomNoise', 'inputs': {'noise_seed': seed}},
+        'd': {'class_type': 'VAEDecode', 'inputs': {'samples': ['k', 0], 'vae': ['v', 0]}},
+        'o': {'class_type': 'SaveImage', 'inputs': {'filename_prefix': 'genart_edit', 'images': ['d', 0]}},
+    }
+    pos, neg = ['p', 0], ['n', 0]
+    for j, name in enumerate(input_names):
+        wf[f'i{j}'] = {'class_type': 'LoadImage', 'inputs': {'image': name}}
+        wf[f'e{j}'] = {'class_type': 'VAEEncode', 'inputs': {'pixels': [f'i{j}', 0], 'vae': ['v', 0]}}
+        wf[f'rp{j}'] = {'class_type': 'ReferenceLatent', 'inputs': {'conditioning': pos, 'latent': [f'e{j}', 0]}}
+        wf[f'rn{j}'] = {'class_type': 'ReferenceLatent', 'inputs': {'conditioning': neg, 'latent': [f'e{j}', 0]}}
+        pos, neg = [f'rp{j}', 0], [f'rn{j}', 0]
+    wf['g'] = {'class_type': 'CFGGuider', 'inputs': {'cfg': cfg, 'model': ['m', 0], 'positive': pos, 'negative': neg}}
+    wf['k'] = {'class_type': 'SamplerCustomAdvanced',
+               'inputs': {'noise': ['r', 0], 'guider': ['g', 0], 'sampler': ['s', 0], 'sigmas': ['sg', 0], 'latent_image': ['l', 0]}}
+    return wf
+
+
 def pixel_workflow(input_name, prompt, negative, seed, denoise=0.55):
     return {
         '2': {'class_type': 'CheckpointLoaderSimple', 'inputs': {'ckpt_name': PIXEL}},

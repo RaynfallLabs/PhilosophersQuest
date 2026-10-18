@@ -801,6 +801,23 @@ and look for the same kind of slip when reviewing.
   of live variants (the soapstone wand, the dusty-rose wand, the crumpled scroll) and
   filed them under ids the game no longer has; i29 hands those to their items.
 
+## Cleaning up a picked sprite (`edit.py`)
+
+When Brandon asks for a sprite to be fixed "slightly", a fresh draw is the wrong tool: it
+gives a new creature. `edit.py` redraws the picked painting itself with FLUX.2 klein's
+reference editing ("Edit this painting. Keep ... exactly the same. Change only ..."), then
+runs the usual pixel pass and cut, so the pose, colours and props stay and the result
+looks like every other sprite. The steps, seeds, rain, recolours and hand-set pixels live
+in an `"edit"` entry in the creature's brief (see the docstring; r04 `emberpup` and r05
+`npc_abandoned_emberpup` are the examples), so the sprite can be made again exactly:
+
+    <ComfyUI python> tools/content/genart/edit.py tools/content/genart/briefs/r04.json --only emberpup --out _genart/r04
+    <ComfyUI python> tools/content/genart/install_rest.py --only emberpup
+
+The result is saved as a new candidate (`c5`), never over the old ones; point `review.json`
+at it. `install_rest.py --only` installs just those ids and keeps the rest of
+`installed_rest.json`; a full run would drop the ids other installers added to it.
+
 ## Review
 
 `_genart/<run>/REVIEW_<family>.png` shows each creature's candidates with its lists
@@ -851,3 +868,18 @@ Judge every sprite at 40 px (the map's medium zoom) as well as at 64 px: each sp
 - A pale fleece kilt is a ballet tutu at 64 px. Say "dark brown goat-hair fleece".
 - Bright turquoise faience is one cyan blob at 40 px. "Deep Egyptian faience blue" (with `lift` 0.85) gives a royal blue; the black wig and a gold kilt stand out against it. "Teal-blue, between turquoise and royal blue" came out green-teal. A figure bent at the waist always gets two legs, however the mummy-case sheath is worded.
 - A stooped dead maid with her ladle hanging looks limp. "The ladle raised high like a club, glaring up from under her brows, teeth bared" makes her menacing while she stays bent and slow. A white apron is the whole sprite at 40 px: use a dull rust-brown apron-dress.
+
+### Lessons from the Emberpup cleanup (`edit.py`; 2026-10-18)
+
+Brandon: the pup was "too lizard like, almost like a troglodyte", with "a second eye on his neck".
+
+- The "second eye" was the ear opening a reptile painting puts behind the jaw. Name it in `must_not_show` ("ear hole, second eye, dark spot on the neck") for any lizard, and look for it on every pick at 64 px. The pixel pass can add a dark dash at the back of a head too.
+- All six earlier rounds (24 candidates) drew the same gecko head, whatever the head wording; "a real reptile, never a baby" and the fixed "big head, cute" negatives probably win. A reference edit of the picked painting changed the head and kept everything else.
+- In an edit, "a big round head" with no features gave a featureless ball with one cyclops eye. List the parts: "half as big again as now, the back of the skull one smooth round dome, full round cheeks, a short blunt rounded snout with one small nostril, the mouth one calm level line, one large eye high on the side of the head". "A third bigger" was too little.
+- A downturned mouth line and drooping lids made a grumpy frog. "Wide open, bright and friendly, no heavy lid" and "the mouth turning very slightly upward at its back end", with "frowning, grumpy, heavy eyelids" in `neg`, gave a friendly face without a grin.
+- "Plump, with a full round belly" in an edit gave an egg-shaped pot belly on every seed. "Edit this painting only very slightly ... a little chubbier, its belly slightly rounder", with "pot belly, egg-shaped body, fat" in `neg`, gave the small change asked for.
+- Even an eye a quarter of the head wide in the painting cuts to a 2x2 brown smudge (the lift and the 32 colours eat its darkness). Set it by hand with `touch`: three outline-black pixels and one warm-white glint.
+- To make a second sprite of the same creature match, pass the cleaned-up painting as a second reference: "the little creature becomes the baby fire lizard from the second painting: the same head ... the same skin". Its pose and props stay from the first picture.
+- Rain painted on top of a scene runs across a head that has grown. Re-plan the streaks so each stops just above the figure, slanted and of different lengths.
+- The cut picks one set of 32 colours for the whole sprite, so a pale wet chest can come out in the painted rain's grey: put it back to cream with `recolour`.
+- In a three-quarter front view the far eye shows as a dark notch on the edge of the head at 64 px; paint it out when the brief asks for one eye.

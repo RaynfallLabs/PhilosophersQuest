@@ -6,8 +6,8 @@
   "key": "green",
   "body": "scene",
   "pieces": 2,
-  "what": "Emberpup, a small fire lizard, alone and abandoned: a small young lizard that sits upright on its haunches like a person sitting, painted seriously as a real little reptile with a soft rounded body, a lizard's head with a rounded snout, nostrils at its tip and a wide closed mouth turned down at the corners, large dark eyes looking down, the lids drooping half shut, heavy and tired, short arms with three small claws, short stout hind legs with three-toed feet, and a long thick tail. Its scales are warm orange, the orange of a ripe apricot, darkened and glistening where the rain has soaked them; its belly and the front of its throat are pale cream. At the very tip of its tail burns one small flame of yellow and orange fire, no bigger than its own hand, shrunk low and guttering in the rain, with a thin wisp of grey steam rising from it. It is cold, soaked, lonely and sad.",
-  "colours": "warm apricot-orange scales darkened by rain, a pale cream belly and throat, large dark brown eyes, small pale claws, a small guttering yellow and orange flame at the tail tip, a thin wisp of grey steam, a rock of dark warm grey stone with brown in it, a small dark charcoal-grey rain cloud, streaks of rain in bright silver-white.",
+  "what": "Emberpup, a small baby fire lizard, alone and abandoned: a small young lizard that sits upright on its haunches like a person sitting, painted seriously as a real little creature with a soft, plump little body, a big round head with a smooth domed skull, full round cheeks and a short, blunt, rounded snout with small nostrils at its tip, a closed mouth turned down at the corners, large round dark eyes looking down, the lids drooping half shut, heavy and tired, a short neck, short arms with three small claws, short stout hind legs with three-toed feet, and a long thick tail. Its skin is smooth and soft, with only very fine faint scales, warm orange, the orange of a ripe apricot, darkened and glistening where the rain has soaked it; its belly and the front of its throat are pale cream. At the very tip of its tail burns one small flame of yellow and orange fire, no bigger than its own hand, shrunk low and guttering in the rain, with a thin wisp of grey steam rising from it. It is cold, soaked, lonely and sad.",
+  "colours": "smooth warm apricot-orange skin darkened by rain, a pale cream belly and throat, large dark brown eyes, small pale claws, a small guttering yellow and orange flame at the tail tip, a thin wisp of grey steam, a rock of dark warm grey stone with brown in it, a small dark charcoal-grey rain cloud, streaks of rain in bright silver-white.",
   "wears": "It is an animal and wears nothing.",
   "holds": "Its hands are empty and it holds nothing.",
   "pose": "Seen from the front and a little from the side, facing left: it sits upright on top of the rock on its haunches, both hind feet flat on the stone in front of it, its short arms hanging limp in its lap; its shoulders are hunched against the rain and its head hangs down, chin almost on its chest, eyes half shut, looking down at its feet; its long tail curls round beside it on the rock so the little guttering flame at the tip sits on the stone next to its feet, where it can be seen clearly. Exactly two arms and two legs.",
@@ -24,6 +24,7 @@
   ],
   "must_show": [
    "a small upright orange lizard with a cream belly, sitting on its haunches on top of one grey rock",
+   "the same creature as the pet Emberpup: big round head, short rounded snout, smooth skin, no dark spot on the neck",
    "head hanging, eyes half shut, shoulders hunched: plainly sad",
    "one small flame at the very tip of its tail, low and guttering, clearly visible",
    "one small dark rain cloud directly above it",
@@ -63,10 +64,95 @@
    "frog",
    "toad",
    "gecko",
+   "troglodyte",
+   "small head",
+   "long neck",
+   "ear hole",
+   "pebbly scales",
    "head raised",
    "looking up",
    "candle",
    "flame apart from the tail"
-  ]
+  ],
+  "edit": {
+   "cand": 5,
+   "steps": [
+    {
+     "from": "_genart/r05/npc_abandoned_emberpup/c2_draft.png",
+     "refs": [
+      "_genart/r04/emberpup/c5_draft.png"
+     ],
+     "seed": 514,
+     "prompt": "Edit the first painting. Keep its dark rain cloud, its rain, its grey rock, the small guttering flame and wisp of steam at the tip of the tail, the tail curled round on the rock, and its flat green background, all exactly as they are. The little creature sitting on the rock becomes the baby fire lizard from the second painting: the same big round head with a smooth domed skull, full round cheeks and a short, blunt, rounded snout, the same smooth soft orange skin, the same pale cream throat and belly, the same plump little body. It sits on its haunches on top of the rock with its short arms limp in its lap, shoulders hunched against the rain, its short neck bent so that its round head hangs down, chin almost on its chest; its large round dark eyes look down at its feet, the lids drooping half shut, tired and sad, mouth closed. Its skin is wet and glistening. It is still a serious classic fantasy oil painting.",
+     "neg": "ear hole, extra eye, dark spot on the neck, long snout, flat head, small head, long neck, thin body, gecko, troglodyte, frog, toad, pebbly scales, warts, bumpy skin, cartoon, chibi, plush toy, anime, smiling, tears, open mouth, teeth, head raised, looking up, standing, wings, horns, spines, fire on the body, big bright fire, second cloud, blue background, sun, sky, two creatures"
+    }
+   ],
+   "pixel_seed": 9200,
+   "rain": [
+    [
+     300,
+     167,
+     273,
+     317
+    ],
+    [
+     390,
+     169,
+     343,
+     428
+    ],
+    [
+     480,
+     175,
+     464,
+     262
+    ],
+    [
+     570,
+     170,
+     561,
+     219
+    ],
+    [
+     660,
+     155,
+     645,
+     241
+    ],
+    [
+     750,
+     129,
+     718,
+     304
+    ]
+   ],
+   "recolour": [
+    [
+     24,
+     27,
+     40,
+     42,
+     "#d3d3d1",
+     "#f0dab4"
+    ]
+   ],
+   "touch": [
+    [
+     42,
+     23,
+     "#8f2603"
+    ],
+    [
+     41,
+     24,
+     "#b43c05"
+    ],
+    [
+     42,
+     24,
+     "#8f2603"
+    ]
+   ]
+  }
  }
 ]
