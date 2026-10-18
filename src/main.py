@@ -4094,7 +4094,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         of a den, zoo, graveyard or barracks were placed without sight of the
         monsters already there, and pools are carved after monsters are set
         down (about one floor in twenty had a stacked pair)."""
-        from geom import occupied_tiles
+        from geom import all_occupied_tiles, occupied_tiles
         from escort_system import occupants as _occupants
         taken = _occupants(self)              # the hero, pets and escorts
         for m in self.monsters:
@@ -4116,6 +4116,27 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 if spot is not None:
                     m.x, m.y = spot
                     mine = [spot]
+            elif not ok:
+                # A 2x2 body: the nearest anchor where the whole footprint
+                # is open floor, clear of every other body (MNK-04: the hero
+                # began a floor under a Gashadokuro).
+                fw, fh = tuple(getattr(m, 'footprint', (1, 1)))
+                others = set(all_occupied_tiles([o for o in self.monsters
+                                                 if o is not m and getattr(o, 'alive', False)]))
+
+                def _fits(ax, ay):
+                    return all(self.dungeon.in_bounds(ax + i, ay + j)
+                               and self.dungeon.is_walkable(ax + i, ay + j)
+                               and (ax + i, ay + j) not in taken
+                               and (ax + i, ay + j) not in others
+                               for i in range(fw) for j in range(fh))
+                for r in range(1, 9):
+                    ring = [(m.x + dx, m.y + dy) for dy in range(-r, r + 1) for dx in range(-r, r + 1)
+                            if max(abs(dx), abs(dy)) == r and _fits(m.x + dx, m.y + dy)]
+                    if ring:
+                        m.x, m.y = ring[0]
+                        mine = list(occupied_tiles(m))
+                        break
             taken.update(mine)
         # A false down stair (the Hellmouth) never blocks the way to the real
         # one, and moves or leaves if it would (src/false_stairs.py).
@@ -4787,6 +4808,18 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                                       self.dungeon, min_count=1, max_count=1)
         if new_monsters:
             m = new_monsters[0]
+            fw, fh = tuple(getattr(m, 'footprint', (1, 1)))
+            if (fw, fh) != (1, 1):
+                # A big body needs its whole footprint open (MNK-04: half a
+                # Gashadokuro landed in a wall and a secret door).
+                _cand = set(candidates)
+                fits = [t for t in candidates
+                        if all((t[0] + i, t[1] + j) in _cand
+                               for i in range(fw) for j in range(fh))]
+                if not fits:
+                    return
+                if (x, y) not in fits:
+                    x, y = _rng.choice(fits)
             m.x, m.y = x, y
             self.monsters.append(m)
 

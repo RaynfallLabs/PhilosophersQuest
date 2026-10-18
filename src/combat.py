@@ -2306,13 +2306,18 @@ def apply_knockback(player, monster, dungeon, monsters=None, occupied=None):
     nx = (1 if dx > 0 else -1) if dx != 0 else 0
     ny = (1 if dy > 0 else -1) if dy != 0 else 0
     tx, ty = monster.x + nx, monster.y + ny
-    if not dungeon.is_walkable(tx, ty):
-        return
-    if monsters and any(m is not monster and m.alive and is_at_tile(m, tx, ty)
-                        for m in monsters):
-        return
-    if occupied and (tx, ty) in occupied:
-        return
+    # Every tile of the body's new footprint must be open (MNK-06: a 2x2
+    # body was checked by its anchor tile only).
+    fw, fh = tuple(getattr(monster, 'footprint', (1, 1)))
+    for cx in range(tx, tx + fw):
+        for cy in range(ty, ty + fh):
+            if not dungeon.is_walkable(cx, cy):
+                return
+            if monsters and any(m is not monster and m.alive and is_at_tile(m, cx, cy)
+                                for m in monsters):
+                return
+            if occupied and (cx, cy) in occupied:
+                return
     monster.x, monster.y = tx, ty
 
 

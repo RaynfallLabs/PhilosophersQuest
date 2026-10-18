@@ -976,8 +976,12 @@ def _eff_summon_sketch_helper(game, special, tier, chain):
         attacks = [{'damage': dmg}]
         bite_dice = dmg                                     # bites by the table's dice
     from pet_system import SketchedPet
-    px, py = game.player.x, game.player.y
-    pet = SketchedPet(_Helper(), px, py, dur)
+    # Beside the hero, never on his own tile (MNK-07).
+    spot = game._escort_tile_near_hero()
+    if spot is None:
+        game.add_message("There is no room for the helper to stand. The sketch fades.", 'warning')
+        return NOTHING
+    pet = SketchedPet(_Helper(), *spot, dur)
     game.pets.append(pet)
     game.add_message(
         f"From the page leaps a Mechanical Helper! ({dur} turns)", 'success')

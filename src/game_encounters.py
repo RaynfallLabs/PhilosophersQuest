@@ -2092,9 +2092,16 @@ class EncountersMixin:
                    if getattr(p, 'alive', True) and (p.x, p.y) in inside]
         if hasattr(self, '_escorts_here'):
             bodies += [e for e in self._escorts_here() if (e.x, e.y) in inside]
-        if bodies and out:
+        # A monster standing in the doorway is put outside too, or the new
+        # wall closes on it and it stays in the rock for good (MNK-01).
+        from geom import is_at_tile, occupied_tiles
+        in_door = [m for m in self.monsters
+                   if m.alive and getattr(m, '_encounter_room', None) is None
+                   and is_at_tile(m, dx, dy)]
+        if (bodies or in_door) and out:
             from geom import all_occupied_tiles
-            busy = set(all_occupied_tiles([m for m in self.monsters if m.alive])) | \
+            busy = set(all_occupied_tiles([m for m in self.monsters
+                                           if m.alive and m not in in_door])) | \
                 (self._occupants() if hasattr(self, '_occupants') else set())
             busy -= {(b.x, b.y) for b in bodies}
             try:
@@ -2110,6 +2117,17 @@ class EncountersMixin:
                 if not spots:
                     break
                 b.x, b.y = spots.pop(0)
+            for m in in_door:
+                fw, fh = tuple(getattr(m, 'footprint', (1, 1)))
+                _free = set(spots)
+                fit = next((t for t in spots
+                            if all((t[0] + i, t[1] + j) in _free
+                                   for i in range(fw) for j in range(fh))), None)
+                if fit is None:
+                    continue
+                m.x, m.y = fit
+                taken = set(occupied_tiles(m))
+                spots = [t for t in spots if t not in taken]
         for m in list(self.monsters):
             if (m.x, m.y) in chamber and getattr(m, '_encounter_room', None) is not None:
                 m.alive = False
