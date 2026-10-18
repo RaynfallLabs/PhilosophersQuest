@@ -8934,7 +8934,9 @@ class RenderMixin:
                               len(spacers), self.font_sm.get_height() + S(5))
 
         if getattr(self, '_encyclopedia_entry', None) is not None:
-            footer = "Up/Down/PgUp/PgDn: scroll article   ESC: list"
+            back = ("back to play" if getattr(self, '_encyclopedia_from_observe', False)
+                    else "list")
+            footer = f"Up/Down/PgUp/PgDn: scroll article   ESC: {back}"
         else:
             footer = "Left/Right or a-k: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
         self._ui_footer(panel, footer)
@@ -9410,7 +9412,7 @@ class RenderMixin:
                 ("Y", "Trade", FP.BODY_TEXT),
                 ("\\", "Pray", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
-                ("O", "Observe cursor", FP.BODY_TEXT),
+                ("O", "Look; known foe: Bestiary", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [

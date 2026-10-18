@@ -194,7 +194,8 @@ class DivineMixin:
 
         self.state = STATE_TARGET
         self.add_message(
-            "Observe -- arrow keys to look, TAB to cycle targets, ENTER to examine, ESC to cancel.",
+            "Observe -- arrow keys to look, TAB to cycle targets, ENTER to examine "
+            "(a creature you know opens its Bestiary page), ESC to cancel.",
             'info'
         )
 

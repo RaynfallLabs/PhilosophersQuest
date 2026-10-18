@@ -1052,6 +1052,18 @@ def _(g):
     press(g, pygame.K_o)
 
 
+@scene('menu_bestiary_from_observe', 'Menus',
+       'O, Enter on a creature the hero knows: its Bestiary page opens in the Encyclopedia.',
+       expect='encyclopedia')
+def _(g):
+    m = g._capture_monster
+    g.player.known_monster_ids.add(m.kind)
+    g.visible.add((m.x, m.y))
+    press(g, pygame.K_o)
+    g.target_cursor_x, g.target_cursor_y = m.x, m.y
+    press(g, pygame.K_RETURN)
+
+
 @scene('play_death_chase', 'Play', 'Ascending with the Stone, Death pursues: red vignette on the map.',
        expect='player', notes='The real _trigger_death_pursuit(), then Death placed two tiles away '
                               '(the L100 Stone climb is not reachable from floor 1).')

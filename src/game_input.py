@@ -173,6 +173,13 @@ class InputMixin:
                 self.quiz_engine.resume_timer()
                 self.state = STATE_QUIZ
                 return True
+            if self.state == STATE_ENCYCLOPEDIA:
+                # Its own screen steps back, as its footer says: article ->
+                # list -> categories -> play. (The generic close below shut the
+                # whole book from an article that said "ESC: list".) A page
+                # opened by O on a creature goes straight back to play.
+                self._encyclopedia_input(key)
+                return True
             if (self.state == STATE_IDENTIFY_MENU
                     and getattr(self, '_scroll_identify_pending', False)):
                 # A read Scroll of Identify: Esc wastes its revelation. The
@@ -1754,6 +1761,11 @@ class InputMixin:
         if self._encyclopedia_entry is not None:
             # Entry detail view
             if key == pygame.K_ESCAPE:
+                if getattr(self, '_encyclopedia_from_observe', False):
+                    # Opened by O on a creature: back to play.
+                    self._encyclopedia_from_observe = False
+                    self.state = STATE_PLAYER
+                    return
                 self._encyclopedia_entry = None
                 self._encyclopedia_article_scroll = 0
                 return

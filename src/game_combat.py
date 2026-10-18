@@ -1931,6 +1931,13 @@ class CombatMixin:
                 f"You see {monster.name} ({condition}).", 'info'
             )
             found = True
+        # A creature the hero can see AND already knows (it has a Bestiary
+        # page) opens that page; an unknown one keeps the plain look. An
+        # invisible creature he cannot see, or a mimic still in disguise, is
+        # never ``monster`` here (unseen.py), so its page is never opened.
+        page_kind = None
+        if monster is not None and getattr(monster, 'kind', None) in self._bestiary_known_kinds():
+            page_kind = monster.kind
 
         # Items at cursor
         from items import Container
@@ -1985,6 +1992,8 @@ class CombatMixin:
         # Return to player state — no turn cost
         self.state = STATE_PLAYER
         self._observe_targeting = False
+        if page_kind is not None:
+            self._open_bestiary_page(page_kind)    # Esc returns to play
 
     def _confirm_ranged_target(self):
         """Confirm a ranged shot at the cursor position.

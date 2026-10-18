@@ -534,7 +534,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `v` | active powers menu |
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |
-| `o` | observe cursor |
+| `o` | observe cursor; Enter on a creature the hero knows (it has a Bestiary page) opens that page in the Encyclopedia (`Game._open_bestiary_page`), Esc returns to play; an unknown, unseen invisible or disguised creature gets the plain look |
 | `k` | kit: compare, then act on the selected item (E/D/I/X, see §22) |
 | `j` | discoveries |
 | `;` | Missed Questions (review this run's missed questions) |

@@ -8755,7 +8755,44 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._encyclopedia_cat_idx = 0
         self._encyclopedia_article_scroll = 0
         self._encyclopedia_entry = None
+        self._encyclopedia_from_observe = False
         self.state = STATE_ENCYCLOPEDIA
+
+    def _bestiary_known_kinds(self) -> set:
+        """The monster kinds with a Bestiary page: every kind the hero has
+        seen (known_monster_ids), plus any carried corpse studied for lore."""
+        known = set(getattr(self.player, 'known_monster_ids', set()) or ())
+        for item in getattr(self.player, 'inventory', []) or []:
+            mid = getattr(item, 'monster_id', None) or getattr(item, 'kind', None)
+            if mid and getattr(item, 'lore_identified', False):
+                known.add(mid)
+        return known
+
+    def _open_bestiary_page(self, kind) -> bool:
+        """Open the Encyclopedia straight onto ``kind``'s Bestiary page, the
+        page B -> Bestiary -> Enter shows (O on a creature the hero knows,
+        2026-10-18). Esc returns to play. False, with the state untouched,
+        when the kind has no page."""
+        if not kind or kind not in self._bestiary_known_kinds():
+            return False
+        prev_state = self.state
+        self._open_encyclopedia()
+        self.encyclopedia_category = 'bestiary'
+        self._encyclopedia_cat_idx = next(
+            (i for i, c in enumerate(self._ENCYCLOPEDIA_CATS) if c[1] == 'bestiary'), 0)
+        self._encyclopedia_load_entries('bestiary')
+        idx = next((i for i, e in enumerate(self.encyclopedia_entries or [])
+                    if e.get('_id') == kind), None)
+        if idx is None:
+            self.encyclopedia_category = ''
+            self.encyclopedia_entries = []
+            self.state = prev_state
+            return False
+        self.encyclopedia_selection = idx
+        self._encyclopedia_entry = self.encyclopedia_entries[idx]
+        self._encyclopedia_article_scroll = 0
+        self._encyclopedia_from_observe = True     # Esc goes back to play
+        return True
 
     def _encyclopedia_load_entries(self, category: str):
         """Load known entries for the given category from JSON data files."""
@@ -8764,7 +8801,6 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         base = data_path('data')
 
         known_ids = getattr(self.player, 'known_item_ids', set())
-        known_monster_ids = getattr(self.player, 'known_monster_ids', set())
         if category == 'treasure':
             # Treasure is known by sight (treasure.py): every kind the hero
             # has held or had valued has a page; its worth shows once valued.
@@ -8820,14 +8856,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 self.encyclopedia_entries = []
                 return
-            # Include any monster from a corpse lore-identified + any explicitly known
-            # Plus any whose kind appears in known_monster_ids
-            known_kinds = set(known_monster_ids)
-            # Also add monsters we've seen corpses for (lore_identified)
-            for item in self.player.inventory:
-                mid = getattr(item, 'monster_id', None) or getattr(item, 'kind', None)
-                if mid and getattr(item, 'lore_identified', False):
-                    known_kinds.add(mid)
+            # Every kind seen (known_monster_ids), plus carried corpses
+            # studied for lore (_bestiary_known_kinds).
+            known_kinds = self._bestiary_known_kinds()
             entries = []
             for k, v in all_defs.items():
                 if k in known_kinds:
