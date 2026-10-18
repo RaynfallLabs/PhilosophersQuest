@@ -135,7 +135,7 @@ def select_encounter_levels(seed: int | None = None) -> dict:
 
     # Gold costs and rewards at today's scale (economy.py), once, here.
     import economy
-    return {lvl: economy.price_encounter(enc) for lvl, enc in placements.items()}
+    return {lvl: economy.price_encounter(enc, lvl) for lvl, enc in placements.items()}
 
 
 def get_trigger_item_levels(placements: dict) -> dict:
@@ -241,8 +241,32 @@ def armor_enchant_target(player):
     return next((s for s in slots if s is not None), None)
 
 
-def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str]:
-    """Check if the player can afford a cost. Returns (can_pay, fail_message)."""
+def gold_pct_label(cost: dict | None, player_gold: int, level: int) -> str:
+    """The figure a chosen ``gold_pct`` cost would take, for its option's
+    label: " (480 Gold)". Empty for any other cost (fixed gold is quoted by
+    economy.price_encounter). A multi cost quotes its gold_pct part."""
+    if not isinstance(cost, dict):
+        return ''
+    if cost.get('type') == 'multi':
+        for sub in cost.get('costs') or ():
+            s = gold_pct_label(sub, player_gold, level)
+            if s:
+                return s
+        return ''
+    if cost.get('type') != 'gold_pct':
+        return ''
+    import economy
+    return f" ({economy.pct_cost(player_gold, cost.get('amount', 0), level):,} Gold)"
+
+
+def can_pay_cost(player, cost: dict | None, player_gold: int,
+                 level: int | None = None) -> tuple[bool, str]:
+    """Check if the player can afford a cost. Returns (can_pay, fail_message).
+
+    ``level``: the floor of a cost the hero is CHOOSING to pay. A
+    ``gold_pct`` cost then has a floor (economy.pct_cost) and an empty purse
+    cannot pay it. Without it (a loss that lands later) a share of whatever
+    is there can always be paid."""
     if cost is None:
         return True, ''
 
@@ -251,7 +275,7 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
     if ctype == 'multi':
         # Several costs at once (help lift the gate AND hand back the pendant).
         for sub in cost.get('costs') or ():
-            ok, msg = can_pay_cost(player, sub, player_gold)
+            ok, msg = can_pay_cost(player, sub, player_gold, level)
             if not ok:
                 return ok, msg
         return True, ''
@@ -352,6 +376,13 @@ def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str
         if player.max_hp > pct_loss(player.max_hp, cost['amount']) + 10:
             return True, ''
         return False, "You are too frail to survive that."
+
+    if ctype == 'gold_pct' and level is not None:
+        import economy
+        need = economy.pct_cost(player_gold, cost.get('amount', 0), level)
+        if int(player_gold or 0) < need:
+            return False, f"You need {need:,} gold."
+        return True, ''
 
     if ctype in ('sp_pct', 'mp_pct', 'gold_pct'):
         # A share of whatever you have can always be paid.

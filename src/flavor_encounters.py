@@ -82,4 +82,4 @@ def select_flavor_encounters(level_count: int = 100) -> dict[int, dict]:
 
     # Gold costs and rewards at today's scale (economy.py), once, here.
     import economy
-    return {lvl: economy.price_encounter(enc) for lvl, enc in selected.items()}
+    return {lvl: economy.price_encounter(enc, lvl) for lvl, enc in selected.items()}

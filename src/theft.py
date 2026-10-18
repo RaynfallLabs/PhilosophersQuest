@@ -141,7 +141,9 @@ def give_back(game, m) -> list[str]:
         return msgs
     from items import add_gold_to_tile
     if gold:
-        add_gold_to_tile(game.ground_items, gold, m.x, m.y)
+        # The hero's own gold coming back, not a find: a gold ring
+        # (Draupnir) must not double it (ECONOMY_REFACTOR_PROPOSAL S2).
+        add_gold_to_tile(game.ground_items, gold, m.x, m.y, found=False)
         m.stolen_gold = 0
         msgs.append(f"Your stolen {gold:,} gold spills out where it fell.")
     for it in items:

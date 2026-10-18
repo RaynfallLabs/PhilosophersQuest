@@ -1745,6 +1745,10 @@ class MenuMixin:
                 continue
             if (m.x, m.y) not in self.visible:
                 continue
+            # Too proud to be bought: a mini-boss or a seal demon.
+            _rc = getattr(m, 'resists_control', None)
+            if _rc is not None and _rc('charmed'):
+                continue
             d = abs(m.x - pl.x) + abs(m.y - pl.y)
             candidates.append((d, m))
         if not candidates:
@@ -1758,16 +1762,26 @@ class MenuMixin:
         # (This read `pl.gold`, which does not exist: gold is kept on the
         # game. The bribe raised an error every time it was tried.)
         _purse = int(getattr(self, 'player_gold', 0) or 0)
-        cost = economy.roll_share(_r, self.dungeon_level, economy.BRIBE_SHARE)
+        # Its price is set once: pressing again re-rolled it until it came
+        # up cheap (ECONOMY_REFACTOR_PROPOSAL S9). A monster lives on one
+        # floor, so this is once per target per floor.
+        cost = target.__dict__.get('_bribe_cost')
+        if not cost:
+            cost = economy.roll_share(_r, self.dungeon_level, economy.BRIBE_SHARE)
+            target.__dict__['_bribe_cost'] = cost
         if _purse < cost:
             self.add_message(
                 f"You need {cost:,} gold to bribe {the_name(target, lower=True)}. You have {_purse:,}.",
                 'warning')
             return False
         self.player_gold = _purse - cost
-        # (One turn was ticked away before the monster ever lost an action.)
-        target.status_effects['paralyzed'] = max(
-            target.status_effects.get('paralyzed', 0), economy.BRIBE_TURNS)
+        # Paid to let you pass, not to stand still while you stab it: it
+        # stands aside (charmed: no blow at you, it wanders) and the deal is
+        # off the moment you strike it (Monster.take_damage). It was
+        # paralyzed, three free turns of helpless hits for the price.
+        target.status_effects['charmed'] = max(
+            target.status_effects.get('charmed', 0), economy.BRIBE_TURNS)
+        target.__dict__['_bribed'] = True
         pl._gold_offering_used_this_floor = True
         self.add_message(
             f"You toss {cost:,} gold at {the_name(target, lower=True)}'s feet. "

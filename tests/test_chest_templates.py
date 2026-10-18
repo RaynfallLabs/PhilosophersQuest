@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 REQUIRED_TEMPLATE_FIELDS = {
     'id', 'name', 'symbol', 'color', 'lore', 'tier', 'quiz_tier',
-    'gold_range', 'trap_chance', 'loot_table', 'rare_chance_chain3',
+    'gold_share', 'trap_chance', 'loot_table', 'rare_chance_chain3',
     'spawn_weight_by_band',
 }
 
@@ -53,10 +53,10 @@ def test_all_12_templates_load():
         assert t['loot_table'], f"{tid} loot_table is empty"
         # Quiz tier 1..5
         assert 1 <= int(t['quiz_tier']) <= 5, f"{tid} quiz_tier out of range"
-        # Gold range valid
-        gr = t['gold_range']
+        # Gold: a share of one floor's income (container_system.chest_gold)
+        gr = t['gold_share']
         assert isinstance(gr, list) and len(gr) == 2 and gr[0] <= gr[1], (
-            f"{tid} bad gold_range {gr}"
+            f"{tid} bad gold_share {gr}"
         )
 
 

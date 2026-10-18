@@ -78,7 +78,7 @@ REWARD_TYPES = {
     'random_potion', 'random_scroll', 'random_food', 'random_wand', 'stat',
     'specific_item', 'random_item', 'effect', 'hp_restore', 'sp_restore', 'mp_restore',
     'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct', 'enchant_weapon', 'message',
-    'multi', 'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact',
+    'multi', 'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact', 'service',
 }
 THREAD_KEYS = {'id', 'hint', 'closed_line'}
 STAT_NAMES = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
@@ -1071,6 +1071,22 @@ def _check_cost(err, where, cost, stakes):
         if sum(1 for sub in subs if isinstance(sub, dict) and sub.get('type') in ITEM_COSTS) > 1:
             err('cost', f'{where}: at most one part of a multi cost asks for a pick')
         return
+    if cost['type'] == 'gold':
+        # A vendor's goods: priced at the trader's rate on the encounter's
+        # floor (economy.share_price, ECONOMY_REFACTOR_PROPOSAL S5).
+        if 'service' in cost:
+            import economy
+            if cost['service'] not in economy.SERVICE_SHARE:
+                err('cost', f"{where}: gold for unknown service {cost['service']!r}")
+        elif 'share' in cost:
+            import economy
+            mk = cost.get('markup', 1.0)
+            if cost['share'] not in economy.MERCHANT_SHARE:
+                err('cost', f"{where}: gold share {cost['share']!r} is not a trader class")
+            if not isinstance(mk, (int, float)) or not 0.3 <= mk <= 3.0:
+                err('cost', f'{where}: gold markup {mk!r} outside 0.3-3')
+        elif not any(isinstance(cost.get(k), (int, float)) for k in ('amount', 'min', 'max')):
+            err('cost', f'{where}: a gold cost needs an amount or a share')
     if 'count' in cost:
         n = cost['count']
         if cost['type'] not in ITEM_COSTS or not (isinstance(n, int) and 1 <= n <= 5):
@@ -1086,6 +1102,15 @@ def _check_reward(err, where, rw):
     if not isinstance(rw, dict) or rw.get('type') not in REWARD_TYPES:
         err('reward', f'{where}: unknown reward {rw!r}')
         return
+    if 'purse_pct' in rw:
+        # D6: a deep temptation's written sum, or this share of the purse.
+        pct = rw['purse_pct']
+        if rw['type'] != 'gold' or not isinstance(pct, (int, float)) or not 1 <= pct <= 50:
+            err('reward', f'{where}: purse_pct 1-50, and only on a gold reward ({rw!r})')
+    if rw['type'] == 'service':
+        import economy
+        if rw.get('service') not in economy.SERVICE_SHARE:
+            err('reward', f"{where}: unknown service {rw.get('service')!r}")
     if rw['type'] == 'specific_item' and rw.get('item_id') not in _items_of(rw.get('item_type')):
         # The engine looks the item up in data/items/<item_type>.json only.
         err('reference', f"{where}: no {rw.get('item_id')!r} in data/items/{rw.get('item_type')}.json")

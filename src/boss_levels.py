@@ -18,6 +18,13 @@ COW_LEVEL = 999   # Moo Moo Farm (secret)
 
 _W, _H = 80, 50
 
+# Hoard gold on the gate floors, as shares of one floor's income (economy.py).
+# Fafnir sleeps on Andvari's gold: six heaps and four alcoves, about one floor
+# of income in all. Fenrir's side rooms hold what his hunters left.
+FAFNIR_HEAP_SHARE = (0.08, 0.16)
+FAFNIR_ALCOVE_SHARE = (0.05, 0.10)
+FENRIR_SIDE_SHARE = (0.04, 0.08)
+
 
 # ---------------------------------------------------------------------------
 # Tile helpers
@@ -577,14 +584,16 @@ def _level_60_lair():
         for dx, dy in ((-9, -5), (-4, 4), (3, -6), (8, 2), (-11, 3), (10, -3)):
             x, y = hx + dx, hy + dy
             if tiles[y][x] == FLOOR:
-                add_gold_to_tile(items, _random.randint(150, 350), x, y)
+                # Fafnir's bed of gold: a share of the floor's income each
+                # heap (it was a written 150-350, never scaled).
+                add_gold_to_tile(items, _economy.roll_share(_random, 60, FAFNIR_HEAP_SHARE), x, y)
         gear = (pick_random_weapon_for_floor, pick_random_armor_for_floor,
                 pick_random_shield_for_floor, pick_random_weapon_for_floor)
         alcoves = [r for r in rooms if r not in (entry, ante1, ante2, ante3, side1,
                                                  side2, hoard, boss_room, exit_room)]
         for alcove, pick in zip(alcoves, gear):
             ax, ay = alcove.center
-            add_gold_to_tile(items, _random.randint(300, 600), ax, ay)
+            add_gold_to_tile(items, _economy.roll_share(_random, 60, FAFNIR_ALCOVE_SHARE), ax, ay)
             it = pick(60, _random)
             if it is not None:
                 it.x, it.y = ax + 1, ay
@@ -688,7 +697,7 @@ def _level_80_hall():
                  pick_random_shield_for_floor)
         for n, side in enumerate(sides):
             sx, sy = side.center
-            add_gold_to_tile(items, _random.randint(250, 500), sx, sy)
+            add_gold_to_tile(items, _economy.roll_share(_random, 80, FENRIR_SIDE_SHARE), sx, sy)
             if n < 3:
                 it = picks[n](80, _random)
                 if it is not None:
