@@ -5628,6 +5628,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # every quest piece has its own line.)
                 if item.id in _CHRONICLE_FLAVOR:
                     self._chron('discovery', _CHRONICLE_FLAVOR[item.id], once=f'pickup:{item.id}')
+            self._black_knight_sword_taken(item)      # the Black Knight's sword, now his
             # Material discovery Journal line: first time the player sees each
             # material (cold iron, mithril, etc.), log the discovery line.
             _mat_id = getattr(item, 'material', None)
