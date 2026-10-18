@@ -69,16 +69,18 @@ COST_TYPES = {
     'food', 'healing_potion', 'potion', 'scroll', 'weapon', 'gold', 'hp_percent',
     'max_hp', 'sp', 'hp', 'mp', 'random_item', 'triggered_item', 'accept_item',
     'spawn_deadite_ambush', 'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct',
-    'triggered_item_id', 'stat',
+    'triggered_item_id', 'stat', 'armor_enchant', 'multi',
 }
+ITEM_COSTS = {'food', 'healing_potion', 'potion', 'scroll', 'weapon'}
 PCT_COSTS = {'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct', 'hp_percent'}
 REWARD_TYPES = {
     'gold', 'random_weapon', 'random_armor', 'random_shield', 'random_accessory',
     'random_potion', 'random_scroll', 'random_food', 'random_wand', 'stat',
     'specific_item', 'random_item', 'effect', 'hp_restore', 'sp_restore', 'mp_restore',
     'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct', 'enchant_weapon', 'message',
-    'multi', 'gold_pct', 'gold_pct_loss',
+    'multi', 'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact',
 }
+THREAD_KEYS = {'id', 'hint', 'closed_line'}
 STAT_NAMES = ('STR', 'CON', 'DEX', 'INT', 'WIS', 'PER')
 ROAD_BANNED = ('karma', 'quiz', 'option', 'choose', 'press', 'light', 'medium', 'high',
                'stakes')
@@ -251,8 +253,11 @@ def option_value(opt: dict, table: dict, enc: dict | None = None) -> float:
     escort's arrival reward included), net of what the option costs."""
     from encounter_schema import option_branches
     vals = []
+    deed_prices = table.get('deeds') if isinstance(table.get('deeds'), dict) else {}
     for b in option_branches(opt):
         v = reward_value(b.get('reward'), table) + reward_value(b.get('bonus_reward'), table)
+        for d in b.get('deeds') or ():
+            v += float(deed_prices.get(d if isinstance(d, str) else (d or {}).get('id'), 0))
         esc = b.get('escort')
         if isinstance(esc, dict):
             spec = (((enc or {}).get('escorts') or {}).get(esc['$ref'])
@@ -392,7 +397,7 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
             ungrouped_cond += 1
         else:
             unconditional += 1
-        if not conditional and not o.get('cost') and not is_quiz(o) \
+        if not conditional and not o.get('cost') and not is_quiz(o) and not o.get('fight') \
                 and o.get('hidden_group') is None:
             free_exit = True
         if o.get('hidden') and not conditional:
@@ -415,6 +420,18 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
         if o.get('cost') is not None:
             _check_cost(err, where, o['cost'], stakes)
         for b in option_branches(o):
+            if b is not o:
+                for k in b:
+                    if k not in OUTCOME_KEYS:
+                        err('unknown_key', f'{where}: outcome key {k!r}')
+            th = b.get('thread')
+            if th is not None:
+                if not (isinstance(th, dict) and re.fullmatch(r'[a-z0-9_]+', str(th.get('id', '')))):
+                    err('thread', f'{where}: a thread needs an id [a-z0-9_]+')
+                else:
+                    for k in th:
+                        if k not in THREAD_KEYS:
+                            err('unknown_key', f'{where}: thread key {k!r}')
             for rk in ('reward', 'bonus_reward'):
                 if b.get(rk) is not None:
                     _check_reward(err, where, b[rk])
@@ -786,8 +803,9 @@ def _check_effect_reward(err, where, rw, ctx):
 
 
 def _is_free(o: dict) -> bool:
+    """A way to walk away: no cost, no quiz, and no fight it starts."""
     from encounter_schema import is_quiz
-    return not o.get('cost') and not is_quiz(o)
+    return not o.get('cost') and not is_quiz(o) and not o.get('fight')
 
 
 def _cond_atoms(cond, out):
@@ -1002,6 +1020,8 @@ def _check_escort(err, where, esc):
         if o is not None and isinstance(o, dict):
             if int(o.get('karma', 0) or 0):
                 err('escort', f'{where}: an escort never carries karma by itself')
+            if o.get('reward') is not None:
+                _check_reward(err, f'{where} {key}', o['reward'])
             if o.get('chronicle'):
                 bad = _chron_lint(o['chronicle'])
                 if bad:
@@ -1019,6 +1039,23 @@ def _check_cost(err, where, cost, stakes):
     if not isinstance(cost, dict) or cost.get('type') not in COST_TYPES:
         err('cost', f'{where}: unknown cost {cost!r}')
         return
+    if cost['type'] == 'multi':
+        subs = cost.get('costs')
+        if not isinstance(subs, list) or not subs:
+            err('cost', f'{where}: a multi cost lists its costs')
+            return
+        for sub in subs:
+            if isinstance(sub, dict) and sub.get('type') == 'multi':
+                err('cost', f'{where}: a multi cost inside a multi cost')
+            else:
+                _check_cost(err, where, sub, stakes)
+        if sum(1 for sub in subs if isinstance(sub, dict) and sub.get('type') in ITEM_COSTS) > 1:
+            err('cost', f'{where}: at most one part of a multi cost asks for a pick')
+        return
+    if 'count' in cost:
+        n = cost['count']
+        if cost['type'] not in ITEM_COSTS or not (isinstance(n, int) and 1 <= n <= 5):
+            err('cost', f"{where}: count 1-5, and only on an item cost ({cost['type']!r})")
     if cost['type'] in PCT_COSTS:
         cap = {'light': 15, 'medium': 30}.get(stakes)
         if cap is not None and float(cost.get('amount', 0)) > cap:
@@ -1030,8 +1067,26 @@ def _check_reward(err, where, rw):
     if not isinstance(rw, dict) or rw.get('type') not in REWARD_TYPES:
         err('reward', f'{where}: unknown reward {rw!r}')
         return
+    if rw['type'] == 'specific_item' and rw.get('item_id') not in _items_of(rw.get('item_type')):
+        # The engine looks the item up in data/items/<item_type>.json only.
+        err('reference', f"{where}: no {rw.get('item_id')!r} in data/items/{rw.get('item_type')}.json")
     for sub in rw.get('rewards') or ():
         _check_reward(err, where, sub)
+
+
+_ITEMS_BY_FILE: dict = {}
+
+
+def _items_of(item_type) -> set:
+    if item_type not in _ITEMS_BY_FILE:
+        p = os.path.join(ROOT, 'data', 'items', f'{item_type}.json')
+        try:
+            with open(p, encoding='utf-8') as f:
+                data = json.load(f)
+            _ITEMS_BY_FILE[item_type] = set(data) if isinstance(data, dict) else set()
+        except (OSError, ValueError, TypeError):
+            _ITEMS_BY_FILE[item_type] = set()
+    return _ITEMS_BY_FILE[item_type]
 
 
 def _check_quiz(err, where, q, stakes, source, ctx, modes):

@@ -944,8 +944,10 @@ def test_saint_cuthberts_gospel_from_bearer_past_broker_to_the_chapel():
     assert _has(g, 'cuthberts_gospel')
     assert _own_item_art('cuthberts_gospel')
     # This test places the follow-ups itself (the scheduled ones would be
-    # carried onto the same floors at random targets).
-    assert len(g._deeds['pending']) == 2
+    # carried onto the same floors at random targets). The Gate's run-start
+    # callback (floors 94-98) is pending in every run.
+    assert len([p for p in g._deeds['pending']
+                if p.get('source') != 'engine:run_start']) == 2
     g._deeds['pending'] = []
     karma = g.karma
     broker = _meet(g, 49, _flavor_def('flv_relic_broker'), flavor=True)
@@ -1040,10 +1042,13 @@ def test_the_sword_of_pelops_calls_the_house_of_atreus_on_a_descent(monkeypatch)
     sword = make_item_by_id('weapon', 'pelops_sword')
     assert sword is not None and getattr(sword, 'cursed_lineage', False)
     assert _own_item_art('pelops_sword')
-    g.player.weapon = sword
-    g._change_level(2, enter_from_top=True)            # build floor 2, then go back up
+    # Build floor 2 and go back up BEFORE the sword is worn: with it worn
+    # the first descent could already roll an heir (real random), who then
+    # waits on the saved floor beside the one this test forces (flaky 1 in 4).
+    g._change_level(2, enter_from_top=True)
     g._change_level(1, enter_from_top=False)
     _clear_floor(g)
+    g.player.weapon = sword
     monkeypatch.setattr(random, 'random', lambda: 0.0)
     g._change_level(2, enter_from_top=True)
     heirs = [m for m in g.monsters if getattr(m, 'proper_noun', False) and m.name in

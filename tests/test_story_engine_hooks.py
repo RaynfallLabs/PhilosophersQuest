@@ -176,8 +176,11 @@ def story_pool(monkeypatch):
     import flavor_encounters
     extra = [encounter_schema.normalise(copy.deepcopy(e), source='flavor')
              for e in (SETNE, DEAD, GATE)]
+    mine = {e['tag'] for e in extra}
+    # The fixtures stand in for the shipped stories of the same tag.
     monkeypatch.setattr(flavor_encounters, 'FLAVOR_ENCOUNTERS',
-                        list(flavor_encounters.FLAVOR_ENCOUNTERS) + extra)
+                        [e for e in flavor_encounters.FLAVOR_ENCOUNTERS
+                         if e.get('tag') not in mine] + extra)
     return {e['tag']: e for e in extra}
 
 
@@ -301,7 +304,11 @@ def test_tomb_floor_rolled_in_45_to_65_off_the_shared_stream():
     assert 45 <= g._setne['floor'] <= 65
 
 
-def test_no_tomb_without_its_encounter_data():
+def test_no_tomb_without_its_encounter_data(monkeypatch):
+    import flavor_encounters
+    monkeypatch.setattr(flavor_encounters, 'FLAVOR_ENCOUNTERS',
+                        [e for e in flavor_encounters.FLAVOR_ENCOUNTERS
+                         if e.get('tag') != 'flv_setne_tomb'])
     g = _game()
     g._setne = {'floor': 2, 'spawned': False, 'sealed': False, 'room': None}
     _descend_to(g, 2)
@@ -708,7 +715,8 @@ def test_gate_lines_table_reads_people_and_deeds():
     deeds.record(reg, 'saved.marta', floor=3, block=1)
     deeds.set_person(reg, 'silas', name='Silas', status='spared', deserving=False, floor=75)
     deeds.record(reg, 'spared.silas', floor=75, block=8)
-    deeds.set_person(reg, 'ostrander', name='Ostrander', status='met', deserving=True, floor=20)
+    deeds.set_person(reg, 'ostrander', name='Ostrander', status='saved', deserving=True, floor=20)
+    deeds.record(reg, 'saved.ostrander', floor=20, block=2)
     deeds.record(reg, 'forgo.book_of_thoth', floor=50, block=5)
     deeds.set_person(reg, 'ahwere', name='Ahwere', status='lost', floor=50)
     lines = people_lines(table, ctx)
@@ -719,9 +727,13 @@ def test_gate_lines_table_reads_people_and_deeds():
     # Fates first, most recent first: Silas (floor 75) before Marta.
     assert lines.index(next(ln for ln in lines if ln.startswith('Silas'))) < \
         lines.index(next(ln for ln in lines if ln.startswith('Marta')))
-    # The robbery line wins over the rescue line (first match in table order).
-    deeds.record(reg, 'wrong.robbed_marta', floor=4, block=1)
-    assert any(ln.startswith('Marta Venn. Got home without') for ln in people_lines(table, ctx))
+    # One line a person, the first that holds in table order: a hero who
+    # robbed Marta (and never saved her) hears the robbery.
+    reg2 = deeds.new_register()
+    deeds.record(reg2, 'wrong.robbed_marta', floor=4, block=1)
+    told = people_lines(table, dict(ctx, reg=reg2))
+    assert told == [next(r['line'] for r in table['lines']
+                         if r['line'].startswith('Marta Venn. Got home without'))]
     assert len(people_lines(table, ctx, 2)) == 2
     assert reg['karma']['ledger'] == []                   # reading changes nothing
 
@@ -752,7 +764,11 @@ def test_the_gate_is_scheduled_at_run_start_in_94_to_98(story_pool):
     assert len(gate) == 1 and 94 <= gate[0]['target'] <= 98
 
 
-def test_no_gate_scheduled_while_the_content_is_missing():
+def test_no_gate_scheduled_while_the_content_is_missing(monkeypatch):
+    import flavor_encounters
+    monkeypatch.setattr(flavor_encounters, 'FLAVOR_ENCOUNTERS',
+                        [e for e in flavor_encounters.FLAVOR_ENCOUNTERS
+                         if e.get('tag') != 'flv_the_gate'])
     g = _game()
     assert not [p for p in g._deeds['pending'] if p.get('spec', {}).get('encounter') == 'flv_the_gate']
 

@@ -209,12 +209,62 @@ def pct_loss(pool, pct, minimum: int = 1) -> int:
     return min(pool, max(minimum, int(pool * float(pct) / 100)))
 
 
+def _item_cost_classes():
+    from items import Food, Ingredient, Potion, Scroll, Weapon
+    return {'food': (Food, Ingredient), 'potion': Potion, 'scroll': Scroll, 'weapon': Weapon}
+
+
+def cost_items(player, ctype: str) -> list:
+    """The pack items an item cost of ``ctype`` may take, in pack order."""
+    if ctype == 'healing_potion':
+        return [i for i in player.inventory if offerable(i) and known_healer(player, i)]
+    cls = _item_cost_classes().get(ctype)
+    if cls is None:
+        return []
+    return [i for i in player.inventory if isinstance(i, cls) and offerable(i)]
+
+
+def armor_enchant_target(player):
+    """The worn armour an ``armor_enchant`` cost or reward works on: the
+    cloak (Saint Martin's half), else the body armour, else the first piece
+    worn. None when nothing is worn."""
+    from items import ARMOR_SLOTS
+    slots = list(getattr(player, 'armor_slots', None) or [])
+    for want in ('cloak', 'body'):
+        if want in ARMOR_SLOTS:
+            i = ARMOR_SLOTS.index(want)
+            if i < len(slots) and slots[i] is not None:
+                return slots[i]
+    return next((s for s in slots if s is not None), None)
+
+
 def can_pay_cost(player, cost: dict | None, player_gold: int) -> tuple[bool, str]:
     """Check if the player can afford a cost. Returns (can_pay, fail_message)."""
     if cost is None:
         return True, ''
 
     ctype = cost['type']
+
+    if ctype == 'multi':
+        # Several costs at once (help lift the gate AND hand back the pendant).
+        for sub in cost.get('costs') or ():
+            ok, msg = can_pay_cost(player, sub, player_gold)
+            if not ok:
+                return ok, msg
+        return True, ''
+
+    if ctype == 'armor_enchant':
+        if armor_enchant_target(player) is None:
+            return False, "You wear nothing you could cut."
+        return True, ''
+
+    # "count": an item cost of several (give back two potions).
+    n = int(cost.get('count', 1) or 1)
+    if n > 1 and ctype in ('food', 'potion', 'scroll', 'weapon', 'healing_potion'):
+        if sum(max(1, int(getattr(i, 'count', 1) or 1)) for i in cost_items(player, ctype)) < n:
+            what = {'food': 'food', 'potion': 'potions', 'scroll': 'scrolls',
+                    'weapon': 'weapons', 'healing_potion': 'healing'}[ctype]
+            return False, f"You need {n} {what} to give."
 
     if ctype == 'food':
         from items import Food, Ingredient
@@ -338,6 +388,13 @@ def get_inventory_filter(cost: dict | None) -> str | None:
     if cost is None:
         return None
     ctype = cost['type']
+    if ctype == 'multi':
+        # The first part that needs a pick; the others are paid as they are.
+        for sub in cost.get('costs') or ():
+            f = get_inventory_filter(sub)
+            if f:
+                return f
+        return None
     if ctype in ('food', 'healing_potion', 'potion', 'scroll', 'weapon'):
         return ctype
     if ctype == 'random_item':

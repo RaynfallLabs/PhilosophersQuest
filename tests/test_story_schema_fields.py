@@ -225,7 +225,8 @@ def test_karma_sim_runs_on_fixtures_and_shipped_data():
     assert rep['oracle_max'] <= 12                        # 8.2 oracle check
     for r in rep['styles'].values():
         assert -10 <= r['p10'] <= r['p50'] <= r['p90'] <= 10
-        assert abs(r['sword'] + r['scales'] + r['silence'] + r['below_zero'] - 1) < 1e-6
+        # Each share is rounded to four places, so the four can miss 1 by 2e-4.
+        assert abs(r['sword'] + r['scales'] + r['silence'] + r['below_zero'] - 1) < 5e-4
     # The gate is switched on only inside the simulation.
     import karma
     assert karma.gate_enabled() is False

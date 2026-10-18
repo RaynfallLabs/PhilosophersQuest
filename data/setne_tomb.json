@@ -17,10 +17,10 @@
   "read_spent_message": "The words are still there. They will not do it twice.",
   "spent_name": "Book of Thoth (Read)",
   "altar": {
-    "unread_message": "\"Not yet,\" says a voice like water. \"You swore to read it first.\"",
+    "unread_message": "Not yet. You swore to read it first.",
     "on_time_message": "The book is wet when you lay it down, though it was dry in your pack. When you look again, it is gone, and the altar smells of river.",
     "on_time_chronicle": "Laid the Book of Thoth on an altar, as I swore to a dead prince. It was wet when I set it down. Then it was gone home.",
-    "late_message": "The book is wet when you lay it down. For a moment you hear a woman say a child's name, and then the book is gone.",
+    "late_message": "I took the book back late. On the altar it was wet, and for a moment I heard a woman say a child's name.",
     "late_thread_line": "I took the book back late. On the altar it was wet, and for a moment I heard a woman say a child's name.",
     "late_chronicle": "Laid the Book of Thoth on an altar, later than I swore. It went home anyway. I think someone was waiting up."
   }

@@ -34,18 +34,16 @@ MONSTERS = _load('monsters.json')
 COST_TYPES = {'food', 'healing_potion', 'potion', 'scroll', 'weapon', 'gold',
               'hp_percent', 'max_hp', 'sp', 'hp', 'mp', 'random_item',
               'triggered_item', 'accept_item', 'spawn_deadite_ambush',
-              'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct', 'triggered_item_id', 'stat'}
+              'hp_pct', 'sp_pct', 'mp_pct', 'max_hp_pct', 'gold_pct', 'triggered_item_id', 'stat',
+              'multi', 'armor_enchant'}
 # Types with a handler in game_encounters._apply_npc_reward.
 REWARD_TYPES = {'gold', 'random_weapon', 'random_armor', 'random_shield',
                 'random_accessory', 'random_potion', 'random_scroll',
                 'random_food', 'random_wand', 'stat', 'specific_item',
                 'random_item', 'effect', 'hp_restore', 'sp_restore',
                 'mp_restore', 'enchant_weapon', 'message', 'multi',
-                'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct'}
-# Types and ids the parallel engine work adds (ENCOUNTER_STORIES_DRAFT J3); the
-# pending_engine section of tests/encounter_legacy_allow.json lists where.
-PENDING_COSTS = {'multi', 'armor_enchant'}
-PENDING_REWARDS = {'gold_pct', 'gold_pct_loss', 'armor_enchant', 'flag', 'random_artifact'}
+                'hp_restore_pct', 'sp_restore_pct', 'mp_restore_pct',
+                'gold_pct', 'gold_pct_loss', 'armor_enchant', 'random_artifact'}
 
 NEW_FLAVOR_TAGS = ['flv_baucis_table', 'flv_three_purses', 'flv_utgard_contests',
                    'flv_singed_squire', 'flv_old_spearman', 'flv_limping_lion',
@@ -75,22 +73,21 @@ def _rewards(reward):
 def test_every_option_uses_only_handled_costs_and_rewards(source, encounters):
     from status_effects import EFFECT_INFO
     from encounter_schema import option_branches
-    sys.path.insert(0, os.path.join(ROOT, 'tests'))
-    from test_story_content import PENDING_IDS
-    items = _all_item_ids() | PENDING_IDS['item']
-    effects = set(EFFECT_INFO) | PENDING_IDS['effect']
+    items = _all_item_ids()
+    effects = set(EFFECT_INFO)
     bad = []
     for enc in encounters:
         assert 1 <= len(enc['options']) <= 8, enc['tag']   # at most 4 visible (validator)
         for opt in enc['options']:
             for b in option_branches(opt) + ([opt] if 'quiz' in opt else []):
-                cost = b.get('cost')
-                if cost and cost['type'] not in COST_TYPES | PENDING_COSTS:
-                    bad.append((enc['tag'], 'cost', cost['type']))
-                if cost and cost['type'] == 'accept_item' and cost['item_id'] not in items:
-                    bad.append((enc['tag'], 'accept_item', cost['item_id']))
+                top = b.get('cost')
+                for cost in ([top] + list(top.get('costs') or ())) if top else ():
+                    if cost['type'] not in COST_TYPES:
+                        bad.append((enc['tag'], 'cost', cost['type']))
+                    if cost['type'] == 'accept_item' and cost['item_id'] not in items:
+                        bad.append((enc['tag'], 'accept_item', cost['item_id']))
                 for rew in list(_rewards(b.get('reward'))) + list(_rewards(b.get('bonus_reward'))):
-                    if rew['type'] not in REWARD_TYPES | PENDING_REWARDS:
+                    if rew['type'] not in REWARD_TYPES:
                         bad.append((enc['tag'], 'reward', rew['type']))
                     if rew['type'] == 'specific_item' and rew['item_id'] not in items:
                         bad.append((enc['tag'], 'item', rew['item_id']))

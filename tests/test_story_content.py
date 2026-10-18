@@ -12,7 +12,6 @@ import os
 import re
 import sys
 
-import pytest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'src'))
@@ -20,9 +19,12 @@ sys.path.insert(0, ROOT)
 
 import deeds  # noqa: E402
 import encounter_schema as ES  # noqa: E402
+import setne_tomb  # noqa: E402
 from tools.encounters import validate as V  # noqa: E402
 
 ALL = V.load_all()                      # [(source, encounter)] after normalise
+with open(os.path.join(ROOT, 'data', 'gate_lines.json'), encoding='utf-8') as _f:
+    GATE_ROWS = json.load(_f)['gate']['lines']      # The Gate's lines table (C18)
 ENCS = [e for _s, e in ALL]
 BY_TAG = {e['tag']: e for e in ENCS}
 ANCHORS = [e for s, e in ALL if s == 'npc']
@@ -196,9 +198,7 @@ def test_no_virtue_tags_in_data():
 
 def _all_outcomes(e):
     for o in e['options']:
-        yield from _branches(o)
-        if o.get('fail_total'):
-            yield o['fail_total']
+        yield from _branches(o)             # pass, fail and fail_by_correct
     for spec in (e.get('escorts') or {}).values():
         for k in ('on_arrive', 'on_fail'):
             if spec.get(k):
@@ -241,12 +241,13 @@ def test_every_person_has_a_name():
             assert p['name'][0].isupper(), e['tag']       # proper capitalisation
         for key, spec in (e.get('escorts') or {}).items():
             assert spec.get('name', '').strip() and spec['name'][0].isupper(), (e['tag'], key)
-        for row in e.get('gate_lines') or ():
-            assert row.get('person') and row.get('name', '').strip(), (e['tag'], row)
         for b in _all_outcomes(e):
             for who in b.get('people') or ():
                 assert who.get('id') and who.get('name', '').strip(), e['tag']
     assert sum(1 for e in ENCS if e.get('person')) >= 100
+    for row in GATE_ROWS:
+        assert row.get('person') and row.get('name', '').strip(), row
+        assert row['name'][0].isupper(), row
 
 
 def test_the_gate_reads_only_deeds_the_run_can_record():
@@ -254,8 +255,10 @@ def test_the_gate_reads_only_deeds_the_run_can_record():
     for e in ENCS:
         for b in _all_outcomes(e):
             recorded |= {d if isinstance(d, str) else d['id'] for d in b.get('deeds') or ()}
-    rows = BY_TAG['flv_the_gate']['gate_lines']
+    rows = GATE_ROWS
     assert len(rows) >= 28
+    gate = BY_TAG['flv_the_gate']
+    assert any((o.get('people_lines') or {}).get('table') == 'gate' for o in gate['options'])
     for row in rows:
         ids = [i for k in ('deeds_all', 'deeds_any', 'deeds_none') for i in row['when'].get(k, ())]
         assert ids and set(ids) <= recorded, row
@@ -287,8 +290,7 @@ def block_opportunities() -> dict:
     floor in 45-65) lands in the block. Oath keeps spilling into a later block
     are left out, so the count errs low."""
     import road
-    setne = BY_TAG['flv_setne_tomb']['own_roll']['floors']
-    tomb = range(setne[0], setne[1] + 1)
+    tomb = setne_tomb.candidate_floors()      # its own roll, never a boss floor
     out = {}
     for b in range(1, 11):
         lo, hi = 10 * b - 9, 10 * b
@@ -345,18 +347,7 @@ def test_player_text_has_no_dash_punctuation():
             assert '—' not in t and ' -- ' not in t, (e['tag'], t[:80])
 
 
-# ------------------------------------------------------------------ ids and pending engine work
-
-# Ids the new content names that the parallel engine work creates (Part J3).
-# test_referenced_ids_exist passes once they land; until then the set below
-# must cover every missing id, so a typo cannot hide among them.
-PENDING_IDS = {
-    'item': {'wats_oil_flask', 'olifant', 'rans_net', 'brennans_sword', 'azaraels_brand',
-             'locust_charm', 'raphaels_gall', 'brass_wardens_cog', 'black_string_bracelet'},
-    'effect': {'porter', 'sickly', 'light'},
-    'monster': {'azarael', 'locust_cultist', 'morrow', 'locust_herald', 'neferkaptah_risen',
-                'villager_mob', 'palace_guard'},
-}
+# ------------------------------------------------------------------ ids
 
 
 def _walk(obj):
@@ -395,28 +386,35 @@ def known_ids() -> dict:
             'monster': monsters}
 
 
-def test_missing_ids_are_only_the_pending_ones():
-    ref, known = referenced_ids(), known_ids()
-    for kind in ref:
-        stray = ref[kind] - known[kind] - PENDING_IDS[kind]
-        assert not stray, f'{kind} ids that exist nowhere: {stray}'
-
-
-@pytest.mark.xfail(reason='pending engine merge', strict=False)
 def test_referenced_ids_exist():
     ref, known = referenced_ids(), known_ids()
     assert all(ref[k] <= known[k] for k in ref), {k: ref[k] - known[k] for k in ref}
+    assert ref['item'] and ref['effect'] and ref['monster']     # the walk found them
 
 
-# The only validator breaches allowed while the engine work is in flight:
-# each one must be explained by one of these new fields or types.
-PENDING_MARKERS = ('own_roll', 'people', 'per_miss', 'fail_total', 'seal_room', "'after'",
-                   'oath_lapse', 'run_start', 'gate_lines', 'gate_reading', 'fight needs',
-                   "'gold_pct'", "'gold_pct_loss'", "'armor_enchant'", "'flag'", "'multi'")
+def test_the_engine_work_is_merged_and_nothing_is_pending():
+    """Phase 3 integration: the pending_engine section is empty and the
+    validator finds nothing, allowlisted or not."""
+    assert V.load_pending() == {}
+    assert V.load_allowlist() == {}
+    assert V.validate_all() == []
 
 
-def test_pending_engine_breaches_are_only_the_new_fields():
-    pending = V.load_pending()
-    for i in V.validate_all():
-        if i.code in pending.get(i.tag, ()):
-            assert any(m in i.msg for m in PENDING_MARKERS), str(i)
+# A fight in a deep band is fought with a monster of that depth (LORE NOT
+# FLOOR: the data names a creature that belongs there; nothing is scaled at
+# runtime). A shallow pick may sit at most this many floors below its band.
+FIGHT_DEPTH_SLACK = 20
+
+
+def test_fights_use_monsters_of_their_band():
+    with open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8') as f:
+        monsters = json.load(f)
+    bad = []
+    for e in ENCS:
+        lo = e['band'][0]
+        for b in _all_outcomes(e):
+            for mid, _n in ES.fight_entries(b.get('fight')) if b.get('fight') else ():
+                peak = int(monsters[mid].get('peak_floor') or 0)
+                if peak + FIGHT_DEPTH_SLACK < lo:
+                    bad.append((e['tag'], mid, peak, e['band']))
+    assert not bad, bad

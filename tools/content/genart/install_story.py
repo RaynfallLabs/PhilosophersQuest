@@ -1,4 +1,4 @@
-"""Install the reviewed story-content sprites (briefs story_s01/s02, story_items_s01/s02).
+"""Install the reviewed story-content sprites (briefs story_s01/s02, story_items_s01/s02/s03).
 
     <ComfyUI python> tools/content/genart/install_story.py [--dry]
 
@@ -14,7 +14,8 @@ import json, os, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 GEN = os.path.join(ROOT, '_genart')
-RUNS = {'story_s01': 'monsters', 'story_s02': 'monsters', 'story_items_s01': 'items', 'story_items_s02': 'items'}
+RUNS = {'story_s01': 'monsters', 'story_s02': 'monsters', 'story_items_s01': 'items', 'story_items_s02': 'items',
+        'story_items_s03': 'items'}
 OURS = os.path.join(HERE, 'installed_story.json')
 
 

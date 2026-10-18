@@ -1,18 +1,4 @@
 {
- "_doc": "Exemptions for tools/encounters/validate.py (DEEDS_KARMA_DESIGN 8.3). The legacy entries are gone: every encounter was re-authored from ENCOUNTER_STORIES_DRAFT.md (2026-10-17). What remains is the pending_engine section. tests/test_encounter_schema.py fails on any new breach and on any stale entry here.",
- "pending_engine": {
-  "_doc": "Breaches that exist only because the field's engine support (ENCOUNTER_STORIES_DRAFT.md Part J3) is being built in parallel. Empty this section after that work is merged: each entry then goes stale and the test says so. reward/cost = the new types gold_pct, gold_pct_loss, armor_enchant, flag and the multi cost; field = a fight list; unknown_key = own_roll, people, per_miss, fail_total, seal_room, the schedule's 'after', oath_lapse, run_start, gate_lines, gate_reading.",
-  "tam_thief": ["reward"],
-  "slavers_wagon": ["reward"],
-  "flv_martin_dream": ["reward"],
-  "flv_saint_martin": ["cost"],
-  "flv_ysolde_gate": ["cost"],
-  "flv_robes_ambush": ["field"],
-  "flv_setne_tomb": ["unknown_key"],
-  "flv_dead_come_for_the_book": ["unknown_key", "field"],
-  "flv_vafthrudnir": ["reward"],
-  "flv_invisible_archivist": ["reward"],
-  "flv_deaths_chessboard": ["reward"],
-  "flv_the_gate": ["unknown_key"]
- }
+ "_doc": "Exemptions for tools/encounters/validate.py (DEEDS_KARMA_DESIGN 8.3). Empty: every encounter was re-authored from ENCOUNTER_STORIES_DRAFT.md (2026-10-17) and reconciled with the engine (Phase 3 integration), so the legacy entries and the pending_engine section are both gone. tests/test_encounter_schema.py fails on any new breach and on any stale entry here.",
+ "pending_engine": {}
 }

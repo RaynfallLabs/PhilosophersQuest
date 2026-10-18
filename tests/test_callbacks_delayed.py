@@ -87,7 +87,10 @@ def _choose(g, npc, key):
 
 
 def _pending(g, kind='encounter'):
-    return [p for p in g._deeds['pending'] if p['kind'] == kind]
+    """The callbacks the test made. The Gate's run-start callback (floors
+    94-98, karma_rules.json run_start_schedule) is pending in every run."""
+    return [p for p in g._deeds['pending'] if p['kind'] == kind
+            and p.get('source') != 'engine:run_start']
 
 
 def _has(g, item_id):

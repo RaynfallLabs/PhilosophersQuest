@@ -3656,7 +3656,7 @@
           "amount": 15
         },
         "fight": {
-          "monster_id": "bandit_thug",
+          "monster_id": "villager_mob",
           "count": 2
         },
         "outcome": "The path ends a step before the light does. You fall a short, painful way into a cut where two men in wreckers' coats are waiting with clubs. Above, someone laughs and trims the wick.",
@@ -4612,6 +4612,7 @@
     "role": "story",
     "stakes": "light",
     "callback_only": true,
+    "hostile": true,
     "person": {
       "id": "morrow",
       "name": "Morrow"
@@ -4640,7 +4641,7 @@
             "monster_id": "morrow"
           },
           {
-            "monster_id": "locust_cultist",
+            "monster_id": "cult_zealot",
             "count": 2
           }
         ],
@@ -4661,7 +4662,7 @@
             "monster_id": "morrow"
           },
           {
-            "monster_id": "locust_cultist",
+            "monster_id": "cult_zealot",
             "count": 2
           }
         ],
@@ -7157,14 +7158,14 @@
   },
   {
     "tag": "flv_setne_tomb",
-    "name": "Setne's Tomb",
+    "name": "Neferkaptah",
     "symbol": "@",
     "color": [
-      90,
-      140,
-      160
+      200,
+      190,
+      150
     ],
-    "sprite_id": "npc_ghost",
+    "sprite_id": "npc_neferkaptah",
     "min_level": 45,
     "max_level": 65,
     "role": "story",
@@ -7211,7 +7212,8 @@
           "mode": "escalator_threshold",
           "threshold": 2,
           "total_qs": 3,
-          "timed": false
+          "timed": false,
+          "play_all": true
         },
         "per_miss": [
           {
@@ -7223,8 +7225,7 @@
           },
           {
             "text": "You are in to the waist. Your legs are a long way away, in very cold water.",
-            "reward": {
-              "type": "effect",
+            "effect": {
               "effect": "paralyzed",
               "duration": 6
             }
@@ -7249,14 +7250,7 @@
               8,
               15
             ],
-            "lapse_mode": "callback",
-            "keep_text": "The book is wet when you lay it down, though it was dry in your pack. When you look again, it is gone, and the altar smells of river.",
-            "keep_chronicle": "Laid the Book of Thoth on an altar, as I swore to a dead prince. It was wet when I set it down. Then it was gone home.",
-            "late_text": "I took the book back late. On the altar it was wet, and for a moment I heard a woman say a child's name.",
-            "late_chronicle": "Laid the Book of Thoth on an altar, later than I swore. It went home anyway. I think someone was waiting up.",
-            "late_thread_line": "I took the book back late. On the altar it was wet, and for a moment I heard a woman say a child's name.",
-            "unread_text": "Not yet. You swore to read it first.",
-            "read_spent_text": "The words are still there. They will not do it twice."
+            "lapse_mode": "callback"
           },
           "schedule": [
             {
@@ -7265,12 +7259,12 @@
                 1,
                 3
               ],
-              "after": "oath_due:thoth_return",
               "requires": {
                 "oath_status": {
                   "thoth_return": "open"
                 }
-              }
+              },
+              "after_oath_due": "thoth_return"
             }
           ],
           "thread": {
@@ -7280,11 +7274,7 @@
           "deeds": [
             "told.won_senet"
           ],
-          "chronicle": "Beat a dead prince at senet for the Book of Thoth. He made me swear to bring it back once I had read it. His wife would not look at me.",
-          "road": {
-            "id": "flv_setne_tomb.senet_won",
-            "hint": "Some books are lent, never given."
-          }
+          "chronicle": "Beat a dead prince at senet for the Book of Thoth. He made me swear to bring it back once I had read it. His wife would not look at me."
         },
         "fail": {
           "outcome": "Neferkaptah sweeps the pieces into his hand. \"Not you, then.\" You are waist-deep in the floor, and it lets you go only slowly, like a river letting go of a boot. The book stays on its bier.",
@@ -7293,20 +7283,24 @@
           ],
           "chronicle": "Lost at senet to a dead prince with the Book of Thoth as the stake. The floor kept me to the waist for a while. The book stayed where it was."
         },
-        "fail_total": {
-          "outcome": "The stone closes over your mouth. Then a wet hand takes yours and pulls, and you come up gasping on the floor above, a long way from the tomb. You will not find that black door again.",
-          "move_up": 1,
-          "seal_room": true,
-          "deeds": [
-            "told.lost_senet",
-            "flag.thoth_lost"
-          ],
-          "thread_line": "I never saw the tomb of Neferkaptah again. I think Ahwere made sure of it.",
-          "chronicle": "Lost every round of senet for the Book of Thoth and went into the floor up to my mouth. Ahwere pulled me out. I woke a floor higher."
-        },
         "road": {
           "id": "flv_setne_tomb.senet",
           "hint": "In a dead man's game the stake is always more than you put down."
+        },
+        "fail_by_correct": {
+          "0": {
+            "outcome": "The stone closes over your mouth. Then a wet hand takes yours and pulls, and you come up gasping on the floor above, a long way from the tomb. You will not find that black door again.",
+            "deeds": [
+              "told.lost_senet",
+              "flag.thoth_lost"
+            ],
+            "chronicle": "Lost every round of senet for the Book of Thoth and went into the floor up to my mouth. Ahwere pulled me out. I woke a floor higher.",
+            "expel_up": true,
+            "thread": {
+              "id": "thoth_tomb",
+              "closed_line": "I never saw the tomb of Neferkaptah again. I think Ahwere made sure of it."
+            }
+          }
         }
       },
       {
@@ -7330,12 +7324,12 @@
         "road": {
           "id": "flv_setne_tomb.leave_book",
           "hint": "The greatest book in the world was guarded by a mother, and that was the true lock."
-        }
+        },
+        "seal_door": true
       },
       {
         "label": "Leave the tomb",
         "outcome": "\"Setne left too, the first time,\" says Neferkaptah, setting the pieces out again. Ahwere says nothing. The door closes behind you, and is a wall.",
-        "seal_room": true,
         "deeds": [
           "met.neferkaptah"
         ],
@@ -7343,16 +7337,11 @@
         "road": {
           "id": "flv_setne_tomb.leave",
           "hint": "Leaving without choosing is still a kind of choosing."
-        }
+        },
+        "seal_door": true
       }
     ],
-    "own_roll": {
-      "floors": [
-        45,
-        65
-      ],
-      "room": "sealed_tomb"
-    }
+    "proper_noun": true
   },
   {
     "tag": "flv_dragons_accountant",
@@ -7913,7 +7902,7 @@
         "label": "Take the net and leave him be",
         "reward": {
           "type": "specific_item",
-          "item_type": "artifact",
+          "item_type": "weapon",
           "item_id": "rans_net"
         },
         "outcome": "You roll up the grey silk. It is lighter than it looks and colder than water. The pike watches it go into your pack and sinks a little lower, the way a man sits down when he knows the next visitor will come with it.",
@@ -8344,11 +8333,11 @@
     "proper_noun": true,
     "symbol": "@",
     "color": [
-      90,
-      140,
-      160
+      200,
+      190,
+      150
     ],
-    "sprite_id": "npc_ghost",
+    "sprite_id": "npc_neferkaptah",
     "min_level": 54,
     "max_level": 98,
     "role": "story",
@@ -8413,7 +8402,7 @@
             "count": 1
           },
           {
-            "monster_id": "mummy",
+            "monster_id": "skeleton_horde",
             "count": 4
           }
         ],
@@ -8441,7 +8430,7 @@
             "count": 1
           },
           {
-            "monster_id": "mummy",
+            "monster_id": "skeleton_horde",
             "count": 6
           }
         ],
@@ -8454,7 +8443,8 @@
           "hint": "A promise to the dead is collected by the dead."
         }
       }
-    ]
+    ],
+    "hostile": true
   },
   {
     "tag": "flv_socrates_cell",
@@ -9690,10 +9680,6 @@
         },
         "pass": {
           "outcome": "\"Well played.\" He makes a small mark in a small book. \"On the way home with your Stone, I will give you back one breath I would have taken. Once.\"",
-          "reward": {
-            "type": "flag",
-            "flag": "deaths_lost_turn"
-          },
           "deeds": [
             "lost.bartolo_family",
             "flag.deaths_lost_turn"
@@ -10831,19 +10817,16 @@
     "options": [
       {
         "label": "\"Tell me about them.\"",
-        "gate_reading": {
-          "max_lines": 6,
-          "prefer": [
-            "lost",
-            "spared",
-            "saved"
-          ]
-        },
-        "outcome": "He closes the ledger. 'The rest is between them and me.'",
+        "outcome": "",
         "chronicle": "Met an old fisherman with a ring of keys who told me how the people I met had done. Some better than I deserved. Some worse.",
         "road": {
           "id": "flv_the_gate.tell",
           "hint": "Every name you met on the way down is written somewhere."
+        },
+        "people_lines": {
+          "table": "gate",
+          "max": 6,
+          "after": "He closes the ledger. 'The rest is between them and me.'"
         }
       },
       {
@@ -10853,311 +10836,6 @@
       {
         "label": "Walk on",
         "outcome": "He goes back to his net. \"Mind the last stairs,\" he says. \"They're the long ones.\""
-      }
-    ],
-    "run_start": {
-      "floors": [
-        94,
-        98
-      ]
-    },
-    "gate_lines": [
-      {
-        "person": "marta",
-        "name": "Marta Venn",
-        "when": {
-          "deeds_all": [
-            "saved.marta"
-          ]
-        },
-        "line": "Marta Venn. Walked out on that leg. Ratted till she was seventy and never stopped talking about you."
-      },
-      {
-        "person": "marta",
-        "name": "Marta Venn",
-        "when": {
-          "deeds_all": [
-            "flag.marta_uncertain"
-          ]
-        },
-        "line": "Marta Venn. The leg held, as it happens, mostly. Her girl does the climbing now."
-      },
-      {
-        "person": "marta",
-        "name": "Marta Venn",
-        "when": {
-          "deeds_all": [
-            "wrong.robbed_marta"
-          ]
-        },
-        "line": "Marta Venn. Got home without her satchel. Three children on the ward didn't. She never said your name. Lena did."
-      },
-      {
-        "person": "ysolde",
-        "name": "Ysolde",
-        "when": {
-          "deeds_all": [
-            "saved.ysolde"
-          ]
-        },
-        "line": "Ysolde and her girl. Benno's fever broke on the eighth night. They named the goat after you. It's a nice goat."
-      },
-      {
-        "person": "dafydd",
-        "name": "Dafydd",
-        "when": {
-          "deeds_all": [
-            "saved.dafydd"
-          ]
-        },
-        "line": "Dafydd. Lived to be sixty and told the story of Sergeant Ilse every winter. He told it right."
-      },
-      {
-        "person": "ilse",
-        "name": "Ilse Marr",
-        "when": {
-          "deeds_all": [
-            "saved.ilse"
-          ]
-        },
-        "line": "Ilse Marr. Went home to her husband and his terrible cheese. She kept Dafydd's name in her prayers."
-      },
-      {
-        "person": "father_anselm",
-        "name": "Father Anselm",
-        "when": {
-          "deeds_all": [
-            "saved.father_anselm"
-          ]
-        },
-        "line": "Father Anselm. Back in his parish. Prays for you on Thursdays. He picked Thursdays."
-      },
-      {
-        "person": "morrow",
-        "name": "Morrow",
-        "when": {
-          "deeds_all": [
-            "spared.morrow"
-          ]
-        },
-        "line": "Morrow. You let him out. He used it badly. He isn't coming through this gate, and he knows why."
-      },
-      {
-        "person": "konstantin",
-        "name": "Konstantin Volkov",
-        "when": {
-          "deeds_all": [
-            "lost.konstantin",
-            "saved.glimmerdeep_farmers"
-          ]
-        },
-        "line": "Konstantin Volkov. Held the door. Came through here standing up. Asked after his farmers first."
-      },
-      {
-        "person": "pell",
-        "name": "Jory Pell",
-        "when": {
-          "deeds_all": [
-            "saved.pell"
-          ]
-        },
-        "line": "Jory Pell. They stopped calling him Trembler. He made sergeant."
-      },
-      {
-        "person": "theodoros",
-        "name": "Theodoros of Nicaea",
-        "when": {
-          "deeds_all": [
-            "saved.theodoros"
-          ]
-        },
-        "line": "Theodoros of Nicaea. Taught six languages to anybody who asked, free. Said a stranger once overpaid for him."
-      },
-      {
-        "person": "sariel",
-        "name": "Sariel",
-        "when": {
-          "deeds_all": [
-            "saved.sariel"
-          ]
-        },
-        "line": "Sariel asked me to tell you she hasn't forgotten. She doesn't, you know. Angels."
-      },
-      {
-        "person": "tansy",
-        "name": "Tansy",
-        "when": {
-          "deeds_all": [
-            "saved.tansy"
-          ]
-        },
-        "line": "Tansy. Flies again. Hates jars. Will not discuss it."
-      },
-      {
-        "person": "lucan",
-        "name": "Lucan Dray",
-        "when": {
-          "deeds_all": [
-            "spared.lucan"
-          ],
-          "deeds_none": [
-            "saved.lucan"
-          ]
-        },
-        "line": "Lucan Dray. Ran a fifth time, and a sixth. We'll talk, him and me. It will be a long talk."
-      },
-      {
-        "person": "lucan",
-        "name": "Lucan Dray",
-        "when": {
-          "deeds_all": [
-            "saved.lucan"
-          ]
-        },
-        "line": "Lucan Dray. Stood his trial and served his years and swept the church at Dunmore after. Aurel never forgave him. That's allowed."
-      },
-      {
-        "person": "silas",
-        "name": "Silas Mordaunt",
-        "when": {
-          "deeds_all": [
-            "spared.silas"
-          ]
-        },
-        "line": "Silas Mordaunt. Three more names before the fever took him. That's on him. A little of it's on the lock."
-      },
-      {
-        "person": "ostrander",
-        "name": "Ostrander",
-        "when": {
-          "deeds_all": [
-            "saved.ostrander"
-          ]
-        },
-        "line": "Ostrander. Kept his lamp lit forty years. People who never knew his name got home by it."
-      },
-      {
-        "person": "ostrander",
-        "name": "Ostrander",
-        "when": {
-          "deeds_all": [
-            "spared.ostrander"
-          ],
-          "deeds_none": [
-            "saved.ostrander"
-          ]
-        },
-        "line": "Ostrander. Went back to his old trade. The sea's got him now, and the sea is not a forgiving employer."
-      },
-      {
-        "person": "oswin",
-        "name": "Oswin of Harrow",
-        "when": {
-          "deeds_all": [
-            "told.oswin_trial"
-          ]
-        },
-        "line": "Oswin of Harrow. Took his sentence without a word. Thale's children put flowers on his grave. I'd call that settled."
-      },
-      {
-        "person": "oswin",
-        "name": "Oswin of Harrow",
-        "when": {
-          "deeds_all": [
-            "told.oswin_fell"
-          ]
-        },
-        "line": "Oswin of Harrow. Seven hundred and some, by my count, before they stopped him. He came through still apologising."
-      },
-      {
-        "person": "tobyn",
-        "name": "Tobyn",
-        "when": {
-          "deeds_all": [
-            "saved.tobyn"
-          ]
-        },
-        "line": "Tobyn. Knighted at nineteen. Carries Brennan's sword, and tells his own squire he's ready far too early."
-      },
-      {
-        "person": "celeste",
-        "name": "Celeste Arrowmere",
-        "when": {
-          "deeds_all": [
-            "saved.celeste"
-          ]
-        },
-        "line": "Celeste Arrowmere. Buried Maren properly. Comes down every spring to sit with her."
-      },
-      {
-        "person": "hal",
-        "name": "Hal Mercer",
-        "when": {
-          "deeds_all": [
-            "aid.hal"
-          ]
-        },
-        "line": "Hal Mercer and Edwin Corley. Came through together. Hal went first this time."
-      },
-      {
-        "person": "corwen",
-        "name": "Corwen Ashby",
-        "when": {
-          "deeds_all": [
-            "saved.corwen"
-          ]
-        },
-        "line": "Corwen Ashby. Back in his schoolroom. Taught the first letters to forty more children and never once mentioned the book."
-      },
-      {
-        "person": "davy",
-        "name": "Davy Hollins",
-        "when": {
-          "deeds_all": [
-            "saved.davy"
-          ]
-        },
-        "line": "Davy Hollins. Limped for a year. Made foreman. First thing he did was pull out the north props himself."
-      },
-      {
-        "person": "wat",
-        "name": "Wat Rowe",
-        "when": {
-          "deeds_all": [
-            "told.seventh_lamp_lit"
-          ]
-        },
-        "line": "Wat Rowe. Lit his six for another two winters. Asked after the stranger who did the seventh, every time."
-      },
-      {
-        "person": "ahwere",
-        "name": "Ahwere",
-        "when": {
-          "deeds_all": [
-            "forgo.book_of_thoth"
-          ]
-        },
-        "line": "Ahwere asked me to tell you: no one had ever left it before. She said it twice, so I would get it right."
-      },
-      {
-        "person": "roland",
-        "name": "Roland",
-        "when": {
-          "deeds_all": [
-            "told.horn_blown"
-          ]
-        },
-        "line": "Roland. Came through still arguing with Oliver. Oliver let him, this once."
-      },
-      {
-        "person": "neferkaptah",
-        "name": "Neferkaptah",
-        "when": {
-          "deeds_all": [
-            "wrong.kept_thoth"
-          ]
-        },
-        "line": "Neferkaptah. Still waiting for his book. He'll wait. He's good at it."
       }
     ]
   }

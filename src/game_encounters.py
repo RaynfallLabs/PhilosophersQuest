@@ -1043,7 +1043,8 @@ class EncountersMixin:
         # The thread this outcome opened: its hint sits faint under the
         # deed's line in the Journal (section 7.4).
         th = o.get('thread')
-        self._npc_outcome_thread = th.get('id') if isinstance(th, dict) else None
+        self._npc_outcome_thread = (th.get('id') if isinstance(th, dict)
+                                    and not th.get('closed_line') else None)
         self._npc_after = o.get('then', 'close')
         self._npc_encounter_phase = 'outcome'
 
@@ -1063,7 +1064,8 @@ class EncountersMixin:
         lines = people_lines(table, self._deed_ctx(), spec.get('max'))
         if not lines and spec.get('none'):
             lines = [spec['none']]
-        if lines and spec.get('after'):
+        if spec.get('after'):
+            # The closing line is said whether or not anyone was told about.
             lines = lines + [spec['after']]
         return '\n'.join(lines)
 
@@ -1145,6 +1147,10 @@ class EncountersMixin:
         th = o.get('thread')
         if isinstance(th, dict) and th.get('id'):
             deeds.open_thread(reg, th['id'], hint=th.get('hint', ''), floor=floor)
+            if th.get('closed_line'):
+                # A thread that ends in the scene that starts it (the tomb
+                # never found again): opened and closed with its last line.
+                deeds.close_thread(reg, th['id'], line=th['closed_line'])
         if o.get('thread_close'):
             deeds.close_thread(reg, o['thread_close'])
         if o.get('schedule'):
@@ -1301,7 +1307,41 @@ class EncountersMixin:
         # ── Apply cost ────────────────────────────────────────────
         if cost:
             ctype = cost['type']
+            if ctype == 'multi':
+                # Each part in turn; the picked item goes to the part that
+                # asked for a pick (npc_encounters.get_inventory_filter).
+                from npc_encounters import get_inventory_filter
+                _given = False
+                for sub in cost.get('costs') or ():
+                    _mine = (not _given) and bool(get_inventory_filter(sub))
+                    self._npc_pay_cost(sub, selected_item if _mine else None)
+                    _given = _given or _mine
+                return
+            if ctype == 'armor_enchant':
+                # Half the cloak cut away: the worn piece loses enchantment
+                # (never below -3, the floor every enchant obeys).
+                from npc_encounters import armor_enchant_target
+                target = armor_enchant_target(self.player)
+                if target is not None:
+                    old = int(getattr(target, 'enchant_bonus', 0) or 0)
+                    target.enchant_bonus = max(-3, old - int(cost.get('amount', 1)))
+                    if target.enchant_bonus < old:
+                        self.add_message(f"Your {self._bare_name(target)} is the poorer for it.",
+                                         'warning')
+                return
             if ctype in ('food', 'healing_potion', 'potion', 'scroll', 'weapon'):
+                # "count": the picked item, then the rest of the count from
+                # the pack in order. An outcome's item cost (no picker) takes
+                # them all from the pack.
+                from npc_encounters import cost_items
+                _extra = int(cost.get('count', 1) or 1) - (1 if selected_item else 0)
+                for _n in range(max(0, _extra)):
+                    # One unit at a time (a stack gives one of its count).
+                    _pool = cost_items(self.player, ctype)
+                    _it = next((i for i in _pool if i is not selected_item), None)                         or next(iter(_pool), None)
+                    if _it is None:
+                        break
+                    self.player.remove_from_inventory(_it)
                 if selected_item:
                     if getattr(selected_item, 'id', '') == '_heal_spell_choice':
                         # Spell: spend MP instead of removing an item
@@ -1520,6 +1560,33 @@ class EncountersMixin:
                     self.add_message(f"Your {self._bare_name(w)} glows!", 'success')
             else:
                 self.add_message("You have no weapon equipped to enchant.", 'warning')
+
+        elif rtype == 'armor_enchant':
+            # Armour made whole and better (Saint Martin's dream): the worn
+            # cloak, else body armour, else the first piece, up to its cap.
+            from items import ARMOR_SLOTS, ENCHANT_CAP
+            from npc_encounters import armor_enchant_target
+            target = armor_enchant_target(self.player)
+            if target is None:
+                self.add_message("You wear no armour for it to mend.", 'info')
+            else:
+                slot = next((ARMOR_SLOTS[i] for i, s in enumerate(self.player.armor_slots)
+                             if s is target), 'body')
+                old = int(getattr(target, 'enchant_bonus', 0) or 0)
+                target.enchant_bonus = max(old, min(ENCHANT_CAP.get(slot, 1),
+                                                    old + int(reward.get('amount', 1))))
+                if self._enchant_shown(target) and target.enchant_bonus != old:
+                    self.add_message(f"Your {self._bare_name(target)} is now "
+                                     f"{target.enchant_bonus:+d}!", 'success')
+                else:
+                    self.add_message(f"Your {self._bare_name(target)} glows!", 'success')
+
+        elif rtype == 'random_artifact':
+            # A relic from the run's unclaimed pool, set at the hero's feet
+            # (the prayer gift's picker: no unique twice, no quest piece).
+            name = self._spawn_intercession_artifact(self.player.x, self.player.y)
+            if name:
+                self.add_message(f"Received: {name} (at your feet).", 'loot')
 
         elif rtype == 'message':
             pass  # No mechanical reward, just the outcome text

@@ -7212,5 +7212,76 @@
     "weapon_class_chain": "normal",
     "id_level": 0,
     "chain_exponent": 1.15
+  },
+  "rans_net": {
+    "name": "Ran's Net",
+    "class": "net",
+    "variant": "1h",
+    "tier": 4,
+    "material": "legendary",
+    "mathTier": 4,
+    "baseDamage": 130,
+    "chainMultipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "maxChainLength": 5,
+    "damageTypes": [
+      "blunt",
+      "cold"
+    ],
+    "symbol": ")",
+    "color": [
+      170,
+      180,
+      185
+    ],
+    "weight": 1.0,
+    "twoHanded": false,
+    "reach": 5,
+    "stunChance": 0.8,
+    "bleedChance": 0.0,
+    "knockback": false,
+    "ignoreShield": true,
+    "floorSpawnWeight": {
+      "1-20": 0,
+      "21-40": 0,
+      "41-60": 0,
+      "61-80": 0,
+      "81-100": 0
+    },
+    "containerLootTier": "legendary",
+    "value": 6000,
+    "min_level": 50,
+    "unidentified_name": "a net of cold grey silk",
+    "lore": "Ran, the sea-goddess, drags drowning sailors down in a net of grey silk. Loki borrowed it once to haul the dwarf Andvari out of his pool, where he lived as a pike, and took all his gold and his last little ring. The net was left lying on the rock by the pool. It is lighter than it looks and colder than water, and whatever it closes on does not swim away.",
+    "quiz_tier": 4,
+    "damage_types": [
+      "blunt",
+      "cold"
+    ],
+    "template_basis": "net",
+    "spread": 8,
+    "peak_floor": 57,
+    "chain_multipliers": [
+      0.75,
+      0.9,
+      1.0,
+      1.3,
+      1.75
+    ],
+    "peak_weight": 0.0,
+    "base_damage": 130,
+    "max_chain_length": 5,
+    "is_unique": true,
+    "max_enchant": 4,
+    "weapon_class_chain": "heavy",
+    "design_notes": "Trickster/nimble archetype, the sea's version of Hephaestus's net: little harm, and nothing gets out. Only source: Andvari's Pool (flv_andvaris_pool).",
+    "identified": false,
+    "id_level": 0,
+    "chain_exponent": 1.15
   }
 }

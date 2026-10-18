@@ -9,7 +9,7 @@
     {"encounter": "flv_the_gate", "floors": [94, 98]}
   ],
   "reward_value": {
-    "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts.",
+    "_doc": "P7 scoring table: a 'forgo' option needs a visible sibling whose material reward scores strictly higher. value = flat + sum(coef * field) for each field listed; 'count' defaults to 1; gold with min/max uses their mean. 'multi' is the sum of its parts. 'deeds' prices the engine flags an outcome records that pay off later (a breath back from Death), so a pass that wins one counts as a reward.",
     "gold":             {"amount": 0.1},
     "gold_pct":         {"amount": 1},
     "gold_pct_loss":    {"amount": -1},
@@ -32,8 +32,10 @@
     "sp_restore_pct":   {"amount": 0.1},
     "mp_restore_pct":   {"amount": 0.1},
     "enchant_weapon":   {"amount": 8},
+    "armor_enchant":    {"amount": 8},
+    "random_artifact":  {"flat": 12},
     "accept_item":      {"flat": 0},
-    "flag":             {"flat": 10},
+    "deeds":            {"flag.deaths_lost_turn": 10},
     "message":          {"flat": 0}
   },
   "constancy": [
