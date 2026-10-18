@@ -149,6 +149,46 @@ def _is_named_def(defn: dict) -> bool:
                 or float(defn.get('peak_weight', 1) or 0) <= 0)
 
 
+def _polymorph_swap(game, target, new_m) -> str:
+    """Put the new body `new_m` in `target`'s place and return the message.
+
+    The one rule for both polymorph paths (the wand and the spell; bug bash 5
+    MON-02): the new shape saw the magic, so it is aware (it never hides or
+    poses as a chest or a stair), and a thief keeps its haul, so the hero can
+    still win it back."""
+    from unseen import unseen as _hidden
+    old = the_name(target)
+    new_m._aware = True
+    new_m.stolen_gold = int(getattr(target, 'stolen_gold', 0) or 0)
+    new_m.stolen_items = list(target.__dict__.get('stolen_items') or ())
+    target.stolen_gold = 0
+    target.__dict__['stolen_items'] = []
+    idx = game.monsters.index(target)
+    game.monsters[idx] = new_m
+    if _hidden(new_m, game.player):
+        new_m._unseen = True
+        return f"{old} warps and vanishes from sight!"
+    return f"{old} warps into {game._a_or_an(new_m.name)}!"
+
+
+def _hero_sees(game, m) -> bool:
+    """Can the hero see `m`? (Game._sees_monster; a bare test stand-in that
+    lacks it counts every creature in sight.)"""
+    sees = getattr(game, '_sees_monster', None)
+    if sees is None:
+        return bool(getattr(m, 'alive', False)) and (m.x, m.y) in (getattr(game, 'visible', None) or ())
+    return sees(m)
+
+
+def _spring_at(game, m) -> bool:
+    """A wand or a spell reaches `m`: a lurker springs (Game._spring_lurker)."""
+    spring = getattr(game, '_spring_lurker', None)
+    if spring is not None:
+        return spring(m)
+    fn = getattr(m, 'spring', None)
+    return bool(fn and fn())
+
+
 def _is_big_foe(m) -> bool:
     """Bosses, mini-bosses, seal demons, and anything with more than twice
     the HP an ordinary monster of its floor has, shrug off instant-kill and
@@ -616,7 +656,8 @@ class MagicMixin:
             if target is None:
                 self.add_message("The wand hums but finds no target to probe.", 'info')
             else:
-                hp_line = f"{target.name}: {target.hp}/{target.max_hp} HP"
+                _spring_at(self, target)
+                hp_line = f"{the_name(target)}: {target.hp}/{target.max_hp} HP"
                 resist_bits = []
                 for attr in ('fire_resist', 'cold_resist', 'lightning_resist',
                              'acid_resist', 'poison_resist', 'magic_resist'):
@@ -670,6 +711,8 @@ class MagicMixin:
             if target is None:
                 self.add_message("The wand hums but finds no target.", 'info')
                 return
+            # A wand hand-aimed at a lurker springs it (bug bash 5 MON-05).
+            _spring_at(self, target)
 
             if effect == 'sleep_monster':
                 dur = self._wand_effect_duration(wand, 8)
@@ -767,6 +810,7 @@ class MagicMixin:
                 line_set = set(line)
                 line_hits = [m for m in self.monsters
                              if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
+                seen_hits = [m for m in line_hits if _hero_sees(self, m)]
                 for lm in line_hits:
                     actual = lm.take_damage(dmg, 'lightning')
                     if actual > 0:
@@ -775,12 +819,14 @@ class MagicMixin:
                             lm.add_effect('stunned', sd)
                     if not lm.alive:
                         self._on_monster_killed(lm)
-                if len(line_hits) > 1:
+                if len(seen_hits) > 1:
                     self.add_message(
-                        f"Lightning arcs through {len(line_hits)} creatures for {dmg} damage each!", 'success')
+                        f"Lightning arcs through {len(seen_hits)} creatures for {dmg} damage each!", 'success')
+                elif seen_hits:
+                    self.add_message(
+                        f"Lightning strikes {the_name(seen_hits[0], lower=True)} for {dmg} damage!", 'success')
                 elif line_hits:
-                    self.add_message(
-                        f"Lightning strikes the {line_hits[0].name} for {dmg} damage!", 'success')
+                    self.add_message("The lightning crackles into something you cannot see!", 'success')
                 else:
                     self.add_message("The lightning dissipates harmlessly.", 'info')
 
@@ -864,20 +910,10 @@ class MagicMixin:
                                     and k != target.kind and v.get('frequency', 1) > 0
                                     and not _is_named_def(v)]
                         if eligible:
-                            old_name = target.name
                             kind = _rng.choice(eligible)
                             defn = {**all_defs[kind], 'id': kind}
                             new_m = Monster(defn, target.x, target.y)
-                            # It saw the wand: no new shape hides or poses
-                            # as a chest or a stair; and a thief keeps its haul.
-                            new_m._aware = True
-                            new_m.stolen_gold = int(getattr(target, 'stolen_gold', 0) or 0)
-                            new_m.stolen_items = list(target.__dict__.get('stolen_items') or ())
-                            idx = self.monsters.index(target)
-                            self.monsters[idx] = new_m
-                            self.add_message(
-                                f"The {old_name} warps into {self._a_or_an(new_m.name)}!", 'success'
-                            )
+                            self.add_message(_polymorph_swap(self, target, new_m), 'success')
                         else:
                             self.add_message("The polymorph wand finds no suitable form.", 'info')
                     except Exception:
@@ -894,16 +930,19 @@ class MagicMixin:
                     for m in self.monsters:
                         if not m.alive or (m.x, m.y) not in self.visible:
                             continue
-                        if _is_big_foe(m):
+                        if _is_big_foe(m) or getattr(m, 'fearless', False):
                             continue
                         m.add_effect('feared', dur)
                         m.ai_pattern = 'cowardly'
-                        hit += 1
+                        hit += 1 if _hero_sees(self, m) else 0
                     self.add_message(
                         f"A wave of panic sweeps the floor! ({hit} creature{'s' if hit != 1 else ''} flee for {dur} turns)",
                         'success')
                 elif is_boss:
                     self.add_message(f"{the_name(target)} resists the fear!", 'warning')
+                elif getattr(target, 'fearless', False):
+                    # The galla: nothing frightens them (MON-06).
+                    self.add_message(f"{the_name(target)} knows no fear!", 'warning')
                 else:
                     target.add_effect('feared', dur)
                     target.ai_pattern = 'cowardly'
@@ -952,6 +991,10 @@ class MagicMixin:
                     target.add_effect('slowed', sdur)
                     self.add_message(f"Dark energy envelops {the_name(target, lower=True)}! Cursed ({dur}t) and slowed ({sdur}t).", 'success')
 
+            elif effect == 'teleport_monster' and getattr(target, 'stationary', False):
+                # The Black Knight never leaves his bridge (MON-09).
+                self.add_message(f"{the_name(target)} stands his ground; the magic slides off him.",
+                                 'warning')
             elif effect == 'teleport_monster':
                 open_tiles = [(x, y)
                               for y in range(len(self.dungeon.tiles))
@@ -1119,6 +1162,7 @@ class MagicMixin:
 
         elif effect == 'earthquake':
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             total_dmg = 0
             for m in visible_monsters:
                 dmg = self._wand_tier_damage(_rng.randint(5, 20), wand.quiz_tier)
@@ -1126,38 +1170,42 @@ class MagicMixin:
                 total_dmg += actual
                 if not m.alive:
                     self._on_monster_killed(m)
-            self.add_message(f"The earth shakes! {len(visible_monsters)} creatures are battered. ({total_dmg} total dmg)", 'success')
+            self.add_message(f"The earth shakes! {n_seen} creatures are battered. ({total_dmg} total dmg)", 'success')
 
         elif effect == 'explosion':
             from dice import roll
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             for m in visible_monsters:
                 dmg = self._wand_tier_damage(roll(wand.power) if wand.power else _rng.randint(8, 24), wand.quiz_tier)
                 actual = m.take_damage(dmg)
                 if not m.alive:
                     self._on_monster_killed(m)
-            self.add_message(f"A massive explosion engulfs the area! ({len(visible_monsters)} creatures hit)", 'success')
+            self.add_message(f"A massive explosion engulfs the area! ({n_seen} creatures hit)", 'success')
 
         elif effect == 'mass_confuse':
             dur = self._wand_tier_duration(12, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             for m in visible_monsters:
                 m.add_effect('confused', dur)
-            self.add_message(f"A wave of confusion washes over {len(visible_monsters)} creatures! ({dur} turns)", 'success')
+            self.add_message(f"A wave of confusion washes over {n_seen} creatures! ({dur} turns)", 'success')
 
         elif effect == 'mass_sleep':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             for m in visible_monsters:
                 m.add_effect('sleeping', dur)
-            self.add_message(f"All visible creatures slump into slumber! ({len(visible_monsters)} affected, {dur} turns)", 'success')
+            self.add_message(f"All visible creatures slump into slumber! ({n_seen} affected, {dur} turns)", 'success')
 
         elif effect == 'mass_slow':
             dur = self._wand_tier_duration(10, wand.quiz_tier)
             visible_monsters = [m for m in self.monsters if m.alive and (m.x, m.y) in self.visible]
+            n_seen = sum(1 for m in visible_monsters if _hero_sees(self, m))
             for m in visible_monsters:
                 m.add_effect('slowed', dur)
-            self.add_message(f"{len(visible_monsters)} creatures are slowed! ({dur} turns)", 'success')
+            self.add_message(f"{n_seen} creatures are slowed! ({dur} turns)", 'success')
 
         elif effect == 'time_stop':
             dur = self._wand_tier_duration(5, wand.quiz_tier)
@@ -1319,7 +1367,7 @@ class MagicMixin:
                     self.add_message("You vanish from sight!", 'success'))),
                 ('lightning', lambda: (
                     (lambda t: (t.take_damage(self._wand_tier_damage(_rng.randint(10, 25), wand.quiz_tier), 'lightning'),
-                     self.add_message(f"Lightning zaps the {t.name}!", 'success'),
+                     self.add_message(f"Lightning zaps {the_name(t, lower=True)}!", 'success'),
                      None if t.alive else self._on_monster_killed(t))
                     )(self._nearest_visible_monster()) if self._nearest_visible_monster() else
                     self.add_message("Lightning crackles harmlessly.", 'info'))),
@@ -1504,10 +1552,10 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if m.alive and (m.x, m.y) in self.visible:
+                    hit += 1 if _hero_sees(self, m) else 0
                     m.take_damage(scaled, 'cold')
                     if not m.alive:
                         self._on_monster_killed(m)
-                    hit += 1
             self.add_message(
                 f"Ice Storm! {hit} monsters take {scaled} cold dmg", 'success')
             return
@@ -1519,10 +1567,10 @@ class MagicMixin:
             hit = 0
             for m in list(self.monsters):
                 if m.alive and (m.x, m.y) in self.visible:
+                    hit += 1 if _hero_sees(self, m) else 0
                     actual = m.take_damage(scaled, 'fire')
                     if not m.alive:
                         self._on_monster_killed(m)
-                    hit += 1
             self.add_message(
                 f"Fireball! {hit} monsters take {scaled} fire dmg", 'success')
             return
@@ -1557,7 +1605,12 @@ class MagicMixin:
             # Target nearest visible monster, or self-teleport if none
             # Bosses CAN be teleported — they stay aggro'd and come back
             target_m = self._nearest_visible_monster()
-            if target_m:
+            if target_m and getattr(target_m, 'stationary', False):
+                # The Black Knight never leaves his bridge (MON-09).
+                self.add_message(f"{the_name(target_m)} stands his ground; the magic slides off him.",
+                                 'warning')
+            elif target_m:
+                _spring_at(self, target_m)
                 _bodies = self._occupants()
                 floors = [(x, y) for y in range(self.dungeon.height)
                           for x in range(self.dungeon.width)
@@ -1703,13 +1756,13 @@ class MagicMixin:
                 if not m.alive: continue
                 if (m.x, m.y) not in self.visible: continue
                 if max(abs(m.x - px), abs(m.y - py)) > 5: continue
+                hit += 1 if _hero_sees(self, m) else 0
                 m.take_damage(scaled, 'cold')
                 # Apply frozen briefly
                 dur = max(2, int(4 * chain_scale))
                 m.add_effect('frozen', dur)
                 if not m.alive:
                     self._on_monster_killed(m)
-                hit += 1
             self.add_message(
                 f"A cone of cold blasts outward! {hit} creatures take {scaled} cold dmg + frozen!", 'success')
             return
@@ -1762,13 +1815,13 @@ class MagicMixin:
             for m in list(self.monsters):
                 if not m.alive: continue
                 if (m.x, m.y) not in self.visible: continue
+                hit += 1 if _hero_sees(self, m) else 0
                 m.take_damage(scaled, 'lightning')
                 # Stun chance from the thunder
                 if random.random() < 0.40:
                     m.add_effect('stunned', max(2, int(4 * chain_scale)))
                 if not m.alive:
                     self._on_monster_killed(m)
-                hit += 1
             self.add_message(
                 f"Storm of Vengeance breaks overhead! {hit} creatures take {scaled} lightning + stun!", 'success')
             return
@@ -1908,9 +1961,9 @@ class MagicMixin:
                 if resisted:
                     continue
                 m.add_effect(status_name, applied_dur)
-                affected += 1
+                affected += 1 if _hero_sees(self, m) else 0
             self.add_message(
-                f"{spell['name']}! {affected}/{len(visible_monsters)} creatures "
+                f"{spell['name']}! {affected}/{sum(1 for m in visible_monsters if _hero_sees(self, m))} creatures "
                 f"{status_name} for {dur} turns!", 'success')
             return
 
@@ -1937,9 +1990,9 @@ class MagicMixin:
                 if resisted:
                     continue
                 m.add_effect(status_name, applied_dur)
-                affected += 1
+                affected += 1 if _hero_sees(self, m) else 0
             self.add_message(
-                f"{spell['name']}! {affected}/{len(visible_monsters)} creatures "
+                f"{spell['name']}! {affected}/{sum(1 for m in visible_monsters if _hero_sees(self, m))} creatures "
                 f"{status_name} for {base_dur} turns!", 'success')
             return
 
@@ -2085,6 +2138,9 @@ class MagicMixin:
         # Targeted spells -- handle directly so we use the pre-found target
         if target is not None:
             from dice import roll as _roll
+            # A spell cast at a lurker hand-aimed through its disguise
+            # springs it (bug bash 5 MON-05).
+            _spring_at(self, target)
             if effect == 'magic_missile':
                 # v2.12.0: missile COUNT is tier-graded (T1 1 / T2 3 / T3 5 /
                 # T4 7 / T5 not used -- annihilation replaces it). Each
@@ -2130,6 +2186,7 @@ class MagicMixin:
                 line_set = set(line)
                 line_hits = [m for m in self.monsters
                              if m.alive and (m.x, m.y) in line_set and (m.x, m.y) in self.visible]
+                seen_hits = [m for m in line_hits if _hero_sees(self, m)]
                 stun_dur = max(1, int(3 * chain_scale))
                 for lm in line_hits:
                     actual = lm.take_damage(scaled, 'lightning')
@@ -2139,12 +2196,14 @@ class MagicMixin:
                             lm.add_effect('stunned', sd)
                     if not lm.alive:
                         self._on_monster_killed(lm)
-                if len(line_hits) > 1:
+                if len(seen_hits) > 1:
                     self.add_message(
-                        f"Lightning arcs through {len(line_hits)} creatures for {scaled} damage!", 'success')
+                        f"Lightning arcs through {len(seen_hits)} creatures for {scaled} damage!", 'success')
+                elif seen_hits:
+                    self.add_message(
+                        f"Lightning strikes {the_name(seen_hits[0], lower=True)} for {scaled} damage!", 'success')
                 elif line_hits:
-                    self.add_message(
-                        f"Lightning strikes the {line_hits[0].name} for {scaled} damage!", 'success')
+                    self.add_message("The lightning crackles into something you cannot see!", 'success')
                 else:
                     self.add_message("The lightning dissipates harmlessly.", 'info')
             elif effect == 'sleep_monster':
@@ -2241,6 +2300,8 @@ class MagicMixin:
                 is_boss = _is_big_foe(target)
                 if is_boss:
                     self.add_message(f"{the_name(target)} is too powerful to frighten!", 'warning')
+                elif getattr(target, 'fearless', False):
+                    self.add_message(f"{the_name(target)} knows no fear!", 'warning')
                 else:
                     dur = max(3, int(10 * chain_scale))
                     target.add_effect('feared', dur)
@@ -2268,14 +2329,10 @@ class MagicMixin:
                             eligible = [k for k, v in _all_defs.items()
                                         if k != target.kind and v.get('frequency', 1) > 0
                                         and not _is_named_def(v)]
-                        old_name = target.name
                         kind = random.choice(eligible)
                         defn = {**_all_defs[kind], 'id': kind}
                         new_m = _PMon(defn, target.x, target.y)
-                        idx = self.monsters.index(target)
-                        self.monsters[idx] = new_m
-                        self.add_message(
-                            f"The {old_name} warps into {self._a_or_an(new_m.name)}!", 'success')
+                        self.add_message(_polymorph_swap(self, target, new_m), 'success')
                     except Exception:
                         self.add_message("The polymorph spell fizzles!", 'warning')
             elif effect == 'disintegrate_spell':
@@ -2351,7 +2408,12 @@ class MagicMixin:
                 if (tags & BANISHABLE) and not is_boss:
                     target.alive = False
                     target.hp = 0
-                    # No treasure / on_killed callback — banished, not slain
+                    # No treasure / on_killed callback — banished, not slain.
+                    # But a banished thief drops the hero's things here and
+                    # now: it does not take them to its home plane (CODE-03).
+                    import theft as _theft
+                    for _tmsg in _theft.give_back(self, target):
+                        self.add_message(_tmsg, 'success')
                     self.add_message(
                         f"{the_name(target)} is banished back to its home plane!", 'success')
                 elif is_boss:

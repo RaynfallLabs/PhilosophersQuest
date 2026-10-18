@@ -17,9 +17,11 @@
   game's one kill handler calls `give_back`), so the hero can always win
   it back by running it down.
 
-Never stolen: anything worn or wielded, containers, and scripted quest and
-story pieces (items.scripted_only_ids: the Philosopher's Stone, seals, the
-Thread and the like). A thief would otherwise be able to end a run.
+Never stolen: anything worn or wielded, containers, mystery keys,
+scripted quest and story pieces (items.scripted_only_ids: the Philosopher's
+Stone, seals, the Thread and the like), and whatever no NPC may take either
+(items.withheld: the Philosopher's Shard, named uniques, one-of-a-kind
+things). A thief would otherwise be able to end a run.
 """
 from __future__ import annotations
 
@@ -46,14 +48,19 @@ def has_loot(monster) -> bool:
 
 def stealable(player) -> list:
     """Pack items a thief can take."""
-    from items import Container, scripted_only_ids
+    from items import Container, scripted_only_ids, withheld
+    from mystery_system import MysteryKeyItem
     worn = {id(i) for i in player.worn_items()}
     locked = scripted_only_ids()
     out = []
     for it in getattr(player, 'inventory', None) or ():
-        if id(it) in worn or isinstance(it, Container):
+        if id(it) in worn or isinstance(it, (Container, MysteryKeyItem)):
             continue
         if getattr(it, 'id', '') in locked or getattr(it, 'bound_to_wielder', False):
+            continue
+        # Quest pieces, named uniques and one-of-a-kind things: the same rule
+        # that keeps an NPC from taking them as payment (MON-01).
+        if withheld(it):
             continue
         out.append(it)
     return out
@@ -65,7 +72,7 @@ def _pick_item(rng, items):
     return rng.choices(items, weights=weights, k=1)[0]
 
 
-def _teleport_away(game, m) -> bool:
+def _teleport_away(game, m, rng=random) -> bool:
     """Set the thief down on a far, walkable, free tile the hero can reach."""
     from geom import all_occupied_tiles
     d = game.dungeon
@@ -86,7 +93,7 @@ def _teleport_away(game, m) -> bool:
              and max(abs(x - p.x), abs(y - p.y)) >= TELEPORT_MIN_DISTANCE]
     if not spots:
         return False
-    m.x, m.y = random.choice(spots)
+    m.x, m.y = rng.choice(spots)
     m._aware = True
     return True
 
@@ -126,7 +133,7 @@ def steal(game, m, kind: str, rng=random) -> str:
         msg = f"{who} snatches your {name} and runs!"
     m._aware = True
     m._flee_timer = 0
-    if getattr(m, 'after_theft', 'flee') == 'teleport' and _teleport_away(game, m):
+    if getattr(m, 'after_theft', 'flee') == 'teleport' and _teleport_away(game, m, rng):
         msg += f" In a blink {the_name(m, lower=True)} is gone, somewhere else on this floor."
     return msg
 
@@ -139,9 +146,14 @@ def give_back(game, m) -> list[str]:
     items = list(m.__dict__.get('stolen_items') or ())
     if not gold and not items:
         return msgs
-    from items import add_gold_to_tile
+    from items import GoldPile
     if gold:
-        add_gold_to_tile(game.ground_items, gold, m.x, m.y)
+        # The hero's own coins, in their own pile and marked as his: a gold
+        # ring (Draupnir) multiplies FOUND gold only, or being robbed and
+        # winning it back turned a profit (bug bash 5 INT-06, economy S2).
+        pile = GoldPile(gold, m.x, m.y)
+        pile._dropped_by_player = True
+        game.ground_items.append(pile)
         m.stolen_gold = 0
         msgs.append(f"Your stolen {gold:,} gold spills out where it fell.")
     for it in items:

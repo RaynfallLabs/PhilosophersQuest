@@ -156,27 +156,17 @@ def get_trigger_item_levels(placements: dict) -> dict:
 
 # ── Cost / reward checking ───────────────────────────────────────────
 
-# Quest and story pieces an NPC never takes as payment: the secret ending's
-# scroll, Death's Bane, the carrot, the Duck, the Wrench, the tablet, and the
-# items karma NPCs ask to have returned.
-_WITHHELD_IDS = frozenset({
-    'scroll_lake_of_fire', 'scroll_deaths_bane', 'magic_dungeon_carrot',
-    'duck_of_doom', 'philosophers_wrench', 'philosophers_stone',
-    'philosophers_shard', 'tablet_of_second_death',
-    'complete_tablet_of_second_death', 'silverlight_pendant',
-    'oathkeeper_sword', 'lionheart_shield',
-})
+# Quest and story pieces an NPC never takes as payment: the rule lives in
+# items.withheld, shared with the thieves (theft.stealable).
+from items import WITHHELD_IDS as _WITHHELD_IDS  # noqa: E402,F401  (kept for old callers)
 
 
 def offerable(item) -> bool:
     """May an NPC take ``item`` as an item cost? Never a quest or story
     piece, a named unique, or a one-of-a-kind item (bug bash 4 E1: the
     Spectral Librarian silently took the Scroll of the Lake of Fire)."""
-    if getattr(item, 'id', '') in _WITHHELD_IDS:
-        return False
-    return not (getattr(item, 'plot_locked', False)
-                or getattr(item, 'is_unique', False)
-                or getattr(item, 'single_copy', False))
+    from items import withheld
+    return not withheld(item)
 
 
 def known_healer(player, item) -> bool:

@@ -815,6 +815,11 @@ class Pet:
             # NPCs and the Heavenly Host all live in the monster list.
             if getattr(m, 'is_allied', False):
                 continue
+            # Nor what nobody knows is there: an ambusher that has not sprung
+            # or a mimic in its disguise. A pet hits it once it has sprung
+            # (bug bash 5 PET-04).
+            if not getattr(m, '_aware', False) and getattr(m, 'ai_pattern', '') in ('ambush', 'mimic'):
+                continue
             # to the nearest tile it covers: a pet south or east of a
             # two-by-two monster measured to its far corner and never attacked
             from geom import chebyshev_distance

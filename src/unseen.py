@@ -10,8 +10,9 @@ stand on one of those tiles and still not be seen:
   which is drawn as the thing it imitates (its `disguise` in monsters.json);
 * an INVISIBLE creature (`invisible: true` in monsters.json), which nobody
   sees unless he has a way to see the unseen: see invisible (cooked meals,
-  the beholder's and cyclops's prime cuts), true sight, telepathy, or the
-  clairvoyance the Detect Monsters spell lends.
+  the beholder's and cyclops's prime cuts), true sight, telepathy, or
+  clairvoyance (the Detect Monsters spell, and the ring and amulet of
+  clairvoyance, which say so in their text: Brandon's ruling on MON-07).
 
 An invisible creature that is not seen still moves and fights as usual. Its
 blows are reported as "Something unseen ..." (`Monster._unseen`, kept by

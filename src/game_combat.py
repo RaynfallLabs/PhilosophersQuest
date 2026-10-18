@@ -421,9 +421,10 @@ class CombatMixin:
         break_chance = self._get_weapon_break_chance(weapon)
 
         if monster:
+            _who = the_name(monster, lower=True)      # before the blow springs a lurker
             actual = monster.take_damage(dmg)
             self.add_message(
-                f"You hurl the {display} at {monster.name}! ({actual} damage)", 'success'
+                f"You hurl the {display} at {_who}! ({actual} damage)", 'success'
             )
             if monster.is_dead():
                 self._on_monster_killed(monster)
@@ -649,7 +650,7 @@ class CombatMixin:
             for resist, blocked in _RESIST_BLOCKS.items():
                 if debuff in blocked and monster.has_effect(resist):
                     self.add_message(
-                        f"The {display} splashes {monster.name}, but it resists!", 'warning'
+                        f"The {display} splashes {the_name(monster, lower=True)}, but it resists!", 'warning'
                     )
                     return
             # Check monster resistances list for thematic immunity
@@ -657,13 +658,13 @@ class CombatMixin:
             if ('poison' in mon_resists and debuff in ('poisoned', 'diseased')) or \
                ('magic' in mon_resists and debuff in ('confused', 'hallucinating', 'feared')):
                 self.add_message(
-                    f"The {display} splashes {monster.name}, but it seems immune!", 'warning'
+                    f"The {display} splashes {the_name(monster, lower=True)}, but it seems immune!", 'warning'
                 )
                 return
             monster.add_effect(debuff, duration)
             label = debuff.replace('_', ' ').title()
             self.add_message(
-                f"The {display} splashes {monster.name}! It is {label}!", 'success'
+                f"The {display} splashes {the_name(monster, lower=True)}! It is {label}!", 'success'
             )
             return
 
@@ -673,14 +674,14 @@ class CombatMixin:
             # Nothing a monster does reads haste, invisibility, regenerating
             # or the resist statuses: "It looks Hasted!" was untrue.
             self.add_message(
-                f"The {display} splashes {monster.name} but has no effect.", 'info'
+                f"The {display} splashes {the_name(monster, lower=True)} but has no effect.", 'info'
             )
             return
         if buff:
             monster.add_effect(buff, duration)
             label = buff.replace('_', ' ').title()
             self.add_message(
-                f"The {display} splashes {monster.name}. It looks {label}!", 'danger'
+                f"The {display} splashes {the_name(monster, lower=True)}. It looks {label}!", 'danger'
             )
             return
 
@@ -699,11 +700,11 @@ class CombatMixin:
                 monster.hp = min(monster.max_hp, monster.hp + amt)
             if healed > 0:
                 self.add_message(
-                    f"The {display} splashes {monster.name}. It heals {healed} HP!", 'danger'
+                    f"The {display} splashes {the_name(monster, lower=True)}. It heals {healed} HP!", 'danger'
                 )
             else:
                 self.add_message(
-                    f"The {display} splashes {monster.name}. It looks unaffected.", 'info'
+                    f"The {display} splashes {the_name(monster, lower=True)}. It looks unaffected.", 'info'
                 )
             return
 
@@ -723,11 +724,11 @@ class CombatMixin:
                 nx, ny = _rng.choice(walkable)
                 monster.x, monster.y = nx, ny
                 self.add_message(
-                    f"The {display} splashes {monster.name} -- it vanishes!", 'success'
+                    f"The {display} splashes {the_name(monster, lower=True)} -- it vanishes!", 'success'
                 )
             else:
                 self.add_message(
-                    f"The {display} splashes {monster.name} but nothing happens.", 'info'
+                    f"The {display} splashes {the_name(monster, lower=True)} but nothing happens.", 'info'
                 )
             return
 
@@ -736,18 +737,27 @@ class CombatMixin:
             dmg = max(1, monster.max_hp // 20)
             actual = monster.take_damage(dmg)
             self.add_message(
-                f"The {display} saps {monster.name}'s vitality! ({actual} damage)", 'success'
+                f"The {display} saps {the_name(monster, lower=True)}'s vitality! ({actual} damage)", 'success'
             )
             return
 
         # --- Everything else: no meaningful effect on monsters ---
         self.add_message(
-            f"The {display} splashes {monster.name} but has no effect.", 'info'
+            f"The {display} splashes {the_name(monster, lower=True)} but has no effect.", 'info'
         )
 
     # ------------------------------------------------------------------
     # Combat utilities
     # ------------------------------------------------------------------
+
+    @staticmethod
+    def _confused_name(m) -> str:
+        """'The confused giant rat', or the hidden name ('Something unseen')
+        for a creature the hero cannot see."""
+        name = the_name(m)
+        if name.startswith('The ') and name[4:] == m.name:
+            return f"The confused {m.name}"
+        return name
 
     def _nearest_visible_monster(self):
         """Return the closest alive monster the hero can see, or None (an
@@ -1211,8 +1221,14 @@ class CombatMixin:
         """The Green Girdle (Gawain's, from Lady Bertilak): the Green Knight's
         return blow, the one he strikes after his head is back on, cannot
         kill its wearer. Called when such a blow has just brought the hero
-        to 0: the hero is left at 1, and told why."""
+        to 0: the hero is left at 1, and told why.
+
+        It turns ONE blow, as the story says, then it is spent on this knight
+        (`_girdle_spent`, saved with him; bug bash 5 INT-04: it used to turn
+        every killing blow he struck, so he could never kill its wearer)."""
         if getattr(monster, 'kind', '') != 'green_knight' or not getattr(monster, '_has_revived', False):
+            return False
+        if monster.__dict__.get('_girdle_spent', False):
             return False
         p = self.player
         worn = list(getattr(p, 'armor_slots', None) or ()) + [getattr(p, 'belt_slot', None)]
@@ -1221,16 +1237,17 @@ class CombatMixin:
         if p.hp > 0:
             return False
         p.hp = 1
+        monster.__dict__['_girdle_spent'] = True
         self.add_message(
             'The axe stops a hair from your neck, and the Green Knight laughs. '
             '"You lacked a little loyalty," he says. "But only a little, and for love of your life."',
             'warning')
-        if not getattr(self, '_green_girdle_chronicled', False):
-            self._green_girdle_chronicled = True
-            self._chron(
-                'deed',
-                "The Green Knight's axe should have taken my head. The green girdle turned it. "
-                "He laughed and called it a little disloyalty. I think he was being kind.")
+        # once=: the Journal remembers it was written, across a reload.
+        self._chron(
+            'deed',
+            "The Green Knight's axe should have taken my head. The green girdle turned it. "
+            "He laughed and called it a little disloyalty. I think he was being kind.",
+            once='green_girdle')
         return True
 
     def _death_gives_back_a_breath(self, hp_before: int) -> bool:
@@ -1779,9 +1796,16 @@ class CombatMixin:
         if _hidden is not None and monster is None:
             _disg = unseen.disguise(_hidden)
             if _disg:
-                _where = '' if _disg.get('tile') else ' on the ground'
-                self.add_message(f"You see {self._a_or_an(_disg.get('name') or 'chest')}{_where}.",
-                                 'info')
+                if _disg.get('tile'):
+                    # Posing as part of the map: the same line the real
+                    # feature gets, or Look tells the two apart (MON-08).
+                    _feat = {'stairs_down': "Stairs leading down.",
+                             'stairs_up': "Stairs leading up."}.get(_disg['tile'])
+                    self.add_message(_feat or f"You see {self._a_or_an(_disg.get('name') or 'chest')}.",
+                                     'info')
+                else:
+                    self.add_message(f"You see {self._a_or_an(_disg.get('name') or 'chest')} on the ground.",
+                                     'info')
                 # The same sharp-eyed check a mimic chest gets (below).
                 if random.random() < min(0.85, 0.15 + self.player.PER * 0.04):
                     self.add_message("Something seems off... you could swear it just moved.",
@@ -2494,7 +2518,7 @@ class CombatMixin:
                                     and not _is_bystander(_m):
                                 _m.take_damage(ricochet_dmg)
                                 self.add_message(
-                                    f"The stone ricochets into the {_m.name}!", 'success')
+                                    f"The stone ricochets into {the_name(_m, lower=True)}!", 'success')
                                 if not _m.alive:
                                     self._on_monster_killed(_m, chain_score=chain)
                                 break
@@ -2653,7 +2677,7 @@ class CombatMixin:
                 m._confused_hit = None
                 if (m.x, m.y) in self.visible or (victim.x, victim.y) in self.visible:
                     self.add_message(
-                        f"The confused {m.name} attacks {the_name(victim, lower=True)} for {dmg} damage!", 'combat')
+                        f"{self._confused_name(m)} attacks {the_name(victim, lower=True)} for {dmg} damage!", 'combat')
                 if not victim.alive:
                     self._on_monster_killed(victim)
             # Abaddon locust swarm spawning
@@ -2669,7 +2693,7 @@ class CombatMixin:
             if heal_target is not None and (m.x, m.y) in self.visible:
                 amt = getattr(m, '_heal_amount', 0)
                 self.add_message(
-                    f"{the_name(m)} chants and heals the {heal_target.name} for {amt} HP!",
+                    f"{the_name(m)} chants and heals {the_name(heal_target, lower=True)} for {amt} HP!",
                     'info')
                 m._heal_target = None
                 m._heal_amount = 0
@@ -2846,7 +2870,7 @@ class CombatMixin:
                                 (_marked is None or not getattr(_marked, 'alive', True)):
                             self.player._et_tu_target = m
                             self.add_message(
-                                f"\"Et tu, {m.name}?\" — Caesar's lorica marks the first betrayer.",
+                                f"\"Et tu, {m.name if not getattr(m, '_unseen', False) else 'unseen thing'}?\" — Caesar's lorica marks the first betrayer.",
                                 'info')
                     except ImportError:
                         pass
@@ -2863,7 +2887,7 @@ class CombatMixin:
                         _cv._unhurt_turns = 0
                         if (m.x, m.y) in self.visible or (_cv.x, _cv.y) in self.visible:
                             self.add_message(
-                                f"{the_name(m)}'s attack tears through the {_cv.name} for {_coll_dmg} collateral damage!",
+                                f"{the_name(m)}'s attack tears through {the_name(_cv, lower=True)} for {_coll_dmg} collateral damage!",
                                 'combat')
                         if _cv.hp <= 0:
                             _cv.alive = False
@@ -3295,6 +3319,7 @@ class CombatMixin:
             if not free:
                 break
             m.x, m.y = min(free, key=lambda s: max(abs(s[0] - m.x), abs(s[1] - m.y)))
+            self._spring_lurker(m)       # dragged out of its disguise (PET-04)
 
     def _pet_hit(self, pet, m, mult: float, status=None, chance: float = 0.0,
                  duration: int = 0, *, damage_type=None, knockback: int = 0) -> int:
@@ -3464,14 +3489,17 @@ class CombatMixin:
                 if action == 'attack' and target.alive:
                     dmg = pet.get_attack_damage(quiz_acc)
                     pre_max = target.max_hp
+                    # Named as the hero sees it, before the bite springs a
+                    # lurker (bug bash 5 MON-04, PET-03, INT-05).
+                    _foe = the_name(target, lower=True)
                     actual = target.take_damage(dmg)
                     if getattr(pet, 'is_dad', False):
                         self.add_message(
-                            f"Dad punched {target.name} in the face for {actual} damage!",
+                            f"Dad punched {_foe} in the face for {actual} damage!",
                             'success')
                     else:
                         self.add_message(
-                            f"{pet.name} attacks {target.name}! ({actual} damage)", 'combat')
+                            f"{pet.name} attacks {_foe}! ({actual} damage)", 'combat')
                     if not target.alive:
                         for k_msg in pet.gain_xp_from_kill(pre_max, _monster_level(target)):
                             self.add_message(k_msg, 'success')
@@ -3543,6 +3571,11 @@ class CombatMixin:
                     continue
                 if max(abs(m.x - pet.x), abs(m.y - pet.y)) <= 1:
                     swiped.add(id(m))
+                    # A lurker that bites gives itself away (bug bash 5
+                    # PET-04: any blow, either way, springs it).
+                    if m.spring():
+                        self._say_springs()
+                    _killer = the_name(m, lower=True)
                     if escorts:
                         to_hit = int(getattr(m, 'thac0', 20)) - int(getattr(pet, 'ac', 0) or 0)
                         if random.randint(1, 20) < to_hit:
@@ -3572,6 +3605,6 @@ class CombatMixin:
                                 f"The Sketched {pet.monster_name} shatters into "
                                 f"fragments of ink and vanishes!", 'danger')
                         else:
-                            self.add_message(f"{pet.name} has been slain by {m.name}!", 'danger')
+                            self.add_message(f"{pet.name} has been slain by {_killer}!", 'danger')
                     break  # one pet swipe per monster per turn
         return slain

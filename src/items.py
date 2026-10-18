@@ -1419,6 +1419,31 @@ def scripted_only_ids() -> frozenset:
     return _scripted_only_cache
 
 
+# --- Never given away ------------------------------------------------------
+# Quest and story pieces nobody may take from the hero: not an NPC as
+# payment (npc_encounters.offerable) and not a thief (theft.stealable). The
+# secret ending's scroll, Death's Bane, the carrot, the Duck, the Wrench, the
+# tablet, the Philosopher's Shard, the starting Master Lockpick, and the
+# items karma NPCs ask to have returned.
+WITHHELD_IDS = frozenset({
+    'scroll_lake_of_fire', 'scroll_deaths_bane', 'magic_dungeon_carrot',
+    'duck_of_doom', 'philosophers_wrench', 'philosophers_stone',
+    'philosophers_shard', 'tablet_of_second_death',
+    'complete_tablet_of_second_death', 'silverlight_pendant',
+    'oathkeeper_sword', 'lionheart_shield', 'master_lockpick',
+})
+
+
+def withheld(item) -> bool:
+    """True for a quest or story piece, a named unique, or a one-of-a-kind
+    item: the hero keeps it whoever asks (bug bash 4 E1, bug bash 5 MON-01)."""
+    if getattr(item, 'id', '') in WITHHELD_IDS:
+        return True
+    return bool(getattr(item, 'plot_locked', False)
+                or getattr(item, 'is_unique', False)
+                or getattr(item, 'single_copy', False))
+
+
 # --- Named uniques: once per run -------------------------------------------
 # The ids of the named uniques this run has already handed out, by any random
 # path (floor, chest, merchant, reward). The set itself belongs to the run's

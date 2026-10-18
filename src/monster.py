@@ -86,6 +86,16 @@ def the_name(monster, lower: bool = False) -> str:
     # An invisible creature the hero cannot see (src/unseen.py) is never named.
     if getattr(monster, '_unseen', False) is True:
         return 'something unseen' if lower else 'Something unseen'
+    # Nor is one still lurking (bug bash 5 MON-04, PET-03): a mimic in its
+    # disguise is named as the thing it poses as ("the iron chest", "the
+    # staircase leading down"), an ambusher that has not sprung as "something".
+    if (not getattr(monster, '_aware', False)
+            and getattr(monster, 'ai_pattern', '') in ('ambush', 'mimic')):
+        from unseen import disguise
+        d = disguise(monster)
+        if d:
+            return f"{'the' if lower else 'The'} {d.get('name') or 'chest'}"
+        return 'something' if lower else 'Something'
     name = getattr(monster, 'name', '') or 'something'
     low = name.lower()
     if low.startswith('the '):
@@ -692,6 +702,38 @@ class Monster:
 
     # --- Combat ---
 
+    def spring(self) -> bool:
+        """A blow on an unaware lurker springs it (bug bash 5 MON-03, MON-05,
+        PET-04: Brandon chose "any blow springs it"). An ambusher that has not
+        sprung, or a mimic still in its disguise, struck by the hero, a pet,
+        a wand or a spell, or dragged by a pet's pull, gives itself away and
+        turns on whoever is near. Returns True when it was lurking.
+
+        The reveal line is left in `_spring_note`, written while the
+        disguise still holds; the game prints it (Game._say_springs)."""
+        if getattr(self, '_aware', False) or getattr(self, 'ai_pattern', '') not in ('ambush', 'mimic'):
+            return False
+        was = the_name(self)
+        disguised = was.lower() != 'something'
+        self._aware = True
+        self.ai_pattern = 'aggressive'
+        if getattr(self, '_unseen', False):
+            note = "Something unseen stirs!"
+        else:
+            name = self.name or 'something'
+            if (getattr(self, 'is_boss', False) or getattr(self, 'is_mini_boss', False)
+                    or getattr(self, 'proper_noun', False)
+                    or name.lower().startswith(('the ', 'a ', 'an '))):
+                what = name
+            else:
+                what = f"{'an' if name[:1].lower() in 'aeiou' else 'a'} {name}"
+            if disguised:
+                note = f"{was} springs to life -- it's {what}!"
+            else:
+                note = f"{what[:1].upper()}{what[1:]} springs from hiding!"
+        self.__dict__['_spring_note'] = note
+        return True
+
     def take_damage(self, amount: int, damage_type: str = 'physical',
                     ignore_resistance: bool = False) -> int:
         """Apply damage to this monster, consulting resistances/weaknesses for non-physical types.
@@ -716,6 +758,7 @@ class Monster:
         if amount > 0:
             self._unhurt_turns = 0           # see _recover_when_left
             self._struck = True              # a calmed locust remembers (Locust Charm)
+            self.spring()                    # a struck lurker gives itself away
         if damage_type and damage_type != 'physical':
             from combat import _damage_multiplier
             mult = _damage_multiplier([damage_type], self)
