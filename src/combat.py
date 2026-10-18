@@ -2059,7 +2059,8 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             player.status_effects['blade_flow'] = _cur_bf + 1
 
         # Ring of Gyges (gyges_invisible_attack_karma): attacking an NPC
-        # while invisible costs -2 karma. The just-man-when-unseen test.
+        # while invisible costs -1 karma (no single loss is bigger than one:
+        # Brandon, 2026-10-18). The just-man-when-unseen test.
         # Bug-bash fix aac: only fire on an actual hit (actual > 0) — a
         # whiffed swing doesn't reveal moral character.
         if actual > 0 and _is_innocent and getattr(player, 'has_effect', None) and player.has_effect('invisible'):
@@ -2068,7 +2069,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                     _g = getattr(player, '_combat_game_ref', None)
                     if _g is not None:
                         import karma as _karma
-                        _karma.adjust(_g, -2, kind='cruelty', source='ring_of_gyges')
+                        _karma.adjust(_g, -1, kind='cruelty', source='ring_of_gyges')
                         import deeds as _deeds
                         _deeds.note(_g, 'wrong.ring_of_gyges', source='ring_of_gyges',
                                     tags=['vice:cruelty'])

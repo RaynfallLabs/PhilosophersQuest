@@ -263,7 +263,7 @@ def test_attack_drives_it_off_for_the_run_and_costs_karma():
     _key(g, pygame.K_3)
     assert pup not in g.monsters and not pup.alive
     assert g._emberpup['outcome'] == 'fled'
-    assert g.karma == 1
+    assert g.karma == 2              # -1: no single loss is bigger than one (2026-10-18)
     assert 'never see it again' in g._emberpup_text
     _key(g, pygame.K_RETURN)
     assert g.state == STATE_PLAYER

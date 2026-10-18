@@ -34,9 +34,37 @@ STORY = [e for s, e in ALL if s == 'flavor']
 ENGINE_KEPT_OATHS = {'aldric_lodestone', 'thoth_return'}
 # Encounters the engine places itself rather than through a schedule.
 OWN_PLACEMENT = {'flv_setne_tomb', 'flv_the_gate'}
-# The only -2s in the draft (J2/J4): freeing Azarael, and giving the family to Death.
-MINUS_TWO = {('azarael_demon', 'Shatter the chains and take his bargain'),
-             ('flv_deaths_chessboard', 'Offer him the family if he lets you pass')}
+# Brandon, 2026-10-18: "Betrayal is different than handing a murderer over
+# for death. Make sure we differentiate. Max karma drop is -1."
+# (ENCOUNTER_STORIES_DRAFT.md Part J9.) Every hand-over, inform, sell or
+# false-witness option, classified. Betrayal: -1 of the kind named.
+BETRAYAL = {
+    ('grain_committee', 'Tell the commissar where the sack is'): 'betray',
+    ('flv_antigone', "Tell Creon's men where she is"): 'betray',
+    ('flv_deaths_chessboard', 'Offer him the family if he lets you pass'): 'cruelty',
+    ('trapped_seraph', "Take Vell's finder's fee"): 'cruelty',
+    ('fairy_jar', 'Sell her to Vell'): 'cruelty',
+    ('flv_sword_in_anvil', "Back Kay's claim"): 'betray',
+    ('flv_pardoner', 'Tell the pilgrims you saw a miracle'): 'cruelty',
+    # Not a hand-over to the law: urging a blood feud on a killer who has
+    # put himself under the law (the cairn later names his sons too).
+    ('flv_lawspeaker_rock', 'Tell Steinar to take his revenge'): 'cruelty',
+}
+# Justice: the guilty handed to lawful judgement, true witness, exposing a
+# cheat. Never negative; where the design rewards judgment it still does.
+JUSTICE = {
+    ('penitent', 'Weigh mercy and justice with them both'): 1,
+    ('penitent', '"He was your father. You decide."'): 0,
+    ('forgotten_prisoner', 'Leave him to his sentence'): 1,
+    ('fallen_paladin', '"Go back up and face the families of Thale."'): 0,
+    ('flv_paladin_end', 'Ask the pilgrim about the knight'): 0,
+    ('flv_sword_in_anvil', 'Tell Sir Ector what you saw'): 0,
+    ('flv_lawspeaker_rock', 'Speak the law: the price, the oath, the outlawry'): 1,
+    ('flv_samsons_riddle', 'Tell Samson his bride was threatened, and give up the wager'): 1,
+    ('flv_millers_thumb', 'Tell the widow about his thumb'): 1,
+    ('flv_pardoner', 'Show the pilgrims his pardons are forged'): 1,
+    ('flv_ostrander_pit', 'Leave him'): 0,
+}
 
 
 def _branches(o):
@@ -45,13 +73,18 @@ def _branches(o):
 
 def _karma(b):
     """The karma an outcome moves: its own field, plus the engine's +1 for a
-    kept oath and -1 for a broken one."""
+    kept oath and -1 for a broken one (once: an outcome that pays the break
+    itself as betray is not charged again, game_encounters._apply_outcome_deeds)."""
     k = int(b.get('karma', 0) or 0)
     if b.get('oath_keep'):
         k += 1
-    if b.get('oath_break'):
+    if b.get('oath_break') and not (k < 0 and b.get('karma_kind') == 'betray'):
         k -= 1
     return k
+
+
+def _opt(tag, label):
+    return next(o for o in BY_TAG[tag]['options'] if o['label'] == label)
 
 
 def _max_karma(o):
@@ -182,15 +215,71 @@ def test_stance_encounters_lean_the_right_way():
     assert n >= 5
 
 
-def test_minus_two_only_where_the_draft_puts_it():
-    found = set()
+def test_no_choice_costs_more_than_one():
+    # "Max karma drop is -1" (Brandon, 2026-10-18): the old -2s (freeing
+    # Azarael, giving the family to Death) are -1 now.
     for e in ENCS:
         for o in e['options']:
             for b in _branches(o):
-                if _karma(b) <= -2:
-                    found.add((e['tag'], o['label']))
-                assert _karma(b) >= -2 and _karma(b) <= 1, (e['tag'], o['label'])
-    assert found == MINUS_TWO
+                assert -1 <= _karma(b) <= 1, (e['tag'], o['label'], _karma(b))
+    assert _opt('azarael_demon', 'Shatter the chains and take his bargain')['karma'] == -1
+    chess = _opt('flv_deaths_chessboard', 'Offer him the family if he lets you pass')
+    assert (chess['karma'], chess['karma_kind']) == (-1, 'cruelty')
+
+
+def test_betrayal_costs_one():
+    for (tag, label), kind in BETRAYAL.items():
+        o = _opt(tag, label)
+        brs = _branches(o)
+        assert [(_karma(b), b.get('karma_kind')) for b in brs] == [(-1, kind)] * len(brs), \
+            (tag, label)
+
+
+def test_justice_is_never_negative():
+    for (tag, label), best in JUSTICE.items():
+        o = _opt(tag, label)
+        assert _min_karma(o) >= 0, (tag, label)
+        assert _max_karma(o) == best, (tag, label)
+    # Silas: the +1 is judgment, and only a hero who read the names sees it.
+    silas = _opt('forgotten_prisoner', 'Leave him to his sentence')
+    assert silas['karma_kind'] == 'judgment'
+    assert silas['requires'] == {'deeds_all': ['noticed.silas_poisoner']}
+    # Lucan: handed to his victim's son for the assize on the pass, never a loss.
+    lucan = _opt('penitent', 'Weigh mercy and justice with them both')
+    assert 'told.lucan_to_assize' in lucan['pass']['deeds']
+    assert lucan['pass']['karma_kind'] == 'judgment'
+
+
+def test_antigone_informing_is_betrayal_and_the_rest_stay_contested():
+    # She buried her brother against an edict: a person of conscience, not a
+    # criminal by any moral law. Telling Creon's men is the one indefensible
+    # option, so it is marked villain (P9 skips it) and costs -1 betray; the
+    # defensible options stay equal.
+    e = BY_TAG['flv_antigone']
+    assert e['contested']
+    inform = _opt('flv_antigone', "Tell Creon's men where she is")
+    assert inform['villain'] and inform['karma'] == -1 and inform['karma_kind'] == 'betray'
+    assert 'wrong.reported_antigone' in inform['deeds']
+    rest = [o for o in e['options'] if o is not inform]
+    assert len(rest) == 3
+    assert {(_max_karma(o), _min_karma(o)) for o in rest} == {(0, 0)}
+
+
+def test_no_hand_over_option_is_left_unclassified():
+    # A new option that hands over, informs on, sells or gives up a person
+    # must be classified above (betrayal -1, or justice >= 0) before it ships.
+    # ("Sell him a potion" sells TO him; "information" is not informing.)
+    pat = re.compile(r"\b(sell (her|him|them)\b(?! (a|an|the|one|some)\b)"
+                     r"|hand (him|her|them) over|turn (him|her|them) in"
+                     r"|report (him|her|them)|inform(s|ed)?\b|testify|denounce|betray"
+                     r"|give (him|her) up"
+                     r"|where (she|he|they) (is|are)|where the sack is|offer him the family"
+                     r"|finder's fee|back kay|tell sir ector|his sentence|take his revenge)",
+                     re.I)
+    known = set(BETRAYAL) | set(JUSTICE)
+    stray = [(e['tag'], o['label']) for e in ENCS for o in e['options']
+             if pat.search(o['label']) and (e['tag'], o['label']) not in known]
+    assert not stray, stray
 
 
 def test_no_virtue_tags_in_data():

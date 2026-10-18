@@ -7315,6 +7315,9 @@
       },
       {
         "label": "Tell Creon's men where she is",
+        "villain": true,
+        "karma": -1,
+        "karma_kind": "betray",
         "reward": {
           "type": "gold",
           "min": 80,
@@ -7323,13 +7326,13 @@
         },
         "outcome": "The soldiers thank you. They do not look at you while they do it. They find her at the grave, finished, waiting.",
         "deeds": [
-          "told.reported_antigone",
+          "wrong.reported_antigone",
           "lost.antigone"
         ],
         "chronicle": "Reported Antigone to Creon's men for burying a traitor. It was the law. They did not look at me when they paid me.",
         "road": {
           "id": "flv_antigone.report",
-          "hint": "Obeying a law and agreeing with it are different things."
+          "hint": "Gold for a sister at her brother's grave. Even the soldiers looked away."
         }
       },
       {
@@ -10009,7 +10012,7 @@
       },
       {
         "label": "Offer him the family if he lets you pass",
-        "karma": -2,
+        "karma": -1,
         "karma_kind": "cruelty",
         "outcome": "He looks at you for a long time, and then he nods, and goes round the cart. You do not look back. Behind you, the little bells on the cart stop ringing.",
         "deeds": [

@@ -278,6 +278,10 @@ class Monster:
         self.rage_messages:  list  = list(defn.get('rage_messages', []) or [])
         self.revive_message: str   = defn.get('revive_message', '') or ''
         self.kill_chronicle: str   = defn.get('kill_chronicle', '') or ''
+        # A named pair (Stheno and Euryale): the partner's kind, and the line
+        # written only when the second of the two falls (MON-10).
+        self.kill_pair: str           = defn.get('kill_pair', '') or ''
+        self.kill_pair_chronicle: str = defn.get('kill_pair_chronicle', '') or ''
         # Loses its footing when it attacks from an ICE tile (Fenrir's hall).
         self.slips_on_ice: bool    = bool(defn.get('slips_on_ice', False))
         # Fraction of every blow absorbed (Abaddon). base_ keeps the authored
@@ -397,6 +401,7 @@ class Monster:
         'can_phase_walls': False,
         '_hit_run_state': 'hunting', '_hit_run_timer': 0, '_hit_run_attacks': 0,
         'gaze_paralyze': 0, 'gaze_cooldown_max': 4, '_gaze_cooldown': 0, 'gaze_group': '',
+        'kill_pair': '',
         'is_boss': False, 'dragon_scales': 0.0,
         'rage_interval': 0, 'rage_damage_bonus': '', 'rage_stacks': 0,
         '_rage_turn_counter': 0, '_rage_message': '',

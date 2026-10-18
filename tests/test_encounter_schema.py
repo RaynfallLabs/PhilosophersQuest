@@ -166,12 +166,31 @@ def test_opportunities_report_covers_every_block():
 
 # ------------------------------------------------- rules the story draft needs
 
-def test_minus_two_is_allowed_but_no_further():
+def test_a_loss_is_at_most_one():
+    # Brandon, 2026-10-18: "Max karma drop is -1". -2 is rejected for every
+    # kind, the gravest wrongs included.
     assert 'karma_size' not in _codes(_mut(lambda e: e['options'][2].update(
-        karma=-2, karma_kind='cruelty')))
+        karma=-1, karma_kind='cruelty')))
+    for kind in ('cruelty', 'sacrilege', 'betray', 'stance_wrong'):
+        assert 'karma_size' in _codes(_mut(lambda e, k=kind: e['options'][2].update(
+            karma=-2, karma_kind=k))), kind
     assert 'karma_size' in _codes(_mut(lambda e: e['options'][2].update(
         karma=-3, karma_kind='cruelty')))
     assert 'karma_size' in _codes(_mut(lambda e: e['options'][0]['pass'].update(karma=2)))
+
+
+def test_a_negative_beside_an_oath_break_must_be_the_break_itself():
+    # The engine charges -1 betray for the break unless the outcome already
+    # pays it as betray; a cruelty beside it would make one choice cost two.
+    def brk(kind):
+        def f(e):
+            e['options'].insert(0, {'label': 'Swear', 'outcome': 'You swear.',
+                                    'oath': {'id': 'fx_oath', 'to': 'x', 'what': 'y'}})
+            e['options'].pop(2)                   # keep within four visible
+            e['options'][-1].update(oath_break='fx_oath', karma=-1, karma_kind=kind)
+        return f
+    assert 'karma_size' in _codes(_mut(brk('cruelty')))
+    assert 'karma_size' not in _codes(_mut(brk('betray')))
 
 
 def test_a_story_medium_quiz_may_ask_two_of_three():

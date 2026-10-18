@@ -19,6 +19,10 @@ story content, 2026-10-17):
 
 Every block is ``karma_block(deepest_floor_reached)``: an award made after
 walking back upstairs still lands in the deepest block reached.
+
+**No single loss is bigger than one** (Brandon, 2026-10-18: "Max karma drop
+is -1"), with the gate on or off and whatever the kind. A caller that asks
+for more is clamped to -1 and logged; the ledger keeps what was asked.
 """
 from __future__ import annotations
 
@@ -35,6 +39,9 @@ LEGACY = 'legacy'      # the old untyped karma; only while the gate is off
 KINDS = POSITIVE_GATED | POSITIVE_UNGATED | NEGATIVE | {LEGACY}
 
 KARMA_MIN, KARMA_MAX = -10, 10
+# The most one change may take away (Brandon, 2026-10-18). Betrayal costs
+# this much; handing a guilty man to lawful judgement costs nothing.
+MAX_LOSS = 1
 
 _RULES: dict | None = None
 _EVALUATING = False
@@ -75,6 +82,13 @@ def adjust(game, delta: int, *, kind: str, source: str,
     if kind not in KINDS:
         raise ValueError(f'unknown karma kind: {kind!r}')
     delta = int(delta or 0)
+    requested = delta
+    if delta < -MAX_LOSS:
+        from game_log import log_error
+        log_error(f'karma.adjust: {source!r} asked for {delta:+d} ({kind}); '
+                  f'a loss is at most -{MAX_LOSS}, so -{MAX_LOSS} was applied',
+                  exc_info=False)
+        delta = -MAX_LOSS
     reg = deeds.ensure_register(game)
     kreg = reg['karma']
     slots = kreg['slots']
@@ -132,7 +146,7 @@ def adjust(game, delta: int, *, kind: str, source: str,
         _crossing_line(game, cur, new)
     kreg['ledger'].append({
         'seq': deeds.next_seq(reg), 'floor': floor, 'block': block, 'kind': kind,
-        'source': source, 'requested': delta, 'applied': applied,
+        'source': source, 'requested': requested, 'applied': applied,
     })
     if gate:
         evaluate_patterns(game)

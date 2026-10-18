@@ -84,6 +84,11 @@ def chron(game, kind: str, text: str, *, person=None, deed=None, cause=None,
     return entry
 
 
+def logged(game, once: str) -> bool:
+    """Was the ``once`` key written this run (a mini-boss's death line, say)?"""
+    return once in deeds.ensure_register(game)['flags']
+
+
 def once_count(game, prefix: str) -> int:
     """How many ``once`` keys starting with ``prefix`` were logged this run
     (the first three spells learned, say)."""

@@ -41,6 +41,21 @@ MODELLED (simple, explicit, every number a named constant below):
   * the player's      when to drink, pray, cast, rest, flee, cook and what to
     decisions         wear: the PROFILE tables below.
 
+NOT MODELLED (MON-13): the real floors can hold the late-game monsters, but
+the sim fights each one as a plain stat block, so their mechanics are missing:
+  * theft             thieves never cut the purse or run off with an item;
+  * splitting         nothing divides when struck the wrong way;
+  * invisibility      an unseen attacker is fought as if it were seen;
+  * the escort        Euryale, who arrives beside Stheno, is one more member
+                      of the room's group, nothing more;
+  * heart-weighing    no karma is read (the player has no game), so every
+                      heart weighs as karma 0;
+  * packs             a pack (pack_size) is met a few at a time like any
+                      room group, with no pack behaviour.
+So a "no spike" result on the floors where those monsters live says nothing
+about them. Their behaviour is tested in tests/test_late_game_monsters.py and
+tests/test_invisible_monsters.py.
+
 Usage
 -----
     python tools/balance/difficulty_sim.py                 # default report

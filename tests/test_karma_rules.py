@@ -48,26 +48,32 @@ def _old_npc(k, d):            # game_encounters._apply_npc_choice, before
     return max(-10, min(10, k + d))
 
 
-def _old_gyges(k):             # combat.py, Ring of Gyges, before
-    return max(-10, k - 2)
+def _old_gyges(k):             # combat.py, Ring of Gyges (-1 since 2026-10-18)
+    return max(-10, k - 1)
 
 
 def _old_penitent(k):          # combat.py, Penitent's Blade, before
     return k + 1 if k < 0 else k
 
 
+def _max_loss(d):              # Brandon, 2026-10-18: no single loss beyond -1
+    return max(d, -karma.MAX_LOSS)
+
+
 @pytest.mark.parametrize('k', range(-10, 11))
 def test_gate_off_parity_every_site(k, gate_off):
+    # Parity with the old inline formulas, except that the max-loss ruling
+    # (2026-10-18) now holds with the gate off too: a -2 takes one.
     for d in (-2, -1, 1, 2):
         g = _game(k, deepest=35)
         karma.adjust(g, d, kind='legacy', source='npc')
-        assert g.karma == _old_npc(k, d), (k, d)
+        assert g.karma == _old_npc(k, _max_loss(d)), (k, d)
     g = _game(k)
-    karma.adjust(g, -2, kind='cruelty', source='ring_of_gyges')
+    karma.adjust(g, -1, kind='cruelty', source='ring_of_gyges')
     assert g.karma == _old_gyges(k)
     g = _game(k)
-    karma.adjust(g, -2, kind='cruelty', source='emberpup_attack')
-    assert g.karma == _old_npc(k, -2)
+    karma.adjust(g, -1, kind='cruelty', source='emberpup_attack')
+    assert g.karma == _old_npc(k, -1)
     g = _game(k)
     karma.adjust(g, 1, kind='legacy', source='emberpup_feed')
     assert g.karma == _old_npc(k, 1)
@@ -128,9 +134,13 @@ def test_gate_on_oath_fills_earliest_open_slot(gate_on):
 
 
 def test_gate_on_negatives_full_and_clamped(gate_on):
-    g = _game(-9)
+    # A negative is never absorbed by the block gate; it stops at -10, and
+    # no single loss is bigger than one (2026-10-18).
+    g = _game(-8)
+    assert karma.adjust(g, -1, kind='betray', source='x') == -1
     assert karma.adjust(g, -2, kind='betray', source='x') == -1
     assert g.karma == -10
+    assert karma.adjust(g, -1, kind='betray', source='x') == 0
 
 
 def test_recovery_never_above_zero(gate_on):
