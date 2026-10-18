@@ -244,7 +244,7 @@ class Monster:
         self.enraged_pattern:  str   = defn.get('enraged_pattern', '')
         # Optional per-monster lines (data-driven; all fall back to a generic
         # line when absent): the enrage switch, each rage stack, standing back
-        # up after a fatal blow, and the chronicle entry for its death.
+        # up after a fatal blow, and the Journal entry for its death.
         self.enrage_message: str   = defn.get('enrage_message', '') or ''
         self.rage_messages:  list  = list(defn.get('rage_messages', []) or [])
         self.revive_message: str   = defn.get('revive_message', '') or ''

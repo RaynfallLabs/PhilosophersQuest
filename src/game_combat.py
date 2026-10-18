@@ -500,7 +500,7 @@ class CombatMixin:
         self._naming_pet = pet
         self._pet_name_input_buffer = pet.species_name   # default: species name
         # A companion with a story of its own (Shep) brings its own words
-        # for the naming popup, the log and the chronicle.
+        # for the naming popup, the log and the Journal.
         story = pet.species.get('naming_story')
         self._naming_story = dict(story) if story else None
         from game_states import STATE_PET_NAME_INPUT

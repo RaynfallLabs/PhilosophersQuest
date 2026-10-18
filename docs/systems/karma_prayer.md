@@ -1,11 +1,11 @@
 # Karma & Prayer
 
-> Status: reference. Reflects v2.18.0 (`409e15d`, 2026-10-02), with the
-> drift fixes and the Phase 1 deeds/karma scaffolding of 2026-10-17
-> (`DEEDS_KARMA_DESIGN.md`; the karma gate is still OFF, so every number
-> below still holds).
-> Scope: karma scale (-10..+10), 31 moral NPC encounters (block
-> anchors), 108 flavor NPC encounters, Ethereal Unicorn state machine, Magic
+> Status: reference. Reflects v2.18.0 (`409e15d`, 2026-10-02) plus the
+> deeds/karma redesign of 2026-10-17 (`DEEDS_KARMA_DESIGN.md`): the karma
+> gate and the Road are both ON (`data/karma_rules.json: gate_enabled`,
+> `road_enabled`).
+> Scope: karma scale (-10..+10), 30 block-anchor encounters, 141
+> story and flavor encounters, the Road, Ethereal Unicorn state machine, Magic
 > Dungeon Carrot, Prayer v2 (`\` key), Divine Intercession
 > (Shift+`\`), Fisher King cooldown mechanics, the Altar of the Last
 > Judgment, and the Seven Seals gate.
@@ -34,41 +34,51 @@ other write in `src/`. The five sites today:
 
 | Site | Call |
 |------|------|
-| NPC / flavor choice (`game_encounters._apply_outcome`) | `kind = karma_kind` or `'legacy'` |
-| Emberpup first feed | `+1`, `'legacy'` |
+| NPC / flavor choice (`game_encounters._apply_outcome`) | `kind = karma_kind` (untyped karma is logged and ignored with the gate on) |
+| Oath kept / broken (`game_encounters._keep_oath` / `_break_oath`, `setne_tomb`) | `+1` `'oath'` into the earliest open block since it was sworn / `-1` `'betray'` |
+| Constancy and negative patterns (`karma.evaluate_patterns`) | `+1` `'constancy'` (at most +2 a run) / `-1` `'pattern'` |
+| Emberpup first feed | nothing with the gate on (kindness, not a weighed deed); `+1` `'legacy'` only if the gate is switched off |
 | Emberpup attack | `-2`, `'cruelty'` |
 | Ring of Gyges (`combat.py`) | `-2`, `'cruelty'` |
 | Penitent's Blade (`combat.py`) | `+1`, `'recovery'`: only while karma < 0, never above 0 |
 
-With `data/karma_rules.json: gate_enabled = false` (shipped) every kind
-applies exactly as the old inline formulas did: clamp to -10..+10, the
-Penitent's Blade only below zero. `adjust` also records, without
-changing anything, the 10-floor block slot each positive award fills and a
-ledger entry (`Game._deeds['karma']`), so a run that crosses the Phase 3b
-switch arrives with its earned blocks closed. When the gate is turned on
-(Phase 3b, with Wave A content) at most +1 per block comes from choices
-and oaths, and constancy pays up to +2 a run; see `DEEDS_KARMA_DESIGN.md`
-§3 and §11.
+With `data/karma_rules.json: gate_enabled = true` (shipped) the soul is
+weighed under the **block cap**: at most **+1 per 10-floor block** from
+encounter choices and oaths, first come first served
+(`Game._deeds['karma']['slots']`; the block is that of the deepest floor
+reached). The positive kinds are `forgo` (refusing a greater temptation),
+`judgment` (only in a passed quiz beside a naive sibling), `stance` (the
+right side at a visible cost) and `oath` (a kept promise fills the earliest
+open block since it was sworn). Constancy (`temperance`, `faithful`,
+`discerning`, `steadfast`: persistence across blocks) pays up to +2 a run.
+Negatives (`cruelty`, `betray`, `sacrilege`, `stance_wrong`, `pattern`) are
+not capped; -2 only for cruelty, sacrilege or betrayal. A broken oath costs
+-1 betray; a lapsed oath costs 0 but blocks `faithful`. Naive kindness never
+gives karma and always carries a material cost; light encounters never give
+karma. There is no `reckless` karma kind. Every call writes a ledger entry.
+With the gate off (kept only as a switch) every kind would apply as the old
+inline formulas did. See `DEEDS_KARMA_DESIGN.md` §3 and §11.
 
 ### 1.2 Starting karma
 
 `self.karma: int = 0 # cumulative moral score (-10 to +10)` on
 construction. There is no class-based starting karma — every run
-begins at zero. The clamp is "hard" (not "soft"): once at +10,
-further +1 options are no-ops numerically but still run their cost /
+begins at zero. The clamp is "hard" (not "soft"): once at +10, or
+once the block's slot is filled, further +1 options are no-ops numerically but still run their cost /
 reward / outcome text.
 
-### 1.3 Chronicle hooks on extremes
+### 1.3 Journal hooks on extremes
 
 An NPC or flavor choice that takes karma from below 8 to 8 or more
 (the Sword of Michael's threshold), or that takes it to -10, writes a
 `soul` line in the Journal (`game_encounters._apply_outcome`), once a
 run each (`once='soul:clean'` / `'soul:cold'`, Phase 4). Only an
 encounter choice triggers it (the Emberpup, Gyges and the Penitent's
-Blade never do). Phase 3a moves these lines into `karma.adjust`.
+Blade never do). Constancy and negative-pattern rules write their own
+`soul` lines (`karma._soul_line`, text in `data/karma_rules.json`).
 
-- Crossing to 8+: "I feel... clean. Like everything I've done
-  down here has mattered. The dungeon feels lighter."
+- Crossing to 8+: "I feel clean, as if everything I have done down
+  here has counted. The dungeon feels lighter."
 - Reaching -10: "Something inside me has gone cold. The
   dungeon doesn't frighten me anymore. That frightens me."
 
@@ -100,8 +110,8 @@ Karma is consulted by:
 - `game_encounters._handle_unicorn_bump` → trusting-unicorn bump at
   karma < 0 makes the unicorn "recoil" and flee.
 - `_apply_outcome` with `suryas_gift` chain passive → **doubles**
-  reward on positive-karma deeds (gate off: whenever the option asks for
-  karma; gate on: only when an award was actually applied).
+  reward on positive-karma deeds, only when an award was actually
+  applied (a block already filled earns no doubling).
 
 ---
 
@@ -111,10 +121,11 @@ Karma is consulted by:
 
 The dungeon is divided into **10 level blocks** of 9 levels each.
 Each block has **3 candidate encounters** defined in
-`data/npc_encounters.json`, loaded as `src/npc_encounters.py::ENCOUNTERS`. One encounter is selected per
-block (`select_encounter_levels`), placed on a random non-boss level
-inside the block, and the trigger item (if any) is pre-spawned 1-3
-levels earlier so the player can arrive with it in-hand.
+`data/npc_encounters.json`, loaded as `src/npc_encounters.py::ENCOUNTERS`. With the Road on
+(shipped), one encounter per block binds at run start to the band's anchor slot
+(`road.bind_anchors`, a floor inside the block range below), and the trigger item (if any)
+is pre-spawned 1-3 levels earlier so the player can arrive with it in-hand. With the Road
+off the legacy `select_encounter_levels` picks a random non-boss level in the block instead.
 
 Blocks and level ranges (`npc_encounters._BLOCKS`):
 
@@ -156,10 +167,10 @@ outcomes, applied when the quiz ends; an exit mid-quiz settles as the fail), `re
 `text_variants` / `outcome_variants`, `then: "options"`, `deeds`, `oath` / `oath_keep` /
 `oath_break` / `oath_release`, `person_status`, `thread` / `thread_close`, `schedule`,
 `delayed`, `escort`, `fight`, `karma_kind`. Keys 1-4 pick the **visible** options.
-`tools/encounters/validate.py` checks all of it; `tests/encounter_legacy_allow.json` keeps only
-a `pending_engine` section for the fields whose engine support is being built (Part J3 of the
-draft: per-round losses, list fights, the Gate's lines, Setne's Tomb's own roll, and the new
-cost and reward types), to be emptied once that work is merged.
+Also `fail_by_correct`, `per_miss`, `play_all`, `oath_lapse`, `people` / `people_lines`,
+`seal_door`, `expel_up`, `hostile`, `stakes` (light / medium / high) and `fight` as one
+`{monster_id, count}` or a list. `tools/encounters/validate.py` (`--all`, `--budget`) checks
+all of it.
 
 Each option carries `label`, an outcome (or a quiz with `pass` and `fail`), and optionally
 `cost`, `reward`, `karma` with its `karma_kind` (+1 only as forgo, judgment or stance, or
@@ -171,7 +182,9 @@ Cost types: `food`, `healing_potion`, `potion`, `scroll`, `weapon`,
 `triggered_item`, `accept_item`, `spawn_deadite_ambush`, and (new, all a
 share of the player's OWN pool) `hp_pct`, `sp_pct`, `mp_pct`,
 `max_hp_pct`, `gold_pct`, plus `triggered_item_id` (take the item with
-this id from the pack or a worn slot) and `stat` (lose stat points). See `npc_encounters.can_pay_cost` for the
+this id from the pack or a worn slot), `stat` (lose stat points),
+`armor_enchant` (the worn armour loses a point), `multi` (several costs
+at once) and a `count` on item costs (give back two potions). See `npc_encounters.can_pay_cost` for the
 full predicate. The `healing_potion` picker lists only potions, scrolls
 and wands the player KNOWS heal (`npc_encounters.known_healer`: copy
 identified or type known; bug bash 4, call 32), plus the Heal spell.
@@ -185,7 +198,9 @@ Reward types: `gold`, `random_weapon` / `_armor` / `_shield` /
 `specific_item`, `multi`, `message`, `effect`, `enchant_weapon`,
 `hp_restore` / `sp_restore` / `mp_restore`, and the new
 `hp_restore_pct` / `sp_restore_pct` / `mp_restore_pct` (a share of the
-player's own maximum). `economy.price_encounter` rescales gold in
+player's own maximum), `gold_pct` / `gold_pct_loss`, `armor_enchant`,
+`random_artifact`, and `effect` with `floors` (lasts N floors).
+`economy.price_encounter` rescales gold in
 `cost`, `reward`, `fail_reward`, and in nested `pass` / `fail`,
 `delayed[*].reward` and escort `on_arrive` / `on_fail`.
 
@@ -271,14 +286,15 @@ floor via `_maybe_spawn_npc` (`game_encounters.py:122`).
      `karma.adjust`, deeds, then phase `outcome`.
 4. ENTER → `_npc_outcome_continue`: back to the list for a
    `then: "options"` outcome, else `_close_npc_encounter(resolved=True)`
-   kills the NPC and logs a chronicle line.
+   kills the NPC and writes a Journal line.
 
 ### 2.7 Suryas Gift doubling
 
 `chain_passives.player_has_passive(player, 'suryas_gift')` → the
-Kavacha-Kundala chain. Any NPC option with `karma_delta > 0` applies
-its reward **twice** when active, with message "Surya's gift doubles
-the bounty of your good deed!" (`game_encounters.py:741-750`). This is
+Kavacha-Kundala chain. Any encounter option whose karma award was
+actually applied (a +1 that filled an open block) applies its reward
+**twice** when active, with message "Surya's gift doubles the bounty of
+your good deed!" (`game_encounters._apply_outcome`). This is
 the one chain-wide synergy with the karma system; no negative-karma
 chain exists.
 
@@ -292,9 +308,20 @@ They live in `data/flavor_encounters.json` (no hardcoded list), loaded as
 moments) carry 0 karma; medium and high story encounters may offer one gated point;
 `callback_only` follow-ups are placed only by an earlier choice's `schedule`.
 
-**Spawn rate** (legacy roll while the Road is off): ~40% per non-boss floor. With the
-Road on, story encounters bind to the run's light, medium (two in odd bands) and high
-slots instead (`road.py`). Each is one-shot per run.
+**Placement** (the Road, shipped on): each 10-floor band has one anchor slot, one medium
+slot (two in the odd bands 1, 3, 5, 7, 9), one high slot in the even bands, and the rest
+light (`road.py`); a slot binds on first arrival from the encounters whose `requires` hold
+then. Callbacks (`schedule`) and delayed rewards land N floors after the deed that opened
+them, and The Gate (`flv_the_gate`, floors 94-98) is a run-start callback
+(`karma_rules.json: run_start_schedule`) that reads `data/gate_lines.json` about the people
+met on the way down. The old ~40%-per-floor roll (`select_flavor_encounters`) only places
+encounters if the Road is switched off. Each is one-shot per run.
+
+**Setne's Tomb** (`src/setne_tomb.py`, `data/setne_tomb.json`) is a sealed room on one
+run-rolled floor of 45-65 and the only source of the Book of Thoth. Reading the book does
+not consume it (its power is spent after one read; it shows as "Book of Thoth (Read)"). It
+must be laid on an altar within its due floors (oath `thoth_return`), or the dead come for
+it (`flv_dead_come_for_the_book`, hostile).
 
 | Tag | Name | Floors | Stakes | Karma paths | Notes |
 |---|---|---|---|---|---|
@@ -506,7 +533,7 @@ quiz, `tier=1`, `max_chain=5`. Boons stack by chain tier
 | 2+ | Full HP, SP, MP restore |
 | 3+ | Uncurse every cursed equipped **and inventory** item (reports count) |
 | 4+ | Permanent `magic_resist` **or** `poison_resist` (random) |
-| 5 | **Unicorn joins as a pet** (`UnicornPet(x, y)`), unicorn NPC removed, chronicle entry logged ("She stayed."). The pet heals, cleanses afflictions, and senses hidden traps. |
+| 5 | **Unicorn joins as a pet** (`UnicornPet(x, y)`), unicorn NPC removed, Journal entry written ("She stayed."). The pet heals, cleanses afflictions, and senses hidden traps. |
 
 Chain < 5 (even 4): unicorn departs after granting boons
 ("vanishes in a shimmer of light"). Chain == 5 is the only path to
@@ -769,11 +796,11 @@ to normal Prayer v2.
 
 - **sword_and_scales**: `self.player_title = 'Paladin'`,
   `sword_of_michael` weapon spawned into inventory (identified),
-  `scales_of_michael` artifact spawned (identified), chronicle entry
-  logged. State → `STATE_JUDGMENT` (show the text, press ENTER to
+  `scales_of_michael` artifact spawned (identified), Journal entry
+  written. State → `STATE_JUDGMENT` (show the text, press ENTER to
   dismiss).
-- **scales_granted**: `scales_of_michael` only. Chronicle entry.
-- **silence**: Nothing. Chronicle beat omitted.
+- **scales_granted**: `scales_of_michael` only. Journal entry.
+- **silence**: Nothing. Journal beat omitted.
 - **locusts_strengthened**: `self._locusts_strengthened = True`.
   L100 generation reads this flag and emits larger locust swarms.
   Message: "The buzzing of locusts grows louder in the deep..."
@@ -788,22 +815,18 @@ It is its own, final theological object.
 ### 8.5 Reaching the Sword (karma +8)
 
 The Sword of Michael needs **8** (it needed exactly 10 until the
-threshold moved; one missed encounter put it out of reach). Today a run
-offers ten anchor `+1`s, three flavor `+1`s and the Emberpup's first
-feed, so 8 is comfortable for a kind player; the gated economy of
-Phase 3b (`DEEDS_KARMA_DESIGN.md` §3.5) makes it the reward for being
-principled, careful and faithful all run. Some +1 options cost real
-resources (`sir_aldric` accepts a cursed
-lodestone; `ghost_grave` costs max_hp -15; `trapped_seraph` costs a
-scroll; `cursed_scholar` costs 20% HP; `weeping_mother` costs 60
-SP; `fairy_jar` costs a potion; `forgotten_prisoner` costs 150 gold;
-`fallen_paladin` costs 200 gold; `azarael_demon` costs a scroll).
+threshold moved). Under the block cap a run can earn at most +10 from
+the ten blocks (one gated +1 each, from a forgo, judgment, stance or
+kept oath) plus up to +2 constancy, so 8 is the reward for being
+principled, careful and faithful all run, not for being kind
+(`DEEDS_KARMA_DESIGN.md` §3.5). Naive kindness pays nothing; most gated
++1s cost something real, and a block already filled pays nothing more.
 
 Outside encounters, karma moves through the Penitent's Blade
 (`kill_count_karma_adjust`, +1 per N kills, only while karma < 0, never
 above 0), the Ring of Gyges (-2 for striking an innocent while
-invisible) and the Emberpup (+1 first feed, -2 attack); all go through
-`karma.adjust` (§1.1).
+invisible) and the Emberpup (-2 for attacking it; feeding it gives
+nothing); all go through `karma.adjust` (§1.1).
 
 ---
 
@@ -847,18 +870,23 @@ src/chronicle.py             -- structured journal entries (Game._chron
 src/encounter_schema.py      -- normalise, visible_options, text
                                 variants, quiz_passed
 tools/encounters/validate.py -- the encounter validator CLI
-src/npc_encounters.py        -- ENCOUNTERS (31 moral), _BLOCKS,
+src/npc_encounters.py        -- ENCOUNTERS (30 anchors), _BLOCKS,
                                 select_encounter_levels,
                                 get_trigger_item_levels,
                                 can_pay_cost, get_inventory_filter,
                                 _JUDGMENT_TIERS, judge_karma,
                                 _KARMA_SPRITES
-src/flavor_encounters.py     -- FLAVOR_ENCOUNTERS (5 hardcoded + 103 JSON),
-                                select_flavor_encounters (never rolls a
-                                callback_only follow-up),
-                                data/flavor_encounters.json loader
-src/road.py                  -- the Road (behind road_enabled): slots,
+src/flavor_encounters.py     -- FLAVOR_ENCOUNTERS (all from
+                                data/flavor_encounters.json),
+                                select_flavor_encounters (the legacy
+                                roll, used only with the Road off; never
+                                rolls a callback_only follow-up)
+src/road.py                  -- the Road (road_enabled, on): slots,
                                 roles, binding, callback targets, seed
+src/setne_tomb.py            -- Setne's Tomb (floor 45-65 roll, sealed
+                                room, seal_door / expel_up) and the Book
+                                of Thoth's altar return (oath
+                                thoth_return); data/setne_tomb.json
 src/game_road.py             -- RoadMixin: _road_arrive (oath lapse,
                                 delayed rewards, callbacks, slot
                                 binding, anchor fallback), schedule

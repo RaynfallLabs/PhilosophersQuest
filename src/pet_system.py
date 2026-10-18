@@ -458,7 +458,7 @@ class Pet:
         # Player-given nickname (set via the naming popup on hatch). Empty
         # string means use the species name directly.
         self.nickname: str = ''
-        # Lifetime kill counter (chronicle / future achievements).
+        # Lifetime kill counter (Journal / future achievements).
         self.kills_count: int = 0
         # Per-special cooldown tracking; key = special_id, value = turns remaining.
         # Initialized empty; populated as specials unlock + are used.

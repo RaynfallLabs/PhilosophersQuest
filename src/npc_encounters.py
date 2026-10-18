@@ -1,9 +1,12 @@
 """
 NPC moral encounter system: one encounter per 10-level block, chosen from
-the candidates in data/npc_encounters.json.
+the candidates in data/npc_encounters.json. With the Road on
+(karma_rules.json: road_enabled, shipped) road.bind_anchors places them;
+select_encounter_levels below is the legacy placement for the Road off.
+Karma from them is gated by karma.adjust (+1 per block at most).
 
 Flow: bump NPC → encounter text (ENTER) → up to 4 visible options (keys
-1-4; today's content has 3) → outcome (ENTER). A quiz option runs its quiz
+1-4) → outcome (ENTER). A quiz option runs its quiz
 and lands its pass or fail branch (game_encounters._apply_outcome;
 schema in encounter_schema.py, DEEDS_KARMA_DESIGN.md section 4).
 Options show action + justification only, no outcomes, no karma labels.

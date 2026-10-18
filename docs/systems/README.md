@@ -74,8 +74,8 @@ reporter are small, independent JSON/text siblings. See
 | [world.md](world.md) | Dungeon gen, mazes, terrain (water/ice/lava), bones, boss floors, cow level | Floor layout change |
 | [pets.md](pets.md) | Species, specials, Duck transform, Soul Sphere, apply_late_pickup_bonus | Pet add/edit |
 | [progression.md](progression.md) | Quirks, hero specials, elder blood, secret builds, karma judgments | Progression add/edit |
-| [quests_mysteries.md](quests_mysteries.md) | 9 quest chains + 12 mysteries + 30 karma NPCs + 5 flavor NPCs | Quest add/edit |
-| [karma_prayer.md](karma_prayer.md) | Karma −10..+10 clamp, 30-NPC inventory, prayer chain, divine intercession, judgment tiers | Karma / prayer change |
+| [quests_mysteries.md](quests_mysteries.md) | 9 quest chains + 12 mysteries + the Judgment altar | Quest add/edit |
+| [karma_prayer.md](karma_prayer.md) | Karma −10..+10 and the block cap (`karma.adjust`), 30 block anchors + 141 story/flavor encounters, the Road, Setne's Tomb, prayer chain, divine intercession, judgment tiers | Karma / encounter / prayer change |
 | [ui.md](ui.md) | Menus, HUD, help, bestiary, kit, discoveries, threshold copy helper | UI change |
 | [save_meta.md](save_meta.md) | save_system (atomic pickle), highscore_system, crash_handler, paths.py, player.`__setstate__` migration | Save format change |
 | [data_schemas.md](data_schemas.md) | JSON conventions, `_meta` sub-object (v2.18), spawn tables, unidentified_name discipline | Data file edit |
@@ -113,7 +113,7 @@ the doc wins (and the row is a bug — please update it).
 | "How is the sidebar built?" | [ui.md](ui.md); `ui.Sidebar._identity/_vitals/_attributes/_derived/_effects/_powers/_in_sight` |
 | "Why does an item say '(Curse Unknown)'?" | [ui.md](ui.md); `hud_context.hud_item_name` True-Name rule (v2.18 identify-v3 fix) |
 | "How do mystery altars gate challenges?" | [quests_mysteries.md](quests_mysteries.md); `MYSTERIES` dict in `mystery_system.py` |
-| "Where is karma clamped?" | [karma_prayer.md](karma_prayer.md); `_award_encounter_outcome`, −10..+10 |
+| "Where is karma clamped?" | [karma_prayer.md](karma_prayer.md); `karma.adjust` (`src/karma.py`), −10..+10, +1 per 10-floor block |
 | "What does `plot_locked` do in item JSON?" | [data_schemas.md](data_schemas.md); documentary only — real gate is `min_level: 9999` + custom spawn code |
 | "How does the welcome screen pick a build?" | [progression.md](progression.md); `welcome_screen.SECRET_BUILDS`, `_qa_tools` gated by `PQ_QA_MODE=1` or `--qa` |
 

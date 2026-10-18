@@ -403,7 +403,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._npc_encounter_levels = select_encounter_levels()
         self._npc_trigger_item_levels: dict = get_trigger_item_levels(self._npc_encounter_levels)
         self._npc_trigger_items_placed: set = set()  # item IDs already spawned as floor loot
-        # Flavor (non-karmic) encounters
+        # Story and flavor encounters (the legacy roll; the Road replaces
+        # it below while road_enabled is on)
         from flavor_encounters import select_flavor_encounters
         self._flavor_encounter_levels: dict = select_flavor_encounters()
         self._encountered_flavor_npcs: set = set()
@@ -577,7 +578,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # QA tools flag (Titivillus debug build): unlocks Shift+I immortal toggle
         # and Shift+W floor warp from the player turn.
         self.player.qa_tools = bool(b.get('_qa_tools', False))
-        # Chronicle: secret build
+        # Journal: secret build
         if self.secret_build:
             bname = self.secret_build.get('_name', self.player_name)
             self._chron('milestone', f"My name is {bname}. I know things others don't. This changes everything.")
@@ -633,7 +634,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         else:
             self.add_message(f"Welcome, {self.player_name}!", 'success')
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
-        # Chronicle: entering the dungeon
+        # Journal: entering the dungeon
         self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
 
     def _apply_save_affinity(self):
@@ -894,7 +895,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._death_save_used  = state.get('_death_save_used', False)
         self._tarnhelm_used    = state.get('_tarnhelm_used', False)
         self._quiz_reroll_used = state.get('_quiz_reroll_used', False)
-        # Chronicle dedup guards
+        # Journal dedup guards
         self._chronicle_abaddon_start = state.get('_chronicle_abaddon_start', False)
         # Magic carrot + ethereal unicorn one-shot spawn state (added 2026-05-19
         # save-lifecycle audit). Without these, reload re-rolls the spawn
@@ -1592,7 +1593,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"Níðhöggr's Scale stirs — your mana deepens. (+{_per_desc_mp} max MP)",
                     'success')
         self._notified_rooms = set()   # reset per-floor special room notifications
-        # Chronicle: level milestones and maze entries
+        # Journal: level milestones and maze entries
         _MILESTONE_FLAVOR = {
             10: "The tunnels twisted into a maze here. Somebody built this to confuse, and they were good at it.",
             20: "The air got heavier on the way down. I could hear something large breathing.",
@@ -2975,7 +2976,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self._handle_unicorn_bump(target)
                 self._advance_turn()
                 return
-            # Flavor encounter: non-karmic NPC interaction
+            # Story or flavor encounter (light ones never touch karma)
             if getattr(target, '_flavor_encounter_tag', None):
                 self._start_flavor_encounter(target)
                 return
@@ -5568,7 +5569,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     self._chron(
                         'discovery', "Ten scraps of leather. I do not know why I kept them. "
                         "Together they would about make a shoe, for a very large foot.")
-            # Chronicle notable pickups (quest artifacts)
+            # Journal: notable pickups (quest artifacts)
             _CHRONICLE_ITEMS = {
                 'philosophers_stone', 'ariadnes_thread', 'bronze_bull',
                 'eye_of_graeae', 'broken_gram', 'gleipnir',
@@ -5606,7 +5607,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # every quest piece has its own line.)
                 if item.id in _CHRONICLE_FLAVOR:
                     self._chron('discovery', _CHRONICLE_FLAVOR[item.id], once=f'pickup:{item.id}')
-            # Material discovery chronicle: first time the player sees each
+            # Material discovery Journal line: first time the player sees each
             # material (cold iron, mithril, etc.), log the discovery line.
             _mat_id = getattr(item, 'material', None)
             if _mat_id and _mat_id not in self.player.chronicle_seen_materials:

@@ -4,17 +4,18 @@ Karma stays one integer, -10..+10 (``Game.karma``). Every change in ``src/``
 goes through :func:`adjust`; ``tests/test_single_karma_entry_point.py``
 fails on any other write.
 
-Feature flag ``data/karma_rules.json: gate_enabled``:
+Feature flag ``data/karma_rules.json: gate_enabled`` (shipped ON since the
+story content, 2026-10-17):
 
-* **off** (Phases 1-3a): every kind applies exactly as it did before the
-  redesign, with each old site's own clamp (the Penitent's Blade only below
-  zero and never above it; everything else -10..+10). Block slots and the
-  ledger are still written, so a run that crosses the switch arrives with
-  its earned blocks already closed. Nothing is absorbed.
-* **on** (Phase 3b): at most +1 per 10-floor block from encounters, oaths and
+* **on**: at most +1 per 10-floor block from encounters, oaths and
   choices (one slot per block, first come first served); a kept oath fills
   the earliest open slot from the block it was sworn in; constancy pays at
-  most ``constancy_cap`` (+2) per run, once per rule.
+  most ``constancy_cap`` (+2) per run, once per rule. Untyped ('legacy')
+  karma is refused.
+* **off** (kept only as a switch): every kind applies exactly as it did
+  before the redesign, with each old site's own clamp (the Penitent's Blade
+  only below zero and never above it; everything else -10..+10). Block
+  slots and the ledger are still written. Nothing is absorbed.
 
 Every block is ``karma_block(deepest_floor_reached)``: an award made after
 walking back upstairs still lands in the deepest block reached.
@@ -30,7 +31,7 @@ POSITIVE_UNGATED = frozenset({'constancy', 'recovery'})
 # No 'reckless': naive kindness is never negative karma (Brandon, decision 9).
 # It carries material consequences authored in the outcome instead.
 NEGATIVE = frozenset({'betray', 'cruelty', 'stance_wrong', 'sacrilege', 'pattern'})
-LEGACY = 'legacy'      # today's untyped karma; only while the gate is off
+LEGACY = 'legacy'      # the old untyped karma; only while the gate is off
 KINDS = POSITIVE_GATED | POSITIVE_UNGATED | NEGATIVE | {LEGACY}
 
 KARMA_MIN, KARMA_MAX = -10, 10

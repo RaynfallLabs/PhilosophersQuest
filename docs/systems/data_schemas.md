@@ -1020,7 +1020,7 @@ recalled hints.
 
 ## 15. `data/flavor_encounters.json`
 
-**List, not dict.** 92 entries. Each entry:
+**List, not dict.** 141 entries. Each entry:
 
 ```json
 {
@@ -1044,16 +1044,25 @@ recalled hints.
 ```
 
 - `tag` is the id. `name` is display.
-- `min_level` / `max_level` gate spawning.
+- `min_level` / `max_level` give the encounter's floor band; the Road
+  (`src/road.py`, `karma_rules.json: road_enabled`, on) binds it to a
+  light, medium or high slot by its `stakes` on first arrival.
 - `options` is the branching dialog — see `game_encounters` for the
-  cost / reward dispatch and the full type inventory.
+  cost / reward dispatch and the full type inventory. An option may be a
+  quiz (`quiz` with `pass` / `fail` outcomes, `fail_by_correct`,
+  `per_miss`, `play_all`), carry `requires` / `forbids` conditions, be
+  `hidden`, and record `deeds`.
 - `callback_only: true` — never rolled; only an opener's outcome
   `schedule` places it (`{"encounter", "after_floors": [min, max],
   "requires", "if_missed": "carry"|"drop", "thread"}`). An outcome may
   also carry `delayed` (a reward N floors on), `oath` / `oath_keep` /
-  `oath_break` / `oath_release`, `escort` (inline or `{"$ref"}` into the
-  encounter's `escorts` map) and `fight` ({monster_id}). The full schema
-  is DEEDS_KARMA_DESIGN.md section 4; `tools/encounters/validate.py`
+  `oath_break` / `oath_lapse` / `oath_release`, `escort` (inline or
+  `{"$ref"}` into the encounter's `escorts` map), `fight` (one
+  `{monster_id, count}` or a list), `people` / `people_lines`,
+  `seal_door`, `expel_up` and `hostile`. Karma rides on `karma` +
+  `karma_kind` (forgo / judgment / stance / oath, or a negative kind);
+  light encounters carry none. The full schema is DEEDS_KARMA_DESIGN.md
+  section 4; `tools/encounters/validate.py` (`--all`, `--budget`)
   checks it. The old `chain_after` key is retired.
 
 ---

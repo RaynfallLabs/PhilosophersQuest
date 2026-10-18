@@ -550,7 +550,7 @@ Setup: the player has killed the Medusa boss (floor 69), harvested her corpse wi
    - `_resolve_temp_power('save_guard_CON') = 'save_guard_CON'` (unchanged — already canonical in v2.18). `player.add_effect('save_guard_CON', 200)`; `player._save_guard['CON'] = min(3, temp_amount=3) = 3`.
    - `_apply_permanent_power(player, 'petrify_immunity', fake_recipe)` → `player.add_effect('petrify_immune', -1)`.
 5. Messages: `"You prepare Gorgon's Antitoxin." / "You eat it: +140 SP, +20 HP." / "The meal fortifies you permanently. (+3 max HP)" / "Your dexterity increases by 1!" / "A short save guard CON lingers." / "Permanent petrification immunity. Never again will stone claim you."`
-6. `on_complete`: logs chronicle entry if first compound cook, adds "Gorgon's Antitoxin" to `_cooked_recipes`, calls `_qs_cook.on_food_eaten(quality=5, source_monster='medusa_gorgon', bonus_type='permanent', ingredient_id='medusa_gorgon_trophy')`.
+6. `on_complete`: writes a Journal entry if first compound cook, adds "Gorgon's Antitoxin" to `_cooked_recipes`, calls `_qs_cook.on_food_eaten(quality=5, source_monster='medusa_gorgon', bonus_type='permanent', ingredient_id='medusa_gorgon_trophy')`.
    - Persephone progress: `persephone_quality5` set gains `'medusa_gorgon_trophy'`. If this is the 5th distinct id → quirk unlocks.
    - Circe progress: `circe_bonus_types` gains `'permanent'`. If this is the 5th distinct category → quirk unlocks.
 7. `_advance_turn()`.

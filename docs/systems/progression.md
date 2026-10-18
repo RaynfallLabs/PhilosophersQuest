@@ -12,7 +12,7 @@ Progression is everything that makes a run richer after turn 1 that isn't an ite
 2. **Hero specials** — one or more AI-escalator-chain active abilities (plus optional cooldown) attached to a specific secret build. Dispatched through `hero_specials._DISPATCH` by effect id.
 3. **Hero passives** — set-of-strings on `player.hero_passives`; checked at hook sites in `combat.py`, `player.py`, `monster.py`, `game_menus.py`. One or more per build; several builds carry only passives.
 
-Secret builds are the harness that bundles the above with a themed starting kit, a sprite, a stat spread, and a chronicle journal entry. The build itself isn't a mechanic — it's the vehicle for the hero's specials + passives, with a few metadata flags (`_immortal`, `_qa_tools`, `_elder_blood`) that light up extra once-per-run or once-per-floor powers.
+Secret builds are the harness that bundles the above with a themed starting kit, a sprite, a stat spread, and a Journal entry. The build itself isn't a mechanic — it's the vehicle for the hero's specials + passives, with a few metadata flags (`_immortal`, `_qa_tools`, `_elder_blood`) that light up extra once-per-run or once-per-floor powers.
 
 ## Design intent
 A run gets more interesting over time without granting bigger numbers at a predictable rate. The quirk layer is Bofuri in intent: do something *unusual* 15 times and you earn a trait that rewards that unusual thing. Nobody chases quirks on the critical path — you stumble into them because you played oddly, and the unlock popup is the moment the game surprises you. The hero layer is at the other end: it's chosen explicitly at the welcome screen (and rewards a kid for *knowing* the hero's name).
@@ -134,7 +134,7 @@ Dict/set states are picklable; the engine does not care if `_setstate_` restores
 
 ### Journal entries
 
-`HERO_JOURNAL[build_name] -> str`. A short in-character opening paragraph logged to the chronicle at game start. Not mechanical — only flavor. Dad, Titivillus, and Corwin have journal entries; the "fluff" builds without hero specials still get a journal line.
+`HERO_JOURNAL[build_name] -> str`. A short in-character opening paragraph written to the Journal at game start. Not mechanical — only flavor. Dad, Titivillus, and Corwin have journal entries; the "fluff" builds without hero specials still get a journal line.
 
 ### Secret-build dict shape (`welcome_screen.py::SECRET_BUILDS`)
 
@@ -164,7 +164,7 @@ Dict/set states are picklable; the engine does not care if `_setstate_` restores
     "_immortal":        True,                        # cannot die (Dad only)
     "_qa_tools":        True,                        # Shift+I / Shift+W dev tools
     "_elder_blood":     True,                        # Ciri's 3-cooldown V-menu kit
-    "_greeting":        "custom chronicle line",
+    "_greeting":        "custom Journal line",
 }
 ```
 
@@ -552,7 +552,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 `corwin`, `cain`, `fianna`, `fluffs`, `robyn`
 
 ### Legendary flags (secret-of-secrets)
-- `dad` — all stats 20, `punch_in_the_face` weapon, `_immortal: True`, chronicle "Dad has arrived. Everything will be fine." Confirmed from the welcome screen's "Did you mean Dad?" easter egg when the player types "god" (`welcome_screen.py:463-465`).
+- `dad` — all stats 20, `punch_in_the_face` weapon, `_immortal: True`, Journal "Dad has arrived. Everything will be fine." Confirmed from the welcome screen's "Did you mean Dad?" easter egg when the player types "god" (`welcome_screen.py:463-465`).
 - `titivillus` — the Scribe of Errors QA build. `_qa_tools: True` grants Shift+I (immortal toggle) and Shift+W (floor warp). **Gated behind `PQ_QA_MODE=1` env var or `--qa` CLI flag as of v2.18.0** (`welcome_screen.py:471-476`); before the gate the name alone unlocked the dev tools, which SYSTEMS_AUDIT §7 P1 flagged. With neither flag set, the typed name is treated as a plain run — no stats, no kit, no QA tools.
 
 ### Metadata flags on build dicts (quick reference)
@@ -576,7 +576,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 | `_immortal`                | Can't die (Dad only — HP snaps back on would-be-death)                             |
 | `_qa_tools`                | Shift+I / Shift+W dev tools; gated behind env var in v2.18                         |
 | `_elder_blood`             | Ciri's 3-cooldown V-menu kit                                                       |
-| `_greeting`                | Custom chronicle line on run start                                                 |
+| `_greeting`                | Custom Journal line on run start                                                   |
 
 ### Starting kit resolution (`main.py::_give_starting_kit`)
 

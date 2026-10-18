@@ -156,8 +156,8 @@ Judgment outcome summary (karma clamp -10..+10):
 
 | Karma | Outcome key | Effect |
 |-------|-------------|--------|
-| 10 | `sword_and_scales` | Player receives **Sword of Michael** + **Scales of Michael**, title set to "Paladin", chronicle entry logged. |
-| +1..+9 | `scales_granted` | Player receives Scales of Michael. |
+| +8..+10 | `sword_and_scales` | Player receives **Sword of Michael** + **Scales of Michael**, title set to "Paladin", Journal entry written. |
+| +1..+7 | `scales_granted` | Player receives Scales of Michael. |
 | 0 | `silence` | Nothing. "You have done nothing worthy of praise or condemnation." |
 | -1..-5 | `locusts_strengthened` | `_locusts_strengthened = True` → larger locust swarms on L100. |
 | -6..-10 | `abaddon_empowered` | `_abaddon_empowered = True` → Abaddon on L100 gets +50% HP and an extra attack. |
@@ -247,7 +247,8 @@ The nine chains do not currently stack a dedicated set-bonus
 mechanic — the rewards are standalone items that each slot into the
 normal equipment system. The one chain-aware mechanic in game is
 `chain_passives.suryas_gift` (Kavacha-Kundala), which doubles
-positive-karma NPC rewards (`game_encounters.py:741-750`). It is a
+encounter rewards whose karma award was actually applied
+(`game_encounters._apply_outcome`). It is a
 karma hook, not a quest-chain hook. See
 [progression.md](progression.md) for the full chain-passive table.
 
@@ -634,7 +635,7 @@ Quest and mystery state spread across `Game` and `Player`:
 | `player.quirk_progress['fisher_king_mystery_active']: bool` | Player | Permanent prayer-cd halving (mystery branch) |
 | `game.player.divine_intercession_used: bool` | Player | 1/run gate for Shift+\ |
 | `game._active_mystery_altar` | Game | Mystery currently being approached (STATE_MYSTERY_APPROACH) |
-| `game._chronicle_first_mystery: bool` | Game | One-shot chronicle entry on first mystery discovery |
+| `game._chronicle_first_mystery: bool` | Game | One-shot Journal entry on first mystery discovery |
 | `MysteryAltar.activated: bool` | item | Set to True on challenge completion; also removed from `ground_items` |
 
 Save/load: `seals_broken`, `_cow_*`, `_cow_poke_count`, `_duck_*`,
@@ -660,9 +661,11 @@ v2.18.0:
   by swapping to `{WIS: 1, INT: 1}`.
 - **Pandora's Key uses symbol `P`** — collision with player glyph.
   Non-blocking visually (different render pass), but a UX smell.
-- **Judgment karma=10 is reachable but fragile** — ten "+1" blocks
-  must all land. See [karma_prayer §2](karma_prayer.md) for how
-  karma is accumulated.
+- **Judgment karma=10 was reachable but fragile** — resolved: the
+  Sword now needs 8, earned under the block cap (at most +1 per
+  10-floor block plus up to +2 constancy). See
+  [karma_prayer §1.1 and §8.5](karma_prayer.md) for how karma is
+  accumulated.
 - **`judge_karma` fallback branch is unreachable** per docstring; the
   karma-clamp invariant makes the loop complete. Dead code; keep
   as belt-and-braces.
@@ -708,7 +711,8 @@ data/items/artifact.json     -- 24 quest artifacts, all with v2.18
 
 - [karma_prayer](karma_prayer.md) — Prayer v2, Divine Intercession,
   Fisher-King-mystery cooldown halving, Judgment outcome details,
-  karma scale and 30 karma NPCs.
+  karma scale and block cap, the 30 block anchors, the story and
+  flavor encounters and the Road.
 - [items](items.md) — Full artifact pool, BUC rolls, identify
   pipeline, unique drop rates.
 - [progression](progression.md) — Quirks (odin, mithridates, tiresias,

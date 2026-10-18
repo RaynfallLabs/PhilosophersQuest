@@ -404,7 +404,7 @@ HERO_PASSIVES: dict[str, list[str]] = {
 
 
 # ---------------------------------------------------------------------------
-# Journal entries — printed to chronicle on game start (per build)
+# Journal entries — written to the Journal on game start (per build)
 # ---------------------------------------------------------------------------
 
 HERO_JOURNAL: dict[str, str] = {

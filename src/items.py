@@ -1056,7 +1056,8 @@ class Spellbook(Item):
         # v2.10.0: unique-artifact flag (kept out of regular spawn pool via
         # min_level: 9999) + consumable-artifact flag (routes through the
         # Book-of-Thoth omniscience handler instead of the normal learn-a-spell
-        # path). See game_magic._learn_from_spellbook.
+        # path; despite the name the book is not consumed, only spent after
+        # one read). See game_magic._read_book_of_thoth.
         self.is_unique: bool               = bool(defn.get('is_unique', False))
         self.is_consumable_artifact: bool  = bool(defn.get('is_consumable_artifact', False))
 

@@ -169,7 +169,7 @@ class Player:
         self._cook_stat_gain_this_floor: int = 0
         self._cook_hp_gain_this_floor: int = 0
 
-        # Material discovery: tracks which materials have triggered their first-pickup chronicle.
+        # Material discovery: tracks which materials have triggered their first-pickup Journal line.
         self.chronicle_seen_materials: set = set()
 
         # Philosopher career arc — counter of full identifies (chain >= 3 for uniques OR threshold success
