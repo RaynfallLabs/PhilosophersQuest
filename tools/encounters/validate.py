@@ -86,7 +86,7 @@ ROAD_BANNED = ('karma', 'quiz', 'option', 'choose', 'press', 'light', 'medium', 
                'stakes')
 CALLBACK_KEYS = {'encounter', 'after_floors', 'requires', 'replace', 'if_missed', 'thread',
                  'lost_line', 'after_oath_due'}
-DELAYED_KEYS = {'after_floors', 'reward', 'requires', 'text', 'chronicle'}
+DELAYED_KEYS = {'after_floors', 'reward', 'cost', 'requires', 'text', 'chronicle'}
 ESCORT_KEYS = {'id', 'name', 'sprite_id', 'color', 'hp', 'ac', 'goal', 'leash', 'floors',
                'perk', 'on_arrive', 'on_fail', 'on_arrive_variants', 'on_fail_variants',
                'on_fail_trapdoor', '$ref'}
@@ -457,6 +457,13 @@ def validate_encounter(source: str, enc: dict, ctx: dict) -> list:
                     err('virtue', f'{where}: virtue tags are engine-only')
             for v in b.get('outcome_variants') or ():
                 cond_ok(v.get('when'), where)
+                for vk in v:
+                    if vk not in ('when', 'outcome', 'chronicle'):
+                        err('unknown_key', f'{where}: outcome_variants key {vk!r}')
+                if v.get('chronicle'):
+                    bad = _chron_lint(v['chronicle'])
+                    if bad:
+                        err('chronicle_lint', f"{where} variant: {', '.join(bad)}")
             if b.get('chronicle'):
                 bad = _chron_lint(b['chronicle'])
                 if bad:
@@ -817,6 +824,9 @@ def _cond_atoms(cond, out):
             out['deeds'].update(v or ())
         elif k in ('items_any', 'items_none'):
             out['items'].update(v or ())
+        elif k in ('worn_any', 'worn_none'):
+            out['items'].update(v or ())
+            out['worn'].update(v or ())
         elif k == 'oath_status':
             for oid, want in (v or {}).items():
                 out['oaths'].setdefault(oid, set()).update(
@@ -845,7 +855,8 @@ def _free_in_every_state(opts) -> bool:
 
     import deeds
     from encounter_schema import visible_options
-    atoms = {'deeds': set(), 'items': set(), 'oaths': {}, 'stats': {}, 'other': False}
+    atoms = {'deeds': set(), 'items': set(), 'worn': set(), 'oaths': {}, 'stats': {},
+             'other': False}
     for o in opts:
         _cond_atoms(o.get('requires'), atoms)
         _cond_atoms(o.get('forbids'), atoms)
@@ -859,7 +870,8 @@ def _free_in_every_state(opts) -> bool:
     for o in opts:
         for b in option_branches(o) + [o]:
             own |= _deed_ids(b)
-    flags = sorted(atoms['deeds'] - own) + [f'item:{i}' for i in sorted(atoms['items'])]
+    flags = sorted(atoms['deeds'] - own) + [f'item:{i}' for i in sorted(atoms['items'])] \
+        + [f'worn:{i}' for i in sorted(atoms['worn'])]
     oath_axes = [[(oid, st) for st in [None] + sorted(states)]
                  for oid, states in sorted(atoms['oaths'].items())]
     stat_axes = [[(st, 0), (st, int(n))] for st, n in sorted(atoms['stats'].items())]
@@ -870,9 +882,12 @@ def _free_in_every_state(opts) -> bool:
         for oath_pick in itertools.product(*oath_axes):
             for stat_pick in itertools.product(*stat_axes):
                 reg = deeds.new_register()
-                held = set()
+                held, worn = set(), set()
                 for on, f in zip(bits, flags):
                     if on and f.startswith('item:'):
+                        held.add(f[5:])
+                    elif on and f.startswith('worn:'):
+                        worn.add(f[5:])
                         held.add(f[5:])
                     elif on:
                         deeds.record(reg, _deed_for(f), floor=1, block=1, turn=0,
@@ -881,7 +896,7 @@ def _free_in_every_state(opts) -> bool:
                     if st is not None:
                         reg['oaths'][oid] = {'id': oid, 'status': st}
                 ctx = {'reg': reg, 'karma': 0, 'stats': dict(stat_pick), 'floor': 1,
-                       'deepest': 1, 'items': held}
+                       'deepest': 1, 'items': held, 'worn': worn}
                 if not any(_is_free(o) for _i, o in visible_options(enc, ctx)):
                     return False
     return True
@@ -978,8 +993,9 @@ def _check_callback(err, where, cb, cond_ok):
 
 
 def _check_delayed(err, where, dl, cond_ok):
-    if not isinstance(dl, dict) or not isinstance(dl.get('reward'), dict):
-        err('delayed', f'{where}: a delayed entry needs a reward')
+    if not isinstance(dl, dict) or not (isinstance(dl.get('reward'), dict)
+                                        or isinstance(dl.get('cost'), dict)):
+        err('delayed', f'{where}: a delayed entry needs a reward or a cost')
         return
     for k in dl:
         if k not in DELAYED_KEYS:
@@ -991,7 +1007,10 @@ def _check_delayed(err, where, dl, cond_ok):
     if not (isinstance(span, list) and len(span) == 2 and 0 <= int(span[0]) <= int(span[1])
             and int(span[1]) >= 1):
         err('delayed', f'{where}: after_floors must be [min, max]')
-    _check_reward(err, where, dl['reward'])
+    if dl.get('reward') is not None:
+        _check_reward(err, where, dl['reward'])
+    if dl.get('cost') is not None:
+        _check_cost(err, f'{where} delayed', dl['cost'], 'medium')
     if dl.get('chronicle'):
         bad = _chron_lint(dl['chronicle'])
         if bad:
@@ -1011,7 +1030,7 @@ def _check_escort(err, where, esc):
     if not isinstance(esc.get('hp'), int) or esc['hp'] < 1:
         err('escort', f'{where}: escort hp is a fixed number (LORE NOT FLOOR)')
     goal = esc.get('goal', 'stairs_down')
-    if goal != 'stairs_down' and not str(goal).startswith('tile:'):
+    if goal not in ('stairs_down', 'stairs_up') and not str(goal).startswith('tile:'):
         err('escort', f'{where}: goal {goal!r}')
     if esc.get('perk') not in ESCORT_PERKS:
         err('escort', f"{where}: perk {esc.get('perk')!r}")

@@ -191,7 +191,9 @@ class EncountersMixin:
         self._spawn_encounter_npc(enc, '_npc_encounter_tag', level)
 
     def _maybe_spawn_flavor_npc(self, level: int):
-        """Spawn a flavor (non-karmic) NPC on this level if one is assigned."""
+        """Spawn a story or flavor NPC on this level if one is assigned (the
+        Road fills ``_flavor_encounter_levels`` as slots bind). Light ones
+        never touch karma; medium and high ones may offer a gated point."""
         enc = getattr(self, '_flavor_encounter_levels', {}).get(level)
         if enc is None:
             return
@@ -772,11 +774,13 @@ class EncountersMixin:
             except (TypeError, ValueError):
                 stats[st] = 0
         from game_divine import _iter_equipped
-        items = {getattr(i, 'id', None) for i in list(getattr(p, 'inventory', []) or [])
-                 + list(_iter_equipped(p))}
+        worn = {getattr(i, 'id', None) for i in _iter_equipped(p)}
+        items = {getattr(i, 'id', None) for i in list(getattr(p, 'inventory', []) or [])} | worn
         items.discard(None)
+        worn.discard(None)
         return {'reg': self._deeds_reg(), 'karma': int(getattr(self, 'karma', 0) or 0),
-                'stats': stats, 'floor': floor, 'deepest': deepest, 'items': items}
+                'stats': stats, 'floor': floor, 'deepest': deepest, 'items': items,
+                'worn': worn}
 
     def _record_deeds(self, entries, source: str):
         """Record an outcome's ``deeds`` list (ids, or {id, tags, payload,
@@ -977,9 +981,10 @@ class EncountersMixin:
         option's pass or fail branch. Rewards, karma (through karma.adjust),
         virtue tags, deeds, oaths, people and threads; then the outcome page.
 
-        With the karma gate off this is exactly the old order: reward, Surya's
-        doubling (on a positive request), bonus reward, karma. With it on,
-        Surya doubles only an award that was actually applied."""
+        With the karma gate on (shipped) karma is applied first and Surya
+        doubles only an award that was actually applied. With it off this
+        is the old order: reward, Surya's doubling (on a positive request),
+        bonus reward, karma."""
         import karma
         enc = getattr(self, '_npc_encounter_active', None) or {}
         tag = enc.get('tag', '')
@@ -1051,7 +1056,8 @@ class EncountersMixin:
             _extra = self._people_lines_text(o['people_lines'])
             if _extra:
                 self._npc_outcome_text = (self._npc_outcome_text + '\n\n' + _extra).strip()
-        self._npc_outcome_chronicle = o.get('chronicle')
+        from encounter_schema import resolve_chronicle
+        self._npc_outcome_chronicle = resolve_chronicle(o, self._deed_ctx())
         # The thread this outcome opened: its hint sits faint under the
         # deed's line in the Journal (section 7.4).
         th = o.get('thread')
@@ -1096,10 +1102,11 @@ class EncountersMixin:
                                           and int(o.get('karma', 0) or 0) > 0):
             self._engine_virtue('forgo', tag)
         self._record_deeds(o.get('deeds'), tag)
-        # Today's content carries its karma on the option itself (untyped,
+        # Old content carried its karma on the option itself (untyped,
         # 'legacy'). An outcome pays its karma once: while it does, swearing,
-        # keeping or breaking an oath in that outcome moves no more karma
-        # (Phase 3a moves those points onto the oath and removes the rule).
+        # keeping or breaking an oath in that outcome moves no more karma.
+        # The shipped content is all typed (the validator keeps 'legacy'
+        # out), so this guard is inert for it.
         legacy_karma = (int(o.get('karma', 0) or 0)
                         and o.get('karma_kind', 'legacy') == 'legacy')
         oath = o.get('oath')
@@ -1191,9 +1198,9 @@ class EncountersMixin:
     def _keep_oath(self, oath_id: str, *, paid_here: bool = False) -> bool:
         """Keep an open oath: deed ``kept.<id>`` (tag virtue:kept) and an
         'oath' karma award into the earliest open block slot since it was
-        sworn. While today's content still carries the oath's point on an
-        option (paid when sworn, or on the keeping option itself) the award
-        is 0, so karma totals stay as they were (gate off, Phase 2)."""
+        sworn. If an outcome carries the oath's point itself (``paid_here``)
+        or the oath was ``prepaid`` when sworn, the award here is 0 so the
+        point is never paid twice."""
         import deeds
         import karma
         reg = self._deeds_reg()
@@ -1728,7 +1735,7 @@ class EncountersMixin:
             if self._npc_visible:
                 return
             # Nothing left to choose: each step's line is already in the
-            # chronicle, so the close adds no generic one.
+            # Journal, so the close adds no generic one.
             self._npc_outcome_chronicle = ''
         self._close_npc_encounter(resolved=True)
 

@@ -174,7 +174,7 @@ class RoadMixin:
         floor, d, block, turn = self._deed_where()
         st = self._road_state()
         for spec in specs or ():
-            if not isinstance(spec, dict) or not spec.get('reward'):
+            if not isinstance(spec, dict) or not (spec.get('reward') or spec.get('cost')):
                 continue
             span = spec.get('after_floors') or [1, 5]
             earliest, latest = d + int(span[0]), d + int(span[1])
@@ -270,8 +270,15 @@ class RoadMixin:
                 continue
             spec = p.get('spec') or {}
             if spec.get('text'):
-                self.add_message(spec['text'], 'loot')
-            self._apply_npc_reward(spec['reward'])
+                self.add_message(spec['text'], 'warning' if spec.get('cost') else 'loot')
+            if spec.get('cost'):
+                # A loss that lands later (a knife missed a few floors on):
+                # paid from the pack, no pick, never more than is there.
+                from npc_encounters import can_pay_cost
+                if can_pay_cost(self.player, spec['cost'], self.player_gold)[0]:
+                    self._npc_pay_cost(spec['cost'], None)
+            if spec.get('reward'):
+                self._apply_npc_reward(spec['reward'])
             if spec.get('chronicle'):
                 chronicle.chron(self, 'consequence', spec['chronicle'], cause=p.get('cause'),
                                 source=p.get('source') or None)

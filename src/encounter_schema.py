@@ -124,6 +124,16 @@ def resolve_outcome(o: dict, ctx: dict) -> str:
     return o.get('outcome', '')
 
 
+def resolve_chronicle(o: dict, ctx: dict):
+    """The journal line for an outcome: the first matching
+    ``outcome_variants`` entry that carries its own ``chronicle`` (I wore it
+    / I carried it), else the outcome's own."""
+    for v in o.get('outcome_variants') or ():
+        if deeds.check(v.get('when'), ctx):
+            return v.get('chronicle', o.get('chronicle'))
+    return o.get('chronicle')
+
+
 def quiz_passed(spec: dict, result) -> bool:
     """Threshold modes pass on ``result.success``; chain modes pass when the
     chain reached ``pass_at`` (default: the engine's own success)."""

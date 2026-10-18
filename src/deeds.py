@@ -48,7 +48,7 @@ PERSON_STATUSES = ('met', 'aided', 'saved', 'lost', 'wronged', 'unmasked', 'spar
 CONDITION_KEYS = frozenset({
     'deeds_all', 'deeds_any', 'deeds_none', 'oath_status', 'karma_min', 'karma_max',
     'stat_min', 'items_any', 'items_none', 'tags_count_min', 'floor_min', 'floor_max',
-    'any',
+    'any', 'worn_any', 'worn_none',
 })
 
 
@@ -458,6 +458,15 @@ def check(cond, ctx: dict) -> bool:
         elif key == 'items_none':
             items = ctx.get('items') or set()
             if any(i in items for i in val):
+                return False
+        elif key == 'worn_any':
+            # Worn or wielded (the reliquary round the neck, not in the pack).
+            worn = ctx.get('worn') or set()
+            if not any(i in worn for i in val):
+                return False
+        elif key == 'worn_none':
+            worn = ctx.get('worn') or set()
+            if any(i in worn for i in val):
                 return False
         elif key == 'tags_count_min':
             for tag, n in val.items():

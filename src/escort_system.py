@@ -372,9 +372,12 @@ class EscortMixin:
             if not near:
                 self._escort_failed(e, 'left_behind')
                 continue
-            if new_level == old_level + 1:
+            # 'stairs_down' counts stairs taken down; 'stairs_up' counts
+            # stairs taken up (a civilian walked back toward the surface).
+            step = {'stairs_down': 1, 'stairs_up': -1}.get(e.goal)
+            if step is not None and new_level == old_level + step:
                 e.floors_left -= 1
-                if e.floors_left <= 0 and e.goal == 'stairs_down':
+                if e.floors_left <= 0:
                     arrived.append(e)
                     e.floor = new_level
                     continue
