@@ -164,8 +164,11 @@ def test_chests_pay_a_share_of_the_floor():
 def test_rooms_hold_coin_piles_and_lairs_hold_heaps_without_touching_the_floor_stream():
     from dungeon import generate_dungeon, spawn_items
     from items import GoldPile
+    # 40 floors, not 12: how many rooms roll a pile depends on how much of
+    # the shared stream earlier code drew, so a small sample was flaky
+    # (4 piles in one suite order, 9 alone). About 34 is typical.
     found = 0
-    for s in range(12):
+    for s in range(40):
         random.seed(500 + s)
         d = generate_dungeon(80, 50, 30)
         its = spawn_items(d.rooms, 30, d)
@@ -173,7 +176,7 @@ def test_rooms_hold_coin_piles_and_lairs_hold_heaps_without_touching_the_floor_s
         found += len(piles)
         for p in piles:
             assert p.amount <= economy.floor_income(30) * 1.0
-    assert found >= 5
+    assert found >= 12
     src = open(os.path.join(ROOT, 'src', 'dungeon.py'), encoding='utf-8').read()
     assert '_coin_rng = random.Random(hash((tuple(rng.getstate()' in src
 
