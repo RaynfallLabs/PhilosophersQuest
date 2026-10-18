@@ -336,13 +336,16 @@ def test_instant_kills_stop_at_the_next_mark():
     g = _game('__test_bk_instakill__')
     k = _on_his_floor(g)
     _beside(g, k)
+    def _corpses():
+        return {id(i) for i in g.ground_items
+                if getattr(i, 'is_corpse', False) or 'corpse' in str(getattr(i, 'id', ''))}
+    before = _corpses()          # other floor monsters may already lie dead
     # the death-effect pattern: set dead, then hand to the kill handler
     k.hp = 0
     k.alive = False
     g._on_monster_killed(k)
     assert k.alive and k.stage == 1 and k in g.monsters
-    assert not any(getattr(i, 'is_corpse', False) or 'corpse' in str(getattr(i, 'id', ''))
-                   for i in g.ground_items)
+    assert _corpses() == before                 # he left no corpse
     g._advance_turn()
     # a real wand of death ray through the game's own wand code
     from items import make_item_by_id
