@@ -49,6 +49,7 @@ from effects_runtime import build_default_runtime
 from renderer import Renderer
 from geom import monster_at_tile
 import unseen
+import splitting
 from ui import Sidebar, MessageLog, floor_label
 from game_helpers import (
     migrate_buc_item, cycle_tab,
@@ -3988,6 +3989,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     m.x, m.y = spot
                     mine = [spot]
             taken.update(mine)
+        # A false down stair (the Hellmouth) never blocks the way to the real
+        # one, and moves or leaves if it would (src/false_stairs.py).
+        import false_stairs
+        false_stairs.seat(self.dungeon, self.monsters)
         # ... and no loot lies under water or lava (pools are carved after
         # items are set down: about one item every 25 floors)
         _lie = [(x, y) for y in range(self.dungeon.height) for x in range(self.dungeon.width)
@@ -4032,6 +4037,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     def _advance_turn(self):
         self.player._combat_game_ref = self      # so a death check anywhere can reach the wards
         self._reap_unnoticed_kills()
+        # Creatures struck the wrong way split (src/splitting.py): the new
+        # bodies are set down here, whatever dealt the blow.
+        splitting.spawn_pending(self)
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
         if int(getattr(self.player, '_huginn_muninn_remaining', 0) or 0) > 0:
@@ -6177,7 +6185,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         'heal', 'extra_heal', 'full_heal', 'restore_sp', 'restore_mp', 'brilliance_mp',
         'cure_poison', 'cure_disease', 'cure_all',
         'haste', 'invisibility', 'regeneration',
-        'heroism', 'brilliance', 'levitation',
+        'heroism', 'brilliance', 'levitation', 'see_invisible',
         'restore_str', 'gain_level',
         'fire_resist', 'cold_resist', 'shock_resist',
     })

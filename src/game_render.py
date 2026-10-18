@@ -77,6 +77,41 @@ def _cap(raw) -> str:
     return proper_name(str(raw).replace('_', ' '))
 
 
+def monster_trait_lines(mdef: dict) -> list:
+    """Bestiary lines for the special rules a creature carries in its data
+    (thieves, splitters, mimics, the invisible, heart-weighers...)."""
+    if not isinstance(mdef, dict):
+        return []
+    out = []
+    steals = {a.get('steal') for a in (mdef.get('attacks') or []) if a.get('steal')}
+    if steals:
+        what = 'Gold or an item' if 'any' in steals or len(steals) > 1 else (
+            'Gold' if 'gold' in steals else 'An item')
+        how = 'then vanishes elsewhere on the floor' if mdef.get('after_theft') == 'teleport' else 'then runs'
+        out.append(f"Steals: {what}, {how}. Killing it gives it back.")
+    sp = mdef.get('splits')
+    if isinstance(sp, dict):
+        by = sp.get('by')
+        cause = 'a small blow' if by == 'weak_blow' else ' or '.join(_cap(x) for x in (by or []))
+        into = sp.get('into')
+        out.append(f"Splits when struck by {cause}" + (f", letting out {_cap(into)}" if into else '') + '.')
+    disg = mdef.get('disguise')
+    if isinstance(disg, dict) and disg.get('name'):
+        out.append(f"Poses as: {_cap(disg['name'])}")
+    if mdef.get('invisible'):
+        out.append("Invisible: unseen without see invisible, true sight or telepathy.")
+    if mdef.get('weighs_heart'):
+        out.append("Weighs the heart: bites harder on low karma, softer on high.")
+    if mdef.get('fearless'):
+        out.append("Fearless: never flees and cannot be frightened.")
+    if mdef.get('quarrelsome'):
+        out.append("Quarrelsome: confused, it strikes its own kind.")
+    if mdef.get('pack_size'):
+        lo, hi = mdef['pack_size'][0], mdef['pack_size'][-1]
+        out.append(f"Comes in packs of {lo}" + (f" to {hi}." if hi != lo else '.'))
+    return out
+
+
 def _temp_power_label(name) -> str:
     """Display name of a recipe's temporary power (same text the cook log
     uses), or '' when there is none."""
@@ -1957,7 +1992,8 @@ class RenderMixin:
                 if unseen.lurking(m):
                     _disg = unseen.disguise(m)
                     if _disg:
-                        self.renderer.draw_disguise(m.x, m.y, _disg['item'], self.visible)
+                        self.renderer.draw_disguise(m.x, m.y, _disg.get('item'), self.visible,
+                                                    tile=_disg.get('tile'))
                     continue
                 if unseen.unseen(m, self.player):
                     if getattr(m, '_felt_at', None) == (m.x, m.y):
@@ -8022,7 +8058,11 @@ class RenderMixin:
                 effect = atk.get('effect')
                 if effect:
                     line += f" -> {effect.replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
+                if atk.get('steal'):
+                    line += " -> Steals"
                 mechanics.append((line, FP.BODY_TEXT, self.font_sm))
+            for trait in monster_trait_lines(mdef):
+                mechanics.append((trait, FP.GOLD_PALE, self.font_sm))
         else:
             mechanics.append(("Unstudied. Identify this corpse to reveal its stats, weaknesses and history.",
                               FP.FADED_TEXT, self.font_sm))
@@ -8604,7 +8644,11 @@ class RenderMixin:
                 line = f"{atk.get('name', '?').replace('_', ' ').title()}: {atk.get('damage', '?')} ({_cap(atk.get('type', 'physical'))})"
                 if atk.get('effect'):
                     line += f" -> {atk.get('effect').replace('_', ' ').title()} {int(atk.get('effect_chance', 0) * 100)}%"
+                if atk.get('steal'):
+                    line += " -> Steals"
                 lines.append((line, FP.BODY_TEXT, self.font_sm))
+            for trait in monster_trait_lines(entry):
+                lines.append((trait, FP.GOLD_PALE, self.font_sm))
         elif category == 'weapon':
             damage_types = ', '.join(_cap(t) for t in entry.get('damage_types', ['physical']))
             lines += [

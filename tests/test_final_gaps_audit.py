@@ -45,6 +45,9 @@ def test_known_multi_tile_bosses_pinned():
         'surtur':          (2, 2),
         'ymir_last_spawn': (2, 2),
         'hrungnirs_ghost': (2, 2),
+        # 2026-10 late-game pass: an ordinary 2x2 ambusher from the spawn
+        # pool (dungeon._footprint_fits places it), not a boss-floor boss.
+        'gashadokuro':     (2, 2),
     }
     assert multi_tile == EXPECTED, \
         f"New multi-tile bosses detected — verify _spawn_boss handles them: {multi_tile}"

@@ -874,12 +874,14 @@ class Renderer:
             gy = sy + (full_h - surf.get_height()) // 2
             self.screen.blit(surf, (gx, gy))
 
-    def draw_disguise(self, x: int, y: int, item_id: str, visible: set = None):
+    def draw_disguise(self, x: int, y: int, item_id: str = None, visible: set = None,
+                      tile: str = None):
         """A mimic still in disguise, drawn as the item it poses as (a chest,
-        a hoard): exactly the picture the real thing has."""
+        a hoard) or the map feature (the Hellmouth's down stair): exactly the
+        picture the real thing has."""
         if visible is not None and (x, y) not in visible:
             return
-        sprite = self._get_item_sprite(item_id)
+        sprite = self._get_env_sprite(tile) if tile else self._get_item_sprite(item_id)
         if sprite:
             self.screen.blit(sprite, self.world_to_screen(x, y))
 

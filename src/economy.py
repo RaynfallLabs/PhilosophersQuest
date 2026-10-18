@@ -166,3 +166,19 @@ def roll_share(rng, level: int, bounds: tuple) -> int:
     """A random round figure between two shares of the floor's income."""
     lo, hi = bounds
     return max(5, nice(floor_income(level) * rng.uniform(lo, hi)))
+
+
+# ------------------------------------------------------------------ theft
+# A thief (src/theft.py) cuts away this share of the purse the hero carries.
+# A share of the purse, not a written amount: it means the same on floor 3
+# and on floor 70, and the hero gets all of it back by killing the thief.
+THEFT_PURSE_SHARE = (0.15, 0.30)
+
+
+def theft_take(rng, purse: int) -> int:
+    """How much of a purse of `purse` gold a thief gets away with."""
+    purse = int(purse or 0)
+    if purse <= 0:
+        return 0
+    lo, hi = THEFT_PURSE_SHARE
+    return max(1, min(purse, int(round(purse * rng.uniform(lo, hi)))))

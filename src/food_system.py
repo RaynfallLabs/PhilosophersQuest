@@ -1086,6 +1086,11 @@ def drink_potion(player, potion) -> list[str]:
         player.add_effect('levitating', dur)
         messages.append(f"Your feet leave the ground. Levitating ({dur} turns).")
 
+    elif effect == 'see_invisible':
+        dur = max(1, int(duration * _buff_mult))
+        player.add_effect('see_invisible', dur)
+        messages.append(f"Your eyes are opened: you see what walks unseen. See Invisible ({dur} turns).")
+
     elif effect == 'restore_str':
         # Restore STR to base value (undoes disease drain)
         # What disease took, as the disease tick records it. This read

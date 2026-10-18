@@ -63,6 +63,7 @@ from game_states import (
 )
 from geom import monster_at_tile, is_at_tile
 import unseen
+import theft
 from items import Artifact, Weapon
 from pet_system import Pet, random_species as random_pet_species
 
@@ -356,6 +357,15 @@ class CombatMixin:
                 self.add_message(
                     f"The {display} shatters on the ground. Nothing happens.", 'info'
                 )
+
+        # Cadmus's stone: something thrown into the middle of the Sown Men
+        # makes the one it hits round on the man beside him.
+        _q = int(getattr(hit_monster, 'quarrels_when_struck_by_thrown', 0) or 0) if hit_monster else 0
+        if _q and hit_monster.alive:
+            hit_monster.add_effect('confused', _q)
+            if (hit_monster.x, hit_monster.y) in self.visible:
+                self.add_message(f"{the_name(hit_monster)} spins round, blaming the one beside it!",
+                                 'success')
 
         self._advance_turn()
 
@@ -965,6 +975,9 @@ class CombatMixin:
         self.player._spared_this_attack = False
         self.add_message(f"{the_name(monster)} is slain!", 'success')
         self._drop_treasure(monster)
+        # A thief gives back everything it stole (src/theft.py).
+        for _tmsg in theft.give_back(self, monster):
+            self.add_message(_tmsg, 'loot')
 
         # Cadmus / Vel of Murugan / Shamshir (engine wave 4):
         # summon_after_kill_with_tag — combat side set _pending_summon
@@ -1667,7 +1680,8 @@ class CombatMixin:
         if _hidden is not None and monster is None:
             _disg = unseen.disguise(_hidden)
             if _disg:
-                self.add_message(f"You see {self._a_or_an(_disg.get('name') or 'chest')} on the ground.",
+                _where = '' if _disg.get('tile') else ' on the ground'
+                self.add_message(f"You see {self._a_or_an(_disg.get('name') or 'chest')}{_where}.",
                                  'info')
                 # The same sharp-eyed check a mimic chest gets (below).
                 if random.random() < min(0.85, 0.15 + self.player.PER * 0.04):
@@ -2605,6 +2619,14 @@ class CombatMixin:
                     msg += (" It came from the "
                             f"{self._compass_word(m.x - self.player.x, m.y - self.player.y)}.")
                 self.add_message(msg, 'danger')
+                # A thief's blow landed: it takes the gold or the item now
+                # (src/theft.py), and runs with it.
+                _steal = getattr(m, '_wants_steal', None)
+                if _steal:
+                    m._wants_steal = None
+                    _tmsg = theft.steal(self, m, _steal)
+                    if _tmsg:
+                        self.add_message(_tmsg, 'danger')
                 # Perseus's trait counts every gaze or effect thrown back at its
                 # sender. Only the reflection aura's second chance (below) was
                 # counted: the Aegis turning Medusa's gaze, the thing the trait

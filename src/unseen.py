@@ -64,11 +64,13 @@ def disguise(m):
     """The thing an un-sprung mimic-AI creature is drawn as, or None.
 
     A dict {'item': <item sprite id>, 'name': <what the hero sees>} from the
-    creature's `disguise` field in monsters.json."""
+    creature's `disguise` field in monsters.json, or {'tile': <map feature
+    sprite, e.g. 'stairs_down'>, 'name': ...} for one posing as part of the
+    map (the Hellmouth: src/false_stairs.py seats it)."""
     if getattr(m, 'ai_pattern', '') != 'mimic' or getattr(m, '_aware', False):
         return None
     d = getattr(m, 'disguise', None)
-    return d if isinstance(d, dict) and d.get('item') else None
+    return d if isinstance(d, dict) and (d.get('item') or d.get('tile')) else None
 
 
 def concealed(m, player) -> bool:

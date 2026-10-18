@@ -1351,6 +1351,12 @@ def _spawn_one_in_room(room, eligible, dungeon, monsters, rng) -> bool:
             if rng.random() < 0.30:       # 30% chance of a smaller pack (variety)
                 base_max = base_min
             pack_extra = rng.randint(base_min, base_max)
+            # A pack whose lore fixes its number (the three Furies, the
+            # scorpion-man and his wife, Keres three to five) says so:
+            # pack_size [min, max] counts the whole pack, leader included.
+            _ps = defn.get('pack_size')
+            if _ps:
+                pack_extra = rng.randint(int(_ps[0]), int(_ps[-1])) - 1
             for ptx, pty in tiles:
                 if pack_extra <= 0:
                     break

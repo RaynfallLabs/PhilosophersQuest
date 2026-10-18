@@ -824,3 +824,18 @@ The reviewer also asks, of every pick, the questions that have no line in the br
 `{"<id>": {"pick": 2, "fails": {"1": "reason", "3": "reason"}, "note": "one line"}}`.
 `"pick": null` with a note means no candidate is good enough after rework.
 `picks.py` draws the overview sheet from it.
+
+### Lessons from the late-game monster run (g31, g32; 2026-10-17)
+
+- "Owl-like" alone draws crows and vultures; describe the flat face disc with both eyes forward.
+- Making a monster "less muscular" swings to a ghoul ("gaunt, stringy") or a gorilla ("jowls, heavy brow"); a long haggard face, hooked nose and a shift that covers the chest worked for a she-troll.
+- A dead woman's dark hands draw as gloves unless the skin is "shrunk and cracked over the bones".
+- Eyes set in a shapeless mass make a face; put them along the tendrils.
+- A held victim reads as a second figure: say "nothing in its hands".
+- "Pulled out of a ploughed field" or earth on the legs draws ground under the figure.
+- A glazed-pottery figurine draws as a nude statue; "shaped like the lid of a mummy case, no chest, no waist, no hips" fixed it. "Figurine" also freezes the pose.
+- "Knotted, tangled, many" vermin draws spaghetti; "exactly five big animals, each half the heap wide" works.
+- A cloud or flame on a palm floats free and is cut away; "fingers curled into its base, one shape" keeps it attached.
+- A sun disc: "solid disc of polished red copper, no glow" avoids a halo and a green fringe.
+- A rock creature: "no face at all, only two glowing slits" stops the orc face.
+- A three-headed dragon still grows a fourth head now and then; check the count.

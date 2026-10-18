@@ -613,6 +613,13 @@
         "effect": "teleportitis",
         "effect_chance": 0.4,
         "effect_duration": "1d8"
+      },
+      {
+        "name": "Light Fingers",
+        "damage": "1d2",
+        "type": "physical",
+        "steal": "gold",
+        "steal_chance": 0.8
       }
     ],
     "resistances": [],
@@ -631,8 +638,9 @@
       "item_chance": 0.6,
       "item_tier": 2
     },
-    "lore": "Irish tales make the leprechaun a solitary cobbler, heard tapping at a single shoe under a hedge. A captor who keeps both eyes on him can demand his crock of gold. One glance away and he is gone. The ones down here have learned the same trick in reverse: a touch, a wink, and their pursuer is standing somewhere else entirely.",
-    "frequency": 3
+    "lore": "Irish tales make the leprechaun a solitary cobbler, heard tapping at a single shoe under a hedge. A captor who keeps both eyes on him can demand his crock of gold. One glance away and he is gone. The ones down here have learned the trick in reverse: a touch, a wink, your purse is lighter, and he is standing somewhere else on the floor entirely. He has not left it. Find him and the gold comes back.",
+    "frequency": 3,
+    "after_theft": "teleport"
   },
   "kobold": {
     "name": "kobold",
@@ -8790,7 +8798,14 @@
       "item_tier": 3
     },
     "lore": "A heap of living tar that creeps along floor, wall and ceiling alike. It eats wood, leather and steel, and a sword that goes in comes out as a pitted stump. Worse, a blade does not wound it: each cut piece crawls off as a smaller pudding. Lightning does the same. Old hands burn it, and stand well back while they do.",
-    "frequency": 4
+    "frequency": 4,
+    "splits": {
+      "by": [
+        "slash",
+        "lightning"
+      ],
+      "max": 6
+    }
   },
   "gray_ooze": {
     "name": "Gray Ooze",
@@ -10700,8 +10715,9 @@
       "item_chance": 0.12,
       "item_tier": 2
     },
-    "lore": "The word is German for 'noisy ghost'. A poltergeist has no shape to show, only a temper: doors slam, crockery flies, a chair skates across the room and breaks against the wall. It is the spirit of someone who died bewildered and has stayed that way. It does not hunt the living. It rages at them for being able to leave.",
-    "frequency": 6
+    "lore": "The word is German for 'noisy ghost'. A poltergeist has no shape to show, only a temper: doors slam, crockery flies, a chair skates across the room and breaks against the wall. It is the spirit of someone who died bewildered and has stayed that way. Nobody has ever seen one; you see what it throws, and where it came from. It does not hunt the living. It rages at them for being able to leave.",
+    "frequency": 6,
+    "invisible": true
   },
   "revenant": {
     "name": "Revenant",
@@ -12989,7 +13005,9 @@
         "type": "physical",
         "effect": "confused",
         "effect_chance": 0.2,
-        "effect_duration": 2
+        "effect_duration": 2,
+        "steal": "item",
+        "steal_chance": 0.7
       }
     ],
     "resistances": [
@@ -13012,8 +13030,9 @@
       "item_chance": 0.5,
       "item_tier": 3
     },
-    "lore": "An incorporeal undead that phases between the material and ethereal planes to steal objects from the living. Ethereal filchers are drawn to bright or magical items, which they collect in hidden ethereal lairs. They are rarely aggressive unless cornered, preferring to flee with their stolen goods rather than risk destruction.",
-    "frequency": 4
+    "lore": "An incorporeal undead that slips between this world and the next to steal from the living. Filchers are drawn to bright and magical things and carry them off to hidden ethereal lairs. They are rarely aggressive unless cornered. A filcher's fingers pass through a closed pack as easily as through air, and once it has something it flees rather than fight. Whatever it took falls out of it when it dies.",
+    "frequency": 4,
+    "after_theft": "flee"
   },
   "nightmare_shade": {
     "name": "Nightmare Shade",
@@ -15724,6 +15743,13 @@
         "effect": "confused",
         "effect_chance": 0.4,
         "effect_duration": 5
+      },
+      {
+        "name": "Light Fingers",
+        "damage": "1d2",
+        "type": "physical",
+        "steal": "gold",
+        "steal_chance": 0.8
       }
     ],
     "resistances": [
@@ -15745,7 +15771,8 @@
       "item_tier": 2
     },
     "lore": "The leprechaun is the fairy shoemaker of Ireland, found by the tap of his hammer. A man who holds him with his eyes can make him show his gold; one glance away and he is gone. One farmer tied a red garter to the bush that marked the spot and went for a spade. He came back to find a garter on every bush in the field. This one is tired of being grabbed.",
-    "frequency": 6
+    "frequency": 6,
+    "after_theft": "teleport"
   },
   "spriggan": {
     "name": "spriggan",
@@ -15958,8 +15985,9 @@
       "item_chance": 0.2,
       "item_tier": 3
     },
-    "lore": "The wind has always had names. The Greeks kept four of them, Boreas, Notus, Eurus and Zephyrus, and said King Aeolus held the rest shut in a cave. Paracelsus called the spirits of the air sylphs. An air elemental is a whirlwind with a will: nearly invisible, quick as a thrown knife, and full of grit and splinters that flay whatever it wraps around.",
-    "frequency": 4
+    "lore": "The wind has always had names. The Greeks kept four of them, Boreas, Notus, Eurus and Zephyrus, and said King Aeolus held the rest shut in a cave. Paracelsus called the spirits of the air sylphs. An air elemental is a whirlwind with a will: invisible as the wind it is made of, quick as a thrown knife, and full of grit and splinters that flay whatever it wraps around. You see the dust it carries, and only once it has hit you.",
+    "frequency": 4,
+    "invisible": true
   },
   "ice_elemental": {
     "name": "ice elemental",
@@ -24930,12 +24958,21 @@
         "damage": "5d10+31"
       },
       {
-        "name": "Unmaking Gaze",
+        "name": "Hush of a Dying Star",
+        "damage": "4d8+14",
         "type": "magic",
-        "effect": "weakened",
+        "effect": "silenced",
         "effect_chance": 0.35,
-        "effect_duration": 5,
-        "damage": "4d8+14"
+        "effect_duration": 4,
+        "ranged": true
+      },
+      {
+        "name": "Unmaking Gaze",
+        "damage": "4d8+14",
+        "type": "magic",
+        "effect": "teleportitis",
+        "effect_chance": 0.3,
+        "effect_duration": 8
       }
     ],
     "resistances": [
@@ -24959,7 +24996,7 @@
       "item_chance": 0.55,
       "item_tier": 5
     },
-    "lore": "Isaiah saw the seraphim above the throne, each with six wings: two to cover the face, two to cover the feet, and two to fly. This one fell and kept the wings. When it lowers the upper pair there is nothing behind them, only a hollow where a face and a name used to be. Its gaze unmakes strength, and its voice is the hush of a star going out."
+    "lore": "Isaiah saw the seraphim above the throne, each with six wings: two to cover the face, two to cover the feet, and two to fly. This one fell and kept the wings. When it lowers the upper pair there is nothing behind them, only a hollow where a face and a name used to be. Its voice is the hush of a star going out, and in that hush no spell can be spoken. Its gaze unmakes a thing's place in the world, and whoever it falls on keeps slipping out of where he stands."
   },
   "apocalypse_herald": {
     "name": "apocalypse herald",
@@ -24980,16 +25017,16 @@
     "attacks": [
       {
         "name": "Trumpet Blast",
+        "damage": "4d8+14",
         "type": "magic",
         "effect": "feared",
-        "effect_chance": 0.2,
-        "effect_duration": 3,
-        "damage": "4d8+14"
+        "effect_chance": 0.4,
+        "effect_duration": 3
       },
       {
         "name": "Sickle of the Harvest",
-        "type": "slash",
         "damage": "5d10+18",
+        "type": "slash",
         "effect": "bleeding",
         "effect_chance": 0.5,
         "effect_duration": 4
@@ -25035,16 +25072,19 @@
     "attacks": [
       {
         "name": "Bitter Spore",
+        "damage": "4d8+17",
         "type": "poison",
         "effect": "poisoned",
         "effect_chance": 0.5,
-        "effect_duration": 8,
-        "damage": "4d8+17"
+        "effect_duration": 8
       },
       {
-        "name": "Rotting Touch",
+        "name": "Falling Star-Ash",
+        "damage": "5d10+18",
         "type": "poison",
-        "damage": "5d10+18"
+        "effect": "blinded",
+        "effect_chance": 0.35,
+        "effect_duration": 3
       }
     ],
     "resistances": [
@@ -25069,7 +25109,7 @@
       "item_chance": 0.55,
       "item_tier": 5
     },
-    "lore": "At the third trumpet a great star fell burning on the rivers and springs. John gives its name as Wormwood, and writes that a third of the waters turned bitter and many died of drinking them. This is what grew where the star's ash settled: a pale, spreading thing that drinks light and breathes out bile. Its spores poison whatever they touch.",
+    "lore": "At the third trumpet a great star fell burning on the rivers and springs. John gives its name as Wormwood, and writes that a third of the waters turned bitter and many died of drinking them. This is what grew where the star's ash settled: a pale, spreading thing that drinks light and breathes out bile. Its spores poison whatever they touch, and the ash of the star still sheds from it and stings the eyes blind.",
     "sp_drain": 4
   },
   "iron_horseman": {
@@ -25124,7 +25164,9 @@
       "item_chance": 0.55,
       "item_tier": 5
     },
-    "lore": "John saw four riders: one on a white horse, one on red, one on black, and Death on a pale horse with Hades following after. This is none of the four. It is the kind of thing that rides in their dust, armor welded shut, rider and mount grown into one iron shape. It charges with a leveled lance and does not turn aside."
+    "lore": "John saw four riders: one on a white horse, one on red, one on black, and Death on a pale horse with Hades following after. This is none of the four. It is the kind of thing that rides in their dust, armor welded shut, rider and mount grown into one iron shape. Given a straight run it lowers the lance and charges, and it does not turn aside. Its hooves leave men senseless on the ground. Do not stand at the end of a long corridor.",
+    "can_charge": true,
+    "charge_bonus_mult": 1.3
   },
   "orc_archer": {
     "name": "orc archer",
@@ -26298,9 +26340,11 @@
         "effect_duration": 4
       },
       {
-        "name": "Main-Gauche",
+        "name": "Cut Purse",
         "damage": "1d4+1",
-        "type": "slash"
+        "type": "slash",
+        "steal": "gold",
+        "steal_chance": 0.7
       }
     ],
     "resistances": [],
@@ -26323,7 +26367,8 @@
       "item_chance": 0.3,
       "item_tier": 2
     },
-    "lore": "Thieves drift in and out of bandit work as the seasons demand: winter in a warm gang, spring picking pockets in a market town. They prefer a quiet boot and a turned back to a duel, and they have a saying: the man who shows his sword has already decided he would rather not use it."
+    "lore": "Thieves drift in and out of bandit work as the seasons demand: winter in a warm gang, spring picking pockets in a market town. They prefer a quiet boot and a turned back to a duel, and a purse cut in passing to either. They have a saying: the man who shows his sword has already decided he would rather not use it. One who has your gold runs. Catch him and it is yours again.",
+    "after_theft": "flee"
   },
   "bandit_kingpin": {
     "name": "bandit kingpin",
@@ -29436,5 +29481,1815 @@
     "lore": "In the Nibelungenlied the dwarf Alberich guarded the Nibelung hoard wearing the Tarnkappe, a cloak that hid its wearer from sight and gave him the strength of twelve men. Siegfried wrestled it off him and took the treasure, and later stood unseen beside King Gunther to win Brunhild's games for him. Alberich's sworn wardens still keep what is left of the hoard, deep down, in cloaks cut from the same cloth. Nobody sees a hoard-warden. They see a coin lift off the pile, and then the pick.",
     "frequency": 2,
     "invisible": true
+  },
+  "ker": {
+    "name": "Ker",
+    "symbol": "K",
+    "color": [
+      90,
+      20,
+      30
+    ],
+    "hp": "160d12+1060",
+    "speed": 13,
+    "ai_pattern": "aggressive",
+    "thac0": -14,
+    "peak_floor": 92,
+    "spread": 12,
+    "peak_weight": 2.5,
+    "min_level": 86,
+    "attacks": [
+      {
+        "name": "Blood-Drinking Talons",
+        "damage": "3d8+14",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "Death's Grip",
+        "damage": "2d8+16",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "outsider"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.3,
+      "item_tier": 5
+    },
+    "lore": "Hesiod painted the Keres on the shield of Heracles: dark death-spirits with white gnashing teeth, fighting each other over the men who fell, each wanting to drink the dark blood first. Homer put one on the shield of Achilles, dragging a dead man through the battle by his feet. They never come alone. Each one is weak as death goes down here, but there are always more of them than there are of you, and a wounded man draws the whole flock. Kill them fast, and many at a time.",
+    "frequency": 3,
+    "pack": true,
+    "pack_size": [
+      3,
+      5
+    ]
+  },
+  "hellmouth": {
+    "name": "Hellmouth",
+    "symbol": ">",
+    "color": [
+      150,
+      40,
+      30
+    ],
+    "hp": "470d12+3110",
+    "speed": 5,
+    "ai_pattern": "mimic",
+    "thac0": -16,
+    "peak_floor": 90,
+    "spread": 12,
+    "peak_weight": 1.0,
+    "min_level": 84,
+    "attacks": [
+      {
+        "name": "Leviathan's Jaws",
+        "damage": "5d10+20",
+        "type": "acid",
+        "effect": "immobilized",
+        "effect_chance": 0.5,
+        "effect_duration": 2
+      },
+      {
+        "name": "Gullet Fire",
+        "damage": "4d8+18",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "acid",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy",
+      "cold"
+    ],
+    "tags": [
+      "demon",
+      "aberration"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Medieval painters drew Hell as a mouth: the gaping jaws of Leviathan, the beast of Job, out of whose mouth go burning lamps. On the Doom paintings over church arches and on the mystery-play stages the damned were herded into it, and the stagehands worked its jaws with ropes and blew smoke out of its throat. One of them lies flat in the floor down here with its gullet open, and its gullet looks exactly like a stair going down. A floor has one way down. When you find two, one of them is hungry.",
+    "frequency": 1,
+    "disguise": {
+      "tile": "stairs_down",
+      "name": "staircase leading down"
+    }
+  },
+  "mere_wife": {
+    "name": "Mere-Wife",
+    "symbol": "M",
+    "color": [
+      70,
+      90,
+      80
+    ],
+    "hp": "420d12+2670",
+    "speed": 11,
+    "ai_pattern": "ambush",
+    "thac0": -15,
+    "peak_floor": 84,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 78,
+    "attacks": [
+      {
+        "name": "Drag to the Mere",
+        "damage": "4d10+18",
+        "type": "blunt",
+        "effect": "immobilized",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "Broad Seax",
+        "damage": "4d8+20",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "slash",
+      "pierce",
+      "cold"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "giant",
+      "humanoid"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "The Beowulf poet never names Grendel's mother. He gives her a kind instead: merewif, the mere-wife, the she-wolf of the deep. She came up out of the dark water to avenge her son, and when Beowulf followed her down she dragged him to her hall under the mere. His borrowed sword Hrunting, which had never failed in battle, would not bite her hide, and he had to wrestle her until he found a giant's blade on her wall. Her kind still wait under black water. A blade turns on that hide; something heavier does not.",
+    "frequency": 2,
+    "pull_chance": 0.35
+  },
+  "endor_medium": {
+    "name": "Medium of Endor",
+    "symbol": "w",
+    "color": [
+      120,
+      90,
+      140
+    ],
+    "hp": "415d12+2700",
+    "speed": 10,
+    "ai_pattern": "summoner",
+    "thac0": -15,
+    "peak_floor": 84,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 78,
+    "attacks": [
+      {
+        "name": "Grave Whisper",
+        "damage": "3d10+18",
+        "type": "magic",
+        "effect": "feared",
+        "effect_chance": 0.3,
+        "effect_duration": 3,
+        "ranged": true
+      },
+      {
+        "name": "Bone Knife",
+        "damage": "3d8+16",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "drain",
+      "cold",
+      "necrotic"
+    ],
+    "weaknesses": [
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "humanoid",
+      "caster"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "King Saul had driven every medium out of Israel, and then, the night before his last battle, he put on a disguise and went to the one left at Endor. At his word she called up the prophet Samuel, an old man wrapped in a mantle, who told Saul that by tomorrow he and his sons would be with him among the dead. Her line kept the craft. They call, and whatever is listening in the dark comes up, and much of what comes up cannot be seen. Kill the one calling before the room fills.",
+    "frequency": 2,
+    "summon_kind": [
+      "darkhelm_shade",
+      "dread_wraith"
+    ],
+    "summon_cooldown": 6,
+    "summon_max": 3,
+    "perception_range": 10
+  },
+  "erinyes_greater": {
+    "name": "Greater Erinyes",
+    "symbol": "E",
+    "color": [
+      140,
+      30,
+      40
+    ],
+    "hp": "300d12+1290",
+    "speed": 13,
+    "ai_pattern": "hit_and_run",
+    "thac0": -15,
+    "peak_floor": 86,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 80,
+    "attacks": [
+      {
+        "name": "Scourge of Serpents",
+        "damage": "4d8+16",
+        "type": "slash",
+        "effect": "feared",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "Blood-Weeping Glare",
+        "damage": "3d8+16",
+        "type": "magic",
+        "effect": "blinded",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire",
+      "cold",
+      "poison"
+    ],
+    "weaknesses": [],
+    "tags": [
+      "outsider"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Alecto the unceasing, Megaera the grudging, Tisiphone the avenger of murder. In Aeschylus they hunted Orestes from Argos to Delphi to Athens for his mother's blood, snakes in their hair and blood weeping from their eyes, and they slept only when Apollo made them. Athena talked them down at last with a new home under the city and a new name, the Kindly Ones. Nobody down here has offered them one. They come as three, strike, scatter and come again, and the look of them puts men to flight.",
+    "frequency": 2,
+    "pack": true,
+    "pack_size": [
+      3,
+      3
+    ]
+  },
+  "tiamat_blood": {
+    "name": "Blood of Tiamat",
+    "symbol": "P",
+    "color": [
+      120,
+      20,
+      60
+    ],
+    "hp": "480d12+3200",
+    "speed": 9,
+    "ai_pattern": "aggressive",
+    "thac0": -16,
+    "peak_floor": 92,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 86,
+    "attacks": [
+      {
+        "name": "Brine Lash",
+        "damage": "4d10+20",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "Venom of the Eleven",
+        "damage": "3d10+18",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold",
+      "acid"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "aberration",
+      "outsider"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 5
+    },
+    "lore": "In the Babylonian creation poem Marduk caught Tiamat, the salt sea, in his net, drove the winds into her mouth and split her in two like a fish for drying: half became the sky and half the earth. Then he cut the channels of her blood and the north wind carried it away to secret places. This is one of them. Her blood still crawls, salt and venomous, and it remembers being divided: a small cut only makes two of it. One great blow, the kind a long answer chain gives, ends it outright.",
+    "frequency": 2,
+    "splits": {
+      "by": "weak_blow",
+      "share": 0.1,
+      "max": 8
+    }
+  },
+  "hels_handmaid": {
+    "name": "Handmaid of Hel",
+    "symbol": "h",
+    "color": [
+      150,
+      160,
+      170
+    ],
+    "hp": "410d12+2700",
+    "speed": 8,
+    "ai_pattern": "healer",
+    "thac0": -15,
+    "peak_floor": 84,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 78,
+    "heal_amount_pct": 0.2,
+    "attacks": [
+      {
+        "name": "Slow-Walker's Touch",
+        "damage": "4d8+16",
+        "type": "cold",
+        "effect": "slowed",
+        "effect_chance": 0.45,
+        "effect_duration": 4
+      },
+      {
+        "name": "Breath of the Sickbed",
+        "damage": "3d8+16",
+        "type": "cold",
+        "effect": "diseased",
+        "effect_chance": 0.3,
+        "effect_duration": 6,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "cold",
+      "drain",
+      "poison"
+    ],
+    "weaknesses": [
+      "fire",
+      "holy"
+    ],
+    "tags": [
+      "undead",
+      "caster"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Snorri Sturluson furnished Hel's hall for us: her plate is called Hunger, her knife Famine, her bed Sickbed, and her servants are Ganglati and Ganglot, both names meaning the slow-walker. Hel keeps many maids now, and all of them are slow. They walk among her dead mending what the living break, and their touch puts the same slowness into a warm body. Wherever the dead keep getting up again, look for the maid behind them and put her down first.",
+    "frequency": 2
+  },
+  "stheno_gorgon": {
+    "name": "Stheno the Gorgon",
+    "symbol": "G",
+    "color": [
+      150,
+      130,
+      60
+    ],
+    "hp": "1380d10+1360",
+    "speed": 11,
+    "ai_pattern": "dancer",
+    "thac0": -9,
+    "peak_floor": 67,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 64,
+    "attacks": [
+      {
+        "name": "Bronze Claws",
+        "damage": "4d8+20",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "Serpent Hair",
+        "damage": "3d8+18",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        1900,
+        3600
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5
+    },
+    "lore": "Medusa was the only mortal one of three. Her sisters Stheno, the mighty, and Euryale, the far-roaming, cannot die. Hesiod gives them brazen hands and golden wings, and when Perseus fled with their sister's head they rose from their beds and chased him over the sea until the helm of Hades hid him. They have been looking for him ever since. Their gaze turns the living rigid as stone, and a killing blow only puts them down for a moment.",
+    "frequency": 0,
+    "gaze_paralyze": 2,
+    "gaze_cooldown": 6,
+    "revive_once_on_death": true,
+    "revive_hp_pct": 0.3,
+    "revive_message": "Stheno rises again. An immortal does not stay dead.",
+    "is_mini_boss": true,
+    "spawn_chance": 0.4,
+    "escort": [
+      "euryale_gorgon"
+    ],
+    "omen": "Somewhere on this floor two women are hissing at each other, and then both fall silent.",
+    "kill_chronicle": "Put down Medusa's sisters. Twice each. I am not sure it will last."
+  },
+  "euryale_gorgon": {
+    "name": "Euryale the Gorgon",
+    "symbol": "G",
+    "color": [
+      110,
+      140,
+      70
+    ],
+    "hp": "1380d10+1360",
+    "speed": 11,
+    "ai_pattern": "dancer",
+    "thac0": -9,
+    "peak_floor": 67,
+    "spread": 2,
+    "peak_weight": 0.0,
+    "min_level": 64,
+    "attacks": [
+      {
+        "name": "Euryale's Wail",
+        "damage": "3d8+16",
+        "type": "magic",
+        "effect": "feared",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "Serpent Hair",
+        "damage": "4d8+20",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        1900,
+        3600
+      ],
+      "item_chance": 1.0,
+      "item_tier": 5
+    },
+    "lore": "Pindar says Athena invented the music of the pipes to copy one sound: the shrill wailing Euryale raised over her beheaded sister, with the snakes in her hair keening along. Euryale has not stopped grieving and she has not stopped hunting. She goes nowhere without Stheno. Her wail drives men back, her gaze holds them where they stand, and like her sister she is immortal: she can be put down, but not for long. A polished shield or a blindfold is worth more here than a sword.",
+    "frequency": 0,
+    "gaze_paralyze": 2,
+    "gaze_cooldown": 6,
+    "revive_once_on_death": true,
+    "revive_hp_pct": 0.3,
+    "revive_message": "Euryale rises again, wailing. An immortal does not stay dead.",
+    "is_mini_boss": true,
+    "spawn_chance": 0.0
+  },
+  "gashadokuro": {
+    "name": "Gashadokuro",
+    "symbol": "Z",
+    "color": [
+      220,
+      210,
+      190
+    ],
+    "hp": "350d12+2290",
+    "speed": 9,
+    "ai_pattern": "ambush",
+    "thac0": -13,
+    "peak_floor": 78,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 73,
+    "attacks": [
+      {
+        "name": "Bite Off the Head",
+        "damage": "5d10+15",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "Grasp of the Starved",
+        "damage": "4d8+18",
+        "type": "blunt",
+        "effect": "immobilized",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "pierce",
+      "cold",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "blunt",
+      "holy",
+      "fire"
+    ],
+    "tags": [
+      "undead",
+      "giant"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        110,
+        300
+      ],
+      "item_chance": 0.45,
+      "item_tier": 4
+    },
+    "lore": "Japanese tales of the last century tell of the gashadokuro, the starving skeleton: fifteen times the height of a man, built from the bones of everyone who died of hunger or in battle and was never buried. It walks at night without a sound, and the only warning is a ringing in the ears, gasha gasha, a moment before it bites off a traveller's head. This one has folded itself into a corner of the dungeon and lies there like a heap of old bones. It is not a heap of old bones. A spear goes between the ribs; a hammer does not.",
+    "frequency": 2,
+    "footprint": [
+      2,
+      2
+    ]
+  },
+  "autolycus_heir": {
+    "name": "Heir of Autolycus",
+    "symbol": "@",
+    "color": [
+      140,
+      110,
+      70
+    ],
+    "hp": "270d10+1380",
+    "speed": 13,
+    "ai_pattern": "hit_and_run",
+    "thac0": -9,
+    "peak_floor": 66,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 61,
+    "attacks": [
+      {
+        "name": "Hermes' Sleight",
+        "damage": "2d8+14",
+        "type": "pierce",
+        "steal": "any",
+        "steal_chance": 0.6
+      },
+      {
+        "name": "Thief's Knife",
+        "damage": "3d8+18",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        110,
+        300
+      ],
+      "item_chance": 0.6,
+      "item_tier": 4
+    },
+    "lore": "Odysseus's grandfather Autolycus outdid all men in thieving and in oaths that meant nothing, and Hermes himself gave him the gift. He stole a famous boar-tusk helmet out of a locked house and the cattle of Sisyphus out of a guarded field, and he changed their colour so the owner could not know them. Sisyphus beat him only by carving his name under the hooves. His heirs keep the family trade: a brush against you, a purse or a pack lighter, and they are gone. Run them down and it is yours again.",
+    "frequency": 2,
+    "after_theft": "flee"
+  },
+  "strix": {
+    "name": "Strix",
+    "symbol": "B",
+    "color": [
+      140,
+      130,
+      120
+    ],
+    "hp": "24d10+60",
+    "speed": 13,
+    "ai_pattern": "hit_and_run",
+    "thac0": 7,
+    "peak_floor": 27,
+    "spread": 5,
+    "peak_weight": 3.0,
+    "min_level": 24,
+    "attacks": [
+      {
+        "name": "Blood-Drinking Beak",
+        "damage": "1d6+2",
+        "type": "drain"
+      },
+      {
+        "name": "Night Song",
+        "damage": "1d4+2",
+        "type": "magic",
+        "effect": "sleeping",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        10,
+        40
+      ],
+      "item_chance": 0.1,
+      "item_tier": 2
+    },
+    "lore": "Ovid describes the strix in the Fasti: a big-headed night bird with staring eyes, a beak made for snatching, grey feathers and hooked claws, that flies by night and drinks blood. Whether they are born birds or are old women changed by a spell, he says, nobody knows. They came for the infant Proca in his cradle, and the nymph Cranae kept them out with a branch of whitethorn at the window. Down here they hunt in threes: one sings you to sleep and the others drink.",
+    "frequency": 4,
+    "pack": true,
+    "pack_size": [
+      3,
+      3
+    ]
+  },
+  "bronze_sentinel": {
+    "name": "Bronze Sentinel",
+    "symbol": "T",
+    "color": [
+      190,
+      130,
+      60
+    ],
+    "hp": "310d12+1360",
+    "speed": 9,
+    "ai_pattern": "aggressive",
+    "thac0": -10,
+    "peak_floor": 70,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 65,
+    "attacks": [
+      {
+        "name": "Hurled Boulder",
+        "damage": "4d8+18",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 2,
+        "ranged": true
+      },
+      {
+        "name": "Red-Hot Embrace",
+        "damage": "5d10+12",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.45,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "slash",
+      "blunt",
+      "fire",
+      "cold",
+      "lightning",
+      "poison"
+    ],
+    "weaknesses": [
+      "pierce",
+      "magic"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        110,
+        300
+      ],
+      "item_chance": 0.45,
+      "item_tier": 4
+    },
+    "lore": "Hephaestus made Talos of bronze to guard Crete. He walked round the island three times a day, threw boulders at any ship that came near, and when men landed he heated himself red-hot in a fire and hugged them. He had one vein, running from his neck to his ankle, stopped with a single bronze nail. Medea bewitched him with her eyes and the nail came out, and the ichor ran out of him like molten lead. His copies guard the deep halls. Swords and hammers ring off them. Find the nail, with a point or with a spell.",
+    "frequency": 2
+  },
+  "sown_warrior": {
+    "name": "Sown Warrior",
+    "symbol": "S",
+    "color": [
+      170,
+      140,
+      80
+    ],
+    "hp": "150d10+390",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": -10,
+    "peak_floor": 72,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 67,
+    "attacks": [
+      {
+        "name": "Dragon-Tooth Spear",
+        "damage": "3d8+14",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      },
+      {
+        "name": "Shield Bash",
+        "damage": "3d6+14",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.15,
+        "effect_duration": 1
+      }
+    ],
+    "resistances": [
+      "slash"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "humanoid"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        40,
+        120
+      ],
+      "item_chance": 0.25,
+      "item_tier": 4
+    },
+    "lore": "Cadmus killed the dragon of Ares and, on Athena's advice, sowed its teeth in a ploughed field. Armed men came up out of the furrows, already in bronze, already angry. Cadmus threw a stone into the middle of them; each blamed the man beside him, and they fought until only five were left. Jason met the same harvest at Colchis and beat it the same way. They still come up in companies and fight as one. Confuse them, or throw something into the middle, and they turn on each other.",
+    "frequency": 3,
+    "pack": true,
+    "pack_size": [
+      4,
+      5
+    ],
+    "quarrelsome": true,
+    "quarrels_when_struck_by_thrown": 4
+  },
+  "takshaka_brood": {
+    "name": "Brood of Takshaka",
+    "symbol": "N",
+    "color": [
+      170,
+      110,
+      60
+    ],
+    "hp": "320d10+2160",
+    "speed": 11,
+    "ai_pattern": "mimic",
+    "thac0": -12,
+    "peak_floor": 74,
+    "spread": 9,
+    "peak_weight": 1.5,
+    "min_level": 69,
+    "attacks": [
+      {
+        "name": "Takshaka's Venom",
+        "damage": "4d10+16",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      },
+      {
+        "name": "Coils",
+        "damage": "3d8+18",
+        "type": "blunt",
+        "effect": "immobilized",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "tags": [
+      "beast",
+      "reptile"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        110,
+        300
+      ],
+      "item_chance": 0.45,
+      "item_tier": 4
+    },
+    "lore": "The Mahabharata tells how King Parikshit was cursed to die of a snakebite on the seventh day. He shut himself in a tower on a single pillar and let no one in but holy men. The serpent king Takshaka sent his nagas dressed as holy men, carrying fruit, and hid himself inside one fruit as a tiny copper-coloured worm. When the king picked it up, Takshaka took his true shape and bit. His brood still hides in fruit. Be wary of a perfect apple lying on a dungeon floor.",
+    "frequency": 2,
+    "disguise": {
+      "item": "apple",
+      "name": "ripe apple"
+    }
+  },
+  "rakshasa_illusionist": {
+    "name": "Rakshasa Illusionist",
+    "symbol": "R",
+    "color": [
+      160,
+      60,
+      120
+    ],
+    "hp": "370d12+2510",
+    "speed": 11,
+    "ai_pattern": "ranged",
+    "thac0": -14,
+    "peak_floor": 80,
+    "spread": 9,
+    "peak_weight": 2.5,
+    "min_level": 75,
+    "attacks": [
+      {
+        "name": "Serpent Noose",
+        "damage": "3d8+16",
+        "type": "magic",
+        "effect": "immobilized",
+        "effect_chance": 0.4,
+        "effect_duration": 2,
+        "ranged": true
+      },
+      {
+        "name": "Maya",
+        "damage": "3d8+14",
+        "type": "psionic",
+        "effect": "hallucinating",
+        "effect_chance": 0.4,
+        "effect_duration": 5,
+        "ranged": true
+      },
+      {
+        "name": "Tiger Claws",
+        "damage": "4d8+20",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.3,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "magic",
+      "fire"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon",
+      "caster"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Ravana's son Indrajit, the conqueror of Indra, fought Rama's army from inside the clouds where no arrow could find him. He bound Rama and Lakshmana with the serpent noose, living snakes that held them helpless on the field, until Garuda, enemy of every serpent, came down and the snakes fled at his shadow. His maya showed the monkey army things that were not there. The rakshasa illusionists who learned from him keep their distance, tie you where you stand and fill your eyes with lies. Close the distance, or kill them from where you are.",
+    "frequency": 2,
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.2,
+    "perception_range": 10
+  },
+  "ushabti_overseer": {
+    "name": "Ushabti Overseer",
+    "symbol": "u",
+    "color": [
+      60,
+      140,
+      160
+    ],
+    "hp": "350d12+2290",
+    "speed": 10,
+    "ai_pattern": "summoner",
+    "thac0": -13,
+    "peak_floor": 78,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 73,
+    "attacks": [
+      {
+        "name": "Overseer's Whip",
+        "damage": "4d8+18",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "Words of the Sixth Spell",
+        "damage": "3d8+14",
+        "type": "magic",
+        "effect": "stunned",
+        "effect_chance": 0.25,
+        "effect_duration": 1,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "poison",
+      "drain",
+      "cold"
+    ],
+    "weaknesses": [
+      "blunt"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        110,
+        300
+      ],
+      "item_chance": 0.6,
+      "item_tier": 4
+    },
+    "lore": "An Egyptian of means was buried with ushabtis: little blue faience workers, one for every day of the year, written with the sixth spell of the Book of the Dead. 'O ushabti, if I am called to work in the land of the dead, you shall answer: Here I am.' For every ten workers there was an overseer with a whip, to keep them at it. The overseers down here have outlived their masters and still read out the spell, and the workers still answer. Break the one with the whip and the rest fall quiet.",
+    "frequency": 2,
+    "summon_kind": "ushabti_worker",
+    "summon_cooldown": 4,
+    "summon_max": 5
+  },
+  "ushabti_worker": {
+    "name": "Ushabti Worker",
+    "symbol": "u",
+    "color": [
+      80,
+      170,
+      190
+    ],
+    "hp": "120d10+560",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": -10,
+    "peak_floor": 78,
+    "spread": 9,
+    "peak_weight": 0.0,
+    "min_level": 73,
+    "attacks": [
+      {
+        "name": "Bronze Hoe",
+        "damage": "3d8+12",
+        "type": "pierce"
+      },
+      {
+        "name": "Basket of Sand",
+        "damage": "2d8+12",
+        "type": "physical",
+        "effect": "blinded",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      }
+    ],
+    "resistances": [
+      "poison",
+      "drain",
+      "cold"
+    ],
+    "weaknesses": [
+      "blunt"
+    ],
+    "tags": [
+      "construct"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    },
+    "lore": "A little worker of blue faience the size of a man's hand in the tomb, and the size of a man down here. It carries a hoe and a basket of sand, because those are the tools painted on it, and it does what the sixth spell says: it answers 'Here I am' and it works. It has no malice and no will. It throws the sand in your eyes because the overseer told it to.",
+    "frequency": 0
+  },
+  "sekhmet_lioness": {
+    "name": "Lioness of Sekhmet",
+    "symbol": "f",
+    "color": [
+      200,
+      120,
+      50
+    ],
+    "hp": "400d12+2560",
+    "speed": 13,
+    "ai_pattern": "aggressive",
+    "thac0": -15,
+    "peak_floor": 82,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 76,
+    "attacks": [
+      {
+        "name": "Claws of the Eye",
+        "damage": "4d10+14",
+        "type": "slash",
+        "effect": "bleeding",
+        "effect_chance": 0.4,
+        "effect_duration": 4
+      },
+      {
+        "name": "Desert-Wind Breath",
+        "damage": "3d8+16",
+        "type": "fire",
+        "effect": "burning",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [
+      "cold"
+    ],
+    "tags": [
+      "beast",
+      "outsider"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "When mankind plotted against Ra, he sent his Eye against them as Sekhmet, the lioness, and she slaughtered until she waded in blood and would not stop. To save the rest Ra had seven thousand jars of beer dyed red with ochre and poured over the fields. She drank it for blood, fell drunk, and forgot. Her lionesses were never given the beer. Their hot breath is the desert wind, and every blow makes the next one fiercer: end the fight quickly, or walk away and let them cool.",
+    "frequency": 2,
+    "fury_per_attack": 0.08,
+    "fury_cap": 0.8,
+    "fury_message": "The Lioness of Sekhmet's eyes go red. She is wading in it now."
+  },
+  "ammit_devourer": {
+    "name": "Devourer of Hearts",
+    "symbol": "A",
+    "color": [
+      150,
+      120,
+      70
+    ],
+    "hp": "450d12+2990",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": -16,
+    "peak_floor": 88,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 82,
+    "attacks": [
+      {
+        "name": "Crocodile Jaws",
+        "damage": "5d10+20",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "Weighing of the Heart",
+        "damage": "3d10+18",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "fire"
+    ],
+    "weaknesses": [],
+    "tags": [
+      "beast",
+      "outsider"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "In the Hall of the Two Truths Anubis set the dead man's heart on a scale against the feather of Ma'at, and Thoth wrote down the result. Beside the scale crouched Ammit, the Devourer: the head of a crocodile, the forequarters of a lion, the hindquarters of a hippopotamus. A heart heavier than the feather was hers to eat, and its owner was gone for good. Her get still weigh every heart they meet. They bite gently into a clean conscience and savagely into a heavy one.",
+    "frequency": 2,
+    "weighs_heart": true
+  },
+  "mazandaran_div": {
+    "name": "Mazandaran Div",
+    "symbol": "D",
+    "color": [
+      220,
+      220,
+      210
+    ],
+    "hp": "420d12+2670",
+    "speed": 10,
+    "ai_pattern": "ranged",
+    "thac0": -15,
+    "peak_floor": 84,
+    "spread": 12,
+    "peak_weight": 2.5,
+    "min_level": 78,
+    "attacks": [
+      {
+        "name": "Sorcerous Darkness",
+        "damage": "3d10+16",
+        "type": "magic",
+        "effect": "blinded",
+        "effect_chance": 0.4,
+        "effect_duration": 4,
+        "ranged": true
+      },
+      {
+        "name": "Hail of Stones",
+        "damage": "4d8+18",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.2,
+        "effect_duration": 1,
+        "ranged": true
+      },
+      {
+        "name": "Div Claws",
+        "damage": "4d10+18",
+        "type": "slash"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "magic"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon",
+      "caster"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "In the Shahnameh, King Kay Kavus marched into Mazandaran to conquer it, and the White Div answered with sorcery: a darkness came down on the Persian army, a hail of stones fell out of it, and when it lifted the king and his men were blind. Rostam went alone through seven trials, killed the White Div in his cave, and cured the king's eyes with drops of the div's blood. The divs of Mazandaran still fight from a distance and still put out a man's sight. Bring something for the eyes, or close in fast.",
+    "frequency": 2,
+    "perception_range": 10
+  },
+  "dahaka_wyrm": {
+    "name": "Dahaka Wyrm",
+    "symbol": "W",
+    "color": [
+      110,
+      90,
+      60
+    ],
+    "hp": "500d12+3220",
+    "speed": 9,
+    "ai_pattern": "aggressive",
+    "thac0": -17,
+    "peak_floor": 94,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 88,
+    "attacks": [
+      {
+        "name": "Three Jaws",
+        "damage": "5d10+22",
+        "type": "pierce",
+        "effect": "bleeding",
+        "effect_chance": 0.35,
+        "effect_duration": 4
+      },
+      {
+        "name": "Breath of Vermin",
+        "damage": "4d8+18",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.45,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "fire",
+      "poison"
+    ],
+    "weaknesses": [
+      "blunt",
+      "holy"
+    ],
+    "tags": [
+      "dragon",
+      "reptile",
+      "demon"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Azhi Dahaka was the three-headed, six-eyed dragon of the Avesta, made by the evil spirit to empty the world of good things. When the hero Thraetaona struck it with his blade, snakes, scorpions, toads and lizards poured out of the wound, and he saw that if he cut it to pieces the world would be filled with vermin. So he chained it under Mount Damavand instead. Its brood carries the same curse. Every cut or stab lets out a swarm. Club it, burn it, or blast it.",
+    "frequency": 2,
+    "splits": {
+      "by": [
+        "slash",
+        "pierce"
+      ],
+      "into": "khrafstra_swarm",
+      "max": 6
+    }
+  },
+  "khrafstra_swarm": {
+    "name": "Khrafstra Swarm",
+    "symbol": "v",
+    "color": [
+      90,
+      110,
+      60
+    ],
+    "hp": "90d10+400",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": -12,
+    "peak_floor": 94,
+    "spread": 12,
+    "peak_weight": 0.0,
+    "min_level": 88,
+    "attacks": [
+      {
+        "name": "Stings and Bites",
+        "damage": "3d8+14",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.4,
+        "effect_duration": 5
+      }
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "weaknesses": [
+      "fire",
+      "cold"
+    ],
+    "tags": [
+      "beast"
+    ],
+    "harvest_tier": 1,
+    "treasure": {
+      "gold": [
+        0,
+        0
+      ],
+      "item_chance": 0.0,
+      "item_tier": 1
+    },
+    "lore": "The Zoroastrian books call them khrafstra: the noxious creatures, snakes, scorpions, toads, lizards and stinging flies, which the evil spirit made to spoil the good creation. Killing them was a good deed, and priests kept a special stick for it. This seething knot of them spilled out of a Dahaka's wound and has not stopped biting since.",
+    "frequency": 0
+  },
+  "galla_demon": {
+    "name": "Galla",
+    "symbol": "g",
+    "color": [
+      110,
+      90,
+      80
+    ],
+    "hp": "160d10+530",
+    "speed": 12,
+    "ai_pattern": "aggressive",
+    "thac0": -12,
+    "peak_floor": 76,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 71,
+    "attacks": [
+      {
+        "name": "Seize",
+        "damage": "3d8+12",
+        "type": "blunt",
+        "effect": "immobilized",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "Underworld Club",
+        "damage": "3d8+14",
+        "type": "blunt"
+      }
+    ],
+    "resistances": [
+      "drain",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "demon",
+      "outsider"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        40,
+        120
+      ],
+      "item_chance": 0.2,
+      "item_tier": 4
+    },
+    "lore": "When Inanna came back up from the underworld, the galla came with her to collect someone to take her place. The Sumerian poem says what they are: they eat no food, drink no water, take no gift, and pull the wife from the husband's arms and the child from the father's knee. They chased her husband Dumuzi across the steppe, and three times the sun god turned him into a gazelle to escape, and three times they found him. They come in gangs and they never give up the chase. They grab, they hold, and they drag.",
+    "frequency": 3,
+    "pack": true,
+    "pack_size": [
+      4,
+      6
+    ],
+    "fearless": true,
+    "pull_chance": 0.25
+  },
+  "girtablilu": {
+    "name": "Scorpion-Man",
+    "symbol": "x",
+    "color": [
+      150,
+      100,
+      50
+    ],
+    "hp": "310d12+2070",
+    "speed": 10,
+    "ai_pattern": "aggressive",
+    "thac0": -16,
+    "peak_floor": 90,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 84,
+    "attacks": [
+      {
+        "name": "Scorpion Sting",
+        "damage": "4d10+18",
+        "type": "poison",
+        "effect": "paralyzed",
+        "effect_chance": 0.25,
+        "effect_duration": 2
+      },
+      {
+        "name": "Bow of the Sunrise Gate",
+        "damage": "4d8+18",
+        "type": "pierce",
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "slash",
+      "pierce",
+      "fire"
+    ],
+    "weaknesses": [
+      "blunt",
+      "cold"
+    ],
+    "tags": [
+      "outsider"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "At the twin peaks of Mount Mashu, where the sun goes in and out, Gilgamesh found the gate guarded by a scorpion-man and his wife: men to the waist, scorpions below, whose terror was overwhelming and whose glance was death. Babylonian boundary stones show them drawing bows. Gilgamesh got past by telling them the truth about his grief. Down here they will not ask. They hunt in pairs, their shells turn a blade or an arrow, and the sting stops a man where he stands. A hammer cracks them.",
+    "frequency": 2,
+    "pack": true,
+    "pack_size": [
+      2,
+      2
+    ]
+  },
+  "asag_stone_warrior": {
+    "name": "Stone Warrior of Asag",
+    "symbol": "O",
+    "color": [
+      130,
+      120,
+      110
+    ],
+    "hp": "510d12+3300",
+    "speed": 8,
+    "ai_pattern": "aggressive",
+    "thac0": -17,
+    "peak_floor": 96,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 90,
+    "attacks": [
+      {
+        "name": "Stone Fist",
+        "damage": "5d10+24",
+        "type": "blunt",
+        "effect": "stunned",
+        "effect_chance": 0.3,
+        "effect_duration": 2
+      },
+      {
+        "name": "Hurled Boulder",
+        "damage": "4d8+18",
+        "type": "blunt",
+        "effect": "slowed",
+        "effect_chance": 0.3,
+        "effect_duration": 3,
+        "ranged": true
+      }
+    ],
+    "resistances": [
+      "slash",
+      "pierce",
+      "fire",
+      "cold",
+      "lightning",
+      "poison",
+      "drain"
+    ],
+    "weaknesses": [
+      "blunt"
+    ],
+    "tags": [
+      "elemental",
+      "construct"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "The Sumerian poem Lugal-e tells of Asag, the demon of the mountains, so terrible that fish boiled alive in the rivers where he walked. He fathered an army on the mountains, and the army was stones. The god Ninurta beat them with his talking mace Sharur, and afterwards judged each kind of stone in turn, blessing some and cursing others, which is why stones are as they are. Some of the army was never judged. Blades, fire, frost and lightning do almost nothing to them. Do what Ninurta did, and bring a mace.",
+    "frequency": 2
+  },
+  "totentanz_dancer": {
+    "name": "Totentanz Dancer",
+    "symbol": "Z",
+    "color": [
+      220,
+      215,
+      200
+    ],
+    "hp": "200d10+590",
+    "speed": 12,
+    "ai_pattern": "dancer",
+    "thac0": -12,
+    "peak_floor": 75,
+    "spread": 9,
+    "peak_weight": 2.0,
+    "min_level": 70,
+    "attacks": [
+      {
+        "name": "Join the Dance",
+        "damage": "3d8+14",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.35,
+        "effect_duration": 3
+      },
+      {
+        "name": "Bony Hand",
+        "damage": "3d8+16",
+        "type": "drain"
+      }
+    ],
+    "resistances": [
+      "cold",
+      "poison",
+      "drain",
+      "pierce"
+    ],
+    "weaknesses": [
+      "blunt",
+      "holy"
+    ],
+    "tags": [
+      "undead"
+    ],
+    "harvest_tier": 2,
+    "treasure": {
+      "gold": [
+        30,
+        100
+      ],
+      "item_chance": 0.2,
+      "item_tier": 4
+    },
+    "lore": "After the Black Death, painters covered church walls with the Dance of Death: a long chain of skeletons, each leading a living partner by the hand, the pope and the emperor and the peasant and the child, and none of them ready. Bernt Notke painted thirty yards of it for Lubeck, and a piece survives in Tallinn. These dancers have come off the wall. They circle and step and never stand where you struck, they take your hands, and your feet start to follow the steps. Fight them with your back to a wall.",
+    "frequency": 3,
+    "pack": true,
+    "pack_size": [
+      3,
+      4
+    ]
+  },
+  "mara": {
+    "name": "Mara",
+    "symbol": "m",
+    "color": [
+      60,
+      50,
+      80
+    ],
+    "hp": "510d12+3290",
+    "speed": 11,
+    "ai_pattern": "aggressive",
+    "thac0": -17,
+    "peak_floor": 96,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 90,
+    "attacks": [
+      {
+        "name": "Night-Weight",
+        "damage": "4d8+16",
+        "type": "magic",
+        "effect": "sleeping",
+        "effect_chance": 0.4,
+        "effect_duration": 3
+      },
+      {
+        "name": "Trample",
+        "damage": "5d10+20",
+        "type": "blunt",
+        "bonus_vs": {
+          "sleeping": 1.5,
+          "paralyzed": 1.5
+        }
+      }
+    ],
+    "resistances": [
+      "cold",
+      "drain",
+      "magic"
+    ],
+    "weaknesses": [
+      "iron",
+      "holy"
+    ],
+    "tags": [
+      "outsider",
+      "fey"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "The Ynglinga saga tells how King Vanlandi broke his word to his Finnish wife, and she paid a witch to send a mara after him. As soon as he slept it trod on him. His men held his head and it trampled his legs; they held his legs and it pressed on his head until he died. Our word nightmare is her name. A mara lays its weight on you until you sleep where you stand, and then it tramples, harder on a sleeper. Old households hung a knife of steel over the bed.",
+    "frequency": 2
+  },
+  "lyssa_madness": {
+    "name": "Madness of Lyssa",
+    "symbol": "L",
+    "color": [
+      170,
+      40,
+      90
+    ],
+    "hp": "510d12+3380",
+    "speed": 14,
+    "ai_pattern": "hit_and_run",
+    "thac0": -17,
+    "peak_floor": 97,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 91,
+    "attacks": [
+      {
+        "name": "Goad of Madness",
+        "damage": "4d8+16",
+        "type": "magic",
+        "effect": "confused",
+        "effect_chance": 0.45,
+        "effect_duration": 3
+      },
+      {
+        "name": "Rabid Bite",
+        "damage": "5d10+16",
+        "type": "pierce",
+        "effect": "weakened",
+        "effect_chance": 0.3,
+        "effect_duration": 4
+      }
+    ],
+    "resistances": [
+      "magic",
+      "poison"
+    ],
+    "weaknesses": [
+      "holy"
+    ],
+    "tags": [
+      "outsider"
+    ],
+    "harvest_tier": 3,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Lyssa was the daughter of Night and the spirit of mad rage; her name is also the Greek word for rabies. In Euripides, Hera sends her to drive Heracles out of his mind, and Lyssa herself protests that it is unjust, and then obeys. Heracles came to himself among the bodies of his own family. Her madnesses wander the lowest halls: they dart in, bite, turn the mind inside out, and are gone before it turns back. A clear head is the only armour against them.",
+    "frequency": 2,
+    "can_phase_blink": true,
+    "phase_blink_chance": 0.25
+  },
+  "jorogumo": {
+    "name": "Jorogumo",
+    "symbol": "s",
+    "color": [
+      180,
+      60,
+      70
+    ],
+    "hp": "500d12+3220",
+    "speed": 11,
+    "ai_pattern": "ambush",
+    "thac0": -17,
+    "peak_floor": 94,
+    "spread": 12,
+    "peak_weight": 2.0,
+    "min_level": 88,
+    "attacks": [
+      {
+        "name": "Silk Line",
+        "damage": "4d8+16",
+        "type": "physical",
+        "effect": "immobilized",
+        "effect_chance": 0.4,
+        "effect_duration": 2,
+        "ranged": true
+      },
+      {
+        "name": "Venom Fangs",
+        "damage": "4d10+18",
+        "type": "poison",
+        "effect": "poisoned",
+        "effect_chance": 0.5,
+        "effect_duration": 6
+      }
+    ],
+    "resistances": [
+      "poison",
+      "cold"
+    ],
+    "weaknesses": [
+      "fire"
+    ],
+    "tags": [
+      "beast",
+      "shapeshifter"
+    ],
+    "harvest_tier": 4,
+    "treasure": {
+      "gold": [
+        140,
+        380
+      ],
+      "item_chance": 0.55,
+      "item_tier": 5
+    },
+    "lore": "Edo-period storytellers told of the jorogumo, a spider that lives for four hundred years and learns to take a woman's shape. At the Joren Falls in Izu a woodcutter resting on the bank felt threads winding round his ankle; he tied them to a tree stump, and the stump was torn out of the ground and dragged under the water. In the dungeon she waits in the dark corners of rooms. The first warning is the silk around your feet. Fire is what she fears.",
+    "frequency": 2
   }
 }

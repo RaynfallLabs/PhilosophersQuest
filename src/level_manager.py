@@ -134,6 +134,11 @@ class LevelManager:
         # Bones: chance to spawn a ghost from a previous player's death
         self._maybe_spawn_bones(level_num, dungeon, monsters, items)
 
+        # A mimic posing as the down stair (the Hellmouth) lies only where
+        # the real stair stays reachable (src/false_stairs.py).
+        import false_stairs
+        false_stairs.seat(dungeon, monsters)
+
         self.max_level_reached = max(self.max_level_reached, level_num)
         items = self._once_per_run(items)
         return dungeon, monsters, items
@@ -259,6 +264,28 @@ class LevelManager:
 
         return planned
 
+    def _place_escort(self, eid: str, all_defs: dict, leader, dungeon, monsters: list):
+        """Set a mini-boss's companion down on the nearest free tile it fits
+        (two rings out at most). Placed once per run, like the leader."""
+        from monster import Monster
+        from geom import all_occupied_tiles
+        from dungeon import _footprint_fits
+        edef = all_defs.get(eid)
+        if edef is None or eid in self._placed_mini_bosses:
+            return None
+        taken = all_occupied_tiles(monsters)
+        for r in (1, 2, 3):
+            ring = [(leader.x + dx, leader.y + dy) for dx in range(-r, r + 1)
+                    for dy in range(-r, r + 1) if max(abs(dx), abs(dy)) == r]
+            for x, y in ring:
+                if (dungeon.in_bounds(x, y) and dungeon.is_walkable(x, y)
+                        and (x, y) not in taken and _footprint_fits(edef, x, y, dungeon, monsters)):
+                    esc = Monster({**edef, 'id': eid}, x, y)
+                    monsters.append(esc)
+                    self._placed_mini_bosses.add(eid)
+                    return esc
+        return None
+
     def _try_spawn_mini_boss(self, dungeon, monsters: list, level_num: int):
         """Place this floor's planned mini-boss (if any). Pre-rolled at run start."""
         import random as _rng
@@ -335,6 +362,10 @@ class LevelManager:
             mb = Monster(defn, spawn_pos[0], spawn_pos[1])
             monsters.append(mb)
             self._placed_mini_bosses.add(mid)
+            # Some arrive in company (Stheno never goes anywhere without
+            # Euryale): `escort` lists ids set down beside the mini-boss.
+            for _eid in mdata.get('escort') or ():
+                self._place_escort(_eid, _all, mb, dungeon, monsters)
             # An omen on arrival: the player learns something named is here
             # without being told what. (Mini-bosses were never announced.)
             omen = mdata.get('omen')

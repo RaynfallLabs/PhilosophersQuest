@@ -891,6 +891,23 @@ RESISTED = 0.5        # a blow of a kind the creature shrugs off
 WEAK_TO = 1.5         # a blow of a kind, or a metal, it cannot bear
 
 
+def blow_forms_of(weapon) -> tuple:
+    """The ways this weapon wounds (slash, pierce, blunt...), a fist's when
+    there is none: the same reading weapon_type_multiplier makes."""
+    if weapon is None:
+        return ('blunt',)
+    # damage_types also carries the weapon's material id (silver, iron...),
+    # which is what it is made of, not how it wounds: leave those out.
+    own = [t for t in (getattr(weapon, 'damage_types', None) or []) if t in _BLOW_FORMS]
+    if len(own) > 1:
+        own = [t for t in own if t != 'physical'] or own
+    return tuple(own) or ('physical',)
+
+
+_BLOW_FORMS = frozenset({'slash', 'pierce', 'blunt', 'physical', 'fire', 'cold', 'lightning',
+                         'acid', 'holy', 'poison', 'magic', 'necrotic', 'radiant', 'force'})
+
+
 def weapon_type_multiplier(weapon, monster, blessed: bool | None = None) -> tuple[float, float]:
     """How a weapon's FORM and its SUBSTANCE each meet a monster: (form,
     substance). Multiply them for the whole effect.
@@ -1681,6 +1698,9 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
                                consume=True, weapon=weapon)
         crit = False      # retired: chain IS the crit (kept for on_complete)
 
+        # What the blow is made of, for a creature that splits when cut
+        # (src/splitting.py): the weapon's own forms, or a fist.
+        monster._incoming_forms = blow_forms_of(weapon)
         actual = monster.take_damage(damage)
 
         # Chain combat v2 (v2.14.0): dispatch per-class chain specials at
