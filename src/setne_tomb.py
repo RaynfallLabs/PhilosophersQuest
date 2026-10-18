@@ -245,7 +245,7 @@ class SetneMixin:
             if thread:
                 deeds.close_thread(reg, thread)
             if al.get('on_time_chronicle'):
-                self._log_chronicle(al['on_time_chronicle'])
+                self._chron('oath', al['on_time_chronicle'])
         else:
             deeds.keep_oath_late(reg, oath_id, floor=floor, block=block, turn=turn)
             karma.adjust(self, 0, kind='oath', source=oath_id, made_block=o.get('made_block'))
@@ -253,7 +253,7 @@ class SetneMixin:
             if thread:
                 deeds.close_thread(reg, thread, line=al.get('late_thread_line'))
             if al.get('late_chronicle'):
-                self._log_chronicle(al['late_chronicle'])
+                self._chron('oath', al['late_chronicle'])
             self._thoth_call_off_the_dead()
         self._advance_turn()
         return True

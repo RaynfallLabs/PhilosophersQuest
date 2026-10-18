@@ -1178,7 +1178,8 @@ class CombatMixin:
             'warning')
         if not getattr(self, '_green_girdle_chronicled', False):
             self._green_girdle_chronicled = True
-            self._log_chronicle(
+            self._chron(
+                'deed',
                 "The Green Knight's axe should have taken my head. The green girdle turned it. "
                 "He laughed and called it a little disloyalty. I think he was being kind.")
         return True
@@ -1199,7 +1200,8 @@ class CombatMixin:
             "The scythe comes down through the place where you were a breath ago. "
             "Death looks at the blade, and then at you, and nods. One breath, as promised.",
             'warning')
-        self._log_chronicle(
+        self._chron(
+            'deed',
             "Death swung, and missed on purpose. He had promised me one breath back at the "
             "chessboard. He is very exact about promises.")
         return True
