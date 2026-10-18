@@ -352,3 +352,16 @@ def test_an_announced_penalty_lasts_as_long_as_it_says():
         tick_all(q)
         turns += 1
     assert turns == 11                                  # this turn's tick, then ten
+
+
+def test_a_maze_that_comes_out_as_one_region_still_gets_monsters():
+    """About 1 maze floor in 100 came out as a single region, which is also
+    the arrival room; populate_floor skipped it and the floor had no monsters
+    (bug bash 5 follow-up, found by an order-dependent flake)."""
+    import random as _r
+    from dungeon import generate_dungeon, populate_floor, MIN_FLOOR_MONSTERS
+    _r.seed(7)
+    d = generate_dungeon(80, 50, 30)
+    one = [max(d.rooms, key=lambda r: len(list(r.inner_tiles())))]
+    monsters = populate_floor(one, 30, d)
+    assert len(monsters) >= MIN_FLOOR_MONSTERS + 1, len(monsters)

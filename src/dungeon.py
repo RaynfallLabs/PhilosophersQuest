@@ -1445,6 +1445,11 @@ def populate_floor(rooms: List[Room], level: int, dungeon: Dungeon,
     monsters = []
     spawn_rooms = rooms[1:]
     if not spawn_rooms:
+        # A maze floor can come out as one big region, which is also the
+        # arrival "room". Skipping it left about 1 maze floor in 100 with no
+        # monsters at all; fill the region itself instead.
+        spawn_rooms = list(rooms)
+    if not spawn_rooms:
         return monsters
     if occupancy is None:
         occupancy = min(0.50 + level / 130, 0.95)
