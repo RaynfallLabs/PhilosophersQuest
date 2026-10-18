@@ -730,11 +730,12 @@ def _eff_reveal_floor(game, special, tier, chain):
         for (tx, ty), trap in game.dungeon.traps.items():
             trap['revealed'] = True
     if tier.get('items'):
-        from items import make_fully_known
-        for it in game.ground_items:
-            if hasattr(it, 'identified'):
-                make_fully_known(it)
-                game.player.known_item_ids.add(getattr(it, 'id', ''))
+        # Each unknown thing on the floor is named, and so is its kind
+        # (one identification knows every copy). Corpses keep their own lore.
+        from items import grant_identified
+        for it in list(game.ground_items):
+            if game._needs_identify(it):
+                grant_identified(game, it)
     if tier.get('stairs'):
         from dungeon import STAIRS_DOWN, STAIRS_UP
         tiles = game.dungeon.tiles
@@ -1023,13 +1024,11 @@ def _eff_reveal_radius(game, special, tier, chain):
             trap['revealed'] = True
             revealed_traps += 1
     if id_items:
-        from items import make_fully_known
-        for it in game.ground_items:
-            if not hasattr(it, 'identified'):
-                continue
-            if max(abs(it.x - px), abs(it.y - py)) <= radius and not it.identified:
-                make_fully_known(it)
-                game.player.known_item_ids.add(getattr(it, 'id', ''))
+        from items import grant_identified
+        for it in list(game.ground_items):
+            if (max(abs(it.x - px), abs(it.y - py)) <= radius
+                    and game._needs_identify(it)):
+                grant_identified(game, it)
     game.add_message(
         f"Sherlock deduces. ({revealed_traps} {'trap' if revealed_traps == 1 else 'traps'} "
         f"revealed in radius {radius}).",

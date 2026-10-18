@@ -1215,7 +1215,8 @@ class InputMixin:
 
             items = self._npc_item_list
             idx = self._AZ_KEYS.get(key)
-            if idx is not None:
+            # Only the letters on screen (a-i): j-z picked rows out of view.
+            if idx is not None and idx < 9:
                 actual = idx + self._npc_item_scroll
                 if 0 <= actual < len(items):
                     self._apply_npc_choice(self._npc_selected_option,
@@ -1596,6 +1597,10 @@ class InputMixin:
             if not self._needs_identify(subject):
                 self.add_message("You already understand that item completely.", 'info')
                 return
+            if not self._item_can_identify_now():
+                # The I menu's own gate: the Shard (or Plato's passive).
+                self.add_message("You need the Philosopher's Shard to identify items.", 'warning')
+                return
             self.state = STATE_PLAYER
             self._identify_item(subject)
             return
@@ -1721,6 +1726,8 @@ class InputMixin:
             ('h', 'journal', 'Journal'),
             ('i', 'lore_hints', 'Lore Hints'),
             ('j', 'recipes', 'Recipes'),
+            ('k', 'treasure', 'Treasure'),
+            ('l', 'wonders', 'Wonders'),
         ])
         cat_keys = {getattr(pygame, f'K_{key_label}'): slug
                     for key_label, slug, _ in cats}

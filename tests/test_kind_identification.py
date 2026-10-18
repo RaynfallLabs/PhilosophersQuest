@@ -327,3 +327,62 @@ def test_a_unique_is_known_by_its_own_identify():
     g._full_identify(a)
     assert not g._needs_identify(a)
     assert g._needs_identify(b)
+
+
+# ------------------------------------------------------------------ seams (wiring audit)
+
+def test_forgetting_reaches_a_thiefs_loot_and_never_picks_bread():
+    import json
+    from monster import Monster
+    g = _game()
+    p = g.player
+    first = _potion()
+    p.inventory = [i for i in p.inventory if getattr(i, 'id', '') == 'philosophers_shard']
+    p.inventory.append(first)
+    _identify_by_quiz(g, first)
+    stolen = _potion('blessed')
+    stolen.id_level = 5                                  # identified, then snatched
+    mons = json.load(open(os.path.join(ROOT, 'data', 'monsters.json'), encoding='utf-8'))
+    kind = next(k for k in ('goblin', 'kobold', 'giant_rat') if k in mons)
+    thief = Monster({**mons[kind], 'id': kind}, p.x + 1, p.y)
+    thief.__dict__['stolen_items'] = [stolen]
+    g.monsters = [thief]
+    g._forget_kind(first)
+    assert stolen.id_level == 0 and g._needs_identify(stolen)
+    bread = next(iter(items.load_items('food')))
+    assert not g._forgettable(bread)
+
+
+def test_a_merchants_strongbox_teaches_the_kinds_it_names():
+    g = _game()
+    loot = [_potion('cursed')]
+    loot[0].id_level = 5
+    loot[0].__dict__['_learn_kind'] = True
+    g._learn_loot_kinds(loot)
+    assert KIND in g.player.known_item_ids
+    assert '_learn_kind' not in loot[0].__dict__
+    assert not g._needs_identify(_potion())
+
+
+def test_the_lore_page_identify_key_needs_the_shard():
+    from game_states import STATE_LORE
+    g = _game()
+    p = g.player
+    pot = _potion()
+    p.inventory = [i for i in p.inventory if getattr(i, 'id', '') != 'philosophers_shard'] + [pot]
+    g._lore_subject = pot
+    g.state = STATE_LORE
+    g.handle_event(pygame.event.Event(pygame.KEYDOWN, key=pygame.K_i, unicode='i',
+                                      mod=0, scancode=0))
+    assert g.state == STATE_LORE
+    assert any('Shard' in str(e[0]) for e in g.msg_log.entries[-2:])
+
+
+def test_the_throw_prompt_names_an_unknown_potion_by_its_look():
+    g = _game()
+    pot = _potion()
+    g.player.inventory.append(pot)
+    g._open_throw_targeting(pot)
+    said = ' '.join(str(e[0]) for e in g.msg_log.entries[-2:])
+    assert g._fix_name_case(pot.name) not in said
+    assert g._bare_name(pot) in said

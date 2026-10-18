@@ -214,7 +214,7 @@ class CombatMixin:
             self.target_cursor_y = py
 
         self.state = STATE_TARGET
-        weapon_name = weapon.name if weapon else "fists"
+        weapon_name = self._bare_name(weapon) if weapon else "fists"
         if candidates:
             self.add_message(
                 f"Melee targeting with {weapon_name} -- arrow keys to aim, TAB to cycle, ENTER to strike, ESC to cancel.",
@@ -423,8 +423,8 @@ class CombatMixin:
                     "Thunder mutters a long way off, and stops. "
                     "The altar wanted something else.", 'info')
 
+        display = self._bare_name(weapon)          # as the hero knows it
         self.player.remove_from_inventory(weapon)
-        display = weapon.name
         dmg = self._get_weapon_throw_damage(weapon)
         break_chance = self._get_weapon_break_chance(weapon)
 

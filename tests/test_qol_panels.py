@@ -259,7 +259,7 @@ def test_kit_filter_for_tab_spells_returns_empty():
     p = _make_player_with_items()
     g = _ResolvedFake(p, [])
     rows = g._kit_collect_items()
-    spells = g._kit_filter_for_tab(rows, 5)
+    spells = g._kit_filter_for_tab(rows, [s for _l, s in g._KIT_TABS].index('spells'))
     assert spells == []
 
 

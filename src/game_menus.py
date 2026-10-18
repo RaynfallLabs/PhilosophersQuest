@@ -1905,7 +1905,7 @@ class MenuMixin:
             # Generic charge — sleep target 5 turns
             target.add_effect('sleeping', 5)
             self.add_message(
-                f"A charge of the {getattr(acc, 'name', acc_id)} flows out. "
+                f"A charge of the {self._bare_name(acc)} flows out. "
                 f"{the_name(target)} sleeps.",
                 'info')
         acc.charges -= 1
@@ -1919,7 +1919,7 @@ class MenuMixin:
             acc.buc = 'cursed'
             acc.buc_known = True
             self.add_message(
-                f"The {getattr(acc, 'name', acc_id)} burns out — the wax "
+                f"The {self._bare_name(acc)} burns out — the wax "
                 f"fuses to your skin. It will not let go.",
                 'danger')
         return False  # advance turn

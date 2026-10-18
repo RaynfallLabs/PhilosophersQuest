@@ -1988,7 +1988,7 @@ class RenderMixin:
                 y += irow_h + S(6)
             self._ui_scrollbar(list_rect, self._npc_item_scroll,
                                len(items), 9, color=border)
-            self._ui_footer(panel, "a-z: select item   |   Up/Down: scroll   |   Esc: back")
+            self._ui_footer(panel, "a-i: select item   |   Up/Down: scroll   |   Esc: back")
             return
 
         if phase == 'outcome':
@@ -2425,7 +2425,8 @@ class RenderMixin:
             pygame.draw.rect(self.screen, cur_color, (scr_cx, scr_cy, T, T), 2)
 
         # HUD prompt (the kit's plaque, key badges)
-        item_name = proper_name(self._throw_potion.name) if self._throw_potion else "Item"
+        # As the hero knows it: an unknown potion is not named by its true name.
+        item_name = self._bare_name(self._throw_potion) if self._throw_potion else "Item"
         tname = proper_name(target_monster.name) if target_monster else ''
         if will_hit_blocker:
             status = f"{proper_name(blocker.name)} blocks the path: the {item_name} will hit it"
@@ -8981,7 +8982,7 @@ class RenderMixin:
             list_body = self._ui_subpanel(list_rect, "Known Entries")
             article_body = self._ui_subpanel(article_rect, "Article")
 
-        # Every category in view (eleven since the Treasure pages): the rows
+        # Every category in view (twelve since the Wonders pages): the rows
         # close up a little rather than drop the last one off the panel.
         row_h = min(S(45), max(S(32), cat_body.h // max(1, len(cats))))
         y = cat_body.y

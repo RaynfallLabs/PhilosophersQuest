@@ -2009,11 +2009,12 @@ class MagicMixin:
                         it.buc_known = True
                     revealed += 1
             inv_reveals = 0
+            from items import buc_known_to
             if _stier >= 3:
                 for it in self.player.inventory:
                     if (isinstance(it, (Wand, Scroll, Spellbook))
                             and hasattr(it, 'buc_known')
-                            and not it.buc_known):
+                            and not buc_known_to(it, self.player)):
                         it.buc_known = True
                         inv_reveals += 1
             eq_reveals = 0
@@ -2031,7 +2032,7 @@ class MagicMixin:
                 if am:
                     equipped.append(am)
                 for it in equipped:
-                    if hasattr(it, 'buc_known') and not it.buc_known:
+                    if hasattr(it, 'buc_known') and not buc_known_to(it, self.player):
                         it.buc_known = True
                         eq_reveals += 1
             bits = []
@@ -2785,7 +2786,7 @@ class MagicMixin:
                     if getattr(eq, 'buc', 'uncursed') == 'cursed' and getattr(eq, 'id', '') != 'duck_of_doom':
                         eq.buc = 'uncursed'
                         eq.buc_known = True
-                        cursed_items.append(eq.name)
+                        cursed_items.append(self._bare_name(eq))
                 # T5: also bless one uncursed equipped item
                 if _scope >= 4 and equipped:
                     candidate = next((eq for eq in equipped
@@ -2793,7 +2794,7 @@ class MagicMixin:
                     if candidate:
                         candidate.buc = 'blessed'
                         candidate.buc_known = True
-                        blessed_extra = candidate.name
+                        blessed_extra = self._bare_name(candidate)
                 if removed or cursed_items or blessed_extra:
                     parts = []
                     if removed:
@@ -3583,13 +3584,19 @@ class MagicMixin:
         (known by sight, treasure.py: the teeth must bite something real),
         never the Philosopher's Shard (bricking the ID system is too brutal)."""
         from items import Corpse, is_fully_known
+        from naming import proper_name
         if it is None or isinstance(it, Corpse) or not hasattr(it, 'id_level'):
             return False
         if getattr(it, 'item_class', '') == 'treasure':
             return False
         if getattr(it, 'id', '') == 'philosophers_shard':
             return False
-        return is_fully_known(it, self.player) or int(getattr(it, 'id_level', 0) or 0) >= 1
+        # Only a thing with a look of its own to go back to: bread, raw meat,
+        # ammo and lockpicks are known by sight and cannot be "forgotten".
+        if proper_name(str(getattr(it, 'unidentified_name', '') or '')) == \
+                proper_name(str(getattr(it, 'name', '') or '')):
+            return False
+        return is_fully_known(it, self.player)
 
     def _scroll_identify_amnesia(self) -> None:
         """Cursed Scroll of Identify: the kid forgets one kind he had
@@ -4199,6 +4206,13 @@ class MagicMixin:
         if _merge is not None:
             _merge(force=True)
 
+    def _learn_loot_kinds(self, loot) -> None:
+        """Loot that arrived already named (a merchant's strongbox) teaches
+        its kind, as any identification does."""
+        for it in loot or ():
+            if it.__dict__.pop('_learn_kind', False) and getattr(it, 'id', ''):
+                self._propagate_identification(it.id, seed_item=it)
+
     def _kind_knowledge_signature(self) -> tuple:
         p = self.player
         return (len(getattr(p, 'known_item_ids', ()) or ()),
@@ -4261,12 +4275,19 @@ class MagicMixin:
         pool = _all_items_in_save(p, {'ground_items': list(getattr(self, 'ground_items', []) or []),
                                       'level_mgr': lm})
         from mystery_system import MerchantNPC
+        floors = _stored_floors(lm) if lm else []
         grounds = [list(getattr(self, 'ground_items', []) or [])]
-        grounds += [list(f.get('ground_items') or []) for f in (_stored_floors(lm) if lm else [])]
+        grounds += [list(f.get('ground_items') or []) for f in floors]
         for ground in grounds:
             for g in ground:
                 if isinstance(g, MerchantNPC):
                     pool.extend(getattr(g, 'stock', []) or [])
+        # What thieves carry, here and on stored floors (theft.py).
+        herds = [list(getattr(self, 'monsters', []) or [])]
+        herds += [list(f.get('monsters') or []) for f in floors]
+        for herd in herds:
+            for m in herd:
+                pool.extend(getattr(m, '__dict__', {}).get('stolen_items') or [])
         for it in pool:
             if it is item or same_kind(it):
                 if str(getattr(it, 'item_class', '')) == 'treasure':

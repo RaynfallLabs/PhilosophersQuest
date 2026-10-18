@@ -173,12 +173,10 @@ def known_healer(player, item) -> bool:
     """Does the player KNOW ``item`` heals? Only identified items count: the
     copy identified, or its type known (call 32: the picker listed exactly
     the unidentified healers, which told the player which unknowns heal)."""
-    from items import Potion, Scroll, Wand
-    try:
-        known = (int(getattr(item, 'id_level', 0) or 0) >= 4
-                 or bool(getattr(player, 'knows_item_type', lambda _i: False)(item)))
-    except (TypeError, ValueError):
-        known = False
+    from items import Potion, Scroll, Wand, is_fully_known
+    # Known as the name says (items.is_fully_known): this copy identified or
+    # its kind known. A stored 4 is not an identification.
+    known = is_fully_known(item, player)
     if not known:
         return False
     effect = str(getattr(item, 'effect', '') or '').lower()

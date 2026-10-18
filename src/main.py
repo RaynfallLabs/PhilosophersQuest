@@ -5013,7 +5013,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                              and not getattr(i, 'id', '').startswith('philosopher')]
             if transformable:
                 victim = random.choice(transformable)
-                old_name = victim.name
+                old_name = self._bare_name(victim)      # as the hero knows it
                 cls_name = type(victim).__name__.lower()
                 try:
                     from items import (pick_random_weapon_for_floor, pick_random_armor_for_floor,
@@ -5032,7 +5032,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                         # player.inventory. This read `player.equipment`, which
                         # does not exist, and crashed every time.)
                         self.player.inventory[idx] = replacement
-                        self.add_message(f"Your {old_name} transforms into {self._a_or_an(replacement.name)}!", 'warning')
+                        self.add_message(f"Your {old_name} transforms into "
+                                         f"{self._a_or_an(self._bare_name(replacement))}!", 'warning')
                     else:
                         self.add_message("The energy dissipates harmlessly.", 'info')
                 except FileNotFoundError:
@@ -6121,6 +6122,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 self.ground_items.remove(container)
                 for text, mtype in _result['messages']:
                     self.add_message(text, mtype)
+                self._learn_loot_kinds(_result['loot'])
                 for loot_item in _result['loot']:
                     loot_item.x, loot_item.y = cx, cy
                     self.ground_items.append(loot_item)
@@ -6166,6 +6168,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 cx, cy = container.x, container.y
                 self.ground_items.remove(container)
                 _FRAGILE = ('potion', 'scroll')
+                self._learn_loot_kinds(result['loot'])
                 for loot_item in result['loot']:
                     if getattr(container, 'bash_damaged', False) \
                             and getattr(loot_item, 'item_class', '') in _FRAGILE:
@@ -6227,6 +6230,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         result = {'loot': [], 'gold': 0, 'messages': []}
         _handle_success(self.player, container, self.dungeon, result.update)
         self.add_message(f"The {self._bare_name(container)} swings open.", 'success')
+        self._learn_loot_kinds(result['loot'])
         for loot_item in result['loot']:
             loot_item.x, loot_item.y = cx, cy
             self.ground_items.append(loot_item)
