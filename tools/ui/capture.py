@@ -388,8 +388,10 @@ class _FrameDone(Exception):
 
 
 _HIGHSCORE_FIXTURE = [
+    # A run's honour (the Loremaster title, monster families) beside the
+    # name, so the score tables are measured with it.
     {'name': 'Hypatia', 'score': 184_220, 'grade': 'A', 'level': 100, 'victory': True,
-     'date': '2026-09-30'},
+     'date': '2026-09-30', 'title': 'Loremaster'},
     {'name': 'Boethius', 'score': 92_400, 'grade': 'B', 'level': 61, 'victory': False,
      'date': '2026-09-21'},
     {'name': 'Anselm', 'score': 51_015, 'grade': 'B', 'level': 44, 'victory': False,
@@ -1143,6 +1145,22 @@ def _(g):
         if family_lore.score(g.player, 'vermin') >= need:
             break
         g._family_study(k)
+
+
+@scene('popup_family_several', 'Popups',
+       'One study of a legend (Medusa counts two kinds) crosses two tiers of the gorgons and '
+       'completes the Hero\'s Road: three pieces of news in one popup over the lore page.',
+       expect='story_popup')
+def _(g):
+    import family_lore
+    _family_lore(g, 'legend', 3)
+    _family_lore(g, 'giants', 3)
+    _family_lore(g, 'gorgons', 2)
+    g.state = _S().STATE_LORE
+    g._lore_subject = g._capture_corpse
+    g._family_study('medusa_gorgon')
+    assert family_lore.tier(g.player, 'gorgons') == 4
+    assert family_lore.circle_complete(g.player, 'heroes_road')
 
 
 @scene('menu_charsheet_monster_lore', 'Menus',

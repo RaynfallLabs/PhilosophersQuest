@@ -331,9 +331,14 @@ Each entry is a flat dict:
   "kills":   412,
   "turns":   28391,
   "victory": true,
-  "date":    "2026-10-02"
+  "date":    "2026-10-02",
+  "title":   "Loremaster"
 }
 ```
+
+`title` (2026-10-18) is an honour the run earned, shown after the name on
+the death and victory screens and the all-time table (the Loremaster title
+of monster families; `''` when none). Older entries have no key.
 
 File is a JSON array sorted descending by `score`, truncated to
 `MAX_ENTRIES = 100`.
@@ -533,6 +538,18 @@ makes the four known sets real sets, rebuilds accessory families into
 set, and merges same-blessing stacks of known kinds. Nothing is
 stamped on items: a copy of a known kind is fully identified because
 `items.is_fully_known` reads the sets.
+
+**2026-10-18** (monster families, [monster_families](monster_families.md)):
+three new Player fields, `studied_monster_ids` (the kinds the hero studied
+himself), `family_tiers_told` (what news has been told: tiers, `circle:<id>`,
+`loremaster`) and `family_lore_grants` (a secret build's head start).
+`__setstate__` calls `family_lore.migrate_old_save`: an old save's studied
+set is its `lore_known_monster_ids`, and every tier, circle and title it
+reaches is marked told, so loading brings no popup flood. `__getstate__`
+drops the transient `_family_tier_cache` and `_edge_msgs`. Tiers and circles
+are never stored; they are worked out from these fields.
+`tests/test_monster_families_wiring.py` saves and loads a whole Game through
+`save_system` (a new save and one with the fields removed).
 
 ### 6.4 Adding a new migration
 

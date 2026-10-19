@@ -8332,8 +8332,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         Wrong = the Shard's backlash stuns the kid.
 
         Already identified -> skip the quiz and just open the lore screen.
+        So is a corpse of a kind the hero has studied, whatever its own
+        id_level (one left on a floor before the study, or kept in a sack):
+        items.corpse_is_known.
         """
-        if int(getattr(corpse, 'id_level', 0)) >= 5:
+        from items import corpse_is_known
+        if corpse_is_known(self.player, corpse):
+            corpse.id_level = 5
             self._lore_subject = corpse
             self.state = STATE_LORE
             return

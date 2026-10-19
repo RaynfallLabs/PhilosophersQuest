@@ -365,8 +365,41 @@ def grant_identified(game, item) -> None:
 # not stamped onto items when the kind is learnt. Forgetting the kind (a
 # cursed Scroll of Identify, the Book of Thoth's curse) un-knows every copy
 # the same way. Treasure keeps its own rules (known by sight, valued by a
-# trader: treasure.py) and a corpse its own (its id_level, set for every kind
-# in Player.studied_monster_ids: game_combat._make_corpse).
+# trader: treasure.py) and a corpse its own (corpse_is_known: its id_level,
+# or its kind in Player.studied_monster_ids).
+
+def corpse_is_known(player, corpse) -> bool:
+    """A corpse is studied when it was itself (id level 5) or the hero has
+    studied its KIND himself (Player.studied_monster_ids): one correct study
+    knows every corpse of the kind, wherever it lies and however long it lay
+    there (on a floor left before the study, in a sack, in a thief's haul).
+    A kind the Book of Thoth only opened is not studied, so its corpse still
+    asks, and that study still counts for its monster family.
+
+    A kind with NO family (the ethereal unicorn, the secret cow, an
+    encounter NPC) is never recorded as studied (family_lore.record_study),
+    so for it the old rule stands: its page opened (lore_known_monster_ids)
+    knows its corpses. There is no family progress for a reveal to skip."""
+    if corpse is None:
+        return False
+    try:
+        if int(getattr(corpse, 'id_level', 0) or 0) >= 5:
+            return True
+    except (TypeError, ValueError):
+        pass
+    mid = getattr(corpse, 'monster_id', None)
+    if not mid:
+        return False
+    if mid in (getattr(player, 'studied_monster_ids', None) or ()):
+        return True
+    if mid in (getattr(player, 'lore_known_monster_ids', None) or ()):
+        try:
+            import family_lore
+            return family_lore.family_of(corpse) is None
+        except Exception:
+            return False
+    return False
+
 
 def kind_is_known(player, item) -> bool:
     """True when the hero knows this item's kind, so every copy of it is

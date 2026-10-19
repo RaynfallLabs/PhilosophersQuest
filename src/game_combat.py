@@ -1525,8 +1525,10 @@ class CombatMixin:
         # A type the hero studied himself is known forever: its corpses
         # spawn pre-identified (one-question identify, True Name model). A
         # kind the Book of Thoth only opened the page of still asks, so its
-        # study can still count for its family.
-        if monster.kind in getattr(self.player, 'studied_monster_ids', set()):
+        # study can still count for its family (items.corpse_is_known; a
+        # kind with no family keeps the old page-opened rule).
+        from items import corpse_is_known
+        if corpse_is_known(self.player, c):
             c.id_level = 5
         return c
 

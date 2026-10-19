@@ -106,10 +106,17 @@ def test_make_corpse_pre_identifies_known_types():
     import game_combat
     src = inspect.getsource(game_combat.CombatMixin._make_corpse)
     # Studied by the hero himself (monster families, 2026-10-18): a kind the
-    # Book of Thoth only opened the page of can still be studied.
-    assert "studied_monster_ids" in src, (
+    # Book of Thoth only opened the page of can still be studied. The rule
+    # lives in items.corpse_is_known (2026-10-19 wiring audit), which every
+    # corpse path asks.
+    assert "corpse_is_known" in src, (
         "_make_corpse must pre-identify corpses of studied monster types"
     )
+    from types import SimpleNamespace
+    from items import Corpse, corpse_is_known
+    hero = SimpleNamespace(studied_monster_ids={'ghoul'}, lore_known_monster_ids={'zombie'})
+    assert corpse_is_known(hero, Corpse('Ghoul', 'ghoul', 0, 0))
+    assert not corpse_is_known(hero, Corpse('Zombie', 'zombie', 0, 0))   # Thoth only
 
 
 def test_start_corpse_identify_records_known_type():

@@ -1071,14 +1071,24 @@ class RenderMixin:
             return y
         indent = S(12)
         shown = 0
+        compact = False
         for head, detail in rows:
-            lines = [(ln, FP.BODY_TEXT, 0) for ln in wrap_lines(head, body.w, font)]
-            if detail:
-                lines += [(ln, FP.FADED_TEXT, indent)
-                          for ln in wrap_lines(detail, body.w - indent, font)]
             more_line = lh if shown < len(rows) - 1 else 0
-            if y + lh * len(lines) + more_line > limit:
-                break
+            lines = None
+            if not compact:
+                lines = [(ln, FP.BODY_TEXT, 0) for ln in wrap_lines(head, body.w, font)]
+                if detail:
+                    lines += [(ln, FP.FADED_TEXT, indent)
+                              for ln in wrap_lines(detail, body.w - indent, font)]
+                if y + lh * len(lines) + more_line > limit:
+                    # Short of room (a 1280x720 window with effects active
+                    # showed only "+4 more" over empty panel): the rest go
+                    # by name alone, their techniques left to B, Tab.
+                    compact, lines = True, None
+            if lines is None:
+                lines = [(ln, FP.BODY_TEXT, 0) for ln in wrap_lines(head, body.w, font)]
+                if y + lh * len(lines) + more_line > limit:
+                    break
             for ln, col, dx in lines:
                 text(ln, font, col, body.x + dx, y)
                 y += lh
@@ -8127,6 +8137,10 @@ class RenderMixin:
 
     def _lore_direct_id_level(self, item):
         if isinstance(item, Corpse):
+            # One study knows every corpse of the kind (items.corpse_is_known).
+            from items import corpse_is_known
+            if corpse_is_known(self.player, item):
+                return 5
             return int(getattr(item, 'id_level', 0) or 0)
         if not hasattr(item, 'id_level'):
             return 5
@@ -8420,8 +8434,13 @@ class RenderMixin:
                                  FP.CYAN_ACCENT, self.font_sm))
                 identity.append((f"{family_lore.short_name(_fid)}: {_prog['line']}",
                                  FP.GOLD_PALE, self.font_sm))
-            else:
+            elif _prog['next']:
                 identity.append((f"Not yet studied: {family_lore.short_name(_fid)} {_prog['line']}",
+                                 FP.CYAN_ACCENT, self.font_sm))
+            else:
+                # Its family is already known to the top ("Not yet studied:
+                # Restless Dead Every tier learned" read as one garbled line).
+                identity.append((f"Not yet studied. {family_lore.short_name(_fid)}: every tier learned",
                                  FP.CYAN_ACCENT, self.font_sm))
         else:
             identity.append(("Identified" if id_level >= 5 else "Unstudied",
@@ -8443,7 +8462,7 @@ class RenderMixin:
             for trait in monster_trait_lines(mdef):
                 mechanics.append((trait, FP.GOLD_PALE, self.font_sm))
         else:
-            mechanics.append(("Unstudied. Identify this corpse to reveal its stats, weaknesses and history.",
+            mechanics.append(("Unstudied. Study this corpse (I) to reveal its stats, weaknesses and history.",
                               FP.FADED_TEXT, self.font_sm))
 
         if id_level >= 3:
@@ -9200,6 +9219,10 @@ class RenderMixin:
             except (OSError, ValueError):
                 cache = {}
             self.__dict__['_monster_name_cache'] = cache
+        if kind not in cache and kind == 'player_ghost':
+            # The Bones ghost is a Ghost (family_lore.SPECIAL_KINDS) but is not
+            # in monsters.json: the Families page listed it as "Player Ghost".
+            return "Ghost of a Fallen Hero"
         return cache.get(kind, str(kind).replace('_', ' '))
 
     def _draw_encyclopedia_browser(self):

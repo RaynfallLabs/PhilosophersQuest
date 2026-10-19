@@ -2565,6 +2565,15 @@ class MagicMixin:
             # a turn here — the picker callback (or ESC) will advance.
             if self.state == STATE_PLAYER:
                 self._advance_turn()
+            else:
+                # A monster family tier popup (Omnisight's corpse study,
+                # game_families) is news over the map, not a picker: the
+                # read still costs its turn (it used to be free).
+                from game_states import STATE_STORY_POPUP
+                if (self.state == STATE_STORY_POPUP
+                        and (getattr(self, 'popup_data', None) or {}).get('_family')
+                        and getattr(self, 'popup_next_state', None) == STATE_PLAYER):
+                    self._advance_turn()
 
         # v2.10.0: grammar_chain_cap_bonus (Ring of Scheherazade) now lowers
         # the READ TIER, not the threshold (which is normally 1 anyway).
@@ -4340,10 +4349,19 @@ class MagicMixin:
             except Exception:
                 pass
 
+        # Corpses keep their own lore path (items.corpse_is_known), as with
+        # the Book of Thoth and the mass Scroll of Identify: the Stone naming
+        # a corpse used to mark it studied without the study counting for its
+        # monster family, and then it could never be studied at all.
+        from items import Corpse
         for item in self.player.inventory:
+            if isinstance(item, Corpse):
+                continue
             _stone_id(item)
             _record(item)
         for item in self.ground_items:
+            if isinstance(item, Corpse):
+                continue
             _stone_id(item)
             _record(item)
         # Equipped items too

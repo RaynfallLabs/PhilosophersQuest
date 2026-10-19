@@ -1,5 +1,5 @@
 {
-  "_about": "Monster families (MONSTER_FAMILIES_DESIGN.md, docs/systems/monster_families_v2_design.md). Each monster's `family` is in monsters.json; this file holds every number the system uses. Tier N needs the Nth number in `thresholds` of DIFFERENT kinds studied; a keystone (a boss, a mini-boss, a seal demon, a monster with proper_noun, or one in the family's `keystones`) counts `keystone_weight` kinds. Abilities are data: `effect` is a primitive in src/family_edges.py and `params` its numbers; `also` adds more parts to one technique. Nothing here scales by floor. `field_note` slots are filled by the Field Notes writer; an empty note is hidden.",
+  "_about": "Monster families (MONSTER_FAMILIES_DESIGN.md, docs/systems/monster_families_v2_design.md). Each monster's `family` is in monsters.json; this file holds every number the system uses. Tier N needs the Nth number in `thresholds` of DIFFERENT kinds studied; a keystone (a boss, a mini-boss, a seal demon, a monster with proper_noun, or one in the family's `keystones`) counts `keystone_weight` kinds. Abilities are data: `effect` is a primitive in src/family_edges.py and `params` its numbers; `also` adds more parts to one technique. Nothing here scales by floor. `field_note`: one fact-checked piece of folklore per tier (sources: docs/systems/monster_family_field_notes_sources.md); an empty note is hidden.",
   "tier_names": [
     "Recognise",
     "Forewarned",
@@ -34,7 +34,7 @@
     "You have learned where {kin} break."
   ],
   "tier_chronicle": [
-    "I took one of {kin} apart, and after that I knew the rest of them on sight.",
+    "I took enough of {kin} apart that I knew the rest of them on sight.",
     "I learned the signs {kin} leave on a stair, and after that I smelled them coming.",
     "I learned how ordinary people kept {kin} away, the old folk ways, and they worked.",
     "I learned how a hunter takes {kin}, and I started hunting them.",
