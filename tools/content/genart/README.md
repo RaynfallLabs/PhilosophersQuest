@@ -955,3 +955,18 @@ belt." What the second round learned:
   `paste` step). Pasted after the pixel pass it stayed a toy but was still too small to read.
   What worked: remove the painted toy, then stamp a hand-set 13 x 15 plush on the sprite
   (`plush.py`, the Emberpup's own colours), recorded in the brief as the edit's `touch` list.
+
+Brandon picked B, then: "his arrow is broken, and the stance for the legs is too straight."
+
+- An arrow drawn at full draw crosses the string, both hands and the bow arm, and the cut breaks
+  it into pieces with outline and backdrop between them. Draw the shaft by hand: one line from
+  the nock at the drawing hand over the bow hand's knuckles, the stave left whole where it
+  crosses, and a small steel head with an outline (`corwin2_b2`'s touch list).
+- A klein edit of the legs alone moves them very little: 6 of 12 seeds were nearly the old
+  pose. "Knees plainly bent, pushed forward a hand's width past the ankles; hips a little lower
+  and back" plus "front foot points straight at the target, back foot planted flat and turned
+  across, toes toward the viewer" gave the stance in one seed (106). For an archer seen side-on
+  with his chest to the viewer, the back knee bends toward the viewer and cannot show at 64 px.
+  The front knee bends toward the target, so it can be nudged one pixel that way by hand.
+- ComfyUI is deterministic here: running a three-step edit chain again from its brief gave the
+  same picture to the pixel.

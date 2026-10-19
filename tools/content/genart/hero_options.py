@@ -5,6 +5,8 @@
 The spec (JSON) names:
   "title", "out"                      the sheet's heading and where it is written
   "current", "current_says"           the sprite in the game now, and a line about it
+  "current_label"                     optional: the first row's heading (default NOW IN THE GAME), for a
+                                      sheet that compares an option with its revision
   "original", "original_label"        optional: the painting it once was, shown scaled down
   "finalists": [{"label", "file", "says"}]   each option, a 64 px sprite and a line about it
   "beside": [path, ...]               other heroes shown next to each sprite at the same size
@@ -74,7 +76,7 @@ def main():
     load = lambda p: Image.open(_path(p)).convert('RGBA')  # noqa: E731
     beside = [load(p) for p in spec.get('beside', [])]
     names = [os.path.splitext(os.path.basename(p))[0].replace('player_', '') for p in spec.get('beside', [])]
-    rows = [('NOW IN THE GAME', spec.get('current_says', ''), load(spec['current']), True)]
+    rows = [(spec.get('current_label', 'NOW IN THE GAME'), spec.get('current_says', ''), load(spec['current']), True)]
     rows += [(f['label'], f['says'], load(f['file']), False) for f in spec['finalists']]
 
     left_w = BIG + PAD + 64 + PAD + 3 * 40 + 2 * GAP
