@@ -6533,6 +6533,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     'correct': str(q.get('answer', '')),
                     'chosen': qe.last_answer,
                     'context': q.get('context', ''),
+                    # Teaching cards (2026-10-18): the review shows the one
+                    # sentence that teaches this fact, and C opens the card.
+                    'topic': q.get('topic'),
+                    'lesson': qe.lesson_for(q) or '',
                 })
         # Per-subject + per-tier stats for the Discoveries panel.
         subj = (qe.subject or 'unknown')
@@ -7898,9 +7902,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 # question's one pause is already spent (call 1, bug bash 4).
                 self.quiz_engine.update(quiz_dt)
                 if (self.state == STATE_QUIZ_CONTEXT
-                        and self.quiz_engine.state != QuizState.ASKING):
+                        and self.quiz_engine.state != QuizState.ASKING
+                        and not getattr(self.quiz_engine, '_result_hold', False)):
                     # Time ran out while reading: close the card so the
-                    # result shows.
+                    # result shows. (A card opened from the lesson hold after
+                    # a wrong answer stays open: that is the point of it.)
                     self.quiz_engine.resume_timer()
                     self.state = STATE_QUIZ
                 # The last three seconds of the clock tick; running out sounds.

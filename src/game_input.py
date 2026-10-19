@@ -1376,6 +1376,16 @@ class InputMixin:
             self._necro_answer(key)
             return
 
+        # After an untimed wrong answer the lesson line holds the result
+        # (teaching cards, 2026-10-18): C opens the whole card right there,
+        # any other key moves on (after a 1 s minimum).
+        if self.quiz_engine.state == QuizState.RESULT and self.quiz_engine._result_hold:
+            if key == pygame.K_c and self.quiz_engine.current_context_blurb():
+                self._quiz_context_scroll = 0
+                self.state = STATE_QUIZ_CONTEXT
+            else:
+                self.quiz_engine.release_result_hold()
+            return
         if self.quiz_engine.state != QuizState.ASKING:
             return
         q = self.quiz_engine.current_question

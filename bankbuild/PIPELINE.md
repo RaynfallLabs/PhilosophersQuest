@@ -261,21 +261,25 @@ Ten subjects (each mapped to an in-game action → quiz mode; see CLAUDE.md's ta
 
 Added 2026-10-03 after a playtest hit philosophy T1 "Anselm wax tablets" with zero orientation — the kid had no idea who Anselm was. Root cause: ladders are authored ladder-coherently, but `quiz_engine` SHUFFLES rungs at serve time, so the author's scaffold never reaches the player. The §16 teach-before-test rule used to live as advisory text inside craft rule #14; it is now a HARD pipeline gate at ladder scope. See `ORIENTATION_AUDIT_PLAN.md` at project root for the full design history and `feedback_ladder_context_blurb.md` for the memory bullet.
 
-**The rule:** every topic ladder MUST ship with a `context_blurb` in `data/question_contexts/<subject>.json`, keyed by the ladder's `topic`. **No blurb → no ship.**
+**REVERSED 2026-10-18: the card TEACHES every rung.** Brandon: "The context tab SHOULD basically have every answer hinted at in it for the ladder. That allows the game to teach if the child is willing to learn, instead of guess and have to memorize over dozens of plays." The old answer-free rule and its leak check are retired. Retrofit tooling lives in `bankbuild/cards/`; the author spec is `bankbuild/cards/AUTHOR_SPEC.md`.
 
-**Blurb spec:**
-- Length is NOT a rule (changed 2026-10-04). The old "3-5 sentences, 200-400 words" line dated from when quizzes were timed and contradicted itself; blurbs are read with the timer paused, so write what orients the player and stop.
-- Player-facing voice ONLY. Never mention the ladder, rungs, tiers, the bank, the topic-as-a-unit, the project, a stance rule, or what "the kid" / "the student" should learn. The blurb is shown to the player verbatim; author notes belong in the queue or the config, not here. (A pre-v3.0 audit found ~900 blurbs carrying such notes; they were stripped.)
-- Carries **WHO** (name/era tag) + **WHAT** (known-for / the ladder's subject) + **WHY** (hook / stakes). Optional **SETTING** sentence for the scene the ladder's rungs draw on.
-- MUST NOT state, paraphrase, or trivially imply the keyed answer of any rung in the ladder — not T1's, not T5's. The blurb's job is orientation, not pre-answering.
-- Grade-10 ceiling; neutral/subject voice; no spoilers for the ladder's wonders.
+**The rule:** every topic ladder MUST ship with a teaching card in `data/question_contexts/<subject>.json`, keyed by the ladder's `topic`: `{"context_blurb": <card>, "teaches": {<stem hash>: <sentence>}}`. **No card, no ship.**
 
-**Leak check (cold-reader, mandatory):** for every rung in the ladder, feed the blurb + the four choices (stem HIDDEN) to an independent judge. If the keyed answer is pickable above chance (>25% for 4 choices) averaged across the ladder's rungs, the blurb leaked and must be rewritten with the per-rung leak diagnosis attached.
+**Card spec:**
+- An opening of 40 to 70 words (who, what, where, why), then one paragraph per tier from 1 to 5, told as ONE story that deepens as the ladder does.
+- Every rung's keyed fact appears once, in the card's own words, with its WHY.
+- **Never** copy 6+ words of a stem, paste a choice of more than 4 words, name 3+ of one rung's choices, state a distractor's claim as true (a misconception appears only when named as wrong), or say "the answer is".
+- Player-facing voice only: no quiz talk, author notes, sources or URLs.
+- Length: 60 + 40 words per question, at least 150, hard cap 750.
+- Same voice and stance rules as the subject's questions (moral_vision §3.10). Grade 10. No singular they.
+- `teaches` maps every question (first 10 hex chars of the SHA-1 of its stem) to the card sentence carrying its fact, copied word for word. That's how a card that has fallen out of step with an edited question gets caught.
 
-**Pre-ship gate (hard):** `bank.py gate --subject=X` loads `data/question_contexts/<subject>.json`, verifies every unique `topic` in the question file has a blurb that meets the spec, and runs the cold-reader leak check. The gate FAILS the build on any gap — missing blurb, under-length blurb, or any rung where the blurb leaks its keyed answer. `bank.py promote` runs the same gate as a pre-promote check and refuses to swap in a bank that fails.
+**Coverage check (replaces the leak check):** a hostile cold reader gets the card plus each rung's stem and shuffled choices (no key), must pick from the card alone, and must quote the deciding sentence. `bankbuild/cards/judge.py score` checks every pick against the key and every quote word for word against the card. A ladder passes only when every rung is answered right and supported.
 
-**In-build enforcement:** the author stage emits the `context_blurb` alongside the ladder; the adversarial judge in `bank_pipeline.wf.js` (`advBlurbLeakJudge`) runs the cold-reader check in-build and sends leaked blurbs back to the author with the per-rung leak diagnosis. A ladder with an unleaked blurb passes; a ladder with an un-fixable leak lands in `needs_review/` where the de-tell sweep can take another pass.
+**Gate (deterministic):** `py -m bankbuild.cards.gate <subject> <batch>` enforces the mechanical rules. `bankbuild/cards/merge.py` applies only cards that pass the gate AND full coverage. `tests/test_ladder_blurb_coverage.py` runs the same gate on every shipped teaching card (`TEACHING_SUBJECTS`) and keeps an `UNTAUGHT_BASELINE` ratchet during the rollout. Correction: `bank.py gate` has never run blurb checks; it runs the tell gate only.
 
-**Subject exemptions:** grammar is the snappy-rote exception and does not require blurbs (it ships empty-blurb records with `exempt:true` or omits the entry entirely — the gate skips it per the subject config). All other ladder subjects (history, philosophy, animal, cooking, geography, science, theology, economics, trivia, ai) are IN scope.
+**New builds:** author the card LAST, after the questions pass review, since it must match the final questions. `bank_pipeline.wf.js` still encodes the old leak judge (`advBlurbLeakJudge`). Before the next bank build, replace it with the coverage judge in `bankbuild/cards/JUDGE_SPEC.md`.
+
+**Subject scope:** every ladder subject. Grammar loses its exemption: it needs its `topic` restamped from `bankbuild/grammar/ladders/`, then rule cards.
 
 **Math (changed 2026-10-04):** math is still not a topic-ladder subject and is still exempt from the ladder-blurb pipeline above, but it is no longer blurb-less. Every math question carries a skill-class `topic` (27 classes, derived from its one-line `context` tip by `tools/balance/math_topics.py`), and each class has one short **method card** in `data/question_contexts/math.json`: what the skill is, the mental trick, one worked example. Cards are ~60-150 words, not the 200-400-word ladder blurb. The leak rule is adapted: a card must not contain the exact sum of any question in its own class (worked examples use numbers outside the bank's range). `tests/test_math_contexts.py` enforces topic coverage, card coverage, length and the leak check. Adding a new math generator means adding a rule to `TOPIC_RULES` (an unmatched tip is a hard error) and, for a new class, a card.

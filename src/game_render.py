@@ -2850,7 +2850,7 @@ class RenderMixin:
         return f"{correct:,} of {total:,}   ({pct}%)"
 
     @staticmethod
-    def _quiz_footer_pairs(qe, is_combat: bool, has_blurb: bool) -> list:
+    def _quiz_footer_pairs(qe, is_combat: bool, has_blurb: bool, new_reader: bool = False) -> list:
         """The quiz footer's key hints: every key that does something, and
         only those. Combat at chain 0 has no Space hint (it would waste the
         swing exactly like Esc, so it is not a harmless "Cancel"). Other
@@ -2863,7 +2863,7 @@ class RenderMixin:
             if chain >= 1:
                 pairs.append(("Space", "Strike Now", FP.GOLD_PALE))
             if has_blurb:
-                pairs.append(("C", "Context"))
+                pairs.append(("C", "Read About This", FP.GOLD) if new_reader else ("C", "Context"))
             pairs.append(("Esc", "Abort"))
             return pairs
         pairs = []
@@ -2873,10 +2873,48 @@ class RenderMixin:
             if chain_mode and chain >= 1:
                 pairs.append(("Space", "Stop Here"))
         if has_blurb:
-            pairs.append(("C", "Context"))
+            if qe.state == QuizState.RESULT and getattr(qe, '_result_hold', False):
+                pairs.append(("C", "Read The Card", FP.GOLD))
+            else:
+                pairs.append(("C", "Read About This", FP.GOLD) if new_reader else ("C", "Context"))
+        if qe.state == QuizState.RESULT and getattr(qe, '_result_hold', False):
+            pairs.append(("Any Key", "Continue"))
         if asking:
             pairs.append(("Esc", "Give Up"))
         return pairs
+
+    def _draw_quiz_lesson(self, qe, rect, is_combat: bool) -> None:
+        """After a wrong answer, lay the lesson over the question: the one
+        card sentence that teaches this fact (or the question's own context).
+        Untimed quizzes hold here for a key; the combat flash shows the short
+        maths tip. Teaching cards, 2026-10-18."""
+        lesson = qe.lesson_for()
+        if not lesson or rect is None or rect.w < 40 or rect.h < 30:
+            return
+        from fantasy_ui import display_text
+        pad = S(10)
+        box = pygame.Rect(rect.x, rect.y, rect.w, rect.h)
+        shade = pygame.Surface((box.w, box.h), pygame.SRCALPHA)
+        shade.fill((18, 14, 10, 236))
+        self.screen.blit(shade, box.topleft)
+        pygame.draw.rect(self.screen, FP.GOLD, box, max(1, S(2)), border_radius=S(6))
+        title = self.font_sm.render("Remember", True, FP.GOLD_BRIGHT)
+        self.screen.blit(title, (box.x + pad, box.y + pad // 2))
+        body_top = box.y + pad // 2 + title.get_height() + S(4)
+        avail = pygame.Rect(box.x + pad, body_top, box.w - 2 * pad, box.bottom - body_top - pad // 2)
+        text = display_text(lesson)
+        for size in (22, 20, 18, 16, 14):
+            fnt = get_font('body', size)
+            lines = self._ui_text_lines(text, fnt, avail.w)
+            if len(lines) * (fnt.get_linesize() + S(2)) <= avail.h:
+                break
+        y = avail.y
+        for line in lines:
+            if y + fnt.get_linesize() > avail.bottom:
+                break
+            surf = fnt.render(line, True, FP.PARCHMENT_LIGHT)
+            self.screen.blit(surf, (avail.x, y))
+            y += fnt.get_linesize() + S(2)
 
     def _draw_quiz(self):
         qe = self.quiz_engine
@@ -3173,11 +3211,17 @@ class RenderMixin:
         # No "CORRECT!" / "WRONG!" banner: the green / red choice cards
         # already carry the result (2026-10-04 playtest).
         has_blurb = bool(qe.current_context_blurb())
+        # A new hero's first ten answers show the card key in gold, so the
+        # open book gets found (teaching cards, 2026-10-18).
+        new_reader = (int(getattr(self, 'correct_answers', 0) or 0)
+                      + int(getattr(self, 'wrong_answers', 0) or 0)) < 10
+        if in_result and not qe.last_correct:
+            self._draw_quiz_lesson(qe, L['question_rect'], is_combat)
         if kit:
             # Divider + key badges (the kit's footer), the same keys as below.
             div_y = status_y + S(15)
             draw_divider(self.screen, bx + band + S(30), div_y, bw - 2 * (band + S(30)))
-            pairs = self._quiz_footer_pairs(qe, is_combat, has_blurb)
+            pairs = self._quiz_footer_pairs(qe, is_combat, has_blurb, new_reader)
             keys = pygame.Rect(status_rect.x, status_rect.bottom - key_hints_height(),
                                status_rect.w, key_hints_height())
             draw_key_hints(self.screen, keys, pairs)
@@ -3189,7 +3233,8 @@ class RenderMixin:
                 # At chain 0 Space only throws the swing away, as Esc does:
                 # it is not offered as a harmless "Cancel".
                 ("SPACE  Strike Now" if qe.chain >= 1 else "", FP.GOLD_PALE),
-                ("C  Context" if has_blurb else "", FP.FADED_TEXT),
+                (("C  Read About This" if new_reader else "C  Context") if has_blurb else "",
+                 FP.GOLD if new_reader else FP.FADED_TEXT),
                 ("ESC  Abort", FP.FADED_TEXT),
             ]
             slot_w = status_rect.w // len(hints)
@@ -3217,7 +3262,9 @@ class RenderMixin:
             # (subject, topic) HAS a blurb — hidden otherwise so a bank
             # without authored blurbs doesn't tease the key for nothing.
             if has_blurb:
-                c_hint = self.font_sm.render("C  Context", True, FP.FADED_TEXT)
+                c_hint = self.font_sm.render(
+                    "C  Read About This" if new_reader else "C  Context", True,
+                    FP.GOLD if new_reader else FP.FADED_TEXT)
                 self.screen.blit(c_hint, (bx + bw - c_hint.get_width() - PAD,
                                            status_y + STATUS_H - c_hint.get_height() - S(2)))
 
@@ -8610,7 +8657,16 @@ class RenderMixin:
             ("Correct answer", FP.SUCCESS_TEXT, self.font_sm),
             (q.get('correct', ''), FP.BODY_TEXT, self.font_sm),
         ]
+        # The teaching card's sentence for this fact (2026-10-18), when the
+        # entry was recorded after teaching cards shipped and differs from
+        # the context below.
+        lesson = str(q.get('lesson', '') or '').strip()
         context = q.get('context', '')
+        if lesson and lesson not in context:
+            lines += [
+                ("Remember", FP.GOLD_BRIGHT, self.font_sm),
+                (display_text(lesson), FP.PARCHMENT_LIGHT, read_f),
+            ]
         if context:
             lines += [
                 ("Context", FP.GOLD_BRIGHT, self.font_sm),

@@ -1,4 +1,6 @@
+import hashlib
 import json
+import re
 import math
 import os
 import random
@@ -85,6 +87,10 @@ def _quiz_history_path() -> str:
 class QuizEngine:
     RESULT_DISPLAY_TIME = 0.8       # seconds to show correct answer feedback
     WRONG_DISPLAY_TIME  = 3.0       # seconds to show wrong answer (player reads correct)
+    LESSON_MIN_SECONDS  = 1.0       # an untimed wrong answer holds at least this long
+    _result_hold        = False     # waiting for a key after an untimed wrong answer
+    _result_hold_until  = 0.0
+    _card_counted       = False     # this question's card was opened (telemetry)
 
     def __init__(self):
         self._cache: dict[str, list] = {}
@@ -180,6 +186,9 @@ class QuizEngine:
         # (subject, topic). Missing bank file -> that subject contributes no
         # entries; a question without a `topic` field never has a blurb.
         self._contexts: dict[tuple[str, str], str] = {}
+        # Teaching cards (2026-10-18): (subject, topic) -> {stem hash: the
+        # card sentence that teaches that question's fact}.
+        self._teaches: dict[tuple[str, str], dict] = {}
         # Timer pause state for the context modal. _timer_paused freezes the
         # countdown in `update()`; the saved value is informational only (the
         # countdown resumes from whatever `time_remaining` already holds).
@@ -404,6 +413,12 @@ class QuizEngine:
 
         self.state = QuizState.RESULT
         self.result_timer = self.RESULT_DISPLAY_TIME if is_correct else self.WRONG_DISPLAY_TIME
+        # An untimed wrong answer waits for a key (1 s minimum) so the
+        # player can read the lesson line; timed quizzes keep the flash.
+        self._result_hold = bool(not is_correct and not self.timed and self.lesson_for())
+        self._result_hold_until = time.monotonic() + self.LESSON_MIN_SECONDS
+        if self._card_counted and is_correct:
+            self._bump_card_stat('right_after_card')
         if self.on_answer:
             self.on_answer(is_correct)
         self._fire_on_each(is_correct)
@@ -440,8 +455,19 @@ class QuizEngine:
 
         elif self.state == QuizState.RESULT:
             self.result_timer -= dt
-            if self.result_timer <= 0:
+            if self.result_timer <= 0 and not self._result_hold:
                 self._advance()
+
+    def release_result_hold(self) -> bool:
+        """A key during the lesson hold moves the quiz on (after the 1 s
+        minimum). Returns True when the hold was released."""
+        if self.state != QuizState.RESULT or not self._result_hold:
+            return False
+        if time.monotonic() < self._result_hold_until:
+            return False
+        self._result_hold = False
+        self.result_timer = min(self.result_timer, 0.0)
+        return True
 
     @property
     def active(self) -> bool:
@@ -506,6 +532,8 @@ class QuizEngine:
         self._q_timing_ok = not getattr(self, '_timer_paused', False)
         # A new question earns a fresh context-card pause.
         self._context_pause_spent = False
+        self._card_counted = False
+        self._result_hold = False
 
         # Track this question as seen.
         if deck_key not in self._seen:
@@ -816,6 +844,7 @@ class QuizEngine:
         pair has no blurb.
         """
         self._contexts.clear()
+        self._teaches.clear()
         base = self._contexts_dir()
         if not os.path.isdir(base):
             return
@@ -841,6 +870,9 @@ class QuizEngine:
                     blurb = None
                 if isinstance(blurb, str) and blurb.strip():
                     self._contexts[(subject, topic)] = blurb.strip()
+                teaches = entry.get('teaches') if isinstance(entry, dict) else None
+                if isinstance(teaches, dict) and teaches:
+                    self._teaches[(subject, topic)] = teaches
 
     def get_context_blurb(self, subject: str, topic: str | None) -> str | None:
         """Return the blurb for a (subject, topic), or None if unknown.
@@ -851,6 +883,28 @@ class QuizEngine:
         if not subject or not topic:
             return None
         return self._contexts.get((subject, topic))
+
+    def lesson_for(self, q: dict | None = None, subject: str | None = None) -> str | None:
+        """The one sentence that teaches a question's fact.
+
+        The teaching card's `teaches` sentence when the card has one, else
+        the question's own `context` with its Source line removed. None when
+        neither exists. Shown after a wrong answer and in the missed-question
+        review (ruling 2026-10-18: the game teaches the kid who wants to learn).
+        """
+        q = q if q is not None else self.current_question
+        if not q:
+            return None
+        subject = subject or self.subject
+        stem = str(q.get('question', '')).strip()
+        teaches = self._teaches.get((subject, q.get('topic')), {})
+        if stem and teaches:
+            line = teaches.get(hashlib.sha1(stem.encode('utf-8')).hexdigest()[:10])
+            if isinstance(line, str) and line.strip():
+                return line.strip()
+        ctx = re.sub(r'\s*Source:.*$', '', str(q.get('context', '') or ''),
+                     flags=re.IGNORECASE | re.DOTALL).strip()
+        return ctx or None
 
     def current_context_blurb(self) -> str | None:
         """Convenience: blurb for the currently-displayed question."""
@@ -881,6 +935,9 @@ class QuizEngine:
         resumes from whatever ``time_remaining`` already holds.
         """
         self._q_timing_ok = False        # time spent reading a card is not answer time
+        if not self._card_counted and self.state == QuizState.ASKING:
+            self._card_counted = True
+            self._bump_card_stat('cards_opened')
         if self._timer_paused:
             return True
         if not self.context_pause_available():
@@ -904,6 +961,17 @@ class QuizEngine:
     # numbers (tools/balance/answer_times.py). Totals only: no question
     # text, nothing per player.
     _ANSWER_TIME_MIN, _ANSWER_TIME_MAX = 0.25, 90.0
+
+    def _bump_card_stat(self, field: str) -> None:
+        """Count card reads per (subject, tier): `cards_opened`, and
+        `right_after_card` when the question was then answered right. Rides
+        the answer-time record so the teaching-card pilot can be judged."""
+        if not hasattr(self, '_answer_times'):
+            self._answer_times = {}
+        row = self._answer_times.setdefault(f'{self.subject}|{self.tier}',
+                                            {'n': 0, 'seconds': 0.0,
+                                             'right': 0, 'seconds_right': 0.0})
+        row[field] = row.get(field, 0) + 1
 
     def _record_answer_time(self, is_correct: bool) -> None:
         shown = getattr(self, '_q_shown_at', None)

@@ -39,6 +39,18 @@ LEAK_BASELINE = {
 }
 
 
+# Teaching cards (Brandon, 2026-10-18): "The context tab SHOULD basically
+# have every answer hinted at in it for the ladder." A subject joins this
+# set when its first teaching cards are merged (bankbuild/cards/merge.py).
+# For these subjects the leak ratchet above no longer applies; instead every
+# card that carries a `teaches` map must pass the card gate, and the count of
+# cards still waiting for their rewrite may only go down.
+TEACHING_SUBJECTS = set()
+
+# Cards in a teaching subject that still lack `teaches` (rollout in progress).
+UNTAUGHT_BASELINE = {}
+
+
 def _load(subject):
     questions = json.loads((_Q / f'{subject}.json').read_text(encoding='utf-8'))
     if isinstance(questions, dict):
@@ -87,6 +99,8 @@ def _verbatim_leaks(subject):
 
 @pytest.mark.parametrize('subject', LADDER_SUBJECTS)
 def test_verbatim_answer_leaks_do_not_grow(subject):
+    if subject in TEACHING_SUBJECTS:
+        pytest.skip(f'{subject} cards now teach every rung (ruling 2026-10-18)')
     leaks = _verbatim_leaks(subject)
     allowed = LEAK_BASELINE[subject]
     assert leaks <= allowed, (
@@ -174,3 +188,45 @@ def test_contexts_carry_no_author_notes(subject):
     hits = [h for h in hits if h[1]]
     assert not hits, (f"{subject}: {len(hits)} contexts talk to the question author: "
                       f"{hits[:8]} (a real-world use belongs in CONTEXT_REAL_USES)")
+
+
+# --- teaching cards (2026-10-18) -------------------------------------------
+
+def _card_packets(subject):
+    import sys
+    if str(_ROOT) not in sys.path:
+        sys.path.insert(0, str(_ROOT))
+    from bankbuild.cards.extract import packet
+    from bankbuild.cards.common import ladders
+    blurbs = json.loads((_C / f'{subject}.json').read_text(encoding='utf-8'))
+    lad = ladders(subject)
+    return blurbs, {t: packet(subject, t, qs, blurbs.get(t)) for t, qs in lad.items()}
+
+
+@pytest.mark.parametrize('subject', sorted(TEACHING_SUBJECTS) or ['none'])
+def test_teaching_cards_pass_the_card_gate(subject):
+    if subject == 'none':
+        pytest.skip('no subject has teaching cards yet')
+    from bankbuild.cards.gate import check_card
+    blurbs, packets = _card_packets(subject)
+    bad = {}
+    for topic, pkt in packets.items():
+        entry = blurbs.get(topic)
+        if isinstance(entry, dict) and entry.get('teaches'):
+            errs = check_card(pkt, entry)
+            if errs:
+                bad[topic] = errs[:3]
+    assert not bad, f"{subject}: {len(bad)} teaching cards fail the gate: {list(bad.items())[:5]}"
+
+
+@pytest.mark.parametrize('subject', sorted(TEACHING_SUBJECTS) or ['none'])
+def test_untaught_cards_do_not_grow(subject):
+    if subject == 'none':
+        pytest.skip('no subject has teaching cards yet')
+    blurbs, packets = _card_packets(subject)
+    untaught = sum(1 for t in packets
+                   if not (isinstance(blurbs.get(t), dict) and blurbs[t].get('teaches')))
+    allowed = UNTAUGHT_BASELINE.get(subject, 0)
+    assert untaught <= allowed, (
+        f"{subject}: {untaught} cards do not teach their ladder yet (baseline {allowed}); "
+        "a card fell out of step with its questions (edited stem?) or a rewrite was lost.")
