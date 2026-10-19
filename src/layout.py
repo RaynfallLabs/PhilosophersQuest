@@ -19,7 +19,7 @@ import ui_scale
 from renderer import TILE_SIZE
 from ui import LEFT_SIDEBAR_W as LEFT_SIDEBAR_BASE, SIDEBAR_W as SIDEBAR_BASE, RAIL_MIN
 
-VERSION    = "3.1.0"
+VERSION    = "3.2.0"
 FPS        = 60
 
 MSG_BASE   = 200                       # message log height at UI scale 1
