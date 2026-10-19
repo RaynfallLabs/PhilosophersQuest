@@ -6,3 +6,8 @@ numpy==2.4.6
 pytest==9.0.3
 # parallel test runs: pytest -n auto
 pytest-xdist==3.8.0
+# Test-suite only (the game never imports these, so the bundle does not grow):
+# the quiz tools read YAML specs and check maths with sympy; the art tests read PNGs with Pillow
+PyYAML==6.0.3
+sympy==1.14.0
+pillow==12.2.0
