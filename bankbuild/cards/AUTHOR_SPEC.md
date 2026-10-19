@@ -21,12 +21,12 @@ Every question hash in the ladder must appear in `teaches`.
    - Every question's keyed fact appears once, in the card's own words.
    - Each fact carries its WHY: the mechanism, the cause or the consequence. That is what makes it memorable (the Wonder Pattern).
    - If two questions share a fact, teach it once and point both `teaches` entries at the same sentence.
-3. **Length:** inside `length.min_words` to `length.max_words`; aim for `target_words` (60 + 40 per question).
+3. **Length:** inside `length.min_words` to `length.max_words`. `target_words` is a guide; landing 25% either side of it is fine. A tier with a single question may share a paragraph with its neighbour rather than stand as a one-sentence paragraph.
 
 ## Hard rules (the gate checks the first seven mechanically)
-1. **Never copy the question.** No run of 6 or more words shared with any stem.
+1. **Never copy the question.** No run of 6 or more words shared with any stem. A paraphrase must change the sentence's structure, not just swap a word. Stems repeat their own scene-setting, so write your opening fresh rather than from the stems.
 2. **Never paste a long choice.** A choice of more than 4 words must not appear word for word. Teach the fact in different words; the player should recognise it, not match it. Short keyed answers (a name, a place, a one-to-four-word thing like "masarepa" or "a whole raw egg") DO appear, because they are the fact.
-3. **Never name 3 or more of one question's choices.** Don't tour the distractors.
+3. **Never name 2 or more of one question's distractors.** Don't tour the wrong answers. (A choice that is the keyed answer of ANOTHER question in the same ladder doesn't count: teach it where it belongs.)
 4. **Never state a distractor's claim as true.** A common misconception may appear only when it is named as wrong ("Most people read a sell-by date as a safety date; it is a note to the store").
 5. **No "the answer is"**, no quiz talk (question, tier, rung, ladder, stem, keyed, distractor), no sources, URLs or author notes ("this topic", "this card").
 6. **`teaches` sentences are copied exactly** from the card, one complete sentence each.
@@ -68,3 +68,7 @@ Every question hash in the ladder must appear in `teaches`.
 - **Theology:** tell the story symmetrically. Christian, Greek, Norse and Arthurian traditions sit on the same plane, as traditions, with no endorsement.
 - **History:** a person did it, so name him or her. Active voice. Honest about crimes and achievements alike.
 - **Cooking, animal, geography:** the most memorable specific fact wins. Named things beat generic labels.
+
+## Working files and question errors
+- Keep any scratch scripts in `_cards/<subject>/work_<your batch numbers>/`, never in a shared scratchpad. Other agents run beside you.
+- If a question's stem, answer or context contradicts the others or seems wrong, follow the checked context and the majority, and list it in your final message under "Question errors" with its hash. Those go to a fix list.

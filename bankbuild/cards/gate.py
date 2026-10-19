@@ -7,7 +7,8 @@ A card FAILS when it:
   * is shorter than its minimum or longer than 750 words;
   * shares a run of 6 or more words with any stem in its ladder;
   * contains a whole choice string of more than 4 words (keyed or not);
-  * names 3 or more of one question's choices;
+  * names 2 or more of one question's pure distractors (choices that are
+    not the keyed answer of any question in the ladder);
   * carries "Source:", a URL, author notes, or quiz jargon;
   * says "the answer is" / "correct answer";
   * has a `teaches` map that misses a question, or whose sentence is not
@@ -50,11 +51,12 @@ def check_card(pkt: dict, card: dict) -> list[str]:
     if not text.strip():
         return ['empty card']
     ws = words(text)
+    n_words = len(text.split())          # length counts words as a reader does
     lo, _target, cap = pkt['length']['min_words'], pkt['length']['target_words'], pkt['length']['max_words']
-    if len(ws) < lo:
-        errs.append(f'too short: {len(ws)} words (min {lo})')
-    if len(ws) > cap:
-        errs.append(f'too long: {len(ws)} words (max {cap})')
+    if n_words < lo:
+        errs.append(f'too short: {n_words} words (min {lo})')
+    if n_words > cap:
+        errs.append(f'too long: {n_words} words (max {cap})')
     hay = ' '.join(ws)
     card_6 = _ngrams(ws, 6)
     low = text.lower()
@@ -68,19 +70,21 @@ def check_card(pkt: dict, card: dict) -> list[str]:
         errs.append('says "the answer is"')
     if URL.search(text):
         errs.append('source line or URL')
+    keyed = {norm(q['answer']) for q in pkt['questions']}
     for q in pkt['questions']:
         h = q['hash']
-        shared = card_6 & _ngrams(words(q['stem']), 6)
+        shared = sorted(card_6 & _ngrams(words(q['stem']), 6))
         if shared:
-            errs.append(f'{h}: copies 6+ words of the stem: "{" ".join(sorted(shared)[0])}"')
-        named = 0
+            runs = '; '.join('"' + ' '.join(g) + '"' for g in shared[:6])
+            errs.append(f'{h}: copies 6+ words of the stem ({len(shared)} runs): {runs}')
+        toured = []
         for ch in q['choices']:
-            if len(words(ch)) > 4 and _contains(hay, ch):
+            if len(ch.split()) > 4 and _contains(hay, ch):
                 errs.append(f'{h}: contains a whole choice (>4 words): "{ch}"')
-            if _contains(hay, ch):
-                named += 1
-        if named >= 3:
-            errs.append(f'{h}: names {named} of its 4 choices')
+            if norm(ch) not in keyed and _contains(hay, ch):
+                toured.append(ch)
+        if len(toured) >= 2:
+            errs.append(f'{h}: names {len(toured)} of its distractors: {toured}')
         sent = teaches.get(h)
         if not sent or not str(sent).strip():
             errs.append(f'{h}: no teaches sentence')
