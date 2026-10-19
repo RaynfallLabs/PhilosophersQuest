@@ -247,6 +247,16 @@ def save_bonus(player, attacker, effect) -> int:
     return total
 
 
+def no_save_ward_share(amount: int) -> float:
+    """What a ward of +`amount` does to an effect with NO saving throw: the
+    share of its duration left (data no_save_ward: `per_point` off a point,
+    never below `floor`)."""
+    rule = family_lore.data().get('no_save_ward') or {}
+    per = float(rule.get('per_point', 0.1))
+    floor = float(rule.get('floor', 0.5))
+    return max(floor, 1.0 - per * max(0, int(amount)))
+
+
 def duration_mult(player, attacker, effect) -> float:
     """How long `effect` from `attacker` lasts, as a share (0 = it never
     takes hold)."""

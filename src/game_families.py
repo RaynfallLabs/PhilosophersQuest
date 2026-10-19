@@ -53,6 +53,13 @@ class FamilyMixin:
         if not news:
             return
         popup_title, popup_lines = '', []
+        sections = 0              # a popup holds at most POPUP_SECTIONS pieces of news
+
+        def room() -> bool:
+            nonlocal sections
+            sections += 1
+            return sections <= self.POPUP_SECTIONS
+
         for what, key, tier in news:
             if what == 'tier':
                 fid = key
@@ -63,7 +70,7 @@ class FamilyMixin:
                 if msg:
                     self.add_message(msg, 'loot')
                 title = family_lore.popup_title(fid, tier)
-                if title:
+                if title and room():
                     popup_title = popup_title or title
                     if popup_lines:
                         popup_lines += ['', title]
@@ -79,11 +86,12 @@ class FamilyMixin:
                 if line:
                     self._chron('discovery', line, once=f'circle:{key}')
                 head = family_lore.data().get('circle_title', 'CIRCLE COMPLETE')
-                popup_title = popup_title or head
-                if popup_lines:
-                    popup_lines += ['', head]
-                popup_lines += [c.get('name', ''), '',
-                                f"{boon.get('name', '')}: {boon.get('text', '')}"]
+                if room():
+                    popup_title = popup_title or head
+                    if popup_lines:
+                        popup_lines += ['', head]
+                    popup_lines += [c.get('name', ''), '',
+                                    f"{boon.get('name', '')}: {boon.get('text', '')}"]
                 self.add_message(f"{c.get('name', '')} is complete: {boon.get('name', '')}.", 'loot')
             elif what == 'loremaster':
                 lm = family_lore.data().get('loremaster') or {}
@@ -91,14 +99,21 @@ class FamilyMixin:
                 if line:
                     self._chron('discovery', line, once='loremaster')
                 title = str(lm.get('title', 'Loremaster')).upper()
-                popup_title = popup_title or title
-                if popup_lines:
-                    popup_lines += ['', title]
-                popup_lines += ["Five families of monster, known down to the last weakness.",
-                                "", "You have earned the title of Loremaster."]
+                if room():
+                    popup_title = popup_title or title
+                    if popup_lines:
+                        popup_lines += ['', title]
+                    popup_lines += ["Five families of monster, known down to the last weakness.",
+                                    "", "You have earned the title of Loremaster."]
                 self.add_message("You are a Loremaster now.", 'loot')
+        if sections > self.POPUP_SECTIONS:
+            popup_lines += ['', "And more besides: see the Families pages (B, then Tab)."]
         if popup_lines:
             self._family_popup(popup_title, popup_lines)
+
+    # The most pieces of news one popup shows (more only arrive together from
+    # the QA key); the rest are in the message log, the Journal and B, Tab.
+    POPUP_SECTIONS = 3
 
     def _family_tier_popup_lines(self, fid, tier) -> list:
         """A tier popup's body: its lead line, each technique as "Name: what

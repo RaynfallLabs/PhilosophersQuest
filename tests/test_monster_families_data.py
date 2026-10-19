@@ -171,3 +171,10 @@ def test_the_journal_templates_have_one_per_tier():
     for fid in FAMS['families']:
         for t in range(1, 6):
             assert '{' not in family_lore.tier_chronicle(fid, t)
+
+
+def test_the_no_save_ward_rule_is_data():
+    rule = FAMS['no_save_ward']
+    assert 0 < rule['per_point'] < 1 and 0 < rule['floor'] < 1
+    assert family_edges.no_save_ward_share(0) == 1.0
+    assert family_edges.no_save_ward_share(99) == rule['floor']

@@ -658,6 +658,14 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
     # ``source`` is the monster inflicting it (when known): the hero's ward
     # against that monster's family (Grave-Salt, Antivenom...) applies.
     _ward, _share = _family_ward(player, source, effect, gaze)
+    if stat is None and _ward > 0:
+        # A ward against an effect with no save (poison, burning, blinding)
+        # shortens it instead (family_edges.no_save_ward_share: a share off
+        # a point, at most half). A duration technique for the same effect
+        # does not stack with it: the stronger of the two counts.
+        import family_edges
+        _share = min(_share, family_edges.no_save_ward_share(_ward))
+        _ward = 0
     if _share <= 0.0:
         return False, f"The {noun} cannot take hold of you."
     if _share < 1.0:
@@ -670,7 +678,6 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
         # preserves the "resource loss IS the penalty" rule (DoTs still land)
         # but rewards a built-out CON save profile with shorter-lived DoTs.
         _sb = int(player.save_bonus_for('CON')) if hasattr(player, 'save_bonus_for') else 0
-        _sb += _ward
         _dur = max(1, int(duration) - _sb)
         applied = player.add_effect(effect, _dur)
         return applied, (f"You are {effect.replace('_', ' ')}!" if applied else "")

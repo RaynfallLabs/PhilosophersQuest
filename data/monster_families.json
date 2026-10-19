@@ -8,6 +8,10 @@
     "Bane"
   ],
   "keystone_weight": 2,
+  "no_save_ward": {
+    "per_point": 0.1,
+    "floor": 0.5
+  },
   "tier_messages": [
     "You know {kin} now. You will recognise every one of them on sight.",
     "You know the signs of {kin} now. You will sense them when you reach a floor.",
@@ -88,7 +92,7 @@
             {
               "id": "restless_dead_grave_salt",
               "name": "Grave-Salt",
-              "text": "You get +2 on saving throws against their paralysis, disease and life drain, and their disease lasts a fifth less time.",
+              "text": "You get +1 on saving throws against their paralysis, disease and life drain, and their disease lasts a tenth less time.",
               "trigger_msg": "Grave-Salt: the salt in your pocket keeps the grave's grip off you.",
               "effect": "save_bonus",
               "params": {
@@ -97,7 +101,7 @@
                   "diseased",
                   "drain"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -106,7 +110,7 @@
                     "effects": [
                       "diseased"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -120,11 +124,11 @@
             {
               "id": "restless_dead_bonebreaker",
               "name": "Bonebreaker",
-              "text": "Your blows hit 8% harder when they strike what the dead fear: the weaknesses on their page.",
+              "text": "Your blows hit 6% harder when they strike what the dead fear: the weaknesses on their page.",
               "trigger_msg": "Bonebreaker! You strike where the dead are weakest.",
               "effect": "weakness_amp",
               "params": {
-                "mult": 1.08
+                "mult": 1.06
               }
             }
           ]
@@ -136,12 +140,12 @@
             {
               "id": "restless_dead_turn_the_dead",
               "name": "Turn the Dead",
-              "text": "A blow at chain 10 or more sends every lesser restless dead in sight fleeing for 6 turns.",
+              "text": "A blow at chain 12 or more sends every lesser restless dead in sight fleeing for 6 turns.",
               "trigger_msg": "Turn the Dead! The dead in sight shrink back from you.",
               "effect": "turn",
               "params": {
                 "trigger": "on_hit",
-                "chain_min": 10,
+                "chain_min": 12,
                 "turns": 6
               }
             }
@@ -200,7 +204,7 @@
             {
               "id": "ghosts_iron_and_salt",
               "name": "Iron and Salt",
-              "text": "You get +2 on saving throws against their fear and life drain, and their draining no longer heals them.",
+              "text": "You get +1 on saving throws against their fear and life drain, and their draining no longer heals them.",
               "trigger_msg": "Iron and Salt: the cold iron at your belt breaks the ghost's hold.",
               "effect": "save_bonus",
               "params": {
@@ -208,7 +212,7 @@
                   "feared",
                   "drain"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -245,11 +249,11 @@
             {
               "id": "ghosts_lay_the_ghost",
               "name": "Lay the Ghost",
-              "text": "At chain 5 or more, your blows ignore their resistances, as if your weapon were blessed.",
+              "text": "At chain 8 or more, your blows ignore their resistances, as if your weapon were blessed.",
               "trigger_msg": "Lay the Ghost! Your blow bites as if it were blessed.",
               "effect": "pierce_resist",
               "params": {
-                "chain_min": 5,
+                "chain_min": 8,
                 "blessed": true
               }
             }
@@ -308,7 +312,7 @@
             {
               "id": "vampires_liches_garlic_and_ash",
               "name": "Garlic and Ash",
-              "text": "You get +2 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
+              "text": "You get +1 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
               "trigger_msg": "Garlic and Ash: the bite takes nothing back to heal it.",
               "effect": "save_bonus",
               "params": {
@@ -316,7 +320,7 @@
                   "drain",
                   "paralyzed"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -334,11 +338,11 @@
             {
               "id": "vampires_liches_hunters_patience",
               "name": "Hunter's Patience",
-              "text": "You get 2 more seconds on the maths clock when you attack them.",
+              "text": "You get 1 more second on the maths clock when you attack them.",
               "trigger_msg": "Hunter's Patience: you take your time with this one.",
               "effect": "extra_seconds",
               "params": {
-                "seconds": 2
+                "seconds": 1
               }
             }
           ]
@@ -350,12 +354,12 @@
             {
               "id": "vampires_liches_stake",
               "name": "Stake Through the Heart",
-              "text": "At chain 15 or more, a lesser vampire or lich below 20% health dies outright: no mist, no rising. A named foe takes a blow 25% harder instead.",
+              "text": "At chain 18 or more, a lesser vampire or lich below 15% health dies outright: no mist, no rising. A named foe takes a blow 25% harder instead.",
               "trigger_msg": "Stake Through the Heart! It crumbles to ash.",
               "effect": "execute",
               "params": {
-                "chain_min": 15,
-                "hp_below": 0.2,
+                "chain_min": 18,
+                "hp_below": 0.15,
                 "variant": "ash",
                 "named_mult": 1.25
               }
@@ -415,7 +419,7 @@
             {
               "id": "demons_circle_of_salt",
               "name": "Circle of Salt",
-              "text": "You get +2 on saving throws against their burning and confusion, and their burning lasts a fifth less time.",
+              "text": "You get +1 on saving throws against their burning and confusion, and their burning lasts a tenth less time.",
               "trigger_msg": "Circle of Salt: the old ring holds against the Pit.",
               "effect": "save_bonus",
               "params": {
@@ -423,7 +427,7 @@
                   "burning",
                   "confused"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -432,7 +436,7 @@
                     "effects": [
                       "burning"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -462,12 +466,12 @@
             {
               "id": "demons_banishment",
               "name": "Banishment",
-              "text": "At chain 15 or more, a lesser demon below 20% health is cast back into the Pit. A named foe takes a blow 25% harder instead.",
+              "text": "At chain 18 or more, a lesser demon below 15% health is cast back into the Pit. A named foe takes a blow 25% harder instead.",
               "trigger_msg": "Banishment! It is cast back into the Pit.",
               "effect": "execute",
               "params": {
-                "chain_min": 15,
-                "hp_below": 0.2,
+                "chain_min": 18,
+                "hp_below": 0.15,
                 "variant": "banish",
                 "named_mult": 1.25
               }
@@ -527,7 +531,7 @@
             {
               "id": "dragons_dragon_ward",
               "name": "Dragon-Ward",
-              "text": "Their fire, cold and poison hurt you 10% less, and you get +2 on saving throws against their burning, freezing and poison.",
+              "text": "Their fire, cold and poison hurt you 5% less, and you get +1 on saving throws against their burning, freezing and poison.",
               "trigger_msg": "Dragon-Ward: you turn your shoulder to the breath, the way the old songs say.",
               "effect": "resist_damage",
               "params": {
@@ -536,7 +540,7 @@
                   "cold",
                   "poison"
                 ],
-                "mult": 0.9
+                "mult": 0.95
               },
               "also": [
                 {
@@ -547,7 +551,7 @@
                       "frozen",
                       "poisoned"
                     ],
-                    "amount": 2
+                    "amount": 1
                   }
                 }
               ]
@@ -577,11 +581,11 @@
             {
               "id": "dragons_missing_scale",
               "name": "The Missing Scale",
-              "text": "At chain 10 or more, your blow ignores a dragon's scales and resistances, even Fafnir's.",
+              "text": "At chain 12 or more, your blow ignores a dragon's scales and resistances, even Fafnir's.",
               "trigger_msg": "The Missing Scale! Your blow finds the one bare spot.",
               "effect": "pierce_resist",
               "params": {
-                "chain_min": 10,
+                "chain_min": 12,
                 "scales": true
               }
             }
@@ -640,11 +644,11 @@
             {
               "id": "giants_steady_hand",
               "name": "Steady Hand",
-              "text": "You get 2 more seconds on the maths clock when you attack them.",
+              "text": "You get 1 more second on the maths clock when you attack them.",
               "trigger_msg": "Steady Hand: its size does not rush you.",
               "effect": "extra_seconds",
               "params": {
-                "seconds": 2
+                "seconds": 1
               }
             }
           ]
@@ -672,13 +676,13 @@
             {
               "id": "giants_bigger_they_are",
               "name": "The Bigger They Are",
-              "text": "At chain 5 or more, your weapon hits them 6% harder, and 10% harder against a giant that fills more than one tile.",
+              "text": "At chain 5 or more, your weapon hits them 5% harder, and 8% harder against a giant that fills more than one tile.",
               "trigger_msg": "The Bigger They Are! It staggers under the blow.",
               "effect": "damage_mult",
               "params": {
-                "mult": 1.06,
+                "mult": 1.05,
                 "chain_min": 5,
-                "big_mult": 1.1
+                "big_mult": 1.08
               }
             }
           ]
@@ -742,7 +746,7 @@
               "params": {
                 "trigger": "on_kill",
                 "turns": 4,
-                "chance": 0.35
+                "chance": 0.25
               }
             }
           ]
@@ -754,7 +758,7 @@
             {
               "id": "goblinkin_trap_wise",
               "name": "Trap-Wise",
-              "text": "You get +2 on saving throws against their fear and bleeding, and their ambushers never catch you unawares.",
+              "text": "You get +1 on saving throws against their fear and bleeding, and their ambushers never catch you unawares.",
               "trigger_msg": "Trap-Wise: you saw that coming.",
               "effect": "save_bonus",
               "params": {
@@ -762,7 +766,7 @@
                   "feared",
                   "bleeding"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -857,11 +861,11 @@
             {
               "id": "mortals_steady_hand",
               "name": "Steady Hand",
-              "text": "You get 2 more seconds on the maths clock when you attack them.",
+              "text": "You get 1 more second on the maths clock when you attack them.",
               "trigger_msg": "Steady Hand: you have fought his kind before.",
               "effect": "extra_seconds",
               "params": {
-                "seconds": 2
+                "seconds": 1
               }
             }
           ]
@@ -937,7 +941,7 @@
             {
               "id": "fair_folk_coat_inside_out",
               "name": "Coat Turned Inside Out",
-              "text": "You get +2 on saving throws against their confusion, sleep and charm.",
+              "text": "You get +1 on saving throws against their confusion, sleep and charm.",
               "trigger_msg": "Coat Turned Inside Out: their glamour slides off you.",
               "effect": "save_bonus",
               "params": {
@@ -946,7 +950,7 @@
                   "sleeping",
                   "charmed"
                 ],
-                "amount": 2
+                "amount": 1
               }
             }
           ]
@@ -1071,11 +1075,11 @@
             {
               "id": "great_beasts_steady_hand",
               "name": "Steady Hand",
-              "text": "You get 2 more seconds on the maths clock when you attack them.",
+              "text": "You get 1 more second on the maths clock when you attack them.",
               "trigger_msg": "Steady Hand: you read the beast before it moves.",
               "effect": "extra_seconds",
               "params": {
-                "seconds": 2
+                "seconds": 1
               }
             }
           ]
@@ -1087,11 +1091,11 @@
             {
               "id": "great_beasts_beast_friend",
               "name": "Beast-Friend",
-              "text": "A quarter of the lesser beasts on a floor arrive calm and leave you be unless you strike first.",
+              "text": "One lesser beast in ten arrives calm and leaves you be unless you strike first.",
               "trigger_msg": "Beast-Friend: the beasts here watch you and let you pass.",
               "effect": "calm_on_arrival",
               "params": {
-                "chance": 0.25
+                "chance": 0.1
               }
             }
           ]
@@ -1151,7 +1155,7 @@
             {
               "id": "vermin_web_and_plague",
               "name": "Web and Plague",
-              "text": "You get +2 on saving throws against their poison, disease, slowing and holding, and their poison and disease last a fifth less time.",
+              "text": "You get +1 on saving throws against their poison, disease, slowing and holding, and their poison and disease last a tenth less time.",
               "trigger_msg": "Web and Plague: you clean the bite and step through the silk.",
               "effect": "save_bonus",
               "params": {
@@ -1161,7 +1165,7 @@
                   "slowed",
                   "immobilized"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -1171,7 +1175,7 @@
                       "poisoned",
                       "diseased"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -1204,12 +1208,12 @@
             {
               "id": "vermin_pipers_tune",
               "name": "The Piper's Tune",
-              "text": "A blow at chain 6 or more sends every lesser vermin and spider in sight fleeing for 5 turns.",
+              "text": "A blow at chain 8 or more sends every lesser vermin and spider in sight fleeing for 5 turns.",
               "trigger_msg": "The Piper's Tune! The swarm turns tail.",
               "effect": "turn",
               "params": {
                 "trigger": "on_hit",
-                "chain_min": 6,
+                "chain_min": 8,
                 "turns": 5
               }
             }
@@ -1268,7 +1272,7 @@
             {
               "id": "serpents_antivenom",
               "name": "Antivenom",
-              "text": "You get +2 on saving throws against their poison and paralysis, and their poison lasts a fifth less time.",
+              "text": "You get +1 on saving throws against their poison and paralysis, and their poison lasts a tenth less time.",
               "trigger_msg": "Antivenom: you know which herb to chew.",
               "effect": "save_bonus",
               "params": {
@@ -1276,7 +1280,7 @@
                   "poisoned",
                   "paralyzed"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -1285,7 +1289,7 @@
                     "effects": [
                       "poisoned"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -1378,7 +1382,7 @@
             {
               "id": "birds_hooded",
               "name": "Hooded",
-              "text": "You get +2 on saving throws against their blinding and confusion, as a falconer's hood calms a hawk.",
+              "text": "You get +1 on saving throws against their blinding and confusion, as a falconer's hood calms a hawk.",
               "trigger_msg": "Hooded: you keep your eyes covered and your head clear.",
               "effect": "save_bonus",
               "params": {
@@ -1386,7 +1390,7 @@
                   "blinded",
                   "confused"
                 ],
-                "amount": 2
+                "amount": 1
               }
             }
           ]
@@ -1398,11 +1402,11 @@
             {
               "id": "birds_falconers_eye",
               "name": "Falconer's Eye",
-              "text": "Your bow and your thrown weapons hit them 6% harder.",
+              "text": "Your bow and your thrown weapons hit them 5% harder.",
               "trigger_msg": "Falconer's Eye! You lead the target just right.",
               "effect": "damage_mult",
               "params": {
-                "mult": 1.06,
+                "mult": 1.05,
                 "only_weapons": [
                   "ranged",
                   "thrown"
@@ -1418,12 +1422,12 @@
             {
               "id": "birds_heracles_rattle",
               "name": "Heracles' Rattle",
-              "text": "At chain 10 or more, the din of your blow sends every lesser winged hunter in sight scattering for 6 turns.",
+              "text": "At chain 12 or more, the din of your blow sends every lesser winged hunter in sight scattering for 6 turns.",
               "trigger_msg": "Heracles' Rattle! The flock scatters.",
               "effect": "turn",
               "params": {
                 "trigger": "on_hit",
-                "chain_min": 10,
+                "chain_min": 12,
                 "turns": 6
               }
             }
@@ -1482,7 +1486,7 @@
             {
               "id": "gorgons_averted_eyes",
               "name": "Averted Eyes",
-              "text": "You get +2 on saving throws against their killing gaze and their poison.",
+              "text": "You get +1 on saving throws against their killing gaze and their poison.",
               "trigger_msg": "Averted Eyes: you look at its feet, never its face.",
               "effect": "save_bonus",
               "params": {
@@ -1490,7 +1494,7 @@
                   "gaze",
                   "poisoned"
                 ],
-                "amount": 2
+                "amount": 1
               }
             }
           ]
@@ -1518,17 +1522,17 @@
             {
               "id": "gorgons_harpe",
               "name": "Harpe",
-              "text": "Your weapon hits them 6% harder, and at chain 15 or more a lesser one below half health meets its own stare and turns to stone. A named foe takes a blow 25% harder instead.",
+              "text": "Your weapon hits them 5% harder, and at chain 18 or more a lesser one below half health meets its own stare and turns to stone. A named foe takes a blow 25% harder instead.",
               "trigger_msg": "Harpe! It meets its own stare and turns to stone.",
               "effect": "damage_mult",
               "params": {
-                "mult": 1.06
+                "mult": 1.05
               },
               "also": [
                 {
                   "effect": "execute",
                   "params": {
-                    "chain_min": 15,
+                    "chain_min": 18,
                     "hp_below": 0.5,
                     "variant": "petrify",
                     "named_mult": 1.25
@@ -1591,11 +1595,11 @@
             {
               "id": "legend_steady_hand",
               "name": "Steady Hand",
-              "text": "You get 2 more seconds on the maths clock when you attack them.",
+              "text": "You get 1 more second on the maths clock when you attack them.",
               "trigger_msg": "Steady Hand: you know how this story goes.",
               "effect": "extra_seconds",
               "params": {
-                "seconds": 2
+                "seconds": 1
               }
             }
           ]
@@ -1685,7 +1689,7 @@
             {
               "id": "shapeshifters_wolfsbane",
               "name": "Wolfsbane",
-              "text": "You get +2 on saving throws against their bleeding and disease, and their bleeding lasts a fifth less time.",
+              "text": "You get +1 on saving throws against their bleeding and disease, and their bleeding lasts a tenth less time.",
               "trigger_msg": "Wolfsbane: the wound closes clean.",
               "effect": "save_bonus",
               "params": {
@@ -1693,7 +1697,7 @@
                   "bleeding",
                   "diseased"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -1702,7 +1706,7 @@
                     "effects": [
                       "bleeding"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -1799,11 +1803,11 @@
             {
               "id": "constructs_steady_hand",
               "name": "Steady Hand",
-              "text": "You get 2 more seconds on the maths clock when you attack them.",
+              "text": "You get 1 more second on the maths clock when you attack them.",
               "trigger_msg": "Steady Hand: it is slow, and so you need not be quick.",
               "effect": "extra_seconds",
               "params": {
-                "seconds": 2
+                "seconds": 1
               }
             }
           ]
@@ -1815,11 +1819,11 @@
             {
               "id": "constructs_find_the_seam",
               "name": "Find the Seam",
-              "text": "At chain 5 or more, your blows ignore their resistances, as Medea pulled the nail from Talos's ankle.",
+              "text": "At chain 8 or more, your blows ignore their resistances, as Medea pulled the nail from Talos's ankle.",
               "trigger_msg": "Find the Seam! Your blow goes in where the plates join.",
               "effect": "pierce_resist",
               "params": {
-                "chain_min": 5
+                "chain_min": 8
               }
             }
           ]
@@ -1831,12 +1835,12 @@
             {
               "id": "constructs_erase_the_letter",
               "name": "Erase the Letter",
-              "text": "At chain 15 or more, a lesser construct below 20% health falls lifeless: emet, truth, becomes met, dead. A named foe takes a blow 25% harder instead.",
+              "text": "At chain 18 or more, a lesser construct below 15% health falls lifeless: emet, truth, becomes met, dead. A named foe takes a blow 25% harder instead.",
               "trigger_msg": "Erase the Letter! Truth becomes dead, and it falls.",
               "effect": "execute",
               "params": {
-                "chain_min": 15,
-                "hp_below": 0.2,
+                "chain_min": 18,
+                "hp_below": 0.15,
                 "variant": "erase",
                 "named_mult": 1.25
               }
@@ -1896,7 +1900,7 @@
             {
               "id": "elementals_ward_of_elements",
               "name": "Ward of the Elements",
-              "text": "Their fire, cold, lightning and acid hurt you 10% less.",
+              "text": "Their fire, cold, lightning and acid hurt you 5% less.",
               "trigger_msg": "Ward of the Elements: you meet the element and it gives a little.",
               "effect": "resist_damage",
               "params": {
@@ -1906,7 +1910,7 @@
                   "lightning",
                   "acid"
                 ],
-                "mult": 0.9
+                "mult": 0.95
               }
             }
           ]
@@ -1918,11 +1922,11 @@
             {
               "id": "elementals_opposing_element",
               "name": "Opposing Element",
-              "text": "Your blows hit 8% harder when they strike what the elemental is weak to.",
+              "text": "Your blows hit 6% harder when they strike what the elemental is weak to.",
               "trigger_msg": "Opposing Element! Water on fire.",
               "effect": "weakness_amp",
               "params": {
-                "mult": 1.08
+                "mult": 1.06
               }
             }
           ]
@@ -1934,7 +1938,7 @@
             {
               "id": "elementals_solomons_seal",
               "name": "Solomon's Seal",
-              "text": "Their burning and freezing can never take you, and their elemental damage hurts you 30% less.",
+              "text": "Their burning and freezing wear off twice as fast, and their elemental damage hurts you 10% less.",
               "trigger_msg": "Solomon's Seal: the seal holds the element in check.",
               "effect": "duration_mult",
               "params": {
@@ -1942,7 +1946,7 @@
                   "burning",
                   "frozen"
                 ],
-                "mult": 0.0
+                "mult": 0.5
               },
               "also": [
                 {
@@ -1954,7 +1958,7 @@
                       "lightning",
                       "acid"
                     ],
-                    "mult": 0.7
+                    "mult": 0.9
                   }
                 }
               ]
@@ -2014,7 +2018,7 @@
             {
               "id": "oozes_clean_blade",
               "name": "Clean Blade",
-              "text": "You get +2 on saving throws against their paralysis and weakness, and their weakness lasts a fifth less time.",
+              "text": "You get +1 on saving throws against their paralysis and weakness, and their weakness lasts a tenth less time.",
               "trigger_msg": "Clean Blade: you wipe the slime off before it takes hold.",
               "effect": "save_bonus",
               "params": {
@@ -2022,7 +2026,7 @@
                   "paralyzed",
                   "weakened"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -2031,7 +2035,7 @@
                     "effects": [
                       "weakened"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -2067,11 +2071,11 @@
             {
               "id": "oozes_fire_and_frost",
               "name": "Fire and Frost",
-              "text": "Your blows hit 12% harder when they strike what an ooze is weak to.",
+              "text": "Your blows hit 10% harder when they strike what an ooze is weak to.",
               "trigger_msg": "Fire and Frost! It shrivels from the blow.",
               "effect": "weakness_amp",
               "params": {
-                "mult": 1.12
+                "mult": 1.1
               }
             }
           ]
@@ -2129,7 +2133,7 @@
             {
               "id": "aberrations_steel_mind",
               "name": "Steel Mind",
-              "text": "You get +2 on saving throws against their confusion and paralysis, and their hallucinations last a fifth less time.",
+              "text": "You get +1 on saving throws against their confusion and paralysis, and their hallucinations last a tenth less time.",
               "trigger_msg": "Steel Mind: you hold onto what is real.",
               "effect": "save_bonus",
               "params": {
@@ -2137,7 +2141,7 @@
                   "confused",
                   "paralyzed"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -2146,7 +2150,7 @@
                     "effects": [
                       "hallucinating"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -2179,11 +2183,11 @@
             {
               "id": "aberrations_the_unblinking",
               "name": "The Unblinking",
-              "text": "Your weapon hits them 6% harder, and their ambushers never catch you unawares.",
+              "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
               "trigger_msg": "The Unblinking! You never looked away.",
               "effect": "damage_mult",
               "params": {
-                "mult": 1.06
+                "mult": 1.05
               },
               "also": [
                 {
@@ -2247,7 +2251,7 @@
             {
               "id": "plants_herbalists_mask",
               "name": "Herbalist's Mask",
-              "text": "You get +2 on saving throws against their poison, sleep and hallucinations, and their poison lasts a fifth less time.",
+              "text": "You get +1 on saving throws against their poison, sleep and hallucinations, and their poison lasts a tenth less time.",
               "trigger_msg": "Herbalist's Mask: you breathe through the cloth.",
               "effect": "save_bonus",
               "params": {
@@ -2256,7 +2260,7 @@
                   "sleeping",
                   "hallucinating"
                 ],
-                "amount": 2
+                "amount": 1
               },
               "also": [
                 {
@@ -2265,7 +2269,7 @@
                     "effects": [
                       "poisoned"
                     ],
-                    "mult": 0.8
+                    "mult": 0.9
                   }
                 }
               ]
@@ -2295,11 +2299,11 @@
             {
               "id": "plants_woodsmans_axe",
               "name": "Woodsman's Axe",
-              "text": "Your weapon hits them 6% harder, and their ambushers never catch you unawares.",
+              "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
               "trigger_msg": "Woodsman's Axe! You cut low, where it grows from.",
               "effect": "damage_mult",
               "params": {
-                "mult": 1.06
+                "mult": 1.05
               },
               "also": [
                 {
@@ -2363,7 +2367,7 @@
             {
               "id": "celestials_shaded_eyes",
               "name": "Shaded Eyes",
-              "text": "You get +2 on saving throws against their blinding and confusion.",
+              "text": "You get +1 on saving throws against their blinding and confusion.",
               "trigger_msg": "Shaded Eyes: you look past the light, not into it.",
               "effect": "save_bonus",
               "params": {
@@ -2371,7 +2375,7 @@
                   "blinded",
                   "confused"
                 ],
-                "amount": 2
+                "amount": 1
               }
             }
           ]
@@ -2383,7 +2387,7 @@
             {
               "id": "celestials_angels_due",
               "name": "Angel's Due",
-              "text": "Their holy damage hurts you 15% less.",
+              "text": "Their holy damage hurts you 5% less.",
               "trigger_msg": "Angel's Due: you bow your head, and the holy fire passes over.",
               "effect": "resist_damage",
               "params": {
@@ -2391,7 +2395,7 @@
                   "holy",
                   "radiant"
                 ],
-                "mult": 0.85
+                "mult": 0.95
               }
             }
           ]
@@ -2403,11 +2407,11 @@
             {
               "id": "celestials_entertaining_angels",
               "name": "Entertaining Angels",
-              "text": "Half of the lesser celestials arrive calm and leave you be unless you strike first.",
+              "text": "One lesser celestial in five arrives calm and leaves you be unless you strike first.",
               "trigger_msg": "Entertaining Angels: the light here lets you be.",
               "effect": "calm_on_arrival",
               "params": {
-                "chance": 0.5
+                "chance": 0.2
               }
             }
           ]
@@ -2428,7 +2432,7 @@
       "boon": {
         "id": "circle_vigil",
         "name": "Vigil",
-        "text": "Necrotic and draining damage hurt you 10% less, from any source.",
+        "text": "Necrotic and draining damage hurt you 5% less, from any source.",
         "trigger_msg": "",
         "effect": "resist_damage",
         "params": {
@@ -2436,7 +2440,7 @@
             "necrotic",
             "drain"
           ],
-          "mult": 0.9,
+          "mult": 0.95,
           "scope": "any"
         }
       },

@@ -45,8 +45,8 @@ long enough: knowledge unlocks the technique, performance lands it.
   `tiers` (exactly five: `name`, `field_note` (empty = hidden), `abilities`). An ability is
   `{id, name, text, trigger_msg, effect, params, also?}`: `effect` is a primitive, `also`
   adds more parts to the same technique. Top level: `tier_names`, `keystone_weight` (2),
-  `tier_messages`, `popup_titles`, `popup_leads`, `tier_chronicle` (Journal templates,
-  linted), `circles`, `loremaster`. Every number is here; nothing scales by floor.
+  `no_save_ward`, `tier_messages`, `popup_titles`, `popup_leads`, `tier_chronicle`
+  (Journal templates, linted), `circles`, `loremaster`. Every number is here; nothing scales by floor.
 
 ## How knowledge is earned
 - One study = a correct corpse study (`_start_corpse_identify`) or a Scroll of Omnisight
@@ -110,7 +110,7 @@ The per-family techniques are in `data/monster_families.json` and the v2 design 
 |---|---|---|
 | `recognise` | | `family_lore.has_page` -> `Game._open_bestiary_page`, `_confirm_observe`, the Bestiary list |
 | `forewarned` | `line` | `FamilyMixin._family_arrival` (end of `_change_level`) |
-| `save_bonus` | `effects` (status ids, `drain`, `gaze`), `amount`, `scope?` | `status_effects.apply_debuff_with_save(source=)` from `Monster._apply_attack_effect` and the gaze blocks; `Monster._drain_takes_hold`. Outside the +5 cap of `Player.save_bonus_for`. No-save effects take it off their duration, as the CON bonus does. |
+| `save_bonus` | `effects` (status ids, `drain`, `gaze`), `amount`, `scope?` | `status_effects.apply_debuff_with_save(source=)` from `Monster._apply_attack_effect` and the gaze blocks; `Monster._drain_takes_hold`. Outside the +5 cap of `Player.save_bonus_for`. Against an effect with NO save (poison, burning, blinding) the ward shortens it instead (`no_save_ward` in the data: a share off a point, at most half), and a `duration_mult` for the same effect does not stack with it: the stronger counts. |
 | `duration_mult` | `effects`, `mult` (0 = never takes hold) | `apply_debuff_with_save` |
 | `resist_damage` | `types`, `mult`, `scope?` | `Monster._resolve_blow` and the gaze path before `player.take_damage` (family; the strongest one wins); `Player.take_damage` (circle, any source) |
 | `damage_mult` | `mult`, `chain_min?`, `weapons?` + `weapon_mult?`, `only_weapons?`, `big_mult?` | `combat.strike_damage` beside the Dragonslayer Ring (so `strike_preview` shows it); thrown weapons in `_throw_weapon`. Weapon blows on a SEEN creature only; never spells or pets. |
@@ -144,12 +144,14 @@ per technique (`family_edges.tell`, the outbox drained by `FamilyMixin._family_d
 ## Circles and the Loremaster title
 Worked out from the tiers every time (never stored); told once (`family_tiers_told`
 markers `circle:<id>`, `loremaster`), each with a popup and a Journal line.
+(The boons' numbers are the tuned ones, in `data/monster_families.json`.)
+
 | Circle | Families | Needs | Boon |
 |---|---|---|---|
-| The Grave Watch | Restless Dead, Ghosts, Vampires and Liches | all three at tier 3 | Vigil: necrotic and drain damage 20% less, any source |
+| The Grave Watch | Restless Dead, Ghosts, Vampires and Liches | all three at tier 3 | Vigil: necrotic and drain damage 10% less, any source |
 | The Wild Road | Great Beasts, Birds, Serpents, Vermin, Plants | any three at tier 3 | Ranger's Instinct: +1 sight |
-| The Hellward Gate | Demons, Fair Folk, Aberrations | all three at tier 3 | Unbent Mind: +2 saves vs confusion, charm, fear, any source |
-| The Hero's Road | Monsters of Legend, Gorgons, Giants, Dragons | any three at tier 3 | Hero's Nerve: +2 seconds against any boss |
+| The Hellward Gate | Demons, Fair Folk, Aberrations | all three at tier 3 | Unbent Mind: +1 on saves vs confusion, charm, fear, any source |
+| The Hero's Road | Monsters of Legend, Gorgons, Giants, Dragons | any three at tier 3 | Hero's Nerve: +1 second against any boss |
 
 Loremaster: tier 5 in any five families. Your Story, the Discoveries page, the @ sheet,
 the Journal and the high-score table (`title`) show it.
@@ -197,4 +199,29 @@ QA key). `tests/test_observe_bestiary.py` covers ruling 1. UI capture scenes:
 `tools/balance/difficulty_sim.py --knobs families=1,study_rate=0.85` plays a hero who
 studies the corpse of each new kind he kills (85% of the time, one question at the
 corpse's tier) and earns the tiers; every technique then runs through the real game code.
-The numbers and each tuning pass are in the build report.
+The v2 design's first-draft numbers (wards +4, damage 15-30%, executes at chain 10,
++3 seconds) put the committed 95% hero about 25 points above baseline; the target was
+about 10. The simulator then cut them, data only, in passes measured on that cell
+(survival to the end, `committed` 95%, baseline about 58%):
+
+| Pass | Change | Families |
+|---|---|---|
+| 0 | as designed | +29 |
+| 1 | damage edges roughly halved | +25 |
+| 2 | executes at chain 12, lower health lines | no change |
+| 3 | wards +2, no-save effects a third shorter | +25 |
+| 4 | damage, executes (chain 15), calm, seconds (2), resists cut again | +20 |
+| 5 | circles halved, turning at longer chains, regeneration stop 3 turns | +16 to +19 |
+| 6 | seconds 1, calm and resists cut, pierce at longer chains | +11 (390 runs: a lucky low) |
+| 7 | damage and weakness a little lower | +16.7 (810 runs from here on) |
+| 8 | a ward against a no-save effect shortens it instead of stacking | +14 |
+| 9 | wards +1 | +13.5 |
+| 10 | durations a tenth shorter, resists 5%, calm one in ten / five, executes at chain 18 | +12.8 |
+| 11 | Solomon's Seal: burning and freezing wear off twice as fast (they were blocked outright) | +11.2 |
+
+Attribution at the last passes (each group switched off, 810 runs): the Steady Hand
+seconds and the Hero's Nerve were worth about 5 points even at one second, the wards
+about 7 (mostly the outright blocks), turning and calm about 2 each, damage about 2.
+Final (200 runs a cell, 10 chunks, PYTHONHASHSEED=0): committed 95% 57.5 -> 69.0;
+prepared 95% 57.5 -> 59.5; committed 90% 22.5 -> 26.0; prepared 90% 15.0 -> 17.0. Every
+number is one edit in `data/monster_families.json` if play says a technique feels flat.

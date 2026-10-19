@@ -266,18 +266,26 @@ def test_no_save_effects_wear_off_faster():
     share = _param('vermin_web_and_plague', 'duration_mult', 'mult')
     ward = _param('vermin_web_and_plague', 'save_bonus', 'amount')
     assert 0 < share < 1
-    assert warded == max(1, max(1, round(10 * share)) - p.save_bonus_for('CON') - ward)
+    best = min(share, family_edges.no_save_ward_share(ward))
+    assert warded == max(1, max(1, round(10 * best)) - p.save_bonus_for('CON'))
     assert warded < plain
 
 
 def test_duration_zero_means_it_never_takes_hold():
     import status_effects
     p = _player_at()
-    _to_tier(p, 'elementals', 5)                        # Solomon's Seal
-    fire = _mon('fire_elemental')
-    applied, msg = status_effects.apply_debuff_with_save(p, 'burning', 6, 12, source=fire)
+    _to_tier(p, 'fair_folk', 5)                         # Their True Name: no charm
+    assert _param('fair_folk_true_name', 'duration_mult', 'mult') == 0.0
+    fey = _mon('satyr_trickster')
+    applied, msg = status_effects.apply_debuff_with_save(p, 'charmed', 6, 30, source=fey)
     assert not applied and 'cannot take hold' in msg
-    assert 'burning' not in p.status_effects
+    assert 'charmed' not in p.status_effects
+    # A share between 0 and 1 shortens it instead (Solomon's Seal on burning).
+    q = _player_at()
+    _to_tier(q, 'elementals', 5)
+    share = _param('elementals_solomons_seal', 'duration_mult', 'mult')
+    status_effects.apply_debuff_with_save(q, 'burning', 6, 12, source=_mon('fire_elemental'))
+    assert q.status_effects.get('burning') == max(1, max(1, round(6 * share)) - q.save_bonus_for('CON'))
 
 
 def test_the_drain_save_counts_the_ward(monkeypatch):
@@ -475,9 +483,13 @@ def test_pierce_resist_undoes_a_resistance():
     golem.weaknesses = []
     golem.hp = golem.max_hp = 10 ** 6
     plain = combat.strike_preview(p, golem, 6)
-    _to_tier(p, 'constructs', 4)                                # Find the Seam, chain 5
-    assert combat.strike_preview(p, golem, 4) <= plain * 4 / 6 + 2
-    assert combat.strike_preview(p, golem, 6) >= plain * 1.8
+    _to_tier(p, 'constructs', 4)                                # Find the Seam
+    need = _param('constructs_find_the_seam', 'pierce_resist', 'chain_min')
+    below = combat.strike_preview(p, golem, need - 1)
+    at = combat.strike_preview(p, golem, need)
+    plain_at = plain * (need / 6) ** 1.15
+    assert below <= plain_at                                    # still resisted below its chain
+    assert at >= plain_at * 1.8                                 # the resistance undone at it
 
 
 def test_block_regen_and_prevent_split():
@@ -774,3 +786,17 @@ def test_old_saved_monsters_and_corpses_find_their_family_by_kind():
     assert family_lore.family_of(c) == 'restless_dead'
     from bones import spawn_ghost  # noqa: F401  (the Bones ghost is a Ghost)
     assert family_lore.family_of('player_ghost') == 'ghosts'
+
+
+def test_a_flood_of_news_fits_in_one_popup():
+    """The QA key can raise every family at once: the popup shows three
+    pieces of news and points to the Families pages for the rest."""
+    from game_states import STATE_STORY_POPUP
+    g = _game()
+    g.player.qa_tools = True
+    for _ in range(3):
+        g._qa_family_tier()
+    assert g.state == STATE_STORY_POPUP
+    assert g.popup_data['lines'][-1].startswith('And more besides')
+    titles = [ln for ln in g.popup_data['lines'] if ln.startswith('LORE OF ')]
+    assert len(titles) <= 2                     # the first title is the popup's own
