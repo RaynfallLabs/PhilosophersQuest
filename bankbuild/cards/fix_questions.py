@@ -32,8 +32,12 @@ def main() -> None:
         cpath = CDIR / f'{subject}.json'
         cards = json.loads(cpath.read_text(encoding='utf-8')) if cpath.exists() else {}
         index = {stem_hash(q['question']): q for q in qs}
+        alias: dict[str, str] = {}          # a hash an earlier fix in this run replaced
         for f in fs:
-            q = index.get(f['hash'])
+            h = f['hash']
+            while h in alias:
+                h = alias[h]
+            q = index.get(h)
             if q is None:
                 print(f'  ! {subject} {f["hash"]}: no such question')
                 continue
@@ -64,6 +68,7 @@ def main() -> None:
                     entry['teaches'][new_hash] = entry['teaches'].pop(old_hash)
                     moved = ' (teaches re-keyed)'
                 index[new_hash] = index.pop(old_hash)
+                alias[old_hash] = new_hash
             print(f'  {subject} {f["hash"]} {field}: "{f["old"][:50]}" -> "{f["new"][:50]}"{moved}')
         if write:
             text = json.dumps(qs, ensure_ascii=False, indent=2)   # every bank file is indent-2
