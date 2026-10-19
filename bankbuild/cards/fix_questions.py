@@ -38,7 +38,8 @@ def main() -> None:
                 print(f'  ! {subject} {f["hash"]}: no such question')
                 continue
             field = f['field']
-            if f['old'] not in str(q.get(field, '')):
+            hay = ' | '.join(q.get('choices', [])) if field == 'choices' else str(q.get(field, ''))
+            if f['old'] not in hay:
                 print(f'  ! {subject} {f["hash"]}: "{f["old"][:40]}" not in {field}')
                 continue
             old_hash = stem_hash(q['question'])
@@ -46,6 +47,13 @@ def main() -> None:
                 old_ans = q['answer']
                 q['answer'] = old_ans.replace(f['old'], f['new'])
                 q['choices'] = [q['answer'] if c == old_ans else c for c in q.get('choices', [])]
+            elif field == 'choices':
+                # Every choice (and the key, kept identical to its choice).
+                was_key = [c == q['answer'] for c in q.get('choices', [])]
+                q['choices'] = [c.replace(f['old'], f['new']) for c in q.get('choices', [])]
+                for c, k in zip(q['choices'], was_key):
+                    if k:
+                        q['answer'] = c
             else:
                 q[field] = q[field].replace(f['old'], f['new'])
             new_hash = stem_hash(q['question'])
