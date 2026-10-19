@@ -48,7 +48,7 @@ LEAK_BASELINE = {
 TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography'}
 
 # Cards in a teaching subject that still lack `teaches` (rollout in progress).
-UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 145, 'geography': 330}
+UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 70, 'geography': 330}
 
 
 def _load(subject):
