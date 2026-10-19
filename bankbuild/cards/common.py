@@ -24,7 +24,7 @@ QDIR = ROOT / 'data' / 'questions'
 CDIR = ROOT / 'data' / 'question_contexts'
 WORK = ROOT / '_cards'
 
-SOURCE_RE = re.compile(r'\s*Source:.*$', re.IGNORECASE | re.DOTALL)
+SOURCE_RE = re.compile(r'\s*Sources?:.*$', re.IGNORECASE | re.DOTALL)
 
 
 def stem_hash(stem: str) -> str:
@@ -69,8 +69,8 @@ def words(text: str) -> list[str]:
 
 def target_words(n_questions: int) -> tuple[int, int, int]:
     """(minimum, target, hard cap) word counts for a card of n questions."""
-    target = 60 + 40 * n_questions
-    lo = max(150, min(560, int(round(0.75 * target))))
+    target = 60 + 45 * n_questions
+    lo = max(150, min(560, int(round(0.70 * target))))
     return lo, max(150, target), 750
 
 

@@ -31,12 +31,20 @@ AUTHOR_VOICE = (
 JARGON = re.compile(
     r"\b(distractors?|keyed answer|this rung|each rung|this ladder|the stem|"
     r"tier [1-5]|question [1-9])\b", re.I)
-GIVEAWAY = re.compile(r"\b(the (correct )?answer is|correct answer|right answer)\b", re.I)
-URL = re.compile(r"(https?://|www\.|source:)", re.I)
+GIVEAWAY = re.compile(r"\b(the (correct )?answer is|the correct answer)\b", re.I)
+URL = re.compile(r"(https?://|www\.|(^|[.!?]\s+)Sources?:)")
 
 
 def _ngrams(ws: list[str], n: int) -> set[tuple]:
     return {tuple(ws[i:i + n]) for i in range(len(ws) - n + 1)}
+
+
+def _sentence_ngrams(text: str, n: int) -> set[tuple]:
+    """n-word runs inside each sentence, so a run never spans a full stop."""
+    out: set[tuple] = set()
+    for part in re.split(r'(?<=[.!?])\s+|\n+', text):
+        out |= _ngrams(words(part), n)
+    return out
 
 
 def _contains(hay: str, needle: str) -> bool:
@@ -58,7 +66,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
     if n_words > cap:
         errs.append(f'too long: {n_words} words (max {cap})')
     hay = ' '.join(ws)
-    card_6 = _ngrams(ws, 6)
+    card_6 = _sentence_ngrams(text, 6)
     low = text.lower()
     for phrase in AUTHOR_VOICE:
         if phrase in low:
@@ -73,7 +81,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
     keyed = {norm(q['answer']) for q in pkt['questions']}
     for q in pkt['questions']:
         h = q['hash']
-        shared = sorted(card_6 & _ngrams(words(q['stem']), 6))
+        shared = sorted(card_6 & _sentence_ngrams(q['stem'], 6))
         if shared:
             runs = '; '.join('"' + ' '.join(g) + '"' for g in shared[:6])
             errs.append(f'{h}: copies 6+ words of the stem ({len(shared)} runs): {runs}')
@@ -81,6 +89,13 @@ def check_card(pkt: dict, card: dict) -> list[str]:
         for ch in q['choices']:
             if len(ch.split()) > 4 and _contains(hay, ch):
                 errs.append(f'{h}: contains a whole choice (>4 words): "{ch}"')
+            elif len(words(ch)) > 6 and norm(ch) not in keyed:
+                # A distractor's phrasing must not leak into the card (a
+                # keyed answer sharing words with its own teaching sentence
+                # is the fact, and fine in an open book).
+                near = card_6 & _ngrams(words(ch), 6)
+                if near:
+                    errs.append(f'{h}: copies 6+ words of a choice: "{" ".join(sorted(near)[0])}"')
             if norm(ch) not in keyed and _contains(hay, ch):
                 toured.append(ch)
         if len(toured) >= 2:

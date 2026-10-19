@@ -902,7 +902,7 @@ class QuizEngine:
             line = teaches.get(hashlib.sha1(stem.encode('utf-8')).hexdigest()[:10])
             if isinstance(line, str) and line.strip():
                 return line.strip()
-        ctx = re.sub(r'\s*Source:.*$', '', str(q.get('context', '') or ''),
+        ctx = re.sub(r'\s*Sources?:.*$', '', str(q.get('context', '') or ''),
                      flags=re.IGNORECASE | re.DOTALL).strip()
         return ctx or None
 

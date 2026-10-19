@@ -17,19 +17,19 @@ Every question hash in the ladder must appear in `teaches`.
 
 ## The card's shape
 1. **Opening, 40 to 70 words:** who, what, where, why it matters, and the scene. Orient a 10th-grader who has never heard of this.
-2. **Then one paragraph per tier present, in order from tier 1 to tier 5.** Tell it as ONE story that deepens as the ladder does, not as a list of facts.
+2. **Then the tiers in order, tier 1 to tier 5,** told as ONE story that deepens as the ladder does, not as a list of facts. Usually that's one paragraph per tier. A big tier may split into two paragraphs, and a single-question tier may join its neighbour. If strict tier order would scramble a true chronology, the story's order may lead, as long as the tiers stay roughly in order.
    - Every question's keyed fact appears once, in the card's own words.
    - Each fact carries its WHY: the mechanism, the cause or the consequence. That is what makes it memorable (the Wonder Pattern).
    - If two questions share a fact, teach it once and point both `teaches` entries at the same sentence.
-3. **Length:** inside `length.min_words` to `length.max_words`. `target_words` is a guide; landing 25% either side of it is fine. A tier with a single question may share a paragraph with its neighbour rather than stand as a one-sentence paragraph.
+3. **Length:** inside `length.min_words` to `length.max_words`. `target_words` (60 + 45 per question) is a guide; landing 25% either side of it is fine.
 
 ## Hard rules (the gate checks the first seven mechanically)
 1. **Never copy the question.** No run of 6 or more words shared with any stem. A paraphrase must change the sentence's structure, not just swap a word. Stems repeat their own scene-setting, so write your opening fresh rather than from the stems.
-2. **Never paste a long choice.** A choice of more than 4 words must not appear word for word. Teach the fact in different words; the player should recognise it, not match it. Short keyed answers (a name, a place, a one-to-four-word thing like "masarepa" or "a whole raw egg") DO appear, because they are the fact.
+2. **Never paste a long choice.** A choice of more than 4 words must not appear word for word, and no 6-word run may be shared with a wrong choice longer than 6 words. Teach the fact in different words; the player should recognise it, not match it. Short keyed answers (a name, a place, a one-to-four-word thing like "masarepa" or "a whole raw egg") DO appear, because they are the fact.
 3. **Never name 2 or more of one question's distractors.** Don't tour the wrong answers. (A choice that is the keyed answer of ANOTHER question in the same ladder doesn't count: teach it where it belongs.)
 4. **Never state a distractor's claim as true.** A common misconception may appear only when it is named as wrong ("Most people read a sell-by date as a safety date; it is a note to the store").
 5. **No "the answer is"**, no quiz talk (question, tier, rung, ladder, stem, keyed, distractor), no sources, URLs or author notes ("this topic", "this card").
-6. **`teaches` sentences are copied exactly** from the card, one complete sentence each.
+6. **`teaches` entries are copied exactly** from the card: one complete sentence, or two consecutive sentences when the fact needs both. Keep sentences readable at grade 10; don't pack a fact into a 60-word sentence to make it self-contained. A quoted answer (a famous line) is paraphrased or set in context, not quoted whole, unless the quotation is at most 4 words.
 7. **Length band.**
 8. **Facts only from the input.** Use the question contexts, the stems' own scene-setting and the old card. Do not add new facts that you can't ground there. If a context is too thin to teach a question, make the fact explicit from the stem plus the keyed answer, and stay conservative.
 9. **Voice and stance as the subject's questions:**
