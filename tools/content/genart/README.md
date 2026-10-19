@@ -38,6 +38,7 @@ Output goes to `_genart/` (not committed).
 | `must_show` | What makes it this creature and this tier. The reviewer checks each. |
 | `must_not_show` | What belongs to its relatives or to a mistake seen before. Also sent to the model as things to avoid. |
 | `body` | Optional. `"shapeless"` for anything with no head, feet or legs (a flame, slime, cloud, whirlwind, eyeball, pillar, swarm, serpent, floating orb). It swaps the fixed prompt wording, which otherwise says "head to the soles of its feet" and "weight on one leg" and so grows legs or a small man under such creatures. |
+| `action` | Optional. Replaces the fixed sentence asking for "a frozen frame of a fight: weight on one leg, body twisted". Use it for a pose that must be steady and grounded (an archer at full draw), which the fixed sentence turns into a lunge. |
 | `lift` | Optional number, default 1.0. Above 1 (try 1.3 to 1.6) brightens the midtones when the sprite is cut, for a dark thing that vanishes on the dark floor. It needs no redraw: change it and rerun with `--sheets-only`. |
 | `key` | The backdrop colour: `magenta`, `green` or `blue`. It must be a colour the creature does not have, or the cut-out eats part of it. `pipeline.py` refuses a brief whose `colours` name the key. |
 
@@ -890,7 +891,7 @@ Brandon: the pup was "too lizard like, almost like a troglodyte", with "a second
 A hero sprite is never installed over until Brandon has seen a before/after and said yes. The
 options are drawn into `_genart/heroes/<name>_<date>/`, and a sheet is made at the project root:
 
-    <ComfyUI python> tools/content/genart/hero_options.py tools/content/genart/corwin_options.json
+    <ComfyUI python> tools/content/genart/hero_options.py tools/content/genart/corwin_options_2.json
 
 It shows the sprite in the game now, the old painting, and each option at 6x, 64 px and 40 px
 on the floor tile and beside other heroes (Robyn, Dad, one more) at the same size. When he picks
@@ -926,3 +927,31 @@ Brandon: "a lithe young man with a bow and his stuffie (hard to see in current v
 - The pixel pass gave one hero red glowing eyes. Eyes are below a pixel at 64 px anyway: set
   them by hand, and map the painting's eye position to the sprite with `convert.to_sprite`'s
   geometry rather than guessing (a one-pixel slip puts an eye on the hair).
+
+Brandon rejected that first round: "it all looks silly and the bow is truncated or
+unrecognizable. Maybe a pose with an arrow nocked and drawn, the stuffie clearly hanging from his
+belt." What the second round learned:
+
+- The fixed action sentence ("a frozen frame of a fight, weight on one leg, body twisted") makes
+  a lunge. A brief's own `action` ("holds the draw steady and still for one breath before he
+  looses ... not lunging, leaping, crouching or twisting") gives a grounded full draw.
+- "He stands side-on to his target like a real archer, his chest turned toward the viewer, his
+  head turned to look along the arrow" with "the bow a single tall curved shape at the left side
+  of the picture, entirely in front of him" drew the classic archer. The drawing hand still lands
+  at the chest or chin rather than the cheek.
+- A pale cream string drawn across his chest cut out as white scratches over the body; a thin
+  light tan string reads as part of the bow.
+- klein fills the frame however the brief asks for space round the figure: 21 of 24 first
+  drafts had the bow's top tip cut by the frame. Check every candidate's picture for a figure
+  pixel within a few pixels of the frame and keep only the ones clear on every side. The
+  mechanical check passes up to 2% on the edge, which is enough to lose a bow tip.
+- A klein edit redraws a few per cent larger, so an edit of a clear picture can cut the tip off
+  again. `edit.py`'s `{"pad": 0.88}` step first shrinks the picture onto its own backdrop.
+- A klein edit removes a held or hung thing cleanly ("remove the orange stuffed toy hanging from
+  his belt completely; where it was, his trouser leg, his belt and his cloak are painted as they
+  would be").
+- A belt toy the model paints comes out 6 to 9 sprite pixels tall, and the pixel pass turns bright
+  orange felt into flames, whether painted, edited bigger or pasted onto the painting (`edit.py`'s
+  `paste` step). Pasted after the pixel pass it stayed a toy but was still too small to read.
+  What worked: remove the painted toy, then stamp a hand-set 13 x 15 plush on the sprite
+  (`plush.py`, the Emberpup's own colours), recorded in the brief as the edit's `touch` list.

@@ -114,7 +114,9 @@ def prompts(b):
     neg = DRAFT_NEG + ''.join(', ' + x for x in b.get('must_not_show', []))
     if body == 'item':
         f['what'] = f['what'] + ITEM_BOLD
-    return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=ACTION[body], whole=WHOLE[body],
+    # A brief's own "action" replaces the fixed one: the fixed wording asks for a frozen frame
+    # of a fight, which turns a steady archer's full draw into a lunge.
+    return (DRAFT.format(key=KEY_WORDS[b.get('key', 'magenta')], action=b.get('action') or ACTION[body], whole=WHOLE[body],
                          light=LIGHT['item' if body == 'item' else 'creature'], **f), neg,
             PIXEL.format(keyname=b.get('key', 'magenta'), **f), PIXEL_NEG + ''.join(', ' + x for x in b.get('must_not_show', [])))
 

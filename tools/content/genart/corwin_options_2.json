@@ -1,0 +1,24 @@
+{
+ "title": "Corwin / Cain, round 2: full draw, plush on his belt (not installed)",
+ "out": "CORWIN_REDRAW_OPTIONS_2.png",
+ "current": "assets/tiles/env/player_ranger.png",
+ "current_says": "Round 1 was rejected (silly, bow cut off). This round: a steady full draw, the whole bow in frame, the plush hanging from his belt.",
+ "original": "_genart/heroes/corwin_2026_10_18/original_painting_d9dae06d.png",
+ "original_label": "first painting, d9dae06d:",
+ "finalists": [
+  {"label": "A. FACING LEFT, SHORT CLOAK",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin2_A_left_short_cloak.png",
+   "says": "Steady full draw, arrow nocked, whole bow in frame, quiver on his back; the plush Emberpup hangs from his belt."},
+  {"label": "B. FACING RIGHT, LONG CLOAK",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin2_B_right_long_cloak.png",
+   "says": "Wide planted stance at full draw, bow and arrow out to the right; the plush hangs at his other hip."},
+  {"label": "C. FACING LEFT, LONG CLOAK",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin2_C_left_long_cloak.png",
+   "says": "Upright full draw facing left, cloak to the ankles behind him; the same plush at his belt."}
+ ],
+ "beside": [
+  "assets/tiles/env/player_robyn.png",
+  "assets/tiles/env/player_dad.png",
+  "assets/tiles/env/player_odysseus.png"
+ ]
+}
