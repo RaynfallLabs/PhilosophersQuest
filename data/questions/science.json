@@ -158,9 +158,9 @@
   {
     "tier": 4,
     "question": "A family bringing a claim in the vaccine court that the 1986 Act created still needs a lawyer, and in a normal injury suit the lawyer's pay comes out of the winnings. Congress banned that practice here: by statute, a vaccine-case lawyer cannot take a share of the family's award, and cannot charge the family any other fee. So who pays that lawyer, and when?",
-    "answer": "The programme pays them, win or lose",
+    "answer": "The programme pays the lawyer, win or lose",
     "choices": [
-      "The programme pays them, win or lose",
+      "The programme pays the lawyer, win or lose",
       "The programme pays them only if the family wins",
       "The manufacturer pays them, win or lose",
       "The manufacturer pays them only if the family wins"
@@ -274,7 +274,7 @@
   },
   {
     "tier": 5,
-    "question": "Dark energy, the pushing force astronomers found in 1998 by watching distant supernovae, needed a symbol in mathematics. The simplest way to describe it turned out to be a term Albert Einstein had already written into his general relativity field equations back in 1917 -- and then abandoned in the 1920s once Edwin Hubble showed the universe was expanding on its own. Einstein later called it his greatest blunder. Which term was that?",
+    "question": "Dark energy, the pushing force astronomers found in 1998 by watching distant supernovae, needed a symbol in mathematics. The simplest way to describe it turned out to be a term Albert Einstein had already written into his general relativity field equations back in 1917 -- and then abandoned in the 1920s once Edwin Hubble showed the universe was expanding on its own. According to the physicist George Gamow, Einstein later called it his greatest blunder. Which term was that?",
     "answer": "The cosmological constant, Lambda",
     "choices": [
       "The cosmological constant, Lambda",
@@ -924,7 +924,7 @@
   },
   {
     "tier": 2,
-    "question": "Aluminium is the silvery metal we use today for soda cans, kitchen foil, and aeroplane bodies. It is not rare on Earth at all: it makes up about 8% of the planet's crust by mass, the commonest metal in the ground, ahead even of iron. Yet for centuries before the 1820s, no human being had ever held a piece of pure aluminium metal in their hand. What paradox did early chemists run into?",
+    "question": "Aluminium is the silvery metal we use today for soda cans, kitchen foil, and aeroplane bodies. It is not rare on Earth at all: it makes up about 8% of the planet's crust by mass, the commonest metal in the ground, ahead even of iron. Yet for centuries before the 1820s, no human being had ever held a piece of pure aluminium metal in his hand. What paradox did early chemists run into?",
     "answer": "Its oxygen bond is stronger than any wood-or-charcoal furnace on Earth can break",
     "choices": [
       "Its atoms are so light they float out of hot ore as vapour and cannot be caught",
@@ -2731,7 +2731,7 @@
   },
   {
     "tier": 4,
-    "question": "Norman Borlaug was an American plant scientist whose short, high-yield wheat varieties, released in Mexico and India in the 1960s, drove what became known as the Green Revolution and pushed grain harvests up sharply. The claim you hear about him — that he 'saved a billion lives' — is an estimate, not a measurement. This ladder checks its own heroes. Who put that figure into print, and where?",
+    "question": "Norman Borlaug was an American plant scientist whose short, high-yield wheat varieties, released in Mexico and India in the 1960s, drove what became known as the Green Revolution and pushed grain harvests up sharply. The claim you hear about him — that he 'saved a billion lives' — is an estimate, not a measurement. Who put that figure into print, and where?",
     "answer": "Gregg Easterbrook, in a 1997 Atlantic essay",
     "choices": [
       "Gregg Easterbrook, in a 1997 Atlantic essay",
@@ -3849,7 +3849,7 @@
   },
   {
     "tier": 1,
-    "question": "Victoria Gray was a Black mother of four from rural Mississippi, born in 1957. All her life she went in and out of the hospital with sharp pain attacks that could last for weeks — 'pain crises' caused by red blood cells bending into stiff crescents and jamming in her tiny vessels. The illness was passed down in her family. Which inherited blood disease was hurting her?",
+    "question": "Victoria Gray was a Black mother of four from rural Mississippi, born in the mid-1980s. All her life she went in and out of the hospital with sharp pain attacks that could last for weeks — 'pain crises' caused by red blood cells bending into stiff crescents and jamming in her tiny vessels. The illness was passed down in her family. Which inherited blood disease was hurting her?",
     "answer": "sickle-cell disease",
     "choices": [
       "sickle-cell disease",
@@ -3914,7 +3914,7 @@
   },
   {
     "tier": 5,
-    "question": "In November 2023 the world's first CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) gene-editing therapy — Casgevy, a treatment that uses molecular scissors to fix the DNA of sickle-cell patients' own bone-marrow cells — was approved. One country's drug regulator gave the green light before all the others. Which agency was the first to approve Casgevy?",
+    "question": "In November 2023 the world's first CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) gene-editing therapy — Casgevy, a treatment that uses molecular scissors to edit sickle-cell patients' own bone-marrow cells — was approved. One country's drug regulator gave the green light before all the others. Which agency was the first to approve Casgevy?",
     "answer": "the UK's MHRA",
     "choices": [
       "the UK's MHRA",
@@ -3927,7 +3927,7 @@
   },
   {
     "tier": 5,
-    "question": "Casgevy is a gene-editing therapy for sickle-cell disease that the U.S. Food and Drug Administration (FDA) approved in December 2023 — the first medicine of its kind ever cleared for humans. The bank sticks to its real trial numbers, not slogans. In the pivotal trial that led to approval, how many of 31 evaluable sickle-cell patients went at least 12 consecutive months with no severe vaso-occlusive pain crisis?",
+    "question": "Casgevy is a gene-editing therapy for sickle-cell disease that the U.S. Food and Drug Administration (FDA) approved in December 2023 — the first medicine of its kind ever cleared for humans. In the pivotal trial that led to approval, how many of 31 evaluable sickle-cell patients went at least 12 consecutive months with no severe vaso-occlusive pain crisis?",
     "answer": "29",
     "choices": [
       "29",
@@ -3940,7 +3940,7 @@
   },
   {
     "tier": 5,
-    "question": "Casgevy is the first CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) gene-editing treatment ever approved for use in patients. Vertex Pharmaceuticals and CRISPR Therapeutics brought it to market in late 2023 for sickle-cell disease and beta thalassemia: a one-time therapy that edits a patient's own blood stem cells so their bodies produce healthy hemoglobin again. The triumph is stated straight, and so is the price tag. What is the US list price for a single Casgevy treatment course?",
+    "question": "Casgevy is the first CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) gene-editing treatment ever approved for use in patients. Vertex Pharmaceuticals and CRISPR Therapeutics brought it to market in late 2023 for sickle-cell disease and beta thalassemia: a one-time therapy that edits a patient's own blood stem cells so that his body switches its fetal hemoglobin back on. What is the US list price for a single Casgevy treatment course?",
     "answer": "about $2.2 million",
     "choices": [
       "about $2.2 million",
@@ -4538,7 +4538,7 @@
   },
   {
     "tier": 4,
-    "question": "When a Sun-like star runs out of fuel, its core shrinks into a hot, dense ember the size of Earth called a white dwarf. In 1935 a young Indian astronomer named Chandrasekhar calculated that this ember can only balance against its own gravity if it weighs less than a limit measured in suns. Where did his calculation place that upper limit?",
+    "question": "When a Sun-like star runs out of fuel, its core shrinks into a hot, dense ember the size of Earth called a white dwarf. In 1930 a young Indian astronomer named Chandrasekhar calculated that this ember can only balance against its own gravity if it weighs less than a limit measured in suns. Where did his calculation place that upper limit?",
     "answer": "About 1.4 suns",
     "choices": [
       "About 1.4 suns",
@@ -7203,7 +7203,7 @@
   },
   {
     "tier": 5,
-    "question": "On 18 September 1933, one physicist chaired the opening of the German Physical Society meeting at Wurzburg. He compared the Nazi rejection of relativity to the Church silencing Galileo. He closed his address with Galileo's own line, in Italian. The audience applauded. Which physicist gave that address?",
+    "question": "On 18 September 1933, one physicist chaired the opening of the German Physical Society meeting at Wurzburg. He compared the Nazi rejection of relativity to the Church silencing Galileo. He closed his address with the line attributed to Galileo, in Italian. The audience applauded. Which physicist gave that address?",
     "answer": "Max von Laue",
     "choices": [
       "Max von Laue",
