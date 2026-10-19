@@ -57,7 +57,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "The walking dead are ancient. In the Epic of Gilgamesh, the goddess Ishtar threatens to smash the gates of the underworld and bring up the dead to devour the living.",
           "abilities": [
             {
               "id": "restless_dead_recognise",
@@ -71,7 +71,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Eyrbyggja saga says that after Thorolf Lame-Foot died, any bird that landed on his grave fell down dead, and the sheep in the valley died. His neighbours knew he walked.",
           "abilities": [
             {
               "id": "restless_dead_forewarned",
@@ -87,7 +87,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Scottish mourners once laid a wooden platter of salt and earth on a corpse's breast. The antiquary John Brand recorded that the salt stood for the undying spirit, and kept the Devil away.",
           "abilities": [
             {
               "id": "restless_dead_grave_salt",
@@ -119,7 +119,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Grettis saga tells how Grettir the Strong wrestled the draugr Glámr and cut off his head. Then he and the farmer burned the body to cold coals and buried the ashes far from any path.",
           "abilities": [
             {
               "id": "restless_dead_bonebreaker",
@@ -135,7 +135,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In Eyrbyggja saga, the drowned men of Fróðá came dripping to sit by the fire each night, until Kjartan held a court at the door and charged the dead with trespass. Then they left.",
           "abilities": [
             {
               "id": "restless_dead_turn_the_dead",
@@ -169,7 +169,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "One of the oldest ghost stories is Pliny the Younger's: a chained phantom haunted an Athens house until the philosopher Athenodorus dug where it vanished, found bones in chains, and gave them a proper burial.",
           "abilities": [
             {
               "id": "ghosts_recognise",
@@ -183,7 +183,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Welsh lore told of the corpse candle, a light gliding between the churchyard and a dying person's home. In Shakespeare's England, folk said a blue candle flame meant a spirit was near.",
           "abilities": [
             {
               "id": "ghosts_forewarned",
@@ -199,7 +199,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In Japan, mourners get a little bag of salt to purify themselves before going home from a funeral. Folk belief in Europe said an iron fence round a graveyard held the dead in place.",
           "abilities": [
             {
               "id": "ghosts_iron_and_salt",
@@ -225,7 +225,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Gaels call second sight an dà shealladh, the two sights. Martin Martin wrote in 1703 that a seer who saw a shroud around someone knew death was coming, and the higher it rose, the sooner.",
           "abilities": [
             {
               "id": "ghosts_second_sight",
@@ -244,7 +244,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Cornish legend says the ghost of Jan Tregeagle, a harsh steward, was laid by setting him to empty Dozmary Pool with a limpet shell, a task to keep him busy until Judgment Day.",
           "abilities": [
             {
               "id": "ghosts_lay_the_ghost",
@@ -277,7 +277,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Europe's vampire craze grew from Austrian army reports. In 1732 surgeon Johann Flückinger recorded how Serbian villagers staked the dead soldier Arnold Paole, swearing the corpse groaned and bled.",
           "abilities": [
             {
               "id": "vampires_liches_recognise",
@@ -291,7 +291,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "To find a vampire's grave, villagers led a black stallion through the graveyard, a white one in Albania, and watched where it balked. Holes in the grave's earth were another sign.",
           "abilities": [
             {
               "id": "vampires_liches_forewarned",
@@ -307,7 +307,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "On St. Andrew's Eve, when Romanians believed the strigoi were most active, families smeared garlic on doors and windows, and young people sat up all night guarding heads of garlic.",
           "abilities": [
             {
               "id": "vampires_liches_garlic_and_ash",
@@ -333,7 +333,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Eastern European folk scattered poppy seed, millet or sand on a suspected vampire's grave, believing it had to count every grain and would spend the whole night at it.",
           "abilities": [
             {
               "id": "vampires_liches_hunters_patience",
@@ -349,7 +349,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Vampire hunters chose the stake's wood with care: ash in Russia and the Baltic, hawthorn in Serbia. In 2012 archaeologists at Sozopol, Bulgaria, found two medieval skeletons pinned through the chest with iron rods.",
           "abilities": [
             {
               "id": "vampires_liches_stake",
@@ -384,7 +384,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "The word demon comes from the Greek daimon, a spirit that could help or harm. Socrates said a daimonion, an inner voice, held him back whenever he was about to go wrong.",
           "abilities": [
             {
               "id": "demons_recognise",
@@ -398,7 +398,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "On a February night in 1855, hoof-like prints appeared in fresh snow across Devon, even on rooftops and high walls, running for many miles. Some people said Satan himself had walked there.",
           "abilities": [
             {
               "id": "demons_forewarned",
@@ -414,7 +414,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "The Lesser Key of Solomon, a 17th-century grimoire, has the conjurer stand in a nine-foot circle written with holy names, and makes the spirit he calls appear in a triangle outside it.",
           "abilities": [
             {
               "id": "demons_circle_of_salt",
@@ -445,7 +445,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In the Gospel of Mark, Jesus asks a possessing spirit its name. It answers 'Legion, for we are many,' and he sends the spirits into a herd of pigs that rush into the sea.",
           "abilities": [
             {
               "id": "demons_true_names",
@@ -461,7 +461,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In the Book of Revelation, an angel comes down with the key to the bottomless pit and a great chain. He binds Satan, the dragon, casts him in and seals it for a thousand years.",
           "abilities": [
             {
               "id": "demons_banishment",
@@ -496,7 +496,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "People in Klagenfurt, Austria, took a huge skull dug from a quarry in 1335 for a dragon's. It came from a woolly rhinoceros, and became the model for their dragon statue's head.",
           "abilities": [
             {
               "id": "dragons_recognise",
@@ -510,7 +510,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In Beowulf, the dragon's rage begins with a theft: a runaway slave steals a golden cup from its hoard. That night the wyrm wakes and burns the Geats' halls, Beowulf's own among them.",
           "abilities": [
             {
               "id": "dragons_forewarned",
@@ -526,7 +526,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Knowing that a shield of linden wood would burn, old King Beowulf had one forged all of iron before he went out to fight the dragon.",
           "abilities": [
             {
               "id": "dragons_dragon_ward",
@@ -560,7 +560,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In the Völsunga saga, Sigurd hides in a pit and drives his sword under Fafnir's left shoulder to the hilt. A bearded stranger, Odin in disguise, told him to dig more pits for the blood.",
           "abilities": [
             {
               "id": "dragons_soft_belly",
@@ -576,7 +576,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In Tolkien's The Hobbit, Bilbo spots a bare patch in the hollow of Smaug's left breast. A thrush carries the news to Bard, whose last arrow strikes home.",
           "abilities": [
             {
               "id": "dragons_missing_scale",
@@ -609,7 +609,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Greeks believed only the one-eyed Cyclopes could have built the walls of Mycenae and Tiryns, where Pausanias said two mules could not shift the smallest stone. Archaeologists still call such walls Cyclopean.",
           "abilities": [
             {
               "id": "giants_recognise",
@@ -623,7 +623,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Danish farmers said huge lone boulders were thrown by giants and trolls who hated church bells. A giantess on Langeland hurled Denmark's biggest, Damestenen, at Svindinge church, and it fell short.",
           "abilities": [
             {
               "id": "giants_forewarned",
@@ -639,7 +639,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In the Book of Samuel, the shepherd boy David turns down King Saul's armour, picks five smooth stones from a brook, and drops the giant Goliath with a single stone from his sling.",
           "abilities": [
             {
               "id": "giants_steady_hand",
@@ -655,7 +655,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Norwegian legend says a troll wedding party celebrated all night in Romsdal until sunrise caught them and turned them all to stone. Peaks of Trolltindene are still called the Bride and the Groom.",
           "abilities": [
             {
               "id": "giants_fire_and_dawn",
@@ -671,7 +671,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "An English tale set in Cornwall says Jack dug a deep pit, lured the giant Cormoran into it with a blast on his horn, and killed him, earning the name Jack the Giant Killer.",
           "abilities": [
             {
               "id": "giants_bigger_they_are",
@@ -705,7 +705,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Tolkien took the word orc from Old English. Beowulf lists orcneas, perhaps meaning 'demon-corpses', among the monsters descended from Cain, beside giants and elves.",
           "abilities": [
             {
               "id": "goblinkin_recognise",
@@ -719,7 +719,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Cornish tin miners heard knockers, small spirits of the mine, tapping in the rock. Some said the knocking led to rich ore, others that it warned of a cave-in.",
           "abilities": [
             {
               "id": "goblinkin_forewarned",
@@ -735,7 +735,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In George MacDonald's The Princess and the Goblin, the miner's boy Curdie drives goblins back by singing rhymes, which they hate, and stamping on their soft feet, a goblin's one weak spot.",
           "abilities": [
             {
               "id": "goblinkin_break_their_nerve",
@@ -753,7 +753,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In Christina Rossetti's poem Goblin Market, Lizzie stands firm while the goblin men squash their enchanted fruit against her face. She never opens her mouth, and carries the juice home to save her sister Laura.",
           "abilities": [
             {
               "id": "goblinkin_trap_wise",
@@ -779,7 +779,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In Tolkien's The Hobbit, the Great Goblin howls with rage at Orcrist, which goblins call Biter. When Gandalf's Glamdring, which they call Beater, cuts him down, his soldiers flee shrieking.",
           "abilities": [
             {
               "id": "goblinkin_name_is_known",
@@ -812,7 +812,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "The word assassin comes from the Nizari Ismailis of Alamut castle in Persia, whom their enemies called hashishin. Marco Polo spread tales of their leader, the Old Man of the Mountain.",
           "abilities": [
             {
               "id": "mortals_recognise",
@@ -826,7 +826,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In Ali Baba and the Forty Thieves, a robber chalks Ali Baba's door so the gang can find it at night. The clever slave girl Morgiana chalks the same mark on the neighbours' doors.",
           "abilities": [
             {
               "id": "mortals_forewarned",
@@ -842,7 +842,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Greek myth's master thief Autolycus could change the look of the cattle he stole. So Sisyphus set lead letters in his cattle's hooves, and the hoofprints accused Autolycus by name.",
           "abilities": [
             {
               "id": "mortals_read_their_hands",
@@ -856,7 +856,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Swiss legend says the bailiff Gessler made William Tell shoot an apple off his son's head. Tell struck it with one arrow, then admitted the second arrow in his quiver had been meant for Gessler.",
           "abilities": [
             {
               "id": "mortals_steady_hand",
@@ -872,7 +872,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In Malory's Le Morte d'Arthur, Lancelot beats three knights who had set upon Sir Kay, and spares them on one condition: each must go to King Arthur's court and yield himself to Queen Guinevere.",
           "abilities": [
             {
               "id": "mortals_yield",
@@ -906,7 +906,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Irish and Scots called them the Good Neighbours or the Fair Folk rather than fairies, because speaking of them plainly might draw their attention, and their anger.",
           "abilities": [
             {
               "id": "fair_folk_recognise",
@@ -920,7 +920,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "A ring of mushrooms marked where the Fair Folk danced, people said. A Welsh tale says Rhys danced in one for months, yet swore when his friend pulled him out that it was five minutes.",
           "abilities": [
             {
               "id": "fair_folk_forewarned",
@@ -936,7 +936,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In Devon and Cornwall, a traveller who was pixy-led, wandering lost in a field he knew well, turned his coat inside out to break the spell and find his way home.",
           "abilities": [
             {
               "id": "fair_folk_coat_inside_out",
@@ -957,7 +957,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In a Highland tale, a smith rescues his son from inside a fairy hill by driving his dirk into the threshold. The cold iron keeps the hill from closing behind him.",
           "abilities": [
             {
               "id": "fair_folk_cold_iron",
@@ -977,7 +977,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In the Grimms' tale, the queen keeps her child by guessing the little man's name, Rumpelstiltskin. In a rage he stamps his foot deep into the ground, then tears himself in two.",
           "abilities": [
             {
               "id": "fair_folk_true_name",
@@ -1024,7 +1024,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Northern peoples feared the bear so much they avoided its name. English 'bear' probably began as 'the brown one', and the Slavic medved means 'honey-eater'.",
           "abilities": [
             {
               "id": "great_beasts_recognise",
@@ -1038,7 +1038,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Old English poets had a sure sign that blood would soon be spilled: the wolf, the raven and the eagle gathering before the fighting, the beasts of battle waiting for the feast.",
           "abilities": [
             {
               "id": "great_beasts_forewarned",
@@ -1054,7 +1054,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Norse myth says the cook Andhrímnir boils the boar Sæhrímnir every day to feed Odin's warriors in Valhalla, and every evening the boar is whole again.",
           "abilities": [
             {
               "id": "great_beasts_hunters_harvest",
@@ -1070,7 +1070,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Heracles chased the Erymanthian Boar into deep snow until it floundered, then caught it and carried it alive to King Eurystheus, who was so frightened he hid in a bronze jar.",
           "abilities": [
             {
               "id": "great_beasts_steady_hand",
@@ -1086,7 +1086,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Aulus Gellius tells of Androcles, a runaway slave who pulled a huge splinter from a lion's paw. Thrown to the beasts in Rome's Great Circus, he met the same lion, and it fawned on him.",
           "abilities": [
             {
               "id": "great_beasts_beast_friend",
@@ -1120,7 +1120,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Ovid tells of Arachne, a weaver whose flawless tapestry of the gods' misdeeds enraged Athena, who turned her into a spider. Her name is the Greek word for spider, and spiders are still arachnids.",
           "abilities": [
             {
               "id": "vermin_recognise",
@@ -1134,7 +1134,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "A rat king is a knot of rats tangled by their tails, and folk took one as an omen of plague. A museum in Altenburg, Germany, keeps a mummified knot of 32 rats.",
           "abilities": [
             {
               "id": "vermin_forewarned",
@@ -1150,7 +1150,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In Apulia, people believed a tarantula's bite had to be danced out in frenzied tarantellas, sometimes for days. Legend says four thieves of Toulouse robbed plague victims unharmed, protected by vinegar steeped in herbs.",
           "abilities": [
             {
               "id": "vermin_web_and_plague",
@@ -1184,7 +1184,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "At Jōren Falls in Japan, legend says a man resting by the water felt silk threads winding round his leg. He slipped them onto a tree stump, which the jorōgumo spider dragged into the falls.",
           "abilities": [
             {
               "id": "vermin_tremor_sense",
@@ -1203,7 +1203,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In 1284, legend says, a piper in coloured clothes led Hamelin's rats into the River Weser with his tune. Cheated of his fee, he came back and led away 130 children.",
           "abilities": [
             {
               "id": "vermin_pipers_tune",
@@ -1237,7 +1237,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Buddhist tradition says that when a great storm broke over the meditating Buddha, the naga king Mucalinda wrapped him in seven coils and spread his hood over his head for seven days.",
           "abilities": [
             {
               "id": "serpents_recognise",
@@ -1251,7 +1251,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In the Epic of Gilgamesh, a snake steals the plant of rejuvenation while Gilgamesh bathes in a pool, and sheds its skin as it slips away. Ever since, the story suggests, snakes have renewed themselves.",
           "abilities": [
             {
               "id": "serpents_forewarned",
@@ -1267,7 +1267,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "When Cleopatra died, said to be by an asp's bite, Octavian sent for the Psylli, a Libyan people believed immune to snakebite, to draw out the venom. It was too late.",
           "abilities": [
             {
               "id": "serpents_antivenom",
@@ -1298,7 +1298,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Pliny the Elder wrote that the ichneumon, the Egyptian mongoose, rolled in mud again and again, baking each coat hard in the sun as armour before it fought the asp.",
           "abilities": [
             {
               "id": "serpents_mongoose",
@@ -1314,7 +1314,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Pliny wrote that the Marsi of central Italy, said to descend from Circe's son, could send snakes to sleep. Every May 1 in Cocullo, their old land, snake-catchers drape Saint Dominic's statue with live snakes.",
           "abilities": [
             {
               "id": "serpents_snake_charmer",
@@ -1347,7 +1347,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "In Ferdowsi's Shahnameh, the great bird Simurgh raised the abandoned baby Zal in her nest. When he left, she gave him one of her feathers: burn it, and she would come.",
           "abilities": [
             {
               "id": "birds_recognise",
@@ -1361,7 +1361,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Rome's founding turned on birds: Remus saw six vultures, then Romulus saw twelve, and each brother claimed the gods had chosen him.",
           "abilities": [
             {
               "id": "birds_forewarned",
@@ -1377,7 +1377,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Emperor Frederick II wrote in the 1240s that Arab falconers were the first to hood their hawks, and he adopted the hood for its great usefulness. A hooded bird sits calm in the dark.",
           "abilities": [
             {
               "id": "birds_hooded",
@@ -1397,7 +1397,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In the Mahabharata, Drona sets a target bird in a tree and asks his pupils what they see. Arjuna alone answers that he sees only its head, and his arrow strikes the head off.",
           "abilities": [
             {
               "id": "birds_falconers_eye",
@@ -1417,7 +1417,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "For his sixth labour, Heracles could not reach the Stymphalian Birds in their marsh, so Athena gave him bronze krotala, rattles made by Hephaestus. Their clatter scared the birds aloft, where he shot them.",
           "abilities": [
             {
               "id": "birds_heracles_rattle",
@@ -1451,7 +1451,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Greeks painted a Gorgon's glaring face, the gorgoneion, on shields, temple roofs and the bottoms of cups, believing it scared off evil. Athena wore Medusa's head on her aegis.",
           "abilities": [
             {
               "id": "gorgons_recognise",
@@ -1465,7 +1465,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Pliny wrote that the basilisk's hiss sent every other snake fleeing, and that it scorched the grass and burst the stones wherever it passed.",
           "abilities": [
             {
               "id": "gorgons_forewarned",
@@ -1481,7 +1481,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Medieval lore said never to meet a basilisk's eyes. Pliny named the weasel as its killer, and in Cantabria, Spain, travellers into basilisk country carried a rooster, whose crow was believed fatal to it.",
           "abilities": [
             {
               "id": "gorgons_averted_eyes",
@@ -1501,7 +1501,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Perseus never looked at Medusa. Apollodorus says he watched her in a polished bronze shield while Athena guided his hand, and cut off her head as she slept.",
           "abilities": [
             {
               "id": "gorgons_perseus_shield",
@@ -1517,7 +1517,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Hermes gave Perseus the harpe, a sickle-sword of adamant, for Medusa's neck. Medieval lore added that a basilisk forced to see itself in a mirror would be slain by its own stare.",
           "abilities": [
             {
               "id": "gorgons_harpe",
@@ -1560,7 +1560,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "In Lycia, in today's Turkey, natural gas flames have burned from the rocks of Yanartaş for at least 2,500 years. The site is also called the Chimaera, after the fire-breathing monster.",
           "abilities": [
             {
               "id": "legend_recognise",
@@ -1574,7 +1574,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Plutarch says Athens sent seven youths and seven maidens to the Minotaur every nine years, on a ship with a black sail, because everyone believed they were sailing to their deaths.",
           "abilities": [
             {
               "id": "legend_forewarned",
@@ -1590,7 +1590,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Circe told Odysseus to row past Scylla's cliff at top speed, not fight: better to lose six men than his whole ship to Charybdis. He held his course, and lost six.",
           "abilities": [
             {
               "id": "legend_steady_hand",
@@ -1606,7 +1606,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Each time Heracles cut off one of the Hydra's heads, two grew back. His nephew Iolaus seared each stump with a burning brand, and the heads stopped returning.",
           "abilities": [
             {
               "id": "legend_iolaus_torch",
@@ -1622,7 +1622,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Ariadne gave Theseus a ball of thread to unwind as he walked into the Labyrinth. After killing the Minotaur, he followed it back out of the maze Daedalus built to hold the beast.",
           "abilities": [
             {
               "id": "legend_know_the_story",
@@ -1654,7 +1654,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Herodotus heard that every one of the Neuri, a people beyond the Scythians, turned into a wolf for a few days once a year. He added that the tale did not convince him.",
           "abilities": [
             {
               "id": "shapeshifters_recognise",
@@ -1668,7 +1668,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In Petronius's Satyricon, a wolf raiding a farm's flock is speared in the neck. Next day the soldier who turned into a wolf the night before lies in bed while a doctor tends his neck.",
           "abilities": [
             {
               "id": "shapeshifters_forewarned",
@@ -1684,7 +1684,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Hunters poisoned wolves with wolfsbane, or aconite. Greek myth said it grew from Cerberus's drool when Heracles dragged him from the underworld, and medieval doctors even tried it as a cure for werewolves.",
           "abilities": [
             {
               "id": "shapeshifters_wolfsbane",
@@ -1715,7 +1715,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Legend says Jean Chastel killed the Beast of Gévaudan in 1767 with a silver bullet. Historians trace the silver to novelists from 1935, though 19th-century German folklore already made silver a werewolf's bane.",
           "abilities": [
             {
               "id": "shapeshifters_silvered",
@@ -1735,7 +1735,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In the Odyssey, Menelaus holds the sea god Proteus fast while he becomes a lion, a serpent, a leopard, a boar, running water and a tree. Worn out, Proteus answers his questions.",
           "abilities": [
             {
               "id": "shapeshifters_forced_shape",
@@ -1768,7 +1768,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Homer's Iliad tells of golden handmaidens made by the smith god Hephaestus. They looked like living girls, had minds, voices and strength, and helped their lame master walk.",
           "abilities": [
             {
               "id": "constructs_recognise",
@@ -1782,7 +1782,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In the old English tale of Friar Bacon, his brass head finally spoke while his servant Miles kept watch: 'Time is.' 'Time was.' 'Time is past.' Miles never woke Bacon, and the head broke apart.",
           "abilities": [
             {
               "id": "constructs_forewarned",
@@ -1798,7 +1798,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In the Prague legend, Rabbi Loew pulled the shem, God's name on a slip, from his golem's mouth every Friday so it rested on the Sabbath. Once he forgot, and it ran wild.",
           "abilities": [
             {
               "id": "constructs_steady_hand",
@@ -1814,7 +1814,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Apollodorus says Medea promised the bronze giant Talos immortality, then drew out the bronze nail that sealed his one vein at the ankle. All his ichor gushed out, and he died.",
           "abilities": [
             {
               "id": "constructs_find_the_seam",
@@ -1830,7 +1830,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Golem tales from Poland, and later Prague, put emet, 'truth', on the brow: rub out the first letter, leaving met, 'dead', and it falls. Elijah of Chełm's golem scarred his face as he unmade it.",
           "abilities": [
             {
               "id": "constructs_erase_the_letter",
@@ -1865,7 +1865,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "The Greek thinker Empedocles taught that all things are made of four roots: earth, water, air and fire. Legend says he leapt into Mount Etna, which threw back one of his bronze sandals.",
           "abilities": [
             {
               "id": "elementals_recognise",
@@ -1879,7 +1879,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Sailors called the blue flames that danced on their mastheads in storms St. Elmo's fire. Ancient Greek sailors saw the twins Castor and Pollux in a pair of such lights, a sign of safe passage.",
           "abilities": [
             {
               "id": "elementals_forewarned",
@@ -1895,7 +1895,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Pliny claimed the salamander was so cold it put out fire on contact. Fireproof asbestos was later taken for salamander's hair, and the legendary Prester John was said to own a robe of it.",
           "abilities": [
             {
               "id": "elementals_ward_of_elements",
@@ -1917,7 +1917,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Aristotle taught that each element had two qualities: fire hot and dry, water cold and wet, air hot and wet, earth cold and dry. Fire and water share none at all.",
           "abilities": [
             {
               "id": "elementals_opposing_element",
@@ -1933,7 +1933,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In The Fisherman and the Jinni, a fisherman nets a copper jar sealed with Solomon's seal. Out pours a furious jinni, and the fisherman tricks it back inside by asking how it could ever fit.",
           "abilities": [
             {
               "id": "elementals_solomons_seal",
@@ -1983,7 +1983,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Since at least the 1300s, people in Britain have found blobs of jelly on the grass and blamed shooting stars. Welsh shepherds called it pwdre ser, 'rot of the stars'.",
           "abilities": [
             {
               "id": "oozes_recognise",
@@ -1997,7 +1997,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "Japanese lore tells of the nuppeppō, a wandering lump of flab with a face in its folds, that reeks of rotting flesh and shuffles through deserted streets at night.",
           "abilities": [
             {
               "id": "oozes_forewarned",
@@ -2013,7 +2013,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Germanic and Scandinavian folk believed a yellow jelly on the gate, witches' butter, meant a witch had cursed the house. Stabbing it with metal pins was said to break the spell.",
           "abilities": [
             {
               "id": "oozes_clean_blade",
@@ -2044,7 +2044,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In the Devi Mahatmya, every drop of the demon Raktabija's blood that touched the ground sprang up as another Raktabija. So the goddess Kali drank the blood as it flowed, before a drop could fall.",
           "abilities": [
             {
               "id": "oozes_strike_true",
@@ -2066,7 +2066,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "In the 1958 film The Blob, Steve, played by Steve McQueen, realises the creature cannot stand cold. The town freezes it with fire extinguishers, and the Air Force flies it to the Arctic.",
           "abilities": [
             {
               "id": "oozes_fire_and_frost",
@@ -2098,7 +2098,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "In 1752 Bishop Erik Pontoppidan wrote that the Norwegian kraken was so vast its back was mistaken for islands. The giant squid, first photographed alive in 2004, may lie behind the tale.",
           "abilities": [
             {
               "id": "aberrations_recognise",
@@ -2112,7 +2112,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In H. P. Lovecraft's The Call of Cthulhu, sailors on the risen city of R'lyeh find its angles wrong. One man is swallowed by an angle that is acute but behaves as if obtuse.",
           "abilities": [
             {
               "id": "aberrations_forewarned",
@@ -2128,7 +2128,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "In the Odyssey, Odysseus plugs his crew's ears with beeswax and has them tie him to the mast to hear the Sirens. When he begs to be freed, they bind him tighter.",
           "abilities": [
             {
               "id": "aberrations_steel_mind",
@@ -2159,7 +2159,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Japanese lore says a tool that reaches its hundredth year can come alive as a tsukumogami. A medieval scroll tells of old tools thrown out before that birthday, which came alive anyway, full of spite.",
           "abilities": [
             {
               "id": "aberrations_mimic_sense",
@@ -2178,7 +2178,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "The giant Argus had a hundred eyes and never closed them all at once, so nothing slipped past him. After Hermes charmed him asleep and slew him, Hera set his eyes in the peacock's tail.",
           "abilities": [
             {
               "id": "aberrations_the_unblinking",
@@ -2216,7 +2216,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "In 1874 the New York World printed a German botanist's account of a man-eating tree in Madagascar. Reporter Edmund Spencer had made it all up, yet explorers went hunting for the tree for decades.",
           "abilities": [
             {
               "id": "plants_recognise",
@@ -2230,7 +2230,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In Shakespeare's Macbeth, a vision the witches raise promises Macbeth he is safe until Birnam Wood comes to Dunsinane. Then a messenger sees the forest moving: soldiers carrying cut boughs.",
           "abilities": [
             {
               "id": "plants_forewarned",
@@ -2246,7 +2246,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Plague doctors of the 1600s wore beaked masks stuffed with lavender, peppermint, cloves and myrrh, believing the sweet scents would ward off the bad air thought to carry disease.",
           "abilities": [
             {
               "id": "plants_herbalists_mask",
@@ -2278,7 +2278,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "Medieval lore said a pulled mandrake shrieked and killed all who heard it. So gatherers tied it to a dog, which dragged it free, a trick Josephus described in the first century.",
           "abilities": [
             {
               "id": "plants_herbalist",
@@ -2294,7 +2294,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Around 723, Boniface took an axe to Donar's Oak, a tree sacred to Thor at Geismar. His biographer says a blast from above helped topple it, and Boniface built a chapel from its timber.",
           "abilities": [
             {
               "id": "plants_woodsmans_axe",
@@ -2332,7 +2332,7 @@
       "tiers": [
         {
           "name": "Recognise",
-          "field_note": "",
+          "field_note": "Europeans once believed unicorn horn could detect poison, and kings treasured it. Most such horns were narwhal tusks, and Denmark's coronation throne, built in the 1660s, is made of them.",
           "abilities": [
             {
               "id": "celestials_recognise",
@@ -2346,7 +2346,7 @@
         },
         {
           "name": "Forewarned",
-          "field_note": "",
+          "field_note": "In the Gospel of Luke, shepherds watching their flock by night are terrified when an angel appears and the glory of the Lord shines round them. The angel's first words are 'Fear not.'",
           "abilities": [
             {
               "id": "celestials_forewarned",
@@ -2362,7 +2362,7 @@
         },
         {
           "name": "Lore",
-          "field_note": "",
+          "field_note": "Exodus says Moses's face shone so after Sinai that the Israelites feared to come near, so he veiled it. In Greek myth, Semele saw Zeus in his full glory, and it killed her.",
           "abilities": [
             {
               "id": "celestials_shaded_eyes",
@@ -2382,7 +2382,7 @@
         },
         {
           "name": "Hunter",
-          "field_note": "",
+          "field_note": "In Exodus, the Israelites daub lamb's blood on their doorposts, and when the destroyer comes for Egypt's firstborn, the Lord passes over every marked door.",
           "abilities": [
             {
               "id": "celestials_angels_due",
@@ -2402,7 +2402,7 @@
         },
         {
           "name": "Bane",
-          "field_note": "",
+          "field_note": "Genesis tells how Abraham fed three strangers at Mamre who proved to be heavenly visitors, and Ovid how old Baucis and Philemon fed Jupiter and Mercury in disguise. Both hosts were richly rewarded.",
           "abilities": [
             {
               "id": "celestials_entertaining_angels",
