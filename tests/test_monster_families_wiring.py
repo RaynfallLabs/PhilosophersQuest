@@ -390,3 +390,35 @@ def test_an_old_save_catches_up_with_nothing_to_announce(tmp_path, monkeypatch):
     assert family_lore.tier(g2.player, 'vermin') == 4
     assert family_lore.news(g2.player) == []
     assert not (getattr(g2, 'popup_data', None) or {}).get('_family')
+
+
+# --- calls made after the audit (2026-10-19) ---------------------------------
+
+def test_story_characters_are_held_like_named_foes():
+    import family_edges as fe
+
+    class M:
+        pass
+    m = M()
+    m.proper_noun = True
+    assert fe._steadfast(m)
+    n = M()
+    n._npc_encounter_tag = 'npc_morrow'
+    assert fe._steadfast(n)
+    plain = M()
+    assert not fe._steadfast(plain)
+
+
+def test_a_plain_mimic_waiting_as_a_chest_counts_as_disguised():
+    import family_edges as fe
+
+    class M:
+        pass
+    m = M()
+    m.kind = 'greater_mimic'
+    m.ai_pattern = 'ambush'
+    assert fe._hidden_kind(m, None) == 'disguise'
+    c = M()
+    c.kind = 'cloaker'
+    c.ai_pattern = 'ambush'
+    assert fe._hidden_kind(c, None) == 'ambush'

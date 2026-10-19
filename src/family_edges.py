@@ -186,7 +186,13 @@ def _steadfast(m) -> bool:
     bridge against every charm, fear and instant kill (game_magic._is_big_foe;
     he never yields: "'Tis but a scratch"). Yield! used to make him "throw
     down his purse and run" while he stood there."""
-    return _named(m) or bool(getattr(m, 'is_black_knight', False))
+    # Proper-named story characters (Morrow, Azarael, Neferkaptah) and the
+    # figures of NPC and flavor encounters are held the same way: a stake
+    # or a "Yield!" must not cut across a story with its own spared deed.
+    return (_named(m) or bool(getattr(m, 'is_black_knight', False))
+            or bool(getattr(m, 'proper_noun', False))
+            or bool(getattr(m, '_npc_encounter_tag', None))
+            or bool(getattr(m, '_flavor_encounter_tag', None)))
 
 
 def _recognised(player, m) -> bool:
@@ -342,6 +348,10 @@ def _hidden_kind(m, player) -> str:
     if getattr(m, 'ai_pattern', '') == 'mimic' and not getattr(m, '_aware', False):
         return 'disguise'
     if getattr(m, 'ai_pattern', '') == 'ambush' and not getattr(m, '_aware', False):
+        # A plain mimic waiting as a chest is a disguise, not a lurker, so
+        # Mimic-Sense finds it too (cloakers and lurkers stay ambushers).
+        if 'mimic' in str(getattr(m, 'kind', '') or ''):
+            return 'disguise'
         return 'ambush'
     if getattr(m, 'invisible', False):
         return 'invisible'
