@@ -43,17 +43,17 @@ _KINDS = None        # kind -> (family, is_keystone)
 _DATA = None         # data/monster_families.json
 
 
-def _load_json(*parts):
-    from paths import data_path
-    with open(data_path(*parts), encoding='utf-8') as fh:
+def _load_json(path):
+    with open(path, encoding='utf-8') as fh:
         return json.load(fh)
 
 
 def data() -> dict:
-    """data/monster_families.json, loaded once."""
+    """data/monster_families.json, loaded once (bundled: PhilosophersQuest.spec)."""
     global _DATA
     if _DATA is None:
-        _DATA = _load_json('data', 'monster_families.json')
+        from paths import data_path
+        _DATA = _load_json(data_path('data', 'monster_families.json'))
     return _DATA
 
 
@@ -69,7 +69,8 @@ def _kinds() -> dict:
     global _KINDS
     if _KINDS is None:
         table = {}
-        mons = _load_json('data', 'monsters.json')
+        from paths import data_path
+        mons = _load_json(data_path('data', 'monsters.json'))
         extra = {}
         for fid, f in families().items():
             for k in f.get('keystones', ()) or ():
@@ -416,6 +417,11 @@ def tier_message(fid, t: int) -> str:
 def popup_title(fid, t: int) -> str:
     titles = data().get('popup_titles', ()) or ()
     return _fmt(titles[t - 1], fid) if 1 <= t <= len(titles) else ''
+
+
+def popup_lead(fid, t: int) -> str:
+    leads = data().get('popup_leads', ()) or ()
+    return _fmt(leads[t - 1], fid) if 1 <= t <= len(leads) else ''
 
 
 def tier_chronicle(fid, t: int) -> str:

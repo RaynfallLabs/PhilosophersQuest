@@ -1513,7 +1513,8 @@ class CombatMixin:
                 'resistances': monster.resistances,
                 'weaknesses': monster.weaknesses,
                 'speed': monster.speed,
-                # tags drive the bestiary family line — must be on the corpse.
+                # tags drive weapons and materials on the corpse page (the
+                # family is the separate `family` field, copied below).
                 'tags': list(getattr(monster, 'tags', []) or []),
                 # peak_floor drives the identify-question tier (depth-first).
                 'peak_floor': int(getattr(monster, 'peak_floor', 0) or 0),

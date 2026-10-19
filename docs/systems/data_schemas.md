@@ -16,7 +16,7 @@ discipline, and the `_meta` sub-object introduced in v2.18.
 
 **Loaders:**
 - `src/items.py` — item classes + loaders
-- `src/monster.py` + `src/monster_classes.py` — monster loader
+- `src/monster.py` + `src/monster_classes.py` — monster loader (`family` field: see `data/monster_families.json` and `docs/systems/monster_families.md`)
 - `src/food_system.py` — ingredients, recipes, outcomes, prime cuts
 - `src/container_system.py` — chests + trap resolution
 - `src/paths.py::data_path` — read-only path resolution

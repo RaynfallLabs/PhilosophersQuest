@@ -425,3 +425,5 @@ of Identify bypass, or corpse study.
   Philosopher's Mantle quirk.
 - [ui](ui.md) — `hud_item_name` wiring into context rows, kit panel,
   item cards.
+
+> **Monster families (2026-10-18).** A correct corpse study also records the kind in `player.studied_monster_ids`, which is what monster family tiers count (`docs/systems/monster_families.md`). Corpses now spawn pre-identified for kinds in `studied_monster_ids` (the hero's own studies); `lore_known_monster_ids` still opens the Bestiary page, and the Book of Thoth fills it without teaching any tier.

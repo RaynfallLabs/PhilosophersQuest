@@ -107,6 +107,8 @@ import game_magic as game_magic_mod              # noqa: E402
 import floor_curve as floor_curve_mod            # noqa: E402
 import prayers as prayers_mod                    # noqa: E402
 import status_effects as status_effects_mod      # noqa: E402
+import family_edges as family_edges_mod          # noqa: E402
+import family_lore as family_lore_mod            # noqa: E402
 from spells import LEARNABLE_SPELLS as SPELLS                        # noqa: E402
 from status_effects import DEBUFFS               # noqa: E402
 
@@ -191,6 +193,14 @@ KNOB_DEFAULTS = {
     'boss_hp':    1.0,   # extra x HP for named foes only (gate bosses, seal
                          #   demons, mini-bosses), on top of mon_hp
     'boss_dmg':   1.0,   # extra x damage for named foes only, on top of mon_dmg
+    # --- monster family knowledge (src/family_lore.py, src/family_edges.py) ---
+    'families':   0,     # 1 = the player studies the corpses of new kinds he
+                         #   kills and earns their families' tiers; every
+                         #   technique then runs through the real game code
+                         #   (wards, damage, executes, turning, calm...)
+    'study_rate': 0.85,  # share of new-kind kills whose corpse he studies
+                         #   (one philosophy question at the corpse's tier;
+                         #   right = the kind is studied, wrong = Stunned)
     'dmg_cap':    0.0,   # > 0: any ordinary monster attack whose mean damage is
                          #   above dmg_cap x the floor's damage anchor
                          #   (floor_curve.target_dmg at the monster's peak floor)
@@ -528,13 +538,15 @@ class QuizModel:
         return t
 
     # -- pure chain sampler (no side effects) -----------------------------------
-    def sample_chain(self, tier: int, timer: float, max_chain, stop_at=None):
-        """Returns (chain, questions_asked, right_answers)."""
+    def sample_chain(self, tier: int, timer: float, max_chain, stop_at=None, forgive=False):
+        """Returns (chain, questions_asked, right_answers). `forgive`: one
+        wrong answer does not end the chain (Know the Story)."""
         acc = acc_at(self.accuracy, tier)
         med = ANSWER_SECONDS[tier] * self.speed
         elapsed = 0.0
         chain = 0
         asked = 0
+        self.forgive_was_used = False
         while True:
             if stop_at and chain >= stop_at:
                 break                                 # SPACE: lock the chain in
@@ -548,6 +560,8 @@ class QuizModel:
                 chain += 1
                 if max_chain and chain >= max_chain:
                     break
+            elif forgive and not self.forgive_was_used:
+                self.forgive_was_used = True          # the chain goes on
             else:
                 break
         return chain, asked, chain
@@ -575,7 +589,9 @@ class QuizModel:
             self.chain_sum += chain
             callback(QuizResult(success=True, score=chain, correct=1, asked=1))
             return
-        chain, asked, right = self.sample_chain(tier, timer, max_chain, self.stop_at)
+        forgive = bool(getattr(self, '_forgive_flag', False))
+        self._forgive_flag = False
+        chain, asked, right = self.sample_chain(tier, timer, max_chain, self.stop_at, forgive)
         self.n_questions += asked
         self.retired[tier] += right
         if (self.knobs['mastery'] and tier not in self.mastered
@@ -1741,6 +1757,9 @@ class Run:
         """One world turn: statuses tick, then every engaged monster acts
         (main._advance_turn -> game_combat._do_monster_turns)."""
         p = self.p
+        if self.knobs['families']:
+            family_edges_mod.on_sight_turns(p, active, None)   # Your Name Is Known
+            family_edges_mod.drain(p)
         for m in active:
             m._cached_all_monsters = active      # as take_turn does: a shared gaze sees its group
             if m.alive:
@@ -1855,10 +1874,33 @@ class Run:
                 kills += 1
                 self.floor_alive = max(0, self.floor_alive - 1)
                 self._drop_loot(m)
+                self._study(m)
         self.floor_kills += kills
         if result == 'dead':
             self._on_death()
         return True
+
+    def _study(self, m):
+        """Monster families: the corpse of a kind he has not studied is
+        studied (study_rate of the time) with one philosophy question at the
+        corpse's tier (items.Corpse.id_tier: the monster's depth band).
+        Right = the kind counts for its family (family_lore.record_study);
+        wrong = the Shard's 10-turn stun, spent where it hurts least, after
+        the fight. A known kind's corpse never asks again."""
+        if not self.knobs['families']:
+            return
+        p = self.p
+        kind = getattr(m, 'kind', '')
+        if not kind or kind in p.studied_monster_ids or not family_lore_mod.family_of(kind):
+            return
+        if random.random() >= self.knobs['study_rate']:
+            return
+        tier = items_mod._floor_band_tier(int(getattr(m, 'peak_floor', 1) or 1)) or 1
+        if self.quiz.one_question(tier):
+            family_lore_mod.record_study(p, kind)
+            family_lore_mod.news(p)                 # told, as the game tells it
+            self.fs['studies'] = self.fs.get('studies', 0) + 1
+        family_edges_mod.drain(p)                   # no log to print the lines to
 
     def _on_death(self):
         """Permadeath in the game. Here the death is booked and a 'ghost'
@@ -1929,6 +1971,12 @@ class Run:
                                [fresh_monster(m, self.knobs, self.floor) for m in g])
             groups = out
         random.shuffle(groups)
+        if self.knobs['families']:
+            # Beast-Friend / Entertaining Angels: lesser members arrive calm
+            # and leave the hero be unless he strikes first; he lets them be.
+            family_edges_mod.calm_arrivals(p, [m for g in groups for m in g])
+            groups = [[m for m in g if not m.__dict__.get('_bribed')] for g in groups]
+            groups = [g for g in groups if g]
         self.floor_alive = sum(len(g) for g in groups)
 
         # loot is found as the floor is explored: spread it over the groups

@@ -101,13 +101,21 @@ class FamilyMixin:
             self._family_popup(popup_title, popup_lines)
 
     def _family_tier_popup_lines(self, fid, tier) -> list:
+        """A tier popup's body: its lead line, each technique as "Name: what
+        it does" (a blank line between: the popup joins touching lines into
+        one paragraph), and the tier's Field Note when it is written."""
         entry = family_lore.tier_entry(fid, tier)
         lines = []
+        lead = family_lore.popup_lead(fid, tier)
+        if lead:
+            lines += [lead, '']
         for a in entry.get('abilities', ()) or ():
-            lines += [a.get('name', ''), a.get('text', '')]
+            lines += [f"{a.get('name', '')}: {a.get('text', '')}", '']
         note = str(entry.get('field_note', '') or '').strip()
         if note:
-            lines += ['', f'"{note}"']
+            lines += [f'"{note}"']
+        while lines and lines[-1] == '':
+            lines.pop()
         return lines
 
     def _family_popup(self, title: str, lines: list) -> None:

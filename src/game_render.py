@@ -1033,21 +1033,63 @@ class RenderMixin:
             screen.blit(hint, (header.centerx - hint.get_width() // 2,
                                layout.WINDOW_H - margin - hint.get_height()))
 
-    def _monster_lore_rows(self, limit: int) -> tuple:
-        """The @ sheet's Monster Lore lines, at most `limit`, and how many
-        more there are: "Restless Dead: Lore (Grave-Salt)", highest tier
-        first; a completed circle and the Loremaster title come first."""
+    def _monster_lore_rows(self) -> list:
+        """The @ sheet's Monster Lore entries, as (head, detail) pairs: the
+        Loremaster title and completed circles first, then each family the
+        hero knows, highest tier first ("Restless Dead" over "Lore:
+        Grave-Salt"). The caller draws as many as fit, then "+N more"."""
         import family_lore
         p = self.player
-        lines = []
+        rows = []
         if family_lore.is_loremaster(p):
-            lines.append("Loremaster")
+            rows.append(("Loremaster", ''))
         for cid in family_lore.complete_circles(p):
             c = family_lore.circles().get(cid) or {}
-            lines.append(f"{c.get('name', '')}: {(c.get('boon') or {}).get('name', '')}")
+            rows.append((c.get('name', ''), (c.get('boon') or {}).get('name', '')))
         for short, tier_name, names in family_lore.lore_rows(p):
-            lines.append(f"{short}: {tier_name}" + (f" ({', '.join(names)})" if names else ''))
-        return lines[:limit], max(0, len(lines) - limit)
+            rows.append((short, f"{tier_name}: {', '.join(names)}" if names else tier_name))
+        return rows
+
+    def _draw_monster_lore(self, text, body, y, font, head_font, lh, reserve) -> int:
+        """Draw the Monster Lore block from `y` and return the new y. Each
+        entry is its head (a family and its tier) and, when it has
+        techniques, a faded detail, both WRAPPED to the panel (never cut
+        short); entries stop while `reserve` px are still free below, and
+        the rest are counted in "+N more"."""
+        from text_layout import wrap_lines
+        text("Monster Lore", head_font, FP.GOLD_BRIGHT, body.x, y)
+        y += lh
+        limit = body.bottom - reserve
+        rows = self._monster_lore_rows()
+        if not rows:
+            hint = wrap_lines("None yet. Study corpses to learn their families.", body.w, font)
+            if y + lh * len(hint) > limit:
+                hint = ["None yet."]
+            for line in hint:
+                text(line, font, FP.FADED_TEXT, body.x, y)
+                y += lh
+            return y
+        indent = S(12)
+        shown = 0
+        for head, detail in rows:
+            lines = [(ln, FP.BODY_TEXT, 0) for ln in wrap_lines(head, body.w, font)]
+            if detail:
+                lines += [(ln, FP.FADED_TEXT, indent)
+                          for ln in wrap_lines(detail, body.w - indent, font)]
+            more_line = lh if shown < len(rows) - 1 else 0
+            if shown and y + lh * len(lines) + more_line > limit:
+                break
+            for ln, col, dx in lines:
+                text(ln, font, col, body.x + dx, y)
+                y += lh
+            shown += 1
+        if shown < len(rows):
+            more = f"+{len(rows) - shown} more (B, then Tab: Families)"
+            if font.size(more)[0] > body.w:
+                more = f"+{len(rows) - shown} more"
+            text(more, font, FP.FADED_TEXT, body.x, y)
+            y += lh
+        return y
 
     def _charsheet_kit_panels(self, p, panel, row_rect, chip, bar, text, wrapped,
                               item_color, display_item, ability_lines, tier_lines,
@@ -1124,8 +1166,8 @@ class RenderMixin:
             name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
             active.append((f"{name} {dur}" if dur > 0 else name, col))
         chip_h = lh + S(6)
-        lore_rows, lore_more = self._monster_lore_rows(2)
-        lore_h = (2 + len(lore_rows) + (1 if lore_more else 0)) * (lh + S(4)) + S(6)
+        # Room kept for Monster Lore: its heading and one entry (two lines).
+        lore_h = 3 * (lh + S(4)) + S(6)
         room = max(0, (body.bottom - y - 2 * (lh + S(4)) - lh - lore_h) // (chip_h + S(4)))
         shown = active[:max(1, room)] if active else []
         for label, col in shown:
@@ -1144,17 +1186,9 @@ class RenderMixin:
         y += S(6)
         # Monster Lore: the families the hero knows and the techniques they
         # give him (src/family_lore.py lore_rows), with "+N more".
-        text("Monster Lore", f16b, FP.GOLD_BRIGHT, body.x, y)
-        y += lh + S(4)
-        if not lore_rows:
-            text("None yet. Study corpses to learn their families.", f16, FP.FADED_TEXT, body.x, y)
-            y += lh + S(4)
-        for line in lore_rows:
-            text(fit_text(line, f16, body.w), f16, FP.BODY_TEXT, body.x, y)
-            y += lh + S(4)
-        if lore_more:
-            text(f"+{lore_more} more (B, then Tab: Families)", f16, FP.FADED_TEXT, body.x, y)
-            y += lh + S(4)
+        _res_n = max(1, len(getattr(p, 'resistances', {}) or {}))
+        y = self._draw_monster_lore(text, body, y, f16, f16b, lh + S(4),
+                                    reserve=(1 + _res_n) * (lh + S(4)) + S(6))
         y += S(6)
         text("Resistances", f16b, FP.GOLD_BRIGHT, body.x, y)
         y += lh + S(4)
@@ -1475,16 +1509,9 @@ class RenderMixin:
                     line_h=12, max_lines=1)
         y += S(62)
         # Monster Lore (src/family_lore.py lore_rows), with "+N more".
-        lore_rows, lore_more = self._monster_lore_rows(2)
-        text("Monster Lore", font_bold, FP.GOLD_BRIGHT, body.x, y)
-        y += S(22)
-        for line in (lore_rows or ["None yet. Study corpses to learn their families."]):
-            text(fit_text(line, font_small, body.w), font_small,
-                 FP.BODY_TEXT if lore_rows else FP.FADED_TEXT, body.x, y)
-            y += S(19)
-        if lore_more:
-            text(f"+{lore_more} more", font_small, FP.FADED_TEXT, body.x, y)
-            y += S(19)
+        _res_n = min(5, max(1, len(getattr(p, 'resistances', {}) or {})))
+        y = self._draw_monster_lore(text, body, y, font_small, font_bold, S(21),
+                                    reserve=S(22) + _res_n * S(21))
         y += S(6)
         text("Resistances", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += S(22)
@@ -8862,8 +8889,8 @@ class RenderMixin:
                         else f"Not yet known ({family_lore.progress(self.player, fid)['line']})")
             if not entry.get('_known', True):
                 fid = family_lore.family_of(entry)
-                return (f"{family_lore.short_name(fid)} / not yet studied" if fid
-                        else "Not yet studied")
+                return (f"Unstudied: {family_lore.short_name(fid)}" if fid
+                        else "Unstudied")
             hp = entry.get('hp', entry.get('max_hp', '?'))
             min_lvl = entry.get('min_level', '?')
             return f"HP {hp} / min level {min_lvl}"
@@ -9767,7 +9794,7 @@ class RenderMixin:
             ("Items", [
                 ("E", "Equip menu", FP.BODY_TEXT),
                 ("X", "Examine item", FP.BODY_TEXT),
-                ("I", "Identify / study corpse", FP.BODY_TEXT),
+                ("I", "Identify or study", FP.BODY_TEXT),
                 ("H", "Harvest corpse", FP.BODY_TEXT),
                 ("C", "Cook menu", FP.BODY_TEXT),
                 ("D", "Drop, gold / use tile", FP.BODY_TEXT),

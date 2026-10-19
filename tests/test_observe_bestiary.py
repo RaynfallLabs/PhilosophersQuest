@@ -192,7 +192,7 @@ def test_a_kind_only_seen_has_a_short_page_in_the_bestiary():
     assert any(' of ' in t and ' to Recognise' in t for t in lines)     # the progress line
     joined = ' '.join(lines)
     assert 'HP' not in joined and 'Lore' not in joined and 'Bite' not in joined
-    assert 'not yet studied' in g._encyclopedia_entry_brief('bestiary', entry)
+    assert g._encyclopedia_entry_brief('bestiary', entry).startswith('Unstudied')
 
 
 def test_o_on_an_unseen_invisible_monster_never_opens_its_page():

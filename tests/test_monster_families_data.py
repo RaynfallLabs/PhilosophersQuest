@@ -83,7 +83,10 @@ def test_thresholds_are_the_ones_given():
         'dragons': [3, 6, 10, 13, 17], 'giants': [3, 6, 9, 12, 16], 'ghosts': [3, 6, 9, 12, 15],
         'aberrations': [2, 5, 8, 11, 14], 'mortals': [2, 5, 8, 11, 13],
         'goblinkin': [2, 4, 7, 10, 13], 'constructs': [2, 4, 7, 10, 12],
-        'legend': [2, 4, 7, 9, 12], 'vampires_liches': [2, 5, 8, 11, 14],
+        'legend': [2, 4, 7, 9, 12],
+        # re-derived by the same rule (membership 28 against the draft's 21):
+        # 19.0 kinds a run over 12 seeds
+        'vampires_liches': [2, 5, 8, 10, 13],
         'elementals': [2, 4, 6, 8, 10], 'serpents': [2, 3, 5, 7, 9],
         'great_beasts': [2, 3, 5, 7, 8], 'fair_folk': [2, 3, 5, 6, 8], 'vermin': [2, 3, 5, 6, 8],
     }

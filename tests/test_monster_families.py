@@ -61,6 +61,22 @@ def _to_tier(p, fid, t, exclude=()):
     assert family_lore.tier(p, fid) == t, (fid, family_lore.tier(p, fid))
 
 
+def _param(aid, effect, key):
+    """A technique's number, read from the data (the balance pass tunes it)."""
+    for f in family_lore.families().values():
+        for t in f['tiers']:
+            for a in t['abilities']:
+                if a['id'] == aid:
+                    for part in [a] + list(a.get('also', ())):
+                        if part['effect'] == effect:
+                            return part['params'][key]
+    raise KeyError(aid)
+
+
+def _circle_param(cid, key):
+    return family_lore.circles()[cid]['boon']['params'][key]
+
+
 def _player_at(x=10, y=10):
     p = Player()
     p.x, p.y = x, y
@@ -177,7 +193,7 @@ def test_a_circle_is_worked_out_from_the_tiers_and_told_once():
     assert ('circle', 'grave_watch', None) in news
     assert ('circle', 'grave_watch', None) not in family_lore.news(p)
     # Vigil: necrotic and drain hurt 20% less, whoever deals them.
-    assert family_edges.any_damage_mult(p, 'necrotic') == 0.8
+    assert family_edges.any_damage_mult(p, 'necrotic') == _circle_param('grave_watch', 'mult') < 1
     assert family_edges.any_damage_mult(p, 'fire') == 1.0
 
 
@@ -210,13 +226,15 @@ def test_save_bonus_is_four_against_its_family_only(monkeypatch):
     p = _player_at()
     _to_tier(p, 'restless_dead', 3)
     ghoul, imp = _mon('ghoul'), _mon('imp')
-    assert family_edges.save_bonus(p, ghoul, 'paralyzed') == 4
+    ward = _param('restless_dead_grave_salt', 'save_bonus', 'amount')
+    assert ward > 0
+    assert family_edges.save_bonus(p, ghoul, 'paralyzed') == ward
     assert family_edges.save_bonus(p, ghoul, 'confused') == 0
     assert family_edges.save_bonus(p, imp, 'paralyzed') == 0
     # Seeded: a roll that fails by two passes with the ward.
     dc = 15
     mod = (p.CON - 10) // 2
-    roll_needed = dc - mod - p.save_bonus_for('CON') - 2
+    roll_needed = dc - mod - p.save_bonus_for('CON') - ward
     monkeypatch.setattr(random, 'randint', lambda a, b: roll_needed)
     p.status_effects.clear()
     applied, _ = status_effects.apply_debuff_with_save(p, 'paralyzed', 3, dc, source=imp)
@@ -231,10 +249,11 @@ def test_the_ward_sits_outside_the_save_cap():
     p._save_bonus = {'all': 9}
     assert p.save_bonus_for('CON') == 5
     _to_tier(p, 'restless_dead', 3)
-    assert family_edges.save_bonus(p, _mon('ghoul'), 'paralyzed') == 4   # on top of the 5
+    assert family_edges.save_bonus(p, _mon('ghoul'), 'paralyzed') == \
+        _param('restless_dead_grave_salt', 'save_bonus', 'amount')       # on top of the 5
 
 
-def test_no_save_effects_wear_off_twice_as_fast():
+def test_no_save_effects_wear_off_faster():
     import status_effects
     p = _player_at()
     rat = _mon('giant_rat')
@@ -244,7 +263,11 @@ def test_no_save_effects_wear_off_twice_as_fast():
     _to_tier(p, 'vermin', 3)
     status_effects.apply_debuff_with_save(p, 'poisoned', 10, 12, source=rat)
     warded = p.status_effects.get('poisoned')
-    assert warded <= plain // 2 + 1 and warded < plain
+    share = _param('vermin_web_and_plague', 'duration_mult', 'mult')
+    ward = _param('vermin_web_and_plague', 'save_bonus', 'amount')
+    assert 0 < share < 1
+    assert warded == max(1, max(1, round(10 * share)) - p.save_bonus_for('CON') - ward)
+    assert warded < plain
 
 
 def test_duration_zero_means_it_never_takes_hold():
@@ -274,11 +297,14 @@ def test_resist_damage_the_strongest_one_wins():
     drake = _mon('drake_fire')
     assert family_edges.incoming_damage_mult(p, drake, 'fire') == 1.0
     _to_tier(p, 'dragons', 3)
-    assert family_edges.incoming_damage_mult(p, drake, 'fire') == 0.8
+    assert family_edges.incoming_damage_mult(p, drake, 'fire') == \
+        _param('dragons_dragon_ward', 'resist_damage', 'mult') < 1
     assert family_edges.incoming_damage_mult(p, drake, 'slash') == 1.0
     q = _player_at()
     _to_tier(q, 'elementals', 5)
-    assert family_edges.incoming_damage_mult(q, _mon('fire_elemental'), 'fire') == 0.5
+    seal = _param('elementals_solomons_seal', 'resist_damage', 'mult')
+    assert seal < _param('elementals_ward_of_elements', 'resist_damage', 'mult')
+    assert family_edges.incoming_damage_mult(q, _mon('fire_elemental'), 'fire') == seal
 
 
 def test_drain_heal_block_stops_a_vampire_feeding(monkeypatch):
@@ -333,9 +359,10 @@ def test_damage_mult_shows_in_the_strike_preview():
     imp = _mon('imp')
     imp.hp = imp.max_hp = 10 ** 6
     before = combat.strike_preview(p, imp, 6)
-    _to_tier(p, 'demons', 4)                                    # True Names: +15%
+    _to_tier(p, 'demons', 4)                                    # True Names
     after = combat.strike_preview(p, imp, 6)
-    assert 1.12 <= after / before <= 1.18
+    want = _param('demons_true_names', 'damage_mult', 'mult')
+    assert abs(after / before - want) <= 0.04
     goblin = _mon('goblin')
     goblin.hp = goblin.max_hp = 10 ** 6
     assert family_edges.damage_mult(p, goblin, 6, p.weapon) == 1.0  # another family
@@ -345,10 +372,12 @@ def test_damage_mult_needs_its_chain_and_counts_big_targets():
     p = _sword_player()
     _to_tier(p, 'giants', 5)
     ogre = _mon('ogre')
-    assert family_edges.damage_mult(p, ogre, 4, p.weapon) == 1.0
-    assert family_edges.damage_mult(p, ogre, 5, p.weapon) == 1.2
+    aid = 'giants_bigger_they_are'
+    assert family_edges.damage_mult(p, ogre, _param(aid, 'damage_mult', 'chain_min') - 1,
+                                    p.weapon) == 1.0
+    assert family_edges.damage_mult(p, ogre, 5, p.weapon) == _param(aid, 'damage_mult', 'mult')
     ogre.footprint = (2, 2)
-    assert family_edges.damage_mult(p, ogre, 5, p.weapon) == 1.3
+    assert family_edges.damage_mult(p, ogre, 5, p.weapon) == _param(aid, 'damage_mult', 'big_mult')
 
 
 def test_damage_mult_weapon_conditions():
@@ -356,14 +385,18 @@ def test_damage_mult_weapon_conditions():
     p = _player_at()
     _to_tier(p, 'shapeshifters', 4)                             # Silvered
     wolf = _mon('werewolf')
-    assert family_edges.damage_mult(p, wolf, 3, instantiate_weapon('longsword', 'iron')) == 1.1
-    assert family_edges.damage_mult(p, wolf, 3, instantiate_weapon('longsword', 'silver')) == 1.3
+    aid = 'shapeshifters_silvered'
+    assert family_edges.damage_mult(p, wolf, 3, instantiate_weapon('longsword', 'iron')) == \
+        _param(aid, 'damage_mult', 'mult')
+    assert family_edges.damage_mult(p, wolf, 3, instantiate_weapon('longsword', 'silver')) == \
+        _param(aid, 'damage_mult', 'weapon_mult')
     q = _player_at()
     _to_tier(q, 'birds', 4)                                     # Falconer's Eye
     harpy = _mon('harpy')
+    eye = _param('birds_falconers_eye', 'damage_mult', 'mult')
     assert family_edges.damage_mult(q, harpy, 3, None) == 1.0
-    assert family_edges.damage_mult(q, harpy, 3, None, ranged=True) == 1.2
-    assert family_edges.damage_mult(q, harpy, 3, None, thrown=True) == 1.2
+    assert family_edges.damage_mult(q, harpy, 3, None, ranged=True) == eye > 1.0
+    assert family_edges.damage_mult(q, harpy, 3, None, thrown=True) == eye
 
 
 def test_damage_mult_never_on_an_unseen_target():
@@ -376,9 +409,10 @@ def test_damage_mult_never_on_an_unseen_target():
 
 def test_weakness_amp_only_on_a_weakness():
     p = _player_at()
-    _to_tier(p, 'restless_dead', 4)                             # Bonebreaker 1.25
+    _to_tier(p, 'restless_dead', 4)                             # Bonebreaker
     sk = _mon('skeleton')
-    assert family_edges.weakness_amp(p, sk, True) == 1.25
+    assert family_edges.weakness_amp(p, sk, True) == _param('restless_dead_bonebreaker',
+                                                            'weakness_amp', 'mult') > 1.0
     assert family_edges.weakness_amp(p, sk, False) == 1.0
 
 
@@ -395,7 +429,7 @@ def test_extra_seconds_reach_the_combat_clock():
     plain = got['extra_seconds']
     _to_tier(p, 'giants', 3)                                    # Steady Hand
     combat.player_attack(p, ogre, Q(), lambda *a, **k: None)
-    assert got['extra_seconds'] == plain + 3
+    assert got['extra_seconds'] == plain + _param('giants_steady_hand', 'extra_seconds', 'seconds')
 
 
 def test_opening_chain_on_the_first_blow_only():
@@ -469,17 +503,18 @@ def test_execute_ends_a_lesser_foe_and_hits_a_named_one_harder():
     p = _player_at()
     _to_tier(p, 'vampires_liches', 5)                           # Stake Through the Heart
     v = _mon('vampire')
-    v.hp = int(v.max_hp * 0.25)
-    assert family_edges.after_blow(p, v, 9, 1)['executed'] is None   # chain too short
-    out = family_edges.after_blow(p, v, 10, 1)
+    need = _param('vampires_liches_stake', 'execute', 'chain_min')
+    v.hp = int(v.max_hp * _param('vampires_liches_stake', 'execute', 'hp_below') * 0.8)
+    assert family_edges.after_blow(p, v, need - 1, 1)['executed'] is None   # chain too short
+    out = family_edges.after_blow(p, v, need, 1)
     assert out['executed'] is not None and not v.alive
     neb = _mon('neferkaptah_risen')                             # proper_noun, not a named FOE
     lord = _mon('vampire_lord')
     lord.is_mini_boss = True
-    lord.hp = int(lord.max_hp * 0.2)
-    assert family_edges.execute(p, lord, 12) is None
-    assert family_edges.execute_named_mult(p, lord, 12) == 1.25
-    assert family_edges.execute_named_mult(p, lord, 5) == 1.0
+    lord.hp = int(lord.max_hp * _param('vampires_liches_stake', 'execute', 'hp_below') * 0.8)
+    assert family_edges.execute(p, lord, need) is None
+    assert family_edges.execute_named_mult(p, lord, need) == 1.25
+    assert family_edges.execute_named_mult(p, lord, need - 1) == 1.0
     assert neb.alive
 
 
@@ -491,7 +526,10 @@ def test_turn_sends_lesser_members_in_sight_fleeing_never_a_named_foe():
     boss.is_mini_boss = True
     imp = _mon('imp', 6, 6)
     vis = {(3, 3), (4, 4), (5, 3), (6, 6)}
-    family_edges.after_blow(p, a, 8, 5, monsters=[a, b, c, boss, imp], visible=vis)
+    need = _param('restless_dead_turn_the_dead', 'turn', 'chain_min')
+    family_edges.after_blow(p, a, need - 1, 5, monsters=[a, b, c, boss, imp], visible=vis)
+    assert not b.has_effect('feared')                           # chain too short
+    family_edges.after_blow(p, a, need, 5, monsters=[a, b, c, boss, imp], visible=vis)
     assert a.has_effect('feared') and b.has_effect('feared')
     assert not c.has_effect('feared')                           # out of sight
     assert not boss.has_effect('feared')                        # named foes stand
@@ -500,11 +538,15 @@ def test_turn_sends_lesser_members_in_sight_fleeing_never_a_named_foe():
 
 def test_calm_on_arrival_and_its_rail():
     p = _player_at()
-    _to_tier(p, 'celestials', 5)                                # Entertaining Angels: all
+    _to_tier(p, 'celestials', 5)                                # Entertaining Angels
     peg = _mon('pegasus')
     angel = _mon('corrupted_angel')
     angel.is_boss = True
-    family_edges.calm_arrivals(p, [peg, angel])
+
+    class AlwaysCalm:
+        def random(self):
+            return 0.0                                          # every roll succeeds
+    family_edges.calm_arrivals(p, [peg, angel], rng=AlwaysCalm())
     assert peg.has_effect('charmed') and peg.__dict__.get('_bribed')
     assert not angel.has_effect('charmed')
     peg.take_damage(1)                                          # a blow breaks the calm
@@ -647,7 +689,7 @@ def test_tier_news_messages_popups_and_journal():
         g.state = STATE_LORE
         _study(g, k)
     assert g.state == STATE_STORY_POPUP and g.popup_data['title'] == 'LORE OF THE VERMIN AND SPIDERS'
-    assert 'Web and Plague' in g.popup_data['lines']
+    assert any(line.startswith('Web and Plague: ') for line in g.popup_data['lines'])
     assert g.popup_next_state == STATE_LORE                     # back to the lore page
     lines = [e.get('text') for e in chronicle.entries_of(g)]
     assert any('the vermin and spiders apart' in (t or '') for t in lines)
@@ -720,3 +762,15 @@ def test_the_qa_key_raises_a_tier_only_for_the_qa_build():
     g._qa_family_tier()
     assert all(v == 1 for v in family_lore.tiers(g.player).values())
     assert len(family_lore.tiers(g.player)) == 22
+
+
+def test_old_saved_monsters_and_corpses_find_their_family_by_kind():
+    from items import Corpse
+    m = _mon('ghoul')
+    del m.__dict__['family']                    # a monster pickled before families
+    assert m.family == 'restless_dead'
+    c = Corpse('ghoul', 'ghoul', 0, 0)
+    assert 'family' not in c.__dict__
+    assert family_lore.family_of(c) == 'restless_dead'
+    from bones import spawn_ghost  # noqa: F401  (the Bones ghost is a Ghost)
+    assert family_lore.family_of('player_ghost') == 'ghosts'

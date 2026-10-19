@@ -451,7 +451,7 @@ state; column 4 is the `_draw_<state>` method.
 | `STATE_LORE` | lore trigger | `_lore_input` | `_draw_lore_dossier_screen` |
 | `STATE_HINT` | Recall Lore | any-key dismiss | `_draw_hint_screen` |
 | `STATE_EXAMINE` | `X` | `_examine_menu_input` | `_draw_examine_menu` |
-| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser`; categories a-l (Bestiary ... Treasure, and **Wonders**: the six Soul Spheres once their kind is known and the Draught of Mimir's Well once held, with art and lore, `Game._wonder_entries` / `_encyclopedia_wonder_lines`). Esc steps back: article, list, categories, play (an O-opened Bestiary page goes straight back to play) |
+| `STATE_ENCYCLOPEDIA` | `B` | `_encyclopedia_input` | `_draw_encyclopedia_browser`; in the Bestiary, Tab switches Kinds / Families (`Game._bestiary_view`; family pages from `_family_page_lines`, a kind not yet identified shows a short page: `_bestiary_short_lines`); categories a-l (Bestiary ... Treasure, and **Wonders**: the six Soul Spheres once their kind is known and the Draught of Mimir's Well once held, with art and lore, `Game._wonder_entries` / `_encyclopedia_wonder_lines`). Esc steps back: article, list, categories, play (an O-opened Bestiary page goes straight back to play) |
 | `STATE_HACK_REALITY` | hack unlock | any-key | `_draw_hack_reality_screen` |
 | `STATE_XYZZY_INPUT` / `_CONFIRM` | backquote | `_xyzzy_input` / `_xyzzy_confirm_input` | `_draw_xyzzy_input` / `_draw_xyzzy_confirm` |
 | `STATE_QUIRKS` | `W` | `_quirks_input` | `_draw_quirks_screen` |
@@ -534,7 +534,7 @@ Returns early on `sleeping` / `paralyzed` (turn passes).
 | `v` | active powers menu |
 | `` ` `` | xyzzy input |
 | `w` | quirks progress |
-| `o` | observe cursor; Enter on a creature the hero knows (it has a Bestiary page) opens that page in the Encyclopedia (`Game._open_bestiary_page`), Esc returns to play; an unknown, unseen invisible or disguised creature gets the plain look |
+| `o` | observe cursor; Enter on a creature the hero has IDENTIFIED (studied, opened by the Book of Thoth or Omnisight, or its monster family at tier 1 or more: `family_lore.has_page`) opens its Bestiary page (`Game._open_bestiary_page`) and the look line names its family; Esc returns to play. A kind only seen gets the plain look plus "You don't know this creature yet. Study its corpse."; an unseen invisible or disguised creature gets the plain look (unless the hero's own family technique senses it: `unseen.senses`) |
 | `k` | kit: compare, then act on the selected item (E/D/I/X, see §22) |
 | `j` | discoveries |
 | `;` | Missed Questions (review this run's missed questions) |

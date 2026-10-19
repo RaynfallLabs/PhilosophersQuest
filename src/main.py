@@ -698,6 +698,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self.add_message("Find the Philosopher's Stone and escape!", 'info')
         # Journal: entering the dungeon
         self._chron('milestone', "Descended into the dungeon. The air smells like dust and old stone. The Stone is somewhere below. I need to find it and get back out.")
+        # A secret build's head start in monster lore (Geralt's medallion)
+        # speaks on the first floor too, like every later arrival.
+        self._family_arrival(first_visit=True)
 
     def _apply_save_affinity(self):
         """Set the player's innate save affinity from the build name. Idempotent:

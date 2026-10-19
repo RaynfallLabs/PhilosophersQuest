@@ -355,6 +355,8 @@ def sheet(data: dict) -> str:
             '|---|---|---|---|---|']
     for mid, (fam, alt, why) in sorted(FINAL.items(), key=lambda kv: (kv[1][0], kv[0])):
         name = data.get(mid, {}).get('name', mid)
+        name = ' '.join(w[:1].upper() + w[1:] if w not in ('of', 'the', 'and') else w
+                        for w in name.split(' '))
         rows.append(f"| {mid} | {name} | {names.get(fam, fam)} | {names.get(alt, alt)} | {why} |")
     return '\n'.join(rows)
 

@@ -365,7 +365,8 @@ def grant_identified(game, item) -> None:
 # not stamped onto items when the kind is learnt. Forgetting the kind (a
 # cursed Scroll of Identify, the Book of Thoth's curse) un-knows every copy
 # the same way. Treasure keeps its own rules (known by sight, valued by a
-# trader: treasure.py) and a corpse its own (Player.lore_known_monster_ids).
+# trader: treasure.py) and a corpse its own (its id_level, set for every kind
+# in Player.studied_monster_ids: game_combat._make_corpse).
 
 def kind_is_known(player, item) -> bool:
     """True when the hero knows this item's kind, so every copy of it is
