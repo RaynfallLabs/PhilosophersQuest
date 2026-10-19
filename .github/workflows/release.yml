@@ -35,7 +35,10 @@ jobs:
     name: Version check + test suite
     # Windows: the platform the suite is written and run on day to day.
     runs-on: windows-latest
-    timeout-minutes: 40
+    # The full suite runs serially (no xdist: a few tests are still order-
+    # dependent under parallel runs) and takes about 40 minutes on a hosted
+    # runner with the slow UI gates, so the job gets headroom.
+    timeout-minutes: 75
     env:
       SDL_VIDEODRIVER: dummy
       SDL_AUDIODRIVER: dummy
