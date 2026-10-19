@@ -2969,16 +2969,15 @@ class RenderMixin:
         from fantasy_ui import display_text
         pad = S(10)
         box = pygame.Rect(rect.x, rect.y, rect.w, rect.h)
-        shade = pygame.Surface((box.w, box.h), pygame.SRCALPHA)
-        shade.fill((18, 14, 10, 236))
-        self.screen.blit(shade, box.topleft)
+        # Opaque: the question underneath must not show through the lesson.
+        pygame.draw.rect(self.screen, (18, 14, 10), box, border_radius=S(6))
         pygame.draw.rect(self.screen, FP.GOLD, box, max(1, S(2)), border_radius=S(6))
         title = self.font_sm.render("Remember", True, FP.GOLD_BRIGHT)
         self.screen.blit(title, (box.x + pad, box.y + pad // 2))
         body_top = box.y + pad // 2 + title.get_height() + S(4)
         avail = pygame.Rect(box.x + pad, body_top, box.w - 2 * pad, box.bottom - body_top - pad // 2)
         text = display_text(lesson)
-        for size in (22, 20, 18, 16, 14):
+        for size in (22, 20, 18, 16):     # never below the 16 px text floor
             fnt = get_font('body', size)
             lines = self._ui_text_lines(text, fnt, avail.w)
             if len(lines) * (fnt.get_linesize() + S(2)) <= avail.h:

@@ -598,6 +598,10 @@ def settle_quiz(g, max_steps=40):
     for _ in range(max_steps):
         if g.quiz_engine.state != QuizState.RESULT:
             return
+        if getattr(g.quiz_engine, '_result_hold', False):
+            # An untimed wrong answer waits on its lesson line for a key.
+            g.quiz_engine._result_hold_until = 0.0
+            g.quiz_engine.release_result_hold()
         g.update(0.25)
 
 
