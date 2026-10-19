@@ -100,7 +100,6 @@ ALLOW: dict[tuple[str, str], str] = {
     ('data/items/shield.json', 'every act of their'): "their = 'the dead'",
     ('data/monsters.json', 'anyone who enters their'): 'their = the dead soldiers of the line',
     ('data/monsters.json', 'everyone but themselves'): 'themselves = the tengu',
-    (_C + 'animal.json', 'anyone who gets too close to their'): 'their = the birds',
     (_C + 'cooking.json', 'each region, families have their'): 'their = families',
     (_C + 'history.json', 'each representing a specific consonant sound of their'): 'their = the people who made the script',
     (_C + 'history.json', 'each town, craftsmen organized themselves'): 'themselves = craftsmen',
