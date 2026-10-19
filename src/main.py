@@ -8949,7 +8949,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             for k, v in all_defs.items():
                 if k in known_kinds:
                     entries.append({'_id': k, **v, '_known': self._family_has_page(k)})
-            entries.sort(key=lambda e: e.get('name', e['_id']))
+            # (case-blind: monsters.json spells some names in lower case,
+            # which sorted them after every capitalised one)
+            entries.sort(key=lambda e: str(e.get('name', e['_id'])).lower())
             self.encyclopedia_entries = entries
         else:
             path = os.path.join(base, 'items', f'{category}.json')

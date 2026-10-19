@@ -1077,7 +1077,7 @@ class RenderMixin:
                 lines += [(ln, FP.FADED_TEXT, indent)
                           for ln in wrap_lines(detail, body.w - indent, font)]
             more_line = lh if shown < len(rows) - 1 else 0
-            if shown and y + lh * len(lines) + more_line > limit:
+            if y + lh * len(lines) + more_line > limit:
                 break
             for ln, col, dx in lines:
                 text(ln, font, col, body.x + dx, y)
@@ -1166,8 +1166,10 @@ class RenderMixin:
             name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
             active.append((f"{name} {dur}" if dur > 0 else name, col))
         chip_h = lh + S(6)
-        # Room kept for Monster Lore: its heading and one entry (two lines).
-        lore_h = 3 * (lh + S(4)) + S(6)
+        # Room kept for Monster Lore: its heading, one entry (up to three
+        # wrapped lines) and "+N more"; just the heading and "None yet" when
+        # the hero knows no family.
+        lore_h = (5 if self._monster_lore_rows() else 3) * (lh + S(4)) + S(6)
         room = max(0, (body.bottom - y - 2 * (lh + S(4)) - lh - lore_h) // (chip_h + S(4)))
         shown = active[:max(1, room)] if active else []
         for label, col in shown:
@@ -1193,7 +1195,7 @@ class RenderMixin:
         text("Resistances", f16b, FP.GOLD_BRIGHT, body.x, y)
         y += lh + S(4)
         res = list(getattr(p, 'resistances', {}).items())
-        if not res:
+        if not res and y + lh <= body.bottom:
             text("None", f16, FP.FADED_TEXT, body.x, y)
         for dtype, mult in res:
             if y + lh > body.bottom:
