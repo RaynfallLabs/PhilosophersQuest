@@ -1,0 +1,17 @@
+{
+ "title": "Corwin / Cain, option B revised (not installed)",
+ "out": "CORWIN_B_REVISED.png",
+ "current_label": "B AS IT WAS (ROUND 2)",
+ "current": "_genart/heroes/corwin_2026_10_18/corwin2_B_right_long_cloak.png",
+ "current_says": "Brandon: \"his arrow is broken, and the stance for the legs is too straight\".",
+ "finalists": [
+  {"label": "B REVISED",
+   "file": "_genart/heroes/corwin_2026_10_18/corwin2_B2_revised.png",
+   "says": "One straight arrow, nock to steel head. Legs redrawn: front foot at the target, back foot planted across, front knee soft."}
+ ],
+ "beside": [
+  "assets/tiles/env/player_robyn.png",
+  "assets/tiles/env/player_dad.png",
+  "assets/tiles/env/player_odysseus.png"
+ ]
+}

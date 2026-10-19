@@ -38,6 +38,7 @@ Output goes to `_genart/` (not committed).
 | `must_show` | What makes it this creature and this tier. The reviewer checks each. |
 | `must_not_show` | What belongs to its relatives or to a mistake seen before. Also sent to the model as things to avoid. |
 | `body` | Optional. `"shapeless"` for anything with no head, feet or legs (a flame, slime, cloud, whirlwind, eyeball, pillar, swarm, serpent, floating orb). It swaps the fixed prompt wording, which otherwise says "head to the soles of its feet" and "weight on one leg" and so grows legs or a small man under such creatures. |
+| `action` | Optional. Replaces the fixed sentence asking for "a frozen frame of a fight: weight on one leg, body twisted". Use it for a pose that must be steady and grounded (an archer at full draw), which the fixed sentence turns into a lunge. |
 | `lift` | Optional number, default 1.0. Above 1 (try 1.3 to 1.6) brightens the midtones when the sprite is cut, for a dark thing that vanishes on the dark floor. It needs no redraw: change it and rerun with `--sheets-only`. |
 | `key` | The backdrop colour: `magenta`, `green` or `blue`. It must be a colour the creature does not have, or the cut-out eats part of it. `pipeline.py` refuses a brief whose `colours` name the key. |
 | `despill` | Optional, `true`, green key only. Before the cut, every figure pixel where green outweighs red and blue takes the colour of the nearest clean figure pixel, which removes the mint fringe that pale magic, mist or hair keeps on the green backdrop. Only for a figure with no green of its own. Like `lift`, it needs no redraw: rerun with `--sheets-only` (or `edit.py --cut-only`). |
@@ -58,8 +59,8 @@ Rules learned the hard way:
   four legs. State the body plan in the pose as well ("on two legs, leaning forward").
 - **No shadows.** The prompt asks for none and the key colour removes what remains.
 - **Never redraw Brandon's own portraits** (`player_ranger`, `player_wizard_f`,
-  `player_robyn`) unless he asks, and even then never install one before he has seen a
-  before/after and said yes.
+  `player_robyn`) unless he asks, and then never install one before he has seen a
+  before/after sheet and said yes (see "Redrawing a hero" at the end).
 
 ## What goes wrong, and the wording that stops it
 
@@ -905,3 +906,88 @@ Brandon: purple robes, no hat, wavy nearly black hair, "a phantom creature poppi
 - Before painting a quill, check what lies under it: where the arm's dark outline runs, a dark shaft disappears. Put the visible length where it crosses something pale (the creature), and keep the nib and glint there.
 - A dark quill held over a pale creature still vanishes at 64 px when only its feather shows. Paint it as one continuous dark diagonal from above the fist, through the grip, into the creature, then a gold nib pixel and a pale-gold glint (a centre pixel and three neighbours) where it touches.
 - A thin black tie on a white blouse cuts out grey or lilac when the sprite's 32 colours are shared with lilac magic. Repaint it with `touch` (a two-pixel knot, then one or two pixels wide) and turn its grey fringe back to the blouse's white.
+
+## Redrawing a hero for Brandon's approval (`hero_options.py`, `set_pick.py`)
+
+A hero sprite is never installed over until Brandon has seen a before/after and said yes. The
+options are drawn into `_genart/heroes/<name>_<date>/`, and a sheet is made at the project root:
+
+    <ComfyUI python> tools/content/genart/hero_options.py tools/content/genart/corwin_options_2.json
+
+It shows the sprite in the game now, the old painting, and each option at 6x, 64 px and 40 px
+on the floor tile and beside other heroes (Robyn, Dad, one more) at the same size. When he picks
+one, it goes in as a new candidate of the hero's own run and is installed alone:
+
+    <ComfyUI python> tools/content/genart/set_pick.py r01 player_ranger 4 --from <the option's png> --note "..." --install
+
+`set_pick.py` refuses to overwrite a different candidate, keeps the old note after the new one,
+and installs with `install_rest.py --only`, so `installed_rest.json` keeps every other id.
+
+### Lessons from the Corwin redraw (2026-10-18)
+
+Brandon: "a lithe young man with a bow and his stuffie (hard to see in current version)".
+
+- A toy held against the chest is lost at 64 px. A toy riding in a pack on his back, its head
+  and arms over his shoulder against the backdrop, reads at 64 px and at 40 px.
+- To make a toy look like a game creature, give klein that creature's painting as the second
+  reference in an edit of the picked draft ("it becomes a soft plush toy of the little fire
+  lizard in the second painting, sewn from felt ... its head seen from the side, its snout
+  pointing the way he faces"). It changed only the toy and kept the hero.
+- The pixel pass turns a felt plush back into a live lizard (teeth, a frog's grin, scales).
+  Weaker passes (0.25, 0.32, or cutting the draft itself) blurred the toy into an orange blob at
+  64 px. Keep 0.42 and set the toy's button eye by hand (`touch`: three outline-black pixels and
+  one warm-white glint), and paint a small felt flame on the tail tip if the pass ate it.
+- "Like a ripe pumpkin" for the toy's colour drew pumpkin ridges on its head; "bright, warm,
+  saturated orange" did not.
+- "A warm mid-brown bow, lighter than his leathers" came out golden orange, clashing with the
+  orange toy. "Dark chestnut-brown, never orange and never gold" still reads by its D shape.
+- "Hood lying down on his shoulders" drew the hood up in half the candidates; "with no hood:
+  his head is bare" did not.
+- A later edit step adding arrows to the toy's pack lost the toy's tail and flame and left dark
+  spikes behind it. One change per edit, and check the rest survived.
+- The pixel pass gave one hero red glowing eyes. Eyes are below a pixel at 64 px anyway: set
+  them by hand, and map the painting's eye position to the sprite with `convert.to_sprite`'s
+  geometry rather than guessing (a one-pixel slip puts an eye on the hair).
+
+Brandon rejected that first round: "it all looks silly and the bow is truncated or
+unrecognizable. Maybe a pose with an arrow nocked and drawn, the stuffie clearly hanging from his
+belt." What the second round learned:
+
+- The fixed action sentence ("a frozen frame of a fight, weight on one leg, body twisted") makes
+  a lunge. A brief's own `action` ("holds the draw steady and still for one breath before he
+  looses ... not lunging, leaping, crouching or twisting") gives a grounded full draw.
+- "He stands side-on to his target like a real archer, his chest turned toward the viewer, his
+  head turned to look along the arrow" with "the bow a single tall curved shape at the left side
+  of the picture, entirely in front of him" drew the classic archer. The drawing hand still lands
+  at the chest or chin rather than the cheek.
+- A pale cream string drawn across his chest cut out as white scratches over the body; a thin
+  light tan string reads as part of the bow.
+- klein fills the frame however the brief asks for space round the figure: 21 of 24 first
+  drafts had the bow's top tip cut by the frame. Check every candidate's picture for a figure
+  pixel within a few pixels of the frame and keep only the ones clear on every side. The
+  mechanical check passes up to 2% on the edge, which is enough to lose a bow tip.
+- A klein edit redraws a few per cent larger, so an edit of a clear picture can cut the tip off
+  again. `edit.py`'s `{"pad": 0.88}` step first shrinks the picture onto its own backdrop.
+- A klein edit removes a held or hung thing cleanly ("remove the orange stuffed toy hanging from
+  his belt completely; where it was, his trouser leg, his belt and his cloak are painted as they
+  would be").
+- A belt toy the model paints comes out 6 to 9 sprite pixels tall, and the pixel pass turns bright
+  orange felt into flames, whether painted, edited bigger or pasted onto the painting (`edit.py`'s
+  `paste` step). Pasted after the pixel pass it stayed a toy but was still too small to read.
+  What worked: remove the painted toy, then stamp a hand-set 13 x 15 plush on the sprite
+  (`plush.py`, the Emberpup's own colours), recorded in the brief as the edit's `touch` list.
+
+Brandon picked B, then: "his arrow is broken, and the stance for the legs is too straight."
+
+- An arrow drawn at full draw crosses the string, both hands and the bow arm, and the cut breaks
+  it into pieces with outline and backdrop between them. Draw the shaft by hand: one line from
+  the nock at the drawing hand over the bow hand's knuckles, the stave left whole where it
+  crosses, and a small steel head with an outline (`corwin2_b2`'s touch list).
+- A klein edit of the legs alone moves them very little: 6 of 12 seeds were nearly the old
+  pose. "Knees plainly bent, pushed forward a hand's width past the ankles; hips a little lower
+  and back" plus "front foot points straight at the target, back foot planted flat and turned
+  across, toes toward the viewer" gave the stance in one seed (106). For an archer seen side-on
+  with his chest to the viewer, the back knee bends toward the viewer and cannot show at 64 px.
+  The front knee bends toward the target, so it can be nudged one pixel that way by hand.
+- ComfyUI is deterministic here: running a three-step edit chain again from its brief gave the
+  same picture to the pixel.
