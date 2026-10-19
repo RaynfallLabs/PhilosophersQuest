@@ -974,20 +974,29 @@ class MenuMixin:
                and not isinstance(i, Corpse)
                and _needs_identify(i)
         ]
-        # Corpses on the current tile that haven't been identified yet.
+        # Corpses on the current tile that haven't been studied yet.
         # Flatten into ground_entries — no separate "CORPSES" section per
         # 2026-05-20 playtest feedback (felt redundant alongside "ON THE GROUND").
+        # A corpse of a kind the hero has studied is known, whatever its own
+        # id_level says (items.corpse_is_known: one study knows the kind), so
+        # it never asks again.
+        from items import corpse_is_known
         corpses = [
             i for i in self.ground_items
             if i.x == self.player.x and i.y == self.player.y
                and isinstance(i, Corpse)
-               and int(getattr(i, 'id_level', 0)) < 5
+               and not corpse_is_known(self.player, i)
         ]
+        # A corpse carried in the pack is studied the same way (it used to
+        # be listed nowhere: _needs_identify leaves corpses out).
+        carried_corpses = [i for i in self.player.inventory
+                           if isinstance(i, Corpse) and not corpse_is_known(self.player, i)]
         # Store as (item, is_ground, is_corpse) tuples.
         # Corpses now flagged is_ground=True so they share the ON THE GROUND
         # section with regular items.
         self.identify_menu_items = (
             [(i, False, False) for i in inv_items]
+            + [(i, False, True)  for i in carried_corpses]
             + [(i, True,  False) for i in ground_items]
             + [(i, True,  True)  for i in corpses]
         )

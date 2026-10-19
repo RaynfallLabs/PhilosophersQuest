@@ -625,12 +625,16 @@ def _family_ward(player, source, effect: str, gaze: bool) -> tuple[int, float]:
     +N on the save, outside the +5 cap of Player.save_bonus_for because it
     is earned against one family only, and a share of the duration (0.5:
     wears off twice as fast; 0: it never takes hold). A gaze also counts
-    the ward against the killing gaze. No source, no family: (0, 1.0)."""
+    the ward against the killing gaze. No source, no family ward; a
+    circle's boon (the Hellward Gate's Unbent Mind: "from anything") still
+    counts, so a confusion or fear with no monster behind it (a bad meal)
+    meets it too. family_edges.save_bonus gives only the circle part when
+    `source` is None."""
     try:
         import family_edges
     except ImportError:
         return 0, 1.0
-    bonus = family_edges.save_bonus(player, source, effect) if source is not None else 0
+    bonus = family_edges.save_bonus(player, source, effect)
     bonus += family_edges.save_bonus(player, source, 'gaze') if (gaze and source is not None) else 0
     share = family_edges.duration_mult(player, source, effect) if source is not None else 1.0
     return bonus, share

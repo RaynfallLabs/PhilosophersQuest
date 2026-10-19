@@ -60,6 +60,13 @@ class FamilyMixin:
             sections += 1
             return sections <= self.POPUP_SECTIONS
 
+        def subhead(title: str) -> list:
+            # A second piece of news under its own heading. Blank lines on
+            # both sides: the popup joins touching lines into one paragraph
+            # (it ran "HUNTER OF THE GORGONS AND BASILISKS You have learned
+            # how..."), and Title Case like the popup's own header.
+            return ['', self._family_subhead(title), '']
+
         for what, key, tier in news:
             if what == 'tier':
                 fid = key
@@ -73,7 +80,7 @@ class FamilyMixin:
                 if title and room():
                     popup_title = popup_title or title
                     if popup_lines:
-                        popup_lines += ['', title]
+                        popup_lines += subhead(title)
                     popup_lines += self._family_tier_popup_lines(fid, tier)
                     self.add_message(f"{proper_name(title.lower())}: "
                                      + ', '.join(a.get('name', '') for a in
@@ -89,9 +96,11 @@ class FamilyMixin:
                 if room():
                     popup_title = popup_title or head
                     if popup_lines:
-                        popup_lines += ['', head]
-                    popup_lines += [c.get('name', ''), '',
-                                    f"{boon.get('name', '')}: {boon.get('text', '')}"]
+                        # "Circle Complete: The Hero's Road", one heading.
+                        popup_lines += ['', f"{self._family_subhead(head)}: {c.get('name', '')}", '']
+                    else:
+                        popup_lines += [c.get('name', ''), '']
+                    popup_lines += [f"{boon.get('name', '')}: {boon.get('text', '')}"]
                 self.add_message(f"{c.get('name', '')} is complete: {boon.get('name', '')}.", 'loot')
             elif what == 'loremaster':
                 lm = family_lore.data().get('loremaster') or {}
@@ -102,7 +111,7 @@ class FamilyMixin:
                 if room():
                     popup_title = popup_title or title
                     if popup_lines:
-                        popup_lines += ['', title]
+                        popup_lines += subhead(title)
                     popup_lines += ["Five families of monster, known down to the last weakness.",
                                     "", "You have earned the title of Loremaster."]
                 self.add_message("You are a Loremaster now.", 'loot')
@@ -114,6 +123,12 @@ class FamilyMixin:
     # The most pieces of news one popup shows (more only arrive together from
     # the QA key); the rest are in the message log, the Journal and B, Tab.
     POPUP_SECTIONS = 3
+
+    @staticmethod
+    def _family_subhead(title: str) -> str:
+        """A popup title ("HUNTER OF THE GORGONS AND BASILISKS") as a heading
+        inside the body, in Title Case like the header and the log line."""
+        return proper_name(str(title or '').lower())
 
     def _family_tier_popup_lines(self, fid, tier) -> list:
         """A tier popup's body: its lead line, each technique as "Name: what
@@ -140,7 +155,7 @@ class FamilyMixin:
         study)."""
         if self.state == STATE_STORY_POPUP and isinstance(getattr(self, 'popup_data', None), dict) \
                 and self.popup_data.get('_family'):
-            self.popup_data['lines'] += [''] + [title] + list(lines)
+            self.popup_data['lines'] += ['', self._family_subhead(title), ''] + list(lines)
             return
         self.popup_data = {'title': title, 'accent': _POPUP_ACCENT, 'lines': list(lines),
                            'code': None, '_family': True}
@@ -264,10 +279,11 @@ class FamilyMixin:
         if not getattr(self.player, 'qa_tools', False):
             return
         target = None
-        vis = getattr(self, 'visible', None) or set()
         best = None
+        # Only a creature the hero can see (never a concealed one, whose
+        # family the [QA] line would name).
         for m in self.monsters or ():
-            if getattr(m, 'alive', False) and (m.x, m.y) in vis and family_lore.family_of(m):
+            if self._sees_monster(m) and family_lore.family_of(m):
                 d = max(abs(m.x - self.player.x), abs(m.y - self.player.y))
                 if best is None or d < best:
                     best, target = d, m

@@ -132,6 +132,12 @@ def test_names_are_title_case_and_text_has_no_singular_they():
     for c in FAMS['circles'].values():
         assert proper_name(c['name']) == c['name']
         assert proper_name(c['boon']['name']) == c['boon']['name']
+    # The Field Notes (written 2026-10-19) and the Journal lines too.
+    for fid, f in FAMS['families'].items():
+        for t, entry in enumerate(f['tiers'], start=1):
+            assert not _singular_they(entry.get('field_note', '') or ''), (fid, t)
+    for text in FAMS['tier_chronicle'] + [c['chronicle'] for c in FAMS['circles'].values()]:
+        assert not _singular_they(text.replace('{kin}', 'the restless dead')), text
 
 
 def test_a_blurb_is_two_sentences_and_names_no_member():

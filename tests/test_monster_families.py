@@ -192,7 +192,7 @@ def test_a_circle_is_worked_out_from_the_tiers_and_told_once():
     news = family_lore.news(p)
     assert ('circle', 'grave_watch', None) in news
     assert ('circle', 'grave_watch', None) not in family_lore.news(p)
-    # Vigil: necrotic and drain hurt 20% less, whoever deals them.
+    # Vigil: necrotic and drain hurt less (the data's mult), whoever deals them.
     assert family_edges.any_damage_mult(p, 'necrotic') == _circle_param('grave_watch', 'mult') < 1
     assert family_edges.any_damage_mult(p, 'fire') == 1.0
 
@@ -221,7 +221,7 @@ def test_loremaster_needs_bane_in_five_families():
 # ---------------------------------------------------------------------------
 # Defence primitives
 # ---------------------------------------------------------------------------
-def test_save_bonus_is_four_against_its_family_only(monkeypatch):
+def test_save_bonus_counts_against_its_family_only(monkeypatch):
     import status_effects
     p = _player_at()
     _to_tier(p, 'restless_dead', 3)
@@ -798,5 +798,12 @@ def test_a_flood_of_news_fits_in_one_popup():
         g._qa_family_tier()
     assert g.state == STATE_STORY_POPUP
     assert g.popup_data['lines'][-1].startswith('And more besides')
-    titles = [ln for ln in g.popup_data['lines'] if ln.startswith('LORE OF ')]
+    lines = g.popup_data['lines']
+    titles = [ln for ln in lines if ln.startswith('Lore of ')]
     assert len(titles) <= 2                     # the first title is the popup's own
+    # Each later piece of news stands under its own Title Case heading, with
+    # a blank line on both sides (touching lines join into one paragraph).
+    for i, ln in enumerate(lines):
+        if ln.startswith(('Lore of ', 'Hunter of ', 'Bane of ')):
+            assert lines[i - 1] == '' and lines[i + 1] == '', ln
+    assert not any(ln.isupper() and ' OF ' in ln for ln in lines)

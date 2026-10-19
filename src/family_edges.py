@@ -18,7 +18,9 @@ The rails, everywhere in this file:
     are too wilful: execute, turn, calm, charm-on-hit, surrender and
     stun-on-hit never touch them, and an execute lands a blow `named_mult`
     harder instead. Wards, damage, block_regen, pierce_resist and
-    sense_hidden do apply to them (ruling 3).
+    sense_hidden do apply to them (ruling 3). The Black Knight is held the
+    same way against execute, turn, calm, charm and surrender (`_steadfast`:
+    nothing moves him off his bridge, and he never yields).
   * A technique's trigger line is said once per fight (per creature), into
     an outbox the Game drains (`drain`).
   * Nothing scales by floor.
@@ -176,6 +178,15 @@ def _named(m) -> bool:
         return bool(fn()) if callable(fn) else False
     except Exception:
         return False
+
+
+def _steadfast(m) -> bool:
+    """A creature no execute, turning, charm, calm or surrender may move: a
+    named foe, or the Black Knight, whom the engine already holds on his
+    bridge against every charm, fear and instant kill (game_magic._is_big_foe;
+    he never yields: "'Tis but a scratch"). Yield! used to make him "throw
+    down his purse and run" while he stood there."""
+    return _named(m) or bool(getattr(m, 'is_black_knight', False))
 
 
 def _recognised(player, m) -> bool:
@@ -528,8 +539,8 @@ def execute_named_mult(player, target, chain: int, consume: bool = False) -> flo
 
 def execute(player, target, chain: int):
     """The execute that ends this lesser creature now (after the blow
-    landed), or None. Never a named foe."""
-    if target is None or _named(target) or not getattr(target, 'alive', False):
+    landed), or None. Never a named foe (or the Black Knight: _steadfast)."""
+    if target is None or _steadfast(target) or not getattr(target, 'alive', False):
         return None
     hp_share = target.hp / max(1, target.max_hp)
     for a, p in _execute_parts(player, target, chain):
@@ -571,7 +582,7 @@ def calm_chance(player, fid) -> tuple:
 
 
 def charm_on_hit(player, target, chain: int):
-    if _named(target):
+    if _steadfast(target):
         return None
     for a, p in _mine(player, target, 'charm_on_hit'):
         if chain >= int(p.get('chain_min', 0) or 0):
@@ -590,7 +601,7 @@ def stun_on_hit(player, target, chain: int):
 
 def surrender(player, target, chain: int):
     """The surrender a lesser foe makes now (after the blow), or None."""
-    if target is None or _named(target) or not getattr(target, 'alive', False):
+    if target is None or _steadfast(target) or not getattr(target, 'alive', False):
         return None
     if target.__dict__.get('_surrendered'):
         return None
@@ -693,7 +704,7 @@ def turn_members(player, fid, params, monsters, visible, rng=random, exclude=Non
             continue
         if visible is not None and (m.x, m.y) not in visible:
             continue
-        if not _recognised(player, m) or _named(m) or getattr(m, 'is_allied', False):
+        if not _recognised(player, m) or _steadfast(m) or getattr(m, 'is_allied', False):
             continue
         if m.resists_control('feared') or getattr(m, 'fearless', False):
             continue
@@ -724,11 +735,16 @@ def on_sight_turns(player, monsters, visible) -> list:
 def calm_arrivals(player, monsters, rng=random) -> list:
     """A floor just reached: lesser members of a family with calm_on_arrival
     may arrive calm (the engine's charm, which a blow breaks: the same rule
-    as Gilgamesh's Bribe). Returns the abilities that calmed anything."""
+    as Gilgamesh's Bribe). Returns the abilities that calmed anything.
+    Never a concealed creature (an invisible one, an ambusher not yet
+    sprung, a disguised mimic): calming it, and the line that says so,
+    would give it away."""
     fired = []
     by_fid = {}
     for m in monsters or ():
-        if not getattr(m, 'alive', False) or _named(m) or getattr(m, 'is_allied', False):
+        if not getattr(m, 'alive', False) or _steadfast(m) or getattr(m, 'is_allied', False):
+            continue
+        if not _recognised(player, m):
             continue
         fid = _fam(m)
         if fid not in by_fid:
