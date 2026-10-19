@@ -832,9 +832,14 @@ POTION = {
 
 def apply(data: dict) -> list[str]:
     log = []
+    from assign_monster_families import family_for
     for mid, d in NEW.items():
         want = dict(d)
         cur = data.get(mid)
+        # Its monster family (tools/content/assign_monster_families.py): the
+        # one already written wins, so a regeneration never drops or
+        # re-decides it.
+        want['family'] = (cur or {}).get('family') or family_for(mid, want)
         # What a creature carries is decided by tools/balance/gold_by_lore.py
         # (economy refactor 2026-10-17, gold by lore): keep its gold and purse,
         # and its treasure chance and kinds (2026-10-18).

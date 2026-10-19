@@ -192,6 +192,9 @@ def spawn_ghost(bones: dict, dungeon, monsters: list, ground_items: list):
         'resistances': ['pierce', 'cold', 'poison'],
         'weaknesses': ['holy', 'fire'],
         'tags': ['undead'],
+        # The ghost is a Ghost (monster families). The dead hero's monster
+        # knowledge stays with him: a bones file carries none of it.
+        'family': 'ghosts',
         'min_level': floor,
         'peak_floor': floor,
         'max_level': 100,

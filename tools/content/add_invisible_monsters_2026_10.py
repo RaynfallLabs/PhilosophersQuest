@@ -177,10 +177,15 @@ def apply_sizes(sizes: dict) -> list[str]:
 
 def apply(data: dict) -> list[str]:
     log = []
+    from assign_monster_families import family_for
     for mid, d in NEW.items():
-        if data.get(mid) != d:
+        # Its monster family (tools/content/assign_monster_families.py): the
+        # one already written wins, so a regeneration never drops it.
+        want = dict(d)
+        want['family'] = (data.get(mid) or {}).get('family') or family_for(mid, want)
+        if data.get(mid) != want:
             log.append(f'{mid}: {"updated" if mid in data else "added"}')
-            data[mid] = dict(d)
+            data[mid] = want
     for mid, lore in MAKE_INVISIBLE.items():
         d = data[mid]
         if not d.get('invisible'):

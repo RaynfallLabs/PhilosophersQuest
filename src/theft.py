@@ -109,6 +109,14 @@ def steal(game, m, kind: str, rng=random) -> str:
     if has_loot(m) or not getattr(m, 'alive', False):
         return ''
     player = game.player
+    # A hero who reads this family's hands (Mortal Foes' Read Their Hands,
+    # src/family_edges.py) is never robbed by it: its trigger line says so.
+    try:
+        import family_edges
+        if family_edges.theft_immune(player, m):
+            return ''
+    except ImportError:
+        pass
     purse = int(getattr(game, 'player_gold', 0) or 0)
     items = stealable(player)
     if kind == 'any':

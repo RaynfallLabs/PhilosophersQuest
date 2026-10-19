@@ -363,6 +363,13 @@ class QuizEngine:
         self.reroll_available = bool(getattr(self, '_reroll_flag', False))
         self._reroll_flag = False
         self.reroll_was_used = False
+        # Know the Story (monster family knowledge, src/family_edges.py): in
+        # a chain, one wrong answer does not end it. Set by
+        # combat.player_attack before the quiz, one-shot like the reroll,
+        # and counted after it (forgive_was_used) so the fight spends it.
+        self.forgive_available = bool(getattr(self, '_forgive_flag', False))
+        self._forgive_flag = False
+        self.forgive_was_used = False
         self._erased_misses = 0       # misses the reroll took back (ENG-15)
 
         # Resume from where the persistent deck left off.
@@ -585,6 +592,13 @@ class QuizEngine:
                 if self.reroll_available:
                     self.reroll_available = False
                     self.reroll_was_used = True
+                    self._erased_misses = getattr(self, '_erased_misses', 0) + 1
+                    self._next_question()
+                    return
+                if getattr(self, 'forgive_available', False):
+                    # The chain goes on at the length it had.
+                    self.forgive_available = False
+                    self.forgive_was_used = True
                     self._erased_misses = getattr(self, '_erased_misses', 0) + 1
                     self._next_question()
                     return

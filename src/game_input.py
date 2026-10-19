@@ -326,6 +326,11 @@ class InputMixin:
                 self._qa_warp_input = ''
                 self.state = STATE_QA_WARP_INPUT
                 return True
+            if event.unicode == 'F' and getattr(self.player, 'qa_tools', False):
+                # Titivillus QA build: one monster family tier more (the
+                # nearest creature's family, or every family), with its news.
+                self._qa_family_tier()
+                return True
             if event.unicode == '$' and getattr(self.player, 'qa_tools', False):
                 # Titivillus QA build: a heap of gold, one of every treasure
                 # and a trader with gems and the draught, to test coin weight.
@@ -1814,6 +1819,16 @@ class InputMixin:
             self.encyclopedia_selection = 0
             self._encyclopedia_entry = None
             self._encyclopedia_article_scroll = 0
+            return
+        if key == pygame.K_TAB and self.encyclopedia_category == 'bestiary':
+            # The Bestiary's two views: every kind met, or the monster
+            # families (src/family_lore.py) with what the hero has learned.
+            self._bestiary_view = ('families' if getattr(self, '_bestiary_view', 'kinds') == 'kinds'
+                                   else 'kinds')
+            self.encyclopedia_selection = 0
+            self._encyclopedia_scroll = 0
+            self._encyclopedia_article_scroll = 0
+            self._encyclopedia_load_entries('bestiary')
             return
         if key in cat_keys:
             open_category(cat_keys[key])

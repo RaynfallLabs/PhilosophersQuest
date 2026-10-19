@@ -147,6 +147,19 @@ class Player:
         # the type forever — fresh kills of a studied monster spawn their
         # corpse pre-identified (game_combat._make_corpse).
         self.lore_known_monster_ids: set[str] = set()
+        # Monster family knowledge (src/family_lore.py). The kinds the hero
+        # studied HIMSELF (a correct corpse study or a Scroll of Omnisight):
+        # the only thing tiers count. The Book of Thoth opens pages
+        # (lore_known_monster_ids) but adds nothing here.
+        self.studied_monster_ids: set[str] = set()
+        # {family id: highest tier announced} plus 'circle:<id>' and
+        # 'loremaster' markers: what has been told, so each news line and
+        # popup comes once. Tiers themselves are always worked out.
+        self.family_tiers_told: dict = {}
+        # A secret build's unlabelled head start: {family id: tier 1 or 2}.
+        # (Never named family_masteries / family_mastery_blessings: those
+        # retired names are deleted by __setstate__.)
+        self.family_lore_grants: dict = {}
         self.lockpick_charges: int = 0             # charges from collected lockpicks
         # Spells learned from spellbooks: spell_id -> mp_cost
         self.known_spells: dict[str, int] = {}
@@ -242,6 +255,16 @@ class Player:
         halving_effect = DAMAGE_HALVED.get(damage_type)
         if halving_effect and self.has_effect(halving_effect) and amount > 0:
             amount = (amount + 1) // 2
+        # A completed circle of monster lore that holds against this kind of
+        # damage from any source (the Grave Watch's Vigil: family_edges).
+        if amount > 1 and damage_type not in ('physical', 'starvation'):
+            try:
+                import family_edges
+                _circ = family_edges.any_damage_mult(self, damage_type)
+                if _circ < 1.0:
+                    amount = max(1, int(round(amount * _circ)))
+            except Exception:
+                pass
         # Toughness: a hardy body shrugs off part of every blow.
         if amount > 1 and damage_type != 'starvation':
             amount = max(1, int(round(amount * (1.0 - self.toughness()))))
@@ -774,6 +797,10 @@ class Player:
         # in the same file, so they are kept: dropping them cost the bonus for
         # the rest of the floor after any load.)
         state.pop('_revealed_tag_ids', None)
+        # Family knowledge: a cache of worked-out tiers and the outbox of
+        # technique lines (src/family_edges.py). Both rebuild themselves.
+        state.pop('_family_tier_cache', None)
+        state.pop('_edge_msgs', None)
         for _mark in ('_death_omen_target', '_et_tu_target'):
             if isinstance(state.get(_mark), int):       # an id from an old build
                 state.pop(_mark, None)
@@ -831,6 +858,17 @@ class Player:
             self.seen_item_ids = set(getattr(self, 'known_item_ids', ()) or ())
         if not hasattr(self, 'appraised_treasure'):
             self.appraised_treasure = set()
+        # Saves from before monster families (2026-10-18): every kind whose
+        # corpse was studied counts as studied, and every tier that gives is
+        # marked told, so loading brings no flood of popups.
+        try:
+            import family_lore
+            family_lore.migrate_old_save(self)
+        except Exception:
+            self.__dict__.setdefault('studied_monster_ids',
+                                     set(self.__dict__.get('lore_known_monster_ids') or ()))
+            self.__dict__.setdefault('family_tiers_told', {})
+            self.__dict__.setdefault('family_lore_grants', {})
 
     def save_bonus_for(self, cat: str) -> int:
         """Total saving-throw bonus for a category ('CON'/'WIS'/'DEX'), read by
@@ -1041,6 +1079,12 @@ class Player:
         for _slot in (self.weapon, getattr(self, 'ranged_weapon', None)):
             if _slot:
                 radius += int(getattr(_slot, 'equipped_light_aura', 0) or 0)
+        # The Wild Road circle of monster lore (Ranger's Instinct).
+        try:
+            import family_edges
+            radius += family_edges.sight_bonus(self)
+        except Exception:
+            pass
         return radius
 
     def get_quiz_timer(self, subject: str = 'math') -> int:

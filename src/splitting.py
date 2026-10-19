@@ -68,6 +68,10 @@ def blow_splits(monster, amount: int, damage_type='physical') -> bool:
     spec = getattr(monster, 'splits', None)
     if not isinstance(spec, dict):
         return False
+    # A hero who knows how to strike this family true never splits it
+    # (family_edges prevent_split: combat.player_attack marks the blow).
+    if monster.__dict__.get('_no_split_blow'):
+        return False
     fam = _family(monster)
     pending = int(getattr(monster, '_pending_splits', 0) or 0)
     if fam[0] - pending <= 0:

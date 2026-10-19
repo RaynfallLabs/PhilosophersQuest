@@ -5,7 +5,8 @@ Shipped and heavily reworked through v2.18.0 (commit `409e15d`, 2026-09-27). The
 
 ## Code
 - `src/monster.py` — the Monster class, `_DEFAULTS`, `__getattr__` back-compat shim, `take_damage`, `attack`, `take_turn` dispatch, 14 AI pattern methods, and `DeathMonster` subclass. 1750 lines.
-- `src/monster_classes.py` — `FAMILY_PRIORITY` and `get_monster_family(...)` — maps a monster's `tags` list to a single family label (`dragon`, `demon`, `celestial`, `undead`, `fey`, `aberration`, `construct`, `elemental`, `beast`, `humanoid`, `plant`, `reptile`) for display and family-targeted item effects (dragonslayer gear etc.). First match wins.
+- `src/monster_classes.py` — `get_monster_family(...)`, a thin reader of each monster's written `family` field (one of 22; see [monster_families](monster_families.md)). The old tag-priority guess (`FAMILY_PRIORITY`) was retired 2026-10-18.
+- `src/family_lore.py`, `src/family_edges.py`, `src/game_families.py` — monster family knowledge: who is in which family, the tiers a hero earns by studying kinds, and the techniques each tier grants ([monster_families](monster_families.md)).
 - `src/boss_levels.py` — hand-crafted boss floors `L20/40/60/80/100` plus `COW_LEVEL=999`. One static map per level with hand-placed stairs, pillars/altars/ice patches, and a single `_spawn_boss(dungeon, boss_id, boss_room)` placement with NW-shift fallback for multi-tile bosses.
 - `src/level_manager.py` — floor-generation front door. Pre-rolls planned mini-bosses at run start, forces seal-demon spawns on `L83/85/87/89/91/93/97`, and routes boss floors through `boss_levels.generate_boss_level`.
 - `src/dungeon.py::_build_spawn_pool` (line 1230), `_footprint_fits`, `_spawn_one_in_room`, `spawn_monsters`, `populate_floor` — the procedural pool and placement.
@@ -33,7 +34,7 @@ The game needs a large, varied bestiary that:
 ## Design intent
 
 ### "527 monsters" without 527 classes
-Every monster is an instance of the single `Monster` class. Behavioural differences come from JSON fields — `ai_pattern` picks a dispatch branch, flags like `can_charge` / `can_phase_blink` / `prefers_flank` compose on top of it, and status/damage interactions come from the `attacks[]` and `resistances`/`weaknesses`/`tags` arrays. `monster_classes.py` is NOT an OO hierarchy; it's a tag → family lookup for display and item effects.
+Every monster is an instance of the single `Monster` class. Behavioural differences come from JSON fields — `ai_pattern` picks a dispatch branch, flags like `can_charge` / `can_phase_blink` / `prefers_flank` compose on top of it, and status/damage interactions come from the `attacks[]` and `resistances`/`weaknesses`/`tags` arrays. `monster_classes.py` is NOT an OO hierarchy; it reads the written `family` field.
 
 ### Bell-curve spawn, no hard tiers
 `_build_spawn_pool(level)` loops over every monster definition with `peak_weight > 0` and `min_level <= level` and computes a Gaussian weight at `distance = level - peak_floor` with sigma `= spread`. A monster appears everywhere its bell has mass; dropouts (bell < 0.005) fall out entirely rather than clamping to a floor. The lore-floor `min_level` is still a hard gate (seal demons don't appear on L1), but there's no `max_level` — late peaks simply have thin tails into the shallows and vice versa. This replaces an older min/max-level clamp that produced "all giant rats on floors 1-5, zero giant rats ever again."
@@ -196,7 +197,11 @@ An `attacks[]` is a list of attack dicts. One is picked each turn (`random.choic
 
 ### Tags
 
-A free-form list. Primary purpose: `monster_classes.get_monster_family` returns the first match from `FAMILY_PRIORITY` (`dragon`, `demon`, `celestial`, `undead`, `fey`, `aberration`, `construct`, `elemental`, `beast`, `humanoid`, `plant`, `reptile`). Secondary: `alert_all_tag` reads tags for wider-radius alert; `pack_dependent` reads tags to find pack allies; material-weakness lookup reads tags.
+A free-form list. Tags drive weapons and materials (silver vs undead, cold iron vs fey, the Dragonslayer Ring, `bonus_damage_vs_tag`, `effective_against`), `alert_all_tag` (wider-radius alert), `pack_dependent` (finding pack allies) and `resists_control` (mindless constructs and plants). Tags do NOT decide a monster's family: that is the separate `family` field below.
+
+### Family
+
+Every monster carries ONE `family` (one of the 22 in `data/monster_families.json`), chosen by what the creature IS in its lore and written by `tools/content/assign_monster_families.py` (`--write`, `--check`, `--sheet` for the 138 lore-settled borderline picks, `--rates` for what a run meets). `Monster.family` reads it; an old saved monster or corpse looks it up by kind. The Bones ghost is a Ghost; Death, the secret cow and the ethereal unicorn have none. Monster family knowledge is in [monster_families](monster_families.md).
 
 **All tags in use across 527 monsters** (32): `aberration`, `bandit`, `beast`, `boss`, `caster`, `celestial`, `construct`, `cultist`, `demon`, `demon-touched`, `dragon`, `elemental`, `evil`, `female_attractive`, `fey`, `fiend`, `giant`, `gnoll`, `goblinoid`, `horror`, `humanoid`, `kobold`, `legendary`, `orc`, `outsider`, `plant`, `reptile`, `rogue`, `serpent-cult`, `shapeshifter`, `undead`.
 
@@ -378,7 +383,7 @@ Both placement paths validate ALL 4 footprint tiles before committing — `_foot
 ## Treasure drop (`game_combat._drop_treasure`)
 
 Sequence on `Monster` death:
-1. `_make_corpse(monster)` — builds a `Corpse` with `harvest_tier`, `harvest_threshold`, `ingredient_id`, `lore`, and a `monster_def` dict carrying `hp`/`thac0`/`attacks`/`resistances`/`weaknesses`/`speed`/`tags`/`peak_floor`. Auto-identifies if `monster.kind` is in `player.lore_known_monster_ids`.
+1. `_make_corpse(monster)` — builds a `Corpse` with `harvest_tier`, `harvest_threshold`, `ingredient_id`, `lore`, and a `monster_def` dict carrying `hp`/`thac0`/`attacks`/`resistances`/`weaknesses`/`speed`/`tags`/`peak_floor`. Copies `monster.family` onto the corpse. Auto-identifies if `monster.kind` is in `player.studied_monster_ids` (studied by the hero himself; a kind the Book of Thoth only opened still asks, so its study counts for its family).
 2. `_drop_treasure(monster)`:
    - Roll `gold` in `treasure.gold` range → `add_gold_to_tile` → "drops N gold" message.
    - Roll `item_chance` → `_spawn_treasure_item(x, y, item_tier)` (common pool, excludes uniques; `effective_floor = max(1, tier * 5)`).

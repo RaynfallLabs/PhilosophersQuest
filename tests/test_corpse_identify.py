@@ -4,7 +4,8 @@ Verifies:
   - Corpse.id_level defaults to 0; id_tier derives from harvest_tier /
     monster peak_floor
   - lore_identified is a property reflecting id_level >= 4 (back-compat)
-  - get_monster_family honors FAMILY_PRIORITY ordering (display helper)
+  - get_monster_family reads the written `family` (monster_classes is a
+    thin reader of data/monsters.json since 2026-10-18)
   - Propagation: same monster_id corpses bump together; a studied type
     spawns future corpses pre-identified
 """
@@ -15,7 +16,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from items import Corpse
 from player import Player
-from monster_classes import FAMILY_PRIORITY, get_monster_family
+from monster_classes import get_family_name, get_monster_family
 
 
 # ---------------------------------------------------------------------------
@@ -84,41 +85,48 @@ def test_lore_identified_setter_does_not_lower_higher_levels():
 
 
 # ---------------------------------------------------------------------------
-# get_monster_family priority (display helper — masteries are gone)
+# get_monster_family: a thin reader of the written family field
 # ---------------------------------------------------------------------------
 
-def test_get_monster_family_priority_order_demon_beats_humanoid():
-    c = _make_corpse(tags=['demon', 'humanoid'])
-    assert get_monster_family(c) == 'demon'
+def test_get_monster_family_reads_the_kind_not_the_tags():
+    # A dracolich carries undead and dragon tags; its LORE files it under
+    # Dragons, and the tags do not decide it any more.
+    c = _make_corpse(monster_id='dracolich', tags=['undead', 'dragon', 'caster'])
+    assert get_monster_family(c) == 'dragons'
+    assert get_family_name(c) == 'Dragons and Wyrms'
 
 
-def test_get_monster_family_priority_order_dragon_beats_beast():
-    c = _make_corpse(tags=['beast', 'dragon'])
-    assert get_monster_family(c) == 'dragon'
+def test_get_monster_family_for_a_kind_a_dict_and_a_spider():
+    assert get_monster_family('skeleton') == 'restless_dead'
+    assert get_monster_family({'id': 'goblin'}) == 'goblinkin'
+    assert get_monster_family('giant_spider') == 'vermin'      # spiders merged into Vermin
 
 
-def test_get_monster_family_none_if_no_family_tag():
-    c = _make_corpse(tags=['boss', 'unique'])
+def test_get_monster_family_none_for_a_creature_with_no_family():
+    for kind in ('death', 'secret_cow', 'ethereal_unicorn'):
+        assert get_monster_family(kind) is None
+    c = _make_corpse(monster_id='no_such_monster', tags=['boss', 'unique'])
     assert get_monster_family(c) is None
 
 
-def test_get_monster_family_empty_tags():
-    c = _make_corpse(tags=[])
-    assert get_monster_family(c) is None
+def test_get_monster_family_ignores_tags():
+    c = _make_corpse(monster_id='goblin', tags=[])
+    assert get_monster_family(c) == 'goblinkin'
+    assert get_monster_family({'tags': ['undead']}) is None     # no kind, no family
 
 
-def test_get_monster_family_accepts_dict():
-    assert get_monster_family({'tags': ['undead']}) == 'undead'
-
-
-def test_get_monster_family_accepts_object_with_tags():
+def test_get_monster_family_accepts_a_monster_with_its_field():
     class M:
-        tags = ['fey', 'humanoid']
-    assert get_monster_family(M()) == 'fey'
+        kind = 'giant_rat'
+        family = 'vermin'
+    assert get_monster_family(M()) == 'vermin'
 
 
-def test_family_priority_covers_the_twelve_families():
-    assert len(FAMILY_PRIORITY) == 12
+def test_every_family_has_a_name():
+    import family_lore
+    assert len(family_lore.families()) == 22
+    for fid in family_lore.families():
+        assert get_family_name(family_lore.members(fid)[0]) == family_lore.family_name(fid)
 
 
 # ---------------------------------------------------------------------------

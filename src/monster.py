@@ -118,6 +118,57 @@ _RANGED_WORDS = {'shoot', 'arrow', 'bolt', 'dart', 'spit', 'hurl',
                  'cast', 'bow', 'sling', 'javelin', 'spore', 'shock', 'hex'}
 
 
+def _family_of_kind(kind):
+    try:
+        import family_lore
+        return family_lore.family_of(str(kind or ''))
+    except Exception:
+        return None
+
+
+# Family knowledge hooks (src/family_edges.py). Each is a no-op when the
+# hero has earned nothing against this family.
+def _edge_save(player, m, effect) -> int:
+    try:
+        import family_edges
+        return family_edges.save_bonus(player, m, effect)
+    except Exception:
+        return 0
+
+
+def _edge_incoming(player, m, dmg: int, atk_type: str) -> int:
+    try:
+        import family_edges
+        mult = family_edges.incoming_damage_mult(player, m, atk_type)
+    except Exception:
+        return dmg
+    return max(1, int(round(dmg * mult))) if mult < 1.0 and dmg > 0 else dmg
+
+
+def _edge_gaze_immune(player, m) -> bool:
+    try:
+        import family_edges
+        return family_edges.gaze_immune(player, m)
+    except Exception:
+        return False
+
+
+def _edge_no_ambush(player, m) -> bool:
+    try:
+        import family_edges
+        return family_edges.no_ambush(player, m)
+    except Exception:
+        return False
+
+
+def _edge_drain_block(player, m) -> bool:
+    try:
+        import family_edges
+        return family_edges.drain_heal_blocked(player, m)
+    except Exception:
+        return False
+
+
 class Monster:
     # Always title case, however monsters.json (or an old save) spelled it.
     name = ProperNameAttr('name')
@@ -175,6 +226,10 @@ class Monster:
         self.weaknesses:  list[str] = defn.get('weaknesses', [])
         # Tags for systemic material interactions (undead, demon, fey, etc.)
         self.tags: list[str] = defn.get('tags', [])
+        # Its ONE monster family (monsters.json `family`, src/family_lore.py):
+        # what the hero's family knowledge works on. Built-in creatures look
+        # theirs up by kind (the Bones ghost is a Ghost; Death has none).
+        self.family = defn.get('family') or _family_of_kind(self.kind)
 
         # Treasure drop definition
         self.treasure: dict = defn.get('treasure', {'gold': [0, 0], 'item_chance': 0.0, 'item_tier': 1})
@@ -443,6 +498,9 @@ class Monster:
     def __getattr__(self, name):
         if name in Monster._DEFAULTS:
             return Monster._DEFAULTS[name]
+        if name == 'family':
+            # A monster saved before families looks its family up by kind.
+            return _family_of_kind(self.__dict__.get('kind', ''))
         raise AttributeError(f"'Monster' object has no attribute {name!r}")
 
     # --- Status effects ---
@@ -533,6 +591,9 @@ class Monster:
             return False
         mod = (int(player.CON) - 10) // 2
         bonus = player.save_bonus_for('CON') if hasattr(player, 'save_bonus_for') else 0
+        # A ward against this family's draining (Grave-Salt, Iron and Salt):
+        # outside the +5 cap, earned against one family only.
+        bonus += _edge_save(player, self, 'drain')
         dc = min(18, 12 + self.min_level // 7)
         return random.randint(1, 20) + mod + bonus < dc
 
@@ -616,10 +677,15 @@ class Monster:
         # Regeneration: heal HP each turn (trolls, hydras).
         # Chain combat v2: `deep_wound` and `ruptured` block regen (heal-lock).
         regen = getattr(self, 'regeneration', 0)
+        # A hero who knows the family's fire-and-dawn trick has stopped the
+        # wound closing for a few turns (family_edges block_regen).
+        _blocked = int(self.__dict__.get('_regen_blocked', 0) or 0)
+        if _blocked > 0:
+            self.__dict__['_regen_blocked'] = _blocked - 1
         if regen and self.alive and self.hp < self.max_hp:
             # Don't regenerate while burning (fire stops troll regen), or
             # while a heal-blocking wound (deep_wound / ruptured) is active.
-            if not self.has_effect('burning') and self.can_heal():
+            if not self.has_effect('burning') and self.can_heal() and _blocked <= 0:
                 self.hp = min(self.max_hp, self.hp + regen)
         self._unhurt_turns = int(getattr(self, '_unhurt_turns', 0)) + 1
         self._tick_fury()
@@ -828,10 +894,13 @@ class Monster:
             # Floating eye: gaze-based paralysis (checks sleep_resist or total blindness)
             if player.get_sight_radius() == 0:
                 return 0, f"{the_name(self)} gazes at you, but you cannot see its eyes!"
+            if _edge_gaze_immune(player, self):
+                return 0, f"{the_name(self)} gazes at you, and you do not meet its eyes."
             if not player.has_effect('sleep_resist'):
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
-                applied, _ = apply_debuff_with_save(player, 'paralyzed', 3, dc)
+                applied, _ = apply_debuff_with_save(player, 'paralyzed', 3, dc,
+                                                    source=self, gaze=True)
                 if applied:
                     return 0, f"{the_name(self)}'s gaze paralyzes you!"
                 return 0, f"You wrench your gaze away from {the_name(self, lower=True)} just in time!"
@@ -860,6 +929,13 @@ class Monster:
                             f"Stone has no claim on you now.")
                 if _at_range:
                     return 0, gaze_msg
+            # Perseus' Shield (family knowledge): watched in a shield, the
+            # gaze of this family cannot take the hero at all.
+            elif _edge_gaze_immune(player, self):
+                gaze_msg = (f"You watch {the_name(self, lower=True)} in the bright metal "
+                            f"of your shield, and the gaze slides off.")
+                if _at_range:
+                    return 0, gaze_msg
             # Check mirror shield (Aegis): reflects gaze back
             elif getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
                 player._reflected_back = True      # read by game_combat for Perseus's trait
@@ -875,7 +951,8 @@ class Monster:
             else:
                 from status_effects import apply_debuff_with_save
                 dc = min(18, 12 + self.min_level // 7)
-                applied, _ = apply_debuff_with_save(player, 'paralyzed', self.gaze_paralyze, dc)
+                applied, _ = apply_debuff_with_save(player, 'paralyzed', self.gaze_paralyze, dc,
+                                                    source=self, gaze=True)
                 if applied:
                     return 0, (f"{the_name(self)}'s terrible gaze freezes you in place!")
                 return 0, (f"You meet {the_name(self, lower=True)}'s gaze but tear your eyes away "
@@ -923,6 +1000,7 @@ class Monster:
             except ImportError:
                 pass
             dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
+            dmg = _edge_incoming(player, self, dmg, atk_type)
             actual = player.take_damage(dmg, atk_type)
             return actual, (gaze_msg + f" {the_name(self)} hits you with {atk['name'].replace('_', ' ').lower()} for {actual} damage!"
                             + (f" {_vuln_note}" if _vuln_note and actual > 0 else ''))
@@ -1009,6 +1087,9 @@ class Monster:
         if is_gaze and atk.get('effect') == 'paralyzed':
             if player.has_effect('petrify_immune'):
                 return 0, f"{the_name(self)}'s gaze finds nothing in you to turn to stone."
+            if _edge_gaze_immune(player, self):
+                return 0, (f"You watch {the_name(self, lower=True)} in the bright metal of "
+                           f"your shield, and the gaze slides off.")
             if getattr(player.shield, 'id', '') in ('aegis_of_athena', 'greater_aegis_of_athena'):
                 return 0, (f"{the_name(self)} catches her own eyes in the bronze "
                            f"and flinches away.")
@@ -1112,8 +1193,11 @@ class Monster:
         mimic_strike = False
         if self._mimic_surprise:
             self._mimic_surprise = False
-            dmg = int(dmg * 1.75)
-            mimic_strike = True
+            # A hero who knows this family's ambushers is not caught
+            # unawares (family_edges no_ambush): no surprise blow.
+            if not _edge_no_ambush(player, self):
+                dmg = int(dmg * 1.75)
+                mimic_strike = True
 
         # Weakened: this monster's attack deals half damage
         if self.has_effect('weakened'):
@@ -1186,6 +1270,9 @@ class Monster:
             dmg = max(1, int(round(dmg * heart_weight(player))))
 
         dmg, _vuln_note = self._through_material_weakness(player, dmg, atk_type)
+        # Family knowledge that turns this family's fire, cold or holy
+        # light aside (Dragon-Ward, Ward of the Elements, Angel's Due).
+        dmg = _edge_incoming(player, self, dmg, atk_type)
         actual = player.take_damage(dmg, atk_type)
 
         if getattr(self, '_unseen', False) is True:
@@ -1289,7 +1376,8 @@ class Monster:
         # for ancient_vampire_lord: "drain attack causes CON -1 but doesn't
         # heal the vampire — not a vampire."
         _dhs = float(getattr(self, 'drain_heals_self', 0.0) or 0.0)
-        if atk_type == 'drain' and _dhs > 0 and actual > 0 and self.alive and self.can_heal():
+        if (atk_type == 'drain' and _dhs > 0 and actual > 0 and self.alive and self.can_heal()
+                and not _edge_drain_block(player, self)):
             heal = max(1, int(actual * _dhs))
             self.hp = min(self.max_hp, self.hp + heal)
             msg += f" {the_name(self)}'s wounds close as it feeds ({heal} HP regained)."
@@ -1313,14 +1401,18 @@ class Monster:
         # In a flurry at most one lands, so a five-attack boss cannot stack a
         # stun, a freeze and a slow in one turn.
         if not (in_flurry and getattr(self, '_flurry_effect_done', False)):
-            _eff = self._apply_attack_effect(atk, player) if (actual > 0 or not in_flurry) else ''
+            _eff = ''
+            if actual > 0 or not in_flurry:
+                # (gaze only when it is one: the ward against a killing gaze)
+                _eff = (self._apply_attack_effect(atk, player, gaze=True) if is_gaze
+                        else self._apply_attack_effect(atk, player))
             if in_flurry and _eff:
                 self._flurry_effect_done = True
             msg += _eff
 
         return actual, msg
 
-    def _apply_attack_effect(self, atk: dict, player) -> str:
+    def _apply_attack_effect(self, atk: dict, player, gaze: bool = False) -> str:
         """Roll an attack's on-hit status effect against the player.
 
         Returns the text to append to the attack message ('' if nothing
@@ -1343,7 +1435,10 @@ class Monster:
         from status_effects import apply_debuff_with_save
         # DC scales gently with monster depth; data may override.
         dc = min(18, int(atk.get('effect_save_dc', 12 + self.min_level // 7)))
-        _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc)
+        # source=self: the hero's ward against this family (family_edges)
+        # adds to the save, or shortens an effect that has none.
+        _applied, _emsg = apply_debuff_with_save(player, effect_id, duration, dc,
+                                                 source=self, gaze=gaze)
         return (" " + _emsg) if _emsg else ''
 
     # --- AI ---

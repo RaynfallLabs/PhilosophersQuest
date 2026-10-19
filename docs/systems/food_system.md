@@ -123,7 +123,7 @@ Loaded from `data/items/food.json`:
 
 The player stands on a corpse (`%`) and presses the harvest key. `Game._harvest` (`src/main.py:4670`) looks up the corpse at the player's tile, removes it from `ground_items` **before** the quiz fires (resource-loss rule), and calls `food_system.harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds)`.
 
-A +5s timer bonus is applied if `corpse.monster_id ∈ player.lore_known_monster_ids` — identified corpses are easier to butcher.
+A +5s timer bonus is passed if `corpse.monster_id ∈ player.lore_known_monster_ids`, but it is dead: the animal quiz is untimed. Monster family knowledge adds one extra portion for Great Beasts (Hunter's Harvest, tier 3) and Plants and Fungi (Herbalist, tier 4): `family_edges.harvest_bonus`, applied in `harvest_corpse`.
 
 ### 3.2 Quiz shape
 

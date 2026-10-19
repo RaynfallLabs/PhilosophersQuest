@@ -41,6 +41,10 @@ NAME_MAX = 48
 #   _no_dagger      -> True: skip the default iron_dagger
 #   _immortal        -> True: player cannot die
 #   _greeting        -> custom welcome message line (None = default)
+#   _start_family_lore -> {family id: tier} head start in monster family
+#                    knowledge: tier 1 (Recognise) or 2 (Forewarned) only,
+#                    never a technique, and nothing on screen says so
+#                    (MONSTER_FAMILIES_DESIGN decision 5; family_lore.grant_head_start)
 # ------------------------------------------------------------------
 SECRET_BUILDS: dict[str, dict] = {
     # -- Great philosophers -- INT/WIS focused, physically frail --------------
@@ -50,6 +54,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_accessory": "ring_of_intellect",
         "_start_wand": "lantern_of_diogenes",
         "_greeting": "Aristotle the Philosopher enters the dungeon with calm reason.",
+        "_start_family_lore": {"great_beasts": 1, "birds": 1, "serpents": 1, "vermin": 1},   # unlabelled: he wrote the History of Animals
     },
     "socrates of athens": {
         "WIS": 20, "INT": 14, "PER": 16, "STR": 8, "CON": 10, "DEX": 7,
@@ -122,6 +127,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_shield": ("light_wooden", "oak"),
         "_start_accessory": "lyre_of_orpheus",
         "_greeting": "Theseus enters the dungeon. He has done this before.",
+        "_start_family_lore": {"legend": 1},   # unlabelled: he walked the Labyrinth
     },
     # -- Rogues -- speed and perception ---------------------------------------
     "hermes trismegistus": {
@@ -141,6 +147,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_ammo": "iron_arrow",
         "_start_armor": "cloth_of_penelope",
         "_greeting": "Odysseus descends. He expects this to take ten years.",
+        "_start_family_lore": {"legend": 1},   # unlabelled: he sailed past Scylla
     },
     # -- Mages -- pure arcane power --------------------------------------------
     "merlin ambrosius": {
@@ -151,6 +158,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_book": "spellbook_magic_dart",
         "_start_spells": ["heal_spell", "magic_shield_spell"],
         "_greeting": "Merlin descends with staff in hand and stars in his robe.",
+        "_start_family_lore": {"fair_folk": 1, "dragons": 1},   # unlabelled: the red and the white dragon
     },
     # -- New characters --------------------------------------------------------
     "corwin": {
@@ -236,6 +244,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_book": "necronomicon",
         "_lock_melee": True,
         "_greeting": "Good. Bad. I'm the guy with the gun.",
+        "_start_family_lore": {"demons": 1},   # unlabelled: he has met the Deadites
     },
     "geralt of rivia": {
         "STR": 14, "CON": 14, "DEX": 16, "INT": 10, "WIS": 12, "PER": 14,
@@ -245,6 +254,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_spells": ["sign_aard", "sign_igni", "sign_quen", "sign_yrden", "sign_axii"],
         "_start_potions": ["potion_of_healing", "potion_of_haste", "potion_of_fire_resistance"],
         "_greeting": "The Witcher unsheathes his silver blade. Wind's howling.",
+        "_start_family_lore": {"restless_dead": 2, "ghosts": 2, "vampires_liches": 2, "shapeshifters": 2},   # unlabelled: his medallion hums
     },
     "ciri riannon": {
         "STR": 8, "CON": 10, "DEX": 18, "INT": 14, "WIS": 12, "PER": 16,
@@ -262,6 +272,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_equip_armor": True,
         "_start_soul_spheres": 4,
         "_greeting": "Ash Ketchum adjusts his cap. Gotta catch 'em all.",
+        "_start_family_lore": {"great_beasts": 1, "birds": 1},   # unlabelled: a trainer knows his creatures
     },
     # -- New legendary builds (multi-word full names) ------------------------
     "ada augusta byron lovelace": {
@@ -272,6 +283,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_accessory": "ring_of_intellect",
         "_start_book": "spellbook_magic_dart",
         "_greeting": "Ada Lovelace traces the dungeon's algorithm in the air. It is computable.",
+        "_start_family_lore": {"constructs": 1},   # unlabelled: she wrote for the Engine
     },
     "leonardo di ser piero da vinci": {
         "INT": 16, "WIS": 14, "PER": 16, "DEX": 12, "STR": 10, "CON": 10,
@@ -280,6 +292,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_accessory": "aesops_quill",
         "_start_extra_acc": ["dreamspun_sketchbook"],
         "_greeting": "Leonardo sketches a flying machine, glances at the ceiling, and shrugs.",
+        "_start_family_lore": {"constructs": 1},   # unlabelled: he built a mechanical knight
     },
     "boudicca queen of the iceni": {
         "STR": 16, "CON": 17, "DEX": 12, "INT": 9, "WIS": 11, "PER": 12,
@@ -305,6 +318,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_weapon": ("quarterstaff", "oak"),   # the famous walking-stick
         "_start_accessory": "ring_of_intellect",
         "_greeting": "Holmes glances at the dungeon and announces three deductions before stepping in.",
+        "_start_family_lore": {"mortals": 1},   # unlabelled: he knows the criminal classes
     },
     "miyamoto musashi the sword saint": {
         "STR": 14, "DEX": 18, "CON": 12, "INT": 12, "WIS": 14, "PER": 14,
@@ -322,6 +336,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_accessory": "ring_of_wisdom",
         "_start_book": "spellbook_light",
         "_greeting": "Hildegard prays. The world greens around her in answer.",
+        "_start_family_lore": {"plants": 1},   # unlabelled: she wrote the Physica
     },
     "nikola tesla": {
         "INT": 18, "CON": 13, "PER": 14, "DEX": 12, "WIS": 12, "STR": 9,
@@ -330,6 +345,7 @@ SECRET_BUILDS: dict[str, dict] = {
         "_start_wand": "wand_of_force_dart",
         "_start_accessory": "ring_of_intellect",
         "_greeting": "Tesla touches the doorframe. It hums. The dungeon has been wired.",
+        "_start_family_lore": {"constructs": 1},   # unlabelled: he built the automaton boat
     },
 
     # -- QA ----------------------------------------------------------------
@@ -1252,7 +1268,12 @@ class WelcomeScreen:
         rows = []
         for i, e in enumerate(entries):
             victory = bool(e.get('victory', False))
-            cells = [f"{rank_from + i}.", str(e.get('name', '?'))[:14],
+            name = str(e.get('name', '?'))[:14]
+            if date and e.get('title'):
+                # An honour the run earned (Loremaster), on the wide
+                # all-time table only: the Top Runs panel has no room.
+                name = f"{name}, {e['title']}"
+            cells = [f"{rank_from + i}.", name,
                      str(e.get('level', 1)), f"{e.get('score', 0):,}",
                      str(e.get('grade', '?'))]
             if date:

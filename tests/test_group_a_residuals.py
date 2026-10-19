@@ -105,7 +105,9 @@ def test_make_corpse_pre_identifies_known_types():
     import inspect
     import game_combat
     src = inspect.getsource(game_combat.CombatMixin._make_corpse)
-    assert "lore_known_monster_ids" in src, (
+    # Studied by the hero himself (monster families, 2026-10-18): a kind the
+    # Book of Thoth only opened the page of can still be studied.
+    assert "studied_monster_ids" in src, (
         "_make_corpse must pre-identify corpses of studied monster types"
     )
 

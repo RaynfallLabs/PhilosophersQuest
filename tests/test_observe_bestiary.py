@@ -1,10 +1,13 @@
-"""O on a creature the hero knows opens its Bestiary page (Brandon,
+"""O on a creature the hero has IDENTIFIED opens its Bestiary page (Brandon,
 2026-10-18: "when using O on an identified monster, it should bring up the
 monster's bestiary page.")
 
-Known = it has a Bestiary page (Game._bestiary_known_kinds: every kind seen,
-plus carried corpses studied for lore), the page B -> Bestiary -> Enter
-shows. Esc returns to play. An unknown creature keeps the plain look; an
+Identified (MONSTER_FAMILIES_DESIGN ruling 1) = the kind is in
+studied_monster_ids, or in lore_known_monster_ids (the Book of Thoth,
+Omnisight), or its monster family is at tier 1 or more. That opens the page
+B -> Bestiary -> Enter shows; Esc returns to play. A kind only SEEN keeps
+the plain look ("You don't know this creature yet") and has a short page in
+B (name, art, family, "Not yet studied", the family's progress line). An
 invisible creature the hero cannot see, or a mimic still in disguise, never
 opens its page (unseen.py: never reveal hidden things).
 
@@ -69,8 +72,11 @@ def _scene(mid, dx=2, dy=0, known=True):
     g._refresh_fov()
     g.visible |= {(x + i, y + j) for i in range(-3, 4) for j in range(-3, 4)}
     g.player.known_monster_ids.discard(mid)
+    g.player.studied_monster_ids.discard(mid)
     if known:
+        # Seen AND studied: an identified kind.
         g.player.known_monster_ids.add(mid)
+        g.player.studied_monster_ids.add(mid)
     return g, m
 
 
@@ -103,12 +109,14 @@ def test_o_on_a_known_monster_opens_its_bestiary_page():
     # The very page the B -> Bestiary list opens.
     g2 = _game('__test_observe_bestiary_b__')
     g2.player.known_monster_ids.add(kind)
+    g2.player.studied_monster_ids.add(kind)
     g2._open_encyclopedia()
     g2._encyclopedia_load_entries('bestiary')
     listed = next(e for e in g2.encyclopedia_entries if e['_id'] == kind)
     assert g._encyclopedia_entry == listed
     lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
     assert lines[0] == g._fix_name_case(MONS[kind]['name'])
+    assert lines[1].startswith('Family: ') and lines[1].endswith('(studied)')
     # The look still says what it saw, and costs no turn.
     turn = g.turn_count
     assert any(MONS[kind]['name'].lower() in str(e[0]).lower() for e in g.msg_log.entries[-4:])
@@ -124,6 +132,67 @@ def test_o_on_an_unknown_monster_keeps_the_plain_look():
     _observe(g, m)
     assert g.state == STATE_PLAYER
     assert any('You see' in str(e[0]) for e in g.msg_log.entries[-4:])
+
+
+def test_o_on_a_seen_but_unstudied_monster_does_not_open_its_page():
+    """Ruling 1: seeing is not knowing. A kind seen many times still keeps
+    the plain look until it is identified."""
+    from game_states import STATE_PLAYER
+    g, m = _scene(_plain_kind(), known=False)
+    g.player.known_monster_ids.add(m.kind)            # seen, not studied
+    _observe(g, m)
+    assert g.state == STATE_PLAYER
+    recent = [str(e[0]) for e in g.msg_log.entries[-4:]]
+    assert any("You don't know this creature yet" in t for t in recent)
+    assert not g._open_bestiary_page(m.kind)
+
+
+def test_o_on_a_kind_whose_family_is_at_tier_one_opens_its_page():
+    """Tier 1 of a family (Recognise): every member seen gets its full page,
+    and the look names the family, even a kind never studied."""
+    import family_lore
+    from game_states import STATE_ENCYCLOPEDIA
+    g, m = _scene('ghoul', known=False)
+    g.player.known_monster_ids.add('ghoul')
+    need = family_lore.thresholds('restless_dead')[0]
+    others = [k for k in family_lore.members('restless_dead')
+              if k != 'ghoul' and not family_lore.is_keystone(k)][:need]
+    g.player.studied_monster_ids.update(others)
+    assert family_lore.tier(g.player, 'restless_dead') == 1
+    _observe(g, m)
+    assert g.state == STATE_ENCYCLOPEDIA and g._encyclopedia_entry['_id'] == 'ghoul'
+    assert any('Restless Dead.' in str(e[0]) for e in g.msg_log.entries[-4:])
+    lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', g._encyclopedia_entry)]
+    assert 'known by its family, not yet studied' in lines[1]
+
+
+def test_the_book_of_thoth_opens_pages_but_teaches_no_tiers():
+    import family_lore
+    from game_states import STATE_ENCYCLOPEDIA
+    g, m = _scene('ghoul', known=False)
+    g.player.known_monster_ids.add('ghoul')
+    g.player.lore_known_monster_ids.add('ghoul')      # what the Thoth reveal writes
+    assert family_lore.tiers(g.player) == {}
+    _observe(g, m)
+    assert g.state == STATE_ENCYCLOPEDIA and g._encyclopedia_entry['_id'] == 'ghoul'
+
+
+def test_a_kind_only_seen_has_a_short_page_in_the_bestiary():
+    g = _game()
+    kind = _plain_kind()
+    g.player.known_monster_ids.add(kind)
+    g._open_encyclopedia()
+    g._encyclopedia_load_entries('bestiary')
+    entry = next(e for e in g.encyclopedia_entries if e['_id'] == kind)
+    assert entry['_known'] is False
+    lines = [str(t[0]) for t in g._encyclopedia_article_lines('bestiary', entry)]
+    assert lines[0] == g._fix_name_case(MONS[kind]['name'])
+    assert lines[1].startswith('Family: ')
+    assert any(t.startswith('Not yet studied') for t in lines)
+    assert any(' of ' in t and ' to Recognise' in t for t in lines)     # the progress line
+    joined = ' '.join(lines)
+    assert 'HP' not in joined and 'Lore' not in joined and 'Bite' not in joined
+    assert g._encyclopedia_entry_brief('bestiary', entry).startswith('Unstudied')
 
 
 def test_o_on_an_unseen_invisible_monster_never_opens_its_page():
@@ -157,6 +226,7 @@ def test_esc_in_the_encyclopedia_steps_back_as_its_footer_says():
     from game_states import STATE_ENCYCLOPEDIA, STATE_PLAYER
     g = _game()
     g.player.known_monster_ids.add(_plain_kind())
+    g.player.studied_monster_ids.add(_plain_kind())
     _press(g, pygame.K_b, 'b')
     _press(g, pygame.K_RETURN)
     _press(g, pygame.K_RETURN)

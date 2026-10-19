@@ -1053,15 +1053,103 @@ def _(g):
 
 
 @scene('menu_bestiary_from_observe', 'Menus',
-       'O, Enter on a creature the hero knows: its Bestiary page opens in the Encyclopedia.',
+       'O, Enter on a creature the hero has studied: its Bestiary page opens in the Encyclopedia.',
        expect='encyclopedia')
 def _(g):
     m = g._capture_monster
     g.player.known_monster_ids.add(m.kind)
+    g.player.studied_monster_ids.add(m.kind)      # identified (MONSTER_FAMILIES ruling 1)
     g.visible.add((m.x, m.y))
     press(g, pygame.K_o)
     g.target_cursor_x, g.target_cursor_y = m.x, m.y
     press(g, pygame.K_RETURN)
+
+
+# -- Monster family knowledge (src/family_lore.py) ---------------------------------
+
+def _family_lore(g, fid='restless_dead', tier=3):
+    """Study enough ordinary kinds of a family to stand at `tier` (and have
+    seen a few more of its members), through the game's own sets."""
+    import family_lore
+    plain = [k for k in family_lore.members(fid)
+             if k in _monster_defs() and not family_lore.is_keystone(k)]
+    need = family_lore.thresholds(fid)[tier - 1]
+    g.player.studied_monster_ids.update(plain[:need])
+    g.player.known_monster_ids.update(plain[:need + 3])
+    family_lore.mark_all_told(g.player)
+    return plain
+
+
+@scene('menu_bestiary_family_page', 'Menus',
+       'B, Bestiary, Tab to Families, Enter on a family the hero knows to Lore: its page '
+       '(tier, blurb, studied and seen, progress, the five tiers, members seen).',
+       expect='encyclopedia')
+def _(g):
+    _family_lore(g, 'restless_dead', 3)
+    _family_lore(g, 'vermin', 1)
+    press(g, pygame.K_b)
+    press(g, pygame.K_RETURN)
+    press(g, pygame.K_TAB)
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e.get('_family') == 'restless_dead')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_bestiary_short_page', 'Menus',
+       'B, Bestiary, Enter on a kind only seen: the short page (art, family, not yet '
+       'studied, progress).', expect='encyclopedia')
+def _(g):
+    g.player.known_monster_ids.add('giant_rat')
+    press(g, pygame.K_b)
+    press(g, pygame.K_RETURN)
+    g.encyclopedia_selection = next(i for i, e in enumerate(g.encyclopedia_entries)
+                                    if e.get('_id') == 'giant_rat')
+    press(g, pygame.K_RETURN)
+
+
+@scene('menu_bestiary_family_line', 'Menus',
+       'O, Enter on a creature never studied whose family is at tier 1: its full page, '
+       'with "Family: ... (known by its family, not yet studied)".', expect='encyclopedia')
+def _(g):
+    plain = _family_lore(g, 'restless_dead', 1)
+    m = g._capture_monster
+    kind = next(k for k in plain if k not in g.player.studied_monster_ids)
+    from monster import Monster
+    nm = Monster({**_monster_defs()[kind], 'id': kind}, m.x, m.y)
+    nm._aware = True
+    g.monsters = [x for x in g.monsters if x is not m] + [nm]
+    g._capture_monster = nm
+    g.player.known_monster_ids.add(kind)
+    g.visible.add((nm.x, nm.y))
+    press(g, pygame.K_o)
+    g.target_cursor_x, g.target_cursor_y = nm.x, nm.y
+    press(g, pygame.K_RETURN)
+
+
+@scene('popup_family_tier', 'Popups',
+       'A corpse study that reaches tier 3 of a family: the LORE OF ... popup over the lore page.',
+       expect='story_popup')
+def _(g):
+    import family_lore
+    plain = _family_lore(g, 'vermin', 2)
+    g.state = _S().STATE_LORE
+    g._lore_subject = g._capture_corpse
+    need = family_lore.thresholds('vermin')[2]
+    for k in plain:
+        if family_lore.score(g.player, 'vermin') >= need:
+            break
+        g._family_study(k)
+
+
+@scene('menu_charsheet_monster_lore', 'Menus',
+       '@ with several families learned: the Monster Lore block, "+N more".',
+       expect='character_sheet')
+def _(g):
+    _family_lore(g, 'restless_dead', 3)
+    _family_lore(g, 'vermin', 4)
+    _family_lore(g, 'goblinkin', 2)
+    _family_lore(g, 'serpents', 1)
+    g.handle_event(key_event(pygame.K_2, '@', pygame.KMOD_SHIFT))
 
 
 @scene('play_death_chase', 'Play', 'Ascending with the Stone, Death pursues: red vignette on the map.',
@@ -1298,6 +1386,9 @@ def _(g):
     # The creatures a player has met by turn 412 (combat adds each kind it
     # sees to known_monster_ids); without them the Bestiary is empty.
     g.player.known_monster_ids.update(('giant_rat', 'goblin', 'jackal', 'kobold'))
+    # The first listed has been studied, so its full page opens (a kind
+    # only seen has the short page: menu_bestiary_short_page).
+    g.player.studied_monster_ids.add('giant_rat')
     press(g, pygame.K_b)
     press(g, pygame.K_RETURN)
     press(g, pygame.K_RETURN)

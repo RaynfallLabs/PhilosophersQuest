@@ -1,0 +1,2531 @@
+{
+  "_about": "Monster families (MONSTER_FAMILIES_DESIGN.md, docs/systems/monster_families_v2_design.md). Each monster's `family` is in monsters.json; this file holds every number the system uses. Tier N needs the Nth number in `thresholds` of DIFFERENT kinds studied; a keystone (a boss, a mini-boss, a seal demon, a monster with proper_noun, or one in the family's `keystones`) counts `keystone_weight` kinds. Abilities are data: `effect` is a primitive in src/family_edges.py and `params` its numbers; `also` adds more parts to one technique. Nothing here scales by floor. `field_note` slots are filled by the Field Notes writer; an empty note is hidden.",
+  "tier_names": [
+    "Recognise",
+    "Forewarned",
+    "Lore",
+    "Hunter",
+    "Bane"
+  ],
+  "keystone_weight": 2,
+  "no_save_ward": {
+    "per_point": 0.1,
+    "floor": 0.5
+  },
+  "tier_messages": [
+    "You know {kin} now. You will recognise every one of them on sight.",
+    "You know the signs of {kin} now. You will sense them when you reach a floor.",
+    "",
+    "",
+    ""
+  ],
+  "popup_titles": [
+    "",
+    "",
+    "LORE OF {KIN}",
+    "HUNTER OF {KIN}",
+    "BANE OF {KIN}"
+  ],
+  "popup_leads": [
+    "",
+    "",
+    "You have learned how ordinary people kept {kin} away.",
+    "You have learned how a hunter takes {kin}.",
+    "You have learned where {kin} break."
+  ],
+  "tier_chronicle": [
+    "I took one of {kin} apart, and after that I knew the rest of them on sight.",
+    "I learned the signs {kin} leave on a stair, and after that I smelled them coming.",
+    "I learned how ordinary people kept {kin} away, the old folk ways, and they worked.",
+    "I learned how a hunter takes {kin}, and I started hunting them.",
+    "I took apart so many of {kin} that I learned where every one of them breaks."
+  ],
+  "families": {
+    "restless_dead": {
+      "name": "The Restless Dead",
+      "short": "Restless Dead",
+      "kin": "the restless dead",
+      "thresholds": [
+        4,
+        9,
+        14,
+        19,
+        24
+      ],
+      "keystones": [],
+      "blurb": "Bodies that would not stay in the ground: bone and dried flesh moved by a will that is not their own. They feel no pain and give no ground, and the grave's sicknesses walk in with them.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "restless_dead_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "restless_dead_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The smell of the grave hangs on the stair: the restless dead walk this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "restless_dead_grave_salt",
+              "name": "Grave-Salt",
+              "text": "You get +1 on saving throws against their paralysis, disease and life drain, and their disease lasts a tenth less time.",
+              "trigger_msg": "Grave-Salt: the salt in your pocket keeps the grave's grip off you.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "paralyzed",
+                  "diseased",
+                  "drain"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "diseased"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "restless_dead_bonebreaker",
+              "name": "Bonebreaker",
+              "text": "Your blows hit 6% harder when they strike what the dead fear: the weaknesses on their page.",
+              "trigger_msg": "Bonebreaker! You strike where the dead are weakest.",
+              "effect": "weakness_amp",
+              "params": {
+                "mult": 1.06
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "restless_dead_turn_the_dead",
+              "name": "Turn the Dead",
+              "text": "A blow at chain 12 or more sends every lesser restless dead in sight fleeing for 6 turns.",
+              "trigger_msg": "Turn the Dead! The dead in sight shrink back from you.",
+              "effect": "turn",
+              "params": {
+                "trigger": "on_hit",
+                "chain_min": 12,
+                "turns": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ghosts": {
+      "name": "Ghosts and Shades",
+      "short": "Ghosts",
+      "kin": "the ghosts",
+      "thresholds": [
+        3,
+        6,
+        9,
+        12,
+        15
+      ],
+      "keystones": [],
+      "blurb": "What is left when the body is gone and something refuses to leave. Steel passes through most of them, and their touch takes warmth and courage before it takes life.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "ghosts_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "ghosts_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The candle-flames lean the wrong way: ghosts drift on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "ghosts_iron_and_salt",
+              "name": "Iron and Salt",
+              "text": "You get +1 on saving throws against their fear and life drain, and their draining no longer heals them.",
+              "trigger_msg": "Iron and Salt: the cold iron at your belt breaks the ghost's hold.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "feared",
+                  "drain"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "drain_heal_block",
+                  "params": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "ghosts_second_sight",
+              "name": "Second Sight",
+              "text": "Invisible ghosts within 3 tiles show to you as a faint shimmer you can strike.",
+              "trigger_msg": "Second Sight: you see a ghost that the living cannot.",
+              "effect": "sense_hidden",
+              "params": {
+                "kinds": [
+                  "invisible"
+                ],
+                "radius": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "ghosts_lay_the_ghost",
+              "name": "Lay the Ghost",
+              "text": "At chain 8 or more, your blows ignore their resistances, as if your weapon were blessed.",
+              "trigger_msg": "Lay the Ghost! Your blow bites as if it were blessed.",
+              "effect": "pierce_resist",
+              "params": {
+                "chain_min": 8,
+                "blessed": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "vampires_liches": {
+      "name": "Vampires and Liches",
+      "short": "Vampires and Liches",
+      "kin": "the vampires and liches",
+      "thresholds": [
+        2,
+        5,
+        8,
+        10,
+        13
+      ],
+      "keystones": [],
+      "blurb": "The dead who kept their minds and their hunger. Each one cheated the grave on purpose, by blood or by sorcery, and each one keeps its death hidden somewhere.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vampires_liches_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vampires_liches_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The stair smells of iron and old roses: a vampire or a lich keeps court here."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vampires_liches_garlic_and_ash",
+              "name": "Garlic and Ash",
+              "text": "You get +1 on saving throws against their life drain and paralysis, and their bite no longer heals them.",
+              "trigger_msg": "Garlic and Ash: the bite takes nothing back to heal it.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "drain",
+                  "paralyzed"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "drain_heal_block",
+                  "params": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vampires_liches_hunters_patience",
+              "name": "Hunter's Patience",
+              "text": "You get 1 more second on the maths clock when you attack them.",
+              "trigger_msg": "Hunter's Patience: you take your time with this one.",
+              "effect": "extra_seconds",
+              "params": {
+                "seconds": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vampires_liches_stake",
+              "name": "Stake Through the Heart",
+              "text": "At chain 18 or more, a lesser vampire or lich below 15% health dies outright: no mist, no rising. A named foe takes a blow 25% harder instead.",
+              "trigger_msg": "Stake Through the Heart! It crumbles to ash.",
+              "effect": "execute",
+              "params": {
+                "chain_min": 18,
+                "hp_below": 0.15,
+                "variant": "ash",
+                "named_mult": 1.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "demons": {
+      "name": "Demons and Devils",
+      "short": "Demons",
+      "kin": "the demons",
+      "thresholds": [
+        6,
+        13,
+        20,
+        28,
+        35
+      ],
+      "keystones": [],
+      "blurb": "Creatures of the Pit, from the smallest tormentor to the princes of Hell. They burn, they lie and they cloud the mind, and every people that met them wrote down a way to send them back.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "demons_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "demons_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Brimstone on the stair: something from the Pit has climbed this far."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "demons_circle_of_salt",
+              "name": "Circle of Salt",
+              "text": "You get +1 on saving throws against their burning and confusion, and their burning lasts a tenth less time.",
+              "trigger_msg": "Circle of Salt: the old ring holds against the Pit.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "burning",
+                  "confused"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "burning"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "demons_true_names",
+              "name": "True Names",
+              "text": "Your weapon hits them 5% harder.",
+              "trigger_msg": "True Names: you call it by its name, and it flinches.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "demons_banishment",
+              "name": "Banishment",
+              "text": "At chain 18 or more, a lesser demon below 15% health is cast back into the Pit. A named foe takes a blow 25% harder instead.",
+              "trigger_msg": "Banishment! It is cast back into the Pit.",
+              "effect": "execute",
+              "params": {
+                "chain_min": 18,
+                "hp_below": 0.15,
+                "variant": "banish",
+                "named_mult": 1.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dragons": {
+      "name": "Dragons and Wyrms",
+      "short": "Dragons",
+      "kin": "the dragons",
+      "thresholds": [
+        3,
+        6,
+        10,
+        13,
+        17
+      ],
+      "keystones": [],
+      "blurb": "Great scaled serpents with wings or without, old beyond counting and greedy beyond reason. Their breath is weather and their scales are armour, and every one of them has a weak spot somewhere.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "dragons_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "dragons_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Gold-smell and scorch-marks on the stair: a wyrm lairs on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "dragons_dragon_ward",
+              "name": "Dragon-Ward",
+              "text": "Their fire, cold and poison hurt you 5% less, and you get +1 on saving throws against their burning, freezing and poison.",
+              "trigger_msg": "Dragon-Ward: you turn your shoulder to the breath, the way the old songs say.",
+              "effect": "resist_damage",
+              "params": {
+                "types": [
+                  "fire",
+                  "cold",
+                  "poison"
+                ],
+                "mult": 0.95
+              },
+              "also": [
+                {
+                  "effect": "save_bonus",
+                  "params": {
+                    "effects": [
+                      "burning",
+                      "frozen",
+                      "poisoned"
+                    ],
+                    "amount": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "dragons_soft_belly",
+              "name": "The Soft Belly",
+              "text": "Your weapon hits them 5% harder: Sigurd struck Fafnir from below.",
+              "trigger_msg": "The Soft Belly! You strike under the scales.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "dragons_missing_scale",
+              "name": "The Missing Scale",
+              "text": "At chain 12 or more, your blow ignores a dragon's scales and resistances, even Fafnir's.",
+              "trigger_msg": "The Missing Scale! Your blow finds the one bare spot.",
+              "effect": "pierce_resist",
+              "params": {
+                "chain_min": 12,
+                "scales": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "giants": {
+      "name": "Giants and Trolls",
+      "short": "Giants and Trolls",
+      "kin": "the giants and trolls",
+      "thresholds": [
+        3,
+        6,
+        9,
+        12,
+        16
+      ],
+      "keystones": [],
+      "blurb": "The old enemies of gods and men: huge, strong and hard to kill. Their danger is their size, and the stories agree that the bigger they are, the harder they fall.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "giants_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "giants_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The stair shakes underfoot: giants walk this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "giants_steady_hand",
+              "name": "Steady Hand",
+              "text": "You get 1 more second on the maths clock when you attack them.",
+              "trigger_msg": "Steady Hand: its size does not rush you.",
+              "effect": "extra_seconds",
+              "params": {
+                "seconds": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "giants_fire_and_dawn",
+              "name": "Fire and Dawn",
+              "text": "Your blows stop their regeneration for 3 turns.",
+              "trigger_msg": "Fire and Dawn: the wound will not close.",
+              "effect": "block_regen",
+              "params": {
+                "turns": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "giants_bigger_they_are",
+              "name": "The Bigger They Are",
+              "text": "At chain 5 or more, your weapon hits them 5% harder, and 8% harder against a giant that fills more than one tile.",
+              "trigger_msg": "The Bigger They Are! It staggers under the blow.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05,
+                "chain_min": 5,
+                "big_mult": 1.08
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "goblinkin": {
+      "name": "Goblins and Orcs",
+      "short": "Goblins and Orcs",
+      "kin": "the goblins and orcs",
+      "thresholds": [
+        2,
+        4,
+        7,
+        10,
+        13
+      ],
+      "keystones": [],
+      "blurb": "The warband peoples of the tunnels, who live by raiding and by numbers. They are brave in a crowd and cowardly alone, and they lay traps for anyone who walks without looking.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "goblinkin_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "goblinkin_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Crude marks scratched on the stair: a goblin warband holds this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "goblinkin_break_their_nerve",
+              "name": "Break Their Nerve",
+              "text": "When you kill one, each lesser goblin or orc in sight may lose its nerve and flee for 4 turns.",
+              "trigger_msg": "Break Their Nerve! The warband wavers.",
+              "effect": "turn",
+              "params": {
+                "trigger": "on_kill",
+                "turns": 4,
+                "chance": 0.25
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "goblinkin_trap_wise",
+              "name": "Trap-Wise",
+              "text": "You get +1 on saving throws against their fear and bleeding, and their ambushers never catch you unawares.",
+              "trigger_msg": "Trap-Wise: you saw that coming.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "feared",
+                  "bleeding"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "no_ambush",
+                  "params": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "goblinkin_name_is_known",
+              "name": "Your Name Is Known",
+              "text": "Lesser goblins and orcs flee from you on sight.",
+              "trigger_msg": "Your Name Is Known: the warband scatters at the sight of you.",
+              "effect": "turn",
+              "params": {
+                "trigger": "on_sight",
+                "turns": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "mortals": {
+      "name": "Mortal Foes",
+      "short": "Mortal Foes",
+      "kin": "the mortal foes",
+      "thresholds": [
+        2,
+        5,
+        8,
+        11,
+        13
+      ],
+      "keystones": [],
+      "blurb": "Men and women who came down here by choice, to rob, to worship or to kill for pay. They bleed like you and think like you, which makes them the least predictable thing in the dark.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "mortals_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "mortals_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Bootprints and a cold campfire on the stair: armed men and women walk this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "mortals_read_their_hands",
+              "name": "Read Their Hands",
+              "text": "The thieves among them can never steal from you.",
+              "trigger_msg": "Read Their Hands: you catch the hand before it reaches your purse.",
+              "effect": "theft_immune",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "mortals_steady_hand",
+              "name": "Steady Hand",
+              "text": "You get 1 more second on the maths clock when you attack them.",
+              "trigger_msg": "Steady Hand: you have fought his kind before.",
+              "effect": "extra_seconds",
+              "params": {
+                "seconds": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "mortals_yield",
+              "name": "Yield!",
+              "text": "At chain 8 or more, a lesser foe below half health surrenders, throws down his purse and runs.",
+              "trigger_msg": "Yield! Your foe throws down his purse and runs.",
+              "effect": "surrender",
+              "params": {
+                "chain_min": 8,
+                "hp_below": 0.5,
+                "turns": 8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "fair_folk": {
+      "name": "The Fair Folk",
+      "short": "Fair Folk",
+      "kin": "the Fair Folk",
+      "thresholds": [
+        2,
+        3,
+        5,
+        6,
+        8
+      ],
+      "keystones": [],
+      "blurb": "The hidden people of the mounds and the deep woods, beautiful and dangerous and never quite honest. They bargain and bewitch, and they keep every promise exactly as it was worded.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "fair_folk_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "fair_folk_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "A ring of mushrooms on the stair: the Fair Folk are abroad on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "fair_folk_coat_inside_out",
+              "name": "Coat Turned Inside Out",
+              "text": "You get +1 on saving throws against their confusion, sleep and charm.",
+              "trigger_msg": "Coat Turned Inside Out: their glamour slides off you.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "confused",
+                  "sleeping",
+                  "charmed"
+                ],
+                "amount": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "fair_folk_cold_iron",
+              "name": "Cold Iron",
+              "text": "Your weapon hits them 5% harder, and 10% harder if it is iron or cold iron.",
+              "trigger_msg": "Cold Iron! The Fair Folk cannot abide it.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05,
+                "weapons": [
+                  "iron"
+                ],
+                "weapon_mult": 1.1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "fair_folk_true_name",
+              "name": "Their True Name",
+              "text": "Invisible or disguised Fair Folk within 4 tiles show to you, and their charm can never take you.",
+              "trigger_msg": "Their True Name: you name it, and its glamour falls away.",
+              "effect": "sense_hidden",
+              "params": {
+                "kinds": [
+                  "invisible",
+                  "disguise"
+                ],
+                "radius": 4
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "charmed"
+                    ],
+                    "mult": 0.0
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "great_beasts": {
+      "name": "Great Beasts",
+      "short": "Great Beasts",
+      "kin": "the great beasts",
+      "thresholds": [
+        2,
+        3,
+        5,
+        7,
+        8
+      ],
+      "keystones": [],
+      "blurb": "Animals grown huge and savage, and the legendary quarry of the old hunting tales. They have no magic but muscle, tooth and claw, and that is usually enough.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "great_beasts_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "great_beasts_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Fresh tracks and torn bark on the stair: great beasts hunt this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "great_beasts_hunters_harvest",
+              "name": "Hunter's Harvest",
+              "text": "Harvesting their corpses gives one extra portion.",
+              "trigger_msg": "Hunter's Harvest: you know where the best cuts are.",
+              "effect": "harvest_bonus",
+              "params": {
+                "portions": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "great_beasts_steady_hand",
+              "name": "Steady Hand",
+              "text": "You get 1 more second on the maths clock when you attack them.",
+              "trigger_msg": "Steady Hand: you read the beast before it moves.",
+              "effect": "extra_seconds",
+              "params": {
+                "seconds": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "great_beasts_beast_friend",
+              "name": "Beast-Friend",
+              "text": "One lesser beast in ten arrives calm and leaves you be unless you strike first.",
+              "trigger_msg": "Beast-Friend: the beasts here watch you and let you pass.",
+              "effect": "calm_on_arrival",
+              "params": {
+                "chance": 0.1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "vermin": {
+      "name": "Vermin, Spiders and Swarms",
+      "short": "Vermin and Spiders",
+      "kin": "the vermin and spiders",
+      "thresholds": [
+        2,
+        3,
+        5,
+        6,
+        8
+      ],
+      "keystones": [
+        "spider_queen"
+      ],
+      "blurb": "The small biters of the dark: things that crawl, gnaw, spin and sting, often by the hundred. Alone they are a nuisance; together they carry poison and plague, and the patient ones wait in silk.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vermin_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vermin_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Webs and gnawed bones on the stair: vermin and spiders creep on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vermin_web_and_plague",
+              "name": "Web and Plague",
+              "text": "You get +1 on saving throws against their poison, disease, slowing and holding, and their poison and disease last a tenth less time.",
+              "trigger_msg": "Web and Plague: you clean the bite and step through the silk.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "poisoned",
+                  "diseased",
+                  "slowed",
+                  "immobilized"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "poisoned",
+                      "diseased"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vermin_tremor_sense",
+              "name": "Tremor-Sense",
+              "text": "Vermin and spiders waiting in ambush within 4 tiles are revealed to you.",
+              "trigger_msg": "Tremor-Sense: a thread trembles, and you see what waits on it.",
+              "effect": "sense_hidden",
+              "params": {
+                "kinds": [
+                  "ambush"
+                ],
+                "radius": 4
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "vermin_pipers_tune",
+              "name": "The Piper's Tune",
+              "text": "A blow at chain 8 or more sends every lesser vermin and spider in sight fleeing for 5 turns.",
+              "trigger_msg": "The Piper's Tune! The swarm turns tail.",
+              "effect": "turn",
+              "params": {
+                "trigger": "on_hit",
+                "chain_min": 8,
+                "turns": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "serpents": {
+      "name": "Serpents and Swamp-Kin",
+      "short": "Serpents",
+      "kin": "the serpents",
+      "thresholds": [
+        2,
+        3,
+        5,
+        7,
+        9
+      ],
+      "keystones": [],
+      "blurb": "Snakes great and small, and the scaled and slimy folk of the flooded halls. They strike fast, their venom works slowly, and they coil where you least expect them.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "serpents_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "serpents_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "A shed skin on the stair: serpents coil on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "serpents_antivenom",
+              "name": "Antivenom",
+              "text": "You get +1 on saving throws against their poison and paralysis, and their poison lasts a tenth less time.",
+              "trigger_msg": "Antivenom: you know which herb to chew.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "poisoned",
+                  "paralyzed"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "poisoned"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "serpents_mongoose",
+              "name": "Mongoose",
+              "text": "Your first blow in a fight against one starts at chain 2.",
+              "trigger_msg": "Mongoose! You strike before it can.",
+              "effect": "opening_chain",
+              "params": {
+                "chain": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "serpents_snake_charmer",
+              "name": "Snake-Charmer",
+              "text": "At chain 8 or more, a lesser serpent you strike is charmed calm for 8 turns.",
+              "trigger_msg": "Snake-Charmer: it sways, and settles.",
+              "effect": "charm_on_hit",
+              "params": {
+                "chain_min": 8,
+                "turns": 8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "birds": {
+      "name": "Birds and Winged Hunters",
+      "short": "Winged Hunters",
+      "kin": "the winged hunters",
+      "thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "keystones": [],
+      "blurb": "Hunters of the air, some of them birds and some only partly. They dive at the eyes and are gone again before you can swing.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "birds_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "birds_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Feathers drift down the stair: winged hunters nest on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "birds_hooded",
+              "name": "Hooded",
+              "text": "You get +1 on saving throws against their blinding and confusion, as a falconer's hood calms a hawk.",
+              "trigger_msg": "Hooded: you keep your eyes covered and your head clear.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "blinded",
+                  "confused"
+                ],
+                "amount": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "birds_falconers_eye",
+              "name": "Falconer's Eye",
+              "text": "Your bow and your thrown weapons hit them 5% harder.",
+              "trigger_msg": "Falconer's Eye! You lead the target just right.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05,
+                "only_weapons": [
+                  "ranged",
+                  "thrown"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "birds_heracles_rattle",
+              "name": "Heracles' Rattle",
+              "text": "At chain 12 or more, the din of your blow sends every lesser winged hunter in sight scattering for 6 turns.",
+              "trigger_msg": "Heracles' Rattle! The flock scatters.",
+              "effect": "turn",
+              "params": {
+                "trigger": "on_hit",
+                "chain_min": 12,
+                "turns": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "gorgons": {
+      "name": "Gorgons and Basilisks",
+      "short": "Gorgons",
+      "kin": "the gorgons and basilisks",
+      "thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "keystones": [],
+      "blurb": "Creatures whose look alone can stop a heart or turn flesh to stone. The ancients survived them by never meeting their eyes.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "gorgons_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "gorgons_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Stone figures stand on the stair, their faces frozen in fear: a gorgon's gaze haunts this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "gorgons_averted_eyes",
+              "name": "Averted Eyes",
+              "text": "You get +1 on saving throws against their killing gaze and their poison.",
+              "trigger_msg": "Averted Eyes: you look at its feet, never its face.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "gaze",
+                  "poisoned"
+                ],
+                "amount": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "gorgons_perseus_shield",
+              "name": "Perseus' Shield",
+              "text": "While you carry a shield, their gaze cannot take you at all.",
+              "trigger_msg": "Perseus' Shield: you watch it in the bright metal, and the gaze slides off.",
+              "effect": "gaze_immune",
+              "params": {
+                "requires": "shield"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "gorgons_harpe",
+              "name": "Harpe",
+              "text": "Your weapon hits them 5% harder, and at chain 18 or more a lesser one below half health meets its own stare and turns to stone. A named foe takes a blow 25% harder instead.",
+              "trigger_msg": "Harpe! It meets its own stare and turns to stone.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05
+              },
+              "also": [
+                {
+                  "effect": "execute",
+                  "params": {
+                    "chain_min": 18,
+                    "hp_below": 0.5,
+                    "variant": "petrify",
+                    "named_mult": 1.25
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "legend": {
+      "name": "Monsters of Legend",
+      "short": "Monsters of Legend",
+      "kin": "the monsters of legend",
+      "thresholds": [
+        2,
+        4,
+        7,
+        9,
+        12
+      ],
+      "keystones": [],
+      "blurb": "The beasts that heroes became famous for killing, each one the answer to an old story. Most of them were beaten once, by someone who knew the trick.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "legend_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "legend_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The stair is carved with an old story: a monster of legend waits on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "legend_steady_hand",
+              "name": "Steady Hand",
+              "text": "You get 1 more second on the maths clock when you attack them.",
+              "trigger_msg": "Steady Hand: you know how this story goes.",
+              "effect": "extra_seconds",
+              "params": {
+                "seconds": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "legend_iolaus_torch",
+              "name": "Iolaus' Torch",
+              "text": "Your blows stop their regeneration for 3 turns, so a hydra's heads stay down.",
+              "trigger_msg": "Iolaus' Torch: you sear the wound, and it stays shut.",
+              "effect": "block_regen",
+              "params": {
+                "turns": 3
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "legend_know_the_story",
+              "name": "Know the Story",
+              "text": "Once per fight, your first wrong answer against one does not end your chain. You know how the story ends.",
+              "trigger_msg": "Know the Story: you remember how it ends, and keep going.",
+              "effect": "chain_forgive",
+              "params": {
+                "uses": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "shapeshifters": {
+      "name": "Werebeasts and Shapeshifters",
+      "short": "Shapeshifters",
+      "kin": "the shapeshifters",
+      "thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "keystones": [],
+      "blurb": "People who are not always people, and animals who are not always animals. They hide in plain sight until the moon, the hunger or the moment turns them.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "shapeshifters_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "shapeshifters_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Claw-marks and a torn cloak on the stair: a shapeshifter hunts this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "shapeshifters_wolfsbane",
+              "name": "Wolfsbane",
+              "text": "You get +1 on saving throws against their bleeding and disease, and their bleeding lasts a tenth less time.",
+              "trigger_msg": "Wolfsbane: the wound closes clean.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "bleeding",
+                  "diseased"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "bleeding"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "shapeshifters_silvered",
+              "name": "Silvered",
+              "text": "Your weapon hits them 3% harder, and 10% harder if it is silver.",
+              "trigger_msg": "Silvered! The shape it wears cannot stand it.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.03,
+                "weapons": [
+                  "silver"
+                ],
+                "weapon_mult": 1.1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "shapeshifters_forced_shape",
+              "name": "Forced Shape",
+              "text": "At chain 8 or more, a lesser shapeshifter is stunned for 3 turns as its shape tears.",
+              "trigger_msg": "Forced Shape! Its shape tears, and it reels.",
+              "effect": "stun_on_hit",
+              "params": {
+                "chain_min": 8,
+                "turns": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "constructs": {
+      "name": "Golems and Constructs",
+      "short": "Constructs",
+      "kin": "the golems and constructs",
+      "thresholds": [
+        2,
+        4,
+        7,
+        10,
+        12
+      ],
+      "keystones": [],
+      "blurb": "Things made, not born: stone, clay, bronze and clockwork given motion by craft or magic. They feel no pain and no fear, and they obey their last order forever.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "constructs_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "constructs_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Grinding stone and ticking brass on the stair: something made, not born, guards this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "constructs_steady_hand",
+              "name": "Steady Hand",
+              "text": "You get 1 more second on the maths clock when you attack them.",
+              "trigger_msg": "Steady Hand: it is slow, and so you need not be quick.",
+              "effect": "extra_seconds",
+              "params": {
+                "seconds": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "constructs_find_the_seam",
+              "name": "Find the Seam",
+              "text": "At chain 8 or more, your blows ignore their resistances, as Medea pulled the nail from Talos's ankle.",
+              "trigger_msg": "Find the Seam! Your blow goes in where the plates join.",
+              "effect": "pierce_resist",
+              "params": {
+                "chain_min": 8
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "constructs_erase_the_letter",
+              "name": "Erase the Letter",
+              "text": "At chain 18 or more, a lesser construct below 15% health falls lifeless: emet, truth, becomes met, dead. A named foe takes a blow 25% harder instead.",
+              "trigger_msg": "Erase the Letter! Truth becomes dead, and it falls.",
+              "effect": "execute",
+              "params": {
+                "chain_min": 18,
+                "hp_below": 0.15,
+                "variant": "erase",
+                "named_mult": 1.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "elementals": {
+      "name": "Elementals and Djinn",
+      "short": "Elementals",
+      "kin": "the elementals",
+      "thresholds": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "keystones": [],
+      "blurb": "Living fire, stone, wind and water, and the spirits of smokeless flame. They are the world's raw stuff with a temper.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "elementals_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "elementals_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The air on the stair tastes of lightning and ash: elementals stir on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "elementals_ward_of_elements",
+              "name": "Ward of the Elements",
+              "text": "Their fire, cold, lightning and acid hurt you 5% less.",
+              "trigger_msg": "Ward of the Elements: you meet the element and it gives a little.",
+              "effect": "resist_damage",
+              "params": {
+                "types": [
+                  "fire",
+                  "cold",
+                  "lightning",
+                  "acid"
+                ],
+                "mult": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "elementals_opposing_element",
+              "name": "Opposing Element",
+              "text": "Your blows hit 6% harder when they strike what the elemental is weak to.",
+              "trigger_msg": "Opposing Element! Water on fire.",
+              "effect": "weakness_amp",
+              "params": {
+                "mult": 1.06
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "elementals_solomons_seal",
+              "name": "Solomon's Seal",
+              "text": "Their burning and freezing wear off twice as fast, and their elemental damage hurts you 10% less.",
+              "trigger_msg": "Solomon's Seal: the seal holds the element in check.",
+              "effect": "duration_mult",
+              "params": {
+                "effects": [
+                  "burning",
+                  "frozen"
+                ],
+                "mult": 0.5
+              },
+              "also": [
+                {
+                  "effect": "resist_damage",
+                  "params": {
+                    "types": [
+                      "fire",
+                      "cold",
+                      "lightning",
+                      "acid"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "oozes": {
+      "name": "Oozes and Slimes",
+      "short": "Oozes",
+      "kin": "the oozes",
+      "thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "keystones": [],
+      "blurb": "Mindless, shapeless eaters that clean the dungeon of everything soft. They dissolve what they touch, and cutting the wrong one only makes more of it.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "oozes_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "oozes_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The stair is slick and smells of acid: oozes creep on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "oozes_clean_blade",
+              "name": "Clean Blade",
+              "text": "You get +1 on saving throws against their paralysis and weakness, and their weakness lasts a tenth less time.",
+              "trigger_msg": "Clean Blade: you wipe the slime off before it takes hold.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "paralyzed",
+                  "weakened"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "weakened"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "oozes_strike_true",
+              "name": "Strike True",
+              "text": "Your blows never split them, and your weapon hits them 5% harder.",
+              "trigger_msg": "Strike True! A clean blow, and it does not split.",
+              "effect": "prevent_split",
+              "params": {},
+              "also": [
+                {
+                  "effect": "damage_mult",
+                  "params": {
+                    "mult": 1.05
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "oozes_fire_and_frost",
+              "name": "Fire and Frost",
+              "text": "Your blows hit 10% harder when they strike what an ooze is weak to.",
+              "trigger_msg": "Fire and Frost! It shrivels from the blow.",
+              "effect": "weakness_amp",
+              "params": {
+                "mult": 1.1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "aberrations": {
+      "name": "Aberrations",
+      "short": "Aberrations",
+      "kin": "the aberrations",
+      "thresholds": [
+        2,
+        5,
+        8,
+        11,
+        14
+      ],
+      "keystones": [],
+      "blurb": "Things that should not exist: minds from beyond the stars, eyes that float, mouths that wait. They attack the mind as much as the body, and many of them are not what they seem.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "aberrations_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "aberrations_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "The stair feels wrong, as if it bends: aberrations lurk on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "aberrations_steel_mind",
+              "name": "Steel Mind",
+              "text": "You get +1 on saving throws against their confusion and paralysis, and their hallucinations last a tenth less time.",
+              "trigger_msg": "Steel Mind: you hold onto what is real.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "confused",
+                  "paralyzed"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "hallucinating"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "aberrations_mimic_sense",
+              "name": "Mimic-Sense",
+              "text": "A disguised mimic within 2 tiles gives itself away to you.",
+              "trigger_msg": "Mimic-Sense: something about that one is wrong.",
+              "effect": "sense_hidden",
+              "params": {
+                "kinds": [
+                  "disguise"
+                ],
+                "radius": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "aberrations_the_unblinking",
+              "name": "The Unblinking",
+              "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
+              "trigger_msg": "The Unblinking! You never looked away.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05
+              },
+              "also": [
+                {
+                  "effect": "no_ambush",
+                  "params": {}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "plants": {
+      "name": "Plants and Fungi",
+      "short": "Plants and Fungi",
+      "kin": "the plants and fungi",
+      "thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "keystones": [],
+      "blurb": "Green and grey things that grow where nothing should: mould, vine and walking rot. They cannot chase you far, so they make you come to them, or put you to sleep where you stand.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "plants_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "plants_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "Spores drift on the stair like dust: something green and hungry grows on this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "plants_herbalists_mask",
+              "name": "Herbalist's Mask",
+              "text": "You get +1 on saving throws against their poison, sleep and hallucinations, and their poison lasts a tenth less time.",
+              "trigger_msg": "Herbalist's Mask: you breathe through the cloth.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "poisoned",
+                  "sleeping",
+                  "hallucinating"
+                ],
+                "amount": 1
+              },
+              "also": [
+                {
+                  "effect": "duration_mult",
+                  "params": {
+                    "effects": [
+                      "poisoned"
+                    ],
+                    "mult": 0.9
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "plants_herbalist",
+              "name": "Herbalist",
+              "text": "Harvesting them gives one extra portion.",
+              "trigger_msg": "Herbalist: you know which parts are worth keeping.",
+              "effect": "harvest_bonus",
+              "params": {
+                "portions": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "plants_woodsmans_axe",
+              "name": "Woodsman's Axe",
+              "text": "Your weapon hits them 5% harder, and their ambushers never catch you unawares.",
+              "trigger_msg": "Woodsman's Axe! You cut low, where it grows from.",
+              "effect": "damage_mult",
+              "params": {
+                "mult": 1.05
+              },
+              "also": [
+                {
+                  "effect": "no_ambush",
+                  "params": {}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "celestials": {
+      "name": "Celestials",
+      "short": "Celestials",
+      "kin": "the celestials",
+      "thresholds": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "keystones": [],
+      "blurb": "Creatures of heaven and of the gods' service, some still pure and some gone wrong. Their light blinds, their purpose is fixed, and they rarely start a fight.",
+      "tiers": [
+        {
+          "name": "Recognise",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "celestials_recognise",
+              "name": "Recognise",
+              "text": "Every member of the family you see has its full Bestiary page, and looking at one names its family.",
+              "trigger_msg": "",
+              "effect": "recognise",
+              "params": {}
+            }
+          ]
+        },
+        {
+          "name": "Forewarned",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "celestials_forewarned",
+              "name": "Forewarned",
+              "text": "When you arrive on a floor where they walk, you know it, unless they are hidden.",
+              "trigger_msg": "",
+              "effect": "forewarned",
+              "params": {
+                "line": "A clean light falls on the stair: a celestial creature walks this floor."
+              }
+            }
+          ]
+        },
+        {
+          "name": "Lore",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "celestials_shaded_eyes",
+              "name": "Shaded Eyes",
+              "text": "You get +1 on saving throws against their blinding and confusion.",
+              "trigger_msg": "Shaded Eyes: you look past the light, not into it.",
+              "effect": "save_bonus",
+              "params": {
+                "effects": [
+                  "blinded",
+                  "confused"
+                ],
+                "amount": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Hunter",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "celestials_angels_due",
+              "name": "Angel's Due",
+              "text": "Their holy damage hurts you 5% less.",
+              "trigger_msg": "Angel's Due: you bow your head, and the holy fire passes over.",
+              "effect": "resist_damage",
+              "params": {
+                "types": [
+                  "holy",
+                  "radiant"
+                ],
+                "mult": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bane",
+          "field_note": "",
+          "abilities": [
+            {
+              "id": "celestials_entertaining_angels",
+              "name": "Entertaining Angels",
+              "text": "One lesser celestial in five arrives calm and leaves you be unless you strike first.",
+              "trigger_msg": "Entertaining Angels: the light here lets you be.",
+              "effect": "calm_on_arrival",
+              "params": {
+                "chance": 0.2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "circles": {
+    "grave_watch": {
+      "name": "The Grave Watch",
+      "families": [
+        "restless_dead",
+        "ghosts",
+        "vampires_liches"
+      ],
+      "need": 3,
+      "tier": 3,
+      "boon": {
+        "id": "circle_vigil",
+        "name": "Vigil",
+        "text": "Necrotic and draining damage hurt you 5% less, from any source.",
+        "trigger_msg": "",
+        "effect": "resist_damage",
+        "params": {
+          "types": [
+            "necrotic",
+            "drain"
+          ],
+          "mult": 0.95,
+          "scope": "any"
+        }
+      },
+      "chronicle": "I learned enough of every kind of the dead to keep watch over a grave all night."
+    },
+    "wild_road": {
+      "name": "The Wild Road",
+      "families": [
+        "great_beasts",
+        "birds",
+        "serpents",
+        "vermin",
+        "plants"
+      ],
+      "need": 3,
+      "tier": 3,
+      "boon": {
+        "id": "circle_rangers_instinct",
+        "name": "Ranger's Instinct",
+        "text": "You see one tile further in the dark.",
+        "trigger_msg": "",
+        "effect": "sight_bonus",
+        "params": {
+          "amount": 1
+        }
+      },
+      "chronicle": "I learned the wild things of the dark well enough to walk their roads like a ranger."
+    },
+    "hellward_gate": {
+      "name": "The Hellward Gate",
+      "families": [
+        "demons",
+        "fair_folk",
+        "aberrations"
+      ],
+      "need": 3,
+      "tier": 3,
+      "boon": {
+        "id": "circle_unbent_mind",
+        "name": "Unbent Mind",
+        "text": "You get +1 on every saving throw against confusion, charm and fear, from anything.",
+        "trigger_msg": "",
+        "effect": "save_bonus",
+        "params": {
+          "effects": [
+            "confused",
+            "charmed",
+            "feared"
+          ],
+          "amount": 1,
+          "scope": "any"
+        }
+      },
+      "chronicle": "I learned the tricks of everything that gets into a mind, and mine stopped bending."
+    },
+    "heroes_road": {
+      "name": "The Hero's Road",
+      "families": [
+        "legend",
+        "gorgons",
+        "giants",
+        "dragons"
+      ],
+      "need": 3,
+      "tier": 3,
+      "boon": {
+        "id": "circle_heros_nerve",
+        "name": "Hero's Nerve",
+        "text": "You get 1 more second on the maths clock against any boss.",
+        "trigger_msg": "",
+        "effect": "extra_seconds",
+        "params": {
+          "seconds": 1,
+          "scope": "any",
+          "boss_only": true
+        }
+      },
+      "chronicle": "I learned the old stories well enough to walk the road the heroes walked."
+    }
+  },
+  "circle_title": "CIRCLE COMPLETE",
+  "loremaster": {
+    "title": "Loremaster",
+    "families_at_tier": 5,
+    "tier": 5,
+    "chronicle": "I came to know five families of monster down to the last weakness. Somebody should call me a loremaster."
+  }
+}

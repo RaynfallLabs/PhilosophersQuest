@@ -1033,6 +1033,64 @@ class RenderMixin:
             screen.blit(hint, (header.centerx - hint.get_width() // 2,
                                layout.WINDOW_H - margin - hint.get_height()))
 
+    def _monster_lore_rows(self) -> list:
+        """The @ sheet's Monster Lore entries, as (head, detail) pairs: the
+        Loremaster title and completed circles first, then each family the
+        hero knows, highest tier first ("Restless Dead" over "Lore:
+        Grave-Salt"). The caller draws as many as fit, then "+N more"."""
+        import family_lore
+        p = self.player
+        rows = []
+        if family_lore.is_loremaster(p):
+            rows.append(("Loremaster", ''))
+        for cid in family_lore.complete_circles(p):
+            c = family_lore.circles().get(cid) or {}
+            rows.append((c.get('name', ''), (c.get('boon') or {}).get('name', '')))
+        for short, tier_name, names in family_lore.lore_rows(p):
+            rows.append((short, f"{tier_name}: {', '.join(names)}" if names else tier_name))
+        return rows
+
+    def _draw_monster_lore(self, text, body, y, font, head_font, lh, reserve) -> int:
+        """Draw the Monster Lore block from `y` and return the new y. Each
+        entry is its head (a family and its tier) and, when it has
+        techniques, a faded detail, both WRAPPED to the panel (never cut
+        short); entries stop while `reserve` px are still free below, and
+        the rest are counted in "+N more"."""
+        from text_layout import wrap_lines
+        text("Monster Lore", head_font, FP.GOLD_BRIGHT, body.x, y)
+        y += lh
+        limit = body.bottom - reserve
+        rows = self._monster_lore_rows()
+        if not rows:
+            hint = wrap_lines("None yet. Study corpses to learn their families.", body.w, font)
+            if y + lh * len(hint) > limit:
+                hint = ["None yet."]
+            for line in hint:
+                text(line, font, FP.FADED_TEXT, body.x, y)
+                y += lh
+            return y
+        indent = S(12)
+        shown = 0
+        for head, detail in rows:
+            lines = [(ln, FP.BODY_TEXT, 0) for ln in wrap_lines(head, body.w, font)]
+            if detail:
+                lines += [(ln, FP.FADED_TEXT, indent)
+                          for ln in wrap_lines(detail, body.w - indent, font)]
+            more_line = lh if shown < len(rows) - 1 else 0
+            if y + lh * len(lines) + more_line > limit:
+                break
+            for ln, col, dx in lines:
+                text(ln, font, col, body.x + dx, y)
+                y += lh
+            shown += 1
+        if shown < len(rows):
+            more = f"+{len(rows) - shown} more (B, then Tab: Families)"
+            if font.size(more)[0] > body.w:
+                more = f"+{len(rows) - shown} more"
+            text(more, font, FP.FADED_TEXT, body.x, y)
+            y += lh
+        return y
+
     def _charsheet_kit_panels(self, p, panel, row_rect, chip, bar, text, wrapped,
                               item_color, display_item, ability_lines, tier_lines,
                               leather, focus, detail_item, actions,
@@ -1108,7 +1166,11 @@ class RenderMixin:
             name, col = (info[0], info[1]) if info else (_cap(eid), FP.BODY_TEXT)
             active.append((f"{name} {dur}" if dur > 0 else name, col))
         chip_h = lh + S(6)
-        room = max(0, (body.bottom - y - 2 * (lh + S(4)) - lh) // (chip_h + S(4)))
+        # Room kept for Monster Lore: its heading, one entry (up to three
+        # wrapped lines) and "+N more"; just the heading and "None yet" when
+        # the hero knows no family.
+        lore_h = (5 if self._monster_lore_rows() else 3) * (lh + S(4)) + S(6)
+        room = max(0, (body.bottom - y - 2 * (lh + S(4)) - lh - lore_h) // (chip_h + S(4)))
         shown = active[:max(1, room)] if active else []
         for label, col in shown:
             r = pygame.Rect(body.x, y, body.w, chip_h)
@@ -1124,10 +1186,16 @@ class RenderMixin:
             text(f"+{len(active) - len(shown)} more", f16, FP.FADED_TEXT, body.x, y)
             y += lh + S(4)
         y += S(6)
+        # Monster Lore: the families the hero knows and the techniques they
+        # give him (src/family_lore.py lore_rows), with "+N more".
+        _res_n = max(1, len(getattr(p, 'resistances', {}) or {}))
+        y = self._draw_monster_lore(text, body, y, f16, f16b, lh + S(4),
+                                    reserve=(1 + _res_n) * (lh + S(4)) + S(6))
+        y += S(6)
         text("Resistances", f16b, FP.GOLD_BRIGHT, body.x, y)
         y += lh + S(4)
         res = list(getattr(p, 'resistances', {}).items())
-        if not res:
+        if not res and y + lh <= body.bottom:
             text("None", f16, FP.FADED_TEXT, body.x, y)
         for dtype, mult in res:
             if y + lh > body.bottom:
@@ -1442,6 +1510,11 @@ class RenderMixin:
                     pygame.Rect(r.x + S(7), r.y + S(5), r.w - 2 * S(7), r.h - S(7)),
                     line_h=12, max_lines=1)
         y += S(62)
+        # Monster Lore (src/family_lore.py lore_rows), with "+N more".
+        _res_n = min(5, max(1, len(getattr(p, 'resistances', {}) or {})))
+        y = self._draw_monster_lore(text, body, y, font_small, font_bold, S(21),
+                                    reserve=S(22) + _res_n * S(21))
+        y += S(6)
         text("Resistances", font_bold, FP.GOLD_BRIGHT, body.x, y)
         y += S(22)
         for dtype, mult in list(getattr(p, 'resistances', {}).items())[:5]:
@@ -2059,7 +2132,9 @@ class RenderMixin:
                 # ambusher waits unseen until aware, a mimic is drawn as the
                 # chest or hoard it poses as, and an invisible creature shows
                 # at most a faint shimmer where the hero has felt it.
-                if unseen.lurking(m):
+                # (A family technique that senses the hidden shows it:
+                # unseen.senses, given the hero.)
+                if unseen.lurking(m, self.player):
                     _disg = unseen.disguise(m)
                     if _disg:
                         self.renderer.draw_disguise(m.x, m.y, _disg.get('item'), self.visible,
@@ -6043,11 +6118,20 @@ class RenderMixin:
 
         # --- Bestiary ---
         seen = getattr(p, 'known_monster_ids', set()) or set()
-        studied = getattr(p, 'lore_known_monster_ids', set()) or set()
-        sections.append(("BESTIARY", [
+        studied = getattr(p, 'studied_monster_ids', set()) or set()
+        import family_lore
+        fam = family_lore.summary(p)
+        best_rows = [
             f"Monsters seen:\t{len(seen)}",
             f"Monsters studied:\t{len(studied)}",
-        ]))
+            f"Families known:\t{fam['known']}",
+            f"Families mastered:\t{fam['mastered']}",
+        ]
+        if fam['circles']:
+            best_rows.append(f"Circles complete:\t{len(fam['circles'])}")
+        if fam['loremaster']:
+            best_rows.append("Loremaster:\tYes")
+        sections.append(("BESTIARY", best_rows))
 
         # --- Faith --- (no karma number: how the soul stands is a discovery,
         # hinted at in Recall Lore; only the Judgment card shows it. Brandon,
@@ -7358,7 +7442,8 @@ class RenderMixin:
             y += hs_title_h
             # A real table: rank, name, score, grade and level each in its
             # own column, so the rows line up (they were centred one by one).
-            rows = [(f"{i + 1}.", str(e.get('name', '?')), f"{e['score']:,}",
+            rows = [(f"{i + 1}.", str(e.get('name', '?'))
+                     + (f", {e['title']}" if e.get('title') else ''), f"{e['score']:,}",
                      str(e.get('grade', '?')), f"Floor {e.get('level', 0)}",
                      e['score'] == score) for i, e in enumerate(top[:show_n])]
             cols = [max(small_font.size(r[k])[0] for r in rows) for k in range(5)]
@@ -8322,13 +8407,26 @@ class RenderMixin:
         mdef = getattr(corpse, 'monster_def', None) or {}
         identity = [
             (getattr(corpse, 'monster_name', 'Unknown creature'), FP.GOLD_BRIGHT, get_font('heading', 20)),
-            ("Bestiary: identified" if id_level >= 5 else "Bestiary: unstudied",
-             FP.CYAN_ACCENT, self.font_sm),
         ]
-        if id_level >= 3:
-            tags = mdef.get('tags', []) or []
-            if tags:
-                identity.append((f"Tags: {', '.join(_cap(x) for x in tags)}", FP.BODY_TEXT, self.font_sm))
+        # Its monster family, and where the hero stands with it
+        # (src/family_lore.py): studied, or how far a study would take him.
+        import family_lore
+        _fid = family_lore.family_of(corpse)
+        if _fid:
+            _studied = getattr(corpse, 'monster_id', '') in (
+                getattr(self.player, 'studied_monster_ids', None) or ())
+            _prog = family_lore.progress(self.player, _fid)
+            if _studied:
+                identity.append((f"Family: {family_lore.family_name(_fid)} (studied)",
+                                 FP.CYAN_ACCENT, self.font_sm))
+                identity.append((f"{family_lore.short_name(_fid)}: {_prog['line']}",
+                                 FP.GOLD_PALE, self.font_sm))
+            else:
+                identity.append((f"Not yet studied: {family_lore.short_name(_fid)} {_prog['line']}",
+                                 FP.CYAN_ACCENT, self.font_sm))
+        else:
+            identity.append(("Identified" if id_level >= 5 else "Unstudied",
+                             FP.CYAN_ACCENT, self.font_sm))
 
         mechanics = []
         if id_level >= 2:
@@ -8841,6 +8939,16 @@ class RenderMixin:
         if not entry:
             return ''
         if category == 'bestiary':
+            import family_lore
+            if entry.get('_family'):
+                fid = entry['_family']
+                t = family_lore.tier(self.player, fid)
+                return (f"Tier {t}: {family_lore.tier_name(fid, t)}" if t
+                        else f"Not yet known ({family_lore.progress(self.player, fid)['line']})")
+            if not entry.get('_known', True):
+                fid = family_lore.family_of(entry)
+                return (f"Unstudied: {family_lore.short_name(fid)}" if fid
+                        else "Unstudied")
             hp = entry.get('hp', entry.get('max_hp', '?'))
             min_lvl = entry.get('min_level', '?')
             return f"HP {hp} / min level {min_lvl}"
@@ -8915,7 +9023,14 @@ class RenderMixin:
             return [("No entry selected.", FP.FADED_TEXT, self.font_sm)]
         name = entry.get('name', entry.get('_id', entry.get('id', '?')))
         lines = [(self._fix_name_case(name), FP.GOLD_PALE, get_font('heading', 24))]
+        if category == 'bestiary' and entry.get('_family'):
+            return lines + self._family_page_lines(entry['_family'])
+        if category == 'bestiary' and not entry.get('_known', True):
+            # A kind only seen (ruling 1): name, picture, family, and how far
+            # the hero is from knowing it. No stats, attacks or lore.
+            return lines + self._bestiary_short_lines(entry)
         if category == 'bestiary':
+            lines += self._bestiary_family_line(entry)
             lines += [
                 (f"HP: {entry.get('hp', entry.get('max_hp', '?'))}   THAC0: {entry.get('thac0', '?')}   Speed: {entry.get('speed', 1)}",
                  FP.BODY_TEXT, self.font_sm),
@@ -8994,6 +9109,100 @@ class RenderMixin:
             ]
         return lines
 
+    # -- Monster family knowledge on the Bestiary pages (src/family_lore.py) --
+
+    def _bestiary_family_line(self, entry) -> list:
+        """The line under a full Bestiary page's title: its family, and
+        whether the hero studied it himself or knows it by its family."""
+        import family_lore
+        kind = entry.get('_id', '')
+        fid = family_lore.family_of(entry)
+        if not fid:
+            return []
+        if kind in (getattr(self.player, 'studied_monster_ids', None) or ()):
+            how = 'studied'
+        elif kind in (getattr(self.player, 'lore_known_monster_ids', None) or ()):
+            how = 'its page opened, not yet studied'
+        else:
+            how = 'known by its family, not yet studied'
+        return [(f"Family: {family_lore.family_name(fid)} ({how})", FP.CYAN_ACCENT, self.font_sm)]
+
+    def _bestiary_short_lines(self, entry) -> list:
+        """The short page of a kind only seen: its family, "Not yet
+        studied", and the family's progress line."""
+        import family_lore
+        fid = family_lore.family_of(entry)
+        out = []
+        if fid:
+            out.append((f"Family: {family_lore.family_name(fid)}", FP.CYAN_ACCENT, self.font_sm))
+        out.append(("Not yet studied. Study its corpse to learn its strengths, its "
+                    "weaknesses and its story.", FP.FADED_TEXT, self.font_sm))
+        if fid:
+            prog = family_lore.progress(self.player, fid)
+            out.append((f"{family_lore.short_name(fid)}: {prog['line']}", FP.GOLD_PALE, self.font_sm))
+        return out
+
+    def _family_page_lines(self, fid) -> list:
+        """A family's page (B, Tab to Families): its tier, its blurb, kinds
+        studied and seen, the progress line, every tier (learned or still to
+        learn, as a goal), the field notes of the tiers learned, and the
+        members the hero has seen. Never an unseen member or the family's
+        size."""
+        import family_lore
+        p = self.player
+        t = family_lore.tier(p, fid)
+        sm = self.font_sm
+        lines = [(f"Tier {t}: {family_lore.tier_name(fid, t)}" if t else "Not yet known",
+                  FP.CYAN_ACCENT, sm),
+                 (family_lore.family(fid).get('blurb', ''), FP.BODY_TEXT, sm)]
+        seen = family_lore.members_seen(p, fid)
+        studied = family_lore.studied_count(p, fid)
+        lines.append((f"Kinds studied: {studied}   Kinds seen: {len(seen)}", FP.BODY_TEXT, sm))
+        prog = family_lore.progress(p, fid)
+        lines.append((f"Progress: {prog['line']}" + (" (a legend counts as two kinds)"
+                                                     if prog['next'] else ''),
+                      FP.GOLD_PALE, sm))
+        lines.append(("", FP.BODY_TEXT, get_font('body', 10)))
+        lines.append(("What You Learn", FP.GOLD_BRIGHT, sm))
+        th = family_lore.thresholds(fid)
+        for i, entry in enumerate(family_lore.family(fid).get('tiers', ()), start=1):
+            done = i <= t
+            need = th[i - 1] if i - 1 < len(th) else '?'
+            head = f"Tier {i}, {entry.get('name', '')}: " + ("learned" if done else f"{need} kinds")
+            lines.append((head, KT.OK_TEXT if done else FP.FADED_TEXT, sm))
+            for a in entry.get('abilities', ()) or ():
+                lines.append((f"{a.get('name', '')}: {a.get('text', '')}",
+                              FP.BODY_TEXT if done else FP.FADED_TEXT, sm))
+        notes = family_lore.field_notes(fid, t)
+        if notes:
+            lines.append(("", FP.BODY_TEXT, get_font('body', 10)))
+            lines.append(("Field Notes", FP.GOLD_BRIGHT, sm))
+            for _i, note in notes:
+                lines.append((note, FP.LORE_BLUE_BODY, get_font('body', 17)))
+        if seen:
+            lines.append(("", FP.BODY_TEXT, get_font('body', 10)))
+            lines.append(("Seen", FP.GOLD_BRIGHT, sm))
+            studied_set = family_lore.studied(p)
+            names = []
+            for k in seen:
+                nm = self._fix_name_case(self._monster_display_name(k))
+                names.append(nm + (" (studied)" if k in studied_set else ''))
+            lines.append((', '.join(names), FP.BODY_TEXT, sm))
+        return lines
+
+    def _monster_display_name(self, kind) -> str:
+        cache = self.__dict__.get('_monster_name_cache')
+        if cache is None:
+            import json
+            from paths import data_path
+            try:
+                with open(data_path('data', 'monsters.json'), encoding='utf-8') as f:
+                    cache = {k: v.get('name', k) for k, v in json.load(f).items()}
+            except (OSError, ValueError):
+                cache = {}
+            self.__dict__['_monster_name_cache'] = cache
+        return cache.get(kind, str(kind).replace('_', ' '))
+
     def _draw_encyclopedia_browser(self):
         cats = getattr(self, '_ENCYCLOPEDIA_CATS', [
             ('a', 'bestiary', 'Bestiary'),
@@ -9016,10 +9225,14 @@ class RenderMixin:
                 break
 
         title = "ENCYCLOPEDIA"
+        _families_view = (category == 'bestiary'
+                          and getattr(self, '_bestiary_view', 'kinds') == 'families')
         if category:
             label = next((label for _k, slug, label in cats if slug == category),
                          category.title())
             title = f"ENCYCLOPEDIA - {label.upper()}"
+            if category == 'bestiary':
+                title += " - FAMILIES" if _families_view else " - KINDS"
         panel = self._ui_modal_panel(title, border_color=FP.GOLD,
                                      max_w=1428, max_h=766)
         body = self._ui_modal_body(panel)
@@ -9035,7 +9248,7 @@ class RenderMixin:
         cat_body = self._ui_subpanel(cat_rect, "Categories")
         journal = category == 'journal'
         if not journal:
-            list_body = self._ui_subpanel(list_rect, "Known Entries")
+            list_body = self._ui_subpanel(list_rect, "Families" if _families_view else "Known Entries")
             article_body = self._ui_subpanel(article_rect, "Article")
 
         # Every category in view (twelve since the Wonders pages): the rows
@@ -9098,7 +9311,8 @@ class RenderMixin:
         self._encyclopedia_scroll = scroll
 
         if not entries:
-            self._ui_wrap_text("No entries discovered in this category yet.",
+            self._ui_wrap_text("No monster family met yet. Every creature you see joins one."
+                               if _families_view else "No entries discovered in this category yet.",
                                self.font_sm, FP.FADED_TEXT, list_body)
         else:
             y = list_body.y
@@ -9163,6 +9377,9 @@ class RenderMixin:
             footer = f"Up/Down/PgUp/PgDn: scroll article   ESC: {back}"
         else:
             footer = "Left/Right or a-l: category   Up/Down: entry   Enter: detail   PgUp/PgDn: article   ESC: categories"
+            if category == 'bestiary':
+                footer = ("Tab: " + ("kinds" if _families_view else "families") + "   Up/Down: entry   "
+                          "Enter: detail   PgUp/PgDn: article   Left/Right: category   ESC: categories")
         self._ui_footer(panel, footer)
 
     # -- The Journal (Encyclopedia tab h; DEEDS_KARMA_DESIGN 7.5) ----------
@@ -9364,6 +9581,12 @@ class RenderMixin:
         else:
             rows.append({'text': "Not much worth writing down. That may be a mercy.",
                          'font': f['body'], 'color': FP.FADED_TEXT, 'gap': S(4)})
+        # What the hero learned of the monsters (src/family_lore.py), in his
+        # own words and without numbers.
+        lore_line = self._your_story_lore_line()
+        if lore_line:
+            head("What I Learned")
+            rows.append({'text': lore_line, 'font': f['body'], 'color': FP.BODY_TEXT, 'gap': S(4)})
         head("Roads Not Taken")
         roads = story['roads']
         if roads:
@@ -9375,6 +9598,23 @@ class RenderMixin:
                                   "perhaps, I will look harder."),
                          'font': f['hint'], 'color': FP.FADED_TEXT, 'gap': S(4)})
         return rows
+
+    def _your_story_lore_line(self) -> str:
+        """Your Story's line about monster families: how many the hero came
+        to know and master, and the Loremaster title. '' if none."""
+        import family_lore
+        from chronicle import number_word
+        fam = family_lore.summary(self.player)
+        if not fam['known']:
+            return ''
+        k = fam['known']
+        line = f"I came to know {number_word(k)} {'family' if k == 1 else 'families'} of monster"
+        if fam['mastered']:
+            line += f", and mastered {number_word(fam['mastered'])}"
+        line += '.'
+        if fam['loremaster']:
+            line += " By the end I had earned the name Loremaster."
+        return line
 
     def _draw_your_story(self, accent=FP.GOLD):
         """The "Your Story" page of the death and victory screens (S)."""
@@ -9612,7 +9852,7 @@ class RenderMixin:
             ("Items", [
                 ("E", "Equip menu", FP.BODY_TEXT),
                 ("X", "Examine item", FP.BODY_TEXT),
-                ("I", "Identify item", FP.BODY_TEXT),
+                ("I", "Identify or study", FP.BODY_TEXT),
                 ("H", "Harvest corpse", FP.BODY_TEXT),
                 ("C", "Cook menu", FP.BODY_TEXT),
                 ("D", "Drop, gold / use tile", FP.BODY_TEXT),
@@ -9637,6 +9877,7 @@ class RenderMixin:
                 ("\\", "Pray", FP.BODY_TEXT),
                 ("Shift+\\", "Divine Intercession", FP.BODY_TEXT),
                 ("O", "Look / Bestiary", FP.BODY_TEXT),
+                ("B, Tab", "Monster families", FP.BODY_TEXT),
                 ("Shift+P", "Pet menu", FP.BODY_TEXT),
             ]),
             ("System", [

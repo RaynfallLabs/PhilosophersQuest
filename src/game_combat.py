@@ -430,6 +430,16 @@ class CombatMixin:
 
         if monster:
             _who = the_name(monster, lower=True)      # before the blow springs a lurker
+            # A thrown weapon counts for the family techniques that favour
+            # it (Falconer's Eye: src/family_edges.py damage_mult).
+            try:
+                import family_edges
+                _fe = family_edges.damage_mult(self.player, monster, 1, weapon,
+                                               thrown=True, consume=True)
+                if _fe != 1.0:
+                    dmg = max(1, int(round(dmg * _fe)))
+            except ImportError:
+                pass
             actual = monster.take_damage(dmg)
             self.add_message(
                 f"You hurl the {display} at {_who}! ({actual} damage)", 'success'
@@ -1503,15 +1513,20 @@ class CombatMixin:
                 'resistances': monster.resistances,
                 'weaknesses': monster.weaknesses,
                 'speed': monster.speed,
-                # tags drive the bestiary family line — must be on the corpse.
+                # tags drive weapons and materials on the corpse page (the
+                # family is the separate `family` field, copied below).
                 'tags': list(getattr(monster, 'tags', []) or []),
                 # peak_floor drives the identify-question tier (depth-first).
                 'peak_floor': int(getattr(monster, 'peak_floor', 0) or 0),
             },
         )
-        # A studied monster type is known forever: its corpses spawn
-        # pre-identified (one-question identify, True Name model).
-        if monster.kind in getattr(self.player, 'lore_known_monster_ids', set()):
+        # Its monster family travels with the body (src/family_lore.py).
+        c.family = getattr(monster, 'family', None)
+        # A type the hero studied himself is known forever: its corpses
+        # spawn pre-identified (one-question identify, True Name model). A
+        # kind the Book of Thoth only opened the page of still asks, so its
+        # study can still count for its family.
+        if monster.kind in getattr(self.player, 'studied_monster_ids', set()):
             c.id_level = 5
         return c
 
@@ -1934,16 +1949,31 @@ class CombatMixin:
                 "badly wounded" if hp_pct >= 0.15 else
                 "near death"
             )
+            # An identified kind (studied, opened, or its family at tier 1
+            # or more) is named with its family; an unknown one is not.
+            _known = self._family_has_page(getattr(monster, 'kind', None))
+            _fam = ''
+            if _known:
+                import family_lore
+                _fid = family_lore.family_of(monster)
+                _fam = f" {family_lore.short_name(_fid)}." if _fid else ''
             self.add_message(
-                f"You see {monster.name} ({condition}).", 'info'
+                f"You see {monster.name} ({condition}).{_fam}", 'info'
             )
+            if (not _known and getattr(monster, 'family', None)
+                    and not getattr(monster, 'is_allied', False)
+                    and not getattr(monster, '_npc_encounter_tag', None)
+                    and not getattr(monster, '_flavor_encounter_tag', None)):
+                self.add_message("You don't know this creature yet. Study its corpse.", 'info')
             found = True
-        # A creature the hero can see AND already knows (it has a Bestiary
-        # page) opens that page; an unknown one keeps the plain look. An
+        # A creature the hero can see AND has identified (studied, opened by
+        # the Book of Thoth, or its family at tier 1 or more: ruling 1)
+        # opens its Bestiary page; an unknown one keeps the plain look. An
         # invisible creature he cannot see, or a mimic still in disguise, is
         # never ``monster`` here (unseen.py), so its page is never opened.
         page_kind = None
-        if monster is not None and getattr(monster, 'kind', None) in self._bestiary_known_kinds():
+        if (monster is not None and getattr(monster, 'kind', None) in self._bestiary_known_kinds()
+                and self._family_has_page(monster.kind)):
             page_kind = monster.kind
 
         # Items at cursor

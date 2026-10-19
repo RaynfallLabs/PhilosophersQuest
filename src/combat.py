@@ -1063,6 +1063,15 @@ def effective_chain(player, monster, weapon, score: int, consume: bool = True) -
             if _tag_match(monster, _tg):
                 chain += 1
                 break
+    # Monster family knowledge, the same warm-up skip (Serpents' Mongoose,
+    # src/family_edges.py opening_chain): the hero's FIRST blow of a fight
+    # on that family starts further up the ladder.
+    if chain >= 1:
+        try:
+            import family_edges
+            chain += family_edges.opening_chain(player, monster, consume=consume)
+        except ImportError:
+            pass
 
     # Skofnung (engine wave 3): chain_bonus_on_low_hp_window. When the
     # player has just dropped below 50% HP, the next attack adds N chain
@@ -1184,6 +1193,23 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     # iron, blessed) each meet the monster: see weapon_type_multiplier.
     # Bare hands crush.
     _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster)
+    # Monster family knowledge (src/family_edges.py pierce_resist): at its
+    # chain the blow ignores the family's resistances, as the chain
+    # specials' bypass does (Lay the Ghost counts the weapon blessed; the
+    # Missing Scale ignores a dragon's scales as well).
+    try:
+        import family_edges as _fedges
+    except ImportError:
+        _fedges = None
+    _edge_pr = (_fedges.pierce_resist(player, monster, chain, consume=consume)
+                if _fedges else {'pierce': False, 'scales': False, 'blessed': False})
+    if _edge_pr['blessed']:
+        _form_mult, _subst_mult = weapon_type_multiplier(weapon, monster, blessed=True)
+    # Struck where it is weak (form or substance): for the techniques that
+    # hit a family's listed weaknesses harder (weakness_amp).
+    _hits_weak = _form_mult >= WEAK_TO or _subst_mult >= WEAK_TO
+    if _edge_pr['pierce']:
+        _form_mult = max(1.0, _form_mult)
     # Gram and the Sword of Michael ignore RESISTANCES; a weakness
     # still counts.
     if _ignores_res:
@@ -1463,6 +1489,7 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
         getattr(weapon, 'ignore_resistances', False)
         or _blade_flow_bypass
         or _chain_bypass
+        or _edge_pr['scales']          # the Missing Scale (family knowledge)
     )
 
     # Dragon scales: massive damage reduction (bypassed by ignore_resistances,
@@ -1604,6 +1631,19 @@ def strike_damage(player, monster, chain: int, *, ranged: bool = False, ammo=Non
     except AttributeError:
         pass
 
+    # Monster family knowledge (src/family_edges.py): the hero's damage
+    # techniques against this family (True Names, the Soft Belly, Cold
+    # Iron...), a blow on its listed weakness (Bonebreaker, Opposing
+    # Element), and an execute's harder blow on a named foe. Weapon blows
+    # on a creature he can see only: never spells or pets. Beside the
+    # Dragonslayer Ring, so the Strike Now preview shows it.
+    if _fedges is not None:
+        _fe = (_fedges.damage_mult(player, monster, chain, weapon, ranged=is_ranged, consume=consume)
+               * _fedges.weakness_amp(player, monster, _hits_weak, consume=consume)
+               * _fedges.execute_named_mult(player, monster, chain, consume=consume))
+        if _fe != 1.0:
+            damage = max(1, int(round(damage * _fe)))
+
     # Bracers of Arjuna (gita_focus): first ranged attack per floor gets a
     # flat +50% damage. Chain combat v2 (v2.14.0): was "crits" via
     # crit_multiplier; retired to a straight 1.5x since crit is gone.
@@ -1673,6 +1713,14 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
     weapon = player.ranged_weapon if is_ranged else player.weapon
 
     def _callback(result):
+        # Know the Story (family knowledge): a forgiven wrong answer is spent
+        # for this fight whether or not the blow then lands.
+        if getattr(quiz_engine, 'forgive_was_used', False):
+            try:
+                import family_edges as _fe_spend
+                _fe_spend.spend_chain_forgive(player, monster)
+            except ImportError:
+                pass
         chain = effective_chain(player, monster, weapon, result.score, consume=True)
 
         # Cursed weapon backlash on miss (Tyrfing).
@@ -1701,7 +1749,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         # What the blow is made of, for a creature that splits when cut
         # (src/splitting.py): the weapon's own forms, or a fist.
         monster._incoming_forms = blow_forms_of(weapon)
-        actual = monster.take_damage(damage)
+        # Strike True (family knowledge): this blow never splits the family
+        # (splitting.blow_splits reads the mark).
+        try:
+            import family_edges as _fedges
+        except ImportError:
+            _fedges = None
+        if _fedges is not None and _fedges.prevents_split(player, monster):
+            monster.__dict__['_no_split_blow'] = True
+        try:
+            actual = monster.take_damage(damage)
+        finally:
+            monster.__dict__.pop('_no_split_blow', None)
 
         # Chain combat v2 (v2.14.0): dispatch per-class chain specials at
         # rung thresholds 5 / 10 / 15 / 20. Applies target statuses, AoE damage,
@@ -1715,6 +1774,22 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
             actual=actual,
         )
         _chain_aoe_hits = _chain_special_result.get('aoe_hits', [])
+
+        # Monster family knowledge on a blow that landed (src/family_edges.py
+        # after_blow): stop its regeneration, execute a lesser foe, turn or
+        # charm or stun the lesser members of the family, or make a lesser
+        # foe yield. Named foes are never executed, turned, charmed, stunned
+        # or made to yield.
+        if _fedges is not None:
+            _gref = getattr(player, '_combat_game_ref', None)
+            _vis = getattr(_gref, 'visible', None) if _gref is not None else None
+            _mons = getattr(player, '_combat_monsters_ref', None) or ()
+            _fe_out = _fedges.after_blow(player, monster, chain, actual, monsters=_mons,
+                                         visible=_vis)
+            if _fe_out.get('surrendered') and _gref is not None and hasattr(_gref, '_family_surrender'):
+                _gref._family_surrender(monster)
+            if monster.is_dead():
+                _fedges.after_kill(player, monster, monsters=_mons, visible=_vis)
 
         # Harpe (formerly petrify_on_crit): now fires at chain 15+, applies
         # petrifying 3t. The crit path is gone but the "sickle of the gorgon"
@@ -2288,6 +2363,18 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
     # `celebrate_on_max=False`, so hitting the array's chain-5 ceiling no
     # longer fires the full-screen MAX CHAIN takeover — Phase 1's per-
     # answer effects provide in-combat feedback instead.
+    # Monster family knowledge: more seconds on the clock against this
+    # family (Steady Hand, Hunter's Patience; the Hero's Road against a
+    # boss), through the same lane as the Ancile, so the clock shows it;
+    # and Know the Story's once-a-fight forgiven wrong answer, through the
+    # quiz engine's reroll lane (QuizEngine.forgive_available).
+    _edge_secs = 0
+    try:
+        import family_edges as _fedges_q
+        _edge_secs = _fedges_q.extra_seconds(player, monster)
+        quiz_engine._forgive_flag = _fedges_q.chain_forgive_ready(player, monster)
+    except ImportError:
+        pass
     quiz_engine.start_quiz(
         mode='chain',
         subject='math',
@@ -2296,7 +2383,7 @@ def player_attack(player, monster, quiz_engine, on_complete, ammo=None,
         max_chain=_max_chain,
         wisdom=player.WIS,
         timer_modifier=player.get_quiz_timer_modifier(),
-        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('math'),
+        extra_seconds=getattr(player, 'get_quiz_extra_seconds', lambda s: 0)('math') + _edge_secs,
         base_seconds=player.get_quiz_timer('math'),
     )
 

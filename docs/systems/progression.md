@@ -570,6 +570,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 | `_start_ammo`              | Starting ammo id                                                                   |
 | `_start_spells`            | Pre-known spell list                                                               |
 | `_start_potions`           | Pre-granted potions                                                                |
+| `_start_family_lore`       | {family id: tier} head start in monster family knowledge: tier 1 or 2 only, never a technique, unlabelled ([monster_families](monster_families.md)) |
 | `_start_soul_spheres`      | Count of starting Soul Spheres (Ash Ketchum: 4; plain Soul Spheres, newborns)      |
 | `_start_spheres`           | List of sphere ids to start with (Titivillus, the QA hero: one of each of the six) |
 | `_start_unusual_sphere`    | Grant one wildcard Soul Sphere                                                     |
@@ -582,7 +583,7 @@ Shared mechanic: all three are **cooldown-only** (not use-limited), the dispatch
 
 ### Starting kit resolution (`main.py::_give_starting_kit`)
 
-The kit builder reads the metadata fields in a fixed order: `_no_dagger` suppresses the default kit, then `_start_weapon` / `_start_melee` / `_start_shield` / `_start_armor` / `_start_wand` / `_start_book` / `_start_accessory` / `_start_extra_acc` / `_start_ammo` resolve by id or by `(type, material)` lookup against the item registry. `_start_spells` adds entries to `player.known_spells`. `_start_potions` push ready-to-drink potions. `_start_soul_spheres` + `_start_unusual_sphere` call into the Soul Sphere spawn path.
+The kit builder reads the metadata fields in a fixed order: `_no_dagger` suppresses the default kit, then `_start_weapon` / `_start_melee` / `_start_shield` / `_start_armor` / `_start_wand` / `_start_book` / `_start_accessory` / `_start_extra_acc` / `_start_ammo` resolve by id or by `(type, material)` lookup against the item registry. `_start_spells` adds entries to `player.known_spells`. `_start_potions` push ready-to-drink potions. `_start_family_lore` calls `family_lore.grant_head_start` (told at once, so nothing announces it). `_start_soul_spheres` + `_start_unusual_sphere` call into the Soul Sphere spawn path.
 
 After the kit is placed, the hero wiring (`main.py:2013-2033`) looks up `(get_specials_for_build, get_passives_for_build, get_journal_for_build)` on the lowercased typed name and populates `player.hero_specials` / `hero_passives` / logs the journal line.
 
