@@ -3557,25 +3557,31 @@ class MagicMixin:
 
     def _omnisight_corpse_reveal(self) -> None:
         """T5 Scroll of Omnisight: also reveals the lore of one carried
-        corpse's species. Picks the first still-unlored corpse in
-        inventory, adds its species to lore_known_monster_ids (which
-        drives corpse-preidentified spawns + bestiary lore), and drops
-        a message. Silent no-op if the kid carries no corpses.
+        corpse's species. Picks the first corpse in inventory whose kind the
+        hero has not studied, adds its species to lore_known_monster_ids
+        (its Bestiary page) and counts it as STUDIED (a study of its kind for
+        its monster family: family_lore), identifies every carried corpse of
+        it, and drops a message. Silent no-op if the kid carries no corpses.
         """
         from items import Corpse
         lore_known = getattr(self.player, 'lore_known_monster_ids', None)
         if lore_known is None:
             return
+        studied = getattr(self.player, 'studied_monster_ids', set()) or set()
         for it in self.player.inventory:
             if isinstance(it, Corpse):
                 sp = getattr(it, 'monster_id', '') or ''
-                if not sp or sp in lore_known:
+                if not sp or sp in studied:
                     continue
                 lore_known.add(sp)
+                for other in self.player.inventory:
+                    if isinstance(other, Corpse) and getattr(other, 'monster_id', '') == sp:
+                        other.id_level = 5
                 self.add_message(
                     f"Omnisight blooms over the {it.monster_name} corpse -- "
                     f"its whole species opens up in your mind.",
                     'success')
+                self._family_study(sp)
                 return
 
     def _forgettable(self, it) -> bool:
@@ -3855,8 +3861,11 @@ class MagicMixin:
                 id_count += 1
         # 2) Reveal lore for every corpse species KILLED this run. The
         # game tracks all monster kinds encountered in known_monster_ids;
-        # for the Thoth reveal we push them all into lore_known_monster_ids
-        # (which drives the corpse-preidentified spawn logic + bestiary lore).
+        # for the Thoth reveal we push them all into lore_known_monster_ids,
+        # which opens their Bestiary pages. It teaches NO monster family
+        # tiers (MONSTER_FAMILIES_DESIGN decision 4): those count only what
+        # the hero studied himself (studied_monster_ids), and a kind only
+        # opened here can still be studied from its corpse.
         lore_count = 0
         known = getattr(self.player, 'known_monster_ids', set())
         lore_known = getattr(self.player, 'lore_known_monster_ids', None)

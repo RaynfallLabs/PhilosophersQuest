@@ -615,7 +615,7 @@ def _gazes_per_turn(monkeypatch, group=True, turns=40):
     g.player.hp = g.player.max_hp = 10 ** 7
     landed = []
     monkeypatch.setattr(status_effects, 'apply_debuff_with_save',
-                        lambda p, eff, dur, dc: (landed.append(eff) or True, ''))
+                        lambda p, eff, dur, dc, **kw: (landed.append(eff) or True, ''))
     counts = []
     for _ in range(turns):
         for k in ('paralyzed', 'control_immune', 'feared'):

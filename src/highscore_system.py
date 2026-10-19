@@ -74,6 +74,7 @@ def add_score(
     turns: int,
     victory: bool,
     treasure: int = 0,
+    title: str = '',
 ) -> int:
     """
     Insert a new score entry, keep top MAX_ENTRIES by score.
@@ -81,6 +82,8 @@ def add_score(
 
     ``treasure``: the gold value of the treasure carried when the run ended
     (it is already part of ``score``; kept so the table can say so).
+    ``title``: an honour the run earned, shown beside the name (Loremaster:
+    tier 5 in five monster families). Empty for most runs.
     """
     entries = _load()
     entry = {
@@ -92,6 +95,7 @@ def add_score(
         'turns':   turns,
         'victory': victory,
         'treasure': int(treasure or 0),
+        'title':   str(title or ''),
         'date':    datetime.now().strftime('%Y-%m-%d'),
     }
     entries.append(entry)

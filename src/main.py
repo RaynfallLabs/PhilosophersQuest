@@ -50,6 +50,7 @@ from renderer import Renderer
 from geom import monster_at_tile
 import unseen
 import splitting
+import family_edges
 from ui import Sidebar, MessageLog, floor_label
 from game_helpers import (
     migrate_buc_item, cycle_tab,
@@ -84,6 +85,7 @@ from item_actions import ItemActionsMixin
 from game_road import RoadMixin
 from game_traders import TraderMixin
 from game_purse import PurseMixin
+from game_families import FamilyMixin
 from escort_system import EscortMixin
 from spells import LEARNABLE_SPELLS
 
@@ -193,7 +195,7 @@ DEEP_SLEEP = 10 ** 6           # a zoo, graveyard or barracks sleeper: until wok
 
 class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMixin, EncountersMixin,
            EmberpupMixin, BlackKnightMixin, ItemActionsMixin, RoadMixin, EscortMixin,
-           SetneMixin, TraderMixin, PurseMixin):
+           SetneMixin, TraderMixin, PurseMixin, FamilyMixin):
     # FANTASY: Grimoire font set -- larger for readability. Read through the
     # UI scale on every use (SCALE_PLAN.md): a window resize can never leave
     # a font of the old size behind.
@@ -2311,6 +2313,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # A hostile scene (the dead come for the Book of Thoth) does not wait
         # to be bumped into: it finds the hero on arrival.
         self._hostile_encounter_arrives()
+        # Monster family knowledge: Forewarned lines for the families here,
+        # and (first visit) the lesser creatures that arrive calm.
+        self._family_arrival(first_visit=not saved)
 
     def _give_starting_kit(self):
         """Give the player their starting kit, adjusted for their secret build."""
@@ -2532,6 +2537,13 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                 _mark_starting_item_known(usphere)
                 self.player.known_item_ids.add('unusual_soul_sphere')
                 self.player.inventory.append(usphere)
+
+        # -- Monster family head start (MONSTER_FAMILIES_DESIGN decision 5):
+        # tier 1 or 2 only (Recognise, Forewarned), never a technique, and
+        # nothing on screen says so: the surprise is the feature.
+        if b.get('_start_family_lore'):
+            import family_lore
+            family_lore.grant_head_start(self.player, b['_start_family_lore'])
 
         # -- Pre-learned spells (Witcher Signs, Elder Blood) ----------------
         start_spells = b.get('_start_spells', [])
@@ -3889,11 +3901,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             score = self._calc_score()
             grade, _col = self._get_grade(score)
             import treasure as _tr
+            import family_lore as _fl
             add_score(getattr(self, 'player_name', None) or 'Hero', score, grade,
                       self.level_mgr.max_level_reached,
                       self.level_mgr.monsters_killed,
                       self.turn_count, victory=victory,
-                      treasure=_tr.carried_value(self.player))
+                      treasure=_tr.carried_value(self.player),
+                      title=((_fl.data().get('loremaster') or {}).get('title', 'Loremaster')
+                             if _fl.is_loremaster(self.player) else ''))
         except Exception:
             try:
                 from game_log import log_error
@@ -4256,6 +4271,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         # Creatures struck the wrong way split (src/splitting.py): the new
         # bodies are set down here, whatever dealt the blow.
         splitting.spawn_pending(self)
+        self._family_drain()               # the hero's family techniques his action used
         self._black_knight_tick()          # what the action did to him: one limb at most
         self.turn_count += 1
         # A kind learnt by use (drunk, read, zapped, thrown) fully identifies
@@ -4783,6 +4799,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             self._haste_skip_world = False
 
         if not self._haste_skip_world:
+            self._family_turn()            # families that flee on sight; hidden things shown
             self._do_monster_turns()
             if not self.player.is_dead():
                 self._do_pet_turns()
@@ -4794,6 +4811,7 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         self._tick_hp_regen()
         self._note_burden()
         self._black_knight_tick(end=True)  # his shouts; the next action may take a limb
+        self._family_drain()               # wards and techniques the monsters' turns set off
 
     # ------------------------------------------------------------------
     # Carrying: Burdened (plan: _genart/ui/WEIGHT_PLAN.md)
@@ -5552,7 +5570,11 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if unseen.unseen(m, self.player):
                 continue        # no eye spots what cannot be seen (src/unseen.py)
             dist = abs(m.x - px) + abs(m.y - py)
-            if dist <= 5 and _rng.random() < chance:
+            # A hero who knows this family's ambushers is never caught
+            # unawares by one (family_edges no_ambush: Trap-Wise, the
+            # Unblinking, the Woodsman's Axe): the check always succeeds.
+            sure = family_edges.no_ambush(self.player, m)
+            if dist <= 5 and (sure or _rng.random() < chance):
                 m._aware = True
                 self.add_message(
                     f"Your keen senses detect {a_or_an(m.name)} lying in wait!", 'warning')
@@ -8282,7 +8304,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
     # Post identify-v3 (2026-08-06, commit 2778305): one philosophy Q at
     # the corpse's id_tier. Right = the monster type is fully identified
     # PERMANENTLY (this corpse + every future spawn of the type via
-    # lore_known_monster_ids in game_combat._make_corpse). Wrong = the
+    # studied_monster_ids in game_combat._make_corpse) and counts as one
+    # kind studied for its monster family (src/family_lore.py; a known
+    # kind never asks again, so only a NEW kind is progress). Wrong = the
     # Shard's backlash stuns the kid for 10 turns.
     # The old 5-tier escalator-chain reveal (with per-tier layers and a
     # family-mastery unlock rung) is gone; id_level 5 is the only "known"
@@ -8294,7 +8318,8 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
 
         Right = the monster type is fully identified, permanently — this
         corpse, every corpse of the type on the floor, and every future
-        spawn (via lore_known_monster_ids in game_combat._make_corpse).
+        spawn (via studied_monster_ids in game_combat._make_corpse) — and it
+        is one more kind studied in its monster family (_family_study).
         Wrong = the Shard's backlash stuns the kid.
 
         Already identified -> skip the quiz and just open the lore screen.
@@ -8311,7 +8336,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             if getattr(result, 'success', False):
                 corpse.id_level = 5
                 # The monster TYPE is now known forever: future corpse spawns
-                # arrive pre-identified (game_combat._make_corpse).
+                # arrive pre-identified (game_combat._make_corpse), and its
+                # page is open (lore_known: the same set the Book of Thoth
+                # fills, which opens pages but teaches no family tiers).
                 self.player.lore_known_monster_ids.add(corpse.monster_id)
                 # Propagate to every corpse of the same monster on the floor
                 # and in the pack — corpses carry no per-instance secrets.
@@ -8331,6 +8358,10 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
                     f"You understand the {corpse.monster_name} now.",
                     'success'
                 )
+                # One more kind studied in its family: any tier, circle or
+                # title it brings is announced now (a popup returns to the
+                # lore page).
+                self._family_study(corpse.monster_id)
                 # Orb fire from Phase 3 of CHAIN_EFFECTS_PLAN was removed
                 # 2026-10-04 after playtest: it animated on top of the
                 # lore screen, which is itself the "aha" celebration.
@@ -8386,7 +8417,9 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             return
         # A monster type already studied is known forever — mark the corpse
         # identified so _start_corpse_identify goes straight to the lore screen.
-        if corpse.monster_id in getattr(self.player, 'lore_known_monster_ids', set()):
+        # (Studied by the hero himself: a kind the Book of Thoth only opened
+        # the page of can still be studied, for its family.)
+        if corpse.monster_id in getattr(self.player, 'studied_monster_ids', set()):
             corpse.id_level = 5
         self._start_corpse_identify(corpse, after_advance_turn=True)
 
@@ -8792,9 +8825,14 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         return entries
 
     def _bestiary_known_kinds(self) -> set:
-        """The monster kinds with a Bestiary page: every kind the hero has
-        seen (known_monster_ids), plus any carried corpse studied for lore."""
+        """The monster kinds listed in the Bestiary: every kind the hero has
+        seen (known_monster_ids), every kind he has studied or had opened,
+        plus any carried corpse studied for lore. Only an IDENTIFIED kind
+        gets its full page (_family_has_page, ruling 1 of
+        MONSTER_FAMILIES_DESIGN.md); a kind only seen gets a short one."""
         known = set(getattr(self.player, 'known_monster_ids', set()) or ())
+        known |= set(getattr(self.player, 'studied_monster_ids', set()) or ())
+        known |= set(getattr(self.player, 'lore_known_monster_ids', set()) or ())
         for item in getattr(self.player, 'inventory', []) or []:
             mid = getattr(item, 'monster_id', None) or getattr(item, 'kind', None)
             if mid and getattr(item, 'lore_identified', False):
@@ -8805,14 +8843,17 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
         """Open the Encyclopedia straight onto ``kind``'s Bestiary page, the
         page B -> Bestiary -> Enter shows (O on a creature the hero knows,
         2026-10-18). Esc returns to play. False, with the state untouched,
-        when the kind has no page."""
-        if not kind or kind not in self._bestiary_known_kinds():
+        when the kind has no full page: it must be identified (studied,
+        opened by the Book of Thoth, or its family at tier 1 or more)."""
+        if (not kind or kind not in self._bestiary_known_kinds()
+                or not self._family_has_page(kind)):
             return False
         prev_state = self.state
         self._open_encyclopedia()
         self.encyclopedia_category = 'bestiary'
         self._encyclopedia_cat_idx = next(
             (i for i, c in enumerate(self._ENCYCLOPEDIA_CATS) if c[1] == 'bestiary'), 0)
+        self._bestiary_view = 'kinds'        # O opens a kind's page, never the Families list
         self._encyclopedia_load_entries('bestiary')
         idx = next((i for i, e in enumerate(self.encyclopedia_entries or [])
                     if e.get('_id') == kind), None)
@@ -8892,13 +8933,19 @@ class Game(InputMixin, MenuMixin, RenderMixin, MagicMixin, CombatMixin, DivineMi
             except Exception:
                 self.encyclopedia_entries = []
                 return
+            # Tab switches the Bestiary between its Kinds and its Families
+            # (monster family knowledge, src/family_lore.py).
+            if getattr(self, '_bestiary_view', 'kinds') == 'families':
+                self.encyclopedia_entries = self._bestiary_family_entries()
+                return
             # Every kind seen (known_monster_ids), plus carried corpses
-            # studied for lore (_bestiary_known_kinds).
+            # studied for lore (_bestiary_known_kinds). A kind not yet
+            # identified is listed with a short page (`_known`: False).
             known_kinds = self._bestiary_known_kinds()
             entries = []
             for k, v in all_defs.items():
                 if k in known_kinds:
-                    entries.append({'_id': k, **v})
+                    entries.append({'_id': k, **v, '_known': self._family_has_page(k)})
             entries.sort(key=lambda e: e.get('name', e['_id']))
             self.encyclopedia_entries = entries
         else:

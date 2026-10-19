@@ -53,7 +53,10 @@ src/
   # Hero, monsters, world
   player.py           - Player class: stats, inventory, equipment, quiz timers
   monster.py          - Monster class with AI patterns
-  monster_classes.py  - Monster family tags (bestiary line, family-targeted gear)
+  monster_classes.py  - Thin reader of each monster's `family` field (get_monster_family)
+  family_lore.py      - Monster families: kind-to-family map, tiers from kinds studied, circles, news
+  family_edges.py     - Family technique primitives (wards, damage, executes, sense the hidden...)
+  game_families.py    - FamilyMixin: study news, tier popups, arrival lines, QA family key
   dungeon.py          - Procedural BSP dungeon generation
   level_manager.py    - Floor transitions
   boss_levels.py      - Hand-crafted boss floor layouts (and COW_LEVEL)

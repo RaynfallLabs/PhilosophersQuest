@@ -611,10 +611,33 @@ _EFFECT_NOUN: dict = {
     'frozen': 'creeping frost', 'immobilized': 'grip', 'petrifying': 'petrification',
     'confused': 'confusion', 'feared': 'dread', 'charmed': 'charm',
     'slowed': 'sluggishness',
+    # Effects with no save, named for the family-ward line ('The poison
+    # cannot take hold of you.').
+    'poisoned': 'poison', 'diseased': 'disease', 'burning': 'fire',
+    'blinded': 'blindness', 'weakened': 'weakness', 'hallucinating': 'false sight',
+    'silenced': 'silence', 'teleportitis': 'slipping',
 }
 
 
-def apply_debuff_with_save(player, effect: str, duration: int, dc: int) -> tuple[bool, str]:
+def _family_ward(player, source, effect: str, gaze: bool) -> tuple[int, float]:
+    """(save bonus, duration share) the hero's monster-family knowledge
+    gives against `effect` from `source` (src/family_edges.py): a ward of
+    +N on the save, outside the +5 cap of Player.save_bonus_for because it
+    is earned against one family only, and a share of the duration (0.5:
+    wears off twice as fast; 0: it never takes hold). A gaze also counts
+    the ward against the killing gaze. No source, no family: (0, 1.0)."""
+    try:
+        import family_edges
+    except ImportError:
+        return 0, 1.0
+    bonus = family_edges.save_bonus(player, source, effect) if source is not None else 0
+    bonus += family_edges.save_bonus(player, source, 'gaze') if (gaze and source is not None) else 0
+    share = family_edges.duration_mult(player, source, effect) if source is not None else 1.0
+    return bonus, share
+
+
+def apply_debuff_with_save(player, effect: str, duration: int, dc: int,
+                           source=None, gaze: bool = False) -> tuple[bool, str]:
     """Apply a MONSTER-inflicted debuff gated by a D&D-style saving throw.
 
     Two-gate model: the caller already passed the monster's to-apply check
@@ -632,6 +655,13 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int) -> tuple
     import random as _r
     stat = SAVE_STAT.get(effect)
     noun = _EFFECT_NOUN.get(effect, effect.replace('_', ' '))
+    # ``source`` is the monster inflicting it (when known): the hero's ward
+    # against that monster's family (Grave-Salt, Antivenom...) applies.
+    _ward, _share = _family_ward(player, source, effect, gaze)
+    if _share <= 0.0:
+        return False, f"The {noun} cannot take hold of you."
+    if _share < 1.0:
+        duration = max(1, int(round(int(duration) * _share)))
     if stat is None:
         # v2.15+ audit sync: effects without a SAVE_STAT entry (poison, bleed,
         # burn, disease, etc.) previously bypassed save_bonus entirely. Now the
@@ -640,12 +670,13 @@ def apply_debuff_with_save(player, effect: str, duration: int, dc: int) -> tuple
         # preserves the "resource loss IS the penalty" rule (DoTs still land)
         # but rewards a built-out CON save profile with shorter-lived DoTs.
         _sb = int(player.save_bonus_for('CON')) if hasattr(player, 'save_bonus_for') else 0
+        _sb += _ward
         _dur = max(1, int(duration) - _sb)
         applied = player.add_effect(effect, _dur)
         return applied, (f"You are {effect.replace('_', ' ')}!" if applied else "")
     mod = (int(getattr(player, stat, 10)) - 10) // 2
     bonus = player.save_bonus_for(stat) if hasattr(player, 'save_bonus_for') else 0
-    roll = _r.randint(1, 20) + mod + bonus
+    roll = _r.randint(1, 20) + mod + bonus + _ward
     flavor = _SAVE_FLAVOR.get(stat, 'You')
     if roll >= dc:
         if effect in HARD_CONTROL:

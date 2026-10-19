@@ -1,38 +1,26 @@
-"""Monster family tags.
+"""Monster families: a thin reader of the written `family` field.
 
-Each monster has a primary family tag derived from its `tags` list via
-FAMILY_PRIORITY (first match wins). Used for display (bestiary family
-line) and for family-targeted item effects (e.g. dragonslayer gear).
+Every monster in data/monsters.json carries ONE `family` (one of the 22 in
+data/monster_families.json, written by tools/content/assign_monster_families.py
+from each creature's lore). src/family_lore.py owns the table and every rule
+about it; this module is the old entry point, kept so callers that only want
+"which family is this?" have a one-line answer.
+
+(The old tag-priority guess, FAMILY_PRIORITY, was retired on 2026-10-18 when
+the families became data. Tags still drive weapons and materials.)
 """
 from __future__ import annotations
 
-
-# Priority order: first matching tag in this list is the monster's family.
-# A monster with tags ['demon', 'humanoid'] is a demon (demon listed first).
-FAMILY_PRIORITY = [
-    'dragon', 'demon', 'celestial', 'undead', 'fey',
-    'aberration', 'construct', 'elemental', 'beast',
-    'humanoid', 'plant', 'reptile',
-]
+import family_lore
 
 
 def get_monster_family(monster_or_corpse) -> str | None:
-    """Return the primary family tag from a monster's tags list (priority-ordered).
+    """The family id of a Monster, a Corpse, a monster dict or a kind id,
+    or None (Death, the secret cow, the ethereal unicorn)."""
+    return family_lore.family_of(monster_or_corpse)
 
-    Accepts either a Monster instance, a monster defn dict, or a Corpse instance.
-    Returns None if no family tag matches.
-    """
-    tags: list = []
-    # Corpse stores its source monster definition (incl. tags) in monster_def.
-    md = getattr(monster_or_corpse, 'monster_def', None)
-    if isinstance(md, dict) and md.get('tags'):
-        tags = list(md.get('tags') or [])
-    elif isinstance(monster_or_corpse, dict):
-        tags = list(monster_or_corpse.get('tags') or [])
-    else:
-        # Monster instance has a direct .tags list
-        tags = list(getattr(monster_or_corpse, 'tags', []) or [])
-    for f in FAMILY_PRIORITY:
-        if f in tags:
-            return f
-    return None
+
+def get_family_name(monster_or_corpse) -> str:
+    """The family's display name ("The Restless Dead"), or ''."""
+    fid = get_monster_family(monster_or_corpse)
+    return family_lore.family_name(fid) if fid else ''

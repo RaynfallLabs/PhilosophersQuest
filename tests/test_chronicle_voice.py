@@ -71,7 +71,9 @@ SCOPED_DYNAMIC = {
              'src/game_road.py:_callback_lost': 'callback lost_line (data)',
              'src/game_road.py:_lapse_due_oaths': 'oath lapse chronicle (data)',
              'src/game_road.py:_lapse_oath_now': 'oath lapse chronicle (data) or the linted fallback',
-             'src/black_knight.py:_black_knight_events': 'black_knight.json draw chronicles (data)'},
+             'src/black_knight.py:_black_knight_events': 'black_knight.json draw chronicles (data)',
+             'src/game_families.py:_family_news': ('monster_families.json tier_chronicle, '
+                                                   'circle and loremaster chronicles (data)')},
 }
 
 # Data keys that hold a Journal line without "chronicle" in their name.
@@ -213,6 +215,10 @@ def _collect_data():
                 for k, v in o.items():
                     if ('chronicle' in str(k) or k in JOURNAL_KEYS) and isinstance(v, str):
                         out.append((f'{rel}:{where}.{k}', v))
+                    elif ('chronicle' in str(k) and isinstance(v, list)
+                          and all(isinstance(x, str) for x in v)):
+                        # a list of lines (monster_families.json tier_chronicle)
+                        out.extend((f'{rel}:{where}.{k}[{i}]', x) for i, x in enumerate(v))
                     else:
                         walk(v, f'{where}.{k}')
             elif isinstance(o, list):

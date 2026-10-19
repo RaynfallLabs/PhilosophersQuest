@@ -49,16 +49,34 @@ def is_invisible(m) -> bool:
     return bool(getattr(m, 'invisible', False))
 
 
+def senses(m, player) -> bool:
+    """The hero's own monster-family technique shows him this hidden
+    creature (src/family_edges.py sense_hidden): Second Sight for an
+    invisible ghost, Tremor-Sense for a lurking spider, Mimic-Sense for a
+    disguised mimic, Their True Name for the Fair Folk. Only for that
+    family, only inside the technique's radius."""
+    if player is None:
+        return False
+    try:
+        import family_edges
+        return family_edges.senses(player, m)
+    except Exception:
+        return False
+
+
 def unseen(m, player) -> bool:
     """An invisible creature the hero has no way to see."""
-    return is_invisible(m) and not sees_invisible(player)
+    return is_invisible(m) and not sees_invisible(player) and not senses(m, player)
 
 
-def lurking(m) -> bool:
-    """An ambusher that has not sprung, or a mimic still in its disguise."""
+def lurking(m, player=None) -> bool:
+    """An ambusher that has not sprung, or a mimic still in its disguise
+    (unless, given the hero, his family knowledge shows it to him)."""
     if getattr(m, '_aware', False):
         return False
-    return getattr(m, 'ai_pattern', '') in ('ambush', 'mimic')
+    if getattr(m, 'ai_pattern', '') not in ('ambush', 'mimic'):
+        return False
+    return not senses(m, player)
 
 
 def disguise(m):
@@ -76,7 +94,7 @@ def disguise(m):
 
 def concealed(m, player) -> bool:
     """The hero cannot see this creature even when its tile is in sight."""
-    return lurking(m) or unseen(m, player)
+    return lurking(m, player) or unseen(m, player)
 
 
 def seen(m, visible, player) -> bool:

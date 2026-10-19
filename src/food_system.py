@@ -675,6 +675,18 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
     def _callback(result):
         if getattr(result, 'success', False):
             ingredient_ids = _harvest_outcome_for_tier(tier, monster_id)
+            # Hunter's Harvest / Herbalist (monster family knowledge,
+            # src/family_edges.py harvest_bonus): one more portion of the
+            # main cut from a family the hero has learned to butcher.
+            _extra_note = ''
+            try:
+                import family_edges
+                _more, _ab = family_edges.harvest_bonus(player, monster_id)
+            except ImportError:
+                _more, _ab = 0, None
+            if _more and ingredient_ids:
+                ingredient_ids = list(ingredient_ids) + [ingredient_ids[0]] * int(_more)
+                _extra_note = ' ' + str((_ab or {}).get('trigger_msg', '') or '')
             ingredients = [ing for ing_id in ingredient_ids
                            if (ing := load_ingredient_for(ing_id)) is not None]
             counts: dict[str, int] = {}
@@ -684,7 +696,7 @@ def harvest_corpse(player, corpse, quiz_engine, on_complete, extra_seconds: int 
             msg = (f"You harvest the {corpse.name}: "
                    f"{', '.join(parts)}." if parts
                    else f"You harvest the {corpse.name}, but it yields nothing usable.")
-            on_complete(ingredients, msg)
+            on_complete(ingredients, (msg + _extra_note).rstrip())
         else:
             on_complete([], f"You botch the harvest. The {corpse.name} is ruined.")
 
