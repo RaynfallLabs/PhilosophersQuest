@@ -102,7 +102,6 @@ ALLOW: dict[tuple[str, str], str] = {
     ('data/monsters.json', 'everyone but themselves'): 'themselves = the tengu',
     (_C + 'history.json', 'each representing a specific consonant sound of their'): 'their = the people who made the script',
     (_C + 'history.json', 'each town, craftsmen organized themselves'): 'themselves = craftsmen',
-    (_C + 'history.json', 'every public building across their'): 'their = the Romans',
     (_C + 'science.json', 'Nobody has proven that their'): 'their = the Navier-Stokes equations',
     (_Q + 'ai.json', 'every image including ones outside their'): 'their = image-recognition systems',
     (_Q + 'ai.json', 'every summary on their'): 'their = Notion, Otter and Google',
