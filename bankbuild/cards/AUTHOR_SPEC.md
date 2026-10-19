@@ -59,3 +59,12 @@ Every question hash in the ladder must appear in `teaches`.
 3. Run the gate: `C:/Users/brand/AppData/Local/Python/pythoncore-3.14-64/python.exe -m bankbuild.cards.gate <subject> <batch>` from the repo root. Fix every failure and re-run until all pass.
 4. Self-check each card as a cold reader: could someone who read ONLY this card pick every keyed answer over its three distractors? If not, the card is missing that fact or teaching it too vaguely. Fix it.
 5. Re-run the gate. Your final message: one line per card ("ok" or what you could not fix), then the gate's summary line.
+
+## Subject notes
+- **Grammar** (Comma-Saves-Lives voice): the card teaches the RULE and every variant the ladder tests, with the memory trick, using your OWN example sentences (never the ladder's). End on one punchline example that shows the rule saving a sentence from comedy ("Let's eat, Grandma!"). Pronouns follow the traditional rule (everyone ... his or her); "they" is only plural.
+- **Trivia** (Easter Egg voice): a card may reveal no more of a story than its questions already do. No spoilers beyond the ladder.
+- **Philosophy, economics:** teach the reasoning move through the story. Contested topics carry no verdict.
+- **Science:** show how we KNOW (the experiment, the measurement), not just the result.
+- **Theology:** tell the story symmetrically. Christian, Greek, Norse and Arthurian traditions sit on the same plane, as traditions, with no endorsement.
+- **History:** a person did it, so name him or her. Active voice. Honest about crimes and achievements alike.
+- **Cooking, animal, geography:** the most memorable specific fact wins. Named things beat generic labels.
