@@ -45,10 +45,10 @@ LEAK_BASELINE = {
 # For these subjects the leak ratchet above no longer applies; instead every
 # card that carries a `teaches` map must pass the card gate, and the count of
 # cards still waiting for their rewrite may only go down.
-TEACHING_SUBJECTS = {'animal', 'philosophy'}
+TEACHING_SUBJECTS = {'animal', 'philosophy', 'geography'}
 
 # Cards in a teaching subject that still lack `teaches` (rollout in progress).
-UNTAUGHT_BASELINE = {'animal': 30, 'philosophy': 145}
+UNTAUGHT_BASELINE = {'animal': 0, 'philosophy': 145, 'geography': 330}
 
 
 def _load(subject):
