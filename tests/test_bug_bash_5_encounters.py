@@ -88,6 +88,10 @@ def _answer(g, right: bool):
     qe = g.quiz_engine
     q = qe.current_question
     qe.answer(str(q['answer']) if right else '__surely wrong__')
+    # An untimed wrong answer holds on its lesson line until a key (teaching
+    # cards, 2026-10-18): press one once the 1 s minimum has passed.
+    qe._result_hold_until = 0.0
+    qe.release_result_hold()
     qe.update(5.0)
 
 

@@ -35,6 +35,20 @@ GIVEAWAY = re.compile(r"\b(the (correct )?answer is|the correct answer)\b", re.I
 URL = re.compile(r"(https?://|www\.|(^|[.!?]\s+)Sources?:)")
 
 
+def _singular_they(text: str) -> list:
+    """The repo's own singular-they lint (tests/test_no_singular_they.py)."""
+    import importlib.util
+    from bankbuild.cards.common import ROOT
+    global _FIND_THEY
+    if '_FIND_THEY' not in globals():
+        spec = importlib.util.spec_from_file_location(
+            '_they_lint', ROOT / 'tests' / 'test_no_singular_they.py')
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _FIND_THEY = mod.find_singular_they
+    return _FIND_THEY(text)
+
+
 def _ngrams(ws: list[str], n: int) -> set[tuple]:
     return {tuple(ws[i:i + n]) for i in range(len(ws) - n + 1)}
 
@@ -78,6 +92,9 @@ def check_card(pkt: dict, card: dict) -> list[str]:
         errs.append('says "the answer is"')
     if URL.search(text):
         errs.append('source line or URL')
+    for kind, start, end in _singular_they(text):
+        errs.append(f'singular they ({kind}): "...{text[max(0, start - 40):end + 10]}..." '
+                    '(use he, she or it; if the referent really is plural, reword so the lint sees it)')
     keyed = {norm(q['answer']) for q in pkt['questions']}
     for q in pkt['questions']:
         h = q['hash']
