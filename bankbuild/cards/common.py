@@ -70,7 +70,7 @@ def words(text: str) -> list[str]:
 def target_words(n_questions: int) -> tuple[int, int, int]:
     """(minimum, target, hard cap) word counts for a card of n questions."""
     target = 60 + 45 * n_questions
-    lo = max(150, min(560, int(round(0.70 * target))))
+    lo = max(150, min(560, int(round(0.65 * target))))
     return lo, max(150, target), 750
 
 
