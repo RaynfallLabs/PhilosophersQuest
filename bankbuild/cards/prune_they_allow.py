@@ -26,7 +26,7 @@ def main() -> None:
         if mod.find_singular_they(text):
             flagged.setdefault(rel, []).append(text)
     stale = [k for k in mod.ALLOW
-             if 'question_contexts' in k[0] and not any(k[1] in t for t in flagged.get(k[0], []))]
+             if ('question_contexts' in k[0] or 'data/questions/' in k[0]) and not any(k[1] in t for t in flagged.get(k[0], []))]
     if not stale:
         print('no stale card entries')
         return

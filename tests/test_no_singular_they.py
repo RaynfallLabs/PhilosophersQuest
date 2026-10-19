@@ -120,7 +120,6 @@ ALLOW: dict[tuple[str, str], str] = {
     (_Q + 'history.json', 'anyone outside hear their'): 'their = the delegates',
     (_Q + 'history.json', 'each crew planted an American flag beside their'): 'their = the crew, a plural group of astronauts',
     (_Q + 'history.json', 'each food, one part of their'): 'their = the finches',
-    (_Q + 'history.json', 'each portrait makes a bold claim about their'): 'their = Justinian and Theodora',
     (_Q + 'history.json', 'every Soviet refugee in their'): 'their = Britain and America',
     (_Q + 'history.json', 'every author the American founders quoted in their'): 'their = the founders',
     (_Q + 'history.json', 'every book in the world for their'): "their = Alexandria's rulers",
