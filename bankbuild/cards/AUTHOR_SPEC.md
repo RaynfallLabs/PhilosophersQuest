@@ -72,3 +72,12 @@ Every question hash in the ladder must appear in `teaches`.
 ## Working files and question errors
 - Keep any scratch scripts in `_cards/<subject>/work_<your batch numbers>/`, never in a shared scratchpad. Other agents run beside you.
 - If a question's stem, answer or context contradicts the others or seems wrong, follow the checked context and the majority, and list it in your final message under "Question errors" with its hash. Those go to a fix list.
+
+## Notes from the geography writers
+- **Clustered ladders** (Angkor ×3, Cusco ×2, Cappadocia ×2) share facts. Each card stands alone and may repeat a sibling card's fact.
+- **Places that another rung is about** may be named freely (the gate does not count them as a tour). So may everyday one-word choices ("paper", "war", "twelve").
+- **A keyed proper name or title** of five or more words ("the Great Pyramid of Giza") may stand whole: it is the fact.
+- **Accents are folded** before matching (Brasília = Brasilia), so an accented copy of a stem still counts as a copy.
+- **Restated figures and dates** are where most stem-copy failures come from. Rephrase the number ("some eighteen centuries ago", "a little over a century").
+- **Place ladders** read best as a walk through the place; that order may lead.
+- Teaching sentences keep a claim's **legend or disputed framing** ("legend says", "unproven").

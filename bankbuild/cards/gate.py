@@ -61,6 +61,19 @@ def _sentence_ngrams(text: str, n: int) -> set[tuple]:
     return out
 
 
+def _is_name(choice: str) -> bool:
+    """Mostly capitalised words: a proper name or a title."""
+    ws = [w for w in re.findall(r"[^\W\d_][\w'’-]*", choice) if len(w) > 3]
+    return bool(ws) and sum(w[0].isupper() for w in ws) * 2 >= len(ws)
+
+
+def _everyday_word(choice: str) -> bool:
+    """A one-word lower-case choice (a common noun or a number word) shows
+    up in ordinary prose; naming it is not a tour of the wrong answers."""
+    ws = choice.strip().split()
+    return len(ws) <= 2 and not any(w[:1].isupper() for w in ws if w.lower() not in ('a', 'an', 'the'))
+
+
 def _contains(hay: str, needle: str) -> bool:
     n = norm(needle)
     return bool(n) and re.search(r'(?<![a-z0-9])' + re.escape(n) + r'(?![a-z0-9])', hay) is not None
@@ -96,6 +109,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
         errs.append(f'singular they ({kind}): "...{text[max(0, start - 40):end + 10]}..." '
                     '(use he, she or it; if the referent really is plural, reword so the lint sees it)')
     keyed = {norm(q['answer']) for q in pkt['questions']}
+    stems = ' '.join(norm(q['stem']) for q in pkt['questions'])
     for q in pkt['questions']:
         h = q['hash']
         shared = sorted(card_6 & _sentence_ngrams(q['stem'], 6))
@@ -104,7 +118,10 @@ def check_card(pkt: dict, card: dict) -> list[str]:
             errs.append(f'{h}: copies 6+ words of the stem ({len(shared)} runs): {runs}')
         toured = []
         for ch in q['choices']:
-            if len(ch.split()) > 4 and _contains(hay, ch):
+            if (len(ch.split()) > 4 and _contains(hay, ch)
+                    and not (norm(ch) in keyed and _is_name(ch))):
+                # A keyed proper name or title ("the Great Pyramid of Giza")
+                # is the fact itself and may stand whole.
                 errs.append(f'{h}: contains a whole choice (>4 words): "{ch}"')
             elif len(words(ch)) > 6 and norm(ch) not in keyed:
                 # A distractor's phrasing must not leak into the card (a
@@ -113,7 +130,9 @@ def check_card(pkt: dict, card: dict) -> list[str]:
                 near = card_6 & _ngrams(words(ch), 6)
                 if near:
                     errs.append(f'{h}: copies 6+ words of a choice: "{" ".join(sorted(near)[0])}"')
-            if norm(ch) not in keyed and _contains(hay, ch):
+            if (norm(ch) not in keyed and _contains(hay, ch)
+                    and not _contains(stems, ch)          # a place another rung is about
+                    and not _everyday_word(ch)):          # "paper", "war", "twelve"
                 toured.append(ch)
         if len(toured) >= 2:
             errs.append(f'{h}: names {len(toured)} of its distractors: {toured}')

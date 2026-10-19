@@ -17,6 +17,7 @@ import hashlib
 import json
 import random
 import re
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -57,6 +58,10 @@ def ladders(subject: str) -> dict[str, list[dict]]:
 
 
 def norm(text: str) -> str:
+    # Fold accents first (Brasília -> brasilia), or matching between an
+    # accented card and an unaccented choice silently fails.
+    text = unicodedata.normalize('NFKD', text)
+    text = ''.join(c for c in text if not unicodedata.combining(c))
     text = text.lower().replace('’', "'").replace('‘', "'")
     text = re.sub(r'[—–\-]', ' ', text)
     text = re.sub(r"[^a-z0-9' ]+", ' ', text)
