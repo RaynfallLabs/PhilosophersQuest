@@ -5,7 +5,9 @@ Built 2026-10-18 (MONSTER_FAMILIES_DESIGN.md as approved, the v2 ability ladders
 [monster_families_v2_design.md](monster_families_v2_design.md), and the coordinator's
 rulings of the same day: distinct kinds only, keystones count two, Spiders merged into
 Vermin, thresholds per family). Logic-tested; not yet play-tested (see the play-test list
-in the build report). Field Notes are empty slots, to be filled by their own writer.
+in the build report). Field Notes: 110 written and fact-checked, one per family tier
+(sources in [monster_family_field_notes_sources.md](monster_family_field_notes_sources.md)).
+Independent wiring audit 2026-10-19 (`tests/test_monster_families_wiring.py`).
 
 ## In one paragraph
 Every monster belongs to ONE of 22 families, chosen by what the creature IS in its lore.
@@ -51,10 +53,16 @@ long enough: knowledge unlocks the technique, performance lands it.
 ## How knowledge is earned
 - One study = a correct corpse study (`_start_corpse_identify`) or a Scroll of Omnisight
   (`_omnisight_corpse_reveal`). Killing, harvesting and seeing never count. A wrong answer
-  is the usual 10-turn Stun.
+  is the usual 10-turn Stun. A corpse is studied from the I menu whether it lies on the
+  hero's tile or is carried in the pack.
+- One study knows every corpse of the kind: `items.corpse_is_known` (its own id level 5,
+  or its kind in `studied_monster_ids`) decides, so a corpse left on a floor before the
+  study, kept in a sack or dropped by a thief never asks again. The Omnisight read that
+  raises a tier popup still costs its turn.
 - The Book of Thoth fills `lore_known_monster_ids`: it opens Bestiary pages and teaches no
   tier (decision 4). A kind it only opened can still be studied from its corpse (corpses
-  pre-identify for `studied_monster_ids`, the hero's own studies).
+  pre-identify for `studied_monster_ids`, the hero's own studies). The Philosopher's
+  Stone, like Thoth and the mass Scroll of Identify, leaves corpses to their own study.
 - Keystones: `is_boss`, `is_mini_boss`, `is_seal_demon`, `proper_noun`, or listed in the
   family's `keystones` (the spider queen). A keystone counts `keystone_weight` = 2 kinds.
 - Tier N needs `thresholds[N-1]` (weighted) kinds. The numbers were set from real floor
@@ -123,7 +131,7 @@ The per-family techniques are in `data/monster_families.json` and the v2 design 
 | `prevent_split` | | `combat.player_attack` marks the blow; `splitting.blow_splits` |
 | `execute` | `chain_min`, `hp_below`, `variant`, `named_mult` | `family_edges.after_blow` (lesser foes, no revive or split); a named foe takes `named_mult` in `strike_damage` instead |
 | `turn` | `trigger` (on_hit / on_kill / on_sight), `turns`, `chain_min?`, `chance?` | `after_blow`, `after_kill` (from `player_attack`), `FamilyMixin._family_turn`; the monster's own fear (`Monster.hold('feared')`, `resists_control`) |
-| `calm_on_arrival` | `chance` | `FamilyMixin._family_arrival` (first visit): charmed + `_bribed`, so a blow breaks it (the Gilgamesh's Bribe rule) |
+| `calm_on_arrival` | `chance` | `FamilyMixin._family_arrival` (first visit): charmed + `_bribed`, so a blow breaks it (the Gilgamesh's Bribe rule); never a concealed creature |
 | `charm_on_hit` | `chain_min`, `turns` | `after_blow` |
 | `surrender` | `chain_min`, `hp_below`, `turns` | `after_blow` + `FamilyMixin._family_surrender` (a gold pile via `items.add_gold_to_tile`, picked up by the coin-weight rules) |
 | `theft_immune` | | `theft.steal` |
@@ -138,7 +146,9 @@ The per-family techniques are in `data/monster_families.json` and the v2 design 
 The rails: a technique works only on its own family and only on a creature the hero can
 recognise (not concealed). Named foes (bosses, mini-bosses, seal demons) are never
 executed, turned, calmed, charmed, stunned or made to yield; wards, damage, block_regen,
-pierce_resist and sense_hidden do apply to them. A trigger line prints once per creature
+pierce_resist and sense_hidden do apply to them. The Black Knight (a Mortal Foe) is held
+the same way against execute, turn, calm, charm and Yield! (`family_edges._steadfast`):
+nothing moves him off his bridge, and he never yields. A trigger line prints once per creature
 per technique (`family_edges.tell`, the outbox drained by `FamilyMixin._family_drain`).
 
 ## Circles and the Loremaster title
@@ -148,9 +158,9 @@ markers `circle:<id>`, `loremaster`), each with a popup and a Journal line.
 
 | Circle | Families | Needs | Boon |
 |---|---|---|---|
-| The Grave Watch | Restless Dead, Ghosts, Vampires and Liches | all three at tier 3 | Vigil: necrotic and drain damage 10% less, any source |
+| The Grave Watch | Restless Dead, Ghosts, Vampires and Liches | all three at tier 3 | Vigil: necrotic and drain damage 5% less, any source |
 | The Wild Road | Great Beasts, Birds, Serpents, Vermin, Plants | any three at tier 3 | Ranger's Instinct: +1 sight |
-| The Hellward Gate | Demons, Fair Folk, Aberrations | all three at tier 3 | Unbent Mind: +1 on saves vs confusion, charm, fear, any source |
+| The Hellward Gate | Demons, Fair Folk, Aberrations | all three at tier 3 | Unbent Mind: +1 on saves vs confusion, charm, fear, any source (an effect with no monster behind it, a bad meal's, too) |
 | The Hero's Road | Monsters of Legend, Gorgons, Giants, Dragons | any three at tier 3 | Hero's Nerve: +1 second against any boss |
 
 Loremaster: tier 5 in any five families. Your Story, the Discoveries page, the @ sheet,
@@ -170,8 +180,13 @@ the Journal and the high-score table (`title`) show it.
   Dead 2 of 4 to Recognise".
 - News: tiers 1 and 2 a gold line; tiers 3 to 5 a popup ("LORE OF THE RESTLESS DEAD") with
   the technique and its Field Note; a Journal line per tier (`once` key `family:<id>:<tier>`).
+  Several pieces of news at once (a keystone crossing two tiers, a circle) share one
+  popup, at most three, each later one under its own Title Case heading with a blank
+  line on both sides ("Hunter of the Gorgons and Basilisks", "Circle Complete: The
+  Hero's Road"); the popup joins touching lines into one paragraph.
 - @ sheet: a Monster Lore block (title, circles, then each family with its tier and
-  techniques), "+N more".
+  techniques), "+N more". Short of room (1280x720 with effects active) the rest are
+  named alone, their techniques left to B, Tab.
 - Help: "I: Identify or study" (corpses are studied from the identify menu), "B, Tab: Monster families".
 - QA: Shift+F with the Titivillus build (PQ_QA_MODE) raises the nearest creature's family
   a tier, or every family when none is in sight.
@@ -191,9 +206,15 @@ the assignment tool agrees with the file) and `tests/test_monster_families.py` (
 test per primitive, the named-foe rail, sense_hidden radius and family, a disguised mimic
 seen only by Mimic-Sense at two tiles, chain_forgive once per fight, keystones count two,
 circles, old saves, Thoth, the study hook, news, arrival lines, head starts, Yield!, the
-QA key). `tests/test_observe_bestiary.py` covers ruling 1. UI capture scenes:
+QA key). `tests/test_observe_bestiary.py` covers ruling 1.
+`tests/test_monster_families_wiring.py` (the wiring audit): a studied kind's stale or
+carried corpse, the Stone, calm never on a concealed creature, the QA key, the Unbent
+Mind with no source, the Omnisight turn, several unlocks in one popup, and a whole Game
+saved and loaded (new and old saves) through `save_system`. UI capture scenes:
 `menu_bestiary_family_page`, `menu_bestiary_short_page`, `menu_bestiary_family_line`,
-`popup_family_tier`, `menu_charsheet_monster_lore`.
+`popup_family_tier`, `popup_family_several`, `menu_charsheet_monster_lore`; the score
+fixture carries a Loremaster title, so `title_alltime_scores` and the end screens
+measure it.
 
 ## Balance
 `tools/balance/difficulty_sim.py --knobs families=1,study_rate=0.85` plays a hero who

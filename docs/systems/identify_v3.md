@@ -202,9 +202,10 @@ branch, `src/game_menus.py:822`).
 
 ## 4. Corpse identify
 
-Entry: standing on a corpse, press the examine key, or pick the corpse
-from the identify menu. `_start_corpse_identify` (`src/main.py:6527`)
-runs the same shape:
+Entry: pick the corpse from the identify menu (I), whether it lies on the
+hero's tile or is carried in the pack (a carried corpse was listed nowhere
+until 2026-10-19; the old examine key, `_examine_corpse`, has no binding).
+`_start_corpse_identify` runs the same shape:
 
 ```python
 quiz_engine.start_quiz(
@@ -226,9 +227,13 @@ On failure: same `stunned 10` backlash as items. Corpses are
 "flattened" — treated as if they were an item of their `monster_id`,
 with their id_tier derived the same way (§5).
 
-An already-known corpse (type in `lore_known_monster_ids`) skips the
-quiz and opens the lore screen directly (`_examine_corpse`,
-`src/main.py:6603`).
+An already-known corpse skips the quiz and opens the lore screen
+directly: `items.corpse_is_known` (its own id level 5, or its kind in
+`player.studied_monster_ids`, the hero's own studies). So a corpse of a
+studied kind that missed the propagation (left on another floor, kept in
+a sack, dropped by a thief) never asks again, and the identify menu does
+not list it. A kind the Book of Thoth only opened still asks (monster
+families count only the hero's own studies).
 
 ---
 

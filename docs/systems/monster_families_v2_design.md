@@ -2,6 +2,11 @@
 
 *2026-10-18. This replaces the generic tiers 3 and 4 in `MONSTER_FAMILIES_DESIGN.md`. Everything else in that doc stands: the 23 families, studying distinct kinds, full pages only for identified kinds, Thoth giving no tiers, and the secret-build head starts.*
 
+> **As built (read [monster_families.md](monster_families.md) for the live system).** This is the design as proposed; the build changed it the same day, and the simulator then tuned every number. Where this page and the code disagree, the code and `data/monster_families.json` are right:
+> - **22 families, not 23.** Spiders merged into Vermin ("Vermin, Spiders and Swarms"): Web-Walker and Plague-Wise became one tier 3, Web and Plague; Tremor-Sense is the Vermin tier 4; the Piper's Tune covers spiders too; Arachne's Bane was dropped. The Wild Road circle lists five families.
+> - **Thresholds are per family** (at least 2 for tier 1, never 1), set from real floor generation, and **a keystone counts 2 kinds**, not 3.
+> - **Every number below is a first draft.** As tuned: wards +1 (not +4), a no-save effect a tenth shorter (not half), damage edges 3 to 10%, weakness 6 to 10%, executes at chain 18, extra seconds 1, the circles' boons halved (Vigil 5%, Unbent Mind +1, Hero's Nerve 1 second). See the Balance section of monster_families.md.
+
 ## The idea in one paragraph
 
 Every family has its own ladder, written from its folklore. Vampires fall to the stake, trolls stop healing under fire, golems die when you erase the letter on their brow, and the Fair Folk lose their glamour when you know their name. You learn each technique by studying that family's corpses. The strongest ones only fire when your maths chain is long enough: **knowledge unlocks the technique, and performance lands it.** That is the game's core idea (knowledge is power, and outcome comes from how well you answer) applied to monster hunting.
