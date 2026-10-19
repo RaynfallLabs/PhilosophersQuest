@@ -110,6 +110,9 @@ def check_card(pkt: dict, card: dict) -> list[str]:
                     '(use he, she or it; if the referent really is plural, reword so the lint sees it)')
     keyed = {norm(q['answer']) for q in pkt['questions']}
     stems = ' '.join(norm(q['stem']) for q in pkt['questions'])
+    keyed_6: set[tuple] = set()
+    for q in pkt['questions']:
+        keyed_6 |= _ngrams(words(q['answer']), 6)
     for q in pkt['questions']:
         h = q['hash']
         shared = sorted(card_6 & _sentence_ngrams(q['stem'], 6))
@@ -127,7 +130,7 @@ def check_card(pkt: dict, card: dict) -> list[str]:
                 # A distractor's phrasing must not leak into the card (a
                 # keyed answer sharing words with its own teaching sentence
                 # is the fact, and fine in an open book).
-                near = card_6 & _ngrams(words(ch), 6)
+                near = (card_6 & _ngrams(words(ch), 6)) - keyed_6   # a run the key shares is the key's
                 if near:
                     errs.append(f'{h}: copies 6+ words of a choice: "{" ".join(sorted(near)[0])}"')
             if (norm(ch) not in keyed and _contains(hay, ch)

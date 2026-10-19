@@ -81,3 +81,25 @@ Every question hash in the ladder must appear in `teaches`.
 - **Restated figures and dates** are where most stem-copy failures come from. Rephrase the number ("some eighteen centuries ago", "a little over a century").
 - **Place ladders** read best as a walk through the place; that order may lead.
 - Teaching sentences keep a claim's **legend or disputed framing** ("legend says", "unproven").
+
+## Notes from the cooking writers
+- Long keyed mechanisms ("Stacked in separate layers of rice and meat") must be paraphrased. Reorder ingredient lists ("pork, olive oil and salt" for "Olive oil, salt, and pork"); commas don't break a match.
+- A capitalised one-word distractor ("Salt", "Cow") counts toward the two-distractor limit even when the card writes it in lower case, and so do possessives ("cow's milk").
+- Don't retell a recipe in the stem's order; recast the steps and restate the numbers.
+- Stance topics (seed oils, keto, cholesterol, saturated fat, Blue Zones): attribute contested claims and mark them open; state the firm points flatly (trans fats harm, reused fryer oil forms aldehydes, the danger zone is real).
+
+## Notes from the history writers
+- Story order: chronological with tiers roughly rising, or layered (headline, then how it worked, then the hidden causes) for battles.
+- Famous quotations are common keyed answers: put them in reported speech (changed pronouns or tense), never paste the whole line.
+- Long stems full of names and dates cause most stem-copy failures: reorder the name and the date.
+- Sister ladders on one event (Apollo, Archimedes, Aztec) sometimes disagree; check every number against the sister stems.
+- Atrocities: name the perpetrators, state the crime flatly, keep gore to one clause, and don't tour victim-group distractors.
+- Old cards carry stale facts (Apollo 13 went farther than Apollo 11; six Marines raised the Iwo Jima flag). Check before lifting anything from an old card.
+
+## Notes from the science writers
+- Long acronym expansions and titles that the stems repeat (CRISPR's full name, the 1933 sterilization law, the NCVIA's full name) can't be spelled out without copying a stem: name the thing and describe it.
+- Capitalised element and species names (Iron, Oxygen, "The chimpanzees") count toward the distractor limit; check before listing elements.
+- Spell repeated numbers in words to avoid shared runs.
+- Retold anecdotes keep their story framing (Loewi's dream, Dalton's stockings, "eppur si muove").
+- Stance topics (vaccine injury law, eugenics, the WEF) attribute claims to the people who made them.
+- The gate splits sentences at every ". ", so a name with initials ("H. O. Albrecht") can cut a teaches sentence in half: check that every teaches entry is a whole sentence.
