@@ -111,3 +111,10 @@ Every question hash in the ladder must appear in `teaches`.
 - Abbreviations and initials ("v.", "A.W. Phillips") split teaching sentences: keep them out of teaches entries.
 - Credit a school's verdict to the school ("in the Austrian reading"); on lean topics follow the config; on contested empirical claims outside the lean list, attribute and mark disputed.
 - Many economics contexts were written for a different question: teach from the stem plus the key and check figures against sister ladders.
+
+## Notes from the theology writers
+- "The Lord" is the trap. Keyed KJV quotations stay as quotations, but put them in the speaker's or the book's mouth ("Luke says...", "David answered that..."), or say "God" / "Israel's God". Never write "the Lord" in the card's own voice.
+- Attribute every pillar the same way ("the Homeric Hymn says", "Snorri says", "Malory says", "the Golden Legend says"), and tell every miracle or wonder as what the story tells, with the same seriousness for Christ, Zeus, Odin or the Dagda.
+- Check any source a stem or context names before repeating it (several are wrong: Deucalion's nine days are Apollodorus, not Ovid; on Skyros the trumpet is Apollodorus, the shield and spear Statius). When unsure, teach the fact without naming a source.
+- Stem copies come from retelling the stem's scene in its word order: start from a different subject and move the date or place. Hyphens split words ("a tent-peg and a hammer" is five words).
+- Capitalised one-word distractors ("Once", "Seven", "Forty", "Easter", "Iona") count wherever the word appears. A build script that cuts each teaches sentence out of the card at an inline marker removes copy mistakes in teaches.
